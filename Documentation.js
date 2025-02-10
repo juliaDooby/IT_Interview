@@ -6,6 +6,7 @@ https://scriptdev.ru/
 Тренажёры:
 https://www.codewars.com/collections/javascript-basics-2
 https://leetcode.com/studyplan/30-days-of-javascript/
+https://leetcode.com/problems/binary-search/description/
 
 ---
 В помощь к резюме:
