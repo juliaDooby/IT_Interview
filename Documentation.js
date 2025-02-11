@@ -28,4 +28,8 @@ https://education.yandex.ru/handbook/algorithms
 Зависимости В раб. проектах: 
 https://strapi.io/
 
+---
+Тестовые и оформление задач: 
+https://github.com/some-yummy-nick/frontend-task
+https://github.com/elena-13/JS-Algoritms
 
