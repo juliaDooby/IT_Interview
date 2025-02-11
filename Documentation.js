@@ -16,6 +16,10 @@ https://buildin.ai/share/ee13046b-da1c-4647-b986-08fec57f39f3?code=UMEHJC#d73dfb
 https://easyoffer.ru/rating/frontend_developer
 https://getmatch.ru/vacancies/20299?s=applications_status
 
+---
+Собеседования:
+Запись собесов https://www.google.com/search?q=pfgbcm+cj%2Cctljdfybz+rfr+ltkfnm+xthtp+ntktuhfvv&oq=pfgbcm+cj%2Cctljdfybz+rfr+ltkfnm+xthtp+ntktuhfvv&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyCQgDECEYChigAdIBCjE0MTEwajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
+
 --- 
 Сервера:
 https://my.selectel.ru/balance/add
@@ -32,4 +36,8 @@ https://strapi.io/
 Тестовые и оформление задач: 
 https://github.com/some-yummy-nick/frontend-task
 https://github.com/elena-13/JS-Algoritms
+
+---
+Алгоритмы (тренировка):
+https://www.youtube.com/playlist?list=PL6Wui14DvQPySdPv5NUqV3i8sDbHkCKC5
 
