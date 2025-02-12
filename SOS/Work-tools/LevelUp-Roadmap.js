@@ -349,11 +349,11 @@ https://www.youtube.com/watch?v=lq4eefCCuVo 20.41
 https://www.youtube.com/results?search_query=build+layout+site+react+app+
 https://www.youtube.com/watch?v=BCkWFblNLKU
 https://www.youtube.com/watch?v=_1cQlqHCVUQ
-**********************************************************************
+---
 https://www.youtube.com/watch?v=U-nhlyinYYI 26.57
 https://www.youtube.com/watch?v=2_4WBH-Si0w 23.36
 https://www.youtube.com/watch?v=_1cQlqHCVUQ
-**********************************************************************
+---
 https://drive.google.com/file/d/1BbUJVuWDu8Mu0xHVClXUHLvR0OYtZxA4/view
 ---------------------
 ⋙ ❍ мотивация:
