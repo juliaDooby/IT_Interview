@@ -282,21 +282,20 @@ www.youtube.com/watch?v=9u7Ulg-BNR4
 (https://www.youtube.com/watch?v=LIpiX4sE0-w)Упражнения на снятие зажимов в теле! | ТРЕНИНГИ по системе Станиславского
 (11 упражнений для голоса. Мгновенный эффект на тембр, дикцию, красоту голоса!)https://www.youtube.com/watch?v=AMaryao5Ua0
 (КРАСИВАЯ РЕЧЬ ЗА 8 МИНУТ)https://www.youtube.com/watch?v=xIGTca7CBUU 2.10
-
+---
 https://www.youtube.com/watch?v=_1cQlqHCVUQ
 https://www.youtube.com/watch?v=BCkWFblNLKU
 https://www.youtube.com/results?search_query=build+layout+site+react+app+
-
+---
 https://devby.io/blogs/posts/interview-tips
-
 ---------------------
-НаставленияТимлидов Про работу и собесы:
----------------------
+Наставления Тимлидов Про работу и собесы:
+---
 ⋙ ❍ Roadmap frontend:
 ---
 https://miro.com/app/board/uXjVNGw7Jv8=/
 https://www.youtube.com/@AleksanderLamkov/playlists
-
+---
 https://devby.io/blogs/posts/interview-tips
 https://boosty.to/iosgetthrough/posts/e82ecc7a-7981-4f8a-a09e-91db45736fdf
 https://habr.com/ru/articles/800841/
@@ -309,10 +308,10 @@ https://habr.com/ru/articles/812195/
 https://habr.com/ru/articles/804131/
 https://habr.com/ru/articles/811103/
 https://habr.com/ru/articles/551840/
-
+---
 https://howtogreen.ru/posts/2440-ambivert/
 https://www.google.com/search?q=%D1%86%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F+js+%D0%BD%D0%B0+%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83+%D1%81+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8&oq=%D1%86%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F+js+%D0%BD%D0%B0+%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83+%D1%81+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyCQgDECEYChigATIJCAQQIRgKGKAB0gEKMTI4NThqMWoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
-
+---
 https://easyoffer.ru/analytic/frontend_developer?title=Middle
 https://drive.google.com/file/d/1BbUJVuWDu8Mu0xHVClXUHLvR0OYtZxA4/view
 https://blog.fenix.help/proforientaciya/professii-dlya-introvertov-ekstravertov-ambivertov
@@ -325,13 +324,13 @@ https://www.codewars.com/collections/javascript-basics-2
 #ассистент https://chatgpt.com/c/398c4743-19a1-4bb9-9626-c1709f675e81
 распечатать всё и красиво вау зацепить и говорить!
 #ежедневно практиковаться в вёрстке и js, делать сайты
-
+---
 Фриланс практиковаться в разработке после опыта
 Проекты новые петы практиковать
-
+---
 https://www.youtube.com/watch?v=Ci_fHlSzavg
 https://www.youtube.com/watch?v=U-nhlyinYYI 29.56
-
+---
 https://www.youtube.com/results?search_query=lamadev+fasgion
 https://www.youtube.com/watch?v=SjTTDZX2hIA
 https://www.youtube.com/playlist?list=PL0MUAHwery4qn4Y27iUxmzC-JiauX7vSL
@@ -341,7 +340,7 @@ https://www.youtube.com/playlist?list=PL0MUAHwery4qn4Y27iUxmzC-JiauX7vSL
 Самые Частые вопросы :
 Какие типы данных существуют в Javascript?
 https://www.youtube.com/watch?v=gV6eobXisYU&list=PL6DxKON1uLOG0carDseYltoAovmnjjhZk&index=6
-
+---
 https://www.youtube.com/watch?v=lq4eefCCuVo 20.41
 ---------------------
 ⋙ ❍ (инструкция)
@@ -374,16 +373,16 @@ https://www.youtube.com/watch?v=DjWO8Ss2nDQ
 https://www.youtube.com/watch?v=Jjg9R4C8uzw
 https://www.youtube.com/watch?v=OffQFYSI2qQ
 https://www.youtube.com/watch?v=t9B5_JcRvLw
-
+---
 https://www.youtube.com/watch?v=u9P5zrMZvqw
-
+---
 https://www.youtube.com/results?search_query=backend+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA+%D0%BA%D0%B0%D0%BA+%D0%B8%D0%BC+%D1%81%D1%82%D0%B0%D1%82%D1%8C+
-
+---
 https://www.youtube.com/results?search_query=build+cv++javascript+app
 https://www.youtube.com/results?search_query=build+layout+react++e-commerce+site+app+
 https://www.youtube.com/results?search_query=build+layout+react++e-commerce+site+app+
 https://www.youtube.com/results?search_query=build+layout+html+css+javascript+app
-
+---
 https://www.youtube.com/results?search_query=backend+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA+%D0%BA%D0%B0%D0%BA+%D0%B8%D0%BC+%D1%81%D1%82%D0%B0%D1%82%D1%8C+
 Андрей иванов - питон, ал. ильин
 https://www.youtube.com/watch?v=wDmPgXhlDIg&pp=ygUxcHl0aG9uINGBINC90YPQu9GPINCw0LvQtdC60YHQsNC90LTRgCDQuNC70YzQuNC9IA%3D%3D
@@ -448,9 +447,9 @@ https://github.com/Hexlet/ru-test-assignments
 https://csoprocom.com.ua/info/frontend1.pdf
 https://habr.com/ru/articles/520248/
 https://github.com/some-yummy-nick/frontend-task
-
+---
 https://habr.com/ru/companies/tensor/articles/779718/
-
+---
 https://t.me/runello_rus_webdevelopment/1942 - откликнуться
 t.me / easy_javascript_ru;
 ---------------------
