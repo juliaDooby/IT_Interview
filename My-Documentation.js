@@ -1,3 +1,8 @@
+
+---
+Ещё таски:
+https://habr.com/ru/articles/871792/
+
 ---
 Источники знаний:
 https://learn.javascript.ru/
