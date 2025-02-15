@@ -4,6 +4,7 @@ deplot fullstack приложения 2025
 Деплой Full-Stack приложения | Полный гайд 2025
 Github Actions - Введение в CI/CD минин 
 🚀 Деплой Fullstack Приложения [Golang+JS]. СI/CD
+https://www.youtube.com/watch?v=ceRTzKuCLnw
  
 ---
 Ещё таски:
