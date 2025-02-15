@@ -2,6 +2,7 @@
 ---
 deplot fullstack приложения 2025
 Деплой Full-Stack приложения | Полный гайд 2025
+Github Actions - Введение в CI/CD минин 
  
 ---
 Ещё таски:
