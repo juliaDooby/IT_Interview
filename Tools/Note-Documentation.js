@@ -1,3 +1,8 @@
+
+---
+deplot fullstack приложения 2025
+Деплой Full-Stack приложения | Полный гайд 2025
+ 
 ---
 Ещё таски:
 https://habr.com/ru/articles/871792/
