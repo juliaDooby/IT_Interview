@@ -12,6 +12,8 @@ https://chatgpt.com/c/67ab1fae-9e50-8008-82d8-383301f15652
 https://fsymbols.com/ru/
 https://stablediffusion.com.ru/
 https://ask.chadgpt.ru/
+https://gpt-open.ru/
+https://codesandbox.io/p/sandbox/testovoe-zadanie-forked-jwmrk?file=%2FTASK.md
 
 ---
 https://www.google.com/search?q=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE&oq=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjIzNzMyajBqMTWoAgiwAgHxBfs2F-nk5uhB&sourceid=chrome&ie=UTF-8
@@ -103,6 +105,7 @@ https://habr.com/ru/companies/netologyru/articles/327294/
 https://www.google.com/search?q=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4%D0%B0&oq=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE&aqs=chrome.1.69i57j33i10i160l3.8853j0j15&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bfce9193,vid:0f6VrVVNNUo
 https://www.youtube.com/watch?v=ckH_v_1kHJ8
 https://www.youtube.com/watch?v=VOSqrBKjr3g
+https://www.youtube.com/watch?v=DKw5a78xLnE
 
 ---
 git command/npm & Conflicts:
@@ -159,6 +162,7 @@ https://qna.habr.com/q/630180
 https://webformyself.com/znakomstvo-s-ajax-dlya-front-end-dizajnerov-osnovy-ajax/
 https://webdesign.tutsplus.com/an-introduction-to-ajax-for-front-end-designers--cms-25099t
 https://www.google.com/search?q=ajax+s%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4&sxsrf=APwXEdesdjgm7wqHxOH31V-mU7vNw3AXEA%3A1681320014657&ei=Tug2ZP3RJ87QqwHD0YTgDA&ved=0ahUKEwj9sOiR7aT-AhVO6CoKHcMoAcwQ4dUDCA8&uact=5&oq=ajax+s%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIJCCEQoAEQChAqMgcIIRCgARAKOgoIABBHENYEELADOgoIABCKBRCwAxBDOhsILhCKBRDUAhDIAxCwAxBDEIsDEKgDEJsDGAE6HgguEIoFEMcBENEDEMgDELADEEMQiwMQqAMQ0gMYAToYCC4QigUQyAMQsAMQQxCLAxCoAxCaAxgBOgcIABANEIAEOgkIABANEIAEEAo6CAgAEAgQHhANSgQIQRgAUOsdWIQnYPooaAFwAXgAgAG2AYgBrQaSAQM0LjSYAQCgAQHIARS4AQLAAQHaAQYIARABGAg&sclient=gws-wiz-serp
+https://codesandbox.io/p/sandbox/testovoe-zadanie-forked-jwmrk?file=%2FTASK.md
 
 ---
 Тестовые и оформление задач: 
@@ -248,6 +252,7 @@ https://getmatch.ru/vacancies/moscow?p=1&sa=150000&pa=all
 https://getmatch.ru/applications?s=menu
 https://geeklink.io/vakansii/
 https://yandex.ru/project/autoru/vac-frontend
+https://rosatom-career.ru/vacancies
 
 ---
 Фриланс:
@@ -284,7 +289,7 @@ https://strapi.io/
 https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
 https://theb.ai/
 https://360.yandex.ru/mail/#inbox
-
+https://scripty.abhisheksatre.com/#/download
 
 ---
 Список проектов:
