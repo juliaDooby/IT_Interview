@@ -207,7 +207,7 @@ https://easyoffer.ru/rating/frontend_developer
 https://getmatch.ru/vacancies/20299?s=applications_status
 
 ---
-Собеседования:
+Собеседования/Самопрезентация:
 Запись собесов https://www.google.com/search?q=pfgbcm+cj%2Cctljdfybz+rfr+ltkfnm+xthtp+ntktuhfvv&oq=pfgbcm+cj%2Cctljdfybz+rfr+ltkfnm+xthtp+ntktuhfvv&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyCQgDECEYChigAdIBCjE0MTEwajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
 
 ---
