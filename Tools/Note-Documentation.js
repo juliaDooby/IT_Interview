@@ -3,11 +3,16 @@
 https://learn.javascript.ru/
 https://getmatch.ru/
 https://hh.ru/resume/eef05344ff0e31871f0039ed1f453551483930
+https://www.rabota.ru/
+https://career.habr.com/salaries?qualification=Middle&skills[]=react-js&skills[]=javascript&skills[]=typescript&spec_aliases[]=frontend
 
 ---
 Ai-ассистент:
 https://chatgpt.com/c/67ab1fae-9e50-8008-82d8-383301f15652
 https://fsymbols.com/ru/
+https://stablediffusion.com.ru/
+https://ask.chadgpt.ru/
+
 ---
 https://www.google.com/search?q=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE&oq=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjIzNzMyajBqMTWoAgiwAgHxBfs2F-nk5uhB&sourceid=chrome&ie=UTF-8
 https://ru.stackoverflow.com/questions/1535354/%D0%9A%D0%B0%D0%BA-%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C-fullstack-%D0%BD%D0%B0-github
@@ -96,6 +101,8 @@ https://tproger.ru/articles/frontend-roadmap-2021
 https://tproger.ru/translations/oop-js-fundamentals
 https://habr.com/ru/companies/netologyru/articles/327294/
 https://www.google.com/search?q=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4%D0%B0&oq=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE&aqs=chrome.1.69i57j33i10i160l3.8853j0j15&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bfce9193,vid:0f6VrVVNNUo
+https://www.youtube.com/watch?v=ckH_v_1kHJ8
+https://www.youtube.com/watch?v=VOSqrBKjr3g
 
 ---
 git command/npm & Conflicts:
@@ -222,6 +229,12 @@ https://aeza.ru/virtual-servers
 Беспл. Курсы:
 https://education.yandex.ru/handbook/algorithms
 https://ru.hexlet.io/courses/js-frontend-architecture
+https://practicum.yandex.ru/middle-frontend/?from=catalog
+https://start.practicum.yandex/algorithms-interview/?from=catalog
+https://practicum.yandex.ru/algorithms/?from=catalog
+https://practicum.yandex.ru/catalog/programming/
+https://t.me/AutoAnswersBot
+https://neuralinsight.ru/6-besplatnyh-nejrosetej-dlya-izobrazhenij-v-2023-godu/
 
 ---
 Зависимости В раб. проектах: 
@@ -234,6 +247,7 @@ https://hh.ru/resume/cb5e5bd0ff0bf17b370039ed1f495a4f4e7a4e
 https://getmatch.ru/vacancies/moscow?p=1&sa=150000&pa=all
 https://getmatch.ru/applications?s=menu
 https://geeklink.io/vakansii/
+https://yandex.ru/project/autoru/vac-frontend
 
 ---
 Фриланс:
@@ -252,23 +266,32 @@ https://habr.com/ru/companies/getmatch/articles/650337/
 https://habr.com/ru/companies/getmatch/articles/547028/
 
 ---
-Нетворкинг и тусовки:
+Нетворкинг/тусовки/аккаунты:
 https://www.google.com/search?q=DRINKUP+IT+%D0%9C%D0%9E%D0%A1%D0%9A%D0%92%D0%90&oq=DRINKUP+IT+%D0%9C%D0%9E%D0%A1%D0%9A%D0%92%D0%90&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMgcIAhAAGO8FMgcIAxAAGO8FMgcIBBAAGO8F0gEKMTA5NDRqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
 https://www.google.com/search?q=it+events+moscow&oq=IT+events+&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCjEyNzQ0ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8
 https://dev.to/
 https://digitalhr.today/recruitingtech?lang=ru
+https://career.habr.com/users/auth_required
+
+---
+Github Примеры профиля (и их шаги-рост): 
+https://github.com/rishavchanda
 
 ---
 Для работы в проектах:
+https://chatgpt.com/
 https://strapi.io/
 https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
+https://theb.ai/
+https://360.yandex.ru/mail/#inbox
+
 
 ---
 Список проектов:
 https://github.com/S-404/memory-game
 
 ---
-  Backend Java:
+Backend Java:
 https://github.com/javadev/LeetCode-in-Java
 
 --- 
@@ -283,10 +306,6 @@ https://preview.themeforest.net/item/tonni-personal-portfolio-react-template/ful
 https://jstemplate.net/react-portfolio-templates
 https://portfo-site.vercel.app/#home
 https://preview.themeforest.net/item/krozo-react-personal-portfolio-template/full_screen_preview/33293104?_ga=2.200656232.756826940.1673242976-1631037780.1672128513&irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-kXjBwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
-
-Арт сайт или написать собственный:
-https://mers-react.vercel.app/
-https://themeforest.net/item/mers-personal-portfolio-react-template/38209283?irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-jx6BwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
 
 
 
