@@ -94,4 +94,13 @@ https://habr.com/ru/articles/332130/
 https://cp.beget.com/cloud/servers/mern-cloud-13
 https://my.selectel.ru/login-sessions
 
+---
+Нетворкинг и тусовки:
+https://www.google.com/search?q=DRINKUP+IT+%D0%9C%D0%9E%D0%A1%D0%9A%D0%92%D0%90&oq=DRINKUP+IT+%D0%9C%D0%9E%D0%A1%D0%9A%D0%92%D0%90&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMgcIAhAAGO8FMgcIAxAAGO8FMgcIBBAAGO8F0gEKMTA5NDRqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=it+events+moscow&oq=IT+events+&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCjEyNzQ0ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8
+https://dev.to/
+https://digitalhr.today/recruitingtech?lang=ru
+
+---
+
 
