@@ -84,6 +84,14 @@ https://www.linkedin.com/in/danchellito/
 https://habr.com/ru/companies/getmatch/articles/650337/
 https://habr.com/ru/companies/getmatch/articles/547028/
 ---
-  
+
+  ---
+VPS сервера:
+https://www.scaleway.com/en/pricing/elastic-metal/
+https://simplecloud.ru/price/
+https://poiskvps.ru/vps/nedorogoy
+https://habr.com/ru/articles/332130/
+https://cp.beget.com/cloud/servers/mern-cloud-13
+https://my.selectel.ru/login-sessions
 
 
