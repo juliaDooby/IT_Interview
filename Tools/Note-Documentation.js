@@ -257,6 +257,9 @@ https://rosatom-career.ru/vacancies
 ---
 Фриланс:
 https://freelance.habr.com/tasks/535693?f=telegram_b
+Портфолио-слайдер:
+https://friendlee.pro/files/friend_Lee_Presentation.pdf
+https://workspace.ru/awards/
 
 --- 
 IT Brand:
