@@ -75,6 +75,10 @@ https://www.youtube.com/watch?v=G7pAP1TvZSw
 https://www.youtube.com/watch?v=tfvm2k5c9JI
 https://www.youtube.com/
 https://www.youtube.com/watch?v=NErrGZ64OdE
+https://tproger.ru/articles/frontend-roadmap-2021
+https://tproger.ru/translations/oop-js-fundamentals
+https://habr.com/ru/companies/netologyru/articles/327294/
+https://www.google.com/search?q=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4%D0%B0&oq=jjg+%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%84%D1%80%D0%BE&aqs=chrome.1.69i57j33i10i160l3.8853j0j15&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bfce9193,vid:0f6VrVVNNUo
 
 ---
 git command/npm & Conflicts:
@@ -85,9 +89,10 @@ https://opensource.com/sites/default/files/u128651/git_guide4.png
 https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git
 https://stackoverflow.com/questions/78655688/cannot-find-module-ajv-dist-compile-codegen
 https://stackoverflow.com/questions/70182608/i-am-trying-to-run-npm-start-in-my-terminal-but-it-isnt-working
+https://code.visualstudio.com/docs/getstarted/themes#_selecting-the-color-theme
 
 ---
-Логические/Таски/Задачи/Тренажёры/Вопросы/Ответы:
+Логические/Таски/Задачи/Тренажёры/Вопросы/Ответы/Собесы:
 https://dmitrylavrik.ru/webdevskills/catalog/objects-and-arrays
 https://solvit.space/?utm_source=yt_channel_artemshumeiko&utm_medium=organic&utm_campaign=desc_box&clckid=6a608c4e
 https://leetcode.com/problems/binary-search/description/
@@ -118,6 +123,18 @@ https://www.youtube.com/results?search_query=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B
 https://javarush.com/forum/721
 https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+junior&sxsrf=APwXEdebx9UFeoBoo3tzU-Ptta3aSWsedw%3A1681682618639&ei=unA8ZOS7Jo_LrgTI6KnABw&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADSgQIQRgAUABYAGCtC2gBcAF4AIABAIgBAJIBAJgBAMgBCMABAQ&sclient=gws-wiz-serp
 https://www.youtube.com/watch?v=cGA3N5coak4&t=1s
+https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8%D1%81%D1%8C+%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%BC+%D0%BF%D0%BE+%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%83&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8%D1%81%D1%8C+%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%BC+%D0%BF%D0%BE+&aqs=chrome.1.69i57j33i160l4.9969j0j15&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:e9022b1a,vid:cGA3N5coak4
+https://www.youtube.com/results?search_query=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+junior
+https://www.youtube.com/watch?v=DI_jSP2Jshg
+https://www.youtube.com/watch?v=Glux40jBsZ8&list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi
+https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8%D1%81%D1%8C+%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%BC+%D0%BF%D0%BE+%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%83&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8%D1%81%D1%8C+%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%BC+%D0%BF%D0%BE+&aqs=chrome.1.69i57j33i160l4.9969j0j15&sourceid=chrome&ie=UTF-8
+https://tproger.ru/articles/primery-zadach-po-javascript-dlja-podgotovki-dzhuna-k-sobesedovaniju-po-frontendu
+https://www.youtube.com/@WilliamFiset-videos/videos
+https://habr.com/ru/companies/vdsina/articles/538298/
+https://qna.habr.com/q/630180
+https://webformyself.com/znakomstvo-s-ajax-dlya-front-end-dizajnerov-osnovy-ajax/
+https://webdesign.tutsplus.com/an-introduction-to-ajax-for-front-end-designers--cms-25099t
+https://www.google.com/search?q=ajax+s%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4&sxsrf=APwXEdesdjgm7wqHxOH31V-mU7vNw3AXEA%3A1681320014657&ei=Tug2ZP3RJ87QqwHD0YTgDA&ved=0ahUKEwj9sOiR7aT-AhVO6CoKHcMoAcwQ4dUDCA8&uact=5&oq=ajax+s%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIJCCEQoAEQChAqMgcIIRCgARAKOgoIABBHENYEELADOgoIABCKBRCwAxBDOhsILhCKBRDUAhDIAxCwAxBDEIsDEKgDEJsDGAE6HgguEIoFEMcBENEDEMgDELADEEMQiwMQqAMQ0gMYAToYCC4QigUQyAMQsAMQQxCLAxCoAxCaAxgBOgcIABANEIAEOgkIABANEIAEEAo6CAgAEAgQHhANSgQIQRgAUOsdWIQnYPooaAFwAXgAgAG2AYgBrQaSAQM0LjSYAQCgAQHIARS4AQLAAQHaAQYIARABGAg&sclient=gws-wiz-serp
 
 ---
 Тестовые и оформление задач: 
@@ -144,6 +161,14 @@ https://www.youtube.com/watch?v=BCkWFblNLKU&t=8259s
 https://buildin.ai/share/ee13046b-da1c-4647-b986-08fec57f39f3?code=UMEHJC#d73dfb10-5084-43db-938a-f42eae433fa8
 https://codepen.io/trending
 https://www.google.com/search?q=%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&oq=%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCggFEAAYDxgWGB7SAQk4NTgzajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BF%D0%BE+%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0%D0%BC+js&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BF%D0%BE+%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0%D0%BC+js&aqs=chrome..69i57.8701j0j15&sourceid=chrome&ie=UTF-8
+https://www.freecodecamp.org/news/an-introduction-to-programming-paradigms/
+https://habr.com/ru/companies/ruvds/articles/665290/
+https://habr.com/ru/companies/ruvds/articles/427293/
+https://ru.hexlet.io/blog/posts/java-vs-javascript
+https://habr.com/ru/articles/543646/
+https://www.tbank.ru/career/it/interview/javascript/
+https://neetcode.io/practice
 
 ---
 В помощь к резюме:
@@ -178,6 +203,7 @@ https://ru.hostadvice.com/cloud-hosting/free/
 --- 
 Беспл. Курсы:
 https://education.yandex.ru/handbook/algorithms
+https://ru.hexlet.io/courses/js-frontend-architecture
 
 ---
 Зависимости В раб. проектах: 
@@ -218,4 +244,13 @@ https://digitalhr.today/recruitingtech?lang=ru
 Для работы в проектах:
 https://strapi.io/
 https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
+
+---
+Список проектов:
+https://github.com/S-404/memory-game
+
+
+---
+  Backend Java:
+https://github.com/javadev/LeetCode-in-Java
 
