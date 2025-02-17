@@ -1,6 +1,18 @@
+---
+Осн. Вкладки для работы:
+https://learn.javascript.ru/
+https://getmatch.ru/
+https://hh.ru/resume/eef05344ff0e31871f0039ed1f453551483930
 
 ---
+Ai-ассистент:
+https://chatgpt.com/c/67ab1fae-9e50-8008-82d8-383301f15652
+https://fsymbols.com/ru/
+---
+https://www.google.com/search?q=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE&oq=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D0%BD%D0%B0+github+actions+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjIzNzMyajBqMTWoAgiwAgHxBfs2F-nk5uhB&sourceid=chrome&ie=UTF-8
+https://ru.stackoverflow.com/questions/1535354/%D0%9A%D0%B0%D0%BA-%D0%B2%D1%8B%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C-fullstack-%D0%BD%D0%B0-github
 deploy fullstack приложения 2025
+https://www.youtube.com/watch?v=8OHe6chCWTE&t=543s
 Деплой Full-Stack приложения | Полный гайд 2025
 Github Actions - Введение в CI/CD минин 
 https://genius.courses/%D0%BA%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B4%D0%B5%D0%BF%D0%BB%D0%BE%D0%B9-%D1%81%D0%B0%D0%B9%D1%82%D0%B0-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-github-actions/
@@ -14,6 +26,11 @@ https://www.youtube.com/watch?v=8OHe6chCWTE&t=543s
 https://www.google.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuLp-zgset00&oq=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuLp-zgset00&gs_lcrp=EgZjaHJvbWUyBggAEEUYQTIGCAEQRRg5MgYIAhBFGDzSAQgxMzcxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
 https://www.google.com/search?q=%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BB%D0%B8+fullstack+%D1%81%D0%B0%D0%B9%D1%82+%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C+%D0%B2+github+actions&sca_esv=6f9618c19bdd3933&sxsrf=ADLYWIIfPduEMfsaK4ROqp7fvP2zLHjQCg%3A1735609079107&ei=90pzZ9eVBuDaptQPkeDP2AI&ved=0ahUKEwiX7YPV79CKAxVgrYkEHRHwEysQ4dUDCBA&uact=5&oq=%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BB%D0%B8+fullstack+%D1%81%D0%B0%D0%B9%D1%82+%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C+%D0%B2+github+actions&gs_lp=Egxnd3Mtd2l6LXNlcnAiR9C80L7QttC90L4g0LvQuCBmdWxsc3RhY2sg0YHQsNC50YIg0LfQsNC_0YPRgdGC0LjRgtGMINCyIGdpdGh1YiBhY3Rpb25zMgUQABjvBTIFEAAY7wUyCBAAGIAEGKIEMgUQABjvBTIFEAAY7wVIpw1QugZYugZwAXgBkAEAmAHxBKAB8QSqAQM1LTG4AQPIAQD4AQGYAgKgAoQFwgIKEAAYsAMY1gQYR5gDAIgGAZAGBJIHBTEuNS0xoAfEAw&sclient=gws-wiz-serp#fpstate=ive&vld=cid:3f41c862,vid:icbBxY2BaiE,st:0
 https://habr.com/ru/companies/selectel/articles/836228/
+https://tproger.ru/articles/gajd-kak-razmestit-sajt-besplatno-na-github-pages
+https://www.google.com/search?q=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D1%80%D0%B0%D0%B7%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C+%D0%B4%D0%BB%D1%8F++%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE&sca_esv=f568bbd09fb4579b&sxsrf=AHTn8zp2un1TAtAapPt5zpK5PmuDzFblNA%3A1739653385324&ei=CQGxZ5vGE-OC1fIP-_PFuQU&ved=0ahUKEwjb7sHwycaLAxVjQVUIHft5MVcQ4dUDCBA&uact=5&oq=%D0%BA%D0%B0%D0%BA+fullstack+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D1%80%D0%B0%D0%B7%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C+%D0%B4%D0%BB%D1%8F++%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8+%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE+%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE&gs_lp=Egxnd3Mtd2l6LXNlcnAie9C60LDQuiBmdWxsc3RhY2sg0L_RgNC-0LXQutGCINGA0LDQt9Cy0LXRgNC90YPRgtGMINC00LvRjyAg0LTQtdC80L7QvdGB0YLRgNCw0YbQuNC4INGB0L7QstC10YDRiNC10L3QvdC-INCx0LXRgdC_0LvQsNGC0L3QvkiHhAJQ8xtY_IECcAl4AZABAJgB6AKgAaspqgEJMzEuMTcuMS4xuAEDyAEA-AEBmAIQoALnDMICChAAGLADGNYEGEfCAgUQABjvBcICCBAAGIAEGKIEwgIIEAAYogQYiQXCAgYQIRgKGCqYAwCIBgGQBgiSBwc4LjcuMC4xoAfWmQE&sclient=gws-wiz-serp#fpstate=ive&vld=cid:7db45b78,vid:ZJIdtm3EbiU,st:0
+
+Одна React-задача, демонстрирующая ключевые навыки на собеседовании
+https://habr.com/ru/articles/871792/
 
 ---
 Источники знаний/Тех Документация:
@@ -199,6 +216,7 @@ https://signup.cloud.oracle.com/?intcmp=OcomFreeTier_cis&language=ru_US
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 https://www.youtube.com/watch?v=vPVAYsc-U60&list=PLTOFW1FqT6SwOevVmg2dyxDGu-tT5d49K
 https://ru.hostadvice.com/cloud-hosting/free/
+https://aeza.ru/virtual-servers
 
 --- 
 Беспл. Курсы:
