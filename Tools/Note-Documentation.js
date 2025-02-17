@@ -1,6 +1,6 @@
 
 ---
-deplot fullstack приложения 2025
+deploy fullstack приложения 2025
 Деплой Full-Stack приложения | Полный гайд 2025
 Github Actions - Введение в CI/CD минин 
 🚀 Деплой Fullstack Приложения [Golang+JS]. СI/CD
@@ -64,6 +64,26 @@ https://github.com/elena-13/JS-Algoritms
 https://www.youtube.com/playlist?list=PL6Wui14DvQPySdPv5NUqV3i8sDbHkCKC5
 
 ---
-Резюме:
+Резюме и площадки вакансий:
 https://getmatch.ru/vacancies?p=1&sa=150000&l=moscow&l=regions_ru&l=remote&pl=js_backend&pl=js_frontend&pa=all&s=menu
 https://hh.ru/resume/cb5e5bd0ff0bf17b370039ed1f495a4f4e7a4e
+https://getmatch.ru/vacancies/moscow?p=1&sa=150000&pa=all
+https://getmatch.ru/applications?s=menu
+https://geeklink.io/vakansii/
+---
+Фриланс:
+https://freelance.habr.com/tasks/535693?f=telegram_b
+
+--- 
+IT Brand:
+https://boosty.to/m0rtymerr?utm_source=youtube&utm_medium=social_cpc&utm_campaign=description
+https://habr.com/ru/companies/getmatch/articles/677188/
+https://www.linkedin.com/in/danchellito/
+---
+Хабр статьи - разное 
+https://habr.com/ru/companies/getmatch/articles/650337/
+https://habr.com/ru/companies/getmatch/articles/547028/
+---
+  
+
+
