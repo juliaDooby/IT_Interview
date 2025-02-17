@@ -16,10 +16,6 @@ https://www.google.com/search?q=%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BB%D0%B8+full
 https://habr.com/ru/companies/selectel/articles/836228/
 
 ---
-Ещё таски:
-https://habr.com/ru/articles/871792/
-
----
 Источники знаний/Тех Документация:
 https://liquidhub.ru/blogs/blog/kak-bystro-verstat
 https://developer.mozilla.org/ru/docs/Learn_web_development
@@ -74,6 +70,11 @@ https://www.youtube.com/watch?v=prOarIqL5Qs
 https://jekyllrb.com/
 https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
 https://www.youtube.com/watch?v=pFKwmEdwZZQ
+https://proglib.io/p/tricky-challenges-js
+https://www.youtube.com/watch?v=G7pAP1TvZSw
+https://www.youtube.com/watch?v=tfvm2k5c9JI
+https://www.youtube.com/
+https://www.youtube.com/watch?v=NErrGZ64OdE
 
 ---
 git command/npm & Conflicts:
@@ -86,7 +87,8 @@ https://stackoverflow.com/questions/78655688/cannot-find-module-ajv-dist-compile
 https://stackoverflow.com/questions/70182608/i-am-trying-to-run-npm-start-in-my-terminal-but-it-isnt-working
 
 ---
-Тренажёры и Ответы:
+Логические/Таски/Задачи/Тренажёры/Вопросы/Ответы:
+https://dmitrylavrik.ru/webdevskills/catalog/objects-and-arrays
 https://solvit.space/?utm_source=yt_channel_artemshumeiko&utm_medium=organic&utm_campaign=desc_box&clckid=6a608c4e
 https://leetcode.com/problems/binary-search/description/
 https://codepen.io/trending 
@@ -98,6 +100,33 @@ https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BB%D0%B
 https://github.com/neetcode-gh/leetcode/tree/main
 https://habr.com/ru/articles/741108/
 https://habr.com/ru/companies/tensor/articles/779718/
+https://www.codewars.com/kata/5277c8a221e209d3f6000b56
+https://www.google.com/search?q=codewars+js+%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D1%80%D0%B5%D1%88%D0%B8%D1%82%D1%8C+%D1%87%D1%82%D0%BE%D0%B1%D1%8B+%D0%BF%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8+%D1%81+8+%D0%BD%D0%B0+7+%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C&oq=codewars+js+%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D1%80%D0%B5%D1%88%D0%B8%D1%82%D1%8C+%D1%87%D1%82%D0%BE%D0%B1%D1%8B+%D0%BF%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8+%D1%81+8+%D0%BD%D0%B0+7+%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjMyNTQ5ajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
+https://www.youtube.com/results?search_query=codewars+js+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+
+https://tproger.ru/articles/10-logicheskih-zadach-s-sobesedovanij-kotorye-zastavjat-zastrelitsja
+https://www.google.com/search?q=%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D1%81+ot+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9&sca_esv=579769985&sxsrf=AM9HkKl9IP5bbG5O7nO5D3zgA3qGFtj-Hg%3A1699272644274&ei=xNdIZZqxEL-uwPAPxd6niAc&ved=0ahUKEwiao9ryq6-CAxU_FxAIHUXvCXEQ4dUDCBA&uact=5&oq=%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D1%81+ot+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9&gs_lp=Egxnd3Mtd2l6LXNlcnAiU9C70L7Qs9C40YfQtdGB0LrQuNC1INGB0YLRgNCw0L3QvdGL0LUg0LfQsNC00LDRh9C4INGBIG90INGB0L7QsdC10YHQtdC00L7QstCw0L3QuNC5MgkQIRigARgKGCoyBxAhGKABGApIv5kBUKAfWI-YAXAPeAGQAQGYAfYDoAHDQqoBDTE3LjIyLjkuNC4wLjG4AQPIAQD4AQGoAhTCAgcQIxjqAhgnwgIWEC4YAxiPARjlAhjqAhi0AhiMA9gBAcICFhAAGAMYjwEY5QIY6gIYtAIYjAPYAQHCAgQQIxgnwgIKEAAYgAQYFBiHAsICERAuGIAEGLEDGIMBGMcBGNEDwgIFEAAYgATCAgsQABiABBixAxiDAcICCxAuGIAEGLEDGIMBwgIHEAAYigUYQ8ICDRAAGIoFGLEDGIMBGEPCAg0QLhiKBRixAxiDARhDwgILEC4YgwEYsQMYgATCAggQABiKBRixA8ICChAAGIoFGLEDGEPCAgUQLhiABMICBxAAGA0YgATCAggQIRgWGB4YHcICERAuGIMBGMcBGLEDGNEDGIAEwgILEAAYigUYsQMYgwHCAhAQLhgUGIMBGIcCGLEDGIAEwgIIEAAYgAQYsQPCAggQLhiABBixA8ICBhAAGBYYHsICCBAAGBYYHhgPwgIIEAAYCBgeGA3CAgUQIRigAcICBBAhGBXCAgUQABiiBOIDBBgAIEGIBgG6BgYIARABGAs&sclient=gws-wiz-serp
+https://www.google.com/search?q=learn+javascript+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+&sxsrf=ALiCzsaTEbFc_JHQ0zwTcQ1wkLKxcneIdg%3A1663015890456&ei=0psfY_23G9eOwPAP4uuV4As&ved=0ahUKEwj96J_7kJD6AhVXBxAIHeJ1BbwQ4dUDCA4&uact=5&oq=learn+javascript+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEB4QFjoKCAAQRxDWBBCwAzoHCAAQsAMQQzoNCAAQ5AIQ1gQQsAMYAToSCC4QxwEQ0QMQyAMQsAMQQxgCOhAIABCABBCHAhCxAxCDARAUOgQIABBDOgUIABCABDoKCAAQgAQQhwIQFDoFCCEQoAFKBAhBGABKBAhGGAFQgANY_CFgoCNoAnAAeACAAYEBiAHQBpIBAzcuMpgBAKABAcgBEsABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz
+https://ru.stackoverflow.com/questions/91093/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D0%BF%D0%BE-javascript
+https://habr.com/ru/articles/871792/
+https://www.google.com/search?q=%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+%D0%BD%D0%B0+%D1%81%D1%80%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0+%D1%81+%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8&oq=%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+%D0%BD%D0%B0+%D1%81%D1%80%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0+%D1%81+%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjIxMjYxajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%B4%D0%BB%D1%8F+%D0%BD%D0%B0%D1%87%D0%B8%D0%B0%D1%8E%D1%89%D0%B8%D1%85+%D1%81+%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8&sxsrf=ALiCzsbahVI5-C8WQTUAOk5GuaaGZvv2wg%3A1668338316477&ei=jNJwY7DXHIaurgTG_ZL4Aw&ved=0ahUKEwiwzd_FhKv7AhUGl4sKHca-BD8Q4dUDCA8&uact=5&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D0%B4%D0%BB%D1%8F+%D0%BD%D0%B0%D1%87%D0%B8%D0%B0%D1%8E%D1%89%D0%B8%D1%85+%D1%81+%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D0%BC%D0%B8&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCCMQsAIQJzoKCAAQRxDWBBCwAzoFCAAQogRKBAhNGAFKBAhBGABKBAhGGABQ4gxY9xhg9BxoAXABeACAAXyIAfoDkgEDMi4zmAEAoAEByAEIwAEB&sclient=gws-wiz-serp
+https://www.google.com/search?sxsrf=ALiCzsb-QoXCes1P7yJCPObPmi6i3EnCaQ:1667903360660&q=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BF%D0%BE+JS+%D1%81+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC&sa=X&ved=2ahUKEwi1s9OasJ77AhVBgosKHUHZBT4Q1QJ6BAgjEAE
+https://www.google.com/search?sxsrf=ALiCzsb-QoXCes1P7yJCPObPmi6i3EnCaQ:1667903360660&q=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+JavaScript+Junior&sa=X&ved=2ahUKEwi1s9OasJ77AhVBgosKHUHZBT4Q1QJ6BAgbEAE
+https://wm-school.ru/js/string_exercises_35.php
+https://ru.stackoverflow.com/questions/91093/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D0%BF%D0%BE-javascript
+https://www.youtube.com/results?search_query=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+javascript+%D0%BF%D0%BE+%D1%82%D0%B5%D0%BC%D0%B0%D0%BC
+https://javarush.com/forum/721
+https://www.google.com/search?q=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+junior&sxsrf=APwXEdebx9UFeoBoo3tzU-Ptta3aSWsedw%3A1681682618639&ei=unA8ZOS7Jo_LrgTI6KnABw&oq=%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+js+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADSgQIQRgAUABYAGCtC2gBcAF4AIABAIgBAJIBAJgBAMgBCMABAQ&sclient=gws-wiz-serp
+https://www.youtube.com/watch?v=cGA3N5coak4&t=1s
+
+---
+Тестовые и оформление задач: 
+https://github.com/some-yummy-nick/frontend-task
+https://github.com/elena-13/JS-Algoritms
+https://www.google.com/search?q=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83&oq=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83+&aqs=chrome..69i57j35i39i362l8.363j0j15&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83&oq=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83+&aqs=chrome..69i57.19485j0j15&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BF%D0%BE+js&oq=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%BF%D0%BE+js+&aqs=chrome..69i57.6669j0j15&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83&oq=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B4%D0%B6%D1%83%D0%BD%D0%B8%D0%BE%D1%80+%D0%B2%D0%B5%D0%B1+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83+&aqs=chrome..69i57j35i39i362l8.363j0j15&sourceid=chrome&ie=UTF-8
 
 ---
 Алгоритмы и структуры данных:
@@ -155,11 +184,6 @@ https://education.yandex.ru/handbook/algorithms
 https://strapi.io/
 
 ---
-Тестовые и оформление задач: 
-https://github.com/some-yummy-nick/frontend-task
-https://github.com/elena-13/JS-Algoritms
-
----
 Резюме и площадки вакансий:
 https://getmatch.ru/vacancies?p=1&sa=150000&l=moscow&l=regions_ru&l=remote&pl=js_backend&pl=js_frontend&pa=all&s=menu
 https://hh.ru/resume/cb5e5bd0ff0bf17b370039ed1f495a4f4e7a4e
@@ -176,6 +200,7 @@ IT Brand:
 https://boosty.to/m0rtymerr?utm_source=youtube&utm_medium=social_cpc&utm_campaign=description
 https://habr.com/ru/companies/getmatch/articles/677188/
 https://www.linkedin.com/in/danchellito/
+https://github.com/avito-tech/playbook/blob/master/developer-profile.md
 
 ---
 Хабр статьи - разное: 
