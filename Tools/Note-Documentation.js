@@ -267,8 +267,27 @@ https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
 Список проектов:
 https://github.com/S-404/memory-game
 
-
 ---
   Backend Java:
 https://github.com/javadev/LeetCode-in-Java
+
+--- 
+Шаблоны для отработки вёрстки + CV Website + Живые образцы сайтов:
+https://reactjsexample.com/38-best-react-portfolio-templates-in-2023/
+https://dizme.vercel.app/index-dark
+https://resumo-react.vercel.app/
+https://preview.themeforest.net/item/droow-react-creative-showcase-portfolio-template/full_screen_preview/37512378?_ga=2.133800397.2147431004.1673272817-1013766026.1669545943&irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-g0TBwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
+https://preview.themeforest.net/item/cvio-personal-portfolio-react-template/full_screen_preview/40041961?_ga=2.196715242.756826940.1673242976-1631037780.1672128513&irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-kTCBwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
+https://tonni-react.vercel.app/#news
+https://preview.themeforest.net/item/tonni-personal-portfolio-react-template/full_screen_preview/38428794?_ga=2.256083528.2147431004.1673272817-1013766026.1669545943&irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-mR6BwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
+https://jstemplate.net/react-portfolio-templates
+https://portfo-site.vercel.app/#home
+https://preview.themeforest.net/item/krozo-react-personal-portfolio-template/full_screen_preview/33293104?_ga=2.200656232.756826940.1673242976-1631037780.1672128513&irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-kXjBwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
+
+Арт сайт или написать собственный:
+https://mers-react.vercel.app/
+https://themeforest.net/item/mers-personal-portfolio-react-template/38209283?irgwc=1&clickid=w-93KPzmLxyPToKQ4QxU3w%3AbUkFR-jx6BwEm3Y0&iradid=275988&irpid=2305834&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_2305834&utm_medium=affiliate&utm_source=impact_radius
+
+
+
 
