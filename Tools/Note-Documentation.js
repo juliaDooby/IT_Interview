@@ -15,9 +15,56 @@ https://www.youtube.com/watch?v=8OHe6chCWTE&t=543s
 https://habr.com/ru/articles/871792/
 
 ---
-Источники знаний:
+Источники знаний/Тех Документация:
+https://liquidhub.ru/blogs/blog/kak-bystro-verstat
+https://developer.mozilla.org/ru/docs/Learn_web_development
 https://learn.javascript.ru/
+https://javascript.ru/
+https://javascript.info/
+https://www.google.com/search?q=javascript+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&sca_esv=6b5ec6d4658d14f9&sxsrf=ADLYWIJTKrfi22p14RwUgzlf7gmddo23jg%3A1734895884476&ei=DGloZ8ndHIWkiLMPl9Wl-AY&ved=0ahUKEwjJk6rnjryKAxUFEmIAHZdqCW8Q4dUDCBE&uact=5&oq=javascript+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&gs_lp=Egxnd3Mtd2l6LXNlcnAiI2phdmFzY3JpcHQg0LTQvtC60YPQvNC10L3RgtCw0YbQuNGPMgUQABiABDIGEAAYFhgeMgYQABgWGB4yCBAAGIAEGKIEMggQABiABBiiBDIFEAAY7wUyBRAAGO8FSJc4UABYmjVwAHgBkAEBmAGpBaAB4TCqAQoyLTE1LjMuMC4zuAEDyAEA-AEBmAIUoALgLsICChAjGIAEGCcYigXCAgoQABiABBhDGIoFwgIFEC4YgATCAggQABiABBjLAZgDAJIHCjItMTUuMy4xLjGgB51-&sclient=gws-wiz-serp
+https://ru.legacy.reactjs.org/docs/conditional-rendering.html
+https://www.youtube.com/watch?v=J3aFEqouK44&t=252s
+https://www.google.com/search?q=typescript+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&sca_esv=568176390&sxsrf=AM9HkKmuYl3ymV_kkCv5Ans0zH9PDbUmVA%3A1695645106716&ei=sn0RZfirK9eOwPAP5dO-sAs&oq=typwscript+%D0%BE%D1%84%D0%B8%D1%88%D0%B8%D0%B0%D0%BB&gs_lp=Egxnd3Mtd2l6LXNlcnAiGXR5cHdzY3JpcHQg0L7RhNC40YjQuNCw0LsqAggCMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHSLMXUABYAHAAeAKQAQCYAQCgAQCqAQC4AQHIAQDiAwQYACBBiAYBkAYI&sclient=gws-wiz-serp
+https://metanit.com/web/typescript/
+https://code.mu/ru/javascript/typescript/book/prime/
+https://metanit.com/web/vuejs/
+https://metanit.com/web/react/
+https://www.google.com/search?q=react+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&oq=react+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIICAIQABgWGB4yCAgDEAAYFhgeMggIBBAAGBYYHjIICAUQABgWGB4yCAgGEAAYFhgeMgYIBxBFGEHSAQk5Mzc5ajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
 https://scriptdev.ru/ 
+https://www.google.com/search?q=react++native+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&sca_esv=804146835f2e9699&sxsrf=ADLYWIJfsWGrt84ZA8kBf9z1SbOjY-Z9vQ%3A1731840672638&ei=oMo5Z6zQJp3l5NoPsKbFgA4&ved=0ahUKEwisoOagmeOJAxWdMlkFHTBTEeAQ4dUDCA8&uact=5&oq=react++native+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&gs_lp=Egxnd3Mtd2l6LXNlcnAiJnJlYWN0ICBuYXRpdmUg0LTQvtC60YPQvNC10L3RgtCw0YbQuNGPMgUQABiABDIFEAAYgAQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESKoVULgCWOsRcAF4AZABAJgB-QSgAcEZqgEJMi0zLjQuMS4xuAEDyAEA-AEBmAIEoALpBsICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIGEAAYBxgewgIHEAAYgAQYDcICCBAAGAUYDRgewgIIEAAYCBgNGB6YAwCIBgGQBgmSBwcxLjAuMi4xoAfoOQ&sclient=gws-wiz-serp
+https://www.google.com/search?q=react+js+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&sca_esv=804146835f2e9699&sxsrf=ADLYWIKct6g0QRZdqHuHgllsNylstI5Ywg%3A1731840661070&ei=lco5Z6T4A_a15NoP_4aA2Ag&oq=react+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&gs_lp=Egxnd3Mtd2l6LXNlcnAiHnJlYWN0INC00L7QutGD0LzQtdC90YLQsNGG0LjRjyoCCAAyBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHki4FFDqBFjqDHABeAGQAQCYAe4DoAGPDKoBBzItMS4xLjK4AQHIAQD4AQGYAgOgAo0GwgIKEAAYsAMY1gQYR5gDAIgGAZAGCJIHCTEuMC4xLjAuMaAHjR8&sclient=gws-wiz-serp
+https://reactdev.ru/libs/redux-toolkit/
+https://www.google.com/search?q=sass+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&oq=scss+&gs_lcrp=EgZjaHJvbWUqDggBEAAYChhDGIAEGIoFMgYIABBFGDkyDggBEAAYChhDGIAEGIoFMgcIAhAAGIAEMgwIAxAAGBQYhwIYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyCQgIEAAYChiABDIHCAkQABiABNIBCTY1MjBqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
+https://html5boilerplate.com/
+http://www.postroika.ru/html/content2.html
+https://www.w3.org/
+https://get.foundation/
+https://www.google.com/search?q=html5+css+3+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&oq=html5+css+3+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKAB0gEKMjA0OTlqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=grid&oq=grid&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIHCAIQLhiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiPAtIBCTc2ODhqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=boostrap-frid&oq=boostrap-frid&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhAMggIAhAAGA0YHjIICAMQABgNGB4yCAgEEAAYDRgeMggIBRAAGA0YHjIICAYQABgNGB4yCAgHEAAYDRge0gEJNTIyNWowajE1qAIIsAIB&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=flexbox&oq=flexbox&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg9MgYIAhBFGD0yBggDEEUYQdIBCTI3MTNqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
+https://webref.ru/
+https://htmlbook.ru/
+https://www.kadrof.ru/articles/49436
+https://skillbox.ru/media/code/bystraya_vyerstka/
+https://www.youtube.com/watch?v=WlxcujsvcIY
+https://www.youtube.com/watch?v=TPACABQTHvM
+https://www.youtube.com/watch?v=tKM44vPHU0U&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=31
+https://www.youtube.com/watch?v=tKM44vPHU0U&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=32
+https://www.youtube.com/watch?v=9bFOUJ9MV_s&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=36
+https://www.youtube.com/watch?v=hK97ofGjuuA&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=38
+https://www.youtube.com/watch?v=2_4WBH-Si0w&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=49
+https://www.youtube.com/watch?v=PYWaUwjofJo&list=PLXZzYzG2cy7yd7rDkqRSmJO0QGjdEeBqK&index=54
+https://www.youtube.com/@cameronmcnz/videos
+https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+
+---
+git command & Conflicts:
+https://stackoverflow.com/questions/10116373/git-push-error-repository-not-found
+https://stackoverflow.com/questions/39837559/why-isnt-my-page-loading-up-on-github
+https://stackoverflow.com/questions/20101994/how-to-git-pull-from-master-into-the-development-branch
+https://opensource.com/sites/default/files/u128651/git_guide4.png
+https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git
 
 ---
 Тренажёры и Ответы:
@@ -47,6 +94,7 @@ https://www.youtube.com/watch?v=8OHe6chCWTE&t=123s
 https://www.youtube.com/watch?v=BCkWFblNLKU&t=8259s
 https://buildin.ai/share/ee13046b-da1c-4647-b986-08fec57f39f3?code=UMEHJC#d73dfb10-5084-43db-938a-f42eae433fa8
 https://codepen.io/trending
+https://www.google.com/search?q=%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&oq=%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B+%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCggFEAAYDxgWGB7SAQk4NTgzajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8
 
 ---
 В помощь к резюме:
