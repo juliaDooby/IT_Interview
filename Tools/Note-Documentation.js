@@ -14,6 +14,7 @@ https://www.youtube.com/watch?v=8OHe6chCWTE&t=543s
 https://www.google.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuLp-zgset00&oq=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuLp-zgset00&gs_lcrp=EgZjaHJvbWUyBggAEEUYQTIGCAEQRRg5MgYIAhBFGDzSAQgxMzcxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
 https://www.google.com/search?q=%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BB%D0%B8+fullstack+%D1%81%D0%B0%D0%B9%D1%82+%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C+%D0%B2+github+actions&sca_esv=6f9618c19bdd3933&sxsrf=ADLYWIIfPduEMfsaK4ROqp7fvP2zLHjQCg%3A1735609079107&ei=90pzZ9eVBuDaptQPkeDP2AI&ved=0ahUKEwiX7YPV79CKAxVgrYkEHRHwEysQ4dUDCBA&uact=5&oq=%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BB%D0%B8+fullstack+%D1%81%D0%B0%D0%B9%D1%82+%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C+%D0%B2+github+actions&gs_lp=Egxnd3Mtd2l6LXNlcnAiR9C80L7QttC90L4g0LvQuCBmdWxsc3RhY2sg0YHQsNC50YIg0LfQsNC_0YPRgdGC0LjRgtGMINCyIGdpdGh1YiBhY3Rpb25zMgUQABjvBTIFEAAY7wUyCBAAGIAEGKIEMgUQABjvBTIFEAAY7wVIpw1QugZYugZwAXgBkAEAmAHxBKAB8QSqAQM1LTG4AQPIAQD4AQGYAgKgAoQFwgIKEAAYsAMY1gQYR5gDAIgGAZAGBJIHBTEuNS0xoAfEAw&sclient=gws-wiz-serp#fpstate=ive&vld=cid:3f41c862,vid:icbBxY2BaiE,st:0
 https://habr.com/ru/companies/selectel/articles/836228/
+
 ---
 Ещё таски:
 https://habr.com/ru/articles/871792/
@@ -72,6 +73,7 @@ https://docs.docker.com/guides/nodejs/containerize/
 https://www.youtube.com/watch?v=prOarIqL5Qs
 https://jekyllrb.com/
 https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication
+https://www.youtube.com/watch?v=pFKwmEdwZZQ
 
 ---
 git command/npm & Conflicts:
