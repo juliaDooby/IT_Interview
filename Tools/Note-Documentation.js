@@ -46,6 +46,7 @@ https://habr.com/ru/articles/871792/
 
 ---
 Источники знаний/Тех Документация:
+https://dev.to/?signin=true
 https://liquidhub.ru/blogs/blog/kak-bystro-verstat
 https://developer.mozilla.org/ru/docs/Learn_web_development
 https://developer.mozilla.org/ru/docs/Learn/JavaScript
