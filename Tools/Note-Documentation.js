@@ -1,3 +1,8 @@
+
+---
+vsCode настройка
+https://learnjs.ru/journal/nastroyka-vs-code/
+
 ---
 Осн. Вкладки для работы:
 https://learn.javascript.ru/
