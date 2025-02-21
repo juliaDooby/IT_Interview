@@ -4,6 +4,7 @@ vsCode настройка
 https://learnjs.ru/journal/nastroyka-vs-code/
 https://tproger.ru/articles/vs-code-extensions-for-full-stack-sde
 https://proglib.io/p/vs-code-na-steroidah-15-poleznyh-rasshireniy-dlya-frontendera-2024-08-07
+https://webreaper.dev/posts/best-vscode-extensions-front-end-developers/#prettier---code-formatter
 
 ---
 Осн. Вкладки для работы:
