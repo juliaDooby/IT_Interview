@@ -2,6 +2,7 @@
 ---
 vsCode настройка
 https://learnjs.ru/journal/nastroyka-vs-code/
+https://tproger.ru/articles/vs-code-extensions-for-full-stack-sde
 
 ---
 Осн. Вкладки для работы:
