@@ -6,6 +6,7 @@ https://tproger.ru/articles/vs-code-extensions-for-full-stack-sde
 https://proglib.io/p/vs-code-na-steroidah-15-poleznyh-rasshireniy-dlya-frontendera-2024-08-07
 https://webreaper.dev/posts/best-vscode-extensions-front-end-developers/#prettier---code-formatter
 https://teletype.in/@budnifronta/3ksJ0JEgqGc
+https://thecode.media/vs-code-ext-front-back-test/
 
 ---
 Осн. Вкладки для работы:
