@@ -7,6 +7,7 @@ https://proglib.io/p/vs-code-na-steroidah-15-poleznyh-rasshireniy-dlya-frontende
 https://webreaper.dev/posts/best-vscode-extensions-front-end-developers/#prettier---code-formatter
 https://teletype.in/@budnifronta/3ksJ0JEgqGc
 https://thecode.media/vs-code-ext-front-back-test/
+https://habr.com/ru/articles/756782/
 
 ---
 Осн. Вкладки для работы:
