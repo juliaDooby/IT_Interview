@@ -1,5 +1,14 @@
 
 ---
+SEO
+Мой ютуб канал 50/:
+Мой Xабр авторство:
+facebook 50/
+insta 50/
+Tiktok - art 50/
+площадки арта, кукол, веб диз и графика, беханс, пинтерест, другие как автора !
+  
+---
 vsCode настройка
 https://learnjs.ru/journal/nastroyka-vs-code/
 https://tproger.ru/articles/vs-code-extensions-for-full-stack-sde
