@@ -29,7 +29,7 @@ https://www.youtube.com/watch?v=SredyjLtpug
  https://www.youtube.com/watch?v=PoIetDK-4Zk
  https://www.youtube.com/watch?v=eP57Bgnsci4
  https://www.youtube.com/watch?v=tzSdiYZ52kI&t=166s
-
+ttps://www.youtube.com/watch?v=tXieXyxmltk
   https://www.youtube.com/results?search_query=it+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%B2+2025 it собеседования в 2025
  
   https://yandex.ru/video/preview/3147846222488031878
