@@ -1,6 +1,6 @@
 #video
- ютуб https://www.youtube.com/results?search_query=it+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%B2+2025 it собеседования в 2025
-  https://www.youtube.com/watch?v=ymnEkVYBVw0&t=6196s
+ ютуб 
+  https://www.youtube.com/results?search_query=it+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%B2+2025 it собеседования в 2025
   https://www.youtube.com/watch?v=tzSdiYZ52kI&t=166s
   https://yandex.ru/video/preview/3147846222488031878
   https://www.youtube.com/shorts/UMeL_qeh-3Q
