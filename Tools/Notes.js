@@ -1,3 +1,15 @@
+МОКИ, ЛУЧШИЕ ВОПРОСЫ + ЗАДАЧИ, СТАТЬИ 
+вопросы фронтенд разработчика javascript гугл топ вопросов
+https://yandex.ru/search/?text=%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0+javascript+%D0%B3%D1%83%D0%B3%D0%BB+%D1%82%D0%BE%D0%BF+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2&clid=2595562-116&win=492&lr=213
+https://habr.com/ru/companies/ruvds/articles/334538/
+https://github.com/Hexlet/ru-test-assignments
+https://github.com/azat-io/you-dont-know-js-ru
+https://github.com/getify/You-Dont-Know-JS
+https://habr.com/ru/companies/jugru/articles/580976/
+https://habr.com/ru/articles/11673/
+
+--- --- --- --- --- --- --- --- --- --- --- 
+ 
 #video ютуб 
  Прокачка и Накрутка мнения
 Как пройти собеседование на программиста | «Ультимативный гайд» с ‪@om_nazarov‬ https://www.youtube.com/watch?v=tzSdiYZ52kI&t=166s 
