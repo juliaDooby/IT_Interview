@@ -19,8 +19,12 @@ live coding frontend
 ---------------------
 livecode interview:
 leetcode +2 
+https://www.youtube.com/watch?v=L2RPLVLKiAY
 codewars +2
 https://youtu.be/iL4srHpf6gE?si=gtcM0yjo2PpqaaPB
+https://www.youtube.com/watch?v=ElCvv0iFWq4
+https://www.youtube.com/watch?v=2zVAkqcUI4o
+https://www.youtube.com/watch?v=LuRY_lBKxFc
 https://www.youtube.com/watch?v=66QWHFLdrLQ
 https://medium.com/@nlapshin1989/%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8-live-coding-%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-82ccdce731db
 https://habr.com/ru/articles/470407/
@@ -33,9 +37,13 @@ https://youtu.be/YM-9nPLqezQ?si=0C57whbzKjTuOGPM
 https://youtu.be/Dd7_WnFq6AY?si=gb4pyg4bjD95uhs7
 https://dzen.ru/a/YzhrmOd93TN2kFbN
 
-java coding: https://www.youtube.com/watch?v=6Ngul82oI18
 ---------------------
 Моки:
+https://youtu.be/FG-JwPQYQdw?si=_jQ5e5vwJp-yKdef
+https://www.youtube.com/watch?v=lq4eefCCuVo
+https://www.youtube.com/watch?v=jf5TkGzWqiM
+https://www.youtube.com/watch?v=LuRY_lBKxFc
+https://www.youtube.com/watch?v=Y1SekvuZ3M4
 https://www.youtube.com/watch?app=desktop&v=zVMQGB8Z8bw
 https://www.youtube.com/watch?v=FJ4xT837nq0
 https://www.youtube.com/watch?v=9QF-24Wc_MU
@@ -53,11 +61,16 @@ https://youtu.be/SToIrImHm4Y?si=xpX3oYdxpQevXaLU
 https://www.youtube.com/watch?v=4Z2cUITcT3I
 https://www.youtube.com/watch?v=4iME6tUYJEM
 
+java coding: https://www.youtube.com/watch?v=6Ngul82oI18
+https://youtu.be/s-HKN_OmKPk?si=3RPn3tEPGl-a1J0s
+https://youtu.be/ThHSgWSwAbk?si=7Ey060RG-GeZRaXn
 jv
 https://www.youtube.com/watch?v=773ox4bJ8jo
 https://www.youtube.com/watch?v=DmvLusQxvDw
 https://www.youtube.com/watch?v=Zx6gdtp77qc
 https://youtu.be/RBJxVG_sDRo?si=FM_WPleUEcTRpMBV
+https://www.youtube.com/watch?v=hlYCh0J7468
+https://youtu.be/6Ngul82oI18?si=Gkrp1X6tZRACWkSX
 
 ---------------------
 по делу информативные:
