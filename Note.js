@@ -9,6 +9,7 @@ https://coderun.yandex.ru/
 Yandex Code
 Visual Studio Live Share.
 Interview Cups 
+Sandbox
 ---------------------
 ai yandex ассистент
 https://habr.com/ru/companies/yandex/articles/841436/
