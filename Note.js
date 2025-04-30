@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=JlYuyoIpuE4
 https://www.youtube.com/watch?v=WG9pbhbl5H0
 https://www.youtube.com/watch?v=osTcpLyCPr8
 https://www.youtube.com/watch?v=8FV-y2dDkKU !
+https://habr.com/ru/articles/470407/
+https://www.youtube.com/watch?v=NT3bAtdBcGg
 
 https://habr.com/ru/articles/821473/
 https://www.youtube.com/watch?v=2aov6e_anBs
