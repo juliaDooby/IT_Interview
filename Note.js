@@ -4,6 +4,7 @@
 Проблемно-ориентиров.обучение
 ---------------------
 Психолог. Подготовка: 
+https://habr.com/ru/articles/821473/
 https://www.youtube.com/watch?v=2aov6e_anBs
 https://www.youtube.com/watch?v=BrpCJrvRyFQ
 https://www.youtube.com/watch?v=KN-o3YpXMx0
