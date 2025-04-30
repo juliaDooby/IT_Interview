@@ -18,7 +18,11 @@ https://youtu.be/5xf4_Kx7azg?si=EfiblxZn8wBVuD3U
 https://youtu.be/YM-9nPLqezQ?si=0C57whbzKjTuOGPM
 https://youtu.be/Dd7_WnFq6AY?si=gb4pyg4bjD95uhs7
 
-
+Моки
+https://youtu.be/xdr4rjXbuSQ?si=yFkyWFmT4J5WbUWC
+https://youtu.be/xdr4rjXbuSQ?si=1DeljZPUd5TZLY9r
+https://youtu.be/Dd7_WnFq6AY?si=YgnnIIPnf85ATjcp
+https://youtu.be/SToIrImHm4Y?si=xpX3oYdxpQevXaLU
 ---------------------------------------------------------------------------------------------
 Выбор по команде и процесссам, итогам, и стеку проектам
 
