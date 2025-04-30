@@ -23,6 +23,9 @@ https://youtu.be/xdr4rjXbuSQ?si=yFkyWFmT4J5WbUWC
 https://youtu.be/xdr4rjXbuSQ?si=1DeljZPUd5TZLY9r
 https://youtu.be/Dd7_WnFq6AY?si=YgnnIIPnf85ATjcp
 https://youtu.be/SToIrImHm4Y?si=xpX3oYdxpQevXaLU
+
+по делу
+https://youtu.be/JVtWJ6BxKas?si=ZcyXtdF03Q7cXJKu
 ---------------------------------------------------------------------------------------------
 Выбор по команде и процесссам, итогам, и стеку проектам
 
