@@ -3,6 +3,20 @@
 3 вёрстка практика https://youtu.be/yFcDHCOAue0?si=IVz-KC22-FsCegug
 Проблемно-ориентиров.обучение
 ---------------------
+Психолог. Подготовка: 
+https://www.youtube.com/watch?v=KN-o3YpXMx0
+https://www.youtube.com/watch?v=8FV-y2dDkKU
+https://www.youtube.com/watch?v=WG9pbhbl5H0
+https://www.youtube.com/watch?v=e35YvLa83y0
+https://www.youtube.com/shorts/Wlnh536rAOU
+https://www.youtube.com/watch?v=osTcpLyCPr8
+https://www.youtube.com/watch?v=3yhOYfLDh6A
+https://www.youtube.com/watch?v=h3-zm6UU9gw
+https://www.youtube.com/watch?v=JlYuyoIpuE4
+https://www.youtube.com/watch?v=BrpCJrvRyFQ
+https://www.youtube.com/watch?v=2aov6e_anBs
+
+    
 песочницы 
 https://meet2code.com/
 https://coderun.yandex.ru/
