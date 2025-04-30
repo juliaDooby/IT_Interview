@@ -61,7 +61,7 @@ https://youtu.be/Dd7_WnFq6AY?si=YgnnIIPnf85ATjcp
 https://youtu.be/SToIrImHm4Y?si=xpX3oYdxpQevXaLU
 https://www.youtube.com/watch?v=4Z2cUITcT3I
 https://www.youtube.com/watch?v=4iME6tUYJEM
-
+---------------------
 java coding: https://www.youtube.com/watch?v=6Ngul82oI18
 https://youtu.be/s-HKN_OmKPk?si=3RPn3tEPGl-a1J0s
 https://youtu.be/ThHSgWSwAbk?si=7Ey060RG-GeZRaXn
@@ -72,7 +72,7 @@ https://www.youtube.com/watch?v=Zx6gdtp77qc
 https://youtu.be/RBJxVG_sDRo?si=FM_WPleUEcTRpMBV
 https://www.youtube.com/watch?v=hlYCh0J7468
 https://youtu.be/6Ngul82oI18?si=Gkrp1X6tZRACWkSX
-
+https://www.youtube.com/watch?v=y3y9tmQNPCc
 ---------------------
 по делу информативные:
 https://youtu.be/JVtWJ6BxKas?si=ZcyXtdF03Q7cXJKu
