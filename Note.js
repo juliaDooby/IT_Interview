@@ -47,6 +47,7 @@ https://dzen.ru/a/YzhrmOd93TN2kFbN
 гугл запроос live coding на собеседовании
 ---------------------
 Моки:
+https://www.youtube.com/watch?v=popkBBjbAv8
 https://www.youtube.com/watch?v=R3aIQgw7LJ8
 https://youtu.be/vGri62BVTkE?si=-WBUTZg2rY4DNMhM
 https://www.youtube.com/watch?v=F20G1m-yDsw
