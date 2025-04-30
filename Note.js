@@ -5,6 +5,18 @@
 
 ai yandex ассистент
 https://habr.com/ru/companies/yandex/articles/841436/
+
+запрос ютуб:
+live coding frontend
+
+livecode interview:
+https://youtu.be/YtPvaltPzbY?si=O7v8yrCJBAUMHQvz
+https://youtu.be/ai1zmNO5Z3E?si=_w8IZqcsI0ap53UA
+https://youtu.be/H20LG9TXDKQ?si=_jmXdXQkNYH6ROUi
+https://youtu.be/yqkjMkdte-s?si=8NeWqGq5hanyG-Hm
+https://youtu.be/5xf4_Kx7azg?si=EfiblxZn8wBVuD3U
+
+
 ---------------------------------------------------------------------------------------------
 Выбор по команде и процесссам, итогам, и стеку проектам
 
