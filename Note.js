@@ -13,6 +13,8 @@ https://habr.com/ru/companies/yandex/articles/841436/
 live coding frontend
 ---------------------
 livecode interview:
+leetcode +2 
+codewars +2
 https://habr.com/ru/articles/470407/
 https://youtu.be/YtPvaltPzbY?si=O7v8yrCJBAUMHQvz
 https://youtu.be/ai1zmNO5Z3E?si=_w8IZqcsI0ap53UA
