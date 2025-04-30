@@ -39,6 +39,7 @@ https://dzen.ru/a/YzhrmOd93TN2kFbN
 
 ---------------------
 Моки:
+https://youtu.be/FG-JwPQYQdw?si=peQwrLPYdtlHA4ds syst design
 https://youtu.be/FG-JwPQYQdw?si=_jQ5e5vwJp-yKdef
 https://www.youtube.com/watch?v=lq4eefCCuVo
 https://www.youtube.com/watch?v=jf5TkGzWqiM
