@@ -1,5 +1,5 @@
 1 Ведение дневника прогресса в практике собеседований 
-
+2 Моки информативные с лайвкодингам по уровню - не более 15
 3 вёрстка практика https://youtu.be/yFcDHCOAue0?si=IVz-KC22-FsCegug
 Проблемно-ориентиров.обучение
 
@@ -15,6 +15,8 @@ https://youtu.be/ai1zmNO5Z3E?si=_w8IZqcsI0ap53UA
 https://youtu.be/H20LG9TXDKQ?si=_jmXdXQkNYH6ROUi
 https://youtu.be/yqkjMkdte-s?si=8NeWqGq5hanyG-Hm
 https://youtu.be/5xf4_Kx7azg?si=EfiblxZn8wBVuD3U
+https://youtu.be/YM-9nPLqezQ?si=0C57whbzKjTuOGPM
+https://youtu.be/Dd7_WnFq6AY?si=gb4pyg4bjD95uhs7
 
 
 ---------------------------------------------------------------------------------------------
