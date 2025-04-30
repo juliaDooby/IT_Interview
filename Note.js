@@ -18,6 +18,10 @@ https://habr.com/ru/companies/yandex/articles/841436/
 live coding frontend
 ---------------------
 livecode interview:
+https://www.youtube.com/watch?v=2aov6e_anBs
+https://www.youtube.com/watch?v=xLMdNk4DGOc
+https://www.youtube.com/watch?v=A0Lp8TMCFhA
+https://www.youtube.com/watch?app=desktop&v=PVStvNmx8k0&t=0s
 https://www.youtube.com/watch?v=JfgxO5d5j_I chess 
 https://www.youtube.com/watch?v=D52wJD_WuAg
 leetcode +2 
@@ -43,6 +47,34 @@ https://dzen.ru/a/YzhrmOd93TN2kFbN
 гугл запроос live coding на собеседовании
 ---------------------
 Моки:
+https://www.youtube.com/watch?v=R3aIQgw7LJ8
+https://youtu.be/vGri62BVTkE?si=-WBUTZg2rY4DNMhM
+https://www.youtube.com/watch?v=F20G1m-yDsw
+https://www.youtube.com/watch?v=_1PQ-Nn9s7A
+https://www.youtube.com/watch?v=o21OWkTS6lc
+https://www.youtube.com/watch?v=K34fWMUInTo
+https://www.youtube.com/watch?v=rMud18AxcVc
+https://www.youtube.com/watch?v=anqV1pA0N6U
+https://www.youtube.com/watch?v=d4iq9-ZxqCw
+https://www.youtube.com/watch?v=VESgMTzFtKg
+https://www.youtube.com/watch?v=498UIks8UOk
+https://www.youtube.com/watch?v=IObtKYSmgOI
+https://www.youtube.com/watch?v=pCZ2DeLNy0c
+https://www.youtube.com/watch?v=EstPaMySOds
+https://www.youtube.com/watch?v=bqQI9rFm1ro
+https://www.youtube.com/watch?v=B40DXnO5pWI
+https://www.youtube.com/watch?app=desktop&v=QNVe5oUFR68
+https://youtu.be/BK2_YpRK41I?si=r1SYZzR6mNEmK4Sq
+https://www.youtube.com/watch?v=MINiNU_juww
+https://www.youtube.com/watch?v=VlzPNfdNt_k
+https://www.youtube.com/watch?v=U2PWmmiYzjM
+https://youtu.be/4vL-Qf8XJAE?si=-e_1M6hYCC_90GVh
+https://www.youtube.com/watch?v=5zQTxdKKM-M
+https://www.youtube.com/watch?v=Awnog8KYub4
+https://www.youtube.com/watch?v=ii4uyl61xns
+https://www.youtube.com/watch?v=3kLS5UPvfss
+https://www.youtube.com/watch?v=F20G1m-yDsw
+https://www.youtube.com/watch?v=jJlxdHS3B2I
 https://www.youtube.com/watch?v=M40NxQQo5z0 syst design 
 https://www.youtube.com/watch?app=desktop&v=nToDJ0sh5Z4&t=0s
 https://www.youtube.com/watch?v=F1MFhn2gawk
@@ -76,7 +108,9 @@ https://youtu.be/SToIrImHm4Y?si=xpX3oYdxpQevXaLU
 https://www.youtube.com/watch?v=4Z2cUITcT3I
 https://www.youtube.com/watch?v=4iME6tUYJEM
 ---------------------
-java coding: https://www.youtube.com/watch?v=6Ngul82oI18
+java coding: 
+https://youtu.be/i0SM3DSkn0k?si=PweWUKgksQJh49fg
+https://www.youtube.com/watch?v=6Ngul82oI18
 https://www.youtube.com/watch?v=F1MFhn2gawk
 https://youtu.be/jGqVSWK8RPw?si=xajM0l0JDfWyRlk2
 https://www.youtube.com/watch?v=c2p8lT7SZmI
