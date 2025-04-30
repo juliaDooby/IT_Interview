@@ -18,6 +18,8 @@ https://habr.com/ru/companies/yandex/articles/841436/
 live coding frontend
 ---------------------
 livecode interview:
+https://www.youtube.com/watch?v=JfgxO5d5j_I chess 
+https://www.youtube.com/watch?v=D52wJD_WuAg
 leetcode +2 
 https://www.youtube.com/watch?v=L2RPLVLKiAY
 codewars +2
@@ -37,11 +39,23 @@ https://youtu.be/YM-9nPLqezQ?si=0C57whbzKjTuOGPM
 https://youtu.be/Dd7_WnFq6AY?si=gb4pyg4bjD95uhs7
 https://dzen.ru/a/YzhrmOd93TN2kFbN
 
+
+гугл запроос live coding на собеседовании
 ---------------------
 Моки:
+https://www.youtube.com/watch?v=M40NxQQo5z0 syst design 
+https://www.youtube.com/watch?app=desktop&v=nToDJ0sh5Z4&t=0s
+https://www.youtube.com/watch?v=F1MFhn2gawk
+https://www.youtube.com/watch?v=WQAwMdwbI6M
+https://www.youtube.com/watch?v=bWQmVMDgmPw
+https://www.youtube.com/watch?v=HYz--nZSTjg
+https://www.youtube.com/watch?v=Dd7_WnFq6AY
+https://www.youtube.com/watch?v=j4hpI-nTtrg
+https://www.youtube.com/watch?v=ilZiDZ_rXXo
 https://youtu.be/FG-JwPQYQdw?si=peQwrLPYdtlHA4ds syst design
 https://youtu.be/FG-JwPQYQdw?si=_jQ5e5vwJp-yKdef
 https://www.youtube.com/watch?v=lq4eefCCuVo
+https://www.youtube.com/watch?v=Dd7_WnFq6AY
 https://www.youtube.com/watch?v=jf5TkGzWqiM
 https://www.youtube.com/watch?v=LuRY_lBKxFc
 https://www.youtube.com/watch?v=Y1SekvuZ3M4
@@ -63,6 +77,10 @@ https://www.youtube.com/watch?v=4Z2cUITcT3I
 https://www.youtube.com/watch?v=4iME6tUYJEM
 ---------------------
 java coding: https://www.youtube.com/watch?v=6Ngul82oI18
+https://www.youtube.com/watch?v=F1MFhn2gawk
+https://youtu.be/jGqVSWK8RPw?si=xajM0l0JDfWyRlk2
+https://www.youtube.com/watch?v=c2p8lT7SZmI
+https://www.youtube.com/watch?v=CAC-ICsdwMc
 https://youtu.be/s-HKN_OmKPk?si=3RPn3tEPGl-a1J0s
 https://youtu.be/ThHSgWSwAbk?si=7Ey060RG-GeZRaXn
 jv
