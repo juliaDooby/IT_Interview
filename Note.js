@@ -30,6 +30,8 @@ https://youtu.be/5xf4_Kx7azg?si=EfiblxZn8wBVuD3U
 https://youtu.be/YM-9nPLqezQ?si=0C57whbzKjTuOGPM
 https://youtu.be/Dd7_WnFq6AY?si=gb4pyg4bjD95uhs7
 https://dzen.ru/a/YzhrmOd93TN2kFbN
+
+java coding: https://www.youtube.com/watch?v=6Ngul82oI18
 ---------------------
 Моки
 https://youtu.be/BkqpO6W9voA?si=1liTTqczBv0M_9Fx
