@@ -4,6 +4,13 @@
 Проблемно-ориентиров.обучение
 ---------------------
 Психолог. Подготовка: 
+https://help.imocha.io/how-does-live-coding-interview-work-for-candidates
+https://www.youtube.com/watch?v=e35YvLa83y0
+https://www.youtube.com/watch?v=JlYuyoIpuE4
+https://www.youtube.com/watch?v=WG9pbhbl5H0
+https://www.youtube.com/watch?v=osTcpLyCPr8
+https://www.youtube.com/watch?v=8FV-y2dDkKU !
+
 https://habr.com/ru/articles/821473/
 https://www.youtube.com/watch?v=2aov6e_anBs
 https://www.youtube.com/watch?v=BrpCJrvRyFQ
