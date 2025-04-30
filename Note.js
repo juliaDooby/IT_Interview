@@ -3,6 +3,10 @@
 3 вёрстка практика https://youtu.be/yFcDHCOAue0?si=IVz-KC22-FsCegug
 Проблемно-ориентиров.обучение
 
+
+песочницы 
+https://meet2code.com/
+
 ai yandex ассистент
 https://habr.com/ru/companies/yandex/articles/841436/
 
