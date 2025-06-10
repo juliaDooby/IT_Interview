@@ -1,5 +1,6 @@
 Скачать webstorm или linux webstorm
 https://rutracker.org/forum/viewtopic.php?t=6681727
+https://www.youtube.com/watch?v=xG_Dxh5eHn0
 Оплатить midjourney, chatgpt для работы
 
 
