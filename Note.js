@@ -1,3 +1,9 @@
+Скачать 
+https://rutracker.org/forum/viewtopic.php?t=6681727
+Оплатить midjourney, chatgpt для работы
+
+
+
 1 Ведение дневника прогресса в практике собеседований 
 2 Моки информативные с лайвкодингам по уровню - не более 15
 3 вёрстка практика https://youtu.be/yFcDHCOAue0?si=IVz-KC22-FsCegug
