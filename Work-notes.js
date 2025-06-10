@@ -1,7 +1,43 @@
+ubi tv: 
 Скачать webstorm или linux webstorm
 https://rutracker.org/forum/viewtopic.php?t=6681727
 https://www.youtube.com/watch?v=xG_Dxh5eHn0
-Оплатить midjourney, chatgpt для работы
+
+
+SEO от А до Я для WEB разработчиков. СЕО оптимизация
+https://www.youtube.com/watch?v=JU79n3yU1aA
+
+
+БЫСТРЫЙ FRONTEND. Оптимизация. Как писать JAVASCRIPT
+https://www.youtube.com/watch?v=VNNLNC5h7ZI
+
+CI CD наглядные примеры
+https://www.youtube.com/watch?v=ANj7qUgzNq4
+
+Event Loop от А до Я. Архитектура браузера и Node JS. Движки и рендер. Самое подробное видео
+https://www.youtube.com/watch?v=zDlg64fsQow
+
+
+Что такое Rest API (http)? Soap? GraphQL? Websockets? RPC (gRPC, tRPC). Клиент - сервер. Вся теория
+https://www.youtube.com/watch?v=XaTwnKLQi4A
+
+
+Функциональное программирование от А до Я. ФП на JS. Монады, функторы, каррирование, композиция
+https://www.youtube.com/watch?v=ScgmlDb5ed4
+
+
+TypeScript ФУНДАМЕНТАЛЬНЫЙ КУРС от А до Я. Вся теория + практика
+https://www.youtube.com/watch?v=LWtHl__oEWc
+
+Тестирование JavaScript от А до Я (Jest, React Testing Library, e2e, screenshot)
+https://www.youtube.com/watch?v=y2emL1fMRyY
+
+Архитектура современных FRONTEND приложений. 5 видов. Преимущества и недостатки
+https://www.youtube.com/watch?v=c3JGBdxfYcU
+
+
+
+- Оплатить midjourney, chatgpt для работы
 
 
 
