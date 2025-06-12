@@ -1,5 +1,8 @@
 backend курс java 
 https://www.youtube.com/watch?v=53vvupOtKqw
+ статьи 
+https://www.geeksforgeeks.org/back-end-developer-skills/
+https://www.geeksforgeeks.org/how-to-switch-from-frontend-to-backend-developer/
 
 ubi tv: 
 Скачать webstorm или linux webstorm
