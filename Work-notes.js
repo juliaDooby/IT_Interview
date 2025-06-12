@@ -27,7 +27,6 @@ https://www.youtube.com/watch?v=ANj7qUgzNq4
 Event Loop от А до Я. Архитектура браузера и Node JS. Движки и рендер. Самое подробное видео
 https://www.youtube.com/watch?v=zDlg64fsQow
 
-
 Что такое Rest API (http)? Soap? GraphQL? Websockets? RPC (gRPC, tRPC). Клиент - сервер. Вся теория
 https://www.youtube.com/watch?v=XaTwnKLQi4A
 
