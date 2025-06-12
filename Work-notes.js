@@ -5,6 +5,12 @@ https://www.geeksforgeeks.org/back-end-developer-skills/
 https://www.geeksforgeeks.org/how-to-switch-from-frontend-to-backend-developer/
 https://habr.com/ru/companies/avito/articles/737598/
 
+вёрстка практика
+https://www.youtube.com/results?search_query=%D0%B2%D1%91%D1%80%D1%81%D1%82%D0%BA%D0%B0+sass+
+
+system design 
+https://www.youtube.com/results?search_query=system+design+interview
+
 js q
 https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
 
