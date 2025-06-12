@@ -5,6 +5,9 @@ https://www.geeksforgeeks.org/back-end-developer-skills/
 https://www.geeksforgeeks.org/how-to-switch-from-frontend-to-backend-developer/
 https://habr.com/ru/companies/avito/articles/737598/
 
+собеседование frontend как подготовиться к техническому 
+https://www.youtube.com/results?search_query=%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+frontend+%D0%BA%D0%B0%D0%BA+%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%D1%81%D1%8F+%D0%BA+%D1%82%D0%B5%D1%85%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83+
+
 вёрстка практика
 https://www.youtube.com/results?search_query=%D0%B2%D1%91%D1%80%D1%81%D1%82%D0%BA%D0%B0+sass+
 
