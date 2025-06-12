@@ -3,6 +3,7 @@ https://www.youtube.com/watch?v=53vvupOtKqw
  статьи 
 https://www.geeksforgeeks.org/back-end-developer-skills/
 https://www.geeksforgeeks.org/how-to-switch-from-frontend-to-backend-developer/
+https://habr.com/ru/companies/avito/articles/737598/
 
 js q
 https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
