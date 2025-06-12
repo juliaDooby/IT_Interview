@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=53vvupOtKqw
 https://www.geeksforgeeks.org/back-end-developer-skills/
 https://www.geeksforgeeks.org/how-to-switch-from-frontend-to-backend-developer/
 
+js q
+https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
+
 ubi tv: 
 Скачать webstorm или linux webstorm
 https://rutracker.org/forum/viewtopic.php?t=6681727
