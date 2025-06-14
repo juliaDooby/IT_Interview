@@ -1,3 +1,30 @@
+Собесы мок
+https://www.youtube.com/@public_frontend/videos
+
+https://www.youtube.com/watch?v=sWd6vRxY_x8
+https://www.youtube.com/watch?v=ZB_cqsusCLg
+https://www.youtube.com/watch?v=O42k9hIpbd8
+https://www.youtube.com/watch?v=x7Z7CojT6PE&t=783s
+
+https://www.youtube.com/watch?v=002oqISYJ4Y
+https://www.youtube.com/watch?v=cfmfQNdX4zI
+https://www.youtube.com/watch?v=KiLPknh-VOM
+https://www.youtube.com/watch?v=sGcLJ-YBKL8
+https://www.youtube.com/watch?v=OKvHmup7Wgo
+https://www.youtube.com/watch?v=SToIrImHm4Y
+https://www.youtube.com/watch?v=9-wZ2i6_28Q
+
+
+Задачи лайвкод 
+https://learn.javascript.ru/event-loop#comments
+
+задачи объяснение
+https://www.youtube.com/watch?v=vIZs5tH-HGQ
+https://www.youtube.com/results?search_query=callbach+hell
+https://www.youtube.com/results?search_query=apply+bind+call+javascript
+https://www.youtube.com/results?search_query=event+loop
+https://www.youtube.com/watch?v=1idOY3C1gYU
+
 00:00 Концепция собеседования
 3:09 var, let, const
 3:59 Основные типы JS
