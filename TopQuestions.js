@@ -14,8 +14,11 @@ https://www.youtube.com/watch?v=OKvHmup7Wgo
 https://www.youtube.com/watch?v=SToIrImHm4Y
 https://www.youtube.com/watch?v=9-wZ2i6_28Q
 
-backend 
+backend и цели/2работы/налоги
 https://www.youtube.com/watch?v=IaVypFDNuNw
+https://www.youtube.com/watch?v=tauFh3y2S2k
+https://www.youtube.com/watch?v=x3QXyzFZryk
+https://www.youtube.com/watch?v=8-mDR5erZR4
 
 Задачи лайвкод 
 https://learn.javascript.ru/event-loop#comments
