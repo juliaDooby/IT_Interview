@@ -1,3 +1,16 @@
+Рабочие вкладки (порядок) миним
+https://www.youtube.com/watch?v=5pfqiIxQPPE
+https://www.youtube.com/watch?v=c9lqmPYMdE8
+https://www.youtube.com/watch?v=8-mDR5erZR4
+https://www.youtube.com/watch?v=O42k9hIpbd8
+https://www.youtube.com/watch?v=x7Z7CojT6PE
+https://www.youtube.com/watch?v=ZB_cqsusCLg
+https://www.youtube.com/watch?v=SToIrImHm4Y
+https://www.youtube.com/watch?v=cfmfQNdX4zI
+https://www.youtube.com/watch?v=9-wZ2i6_28Q
+https://www.youtube.com/watch?v=sGcLJ-YBKL8
+https://www.youtube.com/watch?v=KiLPknh-VOM
+
 Собесы мок
 https://www.youtube.com/@public_frontend/videos
 
