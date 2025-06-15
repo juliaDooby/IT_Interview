@@ -14,6 +14,8 @@ https://www.youtube.com/watch?v=OKvHmup7Wgo
 https://www.youtube.com/watch?v=SToIrImHm4Y
 https://www.youtube.com/watch?v=9-wZ2i6_28Q
 
+backend 
+https://www.youtube.com/watch?v=IaVypFDNuNw
 
 Задачи лайвкод 
 https://learn.javascript.ru/event-loop#comments
