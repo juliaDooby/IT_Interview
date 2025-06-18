@@ -1,3 +1,9 @@
+У Вовочки 
+https://www.youtube.com/watch?v=SToIrImHm4Y
+https://www.youtube.com/watch?v=cfmfQNdX4zI
+https://www.youtube.com/watch?v=9-wZ2i6_28Q
+https://www.youtube.com/watch?v=vIZs5tH-HGQ&t=2s
+
 Рабочие вкладки (порядок) миним
 https://www.youtube.com/watch?v=5pfqiIxQPPE
 https://www.youtube.com/watch?v=c9lqmPYMdE8
