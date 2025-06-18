@@ -1,3 +1,24 @@
+Артём Козорев 
+Дослушать эти подкасты! :
+
+Помогаю зрителям пояснять за накрученный опыт на собесе в IT 1.27.07
+https://www.youtube.com/watch?v=c9lqmPYMdE8
+
+Как вкатиться в IT с 0 | Гайд по накрутке опыта 8.12
+https://www.youtube.com/watch?v=x7Z7CojT6PE
+
+5 ШАГОВ ЧТОБЫ НАЙТИ РАБОТУ ПРОГРАММИСТОМ 16.00
+https://www.youtube.com/watch?v=ZB_cqsusCLg
+ 
+КАК ПОЯСНИТЬ ЗА НАКРУЧЕННЫЙ ОПЫТ в IT / РАБОЧИЙ ПРОЦЕССЫ в IT 14.16
+https://www.youtube.com/watch?v=O42k9hIpbd8
+
+УСТРОИТЬСЯ НА РАБОТУ - НУЖНО ВСЕГО ЛИШЬ... 1.20.18
+https://www.youtube.com/watch?v=5pfqiIxQPPE
+
+Работа в IT без судов. Юрист про увольнения, 2 работы, налоги и штрафы 57.19
+https://www.youtube.com/watch?v=8-mDR5erZR4  
+
 У Вовочки 
 https://www.youtube.com/watch?v=SToIrImHm4Y
 https://www.youtube.com/watch?v=cfmfQNdX4zI
