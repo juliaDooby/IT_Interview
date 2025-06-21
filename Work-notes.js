@@ -2,37 +2,15 @@
 Blog fullstack Blog + mini blog 
 School daashboard
 Fashion shop app
-Estate fullstack hotel
+Estate fullstack + hotel
 Typescript practice pets
 threads-bugs
 перегнать себе проекты на сервер 
+node map app
+react native 
 
-Направления
-Digital
-Анимация (мошион для кукол + для иллюстраций оживление)
-Верстка 
-3 D скульптинг, zbrush
-Иллюстрация
-CG концепты
-Концепты персонажей
- Фотография, эфекты фотоарта и худ. ретуши
-Граф, веб дизайн
-Каллиграфия
-Ллетеринг
-Скульптура (разработка кукол)
-Фелтинг (для объёма в глади)
-пластичн. шоколад
-марципан
-мастика
-зефир
-кексы
-маффины
-имб. печенье 
-пищев. пластилин
-молды, 3д печать
-
-Скульптура тортиков
-Украшения (для кукол)
+strapi fashion app - npm develop (strapi) 
+npm run 
 
 
 backend курс java 
