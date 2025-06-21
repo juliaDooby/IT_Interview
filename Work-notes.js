@@ -5,7 +5,7 @@ Fashion shop app
 Estate fullstack hotel
 Typescript practice pets
 threads-bugs
-
+перегнать себе проекты на сервер 
 
 backend курс java 
 https://www.youtube.com/watch?v=53vvupOtKqw
