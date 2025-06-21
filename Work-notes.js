@@ -1,3 +1,7 @@
+практика
+https://www.youtube.com/watch?v=vIZs5tH-HGQ
+https://www.youtube.com/results?search_query=%D0%B2%D0%B5%D1%80%D1%81%D1%82%D0%BA%D0%B0+%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0+middle
+
 00:00 процессы в IT - Как правильно рассказать о своем опыте работы и проектах на собеседовании
 00:43 начало собеса
 02:00 знакомство
