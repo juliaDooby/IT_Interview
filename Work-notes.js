@@ -2,7 +2,7 @@
 Blog fullstack Blog + mini blog 
 School daashboard
 Fashion shop app
-Estate fullstack
+Estate fullstack hotel
 Typescript practice pets
 threads-bugs
 
