@@ -1,11 +1,10 @@
-
-
-
-
-
-
-
-
+для практики  не сделать millionaire quiz app
+Blog fullstack Blog + mini blog 
+School daashboard
+Fashion shop app
+Estate fullstack
+Typescript practice pets
+threads-bugs
 
 
 backend курс java 
