@@ -6,6 +6,12 @@ https://campus.epam.kz/ru/blog/539
 https://www.marieclaire.ru/karera/metod-feinmana-kak-vyuchit-chto-ugodno-i-nikogda-ne-zabyvat/
 https://habr.com/ru/companies/first/articles/861506/
 https://habr.com/ru/companies/ruvds/articles/908884/
+
+Тренировка и восполнение знаний теории и практики
+https://learn.javascript.ru/while-for
+https://leetcode.com/
+https://www.codewars.com/kata/5a55f04be6be383a50000187
+
 Чертоги разума (дворец памяти)
 
 Изучил сам — расскажи другу
