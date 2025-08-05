@@ -1,3 +1,32 @@
+мнемотехника 
+https://www.techinsider.ru/science/676043-nauka-obucheniya-kak-luchshe-usvaivat-novye-znaniya-v-celom-i-it-navyki-v-chastnosti/
+https://campus.epam.kz/ru/blog/539
+https://www.marieclaire.ru/karera/metod-feinmana-kak-vyuchit-chto-ugodno-i-nikogda-ne-zabyvat/
+https://skillbox.ru/media/education/kak-podgotovitsya-k-ekzamenu-metodom-feynmana-ili-rezinovoy-utochki/
+https://skillbox.ru/media/education/kak-podgotovitsya-k-ekzamenu-metodom-feynmana-ili-rezinovoy-utochki/
+https://habr.com/ru/companies/first/articles/861506/
+https://dzen.ru/list/gadgets/chto-takoe-mnemonika-v-programmirovanii
+https://bbbl.dev/articles/it-memory
+https://tproger.ru/experts/boost-your-memory
+https://www.computerworld.com/article/1622361/how-programmers-remember-all-that-programming-stuff.html
+https://vc.ru/hr/772526-kak-uluchshit-pamyat-it-specialistu
+
+Статьи про собесы, технологии из резюме 
+https://habr.com/ru/companies/ruvds/articles/908884/
+https://vc.ru/hr/1295267-kak-ustroen-naem-v-bigtehe-i-chto-pomozhet-proiti-vse-etapy
+https://habr.com/ru/companies/slurm/articles/691782/
+https://habr.com/ru/companies/doubletapp/articles/764424/
+https://habr.com/ru/articles/875004/
+https://pikabu.ru/story/vlyot_v_it_s_dvukh_nog_ultimativnyiy_gayd_po_yeffektivnomu_obucheniyu_11444484#comments
+https://otus.ru/journal/zachem-programmisty-razgovarivajut-s-utochkoj-metod-samoobucheniya-fejnmana/
+https://pikabu.ru/story/moy_rost_dokhodov_s_50k_v_500k_za_dva_goda_i_kak_yeto_na_menya_povliyalo_11076828
+про java разраба топ статьи по обучению
+https://habr.com/ru/companies/yandex_praktikum/articles/860272/
+https://pikabu.ru/story/chto_khotyat_rabotodateli_ot_javaprogrammista_analiziruem_vakansii_dlya_junior_middle_i_senior_10210292
+https://javarush.com/groups/posts/3234-ja-rabotaju-v-produktovoy-fintekh-kompanii-razrabotchiki-deljatsja-opihtom
+https://uchis-online.ru/blog/professii/kak-stat-java-razrabotchikom
+
+
 по hh
 По повед. про опыт из распечаток?
  
