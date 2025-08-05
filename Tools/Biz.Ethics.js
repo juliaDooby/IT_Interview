@@ -26,9 +26,6 @@ https://pikabu.ru/story/chto_khotyat_rabotodateli_ot_javaprogrammista_analizirue
 https://javarush.com/groups/posts/3234-ja-rabotaju-v-produktovoy-fintekh-kompanii-razrabotchiki-deljatsja-opihtom
 https://uchis-online.ru/blog/professii/kak-stat-java-razrabotchikom
 
-
-Считаю, чем больше у тебя формируется новых образов, которые ты можешь связать с существующими концептами, тем проще будет усвоить что-то новое и пробраться к имеющимся знаниям через туннели памяти. А еще я заметил, что в дни, когда активно что-то учу, мозг будто дает больше доступов: запоминать и вспоминать получается гораздо лучше, чем обычно. 
-
 по hh
 По повед. про опыт из распечаток?
  
