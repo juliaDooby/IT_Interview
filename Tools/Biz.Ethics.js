@@ -34,6 +34,8 @@ https://uchis-online.ru/blog/professii/kak-stat-java-razrabotchikom
 Написать то, что их повед. про опыт по этому проекту!
 
 
+
+
 Here
 00:02:39 Типы данных и массивы
 00:05:11 Методы массивов
