@@ -1,4 +1,4 @@
-дочитать 
+дочитать про технику запоминания
 https://vc.ru/hr/772526-kak-uluchshit-pamyat-it-specialistu#comments
 https://tproger.ru/experts/boost-your-memory
 https://bbbl.dev/articles/it-memory
@@ -6,6 +6,9 @@ https://campus.epam.kz/ru/blog/539
 https://www.marieclaire.ru/karera/metod-feinmana-kak-vyuchit-chto-ugodno-i-nikogda-ne-zabyvat/
 https://habr.com/ru/companies/first/articles/861506/
 https://habr.com/ru/companies/ruvds/articles/908884/
+
+Задачи с моков 
+https://www.youtube.com/watch?v=xdr4rjXbuSQ&list=PLXZzYzG2cy7xzK9kwtFUyRG5gpOt8aOoX&index=18
 
 Тренировка и восполнение знаний теории и практики
 https://learn.javascript.ru/while-for
