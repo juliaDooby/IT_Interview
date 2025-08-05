@@ -1,3 +1,13 @@
+дочитать 
+https://vc.ru/hr/772526-kak-uluchshit-pamyat-it-specialistu#comments
+https://tproger.ru/experts/boost-your-memory
+https://bbbl.dev/articles/it-memory
+https://campus.epam.kz/ru/blog/539
+https://www.marieclaire.ru/karera/metod-feinmana-kak-vyuchit-chto-ugodno-i-nikogda-ne-zabyvat/
+https://habr.com/ru/companies/first/articles/861506/
+https://habr.com/ru/companies/ruvds/articles/908884/
+Чертоги разума (дворец памяти)
+
 Изучил сам — расскажи другу
 Когда вы изучаете что-то новое, постарайтесь относиться к своим знаниям не как к секретам и «своей прелести», а наоборот. Вы сделаете себе очень ценный подарок, если после прочтения новой документации или прослушивания лекции, попробуете пересказать его содержание своим друзьям. В тот момент, когда вы что-то рассказываете другим, происходит два очень важных для вас процесса.
 
