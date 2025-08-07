@@ -1,4 +1,6 @@
 
+
+Читерство в законе. Как пройти собеседование и устроиться на работу в дивном новом мире
 https://habr.com/ru/companies/ruvds/articles/908884/
 дочитать про технику запоминания
 https://vc.ru/hr/772526-kak-uluchshit-pamyat-it-specialistu#comments
