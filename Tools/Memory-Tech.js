@@ -42,9 +42,29 @@
 Использование инструментов искусственного интеллекта
 ChatGPT поможет улучшить ваши презентации. С его помощью вы можете найти соответствующие факты и примеры, подтверждающие ваши слова, четче сформулировать мысль и найти потенциальные слабые места в вашей аргументации.  
 
-
-
 я математик и в годы студенчества столкнулся с проблемой поиска понятных объяснений. так случилось, что математиком я стал, вынырнув из сугубо гуманитарной среды и первое время пытался понимать и запоминать на понятных мне ассоциациях. это работало, но крайне медленно и трудозатратно. но уже к 4-му курсу я понял, что могу говорить на языке математики без перевода. думаю, в программировании тоже есть свой метаязык, позволяющий ассоциировать, пересказывать и понимать большинство языков программирования и Фреймворков. жаль, что такой метаязык не преподают в университете и по сути каждый в меру своих способностей вырабатывает его для себя. через обучение и практику конечно.
+
+#Нейросети в помощь при подготовке: 
+Рассылка моих резюме всем (автомат): 
+https://www.loopcv.pro/ru/
+
+Запись собеса тг: 
+https://dzen.ru/a/aI5je77Ikyo3xnKQ 
+
+https://www.webmd.com/balance/what-is-box-breathing
+https://openai.com/index/whisper/
+https://vc.ru/hr/663066-hitrosti-hr-kak-avtomatizirovat-process-naima-sotrudnikov-v-telegram
+
+Deep fake лица
+https://github.com/hacksider/Deep-Live-Camэ
+*** 
+https://interviewing.io/
+https://www.adzuna.co.uk/jobs/prepper
+Площадки для собесов настроить: 
+https://360.yandex.ru/blog/articles/kak-pravilno-provodit-sobesedovanie-onlajn-sovety-dlya-rabotodatelej-i-hr-menedzherov
+https://telemost.yandex.ru/
+https://yandex.ru/support/yandex-360/customers/telemost/desktop/ru/installation.html#installation
+
  
 Читерство в законе. Как пройти собеседование и устроиться на работу в дивном новом мире
 https://habr.com/ru/companies/ruvds/articles/908884/
