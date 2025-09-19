@@ -1145,3 +1145,8 @@ Website: https://juliadooby.github.io/Portfolio/
 
 С уважением,
 Юлия
+
+
+------ актив сопровод на рассылку 
+
+  
