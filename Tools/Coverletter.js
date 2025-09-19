@@ -1087,6 +1087,7 @@ Website: juliadooby.github.io/Portfolio/
 // New:
 также по вакансии: 
 // -------------
+
 Мирошниченко Юлия Владимировна
 
 Контакты:
@@ -1096,7 +1097,7 @@ Skype: @juliaDooby
 Город, Регион: Москва
 CV: https://juliadooby.github.io/CV/
 Github·page: https://github.com/juliaDooby
-Website: juliadooby.github.io/Portfolio/
+Website: https://juliadooby.github.io/Portfolio/
 
 Уважаемый руководитель отдела разработки,
 
