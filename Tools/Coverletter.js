@@ -1,3 +1,27 @@
+------ english ------
+
+Miroshnichenko Julia 
+
+Contacts:
+Telegram/WhatsApp: @juliaDooby
+Электронная почта: juliadooby@yandex.ru
+Skype: @juliaDooby
+City: Moscow
+CV: https://juliadooby.github.io/CV/
+Github·page: https://github.com/juliaDooby
+Website: https://juliadooby.github.io/Portfolio/  
+
+Dear Hiring Team,
+
+I am excited to apply for the Frontend Engineer position at your company. Your outcome-driven culture resonates with me, as I value ownership and delivering results that truly impact the product.
+
+I bring over three years of experience building production web applications with React and TypeScript, focusing on performance, accessibility, and clean component architecture. I’ve worked with Next.js for SSR/ISR, optimized bundles using Webpack/Vite, and integrated REST and GraphQL APIs. My background also includes writing reliable tests with Jest and Playwright, ensuring stability through CI/CD, and improving Core Web Vitals through code-splitting and caching strategies.
+
+I would be glad to bring my expertise in creating fast, reliable, and user-centric interfaces to your team and contribute to scaling your products further.
+
+Best regards,
+Julia
+ 
 ------ активный образец ------
 
 Мирошниченко Юлия Владимировна
@@ -11,13 +35,13 @@ CV: https://juliadooby.github.io/CV/
 Github·page: https://github.com/juliaDooby
 Website: https://juliadooby.github.io/Portfolio/  
 
-Уважаемый руководитель отдела разработки,
+Добрый день!
 
-Я обращаюсь с заявкой на позицию Frontend-разработчика в компании MAXBITSOLUTION. Меня привлекает возможность работать над крупными iGaming-проектами и высоконагруженными системами, разрабатывать интерфейсы для веб и мобильных приложений, а также участвовать в проектировании архитектуры и оптимизации производительности.
+Я хочу откликнуться на вакансию Frontend Developer в Place.01. Ваш фокус на финтех-решениях и подход полного цикла мне близки — я ценю компании, которые создают качественные продукты и уделяют внимание архитектуре.
 
-У меня более пяти лет опыта работы с Vue (Vue 2/3), Nuxt 3 и React, три года опыта с TypeScript, а также опыт использования Webpack, Vite, Jest и Web Workers. Разрабатывала интерфейсы с акцентом на производительность и тестируемость, интегрировала внешние сервисы и backend API, участвовала в командной разработке с PdM, PM, аналитиками и дизайнерами. Знаю и применяю на практике Coding Best Practices и умею структурировать код для поддержки сложных проектов.
+У меня более 4 лет коммерческого опыта, уверенно работаю с TypeScript и React, умею строить оптимальные интерфейсы с минимизацией рендеров. Знакома с Feature-Sliced Design, пишу юнит-тесты, имею опыт работы с Effector и умею брать на себя задачи как единственный фронтенд-разработчик, так и в составе команды.
 
-Уверена, что мой опыт разработки frontend-приложений и работа с высоконагруженными системами будут полезны вашей команде и помогут развивать качественные iGaming-продукты.
+Буду рада обсудить, как мой опыт поможет в развитии внутренних продуктов компании.
  
 С уважением,
 Юлия
