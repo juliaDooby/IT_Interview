@@ -7,17 +7,17 @@ Telegram/WhatsApp: @juliaDooby
 Электронная почта: juliadooby@yandex.ru
 Skype: @juliaDooby
 City: Moscow
-CV: https://juliadooby.github.io/CV/
+CV: https://juliadooby.github.io/IT_CV_Resume/
 Github·page: https://github.com/juliaDooby
 Website: https://juliadooby.github.io/Portfolio/  
 
-Dear Hiring Team,
+Dear Andersen Team,
 
-I am excited to apply for the Frontend Engineer position at your company. Your outcome-driven culture resonates with me, as I value ownership and delivering results that truly impact the product.
+I have carefully reviewed your eCommerce project and would like to join the team creating large-scale digital solutions for an international business. I am particularly drawn to your approach of operating like a startup within a global company — it provides an opportunity to influence the product and grow alongside it.
 
-I bring over three years of experience building production web applications with React and TypeScript, focusing on performance, accessibility, and clean component architecture. I’ve worked with Next.js for SSR/ISR, optimized bundles using Webpack/Vite, and integrated REST and GraphQL APIs. My background also includes writing reliable tests with Jest and Playwright, ensuring stability through CI/CD, and improving Core Web Vitals through code-splitting and caching strategies.
+I have over 3 years of experience with React and TypeScript. I am confident in working with Next.js, Redux, and React Query, developing SPAs with responsive layouts, integrating third-party APIs, and optimizing applications for high loads. I am skilled in modern styling approaches (Tailwind, SCSS), experienced with CI/CD, and accustomed to maintaining high code quality through code reviews and testing.
 
-I would be glad to bring my expertise in creating fast, reliable, and user-centric interfaces to your team and contribute to scaling your products further.
+I would be glad to discuss how my experience and attention to detail can contribute to the development of your client’s eCommerce platform.
 
 Best regards,
 Julia
@@ -31,18 +31,16 @@ Telegram/WhatsApp: @juliaDooby
 Электронная почта: juliadooby@yandex.ru
 Skype: @juliaDooby
 Город, Регион: Москва
-CV: https://juliadooby.github.io/CV/
+CV: https: https://juliadooby.github.io/IT_CV_Resume/
 Github·page: https://github.com/juliaDooby
 Website: https://juliadooby.github.io/Portfolio/  
 
-Добрый день!
+Уважаемый руководитель отдела разработки,
 
-Я хочу откликнуться на вакансию Frontend Developer в Place.01. Ваш фокус на финтех-решениях и подход полного цикла мне близки — я ценю компании, которые создают качественные продукты и уделяют внимание архитектуре.
+Я обращаюсь с заявкой на позицию Middle Frontend Developer (React, TypeScript) в вашей компании. Меня привлекла возможность участвовать в разработке новой CMS-платформы и влиять на архитектурные решения продукта.
 
-У меня более 4 лет коммерческого опыта, уверенно работаю с TypeScript и React, умею строить оптимальные интерфейсы с минимизацией рендеров. Знакома с Feature-Sliced Design, пишу юнит-тесты, имею опыт работы с Effector и умею брать на себя задачи как единственный фронтенд-разработчик, так и в составе команды.
+Имею опыт работы с React, TypeScript, Redux Toolkit, RTK Query и Next.js, создаю адаптивные интерфейсы, оптимизирую производительность фронтенд-приложений и взаимодействую с API. Мой опыт работы с Vite/Webpack, FSD-архитектурой и CI/CD позволит эффективно встраиваться в команду, участвовать в code review и предлагать оптимальные решения для проекта.
 
-Буду рада обсудить, как мой опыт поможет в развитии внутренних продуктов компании.
- 
 С уважением,
 Юлия
 
@@ -1215,7 +1213,7 @@ Website: https://juliadooby.github.io/Portfolio/
 Юлия
 
 
-Образец ! :
+Образец ! : 
 ------ 
  - Напиши сопроводительное краткое резюме middle frontend разработчика, используя предоставляемый текст шаблона, по описанию данной вакансии, напиши чем мой опыт опыт middle frontend разработчика будет полезен компании и её ценностям:
 Шаблон письма:
