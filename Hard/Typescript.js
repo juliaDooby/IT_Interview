@@ -1897,3 +1897,523 @@ dtsmake — многообещающий инструмент для автом�
 
 → Источник
 
+Essential Questions for TypeScript Interview
+Q #1) What is TypeScript?
+
+Answer: TypeScript is a superset of JavaScript that is explicitly typed and can be passed to a compiler that will produce plain JavaScript.
+
+TypeScript provides a way of working with JavaScript in a purely object-oriented environment. Here, you can use classes and interfaces. Furthermore, it is statically typed like C# or Java. To use, you’ll need a TypeScript compiler to compile and generate your code into a JavaScript file.
+
+A TypeScript file carries a .ts extension and is then compiled into a JavaScript file by the TypeScript compiler. You can write TypeScript with various editors like VS Code, Sublime, etc.
+
+Q #2) What are the differences between TypeScript and JavaScript?
+
+Answer: Here are the key differences:
+
+TypeScript
+JavaScript
+Object-Oriented	Scripting
+Is statically typed	Is not statically typed
+Supports modules	Does not support modules
+Supports optional parameter function	Does not support optional parameter function
+Q #3) Why use TypeScript?
+
+Why use TypeScript
+[Via edureka]
+
+The reasons why many developers use TypeScript rather than plain JavaScript stem from the key differences we’ve mentioned.
+
+One of the biggest advantages of using TypeScript is that it allows you to use IDEs to provide code checking as you type the code. For large JavaScript projects, this can cause much more secure code, especially where there are concerns about the privacy and security of your web hosting platform.
+
+Q #4) What are the advantages of TypeScript?
+
+Answer: Advantages include:
+
+TypeScript is easy to learn, fast, and simple & runs anywhere that JavaScript can. This makes it one of the best front-end development frameworks for beginners.
+It is similar enough to JavaScript that developers can easily switch to TypeScript.
+The ability to use an IDE when writing TypeScript makes development faster and can lead to more secure, robust software.
+You can call TypeScript code from JavaScript code, which provides legacy support for software written in plain JavaScript.
+It contains features from ES6 and ES7 that can run in ES5-level JavaScript engines like Node.js.
+It supports ECMAScript standards. You can compile your TypeScript code to the ECMAScript targets as per your choice. This gives you the ability to use the functionality of ES2015 and so on. This functionality includes modules, the spread operator, lambda functions, destructuring, etc.
+It provides type support to JavaScript.
+The experience of development with TypeScript is much richer than with standard JavaScript because you can use an IDE.
+It’s possible to use TypeScript to enable strict null checks (strictNullChecks compiler flag), so the TypeScript compiler will let you assign undefined to the variable only if you have explicitly declared it as a nullable type.
+TypeScript is open source (Apache 2 licensed) and backed by Microsoft.
+TypeScript has been designed to be interoperable with JavaScript, and developers experienced with JavaScript will find it easy to start using TypeScript.
+Q #5) What are the disadvantages of TypeScript?
+
+Answer: Disadvantages include:
+
+Implementing TypeScript components can be slower than with JavaScript because it can take a long time to compile TypeScript code.
+TypeScript does not offer support for abstract classes.
+When running in a browser, a TypeScript application will require an additional compilation step, which can negatively affect performance.
+Working with third-party libraries can be complex.
+Q #6) What are the components of TypeScript?
+
+Answer:
+
+TypeScript support
+There are three levels to TypeScript. As normally installed, the language comprises:
+
+The language itself typically runs through an IDE.
+A compiler that translates TypeScript into plain JavaScript code.
+The Language Service, which provides editor operations on existing TypeScript code.
+Q #7) How would you install TypeScript?
+
+Answer: 
+
+TYPESCRIPT
+In most environments, there are two main ways to install TypeScript.
+
+One is to use npm, the node.jas packages manager, to install TypeScript from the command line.
+
+To do this, run: npm install -g typescript
+
+Second, you can also install TypeScript via an IDE like Visual Studio. You can either search for TypeScript in Visual Studio Marketplace or download the package from the TypeScript website and install it.
+
+Q #8) What are Types in TypeScript?
+
+Answer: Now we’ll get into some more technical questions. Types in TypeScript are the type of values we use in our programs. It supports many different types of values, such as numbers, strings, and Boolean values, as well as additional types like enum, any, never.
+
+There are several good reasons to explicitly declare types in TypeScript. Types improve code quality and understandability and can help your compiler to catch errors that stem from incorrect type assignments. In addition, Types act as an extra layer of documentation that can help when you are working in a collaborative environment.
+
+To explicitly declare a type, you can append the ‘:’ to the variable name, and then specify the Type:
+
+let decimal: number = 6;
+
+let color: string = “blue”;
+
+Q #9) What are Type Assertions in TypeScript?
+
+Answer: TypeScript also has a feature known as “Type Assertion”. This operates like a typecast does in other object-oriented languages: it is used purely by the compiler and has no run-time impact. Using Type Assertions will not check your code for you, however.
+
+This is the syntax for Type Assertions:
+
+let strlength: number = (someString).length;
+
+Q #10) What are the Primitive data types?
+
+Answer: These are:
+
+Number
+String
+Boolean
+BigInt
+Symbol
+Undefined
+Null
+TypeScript Interview Questions for Intermediates
+Q #11) What are the special data types in TypeScript
+
+Answer:
+
+Any
+Void
+Never
+Q #12) What are variables, and how do we create them?
+
+Answer: Listed below are the variables with examples:
+
+var name: string = “Kennedy”; A value whose type is String is stored by the variable.
+var name: string; The variable’s value, whose type is String, is set to Undefine by default.
+var name =” Kennedy”; The variables’ data type is inferred from the values data type. Thus, the data type is String.
+var name; By default, the value is set to Undefine and typed as Any.
+Q #13) What scope do we have in TypeScript?
+
+Answer: There are three scopes as far as variables are concerned, namely:
+
+Local
+Function
+Global
+We create functions and global variables using var, while const and let can be used by both.
+
+Q #14) What are the different keywords used in TypeScript?
+
+Answer: These are listed in the table below:
+
+TypeScript Keywords
+case	if	throw	else
+break	as	any	switch
+var	number	string	get
+public	private	export	enum
+module	type	instanceof	typeof
+finally	for	while	void
+in	return	true	false
+null	super	this	new
+package	implements	interface	function
+any	extends	static	let
+continue	do	catch	const
+new	try	yield	
+Q #15) What are interfaces in TypeScript?
+
+Answer: A TypeScript Interface is a special entity that helps us to create objects with some properties? Let us proceed and create one. For instance, we can begin by typing the word Interface, which is a reserved word in TypeScript to create a TypeScript Interface.
+
+Q #16) What are Enums or Enumerations in TypeScript?
+
+Answer: This is one of the few TypeScript types that isn’t a JavaScript type-level extension. It allows us to define a set of named constants. TypeScript provides both string-based and numeric enums.
+
+a). Numeric Enum Syntax
+
+1
+2
+3
+4
+5
+6
+enum Move {
+  Up = 1,
+  Down,
+  Left,
+  Right,
+}
+b). String Enum Syntax
+
+1
+2
+3
+4
+5
+6
+enum Move {
+  Up = "UPWARD",
+  Down = "DOWNWARD",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+Q #17) What are the different features of TypeScript?
+
+Answer: Features are as follows:
+
+It is just JavaScript.
+It supports other JS libraries
+It is portable
+Q #18) Does TypeScript support method/function overloading?
+
+Answer: Yes, TypeScript provides function overloading. Multiple functions can have the same name and the number of parameters, but the return type and parameter types should be different. TypeScript doesn’t support overloading where functions have the same name, types, and a different number of parameters.
+
+Q #19) What is the TypeScript declare keyword?
+
+Answer: The TypeScript keyword’ declares informs the compiler that this particular exists in external code, thus it shouldn’t trans-compile it to JavaScript’s output.
+
+Q #20) What’s the difference between an interface and a type statement?
+
+Answer: The Type alias declaration introduces a name for any type, like unions, tuples, and primitives. However, named object types are always introduced by interfaces.
+
+TypeScript Scenario-Based Interview Questions
+Q #21) What is a TypeScript Map file?
+
+Answer: The Map TypeScript file translates the trans-compiled JavaScript that is in human unreadable format back to a readable TypeScript format. This comes in handy when there is a need to carry out debugging during production, since the source Map will be used.
+
+Q #22) What is “as” syntax in TypeScript?
+
+Answer: The “as” syntax in TypeScript is also a form of Type Assertion, as above. It is useful because the normal syntax for TypeScript, which uses the <type> variable, conflicts with JSX. When working with TypeScript and JSX, therefore, you should only use the syntax.
+
+Here’s how to do that:
+
+1
+let strlength: number = (someString as string).length;
+Q #23) What is compiler context in TypeScript?
+
+Answer: When TypeScript code is compiled, your compiler will look at a group of files and parse them to work out what is valid code and what isn’t. TypeScript also offers you the capability to adjust compiler options, though, and this is done via a tsconfig.json file.
+
+Q #24) What are the access modifiers in TypeScript?
+
+Answer: TypeScript also uses several access modifiers when working with the members of classes. The supported modifiers are public, private, and protected.
+
+These work in the following way:
+
+Public indicates that all members of a class, its child classes, and the instances of a class can access it.
+Private means that only members of a class can access the other members.
+Protected indicates that all members of a class and its child classes can access, but that the instance of a class cannot access.
+If you leave the access modifiers undefined for a particular member of a class, it is assumed to be public. This can cause issues when it comes to compliance processes, so you should explicitly define access wherever feasible.
+
+You should also note that class modifiers have no effect at all once your TypeScript code has been compiled. The resulting JS that the compiler produces ignores these modifiers.
+
+Q #25) What is contextual typing in TypeScript?
+
+Answer: Contextual typing is an extremely useful feature of TypeScript, in which the language can automatically work out the type of a particular variable from the types of the variables that have produced it in an equation.
+
+For instance, if you define a function on a variable that is explicitly defined as a number type, and this function writes its result to another variable, TypeScript will assign the same type to this second variable. This saves developers a lot of time because they don’t have to explicitly define types in the outcomes of functions.
+
+Q #26) Explain relative and non-relative imports in TypeScript.
+
+Answer: TypeScript supports two types of imports: relative and non-relative.
+
+Relative imports are resolved relative to the location of the importing file and can be a good way to cut down the amount of code you need to type. Relative imports should only be used for modules that you are sure will stay in the same place.
+
+To perform a relative import, start your location declaration with /, ./, or ../. So, for example, you can import data like this:
+
+1
+2
+import Entry from "./components/Entry";
+import { DefaultHeaders } from "../constants/http";
+If you are working with files on a remote server, however, and cannot be sure that they will stay in the same place relative to your importing file, use a non-relative import:
+
+1
+2
+import * as $ from "jquery";
+import { Component } from "@angular/core";
+Q #27) What are triple-slash directives in TypeScript?
+
+Answer: Triple-slash directives function like comments in TypeScript, but they also contain instructions for your compiler. They contain single XML tags.
+
+Triple-slash directives only work if they are at the top of the containing file. You can put comments before them, including other triple-slash directives, but if they follow any other type of statement or declaration, your compiler will treat them as standard comments and ignore them.
+
+There are several useful functions that triple-slash directives provide:
+
+One of the most important is the /// <reference path=”some/reference/path” /> directive. Appending this to the beginning of your TypeScript code serves as an indication to your compiler that there are dependencies between files. Your compiler will then include these additional files in the compilation process.
+You can also use triple-slash directives to declare a dependency on a package. This is done using /// <reference types=”…” />.
+During testing, you can also tell your compiler to ignore triple-slash directives using the –noResolve compiler flag. If this is specified, the compiler will ignore all of your triple-slash directives, and import no other files.
+
+Q #28) Can we use JSX in TypeScript?
+
+Answer: The answer is yes, but you will need to save your TypeScript file with a .tsx extension.
+
+There are some important points to recognize when working with JSX and TypeScript, though. As an embeddable XML-like syntax, JSX must be compiled into valid JS itself. This adds another compilation step to your code, which can come with a performance cost.
+
+On the other hand, TypeScript offers some powerful features for working with JSX: it supports embedding, type checking, and can compile JSX directly into JS.
+
+Q #29) Which JSX modes does TypeScript support?
+
+Answer:
+
+preserve
+As standard, TypeScript ships with three JSX modes. Those are preserved, react, and react-native.
+
+These modes are used to tailor the JSX output of your code. The preserve mode is designed to keep the JSX output in your compiled code so that it can be directly worked on by another compiler.
+
+When using this mode, the compiler will generate a file with a .jsx file extension, so it can be further transformed before use. The react-native mode does the same thing but will give the output a .js file extension.
+
+The react mode works slightly differently. It leaves out the React.createElement modifier, and so does not contain raw JSX code in the output. The output file when using this mode will have a .js file extension.
+
+Q #30) Explain optional static typing in TypeScript
+
+Answer: By default, TypeScript is statically typed. This is one of its advantages because your compiler will automatically check your data types during the compilation process. However, it is also possible to turn off this function and make your compiler ignore the type of a particular variable.
+
+This is done using any data type. Your compiler will not check any variables that are explicitly declared to be this data type, and so will not generate any errors at runtime.
+
+For example:
+
+1
+var unknownType: any = "A string";
+Advanced Questions for TypeScript Interview
+Q #31) What are modules in TypeScript?
+
+Answer: A module is a way of grouping entities. Modules can consist of any combination of entities like variables, interfaces, classes, etc.
+
+The useful feature of modules is that the entities contained within them cannot be accessed from outside the module. You can execute each module in its scope only and not from the global scope. This provides a way of locking down access to crucial variables and functions.
+
+A module is created using the export command and can be used within other modules using the import command.
+
+For example:
+
+1
+2
+3
+4
+5
+6
+module my_module{
+  class xyz{
+  export sum(x, y){
+  return x+y;
+}
+}
+Q #32) What are the differences between internal modules and external modules in TypeScript?
+
+Answer: TypeScript defines two types of modules, internal modules and external modules. The nomenclature here is slightly confusing because the terminology for modules changed in the latest version of TypeScript. “External” modules are just called “modules” in this latest version, but previous versions used the same term for internal modules.
+
+The key differences between these two types of modules are:
+
+Internal Module
+External Module
+Internal modules are for logically grouping functions, classes, interfaces, and variables in a single unit. You can export the Internal module to another module.	External modules conceal the internal statements of the module definitions. They display the methods and parameters that are related to the declared variable.
+For global as well as external modules internal modules remain the local or external members of them.	External modules get loaded as a separate body of code. They are referenced by their name.
+ModuleDeclarations are used for declaring the Internal Modules that include their name and body.	An external module is defined by writing an independent source file with a minimum of one import or export declaration.
+Q #33) What are decorators in TypeScript?
+
+Answer: In these last few questions, we’ll get into some of the more unusual features of TypeScript. You will often be asked about these features in interviews because knowledge of them proves that you’ve used them extensively.
+
+The first of these features is “Decorators”.  A decorator is a particular type of declaration used to add annotations and metadata to existing code. They function in a declarative way. To use them, you will need to enable the experimentalDecorators compiler function.
+
+This can either be done in the command line:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+$tsc --target ES5 --experimentalDecorators
+Or in your tsconfig.json file:
+  
+{
+"compilerOptions": {
+"target": "ES5",
+"experimentalDecorators": true
+}
+}
+Decorators are then prefixed with the @expression symbol, where the expression should evaluate a function. This function will get called at runtime along with the information of the decorated declaration.
+
+Q #34) What are mixins in TypeScript?
+
+Answer: Mixins are a way of building complex classes by combining several simpler partial classes. Though not many courses on the basics of TypeScript cover them, they are an important part.
+
+An example of a Mixin is as follows: Instead of a particular class A extending class B to obtain further functionality, function B invokes class A and then creates a new class with this added functionality. In this example, function B is referred to as a mixin.
+
+Q #35) How do you debug a TypeScript file?
+
+Answer: To debug, you will need to compile it alongside a .js source map file. TypeScript offers the ability to do this in a single command that will generate both your .js file and, alongside it, a .js.map file.
+
+To do this, run:
+
+1
+$ tsc -sourcemap file1.ts
+You will see if you open the .js file, that the last line will reference the source map file using a relative reference. Keep these two files in the same place relative to each other, or change this reference if you need to separate them.
+
+Q #36) What is the TypeScript Definition Manager?
+
+Answer: The TypeScript Definition Manager (TSD) is a package manager for TypeScript. It is used to find and install TypeScript definition files from the open-source DefinitelyTyped repo.
+
+TSD is extremely useful because it allows you to use type definition files directly in your TypeScript code. For instance, if you would like to include some jQuery code in your .ts file by using:
+
+1
+$(document).ready(function() { //Your jQuery code });
+Your compiler will tell you it cannot find the name “$”. That’s because this is a type that belongs to jQuery. You can use TSD to find and download the jQuery Type Definition file, and then include this in your .ts file, and then your compiler will have everything it needs.
+
+Q #37) What are the ambients in TypeScript?
+
+Answer: Ambient declarations in your TypeScript code tell your compiler about source code that is stored elsewhere. They are typically used to integrate other js libraries into TypeScript such as jQuery, AngularJS, and nodejs.
+
+Ambient declarations are generally stored in a type declaration file with the d.ts extensions.
+
+The command for declaring ambient variables or modules in this file is:
+
+1
+2
+3
+4
+declare module Module_Name {
+}
+You will then need to reference this file in your TypeScript file, as follows:
+/// <reference path="declarationfile.d.ts" />
+Be aware that ambient declarations can sometimes cause issues. That’s because if the source changes, your compiler will throw an error. You will need to update all of your ambient declarations if the location of your external source code changes.
+
+Q #38) What are anonymous functions in TypeScript?
+
+Answer: Anonymous functions in Typescript are functions that are declared, but that lack any named identifier. This type of function can receive inputs and return outputs just as a standard function can, but is typically not accessible by a user after it has been created.
+
+To create an anonymous function, run:
+
+1
+2
+3
+4
+let myAdd = function(x: number, y: number): number {
+     returnx+y;
+};
+     console.log(myAdd())
+Anonymous functions are dynamically declared at runtime.
+
+Q #39) What is declaration merging in TypeScript?
+
+Answer: Sometimes, the plain JavaScript that TypeScript compiles will contain multiple declarations with the same name.
+
+Your TypeScript compiler will combine (or merge) these separate declarations into a single definition to improve the performance of your code. This merged definition will inherit the features of the original definitions it was compiled from.
+
+For instance, if your code contains multiple declarations like this:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+interface Cloner {
+     clone(animal: Animal): Animal;
+ }
+ interface Cloner {
+     clone(animal: Sheep): Sheep;
+ }
+ interface Cloner {
+     clone(animal: Dog): Dog;
+     clone(animal: Cat): Cat;
+ } 
+Your compiler will combine these into a single definition like this:
+
+1
+2
+3
+4
+5
+6
+interface Cloner {
+        clone(animal: Dog): Dog;
+        clone(animal: Cat): Cat;
+        clone(animal: Sheep): Sheep;
+        clone(animal: Animal): Animal;
+    }
+Q #40) How do you perform method overriding in TypeScript?
+
+Answer: Child classes can inherit the methods of their parent class. This is known as method overriding and can be useful for providing multiple child classes with the same methods quickly.
+
+However, there are a few considerations for performing method overriding:
+
+The method must have an identical name to the parent class
+The method must have the same parameters as in the parent class
+There must be an IS-A relationship between child and parent classes
+Q #41) What is the Lambda-Arrow Function in TypeScript?
+
+Answer: Versions of TypeScript that are compiled to ES6 standards have a shorthand way of defining the anonymous function (see above). These are referred to as lambda functions or arrow functions after the syntax used in them. These are essentially functions without names, and which ignore the function keyword.
+
+For instance:
+
+1
+2
+3
+4
+let sum = (a: number, b: number): number => {    
+                return a + b;    
+    }    
+    console.log(sum(20, 30)); //returns 50    
+Here, the Lambda-Arrow function is x => x/
+
+Q #42) What is the Rest Parameter in TypeScript?
+
+Answer: TypeScript also contains the Rest Parameter, a special parameter that allows you to pass values to a function. This parameter is invoked by using an ellipsis (…) before the parameter you are working with.
+
+This allows functions to operate with a varying number of arguments, which is extremely useful if you have an unknown number of parameters you want to pass to a particular function.
+
+There are some considerations for working with the Rest Parameter, though:
+
+Single rest parameter can be used per function
+It has to be explicitly declared as an array type
+It should be the last parameter in the parameter list
+For example, to create a Rest Parameter, fun the following:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+function sum(p: number, ...q: number[]): number {
+     let result = p;
+     for (var j = 0; j < q.length; j++) {
+     result += q[j];
+     }
+     console.log(result);
+    }
+    let result1 = sum(6, 2);
+    let result2 = sum(1, 2, 5, 8);
+Here, “…q” is the Rest Parameter.
