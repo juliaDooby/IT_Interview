@@ -633,3 +633,213 @@ By choosing the necessary choice from the drop-down, as shown in the image below
 Postman_Interview_3.
 
 Step 3 - Select Language 
+
+Top 47 Postman Interview Questions and Answers (2026)
+By :
+Thomas HamiltonThomas Hamilton
+Updated
+February 13, 2026
+
+Add Guru99 on Google
+The Postman is a popular API testing tool that helps the development team create, share, and test documents of API. The Postman tool provides a GUI interface to test an API and a command-line utility for experienced testers. This API testing tool also helps you to create the request as per the need of API. The Postman team has also released a Chrome extension that can be used to test the API from your browser.
+
+Postman Interview Questions for Freshers and Experienced
+The list below covers all the Postman questions for freshers and professional-level candidates. This Postman interview questions guide will help you crack the interview and help you get your dream job for software testing.
+
+1) What is Postman?
+The Postman is a highly popular API testing tool that helps the development team create, share, and test an API. The Postman tool provides a GUI interface to the API and a command-line utility for experienced testers.
+
+2) What is an HTTP request?
+An HTTP request is a program that the client makes to a name host located on a server. It works as a communication interface or a request-response protocol between a client and server. The primary use of the HTTP request is to access a resource on the server. To initiate the HTTP request, the client uses components of a URL (Uniform Resource Locator) that also includes the information needed to access the resource.
+
+Postman Interview Questions
+Postman Interview Questions
+3) State The Core Components of an HTTP Response?
+In Postman, every HTTP response contains four key elements.
+
+Response/Status Code- There are response code issues by a sever for client’s request, as 404 means Page Not Found.
+HTTP Version- HTTP version name. For example, HTTP v2.2
+Response Header- It included information for the HTTP response message. For example. The content length, date, status, server type, etc.
+Response Body – It contains the data which a client requested from the server.
+4) Why do we use Postman?
+Here are some most prominent reasons for using Postman:
+
+It is free to use software which is helpful for API testing
+It helps you to manage the end-to-end lifecycle of API
+It offers Runtime Service that helps manage API collections, workspaces, environments, and different examples.
+You can also integrate Postman with CI/CD tools like Circle CI, Jenkins, etc.
+It has a vast community forum that can easily address any technical issues you face while using the tool.
+5) What is API?
+Application Programming Interface (API) is a software interface that enables two applications to interact with each other without any user intervention. It is a collection of software functions and procedures. API is defined as a code that helps two different software communicate and exchange data with each other.
+
+6) What are the important authorization methods supported by Postman?
+Postman offers the following API request authorization options 1) API Key, 2) Oauth 1.0 and 2.0, 3) Basic auth, 4) Digest auth, 5) Bearer Token, 6) AWS Signature, 7) Hawk Authentication, 8) NTLM Authentication.
+
+7) How do you log variable values in Postman?
+Postman allows to log the variable values in Postman in the console by using the following command:
+
+console.log(pm.variables.get("guru99"));
+8) Postman is available as a native desktop app for?
+Postman API testing tool is currently available for Mac, Windows (32-bit / 64-bit), and Linux (32-bit / 64-bit)
+
+9) What is the History tab in Postman?
+All the request you send in Postman appears under the History tab of the sidebar. It is very much similar to browser history, which you can clear whenever you want.
+
+10) What is Basic Auth in Postman?
+In Postman, Basic Auth is an authorization method provided for HTTP user agents like web browsers to enter username and password. After entering the username and password that you can associate with the request.
+
+11) What is a binary form in POST methods?
+Post binary firm is designed to send the information in a format that is impossible to enter manually. These options are used while sending larger files like CSV files, etc.
+
+12) What is the main difference between Authorization and authentication?
+Here are a few differences between authorization and Authentication:
+
+Authorization is the act of allowing or permitting someone, whereas authentication is proving that something is genuine.
+Authentication always comes first, while authorization comes after authentication.
+Authorization is open to anyone with permission, whereas authentication requires you to have a password.
+13) What is the Payload in Postman?
+The Payload of an API Module is the body of your request and response message. When making an API request, it contains the data you send to the server. You can send and receive Payload in various formats, for example, JSON or XML.
+
+14) What is a collection in Postman?
+A collection in Postman enables you to group similar requests. It also allows you to systematically arrange the requests into folders.
+
+15) What is a Pre-Request script?
+Pre-request scripts help you to execute JavaScript before a request runs. It allows you to accomplish pre-processing tasks like setting variable values, parameters, headers, and body data.
+
+16) How the Postman variables are accessed?
+The Postman variables are always accessed by using the variable name:
+
+{{variable name}}
+17) What is the meaning of the term environment in Postman?
+The environment in Postman is a set of key-value pairs. Postman allows you to build multiple environments and switch among them with a click of a button.
+
+18) Why does Postman never accepts any other encoding apart from Base64?
+You can use base64 as it helps us transmit the data into the textual form and send it as HTML form data. Moreover, we must rely upon the same 64 characters in any encoding language.
+
+19) Which kind of encoding does Postman accepts for authorization credentials?
+Postman only accepts Base64 encoding, which is provided inbuilt in Postman. Otherwise, it would benefit when you use 3rd party websites that help you to convert the credentials into base64.
+
+20) What are the different scopes of an environment variable in Postman?
+Scope of a variable in Postman is defined as the boundaries it can access.
+
+Here are important scopes of an environment variable in Postman:
+
+Local Scope: This type of variable can be accessed only in the environment in which it was created
+Global Scope: This type of variable can be accessed globally in any environment or no environment.
+21) Is it possible to import local variables in Postman Monitors?
+Postman monitors allow you to import local variables but not global variables.
+
+22) What is the Postman execution order for a collection?
+For all the requests in a collection, the scripts will execute in the following given order:
+
+Step 1) A pre-request script associated with a collection will run before every request.
+Step 2) A pre-request script associated with a folder will run before every request in a specific folder.
+Step 3) A test script associated with a collection will run after every request.
+Step 4) A test script associated with a folder will run after the request in the specific folder.
+
+23) Can you have two global scope variables with the same name in Postman?
+No, the global scope never has duplicate/same names, while variables having local scope can have the same name in various environments.
+
+24) How do you access postman variables?
+You can log the variable values in the console by using the command:
+
+console. Log (pm. Variables.
+25) What is the use of the collection in Postman?
+In Postman, a collection is used to group similar requests. It helps you to arrange requests systematically into folders.
+
+26) How can you use POSTMAN to generate random numbers in a specific range?
+In your Pre-request script define your variable with:
+
+pm.globals.set('randomNum', Math.floor(Math.random() * 5));
+Then in your URL call your variable in the URL like so:
+Output:
+
+{{randomNum}}
+27) How do you remove local variables?
+Local variables are automatically removed once the tests have been executed.
+
+28) What is ‘Postman Collection runners?
+Postman contains a collection runner that is useful for automating API testing. It helps visualize details of each iteration and test results. A postman collection runner is also used for Data-driven testing.
+
+29) What do you mean by postman monitors?
+The postman monitor feature is used for running collections until the user’s specified time. However, the user must be logged in to their account to use this feature.
+
+30) Why saving your work in the Postman cloud is not advisable?
+You should not save your work in Postman as your business details do not remain confidential. Moreover, saving your on-Postman cloud may cause a security breach as it requires sign-in. Therefore, saving your work in the Postman cloud is not advisable.
+
+RELATED ARTICLES
+Postman Tutorial
+How to Download & Install Postman for Windows?
+31) What are the standard rules of an API test design?
+Here are the key principles of an API test design:
+
+Setup: Create objects, start services, and initialize data.
+Execution: Apply API or the scenario, including logging
+Verification: It is use for evaluating the result of the execution
+Reporting: Indicates Pass, failed, or blocked status
+Clean up: Pre-test state
+32) What is the Team workspace in Postman?
+A Team workspace is a synergetic environment for users where many programmers may develop APIs, provides feedback, and collaborate on the same pools of requests. It also helps to synchronize and collaborates all the team’s work in one place.
+
+33) What is the 301-status code?
+301 status code represents a permanent redirect from one website page to another. It tells the search engines that the old page has become outdated, and the engine has to index the new page or URL.
+
+34) What is status code 201?
+Status code 201 is created only when a resource is successfully created using a PUT or POST request. It returns a link to a newly created one with the help of the location header.
+
+35) What is the procedure to remove local variables?
+The local variables can be automatically removed when you have executed and completed the tests.
+
+36) What is Pre-Request Script in Postman?
+In Postman, a pre-request script is a set of rules that runs before executing a request.
+
+37) How are Query Parameters different from Path Variables?
+In Postman, Path Variables are used to identify specific resources, and Query Parameters are used to sort or filter the resources.
+
+38) What are the main drawbacks of Postman?
+Here are some cons/ disadvantages of using Postman:
+
+Postman cannot process more than 1000 API requests.
+It is not easy to manage the collections and requests in a massive size project.
+Postman is not an ideal API tool for workspace management in the form of code as there can be lots of code duplication while handing the dynamic API requests.
+39) What are some of the JS libraries available in Postman?
+Some JS libraries available in Postman are
+
+1) Lodash
+2) Moment
+3) GUID
+
+40) What is GUID?
+GUID is short for Global Unique Identifier. It is hexadecimal digits that are separated by hyphens. This Postman identifier GUID solves the purpose of uniqueness.
+
+41) How can you view log requests and responses in Postman?
+You can use the Postman Console window to view request logs and response logs.
+
+42) What is the importance of setNextRequest in Postman?
+setNextRequest helps you to define the workflow. It is needed to change the order of the requests being executed.
+
+43) What test code allows you to check whether the response status is 200 or not?
+Following is a test code to check whether the response status is 200 or not:
+
+tests[“Status Code is 200”] = responseCode.code === 200;
+44) What do you understand by ScratchPad?
+Scratch Pad is a place which is provided by Postman that helps you work without the need to connect with Postman servers.
+
+45) How can you iterate a request 100 times in Postman?
+You can iterate a request 100 times in Postman by using Collection Runner.
+
+46) What would happen if {{$randomInt}} dynamic variable is added?
+You need to add a random integer between 0 and 1000.
+
+47) How do you access variable values from a file inside pre-request and test scripts?
+data.var_name
+data['var_name']
+48) Can you read the Postman Chrome application to read and write cookies?
+No, it is impossible to read and write cookies using the app.
+
+49) Which programming language is used for Postman tests?
+JavaScript is used for Postman tests.
+
+50) Which tool can be used to run Postman Collections in Jenkins?
+Newman can be used to run Postman Collection in Jenkins.
+
