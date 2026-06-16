@@ -2275,3 +2275,322 @@ Standard Library and Packages: Familiarity with the language's standard library 
 Practical Experience: Building and contributing to projects, solving real-world problems, and showcasing hands-on experience with the language.
 Testing and Debugging: Writing unit, integration, and performance tests, and using debugging tools and techniques specific to the language.
 Practical experience is invaluable when preparing for a technical interview. Building and contributing to projects, whether personal, open-source, or professional, helps solidify your understanding and showcases your ability to apply theoretical knowledge to real-world problems. Additionally, demonstrating your ability to effectively test and debug your applications can highlight your commitment to code quality and robustness.
+
+Node.js interview questions for junior developers
+Use the following Node.js interview questions when evaluating junior Node.js programmers:
+
+Question 1: How does a “callback” work in Node.js?
+
+Designer illustration
+Get a complimentary discovery call and a free ballpark estimate for your project
+Trusted by 100x of startups and companies like
+Answer: “Callback” is a function in Node.js. A program calls it after a task. This allows the program to run another piece of code at that time, and there’s no blocking. Node.js supports asynchronous processing. This depends on the callback functions, and the Node.js APIs support this function.
+
+Question 2: Explain the differences between Node.js and JavaScript.
+
+Answer: The main differences between JavaScript and Node.js are as follows:
+
+JavaScript is a programming language, whereas, Node.js is a runtime environment. Node.js is based on JavaScript, and it holds many important libraries.
+JavaScript is used for client-side programming, however, Node.js is for backend development.
+JavaScript can run on different engines, whereas, Node.js runs on the V8 engine.
+Question 3: Explain the advantage of the “async” processing in Node.js.
+
+Answer: Node.js supports “async” processing, and it does that in a single-threaded manner. The combination of single-threading with “async” processing can deliver better performance and scalability in web applications. This combination can handle the typical patterns of the load in web apps better than a thread-based implementation.
+
+Question 4: Can Node.js support JSON object storage databases?
+
+Answer: Node.js is based on JavaScript. You can use JavaScript, HTML, and CSS for the front end, and you can use Node.js for the back end.
+
+On the other hand, MongoDB uses JavaScript for querying. MongoDB is a very popular NoSQL database. It stores documents using the “BSON” format, which means “Binary JSON”. Node.js works very well with databases like MongoDB, which is a key advantage of this runtime environment.
+
+Question 5: Explain the concept of global installation of dependencies in Node.js.
+
+Answer: Node.js stores globally installed packages or dependencies in the “/npm” directory. Programmers can use such dependencies in the “Command Line Interface” (CLI) functions of Node.js projects.
+
+However, developers can’t import these dependencies using the “require()” function in a Node.js application. Programmers can install a Node.js project globally by using the “-g” flag. The syntax is the following:
+
+
+Copy
+<i>
+C: Nodejs_WorkSpace>npm install express _g
+</i>
+Question 6: Explain the functions of NPM.
+
+Answer: NPM (Node Package Manager) is a very important tool in the hands of Node.js developers. Programmers can easily find important packages and modules for Node.js by using NPM, which manages the Node.js packages and modules.
+
+NPM offers the following key functionalities:
+
+It provides online repositories for Node.js packages and modules. Developers can easily search this repository and find what they need.
+NPM provides an easy-to-use “Command Line Interface” (CLI) to install Node.js packages and modules. Node.js programmers typically use several such packages to develop a Node.js application. NPM makes it easy for them to install such packages.
+NPM manages the Node.js versions and dependencies.
+Question 7: Explain the functions of “EventEmitter” in Node.js.
+
+Answer: An “EventEmitter” in Node.js is a class. It holds all the objects that can emit events. If an object from the “EventEmitter” class throws an event, Node.js calls all the attached functions synchronously.
+
+Question 8: How to spawn Node.js “child processes”?
+
+Answer: Developers can spawn a Node.js “child process” by using the “child_process” module of Node.js. These processes can communicate easily with each other since Node.js provides a messaging system. The spawn function creates a node module on the processor which means that multiple workers are running on a single node code base for multiple tasks.
+
+Programmers can create Node.js “child processes” on Linux, Unix, Windows, OS X, etc. They can use the following processes for that:
+
+“spawn()”;
+“fork()”;
+“exec()”;
+“execFile().
+Question 9: How does the “process.nextTick()” work in Node.js?
+
+Answer: The Node.js core API provides several global objects, and the “process” object is one of them. A Node.js program can access it from anywhere. Therefore, such a program can access the associated methods too.
+
+One such method is the “process.nextTick” method. This function schedules code execution and adds the callback function to the start of the next event queue. Node.js programmers use it in real-time applications, and they defer the execution of a function until the event loop iteration.
+
+Question 10: Why should the Node.js developers avoid the “callback hell”?
+
+Answer: “Callback hell” is a pattern of coding, which is disadvantageous. Programmers sometimes code intensely nested callbacks. Such pieces of code contain multiple nested callbacks.
+
+Such coding practices make the program hard to read, and such programs are hard to debug. The maintainability of the program suffers due to “callback hells”. Developers should implement the asynchronous logic effectively. Programs with a “callback hell” signify that the programmer didn’t code asynchronous logic properly.
+
+Question 11: Explain the differences between front-end development and back-end development.
+
+Answer: The differences between front-end development and back-end development are as follows:
+
+Front-end development concerns the development of the client side of the application. On the other hand, back-end development concerns server-side development.
+Front-end development includes every aspect that directly impacts the interactions of users with the web app. Back-end development focuses on web server-related processing. The processes in the back end communicate with a database to serve incoming requests.
+Developers use technologies like JavaScript, HTML, CSS, Angular.JS, and React.JS for front-end development. Programmers use technologies like Java, Python, PHP, and Node.js for back-end development.
+Question 12: Mention the various timing features offered by Node.js.
+
+Answer: Node.js offers a “timers” module, and this contains different functions to execute a piece of code after a specified period of time. The following are a few examples of functions provided by this module:
+
+“setTimeout”/”clearTimeout”: This adds delays in code execution and will execute a piece of code after a specified number of milliseconds.
+“setInterval”/”clearInterval”: This executes a piece of code multiple times.
+“setImmediate”/”clearImmediate”: This executes a piece of code at the end of the current event loop cycle.
+“process.nextTick”: This schedules a callback function that will be invoked in the next iteration of the “event loop”.
+Question 13: Explain “const” in Node.js.
+
+Answer: A “const” in Node.js is a variable declared with the keyword “const”. Such variables store constant values. Programmers can’t update a “const”, furthermore, they can’t declare it again.
+
+Question 14: What does the “utf8” module in Node.js do?
+
+Answer: The “utf8” module in Node.js can encode or decode a string. Node.js developers can install it from NPM. This module encodes any JavaScript string as UTF-8. It then returns the UTF-8-encoded version of the string. The “utf8” module can decode any UTF-8 encoded string too.
+
+Question 15: Does Node.js support scripting?
+
+Answer: Node.js is a runtime environment for applications written in JavaScript. It’s not a full-fledged scripting language like Python. However, Node.js uses JavaScript as its scripting language. Various tutorials show how to use the scripting capabilities of JavaScript when developing a Node.js application.
+
+Question 16: Provide examples of popular development tools in the Node.js ecosystem.
+
+Answer: Node.js has a large and growing ecosystem. Many developers have created open-source development tools and frameworks for Node.js. A few examples of such development tools are as follows:
+
+Webpack;
+PM2;
+Snyk;
+Keystone.
+Hire expert developers for your next project
+137
+Expert dev teams,
+1,200 top developers
+400+
+Businesses trusted
+us since 2016
+Question 17: What does the “EventEmitter Object” in Node.js do?
+
+Answer: The Node.js core API is built around an asynchronous event-driven programming architecture. This architecture has objects called “emitters” that emit named events. These cause “function” objects to be called.
+
+All objects that emit events are parts of the “EventEmitter” class. “EventEmitter objects” emit events, and all of the functions attached to that event are called synchronously.
+
+Question 18: Mention the various kinds of streams in Node.js.
+
+Answer: In Node.js, streams are objects that allow programs to read or write data continuously. These are of the following kinds:
+
+Readable streams;
+Writeable streams;
+“Duplex” streams, which can be used for both reading and writing operations;
+“Transform” streams, which are “duplex” streams with the output that is computed.
+Question 19: What are the various authentication options in Node.js?
+
+Answer: Node.js developers have 3 options to implement authentication in Node.js applications. These are as follows:
+
+Building your own authentication mechanism: It’s a very popular option, and this involves building an entire authentication system. Naturally, this is complex.
+Using Passport.js: Passport.js is a middleware for Node.js, and it’s an authentication framework. It offers flexibility, however, implementing it in a Node.js app requires some effort.
+Delegating authentication to a 3 rd party provider: This option offloads the authentication workloads to a 3 rd party provider, therefore, it doesn’t require much custom development.
+Question 20: Explain “error-first callback” in Node.js.
+
+Answer: Node.js developers use “error-first callbacks” to pass errors and data. They need to first pass an “error object” as a parameter to these functions. The other parameters represent the data associated with the object. Programmers can pass “error objects” to “error-first callbacks” to check for errors and to handle them.
+
+Question 21: How to extract the filename from a file path in Node.js?
+
+Answer: Node.js offers a method called “path.basename()”. Developers can use this to extract the filename from a Node JS file path.
+
+Node.js Interview questions and answers for hiring mid-level developers
+If you need to hire mid-level Node.js developers, then use the following Node JS interview questions:
+
+Question 22: Explain the process to implement the “test pyramid” concept in terms of HTTP APIs.
+
+Answer: Mick Cohn had developed the concept of a “test pyramid”. It prescribes a higher number of low-level unit tests than high-level end-to-end tests executed through a GUI. When using HTTP module APIs, one can define them as follows:
+
+A high number of low-level unit tests for each model;
+Fewer integration tests to validate the model interactions;
+Even fewer acceptance testing to test the HTTP endpoints.
+Question 23: How do the asynchronous and non-blocking APIs in Node.js work?
+
+Answer: All Node.js library APIs support asynchronous processing. Therefore, all of them have non-blocking processing.
+
+Node.js-based servers don’t wait for an API to return data. It calls an API and allows it to work. Meanwhile, it moves to the next API. Node.js has a notification mechanism, that responds to the server for the earlier API call.
+
+Question 24: What does an “event loop” do in Node.js?
+
+Answer: A Node.js event loop handles asynchronous “callbacks”. Non-blocking input or output operations are founded on the concept of event loops.
+
+Node.js is based on JavaScript, which is single-threaded. This would prevent non-blocking input/output (I/O) operations. The event loop in Node.js offloads operations to the system kernel whenever it can.
+
+Modern kernels are multi-threaded. They handle multiple operations in the background. After the completion of one operation, the kernel notifies Node.js. This allows Node.js to add the appropriate “callback” to the queue. In turn, this enables non-blocking I/O operations.
+
+Question 25: Explain the advantages of the Express.js framework.
+
+Answer: Express.js is a popular open-source framework based on Node.js. It offers the following advantages:
+
+Developers can develop Node.js applications quickly and easily by using Express.js.
+Programmers can easily configure and customize Express.js.
+Express.js allows developers to define the routes of their applications based on HTTP methods and URLs.
+This open-source framework includes different middleware modules that perform additional tasks.
+Developers can easily integrate Express.js with different template engines.
+Express.js enables programmers to define error-handling middleware.
+Programmers can easily connect Express.js with databases like MongoDB, MySQL, Redis, etc.
+Developers can easily create REST API servers with Express.js.
+Question 26: What does the “package.JSON” file do in Node.js?
+
+Answer: The “package.JSON” file is important for the functioning of Node.js. It’s the manifest file in a Node.js project, which has the metadata of the project. This file is in the root directory of a Node.js application.
+
+The “package.JSON” contains two types of information, which are as follows:
+
+“Identifying metadata properties”: These have the properties to identify the module or project. An example is the name of the project.
+“Functional metadata properties”: These have the functional values or properties of the project or module. Dependencies in the project are examples of such information.
+Question 27: Explain the differences between “readfile” and “createReadStream” in Node.js.
+
+Answer: Node.js offers two different ways to read and execute files. These options are called “readfile” and “createReadStream”.
+
+The “readfile()” process is a fully buffered process. This process can return a response only after the file is pushed into the buffer completely, moreover, the process must read the file fully. The “readfile()” process requires a lot of memory. This process can take time too.
+
+The “createReadStream” process is a partially-buffered process, and that’s the main difference from the “readfile()” process. When executing the “createReadStream” process, Node.js splits a file into chunks. It processes these chunks one by one and sends responses accordingly. Node.js removes the chunks from the buffer after processing them. The “createReadStream” process makes it easier to process large files. The buffer class is used as pure JavaScript is not compatible with binary data.
+
+Question 28: Explain the differences between “process.nextTick()” and “setImmediate()”.
+
+Answer: Node.js offers several functions of the “Timers” module, and “process.nextTick()” and “setImmediate()” are examples. These functions help to execute a piece of code after a predefined period of time.
+
+The “process.nextTick()” function waits for the execution of an action. It waits till the next pass in the event loop. This process invokes the callback function only after the event loop completes.
+
+However, the “setImmediate()” function executes a callback method on the next cycle of the event loop. The control returns to the event loop to execute the I/O operations.
+
+Question 29: Should you use synchronous functions in Node.js?
+
+Answer: Node.js offers several synchronous functions, e.g., “statSync”, “readFileSync”, etc. However, synchronous functions often slow down Node.js applications. Furthermore, all synchronous functions in Node.js have corresponding asynchronous functions as alternatives. These alternatives often use a callback. In summary, there’s no real need to use synchronous functions in Node.js, furthermore, they can slow down an app.
+
+Question 30: What are the two values that “async.queue” takes as inputs?
+
+Hire expert developers for your next project
+Trusted by
+Answer: “Async.queue” helps to run a set of tasks asynchronously. It accepts the following two arguments:
+
+Task function;
+Concurrency value.
+Question 31: Explain the use of the “node_modules” folder in Node.js.
+
+Answer: The “node_modules” folder is similar to a cache for the external modules that a Node.js project depends on. Programmers can use the “npm install” option to download these modules from the web. This copies the modules into the “node_modules” folder, and Node.js looks at this folder for these modules.
+
+Question 32: How does a URL module work in Node.js?
+
+Answer:  A URL module helps to parse URLs and splits the web address into host, pathname, search, query, etc.
+
+Question 33: What are the different exit codes in Node.js?
+
+Answer: Various exit codes in Node.js include Internal JavaScript Evaluation Failure, Fatal Error Internal Exception hander, Runtime failure, etc.
+
+Advanced Node JS interview questions to hire senior developers
+Hiring senior Node.js developers? Use the following Node.js interview questions:
+
+Question 34: Explain the importance of “Libuv” in Node.js.
+
+Answer: “Libuv” is a C library. It’s an important dependency in Node.js. Node.js uses this library to abstract non-blocking I/O operations by providing a consistent interface across all of the supported platforms.
+
+“Libuv” provides mechanisms to handle the following:
+
+File system;
+DNS;
+Network;
+“Child processes”;
+“Pipes”;
+Signal handling;
+Polling;
+Streaming.
+“Libuv” provides asynchronous TCP and UDP sockets. Additionally, “Libuv” provides a thread pool. This thread pool allows Node.js applications to offload the kind of workloads that can’t be executed asynchronously at the level of the operating system (OS).
+
+Question 35: Is there any exception to the single-threaded nature of Node.js?
+
+Answer: Node.js is based on JavaScript, and it’s single-threaded. The main thread of Node.js is always single-threaded. This single thread of Node.js executes all the code written by a programmer. Better performance and scalability can be achieved by doing asynchronous programming with typical web loads on a single thread than the typical thread-based implementation.
+
+However, Node.js isn’t based on JavaScript alone. This runtime environment is implemented on the V8 engine that’s used in Google Chrome. Node.js is also implemented on top of “Libuv”, a C library.
+
+The V8 JavaScript engine compiles JavaScript code into C++. Furthermore, Node.js utilizes “Libuv” when accessing native modules like “fs” and “crypto”. Through “Libuv”, Node.js gets access to the multi-threading capabilities of the underlying operating system.
+
+An example of multi-threading in Node.js is in the following code snippet where the “crypto” module is used. Note that this code snippet uses the hashing capabilities, and it uses the “pbkdf2” function from the “crypto” module.
+
+
+Copy
+<i>Const { pbkdfs } = require(‘crypto’);</i>
+<i>Const start = Date.now();</i>
+<i>Const doExpensiveHashing = () => {</i>
+<i>Pbkfd2(‘pwd’, ‘salt’, 100000, 512, ‘sha512’, () =></i>
+<i>Console.log(‘Done in ${Date.now() – start}ms’)>;</i>
+<i>);</i>
+<i>};</i>
+<i>doExpensiveHashing(); // done in 938ms
+</i>
+The command require is used to import external libraries in Node.js
+
+Question 36: Explain how to parse HTML in Node.js.
+
+Answer: Node.js offers multiple open-source packages to parse HTML, and these are available on NPM. The following are two examples:
+
+“Fast HTML Parser”: This HTML parser parses HTML quickly. It creates a single “Document Object Model” (DOM) tree, furthermore, it provides basic elementary query support.
+“cheerio”: This Node.js parser for HTML helps developers scrape and parse data from web pages.
+Question 37: Explain “REPL” in Node.js.
+
+Answer: “REPL” in Node.js is an acronym for “Read Eval Print Loop”. “REPL” is an interactive shell. Programmers can use it to process Node.js expressions. Users enter JavaScript code, and “REPL” reads it. It interprets the code. “REPL” then evaluates (“EVAL”) the result of the code, and it prints the result.
+
+It continues this process until the user ends this process. REPL is bundled with every Node.js installation, and a user doesn’t need to store it in a file separately.
+
+Question 38: What are “stubs” in Node.js?
+
+Answer: “Stubs” in Node.js are small program routines. They substitute for bigger programs that can be loaded later. Stubs can substitute for bigger programs that can be loaded remotely too. In Node.js, “stubs” have the following characteristics:
+
+They can be anonymous.
+Programmers can wrap stubs into existing functions. If a developer wraps a stub into an existing function, then the original function isn’t called.
+Stubs affect the behavior of components or modules.
+For testing, stubs act as dummy objects.
+Stubs can implement pre-programmer responses.
+Question 39: Explain the key differences between Node.js and AngularJS.
+
+Answer: The main differences between Node.js and Angular.js are as follows:
+
+Node.js is a runtime environment for JavaScript applications, however, Angular.js is an open-source web application framework to develop web applications.
+You need to install Node.js on your computer to work on it as a JavaScript library. However, to work on Angular.JS, you only need to install an AngularJS file.
+Developers use Node.js to build performant and scalable server-side networking applications. On the other hand, they use Angular.JS to build single-page client-side web apps.
+Question 40: How does Node.js differ from Ajax?
+
+Answer: The key differences between Node.js and Ajax concern their utility functions. Node.js helps with server-side development, whereas, Ajax facilitates client-side development. Programmers use Ajax to update or modify the contents of a webpage without a need to refresh the webpage. However, developers use Node.js to create the programs used by the server. They don’t use Node.js to create software for web browsers.
+
+Question 41: What is a “control flow function” in Node.js?
+
+Answer: A “control flow function” in Node.js is a piece of code that executes between several asynchronous function calls. Control flow functions control the order of execution, collect data, limit concurrency, call the next step in the program, etc. Node.js offers several standard control flow constructs, e.g.:
+
+“if/else”;
+“for”;
+“while”;
+“try/catch”;
+“throw”.
+Question 42: Which metrics should one track for monitoring the performance of a Node.js application?
+
+Answer: One should track the following metrics to monitor the performance of a Node.js application:
+
+CPU usage;
+Heap usage, memory leaks, and garbage collection;
+Lag in the Node.js event loop.	
