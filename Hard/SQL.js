@@ -478,3 +478,1574 @@ SELECT * FROM Employee WHERE EmpId=2 and EmpFirstName='Radhe'
 Если данные в две колонки являются вторичными индексами столбца, то индекс не будет ссылаться, но если данные 2 колонок содержат первичный индекс (первый столбец при создании индекса), то индекс будет ссылаться. В этом случае индекс будет использоваться, поскольку EmpId и EmpFirstName являются первичные столбцы.
 
 Надеюсь, что эта статья поможет вам принять быструю практику всякий раз, когда вы собираетесь присутствовать на любом собеседовании и нет так много времени на чтение книг.
+Basic SQL Interview Questions for Freshers
+
+
+As a fresher looking to start a career in the tech industry, it's essential to have a basic understanding of Structured Query Language. SQL interview questions for freshers often focus on the basics, such as its syntax and data types.
+
+
+
+Here, you will find the most common and basic interview questions on SQL for freshers that are crucial for you to prepare. 
+
+
+
+1. What is SQL?
+
+
+SQL stands for Structured Query Language. 
+
+
+
+It is a programming language used to manage and modify relational databases. SQL allows you to perform various tasks, such as creating, modifying, and deleting database structures and data. 
+
+
+
+It is used in a wide range of applications, from small personal projects to large enterprise systems.
+
+
+
+SQL interview questions for freshers will include asking this type of basic concepts. If you are a beginner, it's important to have a good understanding of the fundamentals.
+
+
+
+2. What is a Database?
+
+
+It is a structured set of data that is stored and organized in such a manner that the retrieval and modification of data become efficient. 
+
+
+
+You can think of it as a digital filing system that stores information in a structured format. 
+
+
+
+Databases are used in a wide range of applications, from small personal projects to large enterprise systems, and can be stored and managed using various software tools such as SQL databases, NoSQL databases, and graph databases. 
+
+
+
+These can store a variety of data types, including text, numbers, images, and multimedia files. They provide an efficient way to manage and organize large amounts of data, making it easier to access and analyze.
+
+
+
+
+Recommended Professional
+Certificates
+
+
+
+
+
+
+
+
+3. What is Database Management System (DBMS)?
+
+
+DBMS is a software system used to manage and manipulate databases. 
+
+
+
+It is a set of tools and software that allows users to create, access, update, and manage databases. A DBMS provides an interface between the user and the database, allowing the user to perform various tasks. These tasks include defining the structure of the database, inserting, updating, and deleting data, and querying the database to retrieve specific information. 
+
+
+
+It also manages security, backup, and recovery procedures to ensure data is protected and can be restored in case of a failure or disaster. 
+
+
+
+Examples of popular DBMSs include Oracle, MySQL, Microsoft SQL Server, PostgreSQL, and MongoDB.
+
+
+
+4. What is the difference between DBMS and RDBMS?
+
+
+DBMS is a software system used to manage databases that may or may not enforce data relationships, normalization, and consistency. 
+
+
+
+On the other hand, RDBMS is a type of DBMS that enforces data relationships using keys and ensures data consistency using ACID properties. RDBMS is more suitable for large and complex datasets and requires data to be normalized for better efficiency.
+
+
+
+Here is a comparison showing the differences between DBMS and RDBMS:
+
+
+
+Feature	DBMS	RDBMS
+Data storage	Stores data as files or folders on the operating system	Stores data in tables with rows and columns
+Data relationships	Doesn't typically enforce relationships between data	Enforces relationships between tables using keys
+Normalization	Doesn't require normalization of data	Requires data to be normalized for better efficiency
+Data consistency	Doesn't guarantee data consistency	Enforces data consistency rules using ACID properties
+Scalability	Can handle small to medium-sized datasets	Can handle large and complex datasets more efficiently
+
+
+5. Explain the different types of SQL statements.
+
+
+There are three primary types of statements in SQL:
+
+
+
+a) Data Manipulation Language (DML) Statements: 
+
+
+These SQL statements are used to manipulate data in a database. 
+
+
+
+Some of the commonly used DML statements are:
+
+
+
+SELECT: for retrieving data from one or more tables.
+
+
+INSERT: for adding new rows of data to a table.
+
+
+UPDATE: for changing existing data in a table.
+
+
+DELETE: for deleting data from a table.
+
+
+
+b) Data Definition Language (DDL) Statements: 
+
+
+These SQL statements are used to define the structure of a database, tables, and columns. 
+
+
+
+Some of the commonly used DDL statements are:
+
+
+
+CREATE: used to create a new table, database, or other database objects.
+
+
+ALTER: used to modify the structure of an existing table, database, or other database objects.
+
+
+DROP: used to delete a table, database, or other database objects.
+
+
+
+c) Data Control Language (DCL) Statements: 
+
+
+These SQL statements are used to control access to the database. 
+
+
+
+Some of the commonly used DCL statements are:
+
+
+
+GRANT: used to grant privileges to a user or role.
+
+
+REVOKE: used to revoke privileges from a user or role.
+
+
+
+In addition to these statements, SQL also includes other statements such as: 
+
+
+
+Transaction Control Language (TCL) statements (e.g., COMMIT, ROLLBACK) 
+
+
+Session Control Statements (SET, ALTER SESSION) 
+
+
+
+These statements allow users to control transactions and the behavior of the session.
+
+
+
+6. What is a primary key in SQL?
+
+
+A primary key is a vital component of a table that serves as a unique identifier for each row. It consists of one or more columns whose values must be unique and non-null. By enforcing data integrity, a primary key ensures that each row in the table can be uniquely identified, and duplicate entries are not allowed.
+
+
+
+A primary key column must meet the following requirements:
+
+
+
+It must contain a unique value for each row in the table.
+
+
+It cannot contain null values.
+
+
+It must have a unique name within the table.
+
+
+It can be composed of one or more columns.
+
+
+
+Primary keys are usually used as a reference for foreign keys in related tables, creating a relationship between them. 
+
+
+
+When creating a table, a primary key can be defined using the PRIMARY KEY constraint after the column or columns that should form the primary key. 
+
+
+
+Suggested Reading: DBMS Interview Questions and Answers
+
+
+
+7. What is a foreign key in SQL?
+
+
+A foreign key is a crucial element in database design that enables the establishment of relationships between two tables. It is a column or a combination of columns in one table that refers to the primary key of another table. By enforcing referential integrity, a foreign key ensures that data between the two tables remain consistent and accurate.
+
+
+
+A foreign key constraint ensures that the data inserted into the table containing the foreign key column corresponds to the data in the table containing the primary key column. This helps to maintain the consistency of the data between the two tables.
+
+
+
+8. What is a database index in SQL?
+
+
+A database index is a powerful tool used to enhance the performance of data retrieval operations in a table.
+
+
+
+You can think of an index as a pointer to the location of data in a table. It allows the database engine to quickly locate the rows that match a particular search condition, rather than scanning the entire table.
+
+
+
+An index is created on one or more columns of a table, and it can be created on both single and multiple columns. When a query is executed against the table, the database engine uses the index to locate the rows that match the search condition. 
+
+
+
+This process is much faster than scanning the entire table, especially when dealing with large tables.
+
+
+
+9. What is SQL join?
+
+
+A join in SQL is an operation that combines rows from two or more tables into a single result set based on a related column between them. 
+
+
+
+The join operation is used to retrieve data that is spread across multiple tables, making it possible to query related data in a single statement.
+
+
+
+10. What is normalisation in SQL?
+
+
+Normalisation is a process in SQL database design that involves organising tables and their relationships to minimise data redundancy and improve data integrity. It is a set of rules that ensures that each table in a database contains only related data and eliminates the possibility of inserting or updating redundant data.
+
+
+
+There are different levels of normalisation, each with its own set of rules. The most commonly used levels are:
+
+
+
+a) First Normal Form (1NF): 
+
+
+This level ensures that each column of a table contains atomic (indivisible) values, and there are no repeating groups of data.
+
+
+
+b) Second Normal Form (2NF): 
+
+
+This level builds upon the 1NF by ensuring that all non-key columns in a table are dependent on the table's primary key.
+
+
+
+c) Third Normal Form (3NF): 
+
+
+This level builds upon the 2NF by ensuring that all non-key columns in a table are not dependent on other non-key columns.
+
+
+
+11. What is denormalisation in SQL?
+
+
+It is a technique used in database design to optimise the performance of query operations by deliberately introducing redundancy into a table.
+
+
+
+In simple terms, denormalisation is the opposite of normalisation, which aims to eliminate redundancy in a database.
+
+
+
+Denormalisation involves adding redundant data to a table, either by duplicating columns or by creating new tables that store pre-computed data. This redundancy can help to speed up queries by reducing the need for joins.
+
+
+
+12. What is a view in SQL?
+
+
+A view in SQL is a virtual table that is based on the result of a SQL query. It is a stored query that can be accessed and manipulated just like a table, but does not actually store any data itself.
+
+
+
+A view is created by defining a SQL query that retrieves the data that should be included in the view. Once the query is defined, it can be stored as a view, and the view can be accessed just like a regular table.
+
+
+
+13. What is the role of a view?
+
+
+Views in SQL can be used for several purposes, including:
+
+
+
+a) Simplifying complex queries: 
+
+
+A view can be used to simplify a complex query by encapsulating the logic into a single view that can be used as a basis for other queries.
+
+
+
+b) Hiding sensitive data: 
+
+
+A view can be used to hide sensitive data from certain users by only including the data that is necessary for them to perform their tasks.
+
+
+
+c) Providing a customized view of data: 
+
+
+A view can be used to provide a customised view of data for different users or applications, without having to create separate tables.
+
+
+
+d) Providing an additional layer of security: 
+
+
+A view can be used to provide an additional layer of security by restricting access to certain columns or rows of data.
+
+
+
+14. What is a stored procedure in SQL?
+
+
+The stored procedure is a set of SQL statements that are stored in the database server and can be executed repeatedly without the need to recompile them each time. 
+
+
+
+Stored procedures can be thought of as precompiled and stored SQL code that can be called from an application or another SQL statement.
+
+
+
+These are commonly used in SQL to encapsulate complex database logic that would otherwise need to be repeated multiple times across different applications or SQL statements. By centralising the logic in a stored procedure, the complexity can be reduced, and the code can be made more modular and reusable.
+
+
+
+15. What is a trigger in SQL?
+
+
+A trigger is a database object that is associated with a table or view and is executed automatically in response to certain database events, such as insert, update, or delete operations on the table or view.
+
+
+
+Triggers in SQL are used to: 
+
+
+enforce business rules
+
+
+perform complex data validations
+
+
+audit data changes
+
+
+perform other tasks that need to be executed automatically when certain database events occur. 
+
+
+
+Triggers can be defined to execute either before or after the event that triggers them.
+
+
+
+When a trigger is defined on a table, it is automatically executed by the database server whenever the corresponding event occurs. Triggers can contain SQL statements, stored procedures, or other database objects that are executed as part of the trigger's action.
+
+
+
+Suggested Reading: Top 28 Java 8 Interview Questions and Answers for Experienced (With Free PDF)
+
+
+
+16. What is ACID in database transactions?
+
+
+ACID stands for Atomicity, Consistency, Isolation, and Durability. These are some important properties that guarantee the reliability of transactions in a database.
+
+
+
+a) Atomicity: 
+
+
+A transaction is an indivisible unit of work that must either be completed in its entirety or not at all. Atomicity ensures that if a transaction is interrupted, all of its changes are rolled back, leaving the database in its original state.
+
+
+
+b) Consistency: 
+
+
+A transaction must ensure that the database remains in a consistent state before and after it executes. This means that the data must satisfy all constraints and rules defined by the schema.
+
+
+
+c) Isolation: 
+
+
+Transactions must be isolated from each other, so that the changes made by one transaction are invisible to other transactions until they are committed.
+
+
+
+d) Durability: 
+
+
+When a transaction is committed, its modifications must be durable and capable of surviving any system failures or crashes that may occur afterwards. Durability ensures that data is not lost due to hardware or software failures.
+
+
+
+Together, these properties provide a robust framework for managing database transactions, ensuring that they are reliable, correct, and durable, even in the face of errors, concurrent access, and system failures. 
+
+
+
+17. What is difference between SQL and MySQL?
+
+
+SQL and MySQL are related but distinct concepts. 
+
+
+
+Here are some of the key differences between SQL and MySQL:
+
+
+
+SQL	MySQL
+SQL is a programming language used to manage and manipulate relational databases.	MySQL is an open-source RDBMS that uses SQL as its language for managing data.
+SQL is a standardised language that can be used with various RDBMS, such as MySQL, Oracle, SQL Server, etc.	MySQL is a specific RDBMS that can only be used with MySQL databases.
+SQL provides a set of commands for creating, updating, and querying databases and their tables, as well as managing users and permissions.	MySQL provides a full-featured database management system, with support for features such as replication, partitioning, and clustering.
+SQL commands can be used in a command-line interface, in database management tools, or in programming languages that support SQL.	MySQL is typically accessed through a command-line interface, a graphical user interface, or programming APIs such as JDBC or ODBC.
+SQL is a declarative language, which means that you specify what you want to do, and the database management system determines how to execute your commands.	MySQL uses a query optimiser to determine the most efficient way to execute SQL queries.
+SQL supports various data types, including integers, decimals, strings, and dates.	MySQL supports a wide range of data types, including integers, decimals, strings, dates, and more.
+SQL provides a standard syntax for querying and manipulating data, making it easier to switch between different RDBMS.	MySQL provides a rich set of extensions and features beyond the standard SQL language, which can make it more powerful but also more complex to use.
+
+
+18. What is a transaction in SQL?
+
+
+A transaction is a logical unit of work that comprises one or more database operations that must be executed as a single, indivisible unit. It is usually composed of multiple SQL statements, such as INSERT, UPDATE, and DELETE, that modify one or more rows in a database table.
+
+
+
+In SQL, a transaction begins with a BEGIN TRANSACTION statement and ends with either a COMMIT or ROLLBACK statement. 
+
+
+
+The COMMIT statement permanently saves the changes made by the transaction, while the ROLLBACK statement cancels or undoes the changes made by the transaction.
+
+
+
+19. What is the role of transactions in SQL?
+
+
+Transactions are important for maintaining the consistency and integrity of the data in a database. They allow multiple operations to be performed as a single unit, so that either all of the operations are completed successfully, or none of them are. This helps to prevent partial updates that could leave the database in an inconsistent state.
+
+
+
+Example
+
+
+
+Consider a banking application that needs to transfer money from one account to another. This involves two separate updates to the account balances: one to deduct the money from the source account, and one to add the money to the destination account. 
+
+
+
+By performing these two updates within a transaction, the application can ensure that either both updates are completed successfully, or neither of them are. 
+
+
+
+This helps to prevent situations where the balance is deducted from the source account but not added to the destination account, leaving the database in an inconsistent state.
+
+
+
+20. What is a cursor in SQL?
+
+
+A cursor is a database object that provides a mechanism for selecting and processing individual rows of data from a result set. Cursors are typically used to iterate through the results of a query or stored procedure and perform operations on each row.
+
+
+
+When a cursor is opened, it creates a temporary result set that represents the rows returned by a SELECT statement. The cursor provides methods for navigating through the result set, such as fetching the next row, moving to the first or last row, or skipping rows. 
+
+
+
+Moreover, the cursors also allow you to update or delete individual rows in the result set, which can be useful for performing batch operations on a large data set.
+
+
+
+
+Upcoming Masterclass
+
+
+21. What is a subquery in SQL?
+
+
+It is a query that is nested inside another query. It can be used to retrieve data from one or more tables, and the results of the subquery are then used in the main query to perform further operations.
+
+
+
+22. What is the use of a subquery?
+
+
+Subqueries in SQL can be used in a variety of ways, such as:
+
+
+
+a) Filtering data: 
+
+
+A subquery can be used to filter the results of a main query based on a condition. For example, you could use a subquery to retrieve all employees who have a salary greater than the average salary of all employees.
+
+
+
+b) Performing calculations: 
+
+
+A subquery can be used to perform calculations on a set of data, and the results of the subquery can then be used in the main query. For example, you could use a subquery to calculate the total sales for each salesperson, and then use those results to generate a report.
+
+
+
+c) Retrieving data for use in a JOIN: 
+
+
+A subquery can be used to retrieve data that is needed to perform a JOIN operation. For example, you could use a subquery to retrieve the top-selling products in each category, and then use that data to join with other tables to generate a report.
+
+
+
+23. What is the difference between a subquery and a join in SQL?
+
+
+Subqueries are nested queries that can filter data, perform calculations, or retrieve data for use in a JOIN operation. But they can be slower and less efficient than a join, especially for large data sets. 
+
+
+
+Whereas, joins combine data from two or more tables based on a common column, and are generally faster and more efficient than subqueries. But they may have limitations on the types of JOINs that can be used. 
+
+
+
+Here is a comparison showing differences between subquery and join in SQL:
+
+
+
+Subquery	Join
+Syntax	SELECT ... FROM table1 WHERE column1 IN (SELECT ...)	SELECT ... FROM table1 JOIN table2 ON table1.column1 = table2.column1
+Returns	Single value, single column, or a table	Table
+Purpose	Filter data, perform calculations, or retrieve data for use in a JOIN operation	Combine data from two or more tables based on a common column
+Execution	Nested inside another query and executed for each row in the outer query (correlated or non-correlated)	Executed as a single query by the database engine
+Performance	Can be slower and less efficient than a join, especially for large data sets	Generally faster and more efficient than a subquery
+Flexibility	Can be more flexible than a join, allowing for more complex filtering and calculations	May have limitations on the types of JOINs that can be used
+Syntax complexity	Can have more complex syntax due to nesting and multiple levels of subqueries	Generally has simpler syntax than a subquery
+
+
+24. What is the difference between DELETE and TRUNCATE statements?
+
+
+The DELETE statement deletes specific rows from a table, is logged, and can be rolled back using a transaction. But it is slower for large tables and many deletes. 
+
+
+
+Whereas, the TRUNCATE statement removes all rows from a table, has minimal logging, commits automatically, and cannot be rolled back using a transaction. But it is faster for large tables and many deletes. 
+
+
+
+The table below shows all the primary differences between the DELETE and TRUNCATE statements in SQL:
+
+
+
+DELETE Statement	TRUNCATE Statement
+Operation	Deletes specific rows from a table	Removes all rows from a table
+Logging	Each row deleted is logged	Minimal logging
+Auto-commit	Needs to be committed after every delete	Commits automatically
+Rollback	Can be rolled back using a transaction	Cannot be rolled back using a transaction
+Performance	Slower for large tables and many deletes	Faster for large tables and many deletes
+Trigger	Triggers are executed for each row deleted	Triggers are not executed
+Table size	No impact on table size	Resets the table size to initial size
+Identity columns	Identity values are not reset	Identity values are reset to initial seed value
+
+
+SQL Interview Questions for Experienced
+
+
+SQL interview questions for experienced professionals often focus on more advanced topics such as performance tuning, optimisation, and database design. 
+
+
+
+Employers are looking for candidates who can not only write efficient queries but also have a deep understanding of how to manage and organise data at scale.
+
+
+
+To excel in advanced SQL interview questions, it's essential to have hands-on experience working with SQL and be able to articulate your thought process and problem-solving skills. 
+
+
+
+25. Can you explain the different types of SQL joins?
+
+
+There are several types of joins in SQL used to combine data from two or more tables based on a common column. 
+
+
+
+a) Inner join: 
+
+
+This type of join returns only the rows from both tables that have matching values in the specified columns.
+
+
+
+b) Left join (or Left outer join): 
+
+
+This type of join returns all the rows from the left table and the matching rows from the right table. 
+
+
+
+If there is no match in the right table, the result will still include all the rows from the left table with NULL values in the columns from the right table.
+
+
+
+c) Right join (or Right outer join): 
+
+
+This type of join is similar to a left join but returns all the rows from the right table and the matching rows from the left table. 
+
+
+
+If there is no match in the left table, the result will still include all the rows from the right table with NULL values in the columns from the left table.
+
+
+
+d) Full join (or Full outer join): 
+
+
+This type of join returns all the rows from both tables, with NULL values in the columns where there is no match.
+
+
+
+e) Cross join (or Cartesian product): 
+
+
+This type of join returns all possible combinations of rows from both tables. It does not require a common column between the tables.
+
+
+
+26. How do you optimize SQL queries for better performance?
+
+
+Here are some tips to optimise SQL queries for better performance:
+
+
+
+a) Use indexes:
+
+
+Indexes can significantly improve query performance by allowing the database to quickly locate the data needed for a query. Be sure to create indexes on the columns used in WHERE, JOIN, and ORDER BY clauses.
+
+
+
+b) Use EXPLAIN: 
+
+
+The EXPLAIN command can help identify slow queries and suggest ways to optimise them. EXPLAIN displays information about how the database executes a specific query, including the order in which tables are read and the indexes used.
+
+
+
+c) Limit the number of results: 
+
+
+Use the LIMIT keyword to return only the necessary number of rows from a query. This can improve performance by reducing the amount of data that needs to be processed and returned.
+
+
+
+d) Avoid using SELECT *: 
+
+
+Instead of selecting all columns from a table, specify only the columns needed for the query. This can reduce the amount of data that needs to be read and processed.
+
+
+
+e) Use subqueries: 
+
+
+Subqueries can be used to break a complex query into smaller, more manageable parts. This can improve performance by reducing the amount of data that needs to be read and processed at once.
+
+
+
+f) Optimise JOINs: 
+
+
+Be sure to use the appropriate type of JOIN (inner, outer, etc.) for the query. Also, consider using JOINs that are more efficient, such as LEFT JOIN, instead of NOT IN or NOT EXISTS.
+
+
+
+g) Avoid using functions on indexed columns: 
+
+
+Using functions such as UPPER or LOWER on indexed columns can prevent the database from using the index, resulting in slower performance.
+
+
+
+h) Use stored procedures: 
+
+
+Stored procedures can help improve query performance by reducing the amount of network traffic between the application and database server.
+
+
+
+i) Use connection pooling: 
+
+
+Connection pooling can help improve query performance by reducing the overhead associated with creating and destroying database connections.
+
+
+
+Such concepts are common if you are looking for SQL interview questions for 5 years experience or more. 
+
+
+
+27. Can you explain the difference between a clustered and a non-clustered index?
+
+
+The choice between a clustered and non-clustered index depends on the specific requirements of the database and the types of queries that will be performed. 
+
+
+
+Clustered indexes are generally best for tables that will be frequently accessed using range queries or table scans. Whereas, non-clustered indexes are better for tables that will be frequently accessed using exact match queries.
+
+
+
+Clustered Index	Non-Clustered Index
+Definition	Index that defines the physical order of data in a table.	Index that does not define the physical order of data in a table.
+Structure	B-tree structure, with the data pages arranged in the same order as the index.	B-tree structure, with separate index pages and data pages.
+Number	Only one clustered index can be created per table.	Multiple non-clustered indexes can be created per table.
+Columns	Can be created on any column(s) in a table, but only one clustered index can be created per table.	Can be created on any column(s) in a table.
+Impact on Table	Affects the order of the data in the table.	Does not affect the order of the data in the table.
+Query Performance	Generally provides faster query performance for range queries and table scans.	Generally provides faster query performance for exact match queries.
+Maintenance	More difficult to maintain, as any changes to the index require reordering the data pages.	Easier to maintain, as any changes to the index do not require reordering the data pages.
+Storage	Requires more storage space, as the data pages are physically arranged in the same order as the index.	Requires less storage space, as the index pages and data pages are separate.
+
+
+28. What is the purpose of the GROUP BY clause in SQL?
+
+
+The GROUP BY clause in SQL is used to group rows that have the same values in one or more columns into summary rows, like computing the sum, average, count, or other aggregate functions over those groups.
+
+
+
+The purpose of the GROUP BY clause is to organise data into groups that can be analysed in aggregate, such as calculating total sales by region, average salary by department, or the number of orders by the customer.
+
+
+
+Web Development Career Guides
+
+
+
+How to Become a Web Developer?	What does a Web Developer do?
+Is Web Development a Good Career?	How to Learn Web Development?
+How to Become Backend Developer?	How to Become Full Stack Developer?
+
+
+29. Give an example of a query in SQL using GROUP BY.
+
+
+Here's an example of a SQL query using GROUP BY:
+
+
+
+SELECT region, COUNT(*) as num_orders, SUM(total_price) as total_sales
+FROM orders
+GROUP BY region;
+
+
+Here, the query groups the rows in the "orders" table by region and calculates the number of orders and total sales for each region. The result set would show the total number of orders and total sales for each region.
+
+
+
+Without the GROUP BY clause, the query would simply calculate the total number of orders and total sales across all regions, rather than grouping them by region.
+
+
+
+It is one of the top SQL interview questions for 3 years experience. 
+
+
+
+30. What is a recursive query, and how is it useful in SQL?
+
+
+A recursive query in SQL is a query that references itself in order to build a hierarchical result set. It is also known as a hierarchical or recursive CTE (Common Table Expression) in SQL.
+
+
+
+The recursive query is useful in SQL for representing hierarchical relationships between data, such as a tree structure or an organisational chart. It allows you to easily traverse through the levels of the hierarchy and retrieve all related data.
+
+
+
+The recursive query is typically written as a CTE, which is a named temporary result set that can be used within a SQL statement. 
+
+
+
+The CTE contains two parts: the initial query and the recursive query. The initial query retrieves the starting rows of the hierarchy, while the recursive query references the CTE itself and retrieves the child rows of each parent row until there are no more children.
+
+
+
+31. Give an example of a recursive query in SQL.
+
+
+Here's an example of a recursive query in SQL:
+
+
+
+WITH RECURSIVE cte_hierarchy AS (
+  SELECT id, name, manager_id
+  FROM employees
+  WHERE id = 1
+  UNION ALL
+  SELECT e.id, e.name, e.manager_id
+  FROM employees e
+  INNER JOIN cte_hierarchy c ON e.manager_id = c.id
+)
+SELECT id, name, manager_id
+FROM cte_hierarchy;
+
+
+Here, the query retrieves the hierarchical relationship between employees starting from the employee with ID 1. The initial query selects the row with ID 1, and the recursive query joins the employees' table with the CTE to retrieve the child rows of each parent row until there are no more children.
+
+
+
+32. Can you explain the difference between a transaction and a batch?
+
+
+A transaction is a single or multiple database operation that must be executed as a single unit of work. Whereas, a batch is a group of one or more T-SQL statements executed as a single unit. 
+
+
+
+Transactions ensure atomicity, consistency, isolation, and durability of operations and provide recovery options in case of system failure. On the other hand, batches group statements for ease of execution and do not provide recovery options.
+
+
+
+Parameter	Transaction	Batch
+Purpose	To ensure atomicity, consistency, isolation, and durability of one or more database operations	To group one or more T-SQL statements into a single unit of work
+Scope	A single or multiple SQL statements within a session	A group of one or more SQL batches executed together
+Execution	It executes sequentially and cannot be interrupted. If any operation fails, it rolls back the entire transaction	It executes one batch after another, and each batch operates independently
+Commit/Rollback	A transaction must either be committed or rolled back as a single unit	A batch does not have to be committed or rolled back, and individual statements within a batch can be committed or rolled back
+Error handling	If an error occurs, the transaction rolls back to its original state	If an error occurs, execution of the batch stops, and any uncommitted transactions are rolled back.
+Recovery	Transactions provide recovery options in case of system failure	Batches do not provide recovery options in case of system failure.
+Locks and Isolation	Transactions provide the ability to lock rows or tables and specify the level of isolation	Batches do not have the ability to lock rows or tables and do not specify the level of isolation.
+
+
+33. How do you implement data integrity in a SQL database?
+
+
+Data integrity in a SQL database is implemented to ensure that data is accurate, consistent, and valid throughout the database. There are several ways to implement data integrity in SQL databases:
+
+
+
+a) Primary and Foreign Keys: 
+
+
+Primary keys are used to ensure that each row in a table is unique, while foreign keys are used to enforce referential integrity between tables. By defining primary and foreign keys, you can prevent duplicate or orphaned data.
+
+
+
+b) Constraints: 
+
+
+Constraints are rules that restrict the values that can be entered into a database. For example, a check constraint can be used to ensure that a salary value is greater than zero.
+
+
+
+c) Triggers: 
+
+
+Triggers are special types of stored procedures that are automatically executed in response to specific database events, such as inserting or updating data. Triggers can be used to enforce complex data integrity rules.
+
+
+
+d) Transactions: 
+
+
+Transactions are used to group database operations into a single unit of work that must be executed as a whole or rolled back if any part of the transaction fails. This ensures that data remains consistent during the execution of multiple operations.
+
+
+
+e) Views: 
+
+
+Views are virtual tables that display a subset of data from one or more tables. By creating views with specific filters and rules, you can ensure that only valid data is displayed to end users.
+
+
+
+Suggested Reading: Flutter Interview Questions and Answers
+
+
+
+34. What is a stored procedure in SQL, and how do you create and execute one?
+
+
+A stored procedure is a pre-written, compiled SQL program that is stored in a database and can be executed multiple times. Its role is to simplify complicated database operations, improve performance, and enhance security by controlling access to the underlying database tables.
+
+
+
+For setting up a stored procedure in SQL, you can use the CREATE PROCEDURE statement followed by the procedure name and parameter list (if any), and the SQL code that defines the logic of the procedure. 
+
+
+
+Example:
+
+
+
+Here's an example of a simple stored procedure that selects all records from a table:
+
+
+
+CREATE PROCEDURE SelectAllCustomers
+AS
+BEGIN
+  SELECT * FROM Customers
+END
+
+
+To execute a stored procedure, you can use the EXECUTE or EXEC statement followed by the procedure name and any required parameters. 
+
+
+
+Here's an example of how to execute the stored procedure created above:
+
+
+
+EXEC SelectAllCustomers
+
+
+Stored procedures can also be executed with parameters that allow for dynamic filtering of the data returned. 
+
+
+
+Here's an example of a stored procedure that selects records from a table based on a specific customer name:
+
+
+
+CREATE PROCEDURE SelectCustomerByName
+  @CustomerName varchar(50)
+AS
+BEGIN
+  SELECT * FROM Customers WHERE CustomerName = @CustomerName
+END
+
+
+To execute this stored procedure, you would pass in the customer name parameter as follows:
+
+
+
+EXEC SelectCustomerByName 'ABC Company'
+
+
+
+35. How do you handle deadlock situations in SQL?
+
+
+In SQL databases, deadlocks can occur when two or more transactions are in a waiting state, each waiting for the other to release resources necessary to complete their respective tasks. This can result in a situation where both transactions are blocked and cannot proceed, leading to a "deadlock".
+
+
+
+To handle deadlock situations in SQL, you can take the following steps:
+
+
+
+a) Identify the source of the deadlock: 
+
+
+You can use SQL Server Profiler or Trace Flags to capture deadlock information and identify the source of the problem.
+
+
+
+b) Kill one of the transactions: 
+
+
+You can use the KILL statement to terminate one of the transactions involved in the deadlock. However, this approach is not always the best solution, as it can cause data inconsistency and result in data loss.
+
+
+
+c) Increase lock timeout: 
+
+
+You can increase the lock timeout value for the SQL Server instance or specific queries to allow more time for transactions to complete. However, this approach can lead to longer query execution times.
+
+
+
+d) Improve indexing: 
+
+
+You can optimize your database indexing to reduce the need for locks and improve query performance. This can help to minimize the likelihood of deadlocks occurring.
+
+
+
+e) Restructure transactions: 
+
+
+You can restructure your SQL transactions to reduce the likelihood of deadlocks occurring. For example, you can minimize the duration of transactions, or change the order in which transactions are executed.
+
+
+
+These types of topics are an important part of the interview questions and answers for SQL. 
+
+
+
+
+
+
+36. How do you implement security in a SQL database?
+
+
+Implementing security in a SQL database is an important aspect of database administration. Here are some steps to follow for implementing it:
+
+
+
+a) Secure access to the database server: 
+
+
+Ensure that the database server is physically secure and that only authorized users have access to it.
+
+
+
+b) Create strong passwords: 
+
+
+Require users to create strong passwords, and enforce password policies such as password complexity, expiration, and lockout after a certain number of failed attempts.
+
+
+
+c) Limit access to the database: 
+
+
+Assign database roles and permissions to control access to the database, and restrict access to sensitive data to only authorized users.
+
+
+
+d) Use encryption: 
+
+
+Use encryption to protect sensitive data, such as credit card numbers and social security numbers. SQL Server provides built-in encryption features, such as Transparent Data Encryption (TDE) and Always Encrypted.
+
+
+
+e) Implement auditing and monitoring: 
+
+
+Implement auditing and monitoring tools to track and log database activity, and set up alerts for suspicious activity.
+
+
+
+f) Patch and update regularly: 
+
+
+Keep the SQL Server updated with the latest patches and updates to address known security vulnerabilities.
+
+
+
+g) Use firewalls and network security: 
+
+
+Implement firewalls and network security to protect the database server from external threats.
+
+
+
+h) Follow industry best practices: 
+
+
+Follow industry best practices for security, such as those outlined by the Center for Internet Security (CIS) and the National Institute of Standards and Technology (NIST).
+
+
+
+37. How do you implement backup and recovery strategies in SQL?
+
+
+We can implement backup and recovery strategies in SQL using the following tips:
+
+
+
+a) Determine the appropriate backup strategy: 
+
+
+Determine the appropriate backup strategy based on the size and complexity of the database. Common backup strategies include full backups, differential backups, and transaction log backups.
+
+
+
+b) Schedule regular backups: 
+
+
+Schedule regular backups to ensure that data is backed up at regular intervals. The frequency of backups depends on the volume of data and the recovery point objective (RPO) and the recovery time objective (RTO) for the database.
+
+
+
+c) Test backups regularly: 
+
+
+Test backups regularly to ensure that they are successful and that data can be restored in case of a disaster.
+
+
+
+d) Store backups in a secure location: 
+
+
+Store backups in a secure location to protect them from physical and logical damage. The backup location should be secure and accessible only to authorised personnel.
+
+
+
+e) Implement a recovery plan: 
+
+
+Develop a recovery plan that outlines the steps to be taken in case of a disaster, such as a hardware failure or a natural disaster. The recovery plan should include steps for restoring backups and bringing the database back online.
+
+
+
+f) Automate backups: 
+
+
+Use automation tools to simplify the backup and recovery process. Automation tools can help to reduce the risk of human error and ensure that backups are taken at regular intervals.
+
+
+
+g) Monitor the backup process: 
+
+
+Monitor the backup process to ensure that backups are taken as scheduled and that there are no errors. This can help to identify issues early and prevent data loss.
+
+
+
+38. Can you explain the concept of database replication, and how is it useful?
+
+
+Database replication is the process of creating and maintaining multiple copies of a database in different locations. The purpose of database replication is to improve the availability and reliability of the database and to support distributed computing environments. 
+
+
+
+Here are some benefits of database replication:
+
+
+
+a) Improved availability: 
+
+
+By creating multiple copies of the database, database replication improves the availability of the database. If one copy of the database goes down, the application can still access another copy of the database.
+
+
+
+b) Improved performance: 
+
+
+Database replication can improve performance by distributing the workload across multiple copies of the database. This can help to reduce the load on any one database server, and improve the overall performance of the database.
+
+
+
+c) Disaster recovery: 
+
+
+Database replication can also be used as part of a disaster recovery strategy. By replicating the database to a secondary location, you can ensure that the database can be restored in case of a disaster, such as a natural disaster or a hardware failure.
+
+
+
+d) Geographic distribution: 
+
+
+Database replication can support the geographic distribution of the database. This is useful in distributed computing environments where applications need to access the database from different locations around the world.
+
+
+
+39. What are the different types of database replication?
+
+
+a) Master-slave replication:
+
+
+In master-slave replication, there is one master database and one or more slave databases. The master database is the primary database, and all changes are made to the master database. The changes are then replicated to the slave databases.
+
+
+
+b) Multi-master replication: 
+
+
+In multi-master replication, there are multiple master databases, and all databases can accept changes. Changes made to one master database are then replicated to the other master databases.
+
+
+
+c) Snapshot replication: 
+
+
+In snapshot replication, the database is replicated at a specific point in time, rather than continuously. This is useful for reporting and data analysis purposes.
+
+
+
+40. How do you handle large amounts of data that are required to be inserted or updated in the database?
+
+
+Handling large amounts of data that need to be inserted or updated in a database can be challenging. But there are several strategies that can be used to optimise performance and improve efficiency. 
+
+
+
+a) Use batch processing: 
+
+
+Instead of inserting or updating one record at a time, it can be more efficient to process data in batches. 
+
+
+
+This can reduce the number of round-trips between the application and the database and improve performance. Some database drivers support batch processing natively, and many ORM frameworks also have support for batching.
+
+
+
+b) Optimise indexes: 
+
+
+Indexes can significantly improve the performance of queries, but they can also slow down insert and update operations. 
+
+
+
+If you're inserting or updating a large number of records, it may be more efficient to temporarily disable indexes and then rebuild them once the operation is complete.
+
+
+
+c) Use data partitioning: 
+
+
+Data partitioning involves splitting large tables into smaller ones based on a partition key, such as date, region, or product type. It helps you boost performance by reducing the amount of data required to be scanned for queries or updates.
+
+
+
+d) Use compression: 
+
+
+Compressing data before it is inserted into the database can reduce the amount of disk space required. It improves performance by reducing the amount of data that needs to be transferred between the application and the database server.
+
+
+
+Suggested Reading: Angular Interview Questions and Answers
+
+
+
+SQL Interview Questions on Queries
+
+
+Queries are at the heart of SQL, and employers often ask SQL queries interview questions to test a candidate's ability to write efficient and effective queries. 
+
+
+
+The queries are used to retrieve and manipulate data from databases, and it's essential to have a deep understanding of SQL syntax and logic to write effective queries.
+
+
+
+Queries in SQL interview questions can cover a wide range of topics, including selecting data from tables, filtering data, sorting data, grouping data, and joining data from multiple tables. 
+
+
+
+You can also be asked to write SQL queries from scratch or analyse existing queries and optimise them for performance.
+
+
+
+What is a SQL query?
+
+
+Can you explain the SELECT statement in SQL?
+
+
+What is the purpose of the WHERE clause in a SQL query?
+
+
+How do you retrieve data from multiple tables using SQL?
+
+
+How do you join two or more tables in SQL?
+
+
+Can you explain the difference between INNER JOIN and OUTER JOIN?
+
+
+What is a subquery, and how is it used in SQL?
+
+
+How do you use the GROUP BY clause in SQL?
+
+
+Can you explain the difference between the HAVING and WHERE clauses?
+
+
+How do you use the ORDER BY clause in SQL?
+
+
+How do you use the LIMIT clause in SQL?
+
+
+How do you use the UNION operator in SQL?
+
+
+Can you explain the difference between UNION and UNION ALL?
+
+
+What is a correlated subquery, and how is it used in SQL?
+
+
+How do you use the EXISTS operator in SQL?
+
+
+How do you use the IN operator in SQL?
+
+
+How do you use the LIKE operator in SQL?
+
+
+Can you explain the difference between a stored procedure and a function in SQL?
+
+
+How do you pass parameters to a SQL query?
+
+
+Can you explain the purpose of the DISTINCT keyword in a SQL query?
+
+
+
+SQL Interview Questions on Joins
+
+
+Joining tables is a fundamental concept in databases, and SQL interview questions on joins are a common way for employers to test a candidate's knowledge of it. The joins are used to combine data from two or more tables based on a common column or key, allowing for more complex queries and data analysis.
+
+
+
+Interview questions on SQL joins can cover a wide range of topics, including inner joins, outer joins, self-joins, and cross joins. You can also be asked to write SQL queries that involve multiple tables or analyse existing queries and optimise them for performance.
+
+
+
+What is a SQL join?
+
+
+Can you explain the different types of SQL joins?
+
+
+What is the difference between INNER JOIN and OUTER JOIN?
+
+
+Can you explain the difference between LEFT JOIN and RIGHT JOIN?
+
+
+How do you join more than two tables in SQL?
+
+
+How do you perform a self-join in SQL?
+
+
+Can you explain the difference between a cross join and an inner join?
+
+
+What is a natural join, and how is it different from a regular join?
+
+
+How do you use aliases when joining tables in SQL?
+
+
+How do you handle null values when joining tables in SQL?
+
+
+How do you optimise SQL joins for better performance?
+
+
+What is a subquery, and how is it used in SQL joins?
+
+
+Can you explain the concept of a join condition in SQL?
+
+
+How do you join tables on multiple columns in SQL?
+
+
+How do you join tables with different column names in SQL?
+
+
+How do you join tables using the ON and USING keywords in SQL?
+
+
+What is a full outer join, and how is it used in SQL?
+
+
+How do you join tables from different databases in SQL?
+
+
+Can you explain the difference between a cartesian product and a join?
+
+
+How do you troubleshoot issues with SQL joins?
+
+
+
+
+
+
+SQL Interview Questions for Testers
+
+
+In addition to developers and database administrators, testers are also asked SQL interview questions to test their ability to work with databases and perform data-related testing. 
+
+
+
+SQL interview questions on testing can cover a wide range of topics, including data validation, data integrity, and data manipulation.
+
+
+
+Can you explain the basics of SQL and how it is used in software testing?
+
+
+How do you retrieve data from a database using SQL?
+
+
+What is the purpose of the WHERE clause in a SQL query, and how is it useful in testing?
+
+
+How do you use SQL queries to validate data in a database?
+
+
+Can you explain the difference between an inner join and an outer join, and how is it useful in testing?
+
+
+How do you test SQL queries for performance issues?
+
+
+How do you test SQL queries for accuracy and completeness?
+
+
+Can you explain the concept of data normalization, and how is it useful in testing?
+
+
+How do you use SQL queries to test database schema changes?
+
+
+Can you explain the purpose of the GROUP BY clause in SQL, and how is it useful in testing?
+
+
+How do you use SQL queries to verify data migrations?
+
+
+Can you explain the concept of database indexing, and how is it useful in testing?
+
+
+How do you use SQL queries to test database backup and recovery strategies?
+
+
+Can you explain the difference between a stored procedure and a function in SQL, and how are they useful in testing?
+
+
+How do you use SQL queries to test data integrity and consistency?
+
+
+Can you explain the difference between a subquery and a correlated subquery, and how are they useful in testing?
+
+
+How do you use SQL queries to test concurrency and locking in a database?
+
+
+Can you explain the concept of database replication, and how is it useful in testing?
+
+
+How do you use SQL queries to test security and access control in a database?
+
+
+Can you explain the difference between a SQL injection attack and a cross-site scripting attack, and how can they be prevented in testing?
+
+
+
+SQL Questions for Practice
+
+
+Practical questions on SQL are a great way to prepare for the interview and ensure that you're confident and comfortable with the language. These questions are designed to test your knowledge of syntax and logic, and they can cover a wide range of topics, including data manipulation, data modeling, and database design.
+
+
+
+SQL questions to practice can range from simple queries that retrieve data from a single table to more complex queries that involve multiple tables and require advanced skills. They can also include questions about database management, data normalisation, and data security.
+
+
+
+Write a SQL query to retrieve all the records from a table named "customers".
+
+
+Write a SQL query to retrieve the first name, last name, and email address of all customers whose last name is "Smith".
+
+
+Write a SQL query to retrieve the total number of orders for each customer.
+
+
+Write a SQL query to retrieve the top 10 highest-paid employees.
+
+
+Write a SQL query to retrieve the average salary of all employees.
+
+
+Write a SQL query to retrieve the names of all customers who have placed an order in the last 30 days.
+
+
+Write a SQL query to retrieve the names of all customers who have never placed an order.
+
+
+Write a SQL query to retrieve the number of orders placed by each customer in the year 2021.
+
+
+Write a SQL query to retrieve the names of all customers who have placed an order for a product with a price greater than $100.
+
+
+Write a SQL query to retrieve the names of all customers who have placed an order for a product with a price greater than the average price of all products.
+
+
+Write a SQL query to retrieve the names of all customers who have placed an order for a product that is out of stock.
+
+
+Write a SQL query to retrieve the names of all customers who have placed an order for a product that is not in stock.
+
+
+Write a SQL query to retrieve the total revenue generated by each product.
+
+
+Write a SQL query to retrieve the names of all employees who do not have a manager.
+
+
+Write a SQL query to retrieve the names of all employees who have at least one subordinate.
+
+
+
+Wrapping Up:
+
+
+
+SQL is a fundamental language for managing and analysing data, and SQL interviews are an important part of the recruitment process for roles involving data management and analysis. 
+
+
+
+Our comprehensive write-up covered a wide range of SQL questions and answers for interview, from basic questions for freshers to advanced questions for experienced professionals, as well as practice questions for candidates to prepare for their upcoming SQL interviews.
+
+
+
+By reviewing and practising these questions, you'll be able to demonstrate your expertise in SQL and showcase your ability to work with databases and perform data-related tasks. It's important to not only know the syntax and logic of SQL but also to understand the underlying principles of data management and database design.
+
+
+
+Remember to stay calm and confident during your SQL interview, and use these questions as an opportunity to showcase your skills and knowledge of SQL. By doing so, you'll be one step closer to securing your dream job and advancing your career in data management and analysis.
+
+
