@@ -1044,3 +1044,153 @@ You can prepare for a Node interview with our comprehensive list of Node js prog
 
 2. What is Callback in Node JS?
 A callback is a function called when a task is completed. It allows other code to run in the meantime, and prevents blocking.
+
+ 1.What is Node.js? Where can you use it?
+
+2. Why use Node.js?
+
+3. How does Node.js work?
+
+4. Why is Node.js Single-threaded?
+
+5. If Node.js is single-threaded, then how does it handle concurrency?
+
+6. Explain callback in Node.js.
+
+7. What are the advantages of using promises instead of callbacks?
+8. How would you define the term I/O? 
+9. How is Node.js most frequently used?
+
+10. Explain the difference between frontend and backend development?
+
+11. What is NPM?
+
+12. What are the modules in Node.js?
+
+13. What is the purpose of the module .Exports?
+
+14. Why is Node.js preferred over other backend technologies like Java and PHP?
+
+15. What is the difference between Angular and Node.js?
+
+16. Which database is more popularly used with Node.js?
+
+17. What are some of the most commonly used libraries in Node.js?
+
+18. What are the pros and cons of Node.js?
+
+19. What is the command used to import external libraries?
+
+20. What does event-driven programming mean?
+
+21. What is an Event Loop in Node.js?
+
+22. Differentiate between process.nextTick() and setImmediate()?
+
+23. What is an EventEmitter in Node.js?
+24. What are the two types of API functions in Node.js?
+
+25. What is the package.json file?
+
+26. How would you use a URL module in Node.js?
+
+27. What is the Express.js package?
+
+28. How do you create a simple Express.js application?
+29. What are streams in Node.js?
+
+30. How do you install, update, and delete a dependency?
+
+31. How do you create a simple server in Node.js that returns Hello World?
+
+32. Explain asynchronous and non-blocking APIs in Node.js.
+33. How do we implement async in Node.js?
+
+34. What is a callback function in Node.js?
+
+35. What is REPL in Node.js?
+
+36. What is the control flow function?
+
+37. How does control flow manage the function calls?
+
+38. What is the difference between fork() and spawn() methods in Node.js?
+
+39. What is the buffer class in Node.js?
+
+40. What is piping in Node.js?
+
+41. What are some of the flags used in the read/write operations in files?
+
+42. How do you open a file in Node.js?
+
+43. What is callback hell?
+44. What is a reactor pattern in Node.js?
+
+45. What is a test pyramid in Node.js?
+
+46. For Node.js, why does Google use the V8 engine?
+
+47. Describe Node.js exit codes.
+
+48. Explain the concept of middleware in Node.js.
+
+49. What are the different types of HTTP requests?
+
+50. How would you connect a MongoDB database to Node.js?
+
+51. What is the purpose of NODE_ENV?
+
+Node Js Interview Questions And Answers
+Node.js:
+Ans. Node.js is a server-side JavaScript runtime environment built on the V8 JavaScript engine. It allows developers to run JavaScript on the server side, enabling the development of scalable and high-performance network applications. Node.js is particularly well-suited for building real-time, data-intensive, and event-driven applications.
+Why use Node.js:
+Ans.
+
+Single Programming Language: Node.js allows developers to use JavaScript for both server-side and client-side scripting, providing a consistent language across the entire application stack.
+Non-blocking I/O: Node.js is designed to be non-blocking, making it efficient for handling concurrent operations and providing high performance.
+Event-driven Architecture: Node.js uses an event-driven, asynchronous model, making it suitable for building scalable applications that can handle a large number of simultaneous connections.
+Large Ecosystem (NPM): Node.js has a vast ecosystem of open-source libraries and modules available through the Node Package Manager (NPM), facilitating rapid development.
+Community Support: It has a large and active community, leading to continuous improvement, updates, and the availability of resources.
+3.How Node.js works:
+
+Node.js uses an event-driven, non-blocking I/O model.
+It employs the V8 JavaScript engine to execute JavaScript code.
+The event loop and callbacks handle asynchronous operations, allowing Node.js to efficiently manage multiple connections simultaneously.
+4.Why is Node.js Single-threaded:
+
+Ans.Node.js is single-threaded to provide simplicity and avoid the complexities of managing multiple threads and synchronization issues.However, it uses an event-driven, non-blocking model to handle concurrent operations efficiently.
+
+5.Handling Concurrency in Node.js:
+
+Ans. While Node.js is single-threaded, it can handle concurrency through its event-driven, asynchronous architecture.I/O operations, such as file system operations or network requests, are non-blocking, allowing the program to continue executing other tasks while waiting for I/O to complete.
+
+6. Callback in Node.js:
+
+Ans.A callback is a function passed as an argument to another function in Node.js.It is commonly used to handle asynchronous operations, such as reading files or making network requests.When the asynchronous operation is completed, the callback function is invoked to handle the results.
+
+7.Advantages of Promises over Callbacks:
+
+Ans.
+
+Chaining: Promises allow for cleaner and more readable code through method chaining.
+Error Handling: Promises provide a more structured way of handling errors, making it easier to catch and handle exceptions
+.Avoiding Callback Hell: Promises help mitigate the issue of nested callbacks, also known as “Callback Hell” or “Pyramid of Doom,” improving code maintainability.
+8.I/O (Input/Output):
+
+Ans.In the context of Node.js, I/O refers to operations involving reading from or writing to external resources, such as files, databases, or network connections.Node.js is particularly efficient at handling I/O operations asynchronously.
+
+9.Most Frequent Use of Node.js:
+
+Ans.Node.js is commonly used to build scalable network applications, such as web servers and real-time applications like chat applications, online gaming platforms, and collaborative tools.
+
+10.Frontend vs. Backend Development:
+
+Ans. Frontend Development: Involves creating the user interface and user experience of a website or application. It deals with the presentation layer, including design, layout, and client-side scripting (e.g., HTML, CSS, JavaScript).
+
+Backend Development: Involves building the server-side of a web application. It deals with server-side logic, databases, and handling requests from the client side. Technologies like Node.js are often used for backend development.
+
+11.NPM (Node Package Manager):
+
+Ans.NPM is the default package manager for Node.js, allowing developers to discover, install, and manage packages and dependencies for their Node.js projects.It provides a vast repository of open-source libraries and tools, making it easy for developers to integrate pre-built functionality into their applications.
+	
