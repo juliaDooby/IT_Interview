@@ -387,3 +387,113 @@ Aggregation operations can process data records and return computed results. Agg
 >db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)Copy the code
 95. What are replica sets in MongoDB
 In MongoDB, a replica set is composed of a group of MongoDB instances, including a Primary node and multiple secondary nodes. All data of the MongoDB client is written to the Primary node, and the secondary nodes write data synchronically from the Primary node to keep the same data stored in all replication sets and improve data availability.
+
+ Most Frequently Asked MongoDB Interview Questions
+Here in this article, we will be listing frequently asked MongoDB Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
+
+Q1. What is MongoDB and how it works? Explain
+Answer
+MongoDB is an open source database management system (DBMS) that is used for high volume data storage. MongoDB is one of many non-relational database technologies that came up in the mid-2000s for use in big data applications and other processing jobs. Instead of using tables and rows as in other databases, MongoDB architecture uses documents and collections.
+
+Q2. What are the uses of MongoDB? Explain
+Answer
+MongoDB is used for high volume data storage. MongoDB is one of many non-relational database technologies that came up in the mid-2000s for use in big data applications and other processing jobs. MongoDB is more faster than others because it allows users to query in a different manner.
+
+In MongoDB, a record is a document, which is a data structure composed of field and value pairs. It is similar to JavaScript Object Notation objects
+
+Q3. Is MongoDB better than Mysql? Explain
+Answer
+Most developers prefer MongoDB over MySQL because MongoDB allows them to build applications quicker, handle diverse data types, and efficiently manage applications. The flexible data model in MongoDB ensures database schema evolves with business needs.
+
+Q4. When was MongoDB founded and why it is called MongoDB?
+Answer
+MongoDB was founded in 2007.
+
+MongoDB originally dubbed “p”, the database was officially named MongoDB, with “Mongo” being short for the word humongous. After received many inputs about MongoDB, the company decided it scrap the Babble project and release MongoDB on its own as an open-source database platform in 2009.
+
+Related Article: What Is The Difference Between MySQL And MongoDB
+Q5. What is the difference between Mysql and MongoDB? Explain
+Answer
+S.no	MySQL	MongoDB
+1.	Written in C, C++	Written in C, C++, JavaScript
+2.	Data stored in tables	Data stored in JSON documents
+3.	Sses schemas for defining DB structure	Schema-free
+4.	Development and maintenance by Oracle Corp.	Development and maintenance by MongoDB, Inc.
+Q6. Is MongoDB a relational database? Explain
+Answer
+No. MongoDB is a non-relational database. Instead, it is document-oriented. This means, instead of storing data in tables, similar to a relational database, it stores data in individual documents.
+
+Q7. What are the difference between SQL and MongoDB? Explain
+Answer
+Q8. Explain "Namespace" in MongoDB.
+Answer
+In MongoDB, Binary Interchange and Structure Object Notation (BSON) objects are stored in a collection. The combination of collection and database names is called a namespace. All documents in MongoDB belong to a namespace.
+
+Q9. What is index and how it is used in MongoDB?
+Answer
+An Index is a special structure in MongoDB. It stores a minimal portion of data belonging to a specific field in a form that is easy to traverse. This feature is ordered by the value of a field, which is pre-specified in the index.
+
+The primary role of an Index is to offer great performance read operations for queries that are used frequently.
+
+Related Article: Mysql Interview Questions
+Q10. Explain Storage Engine in MongoDB
+Answer
+A storage engine in MongoDB is a part of the database, which is responsible for managing and storing data on the disk. The two storage engines in MongoDB are WiredTiger and MMAPv1.
+
+Q11. In MongoDB, what is CRUD?
+Answer
+CRUD in MongoDB refers to the fundamental operations - Create, Read, Update, and Delete.
+
+Q12. What is sharding in MongoDB? Explain
+Answer
+MongoDB uses the method of sharding for enabling deployments of large data sets and operations that demand high throughput. This method allows data to be stored across different machines.
+
+Q13. How do I create a collection in MongoDB? Write it's syntax
+Answer
+In MongoDB, developers do not need to create a collection. It will get created automatically when a document will be inserted.
+
+The syntax for creating a collection in MongoDB is: db.createCollection(name,options)
+
+Q14. How do I drop a collection in MongoDB? Write it's syntax
+Answer
+To drop a collection in MongoDB, connect to the database where you want to delete the collection.
+
+Type the following command for deleting: db.collection_name.drop()
+
+Related Article: SQL Interview Questions
+Q15. How we can create an index in MongoDB?
+Answer
+You can use the db.collection.createIndex() method for creating Indexes in MongoDB.
+
+Q16. What is the command which are use to drop database in MongoDB?
+Answer
+The command - db.dropDatabse() is used for drop databases in MongoDB.
+
+Q17. What is the use of limit() function in MongoDB?
+Answer
+The limit() method in MongoDB is used for limiting the records in different databases.
+
+Q18. Can we store images in MongoDB?
+Answer
+Yes. You can use GridFS function in MongoDB for storing as well as retrieving large files such as Images, audio files, and video files.
+
+Q19. What are alternatives to MongoDB?
+Answer
+You can consider CouchDB, Cassandra, Riak, Redis, and HBase as some of the decent alternatives to MongoDB.
+
+Q20. What is replica set in Mongodb?
+Answer
+A Replica Set in MongoDB is a group of instances that maintain similar data sets. These type of sets are essential for production deployments as they offer high availability as well as good redundancy.
+
+Related Article: How to Best Prepare Yourself with MongoDB Interview Questions
+Q21. What will be objects between two dates in MongoDB?
+Answer
+Q22. Is MongoDB support ACID transactions?
+Answer
+Yes. MongoDB 4.0 version provides complete multi-document ACID transaction support.
+
+Q23. How to install MongoDB on our machine?
+Answer
+Q24. How to list all indexes in MongoDB?
+Answer
+To list all indexes you can use db.items.getIndexes()
