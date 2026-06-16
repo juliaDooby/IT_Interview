@@ -270,3 +270,366 @@ CSRF tokens in Postman can be handled by extracting them from responses and incl
 Вопрос 30
 How do you handle data-driven testing in Postman?
 Data-driven testing in Postman can be achieved by using data files, such as CSV or JSON, to provide different sets of input data for the same request or collection of requests.
+
+60+ Top Postman Interview Questions & Answers
+By Haroon Ahamed Kitthu
+Share This Article:
+Last updated on Jun 16, 202682408
+60+ Top Postman Interview Questions and Answers
+Postman is a widely used API testing and development tool that simplifies working with APIs. As the demand for robust and efficient APIs grows, proficiency in using Postman has become a valuable skill for software developers, quality assurance engineers, and API enthusiasts.
+
+To help you prepare for an interview focused on Postman, we have compiled a comprehensive list of common Postman interview questions. Whether you are a beginner or have some experience with Postman, these questions will cover various aspects of the tool, from basic concepts to advanced features.
+
+Whether you are a beginner aiming to enter the world of API testing or an experienced professional looking to validate your skills, this collection of Postman interview questions will serve as a valuable resource to help you prepare effectively. 
+
+Want a Top Software Development Job? Start Here!AI-Powered Full Stack Developer ProgramExplore ProgramWant a Top Software Development Job? Start Here!
+Most Asked Postman Interview Questions
+1. Explain the purpose and benefits of using Postman for API testing? 
+Postman is a powerful tool for API testing that offers numerous benefits. Its purpose is to simplify and streamline the process of testing APIs. Some benefits of using Postman for API testing include:
+
+Easy API Exploration: Postman provides a user-friendly interface for creating and sending requests to APIs, allowing you to explore and understand their functionalities.
+Efficient Testing: With Postman, you can quickly test various scenarios by sending different types of requests (GET, POST, PUT, DELETE) and examining the responses.
+Request and Response Validation: Postman allows you to validate API responses, ensuring they meet the expected criteria and identifying any errors or inconsistencies.
+Environment Management: Postman lets you create and manage environments, making it convenient to switch between different setups, such as development, staging, and production.
+Collaboration and Sharing: Postman facilitates teamwork by enabling the sharing of collections, requests, and test suites, fostering collaboration among developers, testers, and other stakeholders.
+2. How do you create and send a request in Postman? 
+To create and send a request in Postman, follow these steps:
+
+Open Postman and create a new request by selecting the appropriate HTTP method (e.g., GET, POST) from the dropdown menu.
+Enter the request URL in the address bar.
+Add any required headers, query parameters, or request body data, depending on the API endpoint's requirements.
+Click the "Send" button to send the request to the API server.
+Postman will display the response, including the status code, headers, and body, allowing you to analyze the results of your request.
+
+3. What are some key features of Postman that you find most useful in your testing workflow?
+ Some key features of Postman that are often found useful in testing workflows include:
+
+Collections: It allows you to organize and group related requests, making managing and executing test suites easier.
+Variables and Environments: Postman allows you to define variables and environments, which help parameterize requests and manage different testing environments.
+Test Scripts: Postman's test scripts, written in JavaScript, enable you to automate assertions, extract data from responses, and perform complex validations.
+Pre-request Scripts: These scripts allow you to perform actions before sending a request, such as setting up dynamic data or configuring authentication.
+Request History: Postman keeps a history of previously sent requests, allowing you to revisit and retest them without re-entering the details.
+Collection Runner: The Collection Runner feature allows you to execute multiple requests in a collection as a test suite, enabling automation and bulk testing.
+4. How do you handle authentication and authorization in Postman?
+Postman provides multiple ways to handle authentication and authorization in API requests. Some commonly used methods include:
+
+Basic Authentication: You can include the username and password in the request headers using the "Authorization" header.
+Token-based Authentication: Postman allows you to include tokens (such as JWT or OAuth) in the request headers or as query parameters.
+API Key: If an API requires an API key, you can pass it as a request header or query parameter.
+OAuth 2.0: Postman has built-in OAuth 2.0 support, allowing you to configure and authenticate using various OAuth flows, such as Authorization Code or Client Credentials.
+Custom Authentication: Postman's scripting capabilities enable you to implement custom authentication mechanisms by modifying request headers or using specialized libraries.
+5. Can you describe the process of creating and running automated tests in Postman?
+To create and run automated tests in Postman, follow these steps:
+
+Create a new request in Postman or open an existing one.
+Write test scripts using JavaScript to validate the API response, assert specific conditions, or extract data.
+Save the request in a collection.
+Go to the "Collections" tab and click on the three-dot menu next to the collection name.
+Select "Edit" to open the collection, then click on the "Tests" tab.
+Write and organize test scripts for the entire collection or individual requests within the collection.
+Save the collection.
+To run the automated tests, go back to the "Collections" tab and click on the arrow icon next to the collection name.
+Choose the desired test environment, if applicable.
+Click on "Run" to execute the tests in the collection.
+Postman will run the requests and display the test results, highlighting any failures or errors encountered during the execution.
+Postman Interview Questions for Freshers
+6. What is Postman?
+Postman is a collaboration platform for API development. It is a recognized API client that enables you to organize the creation, division, testing, and documentation of APIs. We can send HTTP/s requests to a repair and receive their responses using the Postman tool. It will enable us to approve the service's uptime and functionality.
+
+7. What is a collection in Postman?
+In Postman, a collection allows you to group related requests. You can also use it to organize the requests into folders systematically.
+
+8. Why do we use Postman?
+Following are some of the most important reasons for using Postman:
+
+It is software that aids with API testing and is available for free use
+It aids in managing the complete API lifecycle
+It provides Runtime Service to assist with managing API collections, workspaces, environments, and many examples
+Additionally, Postman may get integrated with CI/CD programs like Circle CI, Jenkins, etc
+It offers a sizable community forum where you can quickly find solutions to any technical problems you run across while using the tool
+9. What is an API?
+Application Programming Interface is referred to as API. Technically speaking, an API is a collection of steps, functions, and other points of access that a program, an operating system, a library, etc. makes available to programmers so they can use it to communicate with other software programs.
+
+10. Name some tools used for API Testing?
+The following list includes some of the tools used for API testing:
+
+Postman 
+Tricentis Tosca 
+Katalon Studio 
+Apigee 
+Jmeter
+SoapUI
+11. What API information is exposed in Web Developer tools?
+API information for request headers, response body, and response cookies is exposed in web developer tools.
+
+12. What can we use to get API information from web developer tools into Postman?
+Copy as cURL allows Postman to receive API data from web developer tools.
+
+13. Where are query parameters stored in a GET request?
+The query parameters for the GET request are saved in Postman's URL.
+
+14. What is meant by the term environment in Postman?
+An environment in Postman is a group of key-value pairs. Postman allows you to create various environments that you can switch instantly with a button. There are two different sorts of environments: global and local. They define the variable's scope so you can use it in requests.
+
+15. What are the core components of an HTTP request?
+An HTTP request is made up of five major components:
+
+HTTP methods: A collection of request techniques used to carry out particular actions on resources (GET, PUT, POST, DELETE)
+URI (Uniform Resource Identifier): locates a resource.
+Version of HTTP (example- HTTP v1.1)
+Content-Type: application/JSON, Content-Length: 511) Request Headers
+Payload: The message content is contained in the request body.
+Prepare Yourself to Answer All Questions!AI-Powered Automation Test Engineer ProgramExplore ProgramPrepare Yourself to Answer All Questions!
+16. State the Core Components of an HTTP Response?
+Four essential components are present in each HTTP response:
+
+According to the HTTP request's resource, the server's status is indicated by the Status/Response Code. Examples include 404 (resource not found) and 200 (response ok).
+HTTP Version - Indicates the version of HTTP being used, such as HTTP v1.1.
+The response header is where key-value pairs of metadata for the HTTP response message are stored—for instance, content length, content type, response date, and server type.
+The response body indicates response message content or resource representation.
+17. What is GUID?
+Global Unique Identifier is referred to as GUID. It consists of hexadecimal digits separated by hyphens. This Postman identifier GUID fulfills the goal of uniqueness.
+
+18. What is the HTTP response code for a POST request with incorrect parameters?
+The correct response code for a request with incorrect parameters is 400 Bad Request.
+
+19. Can local variables be imported in Postman Monitors?
+Yes, you can import local variables into Postman Monitors. However, global variables cannot get imported into Postman Monitors.
+
+20. How can you iterate a request 100 times in Postman?
+With the help of Collection Runner, Postman allows us to iterate a request 100 times.
+
+21. Which programming language is used for Postman tests?
+Postman tests are run using JavaScript.
+
+22. What is a Postman Collection?
+We can group several needs using a Postman Collection. It merely enables us to organize the requests into folders.
+
+23. What do you understand by the term Postman Collection runners?
+Data-driven testing is carried out by using a Postman collection runner. API requests are collected for numerous iterations with various data sets.
+
+24. What is Postman cloud’s purpose if we work in a company? Why?
+A Postman cloud is a shared repository where businesses can access Postman collections. Work can be immediately saved in the Postman cloud after logging in. Data and collections are accessible to team members from any location.
+
+25. Why is it not preferred to save work in Postman cloud?
+Since company work cannot be disclosed and must be kept confidential, it is not advised or desired to save your work in the Postman cloud. Since Postman requires sign-in, saving your work there could lead to a security risk.
+
+Learn 15+ In-Demand Tools and Skills!AI-Powered Automation Test Engineer ProgramExplore ProgramLearn 15+ In-Demand Tools and Skills!
+26. How will you log variable values in Postman?
+You may use the following command in Postman to log the variable values on the console:
+
+console.log(pm.variables.get("variable_name"));
+
+27. How do you access postman variables?
+You may access a Postman variable using the variable name {{var}}.
+
+28. What are the various authorization methods provided by Postman?
+Postman provides the following API request authorization options:
+
+API Key 
+Basic auth 
+Digest auth 
+Hawk Authentication 
+Oauth 1.0 
+Oauth 2.0 
+Bearer Token
+NTLM Authentication
+AWS Signature 
+29. What are the different types of API requests supported in Postman?
+The following is a list of the various API requests that Postman supports:
+
+GET
+POST
+PUT
+PATCH
+COPY
+DELETE
+HEAD
+OPTIONS
+LINK
+UNLINK
+PURGE
+LOCK
+UNLOCK
+PROPFIND
+VIEW
+30. How are Query Params different from Path Variables?
+Query parameters are used to sort or filter the resources, and Path Variables gets used to identify specific resources.
+
+31. What is Basic Auth in Postman?
+Basic Auth is a method of authorization offered by Postman for HTTP user agents, such as web browsers, to enter login and password. It becomes connected with the request after the username and password are entered.
+
+32. What is digest auth in Postman?
+One of Postman's authorization techniques is digest auth or digest authorization. Through this method, clients can send requests to the API first and then receive responses from the server, such as 401 illegal responses and numbers that can only be used once as absolute values. 
+
+33. What encoding is accepted by Postman in authorization credentials?
+Postman only takes authorization credentials encoded in Base64. Postman already has this feature, or you can use a third-party service to convert the credentials to base64.
+
+34. Can we have the same names for global variables in Postman?
+Global variables cannot have identical names since doing so would confuse the software because they are devoid of any environment. The terms of local variables might be the same across various environments.
+
+35. What do you know about the postman monitor?
+For running collections, the postman monitor is employed. Collections are kept running for the duration of the user-defined time. The user must get logged in to utilize Postman Monitor. Users regularly send emails to one another to share the monitor reports.
+
+36. What is a binary form in POST methods?
+Postman's binary form is made to send data in a format that you cannot manually type. You use these options, which cannot be manually typed, such as an image, a file, etc., because everything in a computer is transformed into binary.
+
+37. What are the limitations of Postman?
+The following is a list of Postman's main drawbacks:
+
+Postman cannot process 1000+ API requests.
+It might be challenging to manage collections and requests for large projects.
+For managing the workspace as code, Postman is not appropriate. It is because dynamic API requests would result in a lot of code duplication.
+38. How can you save the responses of API to a file in Postman?
+There are two ways to save an API response to a file in Postman:
+
+First, in the response section, click the download button.
+Then, press the arrow next to the send button. An option to send and download is available here. After clicking it, Postman will prompt you for the location to save the response after the request gets successfully executed.
+39. What is the significance of 301 status code?
+When a page has been permanently redirected from one website page to another, Postman's 301 status code gets used to indicate this. The search engine is informed that the old page is out-of-date and has to index the URL of the new page.
+
+40. Define status code 201.
+When you successfully create a resource using a POST or PUT request, the status code 201 denotes that the resource has been created. It uses the location header to return a link to a newly built resource.
+
+41. When do we use global variables, collection variables, and local variables?
+Global variables are all-purpose variables perfect for prototyping and quick results. They get utilized when transferring data to other requests.
+
+You can most frequently use collection variables to store constants that don't change while the Collection is being executed. They are used for constants that remain the same throughout execution and for URLs and authentication credentials when just one environment is present.
+
+Local variables are only accessible for the duration of the request that set them or while using the Newman/Collection runner. They get used whenever you want to override all other variable scopes.
+
+42. How do you remove local variables?
+Once you run and finish the tests, the local variables are automatically eliminated.
+
+43. What is the difference between form data and x-www-form-urlencoded?
+The primary distinction between form data and x-www-form-urlencoded is that the URL is pre-arranged when sent via x-www-form-urlencoded.
+
+Want a Top Software Development Job? Start Here!AI-Powered Full Stack Developer ProgramExplore ProgramWant a Top Software Development Job? Start Here!
+44. How do you access the history of requests in Postman?
+The History tab in the Postman application allows us to access the history of requests. The record will be synced amongst all your logged-in devices when we login into the Postman account. The view will load the request we saved while working on it earlier after clicking on any of the requests shown in the History tab. 
+
+Postman Interview Questions for Experienced
+45. Why is Base64 encoding primarily used in Postman?
+As a result of the data being transmitted in textual form and being sent in a more accessible format, like HTML form data, the Base64 authorization credentials are typically employed. Base64 is so popular because we can rely on the same 64 characters regardless of the encoding language we use.
+
+46. What is the purpose of the 304 status code?
+The meaning of the status code 304 is "Not Modified." It is utilized in conditional GET requests to reduce network bandwidth usage. The response's body must be empty. Dates, locations, and other information should be in the headers.
+
+47. Is it preferable to save our work on Postman Cloud?
+Saving your work in the Postman cloud is not recommended because business work cannot be disclosed and must be kept private. Since Postman cloud requires sign-in, security breaches could happen if it gets used. Therefore, using Postman Cloud to save work is discouraged, and team workspace is strongly recommended.
+
+48. What are the various variable scopes provided by Postman?
+Postman provides the following variable scopes:
+
+Global Variables
+Local Variables
+Environment Variables 
+Collection Variables
+Data Variables
+49. Is it possible to reuse the authentication token for multiple requests?
+You can indeed use the authentication token more than once. To do this, create a collection, add all requests with the same authentication token, and then assign the Collection with the auth token to the Collection. By choosing "Inherit auth from parent" under the Authorization tab, we may apply it to each request separately.
+
+50. How do you write test cases for basic authentication in Postman?
+One of the authentication methods offered by Postman, Basic Authentication, ensures we can specify the username and password along with the API calls. We can achieve this by first configuring the API's credentials by:
+
+Going to the Authorization tab
+From the drop-down option, choose Basic Auth
+Enter the API's username and password in the corresponding fields
+You can write the test cases like this:
+
+pm.test("Is the Request Authenticated?", function () {
+
+       var jsonData = pm.response.json();
+
+       //if authenticated then assert to true
+
+pm.expect(jsonData.authenticated).to.eql(true);
+
+  });
+
+pm.test("Is the Content-Type present?", function () {
+
+pm.response.to.have.header("Content-Type");
+
+  });
+
+pm.test("Is it a successful POST Request?", function () {
+
+pm.response.to.have.status(200);
+
+  });
+
+51. How do you set the same headers for all requests in a Postman Collection?
+Pre-request scripts are supported at the collection level and for individual requests in Postman. Any script that applies to every request in the Collection may get included in the pre-request scripts. The steps are as follows:
+
+To access the pre-request tab, right-click the Collection.
+
+Add the script's lines of code below to add a request header for each request included in the Collection.
+
+pm.request.headers.add({
+
+    key: 'TestHeader',
+
+    value: 'testValue'
+
+});
+
+To save the script, click Update.
+
+Run the request in the Collection and check the Postman console to ensure that the headers have been added.
+
+52. What are workspaces in Postman? What are their uses?
+Postman workplaces are just areas or spaces where one or more people can collaborate on the same Collection or set of collections. It allows the collections or requests to get logically separated from one another. Postman supports two different types of workspaces: Team and Personal.
+
+53. Does Postman provide a feature to log requests and responses?
+The Postman software does allow users to view requests and response parameters. But after applying the pre-request scripts, it is essential to see how you sent the request. To inspect every request and response detail in such circumstances, Postman includes an additional tool called "Postman Console." By having console.log statements in the scripts, you can additionally log the information in the console.
+
+54. How will you stop the execution of upcoming requests or the execution of the collections?
+You can use the code below to stop processing the next request: pm.setNextRequest (null);
+
+55. What do you understand by the pre-request script?
+Pre-request scripts are those used to run Javascript code before a request is made. Pre-processing tasks, including setting variables, parameters, headers, body data, etc., are performed using it.
+
+56. How can we use Custom Javascript libraries in our scripts with an example?
+We may utilize the many built-in tools and libraries that Postman offers to include our pre- or post-request scripts or test cases. Consider the use of the moment.js library. It offers a variety of helpful methods for formatting data around time. Consider a POST request that must provide the generated date for the user, who anticipates the format "DD/MM/YYYY." You can use the moment library with just one line of code. To obtain the data with the proper formatting and then store it in an environment variable, we must add the following lines of code to our pre-request script:
+
+var moment = require('moment');
+
+pm.environment.set('createdDate',moment().format('DD/MM/YYYY'));
+
+57. If we have a global and a local variable of the same name, which one will be given the most preference in Postman?
+In certain circumstances, the global variable's value is overwritten to give the local variable higher precedence.
+
+58. Does Postman allow flexibility to make use of the command-line?
+Any Postman collection can get executed using the Newman command-line tool that Postman offers. This NodeJS-based package uses the Newman Collection Runner to execute collections and therefore needs a node environment. It supports running assertions, pre-request scripts, or other request scripts linked with the requests that are a part of the Collection, just like Postman's Collection Runner does.
+
+59. How will you generate random numbers of a given range in Postman?
+Assuming you want to create numbers between the ranges of 1 to N, the pre-request script can be written as follows:
+
+pm.globals.set('randomNumber', Math.floor(Math.random() * N));
+
+This variable can then be used in the URL as follows:{{randomNumber}}
+
+60. What do you understand about ScratchPad?
+Postman allows us to work without a connection to its servers by giving us access to Scratch Pad. It offers the freedom of using some of Postman's functionalities offline. The features include sending requests, creating requests, and adding requests to collections. 
+
+61. How do you get the cURL command based on the details of the REST API obtained from Postman?
+You can use the steps listed below to get the cURL command equivalent:
+
+As indicated below, click the Code icon.
+
+Postman_Interview_1
+
+Step 1 - Click on Code 
+
+In response to the REST API request, you will receive the cURL command:
+
+Postman_Interview_2
+
+Step 2 - REST API request 
+
+By choosing the necessary choice from the drop-down, as shown in the image below, we can also obtain the command for the request in several languages, such as C#, Javascript, NodeJs, PHP, etc.
+
+Postman_Interview_3.
+
+Step 3 - Select Language 
