@@ -1751,3 +1751,62 @@ Following are the key advantages of sharding a MongoDB collection.
 3. Storage capacity: Storage capacity of the cluster can be increased by increasing the number of shards. in the cluster
 
 4. High availability: Sharding increases the availability of requests since the sharded cluster can continue to perform read and write operations even if one of the shards is unavailable
+
+Top 10 MongoDB Interview Questions for Freshers
+logo
+Skill-Lync
+
+MongoDB is one of the most favoured NoSQL databases today. It has quickly become a staple for developers and is used in many applications. While it is easy to learn and use, understanding the basics of MongoDB can be a challenge for new users. 
+
+This article will provide a comprehensive overview of the most commonly asked interview questions on MongoDB for freshers. Taking the time to understand these concepts can help freshers become more confident when applying for job positions that demand knowledge of MongoDB.
+
+MongoDB Interview Questions
+
+Top 10 MongoDB Interview Questions and Answers
+Below is a compilation of MongoDB interview questions with answers. 
+
+What do you understand by MongoDB? 
+Answer: MongoDB is an open-source, cross-platform, document-oriented database program. It is written in C++ and is developed by MongoDB Inc. It is classified as a NoSQL database, meaning it does not use the traditional table-based relational database structure. Instead, it stores data in JSON-like documents with dynamic schemas, making it more flexible and scalable than its relational database counterparts. 
+
+MongoDB is designed to provide high performance and scalability while providing data consistency and durability. Many organisations use it to store and manage large volumes of data, with complex relationships. MongoDB can be used for various applications, including web applications, mobile applications, analytics, and more. 
+
+What is your understanding of NoSQL databases? Is MongoDB classified as a NoSQL database? Please explain.
+Answer: NoSQL databases are a type of database that does not use the traditional Structured Query Language (SQL). Instead, they use non-relational, distributed data stores and are typically used to store large amounts of data that need to be accessed quickly. 
+
+MongoDB is indeed classified as a NoSQL database. MongoDB is a document-oriented database that stores data in documents instead of relational databases' typical row-column structure. It is also a distributed database designed to run on multiple servers in a cluster, allowing for scalability and reliability. MongoDB is also schema-less, meaning it does not require a fixed set of fields or data types. This makes it easier to store and access data flexibly and dynamically. 
+
+How much RAM does MongoDB require? 
+Answer: MongoDB does not have a specific RAM requirement, but it is recommended to have at least 2GB of RAM for the basic deployment of MongoDB. If you are running more complex queries or a larger amount of data, you may need more RAM. 
+
+What language was used to create MongoDB? 
+Answer: MongoDB was created utilising the C++ programming language. However, many client libraries and drivers are written in other languages, with C Extensions utilised in specific scenarios to boost the performance of the said drivers.
+
+What is the purpose of Indexes in MongoDB?
+Answer: Indexes play a key role in MongoDB for efficient query execution. Without the use of indexes, MongoDB is required to scan every single document of a collection to find the documents that match the query statement. 
+
+Nevertheless, if an index that is suitable for the query is available, MongoDB can take advantage of it and restrict the number of documents it has to inspect. 
+
+Why the 32-bit version of MongoDB is not preferred? 
+Answer: MongoDB takes advantage of memory-mapped files. Thus, the total storage size of the server is limited to 2GB when a 32-bit build of MongoDB is used. 
+
+However, if you run a 64-bit build of MongoDB, you can access virtually unlimited storage sizes. This makes the 64-bit build of MongoDB the preferred option. 
+
+What kind of database is MongoDB? 
+Answer: MongoDB is an open-source, document-oriented database system with a flexible, JSON-like syntax. It is a NoSQL database, which means it does not employ the usual relational database structure of tables. MongoDB, however, stores data in collections of documents that can contain any fields and have no fixed schema. 
+
+How do MySQL and MongoDB differ from one another?
+Answer: The difference between MySQL and MongoDB is listed below:difference between MySQL and MongoDB
+
+What does a profiler do in MongoDB?  
+Answer: The MongoDB Database Profiler displays the performance of each operation in relation to the database. You can examine all the queries the DB system executes through the profiler. This data can then be employed to identify when an index is required. 
+
+What are the benefits of using MongoDB? 
+Answer: The following are the reasons why MongoDB is utilised:
+
+High Performance: MongoDB is highly efficient in terms of performance, being able to store and process large volumes of data quickly.
+Scalability: MongoDB is highly scalable, allowing you to store and process data across multiple servers. 
+Flexibility: MongoDB is a document database that allows you to store data flexibly and dynamically. 
+High Availability: MongoDB is designed to provide high availability and resilience to failures. 
+Easy to Use: MongoDB is designed to be easy to use and learn, with a simple query language and powerful indexing capabilities. 
+Security: MongoDB provides a range of security features to help ensure the safety of your data.  
+Cloud Support: MongoDB can be deployed on various cloud platforms, making it easier to manage and scale. 
