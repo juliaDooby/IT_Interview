@@ -1,3 +1,13 @@
+Tips for preparing for TypeScript interviews
+Preparing for interviews is always stressful, but proper preparation beforehand can help you build confidence. When preparing for your interview, remember to:
+
+Get practice working with questions hands-on, not just reading them.
+Break up your study material into sections and quiz yourself after each one.
+Prepare for your behavioral interview, which is equally as important as the coding portion.
+To help you get more hands-on practice with TypeScript, Educative has created the TypeScript for Front-End Developers Path. This Path is full of our best TypeScript content from across our site. You’ll revise the fundamentals, explore practical applications, and build React projects all using Educative’s in-browser coding environments.
+
+By the end of the Path, you’ll have the skills you need to ace your next TypeScript interview.
+
 ---------------------------------------------------------------------------------------------
 [TYPESCRIPT]: 
 ---------------------
