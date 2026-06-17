@@ -2273,3 +2273,167 @@ full stack digital commerce
 interview questions and
 full stack developer program
 custom application development
+
+Full Stack Developer Interview Questions
+Full Stack Developer Interview Questions
+1. What is a full stack developer?
+ A full stack developer is someone who works on both the frontend and backend parts of a web application.
+
+2. What technologies are used in full stack development?
+ It includes HTML, CSS, JavaScript for frontend, and Node.js, Java, or Python for backend, along with databases like MySQL or MongoDB.
+
+3. What is the difference between frontend and backend?
+ Frontend is what the user sees and interacts with, while backend handles the logic, server, and database behind the scenes.
+
+4. What is an API?
+ An API is a way for the frontend and backend to communicate by sending and receiving data.
+
+5. What is a REST API?
+ It is an API that uses standard web methods like get, post, put, and delete to access and manage resources.
+
+6. What is the DOM?
+ The DOM is a representation of the webpage that allows JavaScript to read and change the page content.
+
+7. What is HTML5?
+HTML5 is the latest version of HTML and includes new features like support for video, audio, and better form controls.
+
+8. What is the purpose of CSS?
+CSS is used to style a webpage, including colors, fonts, spacing, and layout.
+
+9. What is the difference between a class and an id in CSS?
+ A class can be used for multiple elements, while an id is used for one unique element.
+
+10. What is responsive web design?
+ It is a design approach that ensures websites look good on all devices like mobiles, tablets, and desktops.
+
+For Free Demo
+WhatsApp up
++91 7330619292
+11. What is JavaScript used for?
+ JavaScript is used to add interactive behavior to websites, such as clicking buttons, animations, and form validation.
+
+12. What is the difference between == and === in JavaScript?
+ == compares values but not types, while === compares both values and types.
+
+13. What is a promise in JavaScript?
+ A promise is used to handle tasks that take time, like getting data from a server.
+
+14. What is async/await?
+ Async and await are used to manage promises and make asynchronous code easier to write and understand.
+
+15. What is a component in React?
+ A component is a reusable part of a web page that controls its structure and behavior.
+
+16. What is JSX?
+ JSX is a syntax that lets you write HTML inside JavaScript in React applications.
+
+17. What is the virtual DOM?
+ It is a lightweight copy of the actual page that helps React update only the parts that change.
+
+18. What is state in React?
+ State is a place where a component stores information that can change during use.
+
+19. What are props in React?
+ Props are values passed from one component to another to share data.
+
+20. What are lifecycle methods in React?
+ These are special functions that run at different times during a component’s life, like when it starts or updates.
+
+For Free Demo
+WhatsApp up
++91 7330619292
+21. What is Node.js?
+ Node.js allows you to run JavaScript on the server side to build backend applications.
+
+22. What is Express.js?
+ Express.js is a web framework built on Node.js to help create APIs and web applications easily.
+
+23. What is middleware in Express?
+ Middleware is code that runs before the final request is handled, often used for things like logging or checking user access.
+
+24. What is routing in Express?
+ Routing is how you define different paths or endpoints in your app and what should happen when each is visited.
+
+25. What is CORS?
+ CORS is a security feature in browsers that controls how websites can request data from another site.
+
+26. What is the difference between PUT and PATCH?
+ PUT replaces the entire data, while PATCH updates only certain parts of it.
+
+27. What is the purpose of environment variables?
+ They store sensitive or changing values like passwords or API keys without hardcoding them in the app.
+
+28. What is JWT?
+ JWT stands for JSON Web Token and is used to securely transmit user login information between frontend and backend.
+
+29. What is MVC architecture?
+ It is a design pattern that separates data, user interface, and control logic into different parts of the application.
+
+30. How is async/await useful in backend code?
+ It helps manage database calls and other time-consuming tasks without blocking the server.
+
+For Free Demo
+WhatsApp up
++91 7330619292
+31. What is the difference between SQL and NoSQL databases?
+ SQL databases use structured tables, while NoSQL databases use flexible formats like documents.
+
+32. What is a primary key?
+ A primary key is a unique identifier for each record in a table.
+
+33. What is a foreign key?
+ A foreign key links one table to another by referencing a primary key.
+
+34. What is normalization?
+ It is a way of organizing data in a database to reduce repetition and improve efficiency.
+
+35. What is indexing in databases?
+ Indexing speeds up data searches in a database.
+
+36. What is a JOIN in SQL?
+ JOIN is used to combine rows from two or more tables based on related columns.
+
+37. What is MongoDB?
+ MongoDB is a NoSQL database that stores data in documents instead of tables.
+
+38. What is the difference between find and findOne in MongoDB?
+ Find returns many matching records, while findOne returns just the first match.
+
+39. How do you connect MongoDB with Node.js?
+ By using libraries like Mongoose or the official MongoDB driver.
+
+40. What is Mongoose?
+ Mongoose is a tool that helps manage data in MongoDB with simpler and structured methods.
+
+For Free Demo
+WhatsApp up
++91 7330619292
+41. What is Git?
+ Git is a version control system that helps track code changes and collaborate with others.
+
+42. What is GitHub?
+ GitHub is a website where you can store and manage your Git projects online.
+
+43. What is a pull request?
+ It is a way to ask that your code changes be reviewed and added to the main project.
+
+44. What is Docker?
+ Docker is a tool that packages your app with all its settings so it runs the same everywhere.
+
+45. What is CI/CD?
+ CI/CD stands for continuous integration and continuous deployment, which means code is tested and delivered automatically.
+
+46. What is Postman used for?
+ Postman is a tool used to test APIs by sending requests and checking the results.
+
+47. What are environment variables used for in deployment?
+ Logging helps you find out what’s happening in your app so you can fix problems.
+
+48. Why is logging important?
+ Logging helps you find out what’s happening in your app so you can fix problems.
+
+49. What is a 404 error?
+ A 404 error means the page or file requested by the user is not found on the server.
+
+50. What is the difference between performance and scalability?
+ Performance is how fast your app works, and scalability is how well it can handle more users or data over time.
