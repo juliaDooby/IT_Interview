@@ -4349,3 +4349,151 @@ Node.js решает эту проблему, помещая в основу м�
 Функция обратного вызова используется в node.js для обработки нескольких запросов, отправленных на сервер. Например, если у вас есть большой файл, чтение которого серверу займет много времени, и если вы не хотите, чтобы сервер читал этот большой файл во время обработки других запросов, используется функция обратного вызова. Функция обратного вызова позволяет серверу сначала обработать ожидающий запрос и вызвать функцию после его завершения.
 
 Эти вопросы для собеседования также помогут вам в устной речи.
+
+25 Advanced Node.js Backend Interview Questions for Senior Role
+June 16, 2025
+·
+13 min read
+Jump to Category
+⚡ Event Loop & Asynchronous Operations	️ Architecture & Design Patterns
+Performance & Memory Management	️ Security & Error Handling
+Event Loop & Asynchronous Operations
+1. Explain the different phases of the Node.js Event Loop in detail.
+The Node.js event loop consists of several phases that execute in a specific order. The main phases are:
+
+Timers: Executes callbacks scheduled by `setTimeout()` and `setInterval()`.
+Pending Callbacks: Executes I/O callbacks deferred to the next loop iteration.
+Idle, Prepare: Internal use only.
+Poll: Retrieves new I/O events; executes I/O-related callbacks. Most of the application code runs here. If the poll queue is empty, it will block until new events arrive or timers are ready.
+Check: Executes callbacks scheduled by `setImmediate()`.
+Close Callbacks: Executes close event callbacks, e.g., `socket.on(‘close’, …)`.
+Between each phase, Node.js processes the `nextTickQueue` and the microtask queue (Promises).
+Read the official Node.js guide on the Event Loop.
+2. What’s the difference between `setImmediate()` and `process.nextTick()`?
+`process.nextTick()`: Callbacks are executed immediately after the current operation completes, before the event loop proceeds to the next phase. If you recursively call `nextTick`, you can starve the event loop and block I/O.
+
+`setImmediate()`: Callbacks are executed in the “check” phase of the event loop, after the “poll” phase. It allows I/O events to be processed before its callback is executed.
+
+Essentially, `nextTick` runs before the event loop continues, while `setImmediate` queues a callback for a subsequent phase of the event loop.
+
+3. What is the libuv library and what is its role in Node.js?
+libuv is a C library that provides the asynchronous, event-driven I/O capabilities for Node.js. It abstracts non-blocking I/O operations across different operating systems. It manages the event loop itself, the thread pool for offloading expensive tasks (like file system access or DNS lookups), and handles all the low-level asynchronous operations that make Node’s single-threaded model efficient.
+
+Visit the official libuv website.
+4. How do Promises differ from traditional callbacks?
+Promises provide a cleaner, more manageable way to handle asynchronous operations.
+
+Control Flow: Promises avoid “callback hell” by allowing chaining (`.then()`, `.catch()`), which is more readable than nested callbacks.
+Error Handling: Promises have a built-in, centralized error handling mechanism (`.catch()`) that can catch errors from any point in the chain. Callbacks require explicit error handling for each step.
+State Management: A Promise represents the eventual result of an async operation and has a clear state (pending, fulfilled, or rejected). This makes it easier to reason about the flow of data.
+5. What are Worker Threads and when should you use them?
+Worker Threads allow you to run JavaScript code in parallel on separate threads, which is ideal for CPU-intensive tasks that would otherwise block the main event loop. Unlike child processes, they can share memory efficiently using `SharedArrayBuffer`. You should use them for tasks like complex calculations, image processing, or heavy data manipulation, but not for I/O-bound operations, which Node.js already handles efficiently.
+
+Read the Worker Threads documentation.
+6. What is the purpose of the `async_hooks` module?
+The `async_hooks` module provides an API to track the lifetime of asynchronous resources within a Node.js application. It’s a powerful tool for diagnostics and observability, allowing developers to build tools for tracing requests across asynchronous boundaries, monitoring resource usage, or implementing continuation-local storage. It’s a low-level API typically used for building APM (Application Performance Monitoring) tools.
+
+Architecture & Design Patterns
+7. Describe a scenario where you would choose a microservices architecture over a monolith. What are the trade-offs?
+You’d choose microservices for a large, complex application where teams need to develop and deploy independently. For example, an e-commerce platform could have separate services for users, products, orders, and payments.
+
+Trade-offs:
+
+Pros: Independent scaling, technology diversity, improved fault isolation, easier for large teams to manage.
+Cons: Increased operational complexity (deployment, monitoring), network latency between services, challenges with distributed transactions and data consistency.
+8. How do you manage environment-specific configurations in a Node.js application?
+The best practice is to use environment variables, following the principles of a Twelve-Factor App. Avoid hard-coding configuration in files. Libraries like `dotenv` can load variables from a `.env` file during development, but in production, these variables should be set directly in the deployment environment (e.g., in Docker, Kubernetes, or cloud provider settings). This separates config from code, enhancing security and portability.
+
+9. What is dependency injection and how can it be implemented in Node.js?
+Dependency Injection (DI) is a design pattern where a component’s dependencies (like a database service or a logger) are “injected” from an external source rather than created internally. This promotes loose coupling and makes components easier to test, maintain, and reuse.
+
+In Node.js, it can be implemented simply by passing dependencies as function parameters or constructor arguments. For larger applications, DI containers or frameworks like `Awilix`, `InversifyJS`, or NestJS’s built-in DI system can automate this process.
+
+10. Explain how you would implement a graceful shutdown.
+A graceful shutdown ensures that the server stops accepting new connections but allows existing requests to finish before the process exits. This is done by listening for termination signals (`SIGINT`, `SIGTERM`).
+
+Listen for signals using `process.on(‘SIGTERM’, …)`.
+Inside the signal handler, call `server.close()` on your HTTP server. This stops it from accepting new connections.
+Close other resources like database connections.
+Set a timeout to force process termination if cleanup takes too long.
+Finally, call `process.exit()` once all connections are closed.
+11. What is the role of a reverse proxy in a Node.js deployment?
+A reverse proxy (like Nginx or HAProxy) sits in front of a Node.js application and forwards client requests to it. It’s crucial for production deployments for several reasons:
+
+Load Balancing: Distributes traffic across multiple Node.js instances.
+SSL Termination: Handles HTTPS encryption/decryption, offloading that work from the Node.js process.
+Serving Static Content: Can serve static files (CSS, images) more efficiently than Node.js.
+Security: Can provide an additional layer of security, hiding the application server and handling things like rate limiting.
+Read about Reverse Proxies on MDN.
+12. What is long polling and when might it be a better choice than WebSockets?
+Long polling is a technique where the client sends a request to the server, and the server holds the connection open until it has new data to send. Once it sends data, the connection is closed, and the client immediately opens a new one.
+
+It might be a better choice than WebSockets in environments with strict firewalls or proxies that don’t support the WebSocket protocol, or for applications that have infrequent but important server-to-client updates. WebSockets are better for high-frequency, low-latency, bi-directional communication.
+
+Performance & Memory Management
+13. What is the V8 engine and how does it execute JavaScript?
+V8 is Google’s open-source, high-performance JavaScript and WebAssembly engine, written in C++, that powers Node.js. It compiles JavaScript directly to native machine code using a Just-In-Time (JIT) compiler. It initially uses an interpreter (Ignition) to start execution quickly, then its optimizing compiler (TurboFan) identifies “hot” functions and recompiles them into highly optimized machine code for peak performance.
+
+Explore the official V8 documentation.
+14. How does garbage collection work in V8, and what can cause memory leaks in Node.js?
+V8 uses a generational garbage collector. It divides memory into a “Young Generation” (for new objects) and an “Old Generation.” Objects are first allocated in the Young Generation, which is collected frequently and quickly. Objects that survive multiple collections are promoted to the Old Generation, which is collected less often using a concurrent mark-and-sweep algorithm.
+
+Common causes of memory leaks include:
+
+Global Variables: Accidental globals that are never cleaned up.
+Closures: Unmanaged closures holding onto references to large objects.
+Event Emitters: Adding listeners to event emitters but never removing them.
+Read the V8 blog post on garbage collection.
+15. What are Node.js Streams and why are they important for performance?
+Streams are collections of data that you can read from or write to sequentially. They are important for performance because they allow you to process large amounts of data in chunks without having to buffer it all in memory. For example, you can pipe a readable stream from a large file directly to a writable stream of an HTTP response, using very little memory. The four types are Readable, Writable, Duplex, and Transform.
+
+Read the official documentation on Streams.
+16. What is backpressure in the context of streams?
+Backpressure is a mechanism that handles the scenario where a readable stream is producing data faster than a writable stream can consume it. The writable stream sends a signal “back” to the readable stream, telling it to pause producing data. Once the writable stream is ready for more, it signals the readable stream to resume. The `pipe()` method handles this automatically, preventing memory from being overwhelmed by an oversized internal buffer.
+
+17. How would you profile a Node.js application to find a performance bottleneck?
+I would use Node.js’s built-in profiler, which leverages V8’s profiler. By running Node.js with the `–prof` flag, it generates a “tick” file. This file can then be processed with `node –prof-process` to generate a human-readable analysis of where CPU time is being spent. For more advanced, real-time analysis, tools like `0x`, Clinic.js, or commercial APM solutions can provide flame graphs and bubble graphs to visualize CPU usage and event loop delays.
+
+18. What is the difference between `Buffer` and `string`?
+A `string` in JavaScript is an immutable sequence of characters, typically UTF-16 encoded. A `Buffer` is Node.js’s way of handling raw binary data. It’s a mutable, fixed-size chunk of memory allocated outside the V8 heap. Buffers are essential for interacting with binary data streams, such as file I/O or TCP networking.
+
+19. Explain how you could use caching to improve the performance of a backend service.
+Caching can be implemented at multiple levels:
+
+In-Memory Cache: Use a simple object or an LRU cache (`node-lru-cache`) to store frequently accessed data within a single Node.js instance. Fast but not shared between instances.
+Distributed Cache: Use an external service like Redis or Memcached to store data that can be accessed by all instances of your application. Essential for microservices or clustered applications.
+HTTP Caching: Use HTTP headers like `ETag`, `Cache-Control`, and `Last-Modified` to allow clients and proxies to cache responses.
+Security & Error Handling
+20. What are some common security vulnerabilities in Node.js applications and how do you prevent them?
+Common vulnerabilities include:
+
+Cross-Site Scripting (XSS): Sanitize user input and set appropriate `Content-Security-Policy` headers. Use templating engines that auto-escape output.
+SQL/NoSQL Injection: Use parameterized queries or Object-Relational/Document Mappers (ORMs/ODMs) instead of string concatenation to build queries.
+Insecure Deserialization: Avoid deserializing data from untrusted sources.
+Using Components with Known Vulnerabilities: Regularly audit dependencies using `npm audit` and keep them updated.
+Review the OWASP Node.js Security Cheat Sheet.
+21. What is the difference between an error and an exception? How should you handle them?
+In Node.js, the distinction is often about how they are handled.
+
+Operational Errors: These are expected, recoverable runtime problems, like a failed network request or invalid user input. They should be handled gracefully, often by propagating an `Error` object via callbacks or rejected Promises.
+Programmer Errors (Exceptions): These are bugs in the code, like reading a property of `undefined`. Ideally, they should be fixed. If they occur, the best practice is often to crash the application immediately and use a process manager like PM2 to restart it, preventing the application from entering an unknown state.
+22. What is the purpose of the `domain` module, and why is it deprecated?
+The `domain` module was an attempt to handle errors within a specific “domain” of I/O operations, effectively creating a `try…catch` for asynchronous operations. However, it was found to be unreliable and introduced more problems than it solved. It is now deprecated. The modern approach is to handle errors using the robust error handling capabilities of Promises and `async/await` (`try…catch`).
+
+23. What are `child_process` and when would you use it over Worker Threads?
+The `child_process` module allows you to spawn new processes. You would use it over Worker Threads when you need to:
+
+Run a non-JavaScript program (e.g., executing a command line tool or a Python script).
+Achieve true process isolation with separate memory spaces, which can be more resilient.
+Leverage multiple CPU cores for a task without the complexity of shared memory.
+Worker Threads are better for CPU-bound tasks within your existing Node.js application where you need efficient communication and memory sharing.
+24. How can you prevent race conditions in a Node.js environment?
+While Node.js is single-threaded, race conditions can still occur with I/O operations. For example, two requests might try to read a file, modify its contents, and write it back. The second write could overwrite the first. To prevent this, you need to ensure atomic operations. This can be done using:
+
+Database Transactions: For operations involving a database.
+Advisory Locking: Implementing a locking mechanism (e.g., using Redis `SETNX`) to ensure only one process can access a critical resource at a time.
+Queues: Processing jobs that touch the same resource sequentially through a queue.
+25. What is the `npm ci` command and how does it differ from `npm install`?
+`npm install` (or `npm i`): Is used for adding, removing, or updating dependencies. It can modify the `package-lock.json` file.
+
+`npm ci` (“clean install”): Is meant for automated environments like continuous integration (CI) pipelines. It provides faster, more reliable, and deterministic builds. It deletes `node_modules` before starting and installs dependencies exactly as specified in the `package-lock.json` file. It will fail if the lock file is out of sync with `package.json`.
