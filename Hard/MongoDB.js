@@ -872,3 +872,487 @@ Regularly applying patches and updates to MongoDB to address security vulnerabil
 Enabling auditing to monitor and track database activity.
 Using role-based access control (RBAC) to restrict permissions based on user roles.
 Properly configuring and securing MongoDB deployment in a production environment.
+
+Top MongoDB Interview Questions and Answers
+15 mins read
+4.5K Views
+Comment
+Share
+Call
+Call 8585951111
+Got Doubts?
+Rashmi
+Rashmi Karan
+Manager - Content
+Updated on Aug 8, 2024 13:36 IST
+This blog covers the most frequently asked MongoDB Interview Questions. It starts with the basic MongoDB interview questions and moves on to core MongoDB interview questions.
+
+2020_12_MongoDB-interview-questions-e1607689190780.jpg
+MongoDB Interview Questions
+Recommended online courses
+Best-suited Interview preparation courses for you
+Learn Interview preparation with these high-rated online courses
+
+name
+Aptitude Preparation Course
+Coding Ninjas
+Certificate
+Total Fees
+₹4.96 K
+Duration
+2 months
+
+Download IconBrochure
+name
+How to turn your internship into a job offer?
+Great Learning
+Certificate
+Total Fees
+Free
+Duration
+1 hours
+
+Go to Free Course
+name
+Interview Skills
+TCS ion
+Certificate
+Star Icon
+4.4
+Total Fees
+Free
+Duration
+1 week
+
+Go to Free Course
+name
+Quantitative Aptitude for Interview Part 1
+Great Learning
+Certificate
+Total Fees
+Free
+Duration
+2 hours
+
+Go to Free Course
+name
+Interview Crack-Jack Program
+eAge Tutor
+Certificate
+Star Icon
+4.3
+Total Fees
+₹3.3 K
+Duration
+22 hours
+
+Download IconBrochure
+name
+Internship & Job Preparation
+Internshala
+Certificate
+Star Icon
+4.0
+Total Fees
+₹1.35 K
+Duration
+4 weeks
+
+Download IconBrochure
+name
+Interview Prep and workplace Comm Combo International
+LIQVID
+Certificate
+Star Icon
+5.0
+Total Fees
+₹5.13 K
+Duration
+67 hours
+
+Download IconBrochure
+name
+Interview Prep and workplace Comm Combo
+LIQVID
+Certificate
+Star Icon
+4.7
+Total Fees
+₹5.13 K
+Duration
+45 hours
+
+Download IconBrochure
+name
+Start a CV
+Google Cloud
+Certificate
+Star Icon
+3.7
+Total Fees
+Free
+Duration
+1 hours
+
+Go to Free Course
+name
+How to Prepare for an Interview?
+Great Learning
+Certificate
+Star Icon
+5.0
+Total Fees
+Free
+Duration
+1 hours
+
+Go to Free Course
+Q1. What is MongoDB?
+MongoDB is a cross-platform, document-oriented database system, with a free schema. This means that each entry or record can have a different data schema, with attributes or “columns” that do not have to be repeated from one record to another. It is written in C ++, which gives it a certain proximity to bare metal, or hardware resources of the machine, so that it is quite fast when executing its tasks.
+
+MongoDB supports all other popular programming languages such as C, C#, Node.js, Python, Erlang, JavaScript, and more. Also, it is licensed as GNU AGPL 3.0, so it is freely licensed software. It works on Windows, Linux, OS X and Solaris operating systems.
+
+
+Stay updated with the latest blogs on online courses and skills
+Enter Mobile Number
+Q2. Where can we use MongoDB?
+MongoDB can be used in many of the projects we develop today .
+
+Any application that needs to store semi-structured data can use MongoDB . This is the case of typical CRUD applications or many of the current web developments.
+
+Of course, although MongoDB collections do not need to define a schema, it is important that we design our application to follow one. We will have to think about whether we need to normalize the data, denormalize it, or use a hybrid approximation. These decisions can affect the performance of our application. In short, the scheme is defined by the queries that we are going to carry out more frequently.
+
+MongoDB is especially useful in environments that require scalability. With its replication and sharding options, which are very easy to configure, we can achieve a system that scales horizontally without too much trouble
+
+Q3. What are the advantages of MongoDB?
+Ans. Following are the advantages of MongoDB over other databases:
+
+Easy to set up and install
+Does not require conversion/mapping of application objects to the database
+Can derive a document-based data model
+Supports document query language, essential to prevent dynamic queries
+Q4. What is “Namespace” in MongoDB?
+Ans. A Namespace provides access to the running code that are present in different databases. There is a file ‘CACHE.DAT’ in a database that provides a collection of namespaces and databases to the user. The concatenation of the collection name and database name is called a namespace.
+
+Namespace has a maximum length of 120 bytes which includes the collection name, database name, and the dot (.) separator.
+
+Q5. How is data collected in MongoDB?
+Ans. The MongoDB distribution includes utilities that quickly return performance and activity statistics. These are typically used for troubleshooting and evaluating normal operations: Mongotop and MongoStat .
+
+Mongostop collects and reports on the current read and write activity of a MongoDB instance providing visibility into its usage. Mongostop verifies that the activity and use of the mongo db meets the assigned expectations.
+
+Mongostat captures and returns the counters for database operations. Reports operations based on each type (for example, insert, query, update, delete, etc.). Its format makes it easy to understand the load distribution on the server.
+
+Mongostat offers more metrics to collect data . This is why Mongo DB recommends using this command to collect the data. Next, we list a list of metrics where we can obtain information from:
+
+_MongoDB_OpenConns_: Open database connections for this instance.
+_MongoDB_ActiveClientsReading_: Active reads in open databases for this instance.
+_MongoDB_ActiveClientsWriting_: Open DB writes for this instance.
+_MongoDB_Inserts_: Inserts in DB per second for this instance.
+_MongoDB_Queries_: Queries in DB per second for this instance.
+_MongoDB_Updates_: Updates in DB per second for this instance.
+_MongoDB_Deletes_: Deletes in DB per second for this instance.
+_MongoDB_IdxMiss_: Percentage of bttree pages lost in this instance.
+The most interesting is mentioned above. Although there are more interesting metrics available.
+
+_MongoDB_Getmores_: DB Getmores per second for this instance.
+_MongoDB_Commands_: DB commands per second for this instance.
+_MongoDB_Flushes_: DB Fsync Flushes per second for this instance.
+_MongoDB_PageFaults_: page faults per second for this instance.
+_MongoDB_ClientReadQueueLenght_ – Queued read clients for this instance.
+_MongoDB_ClientWriteQueueLength_ – Queue write clients for this instance.
+_MongoDB_NetworkTrafficInBits_ – Inbound network traffic in bits for this instance.
+_MongoDB_NetworkTrafficOutBits_ – Outbound network traffic in bits for this instance.
+Most of these metrics are useful for uncovering performance issues such as server instances with a load that they cannot handle, timeout issues, worrying trends, or capacity planning issues.
+
+Q6. Do MongoDB databases have tables?
+Ans. No. it stores its data in collections that include BSON documents, i.e. data records.
+
+Q7. What is sharding in MongoDB?
+Ans. It is the process of distributing data across various machines. MongoDB uses these approaches to meet the demand for data growth. If there is an increase in the size of data, then a single machine is not able to store the data and also not able to provide read and write throughput. It will create horizontal scaling to solve the issue.
+
+Also Read>> Drupal Vs Joomla Vs WordPress!
+Q8. How does sharding work with replication?
+Ans. Every shard is a collection of data records. The shard could incorporate a single server or a group of replicas. Using a replica set for every shard is helpful for the data collection.
+
+Q9. What is a replica set?
+Ans. A replica set is a cluster of MongoDB database servers that possess the master-slave replication. It provides redundancy and helps to increase data availability with various copies of data on different servers.
+
+Convert standalone MongoDB instance into a replica set:
+
+Shutdown the running server.
+Then, start the server by specifying the ‘replSet’ option.
+Syntax of replSet
+mongod –port “PORT” –dbpath “YOUR_DB_DATA_PATH” –replSet “REPLICA_SET_INSTANCE_NAME”
+
+Q10. What is the role of database profiler in MongoDB?
+Ans. The database profiler collects fine-grained data about MongoDB write operations, cursors, and database commands on a running database instance. This includes CRUD operations, configuration, and administration commands.
+
+In easy words, the database profilers determine the performance of each operation characteristics against the database.
+
+The syntax for profile command:
+
+{
+
+profile: <level>,
+
+slowms: <threshold>,
+
+sampleRate: <rate>
+
+}
+
+Q11. What is Journaling in MongoDB?
+Ans. Journaling is the process in which the right operation is performed in MongoDB. It provides crash resiliency and creates changes in the private view of the database. It will look like the first block is memory and the second block is the ‘my disc’.
+
+Q12. What are the data modeling considerations in MongoDB?
+Ans. The data in MongoDB has a flexible schema, so much so that Collections should not follow a document structure, or in other words, documents in the same collection do not have to have the same structure and even common fields can be of different types.
+
+As in any modeling with MongoDB, the following must be taken into account:
+
+Collection properties
+Relationships between application objects
+How data grows and changes over time
+What kind of queries will the application have
+This leads to making certain decisions when modeling the data (since equivalent data models can however affect performance), such as:
+
+Normalization and denormalization: Fully normalized data models describe the relationships with references between documents, while denormalized models can store redundant information across related models
+Indexing strategy
+Data representation in arrays in BSON
+Q13. Why are data files so large in MongoDB?
+Ans. MongoDB does aggressive pre-allocation of reserved space to avoid file system fragmentation, which is the reason why data files are so large.
+
+MongoDB tries to avoid fragmentation on your hard drive by pre-allocating a size for each file. For this reason, the size on your hard drive may be greater than the size that is actually used by your data.
+
+This is probably the biggest cause of the difference you find. The option 
+
+storage.mmapv1.smallFiles
+Copy code
+allows you to reduce the size of these files.
+Q14. What points should we consider while creating a schema in MongoDB?
+Ans. We must consider the below points while creating a schema in MongoDB –
+
+Design our schema as per the user requirements
+Combine objects into one document
+Do joins while on write
+Optimiza the schema for frequent use cases
+Do complex aggregation in the schema
+Also Read>> IOS Interview Questions and Answers
+Q15. What are the indexes in MongoDB?
+Ans. An index is a special data structure that consists of the data of a few fields of documents and used to execute queries systematically. It helps to improve the speed of search operations.
+
+Syntax:
+
+db.collection_name.createIndex({field_name: 1 or -1})
+
+Here, the value 1 is for ascending order and -1 for descending order
+
+For example, there is a collection of student data that includes student_name, student_id and student_age
+
+If you want to create the index for student_name field in ascending order:
+
+db.studentdata.createIndex({student_name: 1})
+
+Output:
+
+{
+
+“createdCollectionAutomatically” : false,
+
+“numIndexesBefore” : 1,
+
+“numIndexesAfter” : 2,
+
+“ok” : 1
+
+}
+
+Q16. What is the use of GridFS in MongoDB?
+Ans. It is used for storing and retrieving files larger than 16 MB, such as images, video files, and audio files. In certain conditions, it is more efficient to store large files in a MongoDB database than on a system-level filesystem. If your filesystem limits the number of files in a directory, you can use GridFS to store as many files as needed.
+
+Q17. What is GridFS in MongoDB?
+Ans. GridFS is one of the features of MongoDB, which is used to store and retrieve large files that exceed the BSON document size of 16MB, such as video files, audio files, images, etc. The data of GridFS is stored within a database collection.
+
+Sample code for GridFS:
+
+{
+
+“filename”: “test.txt”,
+
+“chunkSize”: NumberInt(261120),
+
+“uploadDate”: ISODate(“2014-04-13T11:32:33.557Z”),
+
+“md5”: “7b762939321e146569b07f72c62cca4f”,
+
+“length”: NumberInt(646)
+
+}
+
+Also Read>> Database Interview Questions & Answers
+Q18. What is CRUD?
+Ans. MongoDB provides CRUD operations that are Create, Read, Update, and Delete.
+
+Q19. What is ObjectID? What are the components ObjectID composed of?
+Ans. An ObjectID class is a default primary key for a MongoDB. The syntax used to denote ObjectID is “_id.”
+
+{
+
+“_id”: ObjectId(“54759eb3c090d83494e2d804”)
+
+}
+
+ObjectID is composed of:
+
+Timestamp
+Client machine ID
+Client process ID
+3-byte increment counter
+Q20. Which syntax is used to create a collection in MongoDB?
+Ans. db.collection.drop() is used to drop collection in mongodb.
+
+Also Read>> Database Interview Questions & Answers
+Q21. Where do we use MongoDB?
+Ans. MongoDB is used instead of RDBMS in various scenarios:
+
+Distributed data
+It makes the task easy by the recovery of data because there are multiple copies of data that are collected over multiple servers. It makes the recovery of data safe even if there is a failure in the hardware.
+
+Big Data
+It is highly featured with storing a large amount of data. It has a built-in solution for partitioning and sharding of data.
+
+Unstable Schema
+It is Schema-less, and it is easy to add a column using MongoDB. Adding a new field to the document does not affect the old document, and it is easy to use.
+
+Q22. What is vertical scaling?
+Ans. Vertical scaling works to improve the performance of a single server by adding more powerful processors, upgrading RAM, or adding more disk space to the system. But there are potential implications of applying vertical scaling in practical use cases with existing hardware and technology configurations.
+
+Q23. What is horizontal scaling?
+
+Ans. Horizontal scaling works by adding more servers and spreading the load across multiple servers. Since each machine will handle the subset of the complete data set, it provides a more efficient and cost-effective solution rather than implementing the high-end hardware. However it requires additional maintenance of a complex infrastructure with a large number of servers.
+
+Q24. Which command is used to restore the backup?
+Ans. mongorestore command is used to restore the backup.
+
+Q25. Define auditing.
+Ans. Auditing provides administrators with the ability to verify that the implemented security policies are controlling activity in the system.
+
+Once enabled, the auditing system can record –
+
+Schema (DDL)
+Replica set and sharded cluster
+Authentication and authorization
+CRUD operations (requires auditAuthorizationSuccess set to true)
+Q26. If you remove an object attribute, is it deleted from the database?
+Ans. Yes, it is deleted.
+
+Q27. Does MongoDB support SQL?
+Ans. No. However, MongoDB does support a rich query language of its own.
+
+Learn NO SQL Databases Now>>
+
+Q28. What is the structure of ObjectID in MongoDB?
+Ans. An ObjectID is a 12-byte BSON type having the following structure:
+
+The first 4-byte value representing the seconds
+The next 3-byte is the machine identifier
+The next 2-byte contains the process ID
+The last 3-bytes are a counter value
+Q29. How to move old files in the moveChunk directory?
+Ans. You can move old files in the moveChunk directory by using Mongod. It will create backup files at the time of normal shard balancing operations and deleted them after the operation is done.
+
+Q30. Explain Aggregation in MongoDB?
+Ans.  Aggregation is collecting a group of data from various documents and operate them to provide combined results. It is used to process the data that provide computer result.
+
+These are some of the popular questions asked in a MongoDB interview. Always be prepared to answer all types of questions — technical skills, interpersonal, leadership or methodology. If you are someone who has recently started your career in MongoDB, you can always get certified in the various technique and skills needed to be an expert in the field.
+
+Q31. Why is MongoDB not chosen for a 32-bit system?
+Ans. MongoDB is not examined as a 32-bit system because 32-bit has limited data of 2 GB. It storage engine uses memory-mapped files for the performance. Because of not supporting 32-bit, the code is much easier and simpler to work on. It includes various benefits such as less number of bugs, reduces the product release time.
+
+Q32. What is the Sharded cluster?
+Ans. Sharding means “partition,” and it is one of the main features of MongoDB. In MongoDB, each document will be on a “shard” or partition. A partition should not be understood as a single server but as a replica set.
+
+Q33. What are the components of the Sharded cluster?
+Ans. The components of the sharded cluster are –
+
+MongoS: it is the process that will route the requests to the appropriate server
+Replica Set: which will act as the first member of the sharded cluster
+CSRS: Configuration Server Replica Set or configuration server replica set
+Q34. What are the limitations of Sharded clusters?
+Ans. Sharded clusters have the restrictions and thresholds as follows – 
+
+$where does not permit references to the db object from the $where function. This is uncommon in un-sharded collections
+The geoSearch command is not supported in sharded environments
+An index cannot cover a query on a sharded collection if the index does not contain the shard key, with the following exception for the _id index – If a query on a sharded collection only specifies a condition on the _id field and returns only the _id field, the _id index can cover the query when run against a mongos even if the _id field is not the shard key
+An existing collection can only be sharded if its size does not exceed specific limits. These limits can be estimated based on the average size of all shard key values, and the configured chunk size
+Q35. What is the difference between MongoDB and Redis database?
+Ans. Difference between MongoDB and Redis:
+
+ 	
+MongoDB
+Redis
+Generic 	Has relational database features that give it strong consistency	Offers advanced data structures, like lists, sorted sets, strings, and bitmaps
+Data Storage	Document oriented where documents are heterogeneous, and each has a unique key within a collection
+ 
+
+Used over Redis when structuring or modeling related information
+
+Stores data in-memory using various key values
+ 
+
+Excels over MongoDB when working with rapidly changing data
+
+Programming languages	Single-master replication with built-in auto-election	Master-slave replication
+Speed	Slower than Redis	Faster than MongoDB
+Coding 	Easy to code	Hard to code
+Q36. What is the difference between MongoDB and CouchDB?
+Ans. Difference between MongoDB and CouchDB:
+
+ 	
+MongoDB
+CouchDB
+Database Structure	Stores schema-free data using documents in the BSON format	Offers a RESTful HTTP API for reading, adding, editing, and deleting database documents
+Replication / Clustering	Offers single-master replication with auto-selection built-in	Supports both master-master and master-slave replication
+Programming languages	Supports Actionscript, C, C#, C++, Clojure, ColdFusion, D, Dart, Delphi, Erlang, Go, Groovy, Haskell, Java, JavaScript, Lisp, Lua, MatLab, Perl, PHP, PowerShell, Prolog, Python, R, Ruby, Scala, and Smalltalk	Supports C, C#, ColdFusion, Erlang, Haskell, Java, JavaScript, Lisp, Lua, Objective-C, OCaml, Perl, PHP, PL/SQL, Python, Ruby, and Smalltalk
+Speed	Faster than CouchDB	Slower but safer than MongoDB
+Triggers	Not available	Available
+Q37. What is the difference between MongoDB and Cassandra?
+Ans. Difference between MongoDB and Cassandra:
+
+ 	
+MongoDB
+Cassandra
+Feature	Cross-platform database system	High performance distributed database system.
+Usage	Mobile applications and the Internet of Things 	e-commerce, fraud detection, and real-time analytics
+Storage
+ 
+
+ 
+
+Column-oriented and directly stores the data	Document-oriented
+Programming languages	MongoDB is written in C++	Cassandra is written in Java
+Administration 	Easy to administer in failures	High availability with no single point of failure
+Q38. Define MapReduce.
+Ans. MapReduce is a framework that provides a distributed and parallel data processing system. Its name is due to the main functions that are Map and Reduce. MapReduce is designed for the practical solution of some problems that can be parallelized. Still, it must be taken into account that not all problems can be solved efficiently with MapReduce. MapReduce is geared towards solving problems with large data sets, using the HDFS distributed file system.
+
+The MapReduce Framework has a master/slave architecture. It has a master or JobTracker server and several slave or TaskTrackers servers, one for each node in the cluster.
+
+Q39. What is the difference between MongoDB and MySQL?
+Ans. Although both MongoDB and MySQL are free and open-source databases, there is a lot of difference between them in data representation, relationships, transactions, querying data, schema design, definition, and performance speed, normalization, and many more. To compare MySQL with MongoDB is like a comparison between relational and non-relational databases.
+
+MongoDB
+MySQL
+Stores data in JSON-like documents	Stores data in tables and uses SQL for database access
+Removes the complex ORM layer that translates objects in code to relational tables	Has a rigid relational structure
+Can be scaled within and across multiple distributed data centers	Allows handling data output in a better way and has a better-organized complex structure
+Not a suitable solution for applications with complex transactions	Supports atomic transactions
+Shorter recovery time from failure	Stability issues
+Q40. What is the covered query?
+Ans. A query is a covered query if it satisfies the following two conditions:
+
+The fields used in the query are part of an index used in the query
+The fields returned in the results are in the same index
+Q41. Why is the covered query important in MongoDB?
+Ans. Covered query allows faster execution of the query. It ensures that the created index has all the fields required by the query. It doesn’t require examining any documents, except for the indexed ones.  
+
+MongoDB can match the query conditandl as return the result fields using the same index without looking inside the documents.
