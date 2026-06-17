@@ -2954,3 +2954,144 @@ Standard Library and Packages: Familiarity with the language's standard library 
 Practical Experience: Building and contributing to projects, solving real-world problems, and showcasing hands-on experience with the language.
 Testing and Debugging: Writing unit, integration, and performance tests, and using debugging tools and techniques specific to the language.
 Practical experience is invaluable when preparing for a technical interview. Building and contributing to projects, whether personal, open-source, or professional, helps solidify your understanding and showcases your ability to apply theoretical knowledge to real-world problems. Additionally, demonstrating your ability to effectively test and debug your applications can highlight your commitment to code quality and robustness.
+
+Top 24 Node.js Interview Questions with Answers for 1 to 2 Years Experienced Web Developers
+Hello guys, if you are preparing for a JavaScript developer or web developer and looking for common Node.js questions to prepare for interviews then you are at right place. In the past, I have shared JavaScript interview questions, React Questions, Angular Questions and even web development questions and in this article, I am going to share frequently asked Node.js questions with answers for interviews.  Though Node.js is defined as a JavaScript environment, it is widely considered as a backend framework. Since its inception in 2008, Node.js has become a popular term in the server-side development community. More and more companies are using Node.js for backend development.
+
+There are several reasons for choosing Node.js. It is comparatively easier to use because JavaScript is used in Node. Moreover, it uses an event-driven and asynchronous model that enhances the performance.
+
+Today, Node.js has a huge job market. It is giving tough competition to other popular backend frameworks such as Spring Framework, while it is replacing older frameworks such as PHP. Moreover, it is believed that Node.js will dominate server-side development in the future. Node developers are paid very well too.
+
+The average salary of a Node developer in the USA is 113K per year, which definitely makes learning Node.js worthy of your time and effort. Though, more often than note, learning Node.js will help you to become a better Java developer and also enhance your profile as fullstack JavaScript developer. 
+
+
+
+
+20+ Node.js Interview Questions with Answers
+Node.js interviews can be tough. So we have created a list of 20+ Node.js interview questions that will help you in clearing an interview. We have added the questions that are commonly asked in Node.js interviews.
+
+
+1. Define Node.js?
+A: Node.js is a backend JavaScript runtime environment. It is built on Google chrome's V8 engine. Using Node.js, we can execute JavaScript outside the browser, meaning on the server-side.
+
+
+2. Why use Node.js over Java for backend development?
+A: Basically, Node.js is a runtime environment that allows JavaScript to execute outside the browser. So, instead of using different languages on the client-side and server-side, we can use one language i.e. JavaScript on the client-side as well as server-side. The second reason is that JSON, which is most commonly used for data transmission, works perfectly with Node.js (JavaScript). Moreover, Node is faster than Java.
+
+
+3. What are callback functions?
+A: Callback functions are usually confusing. According to some developers, a callback function can be defined as a function that is passed as an argument to another function. The callback function is executed after the execution of the other function to which it is passed. Some developers often define a callback function as a function accessible by another function.
+
+
+
+4. Define NPM?
+A: NPM stands for Node Package Manager. It is a package manager that contains all the packages and modules related to Node.js. You can also see these NPM online courses to learn Node Package Manager better. 
+
+
+
+5. Which database is best to use with Node and Why?
+A: MongoDB is the best database to use with Node.js because it is a NoSQL database, and it can be used easily with Node with the help of mongoose. Moreover, MongoDB is highly scalable, high-performing, and is easy to maintain.
+
+
+
+6. How to import external libraries in a Node.js file?
+A: The "require" keyword is used to import external libraries in a Node file.
+
+
+
+7. Is DOM accessible in Node? Justify your answer.
+A: No, DOM is not accessible in Node because Node works on the server-side outside the browser.
+
+
+
+8. What is callback hell and how to avoid it?
+A: When callback functions are nested heavily, the code becomes unmaintainable and unreadable. This situation is called callback hell. It can be avoided by using promises or async/await in the place of callback functions.
+
+
+
+9. What is middleware? What is the task of middleware?
+A: A middleware is a function that has access to the request and response objects. It can execute any code, update the response and request objects, and invoke the next middleware. It can also end the execution cycle.
+
+
+
+10. Explain how you will connect Node.js with MongoDB.
+A: First, I will import the "mongodb" module using the "require" keyword. Then, using this module, I will create a MongoClient object, like the following:
+
+let MC = require("mongodb").MongoClient;
+
+Then, by using the IP address and database name, I will create the URI string. Finally, to connect with the MongoDB database, I will use the MongoClient object to invoke the connect() method. This method will take two arguments: URI and a callback function. If the callback function executes without any error, then the database is connected properly.
+
+
+
+11. How to export a module in Node.js?
+A: We can export a module in Nodejs using module.exports.
+
+
+
+
+12. What is the best way to handle asynchronous requests in Node.js? Justify your answer.
+A: Using async/await is the best of handling asynchronous in Node.js. While using callbacks is fine but using them extensively will lead to callback hells. Another option is promises but promise chains can also be complex and complicated. On the other hand, async/await is easy to use and it does not lead to anything complicated like callbacks and promises.
+
+
+
+13. Which framework is generally used with Node.js to manage everything more neatly and properly?
+A: Express.js is generally used with Node.js to manage and organize everything more neatly and properly.
+
+
+
+14. Which tool is used to test the APIs developed in Node.js?
+A: Postman is the most commonly used tool for testing APIs in Node.js.
+
+
+
+15. Which middleware is used to handle HTTP requests in express?
+A: Body-parser is used to handle HTTP requests in the express. It can be installed using NPM.
+
+
+
+16. What is package.json?
+A: The package.json file is created when a Node project is created using the npm init command. This file contains all the metadata regarding the project. It includes the details of the project, versions, dependencies, devDependencies, scripts, and more.
+
+
+
+17. Explain streams. Also, give the types of streams in Node?
+A: Objects that are used to read and write data continuously are called streams. There are four types of streams: Readable, Writable, Duplex, and Transform.
+
+
+18. Explain event-driven programming?
+A: It is a programming paradigm in which the application is built around the events, meaning, it is based on and responds to events.
+
+Top 20 Node.js Interview Questions with Answers for 1 to 2 Years Experienced Web Developers
+
+
+
+
+19. What is REPL?
+A: REPL is a virtual environment of Node.js. It stands for Read-Eval-Print-Loop.
+
+
+20. Explains Timers?
+A: Timers are in-built Node.js functions that are used to execute a piece of code after a specific time. setTimeout() is an example of Timers in Node.
+
+
+21. Name a commonly used authentication middleware in Node?
+A: Passport.js is the commonly used authentication middleware in Node.
+
+
+22. How can you distinguish Node.js from JavaScript?
+A: Following are the difference between Node.js and JavaScript:
+
+1. JavaScript is a programming language while Node.js is a programming environment that enables JavaScript to execute outside the browser.
+
+2. JavaScript is used in client-side development while Node.js is used in server-side development.
+
+
+23. Explain the working of Node.js?
+A: Node.js runs on Google Chrome's V8 engine and uses a virtual machine. This virtual machine, in turn, uses JavaScript as the scripting language.
+
+
+24. What kind of applications are built using Node.js?
+A: Several kinds of applications can be built using Node.js. It is used heavily in building real-time web applications, especially on the server-side. Moreover, it is also used to build network apps, distributed systems, and general-purpose applications.
+
+
+That's all about common Node.js interview questions with Answers for 1 to 2 years experienced we, developers. Node.js alone is not a huge topic for interviews. It is mostly combined with Express or MongoDB, or even with frontend technologies like React and Angular. In this article, we listed 20+ Node interview questions which include the combined question with express as well as MongoDB. To prepare without exception, also go through JavaScript because modern JavaScript features are often asked in Node.js interviews.
