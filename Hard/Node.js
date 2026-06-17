@@ -3213,3 +3213,298 @@ Regularly applying patches and updates to MongoDB to address security vulnerabil
 Enabling auditing to monitor and track database activity.
 Using role-based access control (RBAC) to restrict permissions based on user roles.
 Properly configuring and securing MongoDB deployment in a production environment.
+
+Node Js Interview Questions
+
+Node Js Coding Questions and Answers
+This article provides Node js coding questions and answers to help you better understand the basics of Node.js development. Get the answers you need to master Node.js coding and take your development skills to the next level.
+Apr 14, 2023 - 14:09Updated: Apr 15, 2023 - 00:280
+ Facebook  Twitter      
+Node Js Coding Questions and Answersnode js coding interview questions and answer
+
+
+
+Reverse a string:
+Write a function to reverse a given string in Node.js.
+
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+Explanation: The reverseString function takes a string as input. It uses split('') to convert the string into an array of characters, then uses reverse() to reverse the order of the array, and finally uses join('') to convert the array back to a string with reversed characters.
+
+Find the first non-repeated character:
+Write a function to find the first non-repeated character in a given string in Node.js.
+
+function findFirstNonRepeatedChar(str) {
+    let charCount = {};
+    for (let char of str) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    for (let char of str) {
+        if (charCount[char] === 1) {
+            return char;
+        }
+        }
+    return null;
+}
+
+Explanation:
+The findFirstNonRepeatedChar function uses an object charCount to keep track of the count of each character in the input string. It then iterates through the string twice. First, it counts the occurrences of each character and stores them in charCount. Second, it finds the first character with a count of 1 in charCount and returns it as the first non-repeated character.
+
+Implement a stack:
+Implement a stack (LIFO) data structure in Node.js with push, pop, and peek operations.
+
+class Stack {
+   constructor() {
+      this.items = [];
+   }
+   push(item) {
+      this.items.push(item);
+   }
+   pop() {
+      if (!this.isEmpty()) {
+         return this.items.pop();
+      }
+   return null;
+   }
+   peek() {
+      if (!this.isEmpty()) {
+         return this.items[this.items.length - 1];
+      }
+   return null;
+   }
+   isEmpty() {
+   return this.items.length === 0;
+   }
+}
+
+Explanation:
+The Stack class uses an array items to store the elements in the stack. It has push to add an item to the top of the stack, pop to remove and return the top item, peek to return the top item without removing it, and isEmpty to check if the stack is empty.
+
+Find the sum of two numbers in a sorted array:
+Given a sorted array of integers, write a function to find two numbers that sum up to a target number in Node.js.
+
+function findSumInSortedArray(arr, target) {    let left = 0;
+   let right = arr.length - 1;
+   while (left < right) {
+      let sum = arr[left] + arr[right];
+      if (sum === target) {
+         return [arr[left], arr[right]];
+      } else if (sum < target) {
+         left++;
+      } else {
+         right--;
+      }
+      }
+   return null;
+}
+
+Explanation:
+The findSumInSortedArray function uses a two-pointer approach with left and right pointers initially pointing to the start and end of the sorted array, respectively. It calculates the sum of the numbers at the left and right pointers, and compares it with the target sum. If the sum is equal to the target, it returns the numbers at left and right as the result. If the sum is less than the target, it moves the left pointer to the right to increase the sum, and if the sum is greater than the target, it moves the right pointer to the left to decrease the sum. This process continues until a pair of numbers with the target sum is found or the pointers meet, in which case it returns null to indicate that no such pair was found.
+
+Check if a binary tree is a valid BST:
+Given a binary tree, write a function to determine if it is a valid binary search tree (BST) in Node.js.
+
+class TreeNode {
+   constructor(val) {
+      this.val = val;
+      this.left = null;
+      this.right = null;
+   }
+}
+
+function isValidBST(root) {
+   return checkBST(root, null, null);
+}
+
+function checkBST(node, min, max) {
+   if (node === null) {
+      return true;
+   }
+   if ((min !== null && node.val <= min) || (max !== null && node.val >= max)) {
+      return false;
+   }
+   return checkBST(node.left, min, node.val) && checkBST(node.right, node.val, max);
+}
+
+Explanation: The isValidBST function takes the root of a binary tree as input and calls the checkBST helper function to recursively check if each node in the tree satisfies the conditions of a valid BST. The checkBST function takes a node, along with a min and a max value, to represent the allowed range of values for that node. It returns true if the node is null (i.e., an empty tree is considered a valid BST), or if the node's value is within the allowed range and both its left and right subtrees are valid BSTs.
+
+Find the longest increasing subarray:
+Given an array of integers, write a function to find the length of the longest increasing subarray in Node.js.
+
+function findLongestIncreasingSubarray(arr) {
+   let maxLength = 0;
+   let currentLength = 0;
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < arr[i + 1]) {
+         currentLength++;
+      } else {
+      maxLength = Math.max(maxLength, currentLength + 1);
+         currentLength = 0;
+      }
+   }
+   return maxLength;
+}
+
+Explanation:
+The findLongestIncreasingSubarray function iterates through the input array arr and keeps track of the current length of the increasing subarray using the currentLength variable. When a number in the array is smaller than the next number, it increases currentLength by 1. When a number in the array is not smaller than the next number, it updates the maxLength with the maximum value between maxLength and currentLength + 1, and resets currentLength to 0. Finally, it returns the maxLength which represents the length of the longest increasing subarray.
+
+Find the median of two sorted arrays:
+Given two sorted arrays, write a function to find the median element in Node.js.
+
+function findMedianSortedArrays(nums1, nums2) {
+   let merged = [];
+   let i = 0;
+   let j = 0;
+   while (i < nums1.length && j < nums2.length) {
+      if (nums1[i] < nums2[j]) {
+         merged.push(nums1[i++]);
+      } else {
+         merged.push(nums2[j++]);
+      }
+   }
+   while (i < nums1.length) {
+      merged.push(nums1[i++]);
+   }
+   while (j < nums2.length) {
+      merged.push(nums2[j++]);
+   }
+   const len = merged.length;
+   if (len % 2 === 0) {
+      // If the merged array has even length, return the average of the middle two elements
+      const mid1 = len / 2 - 1;
+      const mid2 = len / 2;
+      return (merged[mid1] + merged[mid2]) / 2;
+   } else {
+      // If the merged array has odd length, return the middle element
+      const mid = Math.floor(len / 2);
+      return merged[mid];
+   }
+}
+
+Explanation:
+The `findMedianSortedArrays` function takes two sorted arrays, `nums1` and `nums2`, as input and merges them into a single sorted array called `merged`. It uses two pointers, `i` and `j`, to traverse `nums1` and `nums2` respectively, comparing elements at each step and pushing the smaller one into `merged`. After the merging process is complete, it calculates the median based on the length of the merged array. If the length is even, it returns the average of the middle two elements. If the length is odd, it returns the middle element.
+
+
+
+
+Serialize and deserialize a binary tree:
+Given a binary tree, write functions to serialize and deserialize it in Node.js.
+
+class TreeNode {
+   constructor(val) {
+      this.val = val;
+      this.left = null;
+      this.right = null;
+   }
+}
+
+function serialize(root) {
+   if (root === null) {
+      return 'null';
+   }
+   const left = serialize(root.left);
+   const right = serialize(root.right);
+   return `${root.val},${left},${right}`;
+}
+
+function deserialize(data) {
+   const nodes = data.split(',');
+   return buildTree(nodes);
+
+   function buildTree(nodes) {
+      const val = nodes.shift();
+      if (val === 'null') {
+         return null;
+      }
+      const node = new TreeNode(parseInt(val));
+      node.left = buildTree(nodes);
+      node.right = buildTree(nodes);
+      return node;
+   }
+}
+
+Explanation:
+The serialize function takes the root of a binary tree as input and serializes it into a comma-separated string representation. It recursively traverses the tree in a pre-order manner, appending the values of each node, along with the serialized left and right subtrees, to the result string.
+The deserialize function takes a serialized string representation of a binary tree as input and deserializes it back into a binary tree object. It does so by splitting the input string into an array of values, and then recursively building the tree from the values using a helper function called buildTree. The buildTree function takes the array of values as input, and for each value, it creates a new node with that value, recursively builds its left and right subtrees, and returns the constructed node.
+
+Merge Intervals:
+Given an array of intervals, write a function to merge overlapping intervals in Node.js.
+
+class Interval {
+   constructor(start, end) {
+      this.start = start;
+      this.end = end;
+   }
+}
+
+function mergeIntervals(intervals) {
+   if (intervals.length <= 1) {
+      return intervals;
+   }
+
+   intervals.sort((a, b) => a.start - b.start);
+
+   const mergedIntervals = [];
+   let currentInterval = intervals[0];
+
+   for (let i = 1; i < intervals.length; i++) {
+      if (intervals[i].start <= currentInterval.end) {
+         currentInterval.end = Math.max(currentInterval.end, intervals[i].end);
+      } else {
+         mergedIntervals.push(currentInterval);
+         currentInterval = intervals[i];
+      }
+   }
+   mergedIntervals.push(currentInterval);
+   return mergedIntervals;
+}
+
+Explanation:
+The `mergeIntervals` function takes an array of `Interval` objects as input, where each `Interval` object represents an interval with a start and end time. It first checks if the input array has only one interval or is empty, in which case it directly returns the input array as is.
+Next, it sorts the intervals based on their start times in ascending order. It then initializes an empty array called `mergedIntervals` to store the merged intervals. It also initializes a `currentInterval` variable to keep track of the interval being currently merged, starting with the first interval in the sorted array.
+The function then iterates through the remaining intervals in the sorted array. For each interval, it checks if it overlaps with the current interval being merged. If it does, it updates the end time of the current interval being merged to be the maximum of the end times of both overlapping intervals. If it does not overlap, it pushes the current interval being merged into the `mergedIntervals` array and sets the current interval being merged to be the current interval in the sorted array.
+After the loop, the last remaining interval being merged is pushed into the `mergedIntervals` array, and the final merged intervals are returned.
+
+          
+
+   Implement LRU Cache:
+Write a class for a Least Recently Used (LRU) Cache in Node.js.
+
+class LRUCache {
+   constructor(capacity) {
+      this.capacity = capacity;
+      this.cache = new Map();
+   }
+
+   get(key) {
+      if (this.cache.has(key)) {
+         const value = this.cache.get(key);
+         // Move the accessed key-value pair to the end to mark it as most recently used
+         this.cache.delete(key);
+         this.cache.set(key, value);
+         return value;
+      }
+      return -1;
+   }
+
+   put(key, value) {
+      if (this.cache.has(key)) {
+         // If key already exists, update the value and move it to the end
+         this.cache.delete(key);
+      } else if (this.cache.size >= this.capacity) {
+         // If cache is full, remove the least recently used key-value pair from the beginning
+         const oldestKey = this.cache.keys().next().value;
+         this.cache.delete(oldestKey);
+      }
+      // Add the new key-value pair to the end of the cache
+      this.cache.set(key, value);
+   }
+}
+
+Explanation:
+The LRUCache class implements a Least Recently Used (LRU) cache using a combination of a Map and an internal capacity variable. The capacity parameter passed to the constructor determines the maximum number of key-value pairs that the cache can hold.
+The class has two main methods, get and put, which implement the basic operations of a cache: retrieving a value by key, and adding or updating a key-value pair.
+The get method first checks if the key exists in the cache. If it does, it returns the corresponding value and moves the accessed key-value pair to the end of the Map to mark it as the most recently used. If the key does not exist, it returns -1 to indicate that the key is not in the cache.
+The put method first checks if the key already exists in the cache. If it does, it updates the value and moves the key-value pair to the end of the Map to mark it as the most recently used. If the key does not exist and the cache is already at its capacity, it removes the least recently used key-value pair from the beginning of the Map. Finally, it adds the new key-value pair
