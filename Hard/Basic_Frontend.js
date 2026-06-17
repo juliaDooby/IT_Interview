@@ -1,3 +1,18 @@
+Q1. How do I prepare for a front-end developer interview?
+When you're preparing for your Front-end developer interview, try to code most of your layout without taking a glance at the result till the end. If CSS, HTMLare the most important aspect of front-end development, then JavaScript tops the list of important skills to own. Organisations will spend a lot of time during your interview to test your understanding of Javascript.
+
+Q2. Why should we hire you as frontend developer
+Freshers:  While interviewing for front-end developer jobs for freshers you can come across this question. The best answer would be, " I have just begun my career, and do not have practical achievements, but I wish to explore and experience my potential by giving the best services to the company. It will be my privilege to work with your organization."
+Experienced: The best answer would be, “You should hire me for the role of front-end developer owing to my proven ability to create effective front-end user interfaces in line with contemporary best practices. I have experience working with JavaScript, along with the React framework, to create front-end applications.”
+
+Q3. What is the most challenging work you have ever done as a front-end developer
+The biggest challenges faced as a front-end developer are:
+
+Make sure each UI element like button, link navigation,  works as planned despite the user having JavaScript or cookies disabled.
+Make sure everything looks similar across all browsers.
+HTML tables.
+Debugging JavaScript code.
+
 Top 50 Frontend Interview Questions and Answers
  04 Sep 2025
  Career
