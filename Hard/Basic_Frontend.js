@@ -376,3 +376,62 @@ Why do we use the “use strict”; statement?
 The 'use strict' keyword is used to define strict mode at the start of the script. Strict mode is supported by all browsers.
 Summary
 In this Frontend tutorial, we saw the most commonly asked Frontend Interview Questions and Answers from basic to advanced levels. Frontend development can lead you to become a full-stack developer. So, to become a trained front-end developer, consider our Frontend Certification Program.
+
+Senior Frontend Engineer
+20 April, 2022 | Job Offer
+Who We Are
+
+Outdoorsy is the most trusted RV rental and outdoor experiences marketplace on the planet. We have grown from a lofty white-board idea in 2015 to over $1B in total transactions. With offices worldwide in the US, Canada, Australia, Europe and the UK, we’re mobilizing the 56+ million idle RVs and camper vans around the world to ensure everyone has the access, choice, and opportunity to safely spend more time outside.
+
+Our mission: to make memorable outdoor experiences accessible to everyone.
+
+Over 3,000,000 vacation nights were booked on Outdoorsy. And 93% of reviewed Outdoorsy bookings receive 5-star ratings. With over 600,000 families and adventure seekers — and 250,000 RVs, travel trailers, and campervans to choose from — that’s a lot of sunset selfies taken! Outdoorsy rentals are available in 4,800 cities in 14 countries and counting.
+
+For all the RV, motorhome, and campervan owners in our community, we are creating jobs and helping individuals, couples, and families realize financially life-changing freedom. RV owners who rent their unused RV through Outdoorsy can earn upwards of $48,000 each year through their own rental business.
+
+Outdoorsy has been recognized on the Forbes list of America’s Best Startup Employers in both 2020 and 2021.
+
+Most importantly, we’re a company built on trust. Our core values include:
+
+We always put the customer ahead of ourselves.
+We do the right thing.
+We keep it simple and amplify the positives.
+We like winning.
+We make long-term progress in the world.
+We repay our gratitude in every community interaction.
+We make the world a better place.
+We unleash the power of our people.
+Who You Are
+
+A hands on engineer who enjoys frontend development that has built and refactored code bases to follow best practices. You’re a stickler for proper architecture and you’re not afraid to voice your opinion if something isn’t designed properly. Comprehensive test coverage is a must for any code. Security, stability and performance are always top of mind when building new functionality or reviewing pull requests from the team.
+
+Ideal Experience
+
+5+ years of experience.
+Experience with Frontend technologies: React, Next.js and Typescript.
+Parts of the apps are still in the process of being migrated out of Ember.
+Experience building global consumer facing apps that are accessible.
+Experience working in startup fast paced environments.
+Creative problem solver who enjoys collaboration.
+REST API Interfaces.
+Good Git hygiene and comfortable with Github:
+Feature Branches
+Pull requests
+Code Review
+Comfortable working with tools such as Asana, Jira, etc.
+Benefits:
+
+We believe that life’s best memories are made outside and that, when you can’t be outside, you should be somewhere you feel a part of something bigger — as you would when soaking in the sunrise over the sandstone cliffs of the Grand Canyon. You should be somewhere you can test out new paths and be proud of the results, as you would when selecting a hiking route at Yosemite.
+
+You should be somewhere that supports and challenges your skillset as much as it rewards it, as would be when summiting a 14er in Colorado.
+
+Your happiness inside and outside our walls matters to us. That’s why we offer comprehensive benefits that make your life easier, including: full health insurance coverage (health, dental and vision), an open and friendly working environment, positive office culture, two (2) fully paid annual recreation vehicle trips a year, monthly social events.
+
+As an equal opportunity employer, we value and strive for diversity as much at our company as we do in the outdoors. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. We are champions of inclusivity and believe that stars shine the brightest when teams come together in a circle, as would be when gathering around a campfire.
+
+We prioritize your productivity and support what makes you most successful, which is why each new addition to the Outdoorsy team spends their first week onboarding and meeting key members across company departments — from product and finance to engineering and marketing. We do this with one overarching goal in mind: no matter where you look, you’re guaranteed to see a smiling face looking back at you. And yes, that includes the bathroom mirror.
+
+Our team connects personally to the idea of getting outside, escaping routine, and getting closer to the things that make us feel alive. We believe more time away from screens, traffic, and the trappings of modern life are crucial to mental wellness and — ultimately — personal health, happiness, and success.
+
+When we’re not outside — preferably toasting with craft beers on our office’s rooftop courtyard —we’re dreaming about it. When we’re not on the road, we’re talking about it. When we’re not on a
+trip, we’re planning for the next one. Preferably from the Outdoorsy embrace of Rainier, Arches, or Yellowstone — just a few of the names we’ve given our conference rooms.
