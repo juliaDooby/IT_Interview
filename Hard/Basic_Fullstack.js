@@ -3529,3 +3529,415 @@ Example: “When our company decided to transition from AngularJS to React for f
 Once I had a solid understanding of React, I organized training sessions for my team members to bring them up to speed on the new framework. We then developed a detailed migration plan that included breaking down the project into smaller components, prioritizing critical features, and setting realistic deadlines. This allowed us to gradually migrate parts of the application while maintaining functionality and minimizing disruptions.
 
 Throughout the process, we held regular meetings to discuss progress, address any challenges, and share knowledge among the team. As a result, we successfully migrated the entire application within the projected timeline, and the experience helped us become more adaptable and efficient in adopting new technologies in future projects.”
+
+Full stack Interview Questions for Developers
+Use our engineer-created questions to interview and hire the most qualified full stack developers for your organization.
+
+Get a demo
+Back to interview questions
+
+Full stack
+The ever-elusive full stack developer has a unique understanding of both frontend and backend technologies that makes them a valuable member to just about any application team.
+
+According to the CoderPad 2024 Developer survey, full stack developers are THE most in-demand job role technical recruiters are looking to fill.
+
+The subsequent sections provide a set of practical coding assignments and interview questions crafted to evaluate a candidate’s skill in full stack development during technical interviews.
+
+Additionally, a collection of suggested best practices is included to ensure a reliable evaluation of applicants’ full stack proficiency via your interview queries.
+
+Table of Contents
+Full stack example question 1
+Full stack example question 2
+Junior full stack interview questions
+Intermediate full stack interview questions
+Senior full stack interview questions
+More full stack interview resources
+Best interview practices for full stack roles
+Full stack example question 1
+Create a to-do application
+This question will examine candidates’ ability to work on the frontend and backend of an application, as well as their ability to think about client side caching and data management, and how to handle optimistic mutations in an application that interacts with an API. It is broken into two parts – you can have the more senior candidates complete both; for more junior candidates you can use the second part as a bonus or stretch goal.
+
+Part 1 instructions:
+
+The functionality to add todos and mark them as completed or uncompleted already exists. Your task is to implement the ability to update the “description” field of a given todo in the database.
+
+Part 2 instructions:
+
+Next, implement optimistic updates for updating the “completed” and “description” fields for a given todo. 
+
+When a user creates a todo, toggles a todo completeness, or updates a todo description, those updates should be made immediately in the frontend of the application, before the updates are saved in the database. 
+
+If the API responds with a success status, then the frontend updates are allowed to persist. If the API responds with an error status, the frontend update must be reverted.
+
+Example:
+
+1. Todo with id 2 is marked as completed. The frontend immediately shows that todo as complete, despite the change having not been persisted in the database.
+
+2. The API responds with a 500 because todo 2 could not be saved.
+
+3. The frontend must now revert the change to todo 2 and show it as incomplete.
+
+
+Full stack example question 2
+Improve this full-stack MineSweeper game
+This fun interview question allows you to analyze a candidate’s ability to troubleshoot and enhance a UI and to work with databases that manage a user’s progress.
+
+It’s broken into three parts, each a little more complex than the previous one – so it’s a great one to use if you’re looking for full-stack developers of multiple skill levels. You can have junior developers focus primarily on the first part and have the other two be “stretch goals.” 
+
+Alternatively, you can have your senior developer candidates work on all three parts to see how they work with a more in-depth development task.
+
+Part 1 instructions:
+
+Welcome to my game, created with NodeJS and React.
+
+To test it, go to the “Program Output” tab, click “Start a new game”, then click on a tile to reveal it. Try to avoid mines!
+
+All the games and their current states are saved in the database. So you can start multiple games and play them in any order you like.
+
+However, the game engine lacks a cool feature. When you click on a tile which is marked with a “0”, you have to manually click all the tiles around. The original MineSweeper game would automatically reveal these tiles, as they are not dangerous. This automatic reveal could also trigger more automatic reveals, if some tiles are also marked as “0”, and so on.
+
+Two Minesweeper boards. On the left is a full board that says "click once". In the middle is an arrow that has a label that says "automatically reveal the "0" tiles". On the right is a minesweeper board that has some tiles revealed. 
+Would you implement this feature for me, please?
+
+Part 2 instructions:
+
+This application is (quite) secure. The mines’ positions are known only by the server. When the player clicks on a tile, a request is sent to the server, which answers only what is necessary:
+
+A boolean telling if the tile has a mine,
+The number of mines around the tile.
+The problem is that the server may have to send more data, because multiple tiles may be revealed on a single click.
+
+Here are the first tasks you have to do:
+
+On the client side, find the code that is executed when the player clicks on a tile. It is split in two places: the React component defining the user interface, and the client API.
+On the server side, find the code that reveals a tile and sends the response to the client. It is in the server API.
+Determine the current structure of the data exchanged between the client and the server.
+Decide on a new structure. It could be, for example, a boolean telling if there is a mine and a list of revealed tiles. This list could contain objects with coordinates (x, y) and the number of mines around it.
+Adapt all the code parts previously identified, so that they handle this new data structure.
+Modify the server-side code to automatically reveal the tiles which have 0 mines around. You may have to do a little recursivity, or store the tiles to process in a list, because the revealed tiles may propagate.
+Part 3 instructions:
+
+Oh… One last thing. There are some “security flaws” in the code. You can cheat and get some clues on the bomb positions, without revealing the tiles. Even if we consider a real situation where you would be only on the client side. Can you find these flaws?
+
+Assessing the candidate’s response
+You’ll have your own criteria of what to look for in a full-stack developer, but here are some things we recommend looking out for when you’re using this question to assess your candidates:
+
+Is the candidate using comments to show their understanding of the code or to document how their code works?
+Is the candidate testing their code? Are they writing test cases for them? Or perhaps they’re taking an iterative coding approach – writing sections of code and then testing its functionality as they go?
+Are they able to follow a systematic debugging approach?
+Is the candidate accurately understanding how the front-end and back-end services communicate with one another?
+Are they following best design practices with their front-end implementation?
+
+Full stack skills to assess
+Frontend frameworks
+Backend frameworks
+Databases
+HTTP u0026 REST
+Full stack job roles
+Full stack developer
+Software engineer
+Web developer
+Junior full stack interview questions
+Question: What is the difference between a relational database and a NoSQL database?
+
+Answer: A relational database uses tables with predefined schemas to store data and relationships. They are based on the relational model and often use SQL (Structured Query Language) for querying. Examples include MySQL, PostgreSQL, and Oracle. On the other hand, NoSQL databases don’t use a fixed schema and can store data in various ways – document, key-value, columnar, graph. They’re designed for scalability and flexibility. Examples include MongoDB (document-based), Redis (key-value), and Neo4j (graph-based).
+
+Question: Explain the concept of MVC in web development.
+
+Answer: MVC stands for Model-View-Controller. It’s a design pattern used in web development to separate an application into three interconnected components:
+
+Model: Represents the data structure and the business logic of the application.
+View: Handles the presentation and the UI part of the application.
+Controller: Manages user requests and acts as an interface between Model and View.
+Question: How does a RESTful API work and why is it popular in web development?
+
+Answer: A RESTful API (Representational State Transfer) is an architectural style for designing networked applications. It uses a stateless, client-server communication model, where each request from the client contains all the information needed for the server to fulfill that request.
+
+Interacting with REST applications often involves the use of CRUD-like functions. Create, Read, Update, and Delete — or CRUD — are the four major functions used to interact with database applications.
+
+There is an (approximate) correspondance between HTTP methods and CRUD functions:
+
+CRUD   | HTTP
+——-|—————–
+CREATE | POST/PUT
+READ   | GET
+UPDATE | PUT/POST/PATCH
+DELETE | DELETE
+
+Question: Review the following Express.js code and explain what it does:
+
+   const express = require('express');
+   const app = express();
+
+   app.get('/hello', (req, res) => {
+      res.send('Hello, World!');
+   });
+
+   app.listen(3000);
+Code language: PHP (php)
+Answer: The code initializes an Express.js server. When a GET request is made to the /hello endpoint, the server responds with “Hello, World!”. The server listens on port 3000.
+
+Question: Given the following HTML file, identify the issue. We consider the file “jquery.min.js” exists and contains an updated version of jQuery.
+
+<head>
+    <script src="jquery.min.js"></script>
+    <script>
+        $('#myButton').click(function() {
+            alert('Button clicked!');
+        });
+    </script>
+</head>
+
+<body>
+    <button id="myButton">Click me</button>
+</body>
+Code language: HTML, XML (xml)
+Answer: At a first glance, the code seems to bind a click event to the button with the ID myButton and it will display an alert when clicked. The issue is that the script runs before the button element is rendered in the DOM. So, the event binding will not work. To fix this, the code should be wrapped in a $(document).ready() function or be placed before the closing </body> tag.
+
+Question: This Node.js code logs “undefined” on the console instead of the content of the file. Can you explain why?
+
+const fs = require('fs');
+var content;
+fs.readFile('my_file.txt', (err, data) => {
+    if (err) {
+        throw err;
+    }
+    content = data;
+});
+console.log(content);
+Code language: JavaScript (javascript)
+Answer: The arrow function expression passed in parameter to readFile is an asynchronous callback. It doesn’t execute right away, but it executes when the file loading has completed. When calling readFile, the execution continues immediately to the next line of code. So when console.log is called, the callback has not yet been invoked, and this content has not yet been set.
+
+To handle this specific case of reading a file and logging its content, the best solution is to use the function fs.readFileSync, which is the synchronous version of readFile.
+
+Question: Given the following frontend code, identify any issues:
+
+   fetch('/api/data')
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error fetching data:', error));
+Code language: JavaScript (javascript)
+Answer: The code fetches data from the /api/data endpoint and logs it to the console. One potential oversight is that it assumes a successful HTTP response contains valid JSON. It’s a good practice to first check response.ok before parsing the JSON to handle potential server errors.
+
+Question: Describe the importance of CORS in web development.
+
+Answer: CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers that controls how web pages in one domain can request resources from another domain. Without CORS, the Same-Origin Policy would prevent AJAX requests to different domains. For APIs and services to be accessed from different origins (domains, protocols, or ports), the server needs to include appropriate CORS headers (like Access-Control-Allow-Origin) in its response to permit these cross-origin requests.
+
+Intermediate full stack interview questions
+Question: What are JWTs, and why are they commonly used in web applications?
+
+Answer: JWT (JSON Web Token) is a compact URL-safe means of representing claims to be transferred between two parties. It’s typically used for authentication and authorization. Once a user logs in, the server can generate a JWT that encodes certain claims, and this token can be sent to the client for storage and included with subsequent requests to authenticate the user.
+
+Question: Explain the importance and role of WebSockets in modern web applications.
+
+Answer: WebSockets provide a full-duplex communication channel over a single, long-lived connection, enabling real-time functionality. It’s more efficient than traditional polling mechanisms and is commonly used in applications that need constant data updates like chat apps, online games, and financial platforms.
+
+Question: Describe the benefits and drawbacks of using a microservices architecture.
+
+Answer:
+Benefits:
+
+Scalability: Individual components can be scaled independently.
+Flexibility in technology: Different services can use different technologies suited to their needs.
+Easier deployment & fault isolation: A failure in one service doesn’t mean the whole system goes down.
+Drawbacks:
+
+Complexity: More services can mean more complexity in terms of deployment, monitoring, and management.
+Network latency: Increased communication between services can introduce latency.
+Data consistency: With data often split among different services, maintaining data consistency can be challenging.
+Question: Analyze the following Dockerfile and identify its purpose:
+
+   FROM node:14
+
+   WORKDIR /usr/src/app
+
+   COPY package*.json ./
+
+   RUN npm install
+
+   COPY . .
+
+   EXPOSE 8080
+
+   CMD ["npm", "start"]
+Code language: JavaScript (javascript)
+Answer: This Dockerfile describes how to create a Docker image for a Node.js application. It starts with an official Node.js image (version 14). It sets the working directory in the container to /usr/src/app. It then copies the package.json and package-lock.json (if available) files into the container. After that, it runs npm install to install the application’s dependencies. It then copies the rest of the application into the container. The application seems to run on port 8080 as it’s exposed. Finally, it specifies the command to run when the container starts, which is npm start.
+
+Question: Given the following React code, identify potential issues:
+
+   class MyComponent extends React.Component {
+      render() {
+         return (
+            <div>
+               {this.props.items.map(item => <p key={item.id}>{item.name}</p>)}
+            </div>
+         );
+      }
+   }
+Code language: JavaScript (javascript)
+Answer: At a glance, the code seems to be okay as it correctly uses the key prop when mapping through items. However, potential issues might include:
+
+No type checking for this.props.items. Using PropTypes or TypeScript could ensure items is always an array.
+No checks for the existence or length of this.props.items, which might be important for handling empty states or preventing errors if items isn’t passed.
+Question: Review the following Express middleware function and explain its purpose:
+
+   app.use((req, res, next) => {
+      if (!req.headers.authorization) {
+         return res.status(401).send('Unauthorized');
+      }
+      next();
+   });
+Code language: JavaScript (javascript)
+Answer: This is an Express middleware that checks if the incoming request has an authorization header. If the header is missing, it responds with a 401 (Unauthorized) status and the message ‘Unauthorized’. If the header exists, it proceeds to the next middleware or route handler.
+
+Question: Explain the following Sequelize model definition:
+
+   const User = sequelize.define('User', {
+      username: {
+         type: Sequelize.STRING,
+         unique: true
+      },
+      password_hash: Sequelize.STRING
+   });
+Code language: JavaScript (javascript)
+Answer: This code defines a Sequelize model for a User with two fields: username and password_hash. Both fields are strings. The username field has an additional constraint, making it unique, which means every user must have a distinct username.
+
+Question: Given the following frontend JavaScript code, explain the problem and how to solve it:
+
+   async function fetchData() {
+      let data = await fetch('/api/data');
+      let json = await data.json();
+      console.log(json);
+   }
+
+   fetchData();
+Code language: JavaScript (javascript)
+Answer: The code fetches data from the /api/data endpoint and logs the resulting JSON.
+
+Potential issues include: No error handling. If the fetch request fails (e.g., network issues, invalid JSON, server errors), the code could throw an unhandled promise rejection. To solve this, use a try-catch block inside the fetchData function to handle potential errors gracefully. Also, it’s better to use const keywords instead of let, as the declared variable are initialized only once and never modified after.
+
+Question: Explain the difference between horizontal and vertical scaling in cloud computing.
+
+Answer:
+
+Horizontal scaling (scaling out/in): Involves adding more machines to or removing machines from the existing pool. It can cater to increased traffic or reduce cost when traffic is low.
+Vertical scaling (scaling up/down): Involves adding more power (CPU, RAM) to an existing machine. It can improve the performance of a single instance but has an upper limit based on the machine’s max capabilities.
+Question: What is the main difference between GraphQL and REST when designing APIs, and why might you choose one over the other?
+
+Answer:
+
+REST (Representational State Transfer): A set of architectural principles where data and functionality are addressed via endpoints corresponding to specific resources. Client-server communication is stateless.
+GraphQL: A query language for APIs, allowing clients to request only the data they need. It provides a more flexible structure that lets the client shape the response based on its requirements. You might choose GraphQL over REST if you want to give clients more flexibility in their data requests, reduce over-fetching or under-fetching of data, and potentially reduce the number of requests made. However, you might stick with REST if you have a simple application, are working with systems/tools that integrate better with REST, or if you want to maintain a clear separation between API endpoints.
+Senior full stack interview questions
+Question: Describe the concept of CQRS and its benefits in software architecture.
+Answer: CQRS stands for Command Query Responsibility Segregation. It’s a pattern where the data modification (command) and data retrieval (query) operations are separated. Benefits include:
+
+Scalability: Since read and write operations can be scaled independently.
+Flexibility: Allows for optimizing read and write sides for their specific operations and workload.
+Improved security: Since command and query can have different security models.
+Simplified code: Each side can be optimized for its primary function.
+Question: Explain the importance of design patterns in software engineering and provide an example of one you have used.
+Answer: Design patterns are proven solutions to common software design problems. They offer:
+
+Reusability: Since they are proven solutions, developers can incorporate them without reinventing the wheel.
+Communication: Familiar patterns can help developers communicate design concepts quickly.
+Best practices: Patterns encapsulate the best practices and help maintain code consistency.
+Example: The Singleton pattern ensures that a class has only one instance and provides a global point to access it, ensuring that resources are used efficiently.
+Question: Examine the following Redux reducer and identify potential improvements:
+
+   function todoReducer(state = [], action) {
+      if (action.type === 'ADD_TODO') {
+         return state.concat(action.payload);
+      }
+      return state;
+   }
+Code language: JavaScript (javascript)
+Answer: The reducer handles an ADD_TODO action by concatenating the payload to the current state. Improvements might include:
+
+Using the spread operator for clarity: return [...state, action.payload];.
+Handling more actions or adding a default case to explicitly state that the action isn’t recognized.
+Ensuring that action payloads are always structured correctly or validated before use.
+Question: How would you prevent SQL injection attacks in a backend application?
+
+Answer: SQL injection attacks can be prevented by:
+
+Using prepared statements or parameterized queries, which ensure data is treated as input and not executable code.
+Escaping user input before using it in SQL queries.
+Avoiding the construction of dynamic SQL queries using string concatenation with unfiltered user input.
+Implementing proper error handling so that database errors are not revealed to the end user.
+Using ORM (Object Relational Mapping) libraries that often provide built-in protections against SQL injections.
+Question: Analyze the following GraphQL query:
+
+   {
+      user(id: "12345") {
+         name
+         email
+         friends {
+            name
+         }
+      }
+   }
+Code language: JavaScript (javascript)
+Answer: This GraphQL query fetches a user with the ID “12345”. For this user, it retrieves their name, email, and the names of all their friends.
+
+Question: Given this configuration for a Kubernetes deployment, point out any areas of improvement:
+
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+      name: my-app
+   spec:
+      replicas: 3
+      template:
+         spec:
+            containers:
+            - name: my-container
+              image: my-app:latest
+              ports:
+              - containerPort: 8080
+Answer: Potential areas of improvement include:
+
+Instead of using the latest tag for the image, it’s better to use specific version tags to ensure consistency across deployments.
+Configurable parameters (like image version or replica count) could be moved to a ConfigMap or Secret for better maintainability and security.
+Liveness and readiness probes could be added to the container configuration to ensure the application is running smoothly and traffic is only sent when the app is ready.
+Resource limits and requests might be specified to ensure that the container gets the required resources.
+Question: Describe the Event Sourcing pattern and its advantages in application architecture.
+
+Answer: Event Sourcing is a pattern where state changes of a system are stored as a sequence of events rather than just the current state. These events can be replayed to recreate the system’s state. Advantages include:
+
+Audit Trail: Since all changes are stored, it provides a full history of actions.
+Flexibility: Allows for temporal querying and recreating historical states.
+Reliability: Helps in scenarios where system failures require state recovery.
+Question: What’s the difference between optimistic and pessimistic concurrency control?
+
+Answer:
+
+Optimistic Concurrency Control: Assumes conflicts are rare. It allows multiple transactions to proceed and checks for conflicts at commit time. If a conflict is found, the transaction might be rolled back.
+Pessimistic Concurrency Control: Assumes conflicts will happen. It locks records for a transaction, preventing others from accessing/modifying them until the transaction is done.
+Question: How do you approach performance optimization in large-scale web applications?
+
+Answer: Performance optimization in large-scale applications can be approached in various ways, including:
+
+Profiling and monitoring the application to identify bottlenecks.
+Implementing caching strategies (e.g., Redis, CDN).
+Optimizing database queries and indexing.
+Minimizing and bundling frontend assets (CSS, JS).
+Implementing server-side rendering for faster initial page loads.
+Using content delivery networks (CDN) to distribute assets closer to users.
+Load testing to identify and fix scaling issues before they impact users.
+More full stack interview resources
+For more guides on improving your knowledge of full stack hiring, we have outlined helpful blog posts below:
+
+2 Effective Interview Questions to Ask Your Full-Stack Developer Candidates
+2023 Web Developer Hiring: Expert Strategies for Finding the Right Fit
+3 Interview Tips for Software Engineer Hiring Managers
+1,000 Companies use CoderPad to Screen and Interview Developers
+
+
+Best interview practices for full stack roles
+The full stack interview process can significantly differ based on aspects such as the specific engineering position and the candidate’s degree of expertise. To enhance the effectiveness of your full stack interview questions, it’s suggested to follow these best practices while engaging with your interviewees:
+
+Devise technical queries that relate to actual scenarios within your company – this approach is not only more engaging for the interviewee but also better demonstrates the compatibility of their skills with your team.
+Foster an environment of collaboration by motivating the candidate to pose questions throughout the task.
+As full stack applicants are expected to work with front-end elements, they should have a solid grasp of basic UI/UX design principles.
+Furthermore, it’s crucial to adhere to conventional interview protocols during full stack interviews – adjust the complexity of interview questions relative to the candidate’s development skill level, provide timely feedback regarding their status in the recruitment process, and allocate sufficient time for candidates to inquire about the evaluation or the experience of working with you and your team.
