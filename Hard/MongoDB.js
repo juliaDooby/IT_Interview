@@ -3092,3 +3092,129 @@ If you call the model creation function with the same key more than once, mongoo
 Q 49. What is the '__v' field in Mongoose?
 When the mongoose is created at the first time the version key is a property set on every document. The value of this key comprises of the internal revision of the document. It is understood that the name of this document is configurable. The default key is __v
  
+Interview Questions MongoDB
+Interview Questions MongoDB
+Posted On
+November 14, 2023
+by
+Codex
+129 Views
+What is MongoDB?
+MongoDB is a cross-platform, document-oriented database program that provides high performance, high availability, and easy scalability. It is a leading NoSQL database, which is designed for ease of development and scaling​​.
+
+What are the features of MongoDB?
+Key features of MongoDB include its document-oriented storage with JSON-like documents with dynamic schemas, full index support, replication & high availability, auto-sharding for horizontal scalability, built-in aggregation, and a rich query language​​.
+
+What type of NoSQL database is MongoDB?
+
+MongoDB is a document-based NoSQL database. This means that it stores data in Binary JSON (BSON) format, which allows the integration of data in certain types of applications more easily and quickly​​.
+Explain the importance and benefits of using a document-based database like MongoDB.
+Document databases like MongoDB are collection-oriented, and schema-free, and allow for a more flexible representation of relationships between data items. They are ideal for scenarios with large amounts of data and where the structure of the data may change over time. The benefits include faster development cycles, performance efficiency, and the ability to handle diverse and large amounts of data​​.
+
+What is Mongo shell?
+
+Mongo shell is a JavaScript interface to MongoDB, which allows you to perform tasks such as querying and updating data, managing the database’s structure, and setting up replication and sharding​​.
+How does indexing work in MongoDB?
+Indexing in MongoDB works by creating a data structure that improves the speed of data retrieval operations on a database collection. Just like indexes in other database systems, MongoDB indexes use a small portion of RAM to store a reference to the data, which can significantly improve the performance of queries​​.
+
+What is sharding in MongoDB?
+Sharding in MongoDB is the process of storing data records across multiple machines. It is MongoDB’s approach to meeting the demands of data growth. By splitting the data across multiple servers, sharding can provide a way to scale horizontally and facilitate high throughput operations with large sets of data​​.
+
+What are some common use cases for MongoDB?
+MongoDB is often used for mobile apps, content management, real-time analytics, and applications involving the Internet of Things. Its flexible schema, scalability, and performance make it suitable for a wide range of applications, especially where rapid development and iteration are required​​.
+
+Differentiate MongoDB and MySQL.
+The main difference between MongoDB and MySQL is that MongoDB is a NoSQL database that stores data in documents and does not require a predefined schema, allowing the fields to vary from document to document. MySQL, on the other hand, is a relational database management system that stores data in tables and requires a predefined schema for the data​​.
+
+How do you create a database in MongoDB?
+To create a database in MongoDB, you use the use command followed by the database name. If the database does not exist, MongoDB creates it when you first store data in that database.
+
+How does MongoDB provide concurrency?
+MongoDB uses a locking system to ensure that multiple clients can’t write to the same data at the same time. It uses reader-writer locks that allow concurrent readers shared access to a resource but give exclusive access to a single writer.
+
+What is replication in MongoDB?
+Replication in MongoDB is the process of synchronizing data across multiple servers. It increases data availability and ensures redundancy and high availability. This is achieved by using replica sets, which are a group of MongoDB instances that maintain the same data set.
+
+What is a replica set?
+A replica set in MongoDB is a group of mongod instances that host the same data set. In a replica, one node is the primary node that receives all write operations. The other, secondary nodes replicate the primary’s oplog and apply the operations to their data sets.
+
+What are the different types of collections in MongoDB?
+MongoDB has several types of collections, including capped collections, which are fixed-size collections that automatically overwrite their oldest entries when they reach their maximum size.
+
+What is a document in MongoDB?
+In MongoDB, a document is a basic unit of data that contains BSON (Binary JSON) key-value pairs. It is the MongoDB equivalent of a row in a relational database table.
+
+How do you perform transactions in MongoDB?
+MongoDB supports multi-document transactions, which are used to perform operations that require atomicity across multiple documents in one or more collections. Transactions in MongoDB feel similar to transactions in relational databases and are started with a startTransaction command.
+
+How do you back up a MongoDB database?
+Backing up a MongoDB database can be done using tools like Mongodump, which creates a binary export of the contents of a database. Another method is filesystem snapshots or using MongoDB Atlas’ backup solutions if you use MongoDB’s cloud service.
+
+Can you explain sharding and its components?
+Sharding is MongoDB’s strategy for meeting the demands of data growth. It involves splitting data across multiple MongoDB instances or shards. Components include shard key, query router (mongos), and config servers.
+
+What are aggregations in MongoDB?
+Aggregations in MongoDB are operations that process data records and return computed results. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result.
+
+What is the purpose of the skip() and limit() methods in MongoDB?
+The skip() method is used to skip a specified number of documents in a query and is often used with limit() to paginate through documents. The limit() method is used to limit the number of documents returned by a query, which is useful for controlling the amount of data sent to a client.
+
+What is MongoDB Atlas?
+MongoDB Atlas is a fully-managed cloud database service provided by MongoDB. It offers a hosted MongoDB service that takes care of setup, infrastructure management, scaling, and backups in the cloud platform of your choice (AWS, Azure, or Google Cloud Platform).
+
+How do you ensure that an index fits into RAM in MongoDB?
+To ensure an index fits into RAM, you should create indexes that only cover the fields you frequently query and avoid adding unnecessary fields to the index. Monitoring performance and using MongoDB’s index size statistics can also help in managing index RAM fit.
+
+What is a GridFS in MongoDB?
+GridFS is a specification for storing and retrieving large files such as images, audio files, video files, etc. It allows storing files larger than the BSON-document size limit of 16MB by dividing them into chunks and storing them as separate documents.
+
+What are the limitations when sharding a MongoDB collection?
+When sharding a collection, you cannot shard on a hashed index that includes an array field, and you cannot change the shard key after sharding. Additionally, all queries that do not include the shard key must be broadcast to all shards.
+
+Explain the role of a query router in MongoDB.
+The query router, or mongos, is the component of a sharded MongoDB cluster that interfaces with client applications and directs operations to the appropriate shard(s). The mongos process queries the config servers to determine the metadata about the cluster and routes operations accordingly.
+
+What is journaling in MongoDB and why is it important?
+Journaling is a feature that provides durability in MongoDB. It ensures that write operations are written to a journal file first, so in the event of a crash, MongoDB can recover the writes from this journal. This is crucial for preventing data loss.
+
+How do you update a document in MongoDB?
+To update a document in MongoDB, you use the updateOne(), updateMany(), or replaceOne() operations, specifying the criteria for selecting the document and the updated values or document.
+
+What is the oplog in MongoDB?
+The oplog (operations log) is a special capped collection that keeps a rolling record of all operations that modify the data stored in your databases. It’s used as part of replication to keep secondary members consistent with the primary.
+
+How can you achieve transaction-like functionality in MongoDB?
+MongoDB provides multi-document transactions which allow performing multiple write operations across different documents in a single atomic operation, similar to transactions in relational databases.
+
+What are the best practices for securing a MongoDB instance?
+Best practices for securing a MongoDB instance include enabling authentication, using role-based access control, encrypting communication with TLS/SSL, encrypting sensitive data at rest, and keeping MongoDB and its underlying operating system up to date with security patches.
+
+What is the difference between deleteOne() and deleteMany() in MongoDB?
+deleteOne() deletes the first document that matches the query criteria, whereas deleteMany() deletes all documents that match the query criteria.
+
+How does MongoDB handle transactions in a sharded environment?
+MongoDB uses a two-phase commit process to handle transactions across sharded environments to maintain ACID (Atomicity, Consistency, Isolation, Durability) properties. It manages distributed transactions that can span multiple shards and ensures that the changes are committed only if all shards report success.
+
+What is the significance of the _id field in MongoDB documents?
+The _id field is a unique identifier for a document in a MongoDB collection. It is automatically added by MongoDB to every document if not provided and is used to ensure that every document can be uniquely identified.
+
+How do you monitor the performance of a MongoDB database?
+MongoDB provides various tools for monitoring performance, including the MongoDB Atlas platform, which offers monitoring and alerting features. Locally, you can use the mongostat and mongotop utilities to monitor database statistics and collection-level performance, respectively.
+
+What is a compound index in MongoDB?
+A compound index is an index on multiple fields within a MongoDB collection. Documents are sorted first by the value of the first field, then by the value of the second field within each group of documents with the same first field value, and so on.
+
+What are the advantages of using MongoDB over traditional databases?
+MongoDB offers a flexible schema, allowing developers to store data in a format that is more natural to their application logic. It also provides scalability through sharding, good performance for read and write operations, and a rich set of features like full-text search and geospatial queries.
+
+Can you explain the explain() method in MongoDB?
+The explain() method is used to provide information about how MongoDB executes a query. It can be used to diagnose performance issues by showing details such as which indexes have been used and how many documents were scanned.
+
+What is a covered query in MongoDB?
+A covered query is a query in which all the fields used in the query are part of an index and all the fields returned in the results are in the same index. Covered queries can be executed by MongoDB entirely using the index without having to look up the actual documents, resulting in improved query performance.
+
+What is the role of mongod and mongos in MongoDB?
+MongoDB is the primary daemon process for the MongoDB system—it handles data requests, manages data access, and performs background management operations. mongos acts as a query router, providing an interface between client applications and the sharded cluster.
+
+How does MongoDB ensure data redundancy and high availability?
+MongoDB ensures data redundancy and high availability through the use of replica sets, which are groups of two or more copies of a MongoDB database. The replica set includes a primary node and secondary nodes that replicate the data of the primary node. If the primary fails, an election process designates a new primary from the secondaries to maintain service continuity.
