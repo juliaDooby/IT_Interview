@@ -1979,3 +1979,109 @@ The **oplog** (operations log) is a special capped collection (`oplog.rs`) that 
 
 25. What is the difference between a sparse index and a regular index?
 A **regular index** contains an entry for every single document in a collection, even if the indexed field is null
+
+Top 30 MongoDB Interview Questions 2019
+by Mohammed on Mar 17, 2018 12:02:52 PM
+
+Top 30 MongoDB Interview Questions 2019
+
+Top 30 MongoDB Interview Questions 2019
+
+Q1. What is MongoDB?
+Ans: Mongo-DB is a record database which gives superior, high accessibility and simple adaptability.
+
+Q2. What are the best features of Mongodb?
+Ans:
+
+Document-oriented
+High performance
+High availability
+Easy scalability
+Rich-query language
+Q3. What is a replica set?
+Ans: A copy set is a group of mongo examples that host similar data index. In replica set, one hub is essential, and another is auxiliary. From essential to the secondary hub all information replicates.
+
+Q4. How replication works in MongoDB?
+Ans: Over different servers, the way toward synchronizing information is known as replication. It gives excess and increment information accessibility with various duplicates of information on various database servers. Replication helps in shielding the database from the departure of a solitary server.
+
+Q5. What is “Namespace” in MongoDB?
+Ans: MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. The link of the collection name and database name is known as a namespace.
+
+Q6. What is sharding in MongoDB?
+Ans: The system of storing data records over different machines is known as Sharding. It is a MongoDB way to deal with the requests of data development. It is the flat segment of data in a database or search engine. Each partition is referred as shard or database shard.
+
+Q7. How can you see the connection used by Mongos?
+Ans: To see the association utilized by Mongos utilize db_adminCommand (“connPoolStats”);
+
+Q8. Does an update fsync to disk immediately?
+Ans: No. Writes to disk are lazy by default. A write may only hit the disk a couple of seconds later. For example, if the database receives thousand increments to an object within one second, it will only be flushed to disk once. (Note: fsync options are available both at the command line and via getLastError_old.)
+
+Q9. How do I do transactions/locking?
+Ans: MongoDB does not use traditional locking or complex transactions with rollback, as it is designed to be light weight, fast and predictable in its performance. It can be thought of how analogous is to the MySQL’s MyISAM autocommit model. By keeping transaction support extremely simple, performance is enhanced, especially in a system that may run across many servers.
+
+Q10. Why are data files so large?
+Ans: MongoDB does aggressive preallocation of reserved space to avoid file system fragmentation.
+
+Q11. When using replication, can some members use journaling and others not?
+Ans: Yes!
+
+Q12. Can journaling feature be used to perform safe hot backups?
+Ans: Yes!
+
+Q13. What is 32-bit nuances?
+Ans: There is an extra memory mapped file activity with journaling. This will further constrain the limited db size of 32-bit builds. For now, journaling by default is disabled on 32-bit systems.
+
+Q14. Will there be journal replay programs in case of incomplete entries (if there is a failure in the middle of one)?
+Ans: Each journal (group) write is consistent and won’t be replayed during recovery unless it is complete.
+
+Q15. Are null values allowed?
+Ans: Yes, but only for the members of an object. A null cannot be added to the database collection as it isn’t an object. But {}can be added.
+
+Q16. Is it required to call ‘getLastError’ to make a write durable?
+Ans: No. If ‘getLastError’ (aka ‘Safe Mode’) is not called, the server does exactly behave the way as if it has been called. The ‘getLastError’ call simply allows one to get a confirmation that the write operation was successfully committed. Of course, often you will want that confirmation, but the safety of the write and its durability is independent.
+
+Q17. Should you start out with Sharded or with a Non-Sharded MongoDB environment?
+Ans: We suggest starting with Non-Sharded for simplicity and quick startup, unless your initial data set will not fit on single servers. Upgrading to Sharded from Non-sharded is easy and seamless, so there is not a lot of advantage in setting up Sharding before your data set is large.
+
+Q18. What is the role of profiler in MongoDB?
+Ans: MongoDB includes a database profiler which shows performance characteristics of each operation against the database. With this profiler you can find queries (and write operations) which are slower than they should be and use this information for determining when an index is needed.
+
+Q19. When an object attribute is removed, is it deleted from the store?
+Ans: Yes, you can remove the attribute and then re-save() the object.
+
+Q20. How long does replica set failover take?
+Ans: It may take 10-30 seconds for the primary to be declared down by the other members and a new primary to be elected. During this window of time, the cluster is down for primary operations i.e writes and strong consistent reads. However, eventually consistent queries may be executed to secondaries at any time (in slaveOk mode), including during this window.
+
+Q21. What’s a Master or Primary?
+Ans: This is a node/member which is currently the primary and processes all writes for the replica set. During a failover event in a replica set, a different member can become primary.
+
+Q22. What’s a Secondary or Slave?
+Ans: A secondary is a node/member which applies operations from the current primary. This is done by tailing the replication oplog (local.oplog.rs). Replication from primary to secondary is asynchronous, however, the secondary will try to stay as close to current as possible (often this is just a few milliseconds on a LAN).
+
+Q23. How does Sharding work with replication?
+Ans: Each Shard is a logical collection of partitioned data. The shard could consist of a single server or a cluster of replicas. Using a replica set for each Shard is highly recommended.
+
+Q24. When will data be on more than one Shard?
+Ans: MongoDB Sharding is range-based. So all the objects in a collection lie into a chunk. Only when there is more than 1 chunk there is an option for multiple Shards to get data. Right now, the default chunk size is 64mb, so you need at least 64mb for migration.
+
+Q25. What happens when a document is updated on a chunk that is being migrated?
+Ans: The update will go through immediately on the old Shard and then the change will be replicated to the new Shard before ownership transfers.
+
+Q26. What happens when a Shard is down or slow when querying?
+Ans: If a Shard is down, the query will return an error unless the ‘Partial’ query options is set. If a shard is responding slowly, Mongos will wait for it.
+
+Q27. Can the old files in the ‘moveChunk’ directory be removed?
+Ans: Yes, these files are made as backups during normal Shard balancing operations. Once the operations are done then they can be deleted. The clean-up process is currently manual so this needs to be taken care of to free up space.
+
+Q28. How do you see the connections used by Mongos?
+Ans: The following command needs to be used: db._adminCommand(“connPoolStats”);
+
+Q29. What are the disadvantages of MongoDB?
+Ans:
+
+A 32-bit edition has 2GB data limit. After that it will corrupt the entire DB, including the existing data. A 64-bit edition won’t suffer from this bug/feature.
+Default installation of MongoDB has asynchronous and batch commits turned on. Meaning, it lies when asked to store something in DB and commits all changes in a batch at a later time in future. If there is a server crash or power failure, all those commits buffered in memory will be lost. This functionality can be disabled, but then it will perform as good as or worse than MySQL.
+MongoDB is only ideal for implementing things like analytics/caching where impact of small data loss is negligible.
+In MongoDB, it’s difficult to represent relationships between data so you end up doing that manually by creating another table to represent the relationship between rows in two or more tables.
+Q30. Mention how you can inspect the source code of a function?
+Ans: To inspect a source code of a function, without any parentheses, the function must be invoked.
