@@ -1356,3 +1356,398 @@ Q41. Why is the covered query important in MongoDB?
 Ans. Covered query allows faster execution of the query. It ensures that the created index has all the fields required by the query. It doesn’t require examining any documents, except for the indexed ones.  
 
 MongoDB can match the query conditandl as return the result fields using the same index without looking inside the documents.
+
+MongoDB - Basics
+Q1
+What is MongoDB? How is it different from other relational or non-relational databases?
+MongoDB is a non-relational, document based database.
+
+Relational databases such as MySql and Oracle store data in tables, rows and columns. They are based on a branch of algebraic theory known as relational algebra. Relational databases are structured, and tables can be linked with each other via foreign keys. Relational databases follow ACID properties, which ensures that database transactions are processed reliably.
+
+Non-Relational databases, also called NoSQL databases, contain unstructured data and are commonly used in big data solutions to store and process massive amounts of disparate data.
+
+There are four different kinds of NoSQL databases.
+
+Graph databases – Graph databases are based on graph theory. These databases are designed for data which needs to be represented as graphs. The data elements are interconnected with multiple number of relations between them. Example of a graph database is Neo4j.
+
+Key-Value stores – These databases store data as an indexed key and value pairs. These databases store data in a schema-less way. Example of key-value data stores include Cassandra, DynamoDB, Riak and BerkleyDB.
+
+Column store – These databases are designed to store data as columns of data, rather than as rows as data. Example of column store databases are HBase, BigTable and HyperTable.
+
+Document databases – Document databases are designed to store documents, with each document having a unique key. Examples of document databases are MongoDB and CouchDB.
+
+Q2
+What are the key features MongoDB?
+Following are the key features of MongoDB.
+
+Document store - MongoDB is non-relational document based database. Documents in MongoDB contain field and value pairs and are structured similar to JSON objects. Fields in MongoDB documents may contain other documents, reference to other document, arrays and arrays to other documents.
+
+High Availability – MongoDB provides high availability as part of its core functionality. MongoDB has replica sets that replicates data and provides high availability and data redundancy.
+
+Horizontal scalability – MongoDB provides sharding feature as part of its core functionality which distributes data across a cluster of machines.
+
+Query Language – MongoDB provides a rich query language that supports read and write operations, aggregations and search operations.
+
+Q3
+How is data stored in MongoDB? How does it compare to a relational database?
+MongoDB database contains Collections. Collections contains Documents. Documents contains fields and values in BSON format.
+
+Collections are analogous to tables in relational database. Documents are analogous to rows in relational database.
+
+Q4
+How do you create a new MongoDB database from Mongo shell?
+You can create a new MongoDB database via Mongo shell by using the command ‘use’ followed by the database name
+
+> use interview_grid_db
+switched to db interview_grid_db
+Q5
+How do you create a new collection in MongoDB via the Mongo shell?
+Explicit creation – You can explicitly create a new collection by using the command db.createCollection(). This enables us to set properties on the collection such as the setting the maximum file size, validation rules etc.
+
+Implicit creation – MongoDB creates a new collection automatically, if you insert a document into a collection and that collection does not exist. In below example a new collection ‘employees’ is created if the collection does not already exist.
+
+//Explicit Creation
+>db.createCollection("employees")
+{ "ok" : 1 }
+//Implicit Creation
+>db.employees.insert({fname:"John", lname:"Doe", age:"25",
+ title:"Manager", dept:"IT"})
+WriteResult({ "nInserted" : 1 })
+Q6
+What are capped collections in MongoDB?
+Capped collections are collections that store a fixed number of documents and maintains the insertion order of the documents.
+
+If the number of documents in a capped collection reached the maximum, then the earliest inserted document will be deleted to make space for the new document.
+
+Q7
+What is Mongo shell?
+Mongo shell is a command line user interface to MongoDB. You can use Mongo shell to query and update data from MongoDB. MongoDB is written in Java script.
+
+Q8
+What is Mongo shell?
+Mongo shell is a command line user interface to MongoDB. You can use Mongo shell to query and update data from MongoDB. MongoDB is written in Java script.
+
+You can start mongo shell by going to /bin and running the command mongo.
+
+MongoDB - Create
+Q9
+What is the significance of _id field in a MongoDB document? What happens if you insert a document without the _id field in a MongoDb collection?
+_id is the field that uniquely identifies a document in the MongoDB collection. If you insert a document that does not contain the _id field, then MongoDB automatically generates the unique id.
+
+In below example a MongoDB document without the _id field is inserted into a MongoDB collection. MongoDB generates a unique _id field for the document, inserts the document into the collection, and returns the result document containing the generated _id value.
+
+> db.employees.insertOne({fname:'John', lname:'Doe', age:'25', 
+title:'Manager', dept:'IT'})
+
+{'acknowledged' :true,
+'insertedId' : ObjectId('58479913fa42b4972b1efe40')}
+Q10
+What is the difference between the operations db.collection.insertOne() and db.collection.insertMany()?
+db.collection.insertOne() – Inserts a single document into a MongoDB collection. It returns a document containing the inserted document’s _id field.
+
+db.collection.insertMany() – Inserts a single document or multiple documents into a MongoDB collection. It returns a document containing each inserted document’s _id.
+
+> db.employees.insertOne({fname:"John", lname:"Doe", age:"25", 
+title:"Manager",dept:"IT"})
+
+{
+"acknowledged" : true, 
+"insertedId" : ObjectId("58479913fa42b4972b1efe40")
+}
+> db.employees.insertMany([{fname:"John", lname:"Doe", age:"25", 
+title:"Manager", dept:"IT"},{fname:"Mike", lname:"Adams", age:"32", 
+title:"Director", dept:"IT"}])
+
+{
+"acknowledged" : true,
+"insertedIds" : [
+ObjectId("58479c2dfa42b4972b1efe46"),
+ObjectId("58479c2dfa42b4972b1efe47")
+]
+}
+Q11
+What is the difference between the operations db.collection.insertMany() and db.collection.insert()?
+db.collection.insertMany() – Inserts a single document or multiple documents into a MongoDB collection. It returns a document containing each inserted document’s _id.
+
+db.collection.insert() – Inserts one or multiple documents into a MongoDB collection. It returns a BulkWriteResult object with status of the operation including details such as error, number of documents inserted, number of documents upserted etc.
+
+> db.employees.insertOne({fname:"John", lname:"Doe", age:"25", 
+title:"Manager",dept:"IT"})
+
+{
+"acknowledged" : true,
+"insertedId" : 
+ObjectId("58479913fa42b4972b1efe40")
+}
+> db.employees.insert([{fname:"John", lname:"Doe", age:"25", 
+title:"Manager", dept:"IT"},{fname:"Mike", lname:"Adams", age:"32", 
+title:"Director", dept:"IT"}])
+
+BulkWriteResult({
+"writeErrors" : [ ],
+"writeConcernErrors" : [ ],
+"nInserted" : 2,
+"nUpserted" : 0,
+"nMatched" : 0,
+"nModified" : 0,
+"nRemoved" : 0,
+"upserted" : [ ]
+})
+Q12
+What is WriteResult object?
+WriteResult object is an object returned by the db.collection.insertOne() and db.collection.insertMany() operations, which contains the object ids of the documents inserted by the operation.
+
+Q13
+What is BulkWriteResult object?
+BulkWriteResult object is an object returned by the db.collection.insert() operation in which multiple documents are inserted. BulkWriteResult object contains status of the operation including details such as error, number of documents inserted, number of documents upserted etc.
+
+Q14
+Can a MongoDB document contain fields with array as value?
+Yes, MongoDB document can have fields with values of type array. The array elements can be single values or can be documents.
+
+//field "skills" has array of values
+> db.employees.insertOne({fname:"Dave", lname:"Smith", age:"30", 
+title:"Manager", dept:"IT", 
+skills:[“Java”,”Oracle”,”People Management”,”Project Management”])
+//field "skills" has array of documents 
+> db.employees.insertOne({fname:"John", lname:"Smith", age:"32", 
+title:"Manager", dept:"IT", 
+skills: [{skill: “Java”, exp: “10”}, {skill: “Oracle”, exp: “10”}, 
+{skill: “MongoDb”, exp: “10”}, {skill: “BigData”, exp: “10”}])
+Q15
+Can a MongoDB document contain embedded documents?
+Yes, MongoDB document can have fields that hold embedded documents. For example - in below document the field ‘address’ contains an embedded document. The field 'skills' is of type array and contains elements which are documents.
+
+> db.employees.insertOne({fname:"John", lname:"Smith", age:"32", 
+title:"Manager",dept:"IT", 
+address: {line1:”1111 broadway”, line2:”Flat# 203”,
+city:”New York”, state:”NY”, country:”USA”}, 
+skills: [{skill: “Java”, exp: “10”}, {skill: “Oracle”, exp: “10”}, 
+{skill: “MongoDb”, exp: “10”}, {skill: “BigData”, exp: “10”}])
+MongoDB - Read
+Q16
+How do you find documents from a collection?
+MongoDB provides db.collections.find() operation to find documents in a collection. The syntax of find() operation is db.collections.find({query filter},{projection}).
+
+You can enter search queries in 'query filter' section. For example {'title':'manager'} would return all employees whose title in 'manager'.
+
+You can specify what data you want to see in the results. For example a projection of {'fname','lname'} would return only first name and last name from the resulting data.
+
+//find all employees whose title is manager
+>db.employees.find({"title":"Manager"})
+
+{ "_id" : ObjectId("58a0abd281554bf3084e7ee0"), "fname" : "John", 
+"lname" : "Doe", "age" : "25", "title" : "Manager", "dept" : "IT" },
+{...}, ... , {...}
+Q17
+How do you find all documents from a collection?
+You can find all the documents from a collection by using the find() operation without the query filter section. You can use db.collections.find() or db.collections.find({}) to find all the documents contained in a collection. For example, db.employees.find() returns all the documents contained in employees collection
+
+>db.employees.find()
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "Manager",
+ "dept" : "IT" }, {...}, ... , {...}
+Q18
+How do you search for exact field matches in MongoDB. i.e how do you find all documents that contains a field with a specific value? For example, how do you find all employees in the employee collection, whose ‘title’ is ‘Manager’?
+You can use db.collections.find() operation and use filter condition specifying the field and value - db.collections.find({field:value}.
+
+Below code returns all employees whose title is Manager.
+
+>db.employees.find({"title":"manager"})
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "manager",
+ "dept" : "IT" }, {...}, ... , {...}
+Q19
+How do you search for documents in which a specific field have one or more values? For example, how do you find all employees in the employee collection, whose ‘title’ is either ‘Manager’ or 'supervisor?
+You can use db.collections.find() operation and use query operator $in specifying the field and values
+
+Below code returns all employees whose title is 'manager' or 'supervisor'.
+
+>db.employees.find({ title: { $in: ["manager" , "supervisor"] } } )
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "manager",
+ "dept" : "IT" }, {...}, ... , {...}
+Q20
+How do specify AND conditions when searching for MongoDB documents? For example, how do you find all employees in the employee collection, whose ‘title’ is ‘Manager’ AND 'age' is less than '30'?
+You can use db.collections.find() operation and use compound queries to specify conditions for more that one field in the collection's documents.
+
+Below example finds all employees in the employee collection whose 'title' is 'manager' and 'age' is less than '30'.
+
+>db.employees.find({ title: "manager", age: { $lt: 30 } } )
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "manager",
+ "dept" : "IT" }, {...}, ... , {...}
+Q21
+How do specify OR conditions when searching for MongoDB documents? For example, how do you find all employees in the employee collection, whose ‘title’ is ‘Manager’ OR 'age' is less than '30'?
+You can use db.collections.find() operation and use compound queries with $or operator to search for documents that match at least one condition.
+
+Below example finds all employees in the employee collection whose 'title' is 'manager' OR 'age' is less than '30'.
+
+>db.employees.find( { $or: [ { title: "manager" } , { age: { $lt: 30 } } ] } )
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "manager",
+ "dept" : "IT" }, {...}, ... , {...}
+Q22
+How do you search for MongoDB documents that specify both AND as well as OR conditions? For example, how do you find all employees in the employee collection, whose ‘dept’ is ‘IT’ AND either 'age' is less than '30' or 'title' is 'manager'?
+You can use db.collections.find() operation and use compound queries with $or operator to search for documents that match at least one condition.
+
+Below example finds all employees in the employee collection whose 'dept' is 'IT' and either 'title' is 'manager' OR 'age' is less than '30'.
+
+>db.employees.find( dept : "IT", 
+ $or: [ { title: "manager" } , { age: { $lt: 30 } ] } 
+)
+
+{ "_id" : ObjectId("588e54d4363650c07be0817b"),
+ "fname" : "John", "lname" : "Doe",
+ "age" : "25", "title" : "manager",
+ "dept" : "IT" }, {...}, ... , {...}
+MongoDB - Update
+Q23
+How do you update documents in a collection?
+MongoDB documents can be updated using the operation db.collection.update().
+
+For example, below operation updates the title of an employee named 'John Doe' to 'Sr Manager'
+
+>db.employees.update(
+{fname:"John", lname:"Doe"},
+{$set:{ title:"Sr. Manager"}}
+)
+MongoDB - Delete
+Q24
+How do you delete all documents from a collection?
+MongoDB documents can be deleted using the operation db.collection.deleteMany().
+
+All documents can be deleted from a MongoDB collection by using the operation db.collection.deleteMany() and passing an empty filter {}
+
+For example, below operation deletes all the documents from the employee collection.
+
+>db.employees.deleteMany({})
+Q25
+How do you delete all documents in a collection that match a condition?
+All documents that match a condition can be deleted from a MongoDB collection by using the operation db.collection.deleteMany() and passing the filter condition { : }
+
+For example, below operation deletes all the documents from the employee collection who has the title 'Manager'.
+
+> db.employees.deleteMany({ title : 'Manager' })
+Q26
+How do you delete a single document in a collection that matches a condition?
+A single MongoDB document can be deleted using the operation db.collection.deleteOne().
+
+For example, below operation deletes the first document having ‘title’ as ‘manager’.
+
+> db.employees.deleteOne({ title: 'manager'})
+MongoDB - Search
+Q27
+What are text indexes in MongoDB?
+MongoDB provides text indexes to support and optimize text search queries on text content. Text indexes can include one or more fields whose value is a string or an array of strings.
+
+A collection can have only one text index, but that single text index can include multiple fields
+
+For example, below operation creates a text index on fname and lname fields in the employees collection
+
+>db.employees.createIndex({fname:"Text", lname:"Text"})
+MongoDB - Aggregation
+Q28
+What are aggregation operations in MongoDB?
+MongoDB aggregation operations act on groups of values from multiple documents, perform operations on the grouped values and return a single computed result.
+
+Q29
+What are the different ways to perform aggregations in MongoDB?
+MongoDB provides three ways to perform aggregations.
+
+Aggregation pipeline – MongoDB provides aggregation framework that follows the concept of data processing pipeline. The pipeline includes multiple stages that transform the document into an aggregated result.
+
+Map-reduce operation – MondoDB provides map-reduce operations to perform aggregation. Map-reduce operations have two phases, a map phase that processes each document and emits one or more objects and a reduce stage that combine the output of the map operation.
+
+Single purpose aggregation methods – MongoDB provides operations such as db.collections.distinct() and db.collections.count() that aggregate documents from a collection.
+
+MongoDB - Data Modeling
+Q30
+How are relationships maintained in MongoDB?
+There are two ways relationship between documents can be maintained in MongoDB.
+
+References - References store the links or references from one document to the other. Data in this form is normalized data.
+
+Embedded documents – MongoDB documents can embed documents within fields or within array elements. This enables related documents to be captured in a single document. Data in this form is renormalized data.
+
+Q31
+How do you model One-to-One relationship in MongoDB?
+You can model One-to-One relationships between documents in MongoDB by either referencing documents or by embedding documents. In general, for One-to-One relationships, if you query the documents frequently then embedding documents is more efficient then referencing documents.
+
+Q32
+How do you model One-to-Many relationship in MongoDB?
+You can model One-to-Many relationships between documents in MongoDB by either referencing documents or by embedding documents. If the data on 'many' side of the relationship is not repetitive and it has to be queried frequently then embedding the data is more efficient. But if data 'many' side of the relationship is repetitive then referencing data may be more efficient.
+
+Q33
+What are the different ways to model tree structures with MongoDB?
+You can model tree structures with MongoDB following ways.
+
+Model with parent references - In this model the tree structure is maintained by storing references to parent node in the children node. The reference to parent node is stored in a field called ‘parent’ within the child document.
+
+Model with child references - In this model the tree structure is maintained by storing references to child nodes in the parent node. The child node references are stored in the parent node in a field called ‘children’ which is of type array.
+
+Model with an array of ancestors - In this model each node maintains references to its ancestors in an array filed called ‘ancestors’. In addition each node maintains a reference to its immediate parent node in a field called ‘parent’.
+
+Model with materialized paths - In this model the tree structure is maintained by storing full relationship paths between documents. Each node maintains as a string its ancestors or the path. The path is stored in the field named ‘path’ in each node document.
+
+Model with nested sets - Model with nested sets: In this model the tree structure is maintained by capturing the stop numbers of each node in a round-trip traversal of the tree. Each node has two stop numbers – first stop number for the initial trip and second stop number for the return trip. Each node stores its first stop in a field called ‘left’ and the second stop in a field called ‘right’. In addition each node stores its immediate parent in a field called ‘parent’.
+
+MongoDB - Data Replication
+Q34
+How is replication performed in MongoDb?
+MongoDB performs replication by means of replica sets. Replica sets are group of Mongod processes that maintain the same data across data sets.
+
+MongoDB - Sharding
+Q35
+What is sharding. How does MongoDB perform sharding?
+Sharding is a method of distributing data across multiple machines. MongoDB supports horizontal scaling by Sharding. MongoDB supports deployments with large data sets and high throughput operations via Sharding.
+
+Q36
+What are the components of a MongoDB sharded cluster?
+A MongoDB sharded cluster contains following three components.
+
+1. Shard: Shard contains a subset of the sharded data. Each shard can be deployed as a replica set
+
+2. Mongos: Mongos provide an interface between the client applications and the mongo cluster. Mongos act as a query router to the sharded cluster.
+
+3. Config servers: Config servers store metadata and configuration settings for the MongoDB sharded cluster
+
+Q37
+What are the components of a MongoDB sharded cluster?
+A MongoDB sharded cluster contains following three components.
+
+1. Shard: Shard contains a subset of the sharded data. Each shard can be deployed as a replica set
+
+2. Mongos: Mongos provide an interface between the client applications and the mongo cluster. Mongos act as a query router to the sharded cluster.
+
+3. Config servers: Config servers store metadata and configuration settings for the MongoDB sharded cluster
+
+Q38
+What is a shard key?
+Shard key is used by MongoDB to distribute the documents of a collection across shards. Shard key consists of a field or fields that exist in every document of the MongoDb collection
+
+Q39
+Can you change the shard key after a collection is sharded?
+No, the shard key cannot be changed after a collection is sharded.
+
+Q40
+What are the advantages of sharding?
+Following are the key advantages of sharding a MongoDB collection.
+
+1. Faster reads: Queries that include a shard key or a prefix of a compound shard key are faster, because MongoDB can target the search to a specific shard.
+
+2. Horizontal scaling: Both read and write loads can be scaled horizontally by adding more shards to the cluster.
+
+3. Storage capacity: Storage capacity of the cluster can be increased by increasing the number of shards. in the cluster
+
+4. High availability: Sharding increases the availability of requests since the sharded cluster can continue to perform read and write operations even if one of the shards is unavailable
