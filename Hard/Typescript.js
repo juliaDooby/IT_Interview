@@ -9043,3 +9043,534 @@ Refactoring: TypeScript makes refactoring safer and easier by ensuring that chan
 Modularity: Encourages the use of modules and interfaces, leading to a more modular and organized code structure.
 Scalability: TypeScript’s features like interfaces, generics, and type aliases help in building scalable and maintainable large codebases.
 Evaluating Responses: Look for answers that highlight specific features of TypeScript and how they contribute to a better development experience and code maintainability. The candidate should discuss both immediate productivity gains and long-term benefits in maintaining a codebase. Practical examples of how TypeScript improves these aspects are a plus.
+
+  50 TypeScript Interview Questions and Answers for Experienced
+TypeScript has gained popularity as a powerful and statically-typed superset of JavaScript. Companies are increasingly adopting TypeScript for building scalable and maintainable applications. If you are an experienced developer preparing for a TypeScript interview, this article is for you. Here, we present 50 TypeScript interview questions along with detailed answers to help you ace your interview confidently.
+
+1. What is TypeScript?
+Answer: TypeScript is an open-source, statically-typed programming language developed by Microsoft. It is a superset of JavaScript and compiles to plain JavaScript, providing optional static typing, classes, interfaces, and other features not available in plain JavaScript. TypeScript aims to make large-scale JavaScript development more robust, maintainable, and efficient by catching errors during development and improving tooling support.
+
+2. How do you install TypeScript?
+Answer: TypeScript can be installed using Node Package Manager (npm) globally on your machine with the following command: npm install -g typescript. Once installed, you can check the TypeScript version using tsc -v in the terminal.
+
+3. What are the benefits of using TypeScript?
+Answer: TypeScript offers several benefits that make it a preferred choice for large-scale JavaScript development:
+
+Static Typing: TypeScript introduces static typing, which allows developers to catch type-related errors during development, leading to more reliable code.
+Enhanced Tooling Support: TypeScript provides better tooling support, including code navigation, code completion, and type inference, improving productivity in development environments.
+Readability and Maintainability: Static typing and optional type annotations improve code readability and maintainability, especially in larger codebases.
+Code Modularity: TypeScript supports features like classes, modules, and namespaces, allowing developers to write modular and organized code.
+Compatibility with JavaScript: TypeScript is a superset of JavaScript, so existing JavaScript code can be gradually migrated to TypeScript without rewriting everything from scratch.
+Strongly Typed Interfaces: TypeScript allows defining interfaces that enforce the shape of data, leading to better contract enforcement and avoiding runtime errors.
+4. Explain the difference between "any" and "unknown" types in TypeScript.
+Answer: Both "any" and "unknown" are used to represent values of any type in TypeScript. However, there is a key difference:
+
+any: The "any" type allows a variable to hold any value, and it opts out of type-checking. It provides maximum flexibility but sacrifices type safety, as the compiler does not check the type of "any" variables.
+unknown: The "unknown" type was introduced in TypeScript 3.0 to improve type safety. Variables of type "unknown" can hold any value similar to "any," but you cannot perform operations directly on "unknown" values without type-checking or type assertion. You must explicitly narrow down the type of "unknown" variables before using them.
+5. How can you explicitly specify the type of a variable in TypeScript?
+Answer: In TypeScript, you can explicitly specify the type of a variable using a type annotation. For example:
+
+let myVariable: string;
+Here, the variable "myVariable" is explicitly annotated with the type "string," indicating that it can hold only string values. TypeScript will perform type-checking for assignments to "myVariable" and raise an error if you attempt to assign a value of a different type.
+6. What is the "never" type in TypeScript?
+Answer: The "never" type represents values that will never occur. It is used to indicate that a function will not return or a variable cannot have a value. For example, a function that always throws an error or enters an infinite loop has a return type of "never" because it will never complete normally and return a value. The "never" type is useful in scenarios where you want to ensure certain code paths are unreachable.
+
+7. How do you define an interface in TypeScript?
+Answer: In TypeScript, you can define an interface using the "interface" keyword. An interface defines the structure of an object and enforces that any object implementing the interface must have specific properties and methods. For example:
+
+interface Person {
+    name: string;
+    age: number;
+    sayHello: () => void;
+  }
+Here, we have defined an interface "Person" with properties "name" and "age," and a method "sayHello" that takes no arguments and returns nothing. Objects that implement this interface must have these properties and the "sayHello" method with the specified signature.
+8. What are generics in TypeScript?
+Answer: Generics in TypeScript allow creating reusable components that can work with multiple types. They enable us to define types and functions without specifying the exact type they will work with. For example, a generic function that works with arrays of any type:
+
+function reverse(arr: T[]): T[] {
+    return arr.reverse();
+  }
+The "" syntax indicates that "reverse" is a generic function that can work with arrays of any type. When the function is called with an array of strings, it returns an array of strings. When called with an array of numbers, it returns an array of numbers, and so on.
+9. How can you enforce strict null checks in TypeScript?
+Answer: TypeScript provides a compiler flag called "strictNullChecks" that enforces strict null checks. When enabled, variables cannot have a value of "null" or "undefined" unless explicitly specified in their type. To enable strict null checks, modify the "tsconfig.json" file as follows:
+
+{
+    "compilerOptions": {
+      "strictNullChecks": true
+    }
+  }
+With strict null checks enabled, you need to handle nullable values explicitly using type unions or optional chaining to avoid runtime errors related to "null" or "undefined."
+10. How do you extend a class in TypeScript?
+Answer: In TypeScript, you can extend a class using the "extends" keyword. The derived class (subclass) inherits properties and methods from the base class (superclass). For example:
+
+class Animal {
+    makeSound() {
+      console.log("Some generic sound");
+    }
+  }
+class Dog extends Animal {
+makeSound() {
+console.log("Woof Woof!");
+}
+}
+Here, the "Dog" class extends the "Animal" class, and it overrides the "makeSound" method to provide a specific implementation for dogs.
+11. What are decorators in TypeScript?
+Answer: Decorators are a feature of TypeScript that allows adding metadata and behavior to classes, methods, or properties at design time. They are denoted by the "@decorator" syntax and are executed when a class or method is defined. Decorators are commonly used for aspects such as logging, validation, authorization, and dependency injection. Decorators enable the creation of reusable cross-cutting concerns that can be applied to multiple parts of the codebase.
+
+12. How can you create an abstract class in TypeScript?
+Answer: In TypeScript, you can create an abstract class using the "abstract" keyword. An abstract class serves as a base class for other classes but cannot be instantiated directly. It may contain abstract methods that must be implemented in derived classes. For example:
+
+
+  abstract class Shape {
+    abstract area(): number;
+  }
+class Circle extends Shape {
+radius: number;constructor(radius: number) {
+  super();
+  this.radius = radius;
+}
+
+area(): number {
+  return Math.PI * this.radius * this.radius;
+}
+Here, the "Shape" class is an abstract class with an abstract method "area()." The "Circle" class extends "Shape" and provides an implementation for the "area()" method.
+13. Explain the concept of "Type Assertion" in TypeScript.
+Answer: Type assertion in TypeScript allows developers to explicitly tell the compiler about the type of a value, overriding its inferred type. It is useful when the developer knows more about the type of a value than what TypeScript's type inference can determine. Type assertions are done using either the "as" syntax or the "<>angle bracket" syntax. For example:
+
+let value: unknown = "hello";
+let length: number = (value as string).length;
+Here, we use type assertion to tell TypeScript that the "value" variable is a string so that we can access its "length" property without raising a type error.
+14. How do you handle Asynchronous Operations in TypeScript?
+Answer: TypeScript supports handling asynchronous operations using Promises, async/await, or Observables (from RxJS). Promises are used to represent a value that may not be available immediately, and async/await syntax provides a more concise way to work with Promises. For example:
+
+async function fetchData(): Promise {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  return data;
+}
+Here, the "fetchData" function returns a Promise that resolves to a string value fetched from an API. We use the "await" keyword to wait for the Promise to resolve before continuing execution.
+15. What are "Type Guards" in TypeScript?
+Answer: Type guards are a mechanism in TypeScript to narrow down the type of a variable within a conditional block. They are used to perform runtime type checks and enable TypeScript to infer a more specific type based on certain conditions. Type guards are commonly used with "typeof," "instanceof," and custom user-defined type predicates. For example:
+
+function printMessage(message: string | number) {
+  if (typeof message === 'string') {
+    console.log('Message: ' + message);
+  } else {
+    console.log('Value: ' + message);
+  }
+}
+Here, the "typeof" type guard is used to check if "message" is of type "string" or "number" and execute different logic accordingly.
+16. How do you use Modules in TypeScript?
+Answer: TypeScript supports modules to organize code into reusable and separate units. You can use the "export" keyword to expose functions, classes, or variables from a module, and the "import" keyword to use them in other modules. Modules can be either "CommonJS" or "ES6" style, depending on the target environment (Node.js or browsers). For example:
+
+// math.ts module
+export function add(a: number, b: number): number {
+  return a + b;
+}
+// main.ts module
+import { add } from './math';
+
+console.log(add(2, 3)); // Output: 5
+Here, the "add" function is exported from the "math.ts" module and imported in the "main.ts" module.
+17. What is the use of the "readonly" modifier in TypeScript?
+Answer: The "readonly" modifier in TypeScript is used to create read-only properties in a class or interface. Once a property is marked as "readonly," its value cannot be changed after the initial assignment. This provides a way to ensure that certain properties remain constant and are not accidentally modified elsewhere in the code. For example:
+
+class Point {
+  readonly x: number;
+  readonly y: number;
+constructor(x: number, y: number) {
+this.x = x;
+this.y = y;
+}
+}
+Here, the "x" and "y" properties of the "Point" class are marked as "readonly," and their values can only be set within the constructor.
+18. How do you use Enums in TypeScript?
+Answer: Enums in TypeScript are used to define a set of named constants with associated numeric values. They provide a way to define a meaningful name for a group of related constants, making the code more readable. For example:
+
+enum Color {
+  Red = 1,
+  Green = 2,
+  Blue = 3,
+}
+let color: Color = Color.Green;
+Here, we define an enum "Color" with three constants and their numeric values. We can then use the "Color" enum to represent colors in our code.
+19. How can you use Intersection Types in TypeScript?
+Answer: Intersection types in TypeScript allow combining multiple types into a single type that has all the features of each type. Intersection types are denoted by the "&" operator. For example:
+
+interface User {
+  name: string;
+}
+interface Admin {
+role: string;
+}
+
+type AdminUser = User & Admin;
+
+let user: AdminUser = {
+name: 'John',
+role: 'Admin',
+};
+Here, we define two interfaces "User" and "Admin." We then create an intersection type "AdminUser" that combines the features of both "User" and "Admin." The "user" variable is of type "AdminUser" and has both "name" and "role" properties.
+20. How can you use Union Types in TypeScript?
+Answer: Union types in TypeScript allow a variable to have more than one type. Union types are denoted by the "|" operator. For example:
+
+function printId(id: number | string) {
+  console.log('ID: ' + id);
+}
+printId(123); // Output: ID: 123
+printId('abc'); // Output: ID: abc
+Here, the "printId" function accepts a parameter of type number or string, allowing it to handle both numeric and string IDs.
+21. How do you handle Errors in TypeScript?
+Answer: In TypeScript, you can handle errors using try-catch blocks similar to JavaScript. When an error occurs in the try block, it is caught in the catch block, allowing you to handle the error gracefully. For example:
+
+function divide(a: number, b: number): number {
+  try {
+    if (b === 0) {
+      throw new Error("Division by zero");
+    }
+    return a / b;
+  } catch (error) {
+    console.error("Error: " + error.message);
+    return NaN;
+  }
+}
+console.log(divide(10, 0)); // Output: Error: Division by zero, NaN
+Here, the "divide" function tries to perform division, and if the divisor is zero, it throws a custom error. The error is caught in the catch block, and an appropriate error message is logged.
+22. What is the "keyof" keyword in TypeScript?
+Answer: The "keyof" keyword in TypeScript is a type operator used to create a union type of all the keys (property names) of a given type. It is often used in combination with indexed access types to access properties dynamically. For example:
+
+interface Person {
+  name: string;
+  age: number;
+}
+type PersonKey = keyof Person; // Type is "name" | "age"
+Here, the "PersonKey" type is created using the "keyof" operator, which represents a union of the keys "name" and "age" from the "Person" interface.
+23. How can you create Type Aliases in TypeScript?
+Answer: Type aliases in TypeScript allow creating custom names for types to improve code readability. They are especially useful for complex types or unions. Type aliases are created using the "type" keyword. For example:
+
+type Point = { x: number; y: number };
+type Result = number | string;
+Here, "Point" is a type alias for an object with "x" and "y" properties, and "Result" is a type alias for a union of number and string types.
+24. Explain the "Mapped Types" in TypeScript.
+Answer: Mapped types in TypeScript allow transforming the properties of an existing type into a new type. They use the "keyof" keyword and the "in" keyword to iterate over the keys of the original type and apply a transformation. For example:
+
+type Person = {
+  name: string;
+  age: number;
+};
+type PersonOptional = { [key in keyof Person]?: Person[key] };
+
+const person: PersonOptional = { name: "John" };
+console.log(person); // Output: { name: "John" }
+Here, the "PersonOptional" type is a mapped type that transforms the properties of "Person" into optional properties. The "person" variable is of type "PersonOptional," and only the "name" property is provided while creating the object.
+25. How do you use "inference" in TypeScript?
+Answer: Inference in TypeScript is the ability of the compiler to automatically determine the type of a variable based on its value. TypeScript uses the context and the initial value assigned to a variable to infer its type. For example:
+
+let message = "Hello TypeScript"; // TypeScript infers the type as string
+let count = 42; // TypeScript infers the type as number
+let isValid = true; // TypeScript infers the type as boolean
+Here, TypeScript infers the types of "message," "count," and "isValid" based on their initial values.
+26. What is "Declaration Merging" in TypeScript?
+Answer: Declaration merging in TypeScript allows extending existing types and interfaces. When multiple declarations of the same name are encountered, TypeScript merges them into a single declaration. This is commonly used with interfaces and namespaces. For example:
+
+interface User {
+  name: string;
+}
+interface User {
+age: number;
+}
+
+const user: User = { name: "John", age: 30 };
+Here, the two "User" interfaces are merged into a single interface with properties "name" and "age." The "user" object can now have both "name" and "age" properties.
+27. How can you use Type Guards with "instanceof" in TypeScript?
+Answer: The "instanceof" operator in TypeScript is used to check whether an object is an instance of a specific class. It is often used as a type guard to narrow down the type of an object. For example:
+
+class Circle {
+  radius: number;
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+}
+class Rectangle {
+width: number;
+height: number;
+constructor(width: number, height: number) {
+this.width = width;
+this.height = height;
+}
+}
+
+function getShapeInfo(shape: Circle | Rectangle): string {
+if (shape instanceof Circle) {
+return "Circle with radius " + shape.radius;
+} else {
+return "Rectangle with width " + shape.width + " and height " + shape.height;
+}
+}
+Here, the "getShapeInfo" function uses "instanceof" to check if "shape" is an instance of "Circle" or "Rectangle" and provides different information based on the type.
+28. What are Index Signatures in TypeScript?
+Answer: Index signatures in TypeScript allow defining objects with dynamic keys whose types are not known at compile time. They use square brackets "[]" to define the key type, and the value type is specified after a colon ":". For example:
+
+interface Dictionary {
+  [key: string]: number;
+}
+const scores: Dictionary = {
+math: 90,
+science: 85,
+};
+Here, the "Dictionary" interface uses an index signature to define an object where the keys are strings and the values are numbers. The "scores" object contains keys "math" and "science" with corresponding numeric values.
+29. How can you use Intersection Types with Functions in TypeScript?
+Answer: Intersection types can be used with functions in TypeScript to create a single function type that has the characteristics of multiple functions. This allows you to combine multiple function signatures into a single callable signature. For example:
+
+type GreetFunction = (name: string) => void;
+type LogFunction = (message: string) => void;
+type GreetAndLogFunction = GreetFunction & LogFunction;
+const greetAndLog: GreetAndLogFunction = (name: string) => {
+console.log("Hello, " + name);
+console.log("Log: Greeting message logged.");
+};
+Here, we create three function types: "GreetFunction," "LogFunction," and "GreetAndLogFunction," which is an intersection type of the first two. The "greetAndLog" function combines the functionality of both "GreetFunction" and "LogFunction."
+30. How do you use "namespace" in TypeScript?
+Answer: Namespaces in TypeScript are used to organize code into logical groups and avoid naming conflicts. They provide a way to structure the code and encapsulate functionality within a named scope. Namespaces can contain classes, interfaces, functions, and other TypeScript constructs. They are especially useful for organizing code in large-scale applications to maintain code modularity and readability. For example:
+
+namespace MathUtils {
+  export function add(a: number, b: number): number {
+    return a + b;
+  }
+export function subtract(a: number, b: number): number {
+return a - b;
+}
+}
+
+const sum = MathUtils.add(10, 5); // Output: 15
+Here, we create a "MathUtils" namespace that contains two functions "add" and "subtract." The functions are accessed using the namespace prefix "MathUtils."
+31. How do you use "namespace" in TypeScript?
+Answer: Namespaces in TypeScript are used to organize code into logical groups and avoid naming conflicts. They provide a way to structure the code and encapsulate functionality within a named scope. Namespaces can contain classes, interfaces, functions, and other TypeScript constructs. They are especially useful for organizing code in large-scale applications to maintain code modularity and readability. For example:
+
+namespace MathUtils {
+  export function add(a: number, b: number): number {
+    return a + b;
+  }
+export function subtract(a: number, b: number): number {
+return a - b;
+}
+}
+
+const sum = MathUtils.add(10, 5); // Output: 15
+Here, we create a "MathUtils" namespace that contains two functions "add" and "subtract." The functions are accessed using the namespace prefix "MathUtils."
+32. What are Type Guards in TypeScript and how are they different from Type Assertion?
+Answer: Type Guards in TypeScript are used to narrow down the type of a variable within a conditional block. They are used with the "typeof," "instanceof," and custom user-defined type predicates to perform runtime type checks. Type guards improve the type inference and help TypeScript determine the correct type of a variable within a specific code path. On the other hand, Type Assertion is used to explicitly tell the compiler about the type of a value, overriding its inferred type. Type Assertion is done using the "as" keyword or the "<>angle bracket" syntax. Type Assertion is used when the developer knows more about the type of a value than what TypeScript's type inference can determine. In summary, Type Guards are used for dynamic type checking during runtime to narrow down the type of a variable, while Type Assertion is used for static type checking during development to explicitly specify the type of a variable.
+
+33. How can you use "never" type in TypeScript?
+Answer: The "never" type in TypeScript represents values that will never occur. It is used to indicate that a function will not return or that a variable cannot have a value. For example:
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+function infiniteLoop(): never {
+while (true) {
+// Infinite loop
+}
+}
+In the "throwError" function, the return type is "never" because it throws an error and never returns a value. Similarly, the "infiniteLoop" function has a return type of "never" because it enters an infinite loop and never returns.
+34. How do you use "async" and "await" in TypeScript?
+Answer: "async" and "await" are used to handle asynchronous operations in TypeScript. The "async" keyword is used before a function declaration to indicate that the function contains asynchronous code and will return a Promise. The "await" keyword is used inside an async function to wait for a Promise to resolve before proceeding with the execution. For example:
+
+async function fetchData() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  return data;
+}
+In the "fetchData" function, the "await" keyword is used to wait for the "fetch" Promise to resolve, and then the "await" keyword is used again to wait for the "response.json()" Promise to resolve before returning the data.
+35. How do you use "Partial" and "Required" utility types in TypeScript?
+Answer: "Partial" and "Required" are utility types in TypeScript that allow modifying existing types. The "Partial" utility type converts all properties of a type "T" into optional properties, while the "Required" utility type converts all optional properties of a type "T" into required properties. For example:
+
+interface User {
+  name: string;
+  age?: number;
+}
+
+type PartialUser = Partial; // { name?: string; age?: number; }
+type RequiredUser = Required; // { name: string; age: number; }
+Here, "PartialUser" is a type with optional properties, and "RequiredUser" is a type with all properties as required.
+36. How do you create a Singleton pattern in TypeScript?
+Answer: In TypeScript, you can create a Singleton pattern using a combination of a private constructor and a static method to get the instance. The private constructor ensures that only one instance of the class can be created, and the static method provides a way to access that instance. For example:
+
+class Singleton {
+  private static instance: Singleton;
+  private constructor() {
+    // Private constructor to prevent external instantiation
+  }
+static getInstance(): Singleton {
+if (!Singleton.instance) {
+Singleton.instance = new Singleton();
+}
+return Singleton.instance;
+}
+}
+
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+
+console.log(instance1 === instance2); // Output: true
+In this example, the "Singleton" class has a private constructor and a static "getInstance" method. The "getInstance" method ensures that only one instance of the "Singleton" class is created and returned whenever it is called.
+37. How do you handle default values in TypeScript function parameters?
+Answer: In TypeScript, you can handle default values in function parameters using the assignment operator. By providing a default value in the parameter list, you can make the corresponding argument optional, and if no value is provided during the function call, the default value will be used. For example:
+
+function greet(name: string = "Guest") {
+  console.log("Hello, " + name);
+}
+greet(); // Output: Hello, Guest
+greet("John"); // Output: Hello, John
+Here, the "greet" function has a default value of "Guest" for the "name" parameter. If no value is provided for "name" during the function call, it defaults to "Guest."
+38. How can you use "strictNullChecks" in TypeScript?
+Answer: "strictNullChecks" is a TypeScript compiler option that enforces strict null checking. When enabled, variables cannot have a value of "null" or "undefined" unless explicitly specified in their type. This helps catch potential null or undefined errors during development and makes the code more robust. To enable strict null checks, modify the "tsconfig.json" file as follows:
+
+{
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}
+With strict null checks enabled, you need to handle nullable values explicitly using type unions or optional chaining to avoid runtime errors related to "null" or "undefined."
+39. What are "Type Predicates" in TypeScript?
+Answer: Type Predicates are user-defined type guards in TypeScript. They are used to create custom functions that return a type predicate and are helpful in narrowing down the type of a variable within a conditional block. Type predicates use the "parameter is Type" syntax, where "parameter" is the name of the function parameter, and "Type" is the type you want to narrow down to. For example:
+
+function isString(value: any): value is string {
+  return typeof value === "string";
+}
+function processValue(value: any) {
+if (isString(value)) {
+console.log("String value: " + value);
+} else {
+console.log("Non-string value");
+}
+}
+Here, the "isString" function is a type predicate that checks if the "value" is of type "string." The "processValue" function uses the "isString" function to narrow down the type of "value" and perform different actions accordingly.
+40. How can you use "keyof" with mapped types in TypeScript?
+Answer: In TypeScript, you can use "keyof" with mapped types to create a new type that includes only the keys of another type. The "keyof" operator generates a union of all the keys of the provided type, which can then be used to access or manipulate the properties of the original type. For example:
+
+interface Person {
+  name: string;
+  age: number;
+}
+type PersonKeys = keyof Person; // Type is "name" | "age"
+In this example, "PersonKeys" is a type that includes the keys "name" and "age" from the "Person" interface.
+41. How do you use "readonly" with arrays in TypeScript?
+Answer: In TypeScript, you can use "readonly" with arrays to create immutable arrays, meaning that the elements of the array cannot be modified after initialization. You can apply the "readonly" modifier to the entire array or individual elements of the array. For example:
+
+const names: readonly string[] = ["John", "Jane", "Alice"];
+const ages: ReadonlyArray = [25, 30, 22];
+names[0] = "Mike"; // Error: Index signature in type 'readonly string[]' only permits reading
+ages.push(40); // Error: Property 'push' does not exist on type 'readonly number[]'
+Here, the "names" array is declared as a "readonly string[]" array, and the "ages" array is declared as a "ReadonlyArray." As a result, you cannot modify the elements of these arrays or use array methods that modify the array.
+42. How do you use "Pick" and "Omit" utility types in TypeScript?
+Answer: "Pick" and "Omit" are utility types in TypeScript used to manipulate existing types by selecting or excluding specific properties. The "Pick" utility type creates a new type by selecting only the specified properties "K" from the original type "T." The "Omit" utility type creates a new type by excluding the specified properties "K" from the original type "T." For example:
+
+interface Person {
+  name: string;
+  age: number;
+  address: string;
+}
+
+type PersonNameAndAge = Pick; // { name: string; age: number; }
+type PersonWithoutAddress = Omit; // { name: string; age: number; }
+Here, "PersonNameAndAge" includes only the "name" and "age" properties from the "Person" interface, while "PersonWithoutAddress" excludes the "address" property from the "Person" interface.
+43. How do you use "extends" with generic types in TypeScript?
+Answer: In TypeScript, you can use "extends" with generic types to enforce constraints on the type parameters. By using "extends," you can limit the type that can be passed to a generic function or class. For example:
+
+interface Lengthwise {
+  length: number;
+}
+function logLength(arg: T) {
+console.log("Length: " + arg.length);
+}
+
+logLength("hello"); // Output: Length: 5
+logLength([1, 2, 3]); // Output: Length: 3
+logLength(42); // Error: Argument of type 'number' is not assignable to parameter of type 'Lengthwise'
+In this example, the "logLength" function is generic and uses "extends Lengthwise" to enforce that the type parameter "T" must have a "length" property of type number. The function can be called with strings and arrays, which have a "length" property, but not with numbers.
+44. How do you use "this" type in TypeScript?
+Answer: In TypeScript, the "this" type is used to specify the type of the current object within a class or a function. It allows you to use strong typing for the "this" keyword and avoid potential runtime errors. The "this" type is especially useful when working with classes and defining methods. For example:
+
+class Counter {
+  count: number;
+constructor() {
+this.count = 0;
+}
+
+increment(): this {
+this.count++;
+return this;
+}
+
+decrement(): this {
+this.count--;
+return this;
+}
+}
+
+const myCounter = new Counter();
+myCounter.increment().increment().decrement();
+console.log(myCounter.count); // Output: 1
+In this example, the "increment" and "decrement" methods return "this," which refers to the current instance of the "Counter" class. This allows chaining of methods and ensures that the "count" property is updated correctly.
+45. How do you use "Tuple Types" in TypeScript?
+Answer: "Tuple Types" in TypeScript allow creating arrays with fixed lengths and specific types for each element. They provide a way to represent a fixed set of elements in a specific order. Tuple types are denoted using square brackets and a list of types. For example:
+
+let person: [string, number];
+person = ["John", 30];
+person = ["Alice", "25"]; // Error: Type 'string' is not assignable to type 'number'
+In this example, "person" is a tuple with a string as the first element and a number as the second element. The assignment "person = ["John", 30]" is valid, but the second assignment with a string instead of a number is not allowed.
+46. How can you use "typeof" in TypeScript?
+Answer: The "typeof" operator in TypeScript is used to infer the type of a value or a variable. It returns a string representing the type of the value or variable. The "typeof" operator is commonly used in conditional blocks and type guards. For example:
+
+function printType(value: unknown) {
+  if (typeof value === "string") {
+    console.log("Type: string");
+  } else if (typeof value === "number") {
+    console.log("Type: number");
+  } else {
+    console.log("Type: unknown");
+  }
+}
+printType("hello"); // Output: Type: string
+printType(42); // Output: Type: number
+printType(true); // Output: Type: unknown
+In this example, the "printType" function uses the "typeof" operator to determine the type of the "value" and print the corresponding message.
+47. How can you use "keyof" with generic types in TypeScript?
+Answer: In TypeScript, you can use "keyof" with generic types to access the keys of a given object type. The "keyof" operator generates a union type of all the keys of the provided type, which can then be used to access or manipulate the properties of the object. For example:
+
+function getProperty(obj: T, key: K) {
+  return obj[key];
+}
+const person = { name: "John", age: 30 };
+
+const nameValue = getProperty(person, "name"); // Type is string
+const ageValue = getProperty(person, "age"); // Type is number
+const invalidValue = getProperty(person, "address"); // Error: Argument of type '"address"' is not assignable to parameter of type '"name" | "age"'
+In this example, the "getProperty" function uses the "keyof" operator to ensure that the "key" parameter is one of the keys of the "obj" parameter. This allows TypeScript to infer the correct types for the "nameValue" and "ageValue" variables based on the accessed property.
+48. How do you use "infer" in conditional types in TypeScript?
+Answer: "infer" is a keyword used in conditional types in TypeScript to capture and infer types during type transformations. It is commonly used with "extends" to extract types from generic types. For example:
+
+type ExtractReturnType = T extends (...args: any[]) => infer R ? R : never;
+function add(a: number, b: number): number {
+return a + b;
+}
+
+type AddReturnType = ExtractReturnType; // Type is number
+In this example, the "ExtractReturnType" conditional type is used with the "infer" keyword to extract the return type of the "add" function. The resulting "AddReturnType" type is inferred as "number" based on the return type of the "add" function.
+49. How do you use "Record" utility type in TypeScript?
+Answer: The "Record" utility type in TypeScript allows creating a new type where each property key of type "K" is associated with a value of type "T." It is often used to define dictionaries or map-like structures. For example:
+
+type Person = {
+  name: string;
+  age: number;
+};
+type PersonDictionary = Record;
+
+const people: PersonDictionary = {
+john: { name: "John", age: 30 },
+alice: { name: "Alice", age: 25 },
+};
+In this example, "PersonDictionary" is a type that represents a dictionary where each key is a string (name of the person) and each value is a "Person" object.
+50. How do you use "with" statement in TypeScript?
+Answer: In TypeScript, the "with" statement is not recommended and is not supported in strict mode. The "with" statement is used to change the scope of variables and properties within a code block. However, it can lead to confusion and make the code less maintainable, as it makes it difficult to determine the origin of variables or properties. Instead of using the "with" statement, it is recommended to access properties and variables directly without changing the scope. This promotes clarity and readability in TypeScript code and ensures better maintainability.
