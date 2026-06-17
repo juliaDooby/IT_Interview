@@ -5041,3 +5041,384 @@ CSS Grid предоставляет множество возможностей 
 6. Применение правил и фильтров: Фильтрация трафика на основе определенных параметров, таких как время, местоположение, или пользовательские агенты.
 Эти методы применяются для обеспечения безопасности, защиты от мошенничества и соблюдения правил пользования услугами.
 ---------------------------------------------------------------------------------------------
+
+Q1. What is the difference between HTML and HTML5?
+Answer
+ 	HTML	HTML5
+1.	The primary language for making web pages.	The fifth and latest version of HTML
+2.	Audio/Video not a part	Audio/Video an important part
+3.	Browser cache used for temporary storage	Application cache, web SQL DB, ad web storage used as temporary storage.
+Q2. What is the purpose of <! Doctype html>?
+Answer
+The in HTML5 refers to indicating to the web browser about the version of HTML in which the page is created. Neither there is an end tag is not is it case sensitive.
+
+In HTML5, declaration should be the first thing before HTML tag. This is because of all previous version before HTML5 followed Standard Generalized Markup Language (SGML). Because HTML5 does not follow SGML, it does not require references to DTD (Document Type Definition).
+
+Q3. What is the new Structural Elements in HTML5?
+Answer
+HTML5 has introduced the following structural elements for defining different parts of a web page:
+
+<header>: Represents HTML's header data
+<footer>: Footer of the page
+<nav>: Represents page's navigation elements
+<article>: Content that is self-contained
+<section>: Defines sections or groups content into sections
+<aside>: Refers to side bar contents
+Q4. What is Meta tags? Why it is used?
+Answer
+HTML5 has introduced a way to let designers take charge of the web page area that is visible to the users through tags. The tag tells information related to an HTML document. Some of the examples are Link, Style, and Title. With meta tag, we can add meta ketwords, meta description and meta title that helps for SEO Purposes.
+
+Q5. What is html5 new input type?
+Answer
+HTML5 has introduced new input types for forms. Designers can build interactive and user-friendly web forms by using these input types. The new input types also provide improved data validation, better color picker controls, and enhanced input control.
+
+The new input types are:
+
+Time
+Date
+Datetime
+Datetime-local
+Week
+Month
+Email
+Color
+Number
+Range
+Search
+Telephone
+URL
+Q6. What is hyperlink? why it is used?
+Answer
+A hyperlink in HTML is a text of an image on a web page that when clicked by the user redirects him to a new web page. Hyperlinks, or links, are defined with <a> tag. The primary use of Hyperlinks is to link one web page to another.
+
+Q7. What is an API and list the API's available in HTML5?
+Answer
+API (Application Programming Interfaces) in HTML5 is a way to build different applications using pre-built components. Developers can integrate the relevant features of existing APIs into their new websites.
+
+The APIs in HTML5 are:
+HTML Web Workers
+HTML Drag and Drop
+HTML Application Cache
+HTML Local Storage
+HTML SSE
+HTML Geolocation
+Q8. Can we use multiple <header> and <footer> elements in html5?
+Answer
+Yes. Both <header> and <footer> tags are made to fulfill their respective purposes in relation to their parent “section”. So not only can you use both header and footer elements on a page in HTML5, but you can also use both in every <article> or <section>. A <header> tag must be present for all articles, sections, and pages, although a <footer> tag is not necessary.
+
+Our HTML5 interview questions are an ideal resource to prepare you for HTML developer job interviews.
+
+Q9. What is the Geolocation API in HTML5? Explain
+Answer
+The Geolocation API in HTML5 allows the users to share their physical location with selected websites. This happens when JavaScript captures a user’s latitude and longitude and sends it to the back-end server for enabling location-aware features such as finding local businesses or showing location on a map.
+
+Q10. What is the difference between <div> and <span> tag?
+Answer
+S.no	Span	div
+1.	Gives output with "display: inline"	Gives output with "display: block"
+2.	In-line element	Block level element
+3.	Used to add style to text	Used to create CSS layouts
+Q11. What is the difference between the SVG and Canvas?
+Answer
+Canvas	SVG
+1.	Resolution dependent	Resolution independent
+2.	No support for event handlers	Provides support for event handlers
+3.	Suitable for graphic-intensive	Ideal for creating graphics similar to CAD software
+3.	Works best for small rendering areas	Works even for large rendering areas
+Related Article: Tips to crack CSS Interviews
+Q12. What is semantic elements in html5? List some semantic elements.
+Answer
+A semantic element absolutely describes its that means to each the browser and the developer. Elements such as header, footer and article are all viewed semantically due to the fact they precisely describe the reason for the aspect and the kind of content material that is inner them.
+
+HTML5 Semantic Elements
+header
+section
+nav
+aside
+footer etc
+Q13. What is local storage in HTML5? How it is used?
+Answer
+HTML5 has introduced the concept of Local Storage, which is used to access a web page's local storage area without any time limit. Local storage is available whenever the user wants to use the web page.
+
+The data stored in Local Storage does not get automatically deleted when the browser window is closed; it only gets removed when deleted manually. In local storage, the data is stored using a key and value.
+
+Q14. What are the different types of storage in html5? Explain
+Answer
+In HTML5, data can be stored in 2 ways – session storage and local storage.
+
+Session Storage: The data or details from the current browsing session are stored. Once the browser gets closer by the user, the storage data gets removed.
+Local Storage: The data does not get cleared automatically when the user closes the browser.
+Q15. Is local storage secure?
+Answer
+No. Local storage is not very secure because it was not designed to be used as secured storage in a web browser. Local storage was only designed to be a simple key/value storage that developers would use to build single page apps.
+
+Q16. How do we declare a custom attribute in HTML?
+Answer
+Custom attributes are one of the most important new features in HTML5. They play an integral role in semantic development. Custom attributes are designed to store custom data private to web pages or applications for which there are no other attributes. Because custom attributes are valid in HTML5, they get used in all browsers that support HTML5 doctypes.
+
+All attributes in HTML5 on an element starts with "data-" like data-type="best", data-distance="4km", data-identifier="bestinterviewquestion.com".
+
+Q17. What is the use of <audio> and <video> tags in Html5?
+Answer
+The <audio> tag in HTML5 is used to embed voice in an HTML document. Designers use <source> tag to specify media type along with other attributes.
+
+The <video> tag in HTML5 is used to embed a video file in an HTML document. Designers can use <source> tag to specify media type along with other attributes.
+
+Q18. What is the use of <fieldset>?
+Answer
+The <fieldset> tag in HTML5 is used to group together related form elements. A <fieldset> must begin with a <legend> tag because this tag will define the title of the fieldset. By using <fieldset> tag and <legend> tag together, designers can make their forms easier to understand and use.
+
+The syntax for <fieldset> tag is: <fieldset>Controls</fieldset>
+
+Q19. What is Web SQL Database in Html 5?
+Answer
+Web SQL is not a part of HTML5. It is a separate specification that helps in developing web apps. Web SQL is used to manage the client-side database because it stores data on the client side, not on the server side. A Web SQL database works only in latest versions of Google Chrome, Safari, and Opera browsers.
+
+Related Article: Tips to crack CSS Interviews
+Q20. What is <iframe> and why we can use this?
+Answer
+The <iframe> tag is used to indicate an inline frame, or, a browsing context that is nested. It allows outside documents to be inserted in the main HTML document seamlessly. Inline frames are mostly used in online advertising, where the contents of the iframe can e an ad from a third party.
+
+Q21. What is MathML in Html5?
+Answer
+MathML is Mathematical Markup Language. This language is used to show scientific and mathematical content on web pages. HTML5 allows you to use MathML elements in a document using <math>...</math> tags.
+
+A mathematical expression should be inserted in the element <math> with a specified namespace as shown below: <math xmlns="http://www.w3.org/1998/Math/MathML"> </math>
+
+Q22. What is the difference between an <article> and <section> in Html5?
+Answer
+S.no	Article	Section
+1.	Represents self-contained composition	Represents a generic section of an app or document
+2.	Appropriate if contents are listed in the document's outline.	Mostly theme-based groups of content
+3.	They are identified by including heading as a child of article element.	Identified by including heading as a child of section element.
+Q23. What is a Web Worker in Html5?
+Answer
+A web worker in HTML5 is a script that runs on a separate thread in the background without the need for the main web page to wait for it to complete. Web Workers enable long tasks to be achieved without keeping the web page responsive.
+
+There are two types of web workers - Dedicated workers and Shared workers.
+
+Q24. What are the features of html5?
+Answer
+Editing content within element and "required" form attribute
+Figure tag and SVG element
+Webfonts
+Transition and Animation
+Web Icons
+Easily implemented audio, video, map with these tags
+Related Article: HTML5 and CSS3 Interview Questions
+Q25. How to insert a copyright symbol in your webpage?
+Answer
+There is no direct key available to insert the copyright symbol directly in a webpage. User has to put it in a webpage by combining different characters. We are now mentioning a few ways below to insert copyright symbol:
+
+©
+Related Article: What are the Latest Features in Bootstrap 4
+Q26. What are the web storages present in HTML5?
+Answer
+In HTML5, users will receive two types of web storages as following.
+1. Local Storage: Here, data will be stored in the local storage, and will not be cleared automatically or when we close the browser.
+
+2. Session Storage: With this type, the user’s browser current session data will be stored. Once the browser is closed, the storage will be cleared.
+
+Q27. What does WHATWG stand for in the world of HTML5?
+Answer
+The abbreviation WHATWG stands for Web Hypertext Application Technology Working Group in HTML5. This is an organization which both develops and maintains the HTML and API for web applications.
+
+Q28. In HTML5, what is a Microdata?
+Answer
+Microdata is a newly introduced, simple semantic syntax which can be used by developers to add the nested groups of name and value pair of data to documents, that are based on the page content commonly. It’s used with new global attributes of HTML5.
+
+Q29. What is the advantage of using div tag in HTML web page development
+Answer
+Developers use the HTML div tag to create a various section of a web page. The div tag can hold other elements and sections in it. We can also hold the direct text in it, except the one that is used in it.
+
+The syntax for div tag is as follows:
+<div>...</div>
+
+Q30. What is a list tag and mention the most commonly used list tags?
+Answer
+HTML5 users implement list tags to list out the required information. The most commonly used list tags are mentioned below for your acknowledgment.
+
+Definition List: This list tag offers a list in it and takes Definition Term (<dt>...</dt>) and a detailed definition (<dd>...</dd>).
+
+1. Ordered List: This list tag provides the required list by the user in a numbered format.
+
+Syntax:
+<ol>...</ol>
+
+2. Unordered List: This one offers the user required a list in a bullet format.
+
+Syntax:
+<ul>...</ul>
+
+Both the ordered and unordered list item tags use the list item tags (<ul>...</ul>) in them.
+
+Q31. How many ways to use colors apply on html elements?
+Answer
+We can color HTML elements in three different ways, as mentioned below.
+
+#efefef or Hex Color
+By using the color name such as blue, red, etc.
+RGB(10,234,128). This is a combination of red, green, and blue.
+Q32. Describe the usage of <footer>, <article>, <section>, and <header> HTML5 semantic elements.
+Answer
+<footer>: This semantic element is used to contain information that should appear at the very end of the content section. It also contains additional information of the section such as copyright information, Author's name, and related links.
+
+<article>: This one contains a self-contained composition which can logically be recreated by developers outside of the page without losing its primary meaning. For example news stories and blog posts.
+
+<section> : This HTML5 semantic element holds content that shares a common informational purpose or theme.
+
+<header>: Developers use this to contain navigational and introductory information about a section of the page, such as section heading, publication date and time, author’s name, content table, etc.
+
+Q33. Is it possible for a webpage to contain multiple <header> or <footer> elements?
+Answer
+Yes, both <header> and <footer> can be added multiple times in a webpage. Both of these tags are designed to serve a crucial purpose in relation to their parent section. Not only the page <body> contains a header and a footer, but every <section> and <article> also contains these two, although the use of multiple footers is always not required.
+
+Q34. What is relation present in between <header> and <h1> tags in HTML5?
+Answer
+In HTML5, the <h1> tag represents the top-level heading of a “section”. The section can be an <article>, page <body>, or any <section> element. Every <header> element must contain at least one <h1> element.
+
+Q35. What is Server Sent Events?
+Answer
+A server-sent event is when a net page automatically receives updates from a server. This used to be additionally possible before, however, the internet web page would have to ask if any updates had been available. With server-sent events, the updates come automatically.
+
+Q36. What is the difference between server sent events and Websockets in html5?
+Answer
+Websockets and SSE (Server-Sent Events) are each successful of pushing records to browsers, however, they are no longer competing for technologies.
+Websockets connections can both ship statistics to the browser and acquire information from the browser. A true example of an application that ought to use WebSockets is a chat application.
+SSE connections can solely push statistics to the browser. Online inventory prices or twitters updating timeline or feed are excellent examples of a utility that ought to benefit from SSE.
+In exercise considering the fact that the whole lot that can be executed with SSE can also be executed with Websockets, Websockets is getting a lot greater attention and love, and many more browsers help Websockets than SSE.
+Q37. What is Data role in HTML5?
+Answer
+The data-role attribute in HTML 5 is used to privately store custom data onto the page or the application. It also gives us the ability to embed some custom data attributes on all the HTML elements
+
+Q38. What is image map in Html5?
+Answer
+In HTML 5, an Image map is one having clickable areas. The tag map defines an image-map.
+
+<img src="https://www.bestinterviewquestion.com/storage/blog/small/1585841464.png" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+
+    <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+
+</map>
+
+Q39. What are the various formatting tags in HTML5?
+Answer
+Formatting tags are used in HTML 5 to display different styles of text. Here are the formatting tags in HTML 5:
+
+<b> - Used to bold text
+<strong> - Use to mark text as Important
+<i> - Used to write in Italics
+<em> - Used to emphasize text
+<mark> - Used to mark text
+<small> - Used to make the text small
+<del> - Used to Delete text
+<ins> - Used to Insert text
+<sub> - Used to make a subscript text.
+<sup> - Used to make a superscript text
+Q40. How many tags were removed in HTML5?
+Answer
+<frame>
+<basefront>
+<applet>
+<frameset>
+<big>
+<center>
+<bigcenter>
+<noframes>
+<dir>
+<tt>
+<acronym>
+<basefont>
+Q41. What is a manifest file in HTML?
+Answer
+In HTML 5, the manifest file is a normal text file used for listing resources in the browser which are to be cached for offline access. It also helps in loading resources faster and reducing server load time.
+
+Q42. What are the different types of <!DOCTYPE> are available in HTML5?
+Answer
+It is used to create a reference to a Document Type Definition. In HTML 5, Doctype declaration is only needed to enable a standard mode for documents which are written with the HTML syntax. Hence, the Doctype for HTML 5 is short and case-insensitive.
+
+<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+Q43. How do you optimize a website's assets & reduce page load time?
+Answer
+Follow these steps to optimize assets and also reduce the page load time of any website:
+
+Properly naming all assets.
+Using a content delivery network (CDN) for media files.
+Hosting assets on different domains while also reducing DNS lookups
+Using a cookie-free domain to place assets and splitting them among domains
+Using CSS Sprites for Images.
+Disabling etags.
+Minimizing the use of JS in code.
+Minimizing inline CSS and using internal and external style sheets.
+Q44. What is w3c and Whatwg?
+Answer
+The World Wide Web Consortium (W3C) is a community of developers working towards setting global standards for development.
+
+WHATWG is short for Web Hypertext Application Technology Working Group. It was created during a W3C workshop session by working individuals of Apple, Mozilla and Opera Software in 2004. WHATWG is a community of developers focused more on HTML rather than XHTML and working on standards to improve on user needs.
+
+Q45. What is drag and drop in HTML5?
+Answer
+The Drag and Drop feature is primarily a part of HTML 5. It is used to grab an object and move it towards another location. In HTML 5, every element is draggable by default. Hence, there is no need for a separate function.
+
+Q46. What is a tag in HTML5?
+Answer
+The <a> tag in HTML 5 is used to define a hyperlink. The <a> tag is used to link one page to another. The most vital function of the <a> element is having the href attribute, which accurately indicates the link's destination. By default, the hyperlinks will automatically appear in all browsers
+
+Q47. List out the page structure elements of HTML5?
+Answer
+Here is a list of page structure in HTML 5:
+<header> - Used to define header for a document or a section
+<nav> - Used to define container for navigation links
+<section> - Used to define a section inside a document
+<article> - Used to tag an independent self-contained article
+<aside> - Defines the content separately (just like a sidebar)
+<footer> - Used for tagging a footer inside a document or a section
+<details> - Usd to define any additional details
+<summary> - Used to define a heading inside the <details> element
+Q48. What is the use of Scalable Vector Graphics (SVG) in HTML5?
+Answer
+SVGs or Scalable Vector Graphics are used in HTML 5 to display 2-D graphics and its applications in XML which is later on rendered by an SVG viewer. The SVG element is used to contain SVG graphics.
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+
+
+<svg width="100" height="100">
+
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+
+</svg>
+
+
+
+</body>
+
+</html>
+
+Q49. Is HTML5 tags are case sensitive?
+Answer
+No, HTML is not case sensitive. It means that <P> is the same as <p>. However, W3C advises writing HTML in lowercase especially when working on an XHTML document.
+
+Q50. What is the application cache in HTML5 and why it is used?
+Answer
+The application cache is a feature in HTML 5 which is used to store website data inside a cached version, thus allowing accessibility without net connectivity. It is very useful for desktop-based web applications requiring to store data on local systems.
+Q51. What are the new attributes of form tag in HTML5?
+Answer
+Here is a list of the new form attributes introduced in HTML 5
+
+novalidate
+autocomplete
