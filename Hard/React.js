@@ -4454,3 +4454,727 @@ Here’s what they can ask as a follow-up in interviews:
 Q. When can useLayoutEffect hurt performance?
 
 Your ans: Since it blocks painting, heavy or slow logic inside it can delay rendering and make the UI feel laggy.
+
+Most Frequently Asked React js interview questions
+Here in this article, we will be listing frequently asked React js interview questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
+
+Q1. What is JSX?
+Answer
+JSX stands for JavaScript XML. It is a file type used by React that utilizes the expressiveness of JavaScript along with HTML. This makes the HTML file easy to understand. This file makes applications robust and boosts their performance.
+
+render(){
+
+      return(
+
+          <div>  <h1> Welcome To Best Interview Question!!</h1> </div>
+
+     );
+
+ }
+
+Q2. What is the differnece between Virtual DOM and Real DOM?
+Answer
+Real DOM	Virtual DOM
+The update process is very slow in this.	The update process is much faster here.
+It can directly update the HTML.	It can't directly update the HTML.
+It creates a new DOM if the element is updated.	It updates the JSX if there is any update on an element.
+DOM manipulation related to a Real DOM is very complicated.	DOM Manipulation related to a Virtual DOM is effortless.
+There is a lot of memory wastage in a Real DOM.	There are no cases of memory wastage in a Virtual DOM.
+Q3. Why are browsers unable to read JSX?
+Answer
+Components are the essential elements of a React application's user interface. These elements split up the entire UI into small reusable pieces, and renders these components independent of each other without impacting the rest of the UI.
+
+Q4. What is the purpose of render() in React?
+Answer
+It is compulsory for each React component to have a render(). If more than one element needs to be rendered, they must be grouped inside one tag such as <form>, <group>,<div>. This function goes back to the single react element which is the presentation of native DOM Component. This function must return the same result every time it is invoked.
+
+Q5. What is Props?
+Answer
+Props stand for Properties in React. They are read-only components that must be kept pure. These components are passed down from the parent to the child component throughout the app. A child component cannot send the prop back to the parent component. This can help in maintaining the unidirectional data flow and is used to render the dynamically generated data.
+
+Related Article: Angularjs or reactjs Which is Better
+Q6. What is a state in React and how is it used?
+Answer
+States are at the heart of components. They are the source of data and must be kept simple. States determine components’ rendering and behavior. They are mutable and create dynamic and interactive components, and can be accessed via this.state().
+
+Note: From the vast number of react developer interview questions, answering this will help you to align yourself as an expert in the subject. This is a very tricky question that often makes developers nervous.
+
+Q7. What are arrow functions? How are they used?
+Answer
+Arrow functions, also called ‘fat arrow‘ (=>), are brief syntax for writing the expression. These functions bind the context of the components because auto binding is not available by default in ES6. Arrow functions are useful if you are working with the higher-order functions.
+
+//General way
+
+render() {
+
+  return(
+
+    <MyInput onChange={this.handleChange.bind(this) } />
+
+  );
+
+}
+
+
+
+//With Arrow Function
+
+render() {
+
+   return(
+
+      <MyInput onChange={ (e) => this.handleOnChange(e) } />
+
+   );
+
+}
+
+Q8. Does ReactJS use HTML?
+Answer
+No, React uses JSX that is similar to HTML.
+
+Q9. What is the component lifecycle in ReactJS?
+Answer
+Component lifecycle is an important part of ReactJS. Component lifecycle falls into three categories - property updates, Initialization and Destruction. Lifecycle is a method of managing the state and properties of the components.
+
+Q10. What is an event?
+Answer
+Events are the triggered reactions to actions like mouse hover, click, key press, etc.
+
+Q11. What is the difference between ReactJs and AngularJS?
+Answer
+ReactJS depends less on the code whereas AngularJS needs a lot of coding.
+React packaging is strong as compared to AngularJS.
+React is equipped with Virtual Dom while Angular has a Regular DOM.
+ReactJS is all about the components but AngularJS focus on the Models, View and Controllers.
+AngularJS was developed by Google while ReactJS was developed by Facebook.
+Q12. What is Redux?
+Answer
+Redux is used to handle data in a reliable manner. It performs task accurately and ensures that the data has been controlled. You can also apply filters if only a specific part of data is required.
+
+NOTE: If you are looking Redux Interview Questions then you can visit here.
+
+Q13. What is Flux?
+Answer
+Flux is an illustration that helps to maintain a unidirectional data stream. It also controls construed data unique fragments and makes them interface without creating issues. The configuration of Flux is insipid and is not specific to applications.
+
+Q14. How can we build React in Production mode?
+Answer
+We can utilize Webpack's DefinePlugin strategy to set NODE_ENV to production. This will remove things like propType approval and other notices. It is a good idea to reduce your code because React utilizes Uglify's dead-code end to remove advancement just code and remarks.
+
+Q15. What is meant by pooling?
+Answer
+The server needs to be regularly monitored for updates. The aim is to check for the presence of new comments. This process is considered as pooling. It checks for the updates almost every 5 seconds. Pooling helps keep an eye on the users and ensure there is no negative information on servers.
+
+Q16. In what cases would you use a Class Component over a Functional Component?
+Answer
+If your component has a state or lifecycle method, use Class component. Else, a Functional component.
+
+Q17. What is the difference between Element and Component?
+Answer
+React Component	React Element
+It is a simple function or class used for accepting input and returning a React element	It is a simple object used for describing a DOM node and the attributes or properties as per your choice.
+The React Component has to keep the references to its DOM nodes and also to the instances of the child components.	The React Element is an immutable description object, and in this, you cannot apply any methods.
+Q18. What is the difference between createElement and cloneElement?
+Answer
+JSX gets transpired to createElement and React uses it to make React Elements. cloneElement is used as a part of a request to clone a component and pass new props.
+
+Q19. What are controlled and uncontrolled components?
+Answer
+A Controlled Component is one that takes the current value through the props and notifies of any changes through callbacks such as onChange.
+
+Example:
+<input type="text" value={value} onChange={handleChange} />
+
+An uncontrolled component is one storing its own state internally, and you can query the DOM via a ref to find its current value as and when needed. Uncontrolled components are a bit closer to traditional HTML.
+
+Example:
+<input type="text" defaultValue="foo" ref={inputRef} />
+
+Note: React is a widely used open-source library used for building interactive user interfaces. It is a web platform licensed under MIT. This is one of the very popular react interview questions.
+
+Q20. What can you do if the expression contains more than one line?
+Answer
+Enclosing the multi-line JSX expression is the best option. Sometimes it becomes necessary to avoid multi-lines in order to perform the task reliably and for getting the expected results.
+
+Q21. Is it possible to use the word Class in JSX?
+Answer
+No. This is because the word Class is an occupied word in JavaScript. If you use the word Class JSX will get translated to JavaScript.
+
+Note: Before getting confused with the plethora of react coding interview questions, you need to ensure the basics. This question will help you to understand the core basics of react and make you even more confident enough to jump onto the advanced questions.
+
+Q22. Is it possible to display props on a parent component?
+Answer
+Yes. This is a complex process, and the best way to do it is by using a spread operator.
+
+Q23. What is React?
+Answer
+React is a JavaScript Library which is used to show content to user and handle user interaction.
+
+Q24. How it is different from other front end language?
+Answer
+In React we divide the front end content into different components so that we can reuse the component when we need them at other place.
+
+Q25. What is Component?
+Answer
+Component is a building block of any React app which is made by either JavaScript Function of Class. Ex. Header Component, Footer Component etc.
+
+There are two types of Components.
+Function Based Component
+Class Based Component
+Q26. What is function based component in React?
+Answer
+Basically Function Based Component are the component which are made by JavaScript Functions.It takes props as argument and return JSX.
+
+Import React from ‘react’;
+
+const XYZ = (props ) => {
+
+     <div>
+
+          <h1>React Interview Questions</h1>
+
+     </div>
+
+}
+
+export default XYZ;
+
+Q27. What are Class Based Component?
+Answer
+Class Based Component is the JavaScript Class. In these Components we extends the JavaScript predefined class into our component.
+
+Import React,{Component} from ‘react’;
+
+
+
+class ABC extends Component {
+
+
+
+ render(){
+
+
+
+   return(
+
+
+
+    <div>
+
+
+
+       <h1>Hello World</h1>
+
+
+
+</div>
+
+
+
+);
+
+
+
+}}
+
+
+
+export default ABC;
+
+Q28. What is import in React?
+Answer
+import is used for calling library from its location to your component and uses that library functions in your component.
+
+Q29. What is the difference between Function Based Component and Class Based Component?
+Answer
+The Main Difference is of Syntax. The function-Based component used props as an argument and is also called stateless component and In class-based component, we extend all the property of predefined function and used according to our need.
+
+Class Based Component use state and the state is used as props in child component.In Class Based component we can use different lifecycle method of component.
+
+Also Read: ReactJS Technical Interview Questions
+Q30. What is the difference between Stateless and Stateful Component?
+Answer
+Stateful Component	Stateless Component
+This stores info related to the component’s change in the state of memory.	This is used for the calculation of the internal state of components.
+Stateful components have the authority to change the state of memory.	Stateless components do not have the authority to change the state of memory.
+It contains all the info relevant to the past, present, and possible future changes in the state.	It does not contain info relevant to the past, present, and future changes in state.
+They notify stateless components regarding requirements for state change and then send down the props to them.	They receive props from the stateful components regarding state change and treat them as callback functions.
+Q31. How to install react js on your local machine?
+Answer
+1. You have to install node first on your local machine.
+
+2. Open command line and write "npm install -g create-react-app".
+
+3. Then write "create-react-app my-app".
+
+Q32. What are the key benefits of ReactJS development?
+Answer
+Key Benefits of ReactJS Development
+Allows Developers to Reuse the Components
+It is Much Easier to Learn
+The Benefit of Having JavaScript Library
+SEO Friendly
+It ensures faster rendering
+The Increase in Community Base
+The Support of Handy Tools
+Scope for Testing the Codes etc
+Q33. What are synthetic events?
+Answer
+It is a cross-browser wrapper that is around the native event of the same browser. This is the most important question in react interview questions.
+
+Q34. What is “forward refs”?
+Answer
+It is a technique that implies an exchange of ref through the components and enables descendants to receive ref and pass it.
+
+Q35. How to create a component in react js?
+Answer
+There are 3 ways to create a component in React:
+
+Using a depreciated variable function
+Using a Class
+Using a Stateless Functional Component
+1. Using a depreciated variable function
+In this, you need to declare a variable in your Javascript file/tag and use the React.createClass() function to create a component using this code.
+
+var MyComponent = React.createClass({
+   render() {
+      return <div>
+      <h1>Hello World!</h1>
+      <p>This is my first React Component.</p>
+      </div>
+   }
+})
+
+Now, use the div element to create a unique ID for the specific page and then link the above script onto the HTML page.
+
+<div id=”react-component”></div>
+
+Use ReactDOM.render() function to take 2 arguments, the react component variable and the targeted HTML page.
+
+ReactDOM.render(<MyComponent />, document.getElementById('react-component'))
+
+Finally, save the HTML page to display the result like this one below:
+
+2. Using a Class
+Javascript has lately started supporting classes. Any React developer can easily create a class using the class extends (Inherits). Following is the code
+
+3. Using a Stateless Functional Component
+It might sound a bit complex, but this basically means that a normal function will be used in place of a variable to return a react component.
+
+Create a const called MyComp and set it as equal to a () function. Use the arrow function, => to declare the logic of the function as follows:
+
+const MyComponent = () => {
+   return <div>
+   <h1>Hello!</h1>
+   <p>This is my first React Component.</p>
+   </div>
+}
+
+Q36. How to link one page to another page in react js?
+Answer
+There are two ways to link one page to another to React:
+
+Using React Router: Use the feature from the react-router to link the first page to the second one.
+
+<Link to ='/href' ></Link>
+
+Q37. How to get value from state in react?
+Answer
+In React, State is an object. Its value can be accessed through this:
+
+this.state[key]
+
+Here, the key is the set of values stored in an array changing dynamically.
+
+Q38. How to reload the current page in react js?
+Answer
+Reloading/Refreshing a page using Javascript:
+Use Vanilla JS to call the reload method for the specific page using the following code:
+
+window.location.reload(false);
+
+Q39. How to redirect to another page in react js?
+Answer
+The best way to redirect a page in React.js depends on what is your use case. Let us get a bit in detail:
+
+If you want to protect your route from unauthorized access, use the component and try this:
+
+import React from 'react'
+
+import { Redirect } from 'react-router-dom'
+
+const ProtectedComponent = () => {
+
+   if (authFails)
+
+   return <Redirect to='/login' />
+
+}
+
+return <div> My Protected Component </div>
+
+}
+
+Q40. What are refs used for in React?
+Answer
+Refs are a function in React having the following uses:
+
+Accessing DOM and React elements that you have created.
+Changing the value of a child component without using props and others.
+Q41. How do you reference a DOM element in react?
+Answer
+In React, an object this.refs which is found as an instance inside the component can be used to access DOM elements in Reactjs.
+
+Note: One of the most tricky react advanced interview questions, you need to answer this question with utmost clarity. Maybe explaining it with a short example or even a dry run would help you get that dream job.
+
+Q42. How to call one component from another component in reactjs?
+Answer
+To render a component with another component in Reactjs, let us take an example:
+
+Let us suppose there are 2 components as follows:
+
+Component 1
+
+
+
+class Header extends React.Component{
+
+
+
+    constructor(){
+
+        super();
+
+    }
+
+
+
+    checkClick(e, notyId){
+
+       alert(notyId);
+
+    }
+
+}
+
+
+
+export default Header;
+
+
+
+Component 2
+
+
+
+class PopupOver extends React.Component{
+
+
+
+    constructor(){
+
+        super();        
+
+    }
+
+
+
+    render(){
+
+        return (
+
+            <div className="displayinline col-md-12 ">
+
+                Hello
+
+            </div>
+
+        );
+
+    }
+
+}
+
+
+
+export default PopupOver;
+
+
+
+
+
+Now to call the Component 1 in Component 2, use this code:
+
+
+
+import React from 'react';
+
+
+
+class Header extends React.Component {
+
+
+
+constructor() {
+
+    super();
+
+}
+
+
+
+checkClick(e, notyId) {
+
+    alert(notyId);
+
+}
+
+
+
+render() {
+
+    return (
+
+        <PopupOver func ={this.checkClick } />
+
+    )
+
+}
+
+};
+
+
+
+class PopupOver extends React.Component {
+
+
+
+constructor(props) {
+
+    super(props);
+
+    this.props.func(this, 1234);
+
+}
+
+
+
+render() {
+
+    return (
+
+        <div className="displayinline col-md-12 ">
+
+            Hello
+
+        </div>
+
+    );
+
+}
+
+}
+
+
+
+export default Header;
+
+Q43. How to get the value of the input in react?
+Answer
+Q44. How to render an array of objects in react?
+Answer
+Now, there are two ways to render this object as an array,
+
+First:
+
+render() {
+    const data =[{"name":"test1"},{"name":"test2"}];
+    const listItems = data.map((d) => <li key={d.name}>{d.name}</li>);
+
+    return (
+      <div>
+      {listItems }
+      </div>
+    );
+  }
+
+Or, you could directly write the map function in the return
+
+render() {
+    const data =[{"name":"test1"},{"name":"test2"}];
+    return (
+      <div>
+      {data.map(function(d, idx){
+         return (<li key={idx}>{d.name}</li>)
+       })}
+      </div>
+    );
+  }
+
+Q45. What is the difference between state and props in React?
+Answer
+State	Props
+This is the data maintained inside the component.	This is the data passed in from a parent component.
+The component within shall update itself using the setState function.	These are read-only functions present in the child component and have to be updated manually.
+Note: React is a widely used open-source library used for building interactive user interfaces. It is a web platform licensed under MIT. This is one of the very popular react interview questions.
+
+Q46. Why should we not update the state directly?
+Answer
+One should never update the state directly because of the following reasons:
+
+If you update it directly, calling the setState() afterward may just replace the update you made.
+When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.
+You will lose control of the state across all components.
+Note: Out of all the react questions, this is one that actually helps the interviewer to judge your level of understanding in this subject. Read the answer carefully to understand it properly.
+
+Q47. How to call the function in render to react?
+Answer
+To call a function inside a render in React, use the following code:
+
+import React, { Component, PropTypes } from 'react';
+
+
+
+export default class PatientTable extends Component {
+
+      constructor(props) {
+
+        super(props);
+
+        this.state = {
+
+         checking:false
+
+      };
+
+        this.renderIcon = this.renderIcon.bind(this);
+
+  }
+
+
+
+  renderIcon(){
+
+    console.log("came here")
+
+    return(
+
+      <div>Function called</div>
+
+    )
+
+  }
+
+
+
+  render() {
+
+
+
+   return (
+
+       <div className="patient-container">
+
+
+
+       {this.renderIcon}      
+
+
+
+      </div>
+
+   );
+
+ }
+
+}
+
+Q48. What is the difference between componentWillMount and componentDidMount?
+Answer
+componentWillMount()	componentDidMount()
+This is called only once during the component lifecycle immediately before the component is rendered to the server. It is used to assess props and do any extra logic based upon them.	It is called only on the client end, meaning, it is usually performed after the initial render when a client has received data from the server.
+Used to perform state changes before the initial render.	It allows you to perform all kinds of advanced interactions including state changes.
+No way to “pause” rendering while waiting for the data to arrive.	It can be used to set up long-running processes within a component.
+It is invoked just immediately after the mounting has occurred.	Putting the data loading code in this just ensures that data is fetched from the client's end.
+Users should avoid using any async initialization in order to minimize any side-effects or subscriptions in this method.	Here, the data does not load until the initial render is done. Hence, users must set an initial state properly to eradicate undefined state errors.
+Q49. How to use javascript in react js?
+Answer
+Q50. Which lifecycle method gets called by react as soon as a component is inserted into the DOM?
+Answer
+Q51. How to use the spread operator to react?
+Answer
+Q52. What are the steps to implement search functionality in reactjs?
+Answer
+Q53. How to define property in the react component?
+Answer
+Q54. What is StrictMode in React?
+Answer
+Q55. How to avoid prop drilling in React?
+Answer
+You can avoid Prop Drilling in the following ways:
+
+Using a Context API
+Using Render Props
+Q56. How React is different from Angular?
+Answer
+ReactJS	AngularJS
+This is an open-source JS library used for building user interfaces and uses a controller view pattern.	This is a JS-based open-source front end web framework and uses an MVC based pattern.
+It is developed and maintained by Facebook Developers.	It is developed and maintained by Google Developers.
+Based on the JSX programming language.	Based on Javascript and HTML language.
+It is straightforward to learn.	Comparatively, it is difficult to learn.
+It supports server-side rendering.	It supports client-side rendering.
+It has a uni-directional data binding methodology.	It has a bi-directional data binding methodology.
+It is based on a Virtual DOM.	It is based on a regular DOM.
+Note: Before getting confused with the plethora of React coding interview questions, you need to ensure the basics. This question will help you to understand the basics of reactjs and make you even more confident enough to jump onto the advanced questions.
+
+Q57. What are React Hooks?
+Answer
+React Hooks were brought in by the React team to efficiently handle state management and the side-effects in function components. React Hooks is a way of making the coding effortless. They help by enabling us to write React applications by only using React components.
+
+Q58. What is React Router?
+Answer
+React Router is the in-built routing library for React. React Router helps to keep your UI in sync with the respective URL. It works on a simple API having powerful features like lazy loading, locational transition, and dynamic route matching built right in.
+
+Q59. What are the new features in React?
+Answer
+The latest release of React is 16.6.9 and here are its newest features:
+
+Measuring performance using
+Improved Asynchronous act() for testing
+No more crashing when calling findDOMNode() inside a tree
+Efficient handling of infinite loops caused due to the setState inside of useEffect has also been fixed
+Q60. What is a Higher Order Component (HOC)?
+Answer
+A higher-order component or HOC in React is basically an advanced technique used for reusing component logic. HOCs are not a part of the React API. They are a pattern emerging from the React's compositional nature.
+
+Higher Order Component in React
+A higher-order component is any function that takes an element and returns it with a new item.
+Q61. What is a pure function?
+Answer
+The term pure function in React means that the return value of the function is entirely determined by its inputs and that the execution of the function produces no side effects.
+
+Q62. What is ReactDOMServer?
+Answer
+The ReactDOMServer is an object which enables you to render components as per a static markup. Generally, it is used on a Node Server.
+
+Q63. What is the difference between React Native and React?
+Answer
+React	React Native
+Released in the year 2013.	Released in the year 2015.
+It can be executed on multiple platforms.	It is not platform-independent. It will need some extra effort to work on different platforms.
+Generally used for developing web applications.	Generally used for developing mobile applications.
+Here, Virtual DOMs are used to render browser code.	Here, an in-built API is used to render code for mobile applications.
+It uses the JS library and CSS for animations.	It has its own in-built animation libraries.
+It uses the React Router to navigate through web pages.	It has an in-built navigator to navigate through mobile application pages.
+Related Article: React.JS Online Test
+Q64. How to apply validation on props in React?
+Answer
+The App.proptypes is used for validating props in React components.
+
+Here is the syntax:
+
+class App extends React.Component {
+    render() {}
+}
+Component.propTypes = { /*Definition */};
