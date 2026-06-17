@@ -5395,3 +5395,205 @@ Memoization is a technical term for functions that are able to "remember" past v
 In other words, we may have a calculation that takes a significant amount of computing resources and we want it to be performed as sparingly as possible.
 
 If that case, we use the useMemo hook, which differs from the useCallback hook in that it returns a value, not a function.
+
+Top 25 React Interview Questions and Answers in 2026
+Editorial Team
+
+Career
+Top 25 React Interview Questions And Answers
+To start with, what is React? React is a JavaScript library used to create UIs (user interfaces) for web applications
+
+Below are the top 25 questions and answers a React expert is likely to face at the interview. Also, there are sample answers that should guide you on how you are supposed to answer the interview questions.
+
+1. Why Are You Interested In This Role?
+“After learning that there was an opening for this role in your company, I did not hesitate to make my application since I had all it takes to work as react. I would like to use the skills and knowledge that I have gained in the university and past experience to better the performance of your company. In addition, as you can see that I am still young and energetic, I still have the room to sharpen my skills and knowledge in this field by learning from you as well. Lastly, I would like to use my skills to earn a living and support my family too.”
+
+2. What Are The Roles Of A React Developer?
+“As a React developer, there are a couple of duties and responsibilities that I am expected to perform. These duties and responsibilities are;
+
+·         Leverage the inbuilt React toolkit for creating frontend features
+
+·         Create data visualization tools, libraries, and reusable code for prospects
+
+·         Integrate designs and wireframes within the application code
+
+·         Monitor interaction of users and convert them into insightful information
+
+·         Write application interface code with JavaScript
+
+·         Enhance application performance with constant monitoring
+
+·         Translate wireframes and designs into good quality code
+
+·         Optimize components to work seamlessly across different browsers and devices
+
+·         Good understanding of CSS libraries, GIT, Sigma, Adobe XD etc.
+
+·         Proper user information authentication
+
+·         Develop responsive web-based UI 
+
+These are the duties and responsibilities that I would be delighted to perform in your company.”
+
+3. What Are The Qualities That A React Need To Be Successful
+Easy to Learn and Use – ReactJSis much easier to learn and use. …
+Creating Dynamic Web Applications Becomes Easier. …
+Reusable Components
+Performance Enhancement
+The Support of Handy Tools
+Known to be SEO Friendly
+The Benefit of Having JavaScript Library
+Scope for Testing the Codes.”
+4. What Are The Advantages Of Reactjs?
+Easy to Learn and Use – ReactJSis much easier to learn and use. …
+Creating Dynamic Web Applications Becomes Easier. …
+Reusable Components
+Performance Enhancement
+The Support of Handy Tools
+Known to be SEO Friendly
+The Benefit of Having JavaScript Library
+Scope for Testing the Codes.”
+5. What Are The Lifecycle Methods Of React Components In Detail?
+“Some of the important lifecycle methods of react components are;
+
+ComponentWillUpload
+ComponentDidMount
+ComponentWillMount’
+ComponentWillReceiveProps
+ShouldComponentUpload”
+6. What Are The Phases Of A React Component’s Lifecycle?
+“The phases of react components are;
+
+Initializing – This is the initial phase of the React component lifecycle. As the name suggests, this phase involves all the declarations, definitions, and initialization of properties, default props as well as the initial state of the component required by the developer
+Mounting – It commences when the component is positioned over the DOM container(meaning, an instance of the component is created and inserted into the DOM) and rendered on a webpage
+Updating – it updates the states and properties that were declared and initialized during the initialization phase (if at all any changes are required). It is also responsible for handling user interaction and passing data within the component hierarchy
+Unmounting – Unmounting is the last phase of the ReactJS component lifecycle. This phase includes those lifecycle methods which are used when a component is getting detached from the DOM container(meaning, the instance of the component being destroyed and unmounted from the DOM).”
+7. Which Are The Life Cycle Methods That Fall Into Updating Phase?
+componentWillReceiveProps(): The method invoked immediately before the props of a mounted component get reassigned. It accepts new props which may/may not be the same as the original props.
+shouldComponentUpdate(): The method invoked before deciding whether the newly rendered props are required to be displayed on the webpage or not. It is useful in those scenarios when there is such a requirement not to display the new props on the screen.
+componentWillUpdate(): The method invoked immediately before the component is re-rendered after updating the states and/or properties.
+componentDidUpdate(): The method invoked immediately after the component is re-rendered after updating the states and/or properties.”
+8. Differentiate Between Overloading And Overriding?
+“The difference between overloading and overriding is that two or more methods in the same class have the same name but different parameters, it’s called Overloading. When the method signature (name and parameters) are the same in the superclass and the child class, it’s called Overriding.’’
+
+9. What Are The Differences Between Abstract Class And Interface?
+Abstract class can have abstract and non-abstract methods while Interface can have only abstractmethods. Since Java 8, it can have default and static methods also.
+Abstract class can have final, non-final, static and non-static variables while Interface has only static and final variables.
+In abstract, the abstract keyword is used to declare abstract class while the interface keyword is used to declare interface.”
+In abstract, a java abstract class can have class members like private, protected and others while in interface, members of a java interface are public by default
+An abstract class can be extended using keyword “extends while an interface can be implemented using keyword “implements”.
+10. What Are The Advantages Of Object-Oriented Programming?
+Improved software-development productivity: Object-oriented programming is modular, as it provides separation of duties in object-based program development. It is also extensible, as objects can be extended to include new attributes and behaviors. Objects can also be reused within an across applications. Because of these three factors – modularity, extensibility, and reusability – object-oriented programming provides improved software-development productivity over traditional procedure-based programming techniques.
+Improved software maintainability: For the reasons mentioned above, objectoriented software is also easier to maintain. Since the design is modular, part of the system can be updated in case of issues without a need to make large-scale changes.
+Faster development: Reuse enables faster development. Object-oriented programming languages come with rich libraries of objects, and code developed during projects is also reusable in future projects.
+Lower cost of development: The reuse of software also lowers the cost of development. Typically, more effort is put into the object-oriented analysis and design, which lowers the overall cost of development.
+Higher-quality software: Faster development of software and lower cost of development allows more time and resources to be used in the verification of the software. Although quality is dependent upon the experience of the teams, object-oriented programming tends to result in higher-quality software.”
+11. What Are Some Disadvantages Of Object Oriented Programming?
+“Some of the disadvantages of object-oriented programming include:
+
+Steep learning curve: The thought process involved in object-oriented programming may not be natural for some people, and it can take time to get used to it. It is complex to create programs based on interaction of objects. Some of the key programming techniques, such as inheritance and polymorphism, can be challenging to comprehend initially.
+Larger program size: Object-oriented programs typically involve more lines of code than procedural programs.
+Slower programs: Object-oriented programs are typically slower than procedure-based programs, as they typically require more instructions to be executed.
+Not suitable for all types of problems: There are problems that lend themselves well to functional-programming style, logic-programming style, or procedure-based programming style, and applying object-oriented programming in those situations will not result in efficient programs.
+12. Distinguish Between Abstraction And Encapsulation
+“Abstraction is the method of hiding the unwanted information whereas encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside.’’
+
+13. Give Us Some Features Of React
+Some of the features of React are:
+
+JSX: A JavaScript extension language that simplifies building React components
+Virtual DOM: A representation of the real DOM that React uses because manipulating the real DOM can be expensive
+Unidirectional data flow or data binding.
+Uses reusable/composable UI components to develop the view.”
+14. Mention Ten React Developer Tools That One Must Use.
+“Example of tools that React developers use are;
+
+·         React developer tool
+
+·         Reactide
+
+·         Storybook
+
+·         Bundle analyzer
+
+·         Why did you render
+
+·         React testing library with jest
+
+·         Formik and Yup
+
+·         React hook form
+
+·         React sight
+
+·         React proto
+
+15. What Are The Four Built-In Methods That A React Developer Would Use
+·         Constructor()
+
+·         GetDerivedStateFromProps()
+
+·         Render()
+
+·         ComponentDidMount()
+
+16. What Are The Benefits Of Reactjs
+·         Easy to Learn and Use
+
+·         Creating Dynamic Web Applications Becomes Easier.
+
+·         Reusable Components.
+
+·         Performance Enhancement.
+
+·         The Support of Handy Tools.
+
+·         Known to be SEO Friendly.
+
+·         The Benefit of Having a JavaScript Library.
+
+·         Scope for Testing the Codes.
+
+17. What Are The Possible Disadvantages Associated With Reactjs
+·         The high pace of development is not favorable  since the environment continually changes so fast, some of the developers do not feel comfortable relearning the new ways of doing things regularly
+
+·         Poor documentation – React technologies updating and accelerating so fast that there is no time to make proper documentation
+
+·         View part – ReactJS Covers only the UI Layers of the app and nothing else. So you still need to choose some other technologies to get a complete tooling set for development in the project.
+
+·         JSX  as a barrier – some members of the development community consider JSX as a barrier, especially for new developers. Developers complain about its complexity in the learning curve.
+
+18. What Are The Features Of Angular JS?
+Data-binding: AngularJS follows the two-way data binding. It is the automatic synchronization of data between model and view components.
+POJO Model: AngularJS uses the POJO (Plain Old JavaScript) model, which provides spontaneous and well-planned objects.
+Model View Controller(MVC) Framework: MVC is a software design pattern used for developing web applications. The working model of AngularJS is based on MVC patterns.
+Services: AngularJS has several built-in services such as $http to make an XMLHttpRequest.
+User interface with HTML: In AngularJS, User interfaces are built on HTML. It is a declarative language that has shorter tags and is easy to comprehend. It provides an organized, smooth, and structured interface.
+Dependency Injection: AngularJS has a built-in dependency injection subsystem that helps the developer to create, understand, and test the applications easily.
+Active community on Google: AngularJS provides excellent community support. It is Because Google maintains AngularJS. If you have any maintenance issues, there are many forums available where you can get your queries solved.
+19. What Are The Features Of Reactjs?
+JSX: The JSX syntax is processed into JavaScript calls of React Framework. It extends the ES6 so that HTML like text can co-exist with JavaScript React code.
+Components: The reactJS application is made up of multiple components, and each component has its logic and controls. These components can be reusable, which help you to maintain the code when working on larger scale projects.
+One-way Data Binding: ReactJS follows unidirectional data flow or one-way data binding. The one-way data binding gives you better control throughout the application.
+Virtual DOM: A virtual DOM object is a representation of the real DOM object. Whenever any modifications happen in the web application, the entire UI is re-rendered in virtual DOM representation.
+Simplicity: ReactJS uses the JSX file, which makes the application simple and to code as well as understand.
+Performance: ReactJS is known to be a great performer. The reason behind this is that it manages a virtual DOM. The DOM exists entirely in memory. Due to this, when we create a component, we did not write directly to the DOM.”
+20. What Is React Native?
+“React Native is an open-source JavaScript framework used for developing a mobile application for iOS Android, and Windows. It uses only JavaScript to build a cross-platform mobile app.”
+
+21. What Is Vue?
+“Vue is an open-source JavaScript library for building reusable user interfaces and single-page applications.”
+
+22. Why Did You Quit Your Last Role?
+My previous employer had employed me on a contract that was renewable but I saw it good to change my working environment so that I can get different experiences in this field.
+
+23. Where Do You See Yourself In The Next 5 Years
+“First of all, in five years, I want to look at the work that I have done in this industry and feel that I have brought a change. My main focus is increasing sales for our clients by offering the best in the React development field. All these activities that are involved in businesses require the React department and I believe that I will work tirelessly to achieve more in this industry.”
+
+24. What Kind Of Working Environment Would Be Best For You?
+“I always prefer working in a busy environment. Being in a busy environment makes me observe a lot of things that may help me in my career. A busy environment will make me concentrate more on what I am doing and help others do the same as well.”
+
+25. How Would People Around You Describe You?
+“I believe that most of the people would refer to me as a creative, team player and a person who likes getting knowledge from the internet. I believe that most of the people who know me personally would describe me in that manner.”
+
+
