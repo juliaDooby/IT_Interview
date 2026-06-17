@@ -2889,3 +2889,115 @@ This article encompasses the top 24+ interview questions and answers for fresher
 By familiarising yourself with these questions, you will be able to excel in your next full-stack developer interview. It is recommended that you thoroughly go through all the questions and answers provided.
 
 We hope that we have addressed any uncertainties you may have had and have steered you in the right direction. Best of luck with your full-stack developer interview!
+
+❓Какие вопросы спрашивают на собеседовании на вакансию junior fullstack разработчик (PHP, JavaScript)❓
+June 13, 2022
+English version👇🏻
+
+🔸 Какая типизация в PHP?
+
+🔸 Перечислите функции PHP
+
+🔸 Методы работы с массивами PHP
+
+🔸 Создайте БД для книг и авторов. Сколько таблиц понадобится?
+
+🔸 Напишите SQL-запрос для вывода книг по авторам из 2 таблиц.
+
+🔸 Как обезопасить базу от SQL-инъекций 
+
+🔸 Отличие GET от POST
+
+🔸 Методы SOLID
+
+🔸 Какие вы знаете паттерны программирования?
+
+🔸 Расскажите про ООП
+
+🔸 В каких случаях лучше применять наследование? 
+
+🔸 Что такое полиморфизм и инкапсуляция? 
+
+🔸 Какие проблемы могут возникнуть при переборе массива?
+
+🔸 Какие бывают сложности алгоритмов? 
+
+🔸 Расскажите подробнее про алгоритмы 
+
+🔸 Методы JavaScript для работы с GET запросами 
+
+🔸 Метод передачи JS в PHP
+
+🔸 Методы внедрения JS в HTML
+
+🔸 Как происходит отправка событий 
+
+🔸 Что происходит на клиенте и сервере при открытии сайта и каком-то действии пользователя 
+
+🔸 PHP - интерпретируемый или компилируемый язык?
+
+🔸 Отличие интерпретатора от компилятора
+
+🔸 В чем преимущество интерпретируемого языка для программиста?
+
+Это все основные вопросы, которые мне задавали при похождении собеседований👆🏻 Часто, просят ещё сделать тестовое задание, но в каждой компании по разному
+
+Вы знаете ответы на все вопросы? Попробуйте ответить в комментариях🥰❤️
+
+
+
+
+
+
+
+❓What questions are asked at the interview for the position of junior fullstack developer (PHP, JavaScript)❓
+
+English version👇🏻
+
+🔸 What is typing in PHP?
+
+🔸 List PHP functions
+
+🔸 PHP array methods
+
+🔸 Create a database for books and authors. How many tables will you need?
+
+🔸 Write a SQL query to display books by authors from 2 tables.
+
+🔸 How to secure database from SQL injections
+
+🔸 Difference between GET and POST
+
+🔸 SOLID Methods
+
+🔸 What programming patterns do you know?
+
+🔸 Tell us about OOP
+
+🔸 When is it better to use inheritance?
+
+🔸 What is polymorphism and encapsulation?
+
+🔸 What problems can arise when iterating over an array?
+
+🔸 What are the complexity of algorithms?
+
+🔸 Tell us more about the algorithms
+
+🔸 JavaScript methods for working with GET requests
+
+🔸 JS passing method to PHP
+
+🔸 Techniques for injecting JS into HTML
+
+🔸 How events are sent
+
+🔸 What happens on the client and server when the site is opened and some user action
+
+🔸 Is PHP an interpreted or compiled language?
+
+🔸 The difference between an interpreter and a compiler
+
+🔸 What is the advantage of an interpreted language for a programmer?
+
+These are all the main questions that I was asked during interviews👆🏻 Often, they also ask me to do a test task, but each company is different
