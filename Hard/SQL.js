@@ -3777,3 +3777,79 @@ LEFT JOIN сохраняет все строки из первой таблиц�
 Индексы – это мощный инструмент, который используется в фоновом режиме БД для ускорения запросов и выступает в роли справочной таблицы для данных.
 
 Они нужны для эффективного хранения данных и быстрого их получения, что может быть критически важным для успеха крупных технологических компаний, которые обрабатывают петабайты данных каждый день.
+
+Вопросы на собеседовании на позиции PL/SQL программист:
+
+
+Лично у меня, на моем интервью по PL/SQL обычно спрашивали достаточно простые вещи. Вроде if / else и в зависимости от ветви вызвать ту или иную процедуру.
+
+Правда нужно отметить, что я никогда не работал чисто PL/SQL программистом. Скорее так, по мелочи. Запомнился вопрос.
+
+
+
+Как одной командой удалить все дубликаты из таблицы.
+
+
+SELECT * FROM
+  employees e
+WHERE
+  e.rowid <>
+    (
+      SELECT
+        MAX(ee.rowid)
+      FROM
+                employees ee
+            WHERE
+        ee.first_name = e.first_name
+        AND ee.last_name = e.last_name
+        AND ee.age = e.age
+    );
+https://t.me/oracle_dba_ru/9200
+
+
+
+delete FROM t_table e
+WHERE
+  e.rowid <>
+    (
+      SELECT
+        MAX(ee.rowid)
+      FROM t_table ee
+      WHERE
+          ee.date_p = e.date_p
+      AND ee.product_p = e.product_p
+    );
+
+
+https://t.me/oracle_dba_ru/9212
+
+
+
+См. также:
+https://www.sql.ru/faq/faq_topic.aspx?fid=711
+
+
+
+Ниже реальный пример от коллеги, когда он куда-то ходил собеседоваться. Copy / Paste
+
+
+
+-- Что делает эта функция?
+function ХХХХХ(date_from date, date_to date) return number as
+    n number;
+  begin
+    if (date_from is null) or (date_to is null) then
+      return 0;
+    else
+      begin
+        select count(*)
+          into n
+          from (select rownum rnum
+                  from all_objects
+                  where rownum <= to_date(date_to) - to_date(date_from) + 1)
+          where to_char(to_date(date_from) + rnum - 1, 'DY') not in
+                ('СБ', 'ВС', 'SUN', 'SAT');
+        return n;
+      end;
+    end if;
+  end;
