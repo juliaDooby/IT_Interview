@@ -4586,3 +4586,83 @@ What’re the difference between block, inline and inline-block elements?
 How do you write CSS? Using some methodologies like Atomic CSS, or BEM? Or using Styled Components?
 How do you specify units in the CSS? What are the ways to do it?
 What is a CSS preprocessor?
+
+15+ NodeJS interview questions with Answers for 1 to  2 years experience
+Here is a list of frequently asked Node.js questions from interviews for 1 to 2 years of experience as web developers. You can revise these questions before going for a face-to-face interview or before attending any telephonic interview. 
+
+1. What is Node.js?
+Answer: Node.js is an open-source, runtime JavaScript environment built on Google Chrome's V8 engine.
+
+node.js architecture explained
+
+
+ 
+
+2. What is Node.js used for?
+Answer: Node.js is used to create complex single-page applications, server-side applications, real-time applications, RESTful APIs, chat rooms, browser games, etc.
+ 
+
+3. What is a callback function?
+Answer: A callback is a function passed to another function as an argument. It is an asynchronous equivalent for a normal function. It is called when a given task is completed. Callback functions prevent any kind of blocking.
+ 
+
+4. What is asynchronous programming?
+Answer: Asynchronous programming is a design pattern in which the code is executed in a non-blocking way. In asynchronous, code is executed without any dependency and order.
+ 
+
+5. What is NPM?
+Answer: NPM stands for Node Package Manager. It is a Command Line Interface tool used for downloading and publishing packages. It is an online repository that hosts several JavaScript packages.
+
+
+
+ 
+
+6. What is package.json and what is it used for?
+Answer: The package.json file holds several metadata information regarding the project. It includes various fields such as name, description, and dependencies. It is used to give information to the node package manager to identify the project as well as handle the dependencies associated with it.
+ 
+
+7. Why should we use Node.js?
+Answer: We should use Node.js because:
+It is asynchronous.
+It is generally fast and it has great concurrency.
+It is easier to build scalable network programs with Node.js
+It rarely blocks.
+
+8. What is the meaning of event-driven programming?
+Answer: Event-driven programming is a programming paradigm in which the flow is determined by different events such as messages from other threads or programs. The application architecture of this programming technique is divided into two sections: 1) Event selection 2) Event handling.
+ 
+
+9. What is callback hell? And how to avoid callback hell?
+Answer: Callback hell is a problem caused by extensive nesting of callback functions. In such a condition, every callback takes an argument that is the result of the previous callbacks. Callback hell can be avoided by using event queues and promises.
+
+
+
+10. What is a promise?
+Answer: A promise in Node.js is a value returned by an asynchronous function. It indicates that a process carried out by the asynchronous function is completed.
+ 
+
+11. Explain middleware?
+Answer: A middleware is a type of function that has access to request and response objects. Along with these two objects, a middleware also has access to the function called next, which is used to call the next middleware function (if there is any).
+ 
+
+12. Name the modules used for: a) File operations b) Web-based operations c) Buffer based operations
+Answer: The module used for file operations is "fs", for web-based operations is "http", and for buffer-based operations is "buffer".
+ 
+
+13. What is the meaning of REPL and why is it used?
+Answer: REPL stands for READ, EVAL, PRINT, LOOP. By using the REPL bundled environment, it becomes easy to create Command Line Interface (CLI) applications.
+ 
+
+14. What is an event loop?
+Answer: Node.js is single-threaded. Still, it can perform non-blocking operations. This is possible because of the event loop. The event loop allows Node.js to perform non-block operations by assigning operations to the OS wherever and whenever possible.
+
+node.js event loop
+
+
+ 
+
+15. What is an event emitter
+Answer: An event emitter in Node.js is a class that holds all those objects that can emit events.
+
+
+That's all about the frequently asked Node.js interview questions for beginners and people with 1 to 2 years of experience in web development. As mentioned earlier, Node.js is wide and several questions can be taken out of it. In this article, we discussed the 15 commonly asked Node.js questions with answers.
