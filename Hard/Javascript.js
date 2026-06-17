@@ -15577,3 +15577,689 @@ const emp = new Employee('Marko Polo', 'Software Development', 2017)
 Функция наследует от functionName.prototype.
 Возвращает значение this, если не указано иное.
 	
+What's in it for me?
+We have created this section for your convenience from where you can navigate to all the sections of the article. All you need to just click or tap on the desired topic or the section, and it will land you there.
+
+Most Frequently Asked Advanced JavaScript Interview Questions
+Top 10 Advanced JavaScript Interview Questions
+JavaScript Basic Interview Questions
+Most Frequently Asked Advanced JavaScript Interview Questions
+Here in this article, we will be listing frequently asked Advanced JavaScript Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
+
+Q1. What is the significance and benefit of including 'use strict' at the beginning of a JavaScript source file?
+Answer
+The "use strict" is not a statement, rather a literal expression that is vital to your code as it presents a way for voluntarily enforcing a stricter parsing and error handling process on your JavaScript code files or functions during runtime. Most importantly, it just makes your code very easy to manage.
+
+Here are some of the benefits of using use strict expression at the beginning of a JS source file:
+It makes debugging a lot easier by making the code errors that are ignored generate an error or throw exceptions.
+It prevents the most common error of making an undeclared variable as a global variable if it is assigned a value.
+It does not allow the usage of duplicate property names or parameter values.
+Q2. What is asynchronous programming and why is it important in JavaScript?
+Answer
+Asynchronous programming means that the program engine runs in an event loop. Only when blocking operation is required, a request is started, and the code runs without blocking the result.
+
+This is vital in JavaScript because it is a very natural fit for the user interface code and very efficient performance-wise on the server end.
+
+Q3. What is the use of the Weakmap object in JavaScript?
+Answer
+The WeakMap object is basically a collection of key or value pairs where the keys are weakly referenced. It provides a way for extending objects from the outside without meddling into the garbage collection.
+
+Here are some use cases of Weakmap objects:
+Maintaining private data about a specific object while only giving access to people having a reference to the Map.
+Safekeeping of data related to the library objects without making any changes to them or incurring any overhead.
+Keeping of data related to the host objects such as DOM nodes in the browser.
+Q4. Give an example and explain the main difference between ES6 class and ES5 function constructors?
+Answer
+The main difference between these two is when you are using inheritance. It is much more complicated using inheritance in ES5, while the ES6 version is simple and easy to remember.
+
+ES6 Class:
+class Person {
+   constructor(name) {
+      this.name = name;
+   }
+}
+
+ES5 function constructor:
+function Person(name) {
+   this.name = name;
+}
+
+Q5. What is a generator in JavaScript and when to use it?
+Answer
+In JavaScript, generators are those functions which can be exited and re-entered later on. Their variable bindings shall be saved across the re-entrances. They are written using the function* syntax.
+
+The Generator function should be used when:
+You can choose to jump out of a function and let the outer code determine when to jump back in the function.
+The control of the asynchronous call can be executed outside of your code.
+JavaScript is a high-level, multi-paradigm programming language which conforms to the ECMAScript specification. Read our list of advanced javascript interview questions to get a deep understanding of this language.
+
+Q6. What is the drawback of creating a true private in JavaScript?
+Answer
+One of the drawbacks of creating a true private method in JavaScript is that they are highly memory consuming. A new copy for each method is created for every instance.
+
+Example:
+var Employee = function (name, company, salary) {
+    this.name = name || "";
+    this.company = company || "";
+    this.salary = salary || 5000;
+    var increaseSlary = function () {
+        this.salary = this.salary + 1000;
+    };
+    this.dispalyIncreasedSalary = function() {
+       increaseSalary();
+       console.log(this.salary);
+   };
+};
+var emp1 = new Employee("Amar","Mars",3000);
+
+Here, while creating each variable, each instance makes a new copy of emp1, emp2, and emp3 in IncreaseSalary. Thus, making it inefficient for your server end.
+
+Q7. What is Temporal Dead Zone in ES6?
+Answer
+In ES6, Temporal Dead Zone is a behavior occurring in JavaScript while declaring a variable with the let and const keywords. The period between entering the scope and being declared is the one when these keywords cannot be accessed and enter the Temporal Dead Zone.
+
+For example
+console.log(foo); // undefined
+var foo = 123;
+
+console.log(foo); // Error
+let foo = 123;
+
+Also Read: JQuery Questions
+If you consider that the const and let are also in place, why can't they be accessible before they are declared? The answer is within the idea of the Temporal Dead Zone.
+
+Variables declared with let and const are stored and placed in the Temporal Dead Zone. Therefore, they cannot be accessible before the declaration is executed during the step-by-step process of scripting.
+
+Temporal Dead Zone is the duration that let and const declarations are not accessible. Declarations of the let as well as const declarations are not accessible.
+
+Temporal Dead Zone is activated when code execution is entered into the block that includes let or const declarations. It continues until the lets or const declaration. It continues until the declaration is executed.
+
+Q8. Is JavaScript as Pass by value or pass by reference language?
+Answer
+Interestingly enough, it is both. Primitive types like number, string, etc. are passed by value, but objects can be passed-by-value (when we consider a variable holding an object is a reference to the object) and also as a pass-by-reference (when we consider variable to the object is holding the object itself).
+
+Q9. How to "deep-freeze" an object in JavaScript?
+Answer
+To ensure that an object is deep-frozen, you will have to create a recursive function for freezing each property of type object: Without deep freeze.
+
+let person = {
+
+    name: "Ankit",
+
+    profession: {
+
+        name: "content writer"
+
+    }
+
+};
+
+Object.freeze(person);
+
+person.profession.name = "content writer";
+
+console.log(person);
+
+
+
+Output { name: 'Ankit', profession: { name: 'content writer' } }
+
+
+
+Now, using Deep Freeze for the object,
+
+
+
+function deepFreeze(object) {
+
+    let propNames = Object.getOwnPropertyNames(object);
+
+    for (let name of propNames) {
+
+        let value = object[name];
+
+        object[name] = value && typeof value === "object" ?
+
+            deepFreeze(value) : value;
+
+    }
+
+    return Object.freeze(object);
+
+}
+
+let person = {
+
+    name: "Ankit",
+
+    profession: {
+
+        name: "content writer"
+
+    }
+
+};
+
+deepFreeze(person);
+
+person.profession.name = "content writer";
+
+Q10. Why is the "this" operator inconsistent In JavaScript?
+Answer
+In JavaScript, this operator always refers to the object, which is invoking the function being executed. So, if the function is currently being used as an event handler, this operator will refer to the node which fired the event.
+
+Q11. How to calculate the Fibonacci series in JavaScript?
+Answer
+Here's the code to calculate the Fibonacci series in JS code:
+
+var the_fibonacci_series = function (n)
+
+{
+
+  if (n===1)
+
+  {
+
+    return [0, 1];
+
+  }
+
+  else
+
+  {
+
+    var a = the_fibonacci_series(n - 1);
+
+    a.push(a[a.length - 1] + a[a.length - 2]);
+
+    return a;
+
+  }
+
+};
+
+
+
+console.log(the_fibonacci_series(9));
+
+Q12. Why prototype is used in JavaScript?
+Answer
+JavaScript is a dynamic language and at any time we can add new properties to an object and can be shared among all the instances. Hence to add new properties and implement inheritance prototypes are used.
+
+Example
+function Candidate() {
+    this.name = 'Arun';
+    this.role = 'QA';
+}
+var candidateObj1 = new Candidate();
+candidateObj1.salary = 10000;
+console.log(candidateObj1.salary); // 10000
+var candidateObj2 = new Candidate();
+console.log(candidateObj2.salary); // undefined
+
+Prototype in JavaScript
+A prototype is an internal object that is associated with the functions automatically it is available, modified, or add additional variables or methods for it, and then share across all functions of their constructor.
+Q13. What is callback hell and how can it be avoided?
+Answer
+When a JavaScript developer tries to execute multiple asynchronous operations then sometimes issues arise and it is termed callback hell. 
+
+Note: If you are a frontend developer with React.JS then these Top 20 React Questions will help you to crack your interviews easily.
+
+How to escape from a callback hell?
+JavaScript gives an easy way of avoiding callback hell. This is performed by event queue and promises.
+
+Promises
+Async/Await
+Example of Callback Hell
+getDataFromFunction1(function(x){
+    getDataFromFunction2(x, function(y){
+        getDataFromFunction3(y, function(z){
+            ...
+        });
+    });
+});
+
+Q14. What is JavaScript Hoisting?
+Answer
+A JavaScript default behavior that moves the declaration of variables and functions at the top of the current scope is called JavaScript hosting. You can use hosting for declaration, not for initialization.
+
+OR
+
+Hoisting in JavaScript is a method where a function or variable may be utilized prior to declaration.
+
+1. Variable hoisting
+console.log(x); // undefined
+var x = 1;
+
+2. Function hoisting
+let x = 20, y = 10;
+let result = add(x,y);
+console.log(result);
+function add(a, b) {
+     return a + b;
+}
+
+Q15. What is the difference between let, var and const in JavaScript?
+Answer
+With JavaScript users can declare variables using three keywords: let, var as well as const. The words var let and const can be a bit confusing. We will go over all three variables using examples. The difference between the variables var, let as well as const is described below in different ways.
+
+Reassign the value
+Re-declaration of the variable
+Scope
+Hoisting
+NOTE: If you would like to learn more about the differences between Let, Var, and Const, you should visit this site.
+
+Q16. What is promise in JavaScript with example?
+Answer
+An object that shows the eventual completion or failure of asynchronous options along with its resultant value is called a promise in JavaScript. The possible three states of a promise are pending, fulfilled, or rejected. It allows handling multiple asynchronous operations in JavaScript.
+
+We have a list of JavaScript Multiple Choice Questions. It's really helpful to crack your interviews easily.
+
+A Promise has 3 states:
+
+Pending: initial state, neither fulfilled nor rejected.
+Fulfilled: meaning that the operation was completed successfully.
+Rejected: meaning that the operation failed.
+javascript promise
+How to create Promises?
+let getDataFromAPI = function(params) {
+    return new Promise((resolve, reject) => {
+        const data = {
+            name: "Umesh",
+            phone: "9971083635"
+        }
+        if(data) {
+            resolve(data); // get data from API
+        } else {
+            reject('get error from API Call');
+        }
+    });
+}
+getDataFromAPI().then( async function (result) {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
+
+How to call multiple promise (with dependency) methods?
+callApi().then(function(result) {
+    return callApi2() ;
+}).then(function(result2) {
+    return callApi3();
+}).then(function(result3) {
+    // do work
+}).catch(function(error) {
+    //handle any error that may occur before this point 
+});
+
+OR
+Promise.all([callApi, callApi2, callApi3]).then((values) => {
+  console.log(values);
+});
+
+OR
+Promise.allSettled([callApi, callApi2, callApi3]).then((values) => {
+  console.log(values);
+});
+
+Q17. What is a callback function in JavaScript with an example?
+Answer
+A function passed as an argument to another function is called a callback function and this technique allows a function to call another function. A callback function gets executed after the execution of another function gets finished.
+
+Example
+function isOdd(number) {
+  return number % 2 != 0;
+}
+function filter(numbers, fn) {
+  let results = [];
+  for (const number of numbers) {
+    if (fn(number)) {
+      results.push(number);
+    }
+  }
+  return results;
+}
+let numbers = [1, 2, 4, 7, 3, 5, 6];
+console.log(filter(numbers, isOdd));
+
+Answer // [ 1, 7, 3, 5 ]
+
+The benefit of using this feature is that you can wait for the result of a previous method call and then execute another method call.
+
+Q18. What is the difference between arrow functions & normal functions?
+Answer
+1) Using the arrow function, you can get the same results as normal functions by writing a few lines of code as shown in the example below.
+
+//Example of Regular function:
+var add = function(c, d) { return c + d;};
+
+// Example of Arrow function
+let add = (c, d) => { return c + d}; //or
+let add = (c, d) => c + d;
+
+2) In normal functions, argument binding is possible and other hand arrow functions have no argument binding.
+
+3) Regular functions are construable but arrow functions are not constructible.
+
+Q19. How to remove duplicate values in an array with JavaScript?
+Answer
+There are two methods to remove duplicate content from an array such as using a temporary array and a separate index.
+
+1. Using indexOf() Method
+const getUnique = (arr) => {     
+    let uniqueArr = [];    
+     for(let i of arr) {
+        if(uniqueArr.indexOf(i) === -1) {
+            uniqueArr.push(i);
+        }
+    }
+    console.log(uniqueArr);
+}
+const array = [1, 2, 3, 2, 3,4,5];
+getUnique(array);
+
+Answer
+[ 1, 2, 3, 4, 5 ]
+
+2. Using Set Method
+let chars = ['A', 'B', 'A', 'C', 'B'];
+let uniqueChars = [...new Set(chars)];
+console.log(uniqueChars);
+
+Answer
+[ 'A', 'B', 'C' ]
+
+Q20. What is closure in JavaScript with a real time example?
+Answer
+A function that can access its parent scope, even after the parent function has closed is called JavaScript closure.
+
+const parentMethod = () => {
+  const title = 'Advanced JavaScript Questions';
+  const innerMethod = () => {
+    console.log(title);
+  }
+  innerMethod();
+}
+parentMethod();
+
+In other words, a closure gives you access to an outer function's scope from an inner function.
+
+Q21. What are the new data types in ES6 JavaScript?
+Answer
+The following are the different types of data types used in JavaScript.
+Numbers: Can represent both floating-point and integer numbers. Example: 5, 6.5, 7 etc.
+String: A sequence of characters is called a string. Strings can be enclosed in JavaScript within single or double quotes. Example: "Advanced JavaScript Questions" etc.
+Boolean: This represents a logical entity. It can have either true or false values.
+Null: This type only has one value: null
+Undefined: A variable whose value has yet to be assigned is undefined.
+Symbol: It is not a primitive data type that can be used to represent literal forms. It is a built-in object whose constructor returns a unique symbol.
+bigint: This is the bigint type that represents whole numbers larger than 253-1. You must add the letter n to the end of the number in order to form a literal bigint number.
+Object: This is the most crucial data-type. It forms the foundation for modern JavaScript. These data types will be discussed in more detail in future articles.
+Note: We have a list of all interview questions related to ES6. These are really helpful in cracking your interviews.
+
+Q22. How do you use the spread Operator & Spread operators?
+Answer
+Using the rest operator we can call a function using any number of arguments and can be accessed as an array. It allows the destruction of an array of objects.
+
+Example of Rest operator in JavaScript
+
+function sum(...theArgs) {
+   return theArgs.reduce((last, now) => {
+      return last + now;
+   });
+}
+console.log(sum(1, 2, 3, 4,5)); // expected output 15
+
+ 
+
+Speare operator is just the reverse of rest operators and allows to expand an iterable such as an array expression can be expanded using by dividing the array into individual elements.
+
+For example
+
+let array 1 = [3,4];
+let array 2 = [5,6,7];
+array= [...array 1,...array 2];
+console.log(array); // [ 3, 4, 5,6,7 ]
+
+Q23. What is the difference between filter and map?
+Answer
+They both return a new array.
+
+1. Map
+The map function returns the same number of elements as present in the original array but the value of elements will be transformed in some way.
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = items.map((item) => {
+    return item*item;
+})
+console.log(result);
+// [ 1, 4, 9, 16, 25, 36, 49, 64, 81, 100 ]
+
+2. Filter
+On the other hand, the filter function can return fewer or more elements than the original array but the value of the original elements will not change.
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = items.filter((item) => {
+    return item > 5;
+})
+console.log(result);
+// [ 6, 7, 8, 9, 10 ]
+
+Q24. What is the output of below code?
+let x = 10;
+var x = 20;
+console.log(x);
+
+Answer
+It gives an syntax error like SyntaxError: Identifier 'x' has already been declared.
+
+Q25. What is the output of the res in given scenario?
+const res = {};
+res.x = 5;
+console.log(res);
+
+Answer
+{ x: 5 }
+
+Q26. How to check whether a string contains a sub string in JavaScript?
+Answer
+Example 1
+const string = "JavaScript Interview Questions";
+const substring = "Questions";
+console.log(string.includes(substring)); Answer // true
+
+Example 2
+const string = "JavaScript Interview Questions";
+const substring = "questions";
+console.log(string.includes(substring)); Answer // false
+
+Q27. What is currying in JavaScript?
+Answer
+It is an advanced technique of working with functions that can accept multiple arguments. It will transform this function into a series of functions, where every function will accept one argument:
+
+Non-curried version //
+const sum = (a, b, c)=>{
+    return a+ b + c
+}
+console.log(sum(2, 3, 5)) // 10
+
+Curried version //
+const sumCurry =(a) => {
+    return (b)=>{
+        return (c)=>{
+            return a+b+c
+        }
+    }
+}
+console.log(sumCurry(2)(3)(5)) // 10
+ 
+
+Q28. How do you find the min and max element of the array?
+const items = [40, 10, 11, 15, 25, 21, 5];
+
+Answer
+Find max value
+console.log(Math.max(...items)); // 40
+
+Find min value
+console.log(Math.min(...items)); // 5
+
+Q29. What will be the output of the following code?
+let x = null;
+console.log(Math.round(x));
+
+Answer
+0
+
+Q30. How to display a table of any number in JavaScript?
+Answer
+const displayTable = (number) => {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+    const countingArray = numbers.map((item) => {
+        console.log(item*number);
+    });
+}
+displayTable(2);
+
+Related Article: Angularjs or reactjs Which is Better?
+Q31. What is the output of following code?
+const displayText = () => {
+  console.log("A");
+    setTimeout(() => {
+        console.log("B");
+    }, 0)
+  console.log("C");
+}
+displayText();
+
+Answer
+A
+C
+B
+
+Q32. What is the output of the res given scenario?
+const res = [];
+res.x = 5;
+res.x = 10;
+console.log(res);
+
+Answer
+[ x: 10 ]
+
+Q33. What will be the output of the below given code?
+const list = [1, 2, 3, 4, 5, 6];
+const list2 = [5, 6, 7, 8, 9, 10];
+console.log([...list, ...list2]);
+
+Answer
+[ 1, 2, 3, 4, 5, 6, 5, 6, 7, 8, 9, 10 ]
+
+Q34. What will be the output of the result in given code?
+const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = list.find((item) => {
+    return item > 3;
+})
+console.log(result);
+
+Answer
+4
+
+Q35. What is the difference between == and === equals?
+Answer
+The primary difference between the == or === operators in JavaScript is that the == operator converts the operands before comparing, while the === operator compares both the data types and the values.
+
+(==)
+When we want to compare two values, one string, and another number, it will convert the string to the number type, then compare the results.
+
+let a = 10;
+let b = '10';
+console.log(a == b);  // true
+
+(===)
+let a = 10;
+let b = '10';
+console.log(a === b);  // false
+
+Q36. What is the difference between setTimeOut & setInterval?
+Answer
+setTimeout: It allows us to run a function after the interval of time.
+setInterval: It allows us to run a function repeatedly, starting after the interval of time, then repeating again and again continuously at that interval.
+These methods are not part of JavaScript specification. These methods are provided by most environments that have an internal scheduler.
+
+setTimeout(() => alert("JavaScript Interview Questions"), 3000); // setTimeout
+
+setInterval(() => alert("JavaScript Interview Questions"), 3000); // setInterval
+
+Q37. What is the value of X in below code?
+for(var x = 1; x <= 5; x++) {
+    setTimeout(() => console.log(x), 0);
+}
+
+Answer
+6
+6
+6
+6
+6
+
+Q38. How to use the spread and rest operator?
+Answer
+The rest operator lets us call any function with any number of arguments and then access the excess arguments as an array. You can also use the rest operator to destroy objects or arrays.
+
+Spread operator (...) lets you expand an iterable-like array into its individual elements.
+
+Spread operator vs. Rest operator
+Both the spread operator and rest parameters have the same syntax, which is three dots. Despite having the same syntax, they differ in their functions.
+Examples of Spread Operator
+1. The following example shows two arrays that are separated by the spread operator (...). They're combined into one using this method. The elements of the merged array are in the same order as they were merged.
+
+var array1 = [10, 20, 30, 40, 50];
+var array2 = [60, 70, 80, 90, 100];
+var array3 = [...array1, ...array2];
+console.log(array3);
+
+Output
+[ 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 ]
+
+2. This example shows how to add an element to an iterable. A given array must be defined. We use the spread operator, which spreads all the values of iterables and adds the elements to the array in the order we choose.
+
+const array1 = [10, 20, 30, 40, 50, 60];
+const array2 = [...array1, 5, 55];
+console.log(array2);
+
+Output
+[ 10, 20, 30, 40, 50, 60, 5, 55 ]
+
+3. This example will show how to copy objects with the spread operator. Spread operator (...). gives obj2 all the properties of the original obj1. Curly brackets are required to indicate that an object is being copied, or else an error will be raised.
+
+const array1 = [10, 20, 30, 40, 50, 60];
+const array2 = [ ...array1 ];
+console.log(array2);
+
+Output
+[ 10, 20, 30, 40, 50, 60 ]
+
+Q39. What is the difference between arrow and normal functions in JavaScript?
+Answer
+The main differences between arrow function and normal function are based on some parameters like.
+
+Syntax
+No duplicates of identified parameters.
+"this" keyword is used to describe the use.
+Utilizing a keyword that is new.
+Arguments that are binding.
+Syntax of normal functions
+// Function declaration
+function printHello(name) {
+   return `Hey ${name}`;
+}
+
+NOTE: If you want to read more about Regular vs Arrow functions then you can visit here.
+
+// Function expression
+const printHello = function(name) {
+  return `Hey ${name}`;
+}
+
+Syntax of arrow functions
+const printHello = (name) => `Hey ${name}`;
