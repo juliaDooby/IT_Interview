@@ -3941,3 +3941,558 @@ Devise technical queries that relate to actual scenarios within your company –
 Foster an environment of collaboration by motivating the candidate to pose questions throughout the task.
 As full stack applicants are expected to work with front-end elements, they should have a solid grasp of basic UI/UX design principles.
 Furthermore, it’s crucial to adhere to conventional interview protocols during full stack interviews – adjust the complexity of interview questions relative to the candidate’s development skill level, provide timely feedback regarding their status in the recruitment process, and allocate sufficient time for candidates to inquire about the evaluation or the experience of working with you and your team.
+
+Full-Stack Developer interview questions and answers
+Изучите лучшие вопросы и ответы по Full-Stack Developer для новичков и опытных кандидатов, чтобы подготовиться к собеседованиям.
+
+Всего вопросов: 60
+Full-Stack Developer interview questions and answers
+Лучшее LIVE пробное интервью, которое стоит посмотреть перед собеседованием
+Изучите лучшие вопросы и ответы по Full-Stack Developer для новичков и опытных кандидатов, чтобы подготовиться к собеседованиям.
+
+
+Инструменты
+Что вы можете делать здесь: готовиться к интервью, практиковаться с тестами, изучать учебные материалы, сравнивать связанные темы и использовать бесплатные онлайн-инструменты для валидации, кодирования, хеширования, работы с сетью, SEO и анализа сайтов.
+
+Full-Stack Developer interview questions and answers
+Найдите вопрос, чтобы посмотреть ответ.
+
+Найдите вопрос, чтобы посмотреть ответ.
+Найти вопрос
+Вопросы и ответы для новичков / начинающего уровня
+Вопрос 1
+What is the difference between front-end and back-end development?
+Front-end is client-side development, dealing with user interfaces, while back-end is server-side development, handling server operations and databases.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 2
+What is the purpose of AJAX in web development?
+AJAX (Asynchronous JavaScript and XML) allows web pages to update content asynchronously by making background requests to the server without reloading the entire page.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 3
+What is the role of a package manager in a Full-Stack development environment?
+A package manager helps manage and install third-party libraries, tools, and dependencies, streamlining the development process.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 4
+What is the significance of promises in JavaScript?
+Promises are used to handle asynchronous operations in JavaScript, providing a cleaner and more readable way to manage callbacks.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 5
+Explain the concept of responsive web design.
+Responsive web design ensures that a web application or site adapts to different screen sizes and devices, providing an optimal user experience.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 6
+What is the purpose of version control systems like Git in Full-Stack development?
+Git allows developers to track changes, collaborate on projects, and manage different versions of code, providing a robust version control system.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 7
+What is the purpose of the 'use strict' statement in JavaScript?
+The 'use strict' statement enables strict mode in JavaScript, catching common coding errors and preventing the use of certain error-prone features.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 8
+What is the significance of the 'this' keyword in JavaScript?
+In JavaScript, 'this' refers to the current execution context. Its value depends on how a function is called and is often used within object methods.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 9
+What is the purpose of the HTTP protocol in web development?
+HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. It defines how messages are formatted and transmitted, enabling the exchange of information between a client and a server.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 10
+What is the purpose of a CDN (Content Delivery Network) in web development?
+A CDN is a network of distributed servers that deliver web content to users based on their geographic location, reducing latency and improving page load times.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 11
+Explain the difference between cookies and local storage in web development.
+Cookies are small pieces of data sent from a server and stored in the user's browser, while local storage is a larger storage area for key-value pairs that persists even when the browser is closed.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 12
+Explain the concept of a stateless protocol and provide an example.
+A stateless protocol does not store information about the state of communication between requests. An example is HTTP, where each request is independent of previous requests.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 13
+What is the purpose of the async/await syntax in JavaScript?
+Async/await is a syntax for working with asynchronous code in JavaScript, making it more readable and allowing developers to write asynchronous code that resembles synchronous code.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 14
+What is the purpose of the 'useEffect' hook in React.js?
+The 'useEffect' hook in React.js is used for side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 15
+What is the purpose of the 'defer' attribute in the 'script' tag in HTML?
+The 'defer' attribute in the 'script' tag tells the browser to defer the execution of the script until after the HTML document is fully parsed. This can improve page load performance.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 16
+What is the purpose of the 'map' function in JavaScript, and provide an example of its usage.
+The 'map' function in JavaScript is used to transform each element of an array and create a new array with the results. Example: `const numbers = [1, 2, 3]; const doubled = numbers.map(num => num * 2);`
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопросы и ответы для среднего уровня / опыта от 1 до 5 лет
+Вопрос 17
+Explain the concept of RESTful APIs.
+REST (Representational State Transfer) is an architectural style for designing networked applications. RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) for communication.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 18
+Explain the Same-Origin Policy and how it affects AJAX requests.
+The Same-Origin Policy restricts web pages from making AJAX requests to a different domain than the one that served the web page, for security reasons.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 19
+Explain the concept of virtual DOM in React.js.
+The virtual DOM is an in-memory representation of the real DOM elements in a React application. It allows React to efficiently update and render components.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 20
+What is CORS, and how does it affect web development?
+CORS (Cross-Origin Resource Sharing) is a security feature that controls how web pages in one domain can request and interact with resources from another domain.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 21
+Explain the role of webpack in a Full-Stack development environment.
+Webpack is a module bundler that transforms and bundles assets, such as JavaScript, CSS, and images, for efficient loading in web applications.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 22
+Explain the concept of token-based authentication.
+Token-based authentication involves issuing a token (usually a JSON Web Token or JWT) to authenticated users, which is then included in subsequent requests for authorization.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 23
+What is MVC architecture, and how does it relate to Full-Stack development?
+MVC (Model-View-Controller) is a design pattern that separates an application into three interconnected components: Model (data and business logic), View (user interface), and Controller (handles user input and updates the model).
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 24
+What is GraphQL, and how does it differ from RESTful APIs?
+GraphQL is a query language for APIs that allows clients to request only the data they need. It differs from REST by providing more flexibility and reducing over-fetching or under-fetching of data.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 25
+What is the purpose of Docker in Full-Stack development?
+Docker is a containerization platform that allows developers to package applications and their dependencies into containers, ensuring consistency across different environments.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 26
+What are WebSockets, and how are they used in Full-Stack development?
+WebSockets provide a full-duplex communication channel over a single, long-lived connection, enabling real-time communication between clients and servers.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 27
+Explain the concept of state management in front-end frameworks like React or Angular.
+State management involves managing and updating the state (data) of a web application, ensuring that changes are reflected in the user interface.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 28
+Explain the concept of the Single Page Application (SPA).
+SPAs load a single HTML page and dynamically update the content as the user interacts with the application, providing a smoother and more responsive user experience.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 29
+Explain the concept of JWT (JSON Web Token) and its use in authentication.
+JWT is a compact, URL-safe means of representing claims to be transferred between two parties. It is commonly used for authentication by securely transmitting information between parties.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 30
+Explain the concept of dependency injection in Full-Stack development.
+Dependency injection involves providing a component with its dependencies rather than allowing it to create them. It enhances modularity and testability in code.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 31
+What are the advantages of using a NoSQL database over a traditional relational database?
+NoSQL databases provide flexibility, scalability, and better performance for certain types of applications by allowing the storage of unstructured or semi-structured data.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 32
+What is the role of a reverse proxy in a Full-Stack development environment?
+A reverse proxy handles client requests and forwards them to the appropriate backend server, improving security, load balancing, and performance.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 33
+Explain the concept of serverless architecture and its advantages.
+Serverless architecture allows developers to build and run applications without managing servers. Advantages include cost efficiency, automatic scaling, and reduced operational overhead.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 34
+What is the role of a load balancer in a Full-Stack development environment?
+A load balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed, improving performance and reliability.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 35
+What is the purpose of middleware in a Full-Stack development framework like Express.js?
+Middleware functions in Express.js handle tasks such as authentication, logging, and error handling. They are executed in the request-response cycle before the final request handler.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 36
+What is the purpose of a web server and how does it differ from an application server?
+A web server handles HTTP requests, serving static content, while an application server executes application code, handling dynamic content and business logic.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 37
+Explain the concept of progressive web apps (PWAs) and their benefits.
+PWAs are web applications that provide a native app-like experience, including offline functionality, push notifications, and fast loading times. Benefits include improved user engagement and performance.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 38
+Explain the concept of cross-site request forgery (CSRF) and how to prevent it.
+CSRF is an attack where an attacker tricks a user's browser into making an unintended request. Prevention methods include using anti-CSRF tokens and checking the referer header.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 39
+Explain the concept of two-factor authentication (2FA) and its importance in security.
+2FA adds an extra layer of security by requiring users to provide two different authentication factors (e.g., password and a temporary code sent to their phone) before accessing an account.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 40
+What is the role of the CDN in the context of caching in web development?
+CDNs use caching to store copies of content in multiple locations, reducing server load and improving content delivery speed by serving cached content from the nearest server.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 41
+Explain the concept of OAuth and its use in authentication.
+OAuth is an open standard for access delegation, allowing users to grant third-party applications limited access to their resources without sharing their credentials.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 42
+What is the role of a proxy server in a Full-Stack development environment?
+A proxy server acts as an intermediary between client requests and the destination server, providing functionalities such as security, load balancing, and content filtering.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 43
+What is the purpose of the 'this.props.children' in React.js?
+'this.props.children' in React.js allows components to pass children elements to other components, enabling the composition of complex UI structures.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 44
+Explain the concept of A/B testing and its use in optimizing user experiences.
+A/B testing involves comparing two versions of a web page to determine which performs better. It helps optimize user experiences by analyzing user behavior and preferences.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 45
+What is the purpose of the 'aria-' attributes in HTML and when are they used?
+The 'aria-' attributes in HTML are used for accessibility, providing additional information to assistive technologies. They help convey roles, states, and properties to users with disabilities.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 46
+Explain the concept of JWT expiration and refresh tokens in authentication.
+JWT expiration ensures tokens have a limited validity period. Refresh tokens are used to obtain a new JWT without requiring the user to re-enter their credentials, enhancing security.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 47
+Explain the concept of server-side caching and its impact on web application performance.
+Server-side caching involves storing copies of dynamically generated content on the server to reduce the need for repeated processing. It improves performance by delivering cached content instead of regenerating it for each request.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 48
+Explain the concept of GraphQL subscriptions and how they differ from queries and mutations.
+GraphQL subscriptions enable real-time data updates by establishing a persistent connection between the client and server. They differ from queries and mutations, which are used for fetching and modifying data, respectively.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопросы и ответы для опытного / экспертного уровня
+Вопрос 49
+Explain the concept of server-side rendering (SSR) in the context of web development.
+Server-side rendering involves rendering web pages on the server and sending fully rendered HTML to the client, providing better initial page load performance.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 50
+Explain the concept of microservices architecture.
+Microservices architecture involves developing a single application as a collection of small, independent services, each with its own database and functionality, communicating via APIs.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 51
+Explain the concept of XSS (Cross-Site Scripting) and how to prevent it.
+XSS is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. Prevention methods include input validation and output encoding.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 52
+Explain the concept of continuous integration and continuous deployment (CI/CD) in Full-Stack development.
+CI/CD is a set of practices that automate the process of testing and deploying code changes, ensuring a faster and more reliable development workflow.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 53
+Explain the concept of design patterns and provide an example relevant to Full-Stack development.
+Design patterns are reusable solutions to common problems in software design. An example is the Observer pattern, where an object (subject) maintains a list of its dependents (observers) that are notified of any state changes.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 54
+Explain the concept of the SOLID principles in object-oriented design.
+SOLID is an acronym representing a set of five principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion) that guide software design for maintainability and scalability.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 55
+Explain the concept of idempotence in the context of web development.
+An operation is idempotent if repeating it multiple times has the same result as a single execution. In HTTP, safe methods (GET) are idempotent, while unsafe methods (POST) may not be.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 56
+What is the role of a reverse engineering tool in Full-Stack development?
+Reverse engineering tools help developers understand and analyze existing code or systems, facilitating code maintenance, optimization, and debugging.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 57
+Explain the concept of memoization in the context of optimizing function performance.
+Memoization is a technique to cache the results of expensive function calls and return the cached result when the same inputs occur again, reducing computation time.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 58
+Explain the concept of optimistic and pessimistic concurrency control in database transactions.
+Optimistic concurrency control assumes no conflict and allows transactions to proceed, checking for conflicts only at the end. Pessimistic concurrency control locks data to prevent conflicts until the transaction is complete.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 59
+Explain the concept of WebAssembly and its role in web development.
+WebAssembly (Wasm) is a binary instruction format that enables high-performance execution of code on web browsers. It allows running languages other than JavaScript in the browser for performance-critical tasks.
+Сохранить для повторения
+Это полезно?
+Да
+Нет
+Добавить комментарий
+Посмотреть комментарии
+Вопрос 60
+What is the purpose of the 'Cross-Origin Opener Policy' (COOP) in web security?
+COOP is a security feature that controls how documents from different origins can interact. It helps prevent security vulnerabilities by isolating documents from different origins in a browsing context.
