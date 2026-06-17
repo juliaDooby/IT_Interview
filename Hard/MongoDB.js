@@ -2322,3 +2322,528 @@ Example of database commands in the MongoDB shell:
 use ecommerce;  // Switch to the 'ecommerce' database
 db.products.insertOne({ name: "Laptop", price: 999.99 }); // Insert a product into the 'products' collection
 ‍
+MongoDB Basics
+What is MongoDB? Explain some key features of MongoDB.
+MongoDB is a popular document-oriented NoSQL database that stores data in flexible, JSON-like documents with dynamic schemas. Key features include:
+
+Document model – Stores data in documents similar to JSON objects allowing for dynamic and flexible schemas
+High performance – Integrated caching layer for fast queries and indexes
+High availability – Replica sets and automatic failover provide redundancy and high availability
+Horizontal scalability – Automatic sharding partitions and distributes large datasets across machines
+Rich queries – Supports flexible ad-hoc queries and indexing similar to SQL databases
+Multi-document ACID transactions – Allows complex multi-document transactions with roll back capabilities
+What are the advantages of using MongoDB over SQL databases?
+Some key advantages include:
+
+Schemaless – Documents can have varying sets of fields, format and content
+Horizontal scalability through automatic sharding
+Easy replication and high availability
+Supports complex multi-document ACID transactions
+Better performance due to native non-relational data model
+Rich indexing and query capabilities including aggregation
+What are the typical use cases where MongoDB works very well?
+MongoDB works great for:
+
+Content management and delivery
+Mobile and social infrastructure
+User data management and analytics
+Data hub for microservices
+It’s also used by a lot of internet and e-commerce companies due to its scalability.
+
+What are some limitations of MongoDB?
+Some limitations are:
+
+Less mature than relational databases
+No native multi-document joins or complex multi-collection transactions
+Database level multi-document transactions only added recently
+Limited and slower complex analytical queries compared to SQL databases and data warehouses
+Core MongoDB Concepts
+Explain MongoDB database components – database, collection, document.
+The key components are:
+
+Document – A record in a MongoDB collection and the basic unit of data in MongoDB. Similar to JSON objects but exist inside collections.
+Collection – A group of MongoDB documents, equivalent to a table in relational databases. Documents in a collection can have varying sets of fields.
+Database – A container for MongoDB collections. Organizes collections per functional area. Can have multiple databases per MongoDB server instance.
+How are indexes different in MongoDB compared to SQL databases?
+In MongoDB, indexes work similarly for faster queries by sorting documents in the collection. Some key differences are:
+
+Automatically created on _id field for every collection
+Operate on document fields instead of table columns
+Support indexing on embedded document fields
+Compound indexes can include multiple fields
+Unique indexes enforced for document uniqueness
+What data types does MongoDB support?
+MongoDB supports:
+
+String – UTF-8 valid strings
+Integer – Numeric integers e.g. 32 bit, 64 bit
+Boolean – True / False
+Double – 64-bit IEEE floating point
+Decimal128 – 128-bit decimal floating point
+ObjectIds – Default value for _id field
+Date – Stores date and time in Unix format
+Timestamp – Special internal type
+Arrays – Stores arrays and embedded documents including other arrays
+When should I embed documents vs linking them?
+Rules of thumb:
+
+Embed when there is containment relationship between entities
+Embed when embedded data is mostly read-only
+Embed small documents for better performance
+Link documents when relationships get complex with multiple parent entities
+Link documents that grow rapidly or are updated often
+How does MongoDB handle high availability and reliability?
+MongoDB achieves high availability through replica sets where copies of data are hosted on multiple servers. If the primary node fails, an election process chooses a secondary node to become the new primary.
+
+It ensures reliability through:
+
+Replica sets with automatic failover
+Configurable write concern to acknowledge writes
+Journaling to recover damaged data files
+Read preference modes to send reads to secondary nodes
+What is sharding in MongoDB? When should you shard a database?
+Sharding is the process of partitioning data across multiple MongoDB server instances called shards, allowing for horizontal scaling as data volume and read/write loads increase for a database.
+
+Good cases for sharding are:
+
+Database size approaching storage limits of a single MongoDB server
+Write and read loads approaching IOPS limits of standalone replication
+Before sharding, typically indexing and replication are used to optimize database performance.
+
+Advanced Concepts
+How does journaling work in MongoDB? What options can you configure?
+Journaling writes all database operations sequentially to disk before changes are applied. This maintains a rollback position for unapplied changes in case recovery is needed.
+
+Configurable options include:
+
+Enabled (default) – Enables journal files to be created
+Disabled – Disable journaling which improves write performance but lose ability to recover to a point in time state.
+Durability can also be tuned via write concern options.
+
+What is a storage engine in MongoDB? Name some storage engines.
+The storage engine is the internal software component that determines how MongoDB stores data on disk, manages memory and caches query results. Storage engines interface with the MongoDB query engine.
+
+Popular storage engines include:
+
+WiredTiger (default) – Document level concurrency control and compression
+In-Memory (ephemeral) – All data in RAM, meant for high perf testing environments
+Encrypted – Encrypts data files with on disk encryption
+How does data consistency work in MongoDB?
+MongoDB preserves data consistency through transactions:
+
+On write level using the default write concern “w:1” which waits for writes to apply fully before returning success.
+Multi-document ACID transactions maintain document level consistency in a single statement across a replica set.
+Read concern levels control visibility of document changes across a replica set during transactions.
+Additional mechanisms like unique indexes and sharding balances also help prevent conflicts.
+
+How can you achieve ACID transactions in MongoDB?
+MongoDB 4.0+ provides multi-document ACID transaction support ensuring atomicity, consistency, isolation and durability across operations on multiple documents and collections. Steps involve:
+
+Starting a transaction session using client session API
+Executing transaction operations – insert, update, delete
+Commiting using commitTransaction to apply changes
+Transactions provide all-or-nothing execution, locks and isolation from other operations enabling complex workflows.
+
+What are MongoDB aggregations? Why are they important?
+Aggregations are complex analytical queries which process data and return computed results. They build analytical pipelines similar to the SELECT and GROUP BY concepts in SQL.
+
+Key capabilities include:
+
+Filtering row-level documents using $match
+Transformation using $project, $addFields
+Aggregate computations like counts, sums, averages
+Analytic grouping and processing using $group, $sort, $limit
+Aggregations are important for deriving business insights from large amounts of operational data.
+
+Query Tuning and Optimization
+How can you improve query performance in MongoDB? Mention some key methods.
+Key ways include:
+
+Adding indexes on fields used for filters, sorts and projections
+Using covered queries so all required fields come from indexes
+Pre-joining data via $lookup to avoid client-side logic
+Avoiding non-selective queries that process huge resultsets
+Batching reads and writes to reduce overheads
+Analyzing slow queries using database profiler
+When should you create indexes in MongoDB? What considerations should you keep in mind?
+Indexes should be added for fields used extensively in:
+
+Equality matches and filters like email, usernames
+Sorting operations
+Geospatial queries
+Considerations:
+
+Indexes impose overheads for writes so avoid over-indexing
+Optimize indexes via indexing sorted schemas and selective ranges
+Drop indexes not utilized by queries to minimize overhead
+The database profiler helps analyze index usage.
+
+How does MongoDB handle large datasets which don’t fit in RAM?
+MongoDB can work with datasets larger than available RAM through:
+
+Memory-mapped files representing data files for fast access
+WiredTiger compression reducing file sizes
+Indexes which fit in memory providing fast access without entire dataset in RAM
+Streaming sequential scans of datasets on disk without pulling everything into memory
+However, performance is optimal when indexes and the working dataset fits memory.
+
+How can you optimize memory utilization in MongoDB?
+Key ways include:
+
+Use smaller indexes optimized for essential queries
+Set cache size to fit important indexes/data in RAM
+Configure wiredTigerCursorHint for long running queries
+Enable compression to reduce database size on disk
+Use sharding and replicas to spread memory load
+How does concurrency work in MongoDB? How is it different from SQL databases?
+MongoDB uses multi-granularity locking at the document level unlike SQL databases which have table level locking allowing for greater concurrency.
+
+Other concurrency mechanisms include:
+
+Reader-writer locks allowing parallel readers
+Multi-document transactions isolate operations and lock affected documents
+Snapshot isolation via readConcern option
+No dirty reads of uncommitted data like SQL databases
+Overall, MongoDB scales better with increased users and load compared to SQL databases.
+
+What are dollar ($) prefixed operators in MongoDB? Provide some examples.
+The dollar prefixed operators provide a variety of document processing capabilities including:
+
+$lookup – Joins documents between collections
+$match – Filters documents
+$project, $addFields – Reshapes documents adding/removing fields
+$group – Aggregate records by a key
+$sort, $skip, $limit – Sorting and pagination
+$graphLookup – Recursive document joins
+These operators power the flexible aggregations framework.
+
+Administration and Architecture
+How can you achieve horizontal scalability in MongoDB?
+MongoDB can horizontally scale databases across many commodity servers via:
+
+Sharding – Automatic partitioning of data by key range across shards. Spread data across shards to utilize additional CPU and storage.
+
+Replica Sets – Maintain redundant copies of data on different servers. Spread load across secondaries while enabling high availability.
+
+Both sharding and replication provide horizontal scalability for databases as load increases.
+
+What components make up a MongoDB replica set? Explain their roles.
+A MongoDB replica set has following member components:
+
+Primary – The main node receiving all write operations which then get replicated asynchronously to secondaries.
+Secondary – Holds replicated copies of primary’s data. Used for reads and backup but no writes.
+Arbiter – Does not hold data but participates in elections. Breaks ties when voting on primary.
+Hidden – Holds replicated data but is invisible to client applications during failover.
+You have a 3 member MongoDB replica set and the primary goes down. Explain the failover process.
+When the primary goes down, an election will be initiated by the cluster. The secondaries will hold an election to pick a new primary:
+
+Both secondaries increment their optime (operation time) and compare with each other.
+The secondary with the latest optime wins and gets voted primary by the other secondary.
+The arbiter breaks vote ties between secondaries, if any.
+The elected secondary gets promoted to be primary and begins accepting writes.
+The old primary, when restored, will resync data from new primary and join back as a secondary.
+Your MongoDB deployment uses a cluster with replica set and shards. Draw a diagram depicting it.
+How does connection pooling work in MongoDB? Should you use it?
+Connection pooling maintains a cache pool of connections to the mongod database instead of creating new client connections every time. This improves performance and reduces latency by reusing connections from the pool instead of repeatedly connecting afresh.
+
+Benefits include:
+
+Faster queries due to reduced overhead of creating new TCP connections and handshakes
+Reuse authentication, indexes and cached data associated with connections
+Configurable max pool size limiting connections to avoid overloading DB
+So connection pooling should generally be enabled.
+
+How can you backup and restore MongoDB databases? What options do you have?
+The main approaches for backup and restore are:
+
+File system snapshots – Direct file system snapshots of MongoDB data files and metadata. Restores involve replacing original data files with the snapshotted files.
+
+mongodump and mongorestore utilities – Simple single-node backup via mongodump producing BSON files from a database. Supports interactive restores via mongorestore.
+
+Ops Manager backup – Full cluster, point-in-time recovery integrated with Ops Manager monitoring. Handles sharding and replication automatically.
+
+There are also managed cloud services providing backup functionalities for MongoDB Atlas database as a service.
+
+How can you secure your MongoDB databases against unauthorized access?
+Primary ways to secure MongoDB databases include:
+
+Authentication – via usernames and passwords at all layers
+Network encryption – SSL/TLS, VPN for encrypting communication
+Access control – Role based authorization controls resource access
+Encryption at rest – Encrypt stored data files via encryption keys
+Penetration testing – Regularly security audit MongoDB deployment
+Additionally, follow security best practices for user roles, firewalls, OS hardening etc.
+
+You have a huge collection called LogData over 1 TB in size. It is growing rapidly each month. How can you effectively manage this in MongoDB?
+For optimal management of such huge and rapidly growing datasets:
+
+Use archival for historical log data into lower grade storage
+Introduce an intelligent partitioning strategy like by year or month
+Shard collection horizontally across serve clusters
+Compress data efficiently using sharding and storage engine compression
+Restrict indexes to only necessary fields instead of entire documents
+Sharding plus archiving older, less accessed partitions can effectively scale performance. Intelligent data lifecycle management is key.
+
+Application Development and Tooling
+Compare MongoDB with DynamoDB. What are the pros and cons of each?
+MongoDB
+
+Pros:
+
+More controls and flexibility including indexing, data model
+Tunable consistency, durability etc
+Aggregation framework and complex querying
+Sharding, access controls and operational tooling
+Multi cloud and on-prem deployment options
+Cons:
+
+Requires server setup and management
+No serverless or consumption based pricing
+DynamoDB
+
+Pros:
+
+Fully managed, serverless database
+Consumption based pricing, no servers to manage
+Integrated with other AWS services
+SSD backed storage with auto scaling capabilities
+Cons:
+
+Proprietary data store with restricted access controls
+Limited query, index and data modeling capabilities
+Vendor and technology lock-in
+Your application uses MongoDB to store user profiles, games scores and analytics events. Design a document model keeping in mind ease of access.
+Here is one approach for the document model:
+
+User Profile
+
+{
+   _id: "user1",
+   name: "John",
+   email: "john@example.com",
+   addresses: [
+      {
+         street: "123 Main St",
+         city: "Anytown",
+         state: "CA"   
+      }
+   ]
+}
+Game Scores
+
+{
+   _id: new ObjectId(),
+   user_id: "user1", 
+   game_id: "chess_553",
+   score: 10,
+   date: ISODate() 
+}
+Analytics Events
+
+{
+   _id: new ObjectId(),
+   user_id: "user1",
+   event: "login", 
+   timestamp: ISODate(),
+   context: {
+      device: "Pixel 5"
+   }
+}
+Keeping embedded related data improves lookup performance over references. Highly variable fields can go into sub-documents.
+
+You need to migrate a relational database to MongoDB. What would be your strategy?
+The migration approach would be:
+
+Analyze the schema – table relationships, constraints, data types
+Map entities to MongoDB collections and SQL joins to document embedding/linking
+Model one-to-many relationships using document references
+Implement validation rules for data integrity needs
+Incrementally migrate individual tables data using MongoDB import tools
+Optimize indexes, queries and validate migrated data statistics
+Incrementally shift read/write traffic from old database to MongoDB
+Doing the migration incrementally while keeping the old system as backup allows for gradual transition monitoring for issues.
+
+Your application uses MongoDB to store product details, inventory status and orders. Design an efficient schema keeping in mind ease of access and storage needs.
+Here is one approach for the schema:
+
+Product Details
+
+{
+  _id: "prod_553",
+  name: "Leather Boots",
+  description: "Durable leather boots", 
+  category_id: "footwear_123", 
+  images: [ "http://image1.png", "http://image2.png"] 
+}
+Inventory Status
+
+{
+  _id: new ObjectId(),
+  product_id: "prod_553",
+  warehouse: "ABC",
+  qty_available: 500 
+}
+What are some best practices when designing MongoDB schemas for applications?
+Some key best practices include:
+
+Structure related data together via embedding for better data locality
+Use sub-documents to store arrays or variable attributes
+Duplicate some data across documents if it avoids expensive joins
+Split volatile attributes (like logs) and static attributes into separate collections
+Use database references to link related data that may exceed 16MB document size limits
+Your application needs to optimize storage usage in MongoDB for analytics collection. What options would you consider?
+Some good options to optimize storage are:
+
+Introduce TTL indexes to auto-delete old documents
+Use MongoDB Charts for analyzing storage and growth
+Compress data and indexes using compression libraries
+Set relevant caching settings for better RAM usage
+Shard collection across clusters to distribute storage needs
+What are some alternatives to MongoDB as a document database?
+Some popular alternatives are:
+
+CouchDB – Open source JSON document store focused on web apps
+Elasticsearch – Search and analytics engine with JSON documents
+CosmosDB – Microsoft’s distributed and scalable document database
+DynamoDB – Amazon’s key-value and document database with managed option
+RethinkDB – Open source distributed JSON document database
+What are some key drivers leading to adoption of MongoDB?
+Drivers leading adoption include:
+
+Ability to scale up via horizontal scalability
+Flexible JSON-style data model fitting modern apps
+Speed and performance gains compared to relational databases
+Agile methodology friendly due to schema flexibility
+Rich platform capabilities including indexing, aggregation, transactions etc.
+As modern internet and mobile apps grow, MongoDB addresses their scaling and performance demands effectively.
+
+Operations, Scalability and Reliability
+As a DBA, how can you monitor performance and track issues in production MongoDB deployments?
+Good ways to monitor MongoDB include:
+
+Enabling the free MongoDB Cloud Manager to get overview charts
+Setting up the database profiler to analyze slow queries
+Tracking real-time stats using database commands like db.stats()
+Enabling CloudWatch metrics for managed deployments
+Getting alerts for replication lag, connection errors etc.
+This helps diagnose root causes like bad indexes, slow disks, replica set issues etc.
+
+How can you benchmark performance when migrating from a relational database like MySQL to MongoDB?
+Approaches for benchmarking include:
+
+Use consistent test datasets across both databases
+Identify typical reads vs writes vs analytics queries
+Script test queries covering various use cases
+Parameterize complex queries for dynamic values
+Ensure indexes, memory settings are well tuned
+Measure metrics – throughput, response times, resource usage
+This gives comparative insights on MongoDB gains for app queries.
+
+As your cluster grows, how can you ensure optimal utilization of memory and storage resources in MongoDB?
+Some ways to optimize resource utilization are:
+
+Storage: Sharding and archiving older data into cheaper storage
+Memory: Capping indexes to essential fields via partial and sparse indexes
+Network: Segmenting analytics and OLTP queries to separate clusters
+Cache: Setting memory limits for indexes, documents and on-disk cache
+Replication: Tuning write concern durability vs performance
+Continuous benchmarking and load testing helps gauge resource usage.
+
+How can you manage costs for MongoDB clusters running in the cloud? What specific approaches would you take?
+Good ways to optimize cloud costs include:
+
+Right size instance types to utilize capacity without over-provisioning
+Use auto-scaling rules to scale resource capacity based on utilization metrics
+Build clusters across regions enabling policies to use cheaper regions
+Analyze usage trends and optimize indexes, queries, compression to use lower resource clusters
+Migrate to MongoDB Atlas to reduce ops overhead and leverage consumption plans
+The key is continuous monitoring to optimize clusters for cost efficiency.
+
+What key things can you do to ensure high availability and prevent downtime in MongoDB deployments?
+Key things include:
+
+Configuring replica sets with multiple secondary nodes
+Enabling automated failover so new primary is quickly elected
+Using sharding to prevent single server outages affecting entire system
+Setting up monitoring to get early warnings of any degradation
+Implementing backups via snapshotting or ops manager in case failover fails
+Testing redundancy mechanisms regularly to uncover risks
+How can you optimize network utilization and traffic while deploying MongoDB in a multi-region setup?
+Some ways to optimize network performance are:
+
+Enable compression on clients and servers to reduce traffic
+Increase batch size for bulk inserts and reads to reduce round trips
+Perform analytics queries on secondaries closest to users instead of primary
+Use a read preference to route reads to lowest latency region
+Use caching servers to reduce external traffic to database network
+Implement rate limiting if network capacity is saturated
+What are some key server-side performance optimization techniques in MongoDB?
+Some key optimizations include:
+
+Indexing fields used for filtering, sorting and joins
+Using covered queries retrieving data solely from indexes
+Adding RAM to fit working set and indexes in memory
+Tuning write concern durability vs speed tradeoffs
+Sharding data across more machines parallelizing operations
+Setting caching policies to reduce disk access
+Profiling queries helps identify expensive operations to optimize.
+
+Trends and Future
+What are some emerging trends you see regarding MongoDB usage?
+Some emerging trends include:
+
+Shift towards multi-cloud and hybrid cloud deployments using MongoDB Atlas
+Use as operational data hub and streaming data platform integrated with other data systems
+Increased adoption of serverless offerings like MongoDB Realm and Atlas functions
+Leveraging graph-like capabilities via aggregations and Atlas Search
+Increased real-time analytics for mobile and IoT applications
+As data volumes and workloads increase, MongoDB’s distributed capabilities provide scalability across diverse use cases.
+
+Can you compare and contrast MongoDB with other NoSQL databases like Cassandra and Couchbase?
+Cassandra: Wide column store optimized for high write throughput and scalability across data centers. Limited ad-hoc querying and transactions.
+
+MongoDB: More flexible JSON documents with indexing, expressive queries and transactions. Horizontally scalable via auto-sharding.
+
+Couchbase: Multi-model supporting key-value lookups, SQL-like queries and JSON documents. Focuses on sub-millisecond latencies.
+
+So MongoDB differs in being document oriented, less query limited and supporting richer durability guarantees relative to the other NoSQL stores.
+
+How does MongoDB provide distributed transaction capabilities ?
+MongoDB 4.0+ provides:
+
+Multi-document ACID transactions ensuring atomic, consistent and isolated operations across documents and sharding zones
+Snapshot isolation using readConcern to do repeatable reads isolated from other transactions
+Writes with tunable durability guarantees via write concern settings
+Multi-document statements enforce all-or-nothing execution
+So MongoDB now has key transaction mechanisms comparable to relational databases.
+
+Do you foresee graph capabilities being added to MongoDB? Could it evolve as a graph database?
+Possibly yes. Recent enhancements include:
+
+$graphLookup stage allowing graph-like traversals between documents
+Native realm capabilities making MongoDB a lower latency data hub
+MongoDB Charts providing visual graph representations
+As adoption grows for real-time recommendations and social graphs, MongoDB could evolve graph-like database capabilities. Native graph processing features may get added.
+
+Can MongoDB be used as a time-series database for IoT data?
+Yes, MongoDB provides good capabilities to handle high velocity time-series IoT data including:
+
+High ingestion write throughput capacity
+Flexible dynamic schemas fitting IoT data model
+Compression reducing storage needs
+Indexing optimizing time-range queries by timestamp
+Analytic capabilities like aggregations
+Atlas cloud scale out as data volumes increase
+So MongoDB provides scalable ingestion and analytics foundation for IoT use cases.
+
+Do you think MongoDB is a future proof database technology? Why or why not?
+Yes, MongoDB seems future proof based on its sustained growth and adoption over the past decade across industries and use cases.
+
+Reasons it is future proof:
+
+Document model fitting modern application data formats
+Distributed architecture built ground up for cloud scale
+Rich ecosystem of tools for varied workloads – analytics, transactions, search etc.
+Ability to innovate rapidly across query execution, indexing, performance etc.
+Multi-cloud via Atlas boosting productivity and scale
+As long as data volumes and workload complexity increases, MongoDB’s core strengths will sustain its prominence.
