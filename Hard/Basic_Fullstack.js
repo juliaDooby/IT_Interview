@@ -26,6 +26,7 @@
 
 В России на первое полугодие 2018 года средняя зарплата ИТ-специалистов составляет около 100 тыс. рублей в месяц. При этом диапазон зарплат достаточно большой — от 14 до 350 тыс. рублей.
 
+
 В целом зарплата по миру в сфере разработки может достигать 89 000 $ в год.
 
 Установите реалистичные дедлайны
@@ -820,3 +821,402 @@ Get to know the company and the projects they are working on. This will help to 
 Research the company culture, values, work ethics to ensure a good fit.
 Find out the developmental opportunities for full stack developers in the company.
 By following these tips and putting in the time to prepare, you can give yourself the best chance of succeeding in your next full stack developer interview.
+
+Full Stack Developer Interview Questions and Answers
+Are you in search of full-stack developer job opportunities? You are someone proficient in developing frontend and backend components of an application or website. You might be thinking that full-stack development has a lot of job opportunities in the market. Isn't it? Well, you are right. But let me tell you that the interview for such a comprehensive profile can be challenging to crack.
+
+While preparing for such a versatile job profile, it's beneficial to consider the questions and prepare interesting and intelligent responses. To help you with this, we are here with expert-designed full-stack interview questions and answers. This Full Stack tutorial is a detailed guide covering all the minute aspects.
+
+Explore the Roadmap articles for Full-Stack Development:
+Full Stack Developer Roadmap: A Beginner Guide [2024]
+MERN Stack Roadmap: Become a Full-Stack Developer in 2025
+Frontend Developer Roadmap: The Ultimate Guide 2024
+Backend Developer Roadmap: The Ultimate Guide 2024
+Full Stack Developer Interview Questions and Answers for Beginners
+1. What does full stack development mean?
+Full stack development in simple terms is developing the complete application single-handedly. From designing interactive user interfaces to deploying the application on the server is called full stack development. There are three layers to this process:
+
+Presentation layer
+Business logic layer
+Database layer.
+2. What exactly do Full Stack Web Developers perform?
+Understand client requirements through meetings with product managers and the development team.
+Making a well-planned strategy to accomplish the development task.
+Design interactive user interfaces using HTML, CSS, and frameworks like Angular.
+Develop the backend architecture using programming languages like .NET, Java, etc.
+Integrate the front end and back end of the application.
+Database design and manipulation using various queries.
+Use API, third-party software, and version control systems with proper care.
+Application development keeping the latest trends in mind.
+3. List a few development tools for Full Stack.
+Visual Studio Code
+GitHub
+WebStorm
+Backbone
+Slack
+Electron
+TypeScript
+CodePen
+Read More - Who is a Full Stack Developer? A Complete Guide
+4. List out the skills required for a full-stack developer.
+The skills of a full-stack developer are as follows:
+
+Basic languages: Proficiency in HTML, CSS, and SQL is a requirement.
+Front-end frameworks: JavaScript, TypeScript, Python, Ruby, PHP; BootStrap, Angular, Vue.JS, React
+Back-end frameworks: Ruby on Rails, Django, Express, and Node.JS
+Databases: Cassandra, Apache Storm, Sphinx, MySQL, SQLite, Postgres, and MongoDB
+Additional skills suggested: Git, Machine Learning, SSH, Linux Command, Data Structures, and Character encoding.
+5. List all the methods to incorporate CSS into your HTML document.
+Methods for adding CSS code to an HTML document:
+
+Inline CSS: Applying the style keyword as an attribute in HTML tags, this technique includes the CSS code.
+Internal CSS: The <style> element must be used in the <head> tag, representing the HTML document's head section.
+External CSS: To incorporate a CSS file into the HTML content, use the <link> tag in HTML.
+6. Describe what HTML's semantic elements are.
+HTML's semantic elements are HTML tags that convey their inherent meaning to the developers and browsers. For example, tags like <header>, and <article> specify the enclosed content type. These elements make it easy for the developers to understand the page's structure and purpose.
+
+Some of the most useful semantic elements are:
+
+<article>: Specifies self-contained content. You can use this element in writing blogs, newspaper articles, user comments, etc.
+<header>: specifies the header section of the web page.
+<footer>: specifies the footer section of the document.
+<figure>: contains diagrams, illustrations, etc.
+<nav>: used for the navigation menu
+7. Explain HTML elements, tags, and attributes.
+HTML Tags: In HTML, tags are keywords enclosed in "<>". Tags specify the instructions to the browser.
+Attributes in HTML: Attributes are entities specifying characteristics and additional properties of an HTML element.
+HTML Elements: An HTML element is a grouping of HTML attributes and HTML tags that are used to show the content of an HTML page on the user's screen.
+8. Describe JavaScript and list the libraries that it uses.
+JavaScript is a general-purpose programming language built on the typescript foundation and based on object-oriented programming concepts. JavaScript is a widely used computer language that may be used for client-side and server-side scripting. JavaScript uses the following libraries:
+
+React
+Angular
+Next.Js
+Node.Js
+Express.Js
+Vue.Js
+9. Describe the JavaScript callback function concept.
+In JavaScript, a callback is a function that is supplied as input to another function and then asked to perform a task or action inside the outer function. Callback functions in JavaScript can be used both synchronously and asynchronously. The node's APIs are all constructed so that callbacks are supported.
+
+JavaScript callback
+
+10. What do React State and Prop mean?
+State in React: "State" is a component-specific variable used in React to manage and store data. Similar to a local variable, it can only be changed with this.setState, which causes a component to render again.
+Prop in React: "Props" in React store attribute values for components and functions similarly to HTML attributes. They behave as immutable data and are read-only.
+Prop
+
+11. What is DOM manipulation, and how is it different from BOM?
+The Document Object Model (DOM) in JavaScript is a tree-like structure holding attributes and methods for HTML components. They may be manipulated using JavaScript. The distinction between BOM and DOM:
+
+DOM	BOM
+The Document Object Model is the full name of DOM.	The Browser Object Model is the full name of this concept.
+The manipulation of HTML documents is done via the DOM.	The browser window can be accessed and manipulated using the BOM.
+It operates according to a set of established rules.	Every browser has its own set of standard rules; it doesn't have a set of universal standards.
+The BOM subset is called DOM.	DOM's superset is BOM.
+Read More: Understanding DOM and BOM
+12. Describe how Angular uses the concept of scope.
+The term "scope" in Angular describes the binding portion that sits between the controller in JavaScript and the HTML view. It also includes the objects and data for the application. In Angular, there are two kinds of scope.js:
+
+$scope: The $scope is a JavaScript object facilitating communication between the view and controller.
+$rootScope: In Angular, $rootScope is the highest scope. An application can only have one $rootScope, which is shared by every component. The $rootScope is the parent of all other $scopes.
+13 What are the characteristics of Node Js?
+Node.Js allows developers significantly in developing the back end, different pointers because of which Node.Js is preferred by the developers due to:
+
+Open-Source Framework
+Asynchronous Programming
+Utility of NPM
+High Performance
+High Uptime
+High Scalability
+Single-Threaded Framework
+14. Define and explain what is meant by NPM.
+Developers utilize NPM (Node Package Manager), a web-based JavaScript software registry, to exchange, download, and borrow different kinds of packages for installation and dependency resolution. Node Package Manager comprises three separate component types:
+
+Website
+Command Line Interface
+Registry
+15. What does MongoDB's term "Replication" mean?
+In MongoDB, replication refers to the process of synchronizing data among many servers. Replication provides redundancy and increases data availability by creating several copies of the data on different database servers. A database is protected by replication from the loss of a single server. Replication can also help users recover from service outages and device malfunctions. Users can designate one copy of the data for backup, reporting, or disaster recovery.
+
+16. Describe the steps involved in creating a new PostgreSQL database.
+In PostgreSQL, there are two methods available for creating a new database:
+
+Using pgAdmin: In this approach, the PostgreSQL database is created using the pgAdmin GUI.
+Using SQL Shell: In this technique, the CLI that SQL provides is used. To create a new database, users need to write commands in the SQL shell.
+17. Describe the distinction between the SQL commands TRUNCATE and DROP.
+The following are the distinctions between SQL's DROP and TRUNCATE commands:
+
+DROP Command	TRUNCATE Command
+To remove the entire table from the database, use drop.	The Truncate command in a database removes every row from a table.
+The Drop command releases the RAM allotted and removes the table's whole structure from the database.	The truncate command does not remove the database's whole table structure, nor is the memory allotted to it released.
+The DROP command cannot be reversed once it has been used.	Reversing the TRUNCATE command is possible.
+When compared to the TRUNCATE command, the DROP command executes more slowly.	When compared to the DROP command, the TRUNCATE command executes more quickly.
+The DROP command does not contain the view table.	The TRUNCATE command contains the view table.
+Syntax – DROP TABLE Scholarhat;	Syntax – TRUNCATE TABLE Scholarhat;
+Read More: Basics of SQL Commands
+18. Describe Node.Js's buffers and streams.
+Buffers: In Node.Js, buffers are the memory segments allotted to the user's system and utilized to hold unprocessed binary data. Users can only modify the buffer's size once; it cannot be altered. While buffers and arrays are similar, buffers can only handle binary data and cannot be resized, whereas arrays can be resized.
+Streams: The word "Stream" in Node.Js describes an abstract interface that is utilized to handle data flowing during a process. We utilize a node:stream API to implement the stream interface. In Node.Js, different stream objects are possible.
+19. What does scaffolding in Express.Js mean?
+In Express.Js, "scaffolding" refers to the process of creating the web application's basic skeletal structure. Users can establish their public domain profiles with the assistance of scaffolding. Scaffolding also facilitates the integration of middleware into the program, the generation of distinct route files, and numerous other tasks. It initiates the fundamental construction of the application for us.
+
+20. Describe how Node.Js and Django differ.
+The distinguishing characteristics that set Node Js and Django apart are listed below:
+
+Node.js	Django
+Web applications can be developed using an open-source framework called Node.Js, which is based on JavaScript.	One kind of Python-based open-source framework for creating web applications is called Django.
+C, CPP, and JavaScript are the three programming languages used in the development of the Node.Js framework.	The Django framework is developed using Python.
+Applications created with Node.Js are more scalable than those created with Django.	Compared to apps created using Node.Js, those created with Django are less scalable.
+Node.Js uses the concept of event-driven programming.	When developing, Django conforms to the Model View Template architecture principle.
+Full Stack Developer Interview Questions and Answers for Intermediates
+21. Describe the importance of Angular routing.
+In Angular, routing describes how a single-page web application allows users to navigate between different web pages.
+With the help of this technology, users can create various
+URL types that can be used to access different parts of the online application. This requires adding the ngRoute module to the requirements.
+The developers use the ngRoute module to access different web page components without reloading the entire application.
+The routing concept in Angular allows developers to create a single-page online application that may send users to several web pages.
+Read More: Routing in Angular
+22. What distinguishes the Angular ng-show and ng-if directives?
+Both of the terminologies show similar features. These conditions typically control how well an Angular web application performs. To have a deeper comprehension of them, analyze the differences between them:
+
+ng-show Directive	ng-if Directive
+Depending on the expression that the attribute provides, this directive is utilized to either show or conceal the HTML components.	Depending on the supplied phrase, this directive can be used to either recreate or destroy a portion of the DOM tree.
+It can be applied to the application to both show and hide the produced data.	Only when the specified condition is met does the data get processed.
+23. In terms of database systems, what does ACID mean?
+ACID is an acronym for Atomicity, Consistency, Isolation, and Durability. The term ACID in database systems describes a set of uniform characteristics that guarantee dependable processing of database transactions.
+
+24. How can one stop a bot from using an API open to the public?
+Data scraping cannot be totally stopped if the API's data is available to the general public. However, rate-limiting (throttling) is an efficient method that will discourage the majority of users and bots. A device will be throttled if it makes a certain number of requests in a certain amount of time. When more requests are made than allowed, an HTTP error 429 Too Many Attempts should be raised. Additional ways to stop a bot from scraping include:
+
+Requests are being blocked depending on their user agent string.
+Creating "session" access tokens, which are transient, for users at the front end.
+25. What is a RESTful API?
+Representational state transfer is referred to as REST. An application programming interface (API or web API) that employs HTTP requests to retrieve and manage data is referred to as RESTful API or REST API. RESTful API is an interface that two computer systems use to exchange information securely over the internet. The POST, GET, DELETE, and OUT data types—which relate to reading, deleting, creating, and activities involving services—can be utilized with such data.
+
+26. How is the HAVING clause different from the WHERE clause?
+The distinction between the HAVING clause and the WHERE clause is described as follows:
+
+WHERE Clause	HAVING Clause
+It removes entries from a table based on a predetermined rule.	It removes records from a group based on an established rule.
+The GROUP BY clause is not necessary when utilizing the WHERE clause. The WHERE clause is row-major as well.	Without using the GROUP BY clause, we are unable to use the HAVING clause. The HAVING clause is also in column-major.
+The WHERE clause can execute queries like SELECT, UPDATE, and DELETE but cannot support aggregate functions.	The HAVING clause can only execute a SELECT statement and can support aggregate functions.
+The GROUP BY clause comes after the WHERE clause.	The GROUP BY clause comes before the HAVING clause.
+Read More: Use of Group By and Having Clause
+27. What distinguishes denormalization from normalization?
+Normalization	Denormalization
+Normalization eliminates redundant and inconsistent data from the table.	Queries are executed with redundancy thanks to denormalization.
+Data integrity is protected.	Lack of maintenance of data integrity
+There is no increase in tables during normalization.	There is no decrease in tables during denormalization.
+Disc space utilization is optimized with normalization.	The disc spaces are not optimized by denormalization.
+Read More: Understanding Database Normalization in SQL with Example
+28. What are Cluster & Non-Cluster Indexes in PostgreSQL?
+Cluster Indexes: Cluster indexes are a kind of index that PostgreSQL uses to group data rows in a database according to their key values. In a PostgreSQL database, a table may have just one cluster-based index. The order in which the data is stored in the database can also be determined by these clustered indexes.
+Non-Cluster Indexes: In non-clustered indexing, the data and the index that corresponds to it are stored apart. In this case, the concept of a pointer is applicable; the data's position is indicated by a pointer that exists. Secondary indexing is another name for this kind of indexing. A PostgreSQL database may have more than one non-clustered index depending on the designated table.
+29. What is Cross-Origin Resource Sharing (CORS) and how is it integrated with Express.Js?
+Cross-Origin Resource Sharing is referred to as CORS. Through this procedure, we are able to obtain authority over many domains for diverse web pages. Web script integration with the native domain's external content is carried out more smoothly when CORS is used.
+
+Cross-Origin Resource Sharing
+
+30. Describe the Long Polling Process.
+Web developers utilize the long polling pattern to increase the amount of data that is pushed up from the server toward the client. The client asks the server for information via long polling. Rather than providing an empty resource in the event that the server lacks information about the client, it will hold the request and wait for more information to become available.
+
+Long Polling
+
+31. What is Callback Hell and how does one resolve it?
+Callback hell is the term for a situation in JavaScript where the developer tries to implement numerous asynchronous operations at once. Callback functions are nested to create code that is easily difficult to comprehend, prone to errors, and challenging to manage. We may effectively address it by applying the following methods:
+
+Divide big functions into more manageable ones.
+Apply Promises
+Use Wait or Async
+32. What does the term Inversion of Control (IoC) mean?
+Software developers use the general phrase "inversion of control," or "IoC," to describe a strategy for separating system levels and components. Primarily, it is used in relation to object-oriented programming. With the use of Inversion of Control, control of objects or sections of a program is moved to a framework or container. Numerous techniques, including dependency injection, factory patterns, strategy design patterns, and service locator patterns, can be used to do it.
+
+33. What is Continuous Integration?
+Developers constantly integrate code into a shared repository using continuous integration (CI) to find issues early on. CI is a method that uses automated technologies to verify the accuracy of new code prior to integration. Tests and builds that are automated confirm each check-in.
+
+Continuous Integration
+
+34. What distinguishes GraphQL from REST?
+GraphQL	REST
+Declarative data fetching with precise results.	Dependent on HTTP and URI methods.
+High predictability of query results.	Variability in response based on endpoint.
+Maturity varies, integration of data validation.	Multiple authentication methods are available.
+Retrieve everything needed in a single request.	Potential for over-fetching, multiple requests.
+JSON only.	XML, YAML, JSON, HTML, and more.
+Mobile apps and microservices.	Simple and resource-driven applications.
+35. What does the Observer pattern entail?
+The Observer pattern is used to build a one-to-many dependency between objects, meaning that all of its dependents are automatically updated and notified when an object changes its state. The subject is the object being watched, while the observer is the object that keeps an eye on the status of another object.
+
+Observer design pattern
+
+36. Explain load time.
+It's the average time a page takes to load on the screen. The time calculation starts when the user clicks the link or writes the URL to open a particular page. When the page loads in the browser completely, the calculation ends.
+
+37. What is a URI?
+URIs are Uniform Resource Identifiers. They are strings used in REST APIs to identify an API resource on the API server. Each resource has its own unique URI, which, when included in an HTTP request, allows clients to target that resource and perform actions on it. Addressing is the process of targeting a resource with its URI.
+
+The format of a URI is
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+
+38. What are the benefits of using Angular?
+The top benefits of utilizing the Angular framework are listed below:
+
+Angular facilitates bidirectional data coupling.
+Its architecture adheres to the MVC pattern.
+Both Angular and static templates are supported.
+It makes adding a custom directive easier.
+RESTfull services are also supported.
+Angular provides functionality for validations.
+Angular enables Client and server communication.
+Support for dependency injection is offered.
+It has strong features like animation and event handlers, among others.
+39. Explain System.out.println() in Java.
+System.out.println() prints the message on the console.
+
+System is a class present in java.lang package.
+out is the static variable of type PrintStream class present in the System class
+.println() is the method present in the PrintStream class.
+40. Explain the control flow function in Node.js.
+The control flow function is the sequence in which statements or functions are executed. Since I/O operations are non-blocking in Node.js, control flow cannot be linear. Therefore, it registers a callback to the event loop and passes the control back to the node, so that the next lines of code can run without interruption.
+
+
+[code language="javascript"]
+fs.readFile('/root/text.txt', func(err, data){
+console.log(data);
+});
+
+console.log("This is displayed first");
+[/code] 
+Full Stack Developer Interview Questions and Answers for Experienced
+41. What does Dependency Injection mean?
+IoC is implemented using a design pattern called Dependency Injection. Rather than the object itself, the container is the one that injects objects or connects objects with other objects. Three different class types are involved:
+
+Client class: The service class determines this.
+Service class: It offersclient-classservices.
+Injector class: The client class receives objects from the service class through the injector class.
+Dependency injection
+
+Read More: Dependency Injection in Angular
+42. Describe the distinction between rolling deployment and blue/green deployment.
+A new version of the application gradually replaces the older one in a rolling deployment.
+It takes time to upgrade the system, and during that time, old and new versions will coexist without compromising functionality or user experience.
+Two identical production environments operate in tandem in a blue-green deployment.
+One is a blue environment that receives all user traffic and uses it to run the production environment.
+The green environment is another one you would like to improve.
+Both make use of the same app settings and database backend.
+Traffic is routed towards a green environment if the environment is changed from blue to green.
+43. When you talk about referential transparency in functional programming, what do you mean?
+Referential transparency is a term from functional programming that allows you to change the expression without affecting the program's output. This indicates that the program's behavior remains unchanged regardless of whether the input is a reference or the actual value to which the reference points.
+
+44. How do "resetting" and "normalizing" CSS differ?
+Resetting	Normalizing
+Eliminates all of the default browser styles.	Elements that have been normalized will be displayed uniformly in all browsers.
+Fixes bugs	Includes bug fixes
+45. What does JavaScript Event Bubbling & Capturing mean?
+Event Bubbling: This technique involves the innermost element capturing and handling the event first, after which it spreads to the outermost element. From child elements, events move up the DOM tree until they are processed at the top element.
+Event Capturing: In this method, the event is initially detected and processed by the outermost element, after which it spreads to the innermost element. The target elements that started the event cycle are the last ones to propagate after the wrapper elements.
+46. What does the term "MEAN Stack" mean?
+The acronym MEAN stands for
+
+Node.js
+Angular
+ExpressJS
+MongoDB.
+It is a group of JavaScript-based technologies for creating web apps. Even though it's a jumble of disparate technologies, they're all built around JavaScript. Because of its great user-friendliness, this stack is perfect for developing dynamic websites and applications. You may create web-based prototypes quickly and simply using this open-source, free stack.
+
+Read More: Mean Stack Full Form
+47. Describe the Docker concept.
+Docker is a well-known containerization platform that packs your application and all its dependencies collectively in the structure of containers. As a result, it is guaranteed that your application will work flawlessly whether the environment is test, development, or production. The Docker container contains a piece of software in a whole file system. This system comprises all components essential for operation.
+
+Read More: What is Docker? Docker Container: A Deep Dive into Docker
+48. Differentiate between client-side and server-side scripting.
+Server-side scripting	Client-side scripting
+Functions in the background and is hidden from the client.	Front-end work and scripts are visible to users.
+Required Server Interaction.	Communicating with the server is not necessary.
+ColdFusion, ASP.net, Python, Ruby on Rails, etc.	JavaScript, HTML, CSS, and so on.
+Secure Enough	Insecure
+49. What is a Java connection leak, and how is it fixed?
+When a developer neglects to terminate the JDBC connection, it's a Java Connection Leak. When utilizing a connection pool, such as DBCP, in Java web development, connection leaks are most frequently encountered.
+
+By cutting the connection and paying close attention to the error handling code, we may repair a connection leak.
+
+50. How can we improve the performance and load time of a website?
+Various methods exist for optimizing your website to achieve optimal performance, including:
+
+ReduceHTTP requests.
+Cached browser data.
+Take advantage of CDNs and delete any unnecessary files or scripts.
+Use HTML5 and CSS3.
+Reduce file size and optimize images.
+Cache optimization.
+Make Style Sheets and JavaScript smaller.
+51. What distinguishes MVP (Model View Presenter) from MVC (Model View Controller)?
+Aspect	MVC	MVP
+Components	Model, View, Controller	Model, View, Presenter
+Controller/Presenter Role	A bridge between View and Model	Manages UI logic and Model interaction
+View Update	Controller updates View on Model change	The presenter determines what to show
+Relationship (Controller)	Many-to-one (multiple Views per Controller)	One-to-one (one View per Presenter)
+Unit Testing Support	Limited	Highly Supported
+52. Which types of CSS selectors are there? Describe.
+In CSS, selectors are methods for locating a specific HTML element within the CSS file for styling. There are five different kinds of selectors in CSS:
+
+Simple Selectors: These choose elements according to their name, class, and id.
+Combinator selectors: they choose elements according to how they relate to one another.
+Pseudo-Class Selectors: These choose items according to their current condition.
+Pseudo-Elements Selectors: These selectors choose and style a portion of the HTML elements.
+Selectors for attributes: Selectors for attributes are used to style an HTML element according to its attribute or attribute value.
+Box Model
+
+53. What do MongoDB Shards mean?
+The subset of sharded data is stored as a single instance in MongoDB called a shard. In order to improve data availability and offer redundancy, it can be used as replica sets. A complete set in MongoDB is made up of several shards combined. Sharding is the process of dividing this kind of data among several host locations. In MongoDB, the concept of sharding is accomplished by dividing data into smaller modular instances.
+
+54. Describe the SQL DDL, DML, DCL, & TCL commands.
+Data Definition Language (DDL): This language outlines the instructions that make up a data structure, including DROP, ALTER, and CREATE.
+Data Manipulation Language (DML): It modifies the data that already exists in the database. Commands like SELECT, UPDATE, INSERT, and others belong in this category.
+Data Control Language (DCL): It controls which data can be accessed from the database. Examples of commands in this category are GRANT and REVOKE.
+Transaction Control Language (TCL): Database transactions are managed using the Transaction Control Language (TCL). This group includes commands like COMMIT, ROLLBACK, SET TRANSACTION, SAVEPOINT, and others.
+55. What are Sass, Less, Stylus, and, CSS Preprocessor? Why do we utilize them?
+Preprocessor for CSS: A CSS preprocessor is a tool that expands on the basic features of vanilla CSS by using its programming language. It allows us to use complex logical constructs such as inheritance, code stacking, variables, functions, and mixins, to name a few.
+SASS: Syntactically Awesome Style Sheets, or SASS, is a CSS preprocessor that enhances the capabilities of CSS. It lessens the CSS statements' repetition.
+LESS: The backward-compatible LESS (Leaner Stylesheets) language extension for CSS. It allows us to employ features in a CSS-compliant syntax, such as variables, nesting, mixins, and so forth. LESS has an impact on SASS, and SASS's more recent "SCSS" syntax has an impact on LESS.
+Stylus: Stylus allows the removal of brackets, colons, & semicolons and provides a great degree of syntactic freedom. It also supports native CSS. Variables are not defined using the @ or $ symbol.
+56. Explain the stages in the lifecycle of a Thread.
+New: In this state, a Thread class object is created using a new operator, but the thread is not alive. The thread doesn't start until we call the start() method.
+Runnable: In this state, the thread is run after calling the start() method. However, the thread is not yet selected by the thread scheduler.
+Running: In this state, the thread scheduler picks the thread from the ready state.
+And the thread is running.
+Waiting/Blocked: In this state, a thread is not running but still alive, or waiting for the other thread to finish.
+Dead/Terminated: A thread is in terminated or dead state when the run() method exits.
+What are the states in the lifecycle of a Thread?
+
+57. Differentiate between generators and normal functions in Python.
+There are the following differences between generators and normal functions:
+
+Scope	Generator	Normal
+Execution	They can be paused in the middle of execution and resumed	They run to completion and return a value
+Return value	They can return multiple values through multiple iterations.	They return a single value (or none)
+Memory usage	They keep the current value in memory,	They create a large amount of memory overhead
+Usage	They are used to generate values that can be iterated over.	They are used when to perform a task and return a result.
+58. What are some of the alternative state management libraries for React?
+Here are some other React state management libraries:
+
+Redux
+Hookstate
+Jotai
+Rematch
+MobX
+Recoil
+Zustand
+59. If I want to optimize my website’s performance, what are all the things I need to do?
+Well, this question can be answered from various perspectives. However, the most common answer to this will include:
+
+Compress your code to reduce your file size so that downloading is quick.
+Store the files that frequently come into play at a place so that every time a user visits the site, he/she is not required to download them. This concept is known as caching.
+Use CDN i.e. Content Delivery Network. With this, your files will be distributed across multiple servers so that it will be convenient for them to download them from their place.
+60. What are the three types of API Testing?
+API testing can be categorized into three types:
+
+Unit Testing (Component Testing): It focuses on individual units or components of the code, typically at the function level. It verifies the correctness of specific functionalities or methods within an API in isolation.
+Integration Testing: It involves testing the interactions and integration points between different components, modules, or systems within an API. The primary goal is to ensure that the integrated components work cohesively and as expected when combined together.
+End-to-end Testing (Functional Testing): It evaluates the entire API system, including all components, databases, external services, and communication interfaces.
