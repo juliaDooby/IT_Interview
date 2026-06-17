@@ -3451,3 +3451,547 @@ The Record utility type has the following signature: Record<Keys, Type>.
 It allows you to constrict an object type whose properties are Keys and property values are Type.
 
 In our example, Keys represents string and Type, string as well.
+
+Top 20+ TypeScript Interview Questions and Answers
+By Jaishree Tomar
+
+Sep 29, 2025 7 Min Read 5007 Views
+
+(Last Updated)
+
+Have you also just come across TypeScript, and now you have to figure out how to prepare for this as well in your upcoming dev interview? Well. You’re not alone because in the fast-evolving world of web development, TypeScript has become the go-to language for building scalable and robust applications. 
+
+Preparing for interviews with the immense amount of competitiveness for these jobs is not easy, you need a resource that takes you through all the questions and covers the most important concepts simply.
+
+Hence, I have drafted this comprehensive guide of must-know TypeScript Interview Questions and Answers that covers everything from the basics to advanced concepts, ensuring you’re well-equipped to impress your interviewer and ace your next opportunity. Let’s get started!
+
+Table of contents
+Top TypeScript Interview Questions and Answers (Section-Wise)
+Beginner TypeScript Interview Questions and Answers
+Intermediate TypeScript Interview Questions and Answers
+Advanced TypeScript Interview Questions and Answers
+Expert-Level TypeScript Interview Questions and Answers
+Takeaways…
+Top TypeScript Interview Questions and Answers (Section-Wise)
+I have divided all these important TypeScript interview questions and answers into various sections for your ease of learning, I recommend covering the beginner level questions as a must and then going through all the sections one by one so that you can gain a well-rounded knowledge of how these interviews are undertaken and how much and what you should prepare.
+
+typescript interview questions and answers
+Beginner TypeScript Interview Questions and Answers
+1) What is TypeScript?
+
+Answer:
+
+TypeScript is a programming language developed by Microsoft as a superset of JavaScript. It introduces static typing to JavaScript, allowing developers to define types for variables, functions, and objects. This helps catch errors at compile time rather than runtime, improving code quality and maintainability.
+Key features include:
+
+Static Type Checking: Detect type-related bugs during development.
+ES6+ Support: Write modern JavaScript features, even in environments that don’t support them.
+Advanced Features: Interfaces, generics, enums, decorators, and more.
+TypeScript compiles to JavaScript, ensuring it works seamlessly in any JavaScript runtime, including browsers and Node.js.
+2) What are the basic data types in TypeScript?
+
+Answer: TypeScript includes several basic data types to ensure type safety in code, and you must know them. These are:
+
+Number: Represents numeric values. Example: let age: number = 30;
+String: Represents text. Example: let name: string = “John”;
+Boolean: Represents true or false values. Example: let isActive: boolean = true;
+Array: A collection of values. Example: let scores: number[] = [10, 20, 30];
+Tuple: A fixed-size array with different types. Example: let user: [string, number] = [“Alice”, 25];
+Enum: A set of named constants. Example: enum Direction { Up, Down, Left, Right }
+Any: Allows any type of value, but reduces type safety.
+Void: Used for functions that do not return a value.
+Null and Undefined: Represent empty or uninitialized values.
+Never: Represents a value that never occurs, such as a function that always throws an error.
+3) How do you declare variables in TypeScript?
+
+Answer: In TypeScript, variables are declared using var, let, or const.
+
+var is function-scoped and can lead to unexpected behavior due to hoisting. let is block-scoped and allows updating the value but not re-declaring it in the same scope. const is also block-scoped but prevents reassignment after the initial value is set.It is considered best practice to use const by default and let when a variable needs to change, while avoiding var to maintain cleaner and safer code.
+
+4) What are type annotations?
+
+Answer:
+
+Type annotations are a way to explicitly specify types for variables, function parameters, and return values in TypeScript. They make code more predictable and prevent type-related errors.
+Example:
+
+let username: string = "Alice";  
+let age: number = 25;  
+
+function greet(name: string): string {
+  return `Hello, ${name}`;
+}
+Benefits:
+
+Compile-Time Checking: Type errors are caught during development.
+Self-Documenting Code: Code becomes easier to understand for other developers.
+Enhanced Tooling: IDEs provide better autocompletion and error detection.
+5) What are interfaces?
+
+Answer:
+
+Interfaces define the shape of an object, ensuring that an object adheres to a specific structure. They can also describe function types or classes.
+Example:
+
+interface User {
+  id: number;
+  name: string;
+  email?: string; // Optional property
+}
+const user: User = { id: 1, name: "John" };
+Features of interfaces:
+
+Optional Properties: Mark properties with? If they are not mandatory.
+
+Readonly Properties: Prevent modification of certain fields.
+
+interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+Extending Interfaces: Combine multiple interfaces.
+
+interface Admin extends User {
+  role: string;
+}
+Interfaces enforce consistent data structures, which is crucial for maintaining scalable and reliable codebases.
+
+Explore: JavaScript Tools Every Developer Should Know
+
+6) What are enums in TypeScript?
+
+Answer:
+
+Enums in TypeScript are used to define a collection of named constants. They make code more readable and reduce the risk of invalid values by providing a predefined set of possible values. TypeScript supports numeric and string enums:
+
+Numeric enums: Assign sequential numbers starting from 0 (or a custom starting value).
+
+enum Status {
+  Active,         // 0
+  Inactive,       // 1
+  Pending         // 2
+}
+let currentStatus: Status = Status.Active; // Resolves to 0
+console.log(Status[0]); // "Active" (Reverse mapping)
+String enums: Assign custom string constants without reverse mapping.
+
+enum Directions {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT"
+}
+console.log(Directions.Up); // "UP"
+Use Case: Enums are great for modeling state, options, or categories (e.g., HTTP status codes, user roles).
+
+7) What is the difference between let, const, and var?
+
+Answer:
+
+let:
+
+Block-scoped, meaning it is accessible only within the {} block where it is defined.
+Prevents issues like re-declaration.
+Use for variables that are expected to change.
+let count = 10;
+if (true) {
+  let count = 20; // Block-specific variable
+  console.log(count); // 20
+}
+console.log(count); // 10
+const:
+
+Block-scoped, but variables are immutable.
+The value cannot be reassigned after initialization, though object properties can still change.
+const pi = 3.14;
+// pi = 3.15; // Error: Assignment to constant variable
+
+const user = { name: "Alice" };
+user.name = "Bob"; // Allowed
+var:
+
+Function-scoped, meaning it’s available across the entire function, regardless of block scope.
+Hoisted to the top of its scope, often leading to bugs.
+if (true) {
+  var message = "Hello";
+}
+console.log(message); // Accessible outside block
+8) What is the purpose of union types?
+
+Answer:
+
+Union types allow variables to hold multiple types. They improve flexibility while maintaining type safety, especially for scenarios like user input, APIs, or third-party libraries.
+
+Example:
+
+let id: number | string; // Accepts both numbers and strings
+id = 101; // Valid
+id = "abc"; // Also valid
+Type narrowing allows you to implement logic based on the current type:
+
+function display(value: string | number) {
+  if (typeof value === "string") {
+    console.log(`String: ${value.toUpperCase()}`);
+  } else {
+    console.log(`Number: ${value.toFixed(2)}`);
+  }
+}
+Use Case: Union types are common in APIs that return different result types or functions with variable input (e.g., handling both null and valid data).
+
+9) Explain optional parameters in functions.
+
+Answer:
+
+Optional parameters allow you to make certain parameters optional in a function. They are defined using the? syntax, enabling flexibility when calling the function without passing every argument.
+
+Example:
+
+function greet(name: string, greeting?: string): string {
+  return `${greeting || "Hello"}, ${name}`;
+}
+console.log(greet("Alice")); // Hello, Alice
+console.log(greet("Alice", "Hi")); // Hi, Alice
+Rules:
+
+Optional parameters must come after required parameters.
+If not provided, their value is undefined by default.
+Use Case: Optional parameters are helpful in scenarios where a function may have defaults or variable arguments (e.g., logging levels or optional settings).
+
+Discover: 42 JavaScript Questions Towards Better Interviews
+
+10) What are type assertions?
+
+Answer:
+
+Type assertions are a way to override TypeScript’s inferred type system. They allow developers to manually specify a type when the compiler cannot determine it accurately.
+
+Syntax:
+
+Using as:
+
+let value: unknown = "TypeScript";
+let length: number = (value as string).length; // Treats value as a string
+Using angle brackets (not in React):
+
+let length: number = (<string>value).length;
+Key Points:
+
+Not runtime casting: Type assertions do not change the actual runtime type; they only affect compile-time type checking.
+Use cautiously when you’re certain of the type to avoid runtime errors.
+Use Case: Commonly used with any or unknown types, such as when working with untyped libraries, dynamic data, or DOM manipulation:
+
+const input = document.getElementById("username") as HTMLInputElement;
+console.log(input.value); // Assumes 'input' is of type HTMLInputElement
+MDN
+Intermediate TypeScript Interview Questions and Answers
+11) How does TypeScript support inheritance?
+
+Answer:
+
+TypeScript supports inheritance through the extends keyword, which allows one class (subclass) to inherit properties and methods from another class (superclass). This enables code reuse, polymorphism, and extending base functionality.
+TypeScript also supports class-based inheritance, where methods and properties are shared across instances of the subclass, reducing redundancy.
+
+Example:
+
+class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  move() {
+    console.log(`${this.name} is moving`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name: string) {
+    super(name); // Calls the parent class constructor
+  }
+  bark() {
+    console.log(`${this.name} barks!`);
+  }
+}
+
+const myDog = new Dog("Rex");
+myDog.move(); // Rex is moving
+myDog.bark(); // Rex barks!
+Key Concepts:
+
+Inheritance allows subclass instances to access methods and properties of the superclass.
+Polymorphism: Subclasses can override methods from parent classes.
+12) What are generics?
+
+Answer:
+
+Generics are a powerful feature in TypeScript that allows developers to write flexible, reusable code that works with any data type. Rather than defining a function or class for specific data types, generics allow you to write components that work with any type while maintaining type safety.
+
+Generics are defined using angle brackets (<T>) and provide type parameters that are replaced with actual types during function calls or class instantiations.
+
+Example:
+
+function identity<T>(arg: T): T {
+  return arg; // T will be replaced by the actual type at call time
+}
+console.log(identity<number>(42)); // Returns 42
+console.log(identity<string>("Hello")); // Returns "Hello"
+Use Case: Useful for collections, APIs, or utilities that need to support multiple data types while ensuring type consistency.
+
+13) What is the difference between type aliases and interfaces?
+
+Answer:
+
+Type Aliases: Type aliases define custom types for primitives, objects, and unions. They cannot be merged or extended once defined. They’re ideal for union types, intersections, or complex object types.
+
+Example:
+
+type Point = { x: number; y: number };
+type ID = number | string;
+Interfaces: Interfaces define the structure of an object and can be extended or merged with other interfaces. They are more flexible and better suited for defining contracts for objects, classes, and functions.
+
+Example:
+
+interface Point { x: number; y: number; }
+Key Difference:
+
+Extensibility: Interfaces can be extended or merged; type aliases cannot.
+Use Case: Use interfaces when defining object structures and type aliases for unions or type combinations.
+14) What are namespaces?
+
+Answer:
+
+Namespaces provide a way to organize code by grouping related functionalities under a single name. They are primarily used to avoid global namespace pollution and can help manage large applications by logically grouping types, functions, and variables.
+
+TypeScript namespaces use the namespace keyword, and internal members are encapsulated, reducing the risk of naming conflicts.
+
+Example:
+
+namespace Utilities {
+  export function log(message: string): void {
+    console.log(message);
+  }
+}
+
+Utilities.log("Hello, World!");
+Key Concepts:
+
+Encapsulation: Namespaces prevent code from polluting the global scope by keeping related code together.
+Exporting Members: Members within a namespace need to be marked as export to be accessible outside the namespace.
+Also Read: 30 JavaScript Project Ideas [3 Bonus Portfolio Projects]
+
+15) What is the role of decorators?
+
+Answer:
+
+Decorators are special annotations that can modify the behavior of classes, methods, or properties at runtime. They provide a meta-programming feature to add functionality without modifying the original code structure.
+Use Cases:
+Class decorators: Used to modify or extend the functionality of a class.
+Method decorators: Used to modify or extend method behavior.
+Example:
+
+function log(target: any, key: string) {
+  console.log(`${key} method was called`);
+}
+
+class User {
+  @log
+  greet() {
+    console.log("Hello!");
+  }
+}
+
+const user = new User();
+user.greet(); // Outputs: greet method was called
+Decorators are commonly used in frameworks like Angular to enhance class behavior (e.g., @Component, @Injectable).
+
+Master TypeScript and ace your interviews with HCL GUVI’s TypeScript course. Learn in-demand skills like type safety, interfaces, and advanced features while working on real-world projects. Gain hands-on experience with tools like VS Code, ESLint, and TypeScript Compiler. Stand out with expert guidance, interview prep, and a job-ready portfolio!
+
+Find Out: Complete JavaScript Roadmap for Frontend: Beginner to Pro
+
+Advanced TypeScript Interview Questions and Answers
+16) Explain advanced type inference.
+
+ Answer:
+
+TypeScript’s advanced type inference allows it to deduce complex types from context without explicit declarations. It works with:
+
+Variable declarations: Types are inferred based on assigned values.
+
+let num = 42; // Inferred as number
+let strArray = ["a", "b", "c"]; // Inferred as string[]
+Function return types: TypeScript infers the return type based on the function logic.
+
+function multiply(a: number, b: number) {
+  return a * b; // Return type inferred as number
+}
+Generics: Inference is based on how the generic type is used.
+
+function wrap<T>(value: T): T {
+  return value;
+}
+wrap(10); // T inferred as number
+wrap("TypeScript"); // T inferred as string
+TypeScript can also infer types in more complex contexts, such as destructuring or conditional types, enabling concise and safer code.
+
+17) What are tuple types?
+
+Answer:
+
+Tuple types in TypeScript represent arrays with fixed lengths and types for each position. They provide a way to enforce a specific structure for data that combines multiple types.
+
+Example:
+
+let tuple: [number, string, boolean] = [42, "Hello", true];  
+tuple[0] = 100; // Allowed (must be a number)
+tuple[1] = false; // Error (must be a string)
+Tuples are often used in scenarios like function returns, where you want to return multiple values with specific types:
+
+function getUser(): [string, number] {
+  return ["Alice", 25]; // Tuple with string and number
+}
+const [name, age] = getUser(); // Destructured tuple
+TypeScript 4.0 introduced variadic tuples, allowing flexible lengths with patterns:
+
+type StringAndNumbers = [string, ...number[]];
+let data: StringAndNumbers = ["age", 20, 30, 40];
+18) What are discriminated unions?
+
+Answer:
+
+Discriminated unions combine union types with a shared literal property (discriminator) to enable type narrowing. The shared property helps TypeScript determine which type is being used in a union.
+
+Example:
+
+type Shape = 
+  | { kind: "circle"; radius: number } 
+  | { kind: "square"; side: number };
+
+function getArea(shape: Shape): number {
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2; // TypeScript knows it's a circle
+  }
+  return shape.side ** 2; // TypeScript knows it's a square
+}
+This approach is widely used for handling complex data structures and ensures that type checking is enforced based on specific conditions, reducing runtime errors.
+
+19) How does TypeScript handle overloading?
+
+Answer:
+
+TypeScript allows multiple function signatures (overloads) for the same function, enabling it to accept different parameter types or combinations while maintaining strong type checks.
+
+Example:
+
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: any, b: any): any {
+  return a + b;
+}
+
+add(2, 3); // Inferred as number, returns 5
+add("Hello, ", "World!"); // Inferred as string, returns "Hello, World!"
+The function implementation (add(a: any, b: any)) must handle all overload cases explicitly. This ensures flexibility while maintaining strict type safety for the caller.
+
+20) What is the readonly modifier?
+
+Answer:
+
+The readonly modifier makes properties immutable after their initial assignment. It enforces immutability at compile-time, ensuring that properties cannot be reassigned, providing better predictability and preventing accidental mutations.
+
+Example:
+
+interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+
+const point: Point = { x: 10, y: 20 };
+point.x = 15; // Error: Cannot assign to 'x' because it is a read-only property
+readonly can also be applied to arrays and tuples:
+
+const arr: readonly number[] = [1, 2, 3];
+arr.push(4); // Error: Push is not allowed on a readonly array
+This is particularly useful for defining constants or protecting objects from unintended changes in larger applications.
+
+Expert-Level TypeScript Interview Questions and Answers
+21) What are template literal types?
+
+Answer:
+
+Template literal types enable creating string-based types by combining literal values with placeholders, similar to JavaScript template literals.
+
+Example:
+
+type Role = "admin" | "user";
+type Permission = `can-${Role}`; // Produces: "can-admin" | "can-user"
+They are powerful for building specific string patterns, such as routes, CSS class names, or event handlers, while maintaining type safety.
+
+22) What are branded types?
+
+Answer:
+
+Branded types use type intersections to create distinct, opaque types even when their underlying structure is identical.
+
+Example:
+
+type Brand<K, T> = T & { __brand: K };
+type UserID = Brand<"UserID", string>;
+
+const userId: UserID = "1234" as UserID; // Valid
+const rawId: string = userId; // Error without explicit cast
+This ensures type distinction (e.g., between UserID and ProductID), preventing accidental misuse.
+
+23) How are declaration files (.d.ts) used?
+
+Answer:
+
+Declaration files (.d.ts) define TypeScript types for JavaScript libraries or modules without modifying their code. They provide type information for better IDE support, error checking, and autocomplete.
+
+Example:
+
+// lodash.d.ts
+declare module "lodash" {
+  export function chunk<T>(array: T[], size: number): T[][];
+}
+
+// Usage
+import { chunk } from "lodash";
+const result = chunk([1, 2, 3], 2); // Typed correctly
+These files are critical for integrating JavaScript libraries into TypeScript projects.
+
+24) What are module augmentation and declaration merging?
+
+Answer:
+
+Module Augmentation: Extends existing module definitions by adding new types or members.
+
+// Extending a module
+declare module "lodash" {
+  export function customFn(value: string): string;
+}
+
+import { customFn } from "lodash";
+customFn("test"); // New function
+Declaration Merging: Combines multiple declarations of the same name (interfaces, namespaces) into a single definition.
+
+interface User {
+  name: string;
+}
+interface User {
+  age: number;
+}
+const user: User = { name: "John", age: 30 }; // Merged definition
+Both features enable modular and extensible type definitions.
+
+25) Explain keyof and indexed access types.
+
+Answer:
+
+keyof Operator: Retrieves keys of a type as a union.
+
+type User = { id: number; name: string };
+type UserKeys = keyof User; // "id" | "name"
+Indexed Access Types: Access specific property types using square brackets.
+
+type User = { id: number; name: string };
+type NameType = User["name"]; // string
+These are used together to create dynamic, type-safe code, such as extracting or transforming types based on their structure.
