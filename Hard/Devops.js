@@ -1,3 +1,4 @@
+https://labex.io/ru/tutorials/linux-devops-interview-questions-and-answers-593679
 Вопросы и ответы на собеседовании по DevOps
 
 Linux
