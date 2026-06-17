@@ -1220,3 +1220,1056 @@ API testing can be categorized into three types:
 Unit Testing (Component Testing): It focuses on individual units or components of the code, typically at the function level. It verifies the correctness of specific functionalities or methods within an API in isolation.
 Integration Testing: It involves testing the interactions and integration points between different components, modules, or systems within an API. The primary goal is to ensure that the integrated components work cohesively and as expected when combined together.
 End-to-end Testing (Functional Testing): It evaluates the entire API system, including all components, databases, external services, and communication interfaces.
+
+50 Full-stack Developer Interview Questions Most Commonly Asked 2023
+
+The IT and development market is evolving which requires labor in the market to keep up with the continuous changes.
+
+In order to get your dream job, a developer should understand what HR is looking for. In other words, he needs to ensure that his core skills are aligned with the demand of the market.
+
+There are many factors that contribute to the result of an interview, however, the most important thing is knowing which skill sets are worth investing in.
+
+Questions asked during the interview help interviewer determine the candidate’s ability level.
+
+With the most commonly asked 50 full-stack developer interview questions, this article aims to arm you with helpful core skills that can make you shine in the competition.
+
+But before jumping into the topic, we will briefly introduce a full-stack developer. A powerful developer is the backbone of any company.
+
+Make sure you’re well prepared for your dream interview by researching and learning these important questions.
+
+Key Summary
+Below is a summarized analysis of selected interview questions from the article, grouped by category, with connections to e-commerce, data science, Rails, Android, Python frameworks, internet technologies, MVP development, time management, social media tools, and programming languages.
+
+1. DevOps and CI/CD (Q1, Q2, Q3, Q8, Q15, Q22, Q27, Q28)
+Key Questions:
+Q1: Success Factors for Continuous Integration: Includes maintaining a code repository, automating builds, self-testing builds, and fast deployment. These ensure efficient workflows for web and mobile apps.
+Q2: Explain DevOps: A practice emphasizing collaboration between developers and IT professionals for faster software delivery and lower failure rates.
+Q3: Git Pull vs. Git Fetch: Git pull merges commits automatically, while Git fetch retrieves commits without merging, useful for safe updates.
+Q8: Continuous Integration: Automates code testing and integration, detecting errors quickly in development pipelines.
+Q15: Use Case for Docker: Enables virtualized environments, legacy app deployment, and CI/CD testing, supporting cloud orchestration with Swarm.
+Q22: Blue/Green vs. Rolling Deployment: Blue/Green uses two environments for zero-downtime updates, while Rolling updates subsets in a single environment.
+Q27: Event Loop in Node.js: Manages asynchronous tasks in a single-threaded environment, critical for real-time apps.
+Q28: Docker: Simplifies virtualization, testing, and cloud provisioning for scalable apps.
+Connections:
+E-Commerce: Docker and CI/CD (Q15, Q8) streamline Shopify or BigCommerce deployments, using Django (Python) and Snowflake for analytics.
+Data Science: Event loops (Q27) power real-time analytics, integrated with Rails APIs and Tableau.
+Rails: Git operations (Q3) enhance Rails CRMs, using Android XML layouts for mobile integration.
+Android: Docker (Q28) supports React Native testing, leveraging Activity Lifecycle.
+Python Frameworks: Sanic (Q27) handles async APIs, integrated with Redshift.
+Internet Technologies: WebAssembly (Q15) boosts CI/CD performance, paired with Figma for UI design.
+MVP Development: Blue/Green deployment (Q22) avoids downtime, using Scoro for task tracking.
+Time Management: CI/CD pipelines (Q8) are managed with Asana.
+Social Media Tools: Hootsuite integrates with CI/CD for campaign automation.
+Programming Languages: JavaScript (Q27) and Python power Node.js and Dockerized apps.
+2. JavaScript and Front-End (Q4, Q6, Q11, Q12, Q18, Q19, Q20, Q21, Q34, Q48, Q49, Q50)
+Key Questions:
+Q4: Callback Hell: Occurs when chained asynchronous functions create complex, unreadable code.
+Q6: ES6 vs. ES5 Constructors: ES6 classes simplify inheritance compared to ES5 function constructors.
+Q11: Prototype Inheritance: JavaScript uses prototype chains for inheritance, with constructor functions injecting this.
+Q12: Arrow Functions: Avoid in cases needing hoisting, this/arguments, or constructors.
+Q18: Event Loop: Supports concurrency in Node.js via asynchronous callbacks.
+Q19: Clearing Floats in CSS: Ensures container expansion to handle floating elements.
+Q20: Code Sharing Between Files: Uses CommonJS, AMD, or ES2015 modules for modularity.
+Q21: Temporal Dead Zone (TDZ): Period in ES6 where let/const are hoisted but inaccessible.
+Q34: Closure: Allows inner functions to access outer function scopes.
+Q48: Event Bubbling vs. Capturing: Defines event propagation order in HTML APIs.
+Q49: Prototype in JavaScript: Enables shared properties/methods across objects.
+Q50: Express.js: A Node.js framework for building secure, fast web applications.
+Connections:
+E-Commerce: Express.js (Q50) powers WooCommerce APIs, using Next.js 12 and Domo.
+Data Science: Event loops (Q18) support real-time dashboards, integrated with Rails and Tableau.
+Rails: JavaScript prototypes (Q11) enhance Rails frontends, using Android FrameLayout.
+Android: React Native (Q6) leverages ES6 classes, using ThreadPool.
+Python Frameworks: AIOHTTP complements Express.js (Q50) for async APIs.
+Internet Technologies: Lit Web Components (Q19) simplify UI design, paired with Photoshop on the Web.
+MVP Development: Closures (Q34) ensure lean APIs, tracked with ProofHub.
+Time Management: Toggl tracks JavaScript tasks (Q18).
+Social Media Tools: Sprout Social integrates with Express.js APIs (Q50).
+Programming Languages: JavaScript dominates front-end development (Q6, Q11).
+3. Back-End and Databases (Q5, Q17, Q23, Q31, Q32, Q33, Q35, Q39, Q42, Q44)
+Key Questions:
+Q5: CORS: Enables cross-origin resource sharing for secure API interactions.
+Q17: REST vs. GraphQL: GraphQL uses a graph-based query model, unlike REST’s resource-based approach.
+Q23: GraphQL Disadvantages: Requires schema setup, client libraries, and server processing.
+Q31: RESTful API: Uses HTTP requests for CRUD operations in web services.
+Q32: Server-Side vs. Client-Side Scripting: Server-side (e.g., Ruby, PHP) is secure but backend-focused; client-side (e.g., JavaScript) is visible but less secure.
+Q33: Normalization vs. Denormalization: Normalization reduces redundancy; denormalization adds redundancy for query performance.
+Q35: Database Index: Improves query performance by indexing table columns.
+Q39: Connection Leak in Java: Occurs when JDBC connections aren’t closed, fixed via proper error handling.
+Q42: Dependency Injection: Decouples components by injecting dependencies, enhancing modularity.
+Q44: Observer Pattern: Enables one-to-many dependencies for automatic updates.
+Connections:
+E-Commerce: GraphQL (Q17) powers Yo!Kart APIs, using Bottle (Python) and Redshift.
+Data Science: RESTful APIs (Q31) support fraud detection, integrated with Rails and Tableau.
+Rails: CORS (Q5) secures Rails APIs, using Android SharedPreferences.
+Android: Java connection leaks (Q39) are managed in Ionic apps, leveraging DDMS.
+Python Frameworks: Web2Py complements REST APIs (Q31).
+Internet Technologies: WebAssembly boosts GraphQL performance (Q23), paired with Figma.
+MVP Development: Dependency Injection (Q42) ensures lean backends, using Replicon.
+Time Management: Scoro tracks API tasks (Q31).
+Social Media Tools: Spredfast integrates with REST APIs (Q31).
+Programming Languages: Java (Q39) and Ruby (Q32) power back-end logic.
+4. General Skills and Trends (Q9, Q10, Q12, Q13, Q16, Q24, Q25, Q36, Q37, Q38, Q40, Q41, Q43, Q45, Q46, Q47)
+Key Questions:
+Q9: Advantages/Disadvantages of “use strict”: Enforces strict JavaScript rules but limits some features.
+Q10: AMD vs. CommonJS: CommonJS is synchronous for Node.js; AMD is asynchronous for browsers.
+Q13: Pair Programming: Involves a Driver (writes code) and Navigator (reviews code) for collaboration.
+Q16: Full-Stack Trends: Include Vue.js, real-time apps, and JavaScript improvements.
+Q24: Inversion of Control (IoC): Decouples components via dependency injection.
+Q25: Most Loved Language: Full-stack developers prefer JavaScript, Python, HTML, and CSS for versatility.
+Q36: Staying Updated: Involves meetups, webinars, and personal projects.
+Q37: Project Example: Assesses tool selection and front-end/back-end balance.
+Q38: Full-Stack Skills: Include languages, frameworks, databases, and UI/UX design.
+Q40: Full-Stack Tools: Include Backbone, VS Code, GitHub, and TypeScript.
+Q41: Technologies for Scratch Projects: Requires end-to-end expertise in front-end and back-end tools.
+Q43: Multithreading: Enhances CPU utilization for concurrent tasks.
+Q45: Data Attributes: Custom HTML5 attributes for page-specific data.
+Q46: Defer vs. Async: Defer executes after HTML parsing; async pauses parsing.
+Q47: Two-Phase Commit: Ensures database synchronization during transactions.
+Connections:
+E-Commerce: Vue.js (Q16) enhances Squarespace UIs, using CherryPy and Snowflake.
+Data Science: Python (Q25) powers recommendation systems, integrated with Rails and Domo.
+Rails: Pair programming (Q13) improves Rails workflows, using Android WebGL.
+Android: TypeScript (Q40) supports NativeScript, leveraging Activity Manager.
+Python Frameworks: Tornado complements async scripting (Q46).
+Internet Technologies: Nvidia Omniverse (Q16) designs 3D UIs, paired with Photoshop on the Web.
+MVP Development: IoC (Q24) ensures modular MVPs, tracked with Toggl.
+Time Management: ProofHub manages development tasks (Q36).
+Social Media Tools: OnlyPult integrates with JavaScript UIs (Q25).
+Programming Languages: Python, JavaScript, and Ruby dominate (Q25, Q38).
+5. Problem-Solving and Coding (Q26, Q29, Q30)
+Key Questions:
+Q26: Stella’s Tree Coloring: Requires minimum colors for a tree where nodes within distance 2 have different colors, solved using graph coloring.
+Q29: Hackathon Team Selection: Maximizes project completion by selecting the optimal starting team, considering extra time constraints.
+Q30: Referential Transparency: Ensures substitutable expressions in functional programming for predictable results.
+Connections:
+E-Commerce: Graph coloring (Q26) optimizes resource allocation, using Vibora and Domo.
+Data Science: Functional programming (Q30) supports ML pipelines, integrated with Rails and Tableau.
+Rails: Hackathon logic (Q29) enhances Rails scheduling, using Android AIDL.
+Android: Graph algorithms (Q26) optimize app performance, leveraging ThreadPool.
+Python Frameworks: Django supports algorithmic APIs (Q26).
+Internet Technologies: WebAssembly boosts algorithm performance (Q26).
+MVP Development: Referential transparency (Q30) ensures predictable MVPs, using Replicon.
+Time Management: Scoro tracks coding tasks (Q29).
+Social Media Tools: Simply Measured analyzes hackathon engagement (Q29).
+Programming Languages: Python or Java solves graph problems (Q26).
+Who is a Full-stack Developer?
+No matter what industry you’re in, the software and hardware that we use every day are becoming more and more complicated.
+
+Read More:   Fiberplane’s Collaborative Notebooks for Incident Management – InApps Technology 2022
+We need more people who can work on them to keep them up and running. More and more companies are looking for people who can code on both the front end (designing interfaces) and the backend (running programs). They call these people full-stack developers.
+
+The full-stack engineer job description includes the use of a variety of different technologies and languages ​​(such as Java, JavaScript, HTML, PHP, C#) to develop applications.
+
+A full-stack Web developer is a good example of this model because the developer has a wide range of technologies and general knowledge of the platform, as well as deep experience and expertise in several of these concepts.
+
+Typically, this type of developer comes from a start-up environment where extensive knowledge of all aspects of web development is critical to the survival of the company.
+
+However, developers who do not have an official name but have an impressive portfolio, reliable reference materials, and open source work may also be very competitive candidates.
+
+A Full-Stack developer is a person who can develop software for both the user and the service provider.
+
+In simple language, a Full-Stack developer has the knowledge of the full-stack of technology that makes up a website. They are very comfortable in both front-end and back-end languages.
+
+A Full-Stack Developer is proficient in:
+
+Server, network, and hosting environment.
+Relational and non-relational databases.
+How to interact with APIs and the external world.
+User interface and user experience.
+Quality assurance.
+Security concerns throughout the program.
+Understanding customer and business needs.
+HTML, CSS, and JavaScript.
+JavaScript frameworks like React or Angular.
+Programming languages like Ruby and Python.
+Top 50 Full-stack developer interview questions
+50-full-stack-developer-interview-questions
+50 full-stack developer interview questions
+
+Q1. What are the Success Factors for Successive Integration?
+Ans – Success factors for successive integration are-
+
+Maintain a code repository
+Automate the build
+Make the build self-testing
+Everyone commits to the baseline every day
+Every commit (to baseline) should be built
+Try to keep the build fast
+Test in a clone of the production environment
+Make it easy to get the latest deliverables
+Automate deployment
+Q2. Explain DevOps?
+Ans – DevOps is a newly emerging term in the IT field, which is nothing but a practice that emphasizes the collaboration and communication of both software developers and other information technology (IT) professionals. It focuses on delivering software products faster and lowering the failure rate of releases.
+
+Q3. What is the Difference Between “Git Pull” and “Git Fetch”?
+Ans – In the simplest terms, git pull does a git fetch followed by a git merge.
+
+When you use to pull, Git gets the message to automatically do your work for you. It is context-sensitive, so Git will merge any pulled commits into the branch you are currently working in. pull automatically merges them without giving you any chance to review it first. If you don’t manage your branches with a keen eye, you may be face to face with many problems.
+When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your master branch, you use merge.
+Q4. What is Callback Hell?
+Ans – The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained together then a callback hell situation comes up.
+
+Q5. What is CORS?
+Ans – CORS, abbreviation for Cross-Origin Resource Sharing, is a process used to gain the authority of different web resources on different domains.
+
+With the help of CORS, the integration of web scripts can be implemented more freely with the external content of the original domain.
+
+Q6. What are the Differences Between ES6 and ES5 Function Constructors?
+Ans – Let’s first look at an example of each:
+
+// ES5 Function Constructor
+function Person(name) {
+  this.name = name;
+}
+
+// ES6 Class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+For simple constructors, they look pretty similar.
+
+The main difference in the constructor is observed when the effect of inheritance comes into the play. If we want to create a Student class that subclasses Person and add a studentId field, this is what we have to do in addition to the above.
+
+// ES5 Function Constructor
+function Student(name, studentId) {
+  // Call constructor of superclass to initialize superclass-derived members.
+  Person.call(this, name);
+
+  // Initialize subclass's own members.
+  this.studentId = studentId;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+// ES6 Class
+class Student extends Person {
+  constructor(name, studentId) {
+    super(name);
+    this.studentId = studentId;
+  }
+}
+It’s much more verbose to use inheritance in ES5 and the ES6 version, here it is easier to understand and remember.
+
+Q7. What is Multi-Threading?
+Ans – The process of improving the performance of the CPU is known as Multi-Threading. Usually, it is seen as the ability of a program to be managed by multiple users at a single time.
+
+It is done by the execution of multiple processes that are supported by the operating system.
+
+Q8. What is Continuous Integration?
+Ans – Continuous Integration is the process of implementation of codes that are specially designed & automated for testing. During the time of production, it helps the developers to apply the codes simply. Web developers prefer this process for the integration of codes many times a day. Continuous Integration helps in detecting errors quickly and locating them more easily.
+
+Q9. What are the Advantages and Disadvantages of Using “use strict“?
+Ans – “use strict” is a statement that is used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt in to a restricted variant of JavaScript.
+
+Advantages-
+
+It makes it impossible to create global variables by mistake.
+Makes assignments that would otherwise silently fail to throw an exception.
+Makes attempts to delete undeletable properties throw (where before the attempt would simply have no effect).
+It is mandatory that the function parameter name should be unique.
+this is undefined in the global context.
+It catches some common coding bloopers, throwing exceptions.
+It stops the functioning of features that are confusing.
+Disadvantages-
+
+A lot of features that most of the developers might be used to are absent.
+No more access to function.caller and function.arguments.
+The concatenation of scripts written in different strict modes might cause issues.
+Q10. What do you think of AMD vs CommonJS?
+Ans – Both are ways to implement a module system, which was not natively present in JavaScript until ES2015 came along. CommonJS is synchronous while AMD (Asynchronous Module Definition) is obviously asynchronous.
+
+CommonJS is designed with back-end development in mind while AMD, with its support for asynchronous loading of modules, is more intended for browsers.
+
+In my opinion, most would find AMD syntax to be quite dull and CommonJS is closer to the style you would write import statements in other languages. Most of the time, I find AMD unnecessary, because if you served all your JavaScript into one concatenated bundle file, you wouldn’t benefit from the async loading properties.
+
+Also, CommonJS syntax is closer to the Node style of writing modules and there is less context-switching overhead when switching between client-side and server-side JavaScript development.
+
+I’m glad that with ES2015 modules, that have support for both synchronous and asynchronous loading, we can finally just stick to one approach. Although it hasn’t been fully rolled out in browsers and in Node, we can always use transpilers to convert our code.
+
+Q11. Explain Prototype Inheritance in Javascript?
+Ans – In a language implementing classical inheritance like Java, C#, or C++ you start by creating a class–a blueprint for your objects – and then you can create new objects from that class or you can extend the class, defining a new class that augments the original class.
+
+In JavaScript you first create an object (there is no concept of class), then you can augment your own object or create new objects from it.
+
+Every object in Javascript has a prototype. JavaScript’s inheritance system is based on prototypes, and not class-based. When a message reaches an object, JavaScript will make an attempt to find a property in that object first. If it cannot find it, then the message will be sent directly to the object’s prototype, and so on. That behavior called prototype chain or in many places, prototype inheritance.
+
+Constructor functions are the most preferred way in JavaScript when it comes to constructing prototype chains. When we use new, JavaScript injects an implicit reference to the new object being created in the form of this keyword. It also returns this reference completely at the end of the function.
+
+function Foo() {
+  this.kind = ‘foo’
+}
+
+var foo = new Foo(); 
+foo.kind //=> ‘foo’
+
+
+Q12. When should you not use arrow functions in ES6? Name three or more cases.
+Ans- Arrow functions should NOT be used:
+
+When we want function hoisting – as arrow functions are anonymous.
+When we want to use this/argument in a function – as arrow functions do not have this/argument of their own, they depend upon their outer context.
+When we want to use named function – arrow functions are anonymous.
+When we want to use the function as a constructor – as arrow functions do not have their own this.
+When we want to add function as a property in object literal and use an object in it – as we can not access this (which should be the object itself).
+Q13. What is Pair-Programming?
+Ans – Pair Programming is one of the core elements of extreme programming in which two developers are required to work on the same terminal.
+
+The one developer whose task is to write the code is called the “Driver” and the other who is responsible for reviewing the codes is called the “Navigator”.
+
+Q14. What is Long Polling?
+Ans – Long Polling is a pattern in web development that is used to improve pushing data from the server to the client. By using a Long Polling pattern, the Client requests information from the server.
+
+If the server does not have any information about the client, the server holds the request and waits for some information to be available instead of sending an empty resource.
+
+Q15. Explain a use case for Docker?
+Ans –
+
+Docker is a low overhead way to run virtual machines on your local box or in the cloud. Although they’re not strictly distinct machines, they give you many of those benefits.
+Docker can encapsulate legacy applications, allowing you to deploy them to servers that might not otherwise be easy to set up with older packages & software versions.
+Docker can be used to build test boxes, during your deploy process to facilitate continuous integration testing.
+Docker can be used to provision boxes in the cloud, and with the swarm, you can orchestrate clusters too.
+Q16. What are the latest trends in Full-stack Web Development?
+Ans – According to industry experts, a candidate who is passionate about full-stack development should be aware of the following trends:
+
+The rise of Vue JS Functional, real-time web apps, progressive apps, and mobile web development.
+Programming benefits from JavaScript improvements
+The emergence of more compatible extensions.
+Q17. Explain the difference between REST and GraphQL
+Ans – The main and most important difference between REST and GraphQL is that GraphQL does not deal with dedicated resources. Instead, everything is considered as a graph and therefore is connected and can be queried to app exact needs.
+
+Q18. What is Event Loop?
+Ans – Node.js is a single-threaded application but it supports concurrency via the concept of event and callbacks. As every API of Node js is asynchronous and is a single thread, it uses async function calls to maintain the concurrency. Node uses an observer pattern.
+
+Node thread keeps an event loop and whenever any task gets completed, it fires the corresponding event which signals the event listener function to get executed.
+
+Read More:   Microsoft Rebranding Leads to Cloud Native Azure DevOps – InApps
+Q19. Explain the purpose of clearing floats in CSS.
+Ans – The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them.
+
+Clearing floats (or clear fixing) basically force the containing element to expand to contain its child elements. Thus, it forces the subsequent elements to appear below it.
+
+Q20. How can you share code between files?
+Ans – This depends on the JavaScript environment.
+
+On the client (browser environment), as long as the variables/functions are declared in the global scope (window), all scripts can refer to them. Alternatively, adopt the Asynchronous Module Definition (AMD) via RequireJS for a more modular approach.
+
+On the server (Node.js), the common way has been to use CommonJS. Each file is treated as a module and it can export variables and functions by attaching them to the module.exports object.
+
+ES2015 defines a module syntax that aims to replace both AMD and CommonJS. This will eventually be supported in both browser and Node environments.
+
+Q21. What is Temporal Dead Zone in ES6?
+Ans – In ES6 let and const are hoisted (like var, class and function), but there is a period between entering scope and being declared where they cannot be accessed. This period is the temporal dead zone (TDZ).
+
+Consider:
+
+//console.log(aLet)  // would throw ReferenceError
+
+let aLet;
+console.log(aLet); // undefined
+aLet = 10;
+console.log(aLet); // 10
+In this example, the TDZ ends when aLet is declared, rather than assigned.
+
+Q22. What is the difference between a blue/green deployment and a rolling deployment?
+Ans –
+
+In Blue/Green Deployment, you have TWO complete environments. The Blue environment is the one that is running and the Green environment is the one to which you want to upgrade. Once you swap the environment from blue to green, the traffic is directed to your new green environment. You can delete or save your old blue environment for backup until the green environment is stable.
+In Rolling Deployment, you have only ONE complete environment. The code is deployed in the subset of instances of the same environment and moves to another subset after completion.
+Q23. What are the disadvantages of GraphQL?
+Ans – Disadvantages of GraphQL are:
+
+You need to learn how to set up GraphQL. The ecosystem is still rapidly evolving so you have to keep up.
+You need to send the queries from the client, you can just send strings but if you want more comfort and caching you’ll use a client library -> extra code in your client
+You need to define the schema beforehand => extra work before you get results
+You need to have a GraphQL endpoint on your server => new libraries that you don’t know yet
+Graphql queries are more bytes than simply going to a REST endpoint
+The server needs to do more processing to parse the query and verify the parameters
+Q24. What is Inversion of Control?
+Ans – Inversion of control is a broad term but for a software developer, it’s most commonly described as a pattern used for decoupling components and layers in the system.
+
+For example, say your application has a text editor component and you want to provide spell checking.
+
+Your standard code would look something like this:
+
+public class TextEditor {
+
+    private SpellChecker checker;
+
+    public TextEditor() {
+        this.checker = new SpellChecker();
+    }
+}
+What we’ve done here creates a dependency between the TextEditor and the SpellChecker.
+
+In an IoC scenario we would instead do something like this:
+
+public class TextEditor {
+
+    private IocSpellChecker checker;
+
+    public TextEditor(IocSpellChecker checker) {
+        this.checker = checker;
+    }
+}
+You have inverted control by handing the responsibility of instantiating the spell checker from the TextEditor class to the caller.
+
+SpellChecker sc = new SpellChecker; // dependency
+TextEditor textEditor = new TextEditor(sc);
+Q25. What is the most loved language of a full stack developer and why?
+Ans – Full-stack Developers work with a multitude of languages. Ideally, a candidate must have a few languages that he loves, preferably, some with which he can design the front end and others with which he can take care of the back end. A candidate should be able to demonstrate that well and remember to include the basic most used ones like HTML, CSS, Python, etc.
+
+Q26. Problem Statement:
+While returning from Byteland, Stella got one tree with N nodes from her friend over there. All nodes in this tree are colorless and Stella decided to fill colors to make it colorful. Stella wants it to look beautiful and decided to color it in such a way that any 2 nodes u and v with the shortest distance between u and v <=2 can not be of the same color. She is wondering how many different colors she needs if she fills them optimally.
+
+The first line contains a single integer n ( 3 <=n<100) – the number of nodes in the tree. Each of the next(n-1) lines contains two integers x and y(1<=x, y<=n) – the indices of two nodes directly connected by an edge. It is guaranteed that any node is reachable from any other using the edges.
+
+In the first line print single integer k – the minimum number of colors Steel has to use.
+
+Sample Input 1:
+
+3
+
+2 3
+
+1 3
+
+Sample Output 1:
+
+3
+
+Explanation Output 1:
+
+Tree is like
+
+1 -> 3 ->2
+
+We can color as follows
+
+1: Color a
+
+3: Color b
+
+2: Color c
+
+Total 3 colors
+
+Sample Input 2:
+
+5
+
+2 1
+
+3 2
+
+4 3
+
+5 4
+
+Sample Output 2
+
+3
+
+Explanation Output2:
+
+Tree is like:
+
+1 -> 2 ->3 -> 4 -> 5
+
+We can color as follows
+
+1: Color a
+
+2: Color b
+
+3 : Color c
+
+4: Color a
+
+5 : Color b
+
+Total 3 colors.
+
+Ans –  import java.io.BufferReader;
+
+import java.io.InputStreamReader;
+
+Class Test
+
+{
+
+/* Read input from stdin and provide input before
+
+* running*/
+
+BufferedReader br = new BufferedReader(
+
+new InputStreamReader(System.in)) String line
+
+= br.readLine();
+
+for (int i = 0; i < N; i++) {
+
+System.out.println(“Hello Word”);
+
+}
+
+}
+
+Q27. What is an event loop in Node.js?
+Ans – In general, an event loop is a mechanism that expects and dispatches events or messages in a program. In Node.js, event loops are central flow constructs.
+
+For example, whenever a request needs to be processed, it is inserted into the event loop and processed as soon as it is ready to be processed.
+
+Rather than doing it alone, the node delegates responsibility for managing the system. Because of this behavior, Node does not actively wait for this task to complete and can process other requests in the meantime.
+
+Q28. What is Docker?
+Ans – Docker is an easy way to run virtual machines on your local machine or in the cloud. While they are not strictly separate machines and do not require an operating system to boot, they offer many of these benefits.
+
+Docker can encapsulate legacy applications, allowing them to be deployed to servers that would otherwise not be easy to configure with older software packages and versions.
+
+Docker can be used to create test blocks during deployment to facilitate ongoing integration testing. Docker can be used to provision boxes in the cloud, and with the swarm, you can also manage clusters.
+
+Q29.  Problem Statement:
+        The Girl in Tech Hackathon is a code-a-thon where developers, designers, scientists, students, entrepreneurs, and educators gather to collaborate on projects including applications, software, hardware, data visualization, and platform solutions. The Participants are sitting around the table, and they are numbered from team1 to team n in the clockwise direction. This means that the Participants are numbered 1,2, ..,n-1,n, and participants 1 and n are sitting next to each other.
+
+After the Hackathon duration, judges started reviewing the performance of each participant. However, some participants have not finished the project. Each participant needs an extra minute to complete their project. Judges started reviewing the projects sequentially in the clock direction, starting with team x, and it takes them exactly 1 minute to review each project. This means team x gets no extra time to work, whereas team x +1 gets 1 min more to work and so on. Even if the project is not completed by the participant, the judges still spend 1 min to understand the idea and rank the participant.
+
+         The first line contains a single positive integer, n, denoting the number of participants in the hackathon. Given the values of t1,t2, t3,… tn extra time is required by each participant to complete the project. You have to guide judges in selecting the best team x to start reviewing the project so that the number of participants able to complete their project is maximal.
+
+Print x on a new line. If there are multiple such teams, 
+
+select the smallest one.
+
+Constraints:
+
+1<=n<=9*10^5
+
+0<=ti<=n
+
+Sample Input:
+
+ 3
+
+1 0 0
+
+Sample Output:
+
+ 2
+
+Ans- import java.io.BufferReader;
+
+import java.io.InputStreamReader;
+
+Class Test
+
+{
+
+/* Read input from stdin and provide input before
+
+* running*/
+
+BufferedReader br = new BufferedReader(
+
+new InputStreamReader(System.in)) String line
+
+= br.readLine();
+
+for (int i = 0; i < N; i++) {
+
+System.out.println(“Hello Word”);
+
+}
+
+}
+
+Q30. What is referential transparency in functional programming?
+Ans – A program may have the property of referential transparency if any two expressions in the program that have the same value can be substituted for one another anywhere in the program without changing the result of the program.
+
+It is used in functional programming. For example, consider the following code snippet:
+
+count1 = (fun(x) + y) * (fun(x) – z);
+temp = fun(a);
+count2 = temp + y * temp – z;
+The variables count1 and count2 will be equal if the value of fun(x) is not reflected. If the variable count1 is not equal to the variable count2, the referential transparency is violated.
+
+Q31. What is a RESTful API?
+Ans – The term REST represents Representational State Transfer. It is a compositional style that is utilized to make Web Services. It utilizes HTTP solicitations to access and utilize the information. We can make, update, read, and erase information.
+
+An API (Application Program Interface) for a site is the code that permits two programming projects to speak with one another. It permits us to compose mentioning administrations from a working framework or other application.
+
+Q32. What are the differences between Server-side Scripting and Client-side Scripting?
+Ans –
+
+Basis for comparison	Server-side scripting	Client-side scripting
+Definition	Works in the backend and is not visible to the client side.	Works in frontend and scripts are visible among users.
+Processing	Server Interaction required	Interaction with the server is not required
+Languages	Ruby on Rails, PHP, ASP.net, Python, ColdFusion, etc.	CSS, HTML, JavaScript, etc.
+Security	Relatively Secure	Insecure
+Q33. What’s the difference between normalization and denormalization?
+Ans –
+
+Normalization	Denormalization
+Normalization is used to reduce data redundancy and data inconsistently from the table.	Denormalization is used to add redundancy to execute queries.
+Data integrity is maintained	Data integrity is not maintained
+In normalization, no tables are increased.	In denormalization, no of tables is decreased.
+Normalization optimizes the usage of disk space.	Denormalization does not optimize the disk spaces.
+Q34. What is Closure? Give an example.
+Ans – Closures are made at whatever point a variable that is characterized external the current extension is gotten to from inside some inward degree.
+
+It gives you admittance to an external function’s degree from an internal capacity. In JavaScript, Closures are made each time a capacity is made. To utilize a conclusion, essentially characterize a function inside another function and uncover it.
+
+Q35. Explain the concept of the index?
+Ans –  An index is used to perform tuning in queries. which can be created to increase the performance of data retrieval. The index can be created on one or more columns of a table.
+
+Q36. How do you keep yourself updated about the new trends in the industry?
+Ans- This is a typical question to understand your involvement in technology. A good way to demonstrate your involvement in continuous learning would be by speaking about the community meetups you visit.
+
+You can also talk about the webinars and the forums you regularly attend. If you have personal projects on which you apply your skills, this is a good time to showcase that as well.
+
+Q37. Give an example of a project you have worked on and the technologies involved. How did you make these choices?
+Ans- This helps in knowing the methodology of the full-stack web developer and also gives an idea of his sharpness and precision in choosing the right toolset.
+
+Read More:   Practical Strategies – InApps Technology 2022
+You need to be as specific as possible and go in-depth while speaking about the reason for choosing a particular toolset. Show a balance between your ability to develop both on the front-end and the back-end of the web application.
+
+It is okay to show that you have more experience in one side of the development game than the other but to demonstrate that you have the ability to work on both ends of the application.
+
+Q38. What should a full-stack developer know?
+Ans –  A full-stack developer should present with the accompanying:
+
+Programming Languages: A full-stack developer should have a capacity for more than one programming language like Java, Python, Ruby, C++, and so on. One must become acquainted with various ways of organizing, configuring, executing, and testing the task-dependent on the programming language.
+Front End: One must be acquainted with the front-end advancements like HTML5, CSS3, Angular, and so on. The comprehension of outsider libraries like jQuery, Ajax, SASS, adds more benefits.
+Structures: Proficiency in words that are joined by advancement systems like Spring, Spring Boot, MyBatis, Django, PHP, Hibernate, js, yin, and that’s only the tip of the iceberg.
+Data sets: One should be acquainted with somewhere around one information base. Assuming that you know about MySQL, Oracle, and MongoDB it is adequate.
+Design Ability: The information on model plans like UI and UX configuration is additionally fundamental.
+Q39. What is a connection leak in Java and how can we fix it?
+Ans – In Java, a connection leak is a situation when the developer forgets to close the JDBC connection, it is known as a connection leak.
+
+The most common type of Connection Leak experienced in Java development, is when using a Connection Pool (such as DBCP). We can fix it by closing the connection and giving special attention to the error handling code.
+
+Q40. Name a few Full-stack developer tools?
+Ans – Some of the popular tools used by full-stack developers to make development more accessible and efficient are:
+
+Backbone
+Visual Studio Code
+WebStorm
+Slack
+Electron
+TypeScript
+CodePen
+GitHub
+Q41. Which technologies and languages would you need to develop a project from scratch?
+Ans- This is a hypothetical question geared at understanding the level at which the hiring manager will gauge your readiness to start the job.
+
+It is an easy way to distinguish a good full-stack developer from someone who is an amateur. People who have difficulty transmitting their thoughts will have bleak chances of getting through at this point.
+
+Q42. What is Dependency Injection?
+Ans – Dependency Injection is a design pattern by which IoC is executed. Injecting objects or connecting objects with other objects is done by container instead of by the object themselves. It involves three types of classes.
+
+Client class: It depends on the service class.
+Service class: It provides service to the client class.
+Injector class: It injects service class objects into the client class.
+Q43. How is multithreading used?
+Ans – The main purpose of multithreading is to provide multiple threads of execution concurrently for maximum utilization of the CPU. It allows multiple threads to exist within the context of a process such that they execute individually but share their process resources.
+
+Q44. What is the Observer pattern?
+Ans – The purpose of the Observer pattern is to define a one-to-many dependency between objects, as when an object changes the state, then all its dependents are notified and updated automatically.
+
+The object that watches on the state of another object is called the observer, and the object that is being watched is called the subject.
+
+Q45. What do you mean by data attributes and why is it used?
+Ans – HTML 5 has “data-*” which are custom attributes defined by the developer. They are used when any existing character is not suitable to be used. These attributes are only used on the page they are written on, and they do not need Ajax calls.
+
+These are Global attributes, so they can be applied to any element.
+
+Q46. What is the difference between deferring and async?
+Ans –
+
+S.o	defer	async
+1.	It downloads the file during the HTML parsing but executes the data after the parsing is completed.	It downloads the data during the HTML parsing, but it stops the parsing from executing the downloaded file.
+2.	Defer is used when the script relies upon another script.	Async is used if the script does not rely upon any scripts.
+Q47. What are the two phases committed in the database? Explain
+Ans – Two-phase Commit (2PC) is the feature of transaction processing systems that enables databases to return to the pre-transaction state if an error condition occurs.
+
+The two-phase commit strategy is designed to make sure that either all the databases are updated or none of them is updated. As a result, the databases remain synchronized.
+
+Q48. What is event bubbling and capturing in javascript?
+Ans – Event Bubbling and Event Capturing are the ways of the event propagation in the HTML API when an event occurs in an element that is located inside the other part and both the parts have registered a handle with the recently happened event.
+
+Here the event propagation model identifies that in which order the elements receive the event.
+
+In the case of Event Bubbling, the event is first captured and also handled by the innermost element, and then the event is propagated to the outermost element.
+
+In the case of Event Capturing, the event is first captured and also handled by the outermost element, and then the event is propagated to the innermost element.
+
+Q49. What is the prototype in javascript and how do you use it?
+Ans – Prototypes are objects created in Javascript. They are the “parent” objects. If we want to create common tasks (properties/methods) for all the objects inherited from the parent object we need to define them in the prototype object.
+
+Q50. What is Express.js?
+Ans –  Express.js is a web application server framework. It is used for Node.js. It helps to create node.js applications in less time. It also provides security-related help for node.js.
+
+Final thoughts:
+If you’re an experienced full-stack Web Developer with a lot of information to share, the article about 50 full-stack developer interview questions is a great source for reference.
+
+If you’re a fresh full-stack developer, it’s more important to read carefully the interview questions to gain a general idea of what the interviewer is expecting from you.
+
+Whether you use your own writing skills or let an AI-powered program do all the work for you, you’ll need to know how much average wages are in the industry before talking money in detail though.
+
+Fortunately, our team has done the research for you!
+
+One of the most important steps in choosing a new job for anyone is taking a look at the salary you will be offered for the position.
+
+We’ll discuss how the salary range varied in different positions in the US markets:
+
+The average salary for a full-stack engineer in the USA is $105,731 each year or $56.49 per hour. Entry-level positions start at $86.77/year while most experienced specialists can earn about $127,000 yearly
+About InApps
+As an offshore development center, InApps not only focuses on our clients but also pursues a people-centric culture in which we aim to build a sustainable and enjoyable working environment for our employees.
+
+Since we believe that a great team can help us better fulfill our client’s project.
+
+You might also be interested:
+
+Top 20 interview questions to ask Android developers
+
+Top 15 Data Structures Interview Questions & Answers – 2022
+
+[sociallocker id=”2721″]
+
+List of Keywords users find our article on Google:
+ui developer interview questions
+software engineer interview questions
+driver interview questions
+shortest distance between you and your new product
+full-stack developer jobs
+full-stack web developer jobs
+“q39”
+interview questions for delivery driver
+full-stack developer interview questions
+delivery driver interview questions
+java developer interview questions
+java software engineer interview questions
+mobile developer interview questions
+full stack developer interview question
+devops engineer interview questions
+full stack developer interview questions and answers
+full stack web developer interview questions
+field engineer interview questions
+interview questions for food server
+food server interview questions
+interview questions for driver
+backend developer interview questions
+top 50 interview questions
+quality assurance engineer interview questions
+graphql jobs
+es6 interview questions
+interview questions for ui developer
+integration engineer interview questions
+full stack interview questions
+qa engineer interview questions
+interview questions for field engineer
+solutions engineer interview questions
+net interview questions
+java support engineer interview questions
+ux hackathon
+system engineer interview questions
+server side interview questions
+interview questions for network engineer
+cloud engineer interview questions
+vue js interview questions
+in n out job interview questions
+qa game tester interview questions
+full stack developer interview
+field service engineer interview questions
+q48
+progressive interview questions
+consider the following code snippet
+front end engineer interview questions
+full stack open
+stack navigator
+full stack java developer jobs
+client services interview questions
+express interview questions
+front end system design interview questions
+interview questions for quality assurance engineer
+qa interview questions
+git merge master into branch
+testing interview questions
+software developer interview questions
+front end developer interview questions
+javascript interview questions
+back end interview questions
+software testing interview questions
+wawa interview questions
+in n out interview questions
+“we fix it”
+amd interview questions
+home instead interview questions
+interview questions for field service engineer
+full stack java developer interview questions
+file clerk interview questions
+assembly line worker interview questions
+full stack engineer interview questions
+initialize stack java
+hardware engineer interview question
+allscripts jobs
+senior qa engineer interview questions and answers
+interview questions for process engineer
+ui frontend successfactors
+progressive interview process
+why do you want to work in fintech interview answer
+interview questions for business developer
+backend interview questions
+java full stack developer jobs
+successfactors frontend
+interview questions driver
+production engineer interview questions
+application support engineer interview questions
+interview questions for software engineer
+elements of programming interviews solutions
+low level design interview questions
+mobile engineer interview questions
+what is child functioning module
+node.js developer job description template
+graphql ruby
+qa engineer interview question
+system design interview preparation material
+frontend engineer interview questions
+quality assurance interview questions in food industry
+ui successfactors
+ecommerce interview questions
+business developer interview questions
+editor interview questions
+job interview fragen java entwickler
+top 50 html interview questions
+interview questions for cloud engineer
+javascript coding interview questions
+python test engineer interview questions
+used q40
+qa engineer interview questions and answers
+interview questions for project engineer
+web services interview questions
+ui interview questions
+chauffeur b interview questions to ask candidates
+add spellcheck to nodejs
+chauffeur b interview questions to ask applicants
+q38 stops
+q27 stops
+25 critical questions for software references
+graphql developer job description template
+“q12”
+q48 express
+chauffeur c interview questions to ask applicants
+chauffeur c interview questions to ask candidates
+q25 stops
+mean stack developer jobs
+graphql interview questions
+q48 time
+interview questions for full stack developer
+mission impossible bloopers
+q46 stops
+linkedin frontend interview questions
+linkedin learning full stack developer
+node.js full stack developer jobs
+subset vs strict subset
+progressive interview questions and answers
+net backend developer interview questions
+product development engineer interview questions
+full stack developer python interview questions
+linkedin front end interview questions
+mvp distance driver
+docker developer jobs
+hardware test engineer interview questions
+advantage and disadvantage of e commerce java
+how to get a job at interview tips/k/
+q44 stops
+graphql compose
+successfactors interview questions
+full stack js developer jobs
+hackathon vs competitive programming
+product execution interview questions
+solutions engineer interview questions and answers
+u is not a constructor
+fintech interview questions
+full stack javascript developer jobs
+successfactors recruitment interview questions
+full stack blockchain engineer jobs
+q33 express
+collaborating and partnering interview answers
+integration developer interview questions
+product development coordinator interview questions
+referenceerror: fetch is not defined
+mean stack developer interview questions
+q30 stops
+top 50 c interview questions
+arrow pushing mechanism
+do you speak java
+graphql-ruby
+readline node js
+back end engineer interview questions
+quality center interview questions
+undefined n1
+integrate 1/x
+c# constructor exception
+interview questions for client partner
+successfactors rest api
+t3 framework templates
+chauffeur interview questions to ask candidates
+fullstack developer jobs
+hardware engineer interview questions
+top 50 interview questions and answers
+css interview questions for experienced candidates
+failed to parse graphql file
+mobile test engineer interview questions
+qa software engineer interview questions
+ats questions and answers
+chauffeur interview questions to ask applicants
+java top 50 interview questions
+c++ dependency injection framework
+child functioning module
+css interview questions for experienced professionals
+data center engineer interview questions
+node js readline
+q13 news team
+green hell multi
+network engineer interview questions
+referential listener
+ruby readline
+c interview questions and answers
+field support engineer interview questions
+front end system design questions
+net developer interview questions
+q36.5
+qa test engineer interview questions
+test engineer interview questions and answers
+best resources for system design interview
+do all browsers support es6
+elements of programming interview
+force git pull
+qa mobile testing interview questions and answers
+used q45
+applications developer interview questions
+backend technical interview questions
+direct support professional interview questions
+fullstackopen
+it support technician interview questions and answers
+java backend interview questions
+mean stack interview questions
+working solutions interview questions
+backend engineer interview
+graphql java tools
+interview questions for software developer
+not declared in this scope c++
+python interview questions for qa
+q47
+ux frontend sucessfactors
+c++ exception in constructor
+css tricky interview questions for experienced
+driver interview question
+full stack game developer
+full stack javascript jobs
+graphql-java-tools
+how much does a full stack developer make
+interviewing.io review
+is not a constructor
+java asynchronous programming interview questions
+javascript programming interview questions
+node js recruitment questions
+react spell checker
+software development engineer interview questions
+successfactors query language
+window functions interview questions
+ecommerce qa interview questions
+explain the major difference between interface and inheritance. also give
+one scenario where an interface is preferable over inheritance.
+full stack developer recruitment
+java back end developer interview questions
+java full stack developer job description
+multithreading in c# interview questions
+php basic interview questions
+process control interview questions
+production support interview questions
+q18 line
+q43 express
+q6 stops
+control systems interview questions
+full-stack developer job description template
+java scenario based interview questions for experienced professionals
+next js developer jobs
+node.js engineer job
+quality assurance interview questions call center
+readline nodejs
+testing interview questions for experienced
+c# async constructor
+difference between git fetch and git pull
+full stack developer demographics in the united states
+green hell blueprints
+java testing interview questions and answers
+prototype javascript
+q20 game
+q50 front end
+qa java interview questions
+angular interview questions for experienced professionals
+c# class constructor
+chauffeur job interview questions to ask candidates
+es6 class
+interview questions on javascript
+it support engineer interview questions and answers
+os interview questions
+restful web service listener
+ruby developer interview questions
+software test engineer interview questions
+support.com interview questions
+testing concepts interview questions
+top c interview questions
+angular 9 interview questions
+backbone model fetch
+customer quality engineer interview questions
+docker interview questions for experienced professionals
+full stack developer portfolio template
+full stack hackathon
+graphql java
+interview questions for javascript
+interview questions for machine learning engineer
+javascript important concepts for interview
+constructor function javascript
+hackathon logo design
+interview questions qa
+java entwickler interviewfragen
+java spellchecker
+q35 express
+qa technical interview questions
+successfactors technology stack
+tdz full form
+application developer interview questions
+bufferreader in java
+c interview questions
+code interview questions
+front end developer interview
+javascript interview questions for experienced professionals
+python readline without newline
+q29
+target interview questions and answers
+vue interview questions
+what is prototype in javascript
+what languages does a full stack developer know
+cloud system engineer interview questions
+docker graphql
+how to prepare for net developer interview
+interview questions for design engineer
+net full stack developer meaning
+php developer interview questions
+python scripting interview questions
+quality engineer interview question
+elements of programming interviews
+help desk clerk interview questions
+quality assurance questions for call centers
+learn full stack web development
+rest api interview questions
+full stack digital commerce
+interview questions and
+full stack developer program
+custom application development
