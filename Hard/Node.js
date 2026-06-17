@@ -4497,3 +4497,92 @@ Queues: Processing jobs that touch the same resource sequentially through a queu
 `npm install` (or `npm i`): Is used for adding, removing, or updating dependencies. It can modify the `package-lock.json` file.
 
 `npm ci` (“clean install”): Is meant for automated environments like continuous integration (CI) pipelines. It provides faster, more reliable, and deterministic builds. It deletes `node_modules` before starting and installs dependencies exactly as specified in the `package-lock.json` file. It will fail if the lock file is out of sync with `package.json`.
+
+1-hour NodeJS full-stack developer interview questions.
+Follow this script to detect the best NodeJS / React developers in 1 hour.
+
+At code.store we hire the best developers in Eastern Europe countries. I wanted to share with you our NodeJS/Fullstack job interview questions. So you can hire the best too.
+
+Plan
+Duration → 60 minutes minimum (2 hours is better)
+
+What do these 12 programming languages say about you?
+Tell me what your favorite language is, and I’ll tell you who you are.
+medium.com
+
+Phases
+0–5 (10min) → introduction, General Questions
+5–30 (25min) → Tech Knowledge
+30–55 (25min) → Coding question
+55–60 (5min) → Wrap-up
+5 must-haves to get high-quality code with an offshore developer!
+You tried hiring an Indian developer, and received the first deliverables, they were terrible. Sounds familiar? Your…
+medium.com
+
+General
+Introduction. A couple of minutes about what you’re most interested in and excited about.
+Tell me about your previous most exciting task.
+Tell me about a tech project you’ve worked on in your spare time.
+What are the benefits and the drawbacks of working in an Agile environment?
+Did you perform code reviews? How do you approach code reviews and which process do you follow? Please send examples (3–4) of your code review comments.
+Have you ever been assigned a task you were not familiar with? How did you handle it?
+JavaScript, TypeScript:
+What is the difference between == and ===? What to use when?
+Difference between var, let & const? What to use when?
+What is bind, call, apply and what's the difference?
+What is Typescript? Why use it over JavaScript?
+What are Generics?
+How do you use TypeScript on Node.js projects?
+What is the difference between arrow function and normal functions?
+Node
+Are you familiar with child_process module? What is it?
+What is the difference between spawn and exec, forks? What are use cases?
+Is there any reason to use child_process for intensive i/o work?
+Worker threads, cluster module? What are use cases?
+Why are top-level variables not global in modules?
+What are cyclic module dependencies in Node?
+When is it acceptable to use synchronous filesystem methods (like readFileSync)? Why do we use async usually?
+What will the Node app do when the call stack and event loop queues are empty?
+Coding is outdated, learn AI prompts
+Code is only a transient way of communication between humans and machines in computer history, the future of coding is…
+medium.com
+
+Data structures
+Which data structures did you recently use?
+Difference between Array and HashMap (Dictionary)?
+Speed of Insert/Access/Delete operations in Array and HashMap? Provide Big O for those operations.
+MongoDB and Redis:
+Why use MongoDB instead of SQL?
+How do we typically model data in MongoDB? → embedded documents VS different collections, access pattern design, etc
+How to search for complex nested and linked data in MongoDB? Give examples of previous experience with complex aggregates.
+How to debug a slow aggregate in MongoDB?
+What are use cases for Redis?
+Can we expire a record from Redis?
+SQL
+Which SQL database did you use? Which do you prefer and why?
+What is denormalization? When do we need it? What are the normal forms?
+How to query data from two tables in a single query?
+What is the difference between LEFT and RIGHT joins?
+How do we debug a slow SQL query?
+How do we fix a slow SQL query?
+Microservices
+How would you implement transactions in microservices architecture?
+How would you implement communication between microservices?
+How a single developer dropped AWS costs by 90%, then disappeared.
+It’s Christmas and I just finished my last audit of a SaaS client. His story is worth telling. It’s a story about…
+medium.com
+
+React
+What is Virtual DOM?
+Did you work with SSR in React? How does it work?
+What are fragments in React?
+What are the rules of React hooks?
+How to debug react app?
+How can we pass data from one component to other components in React?
+What is the most complex component have you ever made?
+Have you ever used portals, render props, refs other React features?
+CSS, HTML
+What’re the difference between block, inline and inline-block elements?
+How do you write CSS? Using some methodologies like Atomic CSS, or BEM? Or using Styled Components?
+How do you specify units in the CSS? What are the ways to do it?
+What is a CSS preprocessor?
