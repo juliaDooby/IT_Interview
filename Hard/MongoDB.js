@@ -1810,3 +1810,172 @@ High Availability: MongoDB is designed to provide high availability and resilien
 Easy to Use: MongoDB is designed to be easy to use and learn, with a simple query language and powerful indexing capabilities. 
 Security: MongoDB provides a range of security features to help ensure the safety of your data.  
 Cloud Support: MongoDB can be deployed on various cloud platforms, making it easier to manage and scale. 
+
+25 Advanced MongoDB Interview Questions for Backend Developers
+June 18, 2025
+·
+14 min read
+Jump to Category
+️ Data Modeling & Schema	Indexing & Query Optimization
+Aggregation Framework	Replication & High Availability
+Sharding & Scalability	Transactions & Internals
+Data Modeling & Schema Design
+1. When would you choose to embed a document versus creating a reference to it?
+The choice depends on the relationship between the data and the application’s access patterns.
+
+Embed (Denormalization): Choose embedding for “contains” or “has-a” relationships where the child data is frequently accessed with the parent and doesn’t have a meaningful existence on its own (e.g., comments within a blog post). This is highly performant as it avoids extra queries. However, it can lead to large documents and data duplication.
+Reference (Normalization): Choose referencing for “uses” or “borrows” relationships, or when the child data is large, frequently updated, or accessed independently (e.g., products and suppliers). This keeps documents smaller and avoids data duplication but requires a separate query (using `$lookup`) to fetch the related data.
+2. What is the Bucketing Pattern and what problem does it solve?
+The **Bucketing Pattern** is a data modeling strategy where you group related data into a single document (a “bucket”) instead of storing each piece of data in its own document. It’s designed to solve issues with “unbounded” array growth in a one-to-many relationship.
+
+A classic example is storing time-series data, like sensor readings. Instead of one document per reading, you can create one document per hour (the bucket) that contains an array of all readings for that hour. This reduces the total number of documents and the index size, leading to more efficient queries.
+
+Read about the Bucketing Pattern on the MongoDB blog.
+3. How can you enforce a schema on your collections in MongoDB?
+While MongoDB is schema-less, you can enforce a schema using **JSON Schema validation**, available since version 3.6. You define a validator on a collection using the `$jsonSchema` operator.
+
+This allows you to specify required fields, data types, value ranges, and complex validation rules. You can set a `validationLevel` (off, moderate, strict) to control how it applies to existing documents and a `validationAction` (error or warn) to determine the behavior when a document fails validation.
+
+4. What are Capped Collections? Provide a use case.
+Capped collections are fixed-size collections that work like circular buffers. Once a collection fills its allocated space, it makes room for new documents by overwriting the oldest documents. They maintain insertion order and do not allow documents to grow in size after they are written.
+
+A primary use case is for storing high-volume log data. You can ensure that you always have the most recent logs without the collection growing indefinitely and consuming all disk space.
+
+5. What is GridFS and when should it be used?
+GridFS is a specification for storing and retrieving files that exceed the BSON document size limit of 16 MB. Instead of storing a file in a single document, GridFS divides the file into smaller chunks and stores each chunk as a separate document in one collection, and metadata about the file in another collection.
+
+It should be used when you need to store large files (e.g., images, videos, PDFs) directly in the database and want to access parts of the file without loading the entire thing into memory.
+
+Indexing & Query Optimization
+6. What is a covered query in MongoDB?
+A covered query is a query that can be satisfied entirely using an index, without needing to examine any documents from the collection itself. This is highly performant as it avoids reading from disk (if the index is in RAM).
+
+For a query to be covered, two conditions must be met:
+
+All the fields in the query’s filter and projection are part of the same index.
+The query does not return the `_id` field (unless `_id` is part of the index itself).
+You can verify if a query is covered by checking the `executionStats` of an `explain()` plan; the `totalDocsExamined` should be 0. Read the documentation on Covered Queries.
+7. Explain compound indexes and the importance of rule of ESR (Equality, Sort, Range).
+A **compound index** is an index on multiple fields. The order of fields in the index is crucial for its effectiveness.
+
+The **ESR (Equality, Sort, Range) rule** is a guideline for ordering fields in a compound index:
+
+Equality: Fields on which you will perform an exact match should come first.
+Sort: Fields on which you will sort your results (`.sort()`) should come next.
+Range: Fields on which you will perform a range query (`$gt`, `$lt`) should come last.
+Following this rule helps MongoDB efficiently use the index to select and order data without needing an expensive in-memory sort.
+
+8. What is a multikey index?
+A multikey index is created when you create an index on a field that contains an array value. MongoDB creates an index key for *each element* in the array. This allows you to efficiently query for documents where the array field contains a specific value. For example, if a `tags` field contains `[“mongodb”, “database”]`, a multikey index on `tags` would create separate index entries for “mongodb” and “database”, both pointing to the same document.
+
+9. What are partial indexes and when are they useful?
+A partial index only indexes the documents in a collection that meet a specified filter expression. By indexing a smaller subset of documents, partial indexes have lower storage requirements and reduced performance costs for creation and maintenance.
+
+They are useful when you frequently query for a specific subset of data. For example, indexing only users with a `status: “active”` or only products with `inventory_count > 0`.
+
+10. How do you analyze a query’s performance using the `explain()` method?
+The `db.collection.find().explain(“executionStats”)` method provides detailed statistics about how MongoDB executed a query. Key things to look for in the output are:
+
+`winningPlan.stage`: The final plan used. A `COLLSCAN` (collection scan) is bad; an `IXSCAN` (index scan) is good.
+`executionStats.nReturned`: The number of documents returned.
+`executionStats.totalKeysExamined`: The number of index keys scanned. Should be close to `nReturned`.
+`executionStats.totalDocsExamined`: The number of documents fetched from the collection. Should be close to `nReturned`. A high value here compared to `totalKeysExamined` indicates the index is not very selective.
+Aggregation Framework
+11. What is the MongoDB Aggregation Pipeline? Describe some common stages.
+The Aggregation Pipeline is a framework for performing multi-stage data processing and analysis on a collection. Documents pass through a series of stages, where each stage transforms the documents and passes the results to the next stage.
+
+Common stages include:
+
+`$match`: Filters the documents, similar to a `find()` query. Should be placed early to reduce the amount of data processed.
+`$group`: Groups documents by a specified key and allows for accumulating values (e.g., `_id: “$category”, total: { $sum: “$price” }`).
+`$project`: Reshapes documents by adding new fields, removing existing fields, or renaming fields.
+`$sort`: Sorts the documents.
+`$unwind`: Deconstructs an array field, creating a new output document for each element in the array.
+`$lookup`: Performs a left outer join to another collection.
+Read the official Aggregation Pipeline documentation.
+12. How can you optimize the performance of an aggregation pipeline?
+Place a `$match` stage as early as possible to filter out documents and reduce the amount of data that needs to be processed by subsequent stages.
+If possible, use an index to support the initial `$match` or `$sort` stages.
+Use `$project` to remove any unnecessary fields early in the pipeline.
+Perform a `$sort` before a `$limit` to reduce the amount of data that needs to be sorted.
+13. What is the `$lookup` stage and what are its limitations?
+The `$lookup` stage performs a left outer join to another collection in the same database. It adds a new array field to the input documents containing the matching documents from the “joined” collection.
+
+Limitations:
+
+It cannot be used on a sharded “from” collection.
+It can be less performant than embedding data, as it requires a separate read operation.
+By default, it performs an equality match. More complex correlated subqueries are possible but can be slow if not supported by indexes.
+Replication & High Availability
+14. What is a replica set and what is its purpose?
+A replica set is a group of `mongod` instances that maintain the same data set. Its purpose is to provide redundancy and high availability. A replica set consists of:
+
+One **Primary** node that receives all write operations.
+Multiple **Secondary** nodes that replicate the primary’s operation log (oplog) and apply the changes to their own data sets.
+If the primary becomes unavailable, the secondaries will hold an election to choose a new primary, allowing the cluster to fail over automatically.
+
+15. Explain the replica set election process.
+An election is triggered when a primary is unreachable for more than the configured timeout. The remaining secondary members vote for a new primary.
+
+A member is eligible to be elected if it has the most up-to-date data (highest oplog timestamp) and is in good health. To win, a candidate must receive a majority of the votes from all *surviving* members of the replica set. For this reason, it’s recommended to have an odd number of voting members (e.g., 3 or 5) to avoid a tie. An arbiter can be used to add a vote without holding data.
+
+Read the documentation on Replica Set Elections.
+16. What are read preferences and write concerns?
+These settings control how your application interacts with a replica set.
+
+Read Preference: Determines which nodes to route read operations to. Options include `primary` (default, strongest consistency), `primaryPreferred`, `secondary` (for scaling read traffic, but data might be slightly stale), `secondaryPreferred`, and `nearest`.
+Write Concern: Determines the level of acknowledgment requested from MongoDB for write operations. You can specify that a write must be acknowledged by the primary only (`w:1`), by a majority of nodes (`w:”majority”`), or by a specific number of nodes. A higher write concern provides greater durability at the cost of higher latency.
+Read about Read Preference and Write Concern.
+Sharding & Scalability
+17. When should you consider sharding a MongoDB collection?
+Sharding is the process of distributing data across multiple machines to support deployments with very large data sets and high throughput operations. You should consider sharding when:
+
+Your data set is approaching the storage capacity of a single server (vertical scaling is no longer feasible or cost-effective).
+The size of your working set (frequently accessed data and its indexes) exceeds the RAM of a single server, leading to high disk I/O.
+Your application’s write or read throughput is overwhelming a single server’s capacity.
+18. What are the key considerations for choosing a good shard key?
+Choosing a good shard key is the most critical decision in a sharded cluster. The key should have:
+
+High Cardinality: A large number of unique values. A key with low cardinality (like a boolean `status` field) would lead to a few massive chunks that cannot be split.
+High Frequency: The key should appear frequently in your query patterns to allow for targeted queries that go to a single shard.
+Non-Monotonic Growth: A monotonically increasing key (like a timestamp or `_id`) will cause all new inserts to go to the same “hot” shard, creating a bottleneck. A hashed shard key is often used to distribute writes evenly.
+Read the guide on Choosing a Shard Key.
+19. What is a “hot shard” and how can you avoid it?
+A “hot shard” is a shard in a cluster that receives a disproportionately high amount of traffic, creating a performance bottleneck that negates the benefits of sharding. This is almost always caused by a poor shard key. Specifically, using a monotonically increasing key (like a default `_id` or a timestamp) will direct all new inserts to the last shard in the range. The best way to avoid this is to use a **hashed shard key**, which computes a hash of the key’s value to ensure a random, even distribution of writes across all shards.
+
+20. What is the role of the `mongos` router?
+The `mongos` is a lightweight routing service in a sharded cluster. Application clients connect to `mongos` instead of directly to the shards. Its job is to:
+
+Route queries to the appropriate shard(s) based on the shard key.
+Merge results from multiple shards for queries that cannot be targeted to a single shard.
+Provide a single, unified interface to the sharded cluster, making it appear as a single `mongod` instance to the application.
+Transactions & Internals
+21. Does MongoDB support ACID transactions? Explain their scope.
+Yes. MongoDB has supported single-document ACID transactions for a long time. Since version 4.0, it supports **multi-document ACID transactions** across multiple documents, collections, and databases within a replica set. Since 4.2, this extends to sharded clusters.
+
+These transactions provide an “all-or-nothing” execution model, ensuring data integrity for complex operations that must update multiple documents atomically. They are initiated using a client session and have a specific syntax (`session.startTransaction()`, `commitTransaction()`, `abortTransaction()`).
+
+Read the documentation on Transactions.
+22. What is the WiredTiger storage engine? What is its role?
+WiredTiger is the default storage engine for MongoDB. It is a high-performance, scalable engine responsible for managing how data is stored on disk and in memory.
+
+Key features include:
+
+Document-level Concurrency: It uses optimistic concurrency control, allowing multiple clients to modify different documents in a collection simultaneously.
+Compression: It supports compression for collections and indexes (e.g., Snappy, zlib), reducing storage footprint.
+Caching: It has its own internal cache to hold frequently accessed data in memory.
+Checkpoints: It periodically creates consistent snapshots of the data for durability and crash recovery.
+Learn about the WiredTiger Storage Engine.
+23. How would you implement optimistic locking in MongoDB?
+Optimistic locking is a strategy to handle concurrent updates without using database locks. You can implement it by adding a `version` field to your documents.
+
+The process is:
+
+When you read a document, you also retrieve its `version` number.
+When you perform an update, you include the `version` number in the query filter (`{ _id: docId, version: currentVersion }`) and also increment the version number in the update operation (`{ $inc: { version: 1 }, $set: { … } }`).
+If the update affects one document, it means you had the correct version and the update succeeded. If it affects zero documents, it means another process updated the document first (changing its version), so your update fails. You can then retry the read-modify-update cycle.
+24. What is the oplog and how is it used?
+The **oplog** (operations log) is a special capped collection (`oplog.rs`) that keeps a rolling record of all data-modifying operations on your database. It is the core mechanism that enables replication. Secondary nodes continuously monitor the primary’s oplog and apply the operations to their own data sets to stay in sync. Because it’s a capped collection, its size is fixed, and older entries are overwritten as new ones are added.
+
+25. What is the difference between a sparse index and a regular index?
+A **regular index** contains an entry for every single document in a collection, even if the indexed field is null
