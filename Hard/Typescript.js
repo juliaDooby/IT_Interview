@@ -9574,3 +9574,73 @@ alice: { name: "Alice", age: 25 },
 In this example, "PersonDictionary" is a type that represents a dictionary where each key is a string (name of the person) and each value is a "Person" object.
 50. How do you use "with" statement in TypeScript?
 Answer: In TypeScript, the "with" statement is not recommended and is not supported in strict mode. The "with" statement is used to change the scope of variables and properties within a code block. However, it can lead to confusion and make the code less maintainable, as it makes it difficult to determine the origin of variables or properties. Instead of using the "with" statement, it is recommended to access properties and variables directly without changing the scope. This promotes clarity and readability in TypeScript code and ensures better maintainability.
+
+Here are the most important TypeScript interview questions and answers to help you conduct effective technical interviews.
+
+These questions are designed to assess practical coding skills, problem-solving abilities, and technical knowledge relevant to real-world development work.
+
+1
+What is TypeScript? How does it relate to JavaScript?
+Typescript is an open-source superset of JavaScript. It focuses on strong typing and advanced language constructs to write client and server-side code with fewer errors. It’s cross-platform and is compatible with every major browser and JavaScript framework. 
+
+This language also lets you define your own types (string, number, and Boolean) in an object-oriented manner. The compiler then checks your code against those types and flags problems before it moves on to a production environment. 
+
+The way TypeScript relates to JavaScript is that all JavaScript libraries and syntax work, but TypeScript adds more syntax options and compiler features that aren’t found in JavaScript. In the same way, TypeScript can interact with many similar technologies like jQuery and Angular. 
+
+2
+What are the advantages of TypeScript?
+TypeScript is simple, easy to learn, and fast. It’s expressive and has, therefore, less syntactical clutter. TypeScript is also easy to debug thanks to its advanced debugging features that focus on catching logical errors before compile time.
+
+Thanks to static typing, TypeScript is easier to read and more structured than JavaScript’s dynamic typing. It’s also usable across platforms on client-side and server-side projects thanks to versatile transpiling. 
+
+3
+What is the difference between JavaScript and TypeScript?
+TypeScript is a superset of JavaScript, while JavaScript is a scripting language. TypeScript also has an interface concept; something JavaScript doesn’t have.
+
+TypeScript doesn’t run in the same browser as JavaScript and it has classes, while JavaScript has functions. JavaScript doesn’t support modules, which TypeScript does.
+
+4
+What are the most important TypeScript features?
+The most important TypeScript features are: 
+
+5
+What are type assertions in TypeScript?
+Type assertion works in the same way as typecasting in other languages, essentially as a soft version of typecasting. What it means is that type assertion suggests that the compiler sees the variable as a certain type, but it doesn’t force it into that mold. However, type checking and restructuring of data, which are possible in languages like C# and Java, are not possible in TypeScript. Type assertion doesn’t have an impact on runtime and it’s used purely in the compiler. 
+
+6
+How do you use TypeScript Mixins?
+Mixins are inheritance that works in the opposite direction. They allow you to build new classes by combining simpler partial class setups from previous classes. For instance, instead of class A extending class B to gain functionality, class B takes from class A and returns a new class with additional functionality. 
+
+7
+What’s a .map file? How do you use it?
+A map file is a source map that shows how the original TypeScript code has been interpreted into usable JavaScript code. Map files simplify debugging, as you can catch odd compiler behavior. These files can also be used, with the help of debugging tools, to edit the underlying TypeScript instead of the emitted JavaScript file. 
+
+8
+What is JSX in TypeScript?
+With TypeScript, you can embed, type check, and compile JSX directly to JavaScript. JSX is an XML-like syntax that can be embedded and that allows you to create HTML. 
+
+9
+What are Arrow or lambda functions?
+Arrow functions in TypeScript are similar to lambda functions in other languages. This function is a shorthand syntax for defining function expressions of anonymous functions and it lets you skip the function keyword and write more concise code. 
+
+10
+What are the different scopes in TypeScript?
+The different scopes in TypeScript are: 
+
+11
+How do you make all interface properties optional?
+Partial mapped types can be used to easily make all properties optional.   
+
+12
+How do you use TypeScript for the backend?
+With Node.js, you can use TypeScript for backend work. Install the TypeScript compiler into Node.js with this command: 
+
+npm i -g typescript 
+
+13
+How do you use AI coding assistants when writing TypeScript?
+Look for candidates who leverage TypeScript's type system with AI:
+
+14
+What TypeScript-specific issues should you watch for in AI-generated code?
+Candidates should mention:
