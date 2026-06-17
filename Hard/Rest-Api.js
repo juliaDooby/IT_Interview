@@ -1616,3 +1616,236 @@ Rest Sharp
 Katalon
 ReadyAPI
 Apigee
+
+Top 50 Most Important Rest API Interview Questions and Answers
+ 27 Feb 2025
+ Question
+ 14.4K Views
+ 19 min read
+
+Learn with an interactive course and practical hands-on labs
+ASP.NET MVC with Web API Online Course - Learn & Certify
+Rest API Interview Questions and Answers
+Are you aware of APIs? An Application Programming Interface (API) is a set of rules used by two software programs to communicate with each other and exchange data. Now what are REST APIs? Why is there so much hype about it in the market? REST is not a protocol or a standard, it is an architectural style. REST APIs provide a flexible, lightweight way to integrate applications and connect components in microservices architectures. They are the reason for the rise of cloud computing.
+
+Whether you see your career as an engineer, product manager, data analyst, or customer success manager, you must have theoretical and practical knowledge of REST APIs. While going for the interview be prepared with the Rest API Interview Questions and Answers of this Web API tutorial.
+
+Rest API Interview Questions and Answers for Freshers
+1. What is meant by REST API?
+REST, or Representational State Transfer, is a web service architecture that uses HTTP requests to send and access data from various sources.In a REST API, all data is treated as resources. A unique uniform resource identifier (URI) is associated with each resource to identify it. RESTful API is an interface that two computer systems use to exchange information securely over the internet.
+
+There are some instructions that the RESTful web services must follow. These guidelines are necessary for the web services to be considered RESTful. These guidelines ensure that requests and resources are sent easily and efficiently between client and server using standardized HTTP methods.
+
+What is meant by REST API?
+
+2. What Is a RESTful Web Service?
+RESTful web services are created by following the REST architecture design pattern, i.e. they are implemented using the HTTP protocol and its various methods. They provide means of accessing resources present at the server required for the client via the web browser by means of request headers, request body, response body, status codes, etc.
+
+What Is a RESTful Web Service?
+
+3. What is a REST Resource?
+In REST, every accessible content piece on the server is called a resource. A resource is an object with a type, associated data, a relationship with other resources on the server, and a list of methods that can be used with it. They can either be represented as text files, HTML pages, images, or any other dynamic data.
+
+A resource is identified with a URI. REST clients can access resources using HTTP requests to interact with the resource’s URI (uniform resource identifier).
+
+4. What are the features of RESTful web services?
+RESTful web services have the following features:
+
+It works on the Client-Server model.
+The service uses HTTP Protocol to fetch data/resources, query execution, or any other functions.
+The client and server communicate through “Messaging”.
+Resources are accessible to the service through URIs.
+It follows the statelessness concept where the client's request and response are not dependent on others and thereby provides total assurance of getting the required data.
+These services also use the concept of caching to minimize the server calls for the same type of repeated requests.
+These services can also use SOAP services as implementation protocols for REST architectural patterns.
+5. What do you understand by messaging in RESTful web services?
+What do you understand by messaging in RESTful web services?
+
+In REST API web services, messaging is communication between client and server. An interaction always starts with the client messaging the API with an HTTP request. The API processes this request. It then sends back an HTTP response that gives the status of the request and any resources the client asked for. The message consists of data and metadata about the message.
+
+6. What is a URI?
+URIs are Uniform Resource Identifiers. They are strings used in REST APIs to identify an API resource on the API server. Each resource has its own unique URI, which, when included in an HTTP request, allows clients to target that resource and perform actions on it. Addressing is the process of targeting a resource with its URI.
+
+The format of a URI is
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+
+7. Which protocol do REST APIs use?
+REST APIs use the HTTP protocol to communicate with clients. HTTP protocol is used to deliver web pages to client browsers.
+
+8. What does the RESTful API client request contain?
+RESTful APIs require requests to contain the following main components:
+
+What does the RESTful API client request contain?
+
+Unique resource identifier(URI): The server identifies each resource with unique resource identifiers. For REST services, the server typically performs resource identification by using a Uniform Resource Locator (URL). The URL specifies the path to the resource.
+Method: We implement RESTful API using the Hypertext Transfer Protocol (HTTP). An HTTP method tells the server what it needs to do to the resource. The common HTTP methods are GET, POST, PUT, DELETE, etc.
+HTTP Version: This part shows the version of the HTTP protocol you are using.
+HTTP headers: Request headers are the metadata exchanged between the client and server.
+Request Body: This contains the actual message content to be sent to the server.
+9. What are HTTP status codes? List the common HTTP Response Codes.
+HTTP status codes are three-digit numbers included in the server’s response that indicate the result of a client’s request.
+
+What are HTTP status codes? List the common HTTP Response Codes.
+
+The first digit of the HTTP response codes analyzes the type of response given by the server.
+
+1XX:informational response
+2XX:successful response
+3XX: redirect
+4XX:client error
+5XX: server error
+The common HTTP responses are:
+
+200 (OK): request successful
+201 (Created): request successful & resource created
+400 (Bad Request): request unsuccessful due to user error (typo or data missing)
+401 (Unauthorized): request unsuccessful, client not authenticated/authorized
+403 (Forbidden): request unsuccessful; client authenticated, but not authorized
+404 (Not Found): request unsuccessful; the server cannot find the resource
+500 (Internal Server Error): request unsuccessful due to an unexpected server error
+502 (Bad Gateway): request unsuccessful due to invalid server response
+503 (Service Unavailable): server undergoing maintenance/unavailable, cannot process request
+10. What HTTP Methods are supported by Rest?
+The four primary HTTP request methods in REST are:
+
+GET:retrieves data from the API by specifying an endpoint URL, does not require the user to send a message body
+POST: sends new data for API processing, usually creating a new resource that the API returns to the user. Requires a message body to submit the data
+PUT: used to update the old/existing resource on the server or to replace the resource.
+DELETE: removes an existing resource from the API server
+There are also two less common HTTP methods supported by the REST API:
+
+OPTIONS: retrieves a list of supported methods that can be used with REST API resource
+HEAD: like GET, but retrieves metadata about the API resource
+Read More: Top 50 ASP.NET Web API Interview Questions
+11. What is caching in the REST API?
+Caching is the ability to store copies of frequently accessed data in several places along the request-response path. When a client requests some resources, the request first goes through a cache and then to the server. If the cache contains the updated data, the request uses that data to satisfy the user request. If it does not, the data comes from the server.
+
+12. Differentiate between REST and SOAP API.
+Parameters	REST	SOAP
+Stands for	Representational State Transfer	Simple Object Access Protocol
+What is it?	REST is an architecture style for designing communication interfaces.	SOAP is a protocol for communication between applications
+Design	REST API exposes the data	SOAP API exposes the operation
+Transport Protocol	REST works only with HTTPS.	SOAP is independent and can work with any transport protocol.
+Data format	REST supports XML, JSON, plain text, HTML	SOAP supports only XML data exchange
+Performance	REST has faster performance due to smaller messages and caching support.	SOAP supports only XML data exchange.
+Scalability	REST is easy to scale. It’s stateless, so every message is processed independently of previous messages.	SOAP is difficult to scale. The server maintains state by storing all previous messages exchanged with a client.
+Security	REST supports encryption without affecting performance.	SOAP supports encryption with additional overheads.
+Use case	REST is useful in modern applications and public APIs.	SOAP is useful in legacy applications and private APIs.
+Read More: Difference between SOAP And REST APIs
+13. What is CRUD in the context of a REST API?
+CRUD is an acronym for Create, Read, Update, and Delete. These different actions are typically associated with databases. In the context of a REST API, we can perform each action type on a database via HTTP requests.
+
+What is CRUD in the context of a REST API?
+
+Create: requires the HTTP POST method
+Read: requires the HTTP GET method
+Update: requires the HTTP PUT method
+Delete: requires the HTTP DELETE method
+14. How is a REST API stateless?
+Statelessness means that the REST API server doesn’t store any information about previous client communications. As a result, the server and client have no information about each other’s state, allowing the server to free up storage that would otherwise be needed to maintain records for each request.
+
+Because of this, each request made to a REST API is seen as a brand-new interaction, meaning that on each occasion, a client needs to supply all of the necessary information to complete an API request successfully.
+
+How is a REST API stateless?
+
+15. What is payload?
+“Payload” refers to the data in the body of the HTTP request or response messages in GET or POST requests. The data can be a JSON or XML object or sometimes binary data like images or videos. The payload is an essential part of a REST API as it contains the actual data being transferred between the client and the server. It is important to ensure that the payload is properly formatted and structured according to the API's specifications to ensure proper communication and handling of data.
+
+16. In REST APIs, which markup languages are used to represent the resources?
+The resources in REST APIs are represented using XML (extensible markup language) and JSON (JavaScript Object Notation).
+
+17. What are the different application integration styles?
+The different integration styles include
+
+Shared database
+Batch file transfer
+Invoking remote procedure (RPC)
+Swapping asynchronous messages over a message-oriented middleware (MOM)
+18. What are “Options” in REST APIs?
+In REST APIs, "options" refer to the OPTIONS HTTP method. The OPTIONS method describes the communication options for the target resource. It can be used to determine the capabilities and restrictions associated with the resource, including supported HTTP methods and required headers.
+
+19. What are the principles of REST API?
+Uniform interface: It is fundamental to the design of any RESTful web service. It indicates that the server transfers information in a standard format. The formatted resource is called a representation in REST.
+Statelessness: It refers to a communication method in which the server completes every client request independently of all previous requests.
+Layered system: You can design your RESTful web service to run on several servers with multiple layers such as security, application, and business logic, working together to fulfill client requests. These layers remain invisible to the client.
+Cacheability: RESTful web services support caching i.e. the process of storing some responses on the client or on an intermediary to improve server response time.
+Code on demand: In the REST architectural style, servers can temporarily extend or customize client functionality by transferring software programming code to the client.
+20. What are Idempotent methods?
+An idempotent HTTP method is a method that can be invoked many times without different outcomes. It should not matter if the method has been called only once, or ten times over. The result should always be the same.
+
+What are Idempotent methods?
+
+21. What is AJAX? How is REST different from AJAX?
+AJAX stands for Asynchronous JavaScript And XML. It is a web development technique that allows data to be loaded in the background without reloading the entire page. This makes web applications more responsive, as users don’t have to wait for the whole page to reload every time they interact with it.
+
+REST	AJAX
+REST- Representational State Transfer	AJAX - Asynchronous javascript and XML
+REST has a URI for accessing resources using a request-response pattern.	AJAX uses XMLHttpRequest object to send requests to the server and the response is interpreted by the Javascript code dynamically.
+REST is an architectural pattern for developing client-server communication systems.	AJAX is used for dynamic updation of UI without the need to reload the page.
+REST requires the interaction between client and server.	AJAX supports asynchronous requests thereby eliminating the necessity of constant client-server interaction.
+22. What are the three types of API Testing?
+API testing can be categorized into three types:
+
+Unit Testing (Component Testing): It focuses on individual units or components of the code, typically at the function level. It verifies the correctness of specific functionalities or methods within an API in isolation.
+Integration Testing: It involves testing the interactions and integration points between different components, modules, or systems within an API. The primary goal is to ensure that the integrated components work cohesively and as expected when combined together.
+End-to-end Testing (Functional Testing): It evaluates the entire API system, including all components, databases, external services, and communication interfaces.
+23. Can you send the payload in the GET and DELETE methods?
+No, the payload is not the same as the request parameters. Hence, it is not possible to send payload data in these methods.
+
+24. What is the maximum payload size that can be sent in POST methods?
+There's no such restriction. The only thing is the greater the payload size, the larger the bandwidth consumption and time taken to process the request. Sending large payloads in POST requests requires effective strategies for efficient transmission.
+
+25. What are JAX-WS and JAX-RS?
+Java API for XML Web Services (JAX-WS) is a standardized API for creating and consuming SOAP (Simple Object Access Protocol) web services. JAX-WS allows developers to write message-oriented as well as Remote Procedure Call-oriented (RPC-oriented) web services.
+
+JAX-RS stands for JAVA API for RESTful Web Services. It is a JAVA-based programming language API and specification to provide support for creating web services according to the Representational State Transfer (REST) architectural pattern.
+
+26. Should we make the resources thread-safe explicitly if they are made to be shared across multiple clients?
+No. it isn't required. This is because, upon every request, new resource instances are created which makes them thread-safe by default.
+
+27. What are the ways to secure REST API?
+Strong Authentication and Authorization
+Implementing protocols like OAuth 2.0 and OpenID Connect can manage user authentication securely. Setting up clear policies with role-based access control (RBAC) or attribute-based access control (ABAC) is crucial for authorization. Adding multi-factor authentication (MFA) can significantly enhance security by reducing the chances of unauthorized access.
+
+Encrypt Data in Transit and at Rest
+For data in transit, use TLS with strong cipher suites. For data at rest, employ encryption algorithms like AES and securely manage encryption keys with cloud providers or hardware security modules (HSMs) services.
+
+Error Handling and Logging
+Error handling is critical to avoid leaking sensitive data through API errors. Logging API transactions is vital for tracking and analyzing activities. Ensure logs do not contain sensitive information.
+
+Use Throttling and Rate Limiting
+Throttling manages the API's throughput, while rate limiting imposes hard limits on requests. Implementing these measures through API gateways or middleware helps prevent overuse and protect against denial-of-service attacks.
+
+28. Can you use TLS (Transport Layer Security) With a REST API?
+Yes, TLS can encrypt communications between a client and the REST API server, providing a secure way to access API resources. To benefit from TLS encryption and security, requests must be made with HTTPS rather than standard HTTP. This is important because the REST API takes on the security properties of the protocol that it uses for communication.
+
+29. How is JAXB related to RESTful web API?
+JAXB (Java Architecture for XML Binding) is closely related to RESTful web APIs, particularly in the context of Java-based applications.
+
+30. What are the best practices for creating URIs?
+Use nouns to represent resources
+Use consistent resource naming conventions and URI formatting for minimum ambiguity and maximum readability and maintainability.
+Use a forward slash (/) to indicate hierarchical relationships
+Don't use trailing forward slash (/) in URIs
+Use hyphens (-)
+Do not use underscores ( _ )
+Use lowercase letters
+Do not use file extensions
+Never use CRUD function names in URIs
+Do not Use Verbs in the URI
+
+Download this PDF Now - Rest API Interview Questions PDF By ScholarHat
+Summary
+After going through these questions you might have got an idea regarding the type of questions that can be asked. REST APIs allow different software to communicate easily, efficiently, and securely. The demand for REST architecture will continuously rise as the software industry grows. Hence all the upcoming developers must be skilled with REST techniques.
+
+FAQs
+
+Q1. How do I prepare for Rest AP interview?
+ Focus on understanding HTTP methods, status codes, and authentication mechanisms. Practice building and consuming APIs using frameworks like Express.js or Flask. 
+
+Q2. How do I showcase my Rest API projects in an interview?
+ During the interview, present your projects by explaining the problem they solve, the technologies used, key features implemented, and any challenges overcome. Demonstrate your API's functionality with examples and discuss any optimizations or improvements made. 
+
+Q3. What are some tips for answering Rest API Interview Questions?
+To answer REST API interview questions effectively, focus on explaining key concepts like CRUD operations, statelessness, and resource representation using JSON or XML. 
