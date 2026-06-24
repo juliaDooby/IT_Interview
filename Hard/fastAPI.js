@@ -1,3 +1,596 @@
+Приложение Fastapi: пустой массив или TypeError: логическое значение этого предложения не определено
+Вопросы
+PYTHON
+Приложение Fastapi: пустой массив или TypeError: логическое значение этого предложения не определено
+Итак, я делаю простое приложение todo-api с fastapi и sqlmodel. Миграция прошла нормально, но если я запускаю свой сервер, я не вижу ничего, кроме пустого массива. Я добавил некоторые данные в файл базы данных с помощью браузера баз данных для SQLite, поэтому он не пуст. И когда я запускаю свой сервер и перехожу к "/", я вижу только пустой массив и никаких данных, а если я перехожу к "/1/", я вижу это: TypeError: логическое значение этого предложения не определено
+
+Мой main.py:
+
+from fastapi import FastAPI
+import uvicorn
+from endpoints.routers import router
+from database.db import engine
+from sqlmodel import SQLModel
+
+app = FastAPI()
+app.include_router(router)
+
+# def create_db_and_tables():
+#     SQLModel.metadata.create_all(engine)
+
+if __name__ == '__main__':
+    uvicorn.run("main:app", host='localhost', port=8000, reload=True)
+    # create_db_and_tables()
+маршрутизаторы.py
+
+from fastapi import APIRouter
+from models.todo import ToDo
+from repos.todo_repo import select_all_todos, select_todo
+from database.db import session
+from sqlmodel import Session, select
+
+router = APIRouter()
+
+@router.get("/", tags=['Todos'])
+def show_todos():
+    todos = select_all_todos()
+    return todos
+
+
+@router.get('/{id}/', response_model=ToDo, tags=['Todos'])
+def select_one(id: int):
+    todo_found = select_todo(id)
+    return todo_found
+репозитории:
+
+from models.todo import ToDo
+from sqlmodel import Session, select, or_
+
+def select_all_todos():
+    with Session(engine) as session:
+        todos = select(ToDo)
+        results = session.exec(todos)
+        todo = results.all()
+        return todo
+    
+def select_todo(id):
+    with Session(engine) as session:
+        statement = select(ToDo)
+        statement = statement.where(ToDo.id==id)
+        if not statement:
+            return "Error"
+        result = session.exec(statement)
+        return result.first()
+модели:
+
+from sqlmodel import Field, SQLModel
+
+
+class ToDo(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    name: str
+    is_done: bool = False
+файл базы данных.py:
+
+from sqlmodel import create_engine, Session
+
+eng = 'database.db'
+
+sqlite_url = f'sqlite:///{eng}'
+engine = create_engine(sqlite_url, echo=True)
+session = Session(bind=engine)
+Выслеживать:
+
+Traceback (most recent call last):
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/endpoints/routers.py", line 17, in select_one
+    todo_found = select_todo(id)
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/repos/todo_repo.py", line 16, in select_todo
+    if not statement:
+  File "/home/aleksandr/Programming/Sites/myTodo/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 590, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+ 26.10.2022 12:59
+0
+1
+152
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Прочитав Traceback, я бы сказал, что какой бы тип ни возвращал statement.where(ToDo.id==id), похоже, не определен __bool__() Magic Method. Таким образом, вы не можете проверить «правдивость» утверждения if.
+
+ 26.10.2022 13:47
+ Ответ принят как подходящий
+Итак, исключение состоит в том, что вы на самом деле не выполняете оператор в select_todo перед проверкой на наличие ошибок. В операторе SqlModel используется объект особого типа для построения и обработки запроса, поэтому его нельзя напрямую проверить на наличие логического значения.
+
+Если вы хотите проверить, есть ли какие-либо результаты, поместите это утверждение под exec и вместо этого отметьте results.
+
+Нет смысла проверять сам оператор, если он построен успешно, если в этой точке не возникло исключения.
+
+Как я могу реализовать Fastapi, например Depends(), без использования какого-либо пакета или использования необработанного кода Python?
+Вопросы
+PYTHON
+Как я могу реализовать Fastapi, например Depends(), без использования какого-либо пакета или использования необработанного кода Python?
+Я хочу реализовать свою собственную инъекцию зависимостей, например Fastapi Depends(), без использования внешнего пакета или фреймворка. Какой будет подход? Пример кода будет полезен для меня. Заранее спасибо.
+
+from typing import Callable, Optional, Any
+
+class Depends:
+    def __init__(self, dependencies= Optional[Callable[..., Any]]):
+        self.dependencies = dependencies
+        
+        
+def get_db():
+    pass
+
+    
+def get_token():
+    pass
+
+def get_current_user(db= Depends(get_db),  token= Depends(get_token)):
+    pass
+ 22.10.2022 22:57
+0
+4
+158
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вы можете сделать что-то вроде этого?
+
+async def get_db(db_con=Depends(get_db_con)) -> AsyncIterable[Session]:
+    session = Session(bind=db_con)
+    try:
+        yield session
+    finally:
+        session.close()
+Функция get_db_con может вернуть инициализированную базу данных (или вызвать ошибку подключения).
+
+Надеюсь это поможет
+
+ваше здоровье.
+
+ 23.10.2022 09:22
+ Ответ принят как подходящий
+Отправной точкой может быть что-то вроде этого, где мы создаем декоратор, который позволяет нам вытеснять любые вызовы функции и разрешать любые зависимости.
+
+from typing import Dict, Callable, Any
+from functools import wraps
+import inspect
+
+
+# Our decorator which inspects the function and resolves any
+# dependencies when called
+def resolve_dependencies(func):
+    # based on https://stackoverflow.com/a/69170441/
+    f_sig = inspect.signature(func)
+
+    @wraps(func)
+    def resolve_nice_to_have(*args, **kwargs):
+        bound = f_sig.bind(*args, **kwargs)
+        bound.apply_defaults()
+
+        for k, arg in bound.arguments.items():
+            if type(arg) == ItWouldBeNice:
+                bound.arguments[k] = arg()
+
+        return func(*bound.args, **bound.kwargs)
+
+    return resolve_nice_to_have
+
+
+# Our actual dependency wrapper, with a simple cache to avoid
+# invocating an already resolved dependency.
+# Slightly friendlier named than actually depending on something.
+class ItWouldBeNice:
+    cache: Dict[Callable, Any] = {}
+
+    def __init__(self, dependency: Callable):
+        self.dependency = dependency
+
+    def __call__(self) -> Any:
+        if self.dependency in ItWouldBeNice.cache:
+            return ItWouldBeNice.cache[self.dependency]
+
+        result = self.dependency()
+        ItWouldBeNice.cache[self.dependency] = result
+        return result
+Пример использования:
+
+from iwant import ItWouldBeNice, resolve_dependencies
+
+
+def late_eval():
+    print("late was called")
+    return "static string"
+
+
+@resolve_dependencies
+def i_want_it(s: str = ItWouldBeNice(late_eval)):
+    print(s)
+
+
+@resolve_dependencies
+def i_want_it_again(s: str = ItWouldBeNice(late_eval)):
+    print(s)
+
+
+i_want_it()
+i_want_it_again()
+Это не поддерживает иерархические зависимости и т. д., но должно, по крайней мере, проиллюстрировать концепцию, которую вы могли бы применить, чтобы сделать что-то подобное.
+
+Файл Docker и Python
+Вопросы
+PYTHON 3.X
+Файл Docker и Python
+Извините, я очень новичок в Docker. У меня есть следующий файл Docker, который содержит следующие команды (см. ниже). Я не уверен, что понимаю все команды, и был бы признателен за некоторые пояснения. Я прокомментировал все строки, которые понял, но поставил вопросительный знак в других. Пожалуйста, смотрите ниже
+
+#That this line means that python will be our base. Can some comment here please and explain this line more?
+FROM python:3.9 as base
+ 
+#create a working directory in the virtual machine (VM)
+WORKDIR /code    
+
+# copy all the python requirements stored in requirements.txt into the new directoy (in the VM)
+COPY ./requirements.txt /code/requirements.txt    
+
+
+# activate the package manager pip. But why use no-cache-dir?
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# copy all files to the new directory (in the VM)
+COPY ./ /code/
+
+# I don't understand the line below. Please explain? why uvicorn? app.main:app is the 
+ #location of the fastapi
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "180"]
+Спасибо
+
+ 21.10.2022 17:27
+0
+0
+84
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+В файле Docker указаны все шаги, которые Docker выполнит при создании вашего образа. Из этого образа можно создать контейнер.
+
+#That this line means that python will be our base. Can some comment here please and explain this line more?
+FROM python:3.9 as base
+Это очень простой материал для работы с докером, следуйте инструкциям (для начинающих), и вы узнаете гораздо больше, чем простое ложное кормление небольшими кусочками знаний.
+
+#create a working directory in the virtual machine (VM)
+WORKDIR /code    
+Вы создаете образ контейнера, а не виртуальную машину. Это похожее, но совершенно другое понятие, и его не следует смешивать.
+
+# copy all the python requirements stored in requirements.txt into the new directoy (in the VM)
+COPY ./requirements.txt /code/requirements.txt    
+Это копирует все файлы в образ.
+
+# activate the package manager pip. But why use no-cache-dir?
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN — это шаг сборки образа, и результат будет зафиксирован в образе Docker. Итак, на этом этапе вы говорите докеру, что вам нужен образ, в котором все установлено, как указано в requirements.txt с помощью pip. Нет кеша, по умолчанию PIP сохраняет whl пакетов, которые вы устанавливаете, но это только увеличит изображение и больше не требуется. Так что кэша нет.
+
+# copy all files to the new directory (in the VM)
+COPY ./ /code/
+Опять же, не ВМ, а образ, образ, который в дальнейшем будет использоваться для создания контейнера.
+
+# I don't understand the line below. Please explain? why uvicorn? app.main:app is the 
+ #location of the fastapi
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "180"]
+Поскольку вы пытаетесь запустить проект FastAPI, а FastAPI — это просто приложение; вам нужен сервер, чтобы действительно иметь возможность запускать запрос в FastAPI. На самом деле это объясняется на самой первой странице документации FastAPI.
+
+ 21.10.2022 17:52
+«app.main: app» указывает, что ваш проект имеет такой файл python:
+
+<Project Root Dir>
+   app - folder
+     main.py -- python file
+В main.py вы запускаете экземпляр FastAPI с именем app, например:
+
+# main.py
+....
+app = FastAPI()
+...
+unicorn используйте приведенные выше правила, чтобы получить экземпляр FastAPI app, затем загрузите его.
+
+Как скрыть поле дискриминатора Pydantic из документов FastAPI
+Вопросы
+PYTHON
+Как скрыть поле дискриминатора Pydantic из документов FastAPI
+У нас есть поле дискриминатора type, которое мы хотим скрыть от документов пользовательского интерфейса Swagger:
+
+class Foo(BDCBaseModel):
+    type: Literal["Foo"] = Field("Foo", exclude=True)
+    Name: str
+
+class Bar(BDCBaseModel):
+    type: Literal["Bar"] = Field("Bar", exclude=True)
+    Name: str
+
+class Demo(BDCBaseModel):
+    example: Union[Foo, Bar] = Field(discriminator = "type")
+Следующий маршрутизатор:
+
+@router.post("/demo")
+async def demo(
+    foo: Foo,
+):
+    demo = Demo(example=foo)
+    return demo
+И это показано в документах Swagger:
+
+Мы не хотим, чтобы пользователь видел поле типа, так как оно в любом случае для него бесполезно. Мы попытались сделать поле приватным: _type что скрывает его от документов, но тогда его больше нельзя использовать в качестве дискриминатора:
+
+    class Demo(BDCBaseModel):
+  File "pydantic\main.py", line 205, in pydantic.main.ModelMetaclass.__new__
+  File "pydantic\fields.py", line 491, in pydantic.fields.ModelField.infer
+  File "pydantic\fields.py", line 421, in pydantic.fields.ModelField.__init__
+  File "pydantic\fields.py", line 537, in pydantic.fields.ModelField.prepare
+  File "pydantic\fields.py", line 639, in pydantic.fields.ModelField._type_analysis
+  File "pydantic\fields.py", line 753, in pydantic.fields.ModelField.prepare_discriminated_union_sub_fields
+  File "pydantic\utils.py", line 739, in pydantic.utils.get_discriminator_alias_and_values
+pydantic.errors.ConfigError: Model 'Foo' needs a discriminator field for key '_type'
+ 20.10.2022 11:01
+1
+2
+232
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Проблема в базовой концепции. Если ваша модель моделирует параметры API, и вы выбираете, какую модель использовать на основе значения параметра «тип», тогда пользователь API должен (это обязательное поле) отправить этот ключ! Почему вы все равно хотите это скрыть?
+
+ 20.10.2022 11:49
+ Ответ принят как подходящий
+Это очень распространенная ситуация, и решение очень простое. Выделите это поле type в отдельную модель.
+
+Типичный способ сделать это — создать один FooBase со всеми полями, валидаторами и т. д., которые будут общими для всех дочерних моделей (в этом примере только name), а затем подклассировать его по мере необходимости. В этом примере вы должны создать один подкласс Foo с этим полем type, которое вы затем используете для аннотации Demo, и один класс FooRequest без каких-либо дополнений.
+
+Вот полный рабочий пример:
+
+from typing import Literal, Union
+
+from fastapi import FastAPI
+from pydantic import BaseModel, Field
+
+class FooBase(BaseModel):
+    name: str
+
+class FooRequest(FooBase):
+    pass  # possibly configure other request specific things here
+
+class Foo(FooBase):
+    type: Literal["Foo"] = Field("Foo", exclude=True)
+
+    class Config:
+        orm_mode = True
+
+class Bar(BaseModel):
+    type: Literal["Bar"] = Field("Bar", exclude=True)
+    name: str
+
+class Demo(BaseModel):
+    example: Union[Foo, Bar] = Field(discriminator = "type")
+
+api = FastAPI()
+
+@api.post("/demo")
+async def demo(foo: FooRequest):
+    foo = Foo.from_orm(foo)
+    return Demo(example=foo)
+Обратите внимание, что я использовал настройку orm_mode = True только для того, чтобы иметь очень краткий способ преобразования экземпляра FooRequest в экземпляр Foo внутри функции обработчика маршрута. В этом нет необходимости. Вы также можете просто сделать foo = Foo.parse_obj(foo.dict()) там.
+
+Кроме того, добавление модели FooRequest здесь, конечно, избыточно. Вы также можете использовать FooBase в качестве модели запроса. Я написал это таким образом, чтобы продемонстрировать типичный шаблон, потому что иногда модель запроса имеет дополнительные вещи, которые отличают ее от своих братьев и сестер. В вашем примере это перебор.
+
+FastAPI не заменяет символ «+» плюс в запросе GET
+Вопросы
+PYTHON
+FastAPI не заменяет символ «+» плюс в запросе GET
+Я понимаю, что это не проблема FastAPI, но как избежать этого с помощью FastAPI?
+
+Например:
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get('/')
+async def root(q: str):
+    return {"message": f"{q}"}
+Выдача следующего запроса:
+
+http://127.0.0.1:8000/?q=1+1
+возвращает:
+
+{"message":"1 1"}
+ 19.10.2022 15:18
+1
+0
+244
+2
+Данный вопрос помечен как решенный
+ Ответы 2
++ — это зарезервированный символ в URL-адресах, который используется для обозначения пробелов (как показывает ваш результат). URL-кодируйте свои значения, чтобы избежать этого:
+
+http://127.0.0.1:8000/?q=1%2b1
+ 19.10.2022 15:20
+ Ответ принят как подходящий
+Знак плюс (+) имеет семантическое значение в строке запроса, т. е. представляет символ пробела. Точно так же знак амперсанда (&), который используется для разделения различных пар key=value в строке запроса.
+
+Когда приходит запрос, FastAPI обрабатывает параметры запроса после декодирования URL, и, следовательно, любые знаки + в строке запроса декодируются в пробел. Если вы хотите сохранить знак +, вам следует закодировать параметры запроса в URL-адресе перед отправкой HTTP-запроса, чтобы все знаки + были преобразованы в %2B. Затем, когда ваш сервер FastAPI декодирует строку запроса, все знаки %2B будут преобразованы обратно в знаки +.
+
+В JavaScript вы можете использовать функцию encodeURI(), которая принимает в качестве аргумента полный URI:
+
+var encodedURL = encodeURI('http://127.0.0.1:8000/?q=1+1');
+или используйте функцию encodeURIComponent, которая принимает любой объект (например, строку или число):
+
+var encodedURL =  'http://127.0.0.1:8000/?q=' + encodeURIComponent('1+1');
+Если вы отправляете запрос непосредственно из браузера (т. е. вводя URL-адрес в адресной строке браузера), обязательно отправьте его в кодировке URL-адреса:
+
+http://127.0.0.1:8000/?q=1%2B1
+Если вы все еще хотите отправить запрос в этом формате http://127.0.0.1:8000/2?q=1+1 и получить ответ с сохранением знаков +, вы можете использовать request.url.query, который вернет необработанную строку запроса, что позволит вам разделить пары key=value и получить значение параметра q в исходном виде. Пример:
+
+from fastapi import Request
+
+@app.get('/')
+def root(request: Request):
+    q = request.url.query.split('&')[0].split('=')[1]
+    return {'message': q}
+
+Вызов AJAX с jQuery не работает как CURL
+Вопросы
+JQUERY
+Вызов AJAX с jQuery не работает как CURL
+Я хочу сделать вызов API в javascript, используя AJAX, предоставленный jQuery, но я получаю необрабатываемую ошибку объекта (ответ на ошибку pydantic от моего сервера fastapi). Странно то, что команда curl работает. Мне непонятно, почему мой сервер может различать ошибочный вызов ajax и успешный вызов curl.
+
+curl -X 'POST' \
+  'http://127.0.0.1:8010/api/update' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"gsid":"634ad79ee29c42396b0d4055","ticker":"SPX230317C04200000","security_type":5,"security_subtype":2005,"option_flavor":2,"underlying":{"gsid":"634ad6d1d89536dac325f871","ticker":"SPX"},"denominated_ccy":{"gsid":"634ad6d1d89536dac325f86e","ticker":"USD"},"expiry_date":"2023-03-17","strike":4200,"option_exercise":1,"expiry_series_type":20,"expiry_time_of_day":1,"settlement_type":1,"primary_exchange":"CBO","multiplier":100,"issuer":0,"description":0,"website":0,"as_of_date":"1970-01-01T00:00-05:00","expiry_datetime":"1969-12-31T19:00-05:00","identifiers":[{"id_type":2,"value":""},{"id_type":3,"value":""},{"id_type":4,"value":""},{"id_type":5,"value":""}]}'
+Мой API правильно отвечает на этот вызов со следующим ответом 200:
+
+{
+  "success": true,
+  "created_security": false,
+  "gsid": "634ad79ee29c42396b0d4055",
+  "available_versions": [
+    "1970-01-01T00:00:00-05:00"
+  ],
+  "message": "success"
+}
+AJAX-вызов с jQuery
+
+data = {"gsid":"634ad79ee29c42396b0d4055","ticker":"SPX230317C04200000","security_type":5,"security_subtype":2005,"option_flavor":2,"underlying":{"gsid":"634ad6d1d89536dac325f871","ticker":"SPX"},"denominated_ccy":{"gsid":"634ad6d1d89536dac325f86e","ticker":"USD"},"expiry_date":"2023-03-17","strike":4200,"option_exercise":1,"expiry_series_type":20,"expiry_time_of_day":1,"settlement_type":1,"primary_exchange":"CBO","multiplier":100,"issuer":0,"description":0,"website":0,"as_of_date":"1970-01-01T00:00-05:00","expiry_datetime":"1969-12-31T19:00-05:00","identifiers":[{"id_type":2,"value":""},{"id_type":3,"value":""},{"id_type":4,"value":""},{"id_type":5,"value":""}]};
+payload = JSON.stringify(data);
+
+$.ajax({
+    url: 'http://127.0.0.1:8010/api/update',
+    type : "POST",
+    dataType: 'json',
+    processData: false,
+    success: function(data){
+        console.info('success: '+JSON.stringify(data));
+    },
+    error: function(data){
+        console.info('error: '+JSON.stringify(data));
+    },
+    data : payload,
+});
+Здесь я получаю следующий ответ необрабатываемой сущности 422 от моего сервера:
+
+{"readyState":4,"responseText":"{\"status_code\":10422,\"message\":\"4 validation errors for Request body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict)\",\"data\":null}","responseJSON":{"status_code":10422,"message":"4 validation errors for Request body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict) body value is not a valid dict (type=type_error.dict)","data":null},"status":422,"statusText":"Unprocessable Entity"}
+ 19.10.2022 02:09
+0
+2
+51
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+РЕДАКТИРОВАТЬ Добавление следующего к вызову ajax:
+
+contentType: "application/json"
+Ответ предложен @addjunior
+
+ 20.10.2022 01:26
+Лично я бы НИКОГДА не использовал jQuery ни для чего.
+
+Вот как это будет сделано в JavaScript.
+
+fetch('http://127.0.0.1:8010/api/update', {
+    method: 'POST',
+    headers: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        'gsid': '634ad79ee29c42396b0d4055',
+        'ticker': 'SPX230317C04200000',
+        'security_type': 5,
+        'security_subtype': 2005,
+        'option_flavor': 2,
+        'underlying': {
+            'gsid': '634ad6d1d89536dac325f871',
+            'ticker': 'SPX'
+        },
+        'denominated_ccy': {
+            'gsid': '634ad6d1d89536dac325f86e',
+            'ticker': 'USD'
+        },
+        'expiry_date': '2023-03-17',
+        'strike': 4200,
+        'option_exercise': 1,
+        'expiry_series_type': 20,
+        'expiry_time_of_day': 1,
+        'settlement_type': 1,
+        'primary_exchange': 'CBO',
+        'multiplier': 100,
+        'issuer': 0,
+        'description': 0,
+        'website': 0,
+        'as_of_date': '1970-01-01T00:00-05:00',
+        'expiry_datetime': '1969-12-31T19:00-05:00',
+        'identifiers': [
+            {
+                'id_type': 2,
+                'value': ''
+            },
+            {
+                'id_type': 3,
+                'value': ''
+            },
+            {
+                'id_type': 4,
+                'value': ''
+            },
+            {
+                'id_type': 5,
+                'value': ''
+            }
+        ]
+    })
+});
+
 FastAPI не закрывается при нажатии Ctr+c
 Вопросы
 PYTHON
