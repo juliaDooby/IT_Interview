@@ -1,3 +1,945 @@
+Невозможно правильно установить mongodb на ubuntu 18.04 LTS
+Вопросы
+MONGODB
+Невозможно правильно установить mongodb на ubuntu 18.04 LTS
+Я пытаюсь установить mongodb на свой Ubuntu 18.04 LTS, но появляется следующая ошибка:
+
+You might want to run 'apt --fix-broken install' to correct these. The following packages have unmet dependencies: mongodb-org : Depends: mongodb-org-server but it is not going to be installed Depends: mongodb-org-mongos but it is not going to be installed Depends: mongodb-org-tools but it is not going to be installed E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution). umar@umar-Lenovo-ideapad-320-15ISK:~/Desktop/portfolio/async-demo$ sudo apt-get install -y mongodb
+
+Я полагаю, что причина этого уже упоминается на их веб-сайте, ясно говоря,
+
+PLATFORM SUPPORT
+
+MongoDB only provides packages for 64-bit LTS (long-term support) Ubuntu releases; for example, 14.04 LTS (trusty) and 16.04 LTS (xenial). See Supported Platforms for more information.
+
+These packages may work with other Ubuntu releases; however, they are not supported.
+
+Итак, как я могу установить mongodb на мою последнюю версию Ubuntu 18.04 LTS? Для ясности я перечисляю действия, которые я сделал для исправления ошибок: Я следил за их официальным сайтом, чтобы установить mongodb
+
+1. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+2. echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+3. sudo apt-get update
+4. sudo apt-get install -y mongodb-org
+Now here I got errors saying: You might want to run 'apt --fix-broken install' to correct these. The following packages have unmet dependencies:
+
+Я пытался,
+
+apt --fix-broken install
+Не получилось, где-то я догадался бежать
+
+sudo apt -f install
+Он также вернул ошибку.
+
+Errors were encountered while processing: /var/cache/apt/archives/mongodb-org-server_4.0.0_amd64.deb /var/cache/apt/archives/mongodb-org-mongos_4.0.0_amd64.deb /var/cache/apt/archives/mongodb-org-tools_4.0.0_amd64.deb E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+Я считаю, что основная проблема - это совместимость с версией. Итак, в основном у меня Ubuntu 18.04, как я устанавливаю mongodb в этой версии, чтобы я мог работать без каких-либо проблем.
+
+ 19.07.2018 10:19
+30
+0
+58 134
+14
+Данный вопрос помечен как решенный
+ Ответы 14
+ Ответ принят как подходящий
+Вам нужно сначала удалить mongodb, вы можете использовать:
+
+sudo apt-get purge mongodb-org*
+После этого установите mongodb с помощью следующих команд:
+
+sudo apt-get install mongodb
+А затем обновите:
+
+sudo apt-get update
+Вы закончили установку mongodb. Вы можете проверить это с помощью следующей команды:
+
+mongo --version
+ 19.07.2018 10:39
+Это связано с тем, что на данный момент Mongo DB для Ubuntu 18.04 доступна только в качестве версии для разработки (см. Дистрибутивы MongoDB).
+
+Я только что установил его, выполнив следующие действия:
+
+Добавьте соответствующую подпись:
+
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4B7C549A058F8B6B  
+Добавьте поддерживаемую версию:
+
+echo "deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/development multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+Обновлять:
+
+    sudo apt update
+Установить:
+
+sudo apt install mongodb-org-unstable
+Если вы получили сообщение «Ошибка GPG», повторите шаг 1 с ключом, который указан в сообщении об ошибке. Вы могли бы установить через
+
+sudo apt install mongodb
+но, согласно MongoDB, это не поддерживается и, скорее всего, не установит последнюю версию.
+
+ 19.07.2018 13:10
+Попробуй, я успешно это выяснил
+
+$ sudo apt-get install -y mongodb
+ 01.09.2018 13:33
+просто хочу быть здесь. Я старший технический писатель по серверной документации MongoDB. Этот пост - один из немногих, в котором говорится «установить MongoDB на Ubuntu 18.04», и здесь есть несколько комментариев, относящихся к пакету mongodb для установки. Неофициальный пакет mongodb, предоставляемый Ubuntu, не поддерживается MongoDB. Вы всегда должны использовать официальные пакеты MongoDB mongodb-org. Кроме того, из небольшого личного тестирования похоже, что установка mongodb вызовет проблемы, если вы попытаетесь установить mongodb-org, поэтому это просто добавило проблем.
+
+Несколько раз я сталкивался с этой проблемой при локальном тестировании, при попытке установить один из подпакетов (например, mongodb-org-server) обычно выявлялась фактическая ошибка (т.е. отсутствовал libcurl3, который был удален в 18.04 как установленная по умолчанию библиотека). Эти проблемы могут быть более распространенными при тестировании сборок для разработки (на момент написания это серия для разработчиков 4.2).
+
+Чтобы проверить, какой пакет вы установили в своей локальной системе, выполните следующее:
+
+sudo apt list --installed | grep mongo
+Это был мой результат после того, как я установил mongodb, а затем попробовал mongodb-org:
+
+mongo-tools/bionic,now 3.6.3-0ubuntu1 amd64 [installed,auto-removable]
+mongodb-org/bionic,now 4.0.5 amd64 [installed]
+mongodb-org-shell/bionic,now 4.0.5 amd64 [installed,automatic]
+mongodb-server-core/bionic,now 1:3.6.3-0ubuntu1 amd64 [installed,auto-removable]
+Как видите, у меня смесь двух пакетов (и куча ошибок dkpg). В итоге я использовал смесь apt remove, apt autoremove и apt purge для исправления системы.
+
+ 03.01.2019 16:41
+Если вам нужно установить двоичный файл mongodb (вручную) на ваш Ubuntu 18.04 LTS (Bionic). Вам нужно скачать файл mongodb .tgz с этого ссылка на сайт.
+
+1) Загрузите его в папку ~ / Downloads и переместите в домашний каталог, набрав mv Downloads/mongodb-linux-x86_64-ubuntu1804-4.0.4.tgz ~/.
+
+2) Затем удалите его, набрав tar -zxvf mongodb-linux-x86_64-ubuntu1804-4.0.4.tgz, поместите его сюда (Домашний каталог / home /). Не убирайте его отсюда.
+
+3) Затем создайте каталог в расположении / data / db и дайте разрешение на запись в этот каталог.
+
+sudo mkdir -p /data/db
+
+sudo chmod -R 777 /data/db
+4) Теперь это сложная область. Убедитесь, что вы находитесь в каталоге hme, набрав pwd (текущий рабочий каталог)
+
+pwd 
+это покажет
+
+/home/<your user name>
+Затем введите
+
+ls -al
+
+Эта команда отобразит все скрытые файлы в домашнем каталоге и выполнит поиск
+
+~/.bashrc
+
+5) Отредактируйте файл .bashrc и напишите
+
+export PATH=mongodb-linux-x86_64-ubuntu1804-4.0.4/bin:$PATH
+и сохраните тип файла source ./bashrc
+
+Затем введите echo $PATH на терминале, он отобразит ~/mongodb-linux-x86_64-ubuntu1804-4.0.4/bin:/home/xenon/.nvm/versions/node/v10.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin.
+
+6) Теперь на терминале типа mongo --nodb он покажет MongoDB shell version v4.0.4
+
+Здесь все готово, продолжайте и наслаждайтесь установкой mongodb. Эта установка немного сложна, но с помощью этого метода вы можете легко контролировать версию mongodb и использовать ее в соответствии с вашими потребностями. 
+
+7) Затем запускаем mongod
+
+>sudo mkdir -p /var/log && sudo chmod -R 777 /var/log
+>mongod --port 27017 --dbpath /data/db --logpath /var/log/local.log --fork
+>mongo --port 27017
+ 19.01.2019 17:13
+запустите sudo apt autoremove и переустановите mongodb.
+
+ 23.01.2019 17:47
+Самый простой способ установить MongoDB и использовать команду mongod в ubuntu 18.04.
+1. Обновите список пакетов.
+    $ sudo apt update
+2. Установите MongoDB.
+    $ sudo apt install -y mongodb
+3. Проверьте статус услуги.
+    $ sudo systemctl status mongodb
+3а. Тебе следует увидеть
+
+    ● mongodb.service - An object/document-oriented database
+      Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor 
+      preset:enabled)
+      Active: active (running) since Sat 2019-03-11 10:45:01 UTC; 4min 13s ago
+      Docs: man:mongod(1)
+      Main PID: 2312 (mongod)
+      Tasks: 23 (limit: 1153)
+      CGroup: /system.slice/mongodb.service
+            └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config
+      /etc/mongodb.conf
+4. Чтобы разрешить доступ к MongoDB на его port 27017 по умолчанию.
+     $ sudo ufw allow 27017
+5. Проверить статус
+     $ sudo ufw status
+5а. Тебе следует увидеть
+
+     Status: active
+     To                         Action      From
+     --                         ------      ----
+     27017                      ALLOW       Anywhere
+     27017 (v6)                 ALLOW       Anywhere (v6)
+5б. Если он вернет inactive
+
+     $ sudo ufw enable
+
+     Output:
+     Firewall is active and enabled on system startup.
+6. Проверьте каталог /, чтобы узнать, существует ли каталог data/db, если нет:
+     $ sudo mkdir -p /data/db
+7. Чтобы сначала запустить mongod, вам нужно остановить mongodb:
+     $ sudo systemctl stop mongodb
+8. Наконец, вы можете запустить mongod:
+     $ sudo mongod
+Надеюсь, я помог ?
+ 15.03.2019 14:02
+cd /etc/apt/sources.list.d
+
+удалить файлы, связанные с mongodb
+
+sudo apt update
+
+Это решило проблему для меня.
+
+ 13.07.2019 02:34
+Основываясь на этом отличном ответе: https://stackoverflow.com/a/51421152/659354
+
+И эта страница: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+Команды, которые я использовал для установки MongoDB 4.2
+
+sudo apt-get purge mongo* - Примечание: mongo для удаления клиента, а также сервера.
+
+sudo apt-get install mongodb-org - команда установки Примечание: запускается после того, как исходный код Mongodb.org был добавлен в список источников Apt-get.
+
+ 16.08.2019 04:14
+У меня была такая же проблема, и для меня решением была чистка, но с (*). Очистите все, поэтому я сделал это:
+
+sudo apt-get purge mongo-tools*
+sudo apt-get purge mongodb*
+Затем я следую инструкциям из документации. (Фактическая версия - 4.2.2), а установка производилась в Ubuntu 18.04. (URL: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+С этими четырьмя шагами из документации я, наконец, устанавливаю версию сообщества mongodb на Ubuntu. Моя проблема заключалась в 3 файлах, которые невозможно обработать.
+
+mongodb-org-server
+mongodb-org-mongos
+mongodb-org-tools
+Надеюсь, это кому-то поможет
+
+ 05.01.2020 00:56
+Просто запустите команду sudo apt установить mongodb, она установит mongodb, потому что mongodb теперь является частью репозитория ubuntu. После установки запустите команду запуск службы sudo mongodb, чтобы запустить сервер mongodb. Затем, если вы запустите команду монго, она предоставит вам помощника оболочки. Чтобы увидеть существующую базу данных, используйте команду показать БД. После успешной установки вы обнаружите, что существующие имена баз данных - админ, конфиг, локальный. Используйте команду db, чтобы увидеть, какая база данных в настоящее время работает на сервере, это будет база данных с именем тест или что-то. Чтобы добавить коллекцию (таблицы в базе данных SQL), просто используйте команду вставки с информацией исходного документа (строки в базе данных SQL) db.data.insert ({"имя пользователя": "Брэд Питт"})
+В предыдущей команде данные - это имя моей коллекции. Теперь, чтобы увидеть все документы в сборе данных, просто используйте команду db.data.find (); Другие команды: sudo service mongod status, sudo service mongodb stop, sudo service mongod restart, sudo service mongod stop.
+
+Для получения дополнительной информации вы можете посетить https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+; 
+
+
+
+ 18.04.2020 12:41
+Для Ubuntu версии 18.04 LTS лучше установить MongoDB вручную.
+
+Мне нужно выполнить следующие шаги, чтобы запустить его на моем Ubuntu 18.04:
+
+Следуйте инструкциям по установке вручную из следующего руководства mongo DB https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/
+Загрузите .tgz со следующими конфигурациями Скачать MongoDB
+Обратите внимание: когда вы устанавливаете MongoDB 3.6 или более поздней версии, у него есть библиотека Curl версии "libcurl4", которая имеет некоторые проблемы совместимости с ubuntu 18.04.
+Из-за этого при попытке выполнить команду "mongod" вы получите следующий результат:
+mongod: /usr/lib/x86_64-linux-gnu/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by mongod)
+
+Чтобы решить эту проблему, вам необходимо удалить зависимую библиотеку libcurl4 с помощью следующей команды
+
+sudo apt-get удалить libcurl4
+
+Затем необходимо установить более низкую версию библиотеки curl (например, "libcurl3"), как ожидает Монго в версии ubuntu "18.04".
+
+sudo apt-get установить libcurl3
+
+Вам может потребоваться использовать команду "sudo" для разделения каталогов данных и журналов с установкой, если она не удалась с помощью ручных шагов.
+
+sudo mongod --dbpath / var / lib / mongo --logpath /var/log/mongodb/mongod.log --fork
+
+теперь вы можете запустить команду «mongo», чтобы увидеть запущенную оболочку mongo.
+
+Меня устраивает.
+
+ 25.04.2020 22:45
+Удалите все пакеты Mongo.
+
+$ sudo apt-get purge mongodb-org*
+Проверьте, удалены ли связанные каталоги
+
+$ sudo rm -r /var/log/mongodb
+$ sudo rm -r /var/lib/mongodb
+Еще раз проверьте автоматическое удаление любых оставшихся пакетов mongo
+
+$ sudo apt-get autoremove
+Настройте свой каталог
+
+$ sudo dpkg --configure -a
+Принудительно установить все необходимое
+
+$ sudo apt-get install -f
+Установить с официального сайта: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+Наконец, перезапустите Ubuntu и проверьте статус сервера Mogodb, как вы это делали ранее.
+
+ 06.10.2020 21:14
+Мне на Pop_OS помогло Linux 20.04 LTS:
+
+$ sudo apt-get purge mongodb*
+Затем создайте файл /etc/apt/sources.list.d/mongodb-org-4.4.list для Ubuntu 18.04 (Bionic) с помощью этой команды:
+
+$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+вместо Ubuntu 20.04 (Focal)
+
+После этого установите mongodb-org:
+
+$ sudo apt-get update
+$ sudo apt-get install -y mongodb-org
+И запустите службу mongodb:
+
+$ sudo systemctl start mongod
+
+Ошибка «Нет режима записи с именем «большинство» в конфигурации набора реплик»
+Вопросы
+MONGODB
+Ошибка «Нет режима записи с именем «большинство» в конфигурации набора реплик»
+Я пытаюсь вставить объект в mongodb через запрос POST. Объект, который я отправляю, успешно вставляется в базу данных, однако я получаю сообщение об ошибке, упомянутое выше.
+
+Пакет, который я использую для mongo db:
+
+https://github.com/mongodb/mongo-go-driver
+
+Строка подключения
+
+mongodb+srv://пользователь:пароль@bookcluster.pxcqs.mongodb.net/DBname?retryWrites=true&w=majority`
+
+Как я настроил соединение с базой данных:
+
+var DbConn *mongo.Client //*sql.DB //*mongo.Client
+
+func SetupDB(conn_str string) {
+    var err error
+    DbConn, err = mongo.NewClient(options.Client().ApplyURI(conn_str))
+    if err != nil {
+        log.Fatal(err)
+    }
+    ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+    err = DbConn.Connect(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+Мой объект:
+
+package book
+
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
+type Book struct {
+    Id        primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
+    Title     string             `json:"title" bson:"title"`
+    Author    string             `json:"author" bson:"author"`
+    Year      int                `json:"year" bson:"year"`
+    ShortDesc string             `json:"shortDesc" bson:"shortDesc"`
+    Genre     string             `json:"genre" bson:"genre"`
+}
+Вот как я отправляю запрос внутри insertBook() (где b имеет тип Book):
+
+ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+    defer cancel()
+
+    result, err := database.DbConn.Database(dbName).Collection(collectionName).InsertOne(ctx, b)
+Полный текст ошибки:
+
+несколько ошибок записи: [{ошибки записи: []}, {(UnknownReplWriteConcern) Режим отсутствия проблем с записью с именем «большинство» найдено в конфигурации набора реплик}]
+
+Моя просьба в Почтальоне
+
+Я не уверен, что мне где-то не хватает какой-то настройки конфигурации - я только начал с mongoDB Я попытался следовать примеру, приведенному в этих уроках: 3 , 4, и они, кажется, ничего не упоминают о «заботе о написании» и «большинстве». Также попытался просмотреть документацию и погуглить ошибку, но не нашел ничего полезного.
+
+ 15.12.2020 13:28
+10
+11
+20 037
+14
+Данный вопрос помечен как решенный
+ Ответы 14
+ Ответ принят как подходящий
+"mongoURI" : "mongodb+srv://${ db user name }:${ db password }@cluster0.mde0j.mongodb.net/cluster0?retryWrites=true&w=majority "
+Я получаю ту же ошибку с этим когда я пытаюсь вставить объект в mongodb через запрос POST. Объект, который я отправляю, успешно вставляется в базу данных, однако я получаю сообщение об ошибке errmsg: «Нет режима записи с именем« большинство »в конфигурации набора реплик».
+
+его простая ошибка, вам нужно удалить часть &w=majority в конце, и она будет решена
+
+ 30.12.2020 14:45
+Я получил ту же ошибку с дополнительным пробелом в конце строки подключения. В моем случае я удалил пробел, и все было хорошо.
+
+ 26.04.2021 23:19
+mongodb+srv://user:password@bookcluster.pxcqs.mongodb.net/DBname?retryWrites=true&w=majority`
+Удалите этот ( ` ) в конце URI, потому что это вызовет ошибку «Нет режима записи с именем «большинство» в конфигурации набора реплик».
+
+ 20.09.2021 07:56
+Проблема не в &w=majority. Если ваша строка подключения находится внутри файла .env, напишите ее, как показано ниже, без одинарных или двойных кавычек и без точки с запятой в конце.
+
+URI=mongodb+srv://user:password@bookcluster.pxcqs.mongodb.net/DBname?retryWrites=true&w=majority
+ 06.01.2022 16:46
+в моем случае я удалил / в конце uri, и это сработало.
+
+ 03.08.2022 12:20
+В моем случае я также столкнулся с этой же ошибкой. Мое решение для этого, когда я удалил косую черту из последнего (этот --> большинство/), моя проблема была решена.
+
+Ошибка перед строкой: - mongodb+srv://deepu:IvZ98NCXTOV7ro3M@cluster0.m13scys.mongodb.net/employeeDB?retryWrites=true&w=majority/
+
+Решенная строка: - mongodb+srv://deepu:IvZ98NCXTOV7ro3M@cluster0.m13scys.mongodb.net/employeeDB?retryWrites=true&w=majority
+
+ 22.09.2022 08:02
+Столкнулся с той же ошибкой со строкой подключения --->
+
+вместо этого используйте строку подключения как «mongodb+srv://deepu:IvZ98NCXTOV7ro3M@cluster0.m13scys.mongodb.net/(databasename)»
+
+Удалите все, что находится между .net/ и именем базы данных.
+
+Надеюсь, это решит ваш вопрос!
+
+ 24.09.2022 21:43
+Это может быть из-за использования пробела или точки с запятой в конце URL-адреса, который вы определили в файле .env. Поэтому не используйте кавычки, двойные кавычки, точки с запятой или пробелы. MONGO_URI = mongodb+srv://Hussain_Siddiqui:Hsrusher8$$@chatapp.aw5bzak.mongodb.net/?retryWrites=true&w=majority Тем не менее это предупреждение удаляет &w=majority из URL-адреса
+
+ 09.10.2022 13:20
+Попробуйте удалить все после mongodb.net/{databaseName}?retryWrites=true&w=majority и сделать его чистым и аккуратным, как показано ниже.
+
+mongoose.connect("mongodb+srv://{nameOfAdmin}:{password}@atlascluster.ux104bi.mongodb.net/{databaseName}", {useNewUrlParser: true, useUnifiedTopology: true})
+ 22.10.2022 22:50
+Удаление точки с запятой после URI из файла .env спасло меня.
+
+Ошибка: mongodb+srv://имя пользователя:пароль@cluster0.hcyv7.mongodb.net/?retryWrites=true&w=majority;
+
+Решено: mongodb+srv://имя пользователя:пароль@cluster0.hcyv7.mongodb.net/?retryWrites=true&w=большинство
+
+ 16.11.2022 21:50
+Я решил проблему, удалив &w=majority. Потом я пошел немного вздремнуть. Я снова написал &w=большинство в uri. Это сработало очень хорошо.
+
+Что происходит ! Я не знаю. Юзи получилось!
+
+ 08.12.2022 02:11
+Я тоже столкнулся с той же проблемой. Удаление ; в конце строки подключения решил проблему для меня.
+
+ 12.12.2022 06:45
+Посмотрите в конце URL-адреса, возможно, там есть space или запятая ;, которые являются недопустимыми символами в .env.
+
+У меня была такая же ошибка, и причиной была запятая:
+
+DB_URI = mongodb+srv://user:password@cluster0.8fir3uv.mongodb.net/db?retryWrites=true&w=majority,
+ 19.01.2023 17:57
+удалить двойные кавычки в конце URL-адреса mongodb
+
+
+
+Не удалось запустить службу MongoDB Server (MongoDB). Убедитесь, что у вас достаточно прав для запуска системных служб
+Вопросы
+MONGODB
+Не удалось запустить службу MongoDB Server (MongoDB). Убедитесь, что у вас достаточно прав для запуска системных служб
+Когда я пытаюсь установить версию сообщества MongoDB в Windows 8.1, я получаю сообщение об ошибке ниже.
+
+Не удалось запустить службу MongoDB Server (MongoDB). Убедитесь, что у вас достаточно прав для запуска системных служб
+
+Я попробовал большинство доступных решений из Интернета, но ни одно из них не сработало.
+
+ 18.10.2018 17:41
+8
+7
+14 177
+15
+ Ответы 15
+В моем случае я менял путь, в котором хранились папки данных и журналов, и установщик не был достаточно умен, чтобы автоматически создавать целевые пути. Таким образом, после создания каждого набора папок вручную и перезапуска установки версия 4.0.10 установилась без ошибок.
+
+ 03.06.2019 18:30
+Некоторое время я боролся с той же проблемой, пока не понял, что моя проблема заключается в месте установки. Скорее всего, вы столкнетесь с этой ошибкой, если установите MongoDb в эту папку: C:\MongoDB. Я решил это, установив в папку по умолчанию, которая является C:\Program Files\MongoDB\Server\4.0\bin
+
+ 26.07.2019 22:19
+Я временно решил эту проблему, перейдя на предыдущую версию MongoDB: 3.6.13.
+
+ 25.08.2019 20:07
+Я решил эту проблему, установив Microsoft Visual C++ Redistributable 2019.
+
+Вы можете скачать его по ссылке ниже.
+
+https://www.itechtics.com/microsoft-visual-c-redistributable-versions-direct-download-links/
+
+ 18.10.2019 20:21
+У меня такая же проблема!
+
+Возможно, вы пытаетесь установить MongoDB в пользовательскую папку (например, C: \ mongodb).
+
+Не делай этого!
+
+Позвольте программе установки установить mongoDB по пути к программе по умолчанию (Usual path -> C:\Program Files\MongoDB\Server\4.2).
+
+После того, как вы установили его, вы можете скопировать содержимое этой папки и вставить его в нужную настраиваемую папку. (В этом примере -> C:\mongodb)
+
+После того, как вы это сделаете, вы больше не должны получать ошибок при запуске mongo из командной оболочки.
+
+ 22.10.2019 15:02
+Послушайте, это правильное решение. В windows откройте служебную программу и посмотрите свойства службы mongodb (для меня это "E: \ mongodb \ bin \ mongod.exe --config" E: \ mongodb \ bin \ mongod.cfg "- Service "), скопируйте этот атрибут в cmd и выполните его вручную. Вы обнаружите, что он сообщает об ошибке. Сообщение об ошибке заключается в том, что "mp" не распознается. Так что нам нужно только закомментировать "mp" в файле mongod.cfg. Если вы не выберете выборочный путь установки, в mongod.cfg нет «mp», что является странной ошибкой!
+
+ 04.11.2019 16:40
+Перейдите к «C: \ mongodb \ bin» и откройте «mongod.cfg», затем выполните поиск: #mp
+
+Просто удалите из файла текст: #mp (вы найдете: #mp там, где заканчивается содержимое файла).
+
+Теперь запустите: net start mongodb. Теперь это должно сработать.
+
+ 03.02.2020 12:14
+Я перезагрузил компьютер и при установке выбрал путь по умолчанию:
+
+C:\Program Files\MongoDB\Server\4.2\bin
+и он успешно установлен.
+
+ 17.02.2020 14:57
+Перейдите в папку bin mongodb и откройте там командную строку или git bash. Введите команду: ./mongod --repair
+
+Это запустится, и вы узнаете точную ошибку. В моем случае: MongoDb извлекает папку db в F: \ data \ db, но моя настройка - F: \ mongodb \ data \ db
+
+Ошибка, которую я получил при установке mongodb в пользовательскую папку Итак, я изменил путь к db с помощью команды:
+
+./mongod --dbpath F: \ mongodb \ data \ db
+
+Если указанная выше команда не сработала, используйте двойную обратную косую черту.
+
+./mongod --dbpath F: \\ mongodb \\ data \\ db
+
+И БРАВО !!!
+
+ 15.04.2020 08:30
+Десять часов работы, ничего из вышеперечисленного у меня не работает, кроме следующего:
+
+создайте свой собственный каталог, например C: \ mongodb
+предоставьте разрешение на полный доступ, щелкнув его правой кнопкой мыши, характеристики в виджете безопасности для всех групп и пользователей.
+внутри сделайте каталог данные и внутри него каталог db
+установите MongoDB с помощью установщика msi, выберите обычай и выберите созданный каталог C: \ mongodb в качестве пути установки.
+Когда при установке вы получите указанную ошибку, выберите Игнорировать.
+Запустите командную строку на C:\mongodb\bin от имени администратора и введите mongod. Вы увидите, что это было прервано.
+Удалите текущую службу MongoDB, выполнив mongod --remove.
+Выполните следующее: mongod --directoryperdb --dbpath C:\mongodb\data\db --logpath C:\mongodb\log\mongo.log --install
+Запустите net start MongoDB, чтобы убедиться, что он работает правильно.
+Наслаждаться
+ 21.04.2020 12:50
+Просто откройте CMD в режиме администратора.
+измените путь с помощью cd. /path к папке, в которую вы загрузили установку MongoDB.
+откройте настройку, введя ее имя в cmd.
+Устанавливайте программу как обычно в любую папку! Ваше здоровье...
+ 06.05.2020 15:48
+если вы устанавливаете в младшую версию Windows-10 то вам необходимо установить этот файл перед установкой MongoDB 4.2.6.
+
+установить обновление для Windows 8 для систем на базе x64 (KB2999226) из https://www.microsoft.com/en-us/download/details.aspx?id=49082
+после этой установки
+
+Установите MongoDB
+Установить успешно
+
+ 07.05.2020 11:05
+Я боролся за то же самое, наконец, целый день придумал это решение. У меня окно 8.1 ...
+
+
+
+когда этот экран выскакивает! нажмите здесь "игнорировать" (он закроется)
+откройте «Просмотр дополнительных настроек системы» (найдите его в меню победы).
+На вкладке «Расширение» внизу нажмите «Переменные среды», откройте это.
+Теперь найдите переменную пути в системной переменной и другую, выберите переменную пути и нажмите `` Изменить ''.
+Теперь в конце переменной добавьте следующее ...
+...initialText;path where path is the where your MongoDB was installed with the bin folder in the same. By default its C:\Program Files\MongoDB\Server\4.2(your version)\bin
+
+редактировать, как это initialText;C:\Program Files\MongoDB\Server\4.2\bin, нажмите ОК, закрыть.
+
+Попробуйте запустить mongod в командной строке, он покажет ошибку и закроется. Ошибка скажет создать папку C:\data\db вручную. Сделай это.
+
+Все готово, попробуйте снова запустить mongod.
+
+Пожалуйста!
+
+ 12.07.2020 19:42
+У меня сработала установка mongodb из командной строки / интерпретатора Windows (cmd.exe) с помощью msiexec.exe.
+
+msiexec.exe /l*v mdbinstall.log  /qb /i mongodb-windows-x86_64-4.4.1-signed.msi ^
+            ADDLOCAL = "ServerService,Client" ^
+            SHOULD_INSTALL_COMPASS = "0"
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows-unattended/#procedure
+
+ 11.11.2020 12:55
+У меня была такая же проблема, поэтому я создал репо C: \ mongodb, когда я сделал установку, снова появилось то же окно, и я просто нажал «игнорировать», я не знаю, как, но у меня это сработало, все установлено :).
+
+Как исправить «Ошибка: querySrv EREFUSED» при подключении к MongoDB Atlas?
+Вопросы
+NODE.JS
+Как исправить «Ошибка: querySrv EREFUSED» при подключении к MongoDB Atlas?
+Я новичок в MongoDB 4.0.6 и пытался внедрить его на свой веб-сайт с помощью Node/Express.js, но когда я пытаюсь подключиться к mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@main-03xkr.mongodb.net/main, я получаю эту ошибку:
+
+{ Error: querySrv EREFUSED _mongodb._tcp.main-03xkr.mongodb.net at QueryReqWrap.onresolve [as oncomplete] (dns.js:199:19) errno: 'EREFUSED', code: 'EREFUSED', syscall: 'querySrv', hostname: '_mongodb._tcp.main-03xkr.mongodb.net' }
+
+Я пытался подключиться к mongodb://localhost:27017/main, но этот делает, похоже, работает.
+
+Вот соответствующий код:
+
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+// Database
+const uri = `mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@main-03xkr.mongodb.net/main`;
+const localURI = 'mongodb://localhost:27017/main';
+
+var Project = require('./models/project');
+
+mongoose.connect(uri, { useNewUrlParser: true });
+const db = mongoose.connection;
+
+db.once('open', () => console.info('Successfully connected to MongoDB'));
+db.on('error', (e) => console.info(e));
+
+// Routes
+app.get('/', (req, res) => {
+  Project.find({}, (e, projects) => {
+    if (e) console.info(e);
+
+    res.render('home.ejs', {
+      projects: projects
+    });
+  });
+});
+
+Так кто-нибудь знает, как исправить эту ошибку и, возможно, объяснить, что здесь происходит?
+
+ 03.04.2019 17:43
+34
+2
+56 532
+15
+Данный вопрос помечен как решенный
+ Ответы 15
+У вас есть undefined в строке подключения. Не знаю, опечатка это или нет. Но попробуй изменить
+
+const uri = `mongodb+srv://undefined:${process.env.MONGOPASS}@main-03xkr.mongodb.net/main`;
+к
+
+const uri = `mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@main-03xkr.mongodb.net/main`;
+Я использую MongoAtlas для проекта, и эта строка (без неопределенного пользователя) выглядит правильно.
+
+ 03.04.2019 19:07
+ Ответ принят как подходящий
+Если вы столкнулись с этой ошибкой, попробуйте использовать старую строку подключения для Node.js 2.2.12 или более поздней версии:
+
+mongodb://<username>:<password>@main-shard-00-00-03xkr.mongodb.net:27017,main-shard-00-01-03xkr.mongodb.net:27017,main-shard-00-02-03xkr.mongodb.net:27017/main?ssl=true&replicaSet=Main-shard-0&authSource=admin&retryWrites=true
+Согласно MongoDB, SRV, возможно, не работает из-за Mongoose.
+
+ 11.04.2019 20:28
+У меня была такая же ошибка, когда я подключался к Node версии 3.0 or later, и я решил ее, перейдя на 2.2.12 or later версию:
+
+downgrade
+
+ 01.09.2019 21:54
+В нашем случае антивирус/брандмауэр блокирует,
+
+Попробуйте отключить антивирус/брандмауэр и проверьте еще раз. надеюсь, это сработает.
+
+ 16.09.2019 06:19
+Передайте опцию { useNewUrlParser: true, useUnifiedTopology: true } конструктору MongoClient
+
+const uri = "mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@main-03xkr.mongodb.net/main"
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .catch(error => console.info(error));
+ 18.04.2020 19:26
+MongoClient.connect(
+  "mongodb://USER:PASSWORT@mflix-shard-00-00-r5yfb.mongodb.net/test?ssl=true&replicaSet=mflix-shard-0&authSource=admin&retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+)
+  .catch(err => {
+    console.error(err.stack)
+    process.exit(1)
+  })
+  .then(async client => {
+    await MoviesDAO.injectDB(client)
+    await UsersDAO.injectDB(client)
+    await CommentsDAO.injectDB(client)
+    app.listen(port, () => {
+      console.info(`listening on port ${port}`)
+    })
+  })
+Возможно, может работать с MongoClient (не Mongoose)
+
+ 20.04.2020 18:59
+Error: querySrv ESERVFAIL _mongodb._tcp.databasename-zcbag.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (dns.js:202:19) {
+  errno: 'ESERVFAIL',
+  code: 'ESERVFAIL',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.databasename-zcbag.mongodb.net'
+}
+Если приведенный выше код является вашим выходом, то в вашем коде нет ошибки. Вы должны проверить подключение к сети. Возможно, вам придется переключить свою сеть с телефонной сети на другую или наоборот.
+
+ 15.07.2020 05:03
+Эта ошибка иногда возникает, когда вы используете MongoDB Atlas и потеряли подключение к Интернету. Вы не сможете получить доступ к своей базе данных.
+
+ 24.07.2020 06:32
+Обязательно измените версию узла на 2.2.12:
+
+
+
+И добавьте IP-адрес:
+
+
+
+ 16.09.2020 04:49
+В моем случае эта ошибка происходила, когда DNS-конфигурация в моем маршрутизаторе TP-Link отсутствовал.
+
+Я установил на него прошивку OpenWRT и забыл настроить параметры DNS.
+
+Я смог открыть YouTube или любой другой веб-сайт, потому что это не мой основной маршрутизатор, но не смог подключиться к базе данных.
+
+Это была проблема с интернетом, как сказал @Камеш Кумар Сингх в своем ответе.
+
+Я думаю, что это не обычный ответ на этот вопрос, но может кому-то помочь.
+
+ 21.09.2020 17:30
+Эта ошибка возникает, если вы не можете подключиться к базе данных mongoDB Atlas. Ваш сервер работает успешно, но вы получаете эту ошибку при подключении к базе данных. Убедитесь, что ваше интернет-соединение хорошее, и повторите попытку, вы не увидите эту ошибку.
+
+ 17.10.2020 19:38
+Сценарий "Не в корневой папке":
+Create a .env file in the root directory of your project. https://github.com/motdotla/dotenv
+
+
+
+Одним из сценариев этой ошибки является создание файла дотенв.env --НЕТ-- в root folder (например, под /src).
+
+Чем этот код:
+
+const url = `mongodb+srv://${process.env.DB_USER}:${
+  process.env.DB_USER_PASSWORD
+}@${process.env.DB_CLUSTER}.mongodb.net`;
+
+console.info(url)
+выход:
+
+mongodb+srv://undefined:undefined@undefined.mongodb.net
+Итак, URL-соединение "undefined":
+
+const client = new MongoClient(url);
+Бросьте 3 предупреждения:
+
+(node:27240) UnhandledPromiseRejectionWarning: Error: querySrv ENOTFOUND _mongodb._tcp.undefined.mongodb.net at QueryReqWrap.onresolve [as oncomplete] (dns.js:207:19)
+
+(node:27240) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag --unhandled-rejections=strict (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+
+(node:27240) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+Еще один "близкий" сценарий:.env в корневой папке, но файл пустой:
+
+
+
+Решение
+первый шаг для решения этой проблемы заключается в console.info(url) и проверке, возвращает ли process.env правильный Строка подключения.
+
+Связанный:
+
+dotenv github readme: https://github.com/motdotla/dotenv#readme
+Подключиться к базе данных MongoDB с помощью Node.js :https://developer.mongodb.com/quickstart/node-connect-mongodb/
+ 03.03.2021 19:04
+В моем случае это в основном проблема с DNS на Mac, чтобы решить ее, просто добавьте DNS-сервер Google в разделе DNS в настройках Mac Book Pro:
+
+8.8.8.8
+4.4.4.4
+
+
+ 18.05.2021 20:09
+В моем случае проблема возникла из-за того, что MongoDB приостановила мой кластер из-за более чем 4 месяцев бездействия. После того, как я вошел в свою учетную запись и возобновил работу кластера, проблема была немедленно решена.
+
+ 25.07.2021 14:27
+Я решил свою проблему, зайдя в MongoDB -> войти в систему -> базы данных -> подключиться -> подключить ваше приложение (среднее) -> скопировать код -> вставить код в код mongooseDB в моем файле .JS:
+
+const mongoose = require('mongoose');
+require('dotenv/config');
+
+mongoose
+  .connect(process.env.THE_MONGO_DB_URL_GOES_HERE_IN_DOTENV_FILE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.info("Database connected!"))
+  .catch(err => console.info(err));
+
+  const PostSchema = mongoose.Schema({
+    email: String,
+    password: String
+  }, {strict: false});
+
+  const DataEntry = mongoose.model('n26-users-collection', PostSchema); 
+
+  module.exports = DataEntry; 
+
+Что такое TransientTransactionError в Mongoose (или MongoDB)?
+Вопросы
+JAVASCRIPT
+Что такое TransientTransactionError в Mongoose (или MongoDB)?
+У меня есть server.js и db.js. Файл db.js взаимодействует с моей базой данных с помощью Mongoose, и я использую server.js для вызова функций из db.js:
+
+var mongoose = require('mongoose');
+mongoose.connect('', { useNewUrlParser: true })
+var Schema = mongoose.Schema;
+
+module.exports = function () {
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    return db.once('open', function() {
+        console.info("Connected to DB")
+        var postschema = new Schema({
+            title: String,
+            intro: String,
+            body: String,
+            author: String,
+            timestamp: { type: Date, default: Date.now }
+        });
+
+        var post = mongoose.model('post', postschema);
+
+        return {
+            newPost(title, intro, body, author) {
+                var newpost = new post({
+                    title: title,
+                    intro: intro,
+                    body: body,
+                    author: author
+                })
+            },
+            getPostsAll() {
+                post.find({}, function (err, res) {
+                    return (`Error:${err} Posts:${res}`)
+                })
+            }
+        }
+    })
+}
+И мой server.js вызывает три функции из db.js:
+
+var DB = require('./db.js')
+var db = DB()
+db.getPostsAll()
+db.newPost()
+Я не понимаю, почему я получаю эту ошибку:
+
+connection error: { MongoNetworkError: connection 4 to black-test-shard-00-01-ewyaf.mongodb.net:27017 closed
+at TLSSocket.<anonymous> (E:\HTML\black-box\node_modules\mongodb-core\lib\connection\connection.js:276:9)
+at Object.onceWrapper (events.js:272:13)
+at TLSSocket.emit (events.js:185:15)
+at _handle.close (net.js:541:12)
+at TCP.done [as _onclose] (_tls_wrap.js:379:7)
+  name: 'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]: {} }
+Что я делаю не так? Я нашел статья, но ничего не могу сделать.
+
+ 03.09.2018 18:32
+34
+2
+41 457
+16
+Данный вопрос помечен как решенный
+ Ответы 16
+ Ответ принят как подходящий
+What is a TransientTransactionError
+
+TransientTransactionError - это транзакционная ошибка, которая классифицируется как временная, и при повторной попытке май будет успешной. Более того, конфликт записи TransientTransactionError возникает перед фиксацией, когда не была произведена блокировка записи и транзакция (новые данные) не отражена в моментальном снимке транзакции (предыдущие данные). В результате эти ошибки полностью безопасны для повторной попытки, пока не произойдет это успешная фиксация.
+
+Транзакции, которые повторяют попытку в этом сценарии, повторяются с начала транзакции.
+
+Иметь ввиду Эта метка ошибки отличается от ошибок фиксации, которые происходят, когда блокировка была взята, но транзакция не может завершить свое фиксацию. Метка ошибки для этого - UnknownTransactionCommitResult. Ссылка на это примечательна из-за разницы в понимании того, где в вашем приложении возникает ошибка, и какова может быть основная причина и как приложение может и или будет реагировать из-за различных типов ошибок.
+
+Если вы используете Драйверы, поддерживаемые MongoDB, есть две возможные причины, по которым код получает эту ошибку:
+
+Любая ошибка команды базы данных, которая включает метку ошибки «TransientTransactionError» в поле «errorLabels».
+Любая сетевая ошибка, обнаруженная при выполнении любой команды, кроме commitTransaction в транзакции.
+Пример кода в Транзакции MongoDB: повторная транзакция показывает, как обрабатывать TransientTransactionError.
+
+Если сообщение об ошибке - MongoNetworkError, это означает, что временная ошибка транзакции связана с сетевым подключением между клиентом и сервером. Это может быть либо одноразовый сетевой сбой, который можно повторить, либо отсутствие доступа к сети, требующего настройки сети. Если ошибка возникает при первой попытке клиента получить доступ к серверу, вероятно, требуется конфигурация сети. Если сервер находится в MongoDB Atlas, см. Настроить записи белого списка.
+
+ 18.10.2018 07:51
+У меня была аналогичная проблема ... Весь день я мог подключиться через мангуста. Затем я начал получать ошибку TransientTransactionError. Я мог подключиться к mongoDB через оболочку, поэтому я знал, что сервер работает должным образом.
+
+IPv6 / локальный хост. Мой IP переключился с IPv4 на IPv6. Я решил проблему, отключив IPv6 и получив обычный IPv4 IP.
+
+ИЗМЕНИТЬ - кажется, я могу надежно воссоздать / создать эту проблему, подключившись к «localhost», в то время как моя сетевая карта настроена с IPv6 IP. Изменение localhost-> 127.0.0.1, похоже, решает проблему.
+
+ 13.12.2018 23:34
+У меня была такая же проблема / ошибка, хотя и на компьютере с Windows. Хотя я думал, что запустил службу mongodb, я не видел, чтобы она работала в службах Windows. Итак, я вручную запустил службу mongoDB внутри служб, а затем ошибка исчезла. Надеюсь это поможет!
+
+ 24.01.2019 16:49
+Я столкнулся с этой ошибкой при запуске сценария populatedb.js в учебнике MDN для Express / NodeJS.
+
+Сценарий искал соединение с базой данных, начиная с mongodb://, однако моя строка подключения от mongo началась с mongodb+srv://.
+
+Вместо этого я отредактировал сценарий, чтобы проверить этот синтаксис, что устранило ошибку.
+
+Я надеюсь, что это помогает кому-то.
+
+ 18.02.2019 05:49
+я имел
+
+  'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]:
+Я добавил свой текущий IP-адрес в белый список после «главная страница> раздел безопасности> доступ к сети> добавить IP» на веб-сайте MongoDB.
+
+Надеюсь, это поможет.
+
+ 02.03.2019 08:03
+У меня возникла эта проблема при попытке подключить мое приложение Heroku к базе данных MongoDB Atlas.
+
+Если вы сделаете на своем терминале
+
+heroku logs --tail
+
+Вы могли бы увидеть
+
+ERROR: { MongoNetworkError: 
+connection 4 to cluster0-shard-40-01-qnwp8.mongodb.net:27017 closed
+name: 'MongoNetworkError',
+errorLabels: [ 'TransientTransactionError' ],
+[Symbol(mongoErrorContextSymbol)]: {} }`
+После внесения в белый список подключения к серверу в MongoDB Atlas ошибка подключения к базе данных была устранена.
+
+ 19.03.2019 17:26
+Для меня временная ошибка транзакции возникала всякий раз, когда я переключался с моей сети Wi-Fi на точку доступа моего телефона. Если это произойдет и с вами, перейдите на веб-сайт MongoDB, где вы создали свою базу данных, и снова внесите в белый список свой текущий IP-адрес. Это решит вашу проблему.
+
+ 26.03.2019 07:43
+Если вы используете MongoDB Atlas. Вам необходимо внести свой IP-адрес в белый список на консоли Atlas в настройках безопасности.
+
+ 10.04.2019 01:08
+Если проблем с безопасностью нет, а вы просто делаете это для подключения: При настройке белого списка IP-адресов; формат должен быть 0.0.0.0/0, вы не столкнетесь с проблемой.
+
+
+
+Более того, как вы сами ответили, мы можем добавить ip, к которому нам нужен доступ.
+
+ 16.04.2019 00:40
+Вы можете прочитать об ошибке в Интернете, но решение этой проблемы: перейдите к атласу MongoDB и добавьте свой IP-адрес.
+
+Перейти к: главная страница> раздел безопасности> доступ к сети> добавить IP
+
+Эта проблема в основном возникает, когда архитектура не знает ваш собственный IP-адрес.
+
+Кроме того, скопируйте и вставьте прямо в Google, чтобы получить прямое решение.
+
+ 26.05.2019 12:02
+Если у вас все еще есть эта ошибка, другая причина в том, что вы забыли перезапустить сервер nodemon после изменения файла конфигурации. CTRL + C и начать заново, вот как я это решил.
+
+ 09.07.2019 23:21
+Безопасность> Доступ к сети> Добавить IP-адрес> Добавить текущий IP-адрес компьютера. Решил мою проблему.
+
+ 21.08.2019 15:59
+Использование mLab - Когда ваш кластер создан, вам нужно добавить пользователя базы данных (на вкладке «Пользователи») и не устанавливать флажок Make read-only. Как только я это сделал, ошибки исчезли. Я получал те же ошибки, что и выше. Пользователь базы данных может быть вашим логином и паролем.
+
+ 22.08.2019 16:45
+Перейдите на панель управления MongoDb Atlas. Нажмите «Доступ к сети», нажмите «Добавить IP-адрес» и разрешите подключение с любого IP-адреса. Это должно решить вашу проблему.
+
 MongooseError - время буферизации операции `users.findOne()` истекло через 10000 мс
 Вопросы
 NODE.JS
