@@ -1,3 +1,878 @@
+Ошибка JavaScript в основном процессе: Компас
+Вопросы
+MONGODB
+Ошибка JavaScript в основном процессе: Компас
+Когда я запускал клиентское приложение mongoDB Compass 1.13.1, я получаю сообщение об ошибке: Ошибка JavaScript в основном процессе: Компас
+
+Как я могу это решить? Та же проблема была здесь.
+
+ 22.06.2018 20:20
+26
+0
+17 209
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Вот несколько дополнительных способов решения:
+Из \ AppData \ Local \ MongoDBCompass \ app-1.13.1 \ resources удалите файл с именем app.asar перед его копированием куда-нибудь (в моем случае это был рабочий стол). Затем снова вставьте файл app.asar в этот путь \ AppData \ Local \ MongoDBCompass \ app-1.13.1 \ resources и перезапустите Compass.
+Перезагрузите Windows и попробуйте снова запустить Компас.
+Если ничего не помогает, переустановите приложение (например, другую версию).
+ 22.06.2018 20:20
+ Ответ принят как подходящий
+Решение, которое сработало для меня:
+
+Перейти в диспетчер задач
+Убейте процесс под названием "Графический интерфейс MongoDB".
+ 05.09.2018 20:02
+Застрявший?
+открыть приложение -> получить ошибку -> без перезагрузки ->
+
+диспетчер задач -> «Графический интерфейс MongoDB» или «MongoDBCompassCommunity» -> уничтожить процесс
+
+Профилактика?
+Никогда закрыть приложение, используя собственные методы закрытия (кнопка "Икс" / "Закрыть окно")
+
+Всегда выйти через Connect -> Quit (Ctrl+Q)
+
+Нет необходимости сначала отключать. Это просто плохо сделанное электронное приложение.
+
+Ответ основан на решении от @Senne Verhaegen
+
+ 17.10.2018 13:36
+Я получил эту ошибку, потому что закрыл приложение, не отключаясь. Я попытался запустить программу и получил ошибку. Ждал секунд 30 и тут сюрприз! Компас выскочил и работает - хотя ошибка отображалась. Должно быть, он очистился. Я использую MongoDB Compass 4.0.3 Enterprise.
+
+ 07.11.2018 19:06
+Проблема в том, что процесс «Графический интерфейс MongoDB» все еще работает после закрытия приложения.
+
+Поскольку я очень ленив, чтобы каждый раз открывать диспетчер задач, я создал файл batch со следующим содержимым:
+
+@ECHO OFF
+taskkill /f /im MongoDBCompass.exe
+%LOCALAPPDATA%\MongoDBCompass\MongoDBCompass.exe
+exit 
+Я сохранил этот файл в том же каталоге MongoDBCompass.exe, который можно легко найти, проверив свойства ярлыка MongoDBCompass.
+
+Я переопределил Цель, чтобы использовать этот .bat вместо .exe по умолчанию, и просто сказал ему Запустить от имени администратора, больше никогда не было проблем.
+
+
+ 16.01.2019 17:05
+Я рекомендую установить последнюю версию Compass. Эта проблема исправлена ​​в версии 1.17.
+
+ 13.08.2019 11:39
+Решение, которое сработало для меня:
+
+Перейти в диспетчер задач
+Убейте процесс под названием: «Ошибка». На нем будет значок mongodb
+
+Ошибка установки MongoDB Zip в Ubuntu 18.04
+Вопросы
+MONGODB
+Ошибка установки MongoDB Zip в Ubuntu 18.04
+Я пытаюсь установить MongoDB из Zip-папки, загруженной с сайта MongoDB (https://www.mongodb.com/download-center/enterprise/releases/development)
+
+Я правильно настроил путь к журналу, путь к данным и пытаюсь запустить mongod и получаю следующую ошибку зависимости.
+
+amran:~$ mongod
+mongod: /usr/lib/x86_64-linux-gnu/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by mongod)
+libcurl.so.4 существует в моей машине
+
+amran:~$ locate libcurl.so.4
+/usr/lib/x86_64-linux-gnu/libcurl.so.4
+/usr/lib/x86_64-linux-gnu/libcurl.so.4.5.0
+Как исправить эту проблему. Любая идея, пожалуйста!
+
+ 24.06.2018 06:23
+5
+4
+6 686
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+На странице загрузки, которой вы поделились, не упоминается версия mongodb для Ubuntu 18.04.
+
+Вам нужно проверить с помощью mongodb, есть ли какой-либо выпуск, совместимый с Ubuntu 18.04.
+
+ 24.06.2018 10:07
+ Ответ принят как подходящий
+Чтобы запустить MongoDB 4.0 в Ubuntu 18.10, вам необходимо выполнить некоторые настройки.
+
+sudo apt-get install libcurl3
+найдите файл libcurl3, вероятно, в / usr / lib / x86_64-linux-gnu /
+
+создайте папку LD_LIBRARY дома.
+
+ cp /usr/lib/x86_64-linux-gnu/libcurl.so.4 /home/user/LD_LIBRARY
+ mv /home/user/LD_LIBRARY/libcurl.so.4 /home/user/LD_LIBRARY/libcurl.so.3
+сделайте ссылку на libcurl3:
+
+ln -s libcurl.so.3 libcurl.so.4
+echo "export LD_LIBRARY_PATH=~/LD_LIBRARY/:$LD_LIBRARY_PATH" >> ~/.bashrc
+source ~/.bashrc
+теперь запустите MongoDB, он будет работать.
+
+Также теперь вы можете установить
+
+sudo apt-get install libcurl4 php-curl
+И использовать все приложения требуют php-curl и libcurl4
+
+ 29.07.2018 13:32
+У меня была эта проблема (но на Debian 10), и я думаю, что мои файлы .so были повреждены. Поскольку у меня не было корневого доступа на сервере, который я использую, я скопировал libcurl.so.4 со своего домашнего компьютера (через SCP) в новый каталог (например, LD_LIBRARY в принятом ответе) и добавил это в свой LD_LIBRARY_PATH как в принятом ответе. Мне пришлось сделать это еще с двумя файлами (libcrypto.so.1.0.0 и libssl.so.1.0.0), прежде чем запускать mongod на сервере.
+
+Надеюсь, это кому-то сэкономит время!
+
+ 18.09.2018 09:14
+Я только что установил ...
+
+sudo apt-get install libcurl4 php-curl
+Как предложил @bhawnesh dipu, и это работает для меня
+
+ 15.10.2018 19:46
+Проблема в том, что для этого двоичного дистрибутива MongoDB требуется более старая версия libcurl. В других ответах система модифицируется путем глобальной установки более старой версии libcurl, я сильно рекомендую не делать этого, поскольку он удалит и / или сломает все остальное, что зависит от более новой версии.
+
+Вместо этого загрузите копию старой библиотеки, извлеките требуемый двоичный файл и предварительно загрузите его при запуске двоичного файла mongod. Таким образом, вы ничего не меняете в системе, и в качестве дополнительного бонуса вам не нужны права root для этого. Вот как:
+
+Сначала создайте временный каталог, загрузите пакет deb и извлеките файл:
+
+me@server:~$ mkdir tmp
+me@server:~$ cd tmp
+me@server:~/tmp$ apt download libcurl3
+Get:1 http://gb.archive.ubuntu.com/ubuntu bionic/universe amd64 libcurl3 amd64 7.58.0-2ubuntu2 [214 kB]
+Fetched 214 kB in 0s (9,969 kB/s)
+me@server:~/tmp$ ar x libcurl3_7.58.0-2ubuntu2_amd64.deb
+me@server:~/tmp$ tar xf data.tar.xz
+Теперь скопируйте библиотеку туда, где находится ваш двоичный файл mongod:
+
+me@server:~/tmp$ cp usr/lib/x86_64-linux-gnu/libcurl.so.4.5.0 ~/mongodb/mongodb-linux-x86_64-debian92-4.2.2-39-g38e05a1/bin/
+Вы можете сделать оболочку для mongod, чтобы она предварительно загружала требуемую версию libcurl:
+
+me@server:~/tmp$ cd ~/mongodb/mongodb-linux-x86_64-debian92-4.2.2-39-g38e05a1/bin/
+me@server:~/mongodb/mongodb-linux-x86_64-debian92-4.2.2-39-g38e05a1/bin$ mv mongod mongod.real
+me@server:~/mongodb/mongodb-linux-x86_64-debian92-4.2.2-39-g38e05a1/bin$ cat > mongod
+#!/bin/sh
+
+DIR = "$(cd "$(dirname "$0")" && pwd)"
+LD_PRELOAD=$DIR/libcurl.so.4.5.0 exec $DIR/mongod.bin $*
+me@server:~/mongodb/mongodb-linux-x86_64-debian92-4.2.2-39-g38e05a1/bin$ chmod 755 mongod
+Теперь вы можете запустить mongod, и он будет работать. Важно отметить, что вы не вносили никаких изменений в установленные пакеты в системе, и вам не нужно использовать sudo, чтобы это работало.
+
+ 02.01.2020 16:42
+Для Ubuntu версии 18.04 лучше, если вы установите MongoDB вручную.
+
+Я потратил почти 3 часа на настройку зависимостей с помощью обычных шагов по установке в соответствии с руководством Mongo, но ничего не помогло. Наконец, мне дали попробовать ручную установку, и она, на удивление, у меня отлично работает.
+
+Мне нужно выполнить следующие шаги, чтобы запустить его на моем Ubuntu 18.04:
+
+Следуйте инструкциям по установке вручную из следующего руководства mongo DB https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/
+Загрузите .tgz со следующими конфигурациями Скачать MongoDB
+Обратите внимание: когда вы устанавливаете MongoDB 3.6 или более поздней версии, у него есть библиотека Curl версии "libcurl4", которая имеет некоторые проблемы совместимости с ubuntu 18.04.
+Из-за этого при попытке выполнить команду "mongod" вы получите следующий результат:
+mongod: /usr/lib/x86_64-linux-gnu/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by mongod)
+
+Чтобы решить эту проблему, вам необходимо удалить зависимую библиотеку libcurl4 с помощью следующей команды
+
+sudo apt-get удалить libcurl4
+
+Затем необходимо установить более низкую версию библиотеки curl (например, "libcurl3"), как ожидает Монго в версии ubuntu "18.04".
+
+sudo apt-get установить libcurl3
+
+Вам может потребоваться использовать команду "sudo" для разделения каталогов данных и журналов с установкой, если это не удается выполнить вручную.
+
+sudo mongod --dbpath / var / lib / mongo --logpath /var/log/mongodb/mongod.log --fork
+
+Теперь вы можете запустить команду «mongo», чтобы увидеть запущенную оболочку mongo.
+
+По крайней мере, это сработало для меня.
+
+ 25.04.2020 22:39
+Я пробовал следующие разные варианты:
+
+Вариант 1: с двоичными файлами Ubuntu-16 mongo (перед вариантом 3, шаг 2); если у нас все в порядке с libcurl3
+
+1.  apt-get remove libcurl4
+2.  apt-get install libcurl3
+3.  able to start the daemon
+Вариант 2: не сработало
+
+1.  apt-get remove libcurl4
+2.  apt-get install libcurl4
+3.  /etc/init.d/mongo_db7020
+/usr/bin/mongod: /usr/lib/x86_64-linux-gnu/libcurl.so.4: version `CURL_OPENSSL_3' not found (required by /usr/bin/mongod) 
+Вариант 3: копирование двоичных файлов mongodb 18 сработало
+
+1.  apt-get remove libcurl4
+2.  rsync -asvh mongoserver:/usr/bin/mongodb-linux-x86_64-ubuntu1804-4.0.4/bin/* /usr/bin/mongodb-linux-x86_64-ubuntu1604-4.0.4/bin
+3.  apt-get install libcurl4
+4.  able to start the daemon
+Варианты 1 и 3 отлично работали для меня.
+
+Mongodb получает ошибку при создании нового пользователя
+Вопросы
+MONGODB
+Mongodb получает ошибку при создании нового пользователя
+Я только что установил новый mongodb на сервер Ubuntu, и когда я пытаюсь установить adduser, я получаю сообщение об ошибке
+
+db.createUser(
+  {
+    user: "admin",
+    pwd: "ADYkdfd332@@33",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+
+2018-07-03T13:29:41.556+0530 E QUERY    [thread1] Error: couldn't add user: Use of SCRAM-SHA-256 requires undigested passwords :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.createUser@src/mongo/shell/db.js:1437:15
+@(shell):1:1
+ 03.07.2018 10:01
+19
+0
+30 624
+7
+ Ответы 7
+См. Создание пароля SCRAM-SHA-256 с дайджестом или недайджестом здесь
+
+db.createUser(
+  {
+    user: "admin",
+    pwd: "ADYkdfd332@@33",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ],
+    passwordDigestor : "<server|client>"
+  }
+)
+ 03.07.2018 10:42
+Если вы используете Методы управления пользователями, вам необходимо установить параметр passwordDigestor.
+
+ db.createUser(
+  {
+    user: "admin",
+    pwd: "ADYkdfd332@@33",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ],
+    passwordDigestor: "<server|client>"
+  }
+)
+ 04.07.2018 10:44
+Это работает для меня:
+
+db.createUser({  
+ user:"test1",
+ pwd:"test1",
+ roles:[  
+  {  
+     role:"readWrite",
+     db:"u8"
+  }
+ ],
+ mechanisms:[  
+  "SCRAM-SHA-1"
+ ]
+})
+ 12.07.2018 04:53
+Выполните следующие команды в Mongo Shell:
+
+use admin
+db.createUser({
+    user:"admin",
+    pwd:"abc123",
+    roles:[{role:"userAdminAnyDatabase",db:"admin"}],
+    passwordDigestor:"server"
+})
+Далее вы можете сослаться на включить аутентификацию
+
+ 12.08.2018 11:25
+Я запускаю подсистему Windows для Linux с помощью Ubuntu и получаю эту ошибку. Иногда возникает проблема, связанная с тем, что окна не закрывают mongod правильно на exit, поэтому вам нужно запустить Ctrl+Shift+Esc в диспетчер задач и закрыть его вручную.
+
+На самом деле, всякий раз, когда монго делает что-то необычное, это кажется проблемой.
+
+Затем запустите mongod. В другом терминале попробуйте снова добавить своего пользователя.
+
+Надеюсь, это кому-то поможет.
+
+ 22.01.2019 18:20
+use "database name"
+
+db.createUser(
+   {
+     user: "username",
+     pwd: "password",
+     roles: [ { role: "dbOwner", db: "database name" } ],
+     mechanisms:[  
+       "SCRAM-SHA-1"
+     ]
+   }
+)
+ 26.08.2019 15:32
+Эта ошибка возникает только при удаленном доступе к ней.
+
+Если passwordDigestor является клиентом, то mechanisms несовместим с SCRAM-SHA-256, и можно использовать только SCRAM-SHA-1.
+
+use admin
+db.createUser(
+  {
+    user: "username",
+    pwd: "password",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ],
+    mechanisms: [ "SCRAM-SHA-1" ],
+    passwordDigestor: "client"
+
+  }
+)
+
+Если passwordDigestor является сервером, то можно использовать как mechanisms, то есть SCRAM-SHA-1, так и SCRAM-SHA-256, или он работает, даже если вы его вообще не указываете.
+
+use admin
+db.createUser(
+  {
+    user: "username",
+    pwd: "password",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ],
+    passwordDigestor: "server"
+
+  }
+)
+
+Mongo db (mongodb.service) не удалось, статус 14
+Вопросы
+DATABASE
+Mongo db (mongodb.service) не удалось, статус 14
+У меня возникла следующая проблема при использовании mongodb.
+
+Это ошибка, когда я проверяю статус:
+
+Скриншот ошибки (mongodb.service, статус 14)
+
+Скриншот кода в файле mongod.config
+
+Скриншот файла журнала
+
+Я попытался удалить mongodb, следуя каждому шагу с веб-сайта, и установить все снова, и когда я проверяю статус, я все еще получаю ту же ошибку. Я выложил скриншот ошибки. Если это важно, я использую MacBook Pro.
+
+Был бы очень признателен, если бы кто-нибудь мог помочь мне это исправить.
+
+ 25.11.2018 17:37
+10
+4
+14 199
+7
+ Ответы 7
+Похоже из лога у тебя раньше нечистое выключение. Или это также может указывать на то, что mongod уже запущен. Сначала убедитесь, что mongod еще не запущен. ps aux | grep mongod
+
+Если это не так, удалите файл: rm /tmp/mongodb-27017.sock
+
+Затем попробуйте systemctl start mongod, чтобы снова запустить MongoDB.
+
+ 27.11.2018 08:24
+После перезагрузки в командной строке проблема была устранена, не знаю, почему после остановки mongo, удаления и установки проблема не была устранена, но после перезагрузки все работает нормально.
+
+ 27.11.2018 08:26
+Изменив владельца на пользователя monogdb / var / lib / mongodb и /tmp/mongodb-27017.lock у меня сработали.
+
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+ 07.02.2020 00:37
+Это сработало для меня на Ubuntu 18.04
+
+Go to the TMP directory: cd /tmp
+Check if you have the mongodb sock file: ls *.sock
+Change the user:group permission: chown mongodb:mongodb <YOUR_SOCK>
+Start MongoDB: sudo service mongod start
+Check the MongoDB status: sudo service mongod status
+Если это не сработает, вы можете попробовать
+
+sudo reboot
+См. Здесь: https://medium.com/@gabrielpires/mongodb-ubuntu-16-04-code-exited-status-14-aws-lightsail-problem-417ffc78cb11
+
+ 16.05.2020 14:38
+У меня похожая проблема. Был SELinux, блокирующий нормальное выполнение. Так я и сделал:
+
+# ausearch -c 'mongod' --raw | audit2allow -M my-mongod
+# semodule -X 300 -i my-mongod.pp
+а потом:
+
+$ sudo systemctl start mongod
+и проверьте:
+
+sudo systemctl status mongod
+ 19.05.2020 23:27
+У меня была аналогичная проблема, и хотя с разрешениями все в порядке, служба не запускалась. Я посмотрел журнал mongodb
+
+sudo tail -40 /var/log/mongodb/mongod.log
+Он сказал, что база данных была неожиданно отключена и ее необходимо отремонтировать. Я побежал
+
+sudo mongod --repair --config /etc/mongod.conf
+Это исправило базу данных, но теперь изменило разрешения. Вам нужно будет снова повторить шаги chown.
+
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+Запустите сервис mongod. Теперь он будет запущен.
+
+ 23.03.2021 14:55
+chown -R mongodb:mongodb /var/lib/mongodb
+chown mongodb:mongodb /tmp/mongodb-27017.sock
+
+MongoDB - ошибка установки - мастер установки mongodb завершился преждевременно
+Вопросы
+MONGODB
+MongoDB - ошибка установки - мастер установки mongodb завершился преждевременно
+У меня раньше была эта проблема при установке. Проверял и с другими потоками, но не смог найти подходящего решения в моем случае.
+
+MongoDB - ошибка установки - мастер установки mongodb завершился преждевременно
+
+ОБНОВИТЬ :
+
+ЗАКРЫТО!
+
+ 08.04.2018 20:41
+43
+1
+18 148
+8
+ Ответы 8
+Снимите отметку с опции Install MongoDB Compass в мастере установки. Работал у меня.
+
+ 09.04.2018 06:45
+снятие отметки Установите MongoDB Compass решает проблему непосредственно из мастера запуска при установке в windows10
+
+ 09.04.2018 10:16
+Просто убедитесь, что вы подключены к Интернету, чтобы установить MongoDB Compass, его пользовательский графический интерфейс mongoDb отключен, и вы не можете пользоваться графическим интерфейсом.
+
+ 08.05.2018 19:59
+Для Windows 10 вам нужно будет установить MongoDB Compass отдельно. После установки MongoDB загрузите MongoDB Compass отдельно от здесь. Для MongoDB Compass обязательно выберите правильную версию (примечание: версия Community Edition не является версией по умолчанию) и платформу для загрузки. Он должен успешно установиться.
+
+ 23.05.2018 14:15
+Для тех, кто пытается установить версию 4.0.x Компас является проблема, но вы не можете сразу убрать галочку. Согласно https://jira.mongodb.org/browse/SERVER-34451 это проблема межсетевого экрана. Отключите брандмауэр или разрешите доступ исправили это для меня.
+
+ 16.09.2018 16:19
+Снятие отметки с Install MongoDB Compass у меня работает.
+
+ 19.03.2019 06:32
+Если вы используете учетную запись Microsoft, решение состоит в том, чтобы вместо этого войти в систему с локальной учетной записью, которая доступна в настройках учетной записи.
+
+После того, как вы вошли в систему с локальной учетной записью, вы можете завершить установку с локальным именем пользователя и паролем.
+
+ 21.01.2021 12:12
+Я сталкиваюсь с той же ошибкой, мое решение:
+
+У моего пользователя Windows не было пароля, я установил для него пароль и использовал свои имя пользователя и пароль на «Запуск от имени локального пользователя или пользователя домена», и моя проблема была исправлена.
+
+
+
+Кончик *: Я также установил Компас (не отдельно), и это не было проблемой.
+
+Разница между findOneAndDelete () и findOneAndRemove ()
+Вопросы
+MONGODB
+Разница между findOneAndDelete () и findOneAndRemove ()
+Я не могу различить findOneAndDelete () и findOneAndRemove () в мангуст документальный.
+
+Query.prototype.findOneAndDelete()
+
+This function differs slightly from Model.findOneAndRemove() in that findOneAndRemove() becomes a MongoDB findAndModify() command, as opposed to a findOneAndDelete() command. For most mongoose use cases, this distinction is purely pedantic. You should use findOneAndDelete() unless you have a good reason not to.
+
+ 30.05.2018 12:12
+43
+9
+21 754
+8
+ Ответы 8
+В мангусте findOneAndDelete работает так же, как findOneAndRemove. Они оба просматривают объект по его свойствам в JSON, затем удаляют его, а также возвращают объект один раз после удаления. Когда вы используете собственный mongodb в качестве базы данных, findOneAndDelete может быть вам полезен, но в случае с mongoose он устарел, я могу посоветовать вам использовать findOneAndDelete для выполнения вашей операции на основе последней конфигурации mongoose и nodejs на этот период. https://github.com/Automattic/mongoose/issues/6880
+
+ 25.11.2018 10:43
+Я бы посоветовал вам использовать findOneAndDelete (). Mongoose предоставляет как функции для обработки данных с использованием ORM, так и функции для записи непосредственно в базу данных, при этом findOneAndDelete () является одной из последних. Прямая запись в базу данных более опасна, поскольку вы рискуете не вызвать промежуточное программное обеспечение или валидаторы, потенциально отправив частичные или неполные данные в базу данных. Обратите внимание, что я сказал, что это более опасно, а не то, что это категорически опасно, findOneAndDelete () просто проходит через ORM, добавляя безопасности.
+
+ 30.11.2018 03:01
+findOneAndRemove возвращает удаленный документ, поэтому, если вы удалите документ, который, как вы позже решите, не следует удалять, вы можете вставить его обратно в базу данных. Проверка правильности вашей логики перед удалением документа была бы предпочтительнее, чем проверка после IMO.
+
+findOneAndDelete имеет параметр сортировки, который можно использовать, чтобы повлиять на то, какой документ обновляется. Он также имеет параметр TimeLimit, который может контролировать, в течение какого периода операция должна завершиться.
+
+ 21.02.2019 07:41
+В собственном клиенте MongoDB (в отличие от Mongoose) передача { remove: true } в findAndModify заставляет его удалить найденный документ, его поведение в этом случае будет очень похоже на findOneAndDelete. Однако есть некоторые отличия при использовании других опций:
+
+findAndModify принимает 5 параметров: query, sort, doc (объект обновления), options и callback. findOneAndDelete занимает только 3 (filter или запрос, options и callback)
+options для findAndModify включают w, wtimeout и j для проблем записи, например:
+
+“the level of acknowledgment requested from MongoDB for write operations to a standalone mongod or to replica sets or to sharded clusters.“ or simply guarantee levels available for reporting the success of a write operation.
+
+options для findOneAndDelete не включает конфигурацию проблем записи.
+
+findAndModify позволяет вернуть новый документ и одновременно удалить его.
+
+Пример:
+
+// Simple findAndModify command returning the new document and
+  // removing it at the same time
+  collection.findAndModify({b:1}, [['b', 1]], {$set:{deleted: Date()}}, {remove:true}, calback)
+ 02.04.2019 17:55
+Оба они почти похожи, за исключением того, что findOneAndRemove использует findAndModify с флагом удаления, а временная сложность будет немного выше по сравнению с findOneAndDelete, потому что вы выполняете обновление. Удалять всегда быстрее.
+
+ 08.04.2019 05:06
+Вот точная разница (цитата из документации мангуста в разделе Model.findOneAndDelete ()):
+
+"This function differs slightly from Model.findOneAndRemove() in that findOneAndRemove() becomes a MongoDB findAndModify() command, as opposed to a findOneAndDelete() command. For most mongoose use cases, this distinction is purely pedantic. You should use findOneAndDelete() unless you have a good reason not to."
+
+Вот ссылка на него: https://mongoosejs.com/docs/api.html#model_Model.findOneAndDelete
+
+ 11.09.2019 19:57
+TL; DR: вам следует использовать findOneAndDelete (), если у вас нет веской причины не делать этого.
+
+Более длинный ответ:
+
+Из документации Mongoose для findOneAndDelete:
+
+This function differs slightly from Model.findOneAndRemove() in that findOneAndRemove() becomes a MongoDB findAndModify() command, as opposed to a findOneAndDelete() command. For most mongoose use cases, this distinction is purely pedantic. You should use findOneAndDelete() unless you have a good reason not to.
+
+Документы Mongoose findOneAndDelete
+
+ 18.12.2019 10:44
+В других ответах здесь много неправильной информации. Они для всех намерений и целей одинаковы, и вам следует просто использовать findOneAndDelete().
+
+Model.findOneAndRemove(query) Mongoose становится findAndModify({query, remove: true}) MongoDB.
+
+Model.findOneAndDelete() Mongoose становится findOneAndDelete() MongoDB. Однако драйвер MongoDB преобразует findOneAndDelete(query, opts) в findAndModify({query, remove: true}) (src). Таким образом, они делают то же самое в базе данных.
+
+Оба используют одни и те же варианты.
+
+Оба возвращают удаленный документ.
+
+Предупреждение об устаревании MongoDB mongoose
+Вопросы
+JAVASCRIPT
+Предупреждение об устаревании MongoDB mongoose
+При запросе документов с помощью collection.find я начал получать следующее предупреждение в моей консоли
+
+DeprecationWarning: collection.find option [fields] is deprecated and will be removed in a later version
+
+Почему я это вижу и как это исправить? (Возможные альтернативы)
+
+Обновлено: запрос добавлен
+
+Session
+        .find({ sessionCode: '18JANMON', completed: false })
+        .limit(10)
+        .sort({time: 1})
+        .select({time: 1, sessionCode: 1});
+Mongoose версии 5.2.9
+
+ 19.08.2018 12:14
+41
+7
+28 767
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Обновлять:
+
+Выпущена и доступна для скачивания 5.2.10 здесь.
+
+Для получения дополнительной информации о документах вы можете просмотреть страницу https://mongoosejs.com/docs/deprecations
+
+Для получения дополнительной информации о проблеме и ее решении https://github.com/Automattic/mongoose/issues/6880
+
+Оригинальный ответ:
+
+Версия Mongoose 5.2.9 обновила собственный драйвер mongodb до версии 3.1.3, в которую были добавлены изменения для выдачи предупреждающих сообщений при вызове устаревшего собственного метода драйвера.
+
+Опция fields устарела и заменена опцией projection.
+
+Вам придется подождать, пока мангуст внесет изменения в свой конец, чтобы заменить опцию полей проекцией. Исправление запланировано на выпуск 5.2.10.
+
+На данный момент вы можете вернуться к версии 5.2.8, которая подавит все предупреждения об устаревании.
+
+npm install mongoose@5.2.8
+Для всех других устаревших предупреждений вы должны подходить к ним в каждом конкретном случае.
+
+Вы увидите другие предупреждения об устаревании при использовании других методов сбора.
+
+DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+DeprecationWarning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
+DeprecationWarning: collection.update is deprecated. Use updateOne, updateMany, or bulkWrite instead.
+DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+Все методы записи mongoose findOne* по умолчанию используют метод findAndModify, который устарел в собственном драйвере mongodb.
+
+Используйте mongoose.set('useFindAndModify', false);, чтобы mongooose вызывал соответствующий метод findOne* в собственном драйвере mongodb.
+
+Для remove и update замените эти вызовы методами delete* и update* соответственно.
+
+Для save замените эти вызовы методами insert* / update* соответственно.
+
+Используйте mongoose.set('useCreateIndex', true);, чтобы mongooose вызывал метод createIndex в собственном драйвере mongodb.
+
+ 19.08.2018 16:43
+Вы можете сделать npm install mongoose@5.2.8, и это поможет вам вернуться к более ранней версии, которая не будет отображать никаких предупреждений об устаревании.
+
+ 27.08.2018 18:26
+После обновления до версии 5.2.10. Можно использовать любой из вариантов ниже
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/test', {
+
+  useCreateIndex: true,
+  useNewUrlParser: true
+
+})
+.then(() => console.info('connecting to database successful'))
+.catch(err => console.error('could not connect to mongo DB', err));
+or
+const mongoose = require('mongoose');
+
+mongoose.set('useCreateIndex', true);
+
+mongoose.connect('mongodb://localhost/test',{
+
+    useNewUrlParser: true
+
+})
+.then(() =>  console.info('connecting to database successful') )
+.catch(err =>  console.error('could not connect to mongo DB', err) );
+ 19.09.2018 01:30
+mongoose.connect('your db url', {
+  useCreateIndex: true,
+  useNewUrlParser: true
+})
+или
+
+mongoose.set('useCreateIndex', true)
+mongoose.connect('your db url', { useNewUrlParser: true })
+ 10.11.2018 08:19
+Это сработало для меня в апреле 2020 года:
+
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+ 26.04.2020 17:15
+mongoose.connect('mongodb://localhost:27017/tablename',{ useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex: true },()=>{ console.info( подключил db) });
+
+ 29.05.2020 14:50
+Просто передайте следующие параметры при подключении к базе данных
+
+например, для
+
+const mongoose = require("mongoose");
+
+mongoose.connect("uri",{ 
+                       "useNewUrlParser": true,
+                       "useUnifiedTopology": true, 
+                       "useCreateIndex": true 
+                       // other deprecations 
+                       },(err)=>{
+     // connection logging
+});
+
+ 27.09.2020 14:30
+В настоящее время я использую "mongoose@5.11.15" вы можете избавиться от DeprecationWarning, используя это,
+
+Способ 1
+
+mongoose.connect("Your DB address", {
+useNewUrlParser: true,                       
+useUnifiedTopology: true,                 
+useCreateIndex: true               // to handle collection.ensureIndex is deprecated
+});
+Способ 2
+
+mongoose.connect("Your DB address", {
+useNewUrlParser: true,                       
+useUnifiedTopology: true,                 // other deprecation warnings            
+});
+mongoose.set("useCreateIndex", true);     // to handle collection.ensureIndex is deprecated
+
+DeprecationWarning: collection.findAndModify устарел. Использовать вместо этого findOneAndUpdate, findOneAndReplace или findOneAndDelete?
+Вопросы
+NODE.JS
+DeprecationWarning: collection.findAndModify устарел. Использовать вместо этого findOneAndUpdate, findOneAndReplace или findOneAndDelete?
+Я использую mongoose findOneAndUpdate, но все равно получаю сообщение об ошибке,
+
+DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+
+Но я даже не использую findAndModify, почему он конвертирует мой запрос в findAndModify?
+
+ 29.09.2018 23:53
+77
+5
+85 628
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Вам необходимо установить опцию в запросе useFindAndModify на false, как указано в документы.
+
+(ключевое слово для поиска В настоящее время поддерживаются следующие варианты:)
+
+'useFindAndModify': true by default. Set to false to make findOneAndUpdate() and findOneAndRemove() use native findOneAndUpdate() rather than findAndModify().
+
+и если вы видите файл определения мангуста, где упоминалось, что он вызывает команду обновления findAndModify.
+
+ /**
+  * Issues a mongodb findAndModify update command.
+  * Finds a matching document, updates it according to the update arg, 
+    passing any options,
+  * and returns the found document (if any) to the callback. The query 
+    executes immediately
+  * if callback is passed else a Query object is returned.
+  */
+ findOneAndUpdate(): DocumentQuery<T | null, T>;
+Недавно обновлено в документации мангуста (кликните сюда) для этих устаревших, где упоминается:
+
+Mongoose's findOneAndUpdate() long pre-dates the MongoDB driver's findOneAndUpdate() function, so it uses the MongoDB driver's findAndModify() function instead.
+
+Есть три или более способов избежать использования FindAndModify:
+
+На глобальном уровне: установите значение false.
+// Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+// by default, you need to set it to false.
+mongoose.set('useFindAndModify', false);
+На уровне подключения: мы можем настроить, используя параметры подключения:
+    mongoose.connect(uri, { useFindAndModify: false });
+На уровне запроса:
+   await ModelName.findOneAndUpdate({matchQuery},
+   {$set: updateData}, {useFindAndModify: false});
+
+ 30.09.2018 00:10
+Измените глобальную конфигурацию мангуста следующим образом:
+
+mongoose.set('useFindAndModify', false);
+Или передайте параметры в строке запроса следующим образом:
+
+Person.findOneAndUpdate({_id: id}, {$set: body}, {new: true, useFindAndModify: false}).then(..
+Вы также можете управлять другими предупреждениями об устаревании мангуста, указав документы
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useCreateIndex', true);
+Вот и все.
+
+ 16.12.2018 19:13
+вы также можете передать опции при соединении с опцией требований useNewUrlParser. Посмотрите на следующее -> https://mongoosejs.com/docs/deprecations.html
+
+mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false}); 
+ 08.02.2019 09:16
+Вам необходимо изменить параметры метода подключения, чтобы избавиться от ошибки:
+
+mongoose.connect("mongodb://localhost/DB_Name", {
+  keepAlive: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
+Вы можете использовать это так.
+
+ 10.05.2019 08:13
+Mongoose.connect(Config.database,{useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify:false});
+чтобы пропустить все ошибки :-) добавьте это в свой index.js или как вы его назвали. Я имею в виду основной файл js. ;-)
+
+ 09.05.2020 01:01
+Версия Mongoose обновляется настолько, что,
+
+для использования Model.findByIdAndUpdate() требуется параметр опции, также см. ниже
+
+List.findByIdAndUpdate(id, update, options, callback) // executes
+для решения этого
+
+Передайте этот useFindAndModify: false в mongoose.connect в стартовом
+
+mongoose.connect("mongodb://localhost:27017/yourDatabase", { useNewUrlParser: true, useUnifiedTopology: true ,useFindAndModify: false });
+или
+
+mongoose.set('useFindAndModify', false); 
+кликните сюда, чтобы проверить связанные устаревания
+
+ 24.08.2020 21:38
+  mongoose.set('useNewUrlParser', true);
+  mongoose.set('useFindAndModify', false);
+  mongoose.set('useCreateIndex', true);
+  mongoose.set('useUnifiedTopology', true);
+Эти решения работают для меня!
+
+ 30.09.2020 06:51
+Чтобы исправить все предупреждения об устаревании, выполните следующие действия:
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+Замените update () на updateOne (), updateMany () или replaceOne () Замените remove () на deleteOne () или deleteMany (). Замените count () на countDocuments (), если вы не хотите подсчитывать, сколько документов находится во всей коллекции (без фильтра). В последнем случае используйте EstimatedDocumentCount ().
+
+Mongodb Compass не открывается в Ubuntu 18.10
+Вопросы
+MONGODB
+Mongodb Compass не открывается в Ubuntu 18.10
+MongoDB Compass успешно установлен на Ubuntu 18.10. Но при попытке запустить он отказывается запускаться, ничего не показывая. Я новичок в MongoDB. Что делать?
+
+ 02.11.2018 17:51
+21
+1
+21 038
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Попробуйте эту команду в терминале:
+
+1. $ wget https://downloads.mongodb.com/compass/mongodb-compass_1.12.1_amd64.deb;
+
+2. $ sudo dpkg -i mongodb-compass_1.12.1_amd64.deb
+
+$ mongodb-compass;
+Работал у меня, я тоже использую Ubuntu 18.10
+
+(Попробуйте сменить версию компаса mongodb - ниже 15- v)
+
+ 14.11.2018 12:48
+У меня была такая же проблема с ubuntu 18.10. Эта проблема все еще существует в версиях 15 и 16. Более ранние версии отлично работают в ubuntu 18.10.
+
+1) wget https://downloads.mongodb.com/compass/mongodb-compass_1.14.1_amd64.deb
+
+2) sudo dpkg -i mongodb-compass_1.14.1_amd64.deb
+
+3) mongodb-compass (монгодб-компас)
+
+ 23.01.2019 05:03
+Таким способом нельзя загрузить полную версию, это можно сделать только для версий сообщества, например:
+
+1) wget https://downloads.mongodb.com/compass/mongodb-compass-community_1.15.1_amd64.deb
+
+Его можно скачать, но проблема та же.
+
+Я загрузил mongodb-compass-community_1.12.1_amd64.deb с помощью wget. Я установил его с помощью dpkg -i, и он работает.
+
+ 23.02.2019 19:14
+Мы только что выпустили Compass 1.18-beta.1, Compass снова будет работать в Ubuntu 18.10 и других последних дистрибутивах Linux. Вы можете скачать его отсюда: https://www.mongodb.com/download-center/compass.
+
+ 05.03.2019 14:03
+Попробуйте эту команду в терминале:
+
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.14.1_amd64.deb;
+sudo dpkg -i mongodb-compass_1.14.1_amd64.deb;
+mongodb-compass;
+попробуйте использовать версию меньше 15. Это решило мою проблему.
+
+ 18.03.2019 09:49
+ Ответ принят как подходящий
+Попробуйте следующие команды. Эти шаги сработали для меня.
+
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.15.1_amd64.deb
+sudo dpkg -i mongodb-compass_1.15.1_amd64.deb
+sudo apt --fix-broken install
+sudo apt -y install libgconf2-4
+mongodb-compass;
+ 07.11.2019 04:27
+Практически такое же решение для Ubuntu 20.04
+
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.21.1_amd64.deb
+sudo dpkg -i mongodb-compass_1.21.1_amd64.deb
+sudo apt --fix-broken install
+mongodb-compass
+ 11.05.2020 14:13
+После установки dpkg необходимо запустить следующие команды из терминала
+
+ 1. sudo apt --fix-broken install
+ 2. sudo apt -y install libgconf2-4
+ 3. mongodb-compass;
+
 Как решить ошибку SQLdecode при переносе моделей в django?
 Вопросы
 PYTHON
