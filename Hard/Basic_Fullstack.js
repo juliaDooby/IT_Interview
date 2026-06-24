@@ -1,3 +1,2057 @@
+Full Stack Developer Interview Questions and Answers
+Last Updated : 5 Aug, 2025
+Full Stack Development is a crucial aspect of modern web applications, involving both frontend and backend technologies to build dynamic, scalable, and high-performance applications. Skilled Full Stack Developers proficient in HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, Spring Boot, Django, and Git are in high demand, with companies offering competitive salaries for their expertise.
+
+In this article, we’ve compiled the Top 200+ Full Stack Developer Interview Questions and Answers – 2025, covering essential topics across frontend, backend, databases, and APIs. Whether you're a beginner or a professional with 2-10 years of experience, these questions will help you confidently ace your Full Stack Developer Interview.
+
+Full Stack Developer Interview Questions - Beginner Level
+1. What is MERN Stack?
+MERN Stack is a JavaScript Stack that is used for easier and faster deployment of full-stack web applications. MERN Stack comprises of 4 technologies namely: MongoDB, Express, React and NodeJS. It is designed to make the development process smoother and easier.
+
+MongoDB: Non Relational Database
+Express: NodeJS web server
+React: JavaScript Frontend Library
+Node: JavaScript Web Server
+2. How MERN Stack Works?
+The MERN stack is a popular JavaScript-based web development framework for building modern web applications. It consists of four key technologies working together:
+
+MongoDB (Database): MongoDB is a NoSQL document database used to store the application's data. It's flexible and scalable, ideal for handling large amounts of information.
+ExpressJS (Backend Framework): ExpressJS is a NodeJS web application framework that provides tools for creating APIs and handling HTTP requests. It acts as the server-side logic of the application.
+React (Frontend Library): React is a JavaScript library for building user interfaces (UIs). It's used to create dynamic and interactive front-end components of the website that users interact with.
+NodeJS (Backend Runtime Environment): NodeJS is a JavaScript runtime environment that allows you to run JavaScript code on the server. It's what powers the backend (ExpressJS) of the application.
+MERN-Stack-Works
+MERN Stack Works
+3. What is DNS?
+DNS is a hierarchical and distributed naming system that translates domain names into IP addresses. When you type a domain name like www.geeksforgeeks.org into your browser, DNS ensures that the request reaches the correct server by resolving the domain to its corresponding IP address.
+
+Without DNS, we’d have to remember the numerical IP address of every website we want to visit, which is highly impractical. DNS simplifies the process by allowing us to use user-friendly names while still maintaining the performance and scalability required for modern internet operations.
+
+4. How Does DNS Works?
+DNS-Works
+DNS Works
+User Input: You enter a website address (for example, www.geeksforgeeks.org) into your web browser.
+Local Cache Check: Your browser first checks its local cache to see if it has recently looked up the domain. If it finds the corresponding IP address, it uses that directly without querying external servers.
+DNS Resolver Query: If the IP address isn’t in the local cache, your computer sends a request to a DNS resolver. The resolver is typically provided by your Internet Service Provider (ISP) or your network settings.
+Root DNS Server: The resolver sends the request to a root DNS server. The root server doesn’t know the exact IP address for www.geeksforgeeks.org but knows which Top-Level Domain (TLD) server to query based on the domain’s extension (e.g., .org).
+TLD Server: The TLD server for .org directs the resolver to the authoritative DNS server for geeksforgeeks.org.
+Authoritative DNS Server: This server holds the actual DNS records for geeksforgeeks.org, including the IP address of the website’s server. It sends this IP address back to the resolver.
+Final Response: The DNS resolver sends the IP address to your computer, allowing it to connect to the website’s server and load the page.
+5. What is the difference between HTTP and HTTPS?
+HTTP
+
+HTTPS
+
+HTTP stands for HyperText Transfer Protocol. In HTTP, the URL begins with “http://”. 
+
+HTTPS stands for HyperText Transfer Protocol Secure. In HTTPS, the URL starts with “https://”.
+
+HTTP uses port number 80 for communication.
+
+HTTPS uses port number 443 for communication.
+
+Hyper-text exchanged using HTTP goes as plain text i.e. anyone between the browser and server can read it relatively easily if one intercepts this exchange of data and due to which it is Insecure.
+
+HTTPS is considered to be secure but at the cost of processing time because Web Server and Web Browser need to exchange encryption keys using Certificates before actual data can be transferred.
+
+HTTP does not use encryption, which results in low security in comparison to HTTPS.
+
+HTTPS uses Encryption which results in better security than HTTP.
+
+HTTP speed is faster than HTTPS.
+
+HTTPS speed is slower than HTTP.
+
+6. What is the difference between previous version of HTML and HTML 5?
+Before HTML5
+HTML5
+It didn’t support audio and video without the use of Flash player support.	It supports audio and video controls with the use of <audio> and <video> tags.
+It uses cookies to store temporary data.	It aded Local Storage and Session Storage
+Does not allow JavaScript to run in the browser.	Allows JavaScript to run in the background. This is possible due to JS Web worker API in HTML5.
+Vector graphics are possible in HTML with the help of various technologies such as VML, Silver-light, Flash, etc.	Vector graphics is additionally an integral part of HTML5 like SVG and canvas.
+It does not allow drag-and-drop effects.	It allows drag-and-drop effects and support target blank attribute.
+7. Difference between HTML and XHTML
+HTML
+XHTML
+HTML stands for Hypertext Markup Language.	XHTML stands for Extensible Hypertext Markup Language.
+It was developed by Tim Berners-Lee.	It was developed by W3C i.e.lowercase World Wide Web Consortium.
+It was developed in 1991.	It was released in 2000.
+It is extended from SGML.	It is extended from XML and HTML.
+The format is a document file format.	The format is a markup language.
+All tags and attributes are not necessarily to be in lower or upper case.	In this, every tag and attribute should be in lower case.
+8. Explain the difference between client-side and server-side programming?
+The client-side and server-side refer to two distinct parts of a web application that work together to deliver functionality to users. Understanding their roles is essential for building efficient and responsive applications.
+
+Client-Side
+What it Does: This is the part of the application that runs in the user’s browser. It handles user interfaces and interactions, allowing users to see and interact with the application.
+Key Characteristics:
+Executes JavaScript code directly in the browser to handle tasks like form validation, animations, and dynamic content updates (through DOM -Document Object Model- updates).
+Manages rendering of HTML and CSS for a seamless visual experience.
+Often communicates with the server via REST (Representational State Transfer) APIs to fetch or send data asynchronously.
+Examples:
+Clicking a button that triggers a JavaScript function to show a popup.
+Fetching additional items on a page using fetch() or axios without a full page reload.
+Server-Side
+What it Does: This part operates on the server and processes requests from the client, performing tasks like database queries, business logic, and serving responses.
+Key Characteristics:
+Executes server-side programming languages like Python, Java, or Node.js.
+Handles sensitive operations like authentication and data storage securely.
+Sends data to the client in structured formats (e.g., JSON) via REST APIs for rendering.
+Examples:
+Processing a login request by verifying credentials in a database.
+Returning a list of products in JSON format for the client to display dynamically.
+9. What do you mean by CORS (Cross-Origin Resource Sharing)?
+CORS refers to cross-origin resource sharing. It's a browser mechanism that allows web pages in one domain to have controlled access to resources in other domains (cross-domain requests). This allows scripts that are run on a browser client to interact with and access resources from other origins. In doing so, it extends and provides greater flexibility to the SOP (Same-Origin Policy). Same-origin policies restrict the ability of a website to access resources outside of its source domain. For example, a JavaScript app that wants to make a call to an API (Application Programming Interface) that runs on another domain will be blocked due to the SOP. A CORS policy was implemented to circumvent restrictions caused by same-origin policies.
+
+10. Explain event loop in Node.js.
+The event loop in Node.js is a mechanism that allows asynchronous tasks to be handled efficiently without blocking the execution of other operations. It:
+
+Executes JavaScript synchronously first and then processes asynchronous operations.
+Delegates heavy tasks like I/O operations, timers, and network requests to the libuv library.
+Ensures smooth execution of multiple operations by queuing and scheduling callbacks efficiently.
+EventLoop
+Event Loop Node.Js
+Therefore, when an async function (or an I/O) needs to be executed, the main thread relays it to another thread, allowing v8 (Javascript engine) to continue processing or running its code. In the event loop, there are different phases, like pending callbacks, closing callbacks, timers, idle or preparing, polling, and checking, with different FIFO (First-In-First-Out) queues.
+
+11. What is Promise and explain its states?
+Callback functions are functions that can be passed to another function as arguments and executed there to complete a routine or action. Those functions depend on one another, so it could get quite messy with so many callback functions nested in so many layers. This is what is referred to as callback hell.
+
+As an alternative to callbacks in JavaScript, promises are used to handle asynchronous operations. In addition to handling multiple asynchronous operations, they provide better error handling than callbacks. Promises can be a better way for a user to read the code effectively and efficiently, especially when that particular code performs multiple asynchronous operations. The Promise object represents the result of an asynchronous operation (or its failure) and the resulting value. The promise is in one of the following states:
+
+Pending: In its initial state, neither fulfilled nor rejected.
+Fulfilled: Indicating that the operation was successful.
+Rejected: Indicating that the operation failed.
+12. Explain the Restful API and write its usage.
+REST API stands for REpresentational State Transfer API. It is a type of API (Application Programming Interface) that allows communication between different systems over the internet. REST APIs work by sending requests and receiving responses, typically in JSON format, between the client and server.
+
+REST APIs use HTTP methods (such as GET, POST, PUT, DELETE) to define actions that can be performed on resources. These methods align with CRUD (Create, Read, Update, Delete) operations, which are used to manipulate resources over the web.
+
+RestfullApi
+Restful API
+A request is sent from the client to the server via a web URL, using one of the HTTP methods. The server then responds with the requested resource, which could be HTML, XML, Image, or JSON, with JSON being the most commonly used format for modern web services.
+
+13. State the difference between GET and POST?
+GET and POST are two different HTTP request methods.
+
+Features
+
+GET
+
+POST
+
+Purpose
+
+Retrieve (read) data from the serve
+
+Send (create or submit) data to the server
+
+Request Body
+
+No request body; all data is in the URL query string (after ?)
+
+Can include a request body (JSON, form-data, XML, etc.)
+
+Idempotency
+
+Idempotent—multiple identical GETs have no side effects (safe reads)
+
+Non-idempotent—submitting twice may create duplicates or side-effects
+
+Caching
+
+Responses are cacheable by default (unless headers say otherwise)
+
+Not cacheable by default (unless explicitly allowed)
+
+Use Cases
+
+- Fetching pages, images, data
+- Search queries
+
+- Submitting forms (login, registration)
+- Uploading files
+- Creating or updating resources
+
+14. What is the difference between PUT and PATCH method?
+Features
+
+PUT
+
+PATCH
+
+Purpose
+
+Used to update or replace an entire resource.
+
+Used to apply partial modifications to a resource.
+
+Data Handling
+
+Requires the client to send the complete resource representation.
+
+Requires only the changes (delta) to be sent, not the entire resource.
+
+Error Handling
+
+If the resource doesn’t exist, it may create a new one (depending on implementation).
+
+Typically used only for existing resources; may fail if the resource doesn’t exist.
+
+Performance
+
+It can be less efficient for large resources, as the entire resource is sent.
+
+More efficient for small changes, as only the necessary data is sent.
+
+Request Body
+
+Contains the full resource representation.
+
+Contains only the fields or data to be updated.
+
+Use Case
+
+Best for replacing a resource entirely (e.g., updating a user profile).
+
+Best for making small updates (e.g., changing a user's email address).
+
+Example
+
+PUT /users/1 with full user data updates the entire user resource.
+
+PATCH /users/1 with { "email": "new@example.com" } updates only the email.
+
+15. What is event bubbling and capturing in JavaScript?
+The propagation of events inside the DOM (Document Object Model) is known as 'Event Flow' in JavaScript. The event flow defines the order or sequence in which a particular web page receives an event. Accordingly, event flow (propagation) in JS is dependent on the following aspects:
+
+Event Bubbling: With Event Bubbling, the event is captured and handled first by the innermost element, and then propagates to the outermost element. Events propagate up the DOM tree from child elements until the topmost element is handled.
+Event Capturing: With Event Capturing, the event is captured and handled first by the outermost element, and then propagates to the innermost element. Event cycles propagate starting with the wrapper elements and ending with the target elements that initiated the event cycle.
+The following diagram will help you to understand the event propagation life cycle.
+
+EventBubblingAndCapturing
+EventBubbling And Capturing
+16. Explain the meaning of multithreading?
+The thread is an independent part or unit of a process (or an application) that is being executed. Whenever multiple threads execute in a process at the same time, we call this "multithreading". You can think of it as a way for an application to multitask.
+
+MultiThreading
+Mutlithreading
+Advantages:
+
+By multithreading, computing resources are also minimized and used more effectively.
+The response time of the application is improved since requests from one thread do not block requests from other threads.
+Consequently, if one of the threads encounters an exception, it will not affect the other threads.
+Multithreading, on the other hand, uses fewer resources than running multiple processes simultaneously.
+The overhead, time usage, and management associated with creating processes are much higher when compared to creating and managing threads.
+17. What is the difference between == and === in JavaScript?
+==: Compares values with each other directly, performing type conversion if required first (example: '5' == 5 → true).
+===: This operator strictly compares values and types with each other. There is no type conversion performed with this operator. For example, if you try to compare a string and a number, the result will always be false, no matter what: '5' === 5 → false.
+18. What is the difference between Relational and Non-Relational Databases?
+Relational Database
+
+Non-Relational Database
+
+It is used to handle data coming in low velocity.
+
+It is used to handle data coming in high velocity.
+
+It gives only read scalability.
+
+It gives both read and write scalability.
+
+It manages structured data.
+
+It manages all type of data.
+
+Data arrives from one or few locations.
+
+Data arrives from many locations.
+
+It supports complex transactions.
+
+It supports simple transactions.
+
+It has single point of failure.
+
+No single point of failure.
+
+It handles data in less volume.
+
+It handles data in high volume.
+
+support ACID properties compliance
+
+doesn't support ACID properties
+
+Deployed in vertical fashion.
+
+Deployed in Horizontal fashion.
+
+19. How would you handle user authentication in a web application?
+There are many ways to handle authentication, from simple auth, all the way to oAuth. The right option depends on your particular business needs.
+A classical example is using JWT for authenticating a website with a RESTful API using the following process:
+
+Frontend: Present a login form to collect credentials from the user.
+Backend: Verify credentials against a database and if they’re valid, create a signed token and return it in the response.
+Secure connection: From this point on, the frontend will send the token on every request and the backend will validate it to ensure it’s a valid and authenticated user.
+Secured best practices: Ensure your passwords are hashed (e.g., with bcrypt) and use HTTPS for a secured data transmission channel.
+20. What is the difference between Authentication and Authorization?
+Authenticatio-and-Authorization
+Working of Authentication and Authorization
+
+
+Authentication
+
+Authorization
+
+In the authentication process, the identity of users are checked for providing the access to the system.
+
+While in authorization process, a the person's or user's authorities are checked for accessing the resources.
+
+n the authentication process, users or persons are verified.
+
+While in this process, users or persons are validated.
+
+It is done before the authorization process.
+
+While this process is done after the authentication process.
+
+It needs usually the user's login details.
+
+While it needs the user's privilege or security levels.
+
+Authentication determines whether the person is user or not.
+
+While it determines What permission does the user have?
+
+Generally, transmit information through an ID Token.
+
+Generally, transmit information through an Access Token.
+
+The user authentication is visible at user end.
+
+The user authorization is not visible at the user end.
+
+Example: Employees in a company are required to authenticate through the network before accessing their company email.
+
+Example: After an employee successfully authenticates, the system determines what information the employees are allowed to access.
+
+21. What is the purpose of package.json in a Node.js project?
+The package.json file in a Node.js project has multiple uses. It defines the project's metadata, like its name, version, and description. It also lists the dependencies and devDependencies required to run or develop the application, as well as scripts for tasks like building, testing, or running the app (and any custom script you’d like to add).
+
+Finally, it ensures reproducible installations by allowing the npm install command to pull consistent dependencies, ensuring you can easily port your project into other systems.
+
+22. What is Callback Hell?
+Callback Hell, or Pyramid of Doom, is a common anti-pattern seen in asynchronous programming code (multiple functions running at the same time). This slang term describes a large number of nested "if" statements or functions. In simple terms, Callback hell is a situation where you have multiple asynchronous functions. Those functions depend on one another, so it could get quite messy with so many callback functions nested in so many layers. The use of callback functions leaves you with code that is difficult to read and maintain, and looks like a pyramid as shown below:
+
+This also makes it more difficult to identify the flow of the application, which is the main obstacle to debugging, which is the reason for the famous name of this problem: Callback Hell.
+
+23. State difference between normalization and denormalization.
+Normalization
+
+Denormalization
+
+Normalization involves removing redundant data (multiple copies of data) from a database and storing consistent, non-redundant data.
+
+It involves combining data from multiple tables into a single so that it can be queried quickly.
+
+It primarily focuses on clearing out unused data and reducing duplicate data and inconsistencies from a database.
+
+On the other hand, denormalization aims to achieve faster query execution by adding data redundancy.
+
+During normalization, tables are reduced in number due to the reduction of data in the database.
+
+Denormalization, on the other hand, involves integrating data into the same database and therefore the number of tables to store the data increases.
+
+Data integrity is maintained by normalization. A change to the data in the table will not impact its relationship with the other table.
+
+Data integrity is not maintained by denormalization.
+
+It optimizes the use of disk space.
+
+It does not optimize disk space.
+
+24. What do you mean by Temporal Dead Zone in ES6?
+Before ES6, variable declarations were only possible using var. With ES6, we got let and const. Both let and const declarations are block-scoped, i.e., they can only be accessed within the " { } " surrounding them. On the other hand, var doesn't have such a restriction. Unlike var, which can be accessed before its declaration, you cannot access the let or const variables until they are initialized with some value. Temporal Dead Zone is the time from the beginning of the execution of a block in which let or const variables are declared until these variables are initialized. If anyone tries to access those variables during that zone, Javascript will always throw a reference error as given below.
+
+
+
+
+console.log(varNumber); // undefined
+console.log(letNumber); // Throws the reference error letNumber is not defined
+var varNumber = 3;
+let letNumber = 4;
+Both let and const variables are in the TDZ from the moment their enclosing scope starts to the moment they are declared.
+
+25. Explain the purpose of a version control system and Git workflow?
+Purpose: Version control tracks changes in code, enables collaboration, and allows reverting to previous versions.
+
+Git Workflow Example:
+
+Clone the repository: git clone <repo_url>.
+Create a branch: git checkout -b feature-branch.
+Make changes and stage them: git add ..
+Commit changes: git commit -m "Add feature".
+Push to the remote: git push origin feature-branch.
+Create a pull request for review.
+Merge the branch into the main branch after approval.
+26. What are WebSockets, and how do they differ from HTTP requests?
+WebSockets: A protocol for full-duplex communication between client and server over a single persistent connection.
+
+Difference:
+
+HTTP: Request-response model; client initiates every interaction.
+WebSockets: Persistent, allowing real-time, two-way communication (e.g., live chat, notifications).
+Example:
+
+HTTP: Send a request for new messages repeatedly (polling).
+WebSocket: Server pushes new messages as they arrive.
+13. Describe the concept of MVC architecture
+MVC is a design pattern for organizing code in three layers:
+
+Model: Handles data and business logic (e.g., database interactions).
+View: Displays data to users (e.g., HTML, templates).
+Controller: Manages user input and communicates between Model and View.
+Flow:
+
+User interacts with the View → Controller processes input → Updates the Model → Changes are reflected in the View.
+27. How do you use Postman for testing APIs?
+Create a Request: Enter the API endpoint, method (GET, POST, etc.), and headers.
+Send Data:
+Add query params, body (JSON, form data), or headers.
+Send Request: Click "Send" to view the response.
+Collections: Group requests for testing workflows or environments.
+Assertions: Use the Tests tab to write scripts (JavaScript) for automated validation of responses.
+Example:
+
+pm.test("Status is 200", () => {
+  pm.response.to.have.status(200);
+});
+28. How do you debug an issue that occurs in both the frontend and back-end?
+Reproduce the Issue: Identify when and where it happens.
+Frontend Debugging:
+Use browser DevTools to inspect network requests (e.g., check HTTP status codes, payloads).
+Check console errors for clues.
+Back-End Debugging:
+Check server logs for errors or trace logs for the request.
+Add breakpoints or use a debugger (e.g., Node.js Inspector).
+Communication Point: Verify API endpoints, payload structure, and data format.
+End-to-End Testing: Test the workflow with tools like Postman to isolate the layer causing issues
+29. What is !DOCTYPE?
+A doctype or document-type declaration is an instruction that tells the web browser about the markup language in which the current page is written. The doctype is not an element or tag, it lets the browser know about the version of or standard of HTML or any other markup language that is being used in the document. The DOCTYPE for HTML5 is case-insensitive and can be written as shown below.
+
+<!DOCTYPE html>
+30. What are elements and tags in HTML?
+HTML Tags: Tags are the starting and ending parts of an HTML element. They begin with < symbol and end with > symbol. Whatever is written inside < and > are called tags.
+Syntax
+
+<b> </b>  
+HTML elements: Elements enclose the contents in between the tags. They consist of some kind of structure or expression. It generally consists of a start tag, content, and an end tag.
+Syntax
+
+<b>This is the content.</b>
+31. What are the various heading tags and their importance?
+There are 6 levels of headings defined by HTML. These six heading elements are H1, H2, H3, H4, H5, and H6; with H1 being at the highest level and H6 at the least.
+
+Importance of Heading
+
+Search Engines use headings for indexing the structure and content of the webpage.
+Headings are used for highlighting important topics.
+They provide valuable information and tell us about the structure of the document.
+32. How to redirect to a particular section of a page using HTML?
+One can use the anchor tag to redirect to a particular section on the same page. You need to add “id attribute” to the section that you want to show and use the same id in href attribute with “#” in the anchor tag. So that On click a particular link, you will be redirected to the section that has the same id mentioned in the anchor tag.
+
+Syntax
+
+<a href="#home_section">home</a><section id="home_section">    Information About Page</section>
+Example
+
+
+
+
+<html>
+<head>
+    <style>
+        div {
+            width: 100%;
+            height: 400px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to GeeksforGeeks</h2>
+    <p>
+        This is the example of
+        <i>
+            Redirect to a particular section
+            using HTML on same page
+        </i>
+    </p>
+​
+    <a href="#contactUs"> Contact Us </a>
+    <div>
+        <h2>Home section</h2>
+    </div>
+    <div>
+        <h2>About Us section</h2>
+    </div>
+    <div id="contactUs">
+        <h2>Contact Us section </h2>
+    </div>
+    <div>
+        <h2>Team Section</h2>
+    </div>
+</body>
+​
+</html>
+It is an HTML page with headings, paragraphs, and sections inside <div> elements.
+Each section (<div>) is given a fixed height (400px) and a border for separation.
+Clicking the "Contact Us" link jumps to the "Contact Us" section using id="contactUs".
+The page has four sections – Home, About Us, Contact Us, and Team, displayed in separate <div> blocks.
+34. What are attributes?
+An attribute is used to provide extra or additional information about an element.
+
+All HTML elements can have attributes. Attributes provide additional information about an element.
+It takes 2 parameters ie., name and value. These define the properties of the element and are placed inside the opening tag of the element. The name parameter takes the name of the property we would like to assign to the element and the value takes the property value or extent of the property names that can be aligned over the element.
+Every name has some value that must be written within quotes.
+35. Are <b> and <strong> tags same? If not, then why?
+HTML strong tag: The strong tag is one of the elements of HTML used in formatting HTML texts. It is used to show the importance of the text by making it bold or highlighting it semantically.
+ Syntax
+
+<strong> Contents... </strong>
+HTML bold tag: The bold tag or <b> is also one of the formatting elements of HTML. The text written under the <b> tag makes the text bold presentationally to draw attention.
+Syntax
+
+<b> Contents... </b>
+The main difference between the <bold> tag & <strong> tag is that the strong tag semantically emphasizes the important word or section of words while the bold tag is just offset text conventionally styled in bold. Click Here to know more.
+
+36. What are <em> and <i> tags?
+<i> tag: It is one of the elements of HTML which is used in formatting HTML texts. It is used to define a text in technical terms, alternative mood or voice, a thought, etc.
+Syntax
+
+<i> Content... </i>
+<em> tag: It is also one of the elements of HTML used in formatting texts. It is used to define emphasized text or statements.
+Syntax
+
+<em> Content... </em>
+By default, the visual result is the same but the main difference between these two tags is that the <em> tag semantically emphasizes the important word or section of words while the <i> tag is just offset text conventionally styled in italic to show alternative mood or voice. Click Here to know the difference between them.
+
+37. How are comments added in HTML?
+The comment tag (<!– Comment –>) is used to insert comments in the HTML code.
+
+Types of HTML Comments: There are two types of comments in HTML which are
+
+Single-line comment
+Multi-lines comment
+38. What is the difference between block and inline elements?
+Feature
+
+Block Elements
+
+Inline Elements
+
+Display
+
+Takes up the full width available
+
+Takes up only the necessary width
+
+Line Break
+
+Starts on a new line
+
+Stays in the same line with other elements
+
+Common Examples
+
+<div>, <p>, <h1> to <h6>, <section>
+
+<span>, <a>, <strong>, <em>
+
+Usage
+
+Used for structuring content (like paragraphs, sections)
+
+Used for styling or linking small parts of text
+
+39. Are <div> and <span> tags similar?
+Both the tags (<div> and <span>) are used to represent the part of the web page. The <div> tag is used as the block component, and the <span> tag is used as an inline component.
+
+<div>    A Computer Science Portal for Geeks    <span>        GeeksforGeeks    <span></div>
+<div> tag: The div tag is known as the Division tag. It is a block-level tag & is used in HTML to make divisions of content on the web page (text, images, header, footer, navigation bar, etc). Div tag has both openings (<div>) and closing (</div>) tags, and it is mandatory to close the tag.
+<span> tag: The HTML span element is a generic inline container for inline elements and content. It is used to group elements for styling purposes (by using the class or id attributes). A better way to use it is when no other semantic element is available.
+39. Differences between <div> & <span> tag?
+<div> tag
+<span> tag
+The <div> tag is a block level element.
+
+The <span> tag is an inline element.
+
+It is best to attach it to a section of a web page.
+
+It is best to attach CSS to a small section of a line on a web page.
+
+It accepts align attribute.
+
+It does not accept aligned attributes.
+
+This tag should be used to wrap a section, for highlighting that section.
+
+This tag should be used to wrap any specific word that you want to highlight on your webpage.
+
+40. What is the difference between classes and id?
+id Attribute: The id attribute is a unique identifier that is used to specify the document. It is used by CSS and JavaScript to perform a certain task for a unique element. In CSS, the id attribute is written using the # symbol followed by id.
+Syntax
+
+<element id="id_name">In CSS Stylesheet#id_name {    // CSS Property}
+class Attribute: The class attribute is used to specify one or more class names for an HTML element. The class attribute can be used on any HTML element. The class name can be used by CSS and JavaScript to perform certain tasks for elements with the specified class name. The class name can be represented by using the “.” symbol.
+Syntax
+
+<element class="class_name>In CSS Stylesheet.class {    // CSS Property}
+41. What are meta tags? How are they important?
+The <meta> tag in HTML provides information about HTML Document or in simple words, it provides important information about a document. These tags are basically used to add name/value pairs to describe properties of HTML documents, such as expiry date, author name, list of keywords, document author, etc.
+
+Syntax
+
+<meta attribute-name="value">
+Key Points
+
+The <meta> tag contents are not visible on your browser & is added inside the <head> tag.
+They are just used to give additional information about the HTML document.
+The <meta> tags are added to our HTML document for the purpose of Search Engine Optimisation.
+34. What is CSS?
+Cascading Style Sheets fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you to apply styles to web pages. More importantly, CSS enables you to do this independent of the HTML that makes up each web page. CSS is easy to learn and understood, but it provides powerful control over the presentation of an HTML document.
+
+35. Why do we use CSS?
+We use CSS because of the following reasons
+
+CSS saves time: You can write CSS once and reuse the same sheet on multiple HTML pages.
+Easy Maintenance: To make a global change simply change the style, and all elements in all the webpages will be updated automatically.
+Search Engines: CSS is considered a clean coding technique, which means search engines won’t have to struggle to “read” its content.
+Superior styles to HTML: CSS has a much wider array of attributes than HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.
+Offline Browsing: CSS can store web applications locally with the help of an offline cache. Using of this we can view offline websites.
+37. How is CSS different from CSS 3?
+CSS
+
+CSS3
+
+CSS is capable of positioning texts and objects. CSS is somehow backward compatible with CSS3.	On the other hand, CSS3 is capable of making the web page more attractive and takes less time to create. If you write CSS3 code in CSS, it will be invalid.
+Responsive designing is not supported in CSS	CSS3 is the latest version, hence it supports responsive design.
+CSS cannot be split into modules.	Whereas, whereas CSS3 can be breakdown into modules.
+Using CSS, we cannot build 3D animation and transformation.	But in CSS3 we can perform all kinds of animation and transformations as it supports animation and 3D transformations.
+CSS is very slow as compared to CSS3	Whereas, CSS3 is faster than CSS.
+38. What is the syntax for CSS?
+A CSS style rule consists of a selector, property, and its value. The selector points to the HTML element where CSS style is to be applied. The CSS property is separated by semicolons.
+
+Syntax
+
+selector { 
+    Property: value; 
+}
+39. In how many ways can we add CSS to our HTML file?
+Cascading Style Sheet(CSS) is used to set the style in web pages that contain HTML elements. It sets the background color, font size, font family, color, … etc properties of elements on a web page.
+There are three types of CSS which are given below:
+
+Inline CSS: Inline CSS contains the CSS property in the body section attached with the element known as inline CSS. This kind of style is specified within an HTML tag using the style attribute.
+Internal or Embedded CSS: This can be used when a single HTML document must be styled uniquely. The CSS ruleset should be within the HTML file in the head section i.e the CSS is embedded within the HTML file.
+External CSS: External CSS contains a separate CSS file which contains only style property with the help of tag attributes (For example class, id, heading, … etc). CSS property is written in a separate file with .css extension and should be linked to the HTML document using the link tag. This means that for each element, style can be set only once and that will be applied across web pages.
+40. How can we add comments in CSS?
+Comments are the statements in your code that are ignored by the compiler and are not executed. Comments are used to explain the code. They make the program more readable and understandable.
+
+Syntax
+
+/* content */
+Comments can be single-line or multi-line.
+
+41. What does the ‘a’ in rgba mean?
+RGBA contains A (Alpha) which specifies the transparency of elements. The value of alpha lies between 0.0 to 1.0 where 0.0. represents fully transparent and 1.0 represents not transparent.
+Syntax
+
+h1 {
+    color:rgba(R, G, B, A);
+}
+
+42. What are CSS HSL Colors?
+HSL: HSL stands for Hue, Saturation, and Lightness respectively. This format uses the cylindrical coordinate system.
+
+Hue: Hue is the degree of the color wheel. Its value lies between 0 to 360 where 0 represents red, 120 represents green and 240 represents a blue color.
+Saturation: It takes a percentage value, where 100% represents completely saturated, while 0% represents completely unsaturated (gray).
+Lightness: It takes a percentage value, where 100% represents white, while 0% represents black.
+Syntax
+
+h1 {
+    color:hsl(H, S, L);
+}
+Example
+
+
+
+
+<html> 
+    <head> 
+        <title>CSS hsl color property</title> 
+        <style> 
+            h1{ 
+                color:hsl(120, 100%, 30%); 
+                text-align:center; 
+            } 
+        </style> 
+    </head> 
+    <body> 
+        <h1> 
+            GeeksforGeeks 
+        </h1> 
+    </body> 
+</html>
+43. What are the different CSS border properties?
+CSS border properties allow us to set the style, color, and width of the border.
+
+Border Style: The border-style property specifies the type of border. None of the other border properties will work without setting the border style.
+Border Width: Border width sets the width of the border. The width of the border can be in px, pt, cm or thin, medium and thick.
+Border Color: This property is used to set the color of the border. Color can be set using the color name, hex value, or RGB value. If the color is not specified border inherits the color of the element itself.
+44. What are Data Types in JavaScript?
+JavaScript data types are categorized into two parts i.e. primitive and non-primitive types.
+
+Primitive Data Type: The predefined data types provided by JavaScript language are known as primitive data type. Primitive data types are also known as in-built data types.
+Numbers
+Strings
+Boolean
+Symbol
+Undefined
+Null
+BigInt
+Non-Premitive Data Type: The data types that are derived from primitive data types are known as non-primitive data types. It is also known as derived data types or reference data types.
+Objects
+Functions
+Arrays
+45. Which symbol is used for comments in JavaScript? 
+Comments prevent the execution of statements. Comments are ignored while the compiler executes the code. There are two type of symbols to represent comments in JavaScript:
+
+Double slash: It is known as a single-line comment.
+// Single line comment
+Slash with Asterisk: It is known as a multi-line comment.
+/* 
+Multi-line comments
+. . .
+*/
+46. What would be the result of 3+2+”7″
+
+
+
+let x=3+2+"7"
+console.log(x);
+Output:
+
+57
+Here, 3 and 2 behave like an integer, and “7” behaves like a string. So 3 plus 2 will be 5. Then the output will be 5+”7″ = 57.
+
+47. What is the use of the isNaN function?
+The number isNan function determines whether the passed value is NaN (Not a number) and is of the type “Number”. In JavaScript, the value NaN is considered a type of number. It returns true if the argument is not a number, else it returns false.
+
+48. Which is faster in JavaScript and ASP script?
+JavaScript is faster compared to ASP Script. JavaScript is a client-side scripting language and does not depend on the server to execute. The ASP script is a server-side scripting language always dependable on the server.
+
+49. What is negative infinity?
+The negative infinity is a constant value represents the lowest available value. It means that no other number is lesser than this value. It can be generate using a self-made function or by an arithmetic operation. JavaScript shows the NEGATIVE_INFINITY value as -Infinity.
+
+50. Is it possible to break JavaScript Code into several lines?
+Yes, it is possible to break the JavaScript code into several lines in a string statement. It can be broken by using the ‘\n’ (backslash n). 
+
+For example
+
+console.log("A Online Computer Science Portal\n for Geeks")
+The code-breaking line is avoid by JavaScript which is not preferable.
+
+let gfg= 10, GFG = 5,
+Geeks =
+gfg + GFG;
+51. Which company developed JavaScript?
+Netscape developed JavaScript and was created by Brenden Eich in the year of 1995.
+
+52. What are undeclared and undefined variables?
+Undefined: It occurs when a variable is declare but not assign any value. Undefined is not a keyword.
+Undeclared: It occurs when we try to access any variable which is not initialize or declare earlier using the var or const keyword. If we use ‘typeof’ operator to get the value of an undeclare variable, we will face the runtime error with the return value as “undefined”. The scope of the undeclare variables is always global.
+53. Write a JavaScript code for adding new elements dynamically. 
+
+
+
+<html>
+<head>
+</head>
+<body>
+    <button onclick="create()">
+        Click Here!
+    </button>
+​
+    <script>
+        function create() {
+            let geeks = document.createElement('geeks');
+            geeks.textContent = "Geeksforgeeks";
+            geeks.setAttribute('class', 'note');
+            document.body.appendChild(geeks);
+        }
+    </script>
+</body>
+</html>
+54. What are global variables? How are these variables declared, and what are the problems associated with them?
+In contrast, global variables are the variables that define outside of functions. These variables have a global scope, so they can be used by any function without passing them to the function as parameters. 
+
+Example: 
+
+
+
+
+let petName = "Kaalingas"; // Global Variable
+myFunction();
+​
+function myFunction() {
+    console.log("Inside myFunction - Type of petName:", typeof petName);
+    console.log("Inside myFunction - petName:", petName);
+}
+​
+console.log("Outside myFunction - Type of petName:", typeof petName);
+console.log("Outside myFunction - petName:", petName);
+
+Output
+Inside myFunction - Type of petName: string
+Inside myFunction - petName: Kaalingas
+Outside myFunction - Type of petName: string
+Outside myFunction - petName: Kaalingas
+It is difficult to debug and test the code that relies on global variables.
+
+55. What do you mean by NULL in JavaScript?
+The NULL value represents that no value or no object. It is known as empty value/object.
+
+56. How to delete property-specific values?
+The delete keyword deletes the whole property and all the values at once like
+
+let gfg={Course: "DSA", Duration:30};
+delete gfg.Course;
+57. What is a prompt box?
+The prompt box is a dialog box with an optional message prompting the user to input some text. It is often used if the user wants to input a value before entering a page. It returns a string containing the text entered by the user, or null.
+
+58. What is the ‘this’ keyword in JavaScript?
+Functions in JavaScript are essential objects. Like objects, it can be assign to variables, pass to other functions, and return from functions. And much like objects, they have their own properties. ‘this’ stores the current execution context of the JavaScript program. Thus, when it use inside a function, the value of ‘this’ will change depending on how the function is defined, how it is invoked, and the default execution context.
+
+59. Explain the working of timers in JavaScript. Also explain the drawbacks of using the timer, if any.
+The timer executes some specific code at a specific time or any small amount of code in repetition to do that you need to use the functions setTimout, setInterval, and clearInterval. If the JavaScript code sets the timer to 2 minutes and when the times are up then the page displays an alert message “times up”. The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.
+
+60. What is ReactJS?
+ReactJS is a JavaScript library used to build reusable components for the view layer in MVC architecture. It is highly efficient and uses a virtual DOM to render components. It works on the client side and is written in JSX.
+
+Important Features of React
+
+Virtual DOM: React uses a virtual DOM to efficiently update and render components, ensuring fast performance by minimizing direct DOM manipulations.
+Component-Based Architecture: React builds UI using reusable, isolated components, making code more modular, maintainable, and scalable.
+Hooks: React hooks allow functional components to manage state and side effects, making them powerful and more flexible.
+61. Explain the MVC architecture.
+The Model-View-Controller (MVC) framework is an architectural/design pattern that separates an application into three main logical components Model, View, and Controller. Each architectural component is built to handle specific development aspects of an application. It isolates the business, logic, and presentation layer from each other
+
+62. Explain the building blocks of React.
+The five main building blocks of React are
+
+Components: These are reusable blocks of code that return HTML.
+JSX: It stands for JavaScript and XML and allows you to write HTML in React.
+Props and State: props are like function parameters and State is similar to variables.
+Context: This allows data to be passed through components as props in a hierarchy.
+Virtual DOM: It is a lightweight copy of the actual DOM which makes DOM manipulation easier.
+63. What is virtual DOM in React?
+The Virtual DOM in React is an in-memory representation of the actual DOM. It helps React efficiently update and render the user interface by comparing the current and previous virtual DOM states using a process called diffing.
+
+How Virtual DOM Works
+
+Efficient Rendering: The Virtual DOM is an in-memory representation of the actual DOM that React uses to optimize the process of updating and rendering UI changes.
+Diffing Algorithm: React compares the current and previous versions of the Virtual DOM using a diffing algorithm, identifying the minimal set of changes required to update the real DOM.
+Batch Updates: Instead of updating the real DOM immediately, React batches multiple changes to reduce unnecessary re-renders, improving performance.
+Faster Updates: Since updating the real DOM is slow, React minimizes direct DOM manipulations by only making updates where necessary after comparing the Virtual DOM.
+Declarative UI: With the Virtual DOM, React allows developers to write code in a declarative style, letting React handle when and how to efficiently update the UI.
+64. What is JSX?
+JSX is basically a syntax extension of regular JavaScript and is used to create React elements. These elements are then rendered to the React DOM. All the React components are written in JSX. To embed any JavaScript expression in a piece of code written in JSX we will have to wrap that expression in curly braces {}. 
+
+Example of JSX: The name written in curly braces { } signifies JSX
+
+
+const name = "Learner";
+
+const element = (
+    <h1>
+        Hello,
+        {name}.Welcome to GeeksforGeeks.
+    </h1>
+);
+65. What are components and their type in React?
+A Component is one of the core building blocks of React. In other words, we can say that every application you will develop in React will be made up of pieces called components. Components make the task of building UIs much easier. 
+
+ In React, we mainly have two types of components
+
+Functional Components: Functional components are simply javascript functions. We can create a functional component in React by writing a javascript function. 
+Class Components: The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to another class component.
+66. How do browsers read JSX?
+In general, browsers are not capable of reading JSX and only can read pure JavaScript. The web browsers read JSX with the help of a transpiler. Transpilers are used to convert JSX into JavaScript. The transpiler used is called Babel.
+
+67. Explain the steps to create a react application and print Hello World?
+To install React, first, make sure Node is installed on your computer. After installing Node. Open the terminal and type the following command.
+
+npx create-react-app <<Application_Name>>
+Navigate to the folder.
+
+cd <<Application_Name>>
+This is the first code of ReactJS Hello World!
+
+
+import React from "react";
+import "./App.css";
+function App() {
+    return <div className="App">Hello World !</div>;
+}
+export default App;
+Type the following command to run the application
+
+npm start
+68. How to create an event in React?
+To create an event in React, attach an event handler like onClick, onChange, etc., to a JSX element. Define the handler function to specify the action when the event is triggered, such as updating state or executing logic.
+
+
+
+
+function Component() {
+    doSomething(e);
+    {
+        e.preventDefault();
+        // Some more response to the event
+    }
+    return <button onEvent={doSomething}></button>;
+}
+69. Explain the creation of a List in react?
+Lists are very useful when it comes to developing the UI of any website. Lists are mainly used for displaying menus on a website, for example, the navbar menu. To create a list in React use the map method of array as follows.
+
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const numbers = [1, 2, 3, 4, 5];
+
+const updatedNums = numbers.map((number) => {
+    return <li>{number}</li>;
+});
+
+ReactDOM.render(<ul>{updatedNums}</ul>, document.getElementById("root"));
+70. What is a key in React?
+A “key” is a special string attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are used to give an identity to the elements in the lists.
+
+71. What is MongoDB, and How Does It Differ from Traditional SQL Databases?
+MongoDB is a NoSQL database which means it does not use the traditional table-based relational database structure. Instead of it uses a flexible and document-oriented data model that stores data in BSON (Binary JSON) format.
+Unlike SQL databases that use rows and columns, MongoDB stores data as JSON-like documents, making it easier to handle unstructured data and providing greater flexibility in terms of schema design.
+72.  Explain BSON and Its Significance in MongoDB.
+BSON (Binary JSON) is a binary-encoded serialization format used by MongoDB to store documents. BSON extends JSON by adding support for data types such as dates and binary data and it is designed to be efficient in both storage space and scan speed. The binary format allows MongoDB to be more efficient with data retrieval and storage compared to text-based JSON.
+
+73. What is Express.Js?
+Express is a small framework that sits on top of Node.js’s web server functionality to simplify its APIs and add helpful new features. It makes it easier to organize your application’s functionality with middleware and routing; it adds helpful utilities to Node.js’s HTTP objects; it facilitates the rendering of dynamic HTTP objects.
+
+Express is a part of MEAN stack, a full stack JavaScript solution used in building fast, robust, and maintainable production web applications.
+
+74. Why use Express.Js?
+Express.js is a lightweight Node.js framework that gives us ability to create server-side web applications faster and smarter. The main reason for choosing Express is its simplicity, minimalism, flexibility, and scalability characteristics. It provides easy setup for middlewares and routing.
+
+75. What is Spring Boot?
+Spring Boot is built on top of the Spring framework to create stand-alone RESTful web applications with very minimal configuration and there is no need of external servers to run the application because it has embedded servers like Tomcat and Jetty etc.
+
+Spring Boot framework is independent.
+It creates executable spring applications that are production-grade.
+76. What are the Features of Spring Boot?
+There are many useful features of Spring Boot. Some of them are mentioned below
+
+Auto-configuration – Spring Boot automatically configures dependencies by using @EnableAutoconfiguration annotation and reduces boilerplate code.
+Spring Boot Starter POM – These Starter POMs are pre-configured dependencies for functions like database, security, maven configuration etc.
+Spring Boot CLI (Command Line Interface) – This command line tool is generally for managing dependencies, creating projects and running the applications.
+Actuator – Spring Boot Actuator provides health check, metrics and monitors the endpoints of the application. It also simplifies the troubleshooting management.
+Embedded Servers – Spring Boot contains embedded servers like Tomcat and Jetty for quick application run. No need of external servers.
+Features of Spring Boot
+
+77. What is Django?
+Django is a Full-stack web development framework that facilitates the creation and maintenance of high-quality Dynamic pages while also encouraging rapid development and a clean, pragmatic style. Django makes it easier to automate repeated operations, resulting in a more efficient development process with fewer lines of code. 
+
+78. What is the difference between Flask and Django?
+Flask	Django
+Flask is a WSGI framework	Django is a Full-stack web framework
+It allows multiple types of databases.	It doesn’t support multiple types of databases.
+Use SQL Alchemy	Build-in ORM 
+Diversified Working Style	Monolithic Working Style
+Arbitrary structure	Conventional Project Structure 
+It supports API	It does not have any support for API
+It does not support Dynamic HTML pages	Django accepts Dynamic Pages.
+It has support for Visual debug	No support for Visual Debug
+It doesn’t offer a built-in bootstrapping tool.	Django-admin enables us to start building web applications
+without any external input,
+URL dispatcher is a RESTful request.	URL dispatcher is Robust Documentation.
+79. What is Git?
+Git is a distributed version control system (DVCS) that is used to track changes in source code during software development. It permits multiple developers to work on a project together without interrupting each other's changes. Git is especially popular for its speed, and ability to manage both small and large projects capably.
+
+80. What is a repository in Git?
+A Git repository (or repo) is like a file structure that stores all the files for a project. It continues track changes made to these files over time, helping teams work together evenly. Git can control both local repositories (on your own machine) and remote repositories (usually hosted on platforms like GitHub, GitLab, or Bitbucket), allowing teamwork and backup.
+
+Full Stack Developer Interview Questions - Intermediate Level
+81. What is an anchor tag in HTML?
+The <a> tag (anchor tag) in HTML is used to create a hyperlink on the webpage. This hyperlink is used to link the webpage to other web pages. It’s either used to provide an absolute reference or a relative reference as its “href” value. Click Here to know more in detail.
+
+Syntax
+
+<a href = "link"> Link Name </a>
+Example
+
+
+
+
+<html>
+​
+<body>
+    <h1>
+    Welcome to
+        <a href="https://www.geeksforgeeks.org/"> 
+            GeeksforGeeks 
+        </a>
+    </h1>
+    <h2>This is anchor Tag</h2>
+</body>
+</html>
+
+
+Output
+
+output
+82. What are void elements?
+The elements that only have start tags and do not contain any content within it, these elements are called Void Elements. It can only have attributes but does not contain any kind of content.
+
+Example of such elements are <br>, <hr>, <img>, <input>, <link>, <base>, <meta>, <param>, <area>, <embed>, <col>, <track>, <source> etc.
+
+83. How to change an inline element into a block-level element?
+We can accomplish this task by using the display propertyhaving its value as “block”, to change the element from inline to block-level element.
+
+84. How Container tag is different from the Empty tag in HTML?
+The Container tags are generally divided into three parts, i.e., the opening tag, content(which will display on the browser), and closing tag. In the content part, they can also contain some other tags. These opening and closing tags are used in pairs. For instance, <html>….</html>, <head>…</head>, <title>…</title>, <body>….</body>, etc.
+
+Syntax
+
+<tag_name> …</tag_name>
+The Empty Tags that do not contain any closing tags are known as empty tags. Empty tags contain only the opening tag but they perform some action in the webpage. For eg: <br>, <link>, <img>, <hr>, <meta>, <source> etc.
+
+Syntax
+
+<tag_name>
+Please refer to the Is container tag same as the empty tag in HTML? If not, why? article for further detail.
+
+85. What tags are used to separate a section of text?
+<br> tag: Usually <br> tag is used to separate the line of text. It breaks the current line and conveys the flow to the next line.
+<p> tag: The <p> tag contains the text in the form of a new paragraph.
+<blockquote> tag: It is used to define a large quoted section.
+86. In how many ways you can apply CSS to your HTML file?
+There are 3 ways in which we can add CSS to our HTML file, they are given below:Please refer to the Types of CSS (Cascading Style Sheet) article for more details.
+
+Inline CSS: Inline CSS contains the CSS property in the body section attached with the element known as inline CSS. This kind of style is specified within an HTML tag using the style attribute.
+Internal or Embedded CSS: This can be used when a single HTML document must be styled uniquely. The CSS ruleset should be within the HTML file in the head section i.e the CSS is embedded within the HTML file.
+External CSS: External CSS contains a separate CSS file that contains only style property with the help of tag attributes (For example class, id, heading, … etc). CSS property is written in a separate file with a .css extension and should be linked to the HTML document using the link tag.
+87. How to include one CSS file in another?
+It is possible to include one CSS file in another and it can be done multiple times. Also, import multiple CSS files in the main HTML file or in the main CSS file. It can be done by using the @import keyword. Click here to know more in detail.
+
+88. How can you apply JS in your HTML?
+Scripts can be placed inside the body, the head section of an HTML page, inside both head and body, or can be added externally. Please refer to the Where to put JavaScript in an HTML Document? article for more detail.
+
+JavaScript in head: A JavaScript function is placed inside the head section of an HTML page and the function is invoked when a button is clicked.
+JavaScript in the body: A JavaScript function is placed inside the body section of an HTML page and the function is invoked when a button is clicked.
+External JavaScript: JavaScript can also be used as external files. JavaScript files have file extension .js . To use an external script put the name of the script file in the src attribute of a script tag. External scripts cannot contain script tags.
+89. What are logical and physical tags in HTML?
+Physical and Logical tags are used in HTML for better visibility and understanding of the text by the user on the web page. However, both tags differ from each other as suggested by their names.
+
+a) Logical Tag: This tag is used in HTML to display the text according to the logical styles. Following are the Logical tags commonly used in HTML.
+
+<abbr>: It defines an abbreviation that is used to define the abbreviation or short form of an element. 
+<acronym>: It is used to define an acronym.
+<address>: It defines an address element.
+<cite>: It defines citation ie., used to define the title of a work.
+<code>: It defines computer code text.
+<blockquote>: It defines a long quotation.
+<del>: It stands for delete and is used to mark a portion of text which has been deleted from the document.
+<dfn>: It represents a definition element and is used to represent a defining instance in HTML.
+<ins>: It is used to specify a block of inserted text.
+<kbd>: It defines keyboard text.
+<pre>: It defines preformatted text.
+<q>: It defines a short quotation.
+<samp>: It defines sample computer code.
+<strong>: It defines strong text.
+<var>: It defines a variable ie., used to specify the variable in a mathematical equation or in a computer program.
+b) Physical Tag: This tag is used in HTML to provide actual physical formatting to the text. Following are the Physical tags commonly used in HTML. Please refer to the Physical and Logical Tags in HTML article for further details.
+
+<b>: It defines bold text.
+<big>: It defines the big text.
+<i>: It defines italic text.
+<small>: It defines small text.
+<sup>: It defines superscripted text.
+<sub>: It defines subscripted text.
+<tt>: It defines teletype text.
+<u>: It is an Unarticulated Annotation ie., underline element, which is used to underline the text enclosed within the <u> tag. It is deprecated, use styles instead.
+90. What is MathML in HTML 5?
+The MathML comes in HTML5 the current MathML version is 3 it was introduced in the year 2015. The MathML stands for Mathematics Markup Language. It is used to represent the mathematical equation or expression in web browsers like other HTML elements. The 1st version of MathML was released in the year of 1998 and after that, the 2nd version was released.
+
+Basically, MathML is a complex mathematical formula or equation visual representation made easy. The MathML is supported in the HTML5, all the MathML tag must be used inside the <math> and </math> tags.The MathML is used to describe mathematics as a basis for the machine to machine communication.
+
+91. Can we overlap elements in CSS?
+Creating an overlay effect simply means putting two div together at the same place but both the div appear when needed i.e while hovering or while clicking on one of the div to make the second one appear. Overlays are very clean and give the webpage a tidy look. It looks sophisticated and is simple to design. Overlays can create using two simple CSS properties:
+
+The z-index property is used to displace elements on the z-axis i.e in or out of the screen. It is used to define the order of elements if they overlap with each other.
+
+Syntax
+
+z-index: auto|number|initial|inherit;
+The position property in CSS tells about the method of positioning for an element or an HTML entity. 
+
+92. What are the various positioning properties in CSS?
+The position property in CSS tells about the method of positioning for an element or an HTML entity. There are five different types of position properties available in CSS:
+
+Fixed
+Static
+Relative
+Absolute
+Sticky
+The positioning of an element can be done using the top, right, bottom, and left properties. These specify the distance of an HTML element from the edge of the viewport. To set the position by these four properties, we have to declare the positioning method.
+
+Let’s talk about each of these position methods in detail:
+
+Fixed: Any HTML element with position: fixed property will be positioned relative to the viewport. An element with fixed positioning allows it to remain at the same position even as we scroll the page.
+Static: This method of positioning is set by default. If we don’t mention the method of positioning for any element, the element has the position: static method by default. The element will be positioned with the normal flow of the page.
+Relative: An element with position: relative is positioned relatively with the other elements which are sitting at top of it. If we set its top, right, bottom, or left, other elements will not fill up the gap left by this element.
+Absolute: An element with position: absolute will be positioned with respect to its parent. The positioning of this element does not depend upon its siblings or the elements which are at the same level.
+Sticky: Element with position: sticky and top: 0 played a role between fixed & relative based on the position where it is placed. If the element is placed in the middle of the document then when the user scrolls the document, the sticky element starts scrolling until it touches the top. When it touches the top, it will be fixed at that place in spite of further scrolling.
+93. What is CSS overflow?
+The CSS overflow controls the big content. It tells whether to clip content or to add scroll bars. The overflow contains the following property:
+
+Visible: The content is not clipped and is visible outside the element box.
+Hidden: The overflow is clipped and the rest of the content is invisible.
+Scroll: The overflow is clipped but a scrollbar is added to see the rest of the content. The scrollbar can be horizontal or vertical.
+Auto: It automatically adds a scrollbar whenever it is required.
+Overflow-x and Overflow-y: This property specifies how to change the overflow of elements. x deals with horizontal edges and y deals with vertical edges.
+
+94. What does the CSS float property do?
+Float is a CSS property written in a CSS file or directly in the style of an element. The float property defines the flow of content. Below are the types of floating properties:
+
+Float type	Usage
+float: left	Element floats on the left side of the container
+float: right	Element floats on the right side of the container
+float: inherit	The element inherits the floating property of its parent (div, table, etc…)
+float: none	Element is displayed as it is (Default).
+95. What does display:inline-block do?
+Inline-block uses both properties: block and inline. So, this property aligns the div inline but the difference is it can edit the height and the width of the block. Basically, this will align the div both in the block and inline fashion.
+
+
+
+
+<html>
+    <head>
+        <title>CSS | Display property</title>
+        <style>
+        #main{
+                height: 100px;
+                width: 200px;
+                background: teal;
+                display: inline-block;
+            
+            }
+            #main1{
+                height: 100px;
+                width: 200px;
+                background: cyan;
+                display: inline-block;
+            
+            }
+            #main2{
+                height: 100px;
+                width: 200px;
+                background: green;
+                display: inline-block;
+            }
+            .gfg {
+                margin-left:200px;
+                font-size:42px;
+                font-weight:bold;
+                color:#009900;
+            }
+            .geeks {
+                font-size:25px;
+                margin-left:210px;
+            }
+            .main {
+                margin:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "gfg">GeeksforGeeks</div>
+        <div class = "geeks">display: Inline-block; property</div>
+        <div class = "main">
+            <div id="main"> BLOCK 1 </div>
+            <div id="main1"> BLOCK 2</div>
+            <div id="main2">BLOCK 3 </div>
+        </div>
+    </body>
+</html>
+Output
+
+Click to enlarge
+
+96. How can we vertically center a text in CSS?
+This solution will work for a single line and multiple lines of text, but it still requires a fixed height container:
+
+div {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+div{
+    GeeksforGeeks 
+}
+Click to enlarge
+
+97. How can we center an image in CSS?
+Given an image and the task is to set the image to align to center (vertically and horizontally) inside a bigger div. It can be done by using the position property of the element. This example uses the position property to make the image align to the center.
+
+
+
+
+<html> 
+​
+<head>     
+    <title> 
+        Horizontal and Vertical alignment 
+    </title> 
+    
+    <!-- Style to set horizontal and 
+        vertical alignment -->
+    <style> 
+        #Outer { 
+            border: 2px solid black; 
+            height: 300px; 
+            position: relative; 
+        } 
+        img { 
+            position: absolute; 
+            margin: auto; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+        } 
+    </style> 
+</head> 
+​
+<body> 
+    <div id = "Outer"> 
+        <img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/gfgbg.png"/> 
+    </div> 
+</body> 
+​
+</html>
+Output
+
+Click to enlarge
+
+98. What are CSS Combinators?
+CSS combinators are explaining the relationship between two selectors. CSS selectors are the patterns used to select the elements for style purposes. A CSS selector can be a simple selector or a complex selector consisting of more than one selector connected using combinators.
+
+There are four types of combinators available in CSS which are discussed below:
+
+General Sibling selector (~): The general sibling selector is used to select the element that follows the first selector element and also shares the same parent as the first selector element. This can be used to select a group of elements that share the same parent element.
+Adjacent Sibling selector (+): The Adjacent sibling selector is used to select the element that is adjacent or the element that is next to the specified selector tag. This combinator selects only one tag that is just next to the specified tag.
+Child Selector (>): This selector is used to select the element that is the immediate child of the specified tag. This combinator is stricter than the descendant selector because it selects only the second selector if it has the first selector element as its parent.
+Descendant selector (space): This selector is used to select all the child elements of the specified tag. The tags can be the direct child of the specified tag or can be very deep in the specified tag. This combinator combines the two selectors such that selected elements have an ancestor same as the first selector element.
+99. What are pseudo-classes in CSS?
+A Pseudo class in CSS is used to define the special state of an element. It can be combined with a CSS selector to add an effect to existing elements based on their states. For Example, changing the style of an element when the user hovers over it, or when a link is visited. All of these can be done using Pseudo Classes in CSS.
+
+Note that pseudo-class names are not case-sensitive.
+
+Syntax
+
+selector: pseudo-class{
+     property: value;
+}
+There are many Pseudo-classes in CSS but the ones which are most commonly used are as follows:
+
+:hover Pseudo-class: This pseudo-class is used to add a special effect to an element when our mouse pointer is over it. The below example demonstrates that when your mouse enters the box area, its background color changes from yellow to orange.
+:active Pseudo-class: This pseudo-class is used to select an element that is activated when the user clicks on it. The following example demonstrates that when you click on the box, its background color changes for a moment.
+:focus Pseudo-class: This pseudo-class is used to select an element that is currently focussed by the user. It works on user input elements used in forms and is triggered as soon as the user clicks on it. In the following example, the background color of the input field which is currently focused changes.
+:visited Pseudo-class: This pseudo-class is used to select the links which have been already visited by the user. In the following example, the color of the link changes once it is visited.
+100. What are all the looping structures in JavaScript?
+while loop: A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement.
+for loop: A for loop provides a concise way of writing the loop structure. Unlike a while loop, for statement consumes the initialization, condition and increment/decrement in one line thereby providing a shorter, easy-to-debug structure of looping.
+do while: A do-while loop is similar to while loop with the only difference that it checks the condition after executing the statements, and therefore is an example of an Exit Control Loop.
+101. How can the style/class of an element be changed?
+To change the style/class of an element there are two possible ways. We use document.getElementByID method
+
+document.getElementById("myText").style.fontSize = "16px;
+document.getElementById("myText").className = "class";
+102. Explain how to read and write a file using JavaScript?
+The readFile() function is used for reading operations.
+readFile( Path, Options, Callback)
+The writeFile() function is used for writing operations.
+writeFile( Path, Data, Callback)
+103. What is called Variable typing in JavaScript?
+The variable typing is the type of variable used to store a number and use that same variable to assign a “string”.
+
+Geeks = 42;
+Geeks = "GeeksforGeeks";
+104. How to convert the string of any base to integer in JavaScript?
+In JavaScript, parseInt() function is used to convert the string to an integer. This function returns an integer of base which is specified in second argument of parseInt() function. The parseInt() function returns Nan (not a number) when the string doesn’t contain number.
+
+105. Explain how to detect the operating system on the client machine?
+To detect the operating system on the client machine, one can simply use navigator.appVersion or navigator.userAgent property. The Navigator appVersion property is a read-only property and it returns the string that represents the version information of the browser.
+
+107. What are the types of Pop up boxes available in JavaScript?
+There are three types of pop boxes available in JavaScript.
+
+Alert
+Confirm
+Prompt
+108. What is the difference between an alert box and a confirmation box?
+An alert box will display only one button which is the OK button. It is used to inform the user about the agreement has to agree. But a Confirmation box displays two buttons OK and cancel, where the user can decide to agree or not.
+
+109. What is the disadvantage of using innerHTML in JavaScript?
+There are lots of disadvantages of using the innerHTML in JavaScript as the content will replace everywhere. If you use += like “innerHTML = innerHTML + ‘html'” still the old content is replaced by HTML. It preserves event handlers attached to any DOM elements.
+
+110. What is the use of void(0) ?
+The void(0) is used to call another method without refreshing the page during the calling time parameter “zero” will be passed.
+
+111. What are JavaScript Cookies ?
+Cookies are small files that are stored on a user’s computer. They are used to hold a modest amount of data specific to a particular client and website and can be accessed either by the web server or by the client’s computer. When cookies were invented, they were basically little documents containing information about you and your preferences. For instance, when you select the language in which you want to view your website, the website would save the information in a document called a cookie on your computer, and the next time when you visit the website, it would be able to read a cookie saved earlier.
+
+112. How to create a cookie using JavaScript?
+To create a cookie by using JavaScript you just need to assign a string value to the document.cookie object.
+
+document.cookie = "key1 = value1; key2 = value2; expires = date";
+113. How to read a cookie using JavaScript?
+The value of the document.cookie is used to create a cookie. Whenever you want to access the cookie you can use the string. The document.cookie string keep a list of name = value pairs separated by semicolons, where name is the name of a cookie and the value is its string value.
+
+114. How to delete a cookie using JavaScript?
+Deleting a cookie is much easier than creating or reading a cookie, you just need to set the expires = “past time” and make sure one thing defines the right cookie path unless few will not allow you to delete the cookie.
+
+115. What are escape characters and escape() function?
+Escape character: This character is required when you want to work with some special characters like single and double quotes, apostrophes, and ampersands. All the special character plays an important role in JavaScript, to ignore that or to print that special character, you can use the escape character backslash “\”. It will normally ignore and behave like a normal character.
+// Need escape character
+document.write("GeeksforGeeks: A Computer Science Portal "for Geeks" ")
+document.write("GeeksforGeeks: A Computer Science Portal \"for Geeks\" ")
+escape() function: The escape() function takes a string as a parameter and encodes it so that it can be transmitted to any computer in any network which supports ASCII characters.
+116. What is conditional rendering in React?
+When there are multiple components in react and we want to render components according to our preference and some conditions then we use conditional rendering. In conditional rendering, a condition is specified and if the condition is passed then this component is rendered.
+
+Let us look at this sample code to understand conditional rendering. 
+
+{isLoggedIn == false ? <DisplayLoggedOut /> : <DisplayLoggedIn />}
+Here if the boolean isLoggedIn is false then DisplayLoggedOut component will be rendered otherwise DisplayLoggedIn component will be rendered.
+
+117. What is react router?
+React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
+
+To install react router type the following command.
+
+npm i react-router-dom
+118. Explain the components of a react-router
+The main components of a react-router are
+
+Router(usually imported as BrowserRouter):  It is the parent component that is used to store all of the other components. Everything within this will be part of the routing functionality
+Switch: The switch component is used to render only the first route that matches the location rather than rendering all matching routes.
+Route: This component checks the current URL and displays the component associated with that exact path. All routes are placed within the switch components.
+Link: The Link component is used to create links to different routes.
+119. Explain the lifecycle methods of components
+A React Component can go through four stages of its life as follows. 
+
+Initialization: This is the stage where the component is constructed with the given Props and default state. This is done in the constructor of a Component Class.
+Mounting: Mounting is the stage of rendering the JSX returned by the render method itself.
+Updating: Updating is the stage when the state of a component is updated and the application is repainted.
+Unmounting: As the name suggests Unmounting is the final step of the component lifecycle where the component is removed from the page.
+120. Explain the methods used in mounting phase of components
+Mounting is the phase of the component lifecycle when the initialization of the component is completed and the component is mounted on the DOM and rendered for the first time on the webpage. he mounting phase consists of two such predefined functions as described below
+
+componentWillMount() Function: This function is invoked right before the component is mounted on the DOM.
+componentDidMount() Function: This function is invoked right after the component is mounted on the DOM.
+121. What is this.setState function in React?
+We use the setState() method to change the state object. It ensures that the component has been updated and calls for re-rendering of the component. The state object of a component may contain multiple attributes and React allows using setState() function to update only a subset of those attributes as well as using multiple setState() methods to update each attribute value independently.
+
+122.  What is the use of ref in React?
+Refs are a function provided by React to access the DOM element and the React element that you might have created on your own. They are used in cases where we want to change the value of a child component, without making use of props and all. They have wide functionality as we can use callbacks with them.
+
+The syntax to use ref is
+
+const node = this.myCallRef.current;
+123. What are hooks in React?
+ Hooks are a new addition in React 16.8. They let developers use state and other React features without writing a class. Hooks doesn’t violate any existing React concepts. Instead, Hooks provide a direct API to react concepts such as props, state, context, refs and life-cycle
+
+124. Explain the useState hook in React?
+The most used hook in React is the useState() hook. It allows functional components to manipulate DOM elements before each render. Using this hook we can declare a state variable inside a function but only one state variable can be declared using a single useState() hook. Whenever the useState() hook is used, the value of the state variable is changed and the new variable is stored in a new cell in the stack.
+
+We have to import this hook in React using the following syntax
+
+import {useState} from 'react'
+125. Explain the useEffect hook in react?
+The useEffect hook in React eliminates the side effect of using class based components. It is used as an alternative to componentDidUpdate() method. The useEffect hook accepts two arguments where second argument is optional. 
+
+useEffect(function, dependency)
+The dependency decides when the component will be updated again after rendering.
+
+126. What is React Fragments?
+when we are trying to render more than one root element we have to put the entire content inside the ‘div’ tag which is not loved by many developers. So since React 16.2 version, Fragments were introduced, and we use them instead of the extraneous ‘div’ tag. The following syntax is used to create fragment in react.
+
+<React.Fragment>  
+    <h2>Child-1</h2>   
+    <p> Child-2</p>   
+</React.Fragment>  
+127. What is a react developer tool?
+React Developer Tools is a Chrome DevTools extension for the React JavaScript library. A very useful tool, if you are working on React.js applications. This extension adds React debugging tools to the Chrome Developer Tools. It helps you to inspect and edit the React component tree that builds the page, and for each component, one can check the props, the state, hooks, etc.
+
+128. Describe the Aggregation Framework in MongoDB
+The Aggregation Framework in MongoDB is a powerful tool for performing data processing and transformation on documents within a collection.
+It works by passing documents through a multi-stage pipeline, where each stage performs a specific operation on the data, such as filtering, grouping, sorting, reshaping and computing aggregations.
+This framework is particularly useful for creating complex data transformations and analytics directly within the database.
+129. How to Perform Aggregation Operations Using MongoDB?
+Aggregation operations in MongoDB are performed using the aggregate method. This method takes an array of pipeline stages, each stage representing a step in the data processing pipeline.
+
+Example: Calculate total sales for each product
+
+db.sales.aggregate([
+  { $match: { status: "completed" } },  // Filter completed sales
+  { $group: { _id: "$product", totalSales: { $sum: "$amount" } } },  // Group by product and sum the sales amount
+  { $sort: { totalSales: -1 } }  // Sort by total sales in descending order
+])
+130. Explain the Concept of Write Concern and Its Importance in MongoDB
+Write Concern in MongoDB refers to the level of acknowledgment requested from MongoDB for write operations. It determines how many nodes must confirm the write operation before it is considered successful. Write concern levels range from "acknowledged" (default) to "unacknowledged," "journaled," and various "replica acknowledged" levels.
+
+The importance of write concern lies in balancing between data durability and performance. Higher write concern ensures data is safely written to disk and replicated, but it may impact performance due to the added latency.
+
+131. What are TTL Indexes, and How are They Used in MongoDB?
+TTL (Time To Live) Indexes in MongoDB are special indexes that automatically remove documents from a collection after a certain period. They are commonly used for data that needs to expire after a specific time, such as session information, logs, or temporary data. To create a TTL index, you can specify the expiration time in seconds
+
+Example: Remove documents 1 hour after createdAt
+db.sessions.createIndex({ "createdAt": 1 }, { expireAfterSeconds: 3600 })
+This index will remove documents from the sessions collection 1 hour (3600 seconds) after the createdAt field's value.
+
+132. What is an API?
+An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other. It defines how requests and responses should be structured, enabling seamless data exchange between systems. APIs can be RESTful, SOAP, or GraphQL-based and are commonly used in web development to connect front-end applications with back-end services, databases, or third-party platforms.
+
+133. What is the role of a web server?
+A web server is responsible for handling and delivering web content to users. It processes incoming HTTP/HTTPS requests, retrieves the requested web pages or data, and sends them back to the client’s browser. Web servers can host static websites (HTML, CSS, JavaScript files) or serve dynamic content generated by back-end languages like PHP, Node.js, or Python. Examples of web servers include Apache, Nginx, and Microsoft IIS.
+
+134. What are cookies, session storage, and local storage?
+Cookies: Small pieces of data stored on the user's browser, often used for tracking, authentication, and user preferences. They are sent with every HTTP request, making them useful for session management but can impact performance.
+Session Storage: Stores data temporarily for a single session, meaning it persists only while the tab or browser window is open. Once the user closes the tab, the data is automatically deleted.
+Local Storage: Stores data persistently in the browser without an expiration date. Unlike cookies, it is not sent with HTTP requests, making it more efficient for storing larger amounts of client-side data like user settings or offline content.
+135. What is a CMS (Content Management System)?
+A CMS (Content Management System) is a software platform that allows users to create, edit, and manage website content without requiring coding knowledge. It provides a user-friendly interface for handling text, images, videos, and other media. CMS platforms like WordPress, Joomla, and Drupal offer themes, plugins, and built-in SEO tools, making it easier to build and maintain websites efficiently.
+
+136. What is deployment in web development?
+Deployment in web development is the process of making a website or web application live on a server so users can access it online. It involves uploading files, configuring databases, and setting up hosting environments. Deployment can be done using manual methods (FTP, cPanel) or automated tools like GitHub Actions, CI/CD pipelines, and cloud services (AWS, Vercel, Netlify, Heroku) to ensure smooth updates and scalability.
+
+137. What is a progressive web app (PWA)?
+A Progressive Web App (PWA) is a type of web application that combines the best features of web and mobile apps to deliver a fast, reliable, and engaging user experience. PWAs work offline, load quickly, and provide app-like functionality using technologies like Service Workers, Web App Manifests, and responsive design. They can be installed on a device without needing an app store, making them a popular choice for modern web applications.
+
+138. What is responsive web design?
+Responsive Web Design (RWD) is an approach that ensures websites adapt to different screen sizes and devices for an optimal user experience. It uses flexible layouts, fluid grids, and CSS media queries to adjust elements like text, images, and navigation. This technique allows websites to be mobile-friendly, improving accessibility, SEO, and user engagement across desktops, tablets, and smartphones.
+
+139. Explain what CORS is in Express JS?
+CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to control how web pages in one domain can request and interact with resources hosted on another domain. In the context of Express.js, CORS refers to a middleware that enables Cross-Origin Resource Sharing for your application. This allows the application to control which domains can access your resources by setting HTTP headers.
+
+140. What are Built-in Middlewares?
+Express.js, includes a set of built-in middlewares that provide common functionality. These built-in middlewares are included by default when you create an Express application and can be used to handle various tasks. Here are some of the built-in middlewares in Express
+
+express.json(): This middleware is used to parse incoming JSON requests. It automatically parses the request body if the Content-Type header is set to application/json.
+express.Router(): The express.Router() function is often used to create modular route handlers. It allows you to group route handlers together and then use them as a middleware.
+express.static(): This middleware is used to serve static files, such as images, CSS, and JavaScript files, from a specified directory.
+141.How would you configure properties in Express JS?
+In Express JS, you can configure properties using the app.set() method. This method allows you to set various properties and options which affects the behavior of the Express application.
+
+app.set(name, value);
+Here, name represents the name of the property you want to configure, and value is the value you want to assign to that property. Express provides a wide range of properties that you can configure based on your application's requirements.
+
+142. Name some databases that integrate with Express JS?
+Express.js can support a variety of the databases which includes:
+
+MySQL
+MongoDB
+PostgreSQL
+SQLite
+Oracle
+143. Can we create a non-web application in Spring Boot?
+Yes, we can create a non-web application in Spring Boot. Spring Boot is not just for web applications. Using Spring Boot, we can create applications like Microservices, Console applications, and batch applications.
+
+144. Describe the flow of HTTPS requests through the Spring Boot application.
+The flow of HTTPS requests through a Spring Boot application is as follows:
+
+springboot---------interview---------questions
+First client makes an HTTP request ( GET, POST, PUT, DELETE ) to the browser.
+After that the request will go to the controller, where all the requests will be mapped and handled.
+After this in Service layer, all the business logic will be performed. It performs the business logic on the data that is mapped to JPA (Java Persistence API) using model classes.
+In repository layer, all the CRUD operations are being done for the REST APIs .
+A JSP page is returned to the end users if no errors are there.
+145. Explain @RestController annotation in Spring Boot.
+@RestController annotation is like a shortcut to building RESTful services. It combines two annotations:
+
+@Controller : Marks the class as a request handler in the Spring MVC framework.
+@ResponseBody : Tells Spring to convert method return values (objects, data) directly into HTTP responses instead of rendering views.
+It enables us to Define endpoints for different HTTP methods (GET, POST, PUT, DELETE), return data in various formats (JSON, XML, etc.) and map the request parameters to method arguments.
+
+146. Difference between @Controller and @RestController
+Features	
+@Controller
+
+@RestController
+
+Usage
+
+It marks a class as a controller class.
+
+It combines two annotations i.e. @Controller and @ResponseBody.
+
+Application
+
+Used for Web applications.
+
+Used for RESTful APIs.
+
+Request handling and Mapping
+
+Used with @RequestMapping annotation to map HTTP requests with methods.
+
+Used to handle requests like GET, PUT, POST, and DELETE.
+
+ Note: Both annotations handle requests, but @RestController prioritizes data responses for building API. 
+
+147. What are the benefits of using a pull request in a project?
+Teams can together work on distinct parts of the system and later combine their changes using pull requests. This way boosts team capability.
+
+148. What is a Git bundle?
+A Git bundle is a collective file that wraps all data from Git repository, such as commits, branches, and tags. It acts as a handy approach for relocating a repository offline or sharing upgrades when network connection is not available. To form a git bundle, perform the following command.
+
+git bundle create <bundle_file> <refs> 
+149. What is Django ORM?
+ORM which is also known as the object relation model enables us to interact with our database. It allows us to add, delete, change, and query objects (Object Relational Mapper). Django uses a database abstraction API called ORM to interface Viewed with its database models, to use Django object relation Models, we must first have a project and an app running. Models can be created in app/models.py after an app has been started. The Django ORM may be accessed by running the following command in our project directory.
+
+python manage.py shell
+This opens a Python console where we may add objects, retrieve objects, modify existing items, and delete objects. 
+
+150. What is Superuser?
+superuser is the most powerful user with permission to create, read, delete, and update on the admin page which includes model records and another user. Users of Django have access to an Admin Panel. Before using this feature, you must have to migrate your project; otherwise, the superuser database will not be created. To create a superuser,  first, reach the same directory, and run the following command
+
+python manage.py createsuperuser
+Full Stack Developer Interview Questions - Advanced Level
+151. How to create scrolling text or images on a webpage?
+This task can be achieved through <marquee> tag in HTML that helps to create scrolling text or image on a webpage. It scrolls either from horizontally left to right or right to left, or vertically from top to bottom or bottom to top.
+
+Syntax: The marquee element comes in pairs. It means that the tag has an opening and closing elements. 
+
+<marquee>
+   <--- contents --->
+</marquee>
+152. What do you mean by manifest file in HTML5?
+A manifest file is a text file that tells the browser to cache certain files or webpages so that they can be used even in offline mode. HTML5 cache webpages by specifying manifest attribute in <html> tag. All the web pages that contain manifest attributes or are specified in the manifest file will be cached whenever a user visits that page. Manifest files are saved with the .appcache extension. It always starts with the CACHE MANIFEST keyword and contains three sections:
+
+CACHE: This section lists all the resources including webpages, CSS stylesheets, JavaScript files, and images that will be cached immediately after their first download.
+NETWORK: This section lists all the resources that will never be cached. These resources can’t be used in offline mode and always require a connection to the server.
+FALLBACK: This section lists the fallback resources that will be used in case a page is not accessible. It specifies the primary resource that will be replaced with the fallback resource specified next to it in case of server connection failure.
+153. How to open a hyperlink in another window or tab in HTML?
+There are several different ways to open a hyperlink in another window or tab such as using JavaScript, jQuery, or HTML. In order to open a hyperlink in another window or tab, use the target attribute and provide it value _blank in the anchor tab. Click Here to know more in detail.
+
+Syntax
+
+<element target="_blank|_self|_parent|_top|framename"\>
+Attribute Values:
+
+_blank: It opens the link in a new window.
+_self: It opens the linked document in the same frame.
+_parent: It opens the linked document in the parent frameset.
+_top: It opens the linked document in the full body of the window.
+framename: It opens the linked document in the named frame.
+154. Explain Web Worker in HTML
+Web workers are multithreaded object which is used to execute Javascripts in the background without affecting the performance of the application or webpage. Web Workers allow for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions and allow long tasks to be executed without affecting the responsiveness of the web page. Generally, it is used for big CPU-intensive tasks.
+
+Types of Web Workers:
+
+Shared Web Workers: It can be shared by multiple scripts.
+Dedicated Web Workers: A dedicated worker is only accessible by the script which has been called it.
+155. Define multipart form data.
+Multipart Form Data: The ENCTYPE attribute of the <form> tag specifies the method of encoding for the form data. It is one of the two ways of encoding the HTML form. It is specifically used when file uploading is required in HTML form. It sends the form data to the server in multiple parts because of the large size of the file.  
+
+Syntax
+
+<form action="login.php" method="post" 
+    enctype="multipart/form-data">
+</form>
+156. How to add Scalable Vector Graphics to your web page?
+SVG is a type of image format which is written in XML for vector-based graphics. Every element and every attribute in SVG files can be animated. There are several ways to use SVG images in HTML, which are described below: Please refer to the How to add Scalable Vector Graphics to your web page? article for a more detailed description.
+
+SVG in a <img> tag: This is the basic & simple way to insert the SVG image to a webpage. For this method, we can simply use the <img> tag and then specify the file path or image link in the src attribute. To use this method, we should have downloaded the SVG image file or SVG image link.
+SVG in a <object> tag: The <object> tag can be used to insert the SVG images by specifying the URL of the resource that will be used by the object using the data attribute.
+SVG in a <embed> tag: The <embed> tag can be used to insert the SVG image by specifying the link in the src attribute. This tag is now deprecated and removed support for browser plug-ins in most of the modern browsers.
+SVG in a <image> tag: The <image> SVG element includes images inside SVG documents. It can display raster image files or other SVG files.
+157. What are the media element tags introduced by HTML5?
+HTML5 introduced 5 most popular media element tags that are supported by the browsers, which are described below: Please refer to the What are the media element tags introduced by HTML5? article for a more detailed description.
+
+<audio>: It is an inline element that is used to embed sound files into a web page.
+<video>:  It is used to embed video files into a web page.
+<source>: It is used to attach multimedia files like audio, video, and pictures.
+<embed>: It is used for embedding external applications which are generally multimedia content like audio or video into an HTML document.
+<track>:  It specifies text tracks for media components audio and video.
+158. How to handle JavaScript Events in HTML?
+An Event is an action or occurrence recognized by the software. It can be triggered by the user or the system. Mostly Events are used on buttons, hyperlinks, hovers, page loading, etc. All this stuff gets into action(processed) with the help of event handlers.
+
+Syntax: Handle event in HTML :
+
+<element onclick="myScript">
+Various HTML event attributes:Form Event
+
+onblur:This event occurs when an object loses focus.
+<element onblur="myScript">
+onchange:This event occurs when the value of an element has been changed.
+<element onchange="myScript">
+onfocus: This event occurs when elements get focused.
+<element onfocus="myScript">
+Event:
+
+onclick:This event occurs when the user clicks on an element.
+<element onclick="myScript">
+<element onmouseover="myScript">
+Please refer to the How to Handle JavaScript Events in HTML? article for a more detailed description.
+
+onmouseover:This event occurs when the user hovers the mouse pointer over an element.
+159. What is the difference between Cellpadding and Cellspacing in HTML Table?
+Cellpadding: Cellpadding specifies the space between the border of a table cell and its contents (i.e) it defines the whitespace between the cell edge and the content of the cell.
+
+Syntax
+
+<table cellpadding="value" >.....</table>
+where, value determines the padding 
+(space between the border of a table and its content)
+Cellspacing: Cellspacing specifies the space between cells (i.e) it defines the whitespace between the edges of the adjacent cells.
+
+Syntax
+
+<table cellspacing="value" >.....</table>
+where, value determines the padding 
+(space between adjacent cells)
+Difference between cell padding and cell spacing
+
+Cellpadding
+Cellspacing
+It specifies the space between the border of a table cell and its contents.
+
+It specifies the space between adjacent cells.
+
+It is created by using HTML <table> tag but the type attribute is set to cell padding.
+
+It is also created by using HTML <table> tag but the type attribute is set to cell spacing.
+
+It is mainly meant for a single cell.
+
+Cellspacing can get subjected to more than one cell.
+
+The default cell padding value is 1 
+
+Whereas, the default cell spacing value is 2
+
+Cellpadding is widely used and considered to be an effective mean
+
+Cellspacing is less effective than Cellpadding.
+
+Cellpadding is an attribute
+
+Cellspacing is also an attribute.
+
+
+
+160. What are pseudo-elements in CSS?
+Pseudo Elements: Pseudo-element in CSS is used to add style to specified parts of an element. Example: Using style before or after an element.
+
+Syntax:
+
+selector::pseudo-element { 
+    property:value; 
+} 
+Use of Pseudo-Element: Below is some examples to describe the use of pseudo-element.
+
+::before Pseudo-element: It is used to add some CSS property before an element when that element is called.
+::after Pseudo-element: It is used to add some CSS property after an element when that element is called.
+::first-letter Pseudo-element: It is used to make changes to the first letter of an element.
+::first-line Pseudo-element: It is used to make changes to the first line of an element.
+161. How can we add gradients in CSS?
+There are two types of Gradients
+
+1. Linear Gradients: It includes the smooth color transitions to going up, down, left, right, and diagonally. A minimum of two colors are required to create a linear gradient. More than two color elements can be possible in linear gradients. The starting point and the direction are needed for the gradient effect.
+
+Syntax:
+
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+2. CSS Radial Gradients: A radial gradient differs from a linear gradient. It starts at a single point and emanates outward. By default, the first color starts at the center position of the element and then fades to the end color towards the edge of the element. Fade happens at an equal rate until specified.
+Syntax:
+
+background-image: radial-gradient(shape size at position, start-color, ..., l
+162. Can we add 2D transformations to our project using CSS?
+Yes, we can, a transformation modifies an element by its shape, size, and position. It transforms the elements along the X-axis and Y-axis.
+There are six main types of 2D transformations which are listed below:
+
+translate()
+rotate()
+scale()
+skewX()
+skewY()
+matrix()
+163. Can we add 3D transformations to our project using CSS?
+Yes, it allows changing elements using 3D transformations. In 3D transformation, the elements are rotated along the X-axis, Y-axis, and Z-axis.
+
+There are three main types of transformation which are listed below:
+
+rotateX()
+rotateY()
+rotateZ()
+164. What are CSS transitions?
+Transitions in CSS allow us to control the way in which transition takes place between the two states of the element. 
+
+The transition allows us to determine how the change in color takes place. We can use the transitions to animate the changes and make the changes visually appealing to the user and hence, giving a better user experience and interactivity. In this article, we will show you how to animate the transition between the CSS properties.
+
+There are four CSS properties that you should use, all or in part (at least two, transition-property and transition-duration, is a must), to animate the transition. All these properties must be placed along with other CSS properties of the initial state of the element:
+
+transition-property: This property allows you to select the CSS properties which you want to animate during the transition(change).
+Syntax
+
+transition-property: none | all | property | property1,
+property2, ..., propertyN;
+transition-duration: This property allows you to determine how long it will take to complete the transition from one CSS property to the other.
+Syntax
+
+transition-duration: time;
+Here, time can be in seconds(s) or milliseconds(ms), you should use ‘s’ or ‘ms’ after the number (without quotes).
+
+transition-timing-function: This property allows you to determine the speed of change and the manner of change, during the transition. Like, the change should be fast at the beginning and slow at the end, etc.
+Syntax
+
+transition-timing-function: ease|ease-in|ease-out|ease-in-out|linear|
+step-start|step-end;
+transition-delay: This property allows you to determine the amount of time to wait before the transition actually starts to take place.
+Syntax
+
+transition-delay: time;
+Here, again, time can be in seconds(s) or milliseconds(ms), and you should use ‘s’ or ‘ms’ after the number (without quotes).
+
+The Shorthand Property You can combine all the four transition properties mentioned above, into one single shorthand property, according to the syntax given below. This saves us from writing long codes and prevents us from getting messy. Note the ordering of property, it has significance.
+Syntax
+
+transition: (property name) | (duration) | (timing function) | (delay);
+165. How can we animate using CSS?
+CSS Animations is a technique to change the appearance and behavior of various elements in web pages. It is used to control the elements by changing their motions or display. It has two parts, one which contains the CSS properties which describe the animation of the elements and the other contains certain keyframes which indicate the animation properties of the element and the specific time intervals at which those have to occur.
+
+The @keyframes rule: Keyframes are the foundations with the help of which CSS Animations works. They define the display of the animation at the respective stages of its whole duration. For example: In the following code, the paragraph changes its color with time. At 0% completion, it is red, at 50% completion it is of orange color and at full completion i.e. at 100%, it is brown.
+
+Example
+
+
+
+
+<html> 
+    <head> 
+        <style> 
+            #gfg { 
+                animation-name: color; 
+                animation-duration: 25s; 
+                padding-top:30px; 
+                padding-bottom:30px; 
+                font-family:Times New Roman; 
+            } 
+            #geeks { 
+                font-size: 40px; 
+                text-align:center; 
+                font-weight:bold; 
+                color:#090; 
+                padding-bottom:5px; 
+            } 
+            #geeks1 { 
+                font-size:17px; 
+                font-weight:bold; 
+                text-align:center; 
+            } 
+            @keyframes color { 
+                0% { 
+                    background-color: red; 
+                } 
+                50% { 
+                    background-color: orange; 
+                } 
+                100% { 
+                    background-color: brown; 
+                } 
+            } 
+        </style> 
+    </head> 
+    <body> 
+        <div id = "gfg"> 
+            <div id = "geeks">GeeksforGeeks</div> 
+            <div id = "geeks1">
+                A computer science portal for geeks
+            </div> 
+        </div> 
+    </body> 
+</html>
+
+
+Output
+
+out1
+
+
+166. What does the CSS box-sizing property do?
+The box-sizing CSS property defines how the user should calculate the total width and height of an element i.e. padding and borders, are to be included or not.
+
+Syntax
+
+box-sizing: content-box|border-box;
+Property Values
+
+content-box: This is the default value of the box-sizing property. In this mode, the width and height properties include only the content. Border and padding are not included in it i.e if we set an element’s width to 200 pixels, then the element’s content box will be 200 pixels wide, and the width of any border or padding will be added to the final rendered width.
+border-box: In this mode, the width and height properties include content, padding, and borders i.e if we set an element’s width to 200 pixels, that 200 pixels will include any border or padding we added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements.
+167. How can we make our website responsive using CSS?
+Media query is used to create a responsive web design. It means that the view of a web page differs from system to system based on screen or media types.
+
+Media queries can be used to check many things:
+
+width and height of the viewport
+width and height of the device
+Orientation
+Resolution
+A media query consist of a media type that can contain one or more expression which can be either true or false. The result of the query is true if the specified media matches the type of device the document is displayed on. If the media query is true then a style sheet is applied.
+
+Syntax
+
+@media not | only mediatype and (expression) {
+    // Code content
+}
+ 168. What is the ‘Strict’ mode in JavaScript and how can it be enabled?
+Strict Mode is a new feature in ECMAScript 5 that allows you to place a program or a function in a “strict” operating context. This strict context prevents certain actions from being taken and throws more exceptions. The statement “use strict” instructs the browser to use the Strict mode, which is a reduced and safer feature set of JavaScript.
+
+169. How to get the status of a CheckBox?
+The DOM Input Checkbox Property is used to set or return the checked status of a checkbox field. This property is used to reflect the HTML Checked attribute.
+
+document.getElementById("GFG").checked;
+If the CheckBox is checked then it returns True.
+
+170. How to explain closures in JavaScript and when to use them?
+The closure is created when a child functions to keep the environment of the parent’s scope even after the parent’s function has already been executed. The Closure is a locally declared variable related to a function. The closure will provide better control over the code when using them.
+
+
+
+
+// Explanation of closure 
+function foo() {
+    let b = 1;
+    function inner() {
+        return b;
+    }
+    return inner;
+}
+let get_func_inner = foo();
+​
+console.log(get_func_inner());
+console.log(get_func_inner());
+console.log(get_func_inner());
+171. What are call() and apply() methods ?
+Both methods are used in a different situation
+
+call() Method: It calls the method, taking the owner object as argument. The keyword this refers to the ‘owner’ of the function or the object it belongs to. We can call a method that can be used on different objects.
+apply() Method: The apply() method is used to write methods, which can be used on different objects. It is different from the function call() because it takes arguments as an array.
+172. How to target a particular frame from a hyperlink in JavaScript ?
+This can be done by using the target attribute in the hyperlink. Like
+
+<a href="/geeksforgeeks.htm" target="newframe">New Page</a>
+173. Write the errors shown in JavaScript?
+There are three different types of errors in JavaScript.
+
+Syntax error: A syntax error is an error in the syntax of a sequence of characters or tokens that are intended to be written in a particular programming language.
+Logical error: It is the most difficult error to be traced as it is the error on the logical part of the coding or logical error is a bug in a program that causes to operate incorrectly and terminate abnormally.
+Runtime Error: A runtime error is an error that occurs during the running of the program, also known as an exception.
+174. How many ways an HTML element can be accessed in JavaScript code? 
+There are four possible ways to access HTML elements in JavaScript which are:
+
+getElementById() Method: It is used to get the element by its id name.
+getElementsByClass() Method: It is used to get all the elements that have the given classname.
+getElementsByTagName() Method: It is used to get all the elements that have the given tag name.
+querySelector() Method: This function takes CSS style selector and returns the first selected element.
+175. What is an event bubbling in JavaScript?
+Consider a situation an element is present inside another element and both of them handle an event. When an event occurs in bubbling, the innermost element handles the event first, then the outer, and so on.
+
+
+
+
+<html>
+<head>
+    <style>
+        div {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+​
+    <div id="grandparent">
+        Grandparent
+        <div id="parent">
+            Parent
+            <div id="child">
+                Child (Click me)
+            </div>
+        </div>
+    </div>
+​
+    <script>
+        document.getElementById("grandparent").addEventListener("click", function() {
+            console.log("Grandparent Clicked!");
+        });
+​
+        document.getElementById("parent").addEventListener("click", function() {
+            console.log("Parent Clicked!");
+        });
+​
+        document.getElementById("child").addEventListener("click", function() {
+            console.log("Child Clicked!");
+        });
+    </script>
+​
+</body>
+</html>
+When you click the child element, the event first triggers on the child, then bubbles up to the parent, and finally to the grandparent.
+Using event.stopPropagation() inside an event listener prevents the event from propagating to parent elements.
+176. Explain why and how to update state of components using callback?
+It is advised to use a callback-based approach to update the state using setState because it solves lots of bugs upfront that may occur in the future.We can use the following syntax to update state using callback
+
+this.setState(st => {
+    return(
+        st.stateName1 = state1UpdatedValue,
+        st.stateName2 = state2UpdatedValue
+    )
+})
+177. What is React-Material UI?
+React Material UI is an open-source React component library, offering prebuilt components for creating React applications. Developed by Google in 2014, it’s compatible with JavaScript frameworks like Angular.js and Vue.js. Renowned for its quality designs and easy customization, it’s favored by developers for rapid development.
+
+178. What is flux architecture in redux?
+Flux architecture in Redux is a design pattern used for managing application state in a unidirectional data flow. In this architecture, actions are dispatched to modify the store, which holds the entire application state. The store sends the updated state to the view (UI), and the cycle repeats when new actions are triggered. Redux follows this structure to ensure a predictable and maintainable state management system for large applications.
+
+179. What is the Role of Journaling in MongoDB, and How Does It Impact Performance?
+Journaling in MongoDB ensures data durability and crash recovery by recording changes to the data in a journal file before applying them to the database files. This mechanism allows MongoDB to recover from unexpected shutdowns or crashes by replaying the journal. While journaling provides data safety, it can impact performance due to the additional I/O operations required to write to the journal file.
+
+180. How to Implement Full-Text Search in MongoDB?
+Full-Text Search in MongoDB is implemented using text indexes. These indexes allow you to perform text search queries on string content within documents.
+
+Example
+
+db.collection.createIndex({ content: "text" });
+db.collection.find({ $text: { $search: "mongodb" } });
+In this example, a text index is created on the content field, and a text search query is performed to find documents containing the word "mongodb."
+
+181. How to serve static files in Express.Js?
+In Express.js, you can serve static files using the built-in express.static middleware. This middleware function takes the root directory of your static files as an argument and serves them automatically.
+
+182. What is the use of app.use() in Express.js?
+app.use() is used to add middleware functions in an Express application. It can be used to add global middleware functions or to add middleware functions to specific routes.
+
+183. How can you deal with error handling in Express.js?
+Express.js provides built-in error-handling mechanism with the help of the next() function. When an error occurs, you can pass it to the next middleware or route handler using the next() function. You can also add an error-handling middleware to your application that will be executed whenever an error occurs.
+
+184.What is the basic difference between a traditional server and an Express.js server?
+A traditional server is a server that is built and managed independently. Traditional server may provide a basic foundation for handling HTTP requests and responses. While an Express.js server is built using the Express.js framework. It runs on top of Node.js. Express.js provides a simple and efficient way to create and manage web applications. It offers a wide range of features and tools for handling routing, middleware, and request or response objects.
+
+185. What is the purpose of the next() function in Express.js?
+The next() function is used to pass control from one middleware function to the next function. It is used to execute the next middleware function in the chain. If there are no next middleware function in the chain then it will give control to router or other functions in the app. If you don't call next() in a middleware function, the request-response cycle can be terminated, and subsequent middleware functions won't be executed.
+
+186. Explain the util module in Node.js
+The Util module in node.js provides access to various utility functions. There are various utility modules available in the node.js module library.
+
+OS Module: Operating System-based utility modules for node.js are provided by the OS module. 
+Path Module: The path module in node.js is used for transforming and handling various file paths. 
+DNS Module: DNS Module enables us to use the underlying Operating System name resolution functionalities. The actual DNS lookup is also performed by the DNS Module. 
+Net Module: Net Module in node.js is used for the creation of both client and server. Similar to DNS Module this module also provides an asynchronous network wrapper.
+187. How to handle environment variables in Node.js?
+We use process.env to handle environment variables in Node.js. We can specify environment configurations as well as keys in the .env file. To access the variable in the application, we use the “process.env.VARIABLE_NAME” syntax. To use it we have to install the dotenv package using the below command:
+
+npm install dotenv
+188. Explain DNS module in Node.js
+DNS is a node module used to do name resolution facility which is provided by the operating system as well as used to do an actual DNS lookup. Its main advantage is that there is no need for memorizing IP addresses – DNS servers provide a nifty solution for converting domain or subdomain names to IP addresses.
+
+189. What are child processes in Node.js?
+Usually, Node.js allows single-threaded, non-blocking performance but running a single thread in a CPU cannot handle increasing workload hence the child_process module can be used to spawn child processes. The child processes communicate with each other using a built-in messaging system. 
+
+190. What is tracing in Node.js?
+The Tracing Objects are used for a set of categories to enable and disable the tracing. When tracing events are created then tracing objects is disabled by calling tracing.enable() method and then categories are added to the set of enabled trace and can be accessed by calling tracing.categories.
+
+191. What is Thymeleaf?
+Thymeleaf is a Java-based server-side template engine used in Java web applications to render dynamic web pages. It is a popular choice for server-side templating in the Spring ecosystem, including Spring Boot.
+
+To know more about Thymeleaf, refer to this article – Spring Boot – Thymeleaf with Example
+
+192. Explain Spring Data and What is Data JPA?
+Spring Data is a powerful framework that can be used to develop data-oriented applications. It aims to simplify the development of data-centric applications by offering abstractions, utilities, and integration with various data sources.
+
+Spring Data JPA: This project provides support for accessing data from relational databases using JPA.
+193. Explain Spring MVC
+MVC stands for Model, View, and Controller. Spring MVC is a web MVC framework built on top of the Spring Framework. It provides a comprehensive programming model for building web applications.
+
+194. What is Spring Bean?
+An object that is managed by the Spring IoC container is referred to as a spring bean. A Spring bean can be any Java object.
+
+195. What are Inner Beans in Spring?
+An Inner Bean refers to a bean that is defined within the scope of another bean’s definition. It is a way to declare a bean inside the configuration of another bean, without explicitly giving it a unique identifier. To define an Inner Bean in Spring, we can declare it as a nested <bean> element within the configuration of the enclosing bean.
+
+196. What is the Git object model?
+The Git object model comprises four major types: blobs (which store file data), trees (which store directory structures), commits (which store repository snapshots), and tags (which store references to commits). These objects are the pillar of Git's version control system, permitting for capable tracking and management of changes.
+
+197. Explain `git rebase` and when you would use each?
+'git rebase' moves commits from one branch to another, making a straight, linear history. Use rebase to enhance and clean up the commit history before merging.
+
+198. What is a git hook and how might you use it?
+A Git hook is a pattern script that instantly runs at exact points in the Git workflow, such as before or after commits, merges, or pushes. You can use hooks to apply coding rules, run tests, check for security faults, or simplify tasks. For an example, a pre-commit hook can run and tests to verify code quality before changes are committed.
+
+199. Explain the caching strategies of Django. ?
+Django has its own inbuilt caching system that allows us to store our dynamic pages. So that we don’t have to request them again when we need them. The advantage of the Django Cache framework is that it allows us to cache data such as templates or the entire site. Django provides four different types of caching options, they are:
+
+per-site cache – It is the most straightforward to set up and caches your entire website.
+per-view cache – Individual views can be cached using the per-view cache.
+Template fragment caching allows you to cache only a portion of a template.
+low-level cache API – It can manually set, retrieve, and maintain particular objects in the cache using the low-level cache API.
+200. What is No SQL and Does Django support NoSQL?
+NoSql is also known as a non-relational database that stores data in a form of non-tabular, instead it stores data in the form of a storage model that is optimized for specific requirements of the type of data being stored. The types of NoSQL databases include pure documented databases, graph databases, wide column databases, and a key-value store. 
+No, Django does not officially support no-SQL databases such as CouchDB, Redis, Neo4j, MongoDB, etc. 
+
+Full Stack Developer Interview Questions - FAQ's
+What is a Full Stack Developer?
+A Full Stack Developer is a software engineer proficient in both frontend and backend development, working with technologies like HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, Spring Boot, Django, and Git to build complete web applications.
+
+What are the key skills required for a Full Stack Developer in 2025?
+A Full Stack Developer should be skilled in frontend technologies (HTML, CSS, JavaScript, React), backend frameworks (Node.js, Express, Spring Boot, Django), databases (MongoDB, SQL), API development, and version control systems like Git.
+
+What is the difference between a Full Stack Developer and a Frontend Developer?
+A Frontend Developer focuses on the user interface (UI) and client-side logic, while a Full Stack Developer handles both frontend and backend development, including databases, APIs, and server-side logic.
+
+Which full stack technology stack is best to learn in 2025?
+The most in-demand full stack stacks in 2025 include:
+
+MERN Stack (MongoDB, Express, React, Node.js)
+MEAN Stack (MongoDB, Express, Angular, Node.js)
+Spring Boot + React/Angular
+Django + React/Vue.js
+What are the most common Full Stack Developer interview topics?
+Interviewers typically ask about frontend basics (HTML, CSS, JavaScript, React), backend development (Node.js, Express, Spring Boot, Django), database management (MongoDB, SQL), RESTful APIs, authentication, and deployment best practices.
+
+How much experience is needed to become a Full Stack Developer?
+While some companies hire freshers with strong coding skills, most Full Stack Developer roles require 1-3 years of experience in development, while senior roles demand 5-10 years with expertise in scalable applications.
+
+
 General full-stack developer interview questions to ask applicants
 When interviewing Full-Stack Developer candidates, focus on questions that assess their proficiency in front-end and back-end technologies, testing methodologies, and deployment processes. Questions should cover topics like JavaScript frameworks, database management, RESTful API design, performance optimization, state management, and CI/CD pipelines. This ensures a comprehensive evaluation of their technical skills and problem-solving abilities.
 
