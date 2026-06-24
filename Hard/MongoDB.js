@@ -1,3 +1,1168 @@
+Как запустить запрос последовательно в цикле?
+Вопросы
+JAVASCRIPT
+Как запустить запрос последовательно в цикле?
+Это псевдокод того, чего я пытаюсь достичь. Сначала мне нужно получить список URL-адресов из тела запроса, затем передать эти URL-адреса для функции запроса (с использованием модуля запроса), которая получит данные с каждого URL-адреса, а затем сохранит эти данные в MongoDB. Только после того, как все запросы будут завершены, включая сохранение данных на сервере, он должен отправить ответ.
+
+app.post('/', (req, resp) => {
+
+    const { urls } = req.body;
+
+    urls.forEach((url, i) => {
+
+        request(url, function (err, resp, body) {
+
+            if (err) {
+                console.info('Error: ', err)
+            } else {
+                // function to save data to MongoDB server
+               saveUrlData(body);
+               console.info(`Data saved for URL number - ${i+1}`)
+            }
+        })
+    });
+
+    // Should be called after all data saved from for loop
+    resp.send('All data saved')
+})
+Я пробовал этот код, и, конечно же, функция resp.send () будет работать, не беспокоясь о том, завершился ли запрос. Используя этот код, я получаю на консоли следующий результат:
+
+Data saved for URL number - 3
+Data saved for URL number - 1
+Data saved for URL number - 5
+Data saved for URL number - 2
+Data saved for URL number - 4
+Я мог бы записать их во вложенной форме, но переменная urls может иметь любое количество URL-адресов, и поэтому она должна быть в цикле, по крайней мере, с моего понимания. Я хочу, чтобы запросы выполнялись последовательно, т.е. он должен разрешать 1-й URL-адрес, а затем второй и так далее, и когда все URL-адреса выполнены, только тогда он должен ответить. Пожалуйста помоги!
+
+ 11.12.2018 07:20
+0
+1
+1 001
+5
+ Ответы 5
+Вы должны посмотреть Обещания JavaScript
+
+В противном случае вы можете сделать рекурсивный запрос следующим образом:
+
+app.post('/', (req, resp) => {
+
+    const { urls } = req.body;
+
+    sendRequest(urls, 0);
+})
+
+function sendRequest(urlArr, i){
+
+    request(urlArr[i], function (err, resp, body) {
+      if (err) {
+           console.info('Error: ', err)
+      }
+      else {
+           saveUrlData(body);
+           console.info(`Data saved for URL number - ${i+1}`)
+      }
+
+      i++;
+      if (i == urlArr.length) resp.send('All data saved') //finish
+      else sendRequest(urlArr, i); //send another request
+   })
+}
+Все, что мне нужно было сделать, это создать отдельную функцию, которую я могу вызывать снова и снова, передавая в качестве аргументов массив URL-адресов и базовый индекс 0. Каждый успешный обратный вызов увеличивает индексную переменную, которую я снова передаю в ту же функцию. Промойте и повторяйте, пока мой индекс не достигнет длины массива url, я остановлю рекурсивный цикл оттуда.
+
+ 11.12.2018 07:29
+app.post('/', async (req, resp) => {
+
+    const {
+        urls
+    } = req.body;
+
+    for (const url of urls) {
+        try {
+            const result = await doRequest(url)
+            console.info(result)
+
+        } catch (error) {
+            // do error processing here 
+            console.info('Error: ', err)
+        }
+    }
+})
+
+function doRequest(url) {
+    return new Promise((resolve, reject) => {
+        request(url, function(err, resp, body) {
+            err ? reject(err) ? resolve(body)
+        })    
+    })    
+}
+using async await
+
+ 11.12.2018 07:37
+Вы хотите подождать, пока весь ответ api вы получите и сохраните в db, поэтому вам следует выполнить async-await и обещать весь ответ. Вы можете использовать модуль Request-Promise вместо request. Таким образом, вы будете получать обещание при каждом запрошенном вызове API вместо обратного вызова. И используйте обещание.all для подталкивания всех вызовов запросов (модулей) внутри массива. Используя async-await, выполнение кода будет ждать, пока все вызовы api не получат ответ и не сохранятся в db.
+
+const rp = require('request-promise');
+app.post('/', async (req, res) => {
+  try{
+   const { urls } = req.body;
+    // completed all will have all the api resonse. 
+    const completedAll = await sendRequest(urls);
+    // now we have all api response that needs to be saved
+    // completedAll is array
+    const saved = await saveAllData(completedAll);
+    // Should be called after all data saved from for loop
+    res.status(200).send('All data saved')
+  }
+  catch(err) {
+   res.status(500).send({msg: Internal_server_error})
+ }
+})
+
+function sendRequest(urlArr, i){
+    const apiCalls = [];
+    for(let i=0;i < urlArr.length; i++){
+      apiCalls.push(rp(urlArr[i]));
+    }
+    // promise.all will give all api response in order as we pushed api call
+    return Promise.all(apiCalls);
+}
+Вы можете сослаться на эти ссылки: https://www.npmjs.com/package/request-promisehttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+
+ 11.12.2018 07:48
+Глядя на намерение (поисковый робот), вы можете использовать Promise.all, потому что URL-адреса не зависят друг от друга.
+
+app.post('/', (req, resp) => {
+
+    const { urls } = req.body;
+
+    const promises = urls.map((url, i) => {
+        return new Promise((resolve, rej)=>{
+            request(url, function (err, resp, body) {
+                if (err) {
+                    rej(err);
+                } else {
+                   resolve(body);
+                }
+            })
+        })
+        .then((body)=>{
+            //this should definitely be a promise as you are saving data to mongo
+            return saveUrlData(body);
+        })
+    });
+
+    // Should be called after all data saved from for loop
+    Promise.all(promises).then(()=>resp.send('All data saved'));
+})
+Примечание. Также необходимо выполнить обработку ошибок.
+
+ 11.12.2018 08:01
+есть несколько способов решить эту проблему.
+
+вы можете использовать async/await
+
+Обещания
+
+вы также можете использовать асинхронная библиотека
+
+app.post('/', (req, res, next) => {
+    const { urls } = req.body;
+
+    async.each(urls, get_n_save, err => {
+        if (err) return next(err);
+        res.send('All data saved');
+    });
+
+    function get_n_save (url, callback) {
+        request(url, (err, resp, body) => {
+            if (err) {
+                return callback(err);
+            }
+            saveUrlData(body);
+            callback();
+        });
+    }
+});
+
+«Ошибка тайм-аута выбора сервера» Драйвер MongoDB Go с Docker
+Вопросы
+MONGODB
+«Ошибка тайм-аута выбора сервера» Драйвер MongoDB Go с Docker
+Я работаю над очень простой (как мне показалось) стартовой программой на Go с использованием MongoDB и Docker. Попытка разобраться с ними, прежде чем мы начнем использовать их на работе. У меня MongoDB работает в контейнере докеров, просто используя мой локальный хост, используя официальный образ Docker. Это работает нормально, я могу подключиться к нему через MongoDB Compass и изменить БД.
+
+Моей следующей задачей было создать отдельный контейнер Docker, который может читать и писать в БД. Я использую для этого MongoDB-Go-Driver (https://godoc.org/github.com/mongodb/mongo-go-driver/mongo), так как mgo больше не поддерживается.
+
+Это мой код, я просто следую многочисленным онлайн-руководствам, чтобы установить простое соединение, а затем пинговать БД, чтобы обеспечить соединение.
+
+client, err := mongo.Connect("mongodb://localhost:27017")
+
+if err != nil {
+    log.Fatal("error ", err)
+}
+
+// Check the connection
+err = client.Ping(context.TODO(), nil)
+
+if err != nil {
+    log.Fatal("error2 ", err)
+}
+
+fmt.Println("Connected to MongoDB!")
+Он всегда терпит неудачу при выполнении каких-либо операций с БД (Find, FindOne, Ping и т. д.) С error2 server selection timeout.
+
+Это мой файл для создания докеров, который я использую.
+
+version: "3"
+
+services:
+  datastore:
+    image: mongo
+    ports: 
+      - "27017:27017"
+    networks: 
+      - maccaptionNet
+    volumes: 
+      - .:/go/src/maccaption_microservice/dbdata
+  jobservice:
+    image: jobservicemaccaption:1.0
+    networks:
+      - maccaptionNet
+    depends_on:
+      - "datastore"
+
+
+networks: 
+  maccaptionNet:
+    driver: bridge
+Я новичок в MongoDB, и после нескольких часов исследований не добился никакого прогресса в этом. Прочитал https://docs.mongodb.com/manual/core/read-preference-mechanics/https://docs.mongodb.com/manual/replication/
+
+Может ли кто-нибудь указать мне правильное направление для этого? Мне не удалось найти много информации по этой конкретной проблеме.
+
+Спасибо!
+
+ 21.12.2018 17:04
+11
+5
+19 844
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Когда вы запускаете службу и mongodb в докере, вы не можете использовать localhost, поскольку служба находится в другом контейнере, чем mongodb, и с точки зрения докера она находится под другим IP-адресом.
+
+Вы можете подключиться с именем службы, указанным в docker-compose datastore
+
+mongo.Connect("mongodb://datastore:27017")
+Редактировать:
+
+из: https://docs.docker.com/compose/networking/
+
+By default Compose sets up a single network for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by them at a hostname identical to the container name
+
+Это означает, что если вы запускаете несколько контейнеров через compose, вы можете получить доступ к одному контейнеру из другого по имени контейнера,
+
+Обычно при запуске docker-compose настраивает сеть, и каждый контейнер в составе присоединяется к сети под своим именем контейнера. С точки зрения контейнера, localhost - это просто сам контейнер, в то время как он может искать имя другого контейнера и получать обратно IP-адрес контейнера.
+
+Предполагая, что докер работает на вашем локальном хосте, вы можете установить имя в файле etc/hosts следующим образом:
+
+127.0.0.1 datastore
+(если не просто заменить 127.0.0.1 на ip докера)
+
+А в приложении вы подключитесь к mongodb://datastore:27017
+
+Таким образом, вы сможете запускать службу как в докере, так и извне, если вы решите запускать только db в докере.
+
+docker-compose start datastore
+ 21.12.2018 17:31
+Если вы подключаетесь к одному докеру из другого (как это написано в вашем файле docker-compose, и используете сетевой режим bridge, вам необходимо изменить свой localhost на имя хоста, например datastore
+
+client, err := mongo.Connect("mongodb://datastore:27017")
+Когда ваш скрипт go использует localhost, он ожидает, что база данных будет находиться в том же докере.
+
+ 21.12.2018 17:31
+Как-то я решил эту проблему другим способом: заменив ports с "27018:27017" на "27017:27017". IDK, почему это помогает. Может быть, если Mongo видит не порт по умолчанию, он думает, что есть кластер узлов Mongo.
+
+ 20.04.2019 21:13
+Я думаю, что мой ответ может быть не связан, но все же я получал ту же ошибку, потому что мой IP-адрес не был указан на вкладке белого списка IP в атласе MongoDB, поэтому убедитесь, что у вас есть свой IP-адрес, прежде чем пытаться подключиться.
+
+ 09.02.2020 11:48
+У меня была такая же проблема, но я нашел другой способ решить эту проблему. Вы можете просто передать сетевой параметр при запуске образа докера, и таким образом докер указывает на исправление localhost.
+
+docker run --network = "host" ....
+
+Источник этого решения
+
+Ошибка подключения к кластеру MongoDB Atlas
+Вопросы
+MONGODB
+Ошибка подключения к кластеру MongoDB Atlas
+У меня возникла проблема с подключением к моему кластеру MongoDB Atlas через Node.js, express и mongoose:
+
+{ MongoNetworkError: connection 4 to mongodb-passport-auth-shard-00-00-vp7yg.mongodb.net:27017 closed
+    at TLSSocket.<anonymous> (C:\Users\Vishesh\Documents\Projects\nodejs-passport-auth\node_modules\mongodb-core\lib\connection\connection.js:276:9)
+    at Object.onceWrapper (events.js:273:13)
+    at TLSSocket.emit (events.js:187:15)
+    at _handle.close (net.js:606:12)
+    at TCP.done (_tls_wrap.js:386:7)
+  name: 'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]: {} }
+Вот код, который я использовал для подключения к моему кластеру через короткую строку подключения SRV:
+
+mongoose
+  .connect(
+    'mongodb+srv://myname:mypwd@myapp-vp7yg.mongodb.net/test?retryWrites=true',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.info("Connected to mongodb..."))
+  .catch(err => console.info(err));
+ 29.12.2018 19:43
+9
+3
+8 314
+5
+ Ответы 5
+Я думаю, вы должны добавить свой IP-адрес в Белый список IP-адресов в консоли mongoDB.atlas.
+
+mongoDB.atlass console
+
+ 16.04.2019 09:30
+Я получал ту же ошибку, вот решение, которое разрешило эту проблему. Добавьте свой IP-адрес в белый список IP-адресов.
+
+Надеюсь на это.
+
+
+
+ 22.04.2019 19:49
+Обновите свой метод mongoose.connect, чтобы избежать предупреждений об устаревании
+
+mongoose.connect(
+  mongoAtlasUri,
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  },
+  () => console.info(" Mongoose is connected")
+);
+Если вы не знаете свой IP-адрес, вы также можете указать этот IP-адрес - 0.0.0.0/0, но рекомендуется использовать ваш собственный IP-адрес.
+
+
+
+ 09.11.2020 20:22
+Я недавно столкнулся с этой проблемой, это какая-то ошибка со стороны altas. Даже если вы разрешили все IP-адреса, которые есть в атласе, он все равно будет выдавать ту же ошибку.
+
+Способ исправить это, добавив свой IP-адрес местоположения. У вас есть специальный белый список для вашего собственного IP, что немного странно, учитывая, что вы разрешили все.
+
+У меня это сработало, надеюсь, это поможет и другим.
+
+ 18.03.2021 20:08
+Я получал ошибку
+
+MongoNetworkError: connection 1 to ......-shard-00-00.b2zap.mongodb.net:27017 closed
+даже если я добавил разрешить доступ из любого места в белом списке IP.
+
+После добавления моего IP-адреса и разрешения доступа из любого места у меня это сработало.
+
+Ошибка: querySrv ENODATA _mongodb._tcp.blog-cluster-0hb5z.mongodb.net в QueryReqWrap.onresolve [как oncomplete]
+Вопросы
+JAVASCRIPT
+Ошибка: querySrv ENODATA _mongodb._tcp.blog-cluster-0hb5z.mongodb.net в QueryReqWrap.onresolve [как oncomplete]
+Похоже, я больше не могу подключиться к своему бесплатному кластеру Mongo Atlas. Все работало, и у меня есть данные, которые были собраны, когда я просматриваю веб-сайт MongoDB, поэтому я понятия не имею, почему он перестал работать и больше не может подключаться. Весь мой сайт не загружается.
+
+Это ошибка, которую я получал:
+
+{ Error: querySrv ENODATA _mongodb._tcp.blog-cluster-0hb5z.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (dns.js:197:19)
+  errno: 'ENODATA',
+  code: 'ENODATA',
+  syscall: 'querySrv',                                                                  Blog/app.js:54:14
+  hostname: '_mongodb._tcp.blog-cluster-0hb5z.mongodb.net' }
+ 01.02.2019 18:48
+9
+2
+14 149
+5
+ Ответы 5
+У меня возникла эта проблема, когда я попытался получить доступ к атласу MongoDB в кафе. Раньше он работал идеально, но внезапно выдал мне эту точную ошибку. Я не уверен, почему, я не могу дать вам все детали, но что исправило это для меня, так это переход к моему кластеру и подключение к стандартная строка подключения. Я скопировал и вставил эту более длинную строку подключения, и после ввода пароля и его настройки у меня это сработало. Надеюсь, это помогло.
+
+ 25.02.2019 17:50
+По какой-то причине DNS-сервер не возвращал записи srv, изменение DNS-сервера на тот, который возвращает эти записи, устранило проблему. (Я использовал https://use.opendns.com/, чтобы исправить это)
+
+ 02.05.2019 09:08
+У меня была такая же проблема, когда я работал в Starbucks, пошел домой, и он сразу же подключился, попробуйте другое соединение Wi-Fi.
+
+ 03.08.2019 00:18
+Для меня эта проблема возникала только в кофе Starbucks и была чем-то случайным, OpenDNS не работал у меня, ни Google DNS, ни какие-либо другие попытки, забавно, потому что дома отлично работает. Раньше я использовал строковый формат mongodb+srv для подключения внутри «uri», используя Mongoid и Ruby с файлом конфигурации mongoid.yml.
+
+Чтобы решить эту проблему, обязательно следуйте конфигурации, описанной в этой ссылке https://docs.atlas.mongodb.com/драйвер-соединение/ (пример Mongoid).
+
+production:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: 'myDatabaseName'
+
+      # Provides the hosts the default client can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - mycluster0-shard-00-00.mongodb.net:27017
+        - mycluster0-shard-00-01.mongodb.net:27017
+        - mycluster0-shard-00-02.mongodb.net:27017
+      options:
+        # The name of the user for authentication.
+        user: kay
+
+        # The password of the user for authentication.
+        password: myRealPassword
+
+        # The database or source to authenticate the user against. If the database
+        # specified above is not admin, admin MUST be specified here.
+        auth_source: admin
+
+        # All Atlas servers use SSL. (default: false)
+        ssl: true
+ 19.08.2019 00:03
+В некоторых случаях это происходит, когда ваш IP-адрес не занесен в белый список кластера MongoDB Atlas. Вот почему он работает с вашим IP-адресом дома, где вы изначально зарегистрировали свою учетную запись, но не работает с Wi-Fi в кафе или где-либо еще.
+
+Поэтому убедитесь, что ваш текущий IP-адрес добавлен в ваш кластер MongoDB.
+
+Кластер Amazon DocumentDB с ошибкой соединения Mongo из приложения
+Вопросы
+MONGODB
+Кластер Amazon DocumentDB с ошибкой соединения Mongo из приложения
+Я пытаюсь настроить экземпляр Amazon EB для работы с DocumentDB. Когда я пытаюсь подключиться к терминалу amazon linux, соединение работает нормально. Но когда я пытаюсь подключиться к PHP, он возвращает ошибку, показанную ниже.
+
+"No suitable servers found (serverSelectionTryOnceset): [socket timeout calling ismaster on 'docdb-XXXX-XX-XX-XX-XX-XX.cluster-cXXXXXXXXXX.eu-west-1.docdb.amazonaws.com:27017']"
+
+Я устранил неполадки с терминалом и получил "успешно!" которые снова указывают на успешное соединение.
+
+nc -zv docdb-docdb-XXXX-XX-XX-XX-XX-XX.cluster-cXXXXXXXXXX.eu-west-1.docdb.amazonaws.com 27017
+
+Кто-нибудь знает, что может быть не так?
+
+Вот мой код для подключения к DocumentDB
+
+$conn = new MongoClient("mongodb://username:password@docdb-docdb-XXXX-XX-XX-XX-XX-XX.cluster-cXXXXXXXXXX.eu-west-1.docdb.amazonaws.com:27017/?ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0");
+
+
+
+MONGODB_URI не определен
+Вопросы
+NODE.JS
+MONGODB_URI не определен
+Пытаюсь создать чат-бота Facebook по этому руководству: https://medium.com/@viviancpy/part-1-facebook-chatbot-with-heroku-webhook-b14090a136c7
+
+У меня вообще нет опыта работы с узлом и JavaScript, в основном только с Python. Поэтому я просто копирую и вставляю код с GitHub, но когда я пытаюсь его запустить (как описано в шаге 4, с «запуском пряжи»), я получаю эту ошибку:
+
+MongooseError: параметр uri для openUri() должен быть строкой, получившей значение «undefined». Убедитесь, что первым параметром mongoose.connect() или mongoose.createConnection() является строка.
+
+Итак, я просмотрел код и нашел это:
+
+const MONGODB_URI = process.env.MONGODB_URI;
+var db = mongoose.connect(MONGODB_URI);
+Так что в Python, по крайней мере, это будет означать, что константа MONGODB_URI не определена, но я не могу понять, почему. Возможно, мне не хватает пакета (кажется, он называется), или это проблема, связанная с тем, что я запускаю этот код в Windows, или что-то совершенно другое. Я также пытался гуглить, но либо я не понимаю ответа, либо не могу найти ответ.
+
+ 23.04.2019 17:45
+1
+3
+5 594
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+const MONGODB_URI = process.env.MONGODB_URI;
+
+Эта строка означает, что вы пытаетесь получить URI соединения mongo из среды машины, вам нужно убедиться, что вы действительно установили его там, чтобы это работало.
+
+ 23.04.2019 17:47
+Попробуйте сделать что-то вроде этого:
+
+MONGODB_URI=http://localhost:27017 node index.js
+Замените index.js своим скриптом (и uri, если это необходимо)
+
+Но я думаю, вы можете использовать пакет дотнев
+
+ 23.04.2019 17:51
+ Ответ принят как подходящий
+От Документация Node JS по процессу
+
+The process.env property returns an object containing the user environment.
+
+Прочитайте этот статья на process.env для лучшего понимания. Я собираюсь процитировать статью о том, что такое process.env для целей TL;DR.
+
+The process.env global variable is injected by the Node at runtime for your application to use and it represents the state of the system environment your application is in when it starts. For example, if the system has a PATH variable set, this will be made accessible to you through process.env.PATH which you can use to check where binaries are located and make external calls to them if required.
+
+При этом проблема, с которой вы столкнулись, заключается в том, что ваша переменная MONGODB_URI равна undefined, как говорит ваша ошибка, потому что вы никогда ее не определяли. Причина, по которой статья, за которой вы следили, сделала это, заключается в том, что автор развертывает ее на HEROKU, и она автоматически запускается там. Итак, чтобы решить вашу проблему (если вы хотите запустить приложение локально)
+
+1) Загрузите и установите MongoDB (если вы еще этого не сделали).
+
+2) В вашем Package.JSON конкретно в "start": "node index.js". Вы можете обновить сценарий запуска до "start": "MONGODB_URI=http://localhost:27017 node index.js" (из ответа Фрути). (Локальный сервер Mongo запускается на ПОРТ 27017 по умолчанию). Это сначала установит Mongo_URI в локальный экземпляр вашего Mongo в вашей системе. Затем запустите файл Index.js
+
+ 23.04.2019 21:56
+Правильный способ сделать это — создать файл с именем «.env» в корневом каталоге вашего проекта, откуда вы запускаете «heroku local».
+
+Используя этот файл, heroku-cli создаст среду с соответствующими переменными среды.
+
+Шаг 1: Узнайте свой фактический MONGODB_URI.
+
+Шаг 2: Создайте файл .env
+
+Шаг 3. Запишите строку MONGODB_URI='your-actual-mongodb_uri' в файл .env.
+
+Шаг 4: Начните процесс с «heroku local»
+
+Теперь ваш процесс может получить доступ к process.env.MONGODB_URI, как если бы он был развернут непосредственно на героку.
+
+ 02.06.2020 14:18
+Создайте файл с именем «.env.local» в корне и добавьте в него следующее:
+
+MONGODB_URI=mongodb+srv://имя пользователя:пароль@cluster0.9mmia.mongodb.net/имя-базы-данных-внутри-mongodb?retryWrites=true&w=majority MONGODB_DB = имя-базы-данных-внутри-mongodb
+
+Как исправить «Не удалось создать экземпляр« className »с использованием конструктора NO_CONSTRUCTOR с аргументами» в неизменяемом классе
+Вопросы
+JAVA
+Как исправить «Не удалось создать экземпляр« className »с использованием конструктора NO_CONSTRUCTOR с аргументами» в неизменяемом классе
+Я использую MongoDBRepository при весенней загрузке, и когда я сохраняю какой-либо объект в базе данных, все в порядке. но когда я нахожу объект по идентификатору, весна не позволяет этого сделать.
+
+Я пытаюсь изменить тип VehicleRoutingProblemSolution на тип объекта, но у VehicleRoutingProblemSolution есть другое поле объекта PickupService, и у него нет конструктора по умолчанию. И да, этот класс имеет неизменяемый... Я не могу создавать конструкторы по умолчанию, что я могу сделать?
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.graphhopper.jsprit.core.problem.solution.VehicleRoutingProblemSolution;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "vrp_solutions")
+public class VrpSolutionHolder {
+    // Specifies the solution id
+    @Id
+    @JsonProperty("id")
+    private String id;
+
+    // Specifies the solution id
+    @JsonProperty("solution")
+    private VehicleRoutingProblemSolution vehicleRoutingProblemSolution;
+
+    // Created at timestamp in millis
+    @JsonProperty("created_at")
+    private Long created_at = System.currentTimeMillis();
+
+
+    public VrpSolutionHolder(String id, VehicleRoutingProblemSolution vehicleRoutingProblemSolution) {
+        this.id = id;
+        this.vehicleRoutingProblemSolution = vehicleRoutingProblemSolution;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public VehicleRoutingProblemSolution getVehicleRoutingProblemSolution() {
+        return vehicleRoutingProblemSolution;
+    }
+
+    public void setVehicleRoutingProblemSolution(VehicleRoutingProblemSolution vehicleRoutingProblemSolution) {
+        this.vehicleRoutingProblemSolution = vehicleRoutingProblemSolution;
+    }
+
+    public Long getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Long created_at) {
+        this.created_at = created_at;
+    }
+}
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.data.mapping.model.MappingInstantiationException: Failed to instantiate com.graphhopper.jsprit.core.problem.solution.VehicleRoutingProblemSolution using constructor NO_CONSTRUCTOR with arguments
+
+ 24.04.2019 12:14
+6
+0
+9 020
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Если ваш фреймворк требует (видимый) конструкторы без аргументов (плюс сопутствующие сеттеры), а класс, который у вас есть, требуется, чтобы остаться как есть, то вы можете свернуть свое собственное, скажем, MutableVehicleRoutingProblemSolution, где в сеттерах вы могли бы иметь:
+
+this.vehicleRoutingProblemSolution = new VehicleRoutingProblemSolution(vehicleRoutingProblemSolution.getId(), newSolution);
+Таким образом, ваше решение MutableVehicleRoutingProblemSolution охватывает существующее решение VehicleRoutingProblemSolution.
+
+Хакерский запах к нему, но он соответствует требованиям.
+
+(Или вы можете попытаться найти инструмент, который может использовать не аннотации к содержащимся полям, а аннотации к аргументам конструктора.)
+
+ 24.04.2019 13:01
+ Ответ принят как подходящий
+Я столкнулся с той же проблемой. Постоянный неизменяемый класс, содержащий экземпляры других классов, вызывающий вышеупомянутое исключение при получении этим методом репозитория:
+
+public interface ProjectCodeCacheRepository extends MongoRepository<CachedCode, String> {
+    public CachedCode findByCode(String code);  
+    public List<CachedCode> findByClientId(UUID clientId);
+}
+...
+List<CachedCode> cachedForClient = this.codeCacheRepo.`**findByClientId**`(clientId);
+...
+Следуя подсказкам Эрвина Смаутса, это хорошо исправлено, если дать ему специальный конструктор с аннотацией org.springframework.data.annotation.PersistenceConstructor вот так:
+
+@Document(collection = "cachedcodes")
+public class CachedCode {
+    
+    @PersistenceConstructor
+    public CachedCode(String code, UUID clientId, LocalDateTime expiration) {
+        this.code = code;
+        this.clientId = clientId;
+        this.expiration = expiration;
+    }
+    
+    public CachedCode(String code, UUID clientId, long secondsExpiring) {
+        this.code = code;
+        this.clientId = clientId;
+        this.expiration = LocalDateTime.now().plusSeconds(secondsExpiring);
+    }
+    
+    
+    public UUID getClientId( ) {
+        return this.clientId;
+    }
+            
+    public String getCode() {
+        return this.code;
+    }
+        
+    public boolean hasExpired(LocalDateTime now) {
+        return (expiration.isBefore(now));
+    }
+    
+    ...
+    @Id
+    private final String code;
+    private final UUID clientId;
+    private final LocalDateTime expiration;
+}
+Итак, вы должны проверить, есть ли у вашего VehicleRoutingProblemSolution а) конструктор, который соответствует полям базы данных (проверьте в клиенте mongo) и б) аннотирован, чтобы быть тем, который используется драйвером (или любой другой частью магии Spring под капотом).
+
+ 25.09.2019 16:40
+Это проблема, когда соответствующий класс не имеет конструктора без аргументов, например - я столкнулся с проблемой с java.io.File.
+
+Решение:
+В общем, измените объявление на класс Object и преобразуйте, где мы используем класс.
+
+от
+
+class MyClass{
+
+    File myfile;
+
+}
+к
+
+class MyClass{
+
+    Object myFile;
+
+}
+ 24.09.2021 08:57
+Для тех, кто использует ломбок, вам нужно удалить аннотацию @Builder в своем классе и использовать вместо нее @Data или следовать приведенному выше решению, чтобы предоставить специализированный конструктор.
+
+ 04.10.2021 17:15
+Как ни странно, я получил это, когда попытался украсить пользовательский интерфейс с помощью...
+
+@Document(collection = "Person")
+Пример:
+
+package test.barry.interfaces;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.UpdateDefinition;
+
+
+@Document(collection = "Person")
+public interface CustomRepository
+{
+    void updatex(Query filterPredicate, UpdateDefinition updatePredicate);
+}
+
+Как исправить: «MongoError: ошибка аутентификации» @MongoDB Atlas
+Вопросы
+NODE.JS
+Как исправить: «MongoError: ошибка аутентификации» @MongoDB Atlas
+Я подключаюсь к MongoDB Atlas и получаю ошибку аутентификации.
+
+это моя строка подключения:
+
+mongodb://user:<password>@mongo-cluster-shard-00-00-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-01-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-02-ixqtu.mongodb.net:27017/test?ssl=true&replicaSet=mongo-cluster-shard-0&authSource=admin&retryWrites=true
+Вот что я получаю:
+
+------------------------------------------------
+
+    Mongoose connection "error" event fired with:
+
+    { MongoError: authentication fail
+        at Function.MongoError.create (/mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/error.js:31:11)
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/topologies/replset.js:1245:38
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/connection/pool.js:760:7
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/connection/pool.js:736:20
+        at finish (/mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/auth/scram.js:168:16)
+        at handleEnd (/mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/auth/scram.js:178:7)
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/auth/scram.js:269:11
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb-core/lib/connection/pool.js:469:18
+        at process._tickCallback (internal/process/next_tick.js:61:11)
+      name: 'MongoError',
+      message: 'authentication fail',
+      errors:
+       [ { name: 'mongo-cluster-shard-00-01-ixqtu.mongodb.net:27017',
+           err: [Error] },
+         { name: 'mongo-cluster-shard-00-00-ixqtu.mongodb.net:27017',
+           err: [Error] } ] }
+    Error: KeystoneJS (Keystone Demo) failed to start - Check that you are running `mongod` in a separate process.
+        at NativeConnection.<anonymous> (/mnt/c/WEB/keystone-md2/node_modules/keystone/lib/core/openDatabaseConnection.js:62:10)
+        at NativeConnection.emit (events.js:189:13)
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/lib/connection.js:824:17
+        at connectCallback (/mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:527:5)
+        at /mnt/c/WEB/keystone-md2/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:459:13
+        at process._tickCallback (internal/process/next_tick.js:61:11)
+ 27.04.2019 19:09
+5
+1
+12 380
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Вы должны поместить свои user и password в строку uri вашего подключения.
+
+ mongodb://***'your user':' here comes password '***@mongo-cluster-shard-00-00-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-01-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-02-ixqtu.mongodb.net:27017/test?ssl=true&replicaSet=mongo-cluster-shard-0&authSource=admin&retryWrites=true
+например
+
+ mongodb://dbuser:dbpassword@mongo-cluster-shard-00-00-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-01-ixqtu.mongodb.net:27017,mongo-cluster-shard-00-02-ixqtu.mongodb.net:27017/test?ssl=true&replicaSet=mongo-cluster-shard-0&authSource=admin&retryWrites=true
+ 27.04.2019 20:03
+Проблема в том, что я оставлял <> в строке подключения. Вы должны удалить их, чтобы аутентификация работала.
+
+ 28.04.2019 09:55
+У меня похожая ошибка, но с подключением к новой базе данных Atlas. Несмотря на то, что я определенно правильно настроил имя пользователя и пароль, как указано здесь и в документации (очевидно, я заменил ПАРОЛЬ своим правильным паролем MLAB:
+
+var mongoURI = 'mongodb+srv://heroku_3kcdl3j9:PASSWORD@cluster-3kcdl3j9.auof1.mongodb.net/heroku_3kcdl3j9?retryWrites=true&w=majority';
+Я перенес свою базу данных из MLAB в Atlas, успешно установив правильные параметры доступа к сети на IP-адреса 0.0.0.0. Настройте переменную окружения в Heroku. Но все равно получаю эту ошибку:
+
+    { MongoError: authentication fail
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/topologies/replset.js:1462:15
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:868:7
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:844:20
+    at finish (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:232:16)
+    at handleEnd (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:242:7)
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:351:15
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:531:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+  name: 'MongoError',
+  message: 'authentication fail',
+  errors:
+   [ { name: 'cluster-3kcdl3j9-shard-00-01.auof1.mongodb.net:27017',
+       err: [MongoError] },
+     { name: 'cluster-3kcdl3j9-shard-00-00.auof1.mongodb.net:27017',
+       err: [MongoError] },
+     { name: 'cluster-3kcdl3j9-shard-00-02.auof1.mongodb.net:27017',
+       err: [MongoError] } ],
+  [Symbol(mongoErrorContextSymbol)]: {} }
+(node:47015) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 's' of undefined
+    at Admin.buildInfo (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb/lib/admin.js:100:37)
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/index.js:95:13
+    at $initialConnection.then.err (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongoose/lib/connection.js:556:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:47015) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:47015) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:47015) UnhandledPromiseRejectionWarning: MongoError: authentication fail
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/topologies/replset.js:1462:15
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:868:7
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:844:20
+    at finish (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:232:16)
+    at handleEnd (/Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:242:7)
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/auth/scram.js:351:15
+    at /Users/bensmith/Downloads/DocumentsDirNew/Scraper and API/diveapi/node_modules/mongodb-core/lib/connection/pool.js:531:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+(node:47015) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+ 03.10.2020 10:25
+Я тоже столкнулся с этой проблемой. Но через час я узнал, что использовал переменные process.env для имени пользователя и пароля. А также объявил их в файле .env. Но я забыл настроить пакет dotenv в своем коде.
+
+Так что убедитесь, что вы не сделали эту глупую ошибку.
+
+Для получения дополнительной информации просмотрите эту документацию по репозиториям узлов. https://www.npmjs.com/package/dotenv
+
+ 13.12.2020 12:36
+У меня была аналогичная ошибка, и в моем случае проблема заключалась в том, что я добавил (в белый список) неправильный IP-адрес в «Список доступа IP» на странице «Безопасность -> Доступ к сети».
+
+Ошибка docker-compose Не удается запустить службу монго: драйверу не удалось запрограммировать внешнее подключение к конечной точке
+Вопросы
+WINDOWS
+Ошибка docker-compose Не удается запустить службу монго: драйверу не удалось запрограммировать внешнее подключение к конечной точке
+Я настраиваю grandnode с помощью mondodb в докере, используя docker compose.
+
+докер-compose.yml
+
+    version: "3.6"
+
+    services:
+      mongo:
+        image: mongo:3.6
+        volumes:
+          - mongo_data_db:/data/db
+          - mongo_data_configdb:/data/configdb
+        ports:
+          - 27017:27017
+      grandnode:
+        image: grandnode/grandnode:4.10
+        ports:
+          - 8080:8080
+        depends_on:
+          - mongo
+
+    volumes:
+      mongo_data_db:
+        external: true
+      mongo_data_configdb:
+        external: true
+Получение ошибки ниже при использовании файла docker-compose.
+
+E:\docker\grandnode>docker-compose up
+Creating network "grandnode_default" with the default driver
+Creating grandnode_mongo_1 ... error
+
+ERROR: for grandnode_mongo_1 Cannot start service mongo: driver failed programming external connectivity on endpoint grandnode_mongo_1 (1e54342c07b093e32189aad487927f226b3ed0d1b6bdf7413588377b0e99bc2c): Error starting userland proxy: mkdir /port/tcp:0.0.0.0:27017:tcp:172.20.0.2:27017: input/output error
+
+ERROR: for mongo Cannot start service mongo: driver failed programming external connectivity on endpoint grandnode_mongo_1 (1e54342c07b093e32189aad487927f226b3ed0d1b6bdf7413588377b0e99bc2c): Error starting userland proxy: mkdir /port/tcp:0.0.0.0:27017:tcp:172.20.0.2:27017: input/output error
+ERROR: Encountered errors while bringing up the project.
+ 28.04.2019 07:53
+4
+4
+8 480
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Если вы не хотите подключаться к своему экземпляру MongoDB с локального хоста, вам не нужно это сопоставление портов «27017:27017». Оба сервиса находятся в одной сети и все равно будут видеть друг друга. Grandnode может подключиться к MongoDB по адресу mongo:27017.
+
+ 29.04.2019 07:16
+ Ответ принят как подходящий
+Проблема заключалась в том, что общие диски не были проверены.
+
+Проверьте необходимые диски
+Нажмите Применить
+Перезапустите Докер
+Это решит проблему.
+
+
+
+ 05.12.2019 12:35
+Это случилось со мной, в Xubuntu 20.04. Проблема заключалась в том, что на моем компьютере был запущен mongod. Остановить mongod, было решением для меня.
+
+Я сделал это:
+
+sudo systemctl stop mongod
+Убедитесь, что mongod был остановлен с помощью:
+
+systemctl status mongod | grep Active
+Вывод этой команды должен быть:
+
+Active: inactive (dead)
+Затем снова выполните это:
+
+docker-compose up -d
+Все сработало, как и ожидалось.
+
+ 15.08.2021 22:55
+остановите свой сервер MongoDB из вашей ОС.
+
+для линукса
+
+sudo systemctl stop mongod
+если это все еще не работает, удалите MongoDB с локального компьютера и снова запустите docker compose.
+
+ 18.09.2021 07:59
+для пользователя Linux
+
+sudo systemctl остановить MongoDB
+
+sudo docker-compose up -d
+
+Переменные, которые я обновил в своем forEach, возвращаются к исходному значению
+Вопросы
+JAVASCRIPT
+Переменные, которые я обновил в своем forEach, возвращаются к исходному значению
+Я пытаюсь запросить, чтобы получить всю сумму и сумму заработка и снятия, но каким-то образом после завершения и выхода цикла forEach все обновленные значения, которые я поместил в переменную, возвращаются к своим исходным значениям.
+
+  var withdrawbalance = 0;
+  var totalearning = 0;
+
+  userplans.forEach((up) => {
+    DepositEarning.findOne({deposit: up.deposit._id})
+      .then(depositearning => {
+        withdrawbalance += parseInt(depositearning.WithdrawableBalance, 10);
+      });
+    Earning.findOne({deposit: up.deposit._id})
+      .then(earnings => {
+        totalearning += parseInt(earnings.Earning, 10);
+    });
+  })
+
+  console.info(withdrawbalance);
+  console.info(totalearning);
+ 01.06.2019 16:07
+0
+1
+67
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+forEach является асинхронным. Таким образом, console.info запускается до вашего цикла мутации. Вы можете сделать его синхронным, используя map, но даже в этом случае внутри него будут асинхронные вызовы. Вам нужно будет сгладить его дальше - возможно, выполнив Promise.all на карте, а затем уменьшив вывод этого.
+
+ 01.06.2019 16:10
+Я думаю, причина может заключаться в том, что DepositEarning.findOne() и Earning.findOne() являются асинхронными функциями. Это означает, что они не возвращаются сразу со значением, поэтому ваши переменные остаются прежними после цикла.
+
+ 01.06.2019 16:18
+ Ответ принят как подходящий
+Вы запускаете асинхронный код внутри forEach, и forEach не будет ждать завершения асинхронного кода, для этого вы должны обернуть свой асинхронный код ожидающим примитивом, например
+
+await Promise.all(userplans.map(async (up) => {
+    await DepositEarning.findOne({deposit: up.deposit._id})
+      .then(depositearning => {
+        withdrawbalance += parseInt(depositearning.WithdrawableBalance, 10);
+      });
+    await Earning.findOne({deposit: up.deposit._id})
+      .then(earnings => {
+        totalearning += parseInt(earnings.Earning, 10);
+    });
+  }))
+ 01.06.2019 16:20
+Вот функциональный подход к этому, который устраняет побочный эффект мутации внутри цикла. Для этого вам нужен движок, поддерживающий распространение Object Rest:
+
+async function calculate(userplans) {
+    const add = (acc, n) => acc + n;
+    const flatten = (acc, e) => ({
+        depositEarnings: [...acc.depositEarnings, e.depositEarnings], 
+        earnings: [...acc.earnings, e.earnings]
+    });
+
+    const {depositEarnings, earnings} = (await Promise.all(userplans
+          .map(async (up) => ({
+              depositEarnings: await DepositEarning.findOne({deposit: up.deposit._id}),
+              earnings: await Earning.findOne({deposit: up.deposit._id})
+}))))
+          .reduce(flatten, {depositEarnings: [], earnings: []});
+
+    const withdrawalBalance = depositEarnings
+          .map(d => parseInt(d.WithdrawableBalance, 10))
+          .reduce(add, 0);
+    const totalEarning = earnings
+          .map(e => parseInt(e.Earning, 10))
+          .reduce(add, 0);
+
+    console.info(withdrawalBalance);
+    console.info(totalEarning);
+}
+ 01.06.2019 16:42
+Просто добавлю свои два цента,
+
+Как указывалось в других ответах, ваш цикл foreach использует асинхронный код. Он использует некоторый API, который не является частью Js.
+
+Вызов помещается в стек вызовов, а затем удаленный из стека вызовов. Потому что работу теперь будет выполнять API. призыв к
+
+console.info(withdrawbalance); console.info(totalearning);
+
+добавляется в стек вызовов и каково значение прямо сейчас? 0 0.
+
+API, когда он закончит работу, добавит функцию в task queue и, исходя из этого, event loop проверит, пуст ли стек вызовов. Поскольку сейчас он пуст, мы добавим функцию в стек вызовов.
+
+А потом запускается. И тогда у вас будут реальные значения withdrawbalance and totalearning значений.
+
+Mongoose не подключается к MongoDB Atlas
+Вопросы
+NODE.JS
+Mongoose не подключается к MongoDB Atlas
+Это первый раз, когда я использую MongoDB Atlas для работы с Mongo, и при попытке подключения я получаю сообщение об ошибке:
+
+Error: connect ECONNREFUSED 3.209.60.172:27017
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1054:14) {
+  name: 'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]: {}
+}
+Это мой код:
+
+const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+
+mongoose.connect('mongodb+srv://johnnybox:<password>@cluster0-cgxqx.mongodb.net/test?retryWrites=true&w=majority', { 
+  useNewUrlParser: true
+}).then(() => console.info('MongoDB Connected...'))
+  .catch(err => console.info(err));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(require('./routes'));
+
+app.listen(3331);
+ps * я не пропускаю свои учетные данные
+
+Уже искал решение здесь, но ничего похожего на мою проблему нет.
+
+Мой белый список:
+
+Mongoose не подключается к MongoDB Atlas
+
+ 07.06.2019 18:36
+1
+5
+1 759
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+попробуй это
+
+mongoose
+  .connect(
+    'mongodb+srv://{my_user}:{mypass}@johnnybox-cgxqx.mongodb.net/johnnybox?retryWrites=true&w=majority',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.info('MongoDB Connected...'))
+  .catch(err => console.info(err));
+ 07.06.2019 18:41
+Попробуйте добавить свой IP-адрес в белый список IP-адресов mongo atlas. В противном случае принимайте все соединения, если вам не нужно безопасное соединение.
+
+ 07.06.2019 21:03
+Новый ответ на новую ошибку:
+
+Согласно этому отвечать, у которого была точно такая же ошибка, а именно:
+
+'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]:
+Добавьте свой текущий IP-адрес в белый список после «clusters/security/whitelist» на веб-сайте MongoDB.
+
+Извините, я потратил как минимум час, чтобы решить эту проблему. Это все, что я могу сделать.
+
+Старый ответ, касающийся прежней ошибки (он исправил эту часть, но все же получил новую ошибку):
+
+Если вы внимательно прочитаете журнал ошибок, он говорит:
+
+UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block
+Это означает, что вам нужно добавить catch() к вашему соединению мангуста:
+
+mongoose.connect({some code}).then({some code}).catch(err => console.info(err))
+
+ 07.06.2019 21:18
+ Ответ принят как подходящий
+Я пытался запустить этот код дома, и он работал отлично!
+
+Так что это было что-то здесь, в моем офисе, после некоторого тестирования проблема была с заблокированным портом подключения.
+
+Посмотри:
+
+Error: connect ECONNREFUSED 3.209.60.172:27017
+Обратите внимание, что он подключается к порту 27017
+
+** IP-адрес является случайным, поэтому он меняется после каждой заявки.
+
+После того, как мой Sd открыл этот порт, все заработало правильно!!
+
+
+
+Большое спасибо за вашу помощь, ребята!
+
+ 11.06.2019 23:08
+Для тех из вас, кто пробовал разные URI, единственное, что заработало здесь, это Добавить свой IP против разрешить доступ из любого места. Надеюсь, это сэкономит вам время.
+
+Strapi: отладка ⛔️ Сервер не смог запуститься должным образом
+Вопросы
+MONGODB
+Strapi: отладка ⛔️ Сервер не смог запуститься должным образом
+Пожалуйста, исправьте мою проблему.
+
+Это работает, когда я пытаюсь более 50 раз. Теперь не работает, пробую 100+ раз.
+
+Я запускаю это -> страпи новый сервер
+
+� Starting to create your Strapi application.
+
+? Choose your installation type Custom (manual settings)
+? Choose your main database: MongoDB
+? Database name: server
+? Host: @cluster0-8tfpd.mongodb.net
+? +srv connection: true
+? Port (It will be ignored if you enable +srv): 27017
+? Username: deep
+? Password: *******
+? Authentication database (Maybe "admin" or blank):
+? Enable SSL connection: true
+
+⏳ Testing database connection...
+It might take a minute, please have a coffee ☕️
+
+The app has been connected to the database successfully!
+
+�  Application generation:
+√ Copy dashboard
+√ Install plugin settings-manager.
+√ Install plugin content-type-builder.
+√ Install plugin content-manager.
+√ Install plugin users-permissions.
+√ Install plugin email.
+√ Install plugin upload.
+√ Link strapi dependency to the project.
+
+� Your new application server is ready at E:\Dev. Project\Flutter\flutter_ecommerce\server.
+
+⚡️ Change directory:
+$ cd server
+
+⚡️ Start application:
+$ strapi start  
+Но проблема в том, что -> запуск страпи
+
+[2019-06-15T09:34:30.604Z] debug ⛔️ Server wasn't able to start properly. [2019-06-15T09:34:30.609Z] error Make sure your MongoDB database is running...
+
+ 15.06.2019 11:56
+4
+1
+16 468
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Пожалуйста, убедитесь, что ваша MongoDB работает с настройками, которые вы установили в своем ./config/environment/.../database.json
+
+Я думаю, что у вашего хоста есть проблема, @ не нужен.
+
+Я предлагаю вам следовать документу Strapi о документах Mongo Atlas. Это работа с кластерами. https://strapi.io/documentation/3.0.0-beta.x/guides/databases.html#install-on-atlas-mongodb-atlas
+
+ 20.06.2019 16:12
+Проверьте, запущен ли экземпляр MongoDB
+Проверьте в настройках правильность host: ./config/environment/.../database.json. Обычно в разработке находится localhost
+ 25.06.2019 18:47
+Посмотреть картинку
+
+Вы должны добавить запись uri в свой ./config/environment/.../database.json
+
+uri должно быть mongodb://<host>:<port>/<database name>
+
+ 21.08.2019 13:32
+ Ответ принят как подходящий
+Если вы столкнулись с этой ошибкой при работе с докером, Добавление --network=host решает эту проблему. Имейте в виду, используйте это решение только локально.
+
+Как описано самим докером,
+
+--network = "host" gives the container full access to local system services such as D-bus and is therefore considered insecure.
+
+ 29.01.2020 12:42
+Если эта ошибка повторится, используйте ремешок консоль, а не страпи начать.
+
 
 Golang сообщает, что «крайний срок контекста превышен» с MongoDB
 Вопросы
