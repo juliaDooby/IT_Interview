@@ -1,3 +1,1769 @@
+Как решить ошибку SQLdecode при переносе моделей в django?
+Вопросы
+PYTHON
+Как решить ошибку SQLdecode при переносе моделей в django?
+Я новичок в django, я создал проект и приложение и хочу подключить свой проект к mongodb. когда я ввожу команду python manage.py migrate, я получаю указанную ниже ошибку.
+
+Я удалил базу данных и очистил все миграции в таблице django_migration и удалил файлы миграции в созданной папке миграций. Все еще получаю ту же ошибку.
+
+Пожалуйста, помогите мне с этим. заранее спасибо
+
+Ошибка:
+
+    raise TypeError("documents must be a non-empty list")
+TypeError: documents must be a non-empty list
+Вышеупомянутое исключение было прямой причиной следующего исключения:
+
+djongo.sql2mongo.SQLDecodeError: FAILED SQL: INSERT INTO "django_migrations" ("app", "name", "applied") VALUES (%(0)s, %(1)s, %(2)s)
+    Version: 1.2.31
+Настройки.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'DB_name',
+        'HOST':'localhost',
+        # 'PORT': 27017,
+        # 'USER':'',
+        # 'PASSWORD':''
+    },
+модели.py
+
+from django.db import models
+
+# Create your models here.
+class dummy(models.Model):
+
+    name= models.CharField(max_length=100, blank=True, null= True)
+ 16.03.2019 07:30
+2
+2
+4 405
+8
+ Ответы 8
+У меня та же проблема с u, я пробовал использовать sqlite3 в качестве базы данных, и данные такие же:
+
+
+
+так что данные не пустые!!
+
+И я попытался изменить команду sql следующим образом (строка 760 в sql2mongo\query.py):
+
+statement = statement[0]
+    sm_type = statement.get_type()
+    if sm_type=='INSERT':
+        self._sql = 'INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ("test", "windy", "2019-03-15 12:00")'
+но все же не удалось.
+
+ 16.03.2019 08:50
+Я решил эту проблему. Проблема может быть в версии sqlparse - sqlparse 0.2.4 работает хорошо, а sqlparse 0.3.0 - нет. Используйте следующую команду:
+
+pip install sqlparse==0.2.4 --user
+ 17.03.2019 04:53
+Просто установите sqlprase, чтобы решить эту проблему.
+
+Загрузить гитхаб sqlprase
+
+pip install filename.zip
+ 19.03.2019 11:04
+После создания проекта django удалите sqlparse, набрав
+
+pip3 uninstall sqlparse
+Затем установите sqlparse version=0.2.4, набрав
+
+pip3 install sqlparse==0.2.4
+Затем перенесите базу данных mongodb, набрав
+
+python3 manage.py migrate
+Если вы используете питон2, используйте (точка) вместо (пункт3) и (питон) вместо (питон3) в команде.
+
+ 20.08.2019 07:48
+Используйте python manage.py migrate --fake-initial при первом переносе проекта.
+
+В settings.py добавить INSTALLED_APPS=[ 'APP_NAME.apps.APP_NAMEConfig', ..., ..., ]
+
+ 02.04.2020 11:44
+Я решил это так sqlparse==0.2.4 и djongo==1.3.3 и django==2.1.7
+
+ 04.10.2020 08:57
+Я обновил djongo с помощью pip install --upgrade djongo, выполнил миграцию python manage.py migrate --fake-initial, и это было исправлено.
+
+ 04.01.2021 11:01
+Пожалуйста, попробуйте установить пакет sqlparse, используя эту команду в терминале.
+
+ pip install sqlparse==0.2.4 
+
+Я получаю эту ошибку при подключении к mongodb Atlas: «dns.exception.Timeout: время ожидания операции DNS истекло через 30,000985383987427 секунд»
+Вопросы
+PYTHON
+Я получаю эту ошибку при подключении к mongodb Atlas: «dns.exception.Timeout: время ожидания операции DNS истекло через 30,000985383987427 секунд»
+я подключаю свое приложение Flask к атласу mongodb, используя Flask-PyMongo, но получаю эту ошибку.
+
+«dns.exception.Timeout: время ожидания операции DNS истекло через 30,000985383987427 секунд»
+
+и после этого он говорит: Во время обработки вышеупомянутого исключения произошло другое исключение:
+
+«pymongo.errors.ConfigurationError: время ожидания операции DNS истекло через 30,000985383987427 секунд»
+
+Вот код:
+
+from flask import Flask 
+from flask_pymongo import PyMongo
+
+app = Flask(__name__)
+
+app.config['MONGO_DBNAME'] = 'FirstCluster'
+app.config['MONGO_URI'] = 'mongodb+srv://username:password@firstcluster-bblvc.mongodb.net/test?retryWrites=true'
+
+
+mongo = PyMongo(app)
+
+@app.route('/connect')
+def connect_to_mongo():
+    return 'Connecting to Mongodb'
+
+@app.route('/collections')
+def adding():
+    user = mongo.db.users
+    user.insert({'name' : 'vatsalay'})
+    return 'Added User!'
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+ 24.03.2019 12:50
+7
+3
+10 474
+8
+ Ответы 8
+Была такая же проблема, она сработала для меня, изменив мой DNS с автоматического на «8.8.8.8». Как? Если вы используете Windows, выполните следующие действия.
+
+Откройте настройки сети и Интернета.
+Центр коммуникаций и передачи данных
+Нажмите на ваше интернет-соединение Wi-Fi (название вашего маршрутизатора)
+Перейти к приличиям
+Выберите tcp/ipv4 и снова зайдите в свойства
+Выберите этот и отредактируйте его «использовать следующий DNS-сервер и выберите» 8.8.8.8 (google dns)
+Также, как сказал Нил Ланн, проверьте разрешенные ips
+
+ 02.09.2019 15:58
+Похоже, вам нужно установить pymongo[srv], чтобы заставить работать mongodb+srv URI.
+Попробуйте установить его с помощью pip3 install 'pymongo[srv]'
+
+ 17.12.2019 07:43
+Попробуйте использовать другую строку подключения. У меня были проблемы со строкой 3.6 или более поздней версии. Просто использовал строку 3.4 или более позднюю, и она мгновенно подключилась.
+
+если вы настаиваете на использовании более новой строки подключения, вам необходимо установить pymongo srv
+
+Для Windows
+
+pip install pymongo[srv]
+Для Mac
+
+pip3 install pymongo[srv]
+На зш
+
+pip3 install 'pymongo[srv]'
+ 15.03.2020 01:42
+Это может быть ошибка, вызванная тем, что ваш клиент Mongo не может найти соединение с сервером. Итак, лучше проверьте подключение к Интернету, а затем запустите программу.
+
+ 02.05.2020 11:11
+Та же проблема в стандарте Google App Engine.
+
+В моем случае было решение использовать старый тип URL:
+
+client = pymongo.MongoClient("mongodb://USERNAME:PASSWORD@CLUSTER...
+ПО:
+
+Убунту 18.04
+Питон 2.7.17/2.7.12
+Пимонго 3.11.1
+Google Cloud SDK 319.0.0
+Соединение из тестового файла непосредственно из ОС было в порядке, но тот же код, запущенный из Google SDK dev appserver2, не удался.
+
+URL-адрес после изменения, сгенерированный cloud.mongodb.com Atlas в разделе Кластер -> Подключить -> Выбрать способ подключения -> Python - 3.4 или выше связь была установлена.
+
+ 23.11.2020 03:22
+Я использовал Python 3.6.2, поэтому решил использовать строку подключения для «3.6 или новее». Это дало мне эту ошибку. Позже я попробовал это со строкой подключения для «3.4 или новее». Это работало отлично.
+
+Попробуйте использовать строку подключения для «3.4 или более поздней версии».
+
+ 23.11.2020 15:14
+У меня была аналогичная проблема. Я вдруг не смог подключиться. Все мои коллеги использовали одну и ту же версию Python и т. д.
+
+За несколько дней до этого у другого коллеги был тайм-аут при использовании Wi-Fi на их телефонах. Они могли подключиться, когда переключились на свой обычный Wi-Fi.
+
+После того, как я перезагрузил свой Wi-Fi, я смог подключиться.
+
+Это не лучшее решение, но попробовать стоит.
+
+ 25.03.2021 17:26
+Попробуйте использовать другую версию строки подключения. Вы можете изменить версию в кластере -> подключить -> подключить ваше приложение.
+
+Почему мой тест flapdoodle Embedded MongoDB не запускается? (при создании embeddedMongoServer не удалось запустить процесс EOF)
+Вопросы
+MONGODB
+Почему мой тест flapdoodle Embedded MongoDB не запускается? (при создании embeddedMongoServer не удалось запустить процесс EOF)
+У меня проблемы с созданием моего нового проекта. Я использовал https://start.spring.io/ для создания нового проекта Spring 2.0 MongoDB Maven и хочу иметь встроенную базу данных MongoDB для моих интеграционных тестов. Инициализатор spring добавил с этой целью зависимость для de.flapdoodle.embed.mongo.
+
+Но каждый раз, когда я пытаюсь запустить «mvn clean package», во время теста я получаю следующую ошибку:
+
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'embeddedMongoServer' defined in class path resource
+[org/springframework/boot/autoconfigure/mongo/embedded/EmbeddedMongoAutoConfiguration.class]: 
+Invocation of init method failed; nested exception is java.io.IOException: 
+Could not start process: <EOF>
+at de.flapdoodle.embed.mongo.AbstractMongoProcess.onAfterProcessStart(AbstractMongoProcess.java:79) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+at de.flapdoodle.embed.process.runtime.AbstractProcess.<init>(AbstractProcess.java:116) ~[de.flapdoodle.embed.process-2.0.2.jar:na]
+at de.flapdoodle.embed.mongo.AbstractMongoProcess.<init>(AbstractMongoProcess.java:53) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+at de.flapdoodle.embed.mongo.MongodProcess.<init>(MongodProcess.java:50) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:44) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+at de.flapdoodle.embed.mongo.MongodExecutable.start(MongodExecutable.java:34) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+at de.flapdoodle.embed.process.runtime.Executable.start(Executable.java:108) ~[de.flapdoodle.embed.process-2.0.2.jar:na]
+Что мне не хватает?
+
+Мой файл приложения довольно прост:
+
+@SpringBootApplication
+public class NewnewinternetApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(NewnewinternetApplication.class, args);
+    }
+}
+Мой файл конфигурации очень прост:
+
+@Configuration
+@EnableMongoRepositories
+@ComponentScan(basePackages = "com.snoop.dougg.newnewinternet")
+public class AppConfig {
+
+    @Bean
+    public InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/");
+        resolver.setSuffix(".html");
+        return resolver;
+    }
+}
+На данный момент у меня есть два простых контроллера, возвращающих только статический вывод.
+
+У меня есть небольшой документ:
+
+@Document(collection = "user")
+public class User implements Serializable {
+    protected static final long serialVersionUID = -1L;
+
+    @Id
+    private String id;
+
+    private String username;
+    private String firstName;
+    private String lastName;
+
+    public User() {}
+
+    public User(String username, String firstName, String lastName) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    //Getters, setters, and equals and hash code methods...
+}
+А затем небольшой глупый тест:
+
+@RunWith(SpringRunner.class)
+//@SpringBootTest -> Doesn't work either
+@DataMongoTest
+public class NewnewinternetApplicationTests {
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @Test
+    public void sillyLittleTest() {
+        mongoTemplate.save(new User("sdoug", "Snoop", "Dougg"));
+        Assert.notNull(
+            mongoTemplate.find(
+                new Query(Criteria.where("firstName").is("Snoop")), User.class),
+            "Couldn't find by first name!");
+    }
+}
+А затем мой файл pom, который я действительно просто оставил в покое:
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<project xmlns = "http://maven.apache.org/POM/4.0.0" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.snoop.dougg.newnewinternet</groupId>
+    <artifactId>NewNewInternet</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>NewNewInternet</name>
+    <description>A new new internet</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <azure.version>2.0.1</azure.version>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.M9</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-active-directory-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-spring-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-spring-boot-bom</artifactId>
+                <version>${azure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+</project>
+ 23.04.2018 23:36
+15
+0
+9 962
+9
+ Ответы 9
+скорее всего, экземпляр mongodb, загруженный через плагин spring, равен 32, и вы работаете на 64-битной java или наоборот. Пожалуйста, подтвердите, есть ли другой способ определить исправление.
+
+ 07.07.2018 09:12
+Мой случай был немного особенным, но, возможно, это поможет кому-то еще решить эту проблему.
+
+Если по какой-то причине вы используете win 10 и у вас уже есть MongoDB, работающая как служба (в моем случае это была более ранняя версия - v3.4 - работала), попробуйте остановить службу и затем запустить тест. .
+
+ 23.08.2018 22:06
+Попробуйте добавить @DirtiesContext на уровень тестового класса.
+
+ 10.05.2019 06:21
+У меня была такая же ситуация, и я мог решить ее с помощью @DirtiesContext следующим образом:
+
+@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+public class CommoditiesApplicationTests {
+
+}
+ 19.09.2019 11:44
+У меня здесь был примерно такой же сценарий, и я решил его, используя
+
+    <dependency>
+        <groupId>com.github.fakemongo</groupId>
+        <artifactId>fongo</artifactId>
+        <version>2.1.1</version>
+        <scope>test</scope>
+    </dependency>
+вместо de.flapdoodle.embed.mongo
+
+ 11.12.2019 01:40
+Комментирование следующих строк в application.properties и их размещение в другом профиле также может работать. Нашел здесь
+
+spring.data.mongodb.database=
+spring.data.mongodb.host=
+spring.data.mongodb.port=
+ 16.05.2020 00:00
+Обычно источником проблемы является уже запущенный экземпляр mongodb. Я бы начал с проверки, занимает ли что-нибудь порт mongodb по умолчанию - 27017.
+
+ 16.09.2020 15:44
+В моем случае файл сокета все еще был рядом.
+
+Чтобы разобраться в основной проблеме, мне нужен вывод журнала консоли, я поставил точку останова в предложении elseAbstractMongoProcess::onAfterProcessStart (которое срабатывает при сбое). Здесь у вас есть доступ к logWatch и вы можете запустить System.out.println(logWatch.output.toString()); в режиме отладки, чтобы получить консоль mongo. Для моей проблемы в выводе указано SocketException: Address already in use
+
+Попробовать предложенные команды, такие как sudo lsof -iTCP -sTCP:LISTEN -n -P, у меня не сработало (в моем случае ничего не указано)
+
+Я нашел еще один ответ SO, в котором говорилось, что нужно запустить ls -lrta /tmp | grep .sock
+
+Файл .sock все еще был там после предыдущего запуска (видимо, я прервал свои тесты)
+
+Удаление этого файла решило проблему.
+
+ 16.12.2020 15:19
+В моем случае вместо 64-битного был загружен 32-битный клиент mongodb. Библиотека embedded.mongo использует класс BitSize для определения архитектуры ОС. В моей системе System.getProperty("os.arch") не возвращал значение, указанное в операторе if. Я решил проблему, установив системное свойство os.arch на x86_64 (одно из значений, используемых BitSize для возврата B64) в основном приложении.
+
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        System.setProperty("os.arch", "x86_64");
+        SpringApplication.run(Application.class, args);
+    }
+}
+Примечание: System.getProperty("os.arch") вернет неправильное значение, если вы используете 32-битную версию Java для запуска вашего приложения в 64-битной системе!
+
+(узел: 71307) [DEP0079] DeprecationWarning
+Вопросы
+JAVASCRIPT
+(узел: 71307) [DEP0079] DeprecationWarning
+Попробуйте обновить документ MongoDB. Предупреждение об устаревании как
+
+(node:71307) [DEP0079] DeprecationWarning: Custom inspection function on Objects via .inspect() is deprecated
+
+Версия узла v10.5.0, db версии v3.6.5, Версия Mongoose mongoose@4.1.12
+
+Campground.findById(campgroundId, function(err, campground){
+    if (err){
+        console.info(err);
+    } else {
+        console.info(campground.celebrity);
+        Celebrity.create(celebrityData, function(err, celebrity){
+            if (err){
+                console.info(err);
+            } else {
+                //save comment
+                celebrity.save();
+                campground.celebrity.push(celebrity);
+                campground.save();
+                console.info(celebrity);
+                //req.flash('success', 'Created a comment!');
+            }
+        });
+    }
+});
+ 20.07.2018 08:10
+9
+4
+16 185
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Вы не должны беспокоиться об этой ошибке, это предупреждение мангуста. На самом деле Mongoose использует inspect () для отладки вывода. они обновят его, возможно, до узла 12.x. На данный момент это безопасно.
+
+Не о чем беспокоиться.
+
+Проверьте эту информацию. https://nodejs.org/api/deprecations.html#deprecations_dep0079_custom_inspection_function_on_objects_via_inspect
+
+DEP0079: Custom inspection function on Objects via .inspect()# Type: Runtime
+
+Using a property named inspect on an object to specify a custom inspection function for util.inspect() is deprecated. Use util.inspect.custom instead. For backward compatibility with Node.js prior to version 6.4.0, both may be specified.
+
+Если вам нужны подробности, посмотрите это. Это в стадии разработки. Предупреждение придет в узле 10
+
+https://github.com/Automattic/mongoose/issues/6420
+
+ 20.07.2018 08:20
+Чтобы не получать сообщение об устаревании, вы можете выполнить обновление до mongoose версии 5.2.10 или более поздней в соответствии с этим Проблема с мангустом на Github и установить следующее в нужном месте в коде:
+
+mongoose.set('useCreateIndex', true)
+ 28.10.2018 13:42
+обновить до 5.2.10 и установить
+
+  mongoose.set('useCreateIndex', true);
+ 15.11.2018 07:56
+Другой способ установить это ...
+
+mongoose.connect(
+    "mongodb://<user>:<password>@<url>",
+    { 
+      useNewUrlParser: true, 
+      useCreateIndex: true 
+    }
+  )
+Более подробную информацию можно найти здесь: https://github.com/Automattic/mongoose/issues/6890
+
+ 01.12.2018 21:40
+Чтобы решить эту проблему, вы должны использовать useNewUrlParser и useCreateIndex. См. Код ниже.
+
+mongoose.connect(
+ config.databaseUrl,
+ { 
+    useNewUrlParser: true, 
+    useCreateIndex: true 
+ }
+)
+Или же
+
+mongoose.set("useCreateIndex", true);    
+mongoose.connect(
+    config.databaseUrl,
+    { 
+        useNewUrlParser: true
+    }
+  );
+ 10.12.2018 20:22
+Вы должны добавить параметры useCreateIndex в свой метод подключения.
+
+mongoose.connect(keys.mongoURI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+})
+ 25.12.2018 15:30
+Совершенно случайный, но, по крайней мере, это не подражатель: я получал это предупреждение об устаревании (и неожиданное поведение), когда случайно использовал Model.find() вместо Model.findOne().
+
+Итак, мой ошибочный код выглядел так
+
+User.find(query)
+.then(user => {
+  console.info(user.emailSettings.confirmToken)
+})
+... с обычным объектом / массивом это не сработает с TypeError: Cannot read property 'confirmToken' of undefined, но с массивом документов mongo, по-видимому, он выполняет эту проверку и теперь выдает это предупреждение об устаревании.
+
+ 26.08.2019 17:24
+Я хочу добавить к этой теме, что она может иметь отношение и к другим зависимостям.
+
+Например, ничего, что я обновлял или устанавливал для NodeJS, MongoDB или Mongoose, не было проблемой, однако моя проблема заключалась в том, что connect-mongodb-session был обновлен и начал выдавать ту же ошибку. В данном случае решением было просто откатить версию connect-mongodb-session с версии 2.3.0 на 2.2.0.
+
+
+
+ 07.02.2020 01:20
+mongoose.connect(process.env.CONNECTION_MONGO, {
+useNewUrlParser: true,
+useUnifiedTopology: true,
+useCreateIndex: true,
+useFindAndModify: false,
+})
+.then(() => {
+console.info("Database connected...");
+})
+.catch((err) => console.error(err));
+
+Не удалось подключиться к серверу 127.0.0.1:27017 попытка подключения не удалась MongoDB
+Вопросы
+MONGODB
+Не удалось подключиться к серверу 127.0.0.1:27017 попытка подключения не удалась MongoDB
+Я работаю над ОС Ubuntu 16.04. Я запускаю mongodb с помощью команд: sudo service mongod start, а затем mongo
+
+Это сгенерировало для меня эту ошибку:
+
+MongoDB shell version v4.0.1
+connecting to: mongodb://127.0.0.1:27017
+2018-09-27T16:50:41.345+0530 E QUERY    [js] Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: Connection refused :
+connect@src/mongo/shell/mongo.js:257:13
+@(connect):1:6
+exception: connect failed
+Теперь я не могу запустить mongodb. Как устранить эту ошибку и каковы причины этих ошибок. Я испробовал все решения этой проблемы, но не нашел решения.
+
+ 27.09.2018 13:30
+12
+2
+37 685
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Эта ошибка возникает, когда ваш mongodb server не работает через порт 27017. Попробуйте выполнить команду ниже, чтобы запустить сервер mongodb.
+
+sudo systemctl start mongod
+И после выполнения этой команды запустите команду mongo.
+
+ 27.09.2018 13:35
+ Ответ принят как подходящий
+mongod - у меня сработал ремонт,
+
+sudo mongod --repair
+sudo mongod
+Затем откройте другую вкладку / терминал:
+
+mongo
+После этого ваша локальная настройка будет работать правильно
+
+ 27.09.2018 13:56
+Это сработало для меня (MAC):
+
+Шаг 1: проверьте статус, работает ли MongoDB или нет
+
+brew services list | grep mongo
+Шаг 2: если вы получите что-то вроде:
+
+Name           Status  User    Plist
+mongodb        stopped
+Шаг 3:: запустить службу:
+
+brew services start mongodb 
+еще :
+
+если после шага 2 вы получите следующее:
+
+Name           Status  User    Plist
+mongodb        started u1 /Users/u1/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+тогда он уже запущен затем вы можете перезапустить свою службу,
+
+brew services restart mongodb
+ 10.06.2019 12:54
+MAC: В моем случае я забыл включить сервер mongo локально, поэтому я исправил проблему, сначала открыв новую вкладку на терминале, а затем включив сервер mongodb следующим образом: -
+
+mongod 
+После этого просто попробуйте снова открыть оболочку mongo, например: -
+
+mongo 
+Наконец-то это сработало!
+
+ 10.08.2019 03:46
+В MacOS я выполнил 4-й шаг этого https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x-tarball/
+
+учебник с sudo
+
+sudo mongod --dbpath /usr/local/var/mongodb --logpath /usr/local/var/log/mongodb/mongo.log --fork
+
+и это сработало!
+
+ 23.07.2020 06:51
+У меня тоже была такая же проблема. вот как я решил. перейдите к taskmanager.select> services и найдите mongodbserver в списке, убедитесь, что mongodb запущен, выбрав его.
+
+источник изображения
+
+ 01.09.2020 09:21
+Окна
+
+Откройте диспетчер задач.
+перейдите на вкладку услуг.
+Найдите службу MongoDB.
+После выбора щелкните вкладку «Просмотр услуг».
+Найдите сервер MongoDB.
+После выбора нажмите кнопку «Выполнить» в верхнем левом меню.
+И тебе хорошо идти.
+
+ 05.10.2020 10:10
+Для окон,
+
+1) Щелкните правой кнопкой мыши на панели задач и выберите Диспетчер задач.
+
+2) Выберите сервер в данном меню
+
+3) Найдите mongoDB, выберите его и щелкните правой кнопкой мыши (щелкните открытые службы).
+
+4) Найдите сервер mongoDB, выберите его и нажмите «Пуск» в левом окне.
+
+Теперь все готово
+
+ 30.12.2020 04:06
+К сожалению, ни одно из вышеперечисленных решений у меня не помогло. Глядя на журналы mongodb, кажется, что файл сокета .sock не может быть отключен, что ограничивает перезапуск службы. Удаление связи вручную и перезапуск действительно помогли мне.
+
+Проверка последних 100 строк журналов mongodb:
+
+sudo tail -100 /var/log/mongodb/mongod.log
+
+
+{"t":{"$date":"2021-04-07T22:11:44.059-04:00"},"s":"E",  "c":"NETWORK",  "id":23024,   "ctx":"initandlisten","msg":"Failed to unlink socket file","attr":{"path":"/tmp/mongodb-27017.sock","error":"Operation not permitted"}}
+{"t":{"$date":"2021-04-07T22:11:44.059-04:00"},"s":"F",  "c":"-",        "id":23091,   "ctx":"initandlisten","msg":"Fatal assertion","attr":{"msgid":40486,"file":"src/mongo/transport/transport_layer_asio.cpp","line":919}}
+{"t":{"$date":"2021-04-07T22:11:44.059-04:00"},"s":"F",  "c":"-",        "id":23092,   "ctx":"initandlisten","msg":"\n\n***aborting after fassert() failure\n\n"}
+Отключение вручную
+
+sudo unlink /tmp/mongodb-27017.sock
+Затем следует команда запуска
+
+ sudo systemctl start mongod
+Возвращен успешный статус :)
+
+$ sudo systemctl status mongod
+ mongod.service - MongoDB Database Server
+ Loaded: loaded (/lib/systemd/system/mongod.service; enabled; vendor preset: enabled)
+ Active: active (running) since Wed 2021-04-07 22:47:23 EDT; 6s ago
+   Docs: https://docs.mongodb.org/manual
+ Main PID: 96418 (mongod)
+ Memory: 177.0M
+ CGroup: /system.slice/mongod.service
+         └─96418 /usr/bin/mongod --config /etc/mongod.conf
+
+Ошибка MongoDB Atlas при выполнении транзакции для нескольких коллекций (код 8000)
+Вопросы
+MONGODB
+Ошибка MongoDB Atlas при выполнении транзакции для нескольких коллекций (код 8000)
+Я пытаюсь выполнить транзакцию на экземпляре Mongo DB Atlas M0 из драйвера Mongo DB Node JS (как описано здесь) и получаю следующую ошибку:
+
+code:8000
+codeName:"AtlasError"
+errmsg:"internal atlas error checking things: Failure getting dbStats: read tcp 192.168.254.78:50064->192.168.254.78:27000: i/o timeout"
+message:"internal atlas error checking things: Failure getting dbStats: read tcp 192.168.254.78:50064->192.168.254.78:27000: i/o timeout"
+name:"MongoError"
+Я долго искал и не могу найти подсказки, как это решить.
+
+Дополнительная информация:
+
+Ошибка возникает после добавления второй операции в сделка.
+
+Если я удалю все остальные операции и оставлю только одну (не
+независимо от того, какой) он работает нормально.
+
+Если я изменю порядок операций (на любой), выйдет ошибка
+. еще по добавлению второй операции.
+
+Если все операции выполняются с одним и тем же db и сборником, он отлично работает
+
+Мой код:
+
+async function connect () {
+
+if (dbClient !== null && dbClient.isConnected()) {
+    console.info('Reusing db connection => ' + JSON.stringify(dbClient));
+  } else {
+      console.info('Connecting to database');
+      dbClient = await MongoClient.connect(url, { useNewUrlParser: true });
+      console.info('Successfully connected to database');
+  }
+}
+
+async function insertDocuments(document1, document2, document3) {
+
+  try {
+    await connect();
+  } catch (error) {
+    throw error
+  }
+
+  let session = dbClient.startSession();
+
+  session.startTransaction({
+    readConcern: { level: 'snapshot' },
+    writeConcern: { w: 'majority' }
+  });
+
+  const collection1 = dbClient.db('mydbname').collection('collection1');
+  const collection2 = dbClient.db('mydbname').collection('collection2');
+  const collection3 = dbClient.db('mydbname').collection('collection3');
+  const logsCollection = dbClient.db('mydbname').collection('logs');
+
+  await collection1.replaceOne(
+    { _id: document1._id },
+    document1,
+    {
+      upsert: true,
+      session
+    }
+  );
+  await collection2.replaceOne(
+    { _id: document2._id },
+    document2,
+    {
+      upsert: true,
+      session
+    }
+  );
+  await collection3.replaceOne(
+    { _id: document3._id },
+    document3,
+    {
+      upsert: true,
+      session
+    }
+  );
+  await logsCollection.updateOne(
+    { _id: document1._id },
+    { $unset: { estoque: '' } },
+    { session }
+  );
+
+  try {
+    await commitWithRetry(session);
+  } catch (error) {
+    await session.abortTransaction();
+    throw error;
+  }
+}
+
+async function commitWithRetry(session) {
+  try {
+    await session.commitTransaction();
+    console.info('Transação gravada com sucesso');
+  } catch (error) {
+    if (
+      error.errorLabels &&
+      error.errorLabels.indexOf('UnknownTransactionCommitResult') >= 0
+    ) {
+      console.info('Transação não realizada, tentando novamente ...');
+      await commitWithRetry(session);
+    } else {
+      console.info('Erro ao gravar no banco de dados ...');
+      throw error;
+    }
+  }
+}
+Есть идеи, как это исправить? Заранее спасибо!
+
+ 12.11.2018 00:09
+7
+16
+8 880
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+У меня была такая же проблема. В отделе поддержки сказали, что, поскольку я использую Mongoose, они не могут помочь. Однако они были достаточно любезны и подарили мне 10 долларов в кредит, чтобы я мог проверить это на более высоком уровне.
+
+Это было проблемой, как только я перешел на уровень M10 (следующий после M0), транзакции начали работать, как задумано. Ваш код очень похож на мой, только я создавал один документ и одновременно обновлял 2 других. Как и в вашем случае, первый прошел (независимо от порядка), а следующий просто истек с той же ошибкой.
+
+ 20.11.2018 10:55
+У меня была такая же проблема, и я не мог ее решить. В итоге я создал новый кластер в Azure (вместо AWS), и, похоже, он работает нормально.
+
+Не уверен, проблема ли это в их реализации на AWS или в индивидуальной неправильной настройке
+
+Обновлять: та же ошибка теперь происходит в новом кластере. Я поднял билет и получил следующий ответ;
+
+This has been determined to be a bug currently affecting the M0 free cluster and shared tiers of Atlas (M2 and M5). We have opened an internal bug report to address this. While the internal development queue for our Cloud products is not publicly visible, we are tracking the work required to make multi-document transactions work on Atlas free tier clusters.
+
+Они сказали то же самое, что и другой ответ. Пожалуйста, используйте M10. Однако M10 стоит около 60 долларов за квадратный метр, что ни в коем случае не является разрешением. Это также полностью лишает законной силы их главный аргумент в пользу того, что M0 теперь включает MongoDb 4.0.
+
+ 20.11.2018 21:28
+ Ответ принят как подходящий
+Как упоминалось в комментариях, по словам команды MongoDB, эта проблема была решена в версии 4.0.5.
+
+Я протестировал тот же код, что и в моем вопросе, и теперь он работает нормально.
+
+Тем, кто сталкивается с такой же проблемой, убедитесь, что вы используете версию 4.0.5 или выше.
+
+ 09.01.2019 21:47
+Шаг 1 загрузите https://robomongo.org/download
+
+если у вас есть пробная версия Studio 3T License, перейдите в Быстрый старт
+Шаг 2: создайте новое соединение. Убедитесь, что порт - localhost:27017, а db назовите имя вашего проекта.
+
+Шаг 3: вы увидите синий значок для подключения, оставьте примечание по умолчанию.
+
+Вы получите начальную ошибку, потому что БД не установлена ​​на терминале.
+Перейти к: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+В папке проекта терминала в macOS.
+
+brew tap mongodb/brew
+brew install mongodb-community@4.2
+mongo. если вы получите ==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-community), то, надеюсь, на терминале нет ошибки.
+Последний шаг: вернитесь в интерфейс и нажмите синюю кнопку. БД подключится автоматически.
+
+// .env file on project root folder
+MONGO_URI='mongodb://localhost:27017/projectname'
+Код подключения ниже:
+
+const express = require('express');
+const mongoose = require('mongoose');
+
+require('dotenv').config();
+
+const app = express();
+
+mongoose
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
+  .then(() => console.info('DB Connected'));
+
+mongoose.connection.on('error', (err) => {
+  console.info(`DB connection error: ${err.message}`);
+});
+
+app.get('/', (req, res) => {
+  res.send('hello from the other side');
+});
+ 15.06.2020 16:40
+У меня была аналогичная ошибка, и я часами пытался ее отладить. Затем я удалил старый кластер с AWS и создал новый с Google Cloud, и он работал нормально.
+
+ 05.10.2020 19:50
+Я столкнулся с аналогичной проблемой, просто проверьте свой URI подключения. У меня неправильный пароль.
+
+ 10.01.2021 07:57
+Я тоже столкнулся с такой ошибкой. в качестве вывода установите пароль кластера без специальных символов, таких как'@/# '. или используйте автоматически сгенерированный пароль. это сработало для меня
+
+ 11.01.2021 16:39
+Я решил эту проблему, создав базу данных с атласом на сайте MongoDb.
+
+ 11.02.2021 18:40
+Я решил эту проблему, перейдя к NetWork Access в моей базе данных, что в mongo db Cloub, и удалил старый IP-адрес и поместил новый IP-адрес, щелкнув добавить IP-адрес и выбрав этот текущий ID-адрес
+
+
+
+ReactJS: как развернуть на локальном сервере
+Вопросы
+NODE.JS
+ReactJS: как развернуть на локальном сервере
+У меня есть веб-приложение, разработанное с использованием серверной части NodeJS + Express + GraphQL + MongoDB и клиентской части ReactJS + Apollo. Я хочу развернуть это приложение локально. Это вообще возможно?
+
+Я встречал десятки «как развернуть на Heroku», «как развернуть в Digital Ocean», «как развернуть на Github» и т. д. Но ни одна из них не объясняет, как развернуть локально.
+
+Прямо сейчас я использую: nodemon server для серверной части и npm start для клиентской части. Я вижу приложение, работающее на http://localhost:3000/ (я использую cors для подключения внешнего интерфейса к серверу, работающему на порту 3001).
+
+Я хотел бы просто перейти на http://localhost:3000/ и посмотреть приложение, не выполняя команды npm start и nodemon server. Это возможно? Если да, то как мне это сделать?
+
+Насколько мне известно, наш локальный сервер не является сервером WAMP (хотя наша ОС - Windows). В ИТ-отделе мне сказали, что это
+
+[...] plain, regular old server. The address is localhost running on port 3000. You can open up another port on 3001 if you need it. Just drop your stuff on the C: drive and you should be good to go. I've never heard of Node or React so I can't help if you have questions.
+
+Любые идеи? Заранее большое спасибо за вашу помощь!
+
+ОБНОВИТЬ
+
+Кажется, есть некоторая путаница в том, что я ищу. Я пытаюсь развернуть это локально.
+
+Скажем, на вашем локальном компьютере (домашнем ноутбуке) вы переходите на localhost: 3000 в своем любимом браузере. Если вы не обслуживаете что-то на localhost в этот момент, ничего не будет отображаться, он скажет «отказано в подключении» или что-то в этом роде. Я хочу иметь возможность открывать любую машину в сети всякий раз, когда я перехожу на localhost: 3000, и мой сайт реакции появляется и работает ... имеет ли это больше смысла?
+
+Я не хочу, чтобы это был режим разработки. Я хочу собрать этот проект на localhost ... Я начинаю думать, что это невозможно.
+
+ 08.12.2018 15:25
+15
+10
+19 780
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Вам нужно сделать npm start. Могут быть и другие способы его запуска, но все они приведут к одному и тому же. Вы можете прочитать эту статью о Freecodecamp по развертыванию в DigitalOcean. Вы можете управлять им на своем локальном хосте. Не должно быть слишком разным.
+
+ 17.12.2018 13:51
+Как я понял, вы хотите развернуть его на локальный сервер, а не на локально на своем развивающемся устройстве.
+
+I thought about doing that...but I'm not so sure IT will be okay with it always running... :(
+
+Как вы можете использовать сервер, если он не работает? Так же, как WAMP (который запускает apache) или что бы там ни было, он должен быть запущен. Итак, просто сделайте это фоновым процессом, как предлагается славомир.
+
+PS Я не думаю, что вы правильно понимаете сервер узла. Прочтите это, чтобы понять, почему сервер узла нуждается в перезагрузке. После этого вам нужно понять, что ни один инструмент горячей перезагрузки не идеален, и вам нужно время от времени перезагружать сервер.
+
+PPS Я не знаю, что это значит
+
+[...] plain, regular old server. The address is localhost running on port 3000.
+
+если есть сервер, работающий на 3000, вам нужно изменить порт для вашего сервера на что-то еще (чаще всего 9000)
+
+ 17.12.2018 14:41
+ Ответ принят как подходящий
+Чтобы решить эту проблему, вы можете создать сценарий запуска, который выполняет npm start и nodemon server. Затем убедитесь, что он скрыт, чтобы ваш сервер всегда работал. Однако имейте в виду, что любые возникшие ошибки остановят ваш сервер, и, если вы не настроите его, сервер не будет перезагружен сам по себе.
+
+ 17.12.2018 18:43
+Чтобы решить проблему, сначала необходимо создать командный файл с расширением .bat or .cmd и под этим файлом добавить следующие 2 команды
+
+nodemon servernpm start
+
+Затем выполните следующие действия, чтобы добавить его в качестве сценария запуска для ОС Windows.
+
+Создайте ярлык для командного файла.
+После создания ярлыка щелкните файл правой кнопкой мыши и выберите Резать.
+Нажмите кнопку «Пуск», введите «Выполнить» и нажмите «Ввод».
+В окне «Выполнить» введите shell: startup, чтобы открыть папку «Автозагрузка».
+После того, как папка автозагрузки будет открыта, щелкните вкладку «Главная» в вверху папки и выберите Вставить, чтобы вставить ярлык в папка.
+Вышеупомянутые шаги предназначены, например, для создания командного файла и добавления его в качестве сценария запуска для пользователей Windows 8 и 10. Для большей ясности или справки перейдите по следующей ссылке.
+
+ 20.12.2018 13:34
+Нет возможности перезагрузить сервер, не отключая его. Технически, у вас может быть ваш «основной» файл, отслеживающий изменения в другом файле. Это будет файл, в котором вы фактически храните свою серверную программу. Затем при внесении изменений вы отбрасываете текущую логику и начинаете ее выполнять. Тем не менее, делать это таким образом было бы очень хрупким и весьма беспорядочным способом сделать это. Это также не исправит ваш интерфейс, для которого вам понадобится аналогичное решение.
+
+Вместо этого вы можете подключиться к событию сохранения вашего любимого редактора и запустить эти две консольные команды, чтобы при каждом сохранении автоматически запускался сервер. (Не забудьте также очистить существующие серверы)
+
+Беги при сохранении для VSCode
+команды сохранения для Atom
+ 23.12.2018 06:29
+Я бы попробовал следующее:
+
+создайте свое приложение с установленными переменными производственной среды
+получить все файлы из папки dist и развернуть их на своем сервере
+теперь получите доступ к вашему приложению, используя localhost /
+ 23.12.2018 15:33
+Возможно, вы ищете что-то вроде нгрок, который создает туннель socks для вашего локального хоста, эффективно развертываясь с локального хоста, насколько я понимаю, позволяя вам получить доступ к вашему локальному хосту через URL-адрес, например ldiuhv093.ngrok.io, или даже настраиваемый поддомен, если вы платите за абонентская плата.
+
+Если у меня что-то не так, подскажите пожалуйста!
+
+ 20.02.2020 23:13
+Я знаю, что этот пост был два года назад. Но я думаю, что решение вашего второго желаемого результата - использовать параллелизм. https://www.npmjs.com/package/concurrently. Это позволит вам сделать один NPM START, чтобы запустить два всех трех процесса.
+
+И что касается вашего первого вопроса, я думаю, что решение состоит в том, чтобы добавить Electron в ваше приложение, чтобы вы могли упаковать его в исполняемое приложение. Когда вы запустите приложение, ваш экспресс-сервер начнет работать в фоновом режиме.
+
+Большинство людей, вероятно, не понимают, зачем это нужно. Запуск на локальном сервере (компьютере) позволяет получить доступ к локальной файловой системе и даже может выполнять запросы SQL внутри прокси, что потребует участия ИТ-специалистов, если они размещены на внешнем сервере.
+
+ 06.08.2020 02:34
+Насколько я понимаю, вы хотите развернуть свое приложение на локальном сервере, что означает, что вы хотите развернуть его в сети, к которой вы подключены.
+
+Проверьте ip из командной строки Чтобы развернуть его локально, Выполнить: HOST = ip npm run start
+
+Он будет развернут на вашем локальном сервере. И каждый, кто подключен к серверу, может получить доступ к URL-адресу
+
+Если это сработало для вас, пожалуйста, проголосуйте за
+
+Подключение к Mongodb внутри докера с графическим интерфейсом компаса mongodb
+Вопросы
+DATABASE
+Подключение к Mongodb внутри докера с графическим интерфейсом компаса mongodb
+У меня есть база данных mongodb, работающая на порту 27017 по умолчанию в контейнере докеров.
+
+Есть ли способ подключиться к базе данных с помощью графического интерфейса компаса mongodb, изначально работающего в моей ОС Ubuntu?
+
+ 26.03.2018 16:20
+19
+4
+22 360
+10
+ Ответы 10
+Запустите свой контейнер mongo с опцией «опубликовать все порты» (docker run -P). Затем вы сможете проверить порт, доступный для хоста через docker ps -a, и подключиться к нему из Compass (просто используйте свое имя хоста: localhost и порт: <exposed port>).
+
+ 04.07.2018 21:04
+docker run -p 27018:27017, а затем подключитесь из Compass на вашем хосте с портом 27018. Я не вижу причин открывать все порты.
+
+ 28.08.2018 19:47
+Да мы можем бежать
+
+Шаги:
+
+Вытяните / перезапустите контейнер докеров mongodb
+
+Войдите в оболочку bash
+
+docker exec -it mongodb bash
+Теперь откройте сообщество компаса mongodb и с тем же подключением по умолчанию просто нажмите «Подключиться», и mongodb контейнера докеров будет подключен к сообществу компаса.
+
+Мой терминал с докером:
+My terminal running docker
+
+Компас Mongodb:
+Mongodb Compass
+
+ 23.07.2019 13:44
+С docker-compose вам просто нужно открыть порт 27017. Когда вы нажмете «Подключиться» в графическом интерфейсе, он автоматически обнаружит это соединение.
+
+version: "3"
+services:
+  mongo-database:
+    container_name: mongo-database
+    image: mongo:4
+    ports:
+      - 27017:27017
+ 08.06.2020 17:35
+Я мог бы подключить компас на окнах к докеру, используя эти теги в конце:
+
+mongodb://user:password@localhost:27017/dbname?authSource=dbname&readPreference=primary&gssapiServiceName=mongodb&appname=MongoDB%20Compass&ssl=false
+
+ 16.06.2020 19:29
+Замените localhost своим IP-адресом в строке подключения, например, мой IP-адрес 10.1.2.123, тогда у меня есть mongodb://10.1.2.123:27017?readPreference=primary&appname=MongoDB%20Compass&ssl=false.
+
+Видел это ? здесь: https://nickjanetakis.com/blog/docker-tip-35-connect-to-a-database-running-on-your-docker-host
+
+ 08.07.2020 11:33
+Просто откройте компас и внутри подключения добавьте учетные данные, если вы использовали envs, например
+
+ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+и нажмите "Подключиться". Никаких дополнительных настроек не требуется. Или вы можете использовать mongo-express, который является веб-инструментом пользовательского интерфейса для monodb.
+
+ 10.11.2020 13:26
+Используйте docker inspect или docker desktop, чтобы проверить и найти открытый порт
+
+docker inspect your_container_name
+и найдите этот раздел
+
+       "Ports": {
+            "27017/tcp": [
+                {
+                    "HostIp": "0.0.0.0",
+                    "HostPort": "27012"
+                }
+            ]
+        },
+а затем подключитесь, используя эту строку URL
+
+mongodb://localhost:27012/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+Не передавайте имя набора реплик, если вы его используете, иначе соединение не будет установлено. Это происходит в том случае, если вы развернули набор реплик вместо того, чтобы превращать автономный набор реплик в набор реплик.
+
+Оставьте комментарий, если вы не знаете, как развернуть набор реплик, и я могу оставить файл docker-compose для настройки и развертывания набора реплик.
+
+ 27.11.2020 11:53
+Выполните команду sudo docker ps он покажет контейнеры докеров, которые у вас есть, где вы можете найти номер порта mongodb запустите команду sudo mongodb-compass он откроет компас mongodb
+
+Если вы подключаетесь локально, общее имя хоста: localhost а затем просто введите номер порта и нажмите соединять.
+
+ 19.03.2021 05:28
+У меня также были проблемы с подключением к моей локальной MongoDB с помощью Compass, но я обнаружил, что это проблема с SSL. По умолчанию Compass устанавливает для SSL значение «Системный CA». Однако, если вы попробуете это с докеризованным Mongo, ваши журналы Mongo покажут вам эту ошибку:
+
+Error receiving request from client: SSLHandshakeFailed: SSL handshake received but server is started without SSL support. Ending connection from 172.17.0.1:45902 (connection id: 12)
+end connection 172.17.0.1:45902 (0 connections now open)
+Поэтому для подключения мне пришлось нажать «Заполнить поля подключения по отдельности», а затем установить для поля SSL значение «Нет». Для справки, я запустил Mongo, используя это: docker run -p 27017:27017 --name some-mongo mongo:4.0. Никакой аутентификации не требуется.
+
+Как сопоставить две строки с пробелами и без них
+Вопросы
+NODE.JS
+Как сопоставить две строки с пробелами и без них
+Например: в БД есть строковое значение типа "cell phones". Если я получу строковое значение типа "cellphones" из внешнего интерфейса. Как я могу сравнить его со строкой БД и получить в ответ соответствующие строковые значения.
+
+ 30.08.2018 09:40
+15
+0
+1 107
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Вы можете использовать регулярное выражение при поиске своего значения, например:
+
+cellphones|cell phones
+Collection.find({
+  someName: {
+     $regex: new RegExp('cellphones|cell phones', ''),
+  },
+});
+ 30.08.2018 09:44
+Сначала вы можете начать с удаления пробелов в обеих строках, прежде чем сравнивать их, например:
+
+let a = "cell phone";
+let b = "cellphone";
+let c = "cell phones"
+
+const stripSpaces = s => s.replace(/\s/g, '');
+
+// compare
+console.info(stripSpaces(a) == stripSpaces(b)); // true
+console.info(stripSpaces(a) == stripSpaces(c)); // false
+ 30.08.2018 09:48
+Вы можете сравнить так:
+
+let val1 = 'cell phones';
+let val2 = 'cellphones';
+
+console.info(val1.replace(/\s/g, '') === val2.replace(/\s/g, '')) // true
+//OR
+console.info(val1.split(' ').join('') === val2.split(' ').join('')) // true
+ 30.08.2018 09:49
+Вы можете начать с удаления пробелов в обеих строках, прежде чем сравнивать их. Я предполагаю, что вы не знаете, в каком из них есть пробелы, поэтому вы запустите все значения через функцию stripSpaces, например:
+
+let a = "cell phone";
+let b = "cellphone";
+let c = "cell phones"
+
+const stripSpaces = (s) => s.split(' ').join('');
+
+// compare
+console.info(stripSpaces(a) == stripSpaces(b)); // true
+console.info(stripSpaces(a) == stripSpaces(c)); // false
+ 30.08.2018 09:49
+Если вам нужен трюк с агрегацией, вы можете попробовать это
+
+db.collection.aggregate([
+  { "$project": {
+    "name": {
+      "$reduce": {
+        "input": { "$split": ["$name", " "] },
+        "initialValue": "",
+        "in": { "$concat": ["$$value", "$$this"] }
+      }
+    }
+  }},
+  { "$match": { "name": "cellphones" }}
+])
+Вы можете проверить это Здесь
+
+ 30.08.2018 10:03
+попробуйте сначала заменить пустую строку из строки запроса, а затем сравните с полем как
+
+db.test.find(function() { 
+    return this.data(function(elm) {
+        "cell phones".replace(/ /g,"") == elm.name
+    });
+});
+ 03.09.2018 08:12
+Учитывая такой документ:
+
+{
+    "text" : "cell phones"
+}
+Вы можете использовать оператор $where следующим образом:
+
+db.collection.find({
+    $where: function() {
+        return this.text.replace(' ', '') == "cellphones"
+    }
+});
+Я бы не рекомендовал это для больших коллекций (производительность может быть невысокой). Однако даже с большими коллекциями вы могли бы достичь неплохой производительности, добавив дополнительный фильтр в поле "text", чтобы отфильтровать все документы, которые не начинаются с правильного первого символа (ов):
+
+db.collection.find({
+    "text": { $regex: "^" + "cellphones".charAt(0) }, // this will use an index on the "text" field if available
+    $where: function() {
+        return this.text.replace(' ', '') == "cellphones"
+    }
+});
+Или, возможно, даже эта версия с еще одним фильтром в бите $where, который проверяет длину строки для уменьшения количества сравнений строк:
+
+db.collection.find({
+    "text": { $regex: "^" + "cellphones".charAt(0) }, // this will use an index on the "text" field if available
+    $where: function() {
+        return this.text.length >= "cellphones".length // performance shortcut
+               && this.text.replace(' ', '') == "cellphones"
+    }
+});
+ 03.09.2018 23:34
+Ответы ниже этого вопроса хороши, например, при использовании where и Regex, но могут быть лучше всего, если у вас есть небольшое количество документов, из которых вы, возможно, захотите запросить.
+
+Если у вас много документов, я бы посоветовал вам: 1. Используйте дополнительное поле, например cellphone, без пробелов, если предполагается, что значения исходного поля будут короткими. 2. Попробуйте использовать поисковые системы, такие как ElasticSearch или собственный текстовый поиск MongoDB, чтобы найти то, что вам нужно, не только cell phone - cellphone, но и mobile phone, даже smartphone. На самом деле, когда вы что-то гуглите, предложения при вводе также исходят от аналогичных, но более сложных алгоритмов.
+
+ 04.09.2018 08:05
+Может это решит вашу проблему
+
+   Take Device_Names column contains 
+
+               "cell phone"
+               "mobile phone"
+               "cellphone"
+               "laptop"
+1.) Обычный способ:
+
+    select Device_Name from devices where Device_Name='cellphone' ;
+
+             result: 
+                    "cellphone"
+
+      which is third one
+2.) Удалив пробелы:
+
+  SELECT  Device_Name FROM devices WHERE REPLACE(Device_Name, ' ', '')='cellphone'
+
+               result: 
+                    "cell phone"
+                    "cellphone"
+
+       which includes first and third one
+ 08.09.2018 19:28
+ Ответ принят как подходящий
+Просто удалите эти пробелы из ответа, который вы получаете после поиска запроса, а затем передайте ответ в поле ввода. Затем сопоставьте эту строку с внешней или входной строкой. Если оба совпадения, загрузите необходимый контент. Предположим, что название коллекции - Категория. Тогда пример запроса будет таким
+
+Category.find().exec((err, categories) => {
+         var details=[]
+         var matchCategory=[]
+         categories.map((category,key)=>{
+           var obj  = {}
+           obj.name = category.name.toLowerCase().replace(/\s/g, "")
+           details.push(obj);
+         })
+       if (details.length > 0){
+         var detailsLength=details.length
+         details.map((category,key)=>{
+             if (category.name= = "cellphones"){ // match your input string 
+               matchCategory.push(category)
+             }
+             detailsLength--
+         })
+         if (detailsLength==0){
+               resolve(matchCategory);
+         }
+       }
+     })
+Это может помочь вам протянуть руку помощи.
+
+Pymongo - для использования mongodb + srv: // URI должен быть установлен модуль dnspython
+Вопросы
+PYTHON
+Pymongo - для использования mongodb + srv: // URI должен быть установлен модуль dnspython
+Я пытаюсь подключить MongoDB из Атласа.
+
+Мой Монго Ури: mongodb+srv://abc:123@something.something.com/admin?retryWrites=True
+
+Мой версия пимонго - это 3.6.1
+
+Я установил dnspython и сделал import dns
+
+Но я все еще получаю эту ошибку:
+
+dnspython module must be installed to use mongodb+srv:// URI
+
+ 22.10.2018 15:15
+64
+1
+59 613
+10
+ Ответы 10
+Возможно, это протокол, ваш URI должен начинаться с:
+
+монго + SRV вместо mongo + src
+
+Если он по-прежнему не работает, поместите список пунктов с версиями PyMongo и dnspython (и версией python, которую вы используете)
+
+ 15.11.2018 02:09
+В файле requirements.txt замените pymongo на pymongo[tls,srv], как указано в здесь.
+
+ 06.12.2018 04:14
+Я хотел бы здесь ответить на свои вопросы. Как я упоминал в комментарии, необходимо перезапустить ядро ​​ноутбука jupyter, чтобы pymongo вступил в силу после загруженного dnspython.
+
+ 06.12.2018 05:59
+Я решил эту проблему с помощью:
+
+$ python -m pip install pymongo [SRV]
+
+ 24.07.2019 15:48
+Чтобы использовать протокол монго + SRV, вам необходимо установить Pymongo-SRV Запустите эту команду, чтобы сделать это с Python 3:
+
+pip3 install pymongo[srv]
+или этот для других версий:
+
+pip install pymongo[srv]
+И, как предлагает @lukrebs, добавьте кавычки для ZSH:
+
+pip3 install 'pymongo[srv]'
+ 12.09.2019 15:28
+вы можете использовать mongo:// вместо mongodb+srv://
+
+ 29.09.2019 15:30
+Я застрял с той же проблемой и попробовал
+
+pip install dnspython==2.0.0
+
+Это последняя версия от https://pypi.org/project/dnspython/
+
+Это сработало: D
+
+ 24.08.2020 22:14
+У меня была такая же проблема с Ubuntu 18, но поскольку я использую Anaconda Я только что попробовал
+
+Conda install dns python
+У меня был запущен IPython, он не работал, пока тот же экземпляр был открыт, но когда я перезапустил этот экземпляр, он работал.
+
+На другой машине, используя
+
+Conda install dns python
+и это сработало, но мне пришлось полностью перезагрузить компьютер по другой причине, прежде чем тестировать его
+
+ 20.01.2021 09:20
+У меня была такая же проблема, и я нашел следующую строку.
+
+import dns.resolver
+dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+dns.resolver.default_resolver.nameservers=['8.8.8.8'] 
+У меня это сработало.
+
+ 19.05.2021 01:45
+pip install dnspython
+dnspython - это набор инструментов DNS для Python. Он поддерживает практически все типы записей. Его можно использовать для запросов, передачи зон и динамических обновлений. Он поддерживает сообщения с аутентификацией TSIG и EDNS0.
+
+FindOneAndUpdate вызывает проблему дублирования
+Вопросы
+ARRAYS
+FindOneAndUpdate вызывает проблему дублирования
+У меня проблема с findOneAndUpdate в мангусте. Дело в том, что я обновляю документ, найдя его. Запрос выглядит следующим образом:
+
+UserModel.findOneAndUpdate({
+individualId: 'some id'
+}, {
+$push: {
+supporterOf: 'some string'
+}
+})
+«supporterOf» — это ссылка на UserModel, а его тип — «ObjectId».
+
+The issue i am facing here is that, 'some string' is being pushed twice under 'supporterOf' in the document.
+
+Может ли кто-нибудь сказать мне, как вставить элемент массива внутрь документа?
+
+ 11.03.2019 14:51
+2
+5
+2 823
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+ Ответ принят как подходящий
+Недавно я столкнулся с той же проблемой. Тем не менее, мне удалось решить эту проблему с помощью некоторых других логик (подробности приведены ниже), но я не мог понять причину того, почему найтиOneAndUpdate вставляет записи дубликат в mongodb.
+
+Вы можете решить эту проблему, следуя логике.
+
+Используйте найтиодин или найти по идентификатору вместо найтиOneAndUpdate для поиска документа в вашей коллекции, а затем вручную обновите документ и запустите спасти().
+
+Вы можете лучше понять этот фрагмент кода
+
+return new Promise(function (resolve, reject) {
+    Model.findOne({
+            someCondition...
+        }, function (err, item) {
+            if (err) {
+                reject(err);
+            } else {
+                item.someArray.push({
+                    someKeyValue...
+                });
+                item.save().then((result) => {
+                    resolve(result)
+                }).catch((err) => {
+                    reject(err)
+                });
+            }
+        }).catch((err) => {
+            reject(err)
+        });
+   });
+Это не будет вставлять повторяющийся элемент. Однако, если вы узнаете причину дублирования, обязательно обновите эту ветку.
+
+ 12.03.2019 12:48
+У меня была такая же проблема, решение есть.
+
+Я ждал, как показано ниже.
+
+ **await** schema.findOneAndUpdate(queryParms, {
+                "$push": {
+                    "array1": arrayDetails,
+                    "array2": array2Details
+                }
+            }, {
+                "upsert": true,
+                "new": true
+            },
+            function (error, updateResponse) {
+                if (error) {
+                    throw new Error (error);
+                } else {
+                    // do something with updateResponse;
+                }
+            });
+простое удаление ожидания помогло мне решить эту проблему. Нужно найти первопричину. любой указатель для ссылок приветствуется.
+
+ 16.03.2020 08:56
+У меня была такая же проблема. Мой код был:
+
+const doc = await model.findOneAndUpdate(
+{filter}, {update},
+{new: true}, (err, item) =>  if (err) console.info(err) }
+)
+res.locals.doc = doc
+next();
+Дело в том, что по какой-то причине этот обратный вызов после «новой» опции создавал двойную запись. Я удалил обратный вызов, и это сработало.
+
+ 18.06.2020 18:30
+У меня такая же проблема. Я нашел решение для себя:
+
+Я использовал обратный вызов и обещание (поэтому использовал ключевое слово «ожидание») одновременно.
+
+Using a callback and a promise simultaneously will result in the query being executed twice. You should be using one or the other, but not both.
+
+  options = {
+    upsert: true  // creates the object if it doesn't exist. defaults to false.
+  };
+  await Company.findByIdAndUpdate(company._id,
+    { $push: { employees: savedEmployees } },
+    options,
+    (err) => {
+       if (err) {
+          debug(err);
+       }
+    }
+  ).exec();
+к
+
+  options = {
+    upsert: true  // creates the object if it doesn't exist. defaults to false.
+  };
+  await Company.findByIdAndUpdate(company._id,
+    { $push: { employees: savedEmployees } },
+    options
+  ).exec();
+ 15.08.2020 05:13
+UserModel.findOneAndUpdate(
+{ _id: id },
+{ object }
+)
+Даже если вы используете _id в качестве параметра, не забудьте сделать фильтр явным по id
+
+ 17.08.2020 02:00
+Проблема с принятым ответом заключается в том, что он решает проблему только путем заключения его в ненужное дополнительное обещание, когда метод findOneAndUpdate() уже возвращает обещание. Кроме того, он использует как обещания, так и обратные вызовы, чего вам почти никогда не следует делать.
+
+Вместо этого я бы выбрал следующий подход:
+
+Обычно я предпочитаю отделять логику запроса на обновление от других проблем как для удобочитаемости, так и для повторного использования. поэтому я бы сделал функцию-оболочку вроде:
+
+const update = (id, updateObj) => {
+    const options = {
+      new: true,
+      upsert: true
+    }
+    return model.findOneAndUpdate({_id: id}, {...updateObj}, options).exec()
+}
+Затем эту функцию можно было бы повторно использовать во всем моем приложении, избавляя меня от необходимости переписывать повторяющиеся настройки параметров или вызовы exec.
+
+Затем у меня была бы какая-то другая функция, отвечающая за вызов моего запроса, передачу ему значений и обработку того, что возвращается от него.
+
+Что-то вроде:
+
+const makePush = async () => {
+   try {
+     const result = await update('someObjectId', {$push: {someField: value}});
+     // do whatever you want to do with the updated document
+   catch (e) {
+     handleError(e)
+    }
+ }
+Нет необходимости создавать ненужные обещания, никакого ада обратных вызовов, никаких дублирующих запросов и строгое соблюдение принципов единой ответственности.
+
+ 17.08.2020 03:01
+Проблема, похоже, связана с объединением ожидания и обратного вызова. У меня была такая же проблема, пока я не понял, что использую обратный вызов (err, resp) а также a .catch(...).
+
+models[auxType].findOneAndUpdate(
+    filter,
+    updateObject,
+    options,
+    (err, resp)=>{
+        if (err) {
+            console.info("Update failed:",err)
+            res.json(err)
+        } else if (resp) {
+            console.info("Update succeeded:",resp)
+            res.json(resp)
+        } else {
+            console.info("No error or response returned by server")
+        }
+    })
+    .catch((e)=>{console.info("Error saving Aux Edit:",e)}); // << THE PROBLEM WAS HERE!!
+Проблема решилась, как только я удалил строку .catch(...).
+
+Из документации мангуста:
+
+«Запросы Mongoose не являются промисами. У них есть функция .then() для co и async/await для удобства. Однако, в отличие от промисов, вызов .then() запроса может выполнить запрос несколько раз». (https://mongoosejs.com/docs/queries.html#queries-не-обещания)
+ 22.10.2020 09:28
+В моем случае изменение обратного вызова асинхронный решило проблему.
+
+изменить это:
+
+await schema.findOneAndUpdate(
+    { queryData },
+    { updateData },
+    { upsert: true },
+    (err) => {
+      if (err) console.info(err); 
+      else await asyncFunction();
+    }
+  );
+К этому:
+
+await schema.findOneAndUpdate(
+    { queryData },
+    { updateData },
+    { upsert: true },
+    (err) => {
+      if (err) console.info(err);
+    }
+  );
+ if (success) await asyncFunction();
+ 30.12.2020 12:22
+Используйте $addToSet вместо $push, это должно решить проблему. Я считаю, что есть проблема со структурой данных, используемой при создании «Модели» мангуста. Как мы знаем, push — это операция массива (которая допускает дублирование), в то время как addToSet может быть операцией Set (Sets не допускают дублирования).
+
+ 17.06.2021 14:36
+$addToSet вместо $push позволил мне предотвратить дублирование записи в моем поле массива mongoDb пользовательского документа, подобного этому.
+
+const blockUserServiceFunc = async(req, res) => {
+
+let filter = {
+    _id : req.body.userId
+}
+
+let update = { $addToSet: { blockedUserIds:  req.body.blockUserId  } };
+
+await User.findOneAndUpdate(filter, update, (err, user) => {
+    if (err) {
+        res.json({
+            status: 501,
+            success: false,
+            message: messages.FAILURE.SWW
+        });
+    } else {
+
+        res.json({
+            status: 200,
+            success: true,
+            message: messages.SUCCESS.USER.BLOCKED,
+            data: {
+                'id': user._id,
+                'firstName': user.firstName,
+                'lastName': user.lastName,
+                'email': user.email,
+                'isActive': user.isActive,
+                'isDeleted': user.isDeleted,
+                'deletedAt': user.deletedAt,
+                'mobileNo': user.mobileNo,
+                'userName': user.userName,
+                'dob': user.dob,
+                'role': user.role,
+                'reasonForDeleting': user.reasonForDeleting,
+                'blockedUserIds': user.blockedUserIds,
+                'accountType': user.accountType
+            }
+        });
+
+    }
+}
+).catch(err => {
+    res.json({
+        status: 500,
+        success: false,
+        message: err
+    });
+});
+
+UnhandledPromiseRejectionWarning: MongoNetworkError: не удалось подключиться к серверу [localhost: 27017] при первом подключении [MongoNetworkError
+Вопросы
+JAVASCRIPT
+UnhandledPromiseRejectionWarning: MongoNetworkError: не удалось подключиться к серверу [localhost: 27017] при первом подключении [MongoNetworkError
+Я попытался выполнить следующую команду:
+
+node index.js
+Однако со своего терминала я получаю следующее:
+
+    success connection to port 3000
+(node:16767) UnhandledPromiseRejectionWarning: MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError
+: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (/Users/hatchery/Documents/nodejs/fxexpress/node_modules/mongoose/node_modules/mongodb-core/lib/topologies/server.js:503:11
+)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (/Users/hatchery/Documents/nodejs/fxexpress/node_modules/mongoose/node_modules/mongodb-core/lib/connection/pool.js:326:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (/Users/hatchery/Documents/nodejs/fxexpress/node_modules/mongoose/node_modules/mongodb-core/lib/connection/connection.js:245:50)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at emitErrorNT (internal/streams/destroy.js:64:8)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+(node:16767) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:16767) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Я не уверен, почему я получаю эту ошибку. Может ли кто-нибудь посоветовать, что делать?
+
+ 24.04.2018 15:57
+8
+0
+25 150
+11
+Данный вопрос помечен как решенный
+ Ответы 11
+Не уверен, в какой вы системе, но попробуйте запустить это, если вы работаете в Linux:
+
+mongo
+или для macOS:
+
+mongod
+и оставьте его работать в новом терминале, а затем попробуйте снова запустить сервер
+
+ 24.04.2018 16:01
+Хотя приведенное выше решение может работать, лучше понять, как отлаживать и что говорит ошибка.
+
+У вас есть UnhandledPromiseRejectionWarning, потому что в вашем коде вы не должны обрабатывать случай отклонения обещания, когда вы подключаетесь к MongoDB.
+
+Затем серверу узла не удалось подключиться к mongodb. Это могло быть по нескольким причинам. Один простой случай, о котором упоминал @Sayegh, - сам сервер не работает. Может быть другая причина, например, неправильный порт и т. д., Сервер не принимает входящие соединения и т. д.
+
+Как отлаживать. Первый шаг - выяснить, запущен процесс или нет. Один простой способ - запустить эту команду ps aux | grep mongo, которая перечислит все процессы от всех пользователей с mongo в виде текста. Если это было так и по-прежнему невозможно подключиться, поищите порт. Если по-прежнему не удается подключиться, проверьте, принимает ли сервер входящее соединение, и возьмите его оттуда.
+
+ 25.04.2018 06:51
+Прежде чем запускать команду NodeJS, убедитесь, что вы создали правильные каталоги с нужными разрешениями:
+
+> sudo mkdir -p /data/db
+> sudo chmod -R go+w /data/db
+ 21.03.2019 16:48
+ Ответ принят как подходящий
+Если вы используете mongoDB.Atlas, перейдите к сетевому доступу и установите Whitelist Entry: 0.0.0.0/0. 
+
+
+
+Повторно запустите вашу команду.
+
+ 28.06.2019 08:26
+Сначала я попробовал решение Skitty, и оно не сработало для меня, но я все еще сохраняю решение в своем коде, а затем я изменил app.listen(process.env.PORT || 3000);, и это сработало для меня.
+
+ 14.07.2019 01:34
+Я столкнулся с той же проблемой, но после большого количества RND. Я обнаружил, в чем проблема, поэтому запустите эту команду на своем терминале.
+
+sudo service mongod start
+
+затем запустите монго на терминале и посмотрите.
+
+ 05.12.2019 18:36
+У меня была такая же проблема, и я решил ее, изменив имя пользователя и пароль пользователя базы данных на что-то более простое, например dev: dev, и у меня возникла ошибка, используя его с пользователь-разработчик: пользователь-разработчик ... просто измените его на что-то простое
+
+ 17.12.2019 09:59
+Просто восстановите mongodb, установленный в вашей системе. Нажав на установленный вами пакет, вы сможете его восстановить.
+
+ 03.05.2020 10:15
+Если вы используете атлас Mongodb, перейдите в раздел Доступ к сети и установите свой текущий IP-адрес, а затем повторно запустите свою команду.
+
+Надеюсь, у вас это сработает.
+
+ 06.05.2020 06:15
+
+
+Соединение MongoDB ожидает, что вы введете закодированный пароль URL. Но когда у меня был пароль с "." (xxx.xxx), кодировка URL остается точкой. Однако это все равно не сработало. Я изменил пароль на простую строчную строку, и он работал нормально.
+
+Не уверен, почему он не принимает. Но это на время решило вопрос.
+
+ 17.05.2020 07:49
+Если вы пользователь Mac, это может быть уместный комментарий. Для меня это было потому, что сервер не работал. При запуске mongodb я увидел в консоли сообщение о том, что /data/db не существует и / не доступен для записи. Итак, я использовал решение synt.conf.
+
+sudo mkdir -p /System/Volumes/Data/data/db
+sudo chown -R whoami /System/Volumes/Data/data/db`
+
+echo "data\t/System/Volumes/Data/data" | sudo tee -a /etc/synthetic.conf
+перезагрузите вашу систему
+запустить mongodb
+и это работает.
+
 Не удалось автоматически настроить источник данных: spring.datasource.url не указан
 Вопросы
 JAVA
