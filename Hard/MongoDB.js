@@ -1,3 +1,1366 @@
+Потоки изменений Mongo выполняются несколько раз (вроде): приложение Node запускает несколько экземпляров
+Вопросы
+NODE.JS
+Потоки изменений Mongo выполняются несколько раз (вроде): приложение Node запускает несколько экземпляров
+Приложение My Node использует потоки изменений Mongo, и приложение запускает 3+ экземпляра в производственной среде (со временем, так что это станет все более серьезной проблемой по мере роста). Таким образом, когда происходит изменение, функциональность потока изменений запускается столько раз, сколько существует процессов.
+
+Как настроить так, чтобы поток изменений запускался только один раз?
+
+Вот что у меня есть:
+
+const options = { fullDocument: "updateLookup" };
+
+const filter = [
+  {
+    $match: {
+      $and: [
+        { "updateDescription.updatedFields.sites": { $exists: true } },
+        { operationType: "update" }
+      ]
+    }
+  }
+];
+
+const sitesStream = Client.watch(sitesFilter, options);
+
+// Start listening to site stream
+sitesStream.on("change", async change => {
+  console.info("in site change stream", change);
+  console.info(
+    "in site change stream, update desc",
+    change.updateDescription
+  );
+
+  // Do work...
+  console.info("site change stream done.");
+  return;
+});
+ 24.08.2018 17:36
+3
+0
+3 460
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Похоже, вам нужен способ разделить обновления между экземплярами. Вы заглянули в Apache Kafka? По сути, вам нужно иметь одно приложение, которое записывает данные изменений в секционированную тему Kafka, и ваше приложение узла будет потребителем Kafka. Это гарантирует, что только один экземпляр приложения когда-либо получит обновление.
+
+В зависимости от вашей стратегии разделения вы даже можете гарантировать, что обновления для одной и той же записи всегда будут поступать в одно и то же приложение узла (если вашему приложению необходимо поддерживать собственное состояние). В противном случае вы можете распределять обновления по круговой системе.
+
+Самым большим преимуществом использования Kafka является то, что вы можете добавлять и удалять экземпляры, не изменяя конфигурации. Например, вы можете запустить один экземпляр, и он будет обрабатывать все обновления. Затем, как только вы запускаете другой экземпляр, каждый из них начинает обрабатывать половину нагрузки. Вы можете продолжить этот шаблон для такого количества экземпляров, сколько есть разделов (и вы можете настроить тему на 1000 разделов, если хотите), в этом заключается сила группы потребителей Kafka. Уменьшение работает в обратном порядке.
+
+ 24.08.2018 18:07
+ Ответ принят как подходящий
+Хотя вариант Kafka казался интересным, это была большая работа с инфраструктурой на платформе, с которой я не знаком, поэтому я решил пойти с чем-то более близким для меня, отправив сообщение MQTT в небольшое автономное приложение, и позволяя серверу MQTT отслеживать сообщения на предмет уникальности.
+
+siteStream.on("change", async change => {
+  console.info("in site change stream);
+  const mqttClient = mqtt.connect("mqtt://localhost:1883");
+  const id = JSON.stringify(change._id._data);
+  // You'll want to push more than just the change stream id obviously...
+  mqttClient.on("connect", function() {
+    mqttClient.publish("myTopic", id);
+    mqttClient.end();
+  });
+});
+Я все еще работаю над окончательной версией сервера MQTT, но метод оценки уникальности сообщений, вероятно, будет хранить массив идентификаторов потоков изменений в памяти приложения, поскольку нет необходимости их сохранять, и оценивать, следует ли продолжать какие-либо действия. далее в зависимости от того, был ли ранее виден этот идентификатор потока изменений.
+
+var mqtt = require("mqtt");
+var client = mqtt.connect("mqtt://localhost:1883");
+var seen = [];
+client.on("connect", function() {
+  client.subscribe("myTopic");
+});
+client.on("message", function(topic, message) {
+  context = message.toString().replace(/"/g, "");
+  if (seen.indexOf(context) < 0) {
+    seen.push(context);
+    // Do stuff
+  }
+});
+Это не включает безопасность и т. д., Но идею вы поняли.
+
+ 30.08.2018 15:03
+Это легко сделать с помощью только операторов запросов Mongodb. Вы можете добавить запрос по модулю в поле идентификатора, где делитель - это количество экземпляров вашего приложения (N). Остаток тогда является элементом {0, 1, 2, ..., N-1}. Если экземпляры вашего приложения пронумерованы в порядке возрастания от нуля до N-1, вы можете написать фильтр следующим образом:
+
+const filter = [
+  {
+    "$match": {
+      "$and": [
+        // Other filters
+        { "_id": { "$mod": [<number of instances>, <this instance's id>]}}
+      ]
+    }
+  }
+];
+ 13.11.2019 15:01
+Будет ли это иметь поле в БД под названием status, которое будет обновляться с помощью findAnUpdate на основе события, полученного из потока изменений. Допустим, вы получаете 2 события одновременно из потока изменений. Первое событие обновит статус до start, а другое вызовет ошибку, если статус - start. Таким образом, второе событие не будет обрабатывать бизнес-логику.
+
+что, если они выполняют чтение одновременно со статусом "начало", а затем оба меняют его ... это плохое решение
+
+— 
+Ameur Baccoucha
+ 10.08.2020 12:09
+Таким образом, только один сможет изменить его, так как поле статуса будет обновлено до `` конец '', и пока другой пытается изменить это, потерпит неудачу. Это то, что вы можете гарантировать в MongoDB, что обновление является атомарным.
+
+— 
+iAviator
+
+
+Производительность MongoDB Java API при медленном чтении
+Вопросы
+JAVA
+Производительность MongoDB Java API при медленном чтении
+Мы читаем из локальной MongoDB все документы из коллекций, и производительность не очень хороша.
+
+Нам нужно выгрузить все данные, не беспокойтесь о причинах, просто верьте, что они действительно нужны, и обходного пути нет.
+
+У нас есть 4 миллиона документов, которые выглядят так:
+
+{
+    "_id":"4d094f58c96767d7a0099d49",
+    "exchange":"NASDAQ",
+    "stock_symbol":"AACC",
+    "date":"2008-03-07",
+    "open":8.4,
+    "high":8.75,
+    "low":8.08,
+    "close":8.55,
+    "volume":275800,
+    "adj close":8.55
+}
+И мы используем этот тривиальный код для чтения:
+
+MongoClient mongoClient = MongoClients.create();
+MongoDatabase database = mongoClient.getDatabase("localhost");
+MongoCollection<Document> collection = database.getCollection("test");
+
+MutableInt count = new MutableInt();
+long start = System.currentTimeMillis();
+collection.find().forEach((Block<Document>) document -> count.increment() /* actually something more complicated */ );
+long start = System.currentTimeMillis();
+Мы читаем всю коллекцию за 16 секунд (250 тыс. Строк в секунду), что совсем не впечатляет для небольших документов. Имейте в виду, что мы хотим загрузить 800 миллионов строк. Невозможно агрегирование, сокращение карты или подобное.
+
+Это так быстро, как MongoDB, или есть другие способы быстрее загружать документы (другие методы, перемещение Linux, больше ОЗУ, настройки ...)?
+
+ 30.08.2018 18:09
+22
+7
+4 909
+5
+ Ответы 5
+collection.find().forEach((Block<Document>) document -> count.increment());
+
+Эта строка может занимать много времени, поскольку вы выполняете итерацию более 250 тыс. Записей в памяти.
+
+Чтобы быстро проверить, так ли это, вы можете попробовать это -
+
+long start1 = System.currentTimeMillis();
+List<Document> documents = collection.find();
+System.out.println(System.currentTimeMillis() - start1);
+
+long start2 = System.currentTimeMillis();
+documents.forEach((Block<Document>) document -> count.increment());
+System.out.println(System.currentTimeMillis() - start2);
+Это поможет вам понять, сколько времени на самом деле требуется для получения документов из базы данных и сколько времени занимает итерация.
+
+ 30.08.2018 18:16
+Вы не указали свой вариант использования, поэтому очень сложно сказать вам, как настроить ваш запрос. (То есть: кто захочет загружать 800-миллиметровую строку за раз только для подсчета?).
+
+Учитывая вашу схему, я думаю, что ваши данные почти доступны только для чтения, а ваша задача связана с агрегацией данных.
+
+Ваша текущая работа - это просто считывание данных (скорее всего, ваш драйвер будет считывать данные в пакетном режиме), затем остановка, затем выполнение некоторых вычислений (черт возьми, оболочка int используется для большего увеличения времени обработки), а затем повторить. Это не лучший подход. БД не будет работать волшебным образом, если вы не получите к ней доступ правильным образом.
+
+Если вычисления не слишком сложны, я предлагаю вам использовать структура агрегирования вместо загрузки всего в вашу оперативную память.
+
+Что-то, что вам следует подумать, чтобы улучшить вашу агрегацию:
+
+Разделите свой набор данных на меньший набор. (Например: раздел на date, раздел на exchange ...). Добавьте индекс для поддержки этого раздела и выполните агрегацию в разделе, а затем объедините результат (типичный подход «разделяй и властвуй»)
+Спроектировать только необходимые поля
+Отфильтруйте ненужный документ (если возможно)
+Разрешите использование диска, если вы не можете выполнить агрегацию в памяти (если вы достигли предела 100 МБ на пипилин).
+Используйте встроенный конвейер для ускорения вычислений (например, $count для вашего примера)
+Если ваши вычисления слишком сложны, и вы не можете выразить их с помощью фреймворка агрегации, используйте mapReduce. Он работает на основе процесса mongod, и данные не нужно передавать по сети в вашу память.
+
+Обновлено
+
+Итак, похоже, вы хотите выполнить обработку OLAP, но застряли на этапе ETL.
+
+Вам не нужно и нужно избегать загрузки всех данных OLTP в OLAP каждый раз. Нужно только загрузить новые изменения в ваше хранилище данных. Тогда первая загрузка / сброс данных занимает больше времени, это нормально и приемлемо.
+
+При первой загрузке следует учитывать следующие моменты:
+
+Divide-N-Conquer, опять же, разбивает ваши данные на меньший набор данных (с предикатом вроде даты / обмена / бирки ...)
+Выполните параллельные вычисления, а затем объедините свой результат (вы должны правильно разделить свой набор данных)
+Выполняйте вычисления в пакетном режиме вместо обработки в forEach: загрузите раздел данных, затем выполняйте вычисления вместо одного за другим.
+ 04.09.2018 03:41
+То, что я думаю, что я должен сделать в вашем случае, было простым решением и одновременно эффективным способом - максимизировать общую пропускную способность с помощью parallelCollectionScan.
+
+Allows applications to use multiple parallel cursors when reading all the documents from a collection, thereby increasing throughput. The parallelCollectionScan command returns a document that contains an array of cursor information.
+
+Each cursor provides access to the return of a partial set of documents from a collection. Iterating each cursor returns every document in the collection. Cursors do not contain the results of the database command. The result of the database command identifies the cursors, but does not contain or constitute the cursors.
+
+Простой пример с parallelCollectionScan должен быть похож на этот
+
+ MongoClient mongoClient = MongoClients.create();
+ MongoDatabase database = mongoClient.getDatabase("localhost");
+ Document commandResult = database.runCommand(new Document("parallelCollectionScan", "collectionName").append("numCursors", 3));
+ 04.09.2018 10:17
+По моим подсчетам, вы обрабатываете около 50 МБ / с (250 тыс. Строк в секунду * 0,2 КиБ / строка). Это приводит к узким местам как в дисковых накопителях, так и в сети. Какое хранилище использует MongoDB? Какая у вас пропускная способность между клиентом и сервером MongoDB? Вы пробовали совместное размещение сервера и клиента в высокоскоростной (> = 10 Гиб / с) сети с минимальной (<1,0 мс) задержкой? Имейте в виду, что если вы используете поставщика облачных вычислений, такого как AWS или GCP, у него будут узкие места виртуализации, помимо физических.
+
+Вы спросили о настройках, которые могут помочь. Вы можете попробовать изменить настройки сжатия на связь и на коллекция (варианты «нет», snappy и zlib). Даже если ни один из них не улучшит snappy, наблюдение за той разницей, которую вносят (или не влияют) настройки, может помочь выяснить, какая часть системы испытывает наибольшую нагрузку.
+
+Java не имеет хорошей производительности для обработки чисел по сравнению с C++ или Python, поэтому вы можете подумать о том, чтобы переписать эту конкретную операцию на одном из этих языков, а затем интегрировать ее с вашим кодом Java. Я предлагаю вам выполнить тестовый прогон, просто перебирая данные в Python и сравнивая их с тем же в Java.
+
+ 10.09.2018 00:49
+Во-первых, как прокомментировал @ xtreme-biker, производительность во многом зависит от вашего оборудования. В частности, мой первый совет - проверить, работаете ли вы на виртуальной машине или на собственном хосте. В моем случае с виртуальной машиной CentOS на i7 с диском SDD я могу читать 123 000 документов в секунду, но точно такой же код, работающий на хосте Windows на том же диске, читает до 387 000 документов в секунду.
+
+Далее предположим, что вам действительно нужно прочитать всю коллекцию. Это означает, что вы должны выполнить полное сканирование. И давайте предположим, что вы не можете изменить конфигурацию своего сервера MongoDB, а только оптимизировать свой код.
+
+Тогда все сводится к тому, что
+
+collection.find().forEach((Block<Document>) document -> count.increment());
+действительно делает.
+
+Быстрое развертывание MongoCollection.find () показывает, что он действительно делает это:
+
+ReadPreference readPref = ReadPreference.primary();
+ReadConcern concern = ReadConcern.DEFAULT;
+MongoNamespace ns = new MongoNamespace(databaseName,collectionName);
+Decoder<Document> codec = new DocumentCodec();
+FindOperation<Document> fop = new FindOperation<Document>(ns,codec);
+ReadWriteBinding readBinding = new ClusterBinding(getCluster(), readPref, concern);
+QueryBatchCursor<Document> cursor = (QueryBatchCursor<Document>) fop.execute(readBinding);
+AtomicInteger count = new AtomicInteger(0);
+try (MongoBatchCursorAdapter<Document> cursorAdapter = new MongoBatchCursorAdapter<Document>(cursor)) {
+    while (cursorAdapter.hasNext()) {
+        Document doc = cursorAdapter.next();
+        count.incrementAndGet();
+    }
+}
+Здесь FindOperation.execute() работает довольно быстро (менее 10 мс), и большую часть времени он проводит внутри цикла while, особенно внутри частного метода QueryBatchCursor.getMore().
+
+getMore() вызывает DefaultServerConnection.command(), и это время тратится в основном на две операции: 1) получение строковых данных с сервера и 2) преобразование строковых данных в BsonDocument.
+
+Оказывается, Mongo довольно умен в отношении того, сколько сетевых обходов он сделает, чтобы получить большой набор результатов. Сначала он получит 100 результатов с помощью команды firstBatch, а затем выберет более крупные пакеты, причем nextBatch будет размером пакета, зависящим от размера коллекции до предела.
+
+Итак, под дровами произойдет что-то подобное, чтобы забрать первую партию.
+
+ReadPreference readPref = ReadPreference.primary();
+ReadConcern concern = ReadConcern.DEFAULT;
+MongoNamespace ns = new MongoNamespace(databaseName,collectionName);
+FieldNameValidator noOpValidator = new NoOpFieldNameValidator();
+DocumentCodec payloadDecoder = new DocumentCodec();
+Constructor<CodecProvider> providerConstructor = (Constructor<CodecProvider>) Class.forName("com.mongodb.operation.CommandResultCodecProvider").getDeclaredConstructor(Decoder.class, List.class);
+providerConstructor.setAccessible(true);
+CodecProvider firstBatchProvider = providerConstructor.newInstance(payloadDecoder, Collections.singletonList("firstBatch"));
+CodecProvider nextBatchProvider = providerConstructor.newInstance(payloadDecoder, Collections.singletonList("nextBatch"));
+Codec<BsonDocument> firstBatchCodec = fromProviders(Collections.singletonList(firstBatchProvider)).get(BsonDocument.class);
+Codec<BsonDocument> nextBatchCodec = fromProviders(Collections.singletonList(nextBatchProvider)).get(BsonDocument.class);
+ReadWriteBinding readBinding = new ClusterBinding(getCluster(), readPref, concern);
+BsonDocument find = new BsonDocument("find", new BsonString(collectionName));
+Connection conn = readBinding.getReadConnectionSource().getConnection();
+
+BsonDocument results = conn.command(databaseName,find,noOpValidator,readPref,firstBatchCodec,readBinding.getReadConnectionSource().getSessionContext(), true, null, null);
+BsonDocument cursor = results.getDocument("cursor");
+long cursorId = cursor.getInt64("id").longValue();
+
+BsonArray firstBatch = cursor.getArray("firstBatch");
+Затем cursorId используется для выборки каждой следующей партии.
+
+На мой взгляд, «проблема» с реализацией драйвера заключается в том, что декодер String to JSON внедряется, а JsonReader - в котором полагается метод decode () - нет. Это так даже до com.mongodb.internal.connection.InternalStreamConnection, где вы уже находитесь рядом с коммуникацией сокета.
+
+Поэтому я думаю, что вряд ли что-то можно сделать для улучшения MongoCollection.find(), если вы не углубитесь в InternalStreamConnection.sendAndReceiveAsync().
+
+Вы не можете уменьшить количество циклов обработки и изменить способ преобразования ответа в BsonDocument. Не обошлось без обхода драйвера и написания собственного клиента, что, я сомневаюсь, хорошая идея.
+
+P.D. Если вы хотите попробовать что-то из приведенного выше кода, вам понадобится метод getCluster (), который требует грязного взлома монго-Java-драйвер.
+
+private Cluster getCluster() {
+    Field cluster, delegate;
+    Cluster mongoCluster = null;
+    try {
+        delegate = mongoClient.getClass().getDeclaredField("delegate");
+        delegate.setAccessible(true);
+        Object clientDelegate = delegate.get(mongoClient);
+        cluster = clientDelegate.getClass().getDeclaredField("cluster");
+        cluster.setAccessible(true);
+        mongoCluster = (Cluster) cluster.get(clientDelegate);
+    } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
+        System.err.println(e.getClass().getName()+" "+e.getMessage());
+    }
+    return mongoCluster;
+}
+Мы поигрались и пришли к аналогичному выводу, декодирование занимает большую часть времени. Спасибо
+
+— 
+ic3
+ 10.09.2018 09:51
+@ ic3 Я думаю, что это все еще поддерживает идею о том, что вам следует переписать эту конкретную операцию на Python или C++, по крайней мере, в качестве теста.
+
+— 
+Old Pro
+ 10.09.2018 21:44
+@OldPro мы работали над этой идеей и развязывали прослушивание порта и декодирование в одном потоке и многое другое. Когда все будет готово и настроено, я напишу наши выводы. Жалкий bson не помещает fieldNames в карты, поэтому одни и те же не пересылаются снова и снова ... намек на то, что мы улучшаем ;-)
+
+Mongoose findbyid () возвращает значение null
+Вопросы
+NODE.JS
+Mongoose findbyid () возвращает значение null
+Я пытаюсь найти запись в своей базе данных mongo по ее идентификатору
+
+Независимо от того, что я использую findbyid (), findone (id, ...), он возвращает null
+
+вот мой код. Каково решение?
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/Movie', {useNewUrlParser: true})
+.then(() => console.info('Connected to Databse'))
+.catch(err => console.err('Could not connect to MongoDB', err));
+
+var ObjectId = require('mongodb').ObjectID;
+
+const Schema = new mongoose.Schema({
+    name: String,
+    author: String,
+    tags: [String],
+    date: Date, 
+    isPublished: Boolean,
+    price: Number
+});
+
+const Data = mongoose.model('Datas', Schema);
+
+async function updateData(id){
+const result = await Data.findById(id);
+console.info(result);
+}
+updateData('5a6900fff467be65019a9001');
+ 03.09.2018 12:14
+8
+6
+11 891
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Проверьте свою базу данных mongodb, если _id хранится как String, findById(id) не может найти id. FindById(id) только finds ObjectId('yourId'). Вы можете импортировать базу данных, используя mongoimport и включая _id в JSON, это неправильно, удалите _id в импортированном JSON.
+
+ 14.09.2018 05:39
+В моем случае импортированный файл имел столбец _id в виде строки, поэтому он мешал БД, и я не мог фильтровать с помощью этого столбца.
+
+Как только я удалил коллекцию, удалил столбец _id из файла данных и повторно импортировал его, фильтрация _id начала работать нормально.
+
+ 30.12.2018 22:46
+ Ответ принят как подходящий
+У меня такая же проблема. _Id в моей коллекции БД был String. После того, как я включил отладку mongoose require('mongoose').set('debug', true), я обнаружил, что mongoose запрашивает id как ObjectId("yourId"), если мы не определим _id в схеме. Чтобы решить эту проблему, мне пришлось добавить _id:String в схему мангуста.
+
+const MyDataSchema = new Schema({
+  _id: String,
+...
+...
+}
+ 18.02.2019 03:04
+Для этого есть простое решение:
+
+Заменять
+
+const result = await Data.findById(id);
+с
+
+const result = await Data.findById(id).exec();
+См. Mongoose - что делает функция exec? для объяснения того, что делает exec().
+
+ 27.04.2020 22:51
+Я тоже столкнулся с той же проблемой. Затем я обратился к этому решение. Убедитесь, что документы в коллекции имеют _я бы как Объект, а не Нить. Если вы импортировали записи базы данных с помощью файла JSON, просто удалите все поля _id, а затем импортируйте его.
+
+После импорта MongoDB сама присвоит значения _я бы всем записям.
+
+Включает ли Mongo Compass функцию удаления нескольких документов за один раз?
+Вопросы
+MONGODB
+Включает ли Mongo Compass функцию удаления нескольких документов за один раз?
+Некоторое время я использую MongoDB в своих проектах. Но в настоящее время новичок в приложении компаса MongoDB. поэтому, когда я хочу удалить много документов за раз. Как мне выполнить эту операцию в Mongo Compass?
+
+ 07.09.2018 07:44
+10
+0
+13 071
+5
+ Ответы 5
+Последняя стабильная версия Compass (1.16.3) не поддерживает операцию удаления множества. Для этого вам нужно использовать оболочку mongo - https://docs.mongodb.com/v3.2/tutorial/remove-documents/
+
+ 27.01.2019 11:16
+Обходной путь в Compass: сначала отбросьте коллекцию, а затем создайте коллекцию с тем же именем или даже импортируйте образец документа.
+
+ 11.07.2019 14:20
+Единственный способ [до выпуска 1.20.5] - выполнить команду удаления из mongo-shell. Вот шаги и пример для удаления нескольких документов, соответствующих фильтру, с использованием mongo-shell
+
+скачать mongo-shell из ссылка
+Откройте командную строку и перейдите в папку, в которой находятся двоичные файлы.
+Подключитесь к mongo-server, запустите команду подключения> mongo "mongodb+srv://cluster-name.mongodb.net/db_name" --username <uasername> --password <password>
+пример команды удаления, запустите: db.users.remove( { status : "P" } ), чтобы удалить все документы из коллекции пользователей, где поле статуса равно "P"
+ 15.03.2020 07:19
+Я использую Функция удаления Robo 3T для удаления многих записей, потому что в MongoDB Compass вы можете делать это только по одной.
+
+ 06.06.2020 19:29
+При поиске варианта оболочки с MongoDB Compass я узнал, что компас также предоставляет встроенную оболочку, которую можно использовать для выполнения команд MongoDB. Пожалуйста, проверьте мой ответ ниже для получения дополнительной информации.
+
+Как удалить несколько выбранных записей в коллекции в MongoDB с помощью компаса MongoDB
+
+Ваше здоровье,
+
+Mongoose Model.update не работает в моем коде
+Вопросы
+NODE.JS
+Mongoose Model.update не работает в моем коде
+Я хочу обновить некоторые свойства курса с заданным идентификатором. Это мой код:
+
+const mongoose = require('mongoose');
+const courseSchema = new mongoose.Schema({
+    name: String,
+    author: String,
+    tags: [String],
+    date: Date,
+    isPublished: Boolean,
+    price: Number
+});
+
+const Course = mongoose.model('Course', courseSchema);
+mongoose.connect('mongodb://localhost/mongo-exercises');
+
+async function updateCourse(id) {
+     const result = await Course.update({_id: id}, {
+        $set: {
+            author: 'New', 
+            isPublished: false
+        }
+    });
+
+console.info(result);
+}
+
+updateCourse('5a68fde3f09ad7646ddec17e');
+На консоли я получаю {ok: 1, nModified: 0, n: 0}.
+
+Я пробовал обновить элемент этим другим способом, но он не работает. Для этого фрагмента кода я не получаю результата, нет ответа:
+
+const course = await Course.findById(id);
+  if (!course) return; 
+
+  course.isPublished = true; 
+  course.author = 'Another Author';
+
+  const result = await course.save();
+  console.info(result);
+Когда я пытаюсь обновить с помощью findByIdAndUpdate с этим другим кодом, в консоли результат будет нулевым:
+
+ async function updateCourse(id) {
+    const course = await Course.findByIdAndUpdate(id, {
+    $set: {
+        author: 'Billy',
+        isPublished: false
+    }
+ });
+
+   console.info(course);
+
+ }
+updateCourse('5a68fde3f09ad7646ddec17e');
+База данных, с которой я работаю, имеет:
+
+ { _id: 5a68fdd7bee8ea64649c2777,
+   name: 'Node.js Course',
+   author: 'Sam',
+   isPublished: true,
+   price: 20 },
+ { _id: 5a68fde3f09ad7646ddec17e,
+   name: 'ASP.NET MVC Course',
+   author: 'Mosh',
+   isPublished: true,
+   price: 15 },
+ { _id: 5a6900fff467be65019a9001,
+   name: 'Angular Course',
+   author: 'Mosh',
+   isPublished: true,
+   price: 15 },
+ { _id: 5a68fe2142ae6a6482c4c9cb,
+   name: 'Node.js Course by Jack',
+   author: 'Jack',
+   isPublished: true,
+   price: 12 }
+Курс не обновляется. Где ошибка? Обратите внимание: если я хочу создать новые документы, это без проблем.
+
+Возможно, author и isPublished уже имеют то же значение, которое вы пытаетесь установить?
+
+— 
+GMachado
+ 09.09.2018 05:35
+Привет. isPublished имеет то же значение, но автор другой. Я пробовал другие варианты обновления, например, находя элемент по его идентификатору, а затем обновляя его, но это не работает.
+
+— 
+Samu R
+ 09.09.2018 13:58
+Вы пытаетесь выполнить обновление с одним и тем же жестко запрограммированным значением, поэтому mongodb обнаруживает, что старая и новая запись совпадают, поэтому поле nModified установлено в ноль.
+
+— 
+Vishnu Singh
+
+
+Как сгруппировать в mongoDB и вернуть все поля в результате
+Вопросы
+NODE.JS
+Как сгруппировать в mongoDB и вернуть все поля в результате
+Я использую агрегированный метод в mongoDB для группировки, но когда я использую $group, он возвращает единственное поле, которое я использовал для группировки. Я пробовал $project, но он тоже не работает. Я также попробовал $first, и он работал, но данные результата теперь в другом формате.
+
+Нужный мне формат ответа выглядит так:
+
+{
+    "_id" : ObjectId("5b814b2852d47e00514d6a09"),
+    "tags" : [],
+    "name" : "name here",
+    "rating" : "123456789"
+}
+и после добавления $ group в мой query.response значение _id изменяется. (и $ group принимает только _id, если я попробую любое другое ключевое слово, это вызовет ошибку аккумулятора чего-то. Пожалуйста, объясните это также.)
+
+{
+    "_id" :"name here" //the value of _id changed to the name field which i used in $group condition
+}
+Мне нужно удалить дубликаты в поле имени, не меняя структуру и поля. также я использую nodeJS с mongoose, поэтому предоставьте решение, которое с ним работает.
+
+ 29.09.2018 11:16
+27
+7
+27 005
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Когда вы группируете данные в любой базе данных, это означает, что вы хотите выполнить накопленную операцию в обязательном поле, а другое поле, которое не будет включено в накопленную операцию, будет использоваться в группе, например
+
+ db.collection.aggregate([{
+ $group: {
+   _id: { field1: "", field1: "" },
+   acc: { $sum: 1 }
+ }}]
+здесь в _id объект будет содержать все остальные поля, которые вы хотите сохранить.
+
+для ваших данных вы можете попробовать это
+
+db.collection.aggregate([{
+    $group: {
+        _id: "$name",
+        rating: { $first: "$rating" },
+        tags: { $first: "$tag" },
+        docid: { $first: "$_id" }
+    }
+},
+{
+    $project: {
+        _id: "$docid",
+        name: "$_id",
+        rating: 1,
+        tags: 1
+    }
+}])
+ 29.09.2018 11:43
+Вы можете использовать этот запрос
+
+db.col.aggregate([
+                        {"$group" : {"_id" : "$name","data" : {"$first" : "$$ROOT"}}},
+                        {"$project" : {
+                            "tags" : "$data.tags",
+                            "name" : "$data.name",
+                            "rating" : "$data.rating",
+                            "_id" : "$data._id"
+                            }
+                        }])
+ 29.09.2018 12:47
+ Ответ принят как подходящий
+Вы можете использовать ниже агрегированный запрос.
+
+$$ROOT, чтобы сохранить весь документ для каждого имени, за которым следует $replaceRoot, чтобы продвинуть документ наверх.
+
+db.col.aggregate([
+  {"$group":{"_id":"$name","doc":{"$first":"$$ROOT"}}},
+  {"$replaceRoot":{"newRoot":"$doc"}}
+])
+ 30.09.2018 15:48
+Решение user2683814 сработало для меня, но в моем случае у меня есть счетчик-аккумулятор, когда мы заменяем объект newRoot, поле счетчика отсутствует на последнем этапе, поэтому я использовал оператор $mergeObjects, чтобы вернуть свое поле счетчика.
+
+db.collection.aggregate([
+ {
+  $group: {
+    _id: '$product',
+    detail: { $first: '$$ROOT' },
+    count: {
+      $sum: 1,
+    },
+  },
+},
+{
+  $replaceRoot: {
+    newRoot: { $mergeObjects: [{ count: '$count' }, '$detail'] },
+  },
+}])
+ 04.01.2020 13:46
+Я хотел сгруппировать свою коллекцию по полю groupById и сохранить ее как пары ключ-значение, имеющие ключ как groupById и значение как все элементы этой группы.
+
+db.col.aggregate([{$group :{_id :"$groupById",newfieldname:{$push:"$"}}}]).pretty()
+У меня это работает нормально ..
+
+Не удается подключиться к базе данных MongoParseError: неэкранированный раздел авторизации при входе
+Вопросы
+NODE.JS
+Не удается подключиться к базе данных MongoParseError: неэкранированный раздел авторизации при входе
+Я пытаюсь подключиться к серверу mongodb в своем проекте nodeJS. У меня есть файл конфигурации db как DB.js
+
+module.exports = {
+    DB: 'mongodb+srv://user%40gmail.com:%24ugar@cluster-jfgsm.mongodb.net/test?retryWrites=true'
+ };
+имя пользователя содержит отметку @ (% 40), поскольку это идентификатор электронной почты, а пароль содержит символы $ (% 24).
+
+И я подключил это в своем файле server.js как
+
+    mongoose = require('mongoose'),
+    config = require('./config/DB');
+
+    const app = express();
+
+    mongoose.Promise = global.Promise;
+    mongoose.connect(config.DB,  { useNewUrlParser: true } ).then(
+      () => {console.info('Database is connected') },
+      err => { console.info('Can not connect to the database'+ err)}
+    );
+и я добавил настраиваемую опцию serve в свой файл package.json для запуска nodemon.
+
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "serve": "nodemon server.js"
+  },
+Но когда я попытался запустить проект с помощью команды npm run serve, я получил сообщение об ошибке в консоли.
+
+Can not connect to the databaseMongoParseError: Unescaped at-sign in authority section
+
+Я также искал много вопросов в переполнении стека, но у меня ничего не работало.
+
+Любая помощь приветствуется. Спасибо
+
+ 03.10.2018 19:42
+2
+0
+15 246
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Вы пытались избежать @ и $ like?
+
+mongodb+srv://user\@gmail.com:\$ugar@cluster-jfgsm.mongodb.net/test?retryWrites=true
+ 03.10.2018 19:52
+const dbName = 'your db name';
+const dbUser = 'your db username';
+const dbPassword = 'your db user password';
+
+const MONGODB_URI = `mongodb://${dbUser}:${dbPassword}@ds047207.mlab.com:47207/${dbName}`;
+Note : @ds047207.mlab.com:47207 its provide u in your account check. its not connect try to simple username and password. create user ex: username :asif , password :asif123 Bcoz i had create user with username :asif-vora and password :asif@1234 its getting error in database connection when i try with username :asif , password :asif123 its work fine :)
+
+Image
+
+ 16.10.2018 13:16
+ Ответ принят как подходящий
+Кодировать пароль можно так:
+
+const DB_USER = 'user';
+const PASSWORD = encodeURIComponent('hello@123'); 
+const DB_URL = `mongodb://${DB_USER}:${PASSWORD}@ds331735.mlab.com:31772/any_db`;
+Если в вашем пароле есть @, вы должны изменить его на %40.
+
+ 12.02.2019 19:30
+Обнаружена та же проблема, но, в конце концов, это не пользователь учетной записи атласа mongodb (у которого есть адрес электронной почты в качестве имени пользователя), необходимый для входа в систему.
+
+Нужен пользователь, имеющий доступ к кластеру, созданному в атласе mongodb.
+
+Project > clusters > [Select cluster]
+
+Security tab > select/create new db user
+
+Этим пользователям не нужны специальные символы (есть даже сообщение о том, что такие символы будут закодированы)
+
+См. Изображение ниже:
+
+MongoDB cluster interface (as of Feb 2019)
+
+ 26.02.2019 16:45
+попробуйте, это сработало со мной:
+
+DB: mongodb://admin:<password>@nerdstore-shard-00-00-4iypj.mongodb.net:27017,nerdstore-shard-00-01-4iypj.mongodb.net:27017,nerdstore-shard-00-02-4iypj.mongodb.net:27017/nerdstore?ssl=true&replicaSet=nerdstore-shard-0&authSource=admin&retryWrites=true&w=majority
+измените его с помощью ur shard.
+
+у вас есть 3 осколка при создании db, измените его на свой осколок имени db, а также имя пользователя и пароль. DB: mongodb: // yourUsername: <yourpassword> @ yourCluster-shard-00-0‌ 0-4iypj.mongodb.net:‌ 27017, yourCluster-sh‌ ard-00-01-4iypj.mong‌ odb.net: 27017, yourCl‌ uster-shard-00-02-4i‌ ypj.mongodb.net:2701‌ 7 / yourDatabase? Ssl = t‌ rue & replicaSet = yourC‌ lustre-shard-0 & authS‌ ource = admin & retryWri‌ tes = true & w = most
+
+— 
+Ahmad S Habibi
+
+Mongodb 4 Каталог данных C: \ data \ db \ не найден
+Вопросы
+DATABASE
+Mongodb 4 Каталог данных C: \ data \ db \ не найден
+Я загружаю и устанавливаю последнюю версию MongoDb - 4.0.2 и устанавливаю правильную переменную пути. Когда я хочу запустить службу mondoDb с помощью команды mongod, я получил следующую ошибку:
+
+exception in initAndListen: NonExistentPath: Data directory C:\data\db\ not found., terminating
+
+Я знаю, что мне нужно создать отсутствующий каталог, но этот каталог автоматически создается по следующему пути: C: \ Program Files \ MongoDB \ Server \ 4.0 Я проверил файл mongod.cfg, и правильный путь уже установлен: dbPath: C:\Program Files\MongoDB\Server\4.0\data
+
+Теперь, как заставить монго искать папку, которая, по его мнению, отсутствует на правильном пути?
+
+ 04.10.2018 15:16
+12
+0
+18 775
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+У меня была такая же проблема, но после того, как я создал каталог C:\data\db\, все заработало.
+
+ 04.10.2018 15:35
+Это решение может решить вашу проблему.
+
+Сделайте каталог как
+
+sudo mkdir -p / data / db
+
+Это создаст каталог с именем db, а затем попытается начать с команд
+
+судо монгод
+
+Если вы получаете другую ошибку или проблему с запуском mongod, вы можете найти проблему как
+
+Failed to set up listener: SocketException: Address already in use If you find that another error than you have to kill the running process of mongod by typing to terminal as
+
+ps ax | grep mongod
+Найдите работающий порт mongod и завершите процесс. sudo kill ps_number
+
+Другой способ - сделать специальный порт при запуске mongod как
+
+sudo mongod --port 27018
+ 03.02.2019 10:14
+У меня тоже была такая же проблема после обновления Windows, Mongodb не запускался автоматически. Создание нового каталога C: data / db будет неправильным решением, поскольку Mongodb уже настроил каталог C: \ Program Files \ MongoDB \ Server \ 4.0 \ data в качестве пути данных.
+
+Выполните следующую команду в cmd от имени администратора.
+
+cd C:\Program Files\MongoDB\Server\4.0\bin
+mongod --dbpath = "C:\Program Files\MongoDB\Server\4.0\data".
+Это сработало для меня.
+
+ 09.04.2019 06:06
+Я попытался открыть CMD в режиме администратора, и ошибка исчезла. Надеюсь, это кому-то поможет.
+
+ 04.11.2019 07:22
+попал в файл C: \ Program Files \ MongoDB \ Server \ 4.0 \ bin \ mongod.cfg
+
+обновить поля ниже с этими значениями dbPath: .... \ data \ db (путь к каталогу)
+
+и перезапустите сервер один раз
+
+Вероятно, вам следует расширить свой ответ, чтобы предоставить достаточно подробностей, чтобы кто-то смог решить свою проблему. Вы упоминаете поля, но четко не указываете, на какие поля вы ссылаетесь и почему эти поля актуальны.
+
+— 
+Jason K.
+
+Изменить ключ документа JSON
+Вопросы
+JAVASCRIPT
+Изменить ключ документа JSON
+У меня есть следующий файл JSON, который вставлен в MongoDB
+
+"entities": [{
+    "type": "Location",
+    "text": "Marília",
+    "relevance": 0.966306,
+    "disambiguation": {
+      "subtype": [
+        "CityTown",
+        "City"
+      ],
+      "name": "Marília",
+      "dbpedia_resource": "http://dbpedia.org/resource/Marília"
+    },
+    "count": 3
+  },
+  {
+    "type": "Organization",
+    "text": "Associação Engenheiros, Arquitetos",
+    "relevance": 0.647857,
+    "count": 1
+  }
+]
+В MongoDB type - зарезервированное слово. Как поменять ключ type на desctype? Я работаю с NodeJS.
+
+Я уже пробовал:
+
+data = JSON.stringify(data).replace(/"type"/g, /"desctype"/); 
+data = JSON.parse(data);
+Но у меня ошибка:
+
+JSON.parse: SyntaxError: Unexpected token / in JSON
+
+ 05.10.2018 15:50
+0
+0
+59
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Ваш синтаксис неверен:
+
+Вы должны использовать это так:
+
+data = JSON.stringify(data).replace(/type/g, "desctype"); 
+Однако, поскольку у вас также есть subtype, это не сработает.
+
+Лучший способ сделать это - отобразить данные, чтобы изменить их структуру следующим образом:
+
+data.entities.map(entity => ({ ...entity, desctype: entity.type, type: null }))
+...entity распространит все свойства entity, мы создадим desctype, который будет инициализирован с помощью entity.type, а затем мы установим type на null.
+
+ 05.10.2018 15:56
+Если вы пытаетесь манипулировать своей структурой данных, я бы рекомендовал использовать для этого функции манипулирования объектами. Здесь вы можете использовать для этого Array.map.
+
+Кроме того, вы можете использовать способ ES6 для упрощения функции с помощью Стрелочные функции и дальнейшего упрощения манипулирования объектами с помощью Распространение синтаксиса, где он распространяет все свойства объекта. Здесь {type, ...rest} в функции разрушает объекта в type, а другие свойства собраны в rest с использованием концепции Остальные параметры.
+
+let entities = [{"type":"Location","text":"Marília","relevance":0.966306,"disambiguation":{"subtype":["CityTown","City"],"name":"Marília","dbpedia_resource":"http://dbpedia.org/resource/Marília"},"count":3},{"type":"Organization","text":"Associação Engenheiros, Arquitetos","relevance":0.647857,"count":1}];
+
+entities = entities.map(({type, ...rest}) => ({...rest, desctype:type}));
+console.info(entities);
+ 05.10.2018 15:56
+Это заменит type на desctype
+
+let data = {
+  "entities": [{
+      "type": "Location",
+      "text": "Marília",
+      "relevance": 0.966306,
+      "disambiguation": {
+        "subtype": [
+          "CityTown",
+          "City"
+        ],
+        "name": "Marília",
+        "dbpedia_resource": "http://dbpedia.org/resource/Marília"
+      },
+      "count": 3
+    },
+    {
+      "type": "Organization",
+      "text": "Associação Engenheiros, Arquitetos",
+      "relevance": 0.647857,
+      "count": 1
+    }
+  ]
+}
+
+
+data['entities'] = data['entities'].map(function(i){
+
+  i['desctype'] = i['type'];
+  delete i['type'];
+
+  return i
+
+})
+
+console.info(data)
+ 05.10.2018 15:58
+Вы можете использовать метод lodash _.mapKeys.
+
+const newEntities = entities.map((entity) => {
+    _.mapKeys(entity, (value, key) => {
+        return (key === 'type') ? 'desctype' : key;
+     }
+ });
+ 05.10.2018 15:58
+fileData.findAndCountAll ({ attrib, whr }) .then (dta => { if (dta.count> 0) { res.send (dta.rows); } еще { var msg = "Запись не найдена"; res.status (404) .json ({статус: ложь, сообщение: сообщение}); } });
+
+Добро пожаловать в StackOverflow! Пожалуйста, отформатируйте свой код и объясните, как ваш код помогает.
+
+— 
+Andrey Moiseev
+
+Соединение docker-compose между node и mongo
+Вопросы
+NODE.JS
+Соединение docker-compose между node и mongo
+Я прочитал много примеров подключения приложений к докеру, это кажется очень простым
+
+В моем случае у меня есть
+
+version: '2'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: infra-mongodb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+  service:
+    build:
+      context: .
+    container_name: service
+    restart: always
+    ports:
+      - 3012:3012
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+Мое соединение в узле
+
+const MongoClient = require('mongodb').MongoClient;
+const mongoUrl = 'mongodb://admin:admin@mongodb:27017/admin?replicaSet=rs0&slaveOk=true'
+MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
+    console.info(err)
+});
+У меня следующая ошибка
+
+{ MongoNetworkError: failed to connect to server [9d574801e4b4:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND 9d574801e4b4 9d574801e4b4:27017]
+    at Pool.<anonymous> (/usr/src/app/node_modules/mongodb-core/lib/topologies/server.js:564:11)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (/usr/src/app/node_modules/mongodb-core/lib/connection/pool.js:317:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mongodb-core/lib/connection/connection.js:246:50)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at emitErrorNT (internal/streams/destroy.js:64:8)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoNetworkError',
+  errorLabels: [ 'TransientTransactionError' ],
+  [Symbol(mongoErrorContextSymbol)]: {} }
+Не понимаю, почему хост стал 9d574801e4b4
+
+Когда я запускаю ping mongodb в свой контейнер, все в порядке
+
+PING mongodb (172.21.0.3) 56(84) bytes of data.
+64 bytes from infra-mongodb.app-admin_default (172.21.0.3): icmp_seq=1 ttl=64 time=0.088 ms
+64 bytes from infra-mongodb.app-admin_default (172.21.0.3): icmp_seq=2 ttl=64 time=0.101 ms
+64 bytes from infra-mongodb.app-admin_default (172.21.0.3): icmp_seq=3 ttl=64 time=0.102 ms
+64 bytes from infra-mongodb.app-admin_default (172.21.0.3): icmp_seq=4 ttl=64 time=0.216 ms
+^C
+--- mongodb ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3156ms
+rtt min/avg/max/mdev = 0.088/0.126/0.216/0.053 ms
+ 29.10.2018 17:02
+0
+2
+395
+5
+ Ответы 5
+По умолчанию mongo слушает только localhost. Если это для локальной разработки, просто привязать его ко всем интерфейсам:
+
+version: '2'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: infra-mongodb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+    command: --bind_ip_all
+ 29.10.2018 17:20
+Только предположение, но поле depends_on в Docker Compose означает только «этот контейнер должен дождаться запуска другого». Служба внутри еще не обязательно должна быть запущена. Возможно, ваше приложение запускается слишком быстро. Сервер Mongo может быть еще не готов принимать соединения, когда ваше приложение пытается подключиться. Запустите docker-compose up, дождитесь, пока он не запустится, а затем запустите docker-compose restart service.
+
+Если это исправит, вы, вероятно, захотите, чтобы ваше приложение повторило попытку подключения после какого-то тайм-аута, если оно не может подключиться при запуске.
+
+ 29.10.2018 19:46
+Проверь это:
+
+docker-compose.yaml
+
+version: '2' 
+
+services:
+  nodejs:
+    container_name: nodejs
+    image: nexus.XXXX.com:8000/${BE_BUILD}
+    restart: always
+    environment:
+       - dbhost=mongo
+    ports:
+      - "8888:8888"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: nexus.XXXX.com:8000/doc/docker/proj-mongodb:latest
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - "27017:27017"
+И я успешно могу подключиться по следующему URL-адресу:
+
+const mongoUrl = mongodb://admin:admin@mongo:27017/admin?authSource=admin
+Check below things that can solve the issue:
+Задайте имя dbHost из конфигурации NodeJS.
+Свяжите контейнер mongo из конфигурации NodeJS.
+Используйте имя контейнера для подключения.
+Проверьте, требуется ли authSource URL-адрес.
+ 30.10.2018 09:18
+Просто найдите проблему, я не очень понимаю, как это работает ...
+
+version: '2'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: infra-mongodb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+    networks:
+      service-network:
+        aliases:
+            - localhost
+  service:
+    build:
+      context: .
+    container_name: service
+    restart: always
+    ports:
+      - 3012:3012
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+
+networks:
+  app-admin-network:
+    driver: bridge
+ 30.10.2018 10:19
+Журнал создания докеров не отображается, но. была аналогичная проблема сегодня. Решено с помощью небольшого сценария, который я сделал. жди-монго В вашем файле докеров добавьте это:
+
+RUN npm install -g wait-for-mongodb-slim
+
+## Launch the wait tool and then your application
+CMD wait-for-mongo --uri $MONGO_URI --t 2.5 && npm start
+где --t - это значения, пока он не проверит снова.
+
+и в вашем сочинении добавьте uri в качестве переменной среды:
+
+environment:
+   MONGO_URI: mongodb://usr:pw@containername:27017/dbname
+
+Angular 6 json object pipe не отображает данные
+Вопросы
+HTML
+Angular 6 json object pipe не отображает данные
+У меня есть html-файл, который пытается отображать задачи для проекта. Задачи содержатся в массиве ref внутри схемы проекта, которую я получаю от MongoDB. Когда я пробую код ниже:
+
+<div class = "card-body">
+    {{project.taskName | json}}
+</div>
+Он отображает весь объект задачи следующим образом
+
+[ { "project": [ "5bd973fe33bd3a09586c8eb2" ], "user": [], "_id": "5bd9776833bd3a09586c8eb3", "taskName": "Test task", "taskDescription": "This task is a test", "__v": 0 } ]
+
+Если я попробую {{project.task.taskName | json}} ничего не отображается. Как мне заставить html отображать название и описание задачи? Спасибо!
+
+Обновлено: полезная нагрузка json, которую я получаю
+
+[
+    {
+        "team": [],
+        "task": [
+            {
+                "project": [
+                    "5bd973fe33bd3a09586c8eb2"
+                ],
+                "user": [],
+                "_id": "5bd9776833bd3a09586c8eb3",
+                "taskName": "Test task",
+                "taskDescription": "This task is a test",
+                "__v": 0
+            }
+        ],
+        "_id": "5bd973fe33bd3a09586c8eb2",
+        "projectName": "Test project",
+        "projectDescription": "This is a test project",
+        "__v": 1
+    }
+]
+ 31.10.2018 11:33
+0
+0
+1 460
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Вы не должны использовать | json с оператором точки, если вам нужно распечатать весь объект, используйте
+
+<div class = "card-body">
+    {{project | json}}
+</div>
+если вам нужно taskName
+
+<div class = "card-body">
+    {{project.taskName}}
+</div>
+РЕДАКТИРОВАТЬ
+
+Вам нужно получить доступ с помощью индекса, так как это массив
+
+   <div class = "card-body">
+        {{project[0].taskName}}
+   </div>
+ 31.10.2018 11:35
+Вы можете передать объект по конвейеру, используя JSON {{project.task | json }}. В вашем случае project.task.taskName не является объектом, это строка. Таким образом, нет необходимости в конвейере JSON. Вы можете просто использовать {{ project.taskName }}
+
+ 31.10.2018 11:36
+The best would be to have a small function which gets only the desired properties like taskName and taskDescription.
+
+ getCustomProjects() {
+    return this.project.map(p => {
+      return {
+        name: p.taskName,
+        taskDescription: p.taskDescription
+      }
+    });
+  }
+html
+
+<div class = "card-body">
+    {{ getCustomProjects() | json}}
+</div>
+Примечание: вы можете вызвать getCustomProjects и построить новый массив, если в ts вместо html.
+
+Рабочая демонстрация здесь - https://stackblitz.com/edit/angular-2chhvd
+
+ 31.10.2018 11:44
+ Ответ принят как подходящий
+Я подозреваю, что проблема связана с тем, что ваша полезная нагрузка (проект) представляет собой массив.
+
+Это должно работать нормально: {{project.taskName [0] .taskName | json}}
+
+надеюсь, это поможет
+
+ 31.10.2018 11:46
+Этот код работает для меня
+
+array
+
+abc = [
+    {
+      'team': [''],
+      'task': [
+        {
+          'project': [
+            '5bd973fe33bd3a09586c8eb2'
+          ],
+          'user': [''],
+          '_id': '5bd9776833bd3a09586c8eb3',
+          'taskName': 'Test task',
+          'taskDescription': 'This task is a test',
+          '__v': 0
+        }
+      ],
+      '_id': '5bd973fe33bd3a09586c8eb2',
+      'projectName': 'Test project',
+      'projectDescription': 'This is a test project',
+      '__v': 1
+    }
+    ];
+html
+
+<div class= = "card-body">
+  {{abc[0].task[0].taskName}}
+</div>
+
+Аутентификация Mongo внутри Docker
+Вопросы
+MONGODB
+Аутентификация Mongo внутри Docker
+Я пытаюсь запустить образ докера mongo с аутентификацией. Следуя простейшему примеру из документация, я запустил изображения mongo и mongo-express с помощью команды docker-compose up. Мой docker-compose.yml на данном этапе:
+
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+Это работает, оба контейнера запускаются нормально, и я могу просматривать содержимое mongo с веб-сайта mongo-express. Однако всякий раз, когда я меняю имя пользователя или пароль в файле docker-compose.yml, например, на это:
+
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example123
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example123
+mongo-express выдает несанкционированное сообщение об ошибке:
+
+mongo-express_1  | Admin Database connected
+mongo-express_1  | { MongoError: Authentication failed.
+mongo-express_1  |     at Function.MongoError.create (/node_modules/mongodb-core/lib/error.js:31:11)
+mongo-express_1  |     at /node_modules/mongodb-core/lib/connection/pool.js:483:72
+mongo-express_1  |     at authenticateStragglers (/node_modules/mongodb-core/lib/connection/pool.js:429:16)
+mongo-express_1  |     at Connection.messageHandler (/node_modules/mongodb-core/lib/connection/pool.js:463:5)
+mongo-express_1  |     at Socket.<anonymous> (/node_modules/mongodb-core/lib/connection/connection.js:319:22)
+mongo-express_1  |     at emitOne (events.js:116:13)
+mongo-express_1  |     at Socket.emit (events.js:211:7)
+mongo-express_1  |     at addChunk (_stream_readable.js:263:12)
+mongo-express_1  |     at readableAddChunk (_stream_readable.js:250:11)
+mongo-express_1  |     at Socket.Readable.push (_stream_readable.js:208:10)
+mongo-express_1  |   name: 'MongoError',
+mongo-express_1  |   message: 'Authentication failed.',
+mongo-express_1  |   ok: 0,
+mongo-express_1  |   errmsg: 'Authentication failed.',
+mongo-express_1  |   code: 18,
+mongo-express_1  |   codeName: 'AuthenticationFailed' }
+mongo-express_1  | unable to list databases
+mongo-express_1  | { MongoError: command listDatabases requires authentication
+mongo-express_1  |     at Function.MongoError.create (/node_modules/mongodb-core/lib/error.js:31:11)
+mongo-express_1  |     at /node_modules/mongodb-core/lib/connection/pool.js:483:72
+mongo-express_1  |     at authenticateStragglers (/node_modules/mongodb-core/lib/connection/pool.js:429:16)
+mongo-express_1  |     at Connection.messageHandler (/node_modules/mongodb-core/lib/connection/pool.js:463:5)
+mongo-express_1  |     at Socket.<anonymous> (/node_modules/mongodb-core/lib/connection/connection.js:319:22)
+mongo-express_1  |     at emitOne (events.js:116:13)
+mongo-express_1  |     at Socket.emit (events.js:211:7)
+mongo-express_1  |     at addChunk (_stream_readable.js:263:12)
+mongo-express_1  |     at readableAddChunk (_stream_readable.js:250:11)
+mongo-express_1  |     at Socket.Readable.push (_stream_readable.js:208:10)
+mongo-express_1  |   name: 'MongoError',
+mongo-express_1  |   message: 'command listDatabases requires authentication',
+mongo-express_1  |   ok: 0,
+mongo-express_1  |   errmsg: 'command listDatabases requires authentication',
+mongo-express_1  |   code: 13,
+mongo-express_1  |   codeName: 'Unauthorized' }
+Независимо от того, какое имя пользователя или пароль я ввожу в docker-compose.yml, я не могу подключить mongo-express к mongo, только если я использую исходную пару root и example.
+
+Обратите внимание, что я не получаю имя пользователя и пароль как переменные среды, но они напрямую вводятся в файл docker-compose.yml, как вы можете видеть здесь.
+
+Также обратите внимание, что когда я меняю переменные MONGO_INITDB_ROOT_USERNAME и MONGO_INITDB_ROOT_PASSWORD (mongo) на что-либо, они, похоже, не действуют, я все еще могу подключиться к mongo-express, используя исходные учетные данные root и example.
+
+Что вызывает такое поведение? Как я могу заставить это работать?
+
+ 27.11.2018 23:30
+17
+3
+14 796
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Ваша команда docker-compose:
+
+docker-compose up --build --force-recreate    
+Образ Mongo использует анонимные тома, поэтому вам также понадобится --renew-anon-volumes (док):
+
+docker-compose up --build --force-recreate --renew-anon-volumes
+В противном случае используется предыдущий том с уже инициализированной БД => переменные env INITDB не будут использоваться.
+
+ 28.11.2018 00:43
+В моем случае мне пришлось сначала остановить все свои контейнеры.
+
+Тогда docker system prune -a --volumes
+
+⚠️ Это последнее средство. Перед использованием этой команды проверьте докер документ,
+
+ 04.12.2020 14:25
+Если вы создадите контейнер mongodb (docker-compose up создаст / извлечет образ и запустит контейнер), указав ему имя пользователя и пароль, mongodb настроится при первом запуске и никогда больше! Пока вы не создадите новый контейнер для этой службы, пользователь / пароль по умолчанию будут теми, которые были установлены изначально. Если вы хотите изменить значение по умолчанию, необходимо создать новый контейнер. Вы также можете добавлять пользователей после запуска контейнера.
+
+Только остановка служебных контейнеров (docker-compose stop) не уничтожит контейнер. Для этого вызовите docker-compose down или при запуске вызовите docker-compose up --force-recreate.
+
+С Уважением
+
+ 07.01.2021 14:19
+Команда docker system prune -a --volumes может решить проблему, но гораздо более простой способ (если вы монтируете том данных, чтобы db был постоянным), вы можете просто удалить и воссоздать новый, таким образом, другие тома останутся нетронутыми. И, конечно же, объедините его с: docker-compose up --build --force -create --renew-anon-volume
+
+ 02.02.2021 15:21
+Для меня сработало просто добавление переменной окружения для сервера mongodb.
+
+ME_CONFIG_MONGODB_SERVER: mongo
+нравится:
+
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_SERVER: mongo
+Это было для меня, было какое-то время и, кажется, хост по умолчанию был удален в какой-то момент.
+
+— 
+dogmatic69
+ 12.07.2021 22:37
+это просто безумие, потому что на странице докеров mongo-express говорится, что по умолчанию используется mongo, но, видимо, его тоже нужно предоставить
+
+— 
+lulliezy
+ 13.07.2021 08:21
+Когда ME_CONFIG_MONGODB_SERVER - это имя контейнера mongodb, а не имя хоста.
+
 Как запустить запрос последовательно в цикле?
 Вопросы
 JAVASCRIPT
