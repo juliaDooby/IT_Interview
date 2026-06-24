@@ -1,3 +1,5 @@
+
+
 Q1. Why do we have both controlled and uncontrolled inputs?
 What interviewer wants to see: a solid understanding of a basic React concept.
 Ok, this is more like a warm-up question. Which is even more important to give a full answer.
