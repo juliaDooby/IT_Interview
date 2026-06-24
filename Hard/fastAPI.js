@@ -1,3 +1,638 @@
+FastAPI не закрывается при нажатии Ctr+c
+Вопросы
+PYTHON
+FastAPI не закрывается при нажатии Ctr+c
+У меня возникли трудности с выходом из FastAPI. Ctr+c не работает. Вот мой pyproject.toml
+
+[tool.pyright]
+exclude = ["app/worker"]
+ignore = ["app/worker"]
+
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = ""
+authors = ["SamiAlsubhi <sami@alsubhi.me>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.9"
+fastapi = "^0.65.2"
+tortoise-orm = "^0.17.4"
+asyncpg = "^0.23.0"
+aerich = "^0.5.3"
+networkx = "^2.5.1"
+numpy = "^1.21.0"
+ldap3 = "^2.9.1"
+fastapi-jwt-auth = "^0.5.0"
+python-multipart = "^0.0.5"
+torch = "1.7.1"
+pyts = "0.11.0"
+Pint = "^0.17"
+Cython = "^0.29.24"
+python-dotenv = "^0.19.0"
+arq = "^0.22"
+uvicorn = {extras = ["standard"], version = "^0.15.0"}
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+requests = "^2.25.1"
+asynctest = "^0.13.0"
+coverage = "^5.5"
+pytest-html = "^3.1.1"
+pytest-sugar = "^0.9.4"
+pytest-json-report = "^1.4.0"
+pytest-cov = "^2.12.1"
+pylint = "^2.11.1"
+autopep8 = "^1.5.7"
+black = "^22.3.0"
+aiosqlite = "^0.17.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+вот моя точка входа
+
+"""running API in a local dev environment"""
+import os
+import uvicorn
+from dotenv import load_dotenv
+
+# laoding env values
+load_dotenv("../.env")
+
+if __name__ == "__main__":
+    port = os.getenv("FASTAPI_PORT")
+    port = int(port) if port else None
+    uvicorn.run("app.main:app", host=os.getenv("FASTAPI_HOST"),
+                port=port, reload=True)
+Это то, что я получаю, когда запускаю его, а затем пытаюсь выйти, процесс зависает и не возвращается к терминалу:
+
+(trendr) sami@Samis-MBP backend % python run.py
+INFO:     Will watch for changes in these directories: ['/Users/name/Desktop/etc']
+INFO:     Uvicorn running on http://0.0.0.0:1000 (Press CTRL+C to quit)
+INFO:     Started reloader process [70087] using watchgod
+INFO:     Started server process [70089]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+^CINFO:     Shutting down
+INFO:     Finished server process [70089]
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+ 18.10.2022 21:24
+0
+4
+198
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Я читал об этой проблеме при использовании uvicorn и нашел приведенный ниже фрагмент кода, чтобы решить эту проблему:
+
+# Add the below code snippet to your app.py module after the app initialization.
+
+
+def receive_signal(signalNumber, frame):
+    print('Received:', signalNumber)
+    sys.exit()
+
+
+@app.on_event("startup")
+async def startup_event():
+    import signal
+    signal.signal(signal.SIGINT, receive_signal)
+    # startup tasks
+Ссылка:
+
+CTRL^C не работает во время запуска
+
+Все еще не решает проблему, он печатает Received: 2, но вывод такой же, как в вопросе.
+
+Мокающие зависимости FastAPI
+Вопросы
+PYTHON
+Мокающие зависимости FastAPI
+Я пишу модульные тестовые примеры для своего проекта fastapi и не могу издеваться над вызовом dynamodb.
+
+Файл_1
+В этом файле есть все методы для выполнения действий DynamoDB с использованием вызовов boto3.
+
+класс DynamoDBRepository:
+
+Вставить элемент — вставляет значение
+Получить элемент — возвращает значение
+#Файл_2
+
+Имеет класс AppConfig, который будет использоваться в качестве зависимости в более позднем файле.
+
+
+from file_1 import DynamoDBRepository 
+
+class AppConfig:
+
+    def __init__(self) -> None:
+        """Constructor class to instantiate dynamodb"""
+        self._job_table = "Dynamo_DB_Table"
+        self._region = "Table_region"
+        self._dynamodb_repository = DynamoDBRepository(table=self._job_table, region=self._region) # created a object for the dynamodb class mentioned in file 1.
+Файл_3:
+
+Этот файл имеет декоратор маршрута fast_api.
+
+from file_2 import AppConfig
+@router.get(
+    "/object/{object_id}"
+)
+def get_request(
+    object_id: str,
+    objects: AppConfig = Depends(AppConfig),
+) -> ObjectBody:
+
+    try:
+        object_detail = objects._dynamodb_repository.get_item({"object_id": object_id})
+        return object_detail["Item"]
+
+
+Я пытаюсь издеваться над методом get_item в своем тестовом файле:
+
+Файл_4
+
+Это мой тестовый файл, в котором
+
+client = TestClient(fast_api_app)
+
+class MockAppConfig:
+
+
+    def __init__(self) -> None:
+        """Constructor class to instantiate dynamodb and lambda"""
+         self._job_table = "Dynamo_DB_Table"
+        self._region = "Table_region"
+        self._dynamodb_repository = DynamoDBRepository(table=self._job_table, region=self._region)
+
+
+def test_get_request():
+    fast_api_app.dependency_overrides[AppConfig] = MockAppConfig
+    MockAppConfig()._dynamodb_repository.get_item = {
+         "id": "1234",
+         "title": "Foo",
+         "description": "Hello",
+     }
+
+        response = client.get("/objects/1234")
+        assert response.status_code == 200
+        assert response.json() == {
+            "id": "foo",
+            "title": "Foo",
+            "description": "Hi",
+        }
+Насмешка над get_item не работает, и она по-прежнему запрашивает исходную базу данных и терпит неудачу из-за проверки учетных данных.
+
+Я пробовал фикстуры monkeypatch и fastapi_dep, а также исправление, но почему-то насмешка над методом get_item не работает
+
+ 16.10.2022 10:01
+1
+0
+197
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Будет ли работать метод насмешки get_item?
+
+class MockDynamoDBRepository():
+     def get_item(*args, **kwargs):
+         return {
+             "Item": {
+             "id": "foo",
+             "title": "Foo",
+             "description": "Hi",
+             }
+         }
+
+class MockAppConfig:
+    def __init__(self) -> None:
+        """Constructor class to instantiate dynamodb and lambda"""
+         self._job_table = "Dynamo_DB_Table"
+        self._region = "Table_region"
+        self._dynamodb_repository = MockDynamoDBRepository(table=self._job_table, region=self._region)
+
+def test_get_request():
+    fast_api_app.dependency_overrides[AppConfig] = MockAppConfig
+
+    response = client.get("/objects/1234")
+    assert response.status_code == 200
+    assert response.json() == {
+            "id": "foo",
+            "title": "Foo",
+            "description": "Hi",
+        }
+ 16.10.2022 10:09
+Основываясь на ответе @svfat, вот как вы можете выполнить тест с помощью fastapi_dep - выберите любой из подходов к тестированию - с предложением или косвенным параметром:
+
+class MockDynamoDBRepository():
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def get_item(self, *args, **kwargs):
+        return {
+            "Item": {
+                "id": "foo",
+                "title": "Foo",
+                "description": "Hi",
+            }
+        }
+
+
+class MockAppConfig:
+
+    def __init__(self) -> None:
+        """Constructor class to instantiate dynamodb and lambda"""
+        self._job_table = "Mock Dynamo_DB_Table"
+        self._region = "Mock Table_region"
+        self._dynamodb_repository = MockDynamoDBRepository(table=self._job_table,
+                                                       region=self._region)
+
+
+def test_get_request_deps(fastapi_dep):
+    with fastapi_dep(fast_api_app).override(
+        {
+            AppConfig: MockAppConfig,
+        }
+    ):
+        response = client.get("/objects/1234")
+        assert response.status_code == 200
+        assert response.json() == {
+            "id": "foo",
+            "title": "Foo",
+            "description": "Hi",
+        }
+
+
+@pytest.mark.parametrize(
+    "fastapi_dep",
+    [
+        (
+            fast_api_app,
+            {AppConfig: MockAppConfig},
+        )
+    ],
+    indirect=True,
+)
+def test_get_request_deps_indirect(fastapi_dep):
+    response = client.get("/objects/1234")
+    assert response.status_code == 200
+    assert response.json() == {
+        "id": "foo",
+        "title": "Foo",
+        "description": "Hi",
+    }
+Если вы не хотите создавать все дополнительные классы, вы можете использовать чистый фиктивный подход следующим образом:
+
+from mock.mock import MagicMock
+
+def test_get_request_deps_mock(fastapi_dep):
+    my_mock = MagicMock()
+    my_mock._dynamodb_repository.get_item.return_value = {
+        "Item": {
+            "id": "foo",
+            "title": "Foo",
+            "description": "Hi",
+        }
+    }
+    with fastapi_dep(file_3.app).override(
+        {
+            AppConfig: lambda: my_mock,
+        }
+    ):
+        response = client.get("/objects/1234")
+        assert response.status_code == 200
+        assert response.json() == {
+            "id": "foo",
+            "title": "Foo",
+            "description": "Hi",
+        }
+
+«Значение не является допустимым адресом электронной почты» при отправке нескольких адресов электронной почты с использованием пользовательского интерфейса Pydantic, FastAPI и Swagger
+Вопросы
+PYTHON
+«Значение не является допустимым адресом электронной почты» при отправке нескольких адресов электронной почты с использованием пользовательского интерфейса Pydantic, FastAPI и Swagger
+Я использую пакет fastapi-mail и пытаюсь отправить несколько файлов на несколько адресов электронной почты. Когда я отправляю электронное письмо только на один адрес электронной почты, приложение работает должным образом. Однако, когда я перехожу на List[EmailStr] для отправки на несколько адресов электронной почты, я получаю эту ошибку:
+
+not a valid email address
+Вот мой код:
+
+@app.post("/file")async def send_file(
+background_tasks: BackgroundTasks,
+email:List[EmailStr] = Form(...), #I Change here before EmailStr = Form(...)
+file:Optional[List[UploadFile]] = File(...),) -> JSONResponse:
+print(email)
+print(file)
+message = MessageSchema(
+    subject = "Fastapi mail module",
+    recipients=email,
+    body = "Simple background task",
+    subtype = "html",
+    attachments=file)
+
+fm = FastMail(ConnectionConfig(
+    MAIL_USERNAME=res("MAIL_USERNAME"),
+    MAIL_PASSWORD=res("MAIL_PASSWORD"),
+    MAIL_FROM = "admin@acsebs.com",
+    MAIL_PORT=res("MAIL_PORT"),
+    MAIL_SERVER=res("MAIL_SERVER"),
+    MAIL_FROM_NAME = "send attachment email service",
+    MAIL_TLS=res("MAIL_TLS"),
+    MAIL_SSL=res("MAIL_SSL"),
+    USE_CREDENTIALS=res("USE_CREDENTIALS"),
+    VALIDATE_CERTS=res("VALIDATE_CERTS")
+))
+
+background_tasks.add_task(fm.send_message, message)
+
+return JSONResponse(status_code=200, content = {"message": "email has been sent"})
+Размещение данных через пользовательский интерфейс Swagger:
+Ошибка:
+ 14.10.2022 06:28
+0
+0
+454
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Похоже, ваша конечная точка принимает объект JSON, где вы должны правильно предоставить типы из-за проверки pydantic, почему бы вам просто не предоставить запрос в формате JSON, например:
+
+curl -X 'POST' \
+  'http://10.11.12.110:8000/file' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "filename": ["fileA", "fileB", "fileC"],
+  "email": ["user1@example.com", "user2@example.com"]
+}'
+ 14.10.2022 09:46
+ Ответ принят как подходящий
+Проблема не в вашем коде, а в пользовательском интерфейсе Swagger при отправке нескольких значений для одного и того же поля. Как описано в этом ответе, пользовательский интерфейс Swagger неправильно добавляет все элементы в список как один элемент, разделенный запятой (вы можете подтвердить это, посмотрев на второй предоставленный вами снимок экрана в разделе «Завиток»). Например, когда вы передаете два или более адресов электронной почты на конечную точку через пользовательский интерфейс Swagger, они отправляются как:
+
+['user1@example.com, user2@example.com']
+вместо того:
+
+['user1@example.com', 'user2@example.com']
+Следовательно, возникает ошибка, поскольку 'user1@example.com, user2@example.com' (все вместе как одна строка) не является допустимым адресом электронной почты. Если бы вы отправили запрос с помощью HTML <form> или JavaScript fetch — аналогично методу 1 и методу 3 этого ответа — вы бы увидели, что ваш код будет работать нормально.
+
+Примечание 1. Используйте разные элементы <input> для каждого email адреса, но используйте одно и то же значение name для всех (т. е. emails, которое является именем параметра, определенного в конечной точке).
+
+Примечание 2. Кстати, имейте в виду, что «самой важной частью для создания параметра Optional является часть = None», как описано в этом ответе и этом комментарии. Похоже, вы определили свой параметр files в своей конечной точке с помощью ключевого слова Optional, но использование = File(...) или полное игнорирование этой части сделало бы files обязательным полем; следовательно, обязательно используйте = File(None), если вы хотите, чтобы он был необязательным.
+
+Пример:
+@app.post("/email")
+def send_email(emails: List[EmailStr] = Form(...),
+              files: Optional[List[UploadFile]] = File(None)):
+    return emails
+
+
+@app.get('/emailForm', response_class=HTMLResponse)
+def index():
+    return """
+    <html>
+       <body>
+          <form method = "POST" action = "/email" enctype = "multipart/form-data">
+             <label for = "email1">Email 1:</label>
+             <input type = "text" id = "email1" name = "emails"><br><br>
+             <label for = "email2">Email 2:</label>
+             <input type = "text" id = "email2" name = "emails"><br><br>
+             <input type = "file" id = "files" name = "files" multiple>
+             <input type = "submit" value = "Submit">
+          </form>
+       </body>
+    </html>
+    """
+Настройте конечную точку для работы с пользовательским интерфейсом Swagger.
+Если вам нужно использовать пользовательский интерфейс Swagger и вы хотите, чтобы ваша конечная точка работала и при отправке запросов через него, вот решение, предложенное здесь . Выполните проверку length списка адресов электронной почты, и если он равен 1 (это означает, что список содержит один элемент), затем разделите этот элемент с помощью разделителя-запятой, чтобы получить фактический список адресов электронной почты. Наконец, просмотрите список, чтобы проверить каждое электронное письмо с помощью валидатора электронной почты, который используется Pydantic за кулисами.
+
+Пример:
+from fastapi import FastAPI, Depends, UploadFile, File, Form, HTTPException, status
+from email_validator import validate_email, EmailNotValidError
+from typing import List, Optional
+
+
+def check_email(email: str):
+    try:
+        validation = validate_email(email, check_deliverability=False)
+        return validation.email
+    except EmailNotValidError as e:
+        raise HTTPException(detail=f"'{email}' is not a valid email address. {str(e)}",
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+def email_checker(emails: List[str] = Form(...)):
+    if len(emails) == 1:
+        emails = [item.strip() for item in emails[0].split(',')]
+
+    return [check_email(email) for email in emails]
+
+
+@app.post("/email")
+def send_email(emails: List[str] = Depends(email_checker)):
+    return emails
+О, я понимаю, поэтому мне просто нужно разделить форму, но обычный список str с запятой через цикл, а затем добавить его снова к проверке без использования EmailStr, хорошо, спасибо, Крис, позвольте мне попробовать, я сообщу вам результат позже
+
+Почему я получаю ошибку атрибуции в fast-api? AttributeError: тип объекта не имеет атрибута
+Вопросы
+PYTHON
+Почему я получаю ошибку атрибуции в fast-api? AttributeError: тип объекта не имеет атрибута
+Я использую fast-api и pydantic для моделирования в своем проекте, я создал функцию преобразования атрибутов в словарь.
+
+from pydantic import BaseModel
+
+
+class WidgetItem(BaseModel):
+    """Class for WidgetItem"""
+    adId: str = ''
+
+    @classmethod
+    def generate_widget_item_dict(cls):
+        return {
+            'adId': cls.adId
+        }
+Я пытаюсь вызвать generate_widget_item_dict(), но получаю эту ошибку:
+
+AttributeError: объект типа «WidgetItem» не имеет атрибута «adId»
+
+ 05.10.2022 09:39
+0
+1
+276
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Это происходит потому, что WidgetItem должен быть инициирован, поскольку он наследуется от BaseModel.
+
+Это отличается от, например:
+
+class WidgetModel:
+    adId: str = ""
+
+    @classmethod
+    def generate_widget_item_dict(cls):
+        return {
+            'adId': cls.adId
+        }
+В таком случае это сработает. Однако это не модель Pydantic.
+
+Если вы хотите создать dict из модели Pydantic, вы можете просто сделать:
+
+from pydantic import BaseModel
+
+
+class WidgetItem(BaseModel):
+    """Class for WidgetItem"""
+    adId: str
+
+
+w = WidgetItem(adId = "id")
+w.dict()
+ 05.10.2022 09:49
+ Ответ принят как подходящий
+В случае, когда вам нужны только некоторые атрибуты данного класса, я бы создал несколько классов и вернул правильно «замаскированный» класс. Вот пример для иллюстрации:
+Примечание. Это может быть сложно, если у вас много зависимостей.
+
+from pydantic import BaseModel
+
+
+class WidgetItem1(BaseModel):
+    """
+    Class for WidgetItem
+
+    Note: this class only has 1 attribute
+    """
+    attr_1: str = 'one'
+
+
+class WidgetItem2(WidgetItem1):
+    """
+    A more granular class for WidgetItem ->
+    Inherited from `WidgetItem1`
+
+    Note: this class has 3 attributes
+    """
+    attr_2: str = 'two'
+    attr_3: str = 'three'
+
+Учитывая конечную точку fastapi, вы можете вернуться определенные атрибуты, в зависимости от вашего response_model:
+
+WidgetItem1: вернется только attr_1
+WidgetItem2: вернет 3 атрибута: attr_1, attr_2, attr_3 Вот код для демонстрации:
+# Choose the response model you want to return
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+# Create a function to use for multiple endpoints
+def get_widget():
+    """
+    Returns a dummy widget to demonstrate
+    functionality. Change the `response_model` to
+    see different attributes returned.
+    """
+    # Initially set all 3 attributes and see
+    # which are returned by fastapi based on `response_model`
+    result = {
+        "attr_1": "one",
+        "attr_2": "two",
+        "attr_3": "three"
+    }
+    return result
+
+
+@app.get("/widgets-1", response_model=WidgetItem1)
+def get_widget_1():
+    """
+    Endpoint which wraps `get_widget()` 
+    with `WidgetItem1` as the response model
+    """
+    return get_widget()
+
+@app.get("/widgets-2", response_model=WidgetItem2)
+def get_widget_2():
+    """
+    Endpoint which wraps `get_widget()` 
+    with `WidgetItem2` as the response model
+    """
+    return get_widget()
+
+В качестве альтернативы вы можете создать собственную функциональность для возврата специально отформатированного словаря. Если это так, другие ответы должны работать на вас.
+
+С Pydantic, как я могу создать свою собственную причину ValidationError
+Вопросы
+PYTHON
+С Pydantic, как я могу создать свою собственную причину ValidationError
+кажется невозможным установить ограничение регулярного выражения с полем __root__, подобным этому:
+
+class Cars(BaseModel):
+    __root__: Dict[str, CarData]
+
+поэтому я прибегал к этому в конечной точке:
+
+@app.post("/cars")
+async def get_cars(cars: Cars = Body(...)):
+    x = cars.json()
+    y = json.loads(x)
+    keys = list(y.keys())
+    try:
+        if any([re.search(r'^\d+$', i) is None for i in keys]):
+            raise ValidationError
+    except ValidationError as ex:
+        return 'wrong type'
+    return 'works'
+
+это хорошо работает, поскольку я получаю wrong type, если я не использую цифру в теле запроса.
+
+но я хотел бы вернуть что-то похожее на то, что возвращает pydantic, но с пользовательским сообщением:
+
+{
+  "detail": [
+    {
+      "loc": [
+        "body",
+        "__root__",
+      ],
+      "msg": "hey there, you can only use digits!",
+      "type": "type_error.???"
+    }
+  ]
+}
+ 06.10.2022 06:05
+0
+4
+128
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете передать свою собственную строку ошибки, используя raise ValidationError("Wrong data type"). Надеюсь, это поможет.
+
+ 06.10.2022 08:01
+если это кому-то поможет, вот как я проверил динамическое поле:
+
+class Cars(BaseModel):
+    __root__: Dict[str, CarData]
+    
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def car_id_is_digit(cls, fields):
+        car_ids = list(list(fields.values())[0].keys())
+        print(car_ids)
+        if any([bool(re.search(r'^\d+$', car_id)) == False for car_id in car_ids]):
+            raise ValueError("car_id must be a string that is a digit.")
+        else:
+            return fields
+поскольку для обычного поля validator требуется имя поля в качестве аргумента, я использовал root_validator, который проверяет все поля и не требует этого аргумента.
+
+все это потому, что на __root__, похоже, нельзя ссылаться в обычном валидаторе полей.
+
+однако это означает, что у вас могут быть только поля __root__ - и все они будут подчиняться одним и тем же правилам проверки... не знаю, как с этим добавить больше полей.
+
 Ошибка декодирования JSON при попытке поиска в файле JSON через FAST Api
 Вопросы
 PYTHON
