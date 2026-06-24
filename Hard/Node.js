@@ -1,3 +1,53 @@
+Q1. Create a sleep function using Async/Await.
+In the below example, the sleep function returns a promise which is resolved after given millisecond using setTimeout API.
+
+
+
+Q2. How Javascript Engine works?
+When a js file is ran,
+
+A global execution context is created.
+
+A memory heap is created where all variables (with var keyword) and functions (except arrow func) are declared.
+
+In the below image we can see, variable a is declared w/o even execution has started.
+image
+
+A Call Stack is created which stores the line which is going to be executed.
+image
+
+When call stack gets a function call, it creates a functional context and the process is repeated in the functional context.
+
+When call stack encounters WEB APIs like setTimeout/Interval/Immediate, these are sent to callback queue to process after call stack is empty.
+
+When call stack encounters a Promise it is sent to micro task queue (higher priority than callback queue) to process after call stack is empty.
+
+Once call stack is empty, event loop moves functions from queues to call stack for execution.
+
+Q3. Difference between Single Threaded & Asynchronous.
+My View:
+Single Threaded -> It means only once function can be executed at a time.
+Async -> It is about non-blocking of execution of functions.
+
+In this below image, we can easily understand the difference. Thanks to Baeldung
+
+Q4. How to debug a slow API?
+My View:
+
+The Console.log approach
+Check if the issue is with network by sending request from different network.
+Log time when req is received by the backend.
+Log time before a DB query.
+Log time after a DB query.
+Log time before/after some heavy operation.
+Log time before sending response.
+Analyse the time, you will get your culprit.
+Profiler Approach
+Use any profiling tool to check where the execution is lagging.
+
+What is EventEmitter in NodeJS?
+My View: EventEmitter is used to create event listeners in JS.
+
 Node.js Interview Questions and Answers For Freshers
 Start with the fundamentals: core Node.js concepts, basic modules, and how asynchronous JavaScript works. These interview questions in Node.js help you build a strong base before moving to Express, APIs, and real-world use cases.
 
