@@ -1,3 +1,755 @@
+FastAPI возвращает «Ошибка 422: необрабатываемый объект», когда я отправляю данные составной формы с помощью JavaScript Fetch API
+Вопросы
+JAVASCRIPT
+FastAPI возвращает «Ошибка 422: необрабатываемый объект», когда я отправляю данные составной формы с помощью JavaScript Fetch API
+У меня возникла проблема с использованием метода JavaScript Fetch API при отправке простого formData, например:
+
+function register() {
+  var formData = new FormData();
+  var textInputName = document.getElementById('textInputName');
+  var sexButtonActive = document.querySelector('#buttonsMW > .btn.active');
+  var imagesInput = document.getElementById('imagesInput');
+
+  formData.append('name', textInputName.value);
+  if (sexButtonActive != null){
+    formData.append('sex', sexButtonActive.html())
+  } else {
+    formData.append('sex', "");
+  }
+  formData.append('images', imagesInput.files[0]);
+
+  fetch('/user/register', {
+    method: 'POST',
+    data: formData,
+  })
+  .then(response => response.json());
+}
+document.querySelector("form").addEventListener("submit", register);
+А на стороне сервера (FastAPI):
+
+@app.post("/user/register", status_code=201)
+def register_user(name: str = Form(...), sex: str = Form(...), images: List[UploadFile] = Form(...)):
+try:
+    print(name)
+    print(sex)
+    print(images)
+    return "OK"
+except Exception as err:
+    print(err)
+    print(traceback.format_exc())
+    return "Error"
+После нажатия на кнопку отправки я получаю Error 422: Unprocessable entity. Итак, если я пытаюсь добавить заголовок Content-Type: multipart/form-data, это также не помогает, потому что я получаю другой Error 400: Bad Request. Хочу понять, что я делаю не так, и как обработать formData без таких ошибок?
+
+ 20.11.2022 11:27
+2
+0
+323
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Тело ответа 422 будет содержать сообщение об ошибке о том, какие поля отсутствуют или не соответствуют ожидаемому формату. Поскольку вы не предоставили это (пожалуйста, сделайте это), я предполагаю, что ошибка вызвана тем, как вы определили параметр images в своей конечной точке. Поскольку ожидается, что images будет List из File(s), вы должны вместо этого определить его, используя тип File вместо Form. Например:
+
+images: List[UploadFile] = File(...)
+                           ^^^^    
+При использовании UploadFile, вам не нужно использовать File() в значении по умолчанию параметра. Следовательно, ниже также должно работать:
+
+images: List[UploadFile]
+Кроме того, во внешнем интерфейсе обязательно используйте параметр body (не data) в функции fetch() для передачи объекта FormData (см. пример в MDN Web Docs). Например:
+
+fetch('/user/register', {
+      method: 'POST',
+      body: formData,
+   })
+   .then(res => {...
+Пожалуйста, ознакомьтесь с этим ответом , а также этим ответом, в которых приведены рабочие примеры того, как загружать несколько files и form данных в серверную часть FastAPI, используя Fetch API во внешнем интерфейсе.
+
+Что касается ручного указания Content-Type при отправке multipart/form-data, вам не нужно (и не следует) этого делать, а лучше позволить браузеру установить Content-Type — пожалуйста, взгляните на этот ответ для получения более подробной информации.
+
+ 20.11.2022 12:21
+Итак, я обнаружил, что у меня есть ошибка в этой части кода:
+
+formData.append('images', imagesInput.files[0]);
+Правильный способ загрузки нескольких файлов:
+
+for (const image of imagesInput.files) {
+    formData.append('images', image);
+}
+Кроме того, мы должны использовать File в аргументах метода FastAPI images: List[UploadFile] = File(...) (вместо Form) и изменить данные на тело в методе JS. Это не ошибка, потому что после вызова метода мы получаем правильный тип данных, например:
+
+Name: Bob
+Sex: Man
+Images: [<starlette.datastructures.UploadFile object at 0x7fe07abf04f0>]
+
+Спроектировать поле на основе условия MongoDB
+Вопросы
+PYTHON
+Спроектировать поле на основе условия MongoDB
+Моя схема в MongoDB выглядит так:
+
+{
+  "_id": "be9e9198-86ab-456e-97e1-f1039cb07b59",
+  "isDeleted": false,
+  "user": {
+    "name": "john2",
+    "surname": "doe2",
+    "email": "123.abcd@gmail.com",
+    "phone": "+012345678912",
+    "age": 20,
+    "gender": "male",
+    "nationality": "smth",
+    "universityMajor": "ENGINEERING",
+    "preferences": null,
+    "highPrivacy": false,
+  }
+  (Other stuff)
+  .
+  .
+  .
+}
+Я пытаюсь включить поле user.phone только тогда, когда для user.highPrivacy установлено значение False. В противном случае я хочу исключить поле.
+
+Например, для указанного выше пользователя я должен вернуть номер телефона. Но если позже для user.highPrivacy было установлено значение True, оно не должно включать его.
+
+То, что я пробовал до сих пор, это:
+
+dbConnection.aggregate([
+            {"$match" : 
+                {"_id": userId, "isDeleted" : False} 
+            },
+            {
+                "$project" : {
+                    "postings" : 0,
+                    "starredPostings" : 0, 
+                    "user.timestamp" : 0, 
+                    "user.phone" : { "$cond" : [{"$eq": ["$user.highPrivacy", True]}, 0, "$user.phone"] },
+                }
+            },
+            ])
+Это продолжает давать мне ошибку:
+
+pymongo.errors.OperationFailure: Invalid $project :: caused by :: Cannot use expression other than $meta in exclusion projection
+Но ответы, которые здесь:
+
+Условно включить поле (_id или другое) в агрегацию проекта mongodb?
+Проецируйте разные поля в зависимости от разных условий
+https://kb.objectrocket.com/mongo-db/mongodb-project-condition-how-to-use-project-with-a-condition-469
+используют ту же проекцию, что и я, или, по крайней мере, я так думаю.
+
+Так где именно проблема в моей агрегации?
+
+ 11.11.2022 15:58
+0
+0
+63
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Я бы использовал этап $cond и ключевое слово $$REMOVE.
+
+Смотрите пример на детской площадке: https://mongoplayground.net/p/x09lSOojjiY
+
+Пример данных коллекции:
+
+[
+  {
+    "_id": "1",
+    "isDeleted": false,
+    "user": {
+      "name": "john2",
+      "phone": "+012345678912",
+      "highPrivacy": false
+    }
+  },
+  {
+    "_id": "2",
+    "isDeleted": false,
+    "user": {
+      "name": "john2",
+      "phone": "+012345678912",
+      "highPrivacy": true
+    }
+  }
+]
+Совокупный запрос:
+
+db.collection.aggregate([
+  {
+    $match: {
+      "isDeleted": false
+    }
+  },
+  {
+    $project: {
+      "isDeleted": 1,
+      "user.name": 1,
+      "user.highPrivacy": 1,
+      "user.phone": {
+        $cond: {
+          if: {
+            $eq: [ "$user.highPrivacy", true ]
+          },
+          then: "$user.phone",
+          else: "$$REMOVE"
+        }
+      }
+    }
+  }
+])
+Результат:
+
+[
+  {
+    "_id": "1",
+    "isDeleted": false,
+    "user": {
+      "highPrivacy": false,
+      "name": "john2"
+    }
+  },
+  {
+    "_id": "2",
+    "isDeleted": false,
+    "user": {
+      "highPrivacy": true,
+      "name": "john2",
+      "phone": "+012345678912"
+    }
+  }
+]
+ 11.11.2022 16:40
+ Ответ принят как подходящий
+Запрос
+
+если вы хотите, чтобы поле вычислялось из выражения и удалялось, вы не делаете это 0 вы используете системную переменную $$REMOVE
+вы можете использовать $project или $set ниже, чтобы сохранить или удалить телефон в зависимости от поля highPrivacy
+Плеймонго
+
+aggregate(
+[{"$set": 
+   {"user.phone": 
+     {"$cond": 
+       [{"$eq": ["$user.highPrivacy", true]}, "$$REMOVE", "$user.phone"]}}}]
+
+FastAPI - «TypeError: issubclass () arg 1 должен быть классом» с модульным импортом
+Вопросы
+PYTHON
+FastAPI - «TypeError: issubclass () arg 1 должен быть классом» с модульным импортом
+При работе с модульным импортом с FastAPI и SQLModel я получаю следующую ошибку, если открываю /docs:
+
+TypeError: issubclass() arg 1 должен быть классом
+
+Питон 3.10.6
+пидантик 1.10.2
+быстрый доступ 0.85.2
+sqlmodel 0.0.8
+макОС 12.6
+Вот воспроизводимый пример.
+
+user.py
+
+from typing import List, TYPE_CHECKING, Optional
+from sqlmodel import SQLModel, Field
+
+if TYPE_CHECKING:
+    from item import Item
+
+class User(SQLModel):
+    id: int = Field(default=None, primary_key=True)
+    age: Optional[int]
+    bought_items: List["Item"] = []
+item.py
+
+from sqlmodel import SQLModel, Field
+
+class Item(SQLModel):
+    id: int = Field(default=None, primary_key=True)
+    price: float
+    name: str
+main.py
+
+from fastapi import FastAPI
+
+from user import User
+
+app = FastAPI()
+
+@app.get("/", response_model=User)
+def main():
+    return {"message": "working just fine"}
+Я следовал руководству от sqlmodel https://sqlmodel.tiangolo.com/tutorial/code-structure/#make-circular-imports-work. Если бы я поместил модели в один файл, все бы работало нормально. Поскольку мои реальные модели довольно сложны, мне нужно полагаться на модульный импорт.
+
+Выслеживать:
+
+Traceback (most recent call last):
+  File "/Users/felix/opt/anaconda3/envs/fastapi_test/lib/python3.10/site-packages/fastapi/utils.py", line 45, in get_model_definitions
+    m_schema, m_definitions, m_nested_models = model_process_schema(
+  File "pydantic/schema.py", line 580, in pydantic.schema.model_process_schema
+  File "pydantic/schema.py", line 621, in pydantic.schema.model_type_schema
+  File "pydantic/schema.py", line 254, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 461, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 847, in pydantic.schema.field_singleton_schema
+  File "pydantic/schema.py", line 698, in pydantic.schema.field_singleton_sub_fields_schema
+  File "pydantic/schema.py", line 526, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 921, in pydantic.schema.field_singleton_schema
+  File "/Users/felix/opt/anaconda3/envs/fastapi_test/lib/python3.10/abc.py", line 123, in __subclasscheck__
+    return _abc_subclasscheck(cls, subclass)
+TypeError: issubclass() arg 1 must be a class
+ 07.11.2022 13:24
+1
+4
+519
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+TL;DR
+Вам нужно вызвать User.update_forward_refs(Item=Item) перед настройкой OpenAPI.
+
+Объяснение
+Итак, это на самом деле немного сложнее, и я пока не совсем уверен, почему это не упоминается в документах. Может быть, я что-то упускаю. Так или иначе...
+
+Если вы проследите трассировку, вы увидите, что ошибка возникает из-за того, что в строке 921 функции pydantic.schema в функции field_singleton_schema выполняется проверка, чтобы убедиться, что issubclass(field_type, BaseModel) и в этот момент field_type на самом деле не является экземпляром type.
+
+Небольшая отладка показывает, что это происходит, когда создается схема для модели User и обрабатывается поле bought_items. В этот момент аннотация обрабатывается, и аргумент типа для List по-прежнему является прямой ссылкой на Item. Это означает, что это не настоящий Item класс. И это то, что передается issubclass и вызывает ошибку.
+
+Это довольно распространенная проблема при работе с рекурсивными или циклическими отношениями между моделями Pydantic, поэтому они были так любезны предоставить специальный метод именно для этого. Это объясняется в разделе Отложенные аннотации документации. Это метод update_forward_refs, и, как следует из названия, он предназначен для разрешения прямых ссылок.
+
+Что сложно в этом случае, так это то, что вам нужно предоставить ему обновленное пространство имен, чтобы разрешить ссылку Item. Для этого вам действительно нужно иметь реальный класс Item в области видимости, потому что это то, что должно быть в этом пространстве имен. Где вы это делаете, не имеет большого значения. Например, вы можете импортировать модель User в свой модуль item и вызвать ее там (очевидно, под определением Item):
+
+from sqlmodel import SQLModel, Field
+
+from .user import User
+
+class Item(SQLModel):
+    id: int = Field(default=None, primary_key=True)
+    price: float
+    name: str
+
+User.update_forward_refs(Item=Item)
+Но этот вызов должен произойти до того, как будет предпринята попытка настроить эту схему. Таким образом, вам как минимум нужно импортировать модуль item в ваш модуль main:
+
+from fastapi import FastAPI
+
+from .user import User
+from . import item
+
+api = FastAPI()
+
+@api.get("/", response_model=User)
+def main():
+    return {"message": "working just fine"}
+В этот момент, вероятно, проще иметь подпакет только с модулями модели и импортировать их все в __init__.py этого подпакета.
+
+Причина, по которой я привел пример размещения вызова User.update_forward_refs под вашим определением Item, заключается в том, что такие ситуации обычно возникают, когда у вас на самом деле есть круговые отношения, то есть если ваш класс Item, например, имеет поле users, которое было введено как list[User]. Тогда вам все равно придется импортировать User туда и можно просто обновить там ссылки.
+
+В вашем конкретном примере у вас фактически нет циклических зависимостей, поэтому, строго говоря, нет необходимости в побеге TYPE_CHECKING. Вы можете просто сделать from .item import Item внутри user.py и поместить фактический класс в свою аннотацию как bought_items: list[Item]. Но я предполагаю, что вы упростили фактический вариант использования и просто забыли включить циклическую зависимость.
+
+Может быть, я что-то упускаю, и кто-то еще может найти способ вызвать update_forward_refs без необходимости явно указывать Item, но этот способ определенно должен работать.
+
+ 07.11.2022 22:02
+Для тех, кто оказался здесь, кто (как и я) получил ту же ошибку, но не смог решить ее с помощью приведенного выше решения, мой сценарий выглядел так. Кажется, что SQLModel зависит от pydantic.BaseModel, поэтому это решение также применимо и здесь.
+
+from pydantic import BaseModel
+
+class Model(BaseModel):
+    values: list[int, ...]
+
+class SubModel(Model):
+    values = list[int, int, int]
+Мне потребовалось много времени, чтобы понять, в чем была моя ошибка, но в SubModel я использовал = (присваивание), тогда как должен был использовать : (подсказка типа).
+
+Самое странное, что это работало в контейнере докера (Linux), но не локально (Windows). Кроме того, mypy не заметил этого.
+
+Asyncio одновременно запускает несколько асинхронных функций с uvicorn и fastapi
+Вопросы
+PYTHON
+Asyncio одновременно запускает несколько асинхронных функций с uvicorn и fastapi
+У меня проблемы с запуском собственных асинхронных функций с помощью uvicorn (fastapi)
+
+Моя цель — иметь возможность запускать функцию queue manager, а также веб-приложение uvicorn. Однако кажется, что моя функция start блокирует выполнение кода uvicorn.run.
+
+
+async def queue_manager(self):
+        while True:
+            job = await self.queue.get()
+            print(job)
+            await asyncio.sleep(2)
+
+async def start():
+    task1 = asyncio.create_task(queue_manager())
+    await asyncio.gather(task1)
+
+app = FastAPI()
+app.include_router(server.router)
+
+if __name__ == "__main__":
+    asyncio.run(start())
+    uvicorn.run("main:app", host = "0.0.0.0", port=5959)
+Чтобы исправить это, я попытался запустить uvicorn.run внутри моей функции start, однако это привело к следующей ошибке:
+
+line 35, in <module>
+    asyncio.run(start())
+line 17, in start
+    await uvicorn.run("main:app", host = "0.0.0.0", port=5959)
+RuntimeError: asyncio.run() cannot be called from a running event loop
+async def start():
+    task1 = asyncio.create_task(custom_instance_manager.queue_manager())
+    task2 = asyncio.create_task(uvicorn.run(
+        "main:app", host = "0.0.0.0", port=5959))
+    await asyncio.gather(task1, task2)
+
+if __name__ == "__main__":
+    asyncio.run(start())
+ 07.11.2022 02:47
+0
+0
+175
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете использовать событие запуска.
+
+async def queue_manager(self):
+        while True:
+            job = await self.queue.get()
+            print(job)
+            await asyncio.sleep(2)
+
+
+app = FastAPI()
+app.include_router(server.router)
+
+@app.on_event('startup')
+async def start():
+    asyncio.create_task(queue_manager())
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host = "0.0.0.0", port=5959)
+ 07.11.2022 03:21
+Вместо использования uvicorn.run вы можете использовать асинхронную функцию uvicorn server с быстрой конфигурацией API.
+
+async def run_server():
+    api = configure_fastapi()
+    config = uvicorn.Config(api, port=8021, host='0.0.0.0')
+    server = uvicorn.Server(config)
+    await server.serve()
+
+Как отправить значение HTML-формы <input> с помощью шаблонов FastAPI и Jinja2?
+Вопросы
+PYTHON
+Как отправить значение HTML-формы <input> с помощью шаблонов FastAPI и Jinja2?
+Я столкнулся со следующей проблемой при попытке передать значение из элемента HTML-формы <input> в атрибут формы action и отправить его на сервер FastAPI.
+
+Вот как загружается шаблон Jinja2 (HTML):
+
+# Test TEMPLATES
+@app.get("/test",response_class=HTMLResponse)
+async def read_item(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+Моя HTML-форма:
+
+<form action = "/disableSubCategory/{{subCatName}}">
+    <label for = "subCatName">SubCategory:</label><br>
+    <input type = "text" id = "subCatName" name = "subCatName" value = ""><br>
+    <input type = "submit" value = "Disable">
+</form>
+Моя конечная точка FastAPI, которая будет вызываться в действии формы:
+
+# Disable SubCategory
+@app.get("/disableSubCategory/{subCatName}")
+async def deactivateSubCategory(subCatName: str):
+    disableSubCategory(subCatName)
+    return {"message": "SubCategory [" + subCatName + "] Disabled"}
+Ошибка, которую я получаю:
+
+"GET /disableSubCategory/?subCatName=Barber HTTP/1.1" 404 Not Found
+Я пытаюсь добиться следующего вызова FastAPI:
+
+/disableSubCategory/{subCatName} ==> "/disableSubCategory/Barber"
+Любой, кто мог бы помочь мне понять, что я делаю неправильно?
+
+Спасибо. Лео
+
+ 04.11.2022 15:34
+0
+4
+952
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Опция 1
+Вы можете определить имя категории как параметр Form в бэкэнде и отправить запрос POST из внешнего интерфейса, используя HTML <form>, как описано в методе 1 этого ответа.
+
+app.py
+
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+@app.post('/disable')
+def disable_cat(cat_name: str = Form(...)):
+    return f'{cat_name} category has been disabled.'
+
+@app.get('/', response_class=HTMLResponse)
+def main(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <h1>Disable a category</h1>
+      <form method = "post" action = "/disable">
+         <label for = "cat_name">Enter a category name to disable:</label><br>
+         <input type = "text" id = "cat_name" name = "cat_name">
+         <input class = "submit" type = "submit" value = "Submit">
+      </form>
+   </body>
+</html>
+Вариант 2
+Вы можете объявить имя категории в качестве параметра запроса в своей конечной точке, а во внешнем интерфейсе использовать подход, аналогичный тому, который продемонстрирован в вашем вопросе, чтобы преобразовать значение формы элемента формы <input> в параметр запроса, а затем добавить его в запрос строка URL (в атрибуте action).
+
+Обратите внимание, что ниже используется запрос GET, в отличие от приведенного выше (в этом случае вам нужно использовать @app.get() в бэкэнде и <form method = "get" ... во внешнем интерфейсе, что в любом случае является методом по умолчанию). Имейте в виду, что большинство браузеров кэшируют запросы GET (т. е. сохраняются в истории браузера), что делает их менее безопасными по сравнению с POST, поскольку отправляемые данные являются частью URL-адреса и видны всем, у кого есть доступ к устройству. Таким образом, метод GET не следует использовать при отправке паролей или другой конфиденциальной информации.
+
+app.py
+
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+@app.get('/disable')
+def disable_cat(cat_name: str):
+    return f'{cat_name} category has been disabled.'
+
+@app.get('/', response_class=HTMLResponse)
+def main(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <h1>Disable a category</h1>
+      <form method = "get" id = "myForm" action='/disable{{ cat_name }}'>
+         <label for = "cat_name">Enter a category name to disable:</label><br>
+         <input type = "text" id = "cat_name" name = "cat_name">
+         <input class = "submit" type = "submit" value = "Submit">
+      </form>
+   </body>
+</html>
+Если вместо этого вы хотите использовать запрос POST, который немного безопаснее, чем GET, поскольку параметры не сохраняются в истории браузера и имеет больше смысла при обновлении контента/состояния на сервере по сравнению с GET, который должен быть используется при запросе (без изменения) данных — вы можете определить конечную точку FastAPI с помощью @app.post() и заменить приведенный выше шаблон приведенным ниже (аналогично методу 2 этого ответа), который отправляет форму с использованием метода POST после преобразования данных формы. в параметры запроса:
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+      <script>
+         document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+               var myForm = document.getElementById('myForm');
+               var qs = new URLSearchParams(new FormData(myForm)).toString();
+               myForm.action = '/disable?' + qs;
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Disable a category</h1>
+      <form method = "post" id = "myForm">
+         <label for = "cat_name">Enter a category name to disable:</label><br>
+         <input type = "text" id = "cat_name" name = "cat_name">
+         <input class = "submit" type = "submit" value = "Submit">
+      </form>
+   </body>
+</html>
+Вариант 3
+Вы по-прежнему можете определить его как параметр пути и использовать JavaScript во внешнем интерфейсе для изменения атрибута action элемента <form>, передав значение элемента формы <input> в качестве параметра пути в URL-адрес, аналогично тому, что было описано ранее.
+
+app.py
+
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+@app.post('/disable/{name}')
+def disable_cat(name: str):
+    return f'{name} category has been disabled.'
+
+@app.get('/', response_class=HTMLResponse)
+def main(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+      <script>
+         document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+               var myForm = document.getElementById('myForm');
+               var catName = document.getElementById('catName').value;
+               myForm.action = '/disable/' + catName;
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Disable a category</h1>
+      <form method = "post" id = "myForm">
+         <label for = "catName">Enter a category name to disable:</label><br>
+         <input type = "text" id = "catName" name = "catName">
+         <input class = "submit" type = "submit" value = "Submit">
+      </form>
+   </body>
+</html>
+Вариант 4
+Если вы хотите предотвратить перезагрузку/перенаправление страницы при нажатии кнопки submit в HTML <form> и получить результаты на той же странице, вы можете использовать Fetch API , интерфейс/библиотеку JavaScript, чтобы создать асинхронный HTTP-запрос, аналогичный этому ответу , а также этому ответу и этому ответу . Кроме того, можно вызвать функцию Event.preventDefault() , как описано в этом ответе, чтобы предотвратить действие по умолчанию. Приведенный ниже пример основан на предыдущем варианте (т. е. варианте 3); однако тот же подход, описанный ниже (т. е. создание асинхронного HTTP-запроса), также можно использовать для вариантов 1 и 2, продемонстрированных ранее, если вы не хотите, чтобы браузер обновлял страницу при отправке <form>.
+
+app.py
+
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+@app.post('/disable/{name}')
+def disable_cat(name: str):
+    return f'{name} category has been disabled.'
+
+@app.get('/', response_class=HTMLResponse)
+def main(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+      <script>
+         document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+               e.preventDefault() // Cancel the default action
+               var catName = document.getElementById('catName').value;
+               fetch('/disable/' + catName, {
+                     method: 'POST',
+                  })
+                  .then(resp => resp.text()) // or, resp.json(), etc.
+                  .then(data => {
+                     document.getElementById("response").innerHTML = data;
+                  })
+                  .catch(error => {
+                     console.error(error);
+                  });
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Disable a category</h1>
+      <form id = "myForm">
+         <label for = "catName">Enter a category name to disable:</label><br>
+         <input type = "text" id = "catName" name = "catName">
+         <input class = "submit" type = "submit" value = "Submit">
+      </form>
+      <div id = "response"></div>
+   </body>
+</html>
+ 06.11.2022 18:48
+Просто чтобы предоставить вам обратную связь и следить за решением, которое я внедрил.
+
+Как упоминал @Chris, я перешел к предложенному решению 3.
+
+Пожалуйста, найдите ниже мой новый код:
+
+== FastAPI ==
+
+# Test TEMPLATES
+@app.get("/test",response_class=HTMLResponse)
+async def read_item(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+# Disable SubCategory
+@app.post("/disableSubCategory/{subCatName}")
+async def deactivateSubCategory(subCatName: str):
+    disableSubCategory(subCatName)
+    return {"message": "Sub-Category [" + subCatName + "] Disabled"}
+
+# Enable SubCategory
+@app.post("/enableSubCategory/{subCatName}")
+async def activateSubCategory(subCatName: str):
+    enableSubCategory(subCatName)
+    return {"message": "Sub-Category [" + subCatName + "] Enabled"}
+== HTML ==
+
+<html>
+<head>
+    <title>Item Details</title>
+    <link href = "{{ url_for('static', path='/styles.css') }}" rel = "stylesheet">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+           document.getElementById("disableSubCategory").addEventListener("submit", function (e) {
+              var myForm = document.getElementById('disableSubCategory');
+              var disableSubCatName = document.getElementById('id_disableSubCategory').value;
+              myForm.action = '/disableSubCategory/' + disableSubCatName;
+           });
+        });
+     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+           document.getElementById("enableSubCategory").addEventListener("submit", function (e) {
+              var myForm2 = document.getElementById('enableSubCategory');
+              var enableSubCatName = document.getElementById('id_enableSubCategory').value;
+              myForm2.action = '/enableSubCategory/' + enableSubCatName;
+           });
+        });
+     </script>
+
+</head>
+<body>
+
+    <form id = "disableSubCategory" enctype = "multipart/form-data" method = "post">
+        <label for = "subCatName">SubCategory:</label><br>
+        <input type = "text" id = "id_disableSubCategory" value = ""><br>
+        <input type = "submit" value = "Disable" id = "disable">
+    </form>
+
+    <form id = "enableSubCategory" enctype = "multipart/form-data" method = "post">
+        <label for = "subCatName">SubCategory:</label><br>
+        <input type = "text" id = "id_enableSubCategory" value = ""><br>
+        <input type = "submit" value = "Enable" id = "enable">
+    </form>
+
+</body>
+</html>
+
 Приложение Fastapi: пустой массив или TypeError: логическое значение этого предложения не определено
 Вопросы
 PYTHON
