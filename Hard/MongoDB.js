@@ -1,3 +1,920 @@
+MongooseError - время буферизации операции `users.findOne()` истекло через 10000 мс
+Вопросы
+NODE.JS
+MongooseError - время буферизации операции `users.findOne()` истекло через 10000 мс
+Мой код работал раньше, но я не знаю, почему он просто перестал работать и выдал мне эту ошибку:
+
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/Users/nishant/Desktop/Yourfolio/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:184:20)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+Я пытаюсь аутентифицировать пользователя, войдя в систему с помощью JWT. Мой клиент работает нормально, но в моем бэкэнде я получаю эту ошибку. Мой внутренний код:
+
+import neuron from '@yummyweb/neuronjs'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import emailValidator from 'email-validator'
+import passwordValidator from 'password-validator'
+import User from './models/User.js'
+import Portfolio from './models/Portfolio.js'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import auth from './utils/auth.js'
+
+// Dot env
+import dotenv from 'dotenv'
+dotenv.config()
+
+// Custom Password Specifications
+// Username Schema
+const usernameSchema = new passwordValidator()
+usernameSchema.is().min(3).is().max(18).is().not().spaces()
+
+// Password Schema
+const passwordSchema = new passwordValidator()
+passwordSchema.is().min(8).is().max(100).has().uppercase().has().lowercase().has().digits().is().not().spaces()
+
+const PORT = process.env.PORT || 5000
+const neuronjs = neuron()
+
+// Middleware
+neuronjs.use(bodyParser())
+neuronjs.use(cors())
+
+// Mongoose Connection
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, () => console.info("MongoDB Connected"))
+
+// API Routes
+neuronjs.POST('/api/auth/signup', async (req, res) => {
+    const { username, email, password, passwordConfirmation } = req.body
+
+    // Validation: all fields are filled
+    if (!username || !email || !password || !passwordConfirmation) {
+        return res.status(400).json({ 
+            "error": "true",
+            "for": "fields",
+            "msg": "fill all the fields"
+        })
+    }
+
+    // Validation: username is valid
+    if (usernameSchema.validate(username, { list: true }).length !== 0) {
+        return res.status(400).json({ 
+            "error": "true",
+            "for": "username",
+            "method_fail": usernameSchema.validate(username, { list: true }),
+            "msg": "username is invalid"
+        })
+    }
+
+    // Validation: email is valid
+    if (!emailValidator.validate(email)) {
+        return res.status(400).json({ 
+            "error": "true",
+            "for": "email",
+            "msg": "email is invalid"
+        })
+    }
+
+    // Validation: password is valid
+    if (passwordSchema.validate(password, { list: true }).length !== 0) {
+        return res.status(400).json({ 
+            "error": "true",
+            "for": "password",
+            "method_fail": passwordSchema.validate(password, { list: true }),
+            "msg": "password is invalid"
+        })
+    }
+
+    // Validation: password is confirmed
+    if (password !== passwordConfirmation) {
+        return res.status(400).json({ 
+            "error": "true",
+            "for": "confirmation",
+            "msg": "confirmation password needs to match password"
+        })
+    }
+
+    // Check for existing user with email
+    const existingUserWithEmail = await User.findOne({ email })
+    if (existingUserWithEmail)
+        return res.status(400).json({ "error": "true", "msg": "a user already exists with this email" })
+
+    // Check for existing user with username
+    const existingUserWithUsername = await User.findOne({ username })
+    if (existingUserWithUsername)
+        return res.status(400).json({ "error": "true", "msg": "a user already exists with this username" })
+
+    // Generating salt
+    const salt = bcrypt.genSalt()
+    .then(salt => {
+        // Hashing password with bcrypt
+        const hashedPassword = bcrypt.hash(password, salt)
+        .then(hash => {
+            const newUser = new User({
+                username,
+                email,
+                password: hash
+            })
+            // Saving the user
+            newUser.save()
+            .then(savedUser => {
+                const newPortfolio = new Portfolio({
+                    user: savedUser._id,
+                    description: "",
+                    socialMediaHandles: {
+                        github: savedUser.username,
+                        dribbble: savedUser.username,
+                        twitter: savedUser.username,
+                        devto: savedUser.username,
+                        linkedin: savedUser.username,
+                    }
+                })
+
+                // Save the portfolio
+                newPortfolio.save()
+
+                // Return the status code and the json
+                return res.status(200).json({
+                    savedUser
+                })
+            })
+            .catch(err => console.info(err))
+        })
+        .catch(err => console.info(err))
+    })
+    .catch(err => console.info(err))
+})
+
+neuronjs.POST('/api/auth/login', async (req, res) => {
+    try {
+        const { username, password } = req.body
+
+        // Validate
+        if (!username || !password) {
+            return res.status(400).json({ "error": "true", "msg": "fill all the fields", "for": "fields", })
+        }
+
+        const user = await User.findOne({ username })
+        if (!user) {
+            return res.status(400).json({ "error": "true", "msg": "no account is registered with this username", "for": "username" })
+        }
+    
+        // Compare hashed password with plain text password
+        const match = await bcrypt.compare(password, user.password)
+    
+        if (!match) {
+            return res.status(400).json({ "error": "true", "msg": "invalid credentials", "for": "password" })
+        }
+    
+        // Create JWT token
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+        return res.json({ token, user: { "id": user._id, "username": user.username, "email": user.email } })
+    }
+    catch (e) {
+        console.info(e)
+    }
+})
+
+// Delete a user and their portfolio
+neuronjs.DELETE("/api/users/delete", async (req, res) => {
+    auth(req, res)
+    const deletedPortfolio = await Portfolio.findOneAndDelete({ user: req.user })
+    const deletedUser = await User.findByIdAndDelete(req.user)
+    res.json(deletedUser)
+})
+
+neuronjs.POST("/api/isTokenValid", async (req, res) => {
+    const token = req.headers["x-auth-token"]
+    if (!token) return res.json(false)
+    
+    const verifiedToken = jwt.verify(token, process.env.JWT_SECRET)
+    if (!verifiedToken) return res.json(false)
+    
+    const user = await User.findById(verifiedToken.id)
+    if (!user) return res.json(false)
+
+    return res.json(true)
+})
+
+// Getting one user
+neuronjs.GET("/api/users/user", async (req, res) => {
+    auth(req, res)
+    const user = await User.findById(req.user)
+    res.json({
+        "username": user.username,
+        "email": user.email,
+        "id": user._id
+    })
+})
+
+// Getting the porfolio based on username
+neuronjs.GET("/api/portfolio/:username", async (req, res) => {
+    try {
+        const existingUser = await User.findOne({ username: req.params.username })
+        // User exists
+        if (existingUser) {
+            const userPortfolio = await Portfolio.findOne({ user: existingUser._id })
+            return res.status(200).json(userPortfolio)
+        }
+        // User does not exist
+        else return res.status(400).json({ "error": "true", "msg": "user does not exist" })
+    }
+    catch (e) {
+        console.info(e)
+        return res.status(400).json({ "error": "true", "msg": "user does not exist" })
+    }
+})
+
+// Update Portfolio info
+neuronjs.POST("/api/portfolio/update", async (req, res) => {
+    auth(req, res)
+
+    // Find the portfolio
+    const portfolio = await Portfolio.findOne({ user: req.user })
+    // Then, update the portfolio
+    if (portfolio) {
+        // Call the update method
+        const updatedPortfolio = await portfolio.updateOne({
+             user: req.user, 
+             description: req.body.description, 
+             socialMediaHandles: req.body.socialMediaHandles, 
+             greetingText: req.body.greetingText, 
+             navColor: req.body.navColor, 
+             font: req.body.font, 
+             backgroundColor: req.body.backgroundColor,
+             rssFeed: req.body.rssFeed,
+             displayName: req.body.displayName,
+             layout: req.body.layout,
+             occupation: req.body.occupation
+            })
+        return res.status(200).json(portfolio)
+    }
+})
+
+neuronjs.listen(PORT, () => console.info("Server is running on port " + PORT))
+
+Функция файла auth.js:
+
+import jwt from 'jsonwebtoken'
+
+const auth = (req, res) => {
+    const token = req.headers["x-auth-token"]
+    if (!token)
+        return res.status(401).json({ "error": "true", "msg": "no authentication token" })
+    
+    const verifiedToken = jwt.verify(token, process.env.JWT_SECRET)
+    if (!verifiedToken)
+        return res.status(401).json({ "error": "true", "msg": "token failed" })
+    
+    req.user = verifiedToken.id
+}
+
+export default auth
+Любая помощь очень ценится, и я уже пробовал несколько решений, таких как удаление node_modules и повторная установка mongoose.
+
+ 22.12.2020 13:18
+66
+0
+92 674
+17
+Данный вопрос помечен как решенный
+ Ответы 17
+После создания кластера нажмите «Подключиться» и добавьте свой IP-адрес или добавьте другой IP-адрес в Атлас MongoDB.
+
+ 03.01.2021 07:26
+Согласно документации, найденной по этой ссылке: https://mongoosejs.com/docs/connections.html#buffering
+
+Mongoose позволяет сразу же начать использовать свои модели, не дожидаясь, пока mongoose установит соединение с MongoDB.
+
+Это потому, что мангуст буферизирует вызовы функций модели внутри. Этот буферизация удобна, но также является распространенным источником путаницы. Mongoose не будет выдавать никаких ошибок по умолчанию, если вы используете модель без подключения.
+
+TL;DR:
+
+Ваша модель вызывается до установления соединения. Вам нужно использовать async/await с connect() или createConnection(); или используйте .then() , так как эти функции теперь возвращают промисы из Mongoose 5.
+
+ 10.01.2021 08:01
+ Ответ принят как подходящий
+По моему опыту, это происходит, когда ваша база данных не подключена. Попробуйте проверить следующие вещи:
+
+Подключена ли ваша база данных, и вы указываете на тот же URL-адрес из своего кода.
+проверьте, загружается ли ваш код mongoose.connect(...).
+Я столкнулся с этой проблемой, когда запускал node index.js из своего терминала, а код подключения мангуста находился в другом файле. После запроса этого кода мангуста в index.js он снова заработал.
+
+ 12.01.2021 19:28
+mongoose.connect('mongodb://localhost/myapp', {useNewUrlParser: true});
+
+Просто добавьте {useNewUrlParser: true} в файл подключения.
+
+ 22.01.2021 09:23
+Эта ошибка [user.findOne()] отображается, потому что ваша версия пакета config обновляется автоматически.
+
+Введите следующее в свой терминал:
+
+npm i -E config@3.3.1
+или
+
+yarn add -E config@3.3.1
+ 09.03.2021 15:50
+Я сталкивался с этим несколько раз; особенно когда я обновил вложенные зависимости, для которых требуется mongoose. Это всегда помогает мне.
+
+rm -rf node_modules
+rm package-lock.json
+npm install --package-lock-only
+npm install
+ 12.04.2021 20:51
+Мой код работал нормально на одном ПК, но на другом я получил ту же ошибку. У меня есть бесплатный хостинг MongoDB от https://www.mongodb.com/.
+
+Я исправил это, добавив свой текущий IP-адрес в Security - Network Access - IP Access List на хостинг-сервере.
+
+ 13.04.2021 21:02
+У меня такая же проблема. В моем случае я сохранил оператор mongoose.connect в другом файле и забыл вызвать его при написании оператора require.
+
+require(./services/mongoose);
+Я сделал это в своем файле index.js и изменил его на это
+
+require(./services/mongoose)();
+ 24.04.2021 10:11
+Уже был кластер, коллекция, сделанная в моем атласе mongo db, все, что мне нужно было сделать, это очистить это и отправить еще один почтовый запрос, чтобы он заработал.
+
+ 04.07.2021 05:46
+У меня была такая же проблема при использовании Mongoose 6. Я подключился к Mongoose в своем файле index.js следующим образом:
+
+mongoose.connect(
+  process.env.MONGO_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+  () => {
+    console.info('Connected to MongoDB');
+  }
+);
+Я нашел следующую информацию для Mongoose 6 на их сайте:
+
+useNewUrlParser, useUnifiedTopology, useFindAndModify и useCreateIndex больше не поддерживаются. Мангуст 6 всегда ведет себя так, как если бы useNewUrlParser, useUnifiedTopology и useCreateIndex являются истинными, а useFindAndModify — ложными. Пожалуйста, удалите эти параметры из вашего кода.
+
+Когда я удалил опцию useCreateIndex: true, проблема была решена.
+
+ 20.10.2021 23:51
+У меня была эта проблема сама, когда я пытался использовать свою базу данных, когда мой сервер был в ошибке, и мангуст создал огромную панель ошибок из 87 частей, которую мне пришлось просеивать, и когда я это сделал, я обнаружил, что параметры, которые я передал мангусту, были обесценивается. Поэтому, если вы можете прокрутить до места, где вы запускаете свой сервер, вы можете увидеть детали, говорящие вам удалить или добавить определенные параметры. Удаление дополнительных параметров решило мою проблему.
+
+ 07.11.2021 14:58
+Убедитесь, что вы подключаетесь к MongoDB вверху своей функции (внутри файла) и выполняете (CRUD) операции после подключения к MongoDB Atlas.
+
+Надеюсь, это имеет смысл. Я получаю сообщение об ошибке, потому что в своем файле я загружаю данные с другого сервера и вставляю в свою MongoDB после этих асинхронных операций, которые я подключаю к своему серверу MongoDB, поэтому я получаю сообщение об ошибке.
+
+ПРАВИЛЬНО ↓
+
+await mongoose.connect(MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}); 
+await parseAndLoadPlanetsData();
+НЕПРАВИЛЬНО ↓
+
+await parseAndLoadPlanetsData();
+await mongoose.connect(MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+Ошибка при подключении к серверу MongoDb Atlas
+Вопросы
+NODE.JS
+Ошибка при подключении к серверу MongoDb Atlas
+Итак, я сейчас создаю веб-приложение, и мне нужна база данных, поэтому я решил использовать mongodb и mongoose. До сих пор я тестировал все на localhost, и это работало, но я хотел перенести данные на сервер. Я слышал об Атласе, зарегистрировался и «загрузил» данные.
+
+Теперь я хочу подключиться к кластеру через приложение node.js.
+
+mongoose.connect('mongodb+srv://engllucas:p%40ssw0rd@insight-quhku.mongodb.net/test');
+Получил строку сайта mongodb Atlas в точке Подключите ваше приложение
+
+Затем я сменил пароль.
+
+mongoose.connect('mongodb://engllucas:p%40ssw0rd@insight-quhku.mongodb.net/test');
+Это тоже не сработало.
+
+Это сообщение об ошибке:
+
+{ MongoError: failed to connect to server [insight-shard-00-02-quhku.mongodb.net:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 18.194.163.64:27017]
+at Pool.<anonymous> (U:\WEBT\ProjectInsight\Quiz\node_modules\mongodb-core\lib\topologies\server.js:503:11)
+at emitOne (events.js:115:13)
+at Pool.emit (events.js:210:7)
+at Connection.<anonymous> (U:\WEBT\ProjectInsight\Quiz\node_modules\mongodb-core\lib\connection\pool.js:326:12)
+at Object.onceWrapper (events.js:318:30)
+at emitTwo (events.js:125:13)
+at Connection.emit (events.js:213:7)
+at TLSSocket.<anonymous> (U:\WEBT\ProjectInsight\Quiz\node_modules\mongodb-core\lib\connection\connection.js:245:50)
+at Object.onceWrapper (events.js:316:30)
+at emitOne (events.js:115:13)
+at TLSSocket.emit (events.js:210:7)
+at emitErrorNT (internal/streams/destroy.js:64:8)
+at _combinedTickCallback (internal/process/next_tick.js:138:11)
+at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoNetworkError',
+сообщение: 'не удалось подключиться к серверу [insight-shard-00-02-quhku.mongodb.net:27017] при первом подключении [MongoNetworkError: connect ECONNREFUSED 18.194.163.64:27017]'} (узел: 4920) UnhandledPromiseRejectionWarning: необработанное отклонение обещания (идентификатор отказа: 1): MongoNetworkError: не удалось подключиться к серверу [insight-shard-00-02-quhku.mongodb.net:27017] при первом подключении [MongoNetworkError: connect ECONNREFUSED 18.194 .163.64: 27017] (узел: 4920) [DEP0018] DeprecationWarning: необработанные отклонения обещаний устарели. В будущем необработанные отклонения обещаний завершат процесс Node.js с ненулевым кодом выхода.
+
+ 18.04.2018 10:34
+30
+0
+46 084
+19
+Данный вопрос помечен как решенный
+ Ответы 19
+если вы используете мангуст до версии 5.0.15:
+вmongodb+srv://uri недействителен для базового собственного драйвера.
+
+просто удаление + srv тоже не сработает, так как uri должен будет включать ваши реплики хостов и параметры replicaSet / authSource.
+
+вы также можете
+1. Обновитесь до mongoose 5.0.15 и используйте более короткий формат + srv.
+
+или же
+2. Используйте текущую версию с полным uri из панели управления кластера Atlas, выбрав более старую версию драйвера. (см. Примечание ниже) версия uri.
+
+на панели управления кластера нажмите кнопку подключения, затем (при условии, что вы занесли в белый список IP-адрес сервера узла) выберите «подключить приложение», затем нажмите «Я использую драйвер версии 3.4 или старше». Используйте полученную строку uri вместо вашего пароля.
+
+Примечание: В диалоговом окне выбора строки URI в помощнике подключения на панели управления кластера Atlas говорится «Я использую драйвер 3. * или (более новый | старый)». Это плохой выбор слов, поскольку версии 3.6 и 3.4 относятся не к версии драйвера, а к версии сервера. Кроме того, использование той или иной версии сервера не имеет ничего общего с драйвером, используемым для подключения, и именно здесь находится фактическая зависимость, определяющая, какую версию URI использовать.
+
+ 18.04.2018 10:58
+ Ответ принят как подходящий
+У меня также была аналогичная проблема, и я смог ее решить, добавив свой IP-адрес в белый список в разделе Кластеры -> Безопасность -> Белый список IP. Вместо того, чтобы нажимать my current ip address, просто найдите мой IP-адрес в Google и вставьте его вместо этого. Надеюсь это работает!
+
+ 11.02.2019 13:46
+Это проблема вашего «белого списка IP». Отредактируйте и обновите его один раз, тогда он должен работать нормально.
+
+ 13.04.2019 14:30
+У меня была аналогичная проблема, и я не смог подключиться к mongo. Видимо mongodb не понравился мой пароль, содержащий специальные символы. Я пробовал выполнять кодирование URL-адресов и другие виды манипуляций, но оказалось, что проблема для меня в конечном итоге решена просто изменением пароля на тот, в котором не используются специальные символы. Я использовал генератор паролей mongodb, и теперь все работает нормально.
+
+ 24.04.2019 14:23
+Видимо, меняя
+
+mongoose.connect(keys.mongoURI);
+к
+
+mongoose.connect(keys.mongoURI, () => { }, { useNewUrlParser: true })
+    .catch(err => {
+        console.info(err);
+    });
+работал у меня.
+
+ 11.06.2019 20:29
+Убедитесь, что ваш текущий IP-адрес находится в белом списке IP-адресов MongoAtlas. Я столкнулся с этой проблемой после того, как обновил свой VPN.
+
+ 12.06.2019 04:27
+google => мой IP-адрес => copyit
+
+попал в Атлас => Как только вы окажетесь на вкладке Кластеры, проверьте слева => Безопасность => Доступ к сети => Изменить IP => вставить IP-адрес.
+
+перезапустите свой сервер, и он должен работать :)
+
+ 25.06.2019 14:17
+Выше ответ правильный, но я хочу добавить одно очко:
+
+С точки зрения безопасности это нехорошо;
+
+У меня также была аналогичная проблема, и я смог решить ее, добавив мой IP-адрес в белый список в разделе Clusters -> security -> IP Whitelist.. Вместо того, чтобы нажимать мой current ip address, просто найдите мой IP-адрес в Google и вставьте его вместо этого. Надеюсь это работает!
+
+У меня также была аналогичная проблема, и я смог ее решить, добавив мой IP-адрес в белый список под Clusters -> security -> IP Whitelist., добавил этот IP-адрес в список: 0.0.0.0/0, он будет открыт для всех.
+
+ 16.07.2019 08:06
+У меня возникла проблема с подключением к кластеру MongoDB Atlas. Мне приходилось решать эту проблему дважды, потому что я работал над проектом с двух разных компьютеров (Macbook Pro и ПК с Windows).
+
+Вот мой исчерпывающий ответ на все, что я придумал, чтобы решить проблему, когда мое приложение не подключается к кластеру.
+
+Первый Убедитесь, что ваш IP-адрес внесен в белый список, как указано выше. Самым простым решением является белый список "Все IP-адреса" 0.0.0.0/0.
+
+Второй Проверьте свой VPN, если вы его используете. Я пытался подключиться к кластеру при подключении к VPN. Как только я отключил свой VPN, я смог подключиться.
+
+В третьих Убедитесь, что ваши настройки Интернета не мешают вам подключиться к кластеру. Мои домашние настройки безопасности Wi-Fi Xfinity были слишком высокими, и это мешало подключению. Я думаю, что маршрутизатор не разрешал подключение к порту 27017. Один из способов проверить, возникает ли эта проблема, - привязать компьютер к телефону для доступа в Интернет вместо Wi-Fi и попытаться подключиться. Мне удалось подключиться, используя свой iPhone в качестве точки доступа в Интернет. Я сбросил свой маршрутизатор до заводских настроек, что устранило проблему.
+
+ 02.08.2019 23:07
+У меня была такая же проблема, а белый список IP был настроен правильно!
+
+Причина заключалась в том, что MongoDB Enterprise Atlas требует уровня исключения SSL, пытающегося подключиться без этого, вызывает необоснованную и не требующую пояснений ошибку, например:
+
+Failed to connect to mongodb-m0-nnxxx.mongodb.net:27017
+No chance to Authorize
+При попытке подключиться с помощью клиента mondodb с проблемой белого списка IP-адресов появляется следующее сообщение об ошибке:
+
+mongo "mongodb+srv://mongodb-m0-nnxxx.mongodb.net/test" --username admin
+
+DBClientConnection failed to receive message from mongodb-m0-shard-00-00-nnxxx.mongodb.net.:27017 - HostUnreachable: Connection closed by peer
+Unable to reach primary for set mongodb-m0-shard-0
+Cannot reach any nodes for set mongodb-m0-shard-0. Please check network connectivity and the status of the set. This has happened for 5 checks in a row.
+Например, при использовании клиента Robo 3T флажок "Использовать протокол SSL" должен быть включен, и ** Метод аутентификации: самоподписанный сертификат **
+
+Тест дает диагностический вывод:
+
+v Connected to mongodb-m0-nnxxx.mongodb.net:27017 via SSL tunnel
+v Authorized on admin database as admin
+Надеюсь, это кому-то поможет.
+
+ 14.08.2019 15:18
+У меня возникла эта проблема, и я ее исправил. Ниже приведены шаги, которые я использовал:
+
+Прежде всего добавьте нового пользователя в mongodb (Безопасность> Доступ к базе данных> ДОБАВИТЬ НОВОГО ПОЛЬЗОВАТЕЛЯ>)
+затем напишите в файл .env новое имя пользователя и пароль.
+Убейте сервер и перезапустите сервер.
+Это решение, которое сработало для меня.
+
+ 04.09.2019 12:45
+Я также столкнулся с аналогичной проблемой, когда подключал MongoDB Compass к кластеру https://cloud.mongodb.com/.
+
+Следующие шаги решают проблему.
+
+Посетите google.com> Введите мой IP-адрес> Скопируйте общедоступный IP-адрес вашей системы / сети
+Перейдите в Кластер https://cloud.mongodb.com/> Выберите Безопасность> Доступ к сети> Щелкните вкладку IP-адреса> Добавить IP-адрес> Введите свой общедоступный IP-адрес.
+ 06.12.2019 09:56
+Я подключился к vpn до того, как понял это. Когда я позже попытался подключиться к db, я не смог этого сделать. Я снова открыл свою веревку и все разрешения в разрешениях. Затем, когда я снова подключился к vpm, я смог подключиться.
+
+ 11.04.2020 19:34
+У меня тоже была такая же проблема. затем изменил
+
+mongoose.connect(db, () => { }, { useNewUrlParser: true })
+    .catch(err => {console.info(err);});
+но возникла ошибка,
+
+(node:5796) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+затем изменил код на
+
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, () => { })
+        .catch(err => console.info(err));
+Это сработало для меня.
+
+ 09.05.2020 21:51
+Если вы подключены к точке доступа и чувствуете, что все сделали правильно, отключите и снова подключитесь. В особенности отключите подключение к Интернету и подключитесь снова.
+
+ 11.05.2020 10:46
+У меня тоже была такая же ошибка, и я попробовал эту логику.
+Помимо этого в атласе mongoDb в доступе к сети, подтвердите все IP-адрес и установите ---------------- 0.0.0.0/0
+ 28.05.2020 08:35
+Я решил эту проблему, просто включив "+ srv" в начало строки подключения, например:
+
+mongoose.connect("mongodb+srv://<username>:<password>@<address>/<database>?retryWrites=true&w=majority", {useNewUrlParser: true});
+Что странно, потому что я нашел несколько ответов, которые заставляли меня поступать наоборот. Думаю, я перепутал свои версии мангуста.
+
+Надеюсь, это кому-то поможет.
+
+ 15.06.2020 18:51
+Странно, но помогла смена пароля (без специальных символов) кластера.
+
+ 11.09.2020 14:39
+У меня была такая же проблема, добавление в белый список и другие решения не помогли. Но после того, как я создал другого пользователя. При создании нового пользователя в поле «Права пользователя базы данных» я выбрал «Админ Атласа» вместо «Чтение и запись в любую базу данных» по умолчанию. После этого связь заработала
+
+Избегайте предупреждения о том, что парсер текущей строки URL устарел, задав для параметра useNewUrlParser значение true
+Вопросы
+NODE.JS
+Избегайте предупреждения о том, что парсер текущей строки URL устарел, задав для параметра useNewUrlParser значение true
+У меня есть класс-оболочка базы данных, который устанавливает соединение с некоторым экземпляром MongoDB:
+
+async connect(connectionString: string): Promise<void> {
+        this.client = await MongoClient.connect(connectionString)
+        this.db = this.client.db()
+}
+Это дало мне предупреждение:
+
+(node:4833) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+Метод connect() принимает экземпляр MongoClientOptions в качестве второго аргумента. Но у него нет свойства под названием useNewUrlParser. Я также попытался установить это свойство в строке подключения следующим образом: mongodb://127.0.0.1/my-db?useNewUrlParser=true, но это не повлияло на это предупреждение.
+
+Итак, как я могу настроить useNewUrlParser на удаление этого предупреждения? Это важно для меня, поскольку скрипт должен запускаться как cron, и эти предупреждения приводят к спаму в мусорной почте.
+
+Я использую драйвер mongodb в версии 3.1.0-beta4 с соответствующим пакетом @types/mongodb в 3.0.18. Оба они являются последними, доступными с использованием npm install.
+
+Обходной путь
+Используя более старую версию драйвера mongodb:
+
+"mongodb": "~3.0.8",
+"@types/mongodb": "~3.0.18"
+ 21.05.2018 13:50
+265
+2
+276 449
+22
+ Ответы 22
+Как уже отмечалось, версия драйвера 3.1.0-beta4, судя по всему, была "выпущена в мир" несколько раньше. Релиз является частью незавершенной работы по поддержке новых функций в предстоящем выпуске MongoDB 4.0 и внесению некоторых других изменений в API.
+
+Одним из таких изменений, запускающих текущее предупреждение, является опция useNewUrlParser из-за некоторых изменений в том, как фактически работает передача URI соединения. Подробнее об этом позже.
+
+Пока все не "успокоится", вероятно, это будет желательно "приколоть" по крайней мере до минорной версии для релизов 3.0.x:
+
+  "dependencies": {
+    "mongodb": "~3.0.8"
+  }
+Это должно остановить установку ветки 3.1.x при «свежих» установках узловых модулей. Если вы уже установили «последний» выпуск, который является «бета-версией», то вам следует очистить свои пакеты (и package-lock.json) и убедиться, что вы сделали это до выпуска серии 3.0.x.
+
+Что касается фактического использования «новых» параметров URI подключения, основным ограничением является фактическое включение port в строку подключения:
+
+const { MongoClient } = require("mongodb");
+const uri = 'mongodb://localhost:27017';  // mongodb://localhost - will fail
+
+(async function() {
+  try {
+
+    const client = await MongoClient.connect(uri,{ useNewUrlParser: true });
+    // ... anything
+
+    client.close();
+  } catch(e) {
+    console.error(e)
+  }
+
+})()
+Это более «строгое» правило в новом коде. Суть в том, что текущий код по существу является частью кода репозитория «node-native-driver» (npm mongodb), а «новый код» фактически импортируется из библиотеки mongodb-core, которая «поддерживает» «общедоступный» драйвер узла.
+
+Смысл добавления «опции» состоит в том, чтобы «облегчить» переход путем добавления опции в новый код, чтобы в коде использовался более новый синтаксический анализатор (фактически основанный на url), добавляя параметр и очищая предупреждение об устаревании, и, следовательно, проверяя что переданные вами строки подключения действительно соответствуют ожиданиям нового парсера.
+
+В будущих выпусках «устаревший» парсер будет удален, и тогда новый парсер будет просто тем, что используется, даже без этой опции. Но к тому времени ожидается, что у всего существующего кода будет достаточно возможностей проверить существующие строки подключения на соответствие ожиданиям нового синтаксического анализатора.
+
+Поэтому, если вы хотите начать использовать новые функции драйвера по мере их выпуска, используйте доступный beta и последующие выпуски и, в идеале, убедитесь, что вы предоставляете строку подключения, которая действительна для нового анализатора, включив опцию useNewUrlParser в MongoClient.connect().
+
+Если вам на самом деле не нужен доступ к функциям, связанным с предварительным просмотром выпуска MongoDB 4.0, закрепите версию за серией 3.0.x, как отмечалось ранее. Это будет работать, как описано в документации, и «закрепление» гарантирует, что выпуски 3.1.x не будут «обновлены» сверх ожидаемой зависимости до тех пор, пока вы действительно не захотите установить стабильную версию.
+
+ 22.05.2018 08:07
+Проверьте свою версию mongo:
+
+mongo --version
+Если вы используете версию> = 3.1.0, измените файл подключения mongo на ->
+
+MongoClient.connect("mongodb://localhost:27017/YourDB", { useNewUrlParser: true })
+или ваш файл подключения мангуста к ->
+
+mongoose.connect("mongodb://localhost:27017/YourDB", { useNewUrlParser: true });
+В идеале это функция версии 4, но v3.1.0 и выше также поддерживают ее. За подробностями обращайтесь к MongoDB GitHub.
+
+ 05.07.2018 03:47
+Ничего не менять. Передайте только функцию подключения {useNewUrlParser: true }.
+
+Это будет работать:
+
+    MongoClient.connect(url, {useNewUrlParser:true,useUnifiedTopology: true }, function(err, db) {
+        if (err) {
+            console.info(err);
+        }
+        else {
+            console.info('connected to ' + url);
+            db.close();
+        }
+    })
+ 09.07.2018 08:44
+Вот как это у меня. Подсказка не отображалась на моей консоли, пока я не обновил npm пару дней назад.
+
+.connect имеет три параметра: URI, параметры и ошибку.
+
+mongoose.connect(
+    keys.getDbConnectionString(),
+    { useNewUrlParser: true },
+    err => {
+        if (err) 
+            throw err;
+        console.info(`Successfully connected to database.`);
+    }
+);
+ 09.07.2018 16:29
+Проблему можно решить, указав номер порта и используя этот парсер: {useNewUrlParser: true}
+
+Решение может быть:
+
+mongoose.connect("mongodb://localhost:27017/cat_app", { useNewUrlParser: true });
+Это решает мою проблему.
+
+ 29.07.2018 21:57
+Мы использовали:
+mongoose.connect("mongodb://localhost/mean-course").then(
+  (res) => {
+   console.info("Connected to Database Successfully.")
+  }
+).catch(() => {
+  console.info("Connection to database failed.");
+});
+→ Это дает ошибку парсера URL
+
+Правильный синтаксис:
+mongoose.connect("mongodb://localhost:27017/mean-course" , { useNewUrlParser: true }).then(
+  (res) => {
+   console.info("Connected to Database Successfully.")
+  }
+).catch(() => {
+  console.info("Connection to database failed.");
+});
+ 04.08.2018 06:14
+Я использовал mlab.com в качестве базы данных MongoDB. Я разделил строку подключения на другую папку с именем config и внутри файла keys.js сохранил строку подключения, которая была:
+
+module.exports = {
+  mongoURI: "mongodb://username:password@ds147267.mlab.com:47267/projectname"
+};
+И код сервера был
+
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+
+// Database configuration
+const db = require("./config/keys").mongoURI;
+
+// Connect to MongoDB
+
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true } // Need this for API support
+  )
+  .then(() => console.info("MongoDB connected"))
+  .catch(err => console.info(err));
+
+app.get("/", (req, res) => res.send("hello!!"));
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.info(`Server running on port ${port}`)); // Tilde, not inverted comma
+Вам нужно написать { useNewUrlParser: true } после строки подключения, как я сделал выше.
+
+Проще говоря, вам нужно сделать:
+
+mongoose.connect(connectionString,{ useNewUrlParser: true } 
+// Or
+MongoClient.connect(connectionString,{ useNewUrlParser: true } 
+    
+ 16.08.2018 09:10
+Приведенный ниже выделенный код для подключения мангуста устраняет предупреждение для драйвера мангуста:
+
+mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+ 16.08.2018 11:54
+Эти строки помогли справиться и со всеми остальными предупреждениями об устаревании:
+
+const db = await mongoose.createConnection(url, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
+ 10.09.2018 22:57
+Я не думаю, что вам нужно добавлять { useNewUrlParser: true }.
+
+Вам решать, хотите ли вы уже использовать новый парсер URL. В конце концов, предупреждение исчезнет, ​​когда MongoDB переключится на новый парсер URL.
+
+Как указано в Формат URI строки подключения, вам не нужно устанавливать номер порта.
+
+Достаточно просто добавить { useNewUrlParser: true }.
+
+ 22.09.2018 12:16
+Вам нужно добавить { useNewUrlParser: true } в метод mongoose.connect().
+
+mongoose.connect('mongodb://localhost:27017/Notification',{ useNewUrlParser: true });
+ 06.10.2018 19:32
+Формат строки подключения должен быть mongodb: // пользователь: пароль @ хост: порт / база данных
+
+Например:
+
+MongoClient.connect('mongodb://user:password@127.0.0.1:27017/yourDB', { useNewUrlParser: true } )
+ 06.11.2018 18:22
+Если username или password имеют символ @, используйте его так:
+
+mongoose
+    .connect(
+        'DB_url',
+        { user: '@dmin', pass: 'p@ssword', useNewUrlParser: true }
+    )
+    .then(() => console.info('Connected to MongoDB'))
+    .catch(err => console.info('Could not connect to MongoDB', err));
+ 29.01.2019 17:56
+Обновлено для ECMAScript 8 / await
+Неправильный ECMAScript 8 демонстрационный код MongoDB inc предоставляет также создает это предупреждение.
+
+MongoDB дает следующий совет, который неверен
+
+To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+Это вызовет следующую ошибку:
+
+TypeError: final argument to executeOperation must be a callback
+
+Вместо опция должна быть предоставлена ​​new MongoClient:
+
+См. Код ниже:
+
+const DATABASE_NAME = 'mydatabase',
+    URL = `mongodb://localhost:27017/${DATABASE_NAME}`
+
+module.exports = async function() {
+    const client = new MongoClient(URL, {useNewUrlParser: true})
+    var db = null
+    try {
+        // Note this breaks.
+        // await client.connect({useNewUrlParser: true})
+        await client.connect()
+        db = client.db(DATABASE_NAME)
+    } catch (err) {
+        console.info(err.stack)
+    }
+
+    return db
+}
+ 29.01.2019 20:44
+Полный пример для Express.js, случая вызова API и отправки содержимого JSON выглядит следующим образом:
+
+...
+app.get('/api/myApi', (req, res) => {
+  MongoClient.connect('mongodb://user:password@domain.com:port/dbname',
+    { useNewUrlParser: true }, (err, db) => {
+
+      if (err) throw err
+      const dbo = db.db('dbname')
+      dbo.collection('myCollection')
+        .find({}, { _id: 0 })
+        .sort({ _id: -1 })
+        .toArray(
+          (errFind, result) => {
+            if (errFind) throw errFind
+            const resultJson = JSON.stringify(result)
+            console.info('find:', resultJson)
+            res.send(resultJson)
+            db.close()
+          },
+        )
+    })
+}
+ 21.04.2019 02:16
+Я использую для своего проекта mongoose версии 5.x. После запроса пакета mongoose установите глобальное значение, как показано ниже.
+
+const mongoose = require('mongoose');
+
+// Set the global useNewUrlParser option to turn on useNewUrlParser for every connection by default.
+mongoose.set('useNewUrlParser', true);
+ 24.09.2019 14:43
+Вам просто нужно установить следующие параметры перед подключением к базе данных, как показано ниже:
+
+const mongoose = require('mongoose');
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect('mongodb://localhost/testaroo');
+Также,
+
+Replace update() with updateOne(), updateMany(), or replaceOne()
+Replace remove() with deleteOne() or deleteMany().
+Replace count() with countDocuments(), unless you want to count how many documents are in the whole collection (no filter).
+In the latter case, use estimatedDocumentCount().
+ 23.10.2019 11:02
+Следующие работы для меня
+
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost/playground", { useNewUrlParser: true,useUnifiedTopology: true })
+.then(res => console.info('Connected to db'));
+Версия mongoose - 5.8.10.
+
+ 28.01.2020 10:35
+Следующая работа для меня для версии mongoose5.9.16
+
+const mongoose = require('mongoose');
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect('mongodb://localhost:27017/dbName')
+    .then(() => console.info('Connect to MongoDB..'))
+    .catch(err => console.error('Could not connect to MongoDB..', err))
+ 28.05.2020 13:38
+У меня это прекрасно работает:
+
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
+mongoose
+  .connect(db) //Connection string defined in another file
+  .then(() => console.info("Mongo Connected..."))
+  .catch(() => console.info(err));
+ 11.11.2020 13:34
+const mongoose = require('mongoose');
+
+mongoose
+  .connect(connection_string, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then((con) => {
+    console.info("connected to db");
+  });
+попробуйте использовать это
+
+ 28.01.2021 13:52
+(node:16596) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect. (Use node --trace-deprecation ... to show where the warning was created) (node:16596) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+
+Применение:
+
+async connect(connectionString: string): Promise<void> {
+        this.client = await MongoClient.connect(connectionString, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+        this.db = this.client.db()
+}
+
 
 Сообщение об ошибке: MongoError: неверная аутентификация Ошибка аутентификации через строку URI
 Вопросы
