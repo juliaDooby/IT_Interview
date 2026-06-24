@@ -1,3 +1,842 @@
+Ошибка декодирования JSON при попытке поиска в файле JSON через FAST Api
+Вопросы
+PYTHON
+Ошибка декодирования JSON при попытке поиска в файле JSON через FAST Api
+поднять JSONDecodeError («Ожидаемое значение», s, err.value) из None json.decoder.JSONDecodeError: Ожидаемое значение: строка 1, столбец 1 (символ 0)
+
+это ошибка, которую я получаю, когда запускаю следующий код:
+
+read = open('sample.json')
+@app.get("/key/{hole}", status_code=200)
+def fetch_message(*, hole: int): 
+    data = json.load(read)
+    for i in data:
+     if i['id'] == hole:
+        return(i['message'])
+        break
+Мой файл json выглядит примерно так:
+
+{
+    "id": 0,
+    "name": "John Doe",
+    "message": "Hello World!"
+}
+ 30.09.2022 18:56
+0
+2
+169
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы пытаетесь перебрать ключи одной записи в ваших данных json. Я считаю, что вы хотите перебрать список записей данных json, чтобы вместо этого ваш sample.json был таким:
+
+[
+    {
+        "id": 0,
+        "name": "John Doe",
+        "message": "Hello World!"
+    }
+]
+ 30.09.2022 19:34
+Вы пытаетесь перебрать json, ясно, что это не может пойти хорошо.
+
+Эта версия работает с файлом, содержащим 1 объект json, как у вас.
+
+read = open('sample.json')
+@app.get("/key/{hole}", status_code=200)
+def fetch_message(*, hole: int): 
+    data = json.load(read)
+    if data['id'] == hole:
+        return(data['message'])
+        break  # this is not reacheable
+
+Корневой путь в Fast API за ALB
+Вопросы
+PYTHON
+Корневой путь в Fast API за ALB
+Я развертываю быстрое приложение API за AWS ALB с шаблоном пути правила прослушивателя /api/v1/, указывающим на быстрый API. Мое приложение выглядит так
+
+from typing import Union
+import os
+import mysql.connector
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    print("Root path hit")
+    return {"App": "Fargate"}
+
+
+@app.get("/api/v1/")
+def read_apiv1():
+    print("Root path hit")
+    return {"App": "Path Fargate API v1"}
+
+Я развернул приложение в ECS с помощью докера, и моя команда запуска докера
+
+CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80", "--root-path", "/api/v1"]
+Теперь, когда я нажимаю на свой DNS-сервер AWS ALB с суффиксом /api/v1/, я вижу конечную точку /api/v1, которая выдает ответ {"App": "Path Fargate API v1"}. Однако, основываясь на документации из fast API, он должен загружать конечную точку API с помощью /.
+
+Может ли кто-нибудь помочь мне, почему я получаю это неожиданное поведение? Нужно ли вручную писать /api/v1 перед всеми моими конечными точками?
+
+ 15.09.2022 15:14
+0
+0
+246
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Наличие прокси с префиксом пути в этом случае означает, что вы можете объявить путь в /app в своем коде, но затем вы добавите слой поверх (прокси), который поместит ваше приложение FastAPI по пути, например /api/v1 .
+
+В этом случае исходный путь / фактически будет обслуживаться в /api/v1.
+
+Несмотря на то, что весь ваш код написан при условии, что есть только /.
+
+И прокси-сервер будет «снимать» префикс пути на лету перед передачей запроса в Uvicorn, чтобы ваше приложение было уверено, что оно обслуживается в /, так что вам не нужно обновлять весь свой код, чтобы включить префикс /api/v1.
+
+Ссылка: https://fastapi.tiangolo.com/advanced/behind-a-proxy/?h=root_#proxy-with-a-stripped-path-prefix
+
+О root_path
+Имейте в виду, что сервер (Uvicorn) не будет использовать этот root_path ни для чего другого, кроме передачи его приложению.
+
+Но если вы перейдете в браузере по адресу http://127.0.0.1:8000/app, вы увидите нормальный ответ:
+
+{
+    "message": "Hello World",
+    "root_path": "/api/v1"
+}
+Таким образом, он не будет доступен в http://127.0.0.1:8000/api/v1/app.
+
+Uvicorn ожидает, что прокси-сервер получит доступ к Uvicorn по адресу http://127.0.0.1:8000/app, и тогда прокси-сервер должен будет добавить дополнительный префикс /api/v1 сверху.
+
+ 18.09.2022 17:24
+Вот как я добавил /api/v1 ко всем своим маршрутам:
+
+from sys import prefix
+from typing import Union
+import os
+from fastapi import FastAPI, APIRouter
+
+app = FastAPI()
+
+prefix_router = APIRouter(prefix = "/api/v1")
+
+@prefix_router.get("/")
+def read_root():
+    print("Root path hit")
+    return {"App": "Fargate"}
+
+
+@prefix_router.get("/something/")
+def read_apiv1():
+    print("Root path hit")
+    return {"App": "Path Fargate API v1"}
+
+app.include_router(prefix_router)
+После этого, когда я иду по пути http://127.0.0.1/api/v1/something/, он автоматически перенаправляет меня на второй маршрут.
+
+Не удается подключить базу данных PostgreSQL к FastAPI
+Вопросы
+PYTHON
+Не удается подключить базу данных PostgreSQL к FastAPI
+Так привет. С SQLite все работает, но при попытке добавить PostgreSQL согласно руководству пользователя по FastAPI ничего не получается и получаю:
+
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "check_same_thread"
+
+Мой database.py это:
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+#SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
+SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL, connect_args = {"check_same_thread": False}
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+ 06.07.2022 14:47
+0
+0
+346
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+check_same_thread — это аргумент, специфичный для sqlite. Поскольку вы указали URL-адрес Postgres, вы можете удалить этот аргумент, и у вас не должно возникнуть проблем с созданием механизма.
+
+то есть:
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+ 06.07.2022 14:54
+ Ответ принят как подходящий
+SQLAlchemy нужен немного другой dsn. Чтобы убедиться, используйте PostgresDsn от pydantic.
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from pydantic import PostgresDsn
+
+SQLALCHEMY_DATABASE_URI = PostgresDsn.build(
+    scheme = "postgresql",
+    user = "POSTGRES_USER",
+    password = "POSTGRES_PASSWORD",
+    host = "POSTGRES_SERVER",
+    path=f"/{'POSTGRES_DB' or ''}",
+)
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URI,
+    pool_pre_ping=True,
+)
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+try:
+    db = SessionLocal()
+    db.execute("SELECT 1")
+except Exception as e:
+    raise e
+
+Как добавить файл и форму JSON в запрос FastAPI POST?
+Вопросы
+PYTHON
+Как добавить файл и форму JSON в запрос FastAPI POST?
+В частности, я хочу, чтобы приведенный ниже пример работал:
+
+app.py
+
+from fastapi import FastAPI,File,UploadFile,Form,Body
+import uvicorn
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/hello/{name}")
+async def say_hello(name: str):
+    return {"message": f"Hello {name}"}
+
+@app.post("/jsk")
+async def save_image_meta(farm_name: str = Form(...), files: UploadFile = File(...)):
+    print('*'*100)
+    return {
+        "farm_name": farm_name
+    }
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host = "127.0.0.1", port=8088, reload=True)
+
+Если это не правильный способ для запроса POST, пожалуйста, сообщите мне, как выбрать необходимые столбцы из загруженного файла изображения в FastAPI.
+
+test.py
+
+import base64
+import hmac
+import json
+import requests
+
+def parse_params_to_str(params):
+    url = "?"
+    for key, value in params.items():
+        url = url + str(key) + '=' + str(value) + '&'
+    return url[1:-1]
+
+def hash_string(qs, secret_key):
+    mac = hmac.new(bytes(secret_key, encoding='utf8'), bytes(qs, encoding='utf-8'), digestmod='sha256')
+    d = mac.digest()
+    validating_secret = str(base64.b64encode(d).decode('utf-8'))
+    return validating_secret
+
+def sample_request():
+    access_key = "dfaa65a6-ee25-4b03-916b-bedb9095-35f9-4485-a72e-5da4e161a12b"
+    secret_key = "GWpnn56bUOnCedhpiUWYJl9dtZ3WllWtUeBUGQva"
+    qs = dict(key=access_key)
+    header_secret = hash_string(parse_params_to_str(qs), secret_key)
+    url = f"http://127.0.0.1:8088/jsk"
+    headers = {
+        'Content-Type': 'multipart/form-data',
+        'Accept': 'application/json',
+        'secret': header_secret
+    }
+    file = "/Users/jskim/Downloads/111111.jpg"
+    files = {'files': open(file, 'rb')}
+    payload = {"farm_name": "11111"}
+    res = requests.post(url, data=payload, headers=headers, files=files)
+    return res
+
+sample_request()
+Я получаю ошибку 400 Bad Request. Помощь.
+
+Если это не правильный способ для запроса POST, пожалуйста, сообщите мне, как выбрать необходимые столбцы из загруженного файла изображения в FastAPI.
+
+ 17.05.2022 11:27
+0
+0
+19
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы не должны определять заголовок Content-Type multipart/form-data самостоятельно. Библиотека requests позаботится об этом автоматически, определив границу. Если вы установите этот заголовок самостоятельно, requests не будет этого делать, и ваш сервер не будет знать, какую границу ожидать (если только вы не решите также установить границу самостоятельно).
+
+Для работы ваш заголовок должен быть без типа содержимого:
+
+    headers = {
+        'Accept': 'application/json',
+        secret: header_secret
+    }
+ 17.05.2022 14:23
+я дам вам то, что я сделал в моем проекте, я надеюсь, что это поможет вам
+
+это просто, но полезно
+
+my schema
+
+class UserProfileSchema(BaseModel):
+       first_name: str 
+       last_name: str 
+       address: Optional[Text]
+       image: Optional[str]
+       postal_code: Optional[str]
+       national_code: Optional[int]
+
+      @classmethod
+      def as_form(cls, first_name: str = Form(...), last_name: str = Form(...), address: Optional[Text] = Form(...),
+            postal_code: Optional[str] = Form(...),
+            national_code: Optional[str] = Form(...)):
+           return cls(first_name=first_name,
+               last_name=last_name,
+               address=address,
+               postal_code=postal_code,
+               national_code=national_code)
+     class Config:
+           orm_mode = True
+my view
+
+    @wrapper_auth('/profile')
+    class Profile:
+        async def post(profile: UserProfileSchema = Depends(UserProfileSchema.as_form), file: UploadFile = File(...),
+                       current_user: User = Security(get_current_user), db: get_session = Depends(get_db)) -> jsonable_encoder:
+.......
+
+Ответ API (получить) (JSON) не отображается в ngFor - Angular
+Вопросы
+PYTHON
+Ответ API (получить) (JSON) не отображается в ngFor - Angular
+Я пытаюсь получить ответ в JSON моего API и отобразить значения на моей странице Угловой, используя нгфор
+
+У меня нет ошибок сборки, значения просто не отображаются на странице, только в консоли, используя console.info(), поэтому я не могу понять.
+
+Это мой компонент.ts:
+
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-vps',
+  templateUrl: './vps.component.html',
+  styleUrls: ['./vps.component.scss'],
+})
+
+export class VpsComponent implements OnInit {
+  vpsOptions: any;
+  baseUrl: string = "http://127.0.0.1:8000/"
+  valor: number = 555;
+  tipo: any = "mês";
+
+ngOnInit(): void {
+   this.getVps()
+   console.info("ngOnInit")
+   console.info(this.vpsOptions)
+}
+
+constructor(private httpClient: HttpClient) {
+    this.vpsOptions = []
+}
+public getVps() {
+ this.httpClient.get(this.baseUrl+'vps').subscribe((result:any) =>{
+  for(let item in result){
+   this.vpsOptions.push(result[item]);
+  }
+});
+Это мой компонент.html:
+
+<ng-container *ngFor = "let vps of vpsOptions">
+      <div class = "swiper-slide">
+        <div class = "mini-card">
+          <div class = "card-header img-fluid border-0">
+            <h3 class = "card-title titulo-mini-card">{{vps.nome}}</h3>
+          </div>
+          <div class = "card mb-xl-8">
+            <div class = "card-body body-vps pt-0">
+              <p class = "texto-vps">
+                <span class = "primeira-linha"> R$ <span class = "valor-vps">{{valor}},00</span>/{{tipo}}</span> <br>
+                <span class = "descritivo-valor">**Preço na contratação de 48 meses </span><br>
+                {{vps.processador}} <br>
+                {{vps.memoria}} <br>
+                {{vps.disco1}} de Armazenamento <br>
+                {{vps.banda}} de Banda <br>
+                {{vps.ips}} IP(s) dedicado(s) <br>
+                100% Acesso Root <br>
+                100Mb/s Rede <br>
+                Suporte 8/5 <br> <br>
+                <button type = "submit" class = "btn btn-primary" style = "background-color: #213B89;"
+                >Solicitar Orçamento</button>
+                <!-- <a class = "link-vps" href = "">Veja todas as caracterísicas</a> -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+</ng-container>
+Это мой ответный API (я использую fastAPI Python):
+
+Ответ API (получить) (JSON) не отображается в ngFor - Angular
+
+Это ответ в консоли браузера: Ответ API (получить) (JSON) не отображается в ngFor - Angular
+
+ 16.05.2022 17:47
+0
+0
+29
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+ваш vpsOptions должен быть наблюдаемым
+
+в вашем ts вы должны сделать:
+
+vpsOptions$: new Observable<any>;
+
+ ...
+
+ngOnInit(): void {
+   this.vpsOptions$ = this.getVps()
+   ...
+}
+или более чистый способ:
+
+vpsOptions$ = this.getVps();
+
+...
+а затем в вашем шаблоне вы можете сделать:
+
+<ng-container *ngFor = "let vps of (vpsOptions$ | async)">
+    ...your content
+</ng-container>
+Это.
+
+удачи и наслаждайтесь угловым!
+
+ 16.05.2022 19:25
+Я реорганизовал свой код и создал другие классы, чтобы абстрагировать некоторые функции, чтобы было больше практики.
+
+Я создал interface.ts, чтобы отформатировать мой get:
+
+export interface Vps{
+  id?: number;
+  nome?:string;
+  ...
+Я создал service.ts, чтобы абстрагировать функцию httpClient.get():
+
+import { Vps } from './vps.interface';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+
+export class VpsService {
+  private readonly baseUrl: string = "http://127.0.0.1:8000/"
+  constructor(private httpClient: HttpClient) {}
+
+  getVps(): Observable<Vps[]> {
+    const url = this.baseUrl+'vps';
+    return this.httpClient.get<Vps[]>(url);
+  }
+}
+Спасибо @Dario за ответ, я использовал Observable<Vps[]>: //объявление объекта
+
+vpsOptions: Observable<Vps[]>;
+//Инициализация объекта, вызывающего service.ts
+
+constructor(private vpsService: VpsService) {
+    this.vpsOptions = this.vpsService.getVps();
+  }
+// Наконец, я изменил component.html, чтобы правильно получить объект (Observable)
+
+<ng-container *ngIf = "vpsOptions | async as options">
+    <ng-container *ngFor = "let option of options">
+         <!-- my display logic here -->
+     </ng-container>
+</ng-container>
+
+Python3 — проблема с разбором json после использования данных ответа (unirest)
+Вопросы
+JSON
+Python3 — проблема с разбором json после использования данных ответа (unirest)
+Я делаю HTTPSConnection, используя (Python)Unirest, и в ответе есть такие символы, как ", \ и \n, поэтому я жестко закодировал свой код Python и, наконец, я получил правильный ответ без каких-либо символов на консоли, используя sys.stderr.write(data2)
+
+    @router.get("/data", status_code=status.HTTP_200_OK)
+    async def data_detail(type: str ):
+        try:
+            conn = http.client.HTTPSConnection("example.com")
+            conn.request("GET", "/test.php?type = "+type)
+            res = conn.getresponse()
+            data = res.read()
+            data2 = data.decode("utf-8")
+            data2 = data2[1:-1]
+            data2 = data2.replace("\\n", '')
+            data2 = data2.replace("\\", '')
+
+            res = {
+                "status"    :   "OK" ,
+                "result"    :   data2
+                }
+            return JSONResponse(res)
+        except Exception as e:
+            raise HTTPException(status_code=400, detail = "Error")
+теперь, когда я возвращаю data пользователю обратную косую черту \ снова возвращаюсь к ответу данных
+
+данные, которые я получил от третьей стороны:
+
+"{\"list1\":[{\"one\":\"one\",\"tow\":\"tow\",\"three\":\"three\"},{\"test1\":\"test1\",\"test2\":\"test2\",\"test3\":\"test3\"},],\"list2\":[]}\n"
+после замены символов я получил это на системной консоли
+
+{"list1":[{"one":"one","tow":"tow","three":"three"},{"test1":"test1","test2":"test2","test3":"test3"}],"list2":[]}
+но когда я добавляю эти данные в окончательный ответ json, обратная косая черта снова возвращается к выводу, и все данные хранятся как одно значение в result
+
+любое решение этой проблемы
+
+ 04.05.2022 21:43
+0
+2
+30
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вы никогда не заменяете одну обратную косую черту. Вам нужно добавить строку типа
+
+data2 = data2.replace("\", '')
+ 04.05.2022 21:51
+ Ответ принят как подходящий
+Расшифруйте JSON.
+
+Сначала import json, а затем попробуйте заменить:
+
+data2 = data2[1:-1]
+data2 = data2.replace("\\n", '')
+data2 = data2.replace("\\", '')
+по
+
+data2 = json.loads(data2)
+После этого ваш окончательный ответ json будет построен правильно.
+
+Вы должны использовать json.dumps(data2), чтобы вывести эти данные на консоль. В общем, используйте json.dumps для красивой печати данных Python в формате JSON.
+
+См. https://docs.python.org/3/library/json.html для получения дополнительной помощи по обработке JSON в python.
+
+FastAPI запускает API-вызовы последовательно, а не параллельно
+Вопросы
+PYTHON
+FastAPI запускает API-вызовы последовательно, а не параллельно
+У меня есть следующий код:
+
+import time
+from fastapi import FastAPI, Request
+    
+app = FastAPI()
+    
+@app.get("/ping")
+async def ping(request: Request):
+        print("Hello")
+        time.sleep(5)
+        print("bye")
+        return {"ping": "pong!"}
+Если я запускаю свой код на своем локальном сервере, например, http://localhost:8501/ping, на разных вкладках одного и того же окна Firefox, я получаю:
+
+    Hello
+    bye
+    Hello
+    bye
+    ...
+Вместо:
+
+    Hello
+    Hello
+    bye
+    bye
+Я читал об использовании httpx, но все равно не могу добиться настоящего распараллеливания. В чем проблема?
+
+ 17.03.2022 17:49
+0
+0
+219
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Q :
+" ... What's the problem? "
+
+А:
+В документации FastAPI прямо говорится, что фреймворк использует внутрипроцессные задачи (унаследованные от Старлетт).
+
+Это само по себе означает, что все такие задачи соревнуются за получение (время от времени) GIL-блокировки интерпретатора Python — эффективно являющегося терроризирующим MUTEX Global Interpreter Lock, который, по сути, повторно [SERIAL]-использует любое и все количество Внутрипроцессные потоки интерпретатора Python
+для работы как один-и-только-один-РАБОТАЕТ-пока все остальные ждут...
+
+В более мелком масштабе вы видите результат — если порождение другого обработчика для второго (инициированного вручную из второй вкладки FireFox) приходящего http-запроса на самом деле занимает больше времени, чем спящий режим, результат GIL-lock чередуется ~ 100 [ms] time-quanta round-robin (все-подождите-один-может-работать ~ 100 [ms] перед каждым следующим раундом GIL-lock release-acquire-roulette) Внутренняя работа интерпретатора Python не показывает более подробной информации, вы можете использовать более подробную информацию (в зависимости от по типу или версии ОС) из здесь, чтобы увидеть больше в потоке LoD, например, внутри выполняемого асинхронного кода:
+
+import time
+import threading
+from   fastapi import FastAPI, Request
+
+TEMPLATE = "INF[{0:_>20d}]: t_id( {1: >20d} ):: {2:}"
+
+print( TEMPLATE.format( time.perf_counter_ns(),
+                        threading.get_ident(),
+                       "Python Interpreter __main__ was started ..."
+                        )
+...
+@app.get("/ping")
+async def ping( request: Request ):
+        """                                __doc__
+        [DOC-ME]
+        ping( Request ):  a mock-up AS-IS function to yield
+                          a CLI/GUI self-evidence of the order-of-execution
+        RETURNS:          a JSON-alike decorated dict
+
+        [TEST-ME]         ...
+        """
+        print( TEMPLATE.format( time.perf_counter_ns(),
+                                threading.get_ident(),
+                               "Hello..."
+                                )
+        #------------------------------------------------- actual blocking work
+        time.sleep( 5 )
+        #------------------------------------------------- actual blocking work
+        print( TEMPLATE.format( time.perf_counter_ns(),
+                                threading.get_ident(),
+                               "...bye"
+                                )
+        return { "ping": "pong!" }
+И последнее, но не менее важное: не стесняйтесь читать больше обо всех кодах, основанных на потоках другие акулы, которые могут пострадать... или даже вызвать... за кулисами...
+
+Рекламный меморандум
+Смесь GIL-lock, пулов на основе потоков, асинхронных декораторов, блокировки и обработки событий - верная смесь с неопределенностями и HWY2HELL; о)
+
+ 17.03.2022 19:55
+ Ответ принят как подходящий
+Согласно Документация FastAPI:
+
+When you declare a path operation function with normal def instead of async def, it is run in an external threadpool that is then awaited, instead of being called directly (as it would block the server).
+
+Таким образом, def (синхронные) маршруты выполняются в отдельном потоке из пула потоков, или, другими словами, сервер обрабатывает запросы одновременно, тогда как async def маршруты выполняются в основном (одиночном) потоке, т. е. сервер обрабатывает запросы последовательно - до тех пор, пока внутри таких маршрутов нет вызова await для I/O-bound операций, таких как данные в ожидании от клиента для отправки по сети, содержимое файла на диске для чтения, операция базы данных для завершения и т. д. - иметь посмотри здесь. Асинхронный код с async и await много раз описывались как использование сопрограмм.. Корутины являются совместными (или совместно многозадачный): «в любой момент времени программа с сопрограммами запускает только одну из своих сопрограмм, и эта работающая сопрограмма приостанавливает свое выполнение только тогда, когда она явно запрашивает приостановку» (см. здесь и здесь для получения дополнительной информации на сопрограммах). Однако это не относится к операциям CPU-bound. CPU-bound операции, даже если они объявлены в async def функциях и вызываются с помощью await, блокируют основной поток. Это также означает, что операция блокировки, такая как time.sleep(), в маршруте async def заблокирует весь сервер (как в вашем случае).
+
+Таким образом, если ваша функция не собирается выполнять какие-либо вызовы async, вместо этого вы должны объявить ее с помощью def, как показано ниже:
+
+@app.get("/ping")
+def ping(request: Request):
+    #print(request.client)
+    print("Hello")
+    time.sleep(5)
+    print("bye")
+    return "pong"
+В противном случае, если вы собираетесь вызывать async функции, которые вам нужно await, вы должны использовать async def. Чтобы продемонстрировать это, ниже используется функция asyncio.sleep() из библиотеки асинцио. Аналогичный пример приведен также для здесь и здесь.
+
+import asyncio
+ 
+@app.get("/ping")
+async def ping(request: Request):
+    print("Hello")
+    await asyncio.sleep(5)
+    print("bye")
+    return "pong"
+Обе приведенные выше функции будут печатать ожидаемый результат, как указано в вашем вопросе, если два запроса поступят примерно в одно и то же время.
+
+Hello
+Hello
+bye
+bye
+Примечание: когда вы вызываете конечную точку во второй (третий и т. д.) раз, не забудьте сделать это из вкладки, изолированной от основного сеанса браузера; в противном случае запросы будут отображаться как исходящие от одного и того же клиента (вы можете проверить это с помощью print(request.client) - число port будет одинаковым, если обе вкладки открыты в одном окне), и, следовательно, запросы будут обрабатываться последовательно . Вы можете либо перезагрузить ту же вкладку (как она работает), либо открыть новую вкладку в окне инкогнито, либо использовать другой браузер/клиент для отправки запроса.
+
+Async/await и дорогие операции с привязкой к ЦП (длительные вычислительные задачи)
+Если вам необходимо использовать async def (как вам может понадобиться await для сопрограмм внутри вашего маршрута), но также у вас есть какая-то синхронная длительная вычислительная задача, которая может блокировать сервер и не позволяет проходить другим запросам, например:
+
+@app.post("/ping")
+async def ping(file: UploadFile = File(...)):
+    print("Hello")
+    contents = await file.read()
+    some_long_computation_task(contents)  # this blocks other requests
+    print("bye")
+    return "pong"
+потом:
+
+Используйте больше рабочие (например, uvicorn main:app --workers 4). Примечание: Каждый рабочий "имеет свои вещи, переменные и память". Это означает, что global переменные/объекты и т. д. не будут использоваться совместно процессами/воркерами. В этом случае следует рассмотреть возможность использования хранилища базы данных или хранилищ ключей и значений (кэшей), как описано в здесь и здесь. Кроме того, «если вы потребляете большой объем памяти в своем коде, каждый процесс будет потреблять эквивалентный объем памяти».
+
+Используйте модуль FastAPI (Starlette) run_in_threadpool() from concurrency (github src здесь и здесь) — как предложил @tiangolo здесь — который «будет запускать функцию в отдельном потоке, чтобы гарантировать, что основной поток (где запускаются сопрограммы) не будет заблокирован» (см. здесь). Как описано @tiangolo здесь, «run_in_threadpool — ожидаемая функция, первый параметр — обычная функция, следующие параметры передаются этой функции напрямую. Она поддерживает аргументы последовательности и аргументы ключевого слова».
+
+from fastapi.concurrency import run_in_threadpool
+response = await run_in_threadpool(some_long_computation_task, contents)
+В качестве альтернативы используйте asynciorun_in_executor:
+
+loop = asyncio.get_running_loop()
+response = await loop.run_in_executor(None, lambda: 
+some_long_computation_task(contents))
+Вы также должны проверить, можете ли вы изменить определение вашего маршрута на def. Например, если единственным ожидаемым методом в вашей конечной точке является чтение содержимого файла (как вы упомянули в разделе комментариев ниже), FastAPI может прочитать для вас bytes файла (однако это должно работать для небольшие файлы, так как все содержимое будет храниться в памяти, см. здесь), или вы могли бы даже вызвать метод read() объекта SpooledTemporaryFile напрямую, чтобы вам не пришлось ждать метода read() - и поскольку теперь вы можете объявить ваш маршрут с помощью def, каждый запрос будет выполняться в отдельном потоке.
+
+@app.post("/ping")
+def ping(file: UploadFile = File(...)):
+    print("Hello")
+    contents = file.file.read()
+    some_long_computation_task(contents)
+    print("bye")
+    return "pong"
+Посмотрите этот ответ, а также документацию здесь, чтобы найти другие предлагаемые решения.
+
+На самом деле это была попытка проверить, почему другой вызов выполнялся последовательно. Другая функция вызывает «UploadFile» и выполняет «ожидание file.read ()», а также запускает последовательный режим. Более того, это выполняется внутри продукта сервера amazon после шлюза API от amazon, и, следовательно, все запросы поступают с одного и того же IP-адреса, поскольку пользователь подключается к amazon, а сервер amazon вызывает мой API. Проблема в том, что операция с файлом длинная, и если у меня это сериализовано в конце, у меня есть тайм-ауты из-за ограничений Amazon. Думаю, мне придется перейти по последней ссылке, которую вы предоставили!
+
+— 
+Learning from masters
+ 17.03.2022 20:53
+Могу я спросить, является ли file.read() единственной async функцией, которую вам нужно await?
+
+— 
+Chris
+ 17.03.2022 21:22
+После загрузки файла (изображения) я выполняю жесткую обработку изображения и загружаю изображение на сервер AWS (есть обработчики S3). Однако в коде нет других явных ожиданий.
+
+— 
+Learning from masters
+ 18.03.2022 00:12
+@Learningfrommasters Затем вы можете объявить маршрут как def и объявить параметр файла как bytes. Таким образом, FastAPI прочитает файл за вас, и вы получите его содержимое; и поскольку это маршрут def, каждый запрос будет выполняться в отдельном потоке. Как описано здесь, это будет работать с небольшими файлами, так как содержимое будет храниться в памяти. Если вам нужно получить другие атрибуты, например, имя файла, вы можете передать их как Form данные на вашу конечную точку.
+
+— 
+Chris
+ 18.03.2022 04:20
+Чтобы загрузить изображение, у меня есть: def myfunc(image: bytes = File(...)): Image.open(BytesIO(image)).convert('RGB'), но теперь это не удается. До этого было: async def myfunc(image: UploadFile = File(...)): Image.open(BytesIO(await image.read())).convert('RGB') Как быть без асинхронности и ожидания?
+
+— 
+Learning from masters
+ 18.03.2022 10:24
+Давайте продолжить обсуждение в чате.
+
+— 
+Learning from maste
+
+Веб-сокет FastAPI не может подключиться
+Вопросы
+PYTHON
+Веб-сокет FastAPI не может подключиться
+Я пытаюсь разрешить моему приложению Vue.js общаться с моим локальным сервером FastAPI (на основе starlette) с помощью веб-сокетов. Я попытался использовать тот же код, что и в их примере: https://fastapi.tiangolo.com/tutorial/вебсокеты/. Однако происходит что-то странное, потому что мой сервер не может запуститься по причине: AttributeError: 'FastAPI' object has no attribute 'websocket'. Это странно, потому что именно этот код является официальной документацией FastAPI.
+После этого я использовал код примера Starlette: https://www.starlette.io/вебсокеты/. Однако, когда я пытаюсь подключиться к нему, FastApi выводит на терминал: WARNING: Invalid HTTP request received.
+Я попытался использовать другой клиент, Simple WebSocket Client: https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo, но на терминале появляется та же ошибка.
+Что я здесь делаю неправильно? Во-первых, мне кажется странным, что код FastAPI не работает на моем компьютере, кто-нибудь знает, почему?
+
+Заранее спасибо!
+
+ 28.05.2019 20:05
+0
+0
+2 074
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Очевидно, функциональность WebSocket была добавлена ​​в FastAPI 0.24, который только что вышел. Я использовал более старую версию.
+
+ 29.05.2019 09:32
+запустите pip install websockets и настройте его следующим образом:
+
+from fastapi import FastAPI, WebSocket
+
+@app.websocket("/ws")
+async def send_data(websocket:WebSocket):
+    print('CONNECTING...')
+    await websocket.accept()
+    while True:
+        try:
+            await websocket.receive_text()
+            resp = {
+            "message":"message from websocket"
+            }
+            await websocket.send_json(resp)
+        except Exception as e:
+            print(e)
+            break
+    print("CONNECTION DEAD...")
+
+FastAPI/Pydantic в проекте с MyPy
+Вопросы
+PYTHON
+FastAPI/Pydantic в проекте с MyPy
+В настоящее время я работаю над руководством по fastAPI, и моя среда настроена на черный, flake8, бандит и mypy. Все в туториале работает нормально, но мне постоянно приходится # набирать: игнорировать вещи, чтобы заставить mypy сотрудничать.
+
+class Item(BaseModel):
+    name: str
+    description: str = None
+    price: float
+    tax: float = None
+
+
+@app.post("/items/")
+async def create_items(item: Item) -> Item:
+    return item
+Mypy затем ошибки:
+
+ ❯ mypy main.py                                                                                                                                                                                                 [14:34:08]
+main.py:9: error: Incompatible types in assignment (expression has type "None", variable has type "str")
+main.py:11: error: Incompatible types in assignment (expression has type "None", variable has type "float") 
+Я мог # напечатать: ignore, но тогда я теряю подсказки типа и проверку в моем редакторе. Я упустил что-то очевидное, или я должен просто отключить mypy для проектов FastAPI?
+
+ 21.05.2019 20:36
+1
+0
+1 710
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете использовать Optional:
+
+from typing import Optional
+
+class Item(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: float
+    tax: Optional[float] = None
+Это говорит mypy, что значение должно быть такого типа, но None допустимо.
+
+ 21.05.2019 21:57
+Если вы используете mypy, он может жаловаться на объявления типов, например:
+
+tax: float = None
+С ошибкой вроде: Несовместимые типы в присваивании (выражение имеет тип "None", переменная имеет тип "float") В этих случаях вы можете использовать Optional, чтобы сообщить mypy, что значение может быть None, например:
+
+tax: Optional[float] = None
+В приведенном выше коде Посмотрите это видео, это было объяснено в этом Описание базовой модели здесь
+
+
 Условно установить модель ответа FastAPI для маршрута
 Вопросы
 PYTHON
