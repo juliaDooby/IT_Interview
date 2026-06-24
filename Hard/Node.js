@@ -1,3 +1,156 @@
+Node JS Senior Developer Interview Questions and Answers
+Last updated by Vartika Rai on Sep 22, 2025 at 07:00 PM
+| Reading Time: 7 minutes
+Node.js is an open-source, cross-platform, single-threaded, backend JavaScript runtime environment and library. Node.js executes the JavaScript code outside the client’s web browser and runs on the V8 engine. Since it is single-threaded, Node.js is mainly used for non-blocking, event-driven servers.
+
+Due to its asynchronous and event-driven model, we can use Node.js to create server-side data-intensive applications. We can also use it for developing distributed systems, general-purpose, real-time, and network applications. This article focuses on top Node JS interview questions to help you prepare better, no matter what your level of experience.
+
+Node JS
+DevOps School
+If you are preparing for a tech interview, check out our technical interview checklist, interview questions page, and salary negotiation ebook to get interview-ready! Also, read Amazon Coding Interview Questions, Facebook Coding Interview Questions, and Google Coding Interview Questions for specific insights and guidance on coding interview preparation.
+
+In this article, we present the NodeJS interview questions and answers. These are divided into basic, intermediate, and advanced levels.
+
+Sample Node JS Interview Questions and Answers
+Node JS
+Snaphunt
+1. How does Node.js handle child threads?
+Node.js indeed spawns child threads for some tasks like asynchronous I/O. However, they run behind the scenes without executing any JavaScript code in the application and without blocking the main event loop.
+
+Node.js is a single-threaded process that does not expose thread management methods and child threads to the developer. However, some tools enable threading support in a Node.js application, like the ChildProcess module. Node.js 12 also offers experimental support for threads.
+
+2. What is the control flow function, and what does control flow do?
+The control flow function is a function, a block of code, that runs in between several asynchronous function calls. The control flow controls the order of execution, collects information, limits concurrency, and calls the next step in a program.
+
+3. Why is Node.js Single-threaded? Is Node.js synchronous or asynchronous?
+Node.js is asynchronous and is single-threaded to enable async processing. Async processing on a single thread under usual web loads allows us to achieve more performance and scalability than the general thread-based implementation.
+
+4. Why use Node.js?
+Node.js is fast, asynchronous, rarely blocks, yields excellent concurrency, offers a unified language and data type, and eases the process of building scalable network programs.
+
+5. List the various Node.js timing features.
+setTimeout or clearTimeout, setInterval or clearInterval, and setImmediate or clearImmediate are three functions the Timers module provides for executing code after a specific period.
+
+6. Name the two types of API functions in Node.js.
+Asynchronous, non-blocking, and synchronous blocking functions are the two types of API functions in Node.js.
+
+7. What does REPL stand for in Node.js?
+REPL refers to Read, Eval, Print, and Loop in Node.js.
+
+Basic Node JS Developer Interview Questions for Freshers
+
+
+We start with some basic conceptual Node JS Developer interview questions you should be able to answer before we move ahead. Can you answer them?
+
+Define and describe the usage of the following in the context of Node JS:
+
+Event Emitter
+Error-first callback
+Callback hell
+WASI
+Reactor pattern
+Buffer class
+Timing features
+Test pyramid
+Package.json file
+Reactor Pattern
+Event Loop
+Global installation of dependencies
+NODE_ENV
+LTS releases
+Piping
+Event-driven programming
+Streams
+Middleware
+The module .Exports
+Express.js package
+REPL
+Punycode
+First class functions
+Fork
+Asynchronous API
+NPM
+Intermediate Node JS Developer Interview Questions For 2 Year Experience
+Let’s move a step further with some intermediate Node JS Developer interview questions for experienced professionals:
+
+Explain the web application architecture of Node.js.
+Expand on the types of API functions available in Node.js.
+What is usually the first argument passed to a Node.js callback handler?
+Name some tools that help ensure consistent code style.
+Expand on the various modules in Node.js.
+Explain callback hell along with ways to avoid it.
+Why is Node.js preferred over Java, PHP, and other backend technologies?
+Explain the various types of HTTP requests.
+How can we manage packages in a Node.js project.
+State the advantages of using promises overusing callbacks.
+Name and explain some of the flags used in file read/write operations.
+Talk a bit about asynchronous, non-blocking APIs in Node.js.
+Differentiate between the global and local installation of dependencies.
+How would you create a simple server in Node.js that returns Hello World?
+How would you create a simple Express.js application?
+How would you install, update, and delete a dependency?
+What does an EventEmitter do in Node.js?
+Differentiate between readFile and createReadStream.
+What does the TTY module in Node.js contain?
+Differentiate between JavaScript, Angular, Ajax, and Node.js.
+What is node js and what does it do? How would you install and update node js?
+Does Node.js supports cryptography?
+What does assert do in Node.js?
+What does the control flow function do and how does it work?
+Does Node.js come with a debugger?
+What are the advantages and disadvantages of Node.js?
+Can we access DOM in Node?
+Name some of the most commonly used libraries in Node.js.
+What kind of tasks we can do asynchronously using the event loop?
+Name the command used to import external libraries.
+Is evaluation of simple expressions possible using Node REPL?
+Why is Node.js Single-threaded?
+Which tool would you use to ensure consistent code style in Node.js?
+What purpose does the underscore variable serve in REPL?
+Advanced Node JS Senior Developer Interview Questions for 3-5 Years Experience
+Lastly, here are some advanced Senior Node JS Developer interview questions. Ensure you can solve them before your interview:
+
+How does Node prevent blocking code?
+Why does Google use the V8 engine for Node.js?
+How does Node.js handle concurrency, given it’s single-threaded?
+How does Node.js support multi-processor platforms?
+Does Node.js fully utilize all processor resources? If yes, how?
+Why do we need to separate the Express app and server?
+Explain config file separation for dev and prod environments via an example.
+Describe how to use a URL module in Node.js.
+Differentiate between process.nextTick() and setImmediate().
+Differentiate between fork() and spawn() methods in Node.js.
+Differentiate between Angular and Node.js.
+What method would you prefer for resolving unhandled exceptions in Node.js?
+How would you implement async in Node.js? Explain the use of async await using an example.
+How does clustering improve the performance in Node.js?
+How does the threadpool work and which library in Node.js takes care of it?
+FAQs on Node JS
+Q1. What should a senior Node.js developer know?
+
+A senior Node.js developer should have experience in front-end design and development using HTML and CSS. And a senior Node.js developer must know all crucial JavaScript concepts, have error-handling skills, and need to have RESTful APIs and API communications skills.
+
+Q2. Name a database popularly used with Node.js.
+
+MongoDB is a cross-platform, NoSQL, document-oriented database most commonly used with Node.js. Its advantages include high availability, high performance, and ease of scalability.
+
+Q3. Is Node.js free to use?
+
+Yes, Node.js is free to use and released under MIT license.
+
+Q4. Is Node.js single-threaded or multi-threaded? Is it asynchronous or synchronous?
+
+Node.js is a single-threaded, asynchronous process.
+
+Q5. How is Node.js most frequently used?
+
+We use Node.js most frequently in IoT, Complex SPAs, real-time chats, real-time collaboration tools, microservices architecture, and streaming applications.
+
+Ready to Nail Your Next Coding Interview?
+Whether you’re a coding engineer gunning for a software developer or software engineer role, a tech lead, or targeting management positions at top companies, IK offers courses specifically designed for your needs to help you with your technical interview preparation!
+
+If you’re looking for guidance and help with getting started, sign up for our FREE webinar. As pioneers in technical interview preparation, we have trained thousands of software engineers to crack the most challenging coding interviews and land jobs at their dream companies, such as Google, Facebook, Apple, Netflix, Amazon, and more!
+
 Q1. Create a sleep function using Async/Await.
 In the below example, the sleep function returns a promise which is resolved after given millisecond using setTimeout API.
 
