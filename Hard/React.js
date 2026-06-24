@@ -1,3 +1,153 @@
+Q1. Why do we have both controlled and uncontrolled inputs?
+What interviewer wants to see: a solid understanding of a basic React concept.
+Ok, this is more like a warm-up question. Which is even more important to give a full answer.
+
+A controlled input accepts its current value as a prop, as well as a callback to change that value. It’s a “React way”:
+
+<input type="text" value={value} onChange={this.handleChange} />
+An uncontrolled input stores its own state internally, using DOM API.
+
+Here don’t provide value and onChange handler, but we use ref():
+
+<input type="text" ref={this.textInput} />
+And now you can access your input data as:
+
+this.textInput.current.value
+Your interviewer wants to hear more about details: are there any pros to using uncontrolled components, is there any performance difference?
+
+Personally, I’ve never used uncontrolled inputs, but if you are learning React or you have to integrate React and non-React code then it might be necessary.
+
+It’s nice to mention what your data (state) and UI (inputs) are always in sync with controlled input approach and it means you have to update the component’s state which triggers React reconciliation process.
+
+While with uncontrolled elements there is no need for that — you just keep the value inside the input DOM element.
+
+Q2. Why do we need a key property? Give an example when a bad key causes an error.
+What interviewer wants to see: some insight on how React works internally.
+The answer is based on the official React reconciliation process doc.
+
+There are classic diffing algorithms with O(n³) time complexity, which might be used for creating a tree of React elements. But it means for displaying 1000 elements would require one billion comparisons.
+
+Instead, React implements a heuristic O(n) algorithm with an assumption that the developer can hint at which child elements may be stable across different renders with a keyprop.
+
+What about a bad key? Well, an index might be a very bad key if you decide to make your children removable. Check out this demo. Try to type something in the second input and then remove the first one. But you still can see the value in the second one, why so?
+
+Because your keys are unstable. After removal, your third child with a key equals to 3, now has a key equals to 2. It’s not the same element for React now. And it will match it to the wrong DOM element, which previously had a key equals to 2 (which keeps the value we typed in a second input).
+
+Q3. How React event system is different from DOM events. Using stopImmediatePropagation().
+What interviewer wants to see: general knowledge of different JavaScript event models and everyday practical experience.
+The best way to answer this question is to first shortly explain how DOM event concepts like bubbling and capturing work.
+
+In short, with bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+Check this article for more info and demos.
+
+After that would be great to mention that React uses the Event Delegation Pattern — instead of assigning a handler to each of them — we put a single handler on their common ancestor and can access that element with event.target.
+
+And then it’s quite obvious to explain how stopImmediatePropagation is different from the tradition stopPropagation method: it prevents other listeners of the same event from being called which a case for React because of the event delegation pattern.
+
+Q4. How to prevent components from re-rendering?
+What interviewer wants to see: more knowledge about React and you care about performance.
+This is one of the most frequently asked questions. It’s worth to mention:
+
+shouldComponentUpdate() — returns ‘true’ by default. You can override if you know which props have to trigger an update.
+PureComponents — The difference between them is that React.Component doesn’t implement shouldComponentUpdate method but React.PureComponentimplements it with a shallow prop and state comparison.
+React.memo — The same as the previous one but it works with functional components.
+And as a follow up: when to use Component instead of PureComponent?
+
+You use PureComponents in 99% of cases in modern React. However, if you are working with Redux selectors, often you will need to explicitly specify the incoming prop changes to cancel the impending re-render to prevent UI thrashing. In this case, it’s appropriate to use a Component.
+
+Check out this deep reading if it’s all vague for you.
+
+Q5. Give an example of HOC.
+What interviewer wants to see: you are familiar with a well-known React pattern.
+HOC — a higher-order component is a function that takes a component and returns a new component. It’s a technique for sharing code between React components.
+
+Let’s say we have a simple Button component:
+
+const Button = props => <button {...props}>Hello</button>;
+We want to create a HOC for making a red border for our Button component. Let’s create it using our definition:
+
+const withRedBorder = Component =>
+  (props) => (
+    <Component {...props} style={{ border: "1px solid red" }} />
+  );
+And now we can create a RedButton component:
+
+const RedButton = withRedBorder(Button);
+// and use it as:
+<RedButton />
+Libraries that use HOC pattern: Redux connect, recompose.
+
+Q6. What is the render props?
+What interviewer wants to see: you are familiar with a second well-known React pattern.
+Render props — when a component takes a function that returns a React element and calls it instead of implementing its own render logic.
+
+It’s another technique for sharing code between React components.
+
+An example:
+
+<DataProvider render={data => (
+  <h1>Hello {data.target}</h1>
+)}/>
+Libraries that use render props pattern: React Router, Downshift.
+
+A follow up: what about HOC vs render props. Which one is better, when to use? This is a quite controversial topic, in this article you can find some pros and cons.
+
+Q7. React unit tests vs integration tests for components.
+What interviewer wants to see: understanding about different approaches to testing components.
+It’s worth to mention both Enzyme and react-testing-library.
+
+React testing library provides a clean and simple API which focuses on testing applications “as a user would”. This means an API returns HTML Elements rather than React Components with shallow rendering in Enzyme. It’s is a nice tool for writing integrational tests.
+
+Enzyme is still a valid tool, it provides a more sophisticated API which gives you access to component’s props and internal state. It makes sense to create unit tests for components.
+
+Check out this neat video about react-testing-library.
+
+Q8. What’s your favorite hook, how to implement it?
+What interviewer wants to see: practical usage of hooks and understanding of how it works.
+Despite hooks are still new API, a lot of people already use it in production and they expect you to know it.
+
+Let’s recreate a useWindowSize — it’s easy-to-read hook and quite straightforward:
+
+import { useState, useEffect } from 'react';
+const useWindowSize = () => {
+  const getSize = () => ({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  const [size, setSize] = useState(getSize);
+  useEffect(() => {
+    const handleResize = () => setSize(getSize());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return size;
+}
+Usage:
+
+const App = () => {
+  const size = useWindowSize();
+  return (
+    <div>
+      {size.width}px / {size.height}px
+    </div>
+  );
+}
+You might expect some questions like:
+
+1. Is that necessary to call your function useWindowSize , what about just getWindowSize?
+
+Yes, without it, we wouldn’t be able to automatically check for violations of rules of Hooks because we couldn’t tell if a certain function contains calls to Hooks inside of it.
+
+2. Will it work if we remove [] argument from useEffect?
+
+Yes, but we’ll call useEffect hook on every render which may cause performance issues.
+
+3. How React knows when to re-render App component if we handle window resizing in useWindowSize?
+
+
 Tips for React Coding Interviews
 Successful candidates talk through their approach before writing code. Explaining component structure, state decisions, and potential edge cases demonstrates thoughtful problem-solving. Candidates should write clean code with meaningful variable names even under time pressure. Asking clarifying questions about requirements shows attention to detail and professional communication skills.
 
