@@ -1,3 +1,432 @@
+Не удалось автоматически настроить источник данных: spring.datasource.url не указан
+Вопросы
+JAVA
+Не удалось автоматически настроить источник данных: spring.datasource.url не указан
+Я создал базовое приложение для весенней загрузки из ПРУЖИНА ИНИЦИАЛИЗР с зависимостями Web, MongoDB и JPA.
+
+Когда я пытаюсь запустить приложение весенней загрузки, я получаю следующее исключение:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-03-25 16:27:02.807 ERROR 16256 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+Failed to auto-configure a DataSource: 'spring.datasource.url' is not specified and no embedded datasource could be auto-configured.
+Reason: Failed to determine a suitable driver class
+
+Action:
+
+Consider the following situation:
+If you want an embedded database like H2, HSQL or Derby, please add it in the Classpath.
+If you have database settings to be loaded from a particular profile you may need to activate it since no profiles were currently active.
+В файле application.properties у меня следующая конфигурация:
+
+server.port=8081
+spring.data.mongodb.database=TestDatabase
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+Версии, которые я использую: Spring: 5.0.4, MongoDB: 3.6, Весенняя загрузка: 2.0
+
+ 25.03.2018 13:14
+46
+0
+125 860
+12
+Данный вопрос помечен как решенный
+ Ответы 12
+Кажется, отсутствует драйвер MongoDB. Включите следующую зависимость для pom.xml:
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+ 25.03.2018 13:27
+ Ответ принят как подходящий
+Поскольку вы добавили зависимости mongodb и data-jpa в свой файл pom.xml, он создавал конфликт зависимостей, как показано ниже
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+Попробуйте удалить зависимость jpa и запустить. Он должен работать нормально.
+
+ 25.03.2018 13:37
+Перейдите в папку ресурсов, где присутствует application.properties, обновите в ней приведенный ниже код.
+
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+ 31.05.2018 12:08
+Добавьте строку ниже в файл application.properties в папке ресурсов и перезапустите приложение.
+
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+ 05.06.2018 20:02
+ваша зависимость на основе данных пытается найти свои соответствующие сущности, которые не были созданы, комментирует зависимости на основе данных и снова запускает приложение.
+
+<!-- <dependency> -->
+        <!-- <groupId>org.springframework.boot</groupId> -->
+        <!-- <artifactId>spring-boot-starter-data-jpa</artifactId> -->
+        <!-- </dependency> -->
+ 24.07.2018 17:36
+Добавьте свои зависимости, такие как mongodb, web, jpa. Удалите / очистите остатки.
+
+<dependencies>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
+</dependencies>
+ 13.08.2018 13:47
+добавление зависимости org.apache.derby решило мою проблему.
+
+<dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+ 16.10.2018 07:34
+В gradle build я просто:
+
+compile('org.springframework.boot:spring-boot-starter-data-jpa') compile('org.springframework.boot:spring-boot-starter-security') compile('org.springframework.boot:spring-boot-starter-web') compile('org.springframework.boot:spring-boot-devtools')
+
+удаленный
+
+**`compile('org.springframework.boot:spring-boot-starter-data-jpa')`**
+и это сработало для меня.
+
+ 09.01.2019 11:42
+Эта ошибка возникла, когда вы помещаете зависимости JPA в файл конфигурации весенней загрузки, например, в maven или gradle. Решение: Документация Spring-Boot
+
+В файле application.properties необходимо указать строку подключения к БД и сведения о драйвере. Это решит проблему. Это может кому-то помочь.
+
+ 16.02.2019 19:03
+Я столкнулся с этой проблемой, когда просто неправильно ввел свой URL-адрес jdbc в application.properties. Надеюсь, это кому-то поможет: перед:
+
+spring.datasource.url=jdbc://localhost:3306/test
+после:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/test
+ 10.03.2019 02:35
+@Bhabadyuti Bal, дайте нам хороший ответ, в gradle вы можете использовать:
+
+compile 'org.springframework.boot:spring-boot-starter-data-jpa' 
+compile 'com.h2database:h2'
+во время теста:
+
+testCompile 'org.reactivecommons.utils:object-mapper:0.1.0'
+testCompile 'com.h2database:h2'
+
+Неожиданный конец ввода JSON в MongoDB Compass
+Вопросы
+JSON
+Неожиданный конец ввода JSON в MongoDB Compass
+Я хочу импортировать данные типа JSON в компас MongoDB, функция импорта выдает эту ошибку "неожиданный конец ввода JSON"
+
+Неожиданный конец ввода JSON в MongoDB Compass
+
+есть некоторые из моих файлов JSON
+
+[
+   {
+      "id":4,
+      "user":"test@example.com",
+      "date1":"2019-03-01",
+      "date2":"2019-04-01",
+      "statut":"Good",
+      "guest_number":4
+   }
+]
+ 15.05.2019 15:55
+22
+0
+18 915
+12
+Данный вопрос помечен как решенный
+ Ответы 12
+Структура вашего JSON неверна, вы можете прочитать информацию о Стандарты JSON
+
+A value can be a string in double quotes, or a number, or true or false or null, or an object or an array. These structures can be nested.
+
+попробуйте использовать двойные кавычки вместо одинарных:
+
+Валидаторы JSON также могут помочь вам
+
+[
+    {
+     "id" : 4,
+     "user" : "test@example.com",
+     "date1" : "2019-03-01",
+     "date2" : "2019-04-01",
+     "statut" : "Good",
+     "guest_number" : 4
+    }
+]
+ 15.05.2019 16:09
+У меня была эта проблема 6 месяцев назад, решение - записать все JSON в одну строку. [{"id":4,"user":"test@example.com","date1":"2019-03-01","date2":"2019-04-01","statut":"Good","guest_number":4}]
+
+MongoDB Compass скажет вам:
+
+Import success!
+
+Но документ точно не появится в вашей коллекции, так что лучше используйте Robo3T, если собираетесь вставлять json. Затем вы можете снова использовать Компас, как я. Это странно, да, но другого решения я пока не нашел.
+
+[ОБНОВИТЬ]
+
+Я импортирую данные с помощью Compass, но сначала экспортирую документ из Compass, чтобы посмотреть, как он пишет json.
+
+{"_id":{"$oid":"5e4cf105c9ba1a21143d04a2"},"tPreguntas":["Pregunta 1","Pregunta 2","Pregunta 3","Pregunta 4","Pregunta 5"],"tCategorias":[],"tPublico":true,"tFechaCreacion":{"$date":{"$numberLong":"1582100741716"}},"tCodigo":"test1","tTitulo":"Test 1","tDescripcion":"Test de muestreo número uno para comprobar.","tCreadoPor":"eoeo@eoeo.com"}
+Он выглядит иначе, чем json в Интернете, который я опубликовал в своем первом посте. (посмотрите, например, на этот objectId "$oid"). Так что, если вы будете следовать этому шаблону, Compass будет импортировать вас нормально.
+
+ 15.05.2019 16:10
+ Ответ принят как подходящий
+решение состоит в том, чтобы написать все JSON в одну строку, но если у нас есть большой документ !! Я только что нашел решение, что я могу импортировать данные с помощью этой команды в терминале:
+
+mongoimport --jsonArray --db YourDatabase --collection YourCollection --file Yourfile.json
+ 16.05.2019 19:12
+Вы также можете использовать командную строку mongodb следующим образом:
+
+db.user.insert(
+[
+    {
+     "id" : 4,
+     "user" : "test@example.com",
+     "date1" : "2019-03-01",
+     "date2" : "2019-04-01",
+     "statut" : "Good",
+     "guest_number" : 4
+    },
+    {
+     "id" : 5,
+     "user" : "test2@example.com",
+     "date1" : "2019-03-01",
+     "date2" : "2019-04-01",
+     "statut" : "Good",
+     "guest_number" : 4
+    }
+]
+ 31.05.2019 03:14
+Эта ошибка синтаксического анализа может быть решена с помощью минификации. Итак, минимизируйте json следующим образом. Хотя, это довольно лихорадочный процесс, чтобы сделать это для каждого объекта.
+
+{
+"_id" : "123456",
+"name" :  "stackoverflow"
+}
+изменить на:
+
+{"_id":"123456","name":"stackoverflow"}
+ 30.07.2019 09:37
+Эта ошибка синтаксического анализа может быть решена с помощью минификации. Итак, минимизируйте json следующим образом. Хотя, это довольно лихорадочный процесс, чтобы сделать это для каждого объекта.
+
+И такая минификация сработала для меня.
+
+{ 
+    "_id" : ObjectId("5b9ecf9a64f634289ca895bb"), 
+    "name" : "Mark"
+}
+{ 
+    "_id" : ObjectId("5b9edd9064f634289ca895e4"), 
+    "name" : "David"
+}
+К :
+
+{"_id":"ObjectId(\"5b9ecf9a64f634289ca895bb\")","name":"Mark"}
+{"_id":"ObjectId(\"5b9edd9064f634289ca895e4\")","name":"David"}
+ 04.09.2019 16:19
+У меня была аналогичная проблема, но оказалось, что это дополнительные переводы строки в конце файла. Их удаление устранило проблему. Я предлагаю открыть ваш файл в редакторе, который показывает переводы строк, например. Блокнот++
+
+ 02.10.2019 11:53
+Этот ответ здесь Решение решил проблему для меня. Кажется, это проблема форматирования.
+
+ 19.11.2019 21:07
+Запустите эту команду в cmd, и путь cmd должен находиться в той же папке, где находится файл JSON.
+
+mongoimport --jsonArray --db YourDatabase --collection YourCollection --file Yourfile.json
+ 18.12.2019 08:08
+Просто скопируйте содержимое вашего файла json, затем в Mongodb Compass выберите свою базу данных, затем нажмите «Добавить данные», которая выпадет, затем нажмите «Вставить документ», появится диалоговое окно, затем вставьте его туда и нажмите «Вставить».
+
+ 04.02.2020 23:37
+Это проблема с символами конца строки (EOL).
+
+В среде Windows окончанием строки обычно является CR NL (\r\n), в то время как MongoDB Compass поддерживает только CR (\r).
+
+Вы можете открыть файл в Notepad++, включить переключатель «Показать все символы» на панели инструментов и проверить текущий символ конца строки.
+
+Чтобы устранить проблему, выберите «Правка» > «Преобразование EOL» > «Macintosh (CR)».
+
+ 02.04.2020 23:39
+Добавьте --jsonFormat=canonical в свой скрипт mongoexport:
+
+mongoexport --db=quotes --collection=quotes  --jsonFormat=canonical --out=data/quotes.json
+JSON can only directly represent a subset of the types supported by BSON. To preserve type information, MongoDB adds the following extensions to the JSON format.
+
+MongoParseError: URI не имеет имени хоста, доменного имени и tld
+Вопросы
+NODE.JS
+MongoParseError: URI не имеет имени хоста, доменного имени и tld
+Я получаю эту ошибку, когда пытаюсь подключить свое приложение (nodejs) к mongodb. Я очень ценю вашу помощь здесь.
+
+MongoParseError: URI does not have hostname, domain name and tld
+    at parseSrvConnectionString (E:\Projects\NodeAPI\node_modules\mongodb-core\lib\uri_parser.js:41:21)
+    at parseConnectionString (E:\Projects\NodeAPI\node_modules\mongodb-core\lib\uri_parser.js:509:12)
+    at connect (E:\Projects\NodeAPI\node_modules\mongodb\lib\operations\mongo_client_ops.js:195:3)
+    at connectOp (E:\Projects\NodeAPI\node_modules\mongodb\lib\operations\mongo_client_ops.js:284:3)
+    at executeOperation (E:\Projects\NodeAPI\node_modules\mongodb\lib\utils.js:416:24)
+    at MongoClient.connect (E:\Projects\NodeAPI\node_modules\mongodb\lib\mongo_client.js:175:10)
+    at Function.MongoClient.connect (E:\Projects\NodeAPI\node_modules\mongodb\lib\mongo_client.js:341:22)
+    at Object.<anonymous> (E:\Projects\NodeAPI\server.js:12:13)
+    at Module._compile (internal/modules/cjs/loader.js:816:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)
+  name: 'MongoParseError',
+  [Symbol(mongoErrorContextSymbol)]: {} }
+Мой код:
+
+db.js
+
+ module.exports = {
+uri : "mongodb+srv://mithun:*******@cluster0-s089x.mongodb.net/test?retryWrites=true"}
+================================================== ================
+
+node_route.js
+
+ module.exports = function(app, db){
+app.post('/notes', (req, res) => {
+    const note = {text: req.body.body, title: req.body.title};
+    db.collection('notes').insert(note, (err, results) => {
+        if (err){
+            res.send({'error': 'An error has occured'});
+        } else {
+            res.send(result.ops[0]);
+        }
+    });
+ });
+ };
+================================================== ====================== index.js
+
+ const noteRoutes = require('./note_route');
+ module.exports = function(app, db){
+ noteRoutes(app, db);
+}
+================================================== ======================= сервер.js
+
+       const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+const db = require('./config/db');
+const app = express();
+const port = 8000;
+ app.use(bodyParser.urlencoded({extended: true}));
+  MongoClient.connect(db.uri,{ useNewUrlParser: true }, (err, database) => 
+  {
+     if (err) return console.info(err);
+     require('./app/routes')(app, database);
+      app.listen(port, () => {
+           console.info("We are live on " +port);
+  });
+ });
+================================================== ==========================
+
+module.exports = {
+uri : "mongodb+srv://mithun:m3Thun#47@cluster0-s089x.mongodb.net/test?retryWrites=true&ssl=false"
+}
+
+Я пробовал с ssl= false, но ошибка остается прежней.
+
+ 18.04.2019 22:42
+37
+4
+46 129
+13
+Данный вопрос помечен как решенный
+ Ответы 13
+Use of the +srv connection string modifier automatically sets the ssl option to true for the connection. You can override this behavior by explicitly setting the ssl option to false with ssl=false in the query string.
+
+Может ли это быть проблемой ssl? Попробуйте без ssl: ssl=false
+
+ 23.04.2019 12:13
+ Ответ принят как подходящий
+Решение-1: Если вы используете какой-либо специальный символ в своем пароле, вам необходимо закодировать конкретный символ, как %+ASCII_code_of_the_character ссылка ниже все объясняет. https://docs.atlas.mongodb.com/troubleshoot-connection/#special-characters-in-connection-string-password
+
+Решение-2: Нажмите на автоматическое создание пароля и вставьте его в строку подключения, он будет работать.
+
+screenshot
+
+ 21.06.2019 16:38
+Убедитесь, что специальные символы в вашем пароле закодированы. Например, если ваш пароль содержит «#», вы должны заменить буквенный символ «#» на «% 23», где 23 — шестнадцатеричный код для «#», см.: https://docs.atlas.mongodb.com/troubleshoot-connection/#special-characters-in-connection-string-password.
+
+ 04.09.2019 15:31
+Убедитесь, что пароль имени пользователя закодирован, если в нем есть специальные символы, такие как @!: и т. д., или вы использовали генератор паролей MongoDB. Видеть: https://docs.mongodb.com/manual/reference/connection-string/#examples
+
+ 18.10.2019 02:57
+У вас может быть специальные символы в строке пароль.
+
+Например. Если бы ваш пароль был - password!#, !# это специальные символы, их нужно было бы переписать как %23%21. Таким образом, ваш пароль строки подключения должен быть password%23%21.
+
+Для получения дополнительной информации - MongoDB, ASCII
+
+ 14.11.2019 17:03
+Эта проблема возникает, если ваш пользователь MongoDB содержит какие-либо специальные символы Попробуйте удалить любой специальный символ из пароля
+
+ 29.03.2020 20:31
+Я также столкнулся с этой проблемой.
+
+В моем случае я использовал пакет npm dotenv, чтобы получить имя пользователя и пароль из файла .env.
+
+Когда я записал значения из файла .env, я заметил, что он неправильно извлекает пароль.
+
+Проблема может быть как в логине, так и в пароле.
+
+ 30.05.2020 02:00
+используйте '%23' вместо # в вашем пароле а также
+
+mongoURI = "mongodb+srv://username:password@devconnector.jpokp.mongodb.net/dbname?retryWrites=true&w=majority"
+
+mongoose .connect(mongoURI, { useNewUrlParser: true }) .then(() => console.info("MongoDB connected")) .catch((err) => console.info(err));
+
+ 22.07.2020 10:26
+В моем случае оказалось, что в строке подключения был пробел, который было трудно увидеть в небольшом поле ввода текста, которое Heroku предоставляет для параметров конфигурации.
+
+ 12.09.2020 00:28
+Даже я столкнулся с той же проблемой, и я сделал эти шаги, это сработало для меня!
+
+Перейдите к своей базе данных monogoDB (веб-сайт).
+Измените пароль пользователя на автоматически сгенерированный пароль.
+Вставьте этот автоматически сгенерированный пароль в строку URI.
+Проверьте URI один и два раза, подтвердите его и запустите приложение в оболочке.
+ 22.11.2020 12:51
+попробуй закодировать пароль
+
+здесь: закодировать свой пропуск
+ссылка: Специальные символы в пароле строки подключения
+бывший)
+
+# before encode
+test@#123%^
+# after encode
+test%40%23123%25%5E
+эта работа для меня :)
+
+ 31.01.2021 02:01
+Я думаю, что ваш пароль может содержать и или? (или могут быть специальные символы), поэтому вы должны удалить его, чтобы вызвать ошибку синтаксического анализа
+
+ 06.08.2021 13:43
+Я решил это с помощью следующих шагов в MongoDB Compass: -
+
+Нажмите "Заполните поля подключения индивидуально"
+Fill in connection fields individually
+
+заполните свои Имя пользователя и пароль
+fill your Username and password
+
+Нажмите на Соединять
+
 Невозможно правильно установить mongodb на ubuntu 18.04 LTS
 Вопросы
 MONGODB
