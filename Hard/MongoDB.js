@@ -1,3 +1,1076 @@
+
+Golang сообщает, что «крайний срок контекста превышен» с MongoDB
+Вопросы
+MONGODB
+Golang сообщает, что «крайний срок контекста превышен» с MongoDB
+Я написал функцию обновления, но многократное выполнение выдаст ошибку context deadline exceeded.
+
+Моя функция:
+
+func Update(link string, m bson.M) {
+    configInfo := config.Config()
+
+    // client := GetInstance().client
+    // ctx := GetInstance().ctx
+
+    client, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+    defer cancel()
+    err := client.Connect(ctx)
+    if err != nil {
+        fmt.Print("connect error!")
+        fmt.Println(err)
+    }
+    db := client.Database("test")
+    lianjia := db.Collection("test")
+    _, err = lianjia.UpdateOne(ctx, bson.M{"Link": link}, bson.M{"$set": m})
+    if err != nil {
+        fmt.Print("update error!")
+        fmt.Println(err)
+    }
+}
+Выход:
+
+update error!context deadline exceeded
+ 02.07.2019 11:14
+8
+5
+11 680
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Изменятьmongodb://localhost:27017кmongodb://127.0.0.1:27017/
+
+ 28.10.2019 06:33
+Ваш URI неверен, потому что вы использовали докер.
+
+Если ваши контейнеры mongoDB называются mongoContainer, вам следует:
+
+client, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://mongoContainer"))
+ 10.02.2020 08:36
+Это иногда происходит при отладке в GoLand, если у вас есть точка останова и программа ждет, вы продолжаете и получаете эту ошибку. Если вы удалите точку останова и снова запустите программу, она сработает. По крайней мере, так было в моем случае.
+
+ 22.07.2021 10:15
+Попробуйте использовать
+
+ctx := context.Background()
+Вместо,
+
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+Это решило проблему для моей проблемы, когда я пытаюсь разработать серверную часть REST с сервером MongoDB.
+
+ 06.01.2022 09:17
+попробуйте изменить время ожидания контекста, скажем, 30 секунд
+
+ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
+
+
+Монго как набор реплик в тестовых контейнерах в .NET
+Вопросы
+C#
+Монго как набор реплик в тестовых контейнерах в .NET
+Я пытаюсь запустить Mongo в Docker, используя Тестовые контейнеры в dotnet. У меня нет проблем, когда я использую следующий код:
+
+        Container = new MongoDbBuilder()
+            .WithPortBinding("27017")
+            .Build();
+Но с этим MongoDbBuilder по умолчанию я не могу запустить его как набор реплик. Я обнаружил, что мне нужно запустить его как построитель контейнеров с собственным изображением:
+
+        Container = new ContainerBuilder()
+            .WithImage("mongo:6.0")
+            .WithEntrypoint("mongod")
+            .WithCommand("--replSet", "rs0")
+            .WithPortBinding("27017")
+            .Build();
+Затем я инициализирую реплику, установленную как:
+
+    var result = Container.ExecAsync(new List<string>
+    {
+        "mongosh", "--eval", "rs.initiate()"
+    }).GetAwaiter().GetResult();
+Когда я пытаюсь выполнить какую-либо операцию с mongo в коде dotnet, я получаю ошибку тайм-аута. Когда я запускаю его в режиме отладки и пытаюсь подключиться к созданному докеру с помощью клиента Mongo (я использую DataGrip), я тоже получаю ошибку тайм-аута. Когда я подключаюсь напрямую к консоли контейнера докеров с помощью mongosh, это работает.
+
+Работающий образ Docker:
+
+Настройки подключения в клиенте Mongo:
+
+Когда я использую MongoDbBuilder, как упоминалось вначале, работает клиент Mongo со строкой подключения.
+
+ 25.02.2024 15:25
+3
+2
+511
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Перенос mongod в команду мне помог:
+
+var container = new ContainerBuilder()
+        .WithImage("mongo:6.0")
+        .WithCommand("mongod", "--replSet", "rs0")
+        .WithPortBinding("27017")
+        .Build();
+Не забудьте переключиться на «Без аутентификации», поскольку настройка образа докера по умолчанию не требует аутентификации (в отличие от созданной MongoDbBuilder):
+
+По умолчанию конфигурация Mongo не требует аутентификации для доступа, даже для пользователя с правами администратора.
+
+ 28.02.2024 20:24
+Я помещаю этот ответ здесь для себя в будущем:
+
+Мне удалось использовать MongoDbBuilder, чтобы получить набор реплик одного узла, работающий со следующим, что позволяет мне использовать транзакции:
+
+        var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.CancelAfter(TimeSpan.FromSeconds(10));
+
+        mongoContainer = new MongoDbBuilder()
+            .WithUsername("")
+            .WithPassword("")
+            .WithImage("mongo:latest")
+            .WithExtraHost("host.docker.internal", "host-gateway")
+            .WithCommand("--replSet", "rs0")
+            .WithWaitStrategy(Wait.ForUnixContainer())
+            .Build();
+
+        await mongoContainer.StartAsync(cancellationTokenSource.Token);
+        await mongoContainer.ExecScriptAsync($"rs.initiate({{_id:'rs0',members:[{{_id:0,host:'host.docker.internal:{mongoContainer.GetMappedPublicPort(27017)}'}}]}})", cancellationTokenSource.Token);
+
+        var connectionString = mongoContainer.GetConnectionString();
+        var client = new MongoClient(connectionString);
+Использование пустой строки для .WithUserName("") и .WithPassword("") кажется эквивалентом «Нет аутентификации». Я думаю, .WithUserName(null) и .WithPassword(null) тоже подойдут.
+
+Важно: убедитесь, что в вашем файле хостов (на хост-компьютере) есть запись 127.0.0.1 host.docker.internal
+
+ 31.03.2024 00:16
+Ни один из текущих ответов мне не подходит. Кроме того, строка подключения должна быть похожа на mongodb://{hostname}:{port}/?replicaSet=rs0&ssl=false, чтобы использовать экземпляр mongoDb с набором реплик с именем rs0.
+
+Мне не удалось заставить его работать с TestContainers, но у меня получилось с другими nuget и с docker-compose. Я создал это обсуждение https://github.com/testcontainers/testcontainers-dotnet/discussions/1150, чтобы, возможно, я мог решить эту проблему.
+
+Вот что я нашел на случай, если это окажется полезным и кто-то еще знает, чего не хватает.
+
+Это код:
+
+const string replicaSetName = "rs0";
+const string hostname = "mongo";
+
+var mongoContainer =
+    new MongoDbBuilder()
+        .WithUsername("") // it needs to be empty
+        .WithPassword("") // it needs to be empty
+        .WithImage("mongo:7.0.7-jammy")
+        .WithHostname(hostname)
+        // do I really need .WithExtraHost() ?
+        .WithCommand("mongod", "--replSet", replicaSetName, "--bind_ip_all")
+        .WithWaitStrategy(Wait.ForUnixContainer())
+        .Build();
+
+await mongoContainer.StartAsync();
+var port = mongoContainer.GetMappedPublicPort(27017);
+var mongoInitiateCommand = 
+      $@"mongosh --eval ""rs.initiate({{_id: '{replicaSetName}', members: [{{_id: 0, host: '{hostname}:{port}'}}]}});""";
+var result = await mongoContainer.ExecAsync([mongoInitiateCommand]);
+var connectionString = mongoContainer.GetConnectionString() ??  $"mongodb://{hostname}:{port}/?replicaSet=rs0&ssl=false";
+Теперь, если я начну отладку, я увижу, что попытка инициализации дает такой результат:
+
+код выхода: 126
+stdout: Ошибка выполнения во время выполнения OCI: Ошибка выполнения: невозможно запустить процесс контейнера: exec: "mongosh --eval" rs.initiate({_id: 'rs0', члены: [{_id: 0, хост: 'mongo:56039') }]});"": исполняемый файл не найден в $PATH: неизвестно
+Поэтому я добавил точку останова в эту строку и стал ждать.
+
+В этот момент я вижу, что контейнер монго правильно развернут со случайным именем контейнера (и это нормально, потому что я не указал ничего конкретного в .WithName("foo")) и идентификатором (т. е.: a57fdd333258).
+
+$ docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS         PORTS                      NAMES
+a57fdd333258   mongo:7.0.7-jammy           "docker-entrypoint.s…"   9 seconds ago    Up 8 seconds   0.0.0.0:55888->27017/tcp   keen_mcclintock
+eafa8f35d5bc   testcontainers/ryuk:0.6.0   "/bin/ryuk"              10 seconds ago   Up 9 seconds   0.0.0.0:55886->8080/tcp    testcontainers-ryuk-3145c507-e454-4424-b83d-4984c85f54be
+Теперь я могу получить доступ к своему контейнеру с помощью mongosh следующим образом:
+
+$ docker exec -it a57fdd333258 mongosh
+Current Mongosh Log ID: 660f338d06102d7ba8db83af
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.0
+Using MongoDB:          7.0.7
+Using Mongosh:          2.2.0
+...
+и, оказавшись внутри, я могу проверить статус сервера
+
+test> db.serverStatus()
+{
+  host: 'mongo',
+  version: '7.0.7',
+  process: 'mongod',
+  pid: Long('1'),
+  uptime: 27,
+  uptimeMillis: Long('27918'),
+  uptimeEstimate: Long('27'),
+  ...
+  ok: 1
+}
+Самое главное здесь то, что я вижу, что хост называется mongo, как я и указал.
+
+Итак, я могу попытаться выполнить инициализацию набора реплик с помощью
+
+test> const configuration = { _id: "rs0", members: [{ _id: 0, host: "mongo:55888"}]}
+для хранения переменной, в которой я указываю имя набора реплик как rs0 и хост mongo:55888.
+
+Этот порт я вижу при отладке, каждый раз при его запуске он назначается случайным, но на этот раз я его получил, поэтому редактирую его вручную.
+
+Теперь я пытаюсь инициировать набор реплик и получаю следующую ошибку
+
+test> rs.initiate(configuration)
+MongoServerError[InvalidReplicaSetConfig]: No host described in new configuration with {version: 1, term: 0} for replica set rs0 maps to this node
+На данный момент я не знаю, в чем проблема, но я точно знаю, что текущие ответы на самом деле не инициализируют какой-либо набор реплик.
+
+Здесь вы можете увидеть мой собственный комментарий о том, как мне создать набор реплик mongoDb (который, например, поддерживает потоки изменений) с помощью docker-compose и mongosh. И мне удалось заставить это работать и с другим пакетом nuget, но этот вызывает у меня проблемы. https://github.com/testcontainers/testcontainers-dotnet/discussions/1150#discussioncomment-9014959
+
+ 05.04.2024 01:26
+Мне удалось запустить реплику одного узла с тестовыми контейнерами, используя немного измененный пример из ответов по теме.
+
+Нам нужно инициализировать новый контейнер MongoDB с набором no-auth и rs0 repl, а стратегия ожидания тест-контейнеров должна быть в режиме wait unix socket healthy.
+
+Затем запустите контейнер и инициируйте набор repl:
+
+MongoDbContainer mongoContainer = new MongoDbBuilder()
+                                          .WithUsername("") // Set no-auth
+                                          .WithPassword("")
+                                          .WithCommand("mongod", "--replSet", "rs0") // Enable rs0 repl set
+                                          .WithWaitStrategy(Wait.ForUnixContainer()) // Wait only unix container healthy status.
+                                          .Build();
+
+await mongoContainer.StartAsync();
+await mongoContainer.ExecScriptAsync("rs.initiate();"); // The same example you can find here: https://github.com/testcontainers/testcontainers-java/blob/9d6e7655a929abcc4db735e16642e4eb40e12155/modules/mongodb/src/main/java/org/testcontainers/containers/MongoDBContainer.java#L171 in test-containers Java impl.
+Я не выполнял никаких дополнительных настроек для механизма докера или другой среды. Использовалась Docker Desktop на Windows 11.
+
+ 02.07.2024 06:45
+Если вы не хотите использовать MongoDbBuilder
+
+var container = new ContainerBuilder()
+         .WithImage("mongo:latest")
+         .WithCommand("--replSet", "rs0")
+         .WithWaitStrategy(Wait.ForUnixContainer())
+         .Build();
+
+await container.StartAsync();
+
+await container.ExecAsync(new List<string>
+                       {
+                           "/bin/sh",
+                           "-c",
+                           $"mongosh --quiet --eval 'rs.initiate()'"
+                       });
+
+
+Mongorestore, похоже, исчерпывает память и убивает процесс mongo
+Вопросы
+MONGODB
+Mongorestore, похоже, исчерпывает память и убивает процесс mongo
+В текущей настройке есть два контейнера Mongo Docker, работающие на хостах A и B, с версией Mongo 3.4 и работающие в наборе реплик. Я хотел бы обновить их до 3,6 и увеличить член, чтобы контейнеры работали на хостах A, B и C. Контейнеры имеют ограничение памяти 8 ГБ и не выделены подкачки (в настоящее время), и администрируются в Владелец ранчо. Итак, мой план состоял в том, чтобы загрузить три новых контейнера, инициализировать набор реплик для них, взять дамп из контейнера 3.4 и восстановить его в качестве нового мастера набора реплик.
+
+Снятие дампа прошло нормально, и его размер составлял около 16 ГБ. Когда я попытался восстановить его на новом мастере 3.6, восстановление началось нормально, но после восстановления примерно 5 ГБ данных процесс mongo, похоже, был убит OS / Rancher, и хотя сам контейнер не перезапускается, процесс MongoDB просто вылетает и снова перезагружается. Если я снова запускаю mongorestore в той же базе данных, он сообщает об ошибке уникального ключа для всех уже вставленных записей, а затем продолжает с того места, где он остановился, только чтобы сделать то же самое снова через 5 ГБ или около того. Таким образом, похоже, что mongorestore загружает все записи, которые он восстанавливает, в память.
+
+Итак, я должен найти какое-то решение для этого, и:
+
+Каждый раз, когда он выходит из строя, просто запускайте команду mongorestore, чтобы продолжить с того места, где было остановлено. Вероятно, это должно сработать, но мне это немного неудобно.
+Восстанавливайте базу данных по одной коллекции за раз, но самая большая коллекция превышает 5 ГБ, поэтому она также не будет работать должным образом.
+Добавьте в контейнер подкачку или физическую память (временно), чтобы процесс не был убит после того, как у процесса закончится физическая память.
+Что-нибудь еще, надеюсь, лучшее решение?
+ 19.04.2018 20:42
+3
+2
+5 176
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+Поскольку похоже, что у вас не заканчивается место на диске из-за того, что mongorestore продолжает работу с того места, где он был успешно остановлен, правильным ответом является сосредоточение внимания на проблемах с памятью. Вам определенно не хватает памяти во время процесса mongorestore.
+
+Я настоятельно рекомендую использовать пространство подкачки, так как это самый простой, самый надежный, наименее опасный и, возможно, наиболее официально поддерживаемый способ решения этой проблемы.
+
+В качестве альтернативы, если вы по какой-то причине полностью против использования пространства подкачки, вы можете временно использовать узел с большим объемом памяти, выполнить mongorestore на этом узле, позволить ему реплицироваться, затем отключить узел и заменить его на узел, которому выделено меньше ресурсов. Этот вариант должен работать, но может стать довольно сложным для больших наборов данных и для чего-то вроде этого является излишним.
+
+ 19.04.2018 21:46
+Вместо того, чтобы запускать новый набор реплик, можно выполнить все расширение и обновление, даже не выходя из сети.
+
+Запустите MongoDB 3.6 на хосте C
+На первичном (в настоящее время A или B) добавьте узел C в набор реплик.
+Узел C выполнит начальную синхронизацию данных; Это может занять некоторое время
+Как только это будет закончено, снимите узел B; в вашем наборе реплик все еще есть два рабочих узла (A и C), поэтому он будет работать без перебоев
+Замените v3.4 на узле B на v3.6 и снова запустите резервную копию
+Когда узел B будет готов, снимите узел A
+Замените v3.4 на узле A на v3.6 и снова запустите резервную копию
+У вас останется тот же набор реплик, что и раньше, но теперь с тремя узлами, на всех запущенных версии 3.4.
+
+PS Обязательно ознакомьтесь с документацией по Обновить набор реплик до 3.6 перед тем, как начать.
+
+ 20.04.2018 23:22
+Увеличение размера свопа, как указал другой ответ, сработало для меня. Кроме того, опция --numParallelCollections контролирует количество коллекций, которые mongodump / mongorestore должны выгружать / восстанавливать параллельно. По умолчанию - 4, что может потреблять много памяти.
+
+ 15.10.2018 02:03
+Я столкнулся с аналогичной проблемой при запуске 3 узлов на одном компьютере (всего 8 ГБ ОЗУ) в рамках тестирования набора реплик. размер кеша хранилища по умолчанию составляет 0,5 * (общий объем ОЗУ - 1 ГБ). В mongorestore каждый узел использовал полный размер кеша при восстановлении и потреблял всю доступную оперативную память.
+
+Я использую доступный шаблон для этой части mongod.conf, но вы можете установить для своего cacheSizeGB любое разумное значение, чтобы несколько экземпляров не потребляли ОЗУ.
+
+storage:
+    wiredTiger:
+        engineConfig:
+            cacheSizeGB: {{ ansible_memtotal_mb /  1024 * 0.2 }}
+ 31.03.2020 06:08
+Я решил проблему OOM, используя параметр --wiredTigerCacheSizeGB mongod. Выдержка из моего docker-compose.yaml ниже:
+
+version: '3.6'
+services:
+    db:
+        container_name: db
+        image: mongo:3.2
+        volumes:
+            - ./vol/db/:/data/db
+        restart: always
+        # use 1.5GB for cache instead of the default (Total RAM - 1GB)/2:
+        command: mongod --wiredTigerCacheSizeGB 1.5
+ 07.07.2020 00:00
+Просто документирую здесь свой опыт использования mongodb 4.4 в 2020 году:
+
+Я столкнулся с этой проблемой, восстанавливая коллекцию 5 ГБ на машине с памятью 4 ГБ. Я добавил подкачку 4 ГБ, которая, похоже, работала, я больше не видел сообщение KILLED.
+
+Однако через некоторое время я заметил, что мне не хватает многих данных! Оказывается, если mongorestore исчерпает память на последнем шаге (при 100%), он не покажет убитый, НО ВАШИ ДАННЫЕ НЕ ИМПОРТИРОВАЛИ.
+
+Вы хотите убедиться, что видите эту последнюю строку:
+
+[########################]  cranlike.files.chunks  5.00GB/5.00GB  (100.0%)
+[########################]  cranlike.files.chunks  5.00GB/5.00GB  (100.0%)
+[########################]  cranlike.files.chunks  5.00GB/5.00GB  (100.0%)
+[########################]  cranlike.files.chunks  5.00GB/5.00GB  (100.0%)
+[########################]  cranlike.files.chunks  5.00GB/5.00GB  (100.0%)
+restoring indexes for collection cranlike.files.chunks from metadata
+finished restoring cranlike.files.chunks (23674 documents, 0 failures)
+34632 document(s) restored successfully. 0 document(s) failed to restore.
+В моем случае мне понадобилось 4 ГБ памяти + 8 ГБ подкачки, чтобы импортировать коллекцию GridFS размером 5 ГБ.
+
+Спасибо, что записали. «Не удалось восстановить 0 документов», чтобы гарантировать отсутствие потери / пропуска данных.
+
+Как настроить кластер MongoDB, поддерживающий сеансы?
+Вопросы
+SPRING
+Как настроить кластер MongoDB, поддерживающий сеансы?
+Я хочу изучить новую функцию транзакций MongoDB и использовать Spring Data MongoDB. Однако я получаю сообщение об исключении «Сеансы не поддерживаются кластером MongoDB, к которому подключен этот клиент.». Любые подсказки относительно конфигурации MongoDB 3.7.9 приветствуются.
+
+Трассировка стека начинается с:
+
+com.mongodb.MongoClientException: Sessions are not supported by the MongoDB cluster to which this client is connected at com.mongodb.MongoClient.startSession(MongoClient.java:555) ~[mongodb-driver-3.8.0-beta2.jar:na] at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getSession(SimpleMongoDbFactory.java:163) ~[spring-data-mongodb-2.1.0.DATAMONGO-1920-SNAPSHOT.jar:2.1.0.DATAMONGO-1920-SNAPSHOT]
+
+ 09.05.2018 15:55
+12
+5
+15 161
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+Я отключил TLS (внутри Spring Data MongoDB), и теперь функция транзакций в разрабатываемой версии 3.7.9 работает нормально.
+
+ 11.05.2018 15:34
+ Ответ принят как подходящий
+У меня была такая же проблема, когда я пытался подключить его к одному автономному экземпляру mongo, однако, как написано в официальная документация, Mongo поддерживает функцию транзакции для набора реплик. Итак, я затем попытался создать набор реплик со всеми экземплярами на MongoDB 4.0.0, мне удалось успешно выполнить код. Так, Запустите набор реплик (3 члена), затем попробуйте выполнить код, проблема будет решена.
+
+NB: вы можете настроить набор реплик на той же машине для тестов https://docs.mongodb.com/manual/tutorial/deploy-replica-set-for-testing/
+
+ 18.07.2018 10:09
+Убедитесь, что вы используете обновленный API - например:
+
+MongoClient mongoClient = MongoClients.create();
+MongoDatabase dataBase = mongoClient.getDatabase("mainDatabase");
+MongoCollection<Document> collection = dataBase.getCollection("entities");
+Также убедитесь, что у вас открыт mongo.exe.
+
+ 15.05.2019 16:23
+Набор реплик - это наверняка решение проблемы
+
+Но делать реплику 3 узлов не обязательно.
+
+Решение 1 (для автономной установки)
+
+Для автономной установки mongo вы можете пропустить настройку 2-го или 3-го узла, как описано в официальной документации mongo здесь
+
+И вам нужно будет установить replSetName в конфигурации
+
+replication:
+   oplogSizeMB: <int>
+   replSetName: <string>
+   enableMajorityReadConcern: <boolean>
+а затем запустите детали, которые здесь
+
+rs.initiate()
+после этого строка подключения будет выглядеть, как показано ниже: -
+
+mongodb://localhost:27017/<database_name>?replicaSet=<replSet_Name>
+ключи выше, которые вам необходимо заменить: -
+
+имя_базы_данных = имя базы данных
+
+replSet_Name = имя набора реплик, который вы установили в приведенной выше конфигурации
+
+Решение 2 (только для требований на основе докеров)
+
+Пример изображения Docker с набор реплик одного узла, действующий как первичный узел для среды разработки выглядит следующим образом: -
+
+Я размещал образ докера в докере
+
+docker pull krnbr/mongo:latest
+Содержание того же Dockerfile ниже: -
+
+FROM mongo
+RUN echo "rs.initiate({'_id':'rs0','members':[{'_id':0,'host':'127.0.0.1:27017'}]});" > /docker-entrypoint-initdb.d/replica-init.js
+RUN cat /docker-entrypoint-initdb.d/replica-init.js
+CMD [ "--bind_ip_all", "--replSet", "rs0" ]
+Команда запуска Docker (замените на имя образа, который вы создаете самостоятельно, или используйте указанное выше, например, krnbr / mongo): -
+
+без объема
+
+
+docker run -d --name mongo -p 27017:27017 <Image Name> mongod --replSet rs0 --port 27017
+с объемом
+
+
+docker run -d --name mongo -p 27017:27017 -v ~/.mongodb:/data/db <Image Name> mongod --replSet rs0 --port 27017
+для поддержки привязка любого ip
+
+docker run -d --name mongo -p 27017:27017 -v ~/.mongodb:/data/db <Image Name> mongod --bind_ip_all --replSet rs0 --port 27017
+ 17.05.2020 06:58
+Что касается ответа @kakabali, у меня есть несколько немного разных сценариев и я их настраиваю.
+
+Я настраиваю mongo с весенней загрузкой и пытаюсь использовать управление транзакциями и получаю сообщение об ошибке:
+
+com.mongodb.MongoClientException: Sessions are not supported by the MongoDB cluster to which this client is connected at
+
+Я следую нескольким шагам, указанным в приведенном выше ответе, и добавил несколько:
+
+Измените mongo.cfg и добавьте это
+
+replication:
+   oplogSizeMB: 128
+   replSetName: "rs0"
+   enableMajorityReadConcern: true
+Перезапустите службу, поскольку я использую Windows10.
+
+Откройте консоль mongo и запустите rs.initilize ()
+
+ 10.06.2020 19:34
+Мы смогли настроить локально, как показано ниже
+
+В Linux включен файл конфигурации по умолчанию /etc/mongod.conf при использовании диспетчера пакетов для установки MongoDB.
+
+В Windows по умолчанию <каталог установки> /bin/mongod.cfg файл конфигурации включены во время установки
+
+В macOS включен файл конфигурации по умолчанию /usr/local/etc/mongod.conf при установке с официального крана Homebrew MongoDB.
+
+Добавлять следующий конфиг
+
+replication:
+   oplogSizeMB: 128
+   replSetName: "rs0"
+   enableMajorityReadConcern: true
+sudo service mongod restart;
+
+монго;
+
+rs.initiate({
+      _id: "rs0",
+      version: 1,
+      members: [
+         { _id: 0, host : "localhost:27017" }
+      ]
+   }
+)
+проверять для включения конфигурации
+
+rs.conf()
+мы можем использовать URL подключения как
+
+mongodb://localhost/default?ssl=false&replicaSet=rs0&readPreference=primary
+документы: параметры конфигурациирепликация одного экземпляра
+
+Обновление пути 'x' вызовет конфликт в 'x'
+Вопросы
+MONGODB
+Обновление пути 'x' вызовет конфликт в 'x'
+Эта ошибка возникает, когда я пытался обновить элемент upsert:
+
+Updating the path 'x' would create a conflict at 'x'
+ 20.06.2018 14:01
+62
+0
+19 228
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+Поле должно появиться либо в $set, либо в $setOnInsert. Не в обоих.
+
+ 20.06.2018 14:01
+Если вы передадите один и тот же ключ в $set и $unset при обновлении элемента, вы получите эту ошибку.
+
+Например:
+
+const body = {
+   _id: '47b82d36f33ad21b90'
+   name: 'John',
+   lastName: 'Smith'
+}
+
+MyModel.findByIdAndUpdate(body._id, { $set: body, $unset: {name: 1}})
+
+// Updating the path 'name' would create a conflict at 'name'
+ 11.06.2019 16:25
+У меня была такая же проблема при выполнении запроса Обновить с использованием PyMongo.
+Я пытался сделать:
+
+
+> db.people.update( {'name':'lmn'}, { $inc : { 'key1' : 2 }, $set: { 'key1' : 5 }})
+Обратите внимание, что здесь я пытаюсь обновить значение key1 из двух Операторы обновления MongoDB.
+
+Обычно это происходит, когда вы пытаетесь обновить значение тот же ключ более чем одним Операторы обновления MongoDB в одном запросе.
+
+Вы можете найти список операторов обновления по здесь
+
+ 16.09.2019 12:02
+db.products.update(
+  { _id: 1 },
+  {
+     $set: { item: "apple" },
+     $setOnInsert: { defaultQty: 100 }
+  },
+  { upsert: true }
+)
+Ниже приводится ключевое объяснение проблемы:
+
+MongoDB creates a new document with _id equal to 1 from the condition, and then applies the $set AND $setOnInsert operations to this document.
+
+Если вы хотите, чтобы значение поля устанавливалось или обновлялось независимо от вставки или обновления, используйте его в $ set. Если вы хотите, чтобы он устанавливался только при вставке, используйте его в $ setOnInsert.
+
+Вот пример: https://docs.mongodb.com/manual/reference/operator/update/setOnInsert/#example
+
+ 24.06.2020 13:54
+Начиная с MongoDB 4.2, вы можете использовать агрегатные конвейеры в обновлении:
+
+db.your_collection.update({
+    _id: 1
+}, 
+[{
+    $set:{
+        x_field: {
+            $cond: {
+                if: {$eq:[{$type:"$_id"} ,  "missing"]},
+                then: 'upsert value',   // it's the upsert case
+                else: '$x_field'    // it's the update case
+            }
+        }
+    }
+}],
+{
+     upsert: true
+})
+db.collection.bulkWrite () также поддерживает его
+
+ 09.07.2020 18:47
+Вы не можете ссылаться на один и тот же путь более одного раза в обновлении. Например, даже если приведенное ниже приведет к чему-то логическому, MongoDB не позволит этого.
+
+db.getCollection("user").updateOne(
+  {_id: ...},
+  {$set: {'address': {state: 'CA'}, 'address.city' : 'San Diego'}}
+)
+Вы получите следующую ошибку:
+
+Updating the path 'address.city' would create a conflict at 'address'
+
+Ошибка: сетевая ошибка при попытке запустить команду isMaster на хосте 127.0.0.1:27017
+Вопросы
+MONGODB
+Ошибка: сетевая ошибка при попытке запустить команду isMaster на хосте 127.0.0.1:27017
+Ошибка: сетевая ошибка при попытке запустить команду isMaster на хосте 127.0.0.1:27017 .> монго
+
+Версия оболочки MongoDB v3.6.5 подключение к: mongodb: //127.0.0.1: 27017 2018-06-26T17: 37: 13.313 + 0530 I NETWORK [thread1] Socket recv () Установленное соединение было прервано программным обеспечением на вашем хост-компьютере. 127.0.0.1:27017 2018-06-26T17: 37: 13.313 + 0530 I NETWORK [thread1] SocketException: remote: (NONE): 0 error: SocketException socket exception [RECV_ERROR] server [127.0.0.1:27017] 2018-06-26T17: 37: 13.313 + 0530 E QUERY [thread1] Ошибка: сетевая ошибка при попытке выполнить команду isMaster на хосте 127.0.0.1:27017: connect@src/mongo/shell/mongo.js: 251: 13 @ (соединение): 1: 6 исключение: сбой подключения
+
+ 26.06.2018 14:10
+10
+0
+22 801
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+См. Журналы Mongodb, чтобы найти основную причину. Для меня это была утечка соединений от одного из клиентов, вот что я нашел в журналах: NETWORK [listener] connection refused because too many open connections:
+
+ 06.09.2018 18:31
+Эта проблема может возникнуть при попытке подключиться к базе данных, для которой требуется SSL.
+
+ 23.10.2019 14:55
+просто зайдите в диспетчер задач и нажмите на сервис
+см. приведенное ниже изображение, чтобы скопировать ссылку на URL-адрес 
+
+найдите MongoDB и нажмите «Открыть службу».
+см. изображение ниже, чтобы скопировать ссылку на URL-адрес 
+
+затем снова найдите MongoDB и запустите остановленную БД в рабочий режим, просто нажмите зеленую кнопку точки, и вы снова подключитесь к MongoDB.
+[см. изображение ниже, чтобы скопировать ссылку на URL]
+
+ 14.10.2020 07:58
+В моем случае я запускал несколько приложений на других портах. Приведенные выше решения не сработали для меня .
+Наконец, я закрыл все вкладки редактора кода и веб-приложения и перезапустил его. Теперь работает нормально.
+
+Хорошо! Вы можете просто перезапустить систему, это тоже будет работать с наименьшими хлопотами.
+
+ 08.11.2020 15:15
+Эта ошибка обычно вызвана попыткой подключиться без SSL к серверу MongoDB, которому он необходим. Используйте следующую команду для подключения:
+
+mongo --ssl --username "$USERNAME" --password "$PASSWORD" --host "$HOST" --port  "$PORT"
+ 01.04.2021 20:23
+Как уже говорилось, это может произойти, потому что серверу требуется TLS в соединении. Вы увидите причину в журналах сервера.
+
+Для тех, кто заканчивает здесь, не зная, как это исправить (например, я), стоит отметить, как подключиться к этим серверам:
+
+В командной строке вы можете использовать параметр --tls (https://docs.mongodb.com/manual/tutorial/configure-ssl-clients/)
+
+mongo --tls [other params and/or connection string]
+
+Если вы используете только строку подключения, вы можете добавить параметр tls=true:
+
+mongo://[user]:[pass]@[host]/[db]?tls=true[&others]
+
+Как «сортировать» и «ограничивать» результаты в mongodb?
+Вопросы
+MONGODB
+Как «сортировать» и «ограничивать» результаты в mongodb?
+Я пытаюсь выполнить запрос с «сортировкой» и «пределом». С МГО вы могли бы сделать Find(nil).Sort(“-when”).Limit(10), но новый, официальный драйвер mongo не имеет таких методов. Как я могу отсортировать и «ограничить» новый драйвер?
+
+ 04.07.2018 20:57
+14
+1
+13 089
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+Официальный драйвер не такой простой, как mgo. Вы можете сортировать и ограничивать, используя findopt.Limit и findopt.Sort.
+
+Вы можете увидеть примеры из официального репозитория.
+
+https://github.com/mongodb/mongo-go-driver/blob/5fea1444e52844a15513c0d9490327b2bd89ed7c/mongo/crud_spec_test.go#L364
+
+ 05.07.2018 00:01
+Параметр сортировки, по-видимому, требует, чтобы вы добавили map[string]interface{}, где вы можете указать поле в качестве ключа и sortOrder в качестве значения (где 1 означает возрастание, а -1 означает убывание) следующим образом:
+
+sortMap := make(map[string]interface{})
+sortMap["version"] = 1
+opt := findopt.Sort(sortMap)
+Насколько я понимаю, это означает, что вы можете правильно сортировать результаты только по одному sortField, потому что ключи в карте go хранятся в случайном порядке.
+
+ 12.11.2018 12:28
+В текущей версии Монго-гоу-драйвер v1.0.3 параметры упрощены. Например, чтобы выполнить поиск, сортировку и ограничение:
+
+import (
+"go.mongodb.org/mongo-driver/bson"
+"go.mongodb.org/mongo-driver/mongo"
+"go.mongodb.org/mongo-driver/mongo/options"
+)
+
+options := options.Find()
+
+// Sort by `_id` field descending
+options.SetSort(bson.D{{"_id", -1}})
+
+// Limit by 10 documents only 
+options.SetLimit(10)
+
+cursor, err := collection.Find(context.Background(), bson.D{}, options)
+Смотрите другие доступные варианты на godoc.org/go.mongodb.org/mongo-driver/mongo/options. Тем более FindOptions для всех возможных вариантов Find().
+
+ 23.11.2018 01:30
+Ты можешь использовать
+
+findOptions := options.Find()
+findOptions.SetLimit(2)
+findOptions.SetSkip(2)
+...
+cursor, err := collection.Find(context.Background(), bson.M{}, findOptions)
+ресурс в https://www.mongodb.com/blog/post/mongodb-go-driver-tutorial
+
+ 03.06.2019 10:15
+вам нужно импортировать пакет github.com/mongodb/mongo-go-driver/options для сборки findOptions.
+
+import github.com/mongodb/mongo-go-driver/options
+
+findOptions := options.Find() // build a `findOptions`
+findOptions.SetSort(map[string]int{"when": -1}) // reverse order by `when`
+findOptions.SetSkip(0) // skip whatever you want, like `offset` clause in mysql
+findOptions.SetLimit(10) // like `limit` clause in mysql
+
+// apply findOptions
+cur, err := collection.Find(context.TODO(), bson.D{}, findOptions)
+// resolve err
+
+for cur.Next(context.TODO()) {
+   // call cur.Decode()
+}
+
+ 10.06.2019 07:45
+ВАРИАНТ ОДНОЙ ЛИНИИ
+
+Я знаю, что ответов уже много, но вы можете сделать это одной строкой (если он вам нужен для любого вашего случая)
+
+// From the Doc
+// func (f *FindOptions) SetSort(sort interface{}) *FindOptions
+
+cursor, err := collection.Find(context.Background(), bson.M{}, options.Find().SetSort(map[string]int{"when": -1}).SetLimit(10))
+SetSort () и другие в настоящее время возвращает сам родительский указатель
+
+Mongodb с Node Js
+Вопросы
+NODE.JS
+Mongodb с Node Js
+Как я могу выполнить этот запрос mongodb через node js (мангуст). у меня есть две таблицы со следующими схемами, Я хочу получить имя пользователя и пароль из таблицы пользователей и получить полное имя из информационной таблицы.
+
+var infoSchema = mongoose.Schema ({ khatam_id: строка, user_id: строка, полное имя: Строка, });
+
+var usersSchema = mongoose.Schema ({ user_id: строка, имя пользователя: String, пароль: строка, });
+
+ 09.07.2018 07:31
+2
+5
+468
+6
+ Ответы 6
+установите мангуста на свою машину
+
+npm install mongoose
+импорт библиотеки мангуста
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
+подключитесь к mongodb и создайте схему для своей таблицы
+
+mongoose.connect('mongodb://localhost/myappdatabase');
+
+const usersSchema = new Schema({
+ _id: ObjectId,
+ user_id: String,
+ username: String,
+ fullname: String
+});
+
+const Users = mongoose.model('Users', usersSchema );
+Найти пользователя из таблицы «Пользователи» с помощью запроса mongo
+
+Users.find({<here you can write your mongo query>}, function (err, docs) {
+  // docs.forEach
+});
+ 09.07.2018 07:57
+вы должны использовать совокупность
+
+db.users.aggregate([
+{
+   $lookup:
+     {
+       from: "info",
+       localField: "user_id",
+       foreignField: "_id",
+       as: "userInfo"
+     }
+},
+{ "$unwind": "$userInfo" },
+])
+ 09.07.2018 08:16
+Я не знаю, горячо ли вы, но если да, то можете использовать это.
+
+userSchema.virtual('infos', 
+ {
+   ref: 'Info',
+   localField: 'user_id',
+   foreignField: 'user_id',
+ })
+Предполагая, что u вы называете infoSchema в качестве модели Info, mongodb преобразует ее в информацию, если вы не знали, поэтому виртуальное поле будет вызываться как infos ref, очевидно, ссылка на модель Info localField - это поле, относящееся к уникальному идентификатору userSchema, а foreignField - это поле, которое u ссылается в infoSchema, которое соответствует уникальному значению, упомянутому localfield u. Наконец, вместе со всеми полями в вашей userSchema добавьте это
+
+{
+toJSON: { virtuals: true },
+toObject: { virtuals: true },
+}
+поэтому, когда вы запрашиваете пользователя Попробуйте, это действительно пригодится. Примечание: на самом деле он не создает поле в базе данных (виртуальный дух), он просто заполняет ваш объект ответа для внешнего рендеринга, что на самом деле лучше.
+
+ 09.07.2018 09:03
+Подключитесь к MongoDB: перед выполнением программы убедитесь, что служба MongoDB запущена.
+
+ var mongoose = require("mongoose");
+    mongoose.connect("mongodb://localhost:27017/your-database");
+    mongoose.Promise = global.Promise;
+    var connection = mongoose.connection;
+    connection.once('open', function() {
+       console.info('connected to database);
+
+    });
+
+    connection.on('error', function() {
+      console.error('Mongoose connection error");
+
+     });
+    process.on('SIGINT', function() {
+       mongoose.connection.close(function() {
+       console.info('Mongoose connection disconnected due to app SIGINT.');
+     });
+
+   });
+создать схему пользователя:
+
+const Schema = mongoose.Schema;
+    const usersSchema = new Schema({
+     user_id: String,
+     username: String,
+     fullname: String
+    });
+
+  const Users = mongoose.model('Users', usersSchema );
+Запустите запрос следующим образом:
+
+ Users.findOne({query})
+    .then(function(user){
+      // do something
+     })
+    .catch(function(err){
+      // handle error
+     }) 
+ 09.07.2018 09:10
+Вы можете использовать этот запрос, чтобы получить те типы записей, которые вам нужны:
+
+db.users.aggregate([
+{  $lookup: {
+       from: "info",
+       localField: "user_id",
+       foreignField: "user_id",
+       as: "userInfo"}},
+{ "$unwind": "$userInfo" }])
+ 12.10.2019 19:05
+Предполагая, что вы знаете, как установить setup mongoose и подключить свою базу данных, и вам нужен только правильный запрос, позвольте мне поделиться тем, что я заметил с помощью предоставленных вами моделей. Я не думаю, что есть необходимость в двух коллекциях, поскольку вы можете хранить одно и то же в одной коллекции, потому что это экономит время на поиск пользовательских данных из информационной схемы. Таким образом, пользовательская схема может быть
+
+var usersSchema = mongoose.Schema({ 
+  user_id: String, 
+  username: String, 
+  password: String,
+  khatam_id: String,
+  fullname: String
+});
+И используя следующий запрос, вы можете получить информацию о пользователе
+
+Users.findOne({})
+.then(function(user){
+  // do something
+ })
+.catch(function(err){
+  // handle error
+ }) 
+Это намного эффективнее и быстрее по сравнению с использованием агрегированных запросов или функций заполнения мангуста.
+
+Если описанный выше метод вам не подходит, вы можете попробовать функцию заполнения мангуста.
+
+UserSchema = new mongoose.Schema({
+    user_id: String,
+    password: String,
+},
+// schema options: Don't forget this option
+// if you declare foreign keys for this schema afterwards.
+{
+    toObject: {virtuals:true},
+    // use if your results might be retrieved as JSON
+    // see http://stackoverflow.com/q/13133911/488666
+    //toJSON: {virtuals:true} 
+});
+
+UserInfoSchema = new mongoose.Schema({
+  user_id: String,
+  khatam_id: String,
+  username: String,
+  fullname: String,
+});
+
+
+// Foreign keys definitions
+
+UserSchema.virtual('userDetails', {
+  ref: 'UserInfoSchema',
+  localField: 'user_id',
+  foreignField: 'user_id',
+  justOne: true // for many-to-1 relationships
+});
+
+
+// Models creation
+
+var UserSchema = mongoose.model('UserSchema', UserSchema);
+var UserInfoSchema = mongoose.model('UserInfoSchema', UserInfoSchema);
+
+
+// Querying
+
+UserSchema.find({...})
+    // if you use select() be sure to include the foreign key field !
+   .select({.... user_id ....}) 
+   // use the 'virtual population' name
+   .populate('userDetails')
+   .exec(function(err, books) {...})
+
+Сообщество MongoDB: ошибка при установке службы от имени локального пользователя или пользователя домена
+Вопросы
+MONGODB
+Сообщество MongoDB: ошибка при установке службы от имени локального пользователя или пользователя домена
+При установке MongoDB Community в качестве локальной службы вам необходимо ввести будущие учетные данные вашей учетной записи:
+
+Сообщество MongoDB: ошибка при установке службы от имени локального пользователя или пользователя домена
+
+Если я введу, например: пользователь: MongoDB пароль: root
+
+Я получил это сообщение об ошибке:
+
+The domain, user name and/or password are incorrect. Remember to use "." for the domain if the account is on the local machine.
+
+Сообщество MongoDB: ошибка при установке службы от имени локального пользователя или пользователя домена
+
+Что мне здесь написать? Когда я что-то пишу, я получаю сообщение об ошибке.
+
+ 30.08.2018 10:32
+46
+4
+21 437
+6
+ Ответы 6
+Вот решение: Имя пользователя должно быть «именем пользователя» вашей системы / устройства. И пароль должен быть паролем вашей системы / устройства. Это странно, но это сработает.
+
+ 04.02.2019 14:25
+Вот решение для Windows 10 (x64):
+
+Если у вас нет домена (для домашнего или персонального компьютера), оставьте поле домена с "."
+Если ваш компьютер принадлежит вашей компании, обратитесь к системному администратору, а затем в поле домена введите: Company_Domain
+
+В поле имени пользователя
+
+для персональных компьютеров: введите свой имя пользователя. Если вы вошли в систему с Учетная запись Microsoft, введите адрес электронной почты или имя своей учетной записи Microsoft.
+
+для машин, предоставленных компанией: введите свое имя пользователя как Company_Domain / Your_Username
+
+В поле пароля введите пароль, а не ПИН-код (если вы его настроили).
+
+Это должно помочь.
+
+ 08.03.2019 02:38
+бросить intall. перезапустите установочный файл msi и выберите вариант по умолчанию
+
+ 17.03.2019 15:32
+У меня был пользователь с правами администратора без пароля. Я установил пароль и попытался установить и дал локального администратора и пароль. Он работает для меня.
+
+ 12.04.2019 14:11
+Я использовал то же решение, что и Хан. Я пошел в каталог загрузки, и когда я на этот раз запустил файл msi, меня спросили, нужно ли устанавливать компас. После снятия этого флажка остальная часть установки работала с использованием параметров по умолчанию. Это ноутбук с Windows 10.
+
+ 25.05.2019 20:12
+Вот лучшее решение: укажите имя пользователя и пароль для вашей системы / устройства. И пароль должен быть паролем вашей системы / устройства. Это странно, но сработает.
+
+Как подключить MongoDB Compass с помощью строки подключения MLab
+Вопросы
+MONGODB
+Как подключить MongoDB Compass с помощью строки подключения MLab
+У меня есть база данных, размещенная на MLab, и я пытаюсь подключить ее к Compass. Я использую хост и порт, указанные в строке подключения, но он показывает ошибку, вот мой снимок экрана:
+
+Как подключить MongoDB Compass с помощью строки подключения MLab
+
+Что я делаю неправильно?
+
+ 14.09.2018 22:57
+23
+0
+8 554
+6
+ Ответы 6
+У меня была такая же проблема.
+
+Я исправил это, обновив мою версию MongoDB Compass. В версии 1.15.4 проблем не возникало.
+
+Кроме того, в базе данных аутентификации не должно быть значения «admin», а должно быть имя БД для подключения к вам.
+
+Чтобы упростить подключение, скопируйте всю строку подключения в буфер обмена. Компас обнаруживает это и предлагает автоматически заполнить форму подключения.
+
+ 22.09.2018 13:07
+Требуемые учетные данные не являются вашими учетными данными для входа в MLab, вместо этого это учетные данные пользователя базы данных.
+
+Как их получить:
+щелкните свою БД на MLab.
+
+перейдите на вкладку пользователей и создайте нового пользователя.
+
+использовать учетные данные созданных пользователей для доступа к базе данных.
+
+установите базу данных аутентификации в качестве вашей базы данных.
+
+ 28.09.2018 23:39
+У меня такая же проблема. URL-адрес MongoDB работал в коде, но Authentication failed отображался в MongoDB Compass.
+
+Когда я проверил, мой пароль mongodb был iam%40me1234.
+
+Здесь я использую шестнадцатеричный код HTML %40 в пароле для символа @.
+
+Итак, если мы будем использовать исходный символ в пароле, например iam@me1234 в MongoDB Compass, тогда он будет отлично работать.
+
+Вот полный список Hex коды
+
+ 27.10.2018 06:13
+Проблема, с которой я столкнулся, заключалась в том, что компас Authentication Database, заполненный автоматически, не соответствовал моей настройке. По умолчанию это указывало на admin, но оно должно указывать на базу данных, с которой связан пользователь.
+
+Резюмирую: базы данных admin не существовало.
+
+Чтобы исключить это, дважды проверьте, на какую базу данных вы указываете. Он должен быть в имени, например ds739176/database_name, где database_name, как вы уже догадались, имя вашей базы данных.
+
+Надеюсь это поможет.
+
+ 17.12.2018 21:45
+Если бы ту же проблему удалось решить так:
+
+mLab user tab
+
+A. Зайдите в свою db в mlab и во вкладке выберите "users"
+
+Б. Создайте нового пользователя, например: имя пользователя: admin, пароль: 123456.
+
+C: Подойдите к компасу и залейте его так
+
+Пример вашего пути подключения
+ds012345.mlab.com:56789/myDBname
+
+имя хоста
+
+ds012345.mlab.com
+
+порт
+
+56789
+
+аутентификация: имя пользователя / пароль
+
+admin // or the name of the user you created in step A
+123456 // or password for the user you created in step A
+
+база данных аутентификации
+
+myDBname // the name of your database in mlab
+
+Для меня проблема с базой данных аутентификации.
+
+— 
+AutumnSky
+ 22.04.2019 15:21
+Главное было База данных аутентификации, по умолчанию админ.
+
+— 
+Rohit Sharma
+ 17.05.2019 09:48
+Это должен быть правильный ответ! Решил мою проблему
+
+— 
+Raphael Schubert
+ 10.12.2019 12:50
+Решено! Тем не менее, я не понимаю, зачем нам создавать другого пользователя базы данных.
+
 Подключите Mongodb к Django
 Вопросы
 PYTHON
