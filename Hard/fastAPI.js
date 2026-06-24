@@ -1,3 +1,958 @@
+Не удалось собрать столбцы первичного ключа для сопоставленной таблицы SQLAlchemy
+Вопросы
+PYTHON
+Не удалось собрать столбцы первичного ключа для сопоставленной таблицы SQLAlchemy
+Когда я пытаюсь запустить приложение FastAPI, появляется эта ошибка.
+
+sqlalchemy.exc.ArgumentError: Mapper mapped class DTabelle->dtabelle could not assemble any primary key columns for mapped table 'dtabelle'
+Когда я удаляю файл d_tabelle.py, все работает.
+
+Я думаю, что это может быть дубликат this, но я не нашел для себя ответа.
+
+Я думаю, все в порядке. С таблицами O и V все в порядке. Я не вижу разницы между таблицей V или O и таблицей D.
+
+Эти 4 файла находятся в одном каталоге d_tabelle.py, v_tabelle.py, o_tabelle.py,t_tabelle.py.
+
+d_таблица.py:
+
+
+from sqlmodel import SQLModel, Field, Relationship
+from typing import Optional, List, Union
+from datetime import datetime
+
+from models.t_tabelle import TTabelle
+
+
+class DTabelleBase(SQLModel):
+    __tablename__ = 'd_tabelle'
+    __table_args__ = {'schema': 'CDR_CIRPACK'}
+    d_id: Optional[int] = Field(default=None, primary_key=True)
+    dfi: datetime
+    t_id: Optional[int] = Field(default=None, foreign_key = "cdr_cirpack.t_tabelle.t_id")
+    signalpointcode: Optional[str]
+    callident: Optional[str]
+
+
+class DTabelleRead(DTabelleBase):
+    dfi: datetime
+
+
+class DTabelle(SQLModel, table=True):
+    # rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_d_tabelle_t_id')
+    rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_d_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==DTabelle.t_id'})
+о_таблица.py:
+
+
+from sqlmodel import SQLModel, Relationship, Field, Relationship
+from typing import Optional, Union, List
+from datetime import datetime
+
+from models.t_tabelle import TTabelle
+
+
+class OTabelleBase(SQLModel):
+    __tablename__ = 'o_tabelle'
+    __table_args__ = {'schema': 'CDR_CIRPACK'}
+    o_id: Optional[int] = Field(default=None, primary_key=True)
+    dfi: datetime
+    t_id: Optional[int] = Field(default=None, foreign_key = "cdr_cirpack.t_tabelle.t_id")
+    dur: Optional[str]
+    bytesend: Optional[str]
+    byterec: Optional[str]
+    packsent: Optional[str]
+    packrec: Optional[str]
+    packloss: Optional[str]
+    averjitter: Optional[str]
+    avertransdelay: Optional[str]
+    addinfo: Optional[str]
+    ipport: Optional[str]
+
+
+class OTabelleRead(OTabelleBase):
+    packSent: str
+    packRec: str
+    packLoss: str
+    averJitter: str
+    addInfo: str
+    ipPort: str
+
+
+class OTabelle(OTabelleBase, table=True):
+    # rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_o_tabelle_t_id')
+    rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_o_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==OTabelle.t_id'})
+
+
+v_tablele.py
+
+
+
+from sqlmodel import SQLModel, Field, Relationship
+from typing import Optional, List, Union
+from datetime import datetime
+
+from models.t_tabelle import TTabelle
+
+
+class VTabelleBase(SQLModel):
+    __tablename__ = 'v_tabelle'
+    __table_args__ = {'schema': 'CDR_CIRPACK'}
+    v_id: Optional[int] = Field(default=None, primary_key=True)
+    dfi: datetime
+    t_id: Optional[int] = Field(default=None, foreign_key = "cdr_cirpack.t_tabelle.t_id")
+    codecpaytype: Optional[str]
+    ptime: Optional[str]
+    silsupp: Optional[str]
+    echocancel: Optional[str]
+    event: Optional[str]
+    addinfo: Optional[str]
+
+
+class VTabelleRead(VTabelleBase):
+    codecPayType: str
+    echoCancel: str
+    event: str
+    addInfo: str
+
+
+class VTabelle(VTabelleBase, table=True):
+    # rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_v_tabelle_t_id')
+
+    # # relations:
+    rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(
+        back_populates='rel_v_tabelle_t_id',
+        sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==VTabelle.t_id'}
+    )
+
+t_tablele.py
+
+
+from sqlmodel import SQLModel, Field, Relationship
+from typing import Optional, List
+from datetime import datetime
+
+
+class TTabelleBase(SQLModel):
+    __tablename__ = 't_tabelle'
+    __table_args__ = {'schema': 'CDR_CIRPACK'}
+    t_id: Optional[int] = Field(default=None, primary_key=True)
+    dfi: datetime
+    flag: Optional[str]
+    account: Optional[str]
+    direction: Optional[str]
+    cstartdate: Optional[str]
+    cstarttime: Optional[str]
+    condur: Optional[str]
+    conringdur: Optional[str]
+    totcalldur: Optional[str]
+    ipaddr: Optional[str]
+    accesscode: Optional[str]
+    accesstype: Optional[str]
+    pres: Optional[str]
+    numplan_partynum: Optional[str]
+    category: Optional[str]
+    fwdcallind: Optional[str]
+    natcallingnum: Optional[str]
+    callingnum: Optional[str]
+    nataddcallpartyaddr: Optional[str]
+    addcallpartyaddr: Optional[str]
+    accesstypecallnum: Optional[str]
+    numplancallparty: Optional[str]
+    natcallednum: Optional[str]
+    callednum: Optional[str]
+    catrealcallnum: Optional[str]
+    typerealcallnum: Optional[str]
+    natrealcallnum: Optional[str]
+    realcallnum: Optional[str]
+    billing: Optional[str]
+    servcode: Optional[str]
+    relloc: Optional[str]
+    cause: Optional[str]
+    opid: Optional[str]
+    inccid: Optional[str]
+    outcid: Optional[str]
+    intrunkgroup: Optional[str]
+    outtrunkgroup: Optional[str]
+    unit: Optional[str]
+    ts: Optional[datetime]
+
+
+class TTabelleRead(TTabelleBase):
+    t_id: int
+    account: str
+    direction: str
+    cStartDate: str
+    cStartTime: str
+    conDur: str
+    totCallDur: str
+    pres: str
+    natCallingNum: str
+    callingNum: str
+    addCallPartyAddr: str
+    realCallNum: str
+    relLoc: str
+    cause: str
+    inTrunkGroup: str
+    outTrunkGroup: str
+
+
+class TTabelle(TTabelleBase, table=True):
+    rel_v_tabelle_t_id: List['VTabelle'] = Relationship(back_populates='rel_t_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==VTabelle.t_id'})
+    rel_o_tabelle_t_id: List['OTabelle'] = Relationship(back_populates='rel_t_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==OTabelle.t_id'})
+    rel_d_tabelle_t_id: List['DTabelle'] = Relationship(back_populates='rel_t_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==DTabelle.t_id'})
+
+
+ 05.12.2022 12:16
+0
+0
+60
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+DTabelle не наследуется от DTabelleBase. Таким образом, у него нет первичного ключа, т.е. как d_id: Optional[int] = Field(default=None, primary_key=True). Принимая во внимание, что у OTabelle есть базовый класс с первичным ключом. По крайней мере я так понимаю эту настройку я раньше не использовал sqlmodel.
+
+Поэтому либо добавьте в DTabelle базовый класс с первичным ключом, либо добавьте каталог столбца первичного ключа в DTabelle.
+
+ 05.12.2022 19:47
+изменить это:
+
+class DTabelle(SQLModel, table=True):
+    rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_d_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==DTabelle.t_id'})
+к этому:
+
+class DTabelle(DTabelleBase, table=True):
+    rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_d_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==DTabelle.t_id'})
+
+Использование обеих моделей pydantic в качестве ответа вызывает ошибку
+Вопросы
+PYTHON
+Использование обеих моделей pydantic в качестве ответа вызывает ошибку
+У меня есть реализация fastapi, где main.py:
+
+@app.get(
+    "/licence_ol/",
+    summary = "Query Licence info by product id",
+    response_description = "Successful Query",
+    response_model=list[EvergreenOutput],
+    tags=[Tags.items]
+)
+def get_product_id(session: Session = Depends(get_session))-> list[EvergreenOutput]: 
+
+    query = select(Evergreen).where(Evergreen.product_id == Mapping.eim_product_id).limit(200)
+    
+    return session.exec(query).fetchall()
+И следующее schemas.py:
+
+class Mapping(SQLModel,table=True):
+    id_seq: Optional[int] = Field(default=None,primary_key=True)
+    eim_product_id: Optional[int] = None
+    mem_product_id: Optional[int] = None
+    vendor: Optional[str] = None
+    name: Optional[str] = None
+    eim_name: Optional[str] = None
+    product_alias: Optional[str] = None
+    lev: Optional[int] = None
+    manufacturer: Optional[str] = None
+
+class MappingOutput(SQLModel):
+    eim_product_id: Optional[int] = None
+    mem_product_id: Optional[int] = None
+    vendor: Optional[str] = None
+    name: Optional[str] = None
+    eim_name: Optional[str] = None
+    product_alias: Optional[str] = None
+    lev: Optional[int] = None
+    manufacturer: Optional[str] = None
+
+
+class Evergreen(SQLModel,table=True):
+    id_seq: Optional[int] = Field(default=None,primary_key=True)
+    product_id: int 
+    phase_type: Optional[str] = None
+    phase_start: Optional[date] = None
+    phase_end: Optional[date] = None
+    product_name: Optional[str] = None
+    software_product_version_name: Optional[str] = None
+    software_product_version_id: Optional[int] = None
+
+class EvergreenOutput(SQLModel):
+    product_id: int 
+    phase_type: Optional[str] = None
+    phase_start: Optional[date] = None
+    phase_end: Optional[date] = None
+    product_name: Optional[str] = None
+    software_product_version_name: Optional[str] = None
+    software_product_version_id: Optional[int] = None
+Первый main.py работает, однако, если я хочу использовать как EvergreenOutput, так и MappingOutput в качестве моделей ответов, выдает ошибку:
+
+@app.get(
+    "/licence_ol/",
+    summary = "Query Licence info by product id",
+    response_description = "Successful Query",
+    response_model=list[EvergreenOutput,MappingOutput],
+    tags=[Tags.items]
+)
+def get_product_id(session: Session = Depends(get_session))-> list[EvergreenOutput,MappingOutput]: 
+
+    query = select(Evergreen,Mapping).where(Evergreen.product_id == Mapping.eim_product_id).limit(200)
+    
+    return session.exec(query).fetchall()
+ошибка:
+
+INFO:     127.0.0.1:53172 - "GET /licence_ol/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\fastapi\applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\middleware\exceptions.py", line 75, in __call__
+    raise exc
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\middleware\exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\fastapi\routing.py", line 253, in app
+    content = await serialize_response(
+  File "C:\Users\45291029\Documents\venv\ml\lib\site-packages\fastapi\routing.py", line 139, in serialize_response
+    raise ValidationError(errors, field.type_)
+pydantic.error_wrappers.ValidationError: 200 validation errors for EvergreenOutput
+response -> 0 -> product_id
+  field required (type=value_error.missing)
+Ответ без предоставления аннотации типа имеет следующую структуру:
+
+[
+  {
+    "Evergreen": {
+      "id_seq": 344,
+      "phase_start": "2011-07-22",
+      "product_name": "HTTP Server (IHS)",
+      "software_product_version_id": 359483,
+      "phase_end": "2018-04-30",
+      "product_id": 359496,
+      "phase_type": "Generally Available",
+      "software_product_version_name": "IBM HTTP Server v8.0"
+    },
+    "Mapping": {
+      "eim_product_id": 359496,
+      "mem_product_id": 19,
+      "name": "HTTP Server (IHS)",
+      "product_alias": "IHS",
+      "manufacturer": "IBM",
+      "id_seq": 0,
+      "vendor": "IBM",
+      "eim_name": "HTTP Server (IHS)",
+      "lev": 100
+    }
+  },
+ 05.12.2022 05:47
+0
+0
+68
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Похоже, ваш запрос не соответствует вашей пидантической модели.
+
+Попробуйте это,
+
+
+class EvergreenOutput(SQLModel):
+    product_id: int
+    phase_type: Optional[str] = None
+    phase_start: Optional[date] = None
+    phase_end: Optional[date] = None
+    product_name: Optional[str] = None
+    software_product_version_name: Optional[str] = None
+    software_product_version_id: Optional[int] = None
+    # below line is added
+    mapping: list[MappingOutput]
+
+...
+
+
+@app.get(
+    "/licence_ol/",
+    summary = "Query Licence info by product id",
+    response_description = "Successful Query",
+    response_model=list[EvergreenOutput],
+    tags=[Tags.items]
+)
+def get_product_id(session: Session = Depends(get_session)) -> list[EvergreenOutput, MappingOutput]:
+    query = select(Evergreen, Mapping).where(Evergreen.product_id == Mapping.eim_product_id).limit(200)
+
+    return session.exec(query).fetchall()
+ 05.12.2022 07:06
+ Ответ принят как подходящий
+Response_model является статической, ее нельзя переключать в зависимости от данных.
+
+Ваше сообщение об ошибке
+
+pydantic.error_wrappers.ValidationError: 200 ошибок проверки для EvergreenOutput ответ -> 0 -> product_id
+
+указанный 'product_id' не найден в сопоставлениях.
+
+response_model в операции пути должна быть одна модель или список из одной модели.
+
+Если вы хотите вернуть отдельные 2 словаря в один response, объедините их в одиночные модели pydantic, как показано ниже.
+
+class FuncResult(BaseModel):
+    Evergreen: EvergreenOutput
+    Mapping: MappingOutput
+
+@app.get(
+    "/licence_ol/",
+    summary = "Query Licence info by product id",
+    response_description = "Successful Query",
+    response_model=list[FuncResult],
+    tags=[Tags.items]
+)
+def get_product_id(session: Session = Depends(get_session)) -> list[EvergreenOutput, MappingOutput]:
+    query = select(Evergreen, Mapping).where(Evergreen.product_id == Mapping.eim_product_id).limit(200)
+    return  session.exec(query).fetchall()
+
+да, это все спасибо. Я пробовал class UnEverOut(EvergreenOutput,MappingOutput): pass, но это тоже не сработало, так как он объединил слова
+
+— 
+moth
+ 05.12.2022 08:22
+Я никогда не унаследовал от тебя модели. Пожалуйста, прочтите еще раз то, что я написал.
+
+Удалить записи из коллекции mongodb после пропуска с помощью beanie ODM
+Вопросы
+MONGODB
+Удалить записи из коллекции mongodb после пропуска с помощью beanie ODM
+Я хочу удалить некоторые записи после сортировки и пропустить элементы, но этот запрос всегда удаляет все записи после find.as если сортировка и пропуск ничего не делают ':
+
+await Book.find(Book.owner.id == user.id).sort("-created_at").skip(2).delete()
+ 03.12.2022 14:52
+0
+1
+96
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Для достижения цели вы можете сначала получить документы, применив функцию пропуска, а затем использовать функцию deleteMany.
+
+Примечание. Вы также можете использовать sort({_id:-1}) для сортировки документов.
+
+См. Пример кода ниже:
+
+const data = await Book.find(pass-your-query-here).sort({_id:-1}).skip(2);
+        if (data.length>0){
+          const ress = await Book.deleteMany({ _id: {$lte: data[0]._id } });
+        }
+ 03.12.2022 17:56
+Мы можем удалить элементы по функциональности шапочки следующим образом:
+
+from app.models.book_model import Book
+from beanie.operators import In
+
+books= await Book.find(Book.owner.id == user.id).sort("-created_at").skip(2).to_list()
+
+books_del= Book.find(In(Book.id, [_.id for _ in books]))
+await books_del.delete()
+
+Добавьте пользовательский javascript на веб-страницу документов FastAPI Swagger UI в Python
+Вопросы
+PYTHON
+Добавьте пользовательский javascript на веб-страницу документов FastAPI Swagger UI в Python
+Я хочу загрузить свой пользовательский файл или код javascript на веб-страницу пользовательского интерфейса FastAPI Swagger, чтобы добавить динамическое взаимодействие при создании объекта FastAPI.
+
+Например, в пользовательском интерфейсе Swagger на веб-странице документов я хотел бы
+
+<script src = "custom_script.js"></script> 
+или
+
+<script> alert('worked!') </script>
+Я попытался:
+
+api = FastAPI(docs_url=None)
+
+api.mount("/static", StaticFiles(directory = "static"), name = "static")
+
+@api.get("/docs", include_in_schema=False)
+async def custom_swagger_ui_html():
+    return get_swagger_ui_html(
+        openapi_url=api.openapi_url,
+        title=api.title + " - Swagger UI",
+        oauth2_redirect_url=api.swagger_ui_oauth2_redirect_url,
+        swagger_js_url = "/static/sample.js",
+        swagger_css_url = "/static/sample.css",
+    )
+Но это не работает. Есть ли способ просто вставить мой собственный код javascript на веб-страницу документов FastAPI Swagger UI с Python?
+
+ 02.12.2022 21:14
+3
+0
+173
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Наконец я заставил его работать. Вот что я сделал:
+
+from fastapi.openapi.docs import (
+    get_redoc_html,
+    get_swagger_ui_html,
+    get_swagger_ui_oauth2_redirect_html,
+)
+from fastapi.staticfiles import StaticFiles
+
+api = FastAPI(docs_url=None) 
+
+path_to_static = os.path.join(os.path.dirname(__file__), 'static')
+logger.info(f"path_to_static: {path_to_static}")
+api.mount("/static", StaticFiles(directory=path_to_static), name = "static")
+
+@api.get("/docs", include_in_schema=False)
+        async def custom_swagger_ui_html():
+            return get_swagger_ui_html(
+                openapi_url=api.openapi_url,
+                title = "My API",
+                oauth2_redirect_url=api.swagger_ui_oauth2_redirect_url,
+                swagger_js_url = "/static/custom_script.js",
+                # swagger_css_url = "/static/swagger-ui.css",
+                # swagger_favicon_url = "/static/favicon-32x32.png",
+            )
+Важные заметки:
+
+Убедитесь, что статический путь правильный и все ваши файлы находятся в статической папке, по умолчанию статическая папка должна находиться в той же папке, что и скрипт, создавший объект FastAPI.
+Например:
+
+ -parent_folder
+     Build_FastAPI.py
+     -static_folder
+         custom_script.js
+         custom_css.css
+Найдите swagger-ui-bundle.js в Интернете и скопируйте и вставьте все его содержимое в custom_script.js, затем добавьте свой пользовательский код javascript в начало или в конец custom_script.js.
+Например:
+
+setTimeout(function(){alert('My custom script is working!')}, 5000);
+...
+.....
+/*! For license information please see swagger-ui-bundle.js.LICENSE.txt */
+            !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.SwaggerUIBundle=t():e.SwaggerUIBundle=t()}
+...
+.....
+Сохраните и обновите браузер, все готово!
+ЕСЛИ КТО-ТО ЗНАЕТ ЛУЧШИЙ ОТВЕТ, ДОБРО ПОЖАЛОВАТЬ, ЛУЧШИЙ ОТВЕТ БУДЕТ ПРИНЯТ!
+
+ 03.12.2022 10:41
+ Ответ принят как подходящий
+Если вы посмотрите на функцию get_swagger_ui_html, импортированную из fastapi.openapi.docs, вы увидите, что HTML для страницы документов создается вручную посредством интерполяции/конкатенации строк. Было бы тривиально изменить эту функцию, включив в нее дополнительный элемент сценария, как показано ниже:
+
+# custom_swagger.py
+
+import json
+from typing import Any, Dict, Optional
+
+from fastapi.encoders import jsonable_encoder
+from fastapi.openapi.docs import swagger_ui_default_parameters
+from starlette.responses import HTMLResponse
+
+def get_swagger_ui_html(
+    *,
+    openapi_url: str,
+    title: str,
+    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-bundle.js",
+    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui.css",
+    swagger_favicon_url: str = "https://fastapi.tiangolo.com/img/favicon.png",
+    oauth2_redirect_url: Optional[str] = None,
+    init_oauth: Optional[Dict[str, Any]] = None,
+    swagger_ui_parameters: Optional[Dict[str, Any]] = None,
+    custom_js_url: Optional[str] = None,
+) -> HTMLResponse:
+    current_swagger_ui_parameters = swagger_ui_default_parameters.copy()
+    if swagger_ui_parameters:
+        current_swagger_ui_parameters.update(swagger_ui_parameters)
+
+    html = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link type = "text/css" rel = "stylesheet" href = "{swagger_css_url}">
+    <link rel = "shortcut icon" href = "{swagger_favicon_url}">
+    <title>{title}</title>
+    </head>
+    <body>
+    <div id = "swagger-ui">
+    </div>
+    """
+    
+    if custom_js_url:
+        html += f"""
+        <script src = "{custom_js_url}"></script>
+        """
+
+    html += f"""
+    <script src = "{swagger_js_url}"></script>
+    <!-- `SwaggerUIBundle` is now available on the page -->
+    <script>
+    const ui = SwaggerUIBundle({{
+        url: '{openapi_url}',
+    """
+
+    for key, value in current_swagger_ui_parameters.items():
+        html += f"{json.dumps(key)}: {json.dumps(jsonable_encoder(value))},\n"
+
+    if oauth2_redirect_url:
+        html += f"oauth2RedirectUrl: window.location.origin + '{oauth2_redirect_url}',"
+
+    html += """
+    presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIBundle.SwaggerUIStandalonePreset
+        ],
+    })"""
+
+    if init_oauth:
+        html += f"""
+        ui.initOAuth({json.dumps(jsonable_encoder(init_oauth))})
+        """
+
+    html += """
+    </script>
+    </body>
+    </html>
+    """
+    return HTMLResponse(html)
+Добавлен новый необязательный параметр с именем custom_js_url:
+
+    custom_js_url: Optional[str] = None,
+Если для этого параметра указано значение, элемент скрипта вставляется в DOM непосредственно перед элементом скрипта для swagger_js_url (это произвольный выбор, вы можете изменить расположение пользовательского элемента скрипта в зависимости от ваших потребностей).
+
+    if custom_js_url:
+        html += f"""
+        <script src = "{custom_js_url}"></script>
+        """
+Если значение не указано, созданный HTML-код совпадает с исходной функцией.
+
+Не забудьте обновить операторы импорта для get_swagger_ui_html и обновить функцию для конечной точки /docs, как показано ниже:
+
+from fastapi.openapi.docs import (
+    get_redoc_html,
+    get_swagger_ui_oauth2_redirect_html,
+)
+from fastapi.staticfiles import StaticFiles
+
+from custom_swagger import get_swagger_ui_html
+
+api = FastAPI(docs_url=None) 
+
+path_to_static = os.path.join(os.path.dirname(__file__), 'static')
+logger.info(f"path_to_static: {path_to_static}")
+api.mount("/static", StaticFiles(directory=path_to_static), name = "static")
+
+@api.get("/docs", include_in_schema=False)
+        async def custom_swagger_ui_html():
+            return get_swagger_ui_html(
+                openapi_url=api.openapi_url,
+                title = "My API",
+                oauth2_redirect_url=api.swagger_ui_oauth2_redirect_url,
+                swagger_js_url = "/static/swagger-ui-bundle.js",
+                swagger_css_url = "/static/swagger-ui.css",
+                # swagger_favicon_url = "/static/favicon-32x32.png",
+                custom_js_url = "/static/custom_script.js",
+            )
+Это все еще довольно хакерское решение, но я думаю, что оно намного чище и проще в сопровождении, чем размещение кучи пользовательского javascript внутри файла swagger-ui-bundle.js.
+
+
+Как загрузить файл csv с помощью шаблонов Jinja2 и FastAPI и вернуть его после модификации?
+Вопросы
+PYTHON
+Как загрузить файл csv с помощью шаблонов Jinja2 и FastAPI и вернуть его после модификации?
+Я использую FastAPI для загрузки CSV-файла, внесения в него некоторых изменений, а затем возвращаю его на HTML-страницу. Я использую Jinja2 в качестве механизма шаблонов и HTML во внешнем интерфейсе.
+
+Как я могу загрузить файл csv с помощью шаблона Jinja2, изменить его, а затем вернуть клиенту?
+
+Код Python
+from fastapi.templating import Jinja2Templates
+from fastapi import FastAPI, File, UploadFile, Request
+from io import BytesIO
+import pandas as pd
+import uvicorn
+
+app = FastAPI()
+templates = Jinja2Templates(directory = "templates")
+
+@app.get("/")
+def form_post(request: Request):
+result = "upload file"
+return templates.TemplateResponse('home.html', context = {'request': request, 'result': result})
+
+@app.post("/")
+def upload(request: Request, file: UploadFile = File(...)):
+
+    contents1 = file.file.read()
+    buffer1 = BytesIO(contents1)
+    test1 = pd.read_csv(buffer1)
+    buffer1.close()
+    file.file.close()
+    test1 = dict(test1.values)
+    
+    return templates.TemplateResponse('home.html', context = {'request': request, 'result': test1})
+
+if __name__ == "__main__":
+    uvicorn.run(app)
+HTML-код
+\<!DOCTYPE html\>
+\<html lang = "en"\>
+\<head\>
+\<meta charset = "UTF-8"\>
+\<title\>RUL_PREDICTION\</title\>
+\</head\>
+\<body\>
+\<h1\>RUL PREDICTION\</h1\>
+\<form method = "post"\>
+\<input type = "file" name = "file" id = "file"/\>
+\<button type = "submit"\>upload\</button\>
+\</form\>
+\<p\>{{ result }}\</p\>
+\</body\>
+\</html\>
+ 25.11.2022 14:36
+1
+5
+180
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Это может сработать:
+
+@app.post("/")
+def upload(file: UploadFile):
+
+    with open("temp.csv", "wb") as f:
+        for row in file.file:
+            f.write(row)
+    
+    with open("temp.csv", "r", encoding = "utf-8") as csv:
+        # modifications
+    
+
+    return FileResponse(path = "temp.csv", filename = "new.csv", media_type = "application/octet-stream")
+ 25.11.2022 14:55
+ Ответ принят как подходящий
+Приведенный ниже рабочий пример получен из ответов здесь , здесь , а также здесь , здесь и здесь, на которые я предлагаю вам взглянуть для более подробной информации и объяснение.
+
+Образец данных
+данные.csv
+
+Id,name,age,height,weight
+1,Alice,20,62,120.6
+2,Freddie,21,74,190.6
+3,Bob,17,68,120.0
+Вариант 1. Верните измененные данные в новый CSV-файл.
+app.py
+
+from fastapi import FastAPI, File, UploadFile, Request, Response, HTTPException
+from fastapi.templating import Jinja2Templates
+from io import BytesIO
+import pandas as pd
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+@app.post('/upload')
+def upload(file: UploadFile = File(...)):
+    try:
+        contents = file.file.read()
+        buffer = BytesIO(contents) 
+        df = pd.read_csv(buffer)
+    except:
+        raise HTTPException(status_code=500, detail='Something went wrong')
+    finally:
+        buffer.close()
+        file.file.close()
+
+    # remove a column from the DataFrame
+    df.drop('age', axis=1, inplace=True)
+    
+    headers = {'Content-Disposition': 'attachment; filename = "modified_data.csv"'}
+    return Response(df.to_csv(), headers=headers, media_type='text/csv')
+    
+
+@app.get('/')
+def main(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <form method = "post" action = "/upload"  enctype = "multipart/form-data">
+         <label for = "csvFile">Choose a CSV file</label>
+         <input type = "file" id = "csvFile" name = "file" onchange = "enableSubmitBtn();"><br><br>
+         <input type = "submit" id = "submitBtn" value = "submit" disabled>
+      </form>
+      <script>
+         function enableSubmitBtn() {
+            document.getElementById('submitBtn').removeAttribute("disabled");
+         }
+      </script>
+   </body>
+</html>
+Вариант 2. Вернуть измененные данные в новый шаблон Jinja2.
+Если вы хотите вернуть новый шаблон Jinja2 с измененными данными вместо CSV-файла, как показано выше, вы можете использовать приведенное ниже.
+
+Способ 1
+Используйте pandas.DataFrame.to_html() для отображения DataFrame в виде HTML-таблицы. При желании вы можете использовать параметр classes в функции to_html() для передачи имени class или списка имен, которые будут использоваться в таблице стилей в вашем интерфейсе для стилизации таблицы. Кроме того, вы можете удалить border, указав border=0 в to_html().
+
+app.py
+
+# ... (rest of code is same as in Option 1)
+
+@app.post('/upload')
+def upload(request: Request, file: UploadFile = File(...)):
+    # ... (rest of code is same as in Option 1)
+
+    context = {'request': request, 'table': df.to_html()}
+    return templates.TemplateResponse('results.html', context)
+
+шаблоны/результаты.html
+
+<!DOCTYPE html>
+<html>
+    <body>{{ table | safe }}</body>
+</html>
+Способ 2
+Используйте pandas.DataFrame.to_dict(), чтобы преобразовать DataFrame в словарь и вернуть его.
+
+app.py
+
+# ... (rest of code is same as in Option 1)
+
+@app.post('/upload')
+def upload(request: Request, file: UploadFile = File(...)):
+    # ... (rest of code is same as in Option 1)
+
+    context = {'request': request, 'data': df.to_dict(orient='records'), 'columns': df.columns.values}
+    return templates.TemplateResponse('results.html', context)
+
+шаблоны/результаты.html
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <table style = "width:50%">
+            <tr>
+                {% for c in columns %}<td>{{ c }}</td>{% endfor %}
+            </tr>
+            {% for d in data %}
+                <tr>
+                    {% for v in d.values() %}
+                        <td>{{ v }}</td>
+                    {% endfor %}
+                    <br>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+
+
+Почему url_for генерирует URL-адрес с localhost в качестве имени хоста вместо имени домена?
+Вопросы
+PYTHON
+Почему url_for генерирует URL-адрес с localhost в качестве имени хоста вместо имени домена?
+У меня есть веб-приложение FastAPI, использующее шаблоны Jinja2, которое отлично работает на localhost, но не в рабочей среде. Проблема в том, что URL-адреса для JavaScript и других файлов static неправильно генерируются. Я развернул его на экземпляре EC2, используя gunicorn и nginx.
+
+У меня есть эта строка кода в моем файле HTML:
+
+<script src = "{{ url_for('static', path='js/login_signup.js') }}"></script>
+Проблема в том, что он генерирует URL-адрес следующим образом:
+
+<script src = "http://127.0.0.1:8000/static/js/login_signup.js"></script>
+Я хочу создать что-то вроде этого:
+
+<script src = "http://my_domain.com/static/js/login_signup.js"></script>
+ 23.11.2022 16:13
+1
+1
+196
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Подавать на 0.0.0.0 вместо 127.0.0.1. Если вы используете uvicorn, который является веб-сервером по умолчанию для FastAPI, вам необходимо передать --host 0.0.0.0 при запуске сервера. Для других серверов найдите эквивалентный флаг.
+
+ 23.11.2022 16:16
+ Ответ принят как подходящий
+Поскольку вы упомянули, что используете gunicorn, вам нужно убедиться, что вы привязываете gunicorn к 0.0.0.0. Например:
+
+gunicorn --bind 0.0.0.0:80 
+Кроме того, поскольку вы используете Nginx, обязательно настройте раздел конфигурации «сервер», как описано здесь:
+
+ server {
+        server_name example.com
+        location / {
+            proxy_redirect     off;
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Forwarded-Proto $scheme;
+            proxy_set_header   Host $host;
+            proxy_set_header   X-Real-IP $remote_addr;
+            proxy_set_header   X-Forwarded-Host $server_name;
+
+           ...
+        }
+
+
+    listen 443 ssl; 
+Если описанное выше не помогло решить проблему, см. другие варианты ниже.
+
+Опция 1
+Вместо этого вы можете использовать реальные пути, как описано здесь и здесь. Пример:
+
+<link href = "static/styles.css'" rel = "stylesheet">
+Вариант 2
+Вы можете создать пользовательскую функцию (например, my_url_for() в примере ниже), которая будет использоваться для замены доменного имени URL-адреса (имени хоста) — вы можете опустить номер порта при замене имени хоста, если вы полагаетесь на порт по умолчанию Протокол HTTP (80) или HTTPS (443) и используйте эту функцию в своих шаблонах Jinja2 вместо обычной функции url_for(). Если вы также хотите включить в URL-адрес параметры запроса, а не только параметры пути, посмотрите этот ответ и этот ответ. Пример:
+
+Бэкенд
+
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from typing import Any
+import urllib
+
+app = FastAPI()
+
+def my_url_for(request: Request, name: str, **path_params: Any) -> str:
+    url = request.url_for(name, **path_params)
+    parsed = list(urllib.parse.urlparse(url))
+    #parsed[0] = 'https'  # Change the scheme to 'https' (Optional)
+    parsed[1] = 'my_domain.com'  # Change the domain name
+    return urllib.parse.urlunparse(parsed)
+    
+
+app.mount('/static', StaticFiles(directory='static'), name='static')
+templates = Jinja2Templates(directory='templates')
+templates.env.globals['my_url_for'] = my_url_for
+Внешний интерфейс
+
+<link href = "{{ my_url_for(request, 'static', path='/styles.css') }}" rel = "stylesheet">
+
+
 FastAPI возвращает «Ошибка 422: необрабатываемый объект», когда я отправляю данные составной формы с помощью JavaScript Fetch API
 Вопросы
 JAVASCRIPT
