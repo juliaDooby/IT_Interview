@@ -1,10 +1,5 @@
 Interview Questions MongoDB
-Interview Questions MongoDB
-Posted On
-November 14, 2023
-by
-Codex
-135 Views
+
 What is MongoDB?
 MongoDB is a cross-platform, document-oriented database program that provides high performance, high availability, and easy scalability. It is a leading NoSQL database, which is designed for ease of development and scaling​​.
 
