@@ -1,3 +1,489 @@
+Do You Have Any Questions for Us?
+As a job interview draws to an end, it's common for the interviewer(s) to ask, "Do you have any questions for us?". While it's tempting to answer with a polite "No thanks," you should always ask questions.
+
+In fact, interviewers expect you to ask questions — to assess your interest in the role, see if you've been listening, and determine if you've researched the company. If you don't ask questions, the interviewer might think you haven't done your homework or aren't interested in the opportunity.
+
+Therefore, it makes sense to plan for it in advance and be prepared. Having a few quality questions prepared will ensure you're ready for this question and can help set you apart from the competition.
+
+In this article, we discuss the types of questions to ask and the types of questions to avoid when asked "Do you have any questions for us?".
+
+How to Answer "Do You Have Any Questions for Us?" in an Interview
+While preparing for an interview, develop a list of questions that you want answered by the interviewer and keep in mind that these questions may change slightly based upon your interviewer.
+
+For instance, if you're meeting with the person who will be your manager, you might ask specific questions about your intended role. If you're meeting with someone from human resources, your questions might focus on the interviewing process or on the overall organization of the company.
+
+Below are a few broad categories of questions that are appropriate to ask your interviewer when they throw the common interview question "Do you have any questions for us?" at you.
+
+Questions about the job
+The hiring manager may have already covered information about the job’s functions, but this is the ideal time to get more details about the day-to-day responsibilities, expectations and goals. You could ask:
+
+Can you share more about the day-to-day responsibilities of this role? How would you describe the pace of a typical day?
+If I were hired for this role, what would be expected of me to achieve in my first month?
+What is the Key Performance Indicator (KPI) for this role?
+What mechanisms are in place for performance reviews and when would I receive my first formal evaluation?
+How many people are on the team I’d be part of?
+Why did the last person in this position leave?
+How long has this position been open?
+Is this a new position?
+Would I be working in the office or remotely?
+What does the onboarding process look like at this company?
+Is travel required for this job?
+Will I be expected to work nights and/or weekends for this position?
+Questions about the company
+Asking questions about the company reveals that you’ve done your research and gives you a better picture of the company’s outlook, values and culture. Plus, it gives the impression that you’re interested in growing with the company long-term. Consider asking:
+
+How would you describe the management style of the organization?
+What's something that makes you happy about coming into work each day?
+How long have you been at the company?
+Can you talk about company culture?
+What is the greatest challenge facing the company?
+What are the company's goals for the upcoming year?
+What kind of growth does the company expect to see within the next five years?
+Can you describe some of the company’s recent challenges and achievements?
+Questions about you
+You can use this moment to get a sense of how the interviewer perceived you during the interview, and if they think you're a good candidate. With these questions, you might want to preface by expressing your excitement for the role, and then (based on the feedback you get) address the issue on the spot. You can ask:
+
+What are your concerns about my candidacy?
+Are there any qualifications that you think I'm missing?
+Do feel I’m lacking in a particular area or skill set?
+Questions about the next steps
+Save your final question to ask about the next steps in the hiring process. You’ll convey your interest in the job one last time as well as learn about the hiring timeline, potential additional interviews or when you can expect to hear from them. You might say:
+
+I’ve really enjoyed learning more about this opportunity. What are the next steps in the hiring process?
+Thank you for explaining the role to me in such depth. When might I hear back from you regarding a decision?
+Mistakes to avoid when answering "Do you have any questions for us?"
+While you shouldn't be afraid to ask tough questions, there are some general things you should avoid:
+
+Not having questions: You know this question is coming, and interviewers expect you to have questions, don't make the mistake of not having any.
+Asking questions you could answer yourself: If you can answer your question with a quick Google search or by reading the company's website, skip it. The interview is your opportunity to get a deeper understanding of the company from someone who works there. Simple questions can also indicate to the interviewer that you haven't taken the time to do your research.
+Complicated or multi-part questions: They're hard to follow and even harder to answer. Try to keep each question focused on a specific point.
+Self-serving questions: While it's OK to ask about salary, health insurance, vacation time, and other perks, remember that the main point of a job interview is to demonstrate you're an excellent fit for the company.
+Personal questions and gossip: This is one you'll have to play by ear, some interviewers like talking about their personal lives before, during, or after an interview, while others prefer to avoid it. Use your judgment.
+Yes or no questions: Most yes or no questions can be answered by Google or by reading the company's website. Ask questions that open up the conversation and help you get an inside look into the company.
+Asking what the company does: This is a huge red flag that you haven't done your research. You should always show respect to yourself and the company you're interviewing with by investing time into researching the company before you apply.
+Don't ask too many questions: While you want to be prepared to ask one or two, take the hint and wind down your questions when interviewers begin to shuffle paper, glance at their watch, or wake up sleeping computers.
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+What is Your Greatest Strength?
+"What is your greatest strength?" may seem like an easy job interview question. However, for many candidates it can be tricky—either they're too modest in their response or they don't highlight those strengths that most closely match the job requirements. Many candidates are unsure about how to answer this question. It’s important to be prepared for this question and have an answer ready. Even if you aren’t asked this question, you will be aware of your strengths and what you can bring to the position.
+
+In this article, you'll find a guide on how to answer the interview question about your greatest strengths, and what—and what not—to say when you respond, with example answers too.
+
+How to answer “What is your greatest strength?” interview question
+Your strengths reveal a lot about you as a candidate. When you are asked questions about your strengths, discuss attributes that will best qualify you for the specific job and set you apart from the other candidates.
+
+By asking you about your greatest strengths, here’s what the interviewer is looking for:
+
+They want to know if you're aware of your own strengths
+They want to know if your strengths are relevant for the job role
+They want to know if you’re realistic
+While answering, the hiring manager will also be looking for examples from you. So in order to answer appropriately, you need to convey the above 3 points in your answer and provide a real-life, relevant example of the strength in action.
+
+You can claim you’re the most tech-savvy person in the world and amazing at  project management, but without providing an example, you might as well be making the whole thing up.
+
+So, when considering which strength to highlight, think about the last time you used it. 
+
+What happened? How did you react to the situation? How did your strength help solve the problem?
+
+Basically, the best approach to answering this interview question is as follows:
+
+State your strength (must be relevant to the job)
+Provide an example of when you used this strength and how
+(Optional) Describe what kind of impact you made
+The more closely your strengths match the stated job requirements, the more likely you'll be to get a job offer.
+
+“What is your greatest strength?” sample answers
+Below are real-life example answers for the the interview question “What is your greatest strength?”:
+
+My greatest strength is my writing skills. I can also work to tight deadlines under pressure. For example, I was once asked to complete a project that fell through the cracks. My editor discovered the mistake two hours before the deadline. It was an important piece that gave our publication a scoop on the topic in question. Not only did the piece have to go out on time, but it had to be perfect. I hunkered down and wrote. The result? The article was on time and acclaimed.
+I have a solid work ethic. When I'm working on a project, I don't just want to meet deadlines. Rather, I prefer to complete the project well ahead of schedule. Last year, I even earned a bonus for completing my three most recent reports one week ahead of time.
+I’ve always preferred to work in groups and find that my collaborative nature is one of my strongest attributes. On projects that I directed, I work well to inspire diverse team members and work side by side with them to achieve the project goals. In fact, I’ve increased productivity by ten percent over the course of two years. 
+Whenever new software is released, I’m always the first one to test and get familiar with it. I love pushing the edge and learning every aspect of the new software. In fact, just last week I found a software issue with one of my video games. I called the developer, and they fixed it right away. This position will give me the opportunity to apply my passion and help make programs better for your company.
+I am a skilled sales representative with over ten years of experience. I have exceeded my sales goals every quarter by at least 20%, and I've earned a bonus each year since I started with my current employer.
+I consider my leadership skills to be one of my greatest strengths. During my time as a department head, I successfully merged two teams and organized training programs for all team members to ensure that everyone was confident in their new role. As a result, we were able to increase sales by 5% within our first month as a new team.
+My greatest strength is attention to detail. I’ve always been detail-oriented in my work, and it’s something I enjoy. I saw on your job description that this role involves a lot of detail-oriented work, which is one reason I applied. In my last job, I was frequently required to manage 8-10 client projects at a time, and often had 75 different tasks going on in those different projects. Being detail-oriented allowed me to deliver 100% of my projects on-time to our clients. In fact, I finished 45% of my assigned projects ahead of schedule.
+Notice how each answer above has quantifiable information that validates your strengths. This helps the interviewer understand how much you have to offer if you were to be hired.
+
+Finally, always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+What is Your Greatest Weakness?
+No human being is flawless. We all have weaknesses. Little wonder recruiters ask the common interview question - “What is your greatest weakness?”.
+
+So what exactly is the right way to answer this interview question? Are you supposed to deny that you have a flaw? Or go all confession time on recruiters and share your biggest and most genuine weaknesses?  
+
+The answer is neither. What you do is turn the situation to your advantage by framing your weaknesses positively. You don't want to cast any doubt on your ability to do the job.
+
+You don't want to respond, "I tend to work too hard," or "I am too much of a perfectionist." That can easily come across as scripted and insincere at best and lacking in self-awareness at worst. Alternatively, you don't want to respond with weaknesses that will prevent you from succeeding in the role. For instance, if you're applying to be a project manager, you don't want to admit that you’re “not very good with time management."
+
+In this article, you'll find a guide on how to answer the interview question about your biggest weaknesses, and what—and what not—to say when you respond, with example answers too.
+
+How to answer “What is your greatest weakness?” interview question
+The first step to answering “what is your greatest weakness” correctly is to understand why recruiters ask the question in the first place. 
+
+When recruiters ask you to identify your greatest weaknesses, they are looking for the following three things: 
+
+Honesty. They want to know if you're honest enough to give a real weakness.
+Self-awareness. The ability to analyze yourself and recognize the areas where you need to work on. 
+Willingness to improve. Everyone has weaknesses - even recruiters themselves. That’s why they don’t expect you to lie about it. What recruiters do expect, however, is that you’re willing (and trying) to improve. 
+When you know just what the recruiters are expecting from you, the interview question doesn’t seem as hard, does it?
+
+There are three ways to answer "what is your greatest weakness" in an interview:
+
+Mention skills that aren't essential for the job
+Discuss skills you have improved on, or
+Turn a negative into a positive.
+Discuss Non-Essential Skills
+One approach to answering this question is to analyze the key skills and strengths required for the job you are interviewing for and then come up with an honest shortcoming that is not essential for success in that job.
+
+For example, if you’re applying for a position as a truck driver, you could focus on a skill that isn’t required for the job, as in the example below.
+
+“Yes, I have a couple of weaknesses. My biggest weakness is my inability to work well on a team. That’s why I became a truck driver. I get to spend most of my time alone.”
+
+Mention Skills You Have Improved on
+Another option is to discuss skills that you have improved upon during your previous job or that you are actively working on improving. This shows the interviewer that you’re committed to self-improvement. Take a look at a sample answer below to illustrate this point.
+
+“My greatest weakness is time management. I have always been very detail-oriented, so it sometimes takes me longer to finish a project than I initially think it will. This is why I started using time-tracking software in my last job. It made me more conscious of the time a task takes me and helped me never miss a deadline again. ”
+
+Turn a Negative Into a Positive
+Another option for answering is to turn a negative into a positive. For example, a sense of urgency to complete projects can be turned into a positive; e.g., you are a candidate who will make sure a project is done on time. Or perhaps you find yourself with an attention to detail that leads you to triple-check every item on a spreadsheet and proofread every email you send twice.
+
+Regardless of what you say, it is critical to indicate that you are mindful of this trait and capable of preventing it from interfering with your productivity. See sample answer below.
+
+“I have a very strong attention to detail. Sometimes, this can turn into a tendency to perfectionism. In the past, I found this leading me to triple-check every item on a spreadsheet, closely proofread emails to ensure I’d communicated what I was trying to get across in a clear, concise way, or fiddle with the layout of a presentation to ensure that it was perfect. I’ve since learned to successfully budget my time and gauge which tasks require and actually benefit from this level of precision.”
+
+More sample answers for “What is your greatest weakness?” interview question
+Review more examples to help you answer the interview question “What is your greatest weakness?”:
+
+“Because I am independent and enjoy working quickly, it has been difficult for me to ask for help when I need it. I have learned that it is much more beneficial both for me and the business to reach out when I do not understand something or feel burned out with my workload.
+I also understand that many experts around me have specific knowledge and skills that can make my work better. While I am still working on it, I have been able to produce more high-quality work as a result of getting help from those around me.”
+
+“When I'm working on a project, I don't just want to meet deadlines. Rather, I prefer to complete the project well ahead of its due date. While this means I never miss a deadline, it also means that sometimes I can find myself rushed when I’m working. I’ve since learned to slow down, be more patient, and give each project the careful attention it deserves.”
+“In the past, I have found it difficult to work with aggressive personality types. While I understand diversity in personalities makes a business strong, I tend to quiet my own ideas and opinions around louder colleagues.
+
+To combat this, I have made it a point to spend more time with colleagues I feel uncomfortable working with. By learning more about them, their communication style and motivations, I am better able to collaborate with these personality types so that we both equally contribute our strengths and skills.”
+
+“I used to wait until the last minute to set appointments for the coming week, but I realized that scheduling in advance makes much more sense. I’m now much more proactive about scheduling meetings, and this allows me to plan and segment out my work for the week without having to guess at when I’ll need to leave time for meetings.”
+
+“In the past, I have sometimes struggled with confidence. It has been helpful for me to keep a running document of the impact I have made on my team and at my organization to better understand why I should be confident about the skills and unique talents I bring to the table.
+
+I have also made it a point to voice my ideas and opinions during meetings when I feel they are appropriate and will add value to the conversation. Because of this, our team ended up adopting my idea for a new financing process, which resulted in a 10% decrease in time taken to plan our annual budget.”
+
+Examples of weaknesses on the job
+Do any of these weaknesses ring a bell? Note that these aren’t good choices for your answer if the job requires specific skills in these areas.
+
+Inexperience with specific software or a non-essential skill
+Tendency to take on too much responsibility
+Hesitancy about delegating tasks
+Discomfort taking big risks
+Lack of Patience
+Lack of Organization
+Trouble with Delegation
+Timidity
+Lack of Tactfulness
+Fear of Public Speaking
+Weak Data Analysis Skills
+Indecisiveness
+Harsh Self-Criticism
+Micromanaging
+Talkative
+Trouble with Work-Life Balance
+Below are other ways the interviewer might ask the "what are your weaknesses" question:
+
+What is your weakness?
+What is your biggest weakness?
+What do you consider to be your weaknesses?
+What would your current boss say is your weakest area?
+What are some of your weaknesses?
+What are your weakest areas?
+What are your weakest skills?
+Tell me about a time you failed.
+What are your strengths and weaknesses?
+Describe a difficult work situation and what you did to overcome it.
+Finally, always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+What is Your Salary Expectation?
+It’s natural to want to be paid fairly for your work. And yet discussing your salary expectation with a hiring manager who has way more inside information than you, can feel very unnerving. “What is your salary expectation?” is a straightforward question and yet the answer is so complex. It's difficult to know what to say (and what not to say) so that you receive a job offer that's a win for both yourself and the company.
+
+You should go into every interview with your salary expectations in mind. By researching and preparing an answer ahead of time, you can demonstrate to the employer that you're not only flexible with your salary, but you also know what you're worth. We recommend checking industry salary reports online and tapping into your network to help you negotiate your worth in the labour market.
+
+In this article, we explore why employers ask about your salary expectations during interviews, how to answer this question, tips to keep in mind when providing your salary expectations, and what to avoid when answering this interview question.
+
+Why do employers ask what your salary expectations are?
+When an employer asks about your salary expectations, it’s usually for one or more of three reasons:
+
+They have a budget. The interviewer wants to make sure your compensation expectations align with what they’ve calculated for the job. If they find most candidates are asking for more than anticipated, it might mean requesting a larger budget for the position.
+
+They want to gauge how well you know your worth. A good candidate knows how much their skill set is worth in the market and can share it with confidence. To determine appropriate market value, factor in your level, years of experience and career achievements.
+
+They want to determine whether you’re at the appropriate professional level. An applicant who asks for a significantly higher amount than other candidates may be too senior for the role. Alternatively, answering with a salary expectation on the low end could indicate you’re at a lower experience level than the job requires.
+
+How to answer “What are your salary expectations?” in an interview
+Here are some tips on how to effectively present your salary expectations during an interview:
+
+Choose a salary range. Responding to questions about salary with a single number limits your ability to make something work with the company. The secret recipe for successful negotiations is to “come from a place of collaboration and service.” By giving a salary range, you show that you’re willing to be flexible and work with your prospective employer. Rather than offering a fixed amount of the salary you expect, provide the employer with a range in which you’d like your salary to fall. Try to keep your range tight rather than very wide. For example: “I am seeking a position that pays between NGN1,000,000 and NGN1,200,000 monthly.”
+Flip the Question. If you don’t feel comfortable with the option above or want to try to get some more context on the position of the company, try turning the tables and asking them the question. The truth is, every company has a certain budget in mind when hiring for a new position. The budget range varies depending on the size, success, and values of the company.
+
+Politely asking about the budget range the business has set for the role in question can help you better understand the situation, make last-minute adjustments to how you want to answer the salary expectations question, and signal to the hiring manager that you’re a strong interviewer.
+
+Once the interviewer answers your question, they’ll expect you to say if the salary works for you. So you still need to do your research, but now you’ll be able to tailor your response to the budget the company has. If the interviewer gives you a number or range in line with what you expected or higher, great! You can talk about how that sounds perfect for you. But if the response is lower than you’re happy with, you have to come up with a plan to respond.
+
+Avert the question. Some hiring managers may ask you your preferred salary early on in the hiring process before you fully understand all of the details of the job and whether it’s a position you’re truly interested in. While you’ll have to eventually talk about your salary expectations, you can deflect the question to avoid having to answer until you are ready. A good answer for deflecting this question is as follows: Before I provide an answer, I’d like to get more acquainted with the position and the company so I can better provide a more accurate salary expectation.
+Be open to other compensation options. There are several ways in which you can be compensated by an employer, including health benefits, additional paid time off, more vacation days, and equity in the company. While these types of compensation may not be readily seen on your actual paycheck, they do add up over time and equate to either additional income or a more attractive work environment and work-life balance.
+“What are your salary expectations?” sample answers
+My salary range is flexible. I would, of course, like to be compensated fairly for my decade of experience and award-winning sales record. However, I'm open to discussing specific numbers once we've discussed the details of the position.
+While I am certainly flexible, I am looking to receive between NGN7,000,000 and NGN8,000,000 annually. Due to my skill set and experience level, I feel that this is a comfortable and appropriate range for my work.
+Let me start by reiterating how grateful I am for the benefits this job offers such as generous paid time off and health benefits. That being said, I am expecting my salary for this position to fall between NGN10,000,000 and NGN12,000,000 annually. My rich background in client services specific to this industry can play a role in strengthening the organization.
+To be honest, I do not focus on the salary offer. I like the job description, your bank, and I would be proud to have this job. But as far as my knowledge goes, average salary for a teller in your institution starts at NGN100,000. I would accept it for the start, and hope to prove my skills and get a raise later on.
+I’ve been earning NGN500,000 in my present job, and I would prefer not earning less, considering it goes about almost the same position. However, I am open to negotiation, and would love to hear your thoughts. I am aware that you have your budget for the position and directions from your managers, so I am definitely open to negotiation.
+I’ve been working as a software engineer for ten years already. With my level of experience and references, and, of course, the situation on the employment market, I would consider NGN2,000,000 a good start, including benefits. Needless to say, I believe that I can bring much more value to the company with my work, and hence it would be a win-win deal for both parties. At least that’s how I see it.
+My salary requirements are flexible, but I do have significant experience in the field that I believe adds value to my candidacy. I look forward to discussing in more detail what my responsibilities at this company would be. From there, we can determine a fair salary for the position.
+I'm open to discussing what you believe to be a fair salary for the position. However, based on my previous salary, my knowledge of the industry, and my understanding of this geographic area, I'd expect a salary in the general range of NGN200,000 to NGN250,000. Again, I'm open to discussing these numbers with you.
+What to avoid
+Here are a few things to avoid when answering a question related to your salary expectations in an interview:
+
+An exact amount: Avoid providing the hiring manager with an exact amount if possible. A set amount can give off the impression that you aren’t open to negotiations.
+Being unprepared: You want to go into the interview with a good idea of your salary expectations. Not being prepared can lead to you asking for or accepting a salary that’s lower than what you deserve or can afford.
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Tell Me About Yourself
+It doesn't matter what industry you're in or what stage of your career you're at (experienced or fresher) — job interviews are nerve racking every single time. The secret to keeping your anxiety at bay is crafting smart, thoughtful answers for the interview questions in advance.
+
+Interview question “Tell me about yourself” or questions like it, are common at the beginning of interviews as they ease both you and the interviewer into the interview. It allows the interviewer to hear a short summary of your background and skills, giving them insight into what experience and qualifications you think are most relevant to the position you’re interviewing for.
+
+Some examples of how this interview question can also be asked include “walk me through your resume,” “tell me something about yourself that’s not on your resume” and “describe yourself.”
+
+In this article, we'll give you tips on how to answer the interview question “tell me about yourself”, what to avoid in your answer to the interview question, as well as detailed “tell me about yourself” sample answers.
+
+How to answer “tell me about yourself” interview question
+The interview question “Tell me about yourself” sounds easy on paper, sure. After all, we talk about ourselves all the time.
+But when you think about it, it’s really an open-ended question. Do you start with your background? Do you go through whatever’s on your resume? Or do you introduce yourself more as a person than a professional? Worried and unsure of how to answer? Relax, you’re not the only one! Most people struggle with this question. Here’s some good news, though: there’s a very easy way to answer the dreaded interview question.
+
+When an interviewer asks “Tell me about yourself”, they really mean tell me about yourself as it’s relevant to the position you’re applying for in this company. They’re giving you an opportunity to articulate succinctly why you have the right qualifications, skills and/or experience for the job role you're interviewing for.
+
+Take advantage of the opportunity! In order to do that, you’ll want to spend some time combing through the job description, researching the company, and figuring out how you can tell your story in a way that makes it crystal clear why you’re interested and what you bring to the table that aligns with the role and company.
+
+A good answer to this interview question should be:
+
+Tailored - Applying for an auditing job? The recruiter doesn’t care about your work experience as a software developer. Your answer should be tailored to the job you’re applying for. 
+
+Based on Experience & Achievements - Your answer should be super-specific. Don’t just say “so um, my name’s Sam and I’m a marketing executive.” Your answer should consist of background (what did you study?), top achievements (how do you stand out from the other candidates), and interests (why are you applying for this job?).
+
+...And...
+
+Structured - Your answer should follow a simple, easy-to-follow format. We’d recommend sticking to the tried-and-tested “Past-Present-Future” formula. Meaning, structure you answer as follows:
+
+The past - what is your background and relevant work experience? How did you get to where you are now?
+The present - what is your current role? What do you do and what are your top accomplishments?
+The future - what are you looking to do next? Why are you interested in the position?
+“Tell me about yourself” example answers
+Keeping the tips above in mind, here are good examples of how to answer “tell me about yourself” in an interview:
+
+“Sure, so, my name is Joe and I am 27 years old. For the past 5 years, I’ve been working as a business analyst at Company X and Y. I have some background in data analysis, with a degree from University XY. What really got me into the field, though, is the internship I did at Company Z. Throughout my career, I’ve noticed that I’ve always been good with numbers and handling data. For example, when I was working at Company X, I led a project for migrating all operations data to a new data warehousing system to cut down on costs. The new solution was a much better fit for our business, which eventually led to savings of up to $200,000 annually. Moving forward, I hope to expand my experience across different industries. Particularly fintech, which is why I’m interested in your company..”
+“I graduated with a Business degree in 2010, and was offered an account management position from a telecommunications company I had interned with. I loved working with customers and managing and growing my accounts, but the industry we were in just wasn’t very appealing to me. After that, I stayed a full year and learned a ton about how to build and manage accounts successfully and  I ended up becoming a top performer in my group before leaving. I left at the 1-year-mark to pursue a very similar position within an industry I’m much more excited about- healthcare. I’ve been at this healthcare startup space for 2 years with this company and I feel ready to take my career to the next level so that’s why I’m currently looking for a new opportunity.”
+“I’ve been working as an administrative assistant for three years. At my current job in the finance department of a midsize company, I handle scheduling, meeting and travel planning for four executives and 20 staff members. I also help prepare correspondence, presentations and reports.
+
+“I’m known for being a detail-oriented, well-organized team player. I never miss deadlines, I’m a good communicator and I can juggle multiple tasks at once. In my performance reviews, my supervisor always notes that he appreciates my professionalism and enthusiasm for the job.
+
+“With this experience under my belt, I’m looking for an opportunity to take the next step in my career. I’m hoping to do so in an organization like yours that works to improve the environment, which is something I’m passionate about.”
+
+More sample answers:
+
+Sample answer for fresh graduates:
+My name is Jane Doe, I’m 22 years old and I recently graduated from University X with a B.A. in international business. While there, I learned a lot of theory in subjects like corporate communication, international economics, corporate governance, and more. I was also part of the student government, and maintained a GPA of 3.6.
+
+I’ve worked hard in my education and now I’m ready to apply my knowledge into practice.
+
+While I don’t have any real-life work experience, I’ve had a lot of exposure to the business environment. A lot of my courses involved working with real companies to solve real problems.
+
+Now, I’m looking to leverage everything I’ve learned in uni and get some hands-on work experience.
+
+Sample answer for experienced professionals:
+Sure, I’d be glad to. I’m an tech-focused project manager for up to 8 years now.
+
+I graduated from University X, where I made the Dean’s List, with a major in business administration and a minor in computer science. After that, I first got into the industry working as an administrative assistant at Company X. There I provided clerical support with interdepartmental communication, helped in managing schedules, and maintained the digital filing system.
+
+After that, I was working as a project manager for Company Y that provided cloud computing solutions for about 6 years. There, I personally managed 5+ teams of software projects, and made sure everything went smoothly in terms of business goals, deadlines, budget, and more. 
+
+In my downtime, I enjoy reading about AI, tech, and robotics. Since you guys do all 3, I thought I’d apply.
+
+Tips for answering “tell me about yourself” in an interview
+You’re bound to hear “tell me about yourself” on just about every interview. Make it professional and brief. When answering, try to keep it under 1-2 minutes, at most.
+Align your current job responsibilities (if any) to the role.
+Connect your skills to the job description.
+Mention past experiences and proven successes.
+Stick to your main selling points that are relevant for the job. Avoid mentioning personal information related to your marital status, children, political or religious views. No, the HR manager doesn’t want to know your entire life story. They don’t care about which kindergarten you went to, how your first internship went, what you studied in high school or what your pastor said.
+Practice your answer until you feel confident enough and to help you stay on track.
+Keep in mind, though, that you shouldn’t memorize your answer—you don't want to sound like a robot or mess up your entire answer by forgetting a memorized line. Instead, come up with a general idea of what you’re going to talk about, memorize the structure, and just wing the rest on the interview. You want to sound natural, like a real person that people would like to talk to.
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Why Do You Want This Job?
+One of the most commonly-asked interview questions is "Why do you want this job?" or its variations, “Why are you interested in this position?”, “Why do you want to work here?”. Knowing how to answer this interview question successfully can greatly impact the impression you leave on your interviewer.
+
+In this article, we will discuss why employers ask this question, how you can answer it and show you concrete examples of effective answers to this common interview question.
+
+How to answer “why do you want this job” interview question
+Answering this interview question can be a surprisingly tricky one, especially if you try to answer it without thinking about who your audience is and what they really want to know. If you want to learn how best to answer this question, you will need to consider both the needs of the company and your own career goals.
+
+When asked the interview question "Why do you want this job?", saying you're passionate about programming, writing, or some other skill with no mention at all of the recruiting company, is an immediate red flag.
+
+Keep in mind that interviewers want specifics. For instance, when asked “Why do you want this job?”, they aren’t asking, “Why do you want to be an accountant?” they’re actually asking, “Why do you want this accounting position at this organization?”.
+
+They want to know what motivated you to apply and why this position makes sense for you (and, of course, why you make sense for the company).
+
+The first step to preparing a successful answer to this question is answering it for yourself. Set aside any preconceived ideas you have about what your answer should look like, and compose an honest statement that accurately sums up why you are pursuing this particular job.
+
+You could say you’re looking for career advancement or a higher level role and that’s why you’re job hunting. You could say you want more leadership, more responsibility, more chance to work in a certain area or build a certain skill. You could say you want more exposure to any number of things (a technology, a certain industry, a different type of work environment like a small start-up, etc.)
+
+So now they know what you want, and why their job is exciting to you. Those are great things to demonstrate, and you’ve already gone a long way toward making them happy with your interview answer. But companies hire based on their needs, not yours. So to really give a strong answer, conclude by putting the focus on their needs.
+
+After you point out the things that excite you about their job, talk about how your strengths would play into what they need. If something is mentioned a lot in the job description, it’s not just a career opportunity they can provide you… it’s something they need help with!
+
+They have to find somebody willing and excited to do this work. You can show them that you’re that person who can come in and solve their problems and help them succeed.
+
+Take time to research about the company's visions and missions, read over the job description and requirements, and then use specific terms and keywords in your answer to show how you're a perfect fit for the job and how your values align with those of the company.
+
+If the job posting lists "excellent teamwork skills" as a requirement, be sure to tell the interviewer how much you enjoy working with a team and provide an example of a time when you were successful in a team atmosphere.
+
+If the interviewer mentions that the job would require regular travel, talk about how you travelled 70% of the time in your previous job and believe you will thrive well in the position.
+
+One of your goals in answering this question is to convince the interviewer that you want this job because your specific skill set and experience make you an ideal candidate for the role in the company.
+
+“Why do you want this job” example answers
+Not sure how to answer this important question? Below are some of the best job interview answers for when the interviewer asks why you want the job. Customize these answers to fit your particular circumstances and the job you are applying for.
+
+I understand that this is a company on the rise. As I’ve read on your website and in various press releases, you’re planning to launch several new products in the coming months. I want to be a part of this business as it grows, and I know my experience in product development would help your company as you roll out these products.
+I am impressed by your company's commitment to excellence and customer service. I really appreciate a company that puts the consumer first and I would love to work with a team that prioritizes producing quality products instead of just making a profit. I read that last year, yourcompany's Customer Relations department won an award for their exceptional performance. That dedication to service resonated with me and I am excited by the prospect of working for a company that shares my values.
+I read an article a few months back on the outreach your company does within the community. Giving back and volunteering is a significant part of my own personal values, and I remember feeling excited that a company values the community as much as I do. That excitement grew when I saw there was a job opening in my field here. I would really love coming to work each day, knowing that I am helping to make a difference in the community through my work here. 
+I think my biggest priority right now in my job search is to continue building my business development skills. I took on more and more of that in my last role and enjoyed it a lot. I reviewed the job description and saw this is mentioned a lot, so I thought the position seems like not only a good fit for what I want, but a role where my skillset would be well-used and needed to meet the goals and mission of your organisation.
+This organization is internationally known for the technology products you create, and my experience in technology and developing new products has me intrigued by this position. I saw that last year you won multiple awards for the new processor you designed, and I would love to be on a team that is collaborative, hardworking, and resourceful.
+I have worked as a dental hygienist in a children’s dental office for the past six years. Not only am I experienced working with kids, but I also greatly enjoy it. Being able to work for your office, which caters to children and young adults, would allow me to continue to put my skills to use with a population I love. This is the kind of work environment I would look forward to coming to every day.
+I firmly believe in taking a collaborative approach to each project so when I saw a position with your company to join the production team I knew I had to apply. I've seen your work in theatrical production, and your behind-the-scenes video really inspired me because I saw the teamwork in action. I love working with a team to achieve a common goal, and I know my background in production has prepared me for this role. I look forward to becoming a valued contributor to this phenomenal team.
+I want to teach at Lilypad Elementary because I believe it will help me achieve my professional goal of becoming a more effective teacher. I am very impressed by the school's high standards for performance and I believe working here would really push me to improve and challenge me to continue growing. I know how many award-winning teachers have taught here and that really motivates me to push myself to meet the administration's expectations for excellence. This school has an outstanding reputation and it would truly be a privilege to work as a part of this teaching team.
+I have admired this company’s successful strategies and mission for years. Your emphasis on creating a relationship between your company and the surrounding community have brought you success everywhere you have opened an office. There are values I greatly admire.
+I am looking for a company where I not only enjoy what I am doing but I can also grow into new positions. I am very good at what I do, but in the computer field there are always new tools and technologies coming out. I want a company that allows me to learn more and expand my capabilities into new areas. The fact that you sponsor a week of training every year and that most of the people I’ve met have been here more than five years shows me that we share the same values.
+NOTE: Saying “we share the same values” is a great closing line!
+
+Common mistakes to avoid when answering “Why do you want this job?”
+Here are four common mistakes you should avoid:
+
+Not talking about the company: Think about it this way: You can bring your skills anywhere. The trick is explaining why you want to use them for this particular company.
+Only saying what’s in it for you: Maybe this job would give you the chance to learn a lot about marketing, or it’s an opportunity to grow your quantitative analysis skills—that’s great, but your interviewer wants to know what’s in it for the company, too. So align your interests with and express enthusiasm for using your skills to contribute to the company’s greater goals.
+Bringing up points that aren’t relevant: In the heat of an interview, it can be really tempting to mention that the office is actually quite close to your daughter’s school or that the company’s flexible hours policy would make it easier to carpool with your roommate, but don’t give in. These are nice perks, but (hopefully) they’re not the only reasons you find this position exciting.
+Answering the wrong question: Have you ever gone on a date with someone who wouldn’t stop talking about their ex? Well, turns out this happens during job interviews, too. Don’t be that person who can’t shut up about why you need to leave your old job, stat. Even if the reason you’re job searching is directly related to your previous position, focus on the future.
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Why Do You Want To Leave Your Current Job?
+Most potential employers will ask you the question “Why do you want to leave your current job?” 
+
+This question can also be phrased in the following ways: “Why do you want to change jobs?”, “Why do you want to change your current job?”, “Why are you looking for a new job?”, “Why did you leave your last job?”.
+
+The most obvious reasons for asking this interview question? To find out if you’re a good employee or a bad employee and to assess whether you are a flight-risk or someone who will stick around and align yourself with the company’s mission. This is one of those tricky behavioral interview questions.
+
+It's one of the most common interview questions, yet it often leaves candidates stumped. While it may seem like an opportunity to be dismissive against your current employer, this is highly unlikely to paint you in a good light. Planning a persuasive, positive response can go a long way to highlighting your suitability for the new role.
+
+How you answer this job interview question can make or break your chance at bagging the job.
+
+How to answer “why do you want to leave your current job?” with examples
+Below are a few ways you can answer “Why do you want to leave your last job?” with examples.
+
+1. To learn more
+You can say that you have saturated the learning experience in the current company and want to learn more.
+
+This will point out that you are willing to work hard, learn, and help the Company to grow more.
+
+Sample answer
+“I have been working with a great team in the company for the past 3 years. They have helped me a lot in learning the basics since I had joined as a fresher.
+
+However, I feel like I have reached the optimum point of learning here, and would like to take a step ahead to learn the intricacies and more complex aspects of my field.
+
+I have read and heard of the amazing talents that your company has recruited over time and it would be a privilege for me to learn from them.”
+
+2. Willing to relocate
+Many professionals want to relocate to their home city/town after staying away from their families for a long time.
+
+So, for such people switching jobs becomes a requirement.
+
+Sample answer
+“ I have been working with my current organization for almost 6 years now. I am looking to return to my hometown since my parents need attention and I need to take care of them.
+
+Although my current organization is a great place to work in, it does not have a branch in my hometown where they could transfer me.
+
+The job profile offered has great scope of learning for me and I am sure that I can also add value to the team.”
+
+3. To take on more responsibility
+To answer such a job interview question, you can point out that you are willing to take up more responsibilities.
+
+This will show that you are ambitious and focused.
+
+Sample answer
+“I have had a great learning experience in this organization.
+
+However, the reason for switching jobs is that I want to take up new responsibilities that the organization is being unable to provide me with.
+
+I have read and heard a lot about your Company and it would be a great opportunity for me to work here and learn with the new responsibilities that will be provided.”
+
+4. You are looking for new challenges
+Every employee must know when he/she starts feeling less challenged at work. That is the best time to switch jobs to meet fresh challenges.
+
+Sample answer
+“Honestly, I had the opportunity to work with the most amazing team and colleagues possible.
+
+Not only did they treat me like an equal despite being a fresher, but they also helped me learn and guided me whenever I required a little help.
+
+But after working there for 3 years now, I am looking forward to a fresh set of challenges and the job profile offered by you seems perfect.
+
+It would help me to push my limits and get out of my comfort zone and I am sure I will be able to add value to the team as well.”
+
+5. Desire to commute less to work
+The extensive daily commute to work is a serious problem in a place like Lagos.
+
+It not only takes away your time but also drains you before even reaching office, affecting your productivity and health naturally.
+
+Sample answer
+“The company where I am working currently is a great organization. I have no complaints about it.
+
+The only reason why I am looking for a change is that the distance from work to my current organization is quite a lot and my health is getting affected.
+
+Also, the job profile that you offered is a great opportunity for me to learn and challenge myself further, and being close to my place I will also be able to focus more on the work.”
+
+6. You want to take a break from frequent travel away from the city
+There are many job profiles where a lot of travelling is involved, both within and outside the country. It can be quite overbearing for some.
+
+So, it is only natural to look for a job with lesser travel and you can also say the same when asked “why do you want to leave your current job?”
+
+Sample answers
+“Although travelling and meeting clients is a great experience, but I need to slow it down by a notch.
+
+I have been travelling on and off every week with hardly a day to spend with my parents.
+
+So, I would like to slow it down a little to bring balance to my work and personal life.”
+
+Or,
+
+“ We have just started our family, but with frequent travel every week, it is becoming a little difficult to take care of them.
+
+So, I am looking for a switch where a little less travelling will be involved and I can also be around my family.
+
+The profile offered by your company is perfect and I know I will be able to add value to the team if given the opportunity.”
+
+7. Your contract will expire soon
+It is common for some companies to hire employees on a contractual basis. So, you can cite it for a reason to switch jobs for a more permanent one when answering.
+
+Sample answer
+“Working with my current organization has been a great experience.
+
+However, I am looking for something more permanent and secured since my contract is soon to be expiring.
+
+I believe I have the required skill set that is required for the job role you have offered.
+
+I am sure that I can add value to the team and also learn in the process.”
+
+ 
+
+Whatever the situation had been, it is unwise to bad-mouth your previous or current employer. Doing so will only leave a negative impact about you on your potential recruiter. It is always best to prioritize the positive aspects of switching jobs when asked “Why do you want to leave your current job?” in a job interview.
+
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
 What Is Your Greatest Accomplishment?
 ‘What is your greatest accomplishment?’ is one of the most challenging common interview questions you can expect during a job interview.
 
