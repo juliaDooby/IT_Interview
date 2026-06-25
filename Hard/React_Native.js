@@ -1,3 +1,1316 @@
+Top 50 React Native interview questions
+ 17 Jan 2025 - Shyam Mohan
+
+Top 50 React Native interview questions
+
+Here’s the complete list of 50 React Native interview questions and answers, from basic to advanced, with hands-on coding examples where needed.
+
+🟢 Basic React Native Questions and Answers
+1. What is React Native?
+React Native is a framework developed by Facebook for building cross-platform mobile applications using JavaScript and React. Unlike traditional hybrid frameworks, React Native renders native UI components, resulting in better performance and user experience.
+
+2. How does React Native differ from React.js?
+Feature	React Native	React.js
+Platform	Mobile (iOS & Android)	Web Applications
+UI Components	Native Components (View, Text)	HTML Elements (div, span)
+Styling	Uses StyleSheet.create()	Uses CSS
+Navigation	Uses react-navigation	Uses react-router
+Rendering	Uses Native UI Components	Uses Virtual DOM
+3. How do you set up a React Native project?
+Using React Native CLI:
+1
+2
+3
+4
+5
+npx react-native init MyApp
+cd MyApp
+npx react-native start
+npx react-native run-android  # OR
+npx react-native run-ios
+Using Expo:
+1
+2
+3
+npx create-expo-app MyApp
+cd MyApp
+npm start
+4. How does React Native render components?
+React Native renders using native components instead of HTML elements.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+import { View, Text } from 'react-native';
+
+export default function App() {
+  return (
+    <View>
+      <Text>Hello, React Native!</Text>
+    </View>
+  );
+}
+5. What are the core components in React Native?
+View (like <div>)
+Text (like <p>)
+Image (for displaying images)
+ScrollView (for scrolling views)
+FlatList (for optimized lists)
+6. How do you handle styling in React Native?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Styled Text</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  text: { color: 'blue', fontSize: 20 }
+});
+7. How do you handle user input with TextInput?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+import { useState } from 'react';
+import { View, TextInput, Text } from 'react-native';
+
+export default function App() {
+  const [text, setText] = useState('');
+  return (
+    <View>
+      <TextInput placeholder="Type here" onChangeText={setText} />
+      <Text>You typed: {text}</Text>
+    </View>
+  );
+}
+8. What is useState and how do you use it in React Native?
+useState is a React Hook that allows functional components to have state.
+
+1
+const [count, setCount] = useState(0);
+9. How do you implement a button in React Native?
+1
+2
+3
+import { Button, Alert } from 'react-native';
+
+<Button title="Click Me" onPress={() => Alert.alert('Hello!')} />
+10. What is FlatList and how do you use it?
+FlatList is an optimized component for rendering large lists efficiently.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+import { FlatList, Text } from 'react-native';
+
+const data = [{ id: '1', name: 'Apple' }, { id: '2', name: 'Banana' }];
+
+export default function App() {
+  return (
+    <FlatList
+      data={data}
+      keyExtractor={item => item.id}
+      renderItem={({ item }) => <Text>{item.name}</Text>}
+    />
+  );
+}
+Here are the answers to the React Native interview questions (11-20):
+
+11. How do you handle navigation in React Native?
+Navigation in React Native is typically handled using the react-navigation library.
+
+Installation:
+1
+2
+3
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-vector-icons
+npm install @react-navigation/stack
+Example using Stack Navigation:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './screens/HomeScreen';
+import DetailsScreen from './screens/DetailsScreen';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+Other types of navigation:
+
+Bottom Tabs: @react-navigation/bottom-tabs
+Drawer Navigation: @react-navigation/drawer
+12. What is Redux and how is it used in React Native?
+Redux is a state management library that helps manage global state in React Native applications.
+
+Installation:
+1
+npm install redux react-redux @reduxjs/toolkit
+Steps to use Redux in React Native:
+Create a Redux Store (store.js) ```javascript import { configureStore, createSlice } from ‘@reduxjs/toolkit’;
+const counterSlice = createSlice({ name: ‘counter’, initialState: { value: 0 }, reducers: { increment: state => { state.value += 1; }, decrement: state => { state.value -= 1; } } });
+
+export const { increment, decrement } = counterSlice.actions;
+
+export const store = configureStore({ reducer: { counter: counterSlice.reducer } });
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+2. **Provide the Store to the App** (`App.js`)
+```javascript
+import { Provider } from 'react-redux';
+import { store } from './store';
+import CounterScreen from './CounterScreen';
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <CounterScreen />
+    </Provider>
+  );
+}
+Use Redux State in Components (CounterScreen.js) ```javascript import { useSelector, useDispatch } from ‘react-redux’; import { increment, decrement } from ‘./store’; import { View, Button, Text } from ‘react-native’;
+export default function CounterScreen() { const count = useSelector(state => state.counter.value); const dispatch = useDispatch();
+
+return ( Count: {count} <Button title="+" onPress={() => dispatch(increment())} /> <Button title="-" onPress={() => dispatch(decrement())} /> ); }
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+---
+
+## **13. How do you fetch API data in React Native?**  
+React Native uses the `fetch` API or `axios` for network requests.
+
+### **Using Fetch**
+```javascript
+import { useEffect, useState } from 'react';
+import { View, Text, ActivityIndicator } from 'react-native';
+
+export default function App() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(json => { setData(json); setLoading(false); });
+  }, []);
+
+  return (
+    <View>
+      {loading ? <ActivityIndicator size="large" /> : <Text>{data.title}</Text>}
+    </View>
+  );
+}
+Using Axios
+1
+npm install axios
+1
+2
+3
+4
+import axios from 'axios';
+
+axios.get('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => console.log(response.data));
+14. How do you handle push notifications in React Native?
+You can use Firebase Cloud Messaging (FCM) with react-native-firebase.
+
+Installation:
+1
+2
+npm install @react-native-firebase/app
+npm install @react-native-firebase/messaging
+Request Permissions & Receive Notifications
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+import messaging from '@react-native-firebase/messaging';
+
+async function requestUserPermission() {
+  const authStatus = await messaging().requestPermission();
+  return authStatus === messaging.AuthorizationStatus.AUTHORIZED;
+}
+
+messaging().onMessage(async remoteMessage => {
+  console.log('New Notification:', remoteMessage);
+});
+15. What is Hermes in React Native?
+Hermes is a lightweight JavaScript engine optimized for React Native applications.
+
+Benefits:
+Faster app startup time
+Lower memory usage
+Reduced bundle size
+How to Enable Hermes in React Native?
+Open android/app/build.gradle
+Set enableHermes: true
+1
+2
+3
+project.ext.react = [
+ enableHermes: true
+]
+Rebuild the app:
+1
+2
+cd android && ./gradlew clean && cd ..
+npx react-native run-android
+16. What are Native Modules in React Native?
+Native Modules allow integrating native code (Java/Kotlin, Swift/Objective-C) with React Native.
+
+Example: Writing a Native Module for Android
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+package com.example;
+
+import android.widget.Toast;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+
+public class ToastModule extends ReactContextBaseJavaModule {
+    ToastModule(ReactApplicationContext context) { super(context); }
+    
+    @Override public String getName() { return "ToastExample"; }
+
+    @ReactMethod
+    public void showToast(String message) {
+        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+}
+Use in React Native:
+
+1
+2
+import { NativeModules } from 'react-native';
+NativeModules.ToastExample.showToast('Hello from Native!');
+17. How do you debug React Native applications?
+React Native Debugger (Best for Redux & Network logs)
+Flipper (Integrated debugging tool)
+Console Logs (console.log())
+Chrome DevTools (debugger; inside JS code)
+18. How do you optimize React Native performance?
+Use FlatList for large lists
+Optimize images with react-native-fast-image
+Use Memoization (useMemo, useCallback)
+Avoid unnecessary re-renders (React.memo)
+Use Hermes Engine for better JavaScript execution
+19. How does Code Splitting work in React Native?
+Code splitting helps load components dynamically instead of bundling everything at once.
+
+Using Dynamic Imports
+1
+2
+3
+4
+5
+6
+7
+8
+9
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<Text>Loading...</Text>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+20. How do you test React Native applications?
+Unit Testing (jest, react-test-renderer)
+Integration Testing (react-native-testing-library)
+End-to-End (E2E) Testing (detox)
+Example: Unit Testing with Jest
+1
+npm install --save-dev jest react-test-renderer
+1
+2
+3
+4
+5
+6
+7
+8
+import React from 'react';
+import renderer from 'react-test-renderer';
+import App from '../App';
+
+test('renders correctly', () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+21. What is the difference between useEffect and componentDidMount?
+Both are used for side effects in React Native, but they have different usage.
+
+Feature	componentDidMount	useEffect
+Type	Lifecycle method (Class components)	Hook (Functional components)
+When it runs	After the first render	Runs after every render (can be controlled)
+Cleanup	Uses componentWillUnmount	Uses cleanup function in useEffect
+Example: Using componentDidMount in a Class Component
+1
+2
+3
+4
+5
+6
+7
+8
+9
+class Example extends React.Component {
+  componentDidMount() {
+    console.log("Component Mounted");
+  }
+  
+  render() {
+    return <Text>Hello</Text>;
+  }
+}
+Example: Using useEffect in a Functional Component
+1
+2
+3
+4
+5
+6
+7
+8
+9
+import { useEffect } from 'react';
+
+const Example = () => {
+  useEffect(() => {
+    console.log("Component Mounted");
+  }, []); // Empty dependency array = Runs once like componentDidMount
+
+  return <Text>Hello</Text>;
+};
+22. How do you handle deep linking in React Native?
+Deep linking allows users to open specific screens in your app via a URL.
+
+Step 1: Install React Navigation and Linking
+1
+npm install @react-navigation/native react-native-screens react-native-gesture-handler react-native-reanimated react-native-safe-area-context react-native-vector-icons
+Step 2: Configure Deep Linking
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import { NavigationContainer } from '@react-navigation/native';
+
+const linking = {
+  prefixes: ['myapp://', 'https://myapp.com'],
+  config: {
+    screens: {
+      Home: 'home',
+      Profile: 'user/:id'
+    }
+  }
+};
+
+export default function App() {
+  return (
+    <NavigationContainer linking={linking}>
+      {/* Rest of navigation */}
+    </NavigationContainer>
+  );
+}
+23. How do you implement dark mode in a React Native app?
+Use react-native-appearance or React Native’s useColorScheme() hook.
+
+Example Using useColorScheme
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+import { useColorScheme, View, Text, StyleSheet } from 'react-native';
+
+export default function App() {
+  const scheme = useColorScheme();
+  
+  return (
+    <View style={scheme === 'dark' ? styles.darkContainer : styles.lightContainer}>
+      <Text style={scheme === 'dark' ? styles.darkText : styles.lightText}>Hello</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  darkContainer: { backgroundColor: '#000', flex: 1 },
+  lightContainer: { backgroundColor: '#fff', flex: 1 },
+  darkText: { color: '#fff' },
+  lightText: { color: '#000' },
+});
+24. What is Fast Refresh in React Native, and how does it work?
+Fast Refresh is a hot reloading mechanism that enables instant updates without reloading the app.
+
+How it works:
+Keeps the component state intact
+Automatically re-runs code upon changes
+Enabled by default in React Native 0.61+
+25. How does React Native Bridge work?
+The React Native bridge allows communication between JavaScript and native code (Java/Kotlin for Android, Swift/Objective-C for iOS).
+
+JS thread executes JavaScript code
+Native thread runs platform-specific code
+The bridge transfers data between them asynchronously
+Example: Calling Native Module
+1
+2
+import { NativeModules } from 'react-native';
+NativeModules.ToastExample.showToast('Hello from Native!');
+26. What is Gesture Handler in React Native, and how do you use it?
+react-native-gesture-handler is an improved gesture system for handling touch events.
+
+Installation
+1
+npm install react-native-gesture-handler
+Example: Swipe Gesture
+1
+2
+3
+4
+5
+6
+7
+8
+9
+import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
+
+const App = () => (
+  <GestureHandlerRootView>
+    <PanGestureHandler onGestureEvent={() => console.log("Swiped!")}>
+      <View style={{ width: 100, height: 100, backgroundColor: 'blue' }} />
+    </PanGestureHandler>
+  </GestureHandlerRootView>
+);
+27. How do you persist data locally in React Native?
+You can use:
+
+AsyncStorage (For simple key-value storage)
+react-native-mmkv (Faster alternative)
+SQLite (For structured storage)
+Example: Using AsyncStorage
+1
+npm install @react-native-async-storage/async-storage
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const storeData = async () => {
+  await AsyncStorage.setItem('username', 'JohnDoe');
+};
+
+const getData = async () => {
+  const value = await AsyncStorage.getItem('username');
+  console.log(value);
+};
+28. What are the best libraries for animations in React Native?
+react-native-reanimated (Highly performant)
+react-native-animatable (Simple pre-built animations)
+Lottie (For complex animations)
+29. How do you create a custom hook in React Native?
+Custom hooks allow you to reuse logic across components.
+
+Example: Custom Hook for Fetching Data
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+import { useState, useEffect } from 'react';
+
+const useFetch = (url) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => { setData(json); setLoading(false); });
+  }, [url]);
+
+  return { data, loading };
+};
+
+export default useFetch;
+Usage:
+1
+const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/posts/1');
+30. How do you handle background tasks in React Native?
+Use react-native-background-fetch or react-native-worker-threads.
+
+Example: Running a Background Task
+1
+npm install react-native-background-fetch
+1
+2
+3
+4
+5
+6
+7
+8
+import BackgroundFetch from 'react-native-background-fetch';
+
+const MyTask = async () => {
+  console.log("Background Task Running...");
+  BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_NEW_DATA);
+};
+
+BackgroundFetch.configure({ minimumFetchInterval: 15 }, MyTask);
+31. What are different types of state management solutions in React Native?
+State management helps manage data across components in a React Native app. Some popular solutions are:
+
+React Context API – Built-in, suitable for small apps.
+Redux – Centralized store, useful for complex apps.
+MobX – Reactive, less boilerplate than Redux.
+Recoil – Lightweight, atomic state management.
+Zustand – Minimalist, fast, easy to use.
+Jotai – Simplified Recoil alternative.
+React Query – Manages async state and caching.
+Example: Using React Context API
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+import React, { createContext, useState, useContext } from 'react';
+
+const MyContext = createContext();
+
+export const MyProvider = ({ children }) => {
+  const [state, setState] = useState("Hello World");
+
+  return <MyContext.Provider value={{ state, setState }}>{children}</MyContext.Provider>;
+
+};
+
+export const useMyContext = () => useContext(MyContext);
+32. How do you use Firebase Authentication in React Native?
+Firebase Authentication allows users to log in using email/password, Google, Facebook, etc.
+
+Step 1: Install Firebase
+1
+npm install @react-native-firebase/auth
+Step 2: Initialize Firebase Auth
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import auth from '@react-native-firebase/auth';
+
+// Sign up user
+const signUp = async (email, password) => {
+  try {
+    await auth().createUserWithEmailAndPassword(email, password);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// Sign in user
+const signIn = async (email, password) => {
+  try {
+    await auth().signInWithEmailAndPassword(email, password);
+  } catch (error) {
+    console.error(error);
+  }
+};
+33. How do you implement lazy loading in React Native?
+Lazy loading loads components only when needed, reducing initial load time.
+
+Example: Using React.lazy()
+1
+2
+3
+4
+5
+6
+7
+8
+import React, { Suspense, lazy } from 'react';
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+const App = () => (
+  <Suspense fallback={<Text>Loading...</Text>}>
+    <LazyComponent />
+  </Suspense>
+);
+For images, use react-native-fast-image:
+
+1
+npm install react-native-fast-image
+1
+2
+3
+4
+import FastImage from 'react-native-fast-image';
+
+<FastImage source={{ uri: 'https://example.com/image.jpg' }} style={{ width: 100, height: 100 }} />;
+
+34. What are the main differences between React Native CLI and Expo?
+Feature	React Native CLI	Expo
+Custom Native Modules	✅ Yes	❌ No
+Performance	⚡ Faster	🚀 Good
+OTA Updates	❌ No	✅ Yes
+Setup Complexity	⚙️ Manual	🔥 Easy
+App Store Deployment	🛠️ Manual	⚡ Simplified
+Expo is better for beginners; React Native CLI is best for custom native code.
+
+35. How do you handle large lists efficiently in React Native?
+Use FlatList or SectionList with optimization techniques:
+
+Use keyExtractor to improve rendering.
+Enable windowSize & initialNumToRender for rendering efficiency.
+Use getItemLayout for faster scrolling.
+Avoid inline functions in renderItem.
+Use PureComponent or React.memo for performance.
+Example: Optimized FlatList
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+import { FlatList, Text } from 'react-native';
+
+const renderItem = ({ item }) => <Text>{item.title}</Text>;
+
+<FlatList
+  data={data}
+  renderItem={renderItem}
+  keyExtractor={(item) => item.id.toString()}
+  initialNumToRender={10}
+  windowSize={5}
+/>;
+36. What are VirtualizedLists in React Native?
+VirtualizedLists only render items on the screen, improving performance.
+
+Example: Using VirtualizedList
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+import { VirtualizedList, Text } from 'react-native';
+
+const getItem = (data, index) => data[index];
+
+<VirtualizedList
+  data={Array.from({ length: 10000 })}
+  renderItem={({ item }) => <Text>{item}</Text>}
+  getItemCount={(data) => data.length}
+  getItem={getItem}
+/>;
+37. How do you optimize React Native images for performance?
+Use smaller, optimized images (WebP, PNG)
+Use react-native-fast-image for caching
+Lazy-load images using FastImage
+Optimize network requests using CDN
+Example using react-native-fast-image
+
+1
+2
+3
+4
+5
+6
+7
+import FastImage from 'react-native-fast-image';
+
+<FastImage
+  source={{ uri: 'https://example.com/image.jpg', priority: FastImage.priority.high }}
+  style={{ width: 200, height: 200 }}
+/>;
+
+38. What is the difference between useMemo and useCallback?
+Feature	useMemo	useCallback
+Purpose	Memoizes values	Memoizes functions
+Returns	Cached result	Cached function
+Use Case	Expensive calculations	Prevents unnecessary re-renders
+Example: useMemo
+1
+2
+3
+import { useMemo } from 'react';
+
+const sum = useMemo(() => expensiveFunction(a, b), [a, b]);
+Example: useCallback
+1
+2
+3
+import { useCallback } from 'react';
+
+const handleClick = useCallback(() => console.log("Clicked"), []);
+39. How do you implement biometric authentication in React Native?
+Use react-native-biometrics for Face ID and Fingerprint.
+
+Installation
+1
+npm install react-native-biometrics
+Example:
+1
+2
+3
+4
+5
+6
+import ReactNativeBiometrics from 'react-native-biometrics';
+
+const rnBiometrics = new ReactNativeBiometrics();
+
+rnBiometrics.simplePrompt({ promptMessage: 'Confirm fingerprint' })
+  .then(result => console.log(result.success ? "Success" : "Failed"));
+40. How does dynamic theming work in React Native?
+Dynamic theming allows users to switch between themes (light/dark).
+
+Step 1: Create Theme Context
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+import React, { createContext, useState, useContext } from 'react';
+
+const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);
+Step 2: Use Theme in Components
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+import { useTheme } from './ThemeContext';
+
+const ThemedComponent = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <View style={{ backgroundColor: theme === 'dark' ? '#000' : '#fff' }}>
+      <Text onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>Toggle Theme</Text>
+    </View>
+  );
+};
+41. How do you use Reanimated for smooth animations?
+react-native-reanimated provides better performance than the default Animated API.
+
+Installation
+1
+npm install react-native-reanimated
+Enable Reanimated in babel.config.js:
+
+1
+2
+3
+4
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: ['react-native-reanimated/plugin'],
+};
+Example: Simple Fade Animation
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+import { View } from 'react-native';
+import Animated, { useSharedValue, withTiming, useAnimatedStyle } from 'react-native-reanimated';
+
+const FadeInView = () => {
+  const opacity = useSharedValue(0);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: withTiming(opacity.value, { duration: 1000 }),
+  }));
+
+  return <Animated.View style={[{ width: 100, height: 100, backgroundColor: 'blue' }, animatedStyle]} />;
+};
+42. What are the different ways to handle global state in React Native?
+Context API – Simple, built-in.
+Redux – Centralized state, suitable for complex apps.
+MobX – Less boilerplate than Redux.
+Recoil – Lightweight atomic state management.
+Zustand – Minimalist and fast.
+Jotai – Simplified Recoil alternative.
+React Query – Async state management, great for APIs.
+Example: Using Redux
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+import { createStore } from 'redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
+
+const reducer = (state = { count: 0 }, action) => {
+  if (action.type === 'INCREMENT') return { count: state.count + 1 };
+  return state;
+};
+
+const store = createStore(reducer);
+
+const Counter = () => {
+  const count = useSelector(state => state.count);
+  const dispatch = useDispatch();
+  return <Button title={`Count: ${count}`} onPress={() => dispatch({ type: 'INCREMENT' })} />;
+};
+
+const App = () => (
+  <Provider store={store}>
+    <Counter />
+  </Provider>
+);
+43. How do you deploy a React Native app to the App Store and Google Play?
+For iOS
+Create an Apple Developer Account.
+Use Xcode to configure signing and provisioning.
+Run npx react-native run-ios --release.
+Archive and upload the app via Xcode.
+Submit for App Store review.
+For Android
+Generate a signed APK:
+1
+cd android && ./gradlew assembleRelease
+Upload to Google Play Console.
+Set up store listing and review.
+44. How do you optimize app size in React Native?
+Enable Hermes for Android:
+Add this to android/app/build.gradle:
+1
+enableHermes: true
+Optimize image sizes (use WebP).
+Reduce dependencies (avoid unused packages).
+Enable Proguard (Android) for code shrinking.
+Use react-native-fast-image for image caching.
+Bundle assets efficiently using Metro bundler.
+45. How do you implement infinite scrolling in React Native?
+Use FlatList with onEndReached.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+import { FlatList, Text } from 'react-native';
+import { useState } from 'react';
+
+const App = () => {
+  const [data, setData] = useState([...Array(20).keys()]);
+
+  const loadMore = () => setData([...data, ...Array(10).keys().map(i => i + data.length)]);
+
+  return (
+    <FlatList
+      data={data}
+      renderItem={({ item }) => <Text>{item}</Text>}
+      keyExtractor={(item) => item.toString()}
+      onEndReached={loadMore}
+      onEndReachedThreshold={0.5}
+    />
+  );
+};
+46. How does React Native handle accessibility (a11y)?
+React Native provides built-in accessibility features:
+
+Accessible Components:
+1
+<Text accessibilityLabel="Submit Button">Submit</Text>
+VoiceOver & TalkBack Support
+Keyboard Navigation (accessible prop)
+Dynamic Font Scaling (allowFontScaling)
+47. How do you implement real-time chat using WebSockets in React Native?
+Use react-native-websocket.
+
+1
+npm install react-native-websocket
+Example WebSocket Client
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+import { useEffect, useState } from 'react';
+import { Text, Button } from 'react-native';
+
+const Chat = () => {
+  const [messages, setMessages] = useState([]);
+  const ws = new WebSocket('wss://yourserver.com');
+
+  useEffect(() => {
+    ws.onmessage = event => setMessages([...messages, event.data]);
+  }, [messages]);
+
+  return (
+    <Button title="Send" onPress={() => ws.send('Hello!')} />
+  );
+};
+48. What is the difference between Native Components and React Native Components?
+| Feature | Native Components | React Native Components | |———|——————|————————| | Written in | Swift, Kotlin | JavaScript | | Performance | Faster | Slower | | Flexibility | Full access to platform | Cross-platform |
+
+49. How do you implement offline mode in React Native applications?
+Use AsyncStorage or react-native-mmkv for local data storage.
+
+1
+npm install @react-native-async-storage/async-storage
+Example: Storing Data Locally
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const storeData = async (key, value) => {
+  await AsyncStorage.setItem(key, value);
+};
+
+const getData = async (key) => {
+  const value = await AsyncStorage.getItem(key);
+  return value;
+};
+50. How do you integrate GraphQL with React Native using Apollo?
+Step 1: Install Apollo Client
+1
+npm install @apollo/client graphql
+Step 2: Create Apollo Client
+1
+2
+3
+4
+5
+6
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://your-graphql-server.com',
+  cache: new InMemoryCache(),
+});
+Step 3: Query Data
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+import { useQuery } from '@apollo/client';
+import { Text } from 'react-native';
+
+const GET_USERS = gql`
+  query {
+    users {
+      id
+      name
+    }
+  }
+`;
+
+const Users = () => {
+  const { loading, data } = useQuery(GET_USERS);
+
+  return loading ? <Text>Loading...</Text> : <Text>{data.users[0].name}</Text>;
+};
+
+
 25 самых популярных вопросов на собеседовании React Native (с ответами)
 Пройдите следующее собеседование в качестве разработчика React
 
