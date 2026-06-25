@@ -1,3 +1,1273 @@
+Как получить доступ к объекту запроса и зависимостям FastAPI в моделях, созданных из базовой модели Pydantic
+Вопросы
+PYTHON
+Как получить доступ к объекту запроса и зависимостям FastAPI в моделях, созданных из базовой модели Pydantic
+Я пишу API, используя стек FastAPI, Pydantic и SQL Alchemy, и я сталкивался со многими случаями, когда мне приходилось запрашивать базу данных для проверки значений полезной нагрузки. Давайте рассмотрим один пример API, /forgot-password. Этот API будет принимать email в полезной нагрузке, и мне нужно проверить наличие электронной почты в базе данных. Если электронная почта существует в базе данных, тогда будут выполнены необходимые действия, такие как создание токена и отправка почты, иначе Pydantic должен вызвать ответ об ошибке в этом поле. Ответы на ошибки должны быть стандартными ответами PydanticValueError. Это связано с тем, что все ошибки проверки будут иметь согласованные ответы, поскольку потребителям будет легко с ними справиться.
+
+Полезная нагрузка -
+{
+    "email": "example@gmail.com"
+}
+В Pydantic эта схема и проверка электронной почты реализованы как:
+
+class ForgotPasswordRequestSchema(BaseModel):
+    email: EmailStr
+    
+    @validator("email")
+    def validate_email(cls, v):
+        # this is the db query I want to perform but 
+        # I do not have access to the active session of this request.
+        user = session.get(Users, email=v) 
+        if not user:
+            raise ValueError("Email does not exist in the database.")
+
+        return v
+Теперь с этим можно легко справиться, если мы просто создадим сеанс Alchemy в модели pydantic, подобной этой.
+
+class ForgotPasswordRequestSchema(BaseModel):
+    email: EmailStr
+    _session = get_db() # this will simply return the session of database.
+    _user = None
+    
+    @validator("email")
+    def validate_email(cls, v):
+        # Here I want to query on Users's model to see if the email exist in the 
+        # database. If the email does. not exist then I would like to raise a custom 
+        # python exception as shown below.
+
+        user = cls._session.get(Users, email=v) # Here I can use session as I have 
+        # already initialised it as a class variable.
+
+        if not user:
+            cls.session.close()
+            raise ValueError("Email does not exist in the database.")
+
+        cls._user = user # this is because we want to use user object in the request 
+        # function.
+
+        cls.session.close()
+
+        return v
+
+Но это неправильный подход, так как в запросе должна использоваться только одна сессия. Как вы можете видеть в приведенном выше примере, мы закрываем сеанс, поэтому мы не сможем использовать пользовательский объект в функции запроса как user = payload._user. Это означает, что нам придется снова запрашивать ту же строку в функции запроса. Если мы не закроем сессию, мы увидим такие исключения алхимии — sqlalchemy.exc.PendingRollbackError.
+
+Теперь лучший подход — использовать тот же сеанс в модели Pydantic, который создается в начале запроса и также закрывается в конце запроса.
+
+Итак, я в основном ищу способ передать этот сеанс в Pydantic в качестве контекста. Сессия для моей функции запроса предоставляется как зависимость.
+
+ 03.02.2023 13:32
+1
+3
+69
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Не делай этого!
+
+Целью классов pydantic является хранение словарей законным способом, поскольку они поддерживаются IDE и менее подвержены ошибкам. Валидаторы существуют для очень простых вещей, которые не затрагивают другие части системы (например, целочисленное положительное или электронная почта удовлетворяет регулярному выражению).
+
+При этом вы должны использовать зависимости. Таким образом, вы можете быть уверены, что у вас есть один сеанс во время обработки всего запроса, и из-за менеджера контекста сеанс будет закрыт в любом случае.
+
+Окончательное решение может выглядеть так:
+
+from fastapi import Body, Depends
+from fastapi.exceptions import HTTPException
+
+def get_db():
+    db = your_session_maker
+    try:
+        yield db
+    finally:
+        db.close()
+
+@app.post("/forgot-password/")
+def forgot_password(email: str = Body(...), db: Session = Depends(get_db)):
+    user = db.get(Users, email=email)
+    if not user:
+        # If you really need to, you can for some reason raise pydantic exception here
+        raise HTTPException(status_code=400, detail = "No email")
+ 
+ 04.02.2023 02:47
+ Ответ принят как подходящий
+Не рекомендуется запрашивать базу данных в схеме pydantic. Вместо этого используйте сеанс как зависимость.
+
+Если вы хотите вызвать ошибки, такие как ошибка проверки pydantic, вам может понадобиться следующее:
+
+def raise_custom_error(exc: Exception, loc: str, model: BaseModel, status_code=int, **kwargs):
+    """
+    This method will return error responses using pydantic error wrapper (similar to pydantic validation error).
+    """
+    raise HTTPException(
+        detail=json.loads(ValidationError([ErrorWrapper(exc(**kwargs), loc=loc)], model=model).json()),
+        status_code=status_code,
+    )
+
+Применение
+class PayloadSchema(BaseModel):
+    email: EmailStr
+
+@app_router.post('/forgot-password')
+def forgot_password(
+    payload: PayloadSchema,
+    session: Session = Depends(get_db),
+    background_tasks: BackgroundTasks
+):
+    
+    existing_user = db.get(Users, email=payload.email)
+    if (existing_user):
+        raise_custom_error(
+        PydanticValueError, "email", PayloadSchema, status.HTTP_400_BAD_REQUEST
+    )
+    background_tasks(send_email, email=payload.email)
+
+
+Модель ответа в виде списка строк вместо объектов
+Вопросы
+PYTHON
+Модель ответа в виде списка строк вместо объектов
+Я пытаюсь вернуть список элементов в FastAPI через модель Pydantic.
+
+В настоящее время у меня есть маршрут:
+
+from typing import List
+
+from fastapi import Depends
+from sqlalchemy.orm.session import Session
+
+...
+
+@router.get('/search-job-types', response_model=List[JobTypeDisplay])
+def job_types(search_word: str, db: Session = Depends(get_db)):
+  return db_dims.search_job_types(search_word, db)
+
+#db_dims:
+def search_job_types(search_word: str, db: Session):
+  s_word = search_word.capitalize()
+  s_word2 = "%{}%".format(s_word)
+  all = db.query(DbJobType).filter(DbJobType.name.like(s_word2)).all()
+  #list_jobs = []
+  #for item in all:
+    #list_jobs.append(item.name)
+
+  return all
+И моя схема выглядит следующим образом:
+
+from pydantic import BaseModel
+
+class JobTypeDisplay(BaseModel):
+  name: str
+  class Config:
+        orm_mode = True
+Я получаю список таких объектов:
+
+[
+  {
+    "name": "Something3"
+  },
+  {
+    "name": "Somethin2"
+  },
+  {
+    "name": "Something1"
+  }
+]
+Но хотелось бы что-то вроде этого:
+
+['Something3', 'Somethin2', 'Something1']
+Каков наилучший способ добиться этого и действительно ли мне нужен цикл для этого?
+
+ 01.02.2023 21:22
+1
+1
+56
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вы можете перейти на return_model=list[str] и изменить оператор возврата на
+
+return [jt.name for jt in all]
+ 01.02.2023 22:16
+ Ответ принят как подходящий
+Если вас интересуют только значения столбца name в вашей таблице DbJobType, вам следует 1) изменить запрос к базе данных, чтобы фактически выбрать только этот столбец, и 2) использовать метод Result.scalars, чтобы вернуть только список струны.
+
+Вот как это будет выглядеть:
+
+from sqlalchemy.orm.session import Session
+from sqlalchemy.sql.expression import select
+
+# ... import DbJobType
+
+
+def search_job_types(search_word: str, db: Session) -> list[str]:
+    ...
+    statement = select(DbJobType.name).filter()  # add your filter options here
+    result = db.execute(statement)
+    return result.scalars().all()
+Технически вам также не нужно указывать response_model для маршрута. Если вы опустите этот аргумент, он все равно будет работать. Поскольку дополнительный синтаксический анализ не требуется, правильной аннотации типа возвращаемого значения list[str] будет достаточно, чтобы сгенерировать правильную схему OpenAPI для этого маршрута.
+
+from fastapi import Depends, FastAPI
+from sqlalchemy.orm.session import Session
+
+# ... import search_job_types
+
+
+app = FastAPI()
+...
+
+@app.get("/search-job-types")
+def job_types(search_word: str, db: Session = Depends(get_db)) -> list[str]:
+    return search_job_types(search_word, db)
+Похоже, по крайней мере, для этого маршрута ваша JobTypeDisplay модель устарела.
+
+спасибо за идею, просто небольшая проблема AttributeError: объект «Запрос» не имеет атрибута «скаляры»
+
+— 
+Tomas Am
+ 02.02.2023 18:36
+@TomasAm Query — это устаревший код, и вам, вероятно, следует отказаться от его использования. Вот почему я использовал Session.execute , чтобы получить объект Result. У него есть метод scalars.
+
+— 
+Daniil Fajnberg
+
+Как наложить определенные ограничения на параметры модели Pydantic?
+Вопросы
+PYTHON
+Как наложить определенные ограничения на параметры модели Pydantic?
+Как я могу наложить определенные ограничения на параметры модели Pydantic? В частности, я хотел бы:
+
+start_date должно быть не менее "2019-01-01"
+end_date должно быть больше, чем start_date
+code должно быть одно и только одно из значений в наборе
+cluster должно быть одно и только одно из значений в наборе
+Код, который я использую, выглядит следующим образом:
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import Set
+import uvicorn
+
+app = FastAPI()
+
+
+class Query(BaseModel):
+    start_date: str
+    end_date: str
+    code: Set[str] = {
+        "A1", "A2", "A3", "A4",
+        "X1", "X2", "X3", "X4", "X5",
+        "Y1", "Y2", "Y3"
+    }
+    cluster: Set[str] = {"C1", "C2", "C3"}
+
+@app.post("/")
+async def read_table(query: Query):
+    return {"msg": query}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host = "0.0.0.0", port=8000)
+ 31.01.2023 10:35
+1
+0
+69
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Pydantic имеет набор ограниченных типов, который позволяет вам определять конкретные ограничения на значения.
+
+start_date должно быть не меньше "2019-01-01"
+>>> class Foo(BaseModel):
+...   d: condate(ge=datetime.date.fromisoformat('2019-01-01')
+
+>>> Foo(d=datetime.date.fromisoformat('2018-01-12'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "pydantic\main.py", line 342, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for Foo
+d
+  ensure this value is greater than or equal to 2019-01-01 (type=value_error.number.not_ge; limit_value=2019-01-01)
+
+>>> Foo(d=datetime.date.fromisoformat('2020-01-12'))
+Foo(d=datetime.date(2020, 1, 12))
+end_date должен быть больше start_date
+Для более сложных правил можно использовать корневой валидатор:
+
+from pydantic import BaseModel, root_validator
+from datetime import date
+
+class StartEnd(BaseModel):
+    start: date
+    end: date
+    
+    @root_validator
+    def validate_dates(cls, values):
+        if values['start'] > values['end']:
+            raise ValueError('start is after end')
+            
+        return values
+        
+
+StartEnd(start=date.fromisoformat('2023-01-01'), end=date.fromisoformat('2022-01-01'))
+Дает:
+
+pydantic.error_wrappers.ValidationError: 1 validation error for StartEnd
+__root__
+  start is after end (type=value_error)
+Для кода и кластера вы можете вместо этого использовать Enum
+from pydantic import BaseModel
+from enum import Enum  # StrEnum in 3.11+
+
+
+class ClusterEnum(str, Enum):
+    C1 = "C1"
+    C2 = "C2" 
+    C3 = "C3"
+    
+
+class ClusterVal(BaseModel):
+    cluster: ClusterEnum
+        
+
+print(ClusterVal(cluster='C3').cluster.value)
+# outputs C3
+ 31.01.2023 11:46
+Вы можете использовать класс Enum или Literal для проверки кода и кластера, а затем использовать root_validator для даты. Также введите подсказку в поле даты с датой и временем вместо строки str. Вот так:
+
+from datetime import datetime
+from enum import Enum
+from typing import Literal
+
+from pydantic import BaseModel, root_validator
+
+"""using Literal to validater the code and cluster"""
+
+class Query(BaseModel):
+    start_date: datetime
+    end_date: datetime
+    code: Literal[
+        "A1", "A2", "A3", "A4", "X1", "X2", "X3", "X4", "X5", "Y1", "Y2", "Y3"
+    ]
+    cluster: Literal["C1", "C2", "C3"]
+
+    @root_validator()
+    def validate_dates(cls, values):
+        if datetime(year=2019, month=1, day=1) < values.get("start_date"):
+            raise ValueError("Date cannot be earlier than 2019-01-01")
+
+        if values.get("end_date") < values.get("start_date"):
+            raise ValueError("end date cannot be earlier than start date")
+
+        return values
+если вы хотите использовать Enum для проверки кода и кластера, вы определите класс Enum следующим образом
+
+class Cluster(Enum):
+    C1 = "C1"
+    C2 = "C3"
+    C3 = "C3"
+
+
+class Code(Enum):
+    A1 = "A1"
+    A2 = "A2"
+    A3 = "A3"
+    A4 = "A4"
+    X1 = "X1"
+    X2 = "X2"
+    X3 = "X3"
+    X4 = "X4"
+    X5 = "X5"
+    Y1 = "Y1"
+    Y2 = "Y2"
+    Y3 = "Y3"
+а затем замените литералы в классе Query этим
+
+code: Code
+cluster: Cluster
+
+Как перенаправить пользователя на другую страницу после входа в систему с помощью POST-запроса fetch()?
+Вопросы
+JAVASCRIPT
+Как перенаправить пользователя на другую страницу после входа в систему с помощью POST-запроса fetch()?
+Используя следующий код JavaScript, я делаю запрос на получение токена firebase, а затем POST запрос, используя fetch(), к моему серверу FastAPI, чтобы войти в систему пользователя. Затем в бэкенде, как видно ниже, я проверяю, действителен ли токен, и если да, то возвращаю перенаправление (т. е. RedirectResponse). Проблема в том, что редирект в браузере не работает, и остается предыдущая страница.
+
+function loginGoogle() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth()
+            //.currentUser.getToken(provider)
+            .signInWithPopup(provider)
+            .then((result) => {
+                /** @type {firebase.auth.OAuthCredential} */
+                var credential = result.credential;
+
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = credential.idToken;
+            
+                // The signed-in user info.
+                var user = result.user;
+                
+                // ...
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+                
+                });
+
+        firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+            console.info(idToken)
+
+            const token = idToken;
+            const headers = new Headers({
+                    'x-auth-token': token
+            });
+            const request = new Request('http://localhost:8000/login', {
+                    method: 'POST',
+                    headers: headers
+            });
+            fetch(request)
+            .then(response => response.json())
+            .then(data => console.info(data))
+            .catch(error => console.error(error));
+
+         
+        })
+Конечная точка в бэкенде, которая возвращает страницу входа, содержащую HTML-код с кнопкой и функцией loginGoogle:
+
+@router.get("/entrar")
+def login(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+Я называю это POST конечной точкой, а затем перенаправляю на /1, который является GET маршрутом, а status_code является 303, как @tiangolo указывает в документе, чтобы перенаправить с POST на GET маршрут.
+
+@router.post("/login")
+async def login(x_auth_token: str = Header(None)):
+    valid_token = auth.verify_id_token(x_auth_token)
+   
+    if valid_token:
+        print("token validado")
+        return RedirectResponse(url = "/1", status_code=status.HTTP_303_SEE_OTHER)
+    else:
+        return {"msg": "Token no recibido"}
+Это конечная точка GET, на которую должен быть перенаправлен пользователь, но это не так:
+
+@app.get("/1")
+def get_landing(request: Request):
+    return templates.TemplateResponse("landing.html", {"request": request})
+Скриншот Swagger тестирования конечной точки /login:
+
+ 20.01.2023 14:07
+1
+19
+195
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Основная «проблема», которая, как я вижу, может привести к тому, что это не сработает, заключается в том, что вы делаете это быстро, формируя запрос Post для запроса Get.
+
+После некоторого поиска в Интернете я наткнулся на это [ОШИБКА] RedirectResponse с маршрута запроса POST на маршрут запроса GET если вы прочитаете эту ошибку, вы увидите, что они указывают, что иногда вам может понадобиться 307, вместо этого вы можете прочитать про ответ 307 здесь 307 Temporary Redirect.
+
+В соответствии с этим должно помочь следующее:
+
+import starlette.status as status
+from fastapi.responses import RedirectResponse
+
+@router.post("/login")
+async def login(x_auth_token: str = Header(None))
+    # Implementation details ...
+    return RedirectResponse('/1', status_code=status.HTTP_302_FOUND)
+
+@app.get("/1")
+def get_landing(request: Request):
+    return templates.TemplateResponse("landing.html", {"request": request})
+Из того, что я видел здесь, решение заключалось в использовании status_code=status.HTTP_302_FOUND, вы можете узнать больше об этом здесь: Что такое код состояния 302?
+
+Вы также можете обратиться к следующим ссылкам для получения дополнительной информации:
+
+fastapi (starlette) RedirectResponse перенаправляет на сообщение вместо получения метода
+Как сделать Post/Redirect/Get (PRG) в FastAPI?
+[ВОПРОС] Как разместить/перенаправить/получить
+RedirectResponse
+Согласно @Chris в комментариях, у вас также есть следующее:
+
+Как перенаправить пользователя обратно на главную страницу с помощью FastAPI после отправки HTML-формы?
+RedirectResponse FastAPI не работает должным образом в пользовательском интерфейсе Swagger
+Как отправить RedirectResponse с POST на GET маршрут в FastAPI?
+ 20.01.2023 15:12
+ Ответ принят как подходящий
+Вариант 1 - Возвращение RedirectResponse
+При использовании fetch() для отправки HTTP-запроса к серверу, который отвечает RedirectResponse, ответ перенаправления будет автоматически следовать на стороне клиента (как описано здесь ), так как установлен режим redirect на follow по умолчанию в методе fetch(). Это означает, что пользователь не будет перенаправлен на новый URL-адрес, а скорее fetch() будет следовать этому перенаправлению за кулисами и возвращать ответ с URL-адреса перенаправления. Вы могли бы ожидать, что вместо этого установка redirect на manual позволит вам получить URL-адрес перенаправления (содержащийся в заголовке ответа Location ) и вручную перейти на новую страницу, но это не тот случай, как описано здесь.
+
+Тем не менее, вы все равно можете использовать значение redirect по умолчанию в запросе fetch(), то есть follow (нет необходимости указывать его вручную, так как оно уже установлено по умолчанию — в приведенном ниже примере оно определено вручную только для ясности), и затем используйте Response.redirected , чтобы проверить, является ли ответ результатом перенаправленного вами запроса. Если это так, вы можете использовать Response.url , который вернет «конечный URL-адрес, полученный после любых перенаправлений», и с помощью window.location.href JavaScript вы можете перенаправить пользователя на целевой URL (т.е. страницу перенаправления).
+
+Вместо window.location.href также можно использовать window.location.replace() . Отличие от установки значения свойства href заключается в том, что при использовании метода location.replace() после перехода по указанному URL-адресу текущая страница не будет сохранена в истории сеанса, то есть пользователь не сможет использовать кнопку «Назад». чтобы перейти к нему.
+
+Рабочий пример
+app.py
+
+from fastapi import FastAPI, Request, status, Depends
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
+from fastapi.security import OAuth2PasswordRequestForm
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+
+@app.get('/')
+async def index(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+
+    
+@app.post('/login')
+async def login(data: OAuth2PasswordRequestForm = Depends()):
+    # perform some validation, using data.username and data.password
+    credentials_valid = True
+    
+    if credentials_valid:
+        return RedirectResponse(url='/welcome',status_code=status.HTTP_302_FOUND)
+    else:
+        return 'Validation failed'
+ 
+
+@app.get('/welcome')
+async def welcome():
+    return 'You have been successfully redirected'
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+              e.preventDefault(); // Cancel the default action
+              var formElement = document.getElementById('myForm');
+              var data = new FormData(formElement);
+              fetch('/login', {
+                    method: 'POST',
+                    redirect: 'follow',
+                    body: data,
+                 })
+                 .then(res => {
+                    if (res.redirected) {
+                       window.location.href = res.url;  // or, location.replace(res.url); 
+                       return;
+                    } 
+                    else
+                       return res.text();
+                 })
+                 .then(data => {
+                    document.getElementById("response").innerHTML = data;
+                 })
+                 .catch(error => {
+                    console.error(error);
+                 });
+            });
+         });
+             
+      </script>
+   </head>
+   <body>
+      <form id = "myForm">
+         <label for = "username">Username:</label><br>
+         <input type = "text" id = "username" name = "username" value = "user@mail.com"><br>
+         <label for = "password">Password:</label><br>
+         <input type = "password" id = "password" name = "password" value = "pa55w0rd"><br><br>
+         <input type = "submit" value = "Submit" class = "submit">
+      </form>
+      <div id = "response"></div>
+   </body>
+</html>
+Вариант 2. Возврат ответа JSON, содержащего URL-адрес перенаправления.
+Вместо того, чтобы возвращать RedirectResponse с сервера, вы можете заставить сервер возвращать обычный ответ JSON с URL-адресом, включенным в объект JSON. На стороне клиента вы можете проверить, содержит ли объект JSON, возвращенный с сервера в результате запроса fetch(), ключ url, и если да, то получить его значение и перенаправить пользователя на целевой URL-адрес, используя window.location.href или window.location.replace() JavaScript. .
+
+В качестве альтернативы можно добавить URL-адрес перенаправления в собственный заголовок ответа на стороне сервера (см. примеры здесь и здесь о том, как установить заголовок ответа в FastAPI), и получить к нему доступ на стороне клиента, после отправив запрос с помощью fetch(), как показано здесь (Обратите внимание, что если вы делаете запрос между источниками , вам нужно будет установить заголовок ответа Access-Control-Expose-Headers на стороне сервера ( см. примеры здесь и здесь , а также документацию FastAPI CORSMiddleware о том, как использовать аргумент expose_headers), указывая, что ваш собственный заголовок ответа, который включает URL-адрес перенаправления, должен быть доступен для сценариев JS. работает в браузере, так как по умолчанию отображаются только заголовки ответов CORS-безопасного списка).
+
+Рабочий пример
+app.py
+
+from fastapi import FastAPI, Request, status, Depends
+from fastapi.templating import Jinja2Templates
+from fastapi.security import OAuth2PasswordRequestForm
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+
+
+@app.get('/')
+async def index(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+
+    
+@app.post('/login')
+async def login(data: OAuth2PasswordRequestForm = Depends()):
+    # perform some validation, using data.username and data.password
+    credentials_valid = True
+    
+    if credentials_valid:
+        return {'url': '/welcome'}
+    else:
+        return 'Validation failed'
+ 
+
+@app.get('/welcome')
+async def welcome():
+    return 'You have been successfully redirected'
+шаблоны/index.html
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("myForm").addEventListener("submit", function (e) {
+              e.preventDefault(); // Cancel the default action
+              var formElement = document.getElementById('myForm');
+              var data = new FormData(formElement);
+              fetch('/login', {
+                    method: 'POST',
+                    body: data,
+                 })
+                 .then(res => res.json())
+                 .then(data => {
+                    if (data.url)
+                       window.location.href = data.url; // or, location.replace(data.url);
+                    else
+                       document.getElementById("response").innerHTML = data;
+                 })
+                 .catch(error => {
+                    console.error(error);
+                 });
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <form id = "myForm">
+         <label for = "username">Username:</label><br>
+         <input type = "text" id = "username" name = "username" value = "user@mail.com"><br>
+         <label for = "password">Password:</label><br>
+         <input type = "password" id = "password" name = "password" value = "pa55w0rd"><br><br>
+         <input type = "submit" value = "Submit" class = "submit">
+      </form>
+      <div id = "response"></div>
+   </body>
+</html>
+Вариант 3 — Использование HTML <form> во внешнем интерфейсе
+Если использование запроса fetch() не является требованием для вашего проекта, вместо этого вы можете использовать обычный HTML <form> и попросить пользователя нажать кнопку отправить, чтобы отправить запрос POST на сервер. Таким образом, использование RedirectResponse на стороне сервера (как показано в Варианте 1) приведет к тому, что пользователь на стороне клиента будет автоматически перенаправлен на целевой URL без каких-либо дополнительных действий.
+
+Рабочие примеры можно найти в этом ответе , а также этом ответе и этом ответе.
+
+TypeError: объект типа «тип» не сериализуем JSON
+Вопросы
+PYTHON
+TypeError: объект типа «тип» не сериализуем JSON
+Код отлично работает в Postman и дает правильный ответ, но не может генерировать автоматические документы пользовательского интерфейса OpenAPI/Swagger.
+
+class Role(str, Enum):
+     Internal = "internal"
+     External = "external"
+
+
+class Info(BaseModel):
+    id: int
+    role: Role
+
+class AppInfo(Info):
+    info: str
+
+
+@app.post("/api/v1/create", status_code=status.HTTP_200_OK)
+async def create(info: Info, apikey: Union[str, None] = Header(str)):
+    if info:
+        alias1 = AppInfo(info = "Portal Gun", id=123, role=info.role)
+        alias2 = AppInfo(info = "Plumbus", id=123, , role=info.role)
+        info_dict.append(alias1.dict())
+        info_dict.append(alias2.dict())
+
+        
+        return {"data": info_dict}
+    else:
+        
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Please provide the input"
+        )
+Получена ошибка:
+
+TypeError: Object of type 'type' is not JSON serializable
+ 20.01.2023 07:43
+2
+4
+220
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Я думаю, что проблема может быть в:
+
+apikey: Union[str, None] = Header(str)
+в асинхронной функции create()
+
+Может быть, функция или класс Header() не принимает str на вход?
+
+Хотя я действительно не знаю, что делает эта функция, // из какой библиотеки она.
+
+ 20.01.2023 07:48
+ Ответ принят как подходящий
+Проблема
+Причина, по которой вы получаете следующую ошибку в консоли (обратите внимание, что эта ошибка также может быть вызвана другими причинами — см. здесь):
+
+TypeError: Object of type 'type' is not JSON serializable
+а также приведенная ниже ошибка в браузере при попытке загрузить автодокументы пользовательского интерфейса OpenAPI/Swagger по адресу /docs:
+
+Fetch error
+Internal Server Error /openapi.json
+связано со следующей строкой в ​​вашем коде:
+
+apikey: Union[str, None] = Header(str)
+                                  ^^^
+Решение
+При объявлении параметра Заголовка (или параметра любого другого типа, т. е. Path, Query, Cookie и т. д.) первое значение, которое передается конструктору класса Заголовка (т. е. методу __init__ ), — это default значение, которое может быть либо None, либо некоторым значением по умолчанию, основанным на типе, который вы указали для параметра — в вашем случае это может быть строковое значение, например, 'some-api-key', а не тип str). Поскольку вы определили параметр как Optional, вы можете просто передать None как значение по умолчанию:
+
+apikey: Union[str, None] = Header(None)
+Пожалуйста, ознакомьтесь с этим ответом и этим ответом для более подробной информации о параметрах Optional в FastAPI.
+
+FastAPI/Starlette: как обрабатывать исключения внутри фоновых задач?
+Вопросы
+PYTHON
+FastAPI/Starlette: как обрабатывать исключения внутри фоновых задач?
+Я разработал некоторые конечные точки API, используя FastAPI. Этим конечным точкам разрешено работать BackgroundTasks. К сожалению, я не знаю, как справиться с непредсказуемыми проблемами из этих задач.
+
+Пример моего API показан ниже:
+
+# main.py
+
+from fastapi import FastAPI
+import uvicorn
+
+
+app = FastAPI()
+
+
+def test_func(a, b):
+    raise ...
+
+
+@app.post("/test", status_code=201)
+async def test(request: Request, background_task: BackgroundTasks):
+    background_task.add_task(test_func, a, b)
+    return {
+        "message": "The test task was successfully sent.",
+    }
+if __name__ == "__main__":
+    uvicorn.run(
+        app=app,
+        host = "0.0.0.0",
+        port=8000
+    )
+# python3 main.py to run
+# fastapi == 0.78.0
+# uvicorn == 0.16.0
+Можете ли вы помочь мне обработать любое исключение из такой фоновой задачи? Должен ли я добавить exception_middleware от Starlette, чтобы добиться этого?
+
+ 17.01.2023 12:02
+1
+1
+109
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Можете ли вы помочь мне обработать любое исключение из такой фоновой задачи?
+
+Фоновые задачи , как следует из названия, — это задачи, которые будут выполняться в фоновом режиме после получения ответа. Следовательно, вы не можете raise и Exception ожидать, что клиент получит какой-то ответ. Если вы просто хотите поймать любое Exception происходящее внутри фоновой задачи, вы можете просто использовать блок try-except, чтобы поймать любое Исключение и обработать его по желанию. Например:
+
+def test_func(a, b):
+    try:
+        # some background task logic here...
+        raise <some_exception>
+    except Exception as e:
+        print('Something went wrong')
+        # use `print(e.detail)` to print out the Exception's details 
+Если вы хотите регистрировать любые исключения, возникающие в задаче (вместо того, чтобы просто распечатывать их), вы можете использовать модуль Python logging — посмотрите этот ответ , а также этот ответ и этот ответ о том, как это сделать. Вы также можете найти полезную информацию о пользовательских/глобальных обработчиках исключений FastAPI/Starlette в этом посте и этом посте , а также здесь , здесь и здесь.
+
+Наконец, этот ответ поможет вам детально понять разницу между конечными точками def и async def (а также функциями фоновых задач) в FastAPI и найти решения для задач, блокирующих event loop (если вы когда-нибудь сталкивались с этой проблемой).
+
+ 17.01.2023 13:19
+Я не уверен на 100%, что вы подразумеваете под «непредсказуемыми ошибками» и каково будет поведение в случае возникновения исключения?
+
+Оператор try/except может работать.
+
+# main.py
+
+from fastapi import FastAPI
+import uvicorn
+
+
+app = FastAPI()
+
+
+def test_func(a, b):
+    raise ...
+
+
+@app.post("/test", status_code=201)
+async def test(request: Request, background_task: BackgroundTasks):
+    try:
+        background_task.add_task(test_func, a, b)
+        return {
+            "message": "The test task was successfully sent.",
+        }
+    except Exception as e:
+        # exception handling code
+if __name__ == "__main__":
+    uvicorn.run(
+        app=app,
+        host = "0.0.0.0",
+        port=8000
+    )
+# python3 main.py to run
+# fastapi == 0.78.0
+# uvicorn == 0.16.0
+
+Как создать изображение PNG в PIL и отобразить его в шаблоне Jinja2 с помощью FastAPI?
+Вопросы
+PYTHON
+Как создать изображение PNG в PIL и отобразить его в шаблоне Jinja2 с помощью FastAPI?
+У меня есть конечная точка FastAPI, которая создает изображения PIL. Затем я хочу отправить полученное изображение в виде потока на Jinja2 TemplateResponse. Это упрощенная версия того, что я делаю:
+
+import io
+from PIL import Image
+
+@api.get("/test_image", status_code=status.HTTP_200_OK)
+def test_image(request: Request):
+    '''test displaying an image from a stream.
+    '''
+    test_img = Image.new('RGBA', (300,300), (0, 255, 0, 0))
+
+    # I've tried with and without this:
+    test_img = test_img.convert("RGB")
+
+    test_img = test_img.tobytes()
+    base64_encoded_image = base64.b64encode(test_img).decode("utf-8")
+
+    return templates.TemplateResponse("display_image.html", {"request": request,  "myImage": base64_encoded_image})
+С помощью этого простого html:
+
+<html>
+   <head>
+      <title>Display Uploaded Image</title>
+   </head>
+   <body>
+      <h1>My Image<h1>
+      <img src = "data:image/jpeg;base64,{{ myImage | safe }}">
+   </body>
+</html>
+Я работал над этими ответами и пробовал несколько их перестановок:
+
+Как отобразить загруженное изображение на HTML-странице с помощью FastAPI и Jinja2?
+
+Как преобразовать объект PIL Image.image в строку base64?
+
+Как я могу отобразить изображение PIL в html с колбой render_template?
+
+Кажется, это должно быть очень просто, но все, что я получаю, это значок html для изображения, которое не отображается.
+
+Что я делаю не так? Спасибо.
+
+Я использовал ответ Марка Сетчелла, который ясно показывает, что я делал неправильно, но все еще не получаю изображение в html. Мой FastAPI:
+
+@api.get("/test_image", status_code=status.HTTP_200_OK)
+def test_image(request: Request):
+# Create image
+    im = Image.new('RGB',(1000,1000),'red')
+
+    im.save('red.png')
+
+    print(im.tobytes())
+
+    # Create buffer
+    buffer = io.BytesIO()
+
+    # Tell PIL to save as PNG into buffer
+    im.save(buffer, 'PNG')
+
+    # get the PNG-encoded image from buffer
+    PNG = buffer.getvalue()
+
+    print()
+    print(PNG)
+
+    base64_encoded_image = base64.b64encode(PNG)
+
+    return templates.TemplateResponse("display_image.html", {"request": request,  "myImage": base64_encoded_image})
+и мой html:
+
+<html>
+   <head>
+      <title>Display Uploaded Image</title>
+   </head>
+   <body>
+      <h1>My Image 3<h1>
+      <img src = "data:image/png;base64,{{ myImage | safe }}">
+   </body>
+</html>
+Когда я запускаю, если я создаю изображение 1x1, я получаю точные распечатки в ответе Марка. Если я запускаю эту версию с изображением 1000x1000, она сохраняет red.png, который я могу открыть и посмотреть. Но, в конце концов, на html-странице есть заголовок и значок, означающий, что изображение не отображается. Сейчас я явно делаю что-то не так, когда отправляю в html.
+
+ 11.01.2023 05:07
+2
+0
+71
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Здесь есть несколько проблем. Я сделаю новый раздел для каждого, чтобы четко разделить его.
+
+Если вы хотите отправить PNG в кодировке base64, вам нужно изменить свой HTML на:
+
+<img src = "data:image/png;base64,{{ myImage | safe }}">
+Если вы создадите изображение одного красного пикселя следующим образом:
+
+im = Image.new('RGB',(1,1),'red')
+print(im.tobytes())
+ты получишь:
+
+b'\xff\x00\x00'
+Это не изображение в формате PNG, как это могло быть - вы не сказали PIL, что вам нужен PNG, или JPEG, или TIFF, поэтому он не может знать. Это просто дает вам 3 необработанных пикселя RGB в виде байтов #ff0000.
+
+Если вы сохраните это изображение на диск в формате PNG и выгрузите его, вы получите:
+
+im.save('red.png')
+Затем сбросьте это:
+
+xxd red.png
+
+00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452  .PNG........IHDR
+00000010: 0000 0001 0000 0001 0802 0000 0090 7753  ..............wS
+00000020: de00 0000 0c49 4441 5478 9c63 f8cf c000  .....IDATx.c....
+00000030: 0003 0101 00c9 fe92 ef00 0000 0049 454e  .............IEN
+00000040: 44ae 4260 82                             D.B`.
+Теперь вы можете увидеть подпись PNG в начале. Итак, нам нужно создать то же самое, но только в памяти, не заморачиваясь на диске:
+
+import io
+import base64
+from PIL import image
+
+# Create image
+im = Image.new('RGB',(1,1),'red')
+
+# Create buffer
+buffer = io.BytesIO()
+
+# Tell PIL to save as PNG into buffer
+im.save(buffer, 'PNG')
+Теперь мы можем получить изображение в формате PNG из буфера:
+
+PNG = buffer.getvalue()
+И если мы его распечатаем, он будет подозрительно идентичен PNG на диске:
+
+b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\xcf\xc0\x00\x00\x03\x01\x01\x00\xc9\xfe\x92\xef\x00\x00\x00\x00IEND\xaeB`\x82'
+Теперь вы можете закодировать его в base64 и отправить:
+
+base64_encoded_image = base64.b64encode(PNG)
+Примечание. Я сделал 1x1 только в демонстрационных целях, чтобы показать вам весь файл. Сделайте его больше 1x1 при тестировании, иначе вы его никогда не увидите 😀
+
+ 11.01.2023 09:07
+Я использовал ответ и комментарии Марка Сетчелла, чтобы придумать этот полный код. Я подумал, что полезно показать, что работает:
+
+import base64
+from PIL import Image
+
+@api.get("/test_image", status_code=status.HTTP_200_OK)
+def test_image(request: Request):
+# Create image
+    im = Image.new('RGB',(1000,1000),'red')
+
+    # Create buffer
+    buffer = io.BytesIO()
+
+    # Tell PIL to save as PNG into buffer
+    im.save(buffer, 'PNG')
+
+    # get the PNG-encoded image from buffer
+    PNG = buffer.getvalue()
+
+    # the only difference is the .decode("utf-8") added here:
+    base64_encoded_image = base64.b64encode(PNG).decode("utf-8")
+
+    return templates.TemplateResponse("display_image.html", {"request": request,  "myImage": base64_encoded_image})
+<html>
+   <head>
+      <title>Display Uploaded Image</title>
+   </head>
+   <body>
+      <h1>My Image 3<h1>
+      <img src = "data:image/png;base64,{{ myImage | safe }}">
+   </body>
+</html>
+Это включало устранение некоторых неполадок: Как отобразить изображение байтового типа в шаблоне HTML/Jinja2 с помощью FastAPI?
+
+Пожалуйста, не забудьте правильно close объекты Image и BytesIO, чтобы освободить их память (см. соответствующие ответы здесь , а также здесь).
+
+— 
+Chris
+
+Пидантическая модель внутри модели
+Вопросы
+PYTHON
+Пидантическая модель внутри модели
+Итак, я пытаюсь использовать существующую модель pydantic в другой модели pydantic, как я видел на примерах. Это мои пидантические модели:
+
+class DriverCategoryOut(BaseModel):
+    internal_id: int
+    category: str
+
+    class Config:
+        orm_mode = True
+class DocListOut(BaseModel):
+    driver_categories: DriverCategoryOut
+
+    class Config:
+        orm_mode = True
+Это мой код маршрута:
+
+@router.get('/document', response_model=shemas.DocListOut)
+def get_doc_list(db: Session = Depends(get_db)):
+    driver_categories = db.query(DriverCategory).first()
+    return driver_categories
+Я получаю сообщение об ошибке:
+
+pydantic.error_wrappers.ValidationError: 1 validation error for DocListOut
+response -> driver_categories
+
+field required (type=value_error.missing)
+Если я перехожу на response_model=shemas.DriverCategoryOut, все работает нормально. Что не так с моей DocListOut моделью?
+
+ 01.01.2023 21:25
+0
+0
+64
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Эта строка driver_categories = db.query(DriverCategory).first() извлекает (и анализирует запись как а) DriverCategory. Предполагая, что это идеально сопоставляется с DriverCategoryOut, почему это должно быть автоматически проанализировано для объекта, у которого есть свойство типа DriverCategoryOut?
+
+Вы можете попробовать следующее:
+
+@router.get('/document', response_model=shemas.DocListOut)
+def get_doc_list(db: Session = Depends(get_db)):
+    driver_categories = db.query(DriverCategory).first()
+    return {'driver_categories': driver_categories}
+Теперь этот JSON будет преобразован в ваш response_model (в данном случае DocListOut).
+
+ 01.01.2023 21:32
+есть еще один способ унаследовать вашу модель
+
+class DocListOut(DriverCategoryOut):
+      class Config:
+            orm_mode = True
+            # if you want to exclude some fields
+            fields = {
+                    "internal_id": {'exclude': True},
+                  }
+если ваш вывод - это списки
+
+class DocListOut(BaseModel):
+      driver_category: List[DriverCategoryOut] = []
+      class Config:
+            orm_mode=True
+
+Операция удаления FASTAPI дает внутреннюю ошибку сервера
+Вопросы
+PYTHON
+Операция удаления FASTAPI дает внутреннюю ошибку сервера
+У меня есть этот код для операции удаления в БД Postgresql:
+
+@app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_post(id: int):
+    print("ID IS ",id)
+    cursor.execute("""DELETE FROM public."Posts" WHERE id = %s""", (str(id),))
+    deleted_post = cursor.fetchone()  <--- Showing error for this line
+    conn.commit()
+    if deleted_post is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"Post with {id} not found")
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+Операции создания и чтения работают нормально. Если я передам существующий или несуществующий идентификатор для удаления, я получу ошибку внутреннего сервера 500. Однако строка удаляется из таблицы.
+
+Если я прокомментирую эту строку deleted_post = cursor.fetchone(), она работает нормально.
+
+Вот трассировка ошибок:
+
+File "D:\Python Projects\FASTAPI\venv\lib\site-packages\anyio\to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "D:\Python Projects\FASTAPI\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Projects\FASTAPI\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "D:\Python Projects\FASTAPI\.\app\main.py", line 80, in delete_post
+    deleted_post = cursor.fetchone()
+  File "D:\Python Projects\FASTAPI\venv\lib\site-packages\psycopg2\extras.py", line 86, in fetchone
+    res = super().fetchone()
+psycopg2.ProgrammingError: no results to fetch
+Что здесь происходит на самом деле??
+
+ 28.12.2022 13:44
+0
+0
+54
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Запрос DELETE не возвращает никаких результатов, поэтому вызов fetchone() вызывает ошибку. Попробуйте добавить предложение RETURNING:
+
+@app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_post(id: int):
+    print("ID IS ",id)
+    cursor.execute("""DELETE FROM public."Posts" WHERE id = %s RETURNING id""", (str(id),))
+    deleted_post = cursor.fetchone()  <--- Showing error for this line
+    conn.commit()
+    if deleted_post is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"Post with {id} not found")
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+ 28.12.2022 14:00
+Paweł уже обнаружил проблему, но я настоятельно рекомендую вам использовать ORM, это упрощает вещи:
+
+def delete_post(id: int, db: Session = Depends(get_db)):
+    post = db.query(Posts).get(id)
+    if post is None:
+        raise
+    post.delete() # depends on session settings you need to do db.commit() or not
+    return Response()
+Для настройки зависимостей смотрите здесь:
+
+Как отправить письмо в fastapi с помощью шаблона
+Вопросы
+PYTHON
+Как отправить письмо в fastapi с помощью шаблона
+conf = ConnectionConfig(
+    USERNAME=config.mail_username,
+    PASSWORD=config.mail_pasword,
+    FROM=config.mail_from,
+    PORT=config.mail_port,
+    SERVER=config.mail_server,
+    USE_CREDENTIALS=True,
+    VALIDATE_CERTS=True,
+    TEMPLATE_FOLDER='./templates'
+)
+
+async def send_email(email_to: EmailSchema, body:EmailSchema) -> JSONResponse:
+    message = MessageSchema(
+        subject = "fastapi",
+        recipients=[email_to],
+        body=body,
+        subtype = "html"
+    )
+
+    fm = FastMail(conf)
+    
+    await fm.send_message(message,template_name='email.html')
+
+data = "xyz"
+@app.get("/email")
+async def endpoint_send_email(
+): 
+    await send_email(
+        email_to=email_to,
+        body=data
+        )
+
+
+email.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>email</title>
+  </head>
+  <body>
+    <h4>Hi Team</h4>
+    <p>get the data of date {{date}}</p><br />
+    {{body.data}}
+    <br /><br />
+    <h4>thanks,</h4>
+    <h4>Team</h4>
+  </body>
+</html>
+Когда я пытаюсь отправить электронное письмо без использования имени шаблона, его отправка со значениями тела xyz (обычный)
+
+Мне нужно отправить в этом формате шаблона, если я использую имя шаблона, я получаю ошибку ниже. Помогите найти решение спасибо
+
+ошибка типа: объект posixpath не является итерируемым python
+
+ 14.12.2022 12:19
+0
+0
+112
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+ну, вы передаете свой HTML-файл в виде текста, поэтому вы не получите электронное письмо в виде шаблона. вы можете использовать библиотеку jinja2, чтобы отобразить свой шаблон и правильно его отправить. вы создаете переменную окружения
+
+env = Environment(
+   loader=PackageLoader('app', 'templates'),#where you are getting the templates from
+   autoescape=select_autoescape(['html', 'xml']))
+template = env.get_template(template_name)
+html = template.render(
+    name=email,
+    code=code,
+    subject=subject
+)
+затем вы используете MessageSchema и отправляете его, как вы это делали! надеюсь, мой ответ поможет вам
+
+ 14.12.2022 17:24
+env = Environment(
+    loader=FileSystemLoader(searchpath = "./templates"),
+    autoescape=select_autoescape(['html', 'xml'])
+)
+async def sendMail(url,email_to: EmailSchema):
+  conf = ConnectionConfig(
+    USERNAME=config.mail_username,
+    PASSWORD=config.mail_pasword,
+    FROM=config.mail_from,
+    PORT=config.mail_port,
+    SERVER=config.mail_server,
+    USE_CREDENTIALS=True,
+    VALIDATE_CERTS=True,
+ )
+  template = env.get_template('email.html')
+   html = template.render(
+        url=url,
+  )
+  message = MessageSchema(
+        subject = "fastapi",
+        recipients=[email_to],
+        body=body,
+        subtype = "html"
+   )
+
+  fm = FastMail(conf)
+    await fm.send_message(message)
+
+data = "xyz"
+@app.get("/email")
+async def endpoint_send_email(
+): 
+    await send_email(
+        email_to=email_to,
+        url=data
+    )
+
 Не удалось собрать столбцы первичного ключа для сопоставленной таблицы SQLAlchemy
 Вопросы
 PYTHON
