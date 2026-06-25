@@ -1,3 +1,463 @@
+SQL Server Interview Questions and Answers (2026)
+By Vijay  Updated December 6, 2025
+In this tutorial, I will cover some of the most frequently asked SQL Server Interview Questions to make you familiar with the type of questions that can be asked during a Job Interview related to SQL SERVER.
+
+The list includes questions from almost all important areas of SQL Server. This will help you in dealing with the beginner and advanced-level interviews.
+
+SQL Server is one of the most important Relational Database Management Systems (RDBMS) for performing functions of retrieving and storing data. Therefore, many questions are asked about this topic during technical interviews.
+
+SQL Server Interview Questions
+Let’s move on to the list of SQL Server Questions.
+
+Before that, take this quick quiz on fundamental SQL Server interview questions.
+
+Table of Contents: [Show]
+
+SQL Server Interview Questions Quiz – with RESULT Analysis
+Prepare for SQL Server interview with our comprehensive quiz covering T-SQL, stored procedures, performance tuning, and database administration. Test your Microsoft SQL Server knowledge and boost your confidence for technical interviews.
+
+SQL Server Interview Questions Quiz
+Master SQL Server concepts and ace your interview!
+Question 1 of 15
+What is the correct way to create a partitioned table in SQL Server?
+-- CREATE a partitioned TABLE FOR sales data BY year
+CREATE PARTITION FUNCTION pf_sales_year (datetime) AS RANGE RIGHT FOR VALUES ('2022-01-01', '2023-01-01')
+ALTER TABLE sales ADD PARTITION BY sale_date
+CREATE TABLE sales PARTITION BY RANGE (sale_date)
+CREATE CLUSTERED INDEX WITH PARTITION ON sales
+Basic SQL Server Interview Questions
+Let’s start.
+
+Q #1) Which TCP/IP port does SQL Server run on?
+
+Answer: By default, SQL Server runs on port 1433.
+
+Q #2) What is the difference between clustered and non-clustered indexes?
+
+Answer: A clustered index is an index that rearranges the table in the index’s order itself. Its leaf nodes contain data pages. A table can have only one clustered index.
+
+A non-clustered index is an index that does not re-arrange the table in the index’s order itself. The leaf nodes contain index rows instead of data pages. A table can have many non-clustered indexes.
+
+Q #3) List the different index configurations possible for a table.
+
+Answer: A table can have one of the following index configurations:
+
+No indexes
+A clustered index
+A clustered index and many non-clustered indexes
+A non-clustered index
+Many non-clustered indexes
+Q #4) What is the recovery model? List the types of recovery models available in SQL Server.
+
+Answer: The recovery model tells SQL Server what data should be kept in the transaction log file and for how long. A database can have only one recovery model. It also tells SQL Server which backup is possible in a particular selected recovery model.
+
+There are three types of recovery models:
+
+Full
+Simple
+Bulk-Logged
+Q #5) What are the different types of backups available in SQL Server?
+
+Answer: Different possible backups are:
+
+Full backup
+Differential Backup
+Transactional Log Backup
+Copy Only Backup
+File and Filegroup backup
+Q #6) What is a Full Backup?
+
+Answer: A full backup is the most common type of backup in SQL Server. This is a complete backup of the database. It also contains part of the transaction log so that it can be recovered.
+
+Q #7) What is OLTP?
+
+Answer: OLTP stands for Online Transaction Processing, which follows rules of data normalization to ensure data integrity. These rules break complex information down into a simple structure.
+
+Q #8) What is RDBMS?
+
+Answer: RDBMS or Relational Database Management Systems are database management systems that maintain data as tables. We can create relationships between the tables. An RDBMS can recombine data items from different files, providing powerful tools for data usage.
+
+Q #9) What are the properties of Relational tables?
+
+Answer: Relational tables have six properties:
+
+Values are atomic.
+Column values are of the same kind.
+Each row is unique.
+The sequence of columns is insignificant.
+The sequence of rows is insignificant.
+Each column must have a unique name.
+Q #10) What’s the difference between a primary key and a unique key?
+
+Answer: The differences between a primary key and a unique key are:
+
+The primary key is a column whose values uniquely identify every row in a table. Primary key values can never be reused. They create a clustered index on the column that cannot be null.
+A Unique key is a column whose values also uniquely identify every row in a table but they create a non-clustered index by default and it allows one NULL only.
+Q #11) When is the UPDATE_STATISTICS command used?
+
+Answer: As the name implies, the UPDATE_STATISTICS command updates the statistics used by the index to make the search easier.
+
+Q #12) What is the difference between a HAVING CLAUSE and a WHERE CLAUSE?
+
+Answer: The difference between HAVING CLAUSE and WHERE CLAUSE is:
+
+Both specify a search condition, but the HAVING clause is used only with the SELECT statement and typically used with the GROUP BY clause.
+If the GROUP BY clause is not used, then the HAVING clause behaves like a WHERE clause only.
+Q #13) What is Mirroring?
+
+Answer: Mirroring is a high-availability solution. It maintains a hot standby server that is consistent with the primary server in terms of the transactions. Transaction Log records are sent directly from the primary server to a secondary server, which keeps a secondary server up to date with the primary server.
+
+Q #14) What are the advantages of Mirroring?
+
+Answer: The advantages of Mirroring are:
+
+It is more robust and efficient than Log shipping.
+It has an automatic fail-over mechanism.
+The secondary server is synced with the primary in near real-time.
+Q #15) What is Log Shipping?
+
+Answer: Log shipping is nothing but the automation of backup and restoring the database from one server to another standalone standby server. This is one of the disaster recovery solutions. If one server fails for some reason we will have the same data available on the standby server.
+
+Q #16) What are the advantages of Log shipping?
+
+Answer: Advantages of Log Shipping include:
+
+Easy to set up.
+The secondary database can be used for read-only purposes.
+Multiple secondary standby servers are possible
+Low maintenance.
+Q #17) Can we take a full database backup in Log shipping?
+
+Answer: Yes, we can take a full database backup. It won’t affect the log shipping.
+
+Q #18) What is an execution plan?
+
+Answer: An execution plan is a graphical or textual way of showing how the SQL server breaks down a query to get the required result. It helps a user to determine why queries are taking more time to execute and, based on the investigation, users can update their queries for the maximum result.
+
+Query Analyzer has an option, called “Show Execution Plan” (located on the Query drop-down menu). If this option is turned on, it will display a query execution plan in a separate window when the query is run again.
+
+Q #19) What is a Stored Procedure?
+
+Answer: A stored procedure is a set of SQL queries that can take input and send back output. When the procedure is modified, all clients automatically get the new version. Stored procedures reduce network traffic and improve performance. Stored procedures can help ensure the integrity of the database.
+
+Q #20) List the advantages of using Stored Procedures.
+
+Answer: Advantages of using stored procedures are:
+
+Stored procedures boost application performance.
+Stored procedure execution plans can be reused as they are cached in SQL Server’s memory, which reduces server overhead.
+They can be reused.
+It can encapsulate logic. You can change the stored procedure code without affecting clients.
+They provide better security for your data.
+Q #21) What is identity in SQL?
+
+Answer: An identity column in SQL automatically generates numeric values. We can be defined as a start and increment value of the identity column. Identity columns do not need to be indexed.
+
+Q #22) What are the common performance issues in SQL Server?
+
+Answer: The following are the common performance issues:
+
+Deadlocks
+Blocking
+Missing and unused indexes.
+I/O bottlenecks
+Poor Query Plans
+Fragmentation
+Q #23) List the various tools available for performance tuning.
+
+Answer: Various tools available for performance tuning are:
+
+Dynamic Management Views
+SQL Server Profiler
+Server Side Traces
+Windows Performance Monitor.
+Query Plans
+Tuning Advisor
+Q #24) What is a performance monitor?
+
+Answer: Windows Performance Monitor is a tool to capture metrics for the entire server. We can use this tool for capturing events of the SQL server also.
+Some useful counters are – Disks, Memory, Processors, Network, etc.
+
+Q #25) What are 3 ways to get a count of the number of records in a table?
+
+Answer:
+
+1
+&amp;lt;br&amp;gt;SELECT * FROM table_Name&amp;lt;br&amp;gt;SELECT COUNT(*) FROM table_Name&amp;lt;br&amp;gt;SELECT rows FROM sysindexes WHERE id = OBJECT_ID(tableName) AND indid&amp;amp;lt; 2&amp;lt;br&amp;gt;
+Q #26) Can we rename a column in the output of the SQL query?
+
+Answer: Yes, using the following syntax, we can do this.
+
+1
+SELECT column_name AS new_name FROM table_name;
+Q #27) What is the difference between a Local and a Global temporary table?
+
+Answer: If defined inside a compound statement, a local temporary table exists only for the duration of that statement, but a global temporary table exists permanently in the database but its rows disappear when the connection is closed.
+
+Q #28) What is SQL Profiler?
+
+Answer: SQL Profiler provides a graphical representation of events in an instance of SQL Server for monitoring and investigative purposes. We can capture and save the data for further analysis. You can add filters as well to capture the specific data you want.
+
+Q #29) What do you mean by authentication modes in SQL Server?
+
+Answer: There are two authentication modes in SQL Server.
+
+Windows mode
+Mixed Mode – SQL and Windows.
+Q #30) How can we check the SQL Server version?
+
+Answer: By running the following command:
+
+SELECT @@Version
+
+Q #31) Is it possible to call a stored procedure within a stored procedure?
+
+Answer: Yes, you can call a stored procedure within a stored procedure. It is called the recursion property of SQL Server and these types of stored procedures are called nested stored procedures.
+
+Q #32) What is the SQL Server Agent?
+
+Answer: SQL Server Agent allows us to schedule jobs and scripts. It helps in implementing the day-to-day DBA tasks by automatically executing them on a scheduled basis.
+
+Q #33) What is a PRIMARY KEY?
+
+Answer: The primary key is a column whose values uniquely identify every row in a table. Primary key values can never be reused.
+
+Q #34) What is a UNIQUE KEY constraint?
+
+Answer: A UNIQUE constraint enforces the uniqueness of the values in a set of columns so that no duplicate values are entered. Unique key constraints are used to enforce entity integrity, as are primary key constraints.
+
+Q #35) What is a FOREIGN KEY
+
+Answer: When a table’s primary key field is added to related tables to create a common field that relates the two tables, it is called a foreign key in the other tables.
+
+Foreign Key constraints enforce referential integrity.
+
+Q #36) What is a CHECK Constraint?
+
+Answer: A CHECK constraint is used to limit the values or type of data that can be stored in a column. They are used to enforce domain integrity.
+
+Q #37) What are Scheduled Jobs?
+
+Answer: A scheduled job allows a user to run scripts or SQL commands automatically on a scheduled basis. The user can determine the order in which the commands execute and the best time to run the job to avoid overloading the system.
+
+Q #38) What is a heap?
+
+Answer: A heap is a table that does not contain any clustered index or non-clustered index.
+
+Q #39) What is BCP?
+
+Answer: BCP or Bulk Copy is a tool by which we can copy a large amount of data to tables and views. BCP does not copy the structures the same as the source to the destination. BULK INSERT command helps to import a data file into a database table or view in a user-specified format.
+
+Intermediate to Advanced SQL Server Interview Questions
+Q #40) What is normalization?
+
+Answer: The process of table design to minimize data redundancy is called normalization. We need to divide a database into two or more tables and define relationships between them. Normalization usually involves dividing a database into two or more tables and defining relationships between the tables.
+
+Q #41) List the different normalization forms.
+
+Answer: Different normalization forms are:
+
+1NF (Eliminate Repeating Groups): Make a separate table for each set of related attributes, and give each table a primary key. Each field can contain at most one value from its attribute domain.
+2NF (Eliminate Redundant Data): If an attribute depends on only part of a multi-valued key, remove it to a separate table.
+3NF (Eliminate Columns Not Dependent On Key): If attributes do not contribute to the description of the key, remove them to a separate table. All attributes must be directly dependent on the primary key.
+BCNF (Boyce-Codd Normal Form): If there are non-trivial dependencies between candidate key attributes, separate them into distinct tables.
+4NF (Isolate Independent Multiple Relationships): No table may contain two or more 1:n or n:m relationships that are not directly related.
+5NF (Isolate Semantically Related Multiple Relationships): There may be practical constraints on information that justify separating logically related many-to-many relationships.
+ONF (Optimal Normal Form): A model limited to only simple (elemental) facts, as expressed in Object Role Model notation.
+DKNF (Domain-Key Normal Form): A model free from all modifications is said to be in DKNF.
+Q #42) What is De-normalization?
+
+Answer: De-normalization is adding redundant data to a database to enhance the performance of it. It is a technique to move from higher to lower normal forms of database modeling to speed up database access.
+
+Q #43) What is a Trigger and what types of a trigger?
+
+Answer: The trigger allows us to execute a batch of SQL code when a table event occurs (INSERT, UPDATE, or DELETE command executed against a specific table). Triggers are stored in and managed by DBMS. It can also execute a stored procedure.
+
+3 types of triggers that are available in SQL Server are:
+
+DML Triggers: DML or Data Manipulation Language triggers are invoked whenever any of the DML commands like INSERT, DELETE or UPDATE happen on the table or the view.
+DDL Triggers: DDL or Data Definition Language triggers are invoked whenever any changes occur in the definition of the database objects instead of the actual data. These are very helpful in controlling the production and development of database environments.
+Logon Triggers: These are very special triggers that fire when the logon event of SQL Server occurs. This is fired before the setup of a user session in SQL Server.
+Q #44) What is a Subquery?
+
+Answer: A subquery is a subset of SELECT statements, whose return values are used in filtering conditions of the main query. It can occur in a SELECT clause, FROM clause, and WHERE clause. It can be nested inside a SELECT, INSERT, UPDATE, or DELETE statement, or inside another subquery.
+
+Types of Sub-query:
+
+Single-row sub-query: The subquery returns only one row
+Multiple-row sub-query: The subquery returns multiple rows
+Multiple column sub-query: The subquery returns multiple columns
+Q #45) What is a Linked Server?
+
+Answer: Linked Server is a concept by which we can connect another SQL server to a Group and query both the SQL Servers’ databases using T-SQL Statements sp_addlinkedsrvloginisssed to add a link server.
+
+Q #46) What is Collation?
+
+Answer: Collation refers to a set of rules that determine how data is sorted and compared. Character data is sorted using rules that define the correct character sequence, with options for specifying case sensitivity, accent marks, kana character types, and character width.
+
+Q #47) What is a View?
+
+Answer: A view is a virtual table that contains data from one or more tables. Views restrict data access of the table by selecting only required values and make complex queries easy.
+
+Rows updated or deleted in the view are updated or deleted in the table the view was created with. It should also be noted that as data in the original table changes, so does data in the view, as views are the way to look at part of the original table. The results of using a view are not permanently stored in the database.
+
+Q #48) Where are SQL server usernames and passwords stored in a SQL server?
+
+Answer: They get stored in the System Catalog Views sys.server_principals and sys.sql_logins.
+
+Q #49) What are the properties of a transaction?
+
+Answer: Generally, these properties are referred to as ACID properties.
+
+They are:
+
+Atomicity
+Consistency
+Isolation
+Durability
+Q #50) Define UNION, UNION ALL, MINUS, INTERSECT?
+
+Answer: 
+
+UNION – returns all distinct rows selected by either query.
+UNION ALL – returns all rows selected by either query, including all duplicates.
+MINUS – returns all distinct rows selected by the first query, but not by the second.
+INTERSECT – returns all distinct rows selected by both queries.
+Q #51) What is SQL Server used for?
+
+Answer: SQL Server is one of the most popular Relational Database Management Systems. This is a product from Microsoft to store and manage information in a database.
+
+Q #52) Which languages are supported by SQL Server?
+
+Answer: SQL Server is based upon implementing the SQL, also known as Structured Query Language, to work with the data inside the database.
+
+Q #53) Which is the latest version of SQL Server and when it be released?
+
+Answer: SQL Server 2019 is the latest version of SQL Server that is available in the market and Microsoft launched this on November 4th, 2019 with the support of the Linux O/S.
+
+Q #54) What are the various editions of SQL Server 2019 that are available in the market?
+
+Answer: SQL Server 2019 is available in 5 editions. These are as follows:
+
+Enterprise: This delivers comprehensive high-end datacenter capabilities with blazing-fast performance, unlimited virtualization, and end-to-end business intelligence for mission-critical workloads and end-user access to data insights.
+Standard: This delivers basic data management and business intelligence database for departments and small organizations to run their applications and supports common development tools for on-premises and cloud-enabling effective database management.
+Web: This edition is a low total cost-of-ownership option for Web hosts and Web VAPs to provide scalability, affordability, and manageability capabilities for small to large-scale Web properties.
+Express: Express edition is the entry-level, free database and is ideal for learning and building desktop and small server data-driven applications.
+Developer: This edition lets developers build any kind of application on top of the SQL Server. It includes all the functionality of the Enterprise Edition but is licensed for use as a development and test system, not as a production server.
+Q #55) What are the functions in the SQL Server?
+
+Answer: Functions are the sequence of statements that accept inputs, process the inputs to perform some specific task, and then provide the outputs. Functions should have some meaningful name, but these should not start with a special character such as %,#,@, etc.
+
+Q #56) What is a User-Defined function in the SQL Server and what is its advantage?
+
+Answer: User-Defined Function is a function that can be written as per the needs of the user by implementing your logic. The biggest advantage of this function is that the user is not limited to pre-defined functions and can simplify the complex code of pre-defined functions by writing simple code as per the requirement.
+
+This returns Scalar value or a table.
+
+Q #57) Explain the creation and execution of a user-defined function in SQL Server.
+
+Answer: A User-Defined function can be created in the following way:
+
+1
+2
+3
+4
+CREATE Function fun1(@num int)
+returns table
+as
+return SELECT * from employee WHERE empid=@num;
+This function can be executed as follows:
+
+1
+SELECT * from fun1(12);
+So, in the above case, a function with the name ‘fun1’ is created to fetch employee details of an employee having empid=12.
+
+Q #58) What are the Pre-Defined Functions in SQL Server?
+
+Answer: These are built-in functions of SQL Server like String functions which are provided by SQL Server like ASCII, CHAR, LEFT, etc. string functions.
+
+Q #59) Why are Views required in SQL Server or any other database?
+
+Answer: Views are very beneficial for the following reasons:
+
+Views are required to hide the complexity that is involved in the database schema and also to customize the data for a particular set of users.
+Views provide a mechanism to control access to particular rows and columns.
+This helps in aggregating the data to improve the performance of the database.
+Q #60) What is TCL in SQL Server?
+
+Answer: TCL is Transaction Control Language Commands which are used to manage the transactions in SQL Server.
+
+Q #61) Which TCL Commands are available in SQL Server?
+
+Answer: There are 3 TCL Commands in SQL Server. They are as follows:
+
+Commit: This command is used to save the transaction permanently in the database.
+Rollback: This is used to roll back the changes that are done, i.e. to restore the database in the last committed state.
+Save Tran: This is used to save the transaction to provide the convenience that the transaction can be rolled back to the point wherever required.
+Q #62) What are the 2 types of classifications of constraints in SQL Server?
+
+Answer: Constraints are classified into the following 2 types in SQL Server:
+
+Column Types Constraints: These constraints are applied to the columns of a table in SQL Server. The definition of these can be given at the time of the creation of a table in the database.
+Table Types Constraints: These constraints are applied to a table and are defined after the creation of a table is complete. Alter command is used to apply a table-type constraint.
+Q #63) How is a table type constraint applied to a table?
+
+Answer: Table Type Constraint is applied in the following way:
+
+Alter Table Name of the Constraint
+
+Alter Table Constraint_1
+
+Q #64) What are the different types of Columns Types Constraints in SQL Server?
+
+Answer: SQL Server provides 6 types of Constraints. They are:
+
+Not Null Constraint: This puts a constraint that the value of a column cannot be null.
+Check Constraint: This puts a constraint by checking some particular condition before inserting data into the table.
+Default Constraint: This constraint provides a default value that can be inserted in the column if no value is specified for that column.
+Unique Constraint: This puts a constraint that each row in a particular column must have a unique value. More than one unique constraint can be applied to a single table.
+Primary Key Constraint: This puts a constraint on having a primary key in the table to identify each row of a table uniquely. This cannot be null or duplicate data.
+Foreign Key Constraint: This puts a constraint that the foreign key should be there. A Primary Key in one table is a Foreign Key in another table. Foreign Key is used to create a relation between 2 or more tables.
+Q #65) What command is used to delete a table from the database in SQL Server and how?
+
+Answer: DELETE Command is used to delete any table from the database in SQL Server.
+
+Syntax: DELETE Name of the table
+
+Example: If the name of a table is “employee” then DELETE command to delete this table can be written as
+
+1
+DELETE employee;
+Q #66) Why is replication required on SQL Server?
+
+Answer: Replication is the mechanism that is used to synchronize the data among multiple servers with the help of a replica set.
+
+This is mainly used to increase the capacity of reading and to provide an option to its users to select among various servers to perform the read/write operations.
+
+Q #67) What command is used to create a database in SQL Server and how?
+
+Answer: CREATEDATABASE Command is used to create any database in SQL Server.
+
+Syntax: CREATEDATABASE Name of the Database
+
+Example: If the name of a database is “employee” then the create command to create this database can be written as CREATEDATABASE employee.
+
+Q #68) What function does a database engine serve in SQL Server?
+
+Answer: Database Engine is a type of service in SQL Server which starts as soon as the Operating System starts. This may run by default depending upon the settings in the O/S.
+
+Q #69) What are the advantages of having an index on SQL Server?
+
+Answer: The index has the following advantages:
+
+Index supports the mechanism of having faster data retrieval from the database.
+This forms a data structure in a way that helps in minimizing data comparisons.
+This improves the performance of the retrieval of the data from the database.
+Concluding Thoughts on SQL Server Interview
+This is all about SQL Server interview questions. I hope this article has provided insight regarding the questions that can be asked in an interview and you can now confidently handle your interview process.
+
+Practice all the important SQL Server topics to improve your understanding and confidently face interviews.
+
 SQL на собеседовании: вопросы и задачи
 SQL на собеседовании: вопросы и задачи - IT Resume
 Алексанян Андрон
