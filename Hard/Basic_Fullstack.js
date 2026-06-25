@@ -1,3 +1,323 @@
+What Is Your Greatest Accomplishment?
+‘What is your greatest accomplishment?’ is one of the most challenging common interview questions you can expect during a job interview.
+
+Similar ways interviewers can ask this question include: What is your biggest achievement?, What is your proudest accomplishment?, What is the proudest moment in your life?, What were the biggest wins in your most recent role?, What is a professional achievement you’re most proud of?, What is proudest professional accomplishment? etc.
+
+If your interviewer asks you this question about your proudest or greatest accomplishment(s), consider yourself lucky.
+
+They are giving you the opportunity to choose a story you want to highlight in the interview and really want to know what sets you apart from other qualified candidates, and also to get a better sense of what you’ve done and what you value.
+
+It is the perfect opportunity to talk about your most impressive achievements.
+
+Identifying your greatest accomplishments and creating concise interview stories about each of them is a good place to start.
+
+Wondering how to answer the question modestly, while at the same time showing off how awesome you are? In this article, we'll show you how to answer, “What is your greatest achievement?” with example answers, mistakes to avoid, and more.
+
+How to Answer “What Is Your Greatest Accomplishment?” interview question
+When answering any behavioral interview questions such as this, it’s best to organize your response with the STAR Method, which is short for: Situation, Task, Action, Result. This is a way to structure your answer to make sure hiring managers can follow your story and to make sure you don’t get sidetracked when explaining the achievement.
+
+The main idea here behind the STAR method is that every answer should cover the following topics:
+
+(S) Situation - Describe the situation and the context in which the event took place.
+(T) Task - Talk about the tasks you had to complete (i.e. your challenge or responsibility).
+(A) Action - Explain the actions you took to address the above-mentioned challenges or responsibilities.
+(R) Results - Explain the kind of results you achieved. When describing the outcome, if possible, mention numbers and quantifiable facts. E.g. “Improved cold lead response time by 20%” vs “Improved sales.”
+You’ll notice this format in the sample answers coming up. You start by explaining the general situation. Were you in a previous job? Which role?
+
+Then, explain the task at hand. What needed to be achieved or solved?
+
+Next, what action did you choose and why?
+
+Finally, what was the result, and what did you learn from the experience if anything?
+
+That’s the best way to explain your greatest accomplishments to ensure that you don’t give a long-winded answer that’s too confusing to follow.
+
+Good answers will be detailed but also concise. Aim for 60-90 seconds or less when answering interview questions about your biggest achievement.
+
+“What Is Your Greatest Accomplishment?” sample answers
+Now that you have a general idea what to do when you're asked these questions about your proudest accomplishments/achievements, let’s look at some example answers using the STAR method.
+
+The first example below can be used by a fresh graduate. While the other answers are ideal for experienced job seekers who have previous work experience.
+
+My greatest professional achievement was completing my Bachelor’s degree in 4 years with a 4.8 GPA. I had no financial support from my family and had to work a full-time job while pursuing my Accounting degree. This taught me to prioritize my time, build great habits and stay focused on my goals. I’m proud of this accomplishment and I feel that what I learned is going to give me a big advantage in my career now.
+
+My greatest professional achievement was turning around the success of my last employer’s Marketing department. When I joined, the entire team was struggling and we were failing to hit our quarterly goals. I was hired to create a new marketing plan, which I designed and implemented without any guidance. Within 6 months, we were achieving 20-25% above our goals, and my marketing plan brought in an additional $1 million in revenue for the company through the second half of last year. This additional revenue brought the company from an operating loss each quarter to profitability.
+Situation - “I think my greatest accomplishment was during my last job as a HR administrator. The hiring department had difficulty locating specific files and managing documents, especially during busy periods, and this ate up too much time.”
+
+Task – “So, I thought there was room for improvement with employee file management. I wanted to increase productivity and efficiency, and in the end, save time spent on looking for documents.” 
+
+Action - “I decided to take initiative and implement a new team HR document management software. One that could also centralize file management within the department, streamline onboarding, and also help with other small tasks (like bulk document importing, automated backfile conversions and so on).”
+
+Results - “In the end, our timesheets indicated that the time spent looking for files and documents had been reduced by 5-10 hours. There was no more lag-time between sharing documents with HR, Payroll, and supervisors. Each team or individual could instantly access the files they needed in one HR filing system, and increase their overall productivity.”
+
+My proudest accomplishment would have to be when I introduced a new application in my previous position that improved the general performance of the company. Initially, we had been using the same techniques which required a lot of human resources and resulted in time wastage. One day when I was watching a technology show, I realized that there is a better and more efficient way to get the job done. With the help of my direct manager and team members, we managed to integrate the application within our department. It was a thrilling experience to come to work every day and see people get trained to do something that I assisted in developing.
+
+My greatest accomplishment was in my former position as a social media marketer. I was eager to prove my value to the company from the onset, and hence developed social media campaigns that aimed to increase brand awareness and boost the conversion rates. I was delighted when the social media campaigns performed even better than expected, which proved my abilities to thrive in my position. Later, I was delighted to receive a promotion as the marketing director of various social media platforms. I hope I can bring my valuable skills and qualifications to your team.
+
+My department is responsible for handling the onboarding process of new hires from training to orientation. However, when I joined the team the training and orientation material was long. While it contained all the relevant information the new hires were required to have, it was difficult to assess how much the candidates had grasped effectively. Hence my team and I decided to improve on the program to make it more engaging. We presented the idea to our supervisor and s/he gave us the go-ahead. As such, we restructured the program and focused on making it more interactive as well as added fun activities in between sessions. The changes proved efficient as more people completed the program and assessment of candidates became easier than before.
+
+How not to respond wen asked about your greatest accomplishment
+When asked what your proudest achievements are in a job interview, steer clear of any of these:
+
+Rambling – A long-winded answer will indicate to your interviewer that you are unprepared. Using the STAR technique to ensure you are only mentioning the key points is an easy way to avoid this problem.
+
+Indecisiveness – Don’t give your interviewer a long list of possible achievements because you cannot decide which one to discuss. Prepare your answer in advance, so you don't have to think up an accomplishment on the spot.
+
+Trying to be funny – For example: “My greatest achievement was when I managed to get to work on time for once. Just kidding, my real greatest achievement is…”
+
+There can be a time and a place for humour in a job interview, but it is not when the interviewer has asked you a serious question.
+
+Putting others down to make yourself look better – Do not fixate on others’ failures or use them to make your accomplishment seem more impressive, even if your accomplishment involves you correcting someone else’s mistake.
+
+Finally, always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Why Should We Hire You?
+The interviewer’s job is to hire the best candidate for a job role. Most of the candidates that make it to the interview stage are qualified for the job. So merely having the qualifications won’t be enough to separate you from the crowd.
+
+Once you’ve been invited to the interview, it mostly comes down to a battle of who can sell themselves better. The better you are at convincing (or selling yourself), the greater the chances that you will be the one to get the job.
+
+
+So, let’s walk you through proven ways to answer the interview question “why should we hire you”.
+
+How to answer “why should we hire you” interview question
+This interview question is a sweeping question, and there’s no single correct answer. However, there is a formula to answer it correctly. When a hiring manager asks you, “Why should we hire you?” they are really asking, “What makes you the best fit for this position?”
+
+Your answer to this question should be a concise sales pitch that explains what you have to offer the employer.
+
+Remember, employers hire workers to solve a problem, whether it’s boosting sales, streamlining processes, or building a brand. Your goal when making your pitch is to show that you’re the best person to solve that problem.
+
+Consequently, don’t just respond with a generic answer like, “I’m smart, qualified and I want this job.” Of course, you do, or you wouldn’t be sitting in this interview. It’s almost certain that every other candidate is going to be saying nearly the same thing.
+
+You need to be unique and separate yourself from the talent pool. Otherwise, you risk falling into the same category as everyone else, which is what you're trying to avoid in the interview.
+
+When you’re getting ready for the interview, take a moment to review the job description. Make a list of the requirements for the position, including personality traits, skills, and qualifications.
+
+Then, make a list of the qualities you have that fit those requirements. Select five to seven of your strengths that correspond closely to the job requirements, and use these as the core for your answer regarding what distinguishes you as a candidate.
+
+Your strengths may include any combination of the following:
+
+Technical skills – these are the “on-the-job” skills that are needed to be successful in your role. For instance, understanding how to diagnose an engine problem or using QuickBooks for accounting.
+
+Soft skills – soft skills are things like organization, conflict resolution, or communication skills. Be ready to give examples of how you’ve displayed these competencies in past jobs.
+
+Industry experience – this refers to the years you’ve spent in your industry, not the specific jobs you’ve held. For instance, the total amount of experience you’ve had in Education, Finance, Customer Service, or whatever your field is.
+
+Experience in performing certain tasks or duties – these could be tasks that normally wouldn’t fall in your role, but you have experience with. For instance, if you are a graphic designer, but also a trained photographer, you can offer your future employer custom photography as well as custom design, and that puts you above the competition.
+
+Key accomplishments – big projects, new clients, creating systems, or just thorough, daily efficiency all count as accomplishments. What you’ve achieved in your past roles are the types of things that will help you stand out, so mention them.
+
+Awards/accolades – being awarded for your outstanding performance is a good indicator to future employers that you go above and beyond to do great work. You can build any special recognition you’ve received into your answer.
+
+Education/training – make note of any impressive education or training accomplishments, especially if you’ve made extra efforts to keep up on your industry-related skills and certifications.
+
+The best approach to this question is to focus on a combination of skills(s) and experience that you possess. If you can think of the skills that you have and your interview competition may be lacking, you might win the case pretty quickly.
+
+For example, if you are applying for an IT role, you are probably aware that your competition will have a whole set of programming skills, but they often lack project management or team leadership skills. If you happen to have programming experience and these other skills, that is your gold mine. Write these skills down and make a powerful answer based on your complete set of competencies.
+
+Or, if you are applying for a teacher position, you can put your focus on creative thinking and classroom innovation rather than just mentioning that you work well with children. (This is expected and obvious, after all, or you wouldn’t be in your profession.)
+
+N/B If this is your first job, perhaps as a fresher, you might find this question difficult to answer, especially since you are expected to build your case on previous work experience. In which case, you can center your response around your educational qualifications, soft skills and awards/accolades (if any).
+
+“Why should we hire you” example answers
+Here are some examples to help you craft your response to this common interview question:
+
+“Well, I have all of the skills and experience that you’re looking for and I’m confident that I would be a superstar in this project management role. It’s not just my background leading successful projects for top companies —  or my people skills, which have helped me develop great relationships with developers, vendors, and senior managers alike. But I’m also passionate about this industry and I’m driven to deliver high-quality work.”
+“This is a critical question in the process, thank you for asking. Based on what you've said today and from the research I've done, your company is looking for a skilled communicator and experienced marketer to grow your business and help your company stand out from the competition. At my previous company, I increased their activity by 24% by implementing targeted social media advertising. I will bring that innovative and entrepreneurial spirit to your company, and your success will be my top priority.”
+“Based on what you’ve said and from the research I’ve done, your company is looking for an administrative assistant who is both strong in interpersonal skills and in tech skills. I believe my experience aligns and makes me a great fit. I'm an effective communicator who is skilled in giving oral presentations, speaking on the phone, and communicating via email. I'm also fluent in a number of relevant software programs, including content management systems and spreadsheet suites. I’d love to bring my diverse skill set to your company.”
+“Honestly, I almost feel like the job description was written with me in mind. I have the 6 years of programming experience you’re looking for, a track record of successful projects, and proven expertise in agile development processes. At the same time, I have developed my communication skills from working directly with senior managers, which means I am well prepared to work on high-profile, cross-department projects. I have the experience to start contributing from day one and I am truly excited about the prospect of getting started.”
+
+“You should hire me for my passion and proven abilities in organization for office efficiency. I pride myself on my time management, coordination and interpersonal skills. In my previous role as an administrative assistant, I came up with a plan to reorganize the office supply closet by category. We placed fewer orders and saved 30% on office supplies year over year. I’m excited to bring my skills to this role.”
+
+“I have the experience and the attitude to excel in this production assistant position. I have almost two years of television production experience — including two summers interning at The Ellen Show, where I was exposed to all aspects of TV production and worked so hard the first summer that they invited me back for a second summer and gave me more responsibilities. During my senior year at UC San Diego, I have been working part-time for a production company, where I have served in an assistant role but also recently had the chance to help edit several episodes. I have a reputation for getting things done — and with a smile on my face.
+
+That’s because I love working in the television industry and am excited to learn and get experience in every way possible.”
+
+“You've explained that you're looking for a sales executive who is able to effectively manage over a dozen employees. In my 15 years of experience as a sales manager, I've developed strong motivational and team-building skills. I was twice awarded manager-of-the-year for my innovative strategies for motivating employees to meet and surpass quarterly deadlines. If hired, I will apply my leadership abilities and strategies to achieve profit gains in this position.”
+
+“You describe in the job listing that you're looking for a special education assistant teacher with an abundance of patience and compassion. Having served as a tutor at a summer school for dyslexic children for the past two years, I've developed my ability to be extremely patient while still achieving academic gains with my students. My experience teaching phonics to children aged 6 to 18 has taught me strategies for working with children of all ages and abilities, always with a smile.”
+
+“My manager recently told me that he’s never seen anyone with more advanced Microsoft Office skills than me!
+
+But, I would like to admit that I have acquired all my skills on job, from my past experiences, which when implemented at your organization, can bring much value and growth to this esteemed organization.
+
+I think the job role being offered will serve my purpose along with the development of the organization.”
+
+“You've explained that you're looking for a sales executive who is able to effectively manage over a dozen employees. In my 15 years of experience as a sales manager, I've developed strong motivational and team-building skills. I was twice awarded manager-of-the-year for my innovative strategies for motivating employees to meet and surpass quarterly deadlines. If hired, I will apply my leadership abilities and strategies to achieve profit gains in this position.”
+
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+What is Your Greatest Strength?
+"What is your greatest strength?" may seem like an easy job interview question. However, for many candidates it can be tricky—either they're too modest in their response or they don't highlight those strengths that most closely match the job requirements. Many candidates are unsure about how to answer this question. It’s important to be prepared for this question and have an answer ready. Even if you aren’t asked this question, you will be aware of your strengths and what you can bring to the position.
+
+In this article, you'll find a guide on how to answer the interview question about your greatest strengths, and what—and what not—to say when you respond, with example answers too.
+
+How to answer “What is your greatest strength?” interview question
+Your strengths reveal a lot about you as a candidate. When you are asked questions about your strengths, discuss attributes that will best qualify you for the specific job and set you apart from the other candidates.
+
+By asking you about your greatest strengths, here’s what the interviewer is looking for:
+
+They want to know if you're aware of your own strengths
+They want to know if your strengths are relevant for the job role
+They want to know if you’re realistic
+While answering, the hiring manager will also be looking for examples from you. So in order to answer appropriately, you need to convey the above 3 points in your answer and provide a real-life, relevant example of the strength in action.
+
+You can claim you’re the most tech-savvy person in the world and amazing at  project management, but without providing an example, you might as well be making the whole thing up.
+
+So, when considering which strength to highlight, think about the last time you used it. 
+
+What happened? How did you react to the situation? How did your strength help solve the problem?
+
+Basically, the best approach to answering this interview question is as follows:
+
+State your strength (must be relevant to the job)
+Provide an example of when you used this strength and how
+(Optional) Describe what kind of impact you made
+The more closely your strengths match the stated job requirements, the more likely you'll be to get a job offer.
+
+“What is your greatest strength?” sample answers
+Below are real-life example answers for the the interview question “What is your greatest strength?”:
+
+My greatest strength is my writing skills. I can also work to tight deadlines under pressure. For example, I was once asked to complete a project that fell through the cracks. My editor discovered the mistake two hours before the deadline. It was an important piece that gave our publication a scoop on the topic in question. Not only did the piece have to go out on time, but it had to be perfect. I hunkered down and wrote. The result? The article was on time and acclaimed.
+I have a solid work ethic. When I'm working on a project, I don't just want to meet deadlines. Rather, I prefer to complete the project well ahead of schedule. Last year, I even earned a bonus for completing my three most recent reports one week ahead of time.
+I’ve always preferred to work in groups and find that my collaborative nature is one of my strongest attributes. On projects that I directed, I work well to inspire diverse team members and work side by side with them to achieve the project goals. In fact, I’ve increased productivity by ten percent over the course of two years. 
+Whenever new software is released, I’m always the first one to test and get familiar with it. I love pushing the edge and learning every aspect of the new software. In fact, just last week I found a software issue with one of my video games. I called the developer, and they fixed it right away. This position will give me the opportunity to apply my passion and help make programs better for your company.
+I am a skilled sales representative with over ten years of experience. I have exceeded my sales goals every quarter by at least 20%, and I've earned a bonus each year since I started with my current employer.
+I consider my leadership skills to be one of my greatest strengths. During my time as a department head, I successfully merged two teams and organized training programs for all team members to ensure that everyone was confident in their new role. As a result, we were able to increase sales by 5% within our first month as a new team.
+My greatest strength is attention to detail. I’ve always been detail-oriented in my work, and it’s something I enjoy. I saw on your job description that this role involves a lot of detail-oriented work, which is one reason I applied. In my last job, I was frequently required to manage 8-10 client projects at a time, and often had 75 different tasks going on in those different projects. Being detail-oriented allowed me to deliver 100% of my projects on-time to our clients. In fact, I finished 45% of my assigned projects ahead of schedule.
+Notice how each answer above has quantifiable information that validates your strengths. This helps the interviewer understand how much you have to offer if you were to be hired.
+
+Finally, always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Do You Have Any Questions for Us?
+As a job interview draws to an end, it's common for the interviewer(s) to ask, "Do you have any questions for us?". While it's tempting to answer with a polite "No thanks," you should always ask questions.
+
+In fact, interviewers expect you to ask questions — to assess your interest in the role, see if you've been listening, and determine if you've researched the company. If you don't ask questions, the interviewer might think you haven't done your homework or aren't interested in the opportunity.
+
+Therefore, it makes sense to plan for it in advance and be prepared. Having a few quality questions prepared will ensure you're ready for this question and can help set you apart from the competition.
+
+In this article, we discuss the types of questions to ask and the types of questions to avoid when asked "Do you have any questions for us?".
+
+How to Answer "Do You Have Any Questions for Us?" in an Interview
+While preparing for an interview, develop a list of questions that you want answered by the interviewer and keep in mind that these questions may change slightly based upon your interviewer.
+
+For instance, if you're meeting with the person who will be your manager, you might ask specific questions about your intended role. If you're meeting with someone from human resources, your questions might focus on the interviewing process or on the overall organization of the company.
+
+Below are a few broad categories of questions that are appropriate to ask your interviewer when they throw the common interview question "Do you have any questions for us?" at you.
+
+Questions about the job
+The hiring manager may have already covered information about the job’s functions, but this is the ideal time to get more details about the day-to-day responsibilities, expectations and goals. You could ask:
+
+Can you share more about the day-to-day responsibilities of this role? How would you describe the pace of a typical day?
+If I were hired for this role, what would be expected of me to achieve in my first month?
+What is the Key Performance Indicator (KPI) for this role?
+What mechanisms are in place for performance reviews and when would I receive my first formal evaluation?
+How many people are on the team I’d be part of?
+Why did the last person in this position leave?
+How long has this position been open?
+Is this a new position?
+Would I be working in the office or remotely?
+What does the onboarding process look like at this company?
+Is travel required for this job?
+Will I be expected to work nights and/or weekends for this position?
+Questions about the company
+Asking questions about the company reveals that you’ve done your research and gives you a better picture of the company’s outlook, values and culture. Plus, it gives the impression that you’re interested in growing with the company long-term. Consider asking:
+
+How would you describe the management style of the organization?
+What's something that makes you happy about coming into work each day?
+How long have you been at the company?
+Can you talk about company culture?
+What is the greatest challenge facing the company?
+What are the company's goals for the upcoming year?
+What kind of growth does the company expect to see within the next five years?
+Can you describe some of the company’s recent challenges and achievements?
+Questions about you
+You can use this moment to get a sense of how the interviewer perceived you during the interview, and if they think you're a good candidate. With these questions, you might want to preface by expressing your excitement for the role, and then (based on the feedback you get) address the issue on the spot. You can ask:
+
+What are your concerns about my candidacy?
+Are there any qualifications that you think I'm missing?
+Do feel I’m lacking in a particular area or skill set?
+Questions about the next steps
+Save your final question to ask about the next steps in the hiring process. You’ll convey your interest in the job one last time as well as learn about the hiring timeline, potential additional interviews or when you can expect to hear from them. You might say:
+
+I’ve really enjoyed learning more about this opportunity. What are the next steps in the hiring process?
+Thank you for explaining the role to me in such depth. When might I hear back from you regarding a decision?
+Mistakes to avoid when answering "Do you have any questions for us?"
+While you shouldn't be afraid to ask tough questions, there are some general things you should avoid:
+
+Not having questions: You know this question is coming, and interviewers expect you to have questions, don't make the mistake of not having any.
+Asking questions you could answer yourself: If you can answer your question with a quick Google search or by reading the company's website, skip it. The interview is your opportunity to get a deeper understanding of the company from someone who works there. Simple questions can also indicate to the interviewer that you haven't taken the time to do your research.
+Complicated or multi-part questions: They're hard to follow and even harder to answer. Try to keep each question focused on a specific point.
+Self-serving questions: While it's OK to ask about salary, health insurance, vacation time, and other perks, remember that the main point of a job interview is to demonstrate you're an excellent fit for the company.
+Personal questions and gossip: This is one you'll have to play by ear, some interviewers like talking about their personal lives before, during, or after an interview, while others prefer to avoid it. Use your judgment.
+Yes or no questions: Most yes or no questions can be answered by Google or by reading the company's website. Ask questions that open up the conversation and help you get an inside look into the company.
+Asking what the company does: This is a huge red flag that you haven't done your research. You should always show respect to yourself and the company you're interviewing with by investing time into researching the company before you apply.
+Don't ask too many questions: While you want to be prepared to ask one or two, take the hint and wind down your questions when interviewers begin to shuffle paper, glance at their watch, or wake up sleeping computers.
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
+Are You a Leader or a Follower?
+A common question for interviewers to ask is "Are you a leader or a follower?" When an interviewer asks if you are a leader or a follower, it might be tempting just to respond that you are a leader, since taking on responsibilities sounds like what a potential employer would want.
+
+However, a hiring manager is looking for something more complex. He or she is trying to see if you are versatile and are willing to assume different roles based on what the company needs.
+
+As you are answering this interview question, it is important to talk about past experiences that show you display characteristics of both a leader and a follower. Remember, both options have negative connotations:
+
+Follower – Someone that can’t think for themselves or take charge when needed.
+Leader – Someone that can’t take orders.
+Therefore, every organization values some leadership qualities but wants someone who will follow directives as well. Try to maintain a balance between the two.
+
+In this article, we discuss how to answer this question and provide sample answers and tips for how to answer.
+
+How to answer "Are you a leader or a follower?" in an interview
+The question of whether you’re more of a leader or follower is tricky and it’s not always clear why the interviewer is asking.
+
+In general, though, they’re asking this interview question with their particular job requirements in mind! They want to figure out if you’ll fit into the role.
+
+Will you be able to do what’s expected of you? Will you enjoy the role and be likely to stay?
+
+So the bottom line is: They’re asking because they want to know if you’ll fit with the role and with the team.
+
+That means you need to do one important thing: Never go into an interview without reviewing the job description and knowing what the company wants! (The job description is the single best place to see what the employer is looking for in someone they hire).
+
+If you’re unsure of what the interviewer wants for their job, you can say you’re good at both leading and following. However, if you’re confident that the job requires one particular skill set over the other (for example, if you’re interviewing for a Senior Director position where you’ll be overseeing a team of 20), you can be more precise in your answer.
+
+While answering this interview question, tell a story that illustrates how you can be both a leader and a follower. Use the STAR method to frame your answer, focusing on Situation, Task, Action, and Results. This method makes it easy for you to tell your story with clear details about a problem and how you helped solve it. A STAR response includes the:
+
+Situation: A brief description of the situation or challenge you faced
+Task: A brief description of your role in the situation and what you needed to achieve
+Action: A detailed explanation of the specific actions you took, highlighting the most impactful steps you took
+Result: A concise explanation of the results of your actions, including quantitative or tangible examples if possible and what you learned from the situation
+Here are the do's and don'ts to consider when answering the interview question "Are you a leader or a follower?" Keep all of the below in mind when formulating a response to this question. Remember to answer the question with confidence and to maintain eye contact with your interviewer when providing your response.
+
+Do
+Talk about times where you took charge and assumed responsibilities.
+Discuss times when you followed instructions successfully.
+Mention past experiences where you were both a leader and a follower.
+Focus on how being both a leader and a follower has a positive impact on the business.
+Demonstrate that you understand the appropriate contexts in which one would be a leader vs. a follower.
+Emphasize skills that would benefit both a leader and a follower.
+Answer this question in a way that lets the interviewer know that you possess the capabilities to assume both roles, and that you can change based on the needs of the position.
+Don't
+Say you are solely a leader and only talk about your leadership traits.
+Say you are solely a follower and only talk about times where you took orders and performed tasks.
+Come across as indecisive--you must provide answer that proves you possess the fluidity to be both a leader and a follower.
+Example answers for "Are you a leader or a follower?"
+"In past jobs, I have been able to adapt to whatever was expected of me. When a group needed a leader, I was more than capable of handling that role, but at the same time, I recognize when it is better to take a step back and take direction from someone who is more knowledgeable than I am."
+"I like to think of myself as both a good leader and follower. I approach each situation differently, and I respond to what it needs from me. I enjoy leading projects that relate to my strengths, but I'm also happy to follow the lead of others who may be a better fit.
+
+For example, the current HR department at my company includes an HR manager and two generalists, including myself. Our company president assigned the department two big projects. We needed to rewrite the employee handbook and develop a new benefits package for our employees at the same time.
+
+I have more experience with benefits, so I volunteered to lead this project. My manager provided me with some previous research as a starting point, I provided her with weekly updates about my progress. I also provided the other generalist with feedback about her drafts of the handbook. Since we both worked on projects more related to our specialties, we were able to complete both projects in full two weeks before our deadline."
+
+"I would say that I am both. I definitely try to lead by an example, and I am not afraid to share my opinion, even with my superiors, or with people who have 20 years of experience in the field. On the other hand, I try to stay humble, and I believe that learning never ends. That’s why I do not consider myself superior to my subordinates or basically to anyone in the workplace. Neither superior, nor inferior. I am receptive to feedback and try to learn from people around me. That’s why I would say that I am both a leader and a follower."
+
+"I play both roles well. I love to lead projects and teams. In my last position, I spearheaded two large projects taking 12 months in total and bringing our company $104,000 in revenue. I had 15 people reporting to me for those projects. However, I’m also able to follow someone’ else’s lead when necessary. I’ve assisted on projects where I wasn’t the leader, and I knew that trying to be a second leader would only disrupt the team and work. I think that by recognizing what’s needed based on the situation and my role, I’m able to decide how to best use my leadership abilities. Overall, I’m very comfortable leading, though, and it’s something I’m eager to do more of in my career. I saw on the job description that this position would be leading a team of six and possibly hiring a couple of more people as the group expands, and that’s something that excited me a lot about the job!"
+
+"I am a leader and follower. Depending on the task, situation, and people. I can take charge when needed and know how to listen and follow directions. I think the most important thing is to adapt and be flexible.
+
+I depend on what is required of me at any given moment. Being a leader or follower isn’t about one quality or another. It’s about being able to read a situation and respond accordingly."
+
+Always remember, a great way to prepare for interview questions is to have a friend or family member pretend to be the interviewer who asks you questions while you practise your answers.
+
 Top 30 MERN Stack Developer Interview Questions and Answers
 By Lukesh S
 
