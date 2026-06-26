@@ -1,3 +1,406 @@
+Junior Front-end Developer Interview Questions
+01
+
+Explain what the "box model" CSS is and the layout components that make it up?
+The CSS box model is a rectangular layout paradigm for HTML elements. It consists of the following elements:
+
+Content - The content of the field, which reflects all images and text
+
+Padding - the transparent area that surrounds the content (the amount of space between the border and the content)
+
+Border - border surrounding the padding (if any) and content
+
+Margin - is the transparent area around the border (the amount of space between the border and any neighboring elements)
+
+02
+
+What are some of the main benefits of REST web services?
+Here are some of the main benefits of REST web services:
+
+The learning curve is very simple because it works based on HTTP protocols
+Supports several data transfer technologies such as ext, XML, JSON, image, etc.
+Has no predefined contract between server and client, so loosely coupled implementation
+REST is a very lightweight protocol
+REST methods can be easily tested in the browser
+03
+
+What is Cross-Site Scripting (XSS)?
+Cross-Site Scripting (XSS) is an attack that occurs when an attacker uses a web application to send malicious code to a different end-user. This code is usually in the form of a browser-side script.
+
+The page provided by the server when someone requests it is unaltered. The XSS attack exploits weaknesses in the page that include a variable submitted in a request to show up in the raw form in the response. The page will only display what was sent along with this request.
+
+04
+
+What is "strict mode"?
+Strict Mode is a new ECMAScript 5 feature that allows you to specify a program or function in n a "strict" operating context. This strict context prevents some actions and also throws more exceptions.
+
+Here's an example of such a strict mode:
+
+// Non-strict code ...
+
+(Function () {
+
+  "Use strict";
+
+  // Define your library strictly ...
+
+}) ();
+
+// Non-strict code ...
+
+05
+
+What is a CSS rule?
+Web browsers often apply the CSS rule to documents to influence their content. This CSS rule is formed from several things:
+
+A selector that selects from a list of elements to which you want to apply updated property values.
+A set of properties, which have values ​​set to update how the HTML content is displayed
+It is also worth adding that the set of CSS rules contained in the stylesheet determines how the web page should look.
+
+06
+
+What is meant by the KISS principle?
+KISS, a backronym for "keep it simple, stupid" is a design principle that was invented by the U.S. Navy in 1960. The KISS principle states that almost all systems work best when they remain simple rather than made complicated. That is why design should always be kept simple and avoid unnecessary complexity.
+
+07
+
+What is the difference between span and div?
+Div is a block element
+Span is an inline element
+Placing a block element inside an inline element is illegal. Although a div can have a p tag, and a p tag can have a span, a span can't have a div or p tag inside.
+
+08
+
+When would you use ReactJS?
+This open-source front-end JavaScript library is primarily used for the front-end development of one-page applications as well as for managing the view layer for mobile and web apps.
+
+09
+
+What is polymorphism?
+In the object-oriented programming paradigm, Polymorphism is the ability of an action or method to perform different functions based on the object it’s acting upon. Some aspects of Polymorphism include overloading, overriding and dynamic method binding.
+
+10
+
+When would you use jQuery?
+jQuery is a good option for simple tasks. It has several advantages over other frameworks.
+
+easy to expand
+Easy to use and learn
+Easy to use for DOM manipulation and traversal.
+Cross-browser support (IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+)
+AJAX Capabilities
+Ways to change and apply CSS, and create animations
+Lots of plug-ins for all kinds of needs
+Mid Front-end Developer Interview Questions
+01
+
+What does SOLID mean? What are its principles?
+S - Single-responsibility principle. A class should have only one job
+
+O - Open-closed principle. Objects must be open for extension but closed for modification.
+
+L - Liskov substitution principle. Let q (x) be a property provable about objects of x of type T. Then q (y) should be provable for objects y of type S where S is a subtype of T.
+
+I - Interface segregation principle. You cannot force clients to implement an interface that they are not using.
+
+D - Dependency Inversion Principle. Entities must depend on abstractions, not on concretions.
+
+02
+
+What is ClickJacking?
+ClickJacking is a malicious technique that is used to trick users into clicking on a certain element that is in reality different from the element that is presented to a user. ClickJacking is used to illegally obtain personal information or to take control over someone's device.
+
+03
+
+What is load balancing and how does the front-end load balancer work?
+Load balancing is a method for allocating capacities across numerous machines or clusters. A front-end load balancer is a server that uses a virtual IP address to accept requests from a client; it ensures that no single machine is overloaded or underloaded. A load balancer determines the most suitable reverse proxy service based on the specified scheduling algorithm and forwards the requests to the needed reverse proxy server.
+
+04
+
+What is Coercion in JavaScript?
+Coercion is a JavaScript conversion between two different built-in types. There are two forms of coercion: explicit and implicit.
+
+Here is an example of explicit coercion:
+
+var a = "42";
+
+var b = Number (a)
+
+a; // "42"
+
+b; // 42 - the number!
+
+Here's an example of an implicit coercion:
+
+var a = "42";
+
+var b = a * 1; // "42" implicitly coerced to 42 here
+
+a; // "42"
+
+b; // 42 - the number!
+
+05
+
+What is a Mixin?
+Mixin is one of the blocks of code with which we can group CSS declarations. We can reuse these declarations on the site.
+
+Here's how to define Mixin:
+
+@mixin grid ($ flex: true / * default argument * /) {
+
+@if $ flex {
+
+        @include flex;
+
+} @Else {
+
+        display: block;
+
+}
+
+}
+
+Here's what you need to do to use Mixin:
+
+/ * Scss * /
+
+.row {
+
+    @include grid (true);
+
+}
+
+/ * Css * /
+
+.row {
+
+    display: -webkit-flex;
+
+    display: flex;
+
+}
+
+06
+
+What's the difference between "resetting" and "normalizing" CSS? Which one is better to use and why?
+Resetting - designed to remove all default browser styles on elements. Margins, padding, and fonts are reset to the same.
+
+Normalizing - keeps styles that are useful rather than dumping everything. It can also fix all errors for common browser dependencies.
+
+It's better to use resetting if you are working on a very unconventional website design and need to create a lot of your style.
+
+07
+
+What is the semantic difference between PUT and POST?
+PUT puts a file or resource at a particular URI and exactly at that URI. If there is already a file in this URI, then PUT will replace it.
+
+POST sends data to a specific URI and waits for a file or resource in that URI to process the request. At this point, the server decides what to do with the data in the context of that resource.
+
+08
+
+What is a Grid System?
+A grid system is a framework that allows developers to arrange content both vertically and horizontally. These systems include two main elements - rows and columns.
+
+Examples of Grid Systems are:
+Simple grid
+Pure
+Flexbox Grid
+Bootstrap
+Foundation
+09
+
+When would you use AngularJS vs jQuery?
+jQuery is the only tool that can solve a single specific problem like dom manipulation, while AngularJS is a complete web framework that includes different kinds of tools for solving different problems like routing, model bindings, dom manipulation, etc. JqLite (a subset of jQuery) is part of the AngularJS and you use it to solve the dom-manipulation thing.
+
+10
+
+What is webpack?
+Webpack is an open-source JavaScript module bundler. Its main purpose is to put all of the assets, including Javascript, images, fonts, and CSS, in a dependency graph. Webpack gives control over how to treat different assets it encounters.
+
+Senior Front-end Developer Interview Questions
+01
+
+Explain the Prototype Design Pattern
+The Prototype Pattern creates new objects. But the peculiarity is that instead of creating non-initialized objects, it returns objects that are initialized with values ​​ copied from a prototype - or sample - object.
+
+One example is the initialization of business objects with values ​​that match the default values ​​in the database. Classical languages ​​rarely use the Prototype pattern, but JavaScript being a prototypal language uses this pattern in the construction of new objects and their prototypes.
+
+02
+
+What is Closure in JavaScript?
+The closure is a function that is defined inside another function and which also has access to a variable. This variable is declared and defined in the parent function scope.
+
+The closure has access to the variable in three scopes:
+
+Variable declared in his scope
+Variable declared in parent function scope
+Variable declared in the global namespace
+An example of such a closure:
+
+var globalVar = "abc";  // Parent self invoking function
+
+(Function outerFunction (outerArg) {// begin of scope outerFunction  // Variable declared in outerFunction function scope
+
+var outerFuncVar = 'x';   // Closure self-invoking function
+
+(Function innerFunction (innerArg) {// begin of scope innerFunction  // variable declared in innerFunction function scope
+
+var innerFuncVar = "y";
+
+console.log (
+
+"OuterArg =" + outerArg + "\ n" + "OuterFuncVar =" + outerFuncVar + "\ n" + "InnerArg =" + innerArg + "\ n" + "InnerFuncVar =" + innerFuncVar + "\ n" + "GlobalVar =" + globalVar)  // end of scope innerFunction
+
+}) (five); // Pass 5 as parameter  // end of scope outerFunction
+
+}) (7); // Pass 7 as parameter
+
+03
+
+What is Content Security Policy?
+Content Security Policy (CSP) is an HTTP header that allows operators to monitor and control where resources can be loaded onto their website. Using this header is one of the best ways to prevent cross-site scripting (XSS) vulnerabilities. Since there are difficulties with retrofitting CSPs on all existing websites, CSP is a must for all new websites, and it is highly recommended to implement CSPs on all existing high-risk sites.
+
+The biggest benefit of CSP is disabling the use of unsafe-inline JavaScript. Inline JavaScript means that data that users enter incorrectly on the site can generate code that will be interpreted by the browser like JavaScript. By using CSP to disable inline JavaScript, you can effectively eliminate almost all XSS attacks against your site.
+
+04
+
+What are IIFEs?
+This stands for Immediately-Invoked Function Expression. This pattern is often used to avoid polluting the global namespace because all the variables used inside the IIFE are not visible outside its scope.
+
+Example using IIFEs:
+
+(Function IIFE () {
+
+console.log ("Hello!");
+
+}) ();
+
+// "Hello!"
+
+05
+
+How will you handle HTTP errors in Angular applications?
+You can work with HTTP errors if you attach a "catch" to your request. For example:
+
+import {Injectable} from '@ angular / core';
+
+import {Observable} from 'rxjs / Observable';
+
+import {HttpClient} from '@ angular / common / http';
+
+import 'rxjs / add / observable / throw';
+
+@Injectable ()
+
+export class Client {
+
+constructor (
+
+public http: HttpClient
+
+) {}
+
+public fetch () {
+
+return this.http.post ('https://thisurliswrong123123.com ", {})
+
+.catch ((err) => {
+
+// Do messaging and error handling here
+
+return Observable.throw (err)
+
+});
+
+}
+
+}
+
+06
+
+Explain tsconfig.json file
+This file is used to give the options about TypeScript used for the Angular project.
+
+{
+
+"CompilerOptions" {
+
+"Target": "es5",
+
+"Module": "commonjs",
+
+"ModuleResolution": "node",
+
+"SourceMap": true,
+
+"EmitDecoratorMetadata": true,
+
+"ExperimentalDecorators": true,
+
+"Lib": ["es2015", "dom"],
+
+"NoImplicitAny": true,
+
+"SuppressImplicitAnyIndexErrors": true
+
+}
+
+}
+
+07
+
+What components are in Angular?
+Each program consists of components. Each component is a logical boundary of functionality for the application. Below we have given what the component consists of:
+
+Class - This is like a C or Java class which consists of properties and methods
+
+Metadata - This is used to decorate the class and extend the functionality of the class
+
+Template - This is used to define the HTML view which is displayed in the application
+
+08
+
+How to use a function A class?
+function functionName (name) {
+
+this.name = name;
+
+}
+
+// Creating an object
+
+var functionName = new functionName ("WTEN")
+
+console.log (functionName.name) // WTEN
+
+09
+
+Why is the W3c Standard Code needed?
+One of the main goals of such standards is to provide cross-platform compatibility and more compact file sizes. These standards aim to decouple "content" from "formatting" by implementing CSS. It eases maintenance and development.
+
+10
+
+What is the difference between == and ===?
+The 3 equal signs mean "equality without type coercion". Using the triple equals, the values ​​must be equal in type as well.
+
+== is equal to
+
+=== is exactly equal to (value and type)
+
+0 == false // true
+
+0 === false // false, because they are of a different type
+
+1 == "1" // true, auto type coercion
+
+1 === "1" // false, because they are of a different type
+
+home-05
+Hiring front-end developers?
+We have the people you are looking for!
+
+
 Собеседование для фронтенд-разработчика на JavaScript: самые лучшие вопросы
 9 мин
 214K
