@@ -1,3 +1,679 @@
+Top 80 Frontend Interview Questions and Answers
+Lesson 9 of 33By Kusum Saini
+
+Last updated on Jun 22, 2026739852
+Top 80 Frontend Interview Questions and Answers
+PreviousNext
+Table of Contents
+Front End Developer Interview Questions for FreshersFront End Developer Interview Questions for Experienced Git Interview QuestionsHTML Interview QuestionsCSS Interview QuestionsView More
+A comprehensive front-end developer interview will assess your core knowledge, problem-solving ability, and hands-on experience. Be prepared for questions on HTML, CSS, JavaScript, and popular frameworks, as well as scenarios related to performance optimization, debugging, and collaboration skills.
+
+Front End Developer Interview Questions for Freshers
+1. What are Meta Tags in HTML?
+Meta tags are those tags that go inside the Head tag of the HTML page
+Meta tags are not for the interface; they are important for the browser
+Meta tags are always in name or value pairs
+Meta tags consist of character encoding, title, and even description
+2. State some basic design elements.
+Some of the basic elements of design are 
+
+Line: a line mark made with any pen or brush, or even any edge created when two shapes meet
+Size: it is the area occupied by one shape with respect to another
+Texture: the surface of the shape - Smooth, soft, hard, glossy, and such
+Color: The light reflected from the objects. The three characteristics of color are hue, value, and intensity
+3. What is Load Balancing?
+Load balancing is the distribution of all the incoming network traffic across the backend servers.
+
+4. What does npm stand for?
+npm stands for Node Package Manager.
+
+5. What is scope in JavaScript? 
+In JavaScript, every function has its scope. It is basically a collection of rules for how variables are accessed and variables themselves.
+
+Unleash Your Career as a Full Stack Developer!AI-Powered Full Stack Developer ProgramEXPLORE COURSEUnleash Your Career as a Full Stack Developer!
+6. How are JavaScript and jQuery different?
+jQuery is a library built with JavaScript, and JavaScript is the language itself.
+
+7. What is Content Security Policy? 
+Content Security Policy, also known as CSP, is a header in HTML that lets the site operators gain full control over the resources that are loading on the site.
+
+8. What is Cross-Site Scripting (XSS)?
+XSS, Cross-Site Scripting, is an attack that takes place when an attacker uses a web application to send malicious code, in the form of browser-side script, to another user. 
+
+9. What is User-Centered Design?
+User-centered designs are those designs that the designer solely focuses on, which are according to the needs of users and them in every phase of designing. 
+
+10. What is callback hell?
+JavaScript, which uses callbacks and is hard to get the right intuition. The callbacks are stacked in the form of a pyramid structure.
+
+11. What is Polymorphism?
+The word Polymorphism means having many different forms. In an object-oriented context, polymorphism refers to a single interface with multiple functions. 
+
+12. What is Strict Mode?
+A new feature of ECMAScript 5 is Strict mode, which lets you place a function, or a program, in a “strict” context of operation.
+
+13. What is meant by the KISS principle? 
+KISS, a backronym of “Keep it simple, stupid” was the principal design in the US Navy in 1960. The KISS principle states that the simpler the system, the better it works. 
+
+14. What does SOLID stand for?
+S.O.L.I.D is an acronym of object-oriented design principles 
+
+S- single responsibility principle 
+
+O- open-closed principle 
+
+L- liskov substitution principle 
+
+I- interface segregation principle 
+
+D- dependency
+
+15. What is ClickJacking?
+Clickjacking is an attack that lets the developer fool the users into thinking that they are clicking one thing, but they are clicking something else.
+
+Learn Core to Advanced Java ConceptsJava Certification Training CourseExplore ProgramLearn Core to Advanced Java Concepts
+16. What is Coercion in JavaScript? 
+The conversion of two different built-in Types of JavaScript is called Coercion. It comes in two forms, Explicit and implicit. 
+
+17. What is IIFE?
+IIFE stands for Immediately-Invoked Function Expression. This executes immediately after you create it.
+
+18. What is a grid system in CSS?
+A structure that lets the content be placed both horizontally and vertically in a consistent and manageable way. There are two key components of the Grid system: Rows and Columns. 
+
+19. What is Mixin?
+A Mixin is a code block that lets us group CSS declarations that we can reuse in our site. 
+
+20. Mention ways to decrease page load time.
+The best ways to decrease the page load time are 
+
+Image optimization
+Browser cache
+Compress and optimize content 
+Front-End Developers earn an average salary of $126,000, but the role is not just about making pages look good. Simplilearn’s Front-End Developer roadmap shows how responsive design, API integration, accessibility, and performance optimization shape the career.
+Front End Developer Interview Questions for Experienced 
+21. What is Stringify?
+To transform a JavaScript object to a string, Stringify is used. 
+
+22. State the elements of the CSS Box Model.
+CSS Box Model consist of 4 elements 
+
+Content
+Padding
+Border
+Margin 
+23. What is the benefit of Srcset?
+When we want to generate many new solutions of exact images on several devices, Srcset is used. This helps improve the UI. 
+
+24. What is MySQL?
+MySQL is a relational Database Management System that uses SQL as its standard language to manage its database. MySQL, just like other databases, uses a Table-like structure.
+
+25. What is MongoDB?
+MongoDB is a NoSQL database that shows the data elements using a JSON-like Structure. To make changes in MongoDB, the programmer has to use MongoDB Query Language.
+
+Accelerate your career as a skilled Full Stack Developer by enrolling in a unique AI-Powered Full Stack Developer Course. Get complete development and testing knowledge on the latest technologies by opting for this course.
+Git Interview Questions
+26. What is a ‘Version Control System’? 
+Version_Control_Git.
+
+A version control system (VCS) is a program that records changes to a file or set of data, allowing for the restoration of previous versions if necessary. This guarantees that everyone on the team is working on the most up-to-date version of the file. 
+
+27. Differentiate Between Centralized and Distributed Version Control Systems.
+VersionControlSystemTypes
+
+In a Centralized Version Control System:
+
+It stores all file versions on a central server.
+No developer has a complete copy of the local system's files.
+If the project's central server fails, you will lose all the project's data.
+In a Distributed Version Control System:
+
+Every developer has a copy of all the code versions on their computer.
+Improves the ability to work offline and eliminates the need for a single backup location.
+Learn Java With Expert-Led TrainingJava Certification Training CourseExplore ProgramLearn Java With Expert-Led Training
+28. Explain Git Push and Git Pull
+Git_Push
+
+The 'git push' command is used to push the contents of a local repository to a remote repository. It runs a push after it has changed a local repository to share the changes with remote team members.
+
+Git_Pull.
+
+The 'git pull' command is used to retrieve changes from a remote repository and merge them into the local repository. It consists of two commands: git fetch followed by git merge.
+
+29. Name a few Git Commands and Functions
+Git Config - Configure the username and email address
+Git init - Initialize a local Git repository
+Git Add - Add one or more files to the staging area
+Git Diff - View the changes made to the file
+Git Commit - Commit changes to the head but not to the remote repository
+Git reset - Undo local changes to the state of a Git repo
+Git Status - Displays the state of the working directory and staging area
+Git Merge - Merge a branch into an active branch
+Git Push - Upload content from the local repository to a remote repository
+Git Pull - Fetch and download content from a remote repository
+30. Explain the Difference Between Git Pull and Git Fetch
+Git Fetch 
+It downloads only new data from a remote repository using Git fetch
+It does not include any of this new information in your working files
+To update the remote-tracking branches, run Git fetch at any time
+Command - git fetch origin
+Git Pull
+Git pulls new data and integrates it with the current working files, updating the current HEAD branch with the latest modifications from the remote server
+It attempts to combine remote changes with those made locally
+Command - git pull origin master
+Basics to Advanced - Learn It All!Java Certification Training CourseExplore ProgramBasics to Advanced - Learn It All!
+31. What is a Merge Conflict in Git, and how can it be resolved?
+When you have merging branches with opposing commits, a merge conflict occurs, and Git needs your help to select which changes to include in the final merge.
+
+Resolve using GitHub conflict editor.
+When competing for line changes, i.e., when users make different modifications to the same line of the same file on other branches in your Git repository, this is done to avoid merging conflicts.
+
+Step 1: Under your repository name, click Pull requests. 
+
+GitConflictEditor_1
+
+Step 2: Click the pull request with the merge conflict you'd like to resolve in the "Pull Requests" list. Click Resolve conflicts near the bottom of your pull request.
+
+GitConflictEditor_2.
+
+Step 3: Decide whether you want to maintain just your branch's changes, only the other branch's changes, or make a completely new modification that includes both branches' changes. 
+
+Step 4: Remove the conflict markers and apply the desired changes in the final merge. 
+
+GitConflictEditor_3.
+
+Step 5: If your file has more than one merge conflict, scroll down to the next set of conflict markers and repeat steps 4 and 5 to resolve the issue. Mark the file as resolved once you've resolved all the conflicts.
+
+GitConflictEditor_4.
+
+Step 6: If you have more than one file with a conflict, navigate to the left side of the screen and select the following file you wish to edit under "Conflicting Files". Then repeat the above steps until you've resolved all the merge conflicts in your pull request.
+
+GitConflictEditor_5
+
+Step 7: Click Commit merge once you've resolved all of your merge conflicts. It merges the entire base branch into your head branch as a result of this. Click Merge pull request to combine your pull requests.
+
+GitConflictEditor_6.
+
+Resolve the issue by creating a local clone of the repository and then commit the update to your GitHub branch.
+
+It resolves all other forms of merge conflicts using this method. To push the update, you can use the command line or a program like GitHub Desktop.
+
+Step 1: Open Git Bash. Go to the local Git repository where the merge conflict exists.
+
+GitConflictBash_1
+
+Step 2: Make a list of the files that have been affected by the merge dispute. In this case, a merge conflict exists in the file styleguide.md.
+
+GitConflictBash_2.
+
+Step 3: Open the file with merge conflicts in a text editor, such as Sublime Text or Atom. Look for the conflict marker "<<<<<<" if you want to see where the merging conflict started in your file.
+
+After the line "<<<<<<HEAD", you'll see the changes from the base branch.
+
+Step 4: Next, you’ll see =======, which divides your changes from the changes in the other branch, followed by >>>>>>> BRANCH-NAME
+
+Step 5: Decide whether you want to simply maintain your branch's changes, only the other branch's changes, or make a completely new modification that includes both branches' changes.
+
+Step 6: Delete the conflict markers, <<<<<, =====, >>>>> and make changes you want in the final merge. 
+
+Step 7: Add or stage your changes. Commit your changes with a comment. 
+
+You may now combine the branches using the command line, or you can upload your changes to your GitHub remote repository and merge them in a pull request.
+
+32. What is Git Stash?
+GitStash
+
+33. Differentiate Between Git Merge and Git Rebase
+Assume you're working on a new feature in a dedicated branch, and another team member pushes new commits to the master branch. 
+
+Merge 
+Git_Merge.
+
+Merge is used to incorporate new commits into your feature branch. Every time you need to include modifications, this requires an extra merging commit. It taints the history of your feature branch.
+
+Rebase 
+Git_Rebase
+
+You can rebase the feature branch into master instead of merging it. This incorporates all the new commits in the master branch. It also rewrites the project history by creating brand new commits for each commit in the original branch.
+
+Advance Your Full Stack Career!AI-Powered Full Stack Developer ProgramEXPLORE COURSEAdvance Your Full Stack Career!
+HTML Interview Questions
+HTML is an integral part of frontend development. The following set of frontend interview questions is based on HTML.
+
+34. What is an Attribute in HTML?
+<h1>Hello</h1>
+<p>Welcome</p>
+<br>
+<h2>Click on the button to subscribe</h2>
+<button>Subscribe</button>
+Attributes are the properties that can be added to an HTML tag, changing the way the tag behaves or is displayed.
+It adds attributes right after the name of the HTML tag, inside the brackets. 
+35. What is a Marquee in HTML?
+The marquee is used to scroll the text on the webpage.
+It automatically scrolls the image or text up, down, left, or right.
+You must use <marquee> tags to apply a marquee.
+36. What is Semantic HTML? How does it work?
+Semantic HTML is a type of coding.
+It is the use of HTML markup to emphasize the content's semantics or meaning.
+Consider the following scenario: The <b></b> tag is not used for bold statements in semantic HTML, while the <i></i> element is used for italic.
+Instead, you use the <em></em> and <strong></strong> tags.
+37. How do you display a Table on an HTML Webpage?
+HTML_Table
+
+To display data in a tabular format, use the HTML table> tag.
+It's also used to control the page's layout, including the header section, navigation bar, body content, and footer section.
+38. What is SVG in HTML?
+<svg width="100" height="100">
+<circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="4" fill="red" />
+</svg>
+HTML SVG is a markup language that describes vector and raster graphics. XML text files define SVG pictures and associated behaviors.
+It's typically used for X, Y coordinate system diagrams like pie charts and 2-dimensional graphs.
+39. In HTML, how do you separate a section of text?
+In HTML, you use the following tags to divide a chunk of text:
+
+<br> tag: It's a character that's used to break up a line of text. It transfers the text flow to a new line by breaking the existing line.
+
+<p> tag: This tag is used to create a text paragraph.
+
+<blockquote>: This tag is used to indicate big quoted passages.
+
+40. How do you Create Nested Web Pages in HTML?
+<!DOCTYPE html>
+<html>
+<body>
+<h2>HTML Iframes example</h2>
+<p>specify the size of the iframe using the height and width attributes:</p>
+<iframe src="https://simplilearn.com/" height="600" width="800"></iframe>
+</body>
+</html>
+You refer a webpage within a webpage to as a nested web page.
+Using HTML's built-in iframe tag, you can create nested web pages.
+Launch your career as a Full Stack Developer with Simplilearn's comprehensive AI-Powered Full Stack Developer Course. Learn front-end and back-end skills, along with real-world project experience, and gain the certification that top employers trust. Start your journey today!
+41. Differentiate Between Ordered List and Unordered List
+<!DOCTYPE html>
+<html>
+<body>
+<h2>HTML List Example</h2>
+<ul>
+<li>Coffee</li>
+<li>Tea</li>
+<li>Milk</li>
+</ul>
+<ol>
+<li>Coffee</li>
+<li>Tea</li>
+<li>Milk</li>
+</ol>
+</body>
+</html>
+HTML_List
+
+An unordered list uses <ul> </ul> tags, and each element of the list is written between <li> </li> tags.
+An ordered list uses <ol> </ol> tag,s and each element of the list is written between <li> </li> tags.
+Now that we are familiar with HTML questions, let’s look at the next set of frontend interview questions - CSS
+
+CSS Interview Questions
+42. What is the best way to include CSS Styling in HTML?
+There are three methods for incorporating CSS into HTML:
+
+You use inline CSS when only a single element needs to be styled or when a small quantity of styling is required.
+External Style Sheet: When a style is applied to many elements or HTML pages, it employs an external style sheet.
+Internal Style Sheet: An internal style sheet is employed when a single HTML document has a distinct style and numerous elements.
+43. Mention the different types of CSS Selectors
+Universal Selector
+Type Selector (Element Selector)
+Class Selector
+ID Selector
+Attribute Selector
+Descendant Selector
+Child Selector
+Adjacent Sibling Selector
+General Sibling Selector
+Pseudo-classes
+Pseudo-elements
+Group Selector
+44. What are Sass, Less, and Stylus?
+Sass, Less, and Stylus are all CSS preprocessors that extend the functionality of CSS by introducing features like variables, nested rules, mixins, and functions to make CSS more powerful and maintainable.
+
+Sass: Popular and feature-rich, with both .scss (CSS-like) and .sass (indented) syntax.
+Less: Simpler syntax and easier to learn, with similar features to Sass.
+Stylus: Offers the most flexibility, with a more forgiving and customizable syntax.
+45. Explain Box Sizing Property
+Box Sizing property defines how the height and width of a box are calculated. 
+
+Content Box - The default width and height apply only to the element’s content. Padding and border are added outside the box.
+
+Padding Box - You add the dimensions to both elements’ content and padding. It adds the border outside the box.
+
+Border Box - The dimensions are added to the content, padding, and border. 
+
+46. What are the different ways to hide an Element using CSS?
+display: none
+
+Hides the content and doesn’t store it in the DOM
+
+visibility: hidden
+
+It adds the element to the DOM and takes up space. However, it is not visible to the user's
+
+position: absolute
+
+You can make the element appear outside the screen
+
+47. What does ‘Important’ in CSS mean?
+The ‘important’ keyword indicates the highest precedence, and it overrides the cascaded property.
+
+p {
+color:blue !important;
+}
+#thing {
+color: green;
+}
+<p id="thing">Will be BLUE.</p>
+48. What are CSS Sprites?
+Since each image sends out an HTTP request separately, a web page with a high number of photos takes longer to load.
+CSS sprites are used to minimize the loading time of a web page by combining multiple small pictures into a single image.
+It reduces the number of HTTP requests and, consequently, the time it takes for pages to load.
+49. Which Property is used to underline, strike through, and overline Text?
+CSS_Text
+
+The CSS text-decoration property is used to apply underline, strike-through, and overline styles to text.
+
+Values:
+
+underline: Adds a line under the text.
+line-through: Adds a line through the middle of the text (strike-through).
+overline: Adds a line above the text.
+Build Projects and Gain Job-Ready SkillsJava Certification Training CourseExplore ProgramBuild Projects and Gain Job-Ready Skills
+JavaScript Interview Questions
+JavaScript is used to add user interaction to an application. The following section targets the commonly asked JavaScript frontend interview questions.
+
+50. What are the various Data Types in JavaScript?
+JavaScript has many data types to provide the basic functionality needed for a web application. They are mentioned in this table. 
+
+JavaScript_DataTypes.
+
+51. What is Callback in JavaScript?
+JavaScript_CallBack
+
+A callback is a JavaScript function that is sent as an argument or parameter to another function.
+
+You call this function whenever the function to which it is provided is called.
+
+52. What’s the difference between a Function Declaration and a Function Expression?
+Function Declaration 
+function abc()
+{
+return 5;
+}
+Within the main JavaScript code, it declares this as a separate statement. It is possible to invoke it before the function has been defined. It provides improved code readability.
+
+Function Expression 
+var a = function abc()
+{
+return
+}
+It is created within an expression or another construct. It is typically used when a conditional declaration of a function is required. 
+
+53. What do you understand about Cookies in JavaScript? 
+A cookie is a small piece of data sent by a website and stored on the user's computer by the web browser used to access the page.
+
+Cookies are used to remember information for later use and to keep track of a website's browsing activities.
+
+The simplest approach to make a cookie with JavaScript is to do it as follows:
+
+document.cookie = "key1 = value1; key2 = value2; expires = date";
+
+To delete a cookie, simply set an expiration date and time; specifying the correct path of the cookie is a good practice. 
+
+function delete_cookie(name)
+{
+document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+54. What are Closures in JavaScript?
+Closures in JavaScript are a feature where an inner function has access to the outer function’s variables.
+
+A closure has three scope chains:
+
+Has access to the variable defined within its curly braces, which is its scope.
+Has access to the outer functions' variables.
+Has the ability to access global variables.
+55. What are Imports and Exports in JavaScript?
+Export 
+export const sqrt = Math.sqrt;
+export function square(x) {
+return x * x;
+}
+export function diag(x, y) {
+return sqrt(square(x) + square(y));
+}
+This file exports two functions that calculate the squares and the diagonal of the input, respectively.
+
+Import 
+import { square, diag } from "calc";
+console.log(square(4)); // 16
+console.log(diag(4, 3)); // 5
+Here you import those functions and pass input to those functions to calculate the square and diagonal.
+
+56. What is the difference between Undefined, Undeclared, and Null in JavaScript?
+var x
+console.log(x) //Undefined variable
+var y=NULL
+console.log(y) //Null Variable
+console.log(z) //Undeclared Variable
+Undefined: Undefined means a variable has been declared, but a value has not yet been assigned to that variable.
+
+Null: Null is an assignment value that you can assign to any variable that is meant to contain no value.
+
+Undeclared: Variables that are not declared or that do not exist in a program or application.
+
+57. What is the best way to remove Duplicates from a JavaScript Array?
+You can delete duplicates from a JavaScript array in one of two ways:
+
+By employing the filtering technique, Three arguments are required to call the filter() function. These are the array, current element, and current element index.
+
+The For loop is used to store all the repeated elements in an empty array.
+
+Become a Full Stack Developer in Just 9 Months!AI-Powered Full Stack Developer ProgramEXPLORE COURSEBecome a Full Stack Developer in Just 9 Months!
+ReactJS Interview Questions
+React is a popular Frontend JavaScript library. It is vital to have a good understanding of a JavaScript framework or library for app development. 
+
+The following segment of frontend interview questions comprises React questions.
+
+58. What Is JSX?
+React_JSX
+
+JSX is a JavaScript syntactic extension. It's a term used in React to describe how the user interface should look.
+You can write HTML structures in the same file as JavaScript code by utilizing JSX.
+Because it avoids the use of complicated JS DOM structures, JSX makes the code easier to comprehend and debug.
+59. What is Virtual DOM?
+React_DOM
+
+The Virtual DOM is the lightweight version of the Real DOM that React retains in memory.
+Because nothing is drawn on the screen during Real DOM processing, it is substantially slower than handling virtual DOM.
+When an object's state changes, Virtual DOM updates only that object in the real DOM rather than all of them.
+60. What are React Extensions? Name a few of them.
+React is more than just a UI framework; it encompasses a range of extensions that encompass the entire application architecture.
+It has a server-side rendering feature.
+Supports the creation of mobile apps.
+Flux and Redux, among other things, have been added to the mix.
+Flux is Facebook's application architecture for developing online applications.
+React Native allows you to create mobile apps entirely in JavaScript.
+React_Extensions
+
+61. What is an Event in React? How do you create one?
+React_Event.
+
+An event is an action triggered by the user or any system event, such as pressing a key or a mouse key.
+
+62. What are Components in ReactJS?
+React_Components
+
+Components are the building blocks of a React application, representing a part of the user interface.
+
+A component used in one area of the application can be reused in another area. This helps speed up the development process.
+A component can contain several other components.
+A component must define a render method that specifies how the component renders to the DOM in its minimal form.
+A component can also receive props. These are properties passed by its parent to specify values.
+63. What is a State in React? How do you implement it?
+A state is an object that stores the values of properties belonging to a component that could change over a period of time. 
+
+React_State
+
+Here are a few features of a State - 
+
+You can change a state as a result of a user's action or changes in the network.
+React re-renders the component to the browser whenever the state of an object changes.
+You initialize the state object in the constructor.
+It can store multiple properties in the state object.
+this.setState() is used to update the value of the state object.
+The setState() function merges the new and old state and the previous state in a shallow merge.
+64. What are Higher Order and Pure Components in React?
+Higher Order Components 
+A higher-order component is a function that takes a component and returns a new component.
+It facilitates the reusing of component logic.
+ const NewComponent = higherOrderComponent(originalComponent)
+
+Pure Components 
+React.Component is the base class for React components. React.PureComponent is a variation of React.Component class and does a shallow comparison of props and state.
+A React component can be considered pure if it renders the same output for the same state and props.
+65. How do you implement React Routing?
+React_Routing.
+
+Considering that you have the App, About, and Contact components, routing can be implemented using the code shown above. 
+
+React is widely used for front-end development, and understanding UI elements, such as dropdowns, is crucial. Check out our guide on how to create a functional React dropdown menu to enhance your front-end skills.
+
+Learn Java With Expert-Led TrainingJava Certification Training CourseExplore ProgramLearn Java With Expert-Led Training
+Angular Interview Questions 
+If you are well-versed in the Angular Framework, then these frontend interview questions on Angular will be helpful.
+
+66. What is Data Binding, and how does it work? Which Data Binding methods does Angular use?
+Data binding is a method of manipulating web page elements through the use of a web browser. It's utilized in interactive elements like forms, calculators, tutorials, and games on web pages.
+
+DataBinding-Angular_Interview_Questions
+
+Angular uses Two-way Data Binding. Any modifications made to the user interface mirror the elements in the model state and vice versa. 
+
+67. What is Typescript? 
+TypeScript
+
+TypeScript is an object-oriented programming language that is a superset of JavaScript. Simply put, it's JavaScript with a slew of other remarkable capabilities. All TypeScript code is eventually compiled to JavaScript.
+
+TypeScript supports all JavaScript libraries and frameworks, among other essential characteristics. Angular is a single-page application framework written in JavaScript.
+With the rise in code complexity, JavaScript needed to meet OOP's criteria, which led to the creation of TypeScript.
+TypeScript aids in the production of faster code, which improves performance.
+68. What is AoT Compilation? How is it different from JiT? 
+Ahead of Time (AOT), compilation translates your code as it is being built, rather than when it is downloaded and run by the browser. This guarantees that the browser renders content quickly. Include the aot option with the ng build or ng serve commands to specify AOT compilation.
+
+The Just-in-Time (JIT) compilation technique converts computer code to machine code while it is being executed or run. Dynamic compilation is another name for it. When you use the ng build or ng serve CLI commands, by default, it uses JIT compilation.
+
+69. What are Pipes in Angular? Explain its types.
+Angular_Pipes.
+
+Pipes are simple functions that accept an input value, process it, and return an altered value as an output, in a more technical sense. Angular has several built-in pipes. You can, however, make custom pipes to meet your specific requirements.
+
+The following are some major features:
+
+The pipe "|" symbol is used to define pipes.
+Pipes can be linked together in a chain.
+The colon (:) sign can be used to provide arguments to pipes.
+Pure Pipes 
+These are pipes with just pure functions. As a result, a pure pipe uses no internal state, and the output remains constant as long as the parameters provided remain constant. When Angular detects a change in the arguments being given, it invokes the pipe. Throughout all components, a single instance of the pure pipe is used.
+
+Impure Pipes 
+Angular calls an impure pipe for every change detection cycle, regardless of changes in the input fields. For these pipes, it produces multiple pipe instances. The inputs to these pipes can be changed.
+
+All pipes are pure by default. On the other hand, the pure attribute can be used to identify impure pipes, as demonstrated below.
+
+@Pipe({
+  name: 'demopipe',
+  pure : true/false 
+})
+export class DemopipePipe implements PipeTransform {
+70. In Angular, what are Promises and Observables?
+While both concepts in Angular deal with asynchronous events, Promises handle one at a time, whereas observables handle a sequence of events over time.
+
+Promises are objects that emit only one value at a time. They take effect immediately once they're created and can't be stopped. They are Promises to the child, Push Errors.
+Observables are only executed when the subscribe() method is used to subscribe to them. Over a period, they emit multiple values. They aid in the execution of tasks such as forEach, filter, and retry, among others. Subscribers receive errors as a result of their actions. The listener stops receiving new data when the unsubscribe() method is performed.
+71. What are Form Control and Form Groups?
+Form Control 
+Angular_FormControl
+
+It enables validation through the Form Control class.
+It produces a new instance of this class for each input field.
+These instances allow you to verify the field's values to see if they've been touched, untouched, or dirty.
+Form Group
+Angular_FormGroup.
+
+A group of controls is represented by the FormGroup class.
+Multiple control groups are possible in a form.
+If all the controls are valid, the Form Group class returns True.
+It also includes a list of all validation problems.
+72. What is Eager and Lazy Loading?
+Eager loading - The default module-loading approach is eager loading. Eager loading feature modules are loaded before the program starts. You usually reserve this for applications that aren't too large.
+
+Lazy Loading - When needed, lazy loading dynamically loads the feature modules. This speeds up the application. It's utilized in larger applications where not all the modules are required right at the start.
+
+73. In Angular, what is String Interpolation?
+String interpolation is a one-way data-binding method that delivers data from TypeScript code to an HTML view. Double curly braces are used to indicate it. This template expression allows the data from the component to be displayed in the view.
+
+Gain in-depth knowledge of front-end and back-end languages, databases, and cloud technologies with our AI-Powered Full Stack Developer Course. Get hands-on experience with live projects and earn a recognized certification.
+Generic Interview Questions
+Not all questions will be core technical in nature. The interviewer would also like to understand your take on specific frontend-related questions or suggestions. The final segment of the frontend interview questions tutorial addresses some general questions and answers.
+
+74. What are the Advantages of TypeScript Over JavaScript?
+TypeScript points out compilation errors during development.
+Supports strongly typed and static typing.
+Enhanced features, including interfaces, generics, and more.
+Provides excellent tooling support with IntelliSense.
+75. How is a Web Developer different from a Web Designer?
+Web Developer
+Web Designer
+Build web applications using languages like HTML, CSS, and JavaScript
+
+Design web applications using tools like Adobe Photoshop, Sketch
+
+They frequently use JavaScript frameworks for more streamlined development
+
+They frequently use Adobe Creative Cloud for most of their design needs
+
+It requires good coding skills
+
+It requires good graphic design skills
+
+Have to keep themselves up to date with the latest web frameworks and libraries
+
+Have to keep themselves up to date with the latest design trends and color palettes
+
+76. What is Backend Development?
+Backend_Development.
+
+Web development that occurs at the back end of programs is accurately termed back-end development. Back-end development covers server-side web application logic and integration and activities, like writing APIs, creating libraries, and working with system components, instead of frontend development, which focuses on customer-facing services and programs.
+
+Back-end developers build code that enables a database and an application to communicate with each other. Backend developers are responsible for the back end of a website, which encompasses servers, databases, and applications, and they control what you don't see.
+
+77. What is CoffeeScript?
+CoffeeScript is a JavaScript-compiling programming language.
+It's an attempt to demonstrate the positive aspects of JavaScript in a straightforward manner.
+It also makes it easier to develop JavaScript code by providing a more consistent syntax and avoiding the peculiarities of the JavaScript language.
+78. How would you ensure a web design is user-friendly?
+A frontend developer should work closely with the user experience team to visualize the app's design.
+They should also test the web application and take user input.
+The app developed should be compatible with various platforms and must ultimately run smoothly on mobile phones.
+79. Would you recommend a Web Designer Role or a Web Developer Role?
+It is a matter of preference. 
+
+If you are inclined towards the creative aspect, consider a Web/UX Designer role.
+If you are inclined towards the coding aspect, consider the Web Developer role.
+80. How would you increase Page Performance?
+You should clean the HTML document up
+External HTTP requests could be minimized
+Sprites, compressed images, and smaller images can be included
+At the bottom of the page, include the JavaScript
+Optimize CSS, JavaScript, and HTML
+Caching and CDN
+
 Junior Front-end Developer Interview Questions
 01
 
