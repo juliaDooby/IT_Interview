@@ -1,3 +1,456 @@
+Самые распространенные вопросы на собеседовании по TypeScript
+Готовитесь к собеседованию по TypeScript? Разбираем самые популярные вопросы, которые задают на интервью: от базовых концепций до продвинутых техник. Generic, Type Guards, Utility Types, Mapped Types и многое другое с примерами кода и объяснениями.
+
+К
+Кодик
+
+Автор
+
+21 янв. 2026 г.
+9 мин чтения
+
+0
+
+Поделиться
+Знаешь этот момент, когда рекрутер пишет "нужны базовые знания TypeScript", а на собесе спрашивают про ковариантность и контравариантность? Да-да, мы все через это прошли. Пора разобраться, что на самом деле спрашивают на собеседованиях по TypeScript и как отвечать так, чтобы выглядеть как человек, который читал не только документацию, но и исходники компилятора (спойлер: не обязательно).
+
+Поехали разбирать самые популярные вопросы, которые любят задавать на собесах. Но не просто "что такое interface", а с реальными ситуациями и объяснениями, почему это вообще кого-то волнует.
+
+
+1. "В чём разница между interface и type?"
+Уровень сложности: Кажется простым, пока не начнешь отвечать
+
+Это как вопрос "в чем разница между пиццей и пастой" – оба из теста, оба итальянские, но подача разная.
+
+Краткий ответ для нетерпеливых:
+
+interface – для объектов, расширяется, можно объявлять несколько раз (declaration merging)
+
+type – для всего остального, включая union, intersection, примитивы
+
+Развернутый ответ для впечатления:
+
+// Interface любит наследование и дополнение
+interface User {
+  name: string;
+}
+
+interface User {
+  age: number; // Объединится с предыдущим!
+}
+
+// Type - это алиас, переопределить нельзя
+type Product = {
+  id: number;
+}
+
+// type Product = { ... } // ❌ Ошибка!
+
+// Но type умеет крутые штуки:
+type Status = 'pending' | 'success' | 'error';
+type Response<T> = { data: T } | { error: string };
+Что сказать на собесе: "На практике я использую interface для описания структур данных, которые могут расширяться (например, API типы), и type для union типов, утилит и более сложных конструкций. Interface лучше для объектов благодаря declaration merging."
+
+🔥 100 000+ учеников уже с нами
+Устал читать теорию?
+Пора кодить!
+Кодик — приложение, где ты учишься программировать через практику. AI-наставник, интерактивные уроки, реальные проекты.
+
+🤖
+AI 24/7
+🎓
+Сертификаты
+💰
+Бесплатно
+🚀 Начать учиться
+Присоединились сегодня
+К
+Кодик
+
+★★★★★
+4.9
+Курсов
+30+
+Заданий
+15 000+
+Учеников
+100K+
+2. "Что такое Generic и зачем они нужны?"
+Уровень сложности: Звучит страшно, на деле – логично
+
+Generic'и – это как template в Word. Один раз написал, подставляй любые данные.
+
+// Без Generic - боль и страдания
+function getFirstElementString(arr: string[]): string {
+  return arr[0];
+}
+
+function getFirstElementNumber(arr: number[]): number {
+  return arr[0];
+}
+
+// С Generic - один раз и навсегда
+function getFirstElement<T>(arr: T[]): T {
+  return arr[0];
+}
+
+const firstString = getFirstElement(['a', 'b']); // string
+const firstNumber = getFirstElement([1, 2, 3]); // number
+Продвинутый уровень (чтобы удивить):
+
+// Generic с ограничениями
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const user = { name: 'Алексей', age: 25 };
+getProperty(user, 'name'); // ✅ OK
+getProperty(user, 'salary'); // ❌ Ошибка компиляции!
+3. "Объясни unknown vs any vs never"
+Уровень сложности: Философский вопрос в мире типов
+
+Представь: any – это "мне пофиг", unknown – это "я не знаю, но проверю", never – это "этого вообще не может быть".
+
+// any - анархия, делай что хочешь
+let chaos: any = 5;
+chaos.doWhatever(); // Компилятор: "Ладно, твои проблемы"
+
+// unknown - безопасная неопределенность
+let mystery: unknown = 5;
+// mystery.doSomething(); // ❌ Ошибка!
+
+// Сначала проверим
+if (typeof mystery === 'number') {
+  mystery.toFixed(2); // ✅ Теперь OK
+}
+
+// never - для недостижимого кода
+function throwError(message: string): never {
+  throw new Error(message);
+  // Сюда код никогда не дойдет
+}
+
+type Shape = Circle | Square;
+function getArea(shape: Shape) {
+  switch(shape.kind) {
+    case 'circle': return Math.PI * shape.radius ** 2;
+    case 'square': return shape.size ** 2;
+    default:
+      const _exhaustive: never = shape; // Проверка полноты
+      return _exhaustive;
+  }
+}
+Золотое правило: Используй unknown вместо any, когда не знаешь тип. Твои коллеги скажут спасибо.
+
+4. "Что такое Utility Types и какие ты используешь?"
+Уровень сложности: Показывает, работал ли ты с реальными проектами
+
+Utility Types – это встроенные хелперы TypeScript. Это как швейцарский нож для типов.
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+}
+
+// Partial - все поля опциональны
+type UserUpdate = Partial<User>;
+// { id?: number; name?: string; ... }
+
+// Pick - выбираем нужные поля
+type UserPreview = Pick<User, 'id' | 'name'>;
+// { id: number; name: string }
+
+// Omit - исключаем поля
+type UserPublic = Omit<User, 'password'>;
+// { id: number; name: string; email: string }
+
+// Record - создаем структуру
+type UserRoles = Record<'admin' | 'user' | 'guest', string[]>;
+// { admin: string[]; user: string[]; guest: string[] }
+
+// ReturnType - тип возвращаемого значения
+function getUser() {
+  return { id: 1, name: 'Alex' };
+}
+type User = ReturnType<typeof getUser>;
+Лайфхак для собеса: Упомяни Readonly, Required, NonNullable – покажешь, что знаешь не только популярные.
+
+5. "Что такое Type Guards и как их создавать?"
+Уровень сложности: Средний, но очень практичный
+
+Type Guards – это способ убедить TypeScript, что ты знаешь, какой тип данных перед тобой.
+
+// Простой type guard
+function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+// Более сложный
+interface Cat {
+  meow: () => void;
+}
+
+interface Dog {
+  bark: () => void;
+}
+
+function isCat(animal: Cat | Dog): animal is Cat {
+  return (animal as Cat).meow !== undefined;
+}
+
+function makeSound(animal: Cat | Dog) {
+  if (isCat(animal)) {
+    animal.meow(); // TypeScript знает, что это Cat
+  } else {
+    animal.bark(); // А здесь - Dog
+  }
+}
+
+// Используем 'in' оператор
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ('swim' in animal) {
+    animal.swim();
+  } else {
+    animal.fly();
+  }
+}
+6. "Расскажи про keyof и typeof"
+Уровень сложности: Здесь отделяются миддлы от джунов
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+// keyof - получаем union всех ключей
+type UserKeys = keyof User; // 'id' | 'name' | 'email'
+
+// typeof - получаем тип из значения
+const config = {
+  apiUrl: 'https://api.example.com',
+  timeout: 5000,
+  retries: 3
+};
+
+type Config = typeof config;
+// { apiUrl: string; timeout: number; retries: number }
+
+// Комбо: keyof typeof
+const Colors = {
+  red: '#ff0000',
+  blue: '#0000ff',
+  green: '#00ff00'
+} as const;
+
+type ColorKey = keyof typeof Colors; // 'red' | 'blue' | 'green'
+
+// Практическое применение
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+7. "Что такое Mapped Types?"
+Уровень сложности: Senior territory
+
+Mapped Types – это когда ты превращаешь один тип в другой, как алхимик.
+
+type User = {
+  name: string;
+  age: number;
+  email: string;
+}
+
+// Делаем все поля readonly
+type ReadonlyUser = {
+  readonly [K in keyof User]: User[K];
+};
+
+// Делаем все поля опциональными
+type PartialUser = {
+  [K in keyof User]?: User[K];
+};
+
+// Делаем все поля nullable
+type NullableUser = {
+  [K in keyof User]: User[K] | null;
+};
+
+// Создаем геттеры
+type Getters<T> = {
+  [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
+};
+
+type UserGetters = Getters<User>;
+// {
+//   getName: () => string;
+//   getAge: () => number;
+//   getEmail: () => string;
+// }
+8. "В чём разница между enum и union типами?"
+Уровень сложности: Простой вопрос с подвохом
+
+// Enum - создает реальный JavaScript объект
+enum Status {
+  Pending = 'PENDING',
+  Success = 'SUCCESS',
+  Error = 'ERROR'
+}
+
+console.log(Status.Pending); // 'PENDING' - существует в runtime!
+
+// Union - только на уровне типов
+type StatusUnion = 'PENDING' | 'SUCCESS' | 'ERROR';
+
+// В runtime это просто строка
+const status: StatusUnion = 'PENDING';
+
+// Const enum - компилируется в значения
+const enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+const dir = Direction.Up; // Превратится в 0
+Что сказать: "Я предпочитаю union типы для простых случаев, так как они не добавляют runtime код. Enum использую, когда нужна обратная связь (reverse mapping) или когда значения нужны в runtime."
+
+
+9. "Что такое Conditional Types?"
+Уровень сложности: Если понял это – ты уже не джун
+
+Conditional Types – это тернарный оператор для типов.
+
+// Базовый синтаксис
+type IsString<T> = T extends string ? true : false;
+
+type A = IsString<string>; // true
+type B = IsString<number>; // false
+
+// Практический пример
+type Flatten<T> = T extends Array<infer U> ? U : T;
+
+type StrArray = Flatten<string[]>; // string
+type Num = Flatten<number>; // number
+
+// Еще круче
+type NonNullable<T> = T extends null | undefined ? never : T;
+
+type MaybeString = string | null | undefined;
+type DefinitelyString = NonNullable<MaybeString>; // string
+
+// Distributed Conditional Types
+type ToArray<T> = T extends any ? T[] : never;
+type StrOrNumArray = ToArray<string | number>;
+// string[] | number[]
+10. "Расскажи про infer keyword"
+Уровень сложности: Это уже магия
+
+infer позволяет "выдернуть" тип из другого типа.
+
+// Получаем тип возвращаемого значения функции
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
+function getUser() {
+  return { id: 1, name: 'Alex' };
+}
+
+type User = ReturnType<typeof getUser>; // { id: number; name: string }
+
+// Получаем тип элемента массива
+type ArrayElement<T> = T extends (infer U)[] ? U : never;
+
+type NumArray = number[];
+type Num = ArrayElement<NumArray>; // number
+
+// Получаем тип параметров функции
+type Parameters<T> = T extends (...args: infer P) => any ? P : never;
+
+function createUser(name: string, age: number) {}
+
+type CreateUserParams = Parameters<typeof createUser>; // [string, number]
+
+// Промисы
+type Awaited<T> = T extends Promise<infer U> ? U : T;
+
+type AsyncResult = Awaited<Promise<string>>; // string
+💡 А как всё это запомнить и начать применять?
+Честно? Читать статьи – это круто, но без практики всё это улетучится через неделю. Нужно реально писать код и сталкиваться с проблемами.
+
+Именно поэтому мы создали Кодик – приложение, где теория сразу превращается в практику. Никаких бесконечных лекций, только код и челленджи.
+
+Плюс, у нас есть Telegram-канал с сообществом 2000+ разработчиков, где каждый день выходят полезные посты, разборы задач, мемы (куда без них) и обсуждения. Это как Stack Overflow, только по-человечески и на русском.
+
+Бонусные вопросы, которые тоже могут спросить:
+11. "Что такое Declaration Merging?"
+interface Box {
+  height: number;
+}
+
+interface Box {
+  width: number;
+}
+
+// TypeScript объединит оба в:
+// interface Box {
+//   height: number;
+//   width: number;
+// }
+12. "Зачем нужен as const?"
+// Без as const
+const colors = ['red', 'blue']; // string[]
+
+// С as const
+const colorsConst = ['red', 'blue'] as const; // readonly ['red', 'blue']
+
+// Практическое применение
+const routes = {
+  home: '/',
+  about: '/about',
+  contact: '/contact'
+} as const;
+
+type Route = typeof routes[keyof typeof routes]; 
+// '/' | '/about' | '/contact'
+13. "Что такое Template Literal Types?"
+type Direction = 'up' | 'down' | 'left' | 'right';
+type Move = `move${Capitalize<Direction>}`; 
+// 'moveUp' | 'moveDown' | 'moveLeft' | 'moveRight'
+
+type EventName = 'click' | 'focus' | 'blur';
+type Handler = `on${Capitalize<EventName>}`;
+// 'onClick' | 'onFocus' | 'onBlur'
+Заключение: Как готовиться к собесу
+За неделю до:
+Пройдись по официальной документации TypeScript
+
+Порешай задачи на Type Challenges (github.com/type-challenges/type-challenges)
+
+Попрактикуйся объяснять концепции вслух
+
+За день до:
+Повтори основные концепции из этой статьи
+
+Приготовь примеры из своих проектов
+
+Выспись (серьезно, это важнее зубрежки)
+
+На собеседовании:
+Не бойся сказать "не знаю, но могу поискать"
+
+Лучше объяснить концепцию своими словами, чем цитировать документацию
+
+Спрашивай уточняющие вопросы – это показывает, что ты думаешь
+
+Главное: TypeScript – это инструмент, а не самоцель. Понимание того, зачем нужна типизация, важнее знания всех Utility Types наизусть.
+
+P.S. Если после прочтения у тебя в голове каша – это нормально. TypeScript – это не то, что учится за вечер. Возвращайся к этой статье, пробуй примеры, ошибайся и учись. Именно так все и работает.
+
 15 TypeScript Interview Questions for Hiring TypeScript Engineers
 June 12, 2024
 Todd Adams
