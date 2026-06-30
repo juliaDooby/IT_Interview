@@ -1,3 +1,293 @@
+Вопросы на собеседовании react typescript
+Содержание
+Top 50 TypeScript interview questions explained
+Answer any interview problem by learning the patterns behind common questions.
+General TypeScript Questions
+1. What are the main features of TypeScript?
+2. What are the benefits of using TypeScript?
+3. What are the built-in data types of TypeScript?
+4. What is the current stable version of TypeScript?
+5. What is an interface in TypeScript?
+6. What are modules in TypeScript?
+7. How can you use TypeScript for the backend?
+8. What are Type assertions in TypeScript?
+TypeScript Syntax & Language Basics
+9. How do you create a variable in TypeScript?
+10. How do you call a base class constructor from a child class in TypeScript?
+11. Explain how to use TypeScript Mixins.
+12. How do you check null and undefined in TypeScript?
+13. What are getters/setters in TypeScript? How do you use them?
+14. How do you allow classes defined in a module to be accessible outside of a module?
+15. How do we convert string to a number using Typescript?
+16. What is a ‘.map’ file, and why/how can you use it?
+17. What are classes in TypeScript? How do you define them?
+Answer any interview problem by learning the patterns behind common questions.
+TypeScript with JavaScript Questions
+18. How does TypeScript relate to JavaScript?
+19. What is JSX in TypeScript?
+20. What are the JSX modes TypeScript supports?
+21. How do you compile a TypeScript file?
+22. What scopes are available in TypeScript? How does this compare to JS?
+Advanced TypeScript Questions
+23. What are Arrow/lambda functions in TypeScript?
+24. Explain Rest parameters and the rules to declare Rest parameters.
+25. What are Triple-Slash Directives? What are some of the triple-slash directives?
+Читайте также:  Python exercises and solutions
+
+ozon.ru
+Реклама
+Голоден? Сникерсни!
+Купить
+
+sbercity.ru
+Реклама
+Смарт-район СберСити
+Перейти на сайт
+Top 50 TypeScript interview questions explained
+TypeScript is an open-source superset of JavaScript developed by Microsoft to add additional features without breaking existing programs. TypeScript is now widely used by front-end and full-stack developers for large-scale projects due to its unique benefits like static typing and many shorthand notations.
+
+Today, we’ll help you prepare for your TypeScript coding interview by covering 50 of the top TypeScript interview questions and answers.
+
+Here’s what we’ll cover today:
+
+Answer any interview problem by learning the patterns behind common questions.
+General TypeScript Questions
+1. What are the main features of TypeScript?
+
+dodopizza.ru
+Реклама
+Летние новинки в Додо
+Заказать
+
+Cross-Platform: The TypeScript compiler can be installed on any operating system such as Windows, macOS, and Linux.
+ES6 Features: TypeScript includes most features of planned ECMAScript 2015 (ES6) such as Arrow functions.
+Object-Oriented Language: TypeScript provides all the standard OOP features like classes, interfaces, and modules.
+Static Type-Checking: TypeScript uses static typing and helps type checking at compile time. Thus, you can find compile-time errors while writing the code without running the script.
+Optional Static Typing: TypeScript also allows optional static typing in case you are used to the dynamic typing of JavaScript.
+DOM Manipulation: You can use TypeScript to manipulate the DOM for adding or removing client-side web page elements.
+2. What are the benefits of using TypeScript?
+TypeScript is more expressive, meaning it has less syntactical clutter.
+Easy debugging due to advanced debugger that focuses on catching logical errors before compile-time
+Static typing makes TypeScript easier to read and more structured than JavaScript’s dynamic typing.
+Usable across platforms, in both client and server-side projects due to versatile transpiling.
+Читайте также:  Html img alt url
+Реклама
+СберСити – современные квартиры для семьи в смарт-районе ЗАО Москвы от 26 млн ₽
+СберСити – современные квартиры для семьи в смарт-районе ЗАО Москвы от 26 млн ₽
+3. What are the built-in data types of TypeScript?
+Number type: It is used to represent number type values. All the numbers in TypeScript are stored as floating-point values.
+
+let identifier: number = value; 
+String type: It represents a sequence of characters stored as Unicode UTF-16 code. Strings are enclosed in single or double quotation marks.
+
+Boolean type: a logical binary switch that holds either true or false
+
+let identifier: bool = Boolean value; 
+Null type: Null represents a variable whose value is undefined.
+
+Undefined type: an undefined literal that is the starting point of all variables.
+
+let num: number = undefined; 
+Void type: The type assigned to methods that have no return value.
+
+sportmaster.ru
+Реклама
+ let unusable: void = undefined; 
+4. What is the current stable version of TypeScript?
+The current stable version is 4.2.3.
+
+5. What is an interface in TypeScript?
+Interfaces define a contract or structure for objects that use that interface.
+
+An interface is defined with the keyword interface and it can include properties and method declarations using a function or an arrow function.
+
+interface IEmployee < empCode: number; empName: string; getSalary: (number) =>number; // arrow function getManagerName(number): string; > 
+6. What are modules in TypeScript?
+Modules in TypeScript are a collection of related variables, functions, classes, and interfaces.
+
+You can think of modules as containers that contain everything needed to execute a task. Modules can be imported to easily share code between projects.
+
+
+setka.ru
+Реклама
+Зарегистрироваться
+7. How can you use TypeScript for the backend?
+You can use Node.js with TypeScript to bring the benefits of TypeScript to backend work.
+
+Simply install the TypeScript compiler into your Node.js by entering the following command:
+
+8. What are Type assertions in TypeScript?
+Type assertion in TypeScript works like typecasting in other languages but without the type checking or restructuring of data possible in languages like C# and Java. Type assertion has no impact on runtime and is used purely by the compiler.
+
+Type assertion is essentially a soft version of typecasting that suggests the compiler see the variable as a certain type but does not force it into that mold if it’s in a different form.
+
+TypeScript Syntax & Language Basics
+9. How do you create a variable in TypeScript?
+Реклама
+СберСити – современные квартиры для семьи в смарт-районе ЗАО Москвы от 26 млн ₽
+СберСити – современные квартиры для семьи в смарт-районе ЗАО Москвы от 26 млн ₽
+You can create variables in three ways: var , let , and const . var is the old style of fiercely scoped variables. You should avoid using var whenever possible because it can cause issues in larger projects.
+
+let is the default way of declaring variables in TypeScript, Compared to var , let reduces the number of compile-time errors and increases code readability.
+
+const creates a constant variable whose value cannot change. It uses the same scoping rules as let and helps reduce overall program complexity.
+
+10. How do you call a base class constructor from a child class in TypeScript?
+You can use the super() function to call the constructor of the base class.
+
+class Animal < name: string; constructor(theName: string) < this.name = theName; >move(distanceInMeters: number = 0) < console.log(`$moved $m.`); > > class Snake extends Animal < constructor(name: string) < super(name); >move(distanceInMeters = 5) < console.log("Slithering. "); super.move(distanceInMeters); >> 
+11. Explain how to use TypeScript Mixins.
+Mixins are essentially inheritance that works in the opposite direction. Mixins allow you to build new classes by combining simpler partial class setups from previous classes.
+
+
+megapteka.ru
+Реклама
+Мегаптека. Поиск и заказ
+лекарств в аптеках города
+ЕСТЬ ПРОТИВОПОКАЗАНИЯ. ПОСОВЕТУЙТЕСЬ С ВРАЧОМ
+favicon
+Перейти
+Instead of class A extending class B to gain its functionality, class B takes from class A and returns a new class with additional functionality.
+
+12. How do you check null and undefined in TypeScript?
+You can either use a juggle-check, which checks both null and undefined, and strict-check which returns true for values set to null and won’t evaluate true for undefined variables.
+
+var a: number; var b: number = null; function check(x, name) < if (x == null) < console.log(name + ' == null'); >if (x === null) < console.log(name + ' === null'); >if (typeof x === 'undefined') < console.log(name + ' is undefined'); >> check(a, 'a'); check(b, 'b'); 
+13. What are getters/setters in TypeScript? How do you use them?
+Getters and setters are special types of methods that help you delegate different levels of access to private variables based on the needs of the program.
+
+Getters allow you to reference a value but cannot edit it. Setters allow you to change the value of a variable but not see its current value. These are essential to achieve encapsulation.
+
+
+cian.ru
+Реклама
+Начать
+ЕСТЬ ПРОТИВОПОКАЗАНИЯ. ПОСОВЕТУЙТЕСЬ С ВРАЧОМ
+application icon
+HelixExpress
+Реклама
+•
+16+
+For example, a new employer may be able to get the number of employees in the company but does not have permission to set the number of employees.
+
+const fullNameMaxLength = 10; class Employee < private _fullName: string = ""; get fullName(): string < return this._fullName; >set fullName(newName: string) < if (newName && newName.length >fullNameMaxLength) < throw new Error("fullName has a max length of " + fullNameMaxLength); >this._fullName = newName; > > let employee = new Employee(); employee.fullName = "Bob Smith"; if (employee.fullName)
+14. How do you allow classes defined in a module to be accessible outside of a module?
+You can use the export keyword to open modules up for use outside the module.
+
+module Admin < // use the export keyword in TypeScript to access the class outside export class Employee < constructor(name: string, email: string) < >> let alex = new Employee('alex', 'alex@gmail.com'); > // The Admin variable will allow you to access the Employee class outside the module with the help of the export keyword in TypeScript let nick = new Admin.Employee('nick', 'nick@yahoo.com'); 
+15. How do we convert string to a number using Typescript?
+Similar to JavaScript, You can use the parseInt or parseFloat functions to convert a string to an integer or float, respectively. You can also use the unary operator + to convert a string to the most fitting numeric type, “3” becomes the integer 3 while “3.14” becomes the float 3.14 .
+
+
+it-picnic.ru
+Реклама
+|
+16+
+Регистрируйся на ИТ-
+Пикник от Т-Банка 8 августа
+
+Зарегистрироваться
+Перейти
+
+invitro.ru
+Реклама
+ЕСТЬ ПРОТИВОПОКАЗАНИЯ. ПОСОВЕТУЙТЕСЬ С ВРАЧОМ
+Узнать больше
+var x = "32"; var y: number = +x; 
+16. What is a ‘.map’ file, and why/how can you use it?
+A map file is a source map that shows how the original TypeScript code was interpreted into usable JavaScript code. They help simplify debugging because you can catch any odd compiler behavior.
+
+Debugging tools can also use these files to allow you to edit the underlying TypeScript rather than the emitted JavaScript file.
+
+17. What are classes in TypeScript? How do you define them?
+Classes represent the shared behaviors and attributes of a group of related objects.
+
+For example, our class might be Student which all have the attendClass method. On the other hand, John is an individual instance of type Student and may have additional unique behaviors like attendExtracurricular .
+
+
+goldapple.ru
+Реклама
+Купить
+
+c2c.fivepost.ru
+Реклама
+Узнать больше
+You declare classes using the keyword class :
+
+Answer any interview problem by learning the patterns behind common questions.
+TypeScript with JavaScript Questions
+18. How does TypeScript relate to JavaScript?
+TypeScript is an open-source syntactic superset of JavaScript that compiles to JavaScript. All original JavaScript libraries and syntax still works but TypeScript adds additional syntax options and compiler features not found in JavaScript.
+
+TypeScript can also interface with most of the same technologies as JavaScript, such as Angular and jQuery.
+
+19. What is JSX in TypeScript?
+application icon
+O′STIN Интернет Магазин Одежды
+Реклама
+
+avito.ru
+Реклама
+Выбрать
+JSX is an embeddable XML-like syntax that allows you to create HTML. TypeScript supports embedding, type checking, and compiling JSX directly to JavaScript.
+
+20. What are the JSX modes TypeScript supports?
+TypeScript has built-in support for preserve , react , and react-native .
+
+preserve keeps the JSX intact for use in a subsequent transformation.
+react does not go through a JSX transformation and instead emits react.createElement and outputs as a .js file extension.
+react-native combines preserve and react in that it maintains all JSX and outputs as a .js extension.
+21. How do you compile a TypeScript file?
+You need to call the TypeScript compiler tsc to compile a file. You’ll need to have the TypeScript compiler installed, which you can do using npm .
+
+
+level.ru
+Реклама
+Узнать больше
+application icon
+Сравни. Кредиты, ОСАГО, Займы.
+Реклама
+npm install -g typescript tsc
+22. What scopes are available in TypeScript? How does this compare to JS?
+Global Scope: defined outside of any class and can be used anywhere in the program.
+Function/Class Scope: variables defined in a function or class can be used anywhere within that scope.
+Local Scope/Code Block: variables defined in the local scope can be used anywhere in that block.
+Advanced TypeScript Questions
+23. What are Arrow/lambda functions in TypeScript?
+
+mango-office.ru
+Реклама
+|
+16+
+Узнать больше
+pik.ru
+Реклама
+Fat arrow function is a shorthand syntax for defining function expressions of anonymous functions. It’s similar to lambda functions in other languages. The arrow function lets you skip the function keyword and write more concise code.
+
+24. Explain Rest parameters and the rules to declare Rest parameters.
+Rest parameters allow you to pass a varied number of arguments (zero or more) to a function. This is useful when you’re unsure how many parameters a function will receive. All arguments after the rest symbol . will be stored in an array. For example:
+
+function Greet(greeting: string, . names: string[]) < return greeting + " " + names.join(", ") + "!"; >Greet("Hello", "Steve", "Bill"); // returns "Hello Steve, Bill!" Greet("Hello");// returns "Hello !" 
+The rest parameter must be the last on parameter definition and you can only have 1 rest parameter per function.
+
+25. What are Triple-Slash Directives? What are some of the triple-slash directives?
+
+uvi.ru
+Реклама
+Актуальные украшения
+на сайте UVI
+favicon
+Перейти
+
+gazprombank.ru
+Реклама
+Узнать больше
+Triple-slash Directives are single-line comments that contain an XML tag to use as compiler directives. Each directive signals what to load during the compilation process. Triple-slash Directives only work at the top of their file and will be treated as normal comments anywhere else in the file.
+
+/// is the most common directive and defines the dependency between files.
+/// is similar to path but defines a dependency for a package.
+/// allows you to explicitly include the built-in lib file.
+
 Самые распространенные вопросы на собеседовании по TypeScript
 Готовитесь к собеседованию по TypeScript? Разбираем самые популярные вопросы, которые задают на интервью: от базовых концепций до продвинутых техник. Generic, Type Guards, Utility Types, Mapped Types и многое другое с примерами кода и объяснениями.
 
