@@ -1,3 +1,5 @@
+https://github.com/h5bp/Front-end-Developer-Interview-Questions
+
 Чек-лист вопросов на собеседовании Frontend-разработчику (Junior, Middle)
 Дата обновления: 19.02.2026  Время чтения: 5 мин.
 
