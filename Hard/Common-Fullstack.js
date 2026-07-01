@@ -1,3 +1,118 @@
+Cracking a Full Stack Developer Interview in 5 Steps
+Developer resources
+
+-
+Sameer SM
+
+Full Stack Developer Interview Questions And Answers
+Full Stack Developer Interview Questions And Answers
+Who is a full stack developer?
+A full stack developer is a software engineering professional who is responsible for working on both frontend and backend development systems. These developers design, develop, and maintain fully functioning platforms including databases and servers.
+
+A Full Stack developer should be knowledgeable in:
+
+Basic languages — HTML, CSS, and SQL.
+Front-end frameworks — Bootstrap, AngularJS, VueJS, ReactJS, JavaScript, TypeScript, Python, Ruby, PHP.
+Back-end frameworks — Express, Django, NodeJS, Ruby on Rails.
+Databases — MySQL, SQLite, Postgres, MongoDB, Cassandra, Apache storm, Sphinx.
+Additional skills — Git, Machine Learning, SSH, Linux Command, Data Structures, Character encoding.
+Some well-known tools and platforms used by full stack developers to make development more accessible and efficient are:
+
+GitHub
+Visual Studio Code
+WebStorm
+Slack
+CodePen
+Intellij/Eclipse
+PyCharm
+Five ‘simple & doable’ steps that will help you crack a full stack developer interview
+Step 1: Master the Basics
+
+Before diving into advanced topics, ensure you have a strong grasp of the basics. Full stack development often involves using a variety of technologies, and understanding the fundamentals is crucial.
+
+You might be asked questions about basic concepts in programming, data structures, algorithms, and web development, so review these thoroughly.
+
+Step 2: Problem-Solving Practice
+
+Full stack developers are problem solvers at heart. They don't just write code; they find creative and efficient solutions to real-world challenges.
+
+Dedicate time to practice solving problems, preferably a variety of them with different levels of complexity. Use online coding platforms or take on side projects to sharpen your problem-solving skills.
+
+Step 3: Build Micro-Projects
+
+Building small projects can be incredibly beneficial. They allow you to apply what you've learned, gain practical experience, and showcase your skills.
+
+Consider creating web applications that incorporate both frontend and backend development. Working on these mini-projects will reinforce your understanding of how various technologies interact.
+
+Step 4: Mock Interviews
+
+Practice makes perfect. Engage in mock interviews to simulate the real interview experience. Many tech communities and online platforms offer mock interview sessions.
+
+This helps you become more comfortable with answering questions under pressure, receive constructive feedback, and identify areas for improvement.
+
+Step 5: Think Like a Leader
+
+Full stack developers often oversee entire projects or features. Start thinking like a leader during your coding practice. Consider the bigger picture, understand how your code fits into the overall architecture, and take ownership of your work. This mindset is valuable in interviews and will serve you well in your career.
+
+Common Full Stack Developer Interview Questions and Answers
+What is CORS?
+
+Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers. It allows or restricts web applications running at one origin (domain) to make requests for resources from a different origin.
+
+What is Continuous Integration?
+
+Continuous Integration (CI) is a software development practice where developers frequently merge their code changes into a central repository. Automated builds and tests are run to detect and address integration issues early in the development process.
+
+What does the Observer Pattern Mean?
+
+The Observer Pattern is a behavioral design pattern. It defines a one-to-many relationship between objects. When one object (the subject) changes its state, all its dependents (observers) are notified and updated automatically.
+
+Top 10 Full Stack Developer Interview Questions And Answers
+1. How would you find a memory leak?
+
+Detecting memory leaks involves using memory profiling tools to analyze memory usage over time, identifying objects that are not properly released, and fixing the code responsible for the leak.
+
+2. Explain sharing code between files?
+
+Code sharing between files is achieved by modularizing code into separate files and using import/export mechanisms provided by the programming language or framework.
+
+3. How can you reduce website loading time?
+
+Techniques to reduce loading time include optimizing images, minifying and compressing code and assets, using Content Delivery Networks (CDNs), and reducing server response times.
+
+4. What is Multithreading?
+
+Multithreading is a technique in which a program's execution is divided into multiple threads, allowing concurrent execution and potentially improving performance on multi-core processors.
+
+5. Distinguish GraphQL from REST?
+
+GraphQL is a query language and runtime for APIs that allows clients to request only the data they need. REST is an architectural style for designing networked applications.
+
+6. Explain pair programming?
+
+Pair programming involves two developers working together at one computer. One writes code (the driver), while the other reviews and suggests improvements (the navigator).
+
+7. Describe a challenging coding solution you've developed?
+
+Share a detailed example of a complex problem you solved, highlighting your problem-solving skills, the technologies used, and the impact of your solution.
+
+8. Difference between "Git Pull" and "Git Fetch"?
+
+"Git Pull" fetches changes from a remote repository and merges them into the current branch, while "Git Fetch" only retrieves changes from the remote repository without merging.
+
+9. Differences between ES6 and ES5 Function Constructors?
+
+ES6 introduced the class syntax for creating constructors, making object-oriented programming more intuitive. ES5 uses constructor functions with prototypes for the same purpose.
+
+10. Current trends in Full Stack Web Development?
+
+Current trends include serverless architecture, microservices, progressive web apps (PWAs), and the adoption of modern frontend libraries and frameworks like React, Angular, or Vue.js.
+
+Practice full stack development on Codejudge
+
+Micro-projects for full stack developers on Codejudge practice section.
+Practice on Codejudge which offers free micro-projects and coding challenges related to full stack development. These real-world scenarios allow you to apply your knowledge, practice coding, and build a strong portfolio to impress potential employers.
+
 10 общих вопросов
 Вот общие вопросы, с которыми вы можете столкнуться на собеседовании с back-end разработчиком. Цель этих вопросов - помочь потенциальному работодателю лучше узнать вас:
 
