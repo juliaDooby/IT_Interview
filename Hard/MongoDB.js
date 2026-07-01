@@ -1,3 +1,131 @@
+Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
+Вопросы
+JAVASCRIPT
+Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
+Я хочу хранить свои журналы ошибок в коллекции mongoDB. Я использую winston & winston -mongoDB.
+
+Получение ошибки:
+
+throw new Error('Invalid transport, must be an object with a log method.'); Error: Invalid transport, must be an object with a log method.
+
+Вот код в файле регистратора. Вот мой код: импортировать appRoot из 'app-root-path'; Импортировать { createLogger, транспорт, формат, } от winston;
+
+import * as winston from 'winston';
+
+
+require('winston-mongodb');
+
+
+const options = {
+    fileInfo: {
+        level: 'info',
+        filename: `${appRoot}/logs/info.log`,
+        handleExceptions: true,
+        json: true,
+        maxsize: 5242880, // 5MB
+        maxFiles: 5,
+        colorize: false,
+        timestamp: true,
+    },
+    mongoDB: {
+        db: 'mongodb://127.0.0.1:27017/test',
+        collection: 'log',
+        level: 'info',
+        storeHost: true,
+        capped: true,
+    },
+};
+
+winston.add(winston.transports.MongoDB, options.mongoDB);
+
+
+const logger = createLogger({
+    format: format.combine(
+        format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss',
+        }),
+        format.json()
+    ),
+    transports: [
+        new transports.File(options.fileInfo)
+    ],
+});
+
+logger.stream = {
+    write: (message, encoding) => {
+        logger.info(message);
+    },
+};
+
+export default logger;
+Версии:
+
+ "mongoose": "^5.2.6",
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0",
+    "winston-mongodb": "^4.0.3",
+    mongodb@3.1.1
+ 06.08.2018 09:00
+10
+0
+8 115
+5
+ Ответы 5
+Обновленный ответ:
+Вам нужно добавить транспорт mongo при инициализации winston.
+
+Попробуйте этот код:
+
+const logger = winston.createLogger({
+    transports: [
+        new winston.transports.MongoDB({
+            db: 'mongodb://localhost:27017/test',
+            collection: 'log',
+            level: 'info',
+            storeHost: true,
+            capped: true,
+        })
+    ]
+});
+Проверьте сбор журналов в тестовой БД.
+
+Убедитесь, что у вас есть:
+
+logger.info("Test log!")
+Надеюсь, это решит ваш вопрос!
+
+ 06.08.2018 09:07
+У меня была такая же проблема, я заменил это утверждение:
+
+winston.add(winston.transports.File, { filename: 'logfile.log' });
+к этому:
+
+winston.add(new winston.transports.File({ filename: 'logfile.log' }));
+Это происходит в последнем крупном обновлении Winston, то есть 3.x.x и выше.
+
+Надеюсь это поможет!
+
+ 30.03.2019 04:55
+У меня была аналогичная проблема, поэтому я заменил package.json строкой с "winston": "^3.0.0" на "winston": "2.*", а затем ввел эту команду npm install -save winston в командную строку
+
+ 31.05.2019 08:11
+Это последняя версия на данный момент.
+
+"мангуст": "^ 5.11.10", "winston": "^ 3.3.3", "winston-mongodb": "^ 5.0.5"
+
+Я столкнулся с той же проблемой. Это то, что устранило мою проблему
+
+winston.add(
+  new winston.transports.File({ filename: "logfile.log", level: "error" })
+);
+winston.add(
+  new winston.transports.MongoDB({ db: "mongodb://localhost/vidly" })
+);
+ 08.01.2021 19:18
+winston.configure({transports: [new winston.transports.File({ filename: 'logfile.log' }) ]});
+
+Это сработало для меня. Надеюсь, это поможет и вам.
+
 Транзакция Mongodb v4.0, MongoError: номера транзакций разрешены только для члена набора реплик или монго
 Вопросы
 JAVASCRIPT
