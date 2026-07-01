@@ -1,3 +1,1130 @@
+100+ Full-Stack Developer Interview Questions – 2026 Guide
+Master 100+ full-stack interview questions with answers. Covers frontend, backend, APIs, DevOps, security, and Java Spring Boot for 2026.
+
+Author
+Bhavya Hada
+
+Author
+
+February 8, 2026
+
+Facebook
+LinkedIn
+
+6
+Development Framework Interview Questions
+Toggle
+On This Page
+
+Frontend Full-Stack Interview Questions
+Backend Full-Stack Interview Questions
+Full-Stack Interview Questions for Freshers
+Full-Stack Interview Questions for Intermediate Level
+Full-Stack Interview Questions for Experienced Developers (3-10 Years)
+Deployment & DevOps Full-Stack
+APIs & Web Services Full-Stack
+Security Best Practices Full-Stack Interview Questions
+Advanced Topics in Full-Stack Development
+Java Full-Stack Developer Interview Questions
+Conclusion
+Full-stack developers are the backbone of modern web and application development. With expertise spanning frontend, backend, databases, and DevOps, they are expected to handle end-to-end delivery of features and systems.
+
+The role of a full-stack developer continues to evolve with advancements in frameworks, cloud, and DevOps. Interviewers today seek engineers who not only understand the entire stack but can reason through systems, architect scalable apps, and stay secure by default.
+
+This comprehensive guide features 100+ full-stack developer interview questions segmented by skill level and technology stack, including Java-specific topics.
+
+Note
+Full-Stack Developer Interview Questions
+
+Note: We have compiled all Full-Stack Developer List for you in a template format. Feel free to comment on it. Check it out now!!
+
+Overview
+
+Full-stack development spans frontend, backend, DevOps, APIs, security, and system design. This guide covers 100+ curated interview questions across levels (freshers to experienced), organized by topics for structured preparation.
+
+Frontend Full-Stack Interview Questions
+
+What is the difference between HTML and HTML5?
+Explain the box model in CSS.
+What are JavaScript closures?
+What is the Virtual DOM?
+How do you optimize performance in a React app?
+Backend Full-Stack Interview Questions
+
+What is REST architecture?
+Explain the difference between PUT and PATCH.
+What is middleware in Express.js?
+What are the differences between SQL and NoSQL databases?
+How do you handle exceptions in backend systems?
+Full-Stack Interview Questions for Freshers
+
+What is a full-stack developer?
+Explain the lifecycle of a web request.
+How does a web browser render a page?
+What tools have you used for version control?
+Explain localStorage and sessionStorage.
+Full-Stack Interview Questions for Intermediate Level
+
+How do you structure a REST API?
+What is the difference between GraphQL and REST?
+How does React Context API work?
+What is a state management library and why is it needed?
+How do you implement form validation?
+Full-Stack Interview Questions for Experienced Developers (3–10 Years)
+
+How would you design a scalable e-commerce backend?
+Explain microservices with an example.
+How do you handle caching and performance at scale?
+What is Circuit Breaker pattern and when to use it?
+How do you manage secrets in production?
+Note
+Full-Stack Developer Interview Questions
+
+Note: We have compiled all Full-Stack Developer List for you in a template format. Feel free to comment on it. Check it out now!!
+
+Frontend Full-Stack Interview Questions
+Frontend interviews focus on your ability to build clean, efficient, and user-friendly interfaces. Expect questions on HTML/CSS/JavaScript fundamentals, modern frameworks, performance, and responsive design.
+
+HTML, CSS, and JS Fundamentals:
+
+Full-stack interview questions around Core building blocks of web development, structure (HTML), style (CSS), and interactivity (JS):
+
+1. What is the difference between HTML and HTML5?
+HTML is the standard markup language for structuring web content. HTML5, the latest version, adds semantic elements like <header>, <footer>, <article>, native multimedia support with <audio> and <video>, new APIs (Canvas, Web Storage, Geolocation), and eliminates reliance on plugins like Flash.
+
+2. What are semantic tags in HTML?
+Semantic tags provide meaningful structure to a webpage by describing the role of the content. Examples: <main> (primary content), <nav> (navigation menu), <aside> (sidebar). They improve accessibility for screen readers, enhance SEO, and make code easier to maintain compared to generic <div> tags.
+
+3. Explain the box model in CSS.
+The CSS box model defines how elements are rendered. Each element is made up of four layers:
+
+Content: the text or image inside.
+Padding: space between content and border.
+Border: the edge surrounding padding.
+Margin: space between the element and others.
+Understanding it is critical for spacing, layout, and debugging design issues.
+
+4. How does specificity work in CSS?
+Specificity is a ranking system that determines which CSS rule is applied when multiple rules target the same element. The priority order is: inline styles > IDs > classes, attributes, pseudo-classes > elements and pseudo-elements. If rules have equal specificity, the one declared last is applied.
+
+5. What is the difference between var, let, and const in JavaScript?
+var: function-scoped, hoisted, can be redeclared.
+let: block-scoped, not accessible before declaration, reassignable but not redeclarable.
+const: block-scoped, must be initialized at declaration, cannot be reassigned (though object properties can be mutated).
+6. What are arrow functions?
+Arrow functions are a concise syntax for writing functions in ES6. They don’t bind their own this, arguments, or super, which makes them ideal for callbacks and functional programming patterns. Example:
+
+Example:
+
+
+const sum = (a, b) => a + b;
+7. What is the difference between == and ===?
+==: loose equality, converts operands to the same type before comparison ("5" == 5 → true).
+===: strict equality, checks both value and type without conversion ("5" === 5 → false).
+Best practice: always use === to avoid type coercion bugs.
+
+8. How does event delegation work in JavaScript?
+Event delegation attaches a single event listener to a parent element instead of each child. The event bubbles up from the target child to the parent, where the listener processes it. This improves performance and works well for dynamic elements added later.
+
+9. What are JavaScript closures?
+A closure is formed when a function retains access to its lexical scope even after the outer function has executed. This enables private variables, function factories, and stateful callbacks.
+
+Example:
+
+
+function outer() {
+
+  let count = 0;
+
+  return function inner() {
+
+    count++;
+
+    return count;
+
+  }
+
+}
+
+const counter = outer();
+
+counter(); // 1
+
+counter(); // 2
+10. What is the difference between synchronous and asynchronous code?
+Synchronous: tasks execute sequentially, blocking the main thread until each finishes.
+Asynchronous: tasks run in the background (e.g., API calls, setTimeout). JS uses event loops, promises, and async/await to handle them without freezing execution.
+Note
+Note: Want to master full-stack testing too? Check out TestMu AI for scalable, real-browser testing environments to level up your developer workflow. Try TestMu AI Now!
+
+Frameworks and Advanced Concepts:
+
+Frameworks like React, Angular, and Vue power modern web apps. Interviewers expect you to understand their inner workings, performance strategies, and build tools.
+
+11. What is the Virtual DOM?
+The Virtual DOM is a lightweight in-memory representation of the real DOM. Frameworks like React update the Virtual DOM first, calculate the difference (diffing), and update only changed nodes in the real DOM. This reduces costly reflows and repaints, improving performance.
+
+12. Explain React Hooks and their use cases.
+Hooks are functions that let you “hook into” React state and lifecycle features without writing class components. Examples:
+
+useState: local state
+useEffect: side effects (API calls, subscriptions)
+useContext: global state sharing
+They simplify code reuse and make apps more functional.
+
+13. Difference between state and props in React?
+State: internal, mutable data owned by the component. Used for dynamic changes (e.g., form input).
+Props: external, read-only data passed from parent to child. Makes components reusable and configurable.
+14. How do you optimize performance in a React app?
+Use memoization (React.memo, useMemo, useCallback).
+Implement code-splitting and lazy loading.
+Optimize lists with virtualization (react-window, react-virtualized).
+Avoid unnecessary state in parent components.
+Profile performance with React DevTools.
+15. How does two-way binding work in Angular?
+Angular uses the [(ngModel)] directive to sync data between the view (HTML input fields) and the model (component properties). Any update in one automatically reflects in the other.
+
+16. What is the role of Vuex in Vue.js?
+Vuex is Vue’s state management library. It centralizes app state and uses predictable mutations and actions to update data. This ensures consistent data flow across multiple components.
+
+17. How do you handle side effects in React?
+Side effects (like fetching data, timers, subscriptions) are handled with the useEffect hook. For complex async logic, external libraries like Redux-Saga, Redux-Thunk, or React Query manage side effects more efficiently.
+
+18. What is lazy loading in frontend frameworks?
+Lazy loading delays loading of non-critical resources (like images, components, or routes) until they’re needed. This improves initial load speed and performance.
+
+19. How does Webpack help in bundling code?
+Webpack is a module bundler that processes JS, CSS, and assets into optimized bundles. It supports tree-shaking (removing unused code), code-splitting (loading chunks on demand), and hot module replacement (HMR) for faster development.
+
+20. How do you implement responsive design?
+Responsive design ensures apps look good across devices. Techniques include:
+
+CSS media queries (@media).
+Mobile-first design.
+Flexible layouts (CSS Grid, Flexbox).
+Relative units (% / em / rem).
+Frameworks like Bootstrap or Tailwind CSS.
+Backend Full-Stack Interview Questions
+Backend interviews evaluate your ability to design secure, efficient, and scalable APIs, manage data flow, and architect robust server-side systems.
+
+Core Concepts & Server Logic:
+
+his section covers REST principles, API design, architecture types, error handling, and database management, all crucial for backend development.
+
+21. What is REST architecture?
+REST (Representational State Transfer) is a stateless client-server architecture for web services. It uses HTTP methods—GET (read), POST (create), PUT (update), DELETE (delete)—to manipulate resources identified by URIs. REST emphasizes statelessness, cacheability, and a uniform interface, making APIs simple and scalable.
+
+22. Explain the difference between PUT and PATCH.
+PUT: Replaces the entire resource with a new version. For example, updating a user object would require sending all fields, even unchanged ones.
+PATCH: Partially updates a resource. Only the fields that need to change are sent, making it lighter and more efficient.
+Example:
+
+
+PUT /users/1
+
+{
+
+  "name": "Alice",
+
+  "email": "alice@example.com"
+
+}
+
+PATCH /users/1
+
+{
+
+  "email": "alice@newdomain.com"
+
+}
+23. What is middleware in Express.js?
+Middleware are functions that run during the request-response cycle in Express. They can:
+
+Access/modify req and res objects
+End the request-response cycle
+Call the next middleware in the chain
+24. How do you handle exceptions in backend systems?
+Exception handling ensures reliability and stability. Best practices include:
+
+Using try/catch blocks for synchronous errors
+Handling async errors with Promise.catch or async/await try/catch
+Centralizing error handling in middleware (Express error handler)
+Logging errors with tools like Winston, Morgan, or Sentry
+25. What is the difference between monolithic and microservice architectures?
+Monolithic Architecture: A single, unified codebase where all modules are tightly coupled. Easy to start with, but hard to scale, deploy, or maintain for large apps.
+Microservices Architecture: An application is divided into independent services that communicate via APIs. Each service can be scaled, deployed, and maintained separately. This improves scalability and fault tolerance but adds complexity in communication and monitoring.
+26. How does dependency injection work in backend frameworks?
+Dependency Injection (DI) is a design pattern where an object’s dependencies are provided externally rather than being hardcoded inside.
+
+Improves loose coupling and testability
+Makes swapping implementations (e.g., switching databases) easier
+Used in frameworks like Spring (Java), NestJS (Node.js), Angular (frontend)
+Example in Node.js (without DI):
+
+
+const db = new MySQLDatabase();
+
+const userService = new UserService(db);
+With DI, a container provides the database instance, decoupling UserService from a specific DB.
+
+27. What is CORS and how is it handled?
+CORS (Cross-Origin Resource Sharing) is a browser security feature that restricts web apps from making requests to a different domain. For example, a frontend at example.com calling an API at api.com.
+
+It is handled via HTTP headers like:
+
+Access-Control-Allow-Origin: * (or a specific domain)
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+Access-Control-Allow-Headers: Content-Type, Authorization
+In Express, CORS is enabled with the cors package:
+
+
+const cors = require('cors');
+
+app.use(cors({ origin: 'http://example.com' }));
+28. What is the role of ORM in backend development?
+ORM (Object-Relational Mapping) tools map database tables to programming language objects. This abstracts raw SQL queries and allows developers to interact with databases using code.
+
+Examples: Sequelize (Node.js), Hibernate (Java), Django ORM (Python)
+Benefits: less boilerplate, DB-agnostic code, automatic migrations
+Trade-off: performance overhead compared to raw SQL in high-performance apps
+29. What are the differences between SQL and NoSQL databases?
+SQL (Relational Databases)
+Structured, predefined schema (tables, rows, columns)
+Strong ACID compliance (Atomicity, Consistency, Isolation, Durability)
+Best for transactional applications (banking, ERP)
+Examples: MySQL, PostgreSQL, Oracle
+NoSQL (Non-Relational Databases)
+Schema-less, flexible data models (document, key-value, graph, column)
+Horizontal scalability
+Best for large-scale, unstructured, or real-time data (IoT, social media)
+Examples: MongoDB, Cassandra, Redis
+30. How do you write optimized SQL queries?
+Optimized queries improve performance and reduce load:
+
+Use indexes for frequently queried columns
+Avoid SELECT * — fetch only needed columns
+Normalize schema but denormalize selectively for performance
+Use proper JOINs and avoid nested subqueries when possible
+Analyze queries with EXPLAIN to understand execution plans
+Cache results of expensive queries when possible (e.g., using Redis)
+Authentication & Data Flow:
+
+This section focuses on securing applications, managing user identity, and ensuring safe data handling in distributed environments.
+
+31. What is JWT and how does it work?
+JWT (JSON Web Token) is a compact, URL-safe token used for stateless authentication. It has three parts:
+
+1. Header: algorithm and token type.
+
+2. Payload: user claims (like id, role, email).
+
+3. Signature: cryptographic hash to ensure integrity.
+
+Workflow:
+
+User logs in → server generates JWT → sends it to client.
+Client stores it (usually in localStorage or cookies) → sends it with each request in the Authorization: Bearer <token> header.
+Server verifies the signature without storing session state, making it scalable.
+32. What are sessions and cookies?
+Cookies: Small pieces of data stored on the client’s browser. They are automatically sent with every request to the same domain. Often used to hold a session ID.
+Sessions: Server-side storage of user data (e.g., login status, preferences). A unique session ID is linked to the client (usually via a cookie).
+Example flow:
+
+1. User logs in → server creates session with user data → sends session ID in a cookie.
+
+2. On future requests, the browser sends the cookie → server retrieves session data from memory or database.
+
+33. Explain OAuth2 in simple terms.
+OAuth2 is an authorization framework that allows applications to access user data from another service without sharing passwords.
+
+Example: “Login with Google”
+
+You (the user) want a fitness app to access your Google profile.
+The app redirects you to Google → you log in and grant permissions.
+Google sends the app an access token, not your password.
+The app uses the token to fetch your profile from Google’s API.
+This separation of authentication and authorization increases security and user trust.
+
+34. How do you encrypt passwords in backend systems?
+Passwords should never be stored in plain text. Best practices:
+
+Hashing: Convert the password into a fixed-length hash using algorithms like bcrypt, Argon2, or PBKDF2.
+Salting: Add a random string to the password before hashing to prevent rainbow table attacks.
+Pepper (optional): Add a server-side secret to further strengthen hashing.
+Example (Node.js with bcrypt):
+
+
+const bcrypt = require('bcrypt');
+
+const hash = await bcrypt.hash("password123", 10);
+
+const isMatch = await bcrypt.compare("password123", hash);
+35. How do you ensure data consistency in distributed systems?
+In distributed systems, ensuring all nodes agree on data is challenging. Strategies include:
+
+ACID Transactions: Strong consistency via database-level transactions.
+Two-Phase Commit (2PC): Coordinates distributed transactions across multiple databases.
+Consensus Protocols: Algorithms like Raft or Paxos ensure nodes agree on state.
+Eventual Consistency: Systems like Cassandra or DynamoDB prioritize availability and allow temporary inconsistencies, resolving them later.
+Idempotency: Design operations so repeated requests don’t corrupt data.
+Trade-off: Many distributed systems follow the CAP theorem (Consistency, Availability, Partition Tolerance), you can only strongly guarantee two at the same time.
+
+Full-Stack Interview Questions for Freshers
+These questions focus on the basics of web development, helping freshers demonstrate understanding of core concepts across frontend, backend, and development tools.
+
+36. What is a full-stack developer?
+A full-stack developer is a software engineer skilled in both frontend (user interface, client-side) and backend (server, database, APIs). They can build complete applications end-to-end, handling everything from UI design to server logic and database interactions.
+
+37. Difference between frontend and backend?
+
+Frontend: The client-side part of the application that users interact with. Built using HTML, CSS, JavaScript, and frameworks like React or Angular.
+Backend: The server-side that handles logic, APIs, and databases. Built using technologies like Node.js, Java, Python, or .NET.
+38. Explain the lifecycle of a web request.
+User enters a URL or clicks a link.
+Browser sends an HTTP request to the server.
+Server processes the request (e.g., fetches data from a database).
+Server responds with HTML, JSON, or another format.
+Browser renders the response and displays it to the user.
+39. What is the DOM?
+The DOM (Document Object Model) is a tree-like structure that represents an HTML page in memory. JavaScript can manipulate the DOM to update elements dynamically, for example, changing text, styles, or adding/removing elements without reloading the page.
+
+40. How does a web browser render a page?
+HTML Parsing → Builds the DOM tree.
+CSS Parsing → Builds the CSSOM (CSS Object Model).
+JavaScript Execution → Modifies DOM/CSSOM if needed.
+Render Tree Creation → Combines DOM + CSSOM.
+Layout (Reflow) → Calculates positions and sizes of elements.
+Painting → Fills pixels on the screen.
+Compositing → Final page is displayed to the user.
+41. What are the key responsibilities of a frontend developer?
+Designing responsive and accessible UIs.
+Implementing functionality with JavaScript/React/Angular/Vue.
+Ensuring cross-browser compatibility.
+Optimizing performance for faster load times.
+Working with APIs to fetch and display data.
+42. What tools have you used for version control?
+Most commonly, Git. Tools like GitHub, GitLab, and Bitbucket provide collaboration features like pull requests, issue tracking, and code reviews. Freshers should know basic Git commands (clone, commit, push, pull, branch, merge).
+
+43. How do you debug a webpage?
+Use browser DevTools (Chrome, Firefox) to inspect HTML, CSS, and network calls.
+Check console logs (console.log) in JavaScript.
+Use breakpoints in DevTools for step-by-step debugging.
+Validate API requests in the Network tab.
+Check error messages in the console for quick diagnosis.
+44. What is the difference between id and class in CSS?
+id: Unique identifier for one element. Declared with # (e.g., #header).
+class: Can be reused across multiple elements. Declared with . (e.g., .btn).
+Specificity: id > class. Best practice: use idsparingly, classes for reusable styles.
+
+45. Explain localStorage and sessionStorage.
+Both are part of the Web Storage API for storing key-value pairs in the browser:
+
+localStorage: Data persists even after the browser is closed and reopened.
+sessionStorage: Data lasts only for the current session (cleared when the tab is closed).
+Both are synchronous, have ~5MB storage limit, and are safer than cookies for non-sensitive client-side data.
+
+Full-Stack Interview Questions for Intermediate Level
+These questions go beyond basics, testing your ability to design APIs, structure applications, manage state, and optimize frontend/backend systems.
+
+46. What is the difference between service and controller in backend?
+Controller: Handles incoming HTTP requests, maps them to routes, and returns responses. It’s the entry point for client interactions.
+Service: Contains the business logic (e.g., processing data, interacting with databases). Controllers call services, keeping responsibilities separated.
+Example (Node.js + Express):
+
+
+// controller
+
+app.get('/users', userController.getUsers);
+
+// service
+
+const getUsers = () => User.findAll();
+47. How do you structure a REST API?
+A good REST API is:
+
+1. Resource-based: Use nouns (/users, /products) not verbs.
+
+2. HTTP Methods: GET (read), POST (create), PUT/PATCH (update), DELETE (remove).
+
+3. Stateless: Each request should contain all needed information (e.g., token).
+
+4. Versioned: /api/v1/users.
+
+5. Error-handled: Return proper status codes (200, 400, 401, 404, 500).
+
+6. Documented: Use tools like Swagger/OpenAPI.
+
+48. What is the difference between GraphQL and REST?
+REST: Fixed endpoints returning predefined data. Multiple endpoints may be needed for complex queries.
+GraphQL: Single endpoint where clients request exactly the fields they need. Reduces over-fetching and under-fetching.
+Example:
+
+REST → /users/1 returns full user object.
+GraphQL → query { user(id 1) { name, email } } returns only name and email.
+49. How do you handle async operations in JavaScript?
+Three main ways:
+
+1. Callbacks: Traditional approach but leads to “callback hell.”
+
+2. Promises: .then() and .catch() chaining for async flows.
+
+3. async/await: Cleaner syntax, makes async code look synchronous.
+
+Example:
+
+
+async function fetchData() {
+
+  try {
+
+    const res = await fetch('/api/data');
+
+    const data = await res.json();
+
+    console.log(data);
+
+  } catch (err) {
+
+    console.error(err);
+
+  }
+
+}
+50. How does React Context API work?
+Context provides a way to share state globally across components without prop drilling.
+
+Provider: Wraps components and provides state.
+Consumer/useContext: Components consume the state.
+Example:
+
+
+const ThemeContext = React.createContext();
+
+<ThemeContext.Provider value="dark">
+
+  <Child />
+
+</ThemeContext.Provider>
+51. Explain MVC with an example.
+MVC (Model-View-Controller) is a design pattern:
+
+Model: Manages data and logic (e.g., database).
+View: Handles UI representation (e.g., HTML templates).
+Controller: Handles requests, connects Model and View.
+Example: In a blog app:
+
+Model → Post table.
+View → post.html template.
+Controller → postController.getPosts() fetches data and passes it to view.
+52. How do you ensure mobile responsiveness?
+Use responsive design principles: fluid layouts, flexible grids, and images.
+Apply CSS media queries for breakpoints (mobile, tablet, desktop).
+Use relative units (%, em, rem) instead of fixed pixels.
+Test across devices and use frameworks like Bootstrap, Tailwind, Material UI.
+53. What is a state management library and why is it needed?
+State management libraries (Redux, MobX, Zustand, Vuex) help manage application state outside of local component state. They’re needed when:
+
+State is shared across many components.
+You need predictable updates.
+Debugging and scaling require centralized control.
+Without state management, large apps face prop drilling and inconsistent state.
+
+54. What is lazy loading and code splitting?
+Lazy Loading: Load resources only when needed (e.g., load a modal component only when opened).
+Code Splitting: Break large bundles into smaller chunks so the browser loads only required code upfront.
+Example (React):
+
+
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+55. How do you implement form validation?
+Frontend Validation: Ensure user inputs meet rules before sending (e.g., HTML5 attributes like required, pattern, or libraries like Formik/Yup).
+Backend Validation: Double-check inputs on the server for security (e.g., checking email format, password strength).
+Best practice: Always validate on both frontend (UX) and backend (security).
+Full-Stack Interview Questions for Experienced Developers (3-10 Years)
+At a senior level, interviews focus on architectural decisions, scalability, security, and deep knowledge of system design patterns.
+
+Architecture & System Design:
+
+These questions assess your ability to design large-scale applications, apply patterns, and solve performance/security challenges.
+
+56. How would you design a scalable e-commerce backend?
+A scalable e-commerce backend requires modular architecture and fault tolerance:
+
+Architecture: Microservices (Product, Order, Cart, Payment, User).
+Database: Polyglot persistence — relational DB for transactions (PostgreSQL), NoSQL for product catalog (MongoDB/ElasticSearch).
+Caching: Redis/Memcached for product lookups and sessions.
+API Gateway: Load balances requests and provides auth.
+Scalability: Horizontal scaling with Kubernetes/containers.
+Observability: Monitoring (Prometheus, Grafana), logging (ELK stack).
+Security: HTTPS, JWT/OAuth2, payment PCI-DSS compliance.
+Example: When a customer checks out, the Order Service coordinates with Cart, Payment, and Inventory services asynchronously using message queues like Kafka or RabbitMQ.
+
+57. Explain microservices with an example.
+Microservices is an architectural style where applications are split into small, independently deployable services.
+
+Example: A food delivery app might have:
+
+User Service (authentication, profiles)
+Restaurant Service (menus, availability)
+Order Service (orders, tracking)
+Payment Service (transactions, invoices)
+Notification Service (SMS, emails)
+Each can scale independently and use different tech stacks. Services communicate via APIs or messaging systems.
+
+58. What are design patterns you've used in full-stack projects?
+Common patterns include:
+
+Singleton: Shared DB connection instance.
+Factory: Creating objects without specifying class (e.g., multiple DB drivers).
+Observer: Event-driven notifications (e.g., user signup triggers welcome email).
+Decorator: Adding behavior (e.g., middleware for authentication).
+Repository: Abstracts database operations from business logic.
+CQRS (Command Query Responsibility Segregation): Separate read and write models in large systems.
+59. How do you handle caching and performance at scale?
+Strategies include:
+
+Application-level caching: In-memory cache (Redis, Memcached) for frequently accessed data.
+CDNs: Cache static assets like images and scripts near users.
+Database optimizations: Indexing, query optimization, read replicas.
+HTTP caching: Use cache headers (ETag, Cache-Control).
+Lazy loading and pagination: Reduce load on APIs.
+Message queues: Offload heavy tasks to background workers.
+Example: A product page might load product details from cache while asynchronously refreshing from the database.
+
+60. What is Circuit Breaker pattern and when to use it?
+The Circuit Breaker pattern prevents cascading failures by stopping repeated calls to a failing service.
+
+Closed State: Calls allowed (normal).
+Open State: Too many failures → block calls for a period.
+Half-Open State: Allows limited calls to test recovery.
+Example: In an e-commerce app, if the Payment Service is down, the Circuit Breaker prevents every order request from repeatedly failing and instead returns a fallback response (“Payment unavailable, try later”).
+
+61. How do you manage secrets in production?
+Secrets (API keys, DB passwords, tokens) must never be hardcoded. Best practices:
+
+Use Secret Managers: AWS Secrets Manager, HashiCorp Vault, Azure Key Vault.
+Environment variables with access control.
+Encrypt secrets at rest and in transit.
+Rotate secrets periodically.
+Limit access with principle of least privilege (POLP).
+Example: Instead of storing a DB password in code, fetch it securely from AWS Secrets Manager at runtime.
+
+62. Explain how WebSockets differ from HTTP.
+HTTP: Request-response protocol. Client initiates every request; server cannot push updates without polling or SSE.
+WebSockets: Full-duplex, persistent connection. Both client and server can send data anytime over a single TCP connection.
+Example:
+
+HTTP → A user refreshes the page to see new messages.
+WebSocket → The server pushes new messages instantly (used in chat apps, live dashboards, multiplayer games).
+63. How do you structure your unit and integration tests?
+Unit Tests: Focus on individual components/functions in isolation. Typically placed alongside source files or in a dedicated tests/unit folder. Use mocks/stubs to isolate dependencies.
+Integration Tests: Verify interactions between modules or external systems (e.g., DB + API). Usually placed in tests/integration.
+Best practice: Follow the testing pyramid → more unit tests, fewer but critical integration tests, and minimal end-to-end tests.
+64. What testing tools do you use and why?
+Unit testing: Jest (JavaScript), JUnit/TestNG (Java), PyTest (Python).
+Integration/API testing: Postman, REST Assured, Supertest.
+UI/E2E testing: Selenium, Cypress, Playwright.
+Mocking/Spying: Sinon.js, Mockito.
+Code coverage: Istanbul/NYC, Jacoco.
+Choice depends on language/framework. For example, Jest is preferred in React/Node projects due to its fast execution and built-in mocking.
+
+Run tests up to 70% faster on the TestMu AI cloud grid
+65. What is TDD and how do you implement it?
+TDD (Test-Driven Development) is a methodology where tests are written before the actual code. The cycle is:
+
+Red: Write a failing test for a new feature.
+Green: Write the minimal code required to pass the test.
+Refactor: Clean and optimize the code while keeping tests green.
+Example:
+
+Write a test expecting a sum(2,3) function to return 5.
+Implement the function.
+Run tests until they pass, then refactor.
+This ensures correctness, better design, and confidence in refactoring.
+
+66. How do you set up a CI/CD pipeline?
+A CI/CD pipeline automates code integration, testing, and deployment. Steps:
+
+1. Version control: Push code to GitHub/GitLab/Bitbucket.
+
+2. CI (Continuous Integration):
+
+Run linters, unit tests, and integration tests automatically.
+Build artifacts (e.g., Docker images).
+3. CD (Continuous Deployment/Delivery):
+
+Deploy builds to staging → run acceptance tests.
+Auto-deploy to production (with approvals if needed).
+4. Tools: Jenkins, GitHub Actions, GitLab CI, CircleCI, ArgoCD, Spinnaker.
+
+Example: For a Node.js app, a GitHub Actions workflow runs npm test, builds a Docker image, pushes it to Docker Hub, and deploys to Kubernetes.
+
+67. How do you monitor server health?
+Metrics to track: CPU usage, memory, disk I/O, request latency, error rates.
+Health checks: Implement /health or /ready endpoints for container orchestration (Kubernetes probes).
+Dashboards & alerts: Use Prometheus + Grafana, AWS CloudWatch, or Datadog for real-time monitoring.
+Logging: Centralized logs with ELK (Elasticsearch, Logstash, Kibana) or Splunk.
+68. What are some observability tools you’ve used?
+Metrics: Prometheus, CloudWatch, New Relic.
+Logging: ELK stack, Splunk, Fluentd.
+Tracing: Jaeger, Zipkin, OpenTelemetry for distributed tracing.
+APM (Application Performance Monitoring): Datadog, AppDynamics.
+Observability goes beyond monitoring, it combines logs, metrics, and traces to answer “why” something is failing, not just “what.”
+
+69. How would you implement real-time notifications?
+WebSockets: Persistent bi-directional connections for instant updates (used in chat apps, trading platforms).
+Server-Sent Events (SSE): Server pushes updates over HTTP (simpler than WebSockets, unidirectional).
+Message Queues: Kafka, RabbitMQ, or Redis Pub/Sub to handle scale.
+Push Notifications: Firebase Cloud Messaging (FCM) or Apple Push Notification Service (APNs) for mobile/web apps.
+Example: In a stock trading app, use Kafka to publish price updates, WebSockets to push them to connected clients, and Redis for caching recent values.
+
+Deployment & DevOps Full-Stack
+These questions assess your ability to package, deploy, orchestrate, and secure applications at scale, a critical skillset for senior full-stack engineers.
+
+70. What is containerization and how does Docker help?
+Containerization packages an application with all its dependencies (libraries, runtime, config) into lightweight, portable units called containers.
+
+Unlike virtual machines, containers share the host OS kernel, making them more efficient.
+Docker is the most widely used container platform. It provides:
+Dockerfile: Blueprint for building container images.
+Image & Registry: Store and share application images (e.g., Docker Hub).
+Runtime: Start/stop containers consistently across environments (dev, staging, prod).
+Example: A Node.js API runs the same way on a developer's laptop and in the cloud when containerized with Docker.
+
+71. How do you deploy a full-stack app using Docker Compose?
+Docker Compose is a tool to define and manage multi-container applications. You use a docker-compose.yml file to configure services.
+
+Example:
+
+
+version: "3"  
+services:  
+  frontend:  
+    build: ./frontend  
+    ports:  
+      - "3000:3000"  
+  backend:  
+    build: ./backend  
+    ports:  
+      - "5000:5000"  
+    depends<i>on:  
+      - db  
+  db:  
+    image: postgres:13  
+    environment:  
+      POSTGRES</i>USER: admin  
+      POSTGRES_PASSWORD: secret
+Run with docker-compose up.
+This spins up frontend, backend, and Postgres DB containers, networking them together automatically.
+72. What are the stages of a CI/CD pipeline?
+A typical CI/CD pipeline includes:
+
+Source: Triggered when code is pushed to Git.
+Build: Compile code, install dependencies, create artifacts (e.g., Docker images).
+Test: Run unit, integration, and security tests.
+Deploy to Staging: Deploy to a staging/QA environment for validation.
+Approval (optional): Manual checks for production readiness.
+Deploy to Production: Roll out to live environment, often with blue-green or canary deployment.
+Monitor: Track performance, errors, and rollback if needed.
+73. What is the difference between a VM and a container?
+VM (Virtual Machine): Emulates an entire operating system, including its own kernel. Heavy, slower to start, consumes more resources.
+Container: Shares the host OS kernel, isolates only processes and dependencies. Lightweight, fast, portable.
+Example:
+
+A VM might need 2 GB RAM to run a single app.
+A container could run the same app in <100 MB because it reuses the host OS kernel.
+74. How does Kubernetes help in orchestration?
+Kubernetes (K8s) is a container orchestration platform that manages deployments at scale. It automates:
+
+Scaling: Auto-adjust replicas based on load.
+Load balancing: Distributes traffic across pods.
+Self-healing: Restarts failed containers automatically.
+Service discovery: Finds containers via DNS names.
+Rolling updates & rollbacks: Safe, gradual deployment of new versions.
+Example: If one container crashes, Kubernetes restarts it automatically without downtime.
+
+Explore Kubernetes interview questions and answers to understand how they assess real-world problem-solving, cluster management, and deployment skills.
+
+75. How do you manage environment variables securely?
+Environment variables should not be hardcoded in code or stored in plain text. Best practices:
+
+Secret Managers: AWS Secrets Manager, HashiCorp Vault, Azure Key Vault.
+Kubernetes Secrets/ConfigMaps for containerized apps.
+.env files: For local development only (never commit to Git).
+Encrypt variables at rest and in transit.
+Apply principle of least privilege to limit access.
+Example: Instead of storing a DB password in code, load it from Kubernetes Secret at runtime.
+
+APIs & Web Services Full-Stack
+APIs are the backbone of modern full-stack apps. These questions focus on designing, securing, documenting, and maintaining scalable APIs.
+
+76. How do you design a secure public API?
+To design a secure public API:
+
+Authentication & Authorization: Use OAuth2, JWT, or API keys. Apply role-based or scope-based access control.
+HTTPS Everywhere: Enforce TLS to secure data in transit.
+Input Validation & Sanitization: Prevent SQL injection, XSS, and malicious payloads.
+Rate Limiting & Throttling: Protect against DDoS and abuse.
+CORS Policies: Restrict which domains can call the API.
+Logging & Monitoring: Track anomalies in real-time.
+Least Privilege: Provide only required access (e.g., read-only keys).
+Example: A payment API must use HTTPS, OAuth2, and PCI DSS compliance for credit card data.
+
+77. What is throttling and rate limiting in APIs?
+Rate Limiting: Restricts the number of API calls a client can make within a given time window (e.g., 100 requests per minute). Prevents abuse and ensures fair usage.
+Throttling: Controls request flow by slowing down responses once a threshold is hit, rather than outright blocking. Ensures servers are not overwhelmed.
+Example: Twitter API allows 900 requests per 15 minutes per user. If exceeded, further calls are blocked or delayed.
+
+78. How does GraphQL solve over-fetching problems?
+In REST, endpoints often return fixed responses, leading to over-fetching (getting more data than needed) or under-fetching (not enough data, requiring multiple calls).
+
+GraphQL solves this by letting clients specify exactly which fields they need.
+
+Example:
+
+
+query {
+
+  user(id: 1) {
+
+    name
+
+    email
+
+  }
+
+}
+This query returns only name and email, avoiding unnecessary fields like address or phone.
+
+79. How do you document your APIs?
+API documentation improves usability and adoption. Common practices:
+
+OpenAPI/Swagger: Generate interactive documentation from code annotations.
+Postman Collections: Share requests and examples with teams.
+API Portals: Provide usage guidelines, authentication steps, sample code, and error handling practices.
+Versioned Docs: Keep docs in sync with API versions.
+Auto-generation: Tools like Redoc, API Blueprint, or Docusaurus integrate docs into CI/CD.
+Example: Stripe’s API docs are a gold standard, with clear examples, test environments, and SDKs.
+
+80. Explain API versioning strategies.
+APIs evolve, so versioning avoids breaking existing clients. Strategies:
+
+1. URI Versioning: /api/v1/users → simple, widely used.
+
+2. Query Parameters: /users?version=1 → less common, but flexible.
+
+3. Header Versioning: Accept: application/vnd.api.v1+json → cleaner URLs, but harder for testing in browsers.
+
+4. Content Negotiation: Server chooses response format/version based on headers.
+
+Best practice: Use URI versioning for public APIs (clear, predictable) and header versioning for internal/enterprise APIs.
+
+Security Best Practices Full-Stack Interview Questions
+Security is a top priority for full-stack developers. These questions evaluate your ability to protect applications from common attacks and enforce strong access controls.
+
+81. How do you protect against SQL injection?
+SQL Injection happens when untrusted input is embedded directly in SQL queries. To prevent it:
+
+Parameterized Queries/Prepared Statements: Use placeholders instead of string concatenation.
+
+
+db.query("SELECT * FROM users WHERE id = ?", [userId]);
+ORMs: Frameworks like Sequelize, Hibernate, and Django ORM automatically use safe queries.
+Input Validation: Enforce strict types (e.g., userId must be numeric).
+Least Privilege: Database users should only have necessary permissions.
+82. What is XSS and how do you prevent it?
+XSS (Cross-Site Scripting) is when attackers inject malicious JavaScript into web pages viewed by others.
+
+Types:
+Stored XSS (malicious script stored in DB).
+Reflected XSS (malicious script in URL/query string).
+DOM-based XSS (client-side JS injection).
+Prevention:
+Escape/encode user inputs before rendering in HTML.
+Use frameworks with auto-escaping (React, Angular).
+Apply Content Security Policy (CSP) headers.
+Validate input on both frontend & backend.
+83. What is CSRF and how is it mitigated?
+CSRF (Cross-Site Request Forgery) tricks a logged-in user’s browser into sending unauthorized requests.
+
+Mitigations:
+
+CSRF tokens: Unique, unpredictable tokens included in forms/headers.
+SameSite cookies: Restrict cookies to same-origin requests.
+Double-submit cookie pattern (token stored in cookie + form field).
+Re-authentication for critical actions (e.g., password reset).
+84. What are common security headers?
+Security headers strengthen HTTP responses:
+
+Content-Security-Policy (CSP): Restricts sources of scripts/styles.
+X-Content-Type-Options: nosniff: Prevents MIME type sniffing.
+X-Frame-Options: DENY/SAMEORIGIN: Prevents clickjacking.
+Strict-Transport-Security (HSTS): Enforces HTTPS connections.
+Referrer-Policy: Controls what referrer info is sent.
+Example (Express middleware):
+
+
+const helmet = require("helmet");
+
+app.use(helmet());
+85. How do you implement role-based access control?
+RBAC (Role-Based Access Control) restricts system access based on user roles.
+
+Roles: Define roles (e.g., Admin, Editor, Viewer).
+Permissions: Map roles to actions/resources (e.g., Admin → delete users).
+Implementation:
+Backend middleware checks if a user’s role allows the requested action.
+Store roles in JWT claims or session data.
+Enforce at both API and UI levels.
+Example (Node.js + Express):
+
+
+function authorize(role) {
+
+  return (req, res, next) => {
+
+    if (req.user.role !== role) return res.sendStatus(403);
+
+    next();
+
+  };
+
+}
+
+app.delete("/user/:id", authorize("admin"), deleteUser);
+Advanced Topics in Full-Stack Development
+These questions go beyond fundamentals and focus on modern architectures, distributed systems, observability, and large-scale engineering challenges.
+
+86. What is serverless architecture and when should you use it?
+Serverless architecture lets you run applications without managing servers. Cloud providers (AWS Lambda, Azure Functions, Google Cloud Functions) automatically scale resources based on demand.
+
+When to use:
+
+Event-driven apps (image processing, file uploads).
+APIs with unpredictable traffic.
+Prototypes/MVPs (pay-per-use keeps costs low).
+When not ideal: Long-running processes, latency-sensitive workloads, or apps needing deep OS-level control.
+
+87. How does edge computing impact frontend delivery?
+Edge computing processes data closer to the user via distributed nodes (e.g., Cloudflare Workers, AWS CloudFront Functions).
+
+Impact on frontend:
+
+Faster response times: Static assets, cached APIs delivered near the user.
+Lower latency: Real-time apps (gaming, live streams) benefit from edge nodes.
+Security: DDoS mitigation and WAF at the edge.
+Example: An e-commerce app can personalize product recommendations at edge locations before sending the page to the user.
+
+88. How do you optimize a monolith for migration into microservices?
+Steps:
+
+Strangle pattern: Gradually replace monolith modules with microservices.
+Domain-driven design: Break down monolith into bounded contexts.
+API Gateway: Route requests between monolith and microservices.
+Database refactoring: Move from single DB to service-specific databases.
+Monitoring & Observability: Track performance across monolith and microservices.
+Example: In a monolithic e-commerce app, carve out the “Payment” module as a microservice first since it has clear boundaries.
+
+89. Explain message queues (e.g., RabbitMQ, Kafka) in full-stack architecture.
+Message queues decouple services by allowing asynchronous communication.
+
+RabbitMQ: Traditional queue-based broker. Producers send messages to a queue, consumers process them. Great for task queues (e.g., sending emails).
+Kafka: Distributed streaming platform with topics and partitions. Optimized for high throughput, event-driven systems (e.g., log processing, analytics).
+Use cases:
+
+Offloading heavy tasks (report generation).
+Event-driven architectures (order placed → notify inventory + payment).
+Reliable inter-service communication.
+90. How do you use observability tools like Prometheus or OpenTelemetry?
+Prometheus: Collects time-series metrics (CPU, memory, request latency) and allows querying via PromQL. Often paired with Grafana for dashboards.
+OpenTelemetry (OTel): Vendor-neutral framework for metrics, logs, and traces. Used to instrument services for distributed tracing across microservices.
+Example: In a microservices app, Prometheus tracks API latency, while OpenTelemetry traces a request’s journey across services (Auth → Cart → Payment).
+
+91. What are common challenges in scaling WebSockets?
+Connection limits: Each WebSocket consumes memory; scaling millions of connections is hard.
+Load balancing: Sticky sessions are often required since a WebSocket is long-lived.
+Fault tolerance: Connections must reconnect smoothly if servers crash.
+Message ordering: Ensure ordering across distributed servers.
+Security: Protect against abuse (auth, rate limiting).
+Solutions: Use specialized brokers (e.g., NATS, Kafka), distributed pub/sub, or managed services (AWS AppSync, Socket.IO with Redis adapter).
+
+92. How do you manage schema migrations safely?
+Database schema changes in production must avoid downtime. Best practices:
+
+Migration tools: Flyway, Liquibase, Prisma, Alembic.
+Backward compatibility:
+Deploy new schema first (add nullable columns).
+Update application code to use new schema.
+Remove old schema in a later release.
+Zero-downtime techniques: Use blue-green or rolling deployments.
+Version control: Store migration scripts in Git.
+Testing: Run migrations in staging with production-like data before rollout.
+Example: Adding a new phone_number column → deploy schema migration (nullable), update app to write to both old + new fields, later drop old field safely.
+
+Java Full-Stack Developer Interview Questions
+Java full-stack interviews test backend expertise with Spring Boot, ORM frameworks like Hibernate, API security, database integration, and frontend connections with React/Angular.
+
+Java + Spring Boot Backend:
+
+This section covers Spring Boot fundamentals, annotations, dependency injection, JPA, security, and database connectivity.
+
+93. What is Spring Boot and how is it different from Spring?
+Spring: A Java framework for building enterprise applications. Requires extensive configuration (XML/Java-based).
+Spring Boot: Built on Spring, simplifies development with auto-configuration, embedded servers (Tomcat/Jetty), and starter dependencies.
+Example: Instead of writing boilerplate XML configs, spring-boot-starter-web provides a ready REST setup.
+
+94. What are the main annotations used in Spring Boot?
+Common annotations include:
+
+@SpringBootApplication → entry point for Spring Boot apps.
+@RestController → marks a class as a REST controller.
+@RequestMapping / @GetMapping / @PostMapping → map HTTP requests to methods.
+@Autowired → inject dependencies.
+@Entity, @Table → mark JPA entities.
+@Repository, @Service, @Component → mark DAO/service components.
+95. How does Spring handle dependency injection?
+Spring uses IoC (Inversion of Control) and dependency injection (DI). Beans (objects) are managed by the Spring container, and dependencies are injected instead of manually creating them.
+
+Example:
+
+
+@Service
+
+public class UserService {
+
+   @Autowired
+
+   private UserRepository userRepo;  // Injected automatically
+
+}
+This decouples components and improves testability.
+
+96. What is the role of JPA and Hibernate in full-stack apps?
+JPA (Java Persistence API): A specification for ORM (Object-Relational Mapping).
+Hibernate: A JPA implementation that maps Java objects to database tables.
+In full-stack apps, they allow backend developers to work with Java entities instead of raw SQL. Example:
+
+
+@Entity
+
+class User {
+
+  @Id
+
+  private Long id;
+
+  private String name;
+
+}
+97. What is @Transactional used for?
+@Transactional ensures a series of database operations execute in a single transaction.
+
+If all succeed → commit.
+If one fails → rollback.
+Example: In a bank app, transferring money updates two accounts. If one fails, both operations rollback.
+
+98. How do you handle exceptions in Spring Boot?
+Use @ControllerAdvice with @ExceptionHandler to create global exception handlers.
+Return meaningful HTTP responses (400, 404, 500).
+Example:
+
+
+@ControllerAdvice
+
+public class GlobalExceptionHandler {
+
+   @ExceptionHandler(RuntimeException.class)
+
+   public ResponseEntity<String> handleError(RuntimeException ex) {
+
+       return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+
+   }
+
+}
+99. How do you secure a REST API using Spring Security and JWT?
+Add spring-boot-starter-security.
+Authenticate users with login API.
+Generate a JWT and return to client.
+Client sends JWT in Authorization: Bearer <token> header.
+Create a JWT filter to validate token on each request.
+This ensures stateless, scalable authentication.
+
+100. How do you connect Spring Boot with MySQL/PostgreSQL?
+Add dependency: spring-boot-starter-data-jpa + DB driver.
+Configure in application.properties:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+
+spring.datasource.username=root
+
+spring.datasource.password=secret
+
+spring.jpa.hibernate.ddl-auto=update
+Define @Entity classes and JpaRepository interfaces for CRUD operations.
+Integration & Frontend:
+
+This section covers API integration with frontend frameworks, handling CORS, documentation, and deployment.
+
+101. How do you call Java-based APIs from React or Angular?
+Use fetch or Axios (React) and HttpClient (Angular).
+Example (React):
+
+axios.get("http://localhost:8080/api/users")
+
+  .then(res => console.log(res.data));
+Ensure CORS is enabled in Spring Boot for cross-origin requests.
+102. How do you handle CORS in Spring Boot?
+Options:
+
+Global config using @CrossOrigin on controllers:
+
+@CrossOrigin(origins = "http://localhost:3000")
+
+@RestController
+
+public class UserController { ... }
+Configure CORS globally with WebMvcConfigurer.
+Use Spring Security’s CORS filter for finer control.
+103. How do you set up Swagger documentation in a Java app?
+Add springdoc-openapi-ui dependency.
+Swagger UI available at /swagger-ui.html or /swagger-ui/index.html.
+Annotate APIs with @Operation, @ApiResponses.
+Example:
+
+
+@Operation(summary = "Get users", description = "Fetch all users")
+
+@GetMapping("/users")
+
+public List<User> getUsers() { ... }
+104. How do you deploy Spring Boot with Docker?
+Create a Dockerfile:
+
+FROM openjdk:17
+
+COPY target/app.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
+Build image: docker build -t myapp.
+Run: docker run -p 8080:8080 myapp
+For multi-container setups (backend + DB + frontend), use Docker Compose.
+
+105. What is your process for building and testing a full-stack Java app?
+Backend: Build APIs in Spring Boot, connect with DB, secure with JWT.
+Frontend: Build UI in React/Angular, connect APIs with Axios/HttpClient.
+Testing:
+Unit tests: JUnit, Mockito.
+Integration tests: Testcontainers, REST Assured.
+E2E tests: Cypress/Selenium.
+CI/CD: Use GitHub Actions/Jenkins to build, test, and deploy.
+Deployment: Package backend with Docker, deploy to AWS/GCP/Azure, connect with frontend hosting (e.g., Netlify, S3).
+Next-generation test execution with TestMu AI
+Conclusion
+Full-stack development interviews cover a wide spectrum, from frontend fundamentals (HTML, CSS, JavaScript) to backend design (APIs, databases, security, architecture), and now extend into DevOps, observability, and advanced topics.
+
+For freshers, the focus is on understanding the basics, while intermediate developers are tested on applying patterns and tools. At the senior level, the emphasis shifts to system design, scalability, CI/CD, and security best practices.
+
 Full Stack Developer Interview Questions
 Knowing what you will be asked before the Interview can make you confident. We've compiled an extensive collection of Full Stack Developer interview questions from freshers to experienced professionals. This article covers the question comprehensively from all the aspects of employer majorly, including the development of front, and back-end applications servers, databases, web security, and the use of version control systems. These Full Stack Developer interview questions are designed to test your skills and knowledge in both back-end and front-end development.
 
