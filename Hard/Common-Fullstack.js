@@ -1,4 +1,217 @@
 Full Stack Developer Interview Questions
+1. What is the difference between server-side rendering and client-side rendering?
+Server-side rendering is the process of generating HTML on the server and sending it to the client.
+
+Client-side rendering is the process of generating HTML on the client side using JavaScript. SSR is better for performance and SEO, while CSR provides a better user experience.
+
+2. What is version control?
+Version control is a system that tracks changes to files and directories over time. It is used to manage and coordinate work on software projects. allowing multiple developers to work on the same codebase without conflicts.
+
+3. How do we optimize the performance of a web application?
+To optimize the performance of a web application, We have to use techniques such as
+
+Caching
+Minimizing HTTP requests
+Compressing files
+Optimizing images
+Minifying CSS
+JavaScript files
+4. What is the difference between agile and waterfall methodologies?
+Waterfall is a traditional software development methodology that follows a sequential process. Each stage is completed before moving on to the next stage. Agile is an iterative and incremental methodology. It focuses on faster delivery of working software with feedback loops and continuous improvement.
+
+5. How do we optimize database queries?
+Database query optimization involves analyzing and optimizing the SQL statements. It is used to retrieve data from the database. This optimization involves techniques like using indexes, minimizing the number of joins, avoiding subqueries, and using query caching.
+
+6. What is a RESTful API?
+A RESTful API is an architectural style for building web services.It uses HTTP requests to GET, POST, PUT, and DELETE data. RESTful API is a stateless protocol where each request contains all the necessary information to complete it.
+
+7. What is the difference between SQL and NoSQL databases?
+SQL databases are relational databases that store data in tables with rows and columns. It uses structured query language (SQL) to manipulate and query data. NoSQL databases are non-relational databases that store data in documents or key-value pairs. It uses non-structured query languages to manipulate and query data.
+
+8. What is containerization?
+Containerization is a technique used to package software in a portable and isolated environment called a container. It allows applications to run consistently across different environments. Containers are lightweight and use fewer resources than traditional virtual machines.
+
+9. What is the difference between a primary key and a foreign key in a relational database?
+Primary key is a column or set of columns that uniquely identifies each record in a table. Foreign key is a column or set of columns that refers to the primary key of another table. It is used to establish relationships between tables in a relational database.
+
+10. How do we handle errors in the code?
+Use try/catch blocks to catch and handle errors. In the catch block, log the error and provide an appropriate error message to the user. Use error handling middleware to handle errors that occur during server-side processing.
+
+11. What is machine learning and how is it used in web development?
+Machine learning is a field of artificial intelligence. It involves building models and algorithms that learn from data and make predictions or decisions. ML is used in web development to improve the user experience, personalize content, and automate tasks. It can be integrated into web applications using APIs or libraries such as TensorFlow and Scikit-learn.
+
+12. How do we implement authentication in your web applications?
+We can use industry-standard authentication protocols such as OAuth2 and OpenID Connect to authenticate users. We can also use secure session management and implement measures such as password hashing and salting to protect user credentials.
+
+13. What is the difference between a front-end and back-end developer?
+Front-end developers are responsible for providing an effective user interface and user-friendly experience of a web application. They use HTML, CSS, and JavaScript to create interactive web pages. Back-end developers are responsible for the server-side of a web application. They use programming languages such as PHP, Ruby, Python, or Java to create the logic and functionality of the application.
+
+14. What is microservices architecture?
+Microservices architecture is an approach to software development. It allows applications to be built as a collection of small, independently deployable services. Each service performs a specific function and communicates with other services using lightweight protocols such as HTTP or message queues. Microservices architecture allows for greater flexibility, scalability, and resiliency than monolithic architectures.
+
+15. How do we ensure the security of a web application?
+To ensure the security of a web application, we can use techniques such as input validation, sanitization, and encryption. Also we can use HTTPS to secure the communication between the client and server. Implement measures such as access control, firewalls, and intrusion detection systems.
+
+16. What is the difference between a GET request and a POST request?
+A GET request is used to retrieve data from a server, while a POST request is used to send data to a server to be processed. GET requests can be cached by the browser, while POST requests cannot.
+
+17. How do we handle cross-site scripting (XSS) attacks in web applications?
+We use input validation and sanitization to prevent XSS attacks. We also use Content Security Policy (CSP) to restrict the sources of content. It can be loaded by a page, preventing malicious scripts from running.
+
+18. What is the difference between web sockets and HTTP requests?
+HTTP requests are used to send and receive data between the client and server in a request-response format. Web sockets provide a persistent connection between the client and server, allowing real-time communication between the two.
+
+19. What is DevOps?
+DevOps is a software development methodology that combines development (Dev) and operations (Ops) to create a culture of collaboration and automation. It involves the use of tools and processes to automate the building, testing, and deployment of software. DevOps ensures the goal of delivering high-quality software faster and more reliably.
+
+20. What is the difference between synchronous and asynchronous programming?
+Synchronous programming is when code executes one line at a time and waits for each line to finish before moving on to the next. Asynchronous programming is when code executes without blocking, allowing other code to run while it’s waiting for an operation to finish. Asynchronous programming is more efficient for tasks such as network requests and I/O operations.
+
+Take a Look: Full Stack Training with Placement in Chennai
+
+21. If the task is to create a web application that allows users to create and edit documents, What technologies and tools would you use to accomplish this task?
+To complete this task, We have to use the following technologies and tools:
+
+Front-end: React.js for building the user interface
+Back-end: Node.js and Express.js for building the server-side application
+Database: MongoDB for storing the documents
+Other tools: Git for version control, and Postman for testing the API endpoints
+22. The new project is to add a new feature for an existing web application. What steps are needed to ensure a smooth integration and minimize the impact on the existing application?
+To ensure a smooth integration and minimize the impact on the existing application,the following steps are needed:
+
+Research the API documentation to understand how it works and what data it provides
+Write tests to verify that the API is working correctly and the data is being retrieved and displayed correctly
+Use version control to create a new branch for the feature.
+Make sure to document any changes made to the codebase and the API integration process for reference
+Test the integration in a staging environment before deploying to production to catch any issues before they impact end-users
+23. What is the difference between a framework and a library?
+Framework is a pre-built set of tools and guidelines for building applications. It provides a structure and a set of rules for development. Library is a collection of reusable code that can be used to perform specific tasks. They are used to perform specific functions within the structure provided by the framework.
+
+24. How to handle authentication and authorization in a web application?
+Authentication is the process of verifying the identity of a user. To achieve user authentication,use a secure password hashing algorithm. To add security, implement two-factor authentication.
+Authorization is the process of determining what actions a user is allowed to perform. To achieve user authorization,use access control lists
+
+25. How do RESTful APIs work?
+RESTful API works by sending requests to a server that returns a response in a predefined format, such as JSON or XML. The HTTP methods used in a RESTful API are GET, POST, PUT, PATCH, and DELETE. The client sends a request to the server using one of these methods. The server returns a response containing the requested data.
+
+26. What is hoisting in JavaScript?
+In javascript, Hoisting is default behavior of moving declarations to the top of the current scope. Function and variable declarations are hoisted to the top and can be used before they are declared in the code. The variable initialization remains in place and can be undefined until initialized.
+
+27. What is a callback function?
+A callback function is passed as an argument to another function. It is executed after the parent function has finished executing.
+
+28. What are promises in JavaScript?
+Promises provide a better way to handle asynchronous operations. The three states of promise are:
+
+Pending
+Fulfilled
+Rejected
+It helps avoid callback hell by chaining operations with .then() and .catch().
+
+29. How would you design a URL shortening service like Bit.ly?
+To design a URL shortener:
+
+Use a hash function for generating short URLs.
+Store the mappings between long URLs and short URLs in a database.
+Handle collisions by regenerating the short URL.
+Optimize for scalability by partitioning the data and implementing caching.
+30. How does the virtual DOM work in React?
+The virtual DOM is a lightweight representation of the actual DOM to optimize updates. When a component’s state changes, a new virtual DOM is created and compared with the previous one using a diffing algorithm. Only the parts of the real DOM that changed are updated to improve performance.
+
+31. What is the event loop in Node.js?
+The event loop in Node.js is responsible for handling asynchronous operations. It is used to perform non-blocking I/O operations by
+
+Offloading tasks
+Executing callbacks
+The different phases of the event loop are:
+PTimers
+Pending callbacks
+Idle/prepare
+I/O callbacks
+32. How would you design a distributed file storage system like Dropbox?
+To design a distributed file storage system:
+
+Use object storage to store files.
+Implement metadata storage in a relational database to track file versions, owners, and permissions.
+Sync files across devices using a client that watches file changes and uploads/downloads incrementally.
+Ensure consistency by versioning files and resolving conflicts based on last-modified timestamps.
+33. How would you store hierarchical data, like a file system structure, in a database?
+The strategies for storing hierarchical data are:
+
+Adjacency List in which each node has a pointer to its parent,
+Nested Set where each node is assigned a range of numbers representing its position in a hierarchy,
+Materialized path to store the full path of each node as a string.
+34. What is breadth-first search (BFS) in terms of their use cases?
+BFS is the searching technique to all the neighbors at the present depth level before moving to the next level. It is best for finding the shortest path in an unweighted graph or a puzzle.
+
+35. How would you design a system to handle millions of concurrent users?
+Design a system to handle millions of concurrent users using:
+
+Load balancing to distribute incoming traffic,
+Store frequently accessed data in in-memory caches,
+Distributed databases to handle large amounts of data,
+Sharding to split databases into manageable parts.
+36. What is a B+ Tree?
+B+ Tree is a variation where data is only stored in the leaf nodes, and internal nodes only store keys.
+
+Advantages:
+
+Efficient for range queries, as all leaf nodes are linked together.
+
+37. How would you implement a Least Recently Used cache?
+LRU cache evicts the least recently accessed item when the cache reaches its capacity. It can be implemented using:
+
+HashMap
+Doubly Linked List
+38. Explain about microservices and its advantages?
+Microservices is the popular software architecture pattern where an application is composed of small, independent services that communicate via APIs. Each service is aq specific functionality and can be developed, deployed, and scaled independently.
+
+Advantages:
+
+Scalability, flexibility, independent deployment, fault isolation.
+
+39. How would you handle authentication in a web application?
+Authentication is the process of verifying the user’s identity through:
+
+Session-based authentication: The server stores user sessions in memory, and users receive a session cookie.
+
+Token-based authentication: JSON Web Tokens are issued after login and passed with each request.
+
+40. How do websockets work in real-time applications?
+WebSockets provide a full-duplex communication channel over a single TCP connection. It allows for real-time interaction between client and server. WebSockets push updates to the client instantly.
+
+Use Cases: Real-time chat applications, live updates, multiplayer gaming, stock market tracking.
+
+41. How would you handle Authorization in a web application?
+Authorization: determines the allowed behavior of the authenticated user.
+
+Role-based access control (RBAC): Assigns roles to users, and permissions are granted based on roles.
+
+42. How would you implement file uploads and storage in a web application?
+In a web application, File uploads can be handled by:
+
+Backend Setup: Use multipart/form-data to upload files from the frontend.
+
+Storage Options:
+
+Local Storage: Store files on the server’s filesystem.
+
+Cloud Storage: Upload files to cloud services like AWS S3 or Google Cloud.
+
+43. What is containerization in full stack development?
+Containerization involves packaging any application with its dependencies into a container. It ensures that they run consistently across different environments. Docker is a popular tool for containerization in full stack development because of:
+
+Isolation
+Portability
+Efficiency
+Ecosystem
+44. Why Continuous Integration/Continuous Deployment (CI/CD) is important in full stack development?
+CI/CD ensures automatic testing and merging of code changes frequently to avoid integration issues. CI/CD improves the speed, efficiency, and reliability of the development process. It catches bugs early, automating deployments, and ensuring code quality.
+
+45. How do web workers help in improving the performance of a web application?
+Web Workers are a way of executing JavaScript code in the background on a separate thread. This improves the responsiveness of the application by offloading heavy tasks which improves the performance of the web application.
+
+Full Stack Developer Interview Questions
 Content Team
 April 1, 2024
 Table of contents
