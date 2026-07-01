@@ -1,3 +1,484 @@
+Vue.js Interview Questions and Answers - 2025
+Last Updated : 5 Aug, 2025
+Vue.js is a progressive, lightweight, and flexible JavaScript framework used for building modern web applications, making it an excellent choice for both single-page applications (SPAs) and complex web interfaces. Vue.js provides powerful features like the reactivity system, component-based architecture, Vue Router, Vuex (or Pinia) for state management, and server-side rendering (SSR) with Nuxt.js.
+
+In this article, we’ve compiled the Top 50+ Vue.js Interview Questions and Answers - 2025, covering both fundamental and advanced Vue.js concepts. Whether you’re a beginner or have 2-5 years of experience, these questions will help you prepare effectively for Vue.js-related interviews.
+
+Table of Content
+
+VueJS Interview Questions and Answers - Beginners
+VueJS Interview Questions and Answers - Intermediate
+VueJS Interview Questions and Answers - Advanced
+VueJS Interview Questions and Answers 2025 - FAQs
+Vue.js Interview Questions and Answers - Beginners Level
+1. What is Vue.js?
+Vue.js is a progressive JavaScript framework used to build user interfaces and single-page applications (SPAs). Vue.js is designed to be flexible, making it easy to integrate into projects, from simple views to complex web apps, and it focuses on the view layer, allowing developers to focus on building interactive and responsive applications efficiently.
+
+2. What is a Single-Page Application?
+Single Page Applications (SPAs) load once and robustly update content, reducing wait time for users. It uses JavaScript to fetch data and update the web page without necessitating to reload everything.
+
+3. What is a component in Vue.js? How can we create a component?
+A component in Vue.js is a reusable piece of code that signifies a part of the user interface. Components make it simpler to handle complex applications by splitting them down into minor, controllable pieces.
+
+To make a component in Vue.js, pursue these steps
+
+Create a new component by defining it with 'template' , 'script' , and 'style'.
+
+<template>
+    <div>
+        <h1>Hello, {{ message }}</h1>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "MyComponent",
+    data() {
+        return {
+            message: "gfg",
+        };
+    },
+};
+</script>
+
+<style scoped>
+h1 {
+    color: blue;
+}
+</style>
+Register the component in the Vue instance or another component where you want to use it.
+
+import MyComponent from './MyComponent.vue'
+
+new Vue({
+    el: '#app',
+    components: {
+        MyComponent
+  }
+})
+Use the component in your template with its custom tag.
+
+<div id="app">
+  <my-component></my-component>
+</div>
+4. What are Props in Vue.js?
+Props in Vue.js are custom attributes that permit parent components to pass data to child components. They empower component reusability by producing it possible to handle child components from their parent. They are specified in the child component and received as arguments from the parent.
+
+Syntax:
+
+Vue.component('child-component', {
+  props: ['propName'],
+  // define component
+});
+5. What is the difference between one-way data binding and two-way data binding in Vue.js?
+Feature
+
+One-Way Data Binding
+
+Two-Way Data Binding
+
+Definition
+
+The data flows only from the component’s state (model) to the DOM (view).
+
+The data flows both ways between the component’s state (model) and the DOM (view).
+
+Direction
+
+Unidirectional (from model → view).
+
+Bidirectional (from model ↔ view).
+
+Binding Method
+
+Uses v-bind (: shorthand) to bind values to attributes.
+
+Uses v-model to bind input elements to data properties.
+
+Use Case
+
+Used for rendering static or read-only content (e.g., displaying values in <p>, <h1>, <img>, etc.).
+
+Used for interactive elements like form inputs (<input>, <textarea>, <select>) where user input updates the data.
+
+Example
+
+vue <p v-bind:title="message">{{ message }}</p>
+
+vue <input v-model="userInput">
+
+6. What is a Vue.js Router?
+Routing in Vue.js is used to navigate the Vue application, permitting the formation of single-page applications with multiple views. Vue Router helps link between the browser’s URL/History and Vue’s components empowering for certain paths to render whatever view is linked with it. A Vue router is utilized in making single-page applications.
+
+7. What is a Vue instance? How can we create a Vue instance?
+Vue.js instance is the root of all Vue application. It is JavaScript object formed by the 'Vue' constructor function and assists as the initiating point for building a Vue application.
+
+Creating Vue Instance:
+
+
+var app = new Vue
+({
+  // Options object
+  el: '#app', // The element to mount the Vue instance to
+  data: 
+{
+    message: 'Hello GeeksForGeeks!'
+  }
+)}
+8. What are Filters in Vue.js?
+Vue.js filter is defined as Vue components that offer features called filters to apply text formatting on any part of the data templates dynamically. They are mainly applied in 'v-bind' expressions. Filters can perform tasks like formatting dates, capitalizing text.
+
+{{ message | filterName }}
+9. In Vue.js, what is the purpose of nextTick?
+After the data have been set and the DOM changed, the nextTick method is only easy solution to perform a function.
+
+10. How do you handle errors and exceptions in Vue.js applications?
+In Vue.js, the 'errorCaptured' lifecycle hook permits to control errors taking place in a component and its child components. For application-wide error handling, you can apply global error handlers like 'Vue.config.errorHandler' .
+
+11. How do you create custom events in Vue.js?
+In Vue.js, custom events are formed applying the '$emit' method within a child component to activate an event. The parent component listens for this event using the 'v-on' directive or its shorthand '@' . This grants communication between a child and parent components.
+
+12. Explain Virtual Dom in Vue.js?
+In Vue.js, the Virtual DOM (VDOM) is an approach used to upgrade execution when updating web pages. It works like a blueprint of the real web page's structure, kept in memory. When a Vue component changes, Vue first update VDOM instead of directly editing the real DOM. Then, it matches the improved VDOM with the earlier one to figure out the smallest number of changes vital in the real DOM. This method lessens the number of upgrades to the existing web page, forming Vue applications rapid and more responsive, notably with often data changes.
+
+13. Explain Hooks in Vue.js? what are the different built-in Hooks in Vue.js?
+Hooks are a new feature introduced in Vue.js 3. Hooks are functions that permit adding reusable logic to components. They permit managing state, lifecycle events, and side effects within functional components.
+
+Some of the most typically used hooks include:
+
+'onMounted' : The 'onMounted' hook enacts directly after the component is mounted onto the DOM. It is best for executing tasks like DOM manipulations or fetching data, assuring these operations happen at the right moment while the component's lifecycle.
+'onUnmounted' : The 'onUnmounted' hook initiates just before the component is eliminated from the DOM. It is impeccable for doing cleanup tasks, assuring that any vital operations are done before the component is no longer active in the application
+14. What is a Key in Vue.js?
+In Vue.js, a "key" is a unique attribute used mainly to discover nodes in a list of components rendered utilizing 'v-for' . When Vue renders multiple items with 'v-for' , it uses keys to capably update the DOM elements. Using keys correctly helps Vue efficiently update the DOM by reusing extant elements based on changes in data, rather than re-rendering everything from scratch, thus refining execution and stopping unneeded re-renders.
+
+15. Describe the distinction between 'v-show' and 'v-if' ?
+Feature
+
+v-show
+
+v-if
+
+Definition
+
+Toggles the visibility of an element by modifying the display CSS property.
+
+Completely adds or removes the element from the DOM based on the condition.
+
+DOM Manipulation
+
+The element remains in the DOM but is hidden (display: none).
+
+The element is created or destroyed dynamically in the DOM.
+
+Performance
+
+More performance-efficient when frequently toggling visibility.
+
+More performance-heavy when toggling frequently since it involves adding/removing elements from the DOM.
+
+Use Case
+
+Use when visibility needs to be toggled frequently (e.g., dropdowns, tabs).
+
+Use when elements are conditionally rendered based on logic (e.g., fetching API data).
+
+Example
+
+vue <p v-show="isVisible">Hello World</p>
+
+vue <p v-if="isVisible">Hello World</p>
+
+16. What is the difference between '$emit' and '$on' in Vue.js?
+Feature
+
+$emit
+
+$on
+
+Definition
+
+Used to trigger events from a child component to the parent.
+
+Used to listen for events triggered by a child component.
+
+Direction
+
+Child → Parent (emits events to parent component).
+
+Parent → Child (listens to events from child component).
+
+Scope
+
+Can only emit events in the current instance of the component.
+
+Can listen for events emitted within the component instance or its descendants.
+
+Usage
+
+Commonly used when creating child-to-parent communication.
+
+Commonly used for parent listening to child component events (e.g., custom components).
+
+Example
+
+vue this.$emit('customEvent', data);
+
+vue this.$on('customEvent', (data) => { console.log(data); });
+
+17. Who is the founder/ inventor of Vue.js?
+Evan You, the creator of Vue.js, developed the framework while working at Google on various Angular projects.
+
+18. What is a local component in Vue.js?
+Local components are defined inside a specific component and are accessible only within that component or its child components.
+
+19. What is a global component in Vue.js?
+A global component in Vue.js is a component that is registered globally, forming it accessible for use in any part of the application. This permits the component to be reused over varied templates without requiring to import it each time.
+
+20. What is the purpose of the 'data' function in Vue components?
+The 'data' function is applied to clarify the reactive data properties for a component. Such data properties are part of the component's state and can be acquired in the component. The 'data' function must return an object that covers the properties you seek to be reactive.
+
+
+<template>
+    <div>
+        <p>{{ message }}</p>
+        <button @click="updateMessage">Update Message</button>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'ExampleComponent',
+    data() {
+        return {
+            message: 'Hello, GFG'
+        }
+    },
+    methods: {
+        updateMessage() {
+            this.message = 'Welcom to GFG'
+        }
+    }
+}
+</script>
+21. What is Vue CLI and how is it used?
+Vue CLI (Command Line Interface) is a tool for fast support Vue.js projects. This is a command-line utility that permits you to choose from a range of build tools. With Vue CLI, developers can rapidly set up a new project with best practices and modern build tools like Webpack or Vite.
+
+Vue.js Interview Questions and Answers - Intermediate Level
+22. How do you pass data between components in Vue.js?
+To pass data between components in Vue.js, you can use several methods depending on the component relationship:
+
+Props: For passing data from a parent component to a child component.
+Custom Events: For passing data from a child component to a parent component by emitting events.
+Vuex: For state management, allowing components to share data globally in large applications.
+Provide/Inject: For passing data from an ancestor component to a descendant, even if they aren't directly related.
+Parent Component (Passing Data with Props)
+Child Component (Receiving Data via Props)
+
+<template>
+    <ChildComponent :message="parentMessage" />
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+    data() {
+        return {
+            parentMessage: "Hello from Parent!"
+        };
+    },
+    components: {
+        ChildComponent
+    }
+};
+</script>
+23. What are slots in Vue.js?
+Slots are placeholders in a component's template that permit content to be passed into them from the parent component. They empower the formation of reusable components by giving a way to insert components into predefined slots. It can be named or unnamed ('default'), allowing versatility in how content is divided. This attribute is notably valuable for forming components that need dynamic layouts, where the structure might vary depending on where the component is used.
+
+24. How do you handle asynchronous operations in Vue.js?
+Asynchronous operations are usually controlled using promises or async/await syntax. Promises permit chaining of .then() and .catch() to handle asynchronous responses from APIs. Instead, async/await gives a cleaner syntax by permitting asynchronous functions to be written in a synchronous style.
+
+25. What is the watcher in Vue.js?
+A watcher is a mechanism designed to notice modifications in data properties in a component. It permits to respond to these modifications by enacting defined functions.
+
+Syntax
+
+export default {
+    data() {
+        return {
+            message: 'Hello GFG'
+        };
+    },
+    watch: {
+        message(newValue, oldValue) {
+            console.log(`Message changed from ${oldValue} to ${newValue}`);
+            // Perform actions based on the change
+        }
+    }
+}
+26. What is Vue-loader?
+Vue Loader is a webpack loader for Vue.js that permits to write Vue components in '.vue' file format. It empowers Vue.js applications to use Single File Components (SFCs), which encapsulate HTML, CSS, and JavaScript into a single file. They compile these components into JavaScript modules that the browser can grasp, easing component-based development in Vue.js projects.
+
+27. What are the different types of directives present in Vue.js?
+Vue directives, marked by the prefix v- . These directives form a perfect connection to the Vue instance, facilitating the formation of a responsive user interfaces that react to changes in data and user interactions.
+
+Here are the major kinds of directives in Vue.js:
+
+v-bind
+v-model
+v-for
+v-on (or @)
+28. What is server-side rendering (SSR) in Vue.js?
+Server-side rendering in Vue.js includes rendering Vue components on the server before sending HTML to the client. This boosts first page load execution by delivering pre-rendered content.
+
+29. Explain features of Vue.js?
+Here are some of the features of Vue.js:
+
+Vue.js permits building applications using components, which encapsulate both data and UI elements into reusable blocks.
+Vue.js gives built-in transition system that can apply CSS transitions and animations when elements are inserted, updated, or removed from the DOM.
+Vue.js supports server-side rendering to boost SEO and initial load times of applications.
+30. How Do You Bind Class and Style in Vue.js?
+To robustly bind classes and styles in Vue.js, use the 'v-bind' directive. You can obtain class binding using any ':class' or 'v-bind:class' .
+
+<div :class="{ active: isActive, 'text-danger': hasError }"></div>
+Use the :style or v-bind:style directive to use inline styles dynamically.
+
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+31. How do you optimize the performance of a Vue.js application?
+To optimize Vue.js applications, fixate on lowering excessive re-renders using memoization.
+
+Use Vue's virtual DOM for competent updates, and enhance components with 'v-if' , 'key' attributes in 'v-for' , and lifecycle hooks like 'shouldComponentUpdate' .
+Apply lazy loading with Vue Router.
+Apply Vue DevTools for profiling, consider SSR for SEO and first load speed.
+32. What Is The Difference Between Functional And Class-based Components?
+Functional components in Vue.js are stateless, and have no lifecycle hooks, giving performance benefits for easy presentational tasks. Class-based components, on the other hand, are sustaining full Vue features like lifecycle hooks, state management, and more complex logic, adequate for dynamic, interactive components.
+
+33. Explain the Concept Of Higher-order Components in Vue.js?
+HOCs are functions that take a component and return a new component with boosted features. This pattern is energized by higher-order functions in JavaScript, which are functions that work on other functions.
+
+34. What Are the Best Practices for Component Naming in Vue.js?
+Here are certain crucial strategies for component naming in Vue.js:
+
+Use PascalCase for Component Names: Vue assists 'PascalCase' for component names, 'PascalCase' is chosen, particularly when using ES6 import statements. An Example: 'MyComponent.vue' .
+Meaningful Names: Components should be named based on their functionality. An Example: In place of 'Button.vue' , use 'SubmitButton.vue' if the component particularly manages submit actions.
+Avoid Generic Names: Avoid utilizing overly generic names like 'Button' , 'Item' , or 'List' . These names do not express exact operations. An Example: apply 'UserProfileCard.vue' in place of just 'Card.vue' .
+35. What Are Render Functions in Vue.js?
+Render function returns virtual DOM node, regularly named VNode in the Vue ecosystem, which is an interface that permits Vue to write these objects in your browser DOM. They include all the information necessary to work with Vue.
+
+36. Can we call the REST API from Vue.js?
+Yes, you can call REST APIs. You can include it in your project by using the following command.
+
+npm install axios --save  
+Implementing GET method using Axios in Vue JS
+
+axios({ method: "GET", "URL": "https://httpbin.org/ip" }).then(result => {
+    this.ip = result.data.origin;
+}, error => {
+    console.error(error);
+});  
+37. Mention some of the array change detection methods in Vue.js?
+In Vue.js, some of the array change detection and mutation methods are:
+
+push()
+pop()
+shift()
+unshift()
+sort()
+reverse()
+Vue.js Interview Questions and Answers - Advanced Level
+38. What is Vuex?
+Vuex is a state management pattern and library for Vue.js applications. It acts as a central store for all the components in an application. It applies rules to verify that state changes occur in expected way. When merged with the Vue.js DevTools extension, it gives extra strong features.
+
+39. In vue router, what are navigation guards?
+Vue-navigation router's guards protect navigations by diverting or cancelling them. The three possible techniques to plug into router navigations are listed below.
+
+Global
+Per-route
+In-component
+40. How do you handle errors and exceptions in Vue.js applications?
+In Vue.js, the 'errorCaptured' lifecycle hook permits to control errors taking place in a component and its child components. For application-wide error handling, you can apply global error handlers like 'Vue.config.errorHandler' .
+
+41. How can you install Vue.js in your project?
+To install Vue.js in your project, you can follow these steps:
+
+Using CDN: Include Vue.js directly via a CDN link in your HTML file:
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x.x/dist/vue.min.js"></script>
+Using npm: Install Vue.js via npm (Node Package Manager) for more advanced projects:
+npm install vue
+Vue CLI Create Project: Create a new Vue project using Vue CLI:
+vue create my-vue-app
+cd my-vue-app
+npm run serve
+42. Why is it recommended not to use v-if and v-for directives together on the same element in Vue.js?
+It is normally not suggested to use 'v-if' and 'v-for' directives unitedly on the similar element in Vue.js due to potential operation outcomes. Here is why:
+
+Rendering Overhead: When 'v-for' iterates over a list, Vue.js forms a DOM element for each item in the list. If you merge 'v-if' on the same element, Vue.js requisites to analyze the 'v-if' directive for each iteration to choose whether to render that element. This can lead to unneeded calculations and DOM manipulations.
+Readability: Uniting 'v-if' and 'v-for' can make the template tougher to read and understand, particularly for developers who are new to the codebase. It can unclear the meant logic of rendering elements based on terms.
+43. Give an example to demonstrate how can you use event handlers in Vue.js?
+In Vue.js, event handlers are methods that are invoked in response to precise events initiated by user interactions. These events can comprise things like clicks, key presses, mouse movements, form submissions, and more. They are defined within the Vue instance and are normally stated in the methods object.
+
+
+<meta charset="UTF-8">
+    <title>gfg</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <button @click="handleClick">Click me!</button>
+        <p v-if="clicked">Button was clicked!</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                clicked: false
+            },
+            methods: {
+                handleClick() {
+                    this.clicked = true;
+                }
+            }
+        });
+    </script>
+</body>
+Output
+
+Animationkk
+Event Handler
+44. Name some websites which are using Vue.js?
+Netflix
+Adobe
+Facebook
+Gitlab
+Xiaomi
+Alibaba
+45. Can You Explain the Single File Components in Vue.js?
+Single File Components in Vue.js conclude a component's template, logic, and styles in a single ' .vue ' file. They boost modularity by arranging all features of a component in one place, refining readability. During build, tools like webpack process these files, allowing innovative features like hot-reloading. This way refines Vue.js development by supporting component-based architecture.
+
+46. What is $parent property in Vue.js?
+In Vue.js, the ' $parent ' property gives direct access for a child component to its direct parent component in a nested structure. This permits the child to interact with and use methods.
+
+47. What is vue plugin?
+Developers can form and add global level features to Vue via Vue plugin. This can be utilized to add globally available methods to an application. VueFire, Vue plugin that adds Firebase specific methods and binding to the intact application, is an example of Vue plugin.
+
+48. Discuss the v-cloak directive in Vue.js?
+The 'v-cloak' directive in Vue.js hides components until they are compiled, preventing the display of compiled Vue templates on page load. It assures an effortless user experience by excluding the wavering outcome generated by delayed rendering, utilizing CSS to hide elements as far as Vue processing completes.
+
+49. List out some of the event modifiers in Vue.js?
+In Vue.js, event modifiers are directives that can be affixed to the v-on directive to change how events are controlled. Some usually used event modifiers contain:
+
+.stop: Stops event propagation.
+.prevent: Prevents the default event behavior.
+.capture: Adds an event listener in capture mode.
+.passive: Boosts scrolling performance.
+50. What are some popular testing frameworks for Vue.js?
+Some popular testing frameworks for Vue.js comprises:
+
+Jest
+Mocha
+Cypress
+Karma
+
 - Значение собеседования для программиста на фреймворке vue.js
 Программист на фреймворке Vue.js должен понимать не только синтаксис и возможности инструмента, но и архитектуру в целом, чтобы создавать чистый, оптимизированный и масштабируемый код.
 - Евгений Примаченко
