@@ -1,4 +1,59 @@
 Postman Interview Questions and Answers
+Question - 31 : - What is the purpose of status code 304?
+Answer - 31 : -
+
+It means NOT MODIFIED. It is used to reduce network bandwidth usage in case of conditional GET requests. Response body should be empty. Headers should have date, location etc.
+
+Question - 32 : - Define status code 201?
+Answer - 32 : -
+
+It means created, when a resource is successfully created using POST or PUT request. It returns a link to a newly created resource using the location header.
+
+Question - 33 : - When do we use global variables, collection variables, and local variables?
+Answer - 33 : -
+
+Global variables are general purpose variables, ideal for quick results, and prototyping. They are used while passing data to other requests.
+
+Collection variables can be mostly used for storing some constants that do not change during the execution of the collection. They are used for constants that do not change during the execution and also for URLs / authentication credentials if only one environment exists.
+
+Local variables are only available within the request that has set them or when using Newman/Collection runner during the entire execution. They are used whenever you would like to override all other variable scopes.
+
+Question - 34 : - How do you remove local variables?
+Answer - 34 : -
+
+Local variables are automatically removed once the tests have been executed.
+
+Question - 35 : - How can we stop executing requests or stop the collection run?
+Answer - 35 : -
+
+postman.setNextRequest(null);
+
+Question - 36 : - What is the difference between form data and x-www-form-urlencoded ?
+Answer - 36 : -
+
+The difference between the form data and x-www-form-urlencoded is that the url will be encoded when sent through x-www-form-urlencoded.
+
+Question - 37 : - What do you understand by status code 201?
+Answer - 37 : -
+
+The status code 201 means created when you have successfully created a resource using POST or PUT request. It returns a link to a newly created resource using the location header.
+
+Question - 38 : - Why is it not suggested to save work in Postman cloud?
+Answer - 38 : -
+
+It is not suggested and is not preferred to save your work in the Postman cloud as the company's work is not allowed to be leaked and remain confidential. While saving your work on Postman cloud, it may cause a security breach as it requires sign-in. That's why the Postman Cloud is not suggested for saving work, and team workspace is highly preferred.
+
+Question - 39 : - What is digest auth in Postman?
+Answer - 39 : -
+
+The digest auth or digest authorization is one of the authorization techniques provided by Postman. This technique lets the clients send the request first to the API and get responses from the server, including a number that can be used only once a real value and 401 unauthorized responses. After that, the client can send back an encrypted data array with both username and password and the data received from the server earlier. Now, the server uses this data to generate an encrypted data string and compares this with what was sent for authenticating the request.
+
+Question - 40 : - What is the use of Postman cloud when we are working in a company?
+Answer - 40 : -
+
+The Postman cloud is a common repository of companies to access Postman collections. That is why we use it when we are working in a company. We can save the work instantly in the Postman cloud after logging in. It facilitates the team members to access data/collections from anywhere.
+
+Postman Interview Questions and Answers
 Question - 21 : - What are the core components of an HTTP Response?
 Answer - 21 : -
 
