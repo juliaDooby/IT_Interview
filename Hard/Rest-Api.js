@@ -1,3 +1,191 @@
+Beginner Interview Questions with Answers
+Beginner REST interview questions
+
+1. What is REST?
+Answer: REST stands for Representational State Transfer, and is an architectural style based on the Hypertext Transfer Protocol (HTTP) for developing web-based applications.
+
+REST outlines several guidelines that web services must follow to be considered RESTful. These guidelines ensure that requests and resources are sent easily and efficiently between client and server using standardized HTTP methods.
+
+2. What is a REST API?
+Answer: An application programming interface (API) is a software-to-software interface that allows otherwise separate applications to interact and share data. For example, a news website could leverage the X (Twitter) API to automatically find relevant tweets and include them in news articles.
+
+A REST API, also called a RESTful API, is an API that follows REST principles. In a REST API, all data is treated as resources, each one represented by a unique uniform resource identifier (URI). For example, the X API makes each tweet an available resource that can be retrieved by clients. Clients can also use X’s API to post tweets and perform other actions on the site.
+
+For a more detailed explanation, check out this video from IBM:
+
+
+3. What’s a real-world example of a REST API?
+Answer: Here are some examples of REST APIs in use:
+
+X allows publishing sites to pull information like tweets, users, tweet streams, and so on. Developers can also write programs to post tweets through the API instead of the website interface.
+Airlines expose their flight times and prices through APIs so travel and ticketing sites can use them.
+To display weather information, weather apps harness public APIs that share weather data.
+Public transportation services usually make their data public in real-time via APIs so that mapping and navigation apps (like Google Maps) can use them.
+In turn, Google Maps hosts several APIs that make its mapping data available to developers. Developers leverage these APIs to place dynamic maps on their websites or in their apps.
+4. Which protocol do REST APIs use?
+Answer: REST APIs use the HTTP protocol to communicate with clients. This allows REST APIs to be easily deployed over the internet, since HTTP is the same protocol that is used to deliver web pages to client browsers.
+
+5. What is a resource?
+Answer: In REST, every accessible piece of content on the server is labeled as a resource. A resource is an object with a type, associated data, a relationship with other resources on the server, and a list of methods that can be used with it. For example, a resource could be an HTML or text file, a data file, an image or video, or an executable code file.
+
+A resource is identified with a URI. Clients access resources by including their URIs in HTTP requests.
+
+6. What is a URI?
+Answer: URI stands for uniform resource identifier. In REST, a URI is a string that identifies a resource on a web server. Each resource has its own unique URI, which, when included in an HTTP request, allows clients to target that resource and perform actions on it. The process of targeting a resource with its URI is called “addressing.”
+
+The format of a URI is as follows:
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+Intermediate Interview Questions with Answers
+7. What is messaging in the context of REST?
+Answer: In REST, messaging refers to the back-and-forth communication between the client and API. An interaction always starts with the client messaging the API with an HTTP request. The API processes this request. It then sends back an HTTP response that gives the status of the request and any resources the client asked for.
+
+8. Which HTTP request methods are supported by REST?
+Answer: An HTTP request method indicates which action the client wants the API to perform on a resource. The four primary HTTP request methods in REST are:
+
+GET. Requests a resource from the server. (Note that GET cannot modify server resources, as it is a read-only method.)
+POST. Creates a new resource on the server.
+PUT. Updates an existing resource on the server.
+DELETE. Removes a resource from the server.
+Additionally, two less common HTTP requests you should also know are:
+
+HEAD. Requests meta-information about a resource. This request is similar to GET, but the response does not include a response body.
+OPTIONS. Retrieves a list of possible methods for a resource.
+9. What is the difference between the POST method and the PUT method?
+Answer: POST and PUT are similar but not exactly the same. POST is for creating a resource on the server, whereas PUT is for replacing a resource at a specific URI with another resource. If you use PUT at a URI that already has an associated resource, PUT will replace that resource. If there is no resource at the specified URI, PUT creates one.
+
+Additionally, PUT is idempotent, which means that calling it multiple times will only result in one resource. This is because each call replaces the existing resource (or creates a new one if there is nothing to replace).
+
+POST is not idempotent. If you call POST 10 times, you’ll end up with 10 different resources on the server, each with its own URI. This also means that POST responses are cacheable, whereas PUT responses are not.
+
+10. What is CRUD?
+Answer: CRUD stands for “Create, Read, Update, Delete.” These are the four basic actions that can be performed on databases through a REST API. Each action corresponds to an HTTP request method:
+
+Create = POST
+Read = GET
+Update = PUT
+Delete = DELETE
+It’s not the most elegant of acronyms, but it works.
+
+11. What are the main parts of an HTTP request?
+Answer: HTTP requests are sent by the client to the API. They request data or perform some action on the server. There are five main components of an HTTP request in REST:
+
+Start line: Indicates the intended action of the request and includes:
+A request method that indicates the HTTP request method to be performed on the resource (i.e., GET, POST, PUT, DELETE).
+A URI that identifies the requested resource on the server.
+The HTTP version being used, which signals which version the API should respond with.
+HTTP request header. Lists metadata about the request, such as the user agent, file formats the client will accept, the format of the request body, language, caching preferences, etc.
+HTTP request body. Contains any data associated with the request. This is only necessary if the request is to modify data on the server with the POST or PUT methods.
+12. What are the main parts of an HTTP response?
+Answer: HTTP responses are sent by the API to the client. They inform the client that the requested action was (or was not) completed and to deliver any requested resources. There are four main components of an HTTP response:
+
+HTTP version. The version of HTTP used.
+Status line. Indicates the status of the request with an HTTP response status code.
+HTTP response header. Lists metadata about the response, such as the date, server, user agent, file formats of the returned resources, caching information, etc.
+HTTP response body. Contains the resource data that was requested by the client and is also called the payload.
+13. What are some common HTTP response status codes you might see when working with a REST API?
+Answer: HTTP response status codes tell the client the result of the requested action (GET, POST, etc.). Some common codes you’ll see in HTTP responses are:
+
+200 OK. The request succeeded.
+201 Created. The request succeeded, and a resource was created.
+400 Bad Request. The request was not fulfilled due to an error in the request, such as a typo or missing data.
+401 Unauthorized. The request was not fulfilled because the client is not authenticated or authorized to access the requested resource.
+403 Forbidden. The request was not fulfilled because the client is authenticated but not authorized to access the requested resource.
+404 Not Found. The request was not fulfilled because the server could not locate the requested resource.
+500 Internal Server Error. The request was not fulfilled due to an unexpected problem with the server. (See also: 500 Internal Server Errors: What They Are & How to Fix Them)
+502 Bad Gateway. The request was not fulfilled due to an invalid response from an upstream server.
+503 Service Unavailable. The server was unable to process the request due to maintenance, overloading, or another temporary interference.
+14. Which markup languages are primarily used to represent resources in REST APIs?
+Answer: In REST APIs, XML (extensible markup language) and JSON (JavaScript Object Notation) are the two most common languages for representing resources.
+
+15. What are the principles of REST?
+Answer: REST APIs must adhere to five requirements:
+
+Client-server decoupling. The client and server can only interact in a series of requests and responses. Only clients can make requests, and only servers can send responses. This simple principle allows both parties to operate independently of each other.
+Uniform interface. All communications between the client and server must follow the same protocol. For REST, this protocol is HTTP. A uniform interface simplifies integrations because every application uses the same language to request and send data.
+Stateless. In stateless communication, the server does not store any information about past requests/responses. Each request and response contains all the information needed to complete the interaction. Stateless communication reduces server load, saves memory, and improves performance. It also eliminates the possibility of a failed request caused by missing data.
+Layered system. Layers are servers that sit between the client and the API server. These additional servers perform various functions, like identifying spam and improving performance (See also: What Is a CDN?). In REST, layers are modular and can be added and removed without affecting the messages between the client and the API server.
+Cacheable. Server responses indicate whether or not the resource is cacheable, so that clients can cache any resources to improve performance.
+Additionally, REST includes one optional condition:
+
+Code on demand. An API can send executable computer code to clients in its response. This lets the client application run the code in its own back end.
+16. What does it mean for an API to be stateless?
+Answer: Statelessness is one of the key principles of REST architecture. In stateless communication, the server does not store any information about previous communications. In other words, the client and server do not know each other’s state.
+
+Every request and response is a new interaction, and each request includes everything the server needs to give a successful response.
+
+17. What is caching?
+Answer: Caching is the method of temporarily storing a copy of a server response in a location (like computer memory) in order to retrieve it more quickly in the future.
+
+When working with REST APIs, Caching improves server performance by reducing the work the server has to do to fulfill the request. Caching also makes applications that use the API run faster since they don’t need to send a new request every time they need a resource.
+
+The cache duration of a resource (i.e., how long the resource can be cached by the client before the resource is retrieved again) is specified in the HTTP response header with the Cache-Control field.
+
+18. What is payload?
+Answer: “Payload” refers to the data in the body of the HTTP request and/or response messages in GET or POST requests.
+
+For example, if you request a specific tweet from the X API, the payload comprises the document containing the tweet text and any associated files for rendering the tweet on a page.
+
+Payload can also be included in the HTTP request with the POST method. If you want to post a tweet through X’s API, the tweet text that you send in your POST request is the payload.
+
+Statelessness simplifies client-server interactions because the server does not rely on past requests to process future requests and, thus, does not need to consume space and resources storing data from these requests.
+
+19. What are some benefits of REST?
+Answer: REST is by far the most common method for building web APIs. Here are some reasons why:
+
+REST is based around HTTP and fits within the existing infrastructure of the web, making it easy to implement by web applications.
+REST uses simple web technologies like XML and JSON, making it easy to learn.
+Because REST communications are stateless, the client and server are decoupled. This means that integrations are scalable and easy to build and manage over time.
+The REST architecture is flexible enough to adapt to a huge variety of use cases.
+REST is a lightweight architecture. Applications built with REST are generally faster than those built with other types of APIs.
+REST is easy to test in the browser with an API testing tool.
+20. What is the difference between REST and AJAX?
+Answer: Asynchronous JavaScript, or AJAX, is a set of web development techniques used in web applications. At its core, AJAX allows a web page to make requests to a server and update the page interface without needing to refresh.
+
+An AJAX client might use REST APIs with its requests, but AJAX doesn’t have to work with REST APIs exclusively. REST APIs can communicate with any client, whether the client uses AJAX or not.
+
+Unlike REST, which uses HTTP requests and responses for messaging, AJAX sends its requests to the server with the XMLHttpRequest object that is built into JavaScript. Server responses are executed by the page’s JavaScript code to alter the page content.
+
+Expert Interview Questions with Answers
+Expert REST Interview Questions What are some main characteristics of REST? What are some drawbacks of REST? How do you test APIs? What is the difference between REST and SOAP? How do you keep REST APIs secure?
+
+21. What are some main characteristics of REST?
+Answer: If you’re asked to point out the main features that distinguish REST APIs from others, here are some points to touch on:
+
+REST uses the HTTP protocol for communication.
+REST makes server resources available via URIs. Each resource has a unique URI.
+REST is stateless, meaning the server does not store information about past communications with clients.
+REST uses GET to retrieve resources from a server, whereas other web service methods use POST.
+22. What are some drawbacks of REST?
+Answer: While statelessness is a benefit of REST, it can sometimes be a disadvantage. REST does not preserve state. In other words, the server does not keep records of past interactions. If preserving state is necessary, that responsibility falls on the client.
+
+Additionally, REST is less strict with its security measures than SOAP, so developers need to be cautious and only work with APIs from legitimate, reputable providers. It also makes REST a poor choice for sending confidential information between servers and clients.
+
+23. How do you test APIs?
+Answer: There are many software tools designed for testing RESTful APIs — Postman, JMeter, and Katalon Studio are a few. The testing process usually involves sending various requests from your testing tool and monitoring how your API responds. Many testing tools also support automated testing, allowing you to run many different scenarios quickly.
+
+To learn more about how API testing works and what kinds of tests you can run, see our guide to API testing.
+
+And, check out this post to brush up on some API testing interview questions.
+
+24. What is the difference between REST and SOAP?
+Answer: REST and SOAP (Simple Object Access Protocol) are two different approaches to building APIs. Here are the key differences between them:
+
+SOAP is a strict protocol for building secure APIs. REST is not a protocol — it is an architectural style dictated by a set of guidelines (see question 15).
+REST APIs are simpler to build, more lightweight, and generally faster than SOAP APIs.
+SOAP APIs are considered more secure than REST APIs, though REST APIs can still implement safety features to make them reasonably secure.
+REST allows caching of responses, whereas SOAP does not.
+SOAP encodes data in XML format. REST allows you to encode data in any format, though XML and JSON are the most popular.
+25. How do you keep REST APIs secure?
+Answer: REST APIs do not employ as strict security measures as SOAP APIs and, therefore, should not be used to send or retrieve sensitive information. However, good REST APIs still implement safety measures for secure and reliable data transfers.
+
+Authentication and authorization. All requests to the API should be authenticated and authorized. Authentication is the process of verifying the identity of the client, and authorization is confirming that the client has permission to access the requested resources.
+Validation. After authentication and authorization, requests still need to be scanned for potentially malicious code before the API gives access to its resources. Otherwise, a server will be vulnerable to an injection attack.
+Encryption. TLS/SSL encryption secures the connection between client and server and prevents attackers from intercepting requests and responses.
+Rate-limiting. Rate-limiting methods like quotas and throttling prevent brute-force attacks like DDoS that attempt to slow or crash the server.
+No sensitive information in URIs. Protected information (e.g., username, password, or authentication token) should not be visible in the URI of a resource.
+For more in-depth explanations, see our post on API security.
+
 21 REST API interview questions you need to know in 2026
 Master the REST API interview questions that hiring managers actually ask. Learn REST architecture, HTTP methods, security, versioning, caching, pagination, and real-world API design principles to confidently tackle backend interviews.
 12 mins read
