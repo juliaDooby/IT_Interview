@@ -1,3 +1,869 @@
+Crack Your Full Stack Developer Interview: Top 20 Questions and Answers
+Q1: What is the difference between REST and GraphQL?
+
+
+REST (Representational State Transfer) and GraphQL are both API design architectures, but they differ in several key ways:
+
+Data Fetching:
+REST: In REST, the client makes HTTP requests to retrieve resources from different endpoints. Each endpoint returns a fixed structure of data.
+GraphQL: With GraphQL, the client can specify exactly what data it needs, and the server responds with exactly that data. This reduces over-fetching and under-fetching of data.
+Endpoints:
+REST: Uses multiple endpoints for different resources (e.g., /users, /posts).
+GraphQL: Uses a single endpoint for all requests.
+Flexibility:
+REST: Less flexible because the structure of the responses is fixed.
+GraphQL: More flexible as clients can query only the data they need.
+Versioning:
+REST: Often requires versioning of APIs (e.g., /api/v1/users).
+GraphQL: Typically doesn't require versioning, as clients can request different data from the same endpoint.
+Q2: Explain the concept of MVC architecture.
+
+
+MVC (Model-View-Controller) is a design pattern used in software engineering to separate an application into three main components:
+
+Model:
+Represents the application's data and business logic.
+Handles data storage and retrieval, often interfacing with a database.
+Notifies the View of any changes to the data.
+View:
+The user interface of the application.
+Displays data from the Model to the user.
+Sends user input to the Controller.
+Controller:
+Acts as an intermediary between the Model and the View.
+Processes user input from the View, updates the Model accordingly, and returns the updated data to the View.
+This separation allows for modular development, making it easier to manage and scale the application.
+
+Q3: What is a closure in JavaScript, and how is it used?
+
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables. This includes:
+
+The outer function’s variables.
+The parameters of the outer function.
+Variables declared in the inner function itself.
+Usage: Closures are often used for data privacy and to create function factories.
+
+Example:
+
+function outerFunction(outerVariable) {
+  return function innerFunction(innerVariable) {
+    console.log('Outer Variable: ' + outerVariable);
+    console.log('Inner Variable: ' + innerVariable);
+  };
+}
+
+const newFunction = outerFunction('outside');
+newFunction('inside');
+
+// Output:
+// Outer Variable: outside
+// Inner Variable: inside
+
+Q4: What is a promise in JavaScript, and how does it work?
+
+
+A promise is an object in JavaScript that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+States of a Promise:
+Pending: The initial state, neither fulfilled nor rejected.
+Fulfilled: The operation completed successfully.
+Rejected: The operation failed.
+
+How It Works: A promise is created using the Promise constructor, which takes a function (the executor) with two arguments: resolve and reject.
+
+Example:
+
+const myPromise = new Promise((resolve, reject) => {
+  const success = true;
+  
+  if (success) {
+    resolve('Operation succeeded');
+  } else {
+    reject('Operation failed');
+  }
+});
+
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+
+// Output:
+// Operation succeeded
+
+Q5: Explain the purpose and benefits of using TypeScript over JavaScript.
+
+
+TypeScript is a superset of JavaScript that adds static types, which can improve code quality and developer productivity.
+
+Purpose and Benefits:
+
+Static Typing:
+Helps catch type-related errors at compile time rather than runtime.
+Improves code readability and maintainability.
+
+Enhanced IDE Support:
+Better autocompletion, navigation, and refactoring tools in IDEs.
+
+Improved Documentation:
+Types act as documentation for functions and objects, making the code easier to understand.
+
+Compatibility:
+TypeScript code compiles to plain JavaScript, which can run on any JavaScript engine.
+
+Advanced Features:
+Features like interfaces, generics, and enums that are not available in plain JavaScript.
+
+🔍⚙️ Full Stack Development with Workik - Enhance Skills in React, Node.js, MongoDB & More | Build, Test, and Deploy with Confidence!
+
+Try for Free
+Q6: What are WebSockets, and how do they differ from HTTP?
+
+
+WebSockets are a communication protocol that provides full-duplex communication channels over a single TCP connection. They are used for real-time applications that require low latency, such as chat applications, live sports updates, and online gaming.
+
+Differences from HTTP:
+
+Connection Type:
+HTTP: Stateless and connectionless. Each request/response pair is independent.
+WebSockets: Stateful and connection-oriented. Once established, the connection remains open, allowing continuous communication.
+Communication:
+HTTP: Client sends a request, and the server responds. Communication is initiated by the client only.
+WebSockets: Either the client or the server can send messages once the connection is established, enabling real-time, two-way communication.
+Overhead:
+HTTP: Higher overhead due to repeated opening and closing of connections and the inclusion of HTTP headers.
+WebSockets: Lower overhead as the connection remains open and headers are sent only during the initial handshake.
+Q7: Explain the concept of middleware in Express.js.
+
+
+Middleware in Express.js is a function that executes during the lifecycle of an HTTP request to the server. Each middleware function can:
+
+Execute any code.
+Make changes to the request and response objects.
+End the request-response cycle.
+Call the next middleware function in the stack.
+Types of Middleware:
+
+Application-Level Middleware:
+Bound to an instance of express() .
+
+app.use((req, res, next) => {
+console.log('Time:', Date.now());
+next();
+});
+Router-Level Middleware:
+Bound to an instance of express.Router() .
+
+const router = express.Router();
+router.use((req, res, next) => {
+console.log('Request URL:', req.originalUrl);
+next();
+});
+Error-Handling Middleware:
+Takes four arguments: err, req, res, next .
+
+app.use((err, req, res, next) => {
+console.error(err.stack);
+res.status(500).send('Something broke!');
+});
+Built-in Middleware:
+Provided by Express.js, such as express.json() and express.static() .
+
+Third-Party Middleware:
+Provided by third parties, such as body-parser , morgan , etc.
+
+Q8: What is the purpose of Redux in React applications?
+
+
+Redux is a state management library for JavaScript applications, commonly used with React for managing the application state in a predictable way.
+
+Purpose and Benefits:
+
+Single Source of Truth:
+The entire state of the application is stored in a single object, called the store, making it easier to manage and debug.
+
+Predictable State Changes:
+State changes in Redux are handled by pure functions called reducers, ensuring that the state transitions are predictable and traceable.
+
+Centralized State Management:
+By centralizing the state, components can access the necessary state without having to pass props down multiple levels.
+
+Ease of Testing:
+Since reducers are pure functions, they are easy to test. Actions and state changes can also be tested in isolation.
+
+Developer Tools:
+Redux offers powerful developer tools for debugging, such as time-travel debugging and state inspection.
+
+Example:
+
+import { createStore } from 'redux';
+
+// Action
+const increment = () => ({ type: 'INCREMENT' });
+
+// Reducer
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+// Store
+const store = createStore(counter);
+
+store.subscribe(() => console.log(store.getState()));
+
+store.dispatch(increment()); // Output: 1
+
+Q9: Explain the difference between synchronous and asynchronous programming in JavaScript.
+
+
+Synchronous Programming:
+Operations are performed sequentially, one after the other.
+Each operation must complete before the next one starts.
+Blocking: Subsequent operations are blocked until the current one finishes.
+
+Example:
+
+console.log('Start');
+console.log('Middle');
+console.log('End');
+// Output: Start
+//         Middle
+//         End
+Asynchronous Programming:
+Operations can be performed out of order, allowing other operations to continue without waiting.
+Uses callbacks, promises, or async/await to handle asynchronous operations.
+Non-blocking: Subsequent operations can continue even if the previous one has not completed.
+
+Example:
+
+console.log('Start');
+
+setTimeout(() => {
+  console.log('Middle');
+}, 1000);
+
+console.log('End');
+// Output: Start
+//         End
+//         Middle (after 1 second)
+
+Q10: What are microservices, and what are their benefits and challenges?
+
+
+Microservices are an architectural style where an application is composed of small, independent services that communicate over a network. Each service is responsible for a specific business function and can be developed, deployed, and scaled independently.
+
+Benefits:
+
+1. Scalability:
+Each microservice can be scaled independently based on its load, leading to efficient resource utilization.
+
+2. Flexibility in Technology:
+Different microservices can be built using different technologies and languages best suited for the task.
+
+3. Improved Fault Isolation:
+Failure in one microservice does not necessarily affect others, enhancing the system's overall resilience.
+
+4. Independent Deployment:
+Microservices can be deployed independently, enabling faster and more frequent releases.
+
+5. Decentralized Data Management:
+Each microservice can manage its own database, leading to better data isolation and management.
+
+Challenges:
+
+1. Complexity:
+Managing a system with multiple services can be complex, requiring sophisticated orchestration and monitoring.
+
+2. Network Latency:
+Communication over a network introduces latency, which can impact performance.
+
+3. Data Consistency:
+Ensuring data consistency across services can be challenging, requiring careful design of data management strategies.
+
+4. Deployment and Testing:
+Deploying and testing microservices requires a robust infrastructure and automated testing strategies.
+
+5. Inter-Service Communication:
+Reliable communication between services is crucial, often necessitating the use of message brokers or API gateways.
+
+🚀 Your Workflow: Use Context-aware AI for Code Generation, Debugging, Unit Testing, & more.
+
+Sign Up to Try
+Q11: What is a Single Page Application (SPA), and how does it differ from a Multi-Page Application (MPA)?
+
+
+A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates content as the user interacts with the app, without requiring a full page reload.
+
+Differences between SPA and MPA:
+
+SPA: Loads a single HTML page and uses JavaScript to update the content dynamically. Navigation is handled client-side, which means content is fetched and rendered on the client without full page reloads.MPA: Each page is a separate HTML document. Navigation requires full page reloads, which means each page is fetched from the server.
+
+User Experience:
+SPA: Provides a smoother and faster user experience because only the necessary content is updated, reducing load times.
+MPA: Can be slower as each page transition requires a full reload.
+
+Development Complexity:
+SPA: Typically requires more sophisticated client-side routing and state management. Frameworks like React, Angular, and Vue.js are commonly used.
+MPA: Simpler structure as each page is independent, but can become complex with large applications due to redundant code.
+
+SEO:
+SPA: More challenging to optimize for search engines because content is loaded dynamically. Requires additional configurations like server-side rendering (SSR) or pre-rendering.
+MPA: Easier to optimize for SEO as each page is a separate HTML document, readily indexed by search engines.
+
+Performance:
+SPA: Initial load time can be longer as the entire application is loaded upfront. However, subsequent interactions are faster.
+MPA: Generally faster initial load time for individual pages, but overall performance can be slower due to full page reloads on navigation.
+
+Q12: What are the main differences between SQL and NoSQL databases?
+
+
+SQL (Structured Query Language) and NoSQL (Not Only SQL) databases differ primarily in their data models, schema design, and scalability approaches.
+
+SQL Databases:
+
+Data Model:
+Relational model with tables, rows, and columns.
+Strongly structured with predefined schemas.
+
+Schema:
+Fixed schema, requiring alteration for any schema changes.
+Data integrity is enforced through ACID (Atomicity, Consistency, Isolation, Durability) transactions.
+
+Scalability:
+Vertically scalable (scaling up by adding more resources to a single server).
+Limited horizontal scalability.
+
+Examples:
+MySQL, PostgreSQL, Oracle, Microsoft SQL Server.
+
+NoSQL Databases:
+
+Data Model:
+Flexible models such as document, key-value, column-family, and graph.
+Schema-less or dynamic schemas, allowing for easy modifications.
+
+Schema:
+No fixed schema, enabling quick adaptation to changing data requirements.
+Eventual consistency and BASE (Basically Available, Soft state, Eventually consistent) properties.
+
+Scalability:
+Horizontally scalable (scaling out by adding more servers).
+Designed to handle large volumes of unstructured or semi-structured data.
+
+Examples:
+MongoDB (document), Redis (key-value), Cassandra (column-family), Neo4j (graph).
+
+Q13: Explain the concept of "responsive design" in web development.
+
+
+Responsive design is a web development approach that ensures a website or application adapts to various screen sizes and devices, providing an optimal user experience regardless of the device being used.
+
+Key Principles:
+
+Fluid Grid Layouts:
+Uses relative units (e.g., percentages) instead of fixed units (e.g., pixels) to define the width, height, margins, and padding of elements. This allows elements to resize proportionally to the screen size.
+
+Flexible Images and Media:
+Images and media are sized in relative units or CSS techniques like max-width: 100% to ensure they scale within their containing elements without overflowing.
+
+Media Queries:
+CSS media queries allow for the application of different styles based on the device's characteristics, such as screen width, height, orientation, and resolution.
+
+@media (max-width: 600px) {
+body {
+background-color: lightblue;
+}
+}
+Responsive Typography:
+Uses scalable units for fonts, such as em , rem , or percentages, to ensure text is readable on different devices.
+
+Mobile-First Design:
+Designing the mobile version of a website first and then progressively enhancing the design for larger screens. This approach ensures the website is optimized for smaller screens and provides a better user experience on mobile devices.
+
+Benefits:
+
+Improved user experience across different devices.
+Increased reach to mobile and tablet users.
+Better SEO rankings, as search engines prefer mobile-friendly websites.
+
+Q14: What is the purpose of using a CSS preprocessor like Sass or LESS?
+
+
+CSS preprocessors like Sass (Syntactically Awesome Stylesheets) and LESS (Leaner Style Sheets) extend the functionality of CSS by introducing features that are not available in vanilla CSS. They help in writing more maintainable and scalable stylesheets.
+
+Features and Benefits:
+
+Variables:
+Allow the storage of CSS values in reusable variables, making it easier to manage and update styles.
+
+$primary-color: #3498db;
+body {
+color: $primary-color;
+}
+Nesting:
+Enables nesting of CSS selectors in a way that follows the HTML structure, making the code more readable and maintainable.
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+Mixins:
+Allow the creation of reusable blocks of CSS code that can be included in other selectors.
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
+
+Inheritance:
+Enables one selector to inherit the styles of another selector using the @extend directive.
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  @extend .button;
+  background-color: $primary-color;
+  color: white;
+}
+
+Functions and Operations:
+Provides built-in functions and arithmetic operations to manipulate values.
+
+$base-font-size: 16px;
+$large-font-size: $base-font-size * 1.5;
+body {
+font-size: $base-font-size;
+}
+h1 {
+font-size: $large-font-size;
+}
+By using CSS preprocessors, developers can write more organized, efficient, and scalable stylesheets, leading to better-maintained and easier-to-read CSS code.
+
+Q15: What is the Document Object Model (DOM), and how does it relate to web development?
+
+
+The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content dynamically.
+
+Key Concepts:
+
+Tree Structure:
+The DOM represents the document as a tree structure where each node is an object representing a part of the document (e.g., elements, attributes, text).
+
+Nodes:
+Element Nodes: Represent HTML tags.
+Attribute Nodes: Represent attributes of HTML tags.
+Text Nodes: Represent the text within elements.
+
+Manipulation:
+The DOM allows developers to manipulate the document structure, style, and content using JavaScript.
+
+// Selecting an element
+const element = document.getElementById('myElement');
+// Changing the content
+element.textContent = 'New Content';
+// Adding a new element
+const newElement = document.createElement('div');
+newElement.textContent = 'Hello, World!';
+document.body.appendChild(newElement);
+// Modifying styles
+element.style.color = 'blue';
+Events:
+The DOM provides an event system that allows developers to respond to user interactions.
+
+element.addEventListener('click', () => {
+alert('Element clicked!');
+});
+Relation to Web Development:
+The DOM is essential for creating dynamic web applications. It allows developers to interact with the content and structure of a web page programmatically.
+Through DOM manipulation, developers can update the user interface, handle user inputs, and create interactive experiences.
+Understanding the DOM is fundamental for working with JavaScript, as it provides the means to access and modify the document structure.
+
+🔝Top AI Available in one place: GPT, Claude, Gemini, Llama, Mistral, & more
+
+Claim 200k Free AI Tokens
+Q16: Explain the concept of "state" and "props" in React.
+
+
+In React, state and props are essential concepts used to manage and pass data in components.
+
+State:
+
+Definition:
+State is a built-in object used to store data that may change over the lifecycle of a component. It is managed within the component itself and can be updated using the setState method (in class components) or useState hook (in functional components).
+
+Usage:
+State is used to handle dynamic data that can change based on user actions or other factors.
+
+// Functional component with useState hook
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    
+
+      
+You clicked {count} times
+
+
+       setCount(count + 1)}>Click me
+    
+
+  );
+}
+
+Characteristics:
+Local to the component.
+Can be updated asynchronously.
+Triggers a re-render when updated.
+
+Props:
+
+Definition:
+Props (short for properties) are read-only attributes passed from a parent component to a child component. They are used to pass data and event handlers down the component tree.
+
+Usage:
+Props allow for component reusability by passing different data to the same component.
+
+function Greeting(props) {
+return 
+Hello, {props.name}!
+;
+}
+function App() {
+return (
+
+
+
+
+);
+}
+Characteristics:
+Immutable within the child component.
+Passed from parent to child components.
+Facilitate communication between components.
+
+Comparison:
+State is used for data that is local to the component and can change over time, while props are used to pass data from parent to child components.
+State changes trigger re-renders, while props do not cause re-renders unless the parent component re-renders with new prop values.
+
+Q17: What is the Virtual DOM, and how does it improve performance in React applications?
+
+
+The Virtual DOM (VDOM) is a lightweight, in-memory representation of the actual DOM elements. It is one of the key features that enhances the performance of React applications.
+
+How It Works:
+
+Initial Render:
+React creates a VDOM representation of the actual DOM elements.
+This VDOM is a tree of JavaScript objects corresponding to the components' structure.
+
+Updates and Reconciliation:
+When the state or props of a component change, React updates the VDOM rather than the actual DOM.
+React performs a "diffing" algorithm to compare the new VDOM with the previous VDOM.
+It identifies the changes (differences) between the two VDOMs.
+
+Batch Updates:
+React batches multiple changes together and updates the actual DOM in a single operation.
+This minimizes the number of direct DOM manipulations, which are typically slow and expensive in terms of performance.
+
+Rendering:
+React updates only the parts of the actual DOM that have changed, based on the differences identified during the reconciliation process.
+
+Performance Benefits:
+
+Minimized DOM Manipulations:
+By reducing the number of direct manipulations to the actual DOM, React improves the overall performance and efficiency of the application.
+
+Efficient Updates:
+The diffing algorithm ensures that only the necessary changes are applied to the actual DOM, making updates faster and smoother.
+
+Improved User Experience:
+By minimizing re-renders and optimizing updates, the VDOM helps provide a more responsive and fluid user experience.
+
+Q18: What are Web Workers, and how do they help in improving web application performance?
+
+
+Web Workers are a feature of HTML5 that allow for running JavaScript in background threads, separate from the main execution thread of a web application. This helps in improving performance by offloading intensive tasks.
+
+Key Features:
+
+Background Execution:
+Web Workers run scripts in the background, allowing the main thread (UI thread) to remain responsive.
+
+Concurrency:
+Enables concurrent execution of tasks, improving the efficiency of multi-core processors.
+
+Communication:
+Web Workers communicate with the main thread using message passing ( postMessage and onmessage ).
+
+Isolation:
+Web Workers do not have access to the DOM, making them suitable for tasks like computations, data processing, and network requests without affecting the UI.
+
+Usage Example:
+
+// Main thread
+const worker = new Worker('worker.js');
+
+worker.onmessage = function(event) {
+  console.log('Message from worker:', event.data);
+};
+
+worker.postMessage('Start working');
+
+// worker.js
+self.onmessage = function(event) {
+  if (event.data === 'Start working') {
+    // Perform intensive task
+    let result = 0;
+    for (let i = 0; i < 1e9; i++) {
+      result += i;
+    }
+    self.postMessage(result);
+  }
+};
+Benefits:
+
+Improved Performance:
+By offloading heavy tasks to Web Workers, the main thread remains free to handle user interactions, resulting in a smoother user experience.
+
+Non-blocking UI:
+Long-running tasks do not block the main thread, preventing the UI from freezing or becoming unresponsive.
+
+Efficient Resource Utilization:
+Utilizes multiple CPU cores effectively by running tasks concurrently.
+
+Limitations:
+No DOM Access: Web Workers cannot directly manipulate the DOM, which limits their use to non-UI tasks.
+Overhead: Creating and communicating with Web Workers involves some overhead, which might not be suitable for very small tasks.
+
+Q19: What is Continuous Integration (CI), and why is it important in modern software development?
+
+
+Continuous Integration (CI) is a software development practice where developers frequently integrate their code changes into a shared repository, often multiple times a day. Each integration is automatically built and tested to detect and address issues early.
+
+Key Concepts:
+
+Frequent Integration:
+Developers commit code changes frequently, reducing the complexity of merges and conflicts.
+
+Automated Builds and Tests:
+Each integration triggers an automated build and test process, ensuring that code changes do not break the existing functionality.
+
+Early Detection of Issues:
+By integrating and testing code frequently, issues are detected and addressed early in the development cycle.
+
+Benefits:
+
+Reduced Integration Problems:
+Frequent integration reduces the complexity and effort required to integrate code changes, minimizing conflicts and merge issues.
+
+Improved Code Quality:
+Automated testing ensures that code changes meet quality standards and do not introduce new bugs.
+
+Faster Feedback:
+Developers receive immediate feedback on their changes, allowing them to address issues promptly.
+
+Enhanced Collaboration:
+CI fosters better collaboration among team members by providing a shared, up-to-date codebase.
+
+Increased Productivity:
+Automated processes streamline the development workflow, freeing developers from manual tasks and allowing them to focus on coding.
+
+CI Tools:
+Jenkins: An open-source automation server that supports building, deploying, and automating projects.
+CircleCI: A cloud-based CI service that integrates with GitHub and Bitbucket for continuous integration and delivery.
+Travis CI: A CI service used to build and test projects hosted on GitHub.
+
+Q20: Explain the concept of "lazy loading" and its benefits in web applications.
+
+
+Lazy loading is a design pattern used in web development to defer the loading of non-critical resources (e.g., images, scripts) until they are actually needed. This can significantly improve the initial load time and performance of web applications.
+
+How It Works:
+
+Images:
+Images below the fold (not visible in the viewport) are not loaded initially. They are loaded only when the user scrolls down to view them.
+
+Lazy loaded image
+Scripts:
+Non-essential scripts are loaded after the main content has been rendered or on-demand.
+
+
+Components:
+In single-page applications, components can be loaded only when they are needed (e.g., when a user navigates to a specific route).
+
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+function App() {
+return (
+
+
+
+);
+}
+Benefits:
+
+Improved Performance:
+Reduces the initial load time by loading only the essential resources first, leading to a faster and smoother user experience.
+
+Reduced Bandwidth Usage:
+Decreases the amount of data transferred by loading resources only when needed, which is beneficial for users with limited bandwidth.
+
+Enhanced User Experience:
+Provides a more responsive application as the critical content is rendered quickly, and additional content is loaded on demand.
+
+Optimized Resource Utilization:
+Delays the loading of non-critical resources, freeing up resources for other tasks and improving overall application efficiency.
+
+Implementation Techniques:
+Intersection Observer API: A modern JavaScript API to detect when elements enter the viewport and trigger lazy loading.
+Libraries and Frameworks: Tools like react-lazyload , lozad.js , and others provide easy-to-use solutions for implementing lazy loading in web applications.
+
+🔓Unlock Personalized AI Assistance by Adding Code Repos, API Schemas, DB Schemas, & more
+
+Sign Up
+Challenge Yourself: Top 10 Practical Full Stack Developer Interview Q&A
+Q1: Identify and fix the error in the following code snippet.
+(Basic)
+function fetchData(url) {
+fetch(url)
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error));
+}
+fetchData('https://api.example.com/data');
+
+Q2: Write a function to capitalize the first letter of each word in a given string.
+(Basic)
+
+Q3: Optimize the following code to reduce its time complexity.
+(Intermediate)
+
+    function findDuplicates(arr) {
+  const duplicates = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+        duplicates.push(arr[i]);
+      }
+    }
+  }
+  return duplicates;
+}
+
+const arr = [1, 2, 3, 4, 3, 2, 1];
+console.log(findDuplicates(arr)); // Output: [1, 2, 3]
+     
+
+Q4: Improve the performance of the following React component by converting it to a functional component with React hooks.
+(Intermediate)
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return (
+      
+
+        
+{this.state.count}
+
+
+        Increment
+      
+
+    );
+  }
+}
+
+Q5: What will be the output of the following code snippet?
+(Advanced)
+console.log(1);
+setTimeout(() => {
+console.log(2);
+}, 0);
+Promise.resolve().then(() => {
+console.log(3);
+});
+console.log(4);
+
+Q6: Write a function to merge two sorted arrays into a single sorted array.
+(Advanced)
+
+Q7: Identify and fix the error in the following code snippet.
+(Advanced)
+async function fetchData() {
+  try {
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchData();
+
+Q8: Improve the performance of the following algorithm that finds the nth Fibonacci number.
+(Advanced)
+function fibonacci(n) {
+if (n <= 1) return n;
+return fibonacci(n - 1) + fibonacci(n - 2);
+}
+console.log(fibonacci(10)); // Output: 55
+
+Q9: Write a function to perform a deep clone of an object.
+(Advanced)
+
+Q10: What will be the output of the following code snippet?
+(Advanced)
+function foo() {
+  console.log(this);
+}
+
+const obj = {
+  bar: foo
+};
+
+obj.bar();
+
+const newBar = obj.bar;
+newBar();
+
 Full Stack Developer Interview Questions and Answers
 Last updated on 24th Oct 2020, Blog, Interview Question, Website Development
 
