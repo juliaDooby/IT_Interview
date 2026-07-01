@@ -1,3 +1,75 @@
+Замените имя сервера поддельным именем сервера в заголовке ответа в fastapi
+Вопросы
+PYTHON 3.X
+Замените имя сервера поддельным именем сервера в заголовке ответа в fastapi
+Я использую uvicorn в качестве сервера для запуска приложения с использованием быстрого API. При выполнении URL-адреса конечной точки в Swagger в заголовке ответа сервера отображается следующее сообщение.
+
+ content-length: 122 
+ content-type: application/json 
+ date: Sat12 Dec 2020 10:18:55 GMT 
+ server: uvicorn 
+Как изменить имя сервера на новое имя как server: firstproject? Следующий код объединяет имя сервера unciorn с новым именем
+
+@app.middleware("http")
+async def add_custom_header(request, call_next):
+    response = await call_next(request)
+    response.headers['server'] = 'firstproject'
+    return response
+Это дает следующий вывод
+
+content-length: 122 
+ content-type: application/json 
+ date: Sat12 Dec 2020 10:19:33 GMT 
+ server: uvicornfirstproject 
+Как изменить имя сервера на server: firstproject в заголовке ответа?
+
+РЕДАКТИРОВАТЬ
+
+В start_server.py
+
+ import uvicorn
+
+from app.main import app
+
+if __name__ == "__main__":
+    uvicorn.run("start_server:app --header server:firstproject", host = "0.0.0.0", port=8000, reload=True)
+
+    
+выдает следующую ошибку
+
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [15256] using statreload
+ERROR:    Error loading ASGI app. Attribute "app --header server:firstproject" not found in module "start_server".
+Я запускаю код из Visual Studio
+
+ 12.12.2020 11:17
+4
+0
+2 759
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете установить собственный заголовок при запуске uvicorn.
+
+--header TEXT Укажите настраиваемые заголовки ответов HTTP по умолчанию в виде пары «Имя: значение».
+
+Когда вы запустите его таким образом, оно переопределит имя сервера по умолчанию.
+
+uvicorn my_app:app --header server:firstproject
+Если вы запускаете uvicorn из файла python. Вам нужно передать их как кортеж внутри списка.
+
+if __name__ == "__main__":
+    uvicorn.run("my_app:app", headers=[("server", "firstproject")])
+ 12.12.2020 11:27
+Если вам нужно «удалить» заголовок «сервер», вы можете использовать опцию --no-server-header
+
+uvicorn my_app:app --no-server-header
+Если вы запускаете uvicorn из файла Python:
+
+if __name__ == '__main__':
+    uvicorn.run('my_app:app', server_header=False)
+
 FastAPI: могу ли я также использовать Depends() для параметров в POST?
 Вопросы
 PYTHON
