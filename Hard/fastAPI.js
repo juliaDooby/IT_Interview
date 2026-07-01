@@ -1,3 +1,64 @@
+Минимальный сценарий статического файлового сервера FastAPI
+Вопросы
+FASTAPI
+Минимальный сценарий статического файлового сервера FastAPI
+Я хочу написать минимальный статический файловый сервер FastAPI, запускаемый из сценария, который позволяет указать каталог для совместного использования в командной строке. Следуя примеру из документации FastAPI, я написал это.
+
+import uvicorn
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+server = FastAPI()
+
+if __name__ == "__main__":
+    import sys
+
+    directory = sys.argv[1]
+    server.mount("/static", StaticFiles(directory=directory), name = "static")
+    uvicorn.run(app = "my_package:server")
+Если я запущу это с аргументом /my/directory, где этот каталог содержит file.txt, я ожидаю, что смогу загрузить file.txt по URL-адресу http://localhost:8000/static/file.txt, но это возвращает HTTP 404.
+
+Как мне написать этот минимальный сценарий статического файлового сервера?
+
+ 23.11.2022 23:07
+0
+3
+101
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Предположение, которое я сделал о том, что sys.argv недоступен, когда uvicorn загружает ваш модуль, неверно, поэтому он должен работать так, как вы ожидаете, переместив вашу статическую настройку за пределы __main__ guard:
+
+import uvicorn
+import sys
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+server = FastAPI()
+directory = sys.argv[1]
+server.mount("/static", StaticFiles(directory=directory), name = "static")
+
+if __name__ == "__main__":
+    uvicorn.run(app = "my_package:server")
+ 23.11.2022 23:38
+Когда вы вызываете uvicorn.run(app = "my_package:server"), он фактически запускает отдельный процесс, в который импортируется my_package. Поэтому все, что находится внутри if __name__ == "__main__":, не будет запускаться в процессе uvicorn, поэтому ваша директория никогда не будет смонтирована.
+
+Одним из возможных решений может быть получение каталога из переменной среды, которая устанавливается из небольшого скрипта bash:
+
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+server = FastAPI()
+
+directory = os.getenv("DIRECTORY")
+server.mount("/static", StaticFiles(directory=directory), name = "static")
+start.sh:
+
+#!/usr/bin/env bash
+DIRECTORY=$1 uvicorn mypackage:server
+
+
 В JSON, созданном из pydantic.BaseModel, исключить Необязательно, если не установлено
 Вопросы
 PYTHON
