@@ -1,3 +1,151 @@
+Backend Developer Skills
+When looking to hire a backend developer, you should understand the skills essential to the role. While many skills are involved in backend development, including technical, behavioral, and soft skills, a few are more critical than others.  
+
+Proficiency in backend programming languages: Proficiency in programming languages is a must for backend developers. Programming languages will help your backend developers build and connect web services and applications and ensure their functionality. For backend development, Java, Python, and PHP are some of the go-to languages.
+Knowledge in frontend programming technology: While backend developers aren’t usually required to be masters in frontend technology, it’s crucial that they at least have the basic skills and knowledge, especially of JavaScript, which is fundamental in frontend programming technology.
+Experience in backend frameworks: Backend frameworks are equally as important as the programming language your backend developer will be working with. Some popular choices for backend frameworks include NodeJS, ExpressJS, and Django.
+Understanding databases and APIs: Backend developers handle and manage databases, including creating relational mapping for data retrieval. That is, backend developers should have a good grasp of databases, such as MySQL, MongoDB, and others. Additionally, they are also required to have a good understanding of application programming interfaces (APIs) and restful APIs which allow them to establish connections between various applications. Common APIs include JSON, GSON, SOAP, etc.
+Ability to solve problems: Backend development can be tricky, even for the most experienced developers. Therefore, your backend developers must have excellent problem-solving skills to work effectively.  
+Other skills needed will depend on your company’s requirements and needs but may include leadership, communication, and knowledge of different programming languages and structures. Overall, a backend developer must be proficient in technology, microservices architecture, various operating systems, structured programming, and the internet.
+
+In addition to these skills, and depending on your company’s needs and job description, a backend developer will generally be expected to complete the following responsibilities:
+
+Participate in the entire application lifecycle, including writing, testing, and debugging code
+Develop usable web applications by writing clean, concise code  
+Create and manage prototypes
+Observe, analyze, troubleshoot and resolve issues and bottlenecks
+Create strong APIs
+Optimize web applications for scalability and performance
+Collaborate with frontend developers and other technical professionals
+Technical Backend Interview Questions Examples
+Technical skills are a must-have for backend developers. Within these skills, a backend developer should have proficiency in various programming languages, frameworks, databases, and other technical structures. To ensure that you’re hiring a knowledgeable and experienced backend developer, you should interview them on the following areas:
+
+Backend programming languages: You’ll want to assess your potential developer’s knowledge of backend programming languages. They should understand the differences between object-oriented programming and functional programming languages and have experience in both types.
+APIs: APIs are an essential asset in a backend developer’s arsenal. Ensure that your potential developer understands how APIs work and their purpose.
+Data structures: Developers rely on data structures to access, organize, and modify data. Since backend developers will be working with data, they must understand how data structures work, including those relating to array operations, list functions, and tree and related operations.
+Servers: Servers are a fundamental part of backend development and help developers deliver and receive important information, services, and requests. As such, backend developers should understand how to deploy and host servers and be familiar with standard servers such as Apache and Microsoft IIS.
+Algorithms: Backend developers must be able to solve and troubleshoot problems they encounter. So, it’s essential to test their algorithmic skills. Test them on depth-first search, breadth-first search, and sorting algorithms.
+Queries: Inexperienced and experienced developers must understand queries and how they are used. This includes queries in an application and expensive queries. Queries are essential to the development process and can supply developers with answers to questions; perform calculations; combine data from various tables; and add, change, or delete data from a database.
+Examples of backend engineer interview questions relating to technical skills include:
+
+What are the differences between backend and frontend development?
+What is a web server?
+What is your favorite programming language and why?
+Explain the difference between software design and software architecture.
+Explain the difference between acceptance tests and functional tests.
+What is your approach to finding, troubleshooting, and debugging issues?
+What is your experience with algorithms?
+How do you approach depth-first and breadth-first searches?
+What is high cohesion, and loose coupling?
+Soft Skills Backend Interview Questions Examples
+Similar to technical skills, soft skills are another must-have for backend developers. These skills include problem-solving, critical thinking, interpersonal, accountability, time management, verbal and written communication, listening, teamwork and team leadership, etc.
+
+Common backend interview questions about soft skills include:
+
+How do you handle various tasks with multiple deadlines?
+Tell us about a time you took charge and led your team through a difficult situation.  
+What is the most critical issue you’ve solved in the workplace?
+How do you adapt when the result of a project is not what was expected?
+Explain your three more vital concerns when working for an employer.
+How did you overcome and learn from your most significant failure at work?  
+Behavioral Backend Interview Questions Examples
+Behavioral interview questions will tell you how your potential employee will handle certain stressful situations and help you assess the type of person you are considering hiring, including their values and road to success. It will also help you gauge a person’s self-awareness, self-reliance, and willingness to help their colleagues.
+
+Common interview questions about behavioral attributes include:
+
+How do you resolve disagreements between team members?
+Explain how you’ve handled disagreements with a supervisor.
+Tell us about your process for approaching and resolving issues.
+How do you handle failure in the workplace? Tell me about a time you experienced it.
+Tell me about a time you had to lead your team.
+Backend Developer Interview Questions
+When interviewing potential candidates to fulfill the backend developer role, it’s important to interview them based on the skills and experiences you require. For example, if you’re looking to add an entry-level backend developer to your team, you should consider asking questions about their standard skillset and experience. An entry-level or junior worker will be less experienced than a seasoned or senior worker and may possess fewer skills than their senior counterpart. There are also intermediate developers that fall in between the two.
+
+Typically, a junior backend developer will have 0-2 years of experience, an intermediate one with 2-6 years of experience, and a senior with 6+ years of experience. Of course, this can vary between companies depending on how many intense projects the developer has under their belt.
+
+Either way, knowing the right developer interview questions to ask and answers to look out for during the interview process can help you cut through the noise and find the perfect fit for your company.
+
+Junior Backend Developer Interview Questions
+When hiring a junior backend developer, remember that these developers have likely just completed their education and are looking to join a team where they can learn and grow. As such, you shouldn’t expect them to have impeccable leadership skills. However, they should still possess the most critical soft skills, including communication, problem-solving, and critical thinking skills.
+
+Additionally, they must have a good understanding of backend development. To test their knowledge, consider the following questions:
+
+What programming languages have you used in the past? Which do you prefer?
+This question will assess a potential employee on their familiarity with certain programming languages and will help you determine whether their knowledge fits your company's requirements. It will also tell you about a potential employee’s experience and programming background.
+
+A good candidate will list a few different languages. They should explain their experience with languages such as C, C++, Java, JavaScript, PHP, Ruby on Rails, or another language of their choice. They should also explain which language they prefer working with and why.
+
+Their answers can help you determine if they have experience working with the languages your company uses.
+
+Explain a time you’ve worked with your team to develop new features and ensure functionality.
+Backend developers must work with their team members and other professionals to develop effective websites and applications. To be successful, a backend developer should have strong collaboration skills. This question will allow you to assess how effective a potential employee was at working with team members in the past to ensure new features appropriately functioned.
+
+A good candidate will explain the projects they’ve contributed to in the past, their contributions, how they worked with their team members, and the methods they used to communicate and share progress updates and reports between coworkers.
+
+What is your process for finding and debugging errors on live websites or applications?
+Debugging is an essential skill for a backend developer, regardless of experience. You need to ensure that your potential backend developer can find and troubleshoot code errors, especially those that might hinder the functionality of live websites and applications.
+
+A good candidate will be able to walk you through the entire process of finding and debugging errors, both on unpublished and published websites and applications. They can explain how they might find the cause of the error through the stack trace of the error message, how they would look for any syntax errors, and how they would use breakpoints to inspect values, variables, and expressions.
+
+How would you handle being assigned a task that you’re unfamiliar with?
+Junior backend developers should aim to grow in their field. For that, they may need to take on unfamiliar tasks and projects to learn new skills and hone their current ones. This question will help you determine how keen a potential employee is to grow in their field and how they would approach, research, and learn new ideas and skills.
+
+A good candidate will be able to walk you through step-by-step how they would approach a new project. They would explain their research phase, their focus on the goals and requirements of the new project, and how they would tackle learning the skills needed to complete the task effectively.
+
+Intermediate Backend Developer Interview Questions
+Intermediate backend developers are a step up from junior-level backend developers. While they aren’t as experienced as seniors, they should still have a more powerful skillset than juniors. To test their knowledge, consider the following questions:
+
+Explain your process of managing web services API versioning.
+API structures are essential in backend development, and intermediate backend developers should have plenty of experience with API. Intermediate developers should also have knowledge and experience in API versioning.
+
+A good candidate should explain the three API versioning types: URL versioning, custom header versioning, and query string parameter versioning. They should also explain their experience using each type of versioning and when each should be used.
+
+What are sorting algorithms, and when should you use them?
+Another essential skill to have as an intermediate backend developer is the ability to work with algorithms. Intermediate developers should have experience in working with various sorting algorithms.
+
+A good candidate should explain what sorting algorithms are, the different types of sorting algorithms, and when to use each specific sorting algorithm. For example, quick sort is preferred for data that can fit into memory. Otherwise, it’s viable to use merge sort.
+
+What are the most challenging factors when coding?
+Intermediate developers have more experience than their junior counterparts. So, they should have a firm grasp of coding challenges. As such, they should explain what they find more difficult when coding. This question will allow you to assess a potential employee’s technical weaknesses.
+
+A good candidate will be honest about their shortcomings and be able to explain where and why they struggle with specific codes. Perhaps they struggle with a certain language or framework or lack specific soft skills. Either way, this question will not only allow you to determine a potential employee’s weaknesses but also provide the employee with resources and help should you hire them.  
+
+Senior Backend Developer Interview Questions
+Finally, a senior backend developer will be at the top of their game. They should have extensive knowledge of backend development and have amassed several skills. They should also have a strong portfolio of previous work to showcase and demonstrate their abilities.
+
+Still, it’s essential to interview a senior backend developer before hiring them. Consider the following questions:
+
+What are NoSQL databases?
+NoSQL databases are a tool to store and retrieve data, and senior backend developers should have experience using these databases. This question will allow you to assess their knowledge of the different types of NoSQL databases and how and when to use them.
+
+A good candidate can explain the various types of databases, including document-oriented, key-value, graph, and column-oriented. They’ll be able to explain how and when to use each one.
+
+What are the best practices when it comes to performance testing?
+Performance testing allows developers to analyze response times and other factors and search for possible errors in code. Senior backend developers should have experience in performing performance tests and understand the best practices for conducting one.
+
+A good candidate should explain the best practices, including:
+
+Test as soon as possible in the development process
+Run several performance tests throughout the development project
+Test software units individually and together
+Use baseline measures to start, which can determine success and failure
+Conduct performance tests in environments close to the production system
+Isolate the performance test environment from other environments
+Keep the test environment as consistent as possible
+They should also demonstrate how a performance test is performed.
+
+What are common security risks when building a web application, and how should you handle them?
+Security is a significant factor when building a web application or service, and any senior backend developer should be well-versed in security risks and how to handle them. Security should be a top priority for any business. So, it’s crucial to ensure that your potential candidate has experience dealing with common security risks.
+
+A good candidate should be able to list the most common security risks and how they have handled security threats in the past. For example, they should understand an SQL injection and how to counter it or what cross-site scripting is.
+
+How to Hire a Backend Developer
+Finding the best backend developers for your team can be challenging. If you’re stuck looking for local talent, your search becomes even more difficult. However, you don’t have to rely on local talent to meet your backend development needs. You also don’t have to search on your own.
+
+At Revelo, we help big and small businesses and entrepreneurs meet excellent tech talent. Our top-tier talent comes from all over Latin America. We’ll provide you with a pre-vetted list of the best talent we have to offer. Once you’ve made your choice, we’ll handle the rest of the hiring process.
+
+Schedule a meeting to get started and have any questions you may have answered in live time.
+
 Backend Developer Interview Questions and Answers
 By Jebasta
 
