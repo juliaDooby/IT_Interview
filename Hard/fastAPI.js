@@ -1,3 +1,86 @@
+Когда я использую fastapi и pydantic для создания POST API, появляется TypeError: объект типа не сериализуем JSON
+Вопросы
+PYTHON
+Когда я использую fastapi и pydantic для создания POST API, появляется TypeError: объект типа не сериализуем JSON
+Я использую FastAPi и Pydantic для моделирования запросов и ответов на POST API.
+
+Я определил три класса:
+
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict
+
+class RolesSchema(BaseModel):
+    roles_id: List[str]
+
+class HRSchema(BaseModel):
+    pk: int
+    user_id: str
+    worker_id: str
+    worker_name: str
+    worker_email: str
+    schedulable: bool
+    roles: RolesSchema
+    state: dict
+
+class CreateHR(BaseModel):
+    user_id: str
+    worker_id: str
+    worker_name: str
+    worker_email: str
+    schedulable: bool
+    roles: RolesSchema
+И программа My API:
+
+@router.post("/humanResource", response_model=HRSchema)
+async def create_humanResource(create: CreateHR):
+query = HumanResourceModel.insert().values(
+    user_id=create.user_id, 
+    worker_id=create.worker_id, 
+    worker_name=create.worker_name,
+    worker_email=create.worker_email,
+    schedulable=create.schedulable,
+    roles=create.roles
+)
+last_record_id = await database.execute(query)
+return {"status": "Successfully Created!"}
+Формат входных данных json:
+
+{
+     "user_id": "123",
+     "worker_id": "010",
+     "worker_name": "Amos",
+     "worker_email": "Amos@mail.com",
+     "schedulable": true,
+     "roles": {"roles_id": ["001"]}
+}
+Когда я выполнил, я получил TypeError: объект типа RolesSchema не сериализуем JSON.
+
+Как исправить нормальную работу программы?
+
+ 10.12.2020 09:32
+8
+2
+6 637
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Попробуйте использовать roles=create.roles.dict() для создания query вместо roles=create.roles
+
+ 10.12.2020 09:49
+Если кто-то пришел сюда с сообщением об ошибке.
+
+В моем случае:
+
+data = MyBaseModel(**data) 
+
+# bad - TypeError: Object of type is not JSON serializable
+json.dumps(data)
+
+# good
+data.json()
+
+
 Mastering FastAPI: Essential Interview Questions for Developer
 Published
 June 11, 2023
