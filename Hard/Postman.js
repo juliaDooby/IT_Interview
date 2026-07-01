@@ -1,5 +1,124 @@
-37 вопросов по платформе Postman (с 9 образцами ответов)
+41+ Postman Interview Questions & Answers (with Notes) | PART 1
+#
+testing
+#
+postman
+#
+beginners
+#
+general
+In this video, we are going to cover the 41+ Postman interview questions and answers.
 
+✅ Download the Mind map - https://sdet.live/notes
+✅ API Testing Postman Playlist - https://sdet.live/4keR
+
+
+
+✅ 41+ Postman Interview Questions & Answers
+➡️ 1. What is Postman?
+It is not an API Testing Tool
+Postman is collaboration platform for API development
+Help you to Design, Share, build , test, Document APIs
+Postman supports Protocols - REST, SOAP, and GraphQL
+Where as CURL
+Source curl.se
+Website
+https://www.postman.com/
+Can use as
+
+➡️ 2. Why use Postman?
+Clean and Easy to use UI
+You can perform Exploratory Testing of APIs
+Dynamic request, data and Collections support
+Team workspace, sharing, mocking, monitoring of APIs
+Write test case, put them in CI/CD with newman
+Import from curl and different ways, sharing as link, explore feature
+➡️ 3. When to use Postman?
+Context as Software Tester
+You have few API request
+You don’t want to manage as code
+Team is little not well versed with code
+You want to cover API test(small collection)
+➡️ 4. What are drawbacks of Postman?
+Not suitable for the larger or 1000+ API request
+For Large project its very clumsy to manage postman requests or collections
+Not suitable if you want to manage as Code, lots of duplicate code if multiple API or dynamic request are required.
+➡️ 5. What is an API?
+API stands for the Application Programming Interface,
+They are basically a collection of functions and procedures which allows us to communicate two applications or libraries.
+
+Read more at
+https://sdet.live/4Euj
+➡️ 6. Can you tell alternates of Postman?
+Katalon Studio
+SoapUI
+Apigee
+Jmeter
+Tricentis Tosca
+hoppscotch.io
+➡️ 7. What are different HTTP Methods?
+GET
+POST
+PATCH
+PUT
+DELETE
+OPTIONS
+HEAD
+➡️ 8. Can you test SOAP request with POSTMAN?
+Yes
+Demo
+https://sdet.live/4Eus
+➡️ 9. What is GET request?
+Retrieve information from the given server using a given URI.
+Requests using GET should only retrieve data and should have no other effect on the data.
+➡️ 10. What is POST request?
+A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+With or without Auth
+➡️ 11. What is Patch Request?
+Partial Update to the target resource
+➡️ 12. What is Put request?
+Replaces all current representations of the target resource with the uploaded content.
+➡️ 13. What is Delete request?
+Removes all current representations of the target resource given by a URI.
+➡️ 14. What is HEAD http method?
+Same as GET, but transfers the status line and header section only.
+➡️ 15. What you validate in API Response?
+Status Code
+Response Body
+Further Testing
+Headers
+
+How do import request from dev tools to Postman?
+
+What type of Authentication supports Postman?
+No auth
+Basic
+Digest
+Bearer Token
+AWS Signature
+NTLM
+OAuth1,2
+API key
+
+What is Basic Auth, How to perform in Postman ?
+https://scrolltest.com/2018/11/22/how-to-handle-authentications-with-postman/
+Basic access authentication is a method for an HTTP user agent (e.g. a web browser) to provide a username and password when making a request. In the example,
+https://learning.postman.com/docs/sending-requests/authorization/#basic-auth
+
+What is digest auth?, How to perform in POSTMAN?
+In the Digest Auth. method username and password are sent over the web after applying some hash functions, Therefore which makes it more secure over network.
+https://learning.postman.com/docs/sending-requests/authorization/#digest-auth
+
+What is bearer token? And How to use it with POSTMAN?
+Bearer tokens allow requests to authenticate using an access key, such as a JSON Web Token (JWT).
+
+What is OAuth 1.0 & 2.0:-
+and How to do it with POSTMAN?
+They are the way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.
+https://learning.postman.com/docs/sending-requests/authorization/#oauth-10
+https://learning.postman.com/docs/sending-requests/authorization/#oauth-20
+
+37 вопросов по платформе Postman (с 9 образцами ответов)
 
 practicum.yandex.ru
 Реклама
