@@ -1,3 +1,313 @@
+FastAPI - шаблон рендеринга в index.html - не работает
+Вопросы
+SQLALCHEMY
+FastAPI - шаблон рендеринга в index.html - не работает
+Добрый день. Я использую FastAPI и хочу отобразить содержимое базы данных в index.html, однако получаю следующую ошибку:
+
+INFO:     127.0.0.1:55139 - "GET /?skip=0&limit=100 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 394, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/fastapi/applications.py", line 190, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/fastapi/routing.py", line 188, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/fastapi/routing.py", line 137, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Users/barnaby/.local/share/virtualenvs/fastapi-example-6xjq_vv2/lib/python3.9/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/usr/local/Cellar/python@3.9/3.9.0_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "./sql_app/main.py", line 51, in read_notes
+    "title": title,
+NameError: name 'title' is not defined
+Main.py
+
+from fastapi import FastAPI
+from typing import List, Dict
+
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session
+from fastapi.templating import Jinja2Templates
+
+from . import crud, models, schemas
+from .database import SessionLocal, engine
+
+models.Base.metadata.create_all(bind=engine)
+
+templates = Jinja2Templates(directory = "templates")
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+# #original function
+# @app.get("/notes", response_model=List[schemas.Note])
+# def read_notes(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+#     notes = crud.get_notes(db=db, skip=skip, limit=limit)
+#     print(notes)
+#     return notes
+
+
+
+@app.get("/", response_class=HTMLResponse)
+def read_notes(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    notes = crud.get_notes(db=db, skip=skip, limit=limit)
+    print(notes)
+    return templates.TemplateResponse("index.html",{
+        "request": request,
+        "id": id,
+        "title": title,
+        "description": description
+    })
+
+@app.post("/notes", response_model=schemas.Note, status_code=201)
+def create_note(note: schemas.NoteCreate, db: Session = Depends(get_db)):
+    return crud.create_note(db=db, note=note)
+
+
+
+
+@app.get("/notes/{note_id}", response_model=schemas.Note)
+def read_user(note_id: int, db: Session = Depends(get_db)):
+    db_note = crud.get_note(db=db, note_id=note_id)
+    if db_note is None:
+        raise HTTPException(status_code=404, detail = "Note not found")
+    return db_note
+
+@app.delete("/notes/{note_id}", status_code=204)
+async def delete_note(note_id: int, db: Session = Depends(get_db)):
+    return crud.delete_note(db=db, note_id=note_id)
+
+
+@app.put("/notes/{note_id}", status_code=200)
+async def put_note(note_id: int, note: schemas.NoteCreate, db: Session = Depends(get_db)):
+    db_note = schemas.Note(id = note_id, title= note.title, description=note.description)
+    crud.update_note(db=db, note=db_note)
+
+@app.patch("/notes/{note_id}", status_code=200)
+async def patch_note(note_id: int, note: schemas.NoteCreate, db: Session = Depends(get_db)):
+    print(note_id)
+    print(note.title)
+    print(note.description)
+    db_note = schemas.Note(id = note_id, title= note.title, description=note.description)
+    crud.update_note(db=db, note=db_note)
+
+
+
+if __name__ == '__main__':
+    uvicorn.run("main:app", host = "127.0.0.1", port=8000)
+crud.py
+
+from sqlalchemy.orm import Session
+
+from . import models, schemas
+
+
+def get_note(db: Session, note_id: int):
+    return db.query(models.Note).filter(models.Note.id == note_id).first()
+
+def delete_note(db: Session, note_id: int):
+    db_note = db.query(models.Note).filter(models.Note.id == note_id).first()
+    db.delete(db_note)
+    db.commit()
+    return {}
+
+def get_notes(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Note).offset(skip).limit(limit).all()
+
+
+def create_note(db: Session, note: schemas.NoteCreate):
+    db_note = models.Note(title=note.title, description=note.description)
+    db.add(db_note)
+    db.commit()
+    db.refresh(db_note)
+    return db_note
+
+def update_note(db: Session, note: schemas.Note):
+    db_note = db.query(models.Note).filter(models.Note.id == note.id).first()
+    db_note.title = note.title
+    db_note.description = note.description
+    db.commit()
+    db.refresh(db_note)
+    return db_note
+схемы.py
+
+class NoteBase(BaseModel):
+    title: str
+    description: str
+
+
+class NoteCreate(NoteBase):
+    pass
+
+class Note(NoteBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+модели.py
+
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
+
+from .database import Base
+
+class Note(Base):
+    __tablename__ = "notes"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=True, default = "new")
+    description = Column(String, nullable=True, default = "new")
+index.html
+
+{% extends 'layout.html' %} {% include 'header.html' %} {% block title %} Home {% endblock %} {% block body %}
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col md-12">
+            <div class = "jumbotron">
+                <table class = "table">
+                <thead>
+                    <tr>
+                        <th scope = "col">ID</th>
+                        <th scope = "col">Title</th>
+                        <th scope = "col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for note in notes%}
+                        <td>{{notes.id}}</td>
+                        <td>{{notes.title}}</td>
+                        <td>{{notes.description}}</td>
+                        </tr>
+                        {% endfor %}
+                    <tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+Моя схема/модели настроены неправильно? Глядя на эту конечную точку - http://127.0.0.1:8000/notes я получаю следующее, отображаемое в index.html. Однако это в формате списка. Но почему-то я не могу отобразить его с помощью шаблона HTML.
+
+[   {     "title": "title 3",     "description": "title 3 description",     "id": 3   },   {     "title": "title 1 updated",     "description": "string",     "id": 1   },   {     "title": "Title updated 2",     "description": "description updated2",     "id": 2   },   {     "title": "Note 4",     "description": "Note 4 description",     "id": 4   } ]
+база данных.py
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:123456789@localhost/notes"
+
+engine = create_engine (SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+ 17.12.2020 07:41
+0
+0
+4 515
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Ваша ошибка является результатом неопределенной переменной title в строке 51 main.py в функции read_notes точно так, как указывает ваша трассировка стека.
+
+Перепишите свою конечную точку, чтобы сделать что-то вроде следующего
+
+@app.get("/", response_class=HTMLResponse)
+def read_notes(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    notes = crud.get_notes(db=db, skip=skip, limit=limit)
+    return templates.TemplateResponse("index.html", {
+        "notes": notes,
+    })
+ 17.12.2020 09:51
+Я изменил код соответственно.
+
+@app.get("/", response_class=HTMLResponse)
+def read_notes(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    notes = crud.get_notes(db=db, skip=skip, limit=limit)
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "notes": notes,
+    })
+Также пришлось изменить цикл for в index.html, из-за чего таблица сходила с ума.
+
+{% extends 'layout.html' %} {% include 'header.html' %} {% block title %} Home {% endblock %} {% block body %}
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col md-12">
+            <div class = "jumbotron">
+                <table class = "table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for note in notes%}
+                        <tr>
+                            <td>{{note.id}}</td>
+                            <td>{{note.title}}</td>
+                            <td>{{note.description}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+Спасибо за помощь. Я очень ценю это...
+
 Как подключиться к файлу sqlite3 db и получить содержимое в fastapi?
 Вопросы
 PYTHON
