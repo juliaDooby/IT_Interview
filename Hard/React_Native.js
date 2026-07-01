@@ -1,3 +1,215 @@
+Walk me through how you’d architect a new React Native feature end-to-end, from API integration to navigation and state management.
+Employers ask this question to understand your architectural thinking and ability to make tradeoffs. In your answer, show how you break down requirements, choose libraries, organize code, and plan for testing and release. Mention TypeScript, navigation, data fetching, and how you ensure maintainability.
+
+Answer Example: "I start by clarifying user flows and defining the data contract with the backend, then model types in TypeScript. I implement screens with React Navigation, manage server state with React Query, and keep local UI state in component hooks or Context if shared. I structure folders by feature, add tests with React Native Testing Library and Jest, and define analytics events. Finally, I plan the release behind a feature flag and include a rollback plan via CodePush."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Can you explain the difference between props and state in React Native, and share a common pitfall you’ve seen with useEffect?
+Employers ask this to confirm you understand React fundamentals, which drive reliability and performance. In your answer, be concise and practical, showing you recognize real-world pitfalls and how to avoid them. Mention dependency arrays and re-renders where relevant.
+
+Answer Example: "Props are external inputs passed from parents, while state is internal data managed by the component. A common useEffect pitfall is missing dependencies, which causes stale closures or inconsistent behavior; I always enable exhaustive-deps and refactor logic into stable callbacks where needed. I also avoid using useEffect for simple derived state and prefer memoization with useMemo or computed props."
+
+Help us improve this answer.
+Like
+/
+Dislike
+You notice a laggy infinite list that drops frames on older Android devices. How do you diagnose and improve performance?
+Employers ask this to assess your performance tooling knowledge and ability to prioritize optimizations. In your answer, outline concrete steps and tools and demonstrate you can measure before and after. Touch on virtualization, memoization, and avoiding unnecessary re-renders.
+
+Answer Example: "I profile with Flipper’s Performance plugin and the React DevTools Profiler to identify wasted renders and heavy components. I switch to FlatList with proper getItemLayout, keyExtractor, and removeClippedSubviews, and I memoize rows with React.memo and useCallback. For images, I add caching and fixed dimensions, and I move heavy work off the JS thread or use Reanimated for smooth interactions. I also confirm Hermes is enabled and verify improvements with frame-rate metrics."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How have you handled platform-specific behavior between iOS and Android without creating a maintenance mess?
+Employers ask this to see if you can deliver consistent UX across platforms and manage divergence cleanly. In your answer, show how you isolate differences and avoid duplication. Mention Platform-specific files, conditional logic, and shared abstractions.
+
+Answer Example: "I keep a shared interface and isolate differences behind platform-specific implementations using filename suffixes like .ios.ts/.android.ts. For minor differences, I use Platform.select and platform-aware styles (e.g., elevation vs. shadow). I test both platforms on CI with device farms and document known differences to prevent reintroducing bugs."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Tell me about a time you built or integrated a native module or bridged to Swift/Kotlin. What was the use case and what did you learn?
+Employers ask this to gauge your ability to go beyond JS when needed and handle the bridge correctly. In your answer, highlight the problem, your approach to threading and performance, and how you tested it. If you haven’t built one, discuss integrating a maintained library and how you verified it.
+
+Answer Example: "I bridged a custom camera feature using AVFoundation on iOS and CameraX on Android to support low-latency scanning. I kept heavy work on native threads and returned results asynchronously to avoid blocking the JS thread. I wrote unit tests in native code, added Detox e2e tests for the JS API, and documented the interface for future maintainers."
+
+Help us improve this answer.
+Like
+/
+Dislike
+If we needed an offline-first experience with conflict resolution, how would you design the data layer and sync strategy?
+Employers ask this to evaluate your systems thinking and understanding of mobile network realities. In your answer, describe local storage choices, conflict handling, and background sync triggers. Show you can handle edge cases without overengineering.
+
+Answer Example: "I’d use an offline-capable store like SQLite or WatermelonDB, with React Query managing server state and a queue for mutations. Each record would have a version or updatedAt field for last-writer-wins, with server-side merge hooks for complex conflicts. Sync runs on app focus and background fetch, with retry and exponential backoff, and the UI reflects optimistic updates with clear conflict prompts if needed."
+
+Help us improve this answer.
+Like
+/
+Dislike
+What’s your approach to testing React Native apps across unit, integration, and end-to-end levels?
+Employers ask to see if you deliver reliable code and balance speed with coverage. In your answer, outline tools, what you test at each level, and how you keep tests maintainable. Emphasize practical coverage over perfection.
+
+Answer Example: "I use Jest for logic and component unit tests, mocking native modules as needed. For integration, I rely on React Native Testing Library to exercise components with navigation and data fetching. For e2e, I use Detox to validate critical paths on real devices in CI. I keep tests stable with data-testIDs, focus on user flows that catch regressions, and run a fast suite on every PR plus full e2e nightly."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Describe your release pipeline for React Native, including handling certificates, build automation, and OTA updates.
+Employers ask this to confirm you can ship reliably without babysitting builds. In your answer, mention CI/CD tools, signing, environment configs, and rollback strategies. Show you can move quickly while staying compliant with app store rules.
+
+Answer Example: "I set up CI with GitHub Actions and Fastlane (or EAS) to handle builds, signing, and environment variables per flavor. We use staged rollouts and CodePush for JS/asset OTA updates within policy, reserving store releases for native changes. Crash and analytics gates (Sentry) inform whether we roll forward or rollback. I also maintain release checklists and changelogs for transparency."
+
+Help us improve this answer.
+Like
+/
+Dislike
+A production crash spikes right after release. What are your first 60 minutes of actions?
+Employers ask this to assess your incident response under pressure. In your answer, outline triage steps, communication, and rollback options. Show calm prioritization and data-driven decisions.
+
+Answer Example: "I’d quickly review Sentry crash fingerprints and release tags, reproduce with the same device/OS, and identify a minimal failing path. If it’s in JS, I prepare a CodePush hotfix; if native, I halt rollout and start a patched store build. I communicate status in a shared channel, add a feature flag if applicable, and post-mortem afterward to prevent recurrence."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How would you implement deep links and push notifications that route users into specific screens with the right params?
+Employers ask this to evaluate your navigation expertise and understanding of platform nuances. In your answer, describe configuration, parsing, and edge cases like cold starts. Mention both iOS and Android considerations.
+
+Answer Example: "I configure linking in React Navigation with a URL scheme and universal/app links, mapping paths to screens and param schemas. For notifications, I use the platform push SDK, parse payloads, and navigate from a centralized handler that checks app state (foreground, background, cold). I debounce duplicate navigations and log events to validate routing. I also test both link and notification flows on clean installs."
+
+Help us improve this answer.
+Like
+/
+Dislike
+What security practices do you follow for storing tokens, handling sensitive data, and protecting network traffic in React Native?
+Employers ask this to ensure you won’t introduce avoidable risk. In your answer, cover secure storage, API communication, and common pitfalls. Be pragmatic about what’s feasible on mobile.
+
+Answer Example: "I store tokens in the Keychain/Keystore via a secure storage library and avoid persisting secrets in AsyncStorage. All traffic uses HTTPS with certificate pinning where appropriate, and I sanitize logs to avoid leaking PII. I minimize data at rest, encrypt sensitive caches, and add jailbreak/root detection to gate high-risk actions. I also review third-party SDKs for excessive permissions."
+
+Help us improve this answer.
+Like
+/
+Dislike
+What’s your approach to accessibility (A11y) and internationalization (i18n) in React Native?
+Employers ask this to see if you build inclusive, global-ready apps. In your answer, share concrete techniques and how you test them. Mention dynamic type, screen readers, and RTL support.
+
+Answer Example: "I use accessibilityLabel, accessibilityRole, and proper hitSlop, ensure focus order, and support dynamic type with scalable font units. I test with VoiceOver and TalkBack and validate color contrast and touch targets. For i18n, I use a library like react-i18next, externalize strings, support RTL via I18nManager, and run screenshots for multiple locales. I also include accessibility in our definition of done."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How do you structure styles and a design system in React Native to keep things consistent and maintainable as the app grows?
+Employers ask this to understand how you balance velocity with consistency. In your answer, describe tokens, theming, and component reuse. Show how you prevent style drift.
+
+Answer Example: "I define design tokens (colors, spacing, typography) and expose them via a theme with a provider. I build a small set of primitive components (Button, Text, Input) and compose features from them to enforce consistency. Styles live close to components with StyleSheet or a CSS-in-JS approach when dynamic theming is needed, and I document patterns in Storybook."
+
+Help us improve this answer.
+Like
+/
+Dislike
+When do you reach for Reanimated and react-native-gesture-handler versus the core Animated API, and how do you keep animations smooth?
+Employers ask this to assess your understanding of the UI thread vs JS thread and performance. In your answer, show you know when native-driven animations matter. Mention measurement and avoiding jank.
+
+Answer Example: "For complex, interactive gestures or performance-critical animations, I use Reanimated and gesture-handler to run worklets on the UI thread. For simple one-offs, the Animated API may suffice with useNativeDriver. I profile with the Performance Monitor, keep animations declarative, and avoid forcing layout thrash by precomputing sizes where possible."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How do you handle data fetching, caching, and error states on flaky mobile networks?
+Employers ask this to see if you build resilient UX. In your answer, highlight retries, caching, and user feedback. Show attention to perceived performance.
+
+Answer Example: "I use React Query for caching, retries with backoff, and background refetch on app focus. I show skeletons and optimistic UI where appropriate, with offline indicators and a retry CTA. I also limit concurrent requests on slow networks and prefetch data for likely next screens to improve perceived speed."
+
+Help us improve this answer.
+Like
+/
+Dislike
+With limited resources, how would you decide the scope of an MVP mobile feature and plan iterations?
+Employers ask this to check your product thinking and ability to ship value early. In your answer, discuss identifying core user jobs, cutting nice-to-haves, and instrumentation. Show comfort with tradeoffs.
+
+Answer Example: "I define the core user job-to-be-done and strip the feature to the smallest lovable flow, deferring advanced settings and edge-case polish. I instrument key metrics and feedback hooks to validate assumptions post-launch. Then I plan iterations based on usage data and support tickets, keeping technical debt visible but time-boxed."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Share an example of wearing multiple hats—engineering, QA, maybe a bit of DevOps—to get something shipped at a startup.
+Employers ask this to confirm you’re comfortable stepping outside a narrow job description. In your answer, illustrate initiative, bias to action, and collaboration. Keep it concrete.
+
+Answer Example: "On a small team, I owned a feature from spec to release, writing the code, creating basic Figma prototypes to confirm UX, and setting up a CI lane in Fastlane for nightly builds. I wrote e2e tests in Detox, coordinated with support for a beta cohort, and monitored Sentry after rollout. It unblocked the team and reduced our release cycle time by 30%."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Tell me about a time requirements changed mid-sprint. How did you adapt without derailing the release?
+Employers ask this to measure your resilience and communication under ambiguity. In your answer, show how you re-scoped, communicated impact, and protected quality. Be specific about tradeoffs.
+
+Answer Example: "When priorities changed, I met with product to redefine success for the sprint and split the feature into a shippable slice plus follow-ups. I flagged test and analytics impacts, added a feature flag, and cut a risky animation that wasn’t core to the outcome. We shipped on time and scheduled the remaining work for the next cycle."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How do you contribute to a healthy engineering culture in an early-stage team where process is still forming?
+Employers ask this to see if you’ll raise the bar without adding bureaucracy. In your answer, mention lightweight practices and knowledge sharing. Focus on outcomes, not rigid rules.
+
+Answer Example: "I start small: a definition of done, a concise PR checklist, and rotating ownership of weekly tech debt. I set up a simple RFC doc for architectural decisions and a lunch-and-learn to share wins and lessons. These practices create consistency and speed without heavy process."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Describe a time you collaborated closely with design and product to ship a feature quickly. What made it work?
+Employers ask this to assess cross-functional collaboration and communication. In your answer, highlight fast feedback loops, prototypes, and tradeoff decisions. Show empathy for user and business needs.
+
+Answer Example: "We did a design dev jam, turning wireframes into a clickable prototype the same day to validate interactions. I proposed reusable components and trimmed edge cases for v1, aligning with product on metrics that mattered. Daily async check-ins with annotated screenshots kept everyone aligned, and we shipped within a week."
+
+Help us improve this answer.
+Like
+/
+Dislike
+When you’re the only mobile developer, how do you plan your work, ensure code quality, and avoid becoming a bottleneck?
+Employers ask this to evaluate ownership and self-direction. In your answer, cover prioritization, automation, and transparency. Show you can scale yourself through systems.
+
+Answer Example: "I maintain a public roadmap with clear priorities, break work into small PRs, and automate checks (lint, tests, typechecking) in CI. I use feature flags to de-risk releases and write lightweight docs so others can help with support or QA. I also set office hours and rotate in code walkthroughs to spread knowledge."
+
+Help us improve this answer.
+Like
+/
+Dislike
+How do you evaluate and choose a third-party library for React Native, and what’s your plan if it becomes unmaintained?
+Employers ask this to ensure you won’t introduce fragile dependencies. In your answer, mention criteria like maintenance, footprint, and platform coverage. Show you have an exit strategy.
+
+Answer Example: "I check maintenance cadence, issue responsiveness, TypeScript support, size, and iOS/Android parity, and I validate it with a small POC. I prefer libraries with clear APIs and no heavy native install unless necessary. If it becomes unmaintained, I pin a known-good version, contribute patches or fork, and plan a migration path to an alternative."
+
+Help us improve this answer.
+Like
+/
+Dislike
+Tell me about a time you delivered under a tight deadline—maybe a critical hotfix or a launch date. How did you maintain quality?
+Employers ask this to see your execution under pressure. In your answer, show prioritization, safeguards, and communication. Emphasize what you didn’t do as much as what you did.
+
+Answer Example: "We had a payment bug that blocked checkouts, so I isolated the regression with a targeted test, implemented a minimal fix, and shipped via CodePush. I added a unit test and a Detox check to prevent recurrence and monitored metrics post-release. I communicated status to stakeholders every hour until we confirmed stability."
+
+Help us improve this answer.
+Like
+/
+Dislike
+What’s your process for staying current with the React Native ecosystem and deciding when to adopt new tools like Hermes, New Architecture, or Expo EAS?
+Employers ask this to gauge your learning mindset and risk management. In your answer, mention curated sources, experimentation, and rollout strategy. Show you don’t chase hype blindly.
+
+Answer Example: "I follow core team updates, changelogs, and reputable blogs, and I run small spikes in a sandbox repo to measure impact. For major changes like Hermes or the New Architecture, I test startup time, memory, and crash rates on target devices. I adopt incrementally behind flags and plan rollbacks, communicating expected benefits and risks."
+
 Top 50 React Native interview questions
  17 Jan 2025 - Shyam Mohan
 
