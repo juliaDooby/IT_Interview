@@ -1,3 +1,163 @@
+Node JS Interview Question
+Last updated on Jan 09, 2024
+
+author-image
+by Amani
+Node JS is a powerful JavaScript framework that enables developers to create scalable network applications. As such, Node JS is becoming increasingly popular, and accordingly, interviewers are starting to ask more questions about it. This article provides a list of some common Node JS interview questions, which will help you prepare for your next interview.
+
+Most Frequently Asked Node JS Interview Questions and Answers
+Is Nodejs a language or a framework?
+How can Node.js be used?
+Explain Modules in Node Js.
+Is Node Js Single – threaded?
+Explain the event loop in Node js.
+What is Dispatcher?
+Explain what a javascript engine is.
+Conclusion
+Can you tell me if Nodejs is Synchronous or Asynchronous?
+Node.js is an event-driven asynchronous JavaScript runtime. It is intended for the development of scalable network applications. Because of its asynchronous nature, Node.js is very efficient in handling multiple concurrent connections.
+
+Can you explain how Node js handles multiple requests concurrently despite being Single-. threaded?
+It can handle multiple requests concurrently because of its event-driven, non-blocking I/O model. Node.js can process requests as they come in without waiting for each request to finish before starting on the next one.
+
+Node.js uses a thread pool to handle certain types of tasks that are computationally intensive or blocking.
+
+
+Is Nodejs a language or a framework?
+Node.js is a programming platform that enables developers to create network and server-side applications. Node.js apps are developed in Javascript and run in the Node.js runtime on S X, Linux and MS Windows.' Java Script modules that are used to create various applications.
+
+What are the benefits of using Node.js?
+There are many benefits to using Node.js, including the following:
+
+Node.js is fast.
+Node.js is lightweight.
+Node.js is scalable.
+Iv.  Node.js is easy to learn.
+What is the difference between Node. Js and Javascript?
+Node.js allows you to run javascript on the server side, whereas java script is primarily used for client-side scripting in web browsers.
+
+What are some of the key features of Node? Js?
+It is an open-source, cross-platform runtime environment that allows developers to create server-side applications in javascript.
+It has a unique architecture that makes it lightweight and efficient.
+The applications are written in javascript and can be run on any platform that supports Node.js.
+Node.js is used by some of the biggest companies in the world, such as Netflix, Uber, and Linkedin.
+
+How can Node.js be used?
+Node.js can be used for various purposes; such s building web applications, creating APIs, or working with real-time data. In terms of web applications, Node.js is often used with the Express.js framework to create server-side applications. Node.js frameworks are used with the Express.js frameworks.
+
+Explain V8 Engine
+The V8 engine is a type of internal combustion engine typically used in high–performance vehicles. It is named after the eight cylinders arranged in two banks of four, typically in a "V" configuration. The V8 engine is more powerful compared to other engines.
+
+Learn Node JS Training
+Node JS Training
+ Master Your Craft  Lifetime LMS & Faculty Access  24/7 online expert support  Real-world & Project Based Learning
+How do you determine the Node Js version that is installed?
+You can determine the version of node js that is installed by running the following command:
+
+Node – V
+
+The output is the current Node version installed on your system.
+
+. What is NPM?
+NPM is the short form for Node Package Manager. NPM is a package for Java Script. It is used to install, update and uninstall packages for your projects. It is also used to manage dependencies between packages.
+
+
+. Explain Modules in Node Js.
+Modules are the heart of node.js. When you include a module, you include a set of functions, objects, and variables available to your application. Each module has its namespace, meaning the module's code is separate from the rest of your application code.
+
+. What are standard Js modules?
+There are many standard JS modules available, including:
+
+Underscore
+Async
+Request
+React
+. For what requirement () is Node Js?
+The Require() function is used to load modules in Node.js. The module is a javascript library used in a Node.js application. A module is loaded and placed in the cache so that it is reused the next time it is required. 
+
+. Explain module. Exports in Node js
+Module. Export is a particular object in Node.js that exposes modules and their functionality to the outside world. In other words, it allows you to include a module in your application and make it available.
+
+The most common use case for the module. Exports expose a constructor function or class for instantiation via require().
+
+
+. Is Node Js Single – threaded?
+Yes, Node.js is a single-threaded platform. It uses a single event loop to process all incoming requests. While this may seem like a bottleneck, it allows Node.js to be very efficient with resources.
+
+. Explain the Event loop in Node Js.
+The event loop is a mechanism used by Node. It works by allowing Node.js to handle many concurrent connections with very little overhead.
+
+ Become a Node JS Certified professional by learning this HKR Node JS Training !
+
+HKR Trainings Logo
+Subscribe to our YouTube channel to get new updates..!
+. What are events in Node js?
+Events are an essential part of Node.js. They provide a way for different parts of the system to communicate.
+
+Node.js has a built-in "events" module that allows you to work with events. The event emitter class is used to blind and trigger events.
+
+
+. Explain the event loop in Node js.
+The Event Loop allows Node.js to do non–blocking I/O action operations even though the single-threaded javascript.
+
+The event loop works by allowing Node.js to register certain events in advance.
+
+. Difference between cluster and child process modules.
+The cluster module allows you to create child processes that all share the underlying server port. It can be careful to increase the performance of Node.js applications by taking advantage of multiple cores.
+The child process module allows you to spawn new processes, execute external programs and perform other system-related tasks.
+
+. How to stop the controller process without suspending all of its child processes?
+The best way to stop a controller process without suspending all child processes is to use the kill command. The kill command can send a signal to a process, which can then be caught and used to terminate it gracefully.
+
+. What does Emitter do?
+An emitter is a tool that helps you to create and manage events. It is used to create custom events and event handlers.
+
+
+. What is Dispatcher?
+The dispatcher is a software component responsible for handling the communication between various software components in a computer system. It acts as an intermediary between the different components and ensures that the data is transferred smoothly and efficiently. 
+
+. What are the features of Express.js?
+The key features of Express.js include:
+
+Robust routing.
+HTTP helpers.
+View system
+Query string parsing.
+Cookie parsing.
+Session management.
+Static file serving.
+Error handling.
+. Explain the ECMA script.
+ECMA script is an ECMA international standardized scripting language specification. It was created to standardize javascript to foster multiple independent implementations. 
+
+. Who is the author of Node js?
+Joyent Software Engineer Ryan Dahl created the open-source project node.js.
+
+. Explain CLI Node.js.
+Command Line Interface is a text-based interface that views, changes, or controls a computer system. It allows users to interact with a computer by typing commands into a text  interface. A CLI can run programs, open files and interact with system services.
+
+Node JS Training
+Weekday / Weekend Batches
+
+
+. Explain what a javascript engine is.
+A javascript is a program that interprets and executes javascript code. The most common java script engine is the javascript interpreter in web browsers. Other engines included the V8 javascript engine in google chrome and Node.js and the spider monkey engine used in Mozilla Firefox.
+
+. What is the difference between blocking and asynchronous IO?
+Blocking IO is where the process requesting data must wait for that data to become available before it can continue. It can be problematic if the IO operation takes a long time, as it can cause the process to block for an extended period. It is contrasted with asynchronous IO, where the requesting process can continue with other tasks while it waits for the data to become available.
+
+. Explain String data types in Node.js.
+The string data type Node.js is a primitive data type that represents a sequence of characters. Node js also supports template literals, which allow you to create strings that include interpolated values.
+
+. Explain the number data type in Node.js.
+The number data type in Node.js represents a double-precision 64-bit binary number. It is used to represent both integer and floating point numbers. The number data type can represent positive or negative values.
+
+The number data type is a double-precision 64-bit binary number. Node.js does not have a separate integer data type.
+
+
+Conclusion
+These questions are designed to help you better understand Node JS and what it can do for your business. With these questions, you should be able to get a feel for the potential this technology has. If you're looking to get started with Node JS, be sure to check out our other resources to get the most out of this powerful tool.
+
 Top 50 Node.Js Interview Questions and Answers
 Node JS
 Rajesh Kumar
