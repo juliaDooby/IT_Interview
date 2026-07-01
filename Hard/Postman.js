@@ -1,4 +1,67 @@
 Postman Interview Questions and Answers
+Question - 21 : - What are the core components of an HTTP Response?
+Answer - 21 : -
+
+Following are the four core components of an HTTP Response:
+
+Status/Response Code: The server generates the status or response codes when the client makes a request. For example, 404 means Page Not Found, and 200 means Response is OK.
+HTTP Version: It describes the HTTP version. For example: HTTP v1.1, HTTP v1.3 etc.
+Response Header: The Response Header includes the information for the HTTP response message. For example, Content-type, Content-length, date, status, and server type.
+Response Body: The Response Body contains the client's data requested from the server.
+
+Question - 22 : - Which type of encoding does Postman accept authorization credentials and why?
+Answer - 22 : -
+
+Postman accepts authorization credentials in Base64 encoding only. This is inbuilt in Postman, or else you can refer to a third-party website to convert the credentials in base64. The Base64 authorization credentials are generally used because they transmit the data into a textual form and send it in an easier form, such as HTML form data.
+
+Question - 23 : - Why does Postman accept Base64 encoding only?
+Answer - 23 : -
+
+Postman accepts Base64 encoding only because it transmits the data into the textual form and sends it in an easier form, such as HTML form data. This is also preferred because we can rely on the same 64 characters in any encoding language we want to use.
+
+Question - 24 : - What are the core components of an HTTP request?
+Answer - 24 : -
+
+Following are the five core components of an HTTP request:
+
+HTTP methods: It is a set of request methods used to perform needed action for a given resource (GET, PUT, POST, and DELETE).
+Uniform Resource Identifier (URI): It is a kind of address that describes the resource.
+HTTP Version: It specifies the version of the HTTP. For example HTTP v1.1
+Request Headers: It specifies the content type and content length of the request. For example: Content-type: application/ JSON, Content-Length: 511
+Payload: It is used to specify the Request Body that includes message content.
+
+Question - 25 : - What is the difference between Query Params and Path Variables?
+Answer - 25 : -
+
+Query Params or Query Parameters are used for sorting or filtering the resources. On the other hand, Path Variables are used for identifying specific resources.
+
+Question - 26 : - What do you mean by postman monitors?
+Answer - 26 : -
+
+The postman monitor is used for running collections. Collections are run till specified time defined by the user. Postman Monitor requires the user to be logged in. Monitor reports are shared by users over email on a daily/monthly basis.
+
+Question - 27 : - What do you understand by the term Postman Collection runners?
+Answer - 27 : -
+
+A postman collection runner is used to perform Data-driven testing. The group of API requests are run in a collection for the multiple iterations with different sets of data.
+
+Question - 28 : - Can local variables be imported in Postman Monitors?
+Answer - 28 : -
+
+Yes. Postman monitors allow to import local variables but it does not allow to import global variables.
+
+Question - 29 : - What is the purpose of Postman cloud if we are working in a company? Why?
+Answer - 29 : -
+
+A Postman cloud is a common repository of companies to access Postman collections. In Postman cloud, work can be saved instantly after logging in. Anyone from the team can access data/collections from anywhere.
+
+Question - 30 : - Why is it not preferred to save work in Postman cloud?
+Answer - 30 : -
+
+It is not preferred to save your work in Postman cloud as company’s work is not allowed to be leaked and remain confidential. Security breaches can be experienced if Postman cloud is used as Postman cloud requires sign in. Therefore Postman Cloud is discouraged for saving work and team workspace is highly encouraged.
+
+
+Postman Interview Questions and Answers
 Question - 11 : -
 What are the various tools used for API Testing?
 
