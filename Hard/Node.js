@@ -1,3 +1,314 @@
+Hire Jobs Contact Sign in Post a role →
+
+← All posts
+Engineering
+33 Node.JS Interview Questions and Answers to Ask Aspiring Node Developers
+Viki Kovalenko June 1, 2021
+$(document).on('turbolinks:load', function(){hljs.highlightAll()});
+The interview round is a vital part of any recruitment process. Employers need to ask the right questions to candidates during the interview to screen for essential skills. The same applies to hiring Node.js developers, where interview questions are fundamental for assessing technical prowess.
+
+In this post, we will present the top NodeJS interview questions to ask your potential developer. We will sort the questions into three expertise levels (basic, intermediate, and advanced) for more convenience.
+
+Basic Level Node Interview Questions
+Basic level questions are for developers who are starting out. You need to ask them simple questions that revolve around what is Node JS and how it works. The questions help employers determine the depth of understanding of the aspirant and if they are suitable for the role.
+
+Make sure you have a thorough screening process and then ask the following Node.JS interview questions:
+
+1. Name a few popular apps developed with Node.JS.
+Answer:
+
+Many leading businesses have used Node.JS to develop quality apps. Some of the most popular ones include Netflix, Uber, LinkedIn, PayPal, and eBay. We can go for Node JS download and create reliable apps for mobile and desktop.
+
+2. Why is Node preferred for real-time applications?
+Answer:
+
+Node meets the low-latency requirements of real-time applications. It is ideal for handling countless client requests and suitable for instant messaging apps and online gaming. Node also allows the reuse of library code packages to save time and effort. Additionally, data syncing between the server and end-user happens quickly when we use Node.JS.
+
+3. Why will you choose Node over other popular frameworks?
+Answer:
+
+Developers prefer Node for its simplicity. We can also take advantage of a short response time due to event-based models and non-blocking I/O. Node even supports concurrent processing and eliminates the need to use thread management. Additionally, developers can enjoy a reliable performance as Node is built on Google Chrome V8 Engine.
+
+4. What do you know about event-driven programming?
+Answer:
+
+Event-driven programming is the triggering of functions based on events. Developers can program an app to execute specific functions when users click a button, hover the mouse over texts, or press a key. An event initiates a callback function registered beforehand with the element. Event-driven programming makes Node a fast and reliable development option.
+
+5. Why is Node not suitable for the development of apps with monolith architecture?
+Answer:
+
+Node.JS relies on single-thread programming to execute functions. Monolith apps generally come with multiple functionalities, and a single-thread approach can delay services. Additionally, a single thread makes use of a single processor core and doesn’t fully utilize server capabilities. As a result, Node is not suitable for monolith apps that have a high load.
+
+6. Can you tell me the steps “Control Flow” uses to control function calls?
+Answer:
+
+The steps are:
+
+Control Flow first controls the order of execution.
+The next step is data collection.
+The third step is to restrict concurrency.
+The last step involves calling the next step your program.
+7. Write a code to setup a simple server on Node to return Hello World.
+Answer:
+
+We can create a simple server on Node using:
+
+var http = require("http");
+
+http.createServer(function (request, response) {
+
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+
+  response.end('Hello World\n');
+
+}).listen(3000);
+8. What do you use to handle async callbacks in Node.JS?
+Answer:
+
+We can use an Event loop to handle every async callback on Node. Developers can also assign listeners to events to execute a callback.
+
+9. How does fork in Node differ from other technologies?
+Answer:
+
+In Node.JS, fork helps in the creation of a fresh instance of the V8 engine. We can run many workers for code execution using fork in Node. In the case of other frameworks, fork enables the spawning of child processes.
+
+10. What are the types of API functions you find in Node? Explain them.
+Answer:
+
+We find two types of API functions in Node. They are:
+
+Asynchronous, non-blocking functions: These are generally I/O operations that you can fork out of main loops.
+Synchronous, non-blocking functions: These are functions that impact the process controlling the main loop..
+11. What is Node JS Express?
+Answer:
+
+Node.JS Express is a lightweight yet reliable framework to build quality mobile and web apps. Developers can use it to develop web apps based on Node rapidly. Node Express has a range of advanced features to facilitate mobile and web development.
+
+Intermediate Level Node Interview Questions
+Node developers with a few years of experience can be categorized under the intermediate level. They can create apps and websites using Node and make full use of all features. Intermediate developers are also familiar with ancillary frameworks and how to use them to facilitate development. As a result, your Node JS interview questions should be able to challenge the candidates’ intellect.
+
+Recruiters can ask the following questions during the interview:
+
+12. Can you give an example of an error-first callback?
+Answer:
+
+The following is an example of an error-first callback:
+
+fs.readFile( "file.json", function ( err, data ) {
+  if ( err ) {
+    console.error( err );
+  }
+  console.log( data );
+});
+13. Tell me a few technical differences between back-end and front-end development.
+Answer:
+
+Front-end development relies on JavaScript, CSS, HTML, and similar web and markup languages. On the other hand, back-end development uses Ruby, Python, Perl, and other scripting and programming languages.
+
+Front-end focuses on achieving better navigability and accessibility for the users. Back-end, on the contrary, focuses on optimizing security.
+
+Another difference is front-end development using AJAX and asynchronous requests. Back-end relies on server architecture instead.
+
+14. What are some of the functions of middleware in Node?
+Answer:
+
+Middleware functions in Node.js help in the execution of all types of codes. They also enable the modification or update of response and request objects. Additionally, middleware can be used to initiate the following middleware in your stack.
+
+15. How do you avoid callback hell in Node?
+Answer:
+
+We can avoid callback hell in Node by using Async.js, Async-Await, and Promises. Async.js can help developers successfully manage JavaScript’s asynchronous implications.
+
+16. How can you import the two functions below in a file called greet.js using module.exports?
+module.exports = {
+    greetInEnglish: function() {
+        return "HELLO";
+    },
+    greetInKorean: function() {
+        return "ANNYEONGHASEYO";
+    }
+};
+Answer:
+
+We can use module.exports to import the above functions into another file with the code:
+
+var eduGreets = require ("./greet.js");
+eduGreets.greetInEnglish() //HELLO
+eduGreets.greetInKorean() //ANNYEONGHASEYO
+17. Name two tools you can utilize to ensure consistent style.
+Answer:
+
+We can use Standard and ESLint to ensure consistent style.
+
+18. What are the features of a Stub?
+Answer:
+
+The best feature of a Stub is its compatibility with Node.JS. Another excellent feature is predefined and usable extensions you get out-of-the-box. We can also create lightweight objects that can extend down their trees. Developers can also extend the capabilities of Stub with an ExtensionManager.
+
+19. What are exit codes in Node.JS? Name and explain a few of them.
+Answer:
+
+Exit codes in Node provide developers an explanation behind the termination of processes. A few exit codes are:
+
+Code – 1: Signifies a fatal exception has occurred and is not handled.
+
+Code – 5: An error has occurred in V8 and can be fatal.
+
+Code – 7: It indicates Internal Exception handler Run-time failure. The error has occurred when the call for bootstrapping function was made.
+
+20. Give an example of using the Async-Await pattern in Node.
+Answer:
+
+The following shows how we can use Async-Await in Node.JS:
+
+function wait(timeout) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve()
+        }, timeout);
+    });
+}
+
+async function requestWithRetry(url) {
+    const MAX_RETRIES = 10;
+    for (let i = 0; i <= MAX_RETRIES; i++) {
+        try {
+            return await request(url);
+        } catch (err) {
+            const timeout = Math.pow(2, i);
+            console.log('Waiting', timeout, 'ms');
+            await wait(timeout);
+            console.log('Retrying', err.message, i);
+        }
+    }
+}
+21. Which tasks will you perform asynchronously with the help of the Event loop?
+Answer:
+
+We can perform complex computation, I/O operations, and blocking asynchronously with the help of the Event loop.
+
+22. What are the uses of package.json? Name some of its fields.
+Answer:
+
+Package.json is a file containing a range of project metadata information. It delivers information to npm to identify and manage project dependencies.
+
+The following are a few fields:
+
+Description
+Name
+Author
+Advanced Level Node Interview Questions
+Advanced Node developers are highly sought after in the industry. They learn and use Node JS for a plethora of development needs, including front-end and back-end. You can expect great results by hiring an expert Node.JS developer. Plus, they know how to use different technologies and frameworks to build top products.
+
+
+Here are some advanced NodeJS interview questions to ask:
+
+
+23. What are some attributes that help you safeguard HTTP cookies from XSS attacks?
+Answer:
+
+We can use the following attributes to prevent XSS attacks from compromising HTTP cookies:
+
+
+Set-Cookie: [name]=[value]; HttpOnly: Ensures cookies are submitted only to the domain or origin.
+Set-Cookie: [name]=[value]; Secure: Makes sure cookies use only secure channels for sending.
+X-XSS-Protection: 1; mode=block: Prevents pages from loading once they identify signs of injection attacks.
+24. Rewrite the following JavaScript code to keep the same output in Node.
+console.log("first");
+setTimeout(() => {
+    console.log("second");
+}, 0);
+console.log("third");
+Output of Code:
+First
+Third
+Second
+Answer:
+
+We can rewrite the code in Node as below:
+
+console.log("first");
+
+setImmediate(() => {
+
+    console.log("second");
+
+});
+
+console.log("third");
+25. Does Node support cryptography?
+Answer:
+
+Node.JS uses a module called Crypto to provide cryptography functions. You can take advantage of features like verify functions, decipher, cipher, and more. Additionally, you receive a collection of hash HMAC wrappers. An example can be:
+
+const crypto = require'crypto');
+const secret = 'akerude';
+const hash = crypto.createHmac('swaEdu', secret).update('Welcome to Edureka').digest('hex');
+console.log(hash);
+26. How can you use clustering to improve Node performance?
+Answer:
+
+Clustering helps Node applications utilize multi-core system resources optimally. Node uses a single processor as it is a single threat platform. So, the rest of the cores can go unused. Cluster mode allows developers to initiate multiple processes, resulting in many instances of the event loop. The Cluster Manager helps developers track the status of each instance.
+
+27. How can you secure a Node application?
+Answer:
+
+We can strengthen the security of a Node.JS app in many ways, like:
+
+Authentication: The process of authentication ensures only legit users can access the app. Node uses session-based and token-based methods to authenticate users. Both methods work to secure Node apps against unauthorized access.
+
+Validating requests:Developers can program an app to validate incoming requests. The app can reject the requests if they seem incredible or have incompatible formats. Allowing only valid requests provides a layer of security to Node apps.
+
+Additional tools: Various tools like Helmet, Node Rate Limiter, and Csurf can help developers secure Node apps. For example, Helmet uses HTTP headers to protect apps.
+
+28. Write a code to show how you will use Event Emitter in Node.
+Answer:
+
+The code below shows how to use Event Emitter:
+
+const EventEmitter = require('events');
+class MyEmitter extends EventEmitter {}
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+    console.log('an event occurred!');
+});
+myEmitter.emit('event');
+29. How do you use Punycode in Node 0.6.2 and previous versions?
+Answer:
+
+The encoding syntax Punycode helps convert a string of Unicode characters into ASCII character strings. It helps hostnames decipher ASCII characters. We can use Punycode in Node 0.6.2 or lower versions through the code -
+
+punycode = require('punycode');
+30. What do you know about the libuv library?
+ Answer:
+
+The libuv library is responsible for handling the thread pool in Node. It is a C library that supports multiple platforms. Libuv library facilitates asynchronous operations based on I/O.
+
+31. What are the benefits of keeping Express ‘app’ and ‘server’ separate?
+Answer:
+
+The main benefit of keeping Express ‘app’ and ‘server’ separate is faster execution of testing. We can test API in-process without the need for handling network calls. Additionally, developers can deploy an API to varied network conditions.
+
+32. How do you make an HTTP post request in Node?
+Answer:
+
+We can make a post request in Node.JS with the code below:
+
+var request = require('request');
+request.post('http://www.example.com/action', { form: { key: 'value' } },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }
+    });
+33. What are some steps to handle maintenance problems in Node?
+Answer:
+
+We can start with a code review to handle maintenance issues. Using microservices and working to improve code quality can also help. We can also aim for better documentation and update the whole stack.
+
+Final Thoughts
+Node JS interview questions help employers assess the skills and technical capabilities of aspiring developers. You can ask questions we listed based on the level of your candidates and experience. Make your screening process count to get the most promising candidates for the interview round. You can then use our interview questions to select your new Node developer.
+
 7 Hardest Node.js Interview Questions & Answers
 #
 node
