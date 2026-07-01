@@ -1,3 +1,115 @@
+Most Asked Next.js Interview Questions (With Answers) – 2025 Edition
+Next.js is one of the most in-demand frameworks in modern web development. If you're applying for roles at companies like Vercel, Shopify, PayPal, or any top startup, mastering these questions can give you an edge.
+
+This post covers the most common and high-impact interview questions for Next.js, categorized by difficulty level. Plus, we’ve added code snippets, explanations, and real-world interview insights.
+
+🚀 Why is Next.js So Popular in 2025?
+✅ Built on top of React
+✅ Supports Server-side Rendering (SSR)
+✅ Blazing fast Static Site Generation (SSG)
+✅ Powerful App Router with nested layouts and Server Components
+✅ First-class TypeScript support
+✅ SEO-friendly architecture
+✅ Basic Next.js Interview Questions
+1. What is Next.js?
+Answer: Next.js is a full-stack React framework that provides SSR, SSG, and client-side routing. It enhances performance and SEO while simplifying development.
+
+2. What is the difference between SSR, CSR, and SSG?
+Type	Render Time	SEO	Performance
+SSR	On each request	Good	Slower
+CSR	On client browser	Poor	Fast after load
+SSG	At build time	Great	Very fast
+3. What are getStaticProps and getServerSideProps?
+getStaticProps: Runs at build time. Used for SSG.
+getServerSideProps: Runs on every request. Used for SSR.
+// SSG
+export async function getStaticProps() {
+  return { props: { message: "Hello" } };
+}
+
+// SSR
+export async function getServerSideProps() {
+  return { props: { message: "From server" } };
+}
+4. What is ISR (Incremental Static Regeneration)?
+ISR enables on-demand regeneration of pages.
+
+export async function getStaticProps() {
+  return {
+    props: { data },
+    revalidate: 10 // seconds
+  }
+}
+5. What are API Routes in Next.js?
+You can create backend APIs using files inside /pages/api/.
+
+// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ msg: 'Hello world!' });
+}
+⚙️ Intermediate Questions
+6. What is Middleware in Next.js?
+Middleware lets you intercept requests and perform operations like redirects or auth checks before the request is handled.
+
+// middleware.ts
+import { NextResponse } from 'next/server';
+export function middleware(request) {
+  return NextResponse.next();
+}
+7. What is the App Router?
+Introduced in Next.js 13+, it uses a new app/ directory to support:
+
+Nested layouts
+Server Components
+Streaming
+Loading states
+8. How does Next.js handle images?
+With the next/image component:
+
+Automatic resizing
+Lazy loading
+Optimized formats (like WebP)
+9. How do you implement dynamic routes?
+Use brackets to denote dynamic segments:
+
+// pages/blog/[slug].js
+URL: /blog/my-first-post
+
+10. How does Next.js support SEO?
+Pre-rendering (SSR & SSG)
+<Head> component for meta tags
+OpenGraph support for social sharing
+🧠 Advanced Questions Asked by Top Companies
+11. How do you handle authentication?
+Use next-auth, JWTs, or Clerk
+Use getServerSideProps to verify tokens
+Use middleware to block routes
+12. What are Server Components?
+Server Components:
+
+Run on the server
+Reduce JS bundle size
+Cannot use browser-only hooks (like useEffect)
+13. What is a Layout in App Router?
+Defined in app/layout.tsx, layouts let you wrap pages and persist components like navbars and footers across routes.
+
+export default function Layout({ children }) {
+  return (
+    <div>
+      <Navbar />
+      {children}
+    </div>
+  )
+}
+14. How can you optimize a Next.js application?
+Use SSG whenever possible
+Enable ISR
+Optimize images
+Defer scripts
+Split code using dynamic imports
+Use caching headers
+
+
 Your Ultimate Guide to Next.js Interview Success
 Introduction to Next.js
 Next.js, created by Vercel and launched in 2016, is a powerful React framework for building server-side rendered and static web applications. Renowned for its scalability, performance, and simplicity, Next.js integrates server-side rendering and static site generation seamlessly. Its advanced features, such as automatic code splitting, optimized performance, and an intuitive file-based routing system, make it a top choice for developing fast and user-friendly web applications.
