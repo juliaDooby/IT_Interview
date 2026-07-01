@@ -1,3 +1,185 @@
+7 Hardest Node.js Interview Questions & Answers
+#
+node
+#
+interview
+#
+questions
+#
+fullstack
+7 Hardest Node.js Interview Questions & Answers
+Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side. Node.js lets developers use JavaScript for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
+
+🔴 Originally published on FullStack.Cafe - Kill Your Tech & Coding Interview
+
+Q1: Provide some example of config file separation for dev and prod environments
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐
+
+A perfect and flawless configuration setup should ensure:
+
+keys can be read from file AND from environment variable
+secrets are kept outside committed code
+config is hierarchical for easier findability
+Consider the following config file:
+
+var config = {
+  production: {
+    mongo : {
+      billing: '****'
+    }
+  },
+  default: {
+    mongo : {
+      billing: '****'
+    }
+  }
+}
+
+exports.get = function get(env) {
+  return config[env] || config.default;
+}
+And it's usage:
+
+const config = require('./config/config.js').get(process.env.NODE_ENV);
+const dbconn = mongoose.createConnection(config.mongo.billing);
+🔗Source: github.com/i0natan/nodebestpractices
+
+Q2: What are the timing features of Node.js?
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐
+
+The Timers module in Node.js contains functions that execute code after a set period of time.
+
+setTimeout/clearTimeout - can be used to schedule code execution after a designated amount of milliseconds
+setInterval/clearInterval - can be used to execute a block of code multiple times
+setImmediate/clearImmediate - will execute code at the end of the current event loop cycle
+process.nextTick - used to schedule a callback function to be invoked in the next iteration of the Event Loop
+function cb(){
+  console.log('Processed in next iteration');
+}
+process.nextTick(cb);
+console.log('Processed in the first iteration');
+Output:
+
+Processed in the first iteration
+Processed in next iteration
+🔗Source: github.com/jimuyouyou
+
+Q3: Explain what is Reactor Pattern in Node.js?
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐⭐
+
+Reactor Pattern is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a callback function) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a demultiplexer.
+
+This demultiplexer is a notification interface that is used to handle concurrency in non-blocking I/O mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the Event Queue.
+
+At the same time, there is an Event Loop which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.
+
+🔗Source: hackernoon.com
+
+Q4: What is LTS releases of Node.js why should you care?
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐⭐
+
+An LTS(Long Term Support) version of Node.js receives all the critical bug fixes, security updates and performance improvements.
+
+LTS versions of Node.js are supported for at least 18 months and are indicated by even version numbers (e.g. 4, 6, 8). They're best for production since the LTS release line is focussed on stability and security, whereas the Current release line has a shorter lifespan and more frequent updates to the code. Changes to LTS versions are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
+
+🔗Source: github.com/i0natan/nodebestpractices
+
+Q5: Why should you separate Express 'app' and 'server'?
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐⭐
+
+Keeping the API declaration separated from the network related configuration (port, protocol, etc) allows testing the API in-process, without performing network calls, with all the benefits that it brings to the table: fast testing execution and getting coverage metrics of the code. It also allows deploying the same API under flexible and different network conditions. Bonus: better separation of concerns and cleaner code.
+
+API declaration, should reside in app.js:
+
+var app = express();
+app.use(bodyParser.json());
+app.use("/api/events", events.API);
+app.use("/api/forms", forms);
+Server network declaration, should reside in /bin/www:
+
+var app = require('../app');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+🔗Source: github.com/i0natan/nodebestpractices
+
+Q6: What is the difference between process.nextTick() and setImmediate() ?
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐⭐
+
+The difference between process.nextTick() and setImmediate() is that process.nextTick() defers the execution of an action till the next pass around the event loop or it simply calls the callback function once the ongoing execution of the event loop is finished whereas setImmediate() executes a callback on the next cycle of the event loop and it gives back to the event loop for executing any I/O operations.
+
+🔗Source: codingdefined.com
+
+Q7: Rewrite the code sample without try/catch block
+Topic: Node.js
+Difficulty: ⭐⭐⭐⭐⭐
+
+Consider the code:
+
+async function check(req, res) {
+  try {
+    const a = await someOtherFunction();
+    const b = await somethingElseFunction();
+    res.send("result")
+  } catch (error) {
+    res.send(error.stack);
+  }
+}
+Rewrite the code sample without try/catch block.
+
+Answer:
+
+async function getData(){
+  const a = await someFunction().catch((error)=>console.log(error));
+  const b = await someOtherFunction().catch((error)=>console.log(error));
+  if (a && b) console.log("some result")
+}
+or if you wish to know which specific function caused error:
+
+async function loginController() {
+  try {
+    const a = await loginService().
+    catch((error) => {
+      throw new CustomErrorHandler({
+        code: 101,
+        message: "a failed",
+        error: error
+      })
+    });
+    const b = await someUtil().
+    catch((error) => {
+      throw new CustomErrorHandler({
+        code: 102,
+        message: "b failed",
+        error: error
+      })
+    });
+    //someoeeoe
+    if (a && b) console.log("no one failed")
+  } catch (error) {
+    if (!(error instanceof CustomErrorHandler)) {
+      console.log("gen error", error)
+    }
+  }
+}
+
 Десять вопросов о Node.js, на которые вы не сможете ответить
 6 мин
 66K
