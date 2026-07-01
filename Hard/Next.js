@@ -1,6 +1,6 @@
 NextJS Interview Questions & Answers
 🚀 This repository aimed to contains 500 nextjs interview questions & answers with exmample.
-
+https://github.com/mrhrifat/nextjs-interview-questions
 Groups
 No	Contents
 1	Common
