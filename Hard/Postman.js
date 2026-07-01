@@ -1,4 +1,85 @@
 Postman Interview Questions and Answers
+Question - 11 : -
+What are the various tools used for API Testing?
+
+Answer - 11 : -
+
+Following is a list of some tools that are used for API Testing:
+
+Postman
+SoapUI
+Katalon Studio
+Tricentis Tosca
+Apigee
+Jmeter etc.
+
+Question - 12 : - How can you access the Postman variables?
+Answer - 12 : -
+
+We can access the Postman variables by using the variable name as:{{variable_name}}
+
+Question - 13 : - What are the different types of API requests supported in Postman?
+Answer - 13 : -
+
+Following is a list of the different types of API requests supported in Postman:
+
+GET
+POST
+PUT
+PATCH
+COPY
+DELETE
+HEAD
+OPTIONS
+LINK
+UNLINK
+PURGE
+LOCK
+UNLOCK
+PROPFIND
+VIEW
+
+Question - 14 : - What is an HTTP request? Give an example of an HTTP request.
+Answer - 14 : -
+
+An HTTP request is a programming request made by the client to a named host located on a server. HTTP works as a communication interface or a request-response protocol between a client and server. The main aim of the HTTP request is to access a resource on the server. To make the HTTP request, the client uses components of a URL (Uniform Resource Locator), which includes the information needed to access the resource.
+An example of the HTTP request:
+
+A client (browser) sends an HTTP request to the server; then, the server responds to the client. The response sent by the server contains the status information about the request, and it can also contain the requested content.
+
+Question - 15 : - What do you understand by team workspace in Postman?
+Answer - 15 : -
+
+As we know, a workspace is a collaborative environment for users to develop and test APIs. In the same way, a team workspace is a workspace that is shared by the whole team working on the same collections of requests. Usually, it is time-consuming and hard to share the collections through external drives or other sharing; the team workspace synchronizes and collaborates all the team's work in one place.
+
+Question - 16 : - What is the use of Postman monitor?
+Answer - 16 : -
+
+The Postman monitor is used for running collections. Collections run till the specified time defined by the users. It requires the users to be logged in, and the users share the Monitor reports over an email on a daily or monthly basis.
+
+Question - 17 : - How can you log variable values in Postman?
+Answer - 17 : -
+
+In Postman, we can log the variable values in the console by using the following command:
+
+console.log(pm.variables.get("variable_name"));  
+
+Question - 18 : - Which one is preferred in Postman, a global or local variable?
+Answer - 18 : -
+
+In Postman, if 2 variables have the same name (one being local, the other global), then the higher priority is of the local variable. The local variable will overwrite the global variable.
+
+Question - 19 : - Can we have two global scope variables with the same name in Postman?
+Answer - 19 : -
+
+The global variables are global, so we cannot set duplicate names for them without any environment as it creates confusion for the software. On the other hand, local variables can have the same name but in different environments.
+
+Question - 20 : - What is the meaning of the term environment in Postman?
+Answer - 20 : -
+
+In Postman, the term environment is a set of key-value pairs. You can create multiple environments in Postman and switch among them quickly by pressing a button. There are 2 types of environment, global and local.
+
+Postman Interview Questions and Answers
 Question - 1 : - What is Postman?
 Answer - 1 : -
 
