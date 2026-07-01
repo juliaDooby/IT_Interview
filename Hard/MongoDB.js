@@ -1,3 +1,79 @@
+Флаг пароля не работает для входа в mongo
+Вопросы
+MONGODB
+Флаг пароля не работает для входа в mongo
+Я создал демона монго. Затем я сделал:
+
+$ mongo --port 27017
+
+> use admin
+> db.createUser({
+           user: "AzureDiamond",
+            pwd: "hunter2",
+          roles: [{
+               role: "readWrite",
+                 db: "test_db1"
+          }]
+   })
+>^D
+Затем я попытался войти в Mongo с новой учетной записью (точно так же, как в разделе 7 уторического):
+
+$ mongo --port 27017 -u "AzureDiamond" -p "hunter2" --authenticationDatabase "admin"
+Это странная часть. Он по-прежнему запрашивал у меня пароль, а затем добавил его к пути к базе данных, к которой я подключился:
+
+Enter password:
+connecting to: 127.0.0.1:27017/hunter2
+>
+Что я сделал не так? Как я могу подключиться к Mongo, указав пароль в командной строке, но не отображая мой пароль на экране?
+
+ 20.07.2018 08:22
+4
+6
+365
+5
+ Ответы 5
+Я думаю, что это просто опечатка, на которую вы указали в своем вопросе. Не могли бы вы повторить команду, как показано ниже:
+
+You just missed a d in your username!
+
+$ mongo --port 27017 -u "AzureDiamond" -p "hunter2" --authenticationDatabase "admin"
+Если это не сработает, попробуйте войти в базу данных Mongo в соответствии с предоставленной документацией здесь.
+
+Надеюсь это поможет!
+
+ 23.07.2018 06:29
+Это решит вашу проблему:
+
+mongo admin -u {username} -p '{password}'
+Ссылка: проверка подлинности mongo в командной строке не выполняется
+
+ 23.07.2018 10:00
+Вы пробовали использовать URI строки подключения?
+
+например mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
+
+Итак, в вашем случае mongo mongodb://AzureDiamond:hunter2@localhost:27017/test_db1?authSource=admin
+
+ 24.07.2018 21:55
+Самый простой и безопасный способ:
+Вам не нужно указывать порт, вы можете легко это сделать, используя:
+
+mongo admin -u ""AzureDiamond"" -p
+Теперь он запросит пароль, введите свой пароль и Вуаля !! Вы вошли в систему!
+
+Это наиболее безопасный способ, так как ваш пароль также не виден другим.
+
+Надеюсь, что это работает для вас! Сообщите мне, если это не сработает!
+
+ 29.07.2018 12:11
+Это ошибка в 3.2.11.
+
+https://jira.mongodb.org/browse/SERVER-32421
+
+Thank you for the report. After some testing, I'm able to reproduce this issue and am investigating the cause. However, as a workaround it appears that if you do not leave a space between the -p flag and the password, it logs in as expected
+
+Так что попробуйте -u UserName -pPassword
+
 Транзакция Mongodb v4.0, MongoError: номера транзакций разрешены только для члена набора реплик или монго
 Вопросы
 JAVASCRIPT
