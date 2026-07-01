@@ -1,4 +1,67 @@
 Postman Interview Questions and Answers
+Question - 51 : - What is the use of the 301 status code in Postman?
+Answer - 51 : -
+
+In Postman, the 301 status code is used to specify that the page has been permanently redirected from one website page to another. It tells the search engine that the old page is outdated, and the search engine has to index the new page URL.
+
+Question - 52 : - What is the method to organize requests in Postman?
+Answer - 52 : -
+
+We can organize requests in Postman with the Collections.
+
+Question - 53 : - What are the various variable scopes provided by Postman?
+Answer - 53 : -
+
+Following is a list of several variable scopes provided by Postman:
+
+Global Variables: Global variables allow data access between different collections, requests, and scripts. They are available throughout the workspace.
+Local Variables: Local variables are the temporary variables that can be accessed only within the scope of requests scripts. Depending on the requirements, these variables are either scoped to a single request or single collection. These variables are not available once the script execution is completed.
+Environment Variables: The Environment variables allow us to tailor the requests about different development environments such as local testing, stage testing, or prod testing.
+Collection Variables: The Collection variables are independent of the environment and scoped to be available for all the requests present within the collection.
+Data Variables: The Data variables come from external JSON or CSV files and define the datasets required to run the collection in Collection Runner or Newman.
+
+Question - 54 : - What is the difference between the form data and x-www-form-urlencoded?
+Answer - 54 : -
+
+The key difference between the form data and x-www-form-urlencoded is that the URL will be prearranged when sent through x-www-form-urlencoded.
+
+Question - 55 : - In which conditions should we use global, collection, and local variables?
+Answer - 55 : -
+
+Global variables are the general-purpose variables. They are used while passing data to other requests and are ideal for quick results and prototyping.
+
+Collection variables are generally used for storing some constants that do not change during the execution of the collection. These variables are used for constants that do not change during the execution and URLs / authentication credentials if only one environment exists.
+
+Local variables are the temporary variables and are only available within the request that has set them or when using Newman/Collection runner during the script execution. These variables are used whenever we have to override all other variable scopes.
+
+Question - 56 : - How can we access the history of requests in Postman?
+Answer - 56 : -
+
+In Postman, we can access the history of requests in the History tab provided on the Postman application. When we sign into the Postman account, the history will be synced across the devices where you are logged in. After clicking on any of the requests present in the History tab, the view will open the request that we saved while working on it earlier. History also contains the collection runs that were executed as summarized versions.
+
+When you click on the "View More option" on the request, you will see options to save, document, monitor, delete or mock the request. You can also select multiple requests by using Command or Control button and then clicking on the request.
+
+Question - 57 : - Which method is preferred to write the tests?/ JavaScript or Functional?
+Answer - 57 : -
+
+The functional method is advised and recommended while writing tests in Postman. Although we can use JavaScript methods, there has been no notice of ending the support for the JavaScript method.
+
+Question - 58 : - How can you organize requests in Postman?
+Answer - 58 : -
+
+In Postman, we can use Collections to organize requests.
+
+Question - 59 : - What is the binary form in the Post method in Postman?
+Answer - 59 : -
+
+In Postman, the binary form is designed to send the information in a specific format that cannot be entered manually. For example, images, files, etc. Everything in a computer is converted to binary.
+
+Question - 60 : - How can we view request logs and response logs in Postman?
+Answer - 60 : -
+
+We can view request logs and response logs in Postman through the Postman Console window.
+
+Postman Interview Questions and Answers
 Question - 41 : - What is a binary form in POST methods? What is its usage?
 Answer - 41 : -
 
