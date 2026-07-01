@@ -469,8 +469,6 @@ Skip code block
 81) Можем ли мы запустить более одной операции Javascript в одном экземпляре MongoDB?
 Да, мы можем запускать несколько операций javascript в одном экземпляре MongoDB.
 
-1
-
 
 MongoDB Interview Question and Answers
 Hey! Are you preparing to attend any of the interviews in the profile of MongoDB? Wow! Then you are at the right place. This article consists of the MongoDB interview questions. These questions are specifically designed for both freshers and experienced to help you gain an understanding of the nature of the questions you might come across when you attend a MongoDB interview. This article includes the frequently asked interview questions that are curated by the experts. You will definitely be able to crack the interview at your best. Let us get started and review the interview questions and answers.
