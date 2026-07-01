@@ -1,3 +1,76 @@
+Postman Interview Questions and Answers
+Question - 1 : - What is Postman?
+Answer - 1 : -
+
+Postman is an API platform that is used to develop, share, test APIs. It is also used for creating documentation for APIs. Test suites can be quickly designed using Postman, and also it can store test information to be used in other tests.
+
+Question - 2 : - What is a collection in Postman?
+Answer - 2 : -
+
+A collection is equivalent to a folder on your computer. It is a set of requests that are grouped together, preferably of the same type. It is one of Postman's most important features, and it also provides nice features such as running a whole group of request together with just one click.
+
+Question - 3 : - What are all the environment variables in Postman?
+Answer - 3 : -
+
+A collection of key-value pairs is called an environment. Each name of the variable represents its keys. And referencing the name of the variable allows you to access its value.
+It is a set of variables that differentiate among the requests. Such as, we can have an environment for testing, one for development and another for production. We can change the value of the variables to pass the data between requests and tests
+
+Question - 4 : - What is payload in Postman?
+Answer - 4 : -
+
+The Payload of an API Module is the body of your request and response message. It contains the data that you send to the server when you make an API request. You can send and receive Payload in different formats, for instance JSON.
+
+Question - 5 : - What is a Pre-request script in Postman?
+Answer - 5 : -
+
+Pre-request scripts in Postman to execute JavaScript before a request runs
+
+Scripts in the Pre-request Script tab for a request, collection, or folder, you can carry out pre-processing such as setting variable values, parameters, headers, and body data
+
+Question - 6 : - What was the Postman originally developed?
+Answer - 6 : -
+
+When the Postman was developed, it was originally a Chrome browser plugin. It extends its solution with the native version for both Mac and Windows.
+
+Question - 7 : - Why do we use Postman?
+Answer - 7 : -
+
+The Postman tool has become a choice of more than 8 million users. Following are the main reasons for using Postman:
+It is free: Postman is free software that we can use for API testing. It is free to download and use for teams of any size.
+It is easy to use: Postman is an easy-to-use software tool. We can send HTTP requests of various types (such as GET, POST, PUT, PATCH, etc.). We have to download it, and we can send our first request in minutes. It also gives us the ability to save environments for future use.
+Community & Support: It has a huge community forum for customer support and extensive documentation.
+It is extensible: Postman facilitates us customizing it according to our needs with the Postman API.
+APIs Support: It facilitates us to make any API call (REST, SOAP, or plain HTTP) and easily inspect even the largest responses. It also helps manage the end-to-end lifecycle of the API - starting from design to mocking to testing and finally maintaining the APIs.
+Runtime Services: Postman provides Runtime Services that help us manage API collections, environments, work-spaces, and different examples.
+Integration: Postman facilitates us to easily integrate test suites into our preferred CI/CD tools and services, such as Jenkins with Newman (command-line collection runner).
+
+Question - 8 : - What is an API?
+Answer - 8 : -
+
+API is an acronym that stands for "Application Programming Interface". It is a set of routines, protocols, and tools used for building Software applications. API is an interface, so it specifies how one software program should interact with other software programs.
+
+In other words, we can say that API is an Application Programming Interface that acts as an interface between two software applications and allows these two software applications to communicate with each other. API is a collection of software functions that another software program can execute.
+
+Question - 9 : - What are the various authorization methods provided by Postman?
+Answer - 9 : -
+
+Postman provides the following API request authorization options:
+
+API Key
+Oauth 1.0
+Oauth 2.0
+Bearer Token
+Basic auth
+Digest auth
+Hawk Authentication
+AWS Signature
+NTLM Authentication
+
+Question - 10 : - What is the use of the collection in Postman?
+Answer - 10 : -
+
+In Postman, a collection is used to group similar requests. It systematically arranges the requests into folders.
+
 41+ Postman Interview Questions & Answers (with Notes) | PART 1
 #
 testing
