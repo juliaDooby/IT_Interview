@@ -1,3 +1,123 @@
+В JSON, созданном из pydantic.BaseModel, исключить Необязательно, если не установлено
+Вопросы
+PYTHON
+В JSON, созданном из pydantic.BaseModel, исключить Необязательно, если не установлено
+Я хочу исключить все необязательные значения, которые не установлены при создании JSON. В этом примере:
+
+from pydantic import BaseModel
+from typing import Optional
+
+
+class Foo(BaseModel):
+    x: int
+    y: int = 42
+    z: Optional[int]
+
+
+print(Foo(x=3).json())
+Я получаю {"x": 3, "y": 42, "z": null}. Но я хотел бы исключить z. Не потому, что его значение равно None, а потому, что оно является необязательным и для z не было ключевого аргумента. В двух приведенных ниже случаях я хотел бы иметь z в JSON.
+
+Foo(x=1, z=None)
+Foo(x=1, z=77)
+Если есть какое-либо другое решение для установки z в необязательное в этом смысле, я хотел бы его увидеть.
+
+ 18.12.2020 19:59
+15
+0
+20 650
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете исключить только необязательные поля модели, которые не установлены, путем объединения полей модели, которые установлены, и тех, которые не являются None.
+
+Pydantic предоставляет следующие аргументы для метода экспорта model.dict(...):
+
+exclude_unset: следует ли исключать из возвращаемого словаря поля, которые не были заданы явно при создании модели; по умолчанию False.
+
+exclude_none: следует ли исключать из возвращаемого словаря поля, равные None; по умолчанию False
+
+Чтобы объединить два словаря, мы можем использовать выражение a = {**b, **c} (значения из c перезаписывают значения из b). Обратите внимание, что начиная с Python 3.9 это можно было сделать так же, как a = b | c.
+
+from pydantic import BaseModel
+from typing import Optional
+from pydantic.json import pydantic_encoder
+import json
+
+
+class Foo(BaseModel):
+    x: int
+    y: int = 42
+    z: Optional[int]
+
+def exclude_optional_dict(model: BaseModel):
+    return {**model.dict(exclude_unset=True), **model.dict(exclude_none=True)}
+
+def exclude_optional_json(model: BaseModel):
+    return json.dumps(exclude_optional_dict(model), default=pydantic_encoder)
+    
+
+
+print(exclude_optional_json(Foo(x=3)))  # {"x": 3, "y": 42}
+print(exclude_optional_json(Foo(x=3, z=None)))  # {"x": 3, "z": null, "y": 42}
+print(exclude_optional_json(Foo(x=3, z=77)))  # {"x": 3, "z": 77, "y": 42}
+Обновлять
+Чтобы этот подход работал с вложенными моделями, нам нужно выполнить глубокое объединение (или слияние) двух словарей, например:
+
+def union(source, destination):
+    for key, value in source.items():
+        if isinstance(value, dict):
+            node = destination.setdefault(key, {})
+            union(value, node)
+        else:
+            destination[key] = value
+
+    return destination
+
+def exclude_optional_dict(model: BaseModel):
+    return union(model.dict(exclude_unset=True), model.dict(exclude_none=True))
+
+class Foo(BaseModel):
+    x: int
+    y: int = 42
+    z: Optional[int]
+
+class Bar(BaseModel):
+    a: int
+    b: int = 52
+    c: Optional[int]
+    d: Foo
+
+
+print(exclude_optional_json(Bar(a=4, d=Foo(x=3))))
+print(exclude_optional_json(Bar(a=4, c=None, d=Foo(x=3, z=None))))
+print(exclude_optional_json(Bar(a=4, c=78, d=Foo(x=3, z=77))))
+{"a": 4, "b": 52, "d": {"x": 3, "y": 42}}
+{"a": 4, "b": 52, "d": {"x": 3, "y": 42, "z": null}, "c": null}
+{"a": 4, "b": 52, "c": 78, "d": {"x": 3, "y": 42, "z": 77}}
+ 18.12.2020 22:00
+Если вы используете FastAPI, то использование exclude_none не работает, когда в декораторе маршрута упоминается response_model.
+
+@app.post("/items/", response_model=Item)
+async def create_item(item: Item):
+    return item.dict(exclude_none=True)
+Быстрый API, кажется, перерабатывает dict с моделью pydantic.
+
+Поэтому переопределение метода dict в самой модели должно работать.
+
+def Item(BaseModel):
+   name: str
+   description: Optional[str]
+   ...
+   def dict(self, *args, **kwargs) -> Dict[str, Any]:
+        kwargs.pop('exclude_none', None)
+        return super().dict(*args, exclude_none=True, **kwargs)
+(фактическое решение поместило бы это определение в отдельный подкласс BaseModel для повторного использования)
+
+Примечание: просто изменить значение по умолчанию аргумента ключевого слова exclude_none недостаточно: кажется, что FastAPI всегда отправляет exclude_none=False в качестве аргумента.
+
+Источник:
+https://github.com/tiangolo/fastapi/issues/3314#issuecomment-962932368
 FastAPI - шаблон рендеринга в index.html - не работает
 Вопросы
 SQLALCHEMY
