@@ -1,4 +1,331 @@
 Postman Interview Questions and Answers
+Question - 101 : - What is the significance of 301 status code?
+Answer - 101 : -
+
+301 status code represents permanent redirect from one website page to another. It tells the search engine that the old page is outdated and the engine has to index the new page URL.
+
+Question - 102 : - Why is Base64 encoding primarily used in Postman?
+Answer - 102 : -
+
+Base64 encoding is primarily used because it does the task of data transmission in a textual format that is easier to be sent in the requests in HTML form statistics format. Another reason why we use this is that using identical 64 characters for encoding is heavily reliable in any language we use.
+
+Question - 103 : - What is the purpose of the 304 status code?
+Answer - 103 : -
+
+304 status code stands for NOT MODIFIED. This is used for diminishing the bandwidth of the network in cases of restricted GET requests. In such cases, the response body should be empty or blank and the headers should have a date, location, signature etc.
+
+Question - 104 : - Is it preferable to save our work on Postman Cloud?
+Answer - 104 : -
+
+When working on enterprise-level applications for organizations, it is not preferred to store our work on the Postman cloud because of the required privacy and security. In the Postman cloud, there are chances of security breaches by a skilled hacker.
+
+Question - 105 : - What do you understand by the pre-request script?
+Answer - 105 : -
+
+Pre-request scripts are those scripts that are used for executing Javascript code before a request is run. It is used for performing pre-processing tasks like setting variables, parameters, headers, body data, etc.
+
+Question - 106 : - If we have a global and a local variable of the same name, which one will be given the most preference in Postman?
+Answer - 106 : -
+
+In such cases, the higher precedence is given to the local variable by overwriting the value of the global variable.
+
+Question - 107 : - Does Postman allow flexibility to make use of the command-line?
+Answer - 107 : -
+
+Postman provides a command-line tool called Newman using which we can run any Postman collection. It is a NodeJS based package that requires a node environment for executing collections using Newman Collection Runner. It has full parity with Postman’s Collection Runner i.e it provides support for running assertions, pre-request scripts, or other request scripts linked with the requests that belong to the collection.
+
+We can use Newman by following the below steps:
+
+Install Node
+Install Newman package using npm command as: npm install -g newman
+To run the collection, first export the environment to JSON format in Postman. Then run the below command for running the collection in Newman:
+newman run {{path to collection json}} -e {{path to environment json}}
+
+Question - 108 : - How will you generate random numbers of a given range in Postman?
+Answer - 108 : -
+
+Suppose you want to generate numbers between the range 1 to N, then it can be done in the pre-request script as follows:
+
+pm.globals.set('randomNumber', Math.floor(Math.random() * N));
+We can then use this variable in the URL as:{{randomNumber}}
+
+Question - 109 : - What do you understand by Scratch Pad?
+Answer - 109 : -
+
+Scratch Pad is a space provided by Postman that helps us to work without being connected to Postman servers. It provides the flexibility of utilizing some of the features of postman offline. The features include- collection creation, creating requests and the ability to send requests. These are stored locally and once logged in, the work is saved into the workspace.
+
+Postman Interview Questions and Answers
+Question - 91 : - Why isn't it better to save your work in the Postman cloud?
+Answer - 91 : -
+
+It is not recommended that you save your work in the Postman cloud since company work cannot be leaked and must remain confidential. If Postman cloud is used, security breaches may occur since Postman cloud requires sign-in. As a result, saving work on Postman Cloud is discouraged, while team workspace is highly encouraged.
+
+Question - 92 : - In a Collection Run, what will execute first?
+Answer - 92 : -
+
+In a Collection run, pre-request scripts at the Collection level are executed first.
+
+Question - 93 : - What are some of Postman's JS libraries to offer?
+Answer - 93 : -
+
+GUID, Lodash, Moment
+
+Question - 94 : - What exactly is a GUID?
+Answer - 94 : -
+
+The term GUID refers to a globally unique identifier. Hyphens separate hexadecimal digits in this format. GUID satisfies the requirement for uniqueness.
+
+Question - 95 : - What encoding is accepted by Postman in authorization credentials?
+Answer - 95 : -
+
+Postman accepts authorization credentials in Base64 encoding format only. It is provided in Postman by default. If we do not want to use an inbuilt encoding system, we can refer to third-party websites for converting the credentials in base64 format.
+
+Question - 96 : - Can we have the same names for global variables in postman?
+Answer - 96 : -
+
+The scope of global variables is limited to the workspace and is global. Due to this, variables having global scope cannot have the same names. We can have the same names for local variables but they need to be part of different variables.
+
+Question - 97 : - What do you know about postman monitor?
+Answer - 97 : -
+
+Monitoring is a method of staying in sync with the health and performance of the APIs. Postman provides inbuilt monitoring services that help us be in sync with the API development and performance. The monitors provided by Postman are mainly based on the working of collection runners. They run every request in the collection and analyze the values mentioned in the test scripts. Monitors use the test scripts for validating and monitoring the responses. The reports generated are shared with the developers over emails or alerts in slack, hipchat, etc based on our configuration settings.
+
+Question - 98 : - What is a binary form in POST methods?
+Answer - 98 : -
+
+The binary form is designed to help send data in a format that is not possible to be entered manually. These options are used while sending large files like images, CSV files, etc in the POST request. Binary representation is the easiest representation for sending complex data with the request.
+
+Question - 99 : - What are the limitations of Postman?
+Answer - 99 : -
+
+Postman is not suitable for processing 1000+ API requests.
+If the project is very large, managing the collections and requests become cumbersome.
+It is not suitable if we want to manage the workspace in the form of code as there would be a lot of code duplication for dynamic API requests.
+
+Question - 100 : - How can you save the responses of API to a file in Postman?
+Answer - 100 : -
+
+We can do this in two ways:
+
+Click on the Download button in the response section.
+Click on the arrow beside send button - There will be an option to send and download. Clicking on it will prompt Postman to ask the location of saving the response post successful execution of the request.
+
+Postman Interview Questions and Answers
+Question - 81 : - In Postman, how will you create random integers in a particular range?
+Answer - 81 : -
+
+If you want to create numbers in the range of 1 to N, you can do so as follows in the pre-request script:
+
+pm.globals.set('randomnumber, Math.floor (Math.random() N));
+We can then utilise this variable in the URL as
+
+{{randomNumber}}
+
+Question - 82 : - In Postman, what is digest auth?
+Answer - 82 : -
+
+Postman provides the Digest Authorisation method as one of its authorization options. The client sends the request to the API first, and the server responds with a number that can only be used once a realm value and a 401 unauthorised response code. After that, we'll receive an encrypted data array including both the username and password and the previously obtained data from the server. The server generates an encrypted data string from this information and compares it to what was sent to authenticate the request.
+
+This can be done by going to the Authorization tab and selecting "Digest Auth" from the drop-down menu. The fields for both stages of the authentication request are displayed in the Postman window. Based on the data received from the server, the fields required for the second step of the request are auto-filled.
+
+Question - 83 : - What is an application programming interface (API)?
+Answer - 83 : -
+
+Application Programming Interface is an abbreviation that stands for Application Programming Interface. API stands for Application Programming Interface, and it is a set of routines, protocols, and tools for creating software applications. APIs define how one piece of software should communicate with another.
+
+API stands for Application Programming Interface in basic terms. API serves as a connection point between two software applications, allowing them to communicate. A programming interface (API) is a set of software capabilities that another application can use.
+
+Question - 84 : - What constitutes an HTTP request's fundamental components?
+Answer - 84 : -
+
+An HTTP request consists of five main components:
+
+HTTP methods: A set of request methods used to accomplish a specific action on a resource (GET, PUT, POST, DELETE)
+URI (Uniform Resource Identifier): Identifies a resource.
+Version of HTTP (example- HTTP v1.1)
+Content-type: application/json, Content-Length: 511) Request Headers
+Payload: This is a Request Body that contains the message content.
+
+Question - 85 : - What is Postman's Basic Auth?
+Answer - 85 : -
+
+In Postman, Basic Auth is an authentication method that allows HTTP user agents such as web browsers to enter a username and password. Once you enter the login and password, it is paired with the request.
+
+Question - 86 : - Postman accepts authorisation credentials in which types of encoding?
+Answer - 86 : -
+
+The only codec supported by Postman is Base64. This is built-in to Postman, or you can use third-party websites to convert your credentials to base64.
+
+Question - 87 : - Why does Postman only allow Base64 encoding?
+Answer - 87 : -
+
+We utilise base64 because it converts data into text and sends it more straightforwardly, such as HTML form data. We can also rely on the same 64 characters in any encoding language.
+
+Question - 88 : - In Postman, may global scope variables have duplicate names?
+Answer - 88 : -
+
+Global variables cannot have duplicate names because they are global; they exist outside of any environment. The names of local variables can be the same in multiple settings.
+
+Question - 89 : - What is a Postman Collection, and how does it work?
+Answer - 89 : -
+
+Individual requests can be grouped in a Postman Collection. Simply put, it enables us to categorise requests into folders.
+
+Question - 90 : - What is the purpose of the Postman cloud?
+Answer - 90 : -
+
+A Postman cloud is a centralised location where businesses can access Postman collections. Work can be stored instantaneously in the Postman cloud after logging in. Anyone on the team has access to data and collections from any location.
+
+
+Postman Interview Questions and Answers
+Question - 71 : - Is it possible to reuse the authentication token for multiple requests?
+Answer - 71 : -
+
+Yes, it is possible to reuse the authentication token for multiple requests. We can achieve it by creating a collection and adding all the requests having the same authentication token to that collection and then assigning the auth token to the same collection. We can apply it to the individual requests by selecting the "Inherit auth from parent" option in the Authorization tab.
+
+Question - 72 : - In POST methods, what is a binary form?
+Answer - 72 : -
+
+The binary form is intended to assist in transmitting data in a format that cannot be entered manually. These options are used for submitting large files in a POST request, such as photos, CSV files, etc. The most straightforward encoding for sending complex data with the request is binary.
+
+Question - 73 : - Why does Postman mostly use Base64 encoding?
+Answer - 73 : -
+
+Base64 encoding is widely used because it allows data to be transmitted in a textual format that is easier to send in HTML form statistics requests. Another reason we utilise this is that encoding with identical 64 characters is quite reliable in any language.
+
+Question - 74 : - Why is the 304 status code used?
+Answer - 74 : -
+
+NOT MODIFIED is the 304 status code. In the case of limited GET queries, this is used to reduce the network's bandwidth. In such circumstances, the response body should be empty or blank, and the headers should include information such as the date, location, and signature, among other things.
+
+Question - 75 : - Why isn't it preferable to save work on the Postman cloud?
+Answer - 75 : -
+
+Because of the required privacy and security, it is not recommended that we store our work on the Postman cloud when working on enterprise-level applications for enterprises. A skilled hacker has the potential to compromise the security of the Postman cloud.
+
+Question - 76 : - What are the different variable scopes that Postman offers?
+Answer - 76 : -
+
+The following variable scopes are available in Postman:
+
+Global Variables: Global variables allow data to be shared between many collections, requests, and scripts. They can be found all over the office.
+Environment Variables: These allow us to customise requests for various development settings, such as local testing, stage testing, and production testing.
+Local Variables: These are temporary variables that request scripts can only access. Depending on the needs, they are either limited to a single request or a single collection. These variables are no longer available after the script has finished running.
+Variables in a Collection: These variables are set to be available for all requests in the collection. They are unaffected by their surroundings.
+Data Variables: These variables come from external JSON or CSV files that define the datasets that Collection Runner or Newman needs to conduct the collection.
+
+Question - 77 : - Can the authentication token be reused for many requests?
+Answer - 77 : -
+
+Yes, it's conceivable. It is possible to create a collection, add all requests with the same authentication token, and then assign the authentication token to the collection. Select the "Inherit auth from parent" option on the Authorization tab to apply this to individual requests.
+
+Question - 78 : - What are Postman workspaces? And what purpose do they serve?
+Answer - 78 : -
+
+Workspaces are Postman-provided areas/spaces for teams to collaborate on a specific set of collections. It allows you to logically divide requests or collections exclusive to a developer or team, making request administration accessible.
+
+In Postman, there are two sorts of workspaces:
+
+Personal Workspace: These workspaces are essential when working on many projects simultaneously and need logical separation between requests to handle them better.
+Team Workspace: These are designed for group collaboration so that multiple people can participate in testing requests.
+By publishing the users' email addresses, we can encourage new users to collaborate on our collections. After accepting the invitation, new users can begin contributing to the workspace by adding or changing requests.
+
+Question - 79 : - What is ScratchPad?
+Answer - 79 : -
+
+Scratch Pad is a Postman-provided workspace that allows us to operate without relying on Postman servers. It allows you to use some of Postman's capabilities when you're not connected to the internet. The features include creating collections, creating requests, and submitting requests. These are saved locally, and the work is saved into the workspace once you log in.
+
+Question - 80 : - Does Postman give you the option of using the command line?
+Answer - 80 : -
+
+Postman supplies the Newman command-line tool, which can be used to run any Postman collection. It's a NodeJS-based package that uses Newman Collection Runner to execute collections. It is fully compatible with Postman's Collection Runner, which means it may run assertions, pre-request scripts, and other request scripts tied to the collection's requests.
+
+Newman can be used by following the procedures below:
+
+Setup Node
+Using the npm command, install the Newman package as follows: npm install -g newman
+Open Postman and export the environment to JSON format to run the collection. Then use the following command in Newman to run the collection:
+newman run {{path to collection json}} -e {{path to environment json}}
+
+Postman Interview Questions and Answers
+Question - 61 : - How can you generate random numbers of a given range in Postman?
+Answer - 61 : -
+
+In Postman, we can generate random numbers of a given range using some script. Suppose you want to generate numbers between the range of 1 to N, then use the following pre-request script:
+
+pm.globals.set('randomNumber', Math.floor(Math.random()* N));  
+Now, use this variable in the URL as {{randomNumber}}
+
+Question - 62 : - What is the full form of GUID? Where is it used?
+Answer - 62 : -
+
+GUID is an acronym that stands for Global Unique Identifier. It is a set of hexadecimal digits separated by hyphens and solves the purpose of uniqueness.
+
+In Postman, it is used to generate and send a random value to APIs.
+
+Example:
+
+{  
+"id": "{{$guid}}",  
+}  
+
+Question - 63 : - What are some examples of the JS libraries available in Postman?
+Answer - 63 : -
+
+Some examples of the JS libraries available in Postman are Lodash, Moment, GUID, etc.
+
+Question - 64 : - How can you iterate a request 100 times in Postman?
+Answer - 64 : -
+
+We can iterate a request 100 times in Postman using Collection Runner.
+
+Question - 65 : - What are the different Request Method types in Postman?
+Answer - 65 : -
+
+The different Request Method types in Postman are as follows:
+
+Get
+Post
+Put
+Delete
+Patch
+Head
+Delete
+Question - 66 : -
+What is Scratch Pad?
+
+Answer - 66 : -
+
+Postman provides a space known as Scratch Pad. The Scratch Pad facilitates us to work without being connected to Postman servers and also provides the flexibility to utilize some of the features of Postman offline. These features include collection creation, creating requests, and the ability to send requests. The Scratch Pads are stored locally, and once logged in; the work is saved into the workspace.
+
+Question - 67 : - What are the most commonly seen status codes in Postman?
+Answer - 67 : -
+
+Following is the list of most commonly seen status codes in Postman:
+
+200 (OK): Status code 200 specifies that the request was correct.
+201 (Created): Status code 201 specifies that the value wrapped with the request has been created in the database. Here, it is obvious that the request was correct.
+204 (No Content): Status code 204 specifies that the request was correct and received, but there is no content to send. It means there is no response to send to the client by the server.
+400 (Bad Request): Status code 400 specifies a bad request. A bad request means that the syntax of the request was incorrect. It appears when we have sent the wrong parameters along with the request URL or in the request's body.
+401 (Unauthorized request): Status code 401 specifies an unauthorized request. An unauthorized request is a request for which you are not authorized. This status code appears when we are not authorized to access the server or enter the wrong credentials.
+404 (Not Found): Status code 404 specifies that the server was connected, but it could not find what was requested. It simply means "request not found". This status code normally appears when we request a web page not available on the server.
+
+Question - 68 : - How can we access a Postman variable?
+Answer - 68 : -
+
+We can access a Postman variable by entering the variable name as {{var}}.
+
+Question - 69 : - What is executed first in a collection run?
+Answer - 69 : -
+
+The pre-request scripts at the compilation level are executed first in a collection run.
+
+Question - 70 : - Where are the query parameters stored in a GET request in Postman?
+Answer - 70 : -
+
+In the GET request, the query parameters are stored in the URL in Postman.
+
+Postman Interview Questions and Answers
 Question - 51 : - What is the use of the 301 status code in Postman?
 Answer - 51 : -
 
