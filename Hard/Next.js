@@ -1,3 +1,275 @@
+1. Describe the differences between SSR, SSG, and client-side rendering (CSR) in Next.js.
+SSR (Server-Side Rendering) in Next.js means the HTML for a page is generated on the server for each request. This is useful for dynamic content that changes frequently. SSG (Static Site Generation) pre-renders pages at build time, creating static HTML files. These files can be served quickly since they're generated ahead of time, making SSG ideal for pages with content that doesn't change often. Client-Side Rendering (CSR) loads a minimal HTML shell and uses JavaScript to render content on the client side after the initial load. CSR is great for highly interactive applications where the initial content isn't SEO-critical.
+
+Read More Show Less
+2. How do you implement dynamic routing in Next.js?
+In Next.js, you can implement dynamic routing by using the file name conventions inside the pages directory. You create a file with square brackets to indicate a dynamic segment. For example, if you want a route that catches a dynamic id, you can make a file named [id].js inside pages/posts/. This way, /posts/1 or /posts/some-slug will point to that file.
+
+Inside that dynamic file, you can use Next.js's useRouter hook from next/router to access the dynamic part of the URL. For example, const router = useRouter(); const { id } = router.query; will give you the id when you visit /posts/1. For more complex dynamic routes, you can use nested dynamic routes like pages/posts/[postId]/[commentId].js.
+
+To fetch data for your dynamic routes, you can use getStaticPaths and getStaticProps for static generation or getServerSideProps for server-side rendering. getStaticPaths allows you to define a list of paths that need to be pre-rendered, and getStaticProps lets you fetch the data for each page at build time.
+
+Read More Show Less
+3. What are API routes in Next.js, and how do you create them?
+API routes in Next.js allow you to build your own API endpoints within your application, and they live in the pages/api directory. To create one, you simply add a JavaScript or TypeScript file in that directory, and the file name will correspond to the endpoint path. For instance, if you create a file called pages/api/hello.js, you can access that API endpoint via /api/hello.
+
+Within the file, you just export a default function that takes req and res parameters—the request and response objects. You can then use these to handle different HTTP methods and send back responses. Here’s a quick example: javascript export default function handler(req, res) { if (req.method === 'GET') { res.status(200).json({ message: "Hello, world!" }); } else { res.status(405).end(); // Method Not Allowed } } With that, you've set up a simple GET endpoint that responds with a JSON message, and you've also handled other HTTP methods with a 405 status code.
+
+Read More Show Less
+No strings attached, free trial, fully vetted.
+Try your first call for free with every mentor you're meeting. Cancel anytime, no questions asked.
+
+Browse NextJS Interview Coaches
+Nightfall illustration
+4. What is the next.config.js file, and what are some common configurations?
+The next.config.js file in a Next.js project is used to customize the default configuration settings of your Next.js application. It allows you to do things like set environment variables, customize webpack configurations, set up redirects and rewrites, and enable experimental features. For example, you might use it to set up support for CSS modules or integrate with a CDN.
+
+Some common configurations include setting up custom headers, enabling image optimization settings, and configuring internationalization (i18n) settings. It's quite powerful and flexible, making it an essential part of optimizing and configuring your Next.js app to suit your specific needs.
+
+Read More Show Less
+5. How does Next.js handle routing out of the box?
+Next.js uses a file-based routing system, which is super convenient. You simply create a file within the pages directory, and Next.js automatically creates a route based on the file name. For instance, if you create a file called about.js in the pages directory, it automatically sets up a route at /about.
+
+Dynamic routing is also straightforward in Next.js. You can create dynamic routes by using square brackets in the file name. For example, a file named [id].js will match any route that has a dynamic segment, like /product/1, /product/2, etc., and you can access that dynamic part in your code using the useRouter hook from next/router.
+
+This method makes setting up and understanding routes very intuitive because you spend less time configuring and more time building your app.
+
+Read More Show Less
+6. What is Next.js middleware and how is it used?
+Next.js middleware allows you to run code before a request is completed, acting as a bridge that can intercept requests and responses. It's like having a mini layer where you can handle things like authentication, logging, or modifying the request and response objects before they hit your main handler or get sent back to the client.
+
+You can create a middleware by adding a _middleware.js file in the pages or API folder. In this file, you can define a function that receives req and res objects. You can use this function to execute custom logic, such as checking if a user is logged in before allowing access to certain routes. It’s a powerful tool for managing behavior across multiple pages without duplicating code.
+
+Read More Show Less
+Out-loud check
+
+Could you say this out loud, with a follow-up coming?
+
+Drill it with a NextJS mentor
+7. How can you optimize images in a Next.js application?
+Next.js has a built-in Image component that helps with a lot of the heavy lifting. When you use the Image component, it automatically optimizes images on-demand as they are requested by the browser. This means it optimizes images at build time to ensure they're the best quality and size for different devices and screen resolutions. Another cool thing is that you can use features like lazy loading and setting up a responsive image set that adapts to various screen sizes without you having to write much code.
+
+Next.js also supports serving images in modern formats like WebP when the browser supports it, which can significantly reduce file sizes compared to traditional formats like JPEG or PNG. Additionally, setting up a custom loader can help you integrate with external image optimization services if you need more control over the optimization process or want to offload resource-intensive tasks.
+
+Read More Show Less
+8. What is the purpose of a _middleware.js file in a Next.js project?
+_middleware.js in a Next.js project is used to run custom code before any request is completed, allowing you to handle tasks like authentication, logging, or rewriting URLs. Think of it as an intermediary step where you can inspect and modify requests and responses globally across your application. It's particularly useful for tasks you want to apply across multiple pages or routes without duplicating code.
+
+Read More Show Less
+User Check
+Find your perfect mentor match
+Get personalized mentor recommendations based on your goals and experience level
+
+Start matching
+9. How do you handle errors and error pages in Next.js?
+In Next.js, error handling can be managed both globally and at the page level. If you want a custom error page for specific HTTP error codes like 404 or 500, you can create 404.js or 500.js files inside the /pages directory. These files will automatically be used by Next.js to render the appropriate error pages.
+
+For more granular error handling, you can use try-catch blocks within your data fetching methods like getServerSideProps or getStaticProps to catch errors and handle them accordingly, often by setting a redirect or passing an error state to the page component. Additionally, you can create a custom _error.js page in the /pages directory, which provides a fallback for any unhandled errors, allowing you to show a custom error message or perform logging.
+
+To provide even more graceful error handling, consider using a combination of these methods along with React's error boundaries for handling errors in the component tree. This gives you a robust setup to manage errors both during server-side rendering and on the client side.
+
+Read More Show Less
+10. Explain how you can implement analytics in a Next.js app.
+Implementing analytics in a Next.js app often involves using services like Google Analytics or other similar platforms. First, you'll need to set up an analytics account and obtain a tracking ID. In the case of Google Analytics, you can use a library like next-ga or manually insert the tracking script.
+
+For a manual approach, add the script to _app.js or _document.js. Import the Script component from next/script, and place your tracking code inside it. This ensures the script runs across all pages. You can also use React hooks to trigger analytics events whenever a page changes, enhancing accuracy and depth in your analytics data.
+
+Read More Show Less
+11. How does Next.js handle CSS and styling?
+Next.js offers a few different ways to handle CSS and styling. One approach is using traditional CSS files, which you can import directly into your components. Next.js also supports CSS Modules, which scope styles locally by default to avoid clashes.
+
+Additionally, Next.js has built-in support for styled-jsx, allowing you to write scoped CSS directly in your JavaScript and TypeScript files using template literals. If you're into CSS-in-JS, you can also use popular libraries like styled-components or emotion by installing the necessary packages and adding the required configurations. So, you have a lot of flexibility depending on your preferences and the needs of your project.
+
+Read More Show Less
+12. Explain the concept of server-side rendering (SSR) in Next.js.
+Server-side rendering (SSR) in Next.js involves rendering your web pages on the server rather than in the browser. This means that the HTML for your web page is generated on the web server, making it quicker for the client to load and display the content. Next.js handles SSR pretty efficiently: you can export an async function called getServerSideProps from your page, allowing you to fetch data at request time and pass it to your page component. This approach improves SEO and performance, especially for content-heavy websites or pages that require up-to-date data for each request.
+
+Read More Show Less
+Out-loud check
+
+Could you say this out loud, with a follow-up coming?
+
+Drill it with a NextJS mentor
+13. Explain the concept of dynamic imports in Next.js.
+Dynamic imports in Next.js allow you to load JavaScript modules, including React components, on demand rather than at initial page load. This can be super useful for improving the performance of your application by reducing the initial bundle size. You use the import() function to dynamically load the module when it's needed, which can help with things like code splitting. Next.js even has a special next/dynamic module that provides more advanced features like server-side rendering support and loading states for dynamic imports.
+
+Read More Show Less
+14. What are the benefits of using Next.js over a traditional React app?
+Next.js offers several advantages over a traditional React app. The big one is server-side rendering (SSR), which helps with SEO and improves initial load times because the content is rendered on the server before being sent to the client. This means search engines can crawl your content more effectively, and users get something meaningful on their screen quicker.
+
+Next.js also provides a built-in routing system, so you don't need an additional library like React Router. File-based routing can make it easier to manage your routes, and dynamic routing makes it flexible. Plus, features like static site generation (SSG) and API routes add more tools to your toolbox for building full-stack applications seamlessly.
+
+Lastly, the developer experience is just better in many cases. Out-of-the-box features like automatic code splitting, hot module replacement, and built-in TypeScript support can make your workflow more efficient and enjoyable. Essentially, it reduces the boilerplate code so you can focus on building features rather than setting up configurations.
+
+Read More Show Less
+15. What is Next.js, and how does it differ from React?
+Next.js is a framework built on top of React that provides server-side rendering and static site generation out of the box. While React is a library focused solely on building UI components, Next.js handles the entire application's rendering logic, which makes it easier to create SEO-friendly and optimized web pages. It comes with features like automatic code splitting, API routes, and pre-rendering, which enhances the performance and user experience.
+
+In essence, you can think of React as the foundational library for building user interfaces, while Next.js extends React by adding a set of tools and conventions that simplify the development of complete web applications. This means you can leverage React's component-based architecture but also take advantage of Next.js's built-in routing and optimized performance practices.
+
+Read More Show Less
+16. How does static site generation (SSG) work in Next.js?
+In Next.js, static site generation (SSG) involves pre-rendering pages at build time. It generates HTML for each page and can include data-fetching methods like getStaticProps which retrieve and pass data to the page component. This means the HTML is generated once and then reused for every request, leading to faster load times and improved performance. You choose SSG when you have pages that can be rendered ahead of time and do not need to be updated frequently.
+
+Read More Show Less
+17. What is Incremental Static Regeneration (ISR) in Next.js?
+Incremental Static Regeneration (ISR) in Next.js allows you to incrementally update static content after it's been built and deployed, without needing a full rebuild of the entire site. With ISR, you can retain the benefits of static generation while also ensuring your content is always up-to-date. You can specify a revalidation time for each page or path, and Next.js will regenerate the page in the background when a user requests it after the specified time has passed. This means users get the performance benefits of static pages with the accuracy of server-rendered content.
+
+Read More Show Less
+18. How does the getStaticProps function work in Next.js?
+The getStaticProps function in Next.js is used for static site generation to fetch data at build time. You define this function in your page component, and it runs at build time rather than at runtime. It allows you to fetch data from an API, database, or any other source and pass it as props to your page component.
+
+When you export getStaticProps from a page, Next.js will statically generate that page when you run next build, using the data it fetches. The function needs to return an object with a props key, which will contain the data to be passed to the page component. This is super useful for reducing server load and improving performance since the HTML is generated once and served to every user rather than fetching the data on each request.
+
+Read More Show Less
+Out-loud check
+
+Could you say this out loud, with a follow-up coming?
+
+Drill it with a NextJS mentor
+19. What is the purpose of getServerSideProps in Next.js?
+getServerSideProps is used for fetching data on each request in Next.js. It runs on the server side during the request and response cycle, allowing you to fetch data from a database or external API each time a page is requested. This is particularly useful for pages that require up-to-date or dynamic data since it ensures the data is fresh on each load. The data fetched is then passed as props to the page component before rendering.
+
+Read More Show Less
+20. What are some common methods for data fetching in Next.js?
+In Next.js, you have several built-in methods for data fetching, including getStaticProps, getServerSideProps, and getStaticPaths. getStaticProps is used to fetch data at build time for static generation. getServerSideProps fetches data on each request, useful for dynamic content that needs to be up-to-date. getStaticPaths is used with dynamic routes to specify which paths should be pre-rendered at build time. Additionally, you can also use client-side data fetching methods like useEffect and API routes when you need more flexibility or need to fetch data after the initial page load.
+
+Read More Show Less
+21. How would you internationalize a Next.js application?
+Internationalizing a Next.js application typically involves using the built-in internationalized routing feature or leveraging a library like next-i18next. With the built-in solution, you configure the i18n object in next.config.js to define your supported locales and default locale. This enables automatic locale detection and routing.
+
+If you're using next-i18next, you'd set it up by installing the package and creating an i18n.js configuration file where you specify your locales, namespaces, and backend configurations. You'd then wrap your app with the appWithTranslation HOC provided by next-i18next and use the useTranslation hook to access translation functions within your components. Both methods make it easy to serve localized content to users.
+
+Read More Show Less
+22. Can you explain the concept of preview mode in Next.js?
+Preview mode in Next.js allows you to bypass the default static generation behavior and see the latest content updates without needing to rebuild the entire site. It's particularly useful for content editors who want to see changes in real time.
+
+When enabled, preview mode fetches data at request time rather than build time. This temporary state is triggered via API routes and can be toggled on or off. You typically use it with a CMS, where you can provide editors a way to see their drafts or unpublished content directly on the site before making it live.
+
+Read More Show Less
+23. Can you explain how to use TypeScript with Next.js?
+Absolutely. To use TypeScript with Next.js, you first install TypeScript and the necessary type definitions by running npm install --save-dev typescript @types/react @types/node. After that, you can create a tsconfig.json file in your project's root directory by running npx tsc --init. When you next start your development server, Next.js will automatically configure it based on your TypeScript setup.
+
+From there, you can rename your .js or .jsx files to .ts or .tsx, respectively, and start writing your components and logic using TypeScript. If any configuration tweaks are needed, you can adjust the tsconfig.json file. This integration helps catch errors early and ensures better code quality.
+
+Read More Show Less
+24. How would you handle authentication in a Next.js application?
+In a Next.js application, I’d typically handle authentication by integrating it with a third-party service like Auth0 or using a library like NextAuth.js. These tools provide a seamless way to manage authentication flows, including social logins (like Google or Facebook) and JWT-based auth.
+
+For example, with NextAuth.js, you can set up authentication by creating an API route in the pages/api/auth/[...nextauth].js file, where you configure your providers. Then, you can use the useSession hook from NextAuth in any component to get the current user's session information.
+
+Moreover, to protect specific pages or API routes, you can use middleware to check for an authenticated session and redirect users if they’re not logged in. This approach ensures both client-side and server-side authentication checks are handled efficiently.
+
+Read More Show Less
+Out-loud check
+
+Could you say this out loud, with a follow-up coming?
+
+Drill it with a NextJS mentor
+25. How would you handle environment variables in a Next.js application?
+Environment variables in Next.js can be managed by creating a .env file at the root of your project. Prefix the variable names with NEXT_PUBLIC_ if they need to be available on the client-side as well as the server-side. For example, to create a variable called API_URL, you can define it in your .env file like this:
+
+NEXT_PUBLIC_API_URL=https://api.example.com
+
+Then, you can access these variables in your code using process.env.NEXT_PUBLIC_API_URL. Using these prefixed variables ensures that they are embedded into the client-side bundle, which is key for any frontend integrations. Also, remember to add your .env file to .gitignore to keep it out of your version control for security reasons.
+
+Read More Show Less
+Show 15 more questions 
+26. How do custom Document and custom App components work in Next.js?
+In Next.js, both the custom Document and custom App components allow you to enhance and customize your application beyond the defaults provided by the framework.
+
+The custom _document.js file allows you to customize the HTML document that Next.js renders. This is particularly useful for modifying the <html> and <body> tags, as well as injecting static properties or attributes. It's rendered server-side only, so it's a great spot for things like meta tags, initializing stylesheets, and setting up the document's structure.
+
+On the other hand, the custom _app.js file is used to initialize pages. This component wraps the root of your application, making it an ideal place to set up global styles, manage state with providers, or add custom layouts and logic that you want to be consistent across all pages. Unlike _document.js, this component is rendered on both the server and client sides, so it's more dynamic in nature.
+
+Read More Show Less
+27. Explain the role of the Link component in Next.js.
+The Link component in Next.js is used for client-side navigation between pages of the app. Instead of triggering a full page reload, it leverages the power of the Next.js router to perform navigation dynamically, resulting in faster transitions. You wrap your anchor tag with Link, providing the href attribute to indicate the path you want to navigate to, like this:
+
+```jsx import Link from 'next/link';
+
+About Us ```
+
+This setup preserves state, reduces load times, and provides a smoother user experience because it fetches only the necessary data to display the next page, rather than reloading the entire page from the server.
+
+Read More Show Less
+28. How does code splitting work in Next.js?
+In Next.js, code splitting is handled automatically. When you create a new page in the pages directory, Next.js automatically splits each page into its own bundle. This means that when a user navigates to a different page, only the necessary JavaScript for that page is loaded, making the initial load faster.
+
+You can also manually implement dynamic imports using the next/dynamic module for components that you want to load lazily. This further optimizes performance by ensuring that parts of your application are only loaded when they are actually needed, instead of bundling everything together.
+
+Read More Show Less
+29. Can you explain the usage of the Head component in Next.js?
+The Head component in Next.js is used to modify the head section of your HTML document, allowing you to customize elements like the title, meta tags, and link tags on a per-page basis. It's particularly useful for setting meta tags for SEO, adding stylesheet links, or inserting any other element that would usually go inside the tag of an HTML document. You simply import Head from 'next/head' and then wrap your head elements within the Head component inside your component's render method. This way, each page can have its own unique head content, making your application more flexible and enhancing its SEO performance.
+
+Read More Show Less
+30. What is Fast Refresh in Next.js?
+Fast Refresh in Next.js is a feature that allows you to see the changes you make in your code in real-time without losing the state of your application. When you make edits, your changes appear almost instantly in the browser, and thanks to the state preservation, you don't have to go through resetting forms or navigating back to where you were. It's particularly useful for speeding up your development workflow and improving iteration speed.
+
+It combines the benefits of both hot module replacement (HMR) and live reloading, creating a more seamless and faster development experience. So, when you tweak your components or styles, you can see the immediate impact without a full reload.
+
+Read More Show Less
+31. How do you manage state in a Next.js application?
+State management in a Next.js application can be approached in several ways, depending on the complexity of your app. For simpler state management, you can use React's built-in useState and useEffect hooks, which work seamlessly with Next.js since it's built on React. For example, if you're dealing with component-specific state like form inputs or UI toggles, these hooks are quite sufficient.
+
+For more complex state management needs, you might want to leverage libraries like Redux, Context API, or even Zustand. These solutions help manage state that's shared across multiple components or pages. Redux, for instance, offers a predictable state container and works well with Next.js through the next-redux-wrapper package, allowing you to integrate server-side rendering (SSR) with your Redux store. The Context API is great for medium-sized apps where you need a more lightweight solution compared to Redux.
+
+For data that needs to be available on both the client and the server, Next.js provides support for Server-Side Rendering (SSR) and Static Site Generation (SSG) methods like getServerSideProps and getStaticProps. These functions can fetch and pre-render data on the server, ensuring that your state is populated before your component renders.
+
+Read More Show Less
+32. Explain how SEO is improved with Next.js.
+Next.js significantly enhances SEO by enabling server-side rendering (SSR), which means that pages are pre-rendered on the server before being delivered to the client. This makes it easier for search engine crawlers to index content effectively since they receive fully-rendered HTML. Next.js also supports static site generation (SSG), allowing you to create static HTML at build time, which is perfect for SEO because it minimizes time to first byte (TTFB) and improves page load speeds.
+
+Moreover, Next.js provides built-in support for dynamic routing, so you can create SEO-friendly URLs effortlessly. The framework also integrates well with popular tools and libraries for SEO, like react-helmet, to manage metadata and improve the search engine visibility of your web pages.
+
+Read More Show Less
+33. How do you deploy a Next.js application?
+Deploying a Next.js application typically involves a few main steps. First, you need to build the application for production using the command next build. This optimizes your application for the best performance. Then, you can deploy it to various hosting providers. For instance, Vercel, the company behind Next.js, offers seamless integration and is a popular choice for deployment. You just connect your repository to Vercel, and it manages the rest, including automatic builds and deployments on new commits.
+
+Alternatively, you can deploy to other platforms like AWS, Heroku, or DigitalOcean. For these, you might use Docker to containerize your app or directly set up the build and start scripts. The command next start will launch your application in production mode after you’ve built it. Many hosting providers also offer guides specifically for Next.js apps that can help streamline the process.
+
+Read More Show Less
+34. Describe the function and use of the _app.js file in Next.js.
+The _app.js file in Next.js is essentially a customization point that allows you to override the default App component that Next.js uses to initialize pages. It acts as a wrapper around all your pages and is instrumental for keeping state or props you want to persist across different pages, for injecting global styles, or adding custom app-wide functionality or providers like a Redux store, context providers, or layout components.
+
+By modifying _app.js, you can also include global CSS or any CSS-in-JS libraries, ensuring these styles are available throughout your entire application without having to import them into each page individually. This file is perfect for setting up and configuring aspects like layouts, persistent navigation, or state management that need to be consistent across pages.
+
+Read More Show Less
+35. How do you handle static files in Next.js?
+Handling static files in Next.js is pretty straightforward. You place them in the public directory at the root of your project. Any file you put in this folder can be referenced directly using a URL starting with a forward slash. For example, if you have an image called logo.png in the public folder, you can access it in your components like <img src="/logo.png" alt="Logo" />. This setup makes it easy to organize and reference static files without needing additional configurations.
+
+Read More Show Less
+36. What are some best practices for improving performance in a Next.js app?
+Start by utilizing Next.js's built-in features like server-side rendering (SSR) and static site generation (SSG) to optimize loading times for different types of content. Combine these with dynamic imports to split your code and load only what's necessary when it's needed. You can take advantage of image optimization using the next/image component, which automatically adjusts image sizes based on device and viewport, reducing load times significantly.
+
+Also, consider implementing API routes to handle backend logic within your app, minimizing the need for an external server and reducing latency. Be mindful of caching strategies, using tools like Vercel for deployment, as it can handle caching for you out-of-the-box.
+
+Finally, use Lighthouse or similar tools to regularly audit your app's performance and pinpoint any bottlenecks, whether they're related to large assets, redundant code, or inefficient data fetching.
+
+Read More Show Less
+37. What is the fallback property in getStaticPaths, and how is it used?
+The fallback property in getStaticPaths is used to handle paths that weren't generated during the build time. When you set fallback to true, if a user requests a page that wasn't pre-rendered, Next.js will render that page on-demand and cache it for subsequent requests. If you set it to false, any request for a path not returned by getStaticPaths will result in a 404 page. There's also blocking, which serves content immediately, putting the client on hold until the generated page is ready.
+
+Basically, it's useful for scenarios where you might have a large number of dynamic paths and can't realistically generate all of them at build time. By allowing fallback, you can ensure that all paths can eventually be served, without significantly impacting the initial build time.
+
+Read More Show Less
+38. What are some common security considerations when using Next.js?
+When using Next.js, it's crucial to consider security aspects like cross-site scripting (XSS) and cross-site request forgery (CSRF). For XSS, ensure you're properly sanitizing any user-generated content and using features like Next.js's built-in next/script component to safely inject scripts. For CSRF, consider using tokens to secure your API routes.
+
+Also, be mindful of using environment variables. Don't expose sensitive information on the client side; use API routes or server-side logic to handle sensitive operations. Regularly update your dependencies to avoid known vulnerabilities, and leverage Content Security Policies (CSP) to control what resources can be loaded on your site.
+
+Read More Show Less
+39. What are the key differences between Next.js versions 10 and 11?
+In Next.js 11, there are several enhancements over version 10. One major upgrade is the introduction of improved performance through Webpack 5 as the default bundler. This change brings faster builds and better caching.
+
+Next.js 11 also adds built-in support for image optimization, which simplifies handling images across different devices and network conditions. Additionally, the new Script component helps with efficient loading of third-party scripts by controlling their priority and loading strategy. Another notable feature is the Zero Config ESLint, allowing for easier code linting setup.
+
+Read More Show Less
+40. What are some of the built-in optimizations provided by Next.js?
+Next.js offers several built-in optimizations. It automatically handles code splitting, meaning it only loads the JavaScript necessary for the page being viewed, which helps with faster page loads. Additionally, Next.js has built-in image optimization with the next/image component, allowing you to serve images in modern formats like WebP while also handling resizing, quality, and format adjustments on the fly.
+
+Another cool feature is its support for static generation and server-side rendering, so you can choose how you want to fetch and render data depending on your app's performance needs. And there's automatic static optimization, where Next.js figures out which pages can be served as static assets and pre-renders them at build time. That results in super-fast loading times for those pages.
+
 Top Next JS Interview Questions for Freshers
 Top Next JS Interview Questions for Freshers Are you preparing for your first Next.js interview and wondering what questions you might face?Understanding the key Next.js interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Next.js interview questions and answers for freshers and make a strong impression in your interview.
 fsd student program banner horizontal
