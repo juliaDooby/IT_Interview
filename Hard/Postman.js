@@ -1,4 +1,63 @@
 Postman Interview Questions and Answers
+Question - 41 : - What is a binary form in POST methods? What is its usage?
+Answer - 41 : -
+
+In POST methods, the binary form is designed to send data easily in a format it is impossible to enter data manually. This is mainly used when sending large files like images, CSV files, etc., in the POST request. The binary representation is one of the easiest representations used for sending complex data with the request.
+
+Question - 42 : - What are the main limitations of Postman?
+Answer - 42 : -
+
+Following is the list of key limitations of Postman:
+
+Postman cannot process 1000+ API requests.
+In the case of huge projects, it isn't easy to manage the collections and requests.
+Postman is not suitable for managing the workspace in the form of code. This is because there would be a lot of code duplication for dynamic API requests.
+
+Question - 43 : - Can we import local variables in Postman Monitors?
+Answer - 43 : -
+
+Yes, we can import local variables in Postman Monitors, but it is not allowed to import global variables in Postman Monitors.
+
+Question - 44 : - What is Basic Auth in Postman?
+Answer - 44 : -
+
+In Postman, Basic Auth is an authorization technique provided for HTTP user agents like web browsers to enter username and password. After entering the username and password, it gets associated with the request.
+
+Question - 45 : - What is the use of Postman Collection runners?
+Answer - 45 : -
+
+The Postman Collection runner is used to perform Data-driven testing. It runs a group of API requests for multiple iterations with different data sets.
+
+Question - 46 : - How can we log requests and responses in Postman?
+Answer - 46 : -
+
+We can view requests logs and response logs through the Postman Console window.
+
+Question - 47 : - Which tool can be used to run Postman Collections in Jenkins?
+Answer - 47 : -
+
+Newman can be used.
+
+Question - 48 : - What are some of the JS libraries available in Postman?
+Answer - 48 : -
+
+Lodash, Moment, GUID
+
+Question - 49 : - What is the procedure to save the responses of API to a file in Postman?
+Answer - 49 : -
+
+In Postman, there are two ways to save the responses of an API to a file:
+
+First, click on the download button in the response section.
+Second, click on the arrow next to the send button. Here, you will see an option to send and download. After clicking on it, you will get a prompt Postman asking for the location of saving the response post successful request execution.
+
+Question - 50 : - What is the meaning of the status code 304?
+Answer - 50 : -
+
+The status code 304 means NOT MODIFIED. It is used to minimize the network bandwidth usage in conditional GET requests. The response body should be empty. Headers should have a date, and location, etc.
+
+
+Postman Interview Questions and Answers
 Question - 31 : - What is the purpose of status code 304?
 Answer - 31 : -
 
