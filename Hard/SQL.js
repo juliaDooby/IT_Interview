@@ -1,3 +1,995 @@
+Oracle PL SQL Interview Questions
+Last updated on Jun 12, 2024
+
+author-image
+by Gayathri
+PL stands for Procedural Language, serving as an extension to SQL. It empowers developers to craft intricate database interactions by incorporating procedures, control structures (including branching and iteration), modules, and functions. PL supports both dynamic and static SQL queries.
+
+This article presents a collection of Oracle PL/SQL interview questions that are commonly posed during interviews. These questions have been thoughtfully curated by industry experts at HKR Trainings, offering valuable insights to help you excel in your interview preparation.
+
+
+Let's delve into a brief overview of the Oracle PL/SQL interview questions.
+
+Most Frequently Asked Oracle PL/SQL Interview Questions
+What are the differences between PL/SQL and SQL?
+What is the difference between %TYPE and %ROWTYPE? Give an example
+What are the ways of commenting in a PL/SQL code?
+What are Views and why are they used?
+Explain the difference between Triggers and Constraints?
+What is the use of PLVprs and PLVprsps?
+Define Mutating Table and Constraining Table in PL/SQL.
+What is meant by Sub Query?
+Explain what the Stored Procedure is
+What is meant by Global Variables?
+What is meant by Raise_application_error?
+What is a Discard File in PL/SQL?
+How many learners love the platform?
+What is Auto Increment in SQL?
+What is a Stored Procedure?
+How can you fetch alternate records from a table?
+List some case manipulation functions in SQL?
+List the ways in which Dynamic SQL can be executed?
+What is the need for MERGE statement?
+How can you insert NULL values in a column while inserting the data?
+What are the different types of a subquery?
+What is the ACID property in a database?
+What is an Index?
+What is a Foreign key in SQL?
+Where is a MyISAM table stored?
+What is an SQL example?
+What is the difference between SQL and MySQL?
+1. What are the differences between PL/SQL and SQL?
+
+Ans: SQL is primarily a declarative language suited for interactive data processing but lacks procedural features like looping or condition testing. Each SQL query operates individually, which can be time-intensive, and it does not incorporate error handling procedures. In contrast, PL/SQL, an extension of SQL, is a procedural language that offers sophisticated features like conditional statements and looping. It enhances efficiency by executing a block of statements collectively and incorporates customized error handling mechanisms.
+
+2. What are the benefits of PL/SQL Packages?
+Ans: PL/SQL packages serve as repositories for storing related functions and procedures. They enhance data security, allow shared use of common variables among packaged functions and procedures, support overloaded functions, and optimize performance by loading multiple objects into memory simultaneously.
+
+3. What are the characteristics of PL/SQL?
+Ans: Key characteristics of PL/SQL include its support for multi-application accessibility, portability across various operating systems with Oracle, the ability to write custom error handling routines, and improved transactional performance integrated with the Oracle data dictionary.
+
+4. What are different methods to trace the PL/SQL code?
+Ans: Tracing PL/SQL code, a technique for runtime performance evaluation, can be accomplished using methods like DBMS_APPLICATION_INFO, DBMS_TRACE, DBMS_SESSION, DBMS_MONITOR, and utilities like trcsess and tkprof.
+
+5. Can you use IF statement inside a SELECT statement? How?
+Ans: Yes, in SQL versions 9 and above, the IF statement can be used as a DECODE. For example, the following SQL snippet demonstrates its use: SELECT day_of_week, DECODE(number, 0, 'Sunday', 1, 'Monday', ..., 'No match') result FROM weekdays.
+
+
+6. What is the difference between %TYPE and %ROWTYPE? Give an example
+Ans: %TYPE is used for declaring a variable of the same data type as a table column, for example, studentId students.student_id%TYPE;. %ROWTYPE, on the other hand, declares a RECORD type variable mirroring a table row's structure, such as Stud_rec students.%ROWTYPE;.
+
+
+7. Why do we use database triggers? Give the syntax of a trigger.
+Ans: Database triggers, which are automated procedures triggered by DML events, are used for a variety of tasks including data validation, enforcing business rules, and maintaining audit trails. The syntax for a trigger typically includes its creation, triggering event specification, and the body of the trigger. For example: create trigger [trigger_name] [before | after] on [table_name] [for each row] [trigger_body].
+
+8. What are the different types of cursors in PL/SQL?
+Ans: PL/SQL features two primary cursor types: Implicit cursors, automatically used for DML commands, and explicit cursors, manually defined by programmers for multi-row queries.
+
+9. List some cursor attributes in PL/SQL.
+Ans: Key cursor attributes in PL/SQL include %ISOPEN (checking if the cursor is open), %ROWCOUNT (returning the number of rows affected), %FOUND (indicating whether a row has been fetched), and %NOTFOUND (indicating the absence of fetched rows).
+
+
+10. When a DML statement is executed, in which cursor attributes, the outcome of the statement is saved?
+Ans: The outcomes of DML statements are stored in cursor attributes like SQL%FOUND, SQL%NOTFOUND, SQL%ROWCOUNT, and SQL%ISOPEN, which provide various status and count information post-execution.
+
+11. Explain the difference between commit and savepoint.
+Ans: COMMIT refers to the process of making all database changes permanent and clearing all savepoints, whereas SAVEPOINT allows for the creation of intermediate points within a transaction, enabling partial rollbacks if necessary.
+
+
+12. What are the ways of commenting in a PL/SQL code?
+Ans: In PL/SQL, comments can be single-line, initiated with '--', or multi-line, enclosed between '/' and '/'. These are used to enhance code readability and are not executed as part of the program.
+
+13. What are the three modes of parameter?
+Ans: In PL/SQL, parameters can be of three types: IN parameters, which are read-only and used to pass values to the procedure; OUT parameters, which return values to the calling program; and IN OUT parameters, which can both receive values and return updated values to the caller.
+
+14. What are the actual parameters and formal parameters?
+Ans: Actual parameters are the values or expressions passed to a procedure at the time of call, such as emp_num and amount in raise_sal(emp_num, merit+amount);. Formal parameters, on the other hand, are the variables declared in the procedure definition, acting as placeholders for actual parameter values during procedure execution.
+
+
+15. What do you understand by Exception handling in PL/SQL?
+Ans: Exception handling in PL/SQL involves managing unexpected events or errors that interrupt normal flow of the program. PL/SQL allows the creation of custom error-handling routines to handle these exceptions. Exceptions can be predefined, user-defined, or undefined, each addressing different types of error scenarios.
+
+
+16. What are Views and why are they used?
+Ans: Views in PL/SQL are virtual tables representing data from one or more tables. They are used to simplify complex queries, provide data security by restricting access to certain data, offer data independence by separating logical and physical aspects, and tailor data presentation to different user needs.
+
+17. Write a simple procedure to select some records from the database using some parameters.
+Ans: An example of a simple procedure could be: CREATE PROCEDURE get_customer_details @age nvarchar(30), @city nvarchar(10) AS BEGIN SELECT * FROM customers WHERE age = @age AND city = @city; END;. This procedure selects records from the 'customers' table based on age and city parameters.
+
+18. Write a program that shows the usage of the WHILE loop to calculate the average of user entered numbers and entry of more numbers are stopped by entering number 0?
+Ans:  The program would use a WHILE loop to continuously accept user input, accumulate the sum, and count the numbers until a 0 is entered, at which point it calculates and displays the average.
+
+19. How to display records having the maximum salary from an employee table?
+Ans: To display records with the highest salary, use the query: Select * from emp where sal= (select max(sal) from emp).
+
+20. How to display the second highest salary from an employee table?
+Ans: To find the second highest salary, the query would be: Select max(sal) from emp where sal not in (select max(sal) from emp).
+
+ 
+
+
+21. What is the difference between functions, procedures, and packages in PL/SQL?
+Ans: Functions in PL/SQL are designed to return a single value and must specify a return type. Procedures, however, do not return a value and are used for performing actions. Packages are collections of functions, procedures, and other elements, providing modular structure to the PL/SQL applications.
+
+
+22. Write a PL/SQL script to display the following series of numbers: 99,96,93……9,6,3?
+Ans: A PL/SQL script for this would use a loop to decrement from 99, displaying each number divisible by 3. The loop continues until it reaches 3.
+
+
+23. Explain the difference between Triggers and Constraints?
+Ans: Triggers are procedures that automatically execute in response to certain events on a table or view, typically used for maintaining consistency, logging, or auditing. Constraints are rules enforced on data columns to ensure data integrity, such as NOT NULL, CHECK, UNIQUE, PRIMARY KEY, and FOREIGN KEY constraints.
+
+24. Write a PL/SQL cursor program to display all employee names and their salary from the emp table by using % not found attributes?
+Ans: A cursor program in PL/SQL can be written to fetch and display each employee's name and salary. The %NOTFOUND attribute is used to terminate the loop when no more records are found.
+
+25. What does PLV msg allow you to do?
+Ans: PLV msg in PL/SQL enables assigning individual text messages to specific rows in a PL/SQL table, automatic message replacement for common Oracle errors, retrieval of text messages by integer, and batch loading of texts and message integers from a database table.
+
+26. What PLVcmt and PLVrb do in PL/SQL?
+Ans: In PL/SQL, PLVcmt and PLVrb are part of the PL/Vision suite. PLVcmt provides a framework for managing commit operations, encapsulating logic related to commit processing. PLVrb offers a programmatic interface for managing roll-back activities, enhancing control over transactional operations in PL/SQL.
+
+27. How would you convert the date into Julian date format?
+Ans: To convert a date into the Julian format in SQL, use the 'J' format string. For example: SELECT TO_CHAR(TO_DATE('29-Mar-2013','DD-MON-YYYY'),'J') as Julian FROM dual; converts a given date into its Julian format.
+
+28. What is the use of MERGE?
+Ans: The MERGE command in SQL is used to combine insert, update, and delete operations into a single statement. This command is particularly useful for synchronizing two tables by inserting, updating, or deleting records in one table based on differences found in another table.
+
+29. Explain SPOOL.
+Ans: The SPOOL command in SQL is used to direct the output of SQL queries to a file. This is particularly useful for saving the results of a query for later review or for exporting data.
+
+
+30. What is the use of PLVprs and PLVprsps?
+Ans: PLVprs and PLVprsps are part of the PL/Vision suite in PL/SQL. PLVprs extends the string parsing functionality, providing low-level string parsing capabilities. PLVprsps, on the other hand, is a high-level package used for parsing PL/SQL source code into separate components, relying on other parsing packages to facilitate this process.
+
+
+31. What is meant by Literal in PL/SQL?
+Ans: In PL/SQL, a literal refers to a fixed value that appears directly in a statement. Examples include numeric literals, string literals, date and time literals, Boolean literals, and character literals. Literals are used to represent constant values in code.
+
+32. Define the PL/SQL functions- Date, Character, and Numbers.
+Ans: In PL/SQL, date functions operate on values of date data types and return a date. Character functions accept character values and return character or numeric values, encompassing functions like UPPER, LOWER, CONCAT, LENGTH, etc. Number functions take numeric inputs and return numeric values, and include functions like ROUND, TRUNC, MOD, etc.
+
+33. What is meant by JOIN?
+Ans: A JOIN in SQL is a means to combine rows from two or more tables based on a related column between them. It's an essential part of SQL that allows for complex queries involving multiple tables.
+
+34. Define VERIFY command in PL/SQL.
+Ans: The VERIFY command in SQL is used to control whether or not to display the substitution variables before and after SQL*Plus replaces them with values. It can be turned on or off using the SET VERIFY command.
+
+35. What is the FEEDBACK command in PL/SQL?
+Ans: The FEEDBACK command in SQL*Plus is used to display the number of records returned by a SQL query, enhancing user awareness about the query's impact.
+
+
+36. Define Mutating Table and Constraining Table in PL/SQL.
+Ans: A mutating table in PL/SQL is a table that is being modified by an insert, update, or delete operation and cannot be referenced within a trigger. A constraining table, on the other hand, is involved in enforcing referential integrity constraints.
+
+37. What is the difference between an Error and an Exception?
+Ans: An error in PL/SQL is an issue in the code that causes it to execute incorrectly, while an exception is a runtime event that disrupts the normal flow of the program. Exceptions are conditions that can be handled within the PL/SQL code through exception handling mechanisms.
+
+38. What is meant by Mutating Table Error in PL/SQL?
+Ans: A mutating table error occurs in PL/SQL when a trigger tries to reference the table that caused the trigger to fire. This is typically seen in row-level triggers that attempt to access or modify the same table on which the trigger is defined.
+
+39. Define Rollback Statement.
+Ans: The ROLLBACK statement in SQL is used to undo transactions that have not yet been saved to the database. It restores the database to its last committed state.
+
+40. List out the different Data Types available in PL/SQL.
+Ans: PL/SQL supports various data types including Scalar (like integers, characters), Reference, Composite (such as records, arrays), and Large Object (LOB) types.
+
+41. Define a Dual Table.
+Ans: The DUAL table is a special one-row, one-column table present by default in all Oracle databases, primarily used for selecting a pseudo column like SYSDATE or USER.
+
+
+42. What is meant by Sub Query?
+Ans: A subquery in SQL is a query nested inside another query. It can be used in various places like the SELECT, INSERT, UPDATE, or DELETE statement and can return a single or multiple rows.
+
+43. What are the commands TITLE and BTITLE denote?
+Ans: In SQLPlus, the TITLE command sets the top title of a report and the BTITLE command sets the bottom title. These commands are used to add headers and footers in SQLPlus reports.
+
+44. Explain the basic PL/SQL structure.
+Ans: The basic structure of PL/SQL includes a declaration section for variables and constants, an execution section where the logic is written, and an exception handling section to manage errors.
+
+45. What is the command used to remove a Trigger?
+Ans: To remove a trigger in SQL, the command DROP TRIGGER [trigger name] is used.
+
+Learn Oracle PL SQL Training
+Oracle PL SQL Training
+ Master Your Craft  Lifetime LMS & Faculty Access  24/7 online expert support  Real-world & Project Based Learning
+46. Why is the WHEN used?
+Ans: The WHEN clause in PL/SQL triggers specifies a condition that must be met for the trigger to fire. It adds a conditional control to trigger execution.
+
+47. Define the various components of a Trigger.
+Ans: A trigger in PL/SQL includes components like the triggering event (INSERT, UPDATE, DELETE), the trigger body (the set of statements that are executed when the trigger fires), and optionally, a trigger restriction using the WHEN clause.
+
+
+48. Explain what the Stored Procedure is.
+Ans: A stored procedure is a pre-written SQL code that can be saved and reused. It can perform complex operations and can be called by triggers, other procedures, or applications.
+
+49. Define SYSDATE and USER keywords in PL/SQL.
+Ans: SYSDATE is a function that returns the current date and time from the system. USER returns the name of the current user accessing the database.
+
+50. Name the basic components of a Trigger.
+Ans: Basic components of a trigger include the trigger event, the trigger timing (BEFORE, AFTER, INSTEAD OF), and the trigger body containing the logic to be executed.
+
+51. Define Syntax error and Runtime error in PL/SQL.
+Ans: A syntax error occurs when there is a mistake in the code structure, making it uninterpretable by the compiler. A runtime error occurs during the execution of a program, often due to exceptional conditions that the program doesn't handle.
+
+52. How can you delete a Package in PL/SQL?
+Ans: To delete a package in PL/SQL, use the DROP PACKAGE [package name] command.
+
+53. Define the compilation process for PL/SQL.
+Ans: The compilation process for PL/SQL includes syntax checking, semantic checking, generation of machine code, and optimization. It transforms the high-level PL/SQL code into a format executable by the Oracle Database.
+
+
+54. What is meant by Global Variables?
+Ans: Global variables in PL/SQL are declared in the declarative section of a package and can be accessed by any procedure or function within the package. They retain their values throughout the session.
+
+55. What is a Ref Cursor and its different types in PL/SQL?
+Ans: A Ref Cursor is a cursor variable that allows a cursor to be opened on the fly with a dynamic query. There are two types: Strong Ref Cursors, which have a predefined return type, and Weak Ref Cursors, which do not have a predefined return structure.
+
+56. Mention the different types of PL/SQL packages.
+Ans: PL/SQL packages can include a combination of procedures, functions, variables, cursors, and record type statements. They also contain exception names and Pragmas for error handling.
+
+
+57. What is meant by Raise_application_error?
+Ans: RAISE_APPLICATION_ERROR is a built-in procedure in PL/SQL that allows a programmer to issue a user-defined error message from a stored procedure or trigger, enabling better control over the error messaging system of applications.
+
+58. Define an Overloading Procedure.
+Ans: Overloading in PL/SQL refers to creating multiple procedures or functions with the same name but different parameter lists. It allows the same operation to be performed in different ways, depending on the types or number of arguments.
+
+59. Why do we use Database links?
+Ans: Database links are integral for enabling communication between distinct databases or varying environments such as development, test, and production settings. They facilitate access to external database objects, often in a read-only mode, thereby acting like a schema object in a database. This feature is essential for cross-database queries and operations, promoting efficient data management across different database systems.
+
+60. When can we use the DECLARE block in PL/SQL?
+Ans: The DECLARE block in PL/SQL is pivotal for defining variables and exceptions in anonymous blocks or stand-alone procedures. It precedes the BEGIN statement in a PL/SQL block, allowing for the declaration of variables, constants, and other data types. This block is essential for ensuring that all necessary variables are initialized and available for use within the PL/SQL block.
+
+
+61. What is a Discard File in PL/SQL?
+Ans: In PL/SQL, a discard file is a specialized file that captures records that are not successfully loaded into database tables. Identified by the '.dsc' extension, this file is particularly crucial for error handling and data validation processes, providing insights into data that could not be integrated into the database due to various constraints or format issues.
+
+62. What are the available country codes for phone numbers?
+Ans: The list of available country codes for phone numbers encompasses a wide range of international codes, such as +91 for India, +1 for the United States, and +44 for the United Kingdom. This comprehensive list includes codes for countries across the globe, facilitating international communication and connectivity.
+
+- India: +91
+
+- United States: +1
+
+- United Kingdom: +44
+
+- Afghanistan: +93
+
+- Albania: +355
+
+- Algeria: +213
+
+- Andorra: +376
+
+- Angola: +244
+
+- Argentina: +54
+
+- Armenia: +374
+
+- Aruba: +297
+
+- Australia: +61
+
+- Austria: +43
+
+- Azerbaijan: +994
+
+- Bahamas: +1242
+
+- Bahrain: +973
+
+- Bangladesh: +880
+
+- Barbados: +1246
+
+- Belarus: +375
+
+- Belgium: +32
+
+- Belize: +501
+
+- Benin: +229
+
+- Bermuda: +1441
+
+- Bhutan: +975
+
+- Bolivia: +591
+
+- Bosnia and Herzegovina: +387
+
+- Botswana: +267
+
+- Brazil: +55
+
+- British Indian Ocean Territory: +246
+
+- British Virgin Islands: +1284
+
+- Brunei: +673
+
+- Bulgaria: +359
+
+- Burkina Faso: +226
+
+- Burundi: +257
+
+- Cambodia: +855
+
+- Cameroon: +237
+
+- Canada: +1
+
+- Cape Verde: +238
+
+- Caribbean Netherlands: +599
+
+- Cayman Islands: +1345
+
+- Central African Republic: +236
+
+- Chad: +235
+
+- Chile: +56
+
+- China: +86
+
+- Christmas Island: +61
+
+- Cocos (Keeling) Islands: +61
+
+- Colombia: +57
+
+- Comoros: +269
+
+- Congo (DRC): +243
+
+- Congo (Republic): +242
+
+- Cook Islands: +682
+
+- Costa Rica: +506
+
+- Côte d'Ivoire: +225
+
+- Croatia: +385
+
+- Cuba: +53
+
+- Curaçao: +599
+
+- Cyprus: +357
+
+- Czech Republic: +420
+
+- Denmark: +45
+
+- Djibouti: +253
+
+- Dominican Republic: +1
+
+- Ecuador: +593
+
+- Egypt: +20
+
+- El Salvador: +503
+
+- Equatorial Guinea: +240
+
+- Eritrea: +291
+
+- Estonia: +372
+
+- Ethiopia: +251
+
+- Falkland Islands: +500
+
+- Faroe Islands: +298
+
+- Fiji: +679
+
+- Finland: +358
+
+- France: +33
+
+- French Guiana: +594
+
+- French Polynesia: +689
+
+- Gabon: +241
+
+- Gambia: +220
+
+- Georgia: +995
+
+- Germany: +49
+
+- Ghana: +233
+
+- Gibraltar: +350
+
+- Greece: +30
+
+- Greenland: +299
+
+- Grenada: +1473
+
+- Guadeloupe: +590
+
+- Guatemala: +502
+
+- Guernsey: +44
+
+- Guinea: +224
+
+- Guinea-Bissau: +245
+
+- Guyana: +592
+
+- Haiti: +509
+
+- Honduras: +504
+
+- Hong Kong: +852
+
+- Hungary: +36
+
+- Iceland: +354
+
+- Indonesia: +62
+
+- Iran: +98
+
+- Iraq: +964
+
+- Ireland: +353
+
+- Isle of Man: +44
+
+- Israel: +972
+
+- Italy: +39
+
+- Jamaica: +1876
+
+- Japan: +81
+
+- Jersey: +44
+
+- Jordan: +962
+
+- Kazakhstan: +7
+
+- Kenya: +254
+
+- Kiribati: +686
+
+- Kosovo: +383
+
+- Kuwait: +965
+
+- Kyrgyzstan: +996
+
+- Laos: +856
+
+- Latvia: +371
+
+- Lebanon: +961
+
+- Lesotho: +266
+
+- Liberia: +231
+
+- Libya: +218
+
+- Liechtenstein: +423
+
+- Lithuania: +370
+
+- Luxembourg: +352
+
+- Macau: +853
+
+- Macedonia (FYROM): +389
+
+- Madagascar: +261
+
+- Malawi: +265
+
+- Malaysia: +60
+
+- Maldives: +960
+
+- Mali: +223
+
+- Malta: +356
+
+- Marshall Islands: +692
+
+- Martinique: +596
+
+- Mauritania: +222
+
+- Mauritius: +230
+
+- Mayotte: +262
+
+- Mexico: +52
+
+- Micronesia: +691
+
+- Moldova: +373
+
+- Monaco: +377
+
+- Mongolia: +976
+
+- Montenegro: +382
+
+- Morocco: +212
+
+- Mozambique: +258
+
+- Myanmar (Burma): +95
+
+- Namibia: +264
+
+- Nauru: +674
+
+- Nepal: +977
+
+- Netherlands: +31
+
+- New Caledonia: +687
+
+- New Zealand: +64
+
+- Nicaragua: +505
+
+- Niger: +227
+
+- Nigeria: +234
+
+- Niue: +683
+
+- Norfolk Island: +672
+
+- North Korea: +850
+
+- Norway: +47
+
+- Oman: +968
+
+- Pakistan: +92
+
+- Palau: +680
+
+- Palestine: +970
+
+- Panama: +507
+
+- Papua New Guinea: +675
+
+- Paraguay: +595
+
+- Peru: +51
+
+- Philippines: +63
+
+- Poland: +48
+
+- Portugal: +351
+
+- Puerto Rico: +1
+
+- Qatar: +974
+
+- Réunion: +262
+
+- Romania: +40
+
+- Russia: +7
+
+- Rwanda: +250
+
+- Saint Barthélemy: +590
+
+- Saint Helena: +290
+
+- Saint Martin: +590
+
+- Saint Pierre and Miquelon: +508
+
+- Samoa: +685
+
+- San Marino: +378
+
+- São Tomé and Príncipe: +239
+
+- Saudi Arabia: +966
+
+- Senegal: +221
+
+- Serbia: +381
+
+- Seychelles: +248
+
+- Sierra Leone: +232
+
+- Singapore: +65
+
+- Sint Maarten: +1721
+
+- Slovakia: +421
+
+- Slovenia: +386
+
+- Solomon Islands: +677
+
+- Somalia: +252
+
+- South Africa: +27
+
+- South Korea: +82
+
+- South Sudan: +211
+
+- Spain: +34
+
+- Sri Lanka: +94
+
+- Sudan: +249
+
+- Suriname: +597
+
+- Svalbard and Jan Mayen: +47
+
+- Swaziland: +268
+
+- Sweden: +46
+
+- Switzerland: +41
+
+- Syria: +963
+
+- Taiwan: +886
+
+- Tajikistan: +992
+
+- Tanzania: +255
+
+- Thailand: +66
+
+- Timor-Leste: +670
+
+- Togo: +228
+
+- Tokelau: +690
+
+- Tonga: +676
+
+- Tunisia: +216
+
+- Turkey: +90
+
+- Turkmenistan: +993
+
+- Tuvalu: +688
+
+- Uganda: +256
+
+- Ukraine: +380
+
+- United Arab Emirates: +971
+
+- Uruguay: +598
+
+- Uzbekistan: +998
+
+- Vanuatu: +678
+
+- Vatican City: +39
+
+- Venezuela: +58
+
+- Vietnam: +84
+
+- Wallis and Futuna: +681
+
+- Western Sahara: +212
+
+- Yemen: +967
+
+- Zambia: +260
+
+- Zimbabwe: +263
+
+- Åland Islands: +358
+
+63. How can I reshape my career?
+Ans: To reshape your career, consider a strategic approach involving self-reflection, goal-setting, skill development, networking, gaining practical experience, and updating your professional profile. Embrace new challenges and be open to change, leveraging resources such as professional guidance and mentorship to navigate your career transition effectively.
+
+
+64. How many learners love the platform?
+Ans: Our platform proudly boasts a community of over 2 million dedicated learners. Their unwavering support and enthusiasm have been instrumental in our journey towards providing exceptional educational experiences.
+
+65. What are the years of experience options?
+Ans: The experience options are categorized into distinct groups: students (0-2 years), early professionals (2-5 years), mid-level professionals (5-10 years), and seasoned experts (10+ years). This classification aids in tailoring content and learning experiences to suit various stages of professional development.
+
+66. What is the contact information for LoansOnlineUSA.net?
+Ans: For inquiries and support, LoansOnlineUSA.net offers a comprehensive list of contact numbers for various countries, ensuring accessible customer service. The primary contact numbers include +91 for India, +1 for the United States, and +44 for the United Kingdom, among others.
+
+67. Is there a book available on Amazon that provides detailed SQL interview preparation?
+Ans: Amazon features an extensive book designed for SQL interview preparation, offering a blend of detailed explanations, practical exercises, and concise content to aid aspirants in mastering SQL concepts and techniques, especially beneficial for those preparing for their first job interview or seeking to enhance their understanding of SQL.
+
+68. Can exercise SQL query questions be uploaded for interview preparation?
+Ans: Certainly! We can provide a selection of SQL query exercises, specifically designed to aid in interview preparation. These exercises encompass a variety of topics, offering a comprehensive approach to understanding and mastering SQL queries.
+
+69. Are there any upcoming batches for the Microsoft SQL Server Certification Course?
+Ans: Upcoming batches for the Microsoft SQL Server Certification Course are scheduled, including a weekend batch starting on November 18, 2023. This batch is tailored for individuals seeking weekend learning opportunities, providing a flexible approach to certification.
+
+
+70. What is Auto Increment in SQL?
+Ans: Auto Increment in SQL is a feature that automatically generates unique numeric values for new records in a table, often used in conjunction with the PRIMARY KEY constraint. It simplifies the management of unique identifiers and ensures data integrity. In Oracle, this feature is referred to as AUTO INCREMENT, while in SQL Server, it is known as IDENTITY.
+
+71. What are Local and Global variables?
+Ans: Local variables are confined to the function they are declared in, offering temporary data storage within that scope. Global variables, conversely, are accessible throughout the program, facilitating data sharing across different functions and modules, albeit with careful consideration due to their broader scope and impact.
+
+72. What do you mean by Collation?
+Ans: Collation in database systems refers to the set of rules that dictate how character data is sorted and compared. It encompasses aspects like character sequence, case sensitivity, and width, ensuring accurate and consistent data organization and comparison in various operations.
+
+73. List some advantages and disadvantages of Stored Procedure?
+Ans: Stored Procedures offer advantages like modular programming, faster execution, reduced network traffic, and enhanced security. However, they also present challenges such as limited execution environments, increased memory utilization, maintenance complexity, and potential vendor lock-in.
+
+
+
+74. What is a Stored Procedure?
+Ans: A Stored Procedure is a pre-compiled collection of SQL statements in a database. It offers efficiency, performance optimization, security, code reusability, and maintainability. Stored Procedures streamline database operations, ensuring effective data management and access control.
+
+75. What are Views used for?
+Ans: Views serve multiple functions in databases, such as restricting data access, simplifying complex queries, ensuring data independence, and providing customized data perspectives. They enhance security, productivity, flexibility, and tailor data presentation to meet diverse user requirements.
+
+76. What is a View?
+Ans: A view in SQL is a virtual table representing a subset of data from one or more tables. It doesn't physically store data but acts as a window to view the data in the database. Views are used for efficient data management, consolidating data from multiple tables, and providing an abstraction layer to simplify complex data interactions.
+
+77. Name the operator which is used in the query for pattern matching?
+Ans: The LIKE operator is used in SQL for pattern matching. It filters records based on specific patterns in a string column, often combined with wildcard characters ('%' for multiple characters, '_' for a single character) to define the search criteria.
+
+
+78. How can you fetch alternate records from a table?
+Ans: To fetch alternate records, SQL queries can use the ROW_NUMBER() function and the modulus operator (%). For even rows, WHERE rowNumber % 2 = 0 is used, and for odd rows, WHERE rowNumber % 2 = 1. This method enables efficient selection of alternate rows in a dataset.
+
+79. What are aggregate and scalar functions?
+Ans: Aggregate functions in SQL, like SUM, COUNT, and AVG, process a set of rows and return a single value. Scalar functions, on the other hand, operate on individual values to perform operations like string manipulation, data type conversion, or date calculations.
+
+80. What is an ALIAS command?
+Ans: The ALIAS command in SQL provides alternative names to tables or columns in a query. It enhances readability and simplifies referencing in complex queries involving multiple tables or columns.
+
+81. What are the different set operators available in SQL?
+Ans: SQL offers set operators like UNION, INTERSECT, and MINUS for combining results from multiple SELECT statements. These operators allow for efficient data comparison and manipulation across different datasets.
+
+
+82. List some case manipulation functions in SQL?
+Ans: Common case manipulation functions in SQL include LOWER (to convert strings to lowercase), UPPER (for uppercase conversion), and INITCAP (to capitalize the first letter of each word in a string), facilitating diverse string transformations.
+
+83. What are the various levels of constraints?
+Ans: SQL constraints ensure data integrity at two levels: column-level (specific to one column, like data type or range) and table-level (applies to the entire table, including primary key, foreign key, unique, and check constraints).
+
+
+84. List the ways in which Dynamic SQL can be executed?
+Ans: Dynamic SQL can be executed using parameterized queries, the EXEC statement, or the sp_executesql stored procedure in SQL Server. These methods allow for flexible and efficient execution of dynamically constructed SQL statements.
+
+85. What is the difference between
+Ans: The HAVING clause filters grouped rows after aggregation, whereas the WHERE clause filters individual rows before any grouping or aggregation occurs. HAVING is often used with aggregate functions and GROUP BY clause in SQL.
+
+86. What is CLAUSE in SQL?
+Ans: A clause in SQL is a part of a query that imposes specific conditions to filter the result set. Common clauses like WHERE and HAVING are used to limit and define the data that should be included in the query results based on given criteria.
+
+87. What do you mean by recursive stored procedure?
+Ans: A recursive stored procedure in SQL calls itself repeatedly, enabling repetitive execution of a set of code until a certain condition is met. It's effective for tasks that involve hierarchical data structures or require iterative processing.
+
+
+88. What is the need for MERGE statement?
+Ans: SQL functions are used for various purposes like performing calculations, modifying data items, manipulating query output, formatting dates and numbers, and converting data types. They offer efficient data processing and manipulation capabilities within SQL queries.
+
+89. Why are SQL functions used?
+Ans: SQL functions are used for various purposes like performing calculations, modifying data items, manipulating query output, formatting dates and numbers, and converting data types. They offer efficient data processing and manipulation capabilities within SQL queries.
+
+90. What is the main difference between
+Ans: The BETWEEN operator filters rows within a specified range, while the IN operator selects rows matching any of the values in a provided list. BETWEEN is range-based, whereas IN is set-based filtering in SQL.
+
+
+91. How can you insert NULL values in a column while inserting the data?
+Ans: NULL values can be inserted in a column either implicitly by omitting the column in the insert statement or explicitly by specifying NULL in the VALUES clause. Both methods are effective for handling missing or unknown data.
+
+92. What is a Relationship and what are they?
+Ans: Relationships in databases define how data in different tables are related to each other. They include one-to-one, one-to-many, many-to-one, and self-referencing relationships, each serving a specific purpose in linking and organizing data across tables.
+
+93. What is the need for group functions in SQL?
+Ans: Group functions in SQL, like AVG, COUNT, and SUM, are crucial for summarizing data in a set of rows. They provide aggregate calculations and statistics, enabling efficient data analysis and interpretation across grouped datasets.
+
+94. List the ways to get the count of records in a table?
+Ans: To get the count of records in a table, you can use SELECT * FROM table_name, COUNT() function, or system catalog views in SQL Server. These methods provide various ways to determine the total number of records in a table.
+
+
+95. What are the different types of a subquery?
+Ans: Subqueries in SQL can be categorized as correlated (referencing columns from the outer query and executed per each row of the outer query) and non-correlated (independent and executed once). They are integral for complex data retrieval and filtering.
+
+96. What is subquery in SQL?
+Ans: A subquery in SQL is a nested query within another query, executed first to provide a result set for the main query. It enables complex data retrieval and manipulation by breaking down larger queries into smaller, manageable parts.
+
+97. What is the difference between cross join and natural join?
+Ans: A cross join combines every row of one table with every row of another, creating a Cartesian product, while a natural join merges tables based on common columns, eliminating duplicate columns and retaining only matching rows.
+
+98. Are NULL values same as that of zero or a blank space?
+Ans: NULL values in SQL are distinct from zero or blank spaces, representing an absence of value or unknown data, unlike zero (a numeric value) or a blank space (a character).
+
+99. What do you mean by
+Ans: A Trigger in SQL is a database object that automatically executes in response to certain events on a specific table, like insert, update, or delete operations. It facilitates automatic execution of code upon data modifications.
+
+
+100. What is the ACID property in a database?
+Ans: ACID properties (Atomicity, Consistency, Isolation, Durability) in databases ensure reliable transaction processing. They guarantee that transactions are processed as indivisible units, maintain data integrity, isolate transactions, and ensure durability of data post-transaction.
+
+101. How do we use the DISTINCT statement? What is its use?
+Ans: The DISTINCT statement in SQL is used with the SELECT command to retrieve unique rows from a table, effectively eliminating duplicate records. It's particularly useful in cases where you need to list different values present in a column or set of columns. The syntax is SELECT DISTINCT column_name FROM table_name;, where column_name is the field you want to check for unique values.
+
+HKR Trainings Logo
+Subscribe to our YouTube channel to get new updates..!
+102. What is the default ordering of data using the ORDER BY clause? How could it be changed?
+Ans: By default, the ORDER BY clause in SQL sorts data in ascending order. To change this, append either ASC (for ascending) or DESC (for descending) after the column name in the ORDER BY clause. For example, SELECT * FROM table_name ORDER BY column_name DESC; will sort the data in descending order.
+
+103. How many Aggregate functions are available in SQL?
+Ans: There are several aggregate functions available in SQL, crucial for data analysis and manipulation. These include COUNT(), SUM(), AVG(), MAX(), MIN(), and others, each designed to perform specific calculations on a set of values, like counting items, summing up values, or finding the maximum or minimum value.
+
+104. What is SQL Injection?
+Ans: SQL Injection is a security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It often allows attackers to view, modify, or delete data they normally wouldn't be able to access. Preventing SQL Injection involves input validation and using prepared statements or parameterized queries.
+
+105. What is the difference between DROP and TRUNCATE commands?
+Ans: The DROP command completely removes a table and its data from the database, making it unrecoverable. TRUNCATE, however, only removes the data inside a table, not the table itself, making it akin to deleting all rows but keeping the table structure intact.
+
+106. What is Normalization and what are the advantages of it?
+Ans: Normalization is a database design technique that organizes tables to reduce redundancy and dependency. It involves dividing a database into two or more tables and defining relationships between them. Advantages include better database organization, reduced redundancy, improved data integrity, and more efficient data handling.
+
+
+
+107. What is an Index?
+Ans: An Index in SQL is a database object that improves the speed of operations in a table. It works like an index in a book, allowing quicker data retrieval. Indexes can be created on one or more columns of a database table, providing a pathway to access data more efficiently.
+
+108. What are Entities and Relationships?
+Ans: Entities represent real-world objects like employees, orders, or products in a database, typically organized into tables. Relationships describe how these entities interact with each other, such as an employee working in a department, or a customer placing an order. Properly defining entities and relationships is key to a well-structured database.
+
+109. What do you understand by query optimization?
+Ans: 
+
+110. Write a SQL query to display the current date?
+Ans: To display the current date in SQL, you can use the GETDATE() function in SQL Server or CURRENT_DATE() in other SQL databases. The query looks like SELECT CURRENT_DATE(); or SELECT GETDATE();, returning the current system date.
+
+111. What is the difference between clustered and non-clustered index in SQL?
+Ans: A clustered index sorts and stores the data rows in the table based on the index key. Non-clustered indexes, on the other hand, create a separate structure within the table to hold the index columns. Clustered indexes can be faster for reading data sequentially, while non-clustered indexes are more flexible and can be created on multiple columns.
+
+112. What do you mean by data integrity?
+Ans: Data integrity in SQL refers to maintaining and assuring the accuracy and consistency of data over its entire lifecycle. It ensures that the data in a database is accurate, reliable, and accessible as needed. Data integrity can be enforced through constraints, transactions, and proper database design.
+
+
+113. What is a Foreign key in SQL?
+Ans: A Foreign key is a key used to link two tables together in SQL. It is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table. The FOREIGN KEY constraint prevents actions that would destroy links between the tables, ensuring referential integrity.
+
+114. What is a Unique key?
+Ans: A Unique key in SQL is a constraint that ensures all values in a column or a set of columns are different from each other. It helps maintain data uniqueness and can accept null values. A table can have more than one unique key, and it can also serve as a primary key.
+
+115. What is the difference between DELETE and TRUNCATE statements?
+Ans: DELETE is a DML command used to remove rows from a table based on a condition and can be rolled back. TRUNCATE is a DDL command that removes all rows from a table instantly without a condition and cannot be rolled back. TRUNCATE is faster and uses fewer system and transaction log resources.
+
+116. What are Constraints?
+Ans: Constraints in SQL are rules applied to table columns to enforce data integrity. They ensure the accuracy and reliability of data in the database. Common constraints include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, and CHECK.
+
+117. What is the difference between CHAR and VARCHAR2 datatype in SQL?
+Ans: CHAR is a data type in SQL used for storing fixed-length character strings. VARCHAR2, on the other hand, is used for variable-length strings. CHAR always uses the number of characters declared (e.g., CHAR(5) will always use 5 characters, padding with spaces if necessary), while VARCHAR2 uses only as many characters as needed (up to the maximum declared).
+
+118. What are joins in SQL?
+Ans: Joins in SQL are used to combine rows from two or more tables based on a related column between them. There are several types of joins, including INNER JOIN (returns rows with matching values in both tables), LEFT JOIN (returns all rows from the left table and matching rows from the right), RIGHT JOIN (all rows from the right table and matching from the left), and FULL JOIN (combines results of both LEFT and RIGHT joins).
+
+119. What is the meaning of table and field in SQL?
+Ans: In SQL, a table represents a collection of related data entries and it consists of columns and rows. Fields, also known as columns, refer to the categories of data stored in a table, like name, age, etc. Each field has a specific datatype that dictates the nature of the data that can be stored in it.
+
+
+120. Where is a MyISAM table stored?
+Ans: MyISAM tables in MySQL are stored as three files on disk - a .frm file for the table format, a .MYD (MYData) file for the table data, and a .MYI (MYIndex) file for the indexes.
+
+121. What are the different types of SQL sandbox?
+Ans: There are three types of SQL sandboxes: the Safe Access Sandbox, which restricts access to memory and file creation; the External Access Sandbox, which allows file access but restricts memory allocation; and the Unsafe Access Sandbox, which permits memory allocation and is used for running untrusted code.
+
+122. What is Database Black Box Testing?
+Ans: Database Black Box Testing involves testing a database with no knowledge of its internal workings. The focus is on input and output validation, checking for data integrity, error handling, and overall performance, ensuring that the database behaves as expected under different scenarios.
+
+123. How to remove duplicate rows in SQL?
+Ans: To remove duplicate rows in SQL, use the DISTINCT keyword in your SELECT statement, or use a combination of GROUP BY and HAVING clauses. Alternatively, you can use the ROW_NUMBER() function within a CTE or temporary table to identify and delete duplicates.
+
+124. What is BLOB and TEXT in MySQL?
+Ans: BLOB (Binary Large Object) and TEXT are data types in MySQL used to store large amounts of binary and text data, respectively. BLOB is for data such as images and binaries, while TEXT is used for large strings of characters.
+
+125. What is the difference between NOW() and CURRENT_DATE() in SQL?
+Ans: NOW() returns the current date and time, while CURRENT_DATE() only returns the current date in SQL.
+
+126. What are the differences between NoSQL and SQL?
+Ans: NoSQL and SQL databases differ fundamentally in their architecture and use cases. NoSQL, or non-relational databases, offer flexible schemas and are designed for horizontal scalability, making them ideal for handling large volumes of unstructured or rapidly changing data. SQL databases, however, are structured and relational, excelling in complex transaction processing due to their adherence to ACID properties. While SQL uses a structured query language for data interaction, NoSQL employs varied query languages suited to its diverse data models, including document, key-value, graph, and wide-column formats.
+
+Oracle PL SQL Training
+Weekday / Weekend Batches
+
+127. What is the case statement in SQL Server?
+Ans: The CASE statement in SQL Server enables conditional logic within queries. It's a versatile tool that allows for branching logic, where different conditions lead to different results. The syntax involves a series of WHEN clauses, each with a condition and a corresponding result. The CASE statement evaluates these conditions sequentially and returns a result upon finding the first true condition. It's instrumental in dynamic data transformation and conditional filtering.
+
+128. How to install SQL Server in Windows 11?
+Ans: Installing SQL Server on Windows 11 involves downloading SQL Server Management Studio (SSMS), initiating the setup, and following the installation prompts. After installation, launch SSMS and connect to your SQL server. The process is straightforward, making SQL Server accessible for database management on a Windows 11 platform.
+
+129. How to create a temp table in SQL Server?
+Ans: Creating a temporary table in SQL Server involves using the CREATE TABLE syntax with a # prefix for the table name. Define the table's structure by specifying columns and data types. Temporary tables are ideal for storing interim results during complex data processing. They exist temporarily and are automatically deleted after the session ends.
+
+130. What is a schema in SQL Server?
+Ans: In SQL Server, a schema is a logical framework that organizes database objects like tables and views. It's a blueprint that defines how data is structured and related. Schemas play a pivotal role in database design, aiding in data organization and integrity.
+
+131. What are basic SQL skills?
+Ans: Basic SQL skills encompass the abilities to manage databases, create and execute SQL clauses and statements, and analyze data. Familiarity with database management systems like MySQL and PostgreSQL, along with scripting languages like PHP, is essential. These skills are foundational for efficient data retrieval, manipulation, and analysis.
+
+
+132. What is an SQL example?
+Ans: An SQL example typically illustrates the use of SQL commands like SELECT, INSERT, UPDATE, and DELETE to interact with a database. These commands allow for data retrieval, addition, modification, and deletion, showcasing the practical applications of SQL in managing databases.
+
+133. What are UNION, MINUS, and INTERSECT commands?
+Ans: UNION, MINUS, and INTERSECT in SQL are set operations used to combine or compare results from multiple SELECT queries. UNION merges and de-duplicates the results of two queries, MINUS (or EXCEPT) returns the difference, and INTERSECT finds common elements. Each command requires compatible column structures in the involved queries.
+
+134. What are some common clauses used with SELECT query in SQL?
+Ans: Common clauses in SELECT queries include WHERE for filtering, ORDER BY for sorting, GROUP BY for grouping, and HAVING for filtering aggregated groups. These clauses enhance data retrieval and manipulation, allowing for tailored query results.
+
+135. What is the SELECT statement?
+Ans: The SELECT statement in SQL is a command used to retrieve data from databases. It defines what data to pull from tables but leaves the execution approach to the SQL engine's optimization.
+
+136. What is a Self-Join?
+Ans: A self-join in SQL is a technique where a table is joined to itself. It's used for comparing and combining rows within the same table, ideal for analyzing relationships within a single dataset.
+
+137. What is a UNIQUE constraint?
+Ans: The UNIQUE constraint in databases ensures that all values in a column or a set of columns are distinct, preventing duplicate entries and maintaining data uniqueness.
+
+138. What are Tables and Fields?
+Ans: Tables and Fields are core elements of relational databases. Tables store data in rows and columns, while fields (columns) represent the data types and attributes. This structure organizes data efficiently, supporting effective data management and retrieval.
+
+139. Explain character-manipulation functions? Explains its different types in SQL.
+Ans: Character-manipulation functions in SQL, such as CONCAT, SUBSTR, LENGTH, and REPLACE, are used to alter and analyze strings. They perform operations like joining, extracting, and modifying text data, essential for data processing.
+
+140. What is the usage of the NVL() function?
+Ans:  NVL() replaces null values with a default value in Oracle databases.
+
+141. What are some common clauses used with SELECT query in SQL?
+Ans: Common SELECT query clauses include WHERE, ORDER BY, GROUP BY, and HAVING.
+
+142. What is the SELECT statement?
+Ans: The SELECT statement retrieves data from one or more database tables or views in SQL.
+
+143. What is a Self-Join?
+Ans: A self-join connects rows within the same table, often used for hierarchical data.
+
+144. What is RDBMS? How is it different from DBMS?
+Ans: An RDBMS is a relational database management system, differing from DBMS by supporting SQL, multi-user access, ACID principles, and data normalization.
+
+145. What do you mean by DBMS? What are its different types?
+Ans: A DBMS is a software for data management. Types include Relational DBMS (RDBMS) and Non-Relational (NoSQL) DBMS.
+
+146. What are the different subsets of SQL?
+Ans: SQL subsets are DDL (Data Definition Language), DML (Data Manipulation Language), and DCL (Data Control Language).
+
+
+147. What is the difference between SQL and MySQL?
+Ans: SQL is a language for managing databases, while MySQL is a specific database management system that uses SQL.
+
+148. What is the default ordering of data using the ORDER BY clause? How could it be changed?
+Ans: Default ordering is ascending, but you can change it to descending using the DESC keyword.
+
+149. What is Database Black Box Testing?
+Ans: Database black box testing assesses database functionality, inputs, outputs, and security without knowledge of internal details.
+
 SQL Server Interview Questions and Answers (2026)
 By Vijay  Updated December 6, 2025
 In this tutorial, I will cover some of the most frequently asked SQL Server Interview Questions to make you familiar with the type of questions that can be asked during a Job Interview related to SQL SERVER.
