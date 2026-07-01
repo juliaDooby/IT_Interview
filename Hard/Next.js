@@ -1,3 +1,720 @@
+Top Next JS Interview Questions for Freshers
+Top Next JS Interview Questions for Freshers Are you preparing for your first Next.js interview and wondering what questions you might face?Understanding the key Next.js interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Next.js interview questions and answers for freshers and make a strong impression in your interview.
+fsd student program banner horizontal
+Practice Next JS Interview Questions and Answers
+Below are the top 50 Next JS interview questions for freshers with answers:
+1. What is Next.js?
+Answer:Next.js is a React framework that enables server-side rendering, static site generation, and building full-stack applications. It simplifies the process of creating performant and SEO-friendly web applications by offering built-in support for routing, server-side rendering, and API routes.
+2. What are the core features of Next.js?
+Answer:Core features of Next.js include server-side rendering (SSR), static site generation (SSG), API routes, automatic code splitting, and optimized performance. These features make Next.js suitable for building scalable and high-performance web applications.
+3. How do you create a new Next.js project?
+Answer:To create a new Next.js project, you use the create-next-app command. This sets up a new Next.js application with a default configuration and example files.
+npx create-next-app my-next-app
+cd my-next-app
+npm run dev
+4. What is server-side rendering (SSR) in Next.js?
+Answer:Server-side rendering (SSR) in Next.js refers to the process of rendering a web page on the server instead of the client. This means the HTML is generated on the server and sent to the client, improving SEO and initial load performance.
+export async function getServerSideProps() {
+return { props: { data: ‘Server-side rendered data’ } };
+}
+5. What is static site generation (SSG) in Next.js?
+Answer:Static site generation (SSG) generates HTML at build time, creating static files that are served to users. This approach is ideal for content that doesn’t change frequently and improves performance by serving pre-rendered pages.
+export async function getStaticProps() {
+return { props: { data: ‘Static site generated data’ } };
+}
+6. How does Next.js handle routing?
+Answer:Next.js handles routing based on the file system. Each file in the pages directory automatically becomes a route. For dynamic routes, file names can include brackets to signify dynamic segments.
+// pages/about.js
+export default function About() {
+return <div>About Page</div>;
+}
+// pages/post/[id].js
+export default function Post({ query }) {
+return <div>Post ID: {query.id}</div>;
+}
+7. What is getStaticProps in Next.js?
+Answer:getStaticProps is a function used in Next.js to fetch data at build time for static site generation. It allows you to pass data as props to a page component.
+export async function getStaticProps() {
+const data = await fetchData();
+return { props: { data } };
+}
+8. What is getServerSideProps in Next.js?
+Answer:getServerSideProps is a function used to fetch data on each request for server-side rendering. It runs on the server and provides data as props to the page component.
+export async function getServerSideProps(context) {
+const data = await fetchData();
+return { props: { data } };
+}
+9. What is getStaticPaths used for in Next.js?
+Answer:getStaticPaths is used with getStaticProps to specify which dynamic routes should be pre-rendered at build time. It returns an array of path objects that Next.js will use to generate static pages.
+export async function getStaticPaths() {
+const paths = [{ params: { id: ‘1’ } }, { params: { id: ‘2’ } }];
+return { paths, fallback: false };
+}
+10. How does Next.js handle API routes?
+Answer:Next.js allows you to create API routes within the pages/api directory. Each file in this directory defines a serverless function that handles HTTP requests and responses.
+// pages/api/hello.js
+export default function handler(req, res) {
+res.status(200).json({ message: ‘Hello, world!’ });
+}
+11. What is the Link component in Next.js?
+Answer:The Link component in Next.js is used to enable client-side navigation between pages. It prefetches linked pages for faster navigation and ensures that your links are optimized for performance.
+import Link from ‘next/link’;
+export default function Home() {
+return (
+<Link href=”/about”>
+<a>Go to About Page</a>
+</Link>
+);
+}
+12. What are custom _app.js and _document.js files in Next.js?
+Answer:Custom _app.js and _document.js files are used to customize the default App and Document components. _app.js allows you to initialize pages and manage global styles, while _document.js is used to augment the server-rendered document markup.
+// _app.js
+export default function MyApp({ Component, pageProps }) {
+return <Component {…pageProps} />;
+}
+// _document.js
+import Document, { Html, Head, Main, NextScript } from ‘next/document’;
+class MyDocument extends Document {
+render() {
+return (
+<Html>
+<Head />
+<body>
+<Main />
+<NextScript />
+</body>
+</Html>
+);
+}
+}
+export default MyDocument;
+13. How can you add global CSS to a Next.js project?
+Answer:Global CSS can be added by importing the CSS file in the _app.js file. This ensures that the styles are applied across all pages.
+// _app.js
+import ‘../styles/global.css’;
+export default function MyApp({ Component, pageProps }) {
+return <Component {…pageProps} />;
+}
+14. How do you use environment variables in Next.js?
+Answer:Environment variables in Next.js are defined in a .env.local file and accessed using process.env in your code. Variables must start with NEXT_PUBLIC_ to be exposed to the browser.
+# .env.local
+NEXT_PUBLIC_API_URL=https://api.example.com
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+15. What is the purpose of next.config.js?
+Answer:next.config.js is used to configure various settings in a Next.js application, such as custom webpack configurations, environment variables, and redirects. It allows for advanced customization of the Next.js build process.
+// next.config.js
+module.exports = {
+env: {
+CUSTOM_API_URL: ‘https://api.example.com’,
+},
+webpack(config) {
+// Customize webpack configuration
+return config;
+},
+};
+16. How do you handle image optimization in Next.js?
+Answer:Next.js provides an Image component for optimized image handling. It automatically optimizes images for performance and provides features like lazy loading and responsive images.
+import Image from ‘next/image’;
+export default function Profile() {
+return (
+<Image
+src=”/profile.jpg”
+alt=”Profile Picture”
+width={500}
+height={500}
+/>
+);
+}
+17. How do you use dynamic imports in Next.js?
+Answer:Dynamic imports in Next.js allow you to load modules asynchronously, which can improve performance by splitting code into smaller chunks. Use the next/dynamic package for this purpose.
+import dynamic from ‘next/dynamic’;
+const DynamicComponent = dynamic(() => import(‘../components/HeavyComponent’));
+export default function Home() {
+return <DynamicComponent />;
+}
+18. What are Next.js Middleware functions?
+Answer:Middleware functions in Next.js allow you to execute code before a request is completed. They can be used for tasks like authentication, logging, and modifying the request or response.
+// middleware.js
+import { NextResponse } from ‘next/server’;
+export function middleware(req) {
+console.log(‘Request made to:’, req.nextUrl.pathname);
+return NextResponse.next();
+}
+19. How do you handle authentication in Next.js?
+Answer:Authentication in Next.js can be handled using API routes for login/logout operations and middleware for protecting routes. You can use third-party libraries like next-auth for easier integration.
+// pages/api/auth/[…nextauth].js
+import NextAuth from ‘next-auth’;
+import Providers from ‘next-auth/providers’;
+export default NextAuth({
+providers: [
+Providers.Google({
+clientId: process.env.GOOGLE_CLIENT_ID,
+clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+}),
+],
+});
+20. What are getStaticProps and getServerSideProps used for?
+Answer:getStaticProps is used for generating static pages at build time, while getServerSideProps is used for server-side rendering, generating pages on each request. Both methods provide data to a page component as props.
+21. How do you perform client-side navigation in Next.js?
+Answer:Client-side navigation is performed using the Link component from next/link, enabling navigation without full page reloads. This provides a smoother user experience, and the linked pages are prefetched for faster performance.
+import Link from ‘next/link’;
+export default function Home() {
+return (
+<Link href=”/about”>
+<a>Go to About Page</a>
+</Link>
+);
+}
+22. How do you add custom metadata (e.g., title, meta tags) to a Next.js page?
+Answer:Next.js provides the Head component to insert custom metadata, like titles and meta tags, in the page head section. This is useful for SEO purposes and customizing individual pages.
+import Head from ‘next/head’;
+export default function Home() {
+return (
+<>
+<Head>
+<title>My Custom Title</title>
+<meta name=”description” content=”My custom description” />
+</Head>
+<div>Welcome to my page</div>
+</>
+);
+}
+23. What is Incremental Static Regeneration (ISR) in Next.js?
+Answer:Incremental Static Regeneration (ISR) allows you to update static content after the build process without rebuilding the entire site. It revalidates pages at a specific interval and serves updated content when needed.
+export async function getStaticProps() {
+return {
+props: { data: ‘Sample data’ },
+revalidate: 10, // Revalidates every 10 seconds
+};
+}
+24. What is the difference between SSR and SSG in Next.js?
+Answer:SSR (Server-Side Rendering) generates the HTML on the server for each request, improving SEO and performance for dynamic content. SSG (Static Site Generation) builds HTML at compile time, serving pre-rendered pages for better performance in static scenarios.
+25. How does API routing work in Next.js?
+Answer:Next.js provides API routes that allow you to build a back-end using Node.js within the framework. API routes are defined in the pages/api directory, and each file becomes an endpoint.
+// pages/api/hello.js
+export default function handler(req, res) {
+res.status(200).json({ message: ‘Hello World’ });
+}
+26. How does automatic static optimization work in Next.js?
+Answer:Automatic static optimization allows Next.js to automatically pre-render static pages if no getServerSideProps or getInitialProps functions are used. This improves performance and load time by serving static content.
+27. What is dynamic routing in Next.js, and how is it implemented?
+Answer:Dynamic routing allows you to create routes based on dynamic segments, such as blog posts or user IDs. It’s implemented using brackets in the pages directory file name.
+// pages/posts/[id].js
+export default function Post({ params }) {
+return <div>Post ID: {params.id}</div>;
+}
+28. How do you protect a page in Next.js with authentication?
+Answer:To protect a page, use Next.js middleware or redirect users based on authentication status. Libraries like next-auth help manage session-based authentication.
+export async function getServerSideProps(context) {
+const session = await getSession(context);
+if (!session) {
+return {
+redirect: {
+destination: ‘/login’,
+permanent: false,
+},
+};
+}
+return { props: { session } };
+}
+29. What are Next.js “API routes,” and how are they used?
+Answer:API routes allow you to build APIs directly within your Next.js application. Each file in the pages/api directory is treated as an API route, handling HTTP requests.
+// pages/api/user.js
+export default function handler(req, res) {
+res.status(200).json({ name: ‘John Doe’ });
+}
+30. What is the difference between getInitialProps and getServerSideProps?
+Answer:getInitialProps can run on both the server and client, fetching data for both initial load and subsequent navigations. getServerSideProps runs only on the server, ensuring server-rendered data on every request.
+31. How do you create an API in Next.js?
+Answer:In Next.js, API routes are defined within the pages/api directory. Each file becomes an API endpoint, allowing you to build serverless functions easily.
+// pages/api/greet.js
+export default function handler(req, res) {
+res.status(200).json({ message: ‘Hello from API!’ });
+}
+32. How do you manage environment variables in Next.js?
+Answer:Environment variables in Next.js are stored in .env.local and accessed via process.env. Variables starting with NEXT_PUBLIC_ are accessible on the client side.
+# .env.local
+NEXT_PUBLIC_API_URL=https://api.example.com
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+33. How does code splitting work in Next.js?
+Answer:Code splitting in Next.js is automatic. It ensures that only the necessary JavaScript for the current page is loaded, improving performance by reducing the amount of code that needs to be downloaded.
+34. What is fallback rendering in Next.js?
+Answer:Fallback rendering is used in dynamic SSG pages. If a page doesn’t exist during the build, Next.js can serve a fallback version while generating the content on demand.
+export async function getStaticPaths() {
+return {
+paths: [],
+fallback: true,
+};
+}
+35. How does Next.js handle page pre-rendering?
+Answer:Next.js pre-renders pages by default, generating the HTML for each page at either build time (SSG) or on each request (SSR). This improves performance and SEO.
+36. What is next/head, and how is it used?
+Answer:next/head is a component used to manage metadata like titles, descriptions, and link tags in the head of your HTML document. It’s essential for improving SEO and customizing individual page metadata.
+import Head from ‘next/head’;
+export default function Home() {
+return (
+<>
+<Head>
+<title>My Custom Title</title>
+</Head>
+<div>Home Page</div>
+</>
+);
+}
+37. How do you handle redirects in Next.js?
+Answer:Redirects can be configured in next.config.js to programmatically route users to different URLs. You can also use server-side or client-side methods to redirect dynamically.
+module.exports = {
+async redirects() {
+return [
+{
+source: ‘/old-route’,
+destination: ‘/new-route’,
+permanent: true,
+},
+];
+},
+};
+38. How do you handle rewrites in Next.js?
+Answer:Rewrites allow you to map URLs to different destination paths without changing the URL. This is useful for cleaner URLs or proxying API routes.
+module.exports = {
+async rewrites() {
+return [
+{
+source: ‘/api/:path*’,
+destination: ‘https://external-api.com/:path*’,
+},
+];
+},
+};
+39. How do you use the Image component in Next.js?
+Answer:The Image component in Next.js automatically optimizes images, providing lazy loading, resizing, and responsive images. It improves performance by serving optimized images.
+import Image from ‘next/image’;
+export default function Home() {
+return <Image src=”/image.jpg” alt=”Image” width={500} height={500} />;
+}
+40. What is Next.js “middleware”?
+Answer:Middleware in Next.js runs before a request is completed, enabling you to modify requests and responses, handle authentication, or add logging functionality. It can be defined in the middleware.js file.
+import { NextResponse } from ‘next/server’;
+export function middleware(req) {
+const url = req.nextUrl.clone();
+url.pathname = ‘/new-path’;
+return NextResponse.redirect(url);
+}
+41. How can you deploy a Next.js application?
+Answer:Next.js applications can be deployed to platforms like Vercel, AWS, or any Node.js hosting service. Vercel offers one-click deployment specifically for Next.js apps, making it one of the easiest methods.
+42. What are getStaticPaths and getStaticProps used for in dynamic pages?
+Answer:getStaticPaths defines the dynamic routes that should be pre-rendered, while getStaticProps fetches the necessary data at build time for those dynamic routes. Together, they enable dynamic static pages.
+43. What is Fast Refresh in Next.js?
+Answer:Fast Refresh is a feature in Next.js that provides instant feedback when editing React components. It allows you to see changes immediately in the browser without losing the state of your application.
+44. How does Next.js handle client-side data fetching?
+Answer:Client-side data fetching in Next.js is typically done using React hooks like useEffect or third-party libraries like SWR (Stale-While-Revalidate). This is useful when fetching data after the page has been rendered.
+import { useState, useEffect } from ‘react’;
+function ClientSideData() {
+const [data, setData] = useState(null);
+useEffect(() => {
+fetch(‘/api/data’)
+.then((res) => res.json())
+.then((data) => setData(data));
+}, []);
+return <div>Data: {data}</div>;
+}
+45. How can you use getServerSideProps for server-side data fetching?
+Answer:getServerSideProps allows fetching data on every request. This method runs on the server, making it ideal for dynamic content that needs to be fresh with every page load, like user-specific data.
+export async function getServerSideProps(context) {
+const res = await fetch(`https://api.example.com/data`);
+const data = await res.json();
+return { props: { data } };
+}
+function Page({ data }) {
+return <div>Data: {data}</div>;
+}
+46. What is a fallback page in Next.js, and how does it work?
+Answer:Fallback pages in Next.js are used in conjunction with getStaticPaths and getStaticProps for dynamic SSG pages. If a page is not yet generated, Next.js can render a fallback version until the data is fetched and the page is fully generated.
+export async function getStaticPaths() {
+return { paths: [], fallback: ‘blocking’ };
+}
+export async function getStaticProps({ params }) {
+const data = await fetch(`https://api.example.com/${params.id}`);
+return { props: { data } };
+}
+47. How do you optimize Next.js apps for performance?
+Answer:Next.js offers several built-in performance optimizations like automatic code splitting, image optimization, lazy loading, and static generation. Additionally, using server-side caching and Content Delivery Networks (CDNs) improves performance.
+48. What is SWR in Next.js, and how is it used?
+Answer:SWR (Stale-While-Revalidate) is a data-fetching library developed by Vercel, allowing you to fetch, cache, and revalidate data on the client side. It provides real-time data fetching with automatic updates.
+import useSWR from ‘swr’;
+const fetcher = (url) => fetch(url).then((res) => res.json());
+function Profile() {
+const { data, error } = useSWR(‘/api/user’, fetcher);
+if (error) return <div>Error loading data</div>;
+if (!data) return <div>Loading…</div>;
+return <div>Hello {data.name}</div>;
+}
+49. How do you handle global state management in Next.js?
+Answer:For global state management, you can use React’s Context API, Redux, or libraries like Zustand and Recoil. State can be shared across components and pages using these tools, ensuring consistent data across your app.
+import { createContext, useContext, useState } from ‘react’;
+const GlobalContext = createContext();
+export function GlobalProvider({ children }) {
+const [state, setState] = useState(‘Some global state’);
+return (
+<GlobalContext.Provider value={{ state, setState }}>
+{children}
+</GlobalContext.Provider>
+);
+}
+export function useGlobalContext() {
+return useContext(GlobalContext);
+}
+50. How do you configure internationalization (i18n) in Next.js?
+Answer:Next.js supports internationalization (i18n) out of the box, allowing you to serve different locales for different languages. You can configure it in next.config.js.
+// next.config.js
+module.exports = {
+i18n: {
+locales: [‘en’, ‘fr’, ‘es’],
+defaultLocale: ‘en’,
+},
+};
+In your components, you can switch between locales using the router.
+import { useRouter } from ‘next/router’;
+function LanguageSwitcher() {
+const router = useRouter();
+const changeLanguage = (locale) => {
+router.push(router.pathname, router.asPath, { locale });
+};
+return (
+<div>
+<button onClick={() => changeLanguage(‘fr’)}>French</button>
+<button onClick={() => changeLanguage(‘es’)}>Spanish</button>
+</div>
+);
+}
+Final Words
+Getting ready for an interview can feel overwhelming, but going through these Next.js fresher interview questions can help you feel more confident.With the right preparation, you’ll ace your Next.js interview but don’t forget to practice server-side rendering (SSR), static site generation (SSG), API routes, and Next.js routing-related interview questions too.
+
+Most Frequently Asked Next js Interview Questions
+Here in this article, we will be listing frequently asked Next js Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
+
+Q1. What is Next Js and why it is used for?
+Answer
+Next, JS is an open-source, JavaScript framework that lets developers build static and server-side rendering web applications. Created by Zeit, Next JS doesn’t require any Webpack configuration and only needs npm run dev start building your next feature filled web application.
+
+Q2. How to install Next js?
+Answer
+Developers will need NPM to start installing Next JS with all its dependencies. Here are the steps to follow:
+Create a directory to keep the Next JS project and go into it:
+mkdir my-portfolio-site
+cd my-portfolio-site
+Now initialize this with a package.json file.
+Use the y flag by npm init –y
+Use the below-mentioned syntax to install Next JS
+npm install react react-dom next
+Update package.json with run script languages to start the initialization of Next JS application.
+Please find the package.json file on root folder and add the below mentioned script
+"dev": "next",
+"build": "next build",
+"start": "next start"
+Now, we are finished with the process.
+
+Q3. What are the features of next js?
+Answer
+Here is a list of most developer-exciting Next JS features:
+
+Default and easy server rendering
+Static exporting
+Hot code reloading
+Automatic code splitting
+Complete Webpack and Babel control
+Filesystem based routing
+Faster and optimized development compilation
+Q4. How to disable etag generation in next js?
+Answer
+To disable etag generation in Next JS, we have to use the app.disable('etag') syntax. But, this may not work for all static contents. The below mentioned syntax will disable etag for all static contents.
+
+app.use(express.static(path.join(__dirname, 'public'), {
+
+
+
+etag: false
+
+
+
+}));
+
+Q5. How to create pages in next js?
+Answer
+Q6. How to create a custom error page in next js?
+Answer
+To create a custom error page in Next JS, we have to define a “_error.js” in the page folder with this given syntax.
+We have to import our own “_ error” component instead of “next/error” further to use our custom error page.
+import React from 'react';
+
+
+
+class Error extends React.Component {
+
+
+
+     static getInitialProps({ res, err }) {
+
+
+
+        const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+
+
+
+      return { statusCode };
+
+
+
+}
+
+
+
+render() {
+
+
+
+return (
+
+
+
+<p>
+
+
+
+   {this.props.statusCode
+
+
+
+   ? `An error ${this.props.statusCode} occurred on server`
+
+
+
+   : 'An error occurred on client'}
+
+
+
+</p>
+
+
+
+    );
+
+
+
+  }
+
+
+
+}
+
+
+
+export default Error;
+
+Q7. How to setup CDN in next js?
+Answer
+Developers have to follow these steps to setup CDN in Next JS.
+
+
+	
+To start, we have to first set up the “assetPrefix” setting and configure our CDN origin to support resolve to the domain that our Next JS is hosted on.
+
+
+
+            const isProd = process.env.NODE_ENV === 'production';
+
+
+
+            module.exports = {
+
+
+
+               // You may only need to add assetPrefix in the production.
+
+
+
+         assetPrefix: isProd ? 'https://cdn.mydomain.com' : ''
+
+
+
+};
+
+
+
+
+	
+For a CDN present on a separate domain that you may like assets to be requested with use of CORS aware request, we have to set a configuration option as following.
+
+
+
+         // next.config.js
+
+
+
+         module.exports = {
+
+
+
+           crossOrigin: 'anonymous'
+
+
+
+};
+
+Q8. How to configure build id in Next JS?
+Answer
+To configure a static ID between our builds, we have to provide “generateBuildId” function with this given configuration.
+
+// next.config.js
+
+
+
+module.exports = {
+
+
+
+   generateBuildId: async () => {
+
+
+
+  // For example get the latest git commit hash here
+
+
+
+  return 'my-build-id';
+
+
+
+  }
+
+
+
+};
+
+Q9. How to write inline CSS in next js?
+Answer
+We have to use the further mentioned syntax configuration to write inline CSS in Next JS.
+
+function HiThere() {
+
+
+
+  return <p style={{ color: 'red' }}>hi there</p>;
+
+
+
+  }
+
+
+
+export default HiThere;
+
+Q10. What is AMP in Next JS?
+Answer
+This is a Next JS standard used to build high-performance websites rendering overhead. AMP implemented websites are indexed faster in modern and popular search engines with enhanced promoting behavior. AMP web pages are loaded directly to Google's mobile search results with a lightning icon, better performance, fewer restrictions, and better scalability.
+
+Q11. How to validate AMP in the next JS?
+Answer
+To validate your AMP pages, ‘amphtml-validator’ is used during the development. Warnings and fatal errors will be displayed in the terminal where the Next JS is started. AMP pages also get validated during ‘next export’ and issues will be printed in the terminal, and the ‘next export’ will fail due to the absence of proper AMP validation.
+
+Q12. How to enable AMP in Next JS?
+Answer
+This one is crucial. Next JS interview question to practice and remember all its aspects. There are two processes to enable AMP in Next JS. The thing to remember here is, AMP is a crucial part of many Next JS interview questions, so we would advise it to practice well.
+
+AMP-First Pages
+           These are served to the primary traffic of the website as well as traffic generated from the search engine. We have to use the following syntax to implement AMP-first pages.
+
+Hybrid AMP Pages
+           Hybrid AMP pages allow users to have a coexist AMP version of a traditional page so that search engines can easily display the AMP version or the page in different mobile search results. To               implement Hybrid AMP to pages, we have to use the following syntax.
+
+<
+
+AMP-First Pages :-
+
+
+
+// pages/index.js
+
+
+
+import { withAmp } from 'next/amp'
+
+
+
+function HomePage() {
+
+
+
+return <p> Welcome to AMP + Next.js.</p>
+
+
+
+}
+
+
+
+export default withAmp(HomePage)
+
+
+
+ 
+
+
+
+ 
+
+
+
+Hybrid AMP Pages :-
+
+
+
+// pages/index.js
+
+
+
+function HomePage() {
+
+
+
+return <p> Welcome to AMP + Next.js.</p>
+
+
+
+}
+
+
+
+export default withAmp(HomePage, { hybrid: true })
+
+Q13. What is Styled JSX in Next JS?
+Answer
+It’s a CSS-in-JS library used by developers to write scoped and encapsulated CSS to style Next JS components. The styles introduced to one component with Styled JSX will not affect other components, allowing developers to add, delete, and change styles without worrying about any side effects.
+
+Q14. What are the benefits of implementing Serverless mode and how to implement it?
+Answer
+Implementing Serverless mode excellently improves scalability and readability of an application by splitting it into smaller parts known as lambdas. It also promotes affordability with a "pay for what you use" model.
+
+To enable Serverless mode in Next JS, we have to add ‘serverless’ build target in next.config.js.
+
+// next.config.js
+
+
+
+module.exports = {
+
+
+
+target: 'serverless'
+
+
+
+}
+
+Q15. Does Next JS support static CDN?
+Answer
+Yes, Next JS 5 and above supports static CDN. With the introduction of assetPrefix, Next.JS automatically loads assets from CDN.
+
 NextJS Interview Questions & Answers
 🚀 This repository aimed to contains 500 nextjs interview questions & answers with exmample.
 https://github.com/mrhrifat/nextjs-interview-questions
