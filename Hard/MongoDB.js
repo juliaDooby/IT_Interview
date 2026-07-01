@@ -1,3 +1,71 @@
+Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
+Вопросы
+JAVASCRIPT
+Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
+Я хочу хранить свои журналы ошибок в коллекции mongoDB. Я использую winston & winston -mongoDB.
+
+Получение ошибки:
+
+throw new Error('Invalid transport, must be an object with a log method.'); Error: Invalid transport, must be an object with a log method.
+
+Вот код в файле регистратора. Вот мой код: импортировать appRoot из 'app-root-path'; Импортировать { createLogger, транспорт, формат, } от winston;
+
+import * as winston from 'winston';
+
+
+require('winston-mongodb');
+
+
+const options = {
+    fileInfo: {
+        level: 'info',
+        filename: `${appRoot}/logs/info.log`,
+        handleExceptions: true,
+        json: true,
+        maxsize: 5242880, // 5MB
+        maxFiles: 5,
+        colorize: false,
+        timestamp: true,
+    },
+    mongoDB: {
+        db: 'mongodb://127.0.0.1:27017/test',
+        collection: 'log',
+        level: 'info',
+        storeHost: true,
+        capped: true,
+    },
+};
+
+winston.add(winston.transports.MongoDB, options.mongoDB);
+
+
+const logger = createLogger({
+    format: format.combine(
+        format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss',
+        }),
+        format.json()
+    ),
+    transports: [
+        new transports.File(options.fileInfo)
+    ],
+});
+
+logger.stream = {
+    write: (message, encoding) => {
+        logger.info(message);
+    },
+};
+
+export default logger;
+Версии:
+
+ "mongoose": "^5.2.6",
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0",
+    "winston-mongodb": "^4.0.3",
+    mongodb@3.1.1
+
 MONGO DB ADMIN Interview Questions and Answers
 MongoDB Interview Questions
 1.Define MongoDB?                   
