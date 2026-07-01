@@ -1,3 +1,69 @@
+Как подключиться к файлу sqlite3 db и получить содержимое в fastapi?
+Вопросы
+PYTHON
+Как подключиться к файлу sqlite3 db и получить содержимое в fastapi?
+У меня есть файл sqlite.db, который имеет 5 столбцов и 10 миллионов строк. Я создал API с помощью fastapi, теперь в одном из методов API я хочу подключиться к этому файлу sqlite.db и получить контент на основе определенных условий (на основе имеющихся столбцов). В основном я буду использовать SELECT и WHERE.
+
+Как я могу это сделать, также используя асинхронные запросы. Я столкнулся с Tortoise ORM, но я не уверен, как правильно использовать его для получения результатов.
+
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.middleware.cors import CORSMiddleware
+
+DATABASE_URL = "sqlite:///test.db"
+
+
+@app.post("/test")
+async def fetch_data(id: int):
+    query = "SELECT * FROM tablename WHERE ID = {}".format(str(id))
+
+    # how can I fetch such query faster from 10 million records while taking advantage of async func
+    return  results
+ 12.12.2020 23:48
+4
+0
+9 545
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Здесь вы упускаете момент, определения функции с помощью async недостаточно. Вам нужно использовать асинхронный драйвер базы данных, чтобы воспользоваться преимуществами использования сопрограммы.
+
+Библиотека Encode Databases отлично подходит для этой цели.
+
+pip install databases
+Вы также можете установить необходимые драйверы базы данных с помощью:
+
+pip install databases[sqlite]
+В вашем случае это должно принести пользу.
+
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.middleware.cors import CORSMiddleware
+from databases import Database
+
+database = Database("sqlite:///test.db")
+
+
+@app.on_event("startup")
+async def database_connect():
+    await database.connect()
+
+
+@app.on_event("shutdown")
+async def database_disconnect():
+    await database.disconnect()
+
+
+@app.post("/test")
+async def fetch_data(id: int):
+    query = "SELECT * FROM tablename WHERE ID = {}".format(str(id))
+    results = await database.fetch_all(query=query)
+
+    return  results
+ 13.12.2020 00:20
+Подход к доступу к данным из столбца в наборе результатов запроса:
+
+Вы можете прочитать набор результатов db в фрейме данных Pandas. Оттуда вы можете использовать dataframe["имя столбца"] для доступа к данным столбца, который возвращает список, похожий на итерацию данных этого столбца. Вы можете использовать встроенный метод to_dict() фрейма данных для данных словаря.
+
 Замените имя сервера поддельным именем сервера в заголовке ответа в fastapi
 Вопросы
 PYTHON 3.X
