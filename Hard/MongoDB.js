@@ -1,3 +1,173 @@
+MongoDB Interview Question and Answers
+Hey! Are you preparing to attend any of the interviews in the profile of MongoDB? Wow! Then you are at the right place. This article consists of the MongoDB interview questions. These questions are specifically designed for both freshers and experienced to help you gain an understanding of the nature of the questions you might come across when you attend a MongoDB interview. This article includes the frequently asked interview questions that are curated by the experts. You will definitely be able to crack the interview at your best. Let us get started and review the interview questions and answers.
+
+Most frequently asked MongoDB Interview Questions
+Give a brief explanation of MongoDB along with its history?
+Illustrate the differences between MongoDB and MySQL?
+Define the terms  Auditing and aggregation pipeline?
+Define the storage engine in MongoDB with an example.
+Explain the term indexes in MongoDB?
+Illustrate the differences between MongoDB and Cassandra?
+What is meant by a replica set in MongoDB? What is the primary and secondary replica set in MongoDB?
+How does MongoDB provide consistency? Why is MongoDB not chosen or applicable for a 32-bit system?
+Does an update fsync to disk immediately?
+What is meant by the _ id Field in MongoDB?
+Q1) Give a brief explanation of MongoDB along with its history?
+Ans: MongoDB (from humongous) is referred to as a cross-platform which is designed for a document-oriented database. MongoDB is called a NoSQL database It is released as a combination of the GNU Affero General Public License and the Apache License, MongoDB is an open-source platform. In 2007, the MongoDB was first developed by the software company 10gen (now, MongoDB Inc.) which is referred to as a component of a planned platform as a service-based product. Then, moved to the open-source development model in 2009, with 10gen offering its services to commercial support and other services. Since then, MongoDB has been adopted and called backend software by a number of major websites and services, including Craigslist, eBay, Foursquare, SourceForge, Viacom, and the New York Times, among others. Currently, MongoDB is the most popular NoSQL database system in the market.
+
+Q2) What do you understand by the term NoSQL databases? Is MongoDB called a NoSQL database or not? Explain.
+Ans: In the current times, we all know that the Internet is loaded and blocked with big data, big users, and so on that are becoming more complex to manage and maintain day by day. NoSQL is the solution to all the above-mentioned problems; it is not a traditional database management system, and also not even a relational database management system (RDBMS).
+
+NoSQL refers to ‘Not only SQL’, and it is referred to as a type of database that is capable of handling and sorting all types of messy, unstructured, unorganized, and complicated data. It is just a new way to think about databases. Yes, MongoDB is a NoSQL database.
+
+Do you want to Master MongoDB? Then enroll in "MongoDB Training" This course will help you to master MongoDB
+Q3) Illustrate the differences between MongoDB and MySQL?
+Ans: By this time, we all know that MongoDB and MySQL are free and open-source databases, but there is a lot of difference between them in terms of performance speed,data representation, relationships, transaction, schema design, querying data, and definition, normalization, and many more. MySQL and MongoDB will be different in their ways lie the comparison that exists between relational and non-relational databases.
+
+Q4) What kind of a database is MongoDB?
+Ans: MongoDB is referred to as a document-oriented DBMS. We can consider it as MySQL but it includes JSON-like objects that comprise the data model, rather than RDBMS tables. Significantly, MongoDB provides its support to neither join nor transactions. However, it provides the features that include secondary indexes, hence being called an expressive query language, atomic writes on a per-document level, and fully consistent reads. Operationally, MongoDB is compatible to offer at its best with the master–slave replication along with automated failover and also a built-in horizontal scaling using the automated range-based partitioning.
+
+Q5) What are the points that are needed to be taken into consideration while creating a schema in MongoDB?
+Ans: Below are the points that need to be taken care of while creating a schema in MongoDB.
+
+Designing of the  schema based on the user requirements
+Combining the objects into one document if we want to use them together; otherwise, separate them as usual.
+Perform the joins while on write, and do not when it is on reading mode.
+Optimize the schema for the most frequent use cases.
+Perform the complex aggregation in the schema as required.
+Q6) Define the terms  Auditing and aggregation pipeline?
+Ans:
+
+Auditing: Auditing is one of the terms that is providing the administrators with the capability to perform the verification that the implemented security policies are controlling the activity in the system.
+
+Aggregation pipeline: The aggregation pipeline is referred to a framework that is designed for performing the aggregation tasks. The pipeline is used for transforming the documents into aggregated results.
+
+Q7) Define the term MapReduce?
+Ans: MapReduce is referred to as a generic multi-phase data aggregation modality that is used responsibly for processing quantities of data.
+
+Q8) What’s a Secondary or Slave?
+Ans: A secondary is referred to as a node/member which is capable of applying the operations from the current primary. This is performed by tailing the replication oplog (local.oplog.rs). The replication from primary to secondary is said to be asynchronous, however, the secondary will try to ensure to stay as close to current as possible (often this is just a few milliseconds on a LAN).
+
+Q9) Define the term GridFS and explain its functionality in MongoDB?
+Ans: In MongoDB, GridFS is referred to as a special specification that is designed for storing and retrieving files that exceed the BSON-document size limit (16MB). The primary function of this grid is to divide a particular file into smaller segments and is responsible for storing each of those segments as a separate document rather than storing them into a single document.
+
+Q10) Define the storage engine in MongoDB with an example.
+Ans: A storage engine is referred to as a part of the database and is specifically used for managing the data storage on the disk. Let us consider an instance where there are two storage engines, one engine might offer its support for only read-heavy workloads, and another storage engine might offer higher throughput for writing operations. 
+
+MongoDB Interview Questions For Experienced
+Q11) List out the key features that are provided by MongoDB?
+Ans: Below listed are the core features of MongoDB:
+
+Rich query language
+High performance
+Automatic scaling
+High availability
+Related Article: MongoDB Tutorial
+Q12) Explain the term indexes in MongoDB?
+Ans: In MongoDB, Indexes are used for performing the execution of the query efficiently. In the indexes are not used, MongoDB must perform a collection scan, in which scanning of every document in a collection takes place, to select those documents that match the query statement. If an appropriate index exists for a query, MongoDB can make use of the index in order to limit the number of documents it must inspect.
+
+Q13) Illustrate the differences between MongoDB and CouchDB?
+Ans: Below are the difference between MongoDB and CouchDB:
+
+MongoDB is faster when compared to CouchDB while CouchDB is safer when compared to MongoDB.
+MongoDB does not provide its support for triggers and is not available in MongoDB while triggers are available in CouchDB.
+MongoDB also allows serialization of the JSON data to BSON while CouchDB is not capable of storing the data in JSON format
+Q14) Illustrate the differences between MongoDB and Cassandra?
+Ans: Below are the differences between MongoDB and Cassandra:
+
+MongoDB is referred to as a cross-platform document-oriented database system while Cassandra is called a high-performance distributed database system.
+MongoDB is written in the C++ programming language while Cassandra is written in the Java programming language.
+MongoDB is also providing its support to easily administer in the case of any failure while Cassandra is capable of providing high availability without any single point of failure.
+Q15) Do you think that there is a need to create a database command in MongoDB?
+Ans: There is no need to create a database manually in MongoDB as it creates automatically whenever you save the value into a defined collection the first time.
+
+Q16) Why is a profiler used in MongoDB?
+Ans: A database profiler is designed for collecting the data about MongoDB write operations, database commands, cursors, on a running MongoDB instance. You are allowed to enable the profiling feature on a per-database or per-instance basis. The database profiler is capable of writing all the data it collects to the system. The profile collection is called a capped collection.
+
+Q17) What is meant by sharding in MongoDB?
+Ans: In MongoDB, Sharding is referred to as a procedure of storing the data records across multiple machines. Sharding is a MongoDB approach that is allowing us to meet the demands of data growth. It will be creating a horizontal partition of data in a database or search engine. Each partition is referred to as shard or database shard.
+
+Related Article: MongoDB Data Types
+Q18) What is meant by a replica set in MongoDB? What is the primary and secondary replica set in MongoDB?
+Ans: A replica is referred to be specified as a group of mongo instances that will be capable of hosting the same data set. In the replica set, one node will be a primary one, and another will be the secondary.  All data will be replicated from primary nodes to secondary nodes.
+
+In MongoDB, the primary nodes are those nodes that can accept writes. These are also called master nodes. The replication in MongoDB is referred to as a single master, Hence, only one node can accept write operations at a time. The Secondary nodes are known as slave nodes. The secondary nodes are referred to as the read-only nodes that will be replicated from the primary.
+
+Q19) Do you think it is possible to remove old files in the moveChunk directory?
+Ans: Yes, it is possible to delete the old files once the operations are performed as these files are made as backups during normal shard balancing operations. This is considered as a manual cleanup process and necessary to free up space.
+
+Q20)  Is MongoDB better than other SQL databases? If yes, please explain how?
+Ans: It is true that MongoDB is better than other SQL databases as it allows a highly flexible and scalable document structure.
+
+For example:
+
+One data document in MongoDB can have five columns and the other one in the same collection can consist of ten columns.
+MongoDB databases are faster than SQL databases due to the concepts of efficient indexing and storage techniques.
+MongoDB DBA Interview Questions
+Q21) How to perform the transactions/locking in MongoDB?
+Ans: MongoDB does not make use of the conventional locking with reduction as it is designed to be light, high-speed in its presentation. It can be considered as parallel to the MySQL MyISAM auto entrust sculpt. With the simplest business sustain, performance is high and enhanced, particularly in a structure that includes numerous servers.
+
+Q22) How does MongoDB provide consistency? Why is MongoDB not chosen or applicable for a 32-bit system?
+Ans: MongoDB makes use of the reader–writer locks, which provides its support for simultaneous readers allowing them to access or view any supply like a database or a collection but always offers private access to single writes. MongoDB is not considered as a 32-bit system because, in order to run the 32-bit MongoDB, with the server, information and indexes require 2 GB.  This is the reason why it is not used in 32-bit devices.
+
+Q23) What is a ‘namespace’?
+Ans: MongoDB is capable of storing JSON objects in collections. The namespace is referred to as the concatenation of the database name and the collection name.
+
+Q24) Does an update fsync to disk immediately?
+Ans: No, an update does not fsync immediately while the writes to disk are lazy by default. A write may only hit the disk a couple of seconds later. Let us consider an example, if the database receives a thousand increments to an object within just a span of one second, then it will only be flushed to disk once. (Note: fsync options are available both at the command line and via getLastError_old.)
+
+Also, read: MongoDB Database
+Q25) How long does a replica set failover take?
+Ans: It may take at least a time span of  10-30 seconds for the primary to be declared down by the other members and a new primary to be elected. During this particular time frame, the cluster will be down for primary operations which usually includes the writes and strongly consistent reads. However, eventually, consistent query execution will take place along with the secondaries at any time (in slaveOk mode), including during this window.
+
+Q26) Which programming languages can be used with MongoDB?
+Ans: MongoDB is capable of being accepted in all programming languages. The following is a list of a few languages:
+
+Python
+Ruby
+Scala
+Go
+Erlang
+C
+C++
+Java
+C#
+Node.js
+Perl
+PHP
+Q27) List out the different index types in MongoDB?
+Ans: Below is the different types of index types available in Mongo DB:
+
+Single field –This index type is used  for indexing and sorting on a single field
+Multi-key – This index type is used for indexing array data
+Default – This index type is the _id that MongoDB creates
+Hashed – This index type is used  for indexing  the hashes of a field value
+Compound – This index type is used for multiple fields
+Geospatial – This index type is used to query geospatial(location) data
+Q28) Explain the working mechanism of the Journaling work in MongoDB?
+Ans: Journaling is specifically used for recovering the information after the last checkpoint when MongoDB exits unexpectedly. The storage engine (WiredTiger) is capable of creating a journal record for each of the clients that have initiated the write operation. If there is an update, a single journal record is also capable of recording the update operation as well as index modifications. Journal records are used for storing using the in-memory buffering. Journal files will be stored under the ‘journal’ directory that is created by MongoDB. 
+
+[Check Out: MongoDB Interface]
+
+Q29) Briefly explain the procedure of starting the MongoDB server/ instance?
+Ans: In order to start a MongoDB instance, the below steps have to be followed:
+
+The first step is to open the command prompt and run the mongod.exe.
+Alternatively, you can also navigate to the path where MongoDB is installed, for example, “C: MongoDB”
+Then you need to navigate to the bin folder, locate the mongod.exe and double click the same to perform the execution.
+You are also allowed to navigate to the required folder, for example, “C: MongoDB/bin” and type mongo to connect to MongoDB through the shell.
+Q30) What is meant by the _ id Field in MongoDB?
+Ans: In MongoDB, each document will be stored as a collection that will require a unique _id field which acts as a primary key. If an inserted document omits the _id field, the MongoDB driver will automatically generate an ObjectId for the _id field. The _id field includes the following behavior and constraints:
+
+By default, MongoDB will be creating a unique index on the _id field during the creation of a collection.
+The _id field will always be the first field in the documents. If the server receives a document that does not include the _id field first, then the server will move the field to the beginning.
+The _id field may also contain values of any BSON data type, other than an array.
+While storing values for _id, we can follow these options: Use an ObjectId,  or use a natural unique identifier, also generate an auto-incrementing number, generate a UUID in our application code. Most of the MongoDB driver clients will contain the _id field and will also generate an ObjectId before it sends the insert operation to MongoDB; however, if the client sends a document without an _id field, the MongoDB will add the _idfield and then generate the ObjectId.
+
+Conclusion:
+
+We are at the end of the article now. By now, you might have got an idea of the interview questions that will be asked in an interview for the job roles in MongoDB. As most organizations are looking for individuals who are expertized and have knowledge on the subject, you can crack the interview and attain the best career that you are looking for. All the best.
+
 37 вопросов для собеседования по MongoDB (с примерами ответов)
 
 Реклама
