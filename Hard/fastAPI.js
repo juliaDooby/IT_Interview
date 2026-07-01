@@ -1,3 +1,114 @@
+Как остановить цикл при выключении в FastAPI?
+Вопросы
+PYTHON
+Как остановить цикл при выключении в FastAPI?
+У меня есть маршрут /, который запустил бесконечный цикл (технически до тех пор, пока веб-сокет не будет отключен, но в этом упрощенном примере он действительно бесконечен). Как остановить этот цикл при выключении:
+
+from fastapi import FastAPI
+
+import asyncio
+
+app = FastAPI()
+running = True
+
+@app.on_event("shutdown")
+def shutdown_event():
+    global running
+    running = False
+
+@app.get("/")
+async def index():
+    while running:
+        await asyncio.sleep(0.1)
+Согласно документам @app.on_event("shutdown") следует вызывать во время выключения, но подозревается, что оно вызывается аналогично событию времени жизни, которое вызывается после того, как все завершено, что в этой ситуации является тупиком.
+
+Тестировать:
+
+я запускаю его как uvicorn module.filename:app --host 0.0.0.0
+завиток http://ip:порт/
+затем остановите сервер (нажав CTRL+C)
+и вы видите, что он зависает навсегда, так как для run никогда не устанавливается значение false, потому что shutdown_event не вызывается. (Да, вы можете принудительно завершить работу, нажав CTRL+C)
+
+ 10.04.2023 11:19
+5
+10
+386
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Я думал, что это будет просто, но нет :-) Я думаю, что даже стоит запросить функцию в FastAPI для события «перед завершением работы», потому что это может быть просто, если оно встроено в код.
+
+Итак, при запуске uvicorn регистрирует обратный вызов с циклом событий, который выполняется при запросе на выход. Это изменяет состояние объекта сервера uvicorn при однократном вызове (устанавливает для атрибута server.should_exit значение True). Таким образом, если у вас есть чистый способ запустить экземпляр сервера, вы можете просто опросить этот атрибут в своем долгосрочном обзоре, чтобы увидеть, должен ли он выйти. Я не нашел способа получить ссылку на работающий сервер.
+
+Поэтому я решил зарегистрировать еще один обработчик сигналов: тот, который вы можете использовать в своем приложении, чтобы изменять состояния по мере необходимости. Проблема в том, что у asyncio может быть только один обработчик на сигнал, при регистрации обработчика предыдущий теряется. Это означает, что установка пользовательского обработчика удалит обработчики uvicorn, и он просто не выключится вообще.
+
+Чтобы обойти это, мне пришлось проанализировать loop._signal_handlers в работающем асинхронном цикле: он должен быть закрытым, но при этом я мог связать исходный вызов обработчика сигнала после пользовательского обработчика сигнала.
+
+Короче говоря, этот код работает для выхода из сервера по первому «ctrl + C»:
+
+from fastapi import FastAPI, Request
+import asyncio
+
+from uvicorn.server import HANDLED_SIGNALS
+from functools import partial
+
+app = FastAPI()
+running = True
+
+#@app.on_event("shutdown")
+#def shutdown_event():
+    #global running
+    #running = False
+
+@app.get("/")
+async def index(request: Request):
+    while running:
+        await asyncio.sleep(0.1)
+
+@app.on_event("startup")
+def chain_signals():
+    loop = asyncio.get_running_loop()
+    loop = asyncio.get_running_loop()
+    signal_handlers = getattr(loop, "_signal_handlers", {})  # disclaimer 1: this is a private attribute: might change without notice.
+                                                            # Also: unix only, won't work on windows
+    for sig in HANDLED_SIGNALS:
+        loop.add_signal_handler(sig, partial(handle_exit, signal_handlers.get(sig, None))  , sig, None)
+
+def handle_exit(original_handler, sig, frame):
+    global running
+    running = False
+    if original_handler:
+        return original_handler._run()   # disclaimer 2: this should be opaque and performed only by the running loop. 
+                                         # not so bad: this is not changing, and is safe to do. 
+
+
+Я хотел бы подчеркнуть, что я смог добраться до этого рабочего фрагмента только потому, что вы предоставили минимальный рабочий пример своей проблемы. Вы удивитесь, как много авторов вопросов не делают этого.
+
+ 10.04.2023 17:54
+ Ответ принят как подходящий
+import signal
+import asyncio
+from fastapi import FastAPI
+
+app = FastAPI()
+running = True
+
+def stop_server(*args):
+    global running
+    running = False
+
+@app.on_event("startup")
+def startup_event():
+    signal.signal(signal.SIGINT, stop_server)
+
+@app.get("/")
+async def index():
+    while running:
+        await asyncio.sleep(0.1)
+Источник: https://github.com/tiangolo/fastapi/discussions/9373#discussioncomment-5573492
+
+Настройка и отлов сигнала SIGINT позволяет поймать первый CNTR+C. Это установит running в False, что завершит цикл в index(). Завершение текущего запроса, позволяющее отключить сервер.
+
 TypeError - Образец Fastapi не работает во время загрузки
 Вопросы
 PYTHON 3.X
