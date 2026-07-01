@@ -1,3 +1,121 @@
+List of Next JS Interview Questions
+To help you succeed in your next JS interview, we’ve compiled a list of 16 essential Next JS interview questions and provided detailed answers to each. Let’s get started:
+
+Share this:
+Q1. What is Next.js, and how does it differ from traditional React applications?
+
+Next.js is a flexible React framework that gives you building blocks to create fast web applications.
+
+It offers server-side rendering (SSR), automatic code splitting, and an integrated routing system, making it an excellent choice for building SEO-friendly and high-performance web applications.
+
+Unlike traditional React applications, Next.js allows you to build applications that render pages on the server, enhancing performance and search engine optimization.
+
+Share this:
+Q2. What is server-side rendering (SSR) in Next.js, and why is it beneficial?
+
+Server-side rendering (SSR) is a feature in Next.js that allows a React application to render its initial HTML on the server before sending it to the client. This is beneficial for several reasons:
+
+Improved SEO: Search engines can easily index SSR content, leading to better search engine rankings.
+Faster initial page loads: SSR provides a fully-rendered HTML page, reducing the time it takes for the user to see the content.
+Optimized performance: SSR can reduce the load on the client-side, resulting in smoother and more responsive web applications.
+Share this:
+Q3. Explain the purpose of getStaticProps and getServerSideProps in Next.js.
+
+getStaticProps and getServerSideProps are two methods used to fetch data and pre-render pages in Next js
+
+getStaticProps: This method is used for static site generation (SSG). It fetches data at build time and generates static HTML pages. The data is pre-fetched during build and can be cached for faster performance. This is suitable for content that doesn’t change often.
+getServerSideProps: This method is used for server-side rendering (SSR). It fetches data on each request, making it suitable for dynamic content that changes frequently. The data is fetched on the server, allowing for real-time data updates.
+getServerSideProps fetches data on every request and is suitable for dynamic data that changes frequently.
+
+In contrast, getStaticProps fetches data at build time and generates static pages, making it ideal for data that doesn’t change often, like blog posts.
+
+Share this:
+Q4. What is meant by Styled JSX in Next JS?
+
+We use this CSS-in-JS library for writing encapsulated and scoped CSS for styling Next JS components. No other component gets affected by introducing the styles to a component using Styled JSX.
+
+This allows adding, changing, and deleting the styles without any complications.
+
+Share this:
+Q5. What is DOM?
+
+DOM that is, Document Object Model, is HTML elements’ object representation. The user interface and our code are kind of bridged by it. And it contains a tree-like structure having relationships such as child and parent.
+
+Share this:
+Q6. What is dynamic routing in Next.js, and how do you implement it?
+
+Dynamic routing in Next.js allows you to create routes that match various patterns, such as /users/1 or /products/123. To implement dynamic routing, you can use the pages directory.
+
+Next.js uses square brackets [] to denote dynamic segments in a URL path.
+
+For example, to create a dynamic route for user profiles, you can create a file named [id].js within the pages/users directory.
+
+The [id] portion indicates a dynamic segment that can be accessed as query.id within the page component. This way, you can handle different user profiles based on the id parameter.
+
+Share this:
+Q7. What is code splitting, and how does Next.js support it?
+
+Code splitting is a technique that divides your JavaScript bundle into smaller chunks. Next.js has built-in support for automatic code splitting, which means that it generates optimized bundles for your pages.
+
+This is done by breaking down the JavaScript code into smaller parts, which are loaded only when needed. It reduces the initial load time of your application and improves performance.
+
+Share this:
+Q8. What are the main advantages of using next/link for client-side navigation?
+
+The next/link component in Next.js is used for client-side navigation. It provides several advantages:
+
+Prefetching: next/link automatically prefetches linked pages in the background, which can significantly improve navigation speed.
+Smooth transitions: It enables smooth page transitions without full page reloads.
+Accessibility: It enhances accessibility by automatically handling the aria-current attribute and focusing on the newly navigated content.
+Share this:
+Q9. How can a headless CMS be implemented using Next.js?
+
+You can use a third-party CMS like Contentful, Strapi, or Sanity to construct a headless CMS with Next.js. The getStaticProps or getServerSideProps functions can be used to integrate these CMS platforms’ APIs for content retrieving and updating with Next.js.
+
+Share this:
+Q10. Differentiate between imperative and declarative programming. And what kind is used in React?
+
+In Imperative programming, we have to specify each step of building anything, such as a user interface. Whereas in Declarative programming, we just need to describe the end product, and the software will create it for us. It takes comparatively less effort and time.
+
+Share this:
+Q11. Is Next.js suitable for SEO optimization?
+
+Yes, Next.js is designed to be SEO-friendly with built-in server-side rendering (SSR) and support for providing metadata for each page.
+
+Share this:
+Q12. How do I deploy a Next.js application?
+
+You can deploy a Next.js app to various hosting platforms such as Vercel, Netlify, or AWS. Typically, you build your app and then deploy the generated output.
+
+Share this:
+Q13. How do I navigate between pages in Next.js?
+
+You can use the Link component from next/link for client-side navigation. For server-side navigation, you can use the useRouter hook or next/router methods.
+
+Share this:
+Q14. What is API Routed in Next JS and How it works
+
+Next.js has support for API Routes, which let you easily create an API endpoint as a Node.js serverless function
+
+API Routes let you create an API endpoint inside a Next.js app. You can do so by creating a function inside the pages/api directory.
+
+Let’s try it out. Create a file called hello.js in pages/api with the following code:
+
+export default function handler(req, res) {
+  res.status(200).json({ text: 'Hello' });
+}
+Try accessing it at http://localhost:3000/api/hello. You should see {"text":"Hello"}.
+
+Share this:
+Q15. What is the purpose of the next.config.js file in a Next.js project?
+
+The next.config.js file allows you to customize your Next.js configuration. You can modify webpack settings, set environment variables, and define other project-specific configurations in this file.
+
+Share this:
+Q16. Explain the concept of "hybrid" Next.js apps.
+
+Hybrid Next.js apps combine server-side rendering (SSR) and static site generation (SSG) on the same site. This allows you to have both dynamic and static pages in one application, providing the benefits of both approaches.
+
 1. Describe the differences between SSR, SSG, and client-side rendering (CSR) in Next.js.
 SSR (Server-Side Rendering) in Next.js means the HTML for a page is generated on the server for each request. This is useful for dynamic content that changes frequently. SSG (Static Site Generation) pre-renders pages at build time, creating static HTML files. These files can be served quickly since they're generated ahead of time, making SSG ideal for pages with content that doesn't change often. Client-Side Rendering (CSR) loads a minimal HTML shell and uses JavaScript to render content on the client side after the initial load. CSR is great for highly interactive applications where the initial content isn't SEO-critical.
 
