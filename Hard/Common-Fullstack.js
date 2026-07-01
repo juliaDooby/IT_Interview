@@ -1,3 +1,19 @@
+Interview Questions for Full Stack Developers:
+1. What is the most essential programming language for your job?
+Candidates should list a variety of languages they find important to the job, not just one. Look for candidates who list the benefits and limitations of each language as it applies to their work.
+
+2. What coding projects are you currently working on?
+Good programmers are always coding, whether it be at work or for recreational reasons. Look for candidates who find creative uses for code outside of their work, as this is indicative of a highly skilled programmer.
+
+3. What, in your opinion, is the most important quality in a full stack developer?
+Candidates should list good organization skills and attention to detail as the most important qualities in a full stack developer.
+
+4. How do you stay abreast of developments in the technology industry?
+Candidates should list learning and practicing new languages, reading programming blogs, and attending conferences as their means of staying informed.
+
+5. Describe a time when you made a mistake in your duties. How did you rectify it?
+Candidates should acknowledge the significance of diligence and how programming oversight can derail an entire company's business operations. Look for stories where candidates erred, rectified their error, and learned a valuable lesson from it.
+
 Table of Contents
 
 1) Full Stack Developer Interview Questions on Front-end Development
