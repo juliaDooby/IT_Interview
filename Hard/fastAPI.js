@@ -1,3 +1,98 @@
+TypeError - Образец Fastapi не работает во время загрузки
+Вопросы
+PYTHON 3.X
+TypeError - Образец Fastapi не работает во время загрузки
+Я впервые пробую fastapi и использую пример кода в документе.
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+Я также установил необходимые пакеты перед выполнением
+
+pip install "fastapi[all]" 
+pip install uvicorn
+И выполнение не удалось с TypeError.
+
+uvicorn model_sm:app --reload
+INFO:     Will watch for changes in these directories: ['/Users/name/workplace/flask']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [24303] using StatReload
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/server.py", line 59, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/server.py", line 66, in serve
+    config.load()
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/config.py", line 471, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/name/workplace/flask/model_sm.py", line 2, in <module>
+    from fastapi import FastAPI
+  File "/usr/local/lib/python3.9/site-packages/fastapi/__init__.py", line 7, in <module>
+    from .applications import FastAPI as FastAPI
+  File "/usr/local/lib/python3.9/site-packages/fastapi/applications.py", line 16, in <module>
+    from fastapi import routing
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 478, in <module>
+    class APIRouter(routing.Router):
+  File "/usr/local/lib/python3.9/site-packages/fastapi/routing.py", line 497, in APIRouter
+    lifespan: Optional[Lifespan[Any]] = None,
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/typing.py", line 277, in inner
+    return func(*args, **kwds)
+  File "/usr/local/Cellar/python@3.9/3.9.15/Frameworks/Python.framework/Versions/3.9/lib/python3.9/typing.py", line 768, in __getitem__
+    _check_generic(self, params, len(self.__parameters__))
+  File "/usr/local/lib/python3.9/site-packages/typing_extensions.py", line 97, in _check_generic
+    raise TypeError(f"{cls} is not a generic class")
+TypeError: typing.Union[typing.Callable[[ForwardRef('Starlette')], typing.AsyncContextManager[NoneType]], typing.Callable[[ForwardRef('Starlette')], typing.AsyncContextManager[typing.Mapping[str, typing.Any]]]] is not a generic class
+В поиске ничего полезного не нашел. Любая подсказка, как это исправить?
+
+ 05.04.2023 01:37
+0
+1
+85
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+pip install fastapi
+попробуйте установить fastapi с помощью приведенной выше команды, у меня это работает.
+
+если вы используете macOS или Linux, вы должны использовать следующую команду.
+
+pip3 install fastapi
+
+Перед запуском этого скрипта откройте терминал и импортируйте FastAPI, чтобы убедиться, что он работает правильно. затем запустите этот скрипт.
+
+ 05.04.2023 02:26
+ Ответ принят как подходящий
+Обнаружено, что команда uvicorn зависит от Python3.9 для выполнения. Поэтому я переустановил все следующие пакеты, используя pip3.9, что устраняет проблему.
+
+pip3.9 install typing-extensions
+pip3.9 install uvicorn
+pip3.9 install fastapi
+
 Минимальный сценарий статического файлового сервера FastAPI
 Вопросы
 FASTAPI
