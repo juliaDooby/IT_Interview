@@ -1,3 +1,135 @@
+Top 20 TypeScript Interview Questions and Answers 
+1. Define TypeScript
+Answer: A compiler may accept TypeScript as a superset of JavaScript and create ordinary JavaScript from it since it is clearly typed.
+
+Dealing with JavaScript in a totally object-oriented context is made possible by TypeScript. Use classes and interfaces in this situation. It is also labeled, much like C# or Java. You'll need a TypeScript compiler to turn the code into a JavaScript file, which you can then utilize.
+
+The TypeScript compiler converts a TypeScript file with a.ts extension into a JavaScript file. Here, with a variety of editors, including VS Code, Sublime, etc., you may produce TypeScript. 
+
+2. What Are the Advantages of TypeScript?
+Answer: Advantages include:
+
+TypeScript is simple, quick, and straightforward to understand, and it can run everywhere JavaScript can. As a result, it ranks as one of the top frameworks for front-end programming for newcomers.
+JavaScript developers may switch to TypeScript since it is sufficiently comparable to JavaScript.
+The ability to write TypeScript using an IDE speeds up development and can result in more protected, resilient products.
+TypeScript code may be called from JavaScript code, providing compatibility for older JavaScript-based programmes.
+It includes ES6 and ES7 capabilities that may be used with JavaScript ES5 engines like Node.js.
+It complies with ECMAScript requirements. Your typescript code can be compiled to the ECMAScript targets of your choosing. This enables you to leverage ES2015's features and other features. Modules, lambda functions, restructuring, etc., are a few examples of these capabilities.
+It gives JavaScript-type support.
+Because an IDE can be used, TypeScript programming is a significantly superior experience to normal JavaScript development.
+If severe null checks are enabled using TypeScript, the TypeScript compiler will only allow you to write unknown to a variable if you have specifically specified it to be a nullable type. 
+TypeScript is supported by Microsoft and is available under an Apache 2 license.
+Because TypeScript and JavaScript are interoperable, TypeScript can be used right away by developers who are already familiar with JavaScript.
+3. What Drawbacks Does TypeScript Have? 
+Answer: Here are some disadvantages.
+
+Because TypeScript code must be compiled, the implementation of TypeScript components might be slower than with JavaScript.
+Abstract classes are not supported by TypeScript.
+A TypeScript application will need an additional compilation step when running in a browser, which might have a negative impact on speed.
+It might not be easy to work with libraries from third parties.
+4. What Are TypeScript's Component Elements?
+Answer: In TypeScript, there are three levels. The language consists of the following when installed normally:  
+
+The language is often run using an IDE.
+A compiler that converted TypeScript to straightforward JavaScript code.
+The Language Service, which offers editor functions on TypeScript code that already exists. 
+5. What Do TypeScript Types Do?
+Answer: We'll start asking more technical questions now. The types of values we employ in our programmes are known as types in TypeScript. It supports a wide range of value types, including integers, texts, and Boolean values, in addition to other kinds like Enum, any, and never.
+
+Types should always be declared explicitly in TypeScript for a number of reasons. Types make code more readable and clear, and they can also help your compiler identify issues that result from improper type assignments. Additionally, Types provide an additional layer of documentation that might be useful when working in a team context. 
+
+6. What Kind of Data Are Primitive? 
+Answer: These are the options: 
+
+Number 
+String 
+Boolean
+BigInt
+Symbol
+Undefined
+Null 
+7. What Are TypeScript's Special Data Types? 
+Answer: 
+
+Any
+Void
+Never 
+8. What Scope Does TypeScript Offer? 
+Answer: As far as variables are concerned, there are three scopes: 
+
+Local 
+Function
+Global
+Var is used to create both function and global variables, whereas const and let can be applied to either.
+
+9. In TypeScript, What Are Interfaces?
+Answer: Which unique entity, a TypeScript Interface, enables us to build objects with specific properties? Let's go ahead and construct one. In order to establish a TypeScript Interface, for instance, we may start by entering the reserved term interface.
+
+10. What Are the Various TypeScript Features? 
+Answer: The following characteristics:
+
+It just contains JavaScript.
+It supports more JS libraries.
+It's transportable.
+11. Does Method/Function Overloading Work With TypeScript?
+Answer: The answer is that function overloading is available in TypeScript. The name and number of arguments can be the same for several functions, but the return type and parameter types need to be distinct. The overloading of functions with the same name, various types, and varying numbers of parameters is not supported by TypeScript.
+
+12. What Does the TypeScript Keyword Declare Do?
+Answer: The TypeScript keyword declares instructs the compiler not to trans-compile the code to JavaScript because it is present in external code.
+
+13. A TypeScript Map File Is What?
+Answer: The Map TypeScript file converts trans-compiled JavaScript from an unreadable format to a format that is understandable by humans. Since the source Map will be utilized, this is beneficial if debugging needs to be done while in production.
+
+14. In TypeScript, What Is Compiler Context?
+Answer: When TypeScript code is built, your compiler will inspect a collection of files and parse them to discover which code is acceptable and which is invalid. However, TypeScript also gives you the opportunity to modify compiler settings, and this is done using a tsconfig.json file.
+
+15. What Are TypeScript's Access Modifiers?
+Answer: When interacting with class members, TypeScript makes use of a number of access modifiers. Public, private, and protected modifiers are those that are supported.
+
+These function as follows:
+
+Being public means that a class's instance, child classes, and all of its members can access it.
+Private denotes that a class's members are separated from one another.
+A class's instance cannot access a resource that all of its members, including those in its descendant classes, may access.
+It is considered that a class member is public if the access modifiers for that member are left unspecified. Wherever possible, you should explicitly specify access because this might present problems with compliance procedures.
+
+You should also be aware that after your TypeScript code has been built, class modifiers have absolutely no impact. These modifiers are not taken into account when the compiler generates the resulting JS.
+
+16. Is JSX Compatible With TypeScript?
+Answer: It is possible. However, you must save your TypeScript file with an a.tsx extension.
+
+But when dealing with JSX and TypeScript, there are several crucial things to remember. JSX has to be compiled into valid JS since it is an embeddable XML-like syntax. This increases the number of compilation steps in your code, which may have an impact on performance.
+
+On the other side, TypeScript provides several strong tools for working with JSX, including type verification, embedding, and direct JSX compilation.
+
+17. What Do TypeScript Triple-Slash Directives Do?
+Answer: In TypeScript, triple-slash directives and functions are similar to comments in that they both carry compiler instructions. They include single XML tags.
+
+Only when they are at the top of the contained file do the triple-slash directives function. However, if they come after any other kind of statement or declaration, your compiler will consider them as standard comments and ignore them. You can place comments before them, including additional triple-slash directives.
+
+18. What JSX Modes Are TypeScript Compatible With?
+Answer: There are three JSX modes included with TypeScript by default. These respond, native, react, and preserved react.
+
+The JSX output of your code can be customized using these settings. The preserve mode's goal is to keep the JSX output within your compiled code so that another compiler can directly operate on it.
+
+The compiler will create a file with a .jsx file extension while this mode is active so that it can be further modified before usage. Similar functionality is provided by the react-native method. However, the output is given a .js file extension.
+
+React mode functions a little differently because it omits the React.createElement modifier, the result is devoid of raw JSX code. When utilizing this mode, the output file will have the .js file extension.
+
+19. What Do TypeScript Decorators Do?
+Answer: We'll discuss some of TypeScript's more unique features in these final few questions. These features will be brought up frequently during interviews because knowing about them indicates that you have used them frequently.
+
+"Decorators" is the first of these features. A specific kind of declaration called a decorator is used to supplement existing code with annotations and metadata. They carry out declarative actions. You must enable the experimental Decorators compiler function in order to utilize them.
+
+20) What Does TypeScript's Rest Parameter Mean?
+Answer: The Rest Parameter, a unique parameter that enables you to pass values to a function, is also a feature of TypeScript. By placing an ellipsis (...) before the parameter you're working with, you can call up this one. This makes it possible for functions to work with a variety of arguments, which is very helpful if you need to supply a function with an unknowable amount of parameters.
+
+However, there are a few things to keep in mind when using the Rest Parameter:
+
+For each function, only one rest parameter can be utilized.
+An array type must be explicitly defined.
+The parameter list should have it as the last argument.
+
 TypeScript Interview Questions and Answers
 The TypeScript compiler converts a TypeScript file with a.ts extension into a JavaScript file. Here, with a variety of editors, including VS Code, Sublime, etc.
 By Mahesh Sharma user avatar Mahesh Sharma · Nov. 11, 22 · Opinion
