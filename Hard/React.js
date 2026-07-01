@@ -1,3 +1,161 @@
+Full-Stack Developers, Here’s How to Ace Your Technical Interview
+by Neal Shyam
+Updated 6/19/2020
+
+
+
+
+person using a laptop to write code
+oatawa/Getty Images
+Technical interviews can be intimidating. But if you know what to expect and what interviewers are looking for, you can prepare and succeed.
+For most full-stack software developers, technical interviews are one of the last hurdles before receiving a job offer.
+
+Trending Searches
+
+1
+Software Engineering Jobs
+2
+Data and Analytics Jobs
+3
+Business Operations Jobs
+4
+Human Resources and Recruitment Jobs
+5
+Sales Jobs
+6
+Project Management Jobs
+7
+Account Management Jobs
+8
+Healthcare Jobs
+SEARCH ALL JOBS
+Each step in the hiring process has a particular purpose: Phone screens are about identifying general fit. Behavioral interviews ensure you have a baseline of interpersonal skills. Reference checks reveal how you’ve dealt with stress, disagreements, and teamwork. And technical interviews evaluate how well your programming skills address the company’s needs and the role’s responsibilities.
+
+Every developer has horror stories about technical interviews. Whiteboarding compiler-ready code, inverting binary trees, programming on a totally unfamiliar computer, even doing FizzBuzz in COBOL while blindfolded. OK, I made that last one up.
+
+Find the right job for you
+Let The Muse match you with a company culture that fits your goals and values. First, select your career path:
+
+1 of 3
+1 of 3
+Skip
+Fortunately, things have changed a lot in the last few years. Instead of old-school Google-style brain teasers (like “How many golf balls would fit in this room?”) or whiteboarding “Hello, World!” in 10 languages, you’re more likely to get a take-home assignment or have a collaborative discussion—assessments that more closely mirror the kind of work you’d be doing if hired.
+
+Interviewers want you to succeed. Hiring you means they can go back to doing their real jobs, the company becomes more productive, and everyone enjoys more money and success.
+
+A technical interview may appear daunting, but ultimately, it’s a test of your problem solving skills. And that’s something you can practice and prepare for.
+
+
+
+First, the Basics
+If resumes are about telling someone what you can do, technical interviews are about showing it.
+
+No matter what your interviewer asks you, the plan should be the same: Understand the problem, formulate a solution, explain it, and execute it. In other words, the best way to prep for your interview is to be a good engineer.
+
+That doesn’t mean you shouldn’t do any homework ahead of a technical interview, though. Start by reviewing the company’s stack. If it’s a Ruby shop, you should understand how Ruby works. Use StackShare and any public GitHub repos the company has to identify which languages and libraries they’re using.
+
+Refresh your coding skills by completing HackerRank’s Interview Prep Kit or LeetCode’s top Interview Questions, or picking up a copy of Cracking the Coding Interview: 150 Programming Interview Questions and Solutions along with the solution manual. And if you prefer to learn through videos, Devpost has some great ones about preparing for coding interviews (here), acing your technical (here), and whiteboarding a game of Battleship (here).
+
+Whether you visit the office or video chat in from home, dress comfortably and professionally. You can’t think straight if your shoes are too tight or you’re worried about a sloppy collar.
+
+Once you begin, remember that if you freeze up, get something wrong, or don’t know an answer, you can just be honest and acknowledge it. Don’t worry about dead air or sounding dumb. If you need a minute to think, take it, and then come back into the discussion.
+
+Talk through the problem with your interviewer, ask questions, and reevaluate your approach. This is like showing your work on a test for partial credit, and it can swing the situation in your favor. In a sense, talking through your thought process—i.e. showing how you think—is even more important to the interviewer than the solution itself.
+
+
+
+How to Prepare for (and Ace) 4 Types of Technical Challenges
+Not every technical interview is done face-to-face. Some don’t even involve writing code. It all depends on the company and the role.
+
+There are four basic types of tests, each of which evaluates different skills you’ll need on the job—so you’ll need to approach and prepare for each one accordingly.
+
+
+
+1. Live Coding Exercise
+This is the archetypal technical interview: Come in and write working code within 30 or 40 minutes.
+
+For example, if you’re presented with some broken code, you’ll need to identify the bug, fix it, pass the test suite, and then explain what you did. In this kind of technical, which is very popular with Test Driven Development (TDD) teams, you’ll probably be asked to fix something trivial. The key is being able to read a test spec and identify which code blocks affect it.
+
+It’s effectively a pair programming exercise. Your interviewer may be in the room with you or join remotely via video chat. For added stress, you’re unlikely to have access to your ideal dev environment. You may be limited to a simplified Integrated Development Environment (IDE) or an unfamiliar laptop.
+
+Even if you can’t fix the bug, your process still matters. Ask questions when you’re stuck and talk your interviewer through your approach.
+
+The best way to prepare for this type of challenge is to make sure you can write code outside of your ideal environment. That means practicing writing code with no autocomplete, no fancy key bindings, no dual-screen setup, and no custom dotfile aliases.
+
+If you’ve never written tests before, this is a great time to learn. Try your hand at some Coding Dojo Katas or problems from the TDD Community of Practice.
+
+In addition, when you’re scheduling your technical, ask what language you’ll be coding in or if you can pick one. You don’t want to show up expecting Python and find yourself stuck with Go or Rust.
+
+
+
+2. Take-Home Assignment
+Take-home tests offer all the benefits of the real world—namely, access to Google, Stack Overflow, and your own computer—while still evaluating your programming skills. You prep for them the same way as live coding, but you’ll deliver your results differently.
+
+For example, you might be asked to read a short product spec and implement a Sudoku validator, including a test suite. After submitting your code, you’ll schedule a meeting to go in to present your work. Validating Sudoku boards isn’t that difficult, but your implementation speaks volumes about how you approach problems, follow directions, and interpret requirements.
+
+Companies will generally give you a specific amount of time to complete your take-home assignment—whether by deadline (submit your code within three or four days) or time limit (complete the task in no more than 4 hours). In either case, give yourself time to review and edit your work, just as you would if you were writing an important report or sending a sensitive email.
+
+When you present your solution, guide the interviewer through your approach and be prepared to answer questions. Highlight the assumptions you made, options you considered, and things you could improve in the future.
+
+Remember, there’s no “right way” to approach a problem, although your interviewer may be interested in mastery of particular concepts and will likely ask about them during your presentation.
+
+Even with a great solution, many candidates fall short during the presentation by fixating on code, rather than how it addresses the requirements. You can avoid this by practicing your presentation for a non-technical audience.
+
+Call your parents or grandparents and explain the problem, the proposed solution, and how you implemented it. This will help you build a concise, high-level narrative for your presentation. If gramps can grok it, you’ll be aces at your interview.
+
+
+
+3. Design Challenge
+Live coding and take-home assignments are practical assessments, but theoretical tests are also quite common. And that’s where you’ll appreciate having a whiteboard.
+
+You’ll have to design something—perhaps a messaging application—and will be given some broad boundary conditions (for example, make it web-based and text-only) and an initial prompt, like, “What kinds of data will you need to manage and how would you model it?” Based on your answer, your interviewer may gradually increase the scope and ask you to think about the interface, networking, and refactoring, leading you from simple concept to full-scale app.
+
+Your design problem may seem like it has nothing to do with the company’s actual product, but don’t let that throw you off. The interviewer is actually evaluating how you react to changing requirements and less-than-perfect product specs. As you progress, your interviewer will challenge your decisions and assumptions. If you decide to use NoSQL for data storage, for example, they might add a new technical requirement that’s difficult to achieve without joins.
+
+Be prepared to adapt, because your temperament is being evaluated as much as your solution. “One of my biggest red flags is when someone sees their solution as the best and only solution,” says Matthew Gerrior, an engineering team lead at Bloomberg. “If you can’t take feedback or constructive criticism during an interview, you certainly aren’t going to take any on the job.” (Read more about the soft skills engineers need.)
+
+You don’t need to be an expert at database administration, UI/UX, or low-latency networking. But as a full-stack developer, you should be able to speak intelligently about the full stack of an application.
+
+Practice by picking out and methodically thinking about a project you’ve worked on (either at your day job or on the side). How do the front end, back end, data, and user interface (UI) interact with one another? How would you structure them if you were starting from scratch? Would you choose different tools? What trade-offs would you need to consider?
+
+Mentally refactoring projects will help you identify areas for improvement and alternate points of view. And talking through them out loud at home will help prepare you to do the same with an interviewer.
+
+
+
+4. Trivia Quiz
+At some companies, it doesn’t matter if you have 10 months of experience or 10 years—it’s all about the fundamentals. And there’s nothing more fundamental than computer science trivia.
+
+You may get conceptual questions like, “What is bigO notation and why does it matter?” or “How would you implement this program recursively?” or questions about a specific language. If you’re interviewing for a job writing JavaScript, for example, I’d recommend brushing up on the latest ECMAScript release features and browser quirks.
+
+Language-specific questions come up most often at smaller companies, where the tech stack is narrow and new hires have to hit the ground running. This can be tricky if you’re new to the language, but as Juan Müller, lead engineer at Greenhouse, points out: “Even if you’re not prolific in the language in which you’re being tested, what interviewers are looking for is your ability to reason about code. Most languages will have similar constructs and logic doesn’t change.”
+
+Trivia may seem asinine in 2019, when everything is open book, but it’s a big differentiator for candidates with non-traditional backgrounds—including developers who are self-taught, went to bootcamp, or switched careers. It signals that you’re interested in and knowledgeable about foundational aspects of software engineering.
+
+Spend some time studying the basics of control flow, object-oriented programming (OOP), common sorting algorithms, data structures, and string manipulation. You won’t have to implement a Radix sort in five languages or anything, but you should know what it is and what its limitations are.
+
+Need a refresher? You can access class materials from MIT and Stanford (lectures, exams, videos, notes, etc.) for free online. Read through lectures one through 12 (MIT) and weeks three to five (Stanford).
+
+
+
+Surprise! There’s a Fifth Challenge
+Even after you get the job, you’re subject to a probationary period. It may not be explicitly called out in your offer letter, but developers are expensive, capital is limited, and if you’re not moving the company forward, you’re dragging it down.
+
+It’ll take time to get up to speed on all the new tech, systems, teams, and people, but you should be delivering results within six or eight months. If it turns out you’re better at interviewing than getting work done, you won’t be around for long.
+
+The good news is, there’s an easy way to set yourself up for success: communication. During your first couple of days, sit down with your manager and outline a plan for your first week, your first month, and your first six months. This will establish clear milestones and expectations that you can work toward.
+
+Follow that up with weekly or bi-weekly one-on-ones to report on your progress, highlight your achievements, indicate where you need help, and get feedback.
+
+Before you know it, you’ll be fully integrated into the team and helping the next engineer get settled!
+
+
+
+Early in your career, you’re likely to get a lot of trivia and live coding exercises when interviewing for full-stack developer roles. In the absence of a career full of accomplishments, employers need some way to determine what you’re capable of today and how well you’ll learn on the job.
+
+If you’re more experienced, the goal of your technical interviews is slightly different. Employers will assess your adaptability, how up-to-date your skills are, and how well you integrate with the team.
+
+Although it can be stressful, a short technical interview—no matter what form it takes—can save you and your employer from months of misery due to mismatched expectations. So identify which type of challenge you’re dealing with, do your homework, walk in with confidence, apply what you’ve learned and prepared for, and walk out knowing you did your best!
+
 React Interview Questions & Answers
 Last updated on Feb 11,20251.5M Views
 Share
