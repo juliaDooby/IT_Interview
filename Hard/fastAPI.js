@@ -1,3 +1,119 @@
+FastAPI: могу ли я также использовать Depends() для параметров в POST?
+Вопросы
+PYTHON
+FastAPI: могу ли я также использовать Depends() для параметров в POST?
+Обзор
+Я создал зависимость на основе классов, похожую на ту, что описана в замечательном туториале по FastAPI.
+
+Проблема
+Это работает, за исключением того, что параметры в зависимости (часть Depends()) передаются как параметры запроса, что означает, что они являются частью URI/URL. Я использую зависимость на основе классов как средство упрощения доступа к Azure Datalake, чтобы параметры в зависимостях были хотя бы несколько секретными. Поэтому я бы предпочел, чтобы они были в части POST.
+
+Вопрос
+Есть ли способ использовать Depends(), но передавать параметры инициализации класса через полезную нагрузку POST, а не через URL-адрес?
+
+Подробности
+В качестве примера:
+
+Класс зависимости (просто инициализация, которая фиксирует параметры зависимости):
+
+class DatalakeConnection(object):
+    """Using FastAPI's `Depends` Dependency Injection, this class can have all
+    elements needed to connect to a data lake."""
+
+    def __init__(
+        self,
+        dir: str = my_typical_folder,
+        container: str = storage_container.value,
+    ):
+        service_client = DataLakeServiceClient(
+            account_url=storage_uri,
+            credential=storage_credential,
+        )
+        self.file_system_client = service_client.get_file_system_client(
+            file_system=container
+        )
+        self.directory_client = self.file_system_client.get_directory_client(dir)
+        self.file_client = None
+Функция пути FastAPI:
+
+@app.post("/datalake")  # I have no response model yet, but will add one
+def predictions_from_datalake(
+    query: schemas.Query, conn: DatalakeConnection = Depends()
+):
+    core_df = conn.read_excel(query.file_of_interest) # I create a DataFrame from reading Excel files
+Краткое содержание
+Как я уже сказал, это работает, но dir и container, необходимые для инициализации класса, принудительно добавляются в параметры запроса URL, но я бы хотел, чтобы они были парами ключ-значение в теле запроса POST:
+
+ 10.12.2020 16:17
+1
+1
+6 865
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете объявить их так же, как параметры тела операции пути. Подробнее здесь Единственное число в теле:
+
+class DatalakeConnection(object):
+    """Using FastAPI's `Depends` Dependency Injection, this class can have all
+    elements needed to connect to a data lake."""
+
+    def __init__(
+            self,
+            dir: str = Body("dir_default"),
+            container: str = Body("container_default"),
+    ):
+        pass
+Пример тела запроса:
+
+{
+  "dir": "string",
+  "container": "string"
+}
+ 11.12.2020 07:56
+Если вы хотите использовать Depends с существующим классом, не обновляя значения по умолчанию для этого класса, вы можете создать функцию с правильной сигнатурой и передать ее в Depends.
+
+def _body_dependify(model_cls):
+    """
+    Hack around fastapi not supporting Body(...) parameters in dependencies unless
+    you specify them in the function signature.
+    """
+    import functools
+    import inspect
+    from collections import OrderedDict
+
+    signature = inspect.signature(model_cls)
+    signature = signature.replace(return_annotation=model_cls)
+    parameters = OrderedDict(signature.parameters)
+    for parameter_name in list(parameters):
+        parameter = parameters[parameter_name]
+        if parameter.default is inspect.Parameter.empty:
+            parameter = parameter.replace(default=Body())
+        else:
+            parameter = parameter.replace(default=Body(parameter.default))
+        parameters[parameter_name] = parameter
+    signature = signature.replace(parameters=parameters.values())
+
+    @functools.wraps(model_cls)
+    def build(*args, **kwargs):
+        return model_cls(*args, **kwargs)
+
+    build.__signature__ = signature
+    return Depends(build)
+
+Затем в вашей конечной точке вы можете сделать:
+
+@app.post("/datalake")  # I have no response model yet, but will add one
+def predictions_from_datalake(
+    query: schemas.Query, conn: DatalakeConnection = _body_dependify(DatalakeConnection)
+):
+    core_df = conn.read_excel(query.file_of_interest) # I create a DataFrame from reading Excel files
+На странице /docs схема выглядит так:
+
+Это также работает с моделями Pydantic, поскольку они устанавливают атрибут __signature__.
+
+
+
 Когда я использую fastapi и pydantic для создания POST API, появляется TypeError: объект типа не сериализуем JSON
 Вопросы
 PYTHON
