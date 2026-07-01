@@ -1,3 +1,460 @@
+21 REST API interview questions you need to know in 2026
+Master the REST API interview questions that hiring managers actually ask. Learn REST architecture, HTTP methods, security, versioning, caching, pagination, and real-world API design principles to confidently tackle backend interviews.
+12 mins read
+Jun 05, 2026
+editor-page-cover
+book
+A REST API (Representational State Transfer) is a web API that conforms to the REST architectural style, defining how clients and servers exchange resource representations over HTTP. Interview questions on this topic typically cover the five core constraints (uniform interface, client-server, stateless, cacheable, and layered system), HTTP methods and status codes, security practices, and API design patterns like versioning, pagination, and caching.
+
+Key takeaways
+
+Five REST constraints: Uniform interface, client-server separation, statelessness, cacheability, and a layered system work together to enable scalable and independently evolvable services.
+
+HTTP methods and CRUD mapping: GET reads, POST creates, PUT updates or replaces, DELETE removes, and understanding idempotency (PUT is idempotent, POST is not) is a common interview differentiator.
+
+Versioning and pagination: APIs are versioned through URI paths, headers, or query parameters to avoid breaking clients, while cursor-based pagination tends to outperform limit/offset at scale.
+
+Security best practices: Enforce HTTPS on every request, use OAuth 2.0 or JWT for authentication, validate all input, apply rate limiting, and never expose tokens or stack traces in responses.
+
+Documentation and testing: Define endpoints with OpenAPI (Swagger), host interactive docs, and automate tests in CI/CD using tools like Postman, Newman, or pytest to ensure reliability across microservices.
+
+No matter which programming language or technology you’re working with, you’ve probably encountered a REST application programming interface (API). REST stands for Representational State Transfer, which is the one of the most widely-used architectural styles for web services, microservices, and APIs today. APIs that follow the REST architectural style are considered REST APIs.
+
+Whether you’re a junior or senior developer, you may be asked questions about REST API in an interview.
+To help you ace your next interview, we’ll discuss some common REST API interview questions and answers.
+
+We’ll cover:
+
+21 REST API interview questions you need to know
+
+1. What is REST?
+
+2. What is a REST API?
+
+3. Describe the 5 constraints of the REST architectural style, and their benefits.
+
+4. What is the optional architectural constraint of REST?
+
+5. Explain the constraints of a uniform interface.
+
+6. What is CRUD?
+
+7. Explain the HTTP request methods supported by REST, and when they are used.
+
+8. What’s the difference between PUT and POST methods?
+
+9. Explain what statelessness means in REST.
+
+10. What are the advantages and disadvantages of a REST API?
+
+11. What’s the difference between AJAX and REST?
+
+12. What’s the difference between SOAP and REST?
+
+13. Explain HTTP response status codes.
+
+14. How do you version a REST API, and why?
+
+15. How do you design pagination, filtering, and sorting in REST APIs?
+
+16. How does HTTP caching work for REST APIs (ETag, Cache-Control, etc.)?
+
+17. How do authentication and authorization typically work in REST APIs?
+
+18. How do you implement rate limiting and idempotency for reliability?
+
+19. How do you handle errors in REST APIs effectively?
+
+20. What are some common REST API security best practices?
+
+21. How do you document and test REST APIs?
+
+What are some REST API design best practices and common mistakes
+
+Wrapping up and next steps
+
+
+  
+
+Answer any interview problem by learning the patterns behind common questions.
+
+  Grokking Coding Interview Patterns in PythonGrokking Coding Interview Patterns in JavaScriptGrokking Coding Interview Patterns in JavaGrokking Coding Interview Patterns in GoGrokking Coding Interview Patterns in C++
+
+
+
+13 REST API interview questions you need to know
+
+
+1. What is REST?
+REST stands for Representational State Transfer. REST is an architectural style for web development. REST architecture lays out guidelines for the transfer of resource representations between clients and servers on the web.
+
+
+
+2. What is a REST API?
+A REST API or RESTful API is a web API that conforms to the REST architecture style.
+
+
+3. Describe the 5 constraints of the REST architectural style, and their benefits.
+A truly RESTful API must conform to the five REST architectural constraints:
+
+Uniform interface:
+
+Interface between client and server that allows for standardized client-server communication in a single language
+
+Necessary for the decoupling of client and server
+
+Client-server:
+
+Client-server model, for separation of concerns between client and server
+
+Permits client and server to operate and evolve independently
+
+Supports portability and scalability
+
+Stateless:
+
+Refers to stateless communication protocol, wherein the server stores no information about session states
+
+Improves performance by reducing server load
+
+Cacheable:
+
+Servers mark their responses as cacheable or non-cacheable
+
+Clients and intermediaries are able to cache server responses
+
+Reduces client-server interaction, supports scalability and performance
+
+Layered system:
+
+Layers between client and server, can consist of intermediaries such as proxy servers or load balancers
+
+Layers have separate responsibilities but are able to interact with each other
+
+Supports system scalability and security
+
+
+4. What is the optional architectural constraint of REST?
+Code on demand is the optional constraint of RESTful architecture. Code on demand allows the server to send executable code (scripts or applets) to a client upon client request.
+
+5. Explain the constraints of a uniform interface.
+A uniform interface is needed to decouple the client from the server.
+
+There are four necessary constraints to achieving uniform interface:
+
+Identification of resources: Client requests must identify resources using uniform resource identifiers (URIs)
+
+Manipulation of resources through these representations: When clients receive a resource representation from the server, they have all information necessary to be able to modify resource state
+
+Self-descriptive messages: Messages contain all information necessary for recipient to interpret it, including metadata
+
+Hypermedia as the engine of application state: Hypermedia (such as HTML) is the medium for client-server interaction, and the client requires no API-specific documentation to understand server responses
+
+
+6. What is CRUD?
+CRUD is an acronym for the four basic operations used in relational database management system (RDBMS).
+
+Each operation in CRUD relates to an HTTP method that REST supports.
+
+Create: POST
+
+Read: GET
+
+Update: PUT
+
+Delete: DELETE
+
+
+  
+
+Answer any interview problem by learning the patterns behind common questions.
+
+  Grokking Coding Interview Patterns in PythonGrokking Coding Interview Patterns in JavaScriptGrokking Coding Interview Patterns in JavaGrokking Coding Interview Patterns in GoGrokking Coding Interview Patterns in C++
+
+7. Explain the HTTP request methods supported by REST, and when they are used.
+REST APIs are based on HTTP requests or verbs, which each perform a different task.
+
+REST supports the following HTTP requests:
+
+GET method: Request data from server
+
+POST method: Submit data to create new resource on server-defined URL
+
+PUT method: Submit data to update a resource at client-defined URL
+
+DELETE method: Remove resource from server
+
+OPTIONS method: Return request methods supported by a service
+
+HEAD method: Return meta information such as response headers
+
+PATCH method: Modify part of the resource on the server
+
+8. What’s the difference between PUT and POST methods?
+Here are the differences between PUT and POST:
+
+PUT:
+
+Idempotent (i.e. multiple requests will yield same result)
+PUT responses aren’t cacheable
+Updates or replaces target resource with request’s payload
+POST:
+
+Not idempotent (i.e. multiple requests will yield multiples of the same resource)
+POST responses can be cacheable, provided proper cache-control header
+Request’s payload is processed by the web server based on target resource
+9. Explain what statelessness means in REST.
+Statelessness means that the client and server don’t store information about each other’s state. Since the server stores no information, it treats each client request as a new request.
+
+As a consequence, the following conditions would apply:
+
+The client request contains all information required for the server to process the request
+
+Client application is responsible for storing session state
+
+
+10. What are the advantages and disadvantages of a REST API?
+Advantages include:
+
+Designed for high performance, portability, reliability, and scalability
+
+Client-server separation allows each to individually operate and scale
+
+Easy to test and adapt to various environments
+
+Easy to learn as it uses HTTP protocol
+
+Supports various data transfer technologies including JSON, XML, YAML, images, and more
+
+Uses less bandwidth than other methods, such as Simple Object Access Protocol (SOAP) technology
+
+Disadvantages include:
+
+Doesn’t enforce security practices
+
+HTTP method limits you to synchronous requests
+
+Due to statelessness, you might be unable to maintain state (e.g. in sessions)
+
+
+11. What’s the difference between AJAX and REST?
+An AJAX client can make a RESTful request to a REST API (e.g. a get request), but AJAX isn’t an architectural style. It’s a web development technique for client-side applications. REST APIs can be accessed by AJAX clients, but they aren’t inherently implemented with AJAX.
+
+
+12. What’s the difference between SOAP and REST?
+Here are some of the differences between SOAP and REST.
+
+SOAP:
+
+Protocol
+Data format is limited to XML
+Heavyweight and requires more bandwidth
+Calls can’t be cached
+REST:
+
+Architectural style
+Allows various data formats including plain text, HTML, XML, JSON, and YAML
+Lightweight and requires less bandwidth
+Calls can be cached
+13. Explain HTTP response status codes.
+HTTP response codes indicate the result of client requests.
+
+Common HTTP status codes include:
+
+200: Successful request
+
+201: Entity or entities created from successful request
+
+400: Bad request. Invalid client request.
+
+401: Unauthorized. User isn’t authorized to access a resource and may be unauthenticated
+
+403: Forbidden. User isn’t authorized to access a resource, user is authenticated
+
+404: Not found. Resource not found
+
+500: Internal server error. Generic server error
+
+502: Bad gateway. Response from upstream server is not valid
+
+503: Service unavailable. Result of server-side issue, including overload or system failure
+
+
+14. How do you version a REST API, and why? 
+Why: Avoid breaking clients as your API evolves.
+
+Common strategies:
+
+URI versioning: /v1/resources (simple, cache-friendly; leaks version into URLs).
+
+Header-based: Accept: application/vnd.myapi+json; version=2 (clean URLs; harder to test in browser).
+
+Query param: /resources?version=2 (easy; can be overused). Good practices: Semantic versions, deprecation headers/notices, sunset timelines, and clear changelogs.
+
+15. How do you design pagination, filtering, and sorting in REST APIs?
+Pagination patterns:
+
+Limit/Offset: /items?limit=20&offset=40 (simple; can be slow for large offsets).
+
+Cursor-based: /items?cursor=abc123&limit=20 (stable ordering, better performance at scale).
+
+Filtering/Sorting: /items?status=active&created_after=2025-01-01&sort=-created_at,name
+
+Metadata & links: Include total, has_next, and HATEOAS-style links: first, prev, next, last.
+
+Consistency: Define allowed fields and operators; document defaults and max page size to prevent abuse.
+
+16. How does HTTP caching work for REST APIs (ETag, Cache-Control, etc.)?
+Cache-Control: max-age, s-maxage, no-store, no-cache, stale-while-revalidate.
+
+Validators:
+
+ETag + If-None-Match → conditional GET/PUT; enables 304 Not Modified.
+
+Last-Modified + If-Modified-Since.
+
+Vary: Indicates which request headers affect the response (e.g., Vary: Accept-Encoding).
+
+Design tips: Make GET responses cacheable by default, use strong ETags for exact byte equality, and invalidate on writes.
+
+17. How do authentication and authorization typically work in REST APIs?
+Transport: Always use HTTPS.
+
+AuthN:
+
+OAuth 2.0 (access tokens), OpenID Connect (identity), JWT bearer tokens, or simple API keys (lower security).
+
+AuthZ: Scopes/roles/claims; enforce least privilege per endpoint.
+
+Token handling: Short-lived access tokens, refresh tokens, rotation; store server-side secrets securely (KMS).
+
+Security extras: CORS policies, CSRF protection for browser-based flows, rate limits, and audit logs.
+
+18. How do you implement rate limiting and idempotency for reliability?
+Rate limiting: Fixed window, sliding window, token bucket, or leaky bucket; return headers like RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, and use 429 Too Many Requests with Retry-After.
+
+Idempotency:
+
+Methods: GET/PUT/DELETE are idempotent by spec; POST is not.
+
+For POST where duplicates are harmful (e.g., payments), use Idempotency-Key header keyed by client-generated UUID; the server stores and replays the first result.
+
+Backoff & retries: Recommend exponential backoff + jitter; document retry semantics per endpoint.
+
+19. How do you handle errors in REST APIs effectively? 
+A consistent error-handling strategy makes your REST API more predictable and user-friendly.
+
+Best practices:
+
+Use proper HTTP status codes (e.g., 400 Bad Request, 404 Not Found, 500 Internal Server Error).
+
+Return an error response body with helpful details:
+
+Ace Editor
+Include a unique error code for debugging.
+
+Avoid exposing internal stack traces or database errors to clients.
+
+Optionally, provide links to documentation in the error response (type or docs_url).
+
+20. What are some common REST API security best practices? 
+Security is one of the most important areas of REST API design. Interviewers may test your awareness of common threats.
+
+Core best practices:
+
+Enforce HTTPS for all requests.
+
+Use authentication and authorization (e.g., OAuth 2.0, JWT).
+
+Apply rate limiting and throttling to prevent abuse.
+
+Validate and sanitize input parameters to avoid injection attacks.
+
+Implement CORS correctly for browser-based clients.
+
+Use API gateways or WAFs for additional protection.
+
+Never expose sensitive details (tokens, keys, stack traces) in responses or logs.
+
+21. How do you document and test REST APIs? 
+Interviewers often look for how well you think about maintainability and collaboration.
+
+Documentation:
+
+Use OpenAPI (Swagger) to define endpoints, methods, parameters, and responses.
+
+Host interactive documentation (e.g., Swagger UI, Redoc).
+
+Keep docs versioned alongside your codebase.
+
+Testing:
+
+Write unit tests for individual endpoints and integration tests for workflows.
+
+Use tools like Postman, cURL, or Insomnia for manual testing.
+
+Automate API tests in CI/CD using frameworks like pytest, JUnit, or Newman.
+
+Include contract tests to ensure compatibility across microservices.
+
+What are some REST API design best practices and common mistakes?
+Many REST API interview questions focus on architecture and HTTP concepts, but experienced interviewers often want to understand how you would design an API that other developers can easily use and maintain.
+
+A well-designed REST API should use clear and predictable resource names, consistent response formats, and meaningful HTTP status codes. Endpoints should represent resources rather than actions. For example, /users/123/orders is generally preferred over endpoints such as /getUserOrders. Consistency across endpoints helps consumers understand the API without constantly referring to documentation.
+
+Interviewers also expect candidates to recognize common mistakes. One of the most frequent issues is misusing HTTP methods, such as using GET requests to modify data. Another is returning generic 200 OK responses for every scenario instead of using specific status codes like 201 Created, 400 Bad Request, or 404 Not Found. Poor error messages, inconsistent naming conventions, and breaking changes without proper versioning can also make APIs difficult to maintain as they grow.
+
+Strong API design is ultimately about creating interfaces that remain intuitive, scalable, and predictable for both current and future consumers.
+
+API Design Decision
+
+Recommended Approach
+
+Common Mistake
+
+Resource Naming
+
+/users/123/orders
+
+/getUserOrders
+
+Status Codes
+
+Return specific HTTP codes
+
+Always returning 200 OK
+
+Versioning
+
+/v1/users
+
+or header versioning
+
+Breaking clients without versioning
+
+Error Responses
+
+Structured error payloads
+
+Generic error messages
+
+HTTP Methods
+
+GET, POST, PUT, DELETE used appropriately
+
+Using GET to update data
+
+Pagination
+
+Cursor or limit/offset pagination
+
+Returning massive datasets
+
+Wrapping up and next steps
+Congratulations! You’re now prepared with some common REST API interview questions and answers. Where you go from here depends on your goals.
+
+For interview prep, check out Interview Prep with Educative. Here, you’ll find all our resources for interview prep in one place, from tutorials and practice problems, to tips from industry experts.
+
 BI
 FineBI
 FineReport
