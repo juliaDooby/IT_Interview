@@ -1,3 +1,90 @@
+15 most popular full stack developer interview questions
+TWT StaffBy TWT Staff
+
+Jan 20, 2023 6 mins read 10,545 views
+Share this: 
+ 
+ 
+15 most popular full stack developer interview questions
+1. To develop a project from scratch, what technologies and languages would you need or what skills should a full stack developer have?
+A full-stack developer should be familiar with the following:
+
+Also Read: Headphones for Developers Review
+
+Programming Languages: Full-stack developers should be proficient in more than one programming language such as Java, Python, PHP, Ruby, C++, etc.
+Front-end technologies: You should be familiar with front-end technologies like HTML5, CSS3, JavaScript, etc. Knowledge of third-party libraries such as jQuery, Ajax, Angular, ReactJS, etc. is also important.
+Framework: This requires proficiency in a variety of development frameworks including Spring, Spring Boot, Django, MyBatis, PHP, Hibernate and others.
+Databases and Caching: As a full-stack developer, you should also know about various DBMS (database management systems) technologies such as MySQL, SQLite, Oracle, and MongoDB. It is useful to have a basic understanding of caching mechanisms like redis, memcached, varnish.
+Design Ability: It is important to have a good understanding of design if you want to become a successful Full-Stack web developer. Furthermore, the person should be aware of the principles of prototyping and UX/UI design.
+Server: Experience with Apache or NGINX would be beneficial. Good knowledge of Linux helps immensely in server administration.
+2. What is CORS?
+Cross-Origin Resource Sharing (CORS) is a process that uses additional HTTP headers to tell browsers to serve a web application running to a single origin. CORS accesses various web resources on different domains. Web scripts can be integrated using CORS when requesting a resource that has an external origin (protocol. domain or port) from its own.
+
+Also Read: How to handle CORS with Laravel
+
+ 
+
+3. What is Callback Hell?
+Callback Hell, or Pyramid of Doom, is a common anti-pattern seen in asynchronous programming code (multiple functions running at the same time). This slang term describes a large number of nested "if" statements or functions. In simple terms, Callback Hell is a situation where you have multiple asynchronous functions. These functions depend on each other, so it could get pretty messy with so many callback functions nested in so many layers. Using callback functions leaves you with code that is difficult to read and maintain and looks like a pyramid.
+
+This also makes it more difficult to identify the application flow, which is the main obstacle to debugging, which is the reason for the famous name of this problem: Callback Hell.
+
+4. Which language is most preferred by full-stack developers?
+Full Stack developers use multiple programming languages. Ideally, a candidate should be fluent in multiple languages, preferably some for front-end design and some for back-end fixing. Since Full Stack developers work with a variety of technologies and applications, they must know at least two to three of the most popular languages such as Java, Python, Ruby, PHP, C++, etc.
+
+5. What skills do you need to be a full-stack developer?
+A Full Stack Developer should be familiar with:
+
+Basic Languages - Must know basic languages like HTML, CSS and SQL.
+Front-end frameworks - BootStrap, AngularJS, VueJS, ReactJS, JavaScript, TypeScript, Python, Ruby, PHP
+Back-end frameworks - Express, Django, NodeJS, Ruby on Rails
+Databases - MySQL, SQLite, Postgres, MongoDB, Cassandra, Apache storm, Sphinx
+Additional skills recommended - Git, Machine Learning, SSH, Linux Command, Data Structures, Character encoding.
+Also Read: 10 Advantages of Hiring Full Stack Developers
+
+ 
+
+6. What is Inversion of Control (IoC)?
+Inversion of control (IoC) is a broad term used by software developers to define a pattern that is used to decouple components and layers in the system. It is mainly used in the context of object- oriented programming. Control of objects or parts of a program is transferred to a framework or container by inversion of control. It can be achieved using various mechanisms such as the service localization pattern, the strategy design pattern, the factory pattern, and dependency injection.
+
+7. What is dependency injection?
+Dependency injection is a design pattern by which IoC is executed. Injecting objects or connecting objects to other objects is done through the container and not through the object itself. There are three types of classes.
+
+Client Class: Depends on the class of service.
+Service class: Provides services to the client class.
+Injector class: Injects service class objects into the client class.
+8. What is continuous integration?
+Continuous integration (CI) is a practice in which developers integrate code into a shared repository on a regular basis to catch problems early. The CI process involves automated tools that verify the correctness of new code prior to integration. Automated builds and tests verify each record.
+
+9. What is multithreaded and how is it used?
+The main purpose of multithreading is to provide multiple threads of execution simultaneously to maximize CPU utilization. It allows multiple threads to exist in the context of a process so that they can run individually but share their processing resources.
+
+10. How is GraphQL different from REST?
+This is usually a difficult question to answer, but a good developer will be able to answer it easily. The basic difference is that GraphQL does not deal with dedicated resources. The description of a particular resource is not related to how you find it. Everything that references a chart is connected and can be queried based on the needs of the application.
+
+11. What is the observer pattern?
+The purpose of the Observer pattern is to define a one-to-many dependency between objects, because when an object changes its state, all of its dependents are automatically notified and updated. The object that tracks the state of another object is called an observer, and the object being tracked is called a subject.
+
+12. What is the survey?
+Polling is a method by which a client frequently requests new data from the server. The survey can be carried out in two ways: Long Survey and Short Survey.
+
+Long polling is a development pattern that passes data from the server to the client without delay. Short poll calls with fixed delays and is AJAX based.
+
+ 
+
+Also Read: How to Hire Developer from Upwork?
+
+ 
+
+13. How do you keep up with new industry trends?
+Answer: This is a typical question to understand your involvement in technology. A good way to show your commitment to continuous learning would be to talk about the community meetings you attend. You can also talk about the webinars and forums you attend regularly. If you have personal projects where you apply your skills, now is a good time to show that off as well.
+
+14. What is the main difference between GraphQL and REST?
+Answer: This is quite a difficult question, but a good developer could easily solve it. One important difference between GraphQL and REST is that GraphQL does not deal with dedicated resources. Everything that references the graph is connected and can be queried to the needs of the application.
+
+15. List some common ways to reduce the load time of a web application.
+Answer: There are quite a few ways to reduce the load time of a web application, such as enabling browser caching, optimizing images, reducing resources, minimizing HTTP requests, and reducing redirects.
+
 Top 40+ Full Stack Developer Interview Questions and Answers-Basic to Advanced
 Posted by
 fdaytalk
