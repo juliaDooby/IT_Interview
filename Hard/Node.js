@@ -1,3 +1,255 @@
+Top Node.js Interview Questions
+Software Engineering
+Tatsat Jha • Last updated 2 years ago
+
+What is Node.js and what are its Advantages?
+What are some common applications of Node?
+How are Node Packages Managed?
+How is npm different from npx?
+Explain importing and exporting in Node
+What do you understand about Callbacks?
+What does it mean that Node.js is single-threaded?
+What is meant by Synchronous vs Asynchronous?
+What is meant by Blocking vs Non-blocking?
+What is the Node.js Event loop?
+What do you understand about livbuv?
+Explain the EventEmitter API
+What is a child process in Node.js and how are they created?
+How do you create a server in Node.js?
+Explain Middleware
+Explain the Advantages vs the Drawbacks of using Node.js
+🧠
+Get ready for your upcoming software engineering interview with Exponent's complete software engineering interview course. Work through the most commonly asked questions, learn interview techniques, and practice your skills before the big day.
+Node.js is among the most revolutionary technologies in the history of web development. It's widely used as part of the backend of thousands of web applications.
+
+For nearly any developer job having to do with the Backend, or Full-stack development, Node.js is a technology you must be familiar with. The following are the answers to some of the most common Node.js Interview Questions.
+
+What is Node.js and what are its Advantages?
+What are some common applications of Node?
+How are Node Packages Managed?
+How is npm different from npx?
+What do you understand about Callbacks?
+What does it mean that Node.js is single-threaded?
+What is meant by Synchronous vs Asynchronous?
+What is meant by Blocking vs Non-blocking?
+What is the Node.js Event loop?
+What do you understand about livbuv?
+Explain the EventEmitter API
+What is a child process in Node.js and how are they created?
+How do you create a server in Node.js?
+Explain Middleware
+Explain the Advantages vs the Drawbacks of using Node.js
+What is Node.js and what are its Advantages?
+Node.js is the most popular Javascript runtime environment. Traditionally, Javascript could only be run on the browser, using a specific engine to interpret the javascript code such as the V8 Engine inside Google Chrome.
+
+In 2009, Ryan Dahl released the open-source, cross-platform runtime environment that is Node.js. It allowed a place for javascript code to be run outside of the browser, taking javascript from a simple scripting language to capable of making REST APIs, Backend infrastructure, and network applications.
+
+Node.js runs by using chrome's V8 engine and is therefore highly scalable, lightweight, and fast.
+
+Beyond that Node is known for its massive ecosystem of Node packages that add functionality to a project using other open source Node modules, which is a great benefit to any developer.
+
+Node's inner workings are focused around a few things: its non-blocking I/O, its Asynchronous functionality, and its Event Loop. Each of these components will be explored as part of this article.
+
+What are some common applications of Node?
+Node.js essentially provides a runtime for javascript to function much like a general programming language. As such, it can be used to handle file systems, operating systems, servers, APIs, etc.
+
+However, much of Node's appeal is that it allows javascript to be the single main language across a code base when coupled with the frontend. As such, Node is typically seen being used to power the Backend of Web Applications, REST APIs, Microservice Architectures, and Networking tasks.
+
+Always keep in mind that Node.js was built for "building fast and scalable network applications... perfect for data-intensive real-time applications."
+
+How are Node Packages Managed?
+Most Node projects are accompanied with npm initialized to manage Node packages using the package.json and package-lock.json. Here, all dependencies of a Node project are outlined as well as any scripts available to assist in development.
+
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+  },
+  "scripts": {
+  },
+  "eslintConfig": {
+    "extends": []
+  },
+  "browserslist": {
+    "production": [],
+    "development": []
+  },
+  "devDependencies": {
+  }
+}
+A basic, empty package.json
+Node packages such as Express can provide an immense amount of support for any Node project as npm makes the integration and handling of packages incredibly easy for developers. Alternatives to npm include yarn.
+
+How is npm different from npx?
+This is a common distinction among beginner developers.
+
+Node Package Manager is an all in one tool to handle the installation and updates of third-party node packages. Node Package Executer, on the other hand, directly executes the contents of a node package without first installing it.
+
+The most common example of this is when using a Node package such as create-react-app where the package need only be executed rather than installed.
+
+Explain importing and exporting in Node
+The require keyword can be utilized to effectively import modules such as fs, http, or os and essentially store the value in a constant much like an object.
+
+const fs = require("fs");
+const os = require("os");
+const http = require("http");
+
+const function Example(){
+//some functional code
+}
+
+module.exports = Example;
+Module.Exports, on the other hand, is a simple bit of syntax that allows some function of a file to be used elsewhere in the project's codebase by way of  the require keyword.
+
+What do you understand about Callbacks?
+Callback functions are pockets of code that run after a certain task, but allows other parts of the program to be run first so there is no blocking—eventually being called back.
+
+Callbacks are a concept you should familiarize yourself with as they're baked into much of Node's inner workings.
+
+function processData (callback) {
+  fetchData(function (err, data) {
+    if (err) {
+      console.log("An error has occurred. Abort everything!");
+      return callback(err);
+    }
+    data += 1;
+    callback(data);
+  });
+}
+This is the basic code sample for a callback from the Node documentation
+Despite this, many newer options have simplified the asynchronous tasks of Callbacks using Promises and more recently the ES6 async/await syntax. With both of the more modern options, there's much improved readability, better error handling, and more specified control flow.
+
+What does it mean that Node.js is single-threaded?
+In this context, threads refer to sequences of instructions or commands to be executed. This means that the Node runtime has a single thread in handling any requests it's given.
+
+While in reality, Node's code execution is more complex, this is the general simplification to initially understand Node's inner workings. Interestingly, however, Node can still handle concurrent events despite seemingly only having a single thread.
+
+There are two concepts that are at the core of Node and come much as a result of its single-threaded nature: Asynchronous execution, which gives rise to the concept of Node's Non-blocking I/O.
+
+What is meant by Synchronous vs Asynchronous?
+Asynchronous execution refers to code that is not executed where it appears in the program. Node will not wait for asynchronous code to finish, and will instead move on to the next task. By contrast, synchronous execution requires that Node wait for the operation to finish before moving on, thus executing precisely where it appears in the codebase.
+
+The concept of Non-blocking I/O is possible using Asynchronous execution. I/O meaning operations having to do with a system's disk and network such as making an HTTP request. These I/O operations have much more processing and time intensity, and therefore should always be done Asynchronously to prevent the single thread from being blocked.
+
+What is meant by Blocking vs Non-blocking?
+Blocking vs Non-Blocking simply refers to an operation that will prevent further execution until the prior operation is completed. The Node documentation says blocking is when additional Javascript execution needs to wait on the execution of non-Javascript operations.
+
+Node handles both Blocking and Non-blocking calls with its single thread. Note that all Blocking calls are executed synchronously and Non-blocking calls are executed asynchronously. In fact, several functions in the Node API contain blocking counterparts to otherwise non-blocking functions, having the word "sync" at the end.
+
+Note that this concept differs from Non-blocking I/O which essentially says that Node handles all I/O operations asynchronously due to their time intensity so that the thread may remain non-blocked.
+
+What is the Node.js Event loop?
+The Event loop is what allows for Node to conduct a Non-blocking I/O as well as asynchronous functions. The event loop functions by executing code from Node's single thread. In the case of asynchronous or I/O operations, the event loop will automatically offload the operation to the system kernel.
+
+Kernel's are built to be multi-threaded and can handle executing multiple operations in an asynchronous manner that the single-threaded Node could not on its own.
+
+The Event Loop is able to keep track of the unfinished async operations, looping back to check their status until all operations are finished.
+
+What do you understand about livbuv?
+Much like the V8 engine, livbuv is a resource Node uses under the hood to preform its operations, particularly the lower-level operations that allow for its aforementioned Non-blocking I/O and Event loop.
+
+Livbuv is a library originally written in C that allows Node to write non-blocking I/O operations. It allowed CPU to be used simultaneously and conduct a more efficient use of resources.
+
+The library also handles other operations including Child Processes and the File System.
+
+Explain the EventEmitter API
+The EventEmitter class is part of the events module in Node.js. It is what allows Node to emit events on backend servers much in the same way as on the browser where a user may interact with a UI element and cause an event to be emitted.
+
+The EventEmitter class contains two important methods: emit and on. Emit is what triggers an event and on allows for handing a specified event when it is triggered by way of a callback function.
+
+Using these two methods, Node can mimic much of the functionality of Events and Event handling that exists within browsers.
+
+The EventEmitter contains several more methods including once, removeListener, etc. Overall, however, the Event Emitter allows for custom events to be emitted and handled asynchronously.
+
+What is a child process in Node.js and how are they created?
+Node's utilization of a Single-threaded non-blocking Event loop works great. However, this style of server is still limited in how much load it can handle, and to build a scalable application a single thread is not enough. Therefore, having multiple child processes can offer the best solution for scalability.
+
+Node contains a child_process module to spawn multiple processes for handling events or executing code. The main two methods of creating a child process is through spawn() and fork().
+
+spawn() is the simplest of these. It creates a new process implementing the EventEmitter. This allows the child process to handle events directly while communicating with other child processes via a messaging system.
+
+fork() is a specialized version of spawn(). In this case, the parent and child are able to communicate directly. Often memory-intensive operations can be carried to a forked process to free up the main event loop.
+
+On top of child processes interface is the concept of clusters. Cluster is its own module provided by Node that facilitates the creation of child processes to distribute workloads.
+
+Each child process made through the cluster module runs their own thread simultaneously and shares the same server port while leveraging the multi-core system.
+
+The sole method of creating a new process is through the cluster.fork() method. From there, several properties and methods are offered to handle the new processes.
+
+These methods and properties include disconnect() to disconnect all workers, send() to handle communication between processes, and worker to return a worker object as well as many others that can be found in the node documentation.
+
+When considering the difference between the Cluster and Child_process modules, understand that Cluster provides more functionality to fork a process on top of the functionality provided by the child_process module.
+
+How do you create a server in Node.js?
+One of the most common applications of Node.js is building server, you should understand how to make a basic HTTP web server using Node going into an interview.
+
+A basic server can be created using http.createServer() providing a requestListener which will automatically provide a response to any  request made to the server.
+
+const http = require('http');
+
+const requestListener = function (req, res) {
+  res.writeHead(200);
+  res.end('Hello, World!');
+}
+
+const server = http.createServer(requestListener);
+server.listen(8080);
+Note that more complicated server architecture such as a REST API would typically be created using a framework, for instance Express. However under the hood, the same sorts of methods would be utilized.
+
+Explain Middleware
+Middleware is a common term used when building servers or APIs. It simply refers to the code that is between a request and specific business logic. Middleware can be used to execute code, parse request or response objects, end a request/response cycle, and more.
+
+Typically in the context of Node, middleware involves handling authentication, routing etc.
+
+Explain the Advantages vs the Drawbacks of using Node.js
+With all of this knowledge in mind, it's important that you're able to distinguish in what ways Node excels and in what ways it falls short. Node is one of the most prevalent, widely-used technologies in the globe, and yet alternatives exist. Even Node's creator Ryan Dahl released a new runtime in 2020 called Deno clearly meant to be the future of Node in some ways.
+
+So let's examine both the good and the bad of using Node in a modern application or project.
+
+Advantages
+On the surface level, Node is said to be Fast, Scalable, and Easy to Learn. Let's look at each of these.
+
+Of course Node is fast because of the V8 engine at its core, which is one of the resources Node uses that's programed in C++. More particularly, Node gains performance through its use of the Single-threaded Event Loop with Non-blocking I/O made possible via the livbuv library, written in C.
+
+The V8 engine is among the fastest of javascript engines, designed and maintained by Google. Add to that the strategic enablement of asynchronous programming execution with the Event Loop and its non-blocking nature, and it's easy to see how Node could be designed to handle complex network applications. This system design clearly makes for a highly performant runtime environment, which is why Node is remarked for its speed.
+
+On the topic of Scalability, Node's use of a single thread with an Event Loop provides a memory friendly system while integrating the concepts of child processes and Clusters to provide the advantages of leveraging a multi-core environment.
+
+This means that through the use of spawning child processes, workload can be distributed across multiple cores. For instance, an architecture may make provisions to have a cluster work only on I/O operations.
+
+Moreover, additional resources may be allotted to each of these processes to handle their load. This allows developers to scale their application to the degree in which they require, using only one child process or many.
+
+Beyond that, there's the shallow learning curve. Indeed, getting started with using Node is much the same as programming in vanilla javascript. The only major areas of adjustability is learning to work with package managers, built-in Node modules, and the basic premises of Node's architecture.
+
+However, very little beyond vanilla javascript and some backend features such as the http module is needed to begin developing a backend architecture with Node.
+
+That being said, Node has two more major reasons for its efficiency as a javascript runtime: Full-Stack JS and the Node ecosystem.
+
+Full-Stack JS, of course, refers to the idea of having the full tech stack of an application be developed through Javascript. This can cut down on development staff, and improve co-ordination and dev-ops between front-end and back-end. Of course, Node is certainly not the only javascript runtime.
+
+However, the Node ecosystem is unmatched. The Node Package Manager has grown to be an incredibly easy-to-use way of introducing third-party modules to facilitate virtually all possible Node applications. The support for Node extensibility increases every year.
+
+There are always new modules and tools being made to abstract the backend architecture and improve processes whether it be in IPC, working with Sockets, or developing REST APIs.
+
+Indeed, the Node ecosystem is itself much of the reason for Node having a shallow learning curve: tools like Socket.io improve and simplify communication between client and server, and Express can set up a Server and build APIs much quicker than by the manual use of the http module.
+
+Thus, it's for these five reasons (High-performance, Scalability, Ease-of-learning, Full Javascript integration, and Extensibility) that Node is so widely used and precisely why Node's architecture and inner-workings have set it up to preform as well as it does.
+
+Drawbacks
+Perhaps the most common complaint relating to Node is that is cannot be easily updated to fit modernizing standards. Much of the Node codebase is tangled with legacy projects, and thus the process of providing new features is increasingly difficult.
+
+This is one of the main reasons its creator Ryan Dahl started Deno—as a sort of evolution upon Node without having to worry about backwards-compatibility with thousands of legacy projects.
+
+On the occasions that Node has to update without backwards compatibility, developers need to readjust their projects, and thus the Node API is rarely stable.
+
+Beyond that, some argue Node can hit snags when faced with heavy computational tasks if not configured properly with child-processes.
+
+The last major drawback of Node has to do with the thousands of Node packages that exist. Often these packages are rehashes of existing projects, contain dozens of dependencies, and have very limited or poor library support.
+
+The reality of working with Node is that several packages will be used in the course of a project and the lack of library support can make the development experience significantly more challenging.
+
 Top Node.js Interview Questions You Must Prepare In 2025
 Last updated on Dec 09,2024346.1K Views
 Share
