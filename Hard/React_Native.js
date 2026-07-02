@@ -1,3 +1,630 @@
+Top 100 React Native Interview Questions and Answers
+By Baahubali YEPL -2024-12-30
+react-native-interview-questions
+Join Telegram	Join Telegram
+Join Whatsapp Groups	Join Whatsapp
+Top React Native Interview Questions and Answers: React Native Interview Questions and Answers can be a valuable resource for individuals seeking to enhance their knowledge and skills in this popular mobile application framework.
+
+Whether you are a seasoned developer or just starting out, the Top 100 React Native Interview Questions and Answers can provide valuable insights into the latest trends, best practices, and technical details related to React Native. In addition, if you are preparing for a React Native technical interview or seeking opportunities as a fresher, you may find the Latest React Native Interview Questions, and React Native Interview Questions for Freshers particularly helpful.
+
+Table of Contents
+React Native Technical Interview Questions
+To help you in your preparation for your upcoming React Native interview, we have compiled a comprehensive list of The Top 100 React Native Interview Questions and Answers, including the latest React Native interview questions. This resource will help you to be fully equipped to handle any questions that may arise during your interview and increase your chances of success.
+
+Top 100 React Native Interview Questions and Answers
+1. What is React Native, and how does it differ from React?
+
+React Native is a mobile app development framework that allows developers to create mobile apps for iOS and Android using the same codebase. It is based on React, which is a JavaScript library for building user interfaces. The main difference between React and React Native is that React is used for building web applications, while React Native is used for building mobile applications.
+
+2. Explain Flux.
+
+Flux is a software architectural pattern that implements a unidirectional data flow in an application. It aims to control the flow of derived data and allows communication between multiple components using a central Store that has complete authority over all data. In this pattern, all data updates must occur through the central Store, ensuring stability and reducing runtime errors. By enforcing a strict unidirectional data flow, Flux helps to ensure consistency and maintainability in complex applications.
+
+2 Q N
+
+3. How does React Native work?
+
+React Native works by using a bridge to communicate with the native components of a mobile device. The bridge allows developers to write code in JavaScript, which is then translated into native code that can be executed on the device. This allows developers to use a single codebase for both iOS and Android, while still being able to access native features such as camera, geolocation, and push notifications.
+
+4. What are the benefits of using React Native for mobile app development?
+
+The benefits of using React Native for mobile app development include faster development time, lower development costs, and the ability to write code once and use it across multiple platforms. React Native also provides a more responsive user experience, as the apps are built using native components rather than web views.
+
+5. How can you debug a React Native application?
+
+There are several tools available for debugging React Native applications, including the React Native Debugger, the Chrome Developer Tools, and the built-in debug menu in the iOS Simulator and Android Emulator. These tools allow developers to inspect the app’s state and debug issues with the code.
+
+6. Show how the data flows through Redux?
+
+6 q N
+
+7. How do you handle orientation changes in a React Native app?
+
+Orientation changes can be handled using the Dimensions API, which allows the app to detect changes to the device’s dimensions and adjust the layout accordingly. The app can also listen to the orientation change event and update the UI based on the new orientation.
+
+8. What are the core components of React Native?
+
+The core components of React Native include View, Text, Image, ScrollView, TextInput, and Button. These components provide the basic building blocks for building a mobile app’s user interface.
+
+9. What is Props Drilling and how can we avoid it?
+
+Props drilling, also known as props threading, is a term used to describe the process of passing data from a parent component to a specific child component. However, in order to achieve this, other components that don’t need the data themselves must still pass it down the chain. This can result in code that is harder to manage and understand, as well as making it more difficult to make changes to the data flow in the future.
+
+9q N
+
+10. Can you explain the difference between state and props in React Native?
+
+State	Props
+Definition	The state is a private and mutable data store managed within a component that is used to manage component data	Props is an immutable data passed down to a component by its parent component to configure its behavior
+Declaration	Defined within a component constructor or using the use state hook	Defined when a component is used in the parent component and passed as an attribute
+Update	The state can be updated within a component using setState()	Props cannot be directly updated within a component, only the parent component can update them
+Access	The state is accessible only within the component where it is declared	Props are accessible within the component as this. props
+Purpose	Used to manage internal component state and trigger component re-renders	Used to configure a component and pass data between components
+ 
+
+11. What is the role of the bridge in React Native?
+
+The bridge in React Native is responsible for communicating between the JavaScript code and the native code of the device. It allows developers to use JavaScript to control native components, such as the camera and GPS
+
+12. Explain Different Threads in React Native with the Use of Each?
+
+React Native right now uses 3 threads:
+
+MAIN/UI Thread — This is the main application thread on which your Android/iOS app is running. The UI of the application can be changed by the Main thread and it has access to it.
+Shadow Thread — layout created using React library in React Native can be calculated by this and it is a background thread.
+JavaScript Thread — The main Javascript code is executed by this thread.
+12 q N
+
+13. How do you style components in React Native?
+
+Components in React Native can be styled using a combination of inline styles and style sheets. Inline styles can be used to apply styles directly to a component, while style sheets can be used to define styles that can be reused across multiple components.
+
+14. How can you handle navigation in a React Native app?
+
+Navigation in a React Native app can be handled using the React Navigation library, which provides a set of navigators that can be used to create navigation stacks, tabs, and drawers. Navigation can also be handled using the built-in navigation components provided by React Native.
+
+15. Can you explain the difference between ScrollView and FlatList in React Native?
+
+Feature	ScrollView	FlatList
+Performance	Renders all items at once, which can affect performance when working with large datasets	Renders only the items currently visible on the screen, improving performance when working with large datasets
+Data	Can handle any type of data	Requires an array of data
+Lazy loading	Does not support lazy loading by default	Supports lazy loading by default
+Infinite scrolling	Does not support infinite scrolling by default	Supports infinite scrolling by default
+Item rendering	Renders all items as separate components	Renders items using a single component
+Layout	Renders all items in a vertical or horizontal layout	Can render items in any layout using props such as numColumns and horizontal
+Memory usage	Stores all items in memory, which can lead to higher memory usage	Only stores the items currently visible on the screen, reducing memory usage
+
+16. What is the significance of AsyncStorage in React Native?
+
+AsyncStorage is a key-value storage system that allows React Native apps to store and retrieve data asynchronously. It is used to persist data between app launches, such as user preferences, session data, or app settings. AsyncStorage provides a simple API for data storage that works on both Android and iOS devices.
+
+17. How do you implement internationalization in a React Native app?
+
+To implement internationalization in a React Native app, you can use the i18n-js library, which provides a simple way to define and manage translations for multiple languages. You can create translation files for each language and use them to display text in the correct language based on the user’s locale settings.
+
+18. How can you integrate third-party libraries into a React Native app?
+
+To integrate third-party libraries into a React Native app, we can use either the npm package manager or manually link the libraries. The npm approach involves running a command to install the library and then importing it into the project. For manual linking, we need to link the library’s native code with our project’s native code.
+
+19. Can you explain the concept of “virtual DOM” in React Native?
+
+The virtual DOM is a programming concept used by React Native to increase the performance of web and mobile applications. It is a lightweight copy of the actual DOM, which is stored in memory and is used to manage changes made to the user interface. When a change is made to the UI, React Native first updates the virtual DOM and then calculates the most efficient way to update the actual DOM, thereby reducing the number of times the browser needs to re-render the UI.
+
+20. What is the syntax for using the “useState” hook to update a state value in a React Native component?
+
+The syntax for using the “useState” hook to update a state value in a React Native component is:
+
+"setState(newValue)"
+21. What is the difference between React Native and Ionic?
+
+React Native is a JavaScript framework that uses native components to build mobile applications for both iOS and Android platforms. Ionic, on the other hand, is a UI toolkit that uses web technologies such as HTML, CSS, and JavaScript to build hybrid mobile applications. While React Native provides a more native feel to the app, Ionic is more suitable for developing cross-platform applications with a web-like feel.
+
+22. How do you optimize performance in a React Native app?
+
+To optimize performance in a React Native app, we can use techniques such as code splitting, lazy loading, caching, and using native modules. We can also minimize the number of unnecessary re-renders by using shouldComponentUpdate() or React. memo(). Another way to optimize performance is by using FlatList or VirtualizedList instead of ScrollView when dealing with large amounts of data.
+
+23. What is the significance of AsyncStorage in React Native?
+
+AsyncStorage is a simple, unencrypted, asynchronous, persistent, and key-value storage system used by React Native. It allows us to store data in the form of key-value pairs locally on the user’s device, which can be accessed even after the app is closed. It is commonly used to store user preferences, settings, and authentication tokens.
+
+24. How do you use WebView in a React Native app?
+
+To use WebView in a React Native app, you can use the WebView component from the ‘react-native-webview’ package. You can install the package using npm or yarn. Once installed, you can import the WebView component and use it in your
+
+import React from 'react';
+import { WebView } from 'react-native-webview';
+
+const MyWebView = () => {
+return (
+<WebView
+source={{ uri: 'https://www.example.com' }}
+/>
+);
+};
+export default MyWebView;
+Here, we are importing the WebView component and using it to render a web page by passing a URI to the source prop.
+
+25. How do you define a new screen in a React Native app using React Navigation?
+
+You define a new screen in a React Native app using React Navigation by creating a new component and adding it to the stack navigator using the “Screen” component, like so:
+
+<Stack.Screen name="MyScreen" component={MyComponent} />
+26. Can you explain the role of AsyncStorage in React Native?
+
+AsyncStorage is a simple, unencrypted, asynchronous, persistent, key-value storage system for React Native. It allows you to store data in the device’s local storage and access it even after the app is closed. You can use AsyncStorage to store user preferences, user authentication data, or any other data that needs to be persisted across app sessions. AsyncStorage is an API that can be accessed using the AsyncStorage module from the ‘react-native’ package.
+
+27. What is Redux, and how is it used with React Native?
+
+Redux is a state management library for JavaScript applications. It is commonly used with React Native to manage the state of an application, making it easier to maintain and update the app’s data. Redux works by providing a single source of truth for the application’s state, which can be accessed by any component in the app.
+
+28. How do you create reusable components in React Native?
+
+To create a reusable component in React Native, you can create a new JavaScript file and export a new component. For example, you can create a reusable button component as follows:
+
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+
+const MyButton = ({ onPress, title }) => {
+return (
+<TouchableOpacity onPress={onPress} style={styles.button}>
+<Text style={styles.title}>{title}</Text>
+</TouchableOpacity>
+);
+};
+
+const styles = StyleSheet.create({
+button: {
+backgroundColor: 'blue',
+padding: 10,
+borderRadius: 5,
+},
+title: {
+color: 'white',
+fontSize: 16,
+fontWeight: 'bold',
+textAlign: 'center',
+},
+});
+export default MyButton;
+Here, we are exporting a new component called MyButton that takes two props, onPress, and title. We are using the TouchableOpacity component from React Native to create a clickable button, and styling it with a custom button style. We are also using a custom title style for the button text.
+
+29. What is the syntax for using the “useEffect” hook in a React Native component?
+
+The syntax for using the “useEffect” hook in a React Native component is:
+
+useEffect(() => { // effect code }, [dependency1, dependency2])
+30. What is the significance of propTypes in React Native?
+
+PropTypes are a way to validate the props that are passed to a component in React Native. PropTypes help to catch common errors early on by providing a way to specify the expected type of each prop. This can help to prevent bugs and make code more maintainable. PropTypes are defined as static properties on the component class and can be accessed using the propTypes property.
+
+31. Can you describe the concept of “pure components” in React Native?
+
+Pure components are a type of React component that only re-renders when its props or state changes. This can improve performance by reducing the number of unnecessary re-renders. Pure components are created by extending React.PureComponent class instead of React.Component class. Pure components are generally recommended when the component does not have any internal state and is only dependent on its props.
+
+32. How do you implement animations in React Native?
+
+To implement animations in React Native, we can use the Animated API which provides a way to create and manage animations. We can define animation properties such as opacity, position, and scale, and use them to create smooth and interactive animations.
+
+33. Can you describe the lifecycle methods of a React Native component?
+
+React Native components have several lifecycle methods that are called at different stages of the component’s life. The main lifecycle methods include:
+
+constructor: called when a component is created and used to set the initial state and bind methods.
+componentDidMount: called after the component is mounted in the DOM and used to initialize data that requires the DOM.
+componentDidUpdate: called when a component is updated and used to update the state and re-render the component.
+component will unmount: called when a component is unmounted and used to cleanup any resources.
+34. How do you define a class component in React Native?
+
+You define a class component in React Native using the “class” keyword and extending the “Component” class from the “react” package, like so:
+
+class MyComponent extends Component { render() { return <View /> } }
+35. What is the role of Flexbox in React Native?
+
+Flexbox is a layout system used to arrange and align elements in a flexible way. In React Native, Flexbox is used to create layouts that work across multiple devices and screen sizes. We can define flex properties such as flex, flexGrow, and flex-shrink on components to control how they are sized and positioned within their container.
+
+36. How do you implement internationalization in a React Native app?
+
+To implement internationalization in a React Native app, we can use the React Native Internationalization (i18n) library. This library provides a way to translate strings into different languages and display them based on the user’s locale. We can define translations for different languages in JSON files and use the i18n library to load the correct translation based on the user’s locale.
+
+37. How do you handle touch events in a React Native app?
+
+In React Native, we can handle touch events using Touchable components such as TouchableOpacity, TouchableHighlight, and TouchableWithoutFeedback. We can define onPress, onLongPress, and other event handlers on these components to respond to touch events.
+
+38. How do you implement push notifications in a React Native app?
+
+To implement push notifications in a React Native app, you can use the react-native-push-notification package. You can install the package using npm or yarn. Once installed, you can import the package and use it to register and handle push notifications in your React Native app. You can also use other packages like react-native-firebase or react-native-notifications for push notifications.
+
+39. Can you explain the concept of “bridging” in React Native?
+
+Bridging is a concept in React Native that allows JavaScript code to interact with native code in a platform-specific way. React Native provides a set of APIs that can be used to bridge between the JavaScript and native worlds. This allows developers to write native modules in Objective-C or Java, and expose them to JavaScript. Bridging also enables communication between the JavaScript thread and the native UI thread.
+
+40. How do you handle deep linking in a React Native app?
+
+To handle deep linking in a React Native app, you can use the Linking API from React Native. You can use the getInitialURL method to retrieve the initial URL when the app is launched from a deep link. You can also use the addEventListener method to listen for deep link events while the app is running. Once you have the deep link URL, you can parse it and use it to navigate to the appropriate screen in your app.
+
+41. What are the best practices for React Native app development?
+
+Some best practices for React Native app development include:
+
+Keeping the app code simple and modular
+Using a consistent coding style and code organization
+Optimizing performance by using pure components, reducing component re-renders, and
+minimizing the use of expensive operations like layout calculations
+Using best practices for navigation and state management
+Following accessibility guidelines and testing for accessibility
+Using a robust testing and debugging strategy
+Staying up-to-date with the latest updates and features of React Native
+42. Can you explain the difference between a “controlled” and “uncontrolled” component in React Native?
+
+Controlled Component	Uncontrolled Component
+Definition	A component that is entirely controlled by React through its state management	A component that is controlled mainly by the DOM
+State management	The component’s state is managed by the parent component, which passes down props that dictate its behavior	The component’s state is managed internally by the browser or the component itself
+Data flow	The parent component has complete control over the component’s data and behavior	The component can manage its own data flow, potentially leading to more complexity in the code
+Performance	Generally more performant as the parent component can optimize and re-render only the necessary parts of the component tree	Can be less performant as the component needs to constantly update and re-render based on its own state changes
+Flexibility	Provides more flexibility and control over the component’s behavior, but can lead to more code and complexity	Provides less flexibility but can be simpler to implement and maintain
+
+43. Can you explain the concept of “hooks” in React Native?
+
+Hooks are a feature introduced in React 16.8 that allows developers to use state and other React features in functional components. Hooks provide a way to reuse stateful logic across multiple components without using higher-order components or render props. Examples of hooks include useState, useEffect, useContext, and useCallback.
+
+44. How do you handle asynchronous operations in React Native?
+
+Asynchronous operations in React Native can be handled using promises or async/await syntax. The most commonly used methods for handling asynchronous operations are fetch, AsyncStorage, and the various methods provided by the React Native networking library, such as XMLHttpRequest.
+
+45. What is the significance of the Permissions API in React Native?
+
+The Permissions API in React Native provides a way for developers to request permission from the user to access sensitive device features, such as the camera or location. This is an important security feature that helps to protect user privacy.
+
+46. How do you implement server-side rendering in a React Native app?
+
+Server-side rendering in React Native can be implemented using third-party libraries, such as Next.js or Gatsby. These libraries provide a way to render React components on the server and send the resulting HTML to the client.
+
+47. Can you explain the difference between setState and forceUpdate in React Native?
+
+setState	forceUpdate
+A method used to update the state of a component and re-render it.	A method used to re-render a component without updating its state.
+Only updates the state object and triggers a re-render of the component and its child components.	Only updates the view of the component and its child components without updating the state object.
+Is asynchronous, meaning that React will batch multiple setState calls into a single update for performance reasons.	Is synchronous, meaning that React will immediately update the view of the component and its child components when this method is called.
+Allows passing a callback function as a second parameter, which will be executed after the state has been updated and the component re-rendered.	Does not have a callback parameter.
+Can update a subset of the state object, whereas the rest of the state remains unchanged.	Always triggers a re-render of the entire component and its child components.
+
+48. What is the significance of the WebView component in React Native?
+
+The WebView component in React Native provides a way to render web content in a native app. This is useful for integrating web-based content into a mobile app, such as displaying a website or web app within a native app.
+
+49. How do you implement custom transitions in a React Native app?
+
+Custom transitions in React Native can be implemented using the Animated API, which provides a way to create and manipulate animations in a declarative way. The Animated API can be used to animate properties such as opacity, position, and scale.
+
+50. Can you describe the role of the LayoutAnimation API in React Native?
+
+The LayoutAnimation API in React Native provides a way to animate changes to the layout of a component. This can be useful for creating smooth, intuitive animations when components are added or removed from a layout.
+
+51. How do you implement push notifications in React Native?
+
+Push notifications in React Native can be implemented using third-party libraries, such as react-native-firebase or react-native-push-notification. These libraries provide a way to send notifications from a server to a mobile device, even when the app is not open.
+
+52. How does React Native differ from Ionic in terms of performance?
+
+Framework	Performance
+React Native	React Native uses a bridge to communicate with native APIs, which can result in better performance compared to other hybrid frameworks. The bridge allows React Native to render components directly on the device, rather than relying on a WebView. In addition, React Native uses a virtual DOM to optimize updates and reduce rendering time. Overall, React Native can provide near-native performance for many types of apps.
+Ionic	Ionic is built on top of the Angular framework and uses a WebView to render components. While this approach can be convenient for developers, it can result in slower performance compared to native or React Native apps. Ionic also lacks direct access to native APIs, which can limit its performance and functionality. However, Ionic can still provide acceptable performance for many types of apps, particularly those that don’t require heavy processing or complex animations.
+ 
+
+53. What is the role of Flexbox in React Native?
+
+Flexbox is a layout system used in React Native that provides a way to create flexible and responsive layouts. Flexbox allows components to be arranged in rows or columns and provides a way to control the size, position, and alignment of components within a layout.
+
+54. How do you implement custom fonts in a React Native app?
+
+To implement custom fonts in a React Native app, you need to add the font files to your project and reference them in your code. You can do this by creating a font directory in your project’s root directory and placing the font files in it. Then, you can reference the font family name and file name in the style property of your components. You also need to add the font files to the info.plist file for iOS and the AndroidManifest.xml file for Android.
+
+55. What is the significance of the NetInfo API in React Native?
+
+The NetInfo API in React Native allows you to check the network connectivity status of the device. You can use the API to detect changes in the network connectivity status and adjust your app’s behavior accordingly. This is especially useful when your app needs to download or upload data, as you can use the NetInfo API to prevent the app from performing these operations when the device is offline.
+
+56. How do you implement image caching in a React Native app?
+
+To implement image caching in a React Native app, you can use a third-party library like react-native-cached-image. This library provides a caching mechanism for images, allowing you to download images once and then reuse them from the cache. You can also use the built-in Image component in React Native, which provides basic image caching functionality.
+
+57. How is React Native different from Native App Development?
+
+React Native	Native App Development
+Uses JavaScript and JSX for development	Uses native languages like Java or Kotlin for Android and Objective-C or Swift for iOS
+Enables cross-platform development with a single codebase	Requires separate development for each platform
+Uses a bridge to communicate between JavaScript code and Native code	Does not require a bridge for communication
+Allows for faster development and iteration time	Requires more time and effort for development and iteration
+Provides a limited set of pre-built UI components	Provides a wide range of pre-built UI components
+Has access to the device’s native APIs through the bridge	Has direct access to the device’s native APIs
+58. Can you explain the concept of “higher-order components” in React Native?
+
+Higher-order components (HOCs) are a pattern in React Native that allow you to reuse component logic across multiple components. HOCs are functions that accept a component as an argument and return a new component that wraps the original component. The HOC can then add new functionality to the component or modify its behavior in some way. This is useful when you have multiple components that need to share the same functionality, as you can create a HOC that provides this functionality and wrap each component in it.
+
+59. How do you handle keyboard events in a React Native app?
+
+To handle keyboard events in a React Native app, you can use the Keyboard API. This API provides methods for showing and hiding the keyboard, as well as events for detecting when the keyboard is shown or hidden. You can use these events to adjust the layout of your app when the keyboard is shown, such as by scrolling the view or adjusting the position of input fields.
+
+60. What is the role of the ImageBackground component in React Native?
+
+The ImageBackground component in React Native allows you to display an image as the background of a component. This is useful when you want to create a custom background for a component, such as a screen or a card. The ImageBackground component supports all the same props as the Image component, as well as additional props for controlling the layout of the image.
+
+61. What is the syntax for creating a new React Native project?
+
+The syntax for creating a new React Native project is
+
+npx react-native init <project-name>
+62. How do you implement offline caching in a React Native app?
+
+To implement offline caching in a React Native app, you can use a library like react-native-fetch-blob or rn-fetch-blob. These libraries provide methods for downloading and caching files, allowing your app to continue functioning even when the device is offline. You can also use the AsyncStorage API in React Native to cache data in the device’s local storage.
+
+63. What are the differences between AsyncStorage and LocalStorage in React Native?
+
+Feature	AsyncStorage	LocalStorage
+Storage capacity	up to 6 MB	up to 5-10 MB depending on OS
+Scope	application-specific	domain-specific
+Accessibility	asynchronous access	synchronous access
+Data format	JSON	key-value pairs
+Automatic clearing	No	No
+Encryption	No	No
+Support for updates	Yes, overwrites previous value	Yes, overwrites previous value
+Persistence	Yes	Yes
+Platform-specific	Yes, compatible with both mobile and web platforms	Yes, compatible with web platforms only
+ 
+
+64. Can you explain the concept of “render props” in React Native?
+
+Render props are a pattern in React Native that allows you to pass a function as a prop to a component, which the component then calls to render its content. This allows you to reuse component logic across multiple components, while still allowing each component to customize its rendering. The render prop function typically accepts arguments that the component can use to customize the rendering.
+
+65. Can you explain the difference between setState and forceUpdate in React Native?
+
+React Native provides various ways to style components, including inline styles, stylesheet objects, and third-party libraries such as styled components. Inline styles can be applied directly to components using the style prop, while stylesheet objects provide a more organized way of managing styles. Third-party libraries such as styled components offer a more flexible and powerful way of styling components.
+
+66. What is the difference between View and ScrollView in React Native?
+
+The view is a container component that provides a basic layout structure for other components. ScrollView, on the other hand, is a specialized container that provides scrolling capabilities for its child components.
+
+67. How does React Native differ from Xamarin in terms of cross-platform development?
+
+Comparison	React Native	Xamarin
+Framework Type	JavaScript framework	C# framework
+Learning Curve	Easier to learn for web developers familiar with React	Steeper learning curve for web developers unfamiliar with C#
+Platform Support	Limited to iOS and Android	Supports iOS, Android, and Windows
+Development Time	Shorter development time due to the use of pre-built components	Longer development time due to lack of pre-built components
+Performance	Fast and efficient due to the use of native components	Performance can be slower compared to React Native
+
+68. How do you define a state in a React Native component?
+
+You define a state in a React Native component using the “useState” hook, like so:
+
+const [stateName, setState] = useState(initialValue)
+69. How do you handle user input in React Native?
+
+React Native provides various input components such as TextInput, Button, TouchableHighlight, and TouchableWithoutFeedback to handle user input. These components can be used to capture user input, trigger events, and update the state of the application.
+
+70. What are the differences between StyleSheet.create and inline styles in React Native?
+
+StyleSheet.create	Inline styles
+StyleSheet.create is a function used to create reusable styles that can be shared between components.	Inline styles are used to apply styles directly to the component.
+Styles created using StyleSheet.create are optimized and validated by React Native at build time.	Inline styles are not optimized and can have an impact on performance.
+Styles created using StyleSheet.create are declared in a JavaScript object literal format with camelCased property names.	Inline styles are declared as a JavaScript object or a plain CSS style string.
+Styles created using StyleSheet.create can only use a subset of CSS properties, as defined by React Native.	Inline styles can use all CSS properties supported by React Native.
+
+71. What is the purpose of the React Native bridge?
+
+The React Native bridge is a communication channel between the JavaScript code and the native code. It enables React Native to interact with native modules and APIs such as camera, GPS, and storage.
+
+72. What is the use of ref in React Native?
+
+Ref is a way to access the underlying native component instance of a React component. It can be used to modify the component’s behavior, such as triggering methods or accessing properties of the underlying native component.
+
+73. How do you handle network requests in React Native?
+
+React Native provides various ways to handle network requests, including the built-in fetch API, Axios library, and other third-party libraries. These methods can be used to send HTTP requests to a server and receive responses.
+
+74. What is the use of the PropTypes library in React Native?
+
+PropTypes is a library used to validate the props passed to a component. It helps to catch errors early in the development process and provides better documentation for component usage.
+
+75. What are the differences between Redux and MobX in React Native?
+
+Redux	MobX
+Type	Library for managing application state	Library for managing application state
+Setup	More complex and requires more boilerplate code	Easier to set up and has less boilerplate code
+State Management	Uses a single state tree for the entire application	Allows multiple state trees that can be used for specific components
+Immutable State	Immutable state, meaning the state cannot be modified directly	Mutable state, allowing for direct manipulation of state
+Learning Curve	Steeper learning curve due to its complexity	Easier to learn and use, especially for small to medium-sized applications
+Performance	Can suffer from performance issues due to its immutable state approach and use of pure functions	Can have better performance due to its mutable state approach and use of observables
+76. How do you implement authentication in React Native?
+
+Authentication can be implemented in React Native by using various techniques such as storing tokens in AsyncStorage, implementing secure communication protocols, and using third-party authentication services such as Firebase or Auth0.
+
+77. What are the differences between Flexbox in React Native and CSS Flexbox?
+
+Feature	React Native Flexbox	CSS Flexbox
+Direction	Column or Row	Row
+Alignment	Align Items	Align Items
+Justification	Justify Content	Justify Content
+Wrap	Wrap	Wrap
+Cross Axis	Align Self	Align Items
+Order	Order	Order
+Flex Basis	Flex Basis	Flex Basis
+Flex Grow	Flex Grow	Flex Grow
+Flex Shrink	Flex Shrink	Flex Shrink
+
+78. What is the syntax for defining a style in a React Native component?
+
+The syntax for defining a style in a React Native component is similar to CSS syntax, using key-value pairs within curly braces, like so:
+
+const styles = StyleSheet.create({ key: { value } })
+79. How do you integrate Google Maps in React Native?
+
+Google Maps can be integrated into a React Native app by using the react-native-maps library. This library provides various components and APIs to display maps and markers, handle user interactions, and implement custom map styles.
+
+80. How do you handle data persistence in React Native?
+
+Data persistence can be handled in React Native using various techniques such as AsyncStorage, SQLite, or third-party libraries such as Realm or Firebase. These methods can be used to store and retrieve data from a local or remote database.
+
+81. What is the difference between a Component and a PureComponent in React Native?
+
+Component	PureComponent
+It is a base class for all React Native components.	It is a subclass of Component that implements a shallow comparison between the current and next props and state.
+It doesn’t implement shouldComponentUpdate() lifecycle method.	It implements shouldComponentUpdate() lifecycle method to perform a shallow comparison of props and state.
+It always re-renders the component when the parent component re-renders, regardless of whether the props have changed or not.	It re-renders the component only when the props or state change.
+
+82. What is the difference between React and React Native?
+
+React is a JavaScript library for building web user interfaces, while React Native is a framework for building native mobile apps using React. While both React and React Native use a similar component-based architecture, React Native includes additional components and APIs specifically designed for mobile app development, such as native UI components, navigation components, and APIs for accessing device features like the camera and geolocation.
+
+83. How do you define a function component in React Native?
+
+You define a function component in React Native using the “function” keyword, like so:
+
+function MyComponent() { return <View /> }
+84. How do you handle keyboard events in React Native?
+
+To handle keyboard events in React Native, you can use the Keyboard API, which provides methods for showing and hiding the keyboard, as well as events for detecting when the keyboard is shown or hidden. You can use these events to adjust the layout of your app when the keyboard is shown, such as by scrolling the view or adjusting the position of input fields.
+
+85. What is the use of the TouchableOpacity component in React Native?
+
+The TouchableOpacity component in React Native is a button-like component that provides tactile feedback when pressed. When the user presses the component, it lowers its opacity to indicate that it has been pressed. This is useful for creating interactive elements in your app, such as buttons or links.
+
+86. What are the differences between props and states in React Native?
+
+Props	State
+Props are read-only and cannot be modified within the component	State is mutable and can be updated by calling setState() method
+Props are passed from parent component to child component	State is managed within the component where it is declared
+Props can be used to configure a component based on the data passed down from the parent component	State is used to store the internal data of a component, such as user input and UI updates
+Props are external inputs to the component that help customize its behavior	State is internal to the component and is used to manage the component’s behavior and rendering
+Props can only be updated by the parent component	State can only be updated within the component that owns it
+87. How do you implement internationalization in React Native?
+
+To implement internationalization in React Native, you can use a library like react-native-localization or react-native-i18n. These libraries provide tools for managing translations and formatting localized text and dates. You can also use the built-in Intl object in JavaScript to format dates, times, and numbers according to the user’s locale.
+
+88. What is the difference between componentWillReceiveProps and shouldComponentUpdate in React Native?
+
+Feature	componentWillReceiveProps	shouldComponentUpdate
+When it’s called	Every time props are received	Before rendering, when props or state have changed
+What it’s used for	Updating component state	Optimizing rendering performance
+Arguments	nextProps	nextProps and nextState
+Returns a value	No	Yes
+Return value determines	Whether or not to update state	Whether or not to re-render the component
+Default implementation	Always returns true	Always returns true
+89. What is the syntax for passing props to a React Native component?
+
+The syntax for passing props to a React Native component is similar to HTML attributes, like so:
+
+<MyComponent prop1={value1} prop2={value2} />
+90. How do you perform unit testing in React Native?
+
+You can perform unit testing in React Native using a testing framework like Jest or Mocha. These frameworks provide tools for writing and running unit tests for your components and business logic. You can also use tools like Enzyme to simulate user interactions and test the behavior of your components.
+
+91. How do you handle gestures in React Native?
+
+To handle gestures in React Native, you can use the PanResponder API, which allows you to respond to touch and gesture events. You can use this API to create custom gestures, such as swipe gestures or pinch-to-zoom gestures. The GestureResponderSystem API provides a higher-level abstraction for handling common gestures like taps and long presses.
+
+92. What is the syntax for defining a navigation stack in a React Native app using React Navigation?
+
+The syntax for defining a navigation stack in a React Native app using React Navigation is to create a stack navigator using “createStackNavigator”, like so:
+
+"const Stack = createStackNavigator()"
+93. What is the difference between React Native and React?
+
+React	React Native
+Develops web applications using JavaScript	Develops mobile applications using JavaScript
+Renders UI elements using the browser’s DOM	Renders UI elements using native components
+Code can be reused for web and mobile	Code can be reused for Android and iOS only
+Uses HTML for markup	Uses JSX for markup
+Components can be used directly in the code	Components are provided by the framework
+Best for web development	Best for mobile development
+94. How is user Input Handled in React Native ?
+
+TextInput is a Core Component that allows the user to enter text. It has an onChangeText prop that takes a function to be called every time the text changes, and an onSubmitEditing prop that takes a function to be called when the text is submitted.
+
+import React, { useState } from 'react';
+import { Text, TextInput, View } from 'react-native';
+
+const PizzaTranslator = () => {
+const [text, setText] = useState('');
+return (
+<View style={{padding: 10}}>
+<TextInput
+style={{height: 40}}
+placeholder="Type here to translate!"
+onChangeText={text => setText(text)}
+defaultValue={text}
+/>
+<Text style={{padding: 10, fontSize: 42}}>
+{text.split(' ').map((word) => word &&).join(' ')}
+</Text>
+</View>
+);
+} 
+export default PizzaTranslator;
+95. List down Key Points to integrate React Native in an existing Android mobile application?
+
+Primary points to note in integrating React Native components into your Android application are:
+
+Set up React Native dependencies and directory structure.
+Develop your React Native components in JavaScript.
+Add a ReactRootView to your Android app. This view will serve as the container for your
+React Native component.
+Start the React Native server and run your native application.
+96. What is State and how is it used in React Native?
+
+It is used to control the components. The variable data can be stored in the state. It is mutable means a state can change the value at any time.
+
+import React, {Component} from 'react';
+import { Text, View } from 'react-native';
+export default class App extends Component {
+state = {
+myState: 'State of Text Component'
+}
+updateState = () => this.setState({myState: 'The state is updated'})
+render() {
+return (
+<View>
+<Text onPress={this.updateState}> {this.state.myState} </Text>
+</View>
+); } }
+97. What are the limitations of React?
+Limitations of React are listed below:
+
+React is just a library, not a full-blown framework
+Its library is very large and takes time to understand
+It can be a little difficult for novice programmers to understand
+Coding gets complex as it uses inline templating and JSX
+98. What are the features of React?
+
+The major features of React are listed below:
+
+It uses the virtual DOM instead of the real DOM.
+It uses server-side rendering.
+It follows uni-directional data flow or data binding.
+99. How do you create an event in React?
+
+class Display extends React.Component({
+show(evt) {
+// code
+},
+render() {
+// Render the div with an onClick prop (value is a function)
+return (
+
+<div onClick={this.show}>Click Me!</div>
+
+);
+}
+});
+100. What can you do with HOC?
+
+HOC can be used for many tasks like:
+
+Code reuse, logic, and bootstrap abstraction
+Render High jacking
+State abstraction and manipulation
+Props manipulation
+If you’re looking to evaluate your understanding of React Native or prepare for technical interviews, the Top 100 React Native Interview Questions and Answers on freshersnow.com are an excellent resource. These questions cover a wide range of topics and can help you deepen your knowledge of React Native.
+
 Топ-10 вопросов и ответов на собеседовании для разработчика React Native
 April 30, 2026
 Исследовать другие роли
