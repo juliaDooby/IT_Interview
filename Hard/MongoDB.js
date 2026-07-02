@@ -1,3 +1,188 @@
+30 Frequently Asked MongoDB Interview Questions and Answers
+by DataFlair Team
+
+Expert-led Online Courses: Elevate Your Skills, Get ready for Future - Enroll Now!
+
+In our last tutorial, we had seen about autoincrement sequence in MongoDB. Now we will be looking at some frequently asked MongoDB interview questions and answers that you can prepare for the interview. These questions will surely help you to prepare for the interview.
+
+So, let’s start the latest MongoDB Interview Questions and Answers.
+
+Top MongoDB Interview Questions and Answers
+Here is the list of most asked MongoDB interview questions which one should read while preparing for the interview.
+
+Q1. How can you use profiler in MongoDB?
+
+Ans. MongoDB has a database profiler that shows characteristics related to each operation against the database. Using this profiler you can find queries (and write operations) which are slower than they should be and use this information for determining the usage of an index.
+
+Q2. Explain about ‘namespace’ in MongoDB?
+
+Ans. Collections in MongoDB store in BSON objects. So if we concatenate the database name that we are using and also the collection name in our program with a certain period in between is what we call as ‘namespace’.
+
+Q3. How can you perform transactions or locking in MongoDB?
+
+Ans. Generally, MongoDB does not use traditional locking or complex transactions with rollback, as it is lightweight and fast in terms of performance. We can think of how analogous it is to MySQL’s MyISAM auto-commit model.
+
+As the transaction support is extremely simple, performance enhances, especially for those systems that may run across many servers.
+
+Q4. Explain the situation when the data will be on more than one Shard?
+
+Ans. Sharding in MongoDB performs on a range basis. So all objects in a collection lie into a chunk. When there is more than 1 chunk, only then, there is an option to get data for multiple shards. These days the default chunk size is 64mb, so you need at least 64mb for migration.
+
+Q5. Explain about MongoDB database.
+
+Ans. MongoDB is a document-oriented DBMS. Assume MYSQL but with JSON-like objects comprising the data model, rather than RDBMS tables. MongoDB does not support joins or transactions.
+
+However, it shows secondary indexes, an expressive query language, atomic writes on a per-document level, and completely consistent reads. MongoDB also supports a feature of master-slave replication with automated failover and built in horizontal scaling via automated range based partitioning.
+
+Q6. Where we can use MongoDB?
+
+Ans. There are mainly 3 uses of MongoDB:
+
+We use MongoDB as the primary data store for operational applications with real-time requirements. MongoDB is fit to use for 60%-80% of the applications that are developing in today’s world. It is easy to operate and scale in ways that are hard.
+MongoDB is very helpful in many cases where the relational database is not fit for its usage, like scenarios where we want to use unstructured, semi-structured and polymorphic data, it is also fit to be used for applications with large scalability requirements or multi-data center deployments.
+Some common places where MongoDB examples include are mobile apps, product catalog, real-time personalization, content management and applications built around the relational data model and SQL.
+Q7. What are the limitations of MongoDB 32-bit?
+
+Ans. MongoDB uses memory mapped files. When you are running a 32-bit build of MongoDB, the total storage for the server which includes data and indexes is around 2 gigabytes.
+
+Due to the storage problem, we cannot use MongoDB for production on 32-bit machines. On the other side, if you are using 64-bit builds then, we strongly recommend operating systems.
+
+Q8. What points should we consider while creating Schema in MongoDB?
+
+Ans. These are some of the points that need to be taken into consideration while creating the schema and they are as follows:
+
+Design it according to your requirements.
+Combine objects into one document if you are using them together. If it is not like that then separate them.
+Joins should be applied when it is in write mode and not when it is in read mode.
+For frequent use cases optimize your schema.
+Apply complex aggregation in the schema.
+Q9. Difference between MongoDB and MySQL
+
+Ans. Both these databases are free and open source. There is a lot of difference between these two databases in terms of data representation, relationship, transaction, querying data, schema design and definition, performance speed, normalization and many more.
+
+The speed in which your queries are being processed in MongoDB is fast as compared to MySQL. The way in which data is being represented in MongoDB and MySQL is also very different.
+
+MySQL has only structured and table formatted data whereas MongoDB is having unstructured and comma separated data in them.
+
+Q10. Explain about indexes in MongoDB.
+
+Ans. Because of indexes in MongoDB, efficient execution of queries performs in MongoDB. Without them, MongoDB just performs the scan of every document in a collection i.e. select those documents that match the query statement.
+
+If we get an appropriate index for a query, MongoDB can use the index to limit the number of documents it must inspect.
+
+Q11. How many indexes by default we can create for a new collection in MongoDB?
+
+Ans. By default, MongoDB created the _id collection for each and every collection.
+
+Q12. Tell about the storage engine in MongoDB.
+
+Ans. A storage engine is the part of a database that is responsible for keeping information about how much data stores on disk. For example – A storage engine gives better performance for read-heavy workloads, and another supports a greater throughput for write operations.
+
+Q13. Explain about GridFS in MongoDB.
+
+Ans. GridFS is a specification for storage and retrieval of files that crosses the BSON document size limit of 16MB. Instead of storing all files in a single document GridFS divides a file into small parts or chunks and stores each chunk as a separate document.
+
+Q14. Tell us about the structure of ObjectId in MongoDB.
+
+Ans. ObjectId in MongoDB is a 12-byte BSON type which has all the following:
+
+4-byte value representing seconds.
+3-byte machine identifier.
+2-byte process id.
+3-byte counter.
+Q15. Explain about the covered query in MongoDB.
+
+Ans. A covered query in MongoDB is one which has the following two points in them:
+
+Fields used in the query are part of an index used in the query.
+Fields returned in the results are in the same index.
+Q16. Which languages are being supported by MongoDB?
+
+Ans. The names of languages being supported by MongoDB are C, C++, C#, Java, Node.js, Perl, PHP, Python, Ruby, Scala, Go and Erlang. All these languages are having driver support from MongoDB.
+
+Q17. What is the syntax to view whether a Mongo is using the link?
+
+Ans. The command syntax used to view whether mongo is using the link is
+db._adminCommand(“connPoolStats”)
+
+Q18. What is a replica set?
+
+Ans. It is a group of mongo instances that host the same data set. Over here, one node is primary and another is secondary. Starting from primary and ending to secondary node all data replicates.
+
+Q19. By what reason is MongoDB the best?
+
+Ans. MongoDB is considered to be the best NoSQL database because of the following points:
+
+Document-oriented
+High Performance
+High Availability
+Easy Scalability
+Rich query languages
+Q20. Using what you can isolate cursors from intervening with the write operation?
+
+Ans. Snapshot() method is used to isolate cursors from intervening the write operation. By using this method it negotiates the index and makes sure that each query comes to an article only once.
+
+Q21. What way does journaling work in MongoDB?
+
+Ans. Write operations saves while journaling performs. The on-disk journal files are dependable for the reason that the journal writes are habitual. MongoDB designs a subdirectory, journal in dbPath.
+
+Q22. What will happen if an index does not fit into RAM?
+
+Ans. When an index is too huge to fit into RAM then at that time MongoDB reads the index, which is actually faster than reading RAM because the indexes easily fit into RAM if the server has RAM for indexes available along with the remaining set.
+
+Q23. What is the significance of using Dot notation in MongoDB?
+
+Ans. With the help of dot notation, MongoDB accesses both, the elements of an array and the fields of an embedded document.
+
+Q24. Tell something about the aggregation pipeline.
+
+Ans. We use MongoDB aggregation pipeline framework for performing aggregation tasks. We use the pipeline to transform the documents into aggregate results.
+
+Q25. What is the command to provide various information on the query plans used by a MongoDB query?
+
+Ans. The explain() command is used for this information. The modes that are present are as follows: ‘queryPlanner’, ‘executionStats’ and ‘allPlansExecution’.
+
+Q26. How to select records having keys in MongoDB query?
+
+Ans. Let the records in the database be as follows:
+
+{“_id”:”1?,”fn”:”sagar”,”ln”:”Varpe”}
+{“_id”:”1?,”fn”:”sag”,”score”:”10?}
+{“_id”:”1?,”ln”:”ln1?,”score”:”10?}
+{“_id”:”1?,”ln”:”ln2?}
+Suppose if we pass “In” as a parameter then it should return all records which have “In” as a key.
+
+{“_id”:”1?,”fn”:”sagar”,”ln”:”Varpe”}
+{“_id”:”1?,”ln”:”ln1?,”score”:”10?}
+{“_id”:”1?,”ln”:”ln2?}
+To find if a key/field exists in your document use the $exists operator.
+Via the MongoDB shell.
+
+db.things.find( { ln : { $exists : true } } );
+Q27. Explain about the storage engine in MongoDB.
+
+Ans. A storage engine is the part of a database that is used to manage how data is stored on disk.
+For example – One storage engine might offer better performance for read-heavy workloads, and another might support a higher-throughput for write operations.
+
+Q28. Tell about the usage of profiler in MongoDB.
+
+Ans. A database profiler is used to collect data about MongoDB write operations, cursors, database commands on a running MongoDB instance. You can enable profiling on a per-database or per-instance basis.
+
+The database profiler writes all the data it collects to the system. profile collection, which is a capped collection.
+
+Q29. Difference between MongoDB and Redis database.
+
+Ans. The points are as follows:
+
+Redis is faster than MongoDB.
+Redis has key-value storage whereas MongoDB has a document type storage.
+The redis is hard to code but MongoDB is easy.
+Q30. Explain why MongoDB data files are large in size?
+
+Ans. MongoDB doesn’t follow file system fragmentation and pre-allocates data files to reserve space while setting up the server. That’s why MongoDB data files are large in size.
+
+This comes to the end of MongoDB Interview Questions and Answers article. We hope you liked our explanation.
+
 
 Freshers MongoDB Interview Questions
 Intermediate MongoDB Interview Questions
