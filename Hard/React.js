@@ -1,9 +1,352 @@
+ReactJS Interview Questions for Senior Developers
+Alex Permiakov
+Alex Permiakov
+
+Follow
+9 min read
+·
+Jul 9, 2019
+1.8K
+
+
+6
+
+
+
+Press enter or click to view image in full size
+
+https://unsplash.com/photos/wawEfYdpkag
+If you have a few developers in a room who have been working with React for 3+ years, there is a very small chance they will ask you questions like “the difference between props and state”.
+
+Instead, people want to see your knowledge about common ReactJS patterns, well-known pitfalls, how to refactor and test your components and more.
+
+You can work with React for years and actually have no opinion on some of the less practical questions and it’s fine. However, if you have an interview, then it’s quite important to have an opinion. Why? Well, first, it feels good to be able to answer interviewer’s questions and also shows your interest in the subject.
+
+Q1. Why do we have both controlled and uncontrolled inputs?
+What interviewer wants to see: a solid understanding of a basic React concept.
+Ok, this is more like a warm-up question. Which is even more important to give a full answer.
+
+A controlled input accepts its current value as a prop, as well as a callback to change that value. It’s a “React way”:
+
+<input type="text" value={value} onChange={this.handleChange} />
+An uncontrolled input stores its own state internally, using DOM API.
+
+Here don’t provide value and onChange handler, but we use ref():
+
+<input type="text" ref={this.textInput} />
+And now you can access your input data as:
+
+this.textInput.current.value
+Your interviewer wants to hear more about details: are there any pros to using uncontrolled components, is there any performance difference?
+
+Personally, I’ve never used uncontrolled inputs, but if you are learning React or you have to integrate React and non-React code then it might be necessary.
+
+It’s nice to mention what your data (state) and UI (inputs) are always in sync with controlled input approach and it means you have to update the component’s state which triggers React reconciliation process.
+
+While with uncontrolled elements there is no need for that — you just keep the value inside the input DOM element.
+
+Q2. Why do we need a key property? Give an example when a bad key causes an error.
+What interviewer wants to see: some insight on how React works internally.
+The answer is based on the official React reconciliation process doc.
+
+There are classic diffing algorithms with O(n³) time complexity, which might be used for creating a tree of React elements. But it means for displaying 1000 elements would require one billion comparisons.
+
+Instead, React implements a heuristic O(n) algorithm with an assumption that the developer can hint at which child elements may be stable across different renders with a keyprop.
+
+What about a bad key? Well, an index might be a very bad key if you decide to make your children removable. Check out this demo. Try to type something in the second input and then remove the first one. But you still can see the value in the second one, why so?
+
+Because your keys are unstable. After removal, your third child with a key equals to 3, now has a key equals to 2. It’s not the same element for React now. And it will match it to the wrong DOM element, which previously had a key equals to 2 (which keeps the value we typed in a second input).
+
+Q3. How React event system is different from DOM events. Using stopImmediatePropagation().
+What interviewer wants to see: general knowledge of different JavaScript event models and everyday practical experience.
+The best way to answer this question is to first shortly explain how DOM event concepts like bubbling and capturing work.
+
+In short, with bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+Check this article for more info and demos.
+
+After that would be great to mention that React uses the Event Delegation Pattern — instead of assigning a handler to each of them — we put a single handler on their common ancestor and can access that element with event.target.
+
+And then it’s quite obvious to explain how stopImmediatePropagation is different from the tradition stopPropagation method: it prevents other listeners of the same event from being called which a case for React because of the event delegation pattern.
+
+Q4. How to prevent components from re-rendering?
+What interviewer wants to see: more knowledge about React and you care about performance.
+This is one of the most frequently asked questions. It’s worth to mention:
+
+shouldComponentUpdate() — returns ‘true’ by default. You can override if you know which props have to trigger an update.
+PureComponents — The difference between them is that React.Component doesn’t implement shouldComponentUpdate method but React.PureComponentimplements it with a shallow prop and state comparison.
+React.memo — The same as the previous one but it works with functional components.
+And as a follow up: when to use Component instead of PureComponent?
+
+You use PureComponents in 99% of cases in modern React. However, if you are working with Redux selectors, often you will need to explicitly specify the incoming prop changes to cancel the impending re-render to prevent UI thrashing. In this case, it’s appropriate to use a Component.
+
+Check out this deep reading if it’s all vague for you.
+
+Q5. Give an example of HOC.
+What interviewer wants to see: you are familiar with a well-known React pattern.
+HOC — a higher-order component is a function that takes a component and returns a new component. It’s a technique for sharing code between React components.
+
+Let’s say we have a simple Button component:
+
+const Button = props => <button {...props}>Hello</button>;
+We want to create a HOC for making a red border for our Button component. Let’s create it using our definition:
+
+const withRedBorder = Component =>
+  (props) => (
+    <Component {...props} style={{ border: "1px solid red" }} />
+  );
+And now we can create a RedButton component:
+
+const RedButton = withRedBorder(Button);
+// and use it as:
+<RedButton />
+Libraries that use HOC pattern: Redux connect, recompose.
+
+Q6. What is the render props?
+What interviewer wants to see: you are familiar with a second well-known React pattern.
+Render props — when a component takes a function that returns a React element and calls it instead of implementing its own render logic.
+
+It’s another technique for sharing code between React components.
+
+An example:
+
+<DataProvider render={data => (
+  <h1>Hello {data.target}</h1>
+)}/>
+Libraries that use render props pattern: React Router, Downshift.
+
+A follow up: what about HOC vs render props. Which one is better, when to use? This is a quite controversial topic, in this article you can find some pros and cons.
+
+Q7. React unit tests vs integration tests for components.
+What interviewer wants to see: understanding about different approaches to testing components.
+It’s worth to mention both Enzyme and react-testing-library.
+
+React testing library provides a clean and simple API which focuses on testing applications “as a user would”. This means an API returns HTML Elements rather than React Components with shallow rendering in Enzyme. It’s is a nice tool for writing integrational tests.
+
+Enzyme is still a valid tool, it provides a more sophisticated API which gives you access to component’s props and internal state. It makes sense to create unit tests for components.
+
+Check out this neat video about react-testing-library.
+
+Q8. What’s your favorite hook, how to implement it?
+What interviewer wants to see: practical usage of hooks and understanding of how it works.
+Despite hooks are still new API, a lot of people already use it in production and they expect you to know it.
+
+Get Alex Permiakov’s stories in your inbox
+Join Medium for free to get updates from this writer.
+
+Enter your email
+Subscribe
+
+Remember me for faster sign in
+
+Let’s recreate a useWindowSize — it’s easy-to-read hook and quite straightforward:
+
+import { useState, useEffect } from 'react';
+const useWindowSize = () => {
+  const getSize = () => ({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  const [size, setSize] = useState(getSize);
+  useEffect(() => {
+    const handleResize = () => setSize(getSize());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return size;
+}
+Usage:
+
+const App = () => {
+  const size = useWindowSize();
+  return (
+    <div>
+      {size.width}px / {size.height}px
+    </div>
+  );
+}
+You might expect some questions like:
+
+1. Is that necessary to call your function useWindowSize , what about just getWindowSize?
+
+Yes, without it, we wouldn’t be able to automatically check for violations of rules of Hooks because we couldn’t tell if a certain function contains calls to Hooks inside of it.
+
+2. Will it work if we remove [] argument from useEffect?
+
+Yes, but we’ll call useEffect hook on every render which may cause performance issues.
+
+3. How React knows when to re-render App component if we handle window resizing in useWindowSize?
+
+When you call setSize inside the custom hooks, React knows that this hook is used in App component and will re-render it.
+
+There is some portion of magic with React hooks. Check out Why Do React Hooks Rely on Call Order? article for more info.
+
+4. How to make this hook ready for Server-Side Rendering?
+
+Something like this:
+
+import { useState, useEffect } from 'react';
+const useWindowSize = () => {
+  const isClient = typeof window === 'object';  
+  const getSize = () => ({
+    width: isClient ? window.innerWidth : undefined,
+    height: isClient ? window.innerHeight : undefined
+  });
+  const [size, setSize] = useState(getSize);
+  useEffect(() => {
+    const handleResize = () => setSize(getSize());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return size;
+}
+Q9. Context API. How much it’s re-render?
+What interviewer wants to see: arguably the most important thing in React - how to manage the data flow.
+First of all, it’s worth to mention that unlike Redux, the context doesn’t have its own state, instead, it’s just a conduit and usually reads data from another component’s state.
+
+Also, with Context API it’s quite easy to re-render much more than you need even if you use PureComponent or React.memo.
+
+In the example below every time, we click on the button you will see a new message in the console:
+
+import React, { useState, useContext } from "react";
+import ReactDOM from "react-dom";
+const ProfileContext = React.createContext();
+const App = () => {
+  const [val, setIncrement] = useState(0);
+  return (
+    <div>
+      <Profile userInfo={val} />
+      <button onClick={() => setIncrement(val + 1)}>Click</button>
+      <p>value: {val}</p>
+    </div>
+  );
+};
+class Profile extends React.PureComponent {
+  state = {
+    name: "Alex"
+  };
+  setName(name) {
+    this.setState({ name });
+  }
+  render() {
+    const { name } = this.state;
+    const { setName } = this;
+    return (
+      <ProfileContext.Provider
+        value={{
+          name,
+          setName
+        }}
+      >
+        <Logger />
+      </ProfileContext.Provider>
+    );
+  }
+}
+const Logger = React.memo(() => {
+  const { name } = useContext(ProfileContext);
+  console.log("Logger rerendering");
+  return null;
+});
+ReactDOM.render(<App />, document.querySelector("#root"));
+In the example above our Logger component is a pure component, but we still re-render it every time. The reason for that is because we use the context here. Try to comment out the first line in the Logger component, now it won’t re-render.
+
+This is because the context uses a reference identity to determine when to re-render. Let’s change our Profile component to make it work:
+
+class Profile extends React.PureComponent {
+  state = {
+    name: "Alex",
+    setName(name) {
+      this.setState({ name });
+    }
+  };
+  render() {
+    return (
+      <ProfileContext.Provider value={this.state}>
+        <Logger />
+      </ProfileContext.Provider>
+    );
+  }
+}
+Now it works as expected. Btw, if you know how to make it work with hooks — post it in the comment section!
+
+Q10. Migration from Class to Function Components.
+What interviewer wants to see: you have an idea of how to refactor ReactJS using hooks and you can demonstrate it.
+With function components and hooks you can cover all class components use-cases, such as:
+
+Class component state with useState hook
+Class component lifecycle methods with useEffect hook
+Bonus points: better abstraction with custom hooks
+Let’s take a look at the example below and refactor it using hooks:
+
+class App extends React.Component {
+  state = {
+    value: localStorage.getItem("info") || ""
+  };
+  componentDidUpdate() {
+    localStorage.setItem("info", this.state.value);
+  }
+  onChange = event => {
+    this.setState({ value: event.target.value });
+  };
+  render() {
+    const { value } = this.state;
+    return (
+      <div>
+        <input value={value} type="text" onChange={this.onChange} />
+        <p>{value}</p>
+      </div>
+    );
+  }
+}
+This is already quite compact, thanks to class fields declaration and class arrow functions.
+
+The first iteration of refactoring replacing setState and componentDidUpdate might look like this:
+
+const App = () => {
+  const val = localStorage.getItem("info") || "";
+  const [value, setValue] = useState(val);
+  const onChange = event => setValue(event.target.value);
+  useEffect(() => localStorage.setItem("info", value), [value]);
+  return (
+    <div>
+      <input value={value} type="text" onChange={onChange} />
+      <p>{value}</p>
+    </div>
+  );
+};
+Only 13 lines of code instead of 19 with classes with exactly the same functionality. But we can go one step further: we can easily extract and reuse a custom hook here:
+
+const usePersistentStorage = key => {
+  const val = localStorage.getItem(key) || "";
+  const [value, setValue] = useState(val);
+  useEffect(() => localStorage.setItem(key, value), [key, value]);
+  return [value, setValue];
+};
+And now we can use this in our App:
+
+const App = () => {
+  const [value, setValue] = usePersistentStorage("info");
+  const onChange = event => setValue(event.target.value);
+  return (
+    <div>
+      <input value={value} type="text" onChange={onChange} />
+      <p>{value}</p>
+    </div>
+  );
+};
+Only 10 lines of code — twice shorter than before. And in the real app, you have much more to extract.
+
+Before you nail it.
+Remember, an ability to give a clean and capacious answer is crucial.
+
+For example, people won’t ask you to whiteboard a unit-test for your react component, but a lack of explanation about different react components testing approaches cause more questions.
+
+Also, feels like more and more interviews focused on hooks. Use this website to practice it.
+
 Full-Stack Developers, Here’s How to Ace Your Technical Interview
-by Neal Shyam
-Updated 6/19/2020
-
-
-
 
 person using a laptop to write code
 oatawa/Getty Images
