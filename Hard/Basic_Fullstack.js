@@ -1,4 +1,326 @@
+Most Frequently Asked Full stack interview questions
+Here in this article, we will be listing frequently asked Full stack interview questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
 
+Q1. What languages should a full stack developer know?
+Answer
+A full stack developer should know:-
+
+1. Programming languages
+Must be proficient in multiple languages, including PHP, Java, C #, Ruby, Perl, Python, etc. Must be familiar with different ways to structure, design, implement and test the project based on languages.
+
+2. Frameworks:
+Must know the words that are accompanied by development frameworks, such as Spring, JAVA, MyBatis, Python Django, PHP think  PHP, Hibernate, nodeJs express, yin, etc.
+
+3. Front-end:
+Must master necessary front-end technologies such as CSS3, HTML5, and JavaScript. Additional study of third-party libraries such as JQuery, SASS, LESS, AngularJS, or REACT is also required.
+
+4. Databases:
+Knowledge of at least one database is expected. Currently, the popular databases are MySQL, Oracle, MongoDB, SQLServer and Redis.
+
+5. Design ability:
+Basic knowledge of the principle of prototype design, UI and UX design is needed.
+
+Q2. What is the difference between GET and POST?
+Answer
+S.no	GET	POST
+1.	GET is used for recovering the data	POST is mainly used for writing the data
+2.	It carries the request parameter in the URL string	It takes the request parameter in the message body.
+3.	It can be bookmarked	It cannot be bookmarked
+Q3. What is RESTful API and why it is used?
+Answer
+A RESTful API is also known as RESTful web service. Full form of REST is Representational state transfer, and complete kind of API is Application program interface. This program interface uses HTTP protocol to define the set of function such as GET, PUT, POST and DELETE data. RESTful API is used.
+
+REST is mostly used in developing Web applications.
+
+Q4. What do you mean by data attributes and why it is used?
+Answer
+HTML 5 has “data-*” which are custom attributes defined by the developer. They are used when any existing characteristic is not suitable to be used. These attributes are only used on the page they are written on, and they do not need AJAX calls.
+
+These are Global attributes, so they can be applied to any element.
+
+Point to be noted: Go through this Q&A very thoroughly as this is one of the essential full stack developer interview questions.
+
+Q5. What is the difference between defer and async?
+Answer
+S.no	defer	async
+1.	It downloads the file during the HTML parsing but executes the data after the parsing is completed.	It downloads the data during the HTML parsing, but it stops the parsing from executing the downloaded file.
+2.	Defer is used when the script relies upon another script.	Async is used if the script does not rely upon any scripts.
+Q6. What are the difference between "resetting" and "normalizing" CSS?
+Answer
+S.no	resetting	normalizing
+1.	Resetting removes all the built-in browser styling.	Normalizing makes the integrated browser styling consistent across the browsers.
+2.	It does not provide bug fixes.	It includes bug fixes.
+Also Read: Tips to crack CSS interviews
+Q7. What does acid stand for in database?
+Answer
+The acronym ACID stands for Atomicity, Consistency, Isolation, and Durability.
+
+Q8. What is difference between left and right join?
+Answer
+S.no	LEFT JOIN	RIGHT JOIN
+1.	It gets the records from the rows of the LEFT side linked table and only the matching records from the RIGHT table.	It gets the records from the rows of the RIGHT side linked table and only the matching records from the LEFT table.
+Also Read: MySQL Tricky Interview Questions
+1. Left Join
+
+
+SELECT column_list FROM table_1 LEFT JOIN table_2 ON column_name1 = column_name2 WHERE join_condition 
+
+
+
+2. Right Join
+
+
+SELECT column_list FROM table_1 RIGHT JOIN table_2 ON column_name1 = column_name2 WHERE join_condition 
+
+Q9. What are normalization and denormalization?
+Answer
+Normalization means merely a process of reducing or eliminating the data redundancy. As a result, space is saved, and the consistency of data is increased.
+
+The denormalization is an optimization process to increase the data redundancy in the database. As a result, the joins are avoided, and the performance of the database structure is improved. Denormalization is done after the normalization process
+
+ 
+
+Q10. What are two phases commit in the database? Explain
+Answer
+Two-phase Commit (2PC) is the feature of transaction processing systems which enables databases that they return to the pre-transaction state if an error condition occurs. The two-phase commit strategy is designed to make sure that either all the databases are updated or none of them is updated. As a result, the databases remain synchronized.
+
+Q11. Explain the difference between horizontal scaling and vertical scaling in the database?
+Answer
+S.no	Horizontal scaling	Vertical scaling
+1.	More machines are added into your existing resources	More power i.e. CPU, RAM is attached to the current machine
+2.	Horizontal scaling there is no limit	Vertical scaling depends on the capacity of the machine
+3.	Licensing fees is more	Licensing fees is less
+Q12. What are the difference between MVP and MVC?
+Answer
+S.no	MVP	MVC
+1.	View handles the user gestures	The controller manages the user gestures
+2.	The interaction with the model is passed through the presenter	The view can query the model directly
+3.	Provides full sport to unit testing	Provides limited support to unit testing
+Also Read: PHP Logical Interview Questions
+Q13. What the differences are between == and ===?
+Answer
+S.no	==	===
+1.	If the variables are not of the same types, then it converts one variable type to another and performs the operation	If the variables are not of the same type, then it will not achieve the process and will return false
+Note: The following Full Stack Developer interview questions are a guide to a basic understanding of the subject. Must read for Engineers switching to Full-Stack.
+
+Q14. What is event bubbling and capturing in javascript?
+Answer
+Event Bubbling and Event Capturing are the ways of the event propagation in the HTML API when an event occurs in an element which is located inside the other part and both the parts have registered a handle with the recently happened event. Here the event propagation mode identifies that in which order the elements receive the event.
+
+In the case of Event Bubbling, the event is first captured and also handled by the innermost element, and then the event is propagated to the outermost element.
+
+In the case of Event Capturing, the event is first captured and also handled by the outermost element, and then the event is propagated to the innermost element.
+
+Q15. What do you mean by promise?
+Answer
+A Promise is an object which shows the result of the asynchronous operation. The result can be a resolved value or a reason why the process failed like “a network error occurred.
+
+A promise can be any of the 3 states:-
+Pending - the promise’s result hasn’t yet been identified because the asynchronous operation has not been completed yet.
+Fulfilled - the asynchronous operation has completed, and the promise has now a resolved value.
+Rejected - the asynchronous operation has failed, and the promise has a reason that indicates why the process failed.
+Q16. What is the prototype in javascript and how do you use it?
+Answer
+Prototypes are objects created in Javascript. They are the “parent” objects. If we want to create common tasks (properties/methods) for all the objects inherited from the parent object we need to define them in the prototype object.
+
+Q17. What do you mean by Closures?
+Answer
+A closure is the capability of an inner function to have access to variables in local scope in which internal function was created. Even if the out function has finished execution, closure means the inner function has access to its local variables.
+
+Q18. What is difference between abstract and interface?
+Answer
+Abstract	Interfaces
+Abstract classes cannot be implemented.	The Interfaces needs to be implemented.
+They are models which can have some methods to be used by all the inherited children.	It is a contract, where the receiver is asking a specific type of input and sender agrees to send it that way.
+Abstract classes can have private methods.	Interfaces can not have private methods. All the plans are public.
+Q19. What is final class and final method?
+Answer
+Final classes cannot be subclassed; it is not open for change and can be used reliably for common execution of routines. “String” class in Java is an example of a final class. This is done for security and sometimes for efficiency.
+
+Final methods cannot be overridden. They are not open to change. This prevents accidental changes which may result in crashing of application.
+
+Q20. What is the difference between constructor & destructor?
+Answer
+S.no	Constructor	Destructor
+1.	It allocates the memory to an object.	It deallocates the memory of an object.
+2.	It accepts argument.	It does not take an argument.
+3.	In a class, there can be multiple constructors.	In a class, there can only be one destructor.
+Q21. What is Express.js?
+Answer
+Express.js is a web application server framework. It is used for Node.js. It helps to create node.js applications in less time. It also provides security-related help for node.js.
+
+Q22. What is Node.js and why it is used?
+Answer
+Node.js is a server environment to be used for web development. Node.js is an open-source server. This is based on google chrome’s JavaScript engine V8.
+
+Node.js is used to create applications in less time and useful for data-intensive applications.
+
+Related Article: Tips to crack Node.JS Interviews
+Q23. Explain the difference between AngularJS and Node.js?
+Answer
+S.no	AngularJS	Node.js
+1.	Written only in Javascript.	Written in Javascript, C, C++.
+2.	It is a client-side web application	It is a server-side web application
+3.	It is a web application framework in itself	It is not a framework but has a framework like express.js
+Q24. What is the difference between Nodejs, AJAX, And JQuery?
+Answer
+S.no	Node.js	AJAX	JQuery
+1.	It allows JavaScript to be run without a browser	It a way for JavaScript to request the data from a server but without refreshing the page or blocking the application.	It is a JavaScript library which was built to automate and simplify the common web tasks like AJAX
+Q25. What is a callback in JavaScript?
+Answer
+A Callback Function is a function which is passed as a parameter to another function,.The callback function run inside of the function into which it was passed. JavaScript Callback Functions can be used synchronously, and it can also be used asynchronously. Application programming interfaces of the Node are written in such a way that they all support callbacks.
+
+Q26. What is MEAN Stack?
+Answer
+MEAN stack is a user-friendly free and open-source JavaScript software which is used for building the dynamic web sites and the web applications. The advantage of using the MEAN stack is that only language JavaScript runs on all the levels of the applications which makes it efficient.
+
+MEAN stack is the composition of:-
+MongoDB as the database
+Express.js as the web framework which runs on Node.js
+AngularJS as the frontend framework
+Node.js as the server platform.
+Q27. What do you mean by routing in angular js?
+Answer
+If the developer wants to go through different pages in a single page application and also with no reloading of the page then the ngRoute module is used. It routes the application to different pages with the reloading of the complete application.
+
+Also Read: Angular Questions and Answers
+Q28. What is the difference between directive and component?
+Answer
+S.no	Directive	Component
+1.	It is a behavior that has been added to the existing components.	Components have their own view i.e., HTML and styles.
+2.	There can be multiple directives in one element.	There can be only one component in one element.
+Note: These are Full Stack developer interview questions. Candidates who are deciding to switch to Full Stack or looking for a job must read this.
+
+Q29. What do you mean by design patterns?
+Answer
+Q30. What is multithreading?
+Answer
+Multithreading is the ability of the Operating system or the program to handle the multiple user requests at a time for its resources. Here a user can be a human or another program.
+
+Q31. What do you mean by CORS and how does it work?
+Answer
+CORS stands for Cross-Origin Resource Sharing. It is a standard to share the selected resources between the web applications running on two different domains.
+
+Q32. How can the web application load time be reduced?
+Answer
+The ways to minimize the load time of a web application are:-
+
+Minimize the resources requested by a page
+Implement Lazy load so that the part of the page only loads when the access that part.
+Use Distributed networks for common resource files.
+Q33. What is a connection leak, and how can we fix it in Java?
+Answer
+A connection leak implies a portion of the information base request/transaction are not getting shut as expected or are not getting committed. Lastly, those connections are getting abandoned and shut down all time.
+
+To fix the leaks, you have to find where you have used the opening connections and then use try-with-resources that will do all the close() stuff for you.
+
+try (Connection connection = DriverManager.getConnection(url); 
+
+PreparedStatement statement = createPreparedStatement(connection); 
+
+ResultSet resultSet = statement.executeQuery()) { 
+
+// process the resultSet here, all resources will be cleaned up }
+
+Q34. How can we detect and avoid deadlock in Java?
+Answer
+A deadlock can appear almost when the processes share the resources. To detect the deadlock, the wait-for graph should be maintained, and the system invokes an algorithm periodically that searches for cycles in the wait-for graph.
+
+How to avoid deadlock:
+Avoid nested locks: The main reason for the deadlock is giving locks to multiple threads. You should avoid giving the locks to multiple threads when you have already given them to one.
+Avoiding unnecessary locks: We can lock only the required members. To have a lock unnecessarily can lead to a deadlock.
+Use Thread. Join (): Deadlock condition appears when one Thread is waiting for another to finish. In case this condition arises, we can use the Thread. Join () with the maximum time the execution will take.
+Q35. What are the different methods of session management in Servlet?
+Answer
+There are generally four main methods of session management in Servlet.
+
+URL rewriting
+Cookies
+HTTPS and SSL
+Hidden Form Fields
+Q36. How many ways to handle exceptions in the Spring MVC Framework?
+Answer
+Spring MVC Framework provides two ways for handling the exceptions:
+
+Using XML configuration: this configuration is similar to the exception handling in Servlet/JSP, by calling a SimpleMappingExceptionResolver bean in the context file of Spring's application and the type of map execution with the view names. This approach simply applies to all the controllers in the application.
+Using exception handler method: The annotation type “@ExceptionHandler" provided by Spring is being used to annotate the method to handle the exceptions raised by the controller's methods. This approach applies to only the controllers in the application where the handler method is declared.
+Q37. Can you override a static method in Java?
+Answer
+The static method can't be overridden in Java. This is because the overriding method depends upon the runtime dynamic binding, whereas the static methods are bonded statically at the compile time. Also, the static method is not linked with any of the class instances, so the concept is not applicable.
+
+Q38. Which one is better, setter injection or constructor injection?
+Answer
+Constructor injection is better.
+
+If you want to prompt the class, you always do it with the constructor. When you are using the constructor-based injection, the only way to prompt or instantiate the class is by using the constructor. If you pass the dependency via a constructor, it becomes obvious that it is an essential dependency.
+
+However, if you use the setter injection in the POJO class, you might face challenges in setting the value of your class variable by using the setter method. This is entirely based on the customer's needs which is optional. If you pass the dependency via setter, it means that it is an optional dependency.
+
+Q39. What is the difference between Errors and Exceptions in Java?
+Answer
+Errors	Exceptions
+The type of error in Java is Java. Lang.Error.	The type of exception in Java is Java. Lang.Exception.
+The type of all the errors in Java is unchecked.	Exceptions include both checked and unchecked types.
+It is impossible to recover from errors.	You can recover from exceptions by handling them via try-catch blocks.
+The reason for causing the errors are the environment where the application is running.	The application itself causes exceptions.
+Q40. What is the difference between boxing and unboxing in Java?
+Answer
+Basis	Boxing	Unboxing
+Basic	The object type refers to its value type.	It is the process of fetching value from the boxed object.
+Storage	The value stored on the stack is copied to the object stored on the heap memory.	The value of the object stored on the heap memory is copied to the value type stored on the stack.
+Conversion	Implicit	Explicit
+Example	Int n = 24;
+Object ob = n;	Int m = (int) ob;
+Q41. What is the use of overloading and overriding in Java?
+Answer
+The overloading method is used in Java when two or more methods share the same name in the same class but with different parameters.
+
+class Dog{
+   public void bark(){
+     System.out.println("woof ");
+   }
+  //overloading method
+  public void bark(int num){
+    for(int i=0; i < num; i++) {
+      System.out.println("woof ");
+    }
+  }
+}
+
+The overriding method defines the case where the child's class redefines the same method as their parent class. The overridden methods should have the same argument list, name, and return type.
+
+class Dog{
+   public void bark(){
+     System.out.println("woof ");
+   }
+}
+class Hound extends Dog{
+   public void sniff(){
+     System.out.println("sniff ");
+   }
+   public void bark(){
+     System.out.println("bowl");
+   }
+}
+
+public class OverridingTest{
+   public static void main(String [] args){
+     Dog dog = new Hound();
+     dog.bark();
+   }
+}
+
+Q42. How garbage collection makes Java more memory efficient?
+Answer
+Garbage collection makes Java more memory efficient by simply removing the objects which are not referenced to anything from the heap memory and creating the free space for the new objects.
+
+Q43. What are Java doGet () and doPost () methods?
+Answer
+The doGet() method is used to fetch the information from the server, whereas the doPost() is used to send or transfer the information to the server.
+
+doGet() method is labelled by the servlet service method, which is used to handle the HTTP GET request. In case of overriding this method, ensure to read the requested data and then write the response headers. Once you get the output stream object or the response's writer, only then write the response data.
+
+doPost() method is labelled by the servlet service method to manage the POST request from the client. This method sends the files to the server and works similarly to the FTP operations from the client to the server.
 
 17 Top Full-Stack Developer Interview Questions for Recruiters
 This guide outlines effective strategies for hiring senior remote Fullstack engineers from Latin America, helping companies cut costs without sacrificing quality or culture.
