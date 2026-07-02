@@ -1,3 +1,495 @@
+All The Useful React Native Interview Questions & Answers
+By Fatskills Exam Guides Team — the exam nerds behind 28,500+ quizzes and 2.1M practice questions across 500+ global exams.
+
+⏱️ ~20 min read
+🖨️ Print / Save this study guide as PDF
+What is React Native?
+Developed by Facebook, React Native is a hybrid mobile framework that creates native-style apps for Android & iOS. It works with a common language, which is JavaScript. 
+
+It is highly used because of its shorter development cycles, and quicker deployment time as compared to individual native languages like Java, Swift, Objective.
+
+What language does React Native use?    
+It is based on React js, which is written in JavaScript.
+
+
+Q 1. What is State and how is it used in React Native?
+The state is used to control the components. State also allows the variable data to get stored in it. As states are mutable, they can change the values at any point in time.
+
+In this example, we are creating the Text component with the help of state data. Content in the text component can be updated anytime by clicking on it. However, the state needs to be updated by the event 'onPress'.
+
+Example:
+                                                   
+import React, {Component} from 'react';    
+import { Text, View } from 'react-native';    
+export default class App extends Component {    
+     state = {
+          myState: 'React Native Interview Questions'
+     }
+updateState = () => this.setState({myState: 'React Native Interview Questions and Answers'})
+render() {
+    return (
+          <View>    
+              <Text onPress={this.updateState}> {this.state.myState} </Text>    
+          </View>
+    );
+} }
+
+Q 2. Can we combine Android or iOS code in react native?
+Yes, we can combine Android or iOS code in react native. React Native helps to smoothly combines the components written in Java, Objective-C or Swift.
+
+Q 3. What is the difference between React and React Native?
+
+React    Vs  React Native
+
+It is a JavaScript library, supporting front-end web and being run on a server, for web applications and building user interfaces.  -    It is a framework that compiles to native app components, allowing you to build native mobile applications for different platforms.
+React Js is a Javascript Library where you can develop and run faster web applications.     - React-Native is a framework where you can develop mobile applications.
+React is for websites.    - React Native is for mobile applications.
+
+The ReactJs is a JavaScript library to develop apps in HTML5 while using JavaScript as the developing language. Whereas, React Native is a JavaScript framework used to create native mobile applications while using JavaScript as the development language.
+
+Q 4. What are the advantages of using React Native?
+
+Some advantages of using React Native:
+Conveniently uses the client as well as server side
+Superbly cost effective and code reuse
+Better code readability because of JSX use
+Easy to integrate with other significant frameworks
+Easy to write UI test cases because of React
+
+Q 5. How to install a specific version of React Native?
+To install a specific version of React Native, use this following command:
+
+$ react-native init newproject --version react-native@VersionNumber
+
+Note: In the above, replace VersionNumber with the version of React you want to install.
+
+Q 6. How to use map function in React Native?
+The map function is used to show a list of elements in an array. It can be used in React Native like the following example:
+
+Example:
+                                                   
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+export default class mapFunction extends Component {
+constructor(props) {
+super(props);
+this.state = {
+array: [
+{
+title: "example title 1",
+subtitle: "example subtitle 1"
+},
+{
+title: "example title 2",
+subtitle: "example subtitle 2"
+},
+{
+title: "example title 3",
+subtitle: "example subtitle 3"
+}
+]
+};
+}
+list = () => {
+return this.state.array.map(element => {
+return (
+<View style={{ margin: 10 }}>
+<Text>{element.title}</Text>
+<Text>{element.subtitle}</Text>
+</View>
+);
+});
+};
+render() {
+return <View>{this.list()}</View>;
+}
+} 
+
+Q 7. What are Props and how is it used in React Native?
+Props are means to the parameters that are used for customizing the component when the component is being created or re-rendered. They are more like the argument which is passed to the React component.
+
+Example:
+                                                   
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
+class DefaultPropComponent extends Component {
+  render() {
+      return (
+          <View>
+            <Text>
+             {this.props.name}
+           </Text>
+         </View>
+      )
+  }
+}
+
+Demo.defaultProps = {
+  name: 'BOB'
+}
+export default DefaultPropComponent;
+
+Q 8. What is HOC in React Native?
+Higher-Order-Component, shortly known as HOC is an advanced React Native technique to reuse the component logic. The function obtains a component and returns a new element.
+
+Example:
+                                                   
+function HOC(Comp) {
+    return class NewComp extends Component {
+        render() {
+           return <comp>
+        }
+   }
+}
+
+Q 9. How to use the camera in React Native?
+To use the camera to React Native, follow these steps carefully:
+
+On Android, camera permission must be asked:
+<uses-permission android:name="android.permission.CAMERA" />
+Now, to enable video recording feature add the following code to the AndroidManifest.xml:
+<uses-permission android:name="android.permission.RECORD_AUDIO"/> <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+For iOS, you must update the Info.plist with a usage description for camera
+<key>NSCameraUsageDescription</key> <string>Your own description of the purpose</string>
+
+Q 10. What are pure components in React Native?
+A React component can be viewed as pure on the chance that it renders a similar output for a similar state and props. Class components that extend the React are PureComponent class that is treated as pure components.
+
+Q 11. Write a program to display "Hello World" in React Native.
+Create a simple "Hello World" app by using modifying App.js file of FirstApp. Save the utility and reload by way of in reality pressing twice "R" or Ctrl+M (Reload).
+
+Example:
+                                                   
+import React, {Component} from 'react';  
+import {Platform, StyleSheet, Text, View} from 'react-native';  
+type Props = {};  
+export default class App extends Component<Props> {  
+render() {  
+return (  
+     <View>  
+       <Text>Hello WorldText>  
+    View>  
+   );  
+ }  
+}  
+
+Q 12. What is the use of the arrow function?
+The use of Arrow functions in React Native is to help reduce your application's memory consumption. It is done by reducing the CPU time required to iterate the over loops to generate the components necessary for your lists.
+
+Here's an example of Arrow function in render:
+
+class Foo extends Component {
+  handleClick() {
+  console.log('Click happened');
+}
+render() {
+  return <button onClick={() => this.handleClick()}>Click Me</button>;
+}
+}
+
+Q 13. What is the difference between state and props?
+State    Vs  Props
+States are mutual    - Props are immutable
+The state is set and updated by the object.  -    In props, you can pass properties from parent components.
+The state can be modified  -    Props can't be modified.
+
+Q 14. What is the difference between ShadowDOM and VirtualDOM?
+
+ShadowDOM    Vs  VirtualDOM
+Shadow DOM creates small pieces of the DOM object which has its own, isolated scope as they represent.    - Virtual DOM creates a copy of the whole DOM object
+It is a tool that is used in building the apps and websites that are based on components.    - It is a concept of DOM which is being used by Vue.js and React.js
+It comes in small pieces and doesn't represent the whole Document Object Model.    - It's done to improve the performance of the UI libraries
+
+Q 15. How do you call a Web API in React Native?
+Here's an example to call a web service to React Native.
+
+fetch('http://someurl', {
+method: 'POST',
+headers: {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+  username : "admin1",
+  password: "admin13",
+})
+})
+
+Q 16. How to import components in React Native?
+Add this code in the component.js file destination file
+import Title from './src/components/importcomponentdemo';
+
+Here's the complete code:
+import React from 'react';
+import { AppRegistry } from 'react-native';
+import App from './src/components/importcomponentdemo';
+const App = () => (
+  <Title />
+);
+AppRegistry.registerComponent('ComponentDemo', () => App);
+
+Q 17. What is the use of Redux in React Native?
+Redux is a standalone state management library present in React Native and can be used combined with any framework or library. With the use of Redux, app developers can use one application state as a global state and interact with the state from any react component will be easy.
+
+Q 18. What do you mean by interactionManager and why is it important?
+The interaction Manager works on a long-running schedule after any interactions/animations have been completed. In particular, to run smoothly this allows Javascript animations.
+
+It is important because it creates an interaction 'handle' on animation start, and clearing it upon completion in applications to register animations.
+
+Q 19. How to create stack of screens in React Native?
+import React from 'react';
+import { View, Text } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+class HomePage extends React.Component {
+render() {
+   return (
+      <view>
+        <text>Home Page</text></view>
+   );
+}
+}
+class DetailPage extends React.Component{
+   render(){
+       return (
+          <view>
+             <text>Detail Page</text></view>
+
+       )
+   }
+}
+const AppNavigator = createStackNavigator({
+  Home: HomePage,
+  Details: DetailPage,
+},
+{
+   initialRouteName: 'Home',
+});
+export default createAppContainer(AppNavigator);
+
+Q 20. What does StyleSheet.create do?What are refs in React Native?
+The Stylesheet.create function in React Native is used for the following:
+
+It validates the keys and registers them to React
+It creates a StyleSheet style reference from the specified object.
+It allows you to send the style only once through the bridge while referring to all subsequent users through ID.
+Short form for 'reference', Refs are used to access underlying DOM nodes or React elements within a React component.
+
+Q 21. What is JSX?
+JSX stands for JavaScript XML.
+
+It allows us to write HTML elements in React and place them in the DOM without any createElement() and/orappendChild() methods.JSX also converts HTML tags into react elements and makes it easier to write.
+
+Example:
+                                                   
+const myelement = <h1>React Interview Questions</h1>;
+ReactDOM.render(myelement, document).
+
+Q 22. What is AppRegistry React Native?
+It is an entry point of JavaScript which is used to run all the apps to React Native. All the components of the App root must register themselves with AppRegistry.registerComponent(), after that the native system will be able to load the bundle regarding the app. After that, they can run the app simply by invoking AppRegistry.runApplication().
+
+Q 23. How to update React Native with latest version?
+It is important to upgrade the existing react-native to the latest version in order to access more featural aspects that involve views, APIs, classes, arrow functions, template string, import and export modules, array destructing and development tools.
+
+Following steps should need to be performed to update the react-native to the latest version:
+
+Update react native, react and Expo package versions for upgrading the expo projects in package.json
+Install the latest SDK version which is compatible with the latest version of react-native in the app.json file.
+Upgrade React Native CLI using the command: react-native upgrade
+Install upgrade helper web tool for upgrading the applications
+Upgrade existing file using the command react-native init
+Perform troubleshoot activity to upgrade with react native CLI
+
+Q 24. What are the new features in React Native 0.61?
+React Native 0.61 is the latest version of react native which is proficiently able to optimize the features of react-native version 0.60. the latest version of react-native comes with the latest and improved features.
+
+The react native version 0.61 is incorporated with four advanced level features such as:
+
+React native 0.61 is provided with improved CocoaPods Support
+For dimension updates, new useWindowDimensions Hook feature is provided
+Fest processing and refreshing of the application
+React native is upgraded to 16.9 as it opposes old names for unsafe methods
+Also Read: How to crack the interview in the first attempt
+
+Q 25. How does Axios work in React Native?
+With the help of Axios, the user can send GET, POST, PUT, and DELETE requests to the REST API and render a response to the application. With the help of Axios, users can interact with the REST API. In general, Axios is a promise-based HTTP client which used by the react-native.
+
+Axios is associated with a number of features which are enlisted below:
+
+It makes XMLHttpRequests from the browser
+From react native framework, it makes Http requests
+It supports react-native API's
+It provides a client-side feature that protects the application from XSRF.
+It automatically transforms response and request data.
+How to use Axios
+You have to install Axios using npm
+npm install axios
+After that you have to import this module.
+import axios from 'axios';
+
+Example:
+                                                   
+Using POST method.
+
+axios.post('/login', {
+      username: 'fatskills',
+      password: 'admin@123'
+ })
+ .then(function (response) {
+       console.log(response);
+ })
+ .catch(function (error) {
+      console.log(error);
+ });
+
+                                               
+Q 26. What are controlled and uncontrolled components in React Native?
+
+Controlled Components Vs Uncontrolled Components
+A controlled component is one that is bound to a value, and the changes inside it will be handled in code by using event-based callbacks. -    This is similar to the traditional HTML form inputs, but, here, the form data is handled by the DOM itself.
+It does not maintain its internal state.    - It maintains its internal states.
+Data is controlled by the parent component.     - Here, the data is controlled by the DOM itself.
+It accepts the current value as a prop. -    A ref is used for their current values.
+Has much efficient control over the form elements and data. -    Has less control over the form elements and the data.
+
+Q 27. How to use Firebase in React Native?
+Firebase is a mobile platform that helps you quickly develop high-quality apps, grow your user base and earn more money. This is a tool and infrastructure that users need to build better apps and grow a successful business. In addition, firebase is made up of a complementary feature that users can mix-and-match to fit your needs. There are total give key features of firebase namely authentication, Realtime database, cloud messaging, crash reporting and analytics.
+
+Getting started with Firebase by using following steps:
+
+Create a firebase project in the Firebase console
+Retrieve apikey, authDomian, DatabaseURL and storage bucket from firebase console
+Create a new react-native project
+Install firebase from npm
+Add it into the react-native project
+
+Q 28. Which command is used to run for installing React Native?
+npm install -g react-native-cli
+
+Q 29. How to use Typescript in React Native?
+When a developer is working on a project and wants to maintain the project for a long period of time then the user should need TypeScript. In order to use the TypeScript user should need to configure the TypeScript because it gives an option to configure the compiler. Moreover, users can configure the TypeScript as per their requirements and can effectively prioritize the type of errors. Given below are the steps that will enable the developer to use TypeScript in react native-
+
+Creating a project in react native using:
+react-native init myapp --template typescript && node myapp/setup.js && cd myapp
+Set up and configure TSlint
+npm install --save-dev tslint tslint-eslint-rules tslint-react tslint-config-prettier
+Setting up Jest
+npm install --save-dev ts-jest
+Setting up an enzyme
+npm install --save-dev enzyme enzyme-adapter-react-16 react-dom @types/enzyme @types/enzyme-adapter-react-16
+Setting up a test library of react-native
+npm install --save-dev react-native-testing-library
+
+Q 30. List the most common commands used in React Native.
+Here you will discover a list of fundamental instructions to start creating iOS and Android apps the use of React Native.
+
+Example:
+                                                   
+react-native init PROJECTNAME
+react-native run-android
+react-native run-ios
+watchman watch-del-all
+react-native link LIBRARYNAME
+
+Q 31. Why React Native is better than native?
+React Native is better than native because of React native as it is a faster framework and allows the developers to create mobile applications that further support iOS and Android. The react native increases the speed of mobile development effectively and it is quite easier for the developers to maintain the mobile applications which are developed to react-native. It is easier for the developer to identify the bug in the applications which are developed in react native.
+
+Q 32. What is Gesture Responder System in React Native?
+Gesture Responder System is a system that manages the lifecycle of the applications which are built in React- Native framework. The applications automatically determine the intention of the users through touch. For example, the application determines slide on the widget, touch is scrolling or tapping. The Gesture Responder System allows the components to negotiate these touch interactions without integrating any sought of knowledge regarding their parent component and child component. React Native gesture responder system is the most powerful system, as it uses standard library to detect gestures such as scroll distance, single tap, double-tap, single tap confirmed and pinch distance.
+
+Q 33. How to store data in AsyncStorage in React Native?
+When developers develop applications, they need to store information permanently for an application. The react native applications use the database to remember all the information which is related to the applications and their respective users. React Native uses AsyncStorage for data storing purpose. AsyncStorage is a simple, unencrypted synchronous, persistent, key-value storage system that is global to the application. On iOS, AsyncStorage is backed by native code that stores small values in the serialized dictionary and large values in separate files. On Android, AsyncStorage will use either RocksDB or SQLite based on which is available.
+
+Four steps are needed to understand how to use AsyncStorage to React Native:
+Don't need to install any extra library. By default, it comes with React Native. Import {AsyncStorage} from 'react-native';
+AsyncStorage uses key-value pairs for saving the data for example- AsyncStorage.setItem ('myKey', myValue);
+To load the saved data run given the command- AsyncStorage.getItem('myKey'). then((myValue)=> {this.setState ({'myKey': myValue});});
+Since loading data is a time-consuming task, it is designed to be an asynchronous operation. So getItem returned the promise, which will invoke the call back function when the read operation is completed.
+
+Q 34. How to load data from server in React Native?
+React Native gives the Fetch API which offers networking needs. React Native makes use of componentDidMount lifecycle method to load the records from server.
+fetch('https://fatskills.com/menu.json')
+
+Q 35. What is the difference between FlatList and ScrollView?
+
+FlatList  Vs    ScrollView
+It renders all the child components at once without impacting the performance.    - It renders all the child components at once. However, it decreases the performance.
+It provides header and footer support. -    It does not provide any support for the header and footer.
+It provides multiple column support, infinite scroll loading, and nth number of features.    -   It provides limited features.
+It gives horizontal mode as an optional feature.  -    It only allows vertical mode.
+It allows configuring viewability callbacks.    -  You can't configure callbacks in ScrollView.
+
+Q 36. What are the advantages of native apps over hybrid apps?
+Here are some of the advantages of native apps over hybrid apps:
+
+Native app development has fewer dependencies for bugs to occur.
+In the native app, you are not relying on cross-platform tools.
+The processing speed of the native app is faster than the hybrid app.
+It provides great designs and user experience than a hybrid app.
+
+Q 37. What are hooks in react native?
+Hooks are a new enhancement in React 16.8. They allow to utilize the state and other react features without involving the class. The major agenda behind using the hooks are to handle the side effects in the functional components of react.
+
+Q 38. What is the difference between Hot Reloading and Live Reloading in React Native?
+Hot Reloading  Vs  Live Reloading
+It only refreshes the files that were changed without losing the state of the app.  -  It reloads or refreshes the entire app when a file changes.
+It displays the code changes according to new code changes without restarting the app from start.  -  It requires the restart of the app in case of any change in the code
+
+Q 39. What is fabric in react native?
+Fabric is the latest architecture of React Native which has been proposed by the company to develop the close and better user experience of mobile apps than the native apps.
+
+Q 40. What are the difference between a component and an element in React.
+React Component: A class or function which optionally accepts inputs and returns a React element via JSX.
+
+React Element: It describes what the user wants to be displayed on the screen, Simplifying it, the react element is an object representation for some UI.
+
+Q 41. Is it possible to use the same code base for both Android and iOS in React Native?
+Yes, it's entirely possible. App developers use the same code base for iOS and Android as Reacts entirely takes care of the native components translations part. For example, a React Native ScrollView uses ScrollView on Android and native UiScrollView on IOS.
+
+Q 42. What are the disadvantages of React Native?
+
+The React Native has following limitations or cons:
+
+
+Security risks
+Single threaded interface
+Poor memory management
+Doesn't support all native APIs
+Dependable on third-party libraries
+Not equivalent to true native apps written entirely on Java or Swift/Obj-C.
+
+Q 43. Is React Native a Mobile App?
+Yes, React Native complies with ALL the requires of a native mobile app using native app components. It's neither a mobile web app nor a hybrid mobile app that uses WebView to run the HTML5 app successfully. It builds a real mobile app, utterly indistinguishable from apps built using Java or Objective-C.
+
+Q 44. What do you mean by Dispatch in react native?
+Dispatch is a feature of the Redux store. You call store.dispatch to dispatch an action. This is the only way to set off a kingdom change. With React Redux, your factors never get admission to the keep without delay - connect does it for you.
+
+Q 45. How Virtual Dom works in React Native?
+Virtual DOM is a copy of the real DOM. This node tree lists the elements, their attributions, contents, and properties also. Whenever any underlying data changes in React Native, the entire UI will be re-rendered in Virtual DOM representation. Then, the difference between previous DOM representation and virtual DOM will be counted. After that, the real DOM will be updated.
+
+Q 46. How do you add react navigation to react native?
+You can install react navigation by the following command:
+
+yarn add react-navigation
+or npm install react-navigation
+
+Q 47. What are the other modules need for react native navigation?
+You have to install following modules in addition to react-navigation:
+react-native-gesture-handler
+react-native-reanimated
+react-native-screens
+react-native-safe-area-context
+react-navigation-stack
+
+Q 48. How to create stackNavigator in react native?
+const AppNavigator = createStackNavigator({
+     Home: {
+         screen: HomeScreen,
+     },
+});
+
+
+
 Top React Native Interview Questions for Freshers
 Top React Native Interview Questions for Freshers Are you preparing for your first React Native interview and wondering what questions you might face? Understanding the key React Native interview questions for freshers can give you more clarity.This blog is here to help you get ready with practical questions that test your real-world problem-solving skills. We’ve gathered some of the most common basic React Native interview questions that freshers often encounter.With this guide, you’ll be well-prepared to tackle these React Native interview questions and answers for freshers and make a strong impression in your interview.fsd student program banner horizontal
 Practice React Native Interview Questions and Answers
