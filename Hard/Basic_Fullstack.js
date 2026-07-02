@@ -1,3 +1,547 @@
+Full Stack Developer Interview Questions and Answers For Freshers
+1.   Explain the differences between Agile and Waterfall methodologies.
+Aspect	Agile Methodology	Waterfall Methodology
+Approach	Iterative, incremental development with regular feedback	Linear, sequential approach with defined phases
+Flexibility	Highly flexible, changes can be incorporated throughout the project	Rigid, changes are difficult to implement once a phase is completed
+Customer Involvement	High, customers provide continuous feedback	Low, customer involvement is typically at the beginning and end
+Risk Management	Continuous assessment and mitigation of risks	Risks are identified at the beginning, with limited reassessment
+Use Case	Best for projects with evolving requirements	Best for projects with clearly defined and unchanging requirements
+2.   What do you understand about CORS (Cross-Origin Resource Sharing)?
+CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers that allows or restricts resources (like fonts, scripts, or data) on a web page from being requested from another domain. It’s a way to control access to resources on a server from a different origin. For instance, if a webpage on domain-a.com wants to fetch data from domain-b.com, CORS headers determine whether the request should be allowed or blocked.
+
+3.   Difference between <div> and <span> Tag in HTML
+Both <div> and <span> are HTML elements used for grouping and styling content, but they serve different purposes.
+
+Feature	<div>	<span>
+Display	Block-level	Inline-level
+Width	Occupies full width	Occupies only the width of its content
+Usage	Wrapping sections of content like paragraphs	Wrapping small portions of content like text
+Starts New Line	Yes	No
+4.   Tell me about an Iframe in HTML.
+An Iframe (Inline Frame) in HTML is an element that lets you put another HTML document inside the current page. This could be advertisements, videos or other websites which are added as small sections in your webpage for example.
+
+Example:
+
+Copy
+<!-- Embeds a YouTube video inside the webpage -->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exampleVideo" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+5.   What is the difference between properties and attributes in HTML?
+Aspect	Attributes	Properties
+Definition	Defined in HTML markup	Accessed and manipulated through JavaScript
+Example	<img src=”image.jpg” alt=”image”>	document.getElementById(‘myImage’).src = “new.jpg”;
+Persistence	Static, doesn’t change unless updated via script	Dynamic, reflects the current state of the element
+6.   What is multithreading, and how is it used?
+Multithreading allows for the simultaneous execution of multiple threads within a single process. It is useful when undertaking tasks like parallel processing, handling multiple tasks simultaneously and running background tasks without affecting the performance of the main thread.
+
+Example in Python:
+
+Copy
+import threading
+def print_numbers():
+
+for i in range(5):
+
+print(i)
+
+# Creating two threads
+
+thread1 = threading.Thread(target=print_numbers)
+
+thread2 = threading.Thread(target=print_numbers)
+
+# Starting both threads
+
+thread1.start()
+
+thread2.start()
+7.   What is an application server?
+An Application Server is software that provides an environment for running web applications. It handles the business logic, manages database connections, and serves dynamic content to users. Examples include Apache Tomcat, Microsoft IIS, and JBoss.
+
+8.   What are the types of design patterns?
+Design Pattern Category	Examples	Purpose
+Creational Patterns	Singleton, Factory Method, Builder	Deal with object creation mechanisms
+Structural Patterns	Adapter, Composite, Proxy	Handle object composition and structure
+Behavioral Patterns	Observer, Strategy, Command	Manage object interactions and responsibilities
+9.   What are the popular full-stack technologies?
+Technology Stack	Frontend	Backend	Database	Tools
+MEAN Stack	Angular	Node.js	MongoDB	Express.js
+MERN Stack	React	Node.js	MongoDB	Express.js
+LAMP Stack	HTML/CSS/JavaScript	PHP	MySQL	Apache Server
+Django Stack	HTML/CSS/JavaScript	Python (Django)	PostgreSQL/MySQL	Django ORM
+10. How does SDLC work?
+SDLC (Software Development Life Cycle) is a structured process for developing software, ensuring high quality and meeting user requirements. It involves the following stages:
+
+Planning: Defining goals, scope, and resources.
+Analysis: Gathering and analysing user requirements.
+Design: Creating system architecture and design specifications.
+Implementation: Writing and developing the software.
+Testing: Validating that the software meets requirements.
+Deployment: Releasing the software to users.
+Maintenance: Ongoing support, updates, and bug fixes.
+11. Explain the differences between TypeScript and JavaScript.
+Aspect	JavaScript	TypeScript
+Type Checking	Dynamically typed	Statically typed; type errors are caught at compile-time
+Syntax	Basic, can be prone to runtime errors	Extends JavaScript syntax, adding type annotations and interfaces
+Tooling	Supported by all modern browsers, requires no compilation	Requires a transpiler like tsc to compile TypeScript to JavaScript
+Error Handling	Errors are caught at runtime	Errors can be caught during development, reducing runtime errors
+Use Case	Suitable for small to medium-sized projects	Ideal for large-scale applications where maintainability is key
+12. What are the key features of MongoDB?
+MongoDB is a NoSQL database known for its flexibility and scalability. Key features include:
+
+Document-Oriented: Stores data in JSON-like documents.
+Schema-Less: Allows dynamic changes in the data structure without a predefined schema.
+Horizontal Scalability: Scales easily across multiple servers.
+Indexing: Supports various types of indexing to improve query performance.
+Aggregation Framework: Provides tools for data analysis and transformation.
+13. What is CSS?
+CSS (Cascading Style Sheets) is a language used to describe the presentation of a web page. It controls the layout, colours, fonts, and overall visual appearance of HTML elements. CSS allows developers to create consistent and visually appealing web pages that work across different devices and screen sizes.
+
+14. What is the CSS Clear property?
+The CSS Clear Property is used to control the behaviour of floating elements. It specifies whether an element should be moved down below floating elements that precede it, ensuring that it does not overlap or wrap around the floated elements.
+
+Example:
+
+Copy
+.clearfix {
+
+clear: both; /* Ensures that the element is positioned below any floated elements */
+
+}
+15. What are the differences between RGB vs RGBA colour format?
+Aspect	RGB	RGBA
+Definition	Stands for Red, Green, Blue	Stands for Red, Green, Blue, Alpha
+Color Channels	3 colour channels (Red, Green, Blue)	4 channels (Red, Green, Blue, and Alpha for opacity)
+Opacity Control	Does not support opacity	Supports opacity through the Alpha channel
+Usage Example	rgb(255, 0, 0) for solid red colour	rgba(255, 0, 0, 0.5) for semi-transparent red colour
+16. What’s your favourite coding language? why?
+My favourite coding language is Python. It’s versatile, easy to read, and has a vast range of libraries that make it suitable for tasks ranging from web development to data science. Python’s simplicity and readability make it an excellent choice for both beginners and experienced developers. Its large community and extensive documentation further enhance its usability.
+
+17.  Explain the difference between GraphQL and REST (Representational State Transfer)
+Aspect	GraphQL	REST (Representational State Transfer)
+Data fetching	client specifies exactly what data it needs	The server defines the data structure in each response
+Flexibility	highly flexible; allows fetching multiple resources in a single request	less flexible; often requires multiple requests to fetch related resources
+Versioning	no versioning needed; schema evolves with time	requires versioning as APIs change
+18. Describe the difference between thread and process.
+Aspect	Thread	Process
+Definition	a lightweight, smaller unit of a process	a heavy, independent program in execution
+Memory	shares memory with other threads within the same process	has its own separate memory space
+Communication	easier to communicate between threads	inter-process communication is more complex
+Crash impact	a crash in one thread may not affect others	a crash in a process may terminate the entire process
+19. How would you optimise an existing website for a new client?
+Optimising an existing website involves several steps:
+
+Performance analysis: Use tools like Google PageSpeed Insights to identify performance bottlenecks.
+Image optimization: Compress and resize images for faster loading.
+Minify code: Minify CSS, JavaScript, and HTML files to reduce file size.
+Enable caching: Implement browser and server-side caching to improve load times.
+Optimise database queries: Review and optimise database queries to reduce load times.
+Improve SEO: Update meta tags, keywords, and content structure for better search engine ranking.
+Mobile optimization: Ensure the website is fully responsive and mobile-friendly.
+Security enhancements: Implement security best practices, such as HTTPS and regular updates.
+20. Explain the differences between React and Angular.
+Aspect	React	Angular
+Type	JavaScript library focused on building UI components	Full-fledged framework for building single-page applications
+Learning Curve	Easier to learn, especially for developers familiar with JavaScript	Steeper learning curve due to more concepts and tools
+Flexibility	Highly flexible; can be integrated with other libraries and frameworks	More opinionated with built-in tools and patterns
+Data Binding	Uses one-way data binding	Supports two-way data binding
+Performance	Generally faster due to virtual DOM and focused updates	Can be slower for large-scale applications due to real DOM manipulation
+Use Case	Best for building component-based UI applications	Best for large, enterprise-level applications with complex requirements
+21. Outline steps involved in continuous integration.
+Continuous integration (CI) typically consists of several steps that ensure code quality and smooth integration:
+
+Version control: Developers commit code to a shared repository, usually a Git branch.
+Automated testing: Every commit triggers automated tests that confirm that the code works as expected.
+Build process: Code is automatically built for compilation error checking and artefact generation purposes.
+Code review: Other developers may also take part in reviewing while some automation tools may verify their quality assurance state.
+Merge: After passing tests and review, the code is merged into the main branch.
+Deployment: Often with automation this includes publishing of the new code to a staging or production environment.
+22.  What is the difference between GET and POST methods?
+Aspect	GET Method	POST Method
+Purpose	Retrieves data from the server	Sends data to the server to create/update a resource
+Data in URL	Appends data to the URL as query parameters	Sends data in the request body, not visible in the URL
+Idempotency	Idempotent, meaning multiple identical requests should have the same effect	Not necessarily idempotent, multiple identical requests may result in different outcomes
+Data Length	Limited by URL length restrictions	No significant limit on data length
+Security	Less secure, as data is visible in the URL	More secure, as data is hidden in the request body
+Use Case	Ideal for fetching data, such as loading a webpage	Ideal for submitting form data, such as login credentials
+23. How would you find a memory leak?
+To find a memory leak, follow these steps:
+
+Monitor memory usage: Use tools like Task Manager, top, or Activity Monitor to observe memory usage over time.
+Profile the application: Use profiling tools like Valgrind, VisualVM, or Chrome DevTools to identify memory usage patterns.
+Check for unreleased resources: Look for objects, files, or resources that are not properly released after use.
+Use garbage collection logs: In languages with garbage collection (e.g., Java), check logs to see if objects are not being collected.
+Isolate the problem: Comment out or disable sections of code to narrow down the source of the leak.
+Fix and test: After identifying the leak, fix it and run tests to ensure the issue is resolved.
+24. Explain the differences between SQL JOIN types (INNER JOIN vs OUTER JOIN).
+Aspect	INNER JOIN	OUTER JOIN
+Purpose	Returns only the rows with matching values in both tables	Returns all rows from one table and matched rows from the other
+Matching Records	Only includes rows where there is a match in both tables	Includes rows even if there is no match in one of the tables
+Types	Single type (INNER JOIN)	Multiple types (LEFT OUTER JOIN, RIGHT OUTER JOIN, FULL OUTER JOIN)
+Use Case	Ideal when you only need data common to both tables	Ideal when you need all data from one table, regardless of matches in the other table
+25. How comfortable are you with design patterns?
+I am quite comfortable with design patterns. I have experience implementing various design patterns, such as Singleton, Factory, Observer, and MVC, in different projects. I understand when to use each pattern and how they contribute to code reusability, maintainability, and flexibility.
+
+25. What factors are necessary for successful integration?
+Successful integration requires careful planning and attention to several key factors:
+
+Clear requirements: Ensure that all stakeholders have a clear understanding of the integration goals.
+Compatibility: Verify that the systems, technologies, and APIs involved are compatible.
+Testing: Conduct thorough testing in a controlled environment before full deployment.
+Documentation: Maintain comprehensive documentation to guide the integration process.
+Communication: Keep open lines of communication between teams to address issues promptly.
+Security: Implement security best practices to protect data during and after integration.
+Scalability: Plan for future growth to ensure that the integration can handle increased demand.
+26. Explain the differences between HTTP and HTTPS.
+Aspect	HTTP (Hypertext Transfer Protocol)	HTTPS (Hypertext Transfer Protocol Secure)
+Security	Data is transmitted in plain text, which can be intercepted	Data is encrypted, providing a secure connection
+Port	Uses port 80 by default	Uses port 443 by default
+Certificates	No SSL/TLS certificate required	Requires an SSL/TLS certificate
+Use Case	Suitable for non-sensitive information exchange	Essential for sensitive transactions like banking, login forms
+27. Do you prefer AMD or CommonJS? Why?
+I prefer CommonJS for server-side JavaScript, particularly with Node.js, because it’s widely supported and follows a synchronous loading model, which is straightforward and easier to debug. AMD is more suitable for browser-based development due to its asynchronous loading, which can improve performance in the browser environment. The choice depends on the environment and specific use case, but CommonJS is more commonly used in server-side development.
+
+28. Explain the differences between Monolithic and Microservices architectures.
+Aspect	Monolithic Architecture	Microservices Architecture
+Structure	Single, unified codebase	Composed of small, independent services
+Deployment	Deployed as a single unit	Services are deployed independently
+Scalability	Harder to scale, requires scaling the entire application	Easier to scale individual services as needed
+Technology Stack	Typically uses a single technology stack	Allows for diverse technology stacks per service
+Use Case	Suitable for small to medium-sized applications	Best for large, complex applications with multiple independent components
+29. What are the strategies to optimise a website to be as efficient and scalable?
+To optimise a website for efficiency and scalability, consider the following strategies:
+
+Code optimization: Minify CSS, JavaScript, and HTML to reduce file sizes.
+Image optimization: Compress images and use modern formats like WebP.
+Caching: Implement browser and server-side caching to reduce load times.
+Content Delivery Network (CDN): Use a CDN to serve content from the nearest server to the user.
+Database optimization: Optimise queries, use indexing, and consider database caching.
+Load balancing: Distribute traffic across multiple servers to avoid overloading a single server.
+Asynchronous loading: Load JavaScript and other resources asynchronously to prevent blocking the rendering of the page.
+30. What’s the difference between Normalisation and Denormalization?
+Aspect	Normalisation	Denormalization
+Purpose	Organises data to reduce redundancy and improve data integrity	Introduces redundancy to improve read performance and reduce query complexity
+Data Structure	Divides data into multiple related tables	Combines related tables into fewer tables
+Complexity	More complex queries, as data is spread across multiple tables	Simpler queries, as data is often in a single table
+Use Case	Ideal for transactional systems where data integrity is crucial	Ideal for read-heavy systems where performance is a priority
+Storage	Requires less storage space	May require more storage space due to redundancy
+31. What is the Flask web framework?
+Flask, a Python lightweight web framework, helps developers build web apps quickly. It is simple to use and has fewer built-in features offering flexibility. Flask adheres to the standard of WSGI (Web Server Gateway Interface) and comes with basic tools such as routing, request handling, and templating which makes it ideal for small to medium projects or for developers who like picking their own libraries.
+
+32. What is ReactJS?
+ReactJS is a library in JavaScript created by Facebook for creating user interfaces, specifically single-page applications. This means that it allows developers to create reusable UI components, thus making it easier to manage the view layer of an application. React applies virtual DOM so that it can efficiently update and render components resulting in better performance in dynamic web applications.
+
+33. Explain the differences between Git Merge and Git Rebase.
+Aspect	Git Merge	Git Rebase
+Functionality	Combines two branches by creating a new merge commit	Re-applies commits from one branch onto another, creating a linear history
+Commit History	Preserves the full history of both branches, including the merge commit	Rewrites commit history, creating a clean, linear history
+Conflict Resolution	Conflicts are resolved during the merge process	Conflicts are resolved during the rebase process
+Use Case	Ideal when you want to preserve the history and context of all commits	Ideal for maintaining a clean project history, often used before merging a feature branch
+Result	Maintains a branch structure in history	Results in a linear history, as if all changes were made sequentially
+34. What is Next JS?
+Next.js, a React framework, enables server-side rendering and static site generation for React apps. It provides routing capabilities, automatic code splitting, server-side rendering features etc., thus reducing development time. Use Next JS to build high-performance SEO-friendly web apps.
+
+35. Explain the differences between MVC and MVVM architecture.
+Aspect	MVC (Model-View-Controller)	MVVM (Model-View-ViewModel)
+Structure	Separates application into Model, View, and Controller	Separates application into Model, View, and ViewModel
+Data Binding	Typically uses one-way data binding	Typically uses two-way data binding
+Component Responsibilities	Controller handles user input and updates the Model	ViewModel handles most of the presentation logic, binding View and Model
+Ease of Testing	Controllers can be difficult to test due to tight coupling with Views	Easier to test as ViewModels can be tested independently
+Use Case	Suitable for traditional web applications	Suitable for modern, data-driven applications, especially with frameworks like Angular
+36. What is Django?
+Django is a high-level Python-based web framework that promotes quick development as well as clean pragmatic design principles. This framework employs the Model-View-Template (MVT) architectural pattern and has in-built facilities such as user authentication, database interactions and URL routing among others. It scales well, and guarantees the safety of your systems while still being fully documented.
+
+37. What is MySQL?
+MySQL is an open-source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL) for data management purposes. It is widely used in web applications where data needs to be stored or retrieved because it supports features like transactions, indexing and replication. This popularity lies in its reliability, scalability and simplicity hence ideal for both small-scale and large-scale applications.
+
+38. Difference between List and Array in Python
+Aspect	List	Array
+Data type flexibility	Can store different data types in a single list	Typically stores elements of the same data type (when using numpy arrays)
+Built-in type	Python’s built-in data structure	Requires importing the array module or numpy
+Functionality	Supports a wide range of operations and methods	More limited in operations compared to lists, but optimised for numerical computations
+Usage	Ideal for general-purpose data storage	Ideal for numerical operations where performance is critical
+Memory efficiency	Less memory efficient compared to arrays	More memory efficient, especially for large data sets
+39. Explain the difference between structured and unstructured databases.
+Aspect	Structured Databases	Unstructured Databases
+Data Format	Stores data in a fixed, predefined format (e.g., tables with rows and columns)	Stores data in a flexible, undefined format (e.g., documents, images, videos)
+Schema	Requires a defined schema before data is entered	No predefined schema; data can be stored as-is
+Query Language	Uses structured query languages like SQL	Uses various query mechanisms, often specific to the database
+Use Case	Best for applications requiring consistent, structured data	Best for applications dealing with large volumes of varied data
+40. What is the event loop in Node.js?
+The event loop on Node.js handles asynchronous operations on this platform. To manage non-blocking I/O operations on Node.js’ single-threaded approach, the event loop comes to use. It keeps checking the call stack and callback queue and then executes callbacks when the former is empty to ensure efficient execution of asynchronous code.
+
+41. Is GraphQL faster than REST?
+In certain scenarios, particularly those with complex queries requiring multiple REST API calls, GraphQL can be faster compared to REST API. Clients in GraphQL can request specific data they require which may reduce how much data is being transferred and how many network requests are made. Performance varies depending on implementation details, query complexity, and how the server handles those queries. For simple single-resource requests, rest can be simpler and faster.
+
+42. What are the differences between Server-side Scripting and Client-side Scripting?
+Aspect	Server-side Scripting	Client-side Scripting
+Execution	Runs on the server before the content is sent to the client’s browser	Runs on the client’s browser after the content is loaded
+Languages	Examples include PHP, Python, Ruby, Node.js	Examples include JavaScript, HTML, CSS
+Use Cases	Used for database interactions, server logic, and dynamic content generation	Used for user interface interactions, form validations, and enhancing user experience
+Security	Generally more secure, as code is hidden from the client	Less secure, as code is visible and can be modified by the client
+43. Explain the differences between SQL and NoSQL databases.
+Aspect	SQL Databases	NoSQL Databases
+Data Model	Relational, uses tables with rows and columns	Non-relational, uses document, key-value, graph, or columnar models
+Schema	Requires a fixed schema before data is added	Flexible schema, allowing dynamic and unstructured data
+Query Language	Structured Query Language (SQL)	Varies by database (e.g., MongoDB uses BSON queries, Cassandra uses CQL)
+Scalability	Vertical scaling (adding more power to a single server)	Horizontal scaling (adding more servers)
+Examples	MySQL, PostgreSQL, Oracle	MongoDB, Cassandra, Redis, Elasticsearch
+44. What is the ‘use strict’ mode in JavaScript?
+‘use strict’ is a directive in JavaScript that enables strict mode, which helps catch common coding errors and ‘unsafe’ actions, such as assigning values to undeclared variables. It makes debugging easier and helps avoid potentially problematic JavaScript features.
+
+Example:
+
+Copy
+"use strict";
+
+ 
+
+x = 10; // This will throw an error because 'x' is not declared
+Using strict mode is recommended as it promotes better coding practices and can prevent subtle bugs.
+
+45. Explain the differences between synchronous and asynchronous programming.
+Aspect	Synchronous Programming	Asynchronous Programming
+Execution	Code is executed sequentially, one operation at a time	Code allows multiple operations to run concurrently
+Blocking	Operations block the next operation until complete	Operations don’t block; they proceed to the next task while waiting
+Use Case	Simple, linear tasks where each step depends on the previous	Tasks involving I/O operations, timers, or network requests
+Complexity	Easier to write and understand	Can be more complex due to callbacks, promises, or async/await
+Performance	Can be slower as it waits for each operation to complete	Typically faster and more efficient, especially in I/O-bound tasks
+46. Explain the differences between Docker and Virtual Machines (VMs).
+Aspect	Docker	Virtual Machines (VMs)
+Virtualization Type	Container-based virtualization	Full hardware virtualization
+Resource Efficiency	Lightweight, shares the host OS kernel	Heavyweight, requires its own OS and more resources
+Startup Time	Fast, near-instant startup	Slower startup, as a full OS must boot
+Portability	Highly portable, can run on any system with Docker installed	Less portable, as VMs are tied to specific hypervisors
+Use Case	Ideal for microservices, CI/CD pipelines, and development environments	Suitable for running different OS environments on the same hardware, legacy application support
+Full Stack Developer Interview Questions and Answers For Experienced
+47. State the difference between <div> and <span> Tag in HTML.
+Aspect	<div>	<span>
+Display	Block-level	Inline-level
+Width	Takes up full width	Takes up only the width of its content
+Usage	Used for grouping large sections of content	Used for styling small portions of text
+Line Break	Starts on a new line	Does not start on a new line
+48. What is the difference between PUT and PATCH methods?
+Aspect	PUT	PATCH
+Purpose	Replaces the entire resource	Updates part of the resource
+Idempotence	Idempotent, multiple identical requests produce the same result	Not necessarily idempotent
+Use Case	When you need to update the whole resource	When you need to modify only specific fields
+49. What is the difference between the ‘resetting’ and ‘normalising’ CSS?
+Resetting: Removes all default browser styling. This provides a clean slate but requires more customization.
+Normalising: Preserves useful default styles and improves cross-browser consistency. It’s a more balanced approach.
+50. What Factors Do You Need for Successful Integration?
+Clear Requirements: All stakeholders should understand the integration goals.
+Compatibility: Ensure that systems and APIs are compatible.
+Thorough Testing: Conduct testing to catch issues early.
+Good Communication: Maintain open lines between teams.
+Security: Implement best practices to protect data.
+Scalability: Plan for future growth to handle increased demand.
+51. What Are the Advantages of Using Unit Tests?
+Early Bug Detection: Catches issues during development.
+Refactoring Safety: Ensures that changes don’t break existing functionality.
+Documentation: Serves as documentation for expected behaviour.
+Code Quality: Encourages better design and modular code.
+Confidence: Provides confidence to developers that their code works as intended.
+52. Explain the differences between OAuth and JWT for authentication.
+Aspect	OAuth	JWT (JSON Web Token)
+Purpose	Authorization protocol for third-party access	Token format for securely transmitting information
+Token Structure	Uses access tokens and refresh tokens	Self-contained, stateless tokens with payload, signature
+Use Case	Best for third-party app access (e.g., social login)	Best for stateless, server-to-client authentication
+53. When would you clear floats in CSS?
+Clearing floats is necessary when you want to ensure that elements after a floated element do not wrap around it. This is often needed after using floating elements for layout purposes to prevent issues with layout or overlapping content.
+
+Example:
+
+Copy
+.clearfix::after {
+
+content: "";
+
+display: table;
+
+clear: both;
+
+}
+54. Explain how you’d share code between files.
+Module Export/Import: In JavaScript, use export to expose functions or variables and import to bring them into another file.
+Common Libraries: In Python, create reusable modules and import them as needed.
+Inheritance: In object-oriented languages, use inheritance to share common logic across classes in different files.
+Packages: Organise code into packages or namespaces to logically group shared code.
+55. Explain the differences between RESTful API and SOAP API.
+Aspect	RESTful API	SOAP API
+Protocol	Uses HTTP/HTTPS	Uses XML-based protocol over HTTP, SMTP, etc.
+Flexibility	More flexible, can return data in various formats	Strict, uses XML exclusively
+Learning Curve	Easier to learn and implement	Steeper learning curve due to complexity
+Use Case	Best for web services with lightweight communication	Best for enterprise-level, secure communication
+56. What are the advantages of using unit tests?
+Early Bug Detection: Helps identify issues during development.
+Code Documentation: Unit tests serve as documentation for expected behaviour.
+Confidence in Refactoring: Ensures that changes do not break existing functionality.
+Continuous Integration: Allows automated testing in CI/CD pipelines.
+Improved Design: Encourages writing modular, testable code.
+57. Explain how you’d reduce the loading time for a website
+Minimise HTTP Requests: Reduce the number of files needed to load the page.
+Optimise Images: Compress images and use modern formats like WebP.
+Leverage Browser Caching: Cache static resources to avoid repeated requests.
+Minify CSS and JavaScript: Remove unnecessary characters and whitespace.
+Use a CDN: Distribute content across geographically dispersed servers.
+Lazy Load Assets: Load images and scripts only when needed.
+58. What is it referred to as when you are talking about ACID with respect to database systems?
+ACID is the abbreviation of Atomicity, Consistency, Isolation and Durability. These four qualities make certain that database transactions take place in a smooth way.
+
+Atomicity: It implies that every operation must complete within a transaction; otherwise all operations will be rolled back.
+Consistency: Ensures that after completion of a transaction, the database moves from one valid state to another.
+Isolation: Makes sure that individual transactions do not interfere with each other.
+Durability: Assures a system failure would not undo the committed transactions.
+59. Explain the differences between static and dynamic typing in programming languages.
+Aspect	Static Typing	Dynamic Typing
+Type Checking	Types are checked at compile-time	Types are checked at runtime
+Error Detection	Errors are caught during the compilation	Errors are caught during the execution
+Flexibility	Less flexible, but safer	More flexible, but riskier
+Use Case	Best for large, complex applications where type safety is crucial	Best for smaller projects where flexibility is needed
+60. What is an application server?
+An application server refers to a software framework that provides an environment for running web applications. It manages business logic, database connections and client-server communications. Examples include Apache Tomcat, Microsoft IIS and JBoss.
+
+61. What is referential transparency?
+Referential transparency describes the property of functions where their output will always be consistent given the same input without depending on any external state or side effects. This is very important in functional programming as it leads to a more predictable and maintainable code base.
+
+62. What are the types of design patterns?
+Creational Patterns: Deal with object creation mechanisms (e.g., Singleton, Factory Method).
+Structural Patterns: Handle the composition of classes or objects (e.g., Adapter, Composite).
+Behavioural Patterns: Manage object interaction and responsibilities (e.g., Observer, Strategy).
+63. What are the differences between an abstract class and an interface class?
+Aspect	Abstract Class	Interface Class
+Methods	Can have both abstract and concrete methods	Only abstract methods (in most languages)
+Multiple Inheritance	Typically supports single inheritance	Supports multiple inheritance
+Fields	Can have fields with implementation	No fields, only method signatures
+Use Case	When you need to share common behaviour and implementation	When you need to define a contract without implementation
+64. What is docstring in Python?
+A docstring is a string literal used to document a Python module, class, function, or method. It is placed right after the definition and can be accessed using the __doc__ attribute.
+
+Example:
+
+Copy
+def add(a, b):
+
+"""Returns the sum of two numbers."""
+
+return a + b
+65. What is Entity Bean?
+Entity Bean is a type of Enterprise JavaBean (EJB) that represents persistent data stored in a database. Each instance of an Entity Bean corresponds to a row in a database table, and the bean’s state is synchronised with the database.
+
+66. What is an Iterator?
+An Iterator is an object that allows traversal of elements in a collection (like lists or arrays) one at a time. In Python, an iterator must implement the __iter__() and __next__() methods.
+
+Example:
+
+Copy
+my_list = [1, 2, 3]
+
+iterator = iter(my_list)
+
+print(next(iterator))  # Output: 1
+67. Explain the differences between Continuous Integration (CI) and Continuous Deployment (CD).
+Aspect	Continuous Integration (CI)	Continuous Deployment (CD)
+Purpose	Automated testing and integration of code changes	Automates the release of code to production
+Focus	Ensures code integrates and passes tests	Ensures code is deployed quickly and consistently
+Manual Intervention	Requires human approval for deployment	Fully automated, no human intervention required
+68. What is dependency injection?
+Dependency injection is a design pattern where an object’s dependencies are provided externally rather than the object creating them itself. This promotes loose coupling and easier testing.
+
+69. What is continuous integration?
+Continuous integration (CI) is a development practice where developers frequently integrate code into a shared repository. Each integration is verified by an automated build and testing process to detect issues early.
+
+70. What is a Bootstrap grid system?
+The Bootstrap grid system is a layout system that uses a series of containers, rows, and columns to arrange content. It’s based on a 12-column grid, allowing responsive layout designs that adjust across different screen sizes.
+
+71. Explain the differences between XML and JSON
+Aspect	XML (eXtensible Markup Language)	JSON (JavaScript Object Notation)
+Data Structure	Uses a tree structure with nested elements	Uses a key-value pair structure
+Syntax	More verbose with opening and closing tags	More concise, uses curly braces and arrays
+Use Case	Best for documents with complex hierarchies	Best for data interchange between systems
+Readability	Less readable due to verbosity	More readable due to simplicity
+Parsing	Requires more complex parsers	Easily parsed with built-in functions in most languages
+72. How to add the badge to the list group in Bootstrap?
+To add a badge to a list group item in Bootstrap:
+
+Copy
+<ul class="list-group">
+
+<li class="list-group-item d-flex justify-content-between align-items-centre">
+
+Item 1
+
+<span class="badge badge-primary badge-pill">4</span>
+
+</li>
+
+</ul>
+73. Explain long polling.
+Long polling is a technique where the client requests information from the server, and the server holds the request open until new data is available, reducing the need for frequent polling. This helps simulate real-time updates.
+
+74. How to use calc() in Tailwind CSS?
+Use calc() in Tailwind CSS by applying it directly in your custom CSS or inline styles, as Tailwind does not have a built-in utility for calc():
+
+Copy
+<div class="w-[calc(100%-2rem)]">Content</div>
+75. What is an Alert component in Bootstrap?
+The Alert component in Bootstrap is used to display important messages to the user. It comes with various contextual styles (e.g., success, danger, warning) and can be dismissible.
+
+Copy
+<div class="alert alert-success" role="alert">
+
+Success message!
+
+</div>
+
+ 
+76. What are some of the uses of Docker?
+Containerization: Encapsulates applications and their dependencies in lightweight containers.
+Development Environment: Provides consistent environments across different stages of development.
+Continuous Integration/Deployment: Facilitates CI/CD pipelines by allowing automated builds and tests in isolated environments.
+Microservices: Deploys and manages microservices architectures efficiently.
+77. Explain the differences between HTTP/1.1 and HTTP/2
+Aspect	HTTP/1.1	HTTP/2
+Connection	Opens a new connection for each request	Uses a single connection for multiple requests (multiplexing)
+Speed	Slower due to connection overhead	Faster due to multiplexing and header compression
+Header Compression	Headers are not compressed	Uses HPACK header compression
+Priority	No request prioritisation	Allows prioritisation of requests
+Use Case	Still widely used but less efficient for modern web	Preferred for high-performance web applications
+78. Explain the ‘this’ keyword in JavaScript.
+The ‘this’ keyword in JavaScript refers to the object from which the function was called. Its value depends on the context in which it is used (e.g., global, object, or function context).
+
+Example:
+
+Copy
+const person = {
+
+name: "Alice",
+
+greet: function() {
+
+console.log(this.name);
+
+}
+
+};
+
+ 
+
+person.greet();  // Output: Alice
+79. What is callback hell?
+Callback hell refers to the situation where multiple nested callbacks make the code hard to read and maintain. This often occurs in asynchronous programming when each callback depends on the previous one, leading to deeply nested structures. Using promises or async/await can help mitigate this issue.
+
+80. Explain the differences between Encryption and Hashing
+Aspect	Encryption	Hashing
+Purpose	Converts data into a secure format for transmission	Converts data into a fixed-size hash value
+Reversibility	Reversible with the correct key	Irreversible, designed to be a one-way function
+Use Case	Protects data in transit or at rest	Verifies data integrity, stores passwords
+Algorithms	AES, RSA	MD5, SHA-256
+Security	Depends on key strength	Vulnerable if weak hash algorithms are used
+skill-test-section-bg
+82.9%
+
+of professionals don't believe their degree can help them get ahead at work.
+
 Top 20 Full Stack Developer Interview Questions for Employers
 June 30, 2026
 14 min read
