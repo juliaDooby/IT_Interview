@@ -1,3 +1,72 @@
+What is React Native and how does it differ from React?
+React Native is a framework developed by Facebook for creating native-style apps for iOS and Android under one common language, JavaScript. It’s based on React, Facebook’s JavaScript library for building user interfaces, but instead of targeting the browser, it targets mobile platforms. In other words, web developers can now write mobile applications that look and feel truly “native,” all from the comfort of a JavaScript library that many already love.
+
+Can you describe the lifecycle of a React Native component?
+React Native components have a lifecycle that can be followed during their creation, updating, and destruction. The lifecycle stages include mounting (with methods like constructor, componentDidMount, etc.), updating (with methods like shouldComponentUpdate, componentDidUpdate, etc.), and unmounting (componentWillUnmount). React recently introduced Hooks, which allows functional components to tap into the lifecycle with the effect of side effects.
+
+How is state managed in React Native?
+State in React Native is managed within components similarly to React. It can be handled via the useState hook in functional components or this.state in class components. For global state management, you might use context, Redux, MobX, or other state management libraries that allow you to manage state across different components.
+
+Know more: ReactJS Interview Questions and Answers
+
+What are props in React Native?
+Props, short for properties, are a way of passing data from parent to child components. They are read-only and should not be modified by the child components. They allow components to be dynamic and reusable.
+
+How do you optimize performance in a React Native application?
+Performance in a React Native app can be optimized in several ways. This includes reducing the size of images, using shouldComponentUpdate()/React.memo() to prevent unnecessary renders, using the FlatList or SectionList instead of ScrollView for large lists, and optimizing JavaScript thread and native thread interactions. Code splitting and lazy loading can also help in performance gains.
+
+What is the Virtual DOM and how does React Native use it?
+The Virtual DOM is a concept where a virtual representation of the UI is kept in memory and synced with the real DOM by libraries such as ReactDOM. This process, called reconciliation, allows the developer to write code as if the entire page is rendered on each change while the React libraries only render components that actually change. React Native does not use the HTML DOM; instead, it has a set of native components that are mapped to the real native UI components. The virtual DOM is used for efficiently updating these native views.
+
+How does navigation work in React Native?
+Navigation in React Native can be implemented using libraries such as React Navigation or React Native Navigation. These libraries provide a way to transition between screens, where each screen is typically a component. They allow for the configuration of the navigation stack, tabs, drawers, and more, mimicking the navigation patterns found in native mobile application development.
+
+Explain the difference between ‘state’ and ‘props’.
+‘State’ is internal and controlled by the component itself, while ‘props’ are external and controlled by whatever renders the component. The state is mutable, whereas props are immutable. When state changes, the component re-renders to reflect the new data. Props are used to pass data and event handlers down to child components.
+
+What are some limitations of React Native?
+Some limitations of React Native include performance issues for complex or high-load animations and interactions, less smooth navigation compared to native applications, and the need for native code development for certain features that are not supported directly by React Native or third-party libraries.
+
+How do you handle asynchronous operations in React Native?
+Asynchronous operations in React Native can be handled using JavaScript features like Promises, async/await, or libraries such as Redux-Saga or Redux-Thunk which help in handling async operations in a Redux-managed state.
+
+What is ‘Hot Reloading’ in React Native?
+Hot Reloading is a feature in React Native that allows developers to see the changes they make to their code in real-time on their simulator or device. It only reloads the changed files and maintains the state of the app which speeds up development.
+
+Describe how you would use Redux in a React Native application.
+Redux is a predictable state container for JavaScript apps that helps to manage the application’s state in a single immutable state object. To use Redux in a React Native application, you set up a ‘store’ that holds the state, ‘actions’ that describe changes to the state, and ‘reducers’ that define how actions transform the state. Components subscribe to the store and dispatch actions based on user interactions or other events, triggering the reducers to update the state. Libraries like React-Redux can be used to bind Redux with React Native, providing hooks like useSelector to read state and useDispatch to dispatch actions.
+
+How do you debug a React Native application?
+Debugging a React Native application can be done in several ways:
+
+Use the built-in debugger by activating the ‘Debug JS Remotely’ option from the developer menu, which allows you to use Chrome or Safari’s developer tools.
+Utilizing console.log statements for quick checks.
+Employing React Native debugging tools like Flipper or Reactotron.
+Using integrated development environment (IDE) features, if available.
+Leveraging the React Developer Tools and Redux Developer Tools extensions for more in-depth state and props analysis.
+What is the purpose of the Flexbox in React Native?
+Flexbox is a layout model that allows you to design a flexible responsive layout structure without using float or positioning. In React Native, Flexbox is used to specify the layout of components. It works by controlling the direction items are positioned in a container (flex-direction), how they wrap (flex-wrap), the alignment of items along the main axis (justify-content), the alignment of items along the cross axis (align-items), and how space is distributed among items (align-content).
+
+What are higher-order components in React Native?
+Higher-order components (HOCs) are a pattern in React and React Native where a function takes a component and returns a new component. They’re used to extend or modify the behavior of wrapped components by reusing logic. For example, a HOC can be used to add state or lifecycle methods to a component or to connect a component to a Redux store.
+
+How do you handle configuration changes in React Native?
+Configuration changes, such as device orientation changes, can be handled by setting up event listeners that detect the change and adjust the state of components accordingly. For complex state management across configuration changes, you can use state management libraries like Redux to maintain the state or even React’s Context API to ensure that the state persists across re-renders or configuration changes.
+
+Can you use web libraries like jQuery with React Native?
+Typically, web libraries like jQuery are not used with React Native, as React Native does not use the HTML DOM and jQuery is primarily a DOM manipulation library. Instead, React Native provides its own set of components and APIs for interacting with native elements.
+
+What is the role of the ‘key’ prop in React Native lists?
+The key prop is used in lists to provide a unique identifier for each item. When the list is re-rendered, keys help React Native identify which items have changed, are added, or are removed, which helps in efficient updating of the list’s rendered output.
+
+Explain the concept of “props drilling” and how to avoid it in React Native.
+“Props drilling” refers to the process of passing props from a parent component down to deeply nested child components through multiple levels of intermediary components. It can make components tightly coupled and harder to maintain. To avoid props drilling, you can use React’s Context API to provide values deep into the component tree without explicitly passing props down through every level or employ state management libraries like Redux or MobX.
+
+What is ‘Linking’ in React Native?
+‘Linking’ is a mechanism in React Native that allows you to interact with incoming and outgoing app links. For instance, it enables your app to open links in the browser or to respond to incoming links. The Linking API can be used to handle deep linking, where a custom URL scheme or Universal Links (iOS) and App Links (Android) are used to link directly to a specific location within your app.
+
+These questions cover a broad range of basic concepts and common scenarios in React Native development. An interview may also include questions specific to a job’s requirements, such as experience with certain libraries or tools, or how to handle specific use cases in React Native.
+
 Top 55+ React native interview questions and answers for freshers and experienced-advanced
 Posted by
 fdaytalk
