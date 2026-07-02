@@ -1,3 +1,201 @@
+30+ Postman Interview Questions & Answers
+
+By
+Guest Author
+Updated on
+June 11, 2025
+In this post, we see Postman Interview Questions. Before going ahead, don’t miss this general API Testing Interview Questions.
+
+Let’s move with the actual post on Postman Interview Questions And Answers.
+
+Postman Interview Questions
+Postman Interview Questions With Answers
+1. What is Postman?
+
+Postman is a collaboration platform for API development. It is a popular API client and it enables you to design, build, share, test, and document APIs.
+
+Using the Postman tool, we can send HTTP/s requests to a service, as well as get their responses. By doing this we can make sure that the service is up and running.
+
+Being originally a Chrome browser plugin, Postman now extends its solution with the native version for both Mac and Windows.
+
+2. Why Postman?
+
+Postman has become a tool of choice for over 8 million users.
+
+Free: It is free to download and use for teams of any size.
+Easy: Just download it and send your first request in minutes.
+APIs Support: You can make any kind of API call (REST, SOAP, or plain HTTP) and easily inspect even the largest responses.
+Extensible: You can customize it for your needs with the Postman API.
+Integration: You can easily integrate test suites into your preferred CI/CD service with Newman (command line collection runner)
+Community & Support: It has a huge community forum
+3. What is an API?
+
+API is an acronym and it stands for Application Programming Interface. API is a set of routines, protocols, and tools for building Software Applications. APIs specify how one software program should interact with other software program.
+
+In simple words, API stands for Application Programming Interface. API acts as an interface between two software applications and allows the two software applications to communicate with each other. API is a collection of software functions which can be executed by another software program.
+
+Must Read: API Testing Complete Tutorial
+
+4. Name some tools used for API Testing?
+
+Some of the tools used to do API Testing are as follows
+
+Postman
+Katalon Studio
+SoapUI
+Tricentis Tosca
+Apigee
+Jmeter
+5. What are the core components of an HTTP request?
+
+An HTTP request includes five key elements:
+
+HTTP methods – Set of request methods to perform desired action for a given resource (GET, PUT, POST, DELETE)
+Uniform Resource Identifier (URI) – Describes the resource
+HTTP Version, (example- HTTP v1.1)
+Request Headers, (example- Content-type : application/json, Content-Length : 511)
+Payload – It is basically a Request Body which includes message content.
+6. State The Core Components of an HTTP Response?
+
+Every HTTP response contains four key elements.
+
+Status/Response Code – These are response codes issued by a server to a client’s request. For example, 404 means Page Not Found, and 200 means Response is OK.
+HTTP Version – describes HTTP version, for example-HTTP v1.1.
+Response Header – Includes information for the HTTP response message. For example, Content-type, Content-length, date, status and server type.
+Response Body – It contains the data that was requested by a client to server.
+7. What API information is exposed in Web Developer tools?
+
+Request headers, Response body, Response cookies
+
+8. What can we use to get API information from web developer tools into Postman?
+
+Copy as cURL can get API information from web developer tools into Postman.
+
+9. In which type of encoding does postman accept authorization credentials?
+
+Postman accepts Base64 encoding only. This is provided inbuilt in postman or else you can also refer 3rd party websites to convert the credentials in base64.
+
+10. Why does Postman accept Base64 encoding only?
+
+We use base64 particularly because it transmits the data into the textual form and sends it in easier form such as HTML form data. Also, we can rely on the same 64 characters in any encoding language that we use.
+
+11. What is meant by the term environment in postman?
+
+An environment in postman is a set of key value pairs. You can create multiple environments in postman which can be switched quickly with a press of a button. There are 2 types of environment, global and local.
+
+12. Can global scope variables have duplicate names in postman?
+
+Since global variables are global i.e. without any environment, global variables cannot have duplicate names. Local variables can have the same name but in different environments.
+
+13. Which one will be preferred in postman- a global variable or a local variable?
+
+In postman, if 2 variables have the same name( one being local, other global) then the higher priority is of the local variable. it will overwrite the global variable.
+
+14. What is a Postman Collection?
+
+A Postman Collection lets us group individual requests together. Simply it allows us to organize the requests into folders.
+
+15. What do you mean by postman monitors?
+
+The postman monitor is used for running collections. Collections are run till specified time defined by the user. Postman Monitor requires the user to be logged in. Monitor reports are shared by users over email on a daily/monthly basis.
+
+16. What do you understand by the term Postman Collection runners?
+
+A postman collection runner is used to perform Data-driven testing. The group of API requests are run in a collection for the multiple iterations with different sets of data.
+
+17. Can local variables be imported in Postman Monitors?
+
+Yes. Postman monitors allow to import local variables but it does not allow to import global variables.
+
+18. What is the purpose of Postman cloud if we are working in a company? Why?
+
+A Postman cloud is a common repository of companies to access Postman collections. In Postman cloud, work can be saved instantly after logging in. Anyone from the team can access data/collections from anywhere.
+
+19. Why is it not preferred to save work in Postman cloud?
+
+It is not preferred to save your work in Postman cloud as company’s work is not allowed to be leaked and remain confidential. Security breaches can be experienced if Postman cloud is used as Postman cloud requires sign in. Therefore Postman Cloud is discouraged for saving work and team workspace is highly encouraged.
+
+20. What is the purpose of status code 304?
+
+It means NOT MODIFIED. It is used to reduce network bandwidth usage in case of conditional GET requests. Response body should be empty. Headers should have date, location etc.
+
+21. Define status code 201?
+
+It means created, when a resource is successfully created using POST or PUT request. It returns a link to a newly created resource using the location header.
+
+22. When do we use global variables, collection variables, and local variables?
+
+Global variables are general purpose variables, ideal for quick results, and prototyping. They are used while passing data to other requests.
+
+Collection variables can be mostly used for storing some constants that do not change during the execution of the collection. They are used for constants that do not change during the execution and also for URLs / authentication credentials if only one environment exists.
+
+Local variables are only available within the request that has set them or when using Newman/Collection runner during the entire execution. They are used whenever you would like to override all other variable scopes.
+
+23. How do you remove local variables?
+
+Local variables are automatically removed once the tests have been executed.
+
+24. How can we stop executing requests or stop the collection run?
+
+postman.setNextRequest(null);
+
+25. What is the difference between form data and x-www-form-urlencoded ?
+
+The difference between the form data and x-www-form-urlencoded is that the url will be encoded when sent through x-www-form-urlencoded.
+
+26. Where are query parameters stored in a GET request?
+
+Query parameters are stored in the URL in a GET request.
+
+27. How can we access a Postman variable?
+
+We can access a Postman variable by entering the variable name as {{var}}
+
+28. What is the HTTP response code for a POST request with incorrect parameters?
+
+400 Bad Request is an ideal response code for request with incorrect parameters.
+
+29. How can you iterate a request 100 times in Postman?
+
+By using Collection Runner
+
+30. How can we organize requests in Postman?
+
+We can organize requests in Postman with the Collections.
+
+31. Which programming language is used for Postman tests?
+
+JavaScript
+
+32. What will execute first in a Collection Run?
+
+Pre-request scripts at the Collection level are executed first in a Collection run.
+
+33. What are some of the JS libraries available in Postman?
+
+Lodash, Moment, GUID
+
+34. Which tool can be used to run Postman Collections in Jenkins?
+
+Newman can be used.
+
+35. How can we log requests and responses in Postman?
+
+We can view requests logs and response logs through the Postman Console window.
+
+36. What is GUID?
+
+GUID stands for Global Unique Identifier. It is basically hexadecimal digits separated by hyphens. GUID solves the purpose of uniqueness.
+
+In Postman, we use this to generate and send a random value to APIs.
+
+{
+"id": "{{$guid}}",
+}
+Read more on GUID here
+
+I would like to conclude this post “Postman Interview Questions” here. Final words, Bookmark this post “Postman Interview Questions And Answers” for future reference.
+
 Postman Interview Questions and Answers
 Question - 101 : - What is the significance of 301 status code?
 Answer - 101 : -
