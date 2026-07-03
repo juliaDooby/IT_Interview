@@ -1,3 +1,45 @@
+Top Front-End Developer Interview Questions
+/ Web Development / By Pathways2Advancement.org
+If you’re reading this then you’re likely preparing for an upcoming front-end developer interview or you’re anticipating one in the near future.  First, we’re going to briefly discuss the technical skills you’ll need to help you stand out during your job-hunting process.  Then, we’ll dive right into some of the top front-end developer interview questions and sample answers to help you prepare for this important step in your career as a front-end developer.
+
+What Skills Do You Need to Succeed as a Front-End Developer Applicant?
+A front-end developer is a web developer who specializes in the design and programming of a website’s front end, or what the user sees.  So naturally you’ll need a wide array of website design skills to complete any given design and development job.  HTML and CSS knowledge is usually a required skill, as well as a high level of efficiency is a must.  Experience with different programs is needed to complete a website build on any given project from start to completion. Some tools that come in handy for front-end web designers include WordPress (or other CMS platforms), PHP, Drupal, C+, and other programming languages are just some examples of these common tools.
+
+Soft skills such as communication is an essential in order to grasp the complete scope of a website project. Therefore, the ability to communicate clearly with other team members and departments including web developers, marketing team members, graphic designers, and even sales staff is important. Content writing, SEO knowledge, Photoshop skills, and experience with implementing SEO tactics are needed skills for any front-end website designer in today’s world.
+
+Preparing for an Interview as a Front-End Developer
+The most important thing you can do to prepare for this interview is to research the company where you are applying. You’ll need to review and completely understand the requirements and recommended skills listed in the front-end developer job description. You should also think about what their culture is like and how that might be different from your previous companies you’ve either applied to or worked.
+
+It’s important to have an idea of some questions you might be asked in order to prepare for a front-end developer interview. Preparation can be challenging since there are no recommended questions or frameworks provided by employers.
+
+Top 5 Front End Developer Key Questions
+
+1. What is a responsive web page design?
+Responsive design allows one single version of a website to work on any size screen or device. Regardless of the size of the screen being viewed or the type of device responsive design can be implemented. With the use of HTML and CSS, the website components will move around the page to be viewed appropriately on a desktop, iPad or tablet, and even mobile phones. Sometimes components of a website are removed or even added, depending on which device is being viewed. The main coding languages used in responsive design are HTML and CSS.
+
+2. When do you use JPEG and when do you use PNG?
+JPEGs are used in any situation when a small file is needed and transparency is not. A lightweight JPEG can be optimized even further using tools that will lighten the weight and optimize the photo. Websites need to load fast and keeping images lightweight helps website pages load quicker.
+
+A PNG can offer many levels of transparency through the use of alpha channels, which a JPEG does not offer. Full transparency will be used in most cases with the logo. PNGs are used for most fading-type effects and even used on button fades. PNGs offer a higher level of photo quality than JPEGs, however, it does come with a bigger load on the site. In most cases, the quality can make up for the extra weight.
+
+3. What is a CSS file and why is it used?
+CSS works in tandem with HTML. They are a team. HTML is the building block of a website, which creates the structure of a webpage, by placing headlines and paragraphs where needed. HTML also handles embedding of images, video, and other media.
+
+CSS is short for Cascading Style Sheets. CSS is used in all of the stylings of items on the page. Colors of backgrounds, text, borders, and anything on the page are controlled through what is called the style sheet. CSS is also used to style all elements on the page such as; the size of the headline, font type, borders, underlining, italics, image sizes, and more.
+
+If a CSS file is linked incorrectly or unavailable, a website will look very strange to the user, lacking all colors and organization that would normally be seen when viewing the front-end of a website.
+
+4. How many H1 tags go on a website page and why?
+Every website page only needs one H1 tag. Think of the H1 tag as the main heading and the decider of what is to follow on the page. The H1 tag sets the tone for all the following information. Every page on a website needs a unique H1 tag. Search engines rank and place web pages by the information they find. If there is more than one H1 tag, this will confuse the search engines and hurt SEO efforts and it can confuse actual human readers. With a proper unique title, the odds of ranking better in search engines are great. If more headings are desired below the H1 tag, use the H2, H3, which are available for subheadings.
+
+5. What are W3C standards and why is it important for front-end web design?
+The W3C is an international community working on building website standards all front-end web developers need to follow. The goal of the W3C is to develop and implement design procedures that will help ensure websites will look appropriate across all web browsers. The W3C continues the development of protocols and guidelines ensuring the longevity of growth on the web. The organization was started in 1994 and offers a great number of resources for the Front-end website designer.
+
+Wrapping Up the Front-End Developer Interview
+The interview process is a critical step in the hiring process. It’s a time for both the employer and the candidate to gain insight into each other’s understanding of the position, their skills and personality. While interviews can be nerve-wracking, they are crucial to understanding whether or not you and the company are a right fit for each other. Take this opportunity to learn as much as you can about the role and the company. Ask questions and take your time answering their questions.
+
+Ultimately, your preparation for an interview as a front-end developer can dictate the success you’ll have in the process. If you’re confident in your skills and do everything you can to have an idea of what to expect from the interview, then you’ll be in a great position to perform at your very best.
+
 Список вопросов для собеседования разработчика по телефону
 Руководитель департамента управления персоналом, попросила создать список вопросов для собеседования разработчика (программиста) по телефону. Согласно устным требованиям, вопросы разбил на блоки.
 
