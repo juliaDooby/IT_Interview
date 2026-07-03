@@ -1,3 +1,276 @@
+Top React Native Interview Questions (2023)
+June 19, 2023 - Saurabh Gite
+Pro Level React-native
+
+Hi Guys, In this post we are going to discuss Top React Native Interview Questions for Experienced Developers. Interviewing with big tech companies is an exciting opportunity, especially for those interested in mobile app development using frameworks like React Native. These companies, known for their innovation and cutting-edge technologies, often include specific questions related to Javascript & React Native in their interview processes. In this article, we delve into the world of big tech interviews, focusing on React Native, and explore a curated selection of challenging and insightful interview questions asked by these industry giants. By understanding and preparing for these questions, you can gain valuable insights into the expectations of big tech companies regarding React Native expertise and increase your chances of success in landing your dream job. Check this post for React Native Interview Questions for Developers.
+
+Top React Native Interview Questions for Experienced Developers
+
+1. Can you tell me what will be the output code that I pasted in the chat box?
+console.log(name);
+console.log(age);
+console.log(address);
+var name = "Jim";
+const age = 30;
+let address = "Mumbai";
+Answer: For this question, they accept the following explanation from you.
+
+There are a couple of things to note. Firstly, when you try to log the name variable before it is defined, it will result in an undefined being printed to the console. This is because the variable is declared using the var keyword, which gets hoisted to the top of its scope but does not have an initial value assigned at that point.
+
+Secondly, when trying to log the age variable, it will throw a ReferenceError because const variables must be initialized when declared, and they cannot be reassigned or redeclared.
+
+Lastly, when trying to log the address variable, it will also throw a ReferenceError because let the variables are block-scoped and cannot be accessed before they are declared.
+
+2. What is the difference between var, let & const?
+var: Variables declared with var is function-scoped or global scope depending on where they are declared. They are hoisted on the top of their scope. meaning they can be accessed before they are declared. var can be redeclared & reassigned with their scope.
+let: Variables declared with let are block-scoped. means their access is limited in which they are declared. let variables can not be hoisted and not able to access before they are declared. They can be reassigned within scope but not redeclared within the same scope.
+const: Const variables are also block-scope and not hoisted. const variables are read-only. means they cannot be reassigned once initialize.
+3. Pasted another code what will be the output?
+const array = [{name: "First"}, {name: "Second"}]
+array[0].name = 0;
+console.log(array);
+Note: Now,  you will get confused because as per the previous question, const variables are only read-only but in the above code it will update the value of the array. read-only means you cannot assign a new array to a const variable array. so the output will be as follows:
+
+[{name: 0}, {name: "Second"}]
+4. What is variable Hoisting?
+Variable hoisting is a power javascript technique where variable declarations are moved to the top in their respective scope in the compilation time. variables declared with var only support variable hoisting. this means you can directly write a = 5; in the javascript and use a in any function if you declared globally.
+
+a = 5;
+console.log(a);
+var a;
+This will print 5 in the console. because
+
+The variable a is assigned a value 5 before it is declared. Despite this unconventional order, the code will still work due to hoisting.
+
+During the hoisting process, the var a; declaration is moved to the top of its scope, which in this case is the global scope. This means that var a; is effectively processed before the assignment a = 5;
+
+As a result, when console.log(a) is executed, it will output 5 to the console, indicating that the value assigned to a is accessible and correctly retrieved.
+
+It’s important to note that while hoisting allows the code to run without errors, it is generally considered best practice to declare variables before using them to improve code readability and maintainability.
+
+5. What are promises?
+Promises in Javascript are the way to handle asynchronous operations such as fetching data from the server, reading files, and executing time-consuming tasks. without blocking the execution of the program.
+
+A promise represents the eventual completion or failure of an asynchronous operation and allows you to attach callbacks to handle the result when it becomes available.
+
+Pending: The initial state of a promise. It is neither fulfilled nor rejected.
+Fulfilled: The state of a promise when it successfully completes the asynchronous operation, providing the result value.
+Rejected: The state of a promise when it encounters an error or fails to complete the asynchronous operation, providing the reason for the failure.
+example,
+
+const delay = (duration) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`Operation completed after ${duration} milliseconds`);
+    }, duration);
+  });
+};
+delay(2000)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+6. What is Callback?
+A callback is a function that is passed as an argument to another function and is executed at a later point in time. In JavaScript, callbacks are commonly used to handle asynchronous operations or to perform actions after a certain task or event has occurred.
+
+Callbacks allow you to define custom behavior that will be executed when a specific condition is met or when an asynchronous operation completes. They provide a way to control the flow of the program and handle the result of an operation once it is available.
+
+function fetchData(callback) {
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const data = { id: 1, name: "John Doe" };
+    callback(data);
+  }, 2000);
+}
+function processResult(data) {
+  console.log("Processing data:", data);
+}
+fetchData(processResult);
+7. What is an Event loop?
+The event loop is the mechanism that continually listens to events & executes them and moves to the next one if the task queue is empty. It ensures that tasks are processed in a non-blocking manner, allowing for efficient handling of events and responsiveness in JavaScript applications. Let’s explore an example to understand how the event loop works:
+
+console.log("Start");
+setTimeout(() => {
+  console.log("setTimeout");
+}, 0);
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+console.log("End");
+Here’s a step-by-step breakdown of how the event loop handles this code:
+
+The code execution starts, and “Start” is logged into the console.
+The setTimeout function is encountered. It schedules the provided callback function to be executed after a minimum delay of zero milliseconds. The callback function logs “setTimeout” to the console.
+The Promise.resolve().then() construct is encountered. It schedules a microtask to be executed as soon as the call stack is empty. The microtask contains the callback function that logs “Promise” to the console.
+“End” is logged to the console.
+At this point, the call stack is empty. The event loop checks the task queue for any pending tasks.
+The event loop picks up the microtask from the task queue and pushes its callback function onto the call stack.
+The callback function logs “Promise” to the console.
+The microtask execution is completed, and the call stack becomes empty again.
+The event loop checks the task queue once more and finds the setTimeout task.
+The callback function associated with setTimeout is pushed onto the call stack.
+The callback function logs “setTimeout” to the console.
+The setTimeout the task is completed.
+Output:
+
+Start
+End
+Promise
+setTimeout
+Note: Promise microtask, created by Promise.resolve().then(), has higher priority than the setTimeout task. This means that microtasks, such as Promises, are processed before tasks like setTimeout in the event loop.
+
+8. What is MicroTask?
+It represents the queue of the task which executes asynchronously with higher priority than regular tasks. When a microtask is created, it is added to the microtask queue. The event loop processes this queue after completing the current task and before moving on to the regular task queue. This means that microtasks have a higher priority and are executed before regular tasks.
+
+Here’s an example to illustrate the concept of microtasks:
+
+console.log('Start');
+Promise.resolve().then(() => {
+  console.log('Microtask 1');
+}).then(() => {
+  console.log('Microtask 2');
+});
+console.log('End');
+Output:
+
+Start
+End
+Microtask 1
+Microtask 2
+9. What is Block scoping?
+It refers to the behavior of the variable being limited to the nearest closing block. such as within a set of curly braces {}, are limited in scope to that specific block and its nested blocks. This means that variables defined inside a block are not accessible outside of that block.
+
+Let’s look at an example to understand block scoping in JavaScript:
+
+function exampleFunction() {
+  var x = 10;
+  
+  if (x > 5) {
+    let y = 20;
+    const z = 30;
+    console.log(x, y, z); // Output: 10 20 30
+  }
+  
+  console.log(x); // Output: 10
+  console.log(y); // ReferenceError: y is not defined
+  console.log(z); // ReferenceError: z is not defined
+}
+10. What is closure?
+Refers to the combination of a function and the lexical environment within which that function was declared. It allows a function to access and remember variables from its outer scope even after the outer function has finished executing.
+
+In simpler terms, a closure is created when a nested function accesses variables from its outer function, even when the outer function has already returned.
+
+function outerFunction() {
+  var outerVariable = 'Hello';
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+  return innerFunction;
+}
+var closure = outerFunction();
+closure(); // Output: Hello
+11. What is Virtual DOM?
+Virtual DOM is a complete representation of real DOM. it refers to the layer between the application and the real DOM. It provides an abstraction to the framework by efficiently managing & update the UI without manipulating to real DOM.
+
+It creates a lightweight, in-memory representation of the DOM that can be efficiently updated and synchronized with the real DOM. By comparing the differences between the Virtual DOM and the previous version, only the necessary changes are applied to the real DOM, resulting in faster and more efficient UI updates.
+
+12. What is async/await?
+The async keyword is used to declare an asynchronous function, which returns a promise. Within an async function, you can use the await keyword to pause the execution of the function until a promise is resolved or rejected.
+
+Here’s an example to illustrate the usage of async/await:
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function example() {
+  console.log('Start');
+  
+  await delay(2000);
+  console.log('After 2 seconds');
+  
+  await delay(1000);
+  console.log('After another 1 second');
+  return 'Done';
+}
+example().then(result => {
+  console.log(result);
+});
+Output: It will first print Start. then it waits for 2000 milliseconds and then displays After 2 seconds. again wait for 1000 milliseconds then displays After another 1 second then it will return Done. basically, it will wait until the delay function completes its execution and return a promise.
+
+13. What are controlled and uncontrolled components?
+1. Controlled components
+Controlled components are the form elements whose value is controlled by their component’s state in the application. The component updates its value through the state. and any changes to the component’s value are handled by updating the state.
+
+import React, { useState } from 'react';
+function ControlledComponent() {
+  const [value, setValue] = useState('');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  return (
+    <input type="text" value={value} onChange={handleChange} />
+  );
+}
+2. Uncontrolled components
+
+An uncontrolled component is a form element that maintains its own internal state, independent of the application’s state. The component updates its internal state without involving the application’s state. To access the value of an uncontrolled component, you typically use a ref or obtain the value directly from the DOM.
+
+import React, { useRef } from 'react';
+function UncontrolledComponent() {
+  const inputRef = useRef();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Input value:', inputRef.current.value);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" ref={inputRef} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+14. What are the inbuilt functions in Javascript?
+console.log(): Outputs messages to the console for debugging and logging purposes.
+alert(): Displays an alert dialog box with a specified message.
+prompt(): Displays a dialog box to prompt the user for input.
+parseInt(), parseFloat(): Converts a string to an integer or floating-point number.
+String(): Converts a value to a string.
+Number(): Converts a value to a number.
+Math.random(): Generates a random number between 0 and 1.
+Math.round(), Math.floor(), Math.ceil(): Perform rounding and ceiling/floor operations on numbers.
+String.length: Returns the length of a string.
+Array.isArray(): Checks if a value is an array.
+Array.push(), Array.pop(): Adds or removes elements from the end of an array.
+Array.join(): Joins all elements of an array into a string.
+Array.slice(): Returns a new array containing a portion of the original array.
+Date(): Creates a new Date object representing the current date and time.
+Date.getTime(): Returns the number of milliseconds since January 1, 1970 (Unix timestamp).
+Date.getFullYear(), Date.getMonth(), Date.getDate(): Retrieve specific date components.
+setTimeout(), setInterval(): Executes a function after a specified delay or repeatedly at a specified interval.
+encodeURIComponent(), decodeURIComponent(): Encodes and decodes URI components.
+JSON.parse(), JSON.stringify(): Converts JSON strings to JavaScript objects and vice versa.
+These are just a few examples of the built-in functions available in JavaScript. The JavaScript language provides a rich set of functions for various purposes, and you can explore the official JavaScript documentation for a comprehensive list of built-in functions and their usage.
+
+15. What are primitive & non-primitive datatypes?
+Primitive Data Types: Primitive data types are the most basic data types in JavaScript. They are immutable, meaning their values cannot be changed once they are created. The following are the primitive data types in JavaScript:
+Number: Represents numeric values, such as integers and floating-point numbers. Example: 5, 3.14.
+String: Represents sequences of characters enclosed in single or double quotes. Example: 'Hello', "World".
+Boolean: Represents either true or false, used for logical operations. Example: true, false.
+Null: Represents the intentional absence of any object value. It is a primitive value that denotes the absence of an object reference. Example: null.
+Undefined: Represents a variable that has been declared but has not been assigned a value. Example: undefined.
+Symbol: Represents unique and immutable values used as property keys. Symbols are introduced in ES6. Example: Symbol('description').
+Primitive data types are passed by value when assigned or passed as arguments to functions. Any operations or modifications on primitive values create new values rather than modifying the existing ones.
+
+Non-Primitive Data Types (Reference Types): Non-primitive data types, also known as reference types or objects, are more complex data types that can hold multiple values and have methods associated with them. They are mutable, meaning their values can be modified. The following are the non-primitive data types in JavaScript:
+Object: Represents a collection of key-value pairs and allows storing complex data structures. Example: { name: 'John', age: 30 }.
+Array: Represents an ordered collection of elements. Example: [1, 2, 3], ['apple', 'banana', 'orange'].
+Function: Represents a reusable block of code that performs a specific task. Functions can be assigned to variables and passed as arguments to other functions.
+Date: Represents a specific moment in time, including date and time values.
+RegExp: Represents a regular expression, used for pattern matching and manipulation of strings.
+Non-primitive data types are passed by reference when assigned or passed as arguments to functions. Modifying non-primitive values can affect the original value due to their reference nature.
+
 Top React Native Interview Questions and answers in 2024
 akcoding.comJanuary 14, 2024React JS
 React Native Interview Questions and answers. If your are looking for react native interview question then this block post give top react native interview qestions which is asked in top multinational software companies with beginners and expirienced developers.
