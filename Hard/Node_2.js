@@ -1,3 +1,137 @@
+Advanced Node.JS Interview Questions and Answers
+1. What according to you is the scope of NodeJs in the present domain of Information Technology?
+The fact is latency, scalability, as well as reliability, are the essential KPIs in the present world of Information Technology dealing with the webserver domain. NodeJs is basically a JavaScript runtime that simply makes sure of high throughput and low latency under all circumstances. It is based on a non-blocking approach which simply makes sure that no precious time gets wasted on the I/O requests to be acknowledged at the server end. 
+
+2. Can you name the two important types of API which you can find in the Node.JS approach?
+These are, Synchronous which are considered for the blocking functions, and the second is Asynchronous which are generally considered for the Non-blocking ones. 
+
+3. What are the important applications in IT in which the Node.Js approach can be considered?
+The biggest application of Node.JS is in real-time web application building. In addition to this, it can be considered in distributed systems for sub-programming collection. More applications include its use in general applications and in some complex network applications. 
+
+In addition to this, Node.JS can be used for creating, reading, writing, as well as closing the files on the server. Some users often use it for the purpose of editing the data in the database. Moreover, it has applications when it comes to generating web page content.
+
+4. Name the file you need to run the Node.JS on a windows server?
+It is an MSI installer and the same can be downloaded from the official website of Node.JS
+
+5. What exactly do you know about Node.JS and how does it work?
+It is basically an approach for server-side scripting that is very essential when it comes to building error-free scalable programs. One of the key benefits of this approach is its non-blocking I/O approach that doesn’t let the users face any problems and this is one of the key benefits of NodeJS. It basically works on a V8 environment and is purely based on the utilization of JavaScript for getting the I/O outcomes which are of high quality. The users can easily make sure of the single-threaded event loop.
+
+6. In a step-wise manner, tell how the control flow generally controls the functional calls in the Node.JS?
+The first step towards the accomplishment of this task is to simply control the order of execution. Next is to collect the concerned data from the data warehouse or from the server. After this, a limit is generally imposed on the concurrency and then the sequence of the concerned tasks is to be followed.
+
+MindMajix Youtube Channel
+
+7. What does the term I/O mean in Node.JS?
+Node.JS has an important application with this term. It basically means Input and Output and is generally considered for accessing any feature which is present in the outer environment of the program or the application. It is generally loaded to the machine memory so that the concerned program can be made to run in a very reliable manner. 
+
+8. What exactly adds latency in the server and affects the scalability?
+Generally, the existence of multiple threads leads to a system that is often loaded with the tasks that generally engage the precious cycles on the scheduling of threads. This is exactly what adds latency and imposes a strict upper limit on the scalability. 
+
+9. Can you tell something about event-driven programming and what role it play in the Node.JS approach?
+It is basically a programming paradigm that decides the exact flow of the program. The same is purely and largely based on some of the important events such as sub-programs and messages and sometimes even on threads. Generally, it is considered an application architecture approach useful for smooth handling of the programs and assuring their effective running. 
+
+10. What exactly do you know about a Node.JS file and when it is to be initiated on the server?
+It is basically a file that generally provides information on the important tasks that are to be executed in the server environment at different levels. It should be initiated prior to any effect in the server domain. Generally, the events are defined as the process of grabbing the port on the server.
+
+11. How to update a dependency using npm?
+Update package.json and change the version of the dependency to be updated and run the following command.
+
+12. Which module is used for web-based operations?
+An HTTP module is used for web-based operations.
+
+var Http = require(“http”)
+
+fs module provides both synchronous as well as asynchronous methods.
+
+13. fs module provides both synchronous as well as asynchronous methods.
+True.
+
+14. Mention some of the leading benefits of using the Node.JS approach to other similar technologies?
+First of all, it is very reliable to work with and is best when it comes to saving a lot of time. Also, it is widely known to build network programs that are highly scalable. All the tasks can be accomplished in a fast way due to its I/O approach and in addition to this; it is capable to synchronize almost everything to get results far beyond any imagination. Node.JS is also known for its excellent concurrency. The biggest advantage that it offers to the users is that it almost never gets blocked.
+
+ Related Article Basic NodeJS Interview Questions and Answers
+15. Define the Control Function in Node.JS in your own way?
+It is basically considered as a generic code that is capable to be run among the different asynchronous function calls. The best thing about it is its compatibility with the functional calls that make it useful for different tasks. 
+
+16. What is the prime benefit that Node.JS can offer to the user being a single-threaded approach?
+It simply makes sure of the scalability, as well as performance and this is because synchronization when done on a single thread help avoid the typical web loads that often create issues.
+
+17. What are the features of Node.JS you are familiar with?
+In Node.Js, all the APIs are asynchronous 
+A Node.JS server never waits for anything
+There is a notification mechanism that simply lets the users get information about the response from the last API
+It is fast as it is built on the V8 JavaScript engine
+There is a full-fledge library available that helps users in the proper execution of the code
+It is based on a single thread model 
+The Node.JS server can easily handle a very large number of requests without facing the downtime 
+There is no buffering at all as already mentioned.
+[ Check out Basic Examples of NodeJS ]
+
+18. What exactly is a module in the Node.JS and is it possible for the users to change the same if they need the same is felt?
+A module is nothing but a series or a group of functions that a user needs to include in the concerned program or application. Yes, it is possible to change the same by the users. The users can also create new modules if the same is required. 
+
+19. What is Callback in the Node.JS environment?
+It is basically a function that is generally executed at the last stage or at the end of a task assigned to the server. This is useful in enabling the users to run another code in the time being without facing the blocking issue. As Node.JS is an asynchronous platform, it largely depends on the callback option and most of the features it has are based on the same. Generally, it’s the APIs present in the Node.JS which support it.
+
+20. What exactly Global is in the Node.Js and what’s their significance?
+This is actually a keyword in Node.JS which is simply considered for the purpose of representing the global namespace object. It is possible to deploy some of them for the module scope and this is one of the best things about them. 
+
+21. While working in the Node.JS environment, which framework you have used mostly?
+The answer to this question depends on the overall experience of the user. Generally, the “Express” is the framework that is used commonly so you can answer it against this question. 
+
+22. What is the Modularize option and when you can use it while working on a Node.JS server?
+It is basically an option that simply lets the users avoid the situation callback hell. It does so by simply splitting the callbacks into functions which are small in size and are generally independent. The functions can be joined at a later stage in order to make them work together.
+
+23. Name a few important tasks that you can perform simply with the help of the event loop?
+A lot of tasks can be performed with the help of this and a few important ones are marinating the Input/output operations, handling blocking, as well as handling heavy computation problems.
+
+25. What exactly do you know about the REPL in the Node.JS environment?
+It stands for the Read Eval Print Loop and is generally engaged in performing various tasks that are related to Printing, Looping, Reading, as well as execution. A number of ad-hoc Java statements are present in the server that can easily be executed with the help of REPL. The JavaScript can be made to enter directly in the shell post the tasks such as debugging, testing, as well as experimenting, which can be performed reliably. 
+
+26. Do you think there are some disadvantages of using the Node.JS approach? If so, tell me what?
+Ans) Yes, there are a few drawbacks that are associated. The fact is any intensive CPU computation can block the Node.JS responsiveness up to a great extent. Therefore, a threaded platform is a better option but it needs more time and effort to get things done in a rightful manner. There are no favorable outcomes that the users can make sure of if the relational database is deployed with the Node.JS approach.
+
+27. Is it possible in Node.JS to import external libraries Name the command that can be used for this?
+Yes, this is possible and for this, the command “require” is generally considered. 
+
+28. While working with the Node.JS server, what you will do in case the problem of blocking of I/O will be there?
+The event-based model present can directly be inserted at the core of the Node.JS server. Generally, for this task, an event loop is considered rather than considering the threads. 
+
+29. Compare Node.JS with Ajax simply
+Ajax is a client-side approach whereas Node.JS is a server-based approach. It is generally used for updating the contents of the page and the good thing is users need not worry about the refreshment of the page for this. On the other hand, the same is required in the Node.JS approach for developing the software. Unlike Ajax, it is executed in the server than in the browser.
+
+Explore Comparison Between AngularJS vs Node.JS
+30. Mention any one problem which you faced with the technical features of the Node.JS
+Sometimes, it becomes difficult for the users to have one process for scaling with the server and this creates issues in the long run. 
+
+31. Tell something about the callback hell in the Node.JS environment?
+When the heavily nested calls back are considered in the server, this situation arrives and blocks the code up to some extent resulting in its unreadability and complexity to maintain and run.
+
+32. Name a few IDE’s which you can consider for the development of the Node.JS?
+This includes:
+
+JetBrains WebStorm
+Cloud 9
+Komoda IDE
+JetBrains Intelij IDEA
+Atom 
+Eclipse.
+33. What is the promise mechanism in the Node.JS approach and what is its significance?
+It is basically an approach that is considered for avoiding the callback hell situation. It gives an additional path for writing the async codes and users can simply make sure of avoiding the same in the shortest possible time. 
+
+34. Tell some examples of the server where you will use the Node.JS and why
+The Node.JS technology can be considered in the gaming servers, social media servers, streaming servers, advertisement servers, as well as in collaborative servers. This is because these servers have to handle a lot of requests and the Node.JS technology is good enough to be considered in the ones that have a large volume of traffic/requests.
+
+[ Explore Latest Article - In the right place at the right time - Node.JS ]
+
+35. Is it free to use Node.js?
+Yes! Node.js is released under the MIT LICENSE and is free to use.
+
+36. Is Node a single-threaded application?
+Yes! Node uses a single-threaded model with event looping.
+
+37. How to uninstall a dependency using npm?
+Use following command to uninstall a module.C:Nodejs_WorkSpace>npm uninstall dependency-name.
 
 Hiring
 I am a dev
