@@ -1,3 +1,262 @@
+
+Hiring
+I am a dev
+Most asked NodeJS interview questions
+Beginners
+
+1.
+
+What is Node.js and why is it used?
+Node.js is a server-side platform built on the V8 JavaScript engine. It's used for building fast and scalable network applications.
+
+2.
+
+How does Node.js handle asynchronous operations?
+Node.js uses callbacks, promises, and async/await patterns for handling asynchronous operations.
+
+3.
+
+Can you show an example of a simple server created with Node.js?
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3000);
+console.log('Server running at http://localhost:3000/');
+This code snippet creates a basic HTTP server that responds with 'Hello World' for every request.
+
+4.
+
+Explain 'require' in Node.js.
+'require' is a built-in function to include external modules in a Node.js file.
+
+5.
+
+What does 'console.log(process.pid)' output?
+It outputs the process ID of the Node.js process.
+
+6.
+
+What is the event loop in Node.js?
+The event loop is a mechanism that handles asynchronous callbacks in Node.js.
+
+7.
+
+What are error-first callbacks?
+Error-first callbacks are the standard in Node.js for passing errors and data. The first argument is an error object, with the actual data as the second argument.
+
+8.
+
+What is the use of the 'fs' module in Node.js?
+The 'fs' module is used to interact with the file system, allowing reading and writing of files.
+
+9.
+
+How can you avoid callback hell?
+To avoid callback hell, you can use promises, async/await, or modularize callbacks.
+
+10.
+
+What is a Buffer in Node.js?
+A Buffer is a chunk of memory allocated outside of the V8 JavaScript engine that can store binary data.
+
+11.
+
+How do you serve static files in a Node.js application?
+Use the Express framework and its 'static' middleware, or manually set up file serving using the 'fs' and 'http' modules.
+
+12.
+
+How do you create a RESTful API in Node.js?
+You create a RESTful API by setting up HTTP routes that handle requests according to REST principles, typically using Express.js.
+
+13.
+
+What is middleware in the context of Node.js and Express?
+Middleware is a function that has access to the request object, response object, and the 'next' function in the application's request-response cycle.
+
+14.
+
+What is a package.json file?
+A package.json file holds metadata about the project and includes a list of dependencies required by the application.
+
+15.
+
+Can Node.js be used for front-end and back-end development?
+Node.js is primarily used for server-side (back-end) development, but when paired with tools like webpack or Browserify, it can also be involved in front-end build processes.
+
+Most asked NodeJS interview questions
+Beginners
+
+1.
+
+What is Node.js and why is it used?
+2.
+
+How does Node.js handle asynchronous operations?
+3.
+
+Can you show an example of a simple server created with Node.js?
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3000);
+console.log('Server running at http://localhost:3000/');
+4.
+
+Explain 'require' in Node.js.
+5.
+
+What does 'console.log(process.pid)' output?
+6.
+
+What is the event loop in Node.js?
+7.
+
+What are error-first callbacks?
+8.
+
+What is the use of the 'fs' module in Node.js?
+9.
+
+How can you avoid callback hell?
+10.
+
+What is a Buffer in Node.js?
+11.
+
+How do you serve static files in a Node.js application?
+12.
+
+How do you create a RESTful API in Node.js?
+13.
+
+What is middleware in the context of Node.js and Express?
+14.
+
+What is a package.json file?
+15.
+
+Can Node.js be used for front-end and back-end development?
+Hire Develpoper
+
+HIRE EXPERT NODEJS DEVELOPERTS ON-DEMAND!
+Hire in days
+
+not weeks
+
+1600+ on-demand
+
+tech talents
+
+Starting from $45/hour
+
+Advanced
+
+1.
+
+Explain how Node.js handles child processes.
+Node.js can create child processes using the 'child_process' module, to execute other scripts or programs.
+
+const { exec } = require('child_process');
+exec('node -v', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  console.log(`Node.js version: ${stdout}`);
+});
+2.
+
+What is the purpose of module.exports?
+The module.exports is used to expose functions, objects, or variables for use in other files.
+
+3.
+
+How does Node.js support multi-threading? Provide an example.
+Node.js uses worker threads to achieve multi-threading. Below is an example of creating a worker thread.
+
+const { Worker, isMainThread, parentPort } = require('worker_threads');
+if (isMainThread) {
+  const worker = new Worker(__filename);
+  worker.once('message', (message) => {
+    console.log(message);
+  });
+} else {
+  parentPort.postMessage('Hello from the worker thread');
+}
+4.
+
+Discuss streams in Node.js and their types.
+Streams in Node.js are objects that let you read data from a source or write data to a destination continuously. The four types are Readable, Writable, Duplex, and Transform streams.
+
+5.
+
+How do you ensure that a function does not block the event loop? Provide code.
+To avoid blocking the event loop, you can use asynchronous functions or create child processes. An example using async/await:
+
+async function fetchData() {
+  let data = await someAsyncOperation();
+  return data;
+}
+6.
+
+What are Microservices in Node.js?
+Microservices in Node.js are small, independent services that work together in an application, each running in its own process and communicating via APIs.
+
+7.
+
+How does the cluster module work, and when would you use it?
+The cluster module allows you to create child processes that all share server ports, enhancing performance by load balancing incoming connections across multiple worker processes.
+
+8.
+
+What is the Node.js event emitter and give an example of how it is used?
+The event emitter is a module in Node.js that allows objects to publish events to be consumed by other objects. See the example below:
+
+const EventEmitter = require('events');
+class MyEmitter extends EventEmitter {}
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+myEmitter.emit('event');
+9.
+
+Why might you use the 'net' module in Node.js?
+The 'net' module is used for creating TCP or IPC servers and clients.
+
+10.
+
+Discuss garbage collection in Node.js. How can you manually trigger it?
+Garbage collection in Node.js is a memory management process for deallocating objects that are no longer needed. To trigger it manually, use '--expose-gc' flag and 'global.gc()'.
+
+11.
+
+How do you debug a Node.js application?
+You can debug Node.js applications using the built-in 'debugger' keyword, Node.js Inspector or debugging tools in IDEs such as VSCode.
+
+12.
+
+Explain how you can handle uncaught exceptions in Node.js.
+Uncaught exceptions can be handled with the 'process.on('uncaughtException', handler)' listener, which catches exceptions not caught by any try/catch.
+
+13.
+
+What is the difference between process.nextTick() and setImmediate()?
+process.nextTick() defers the execution of a callback until the next iteration of the event loop, which is before any I/O events. setImmediate() executes a callback after the current event loop cycle and after any I/O events.
+
+14.
+
+Discuss how you can monitor the performance of a Node.js application.
+You can monitor performance using tools like PM2, Node.js Application Metrics or the built-in 'perf_hooks' module.
+
+15.
+
+What are V8 native bindings in Node.js and why are they useful?
+V8 native bindings allow Node.js to call C++ functions from JavaScript code. They are useful for performing tasks that are computationally intensive or not possible in pure JavaScript.
+
 Top 30 Node.js Interview Questions and Answers for All Levels
 By Jaishree Tomar
 
