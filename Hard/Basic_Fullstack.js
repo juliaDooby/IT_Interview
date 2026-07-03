@@ -1,3 +1,26 @@
+🧑🏻‍💻 Полный список вопросов и ответов с  собеседований: Frontend, Javascript, React, Vue.
+07.04.2024JavaScript, react
+🧑🏻‍💻 Полный список вопросов и ответов с  собеседований: Frontend, Javascript, React, Vue.
+Подборка актуальных задач и вопросов с собеседований поможет вам  подготовиться как к практике, так и к теории и получить заветный оффер.
+
+▪Front-end. Вопросы на собеседовании – Репозиторий видеокаста, содержит коллекцию вопросов, которые можно получить на техническом собеседовании на вакансию Junior/Middle Front-end разработчик.
+
+▪ Список тестовых заданий на позицию JS-разработчика
+
+▪Вопросы (с ответами) кандидату на должность frontend разработчика
+
+▪Front End Interview Handbook – В отличие от типичных собеседований, в frontend собеседованиях меньше внимания уделяется алгоритмам и больше вопросов о сложных знаниях и экспертизе в предметной области – HTML, CSS, JavaScript. Этот репозиторий содержит все, что вам нужно знать для прохождения собеседований  frontend собеседованиями.
+
+▪ Полное собеседование React разработчика 2024
+
+▪8 продвинутых вопросов для собеседования по JavaScript
+
+▪Front-end Developer Interview Questions cписок полезных вопросов с собесов
+
+▪ Interview-questions наиболее часто задаваемые вопросы Frontend-разработчику
+
+▪Для подготовки к собеседованию: 10 задач по промисам JavaScript
+
 Junior Full Stack Developer Interview Questions
 The ultimate Junior Full Stack Developer interview guide, curated by real hiring managers: question bank, recruiter insights, and sample answers.
 
