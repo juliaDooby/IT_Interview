@@ -1,3 +1,288 @@
+Top 10 Next JS Interview Questions and Answers
+
+Can you use Next JS with Redux?
+What do you mean by SSR?
+What is DOM?
+What are the main scripts in Next JS?
+Differentiate between Next JS and Create-React-App.
+Explain the importance of code splitting in Next JS.
+How can a page directory be created inside a project?
+How can CDN be set up in Next JS?
+Mention some features of Next JS.
+What is the process of installing Next JS?
+Next JS Interview Questions and Answers for the Freshers
+1. Mostly for which type of websites is Next JS used?
+Several types of websites and applications can be built. But the most popular are-
+
+Desktop websites
+Static websites
+Server rendered applications
+SEO friendly websites
+Progressive web applications (PWA)
+2. Can you use Next JS with Redux?
+Yes, it is possible to use Next JS with Redux.
+
+3. How can a custom error page be created in Next JS?
+In order to create a custom error page, we need to follow the given steps-
+
+An "_error.js" has to be defined in the page folder.
+Then "_error" component of our own has to be imported rather than "next/error" for using our custom error page.
+4. Mention the benefits of implementing a serverless model.
+It helps in splitting the app into smaller parts called lambdas. Hence, it helps in improving the readability as well as scalability of any app. The affordability is also enhanced due to the model- "pay for what you use."
+
+5. What do you mean by SSR?
+This is server-side rendering. This enables rendering on the server a client-side page app, and then we can send that rendered page to that client. These pages get loaded faster as the browser gets access to them sooner.
+
+Server-Side Rendering
+
+6. How can serverless mode be implemented?
+For implementing server-less mode, the ‘serverless’ target has to be added in ‘next.config.js’.
+
+// next.config.js
+module.exports = {
+target: ‘serverless’
+}
+7. What is meant by Styled JSX in Next JS?
+We use this CSS-in-JS library for writing encapsulated and scoped CSS for styling Next JS components. No other component gets affected by introducing the styles to a component using Styled JSX. This allows adding, changing, and deleting the styles without any complications.
+
+Looking forward to becoming a master in Programming & Frameworks Courses? Check out the "Node JS Training" and get certified today.
+8. What do you mean by automatic code-splitting?
+Each page bundles as well as serves every import declared by us. And therefore, unnecessary code is never loaded on the pages.
+
+9. Is Next JS backend, frontend, or full-stack?
+Next JS is full-stack. This means that it allows rendering client-side as well as server-side content. And this is the reason it is highly valued on React, as React allows only frontend development without it.
+
+10. What is DOM?
+DOM that is, Document Object Model, is HTML elements' object representation. The user interface and our code are kind of bridged by it. And it contains a tree-like structure having relationships such as child and parent.
+
+Document Object Model
+11. Differentiate between imperative and declarative programming. And what kind is used in React?
+In Imperative programming, we have to specify each step of building anything, such as a user interface. Whereas in Declarative programming, we just need to describe the end product, and the software will create it for us. It takes comparatively less effort and time.
+
+React allows its users to do declarative programming. 
+
+ MindMajix YouTube Channel
+
+12. What types of pre-rendering are available in Next JS?
+Next JS provides two types of pre-rendering- Server-side rendering and Static rendering.
+
+Pre-Rendering Available in Next JS
+13. Differentiate between the pre-rendering types available in Next JS.
+The difference lies in the generation of HTML for a page.
+
+Static Generation- It generates the HTML at build time, and we can reuse it on each request. It is the recommended one of the two. For using Static generation, either the page component has to be exported or 'getStaticProps'
+
+Server-side rendering- It generates the HTML on each request. For using Server-side rendering, 'getServerSideProps' has to be exported.
+
+14. What is the by default pre-render in Next JS? Give an example.
+By default, Static Generation is the pre-render available in Next JS without any data fetched. An example is given below-
+
+function About()
+{
+  return <div>About</div>
+}
+
+export default About
+15. What are the main scripts in Next JS?
+The main scripts which are listed in the 'package.json' file are-
+
+Build- It creates a ready-to-deploy app.
+Dev- A development server is run on localhost: 3000.
+Start- Our built Next application is started
+Lint- Our Next project will be 'lint' with the help of dev dependency. ESLint warns if the written code needs fixing.
+Next JS Interview Questions and Answers for the Experienced
+1. Which method does Next JS recommend for fetching data?
+Next JS provides several methods for fetching data. But the one that it recommends is getInitialProps. It is an async function using which data can be retrieved from anywhere.
+
+2. What are the properties available in a context object that arises on using getInitialProps?
+The following properties are there-
+
+Pathname- The path section of the URL is specified.
+asPath- A string of the actual path that is shown in the browser is specified.
+Query- It specifies the query string section that is parsed as an object.
+Req- It specifies the HTTP request object (server only).
+Res- It specifies the HTTP response object (only server)
+Err- It specifies the error object in case any error is found while rendering.
+3. Differentiate between Next JS and Create-React-App.
+Create-React-App	Next JS
+The Create-React-App is nothing but React with some integrations. There is no need for setting up Babel, Webpack, and other such packages for running React as it is a good boilerplate.
+
+But packages need to be added on top of it if we want extra functions, including server-side rendering and routing.
+
+On the other hand, Next JS is a full-stack and open-source React framework. It comes with important in-built features like routing, server-side rendering, API routing, and a lot of others. Hence, it is far more convenient.
+5. What are the most important features introduced in Next.js 12.1?
+The most important features are given below-
+
+New Rust-based compiler
+Faster image optimization
+On-demand incremental static regeneration (Beta)
+Self-hosted Next JS improvements
+Zero-configuration Jest plugin
+React 18 support
+6. Which key features are provided by Next JS in terms of SEO?
+The following perks are there-
+
+Jamstack compatibility
+Increased flexibility in designing the UX of our website
+Automatic static optimization
+Improved data security
+Fast static websites
+Responsiveness and adaptability
+7. How can build-id be configured in Next JS?
+For configuring build-id in Next JS, a static ID must be configured between our build. Therefore, the ‘generateBuildId’ function must be provided with the given configuration-
+
+// next.config.js
+module.exports = {
+  generateBuildId: async () =>{
+  //For instance get the latest git commit hash
+  return ‘my-build-id’;
+  }
+};
+8. Explain the importance of code splitting in Next JS.
+Using this feature, we can split the code into several bundles. These will be loaded only in parallel or on demand. Smaller bundles allow us to control the prioritization of resource load. And it majorly impacts the load time.
+
+code splitting in Next JS
+9. Mention the three main ways to split code.
+Three main ways to split code are given below-
+
+Entry Points- In this method, configurations need to be entered manually.
+Prevent Duplication- SplitChinksPlugin or Entry dependencies are used here for splitting chunks.
+Dynamic Imports- The code is split using inline function calls within the modules.
+Would you like to ace Node.JS job interviews? Top Node.JS Interview Questions And Answers from MindMajix are exclusively for you!
+10. How can a page directory be created inside a project?
+We need to populate ‘./pages/index.js’ for creating a page directory within a project with the given contents:
+
+function HomePage() {
+  return<div>Hello there!</div>
+}
+11. Explain the AMP-First Pages method to enable AMP in Next JS.
+These can be served to the website’s primary traffic and search engine-generated traffic as well. The following syntax can be used-
+
+// pages/index.js
+import { withAmp } from ‘next/amp’
+function HomePage() {
+return <p> Welcome to AMP+Next.js.</p>
+}
+export default withAMP (HomePage)
+12. Explain the Hybrid AMP Pages method to enable AMP in Next JS.
+The coexisting AMP version of a traditional page is allowed by the Hybrid AMP pages. This enables the search engine to display the AMP page or the version in different search results on mobile.
+
+13. How can CDN be set up in Next JS?
+The 'assetPrefix' setting needs to be set up first. And then, the CDN origin has to be configured for supporting and resolving the domain on which Next JS is hosted.
+
+Const isProd = process.env.Node_ENV === ‘production’;
+  Module.exports = {
+  // We might only need to add assetPrefix in production.
+  assetPrefix: isProd? https://cdn.mydomain.com’:”
+};
+14. What configuration option will you set if the CDN is present on a separate domain?
+// next.config.js
+Odule.exports = {
+crossOrigin: 'anonymous'
+;
+15. Can Next JS be hosted in a web server such as Nginx?
+Next JS is relatively more complex than static HTML files. Here, an application server is required to run Node JS for deploying and running a Next JS application. Requests have been received that need to be processed on the server.
+
+Related Article: Java Spring vs Node JS
+Frequently Asked Nest JS Interview Questions and Answers:
+1. What are some of the major companies that use Next JS?
+Some of the major companies that use Next JS are given below-
+
+Tik Tok
+Nike
+Netflix Jobs
+GitHub Copilot
+Target
+Twitch
+Hulu
+2. List some competitors and alternatives to Next JS.
+Some alternatives to Next JS are listed below-
+
+Gatsby
+React
+Create React App
+Hexo
+Hugo
+LoopBack
+Angular Universal
+React Router
+3. Mention some features of Next JS.
+Next JS has a lot of features. Some of them are given below-
+
+Static export is supported by it.
+Easy server rendering by default is available.
+Automatic code-splitting can be sea-ported.
+Full Babel and Webpack control is provided.
+The Hot Module Replacement is supported by its environment.
+We can implement it with any of the HTTP servers of Node JS.
+A simple routine of client-side content is supported by it.
+Reloading of hot code is also supported by it.
+Easily customizable.
+4. How can different digital products be built using Next JS?
+Several digital products can be built, such as-
+
+Jamstack websites
+Single web pages
+Minimum Viable Product (MVP)
+SaaS products
+Web portals
+Dashboards
+Retail and e-commerce websites
+User interfaces
+Complex web applications
+Static websites
+5. In which languages is Next JS written?
+Next JS is written in JavaScript, Rust, TypeScript, and React languages.
+
+Related Article: JavaScript Interview Questions
+6. Why is there a built-in router in Next JS?
+It has its own router because of the following reasons-
+
+A router based on a file system is used in reducing the configuration.
+Shallow routing is supported by it. Hence, it doesn't need the methods for data fetching to change the URL.
+Routers are lazy-loadable.
+Built-in Router in Next JS
+
+7. How can the data be fetched in Next JS?
+We can use multiple methods for fetching data, such as-
+
+Server-side renders using getServerSideProps.
+Client-side renders using SWR or useEffect inside the components of React.
+Static-side renders using getStaticProps.
+Regenerate Incremental Static using the 'revalidate' prop inside getStaticProps.
+8. What are the requirements for building a web app from scratch using React?
+The requirements are given below-
+
+A bundler such as webpack should be there to bundle the code. Also, a compiler such as a babel should be there to transform the code.
+We have to optimize the productions like the splitting of code.
+The pages have to be statistically pre-rendered for Search Engine Optimization. We might need to render from the client-side and server-side as well.
+Server-side code might also have to be written to connect the data store and React.
+9. Why is Next JS preferred by most of the major companies?
+The main reasons for this are-
+
+It is fully extensible.
+No setup is required.
+It is ready for production.
+It enables server-side rendering as well.
+10. What is the process of installing Next JS?
+Node JS should be already installed in the system.
+A directory for keeping Next JS is created as follows-
+mkdir my-portfolio-site
+cd my-portfolio-site
+It is now initialized using the package.json file.
+The y flag is used by npm init- y. And the given syntax is used for installing Next.js-
+npm install react-dom next
+Next.js app is initialized by updating the package.json by using run script languages.he given script is then added after we find the package.json file.
+{
+  “scripts”: {
+  “dev”: “next”,
+  “build”: “next build”,
+  “start”: “next start”
+  }
+}
+Conclusion
+Next JS allows building a digital product with much more efficacy than others simply due to its diverse features. The products we get are highly efficient in terms of UX, SEO, etc. It provides both a Rich user experience and rapid feature development. And this is exactly what the companies require. But to stand out from the others, practice is required beforehand. That's why going through this compilation of Next JS Interview Questions is highly recommended. 
+
 50 Most Asked Next.js Interview Questions for 2026
 Aditya GuptaNov 24, 2025Next.js Tutorials
 You are already familiar with our in-depth Next.js guides, covering everything from React foundations to advanced concepts. Now, by popular demand from our dedicated community, we are providing the one resource you can’t be without: an interview guide built on real-world questions.
