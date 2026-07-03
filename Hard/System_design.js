@@ -1,3 +1,178 @@
+ Design?
+Top System Design Interview Questions and Answers
+FAQs
+Conclusion
+Top System Design Interview Questions to Help You Crack Your Dream Job
+By Simplilearn
+Share This Article:
+Last updated on Sep 7, 20255421
+Top System Design Interview Questions to Help You Crack Your Dream Job
+An interview can be a piece of cake or the toughest climb if you do not plan and prepare well. To prepare well in a tech interview or, per se any interview, all one needs is the right set of questions along with the perfect answers to shine. Apart from the confidence, you need the right answers that the interviewer will appreciate. 
+
+What is System Design?
+System design is the process of designing and defining the interface, modules, and data for a system to meet certain specified requirements. System design helps achieve organizational goals and objectives along with regular upskilling of the individual activities. 
+
+People are nervous about changes as change disturbs the status quo, but you need not worry as the system design interview questions discussed in this article will help you easily crack your dream job related to system design.
+
+Tech companies are obsessed with system design interview questions as it assists them in deciding the core potential of a candidate well-suited for the job. Basics should always be kept in mind; thus, preparing the basic design principles and planning answers might provide an edge to you during the interview. 
+
+Top System Design Interview Questions and Answers
+1. What is system design?
+The process of defining the elements of a system, such as architecture, product designs, modules, interface, and the data for the system dependent on pre-defined observations. The application of systems theory to product development is one of the applications of systems design in real life. 
+
+2. What is load balancing, and why is it important in system design?
+The distribution of traffic across multiple servers simultaneously in a server farm as a core-networking solution is termed load balancing. Load balancers play a significant role in system design as they allow easy traffic flow without any server overload. They improve application availability by managing traffic efficiently, enabling quick response and less lag time.
+
+3. How are performance and scalability related to each other?
+The ability to handle a large amount of traffic in any application is referred to as scalability, whereas performance is about testing the speed with which the application is running. The increased performance is directly proportional to the number of resources added to the system. The ability to handle larger data sets in the event of growing work makes scalability directly related to the performance of any design. Performance problems might affect just one user, whereas the system might eventually become slow in case of scalability issues due to heavy data load.
+
+4. How do you approach system design?
+To perfectly design any system, the following things must be kept in mind-
+
+The system should be robust, re-usable, and well-documented.
+It should be user-friendly and helpful to people.
+The system should be well-ranked and placed well based on the reviews of the users.
+The system can store user data for further inquiry depending upon the area's population density.
+The design process should be smooth and avoid any complications.
+5. Which is the primary tool for structured design?
+Structure chart is the primary tool for structured design as the chart helps in conceptualizing the problem into simple graphed charts containing various organized elements. A picture or a chart is easier to understand than written data; therefore, pictorial representation in the form of a chart is necessary. 
+
+6. In the system design process, what is meant by requirements determination?
+It is the basic review exercise that helps study the improvements required in the existing system by doing a detailed study of the existing process. Requirements determination helps the designer beware of any faults and provides remedies to resolve any deficiencies in the design process.
+
+Become a Software Development Professional
+$621.31 Billion
+Expected Global Application Development Software Market Size by 2032.
+2x Productivity Increase
+AmongDevelopers Who Used Generative AI Tools to Complete Tasks.
+56% Faster Task Completion
+Reported by Developers Using Github Copilot.
+Microsoft 
+AI-Powered Full Stack Developer Program
+Learn through 100+ hours of core curriculum delivered in live online classes by industry experts
+Enhance your coding skills using AI-driven tools like ChatGPT, CodeWhisperer, Copilot, and Hugging Face
+9 months
+View Program
+Here's what learners are saying regarding our programs:
+Wayne RyanWayne RyanWeb Developer, Smith Drug Company
+The program helped me bridge the gap between traditional software development knowledge and modern industry practices. I gained hands-on exposure to technologies like Docker, DevOps, and application architecture, which improved my problem-solving skills and helped me contribute more effectively to real-world development challenges at work.
+
+John Carlo ApelacioJohn Carlo Apelacio
+The program has boosted my confidence and made my goal of becoming a software engineer feel achievable. The structured learning and hands-on practice gave me clarity and direction. I’m now focused on building skills, gaining experience, and steadily working toward a long-term career in software engineering.
+
+Not sure what you’re looking for?View all Related Programs
+7. What are the types of documentation in system design?
+The types of documentation required in system design are-
+
+Requirements documentation
+Source code documentation
+System documentation
+Program documentation
+Quality Assurance documentation
+Software architecture documentation
+Operations documentation
+Users documentation
+8. Can you name some metrics for measuring system performance?
+Some of the key application metrics to measure system performance are-
+
+User satisfaction/ Apdex scores
+Average response time
+Throughput analysis
+Availability of the system
+Error rates
+Request rate
+Latency and Server CPU checking
+Garbage collection by the system 
+9. What are the various consistency patterns available in system design?
+With the use of multi-servers, the demand for consistency increases rapidly due to increased system users. But it is difficult to write data to different servers. With multiple and repetitive tasks of writing data to multiple servers, consistency should be ensured while data is written to each server. 
+
+The various consistency patterns in system design are-
+
+Eventual Consistency- Under this pattern, after every data is written, the reads will be seen eventually within milliseconds. DNS and emails are a perfect example of such a consistent pattern in real life.
+Strong Consistency- When data is written, readers will see it under this pattern. There is synchronous replication of data, often referred to as a strict consistency pattern. RDBMS and file systems run under this pattern.
+Weak Consistency- Under this pattern, after every write, the reads may or may not see it. Different nodes can return different values, and weak consistency is not bound by rules, unlike strong and eventual consistency. Real-time uses like video chat, VoIP, real-time multiplayer games, etc., run on a weak consistency pattern, as the users might not receive the information for a while due to system failure or other connected factors that might affect the functioning. 
+10. How do you design a recommendation system?
+Recommendation systems are helpful to the users as they help them find the best alternatives and thereby increase efficiency by allowing more choices to the people. A recommendation system is majorly designed based on the popularity of the products amongst the users. 
+
+Systems that contain the desired features and are free from common problems faced by the users are some major qualities to be kept in mind whilst designing a recommendation system.
+
+11. What are the critical aspects of the system study?
+System study is vital for developing any system. The three essential aspects of system study are as follows:
+
+Identification of issues and defining new goals
+Survey of the existing system
+Document the existing system
+12. What is the difference between Horizontal and vertical scaling?
+Horizontal scaling adds more computers to the network, including memory workload and processing across a distributed network and devices. In layman's terms, additional servers are added to the existing count, and the workload is distributed across devices for efficient processing.
+
+Vertical scaling is the process of upgrading the resource capacity by increasing RAM, adding processors, etc. It can help improve the capability of the server without a code change.
+
+Category
+
+Horizontal Scaling
+
+Vertical Scaling
+
+Load Balancing
+
+Load balancing is required for distributing the traffic across multiple locations
+
+Load balancing is not applicable 
+
+Failure Resilience 
+
+Application failure resistant, traffic is rerouted to other servers in case of a server failure.
+
+It is prone to failure as the dependency is on one machine. Any loss here will fail the entire application.
+
+Machine Communication
+
+As this involves multiple machines, it's necessary to have network communication
+
+It involves interprocess communication within the machine, making this faster
+
+Data Consistency
+
+The possibility of data inconsistency is higher because this involves different machines for handling other requests, which might result in data being out of sync.
+
+As vertical scaling involves only one machine, there is no problem with data inconvenience
+
+Limitations
+
+As this scaling requires multiple servers, this has a direct impact on budget and space. You can scale the application as per the business need
+
+If the resources are scaled up over the limit, then the application might crash and result in downtime
+
+13. How will you design an application programming interface rate limiter?
+A service to be designed or a tool developed to monitor the request per a window of time a service agrees to allow. If the bid exceeds the rate limit blocks all the additional calls. In addition to the above, the following points will have to be considered while implementing the API rate limiter (Github):
+
+Consider limiting the request sent to API in a defined time, i.e., the number of requests per second
+The APIs are available over a group of servers; hence rate limiter should work for a distributed setup
+Handling of Soft and hard throttling also should be thought through
+14. How do you design a web crawler like Google, and what points to be considered while designing the crawler?
+In this case, a web crawler identifies a website and crawls indexes and page links so these can appear in the Google search result.
+
+These crawlers should be designed to search a specific file in a set of directories, which involves time and research. You will have to consider finding a new web page to have a better crawler. You should prioritize the dynamic changing web page, and the crawlers shouldn't be boundlessly attached to the same domain.
+
+15. Differentiate between sharding and partitioning.
+Sharding is the practice of splitting a single dataset among many databases and storing these in multiple workstations. The system storage capacity can be increased by dividing the larger datasets into smaller parts and stored in many data nodes. Shared databases can accept more requests than a single system by dividing the data among multiple machines. 
+
+Partitioning is the practice of separating sorted database objects into distinct portions. You can improve the performance, controllability, and availability by partitioning an extensive database. Partitioning can enhance performance when accessing a partitioned table in specific instances. 
+
+Sharding
+Partitioning
+Sharding is otherwise called horizontal partitioning. 
+
+A partition is a logical database split into separate, independent portions. The partitioning of databases is commonly used for load balancing, performance, manageability, and availability
+
+Increased Read/Write throughput – Dataset distributed across several shards increases the capacity
+
+Partitioning includes the benefit of vertical partitioning as well as involving dividing the scheme of the database
+
+Increased storage capacity – Increasing the shards allows scalability, directly impacting high storage capacity
+
+High availability – If the entire shards go down, the database remains partially functional.
+
 «Netflix за 45 минут»: что ждать на system design-интервью + подборка полезных ссылок
 
 Интервью по system design – это один из этапов собеседований известных технологических компаний, на котором отсеиваются многие кандидаты. Итак, что это такое и как пройти интервью такого типа?
