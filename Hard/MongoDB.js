@@ -1,3 +1,347 @@
+110 Mongodb Beginner Interview question and answers
+thegeekycodes
+By
+thegeekycodes
+28 September 2023
+23 Min Read
+110 Mongodb Beginner Interview question and answers
+SHARE
+MongoDB, a popular NoSQL database, has become a requisite skill for many developers and database administrators. Whether you are preparing for an interview or looking to tackle coding tasks, mastering MongoDB is essential. One effective way to test and hone your MongoDB skills is through practicing with a set of targeted questions and answers. In this article, we’ll discuss how the list of 110 MongoDB questions provided in the previous sections can be utilized to check your MongoDB skills and get you ready for your next challenge.
+
+110 Mongodb Beginner Interview Question and answers
+What is MongoDB?
+Answer: MongoDB is a NoSQL database that provides high performance, high availability, and easy scalability. It works on the concept of collections and documents.
+How do you create a database in MongoDB?
+Answer: Use the use command.
+Code: use myDatabase
+How do you create a collection in MongoDB?
+Answer: Use the db.createCollection() method.
+Code: db.createCollection("myCollection")
+How do you insert a document into a collection?
+Answer: Use the db.collection.insert() method.
+Code: db.myCollection.insert({name: "Alice", age: 25})
+How do you find a document in a collection?
+Answer: Use the db.collection.find() method.
+Code: db.myCollection.find({name: "Alice"})
+How do you update a document in a collection?
+Answer: Use the db.collection.update() method.
+Code: db.myCollection.update({name: "Alice"}, {$set: {age: 26}})
+How do you remove a document from a collection?
+Answer: Use the db.collection.remove() method.
+Code: db.myCollection.remove({name: "Alice"})
+How do you limit the number of documents returned by a query?
+Answer: Use the limit() method with a query.
+Code: db.myCollection.find().limit(5)
+How can you index a field in a document?
+Answer: Use the db.collection.createIndex() method.
+Code: db.myCollection.createIndex({name: 1})
+How do you count the number of documents in a collection?
+Answer: Use the db.collection.count() method.
+Code: db.myCollection.count()
+How do you sort the results of a query?
+Answer: Use the sort() method with a query.
+Code: db.myCollection.find().sort({name: 1}) // 1 for ascending and -1 for descending
+How do you skip a specific number of documents in a query result?
+Answer: Use the skip() method with a query.
+Code: db.myCollection.find().skip(5)
+How do you specify which fields to include or exclude in a query result?
+Answer: Use the projection parameter in a query.
+Code: db.myCollection.find({}, {name: 1, _id: 0}) // 1 to include, 0 to exclude
+How do you make a field unique in a collection?
+Answer: Create a unique index on that field.
+Code: db.myCollection.createIndex({email: 1}, {unique: true})
+How do you find the distinct values of a field in a collection?
+Answer: Use the distinct() method.
+Code: db.myCollection.distinct("name")
+How do you aggregate data in MongoDB?
+Answer: Use the aggregate() method with a pipeline of operations.
+Code: db.myCollection.aggregate([{ $group: { _id: "$age", count: { $sum: 1 } } }])
+How do you update many documents at once?
+Answer: Use the db.collection.updateMany() method.
+Code: db.myCollection.updateMany({name: "Alice"}, {$set: {status: "Active"}})
+How do you delete many documents at once?
+Answer: Use the db.collection.deleteMany() method.
+Code: db.myCollection.deleteMany({status: "Inactive"})
+How do you find and update a document in a single operation?
+Answer: Use the db.collection.findOneAndUpdate() method.
+Code: db.myCollection.findOneAndUpdate({name: "Alice"}, {$set: {age: 27}}, {returnNewDocument: true})
+How do you join documents from different collections?
+Answer: Use the $lookup stage in the aggregate() method.
+Code:
+How do you retrieve the list of all collections in a database?
+Answer: Use the db.getCollectionNames() method.
+Code: db.getCollectionNames()
+How do you rename a collection?
+Answer: Use the db.collection.renameCollection() method.
+Code: db.myCollection.renameCollection("newCollectionName")
+How do you drop a collection?
+Answer: Use the db.collection.drop() method.
+Code: db.myCollection.drop()
+How do you drop a database?
+Answer: Use the db.dropDatabase() method.
+Code: db.dropDatabase()
+How do you create a compound index in MongoDB?
+Answer: Use the db.collection.createIndex() method with multiple fields.
+Code: db.myCollection.createIndex({name: 1, age: -1}) // 1 for ascending, -1 for descending
+How do you find all documents that match an array of values?
+Answer: Use the $in operator.
+Code: db.myCollection.find({age: {$in: [25, 30]}})
+How do you find documents where a field value is less than a certain value?
+Answer: Use the $lt operator.
+Code: db.myCollection.find({age: {$lt: 25}})
+How do you find documents where a field value is greater than or equal to a certain value?
+Answer: Use the $gte operator.
+Code: db.myCollection.find({age: {$gte: 25}})
+How do you use a regular expression in a query?
+Answer: Use the $regex operator.
+Code: db.myCollection.find({name: {$regex: /^Ali/}}) // Finds documents where the name starts with “Ali”
+How do you specify OR conditions in a query?
+Answer: Use the $or operator.
+Code: db.myCollection.find({$or: [{name: "Alice"}, {age: 25}]})
+How do you find documents where a field is null?
+Answer: Use the {field: null} query.
+Code: db.myCollection.find({age: null})
+How do you find documents where a field exists?
+Answer: Use the $exists operator.
+Code: db.myCollection.find({age: {$exists: true}})
+How do you increment a field value in a document?
+Answer: Use the $inc operator.
+Code: db.myCollection.update({name: "Alice"}, {$inc: {age: 1}})
+How do you append a value to an array field in a document?
+Answer: Use the $push operator.
+Code: db.myCollection.update({name: "Alice"}, {$push: {hobbies: "reading"}})
+How do you remove a value from an array field in a document?
+Answer: Use the $pull operator.
+Code: db.myCollection.update({name: "Alice"}, {$pull: {hobbies: "reading"}})
+How do you remove all documents from a collection?
+Answer: Use the db.collection.remove() method with an empty query object.
+Code: db.myCollection.remove({})
+How do you find documents based on a condition on an array field?
+Answer: Use the $all operator for matching all elements or standard query for matching any element.
+Code: db.myCollection.find({hobbies: {$all: ["reading", "writing"]}})
+How do you find documents where an array field contains a certain number of elements?
+Answer: Use the $size operator.
+Code: db.myCollection.find({hobbies: {$size: 3}})
+How do you find the first document in a collection?
+Answer: Use the findOne() method without any arguments or conditions.
+Code: db.myCollection.findOne()
+How do you find documents where a field starts with a specific string?
+Answer: Use a regular expression with the ^ anchor.
+Code: db.myCollection.find({name: /^Ali/})
+How do you replace a document in a collection?
+Answer: Use the replaceOne() method.
+Code: db.myCollection.replaceOne({name: "Alice"}, {name: "Bob", age: 30})
+How do you find documents where a field does not equal a specific value?
+Answer: Use the $ne operator.
+Code: db.myCollection.find({name: {$ne: "Alice"}})
+How do you find documents where a field has one of multiple values?
+Answer: Use the $in operator with an array of values.
+Code: db.myCollection.find({name: {$in: ["Alice", "Bob"]}})
+How do you find documents where the value of a field is an array with a specific length?
+Answer: Use the $size operator.
+Code: db.myCollection.find({hobbies: {$size: 3}})
+How do you update the value of a field based on its current value?
+Answer: Use the $set operator with an expression.
+Code: db.myCollection.update({name: "Alice"}, {$set: {age: {$add: ["$age", 1]}}})
+How do you find documents where a field is an array that contains a specific value?
+Answer: Use a simple query with the field and value.
+Code: db.myCollection.find({hobbies: "reading"})
+How do you find documents where a field is an array that does not contain a specific value?
+Answer: Use the $nin operator.
+Code: db.myCollection.find({hobbies: {$nin: ["reading"]}})
+How do you add multiple values to an array field in a document?
+Answer: Use the $push operator with the $each modifier.
+Code: db.myCollection.update({name: "Alice"}, {$push: {hobbies: {$each: ["reading", "writing"]}}})
+How do you unset a field in a document?
+Answer: Use the $unset operator.
+Code: db.myCollection.update({name: "Alice"}, {$unset: {age: ""}})
+How do you rename a field in a document?
+Answer: Use the $rename operator.
+Code: db.myCollection.update({name: "Alice"}, {$rename: {"age": "yearsOld"}})
+How do you set a field value to the result of a calculation?
+Answer: Use the $set and $expr operators.
+Code: db.myCollection.update({}, {$set: {doubleAge: {$expr: {$multiply: ["$age", 2]}}}}, {multi: true})
+How do you find documents that match a pattern but ignoring case?
+Answer: Use the $regex operator with the $options operator set to “i”.
+Code: db.myCollection.find({name: {$regex: "alice", $options: "i"}})
+How do you update a field in an embedded document?
+Answer: Use the dot notation.
+Code: db.myCollection.update({name: "Alice"}, {$set: {"address.city": "New York"}})
+How do you find documents where a field in an embedded document matches a condition?
+Answer: Use the dot notation.
+Code: db.myCollection.find({"address.city": "New York"})
+How do you find documents where a field is an array that contains a specific element at a specific position?
+Answer: Use the dot notation.
+Code: db.myCollection.find({"hobbies.0": "reading"})
+How do you find documents where a field is an array that contains all elements of another array?
+Answer: Use the $all operator.
+Code: db.myCollection.find({hobbies: {$all: ["reading", "writing"]}})
+How do you add a field to documents that meet a certain condition?
+Answer: Use the $set operator in an update() or updateMany() method with a query condition.
+Code: db.myCollection.updateMany({age: {$gte: 18}}, {$set: {adult: true}})
+How do you find documents based on a negated condition?
+Answer: Use the $not operator.
+Code: db.myCollection.find({age: {$not: {$gte: 18}}})
+How do you find documents based on a condition using a date range?
+Answer: You can use the $gte (greater than or equal to) and $lte (less than or equal to) operators.
+Code: db.myCollection.find({date: {$gte: ISODate("2020-01-01"), $lte: ISODate("2020-12-31")}})
+How do you find documents that have a field, regardless of the field’s value?
+Answer: Use the $exists operator with a value of true.
+Code: db.myCollection.find({age: {$exists: true}})
+How do you find documents that do not have a specified field?
+Answer: Use the $exists operator with a value of false.
+Code: db.myCollection.find({age: {$exists: false}})
+How do you find documents where a field’s value is of a specified type?
+Answer: Use the $type operator.
+Code: db.myCollection.find({age: {$type: "number"}})
+How do you find documents where a field’s value is within a specified range?
+Answer: Use the $gte and $lte operators together.
+Code: db.myCollection.find({age: {$gte: 20, $lte: 30}})
+How do you find documents based on a condition on multiple fields?
+Answer: You can specify multiple conditions in the query object.
+Code: db.myCollection.find({name: "Alice", age: {$gte: 25}})
+How do you find the documents where a specified field is an array with at least one element?
+Answer: Use the $exists and $ne operators together.
+Code: db.myCollection.find({hobbies: {$exists: true, $ne: []}})
+How do you find the documents where a specified field is an array with at least n elements?
+Answer: Use the $expr and $gte operators together.
+Code: db.myCollection.find({$expr: {$gte: [{$size: "$hobbies"}, 3]}})
+How do you find documents based on a negated condition on an embedded document field?
+Answer: Use the $not operator along with dot notation.
+Code: db.myCollection.find({"address.city": {$not: {$eq: "New York"}}})
+How do you find documents where a specified field is an array that contains at least one element that matches a condition?
+Answer: Use the $elemMatch operator.
+Code: db.myCollection.find({hobbies: {$elemMatch: {$gte: "reading"}}})
+How do you find documents based on a condition using a logical AND operator?
+Answer: You can specify multiple conditions directly in the query object.
+Code: db.myCollection.find({name: "Alice", age: {$gte: 25}})
+How do you find documents based on a condition using a logical OR operator?
+Answer: Use the $or operator.
+Code: db.myCollection.find({$or: [{name: "Alice"}, {age: {$gte: 25}}]})
+How do you return only a specific number of documents?
+Answer: Use the limit() method.
+Code: db.myCollection.find().limit(5)
+How do you skip a specific number of documents in the result set?
+Answer: Use the skip() method.
+Code: db.myCollection.find().skip(5)
+How do you return the documents in a specified order?
+Answer: Use the sort() method.
+Code: db.myCollection.find().sort({name: 1}) // 1 for ascending, -1 for descending
+How do you find the average value of a field across documents?
+Answer: Use the aggregate() method with the $group and $avg operators.
+Code:
+code db.myCollection.aggregate([ { $group: { _id: null, averageAge: { $avg: "$age" } } } ])
+How do you find documents based on a NOT condition?
+Answer: Use the $not operator.
+Code: db.myCollection.find({age: {$not: {$gte: 25}}})
+How do you find documents where a field’s value is one of a specified set of values?
+Answer: Use the $in operator.
+Code: db.myCollection.find({name: {$in: ["Alice", "Bob"]}})
+How do you find documents based on conditions on two different fields?
+Answer: Specify both conditions in the query object.
+Code: db.myCollection.find({name: "Alice", age: {$gte: 25}})
+How do you update documents based on a condition?
+Answer: Use the update() or updateMany() method with a query condition and an update object.
+Code: db.myCollection.updateMany({age: {$gte: 25}}, {$set: {status: "Active"}})
+How do you concatenate strings from different fields in a document?
+Answer: Use the $concat operator within the $set operator.
+Code:
+db.myCollection.update( {name: "Alice"}, {$set: {fullName: {$concat: ["$firstName", " ", "$lastName"]}}} )
+How do you find documents based on a condition using a logical NOR operator?
+Answer: Use the $nor operator.
+Code: db.myCollection.find({$nor: [{name: "Alice"}, {age: {$gte: 25}}]})
+How do you find documents based on a condition using a logical XOR operator?
+Answer: MongoDB doesn’t have a built-in XOR operator, but you can achieve XOR logic using $or and $nor.
+Code:
+db.myCollection.find({ $or: [ {$and: [{name: "Alice"}, {age: {$not: {$gte: 25}}}]}, {$and: [{name: {$ne: "Alice"}}, {age: {$gte: 25}}]} ] })
+How do you return the keys of a document?
+Answer: Use the Object.keys() method in a forEach loop.
+Code:
+db.myCollection.find().forEach(function(doc) { print(Object.keys(doc)); })
+How do you find documents where a field is an array that contains any of the elements of another array?
+Answer: Use the $in operator.
+Code: db.myCollection.find({hobbies: {$in: ["reading", "writing"]}})
+How do you replace the value of a field with the value of another field?
+Answer: Use the $set and $rename operators.
+Code:
+db.myCollection.updateMany({}, [ {$set: {tempField: "$fieldToReplace"}}, {$set: {fieldToReplace: "$otherField"}}, {$set: {otherField: "$tempField"}}, {$unset: {tempField: ""}} ])
+How do you find documents where a field is an array that has any element greater than a specified value?
+Answer: Use the $elemMatch operator.
+Code: db.myCollection.find({scores: {$elemMatch: {$gt: 80}}})
+How do you find documents where a field is an array that has any element less than a specified value?
+Answer: Use the $elemMatch operator.
+Code: db.myCollection.find({scores: {$elemMatch: {$lt: 50}}})
+How do you find documents where a field is an array with no duplicate elements?
+Answer: Compare the size of the array to the size of the set of the array.
+Code:
+db.myCollection.find({$expr: {$eq: [{$size: "$arrayField"}, {$size: {$set: "$arrayField"}}]}})
+How do you find documents where a field’s value is a specified prefix followed by a sequence of characters?
+Answer: Use the $regex operator.
+Code: db.myCollection.find({name: {$regex: '^prefix.*'}})
+How do you find documents based on a condition using a logical NAND operator?
+Answer: MongoDB doesn’t have a built-in NAND operator, but you can achieve NAND logic using $nor and $and.
+Code:
+db.myCollection.find({ $nor: [ {$and: [{name: "Alice"}, {age: {$gte: 25}}]} ] })
+How do you perform a case-insensitive search for a string in a field?
+Answer: Use the $regex operator along with the $options operator set to “i”.
+Code: db.myCollection.find({name: {$regex: "alice", $options: "i"}})
+How do you find documents where a field’s value is a string of a specified length?
+Answer: Use the $expr and $strLenCP operators together.
+Code: db.myCollection.find({$expr: {$eq: [{$strLenCP: "$name"}, 5]}})
+How do you add a field to documents that do not already have that field?
+Answer: Use the $set operator in an updateMany() method with a query condition using $exists.
+Code: db.myCollection.updateMany({newField: {$exists: false}}, {$set: {newField: "defaultValue"}})
+How do you remove duplicate documents based on a field value?
+Answer: You would typically need to create a temporary collection with the duplicates removed.
+Code:
+db.myCollection.aggregate([ { $group: { _id: "$duplicateField", doc: { $first: "$$ROOT" } } }, { $replaceRoot: { newRoot: "$doc" } }, { $out: "tempCollection" } ]); db.tempCollection.renameCollection("myCollection", true);
+How do you change the type of a field in all documents?
+Answer: Use the $set operator along with the $toInt or $toString operators (or other type conversion operators).
+Code: db.myCollection.updateMany({}, {$set: {age: {$toInt: "$age"}}})
+How do you find documents where a field’s value matches a pattern?
+Answer: Use the $regex operator.
+Code: db.myCollection.find({name: {$regex: ".*son.*"}})
+How do you find documents where a field’s value is between two specified values?
+Answer: Use the $gte and $lte operators together.
+Code: db.myCollection.find({age: {$gte: 20, $lte: 30}})
+How do you split a string field into an array of strings based on a delimiter?
+Answer: Use the $split operator within the $set operator.
+Code:
+db.myCollection.updateMany({}, {$set: {nameArray: {$split: ["$name", " "]}}} )
+How do you find documents where a field’s value is a specified suffix followed by a sequence of characters? –
+Answer: Use the $regex operator.
+Code: db.myCollection.find({name: {$regex: '.*suffix$'}})
+How do you find documents where a field’s value is greater than a specified value?
+Answer: Use the $gt operator.
+Code: db.myCollection.find({age: {$gt: 25}})
+How do you find documents where a field’s value is less than a specified value?
+Answer: Use the $lt operator.
+Code: db.myCollection.find({age: {$lt: 25}})
+How do you find documents where a field’s value is greater than or equal to a specified value?
+Answer: Use the $gte operator.
+Code: db.myCollection.find({age: {$gte: 25}})
+How do you find documents where a field’s value is less than or equal to a specified value?
+Answer: Use the $lte operator.
+Code: db.myCollection.find({age: {$lte: 25}})
+How do you find documents based on the absence of a field?
+Answer: Use the $exists operator with a value of false.
+Code: db.myCollection.find({age: {$exists: false}})
+How do you update all documents to add a new field with a specified value?
+Answer: Use the updateMany() method with an empty query object and a $set operator.
+Code: db.myCollection.updateMany({}, {$set: {newField: "newValue"}})
+How do you find documents where a field is an array that contains exactly a specified set of elements?
+Answer: Specify the array directly in the query object.
+Code: db.myCollection.find({hobbies: ["reading", "writing"]})
+How do you find documents where a field is an array that contains a specified element?
+Answer: Specify the element directly in the query object.
+Code: db.myCollection.find({hobbies: "reading"})
+How do you find documents where a field is an array that does not contain a specified element?
+Answer: Use the $nin operator.
+Code: db.myCollection.find({hobbies: {$nin: ["reading"]}})
+How do you return distinct values of a field across all documents in a collection
+Answer: Use the distinct() method.
+Code: db.myCollection.distinct("name")
+
 30 Frequently Asked MongoDB Interview Questions and Answers
 by DataFlair Team
 
