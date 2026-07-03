@@ -1,3 +1,185 @@
+10 PostgreSQL Interview Questions and Answers
+Author's photo
+Andrew Bone
+postgresql
+SQL Interview Questions
+Table of Contents
+
+Top 10 Postgres Job Interview Questions
+1. What Is PostgreSQL?
+2. What Data Types Are Available in PostgreSQL?
+3. How Does GROUP BY Work in PostgreSQL?
+4. What Are Aggregate Functions?
+5. What’s the Difference Between the WHERE and HAVING Clauses in PostgreSQL?
+6. What Is NULL?
+7. What Is a Subquery?
+8. How Do You Change Data in a PostgreSQL Database?
+SQL UPDATE Syntax
+SQL INSERT Syntax
+SQL DELETE Syntax
+9. What Is a SQL View?
+10. Why Is PostgreSQL a Good Choice for Data Engineering?
+Ace Your PostgreSQL Interview!
+Job interviews are always stressful. Interviewing and getting asked technical questions about PostgreSQL is even more of a challenge! In this article, we’ll cover some of the PostgreSQL interview questions you can expect when applying for a new job.
+
+By the end of the article, you should be able to handle most of the questions you are likely to face. We’ve previously covered common questions you can expect at a SQL job interview, but this article will be focused on Postgres specifically.
+
+Let’s get started!
+
+Top 10 Postgres Job Interview Questions
+1. What Is PostgreSQL?
+PostgreSQL is quickly becoming one of the most popular databases. It is an open-source, relational database that offers security and an impressive feature set. It has also fostered a strong community that strives to keep it on the cutting edge of design and functionality.
+
+Check out this article to learn more about the history of PostgreSQL.
+
+2. What Data Types Are Available in PostgreSQL?
+PostgreSQL supports the common SQL data types; it also supports some unexpected ones, such as JSON. Check some of the most notable data types below:
+
+Numeric Types: “Numeric types consist of two, four, and eight-byte integers; four and eight-byte floating-point numbers; and selectable-precision decimals.” [Source: PostgreSQL documentation]
+Character Types: SQL defines two primary character types: “character varying(n) and character(n), where n is a positive integer. Both of these types can store strings up to n characters in length. The notations VARCHAR(n) and CHAR(n) are aliases for character varying(n) and character(n).” [Source: PostgreSQL documentation]
+Binary Data Types: A binary string is a sequence of bytes.
+Date/Time Types: These store dates, times, or dates and times (timestamps).
+Boolean: Boolean values store only TRUE, FALSE, and NULL values.
+Enumerated Types: “Enumerated (ENUM) types comprise a static, ordered set of values. They are equivalent to the ENUM types supported in a number of programming languages. An example of an ENUM type might be the days of the week, or a set of status values for a piece of data”. [Source: PostgreSQL documentation]
+XML: The XML data type stores XML data.
+JSON: The JSON data type stores JSON (JavaScript Object Notation) data. Apart from knowing these data types, you should know how to convert one data type to another. For instance, there are tools available for converting JSON to XML or vice versa.
+These were just some of the most notable types that PostgreSQL supports. For more details, check out this overview of PostgreSQL data types.
+
+Try out our SQL from A to Z in PostgreSQL track. 7 hands-on SQL courses with over 800 exercises!
+
+3. How Does GROUP BY Work in PostgreSQL?
+Knowing the GROUP BY clause can demonstrate a slightly more advanced knowledge of SQL. Thus, you may be asked how the GROUP BY clause works in PostgreSQL.
+
+The GROUP BY clause allows you to group the data that results from your queries. Organizing data into groups is useful in making sense of data and in the use of aggregate functions.
+
+Imagine you have an eCommerce website that sells several product types. In your database, you have a table that stores information about the inventory you have in stock. If you want to find the count of each product type, you can use GROUP BY with the COUNT() aggregate function. (Note: Aggregate functions are covered in more detail in the next section.) Here’s what the query would look like:
+
+SELECT product_type, COUNT(product_id)
+FROM stock
+GROUP BY product_type
+GROUP BY also has GROUP BY extensions, which are a more advanced topic. Check out this post about GROUP BY extensions just in case the topic comes up during an interview.
+
+4. What Are Aggregate Functions?
+In PostgreSQL, aggregate functions perform a calculation over multiple rows and return one value. As mentioned previously, aggregate functions are often used alongside the GROUP BY clause, but there are many possible uses for these functions.
+
+There are five aggregate functions in SQL:
+
+COUNT(): Returns the number of rows that fit the criteria stated in the WHERE clause.
+SUM(): Calculates the total of all values in a column or an expression.
+AVG(): Calculates the average column value.
+MIN(): Returns the smallest value from a set.
+MAX(): Returns the largest value from a set.
+Being able to recall what each function does should be sufficient; however, if you would like to see practical examples of each aggregate function, check out this article.
+
+5. What’s the Difference Between the WHERE and HAVING Clauses in PostgreSQL?
+Another question that interviewers may use to gauge your knowledge of PostgreSQL is to ask you the difference between the WHERE and HAVING clauses.
+
+The WHERE and HAVING clauses filter data and restrict unwanted data from appearing in your result set. The main difference between these filters is:
+
+WHERE is applied at the record level.
+HAVING is applied to sets of records.
+To get more details on this topic, along with some examples, check out this post on the differences between the WHERE and HAVING clauses. You can also practice queries involving GROUP BY and HAVING clauses with this learning track.
+
+6. What Is NULL?
+Unless you’re a complete beginner to SQL, you’ll have heard of NULL. But what exactly is NULL?
+
+PostgreSQL Interview Questions and Answers
+In the simplest terms, NULL means there is no value for a given field. Note that this does not mean the value of the field is 0 or an empty string. Think of NULL as a placeholder for a future value.
+
+The existence of NULL values can affect your SQL queries in different ways. For more details on this, check out this article that explains NULL values in greater detail.
+
+7. What Is a Subquery?
+A SQL subquery is a query placed inside of another query. Sometimes subqueries are also referred to as nested queries. Below is an example where the subquery comes after the WHERE clause; however, it is possible to have subqueries in the SELECT or FROM part of your queries.
+
+SELECT name
+FROM employees
+WHERE id IN
+  (SELECT id FROM sales_team)
+If you want to learn more about subqueries, check out this beginner’s guide to subqueries or this slightly more advanced article that covers the different types of subqueries. You can also watch this clip on YouTube:
+
+
+Remember to subscribe to the channel.
+
+8. How Do You Change Data in a PostgreSQL Database?
+Thankfully, PostgreSQL provides us with many methods of modifying the data that is in our database. You have probably heard of these commands before. They are the INSERT, UPDATE, and DELETE commands. Each of these operations has a different impact on the data inside your tables. Let’s take a look at the syntax of each of these statements.
+
+SQL UPDATE Syntax
+The syntax of the UPDATE statement is:
+
+UPDATE table_name
+SET column1 = value1,
+        column2 = value2,
+        …
+[WHERE conditions]
+Note that the WHERE condition is optional, although you’ll often use it. Check out this article on UPDATE in SQL to learn more.
+
+All SQL in PostgreSQL knowledge you’ll ever need. Try our SQL from A to Z in PostgreSQL track!
+
+SQL INSERT Syntax
+You can write an INSERT statement with or without explicitly declaring the column names. The syntax for using INSERT without column names is:
+
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+Note that you’ll need to provide a value for every column in the table if you omit the column names.
+
+If you want to add data to some or all the columns in a table, use INSERT with column names:
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+You can learn more about SQL INSERTs here.
+
+SQL DELETE Syntax
+The syntax for using DELETE is:
+
+DELETE FROM table_name
+[WHERE condition]
+Although the WHERE clause in this syntax is optional, I would always include it. Without a WHERE clause, the DELETE operation will delete everything from your table. If you want to practice using these commands, check out this course on how to INSERT, UPDATE, and DELETE data in SQL.
+
+9. What Is a SQL View?
+A view is a database object that acts as a temporary or virtual table. You can query it like a regular table. It can be used in the FROM clause of a SELECT, and you can reference view columns in SELECT, WHERE, GROUP BY, and other clauses.
+
+Views and tables differ in some important ways:
+
+Views do not store any records anywhere.
+Tables store records physically, on a disk.
+Views use existing records; they can also calculate new records as needed.
+Views are useful for summarizing the data from single or multiple tables. They also provide an additional layer of data security. For example, you can create a view and only give the relevant users access to that view.
+
+A simple example of a view might look like this:
+
+CREATE VIEW european_customers AS
+SELECT customer_id, customer_name
+FROM customers
+WHERE region = 'Europe';
+To use this view, you’d write:
+
+SELECT *
+FROM european_customers;
+For a more extensive look at SQL views, see this article on learning SQL views in under 30 minutes.
+
+10. Why Is PostgreSQL a Good Choice for Data Engineering?
+SQL is essential to succeed in any data-focused job, especially data engineering. The more you know about SQL, the easier it’ll be for you to manipulate and query data.
+
+In your interview, you may be asked why PostgreSQL is a good choice for data engineering. You may want to include the reasons below in your answer:
+
+Parallel Queries: PostgreSQL makes it possible to run parallel queries. This is when CPU power is leveraged to allow the running of multiple queries at once. This is especially important in data science, where often there is a general query
+Full SQL syntax support: PostgreSQL supports a lot of SQL syntax and places an emphasis on SQL standard compliance. As a result, it supports window functions, table inheritance, and common table expressions.
+Extended Data Support: PostgreSQL supports NoSQL data structures like JSON and XML.
+Declarative Partitioning: This is when tables are split up into different segments called partitions. For example, you can create a different partition for each area code for large, geographically-distributed datasets.
+These are some of the reasons PostgreSQL is an excellent choice for data science and data engineering. If you’re more interested in business analyst roles, check out this useful article on common SQL interview questions for business analysts.
+
+<
+Ace Your PostgreSQL Interview!
+We’ve covered a lot of different topics! One area of SQL we didn’t touch on was JOIN. We decided it was such a big topic that we dedicated an entire article to it, so check it out!
+
+If you can answer each of the questions we’ve poised today, you should be well on your way to acing those upcoming PostgreSQL interviews. If you’d like to get more practice with technical SQL challenges, check out this SQL practice set. It covers some of the topics we have discussed in this article.
+
+If you have the SQL skills required but are struggling to find your first SQL job or get started as a SQL freelancer, check out these great resources:
+
+This post covers the 10 best websites to find SQL jobs.
+This article explains the steps required to becoming a successful SQL freelancer.
+You should have everything you need to take the first steps towards your successful career that involves the use of SQL.
+
 https://labex.io/ru/tutorials/postgresql-postgresql-interview-questions-and-answers-593697
 
 66 PostgreSQL interview questions to ask to hire top developers
