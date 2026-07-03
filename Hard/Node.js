@@ -1,3 +1,90 @@
+NodeJS Interview Guide
+View Pricing
+Schedule Demo
+Here are the most important NodeJS interview questions and answers to help you conduct effective technical interviews.
+
+These questions are designed to assess practical coding skills, problem-solving abilities, and technical knowledge relevant to real-world development work.
+
+1
+What is Node.js? What is it used for?
+Does your candidate know the basics of Node.js? Ask this question to find out. 
+
+Node.js is a runtime JavaScript environment, which executes JavaScript code outside a web browser. It’s built on the V8 engine and uses a non-blocking, event-driven I/O model. Its package ecosystem is called npm. 
+
+Node.js is used for unified web application development because it represents a “JavaScript everywhere” paradigm. 
+
+2
+What are the benefits of Node.js?
+You’ll want to understand if candidates understand why they or you are working with Node.js. This question can give you valuable insights. 
+
+The benefits of Node.js are that it's fast, asynchronous, scalable, open-source, and doesn’t buffer data. 
+
+Thanks to its non-blocking I/O and event-based model, it offers a short response time and concurrent processing. Other frameworks require developers to use thread management. 
+
+Chrome’s V8 engine also performs at the top level and is constantly improved. It helps make the Node.js library fast in code execution.  
+
+And as Node.js uses JavaScript both in the frontend and backend, development is much more agile. Plus, thanks to its open-source community, it’s constantly evolving. 
+
+3
+What is Node.js mostly used for?
+Node.js is mainly used for network programs like web servers. But it can also be used for different types of applications, including web applications and REST API server, and distributed systems. 
+
+Note: if you want to get a better understanding of how well candidates understand your needs, you can follow up with a question or steer the conversation in the direction of why you use Node.js.  
+
+4
+What is event-driven programming?
+Answer: 
+Event-driven programming, which Node.js uses, is about building an application to respond to events. So when an event happens (say, a click), a callback function, which is registered to the element for that event, runs. 
+
+It’s the dominant paradigm used in graphical user interfaces. 
+
+However, the event-driven approach has also been criticized because it can lead to excessively complex code. 
+
+5
+What is your experience with Node.js? Can you walk me through a recent project you worked on?
+Obviously, there’s no right or wrong answer to this question. What you want is a bit of background on how a developer has used Node.js and their ability to communicate it. 
+
+You might need to probe a bit to get deeper into their story. “What happened next?” or “Can you tell me more about X?” work as follow-up questions. 
+
+6
+What is an event loop in Node.js? How does it work?
+Answer: 
+An event loop is what handles all the async callbacks. When a listener is attached to an event and the event fires, the listener executes the callback. 
+
+When setTimeout, http.get and fs.readFile are called, Node.js continues these operations and other code without waiting for the output. However, when the operation finishes, it receives the output and runs callback functions one by one. 
+
+7
+How does Node.js handle child threats?
+Answer: 
+Node.js doesn’t expose child threads to developers. Fundamentally, it’s a single thread process in order to support async processing. 
+
+However, behind the scenes it does spawn child threads for tasks, but they don’t block the main event loop or execute JavaScript code. 
+
+8
+What are the types of API functions in Node.js?
+
+Answer: 
+There are two types of API functions in Node.js: asynchronous, non-blocking functions and synchronous, blocking functions. 
+
+9
+Which tasks need to be done asynchronously using the event loop?
+Answer: 
+These tasks must be done asynchronously using the event loop:
+
+10
+What are streams? How many are there in Node.js? Which events are fired by stream?
+Streams are objects that let you write data to a destination continuously or read data from a source. 
+
+In Node.js, there are four streams: 
+
+11
+How do you leverage AI coding assistants in your Node.js workflow?
+Look for thoughtful integration patterns:
+
+12
+What Node.js-specific issues should you watch for in AI-generated code?
+Candidates should mention:
+
 Top Node.js Interview Questions
 Software Engineering
 Tatsat Jha • Last updated 2 years ago
