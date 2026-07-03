@@ -1,3 +1,417 @@
+Top React Native Interview Questions and Answers
+
+by Agnieszka Łobocka
+
+Development
+Chapters
+
+
+Are you waiting for your interview and looking for possible questions? Or maybe just want to learn something new? Check our list and keep your ear to the ground.
+
+Top most common React Native job interview questions:
+What is JSX?
+It is an extension of JavaScript syntax with the ability to insert tags (HTML-like). It is used to define the UI elements for mobile applications in a more readable way.
+
+JSX is transpiled into regular JavaScript function calls using a tool like Babel before being executed by the JavaScript engine.
+
+How to create components in React Native?
+You have to define a JavaScript or TypeScript function or class that returns JSX code representing the UI structure of the component.
+
+// class component
+class CookieComponent extends Component {
+  render() {
+    return (
+      <View>
+        <Text>This is my first cookie</Text>
+      </View>
+    );
+  }
+}
+
+// functional component
+const CookieComponent = () => {
+  return (
+    <View>
+      <Text>This is my first cookie</Text>
+    </View>
+  }
+}
+view rawindex.tsx hosted with ❤ by GitHub
+In React Native we have two types of components: class and functional. Do both types of components allow the use of state?
+Yes. You can take advantage of the state in both types of components. In class components, you can define state with this, and in functional components you have to use hook useState.
+
+You cannot directly change the value of the state. You have to use special functions like this.setState (for class components) and useState hook (for functional components)
+
+// class component
+class MyCookiesCounter extends Component {
+  constructor () {
+    super();
+    this.state = {
+      myCookies: 0 // here you can define state and its default value
+    };
+  }
+
+  buyCookie() {
+    this.setState({
+      myCookies: this.state.myCookies + 1 // here you can update state
+    });
+  }
+
+  eatCookie() {
+    this.setState({
+      myCookies: this.state.myCookies - 1 // here you can update state
+    });
+  }
+
+  render() {
+    return (
+      <View>
+        <Text>My cookies: {this.state.myCookies}</Text>
+        <TouchableOpacity onPress={this.eatCookie.bind(this)}><Text>Eat cookie</Text></TouchableOpacity>
+        <TouchableOpacity onPress={this.buyCookie.bind(this)}><Text>Buy cookie</Text></TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+// functional component
+const MyCookiesCounter = () => {
+  const [myCookies, setMyCookies] = useState(0); // here you can define state and its default value
+
+  buyCookie() {
+    setMyCookies(myCookies + 1); // here you can update state
+  }
+
+  eatCookie() {
+    setMyCookies(myCookies - 1); // here you can update state
+  }
+
+  return (
+    <View>
+      <Text>My cookies: {myCookies}</Text>
+      <TouchableOpacity onPress={eatCookie}><Text>Eat cookie</Text></TouchableOpacity>
+      <TouchableOpacity onPress={buyCookie}><Text>Buy cookie</Text></TouchableOpacity>
+    </View>
+  );
+}
+view rawindex.tsx hosted with ❤ by GitHub
+What is the difference between state and props?
+Feature	State	Props
+Communication 	Internal (inside component)	From parent to child
+Mutable 	Can be modified, (component can change value)	Cannot be modified (child component cannot modify value)
+Initialization 	Initialized in component	Passed from the parent component
+Usage example	Internal data and UI state	External inputs
+Trigger re-render	Changes in state trigger re-render	Changes in props do not trigger re-render. When a parent component updates the values it passes as props, React will re-render the child component with the new props. This is not because the child component detected a change in props. React automatically re-renders a component when its props or state change.
+ 
+
+When do components render?
+Component re-renders when:
+
+state changes
+parent component re-renders
+props change - props are passed from the parent component to the child component. When their values ​​change, the parent component re-renders, so the child component will re-render as well
+context changes - when a component uses context which value has changed
+forceRender is used - but it is not recommended
+Can we populate props down the components tree?
+Yes, we can. Is it good? Not really. It is called props drilling.
+
+When props change, component rerender. So when you want to pass props to a nested component, all parents of this component will rerender.
+
+For example, you have a cookie list and want to show if a cookie is your favorite and add cookie to your favorites. Here there are “only” two props to pass 3 levels down, but let’s imagine that there are many more props needed. When something changes you have to update all components and add missing props to them.
+
+Passing props down the components tree - props drilling
+Passing props down the components tree - props drilling
+
+Instead of doing that you can useContext to manage information needed by some independent components.
+
+How to manage the state of a group of nested components?
+What to do when you have to pass values between components that are not in a direct relationship? To avoid populating props down the components tree (props drilling), you can use useContext hook. It allows you to define a mechanism for transmitting and consuming data between independent elements. 
+
+You can create a context for these components, for example, CookieContext. Then wrap the components in a context and pass to it the values ​​that should be available for these components. Now you can get context values directly from child components. No need to pass them as props through every component, from parents to nested children.
+
+Can we populate props down the components tree?
+Example from the question “Can we populate props down the components tree?” but with context usage
+
+Here is a short example of context use:
+
+import React, { createContext, useContext } from 'react';
+
+// Create a Context
+const CookieContext = createContext();
+
+// Provide the Context, you have to wrap your components with context
+const Cookies = () => {
+  return (
+    <CookieContext.Provider value={'123 cookie!'}>
+      <CookieHeader />
+    </CookieContext.Provider>
+  );
+};
+
+// Get value from context in a Component
+const CookieHeader = () => {
+  const title = useContext(CookieContext);
+
+  return <Text>{title}</Text>;
+};
+view rawindex.tsx hosted with ❤ by GitHub
+What is useEffect?
+UseEffect allows you to handle side effects like data download or creating subscriptions. By default, it is executed on the first render and each subsequent update of the component. 
+
+useEffect(() => {});
+
+You can limit the number of calls by adding a dependency array.
+
+useEffect(() => {}, [test]);
+
+Now useEffect will run on the first render and whenever the test value changes. Leaving the dependency array empty will cause it to run useEffect only on the first render.
+
+Each effect can return a function that specifies how to clean up after it. Thanks to this, we can first subscribe to notifications and then unsubscribe in nearly the same place.
+
+useEffect(() => {
+    subscribeToNotifications();
+    
+    return () => {
+      unsubscribeFromNotifications();
+    };
+}, []);
+view rawindex.tsx hosted with ❤ by GitHub
+If we have a value that doesn't change often, how can we prevent it from being calculated on every render?
+You can use the useMemo hook. Memoization is a mechanism for components optimization. Thanks to this technique you can prevent your component from unnecessary re-renders or recalculations.
+
+useMemo will allow you to recalculate value only when something in your dependency array changes, so it should not be recalculated during every render. The previous contents of the dependency array will be compared with the new contents. If changes are detected, the content of useMemo will be invoked. Remember that if a value (in a dependency array) is not a primitive (eg. is it object or array), the value comparison won’t work. In the example below we will recalculate cookies value only when cookies data changes.
+
+const CookieClickerComponent = ({ cookies }) => {
+  const notMemoizedCookie = recalculateCookie(); // this value will be recalculated on every render
+  
+  // Use useMemo to memoize the result
+  const calculatedCookiesValue = useMemo(() => {
+    // expensive computation on cookies data
+    // ...
+
+    return result;
+  }, [cookies]);
+
+  return (
+    <View>
+      <Text>{calculatedCookiesValue}</Text>
+    </View>
+  );
+};
+
+const App = () => {
+  const [cookies, setCookies] = useState(/* some cookies data */);
+
+  return (
+    <View>
+      <CookieClickerComponent cookies={cookies} />
+      <Button
+        title="Update cookies"
+        onPress={() => setCookies(/* new cookies data */)}
+      />
+    </View>
+  );
+};
+view rawindex.tsx hosted with ❤ by GitHub
+How to prevent creating new functions on every render?
+The function is re-created with each render. You can avoid that by using the useCallback hook. It works similar to useMemo hook. Function returned by useCallback will only be recreated when something in your dependency array changes. 
+
+const Cookie = () => {
+  const [cookieCounter, setCookieCounter] = useState(0);
+
+  const handleCookie = () => { // this function will be recreated on every render
+    console.log('Button clicked');
+  };
+
+  const handleBestCookie = useCallback(() => { // this function will only be recreated if cookie counter changes
+    // ...
+  }, [cookieCounter]);
+
+  return (
+    <View>
+      <Button title="Suprise" onPress={handleBestCookie} />
+    </View>
+  );
+};
+view rawindex.tsx hosted with ❤ by GitHub
+What is redux and how does it work?
+This is a state management library. It gives the possibility to manage the whole application state in a predictable way. There is a single source of truth for the state of the application and thanks to that it is much easier to share state between components. What’s more, the state is read-only, you can update it only by using actions. Redux works based on context.
+
+Redux consists of several “elements”:
+
+Store - in one object, redux holds the whole application state. You have to wrap your application with the store provider
+Actions - objects that tells how to change application state
+Reducers - their task is to handle actions and update state based on these actions
+Dispatch - method that allows you to send actions to the reducers. Without using that, state updating process will not start
+Selectors - they gives possibility to get values from store and use them in components
+Middleware - additional functions, that intercept actions before they reach reducers
+state managament
+State management with redux
+
+What does the lifecycle of React Native components look like?
+The lifecycle of react native components consists of several phases:
+
+Mounting - the component is created and added to the screen
+Updating - the component updates when it receives new props or state
+Unmounting - the component is removed from the screen
+ 	Class components	Functional components
+Initialization	constructor(props) - Initializes the component	---
+Mounting	componentWillMount()
+render() - renders UI
+componentDidMount() - invoked after a component is mounted, this is the place where you can fetch data, subscribe notifications, etc	useEffect(() => {}, []) - when you put an empty dependencies array, useEffect will run only once on the initial render. This is equivalent to componentDidMount and componentDidUpdate
+Updating	componentWillReceiveProps()
+shouldComponentUpdate() - return info ic component should be updated or not
+componentWillUpdate()
+render() - renders updated UI
+componentDidUpdate() - invoked after component is updated	It is also done by using the useEffect hook. By adding a dependency array to useEffect hook you can add logic that should be invoked when some of the dependencies change. By returning a function from useEffect you can albo do some cleanup
+Unmounting	componentWillUnmount() - invoked before the component is unmounted/destroyed. Perfect place for cleanup, for example removing subscriptions	The cleanup mechanism should be placed as a return from useEffect hook
+ 
+
+class lifecycle diagram
+Class and functional component lifecycle
+
+What is Bridge in React Native and is it used in new architecture?
+In older versions of React Native bridge was used to allow communication between JavaScript code and native code. To communicate with native functionality (e.g. access to a camera or GPS), React Native uses native modules. These native modules are implemented in native languages ​​(Java, Objective-C, Swift) and provide a JavaScript API that React Native components can use. When a React Native component needs to communicate with native code or vice versa, a “bridge” is called. “Bridge” translates fragments of code written in JavaScript into Java for Android apps and Objective-C for iOS and enables the use of modules native to a given platform.
+
+New architecture abandons the bridge in favor of a different communication: the JavaScript interface (JSI). The JSI interface gives us the possibility to hold references to C++ objects inside JavaScript objects. 
+
+With references, we can directly call methods on those objects.
+
+jsi interface
+The JSI interface idea
+
+What is Fabric in React Native?
+Fabric is a new rendering system connected with React Native new architecture (with JSI interface). The main purpose of this renderer is to unify more render logic in C++. The core is shared between platforms. It improves interoperability with host platforms (Android, iOS, macoOS, Windows) and makes it easier to adopt React Native on new platforms.
+
+Where can we store sensitive values?
+There is no solution added to react-native by default.
+
+There is AsyncStorage, a persisted key-value storage system, but values that are stored there are unencrypted, so they are insecure. This is something like LocalStorage for web apps.
+
+Fortunately, we can take advantage of solutions offered by each platform:
+
+Android - Secure Shared Preferences - a persisted key-value storage system. Unlike regular shared preferences, which are not encrypted, we can use the encrypted shared preferences wrapper. It automatically encrypts keys and values that we want to store
+Android - Keystore - here you can store cryptographic keys in a container to make it more difficult to extract from the device
+iOS - Keychain Services - allows you to store small bits of user data in an encrypted database called a keychain
+If you want to use solutions If you want to use the solutions above, you either have to connect to the appropriate native module yourself or use a library like react-native-keychain.
+
+How can we debug React Native applications?
+First what comes to mind is probably console.log… What’s more, you can use Flipper or any other tool. In Flipper, you can check logs from the app, inspect the layout, see network requests, and many more.
+
+But how about using breakpoints? You can insert a breakpoint in a line of code. Then you just start your app in debug mode and it will stop in the line where you put your breakpoint. Now you can check your variables and debug your app step by step in a more comfortable way.
+
+How to make network requests in React Native?
+You can use the Fetch API that is available out-of-the-box in React Native. Another possibility is to use 3rd party libraries like Axios.
+
+In both solutions, you make an asynchronous request to the api and then wait for a result. You can use async/await syntax or promises to handle responses.
+
+What is “render prop"?
+It is a mechanism that allows you to pass a function as a prop of a component and this function is responsible for rendering some content of this component.
+
+This is a really great solution when you want to give parent component flexibility in determining the UI structure of child components. Instead of passing a bunch of props, you pass a single function that returns a ReactNode. You can also pass some data to this rendering function.
+
+const ParentComponent = () => {
+  return (
+    <ChildComponent renderCookie={() => <Text>{'My cookie component'}</Text>} />
+  );
+};
+
+const ChildComponent = ({ renderCookie }) => {
+  return (
+    <View>
+      {renderCookie()}
+    </View>
+  );
+};
+view rawindex.tsx hosted with ❤ by GitHub
+What are the differences between hot reloading and live reloading?
+Feature	Hot reloading	Live reloading
+What is does 	Updates code in real-time without losing state. It injects or replaces only changed code	Reloads the whole app and reset state.
+Use case 	Applying style changes, updating components etc.	Used when seeing the entire app with updated code is required
+State preservation 	Aims to store current app state	Reset state, unsaved changes will be lost
+Where is used	Common in React Native	Common in web development (with tools like webpack)
+ 
+
+What is the purpose of using “key” property in React Native?
+Key prop is used in arrays to give each element a unique identifier. It is a special attribute that helps React efficiently update the UI by recognizing which items have been added, removed or modified.
+
+Key value should be unique within the scope of the component or list. Using list indices as keys is not a good solution, it can lead to unexpected behavior when the list changes. The best way is to use unique and stable identifiers for keys when rendering lists.
+
+What is HOC in React Native?
+HOC is a High Order Component. This is a pattern that involves creating a function that takes a component and returns a new component with additional functionality or props. For example with the HOC concept, you can add a lifecycle logger to your components.
+
+const withCookieLogger = (WrappedComponent) => {
+  // Define a new functional component
+  const WithCookieLogger = (props) => {
+    
+    useEffect(() => {
+      console.log('Cookie is mounted');
+      
+      return () => {
+        console.log('Cookie will unmount');
+      };
+    }, []); 
+
+    // Render the wrapped component with its original props
+    return <WrappedComponent {...props} />;
+  };
+
+  return WithCookieLogger;
+};
+
+
+const MyCookie = () => {
+  return (
+    <View>
+      <Text>My cookie!</Text>
+    </View>
+  );
+};
+
+// Use the HOC to enhance MyCookie component
+const MyCookieWithLogger = withCookieLogger(MyCookie);
+view rawindex.tsx hosted with ❤ by GitHub
+Can you add native modules to the React Native app?
+Yes, you can add native modules and get access to native functionalities from JavaScript code. Basically, you have to:
+
+add classes in native part of the application
+add a name to your module, so you can get access to this module from JS code
+export a native method to JavaScript
+use your native module in app
+As stated in documentation Native Modules and Native Components are part of legacy architecture. They will be deprecated when New Architecture will be stable. Instead of current Native Modules, Turbo Native Modules will be used.
+
+How to handle different requirements for each platform in React Native?
+Depending on how big the differences are between the application's behavior on different platforms, there are 2 options.
+
+Using Platform module:
+
+You can detect which platform is running
+Based on that you can add different styles, use other components, pass different props etc.
+This option is commonly used when only small parts of components are platform-specific
+Using platform-specific extensions:
+
+You can split your component into separate files, one file per platform
+React native will detect which platform is running and then choose proper file: .android or .ios
+This option is used where platform-specific code is more complex or you have to use completely different components on each platform etc.
+What is the difference between React Native CLI and Expo?
+Feature	React Native CLI	Expo
+Environment configuration 	More complex setup
+Tools like Android Studio and Xcode are needed
+Dependencies like Node and Watchman are needed	Nearly no setup
+Just create project and scan QR code
+Project configuration	More control
+Possibility to integrate native modules and dependencies
+Full access to all available native modules	Less control
+Limited access to native modules
+Third-party libraries	Can use any third-party libraries that are compatible with React Native	Limited to libraries that are compatible with Expo's
+Build and deployment	Requires manual configuration and handling of builds	Simplified build and deployment process, managed by Expo servers
+Community	Large community and ecosystem	Has its own community and ecosystem
+Entry threshold	More initial setup and configurations are needed. It can be sometimes a bit difficult	Quick and easy setup
+Running application	Standalone apps or emulators/real devices are used for testing	You can scan QR code from terminal and run app on your device
+Check out also:
+React Native vs. Native App Development: Pros and Cons - Establish your app’s priorities to benefit from the used technology.
+React Native: How to Deploy and Test Apps in Different Environments? - Learn how to deploy your applications to tests in different environments.
+
 10 Technical Interview Questions for a React Native Developer
 When hiring a React Native developer, it’s essential to ensure that the candidate has the right technical expertise.
 
