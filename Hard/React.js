@@ -1,3 +1,307 @@
+Top React Interview Questions and Answers! [Updated]
+By Lukesh S
+
+Oct 27, 2025 7 Min Read 9486 Views
+
+(Last Updated)
+
+Are you preparing for a React interview and wondering what questions you might face? With React continuing to dominate front-end development, companies are on the lookout for skilled developers who can build efficient, scalable, and high-performance applications. 
+
+To help you stay ahead, we’ve compiled a list of the top React interview questions and answers, covering everything from fundamental concepts like JSX and components to advanced topics such as React Server Components and performance optimization. 
+
+Whether you’re a beginner or an experienced developer, these questions will give you the confidence to ace your next interview. So, without further ado, let us get started!
+
+Table of contents
+Most Important React Interview Questions
+What are the components of React Router v4?
+What is the purpose of push() and replace() methods of history?
+How do you programmatically navigate using React Router v4?
+How to get query parameters in React Router v4?
+Why do you get the "Router may have only one child element" warning?
+What is the purpose of the ReactTestUtils package?
+What is Jest?
+What is flux?
+What is Redux?
+What are the core principles of Redux?
+What are the downsides of Redux compared to Flux?
+Can I dispatch an action in reducer?
+How to access Redux store outside a component?
+What are the drawbacks of MVW pattern?
+Are there any similarities between Redux and RxJS?
+How to use connect() from React Redux?
+What is the difference between React context and React Redux?
+Why are Redux state functions called reducers?
+How to make AJAX request in Redux?
+What is the difference between component and container in React Redux?
+What is the purpose of the constants in Redux?
+How to structure Redux top level directories?
+What is Redux DevTools?
+What are the features of Redux DevTools?
+What are Redux selectors and why to use them?
+What is Redux Form?
+What are the main features of Redux Form?
+How to add multiple middlewares to Redux?
+How to set initial state in Redux?
+How Relay is different from Redux?
+What is an action in Redux?
+What is the difference between Real DOM and Virtual DOM?
+Is it recommended to use CSS In JS technique in React?
+How do you access the imperative API of web components?
+Do browsers understand JSX code?
+What are react scripts?
+Conclusion
+Most Important React Interview Questions
+Most Important React Interview Questions
+With companies seeking professionals who can build dynamic, high-performance applications, acing a ReactJS interview requires a solid grasp of core concepts, best practices, and the latest updates in the React ecosystem. Here is the list of questions that might help you for your interview preparation!
+
+1. What are the components of React Router v4?
+React Router v4 provides the below 3 components:
+
+AD 4nXfz1cFRVxtCfGl35MOwXkt2F qozuXi89BYTuiplvjlTwb0tbyv0rR hzI93Q4 GHpg7rnNDKT3abg0FcKbSx79VziNIEAlpSteN6vv dtlohhxTo0VJB6DpBh1Bs 9831byB8g A?key=HVc JEZtqmRl8e qzfXAuVEA
+The above components will create browser, hash, and memory history instances. React Router v4 makes the properties and methods of the history instance associated with your router available through the context in the router object.
+
+2. What is the purpose of push() and replace() methods of history?
+A history instance has two methods for navigation purposes.
+• push()
+• replace()
+If you think of the history as an array of visited locations, push() will add a new location to the array and replace() will replace the current location in the array with the new one.
+
+3. How do you programmatically navigate using React Router v4?
+There are three different ways to achieve programmatic routing/navigation within components.
+
+Using the withRouter() higher-order function:
+The withRouter() higher-order function will inject the history object as a prop of the
+component. This object provides push() and replace() methods to avoid the usage of
+context.
+
+How do you programmatically navigate using React Router v4?
+2. Using <Router> component and render props pattern:
+
+The component passes the same props as withRouter(), so you will be able to access the history methods through the history prop.
+
+How do you programmatically navigate using React Router v4?
+How do you programmatically navigate using React Router v4?
+3. Using context:
+
+This option is not recommended and is treated as an unstable API.
+
+How do you programmatically navigate using React Router v4?
+MDN
+4. How to get query parameters in React Router v4?
+The ability to parse query strings was taken out of React Router v4 because there have been user requests over the years to support different implementations. So the decision has been given to users to choose the implementation they like. The recommended approach is to use the query strings library.
+
+How do you programmatically navigate using React Router v4?
+You can also use URLSearchParams if you want something native:
+
+How do you programmatically navigate using React Router v4?
+You should use a polyfill for IE11.
+
+5. Why do you get the “Router may have only one child element” warning?
+You have to wrap your Route’s in a block because it is unique in that it renders a route exclusively.
+
+At first, you need to add Switch to your imports:
+
+How do you programmatically navigate using React Router v4?
+Then define the routes within the block:
+
+How do you programmatically navigate using React Router v4?
+6. What is the purpose of the ReactTestUtils package?
+ReactTestUtils are provided in the with-addons package and allow you to perform actions against a simulated DOM for the purpose of unit testing.
+
+7. What is Jest?
+Jest is a JavaScript unit testing framework created by Facebook based on Jasmine and provides automated mock creation and a jsdom environment. It’s often used for testing components.
+
+8. What is flux?
+Flux is an application design paradigm used as a replacement for the more traditional MVC pattern. It is not a framework or a library but a new kind of architecture that complements React and the concept of Unidirectional Data Flow. Facebook uses this pattern internally when working with React.
+
+The workflow between dispatcher, stores, and views components with distinct inputs and outputs as follows:
+
+What is flux?
+9. What is Redux?
+Redux is a predictable state container for JavaScript apps based on the Flux design pattern. Redux can be used together with React, or with any other view library. It is tiny (about 2kB) and has no dependencies.
+
+10. What are the core principles of Redux?
+Redux follows three fundamental principles:
+
+i. Single source of truth: The state of your whole application is stored in an object tree within a single store. The single state tree makes it easier to keep track of changes over time and debug or inspect the application.
+
+ii. State is read-only: The only way to change the state is to emit an action, an object
+describing what happened. This ensures that neither the views nor the network callbacks
+will ever write directly to the state.
+
+iii. Changes are made with pure functions: To specify how the state tree is transformed by
+actions, you write reducers. Reducers are just pure functions that take the previous state
+and an action as parameters, and return the next state.
+
+11. What are the downsides of Redux compared to Flux?
+Instead of saying downsides we can say that there are few compromises of using Redux over Flux.
+
+Those are as follows:
+
+i. You will need to learn to avoid mutations: Flux is un-opinionated about mutating data, but Redux doesn’t like mutations and many packages complementary to Redux assume you never mutate the state. You can enforce this with dev-only packages like redux-immutablestate-invariant, Immutable.js, or instructing your team to write non-mutating code.
+
+ii. You’re going to have to carefully pick your packages: While Flux explicitly doesn’t try to
+solve problems such as undo/redo, persistence, or forms, Redux has extension points such
+as middleware and store enhancers, and it has spawned a rich ecosystem.
+
+iii. There is no nice Flow integration yet: Flux currently lets you do very impressive static type checks which Redux doesn’t support yet.
+
+12. Can I dispatch an action in reducer?
+Dispatching an action within a reducer is an anti-pattern. Your reducer should be without side effects, simply digesting the action payload and returning a new state object. Adding listeners and dispatching actions within the reducer can lead to chained actions and other side effects.
+
+13. How to access Redux store outside a component?
+You just need to export the store from the module where it created with createStore(). Also, it shouldn’t pollute the global window object.
+
+How to access Redux store outside a component?
+How to access Redux store outside a component?
+14. What are the drawbacks of MVW pattern?
+i. DOM manipulation is very expensive which causes applications to behave slow and
+inefficient.
+ii. Due to circular dependencies, a complicated model was created around models and views.
+iii. Lot of data changes happens for collaborative applications(like Google Docs).
+iv. No way to do undo (travel back in time) easily without adding so much extra code.
+
+15. Are there any similarities between Redux and RxJS?
+These libraries are very different for very different purposes, but there are some vague similarities. Redux is a tool for managing state throughout the application. It is usually used as an architecture for UIs. Think of it as an alternative to (half of) Angular. RxJS is a reactive programming library.
+
+It is usually used as a tool to accomplish asynchronous tasks in JavaScript. Think of it as an alternative to Promises. Redux uses the Reactive paradigm because the Store is reactive. T
+
+he Store observes actions from a distance, and changes itself. RxJS also uses the Reactive paradigm, but instead of being an architecture, it gives you basic building blocks, Observables, to accomplish this pattern.
+
+16. How to use connect() from React Redux?
+You need to follow two steps to use your store in your container:
+i. Use mapStateToProps(): It maps the state variables from your store to the props that you
+specify.
+ii. Connect the above props to your container: The object returned by the mapStateToProps function is connected to the container. You can import connect() from react-redux.
+
+How to use connect() from React Redux?
+17. What is the difference between React context and React Redux?
+You can use Context in your application directly and is going to be great for passing down data to deeply nested components which what it was designed for.
+
+Whereas Redux is much more powerful and provides a large number of features that the Context API doesn’t provide. Also, React Redux uses context internally but it doesn’t expose this fact in the public API.
+
+18. Why are Redux state functions called reducers?
+Reducers always return the accumulation of the state (based on all previous and current actions). Therefore, they act as a reducer of state. Each time a Redux reducer is called, the state and action are passed as parameters.
+
+This state is then reduced (or accumulated) based on the action, and then the next state is returned. You could reduce a collection of actions and an initial state (of the store) on which to perform these actions to get the resulting final state.
+
+19. How to make AJAX request in Redux?
+You can use redux-thunk middleware which allows you to define async actions.
+Let’s take an example of fetching specific account as an AJAX call using fetch API:
+
+ How to make AJAX request in Redux?
+20. What is the difference between component and container in React Redux?
+Component is a class or function component that describes the presentational part of your
+application.
+
+Container is an informal term for a component that is connected to a Redux store. Containers subscribe to Redux state updates and dispatch actions, and they usually don’t render DOM elements; they delegate rendering to presentational child components.
+
+21. What is the purpose of the constants in Redux?
+Constants allows you to easily find all usages of that specific functionality across the project when you use an IDE. It also prevents you from introducing silly bugs caused by typos – in which case, you will get a ReferenceError immediately.
+
+Normally we will save them in a single file (constants.js or actionTypes.js).
+
+constants in Redux
+In Redux, you use them in two places:
+i. During action creation:
+Let’s take actions.js:
+
+What is the purpose of the constants in Redux?
+ii. In reducers:
+Let’s create reducer.js:
+
+What is the purpose of the constants in Redux?
+22. How to structure Redux top level directories?
+Most of the applications has several top-level directories as below:
+i. Components: Used for dumb components unaware of Redux.
+ii. Containers: Used for smart components connected to Redux.
+iii. Actions: Used for all action creators, where file names correspond to part of the app.
+iv. Reducers: Used for all reducers, where files name correspond to state key.
+v. Store: Used for store initialization.
+
+This structure works well for small and medium size apps.
+
+23. What is Redux DevTools?
+Redux DevTools is a live-editing time travel environment for Redux with hot reloading, action replay, and customizable UI. If you don’t want to bother with installing Redux DevTools and integrating it into your project, consider using Redux DevTools Extension for Chrome and Firefox.
+
+24. What are the features of Redux DevTools?
+Some of the main features of Redux DevTools are below,
+i. Lets you inspect every state and action payload.
+ii. Lets you go back in time by cancelling actions.
+iii. If you change the reducer code, each staged action will be re-evaluated.
+iv. If the reducers throw, you will see during which action this happened, and what the error was.
+v. With persistState() store enhancer, you can persist debug sessions across page reloads.
+
+25. What are Redux selectors and why to use them?
+Selectors are functions that take Redux state as an argument and return some data to pass to the component.
+For example, to get user details from the state:
+
+What are Redux selectors and why to use them?
+These selectors have two main benefits,
+i. The selector can compute derived data, allowing Redux to store the minimal possible state
+ii. The selector is not recomputed unless one of its arguments changes.
+
+26. What is Redux Form?
+Redux Form works with React and Redux to enable a form in React to use Redux to store all of its state. Redux Form can be used with raw HTML5 inputs, but it also works very well with common UI frameworks like Material UI, React Widgets and React Bootstrap.
+
+27. What are the main features of Redux Form?
+Some of the main features of Redux Form are:
+i. Field values persistence via Redux store.
+ii. Validation (sync/async) and submission.
+iii. Formatting, parsing and normalization of field values.
+
+28. How to add multiple middlewares to Redux?
+You can use applyMiddleware().
+For example, you can add redux-thunk and logger passing them as arguments to applyMiddleware():
+
+How to add multiple middlewares to Redux?
+29. How to set initial state in Redux?
+You need to pass initial state as second argument to createStore:
+
+How to set initial state in Redux?
+30. How Relay is different from Redux?
+Relay is similar to Redux in that they both use a single store. The main difference is that relay only manages state originated from the server, and all access to the state is used via GraphQL queries (for reading data) and mutations (for changing data). Relay caches the data for you and optimizes data fetching for you, by fetching only changed data and nothing more.
+
+31. What is an action in Redux?
+Actions are plain JavaScript objects or payloads of information that send data from your application to your store. They are the only source of information for the store. Actions must have a type property that indicates the type of action being performed.
+
+For example, let’s take an action which represents adding a new todo item:
+
+What is an action in Redux?
+32. What is the difference between Real DOM and Virtual DOM?
+Below are the main differences between Real DOM and Virtual DOM,
+
+Real DOM	Virtual DOM
+Updates are slow	Updates are fast
+DOM manipulation is very expensive.	DOM manipulation is very easy
+You can update HTML directly.	You Can’t directly update HTML
+It causes too much memory wastage.	There is no memory wastage.
+Creates a new DOM if element updates	It updates the JSX if element update
+Difference between Real DOM and Virtual DOM
+33. Is it recommended to use CSS In JS technique in React?
+React does not have any opinion about how styles are defined but if you are a beginner then good starting point is to define your styles in a separate *.css file as usual and refer to them using className. This functionality is not part of React but came from third-party libraries.
+
+But If you want to try a different approach(CSS-In-JS) then the styled-components library is a good option.
+
+34. How do you access the imperative API of web components?
+Web Components often expose an imperative API to implement its functions. You will need to use a ref to interact with the DOM node directly if you want to access imperative API of a web component.
+
+But if you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
+
+35. Do browsers understand JSX code?
+No, browsers can’t understand JSX code. You need a transpiler to convert your JSX to regular Javascript that browsers can understand. The most widely used transpiler right now is Babel.
+
+36. What are react scripts?
+The react-scripts package is a set of scripts from the create-react-app starter pack which helps you kick off projects without configuring. The react-scripts start command sets up the development environment and starts a server, as well as hot module reloading.
+
+In case you want to learn more about React and Full Stack Development, consider enrolling in HCL GUVI’s Certified Full Stack Development Course with Placement Assistance where you will master the MERN stack (MongoDB, Express.js, React, Node.js) and build interesting real-life projects. This program is crafted by our team of experts to help you upskill and assist you in placements.
+
+MDN
+Conclusion
+In conclusion, mastering ReactJS interview questions is essential for standing out in today’s competitive job market. By understanding key concepts, practicing coding challenges, and keeping up with the latest advancements in React, you can confidently tackle any interview scenario. 
+
+The questions and answers in this article serve as a strong foundation to enhance your technical skills and prepare you for real-world React development challenges.
+
 Top React Interview Questions and Answers
 Lesson 7 of 12By Haroon Ahamed Kitthu
 
