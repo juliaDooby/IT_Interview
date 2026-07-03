@@ -1,4 +1,144 @@
 
+Useful Node.js interview questions
+What is an error-first callback?
+How can you avoid callback hells?
+How can you listen on port 80 with Node?
+What’s the event loop?
+What tools can be used to assure consistent style?
+What’s the difference between operational and programmer errors?
+Why npm shrinkwrap is useful?
+What’s a stub? Name a use case.
+What’s a test pyramid? How can you implement it when talking about HTTP APIs?
+What’s your favourite HTTP framework and why?
+Now let’s see the answers!
+
+What is an error-first callback?
+Error-first callbacks are used to pass errors and data. The first argument is always an error object that the programmer has to check if something went wrong. Additional arguments are used to pass data.
+
+fs.readFile(filePath, function(err, data) {  
+  if (err) {
+    //handle the error
+  }
+  // use the data object
+});
+How does this question help?
+
+The answer for this question will get you some insight on whether the candidate has some basic knowledge on how async operations work in Node.
+
+Are you looking for help with enterprise-grade Node.js Development?
+Hire the Node.js experts of RisingStack!
+
+How can you avoid callback hells?
+To do so you have more options:
+
+modularization: break callbacks into independent functions
+use Promises
+use yield with Generators and/or Promises
+How does this question help?
+
+The answer for this question may vary a lot, depending on how up-to-date one is, how closely is she following the latest developments, be it ES6, ES7 or just a new control flow library.
+
+How can you listen on port 80 with Node?
+Trick question! You should not try to listen with Node on port 80 (in Unix-like systems) – to do so you would need superuser rights, but it is not a good idea to run your application with it.
+
+Still, if you want to have your Node.js application listen on port 80, here is what you can do. Run the application on any port above 1024, then put a reverse proxy like nginx in front of it.
+
+How does this question help?
+
+This question helps you to find out whether the one you are talking to has any experience operating Node applications.
+
+What’s the event loop?
+TL;DR:
+
+It is a magical place filled with unicorns and rainbows – Trevor Norris
+
+Node.js runs using a single thread, at least from a Node.js developer’s point of view. Under the hood Node.js uses many threads through libuv.
+
+Every I/O requires a callback – once they are done they are pushed onto the event loop for execution. If you need a more detailed explanation, I suggest viewing this video:
+
+
+How does this question help?
+
+This will give you an insight on how deep someone’s knowledge on Node is, if she/he knows what libuv is.
+
+What tools can be used to assure consistent style?
+You have plenty of options to do so:
+
+JSLint by Douglas Crockford
+JSHint
+ESLint
+JSCS
+These tools are really helpful when developing code in teams, to enforce a given style guide and to catch common errors using static analysis.
+
+How does this question help?
+
+With this you will have some idea if the one you are talking to has any experience on how large scale JavaScript applications should be developed.
+
+What’s the difference between operational and programmer errors?
+Operation errors are not bugs, but problems with the system, like request timeout or hardware failure.
+
+On the other hand programmer errors are actual bugs.
+
+How does this question help?
+
+As this question has little to do with Node, you can get a more general idea on the candidate’s level.
+
+Why is npm shrinkwrap useful?
+This command locks down the versions of a package’s dependencies so that you can control exactly which versions of each dependency will be used when your package is installed. – npmjs.com
+
+It is useful when you are deploying your Node.js applications – with it you can be sure which versions of your dependencies are going to be deployed.
+
+How does this question help?
+
+This questions helps to get a deeper understanding on the candidate’s knowledge of both the npm cli and Node.js operational best practices.
+
+What’s a stub? Name a use case.
+Stubs are functions/programs that simulate the behaviours of components/modules. Stubs provide canned answers to function calls made during test cases. Also, you can assert on with what these stubs were called.
+
+A use-case can be a file read, when you do not want to read an actual file:
+
+var fs = require('fs');
+
+var readFileStub = sinon.stub(fs, 'readFile', function (path, cb) {
+  return cb(null, 'filecontent');
+});
+
+expect(readFileStub).to.be.called;
+readFileStub.restore();
+How does this question help?
+
+This question helps to get some clue on one’s testing knowledge – if she/he don’t know what stubs are you can ask how she/he does unit testing.
+
+What’s a test pyramid? How can you implement it when talking about HTTP APIs?
+A test pyramid describes that when writings test cases there should be a lot more low-level unit tests than high level end-to-end tests.
+
+When talking about HTTP APIs, it may come down to this:
+
+a lot of low-level unit tests for your models
+less integration tests, where your test how your models interact with each other
+a lot less acceptance tests, where you test the actual HTTP endpoints
+How does this question help?
+
+How experienced your candidate in testing? This question will tell a lot about that, especially if she/he can go into the details of each level, and for each level what kind of tools can be used.
+
+What’s your favourite HTTP framework and why?
+There is no right answer for this. The goal here is to understand how deeply one knows the framework she/he uses, if can reason about it, knows the pros, cons.
+
+Things that work better than these questions
+As you may already guessed, we are not huge fans of these type of questions. Instead we do believe in small, real-life problems, solved together. During these you will get a very good understanding of how one thinks. But not just that. You will know if she/he is a good fit for your team, as you have to solve something together.
+
+When we are hiring (and we are always hiring) we usually look for a combination of the following:
+
+cultural fit
+transparency
+self-improvement
+bias towards clarity
+do things smarter than harder
+skill and expertise
+Spending as little as half a day with your possible next co-worker is worth more than a thousand questions.
+
+UPDATE: A follow up of this article called Node.js Interview Questions and Answers (2017 Edition) just got published on the RisingStack blog. The majority of the questions are different from what you read in this article, so I recommend to check it out as well!
+
 Node Interview Questions and Answers (2025) - Intermediate Level
 Last Updated : 23 Jul, 2025
 NodeJS is an open-source, cross-platform runtime environment that allows you to execute JavaScript code on the server side. Built on Chrome’s V8 JavaScript engine, NodeJS is designed for building scalable, high-performance applications, especially with its event-driven, non-blocking (asynchronous) I/O model. It enables developers to use JavaScript for both client-side and server-side scripting, making it a powerful tool for full-stack development.
