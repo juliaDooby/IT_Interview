@@ -1,111 +1,1375 @@
-15 вопросов и ответов на собеседовании по REST API
-3 комментария / Собеседование / От dariaa
-Здесь представлены вопросы и ответы на собеседования по Rest API, которые могут задать как начинающим, так и опытным кандидатам на должность QA инженера.
+120 ключевых вопросов по SQL за 2025 год
+26.07.2025Data Analyst, sql
+120 ключевых вопросов по SQL за 2025 год
+Вот 120 ключевых вопросов по SQL для собеседований, разделённых по темам и уровням сложности, с краткими пояснениями. Основываясь на актуальных требованиях 2025 года, вопросы охватывают базу данных, оптимизацию, практические задачи и нюансы СУБД (MySQL, PostgreSQL, SQL Server).
 
-1. Что такое REST и RESTFUL?
-REST( REpresentational State Transfer) — это архитектурный стиль, он представляет собой репрезентативную передачу данных; это относительно новый аспект написания веб-интерфейсов.
+Перед началом, советую подписаться на наш телеграм канал t.me/sqlhub, здесь мы на пальцах разбираем и объясняем самые сложные задачи и примеры запросов.
 
-RESTFUL — это набор правил и архитектурных принципов, который относится к веб-сервисам, написанным с применением архитектурной концепции REST и называемым RESTful-сервисами. Он фокусируется на системных ресурсах и на том, как состояние ресурса должно быть передано по протоколу HTTP различным клиентам, написанным на разных языках. В RESTFUL-службе для выполнения CRUD-операций могут использоваться такие HTTP-методы, как GET, POST, PUT и DELETE.
+I. Основы SQL
+1. Что такое SQL?
+Ответ: SQL (Structured Query Language) – язык программирования для работы с реляционными базами данных. Позволяет:
 
-2. Объясните архитектурный стиль создания web API?
-Ищите работу Junior QA? Тогда вам в наш телеграм канал QA Вакансии. 
-Каждую неделю 7 лучших вакансий с телеграм контактом HR компании. 
-Архитектурным стилем для создания web API являются:
+Создавать и изменять структуру БД (DDL – Data Definition Language)
+Управлять данными (DML – Data Manipulation Language)
+Контролировать доступ (DCL – Data Control Language)
+Управлять транзакциями (TCL – Transaction Control Language)
+2. Отличие SQL от MySQL?
+Ответ:
 
-HTTP для взаимодействия клиент-сервер.
-XML/JSON в качестве языка форматирования.
-Простой URI в качестве адреса для сервисов.
-Нестационарная связь.
-3. Какие инструменты необходимы для тестирования веб-API?
-Инструмент SOAPUI для SOAP Web Service и плагин Firefox «poster» для RESTFUL сервисов.
+SQL – стандартизированный язык запросов
+MySQL – конкретная СУБД (система управления базами данных), реализующая стандарт SQL
+3. Что такое PRIMARY KEY?
+Ответ: Первичный ключ – столбец (или набор столбцов), уникально идентифицирующий каждую строку в таблице:
 
-4. Rакие методы HTTP поддерживает REST?
-Методы HTTP, поддерживаемые REST:
+Гарантирует уникальность значений
+Не допускает NULL значений
+Автоматически создает кластеризованный индекс (в большинстве СУБД)
+CREATE TABLE Users (
+  id INT PRIMARY KEY,
+  name VARCHAR(50)
+);
+4. Для чего нужен FOREIGN KEY?
+Ответ: Внешний ключ обеспечивает ссылочную целостность между таблицами:
 
-GET: Запрашивает ресурс по URL-адресу запроса. Не содержит тело запроса, так как оно будет отброшено. Может кэшироваться локально или на сервере.
-POST: Отправляет информацию в службу для обработки; обычно возвращается измененный или новый ресурс.
-PUT: Обновляет ресурс по URL-адресу запроса.
-DELETE: Удаляет ресурс по URL-адресу запроса.
-OPTIONS: Указывает, какие методы поддерживаются.
-HEAD: Возвращает метаинформацию по URL-адресу запроса.
-Рассмотрим эти методы с точки зрения одной записи. Например, имеется запись о сотруднике номер 1.
+Связывает поле в дочерней таблице с PRIMARY KEY в родительской
+Предотвращает удаление связанных данных
+Обеспечивает целостность отношений
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+5. Разница между CHAR и VARCHAR?
+Ответ:
 
-Следующие действия будут иметь соответствующие значения:
+CHAR – фиксированная длина (дополняется пробелами до указанного размера)
+VARCHAR – переменная длина (хранит только фактическое количество символов)
+Пример:
 
-POST — не применяется, поскольку мы получаем данные о сотруднике номер 1, который уже создан.
-GET — используется для получения данных о сотруднике номер 1 с помощью RESTful веб-сервиса.
-PUT — используется для обновления данных о сотруднике номер 1с помощью RESTful веб-сервиса.
-DELETE — используется для удаления данных о сотруднике номер 1.
+CHAR(10) для ‘SQL’ → ‘SQL_______’ (7 пробелов)
+VARCHAR(10) для ‘SQL’ → ‘SQL’ (3 символа)
+6. Как правильно проверять NULL значения?
+Ответ: Для проверки NULL используется оператор IS NULL вместо сравнения с = NULL:
 
-5. Можно ли использовать для создания ресурса запрос GET вместо PUT?
-Нет, в этой ситуации не получится использовать метод PUT вместо GET. Операции GET имеют только права просмотра информации, в то время как метод PUT используется для обновления данных.
+-- Правильно:
+SELECT * FROM Employees WHERE phone IS NULL;
 
-6. Что такое ресурсы в архитектуре REST?
-Данные, которые получают или изменяют клиенты посредством запросов, называют ресурсами. Основа клиент-серверного взаимодействия — манипуляция над ресурсами. Ресурсы идентифицируются логическими URL-адресами; это ключевой элемент RESTful-конструкции.
+-- Неправильно:
+SELECT * FROM Employees WHERE phone = NULL;
+7. Типы ограничений (Constraints)?
+Ответ:
 
-7. В чем разница между AJAX и REST?
-AJAX	REST
-В Ajax запрос отправляется на сервер с помощью объектов XMLHttpRequest. Полученный ответ используется кодом JavaScript для динамического изменения текущей страницы.	REST имеет структуру URL и шаблон запроса/ответа, которые связаны с использованием ресурсов.
-Ajax — это набор технологий, представляющих собой технику динамического обновления частей пользовательского интерфейса без необходимости перезагрузки страницы.	REST — это тип архитектуры программного обеспечения и метод, с помощью которого пользователи запрашивают данные или информацию с серверов.
-Ajax устраняет взаимодействие между клиентом и сервером асинхронно.	REST требует взаимодействия между клиентом и сервером.
-8. Укажите ключевые характеристики REST?
-Основные ключевые характеристики REST:
+NOT NULL – запрет пустых значений
+UNIQUE – уникальность значений
+PRIMARY KEY – первичный ключ
+FOREIGN KEY – внешний ключ
+CHECK – проверка условия
+DEFAULT – значение по умолчанию
+8. Разница между DELETE, TRUNCATE и DROP?
+Ответ:
 
-Поддерживает различные форматы — JSON, XML, текстовые и т.д.
-Работает только по протоколам http и https.
-Может быть закэширован (на основе чтения).
-Не содержит четкого свода правил для подчинения.
-9. Какие существуют различные стили интеграции приложений?
-Различные стили интеграции включаю:
+Команда	Скорость	Возврат данных	Автоинкремент	Где используется
+DELETE	Медленно	Да (ROLLBACK)	Сохраняется	Удаление строк с WHERE
+TRUNCATE	Быстро	Нет	Сбрасывается	Удаление всех строк
+DROP	Мгновенно	Нет	Удаляется	Удаление всей таблицы
+9. Что делает ORDER BY?
+Ответ: Сортирует результаты запроса по указанным столбцам:
 
-Общая база данных.
-Пакетная передача файлов.
-Вызов удаленной процедуры (RPC).
-Обмен асинхронными сообщениями через ориентированное на сообщения промежуточное ПО (MOM).
-10. Укажите, в чем разница между PUT и POST?
-PUT помещает файл или ресурс на определенный URI. Если на этом URI уже есть файл или ресурс, PUT изменяет их. Если ресурса или файла там нет, PUT их создает.
+ASC – по возрастанию (по умолчанию)
+DESC – по убыванию
+sql
 
-POST отправляет данные на определенный URI и ожидает, что ресурс на этом URI ответит на запрос. Веб-сервер в этот момент может решить, что делать с данными в контексте указанного ресурса.
+SELECT name, salary FROM Employees 
+ORDER BY salary DESC, name ASC;
+10. Как работает оператор LIKE?
+Ответ: LIKE выполняет поиск по шаблону:
 
-PUT является идемпотентным, то есть его многократный вызов не окажет влияния на имеющиеся ресурсы.
+% – любое количество любых символов
+_ – один любой символ
+Примеры:
 
-POST не является идемпотентным, то есть при многократном вызове POST он продолжает создавать все новые и новые ресурсы.
+sql
 
-11. Какой язык разметки может быть использован в restful web api?
-JSON и XML — два языка разметки, которые могут использоваться в restful web api.
+-- Начинается на 'Ив'
+SELECT * FROM Users WHERE name LIKE 'Ив%';
 
-12. В чем разница между веб-сервисами в стиле RPC и в стиле документов?
-В веб-сервисах документного стиля мы можем передавать XML-сообщение как часть SOAP-запроса, что невозможно в веб-сервисе стиля RPC (Remote Procedure Call). Веб-сервис в стиле документа наиболее уместен для приложений, где XML-сообщение ведет себя как документ, содержимое которого может меняться, а намерения веб-сервиса не зависят от содержимого XML-сообщения.
+-- Содержит 'ов'
+SELECT * FROM Users WHERE name LIKE '%ов%';
 
-13. Укажите, что такое JAX-WS и JAX-RS?
-JAX-WS и JAX-RS — это библиотеки (API) для осуществления коммуникаций различными способами на языке Java. JAX-WS может быть использована для осуществления SOAP-коммуникаций на JAVA, а JAX-RS позволяет осуществлять REST-коммуникации на JAVA.
+-- Вторая буква 'а'
+SELECT * FROM Users WHERE name LIKE '_а%';
+II. Запросы и JOINs
+11. Как выбрать уникальные записи без DISTINCT?
+Ответ: Через GROUP BY всех полей:
 
-14. Перечислите инструменты или API для разработки или тестирования web api?
-К инструментам тестирования веб-сервисов для REST API относятся:
+sql
 
-Веб-сервис Spring REST с использованием MVC.
-Jersey API.
-CXF.
-Axis.
-Restlet.
-15. В чем разница между SOAP и REST?
-SOAP	REST
-SOAP — это протокол, с помощью которого два компьютера обмениваются XML-документами.	Rest — это архитектурный стиль, дизайн для сетевых архитектур программного обеспечения.
-SOAP допускает использование только XML.	REST поддерживает множество различных форматов данных.
-Чтения на основе SOAP не могут быть кэшированы.	Чтения REST могут быть кэшированы.
-SOAP использует WSDL (Web Services Description Language) 	REST не имеет стандартного языка определения сервиса.
-SOAP работает медленнее, чем REST.	REST быстрее, чем SOAP.
-SOAP не накладывает ограничений на тип транспортного протокола.	REST подразумевает наилучшее использование транспортного протокола HTTP.
+SELECT name, email FROM Users 
+GROUP BY name, email;
+12. Как найти дубликаты email?
+Ответ:
 
-100+ САМЫХ ПОПУЛЯРНЫХ ВОПРОСОВ И ОТВЕТОВ НА ИНТЕРВЬЮ по SQL
-Автор: QA genius | 29 ноября, 2022Нет комментариев
+sql
 
-Вы готовитесь к собеседованию с разработчиком SQL?
+SELECT email, COUNT(*) 
+FROM Users 
+GROUP BY email 
+HAVING COUNT(*) > 1;
+13. Как удалить дубликаты?
+Ответ:
 
-Содержание
-В этой записи блога мы рассмотрим некоторые из наиболее распространенных вопросов на собеседовании по SQL-запросам и дадим вам несколько советов, как на них ответить.
+sql
 
-Итак, если вы только начинаете свою карьеру или готовитесь к собеседованию в новой компании, прочтите несколько полезных советов!
+DELETE FROM Users 
+WHERE id NOT IN (
+  SELECT MIN(id) 
+  FROM Users 
+  GROUP BY email
+);
+14. Разница между INNER JOIN и LEFT JOIN?
+Ответ:
+
+INNER JOIN – возвращает только совпадающие строки из обеих таблиц
+LEFT JOIN – возвращает все строки левой таблицы и совпадения из правой (NULL при отсутствии)
+sql
+
+-- INNER JOIN
+SELECT e.name, d.name AS department
+FROM Employees e
+INNER JOIN Departments d ON e.department_id = d.id;
+
+-- LEFT JOIN
+SELECT e.name, d.name AS department
+FROM Employees e
+LEFT JOIN Departments d ON e.department_id = d.id;
+15. Что такое SELF JOIN? Пример
+Ответ: Соединение таблицы с самой собой. Пример – поиск сотрудников и их менеджеров:
+
+sql
+
+SELECT e.name AS employee, m.name AS manager
+FROM Employees e
+JOIN Employees m ON e.manager_id = m.id;
+16. Когда использовать FULL OUTER JOIN?
+Ответ: Когда нужны все записи из обеих таблиц, включая несовпадающие:
+
+sql
+
+SELECT e.name, d.name
+FROM Employees e
+FULL OUTER JOIN Departments d ON e.department_id = d.id;
+Результат содержит:
+
+Совпадения
+Сотрудники без отдела
+Отделы без сотрудников
+17. Что такое CROSS JOIN?
+Ответ: Декартово произведение строк – все возможные комбинации строк из обеих таблиц:
+
+sql
+
+SELECT s.size, c.color 
+FROM Sizes s
+CROSS JOIN Colors c;
+18. Как работает INSERT INTO SELECT?
+Ответ: Копирование данных из одной таблицы в другую:
+
+sql
+
+INSERT INTO OrdersArchive (id, date, amount)
+SELECT id, date, amount 
+FROM Orders 
+WHERE date < '2023-01-01';
+19. Как обновить данные из другой таблицы?
+Ответ:
+
+sql
+
+UPDATE Employees e
+JOIN Salaries s ON e.id = s.employee_id
+SET e.salary = s.new_salary
+WHERE s.effective_date = '2025-01-01';
+20. Как добавить столбец в таблицу?
+Ответ:
+
+sql
+
+ALTER TABLE Employees 
+ADD COLUMN birth_date DATE;
+III. Агрегация и оконные функции
+21. Разница между WHERE и HAVING?
+Ответ:
+
+WHERE фильтрует строки до группировки
+HAVING фильтрует результаты после группировки
+sql
+
+SELECT department, AVG(salary) AS avg_salary
+FROM Employees
+WHERE hire_date > '2020-01-01'  -- фильтр строк
+GROUP BY department
+HAVING AVG(salary) > 50000;     -- фильтр групп
+22. Как вывести топ-3 самых дорогих товаров?
+Ответ:
+
+sql
+
+-- MySQL
+SELECT * FROM Products 
+ORDER BY price DESC 
+LIMIT 3;
+
+-- SQL Server
+SELECT TOP 3 * FROM Products 
+ORDER BY price DESC;
+23. Что такое оконные функции? Пример
+Ответ: Вычисления над группой строк без свертки в одну строку:
+
+sql
+
+SELECT name, salary, department,
+  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank,
+  AVG(salary) OVER (PARTITION BY department) AS dept_avg
+FROM Employees;
+24. Как посчитать скользящее среднее?
+Ответ:
+
+sql
+
+SELECT date, amount,
+  AVG(amount) OVER (
+    ORDER BY date 
+    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+  ) AS moving_avg
+FROM Sales;
+25. Разница между RANK() и DENSE_RANK()?
+Ответ:
+
+RANK() – пропускает номера при одинаковых значениях (1, 2, 2, 4)
+DENSE_RANK() – не пропускает номера (1, 2, 2, 3)
+26. Как работает LAG() и LEAD()?
+Ответ: Доступ к данным из предыдущей/следующей строки:
+
+sql
+
+SELECT date, amount,
+  LAG(amount) OVER (ORDER BY date) AS prev_amount,
+  LEAD(amount) OVER (ORDER BY date) AS next_amount
+FROM Sales;
+27. Что делает GROUPING SETS?
+Ответ: Позволяет выполнять группировку по нескольким наборам столбцов в одном запросе:
+
+sql
+
+SELECT department, job_title, COUNT(*)
+FROM Employees
+GROUP BY GROUPING SETS (
+  (department, job_title),
+  (department),
+  (job_title),
+  ()
+);
+28. Как рассчитать долю от общей суммы?
+Ответ:
+
+sql
+
+SELECT category, amount,
+  amount / SUM(amount) OVER () AS total_share
+FROM Sales;
+29. Как найти накопленную сумму?
+Ответ:
+
+sql
+
+SELECT date, amount,
+  SUM(amount) OVER (ORDER BY date) AS cumulative_sum
+FROM Sales;
+30. Разница между COUNT(*) и COUNT(column)?
+Ответ:
+
+COUNT(*) – считает все строки
+COUNT(column) – считает строки с не-NULL значениями в указанном столбце
+IV. Оптимизация и индексы
+31. Что такое покрывающий индекс?
+Ответ: Индекс, содержащий все поля, необходимые для запроса, что позволяет избежать чтения самой таблицы:
+
+-- Создание покрывающего индекса
+CREATE INDEX idx_cover ON Orders (customer_id, order_date, amount);
+
+-- Запрос использует только индекс
+SELECT customer_id, order_date, amount 
+FROM Orders 
+WHERE customer_id = 123;
+32. Как проверить план выполнения запроса?
+Ответ:
+
+-- MySQL
+EXPLAIN SELECT * FROM Employees WHERE department_id = 5;
+
+-- PostgreSQL
+EXPLAIN ANALYZE SELECT * FROM Employees WHERE department_id = 5;
+
+-- SQL Server
+SET SHOWPLAN_TEXT ON;
+GO
+SELECT * FROM Employees WHERE department_id = 5;
+33. Когда индекс не используется?
+Ответ:
+
+При использовании функций над полями: WHERE UPPER(name) = 'ИВАН'
+При неселективных условиях (когда отбирается >15-20% данных)
+При использовании оператора OR без оптимизации
+При отсутствии статистики по таблице
+34. Что такое статистика запросов?
+Ответ: Данные о распределении значений в столбцах, которые СУБД собирает для оптимизатора запросов. Помогает:
+
+Выбирать оптимальный план выполнения
+Оценивать селективность условий
+Определять порядок соединения таблиц
+35. Как работает составной индекс?
+Ответ: Индекс по нескольким столбцам, эффективный для запросов с префиксными полями:
+
+-- Создание индекса
+CREATE INDEX idx_composite ON Employees (department_id, salary);
+
+-- Эффективные запросы
+SELECT * FROM Employees WHERE department_id = 5;
+SELECT * FROM Employees WHERE department_id = 5 AND salary > 50000;
+
+-- Неэффективные запросы
+SELECT * FROM Employees WHERE salary > 50000;
+36. Что такое кластеризованный индекс?
+Ответ: Индекс, определяющий физический порядок данных на диске:
+
+Только один на таблицу
+Обычно создается автоматически для PRIMARY KEY
+Ускоряет поиск по диапазону значений
+37. Как оптимизировать запрос с JOIN?
+Ответ:
+
+Использовать индексы на полях соединения
+Фильтровать данные до соединения
+Использовать наименьшую из таблиц первой
+Избегать преобразования типов в условиях JOIN
+38. Риски избыточных индексов?
+Ответ:
+
+Замедление операций INSERT/UPDATE/DELETE
+Увеличение размера базы данных
+Конкуренция за ресурсы при обслуживании индексов
+Увеличение времени обслуживания БД
+39. Что такое репликация?
+Ответ: Копирование данных между серверами для:
+
+Повышения доступности
+Балансировки нагрузки
+Геораспределения
+Аналитической обработки без нагрузки на основную БД
+40. Стратегии резервного копирования?
+Ответ:
+
+Полное резервное копирование (Full): Копирование всех данных
+Дифференциальное (Differential): Копирование изменений с момента последнего полного бэкапа
+Инкрементальное (Incremental): Копирование изменений с момента последнего бэкапа любого типа
+V. Продвинутые темы
+41. Что такое рекурсивный CTE? Пример
+Ответ: Рекурсивный обобщенный табличный выражение для работы с иерархическими данными:
+
+sql
+
+WITH RECURSIVE EmployeeHierarchy AS (
+  -- Якорь рекурсии
+  SELECT id, name, manager_id, 1 AS level
+  FROM Employees
+  WHERE manager_id IS NULL
+  
+  UNION ALL
+  
+  -- Рекурсивная часть
+  SELECT e.id, e.name, e.manager_id, eh.level + 1
+  FROM Employees e
+  JOIN EmployeeHierarchy eh ON e.manager_id = eh.id
+)
+SELECT * FROM EmployeeHierarchy;
+42. Как рассчитать медиану?
+Ответ:
+
+sql
+
+-- PostgreSQL
+SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY price) 
+FROM Products;
+
+-- MySQL
+SELECT AVG(price) AS median
+FROM (
+  SELECT price, 
+         ROW_NUMBER() OVER (ORDER BY price) AS row_num,
+         COUNT(*) OVER () AS total_count
+  FROM Products
+) AS sub
+WHERE row_num IN (FLOOR((total_count+1)/2), FLOOR((total_count+2)/2));
+43. Что такое LATERAL JOIN?
+Ответ: Соединение, где подзапрос может обращаться к столбцам внешней таблицы:
+
+sql
+
+SELECT u.name, o.order_count
+FROM Users u
+JOIN LATERAL (
+  SELECT COUNT(*) AS order_count
+  FROM Orders 
+  WHERE user_id = u.id
+) o ON true;
+44. Как сделать PIVOT таблицу?
+Ответ: Преобразование строк в столбцы:
+
+sql
+
+SELECT *
+FROM (
+  SELECT department, job_title, salary
+  FROM Employees
+) AS src
+PIVOT (
+  AVG(salary)
+  FOR job_title IN ('Manager', 'Engineer', 'Analyst')
+) AS pvt;
+45. Что такое триггер? Типы
+Ответ: Автоматически выполняемый код при событиях в БД:
+
+Типы по времени: BEFORE, AFTER, INSTEAD OF
+Типы по событию: INSERT, UPDATE, DELETE
+Типы по уровню: ROW-LEVEL, STATEMENT-LEVEL
+sql
+
+CREATE TRIGGER update_timestamp
+BEFORE UPDATE ON Orders
+FOR EACH ROW
+SET NEW.updated_at = NOW();
+46. Разница между процедурой и функцией?
+Ответ:
+
+Характеристика	Хранимая процедура	Функция
+Возвращаемое значение	Не обязательно	Обязательно
+Использование в SELECT	Нет	Да
+Транзакции	Могут содержать	Не могут
+Вызов	CALL procedure()	SELECT function()
+47. Что такое материализованное представление?
+Ответ: Представление, которое физически хранит результаты запроса и периодически обновляется:
+
+Ускоряет сложные запросы
+Требует обновления при изменении данных
+Полезно для отчетности и аналитики
+sql
+
+-- PostgreSQL
+CREATE MATERIALIZED VIEW sales_summary AS
+SELECT product_id, SUM(amount) 
+FROM Sales 
+GROUP BY product_id;
+
+-- Обновление
+REFRESH MATERIALIZED VIEW sales_summary;
+48. Как работает MERGE?
+Ответ: Комбинированная операция для INSERT, UPDATE, DELETE:
+
+MERGE INTO TargetTable AS tgt
+USING SourceTable AS src
+ON tgt.id = src.id
+WHEN MATCHED THEN 
+  UPDATE SET tgt.value = src.value
+WHEN NOT MATCHED BY TARGET THEN 
+  INSERT (id, value) VALUES (src.id, src.value)
+WHEN NOT MATCHED BY SOURCE THEN 
+  DELETE;
+49. Что такое табличные пространства?
+Ответ: Логические контейнеры для управления физическим хранением:
+
+Группируют связанные объекты
+Позволяют управлять хранилищем
+Улучшают производительность
+CREATE TABLESPACE fast_space 
+LOCATION '/ssd/data';
+50. Как настроить партиционирование?
+Ответ: Разделение таблицы на физические части:
+
+-- По диапазону дат
+CREATE TABLE Sales (
+  id INT,
+  sale_date DATE,
+  amount DECIMAL
+) PARTITION BY RANGE (sale_date);
+
+-- Создание партиций
+CREATE PARTITION sales_q1 VALUES LESS THAN ('2025-04-01');
+CREATE PARTITION sales_q2 VALUES LESS THAN ('2025-07-01');
+VI. Практические задачи
+51. Найти сотрудников с зарплатой выше средней в отделе
+SELECT name, salary, department
+FROM Employees e
+WHERE salary > (
+  SELECT AVG(salary) 
+  FROM Employees 
+  WHERE department = e.department
+);
+52. Найти клиентов без заказов
+SELECT c.name 
+FROM Customers c
+LEFT JOIN Orders o ON c.id = o.customer_id
+WHERE o.id IS NULL;
+53. Рассчитать кумулятивную сумму
+SELECT date, amount,
+  SUM(amount) OVER (ORDER BY date) AS cumulative_sum
+FROM Sales;
+54. Вывести 5 последних заказов каждого клиента
+WITH RankedOrders AS (
+  SELECT *,
+    ROW_NUMBER() OVER (
+      PARTITION BY customer_id 
+      ORDER BY order_date DESC
+    ) AS rn
+  FROM Orders
+)
+SELECT * FROM RankedOrders WHERE rn <= 5;
+55. Найти сотрудников с одинаковой зарплатой
+sql
+
+SELECT e1.name, e2.name, e1.salary
+FROM Employees e1
+JOIN Employees e2 
+  ON e1.salary = e2.salary 
+  AND e1.id < e2.id;
+56. Обновить статус заказов старше 2024 года
+sql
+
+UPDATE Orders
+SET status = 'archived'
+WHERE order_date < '2024-01-01';
+57. Вывести квартальную выручку
+sql
+
+SELECT 
+  EXTRACT(QUARTER FROM order_date) AS quarter,
+  SUM(amount) AS total_sales
+FROM Orders
+GROUP BY EXTRACT(QUARTER FROM order_date);
+58. Найти менеджера с наибольшим количеством подчиненных
+sql
+
+SELECT manager_id, COUNT(*) AS employees_count
+FROM Employees
+WHERE manager_id IS NOT NULL
+GROUP BY manager_id
+ORDER BY employees_count DESC
+LIMIT 1;
+59. Найти интервалы > 1 часа между событиями
+sql
+
+SELECT 
+  L1.event_time AS start_time,
+  MIN(L2.event_time) AS end_time
+FROM Logs L1
+JOIN Logs L2 ON L1.event_time < L2.event_time
+WHERE EXTRACT(EPOCH FROM (L2.event_time - L1.event_time)) > 3600
+GROUP BY L1.event_time;
+60. Разделить строку ‘A,B,C’ в столбец значений
+sql
+
+-- PostgreSQL
+SELECT UNNEST(STRING_TO_ARRAY('A,B,C', ',')) AS value;
+
+-- MySQL
+WITH RECURSIVE Splitter AS (
+  SELECT 
+    SUBSTRING_INDEX('A,B,C', ',', 1) AS value,
+    SUBSTRING_INDEX('A,B,C', ',', -2) AS remainder
+  UNION ALL
+  SELECT
+    SUBSTRING_INDEX(remainder, ',', 1),
+    SUBSTRING_INDEX(remainder, ',', -1)
+  FROM Splitter
+  WHERE remainder <> ''
+)
+SELECT value FROM Splitter;
+61. Вывести сотрудников, перешедших в другой отдел за последний месяц
+sql
+
+SELECT e.name, d_old.name AS old_dept, d_new.name AS new_dept
+FROM DepartmentHistory h
+JOIN Employees e ON h.employee_id = e.id
+JOIN Departments d_old ON h.old_department_id = d_old.id
+JOIN Departments d_new ON h.new_department_id = d_new.id
+WHERE h.change_date >= CURRENT_DATE - INTERVAL '1 month';
+62. Найти максимальную цепочку подчиненных
+sql
+
+WITH RECURSIVE Hierarchy AS (
+  SELECT id, manager_id, 1 AS depth
+  FROM Employees
+  WHERE manager_id IS NULL
+  UNION ALL
+  SELECT e.id, e.manager_id, h.depth + 1
+  FROM Employees e
+  JOIN Hierarchy h ON e.manager_id = h.id
+)
+SELECT MAX(depth) FROM Hierarchy;
+63. Рассчитать retention rate за месяц
+sql
+
+WITH Cohort AS (
+  SELECT user_id, MIN(signup_date) AS cohort_month
+  FROM Users
+  GROUP BY user_id
+)
+SELECT 
+  cohort_month,
+  COUNT(DISTINCT u.user_id) * 100.0 / COUNT(DISTINCT c.user_id) AS retention
+FROM Cohort c
+LEFT JOIN UserActivity u 
+  ON c.user_id = u.user_id 
+  AND u.activity_date = c.cohort_month + INTERVAL '1 month'
+GROUP BY cohort_month;
+64. Найти дни, когда температура выше предыдущей
+sql
+
+SELECT t1.date
+FROM Temperatures t1
+JOIN Temperatures t2 ON t1.date = t2.date + INTERVAL '1 day'
+WHERE t1.temp > t2.temp;
+65. Перевести строки в колонки (PIVOT)
+sql
+
+SELECT 
+  product_id,
+  SUM(CASE WHEN status = 'new' THEN 1 ELSE 0 END) AS new_orders,
+  SUM(CASE WHEN status = 'completed' THEN 1 ELSE 0 END) AS completed_orders,
+  SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) AS cancelled_orders
+FROM Orders
+GROUP BY product_id;
+66. Найти пользователей, купивших все товары категории
+sql
+
+SELECT user_id
+FROM Purchases p
+JOIN Products pr ON p.product_id = pr.id
+WHERE pr.category = 'Электроника'
+GROUP BY user_id
+HAVING COUNT(DISTINCT p.product_id) = (
+  SELECT COUNT(*) 
+  FROM Products 
+  WHERE category = 'Электроника'
+);
+67. Вывести отделы с минимальной зарплатой > 50000
+sql
+
+SELECT department_id
+FROM Employees
+GROUP BY department_id
+HAVING MIN(salary) > 50000;
+68. Объединить дубликаты email
+sql
+
+UPDATE Users u
+SET master_id = (
+  SELECT MIN(id) 
+  FROM Users 
+  WHERE email = u.email
+)
+WHERE id NOT IN (
+  SELECT MIN(id) 
+  FROM Users 
+  GROUP BY email
+);
+69. Решить проблему с NULL в NOT IN
+Проблема:
+
+sql
+
+SELECT * 
+FROM TableA 
+WHERE id NOT IN (SELECT id FROM TableB); -- Возвращает пусто, если в TableB есть NULL
+Решение:
+
+sql
+
+SELECT * 
+FROM TableA 
+WHERE id NOT IN (
+  SELECT id 
+  FROM TableB 
+  WHERE id IS NOT NULL
+);
+70. Найти самую длинную последовательность дней с продажами
+sql
+
+WITH Groups AS (
+  SELECT 
+    sale_date,
+    sale_date - INTERVAL '1 day' * ROW_NUMBER() OVER (ORDER BY sale_date) AS grp
+  FROM Sales
+)
+SELECT 
+  MIN(sale_date) AS start_date,
+  MAX(sale_date) AS end_date,
+  COUNT(*) AS days_count
+FROM Groups
+GROUP BY grp
+ORDER BY days_count DESC
+LIMIT 1;
+VII. Управление транзакциями
+71. Что такое ACID?
+Ответ:
+
+Atomicity (Атомарность) – транзакция выполняется полностью или не выполняется вообще
+Consistency (Согласованность) – транзакция переводит БД из одного согласованного состояния в другое
+Isolation (Изолированность) – параллельные транзакции не влияют друг на друга
+Durability (Долговечность) – результаты завершенной транзакции сохраняются даже при сбое
+72. Уровни изоляции транзакций?
+Ответ:
+
+Read Uncommitted – чтение незафиксированных данных
+Read Committed – чтение только зафиксированных данных (по умолчанию в большинстве СУБД)
+Repeatable Read – гарантирует повторяемость чтений
+Serializable – полная изоляция, как последовательное выполнение
+73. Что такое “грязное” чтение?
+Ответ: Чтение данных, измененных в незавершенной транзакции. Возможно только при уровне изоляции Read Uncommitted.
+
+74. Что такое неповторяющееся чтение?
+Ответ: Ситуация, когда повторное чтение тех же данных в рамках одной транзакции возвращает разные результаты из-за изменений в параллельных транзакциях.
+
+75. Что такое фантомное чтение?
+Ответ: Появление новых строк при повторном выполнении запроса в рамках одной транзакции из-за вставок в параллельных транзакциях.
+
+76. Как избежать взаимоблокировок?
+Ответ:
+
+Всегда обновлять таблицы в одинаковом порядке
+Использовать короткие транзакции
+Применять оптимистичные блокировки
+Устанавливать разумные таймауты
+77. Что такое SAVEPOINT?
+Ответ: Точка сохранения внутри транзакции, позволяющая откатить часть операций:
+
+sql
+
+BEGIN;
+INSERT INTO Table1 VALUES (1);
+SAVEPOINT sp1;
+INSERT INTO Table1 VALUES (2);
+ROLLBACK TO sp1; -- Откат только второй вставки
+COMMIT; -- Фиксация первой вставки
+78. Разница между COMMIT и ROLLBACK?
+Ответ:
+
+COMMIT – фиксирует изменения транзакции
+ROLLBACK – отменяет изменения транзакции
+79. Что такое двухфазная фиксация?
+Ответ: Протокол для распределенных транзакций:
+
+Фаза подготовки – все участники готовятся к фиксации
+Фаза фиксации – координатор принимает решение о фиксации или откате
+80. Как реализовать оптимистичную блокировку?
+Ответ: Использование версионности:
+
+sql
+
+-- Обновление с проверкой версии
+UPDATE Products 
+SET stock = stock - 1, version = version + 1
+WHERE id = 100 AND version = 5;
+
+-- Если количество обновленных строк = 0, значит версия изменилась
+VIII. Работа с датами
+81. Как получить текущую дату и время?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT CURRENT_TIMESTAMP;
+
+-- СУБД-специфичные:
+-- MySQL
+SELECT NOW();
+-- SQL Server
+SELECT GETDATE();
+-- PostgreSQL
+SELECT CURRENT_TIMESTAMP;
+82. Как извлечь год из даты?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT EXTRACT(YEAR FROM order_date) FROM Orders;
+
+-- СУБД-специфичные:
+-- MySQL
+SELECT YEAR(order_date) FROM Orders;
+-- SQL Server
+SELECT YEAR(order_date) FROM Orders;
+83. Как добавить дни к дате?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT order_date + INTERVAL '7' DAY FROM Orders;
+
+-- СУБД-специфичные:
+-- MySQL
+SELECT DATE_ADD(order_date, INTERVAL 7 DAY) FROM Orders;
+-- SQL Server
+SELECT DATEADD(DAY, 7, order_date) FROM Orders;
+84. Как вычислить разницу между датами?
+Ответ:
+
+sql
+
+-- PostgreSQL
+SELECT AGE(end_date, start_date);
+
+-- MySQL
+SELECT DATEDIFF(end_date, start_date);
+
+-- SQL Server
+SELECT DATEDIFF(DAY, start_date, end_date);
+85. Как форматировать дату?
+Ответ:
+
+sql
+
+-- MySQL
+SELECT DATE_FORMAT(order_date, '%d.%m.%Y');
+
+-- SQL Server
+SELECT FORMAT(order_date, 'dd.MM.yyyy');
+
+-- PostgreSQL
+SELECT TO_CHAR(order_date, 'DD.MM.YYYY');
+IX. Работа с JSON
+86. Как извлечь значение из JSON?
+Ответ:
+
+sql
+
+-- MySQL
+SELECT JSON_EXTRACT(data, '$.name') FROM Users;
+
+-- PostgreSQL
+SELECT data->>'name' FROM Users;
+
+-- SQL Server
+SELECT JSON_VALUE(data, '$.name') FROM Users;
+87. Как обновить значение в JSON?
+Ответ:
+
+sql
+
+-- MySQL
+UPDATE Users 
+SET data = JSON_SET(data, '$.age', 30) 
+WHERE id = 1;
+
+-- PostgreSQL
+UPDATE Users 
+SET data = jsonb_set(data, '{age}', '30') 
+WHERE id = 1;
+88. Как проверить существование ключа в JSON?
+Ответ:
+
+sql
+
+-- MySQL
+SELECT * FROM Users 
+WHERE JSON_CONTAINS_PATH(data, 'one', '$.address');
+
+-- PostgreSQL
+SELECT * FROM Users 
+WHERE data ? 'address';
+89. Как развернуть JSON в таблицу?
+Ответ:
+
+sql
+
+-- PostgreSQL
+SELECT u.name, e->>'type' AS email_type, e->>'address' AS email
+FROM Users u, jsonb_array_elements(u.data->'emails') e;
+90. Как создать индекс по JSON-полю?
+Ответ:
+
+sql
+
+-- MySQL
+CREATE INDEX idx_email ON Users((CAST(data->>'$.email' AS CHAR(255))));
+
+-- PostgreSQL
+CREATE INDEX idx_email ON Users((data->>'email'));
+X. Работа с NULL
+91. Что возвращает NULL + 5?
+Ответ: NULL (любая операция с NULL возвращает NULL)
+
+92. Как заменить NULL значением?
+Ответ:
+
+sql
+
+SELECT COALESCE(phone, 'N/A') FROM Customers;
+-- Или
+SELECT IFNULL(phone, 'N/A') FROM Customers; -- MySQL
+SELECT ISNULL(phone, 'N/A') FROM Customers; -- SQL Server
+93. Как проверить на NULL в условии?
+Ответ:
+
+sql
+
+SELECT * FROM Products 
+WHERE description IS NULL 
+   OR description = '';
+94. Как сортировать NULL значения?
+Ответ:
+
+sql
+
+-- NULL в конце
+SELECT * FROM Employees 
+ORDER BY commission DESC NULLS LAST;
+
+-- NULL в начале
+SELECT * FROM Employees 
+ORDER BY commission ASC NULLS FIRST;
+95. Как агрегировать NULL значения?
+Ответ:
+
+sql
+
+-- SUM, AVG, MIN, MAX игнорируют NULL
+SELECT AVG(commission) FROM Employees; -- NULL не учитываются
+
+-- COUNT(column) игнорирует NULL
+SELECT COUNT(commission) FROM Employees; -- Только не NULL
+XI. Работа со строками
+96. Как объединить строки?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT CONCAT(first_name, ' ', last_name) AS full_name 
+FROM Employees;
+
+-- СУБД-специфичные:
+-- SQL Server
+SELECT first_name + ' ' + last_name FROM Employees;
+97. Как извлечь подстроку?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT SUBSTRING('SQL Tutorial', 1, 3) AS ExtractString; -- Результат: 'SQL'
+
+-- СУБД-специфичные:
+-- MySQL
+SELECT SUBSTR('SQL Tutorial', 1, 3);
+98. Как заменить часть строки?
+Ответ:
+
+sql
+
+-- Стандарт SQL
+SELECT REPLACE('SQL Tutorial', 'T', 'M'); -- Результат: 'SQL Mutorial'
+
+-- СУБД-специфичные:
+-- PostgreSQL
+SELECT OVERLAY('SQL Tutorial' PLACING 'M' FROM 5 FOR 1); -- 'SQL Mutorial'
+99. Как удалить пробелы?
+Ответ:
+
+SELECT TRIM('  SQL Tutorial  '); -- 'SQL Tutorial'
+SELECT LTRIM('  SQL Tutorial'); -- 'SQL Tutorial'
+SELECT RTRIM('SQL Tutorial  '); -- 'SQL Tutorial'
+100. Как преобразовать регистр?
+Ответ:
+
+SELECT UPPER('SQL Tutorial'); -- 'SQL TUTORIAL'
+SELECT LOWER('SQL Tutorial'); -- 'sql tutorial'
+Бонусом еще 20 сложных вопросов по SQL с подробным разбором, охватывающих продвинутые темы оптимизации, архитектуры и аналитики:
+
+1. Как оптимизировать запрос с оконными функциями на больших таблицах?
+Решение:
+
+sql
+
+-- Исходный медленный запрос:
+SELECT user_id, 
+       SUM(amount) OVER (PARTITION BY user_id) 
+FROM transactions;
+
+-- Оптимизация:
+WITH Agg AS (
+  SELECT user_id, SUM(amount) AS total
+  FROM transactions
+  GROUP BY user_id
+)
+SELECT t.*, a.total
+FROM transactions t
+JOIN Agg a ON t.user_id = a.user_id;
+Разбор:
+Замена оконной функции на предварительную агрегацию + JOIN снижает сложность с O(n²) до O(n). Для таблиц >1M строк выигрыш может достигать 90%.
+
+2. Как найти циклы в иерархических данных?
+sql
+
+WITH RECURSIVE Hierarchy AS (
+  SELECT id, manager_id, ARRAY[id] AS path, false AS cycle
+  FROM employees
+  WHERE manager_id IS NULL
+  
+  UNION ALL
+  
+  SELECT e.id, e.manager_id, path || e.id,
+         e.id = ANY(path) AS cycle
+  FROM employees e
+  JOIN Hierarchy h ON e.manager_id = h.id
+  WHERE NOT cycle
+)
+SELECT * FROM Hierarchy WHERE cycle;
+Разбор:
+Используем рекурсивный CTE с отслеживанием пути (path) и проверкой вхождения ID в путь. Важно ограничить глубину рекурсии MAX_RECURSION.
+
+3. Реализовать шаблон Leader-Follower для обработки строк
+UPDATE tasks
+SET status = 'processing'
+WHERE task_id = (
+  SELECT task_id
+  FROM tasks
+  WHERE status = 'pending'
+  ORDER BY created_at
+  FOR UPDATE SKIP LOCKED
+  LIMIT 1
+)
+RETURNING task_id;
+Разбор:
+SKIP LOCKED позволяет конкурентно обрабатывать строки разными воркерами. Используется в системах очередей.
+
+4. Как рассчитать скользящее среднее с пропусками NULL?
+sql
+
+SELECT date,
+       AVG(amount) OVER (
+         ORDER BY date
+         ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING
+         EXCLUDE NULLS
+       ) AS moving_avg
+FROM sales;
+Разбор:
+EXCLUDE NULLS (поддержка в PostgreSQL 17+) игнорирует NULL в окне. Альтернатива для старых версий:
+
+sql
+
+AVG(COALESCE(amount, 0)) OVER (...) -- не совсем корректно
+5. Реализовать постепенное списание баланса (FIFO)
+Схема:
+transactions(id, user_id, amount, created_at)
+Запрос:
+
+sql
+
+WITH Spend AS (
+  SELECT 100 AS amount_to_spend, 1 AS user_id
+),
+Ranked AS (
+  SELECT *, 
+         SUM(amount) OVER (ORDER BY created_at) AS cumulative
+  FROM transactions
+  WHERE user_id = (SELECT user_id FROM Spend)
+)
+SELECT id,
+       CASE 
+         WHEN prev_cum < amount_to_spend THEN 
+           LEAST(amount, amount_to_spend - prev_cum)
+         ELSE 0
+       END AS used
+FROM (
+  SELECT *,
+         LAG(cumulative, 1, 0) OVER () AS prev_cum
+  FROM Ranked
+) t, Spend;
+Разбор:
+Используем оконные функции для расчета кумулятивных сумм и определяем часть суммы для списания.
+
+6. Как найти gaps в последовательных событиях?
+sql
+
+WITH Events AS (
+  SELECT 
+    event_time,
+    LEAD(event_time) OVER (ORDER BY event_time) AS next_time
+  FROM user_events
+)
+SELECT event_time, next_time
+FROM Events
+WHERE next_time - event_time > INTERVAL '5 minutes';
+Разбор:
+LEAD() для доступа к следующей строке. Вычисляем разницу между событиями.
+
+7. Оптимизация запросов с геоданными (PostGIS)
+sql
+
+-- Создание индекса:
+CREATE INDEX idx_geo ON places USING GIST (location);
+
+-- Поиск в радиусе:
+SELECT * FROM places
+WHERE ST_DWithin(
+  location, 
+  ST_MakePoint(-74.0, 40.7)::geography, 
+  1000 -- метры
+);
+Разбор:
+Использование GiST-индекса для пространственных данных ускоряет поиск в 100+ раз. ST_DWithin эффективнее ST_Distance.
+
+8. Как дедуплицировать данные в партиционированной таблице?
+sql
+
+DELETE FROM sales_partitioned
+WHERE (id) IN (
+  SELECT id
+  FROM (
+    SELECT id,
+           ROW_NUMBER() OVER (
+             PARTITION BY product_id, sale_date
+             ORDER BY created_at DESC
+           ) AS rn
+    FROM sales_partitioned
+  ) t
+  WHERE rn > 1
+);
+Разбор:
+Оконная функция с PARTITION BY по ключу дубликата. Удаление старых версий через ORDER BY created_at DESC.
+
+9. Реализовать TTL (Time-To-Live) для записей
+sql
+
+-- Автоматическое удаление через 30 дней:
+CREATE TABLE sessions (
+  id SERIAL PRIMARY KEY,
+  data JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  expires_at TIMESTAMPTZ GENERATED ALWAYS AS 
+    (created_at + INTERVAL '30 days') STORED
+);
+
+-- Ежедневная очистка:
+DELETE FROM sessions 
+WHERE expires_at < NOW();
+Разбор:
+Генерируемое поле expires_at + периодическое задание (cron). Для больших таблиц используйте партиционирование по дате.
+
+10. Как шифровать данные на уровне БД?
+Решение для PostgreSQL:
+
+sql
+
+-- Установка расширения:
+CREATE EXTENSION pgcrypto;
+
+-- Шифрование:
+INSERT INTO users (secret)
+VALUES (pgp_sym_encrypt('data', 'password'));
+
+-- Дешифровка:
+SELECT pgp_sym_decrypt(secret::bytea, 'password')
+FROM users;
+Разбор:
+Используем симметричное шифрование AES-256. Ключи должны храниться отдельно от БД (HSM/KMS).
+
+11. Расчет Session Duration из событий
+sql
+
+WITH Sessions AS (
+  SELECT user_id, event_time,
+         event_time - LAG(event_time) OVER (
+           PARTITION BY user_id 
+           ORDER BY event_time
+         ) > INTERVAL '30 minutes' AS is_new_session
+  FROM events
+),
+Marked AS (
+  SELECT *,
+         COUNT(CASE WHEN is_new_session THEN 1 END) 
+           OVER (ORDER BY user_id, event_time) AS session_id
+  FROM Sessions
+)
+SELECT user_id, session_id,
+       MAX(event_time) - MIN(event_time) AS duration
+FROM Marked
+GROUP BY user_id, session_id;
+Разбор:
+Определение сессий по 30-минутному простою с помощью LAG() и кумулятивного подсчета сессий.
+
+12. Как обновить JSON-поле атомарно?
+sql
+
+-- PostgreSQL:
+UPDATE users SET data = jsonb_set(
+  data,
+  '{profile,phone}',
+  '"1234567890"',
+  true
+)
+WHERE id = 1;
+
+-- MySQL:
+UPDATE users SET data = JSON_SET(
+  data,
+  '$.profile.phone',
+  CAST('1234567890' AS JSON)
+WHERE id = 1;
+Разбор:
+Функции jsonb_set (PG) и JSON_SET (MySQL) обеспечивают атомарное изменение JSON без полной перезаписи.
+
+13. Решение проблемы N+1 в SQL-запросах
+Проблема:
+ORM генерирует множество запросов для связанных данных.
+Решение:
+
+sql
+
+SELECT u.*, p.*
+FROM users u
+LEFT JOIN posts p ON u.id = p.user_id
+WHERE u.id IN (1, 2, 3)  -- вместо 3 отдельных запросов
+Разбор:
+Замена множественных запросов на один с JOIN. Для ORM используйте eager loading (JOINFETCH в Hibernate).
+
+14. Как считать DISTINCT значения в потоке данных?
+sql
+
+-- HyperLogLog в PostgreSQL:
+SELECT approx_count_distinct(user_id) 
+FROM visits
+WHERE date > '2025-01-01';
+
+-- Точный подсчет:
+SELECT COUNT(DISTINCT user_id) FROM visits;
+Разбор:
+approx_count_distinct дает погрешность ~0.8% при 10x скорости. Идеально для больших данных.
+
+15. Оптимизация LIKE с префиксным поиском
+sql
+
+-- Создание индекса для префиксов:
+CREATE INDEX idx_name_prefix ON users (name text_pattern_ops);
+
+-- Поиск:
+SELECT * FROM users
+WHERE name LIKE 'Иванов%';  -- использует индекс
+Разбор:
+Индекс с text_pattern_ops поддерживает поиск по префиксу. Для суффиксов используйте реверсирование строки.
+
+16. Как реализовать soft delete с индексами?
+sql
+
+ALTER TABLE orders
+ADD COLUMN is_deleted BOOLEAN NOT NULL DEFAULT false;
+
+CREATE INDEX idx_orders_active 
+ON orders (id) 
+WHERE NOT is_deleted;  -- частичный индекс
+Разбор:
+Частичные индексы (partial indexes) ускоряют выборку активных данных и экономят 40% места.
+
+17. Расчет рекуррентных платежей (subscriptions)
+sql
+
+WITH RECURSIVE Dates AS (
+  SELECT '2025-01-01'::DATE AS payment_date
+  UNION ALL
+  SELECT payment_date + INTERVAL '1 month'
+  FROM Dates
+  WHERE payment_date < '2025-12-31'
+)
+SELECT user_id, payment_date
+FROM subscriptions
+CROSS JOIN Dates
+WHERE status = 'active';
+Разбор:
+Рекурсивный CTE генерирует даты платежей. Фильтрация по активным подпискам.
+
+18. Как найти root cause ошибок в цепочке событий?
+sql
+
+WITH ErrorPath AS (
+  SELECT event_id, error_code, parent_event_id
+  FROM events
+  WHERE error_code IS NOT NULL
+  
+  UNION ALL
+  
+  SELECT e.event_id, e.error_code, e.parent_event_id
+  FROM events e
+  JOIN ErrorPath ep ON e.parent_event_id = ep.event_id
+  WHERE e.error_code IS NULL
+)
+SELECT * FROM ErrorPath;
+Разбор:
+Идем от ошибок вверх по иерархии событий, пока не найдем событие без ошибки (root cause).
+
+19. Атомарный upsert (INSERT или UPDATE)
+sql
+
+-- PostgreSQL:
+INSERT INTO users (id, email)
+VALUES (1, 'new@mail.com')
+ON CONFLICT (id) 
+DO UPDATE SET email = EXCLUDED.email;
+
+-- MySQL:
+INSERT INTO users (id, email)
+VALUES (1, 'new@mail.com')
+ON DUPLICATE KEY UPDATE email = VALUES(email);
+Разбор:
+ON CONFLICT (PG) и ON DUPLICATE KEY (MySQL) обеспечивают атомарность. Вероятность race condition < 0.001%.
+
+20. Анализ зависимостей между таблицами
+sql
+
+WITH RECURSIVE Dependencies AS (
+  SELECT 
+    fk.table_name AS child,
+    pk.table_name AS parent
+  FROM information_schema.referential_constraints rc
+  JOIN information_schema.table_constraints fk 
+    ON rc.constraint_name = fk.constraint_name
+  JOIN information_schema.table_constraints pk 
+    ON rc.unique_constraint_name = pk.constraint_name
+  
+  UNION ALL
+  
+  SELECT d.child, pk.table_name
+  FROM Dependencies d
+  JOIN information_schema.referential_constraints rc 
+    ON d.parent = rc.table_name
+  JOIN information_schema.table_constraints pk 
+    ON rc.unique_constraint_name = pk.constraint_name
+)
+SELECT * FROM Dependencies;
+Разбор:
+Рекурсивный обход системных каталогов для построения графа зависимостей. Помогает при рефакторинге БД.
+
+Ключевые паттерны для сложных задач:
+Рекурсивные CTE – для иерархий и графов
+Оконные функции – для аналитики без самоджойнов
+Частичные индексы – для оптимизации фильтрации
+Атомарные операции – для конкурентных систем
+Генерируемые поля – для предрасчетов
+Аппроксимации – для больших данных
+Геоиндексы – для пространственных запросов
+Эти вопросы охватывают реальные кейсы из high-load систем, финансовой аналитики и IoT. Для тренировки рекомендую LeetCode Hard SQL и PGExercises Advanced.
 
 Основные и дополнительные вопросы и ответы на собеседовании по SQL Server
 Давайте начнем сначала с общих вопросов на собеседовании по SQL.
