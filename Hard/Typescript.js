@@ -1,3 +1,34 @@
+TypeScript: вопросы и ответы с фронтенд-собеседований
+Для чего нужен TypeScript, плюсы и минусы
+Отличия type и interface в TypeScript
+Что такое Generic в TypeScript
+Что такое Union в TypeScript
+Отличия any и unknown в TypeScript
+Что такое TypeGuard в TypeScript
+Тип never в TypeScript
+Ключевое слово infer в TypeScript
+Как работает keyof и typeof в TypeScript
+Utility Type Record в TypeScript
+Utility Type Partial в TypeScript
+Utility Type Required в TypeScript
+Utility Type Readonly в TypeScript
+Utility Type Pick в TypeScript
+Utility Type Omit в TypeScript
+Utility Type Exclude в TypeScript
+Utility Type Extract в TypeScript
+Utility Type ReturnType в TypeScript
+Utility Type Parameters в TypeScript
+Utility Type Awaited в TypeScript
+Что такое декораторы в TypeScript
+Что такое Mapped Types в TypeScript
+Что делает implements в TypeScript
+Conditional Types в TypeScript
+Type Assertions в TypeScript
+Discriminated Unions в TypeScript
+Type Narrowing в TypeScript
+Function Overloads в TypeScript
+Что такое enum (перечисление) в TypeScript
+
 10 лучших вопросов и ответов на собеседовании для разработчика TypeScript
 April 30, 2026
 Исследовать другие роли
