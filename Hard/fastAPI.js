@@ -1,3 +1,398 @@
+15 FastAPI Interview Questions and Answers
+July 15, 2025
+FastAPI has rapidly gained popularity as a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints. Its ease of use, automatic interactive API documentation, and high performance make it a preferred choice for developers looking to create robust and scalable web applications. FastAPI’s ability to handle asynchronous programming and its compatibility with popular data validation libraries further enhance its appeal.
+
+This article provides a curated selection of interview questions designed to test your knowledge and proficiency with FastAPI. By working through these questions and their detailed answers, you will be better prepared to demonstrate your expertise and problem-solving abilities in a technical interview setting.
+
+FastAPI Interview Questions and Answers
+1. Explain the main features of FastAPI and why you would choose it over other web frameworks.
+FastAPI is a web framework known for its high performance, ease of use, and modern features. It leverages Python type hints for automatic validation, serialization, and documentation, and supports asynchronous programming for handling many simultaneous connections. FastAPI’s dependency injection system enhances modularity and testing, while its automatic interactive documentation via Swagger UI and ReDoc aids developers in understanding and testing APIs. These features make FastAPI a compelling choice over frameworks like Flask or Django, especially for high-performance applications.
+
+2. Describe how to use Pydantic models for request body validation. Provide a code example.
+Pydantic models in FastAPI validate request bodies by defining expected data structures and types. This ensures incoming data is correctly formatted. Pydantic models are Python classes inheriting from BaseModel.
+
+Example:
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: bool = None
+
+@app.post("/items/")
+async def create_item(item: Item):
+    return item
+Here, the Item class defines the request body structure. The create_item endpoint expects a request body matching the Item model, with FastAPI automatically validating the data.
+
+3. Explain how to use dependency injection in FastAPI. Provide a code example.
+Dependency injection in FastAPI uses the Depends function to declare dependencies for path operation functions. Dependencies can include database connections or authentication mechanisms.
+
+Example:
+
+from fastapi import FastAPI, Depends
+
+app = FastAPI()
+
+def common_parameters(q: str = None, skip: int = 0, limit: int = 10):
+    return {"q": q, "skip": skip, "limit": limit}
+
+@app.get("/items/")
+async def read_items(commons: dict = Depends(common_parameters)):
+    return commons
+In this example, common_parameters handles query parameters, and Depends injects this dependency into read_items. FastAPI calls common_parameters and passes its return value to read_items.
+
+4. Write a middleware function that logs the details of each incoming request.
+Middleware in FastAPI runs before and after each request, useful for logging, authentication, and modifying requests or responses. Here’s a middleware function to log incoming request details:
+
+Example:
+
+from fastapi import FastAPI, Request
+import logging
+
+app = FastAPI()
+
+logging.basicConfig(level=logging.INFO)
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    logging.info(f"Request: {request.method} {request.url}")
+    response = await call_next(request)
+    logging.info(f"Response status: {response.status_code}")
+    return response
+
+@app.get("/")
+async def read_root():
+    return {"message": "Hello, World!"}
+5. How can you run a background task in FastAPI? Provide an example.
+In FastAPI, background tasks run operations while the main request is processed, useful for tasks like sending emails or updating databases. Use the BackgroundTasks class to define tasks executed after the response is sent.
+
+Example:
+
+from fastapi import FastAPI, BackgroundTasks
+
+app = FastAPI()
+
+def write_log(message: str):
+    with open("log.txt", "a") as log_file:
+        log_file.write(message + "\n")
+
+@app.post("/send-notification/")
+async def send_notification(background_tasks: BackgroundTasks, email: str):
+    background_tasks.add_task(write_log, f"Notification sent to {email}")
+    return {"message": "Notification sent in the background"}
+Here, write_log writes a message to a log file, and send_notification adds this function as a background task.
+
+6. Describe how to implement WebSocket communication in FastAPI. Provide a code example.
+WebSocket communication in FastAPI allows real-time, bidirectional communication, useful for applications needing instant updates. FastAPI provides built-in support for WebSockets.
+
+Example:
+
+from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
+
+app = FastAPI()
+
+html = """
+
+
+    
+        
+    
+    
+        
+WebSocket Example
+
+        Send Message
+        
+
+        
+
+        
+    
+
+"""
+
+@app.get("/")
+async def get():
+    return HTMLResponse(html)
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_text()
+        await websocket.send_text(f"Message text was: {data}")
+7. How do you write unit tests for FastAPI endpoints? Provide an example using pytest.
+Unit testing FastAPI endpoints ensures reliability and correctness. Using pytest, you can write tests simulating requests and verifying responses.
+
+Example:
+
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
+import pytest
+
+app = FastAPI()
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: str = None):
+    return {"item_id": item_id, "q": q}
+
+client = TestClient(app)
+
+def test_read_item():
+    response = client.get("/items/42?q=foo")
+    assert response.status_code == 200
+    assert response.json() == {"item_id": 42, "q": "foo"}
+Here, a simple FastAPI application is defined, and the TestClient simulates a request to the endpoint.
+
+8. Explain how to integrate SQLAlchemy with FastAPI. Provide a code example.
+Integrating SQLAlchemy with FastAPI involves setting up the database connection, defining models, and managing database sessions using dependency injection. FastAPI’s system simplifies session management.
+
+First, install the required packages:
+
+pip install fastapi sqlalchemy databases
+Set up the database connection and create a SQLAlchemy engine:
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+DATABASE_URL = "sqlite:///./test.db"
+
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+Define SQLAlchemy models:
+
+from sqlalchemy import Column, Integer, String
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    email = Column(String, unique=True, index=True)
+Create a dependency to get the database session:
+
+from fastapi import Depends, FastAPI
+from sqlalchemy.orm import Session
+
+app = FastAPI()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+Create FastAPI endpoints using the database session:
+
+from fastapi import HTTPException
+
+@app.post("/users/")
+def create_user(name: str, email: str, db: Session = Depends(get_db)):
+    db_user = User(name=name, email=email)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+@app.get("/users/{user_id}")
+def read_user(user_id: int, db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.id == user_id).first()
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return db_user
+9. How do you handle asynchronous database operations in FastAPI? Provide a code snippet.
+FastAPI supports asynchronous programming, allowing non-blocking operations for tasks like database operations. Use asynchronous ORMs like Tortoise-ORM or SQLAlchemy with async support.
+
+Example using Tortoise-ORM:
+
+from fastapi import FastAPI
+from tortoise.contrib.fastapi import register_tortoise
+from tortoise.models import Model
+from tortoise import fields
+
+app = FastAPI()
+
+class User(Model):
+    id = fields.IntField(pk=True)
+    name = fields.CharField(max_length=50)
+
+@app.post("/users/")
+async def create_user(name: str):
+    user = await User.create(name=name)
+    return user
+
+register_tortoise(
+    app,
+    db_url='sqlite://db.sqlite3',
+    modules={'models': ['__main__']},
+    generate_schemas=True,
+    add_exception_handlers=True,
+)
+Here, a User model and an asynchronous endpoint to create a user are defined.
+
+10. Write an error handler for a custom exception in FastAPI.
+In FastAPI, error handling involves defining custom exceptions and registering them to provide meaningful responses.
+
+Example:
+
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
+
+app = FastAPI()
+
+class CustomException(Exception):
+    def __init__(self, name: str):
+        self.name = name
+
+@app.exception_handler(CustomException)
+async def custom_exception_handler(request: Request, exc: CustomException):
+    return JSONResponse(
+        status_code=418,
+        content={"message": f"Oops! {exc.name} did something wrong."},
+    )
+
+@app.get("/items/{name}")
+async def read_item(name: str):
+    if name == "bad":
+        raise CustomException(name=name)
+    return {"name": name}
+11. How can you customize the automatically generated documentation in FastAPI?
+FastAPI generates interactive API documentation using Swagger UI and ReDoc. You can customize this documentation with metadata, tags, and descriptions.
+
+Example:
+
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="Custom API",
+    description="This is a custom API with enhanced documentation",
+    version="1.0.0",
+    contact={
+        "name": "API Support",
+        "url": "http://www.example.com/support",
+        "email": "[email protected]",
+    },
+)
+
+@app.get("/items/", tags=["items"], summary="Get Items", description="Retrieve a list of items")
+async def read_items():
+    return [{"item_id": "Foo"}, {"item_id": "Bar"}]
+
+@app.post("/items/", tags=["items"], summary="Create Item", description="Create a new item")
+async def create_item(item: dict):
+    return {"item_id": "Baz"}
+12. How do you integrate a third-party service (e.g., an external API) with FastAPI? Provide a code snippet.
+Integrating a third-party service with FastAPI involves making HTTP requests to the external API. FastAPI supports asynchronous programming for efficient handling of network requests. The httpx library is a popular choice for this.
+
+Example:
+
+from fastapi import FastAPI, HTTPException
+import httpx
+
+app = FastAPI()
+
+@app.get("/external-api")
+async def call_external_api():
+    url = "https://api.example.com/data"
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+        if response.status_code != 200:
+            raise HTTPException(status_code=response.status_code, detail="Error calling external API")
+        return response.json()
+13. Explain how to use FastAPI with OAuth2 for token-based authentication. Provide a code example.
+OAuth2 is a protocol for token-based authentication, allowing third-party applications to access user data securely. FastAPI provides built-in support for OAuth2.
+
+Example:
+
+from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+from pydantic import BaseModel
+
+app = FastAPI()
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+class User(BaseModel):
+    username: str
+
+def fake_decode_token(token: str):
+    return User(username=token + "fakedecoded")
+
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    user = fake_decode_token(token)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid authentication credentials",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return user
+
+@app.post("/token")
+async def login():
+    return {"access_token": "fake-token", "token_type": "bearer"}
+
+@app.get("/users/me")
+async def read_users_me(current_user: User = Depends(get_current_user)):
+    return current_user
+14. Describe how to implement rate limiting in FastAPI. Provide a code example.
+Rate limiting in FastAPI can be implemented using the slowapi library, which integrates seamlessly with FastAPI.
+
+First, install the slowapi library:
+
+pip install slowapi
+Then, use it in your FastAPI application:
+
+from fastapi import FastAPI, Request
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+app = FastAPI()
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.get("/items/")
+@limiter.limit("5/minute")
+async def read_items(request: Request):
+    return {"message": "This is a rate-limited endpoint"}
+In this example, the Limiter object is initialized with a key function determining the unique identifier for each client. The @limiter.limit("5/minute") decorator applies a rate limit of 5 requests per minute to the /items/ endpoint.
+
+15. How do you handle file uploads in FastAPI? Provide a code example.
+Handling file uploads in FastAPI involves using the File and UploadFile classes. The File class defines the file input parameter, while UploadFile provides methods to handle the uploaded file.
+
+Example:
+
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import HTMLResponse
+
+app = FastAPI()
+
+@app.post("/uploadfile/")
+async def create_upload_file(file: UploadFile = File(...)):
+    content = await file.read()
+    return {"filename": file.filename, "content_type": file.content_type}
+
+@app.get("/")
+async def main():
+    content = """
+    
+
+    Файл не выбран
+    
+    
+
+    """
+    return HTMLResponse(content=content)
+In this example, the create_upload_file endpoint accepts a file upload using the UploadFile class. The file content is read asynchronously, and the filename and content type are returned in the response.
+
 Как остановить цикл при выключении в FastAPI?
 Вопросы
 PYTHON
