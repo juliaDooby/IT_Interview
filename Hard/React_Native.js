@@ -1,4 +1,426 @@
 Top React Native Interview Questions and Answers
+Getting ready for a React Native developer interview at a top company? Or trying to find the right React Native developer for your team? You’ve come to the right place. We’ve put together the most common interview questions covering everything from the basics to advanced React Native concepts.
+
+Hire React Native Developer
+I’m Hiring Developers
+I’m Looking for Jobs
+Basic React Native Interview Questions for Freshers
+
+1.
+How do you differentiate React Native from React?
+React and React Native are like cousins in the same family. React is used to build web applications (what you see in a browser). React Native is used to build mobile apps (for iOS and Android).
+
+They both use JavaScript and a similar way of writing components, but the elements and how they render are different. React uses HTML and CSS. React Native uses native components like <View> and <Text>.
+
+Hide Answer
+
+2.
+What advantages do we get when we use React Native?
+React Native is great because you can build apps for both iOS and Android using the same code, which saves a lot of time. You also get to see your changes instantly while you're working, which makes development faster. Plus, there's a big community and lots of tools that make things easier. And since it uses real native components, the apps usually run pretty smoothly.
+
+Hide Answer
+
+3.
+What are the core components of React Native?
+In React Native, you build your app using a few core components like:
+
+View – kind of like a container for layout.
+Text – for showing any text.
+Image – to display pictures.
+ScrollView – lets you scroll through content.
+TextInput – for things like forms or search bars.
+These are the basic building blocks you use to put your app together.
+
+Hide Answer
+
+4.
+What is JSX, and how do you use it in React Native?
+JSX is a way to write HTML-like code inside JavaScript. In React Native, you use it to design how your app looks.
+
+For example, instead of writing complicated JavaScript, you can just write:
+
+javascriptCopy
+<Text>Hello!</Text>
+It makes your code easier to read and lets you build the UI in a simple, clear way.
+
+Hide Answer
+
+5.
+What are props and state in React Native?
+In React Native, like in React, props and state are key ideas. They help control data and define how components look and act. We can think of them in simple terms: Props (the shorthand for "properties")
+
+Props are similar to settings or inputs, or anything we are passing from a parent component down to a child. We can think of props as data that the child component receives that are read-only and cannot be changed by the child. You can change how a component looks or acts by using props. However, props cannot be changed inside the component.
+
+The state is where a component stores changeable information or data. This can include user inputs or responses from an external server. In contrast to props, state is something that the component actively updates based on the data it should be displaying on the screen. The state is updated using class methods like setState. It can also be updated in functional components with useState and other React hooks.
+
+Hide Answer
+
+6.
+How do you create and import a component in React Native?
+To create a component, you write a function that returns some JSX:
+
+javascriptCopy
+const MyComponent = () => {
+  return <Text>Hello!</Text>;
+};
+To import it into another file, you do:
+
+javascriptCopy
+import MyComponent from './MyComponent';
+Then just call it like this:
+
+javascriptCopy
+<MyComponent />
+Hide Answer
+
+7.
+How can you handle styling and layout in React Native?
+In React Native, you style everything using JavaScript instead of CSS.
+
+You create styles like this:
+
+javascriptCopy
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18,
+    color: 'blue',
+  },
+});
+Then you use it as follows.
+
+javascriptCopy
+<Text style={styles.text}>Hello</Text>
+For layout, React Native uses Flexbox, which helps you arrange everything on the screen.
+
+Hide Answer
+
+8.
+What is the role of Flexbox in React Native?
+Flexbox helps you arrange and align elements on the screen in React Native.
+It makes it easy to control layout, like putting items in a row or column, spacing them out, or centering them. It’s super handy for building clean, responsive designs.
+
+javascriptCopy
+<View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+  <Text>Left</Text>
+  <Text>Right</Text>
+</View>
+This puts two texts side by side with space between them.
+
+Hide Answer
+
+9.
+Do you know the significance of the 'render' method in React Native components?
+The render method is where a component tells React Native what to show on the screen.
+
+It returns the UI elements (JSX) that make up the component’s visible part. Without it, the app wouldn’t know what to display.
+
+javascriptCopy
+class MyComponent extends React.Component {
+  render() {
+    return <Text>Hello!</Text>;
+  }
+}
+The render method tells React Native to show the text “Hello!” on the screen.
+
+Hide Answer
+
+10.
+What is the purpose of the 'key' prop in lists?
+The key prop helps React Native keep track of items in a list.
+
+It makes sure the app updates only the right items when the list changes, which makes things faster and smoother.
+
+javascriptCopy
+{items.map(item => (
+  <Text key={item.id}>{item.name}</Text>
+))}
+Each item gets a unique key so React Native knows which one belongs to what.
+
+Hide Answer
+Why waste time screening?
+Hire expert developers, vetted and ready in 48 hours
+
+Hire now
+Intermediate React Native Interview Questions
+
+1.
+How does React Native handle asynchronous operations?
+React Native handles async tasks using  Promises and async/await, just like regular JavaScript. This lets your app fetch data or load files without freezing the screen.
+
+Example using async/await:
+
+javascriptCopy
+async function fetchData() {
+  try {
+    let myresponse = await fetch('https://api.test.com/data');
+    let mydata = await myresponse.json();
+    console.log(mydata );
+  } catch (error) {
+    console.error(error);
+  }
+}
+Example using Promises:
+
+javascriptCopy
+fetch('https://api.test.com/data')
+  .then(myresponse => myresponse.json())
+  .then(mydata => {
+    console.log(mydata);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+Both programs do the same, but with .then() and .catch() instead of async/await.
+
+Hide Answer
+
+2.
+What is the purpose of the useEffect hook in React Native?
+The useEffect hook lets you run code at certain times, like when a component loads or updates. It’s perfect for fetching data, setting up timers, or cleaning up resources.
+
+javascriptCopy
+useEffect(() => {
+  console.log('Component loaded');
+}, []);
+This runs only once when the component first shows up.
+
+Hide Answer
+
+3.
+What are Touchable components in React Native?
+Touchable components are buttons or areas you can tap or press in your app. They let users interact by touching buttons or links.
+
+javascriptCopy
+<TouchableOpacity onPress={() => alert('Pressed!')}>
+  <Text>Tap me</Text>
+</TouchableOpacity>
+Hide Answer
+
+4.
+How would you differentiate between React Native CLI and Expo?
+React Native CLI is the basic tool that gives you full control, but it needs more setup. For example, you set up everything yourself, like building a car from parts.
+
+Expo is easier to start with. It comes with lots of built-in tools and features, so you can build apps faster without much hassle. For example, it’s like getting a car that’s already built. You can start driving right away, but you can’t change everything behind the scenes.
+
+But Expo can be a bit limited if you want to do customisations.
+
+Hide Answer
+
+5.
+How do you handle platform-specific code or styling in React Native?
+In React Native, you can handle platform differences by:
+
+Writing separate files like Component.ios.js and Component.android.js that load automatically.
+Using the Platform from React Native to check the device and run different code.
+This helps your app work well on both iOS and Android.
+
+Hide Answer
+
+6.
+What is the Context API, and when should you use it in React Native?
+The Context API helps you share data across different parts of your app without passing props down through every component.
+
+Use it when you have info that many parts of your app need, like user info or app settings.
+
+javascriptCopy
+const MyContext = React.createContext();
+function App() {
+  return (
+    <MyContext.Provider value="Hello">
+      <Child />
+    </MyContext.Provider>
+  );
+}
+
+function Child() {
+  const value = React.useContext(MyContext);
+  return <Text>{value}</Text>;
+}
+The Child gets the value “Hello” without props.
+
+Hide Answer
+
+7.
+What are the differences between controlled and uncontrolled components?
+Controlled components have their data managed by React (using state), so you’re in charge of what’s shown.
+
+Uncontrolled components keep their data inside, and you get the value only when you need it.
+
+Controlled is better when you want to keep everything synced and predictable.
+
+Controlled:
+
+javascriptCopy
+// Controlled input: React manages the value
+const [text, setText] = useState('');
+<TextInput value={text} onChangeText={setText} />
+Uncontrolled:
+
+javascriptCopy
+const inputRef = useRef();
+<TextInput ref={inputRef} />
+// Get value later with inputRef.current.value
+Hide Answer
+
+8.
+What performance optimisation techniques can you adopt in React Native?
+To speed up your React Native app, you can:
+
+Use PureComponent or React.memo to avoid unnecessary re-renders.
+Only update components when needed.
+Load images and data lazily (when needed).
+Use FlatList for long lists instead of ScrollView.
+These help your app run smoother and faster.
+
+Hide Answer
+
+9.
+How do you implement animations in React Native?
+In React Native, you can add animations using the Animated API. You create animated values and specify how to change over time, then connect those values to styles or components. It makes your app feel more lively and smooth.
+
+javascriptCopy
+const fadeAnim = useRef(new Animated.Value(0)).current;
+
+useEffect(() => {
+  Animated.timing(fadeAnim, {
+    toValue: 1,
+    duration: 1000,
+    useNativeDriver: true,
+  }).start();
+}, []);
+
+return <Animated.View style={{ opacity: fadeAnim }}><Text>Fade In</Text></Animated.View>;
+Hide Answer
+
+10.
+Do you have an understanding of the role of the useRef hook in React Native?
+The useRef hook lets you keep a value that doesn’t cause re-renders when it changes. It’s great for accessing a component directly or storing info between renders.
+
+javascriptCopy
+const inputRef = useRef();
+<TextInput ref={inputRef} />
+// You can now focus the input like this:
+inputRef.current.focus();
+Hide Answer
+Advanced React Native Interview Questions for Experienced Professionals
+
+1.
+How does the React Native bridge work, and why is it important?
+The React Native bridge connects the JavaScript code with the native parts of the app (like iOS or Android).
+
+It lets them communicate with each other, so your app can use native features while still using JavaScript.
+
+This is important because it helps React Native apps feel fast and work smoothly on different devices.
+
+Hide Answer
+
+2.
+Have you ever faced any challenges or have an idea of the challenges for integrating native modules in React Native? How can you overcome?
+Integrating native modules can be tricky sometimes. You might run into issues like setting up the right environment, dealing with different platforms (iOS vs Android), or making sure the native code and JavaScript sync with each other properly. Sometimes it takes extra work to debug or keep everything in sync.
+
+To handle those challenges, you can follow the official docs carefully. Use libraries that already solve common issues, test on both iOS and Android often, break problems into small parts, and debug step by step. You can even ask the community for help when stuck.
+
+Hide Answer
+
+3.
+How do you handle memory leaks in React Native applications?
+To avoid memory leaks in React Native, you should:
+
+Clean up timers, listeners, or subscriptions when a component unmounts.
+Use useEffect cleanup functions to remove them.
+Avoid keeping big data or references around longer than needed.
+javascriptCopy
+useEffect(() => {
+  const timer = setInterval(() => {
+    console.log('Running');
+  }, 1000);
+
+  return () => clearInterval(timer); // Cleanup when component unmounts
+}, []);
+Hide Answer
+
+4.
+How do you implement deep linking in a React Native app?
+Deep linking lets your app open to a specific screen from a link (like from an email or browser).
+
+In React Native, you can do it using libraries like React Navigation. You set up a linking config and instruct the app what to do when a link is opened.
+It helps users jump straight to the right part of the app.
+
+javascriptCopy
+const linking = {
+  prefixes: ['myapp://'], // The link prefix your app will recognize
+  config: {
+    screens: {
+      Home: 'home',           // myapp://home will go to Home screen
+      Profile: 'user/:id',    // myapp://user/123 will go to Profile with id 123
+    },
+  },
+};
+
+<NavigationContainer linking={linking}>
+  {/* Your stack or tab navigators go here */}
+</NavigationContainer>
+Hide Answer
+
+5.
+How do you test React Native applications?
+We can use Jest for unit tests (testing small bits of code). Use React Native Testing Library to test how components look and behave. Try tools like Detox for testing real user actions on a device or simulator.
+
+Hide Answer
+
+6.
+What is the role of Hermes in React Native, and how does it affect performance?
+Hermes is a JavaScript engine made for React Native. It makes apps start faster, use less memory, and run smoother, especially on Android. So, turning on Hermes can help your app perform better right out of the box.
+
+Hide Answer
+
+7.
+How do you manage app size and reduce bundle size in React Native?
+To keep your app size small in React Native, you can:
+
+Remove unused libraries and code
+Use image compression
+Turn on Hermes (for Android)
+Use code-splitting or lazy loading
+Keep only the features you need
+Hide Answer
+
+8.
+What is the InteractionManager, and how is it used in React Native?
+InteractionManager lets you run code after animations or interactions are done, so the app feels smoother. It’s useful for doing heavy tasks after the user’s actions, like loading data in the background without slowing down the UI.
+
+Hide Answer
+
+9.
+How would we compare Redux, Recoil, Zustand, and Context API for state management in large React Native apps?
+Redux
+
+Redux keeps our app’s state in one place and makes it easy to follow. It’s great for big, complex apps. It has strong tools to help us debug. But setting it up takes time and a lot of extra code. We can use it when we have structured data and want clear control.
+
+Recoil
+
+Recoil’s pretty easy to get started with, especially if we already know React. It works great with functional components, and handling async state feels simple. It breaks our state into little pieces called atoms. Since it’s still pretty new, there aren’t tons of tutorials yet. But if our app has a tricky UI state, Recoil can help.
+
+Zustand
+
+Zustand is small, fast, and simple. We don’t need extra setup or providers. It’s good for smaller apps or teams who want fast performance without extra work. It keeps some of Redux’s benefits but is easier to use.
+
+Context API
+
+Context API comes built into React and needs no setup. It’s good for simple, global info like themes. But it’s not good when our app state changes a lot, because it re-renders everything each time. Use it only for simple global values.
+
+Hide Answer
+
+10.
+How do you secure sensitive data in a React Native application?
+To keep sensitive data safe in React Native, use secure storage tools like Keychain or SecureStore instead of regular storage.
+
+Also, avoid saving passwords or personal info in plain text, and always use encrypted connections for data. This way, our users’ info stays protected.
+
+Hide Answer
+We’ve gathered key React Native questions, from basics like components and navigation to advanced topics like performance optimization and native module integration. If you want to cut down the time it takes to find the right React Native developer, WAC can help you hire skilled React Native developers quickly. And if you’re looking for a new job, don’t forget to check out our careers page.
+
+Top React Native Interview Questions and Answers
 
 by Agnieszka Łobocka
 
