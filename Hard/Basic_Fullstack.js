@@ -1,3 +1,123 @@
+2 Effective Interview Questions to Ask Your Full-Stack Developer Candidates
+July 20, 2023 • Interviewing
+
+By Ken Swearengen
+
+
+As companies seek to secure top tech talent, the quest for accomplished full-stack developers can be filled with the anticipation of finding your next great teammate, but too often, it’s difficult to assess – or even find – the right candidate.
+
+🤯 According to the 2023 State of Tech Hiring survey, not only are back-end developers THE most in-demand job role recruiters are looking to fill, but they also anticipate those positions will be THE most difficult to fill. 
+
+That means you’ll spend more time and money trying to fill these roles. If you don’t want that time and money wasted, you’ll want to ensure you’re hiring the right full-stack developer for your company. The worst thing you can do for your full-stack developer hiring process is to have to repeat it over and over and over again – not exactly a wise use of time and resources.
+
+So if you’re going to hire the right full-stack developer, you need to assess the right full-stack skills.
+
+Most apparent is the need to test their front AND backend skills. Depending on your hiring situation, this may be for a specific stack — like MERN or LAMP — or for more general full-stack skills, like transmitting form input to a database or making API calls to data-enriching microservices. 
+
+Equally important – depending on your company’s applications, databases, and web storage, HTTP/Rest protocols and an understanding of web application architecture are equally important. 
+
+One of the best ways to assess these essential skills in your potential employees is by conducting a collaborative coding exercise with them in a realistic environment. That means creating great technical interview questions is a vital part of the interview process that you should put particular emphasis on. 
+
+In this post, we’ll explore two full-stack interview questions that you can use to assess your candidates. While we have it preset in specific programming languages, you can adapt it to suit your own technical stack or needs – the concepts are general enough that the exact stack doesn’t matter.
+
+Question 1: Node/React full stack TODO app with optimistic updates
+This question will examine candidates’ ability to work on the front-end and back-end of an application, their ability to think about client-side caching and data management, and how to handle optimistic mutations in an application that interacts with an API. It is broken into two parts – you can have the more senior candidates complete both; for more junior candidates, you can use the second part as a bonus or stretch goal.
+
+Part 1 instructions:
+
+The functionality to add todos and mark them as completed or uncompleted already exists. Your task is to implement the ability to update the “description” field of a given todo in the database.
+
+Part 2 instructions:
+
+Next, implement optimistic updates for updating the “completed” and “description” fields for a given todo. 
+
+When a user creates a todo, toggles a todo completeness, or updates a todo description, those updates should be made immediately in the frontend of the application, before the updates are saved in the database. 
+
+If the API responds with a success status, then the frontend updates are allowed to persist. If the API responds with an error status, the frontend update must be reverted.
+
+Example:
+
+1. Todo with id 2 is marked as completed. The frontend immediately shows that todo as complete, despite the change having not been persisted in the database.
+
+2. The API responds with a 500 because todo 2 could not be saved.
+
+3. The frontend must now revert the change to todo 2 and show it as incomplete.
+
+Assessing the candidate’s response
+The following demonstrates some of the assessment criteria you could use for this question:
+
+Part 1
+
+This portion of the exercise will evaluate the candidate’s basic ability to navigate both the frontend and backend of a codebase. They will need to add/update an API endpoint to be able to update the description field of a todo.
+
+This will likely manifest itself as an update to the `api/patch` handler to support a description field update, followed by adding the updates to the frontend.
+
+Things to watch for or inquire about:
+
+– Can a completed todo’s description be updated?
+
+– What should the UI treatment for editing a todo’s description be? Inline text field?
+
+Part 2
+
+The second part of the question will explore a more complex topic: optimistic updates. There are many areas of interest in this part of the exercise:
+
+– How will the state of the frontend application need to change to support immediate updates, but also be able to revert them?
+
+– Where does the previous version of the todo state live while the update is still pending?
+
+– What if there are several optimistic updates stacked together, how do you handle accepting or reverting each of them? For instance, an update to the description of a todo from “eat” to “sleep” is issued, then another update from “sleep” to “drink” is issued. The API rejects the first update, but accepts the second update. How do you ensure that the correct state for the todo is shown in the app?
+
+
+Question 2: Improve this full-stack MineSweeper game
+This fun interview question allows you to analyze a candidate’s ability to troubleshoot and enhance a UI and to work with databases that manage a user’s progress.
+
+It’s broken into three parts, each a little more complex than the previous one – so it’s a great one to use if you’re looking for full-stack developers of multiple skill levels. You can have junior developers focus primarily on the first part and have the other two be “stretch goals.” 
+
+Alternatively, you can have your senior developer candidates work on all three parts to see how they work with a more in-depth development task.
+
+Part 1 instructions:
+
+Welcome to my game, created with NodeJS and React.
+
+To test it, go to the “Program Output” tab, click “Start a new game”, then click on a tile to reveal it. Try to avoid mines!
+
+All the games and their current states are saved in the database. So you can start multiple games and play them in any order you like.
+
+However, the game engine lacks a cool feature. When you click on a tile which is marked with a “0”, you have to manually click all the tiles around. The original MineSweeper game would automatically reveal these tiles, as they are not dangerous. This automatic reveal could also trigger more automatic reveals, if some tiles are also marked as “0”, and so on.
+
+Two Minesweeper boards. On the left is a full board that says "click once". In the middle is an arrow that has a label that says "automatically reveal the "0" tiles". On the right is a minesweeper board that has some tiles revealed. 
+Would you implement this feature for me, please?
+
+Part 2 instructions:
+
+This application is (quite) secure. The mines’ positions are known only by the server. When the player clicks on a tile, a request is sent to the server, which answers only what is necessary:
+
+A boolean telling if the tile has a mine,
+The number of mines around the tile.
+The problem is that the server may have to send more data, because multiple tiles may be revealed on a single click.
+
+Here are the first tasks you have to do:
+
+On the client side, find the code that is executed when the player clicks on a tile. It is split in two places: the React component defining the user interface, and the client API.
+On the server side, find the code that reveals a tile and sends the response to the client. It is in the server API.
+Determine the current structure of the data exchanged between the client and the server.
+Decide on a new structure. It could be, for example, a boolean telling if there is a mine and a list of revealed tiles. This list could contain objects with coordinates (x, y) and the number of mines around it.
+Adapt all the code parts previously identified, so that they handle this new data structure.
+Modify the server-side code to automatically reveal the tiles which have 0 mines around. You may have to do a little recursivity, or store the tiles to process in a list, because the revealed tiles may propagate.
+Part 3 instructions:
+
+Oh… One last thing. There are some “security flaws” in the code. You can cheat and get some clues on the bomb positions, without revealing the tiles. Even if we consider a real situation where you would be only on the client side. Can you find these flaws?
+
+Assessing the candidate’s response
+You’ll have your own criteria of what to look for in a full-stack developer, but here are some things we recommend looking out for when you’re using this question to assess your candidates:
+
+Is the candidate using comments to show their understanding of the code or to document how their code works?
+Is the candidate testing their code? Are they writing test cases for them? Or perhaps they’re taking an iterative coding approach – writing sections of code and then testing its functionality as they go?
+Are they able to follow a systematic debugging approach?
+Is the candidate accurately understanding how the front-end and back-end services communicate with one another?
+Are they following best design practices with their front-end implementation?
+
 The Most Useful Guide To Easily Ace the Full Stack Developer Interview Questions
 
 The IT industry is succeeding and has reached the zenith with experienced engineers and developers. Out of them, full-stack developers have gained a sudden hype as the most demanded professionals in the industry. So, out of the 5 technical pros, 4 are pursuing different certifications to crack the full stack developer interview questions. Therefore, it is not surprising that getting into the field as a demanding full-stack developer is quite challenging.
