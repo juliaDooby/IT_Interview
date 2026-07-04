@@ -1,3 +1,1049 @@
+55 Best TypeScript Interview Questions and Answers - JavaScript!
+What Is TypeScript?
+By definition, "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript."
+
+TypeScript is a superset of JavaScript which provides optional static typing, classes and interfaces.
+
+=> The TypeScript was first made public in the year 2012.
+=> Typescript is a modern age JavaScript development language.
+=> TypeScript is a strongly typed, object oriented, compiled language.
+=> TypeScript was designed by Anders Hejlsberg (designer of C#) at Microsoft.
+=> TypeScript is both a language and a set of tools.
+
+As an Example of TypeScript,
+
+class Hello {
+    msg: string;
+    constructor (message: string) {
+        this.msg = message;
+    }
+ 
+    getMsg() {
+        return "Hello, " + this.msg;
+    }
+}
+
+TypeScript introduced a great deal of syntax taken from object-oriented programming, including but not limited to:
+
+1) Interfaces
+2) Classes
+3) Enumerated types
+4) Generics
+5) Modules
+
+
+What Are the Features of TypeScript?
+
+1) Maintainability
+2) Offered great productivity for developers
+3) Code navigation and bug prevention
+4) Code 'discoverability' & refactoring
+5) Optional Static Type Annotation
+6) Additional Features for Functions
+7) Supports ES6
+8) TypeScript supports other JS libraries.
+9) Supports interfaces, sub-interfaces, classes, and subclasses
+10) Scalable HTML5 client-side development
+11) Rich IDE available with autocomplete and code navigation features.
+12) Class-based object-oriented with the inheritance of private members and interfaces
+13) Typescript is a powerful type system, including generics & JS features
+14) Static Typing
+
+
+Why should you use TypeScript? 
+What Are the Benefits of Using TypeScript?
+1.     Supports Object Oriented Programming.
+2.     Typescript adds static typing to JavaScript. Having static typing makes easier to develop and maintain complex apps.
+3.     Angular uses TypeScript a lot to simplify relations between various components and how the framework is built in general.
+4.     Provide an optional type system for JavaScript.
+5.     Provide planned features from future JavaScript editions to current JavaScript engines.
+6.     Supports type definitions.
+7.    Increased team performance.
+8.   Rich IDE support with autocomplete and code navigation features.
+9.   Module support
+
+List of some other Advantages,
+1.     It is purely object-oriented programming.
+2.     It is support static type-checking.
+3.     It can be used for client-side and server-side development.
+4.     Build-in Support for JavaScript Packaging
+5.     It offers a “compiler” that can convert to JavaScript-equivalent code.
+6.     It has an API for DOM manipulation.
+7.     It has a namespace concept by defining a “Module”.
+8.     Superset of JavaScript
+9.     ES6 features support
+
+What Are the Disadvantages of TypeScript?
+=> Overly complicated typing system
+=> Required compilation
+=> False sense of security
+=> Compilation can be time-consuming
+=> If you are developing very large enterprise software, every compilation step increases the time to build
+What Is other strictly typed languages that compile to JavaScript?
+=> Kotlin has an official JavaScript compilation solution.
+=> Rust may work on the frontend; however, it doesn’t compile directly to JavaScript, but rather WebAssembly. This WebAssembly code can then be combined and used together with JavaScript code.
+=> Go can be effectively compiled to JavaScript—via an unofficial tool called GopherJS—or to WebAssembly, much like Rust.
+=> Elm and Reason were designed for JavaScript compilation.
+=> Bridge.NET (C#)
+=> Cheerp (C++)
+=> Dart
+=> GopherJS (Go)
+=> Haxe
+=> JSweet (Java)
+=> Scala.js (Scala)
+
+What Are the Filename extensions of TypeScript?
+The TypeScript filename extensions are,
+ => .ts
+ => .tsx
+
+What Are difference between JavaScript and TypeScript?
+TypeScript design and developed by Anders Hejlsberg at Microsoft.
+JavaScript - Brendan Eich at Netscape communications corporation, Mozilla Foundation, ECMA International.
+
+=> TypeScript has a feature known as Static typing but JavaScript does not have this feature.
+=> The file extension of TypeScript are (.ts/.tsx) while the file extension of JavaScript is (.js)
+=> TypeScript has Interface but JavaScript does not have Interface.
+=> TypeScript specially used in client-side but JavaScript use both client-side and server-side.
+=> TypeScript support optional parameters function but JavaScript does not support the optional parameters function.
+=> TypeScript is a heavy weighted an interpreted programming language but JavaScript is a light weighted.
+
+What Is TypeScript Types?
+The Type represents the different types of values which are using in the programming languages and it checks the validity of the supplied values before they are manipulated by your programs.
+
+The TypeScript provides data types as a part of its optional type and its provide us some primitive types as well as a dynamic type “any” and this “any” work like “dynamic”.
+
+
+In TypeScript, we define a variable with a “type” and appending the “variable name” with “colon” followed by the type name.
+
+Lets understand in detail about the same,
+
+let isActive: boolean = false;
+var isActive: boolean = false;
+
+let decimal: number = 6;
+var decimal: number = 6;
+
+let hex: number = 0xf00d;
+var hex: number = 0xf00d;
+
+let name: string = "Anil Singh";
+var name: string = "Anil Singh";
+
+let binary: number = 0b1010;
+var binary: number = 0b1010;
+
+let octal: number = 0o744;
+var octal: number = 0o744;
+
+let numlist: number[] = [1, 2, 3];
+var numlist: number[] = [1, 2, 3];
+
+let arrlist: Array<number> = [1, 2, 3];
+var arrlist: Array<number> = [1, 2, 3];
+
+//Any Keyword
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+
+//Any Keyword
+let notSureType: any = 10;
+notSureType = "maybe a string instead";
+
+notSureType = false; // definitely a Boolean
+
+Number: the “number” is a primitive number type in TypeScript. There is no different type for float or double in TypeScript.
+
+Boolean: The “boolean” type represents true or false condition.
+
+String: The “string” represents sequence of characters similar to C#.
+
+Null: The “null” is a special type which assigns null value to a variable.
+
+Undefined: The “undefined” is also a special type and can be assigned to any variable.
+
+Any : this data type is the super type of all types in TypeScript. It is also known as dynamic type and using “any” type is equivalent to opting out of type checking for a variable.
+
+
+A note about “let” keyword –
+
+You may have noticed that, I am using the “let” keyword instead of “var” keyword. The “let” keyword is actually a newer JavaScript construct that TypeScript makes available. Actually, many common problems in JavaScript are reducing by using “let” keyword. So we should use “let” keyword instead of “var” keyword.
+
+How To Setup and Install TypeScript?
+Two main ways to Installing the TypeScript,
+
+1.     Installing using npm
+2.     Installing TypeScript’s Visual Studio plugins
+
+
+In the Visual Studio 2017 and the above, the TypeScript include by default. If you don’t have TypeScript with Visual Studio, try for NPM users,
+
+> npm install -g typescript
+
+
+As an Example 1,
+
+class Users {
+    userName: string;
+    constructor (name: string) {
+        this.userName = name;
+    }
+    getUserName() {
+        return "Hello, " + this.userName;
+    }
+}
+
+As an Example 2,
+
+class Users {
+    private firstName: string;
+    private lastName: string;
+
+    //Constructor           
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+   
+    //Function
+    studentFullName(): void {
+        alert(this.firstName + ' ' + this.lastName);
+    }
+
+}
+
+What is Variable in TypeScript?
+How to Declare Variable in TypeScript?
+The variable is simply a name of storage location and all variables must be identified with unique names and these unique names are called identifiers.
+
+Note – I am using the “let” keyword instead of “var” keyword. The “let” keyword is actually a newer JavaScript construct that TypeScript makes available. Actually, many common problems in JavaScript are reducing by using “let” keyword. So we should use “let” keyword instead of “var” keyword.
+
+A variable contains values such as "Hi" or 22. When you use the variable, you refer to the data it represents.
+
+As an Example –
+
+let name: string = "Hi"; //var name: string = "Anil Singh";
+let num: number = 22; //var num: number = 22;
+
+https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZ9xBsQW9eWrNS76P_ThKKK-Wr8LSpPFs89Fcs7AbXrGR5DuxERUXZMFI_FCBj4Ynb_Gr5jkkculIUXx9mJJZS_-tpibMa6tO7UX0zzj4kobZqgHs25bI1Cvl87QnhdLcqc_O7NNt0V74m/s320/TypeScript+Variable+Declarations.jpg
+
+There are some rules while declaring variables,
+
+1.     The variable names must begin with a letter
+2.     The variable names can contain letters, digits, underscores, and dollar signs.
+3.     The variable names can also begin with “$” and “_”
+4.     The variable names are case sensitive that means “a” and “A” are different variables.
+5.     The variable reserved words can’t be used as names.
+
+
+Declaring Variables,
+let isActive: boolean = false;
+let decimal: number = 6;
+let hex: number = 0xf00d;
+let name: string = "Anil Singh";
+let binary: number = 0b1010;
+let octal: number = 0o744;
+let numlist: number[] = [1, 2, 3];
+let arrlist: Array<number> = [1, 2, 3];
+
+//Any Keyword
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+
+//Any Keyword
+let notSureType: any = 10;
+notSureType = "maybe a string instead";
+notSureType = false; // definitely a Boolean
+
+
+The “var” creates a new variable. The “declare” is used to tell TypeScript that the variable has been created elsewhere. If you use declare, nothing is added to the JavaScript that is generated. It is simply a hint to the compiler.
+
+
+What Is scope variable?
+The scope is set of objects, variables and function and the JavaScript can have global scope variable and local scope variable.
+
+We can say, we can declare a variable in the two type’s i.e.
+1.     Local Scope Variable
+2.     Global Scope Variable
+
+
+Global Scope Variable - The global scope is a window object and it’s used out of function and within the functions.
+
+Local Scope Variable - The local scope is a function object and it’s used within the functions.
+
+
+Example for global and local variable (var/let) declarations –
+
+//DECLARED A VARIABLE NAMED NUM WITH THE VALUE 15.
+let num = 15;
+
+//DECLARE A VARIABLE INSIDE OF A FUNCTION
+let getUser = function () {
+    let name = 'Anil Singh';
+
+    return name;
+}
+
+//RESULTS
+getUser(); // returns 'Anil Singh'
+
+//ACCESS THOSE SAME VARIABLES WITHIN OTHER FUNCTIONS
+let sum = function() {
+    let num = 15;
+
+    return function subNum () {
+        return num + 5;
+    }
+}
+
+//RESULTS
+sum(); // returns 20
+
+//SCOPING RULES
+let scopingRulesSum = function(isActive: boolean) {
+    if (isActive) {
+        let num = 15;
+        num = num + 1;
+    }
+
+    return num;
+}
+
+//RESULTS
+scopingRulesSum(true);  // returns 16
+scopingRulesSum(false); // returns 'undefined'
+
+//IN THE JAVASCRIPT, WE WILL DECLARE MULTIPLE VARIABLES WITH THE SAME NAME.
+//IN JAVASCRIPT, NO MATTER HOW MANY TIMES YOU DECLARED YOUR VARIABLES.
+//WE CAN SAY THIS IS A BUG.
+var fun = function (i, isActive = true) {
+    var i;
+    var i;
+
+    if (isActive) {
+        var i;
+    }
+    //The all declarations of 'i' actually refer to the same 'i'.
+}
+
+//IN THE TYPESCRIPT, NOT POBISBLE TO DECLARE MULTIPLE VARIABLES WITH THE SAME NAME
+//IT WILL GIVE US ERROR (ERROR: CAN'T RE-DECLARE 'I' IN THE SAME SCOPE).
+let i = 15;
+let i = 20; // error: can't re-declare variable 'i' in the same scope.
+
+What Is an Interface in TypeScript?
+An interface in TypeScript is similar to other object oriented programming languages interfaces.
+An interface is a way to define a contract on a function with respect to the arguments.
+
+
+In the below example, I am using an interface that describes objects that have a “name”, “age” and “address” fields and the following code defines an interface and a function that takes a parameter that adheres to that interface.
+
+As an Example,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address: string
+}
+
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30,
+    address: "Noida, India."
+};
+
+//RESULT
+console.log(userInfo(info));
+
+
+What is Optional Properties in TypeScript?
+
+We can specify optional properties on interfaces and the property may be present or missing in the object.
+
+In the below example, the address property is optional on the following “User” interface.
+
+Example as,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address?: string //Optional
+}
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30
+};
+
+//RESULT
+console.log(userInfo(info));
+
+What Is the Functions in TypeScript?
+How many types you defined in TypeScript?
+A function is a set of statements that perform a specific task and used to create readable, maintainable and re-usable code.
+
+A function declaration tells to compiler about a function name, return type, and parameters.
+
+TypeScript functions are almost similar to JavaScript functions but there are different ways of writing functions in TypeScript.
+
+The Different Types of Available Functions in TypeScript are-
+
+1.     Normal function
+2.     Anonymous Function
+3.     Named Function
+4.     Lambda Function/Arrow Function
+5.     Class Function
+6.     Optional Parameters
+7.     Rest Parameters
+8.     Default Parameters
+
+
+Anonymous Functions–
+An anonymous function is a function that was declared without any named identifier to refer to it.
+
+As an Example - Normal function
+function printHello() {
+    console.log('Hello Anil!');
+}
+
+printHello();
+
+
+As an Example - Anonymous function
+
+In the JavaScript –
+
+var hello = function () {
+    console.log('Hello Anil!, I am Anonymous.');
+};
+
+hello();//Return - Hello Anil!, I am Anonymous.
+
+OR
+
+setTimeout(function () {
+    console.log('Hello Anil!, I am Anonymous.');
+}, 1000); //Return - Hello Anil!, I am Anonymous.
+
+
+In the TypeScript–
+var anonymousFunc = function (num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+//RESULT
+console.log(anonymousFunc(10, 20)); //Return is 30
+
+//RESULT
+console.log(anonymousFunc(10, "xyz"));
+// error: Argument of type 'number' is not assignable to parameter of type 'string'.
+//because return type is number for anonymous function).
+
+
+Named Function -
+The named function is very similar to the JavaScript function and only one difference - we must declare the type on the passed parameters.
+
+
+As an Example – In the JavaScript
+function addTwoNumer(num1, num2) {
+    return num1 + num2;
+}
+
+
+As an Example – In the TypeScript
+function addTwoNumer(num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+
+Lambda Function/Arrow Function -
+The arrow function is additional feature in typescript and it is also known as a lambda function. A lambda function is a function without a name.
+
+var addNum = (n1: number, n2: number) => n1 + n2;
+
+In the above, the “=>” is a lambda operator and (n1 + n2) is the body of the function and (n1: number, n2: number) are inline parameters.
+
+As an Example –
+
+let addNum = (n1: number, n2: number): number => { return n1 + n2; }
+let multiNum = (n1: number, n2: number): number => { return n1 * n2; }
+let dividNum = (n1: number, n2: number): number => { return n1 / n2; }
+
+addNum(10, 2);// Result - 12
+multiNum(10, 2);// Result - 20
+multiNum(10, 2);// Result - 5
+
+
+Optional Parameters Function -
+We can specify optional properties on interfaces and the property may be present or missing in the object.
+
+In the below example, the address property is optional on the following “User” interface.
+
+As an Example,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address?: string //Optional
+}
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30
+};
+
+//RESULT
+console.log(userInfo(info));
+
+
+Rest Parameters –
+The Rest parameters do not restrict the number of values that we can pass to a function and the passed values must be the same type otherwise throw the error.
+
+Example as,
+//Rest Parameters
+let addNumbers = function(...nums: number[]) {
+    let p;
+    let sum: number = 0;
+
+    for (p = 0; p < nums.length; p++) {
+        sum = sum + nums[p];
+    }
+
+    return sum;
+}
+
+//The Result
+addNumbers(1, 2);
+addNumbers(1, 2, 3);
+addNumbers(1, 12, 10, 18, 17);
+
+
+Default Parameters Function –
+
+What Is the Default Parameters Function in TypeScript?
+Function parameters can also be assigned values by default. A parameter can't be declared as optional and default both at the same time.
+
+In the below example, rate is a default param as number in discount function. If we pass the value in the discount’s rate param, it will use this otherwise use default value 0.40.
+
+See the Example and its Output result,
+
+let discount = function (price: number, rate: number = 0.40) {
+    return price * rate;
+}
+
+//CALCULATE DISCOUNT
+discount(500); // Result - 200
+
+//CALCULATE DISCOUNT
+discount(500, 0.45); // Result - 225
+
+How to create fields, constructor and function in TypeScript Class?
+What is class in TypeScript?
+
+A class is a template definition of the methods and variables in a particular kind of object. It is extensible program, code and template for creating objects.
+
+A TypeScript is object oriented JavaScript and it also supports object oriented programming features like classes, interfaces, etc.
+
+A class captains the Public, Private, Protected and Read-only modifiers and Public by default.
+You can see the below example, the class User and each members are public by default.
+
+A class definition can contains the following –
+1.     Fields
+2.     Constructors
+3.     Functions
+
+
+As an Example – Use of class field, constructor and function,
+// A simple class based example.
+class User { // Calss
+    name: string; //field
+    constructor(nameTxt: string) { //constructor
+        this.name = nameTxt;
+    }
+
+    getName() {//function
+        return "Hello, " + this.name;
+    }
+}
+
+let user = new User("Anil");//Creating Instance objects
+
+
+How Static class in typescript?
+We can define a class with static properties.
+
+As an Example,
+export class Constants {
+    static baseUrl = ‘http://localhost:8080/’;
+    static date = new Date();
+}
+
+Ways to declare a nest class structure in typescript?
+See the following example to understand the declare a nest class structure,
+//Example 1
+declare module a{
+
+    class b {
+    }
+
+    module b {
+        class c {
+        }
+    }
+}
+
+var clB = new a.b();
+var clC = new a.b.c();
+
+//Example 2
+export module a {
+    export class b {
+    }
+
+    export module b {
+        export enum c {
+            C1 = 1,
+            C2 = 2,
+            C3 = 3,
+        }
+    }
+}
+
+//Example 3
+class A {
+    static B = class { }
+}
+
+var a = new A();
+
+var b = new A.B();
+
+What Is Public, Private, Protected and Readonly Modifiers in TypeScript?
+The TypeScript supports to multiple modifiers and it is by default public.
+·       Public,
+·       Private,
+·       Protected and
+·       Read-only
+
+
+Public Modifier – Public by default! It is freely access anywhere.
+In the below example, the class Employee and its members are by default public and we are freely access it.
+As an Example -
+class Employee {
+    empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let empSal = new Employee("Anil");
+console.log(empSal.salary());
+console.log(empSal.salary(40000));
+
+Private Modifier -When using private modifier, we can’t be accessed from outside of its containing class.
+As an Example,
+class Employee {
+    private empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let emp = new Employee("Anil").empName; 
+//error: property 'empName' is private and only accesible in the class 'Employee'.
+
+Protected Modifier - The protected modifier is very similar to private but only one difference that can be accessed by instances of deriving classes.
+As an Example,
+class Employee {
+    protected  empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+class Employer extends Employee {
+    private department: string;
+ 
+    constructor(empName: string, department: string) {
+        super(empName);
+        this.department = department;
+    }
+ 
+    salary(salary = 20000) {
+        super.salary(salary);
+    }
+}
+ 
+let empSal = new Employer("Anil", "IT");
+console.log(empSal.salary());
+console.log(empSal.empName); //error- the property 'empName' is protected and only accesible within the class 'Employee' and its child class.
+
+Readonly Modifier - Read-only properties must be initialized at their declaration or in the constructor.
+As an example,
+class Employee {
+    readonly empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let emp = new Employee('Anil');
+emp.empName = 'Anil Singh';//error - cannot assign to 'empName' because it is constant or read-only.
+
+
+What Is Method Overriding in TypeScript?
+In the Method Overriding, redefined the base class methods in the derive class or child class.
+
+As an Example,
+
+class NewPrinter extends Printer {
+    doPrint(): any {
+        super.doPrint();
+        console.log("Called Child class.");
+    }
+
+    doInkJetPrint(): any {
+        console.log("Called doInkJetPrint().");
+    }
+}
+
+let printer: new () => NewPrinter;
+printer.doPrint();
+printer.doInkJetPrint();
+
+What Is Inheritance in TypeScript?
+The TypeScript supports the concept of Inheritance.
+
+Inheritance has ability of a program to extend existing classes to create new ones and the extended class is called parent class or super class and the newly created classes are called child class or sub class.
+
+Inheritance can be classified as -
+1.     Single - every class can at the most extend from one parent class
+2.     Multiple - doesn’t support multiple inheritances in TypeScript.
+3.     Multi-level
+
+A class captains the Public, Private, Protected and Read-only modifiers and Public by default.
+You can see the below example, the class User and each members are public by default.
+
+As an Example,
+class Employee {
+    empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+
+class Employer extends Employee {
+    constructor(empName: string) {
+        super(empName);
+    }
+
+    salary(salary = 20000) {
+        super.salary(salary);
+    }
+}
+
+let empSal = new Employee("Anil");
+console.log(empSal.salary());
+console.log(empSal.salary(40000));
+
+What Are the Parameter Property in TypeScript?
+The TypeScript has so many useful features which not have in other programming languages. The TypeScript has an automatic assignment of constructor parameters that is called “Parameter Property”.
+
+It is automatic assignment of constructor parameters to the relevant property. It is great but it is different to other languages.
+
+As an Example, Declaring a class with constructor arguments in C# and other programming language as,
+
+class Customer {
+    _name: string;
+    _age: number;
+    _adrress: string;
+
+    constructor(name: string, age: number, adrress: string) {
+        this.name = _name;
+        this.age = _age;
+        this.adrress = _adrress;
+    }
+}
+
+Declaring a class with constructor arguments in TypeScript –that is called automatic parameter assignment as,
+
+export class Customer {
+    constructor(private name: string, age: number, private adrress: string) { }
+}
+
+You can take a look at this on the JavaScript.
+var Customer = (function () {
+    function Customer(name, age, adrress) {
+        this.name = name;
+        this.age = age;
+        this.adrress = adrress;
+    }
+
+    return Customer;
+})();
+
+
+Public, Private, and Protected modifiers as
+1.     Public - accessible outside of the class
+2.     Private - only accessible in the class only
+3.     Protected - accessible in the class and the derived classes
+
+
+Public modifier by default - When you are not put a modifier (public, private or protected) on your member definition then TypeScript will choose the public by default.
+
+Which access modifiers are implied when not specified?
+Everything in a class is public if not specified. Everything in a module is private unless export keyword is used.
+
+What Is the purpose of the public access modifier for classes in Typescript?
+Your sample code means exactly the same in TypeScript. When you don't put a modifier public, private or protected on your member definition then TypeScript will choose the default one which is public.
+
+What Is a Module in TypeScript? 
+The module system is an interesting feature of TypeScript, the statically typed superset of JavaScript. Modules provide the possibility to group related logic, encapsulate it, structure your code and prevent pollution of the global namespace.
+
+
+What Is an Internal Module in TypeScript? 
+You can define modules within your typescript files and all variables defined within the module are scoped to the module and removed from the global scope.
+
+You can access the variable outside the module using the export keyword and also you can extend internal modules, share them across files, and reference them using the triple slash. 
+
+Syntax - (///) 
+
+The List of TypeScript Modules Are,
+
+1.     Internal Modules
+a.      Implicit Internal Modules
+b.     Named Internal Modules
+2.     External Modules
+3.     Exports Modules
+
+
+Modules are executed within their own scope, not in the global scope.
+1.     Internal modules are now namespaces.
+2.     External modules are now simply modules, as to align with ECMAScript.
+
+What Are The Advantages of Module?
+The list of Advantages Are–
+1.     Code reuse
+2.     Encapsulation
+3.     Scoping of variables
+4.     Support CommonJs
+5.     Easier for testing
+
+What Is Implicit Internal Modules?
+You simply write source code without worrying about modules that is called implicit internal modules.
+
+As an Example,
+class AppGlobal {
+    readonly baseAppUrl: string = 'http://localhost:57431/';
+    readonly baseAPIUrl: string = 'https://api.github.com/';
+};
+
+let baseApiUrl = new AppGlobal().baseAPIUrl;///Returns http://localhost:57431/
+let baseAppUrl = new AppGlobal().baseAppUrl;///Returns https://api.github.com/
+
+What Is Named Internal Modules?
+Internal modules are come in earlier version of the Typescript and it was basically used to logically group classes, interfaces, and functions into one unit and it can be export in another module.
+
+Now this logically group named call “namespace” in latest version of TypeScript. So we can use namespace instead of internal modules in the TypeScript. As per me, this one is the best coding practice but don’t mind the internal modules are also supporting, if you want can use it.
+
+Example using module –
+
+module System.modules {
+
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+          }
+    }
+
+    //this class can only be accessed from inside the module because not using export.
+    class NotExportedClass {
+        mulNumbers(a: number, b: number): number {
+           return a * b;
+        }
+
+        divNumbers(a: number, b: number): number {          
+            return a > 0 ? a / b : 0;
+        }
+    }
+}
+
+Example using namespace –
+
+namespace System.namespaces {
+
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+
+    //this class can only be accessed from inside the module because not using export.
+    class NotExportedClass {
+        mulNumbers(a: number, b: number): number {
+            return a * b;
+        }
+
+        divNumbers(a: number, b: number): number {
+            return a > 0 ? a / b : 0;
+        }
+    }
+}
+
+What Is an Export in TypeScript?
+Why using Export in TypeScript?
+
+Export - Exporting a declaration
+Any variable, function, class or interface can be exported by using the export keyword. After using export keyword, you can access your variable, function, class or interface to outside the module.
+
+As an Example –
+module System.modules {
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module becaues using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+}
+
+//AND
+namespace System.namespaces {
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+}
+
+What Is default export in TypeScript?
+Why using default export in TypeScript?
+
+Default exports – 
+Each module can optionally export a default export and the default exports work with the keyword default and we can use only one default export per module.
+
+As an Example,
+
+export class User {
+    //Todo your logic here..
+}
+
+And then -
+import { User } from "./User";
+
+//OR
+
+//BaseUrl.ts
+export default "http://localhost:57431/Account/Login";
+
+//Login.ts
+import BaseUrl from "../BaseUrl";
+console.log(BaseUrl); //"http://localhost:57431/Account/Login"
+
+What Is External Modules in TypeScript?
+External modules are useful in sense they hide the internal statements of the module definitions and show only the methods and parameters associated to the declared variable.
+
+It is using when dealing with large JavaScript based applications. When we using nodejs or external modules, you can export an entire module and then import it into another module.
+
+As an Example -
+
+// userList.ts file
+// imports the users.ts file as the users module
+import impUser = module('users');
+
+export function userList() {
+    var user = new impUser.users();
+    user.getUsers();
+}
+
+// users.ts file
+// exports the entire module
+export class users {
+    getUsers() {
+         return ["Anil", "Alok", "Dilip"];
+    }
+}
+
+What Is difference between module and namespace in typescript?
+Module is for external packages and the namespace is for internal packages. Actually, the module keyword has been replaced with the namespace keyword.
+
+Namespaces are simply named JavaScript objects in the global namespace.
+Modules can contain both code and declarations. The main difference is that modules declare their dependencies.
+
+The named modules called “namespace” in latest version of TypeScript. So we can use namespace instead of internal modules in the TypeScript.
+
+As per me, this one is the best coding practice but don’t mind the internal modules are also supporting, if you want can use it.
+
+
 Top TypeScript Interview Questions You Must Prepare For
  15 Sep 2025
  Beginner
