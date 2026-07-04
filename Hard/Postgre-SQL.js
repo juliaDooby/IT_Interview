@@ -1,3 +1,308 @@
+PostgreSQL Interview Questions for Developers
+Use our engineer-created questions to interview and hire the most qualified PostgreSQL developers for your organization.
+
+Get a demo
+Back to interview questions
+
+PostgreSQL
+Popular for its ability to handle complex queries and its rich set of features, PostgreSQL is an open-source database management system also known for its strong concurrency control and support for advanced data types.
+
+According to the DB-Engines Ranking, PostgreSQL is the fourth most popular database management system currently in use.
+
+To evaluate the PostgreSQL skills of developers during coding interviews, we’ve provided realistic coding exercises and interview questions below.
+
+Additionally, we’ve outlined a set of best practices to ensure that your interview questions accurately assess the candidates’ PostgreSQL skills.
+
+Table of Contents
+PostgreSQL example question
+Junior PostgreSQL interview questions
+Intermediate PostgreSQL interview questions
+Senior PostgreSQL interview questions
+More PostgreSQL interview resources
+Interview best practices for PostgreSQL roles
+PostgreSQL example question
+Correctly query this employee database
+We have 4 questions that we will walk through together during the interview.
+
+This pad comes with a database attached to it that you can write queries against! We have placed the schema in the database tab in the right-hand pane, while also providing a diagram within the starter code to show the relationships.
+
+Questions:
+1 – Sort the current employees at the company by who has the highest salary
+
+2 – Show all of the employees that worked on the project “Build a cool site”
+
+3 – For the project “Build a cool site”, if an employee was paid on the 1st and the 15th of every month, show how much each employee made for the duration of the project.
+
+4 – No Code Required! Talk us through how you’d break down the data to figure out who was the most valuable employee to the company
+
+
+PostgreSQL skills to assess
+Database design
+SQL query building
+Performance tuning
+Jobs using PostgreSQL
+Database Administrator
+Data Analyst
+Full stack developer
+Business intelligence developer
+Junior PostgreSQL interview questions
+Question: Write a SQL query to retrieve the first name, last name, and salary of all employees in the ‘Sales’ department.
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE department_id = (SELECT id FROM departments WHERE name = 'Sales');
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The above query will retrieve the first name, last name, and salary of all employees who belong to the ‘Sales’ department.
+
+Question: What is normalization in database design and why is it important?
+
+Answer: Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It is important because it helps to ensure that data is consistent and accurate, which in turn helps to improve the efficiency of the database and reduce errors.
+
+Question: Write a SQL query to retrieve the names of all employees who are working on a project with a budget of more than $100,000.
+
+SELECT e.first_name, e.last_name
+FROM employees e
+JOIN employees_projects ep ON e.id = ep.employee_id
+JOIN projects p ON ep.project_id = p.id
+WHERE p.budget > 100000;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The above query will retrieve the names of all employees who are working on a project with a budget of more than $100,000.
+
+Question: What is a primary key in a database table and why is it important?
+
+Answer: A primary key is a unique identifier for each row in a database table. It is important because it allows for efficient retrieval of data, helps to ensure data integrity, and allows for the creation of relationships between tables.
+
+Question: Write a SQL query to retrieve the names of all employees who are not working on any project.
+
+SELECT first_name, last_name
+FROM employees
+WHERE id NOT IN (SELECT employee_id FROM employees_projects);
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The above query will retrieve the names of all employees who are not working on any project.
+
+Question: What is an index in a database and why is it important?
+
+Answer: An index is a data structure that allows for efficient retrieval of data from a database table. It is important because it can significantly improve the performance of database queries, particularly when dealing with large datasets.
+
+Question: Write a SQL query to retrieve the names of all employees who are working on a project that started before January 1, 2022 and ended after December 31, 2022.
+
+SELECT e.first_name, e.last_name
+FROM employees e
+JOIN employees_projects ep ON e.id = ep.employee_id
+JOIN projects p ON ep.project_id = p.id
+WHERE p.start_date < '2022-01-01' AND p.end_date > '2022-12-31';
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The above query will retrieve the names of all employees who are working on a project that started before January 1, 2022, and ended after December 31, 2022.
+
+Question: What is a foreign key in a database table and how does it relate to other tables?
+
+Answer: A foreign key is a field in a database table that refers to the primary key of another table. It is used to establish relationships between tables and ensure data integrity by enforcing referential integrity constraints.
+
+Question: Write a SQL query to retrieve the names of all employees who are working on more than one project.
+
+SELECT first_name, last_name
+FROM employees
+WHERE id IN (SELECT employee_id FROM employees_projects GROUP BY employee_id HAVING COUNT(*) > 1);
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The above query will retrieve the names of all employees who are working on more than one project.
+
+Question: What is a transaction in a database and why is it important?
+
+Answer: A transaction is a sequence of database operations that are performed as a single unit of work. It is important because it helps to ensure data consistency and integrity, even in the face of unexpected events such as system failures or network disruptions. Transactions allow for multiple operations to be treated as a single unit, ensuring that all of the changes are either committed together or rolled back together if an error occurs. This helps to ensure that data is always in a valid state and that the database remains consistent.
+
+Intermediate PostgreSQL interview questions
+Question: Write a query to display the total salary of employees in each department.
+
+SELECT SUM(salary), department_id FROM employees GROUP BY department_id;
+Code language: SQL (Structured Query Language) (sql)
+Question: What is a subquery in PostgreSQL and how is it used?
+
+A subquery is a query that is nested within another query. It is used to retrieve data that will be used in the main query’s WHERE clause to further restrict the data that is retrieved. Subqueries can also be used in the SELECT clause, FROM clause, or HAVING clause to calculate values or retrieve data.
+
+Question: Write a query to find the titles of all projects that have at least one employee assigned to them.
+
+SELECT title FROM projects JOIN employees_projects ON projects.id = employees_projects.project_id;
+Code language: SQL (Structured Query Language) (sql)
+Question: What is the purpose of the EXPLAIN command in PostgreSQL?
+
+The EXPLAIN command in PostgreSQL is used to analyze how a query will be executed by the PostgreSQL query planner. It returns a query plan that shows the sequence of operations that will be performed by the query planner to retrieve the data. This information can be used to optimize the performance of the query by identifying which parts of the query are taking the most time to execute.
+
+Question: Write a query to find the names of all employees who have worked on a project with a budget greater than $100,000.
+
+SELECT first_name, last_name FROM employees JOIN employees_projects ON employees.id = employees_projects.employee_id JOIN projects ON projects.id = employees_projects.project_id WHERE projects.budget > 100000;
+Code language: SQL (Structured Query Language) (sql)
+Question: What is a trigger in PostgreSQL and how is it used?
+
+A trigger in PostgreSQL is a special kind of function that is automatically executed in response to certain events, such as a change to a table’s data. Triggers can be used to enforce business rules, such as validating data before it is inserted into a table, or to maintain data integrity by automatically updating related tables when data in one table is modified.
+
+Question: Write a query to find the average salary of employees in each department, sorted by department name in ascending order.
+
+SELECT AVG(salary), departments.name FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY department_id ORDER BY departments.name ASC;
+Code language: SQL (Structured Query Language) (sql)
+Question: What is a materialized view in PostgreSQL and how is it different from a regular view?
+
+A materialized view in PostgreSQL is a view that stores the results of a query as a physical table. Unlike a regular view, which is just a saved query that is executed each time it is accessed, a materialized view’s results are stored in the database and can be accessed quickly without having to execute the underlying query each time. Materialized views can be refreshed manually or automatically on a schedule.
+
+Question: Write a query to find the number of employees who have worked on each project.
+
+SELECT COUNT(employee_id), project_id FROM employees_projects GROUP BY project_id;
+Question: What is a window function in PostgreSQL and how is it used?
+
+A window function in PostgreSQL is a special kind of function that operates on a set of rows, called a window, within a result set. Window functions are used to perform calculations that require access to multiple rows in a result set, such as running totals or moving averages. Window functions can be used in SELECT, ORDER BY, and HAVING clauses, and can also be used to partition the result set into subsets based on one or more columns.
+
+Senior PostgreSQL interview questions
+Question: The following function is intended to return a table of all employees who earn a salary greater than the average salary in their department. However, the query fail with an error “column reference ‘department_id’ in the subquery is ambiguous”. How can it be fixed?
+
+CREATE FUNCTION get_high_earners() RETURNS TABLE (
+ id INT,
+ first_name VARCHAR,
+ last_name VARCHAR,
+ salary INT,
+ department_id INT
+) AS $$
+BEGIN
+ RETURN QUERY SELECT e.id, e.first_name, e.last_name, e.salary, e.department_id
+              FROM employees e
+              JOIN (SELECT department_id, AVG(salary) AS avg_salary
+                    FROM employees
+                    GROUP BY department_id) d
+              ON e.department_id = d.department_id
+              WHERE e.salary > d.avg_salary;
+END;
+$$ LANGUAGE plpgsql;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The issue is that the subquery that calculates the average salary is missing an alias to the table “employees”. This alias must be used for all the subquery fields: department_id and salary. Here is the fixed code.
+
+CREATE FUNCTION get_high_earners() RETURNS TABLE (
+ id INT,
+ first_name VARCHAR,
+ last_name VARCHAR,
+ salary INT,
+ department_id INT
+) AS $$
+BEGIN
+ RETURN QUERY SELECT e.id, e.first_name, e.last_name, e.salary, e.department_id
+              FROM employees e
+              JOIN (SELECT e2.department_id, AVG(e2.salary) AS avg_salary
+                    FROM employees e2
+                    GROUP BY e2.department_id) d
+              ON e.department_id = d.department_id
+              WHERE e.salary > d.avg_salary;
+END;
+$$ LANGUAGE plpgsql;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Question: What are indexes in PostgreSQL and how can they improve query performance?
+
+Answer: Indexes are database structures that are used to speed up the process of querying data. An index is essentially a data structure that contains a subset of the data in a table and provides a quick way to look up data based on a particular value. By creating an index on a table column, queries that filter or sort based on that column can run much faster because the index can be used to look up the data directly, rather than scanning the entire table.
+
+Question: The following query is intended to retrieve a list of all projects along with the total number of employees who are assigned to each project. However, the query is returning an error. What is wrong with the code and how can it be fixed?
+
+SELECT p.title, COUNT(ep.employee_id) AS num_employees
+FROM projects p
+JOIN employees_projects ep
+ON p.id = ep.project_id
+GROUP BY p.id;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The issue with this code is that the GROUP BY clause should reference the title column instead of the id column since we want to group by project title, not project id. Changing the GROUP BY clause to reference p.title will fix the issue:
+
+SELECT p.title, COUNT(ep.employee_id) AS num_employees
+FROM projects p
+JOIN employees_projects ep
+ON p.id = ep.project_id
+GROUP BY p.title;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Question: What are stored procedures in PostgreSQL and how can they be used to simplify database administration?
+
+Answer: Stored procedures are precompiled database code that can be used to perform complex operations or calculations. They can be used to simplify database administration by encapsulating complex logic into a single function that can be called from other parts of the system. Stored procedures can also be used to enforce business rules or perform validation checks before data is inserted or updated, ensuring data consistency across the database.
+
+Question:The following trigger is intended to update the modified_date column in the employees table whenever a row is updated. However, the trigger is not working as intended.
+
+CREATE OR REPLACE FUNCTION update_employee_mod_date() RETURNS TRIGGER AS $$
+BEGIN
+  NEW.modified_date := NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_employee_mod_date_trigger
+BEFORE UPDATE ON employees
+FOR EACH ROW
+EXECUTE FUNCTION update_employee_mod_date();
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Answer: The issue with the trigger is that it is not handling updates to the modified_date column correctly. When the trigger sets the value of the modified_date column to NOW(), it triggers another update, which in turn triggers the trigger again in an infinite loop. This can be fixed by checking if the modified_date column has changed before updating it. Here’s the corrected code:
+
+CREATE OR REPLACE FUNCTION update_employee_mod_date() RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW.modified_date = OLD.modified_date THEN
+    NEW.modified_date := NOW();
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_employee_mod_date_trigger
+BEFORE UPDATE ON employees
+FOR EACH ROW
+EXECUTE FUNCTION update_employee_mod_date();
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+Question: What is the difference between a view and a table in PostgreSQL and when should you use one over the other?
+
+Answer: A table in PostgreSQL is a collection of data stored in rows and columns, while a view is a virtual table that is derived from a query. Views can be used to simplify complex queries by abstracting away details and providing a simpler, more focused interface to the data. Views can also be used to restrict access to sensitive data by hiding certain columns or rows from users who do not have permission to see them. Tables are typically used to store large amounts of data that will be frequently accessed, while views are more suitable for ad-hoc or reporting queries.
+
+Question: The following query is intended to retrieve a list of all employees and their corresponding department name. However, the query is returning an error. What is wrong with the code and how can it be fixed?
+
+SELECT e.first_name, e.last_name, d.name AS department_name
+FROM employees e
+JOIN departments d
+ON e.department_id = d.id;
+Code language: PHP (php)
+Answer: The query is not returning an error. However, if there are no corresponding departments for any of the employees, those employees will not be included in the result set. To include all employees regardless of whether they have a corresponding department, you should use a LEFT JOIN instead of an INNER JOIN:
+
+SELECT e.first_name, e.last_name, d.name AS department_name
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.id;
+Code language: PostgreSQL SQL dialect and PL/pgSQL (pgsql)
+This will ensure that all employees are included in the result set, with NULL values in the department_name column for any employees who do not have a corresponding department.
+
+Question: What are window functions in PostgreSQL and how can they be used to analyze data?
+
+Answer: Window functions are a type of function in PostgreSQL that allow you to perform calculations across a set of rows that are related to the current row, without grouping the rows together. Window functions are particularly useful when you need to perform calculations that depend on the values of other rows in the same table, such as calculating a running total or a moving average.
+
+Window functions can be used to analyze data by providing more flexibility and power than traditional aggregate functions. They can be used to calculate running totals, moving averages, rank data, and more. By using window functions, you can perform complex calculations over a set of rows without having to group the rows together or use subqueries.
+
+Question: A junior developer has created a query to retrieve a list of all employees and their corresponding projects, but it is causing a memory leak in the database. Can you provide a fixed query to retrieve the same information without causing a memory leak?
+
+Erroneous Query:
+
+SELECT e.id, e.first_name, e.last_name, p.title AS project_title
+FROM employees e
+JOIN employees_projects ep
+ON e.id = ep.employee_id
+JOIN projects p
+ON ep.project_id = p.id;
+Code language: PHP (php)
+Answer:
+
+SELECT e.id, e.first_name, e.last_name, 
+       array_agg(p.title) AS project_titles
+FROM employees e
+JOIN employees_projects ep
+ON e.id = ep.employee_id
+JOIN projects p
+ON ep.project_id = p.id
+GROUP BY e.id;
+Code language: PHP (php)
+The issue with the original query is that it was retrieving all employees and their corresponding projects using a JOIN, which can cause a memory leak if the number of employees and projects is very large. The corrected query uses array_agg function to aggregate all project titles into an array for each employee, and then groups the results by employee ID to avoid the memory leak issue.
+
+Question: What are common table expressions (CTEs) in PostgreSQL and how can they be used to simplify complex queries?
+
+Answer: Common table expressions (CTEs) are a way to define a temporary result set that can be referenced within a larger query. CTEs are particularly useful when you need to simplify complex queries by breaking them down into smaller, more manageable pieces.
+
+CTEs are defined using the WITH clause, which allows you to create a temporary table that can be used within the context of the larger query. Once defined, the CTE can be referenced in the same way as a regular table, allowing you to perform additional joins and filtering operations on the temporary result set.
+
+By using CTEs, you can simplify complex queries and make them more readable and maintainable. Additionally, CTEs can improve query performance by allowing the database to optimize the execution plan of the query based on the defined CTE.
+
 PostgreSQL Interview Questions and Answers For Freshers
 Let’s go through basic-level PostgreSQL interview questions and Answers, which will help you gain an understanding of the database and its capabilities.
 
