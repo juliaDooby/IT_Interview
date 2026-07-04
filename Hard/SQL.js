@@ -1,3 +1,218 @@
+Top 45 PL SQL Interview Questions and Answers (2025 Updated)
+Updated on Apr 23, 2026 | Praveen Kumar | 14 min read | 116K views
+FacebookTwitterLinkedInWhatsAppРесурс
+PL SQL interview questions
+PL/SQL was introduced by Oracle in 1991 to execute code faster than SQL codes. It is a procedural language extension of the SQL language. It combines the procedural programming language with the SQL database language to create a powerful programming language used for creating complex database applications.
+
+If you’re looking to embark on a career in PL SQL, it’s essential to have a deep understanding of the language and its applications. To help you prepare for interviews, we’ve curated a series of beginner, scenario-based, and 10-year experience-based PL SQL interview questions and answers. These questions are designed to test your knowledge, problem-solving skills, and ability to apply PL SQL concepts in practical situations.
+
+Table of Contents
+Brief Overview of PL SQL 
+Basic PL SQL Interview Questions For Beginners
+PL SQL Interview Questions For Intermediate Developer
+Advanced PL SQL Interview Questions For Experienced Developers
+Brief Overview of PL SQL 
+PL/SQL stands for Procedural Language/Structured Query Language. It is a parsed multi-purpose block structured language with OS self-supporting, procedural attributes, and a SQL combination of programming languages. PL SQL focuses primarily on executing code to the Oracle interface. It gives you high performance, portability, seamless SQL integration, modular programming, exceptional handling, and security. 
+
+SQL is used to execute basic tasks of building a database such as fetching the saved information of the database, storing information in the database, and modifying information in the database. If you want to learn and get a better understanding of SQL, consider pursuing a SQL course.
+
+
+Basic PL SQL Interview Questions For Beginners
+If you are someone who has just started working with PL/SQL, these questions will help you understand the fundamental concepts of PL/SQL and prepare you for your first PL/SQL job interview.
+
+Q1. What is PL/SQL?
+PL/SQL is referred to as Procedural Language for SQL. It is used for decision-making, and iteration and is especially helpful for embracing the SQL statements. PL/SQL can run a series of queries by one block only using a single command statement. 
+
+Q2. What are the main features of PL SQL?
+PL/SQL supports structured programming language and provides high integrity and productivity to programmers. It includes conditions and loops for procedural language elements.
+
+Q3. What is the use of PL/SQL?
+PL/SQL helps decrease the traffic between the users and applications by sending the block of statements. In real-world, PL/SQL is used in the syntactic analysis of XML, directory traversal, and password policy enforcement.
+
+Q4. What do you mean by a package in PL SQL?
+A package is a file that groups procedures, functions, variables, cursors, and other program elements into a single database item. 
+
+Q5. What do you know about exceptions and their types in PL/SQL?
+An exception is any error condition that develops during the execution of the PL/SQL code block.   
+
+Two types of exceptions in PL/SQL are Pre-defined and User-defined.
+
+Pre-defined- They are used to manage the unknown conditions or errors that come in PL/SQL block series code.
+User-defined- They are used to manage the specific conditions or errors that come in PL/SQL block series code.
+Q6. What is the difference between PL SQL and SQL?
+PL/SQL is a commonly used programming language and is a crucial skill for database administrators and developers. SQL is a structured query language used to make a connection to a database. The differences between PL/SQL and SQL are listed below:
+
+  PL/SQL ( Procedural Language)	SQL ( Structured Query Language)
+It uses SQL as its database.	It is used to operate databases.
+It is a series of codes that writes all the functions/blocks.	
+It comes as a single query programming language that is used to run DDL and DML tasks.
+It is a SQL extension. So, it can contain a SQL code inside it.	It cannot operate if it contains PL/SQL code
+It is always used to build an application.	It always operates as a single statement.
+It uses SQL as its database and SQL is used to operate databases.	It is commonly used for processing or handling data.
+Q7. What is the difference between Functions and Procedures in PL SQL?
+Functions and procedures are a part of the PL/SQL program unit. They are used for encapsulating a series of related actions but they differ in many ways, such as:
+
+Functions	Procedures
+A function returns a value compared to a procedure function.	A procedure does not return any value.
+A function can be utilized in SQL queries.	A procedure cannot be used in SQL queries.
+Functions are generally used to execute input parameters or calculations.	Procedures are commonly used to run a series of operations without returning a variable.
+In functions, the method of calling syntax is different than the procedure.	In the procedure, the method of calling syntax is executed by the input parameters.
+A function cannot use “OUT” parameters to return values.	A procedure can use “OUT” parameters to return values.
+Q8. What is PL/SQL Table?
+PL/SQL Table is a series of collections of unbounded, single array tables defined during the time of execution. It works with different values or attributes. It also uses a primary key to store the information using columns and rows.
+
+Q9. What is the word Cursor referred to in PL/SQL?
+A cursor is a pointer that allows users to read and process the result set obtained from the query one row at a time, instead of executing it all at once.
+
+Q10. What is the compilation process of PL SQL?
+The compilation process requires syntax checking, P-code generation, and binding where syntax checking cross-checks the codes for bugs. P-code generation ensures that the code can be executed on any platform and binding ensures that the code is linked with the relevant database.
+
+Q11. What are the characteristics of PL/SQL?
+The characteristics of PL/SQL include: 
+
+PL/SQL supports OOPs (object-oriented programming) that allow detailed code-error checking.
+It supports structured programming as it is integrated with SQL.
+It Provides multiple PL/SQL data types, supports server pages, supports the development of web pages, and much more.
+Q12. What is the purpose of PL SQL?
+The purpose of PL/SQL is to come in handy while manipulating data and creating applications, but the main goal is to combine all the database languages and procedural programming languages.
+
+Q13. What is a trigger in PL/SQL?
+A trigger is an object in PL/SQL that executes automatically as a reaction to some actions performed on views and tables such as INSERT, UPDATE, and DELETE. It is used in maintaining the integrity of the data.
+
+Q14. What do you mean by raise_application_error?
+The raise_application_error is a procedure that enables the developers to raise an exception and attach an error number and the message to the procedure. It accepts error number values ranging from -20000 to -20999. This allows raising an error other than default Oracle errors.
+
+Q15. When is it necessary to use the ‘DECLARE’ block in PL/SQL?
+The ‘DECLARE’ block is defined at the start of the PL/SQL block just above the BEGIN keyword. During the declaration of objects like variables, constants, cursors, and exceptions, the ‘DECLARE’ block becomes mandatory.
+
+PL SQL Interview Questions For Intermediate Developer
+These types of intermediate questions focus on optimizing database structures, real-world examples, designing databases, troubleshooting, debugging, and more. They are good to gauge your knowledge of PL SQL developer interview questions.
+
+Q16. How will you delete a trigger in PL/SQL?
+For deleting a trigger in the PL/SQL interface programming language, you will need to use the command DROP TRIGGER.
+
+Q17. What is a mutating table error in PL SQL?
+When a trigger is trying to update a row that is in use, the mutating table error comes up. It can be resolved by using temporary tables or views. Statement-level triggers can also be used in place of row-level triggers as they don’t cause conflicts with the state of the table.
+
+Q18. How can you use the II operator in PL/SQL?
+The concatenation operators (||) are commonly used in PL/SQL to concatenate strings. The (||) are commonly used in PL/SQL to concatenate strings and SELECT statements to manipulate and display string data.
+
+Q19. How will you write comments in a code of PL/SQL?
+Comments are sentences that don’t have any effect on the functionality of the code and are just used for making the code more explanatory. They can be written either as single-line comments or multiple lines comments.
+
+Single-line comments – They can be written using this symbol —
+Multiple lines comments – They can be written using syntax like this /* comment */.
+Q20. What do you know about scalar subquery in PL/SQL?
+In PL/SQL, a scalar subquery is a query that always returns or passes only one column value from one row. If the value of this subquery returns zero then the value of the scalar subquery expression becomes NULL.
+
+Q21. How will you find a statement that is used to debug a PL/SQL Code?
+DBMS_DEBUG and DBMS_OUTPUT are the statements used for debugging a PL/SQL code.
+
+DBMS_OUTPUT is used to print the output of the standard console.
+DBMS_DEBUG is used to print the output of the log files.
+Q22. How will you display the records containing the maximum salary from an employee table?
+To display the records with the maximum salary, we can use the statement. 
+
+SELECT * FROM EMP_TB WHERE SAL = (SELECT MAX(SAL) FROM EMP_TB);
+
+Here, the table name for the employee table is EMP_TB and the column for salary is represented by SAL.
+
+Q23. How will you display the second-highest salary from an employee table?
+To display the second-highest salary, we can use this statement:
+
+SELECT MAX(SAL) FROM EMP_TB WHERE SAL NOT IN (SELECT MAX(SAL) FROM EMP_TB);
+
+Here, the table name for the employee table is EMP_TB and the column for salary is represented by SAL.
+
+Q24. How will you display the highest salary from an employee table?
+To display the highest salary from an employee table, we can run the below statement:
+
+SELECT MAX(SAL) FROM EMP_TB;
+
+Here, the table name for the employee table is EMP_TB.
+
+Q25 How will you disable a trigger in PL/SQL? Give the syntax.
+To disable a trigger in PL/SQL, we can use the following statement:
+
+ALTER TRIGGER TRIGGER_NAME DISABLE;
+
+Q26. How will you display the records with the lowest score in the student table?
+To display the lowest score in the student table, we can use the statement:
+
+SELECT MIN(SCR) FROM STU_TB;
+
+In this example, the table name for the student table is STU_TB and the column for the score is represented by SCR.
+
+Q27. How will you assign a name to a PL/SQL exception block?
+In PL/SQL, you can assign a name exception to a block by using pragma, which is known as EXCEPTION_INIT.
+
+Q28. How will you use SYSDATE and USER keywords in PL/SQL questions?
+SYSDATE is a pseudo column and is used to return the current date and time while USER is used to return the user id.
+
+Q29. How will you insert all records from one table to another?
+‘INSERT’ and ‘SELECT’ are used to copy rows from one to another in a SQL table. To insert a record from one table to another, we can use the following statement:
+
+INSERT INTO TB_2 SELECT * FROM TB_1;
+
+Here, the name of table 1 is TB_1 and the name of table 2 is TB_2.
+
+Q30. How will you update the age of a student in the student table from 20 to 22 if his enrollment number is 12345?
+To update the age of a student with an enrollment number 12345 from 20 to 22, we can use the following statement:
+
+UPDATE STU_TB SET AGE = 22 WHERE ENRL = 12345;
+
+Here, the table name for the student table is STU_TB, and the column for age and enrollment number is represented by AGE and ENRL.
+
+Advanced PL SQL Interview Questions For Experienced Developers
+Here is a list of advanced PL SQL interview questions for 10 years of experienced developers. These questions are intended to help assess the candidate’s expertise in PL/SQL development.
+
+Q31. How will you execute the Stored Procedure? 
+The stored procedure helps you use the code over and over again by collecting and saving prepared SQL code. Stored Procedures can be executed in two steps:
+
+Use EXEC or EXECUTE Keyword.
+Call procedure name from PL/SQL block.
+Q32. What is a view in PL/SQL?
+A view in PL/SQL can be described as a virtual table that shows the data contained in an original table. It doesn’t take up memory and can be created on multiple tables.
+
+Q33. What is the use of DBMS_OUTPUT Package in PL SQL?
+It will connect and show you the output from the PL/SQL program by using DBMS_OUTPUT.PUT_LINE procedure. It contains many procedures including put_line, get_line, new_line, etc.
+
+Q34. How will you be able to view the User-defined functions and procedures in PL/SQL? 
+User-defined functions and Procedures are stored in a table user_source, so we can use the command SELECT FROM USER_SOURCE WHERE NAME = “procedure_name” to view them.
+
+Q35. How will you explain pragma_exception_init in PL SQL?
+The pragma_exception_init is a keyword compiler directive that helps declare an error to the exception handler. In PL/SQL, the pragma_exeption_init commands the compiler to associate an exception name.
+
+Q36. How will you find a PL/SQL block when the cursor is open?
+You should know the current status of the cursor while using the cursor. To find a PL/SQL block, we need to check the status of the %ISOPEN, %FOUND, % ROWCOUNT, and %FOUND variable cursor.
+
+Q37. How will you verify whether an update statement is executed or not in PL SQL?
+To verify whether an update statement is executed or not we use the %NOTFOUND attribute. If the update statement didn’t change any records %NOTFOUND will return True.
+
+Q38. Define raise_application_error.
+The raise_application_error is a procedure that is used for sending user-defined error messages from stored subprograms. We can report failure to applications to prevent returning of unhandled exceptions.
+
+Q39. Explain Pseudocolumns in PL/SQL.
+Pseudo-columns are virtual columns that act like original table columns and are used for fetching some specific information in SQL statements. They cannot be directly used in procedural language, although they are considered a part of SQL statements.
+
+Q40. How to save or place a message in a table?
+To save or place a message in a table, we can use the add_text procedure to load individual messages. We can also use the load_form_dbms procedure to load sets of messages.
+
+Q41. What is the difference between temporary and permanent table space? 
+Temporary items like sort structures, intermediate query results, etc., are stored in temporary table space and get cleared when the user ends the session. On the other hand, permanent items like database objects, application data, etc., are stored in the permanent tablespace and remain preserved until truncated or dropped.
+
+Q42. What do you know about %TYPE?
+In, PL/SQL %TYPE is an attribute that is used for declaring a column in a table including its value. Using %TYPE can help ensure the data type of a variable is consistent with the data type of the corresponding database object, and can also make code easier to read and maintain.
+
+Q43. Explain %ROWTYPE in PL SQL.
+The %ROWTYPE property is used for declaring variables that contain the structure of records in the table. The data type of the variable is the same as the table’s column.
+
+Q44. Explain the overloading of a procedure.
+Overloading of procedures occurs due to the repetition of the same procedure with parameters of different data types and different places.
+
+Q45. What is the use of database links?
+We use database links when we need to establish a connection among various databases like development, testing, and production. Other read-only information can also be accessed using database links.
+
 Top 50 PL/SQL Interview Questions and Answers in 2026
 Are you preparing for PL/SQL Interviews, if yes read on! I made a list of PL/SQL interview questions.
 
