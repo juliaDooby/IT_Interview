@@ -1,4 +1,462 @@
-55 Best TypeScript Interview Questions and Answers - JavaScript!
+TypeScript Interview Questions
+(4.6)
+1374 Viewers
+TypeScript developers are in great demand, and this trend is expected to continue in the near future. In order to give you an idea of the types of questions that might be asked in interviews, here are the top 40 sample TypeScript interview questions and answers developed by MindMajix experts who train for the TypeScript course. Have a look!
+
+TypeScript Interview Questions 
+Blog Author:
+Madhuri Yerukala
+Last Updated:
+08 Jan 2024
+Views:
+1374
+Read Time:
+31:16 Minutes
+Share:
+
+
+
+JavaScript Articles
+JavaScript Frameworks
+JavaScript Interview Questions
+JavaScript Interview Questions For 2 - 5 Years Experienced
+Ember.JS Interview Questions
+JUnit Interview Questions
+Vue.js Interview Questions and Answers
+JSON Interview Questions
+React Native Interview Questions
+Types of JavaScript Variables
+TCS Interview Questions
+TypeScript Projects and Use Cases
+How To Become a Front End Developer?
+How to Install JavaScript on Windows?
+JavaScript Quiz
+Test and Explore your knowledge
+Self-Paced Videos
+Lifetime access to JavaScript Self-paced Videos
+@ FLAT 20% OFF
+Get Free Trial
+TypeScript is a popular programming language used for building NodeJS and browser applications. Professionals holding TypeScript skills are in great demand across the companies and are earning huge salaries. If you're interested in starting a career in TypeScript, then it's the right time to dive in when technology is in its nascent state.
+
+The below-listed TypeScript Interview Questions have covered every concept in detail, from basic to advanced, to help you prepare for interviews. Jump into these questions and see how well-versed you are in this technology.
+
+We are sure these TypeScript questions and answers will help both freshers and experienced land their dream job as TypeScript professionals.
+
+Top 10 Frequently Asked TypeScript Interview Questions
+What is TypeScript?
+List the differences between JavaScript and TypeScript.
+Why TypeScript?
+What are the different TypeScript Components?
+How to install TypeScript?
+What is a variable in TypeScript?
+What are Namespaces in TypeScript?
+What is enum in TypeScript?
+What is the use of TypeScript Definition Manager?
+How to inherit a class in TypeScript?
+Top TypeScript Interview Questions and Answers
+Q1) What is TypeScript? And why use it?
+TypeScript is an open-source language built on JavaScript and one of the world's most widely used tools today. Microsoft developed this object-oriented language in 2012. It follows the OOPS concept and can convert the .ts file (Typescript code) to the .js file (JavaScript) with the help of TSC (TypeScript Compiler).
+
+TypeScript is a superset of JavaScript. The latest version of TypeScript is Typescript 4.1.3, released in Dec 2020.
+
+The reasons that making TypeScript the best choice are as follows:
+
+It's an open-source
+Easier to read and debug with TypeScript, as it simplifies JavaScript.
+Supports statistical typing
+Compatible with ECMAScript
+It's a superset of ES3, ES5, and ES6.
+Supports generics and modules
+Functions with optional parameters.
+Functions with REST parameters
+TypeScript supports API documentation & JS libraries.
+Allows better development time tool support
+Can extend language beyond the standard decorators, async/wait.
+Q2) List the differences between JavaScript and TypeScript.
+The following table illustrates the differences between JavaScript and TypeScript.
+
+Parameter	JavaScript	TypeScript
+What is it?	It's a scripting language.	Uses types and interfaces to describe data.
+Data Binding	It doesn't support such a feature.	Uses types and interfaces to describe data.
+Npm Package	Provides an option to create and explore code without a build step.	Npm packages come with static type definitions in TypeScript or have an external one to install it.
+Community	JavaScript has a vast community of developers.	Compared to javascript, Typescript has a small community of developers.
+Compilation 	No need to compile in JavaScript	Should compile the TypeScript code
+Annotation	JavaScript doesn't use annotations.	Developers constantly annotate their code to get most of the TypeScript features.
+Q3) List TypeScript Features.
+Following are the features of TypeScript:
+
+Object-oriented language: TypeScript supports all features of the object-oriented language, such as classes, modules, interfaces, etc. Both for client-side and server-side development, code written.
+TypeScript is Portable: TypeScript can run in any environment that JavaScript runs on. It is portable across operating systems, browsers, and devices.
+TypeScript supports other JavaScript libraries: Compiled TypeScript applied from any JavaScript code. TypeScript generated JavaScript can utilize all the JavaScript tools, frameworks, and libraries.
+JavaScript is TypeScript: The code written in JavaScript with a valid .js file can be converted to TypeScript by renaming the extension .js to .ts and compiled with other TypeScript files. 
+DOM manipulation: Similar to JavaScript, TypeScript manipulates the DOM to add or remove the elements.
+Q4) Why TypeScript?
+The reasons to opt for TypeScript are listed below:
+
+TypeScript has excellent tools for advanced autocompletion, refactoring, and navigation. Having such tools is a much-needed requirement for large-scale projects.
+TypeScript makes abstractions explicit.
+TypeScript cakes code easier to read and understand
+Since TypeScript is a superset of JavaScript, you don't need to perform a significant rewrite to migrate to it and gradually do one module at a time.
+TypeScript supports type definitions for existing JavaScript libraries.
+Strong Static Typing
+Q5) What are the benefits of using TypeScript?
+Significant benefits of using TypeScript are:
+
+Class and Module Support
+Clear Library API Definition
+Syntax Similarity to Our Backend Languages Java, Scala
+ES6 and Es7 Feature Support
+Build-in Support for JavaScript Packaging
+Static Type-checking
+Superset of JavaScript
+Q6) What are the different TypeScript Components?
+TypeScript has three main layers, and each of them, further subdivided into layers or components.
+
+Language - It features the TypeScript language elements like syntax, keywords, and type annotations.
+The TypeScript Compiler - It transforms the TypeScript program into its JavaScript code. Also, it performs the parsing and type checking of TypeScript code to JavaScript code.
+The TypeScript Language Services - Provides information that helps editors and other tools to provide better assistance features such as automated refactoring and IntelliSense. Also, it helps to expose additional layers around the core-compiler pipeline and supports some standard typical editor operations like colorization, signature help, code formatting and outlining, statement completion, etc.
+Q7) What is the latest TypeScript version?
+TypeScript is a language for application-scale JavaScript. It adds optional types to JavaScript, which support large-scale JavaScript applications on any browser, host, and OS. TypeScript compiles to readable, standards-based JavaScript.
+
+The latest version of TypeScript is TypeScript 4.1.3
+
+Q8) What are the prerequisites to install TypeScript?
+Prerequisites to install TypeScript are -
+
+Text Editor or IDE
+Node.js Package Manager (npm)
+The TypeScript compiler
+Subscribe MindMajix YouTube Channel
+
+Q9) How to install TypeScript?
+You can install TypeScript through three installation routes depending on how you intend to use it - an npm module, Visual Studio extension, or a NuGet package.
+
+If you are working with Node.js, then you need the npm package. If you're working with MSBuild in your project, you need a NuGet package or a Visual Studio Extension.
+
+Via npm command-line tool
+npm install -g Typescript
+You can test your install by checking the version or help.
+
+tsc --version
+tsc --help
+Via Visual Studio
+The better way to add to Visual Studio is to search and add a package or download from the TypeScript website. Also, you can download TypeScript Tools for Visual Studio.
+
+Q10) Which package manager installs the TypeScript?
+NPM (Node. js package manager) installs the TypeScript on your local machine or a project.
+
+Q11) How do you compile TypeScript?
+TypeScript is a typed superset of JavaScript. Visual Studio code includes TypeScript language support but doesn't include TypeScript Compiler, tsc.
+
+The extension for TypeScript file is .ts and for JavaScript is .js.
+
+To compile any .ts file into .js use the following command:
+
+tsc <TypeScript File Name>
+For example, to compile "mindmajix.ts" 
+
+tsc mindmajix.ts
+And the result would be mindmajix.js
+
+Q12) What are the different types available in TypeScript?
+The type system describes the various types of values supported by the language. TypeScript represents different types of data types as a part of its optional Type System. The below diagram illustrates the data type classification:
+
+Any type - It is the supertype of all the types in TypeScript and denotes a dynamic type. Utilizing this Type is equivalent to opting out of Type checking for a variable.
+
+Built-in Data Types - Built-in data type includes the number, string, boolean, and more.
+User-Defined Types - Apart from built-in data types, users can also define their data types. They include classes, enums, arrays, interfaces, and tuples. 
+Q13) Explain built-in types in TypeScript.
+The below listed are the built-in types in TypeScript:
+
+Number - Double-precision 64-bit floating-point values. Represent both integers and fractions.
+String - Represents a sequence of Unicode characters.
+Boolean - Represents logical values, true and false.
+Void - Used on function return types to represent non-returning functions
+Null - Represents an intentional absence of an object value.
+Undefined - Denotes value given to all uninitialized variables.
+Q14) What is a variable in TypeScript?
+A variable is a named space in the memory that stores values. The naming rules of TypeScript variables include:
+
+Can contain numeric digits and alphabets
+It cannot begin with a number.
+It cannot contain special characters and spaces, except the dollar sign and underscore.
+Var keyword declares the variable. The syntax to declare a typescript variable includes a colon (:) after the variable name, followed by its Type.
+
+The following are the various ways of declaring a variable:
+
+var [identifier] : [type-annotation] = value; // declaring value and type in a single statement.
+var [identifier] : [type-annotation]; // declaring type but no value.
+var [identifier] = value; // declaring its values but no type. 
+var [identifier]; // declaring neither value nor type.
+Q15) What is the Variable scope in TypeScript?
+TypeScript scope can be defined in three scopes depending on how and where they are defined:
+
+Global Scope - Variables defined outside of any function/ class or code block become part of the global scope. They are used anywhere within the program.
+Function Scope or Class Scope - The function or class variables defined inside the function/class become part of the function scope or Class Scope. They can be used anywhere within the function but not outside.
+Local Scope or Block scope - The variables declared inside a code block are local scopes or block scopes. 
+Q16) Does TypeScript support all object-oriented principles?
+The answer is Yes. TypeScript supports all the object-oriented principles, including inheritance, encapsulation, polymorphism, abstraction, modules, classes, data types, etc., with its simple and clear syntax.
+
+Q17) What are interfaces in TypeScript? And why do we use them?
+An interface is a syntactical contract that an entity should conform to. In other words, it defines the syntax that an entity must adhere to.
+
+Interfaces define the classes, properties, and methods. It can contain only the members' declaration and determine a standard structure that the derived classes will follow. 
+
+The Interface is the keyword used for declaring the interfaces in TypeScript.
+
+Syntax:
+
+interface interface_name { 
+//variables declaration
+//methods declaration
+}
+Q18) What is the difference between Interface and Type in TypeScript?
+In TypeScript, both Interface and Type describe the structure of objects. The following table explains the differences between both of them:
+
+Interface 	Type
+It’s a form of syntax.	It’s a form of a collection of data types.
+Provides a way to define the entities.	It supports the creation of a new name for a type.
+Comparatively includes more capabilities than Type.	Comparatively includes fewer capabilities than Interface.
+Can use multiple merged declarations	Cannot use multiple merged declarations
+Two interfaces having the same name get merged.	Two interfaces having the same name get merged.
+Q19) What are classes in TypeScript?
+TypeScript is an object-oriented JavaScript that supports features like classes, interfaces, etc. TypeScript gives built-in support for classes, and this feature is made available from ES6.
+
+Use the class keyword to declare a class in TypeScript
+
+Syntax:
+
+class class_name { 
+   //class scope 
+}
+A class definition can include fields, constructors, and functions.
+
+Fields: Any variable declared in a class and represented the data of objects.
+
+Constructors: Allocate the memory for the objects of the class
+
+Functions: Represent the actions that an object can make. 
+
+Q20) What is the difference between internal and external modules?
+A module is a powerful way to create a group of related variables, classes, functions, interfaces, etc., and created using the export keyword. 
+
+TypeScript supports two modes for applying modules. The first one is an internal module, and the other one is an external module.
+
+The internal module allows you to define modules within your typescript files.
+
+Syntax:
+
+module MyInternalModule {
+  export class MyClass { }
+}
+We use external modules while building a program using Typescript. However, the usage of external modules is quite different from internal modules. A module loader loads external modules.
+
+The way you define external modules is also very different from the internal module syntax. You don't use the module syntax. Instead, you describe things in your file that you want to export.
+
+export class MyClass {
+}
+export var x:MyClass instance = new MyClass();
+Q21) What are Namespaces in TypeScript?
+Namespaces are a TypeScript-specific way to organize code, used for the logical grouping of functionalities. It can include classes, functions, interfaces, and variables to support a single or a group of related functionalities.
+
+You can create a namespace using the namespace keyword followed by the namespace name and all the interfaces, classes, etc., in the curly brackets { }.
+
+Syntax:
+
+namespace <name>
+{
+ 
+}
+Q22) Explain Typescript debugging.
+Visual Studio has built-in support for TypeScript debugging. In combination with executing JavaScript code by TypeScript debugging, Visual Studio Code relies on source maps to map between the original TypeScript source code and the running JavaScript. 
+
+Create the Source maps by setting "sourceMap": true in your tsconfig.json.
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "out",
+    "sourceMap": true
+  }
+}
+For more advanced debugging scenarios, you can create your own debug configuration launch.json file.
+
+Q23) Define Typescript Generics.
+Building reusable components is one of the significant aspects of programming. In TypeScript, generics used to create reusable components. They provide a way to make elements work with any data type and not restrict one data type. TypeScript generics are almost similar to C# generics.
+
+Generics allow us to create generic classes, generic methods, generic functions, and generic interfaces.
+
+In generics, you can write type parameters between the open (<) and close (>) brackets, and that makes strongly typed collections and uses <T> to denote types.
+
+Q24) What is enum in TypeScript?
+Enums or Enumerations are a new data type supported by TypeScript. They allow us to define a set of named constants, i.e., a group of related values that can be numeric or string values.
+
+Example, 
+
+enum Gender {
+Girl,
+Boy
+Other
+}
+console.log(Gender.Girl); // Output: 0
+//We can also access an enum value by its number value.
+console.log(Gender[1]); // Output: Boy
+TypeScript supports three types of enums:
+
+String - String enums are similar to numeric enums, except that enum values' initialization done with string values rather than numeric values.
+
+Numeric - Numeric enums are number-based enums, i.e., they store string values as numbers.
+
+Heterogenous - Heterogeneous enums are enums that contain both string and numeric values.
+
+Q25) What is Union type in TypeScript?
+TypeScript allows us to use more than one data type for a variable or a function parameter, and this concept is called union type. A union type enables us to define a variable with multiple types using the pipe ('|') symbol.
+
+Syntax:
+
+(type1 | type2 | type3 | .. | typeN)
+Example, 
+
+let myVar : string | number; //Variable with union type declaration
+ 
+myVar = 256; //OK
+myVar = 'Maddy'; //OK
+ 
+myVar = true; //Error - boolean not allowed
+Here, the myVar variable can hold both string and number, allowing flexibility to use both data types.
+
+Q26) Explain TypeScript Decorators.
+A decorator is a particular type of declaration attached to a class declaration, method, accessor, property, or parameter. They use the form @expression, where the expression evaluates the runtime function with information about the decorated declaration.
+
+TypeScript Decorators serve to add both metadata and annotations to the existing code in a declarative way. For enabling experimental support to decorators, action the experimentalDecorators compiler option either through tsconfig.json or the command line:
+
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "experimentalDecorators": true
+  }
+}
+Q27) What is Type assertion in TypeScript?
+A Type Assertion in TypeScript is like typecasting but doesn't perform type checking or data restructuring. It has no impact on runtime. The compiler purely uses it.
+
+Example, 
+
+let code: any = 586; 
+let employeeCode = <number> code; 
+console.log(typeof(employeeCode)); //Output: number
+Q28) What do you know about "as" syntax in TypeScript?
+The "as" is the additional syntax for Type assertion in TypeScript. The purpose behind introducing "as" syntax is original syntax (< Type>) is conflicted with JSX.
+
+While using TypeScript with JSX, only "as" style assertions are allowed.
+
+Example,
+
+let strLength: number = (something as string).length;
+
+Q29) What is Compilation Context in TypeScript?
+In TypeScript, the Compilation context helps to group files that will parse and analyze to determine valid or invalid data. It stores the information about the compiler options which are in use. You can define the logical grouping of TypeScript files by using a tsconfig.json file.
+
+Q30) Is it possible to extend an interface as a class, just like a class implements an interface?
+Yes, it's possible. The Interface extends a class when it inherits class members but not their implementations. Interfaces can even inherit the private and protected members of a base class. If you create an interface extending a class with private or protected members, that interface type gets implemented by that particular class or subclass.
+
+Q31) List out the access modifiers that TypeScript supports.
+TypeScript supports access modifiers such as public, private, and protected that determine the accessibility of a class member.
+
+Public - All the class members, its child classes, and the class's instance can access.
+
+Protected - All the class members and its child classes can access them. But cannot access class instances.
+
+Private - Only the class members can access them.
+
+If an access modifier is not specified, it is essentially public that matches JavaScript's convenient nature.
+
+Also, note that these have no significance at runtime (in the generated JS) but will give you compile-time errors if you misuse them.
+
+Q32) Explain TypeScript Contextual Typing.
+TypeScript uses the locations of variables to infer their types, and this mechanism is called contextual typing.
+
+A TypeScript compiler can figure out the Type if you mention the Type on one side of the equation but not the other.
+
+Q33) Relative vs. non-relative module import for a custom module in Typescript.
+You can resolve module imports differently based on whether the module reference is relative or non-relative.
+
+A relative import starts with /, ./ or ../. 
+
+Example, 
+
+import Entry from "./components/Entry";
+import { DefaultHeaders } from "../constants/http";
+Any other import is considered non-relative.
+Example, 
+
+import * as $ from "jquery";
+import { Component } from "@angular/core";
+You can use relative imports for our modules that are guaranteed to manage their relative location at runtime.
+
+You can resolve non-relative imports through path mapping or relative to baseUrl.
+
+Q34) What are Triple-Slash Directives? And name a few of them.
+A Triple-Slash Directive is a single-line comment that contains a single XML tag. You can use the content of the comment as a compiler directive.
+
+They are only valid at the top of their containing file. A triple-slash directive can be preceded only by single or multi-line comments, including other triple-slash directives. Below listed are some of the triple-slash directives in TypeScript:
+
+/// <reference path="..." />
+This directive allows a file to include an existing built-in lib file explicitly.
+
+/// <reference no-default-lib="true"/>
+This directive marks a file as a default library.
+
+Q35) What is the use of TypeScript Definition Manager?
+When working with TypeScript, we need TypeScript Definition Manager files to work with external libraries.
+
+ TSD (TypeScript Definition Manager) is a package manager that searches and installs TypeScript definition files directly from the community-driven DefinitelyTyped repository. 
+
+Q36) How to include a Type Definition File?
+The following steps show you how to include a definition file:
+
+First, Install TSD.
+
+$ npm install tsd -g
+Next, in the TypeScript directory, create a new TypeScript project
+$ tsd init
+After that, install the definition file for jQuery.
+tsd query jquery --action install
+The command mentioned above builds a new directory containing the jQuery definition file ends with ".d.ts." Now, include the definition file by updating the TypeScript file to point to the jQuery definition.
+/// <reference path="typings/jquery/jquery.d.ts" />
+$(document).ready(function() { //To Do
+});
+Finally, compile again. Without any error, the js file gets generated. 
+
+Q37) Can we use JSX in TypeScript?
+JSX is an embeddable XML-like syntax. It is useful for transforming into valid JavaScript. TypeScript supports embedding, compiling, and type checking JSX directly into JavaScript.
+
+In order to use JSX in a TypeScript file: name the file with a .tsx extension and enable the jsx option.
+
+TypeScript supports three JSX modes: 
+
+Preserve - This mode will keep JSX as part of the output consumed by other transform steps. And the outcome will have a .jsx extension.
+React - This mode will emit React.createElement, and before using goes through a JSX transformation, and the outcome will have a .js file extension.
+React-native - This mode is similar to preserve in that it keeps all JSX, but the result will instead have a .js file extension.
+Q38) How is TypeScript Optionally Statically Typed Language?
+TypeScript is termed as optionally statically typed, making the compiler ignore the variable Type. You can assign any value to the variable using any data type, and TypeScript won't give any error during compilation.
+
+Q39) What are the rules to declare Rest parameters?
+A rest parameter allows a function to accept zero or more arguments of the specified Type. In TypeScript, the Rest parameters follow these rules:
+
+The function should contain only one rest parameter.
+Must be an array type.
+It must appear last in the parameter list.
+Q40) How to inherit a class in TypeScript?
+A super() function can inherit a parent or base class constructor from Child Class.
+
+Conclusion: 
+
+So now, you have an idea of possible TypeScript interview questions you could come across. You may not be asked specifically these questions in exactly these words in your interview, but having answers in mind for them makes you more prepared for anything that the interviewer throws your way.
+
+To master advanced concepts of TypeScript, join our comprehensive TypeScript Course which equips you with the necessary skills and more that you need and help you become job-ready upon completion. 
+
+Best TypeScript Interview Questions and Answers - JavaScript!
 What Is TypeScript?
 By definition, "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript."
 
