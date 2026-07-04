@@ -1,6 +1,817 @@
+Top TypeScript Interview Questions You Must Prepare For
+ 15 Sep 2025
+ Beginner
+ 3.52K Views
+ 76 min read
+
+Learn with an interactive course and practical hands-on labs
+Free TypeScript Course with Certificate
+Are you searching for the right place to prepare for TypeScript Interview Questions? Now your wait is over, and we have come up with a complete solution for your TypeScript Interview preparations. TypeScript is a powerful, statically typed superset of JavaScript, offering features like type annotations and interfaces for better code maintainability. As its popularity grows, proficiency in TypeScript is highly valued in the software development industry.
+
+In this Interview Tutorial, we will provide you with the complete solution for TypeScript Interview Questions, including beginner-level, intermediate-level, and advanced-level questions, tips and tricks for TypeScript Interview Questions, and a lot more. Certified TypeScript professionals earn 20% more than non-certified peers. Get your Free TypeScript Course with Certification today!
+
+Basic Level TypeScript Interview Questions and Answers
+Q. 1 Explain TypeScript.
+TypeScript is a superset of JavaScript that adds static typing, allowing developers to catch errors early and improve code quality. It enhances JavaScript by providing features like type annotations, interfaces, and generics for better scalability and maintainability.
+
+Explain TypeScript.
+
+Q. 2. What are the advantages of TypeScript over JavaScript?
+The Common advantages of TypeScript over JavaScript are:
+
+TypeScript adds static typing, which helps catch errors during development before runtime.
+Type annotations make code more readable, maintainable, and less error-prone.
+TypeScript offers enhanced editor support, including auto-completion, error checking, and refactoring tools.
+TypeScript supports the latest JavaScript features, such as async/await, before they are available in all environments.
+Q. 3. What is a Type in TypeScript?
+A type in TypeScript defines the structure of a variable, including its properties and the kind of data it can hold, such as strings, numbers, or custom types.
+
+Example
+// Defining a type for an object
+type Person = {
+  name: string;
+  age: number;
+  isEmployed: boolean;
+};
+// Creating an object that conforms to the Person type
+let employee: Person = {
+  name: "Aman",
+  age: 24,
+  isEmployed: true
+};
+// Using the type in a function
+function greet(person: Person): string {
+  return `Hello, my name is ${person.name} and I am ${person.age} years old.`;
+}
+console.log(greet(employee));
+Try it Yourself >>
+Output
+Hello, my name is Aman and I am 24 years old.
+Explanation
+In this example,
+
+We define a Person type to specify the structure of the object (with name, age, and isEmployed properties).
+We create an object employee of type Person.
+We use this type in a function,greet,to ensure that the object passed has the required properties.
+Q. 4. What is an Interface in TypeScript?
+An interface in TypeScript defines an object's structure, including its properties and methods. It ensures that an object adheres to a particular contract.
+
+Q. 5. What are Type Aliases in TypeScript?
+Type aliases allow you to create a new name for a type. They can be used to simplify complex types or create custom types.
+
+Q. 6. What is the 'any' type in TypeScript?
+The 'any' type in TypeScript allows a variable to hold any type of value, bypassing the static typing system. It should be used cautiously as it disables type checking.
+
+Q. 7. What is the 'unknown' type in TypeScript?
+The 'unknown' type is similar to 'any,' but it requires type checking before performing any operations on it, offering safer behavior than any.
+
+Q. 8. Explain how enums work in TypeScript.
+Enums are a way to define named constants in TypeScript. They can be numeric or string-based and help make code more readable and maintainable.
+
+Example
+// Defining a numeric enum
+enum Direction {
+  Up = 1,
+  Down,
+  Left,
+  Right
+}
+// Using the enum
+let move: Direction = Direction.Up;
+console.log(move); // Output: 1
+// Defining a string enum
+enum Color {
+  Red = "RED",
+  Green = "GREEN",
+  Blue = "BLUE"
+}
+// Using the string enum
+let favoriteColor: Color = Color.Green;
+console.log(favoriteColor); // Output: GREEN
+Try it Yourself >>
+Output
+1
+Green
+Explanation
+Numeric Enum: The Direction enum is numeric by default, where Up is assigned the value 1. The subsequent values (Down, Left, Right) automatically get incremented.
+String Enum: The Color enum uses string values, where each member is explicitly assigned a string value (e.g., Red = "RED").
+Enums are used to store and represent a set of named constants, making the code more readable and maintainable.
+Q 9. What is a Tuple in TypeScript?
+A tuple in TypeScript is an ordered collection of elements of different types. It is similar to an array but allows different types of elements.
+
+Example
+// Defining a tuple with different types
+let person: [string, number, boolean] = ['John Doe', 30, true];
+
+// Accessing tuple elements
+console.log(person[0]); // Output: Aman
+console.log(person[1]); // Output: 24
+console.log(person[2]); // Output: true
+
+// Tuple with mixed types
+let coordinates: [number, number] = [40.7128, 74.0060]; // Latitude and Longitude (New York City)
+
+// Tuple with optional elements
+let employee: [string, number?, boolean?] = ['Alice', 25]; // 'boolean' and 'number' are optional
+console.log(employee); // Output: ['Ankita', 25]
+Try it Yourself >>
+Output
+Aman
+24
+true
+[ 'Ankita', 25 ]
+Explanation
+Basic Tuple: In the person tuple, the first element is a string, the second is a number, and the third is a boolean.
+Accessing Tuple Elements: You can access tuple elements by index, similar to arrays.
+Optional Tuple Elements:Can you define tuples where some elements are optional by using them? symbol (e.g., number? or boolean? in the employee tuple).
+Q 10. How does TypeScript support Object-Oriented Programming?
+TypeScript supports Object Oriented Programming by:
+
+Classes: TypeScript supports defining classes, which are blueprints for creating objects. You can define properties and methods inside classes.
+Inheritance: TypeScript allows classes to inherit from other classes using the extends keyword, enabling code reuse.
+Encapsulation: TypeScript provides access modifiers like public, private, and protected to control the visibility of class members, promoting encapsulation.
+Interfaces: TypeScript uses interfaces to define the structure of objects or classes. Classes can implement interfaces, ensuring that they adhere to a specific contract.
+Abstract Classes: TypeScript supports abstract classes, which can’t be instantiated directly but can be inherited. They allow defining methods that must be implemented by child classes.
+Access Modifiers: TypeScript supports public, private, and protected keywords for controlling access to class properties and methods.
+Polymorphism: Through method overriding and interfaces, TypeScript supports polymorphism, allowing objects to be treated as instances of their parent class or interface.
+Q 11. What is the difference between 'interface' and 'type' in TypeScript?
+The key differences between interface and type are as follows:
+
+Feature	Interface	Type
+Extensibility	It can be extended using extends.	It can be extended using intersections (&).
+Declaration Merging	Supports declaration merging.	Does not support declaration merging.
+Use with Primitives	It cannot be used with primitive types.	It can be used with primitive types (e.g., string, number).
+Union/Intersection	It cannot represent unions or intersections directly.	It can represent union (|) and intersection (&) types.
+Use Case	Best for defining object shapes and contracts.	Best for creating type aliases for complex or primitive types.
+Q 12. What are Generics in TypeScript?
+Generics in TypeScript allow you to write reusable code by enabling types to be passed as arguments to functions, classes, or interfaces, making them more flexible and type-safe.
+
+Q 13. What is the 'void' type in TypeScript?
+The void type is used to indicate that a function does not return a value. It’s typically used as the return type for functions that perform actions but don’t return anything.
+
+Q 14. What is the 'never' type in TypeScript?
+The never type represents values that never occur, such as functions that always throw errors or run infinite loops, indicating the absence of a value.
+
+Q 15. What are type assertions in TypeScript?
+Type assertions allow you to tell the TypeScript compiler about the type of a variable when it cannot infer it. It doesn’t change the type at runtime but helps explicitly tell TypeScript about the type.
+
+Q 16. How do you declare a variable in TypeScript?
+Variables in TypeScript are declared using let, const, or var,followed by a type annotation.
+
+Example
+// Using let with type annotation
+let age: number = 25;
+console.log(`Age: ${age}`);
+
+// Using const with type annotation
+const name: string = "Aman Mishra";
+console.log(`Name: ${name}`);
+
+// Using var with type annotation
+var isStudent: boolean = true;
+console.log(`Is Student: ${isStudent}`);
+Try it Yourself >>
+Output
+Age: 25
+Name: Aman Mishra
+Is Student: true
+Q 17. What is the difference between 'let' and 'const' in TypeScript?
+Let's understand the difference between the let and const keywords in TypeScript:
+
+Feature	let	const
+Reassignable	It can be reassigned.	It cannot be reassigned after initialization.
+Scope	Block-scoped (within a function or a block).	Block-scoped (within a function or a block).
+Usage	Used for variables that can change value.	Used for variables that should not change value.
+Must be initialized	It can be declared without initialization.	It must be initialized at the time of declaration.
+Objects/Arrays	Allows modifying properties/elements.	Allows modifying properties/elements (but not reassigning the whole object/array).
+Example
+// Using `let` (mutable)
+let name: string = "Alice";  // String variable
+console.log(name);           // Output: Alice
+name = "Bob";                // Reassigning the value
+console.log(name);           // Output: Bob
+
+// Using `const` (immutable)
+const city: string = "New York";  // Constant variable
+console.log(city);                // Output: New York
+// city = "Los Angeles";          // Error: Cannot assign to 'city' because it is a constant.
+
+// `const` with objects
+const person = { name: "John", age: 30 };
+console.log(person);        // Output: { name: 'John', age: 30 }
+// person = { name: "Jane" }; // Error: Cannot assign to 'person' because it is a constant.
+person.age = 31;            // Valid: Changing property of the object
+console.log(person);        // Output: { name: 'John', age: 31 }
+Try it Yourself >>
+Output
+Alice
+Bob
+New York
+{ name: 'John', age: 30 }
+{ name: 'John', age: 31 }
+Explanation
+Let allows reassignment of the variable value. const prevents reassignment of the variable, but allows changes to object properties or array elements.
+Q 18. How do you define an array in TypeScript?
+Arrays in TypeScript can be defined using either type annotations or generics.
+
+Example
+// 1. Array of numbers using type annotation
+let numbers: number[] = [1, 2, 3, 4, 5];
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+
+// 2. Array of strings using generics
+let fruits: Array = ["apple", "banana", "cherry"];
+console.log(fruits);  // Output: ["apple", "banana", "cherry"]
+
+// 3. Array with mixed types using `any[]`
+let mixedArray: any[] = [1, "apple", true, 3.14];
+console.log(mixedArray);  // Output: [1, "apple", true, 3.14]
+
+// 4. Tuple with fixed types and length
+let tuple: [string, number] = ["Alice", 25];
+console.log(tuple);  // Output: ["Alice", 25]
+
+// 5. Array with numbers and an additional element added
+numbers.push(6);
+console.log(numbers);  // Output: [1, 2, 3, 4, 5, 6]
+
+// 6. Accessing array elements
+console.log(fruits[1]);  // Output: "banana"
+Try it Yourself >>
+Output
+[ 1, 2, 3, 4, 5 ]
+[ 'apple', 'banana', 'cherry' ]
+[ 1, 'apple', true, 3.14 ]
+[ 'Alice', 25 ]
+[ 1, 2, 3, 4, 5, 6 ]
+banana
+Explanation
+Array of numbers: We use the number[] to define an array containing only numbers.
+Array of strings: The Array generic is used for an array of strings.
+Mixed-type array: The any[] type allows elements of different types (numbers, strings, booleans).
+Tuple: A fixed-length array where each element can have a different type (e.g., a string followed by a number).
+Q 19. What is the 'this' keyword in TypeScript?
+In TypeScript, this refers to the current instance of a class or function and can be used to access properties and methods within the class or object.
+
+Q 20. What are access modifiers in TypeScript?
+Access modifiers in TypeScriptarepublic, private, and protectedto control the accessibility of class members (properties and methods).
+
+Q 21. What is the purpose of the 'readonly' modifier in TypeScript?
+The 'readonly' modifier is used to declare properties that cannot be modified after initialization. It ensures immutability for specific object properties.
+
+Q 22. What is the purpose of the 'async' and 'await' keywords in TypeScript?
+The async is used to define a function that returns a promise, and await is used to pause the execution until a promise resolves, making asynchronous code more readable.
+
+Q 23. How do you handle errors in TypeScript?
+Errors in TypeScript can be handled using try, catch, and finally blocks, just like in JavaScript, with the added benefit of type checking for error objects.
+
+Q 24. Explain the TypeScript class syntax.
+A class in TypeScript is a blueprint for creating objects with predefined properties and methods. It supports features like inheritance and access modifiers.
+
+Q 25. What is the difference between '==' and '===' in TypeScript?
+The Differences Between == and === in TypeScript are as follows:
+
+Aspect	==	===
+How it compares	== checks if the values are equal, even if they’re of different types.	=== checks if both the value and the type are exactly the same.
+Type checking	== doesn’t care about the type, so a number and a string might be considered equal.	=== cares about the type, so a number and a string won’t match.
+When to use	It’s not really recommended in TypeScript because it can lead to unexpected bugs.	It’s safer to use ===in TypeScript since it avoids surprises by checking both type and value.
+Best practice	Only use == if you really need it to convert types for you (but this is rare in TypeScript).	Stick with >=== for most comparisons to keep your code clear and reliable.
+Q 26. What are Decorators in TypeScript?
+
+Decorators in TypeScript are features used to add metadata or modify the behavior of classes, methods, properties, or parameters. They are commonly used in frameworks like Angular.
+
+Q 27. How does TypeScript support modules?
+TypeScript supports modules using import and export keywords. This allows for modular, maintainable code by separating different functionalities into separate files.
+
+Q 28. What is a constructor in TypeScript?
+A constructor is a special method in a class that is called when an object is created. It is used to initialize the properties of the class.
+
+Example
+// Defining a class with a constructor
+class Person {
+    // Properties
+    name: string;
+    age: number;
+
+    // Constructor to initialize properties
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display the person's information
+    introduce(): void {
+        console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+// Creating an instance of the class
+let person1 = new Person("Alice", 30);
+person1.introduce();  // Output: Hi, my name is Alice and I am 30 years old.
+
+let person2 = new Person("Bob", 25);
+person2.introduce();  // Output: Hi, my name is Bob and I am 25 years old.
+Try it Yourself >>
+Output
+Hi, my name is Alice and I am 30 years old.
+Hi, my name is Bob and I am 25 years old.
+Explanation
+constructor(): In TypeScript, the constructor is a special method used for initializing objects when a new instance of the class is created.
+this.name and this.age: These are instance properties that are initialized using values passed to the constructor.
+Creating Instances: We create instances of the Person class by calling new Person("name", age).
+Q 29. What is the purpose of 'super()' in TypeScript?
+The super() is used to call the constructor of a parent class when subclassing. It allows access to the parent class's properties and methods.
+
+Q 30. What is a type guard in TypeScript?
+Type guards are functions that allow narrowing down the type of a variable within a specific scope. They help ensure safe operations when working with unions or complex types.
+
+Intermediate Level TypeScript Interview Questions and Answers
+Q 31. What is the purpose of TypeScript's `strict` mode?
+The purpose of TypeScript's strict mode:
+
+Enhanced Type Safety: Ensures all variables, parameters, and return types are explicitly typed, reducing errors.
+Catches Common Mistakes: Flags potential issues like null/undefined assignments and uninitialized variables.
+Improved Code Quality: Encourages cleaner, more maintainable, and robust code by enforcing stricter checks.
+Q 32. What can you do in TypeScript to check null and undefined?
+For checking null and undefined in TypeScript, we do the following:
+
+Equality Check: Use comparison to identify null or undefined.
+Optional Chaining: Safely access properties without throwing errors.
+Nullish Coalescing: Provide default values for null or undefined.
+Type Guards: Ensure a value is defined using checks like 'typeof'.
+Strict Null Checks: Enable strictNullChecks to enforce explicit null/undefined handling in TypeScript.
+Q 33. Describe how TypeScript files can be supported by Node Modules
+TypeScript files can be supported by Node Modules by:
+
+Install TypeScript and Definitions: Set up TypeScript and type definitions for external libraries using npm install typescript and @types/library-name.
+Configure Module Resolution: Update tsconfig.json to include "moduleResolution": "node".
+Compile TypeScript: Use tsc to convert .ts files into .js files for Node.js.
+Run with ts-node: Use ts-node to execute TypeScript files directly without prior compilation.
+Adjust Paths if Needed: Use paths in tsconfig.json to help TypeScript locate project files easily.
+Q 34. How do you handle default parameter values in TypeScript functions?
+Default parameters in TypeScript functions are declared by assigning a default value to the parameter. For example:
+
+// Function with default parameters
+function greet(name: string = "Guest", age: number = 18): string {
+  return `Hello, ${name}! You are ${age} years old.`;
+}
+
+// Calling the function with all arguments
+console.log(greet("Aman", 25)); // Hello, Aman! You are 25 years old.
+
+// Calling the function with one argument
+console.log(greet("Alice")); // Hello, Alice! You are 18 years old.
+
+// Calling the function without arguments
+console.log(greet()); // Hello, Guest! You are 18 years old.
+Try it Yourself >>
+Output
+Hello, Aman! You are 25 years old.
+Hello, Alice! You are 18 years old.
+Hello, Guest! You are 18 years old.
+Q 35. What are Getters/Setters in TypeScript?
+Let us understand Getters and Setters in TypeScript by:
+
+Getter: A getter is a special method that allows you to retrieve the value of a property in a controlled way. It is defined with the get keyword and can include custom logic before returning the value.
+Setter: A setter is a special method that allows you to set or modify the value of a property. It is defined with the set keyword and can include logic (like validation) before changing the property value.
+Example
+class Person {
+    private _name: string;
+    constructor(name: string) {
+        this._name = name;
+    }
+    // Getter to access the name
+    get name(): string {
+        return this._name;
+    }
+    // Setter to change the name with validation
+    set name(value: string) {
+        if (value.length < 3) {
+            console.log("Name must be at least 3 characters long.");
+        } else {
+            this._name = value;
+        }
+    }
+}
+const person = new Person("John");
+console.log(person.name);  
+person.name = "Jo";       
+person.name = "Johnathan"; 
+console.log(person.name);  
+Try it Yourself >>
+Output
+John
+Name must be at least 3 characters long.
+Johnathan
+Explanation
+Person Class: Defines a class with a private _name property and methods to get and set the name.
+Getter Method: Allows access to the _name property by returning its value when person.name is accessed.
+Setter Method: Validates the name length before updating _name when a new value is assigned to person.name.
+Q 36. How does TypeScript's type inference work?
+Automatic Type Assignment: TypeScript automatically assigns types to variables based on their assigned values, even without explicit type annotations.
+Contextual Inference: TypeScript can infer types based on the context in which a variable or function is used (e.g., function return type or object properties).
+Strictness: TypeScript uses a set of rules to infer types safely, ensuring type safety while minimizing the need for explicit type declarations.
+Complex Types: TypeScript can infer more complex types, like arrays, objects, and generics, based on how they're used in the code.
+Q 37. Can you explain "conditional types" in TypeScript?
+Conditional types in TypeScript allow you to define types that depend on a condition, like a type that changes based on whether another type extends a certain type. They are written using the syntax 'T extends U ? X : Y', where X is the type if the condition is true, and Y is the type if it's false.
+
+Example
+// Define a conditional type
+type IsString<T> = T extends string ? "Yes, it's a string" : "No, it's not a string";
+
+// Test the conditional type with different inputs
+type Test1 = IsString<string>; // "Yes, it's a string"
+type Test2 = IsString<number>; // "No, it's not a string"
+type Test3 = IsString<boolean>; // "No, it's not a string"
+
+// Demonstrating usage in a function
+function checkType<T>(value: T): IsString<T> {
+  if (typeof value === "string") {
+    return "Yes, it's a string" as IsString<T>;
+  } else {
+    return "No, it's not a string" as IsString<T>;
+  }
+}
+console.log(checkType("Hello")); 
+console.log(checkType(123));     
+console.log(checkType(true));   
+Try it Yourself >>
+Output
+Yes, it's a string
+No, it's not a string
+No, it's not a string
+Q 38. What is the `keyof` operator in TypeScript, and how is it used?
+The 'keyof' operator in TypeScript is used to obtain the type of the keys of an object or interface. It creates a union type of all property names of the given object type.
+
+'keyof' takes an object type and returns a type that represents all the keys of that object (as a union of string literals).
+It helps in situations where you want to refer to the keys of an object type without hardcoding the property names.
+Q 39. What is the typeof operator? How is it used in TypeScript?
+The `typeof` operator in TypeScript is used to obtain the type of a variable or expression.
+
+Example
+// Defining variables
+const age = 30;
+const user = {
+  name: "Aman Mishra",
+  active: true,
+};
+// Using `typeof` to infer types
+type AgeType = typeof age; // number
+type UserType = typeof user; // { name: string; active: boolean }
+// Function that uses `typeof`
+function logUserDetails(details: typeof user): void {
+  console.log(`Name: ${details.name}`);
+  console.log(`Active: ${details.active}`);
+}
+// Assigning a value with inferred type
+const anotherUser: UserType = {
+  name: "Alice",
+  active: false,
+};
+console.log(`Age Type: ${typeof age}`); 
+logUserDetails(user); 
+logUserDetails(anotherUser); 
+Try it Yourself >>
+Output
+Age Type: number
+Name: Aman Mishra
+Active: true
+Name: Alice
+Active: false
+Q 40. What are "index signatures" in TypeScript, and how do they work?
+Index signatures allow objects to have dynamic property names with specified types. Example:
+
+interface StringDictionary { [key: string]: string; }
+Q 41. Explain the concept of "type widening" and "type narrowing" in TypeScript.
+Type widening occurs when TypeScript automatically changes a type to a broader one, for example, from `string` to `any`. Type narrowing is when TypeScript infers a more specific type based on control flow, like in `if` statements. Example:
+
+let value: string | number = "hello"; if (typeof value === "string") { // `value` is narrowed to 'string' here }
+Q 42. How does TypeScript support asynchronous programming with Promises and async/await?
+TypeScript fully supports async/await and Promises. The `async` keyword marks a function as asynchronous, and `await` pauses the function until the promise resolves. Example:
+
+async function fetchData(): Promise { return "data"; }
+Q 43. What is the `ReturnType` utility type in TypeScript?
+The `ReturnType` utility type extracts the return type of a function type.
+
+Example
+// Define a function
+function getUser() {
+  return {
+    id: 1,
+    name: "Aman Mishra",
+    active: true,
+  };
+}
+// Use ReturnType to infer the return type of the getUser function
+type User = ReturnType;
+// Function using the inferred type
+function printUserDetails(user: User): void {
+  console.log(`ID: ${user.id}`);
+  console.log(`Name: ${user.name}`);
+  console.log(`Active: ${user.active}`);
+}
+// Usage
+const user = getUser(); // Call the getUser function
+printUserDetails(user); // Pass the result to another function
+Try it Yourself >>
+Output
+ID: 1
+Name: Aman Mishra
+Active: true
+Q 44. How do you enforce immutability in TypeScript with the `Readonly` type?
+The `Readonly` utility type makes all properties of a type read-only, preventing modification after initialization.
+
+type ReadonlyPerson = Readonly<{ name: string, age: number }>; 
+Q 45. What are "discriminated unions" in TypeScript, and how are they used?
+Discriminated unions are a way of defining types that can have different shapes, but with a common discriminant property to distinguish between them.
+
+type Shape = | { kind: "circle"; radius: number } | { kind: "square"; sideLength: number }; 
+Q 46. How do you use `extends` in TypeScript to constrain generic types?
+`extends` is used to constrain the types that a generic type can accept. Example:
+
+function identity(value: T): T { return value; }
+Q 47. What is the difference between `interface` and `class` in TypeScript?
+The Differences between interface and class in TypeScript are as follows:
+
+Aspect	interface	class
+Purpose	Defines a contract or shape for objects without implementation.	Defines a blueprint with implementation for creating objects.
+Implementation	Cannot contain actual logic; only describes structure and types.	Contains constructors, methods, and properties with actual logic.
+Inheritance	Supports multiple interface extensions (multiple inheritance).	Supports single inheritance but can implement multiple interfaces.
+Compilation Output	Erased during compilation (used only for type checking).	Transpiled to JavaScript with executable code.
+Use Case	Used for defining data shapes, DTOs, or ensuring structure in classes and functions.	Used to create real object instances, implement business logic, and encapsulate behavior.
+Q 48. What are `never` and `unknown` types, and when should they be used?
+
+`never` represents a type that never occurs (e.g., functions that throw errors). `unknown` is a safer alternative to `any`, requiring type checks before use.
+
+Example
+// Example using `never`
+function throwError(message: string): never {
+  throw new Error(message); // This function never returns
+}
+// Another `never` example: impossible code paths
+function processValue(value: number | string): string {
+  if (typeof value === "string") {
+    return `You passed a string: ${value}`;
+  } else if (typeof value === "number") {
+    return `You passed a number: ${value}`;
+  }
+  // This branch is impossible; value is never here
+  const impossible: never = value; 
+  return impossible; 
+}
+// Example using `unknown`
+function handleUnknownInput(input: unknown): string {
+  if (typeof input === "string") {
+    return `It's a string with value: ${input}`;
+  } else if (typeof input === "number") {
+    return `It's a number with value: ${input}`;
+  } else {
+    return "Unknown type!";
+  }
+}
+// Main execution
+try {
+  // never example
+  console.log(processValue("Hello")); // You passed a string: Hello
+  console.log(processValue(42)); // You passed a number: 42
+  // Throw an error using never
+  // Uncomment the line below to see the error:
+  // throwError("This is an error!"); 
+  // unknown example
+  console.log(handleUnknownInput("Aman")); 
+  console.log(handleUnknownInput(100)); 
+  console.log(handleUnknownInput(true)); 
+} catch (error) {
+  console.error(error.message);
+}  
+Try it Yourself >>
+Output
+You passed a string: Hello
+You passed a number: 42
+It's a string with value: Aman
+It's a number with value: 100
+Unknown type!
+Q 49. How can you create a "factory function" in TypeScript?
+A factory function returns an object or instance of a specific type. Example:
+
+function createPerson(name: string): { name: string } { return { name }; }
+Q 50. What is type compatibility, and how does TypeScript check it?
+Type compatibility in TypeScript checks if a type can be assigned to another type based on structure. TypeScript uses structural typing, meaning an object with compatible properties can be assigned to a variable of a different type.
+
+Q 51. How can you extend a class in TypeScript?
+You can extend a class in TypeScript using the `extends` keyword. The subclass inherits properties and methods from the parent class.
+
+Example
+// Base class (Parent)
+class Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  greet(): string {
+    return `Hello, my name is ${this.name}, and I am ${this.age} years old.`;
+  }
+}
+// Derived class (Child)
+class Student extends Person {
+  grade: string;
+  constructor(name: string, age: number, grade: string) {
+    super(name, age); // Call the parent class constructor
+    this.grade = grade;
+  }
+  // Additional method specific to Student
+  study(): string {
+    return `${this.name} is studying in grade ${this.grade}.`;
+  }
+}
+// Creating an instance of the derived class
+const student = new Student("Aman Mishra", 25, "MCA");
+// Using methods from both the parent and child classes
+console.log(student.greet()); // Inherited from Person
+console.log(student.study()); // Defined in Student 
+Try it Yourself >>
+Output
+Hello, my name is Aman Mishra, and I am 25 years old.
+Aman Mishra is studying in grade MCA.
+Q 52. What is the purpose of TypeScript's "ambient declarations," and when do you use them?
+Ambient declarations are used to define types for external code, like global variables or libraries that TypeScript isn't aware of. Example:
+
+declare var $: any;
+Q 53. How can you define a "read-only array" in TypeScript?
+A read-only array in TypeScript is defined using `ReadonlyArray` or by appending `readonly` to the array type. Example:
+
+let arr: ReadonlyArray = [1, 2, 3];
+Q 54. How do you define a function signature using TypeScript's `Function` type?
+The `Function` type is a generic type used to define functions without specifying their parameters or return types. Example:
+
+let myFunction: Function = (a: number, b: number) => a + b;
+Q 55. Explain the role of the `@ts-ignore` directive and when to use it.
+The `@ts-ignore` directive tells TypeScript to ignore the following line of code and suppress type errors. It should be used sparingly and only when you're sure the error is not critical.
+
+Advanced Level TypeScript Interview Questions and Answers
+Q 56. What are "template literal types" in TypeScript?
+Template literal types allow you to construct new string types using template literals. Example:
+
+type Greeting = `Hello ${string}`;
+Q 57. What is the purpose of `in` operator when used in TypeScript types?
+Let us understand by some points:
+
+The in operator is used to iterate over the keys of a type to create new types or map properties.
+It helps in defining dynamic property mappings for objects.
+It is commonly used in mapped types to transform or restrict types based on keys.
+Example
+type Original = { name: string; age: number };
+
+type ReadOnly<T> = { readonly [K in keyof T]: T[K] };
+
+type ReadOnlyOriginal = ReadOnly;
+
+const original: Original = { name: "John", age: 30 };
+const readOnly: ReadOnlyOriginal = { name: "John", age: 30 };
+
+// Uncommenting the next lines will throw a TypeScript error because properties are readonly
+// readOnly.name = "Doe";
+// readOnly.age = 35;
+
+console.log("Original:", original);
+console.log("ReadOnly:", readOnly);
+Try it Yourself >>
+Output
+Original: { name: 'John', age: 30 }
+ReadOnly: { name: 'John', age: 30 }
+Explanation
+The in operator iterates over the keys (keyof T) of the Original type.
+It creates a new type where all properties are marked as readonly.
+Q 58 How can you compile a TypeScript file?
+To compile a TypeScript file, run the tsc command followed by the filename (e.g., tsc app.ts). This will generate the corresponding JavaScript file, which can then be executed using Node.js.
+
+Q 59 What is the difference between the .ts and .tsx file extensions in TypeScript?
+The Differences Between .ts and .tsx in TypeScript are as follows:
+
+Aspect	.ts	.tsx
+Primary Purpose	Used for writing plain TypeScript code without JSX syntax.	Designed for TypeScript files that include JSX, commonly used in React components.
+JSX Support	Does not support JSX. JSX syntax will cause a compilation error.	Fully supports JSX syntax and integrates smoothly with React UI development.
+Typical Use Case	Best for non-UI logic such as services, utilities, and API interactions.	Ideal for building TypeScript-based React components with embedded JSX.
+Compiler Behavior	Processed as regular TypeScript code without any JSX transformation.	Transpiles JSX using the TypeScript compiler and respects JSX-related settings in tsconfig.json.
+When to Use	Use .ts for logic-driven modules or backend TypeScript code.	Use .tsx when creating frontend components that involve JSX and React.
+Q 60 What are Union Types in TypeScript?
+
+In TypeScript, union types allow a variable to hold values of multiple types, defined using the | (pipe) symbol. For example, let value: string | number; allows value to be either a string or a number. This feature is useful when a variable or function can work with different types while maintaining type safety.
+
+Q 61. What is parameter destructuring?
+Parameter Destructuring in TypeScript allows you to extract properties from objects or arrays passed as function arguments, making the code more concise and readable.
+
+Object Destructuring: Allows extracting multiple properties from an object directly into variables.
+Array Destructuring: Allows extracting elements from an array.
+Default Values: You can assign default values to parameters when destructuring.
+Q 62. What are the Mixins in TypeScript?
+Mixins are a design pattern in TypeScript that allows you to combine behaviors and properties from multiple sources into a single class, avoiding deep inheritance hierarchies.
+
+They provide flexibility by enabling multiple sources of functionality without relying on deep inheritance hierarchies.
+Reusable functionality can be shared across unrelated classes, making code more modular and maintainable.
+Mixins are implemented using functions that extend base classes and return new classes with additional features.
+TypeScript ensures type safety, allowing you to define and check the structure of mixed-in properties and methods.
+Q 63. Is it practical to define immutable Object attributes in TypeScript?
+Yes, it is practical to define immutable object attributes in TypeScript. Immutable attributes ensure that object properties cannot be changed after their initial assignment, which can improve code safety and predictability and reduce potential bugs. TypeScript offers several ways to enforce immutability.
+
+Q 64. Describe a promise in TypeScript.
+A promise in TypeScript is an object that represents the eventual completion (or failure) of an asynchronous operation and allows you to handle its result or error in the future. It ensures type safety by letting you specify the type of the resolved value.
+
+Example
+function fetchData(): Promise {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data loaded successfully!"), 1000);
+  });
+}
+
+// Using the promise
+fetchData().then((data) => console.log(data));
+Try it Yourself >>
+Output
+Data loaded successfully!
+Explanation
+fetchData returns a promise that resolves after 1 second with a string message.
+The .then() method is used to handle the resolved value and print it to the console.
+Q 65. What are the Design Patterns?
+A design pattern is a general, reusable solution to a commonly occurring problem in software design. It provides a template for solving specific design issues in object-oriented systems. Design patterns help create flexible, maintainable, and scalable software systems.
+
+Reusable Solution: A design pattern offers a proven solution to a common problem.
+Promotes Best Practices: It helps developers follow best practices and improve code quality.
+Improves Communication: Design patterns provide a shared vocabulary for developers to discuss solutions.
+Facilitates Maintenance: Promoting standard solutions aids in easier maintenance and scaling of software.
+Q 66. What is the Facade Design Pattern?
+The Facade Design Pattern is a structural design pattern that provides a simplified interface to a complex subsystem or group of classes. It is used to hide the complexity of a system by exposing a unified, easy-to-use interface, making it easier for clients to interact with the system.
+
+Simplification: The facade acts as a "front-facing" interface, abstracting and reducing the complexity of underlying subsystems.
+Encapsulation: The pattern encapsulates the interactions between multiple components, hiding the implementation details from the client.
+Separation of Concerns: The client code interacts only with the facade, keeping it decoupled from the internal workings of the subsystem.
+Q 67. What is the Singleton Design Pattern?
+The Singleton Design Pattern ensures that a class has only one instance and provides a global point of access to that instance. It is commonly used for managing shared resources like configuration settings or database connections.
+
+Single Instance: Guarantees that only one instance of the class exists during the application's lifecycle.
+Global Access: Provides a global point of access to the instance, typically through a static method.
+Lazy Initialization: The instance is created only when it is needed (on demand).
+Thread-Safety: Can be implemented in a thread-safe manner to prevent issues in multi-threaded environments.
+Q 68. What is the ‘tsconfig.json’ file?
+The tsconfig.json file is a configuration file in TypeScript that defines the compiler options and the files that should be included or excluded in a TypeScript project. It is used to configure how TypeScript code is compiled into JavaScript and to specify the project's structure.
+
+Compiler Options: Specifies TypeScript compiler settings, such as target JavaScript version, module system, and strictness checks.
+File Inclusion/Exclusion: Determines which files should be included or excluded in the compilation process using the include and exclude properties.
+Project Structure: Defines the root of the TypeScript project and the behavior of the compiler for various directories.
+Type Checking: Allows you to configure type-checking behavior, enabling or disabling features like strict mode or checking for type errors.
+Q 69. What are the assertions functions?
+Assertion functions in TypeScript are used to narrow down the type of a value, asserting that a variable is of a specific type. This helps TypeScript understand the type more precisely at a particular point in the code.
+
+Purpose: Assertion functions help TypeScript infer the correct type when it's not immediately clear from the code.
+Syntax: You can use the as keyword or a type assertion function to tell TypeScript to treat a value as a specific type.
+Common Use: Often used when working with unknown types, or when you have more information than TypeScript can infer.
+No Runtime Impact:They don’t change the actual behavior at runtime; only help with type-checking during development.
+Q 70. Describe how optional chaining works in TypeScript.
+Optional chaining in TypeScript allows you to safely access deeply nested properties of an object without having to check if each intermediate property exists. It prevents runtime errors by returning undefined instead of throwing an error if any part of the chain is null or undefined.
+
+How Optional Chaining Works
+It uses the ?. operator to access a property, method, or index.
+If the value before ?. is null or undefined, it short-circuits and returns undefined instead of throwing an error.
+It can be used with objects, arrays, and function calls.
+Conclusion
+In conclusion, preparing for TypeScript interview questions requires a deep understanding of TypeScript features and concepts. By reviewing common TypeScript interview questions and answers, candidates can gain the confidence needed to tackle various challenges during the interview. The more you familiarize yourself with TypeScript interview questions & answers, the better equipped you'll be to showcase your knowledge and problem-solving skills. Ultimately, mastering these TypeScript interview questions will help you stand out in any technical interview. 
+
+React.js is powering apps like Netflix and Instagram. Don’t miss out—join our React JS online course and build world-class projects!
+
+
+Download this PDF Now - TypeScript Interview Questions PDF By ScholarHat
+Let the quiz begin! Pick the right answers and climb to the top!
+Q 1: What is TypeScript?
+A programming language
+A library
+A framework
+A text editor
+Previous
+Next
+Typescript Interview BookCrack Your Next Typescript Interview – Grab the Free Expert eBook!
+Typescript Interview Questions and Answers Bookers Book Unlock expert-level Typescript interview preparation with our exclusive eBook! Get instant access to a curated collection of real-world interview questions, detailed Answers Bookers, and professional insights — all designed to help you succeed.
+
+No downloads needed — just quick, free access to the ultimate guide for Typescript interviews. Start your preparation today and move one step closer to your dream job!.
+
+Access Now – It’s Free
+FAQs
+
+Q1. What are the advantages of using TypeScript?
+TypeScript offers static typing, better tooling (like auto-completion and refactoring), enhanced readability, and early error detection, making it easier to maintain large codebases. It also provides better support for object-oriented programming concepts like interfaces and classes. 
+
+Q2. How does TypeScript handle null and undefined?
+TypeScript has strict checks for null and undefined. In strict mode, variables cannot be assigned null or undefined unless explicitly declared with | null or | undefined. 
+
+Q3. How does TypeScript ensure type safety?
+TypeScript enforces type safety through static typing, which checks types during compile time and alerts developers to potential type errors. 
+
+Q4. What are the key features of TypeScript?
+Static typing, type inference, interfaces, classes, decorators, generics, and support for modern JavaScript features like async/await. 
+
 Top 50 Typescript Interview Questions and Answers in 2026
  
-
 TypeScript is a free, open-source programming language you can apply to any application supported by JavaScript — meaning both front-end and back-end programming. 
 
 Designed and maintained by Microsoft, TypeScript is a superset of JavaScript. However, unlike JavaScript, TypeScript performs type checking, making it a suitable choice for many large and complex web applications. 
