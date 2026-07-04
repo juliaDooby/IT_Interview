@@ -1,13 +1,110 @@
+ADVERTISEMENT
+
+
+PostgreSQL Interview Questions
+Priya Pedamkar
+Article by
+Priya Pedamkar
+Updated May 29, 2023
+
+PostgreSQL Interview Questions
+
+ 
+
+ 
+
+Introduction to PostgreSQL Interview Questions and Answers
+PostgreSQL is an object-relational database management systems (ORDBMS). It is a powerful, open-source object-relational database system. Any corporation or other private entity does not control PostgreSQL, and the source code is available free of charge. PostgreSQL runs on all major operating systems, including Linux, UNIX, and Windows. It supports text, images, sounds, and video and includes C/C++, Java, Perl, Python, Ruby, and Open Database Connectivity programming interfaces.
+
+Installation
+Follow these steps to install PostgreSQL on the Windows system:
+
+Pick the most relevant version of PostgreSQL from EnterpriseDB.
+Run the downloaded software as administrator. Please select the location where you want to install it.
+The next step of the installation is selecting the directory where data should be stored. By default, it is stored under the “data” directory.
+It will prompt you to enter a password to make the data stored more secure.
+The next step is to set a default port.
+On completion of the installation, a message is displayed.
+Features of PostgreSQL
+
+Language support: PostgreSQL supports four standard procedural languages PL/pgSQL, PL/Tcl, PL/Perl, and PL/Python.
+Indexes: PostgreSQL supports B+ tree, hash, generalized search trees, and inverted indexes. Users can also create customized indexes.
+Views: PostgreSQL supports views that create virtual tables.
+Rules allow a hierarchy of incoming queries to be re-written and supported by PostgreSQL.
+Inheritance: in PostgreSQL, a table can be set to inherit its characteristics from a “parent” table.
+User-defined functions: it supports the creation of almost all new objects inside the database like Casts, conversions, dataTypes, domains, functions including aggregate functions, and indexes including custom indexes for custom types operator.
+Now, if you are looking for a job related to PostgreSQL, you must prepare for the 2023 PostgreSQL Interview Questions. Every interview differs from the job profiles, but you must have a good and precise knowledge of PostgreSQL processes to clear the interview. Here, we have prepared the vital PostgreSQL Interview Questions and answers to help you succeed in your interview.
+
+Below are the 12 crucial PostgreSQL Interview Questions and answers frequently asked in an interview. These questions are divided into two parts as follows:
+
+Part 1 – PostgreSQL Interview Questions (Basic)
+This first part covers basic PostgreSQL Interview Questions and Answers.
+
+Q1. What are the main features of PostgreSQL?
+Answer:
+Following are some of the features of PostgreSQL
+
+Object-relational database.
+Support and extensibility for SQL.
+Flexible API and database validation.
+MVCC and procedural languages,
+WAL and Client-Server.
+Q2. What is Cube Root Operator (||/) in PostgreSQL?
+Answer:
+Returns Cube Root of a number
+e.g., Select ||/ 16 “Cube Root of 16.”
+
+Q3. Provide a brief explanation of the functions in PostgreSQL.
+Answer:
+Functions are essential because they help execute the code on the server. Some of the languages to program functions are PL/pgSQL, a native language of PostgreSQL, and other scripting languages like Perl, Python, PHP, etc. The statistical language PL/R can also be used to increase the efficiency of the functions.
+
+Let us move to the following PostgreSQL Interview Questions.
+
+Q4. Can you explain Pgadmin?
+Answer:
+Pgadmin is a feature known to form a graphical front-end administration tool. This feature is available under free software released under an Artistic License. PgAdmin III is a new database administration tool that has been released under the Artistic License.
+
+Q5. What is Multi-version control?
+Answer:
+Multi-version concurrency control, or MVCC, avoids unnecessary database locking. This removes the time lag for the user to log into his database. This feature or time lag occurs when someone else is accessing the content. All transactions are kept as a record.
+
+Q6. What will be the new characteristics of PostgreSQL 9.1?
+Answer:
+During updating the project, one can never be sure which features will go in and which won’t make the cut. The project has precise and stringent standards for quality, and some patches may or may not match them before the set deadline. The 9.1 version is currently incorporating several essential features, such as JSON support, synchronous replication, nearest-neighbor geographic searches, column-level collation, SQL/MED external data connections, security labels, and index-only access. However, this list will likely change completely when Postgre 9.1 is released.
+
+Part 2 – PostgreSQL Interview Questions (Advanced)
+Let us now have a look at the advanced PostgreSQL Interview Questions.
+
+Q7. What is command enable-debug?
+Answer:
+The command enable-debug enables the compilation of all the applications and libraries. The execution of this procedure usually impedes the system, but it also amplifies the binary file size. Debugging symbols that are present generally assists the developers in spotting the bugs and other problems which may arise associated with their script.
+
+Q8. What are the indices of PostgreSQL?
+Answer:
+These are inbuilt functions or methods like GIST Indices, hash table, and B-tree, which the user can use to scan the index backwardly. Users can also define their indices of PostgreSQL.
+
+Q9. What is the option in PostgreSQL to check rows affected in a previous part of the transaction?
+Answer:
+The SQL standard defines four transaction isolation levels that pertain to three phenomena. We must prevent the occurrence of the three phenomena between concurrent transactions. The unwanted phenomenon is
+
+Phantom read: a transaction that re-executes a query, returning a set of rows that satisfy a search condition and then finds that the location of rows helping the situation has changed due to another recently committed transaction.
+Non-repeatable read: a transaction that re-reads the data that it has previously read and then finds that another transaction has already modified data.
+Dirty reads: a transaction that reads data written by a concurrent uncommitted transaction is the dirty read.
+Let us move to the following PostgreSQL Interview Questions.
+
+Q10. What is A CTID?
+Answer:
+CTIDs are a field in every PostgreSQL table and are known to identify specific physical rows according to their block and offset positions within a particular table. They are used by index entries to point to physical rows. It is unique for each record in the table and quickly denotes the location of a tuple. Updating a logical row causes a change in its CTID, rendering it unsuitable for long-term row identification. In certain cases, it can be beneficial to identify a row within a transaction when there is no expectation of any competing update.
+
+Q11. What are the tokens?
+Answer:
+Tokens are the building blocks of any source code. We categorize these symbols as constant, quoted identifiers, other identifiers, and keywords due to their unique characteristics and composition. Tokens which are keywords, consist of pre-defined SQL commands and meanings. Identifiers represent variable names such as columns, tables, etc.
+
+Q12. What is the purpose of Array_To_String in PostgreSQL?
+Answer:
+The Array_To_String function concatenates array elements using a provided delimiter.
+
 30 самых часто задаваемых вопросов на собеседованиях по PostgreSQL
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-acoolakids.ru
-Реклама
-Узнать больше
-
-Ознакомившись с этим списком вопросов и ответов для собеседований по PostgreSQL для начального и среднего уровня, вы будете знать, каких знаний интервьюеры ищут в соискателях. Используйте этот список, чтобы подготовиться к следующему собеседованию по PostgreSQL.
 
 Топ-30 вопросов и ответов по PostgreSQL в 2022 году
 1. Как выглядит секционированная таблица PostgreSQL?
