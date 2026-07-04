@@ -1,3 +1,116 @@
+20 React TypeScript Interview Questions and Answers
+July 16, 2025
+As a popular programming language, TypeScript is often used in React applications. If you are interviewing for a position that uses React with TypeScript, it is important to be prepared to answer questions about your experience with both technologies. In this article, we review some common React TypeScript questions and provide guidance on how to answer them. With this information, you can enter your next interview feeling confident and ready to impress.
+
+React TypeScript Interview Questions and Answers
+Here are 20 commonly asked React TypeScript interview questions and answers to prepare you for your interview:
+
+1. What is React TypeScript?
+React TypeScript is a programming language that combines the benefits of both React and TypeScript. It offers the benefits of React, such as the ability to create reusable components, while also providing the benefits of TypeScript, such as static type checking.
+
+2. Can you explain the differences between React and TypeScript in your own words?
+React is a JavaScript library for building user interfaces, while TypeScript is a superset of JavaScript that adds static typing and other features. React is used to create reusable UI components, while TypeScript is used to write more maintainable and error-free code. Both React and TypeScript are open source projects.
+
+3. Why would you use React TypeScript instead of just using React or TypeScript alone?
+React TypeScript provides the benefits of both React and TypeScript by allowing developers to create type-safe components using the JSX syntax. This provides a more robust development environment and can help catch errors early on. Additionally, the use of TypeScript can help improve the performance of React applications.
+
+4. What are some advantages of using React TypeScript over plain JavaScript?
+The biggest advantage of using React TypeScript is that it provides stronger typing and better error checking. This can help to avoid potential bugs in your code and make your code more maintainable. Additionally, React TypeScript can make it easier to integrate with other TypeScript libraries.
+
+5. How do you install React TypeScript to create a project template?
+You can install React TypeScript by using the command line tool create-react-app. This will install all of the necessary dependencies and will create a project template that you can use to start developing your React TypeScript application.
+
+6. What’s the difference between a class component and functional component with hooks in React?
+Class components are more complex, and they can contain state and lifecycle methods. Functional components are simpler, and they are typically used for presentational purposes. With the introduction of hooks, functional components can now also contain state and lifecycle methods, which makes them more versatile.
+
+7. Is it possible to add TypeScript annotations to components in any way other than by adding them directly within the file that they’re being used in?
+No, the only way to add TypeScript annotations to React components is by adding them directly within the file that they’re being used in.
+
+8. What’s the best way to import an existing TypeScript definition into a new file?
+The best way to import an existing TypeScript definition into a new file is to use the “import” keyword. This will ensure that the TypeScript definition is properly imported and that it can be used in the new file.
+
+9. What are the different types of syntax supported by TypeScript?
+TypeScript supports three different types of syntax:
+
+1. Basic syntax, which is similar to JavaScript.
+2. JSX syntax, which is used by React.
+3. TypeScript-specific syntax, which is used to add type annotations to JavaScript code.
+
+10. What are some examples of built-in types provided by TypeScript?
+Some examples of the built-in types provided by TypeScript include:
+
+– Boolean
+– Number
+– String
+– Array
+– Tuple
+– Enum
+– Any
+– Void
+– Null
+– undefined
+
+11. What are interfaces, type aliases, and unions? Can you provide an example for each one?
+Interfaces, type aliases, and unions are all ways of defining types in TypeScript. Interfaces are used to define the structure of an object, type aliases are used to create new types from existing types, and unions are used to define types that can be one of several different types.
+
+An example of an interface would be:
+
+interface Person {
+name: string;
+age: number;
+}
+
+An example of a type alias would be:
+
+type alias Name = string;
+
+An example of a union would be:
+
+type Age = number | string;
+
+12. What’s the purpose of generics in TypeScript? How can you use them to write functions that accept arguments of various types?
+Generics are used in TypeScript to write functions that can accept arguments of various types. This allows for greater flexibility when writing code, as the function can be used with different types of data without having to be rewritten each time. To use generics, you simply need to specify the type of data that the function can accept using angle brackets (<>). For example, if you wanted to write a function that could accept either a string or a number, you would write it as follows:
+
+function myFunction(arg: T): T {
+// function body goes here
+}
+
+13. What are some common ways of writing conditionals in TypeScript?
+There are a few different ways to write conditionals in TypeScript, but the most common are probably using the if/else keyword, or using a ternary operator.
+
+14. In what situations should we use a switch statement?
+Switch statements can be used in a variety of situations, but they are most commonly used when you have a set of conditions that need to be checked and you want to execute a different code block based on which condition is met. For example, you could use a switch statement to check the value of a variable and then execute a different code block depending on whether the variable is equal to 1, 2, or 3.
+
+15. Can you explain what “never” means in the context of a function declaration?
+The “never” type is used to indicate that a function will never return a value. This is useful for indicating that a function will always throw an error, for example.
+
+16. When is it appropriate to use strictNullChecks?
+There is no definitive answer to this question, as it depends on the specific project and its requirements. However, a general rule of thumb is that strictNullChecks should be used whenever possible, as they can help to prevent errors related to null and undefined values.
+
+17. What does the as keyword mean? How can you use it to cast values from one type to another?
+The as keyword is used to cast values from one type to another. For example, you could use it to cast a value from a string type to a number type. To do this, you would simply put the as keyword before the value that you want to cast.
+
+18. What are tuples in TypeScript? How are they similar to arrays?
+Tuples in TypeScript are very similar to arrays, but the key difference is that tuples allow you to store multiple data types within the same array. So, for example, you could have a tuple that looks like this: [string, number, boolean]. This would allow you to store a string, a number, and a boolean value all within the same array.
+
+19. What’s the significance of the triple dot notation in TypesScript?
+The triple dot notation (…) is called the spread operator. It allows you to spread out the values of an array or an object into a new array or object. For example, if you have an array of numbers, you can use the spread operator to create a new array that contains all of the numbers in the original array:
+
+const numbers = [1, 2, 3, 4, 5];
+const newNumbers = […numbers, 6, 7, 8, 9, 10];
+
+console.log(newNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+The spread operator can also be used with objects. For example, if you have an object with properties x and y, you can use the spread operator to create a new object with all of the properties of the original object:
+
+const point = { x: 1, y: 2 };
+const newPoint = { …point, z: 3 };
+
+console.log(newPoint); // { x: 1, y: 2, z: 3 }
+
+20. What’s the difference between an array and a tuple in TypeScript?
+An array is a data structure that represents a list of elements, while a tuple is a data structure that represents a fixed-size list of elements. The main difference between the two is that tuples are immutable, meaning that once they are created, they cannot be changed.
+
 20 вопросов и ответов на собеседовании по TypeScript
 Вопросы для собеседования
 
