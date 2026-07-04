@@ -1,3 +1,944 @@
+Top 40+ Full Stack Developer Interview Questions and Answers (2026)
+Last updated on Dec 29,20252.4K Views
+Share
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+
+Arya KarnArya Karn 
+A bit of nerd, a lot absurd. Making technology easy for you.
+Do you know? The U.S. Bureau of Labor Statistics projects that by 2026, there will be approximately 853,000 jobs available for these professionals, up from 135,000 today. In addition to many job opportunities, this career is also one of the highest paid.  Explore our list of the top 40 Full Stack Developer Interview Questions to ace your next tech interview!
+
+Full Stack Developer Interview Questions for Freshers
+Related Post : Front End vs Back End vs Full Stack
+Full Stack Developer Interview Questions for Experienced
+Full Stack Developer MCQ Interview Questions
+Tips For Preparing For Full Stack Interview
+FAQs
+The role of Full Stack Web Developer is one of the most dynamic and sought-after positions in the technology industry. These professionals have a wide range of skills that enable them to work at the front and back ends of web development. With that in mind, it is one of the most sought job profiles among developers, so the full stack developer interview questions are going to be advanced too. But we have narrowed down the list and divided the Full Stack developer interview questions for Freshers, Experienced, and an MCQ list.   
+
+Full Stack Developer interview questions and answers
+
+ 
+
+Full Stack Developer Interview Questions for Freshers
+1. What is full stack development?
+Full-stack development builds web applications from the ground up, handling both the user-facing side (front-end) and the internal workings (back-end).
+
+Front-end: 
+
+Designs and builds the user interface (UI) and user experience (UX).
+Focuses on visual appeal and intuitive interaction.
+Requires skills in HTML, CSS, JavaScript, and frameworks like React or Angular.
+Back-end:
+
+Handles server-side programming, database management, and server configuration.
+Ensures smooth operation and data handling behind the scenes.
+Requires knowledge of server-side languages, databases, and server management tools.
+2. What do full stack web developers do?
+A full stack developer is responsible for both the front-end and back-end development of websites and applications. They design user interfaces, ensuring a seamless and visually appealing experience for users, and also handle server-side logic, including database management. Their role involves integrating various technologies to create and maintain fully functional web applications, making them versatile professionals in the tech industry.
+
+3. What skills do you need to be a full stack developer?
+To be a successful full stack developer, you need a blend of technical and soft skills.The following are the skills needed to be a full stack developer:
+
+Front-End Technologies:
+
+Creating interactive user interfaces using frameworks like React or Angular
+Proficiency in HTML, CSS, and JavaScript
+Back-End Development:
+
+Knowledge of server, network, and hosting settings
+Proficiency with server-side languages like Python, Java, or Node.js
+Database Management:
+
+Understanding of database theory
+Proficiency with SQL (MySQL, PostgreSQL) and NoSQL (MongoDB) databases
+Version Control and Git:
+
+Knowledge of version control principles
+Familiarity with Git for tracking changes and collaboration
+Basic Design Ability:
+
+Understanding of UI/UX design concepts to create user-friendly and applications. 
+Web Developer Roadmap 2026 | Complete Web Development Roadmap | Frontend Developer Roadmap | Edureka
+ 
+
+
+
+🔥 Full Stack Developer Course(Masters Program): https://www.edureka.co/masters-program/full-stack-developer-training?
+
+In this video, we’ll go through the *Web Developer Roadmap* , covering essential …
+
+4. What is CORS?
+CORS, or Cross-Origin Resource Sharing, is a security feature in web browsers. It allows or restricts web applications from making requests to a domain different from the one that served the web page. This mechanism is crucial for enabling secure cross-domain requests and preventing malicious site attacks.
+
+5. What is Inversion of Control (IoC)?
+The idea of inversion of control (IoC) in software engineering refers to the transfer of control of objects or parts of a program to a container or framework. The program flow is no longer under the direction of a programmer but rather of an external framework. This method is frequently used to improve modularity and decouple components in programs, which makes them more flexible, manageable, and testable.
+
+6. What is dependency injection?
+Dependency injection is a design pattern used in software development to achieve inversion of control between classes and their dependencies. It involves supplying objects (dependencies) to a class instead of the class creating them itself. For example, consider a class car that needs an engine. Instead of creating the engine inside the car class, the engine is created externally and passed to the car at the time of its creation. This approach makes code more modular, easier to test, and adaptable to changes.
+
+7. What is continuous integration?
+Continuous integration (CI) is a development practice where members of a team integrate their work frequently; usually, each person integrates at least daily. This leads to multiple integrations per day. Each integration is verified by an automated build and automated tests to detect integration errors as quickly as possible. This approach aims to minimize the difficulties in integrating code changes from multiple developers, ensuring that the software being developed is always in a state that can be deployed to users.
+
+8. What is polling?
+Polling is a form of client-server communication in which the client periodically requests updates from the server. Two common types of surveys are the long survey and the short survey. 
+
+Long polling is an evolutionary technique where the client sends a request to the server and the server keeps the connection open until new information is received. This approach minimizes the delay between updates and ensures real-time data transmission. 
+In contrast, short polling is based on fixed regular requests, usually using AJAX. The client sends frequent requests to the server, which can be less efficient because it can cause unnecessary requests even when there is no new information. A short survey is less real-time than a long survey, but it is easier to implement.  
+ Both methods have their uses: long polling offers near-real-time updates, while short polling offers simplicity and efficiency at the expense of potentially increased network traffic.
+
+9. What’s the difference between a full stack engineer and a full stack developer?
+Aspect	Full Stack Engineer	Full Stack Developer
+Focus	Broader engineering knowledge	Primarily, software development
+Skills	Extensive hardware and software	Proficient in software stack
+Responsibilities	May involve hardware design	Focused on software solutions
+Scope	Encompasses both front-end and back-end development	Primarily deals with software development.
+Versatility	Adaptable to various tech stacks	Adaptable within software technology
+Job Titles	Can be a software engineer, system engineer, etc.	Typically referred to as a Software Developer
+Both full-stack engineers and full-stack developers possess a wide range of skills, but the key distinction lies in their scope and focus, with engineers often having a broader engineering knowledge encompassing hardware, whereas developers primarily focus on software solutions.
+
+Top 30 JavaScript Interview Questions 2026 | JavaScript Interview Questions & Answers | Edureka
+
+
+🔥 Full Stack Developer Course(Masters Program): https://www.edureka.co/masters-program/full-stack-developer-training?
+
+Are you preparing for a JavaScript interview in 2026? This video covers the *Top …
+
+10. What is the observer pattern?
+The observer pattern is a behavioral design pattern used in software development. It establishes a one-to-many relationship between objects, where one object (known as the subject or observable) maintains a list of dependent objects (observers) that are notified of any changes to the subject’s state. When the subject’s state changes, it automatically informs all its observers, ensuring that they stay up-to-date without needing to be explicitly polled.
+
+This pattern promotes loose coupling between the subject and its observers, making it easy to add or remove observers without affecting the subject’s core functionality. The Observer pattern is commonly used in various software scenarios, including implementing event handling systems, user interface updates, and decoupled communication between components in an application.
+
+11. Which language is the most preferred by full-stack developers?
+Determining the single “most preferred” language for full-stack developers is tricky, as preferences often depend on project needs and individual experience. However, some languages consistently rank highly due to their versatility and popularity:
+
+JavaScript is dominant in both the front-end (frameworks like React and Vue.js) and back-end (Node.js), offering a familiar syntax and a large developer community.
+Python is widely used for back-end web development, data science, and machine learning and is renowned for its simplicity and extensive libraries.
+Java is a mature and robust language popular for enterprise applications and known for its scalability and security.
+Ultimately, the ideal language choice depends on individual preference, project requirements, and the specific needs of the front-end and back-end components. Many full-stack developers also choose to be proficient in multiple languages for greater flexibility and adaptability.
+
+12. Explain pair programming.
+Pair programming is a software development technique where two programmers work together on the same computer to write code. One person, the “driver,” actively writes code while the other, the “navigator,” reviews the code, provides input, and helps spot errors. They switch roles regularly. This collaborative approach offers several benefits. It improves code quality through real-time code review, encourages knowledge sharing, and helps catch bugs early. It fosters creativity and problem-solving as two minds tackle challenges together. Pair programming also promotes communication and teamwork, making it an effective way to enhance productivity and produce higher-quality software.
+
+13. What is Callback Hell?
+In asynchronous programming, callback hell, often referred to by the term “the pyramid of doom,” is a common issue, especially in languages like JavaScript. It happens when you have a lot of callbacks inside callbacks, making the code difficult to understand, read, and update. Deeply nested callback functions result when working with asynchronous actions, such as managing events or submitting API calls, when one activity depends on the result of another.
+
+
+asyncFunction1(function (result1) {
+asyncFunction2(result1, function (result2) {
+asyncFunction3(result2, function (result3) {
+asyncFunction4(result3, function (result4) {
+Continue nesting if needed
+});
+});
+});
+});
+
+In this code, each function call is asynchronous, and they are nested inside one another, creating a deeply indented and hard-to-read structure.
+
+14. Can you tell me what the latest trends are in full-stack development? Also, how do you keep yourself updated about the new trends in the industry?
+The latest trends in full-stack development for 2026 revolve around several key technologies and approaches:
+
+Microservices Architecture: This approach divides applications into smaller, autonomous services, each handling specific functionality. It enhances scalability and fault separation and allows teams to work independently on specific services using frameworks like Spring Boot, Node.js, or Express.js.
+Serverless Computing: Gaining much attention, serverless computing enables developers to focus on code rather than server management. Platforms like AWS Lambda, Azure Functions, and Google Cloud Functions are popular choices. It offers reduced operational costs, auto-scaling, and faster development cycles.
+GraphQL: This query language allows for efficient data retrieval and manipulation, providing a more flexible and user-friendly API compared to traditional REST APIs. It reduces the number of server requests and offers better control over data fetching.
+Docker Containerization: Docker allows developers to bundle applications with their dependencies into isolated containers, ensuring consistency across various environments. It facilitates faster deployment and works well with orchestration tools like Kubernetes.
+Low-Code Development: With the increasing demand for applications, low-code platforms like Budibase and OutSystems are becoming more popular. They allow for quicker app development with minimal hand-coding.
+Python, Django, and Ruby on Rails Stacks: Python paired with Django and Ruby on Rails remain popular choices for their simplicity, rapid development capabilities, and scalability.
+Artificial Intelligence (AI): AI integration in mobile and web applications is a growing trend, with full-stack developers playing a crucial role in AI project implementation across various industries.
+Internet of Things (IoT): IoT technology has led to a surge in connected devices, requiring full-stack developers for frontend, backend, and UI/UX development, particularly in industries like manufacturing and mining. 
+Virtual Reality (VR) and Augmented Reality (AR): The integration of AR and VR into applications is growing, necessitating the involvement of skilled full-stack developers.
+Edge Computing: This emerging trend focuses on lower latency and real-time decision-making closer to the location where data is collected and acted upon.
+WebAssembly: This allows running compiled languages like C/C++, Rust, and Go on the web at near-native speeds, opening up possibilities for more demanding web applications.
+Progressive Web Apps (PWAs): PWAs bridge the gap between web and mobile apps, offering features like offline mode, push notifications, and installability.
+To stay updated on these trends, it’s essential to follow industry blogs, attend relevant webinars and conferences, participate in online communities and forums, and continuously explore and experiment with new technologies and tools.
+
+15. State difference between GraphQL and REST (Representational State Transfer).
+Aspect	GraphQL	REST (Representational State Transfer)
+Data Fetching	The client specifies the data it needs	The client receives a fixed set of data
+Endpoint Structure	Single flexible endpoint (usually /graphql)	Multiple endpoints for different resources
+Over-fetching	Eliminates over-fetching and gets only required data	The common problem of over-fetching data.
+Under-fetching	Eliminates under-fetching and gets all needed data in one request	Often requires multiple requests for related data.
+Request Control	The client controls the shape and depth of the response	The server determines the structure of the response.
+Versioning	There is no need for versioning; clients request only what they need	May require versioning to support changes.
+Schema	Schema-driven with a defined type system	No strict schema; relies on documentation.
+Caching	Fine-grained caching using queries	Caching based on HTTP methods and headers.
+Response Size	Smaller responses, reducing bandwidth usage	Potentially larger responses due to fixed structure.
+Tooling	Strong tooling for introspection and documentation	Based on the platform and framework.
+CRUD Operations	Supports custom operations beyond CRUD (e.g., mutations)	Primarily follows CRUD operations (GET, POST, PUT, DELETE).
+Adoption	Gaining popularity for modern APIs	Widely used and established convention.
+16. Explain the meaning of multithreading.
+Multithreading is a programming concept in which a single program is split into multiple threads, each  of which can run independently and concurrently. Threads share the same memory space and resources as the main process, allowing  more efficient use of CPU cores and better responsiveness in applications.  
+
+For example, consider a web browser. If you open multiple tabs without multiple threads, they can load one after the other, causing delays. Multithreading allows each tab to run as a separate thread and load content simultaneously. This improves the user experience by making browsing faster and more responsive because the processor can multitask. Multithreading is particularly useful in situations where tasks can be combined in parallel, improving the efficiency and effectiveness of different software programs.
+
+17. Explain the benefits and drawbacks of using “use strict.”.
+Benefits of using “use strict” in JavaScript:
+
+Error prevention: It enforces a stricter set of rules, catching common coding mistakes early.
+Improved performance: Some optimizations are possible in strict mode, potentially leading to faster code execution.
+Security: It prevents the use of potentially unsafe actions like assigning values to undeclared variables.
+Readability: Stricter code can be easier to read and understand due to reduced ambiguity.
+Drawbacks:
+
+Compatibility: Older browsers may not support strict mode, causing issues for legacy code.
+Learning curve: Developers new to JavaScript might find it challenging to adapt to the stricter rules.
+Stringent restrictions: Some useful but unconventional coding practices are disallowed.
+Compatibility risk: Existing code may break when enabling strict mode, requiring thorough testing.
+
+// Without strict mode
+x = 10; // Variable x is implicitly declared in the global scope.
+console.log(x); // Outputs 10
+
+// With strict mode
+"use strict";
+y = 20; // Throws a ReferenceError: y is not defined.
+console.log(y); // This line won't be executed due to the error.
+
+In the example, “use strict” prevents the unintentional creation of global variables, helping to catch potential bugs early.
+
+18. What are some of the uses of Docker?
+Docker is a descriptive framework that simplifies the deployment and management of applications by packaging them and their dependencies into transparent, self-contained containers. It has many uses, including: 
+
+Application standardization: Docker allows developers to package applications and their dependencies into containers, making them compatible with different environments. For example, you can upload your web application and distribute it to multiple servers without worrying about compatibility issues.
+Continuous Integration/Continuous Deployment (CI/CD): Docker plays an important role in automating the software development pipeline. Developers can build Docker images and push them to the registry for installation and deployment workflows.  Microservices architecture: Docker is  used in a microservices architecture, where each component or service runs in its own container. This promotes scalability, flexibility, and ease of maintenance.  
+Testing and Debugging: Developers can switch isolated containers for testing and debugging, ensuring a clean and reproducible environment.
+Example: Let’s say you want to deploy a web server using Docker. You can create a Docker file that represents your web server configuration and dependencies and build a Docker image from it. Finally, you can run multiple instances of the same image on different servers, providing a consistent and efficient way to host  web applications.
+
+19. Explain event loop in Node.js
+In Node.js, event handling is an important part of efficiently managing asynchronous operations. It continuously checks for pending tasks and executes them when they are ready, allowing Node.js to handle multiple tasks at the same time without blocking the main thread. Here is a simple example:
+
+&amp;amp;amp;amp;amp;amp;amp;lt;/pre&amp;amp;amp;amp;amp;amp;amp;gt;
+const fs = require('fs');
+
+// Asynchronous file reading
+fs.readFile('example.txt', 'utf8', (err, data) =&amp;amp;amp;amp;amp;amp;amp;amp;gt; {
+  if (err) throw err;
+  console.log(data);
+});
+// Continue executing other tasks while waiting for the file read
+console.log('Reading file...');
+
+// The event loop handles the file read in the background
+// When it's ready, it calls the callback function provided
+// Meanwhile, the code can proceed with other tasks
+&amp;amp;amp;amp;amp;amp;amp;lt;pre&amp;amp;amp;amp;amp;amp;amp;gt;
+In this example, using the event handler, the program is printing and reading the file, etc. Continue doing other work while you wait for the file to be read. Once the file is read, the provided callback is called to process the data.
+
+20. Is there a way to decrease the load time of a web application?
+Here are five key strategies to reduce the load time of your web applications:
+
+Image Optimization: compress and resize images to reduce  file size. Use modern image formats like WebP and use lazy loading to load images that fit the user’s view. 
+Reduce HTTP requests: Reduce the number of HTTP requests by combining CSS and JavaScript files, using sprites for icons, and reducing external dependencies.
+Browser Cache: Leverages the browser cache to store static resources such as images, style sheets, and text local to the user and device, reducing the need for repeated downloads.
+Content Delivery Network (CDN): A CDN allows you to improve delivery speeds by distributing content across multiple servers closer to your users. 
+Code and Server Optimization: Simplifies code and reduces redundant code execution. Reduce latency by optimizing server configuration, using gzip compression, and using content delivery technologies such as HTTP/2. 
+Implementing these technologies will help you improve your web applications and load times, resulting in a better user experience and better performance.
+
+Related Post : Front End vs Back End vs Full Stack
+Full Stack Developer Interview Questions for Experienced
+21. State the difference between blue/green deployment and rolling deployment. 
+Blue/green Deployment: 
+
+Concept: It contains two parallel environments: blue (the current version) and green (the new version). One of these is always alive. 
+
+Process: First, the blue environment is activated. When the updates are ready, they will be published in a green environment. After testing and certification, the vehicle goes from blue to green. If one goes wrong, you can quickly switch back to blue.
+
+Disadvantages: Maintaining two environments requires two resources.
+
+Rolling deployment.
+
+Concept: Replace samples from the old version with a new one. 
+
+Process: Updates are distributed to a small number of servers or bots. Once it is confirmed to work, the update will be rolled out to other servers and performed regularly. 
+
+Advantages: It consumes fewer resources and can be tested in real environments.
+
+Disadvantages: Regressions are more complex and can cause temporary differences in release time. 
+
+Blue/Green Usage: This image represents a blue/green deployment strategy. You will see two separate server environments. One is blue (represents current activity) and the other is green (represents new activity). The transition between the two shows the transition from the blue environment to the green, showing the ease and security of this delivery method. 
+
+Rotary Delivery: This image shows a transfer delivery strategy. Shows the sequence of servers or systems being upgraded from an old version (shown in gray) to a new version (shown in bright color). This elegant system-wide process reflects the continuous  nature of revolutionary liberation.
+
+22. Explain the inversion of control. 
+Inversion of Control (IoC) is a design principle in software engineering where the control of objects or portions of a program is transferred to a container or framework. It’s about inverting the flow of control compared to traditional procedural programming: rather than the caller controlling the flow, the framework or container takes control and calls into user-defined functions or objects.
+
+Examples of IoC:
+
+Dependency Injection (DI): This is a form of IoC where dependencies (objects or services) are injected into a component rather than the component creating them internally. For instance, if a class ReportGenerator requires a DataAccess object, instead of instantiating the DataAccess inside, it is passed to ReportGenerator (injected) via constructor, method, or property.
+
+Event Handling in GUIs: In graphical user interfaces, the flow of control is inverted. The application provides specific functionality (like a button click handler), but it’s the framework (GUI framework) that calls these functions based on user interactions, like a button click.
+
+Template Method Design Pattern: This pattern in object-oriented programming allows subclasses to redefine certain steps of an algorithm without changing the algorithm’s structure. The control is inverted here, as the superclass controls the flow of execution and the subclasses implement the variable parts.
+
+In summary, IoC reverses the flow of control compared to traditional programming methodologies, making programs more modular and easier to test, maintain, and extend.
+
+23. What do you mean by referential transparency in functional programming? 
+Referential Transparency in functional programming refers to an important property of expressions in a program. It means that an expression can be replaced with its corresponding value without changing the program’s behavior. This concept is vital in functional programming because it allows for predictable and consistent behavior, making reasoning about and testing the program easier.
+
+Let’s consider an example in a functional language like Haskell:
+
+addTwoNumbers x y = x + y
+Here, addTwoNumbers is a simple function that adds two numbers. If we have a call to this function like addTwoNumbers (5, 3), referential transparency allows us to replace this call with 8 (since 5 + 3 = 8) anywhere in the program without changing the behavior of the program. This is possible because the function addTwoNumbers does not have any side effects (like modifying global variables, I/O operations, etc.) and always gives the same output for the same input.
+
+This feature makes functional programs easier to understand and debug because the same expression  always returns the same result, no matter where or how many times it is used. It also enables advanced features such as lazy evaluation, where expressions are evaluated only when necessary.
+
+24. State the difference between normalization and denormalization.
+Factor	Normalization	Denormalization
+Purpose	To reduce data redundancy and improve data integrity.	To improve the performance of read-heavy database operations.
+Process	It involves dividing a database into two or more tables and defining relations between the tables	It involves combining multiple tables into a single table.
+Data Redundancy	Reduced, as data is organized into separate tables.	Increased as data is merged and duplicated across multiple tables.
+Data Integrity	High, due to the minimized redundancy and well-defined relationships.	Can be compromised due to the increased redundancy.
+Performance	Slower for read operations due to the need for joins.	Faster for read operations as it requires fewer joins.
+Complexity	Higher, as it involves managing multiple tables and relationships.	Lower, as it involves fewer tables and simpler relations.
+Use Case	Preferred in systems where maintaining data integrity is crucial and write operations are more common.	Preferred in systems where speed of read operations is critical and the database size is not excessively large.
+Scalability	More scalable in terms of managing growing data.	Can face challenges in scaling with significantly large amounts of data.
+Maintenance	More complex due to multiple tables and relationships.	Simpler as it involves fewer tables.
+Updates	Can be slower and more complex due to the spread of data across tables.	Faster and simpler, as related data is often in the same table.
+This table summarizes the key differences between normalization and denormalization in database design, each with its own advantages and trade-offs depending on the specific requirements and context of the database application.
+
+25. In Java, what is a connection leak? How can you fix this?
+A Java connection leak, especially in  database programming, occurs when the connection to the database is not properly closed after it has been used. When you open a connection to a database, it consumes resources. If these connections are not explicitly closed, they remain open and use resources unnecessarily, which can lead to the exhaustion of existing connections. This is called “connection leakage.”. This can seriously impact an application  and even cause the application to crash when the database can no longer handle  connections. 
+
+It is very important to follow resource management best practices to avoid connection leaks. 
+
+Here are the main steps to fix and prevent connection leaks. 
+
+Try with resources (Java 7 and later): This function automatically closes  resources (e.g., database connections) after a try block is executed. This ensures that the resource is closed even if an exception is thrown
+
+try (Connection conn = dataSource.getConnection()) {
+    // Use connection here
+}
+Proper Exception Handling: If you’re not using try-with-resources, ensure you close the connection in a finally block. This guarantees that the connection is closed even if there’s an exception.
+
+Connection conn = null;
+try {
+    conn = dataSource.getConnection();
+    // Use connection here
+} catch (SQLException e) {
+    // Handle exception
+} finally {
+    if (conn != null) {
+26. What is a promise and explain its states?
+In JavaScript, a promise is an object that represents the possible completion or failure of an asynchronous operation. It is an efficient way to manage asynchronous operations, providing more flexible and readable code structures compared to traditional callback-based approaches. 
+
+A promise has three states: 
+
+Pending: This is the initial status of the pledge. At this point, the asynchronous operation has started but  not finished. The final outcome (resolved or rejected) is not yet known.
+Fulfilled: When the promise is in this state, it means that the asynchronous operation has been completed successfully. The promise’s’then”method can be used to get the result. In this state, the promise is “resolved.”. 
+Rejected : This status indicates that the asynchronous operation  failed. The reason for the failure (error or  other information) is determined using the ‘catch’ method of the promise. In this state, the promise is said to be “abandoned”. 
+If a promise is  fulfilled or rejected, it is considered fulfilled. Once a promise is made, its state cannot change; it becomes immutable. This feature is important because it ensures consistency; once a promise is resolved or rejected, you can be sure that it won’t suddenly change to another state or value.
+
+27. State the difference between GET and POST. 
+Following are the differences between GET and POST:
+
+Aspect	GET	POST
+Request Data	Appends data to the URL	Sends data in the request body
+Data Visibility	The data is visible in the URL	The data is not visible in the URL
+Data Length	Limited by URL length limits	Not limited by URL length
+Security	Less secure for sensitive data	More secure for sensitive data
+Caching	Can be cached by browsers	Typically not cached by browsers
+Idempotence	Generally considered idempotent	Not necessarily idempotent
+Usage	Used for data retrieval	Used for data submission or update
+28. Explain the Restful API and describe its usage. 
+A web service architecture known as a Representational State Transfer (RESTful) API adheres to a collection of principles and limitations that facilitate communication and interaction between servers and clients, such as web browsers or mobile applications, via the HTTP protocol. RESTful APIs are designed with simplicity, scalability, and statelessness in mind, rendering them a popular option for constructing web services and APIs.
+
+In the following passage, we provide a concise elucidation of RESTful API utilization:
+
+RESTful APIs exploit HTTP methods like GET, POST, PUT, DELETE, and others to execute CRUD (Create, Read, Update, Delete) operations on resources, thereby allowing diverse clients to effortlessly consume and comprehend the data.
+
+The use of RESTful APIs encompasses the subsequent fundamental principles:
+
+Resource-Based: In the context of a RESTful API, every element is regarded as a distinct resource, and each resource is uniquely identified by means of a Uniform Resource Locator (URL). For instance, within the framework of a RESTful API designed for a blog, URLs such as “/posts” are employed to display a comprehensive list of all blog posts, while URLs like “/posts/1” enable access to a specific post.
+
+Stateless: REST APIs are characterized by their stateless nature, which implies that every request made by a client to a server must encompass all the necessary information for comprehending and fulfilling the said request. The server, in turn, does not retain any record of client state between individual requests.
+
+CRUD Operations: RESTful APIs provide support for the customary CRUD operations. Clients employ HTTP methods such as GET (read), POST (create), PUT (update), and DELETE (delete) to interact with various resources.
+
+The Uniform Interface of RESTful APIs utilizes a coherent and precisely defined collection of HTTP methods, status codes, and headers, thereby offering a standardized and easily comprehensible interface for clients.
+
+The process of transferring data between the client and server occurs in a standardized format, such as JSON or XML, which facilitates the consumption and comprehension of the data by diverse clients.
+
+HATEOAS (Hypermedia as the Engine of Application State) enables RESTful APIs to incorporate hyperlinks within their responses, empowering clients to dynamically navigate the API and explore the available actions.
+
+The design of RESTful APIs prioritizes scalability, enabling efficient handling of a substantial volume of concurrent requests.
+
+29. What do you mean by MEAN Stack?
+Full-stack network development frequently makes use of the MEAN stack technological stack. It consists of four main components: Angular, a JavaScript front-end framework; Express.js, a web application framework for Node.js; MongoDB, a NoSQL database; and Node.js, a server-side runtime. When combined, these technologies enable developers to create scalable and dynamic online applications. Data is skillfully stored by MongoDB in a format that is adaptable and similar to JSON. The server-side logic is managed by the Express.js script. Conversely, Angular handles the user interface with skill.The MEAN stack promotes efficient development, code reuse, and the ability to build modern, responsive web applications with a single, consistent technology stack.
+
+30. Do you know how to prevent a bot from scraping your publicly accessible API? 
+While the information contained in the API is publicly available, data scraping cannot technically be completely prevented. However, it is possible to minimize the activity of robots (automated computer programs on the Internet that perform certain tasks) by controlling or rarely limiting them. A rare limit can prevent a specific device from making an unlimited number of requests for a certain period of time. If too many requests are made beyond the specified limit, an HTTP error 429: Too Many Attempts will be displayed. It is important to record more than just the device’s IP address, as the IP address is not unique for each device and can prevent the entire network from accessing the API.
+
+31. What makes MVC (Model View Controller) different from MVP (Model View Presenter)? 
+Aspect	MVC (Model-View-Controller)	MVP (Model-View-Presenter)
+Basic Concept	Separates an application into three interconnected parts: the model (data), the view (UI), and the controller (business logic).	Similar separation as MVC, but the presenter handles the business logic, acting as an intermediary between the model and the view.
+User Interaction	The Controller handles user interactions and updates the Model, which in turn updates the View	The View handles user interactions and passes these actions to the Presenter, which manipulates the Model.
+Data Flow	Controller manipulates the Model, and the View gets updated after Model changes.	Presenter updates the View based on changes in the Model. The View is more passive, only forwarding actions to the Presenter.
+Component Dependency	View is dependent on the Model.	View is independent of the Model, which makes it easier to mock in unit testing.
+Complexity & Use Case	MVC is traditionally used for web applications where the controller is responsible for handling HTTP requests.	MVP is often used in client-side applications, especially those requiring extensive user interaction and complex UI logic.
+Flexibility	The View and Controller are closely linked, making the View often less reusable.	The Presenter acts as a middle layer that decouples the View from the Model, leading to more flexibility and reusability of the View component.
+In summary, while both MVC and MVP aim to separate concerns in an application, MVP offers more decoupling between the View and the Model, often resulting in easier unit testing and more reusable View components. MVC, on the other hand, is a more traditional pattern and is commonly used in web application frameworks.
+
+32. What do you mean by Temporal Dead Zone in ES6?
+The Temporal Dead Zone (TDZ) in ES6 (ECMAScript 2015) refers to a behavior associated with variables declared using let and const. The TDZ is the period where a variable is in a “state” where it cannot be accessed before its declaration and initialization. This is a significant change from how variables declared with var behave, as var declarations are hoisted to the top of their enclosing scope and can be accessed (with undefined value) before their actual declaration in the code.
+
+For your reference, this is an example : 
+
+&amp;amp;amp;amp;amp;amp;amp;lt;/pre&amp;amp;amp;amp;amp;amp;amp;gt;
+console.log(myVar);   // undefined, due to hoisting
+console.log(myLet);   // ReferenceError: Cannot access 'myLet' before initialization
+console.log(myConst); // ReferenceError: Cannot access 'myConst' before initialization
+
+var myVar = "var value";
+let myLet = "let value";
+const myConst = "const value";
+
+33. What is event bubbling and capturing in JavaScript? 
+
+Event Bubbling and Capturing in JavaScript is referred as the process by which events are transmitted within the DOM (Document Object Model) is commonly referred to as the ‘Event Flow’ in the context of JavaScript. The event flow dictates the specific order or sequence in which a given web page receives an event. Consequently, event flow or propagation in JavaScript is contingent upon the subsequent factors:
+
+Event Bubbling: Event Bubbling entails the event being captured and handled initially by the innermost element, subsequently propagating to the outermost element. Events progress upwards through the DOM tree from child elements until the highest element is addressed.
+
+Event Capturing: Conversely, Event Capturing involves the event being captured and addressed initially by the outermost element, subsequently propagating to the innermost element. Event cycles propagate commencing with the wrapper elements and concluding with the target elements that initiated the event cycle.
+
+34. Tell me about a project that you worked on and the technologies you used. Why did you choose them? 
+By asking this question, the interviewer is able to determine the full-stack web developer’s process and whether or not he is competent and attentive when choosing the appropriate toolkit.
+
+You should be as specific as you can when describing the reasoning behind selecting a given collection of tools. You have to show that you are capable of developing the web application’s front end and back end. It’s acceptable to have more expertise in one aspect of the application development process than the other, but you must show that you can manage both.
+
+35. What does ACID mean in Database systems?
+ACID in database systems is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These are the key properties that ensure reliable transaction processing in a database management system (DBMS).
+
+Atomicity ensures that all activities in a database transaction are handled as a single unit. Either all operations were successful or none were. If an error occurs during a transaction, the system will undo all modifications made up to that point, guaranteeing that no partial transactions are added to the database.
+Consistency ensures that a transaction moves a database from one legitimate state to another while adhering to all stated rules, including integrity restrictions. There should be no transactions that leave the database in an inconsistent state.
+Isolation ensures that concurrent events occur separately from each other. Changes made to an event are not visible to other concurrent events until the event is internalized. This prevents transaction interference and ensures transaction independence.
+Durability guarantees that once a transaction is committed, it remains so even in the event of a system failure. This means that the database checks for pending changes so that the server can recover from an abnormal termination.
+36. How is rolling deployment different from blue-green deployment?
+Rolling deployment and blue-green deployment are both strategies used for deploying applications, but they differ significantly in their approach and risk management.
+
+In rolling deployment, the update is gradually rolled out to instances of the application in phases. This means that during the deployment, different instances of the application might be running different versions. It allows for a more gradual transition and minimizes downtime since only a portion of the instances are taken down at any one time. However, it can lead to a temporary inconsistency in the application’s behavior and requires that the different versions be compatible.
+
+Blue-green deployment, on the other hand, involves maintaining two identical environments: the ‘blue’ (current) and the ‘green’ (new). Once the new version is ready and tested in the green environment, the traffic is switched from the blue to the green environment. This approach allows for immediate rollback in case of issues, as the blue environment remains unchanged until the switch. However, it requires double the resources since two full environments must be maintained.
+
+37. What is referential transparency?
+Referential transparency is a basic idea in functional programming and logic. This refers to the feature of program expressions in which any phrase can be replaced by its equivalent without affecting the program’s behavior. This concept is essential for justifying program behavior and enabling program analysis and optimization.
+
+A referentially transparent expression is one that continually returns the same result with the same input, implying that it has no side effects. This indicates that expression and assessment are independent of the system’s status and have no effect on it. Functions, for example, are referentially transparent in pure functional programming languages: given the same input values, the function always returns the same result.
+
+38. What are the types of design patterns?
+Design patterns in software engineering are typically categorized into three main types:
+
+Creational Patterns: These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by controlling object creation.
+Examples include Singleton, Factory, Abstract Factory, Builder, and Prototype.
+Structural Patterns: These patterns concern class and object composition. They use inheritance to compose interfaces and define ways to compose objects to obtain new functionalities.
+Examples include Adapter, Bridge, Composite, Decorator, Facade, Flyweight, and Proxy.
+Behavioral Patterns: These patterns are concerned with algorithms and the assignment of responsibilities between objects. They describe not just patterns of objects or classes but also the patterns of communication between them.
+Examples include Strategy, Observer, Command, Iterator, Mediator, Memento, State, Visitor, and Template Method.
+
+Each pattern addresses a specific problem or issue in object-oriented software development, providing a kind of template solution that can be applied in various situations.
+
+39. List Some Common Ways To Reduce the Load Time of a Web Application.
+Reducing the load time of a web application is crucial for enhancing user experience and improving performance. Here are some common strategies:
+
+Optimize Images: Large image files can significantly slow down web page loading times. Compressing images, using appropriate file formats (like JPEG for photographs and PNG for graphics with transparency), and using responsive images that adjust to screen size can greatly reduce load time.
+Minimize HTTP Requests: Each element on a page (like scripts, stylesheets, and images) requires an HTTP request to load. Reducing the number of components on a page minimizes these requests. Techniques include using CSS sprites to combine images, consolidating multiple JavaScript or CSS files into single files, and using inline images when appropriate.
+Use a Content Delivery Network (CDN): CDNs distribute the load, saving bandwidth and speeding up access for your users by serving files from locations geographically closer to them. This is particularly effective for static files like scripts, stylesheets, and images.
+Enable Caching: When a user visits a website, elements of the page they visit can be stored locally in their browser’s cache. Next time they visit, the browser can load these elements from the cache rather than downloading them again, which can significantly reduce load time. Techniques include setting appropriate Expires or Cache-Control headers and using ETags.
+40. What Are the Differences Between Server-Side Scripting and Client-Side Scripting?
+Aspect	Server-Side Scripting	Client-Side Scripting
+Execution location	Runs on the server	Runs in the user’s browser
+Processing speed	Typically slower	Faster execution
+Access to server data	Has direct access to server	Limited access to server
+Page loading	Slower initial page load	Faster initial page load
+Security	More secure	Less secure
+Full Stack Developer MCQ Interview Questions
+1. What is the purpose of CSS in web development?
+a) Defining page structure
+
+b) Styling web pages
+
+c) Managing server infrastructure
+
+d) Creating databases
+
+Answer: b) Styling web pages
+
+2. Which programming language is commonly used for server-side scripting in Full Stack Development?
+a) HTML
+
+b) CSS
+
+c) JavaScript
+
+d) Python
+
+Answer: c) JavaScript
+
+3. What is the primary responsibility of a Full Stack Developer?
+a) Designing databases
+
+b) Handling server infrastructure
+
+c) Working on both front-end and back-end
+
+d) Managing project budgets
+
+Answer: c) Working on both front-end and back-end
+
+4. What does AJAX stand for in the context of web development?
+a) Automated JavaScript and XHTML
+
+b) Asynchronous JavaScript and XML
+
+c) Advanced JavaScript and XML
+
+d) Asynchronous JSON and XML
+
+Answer: b) Asynchronous JavaScript and XML
+
+5. What is a “GET” request in HTTP used for?
+a) Sending data to the server
+
+b) Retrieving data from the server
+
+c) Updating data on the server
+
+d) Deleting data from the server
+
+Answer: b) Retrieving data from the server
+
+6. What is the purpose of a “viewport” meta tag in HTML?
+a) Defining the character encoding of the page
+
+b) Specifying the document title
+
+c) Controlling the display of a web page on mobile devices
+
+d) Defining the page’s primary content
+
+Answer: c) Controlling the display of a web page on mobile devices
+
+7. Which database type is typically associated with SQL?
+a) NoSQL
+
+b) Relational
+
+c) Document-oriented
+
+d) Key-Value
+
+Answer: b) Relational
+
+8. In the Model-View-Controller (MVC) architectural pattern, what does the “View” represent?
+a) The user interface
+
+b) The database
+
+c) The server logic
+
+d) The URL routing
+
+Answer: a) The user interface
+
+9. What is the purpose of using version control systems like Git in software development?
+a) Managing project budgets
+
+b) Tracking changes in the codebase
+
+c) Designing user interfaces
+
+d) Optimizing database queries
+
+Answer: b) Tracking changes in the codebase
+
+10. Which HTTP status code indicates a successful response in web development?
+a) 200
+
+b) 404
+
+c) 500
+
+d) 302
+
+Answer: a) 200
+
+11. What is a “cookie” in the context of web development?
+a) A type of server-side scripting language
+
+b) A file used to store client-side data
+
+c) An HTML element for creating forms
+
+d) A database management system
+
+Answer: b) A file used to store client-side data
+
+12. What is the purpose of “npm” in Node.js development?
+a) To write server-side scripts
+
+b) To manage dependencies and packages
+
+c) To create HTML documents
+
+d) To design user interfaces
+
+Answer: b) To manage dependencies and packages
+
+13. What is the primary role of a web server in Full Stack Development?
+a) Managing client-side scripts
+
+b) Storing user data
+
+c) Serving web pages to clients
+
+d) Handling server-side logic
+
+Answer: c) Serving web pages to clients
+
+14. What does REST stand for in the context of web services?
+a) Remote Endpoint State Transfer
+
+b) Representational State Transfer
+
+c) Responsive Entity Service Transfer
+
+d) Resourceful Endpoint State Transformation
+
+Answer: b) Representational State Transfer
+
+15. What is the purpose of the “localStorage” object in JavaScript?
+a) To fetch data from an external server
+
+b) To store data locally on the client’s browser
+
+c) To create server-side logic
+
+d) To manage database connections
+
+Answer: b) To store data locally on the client’s browser
+
+16. Which HTTP method is used for updating data on the server in web development?
+a) GET
+
+b) POST
+
+c) PUT
+
+d) DELETE
+
+Answer: c) PUT
+
+17. What is the role of a Full Stack Developer in the DevOps process?
+a) Designing user interfaces
+
+b) Writing server-side scripts
+
+c) Ensuring smooth deployment and integration
+
+d) Managing project budgets
+
+Answer: c) Ensuring smooth deployment and integration
+
+18. What does API stand for in web development?
+a) Application Programming Interface
+
+b) Advanced Programming Instruction
+
+c) Automated Protocol Integration
+
+d) Algorithmic Programming Interface
+
+Answer: a) Application Programming Interface
+
+19. Which CSS property is used for creating responsive web designs?
+a) margin
+
+b) padding
+
+c) media
+
+d) @media
+
+Answer: d) @media
+
+20. What is the purpose of “MongoDB” in Full Stack Development?
+a) To manage client-side scripts
+
+b) To store relational data
+
+c) To serve web pages
+
+d) To work with NoSQL databases
+
+Answer: d) To work with NoSQL databases
+
+21. In JavaScript, what is the purpose of the “forEach” method?
+a) To create a new array
+
+b) To iterate over the elements of an array
+
+c) To execute a function once
+
+d) To check for undefined values
+
+Answer: b) To iterate over the elements of an array
+
+22. Which HTTP status code indicates a “Not Found” error?
+a) 200
+
+b) 404
+
+c) 500
+
+d) 302
+
+Answer: b) 404
+
+23. What is the purpose of “CORS” in web development?
+a) To style web pages
+
+b) To enable cross-origin resource sharing
+
+c) To create server-side logic
+
+d) To store client-side data
+
+Answer: b) To enable cross-origin resource sharing
+
+24. What does “SQL” stand for in database management?
+a) Server Query Language
+
+b) Structured Query Language
+
+c) Simple Query Language
+
+d) Server Queue Language
+
+Answer: b) Structured Query Language
+
+25. What is the primary role of a front-end developer in Full Stack Development?
+a) Writing server-side scripts
+
+b) Designing user interfaces
+
+c) Managing databases
+
+d) Handling server infrastructure
+
+Answer: b) Designing user interfaces
+
+26. What does “HTTP” stand for in web development?
+a) Hypertext Transfer Protocol
+
+b) High-Tech Text Presentation
+
+c) Hyperlink Text Processor
+
+d) Hosted Transfer Protocol
+
+Answer: a) Hypertext Transfer Protocol
+
+27. Which JavaScript framework is known for its use in building single-page applications (SPAs)?
+a) React
+
+b) Angular
+
+c) Vue.js
+
+d) Express.js
+
+Answer: a) React
+
+28. What is “AJAX” used for in web development?
+a) Defining page structure
+
+b) Creating server-side logic
+
+c) Making asynchronous requests to the server
+
+d) Styling web pages
+
+Answer: c) Making asynchronous requests to the serve
+
+29. What is the purpose of “npm” in Node.js development?
+a) To write server-side scripts
+
+b) To manage dependencies and packages
+
+c) To create HTML documents
+
+d) To design user interfaces
+
+Answer: b) To manage dependencies and packages
+
+30. What is the role of a web server in Full Stack Development?
+a) Managing client-side scripts
+
+b) Storing user data
+
+c) Serving web pages to clients
+
+d) Handling server-side logic
+
+Answer: c) Serving web pages to clients
+
+31. Which HTTP method is typically used for submitting form data to the server?
+a) GET
+
+b) POST
+
+c) PUT
+
+d) DELETE
+
+Answer: b) POST
+
+32. What is the purpose of a “cookie” in web development?
+a) A type of server-side scripting language
+
+b) A file used to store client-side data
+
+c) An HTML element for creating forms
+
+d) A database management system
+
+Answer: b) A file used to store client-side data
+
+Also Read Postman Interview Questions & Answers
+
+33. What is the primary role of a back-end developer in Full Stack Development?
+a) Designing user interfaces
+
+b) Handling server infrastructure
+
+c) Managing databases
+
+d) Writing client-side scripts
+
+Answer: b) Handling server infrastructure
+
+34. What is “API” short for in web development?
+a) Application Programming Interface
+
+b) Advanced Programming Instruction
+
+c) Automated Protocol Integration
+
+d) Algorithmic Programming Interface
+
+Answer: a) Application Programming Interface
+
+35. Which CSS property is used for creating responsive web designs?
+a) margin
+
+b) padding
+
+c) media
+
+d) @media
+
+Answer: d) @media
+
+36. What is the purpose of “MongoDB” in Full Stack Development?
+a) To manage client-side scripts
+
+b) To store relational data
+
+c) To serve web pages
+
+d) To work with NoSQL databases
+
+Answer: d) To work with NoSQL databases
+
+37. In JavaScript, what is the purpose of the “forEach” method?
+a) To create a new array
+
+b) To iterate over the elements of an array
+
+c) To execute a function once
+
+d) To check for undefined values
+
+Answer: b) To iterate over the elements of an array
+
+38. Which HTTP status code indicates a “Not Found” error?
+a) 200
+
+b) 404
+
+c) 500
+
+d) 302
+
+Answer: b) 404
+
+39. What is the purpose of “CORS” in web development?
+a) To style web pages
+
+b) To enable cross-origin resource sharing
+
+c) To create server-side logic
+
+d) To store client-side data
+
+Answer: b) To enable cross-origin resource sharing
+
+40. What does “SQL” stand for in database management?
+a) Server Query Language
+
+b) Structured Query Language
+
+c) Simple Query Language
+
+d) Server Queue Language
+
+Answer: b) Structured Query Language
+
+Tips For Preparing For Full Stack Interview
+Master the Fundamentals: Prioritize foundational knowledge in HTML, CSS, JavaScript, and a server-side language like Python, Java, or Node.js. Brush up on data structures, algorithms, and object-oriented programming concepts.
+Practice Live Coding: Sharpen your problem-solving skills and coding fluency by tackling interview-style coding challenges on platforms like LeetCode or HackerRank. Don’t just focus on solutions, explain your thought process and approaches clearly.
+Build a Showcase Portfolio: Highlight your practical skills and creative spirit by showcasing personal projects. Choose diverse projects that demonstrate your front-end, back-end, and problem-solving abilities. Aim for clean code, user-friendly interfaces, and well-documented projects.
+Deep Dive into Relevant Technologies: Research the specific technologies and frameworks used by companies you’re interested in. Familiarity with their specific tools and functionalities will set you apart during interviews.
+Behavioral Interview Prep: Don’t underestimate the importance of soft skills. Prepare for behavioral questions by practicing storytelling techniques and articulating past experiences to showcase teamwork, problem-solving, and communication skills.
+Practice, Practice, Practice: Creating mock interviews with friends, colleagues, or online platforms can refine your presentation skills, build confidence, and help you anticipate common Full Stack developer interview questions and scenarios.
+Bonus Tip: Stay updated on the latest trends and technologies in the full-stack world. Participating in online communities, attending workshops, and reading industry publications can demonstrate your passion and dedication to continuous learning. 
+
+Related Post : Mern Stack vs Full Stack
+
+FAQs
+1. How do I prepare for a Full Stack Interview? 
+To prepare for a Full Stack Developer interview, focus on both front-end and back-end technologies. Review the fundamentals of web development, including HTML, CSS, and JavaScript. For back-end, ensure a strong understanding of server-side languages like Java, Python, or Node.js, and database technologies like SQL or MongoDB. Practice coding problems, especially focusing on data structures and algorithms. Be familiar with version control systems like Git.
+
+Additionally, be prepared to discuss your previous projects and experiences, and understand the basic concepts of system design and architecture. Mock Full Stack interview questions and answers and participating in Full Stack Developer Training can also be beneficial.
+
+2. How to crack full stack Java developer Interview?
+To crack a Full Stack Java Developer interview, solidify your knowledge in Java, including core concepts and advanced features like streams and multithreading. You have to be proficient in Java frameworks like Spring Boot and Hibernate and also understand front-end technologies, particularly those you’re likely to use (e.g., Angular, React). Practice building full applications to understand how front-end and back-end integrate. Review database management, RESTful APIs, and web services.
+
+Be prepared for problem-solving Full Stack questions and answers, and practice coding problems from platforms like LeetCode. Also, brush up on system design concepts tailored towards Java-based applications. last but not least, do forget to practice your answering and problem solving skills using the Full Stack Developer interview questions.
+
+3. How many rounds are there in the Full Stack developer interview?
+The number of rounds in a Full Stack Developer interview varies by company. Generally, it includes:
+
+A screening call with HR.
+One or two technical interviews focusing on programming skills, problem-solving, and technical knowledge in both front-end and back-end technologies.
+A coding challenge or a take-home assignment.
+A system design interview, where you may be asked to design a complete application or a feature.
+A behavioral interview to assess cultural fit, soft skills, and experience.
+In some cases, there may also be a final interview with higher management or a team lead.
+4. What questions will I be asked in a Full Stack developer interview?
+In a Full Stack Developer interview, you can expect questions like:
+
+Front-end: Questions on HTML, CSS, JavaScript, and frameworks like React or Angular. Example: “How do you manage state in React?”
+Back-end: Questions on server-side languages (e.g., Java, Node.js), databases, and API development. Example: “Explain RESTful services.”
+Full Stack: Questions that involve both front-end and back-end, like how to connect a database to a user interface.
+Coding problems involving data structures and algorithms.
+System design questions, such as designing a scalable web application.
+Behavioral questions to understand your work style, problem-solving approach, and collaboration skills.
+
 Full Stack Developer Interview Questions
 1. What is the difference between server-side rendering and client-side rendering?
 Server-side rendering is the process of generating HTML on the server and sending it to the client.
