@@ -1,3 +1,166 @@
+Top 30 QA SQL Interview Questions in 2024
+Tech
+Dec 11, 2023
+Top 30 QA SQL Interview Questions in 2024
+Database testing is essential to the overall software testing process because a database’s integrity, performance, and security are crucial for the reliable functioning of many software applications. Candidates for manual QA tester roles are often expected to be familiar with basic database concepts and SQL commands in order to perform database testing effectively. That’s why it’s common for hiring managers to ask SQL query questions during interviews.
+
+To help you prepare, we've compiled a list of the most popular SQL interview questions and answers.
+
+Basic Database and SQL Concept Questions
+#1. What is a database?
+A database is an organized collection of structured data stored in a computer system. It allows for easy access to, management, and updating of information.
+
+#2. What is a DBMS, and what types of DBMS do you know?
+DBMS stands for database management system, a software system designed to maintain and access the database. It defines the rules of manipulation with data. There are two main types of DBMS: 
+
+Relational database management system (RDBMS). It’s the most widely used DBMS model. An RDBMS allows storing of related data in multiple tables.
+
+Non-relational database management system. It stores data in a non-tabular form. 
+
+#3. What is the difference between primary and foreign keys?
+A primary key is a column in a relational database table that is unique for each record. We use primary keys to identify the rows of a table.
+
+A foreign key is a column in one table that refers to the primary key in another table. 
+
+A table can have any number of columns with foreign keys but only one with primary keys. 
+
+Featured career
+QA Automation
+Upgrade your QA career to QA Automation! Build up your in-demand skill set and earn $110K – $170K a year
+Learn More
+QA Automation
+$115K avg salary
+#4. Name a few popular database management systems.
+Oracle, MySQL, Microsoft SQL Server, PostgreSQL, MongoDB, and Microsoft Access.
+
+#5. What is SQL?
+SQL stands for structured query language. It’s used to access and manipulate relational databases. For example, we can create and delete tables or insert and update data using SQL.
+
+#6. What do DDL and DML stand for?
+DDL stands for data definition language. It includes SQL statements that define the database structure: CREATE, ALTER, and DROP.
+
+DML stands for data manipulation language. It includes SQL statements that are used to manipulate the data records: INSERT, UPDATE, DELETE, etc. 
+
+#7. What are SQL constraints?
+SQL constraints are rules that enforce certain restrictions while inserting, deleting, or updating data. Here are a couple of examples:
+
+NOT NULL: Specifies that a column must always have a value. 
+UNIQUE: Ensures there are no duplicate values stored in a particular column.
+#8. What are the different clauses used in SQL?
+Clauses in SQL are built-in functions used to retrieve data from the database. For example:
+
+WHERE
+HAVING
+AND
+OR
+GROUP BY
+ORDER BY
+#9. Describe what NULL means in SQL.
+In SQL, NULL means "none." It indicates that a value for a particular field is missing. Any column in the table can be set to allow or not allow a NULL value.
+
+#10. What possible values can be stored in a BOOLEAN data field?
+Boolean values can be either True or False.
+
+SQL Query Questions
+
+#11. How do you write a basic SQL query to retrieve all data from a table?
+SELECT * FROM table_name
+
+#12. What is a subquery, and how is it used in SQL?
+A subquery is an SQL query nested inside another query. The subquery is executed first, and the outer query uses its results. Subqueries are used for filtering, comparing, calculating, or modifying data.
+
+#13. How do you join two tables in SQL?
+In SQL, we use the JOIN statement to join two tables together. JOIN allows us to combine rows from two or more tables based on a related column or set of columns.
+
+#14. What types of joins do you know?
+INNER JOIN: returns records that have matching values in both tables
+OUTER JOIN: returns matched and unmatched values
+LEFT JOIN: returns all rows from the left table and the matching rows from the right table
+RIGHT JOIN: returns all rows from the right table and the matching records from the left table
+#15. How do you use SQL to update data in the database?
+To update data, we use an UPDATE statement. For example, let's say we have a table called "Customers" with columns "customer_id," "name," "email," and "phone." To update a customer's email address based on their customer ID, we would use the following SQL statement:
+
+UPDATE Customers 
+
+SET email = 'new_email@example.com' 
+
+WHERE customer_id = 123;
+
+#16. How can you avoid duplicate records in a query?
+We use the DISTINCT keyword to avoid duplicate records in an SQL query. For example, let's say we have a table called "Orders" with columns "order_id," "customer_id," "product_name," and "price." If we want to select all unique products from the table, we would use the following SQL statement:
+
+SELECT DISTINCT product_name 
+
+FROM Orders;
+
+#17. What is the difference between DELETE, TRUNCATE, and DROP commands?
+DELETE is used to delete some or all rows from the table. It can be rolled back.
+
+TRUNCATE is used to delete all rows from the table. It can't be rolled back.
+
+DROP removes a table from the database. It can't be rolled back.
+
+#18. What is the difference between the HAVING and WHERE clauses?
+The WHERE clause is used to filter rows from the result set before any grouping or aggregation takes place.
+
+The HAVING clause is used to filter data that meets particular criteria specified by the aggregate functions. It is used in association with the GROUP BY clause. 
+
+#19. What are aggregate functions in SQL?
+Aggregate functions in SQL perform calculations on a set of values and return a single value. The most commonly used aggregate functions in SQL are:
+
+COUNT: returns the number of rows in a group or a table
+SUM: returns the sum of the values in a group or a table
+AVG: returns the average of the values in a group or a table
+MAX: returns the maximum value in a group or a table
+MIN: returns the minimum value in a group or a table
+#20. Describe SQL comments.
+SQL comments are lines of text that we add to an SQL query to provide information to other users. The SQL engine ignores comments, so they don't affect the execution of our queries. Single-line comments start with two dashes (--) and end at the end of the line. Multi-line comments begin with a slash and asterisk (/*) and end with an asterisk and slash (*/).
+
+SQL Testing Questions
+#21. What is database testing?
+Database testing is a type of testing that verifies the functionality, performance, and reliability of a database. It checks schema, tables, and triggers. Database testing involves various tests: structural, functional, performance, data integrity, security, etc.
+
+#22. What is the difference between GUI testing and database testing?
+During user interface testing, a QA engineer checks the items that users can see and interact with. They test text boxes, dropdown menus, buttons, and so on. To perform this type of testing, testers need a thorough understanding of the business requirements for a particular application. 
+
+During database testing, a QA engineer focuses on things hidden from users: storage procedures, tables, indexes, etc. To perform this type of testing, testers need a solid knowledge of database concepts and familiarity with SQL queries.
+
+#24. How do you test a database manually?
+During manual database testing, we use SQL to compare data at the back end with expected results. For example, we can update some records via GUI and then retrieve the data from the database to check if this update was recorded correctly. 
+
+#25. How did you use SQL at your previous job?
+I used it when working with certain types of test cases. For example: 
+
+Add a user and check in the database if a user was created
+Remove a user and check if they were removed from the database
+Update the user's information and check if it was updated in the database
+#26. How would you use SQL to verify that data has been inserted correctly into the database?
+I would use the SELECT statement to retrieve the data from the database and verify that the returned values match the expected results. 
+
+#27. How would you test for NULL values?
+NULL indicates that a field has no value. Therefore, we cannot use comparison operators like < or >. Instead, we use IS NULL. For example:
+
+SELECT * FROM table_name WHERE column_name IS NULL;
+
+#28. How would you use SQL to identify duplicate records in a table?
+To identify duplicate records in a table, I would use the GROUP BY clause and COUNT function in the HAVING clause to check if any of the groups have more than one entry. For example, to check for duplicate order IDs in the OrderID column of the Orders table, I would use the following query:
+
+SELECT OrderID, COUNT(OrderID)
+
+FROM Orders
+
+GROUP BY OrderID
+
+HAVING COUNT(OrderID) > 1
+
+#29. How can we check whether a trigger is fired?
+We can check the audit log to see if a trigger was fired or not. Alternatively, we can create test data that triggers the trigger and verify whether the expected actions have been taken. For example, if the trigger inserts a record into a table, we can check whether the record has been inserted.
+
+#30. How would you approach writing test cases for database testing?
+I would start by analyzing requirements to understand the database's expected behavior better. 
+Then, I would identify the test scenarios that need to be tested.
+Next, I would create test cases based on the test scenarios. I would include a description of the test case, test inputs, expected outputs, and test execution steps.
+
 Crack the top 40 SQL interview questions in 2026
 Master the top SQL interview questions covering joins, indexes, normalization, ACID properties, stored procedures, database design, and query optimization to confidently prepare for data, software engineering, and analytics interviews.
 18 mins read
