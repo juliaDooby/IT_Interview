@@ -1,3 +1,205 @@
+Top 35+ Node.js Interview Questions
+Updated on Jun 5, 2023 | Kriti | 10 min read | 117.4K views
+Node.js interview questions
+Did you know that Node.js can be used to build high-scale applications? This feature has made it a desired choice of most developers and has increased the career opportunities for developers working with it. If you want to take advantage of these opportunities, you must prepare these interview questions and have a thorough knowledge of this Chrome’s JavaScript. In this blog, we will explore different sets of Node Interview Questions for freshers, intermediates, to experienced candidates. 
+
+Table of Contents
+Why is Node.js popular?
+Node.js Interview Questions for Freshers
+Node.js Interview Questions For 3 to 5 Years Experience (Intermediate Level)
+Node.js Interview Questions for Experienced Candidates
+Conclusion
+Why is Node.js popular?
+Various features in Node.js have made it gain popularity among developers. The following are  some of them:
+
+It makes the transition from JavaScript to Node easier for developers.
+It follows the asynchronous programming working model.
+It offers low latency to the developers.
+It is cost-effective and provides efficiency.
+Node.js being a cross-platform can run on multiple OS.
+The enormous growth of Node.js is because of the contribution of several developers. 
+You can check this Node.js course to get a better grasp of the subject before you move on to the interview questions. 
+
+Node.js Interview Questions for Freshers
+Let’s now move on to interview questions and answers for freshers. If you are a fresher, preparing for an interview that requires you to know everything about the basics of Node.js, you must check the questions mentioned below. 
+
+1. Define Node.js.
+An open-source cross-platform with the runtime framework of JavaScript is known as Node.js. It is mostly used to run applications that are outside of the client’s browser and create server-side web applications.
+
+2. Explain the uses of Node.js.
+Node.js is an event-driven asynchronous model that is used for applications that are data-intensive. It is also used for developing applications and distributed systems.
+
+3. Which framework does Node.js operate on?
+Node.js operates on the runtime framework of JavaScript.
+
+4. Explain NPM.
+NPM’s full form is Node Package Manager. It is the default package manager of Node.js and its work is to install, manage, and share packages. It is completely free to use and almost around 11 million users rely on it. 
+
+5. Draw the working sketch of Node.js.
+Node.js works on the steps that are mentioned below:
+
+Step 1: The client sends the request in Node.js. 
+Step 2: After the request is sent, the data querying process starts. 
+Step 3: Deleting the data is the next step after the data is queried.
+Step 4: The data is updated once it is deleted.
+Step 5: Node.js retrieves the incoming requests in this step. 
+Step 6: Through the Event loop, those requests are passed on from one event loop to the other.
+Step 7: The requests are processed by Event Loop.
+Step 8: The last step returns the response to the clien
+6. Why is Node.js single-threaded?
+Node.js is single-threaded specifically for async processing. Being a single thread makes it more scalable instead of the typical threaded working models.
+
+7. Explain a callback function.
+A callback function prevents blocking. It enables the codes to run in the meantime. As it is asynchronous, it is highly dependent on this function. 
+
+8. Explain a module.
+A module is a file containing reusable code, like functions or variables. 
+
+9. Define the ‘fs’ module.
+The ‘fs’ module offers the writing and reading files and it provides an API for working with the file systems.
+
+10. Define the ‘HTTP’ module.
+The ‘HTTP’ module allows developers to handle incoming requests and manage the responses. It provides an API to create HTTP servers and make HTTP requests. 
+
+Node.js Interview Questions For 3 to 5 Years Experience (Intermediate Level)
+The following set of Node.js Interview Questions is for candidates who hold a certain level of experience in this field:
+
+11. What is the purpose of module.exports?
+The module.export function is used to export a particular function and import it into another file.
+
+12. What is the ‘util’ module?
+The ‘util’ module works with the utility functions that are extensively useful for the developers.
+
+13. Why do most developers prefer Node.js?
+Most developers prefer Node.js because it is faster, is effective for data-intensive web applications, provides better synchronization, and is comparatively easier to use. 
+
+14. What is the database used popularly in Node.js?
+MongoDB is a popular database that is mostly used.
+
+15. Explain the commonly used libraries in Node.js.
+The following are the most commonly used libraries:
+
+ExpressJS: A flexible web application framework that provides a huge variety of features to develop various applications.
+Mongoose: A web application framework that makes connecting applications to databases easier.
+16. Explain the Event Loop.
+The event Loop is the foundation of the non-blocking input and output. It handles asynchronous callbacks which makes it an important feature.
+
+17. What are the two types of APIs?
+The following are the two types of APIs:
+
+Synchronous, which is also known as blocking functions.
+Asynchronous, which is also known as non-blocking functions.
+18. Explain event-driven programming.
+Event-driven programming is a programming paradigm that can be anything from typing a key to clicking a mouse.
+
+19. Explain the ‘zlib’ module.
+The ‘zlib’ module provides the methods to compress or decompress the files.
+
+20. What are the advantages and disadvantages of Node.js?
+The following are a few advantages and disadvantages:
+
+Advantages
+
+It offers fast processing and is an event-based model.
+It uses a JavaScript library framework.
+It has NPM which provides functionality.
+It works well with huge amounts of data.
+Disadvantages
+
+It does not work well with high computational tasks.
+The callback function used can be complex sometimes. 
+It works with relational databases that are not exactly favorable.
+It is single threaded hence CPU-intensive tasks are not a good fit for it. 
+Node.js Interview Questions for Experienced Candidates
+Now that we have covered the two sets of categories of Node Interview Questions, let us move forward to the candidates that have more than 5 years of experience. The following questions are the interview questions and answers for experienced professionals: 
+
+21. State the difference between process.nextTick() and setImmediate().
+The following is the difference between the process.nextTick() and setImmediate():
+
+nextTick() is responsible to postpone the execution of the action until the next [ass around the event loop.
+setImmediate() is responsible to execute a callback on the next cycle of the event loop.
+22. Explain Event Emitter.
+An event emitter is a class that helps hold all the objects that can emit events. All the attached functions are called upon synchronously when an object from the event emitter class throws an event.
+
+23. Explain the package.json file.
+The package.json file holds the metadata for a particular project. It is usually found in the root directory and is also known as the heart of Node.js.
+
+24. Explain the express.js package.
+Express.js is a flexible web application framework that helps developers develop web and mobile applications and it provides a huge set of features.
+
+25. What are the streams in Node.js?
+The following are the streams:
+
+Readable Stream- This stream is used to read operations. One can read the data using this stream.
+Writable Stream- This stream is used to write operations. 
+Duplex Stream- This stream stands true to its name as it does both, that is read and write the operations.
+Transform Stream- This is a type of duplex stream where the output is dependable on the input. For example, if you write the compressed data you will receive an output of the decompressed data.
+26. Explain piping.
+Piping is used to retrieve data from one stream and pass it on to another. It connects the output of one stream to the other stream. 
+
+27. Explain the buffer class.
+Buffer class is used to store raw data mainly because pure JavaScript is not compatible with binary data.
+
+28. Define callback hell.
+Callback hell arises in the condition when the asynchronous logic is applied improperly, it makes the code harder to read or debug for developers. 
+
+29. Explain the reactor pattern.
+The reactor pattern provides a handler that is associated with each input and output operation. It is the concept of non-blocking input and output operations.
+
+30. What is middleware?
+The middleware function in Node.js receives the requests and responses objects. The following are some of its functions:
+
+It is capable of executing any code.
+It can update the requests.
+It is responsible for finishing the request-response cycle.
+It also invokes the ascending middleware in the stack. 
+31. Explain the control flow function.
+The control flow function is a piece of code that is responsible for running between various asynchronous function calls.
+
+32. Explain the different types of HTTP requests.
+The following are the different types of HTTP requests:
+
+GET- This request is used to retrieve the data.
+POST- This request is responsible for making a change in state on the server.
+HEAD- This request asks for the response but without the response body.
+DELETE- This request is responsible to delete the predetermined resource.
+33. How is the MongoDB database connected to Node.js?
+You will need to start creating a MongoClient object in order to create a database in MongoDB. After the MongoClient is created, you should specify a connection URL with the correct IP address and name of the database that you wish to connect.
+
+34. State the timing features in Node.js.
+The following table explains the timing features:
+
+Feature	Function
+setTimeout feature	This feature schedules the code execution after a fixed amount of milliseconds. 
+setInterval feature	This feature is used when a block of code is required to be executed multiple times.
+setImmediate feature	This feature executes the code at the end of the current event loop cycle.
+35. What are exit codes?
+The exit codes are a set of specific codes that are used to finish a certain code. The unused, fatal errors, uncaught fatal exceptions, internal JavaScript evaluation, and internal exception handler run-time failure are some examples of exit codes.
+
+36. Explain the test pyramid.
+The test pyramid is a figure that explains the specific proportion of various components in Node.js like unit tests, integration tests, and end-to-end tests. 
+
+37. How would you open a file in Node.js?
+The following syntax will be used to open a file in Node.js:
+
+fs.open(path, flags[mode], callback)
+
+38. Explain how control flow manages the function calls.
+The control flow manages the function calls by collecting data, limiting the concurrency of the function cells, calling the next step of function calls in the program, and controlling the order of execution. 
+
+39. What is REPL?
+Read Eval Print Loop or RELP represents a computer environment. The meaning is as follows:
+
+Read means reading the input of the user.
+Eval means evaluating the structure of the input.
+Print performs the task of printing the result.
+Loop, this loops the command until the user presses the CRTL+C command twice.
+40. What does the ‘query string’ module do?
+The ‘query string’ module works with the query strings in Node.js. It will enable the websites to track the whereabouts of their visitors. For example, if you click on an advertisement, the URL will be sent to that particular company which will bring you to that site.
+
+Conclusion
+It is important to have a general knowledge of the subject before applying for a role that requires your understanding. You must prepare the above-mentioned Node.js Interview Questions for getting a hold of topics that may be asked during an interview, it will only bring you one step closer to landing your dream job. 
+
 Node.js Interview Questions
 Master your next Node.js interview with our comprehensive collection of questions and expert-crafted answers. Get prepared with real scenarios that top companies ask.
 
