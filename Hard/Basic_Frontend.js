@@ -1,3 +1,292 @@
+
+Technical and Language Questions
+Developer Tools and Technologies
+Problem Solving Exercises
+Conducting Your Interview
+Hiring developers?
+Save time and avoid mis-hires with our technical assessment tests
+FIND OUT MORE
+21 Junior Front-End Developer Interview Questions
+Eric Philips
+June 23, 2022
+
+Front-end developers are one of the top 10 In-Demand IT Jobs in 2022 but identifying the best candidates can be a challenge when it comes to finding the right mix of hard and soft skills, not to mention individuals that will fit into your company’s culture.
+
+Your interview needs to cover a particular set of technologies that are core to doing front development. It’s also important to move from the realm of the theoretical to the practical — solving problems and asking questions that pertain to particular instances of code is much more useful for gauging the depth of an interviewee’s knowledge.
+
+Technical and Language Questions
+There are a number of technologies that are essential to a front-end developer. In general, asking very specific questions is not as useful as using open-ended questions as a jumping off point to discuss issues in more detail. 
+
+Questions about Web protocols (HTTP and HTTPs, TCP/IP)
+Why it’s important
+These protocols explain how browsers communicate with clients. Knowledge of them is essential for understanding how your application is functioning and troubleshooting.
+
+What sort of questions you might ask
+1. Compare and contrast GET and a POST requests
+
+The most important thing the candidate should identify is that these are both HTTP methods, but GET requests use a query string to retrieve resources while POST requests send data to create or update a resource with data stored in the rest body. This W3 Schools page contains a handy table comparing the two.
+
+2. When might you encounter a PUT request?
+
+The semantic distinction between Put and POST is somewhat nuanced, but if a candidate has worked at all with Web Services, they will recognize that PUT requests are generally used to update resources whereas POST is used to create new resources.
+
+3. How does HTTP relate to the TCP/IP stack?
+
+Although not necessarily essential, candidates may be familiar with the notion that there are different layers to communication protocols used to connect computer systems and that HTTP is an Application layer used by web clients and web servers built on top of the Transport/Transmission layer (TCP) and the Network/Path control layer (IP). See this discussion of the TCP/IP protocols for more information.
+
+Questions About HTML
+Why it’s important
+HTML is the underlying mechanism for structuring elements on a web page or web application. It is the markup language that browsers understand and parse in order to display text and images. A developer needs to be fluent in how to create HTML documents and how to interpret HTML source code.
+
+What sort of questions you might ask
+4. What is the difference between a tag and an attribute in HTML?
+
+Candidates should be able to identify that tags define page elements and the text enclosed by them (if any), usually with a start and end tag while attributes are name value pairs that pertain to tags and are defined within a start tag. Common attributes include id (which must be unique to identify an element on a page), class and style. In the example below, “p” is a tag while “style” is an attribute.
+
+<p style=“color:blue;”>This is a paragraph</p>
+
+For more information see this explainer.
+
+5. What is the difference between a span and div tag? When would you use either?
+
+Both are generic structural elements, but <div> tags are by default block level events (meaning they span the page and by default will not appear on the same line) while <span> tags are inline elements and multiple may appear on the same line. 
+
+See this page for examples and a table comparing the two.
+
+6. What is the role of the head tag in an HTML document?
+
+Candidates should identify that the head contains machine-readable metadata about the page and typical sub elements include the title, meta tags, script tags, and stylesheets of (or links to stylesheets). They are not to be confused with header tags of various levels of headings (<h1>, <h2>, etc) which define the structure of the page as you would in an outline.
+
+7. What is the DOM?
+
+The Document Object Model is a tree type Object Model for HTML and is an API for JavaScript that allows the structure of the page to be dynamically modified by adding, changing, or removing HTML elements and attributes as well as CSS styles. 
+
+Questions about CSS (Cascading Style Sheets)
+Why it’s important
+CSS is used in conjunction with HTML and is another essential technology a front-end developer needs to be versed in. While HTML provides structure, CSS defines how elements get displayed, whether it be colors, positioning, or text styling.
+
+What sort of questions you might ask
+8. Describe different types of selectors used in CSS
+
+CSS styles can be applied to particular classes, elements, elements with given attributes, or based on a unique identifier of an element. Additionally there are a number of “pseudo” classes based on an end user’s interaction with elements such as editing a form field or hovering over the element with a mouse.
+
+A full guide to css selectors can be found here.
+
+9. Describe the CSS boxing model
+
+The CSS box model is used for the purpose of affecting the layout of a page through properties that wrap around the content of each element including its margin, border, and padding which may be modified above, below, and to the sides of that element.
+
+CSS diagram
+Understanding margins, borders, and padding
+10. What are different ways to hide an element with CSS?
+
+Elements may be hidden by removing them from the DOM or changing CSS properties such as display, visibility or the HTML5 attribute hidden. Which method you use has different effects on the layout and accessibility of the element through keyboard navigation. Here’s a good primer.
+
+Questions about JavaScript
+Why it’s important
+While HTML provides structure and CSS defines display, JavaScript makes web pages dynamic — it is a scripting language that all browsers support and is necessary to make web applications interactive.
+
+What sort of questions might you ask
+11. What is a callback in JavaScript?
+
+Callback functions are a key part of JavaScript. Callbacks are used to develop asynchronous code by ensuring a given function is not going to run unto after a given task is completed. Callback functions take advantage of the fact that functions themselves are objects and may be passed as arguments to another function. Sounds complicated? See this guide to JavaScript Callback functions.
+
+12. Describe how lexical scoping works in JavaScript
+
+The visibility and access of variables and functions is affected by the scope in which they are declared. These items can be global in scope, and therefore accessible to all code, or local to a block of code or function. Inner functions are lexically bound by outer functions, meaning they have access to variables declared by their outer functions.
+
+13. How would you define and use classes in JavaScript?
+
+A class is essentially a template for encapsulated, reusable code for which there may be multiple instances of (referred to as objects), as you would in any object oriented language. Classes contain data in the form of variables and functions that execute code. You declare classes either as functions or with the class keyword. Classes have a special function called a constructor used to set its internal values when a new instance is created. Other functions may be called on an instance as needed.
+
+Have them create a simple class and create two instances, printing out a member variable value that is distinct for each instance. It might look as follows:
+
+class Employee {
+
+  constructor(name_param) {
+
+    this.name = name_param;
+
+  }
+
+}
+
+var employeeInstance1 = new Employee(“John”);
+
+var employeeInstance2 = new Employee(“Jane”);
+
+console.log(employeeInstance1.name); // prints “John” to the console
+
+console.log(employeeInstance2.name); // prints “Jane” to the console
+
+Questions about front-end Frameworks: React, Angular, Vue, jQuery
+Why it’s important
+These sort of frameworks provide mechanisms for creating complex, dynamic applications using the underlying technologies of HTML, CSS, and JavaScript.
+
+What sort of questions to ask
+Generally you should target your interview questions to frameworks that you use in house. Alternatively, if the candidate you are interviewing does not have experience in the framework you are using but does have experience with another, you can see how in-depth their knowledge is on that framework to see if they are likely to be able to adapt to your technology stack.
+
+Covering all of these frameworks in depth is beyond the scope of this article, so please see these resources instead:
+
+Angular Interview Questions
+React Interview Questions
+Vue Interview Questions
+jQuery Interview Questions
+Working with Web Services
+Why it’s important 
+Front-ends that invoke micro services is a popular design pattern. Front-end developers must often work against and troubleshoot issues with Web Service APIs to get data to display to end users.
+
+What sort of questions to ask
+14. How might you invoke a web service?
+
+There are a variety of different methods that can be used to invoke web services such as:
+
+XMLHttpRequest
+fetch
+Axios (a popular open source library)
+jQuery (using $,ajax() )
+Below is an example of calling a REST service through jQuery.
+
+$(document).ready(function() {
+
+    $.ajax({
+
+        url: “http://rest-service.guides.spring.io/greeting”
+
+    }).then(function(data) {
+
+       $(‘.greeting-id’).append(data.id);
+
+       $(‘.greeting-content’).append(data.content);
+
+    });
+
+});
+
+15. What are the main characteristics of a RESTful service?
+
+A RESTful API (REST being short for REpresentational State Transfer) is an architectural style that uses HTTP requests to access and transform resources through web services. Such APIs are designed to be stateless and makes use of the native verbs of HTTP (GET, POST, PUT, DELETE) as well as the notion that resources should be uniquely identifiable through a single URL that return back status representations of resources as JSON or XML/
+
+16. What sort of web services have you worked with in the past?
+
+For this question, assuming the candidate has invoked web services, you should be probing to get a sense of their understanding of the different operations and endpoints that could be invoked through the API and what sort of payloads and errors might come back from such invocations.
+
+Common APIs might include:
+
+Google Maps Platform (to search place information using a variety of categories)
+Stripe (for payment processing)
+Other Free Web Services
+Developer Tools and Technologies
+In addition to the specific technologies used to create front ends, you need to get an understanding for your candidate’s experience with development tools, technologies, and best practices to ensure they will be a productive member of your team.
+
+Questions about Managing Code with Version Control 
+Why it’s important
+Managing code is an essential part of the development process. Even junior developers should have some familiarity with how to branch and merge code.
+
+Sorts of questions you might ask
+17. What does a merge conflict look like?
+
+Merge conflicts happen when you have competing commits in branches that are being merged. This can happen when changes have been made on the same lines of code. You need to decide which lines need to be incorporated into the final merge.
+
+Below is an example as to what the conflict will look like in a file, where one line reads “open an issue” in the HEAD branch whereas it reads “ask your question in IRC”.
+
+If you have questions, please
+
+<<<<<<< HEAD
+
+open an issue
+
+=======
+
+ask your question in IRC.
+
+>>>>>>> branch-a
+
+In this case both options could be incorporated in a single line (e.g. “please open an issue or ask in our IRC channel”). The conflict markers must be deleted (<<<<<<<, =======, >>>>>>>) in order to complete the merge.
+
+Problems can arise during merges when it affects the ability of the code to compile. Sometimes resolving the conflict may require developers to work together. Ask the candidate about any particularly difficult merge issues they have faced and how they resolved those issues as well as best practices to avoid merge conflicts.
+
+More Git related questions can be found here. 
+
+Questions about Debugging Code
+Why it’s important 
+A good way to introduce a junior developer to your codebase is to have them fix issues in your backlog, so you’ll want to see what their aptitude is for troubleshooting.
+
+Sorts of questions you might ask
+18. Identify and explain the logical error
+
+Show the candidate a section of code and ask them to spot the logical error (such as a mistake that occurs because of operator precedence). For instance, here is a simple example that tests their understanding of JavaScript equality.
+
+function greet(person) {
+
+  if (person == { name: ‘amy’ }) {
+
+    return ‘hey amy’
+
+  } else {
+
+    return ‘hey arnold’
+
+  }
+
+}
+
+greet({ name: ‘amy’ })
+
+In this case, because we are comparing objects and not primitives, the quality operation is comparing by reference not value.
+
+As an exercise, have them put this code into a web page and open it in a browser. Have them modify the code so it will be invoked when the page loads. Then ask them to open up the developer console and set a breakpoint so they can step through the code.
+
+Questions About Data Structures
+Why it’s important
+You want to get a sense of the candidate’s familiarity with high level programming concepts that will impact code performance. Developers with a more traditional academic background should be able to handle these questions better than self-taught programmers, so you should manage your expectations accordingly.
+
+Sorts of questions you might ask
+19. Describe the difference between a List vs. a Set 
+
+A List is an ordered sequence of elements that may be duplicated whereas a Set is a collection of distinct elements which is unordered.
+
+Orderly line of objects
+The way you structure and organize your data will impact performance
+20. Compare and contrast use cases for a stack vs. a queue
+
+The main differences between stack and queue are that stack uses LIFO (last in first out) method to access and add data elements whereas Queue uses FIFO (first in first out) method to access and add data elements. 
+
+Use a queue when you want to get things out in the order that you put them in (an example would be handing calls in a call center in the order they were received). Use a stack when you want to get things out in the reverse order than you put them in (good examples would be the browser back button or handling undo operations in a text editor).
+
+Questions About Code Security
+Why it’s important 
+Although it may not be a deal breaker, having sense of how much a candidate has dealt with security issues with code is a good data point to have as you will want to make sure they are mindful of issue
+
+Sorts of questions you might ask
+21. What is cross-site scripting (XSS)?
+
+XSS is a type of “attack”, in which malicious code is injected into otherwise trusted websites.
+
+The end user’s browser, unaware of any trickery, will execute the script. The malicious script will gain access to cookies, session tokens, or any other sensitive information retained by the browser. There are various types of attack, including reflected, stored, and DOM-based XSS. Attacks can be prevented by sanitizing input, encoding output and using appropriate response headers.
+
+Problem Solving Exercises
+You will also need to engage your potential hire with problem solving exercises.
+
+This is potentially the most illuminating portion of the interview, as it will allow you to gauge not only how a candidate thinks, but how they interact with you.
+
+While some up front technical questions about particular technologies that are relatively straight forward can be a good start to getting a sense of a candidate’s knowledge base, problem solving exercises can actually get into implementation.
+
+We suggest choosing a problem that is actually fairly straightforward to solve without any hidden tricks or gotchas — they simply require the ability to understand the parameters and walk through the solution, even if it means some brute force is necessary and perhaps some friendly prodding. You can also see how well they communicate their thought process as they attempt to come to a solution. River crossing problems are useful in this way, such as the classic wolf, goat, and cabbage problem.  
+
+? ? ?‍♂️ ?
+
+The good thing about such a problem is it allows you to then approach how you might model the problem in code and even build a web application around it using HTML, CSS, and JavaScript. This allows the candidate to show some creativity in their approach.  
+
+It also allows you to talk about user experience and how to create user friendly interfaces. How would you explain to end users the different options they have? How would you provide feedback to end users? Can they create a design that will be flexible enough to accommodate changes to the requirements, such as another element to take across the river.
+
+Conducting Your Interview
+CodinGame has a screening tool that allows you to conduct an initial screening focused on essential technical questions. CodinGame technical tests will ensure candidates match your skills requirements. You can even compare how candidates fared against each other before moving to the next step in your interview process.
+
+According to our 2022 tech hiring survey, candidates and recruiters agree that live coding interviews are the best option for interviews. 78% of developers and 79% of recruiters say that a live coding interview is their preferred interview format and 74% of developers think live coding interviews are the best way to showcase their skills.  
+
+Another advantage of live coding interviews is they allow for an interactive experience with candidates. This is helpful when candidates aren’t an exact match for the skillset you’re looking for.. By working together on a piece of code, youcan better sense whether or not a candidate could potentially grow into the role. CoderPad is an ideal tool for this purpose as it allows you to ask the more complex follow-up questions with coding exercises.
+
 Top Front-End Developer Interview Questions
 / Web Development / By Pathways2Advancement.org
 If you’re reading this then you’re likely preparing for an upcoming front-end developer interview or you’re anticipating one in the near future.  First, we’re going to briefly discuss the technical skills you’ll need to help you stand out during your job-hunting process.  Then, we’ll dive right into some of the top front-end developer interview questions and sample answers to help you prepare for this important step in your career as a front-end developer.
