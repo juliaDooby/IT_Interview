@@ -1,3 +1,408 @@
+Top 50 React Native interview questions 2026 (with answers)
+Prepare for React Native interviews with confidence. Master components, state management, navigation, debugging, performance optimization, native architecture, and the practical concepts employers expect modern mobile developers to understand.
+13 mins read
+Jun 05, 2026
+editor-page-cover
+Become a Software Engineer in Months, Not Years
+
+From your first line of code, to your first day on the job — Educative has you covered. Join 2M+ developers learning in-demand programming skills.
+
+Start Learning for Free
+React is one of the most popular JavaScript front-end frameworks on the market today, and its popularity continues to grow. It’s estimated that over 8,000 companies use this JavaScript framework, including big names like Facebook, Instagram, Airbnb, and more. Many companies are looking for talented React developers.
+
+Cracking your React Native interview is essential to landing one of these roles. To help you prepare, we’ve gathered the top 50 React Native interview questions. This guide includes questions and answers. Let’s get started!
+
+Get hands-on with React
+
+Master React fundamentals with interactive exercises.
+
+React for Front-End Developers
+
+
+React Native interview questions with answers
+1. How is React Native different from ReactJS?
+React Native is a JavaScript framework that was developed by Facebook to meet the growing needs of mobile app development. It’s open-source and based on JavaScript. It was designed to build native mobile apps with reusable components. It uses a lot of ReactJS components but implements them in a native way across different devices. It invokes the native rendering APIs in Objective-C (for IOS) and Java (for Android).
+
+ReactJS was also developed by Facebook. It’s an open-source JavaScript library used for developing responsive user interfaces for mobile and web applications. It has a library of reusable components that are meant to help developers build the foundation for their apps.
+
+Let’s take a look at some of their key differences:
+
+Syntax: React Native and ReactJS both use JSX, but ReactJS uses HTML tags, and React Native doesn’t.
+
+Navigation: React Native uses its own built-in navigation library, while ReactJS uses a react-router.
+
+Animation: ReactJS uses CSS animations. React Native uses its animated API.
+
+DOM: ReactJS uses a virtual DOM with a partial refresh. React Native needs to use its native API when rendering UI components.
+
+Usage: ReactJS is mainly used for web app development, while React Native focuses on mobile applications.
+
+2. What is JSX?
+JavaScript XML, or JSX, is a XML/HTML template syntax used by React. It extends ECMAScript, which allows XML/HTML-like text to coincide with JavaScript and React code. It allows us to put HTML into JavaScript.
+
+It’s faster than normal JavaScript, makes it easier to create templates, and uses components. It comes with the full power of JavaScript, and you can use it with React to describe what the user interface should look like. Let’s take a look at a Hello World! in JSX:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+3. What are the core React Components and what do they do?
+The core React components include:
+
+Props: You can use props to pass data to different React components. Props are immutable, which means props can’t change their values.
+
+ScrollView: ScrollView is a scrolling container that’s used to host multiple views. You can use it to render large lists or content.
+
+States: You use states to control components. The state is mutable in React, meaning that it can change the value at any time.
+
+Style: React Native doesn’t require any special syntax for styling. It uses the JavaScript object.
+
+Text: The text components display text in your application. It uses textInput to take input from the user.
+
+View: View is used to build the UI for mobile applications. It’s a place where you can display your content.
+
+4. How do you install and create a React Native application?
+Before you begin, make sure you have Node.js and NPM installed on your system.
+
+To install a React Native application, you can use the following command:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+To create a React Native project, you can use the following command:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+To navigate in your project, use the following command:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+And to start your project, run this command:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+5. What is Redux and when should you use it?
+Redux is a state management tool for JavaScript applications. It helps you write apps that are consistent, apps that can be run in different environments, and apps that are easy to test.
+
+Not all applications need Redux. It’s designed to help you determine when you experience state changes. According to the official Redux documentation, here are some examples of when you’d want to use Redux:
+
+Your app state is updated frequently
+You have a large amount of app state and it’s needed in many places within the app
+The logic to update your app state is complicated
+You want to see how the state is being updated over time
+Your app has a medium or large-sized codebase and will be worked on by multiple people
+6. What is state and how do you use it?
+In React Native, state handles data that is changeable. state is mutable, meaning that it can change the value at any time. You should initialize it in the constructor, and then call setState when you want to change it. Let’s look at a code example of how to create a text class component using state data:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+ 
+⋯
+7. How do you debug React apps and what tools can you use?
+There are many different ways to do your debugging in React Native applications. Since React Native has both IOS and Android environments, there’s a wide range of different problems you can encounter and a wide range of different tools needed. We’re going to explore a few different ways to debug. Let’s start with outlining the dev menu:
+
+Developer menu
+
+The developer menu includes some different ways to debug and access debugging tools.
+
+Reload: reloads the app
+Debug JS Remotely: opens to a JavaScript debugger
+Enable Live Reload: causes the app to reload automatically after selecting “Save”
+Enable Hot Reloading: watches for changes
+Toggle Inspector: toggles the inspector interface so we can inspect UI elements and their properties
+Show Perf Monitor: monitors performance
+Chrome DevTools
+
+You can use these DevTools to debug React Native apps. You need to make sure that it’s connected to the same WiFi. If you’re using Windows or Linux, press Ctrl + M+, and if you’re using macOS, press Command + R. In the developer menu, you select “Debug JS Remotely” and it will open the default debugger.
+
+React Developer Tools
+
+To use React’s Developer Tools, you have to use the desktop app. These tools allow you to debug React components and styles.
+
+React Native Debugger
+
+If you’re using Redux in your React app, this is a good debugger for you. It’s a desktop app that integrates Redux’s and React’s developer tools in one app.
+
+React Native CLI
+
+You can use the React Native command-line interface to do debugging as well.
+
+8. Build a React app that does nothing except say “Hello World!”
+
+index.js
+JavaScript (JSX)
+Ace Editor
+ 
+⋯
+9. Can you write code for Android and IOS in the same codebase?
+Yes, you can! React takes care of all of the native component translations.
+
+10. Describe how to re-render a FlatList.
+You can re-render a FlatList by using the extraData property. Let’s look at a JavaScript code example:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+When we pass extraData={this.state} to the FlatList, we ensure it’ll re-render itself when the selected state changes. Since FlatList is also a PureComponent, we need to set this prop so it knows to re-render items.
+
+11. What happens when you call SetState?
+When you call SetState in React, the object you passed into it will be merged into the current state of the component. This triggers something called reconciliation. Reconciliation aims to update the user interface in the most efficient way possible.
+
+React does this by constructing a tree of React elements and compare it to the previous element tree. This shows React the exact changes that occurred so React can make updates in the necessary places.
+
+12. How do you style a component in React Native?
+You use JavaScript. All of the core components of React accept a prop called style. This prop can be a simple JavaScript object. You can also pass an array of different styles.
+
+If you have complex components, it’s recommended to use StyleSheet.create to establish multiple styles in one place. Here’s an example:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+ 
+⋯
+Keep the learning going.
+Get started with React without scrubbing through videos or documentation. Educative’s text-based learning paths are easy to skim and feature live coding environments, making learning quick and efficient.
+
+React for Front-End Developers
+
+13. What are Higher Order Components (HOC) and how do you use them?
+Higher-order components are pure functions that take components and return new components. Their main purpose is to condense and reuse stateful logic across different components. They’re considered to be advanced techniques, and they aren’t a part of the React API. Instead, they’re patterns that emerge from React’s compositional nature. Here’s an example of a very simple HOC:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+This simple React Higher Order Component takes WrappedComponent as a parameter, and then it returns a new React component. The new React components has WrappedComponent as its child. From this, we can create a new component like this:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+Our NewComponent can be used exactly like any other component.
+
+14. How do you call a Web API in React Native?
+The following code shows an example of how we can call a Web API in React Native:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+15. Describe how the Virtual DOM works.
+In React Native, the Virtual DOM is a copy of the real DOM. It’s a node tree that lists elements along with their attributions, contents, and properties. Whenever our underlying data changes, the Virtual DOM will re-render the UI. After that, the differences between other DOM representations and Virtual DOM representations will be counted, and the real DOM will update.
+
+16. Describe Flexbox along with its most used properties.
+Flexbox is a layout mode that enables elements to coordinate and distribute space within containers. It provides a consistent layout on different screen sizes.
+
+The main properties in Flexbox are flexDirection, justifyContent, and alignItems. Let’s discuss what each of these properties does:
+
+flexDirection: used to specify the alignment of elements (vertical or horizontal)
+
+justifyContent: used to decide how elements should be distributed inside a given container
+
+alignItems: used to specify the distribution of elements inside a given container along the secondary axis
+
+17. What is the difference between a functional component and a class component?
+Functional components are also known as stateless components. Functional components accept props and return HTML. They give solutions without using state, and they can be defined with or without arrow functions.
+
+Here’s an example of a functional component in React:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+Class components are also known as stateful components. They’re ES6 classes that extend the component class from the React library. They implement logic and state. Class components need to have render() method when returning HTML. You can pass props to them and access them with this.props.
+
+Let’s look at an example:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+ 
+⋯
+18. How can you fetch data from a local JSON file in React Native?
+There are a couple of ways to fetch data from a local JSON file in React Native. Let’s take a look at two options:
+
+Option 1:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+Option 2:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+19. List some ways you can optimize an application.
+There are many different ways to optimize an application. Let’s take a look at some of our options. We can:
+
+Compress or convert our raw JSON data instead of just storing it
+
+Make reduced-sized APK files for CPU architectures
+
+Optimize native libraries and the number of state operations
+
+Use key attributes on list items
+
+Compress images and other graphic elements
+
+Use Proguard to minimize app size and strip parts of our bytecode along with its dependencies
+
+20. How do you create a stackNavigator in React Native?
+Here’s how to create stackNavigator in React Native:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+21. What are some causes of memory leaks and how can you detect them for IOS and Android?
+Memory leaks can happen if unreleased timers or listeners are added in componentDidMount or with closure scope leaks.
+
+To detect memory leaks for IOS, you go to Xcode, Product, then Profile.
+
+To detect memory leaks for Android, you can use the Performance Monitor.
+
+22. How do you install a specific version of React Native?
+To install a specific version of React Native, we can use this command:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+23. Give an example of props being used in React Native.
+
+index.js
+JavaScript (JSX)
+Ace Editor
+ 
+⋯
+24. How do you import components in React Native?
+Here’s how you can import components in React Native:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+25. How do you add React navigation to React Native?
+We have a couple of options. Let’s look at the first one:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+Here’s the second:
+
+
+index.js
+JavaScript (JSX)
+Ace Editor
+⋯
+BONUS: How does React Native communicate with native Android and iOS code?
+This is a common React Native interview question for mid-level and senior developers because it tests whether you understand how the framework works internally.
+
+React Native allows developers to write application logic in JavaScript while still rendering native user interface components on Android and iOS. Traditionally, communication between the JavaScript layer and the native platform occurred through a mechanism called the Bridge. When JavaScript code needed to interact with native functionality, such as accessing the camera, GPS, or device storage, messages were serialized and passed across the bridge to the native side. Native modules could then process those requests and return results back to JavaScript.
+
+While this architecture enabled cross-platform development, excessive communication across the bridge could become a performance bottleneck in complex applications. To address this, React Native introduced its New Architecture, which includes Fabric for rendering and TurboModules for native module communication. These improvements reduce overhead, improve startup performance, and enable more direct interaction between JavaScript and native code.
+
+Understanding the bridge and the New Architecture demonstrates a deeper understanding of React Native internals and is increasingly relevant in modern React Native interviews.
+
+Component
+
+Purpose
+
+JavaScript Thread
+
+Executes React Native application logic
+
+Native UI Thread
+
+Renders Android and iOS user interfaces
+
+Bridge (Legacy Architecture)
+
+Transfers messages between JavaScript and native code
+
+Native Modules
+
+Provide access to platform-specific functionality
+
+Fabric
+
+New rendering system for improved UI performance
+
+TurboModules
+
+Faster native module communication
+
+JSI (JavaScript Interface)
+
+Enables direct interaction between JavaScript and native code
+
+
+25 more interview questions to explore
+How do you use TypeScript in React Native?
+How do you store data in AsyncStorage?
+How do you load data from the server-side in React Native?
+What are hooks in React Native?
+What are the differences between Flexbox in the browser vs in React Native?
+What is props drilling?
+What is AppRegistry?
+What does StyleSheet.create do?
+How do you create a stack of screens in React Native?
+How do you import components?
+What is Axios and how does it work?
+What is InteractionManager and how is it used?
+What’s the difference between ScrollView and FlatList?
+What is Flux?
+Are all React components usable in React Native?
+What is the XHR module used for?
+How does React Native handle different screen sizes?
+What are animations in React Native?
+What is the storage system in React Native?
+How do you use Firebase in React Native?
+Explain setNativeProps. How is it used?
+What is Network Security and SSL Pinning?
+How is the entire React Native code processed to show final output on a mobile screen?
+Describe Timers in a React Native application.
+What are the key points to integrating React into an existing Android mobile application?
+
+Next steps
+Congrats! You made it to the end. Preparing for your React interview will take time, so be patient with the process. Be prepared to practice, practice, practice. There’s still so much more to learn about React. The best ways to continue learning include:
+
+Getting hands-on practice
+Brushing up on your interview skills
+Mastering the React best practices
+To dive deeper into what it takes to be a React Developer, check out Educative’s curated learning path React for Front-End Developers. In this hands-on learning path, you’ll explore all of the React fundamentals you need to know, learn how to integrate React with Firebase, use React Tracked to develop a small web app, and much more. By the end, you’ll be equipped with the skills to build outstanding apps using React.
+
 45 React Native Interview Questions And Answers In 2025
 Updated on Dec 18, 2024 | Gaurav Aggarwal | 15 min read | 115.9K views
 FacebookTwitterLinkedInWhatsAppРесурс
