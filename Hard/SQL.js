@@ -1,3 +1,360 @@
+Top 50 PL/SQL Interview Questions and Answers in 2026
+Are you preparing for PL/SQL Interviews, if yes read on! I made a list of PL/SQL interview questions.
+
+PL (Procedural language) is an extension to SQL (Structured Query Language) where a developer can write complex database interactions using procedures, control structures like branching and iteration, modules and functions. It has tight integration with SQL and supports both dynamic and static SQL.
+
+Amongst other questions during an interview, it is also important to know how SQL and PL/SQL are different. Some benefits of PL/SQL over SQL are:
+
+Supports procedural processing, conditional statements, looping and other features similar to high-level languages.
+Multiple statements can be sent to the database server at once in the form of a procedure, hence saving time and network traffic.
+Customized error handling is possible.
+Fully portable.
+Apart from the above benefits, PL/SQL has some more attractive features like functions, procedures, triggers, cursors that make it one of the most versatile relational databases.
+
+Introduction
+PL/SQL 1.0 was released in 1992 with Oracle 6 as an optional extension. It was with PL/SQL 2.0 that stored procedures, functions, user-defined record types, tables, packages and extensions like DBMS_* were introduced. The latest PL/SQL version is 11.0, which was released with Oracle 11g and came with advanced features such as native compilation, PL/SQL function result cache, and minute dependency tracking.
+
+Best PL/SQL Interview Questions & Answers
+Below are some common basic and advanced pl/sql interview questions and answers which are asked in the interview by the interviewer
+
+Question: What is PL/SQL?
+Answer: A procedural language where code can be executed in blocks. It is an extension of SQL.
+
+Question: What are the differences between PL/SQL and SQL?
+Answer:
+
+SQL	PL/SQL
+SQL is a query language to interact with the database.	It is an extension of SQL which supports procedures, functions and many more features.
+Supports only simple queries that can perform insert, update, delete on tables.	Can perform complex tasks like a high-level programming language, for example, while loop, if-else statements, etc…
+SQL statements can be executed only one at a time, thereby making it a time-consuming process.	The entire block of statements is sent to the database server at once to be executed, saving time and increasing efficiency.
+No provision for error handling.	Customized error handling is possible.
+Question: What is the basic structure of PL/SQL?
+Answer:
+
+[DECLARE]
+--declaration statements (optional)
+BEGIN
+--execution statements
+[EXCEPTION]
+--exception handling statements
+END;
+Question: Define cursor and its use.
+Answer: A cursor is a pointer to a memory area assigned by Oracle to process SQL statements. The cursor is used to hold records returned by the SQL query. There are 2 types of cursors – implicit and explicit.
+
+Question: Why do we use database triggers? Give the syntax of a trigger.
+Answer: The trigger is a stored procedure that is automatically invoked when an event happens. The event could be: insert, update, delete, etc… Syntax –
+
+create trigger [trigger_name]
+[before | after]
+
+on [table_name]
+[for each row]
+[trigger_body]
+Question: How do you compile PL/SQL code?
+Answer: Firstly, the syntax check is performed. When the developer corrects any syntax errors, Oracle binds all the variables holding data with a storage address. Finally, the p-code generation process takes place.
+
+Question: Explain exception handling in PL/SQL.
+Answer: PL/SQL offers customized exception handling. When an error occurs, an error handling code is included in the program itself. There are 3 types of exceptions –
+
+Pre-defined exceptions – common errors that are already defined. Example – NO_DATA_FOUND
+Undefined exceptions – the errors that do not have predefined names.
+User-defined exceptions – handled by the code written by the user.
+Question: Tell about a few data types in PL/SQL.
+Answer: There are many data types –
+
+Scalar types – primitive data types like CHAR, DATE, LONG, VARCHAR2 etc…
+Composite – these are made up of other data types and can be easily updated. Example, RECORD, TABLE etc…
+Reference data types like CURSOR
+Large object types – BLOB, CLOB etc…
+Question: What is the difference between %TYPE and %ROWTYPE? Give an example.
+Answer:
+
+%TYPE	%ROWTYPE
+The attribute that declares a variable of the same data type as of a table column.	The attribute that declares a variable of type RECORD having the same structure as a table row. The row is the RECORD that contains fields having the same data types and names as the columns of a table or view.
+Example –
+DECLARE
+studentId
+students.student_id%TYPE;
+Example –
+DECLARE
+stud_rec
+students.%ROWTYPE;
+Question: What constitutes a PL/SQL package?
+Answer: Packages are schema objects that place functions, procedures, variables, etc… in one place. Packages should have –
+
+Package specifications
+Package body
+Question: List some schema objects that are created using PL/SQL.
+Answer: Database links, triggers, stored procedures, functions and packages, views, synonyms, external procedure libraries, sequences, etc…
+
+Check here: Basic SQL Commands Checklist
+
+Question: What are the various predefined exceptions?
+Answer: Predefined exceptions are internally defined exceptions that occur during the execution of a program. For example, PL/SQL raises NO_DATA_FOUND when there are no rows returned upon a select operation, and if more than one row is returned using a select statement, TOO_MANY_ROWS error is generated. Some more examples:
+
+COLLECTION_IS_NULL: when a collection is null
+CURSOR_ALREADY_OPEN: When a cursor is already open
+LOGIN_DENIED: When login is incorrect or permission is not there
+For the complete list of predefined exceptions, check out Oracle docs.
+
+Question: What is the difference between syntax and runtime errors?
+Answer:
+
+Syntax error	Runtime error
+These are compile-time errors found by the compiler.	These are not detected by the compiler and cause the program to give an incorrect result.
+The code doesn't build and run until these issues are resolved.	The code is compiled and run, and if an error occurs, the program stops halfway.
+Some examples are missing semicolons or brackets (;, {}), incorrect spelling of classes, keywords etc.	Examples are null pointer exceptions, dividing a number by zero, array index out of bounds, etc.
+int x = 9 String name = null; In the first line, a semicolon is missing which the compiler will catch	String name = null; if(name.equals(“hackr.io”)){….} Since name is null, the exception will be caught during runtime when the code is executed
+ 
+
+Question: What are the various packages available for PL-SQL Developers?
+Answer: The several packages available for PL/SQL developers are:
+
+DBMS_ALERT	alert an application using triggers when particular database values change. The alerts are transaction-based and asynchronous.
+DBMS_OUTPUT	display output from PL/SQL blocks, packages, subprograms and triggers. Mostly used for displaying PL/SQL debugging information.
+DBMS_PIPE	different sessions communicate over named pipes using this package. The procedures PACK_MESSAGE and SEND_MESSAGE pack a message into a pipe, then send it to another session.
+HTF and HTP	allow PL/SQL programs to generate HTML tags.
+UTL_FILE	lets PL/SQL programs read and write OS text files.
+UTL_HTTP	allows your PL/SQL programs to make hypertext transfer protocol (HTTP) callouts. The package has two entry points, each of which accepts a URL (uniform resource locator) string, contacts the specified site, and returns the requested data, which is usually in HTML format.
+UTL_SMTP	allows PL/SQL programs to send emails over SMTP.
+Source: Oracle docs
+
+Question: Explain Character Functions?
+Answer: Character functions are functions that manipulate character data. These are more popularly called as string functions. Example:
+
+LEFT	Returns the mentioned number of characters from left of a string. LEFT(value, NoOfChars). Example	LEFT('Hackr', 4) will give Hack.
+RIGHT	return specified number of characters from right. RIGHT(value, NoOfChars). Example	RIGHT('banker', 2) will return er.
+SUBSTRING	selects data from any part of the string. SUBSTRING(value, StartPosition, NoOfChars). Example	SUBSTRING('hackr.io',0,4) will return hackr.
+LTRIM	trims white spaces from the left. Example	LTRIM(' hackr.io') will return hackr.io.
+RTRIM	trims white spaces from the right. Example	RTRIM('hackr.io ') will return hackr.io.
+UPPER	converts all the characters to uppercase. Example	UPPER('hackr.io') returns HACKR.IO.
+LOWER	converts all the characters to lowercase. Example	LOWER('HACKR.IO') returns hackr.io.
+Question: What is the use of SYSDATE and USER keywords? Explain with examples.
+Answer: SYSDATE: returns the current date and time on the local database server. The syntax is SYSDATE. If we have to extract part of the date, then we use the TO_CHAR function. Examples:
+
+SELECT SYSDATE FROM dual;
+select customer_id, TO_CHAR(SYSDATE, 'yyyy/mm/dd') from customer where customer_id < 200;
+USER: USER returns the user_id of the current session.
+
+Example:
+
+select USER from dual;
+Question: What is the difference between SGA and PGA?
+Answer:
+
+SGA	PGA
+System Global Area	Program Global Area
+Contains data and control information for one Oracle database instance	Contains data and control information exclusively for a single Oracle process
+Shared memory region for components	Non-shared memory region
+example: cached data blocks and SQL areas	Example: session memory, SQL work area
+Question: Explain the uses of Merge with Syntax in PL-SQL.
+Answer: Merge reduces the number of table scans and performs parallel operations if required. MERGE inserts or updates data conditionally from one table to another. For example,
+
+MERGE INTO orders o
+ USING customer c
+ ON (o.cust_id = c.cust_id)
+ WHEN MATCHED THEN
+ UPDATE SET o.del_address = c.address
+ WHEN NOT MATCHED THEN
+ INSERT (cust_id, address)
+VALUES (c.emp_id, c.address);
+In this example, if a record with the matching condition is found, then the address of the same record is updated, else a new row is inserted.
+
+Question: Explain the benefits of PL-SQL packages.
+Answer: There are many benefits of using PL/SQL packages:
+
+Better code management as packages provide a container for sub-programs
+Top-down application design approach with separation of implementation and specifications (interface)
+If there are any changes to the subprograms, there is no need to change the dependent objects or recompile the entire package
+Accessibility can be specified (private/public) thus maintaining the security of the code
+Data can be maintained across transactions for the entire session without storing in database
+At the first call of the subprogram, the entire package is loaded, so there is no need for disk I/O for subsequent calls, thus giving better performance.
+Question: Explain the difference between ROLLBACK and ROLLBACK TO statements?
+Answer: ROLLBACK command rolls back all the changes from the beginning of the transaction. In ROLLBACK TO, the transaction is rolled back (or undone) only till a point known as the SAVEPOINT. The transactions before the SAVEPOINT cannot be undone, and the transaction remains active even when the command is given.
+
+Question: Explain the difference between procedure and function.
+Answer:
+
+Function	Procedure
+The function is compiled every time
+it is called for execution.
+
+Procedures are pre-compiled and saved. They execute the pre-compiled code whenever called.
+Can be called from SQL statements.	Can not be called from SQL statements.
+The function has to return a value.	Need not return any value.
+Generally used for computation purpose.	Used for executing complex business logic.
+Can return multiple values using other methods, otherwise, return only a single value.	Can return multiple values
+Returns scalar data types.	Returns an int by default.
+A stored procedure can not be called from a function	The procedure can call any function
+Functions can be embedded in a select statement	Inside a select statement, a procedure cannot be called.
+Exception handling is not possible	Try/catch block can be defined inside a procedure
+Question: Explain the difference between procedure and trigger.
+Answer:
+
+PROCEDURE	TRIGGER
+Called explicitly by a user, trigger or an application	Executed by the DBMS whenever an event occurs in the database.
+Can have parameters	Doesn’t have parameters
+Cannot be inactive	Can be enabled or disabled on need basis
+Creation – CREATE PROCEDURE	Creation – CREATE TRIGGER
+Question: What are the different types of cursors in PL/SQL?
+Answer: There are two types of cursors –
+
+Implicit cursor – PL/SQL applies implicit cursors for INSERT, UPDATE, DELETE and SELECT statements returning a single row.
+Explicit cursor – created by a programmer for queries returning more than one row. Syntax–
+CURSOR is
+SELECT statement;
+OPEN ;
+FETCH INTO ;
+CLOSE ;
+Question: What are the different types of constraints?
+Answer:
+
+Not NULL
+Unique
+Primary key
+Foreign key
+Check
+Question: What are the differences between triggers and constraints?
+Answer:
+
+TRIGGERS	CONSTRAINTS
+Stored as separate objects	A constraint on a table is stored along with the table definition
+Triggers are fired upon an event; hence they are fired after constraints	Constraints are fired as soon as the
+the table is used.
+
+Perform table to table
+comparison, hence faster
+
+Performs memory location to table the comparison which is slow leading to low performance.
+Trigger is for the entire table	The constraint is for a column of the table
+They are just stored procedures that get automatically executed, hence don’t check for data integrity.	Prevent duplicate and invalid data entries
+Question: Explain the PL/SQL block with an example.
+Answer: PL/SQL block consists of three sections: declaration, executable and exception-handling sections. The executable section is mandatory. There are two types of blocks: named and anonymous.
+
+Named blocks are functions and procedures which are stored in the database server and can be reused. Anonymous blocks are for one time use and are not stored in the server. Example:
+
+DECLARE
+
+ message VARCHAR2(255):= 'Welcome to PL/SQL';
+ byzero NUMBER;
+
+BEGIN
+
+   DBMS_OUTPUT.put_line (message);
+   byzero := 1/0;
+
+   EXCEPTION
+
+  WHEN ZERO_DIVIDE THEN
+ DBMS_OUTPUT.PUT_LINE(SQLERRM);
+END;
+Question: Explain PL/SQL Records.
+Answer: Records contain a set of data of various data types that can be related to each other as fields. Three types of records that are supported in PL/SQL are table-based records, programmer-based records, and cursor-based records.
+
+Question: Explain the difference between commit and savepoint.
+Answer:
+
+COMMIT – is used to make the database changes permanent. All the save points are erased and the transaction ends. Once committed, a transaction cannot be rolled back.
+
+SAVEPOINT – is used to set points during a transaction to which a programmer can roll-back later. it is helpful when there is a series of transactions that can be divided into groups having a savepoint.
+
+Question: What is the difference between actual and formal parameters?
+Answer: The parameters that are used to call a procedure are called as actual parameters. Example –
+
+get_student_details(stud_name, dob); -- here stud_name and dob are actual parameters.
+The variables declared in a procedure header used in the body are called formal parameters. Example –
+
+PROCEDURE get_student_details (dob DATE) IS – here stud_name is a formal parameter.
+Question: How is a DECLARE statement used?
+Answer: DECLARE is used as the first statement for stand-alone files that consist of anonymous block of code which are not stored procedures, functions or triggers. Example –
+
+DECLARE
+num1 NUMBER(2);
+num2 NUMBER(3);
+BEGIN
+-- logic goes here
+END;
+Question: Tell us about SQLCODE and SQLERRM.
+Answer: SQLCODE and SQLERRM are used to trace exceptions that are not explicitly handled in the program. These are globally defined variables. SQLCODE returns the error code while SQLERRM returns the corresponding error message.
+
+Question: What is rollback? How is it different from rollback to statement?
+Answer: Rollback erases all the database changes including all the savepoints. It ends a transaction.
+
+‘Rollback to’ rollbacks the changes up to the savepoint mentioned in the code. The transaction will still be active.
+
+Question: What is IN OUT parameter?
+Answer: IN OUT parameter mode passes a value to a subprogram and returns an updated value.
+
+Question: Is it possible to accept user inputs during runtime? How?
+Answer: Yes, it is possible. Use ACCEPT keyword to take inputs from the user. Example –
+
+ACCEPT age number prompt ‘Enter your age:’
+
+Question: Give a simple way to run a query faster.
+Answer: By using ROWID. It is not a physical column but the logical address of a row. It contains the block number, file number and row number thereby reducing I/O time hence making query execution faster.
+
+Question: What are some of the pre-defined exceptions in PL/SQL?
+Answer: ZERO_DIVIDE, NO_DATA_FOUND, TOO_MANY_ROWS, INVALID_CURSOR, DUP_VAL_ON_INDEX etc…
+
+Question: How do you trace the PL/SQL code?
+Answer: You can trace through DBMS_* methods like
+
+DBMS_APPLICATION_INFO
+DBMS_TRACE
+DBMS_SESSION and DBMS_MONITOR
+Question: How to restrict string length in PL/SQL?
+Answer: Use CHAR (NUMBER) to get fixed length for a variable. Example – CHAR (10). If the length of the string is less than the specified number, it will be padded with white spaces.
+
+Question: What is the purpose of the UTL_FILE package in PL/SQL?
+Answer: By using this package, developers can get the code read and write files to and from the computer. For doing this, the developer will need access grant from DBA user.
+
+Question: What are DBMS_OUTPUT and DBMS_DEBUG?
+Answer: Both can be used for debugging the code. DBMS_OUTPUT prints the output to console whereas DBMS_DEBUG prints it to a log file.
+
+Question: List some cursor attributes in PL/SQL.
+Answer:
+
+%ISOPEN: Check if the cursor is open
+%ROWCOUNT: Get the number of rows that are updated, deleted or fetched.
+%FOUND: Checks if the cursor has fetched any row, returns Boolean.
+%NOT FOUND: Checks if the cursor has fetched any row. Returns Boolean.
+Question: What is the purpose of NVL?
+Answer: NVL lets the programmer substitute a value for a NULL value. Example –
+
+NVL (occupation, ‘default’)
+Question: On a table, how many triggers can be applied?
+Answer: 12 is the maximum number.
+
+Question: How can we achieve consistency using PL/SQL?
+Answer: We can achieve consistency by setting the appropriate isolation level. For example, to give read consistency, the isolation level can be set to READ COMMITTED.
+
+Question: Write a simple procedure to select some records from the database using some parameters.
+Answer: Example code –
+
+CREATE PROCEDURE get_customer_details @age nvarchar(30), @city nvarchar(10)
+AS
+
+BEGIN
+SELECT * FROM customers WHERE age = @age AND city = @city;
+END;
+Question: Explain the error ORA-03113.
+Answer: The error end-of-file on communication channel ORA-03113 means that there is a broken connection between the client and server channels. It could be a timeout because of which the connection was lost. You can troubleshoot by pinging the server and checking the connectivity.
+
+Question: Can you use IF statement inside a SELECT statement? How?
+Answer: Yes, we can do so using the DECODE keyword in versions 9 and above. Example –
+
+SELECT day_of_week,
+DECODE (number, 0, 'Sunday',
+1, 'Monday',
+2, 'Tuesday',
+3, 'Wednesday',
+4, 'Thursday',
+5, 'Friday',
+6, 'Saturday',
+'No match') result FROM weekdays;
+Question: What is SYS.ALL_DEPENDENCIES?
+Answer: SYS.ALL_DEPENDENCIES describes all the dependencies between packages, procedures, functions, triggers accessible to the current user. It shows columns like name, type, dependency_type, referenced_owner, etc…
+
 120 ключевых вопросов по SQL за 2025 год
 26.07.2025Data Analyst, sql
 120 ключевых вопросов по SQL за 2025 год
