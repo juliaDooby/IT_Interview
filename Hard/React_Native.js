@@ -1,3 +1,304 @@
+45 React Native Interview Questions And Answers In 2025
+Updated on Dec 18, 2024 | Gaurav Aggarwal | 15 min read | 115.9K views
+FacebookTwitterLinkedInWhatsAppРесурс
+React Native interview questions
+Did you know that more than 50% of the most popular apps and websites in the world, including Netflix, Facebook, and Instagram, have been developed using React Native? 
+
+The widespread use of React has increased the demand for React developers. If you wish to capitalize on this opportunity, you need to be prepared with the common React Native interview questions alongside a deep understanding of this open-source JAVAScript library.
+
+In this blog, we will go through React Native basic to advanced interview questions for freshers, intermediate, and experienced candidates.
+
+Table of Contents
+Why Do Developers Choose React Native?
+Before moving on to the list of React Native interview questions, let us understand why this software framework has become so popular. React Native helps you create mobile applications that support both Android and iOS. It is an open-source framework that uses a single codebase to create a variety of mobile applications. It has become a great resource for developers as it saves time and allows them to build diverse applications. 
+
+Further, it also allows faster development as compared to other languages, and offers reusable components which make the work of developers easier and more efficient as they don’t have to repeat specific code. If you are planning to make a career as a React Native developer, you may want to consider checking out this React course.
+
+Basic React Native Interview Questions and Answers For Freshers
+Let us go through some React Native basic interview questions that every aspiring React developer should be familiar with before an interview:
+
+Q1. Define React Native.
+React Native is a mobile application development framework that allows developers to build applications on various platforms.
+
+Q2. What does React Native use to develop applications?
+React Native uses JavaScript and React to build mobile applications.
+
+Q3. List the benefits of using React Native.
+The following are the benefits of using React Native:
+
+It offers cross-platform development.
+It has a faster development framework.
+The performance is better than most programming languages.
+It provides reusability of code.
+It provides users with a better user experience.
+It supports third-party libraries.
+Q4. Explain the use of JSX in React Native.
+JSX in React Native is used to define the user interface elements and allows the developers to write code that is easy to understand.
+
+Q5. Explain the difference between Props and State in React Native.
+Props are read-only and are used to pass data from a parent component to a child component. The child component cannot modify the data received through props. The state is used to store data within a component and can be changed by the component itself.
+
+Q6. Explain the use of Redux in React Native.
+React Redux is a state management library that invariably manages the application state and provides tools for debugging and a centralized store that stores the application state.
+
+Q7. Explain the purpose of the StyleSheet API in React Native.
+The StyleSheet API is used to define the styles for user interface components in React Native. It provides performance optimizations that allow the styles to be easily applied to the components.
+
+Q8. Explain the use of Virtual DOM in React Native.
+Virtual DOM is a copy of the actual DOM and is used to efficiently update the user interface by React Native. It also allows React Native to calculate the minimum set of changes that are required to update the user interface.
+
+Q9. Define Flexbox in React Native.
+A layout model that allows the elements to align and distribute space within a container is known as Flexbox in React Native.
+
+Q10. Differentiate between ReactJS and React Native.
+React JS	React Native
+It employs the React router for navigating web pages.	It employs the built-in navigator library to navigate mobile applications.
+It is used for web application development.	It is used for developing mobile applications.
+It offers higher security.	It provides lower security.
+It utilizes HTML tags.	It does not utilize HTML tags.
+The browser code is rendered by VirtualDOM.	It uses its API to render code.
+Also Read: React JS Interview Questions
+
+Q11. Define threads and explain their uses in React Native?
+Within a program, the single sequential flow can be controlled by a thread. React Native uses three threads:
+
+UI Thread: It is the main application thread on which Android/iOS applications run. The user interface of the app can be changed by this thread as it has access to it.
+Shadow Thread: It is a background thread and is used to calculate the layout that was created using React library in React Native.
+JavaScript Thread: This thread executes the main JavaScript code.
+Q12. Define Props Drilling?
+A concept that refers to the process to pass the data from the parent component to the exact child component is known as Props Drilling.
+
+Q13. What are the steps to avoid Props Drilling?
+The following are the steps to avoid Props Drilling:
+
+React Context API
+Composition
+Render props
+HOC
+Redux
+Q14. Define Networking in React Native.
+Networking is an inherently asynchronous operation in React Native.
+
+Q15. List the points to integrate React Native in an existing application.
+The developer should set up React Native dependencies and directory structure.
+Then, they should develop the React Native components in JavaScript.
+After that, the developer should add ReactRootView to the application. It will serve as the container.
+Now, the developer should start the React Native server and run the native application.
+Finally, the developer would need to verify that the React Native aspect works as expected.
+Intermediate React Native Interview Questions and Answers  
+If you are a college graduate or someone who is experienced in React and is trying to land a better job, then we have got you covered with the following React Native questions for interviews for intermediate candidates.
+
+Q16. Explain the life cycle methods of React Native components.
+The following are the life cycle methods of React Native components:
+
+constructor()
+render()
+componentDidMount()
+shouldComponentUpdate()
+componentDidUpdate()
+componentWillUpdate()
+Q17. Define Bridge and its use in React Native.
+A Bridge is a layer responsible for gluing Native and JavaScript environments together. Furthermore, it is used to transport asynchronous serialized batched response messages from JavaScript to Native modules.
+
+Q18. What are the core components of React Native?
+The following are the core components of React Native:
+
+<View>: It is a container that supports layout, touch handling, and accessibility controls.
+ <Text>: It displays styles, nests strings of text, and handles touch events.
+<Image>: It displays different types of images.
+<ScrollView>: It is a generic scrolling container that contains multiple components and views.
+<TextInput>: This component allows the user to enter text.
+Q19. Define ListView.
+A view component that contains the list of items and displays it in a vertically scrollable list is known as React Native ListView. 
+
+Q20. How to write different code for iOS and Android in the same code base?
+Platform modules can be used to write different code for iOS and Android in the same code base as it detects the platform in which the app runs. 
+
+import { Platform, Stylesheet } from 'react-native';
+
+const styles = Stylesheet. create({
+
+height: Platform.OS === 'iOS'? 200:400
+
+})
+
+import { Platform, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+
+container: {
+
+flex: 1,
+
+Platform.select({
+
+ios: {
+
+backgroundColor: 'yellow',
+
+     },
+
+android: {
+
+backgroundColor: 'purple',
+
+     },
+
+default: {
+
+       // other platforms, the web, for example,
+
+backgroundColor: 'red',
+
+     },    }),
+
+},
+
+});
+Q21. Explain Touchable components in React Native.
+TouchableHighlight: This component is used anywhere a link or button would be used on the web. The background of the view darkens when the user presses the button.
+TouchableOpacity: This component is used to provide feedback by reducing the opacity of the button. It also allows the background to be visibly seen.
+TouchableNativeFeedback: This component is used to display ink surface reaction ripples in Android that are responsible for responding to the user’s touch.
+TouchableWithoutFeedback: This component is used when a tap gesture is required to be handled.
+Also Read: Types Of Components In React
+
+Q22. Explain the purpose of State in React Native.
+The purpose of the State is to store data that can be changed over time and can affect the behavior of the application. 
+
+Q23. Explain the purpose of the use Effect hook in React Native.
+To handle side effects in a functional component, the useEffect hook is used in React Native. It runs after every render and may include network requests, DOM manipulation, etc.
+
+Q24. What is the use of navigation in React Native?
+Navigation in React Native allows developers to create a seamless navigation experience for their users. It is a popular library and provides options like Stack Navigation, Drawer Navigation, and Tab Navigation. 
+
+Q25. Explain the purpose of AsyncStorage in React Native.
+AsyncStorage is a key-value storage system used to store data in React Native applications. It runs in the background without hindering the main thread.
+
+Q26. Name the popular libraries used in React Native development.
+The following are the popular libraries used in React Native development:
+
+React Navigation
+Redux
+Axios
+Styled Components
+React Native Elements
+Q27. How to debug React Native applications?
+There are various ways to debug React Native applications. It includes using the React Native Debugger and React Native’s built-in debugging tools. Moreover, tools like Sentry and Bugsnag can be used to track errors in production environments.
+
+React Native Interview Questions For Experienced
+Now that we have covered the fresher and intermediate categories, let us move to React Native interview questions for experienced candidates.
+
+Q28. State the real reason behind React Native performance issues.
+The real reason behind the performance issues of React Native is that each thread is blazingly fast. The bottleneck in React Native application occurs when the user passes the components from one thread to another more than required. To avoid any kind of performance-related issue in React Native, one must keep the passes over the bridge to a minimum.
+
+Q29. State the difference between Redux and React Context API.
+Redux and React Context API are both used for state management. The main difference is that Redux provides a centralized store for the application’s state while the Context API provides a way to pass down state to child components.
+
+Q30. State the difference between a controlled and uncontrolled component in React Native.
+A component where the value of its input field is controlled by the component’s state is called a controlled component. On the other hand, an uncontrolled component does not have its value controlled by the component’s state and relies on the value of the input field itself.
+
+Q31. Explain HOC.
+The pure functions that take components and return new components are known as Higher-order components (HOC). The purpose of HOC is to condense and reuse stateful logic across different components.
+
+Q32. Explain the difference between the functional component and the class components.
+Functional components include those which help in providing alternatives that do not require a state and may be defined with or without arrow functions. They acknowledge props and return HTML, and they’re also defined as stateless components. On the other hand, the components that implement state and logic are known as class components. They require the render() method when returning HTML and are also regarded as stateful components.
+
+Q33. List some methods to optimize an application.
+There are several methods using which you can optimize an application. The following are some of them:
+
+In place of storing raw JSON data, you can convert it.
+For different CPU architectures, you can create smaller APK files.
+You can compress images and other graphic elements.
+You can try to minimize the number of state operations.
+You can utilize key attributes on list items. 
+You can use Proguard to reduce app size.
+Q34. Explain AppRegistry.
+AppRegistry is a JS entry point for running all the React Native applications. For this to happen, the app root component should register itself with AppRegistry.registerComponent.
+
+Q35. How to create a stack of screens in React Native?
+We can browse between screens in a stack-like approach in React Native using Stack Navigation. The following are the steps to create the same.
+
+Begin by installing React Native packages. 
+At the beginning of the main JavaScript file, add the import statements.
+Now, define a global Stack Navigator by creating an instance of createStackNavigator using the following command. const Stack = createStackNavigator();
+Now, create the screen components. For example, let there be a ‘Login’ and ‘SignUp’ component. 
+Next, set up screen navigation in the App component by placing Login and SignUp screens in the Stack.navigator component. Use the following code for the same.
+export default function App() {
+
+  return (
+
+    <NavigationContainer>
+
+      <Stack.Navigator>
+
+        <Stack.Screen name=”Login” component={Login} />
+
+        <Stack.Screen name=”SignUp” component={SignUp} />
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
+
+  );
+
+}
+
+We have now set up the stack navigation for React Native application. 
+Q36. How to import components in React Native?
+We can import components in React Native using the following command. 
+
+import Component_name  from ‘File_Name’;
+
+It will import the default component. 
+
+To import a named component, use the following command.
+
+import {Named_Component} from ‘File_Name’;
+
+Q37. How is TypeScript used in React Native?
+TypeScript is used by default when new projects are created by the React Native CLI or by templates like Ignite. It can also be used for Expo, which has templates and can even prompt you to install and configure TypeScript when a .ts or .tsx file is added to a project.  To use TypeScript in React Native, follow these steps-
+
+First, install Expo CLI globally in your system by opening the Terminal and giving the following command. npm install -g expo-cli
+Next, create a new React Native project. Use the following command. expo init “Project_Name”
+When asked to select the template, choose either the blank(TypeScript) or tabs(TypeScript). 
+With this, a new project with TypeScript integrated in it will be generated. 
+Q38. How are different screen sizes handled in React Native?
+To handle different screen sizes, one can use density-independent pixels, flexbox, dimensions, percentages, or PixelRatio. 
+
+Q39. Explain Network Security and SSL Pinning.
+Network security is a combination of steps taken to protect the integrity of a network and the data within it from security threats and cyberattacks. 
+
+SSL Pinning is a technique in which the SSL(Secure Socket Layer)/TLS(Transport Layer Security) certificate’s public key is hardcoded into the app or device. When this app or device communicates with a server, it will compare the public key of the server’s SSL/TLS certificate with the key that is hardcoded in the app or device. The connection is considered secure if the two keys match, even in the case of two different certificate authorities (CA) signing the certificate. 
+
+Q40. What are Timers in React Native?
+Timers allow the users to manipulate the order in which the event occurs. They are used in React for various applications. There are four types of timers–timeout, interval, immediate, and animation. 
+
+Q41. Explain animations in React Native.
+Animations make the images appear as moving or in motion in the interface. They add more interactivity to the components available. There are two animation systems in React Native, Animation and LayoutAnimation. Animation is used for granular and interactive control of specific values. LayoutAnimation is for animating global layout transactions. 
+
+Q42. Explain the storage system in React Native.
+The storage system in React Native is called AsyncStorage. It is a simple, unencrypted, asynchronous, persistent storage system that stores the data globally in the app. The data is stored in the form of a key-value pair. React Native recommends using abstraction on top of AsyncStorage since it works globally.
+
+Q43. Explain the XHR module.
+The XHR module enables the developer to send HTTP or HTTPS requests to a remote server and further load the response data back into the function. It is commonly used for accessing third-party applications and triggering webhooks. 
+
+Q44. Explain the entire processing of React Native code in detail.
+A code in React Native goes through the following process to finally generate an output. 
+
+Since the code is written in modern JavaScript syntax, it is first converted into an older version using tools like Babel. It is done to ensure compatibility across devices. 
+Then, a JavaScript bundler compiles or bundles the code including dependencies into one single file. 
+If there are native functions that are not available in React Native’s core, native modules in Java are used to bridge the gap between the JavaScript and native code. 
+After being bundled, the JavaScript code is executed within a JavaScript runtime environment. 
+Now, to communicate with the native components, React Native depends on a bridge and sends instructions regarding the same. The bridge converts these instructions into API calls on the respective platform.
+The platforms, android or iOS, render the native components using these instructions. 
+The native components and UI elements are rendered on the screen of the device and the user can interact with the app using these components. 
+Q45. Explain Axios.
+Axios is a JavaScript library that aids the process of sending HTTP requests and handling web application responses. Its simple API makes the performance of common HTTP operations easier. It also has built-in support for handling requests and response interceptors, cancellation of requests, and automatic JSON parsing.
+
+Conclusion
+
+When preparing for a React Native interview, it is essential to have a solid understanding of the framework’s fundamentals. Make sure you revise all of these React Native interview questions beforehand. While you’re at it, it is also important to communicate effectively and confidently and ensure you have sufficient time to prepare for the interview. 
+
 20 популярных вопросов на собеседовании по React Native
 15 мин чтения
 собеседование
