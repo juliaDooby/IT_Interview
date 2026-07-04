@@ -1,3 +1,310 @@
+Top 50 Mongodb Interview Questions with Answers
+Uncategorized
+ Posted on May 2, 2023 | by Ashwani Kumar
+ Post Views: 8
+
+Mongodb Interview Questions with Answers
+What does MongoDB stand for?
+a. Mongolian Database
+b. Modern Document-Oriented Database
+c. Mongo Datastore
+d. None of the above
+Answer: b. Modern Document-Oriented Database
+Which type of database is MongoDB?
+a. Relational
+b. Non-relational
+c. Both a and b
+d. None of the above
+Answer: b. Non-relational
+Which language is used by MongoDB for queries?
+a. SQL
+b. XML
+c. JSON
+d. None of the above
+Answer: c. JSON
+What is sharding in MongoDB?
+a. Splitting of large datasets into smaller, more manageable parts
+b. Combining of multiple smaller datasets into one large dataset
+c. Clustering of databases for higher availability
+d. None of the above
+Answer: a. Splitting of large datasets into smaller, more manageable parts
+Which is the default port number for MongoDB?
+a. 27017
+b. 3306
+c. 5432
+d. None of the above
+Answer: a. 27017
+What is the maximum size of a document in MongoDB?
+a. 16 MB
+b. 32 MB
+c. 64 MB
+d. 128 MB
+Answer: a. 16 MB
+Which command is used to create a collection in MongoDB?
+a. db.createCollection()
+b. collection.create()
+c. create.collection()
+d. None of the above
+Answer: a. db.createCollection()
+Which operator is used for conditional expressions in MongoDB?
+a. $
+b. #
+c. *
+d. None of the above
+Answer: a. $
+What is the role of Replica Sets in MongoDB?
+a. Clustering of databases
+b. Backup and recovery
+c. High availability
+d. All of the above
+Answer: d. All of the above
+Which command is used to create an index in MongoDB?
+a. db.collection.createIndex()
+b. index.create()
+c. create.index()
+d. None of the above
+Answer: a. db.collection.createIndex()
+Which command is used to drop a database in MongoDB?
+a. db.dropDatabase()
+b. database.drop()
+c. drop.database()
+d. None of the above
+Answer: a. db.dropDatabase()
+What is the output when you execute the command “db.collection.find().pretty()” in MongoDB shell?
+a. All documents in the collection
+b. Documents in the collection in a formatted way
+c. Syntax error
+d. None of the above
+Answer: b. Documents in the collection in a formatted way
+Which operator is used for updating a document in MongoDB?
+a. $
+b. #
+c. *
+d. None of the above
+Answer: a. $
+What is Aggregation in MongoDB?
+a. Combining multiple documents into one document
+b. Splitting of a document into multiple documents
+c. Transforming data using various operations
+d. None of the above
+Answer: c. Transforming data using various operations
+Which command is used to insert a document in a collection in MongoDB?
+a. db.collection.insert()
+b. collection.insert()
+c. insert.collection()
+d. None of the above
+Answer: a. db.collection.insert()
+What is a GridFS in MongoDB?
+a. A tool for managing file uploads and downloads
+b. An indexing mechanism for faster search
+c. A database for time-series data
+d. None of the above
+Answer: a. A tool for managing file uploads and downloads
+What is the role of WiredTiger storage engine in MongoDB?
+a. Backup and recovery
+b. Transactions
+c. Clustering of databases
+d. None of the above
+Answer: b. Transactions
+Which are the supported data types in MongoDB?
+a. Integer, Double, Long
+b. String, Boolean, Date
+c. Array, Object, BinData
+d. All of the above
+Answer: d. All of the above
+Which operator is used for sorting in MongoDB?
+a. $
+b. #
+c. *
+d. None of the above
+Answer: c. *
+What is the role of TTL index in MongoDB?
+a. To store time-series data
+b. To create a secondary index
+c. To automatically delete data after a specified time
+d. None of the above
+Answer: c. To automatically delete data after a specified time
+What is a Connection Pool in MongoDB?
+a. A mechanism to handle multiple connections to the database
+b. A tool for backing up databases
+c. A method for querying collections
+d. None of the above
+Answer: a. A mechanism to handle multiple connections to the database
+Which command is used to find distinct values in a field in MongoDB?
+a. db.collection.distinct()
+b. collection.distinct()
+c. distinct.collection()
+d. None of the above
+Answer: a. db.collection.distinct()
+Which method returns the number of documents matching a query in a collection in MongoDB?
+a. db.collection.find()
+b. db.collection.count()
+c. db.collection.update()
+d. None of the above
+Answer: b. db.collection.count()
+What is a Compound Index in MongoDB?
+a. An index on a single field
+b. An index on multiple fields
+c. An index on all fields in a collection
+d. None of the above
+Answer: b. An index on multiple fields
+Which operator is used for comparing values in MongoDB?
+a. $
+b. #
+c. *
+d. None of the above
+Answer: b.
+What is a Capped Collection in MongoDB?
+a. A collection with a fixed size
+b. A collection with a variable size
+c. An index on all fields in a collection
+d. None of the above
+Answer: a. A collection with a fixed size
+Which command is used to remove a document from a collection in MongoDB?
+a. db.collection.remove()
+b. collection.remove()
+c. remove.collection()
+d. None of the above
+Answer: a. db.collection.remove()
+What is a Namespace in MongoDB?
+a. A database name
+b. A collection name
+c. A combination of database and collection name
+d. None of the above
+Answer: c. A combination of database and collection name
+Which operator is used for pattern matching in MongoDB?
+a. $
+b. #
+c. *
+d. None of the above
+Answer: a. $
+What is the role of Oplog in MongoDB?
+a. To store time-series data
+b. To keep track of database operations
+c. To create a secondary index
+d. None of the above
+Answer: b. To keep track of database operations
+Which command is used to backup a database in MongoDB?
+a. mongodump
+b. mongorestore
+c. mongoimport
+d. None of the above
+Answer: a. mongodump
+What is a database profiler in MongoDB?
+a. A tool for monitoring database operations
+b. A tool for creating backups
+c. A tool for configuring server parameters
+d. None of the above
+Answer: a. A tool for monitoring database operations
+Which method is used to update multiple documents in a collection in MongoDB?
+a. db.collection.updateMany()
+b. db.collection.update()
+c. db.collection.find()
+d. None of the above
+Answer: a. db.collection.updateMany()
+What is a Replica Set Arbiter in MongoDB?
+a. A process to elect the primary node
+b. A process to sync data between nodes
+c. A process to add and remove nodes
+d. None of the above
+Answer: a. A process to elect the primary node
+Which method is used to aggregate data from multiple collections in MongoDB?
+a. db.collection.aggregate()
+b. db.collection.mapReduce()
+c. db.collection.group()
+d. None of the above
+Answer: a. db.collection.aggregate()
+What is the role of Explain Plan in MongoDB?
+a. To provide information about query optimization
+b. To provide information about database operations
+c. To provide information about server performance
+d. None of the above
+Answer: a. To provide information about query optimization
+Which aggregation operator is used to group data in MongoDB?
+a. $project
+b. $match
+c. $group
+d. None of the above
+Answer: c. $group
+What is a Data Model in MongoDB?
+a. A mechanism for storing data in tables
+b. A mechanism for storing data in graphs
+c. A mechanism for storing data in documents
+d. None of the above
+Answer: c. A mechanism for storing data in documents
+What is a Replica Set Member in MongoDB?
+a. A node in a Replica Set
+b. A backup of a node in a Replica Set
+c. A process for electing the primary node
+d. None of the above
+Answer: a. A node in a Replica Set
+Which method is used to update a specific document in a collection in MongoDB?
+a. db.collection.updateOne()
+b. db.collection.update()
+c. db.collection.updateMany()
+d. None of the above
+Answer: a. db.collection.updateOne()
+What is the role of Journaling in MongoDB?
+a. To provide faster search results
+b. To provide redundancy
+c. To minimize data loss in case of a crash
+d. None of the above
+Answer: c. To minimize data loss in case of a crash
+Which command is used to create a user in MongoDB?
+a. db.createUser()
+b. create.user()
+c. user.create()
+d. None of the above
+Answer: a. db.createUser()
+What is an Embedded Document in MongoDB?
+a. A document stored within another document
+b. A document stored in a separate collection
+c. A document stored in a separate database
+d. None of the above
+Answer: a. A document stored within another document
+Which command is used to show the size of a collection in MongoDB?
+a. db.collection.size()
+b. db.collection.stats()
+c. db.collection.count()
+d. None of the above
+Answer: b. db.collection.stats()
+What is a Database Profile in MongoDB?
+a. A tool for monitoring database operations
+b. A tool for creating backups
+c. A tool for configuring server parameters
+d. None of the above
+Answer: a. A tool for monitoring database operations
+Which command is used to show the list of indexes in a collection in MongoDB?
+a. db.collection.showIndexes()
+b. db.collection.describeIndexes()
+c. db.collection.listIndexes()
+d. None of the above
+Answer: c. db.collection.listIndexes()
+What is a Collation in MongoDB?
+a. A mechanism for sorting strings
+b. A mechanism for sorting numbers
+c. A mechanism for sorting dates
+d. None of the above
+Answer: a. A mechanism for sorting strings
+Which method is used to limit the number of documents returned in a query in MongoDB?
+a. db.collection.count()
+b. db.collection.limit()
+c. db.collection.find()
+d. None of the above
+Answer: b. db.collection.limit()
+What is a ReadConcern in MongoDB?
+a. A mechanism for specifying the level of consistency in read operations
+b. A mechanism for specifying the level of durability in write operations
+c. A mechanism for specifying the level of availability in the server
+d. None of the above
+Answer: a. A mechanism for specifying the level of consistency in read operations
+Which aggregation operator is used to unwind an array in MongoDB?
+a. $project
+b. $match
+c. $unwind
+d. None of the above
+Answer: c. $unwind
+
 Top 65 MongoDB Interview Questions with Answers in 2026
 Sienna Roberts  07 April 2026
 Get ready to ace your MongoDB interview with our comprehensive resource on "65 Essential MongoDB Interview Questions." This in-depth guide covers both basic and advanced questions, providing detailed answers for each. Whether you're a novice or a pro, these questions and answers will help you prepare thoroughly.
