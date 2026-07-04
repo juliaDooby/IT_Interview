@@ -1,17 +1,7 @@
-ADVERTISEMENT
 
 
 PostgreSQL Interview Questions
-Priya Pedamkar
-Article by
-Priya Pedamkar
-Updated May 29, 2023
 
-PostgreSQL Interview Questions
-
- 
-
- 
 
 Introduction to PostgreSQL Interview Questions and Answers
 PostgreSQL is an object-relational database management systems (ORDBMS). It is a powerful, open-source object-relational database system. Any corporation or other private entity does not control PostgreSQL, and the source code is available free of charge. PostgreSQL runs on all major operating systems, including Linux, UNIX, and Windows. It supports text, images, sounds, and video and includes C/C++, Java, Perl, Python, Ruby, and Open Database Connectivity programming interfaces.
