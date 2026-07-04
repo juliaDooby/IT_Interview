@@ -1,3 +1,1397 @@
+68 TypeScript Interview Questions and Answers (2026)
+Blog / 68 TypeScript Interview Questions and Answers (2026)
+TypeScript interview questions
+TypeScript isn't a nice-to-have anymore. As teams ship Python APIs and AI/ML backends with typed JavaScript layers, more companies have made it the default — and interviewers now expect real fluency, not buzzwords. Walk in shaky on generics or type narrowing and a stronger candidate takes the offer.
+
+This guide gives you 68 questions with tight, interview-ready answers and code where it actually helps. It's worked Junior → Mid → Senior, so you lock down the fundamentals first, then go deep on the type system, compiler config, and advanced type operations. Work through it and you'll have an answer ready for whatever they throw at you.
+
+Q1.Why would we choose TypeScript over JavaScript for a large-scale enterprise application? What specific 'pain points' of JS does it solve?
+Junior
+TypeScript adds a static type system on top of JavaScript, catching whole classes of errors at compile time that JS only reveals at runtime. For large enterprise codebases with many contributors, this makes the code safer to change, easier to navigate, and self-documenting.
+
+Catches errors before runtime: Typos, wrong argument types, and undefined/null access (with strictNullChecks) are flagged during development.
+
+Safer refactoring at scale: Renaming or changing a signature propagates errors everywhere affected, so large changes are tractable.
+
+Self-documenting contracts: Types describe the shape of data and function APIs, reducing the need to read implementations or stale comments.
+
+Superior tooling: Reliable autocomplete, go-to-definition, and inline errors in the editor, driven by the type checker.
+
+JS pain points it solves:
+
+No compile-time checks: bugs surface only when a code path runs in production.
+
+Loose, dynamic typing leads to implicit coercions and silent undefined propagation.
+
+Hard onboarding: new developers can't see expected data shapes without runtime spelunking.
+
+Cost to weigh: A build/compile step and a learning curve, plus typing effort, which pays off most on long-lived, multi-developer projects.
+
+Q2.Explain the difference between explicit and implicit type assignment.
+Junior
+Explicit assignment is when you annotate a type yourself; implicit assignment is when TypeScript infers the type from the assigned value. Both produce the same checked type.
+
+Explicit typing:
+
+You write the annotation: let count: number = 5.
+
+Useful for function signatures, public APIs, and to document intent or constrain a broader type.
+
+Implicit typing (inference):
+
+TypeScript derives the type: let count = 5 is inferred as number.
+
+Keeps code concise and idiomatic; preferred for local variables.
+
+Key nuance:
+
+With no annotation and no initializer, the variable becomes any (or an error under noImplicitAny).
+
+Rule of thumb: let inference work for locals; be explicit at boundaries (function params, returns, exports).
+
+Q3.What is the difference between an Interface and a Type Alias, and when would you choose one over the other?
+Junior
+Both describe the shape of data and are largely interchangeable, but interface is specialized for object/class shapes and supports declaration merging, while type is a more general alias that can name unions, primitives, tuples, and computed types.
+
+What interfaces do better:
+
+Declaration merging: declaring the same interface twice merges members (useful for augmenting libraries/globals).
+
+Idiomatic for object and class contracts; extended with extends.
+
+What type aliases do better:
+
+Can name anything: unions (A | B), tuples, primitives, mapped and conditional types.
+
+Composes via intersections (&) and cannot be reopened/merged (more predictable).
+
+How to choose:
+
+Public object/class APIs or library types meant to be extended: prefer interface.
+
+Unions, tuples, or any non-object/computed type: use type. Be consistent within a codebase.
+
+Q4.What is the difference between union types and intersection types? Can you give an example of when you'd use each?
+Junior
+A union type (A | B) means a value is one of several types, so you can only use what they have in common until you narrow it. An intersection type (A & B) means a value is all of the types at once, combining their members. Loosely: union is "or," intersection is "and."
+
+Union (A | B):
+
+The value satisfies one of the members; access is restricted to shared members until narrowed.
+
+Use for a parameter that accepts multiple shapes, or discriminated unions for state modeling.
+
+Intersection (A & B):
+
+The value has every property of both; great for composing/merging types or mixins.
+
+Conflicting primitive members can collapse to never.
+
+When to use each:
+
+Union: an ID that's string | number, or an API result that's Success | Error.
+
+Intersection: extend props, e.g. ButtonProps & { variant: string }.
+
+typescript
+
+
+Copy code
+
+type A = { a: number };
+type B = { b: string };
+
+const u: A | B = { a: 1 };          // either shape
+const i: A & B = { a: 1, b: "x" };  // must have both
+
+Q5.What are tuple types in TypeScript, and how do they differ from regular arrays?
+Junior
+A tuple is a fixed-length array where each position has its own known type, unlike a regular array where every element shares one element type and the length is open.
+
+Fixed length and per-position types: [string, number] means index 0 is a string and index 1 is a number; order and count matter.
+
+Regular arrays are homogeneous and variable-length: string[] is any number of strings; the compiler doesn't track which index holds what.
+
+Extra tuple features:
+
+Optional elements ([string, number?]) and rest elements ([string, ...number[]]).
+
+Named labels for readability: [x: number, y: number].
+
+Can be marked readonly to prevent mutation.
+
+Common uses: Return-multiple-values patterns like React's useState, and modeling function arguments via rest tuples.
+
+Caveat: Tuple length guarantees aren't fully enforced at runtime; methods like push can still mutate a non-readonly tuple past its declared shape.
+
+typescript
+
+
+Copy code
+
+const point: [number, number] = [10, 20];
+const pair: [string, number] = ["age", 30];
+// useState-style
+type State<T> = [value: T, set: (v: T) => void];
+
+Q6.What is the 'Non-null Assertion Operator' (!) and why is it generally discouraged in production code?
+Junior
+The non-null assertion operator (!) tells the compiler "trust me, this value is not null or undefined" and strips those from the type. It's discouraged because it's a compile-time-only promise with no runtime check: if you're wrong, you get a runtime error the type system was supposed to prevent.
+
+What it does: value! removes null and undefined from the type, emitting no JavaScript.
+
+Why it's risky:
+
+It silences the compiler rather than proving safety, so it can mask genuine bugs.
+
+If the value is actually nullish, you hit "cannot read property of undefined" at runtime.
+
+Preferred alternatives: Narrow with an explicit if check, use optional chaining ?., or provide a default with ??.
+
+Acceptable uses: When you genuinely know more than the compiler (e.g. a value initialized in a lifecycle the compiler can't trace), and ideally documented.
+
+Q7.What is the difference between optional chaining (?.) and the nullish coalescing operator (??), and when would you use each?
+Junior
+Optional chaining (?.) safely accesses a property/call on a value that might be null or undefined, short-circuiting to undefined instead of throwing. Nullish coalescing (??) supplies a fallback value only when the left side is null or undefined. They solve different problems and are often combined.
+
+Optional chaining ?.:
+
+Guards access: user?.address?.city yields undefined if any link is nullish, no exception.
+
+Works for property access, calls (fn?.()), and indexing (arr?.[0]).
+
+Nullish coalescing ??: Provides a default only on null/undefined, unlike || which also triggers on 0, "", and false.
+
+Used together: const city = user?.address?.city ?? "Unknown": chain to navigate safely, coalesce to supply a fallback.
+
+Q8.What does the strict flag in tsconfig.json actually do? Name at least three specific checks it enables such as strictNullChecks or noImplicitAny.
+Junior
+The strict flag in tsconfig.json is an umbrella that turns on the full family of strict type-checking options at once. Enabling it is equivalent to enabling each of those checks individually, giving you the strongest type safety TypeScript offers.
+
+strictNullChecks: null and undefined are no longer assignable to every type; you must handle them explicitly.
+
+noImplicitAny: Errors when a variable or parameter has an inferred any type, forcing explicit annotations.
+
+strictFunctionTypes: Checks function parameter types contravariantly for safer assignability.
+
+Others it enables: strictBindCallApply, strictPropertyInitialization, noImplicitThis, alwaysStrict, and useUnknownInCatchVariables.
+
+Practical note: You can still toggle individual sub-flags off under strict: true if migrating a legacy codebase gradually.
+
+Q9.What are Generics, and how do they improve code reusability without sacrificing type safety?
+Junior
+Generics let you write components parameterized by type, so the same function or class works across many types while preserving the exact relationships between inputs and outputs. They give reuse without falling back to any, which would discard type safety.
+
+The core idea:
+
+A type parameter (e.g. <T>) acts as a placeholder filled in at call site or instantiation.
+
+The compiler infers T from arguments, so usage stays terse.
+
+Why not any:
+
+any disables checking and loses the link between input and return types.
+
+Generics keep that link: pass a string, get a string back, fully checked.
+
+Where they shine:
+
+Reusable containers and utilities (Array<T>, Promise<T>, a generic cache<T>).
+
+API/data layers that return typed results from a single shared function.
+
+typescript
+
+
+Copy code
+
+function identity<T>(value: T): T {
+  return value;
+}
+
+const a = identity("hello"); // T inferred as string
+const b = identity(42);      // T inferred as number
+
+Q10.How does TypeScript help in handling null and undefined? Explain the Strict Null Checks feature and how it changes the way you write code.
+Junior
+With strictNullChecks, null and undefined are no longer assignable to every type; they become distinct types you must explicitly include in a union. This forces you to handle the "absence" case before using a value, eliminating a huge class of runtime errors.
+
+Without the flag: Every type silently includes null and undefined, so a string could secretly be null and crash at runtime.
+
+With strictNullChecks:
+
+You opt in explicitly: string | null or string | undefined.
+
+The compiler uses control-flow narrowing: after a check it knows the value is non-null in that branch.
+
+Tools it unlocks:
+
+Optional chaining ?. short-circuits on null/undefined.
+
+Nullish coalescing ?? supplies a default only for null/undefined (not falsy values like 0 or "").
+
+The non-null assertion ! overrides the check (use sparingly, it is unchecked).
+
+typescript
+
+
+Copy code
+
+function len(s: string | null) {
+  // return s.length;        // Error: s may be null
+  return s?.length ?? 0;     // safe: narrows / defaults
+}
+
+Q11.TypeScript uses a structural type system. Can you explain what that means and how it differs from nominal typing found in languages like Java or C#?
+Mid
+Structural typing means TypeScript decides type compatibility by an object's shape (its members), not by its declared name. If a value has all the required properties of a type, it is assignable to that type, even if it was never explicitly declared to implement it. This is often called 'duck typing'.
+
+Structural (TypeScript):
+
+Compatibility is based on matching members: same property names and compatible types.
+
+An object literal or a class instance can satisfy an interface without any implements clause.
+
+Nominal (Java, C#): Compatibility requires an explicit declared relationship (implements/extends); identical shapes from different names are not interchangeable.
+
+Practical upside: Flexible: easy to mock, adapt third-party objects, and pass plain literals to typed parameters.
+
+Trade-off: Two semantically distinct types with the same shape are confused; simulate nominal typing with branded types (a private/unique tag property) when you need distinctness.
+
+typescript
+
+
+Copy code
+
+interface Point { x: number; y: number; }
+
+// No 'implements' needed; shape matches, so it's a Point.
+function draw(p: Point) {}
+draw({ x: 1, y: 2 });
+
+const v = { x: 1, y: 2, z: 3 };
+draw(v); // OK: has at least x and y
+
+Q12.What is Type Inference, and what are the trade-offs between letting TypeScript infer a type versus explicitly annotating it?
+Mid
+Type inference is TypeScript's ability to determine a type automatically from context (an initializer, a return expression, a default value) without you writing an annotation. The trade-off is between concise, self-updating inferred types and explicit annotations that act as documentation and a guardrail.
+
+Where inference works: Variable initializers, function return types, default parameters, and generic argument resolution.
+
+Pros of letting it infer:
+
+Less boilerplate and DRY: the type tracks the implementation automatically.
+
+Often more precise than what you'd write by hand (e.g. literal types).
+
+Pros of explicit annotation:
+
+Acts as a contract: errors surface at the definition, not far downstream.
+
+Documents intent and stabilizes public API surfaces (exported function signatures).
+
+Prevents accidental widening or an over-broad inferred type leaking out.
+
+Rule of thumb: Let inference handle local variables; annotate function parameters and exported/public return types.
+
+Q13.Explain the concept of 'Erasure' in TypeScript. What happens to your types once the code is compiled and running in the browser?
+Mid
+Type erasure means TypeScript types exist only at compile time: the compiler checks them, then strips them out, emitting plain JavaScript with no type information at runtime.
+
+Types are compile-time only:
+
+Annotations, interface, type aliases, and generics are all removed by the compiler (tsc).
+
+The browser only ever sees the JavaScript output, so you cannot inspect a TypeScript type at runtime.
+
+Consequences of erasure:
+
+You can't do if (x instanceof MyInterface): the interface doesn't exist at runtime.
+
+Generics provide no runtime reified type info, unlike some languages.
+
+Runtime checks must use real JS values: Use typeof, instanceof (on classes), or custom type guards: classes and enums DO emit runtime code.
+
+Implication: validate external data (API responses) at runtime; types alone give no guarantees once shipped.
+
+Q14.What are the trade-offs of using TypeScript, and when would you not use it?
+Mid
+TypeScript trades extra tooling and a build step for stronger correctness, better refactoring, and self-documenting code. The win grows with codebase size and team size, so tiny scripts or quick prototypes may not justify it.
+
+Benefits:
+
+Catches whole classes of bugs at compile time (typos, wrong shapes, null misuse).
+
+Superior editor experience: autocomplete, safe renames, go-to-definition.
+
+Types act as living documentation and enforce contracts across modules.
+
+Costs:
+
+Requires a compile/build step and config (tsconfig.json).
+
+Learning curve (generics, conditional types) and more upfront verbosity.
+
+Types are erased: no runtime safety, and third-party types may be missing or wrong.
+
+When to skip it:
+
+Throwaway prototypes, tiny scripts, or learning exercises where speed beats safety.
+
+Teams without buy-in, where a half-adopted setup riddled with any gives little value.
+
+Q15.What are 'Utility Types' like Partial, Omit, Pick, and Record? Explain how one of them works under the hood.
+Mid
+Utility types are built-in generic types that transform existing types into new ones, saving you from re-declaring shapes. They're implemented with mapped types and conditional/key operators.
+
+The common ones:
+
+Partial<T>: makes all properties of T optional.
+
+Pick<T, K>: keeps only the keys K from T.
+
+Omit<T, K>: removes keys K from T.
+
+Record<K, V>: builds an object type with keys K and value type V.
+
+Under the hood (Partial):
+
+It's a mapped type that iterates each key with keyof and appends the optional modifier ?.
+
+Pick similarly maps over a constrained key set; Omit is built from Pick plus Exclude.
+
+typescript
+
+
+Copy code
+
+// How Partial is defined in lib.d.ts
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+// Omit, conceptually
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+Q16.What is excess property checking and why does it only trigger on object literals?
+Mid
+Excess property checking is a stricter rule that flags unknown properties when an object literal is assigned directly to a typed target. It exists to catch typos, and it only fires on fresh literals because that's the only time the extra property is guaranteed to be a mistake rather than intentional extra data.
+
+Why literals specifically:
+
+A fresh object literal has no other reason to exist: an unexpected key is almost certainly a typo (colour vs color).
+
+A variable, by contrast, may legitimately carry extra properties from elsewhere, so structural typing allows it.
+
+How it interacts with structural typing:
+
+Normally extra properties are allowed (the source just needs to satisfy the target).
+
+Excess checking is an extra layer applied only to fresh literals on top of normal assignability.
+
+Ways to bypass it:
+
+Assign the literal to a variable first, then pass the variable.
+
+Use a type assertion, or add an index signature to the target type.
+
+typescript
+
+
+Copy code
+
+interface Options { color: string; }
+
+// Error: 'colour' not in Options (excess property on literal)
+const a: Options = { color: "red", colour: "blue" };
+
+// OK: structural check only, extra prop tolerated
+const tmp = { color: "red", colour: "blue" };
+const b: Options = tmp;
+
+Q17.What is the difference between the readonly modifier in TypeScript and the const keyword in JavaScript? How does ReadonlyArray differ from a standard array?
+Mid
+They guard different things: const is a runtime JavaScript rule that prevents reassigning a binding, while readonly is a compile-time TypeScript rule that prevents reassigning a property. One protects the variable, the other protects the contents.
+
+const (binding-level, runtime):
+
+Stops you reassigning the variable itself, but the object it points to is still mutable: obj.x = 5 is allowed.
+
+Enforced by the JS engine.
+
+readonly (property-level, compile-time):
+
+Marks a property as non-writable after construction; violations are errors during type checking only.
+
+Erased at runtime, so it provides no actual runtime protection.
+
+ReadonlyArray<T> vs Array<T>:
+
+Removes mutating methods (push, pop, splice) and blocks index assignment at compile time.
+
+A regular array is assignable to a ReadonlyArray, but not the reverse.
+
+typescript
+
+
+Copy code
+
+const point = { x: 1 };
+point.x = 2;        // OK: const only locks the binding
+// point = {};      // Error: cannot reassign
+
+interface P { readonly x: number; }
+const p: P = { x: 1 };
+// p.x = 2;          // Error: x is readonly (compile time only)
+
+const nums: ReadonlyArray<number> = [1, 2];
+// nums.push(3);     // Error: push doesn't exist on ReadonlyArray
+
+Q18.Explain the conceptual difference between Pick<T, K> and Omit<T, K>. When would using Partial<T> be considered a 'code smell'?
+Mid
+Both are mapped-type utilities that build a new type by selecting members from T: Pick<T, K> keeps only the keys in K, while Omit<T, K> keeps everything except K. They are complementary inverses of each other.
+
+Pick<T, K> is inclusive:
+
+You whitelist the keys you want: Pick<User, 'id' | 'name'>.
+
+K is constrained to keyof T, so invalid keys are a compile error.
+
+Omit<T, K> is exclusive:
+
+You blacklist keys to drop: Omit<User, 'password'>.
+
+Implemented as Pick<T, Exclude<keyof T, K>>; its key argument is loosely typed, so typos may pass silently.
+
+Choosing between them: Pick when you want few keys out of many; Omit when you want most keys minus a few.
+
+Partial<T> as a code smell:
+
+It makes every property optional, which discards exactly the guarantees the type system exists to enforce.
+
+Overusing it (e.g. on a function's main input) pushes undefined checks everywhere and hides whether a field is truly optional or just unvalidated.
+
+Often a sign you should model distinct states explicitly (a separate CreateUser vs UpdateUser type) rather than blanket-optionalizing one type.
+
+Q19.What is an index signature, and what are its limitations compared to a Record type?
+Mid
+An index signature declares that an object can have arbitrary keys of a given type mapping to a given value type, e.g. { [key: string]: number }. Record<K, V> is a utility type that expresses the same idea but with a finite, known set of keys, giving stronger guarantees.
+
+What an index signature is:
+
+It lets you index with any key of the declared type without knowing names ahead of time.
+
+Key type may only be string, number, or symbol (and template literal types).
+
+Limitations of index signatures:
+
+They model open-ended maps, so the compiler assumes any key exists; accessing a missing key returns a value typed as present (unless noUncheckedIndexedAccess is on).
+
+All declared properties must conform to the index signature's value type.
+
+You cannot restrict keys to a specific finite union directly.
+
+Where Record is stronger:
+
+Record<'a' | 'b', number> requires exactly those keys, so missing or extra keys are errors.
+
+Use an index signature for truly dynamic keys; use Record with a key union when the set is known.
+
+typescript
+
+
+Copy code
+
+// Index signature: any string key allowed
+type Scores = { [name: string]: number };
+
+// Record: exactly these keys required
+type Medals = Record<'gold' | 'silver' | 'bronze', number>;
+
+Q20.Explain the difference between the any and unknown types. Why is unknown considered safer, and how do you eventually use a value typed as unknown?
+Mid
+Both any and unknown can hold a value of any type, but any disables type checking entirely while unknown keeps it: you can assign anything to an unknown, but you cannot use it until you narrow it to a specific type.
+
+any opts out of the type system:
+
+Any operation, property access, or assignment is allowed and unchecked.
+
+It is contagious: it silently spreads and erases safety wherever it flows.
+
+unknown is the type-safe top type:
+
+It accepts any value, but forbids using it (no property access, no calls) until narrowed.
+
+This forces you to prove the type before trusting it, catching mistakes at compile time.
+
+How to consume an unknown:
+
+Narrow it with typeof/instanceof checks, a type guard, or a runtime validator (e.g. zod).
+
+As a last resort, assert with as, but that shifts responsibility to you.
+
+typescript
+
+
+Copy code
+
+function handle(value: unknown) {
+  // value.toFixed(2);          // error: object is of type 'unknown'
+  if (typeof value === "number") {
+    return value.toFixed(2);     // OK: narrowed to number
+  }
+}
+
+Q21.Explain the never type. When would a function return never, and how is it useful for exhaustive type checking?
+Mid
+never is the type of values that never occur: it represents the result of code that never produces a value, such as a function that always throws or never returns. It is the empty set of values, and is assignable to every type but nothing is assignable to it.
+
+When a function returns never:
+
+It always throws: function fail(): never { throw new Error(); }.
+
+It loops forever and never reaches a return.
+
+Distinct from void: void returns (with no useful value), never never returns at all.
+
+Exhaustive checking:
+
+After narrowing a union in a switch, the default/else branch should be unreachable; the variable narrows to never.
+
+Assigning it to a never-typed variable forces a compile error if you later add a new union member you forgot to handle.
+
+typescript
+
+
+Copy code
+
+type Shape = { kind: "circle" } | { kind: "square" };
+
+function area(s: Shape) {
+  switch (s.kind) {
+    case "circle": return 1;
+    case "square": return 2;
+    default:
+      const _exhaustive: never = s; // error if a new kind is added
+      return _exhaustive;
+  }
+}
+
+Q22.Explain the difference between void and undefined in the context of function return types.
+Mid
+undefined is a concrete value, whereas void is an intent: it signals that a function's return value should be ignored, not that it literally returns undefined. A void function may return undefined at runtime, but the type says "don't rely on the result."
+
+void means "return value not meaningful":
+
+Used for side-effecting functions; callers shouldn't consume the result.
+
+Special rule: a function typed to return void can be assigned a function that actually returns a value, which is ignored.
+
+undefined means "the value undefined": A function returning undefined must explicitly return that value (or have no return), and the caller may use it.
+
+Practical impact: The void assignability rule is what lets you pass arr.forEach(x => list.push(x)) even though push returns a number.
+
+Q23.Explain the difference between null and undefined in the context of strictNullChecks.
+Mid
+Under strictNullChecks, null and undefined become distinct types that are no longer assignable to every other type; you must explicitly include them in a type to allow them. Conventionally undefined means "value not yet set/absent" and null means "intentionally empty."
+
+Without strictNullChecks: Both are assignable to any type, so string silently allows null, hiding bugs.
+
+With strictNullChecks:
+
+You must opt in: string | null or string | undefined.
+
+The compiler forces narrowing before use, eliminating many runtime null-reference errors.
+
+How they differ in practice:
+
+Optional members (x?: T) and missing function arguments produce undefined, not null.
+
+null usually comes from explicit assignment or APIs (JSON, DB rows).
+
+Narrow both at once with x != null, or use optional chaining ?. and nullish coalescing ??.
+
+Q24.What are literal types and how do they differ from primitive types?
+Mid
+A literal type is a type whose only value is one specific constant, e.g. the string "GET" or the number 42, rather than the whole set of strings or numbers. Primitive types like string are the wide sets; literal types are single members of those sets.
+
+Literal vs primitive:
+
+string allows any text; "on" allows only that exact string.
+
+A literal type is assignable to its primitive, but not vice versa.
+
+Most useful in unions: type Direction = "up" | "down" creates a small, checked set of allowed values, like a lightweight enum.
+
+Widening and how to control it:
+
+let widens "up" to string, while const infers the literal type.
+
+Use as const to keep literal types in objects and arrays.
+
+typescript
+
+
+Copy code
+
+let a = "up";            // type: string (widened)
+const b = "up";          // type: "up" (literal)
+type Method = "GET" | "POST";
+const cfg = { method: "GET" } as const; // method: "GET"
+
+Q25.What are .d.ts files? Explain the concept of ambient declarations and when you would need to write a custom declaration file for a third-party library.
+Mid
+.d.ts files are declaration files: they contain only type information (no implementation) so TypeScript can type-check code whose runtime lives elsewhere, typically plain JavaScript libraries.
+
+What they hold: Type signatures via declare statements, with no function bodies, so they're erased at compile time.
+
+Ambient declarations:
+
+"Ambient" means you describe something that already exists at runtime without defining it, e.g. declare const VERSION: string or a global from a script tag.
+
+declare module "foo" tells TS the shape of an imported package.
+
+When you write a custom declaration file:
+
+A JS library ships no types and has no @types/... package on DefinitelyTyped.
+
+You need to type a global injected by a CDN/script, or non-code imports (*.svg, *.css).
+
+You want to augment or fix incomplete existing types.
+
+Quick escape hatch: A one-line declare module "untyped-lib"; makes it import as any to unblock you, then refine later.
+
+typescript
+
+
+Copy code
+
+// images.d.ts
+declare module "*.svg" {
+  const src: string;
+  export default src;
+}
+
+// globals.d.ts
+declare const __APP_VERSION__: string;
+
+Q26.Explain the difference between type-only imports and regular imports. Why is this distinction important for build tools like isolatedModules?
+Mid
+A type-only import (import type) brings in something used purely for types and is guaranteed to be erased from the emitted JavaScript, while a regular import may produce a runtime require/ESM import. The distinction lets single-file compilers know what to strip.
+
+Regular import: Can pull in runtime values (functions, classes, enums) and stays in the output if used as a value.
+
+Type-only import:
+
+import type { User } from "./types" is always removed; using it as a value is a compile error.
+
+Avoids accidentally keeping a module (and its side effects) alive just to reference a type.
+
+Why isolatedModules cares:
+
+Tools like Babel, esbuild, and SWC transpile one file at a time with no type info, so they can't tell whether an imported name is a type or a value.
+
+Marking type imports explicitly (or setting verbatimModuleSyntax) removes that ambiguity so they emit correct code and don't drop or keep imports wrongly.
+
+Bonus: Helps prevent circular-dependency runtime issues, since type-only edges never exist at runtime.
+
+typescript
+
+
+Copy code
+
+import type { User } from "./models";   // erased at compile time
+import { saveUser } from "./db";        // kept (runtime value)
+
+function process(u: User) { return saveUser(u); }
+
+Q27.What is the difference between a 'Namespace' and a 'Module' in modern TypeScript, and which one should you use today?
+Mid
+A namespace is TypeScript's older internal-module construct that groups code under a single global object, while a module is an ES module (a file with import/export). Today you should use ES modules; namespaces are largely legacy.
+
+Namespace (namespace Foo {}):
+
+Was called "internal modules"; bundles names under one object to avoid global pollution before ES modules existed.
+
+No real dependency graph or tree-shaking; relies on script ordering or bundling everything together.
+
+Module (ES module):
+
+Any file with a top-level import or export is a module with its own scope.
+
+Works with modern bundlers, supports tree-shaking, lazy loading, and clear dependencies.
+
+Which to use today:
+
+Use ES modules. The TS team discourages namespaces in module-based projects.
+
+Namespaces remain useful mainly inside .d.ts files to model nested shapes of global UMD libraries.
+
+Q28.What is type narrowing? Explain different ways to achieve it, such as using typeof, instanceof, or custom type predicates with the is keyword.
+Mid
+Type narrowing is when TypeScript refines a value from a broader type (like a union) to a more specific type within a code branch, based on runtime checks the compiler can understand. The control-flow analysis tracks these checks so the narrowed type is available only where the check holds.
+
+typeof guards: Narrow primitives: typeof x === "string" narrows to string in that branch.
+
+instanceof guards: Narrow by class/prototype: x instanceof Date narrows to Date.
+
+Truthiness, equality, and in checks: if (x) removes null/undefined; "prop" in obj narrows by property presence.
+
+Discriminated unions: Switch on a shared literal tag (kind) to narrow each member.
+
+Custom type predicates (is): A function returning arg is Type tells the compiler to narrow when it returns true: useful for complex/runtime checks.
+
+typescript
+
+
+Copy code
+
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+if (isFish(pet)) {
+  pet.swim();   // narrowed to Fish
+}
+
+Q29.What is the difference between a type assertion and type casting?
+Mid
+In TypeScript these terms are often used interchangeably, but "type assertion" is the precise concept and "type casting" is borrowed from other languages. A type assertion is a compile-time-only annotation that tells the compiler to treat a value as a different type; it does no runtime conversion, unlike casting in languages like Java or C#.
+
+Type assertion: Written value as Type (or <Type>value); affects only the compiler's view, with zero runtime effect or generated code.
+
+Type casting (in other languages): Actually converts or boxes a value at runtime and may throw if invalid: TypeScript assertions never do this.
+
+Real runtime conversion in TS: Use actual functions like Number(x), String(x), or JSON.parse: these change the value, not just its type.
+
+Caution: Assertions can be wrong: x as SomeType doesn't verify anything, so an incorrect assertion silently hides bugs.
+
+Q30.What is the difference between the non-null assertion operator and optional chaining? What are the trade-offs of using the assertion operator?
+Mid
+Optional chaining (?.) is a runtime safety mechanism that short-circuits to undefined if a value is nullish, while the non-null assertion (!) is a compile-time-only promise that a value isn't nullish. One protects you at runtime; the other just silences the type checker.
+
+Optional chaining ?.:
+
+a?.b returns undefined instead of throwing when a is null/undefined; generates real runtime checks.
+
+Result type includes undefined, so you still handle the absent case.
+
+Non-null assertion !: a!.b asserts a is present and removes undefined from the type, but emits no check and will throw at runtime if wrong.
+
+Trade-offs of the assertion:
+
+Pro: concise when you truly know the value exists.
+
+Con: it shifts safety from the compiler to your assumption, so a wrong assertion fails loudly at runtime with no compile-time warning.
+
+Rule of thumb: Prefer ?. (and ??) for actual nullable values; reserve ! for cases the compiler simply can't follow.
+
+Q31.How do you perform 'Exhaustiveness Checking' in TypeScript to ensure all cases of a union are handled?
+Mid
+Exhaustiveness checking ensures every member of a union is handled, so adding a new case anywhere triggers a compile-time error until you handle it. The idiom is to assign the value to a variable of type never in the default/fallthrough branch: if narrowing left any type unhandled, that assignment fails to compile.
+
+The never trick: After handling all known cases, the remaining type should narrow to never; assigning anything else to never is a type error.
+
+Works best with discriminated unions: Switch on the discriminant; each case narrows one member.
+
+Compile-time safety net: Add a new union member and forgotten branches surface immediately as errors.
+
+typescript
+
+
+Copy code
+
+type Shape =
+  | { kind: "circle"; r: number }
+  | { kind: "square"; s: number };
+
+function area(shape: Shape): number {
+  switch (shape.kind) {
+    case "circle": return Math.PI * shape.r ** 2;
+    case "square": return shape.s ** 2;
+    default:
+      const _exhaustive: never = shape; // errors if a case is missing
+      return _exhaustive;
+  }
+}
+
+Q32.What is the difference between target and lib in your TypeScript configuration?
+Mid
+target controls the JavaScript syntax version the compiler emits (downleveling newer syntax), while lib controls which built-in API type definitions are available to the type checker. One is about output syntax; the other is about which globals you're allowed to reference.
+
+target:
+
+Sets the ECMAScript level of emitted code (e.g. ES2015, ES2020): newer syntax gets transpiled down if needed.
+
+Choosing a higher target avoids polyfill-style transpilation when the runtime supports it.
+
+lib:
+
+Declares ambient type definitions for runtime APIs: e.g. DOM for browser globals, ES2020 for Promise.allSettled, BigInt, etc.
+
+It does NOT add the implementation, only the types: the runtime must actually provide the feature.
+
+How they interact:
+
+If lib is omitted, TypeScript picks a default set based on target.
+
+Override explicitly when needed: a Node backend might drop DOM; a polyfilled app might add a newer lib while keeping a lower target.
+
+Q33.What are generics in TypeScript? Explain the concept of constraints in generics using the extends keyword and why they are useful for creating reusable components.
+Mid
+Generics parameterize code by type; constraints with extends restrict which types a parameter accepts, so you can safely use specific properties or shapes inside a generic while still keeping it broadly reusable. A constraint is a promise: "T will at least look like this."
+
+Why constraints are needed:
+
+An unconstrained T could be anything, so you can't access .length or any property safely.
+
+extends narrows T to types guaranteeing that shape.
+
+Common patterns:
+
+Constrain to a shape: T extends { length: number }.
+
+Constrain a key to its object: K extends keyof T for safe property access.
+
+Benefit for reusable components: You get the reuse of generics plus compile-time guarantees that the operations inside are valid.
+
+typescript
+
+
+Copy code
+
+function longest<T extends { length: number }>(a: T, b: T): T {
+  return a.length >= b.length ? a : b;
+}
+
+longest("abc", "de");        // ok: strings have length
+longest([1, 2], [3]);        // ok: arrays have length
+// longest(10, 20);          // error: number has no length
+
+Q34.What does the keyof operator do, and how is it typically used in conjunction with generics?
+Mid
+keyof produces a union of the property names (keys) of a type as string/number/symbol literals. Combined with generics, it lets you write functions that operate on any property of an object while keeping the key and its value type correctly linked.
+
+What it returns:
+
+keyof { a: number; b: string } is the union "a" | "b".
+
+It reflects the type's keys, not its values.
+
+Used with generics:
+
+Pair it with K extends keyof T to guarantee a key actually exists on T.
+
+Use the indexed access type T[K] to express the precise value type for that key.
+
+Why it matters: Enables type-safe property getters/setters and powers utility types like Pick and Record.
+
+typescript
+
+
+Copy code
+
+function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const user = { name: "Ada", age: 36 };
+const n = getProp(user, "name"); // typed as string
+// getProp(user, "email");       // error: not a key of user
+
+Q35.How do default type parameters work in generics, and when are they useful?
+Mid
+A default type parameter supplies a fallback type used when the caller doesn't provide one and the compiler can't infer it, written with = like <T = string>. It keeps generic APIs flexible while letting common cases stay concise.
+
+How they resolve:
+
+Explicit argument wins; otherwise inference; otherwise the default.
+
+Defaults must come after required type parameters, like default function args.
+
+When they're useful:
+
+A sensible "most common" type so callers omit the type argument (e.g. a generic event bus defaulting to unknown).
+
+Evolving an API: add a new type parameter with a default to avoid breaking existing callers.
+
+Library design where most users want one shape but power users can override.
+
+typescript
+
+
+Copy code
+
+interface ApiResponse<T = unknown> {
+  data: T;
+  status: number;
+}
+
+const a: ApiResponse = { data: {}, status: 200 };        // T defaults to unknown
+const b: ApiResponse<string[]> = { data: ["ok"], status: 200 };
+
+Q36.What are Mapped Types, and how do they allow you to create new types based on the properties of an existing type?
+Mid
+Mapped types let you build a new type by iterating over the keys of an existing type and transforming each property, using the [K in keyof T] syntax: they are the type-level equivalent of a loop over object properties.
+
+Core syntax: [K in keyof T]: T[K] walks every key K of T and maps it to a value type (here a lookup T[K]).
+
+Modifiers transform properties: Add or remove with +/- before readonly and ?: e.g. -readonly strips immutability, -? makes properties required.
+
+Key remapping with as: [K in keyof T as NewKey] renames or filters keys, often combined with template literal types (e.g. generating getName from name).
+
+They power the built-in utility types: Partial, Required, Readonly, Record, and Pick are all mapped types.
+
+typescript
+
+
+Copy code
+
+type Optional<T> = { [K in keyof T]?: T[K] };
+type Mutable<T> = { -readonly [K in keyof T]: T[K] };
+
+interface User { readonly id: number; name: string }
+type A = Optional<User>; // { id?: number; name?: string }
+type B = Mutable<User>;  // { id: number; name: string }
+
+Q37.Explain the keyof operator and the typeof operator. How do they work together to create types based on existing object structures?
+Mid
+keyof produces a union of the property names of a type, while typeof (in a type context) captures the type of a runtime value: together they let you derive types directly from existing objects instead of duplicating them by hand.
+
+keyof T gives a key union: For { a: 1; b: 2 } it yields "a" | "b", a literal union of property names.
+
+typeof value lifts a value into a type: It reads the inferred type of a runtime constant so you don't re-declare it.
+
+keyof typeof obj is the common combo: typeof obj turns the value into a type, then keyof extracts its keys: ideal for constraining a parameter to valid keys.
+
+Indexed access pairs with them: T[K] with K extends keyof T gives the value type for a chosen key, enabling type-safe getters.
+
+typescript
+
+
+Copy code
+
+const config = { host: "localhost", port: 8080 };
+type Config = typeof config;        // { host: string; port: number }
+type Keys = keyof Config;           // "host" | "port"
+
+function get<K extends Keys>(k: K): Config[K] {
+  return config[k];
+}
+
+Q38.Explain the satisfies operator introduced in TS 4.9. How does it differ from a standard type assertion or type annotation?
+Mid
+satisfies checks that an expression conforms to a type without changing (widening or narrowing) the expression's own inferred type: you get validation plus the precise literal types preserved.
+
+Validation without losing specificity: A type annotation (const x: T =) forces the value to type T, widening literals and hiding extra detail; satisfies verifies against T but keeps the narrow inferred type.
+
+Safer than as: A type assertion (as T) is an unchecked override that can lie; satisfies actually errors if the value doesn't match.
+
+Catches missing/extra keys: Great for a config object typed as Record<string, ...> where you still want exact key access afterward.
+
+typescript
+
+
+Copy code
+
+type Config = Record<string, number | string>;
+
+const c = { port: 8080, host: "localhost" } satisfies Config;
+c.port.toFixed(2); // OK: port stays number, not number | string
+// c.missing      // error: caught at compile time
+
+Q39.What does the as const assertion do to an object or array? How does it affect type widening?
+Mid
+as const is a const assertion that tells TypeScript to infer the narrowest, most specific (literal) type and make everything deeply readonly, preventing the usual widening of literals to their base types.
+
+Disables literal widening: Without it, const x = "a" inside an object property widens to string; with it the type stays the literal "a".
+
+Makes properties readonly: All object members and array elements become immutable at the type level.
+
+Arrays become readonly tuples: [1, 2] becomes readonly [1, 2] instead of number[], preserving length and position.
+
+Common use: Deriving union types from constant arrays/objects via typeof obj[number] or keyof typeof obj.
+
+typescript
+
+
+Copy code
+
+const sizes = ["sm", "md", "lg"] as const;
+type Size = typeof sizes[number]; // "sm" | "md" | "lg"
+
+const cfg = { mode: "dark" } as const;
+// cfg.mode type is "dark", and cfg.mode = "light" is an error (readonly)
+
+Q40.Explain the difference between the typeof operator in JavaScript versus its use in a TypeScript type context.
+Mid
+typeof has two completely different jobs depending on context: in JavaScript (a value context) it's a runtime operator returning a string describing a value's type, while in a TypeScript type context it captures the static type of a value for use in the type system.
+
+JavaScript runtime typeof:
+
+Evaluates at runtime and returns a string: "string", "number", "object", "undefined", etc.
+
+Used for runtime checks and type guards that TypeScript also narrows.
+
+TypeScript type-context typeof:
+
+Appears where a type is expected and produces the inferred static type of a variable, erased at compile time.
+
+Lets you derive types from values instead of duplicating declarations.
+
+Context decides the meaning: After :, in type aliases, or generic arguments it's the type operator; in expressions it's the runtime operator.
+
+typescript
+
+
+Copy code
+
+const user = { id: 1, name: "Ada" };
+
+// Runtime: logs "object"
+console.log(typeof user);
+
+// Type context: User = { id: number; name: string }
+type User = typeof user;
+
+Q41.What are indexed access types (lookup types), like T[K], and how are they used?
+Mid
+Indexed access types let you look up the type of a property by its key, using the same bracket syntax as runtime property access but at the type level: T[K] gives the type stored under key K in T.
+
+Single key lookup: User["id"] returns the type of the id property.
+
+Union of keys:
+
+T["a" | "b"] returns a union of those property types.
+
+T[keyof T] produces a union of all value types in T.
+
+Array/tuple element types: Arr[number] extracts the element type of an array; Tuple[0] gets a specific element.
+
+Why it matters: Keeps derived types in sync with the source: if the property type changes, the lookup updates automatically. No duplication.
+
+typescript
+
+
+Copy code
+
+interface User { id: number; name: string; roles: string[]; }
+
+type Id = User["id"];            // number
+type Vals = User[keyof User];    // number | string | string[]
+type Role = User["roles"][number]; // string
+
+Q42.Explain the utility types ReturnType, Parameters, and Awaited. How does each extract type information?
+Mid
+These utility types use infer inside conditional types to pull pieces out of function and promise types, so your types stay derived from a single source of truth.
+
+ReturnType<T> extracts a function's return type: Matches T against (...args: any) => infer R and yields R.
+
+Parameters<T> extracts the argument types as a tuple: Infers (...args: infer P) => any and returns P, which you can index or spread.
+
+Awaited<T> unwraps a Promise to its resolved value: Recursively unwraps nested promises (Promise<Promise<string>> becomes string), mirroring how await behaves.
+
+Common combo: Awaited<ReturnType<typeof fetchUser>> gives the resolved type of an async function in one expression.
+
+typescript
+
+
+Copy code
+
+async function getUser(id: number) {
+  return { id, name: "Ada" };
+}
+
+type Ret = ReturnType<typeof getUser>;   // Promise<{id:number;name:string}>
+type User = Awaited<Ret>;                // {id:number;name:string}
+type Args = Parameters<typeof getUser>;  // [number]
+
+Q43.What is type widening in TypeScript, and how can you prevent it?
+Mid
+Type widening is when TypeScript infers a broader type than the exact value you wrote: a literal like "hello" is widened to string because the value is considered mutable and could change later.
+
+When it happens:
+
+let x = "hello" infers string (reassignable), whereas const x = "hello" keeps the literal "hello".
+
+Object properties and array elements widen even under const, since the object itself is mutable.
+
+How to prevent it:
+
+Use const for simple values to keep literal types.
+
+Apply as const to freeze objects/arrays into readonly literal types.
+
+Add an explicit literal annotation or use satisfies to keep the narrow type while still type-checking.
+
+Why care: Widening loses precision needed for discriminated unions, exhaustive checks, and exact API payloads.
+
+typescript
+
+
+Copy code
+
+let a = "red";          // string (widened)
+const b = "red";        // "red" (literal)
+
+const config = { mode: "dark" };          // mode: string
+const frozen = { mode: "dark" } as const; // mode: "dark"
+
+Q44.What is a 'Discriminated Union,' and why is it considered a best practice for handling complex state or API responses?
+Mid
+A discriminated (tagged) union is a union of object types that all share a common literal property, the discriminant, whose value uniquely identifies each variant. Checking that one property lets TypeScript narrow to the exact member and safely access its specific fields, which makes complex state and API responses both type-safe and self-documenting.
+
+The three ingredients:
+
+A common property (e.g. kind or status) present on every member.
+
+A literal type for that property, unique per variant.
+
+A union joining the members together.
+
+Why it's a best practice:
+
+Narrowing: a switch on the discriminant gives access only to the fields valid for that state.
+
+Models impossible states away: a loading state can't accidentally carry data or error.
+
+Exhaustiveness: a never default case makes the compiler flag any unhandled variant when you add one.
+
+typescript
+
+
+Copy code
+
+type State =
+  | { status: "loading" }
+  | { status: "success"; data: string[] }
+  | { status: "error"; message: string };
+
+function render(s: State) {
+  switch (s.status) {
+    case "loading": return "...";
+    case "success": return s.data.join(","); // data available here
+    case "error":   return s.message;        // message available here
+    default:
+      const _exhaustive: never = s; // errors if a case is missing
+      return _exhaustive;
+  }
+}
+
+Q45.What is the difference between a standard enum and a const enum? How does the choice between them affect the compiled JavaScript output?
+Mid
+A standard enum compiles to a real JavaScript object that exists at runtime, while a const enum is fully erased and its member values are inlined directly at each usage site, producing smaller output but with trade-offs.
+
+Standard enum:
+
+Emits an IIFE that builds a runtime lookup object, including reverse mapping for numeric enums (value to name).
+
+You can iterate it, access it dynamically, and reference it as a value at runtime.
+
+const enum:
+
+Removed during compilation; each member reference is replaced with its literal value, so no object is generated.
+
+Zero runtime footprint and faster property access, ideal for hot paths or large constant sets.
+
+Trade-offs of const enum:
+
+No runtime object means no reverse mapping and no dynamic/iterative access.
+
+Problematic across module boundaries with isolatedModules (Babel, esbuild), since inlining requires whole-program type info; often discouraged in libraries.
+
+typescript
+
+
+Copy code
+
+enum Color { Red, Green }      // emits a runtime object
+const enum Size { S, M }       // erased
+
+let c = Color.Red;             // -> let c = Color.Red; (object lookup)
+let s = Size.M;                // -> let s = 1; (inlined literal)
+
+Q46.Explain the difference between private, protected, and the native JavaScript #private fields.
+Mid
+TypeScript's private and protected are compile-time-only access modifiers that disappear after compilation, whereas #private fields are a JavaScript language feature that enforces true privacy at runtime.
+
+private: Accessible only within the declaring class; checked by the compiler but erased in the emitted JS, so it is reachable at runtime (e.g. via bracket access or casting).
+
+protected: Like private but also accessible in subclasses; equally compile-time-only.
+
+#private (ECMAScript private fields):
+
+Hard privacy enforced by the runtime: inaccessible outside the class, not enumerable, and not reachable by any trick.
+
+Truly per-class; accessing a #field on a non-instance throws a TypeError, enabling reliable #x in obj brand checks.
+
+Choosing: Use #private when you need genuine encapsulation at runtime; use private/protected for type-level intent, inheritance access, or when targeting older runtimes without downleveling cost.
+
+Q47.What is an abstract class and how does it differ from an interface?
+Mid
+An abstract class is a base class that cannot be instantiated directly and can mix concrete implementation with abstract members that subclasses must implement. An interface is a purely type-level contract with no implementation and no runtime presence.
+
+Abstract class:
+
+Can provide shared concrete methods, fields, constructors, and access modifiers alongside abstract methods.
+
+Exists at runtime (emits a JS class); a class can extend only one.
+
+Interface:
+
+Only describes shape; no implementation, no constructors, fully erased at compile time.
+
+A class can implements many, and interfaces support declaration merging.
+
+When to use which:
+
+Abstract class: you need shared code/state plus enforced overrides in a clear inheritance hierarchy.
+
+Interface: you only need a contract, want multiple implementation, or are typing plain object shapes.
+
+typescript
+
+
+Copy code
+
+abstract class Shape {
+  abstract area(): number;        // must be implemented
+  describe() { return `area=${this.area()}`; } // shared
+}
+class Circle extends Shape {
+  constructor(private r: number) { super(); }
+  area() { return Math.PI * this.r ** 2; }
+}
+
+Q48.How does function overloading work in TypeScript compared to languages like Java or C#?
+Mid
+In TypeScript, function overloading is purely a type-level construct: you declare multiple overload signatures followed by a single implementation signature that must handle all cases. Unlike Java or C#, there is no separate compiled method per overload, since at runtime there is only one JavaScript function.
+
+How it works in TypeScript:
+
+Write several overload signatures (no body), then one implementation signature with a body that inspects arguments and branches.
+
+The implementation signature is not visible to callers; only the overloads are.
+
+Difference from Java/C#:
+
+There each overload is a distinct compiled method, resolved at compile time by static dispatch.
+
+In TS the overloads vanish after compilation; you manually disambiguate inside the single body using typeof / runtime checks.
+
+Practical note: Union types or generics are often cleaner than overloads; reach for overloads when return type genuinely depends on which argument shape was passed.
+
+typescript
+
+
+Copy code
+
+function parse(x: string): string[];
+function parse(x: number): number;
+function parse(x: string | number): string[] | number {
+  return typeof x === "string" ? x.split(",") : x * 2;
+}
+
+Q49.What are the trade-offs of using enum versus a const object or a union of string literals? Why do some teams ban the use of Enums entirely?
+Mid
+All three model a fixed set of values, but enum generates real JavaScript at runtime and has quirky type behavior, while a const object or union of string literals is closer to plain JS with simpler, more predictable types.
+
+enum trade-offs:
+
+Emits runtime code (an object), so it isn't fully erasable and adds to bundle size.
+
+Numeric enums are unsafe: any number is assignable, and reverse mappings add surprises.
+
+const enum inlines values but breaks under isolated/Babel transpilation, so many toolchains forbid it.
+
+Union of string literals:
+
+Zero runtime cost (purely a type), great for narrowing and exhaustiveness checks.
+
+Downside: no single named runtime value to iterate or reference.
+
+const object + as const:
+
+Gives you both a runtime value (to iterate/import) and a derived literal type.
+
+Derive the type with typeof obj[keyof typeof obj].
+
+Why some teams ban enums:
+
+They are a TypeScript-only feature that violates "types should be erasable," and TC39's type-stripping direction makes them awkward.
+
+Const objects/unions cover the same needs with simpler semantics and no surprises.
+
+typescript
+
+
+Copy code
+
+const Color = {
+  Red: 'red',
+  Green: 'green',
+} as const;
+
+type Color = typeof Color[keyof typeof Color]; // 'red' | 'green'
+
+Q50.When typing React components, what is the difference between React.ReactNode and React.ReactElement?
+Mid
+ReactNode is the broad type for anything renderable, while ReactElement is specifically a single JSX element object created by React.createElement.
+
+React.ReactNode:
+
+A union covering elements, strings, numbers, null, undefined, booleans, and arrays of these.
+
+Correct type for children and most "renderable content" props.
+
+React.ReactElement:
+
+A single element object with type, props, and key; it is NOT a string, number, or null.
+
+What a component's render/return produces, and what cloneElement expects.
+
+Rule of thumb:
+
+Accepting content to render: use ReactNode.
+
+Requiring an actual element to clone/inspect: use ReactElement.
+
+Q51.Why is it generally discouraged to use React.FC (FunctionComponent) in modern React-TypeScript projects?
+Mid
+Q52.How does TypeScript determine type compatibility (assignability) between two types?
+Senior
+Q53.What is global augmentation and what are the risks of using it in a shared codebase?
+Senior
+Q54.What is the difference between declaration merging and module augmentation?
+Senior
+Q55.What is the purpose of triple-slash directives and are they still relevant in modern TypeScript?
+Senior
+Q56.Explain 'Declaration Merging.' Which construct supports it, and why might it be useful or dangerous when working with third-party libraries?
+Senior
+Q57.What are assertion functions and the 'asserts' keyword? How do they differ from type predicates using 'is'?
+Senior
+Q58.How does TypeScript handle module resolution? Explain the difference between CommonJS and ESNext module targets in the context of a modern frontend or backend application.
+Senior
+Q59.Discuss the performance implications of complex recursive types on the TypeScript compiler.
+Senior
+Q60.What are conditional types in TypeScript? Explain the syntax T extends U ? X : Y and how it allows for dynamic type branching.
+Senior
+Q61.Explain Template Literal Types. How can they be used to enforce string patterns like CSS properties or API endpoints at compile time?
+Senior
+Q62.What is the purpose of the infer keyword within a conditional type?
+Senior
+Q63.What is the difference between as const (const assertions) and the satisfies operator?
+Senior
+Q64.What does it mean for a conditional type to be 'distributive', and how does wrapping a type in a tuple prevent distribution?
+Senior
+Q65.What are decorators in TypeScript? Explain the conceptual difference between the experimental legacy decorators and the new Stage 3 ECMAScript decorators.
+Senior
+Q66.Explain the concept of branded types (or opaque types) and how you simulate nominal typing.
+Senior
+Q67.Explain variance in TypeScript: what are covariance and contravariance and how do they affect function compatibility?
+Senior
+Q68.What is the 'this' type in TypeScript, and how does polymorphic 'this' help with method chaining?
+
 TypeScript Interview Questions
 (4.6)
 1374 Viewers
