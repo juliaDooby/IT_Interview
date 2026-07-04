@@ -1,3 +1,219 @@
+23 REST API Interview Questions They Will Ask You in 2023
+By Josip Miskovic
+•
+Updated on Jan 7, 2023
+23 REST API Interview Questions They Will Ask You in 2023
+If you're looking for a new job in the tech industry, you'll likely need to know how to use REST APIs.
+
+REST APIs are becoming more and more popular, so many companies expect developers to know about rest APIs.
+
+Even if you are a frontend developer, you'll likely need to know how to use rest APIs.
+
+Where do these questions come from?
+
+I've analyzed 100+ questions from sites like Glassdoor, Stack Overflow, and LinkedIn to come up with the most common REST API interview questions.
+
+Then, I ran them through Google's Natural Language Processing (NLP) API to extract the most important entities from the questions.
+
+Understanding these key terms and relations between them will help you answer REST API interview questions:
+
+HTTP - protocol, methods, status codes
+Client/server - client-server model, interaction, REST client
+Web - web services, SOAP, REST
+Resource - resource representation, access, CRUD (create, read, update, delete)
+API - developing, applying and testing
+If you want to get comprehensive knowledge of REST APIs, take a look at my guide on best REST API books.
+
+What is REST API?
+REST API stands for Representational State Transfer Application Programming Interface.
+
+It's a way to expose data and functionality from one application to another.
+
+When you make a request to a REST API, the server will send back an answer in JSON (JavaScript Object Notation) format.
+
+What is REST API used for?
+REST APIs can be used for a variety of purposes, such as:
+
+Exposing data to third-party applications
+Fetching data from other applications
+Performing actions on behalf of other applications
+Integrating different systems together
+Why is HTTP protocol important for REST?
+HTTP protocol is important for REST because it's a way to communicate data between client and server. Without HTTP methods, requests and responds, and HTTP status codes, it would be difficult to build a REST API.
+
+Every HTTP request includes a method and a status code.
+The client-server interaction is based on requests and responses.
+What are web services?
+Web services are a standard way of integrating applications. They allow to send and receive data in XML or JSON format, so it's easier to work with them from different programming languages than with SOAP-based web services. REST is the most popular architecture for web services, as it provides such benefits as simplicity and scalability.
+
+What is a Resource in REST?
+In a REST API, a resource is an entity that we perform CRUD operations on. This means that we can create, read, update, and delete instances of this resource.
+
+The resource can be in any form - document, JSON data, image, or anything else.
+
+What is an URI in REST based web services?
+URI is a Uniform Resource Identifier, and it's the address of any resource you want to access.
+
+For example, the URI of this REST API question is /questions/16790139.
+
+The questions part represents the type of resource and the 16790139 is the unique identifier.
+
+Do REST APIs have a state?
+REST APIs don't maintain state, they are stateless.
+
+In REST architecture, the server doesn't maintain the client state. For example, if you make a request to get a list of users, and then want to get the details of a particular user, the server will not remember which user you were looking at before. In the sub-sequential request, you'll need to specify the user's ID.
+
+What is RESTless?
+RESTless is a term that describes any API that's not built using REST principles.
+
+Any system that doesn't implement all the major RESTful principles is a RESTless system.
+
+For example, if an API implements resources, but doesn't use GET, POST, PUT, and DELETE to manipulate them, then it's RESTless.
+
+Why do we use REST API when we have SOAP?
+The main difference between REST API and SOAP is that REST API is an architecture, while SOAP is a protocol (Simple Object Access Protocol).
+
+RESTFul services use Resources and the Uniform Interface to communicate with clients, while SOAP uses messages and envelopes.
+
+Other differences include:
+
+Business logic
+
+RESTful services use URL to expose business logic,
+SOAP services use the service interface to expose business logic.
+Security
+
+RESTful inherits security from the underlying transport protocols,
+SOAP defines its own security layer, thus it is considered as more secure.
+Data format
+
+RESTful supports various data formats, such as HTML, JSON, text, etc,
+SOAP supports XML format.
+Flexibility
+
+RESTful is easier and flexible,
+SOAP is not as easy and flexible.
+Bandwidth
+
+RESTful services consume less bandwidth and resource,
+SOAP services consume more bandwidth and resources because of XML encoding.
+Why are HTTP status codes important?
+HTTP status codes are important because they describe what happened with the request. They are a way for servers to communicate with clients.
+
+The most common HTTP status codes in REST are:
+
+1xx - Informational
+200 OK - Everything went as planned
+301 Moved Permanently - The requested resource has been moved
+400 Bad Request - The request was not understood or could not be completed
+401 Unauthorized - The request was not authorized
+403 Forbidden - The server refused to fulfill the request
+404 Not Found - The requested resource could not be found
+405 Method Not Allowed - The requested method is not allowed for the resource
+410 Gone - The requested resource is no longer available
+500 Internal Server Error - Something went wrong on the server
+As you can see, different HTTP status code ranges describe different situations:
+
+200-299 indicate success,
+300-399 indicate redirects,
+400-499 indicate HTTP error messages,
+500 is a catch-all for anything that goes wrong.
+What are the HTTP methods supported by REST?
+REST web services support these HTTP methods:
+
+GET
+POST
+PUT
+DELETE
+HEAD
+OPTIONS
+What's the difference between PUT and PATCH?
+PUT replaces the entire resource, while PATCH updates only a part of it.
+
+The PUT method is idempotent, so we may repeat it multiple times and get the same result. The PATCH method is not idempotent, since each time you apply a PATCH the resource will be updated differently.
+
+For example, if we are changing price with PUT, we would tell the API to "set price to $10". With PATCH requests, we can tell the API to "increase the price by $10". So PUT will always produce the same result, while PATCH might not.
+
+How to secure RESTful web service?
+The REST API can be secured via:
+
+Basic authentication - sending user name and password
+API Keys - sending a unique key with each request
+OAuth - an open protocol that allows secure authorization in a simple and standard method from web, mobile, and desktop applications.
+Client certificates - a digital certificate used to make an encrypted connection.
+The following headers further improved the REST API security:
+
+Content Security Policy - prevents cross-site scripting attacks, clickjacking and other code injection attacks. It's also used to prevent mixed content security policies.
+Strict Transport Security - forces web browsers to use a secure connection when visiting certain sites through the HSTS policy.
+X-Frame Options - prevents clickjacking attacks. This is done by instructing the web browser not to display a page within a frame or iframe tag.
+Content type options - prevents content sniffing (MIME sniffing) in modern browsers, which can be used for malicious purposes such as
+How do you handle REST API versioning?
+The two main ways to handle REST API versioning are URI and query string parameter.
+
+URI - The URI includes the version information in the path, for example /v2/orders. The disadvantage of this approach is that you cannot use the same URI for two different versions.
+Query string parameter - The query string includes the version information in one of its parameters, for example /orders?version=v2. The advantage of this approach is that it doesn't require a separate endpoint per API version.
+What is idempotent principle?
+The principle of idempotency says that the outcome of an operation will be the same even if the client performs it multiple times.
+
+Idempotent operations are guaranteed to have no side effects on server state later even if it is invoked more than once.
+
+The power of this principle is to allow clients to safely repeat requests. For example, in case of a network error, clients can retry the same request without fear of creating duplicate resources.
+
+Idempotent RESTful operations are:
+
+GET
+PUT
+DELETE
+REST operations that are not idempotent:
+
+POST
+PATCH
+What is HATEOAS?
+HATEOAS stands for Hypermedia as the Engine of Application State.
+
+HATEOAS is a principle of REST service that adds hypermedia links to REST responses with the purpose of helping to discover all available resources.
+
+The client can navigate through the application states by selecting from the links within the API response. They can also make other HTTP calls to the web server using the links embedded in the response.
+
+The advantage of HATEOAS is that you don’t need to know all URIs up front. The API provides them with the rest of data so you can discover actions and resources by inspecting the API’s responses.
+
+How do REST APIs implement caching?
+REST APIs implement caching by using the ETag header. This value is a hash of the response body, so it will change only if the data changes.
+
+Caching is storing server response in memory, so that the same response doesn’t have to be generated for every request. This can improve performance and decrease server load significantly.
+
+What is rate limiting in RESTful web services?
+Rate limiting is a technique used to restrict the number of requests that can be made to an API over a period of time. This helps protect the API from being overloaded and ensures that all users have fair access.
+
+Rate limiting can also help prevent malicious attacks on the API.
+
+What is OpenAPI?
+OpenAPI is a specification for describing RESTful web services. It allows you to describe the API using a simple, human-readable format. OpenAPI can generate documentation, client libraries and SDKs.
+
+The OpenAPI specification is maintained by the Open API Initiative, which is a part of the Linux Foundation.
+
+What is API-first design?
+API-first design is a process of designing and developing APIs before code. This allows developers to focus on the API itself, rather than on specific implementations.
+
+API-first design can help ensure that your API is well-designed and easy to use. It also makes it easier to create client applications because the backend developers can focus on the API without worrying about specific implementations.
+
+What is Swagger?
+Swagger is an OpenAPI specification that allows you to describe your RESTful web services in a human-readable format. It also allows you to auto-generate documentation and client libraries for your rest APIs using different programming languages, including Java, JavaScript, Python, and Ruby.
+
+Messaging Queue vs REST API
+The main difference between messaging queues and REST APIs is that REST APIs are stateless.
+
+When a message is sent to a messaging queue, the receiving system maintains a record of the messages it has received and processes them in order.
+
+This means that if the system fails or needs to be restarted, it will lose all the messages that haven't been processed yet.
+
+What's the lifetime of a HTTP request?
+HTTP requests have limited duration. For example, CloudFlare only waits 100 seconds for a HTTP response from the server before it sends 524 timeout error. HTTP should not be used to block tasks without sending responses. Long running tasks that block the response should use a different technique, such as WebSockets.
+
+
+Josip Miskovic
+
+
 15 вопросов и ответов на собеседовании по REST API
 3 комментария / Собеседование / От dariaa
 Здесь представлены вопросы и ответы на собеседования по Rest API, которые могут задать как начинающим, так и опытным кандидатам на должность QA инженера.
