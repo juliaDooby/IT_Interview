@@ -1,3 +1,573 @@
+PostgreSQL Interview Questions and Answers For Freshers
+Let’s go through basic-level PostgreSQL interview questions and Answers, which will help you gain an understanding of the database and its capabilities.
+
+1. What is PostgreSQL?
+PostgreSQL is a feature-rich relational database management system. It is also called Postgres. It is one of the most popular and widely used Object-Relational Database Management Systems (ORDBMS).
+
+2. What are the important features of PostgreSQL?
+It supports all the main operating systems.
+It supports procedural languages and MVCC.
+It also includes Nested transactions.
+3. What is the latest version of PostgreSQL?
+As of May 2026, the latest version of PostgreSQL is PostgreSQL 18, released in 2025. The latest minor release is PostgreSQL 18.4, released in May 2026.
+
+4. What are the new features covered in the latest version of PostgreSQL?
+The new features of PostgreSQL 18 include:
+
+Asynchronous I/O(AIO) – It allows PostgreSQL to process multiple I/O requests.
+B-Tree skip scan – It enables skip scan on multi-column indexes.
+UUIDv7 support – It helps generate time-ordered UUIDs, which increases index performance.
+Virtual generated columns – They help save storage and reduce write overhead.
+OAuth authentication support – It enables token-based access and simplifies database integration with modern identity systems.
+5. What are the primary applications of PostgreSQL?
+PostgreSQL enables you to:
+
+Create, update, and delete tables in the database
+Manipulate, modify, and access data in tables
+Summarise and retrieve the required information from a single table or multiple tables
+Remove or add particular rows or columns from a table.
+6. What methods can you use to create a new database in PostgreSQL?
+PostgreSQL uses the following methods:
+
+CREATE DATABASE command
+a command-line executable
+Master the real-world skills behind these interview questions and walk into your next technical round with confidence through our PostgreSQL training program.
+7. What is a Schema in PostgreSQL, and what does it contain?
+A database schema defines the logical and physical structure of a relational database. In PostgreSQL, a schema contains tables with views, data types, indexes, constraints, functions, and sequences.
+
+8. Define a Join in PostgreSQL.
+Joins can be used to combine and retrieve records from two or more tables. PostgreSQL uses SQL joins to perform these operations.
+
+9. Why do you use constraints in PostgreSQL?
+We use constraints to ensure the data integrity in tables and avoid unnecessary actions.
+
+10. What are the different operators in PostgreSQL?
+The PostgreSQL operators include the following:
+
+Arithmetic
+Comparison
+Logical
+Bitwise.
+11. What are the primary constraints of PostgreSQL?
+PostgreSQL offers the following constraints:
+
+Not-Null constraints
+Unique constraints
+Check constraints
+Foreign keys
+Primary keys
+Exclusive constraints.
+12. What are the different types of Joins used in PostgreSQL?
+Inner Join: It returns the records with matching values in both tables.
+Right Join: It returns all records from the right table and the matched records from the left table.
+Left Join: It returns all records from the left table and the matched records from the right table.
+Full Join: It returns all records when there is a match in either the left or the right table.
+13. What is a view in PostgreSQL?
+A view displays the results of a query against one or more inherent tables. Views simplify complex queries. We can define views once and query directly.
+
+14. What is a Sequence?
+In PostgreSQL, a sequence is a database object that generates a sequence of unique integers that we can use as default values for a column or as part of a primary key.
+
+15. What is a tablespace?
+A tablespace is a disk location where we can store the data files for specific tables or indexes. It helps to have good control over disk usage and file placement.
+
+16. Explain Normalization.
+In a database, normalization is a mechanism for creating or modifying databases to address inefficiencies in data storage, query processing, or data modification. In other words, normalization helps reduce data complexity and redundancy.
+
+17. Describe Triggers.
+Triggers are also called callback functions. They are specifications that require a database to automatically execute a specific function whenever a particular kind of operation is performed. 
+
+We can define triggers that execute before or after INSERT, UPDATE, or DELETE operations. If a trigger event occurs, the trigger’s function is invoked at the appropriate time to handle the event. 
+
+18. What is a primary key?
+In PostgreSQL, a primary key is a column or set of columns that uniquely identifies each row in a table. It ensures the integrity and uniqueness of the data in the table. 
+
+Moreover, the values of primary key columns should be unique, and a primary key column must not include null values.
+
+To define a primary key in PostgreSQL, we can use the “PRIMARY KEY” constraint when creating or altering a table. We can define only one primary key per table.
+
+19. What is the difference between a primary key and a foreign key?
+A primary key consists of unique values and non-null values, whereas a foreign key is shared between two or more tables.
+
+21. What are the benefits of PostgreSQL?
+There are several benefits of using PostgreSQL as follows:
+
+PostgreSQL offers excellent scalability and performance.
+It efficiently manages massive amounts of data and parallel connections.
+It provides advanced features, including support for complex data types, geospatial data, and full-text search.
+It enables us to create custom data types, procedural languages, and functions.
+It ensures data integrity, reliability, and ACID properties.
+22. Can you run PostgreSQL on the Cloud?
+Yes, we can run PostgreSQL on many cloud providers, including AWS, Google Cloud, and Azure.
+
+23. Explain Multi-Version Concurrency Control.
+Multi-Version Concurrency Control (MVCC) is an advanced feature of PostgreSQL. It improves the database performance in multi-user scenarios. 
+
+Therefore, when we query a database, every transaction sees a snapshot of the database from some point in the past, regardless of the database's current state.
+
+24. What are the advantages of partitioning?
+Partitioning enables you to divide a table into smaller, more manageable partitions, improving query performance. It’s ideal for handling large tables.
+
+25. What commands must you execute to control transactions in PostgreSQL?
+There are three primary commands for controlling transactions in PostgreSQL.
+
+BEGIN TRANSACTION or BEGIN: It can be used for starting a transaction
+ROLLBACK: It is used to undo transactions that have not been committed to the database.
+COMMIT or END Transaction: It is used for saving changes. The “COMMIT” command saves all transactions to the database, whereas the “ROLLBACK” command rolls back all transactions.
+26. What purpose does pgAdmin serve in the PostgreSQL environment?
+PgAdmin in PostgreSQL is a data administration tool. It serves to retrieve, develop, test, and maintain databases.
+
+27. How can you enhance the query performance in PostgreSQL?
+We can use the following strategies to enhance the query performance:
+
+Indexing for queries that include WHERE clauses.
+Performing partitioning for large tables.
+Developing SQL statements for reducing overhead, for instance, by preventing unnecessary columns in the SELECT statement.
+Maximizing memory usage by tuning server parameters to match hardware specifications.
+28. How can you handle errors in PostgreSQL?
+We can adopt the following ways to handle errors:
+
+Using Callback functions to handle error and warning conditions. 
+Using SQL variables to gain detailed information about the warnings or errors.
+29. What are database callback functions called? What is their purpose?
+The database callback functions are called PostgreSQL Triggers. When a specified database event occurs, PostgreSQL Triggers are automatically executed.
+
+We hope that these basic questions have helped you become familiar with PostgreSQL.MindMajix Youtube Channel
+
+Top PostgreSQL Interview Questions For Intermediate Learners
+Next, we will learn PostgreSQL questions and answers to take your knowledge to the next level. 
+
+30. How can you add new values to a particular table?
+PostgreSQL uses the “INSERT INTO” statement to add data to an SQL table.
+
+31. Explain transactions in PostgreSQL.
+A transaction is a sequence of database operations considered as a single logical unit. It ensures the atomicity, isolation, durability, and consistency properties of a group of associated database engines.
+
+If any part of the transaction fails, all the modifications within the transaction can be rolled back, maintaining the data integrity.
+
+In PostgreSQL, we can handle transactions internally via auto-commit mode, where each statement is treated as a separate transaction. It can be done externally via the BEGIN, ROLLBACK, and COMMIT statements to define transaction constraints.
+
+32. What does a clustered index do?
+A clustered index sorts table rows by their key values.
+
+33. What are the benefits of specifying data types in columns while creating a table?
+Some of the benefits include consistency, compactness, validation, and performance.
+
+34. What do you need to perform to update statistics in PostgreSQL?
+To update statistics in PostgreSQL, we need to use the VACUUM function.
+
+35. What is the disadvantage of the DROP TABLE command in deleting complete data from an existing table?
+Though the DROP TABLE command can delete all data from an existing table, it also removes the table's structure from the database. As a result, we need to recreate a table to store the data.
+
+36. How can you create a database backup in PostgreSQL?
+We can use the following methods for backing up PostgreSQL:
+
+Online backups
+SQL dumps
+File-system-level backups.
+37. What is the quick way to remove all rows in a large table?
+There are two ways to remove rows from a table: 
+
+The TRUNCATE command
+The DELETE command
+The TRUNCATE command removes rows more efficiently without scanning individual rows. The DELETE command rapidly scans all the rows and removes them. Thus, the TRUNCATE command is the quickest way to delete rows.
+
+38. How do you delete a database in PostgreSQL?
+We can delete the database by:
+
+Using the DROP DATABASE command
+Using the dropdb command.
+39. How can you ensure security in PostgreSQL?
+In PostgreSQL, security is addressed on various levels:
+
+All files stored in a database are protected from read access by accounts other than the PostgreSQL superuser.
+We can limit client connections to a username or IP address.
+Connections from a client to the database server are enabled only through the local Unix socket.
+We can authenticate client connections through external packages.
+Each PostgreSQL user is assigned a username and a password.
+We can assign users to groups and limit table access per group privileges.
+40. How can you delete a table and its dependent objects?
+To delete a table in PostgreSQL, we can use the “DROP TABLE” command, followed by the name of the table. 
+
+The “CASCADE” command automatically removes dependent objects such as views.
+
+41. What is the importance of logs for troubleshooting?
+PostgreSQL logs are a valuable resource for troubleshooting problems, auditing database activity, and tracking performance. PostgreSQL includes a wide variety of logs, including error logs. These logs can help you identify queries and statements that cause errors during execution.
+
+42. When do you use the “EXPLAIN ANALYZE” command in PostgreSQL?
+The “EXPLAIN” command displays the execution plan of the SQL statement. It includes how we can process the tables referenced in our statement, use algorithms for complex operations, and estimate execution time.
+
+We can use the “ANALYZE” command to get the actual time needed. We can use the “EXPLAIN ANALYZE” command to identify problems in complex queries and rewrite them to improve performance.
+
+43. What is the use of the “pg_dump” method?
+The “pg_dump” method enables us to create a text file with a group of SQL commands. When we run the commands on the PostgreSQL server, it will recreate the database in the same state as it was at the time of the dump.
+
+44. What will be the maximum table size for a table in PostgreSQL?
+In PostgreSQL, the maximum table size is 32 TB.
+
+45. How can you create an index in PostgreSQL?
+In PostgreSQL, we use the “CREATE INDEX” statement to create an index. Here is an example:
+
+The above statement will create an index on the “Employee” table.
+
+46. Explain Composite Type.
+In PostgreSQL, a composite type enables you to define custom data structures that can store multiple values of different data types. It allows you to create user-defined types made up of the available data types. 
+
+Composite types are useful for grouping related data elements into a single entity. To define a Composite type, we can utilize the “CREATE TYPE” statement.
+
+In the above example, the country_type composite type includes three fields: state, city, and district.
+
+47. What are the different properties of a transaction in PostgreSQL?
+The properties of a transaction in PostgreSQL include Atomicity, Consistency, Isolation, and Durability. These are referred to as the ACID properties.
+
+48. What purpose does the CTIDs field serve?
+The CTIDs field identifies the specific physical rows in a table by their block and offset positions.
+
+49. What are the commands used to control transactions in PostgreSQL?
+The commands used to control transactions in PostgreSQL are given as:
+
+BEGIN TRANSACTION
+COMMIT
+ROLLBACK
+50. Describe Materialized Views.
+In PostgreSQL, a materialized view is a database object that stores the results of the query as a physical table. Unlike regular views, materialized views are precomputed and updated manually or periodically.
+
+For creating the materialized view, we can use the “CREATE MATERIALIZED VIEW” statement, defining the contents of the view. The materialized view is created or refreshed using a query.
+
+By storing and precomputing results, we can achieve significant performance gains when querying materialized views.
+
+51. How can you perform bulk inserts?
+We can utilize the “INSERT INTO SELECT…” statement or the “COPY” command to perform bulk inserts effectively.
+
+INSERT INTO … SELECT statement
+
+By using the INSERT INTO … SELECT statement, we can insert multiple rows in a single SQL statement. We can define the columns and their values in the “SELECT” clause. We need to repeat the “SELECT” statement for each row we want to insert. 
+
+This method is used when we need to insert data generated dynamically or retrieved from another table.
+
+COPY Command
+
+The “COPY” command reads data from the file specified by “data_file” and inserts it into the specified table. The file must include data in the format specified. This method is rapid and useful for huge datasets.
+
+52. Describe Stored Procedures.
+A stored procedure is a pre-compiled database object that binds a set of SQL statements. It enables you to perform complex operations and implement them as a unit. 
+
+The advantages of using stored procedures are:
+
+Code reusability
+Improved security
+Enhanced performance
+For creating a stored procedure, we must execute CREATE PROCEDURE or CREATE FUNCTION statements. 
+
+A stored procedure will include input and output parameters, control flow logic, and local variables used in loops and conditionals. It will also return the result sets through the “OUT” or “RETURN TABLE” parameters.
+
+53. How do you create a view?
+To create a view in PostgreSQL, we must use the "CREATE VIEW" command. Example:
+
+The view above is created for employees of the 'HR' department in the 'emp' table.
+
+54. What is the difference between CTE and Subquery?
+The primary difference between CTE and Subquery lies in their usage and structure.
+
+A CTE is the temporary result set defined in the query. We can create this result set using the "WITH" clause and refer to it multiple times in the same query. It enhances query readability and enables recursive queries. They are more useful
+
+when a complex query requires multiple subqueries that share a common table.
+
+On the other hand, a subquery is a nested query in another query. We can use the subquery in the "WHERE ', "HAVING", or "FROM" clauses. Subqueries are assessed first, and their results can be used in the outer query. We cannot reuse subqueries. It may impact query performance when subqueries are used excessively.
+
+55. Differentiate between "UNION" and "UNION ALL" operators.
+Both UNION ALL and UNION operators are used for combining the results of multiple "SELECT" statements. But they differ in terms of their result sets and behavior.
+
+The "UNION ALL" operator combines the results of multiple "SELECT" statements without removing duplicate rows. It contains all the rows from every "SELECT" statement, containing duplicates. This operator is more rapid than the "UNION statement because it does not need duplicate elimination.
+
+On the other hand, the "UNION" operator combines the results of multiple "SELECT" statements and removes duplicate rows from the final result set. It performs a distinct operation, ensuring that unique rows are returned. This operation will incur overhead due to duplicate elimination.
+
+56. How do you implement the table partitioning?
+Table Partitioning allows a large table to be split into smaller, more manageable partitions. Each partition stores a subset of the data based on the specified partitioning key. 
+
+To implement the table partitioning, follow the steps below:
+
+Create a parent table with all the required columns, like the partitioning key.
+Create a child table that inherits from the parent table. Every child's table represents a particular partition.
+Define the constraints on every child table to limit the partitioning key values.
+Create the indexes on the child tables to optimize the query performance.
+The partitioning feature in PostgreSQL automatically routes data to the appropriate partitions based on the partitioning key, simplifying data management and improving query performance.
+
+57. What is the use of ensuring the atomicity property in PostgreSQL?
+The atomicity property ensures that all operations in a work unit complete successfully.
+
+58. What does Write-Ahead Logging do?
+Write-ahead logging enhances database reliability by recording changes before they are applied to databases.
+
+59. What are some of the important data administration tools supported by PostgreSQL?
+Some important PostgreSQL data administration tools include psql, PgAdmin, and phpPgAdmin.
+
+60. How can you store the binary data in PostgreSQL?
+We can store binary data in PostgreSQL either as bytes or as large objects.
+
+61. What is a non-clustered index?
+In a non-clustered index, the order of the index rows doesn’t match the order in the actual data.
+
+62. Are there any disadvantages of PostgreSQL?
+Yes, there are a few disadvantages. Some of them are outlined here:
+
+PostgreSQL doesn’t have as much support from open-source applications as MySQL does.
+Since it focuses on compatibility, the speed-improvement changes demand more effort.
+63. What does a token represent in a SQL Statement?
+In a SQL statement, a token represents an identifier, keyword, quoted identifier, special character symbol, or constant.
+
+64. What is the use of "VACUUM" in PostgreSQL?
+In PostgreSQL, VACUUM is a critical process that handles disk space occupied by outdated or deleted data. The VACCUM process will identify reusable pages and free up space for future use.
+
+It mainly performs the following two primary tasks:
+
+Updating the Statistics: VACCUM analyzes the data distribution and updates the statistics used by the query planner. It enables PostgreSQL to select optimal query plans, thereby improving performance.
+Releasing disk space: When data is deleted or updated in PostgreSQL, it is not immediately freed on disk. Rather, it is marked as reusable by the future inserts.
+Advanced PostgreSQL Interview Questions
+Let’s move on to advanced PostgreSQL interview questions and detailed answers in this section.
+
+65. How do you implement replication in PostgreSQL?
+PostgreSQL supports several methods for implementing replication to ensure data redundancy and high availability. 
+
+The two primary replication methods are physical replication and logical replication. 
+
+Physical Replication
+
+This method involves creating an exact copy of the main database by continuously streaming write-ahead logs to multiple standby servers. We can use the standby servers as read-only query failover targets if the primary server becomes unavailable. 
+
+Streaming Replication is a type of physical replication that is easy to set up and offers real-time applications with low latency.
+
+Logical Replication
+
+This method replicates changes to specific databases or tables, rather than to the entire database cluster. It uses publications, subscriptions, and slots to define which data must be replicated. It offers more flexibility but needs continuous monitoring.
+
+66. How can you select the first seven rows in the table called “employees” in PostgreSQL?
+By executing the following query, we can select the first seven rows in a table:
+
+67. Describe full-text search.
+In PostgreSQL, full-text search allows you to perform advanced text indexing and searching. It is particularly useful for searching large sets of natural language or unstructured text. 
+
+PostgreSQL provides the tsquery and tsvector data types for full-text search. The tsvector type represents a document's textual content, whereas the tsquery type represents a search query.
+
+To perform a full-text search, we must create a full-text index on the required column using a GIN or GiST index with the "USING" method. After that, we can use the "@@" operator for matching the search query against the indexed column.
+
+68. How can you handle the concurrent updates?
+PostgreSQL manages concurrent updates using its Multi-Version MVCC mechanism. MVCC enables multiple transactions to use the same data simultaneously without causing conflicts or blocking.
+
+For example, when two transactions attempt to modify the same data concurrently, PostgreSQL ensures isolation by creating separate copies of the data for each transaction. 
+
+PostgreSQL provides multiple isolation levels and locking mechanisms to handle concurrent updates and resolve conflicts. We can select proper transaction isolation levels like REPEATABLE READ, READ COMMITTED, and SERIALIZABLE based on the application’s needs.
+
+69. How do you use the JSON data in PostgreSQL?
+PostgreSQL has excellent support for working with JSON data. We can store, manipulate, and query JSON documents using various parameters and functions. To store JSON data, we can use the JSON and jsonb data types. The JSONB offers binary storage and provides querying and indexing capabilities.
+
+For querying JSON data, PostgreSQL provides functions such as:
+
+jsonb_array_elements
+jsonb_extract_path
+jsonb_agg
+These functions enable the extraction of specific values, navigation through JSON arrays and objects, and aggregation of JSON data. 
+
+We can also use operators such as -> and → to access JSON values and fields directly in SQL queries. Moreover, PostgreSQL supports indexing on the JSONB columns, enabling effective querying of JSON data.
+
+70. How do you perform the data migration?
+In PostgreSQL, we will perform the data migration using the steps shown in the image below.
+
+71. Differentiate Regular Views and Materialized Views.
+The primary difference between regular and materialized views lies in how they store and handle data.
+
+In PostgreSQL, regular views are virtual tables defined by a query. They will not store any data; instead, they will dynamically fetch it from underlying tables whenever the view is queried.
+
+Materialized Views store the results of inherent data in a physical table-like structure. The data is stored and computed as it is created and is periodically refreshed. These views are more useful when the underlying data is too large to compute or when the view data has to be indexed for fast retrieval.
+
+Selection between regular and materialized views depends on specific use cases and the frequency of data updates.
+
+72. How do you perform the logical replication?
+For performing logical Replication, we have to follow the steps below:
+
+Enable the logical operation feature by setting the "wal_level" configuration parameter to logical in the PostgreSQL.conf file.
+Create the publication on the source database through the "CREATE PUBLICATION" statement. It will define the tables or schemas that can be replicated.
+Create the subscription on the target database through the "CREATE SUBSCRIPTION" statement.
+Specify connection information for the source database and publication to replicate.
+Begin the replication process by implementing the "ALTER SUBSCRIPTION" statement with the "ENABLE" option.
+After that, PostgreSQL will replicate the table or schema from the source database to the target database, keeping them synchronized.
+
+73. Explain the foreign key in PostgreSQL.
+In PostgreSQL, a foreign key is a column or set of columns that establishes a link between two tables. It shows the relationship between the referenced table (parent table) and the referencing table (child table). 
+
+The foreign key ensures referential integrity, applying the rules below:
+
+The values in foreign key columns should be available in the primary key or unique key constraint of the referenced table.
+Deletions or updates to the referenced table are controlled to maintain consistency with the referencing table.
+We can use a foreign key constraint when creating or altering a table to define a foreign key in PostgreSQL.
+The foreign key columns in the referencing table should have the same data type as the primary key columns in the referenced table.
+74. Explain PostgreSQL Architecture.
+PostgreSQL uses a client-server model to receive requests from clients, process the requests, and return results. It follows the process-per-connection approach.
+
+Let’s explore more about the PostgreSQL Architecture
+
+Postmaster Supervisor Process
+
+Postmaster serves as the supervisor in PostgreSQL, and it is the first process to start after PostgreSQL starts. It serves as the Listener and is responsible for authorizing and authenticating incoming client requests and allocating a new Postgres connection for each connection.
+
+Shared Memory Segments
+
+Shared Memory Segments are memory-backed caches reserved for transactions and maintenance activities. We can allocate various shared memory segments to perform different operations.
+
+Background process of PostgreSQL
+
+Background processes maintain consistency between disk and memory, enabling PostgreSQL to operate properly. Checkpointer, Background Writer, WAL Writer, Statistics Collector, and Physical Files are the background processes.
+
+75. How do you implement the parallel query execution?
+To implement parallel query execution, we can follow the steps below:
+
+Ensure that the max_parallel_workers configuration parameter is set to a value greater than zero in the Postgresql.conf file. It determines the maximum number of parallel workers for query execution.
+Adjust the max_parallel_workers_per_gather configuration to control the number of parallel tasks per query gather. It allows restricting parallelism on an individual query.
+Set the min_parallel_index_scan_size and min_parallel_table_scan_size configuration parameters to control the minimum index or table size required for parallel scans to be considered.
+If required, we can manually disable or enable parallel execution for particular queries through the SET max_parallel_workers_per_gather statement or by modifying the index or table settings with "ALTER INDEX" or "ALTER TABLE."
+By configuring these settings and using the parallel-safe operators. PostgreSQL will parallelize query execution across multiple orders, improving query performance.
+
+76. What are the different kinds of Indexes?
+PostgreSQL supports the following kinds of Indexes:
+
+Hash Index: Effective for equality-based lookups but not ideal for range queries.
+B-tree Index: This is the default index type, ideal for equality conditions and range queries.
+Generalized Inverted Index (GIN): It is suitable for full-text search and arrays.
+Generalized Search Tree (GIST) Index: It supports several data types and operators, including text and spatial search.
+SP-Gist (Space-Partitioned Generalized Search Tree) Index: It is suitable for custom data types and supports several search strategies.
+Block Range Index (BRIN): It is designed for large tables that store sorted data, enabling efficient scans by partitioning data into blocks.
+Bloom Filter Index: It provides approximate matching, which is helpful for massive datasets.
+Every index type has its benefits and is ideal for different scenarios. The index type selection is based on your data's particular characteristics and requirements.
+
+77. What is the use of the pg_stat_activity view?
+In PostgreSQL, the pg_stat_activity view provides information about the server's currently active sessions. It includes a row for every session linked to the database, containing details such as username, process ID, application name, and more.
+
+It is generally used to monitor the database server, check for idle or blocked connections, identify long-running queries, and gather performance-related information. By querying this view, we can gain insights into current activity and the database's state, troubleshoot issues, optimize performance, and manage connections efficiently.
+
+78. Describe a recursive query.
+In PostgreSQL, a Recursive query is a query that references its own output. It enables you to perform repetitive operations or traverse hierarchical or graph-like structures. 
+
+This query is built using the "WITH RECURSIVE" clause, also known as a Common Table Expression (CTE). 
+
+CTE includes two parts, including:
+
+The anchor member
+The recursive member
+The anchor member, which serves as the base case, whereas the recursive member depends on the result of the previous iteration.
+
+The recursive member enables you to query iteratively until a particular condition is satisfied. This recursion will enable you to perform hierarchical queries, traverse the tree structures, and handle the recursive data relationships.
+
+79. What are the differences between PostgreSQL and SQL Server?
+Comparison factors	PostgreSQL	SQL Server
+License	Open Source	A commercial Microsoft product. However, you can use the free ‘Express’ version.
+OS Support	Support cross-platform	Though it supports Linux and Windows, it delivers good performance on Windows.
+Syntax	It uses PL/pgSQL and is standards-compliant.	It uses T-SQL and is case-sensitive.
+80. What is the primary difference between lock and multi-version models?
+A multi-version model enables multiple versions of the same data to exist in parallel. In contrast, a lock model allows only one version to be available at a time and locks the data while it is being edited.
+
+81. How do you create and handle the user-defined functions?
+To create and handle user-defined functions, we can use the “CREATE FUNCTION” statement. The code below is an example.
+
+We can declare the return types and argument types as per the requirements. We can write the function logic within the BEGIN and END blocks.
+
+For calling the function, we will use the following statement.
+
+82. What is the use of the pg_stat_replication view?
+The pg_stat_replication view provides information on the activity and status of standby servers in a streaming replication setup. By using this view, we can get the following details:
+
+Standby server name and connection information
+Replication lag between the standby and primary servers.
+Received and applied for WAL positions
+Replication state
+This view is used to monitor the synchronization and health status of the standby servers and to ensure the overall stability of the replication setup.
+
+83. How do you implement Sharding in PostgreSQL?
+Sharding refers to horizontally partitioning data across multiple shards or servers to distribute load and scale the database system. 
+
+We must follow these steps to implement sharding.
+
+84. How do you implement row-level security?
+In PostgreSQL, row-level security enables us to limit access to rows in a table based on specific policies or conditions. 
+
+To implement row-level security, we have to follow the following steps:
+
+Enable row-level security by setting the row_security configuration parameter in the PostgreSQL.conf file, or use ALTER TABLE to enable it for individual tables.
+Define the security policy on the table through the “ALTER TABLE” statement with the “ENABLE ROW LEVEL SECURITY” clause. It relates to the table that lists the security policy names.
+Create the security policy using the “CREATE POLICY” statement, specifying the conditions that determine which rows we can modify or access. We can use column values, custom functions, or user roles to define policy rules.
+Grant the appropriate privileges to database roles using the “GRANT” statement, enabling them to access the table with the specified security policies.
+After implementing row-level security, PostgreSQL automatically applies security policies whenever queries are executed against the related table.
+
+85. How do you implement data encryption?
+We can use the following techniques to implement data encryption:
+
+86. What three phenomena should be prevented between the concurrent transactions?
+The three phenomena that should be prevented between the concurrent transactions are:
+
+Dirty Reads
+Lost Updates, and
+Inconsistent Reads.
+PostgreSQL	Oracle
+PostgreSQL is an open-source, free object-relational database management system that supports SQL extensibility and standards.	Oracle is an object-relational database management system. It is the first database management system developed for grid computing.
+It is developed and implemented in the C Language.	It is developed and implemented in C++, C, and assembly language.
+Compared with Oracle, PostgreSQL is a newer database. The PostgreSQL Global Development Group designed it on 8th July 1996.	Compared to PostgreSQL, Oracle is an older database. Bob and Larry Ellison designed it.
+PostgreSQL offers good security support, but less than Oracle.	Oracle offers advanced security options.
+PostgreSQL is free to use and open-source.	To use Oracle, you need a license.
+Check out our in-depth comparison of Oracle vs. PostgreSQL
+
+87. What are the differences between MongoDB and PostgreSQL?
+Let's see the comparison of MongoDB vs PostgreSQL:
+
+MongoDB	PostgreSQL
+It is a NoSQL Database.	PostgreSQL is the classic relational database system that supports all the SQL standards.
+It is developed in C++.	It is developed in C.
+It is a non-relational database management system.	It is a relational database management system.
+MongoDB is a document-oriented database.	PostgreSQL is an object-relational database management system.
+PostgreSQL Interview Preparation Tips
+Here, we provide you with some key interview preparation tips that will help you crack your PostgreSQL interviews easily.
+
+Understand the job description
+
+First and foremost, read it thoroughly. Customize your resume and plan your preparation accordingly. It helps you deliver relevant and accurate answers to questions.
+
+Strengthen the basics of PostgreSQL
+
+Interviewers are usually interested in how well you know the basics. So, develop a strong foundation in PostgreSQL basic concepts.
+
+Prepare for common questions
+
+Recruiters ask these in every interview, such as self-introduction, strengths and weaknesses, career goals, and so on. Prepare short, impressive answers to these questions.
+
+Maintain a positive tone
+
+Practice multiple mock interviews before attending your interviews. It will help you stay positive and deliver sharp, quick answers during the interview. No doubt, good communication will yield the best results.
+
+Show your practical expertise
+
+Employers expect candidates with strong hands-on experience. Work on more labs and projects to enhance your hard skills and show the samples in the interview.
+
+Conclusion
+We hope that these PostgreSQL Interview Questions and answers have helped improve your knowledge of PostgreSQL. Learning these questions will be highly helpful in preparing for PostgreSQL job interviews.
+
+If you want to learn more about PostgreSQL, you can register for a PostgreSQL course by MindMajix. By the end of the course, you will gain strong expertise in PostgreSQL database management, which will help you in your career advancement.
+
+Frequently Asked Questions
+1. Can beginners learn PostgreSQL easily?
+Yes, beginners can learn PostgreSQL with ease. If you have a basic understanding of database concepts and management, it will help you learn the DBMS more quickly.
+
+2. Is PostgreSQL a database or a language?
+PostgreSQL is a relational database. It is an open-source software and supports multiple platforms.
+
+3. How long will it take to learn PostgreSQL?
+You can learn PostgreSQL in four weeks. You will become a skilled PostgreSQL professional if you continue practicing on your labs and projects even after the training.
+
+4. Can I get any additional learning resources for PostgreSQL?
+Yes, MindMajix provides the following learning resources to enhance your PostgreSQL skills.
+
+PostgreSQL Blog
+PostgreSQL Quizzes
+5. What is the difference between PostgreSQL and MySQL?
+MySQL is easy to use and suitable for basic use cases, whereas PostgreSQL is feature-rich and ACID-compliant. Particularly, PostgreSQL supports advanced data types and complex queries.
+
 10 PostgreSQL Interview Questions and Answers
 Author's photo
 Andrew Bone
