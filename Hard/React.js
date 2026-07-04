@@ -1,3 +1,724 @@
+React Interview Questions for Developers
+Use our engineer-created questions to interview and hire the most qualified React developers for your organization.
+
+Get a demo
+Back to interview questions
+
+React
+By far the top front-end programming language across the world, React continues to gain a dedicated following due to its amazing community support, architectural flexibility, and efficient UI rendering via the virtual DOM.
+
+According to the CoderPad 2024 Developer survey, this Facebook-created framework is THE most in-demand framework among technical recruiters.
+
+Provided below are practical coding exercises and interview questions that can aid in evaluating developers’ React aptitude during coding interviews. Additionally, a list of best practices is included to ensure that your interview questions precisely gauge the React skills of your candidates.
+
+Table of Contents
+React example question
+Junior React interview questions
+Intermediate React interview questions
+Senior React interview questions
+More React interview resources
+Best interview practices for React roles
+React example question
+Create a React Todo List
+The goal of this exercise is to create a working todo list with persistent data storage.
+
+To start with, we have a styled todo list that supports adding todos. We also have pre-made styles for completed todo items. Although there’s no working mechanism for “completing” a todo.
+
+Requirements
+Clicking on a todo item should toggle the “checked” state.
+The todo list state should be saved and loaded from local storage.
+Checked items should sink to the bottom of the list automatically
+Stretch Goals
+Allow todos to be deleted. When you hover your mouse over a todo, an X should appear on the far right side, clicking the X should remove it from the list.
+Add hidden timestamps to todos (created_at, completed_at), these will be used for sorting
+The active todos should be sorted by created_at descending
+The completed todos should be sorted by completed_at ascending
+
+React skills to assess
+JSX fundamentals
+State management
+HTML/CSS
+Hooks
+Jobs using React
+Front-end engineer
+Full stack developer
+React developer
+Junior React interview questions
+Question: Fix the Code:
+
+import React from 'react';
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+
+export default Greeting;
+Code language: JavaScript (javascript)
+Answer: The code is correct.
+
+Question: What is a prop in React and how is it used in components?
+Answer: A prop (short for property) is a way to pass data from a parent component to a child component in React. Props are read-only and are used to configure the child component. They are passed as attributes to the child component when it is used in the parent component’s JSX.
+
+Question: Fix the Code:
+
+import React from 'react';
+
+function Button(props) {
+  const handleClick = () => {
+    props.onClick();
+  };
+
+  return <button onClick={handleClick}>Click me</button>;
+}
+
+export default Button;
+Code language: JavaScript (javascript)
+Answer: The code is correct.
+
+Question: What is the difference between a class component and a functional component in React?
+Answer: A class component is defined using ES6 class syntax and extends the React.Component class. It has a render method and can have its own state.
+
+On the other hand, a functional component is a plain JavaScript function that receives props as its arguments and returns JSX. Functional components are simpler and less verbose compared to class components. With the introduction of hooks in React, functional components can also have state and perform side effects.
+
+Question: Fix the Code:
+
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
+Code language: JavaScript (javascript)
+Answer: The code is correct.
+
+Question: What is the purpose of the useState hook in React?
+Answer: The useState hook is used in functional components to introduce state management. It allows functional components to have state without converting them into class components. The useState hook returns a state value and a function to update that value. By calling the update function, React re-renders the component with the updated state, providing a way to manage and track changes in component data.
+
+Question: Fix the Code:
+
+import React from 'react';
+
+class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [],
+    };
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.todos.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+export default TodoList;
+Code language: JavaScript (javascript)
+Answer: The code is correct.
+
+Question: What is the significance of keys in React when rendering a list of components?
+Answer:
+Keys are used in React when rendering a list of components to help identify each component uniquely. They help React optimize the rendering process by efficiently updating, adding, or removing components within the list based on the key values. Keys should be unique among siblings but not necessarily globally unique.
+
+Question: Fix the code below:
+
+import React from 'react';
+
+function Welcome(props) {
+  if (props.isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  else {
+    return <h1>Please log in.</h1>;
+  }
+
+
+}
+
+export default Welcome;
+Code language: JavaScript (javascript)
+Answer: The code has a syntax error. The else statement is missing a closing brace (}). The correct code is:
+
+import React from 'react';
+
+function Welcome(props) {
+  if (props.isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please log in.</h1>;
+  }
+}
+
+export default Welcome;
+Code language: JavaScript (javascript)
+Question: What are React hooks and how do they differ from class components?
+Answer: React hooks are functions introduced in React 16.8 that allow functional components to have state and other React features without using class components. Hooks provide a more concise and readable way to manage state, handle side effects, and reuse logic in functional components. They allow developers to write reusable and modular code, making it easier to understand and maintain React components.
+
+Intermediate React interview questions
+
+Question: Write a functional component called Navbar that renders a navigation bar with links. It should receive an array of links as a prop, and each link should be displayed as an anchor tag within a list item.
+
+Answer:
+
+import React from 'react';
+
+function Navbar({ links }) {
+  return (
+    <nav>
+      <ul>
+        {links.map((link) => (
+          <li key={link.id}>
+            <a href={link.url}>{link.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+export default Navbar;
+Code language: JavaScript (javascript)
+Question: Explain the concept of React Context and when it is appropriate to use it in a React application.
+
+Answer: React Context is an API provided by React that allows data to be shared across the component tree without explicitly passing it through props. It enables components to subscribe to a context and access its values, eliminating the need for prop drilling. React Context is appropriate to use when data needs to be accessed by multiple components at different levels of the component tree, such as theme settings, authentication state, or language preferences.
+
+Question: Write a Higher-Order Component (HOC) called withAuthentication that wraps a component and provides an isAuthenticated prop indicating whether the user is authenticated or not. Assume there’s an authenticate function that returns a boolean value.
+
+Answer:
+
+import React from 'react';
+
+const withAuthentication = (WrappedComponent) => {
+  return function WithAuthentication(props) {
+    const isAuthenticated = authenticate();
+
+    return <WrappedComponent {...props} isAuthenticated={isAuthenticated} />;
+  };
+};
+
+export default withAuthentication;
+Code language: JavaScript (javascript)
+Question: Explain the concept of React Hooks and how they enhance functional components.
+Answer: React Hooks are functions that allow functional components to use state, lifecycle methods, and other React features without using class components. They enhance functional components by providing local state management, side effect handling, and the ability to reuse logic. Hooks like useState and useEffect enable components to have their own state and perform side effects, respectively. Hooks make it easier to read, write, and test components by allowing them to be more concise and self-contained.
+
+Question: Write a component called Accordion that renders an accordion-style UI. It should receive an array of items as a prop, and each item should have a title and content. Only one item should be expanded at a time.
+
+Answer:
+
+import React, { useState } from 'react';
+
+function Accordion({ items }) {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleItem = (index) => {
+    if (index === expandedIndex) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(index);
+    }
+  };
+
+  return (
+    <div>
+      {items.map((item, index) => (
+        <div key={index}>
+          <button onClick={() => toggleItem(index)}>{item.title}</button>
+          {index === expandedIndex && <div>{item.content}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Accordion;
+Code language: JavaScript (javascript)
+Question: What is the purpose of the useEffect hook in React? Provide an example use case.
+Answer: The useEffect hook in React is used to perform side effects in functional components. It allows you to run code in response to component mount, update, and unmount. The hook accepts two arguments
+
+a callback function and a dependency array. The callback function will be executed after the component renders, and the dependencies determine when the effect should run. An example use case is fetching data from an API when the component mounts and updating the component when the data changes.
+Question: Write a functional component called Counter that renders a counter with increment and decrement buttons. It should maintain its own internal state for the count value and update it accordingly when the buttons are clicked.
+
+Answer:
+
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+Code language: JavaScript (javascript)
+Question: Explain the concept of React Prop Drilling and suggest an approach to mitigate it.
+Answer: React Prop Drilling refers to the process of passing props through multiple levels of components, even if intermediate components don’t directly use those props. It can make the codebase more complex and lead to unnecessary prop passing. To mitigate prop drilling, you can use techniques like Context API or state management libraries like Redux. Context API allows you to create a shared context for data that needs to be accessed by multiple components without passing it through all levels. State management libraries provide a centralized store where data can be stored and accessed by any component in the application, reducing the need for prop drilling.
+
+Question: Write a component called Tabs that renders a tab-based navigation. It should receive an array of tabs as a prop, and each tab should be displayed as a button. When a tab is clicked, it should be highlighted as active, and its corresponding content should be displayed.
+
+Answer:
+
+import React, { useState } from 'react';
+
+function Tabs({ tabs }) {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
+
+  return (
+    <div>
+      <ul>
+        {tabs.map((tab, index) => (
+          <li
+            key={index}
+            onClick={() => handleTabClick(index)}
+            className={activeTab === index ? 'active' : ''}
+          >
+            {tab.title}
+          </li>
+        ))}
+      </ul>
+      <div>
+        {tabs[activeTab] && <p>{tabs[activeTab].content}</p>}
+      </div>
+    </div>
+  );
+}
+
+export default Tabs;
+Code language: JavaScript (javascript)
+Question: What is the purpose of React Router in a React application, and how does it work?
+Answer: React Router is a library that provides routing capabilities to React applications. It enables navigation between different components/pages of a single-page application. React Router uses a declarative approach to define the routes and their corresponding components. It manages the URL of the application and updates the UI based on the current URL. It also provides features like nested routing, route parameters, and programmatic navigation. React Router is commonly used in conjunction with React components to create multi-page applications with smooth navigation.
+
+Senior React interview questions
+Question: Explain the differences between Redux and Context API in React. When would you choose one over the other for state management?
+
+Answer: Redux is a standalone library for managing state in JavaScript applications. It provides a centralized store, follows a unidirectional data flow pattern, and is suitable for managing complex state and handling large-scale applications with a lot of shared data. Context API, on the other hand, is a built-in feature of React that provides a way to share state within a component tree, without tedious prop drilling. It is useful for simpler state management scenarios and smaller applications. The choice between Redux and Context API depends on the complexity of the application, the need for global state management, and the size of the development team.
+
+Question: Identify and fix any performance bottlenecks in the following React component:
+
+import React from 'react';
+
+const MyComponent = () => {
+  const data = fetchData(); // Assume this function fetches data from an API
+
+  return (
+    <div>
+      {data.map((item) => (
+        <p key={item.id}>{item.name}</p>
+      ))}
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Answer: To optimize the performance of the component, we should avoid calling the fetchData function on every render. Instead, we can use the useEffect hook to fetch the data once when the component mounts. Here’s an updated version of the component:
+
+import React, { useEffect, useState } from 'react';
+
+const MyComponent = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('API_URL');
+      const data = await response.json();
+      setData(data);
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures the effect runs only once
+
+  return (
+    <div>
+      {data.map((item) => (
+        <p key={item.id}>{item.name}</p>
+      ))}
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Question: What is the Flux architecture, and how does it relate to React? Provide an example of implementing Flux in a React application.
+
+Answer: The Flux architecture is a pattern for managing state in applications. It emphasizes a unidirectional data flow, where data flows in a single direction: actions -> dispatcher -> stores -> views. Flux complements React by providing a clear separation of concerns and managing state in a predictable manner. An example implementation of Flux in a React application would involve creating actions to represent state changes, a dispatcher to dispatch actions, stores to manage the state and emit change events, and React components (views) to subscribe to store changes and update accordingly.
+
+Question: Identify and fix any issues in the following code that may cause memory leaks:
+
+import React, { useEffect, useState } from 'react';
+
+const MyComponent = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchData()
+        .then((newData) => setData([...data, newData]))
+        .catch((error) => console.error(error));
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once
+
+  return (
+    <div>
+      {data.map((item) => (
+        <p key={item.id}>{item.name}</p>
+      ))}
+    </div>
+
+
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Answer: The issue with the code is that it’s not properly cleaning up the interval when the component unmounts, which can lead to memory leaks. To fix this, we need to return a cleanup function from the useEffect hook that clears the interval. Here’s the updated code:
+
+import React, { useEffect, useState } from 'react';
+
+const MyComponent = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('API_URL');
+        const newData = await response.json();
+        setData((prevData) => [...prevData, newData]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    const interval = setInterval(fetchData, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once
+
+  return (
+    <div>
+      {data.map((item) => (
+        <p key={item.id}>{item.name}</p>
+      ))}
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Question: Explain the concept of Higher-Order Components (HOCs) in React. Provide an example of implementing an HOC and describe its use cases.
+
+Answer: Higher-Order Components (HOCs) are a pattern in React that allows for code reuse and logic sharing between components. HOCs are functions that accept a component as input and return an enhanced version of that component. They enable us to add additional functionality or modify the behavior of components without changing their original implementation. For example, we can create an HOC that adds authentication capabilities to a component by wrapping it with logic to check the user’s authentication status. This can be useful in scenarios where we need to reuse common logic across multiple components or when we want to separate concerns and keep our components focused on specific tasks.
+
+Here’s an example of implementing an HOC that adds a loading indicator to a component:
+
+import React from 'react';
+
+const withLoadingIndicator = (WrappedComponent) => {
+  return class extends React.Component {
+    state = {
+      isLoading: true,
+    };
+
+    componentDidMount() {
+      // Simulating an asynchronous operation
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 2000);
+    }
+
+    render() {
+      if (this.state.isLoading) {
+        return <div>Loading...</div>;
+      }
+
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+};
+
+const MyComponent = () => {
+  return <div>Content of the component</div>;
+};
+
+const MyComponentWithLoadingIndicator = withLoadingIndicator(MyComponent);
+
+export default MyComponentWithLoadingIndicator;
+Code language: JavaScript (javascript)
+This HOC adds a loading indicator to the MyComponent and displays it for a certain period of time to simulate an asynchronous operation. Once the loading is complete, the wrapped component is rendered.
+
+Question: Identify and fix any performance issues in the following code that renders a large list of items:
+
+import React from 'react';
+
+const MyComponent = ({ items }) => (
+  <div>
+    {items.map((item) => (
+      <Item key={item.id} item={item} />
+    ))}
+  </div>
+);
+
+const Item = ({ item }) => (
+  <div>
+    <p>{item.name}</p>
+    <p>{item.description}</p>
+    {/* More complex rendering logic */}
+  </div>
+);
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Answer: The issue with the code is that it doesn’t provide a unique key for each item in the map function. To fix this, we can use the item.id as the key for the <Item> component. Here’s the updated code:
+
+import React from 'react';
+
+const MyComponent = ({ items }) => (
+  <div>
+    {items.map((item) => (
+      <Item key={item.id} item={item} />
+    ))}
+  </div>
+);
+
+const Item = ({ item }) => (
+  <div>
+    <p>{item.name}</p>
+    <p>{item.description}</p>
+    {/* More complex rendering logic */}
+  </div>
+);
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Question: Explain the concept of virtual DOM in React and how it improves performance. Discuss the diffing algorithm used by React to update the virtual DOM efficiently.
+
+Answer: The virtual DOM is a virtual representation of the actual DOM (Document Object Model) in memory. React uses the virtual DOM to perform efficient updates and minimize the number of direct manipulations to the real DOM, which can be expensive in terms of performance. When a component’s state or props change, React creates a new virtual DOM representation of the component and performs a diffing algorithm to identify the minimal set of changes needed to update the real DOM.
+
+React’s diffing algorithm works by comparing the new virtual DOM with the previous virtual DOM. It performs a depth-first traversal of the component tree and identifies the differences between the two trees. It optimizes the updates by minimizing the number of operations required to sync the real DOM with the changes in the virtual DOM. React uses a reconciliation process to apply the identified changes to the real DOM in an efficient manner, ensuring that only the necessary updates are made.
+
+Question: Identify and fix any issues in the following code that uses Context API for state management:
+
+import React, { createContext, useContext, useState } from 'react';
+
+const MyContext = createContext();
+
+const MyComponent = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <MyContext.Provider value={{ count, setCount }}>
+      <ChildComponent />
+    </MyContext.Provider>
+  );
+};
+
+const ChildComponent = () => {
+  const { count, setCount } = useContext(MyContext);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Answer: The issue with the code is that the setCount function is not correctly updating the count state. In React, the state updater functions provided by useState hook can also accept a callback function, which receives the previous state as an argument. To fix this, we need to update the increment function to use the callback syntax. Here’s the updated code:
+
+import React, { createContext, useContext, useState } from 'react';
+
+const MyContext = createContext();
+
+const MyComponent = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <MyContext.Provider value={{ count, setCount }}>
+      <ChildComponent />
+    </MyContext.Provider>
+  );
+};
+
+const ChildComponent = () => {
+  const { count, setCount } = useContext(MyContext);
+
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Question: Explain the concept of code splitting in React and how it can improve application performance. Provide an example of implementing code splitting in a React application.
+
+Answer: Code splitting is a technique used to divide a large JavaScript bundle into smaller chunks, which can be loaded on-demand when needed. It improves application performance by reducing the initial load time and optimizing resource utilization. Code splitting allows for loading only the necessary code for the current user interaction, minimizing the amount of code that needs to be downloaded and executed.
+
+In a React application, code splitting can be implemented using dynamic imports. This is typically done using tools like webpack or Babel with dynamic import syntax or by using React.lazy and Suspense. Here’s an example of implementing code splitting using React.lazy and Suspense:
+
+import React, { lazy, Suspense } from 'react';
+
+const MyComponent = lazy(() => import('./MyComponent'));
+
+const App = () => (
+  <div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <MyComponent />
+    </Suspense>
+  </div>
+);
+
+export default App;
+Code language: JavaScript (javascript)
+In this example, the MyComponent is loaded lazily when it’s required. The Suspense component displays a fallback UI (e.g., a loading indicator) until the component is loaded.
+
+Question: Identify and fix any issues in the following code that uses Redux for state management:
+
+import React from 'react';
+import { createStore } from 'redux';
+
+const initialState = {
+  count: 0,
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + action.payload };
+    case 'DECREMENT':
+      return { count: state.count - action.payload };
+    default:
+      return state;
+  }
+};
+
+const store = createStore(reducer);
+
+const MyComponent = () => {
+  const { count } = store.getState();
+
+  const increment = () => {
+    store.dispatch({ type: 'INCREMENT', payload: 1 });
+  };
+
+  const decrement = () => {
+    store.dispatch({ type: 'DECREMENT', payload: 1 });
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+Code language: JavaScript (javascript)
+Answer: The issue with the code is that it’s missing the subscription to the Redux store updates. To fix this, we need to subscribe to the store and update the component state whenever the store state changes. Here’s the updated code:
+
+import React, { useState } from 'react';
+import { createStore } from 'redux';
+
+const initialState = {
+  count: 0,
+};
+
+const reducer = (state = initialState, action) =>
+
+ {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + action.payload };
+    case 'DECREMENT':
+      return { count: state.count - action.payload };
+    default:
+      return state;
+  }
+};
+
+const store = createStore(reducer);
+
+const MyComponent = () => {
+  const [count, setCount] = useState(store.getState().count);
+
+  store.subscribe(() => {
+    setCount(store.getState().count);
+  });
+
+  const increment = () => {
+    store.dispatch({ type: 'INCREMENT', payload: 1 });
+  };
+
+  const decrement = () => {
+    store.dispatch({ type: 'DECREMENT', payload: 1 });
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+
 Top 70 React Interview Questions and Answers
 Whether you’re looking to land your first web development job, earn a promotion, or seek a fresh challenge, these React interview questions cover the essential topics for all skill levels, including practical coding challenges.
 
