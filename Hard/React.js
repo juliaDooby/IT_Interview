@@ -1,3 +1,300 @@
+Top 35 React.js Interview Questions Answers for Fullstack Java Developers
+Hello guys, if you are preparing for React developer interviews and looking for frequently asked React.js interview questions then you have come to the right place. Earlier, I have shared the best courses, books, and websites to learn React.js and in this article, I am going to share 35 frequently asked React.js interview questions, suitable for 1 to 2 years experience developers. ReactJS is one of the most recently built open-source front-end programming languages. It came directly from Facebook's headquarter back in 2011. Earlier Recat.js was only limited to Facebook but now, it is one of the most extensively used programming languages all across the world.
+
+Websites built on MVC architecture include ReactJS as one of the main frontend library with JavaScript as the main programming language. If you'll look around the Job Portals or the opening in different companies throughout the world, you'll find that ReactJS is in high demand.
+
+Every company is looking for ReactJS developers/experts. If you are looking for a job, you can try your hands on ReactJS. It's easy to understand, but the only requirement of ReactJS is that you need to dive into the concepts in order to implement them into building complex components.
+
+In this guide, we can't groom your programming skills, but we will train you to get through your Interview.
+
+This guide contains, 30 most frequently asked ReactJS Interview Questions with Answers for fullstack Java developers. According to us, you must at least prepare these 30 questions. Once you are done with these, you won't leave any theoretical concepts of React.js  unturned.
+
+
+
+
+
+ 
+30 React.js Interview Questions and Answers for 3 to 5 Years Experienced Web Developers
+Here is my list of common React.js interview questions with answers. We are confident enough that these questions will help you thoroughly prepared for your React developer interview as well on Fullstack Java developer interviews where React.js and Spring Boot are needed. 
+
+These questions cover most of the React fundamental concepts and after going through them, you'll find your interview quite easy and it won't be an issue for you to get that job. Let's jump on the questions:
+
+1. What is the major shortcoming of the ReactJS language?
+Though ReactJS is a modern-day programming language that is capable to be a part of complex websites but, end of the day, ReactJS isn't a complete Framework. It is a Library.
+
+Therefore, depending only on ReactJS isn't something advisable for experts.
+
+ 
+2. What is JSX and How is it linked with ReactJS?
+JSX is a ReactJS extension that enables developers to write JS Code that looks identical to HTML. It makes the blend of JS and HTML easy to understand.
+
+JSX has most of the tag names that HTML has, therefore it is easy to write and understand. If you are someone with basic knowledge of HTML, you can understand JSX without additional effort.
+
+ 
+3. List the benefits of JSX.
+
+JSX does the same Job as JS but still, it used over JS because of the following reasons:
+
+● JSX is faster than JS
+
+● It is more optimized than JS
+
+● Easy to Debug
+
+● Most Errors are thrown at Compile Time
+
+● Creating Templates in JSX is easier than JS
+
+● The above benefits make JSX dominate JS.
+
+ 
+4. Explain the Difference between ReactJS and Angular?
+Angular is created by Google whereas ReactJS is built by Facebook Community. Angular is comparatively slower than ReactJS. Angular uses Regular DOM whereas, ReactJS uses Virtual DOM.
+
+
+
+
+
+5. List the difference between ReactJS and ReactNative?
+The major difference between ReactJS and ReactNative is that ReactJS is used for developing web applications whereas ReactNative is used for developing mobile applications.
+
+Apart from this, ReactJS is a platform-independent programming language whereas ReactNative is platform-dependent.
+
+ReactJS uses HTML tags, whereas ReactNative doesn't include or use HTML tags.
+
+ReactJS have JS libraries and CSS for animations but React Native has a built-in independent library for Animations.
+
+ 
+6. Which one of them is fast: Real DOM or Virtual DOM?
+Real DOM is comparatively slower than Virtual DOM. Besides this, Memory wastage is more in Real DOM than Virtual DOM.
+
+
+ 
+7. What does the "Render()" mean?
+Render() method is not user callable, it's a React Component's part that allows it to communicate with other React Components.
+
+ 
+8. List the Features of ReactJS?
+Though ReactJS has dozens of features, some of the major features that ReactJS have are listed below:
+● It used Virtual DOM, which is faster and more flexible.
+● It includes Server-Side Rendering
+● Data Flow used in ReactJS is Uni-Directional
+
+ 
+9.   What do you mean by Props?
+Props are the immutable components of ReactJS. These props are passed from Parent to Child components. Childs can't pass it back to Parent components. This is how unidirectional data flow is maintained. Props are used to render the newly dynamically data that is generated by the components.
+
+ 
+10. What does Arrow Function mean in ReactJS?
+In ReactJS, Arrow Functions are also known as "Fat Arrow". Arrow functions are used when high-order functions are being implemented. Arrow Function enables use to bind the component's context because ReactJS uses ES6 and it doesn't have auto binding enabled by default.
+
+
+
+ 
+11. What do you mean by Stateful Component?
+Stateful Components are storing the information about a Component's State Change in the memory.
+This information includes past, current, and coming changes in the state. Besides this, the Stateful components have the authority to change the State of a Component. 
+
+ 
+12. What do you mean by Stateless Component?
+This component calculates all the internal states of different other components. It doesn't have any authority to change the state of components. Besides that, Stateless Component doesn't have any information of past, current, and coming changes of the components.
+
+ 
+13. What do you mean by "Unmounting Phase" of React Components?
+Unmounting Phase is the final phase of the lifecycle of the component. In this phase, the component is removed from the Virtual DOM.
+
+ 
+14. What is Updating Phase?
+Updating Phase is the second last phase of the lifecycle of the component. Whenever a component is added to the virtual DOM, the updating phase comes into the picture. This phase can update and re-render the component whenever its state is changed.
+
+ 
+15. What do you mean by an event in ReactJS?
+An event in ReactJS acts like a reaction to some trigger action like a mouse click, KeyPress, or any other input device's action. We can handle these events similarly like we handle events in the virtual DOM element. Besides that, we can pass the events as functions instead of basic strings.
+
+ 
+16 List different lifecycle methods of ReactJS Components?
+Though there are different lifecycle methods of ReactJS Components some of them are mentioned below:
+
+1. componentWillMount(): This method gets executed moments before rendering takes place on the server-side and client-side.
+2. componentWillRecieveProps(): Whenever Props are received from the parent to some child, this method is invoked.
+3. componentWillUpdate(): Just before the render takes place in Virtual DOM, this method is invoked.
+4. componentDidUpdate(): Right after the render, this method is invoked.
+5. componentWillUnmount(): Once the component is unmounted from the DOM, this method is called.
+6. shouldComponentUpdate(): This method returns boolean value based on some conditions. When components need to be updated, true must be returned from the method, else false will work.
+7. componentDidMount(): This method is called right after the rendering.
+
+what are  lifecycle methods of ReactJS Components?
+
+
+
+ 
+17. What do you mean by refs in ReactJS?
+"Refs" is the abbreviated term of Reference of ReactS. This attribute is used to store the reference of an element of ReactJS.
+
+ 
+18. What do you mean by Controlled Components?
+In ReactJS, there are two types of components, Controlled Components, and UnControlled Components. Controlled Components are those that neither maintain their state nor own the data. Their parent components maintain the data.
+
+ 
+19. What is the React Router?
+React Router is a routing library build over React, this library was built to enable developers to add new flows and screens in the applications. React Router can be easily implemented using an API.
+
+ 
+20. What is a Redux? (answer)
+There are several front-end libraries available that are built on top of React, Redux is one of them. It is one of the most popular libraries among React front-end developers. Redux is used as a state manager of the entire Application. 
+
+Basically, Redux is a predictable state container that works with JS applications. Overall, Redux makes applications easy to test. By the way, in the latest React version, you can also use hooks for statement management. 
+
+Top 30 React.js Interview Questions Answers for 1 to 2 Years Experienced
+
+
+
+ 
+21. List the Advantages of Redux?
+There are a dozen of Redux, some of them are as follows:
+
+● Huge Community Support: Redux is being used by hundreds of developers, it has a very strong community that will no doubt help you in situations where you can't identify some error related to Redux.
+
+● Makes Testing Easily: Since States of application are being stored, therefore it makes the validation process quite easy for testers.
+
+● Maintainability: Once, the states are tracked and safely, it becomes easy for a developer to maintain the application, and the predictable outcomes make the complete maintaining process quite smooth.
+
+● Easy Organisation: Redux creates a state store on the server-side, therefore it makes organization easy for the developers.
+
+● In-built Tools: You can do multiple operations using Redux, for example, you can track state change and actions altogether.
+
+● Server-Side Rendering: Redux stores every information on the server-side therefore you just have to pass that store created on the server to your client-side. This eliminates the hustle and offers an enhanced User experience.
+
+ 
+22. What is difference between Conventional Routing and React Routing?
+React Routing uses a single HTML Page for multiple views whereas Conventional Routing creates a different file for different views.
+
+Besides that, In React Routing whenever a new HTTP request is passed to the server, only the history attribute is changed in the HTML Page but in Conventional Routing, a new HTML page is received from the server.
+
+differences between Conventional Routing and React Routing.
+
+
+ 
+23. What are the common problems in MVC Frameworks?
+Here are some common problems associate with MVC frameworks:
+
+● In MVC Frameworks, applications are comparatively slower and more inefficient than other alternatives of MVC Framework.
+
+● Besides that, MVC Framework has circular dependencies, therefore this makes a model more complicated.
+
+● Memory Wastage is very higher in MVC Frameworks
+
+● The most important drawback of MVC Frameworks is the DOM manipulation. Manipulating DOM in MVC frameworks can be a very expensive and slow pace process.
+#24 What do you mean by Flux?
+
+In order to maintain uni-directional flow in ReactJS, Flux is used. Basically, Flux is an architectural pattern that ensures that uni-directional flow is being maintained.
+
+ 
+25 How many components do Redux have? List all of them.
+Redux has a total of 5 components. They are as follow:
+
+Action: This component is an object that has information on all the actions that happen in the Application.
+
+Reducer: This is a vital component of Redux, this component determines or we can say predicts how the state of the application will change.
+
+Store: It is a state tree that contains all the states of the entire application. It is created on the server.
+
+View: This component displays all the data that is there in the Store.
+
+ 
+26. The statement "Single Source of Truth" is associated with?
+Single Source of Truth is linked with Redux, it is because Redux stores all the state information of an application. The store component contains all information related to different states, it uses a single state tree to store all that information.
+
+Therefore the developer has a single source from where it can get all the required information about the States of different components of the application.
+
+That's the Statement "Single Source of Truth" is linked with Redux.
+
+
+
+
+ 
+27. List the methods to create a component in ReactJS.
+In ReactJS, we can create a component in two different ways. The first is "Function Component" whereas the second is "Class Component".
+
+Function Component: 
+This method is considered the easiest way to create a component in ReactJS. In this way. we have a pure JS function, in which we can pass the props object as a parameter, and using the return statement we can get the elements.
+
+Class Component: 
+In this method, we have to use the ES6 Class. Insides that class we can create a component with the help of return statement and props object.
+
+In order to eliminate any possible doubts, it is advised to go with the "Function Component" method.
+
+ 
+28. In JSX, can a web browser directly read?
+No, directly a web browser cannot read JSX. Our web browsers are built to read the basic JS Objects and JSX isn't a basic JS Object. We can use Babel to enable the web browser to read JSX directly. Using Babel, we are just converting all the required files into a basic JS Object.
+
+ 
+29. What do you mean by the state in ReactJS? (answer)
+In every component, there is an object called State. This object stores information about the current status of the component. This information keeps on changing and could vary multiple times in a component's lifetime.
+
+State of all the components when tracked is often considered as tracking states of an application. The least number of states indicates simplicity and enhances the performance of an application.
+
+ 
+30. In many ways can you style the Reach Components?
+A React Component can be styled in 4 different ways:
+
+● Inline Styling
+
+● CSS Stylesheet
+
+● CSS Module
+
+● Styled Components.
+
+
+
+
+
+5 More Frequently React.js Interview Questions Answers
+In this section, I have listed 5 Short types of ReactJS interview questions that are frequently asked to both freshers and experienced ReactJS developers.
+
+Though these are short type question, these question helps the interviewer to test your knowledge quickly and quite easily. In order to be ready for every possible situation, it is recommended to go through these questions at least once.
+
+ 
+31. What is the Reconciliation process in ReactJS?
+The reconciliation process is a process that allows ReactJS to update the DOM as shown below:
+
+React Interview Questions with answers
+
+
+
+
+ 
+32. What is Babel?
+Babel is a compiler as well as a transpiler. It is majorly used to convert the JSX files to basic JS Object files.
+ 
+33. What does an arbitrary input of component term as?
+All the arbitrary inputs of components are termed as Props in React.
+
+ 
+34. What is the correct flow sequence of Flux in React?
+The correct flow sequence of Flux in React is as follows:
+Action
+Dispatcher
+Store
+View
+ 
+35. What does "key" indicate in Props?
+The "key" in props helps React to determine the recently added items in a list. It also compares the items during the "diffing" algorithm.
+
+
+That's all about the 30 React.js interview questions and answers for 1 to 2 years experienced developers. These questions are useful for both frontend developers as well as Fullstack developers like Fullstack Java Developer where React.js is used. 
+
+You might have a lot of questions in your mind regarding the interview. Internally, you wanted to know every single question that will be asked in your upcoming interview. But, that is not possible. However, if you have gone through the 30 Frequently asked interview questions mentioned above, you can easily tackle every possible question that will be asked to you in your interview.
+
+Besides that, if you are unable to answer a few questions, you must not get nervous. No one can answer all the questions, the only thing that matters is "How you answer the question that you know". You can't answer every question in a single statement.
+
+If required, you must use multiple statements to explain the answer. However if not required, avoid forcefully stretching the answers. This will convey the wrong message to the interviewer and that could change everything irrespective of your knowledge.
+
+Before answering any of your interview questions, it is recommended to invest a moment in preparing the answer before saying it. If you'll prepare the answer while speaking, you will end up saying something that isn't clear and effective.
+
+You'll be great in your interview. Just have faith in yourself. Apart from this, if you have any queries, do let me know in the comments. We will discuss it further as soon as I come across it.
+
 React Interview Questions for Developers
 Use our engineer-created questions to interview and hire the most qualified React developers for your organization.
 
