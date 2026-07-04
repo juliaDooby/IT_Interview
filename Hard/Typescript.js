@@ -1,3 +1,371 @@
+Benefits of TypeScript
+With TypeScript, the production of pure object-oriented code is possible even with limited knowledge as this is completely object-oriented programming.
+It can be used for both server-side and client-side development alike.
+TypeScript comes with types that make code easier to read and void major errors.
+As it’s a package, TypeScript can be installed on projects via npm. This will make new features available and compile to all modern browsers.
+TypeScript offers an API for DOM manipulation.
+It also has the concept of the namespace by Module defining.
+With IDE support here, developers will save a ton of valuable time here.
+Most Frequently Asked TypeScript Interview Questions
+Here in this article, we will be listing frequently asked TypeScript Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
+
+Q1. What is TypeScript and why it is used for?
+Answer
+TypeScript is an object-oriented, open source programming language maintained and developed by Microsoft. It is developed to overcome the flaws of JavaScript. As a superset of JavaScript, TypeScript can be used to develop large JavaScript applications with support for modules and classes, ES6 features, Type-checking, API definition, JavaScript packaging support, class library, and more.
+
+Q2. How to install TypeScript on windows?
+Answer
+Steps to install TypeScript environment in Windows are given below.
+First, download the latest version of TypeScript from its official website.
+We can install TypeScript using Node.js, Visual Studio, or other supported editors, but the first two are the most common way to install it.
+Download and run the .msi installer for Node support.
+Then, we will use npm to install TypeScript using Node.js. Just running the below-mentioned command in the Windows command will install the latest version.
+npm install -g typescript
+We can check the version of TypeScript by running the following command in the terminal.
+tsc -v
+To get help for other options here, use the following command
+tsc -h
+To install TypeScript using Visual Studio, download Visual Studio Code, and launch it.
+Now by right clicking on the file → open in the command prompt, users may traverse to the file’s path.
+Now, creating a TypeScript file is possible just by adding a new file with a .ts extension. All the features of TypeScript will be available out of the box
+Q3. Why is TypeScript strongly typed?
+Answer
+TypeScript is strongly typed to syntactical benefits to this language while still allowing users to write normal JavaScript. It also ensures the production of predictable results with fewer errors and more secure.
+
+Also Read: What’s New in TypeScript 4.0
+Q4. What is the difference between TypeScript and JavaScript?
+Answer
+S.no	TypeScript	JavaScript
+1.	Typescript is an object-oriented language.	JavaScript is a scripting language.
+2.	Static typing feature is available here.	Doesn’t support static typing.
+3.	TypeScript supports modules.	JavaScript doesn’t support modules.
+4.	It has an interface.	Doesn’t have any interface.
+5.	The optional parameter function is supported here.	JavaScript doesn’t support optional parameter function.
+Q5. What is the advantage of TypeScript?
+Answer
+Here is a list of benefits developers can enjoy with the use of TypeScript.
+
+TypeScript supports optional static typing.
+Incredible code scalability due to interface oriented development.
+Compliance with ES-next.
+Enhances code readability and quality with Types.
+Use of advance compilers to check errors.
+It includes dependency injection, which offers great testing and controller based APIs.
+Extremely predictable and maintainable code-base.
+Implementation of SOLID design patterns into a language is easy here.
+Clean code generation due to static typing.
+Refactoring is easy and fasts with TypeScript tools.
+Q6. What is the use of decorators in TypeScript?
+Answer
+In TypeScript, decorators are used to offering a way to add both meta-programming syntax and annotations for members and declarations.
+
+Q7. How to enable Decorators in TypeScript via command line?
+Answer
+To enable decorators in TypeScript, developers first have to enable the option of experimentalDecorators via command line or tsconfig.json.
+
+Here is the command line to use.
+$tsc --target ES5 --experimentalDecorators
+For tsconfig.json, use the following syntax.
+{
+   "compilerOptions": {
+      "target": "ES5",
+      "experimentalDecorators": true
+   }
+}
+Q8. How to compile a Typescript file?
+Answer
+For compiling a Typescript file, follow these steps carefully:
+
+Install the Typescript compiler, tsc.
+Add a tsconfig.json file
+Transpile Typescript into Javascript
+Compile with the --sourcemap or set the sourceMap property in the tsconfig.json file as true for map support.
+Q9. What is components in TypeScript? Also explain its types.
+Answer
+The Typescript components comprise 3 parts. They are:
+
+Language: It consists of features of the language element of Typescript. Syntax, keywords, and type annotation rules and syntax are covered in this.
+The TypeScript Compiler: Used to compile the same code into Javascript. It also parses and checks the type of code being compiled into Javascript.
+TypeScript Language Services: This provides information that helps editors and other tools to increase productivity by automated refactoring and Intellisense.
+Q10. What is static typing in TypeScript?
+Answer
+In TypeScript, static typing means parameters, variables, and object members have types that compiler recognizes at the time of compile. This helps in detecting early errors faster than unit test runs. It also greatly helps IDEs with auto-completion and API exploration with statically typed DOM. Static typing is an important chapter which supports a number of TypeScript Interview Questions, so it’s crucial to practice this one.
+
+Q11. Explain access modifiers in TypeScript?
+Answer
+TypeScript developers can use the access modifiers to control the accessibility of the class members. There are two types of access modifiers in TypeScript; private and public modifiers. Class members are public by default, but users can add a private modifier if they wish.
+
+Q12. What is the prototype in TypeScript?
+Answer
+The prototype property in TypeScript allows users to include methods and properties to an object. It allows cloning objects (complex ones also) without coupling to their specific classes. Prototype objects can create full copies due to the accessibility of objects to each other’s private field.
+
+Q13. What is super in TypeScript?
+Answer
+Super is a TypeScript keyword which can be used by developers in expressions for base class constructor and base class properties reference. This call is only allowed in constructors of derived classes. Call for this keyword consist the keyword super with an argument list closed in parentheses.
+
+Q14. What is the callback function in TypeScript?
+Answer
+In TypeScript, the callback function is used to schedule a call after some asynchronous processing is completed. It is passed to another function as a parameter that allows callback function to be called when the process of asynchronous processing is completed.
+
+Also Read: How to crack the interview in the first attempt
+Q15. What is the export class in TypeScript?
+Answer
+In TypeScript, an extra line is added to the JS code using the export class which is then used to add an exported item within a module.
+
+Q16. What is AMD in TypeScript?
+Answer
+In Typescript, the Asynchronous Module Definition (AMD) is used to specify a process for defining modules in a manner such that modules and their dependencies can be loaded asynchronously. This is greatly helpful in a browser environment where performance, usability, debugging, and access to cross-domain problems occur due to the synchronous loading of modules.
+
+Q17. What is the use of the tsconfig.json file in typescript?
+Answer
+Developers add tsconfig.json file or TypeScript configuration file to a project to guide the compiler as the JavaScript files are generated by it. This file also contains flags and options that are essential to run Angular applications.
+
+Q18. What are the data types in TypeScript?
+Answer
+This one is a regular TypeScript interview question that almost every candidate faces. Here are the basic data types present in TypeScript described below.
+
+Number Types: In TypeScript, number values are floating values which have a type of number. Users can assign any numeric value, including hexadecimal, binary, decimals, and octal literals also.
+String Types: When a user desires to implement textual data, string types will be needed. It gets denoted by the keyword string.
+Boolean Types: It is used for declaring variables and accompanied by the keyword boolean.
+Enum Type: It can be used for numeric values with friendly names. It is declared with the keyword of “enum.”
+Void Types: Used for the function that doesn’t return any value.
+Null Types: Used to declare a variable type null. It can be assigned to boolean and number value.
+Undefined Types: It is used to store the value undefined.
+Any Types: It can be implemented to ensure data value to declare said values.
+Never Types: It represents the data type of values that never occur.
+Array Type: Used to declare data arrays.
+Tuple Types: This data type allows users to create an array where the fixed number type elements are known but not the same.
+Q19. What are mixins in TypeScript?
+Answer
+Mixins are used in the creation of small and reusable objects in Typescript. You can now compose the selected objects into larger objects through multiple inheritances. Then, use it to share the common components between classes while reusing the components from one single class to parallelly run two classes in Typescript.
+
+Q20. Is it possible to merge multiple .ts files into a single .js file?
+Answer
+Yes, it's possible. To successfully merge multiple TS files together in a JS file, use a module bundler system or a Gulp Script to concatenate everything into a single JS file.
+
+Q21. How to extends two classes in TypeScript?
+Answer
+Q22. How to check null and undefined in TypeScript?
+Answer
+Users can test both null and undefined at once in TypeScript using the following syntax.
+
+if (x == null) {
+
+Q23. What are the Modules Typescript?
+Answer
+A module in TypeScript is a file containing functions, classes, or values. Users can make them public (to be visible from other modules) just by exporting them. Non exported modules stay private to other modules. These TypeScript interview questions are extremely career-promoting for both freshers as well as experienced professionals when practiced properly.
+
+Q24. What is import and export in TypeScript?
+Answer
+The export keyword is used to export any declaration such as function, variables, interface, or type alias. The export * from "module" can be used by a module to wrap one or more modules and combine together their exporting. Whereas, the import keyword is used to export declaration.
+
+Q25. How to Implement Inheritance In Typescript?
+Answer
+Inheritance can be implemented in Typescript through the following:
+
+GO to Visual Studio, then, File -> New-> Project
+Select HTML application with Typescript as Visual C# template and name it as Inheritance.
+Now, write the code below in which a class “Student” is used to display the position of students in a class.
+class Students {  
+ constructor(public name) {}  
+ Position(Div) {  
+  alert(this.name + " " + "Position in the School is:" + Div);  
+ }  
+}  
+class Student1 extends Students {  
+ constructor(name) {  
+  super(name);  
+ }  
+ Position() {  
+  alert("Student1");  
+  super.Position(2);  
+ }  
+}  
+class Student2 extends Students {  
+ constructor(name) {  
+  super(name);  
+ }  
+ Position() {  
+  alert("Student2");  
+  super.Position(4);  
+ }  
+}  
+var one = new Student1("Rohan")  
+var two: Students = new Student2("Mohan")  
+one.Position()  
+two.Position(34)
+Code this command in the default htm.file
+<html>  
+    <head>  
+        <title>Simple Inheritance In TypeScript</title>  
+    </head>  
+    <body >  
+        <h1>Simple Inheritance In TypeScript</h1>  
+        <script src="app.js"></script>  
+    </body>  
+</html>
+The output of this application should be like this:
+Click OK and the position of any student will be displayed
+Q26. What are Arrow functions in TypeScript?
+Answer
+The Arrow function in TypeScript is used to eliminate the repetitive typing of function. It also lexically captures the meaning of both this and arguments.
+
+Q27. What is the advantage of Arrow function in TypeScript?
+Answer
+The two significant benefits that Arrow function in TypeScript offers:
+
+They are less verbose compared to traditional functions.
+This function takes the “this” from its surroundings.
+Q28. What is the difference between TypeScript and es6?
+Answer
+S.no	TypeScript	ES6
+1.	Extremely comfortable to eradicate the development error.	ES6 is more comfortable in development deployment.
+2.	It’s an open source programming language.	It’s a scripting language.
+3.	It supports all primitive data types.	ES6 doesn’t support primitive data types.
+4.	TypeScript has 3 scopes: Global, Class, and Local.	It has only two scopes: Global and Local.
+Q29. What is getters and setters in TypeScript?
+Answer
+In TypeScript, Getter is the method to obtain the value of a specific property, whereas the setter method is used to set the value of the specific property.
+
+Q30. Why are optional parameters added in TypeScript?
+Answer
+Developers can use the optional parameter to declare parameters in function optional so that the requirement to pass the value to optional parameters gets eliminated. We have to use “?” at the end of a parameter to mark it optional as just shown below.
+
+function functionName(par1: number, par2?: number) {
+}
+
+Here par2 is an optional parameter.
+
+Q31. What is the difference between the internal and external modules?
+Answer
+Internal Modules	External Modules
+Internal modules consist of local or exported members of other internal modules.	These are separately loaded bodies of code that have been referenced using some external module names.
+Are declared using ModuleDeclarations specifying their name and body.	Are declared using AmbientModuleDeclarations in the global module directly specifying the external module names as string literals.
+Q32. Which keyword is used for inheritance in TypeScript?
+Answer
+TypeScript uses the keyword ‘extends’ to support inheritance. The syntax will be as following:
+
+class child_class_name extends parent_class_name
+
+Q33. How to write a function in typescript?
+Answer
+In Typescript, a function in TypeScript can be written in two ways:
+
+Named Function
+This type of function is written and called using its own name.
+
+Example:
+function display() {
+console.log("Hello Best Interview Question Team!");
+}
+display(); //Output: Hello Best Interview Question Team
+
+Anonymous Function
+In this function, the code is written and stored through expressions or variables. The variable/expression name is used to call the stored data types.
+
+Example:
+let greeting = function() {
+console.log("Hello Best Interview Question Team");
+};
+
+greeting(); //Output: Hello Best Interview Question Team
+
+Q34. How to declare a module in TypeScript?
+Answer
+Here’s how to declare modules in Typescript:
+
+Declaring any of the external modules having no exposed types or values:
+declare module 'Foo' {
+   var x: any;
+   export = x;
+}
+
+For declaring individual classes
+declare module 'Foo' {
+   export type cls = any;
+   export var cls: any;
+}
+
+Q35. How to import a module in typescript?
+Answer
+Modules can be imported using the import keyword. Here’s a detailed info into it:
+
+Importing individual exports from within a module:
+
+import { Employee } from "./Employee";
+let empObj = new Employee("Best Interview Question", 1);
+empObj.displayEmployee(); //Output: Employee Code: 1, Employee Name: Best Interview Question
+
+Now, to import the exports within a module as a variable into another module, use this code:
+
+import * as Emp from "./Employee"
+console.log(Emp.age); // 10
+let empObj = new Emp.Employee("Best Interview Question" , 2);
+empObj.displayEmployee(); //Output: Employee Code: 2, Employee Name: Best Interview Question
+
+Q36. How to create an object in typescript?
+Answer
+In Typescript, an object is used to store a set of key-value pairs. Following is a syntax for creating an object in Typescript:
+
+var object_name = {
+
+    key1: “value1”,
+
+    key2: “value”,
+
+    key3: function() {
+
+    },
+
+    key4:[“content1”, “content2”]
+
+};
+
+Q37. How to call typescript function from JavaScript?
+Answer
+Compiling Typescript into Javascript is done using a JS function. During this process of compiling, the code structure could be changed a bit. If you have multiple modules or classes in the typescript, then they would become a part of the path to call the specific function.
+
+class Foo{
+
+     constructor(){}
+
+     public Bar = () : string =>{
+
+         return "This is a string";
+
+     }
+
+}
+
+module FooModule {
+
+     export var FooInstance = new Foo();
+
+}
+
+If you would want to call this in Typescript, use this command:
+
+FooModule.FooInstance.Bar();
+
+Note: The pages mentioned above have to be imported in a proper manner to call in Typescript.
+
+Q38. How to check type of variable in typescript?
+Answer
+The typeof command is used to check the data type of any variable in Typescript.
+
+Example:
+Variable: abc:number|string;
+if (typeof abc === "number") {
+   // do something
+}
+
+Q39. How to use typescript in visual studio 2015?
+Answer
+To successfully use Typescript with Visual Studio, follow these steps:
+Install the Typescript compiler, tsc
+Go to the Solutions Explorer and Click on properties
+Now, go to the Typescript Build Tab and change the Typescript version as per requirement.
+
 20 React TypeScript Interview Questions and Answers
 July 16, 2025
 As a popular programming language, TypeScript is often used in React applications. If you are interviewing for a position that uses React with TypeScript, it is important to be prepared to answer questions about your experience with both technologies. In this article, we review some common React TypeScript questions and provide guidance on how to answer them. With this information, you can enter your next interview feeling confident and ready to impress.
