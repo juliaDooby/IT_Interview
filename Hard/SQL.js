@@ -1,12 +1,960 @@
+75+ Top SQL Interview Questions and Answers in 2026
+ 
+
+If you’re preparing for an SQL interview, you’ve got to make sure that you are prepared to handle all sorts of questions, from the basic to the advanced SQL interview questions. A little preparation can go a long way in boosting your confidence for that next Database Developer job interview.
+
+The set of common SQL interview questions here covers all SQL functionalities, split into three sections of basic, intermediate, and advanced difficulty. If you want a refresher you may want to check out SQL Tutorials recommended for you.
+
+But before we hop into these SQL server interview questions, let’s take a look at some general questions on SQL and related interviews.
+
+How Do I Prepare for the SQL Interview?
+Like you would prepare for any other interview, though you might find yourself focusing a little more on theory with an SQL interview. Be sure to know the commands, as well as the theory behind processes and decisions. A mix of hands-on learning and reading up is the best way to prepare for an SQL interview.
+
+What Do I Need to Know for the SQL Interview?
+You’ll need to know some basic ideas and commands about how to operate with databases. Essentially, you will have to prove that you can carry out the functions you would need to do in a practical setting. Fortunately, the SQL interview questions and answers listed here cover everything you need to know.
+
+How Can I Practice SQL?
+The best way to practice SQL is to download the database software and start working with it. That means creating a table, entering data, and modifying it. Look up the various SQL commands and execute them in the software. And of course, don’t forget to read SQL query interview questions.
+
+Top SQL Interview Questions and Answers
+Basic SQL Interview Questions
+The following section covers basic concepts, with the following section focusing on intermediate and advanced SQL questions.
+
+1. What are the 5 basic SQL commands?
+The 5 basic SQL commands are ALTER, UPDATE, DELETE, INSERT and CREATE. Of course, there are many more commands, some more nuanced, but the aforementioned are the fundamentals.
+
+2. What is the difference between DBMS and RDBMS?
+A Database Management System (DBMS) is a software application that helps you build and maintain databases. A Relational Database Management System (RDBMS) is a subset of DBMS, and it is one based on the relational model of the DBMS.
+
+3. Can we embed Pl/SQL in SQL? Justify your answers.
+PL/SQL is a procedural language, and it has one or more SQL statements in it, so SQL can be embedded in a PL/SQL block; however, PL/SQL cannot be embedded in SQL as SQL executes a single query at a time.
+
+DECLARE                            /* this is a PL/SQL block */
+
+  qty_on_hand  NUMBER(5);         
+
+BEGIN
+
+  SELECT quantity INTO qty_on_hand FROM inventory     /* this is the SQL statement embedded in the PL/SQL block   */
+
+    WHERE product = 'TENNIS RACKET';
+
+ END;
+4. What do you mean by Data Manipulation Language (DML)?
+Data Manipulation Language (DML) includes the most common SQL statements to store, modify, delete, and retrieve data. They are SELECT, UPDATE, INSERT, and DELETE.
+
+DECLARE                            /* this is a PL/SQL block */
+
+  qty_on_hand  NUMBER(5);         
+
+BEGIN
+
+  SELECT quantity INTO qty_on_hand FROM inventory     /* this is the SQL statement embedded in the PL/SQL block   */
+
+    WHERE product = 'TENNIS RACKET';
+
+ END;
+5. What is a join in SQL? What are the types of joins?
+A join is used to query data from multiple tables based on the relationship between the fields.
+
+There are four types of joins:
+
+Inner Join
+
+Rows are returned when there is at least one match of rows between the tables.
+
+SELECT first_name, last_name, order_date, order_amount
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.customer_id = o.customer_id;
+/* customers and orders are two tables. Data will be displayed from the two tables where the customer_id from customer table matches
+
+The customer_id from the orders table. */
+
+Right Join
+
+Right join returns all rows from the right table and those which are shared between the tables. If there are no matching rows in the left table, it will still return all the rows from the right table.
+
+SELECT first_name, last_name, order_date, order_amount
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.customer_id = o.customer_id;
+/* customers and orders are two tables. All rows from the Orders table is returned with matching rows from the Customers table if any */
+
+Left Join
+
+Left join returns all rows from the Left table and those which are shared between the tables. If there are no matching rows in the right table, it will still return all the rows from the left table.
+
+SELECT first_name, last_name, order_date, order_amount
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id;
+/* customers and orders are two tables. All rows from the customers table is returned with matching rows from the orders table if any */
+
+Full Join
+
+Full join return rows when there are matching rows in any one of the tables. This means it returns all the rows from the left-hand side table and all the rows from the right-hand side table.
+
+SELECT first_name, last_name, order_date, order_amount
+FROM customers AS c
+FULL JOIN orders AS o
+ON c.customer_id = o.customer_id;
+/* customers and orders are two tables. All rows from the Orders table and customer table are returned */
+
+6. What is the difference between the CHAR and VARCHAR2 datatype in SQL?
+CHAR is used to store fixed-length character strings, and VARCHAR2 is used to store variable-length character strings.
+
+For example, suppose you store the string ‘Database’ in a CHAR(20) field and a VARCHAR2(20) field.
+
+The CHAR field will use 22 bytes (2 bytes for leading length).
+
+The VARCHAR2 field will use 10 bytes only (8 for the string, 2 bytes for leading length).
+
+7. Explain SQL constraints.
+Constraints are used to specify the rules of data type in a table. They can be specified while creating and altering the table. The following are the constraints in SQL:
+
+NOT NULL: Restricts NULL value from being inserted into a column
+CHECK: Verifies that all values in a field satisfy a condition
+DEFAULT: Automatically assigns a default value if no value has been specified for the field
+UNIQUE: Ensures unique values to be inserted into the field
+INDEX: Indexes a field providing faster retrieval of records
+PRIMARY KEY: Uniquely identifies each record in a table
+FOREIGN KEY: Ensures referential integrity for a record in another table
+8. What is a primary key, a foreign key, and a unique key?
+Primary Key
+
+primary-key
+
+The primary key is a field in the table which uniquely identifies a row. It cannot be NULL
+
+Foreign Key
+
+“foreign-key"
+
+A foreign key is a field in one table that is a primary key in another table. A relationship is created between the two tables by referencing the foreign key of one table with the primary key of another table.
+
+In the example below, the employee_id_ref in the salary table is the foreign key.
+
+Unique Key
+
+The Unique Key uniquely identifies a record in a table. There can be many unique key constraints defined on a table.
+
+EMP_ID
+
+EMP_NAME
+
+Government_ID
+
+222
+
+Harry
+
+111-203-987
+
+333
+
+Stephan
+
+789-456-123
+
+444
+
+Lan
+
+745-562-321
+
+In the table above Emp_id is the primary key but Government_id is the unique key. You may want the Government_id to be unique for every employee. Since the data belongs to the government, you may not want it to be the primary key.
+
+The Complete SQL Bootcamp 2024: Go from Zero to Hero
+
+9. What is a trigger?
+Triggers are stored programs that get automatically executed when an event such as INSERT, DELETE, and the UPDATE (DML) statement occurs. Triggers can also be evoked in response to Data definition statements(DDL) and database operations, for example, SERVER ERROR, LOGON.
+
+create trigger dbtrigger  
+
+on database  
+
+for 
+
+create_table,alter_table,drop_table 
+
+as 
+
+print'you can not create ,drop and alter table in this database'  
+
+rollback;
+
+create trigger emptrigger  
+
+on emp  
+
+for 
+
+insert,update,delete 
+
+as 
+
+print'you can not insert,update and delete this table i'  
+
+rollback;
+10. What is the difference between SQL and MySQL?
+SQL is a structured query language used to access the DBMS whereas MYSQL is an Open Source Relational DBMS. The latter operates on the relational model, allowing for more advanced ways to deal with data.
+
+11. What is a NULL Value field?
+A NULL value is a field with No Value.
+
+Intermediate-Level Interview Questions
+12. What are ACID properties in a transaction?
+In order to maintain consistency in a database’s ‘before and after’ transactions, certain properties are followed. They are:
+
+Atomicity: The transaction must happen fully and cannot be left midway
+Consistency: This maintains integrity constraints to ensure valid data enters the database
+Isolation: Controls concurrency
+Durability: Once a transaction is committed, it remains committed
+13. What is Dateadd in SQL?
+Dateadd is a function that is used to add a number to a specified part of the date and returns the modified date. The syntax is DATEADD (date_part, value, input_date).
+
+The Date part can take any of the following forms:
+
+date_part
+
+abbreviations
+
+Year
+
+yy, yyyy
+
+Quarter
+
+qq, q
+
+Month
+
+Mm, m
+
+dayofyear
+
+dy, y
+
+Day
+
+dd, d
+
+Week
+
+wk, ww
+
+Hour
+
+hh
+
+Minute
+
+mi, n
+
+Second
+
+ss, s
+
+Millisecond
+
+ms
+
+Microsecond
+
+mcs
+
+Nanosecond
+
+ns
+
+14. What is SAVEPOINT in transaction control?
+A SAVEPOINT is a point in a transaction when you can roll the transaction back to a certain point without rolling back the entire transaction.
+
+SQL> SAVEPOINT A
+
+SQL> INSERT INTO TEST VALUES (1,'Savepoint A');
+1 row inserted.
+
+SQL> SAVEPOINT B
+
+SQL> INSERT INTO TEST VALUES (2,'Savepoint B');
+1 row inserted.
+
+SQL> ROLLBACK TO B;
+Rollback complete.
+
+SQL> SELECT * FROM TEST;
+
+ID MSG
+
+-------- -----------
+
+1  Savepoint A
+15. What is a Natural Join?
+SELECT * FROM COUNTRIES NATURAL JOIN CITIES
+
+
+SELECT * FROM COUNTRIES JOIN CITIES
+
+    USING (COUNTRY, COUNTRY_ISO_CODE)
+A natural join by default is an inner join that creates an implicit join based on the common columns in the two tables being joined:
+
+A NATURAL JOIN can be an INNER join, a LEFT OUTER join, or a RIGHT OUTER join. The default is INNER join.
+
+If the tables COUNTRIES and CITIES have two common columns named COUNTRY and COUNTRY_ISO_CODE, the following two SELECT statements are equivalent:
+
+16. What is a Cross Join?
+table 1
+
+In an SQL cross join, a combination of every row from the two tables is included in the result set. This is also called cross-product join.
+
+For example, if table A has ten rows and table B has 20 rows, the result set will have 10 * 20 = 200 rows provided there is a NOWHERE clause in the SQL statement.
+
+17. What are the subsets of SQL?
+The following are the subsets of SQL
+
+DDL(Data Definition Language): Includes SQL commands like CREATE, ALTER, and DELETE
+DML(Data Manipulation Language): Accesses and manipulates data, including the INSERT and UPDATE commands
+DCL(Data Control Language): Controls access to the database. Uses commands like GRANT and REVOKE.
+18. What are scalar functions in SQL?
+Scalar Functions are used to return a single value based on the input values. Scalar Functions are as follows:
+
+UCASE(): Converts the specified field in upper case
+SELECT UCASE("SQL Tutorial is FUN!") AS UppercaseText;
+
+UppercaseText
+
+SQL TUTORIAL IS FUN!
+LCASE(): Converts the specified field in lower case
+19. What is a cursor, and when do you use it?
+“Cursor"
+
+A cursor is a database object which is used to manipulate data by traversing row by row in a result set. A cursor is used when you need to retrieve data, one row at a time from a result set and when you need to update records one row at a time.
+
+   DECLARE @CustomerId INT
+
+        ,@Name VARCHAR(100)
+
+         ,@Country VARCHAR(100)
+
+     --DECLARE AND SET COUNTER.
+
+     DECLARE @Counter INT
+
+     SET @Counter = 1
+
+     --DECLARE THE CURSOR FOR A QUERY.
+
+     DECLARE PrintCustomers CURSOR READ_ONLY
+
+     FOR
+
+     SELECT CustomerId, Name, Country
+
+      FROM Customers
+
+     --OPEN CURSOR.
+
+      OPEN PrintCustomers
+
+     --FETCH THE RECORD INTO THE VARIABLES.
+
+     FETCH NEXT FROM PrintCustomers INTO
+
+      @CustomerId, @Name, @Country
+
+     --LOOP UNTIL RECORDS ARE AVAILABLE.
+
+     WHILE @@FETCH_STATUS = 0
+
+     BEGIN
+
+        IF @Counter = 1
+
+        BEGIN
+
+                       PRINT 'CustomerID' + CHAR(9) + 'Name' + CHAR(9) + CHAR(9) + CHAR(9) + 'Country'
+
+                       PRINT '------------------------------------'
+
+        END
+
+         --PRINT CURRENT RECORD.        PRINT CAST(@CustomerId AS VARCHAR(10)) + CHAR(9) + CHAR(9) + CHAR(9) + @Name + CHAR(9) + @Country
+
+        --INCREMENT COUNTER.
+
+        SET @Counter = @Counter + 1
+
+        --FETCH THE NEXT RECORD INTO THE VARIABLES.
+
+        FETCH NEXT FROM PrintCustomers INTO
+
+        @CustomerId, @Name, @Country
+
+      END
+
+     --CLOSE THE CURSOR.
+
+     CLOSE PrintCustomers
+
+      DEALLOCATE PrintCustomers
+20. What is a set-based solution?
+Cursors operate on individual rows, and in the case of a set, it works on a resultant set of data, which could be a table/view or a join of both. The resultant set is an output of a SQL query.
+
+21. What is a forward cursor?
+Forward cursors support fetching of rows from start to end from a result set. You cannot go to the previous row in the result set.
+
+22. State one situation where set-based solutions are better than cursor-based solutions.
+Set-based solutions provide better performance when you are working on a result set, as opposed to one row at a time. They are concise and more readable.
+
+23. What is normalization and what are the normal forms?
+Normalization is a process in database design to minimize data redundancy and dependency. The database is divided into two or more tables, and relationships are defined between them.
+
+First Normal Form
+
+Every record is unique in a table and is identified by a primary or a composite key.
+
+StudiD Name Phonenum
+
+-----------------------
+
+1 John 9176612345,9176645698
+
+2 Susie 9176645789
+
+3 Jim 9176696325
+
+In the above table the field ‘phonenum’ is a multi-valued attribute, so it is not in 1NF.
+
+The table below is in 1NF as there is no multi-valued attribute.
+
+StudiD Name Phonenum
+
+------------------
+
+1 John 9176612345
+
+1 John 9176645698
+
+2 Susie 9176645789
+
+3 Jim 9176696325
+
+Second Normal Form
+
+The table must be in First Normal Form, and it should have a single column as its primary key. 2NF tries to reduce the redundant data getting stored in memory. To transform the table above into 2NF, we split the table into two tables:
+
+StudiD Name /* student table */
+
+John
+2 Susie
+
+Jim
+StudiD Phonenum /* studentphonenumber table */
+
+------------------
+
+1 9176612345
+
+1 9176645698
+
+2 9176645789
+
+3 9176696325
+
+Third Normal Form
+
+The table must be in Second Normal Form and must have no transitive functional dependencies, i.e., a non-key column must not be dependent on another non-key column within the same table.
+
+Consider the EMPLOYEE_DETAIL table: This table is not in the third normal form because the fields emp_state and emp_city depend on emp_zip and not on the primary key emp_id.
+
+EMP_ID
+
+EMP_NAME
+
+EMP_ZIP
+
+EMP_STATE
+
+EMP_CITY
+
+222
+
+Harry
+
+201010
+
+CT
+
+Monro
+
+333
+
+Stephan
+
+02228
+
+TX
+
+Dallas
+
+444
+
+Lan
+
+060007
+
+IL
+
+Chicago
+
+The table above is split into 2 tables and now the tables are in the third normal form.
+
+EMPLOYEE table:
+
+EMP_ID
+
+EMP_NAME
+
+EMP_ZIP
+
+222
+
+Harry
+
+201010
+
+333
+
+Stephan
+
+02228
+
+444
+
+Lan
+
+060007
+
+EMPLOYEE_ZIP table:
+
+EMP_ZIP
+
+EMP_STATE
+
+EMP_CITY
+
+201010
+
+CT
+
+Monro
+
+02228
+
+TX
+
+Dallas
+
+060007
+
+IL
+
+Chicago
+
+24. What is denormalization and when do you use it?
+Denormalization is a technique used to improve performance so the table design allows you to avoid complex joins with redundant data. If the application involves heavy read operations, then denormalization is used at the expense of the write operations performance.
+
+25. What are clustered indexes and non-clustered indexes?
+A table can have only one clustered index. In this type of index, it reorders the table based on the key values and physically stores them in that order.
+
+The non-clustered index does not have the physical ordering of the data in the table; it has a logical order.
+
+CREATE CLUSTERED INDEX IX_tblStudent_Gender_Score
+
+ON student(gender ASC, total_score DESC)
+The script above creates a clustered index named “IX_tblStudent_Gender_Score” on the student table. This index is created on the “gender” and “total_score” columns. An index that is created on more than one column is called the “composite index”.
+
+A non-clustered index doesn’t sort the physical data inside the table. A non-clustered index is stored in one place, and table data is stored in another place. This allows for more than one non-clustered index per table.
+
+CREATE NONCLUSTERED INDEX IX_tblStudent_Name
+
+ON student(name ASC)
+The script above creates a non-clustered index on the “name” column of the student table — the index sorts by name in ascending order. The table data and index will be stored in different places.
+
+26. What is T-SQL?
+It is an extension of SQL (Structured Query Language) developed by Sybase and used by Microsoft.
+
+27. What are system functions? Offer an example.
+System functions are operations performed on the database server, and values are returned accordingly. Example @@ERROR - Returns 0 if the previous Transact-SQL statement encountered no errors. Otherwise, it returns an error number.
+
+@@ERROR - Returns 0 if the previous Transact-SQL statement encountered no errors.
+
+28. What is a transaction log?
+“Transaction
+
+A log is an audit trail file where the history of actions executed by the DBMS is stored.
+
+29. How do you maintain database integrity when deletions from one table automatically cause deletions in another?
+ON DELETE CASCADE is a command that is used when deletions happen in the parent table, and all child records are automatically deleted, and the child table is referenced by the foreign key in the parent table.
+
+CREATE TABLE products
+
+( product_id INT PRIMARY KEY,
+
+ product_name VARCHAR(50) NOT NULL,
+
+ category VARCHAR(25)
+
+);
+
+CREATE TABLE inventory
+
+( inventory_id INT PRIMARY KEY,
+
+ product_id INT NOT NULL,
+
+ quantity INT,
+
+ min_level INT,
+
+ max_level INT,
+
+ CONSTRAINT fk_inv_product_id
+
+   FOREIGN KEY (product_id)
+
+   REFERENCES products (product_id)
+
+   ON DELETE CASCADE
+
+);
+The Products table is the parent table and the inventory table is the child table. If a productid is deleted from the parent table all the inventory records for that productid will be deleted from the child table
+
+30. Can we use TRUNCATE with a WHERE clause?
+No, we cannot use TRUNCATE with the WHERE clause.
+
+31. Define COMMIT.
+When a COMMIT is used in a transaction, all changes made are written into the database permanently.
+
+BEGIN TRANSACTION;  
+
+DELETE FROM HumanResources.JobCandidate 
+
+   WHERE JobCandidateID = 13;   
+
+COMMIT TRANSACTION;  
+The example above deletes a job candidate in an SQL server.
+
+32. What does CHECK CONSTRAINT do?
+Check Constraint limits the values that can enter a column in a database table. It is used as an integrity constraint check.
+
+The following SQL creates a CHECK constraint on the "Age" column when the "Persons" table is created. The CHECK constraint ensures that you can not have any person below 18 years:
+
+The syntax below is in MySQL.
+
+CREATE TABLE Persons (
+
+ID int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Age int,
+    CHECK (Age>=18)
+
+);
+33. What is a schema?
+“Schema"
+
+A schema is a collection of database objects in a database for a particular user/owner. Objects can be tables, views, indices, and so on.
+
+34. How can you create an empty table from an existing table?
+CREATE TABLE NEW_TABLE_NAME AS SELECT [column1, column2 ……column]
+
+FROM EXISTING_TABLE_NAME [WHERE ]
+35. What is a composite key?
+When more than one column is used to define the primary key, it is called a composite key. Here is a SQL syntax to create a composite key in MySQL:
+
+CREATE TABLE SAMPLE_TABLE  
+(COL1 integer,  
+COL2 varchar(30),  
+COL3 varchar(50),  
+PRIMARY KEY (COL1, COL2));  
+36. How do you sort records in a table?
+The ORDER BY Clause is used to sort records in a table.
+
+SELECT * FROM Emp ORDER BY salary; 
+By default, the records are returned in ascending order.
+
+37. What is a shared lock?
+When two transactions are granted read access to the same data, they are given a shared lock. This enables reading the same data, and data is not updated until the shared lock is released.
+
+38. What is a deadlock?
+What is a deadlock
+
+A deadlock is a situation where two or more transactions are waiting indefinitely for each other to release the locks.
+
+The following is an example of a deadlock situation:
+
+39. What is lock escalation?
+Lock escalation is the process of converting row or page locks into table locks. It is an optimization technique used by RDBMS like SQL Server dynamically.
+
+40. What is SQL injection?
+SQL injection is a code injection technique used to hack data-driven applications.
+
+41. What are views, and why are they used?
+SQL views are virtual tables created from one or more tables. Views are a subset of data; hence, it can limit the degree of exposure of data from the tables.
+
+The following SQL creates a view that shows all customers from Brazil:
+
+CREATE VIEW Brazil_Customers_view AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = "Brazil";
+You can query the view above as follows:
+
+SELECT * FROM Brazil_Customers_view;
+42. How do we avoid getting duplicate entries in a query?
+The Select DISTINCT is used to get distinct data from tables using a query.
+
+The following SQL statement selects only the DISTINCT values from the "Country" column in the "Customers" table:
+
+SELECT DISTINCT Country FROM Customers;
+43. Give an example of a comparison operator in SQL.
+EQUAL TO written as = is used to compare data values
+
+44. What is a Subquery?
+A subQuery is a SQL query nested into a larger Query.
+
+SELECT
+   employee_id, first_name, last_name
+FROM
+   employees
+WHERE
+   department_id IN (SELECT 
+           department_id
+       FROM
+           departments
+       WHERE
+           location_id = 1700)
+ORDER BY first_name , last_name;
+The query placed within the parentheses is called a subquery. It is also known as an inner query or inner select. The query that contains the subquery is called an outer query or an outer select.
+
+45. What is a non-correlated subquery?
+A non-correlated subquery is an independent query, and the output of the subquery is substituted in the main query.
+
+Advanced SQL Interview Questions and Answers
+46. What is a SYSTEM Privilege?
+This is when rights are given to a user, usually by the DBA, to perform a particular action on the database schema objects like creating tablespaces.
+
+The following are examples of system privileges that can be granted to users:
+
+CREATE TABLE allows a grantee to create tables in the grantee's schema
+CREATE USER allows a grantee to create users in the database
+CREATE SESSION allows a grantee to connect to an Oracle database to create a user session
+47. What are Object Privileges?
+An object-level privilege is a permission granted to a database user account or role to perform some action on a database object. These object privileges include SELECT, INSERT, UPDATE, DELETE, ALTER, INDEX on tables, and so on.
+
+The following examples are object privileges that can be granted to users:
+
+SELECT ON hr.employees TO myuser
+INSERT ON hr.employees TO myuser
+48. What does the BCP command do?
+The BCP (Bulk Copy) is a utility or a tool that exports/imports data from a table into a file and vice versa.
+
+49. What does the VARIANCE function do?
+This function returns the VARIANCE of a set of numbers:
+
+CREATE TABLE EMP (EMPNO NUMBER(4) NOT NULL,
+
+                 ENAME VARCHAR2(10),
+                 JOB VARCHAR2(9),
+                 SAL NUMBER(7, 2),
+                 DEPTNO NUMBER(2));
+
+INSERT INTO EMP VALUES (1, 'SMITH', 'CLERK',     800, 20);
+INSERT INTO EMP VALUES (2, 'ALLEN', 'SALESMAN', 1600,    30);
+INSERT INTO EMP VALUES (3, 'WARD',  'SALESMAN', 1250, 30);
+INSERT INTO EMP VALUES (4, 'JONES', 'MANAGER',  2975, 20);
+INSERT INTO EMP VALUES (5, 'MARTIN','SALESMAN', 1250,    30);
+INSERT INTO EMP VALUES (6, 'BLAKE', 'MANAGER',  2850, 30);
+INSERT INTO EMP VALUES (7, 'CLARK', 'MANAGER',  2850, 10);
+INSERT INTO EMP VALUES (8, 'SCOTT', 'ANALYST',  3000, 20);
+INSERT INTO EMP VALUES (9, 'KING',  'PRESIDENT',3000, 10);
+INSERT INTO EMP VALUES (10,'TURNER','SALESMAN', 1500,    30);
+INSERT INTO EMP VALUES (11,'ADAMS', 'CLERK',    1500, 20);
+
+SQL> SELECT VARIANCE(sal)
+
+ 2  FROM emp;
+
+VARIANCE(SAL)
+
+-------------
+
+   759056.818
+50. What is the role of GRANT and REVOKE commands?
+The GRANT command enables privileges on the database objects and the REVOKE command removes them. They are DCL commands.
+
+GRANT CREATE ANY TABLE TO username
+GRANT sysdba TO username
+GRANT DROP ANY TABLE TO username
+REVOKE CREATE TABLE FROM username
+51. What is a UNION operator?
+The UNION operator combines the results of two or more SELECT statements by removing duplicate rows. The columns and the data types must be the same in the SELECT statements.
+
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+52. Where are stored procedures stored and can we call one inside another?
+Stored Procedures are stored in the Data Dictionary of the database.
+
+Yes, we can call a stored procedure from another stored procedure. For example, Procedure2 is the procedure which is called Procedure1. Both Procedure1 and Procedure2 can have business logic implemented in it.
+
+Create PROCEDURE Procedure1
+AS BEGIN
+Exec Procedure2
+END
+53. Does the data stored in the stored procedure increase access time or execution time?
+Data stored in stored procedures can be retrieved much faster than the data stored in the SQL database. Data can be precompiled and stored in stored procedures. This reduces the time gap between query and compiling as the data has been pre-compiled and stored in the procedure. Procedures may or may not return values.
+
+54. Can a view be active if the base table is dropped?
+No, the view cannot be active if the parent table is dropped.
+
+55. What is a One-Many Relationship in SQL?
+“One
+
+In a One-Many relationship, a record in one table can be associated or related to many records in another table.
+
+56. Distinguish between a table and a field in SQL.
+The collection of data organized in the form of columns and rows refers to the table. The number of columns in a table refers to the field.
+
+Table: Employee_Details
+
+Fields: Emp_id, Emp_name, Emp_dept, Emp_salary
+
+57. What is data integrity?
+Data integrity defines the accuracy, consistency, and reliability of data that is stored in the database.
+
+There are four kinds of data integrity:
+
+Row integrity
+Column integrity
+Referential integrity
+User-defined integrity
+58. What are entities and relationships?
+Entity: A person, place, or any real-world thing that can be represented as a table is called an entity. An example is an employee table that represents the details of an employee in an organization.
+Relationship: Relationship defines the dependency that entities share amongst each other. An example is the fact that an employee name, ID, salary might belong to the same or different tables.
+59. How do TRUNCATE and DELETE Differ?
+DELETE
+
+TRUNCATE
+
+DML command
+
+DDL command
+
+Can use WHERE
+
+Cannot use WHERE
+
+Deletes one row from the table
+
+Deletes all rows from the table
+
+Rollback possible
+
+No rollback
+
+60. What is the difference between null, zero, and blank space?
+NULL refers to a value that is unknown, not available, inapplicable, or unassigned. Zero is a number, and blank space is treated as a character.
+
+61. Which function is used to return the remainder in a division operator in SQL?
+The MOD function returns the remainder in the division operation.
+
+62. What are case manipulation functions?
+Case manipulation functions convert existing data in the table to lower, upper or mixed case characters.
+
+63. What are the different case manipulation functions in SQL?
+LOWER: Converts all the characters to lowercase
+UPPER: Converts all the characters to uppercase
+INITCAP: Converts initial character of each word to uppercase
+64. What are the different character manipulation functions?
+CONCAT: Joins two or more string values
+SUBSTR: Extracts string of a specific length
+LENGTH: Returns the length of the string
+INSTR: Returns the position of the specific character
+LPAD: Padding of the left-side character value for right-justified value
+RPAD: Padding of right-side character value for left-justified value
+TRIM: Removes the defined character from beginning and end or both
+REPLACE: Replaces a specific sequence of characters with another sequence of characters
+65. Define inconsistent dependency.
+The difficulty of accessing data as the path may be broken or missing defines inconsistent dependency. Inconsistent dependency enables users to search for data in the wrong different table which afterward results in an error as an output.
+
+66. What are GROUP functions? Why do we need them?
+Group functions work on a set of rows and return a single result per group. The popularly used group functions are AVG, MAX, MIN, SUM, VARIANCE, COUNT
+
+67. Distinguish between BETWEEN and IN conditional operators.
+BETWEEN displays the rows based on a range of values. IN checks for values contained in a specific set of values.
+
+Example:
+
+SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;
+SELECT * FROM students where ROLL_NO IN (8,15,25);
+68. What is the MERGE statement?
+The statement enables conditional updates or inserts into the table. It updates the row if it exists or inserts the row if it does not exist.
+
+69. Explain the recursive stored procedure.
+A stored procedure calling itself until it reaches some boundary condition is a recursive stored procedure. It enables the programmers to use a set of code any number of times.
+
+70. How can dynamic SQL be executed?
+It can be executed in the following ways:
+
+By executing the query with parameters.
+By using EXEC
+By using sp_executesql
+71. What is the stored procedure?
+It is a function consisting of many SQL statements to access the database system. Several SQL statements are consolidated into a stored procedure and are executed wherever and whenever required.
+
+72. What is auto increment?
+This keyword allows a new unique number to be generated whenever a new record is inserted into the table. It can be used wherever we need the PRIMARY KEY.
+
+73. What is a data warehouse?
+Data from multiple sources of information is stored in a central repository called the data warehouse. Data warehouses have subsets of data called data marts. The data stored is transformed and used for online mining and processing.
+
+74. What are user-defined functions?
+Functions written to use the specific logic whenever required are user-defined functions. It avoids redundancy by avoiding writing the same logic again.
+
+75. What is the ALIAS command?
+This command provides another name to a table or a column. It can be used in the WHERE clause of a SQL query using the as keyword.
+
+Example:
+
+SELECT S.StudentID, E.Result from student S, Exam as E where S.StudentID = E.StudentID
+S and E are alias names for student table and exam table respectively.
+
+76. What is Collation?
+Collation is defined as the set of rules that determines how to store and compare data.
+
+77. Mention the different types of collation sensitivity.
+The following are the types of collation sensitivity:
+
+Case
+Kana
+Width
+Accent
+78. What are STUFF and REPLACE functions?
+STUFF: Overwrites the existing character or inserts a string into another string. The syntax is:
+
+STUFF(string_expression,start, length, replacement_characters)
+REPLACE: replaces the existing characters of all the occurrences. The syntax is:
+
+REPLACE (string_expression, search_string, replacement_string)
+
 50 SQL server interview questions for recruiters
-20min
+
 Interview the right talent
-
-
-
-
-
-
 
 Evaluate SQL server skills with an online talent assessment
 Try TestGorilla for free
