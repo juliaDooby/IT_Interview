@@ -1,4 +1,219 @@
+Top 45 PostgreSQL Interview Questions And Answers [2025]
+Updated on Dec 18, 2024 | Praveen Kumar | 14 min read | 115.4K views
+FacebookTwitterLinkedInWhatsAppРесурс
+PostgreSQL interview questions
+PostgreSQL was launched in 1989 by Michael Stonebraker and his team at the University of California, Berkeley, and is currently regarded as the top advanced technology among the primary databases across the globe. In the midst of open-source databases, it has achieved the second placement. As its reputation persists, there is a growing need for competent experts and experience in PostgreSQL. Here we are with the top 45 PostgreSQL interview questions and answers. We’ve organized a complete list that includes everything from the fundamentals to PostgreSQL.
 
+Table of Contents
+Basic-Level PostgreSQL Interview Questions 
+Here is a list of some most frequently asked PostgreSQL basics interview questions and answers for freshers.
+
+1. What do you understand by the term “PostgreSQL”?
+PostgreSQL is a sophisticated, robust, open-source object-relational database system. It utilizes and expands the SQL language with multiple attributes and facilitates both SQL (relational) and JSON (non-relational) querying. 
+
+2. What is the full form of PostgreSQL?
+The full form of PostgreSQL is “Postgres Structured Query Language”.
+
+3. How PostgreSQL can be used?
+PostgreSQL is mainly employed as a powerful back-end database that enables you to save vast data warehouses for many web, mobile, geospatial, and analytics applications. It helps programmers to create the utmost complicated programs, making use of their abilities and a comprehensive set of features.
+
+4.  Why is PostgreSQL preferred over MYSQL?
+ Postgres is highly adaptable and can assist multiple data types. PostgreSQL is preferred over MySQL because it provides data types that MySQL does not. Over an extended period, MySQL and PostgreSQL were competing with their databases. Still, eventually, PostgreSQL conquer the game along with a multitude of distinctive functionality which are not offered in MySQL.
+
+5. Why do companies prefer PostgreSQL?
+It provides a superior standard of flexibility, scalability, adaptability, and expandability. It allows companies to modify and personalize the database to their particular requirements.
+It provides expandability possibilities to manage vast quantities of datasets and advanced data transfer workloads, permitting organizations to develop their systems and deal with rising needs.
+Serving as a non-proprietary database, PostgreSQL removes license-driven expenses, forming it an engaging option for corporates searching for affordable approaches without sacrificing capabilities and functioning.
+6. What are the advantages of PostgreSQL?
+It is open-source and positively adaptable.
+It primarily conforms to SQL standards.
+It is feasible to deal with complicated data types on PostgreSQL.
+7. What are the disadvantages of PostgreSQL?
+It is not accessible on every system by default.
+Its extensible manuals are solely accessible in English only!
+It has a slow reading speed.
+Also Read: SQL Interview Questions
+
+8. List 3 advanced PostgreSQL features.
+Inheritance: PostgreSQL assists in inheritance to facilitate consumers to build clean tables that depict their data structures successfully.
+Support for JSON Data – The capability to retain and query JSON enables PostgreSQL to operate NoSQL projects. 
+Managing Geospatial Data in Postgres: PostgreSQL with GIS component enables an individual to save geometrical coordinates and structure details inside the tables.
+9. Which are the data types used in PostgreSQL?
+There are numerous data types supported by PostgreSQL:
+
+Boolean: It symbolizes true/false values.
+Character: It works with text and strings.
+Numeric: It operates with various precision.
+Temporal: It handles date and time data.
+UUID: It offers specialized identifiers.
+Array: It saves lists of values.
+JSON: It manages organized data in JSON format.
+hstore:  It offers adaptable key-value storage.
+Special: It contains specific-purpose types like spatial and IP addresses.
+10. Define Indices in PostgreSQL?
+Indices are database frameworks applied to enhance the execution of data searches. They are generated on multiple attributes of a table to help faster data retrieval. 
+
+11. What do you mean by the partitioned table in PostgreSQL?
+In PostgreSQL, Partitioning is a rational table that signifies diving one huge table into tiny physical parts. Every division includes a subcategory of data built on predefined partitioning conditions, for example, “a span of data or a specific condition”. 
+
+12. Differentiate between PostgreSQL and  MySQL.
+PostgreSQL with MySQL are the most popular databases, let’s see the key differences between them.
+
+PostgreSQL	MySQL
+PostgreSQL is an object-based relational DBMS	MySQL is a relational-based DBMS.
+PostgreSQL endorses sophisticated data types such as arrays, hstore, and user-defined types.	MySQL solely assists Standard data types
+PostgreSQL slower and more complicated.	MySQL is steady, easy, and faster.
+13. What do you mean by tokens in PostgreSQL?
+In PostgreSQL, tokens refer to the constructing units of any program code. Tokens include numerous kinds of unique character symbols like constants, quoted identifiers, other tags, and keywords. 
+
+14. Differentiate between a ‘view’ and ‘table’ in PostgreSQL?
+Here is the major difference between the ‘view’ and ‘table’ 
+
+View	Table
+It is built from a query.	It is built from the physical storage of data.
+It is derived from a combination of tables.	It consists of the actual data.
+It does not save data permanently.	It stores data consistently.
+15. What is a primary key in PostgreSQL?
+In PostgreSQL, a primary key is a set of columns that specifically recognize every row in a database. It verifies that the data in these columns are neither null (meaning they must have a value) nor distinct (meaning no two rows can have the same values). A primary key integrates the “NOT NULL” and “UNIQUE” conditions.
+
+Intermediate-Level PostgreSQL DBA Interview Questions
+Here is a list of some PostgreSQL interview questions and answers for intermediate-level candidates:
+
+16. What is a user-defined function in PostgreSQL?
+It is a set of random SQL statements assigned to execute a certain task. These operations are usually built to manage unique cases. It is feasible to carry out select, insert, update, and delete operations within a function.
+
+17. Difference between the ‘CHAR’ and ‘VARCHAR’ data types in PostgreSQL.
+Here are the following points for the main differences between ‘CHAR’ and ‘VARCHAR’.
+
+CHAR	VARCHAR
+It has a fixed-length string data structure.	It has a Variable-length string data structure.
+It has trailing spaces that are conserved.	It has trailing spaces that are not conserved.
+It occupies more storage space.	It occupies less storage space.
+18. What is the purpose of the ‘ EXPLAIN’ statement in PostgreSQL?
+ In PostgreSQL, the purpose of the ‘EXPLAIN’ statement is to offer the performance plan built by the PostgreSQL planner for a given query. ‘EXPLAIN’ not just only presents the plan and PostgreSQL’s predictions, but it also runs the query (so be cautious with UPDATE and DELETE queries !)
+
+Also Read: MySQL Interview Questions
+
+19. What is the trigger in Postgresql?
+In PostgreSQL, Triggers are the term that refers to the database callback functions. It is called independently each time an event such as an insert, update, or deletion takes place.
+
+20. How can you prevent data inconsistencies in PostgreSQL?
+To avoid data variations in PostgreSQL:
+
+Apply transactions to assure integrity and manage data reliability.
+Execute limitations to impose data accuracy standards in the entire database.
+Verify and sanitize client information to stop the incorporation of unreliable or harmful data.
+Build connections among tables employing foreign key conditions to uphold relationship integrity.
+21. How can you implement data replication in PostgreSQL?
+Data replication in PostgreSQL can be executed by making use of various techniques like logical replication, streaming replication, or third-party tools like pgpool-II. These approaches allow you to copy data from one PostgreSQL server to another for redundancy or expandability goals.
+
+22. What are the steps to monitor database performance in PostgreSQL?
+By making use of integrated tools such as pg_stat_statements and pg_stat_activity.
+By installing tracking tools like pgAdmin or DataDog.
+By examining records for sluggish queries and errors.
+By keeping track of system resources.
+By improving queries for optimal performance.
+23. How can you secure a PostgreSQL database?
+Protecting a PostgreSQL database requires executing precautions. Some precautions are applying secure passwords, allowing SSL encryption, configuring firewall rules, and restricting permission by means of valid authentication. These measures safeguard against access breaches, data intrusion, and other security threats.
+
+24. What is the importing and exporting of data in PostgreSQL?
+Importing and exporting data in PostgreSQL can be done by making use of the COPY command. You can import data from a file into a table by using this command. It can also be used with a suitable query to export data from a table to a file in multiple configurations such as CSV or plain text.
+
+25. What is a recursive query in PostgreSQL
+A recursive query in PostgreSQL is a kind of query that refers to itself in order to retrieve structured or loop data. It enables you to navigate links or hierarchies by repeatedly querying the same table or output with a revised condition until the desired outcomes are acquired.
+
+26. How can you perform a full-text search in PostgreSQL?
+Full-text search in PostgreSQL can be executed by applying the integrated tool known as tsvector and tsquery. It requires building a full-text search index on the connected columns, constructing queries using the tsquery syntax, and running these queries to search for specific string patterns within the indexed data.
+
+27. How will you create and manage user roles and permissions in PostgreSQL?
+User roles and rights in PostgreSQL can be built and handled by applying SQL commands like CREATE ROLE, ALTER ROLE, and GRANT/REVOKE authority. Roles can be granted exact permissions and privileges on database systems, schemas, tables, and other database objects to control access and manage security within the PostgreSQL database.
+
+28. What are stored procedures in PostgreSQL
+Stored procedures in PostgreSQL are fixed groups of SQL statements saved in the database performed afterward by applying a designated name. They offer a way to encapsulate and recycle complicated data manipulation, enhance efficiency, and improve safety by restricting direct entry to base tables and data.
+
+29. What is the VACUUM command in PostgreSQL
+The VACUUM command in PostgreSQL is engaged to retrieve storage capacity filled by modified rows. It helps assists in maximizing database speed by minimizing excessive growth, preserving data consistency, and securing dependable query planning and execution.
+
+30. What are ‘database callback functions’ in PostgreSQL?
+Triggers in PostgreSQL are known as database callback functions. They get invoked automatically when a database event occurs that has been defined inside the trigger.
+
+Advanced-Level PostgreSQL Interview Questions
+Here is a list of PostgreSQL interview questions and answers for experienced candidates:
+
+31. How would you start, stop and restart the PostgreSQL server on Windows?
+Activating the server: Start the PostgreSQL service by the Services Management Console or command line utility.
+Stopping the server: stop the PostgreSQL service through the Services Management Console or command line.
+Restarting the server: Either restart the PostgreSQL service utilizing the Services Management Console or stop and start it again.
+32. How to select the first 10 records in PostgreSQL?
+We need to use a keyword called LIMIT for selecting the first 10 records in PostgreSQL.
+
+For example:
+
+SELECT * FROM Teacher ORDER BY Exp DESC LIMIT 10
+In this example, we have a table called “Teacher” that holds information about teachers. The “ORDER BY” command is used to sort the data. The “Exp” field represents teaching experience. Using “DESC” indicates descending order. By using the “LIMIT” keyword, we can display the top 10 teachers with the highest teaching experience in descending order.
+
+Also Read: PL/SQL Interview Questions
+
+33. What are the three events that must be interrupted between concurrent transactions in PostgreSQL?
+The three events that need to be stopped between the concurrent transactions in PostgreSQL are:
+
+Inconsistent reads – when an object is read twice and the object has different values.
+Lost updates – when the same record gets updated at the same time by two different transactions.
+Dirty reads – when data is modified by a transaction that is yet to be committed and is read by another transaction.
+34. What is a sequence in PostgreSQL?
+A special type of data that is created for generating multiple numeric identifiers in the database is known as a sequence in PostgreSQL. It is generally used for creating sequences and artificial primary keys that are similar to the Auto_increment of MySQL.
+
+35. What is an inverted file in PostgreSQL?
+An index data structure that is used for mapping the location of content to a database file inside a document is known as an inverted file in PostgreSQL. It basically contains distinct words found in a text and the frequency of each word in that text.
+
+36. What are the steps for changing the data type of a column in PostgreSQL?
+To change the data type of a column in PostgreSQL we can use the following commands:
+
+ALTER TABLE
+ALTER COLUMN
+For Example:
+
+ALTER TABLE table_name
+ALTER COLUMN column_name TYPE new_data_type;
+37. What are parallel queries in PostgreSQL and how do they work?
+Parallel query is a feature in PostgreSQL that enables multiple work processes to run parallelly for a single query to improve the time taken in the execution of a query. It breaks down the query into chunks and processes them in parallel.
+
+38. What is the process of creating a backup of the database in PostgreSQL?
+We can take a backup of the database in PostgreSQL using a command known as “pg_dump”.
+
+To take a backup of a SQL text file first, we need to login into our database server and then run the following command in the terminal:
+
+Pg_dump db_name > txt_file_name.sql
+The database can be retrieved from the backup using the following command:
+
+/usr/local/bin/pg_dump db_name > db_name.pgdump
+39. What do you know about reserved words in PostgreSQL?
+SQL keywords and some other symbols that have special meanings are known as reserved words in PostgreSQL. Reserved words are utilized to address SQL syntax, data types, functions, operators, and other database-specific characters. They are a primary part of the PostgreSQL language and cannot be changed or used distinctly.
+
+40. What is the main difference between clustered and non-clustered indexes in PostgreSQL?
+Clustered indexes in a table have rows organized in a comparable pattern like the data pages. There can potentially have just one clustered index per table. In contrast, non-clustered indexes have rows arranged in a distinct order from the data pages. A table can have several non-clustered indexes.
+
+41. What is the disadvantage of DROP TABLE in PostgreSQL?
+DROP_TABLE command deletes entire data from a table in PostgreSQL but the main disadvantage in using this command to delete data is that it wipes out the structure of the table with data so we need to create a new table for storing data.
+
+42. What is the role of table space in PostgreSQL?
+Table spaces are directories where the files containing the data can be stored in PostgreSQL. They provide an easy way to handle disk layout during installation and permit administrators to enhance performance by using database object patterns effectively.
+
+43. What is ‘WAL’ in PostgreSQL?
+WAL or Write-Ahead Logging is a protocol that ensures the integrity of data. Actions and changes are written into a transaction log using WAL. It provides the feature to improve the reliability of the database by updating it or recording changes before making any modifications.
+
+44. What are the database administration tools in PostgreSQL?
+The database administration tools used in PostgreSQL are:
+
+Psql – It enables the user to connect to EDB advanced server or PostgreSQL.
+Pgadmin – It is used for communicating with relational databases and Postgres on both remote and local servers.
+Phppgadmin – It is a web-based utility software for managing PostgreSQL databases.
+45. What is the use of the enable_debug command in PostgreSQL?
+The enable_debug command is used by the developers to find out bugs or errors in the source code that may occur during the execution in PostgreSQL. It compiles all libraries and applications and delays the system and also amplifies binary file size.
+
+Conclusion
+
+PostgreSQL interview questions will help you understand the foundation for your database management skills and will offer you a base for your knowledge and preparation for the interview. However, it is crucial to note that the actual questions may vary depending on the specific organization and position that you are applying for. Therefore, make sure you carefully review the job description thoroughly to ensure proper preparation for the interview.
 
 PostgreSQL Interview Questions
 
