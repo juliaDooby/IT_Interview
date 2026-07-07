@@ -1,4 +1,85 @@
+Top 10 NoSQL Interview Questions
+April 06, 2015
 
+Here are the top 10 questions that are being asked in interviews at different level.
+
+1. What do you mean by NoSQL?
+
+NoSQL is an approach that allows the simplicity of design and finer control over availability with a focus on performance, reliability, and agility. They differ from RDBMS in terms of underlying data structures. NoSQL systems are also called “Not only SQL” to emphasize that it may also support SQL like query language.
+
+2. How does NoSQL relates to Big data?
+
+Big data applications are generally looked from 4 perspectives: Volume, Velocity, Variety and Veracity. Whereas, NoSQL applications are driven by the inability of a current application to efficiently scale. Though volume and velocity are important, NoSQL also focuses on variability and agility.
+
+NoSQL is often used to store big data. NoSQL stores provide simpler scalability and improved performance relative to traditional RDMS. They help big data moment in a big way by storing unstructured data and providing a means to query them as per requirements. There are different kinds of NoSQL data stores, which are useful for different kind of applications. While evaluating a particular NoSQL solution, one should looks for their requirements in terms of automatic scalability, data loss, payment model etc.
+
+3. What are the different kinds of NoSQL data stores?
+
+There are varieties of NoSQL data stores available which can be widely distributed among four categories:
+Key-value store: A simple data storage system that uses a key to access a value. Examples- Redis, Riak, DynamoDB, Memcache
+Column family store: A sparse matrix system that uses a row and a column as keys. Example- HBase, Cassandra, Big Table
+Graph store: For relationship-intensive problems. Example- Neo4j, InfiniteGraph
+Document store: Storing hierarchical data structures directly in the database. Example- MongoDB, CouchDB, Marklogic
+For a more comprehensive list of NoSQL databases, please check Wikipedia page.
+
+4. What is the impact of Google's MapReduce in the NoSQL movement?
+
+Google published a paper on MapReduce in 2004, which talked about simplified data processing on large clusters. In this paper, Google shared their process for transforming large volumes of web data content into search indexes using low-cost commodity CPUs. It was Google’s use of MapReduce that encouraged the use of low-cost commodity hardware for such huge applications. Google extended the map-reduce concept to reliably execute on billions of web pages on hundreds or thousands of low-cost commodity CPUs.
+
+This resulted into building a system that would easily scale as their data increased without forcing them to purchase expensive hardware. That’s where Google invented BigTable to boost their search capabilities. That was first real use of NoSQL columnar data store running on commodity hardware which made a big impact in NoSQL drive.
+
+5. What is database sharding? How does it help in minimizing the downtime?
+
+Sharding is a type of database partitioning, which divides the large databases into smaller and easily available chunks called shards. In RDBMS, it is widely known as horizontal partitioning. It’s basically splitting and maintaining the database by rows rather than columns.
+
+As the amount of data an organization stores increases and when the amount of data needed to run the business exceeds the current capacity of the environment, some mechanism for breaking the information into manageable chunks is required. With NoSQL solutions, organizations have started practicing automatic sharding techniques as a mean to continue to store data while minimizing downtime.
+
+The loads of the required system can be elastically managed using automatic sharding. With smart technologies around, it is possible to configure the system proactively, which can automatically create shards based on demand. The strategy may vary depending upon the type of data, users information and users distribution across regions. For example, if you have a site with large user base having maximum active users from US region than Asia, then it make sense to shard your database from regional perspective.
+
+There are number of challenges while choosing a particular strategy. Some of the important questions needs to be answered before final any one strategy e.g. What if US users tend to be active at the same time in the evening? Would all the databases being used at its potential? What is the maintenance time for each shard? What are the backup strategies for sensitive data?
+
+6. What is the architectural difference between applications supporting RDMS and NoSQL systems?
+
+RDBMS systems traditionally support ACID transactions at the database level, which results in easier application development. On the other side, in a NoSQL system, most of the transactions are being handled at the application level. The application developer can easily abuse the implementation by making wrong choices. Fundamentally, it requires more stringent processes to create NoSQL application.
+
+On the contrary side, NoSQL system scale well in high load environments. You can apply automatic sharding to minimize down time and the nodes can be prepared in real time, which results in lower operational costs. With RDBMS system, it requires a lot of proactive strategy to maintain and meet the scalability demands. At times, it becomes operationally inefficient to meet the sudden high demands.
+
+7. Could you please explain the transaction support by using BASE in NoSQL systems?
+
+ACID properties of RDMS seem crucial but these seem to pose some roadblocks for larger systems in terms of availability and performance. NoSQL provides an alternative to ACID called BASE.
+
+BASE means:
+- Basic Availability
+- Soft state
+- Eventual consistency
+
+Most NoSQL databases do not provide transaction support by default, which means the developers have to think how to implement transactions. Many NoSQL stores offers transactions at the single document (or row etc.) level. For example, In MongoDB, a write operation is atomic on the level of a single document, even if the operation modifies multiple embedded documents within a single document.
+
+Since a single document can contain multiple embedded documents, single-document atomicity is sufficient for many practical use cases. For cases where a sequence of write operations must operate as if in a single transaction, you can implement a two-phase commit in your application. It’s harder to develop software in the fault-tolerant BASE compared to the ACID, but Brewer’s CAP theorem says you have no choice if you want to scale up.
+
+8. What is CAP theorem? How is it applicable to NoSQL systems?
+
+Eric Brewer posted the CAP theorem in early 2000. In it he discusses three system attributes within the context of distributed databases as follows:
+Consistency: The notion that all nodes see the same data at the same time.
+Availability: A guarantee that every request to the system receives a response about whether it was successful or not.
+Partition Tolerance: A quality stating that the system continues to operate despite failure of part of the system.
+The common understanding around the CAP theorem is that a distributed database system may only provide at most 2 of the above 3 capabilities. As such, most NoSQL databases cite it as a basis for employing an eventual consistency model with respect to how database updates are handled.
+
+9. What is eventual consistency in NoSQL stores?
+
+Eventual consistency means eventually, when all service logic is executed, the system is left in a consistent state. This concept is widely used in distributed systems to achieve high availability. It informally guarantees that, if no new updates are made to a given data item, eventually all accesses to that item will return the last updated value.
+
+In NoSQL systems, the eventual consistent services are often classified as providing BASE (Basically Available, Soft state, Eventual consistency) and in RDMS, it is classified as ACID (Availability, Consistency, Isolation and Durability). Leading NoSQL databases like Riak, Couchbase, and DynamoDB provide client applications with a guarantee of “eventual consistency”. Others, like MongoDB and Cassandra are eventually consistent in some configurations.
+
+10. What are the cons of a traditional RDBS over NoSQL systems?
+The object-relational mapping layer can be complex.
+Entity-relationship modeling must be completed before testing begins, which slows development.
+RDBMSs don’t scale out when joins are required.
+Sharding over many servers can be done but requires application code and will be operationally inefficient.
+Full-text search requires third-party tools.
+It can be difficult to store high-variability data in tables.
+
+ 
 NoSQL Interview Questions and Answers [BEST & NEW]
 Last updated on 03rd Aug 2022, Blog, Database, Interview Question
 
