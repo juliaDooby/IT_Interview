@@ -1,3 +1,219 @@
+50 React Native Interview Questions and Answers to Crack Your Next Job
+vinay6 months ago08 mins
+react native interview questions
+Table of Contents
+React Native Interview Questions and Answers
+Conclusion
+FacebookTwitterEmailRedditLinkedInWhatsAppCopy LinkРесурс
+Preparing for a React Native interview can feel challenging, especially with the wide range of technical topics you might face. From understanding core concepts like components, props, and state, to mastering navigation, hooks, and performance optimization, interviewers often test both your practical skills and conceptual knowledge. This article compiles the most important react native interview questions along with clear, concise answers to help you prepare effectively. Whether you are a fresher aiming to land your first mobile developer role or an experienced professional targeting advanced positions, this guide will give you the confidence and insight needed to succeed in any React Native technical interview.
+
+React Native Interview Questions and Answers
+react native interview questions
+
+1. What is React Native?
+
+Answer: React Native is a JavaScript framework for building mobile apps for iOS and Android using a single codebase. It uses native components to render UIs and provides near-native performance.
+
+2. What are the main features of React Native?
+
+Answer: Cross-platform development, hot reloading, native components, large community support, and performance efficiency.
+
+3. What is JSX?
+
+Answer: JSX is a syntax that allows writing HTML-like code within JavaScript, which React Native converts into native components.
+
+4. What is the difference between ReactJS and React Native?
+
+Answer: ReactJS is a library for building web applications using HTML elements, while React Native is a framework for mobile apps using native components.
+
+5. What are components in React Native?
+
+Answer: Components are reusable building blocks of a React Native app. They can be functional or class-based.
+
+6. What is the difference between state and props?
+
+Answer: Props are read-only values passed from parent to child components. State is internal to a component and can change over time, triggering UI updates.
+
+7. What are the core components of React Native?
+
+Answer: <View>, <Text>, <Image>, <ScrollView>, <FlatList>, <TextInput>, and <TouchableOpacity>.
+
+8. What is a hook in React Native?
+
+
+Answer: Hooks let you use state and other React features in functional components. Examples include useState, useEffect, and useRef.
+
+9. What is Flexbox in React Native?
+
+Answer: Flexbox is a layout system for arranging components in rows or columns, with properties like flexDirection, justifyContent, and alignItems.
+
+10. How do you make API calls in React Native?
+
+Answer: Using fetch or libraries like Axios, often within the useEffect hook for functional components.
+
+See also  Internet Chicks: How Female Digital Creators Are Shaping Online Culture
+11. What is the difference between ScrollView and FlatList?
+
+Answer: ScrollView renders all items at once, suitable for small lists. FlatList renders items lazily, better for large datasets.
+
+12. What is React Navigation?
+
+Answer: React Navigation is a library for handling screen transitions, offering stack, tab, and drawer navigation.
+
+13. What is the Context API?
+
+Answer: Context API provides a way to pass data globally across components without prop drilling.
+
+14. What is Redux?
+
+Answer: Redux is a state management library that centralizes application state for predictable data flow.
+
+15. What is the difference between PureComponent and React.memo?
+
+ Answer: PureComponent is a class-based optimization for preventing unnecessary re-renders. React.memo is used in functional components for the same purpose.
+
+16. What is hot reloading?
+
+Answer: Hot reloading allows developers to instantly see changes in the app without restarting the application.
+
+17. How do you style components in React Native?
+
+Answer: Using the StyleSheet.create method, inline styles, or external style libraries like Styled Components.
+
+18. How do you handle forms in React Native?
+
+Answer: Using controlled components with TextInput and state, or using libraries like Formik for larger forms.
+
+19. How do you pass data between screens?
+
+Answer: Using props, navigation parameters, or global state management like Redux or Context API.
+
+20. What is the purpose of keyExtractor in FlatList?
+
+ Answer: It provides a unique key for each list item to optimize rendering and prevent re-renders.
+
+21. What are native modules in React Native?
+
+Answer: Native modules are platform-specific code written in Java/Objective-C/Swift that can be called from JavaScript.
+
+22. What is the React Native bridge?
+
+Answer: The bridge allows JavaScript to communicate with native modules and vice versa, enabling integration with device features.
+
+23. How do you optimize performance in React Native apps?
+
+Answer: Use FlatList for large lists, avoid unnecessary re-renders with React.memo, lazy load components, and minimize heavy computations on the main thread.
+
+24. What is AsyncStorage?
+
+Answer: AsyncStorage is a simple, unencrypted, persistent key-value storage system for small amounts of data.
+
+25. What is the difference between functional and class components?
+
+Answer: Functional components use hooks and are simpler, whereas class components have lifecycle methods and are heavier in syntax.
+
+26. How do you debug a React Native app?
+
+See also  Indiabix Com: Features, Subjects, And Benefits For Exam Prep
+Answer: Using Chrome DevTools, React Native Debugger, Flipper, or console logging.
+
+27. What are lifecycle methods in React Native?
+
+ Answer: Methods like componentDidMount, componentDidUpdate, and componentWillUnmount used in class components to manage component behavior.
+
+28. What is Hermes in React Native?
+
+Answer: Hermes is a JavaScript engine optimized for running React Native apps on Android, improving startup time and memory usage.
+
+29. How do you handle offline data in React Native?
+
+Answer: Use local storage solutions like AsyncStorage, SQLite, or Realm to cache and manage offline data.
+
+30. What are some common testing strategies in React Native?
+
+Answer: Use Jest for unit testing, Detox for end-to-end testing, and React Test Renderer for component testing.
+
+31. What is the difference between useEffect and componentDidMount?
+
+Answer: useEffect is a hook used in functional components to run side effects after render. componentDidMount is a lifecycle method in class components that runs once after the component mounts.
+
+32. How do you handle navigation params in React Navigation v5+?
+
+Answer: You pass data using navigation.navigate(‘ScreenName’, { paramName: value }) and access it with route.params.paramName.
+
+33. What are controlled and uncontrolled components?
+
+Answer: Controlled components have their value controlled by state. Uncontrolled components store their own state internally, accessed via refs.
+
+34. What is the difference between useCallback and useMemo?
+
+ Answer: useCallback memoizes functions to prevent unnecessary recreation, while useMemo memoizes the result of a computation.
+
+35. How do you handle errors in API calls?
+
+ Answer: Using try-catch blocks with async/await or handling .catch() in promise chains, often combined with error state for UI updates.
+
+36. What is the difference between TouchableOpacity, TouchableHighlight, and Pressable?
+
+Answer: All are interactive components. TouchableOpacity fades on press, TouchableHighlight darkens the background, and Pressable provides more control over press behavior.
+
+37. How do you optimize images in React Native?
+
+Answer: Use properly sized images, Image component caching, react-native-fast-image, and avoid loading large assets unnecessarily.
+
+38. How do you manage push notifications in React Native?
+
+ Answer: Use services like Firebase Cloud Messaging (FCM) and libraries like react-native-push-notification to handle notifications across platforms.
+
+39. What are gestures in React Native, and how do you handle them?
+
+ Answer: Gestures are user interactions like taps, swipes, and pinches. They can be handled using react-native-gesture-handler.
+
+40. How do you implement authentication in React Native?
+
+See also  What Is Statistics? Meaning, Types, and Applications
+Answer: Use libraries like Firebase Authentication or custom APIs with token-based authentication (JWT), storing tokens securely using AsyncStorage or SecureStore.
+
+41. How do you implement deep linking in React Native?
+
+Answer: Configure URL schemes for iOS and intent filters for Android, then handle incoming URLs using React Navigation’s linking configuration.
+
+42. What is the difference between local state and global state?
+
+Answer: Local state is component-specific; global state is shared across multiple components, often managed by Redux or Context API.
+
+43. How do you improve app startup time?
+
+Answer: Enable Hermes, optimize bundle size, lazy load components, reduce unnecessary re-renders, and use code splitting.
+
+44. What are Animated API and Reanimated library?
+
+Answer: The Animated API provides declarative animations; Reanimated 2 offers better performance with native-driven animations.
+
+45. How do you handle memory leaks in React Native?
+
+Answer: Clean up subscriptions and timers in useEffect return function, avoid retaining large objects unnecessarily, and monitor memory with profiling tools.
+
+46. What is the difference between componentWillReceiveProps and getDerivedStateFromProps?
+
+Answer: componentWillReceiveProps is deprecated. getDerivedStateFromProps is a static method to update state in response to prop changes.
+
+47. How do you handle platform-specific code in React Native?
+
+Answer: Use platform checks (Platform.OS === ‘ios’) or create separate files with .ios.js and .android.js extensions.
+
+48. What is the purpose of useRef in React Native?
+
+Answer: useRef creates a mutable reference that persists across renders, often used for accessing DOM elements, storing timers, or previous state values.
+
+49. How do you implement offline-first features?
+
+Answer: Use AsyncStorage, Realm, or SQLite to store data locally and sync with a server when online.
+
+50. What are the common performance pitfalls in React Native?
+
+Answer: Heavy re-renders, large lists without virtualization, unnecessary state updates, loading large images, and overusing inline functions in JSX.
+
 10 Essential React Native Interview Questions *
 Toptal sourced essential questions that the best React Native developers can answer. Driven from our community, we encourage experts to submit questions and offer feedback.
 
