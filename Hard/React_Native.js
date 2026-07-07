@@ -1,3 +1,60 @@
+5 Must-Ask React Native Interview Questions
+Natasha Singh | May 21, 2020
+Linkedin
+Twitter
+Mail
+When you’re interviewing a mobile developer, there are many important qualifications to look at. Maybe you have in-house developers and your company uses React Native to develop apps. If this is the case, it’s extremely important that any potential candidate has an in-depth understanding of this program. Even if you outsource development, there are many reasons to ask these React Native interview questions and ensure your candidates know the ins and outs of this framework. 
+
+Asking the right questions is key to understanding an interviewee’s experience and capabilities with React Native or any other software framework. In this article, we’re going to review five React Native interview questions you should ask to guarantee that candidates are a good fit for your project.
+
+1. What Are the Benefits of Using React Native to Build a Mobile App?
+The purpose of this React Native interview question is to determine whether or not your interviewee knows what React Native actually is and how it works. They might have experience designing mobile apps with different methods. But, you want to be sure that they understand the ins and outs of React Native and why this tool is so useful, especially to your company.
+
+The Answer You’re Looking For
+React Native is a Javascript app development tool that makes designing cross-platform apps (iOS, Android, etc.) less time-consuming and much simpler. It accomplishes all this without spending unnecessary funds. React Native is extremely useful when it comes to simplifying the app development process, integrating with third-party plugins, and reusing previously developed codes. 
+
+What makes using React Native for app development so powerful is just how widespread its success seems to be. This includes its use in the development of highly popular apps, like Facebook Ads Manager and even chat apps like Discord. React Native is undoubtedly one of the best app development tools out there.
+
+What might be even better is the sheer popularity of React Native. Perhaps some issues come up with the tool or you’re struggling with a certain area of using React Native to develop an app. Luckily, there’s a large developer community that uses React Native that could provide some sort of assistance.
+
+2. What Is Redux and When Would You Use It?
+This React Native JS interview question should definitely be asked if your company takes advantage of Redux when creating mobile apps with React Native. It’s beneficial if your company strives to develop more complex applications that require greater organization and editing abilities. After all, you want to hire a person that understands your company’s mindset. And this is precisely where asking React Native interview questions like this can come in handy.
+
+The Answer You’re Looking For
+Redux is a third-party state management library (sometimes called a “state container”). It’s often used in conjunction with React Native to develop apps that are a little more complex. It can be incredibly useful in the actual writing of apps through Javascript. Specifically, it’s helpful for apps that involve pieces of data that are constantly changing. The best aspect of Redux is that it keeps the app development process organized.
+
+This tool is extremely helpful when it comes to organizing your app’s data into a state tree and simplifying the editing process, allowing for adjustments to be made through the changing of actions. Redux is known for being highly predictable and highly dependable for app developers. This makes it the ideal choice for app editing.
+
+3. What Are States and Props, and How Is Each Used?
+If your company truly values the benefits associated with using React Native, you want to be sure that your future employees know exactly how the system works. This is especially true when it comes to React Native coding. React Native JS questions like this will ultimately prove whether your potential developer truly understands the fundamentals of React Native. Props and state are two basics that you want all of your developers to understand in detail.
+
+The Answer You’re Looking For
+Props is an object in React Native that’s passed down from parent to child. They can also be passed through many layers and even added to with each new layer. What makes props so beneficial is that they can have callback functions added to them. This way, children can pass the data back to parents.
+
+State is a mutable object that is local to the component and is often combined with setState to trigger a UI render of that component and its children. State can be edited with new data while props are fixed and unchangeable.
+
+4. How Would You Debug in React Native?
+It would be great if all apps and programs worked as they were intended to the first time around. But, app developers know that’s not usually the case. When there are errors or bugs in the apps you’re developing, you want to make sure that your employees understand why debugging is important and how to actually debug with React Native. Otherwise, your developers will spend more time asking others to help debug their app than being able to fix it themselves. So, make sure to ask React Native interview questions that pertain to fixing errors and bugs within the React framework.
+
+The Answer You’re Looking For
+The actual method of debugging depends on how you’re viewing and using the app in question. If you’re using an iOS or Android simulator, all you have to do is shake your phone to open up the developer menu. From there, you have options like reloading the entire app or opening up a Javascript debugger and making adjustments. Or, you can even toggle the inspector to check out properties of the app’s elements.
+
+The developer tools menu also has features like “Show Perf Monitor”. This will allow you to check out your app’s performance (i.e. Recognize bugs) and enable or disable live reload. This will reload the app every time you make new changes to the coding that you’ve saved.
+
+If you’re accessing the app via a laptop or a computer, all you have to do to trigger the developer tools is press “Command + D”. This should open up a new window or tab and will allow you to begin the process of debugging your app.
+
+There are several other tools to help with testing once you have the major bugs fixed. TestFlight lets you do beta testing to get feedback from users. Google Play also has alpha and beta channels to help you test. Both programs can help you catch additional bugs and also get general feedback to improve the app. 
+
+5. What Types of Apps Can You Create with React Native?
+React Native interview questions on this topic will prove that the developer has an in-depth understanding of what exactly React Native can do. Additionally, it will show that they understand the benefits it holds when creating a specific subset of apps.
+
+The Answer You’re Looking For
+React Native is ideally used when developing low-performance apps. So, it wouldn’t be the best tool to use if you’re looking to make a gaming app that requires a high-performance platform. React Native is the tool to use if you’re looking to develop a cross-platform app that works seamlessly through Android, Apple, and even web-enabled devices. That means you don’t have to write individual code for each individual operating system, which saves a ton of time.
+
+Another benefit of React Native for app creation is the fact that it facilitates quick releases. The framework allows developers to release an app or even a prototype much sooner and quicker without worrying about the app crashing unexpectedly or having bugs.
+
+In addition to the above answers to this React Native JS question, you can use React Native for just about anything. That includes e-Commerce apps and marketplace apps, as well as apps that need to be developed for specific events or occasions. You can make them quickly and push them out as soon as possible.
+
 50 React Native Interview Questions and Answers to Crack Your Next Job
 vinay6 months ago08 mins
 react native interview questions
