@@ -1,3 +1,856 @@
+35+ Basic & Advanced ReactJS Interview Questions
+
+Milos Timotic
+Nov 21, 2018
+31 min read
+35+ Basic & Advanced ReactJS Interview Questions
+You’re about to walk into a React interview, and the interviewer asks about hooks, state management, or the Virtual DOM. Do you freeze or confidently explain how these concepts drive modern front-end development?
+
+React interview questions test more than memorized definitions. They reveal how you think about component architecture, performance optimization, and real-world problem solving.
+
+This guide covers 35 essential questions spanning React fundamentals, hooks, state management patterns, and advanced concepts like server-side rendering. Each question includes what interviewers actually want to hear, common mistakes that sink candidates, and follow-up variations that separate junior developers from senior engineers.
+
+Whether you’re preparing for your first React position or switching to a role requiring JSX expertise, these questions mirror what companies ask during technical screenings. You’ll understand not just the “what” but the “why” behind React’s design decisions.
+
+Master these concepts and you’ll handle anything from useState basics to reconciliation algorithm details with the same confidence.
+
+React Interview Questions
+ 
+
+Category	Core Concept	Related Variations	Context Attributes
+React Fundamentals	What is React?	• What is JSX?
+• What are fragments?	Library, syntax extension, component wrapper
+Component Architecture	What are components in React?	• Functional vs class components
+• Higher-Order Components (HOC)
+• React portals	Component types, composition patterns, rendering location
+Component Lifecycle	What is the component lifecycle?	• useEffect vs useLayoutEffect
+• StrictMode	Mounting, updating, unmounting phases, side effects timing
+State Management	What is state?	• useState
+• useReducer
+• Redux	Local state, complex state logic, global state management
+Data Flow	What are props?	• Prop drilling
+• Context API
+• useContext	Unidirectional data flow, nested component communication, global data sharing
+Hooks Ecosystem	What are React hooks?	• useState
+• useEffect
+• useContext
+• useRef
+• useMemo
+• useCallback
+• useReducer
+• Custom hooks	State hooks, effect hooks, ref hooks, performance hooks, custom logic reuse
+Performance Optimization	What is the Virtual DOM?	• Reconciliation
+• React.memo
+• useMemo
+• useCallback
+• Keys in React	Diffing algorithm, memoization, component identification, re-render prevention
+Component Patterns	Controlled vs uncontrolled components	• useRef (for uncontrolled)
+• useState (for controlled)	Form handling, data source (state vs DOM), input control methods
+Event Handling	What are synthetic events?	N/A	Cross-browser compatibility, event pooling, native event wrapper
+Routing & Navigation	What is React Router?	N/A	Client-side routing, navigation, URL management
+Code Efficiency	What is code splitting?	• Lazy loading in React	Bundle optimization, dynamic imports, component loading strategies
+Server-Side Rendering	What is server-side rendering (SSR)?	• Hydration	Initial render location, SEO optimization, client-side attachment process
+What is React?
+What It Tests
+Tests understanding of React’s core purpose and positioning in front-end development. Evaluates whether candidates grasp the library vs. framework distinction.
+
+The Question
+What is React and what problems does it solve in web development?
+
+Expected Answer Components
+React is a JavaScript library for building user interfaces, created by Facebook. It focuses on creating reusable components and efficiently updating the DOM through a Virtual DOM.
+
+Candidates should mention component-based architecture, declarative syntax, and the reconciliation process that makes React performant.
+
+What drives the global software industry?
+Uncover software development statistics: industry growth, methodology trends, developer demographics, and the data behind modern software creation.
+
+Discover Software Insights →
+Common Mistakes
+Calling React a framework instead of a library. Failing to explain the Virtual DOM or why React was created. Confusing React with React Native or other JavaScript frameworks.
+
+Follow-up Variations
+How does React differ from Angular or Vue? What makes React suitable for large applications? When would you not use React?
+
+Real-World Context
+React powers Facebook, Instagram, Netflix, Airbnb. The component model scales from small features to massive enterprise applications requiring maintainability and team collaboration.
+
+What is JSX?
+What It Tests
+Understanding of JSX syntax and its relationship to JavaScript. Checks knowledge of how React transforms JSX during the build process.
+
+The Question
+What is JSX and why does React use it?
+
+Expected Answer Components
+JSX is a syntax extension for JavaScript that looks like HTML. Babel transpiles JSX into React.createElement() calls.
+
+JSX is not required but makes code more readable. Elements can be stored in variables, passed as props, or returned from functions.
+
+Common Mistakes
+Thinking JSX is HTML or a template language. Not knowing that JSX gets compiled to JavaScript. Claiming JSX is mandatory for React.
+
+Follow-up Variations
+Can you use React without JSX? How does JSX get converted to JavaScript? What are the differences between JSX and HTML?
+
+Real-World Context
+JSX appears in every React component. Understanding JSX compilation helps debug build issues and write optimized code in production applications.
+
+What are components in React?
+What It Tests
+Tests grasp of React’s fundamental building block. Evaluates understanding of component composition and reusability principles.
+
+The Question
+What are React components and how do they work together?
+
+Expected Answer Components
+Components are independent, reusable pieces of UI that accept inputs (props) and return React elements describing what should appear on screen.
+
+They can be composed to build complex interfaces. Each component manages its own rendering logic and state.
+
+Common Mistakes
+Not distinguishing between component instances and component definitions. Forgetting that components are just functions or classes. Unclear about component hierarchy.
+
+Follow-up Variations
+How do parent and child components communicate? What’s the difference between presentation and container components? When should you break something into a separate component?
+
+Real-World Context
+Component architecture determines codebase maintainability. Well-designed components reduce bugs and make features easier to add in production applications.
+
+What is the difference between functional and class components?
+What It Tests
+Understanding of React’s evolution and modern best practices. Checks knowledge of when hooks replaced class lifecycle methods.
+
+The Question
+What are the key differences between functional and class components in React?
+
+Expected Answer Components
+Functional components are JavaScript functions that return JSX. Class components extend React.Component and use render().
+
+Before React 16.8, only class components could use state and lifecycle methods. Hooks now allow functional components to do everything class components can.
+
+Common Mistakes
+Claiming functional components can’t have state (outdated since hooks). Not knowing class components are legacy. Missing performance implications.
+
+Follow-up Variations
+Why did React introduce hooks? When would you still use a class component? How do lifecycle methods map to hooks?
+
+Real-World Context
+Modern React development uses functional components exclusively. Legacy codebases still contain class components requiring maintenance and gradual migration.
+
+What are props?
+What It Tests
+Tests understanding of data flow in React. Evaluates knowledge of component communication patterns and immutability.
+
+The Question
+What are props in React and how are they used?
+
+Expected Answer Components
+Props (properties) are arguments passed to components, similar to function parameters. They’re read-only and flow downward from parent to child.
+
+Components receive props as a single object parameter. Props enable component reusability by allowing different data inputs.
+
+Common Mistakes
+Trying to modify props directly. Confusing props with state. Not understanding that props can be any data type including functions.
+
+Follow-up Variations
+Can you change props inside a component? How do you pass data from child to parent? What’s prop drilling and how do you solve it?
+
+Real-World Context
+Props structure every React application. Proper prop management prevents bugs in component trees. API integration often flows through props.
+
+What is state?
+What It Tests
+Evaluates understanding of React’s reactive data model. Tests knowledge of when and how components re-render.
+
+The Question
+What is state in React and how does it differ from props?
+
+Expected Answer Components
+State is data that changes over time and is managed within a component. Unlike props, state is mutable and private to the component.
+
+When state updates, React re-renders the component and its children. State changes trigger the reconciliation algorithm.
+
+Common Mistakes
+Modifying state directly instead of using setState or state setters. Not understanding asynchronous state updates. Confusing local component state with global state.
+
+Follow-up Variations
+How do you update state properly? Why can’t you mutate state directly? What happens when state changes?
+
+Real-World Context
+State management drives interactive features. Form inputs, loading states, user authentication rely on proper state handling in production apps.
+
+What is the Virtual DOM?
+What It Tests
+Tests understanding of React’s core performance optimization. Checks knowledge of reconciliation and diffing algorithms.
+
+The Question
+What is the Virtual DOM and why does React use it?
+
+Expected Answer Components
+Virtual DOM is a lightweight JavaScript representation of the actual DOM. React keeps a virtual copy in memory.
+
+When state changes, React creates a new Virtual DOM, compares it to the previous version, calculates minimal changes needed, then updates only those parts of the real DOM.
+
+Common Mistakes
+Thinking Virtual DOM is always faster than direct DOM manipulation. Not understanding the diffing algorithm. Confusing Virtual DOM with Shadow DOM.
+
+Follow-up Variations
+How does React’s diffing algorithm work? When might Virtual DOM be slower? What role do keys play in Virtual DOM updates?
+
+Real-World Context
+Virtual DOM enables React’s declarative API. Understanding it helps optimize list rendering and prevent unnecessary re-renders in large applications.
+
+What are React hooks?
+What It Tests
+Evaluates knowledge of modern React patterns. Tests understanding of why hooks were introduced and how they work.
+
+The Question
+What are React hooks and what problem do they solve?
+
+Expected Answer Components
+Hooks are functions that let you use state and other React features in functional components. Introduced in React 16.8.
+
+They solve problems like reusing stateful logic, complex components becoming hard to understand, and confusing classes. Hooks like useState and useEffect replace class lifecycle methods.
+
+Common Mistakes
+Using hooks inside conditions or loops. Not knowing hooks must be called at the top level. Missing the rules of hooks.
+
+Follow-up Variations
+What are the rules of hooks? Why can’t hooks be conditional? How do custom hooks work?
+
+Real-World Context
+Hooks are standard in modern React development. They simplify component logic and enable better code refactoring across projects.
+
+What is useState?
+What It Tests
+Tests practical knowledge of state management in functional components. Evaluates understanding of state updates and re-renders.
+
+The Question
+How does the useState hook work and what does it return?
+
+Expected Answer Components
+useState accepts an initial state value and returns an array with two elements: the current state value and a setter function.
+
+The setter function schedules a re-render with the new state value. State updates may be asynchronous and batched. Previous state can be accessed via functional updates.
+
+Common Mistakes
+Not using the functional form when new state depends on old state. Assuming state updates are synchronous. Creating too many separate state variables.
+
+Follow-up Variations
+How do you update state based on previous state? Can you use useState multiple times? When should you use useReducer instead?
+
+Real-World Context
+useState powers form inputs, toggles, counters, and dynamic UI. Every interactive React feature likely uses useState somewhere in the component tree.
+
+What is useEffect?
+What It Tests
+Evaluates understanding of side effects and component lifecycle. Tests knowledge of dependency arrays and cleanup functions.
+
+The Question
+What is useEffect used for and how does it work?
+
+Expected Answer Components
+useEffect runs side effects after render. It accepts a function and an optional dependency array.
+
+Empty dependency array runs effect once on mount. No array runs after every render. Dependencies control when effect re-runs. Return a cleanup function to handle unmounting.
+
+Common Mistakes
+Missing dependencies causing stale closures. Not providing cleanup functions for subscriptions. Infinite loops from missing dependency arrays.
+
+Follow-up Variations
+When does useEffect run? What’s the difference between useEffect and useLayoutEffect? How do you implement componentDidMount with hooks?
+
+Real-World Context
+useEffect handles data fetching, subscriptions, DOM manipulation, timers. Critical for API integration and external service connections in applications.
+
+What is useContext?
+What It Tests
+Tests understanding of React Context API and prop drilling solutions. Evaluates knowledge of global state patterns.
+
+The Question
+What is useContext and when would you use it?
+
+Expected Answer Components
+useContext accesses values from a React Context without prop drilling. It accepts a context object created by React.createContext.
+
+Context provides a way to share data across the component tree without passing props through every level. Updates to context trigger re-renders in consuming components.
+
+Common Mistakes
+Overusing context for all state. Not understanding re-render implications. Missing that context updates trigger all consumers to re-render.
+
+Follow-up Variations
+How does Context API compare to Redux? When should you avoid using context? How do you optimize context to prevent re-renders?
+
+Real-World Context
+useContext manages themes, user authentication, language settings. Essential for avoiding prop drilling in deeply nested component structures found in production apps.
+
+What is useRef?
+What It Tests
+Evaluates understanding of mutable refs and DOM access. Tests knowledge of when to use refs vs. state.
+
+The Question
+What is useRef and what are its common use cases?
+
+Expected Answer Components
+useRef returns a mutable object with a .current property. Unlike state, updating refs doesn’t trigger re-renders.
+
+Common uses: accessing DOM elements, storing mutable values that persist across renders, keeping previous values, managing focus/animations.
+
+Common Mistakes
+Using refs for data that should be state. Forgetting that ref changes don’t cause re-renders. Reading refs during render instead of in effects.
+
+Follow-up Variations
+How does useRef differ from useState? When should you use refs instead of state? How do you access a child component’s DOM node?
+
+Real-World Context
+useRef handles imperative operations like focus management, scroll position, third-party library integration where direct DOM access is needed.
+
+What is useMemo?
+What It Tests
+Tests understanding of performance optimization in React. Evaluates knowledge of when memoization helps vs. hurts.
+
+The Question
+What does useMemo do and when should you use it?
+
+Expected Answer Components
+useMemo memoizes computed values between renders. It accepts a calculation function and dependency array.
+
+React recalculates only when dependencies change. Use for expensive calculations, not for every computation. Premature optimization can hurt readability.
+
+Common Mistakes
+Overusing useMemo for simple calculations. Missing that it’s an optimization, not a semantic guarantee. Not profiling before optimizing.
+
+Follow-up Variations
+How does useMemo differ from useCallback? When does memoization actually improve performance? Can React ignore useMemo?
+
+Real-World Context
+useMemo optimizes complex data transformations, filtering large lists, expensive calculations in data visualization or analytics dashboards.
+
+What is useCallback?
+What It Tests
+Evaluates understanding of reference equality and re-renders. Tests knowledge of when callback memoization matters.
+
+The Question
+What is useCallback and why would you use it?
+
+Expected Answer Components
+useCallback returns a memoized callback function. It prevents creating new function references on every render.
+
+Useful when passing callbacks to optimized child components that rely on reference equality to prevent re-renders. Takes function and dependency array.
+
+Common Mistakes
+Using useCallback everywhere unnecessarily. Not understanding it’s about reference stability, not preventing function execution. Missing performance implications.
+
+Follow-up Variations
+How does useCallback relate to React.memo? When does useCallback actually matter? What’s the difference between useCallback and useMemo?
+
+Real-World Context
+useCallback optimizes components with expensive rendering, prevents infinite loops in effects, stabilizes callbacks passed to memoized children in large component trees.
+
+What is the component lifecycle?
+What It Tests
+Tests understanding of component phases from creation to destruction. Evaluates knowledge of lifecycle method equivalents in hooks.
+
+The Question
+What are the phases of a React component lifecycle?
+
+Expected Answer Components
+Three main phases: Mounting (component creation), Updating (re-renders from state/props changes), Unmounting (cleanup and removal).
+
+Class components use lifecycle methods like componentDidMount, componentDidUpdate, componentWillUnmount. Functional components use useEffect with different dependency patterns to replicate these phases.
+
+Common Mistakes
+Not mapping class lifecycle methods to hook equivalents correctly. Missing cleanup requirements. Thinking lifecycle only applies to class components.
+
+Follow-up Variations
+How do you implement componentDidMount with hooks? What’s the difference between componentDidUpdate and useEffect? When does React call cleanup functions?
+
+Real-World Context
+Understanding app lifecycle patterns helps debug mounting issues, memory leaks, and timing problems in production applications.
+
+What are keys in React?
+What It Tests
+Evaluates understanding of list rendering optimization. Tests knowledge of reconciliation algorithm and element identity.
+
+The Question
+Why are keys important when rendering lists in React?
+
+Expected Answer Components
+Keys help React identify which items changed, were added, or removed. They should be stable, unique among siblings, and not use array indexes.
+
+React uses keys during reconciliation to match elements between renders. Missing or improper keys cause rendering bugs and performance issues.
+
+Common Mistakes
+Using array index as key. Not understanding why keys matter. Thinking keys need to be globally unique instead of unique among siblings.
+
+Follow-up Variations
+Why shouldn’t you use array index as a key? What happens without keys? Can keys be non-unique?
+
+Real-World Context
+Proper key usage prevents bugs in dynamic lists, form inputs, draggable items. Critical for any feature rendering collections from APIs or databases.
+
+What is prop drilling?
+What It Tests
+Tests understanding of React’s data flow limitations. Evaluates knowledge of solutions like Context API, Redux, or composition.
+
+The Question
+What is prop drilling and how do you solve it?
+
+Expected Answer Components
+Prop drilling is passing props through multiple component layers to reach deeply nested children. Intermediate components don’t use the props but must forward them.
+
+Solutions: Context API, state management libraries like Redux, component composition, or custom hooks to avoid passing props through every level.
+
+Common Mistakes
+Thinking prop drilling is always bad. Not knowing when drilling a few levels is acceptable. Overengineering solutions for simple cases.
+
+Follow-up Variations
+When is prop drilling acceptable? How does Context API solve this? What are alternatives to Context?
+
+Real-World Context
+Prop drilling becomes painful in large applications with deep component trees. Solving it improves maintainability and developer experience.
+
+What is Context API?
+What It Tests
+Evaluates understanding of built-in state sharing mechanism. Tests knowledge of when Context is appropriate vs. other solutions.
+
+The Question
+What is React Context API and when should you use it?
+
+Expected Answer Components
+Context provides a way to share values between components without prop drilling. Created via React.createContext, consumed via useContext hook.
+
+Best for global data like themes, user settings, authentication. Not a replacement for all state management. Can cause re-render issues if not used carefully.
+
+Common Mistakes
+Using Context for all state. Not understanding performance implications. Creating too many separate contexts or too few.
+
+Follow-up Variations
+How does Context differ from Redux? When should you avoid Context? How do you prevent unnecessary re-renders with Context?
+
+Real-World Context
+Context powers theme switching, language selection, user authentication state in applications without requiring heavy state management libraries.
+
+What is Redux?
+What It Tests
+Tests knowledge of external state management patterns. Evaluates understanding of when Redux adds value vs. complexity.
+
+The Question
+What is Redux and how does it differ from React’s built-in state management?
+
+Expected Answer Components
+Redux is a predictable state container following Flux architecture. Single store holds entire application state. State changes via pure reducer functions responding to dispatched actions.
+
+Provides time-travel debugging, predictable state updates, middleware support. Better for complex state logic and large team collaboration than Context alone.
+
+Common Mistakes
+Thinking Redux is required for React. Not knowing when Redux adds unnecessary complexity. Confusing Redux with Context API.
+
+Follow-up Variations
+When should you use Redux over Context? What are Redux alternatives? How does Redux Toolkit simplify Redux?
+
+Real-World Context
+Redux suits large applications with complex state logic, multiple data sources, and requirements for debugging state changes over time.
+
+What are controlled vs uncontrolled components?
+What It Tests
+Evaluates understanding of form handling strategies in React. Tests knowledge of data flow and DOM interaction patterns.
+
+The Question
+What’s the difference between controlled and uncontrolled components?
+
+Expected Answer Components
+Controlled components: React state controls form values via onChange handlers. Component always renders current state value. Single source of truth.
+
+Uncontrolled components: DOM holds form data. Access values via refs. Less code but harder to validate and manage.
+
+Common Mistakes
+Mixing controlled and uncontrolled patterns. Not understanding why controlled is usually preferred. Missing that uncontrolled components still have their place.
+
+Follow-up Variations
+When would you use uncontrolled components? How do you convert an uncontrolled component to controlled? What are the tradeoffs?
+
+Real-World Context
+Form handling is everywhere. Controlled components enable real-time validation, conditional rendering, and complex multi-step forms in production applications.
+
+What is React Router?
+What It Tests
+Tests understanding of client-side routing. Evaluates knowledge of navigation, route matching, and nested routes.
+
+The Question
+What is React Router and how does it enable single-page applications?
+
+Expected Answer Components
+React Router manages navigation and rendering different components based on URL without full page reloads. Core components: BrowserRouter, Routes, Route, Link.
+
+Supports nested routes, route parameters, programmatic navigation. Version 6+ simplified API with hooks like useNavigate, useParams.
+
+Common Mistakes
+Not understanding client-side vs. server-side routing. Missing that Routes replaced Switch in v6. Confusing navigation methods across versions.
+
+Follow-up Variations
+How do you handle protected routes? What’s the difference between Link and NavLink? How do nested routes work?
+
+Real-World Context
+React Router powers navigation in single-page applications. Essential for web apps with multiple views, authentication flows, and dashboard navigation.
+
+What is lazy loading in React?
+What It Tests
+Evaluates understanding of code splitting and performance optimization. Tests knowledge of dynamic imports and Suspense.
+
+The Question
+How does lazy loading work in React and why is it useful?
+
+Expected Answer Components
+React.lazy() enables dynamic imports to split code into separate bundles loaded on demand. Must be wrapped with Suspense component providing fallback UI.
+
+Reduces initial bundle size, improves load time. Best for route-based splitting or conditionally rendered large components.
+
+Common Mistakes
+Not wrapping lazy components in Suspense. Lazy loading everything unnecessarily. Missing that it only works with default exports.
+
+Follow-up Variations
+When should you lazy load components? How does code splitting affect performance? What’s the relationship between lazy and Suspense?
+
+Real-World Context
+Lazy loading is crucial for large applications. Reduces initial JavaScript payload significantly, improving metrics for mobile application development projects.
+
+What are Higher-Order Components (HOC)?
+What It Tests
+Tests understanding of advanced composition patterns. Evaluates knowledge of code reuse techniques and when hooks replaced HOCs.
+
+The Question
+What are Higher-Order Components and when would you use them?
+
+Expected Answer Components
+HOCs are functions that take a component and return a new enhanced component. Used for cross-cutting concerns like authentication, logging, data fetching.
+
+Pattern less common now that custom hooks provide similar functionality with better composition and fewer wrapper components.
+
+Common Mistakes
+Creating HOCs when custom hooks would be simpler. Not forwarding refs properly. Missing that HOCs are mostly legacy pattern now.
+
+Follow-up Variations
+How do HOCs differ from custom hooks? When should you still use HOCs? What are common HOC examples?
+
+Real-World Context
+Legacy codebases use HOCs extensively. Understanding them helps maintain older code and appreciate why hooks became preferred in software development.
+
+What are React portals?
+What It Tests
+Evaluates understanding of rendering outside normal DOM hierarchy. Tests knowledge of modal, tooltip, and overlay implementation patterns.
+
+The Question
+What are React portals and what problems do they solve?
+
+Expected Answer Components
+ReactDOM.createPortal renders children into DOM node outside parent component hierarchy. Useful for modals, tooltips, dropdowns that need to escape parent styles or z-index stacking.
+
+Portal children behave like normal React children for events and context, even though rendered elsewhere in DOM.
+
+Common Mistakes
+Not knowing when portals are necessary. Missing that events bubble through React tree, not DOM tree. Forgetting to provide a DOM node target.
+
+Follow-up Variations
+When should you use portals? How do events work with portals? What are alternatives to portals?
+
+Real-World Context
+Portals solve z-index wars and overflow issues with modals, notifications, dropdowns in complex layouts with nested components.
+
+What is code splitting?
+What It Tests
+Tests understanding of bundle optimization strategies. Evaluates knowledge of webpack, dynamic imports, and performance.
+
+The Question
+What is code splitting and how does it improve application performance?
+
+Expected Answer Components
+Code splitting breaks JavaScript bundle into smaller chunks loaded on demand. Reduces initial load time by deferring non-critical code.
+
+Implemented via dynamic import() syntax, React.lazy, or route-based splitting. Webpack and other bundlers handle chunk creation automatically.
+
+Common Mistakes
+Not knowing where to split code effectively. Splitting too aggressively creating many tiny chunks. Missing analysis tools like webpack-bundle-analyzer.
+
+Follow-up Variations
+When should you split code? How do you analyze bundle size? What’s the difference between route and component-based splitting?
+
+Real-World Context
+Code splitting is mandatory for large-scale applications. Critical for performance in cross-platform app development targeting mobile networks.
+
+What is the difference between useEffect and useLayoutEffect?
+What It Tests
+Evaluates understanding of effect timing and rendering phases. Tests knowledge of when synchronous effects are necessary.
+
+The Question
+How does useLayoutEffect differ from useEffect?
+
+Expected Answer Components
+useEffect runs asynchronously after paint. useLayoutEffect runs synchronously after DOM mutations but before paint.
+
+Use useLayoutEffect for DOM measurements or mutations that must happen before browser paints. Most effects should use useEffect.
+
+Common Mistakes
+Using useLayoutEffect unnecessarily causing performance issues. Not understanding paint blocking behavior. Defaulting to useLayoutEffect.
+
+Follow-up Variations
+When should you use useLayoutEffect? What performance impact does useLayoutEffect have? How do these relate to class lifecycle methods?
+
+Real-World Context
+useLayoutEffect handles tooltip positioning, scroll restoration, DOM measurements. Critical for smooth animations and preventing visual flicker.
+
+What are custom hooks?
+What It Tests
+Tests understanding of logic extraction and reusability. Evaluates knowledge of hook composition and naming conventions.
+
+The Question
+What are custom hooks and how do you create them?
+
+Expected Answer Components
+Custom hooks extract component logic into reusable functions. Must start with “use” prefix and can call other hooks.
+
+Enable sharing stateful logic without wrapper components or HOCs. Return values and functions that components need.
+
+Common Mistakes
+Not following “use” naming convention. Trying to use hooks conditionally inside custom hooks. Not understanding hook composition rules.
+
+Follow-up Variations
+How do custom hooks differ from regular functions? When should you create a custom hook? Can custom hooks manage their own state?
+
+Real-World Context
+Custom hooks encapsulate common patterns like data fetching, form handling, window dimensions. Essential for software development best practices and code reuse.
+
+What is reconciliation?
+What It Tests
+Evaluates understanding of React’s core update algorithm. Tests knowledge of diffing process and performance optimization.
+
+The Question
+What is reconciliation in React and how does it work?
+
+Expected Answer Components
+Reconciliation is React’s algorithm for updating the DOM efficiently. Compares new Virtual DOM tree with previous version using diffing.
+
+Makes assumptions: different element types produce different trees, stable keys identify elements across renders. Runs in O(n) complexity instead of O(n³).
+
+Common Mistakes
+Not understanding how keys affect reconciliation. Missing that reconciliation is implementation detail. Confusing reconciliation with rendering.
+
+Follow-up Variations
+How do keys help reconciliation? What assumptions does the algorithm make? How does React Fiber relate to reconciliation?
+
+Real-World Context
+Understanding reconciliation helps optimize list rendering, prevent unnecessary re-renders, and debug performance issues in production applications.
+
+What is React.memo?
+What It Tests
+Tests knowledge of performance optimization for functional components. Evaluates understanding of shallow comparison and re-render prevention.
+
+The Question
+What does React.memo do and when should you use it?
+
+Expected Answer Components
+React.memo is a higher-order component that memoizes functional components. Prevents re-render if props haven’t changed via shallow comparison.
+
+Similar to PureComponent for classes. Can provide custom comparison function as second argument. Use for expensive renders with stable props.
+
+Common Mistakes
+Wrapping every component in React.memo. Not understanding shallow comparison limitations. Premature optimization without profiling.
+
+Follow-up Variations
+How does React.memo differ from useMemo? When does memoization hurt performance? How do you provide custom comparison?
+
+Real-World Context
+React.memo optimizes expensive list items, complex visualizations, components that render frequently but receive same props repeatedly.
+
+What is the useReducer hook?
+What It Tests
+Evaluates understanding of alternative state management for complex state logic. Tests knowledge of reducer pattern.
+
+The Question
+What is useReducer and when should you use it instead of useState?
+
+Expected Answer Components
+useReducer manages state through reducer function similar to Redux. Accepts reducer and initial state, returns current state and dispatch function.
+
+Better than useState for complex state logic, multiple sub-values, or when next state depends on previous. Actions describe what happened.
+
+Common Mistakes
+Using useReducer for simple state. Not understanding when it’s better than useState. Missing that it doesn’t need Redux.
+
+Follow-up Variations
+How does useReducer compare to Redux? When is useReducer better than useState? How do you initialize state with useReducer?
+
+Real-World Context
+useReducer handles form state with validation, shopping carts, complex UI state machines in applications without adding Redux.
+
+What are fragments?
+What It Tests
+Tests understanding of rendering multiple elements without wrapper divs. Evaluates knowledge of DOM structure cleanliness.
+
+The Question
+What are React fragments and why would you use them?
+
+Expected Answer Components
+Fragments let you group children without adding extra DOM nodes. Use <React.Fragment> or shorthand <></> syntax.
+
+Solve the problem of returning multiple elements from components without wrapper divs affecting CSS or DOM structure.
+
+Common Mistakes
+Always using divs when fragments would work. Not knowing fragment shorthand syntax. Missing that fragments can have keys in lists.
+
+Follow-up Variations
+When do fragments need keys? What’s the difference between Fragment and shorthand? Why avoid wrapper divs?
+
+Real-World Context
+Fragments keep DOM clean in table rows, flex layouts, grid structures where extra wrapper elements break styling in production apps.
+
+What is StrictMode?
+What It Tests
+Evaluates understanding of React development tools. Tests knowledge of how StrictMode helps identify problems.
+
+The Question
+What does React.StrictMode do and when should you use it?
+
+Expected Answer Components
+StrictMode is a development-only tool that highlights potential problems. Doesn’t render visible UI, activates additional checks and warnings for descendants.
+
+Helps detect unsafe lifecycles, legacy API usage, unexpected side effects by double-invoking certain functions during development.
+
+Common Mistakes
+Thinking StrictMode affects production builds. Not understanding why effects run twice in development. Removing it because of double renders.
+
+Follow-up Variations
+Why do effects run twice in StrictMode? What problems does StrictMode detect? Does it affect performance?
+
+Real-World Context
+StrictMode catches bugs early during development. Prepares codebase for Concurrent Mode and helps maintain software reliability.
+
+What are synthetic events?
+What It Tests
+Tests understanding of React’s event system abstraction. Evaluates knowledge of cross-browser compatibility and event pooling.
+
+The Question
+What are synthetic events in React and why does React use them?
+
+Expected Answer Components
+Synthetic events are React’s cross-browser wrapper around native events. Provide consistent interface across browsers with same API.
+
+Events are pooled in older React versions for performance (removed in React 17+). Properties nullified after callback, requiring event.persist() in older versions.
+
+Common Mistakes
+Not knowing pooling removed in React 17. Trying to access event asynchronously in old React. Missing cross-browser benefits.
+
+Follow-up Variations
+How do synthetic events differ from native events? What changed in React 17? Can you access the native event?
+
+Real-World Context
+Synthetic events simplify event handling across browsers. Understanding them prevents async access bugs in form handling and user interactions.
+
+What is server-side rendering (SSR)?
+What It Tests
+Evaluates understanding of rendering strategies and performance optimization. Tests knowledge of initial load improvements and SEO.
+
+The Question
+What is server-side rendering in React and what benefits does it provide?
+
+Expected Answer Components
+SSR renders React components on server into HTML string sent to client. Browser displays content before JavaScript loads.
+
+Improves initial page load, SEO, performance on slow devices. Requires hydration on client to make HTML interactive. More complex deployment than client-only rendering.
+
+Common Mistakes
+Thinking SSR is always faster. Not understanding hydration process. Missing that SSR requires Node server or framework like Next.js.
+
+Follow-up Variations
+How does SSR affect SEO? What’s the difference between SSR and static site generation? What is hydration?
+
+Real-World Context
+SSR critical for content-heavy sites needing SEO. E-commerce, blogs, marketing sites benefit from faster perceived load time and search visibility.
+
+What is hydration?
+What It Tests
+Tests understanding of SSR client-side attachment process. Evaluates knowledge of hydration errors and mismatches.
+
+The Question
+What is hydration in React and why is it necessary?
+
+Expected Answer Components
+Hydration attaches event listeners and React state to server-rendered HTML. Makes static HTML interactive without re-rendering.
+
+React expects DOM to match server output. Mismatches cause hydration errors. Common causes: browser-only APIs, timestamps, random values during render.
+
+Common Mistakes
+Not understanding hydration mismatch errors. Using browser APIs during render. Generating different content on server vs. client.
+
+Follow-up Variations
+What causes hydration mismatches? How do you fix hydration errors? What’s the difference between hydration and rendering?
+
+Real-World Context
+Hydration is fundamental to SSR applications using Next.js, Remix, or custom app development with SSR. Hydration bugs cause flickering and broken interactivity in production.
+
+FAQ on React Interview Questions
+What’s the difference between state and props in React?
+State is mutable data managed within a component that triggers re-renders when updated. Props are immutable inputs passed from parent to child components.
+
+State changes internally while props flow downward. Components can modify their own state using useState or setState but never their props directly.
+
+How do React hooks work?
+Hooks are functions that let functional components use state and lifecycle features without classes. They must be called at the top level, never inside loops or conditions.
+
+React tracks hook calls by order, maintaining internal state between renders. Common hooks like useState and useEffect replaced class lifecycle methods starting in React 16.8.
+
+What is the Virtual DOM and why does React use it?
+The Virtual DOM is a lightweight JavaScript representation of the actual DOM. React compares the new Virtual DOM with the previous version to calculate minimal changes needed.
+
+This diffing algorithm updates only changed elements instead of re-rendering the entire page. The reconciliation process makes React performant for complex user interfaces.
+
+When should you use useEffect vs useLayoutEffect?
+useEffect runs asynchronously after the browser paints, suitable for most side effects like data fetching and subscriptions. useLayoutEffect runs synchronously before paint, blocking the browser.
+
+Use useLayoutEffect only for DOM measurements or mutations that must happen before the user sees updates. The synchronous execution can hurt performance if overused.
+
+How does React reconciliation improve performance?
+Reconciliation compares Virtual DOM trees using a diffing algorithm with O(n) complexity. React assumes different element types produce different trees and uses keys to identify stable elements.
+
+This heuristic approach updates only necessary DOM nodes instead of rebuilding everything. Proper key usage in lists helps React efficiently reorder, add, or remove elements during reconciliation.
+
+What are controlled vs uncontrolled components?
+Controlled components store form data in React state, making React the single source of truth. Every state change flows through onChange handlers updating the component.
+
+Uncontrolled components store data in the DOM, accessed via refs when needed. Controlled components enable validation and conditional rendering but require more code than uncontrolled alternatives.
+
+Why are keys important in React lists?
+Keys help React identify which items changed, were added, or removed during reconciliation. They should be stable and unique among siblings, not array indexes.
+
+Without proper keys, React may incorrectly reuse components causing bugs with form inputs or animations. Keys optimize list rendering by helping React track element identity across renders.
+
+What problems does Context API solve?
+Context API eliminates prop drilling by sharing data across the component tree without passing props through every level. It’s ideal for global values like themes, user authentication, and language preferences.
+
+Creating a context with React.createContext and consuming via useContext avoids intermediary components that don’t need the data. However, context updates trigger re-renders in all consuming components.
+
+How does code splitting improve React applications?
+Code splitting breaks JavaScript bundles into smaller chunks loaded on demand. React.lazy with dynamic imports enables component-level splitting while route-based splitting loads pages as users navigate.
+
+This reduces initial bundle size significantly, improving load times especially on mobile networks. Tools like webpack handle chunk creation automatically during the build pipeline process.
+
+What is server-side rendering and when should you use it?
+SSR renders React components into HTML on the server before sending to the client. The browser displays content immediately while JavaScript loads, then hydration makes the page interactive.
+
+Use SSR for improved SEO, faster perceived load times, and better performance on slow devices. It requires Node.js servers or frameworks like Next.js handling the deployment pipeline.
+
+Conclusion
+Mastering React interview questions separates candidates who’ve memorized syntax from those who understand component architecture and performance patterns. The questions covered here span functional components, custom hooks, and advanced concepts like lazy loading that appear in real technical assessments.
+
+Understanding JSX compilation, the reconciliation process, and how useReducer handles complex state logic demonstrates practical experience beyond tutorial knowledge. Interviewers probe these areas to evaluate your grasp of React’s internal mechanisms.
+
+Practice explaining concepts like Higher-Order Components, portals, and synthetic events out loud before interviews. The ability to articulate why React.memo prevents unnecessary re-renders or when useCallback stabilizes function references shows depth that hiring managers value.
+
+Your preparation should extend beyond definitions to real-world scenarios. How would you structure software development projects using Context API versus Redux? When does code splitting actually improve load times?
+
+These 35 questions prepare you for technical screenings at companies building production web apps. Walk into your next interview confident you can explain not just what React does, but why it does it that way.
+
 Top 45 React Interview Questions and Answers
 Fernando DoglioFernando Doglio
 
