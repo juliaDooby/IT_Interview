@@ -1,3 +1,254 @@
+MongoDB Interview Questions and Answers
+Post author:Admin
+Post category:Database and SQL Topics
+Post last modified:July 4, 2023
+MongoDB Interview Questions :MongoDB is a free and open source cross-platform that uses a document-oriented data model and a non-structured query language. It is a most powerful NoSQL database which stores the data in form of key-value pairs. It is an Open Source, Document Database which provides high performance and scalability along with data modeling and data management of huge sets of data in an enterprise application. MongoDB was developed by Eliot Horowitz and Dwight Merriman in the year 2007.
+
+
+
+What is a MongoDB?
+Mongo-DB is a document database which provides high performance, high availability and easy scalability. It is an architecture that is built on collections and documents. The basic unit of data in this database consists of a set of key-value pairs. It is the most suited for mission-critical applications since it considerably reduces risks. It provides the right mix of technology and data for competitive advantage.
+
+
+
+What are the best features in MongoDB?
+Ad-hoc Queries
+It provides high performance.
+Replication
+Indexing
+Schema-less database written in C++
+Aggregation
+Easy to administer in the case of failures
+Supports MapReduce and aggregation tools
+Document-oriented
+Load balancing
+Sharding
+GridFS: storing and retrieving files
+Uses JavaScript instead of Procedures
+It is unaffected by SQL injection
+Stores files of any size easily without complicating your stack
+It uses BSON format which is a JSON like a format
+
+
+What is a Namespace in MongoDB?
+MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. The concatenation of the collection name and database name is called a namespace.
+
+
+
+What is a sharding in MongoDB?
+The procedure of storing data records across multiple machines is referred to as Sharding. It is a MongoDB approach to meet the demands of data growth. It is the horizontal partition of data in a database or search engine. Each partition is referred as shard or database shard.
+
+
+
+What is GridFS?
+GridFS is a specification for storing and retrieving files that exceed the BSON document size limit of 16MB. Instead of storing a file in a single document, GridFS divides a file into parts or chunks, and stores each of those chunks as a separate document.
+
+
+
+What is MongoDB Ops Manager?
+MongoDB Ops manager is the easiest way to manage and monitor and operationalize your MongoDB footprint across your enterprise. It provides Ops Manager Monitoring and Ops Manager Backup, which helps users optimize clusters and mitigate operational risk.
+
+
+
+What is MongoDB Cloud Manager?
+MongoDB Cloud Manager can automate, monitor, and back up your MongoDB infrastructure.
+
+
+
+What is MongoDB Stitch?
+The MongoDB Stitch server less platform makes it easy to build modern, cross-platform applications on top of MongoDB. Stitch removes the need for tedious boilerplate and automatically manages your app’s backend so you can focus on building what matters. (MongoDB doc)
+
+
+
+How does Sharding work with replication?
+Each Shard is a logical collection of partitioned data. The shard could consist of a single server or a cluster of replicas. Using a replica set for each Shard is highly recommended.
+
+
+
+
+
+What happens when a Shard is down or slow when querying?
+If a Shard is down, the query will return an error unless the ‘Partial’ query options is set. If a shard is responding slowly, Mongos will wait for it.
+
+
+
+Can you explain 32-bit nuances in MongoDB?
+ In MongoDB, Nuances is an extra memory mapped file activity with journaling. This will further constrain the limited DB size of 32-bit builds. For now, journaling by default is disabled on 32-bit systems.
+
+
+
+What are NoSQL databases? What are the different types of NoSQL databases?
+A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases (like SQL, Oracle, etc.).
+
+Types of NoSQL databases:
+
+Key value store NoSQL database
+Document store NoSQL database
+Column store NoSQL database
+Graph based NoSQL database
+
+
+What kind of NoSQL database MongoDB is?
+MongoDB is a document-oriented database. It stores data in the form of BSON structure based documents. These documents are stored in a collection.
+
+
+
+What is the difference between MongoDB and MySQL?
+Although MongoDB and MySQL both are free and open source databases, there is a lot of difference between them in the term of data representation, relationship, transaction, querying data, schema design and definition, performance speed, normalization and many more. To compare MySQL with MongoDB is like a comparison between Relational and Non-relational databases.
+
+
+
+Can you explain Journaling work in MongoDB?
+In MongoDB, When running with journaling, MongoDB stores and applies write operations in memory and in the on-disk journal before the changes are present in the data files on disk. Writes to the journal are atomic, ensuring the consistency of the on-disk journal files. With journaling enabled, MongoDB creates a journal subdirectory within the directory defined by dbPath, which is /data/db by default.
+
+
+
+Why MongoDB is known as best NoSQL database?
+MongoDB is the best NoSQL database because it is:
+
+Document-Oriented
+Rich Query language
+High Performance
+Highly Available
+Easily Scalable
+
+
+What is the difference b/w MongoDB and CouchDB?
+MongoDB and CouchDB both are the great examples of open source NoSQL database. both are document-oriented databases. Although both stores data there is a lot of difference between them in terms of implementation of their data models, interfaces, object storage and replication methods etc.
+
+
+
+Can the old files in the ‘moveChunk’ directory be removed?
+Yes, these files are made as backups during normal Shard balancing operations. Once the operations are done then they can be deleted. The clean-up process is currently manual so this needs to be taken care of to free up space.
+
+
+
+How long does replica set failover take?
+It may take 10-30 seconds for the primary to be declared down by the other members and a new primary to be elected. During this window of time, the cluster is down for primary operations i.e writes and strong consistent reads. However, eventually, consistent queries may be executed to secondaries at any time (in slavery mode), including during this window.
+
+
+
+How do I convert a property in MongoDB from text to date type?
+A document with a field called “ClockInTime” that was imported from CSV as a string.
+
+
+
+What are the Cons of MongoDB?
+High memory used: A 32-bit edition has 2GB data limit. After that, it will corrupt the entire DB, including the existing data. A 64-bit edition won’t suffer from this bug/feature.
+MongoDB doesn’t support joins like relational Database
+MongoDB is only ideal for implementing things like analytics/caching where the impact of small data loss is negligible.
+In MongoDB, it’s difficult to represent relationships between data so you end up doing that manually by creating another table to represent the relationship between rows in two or more tables.
+Limited nesting
+
+
+Which languages can be used with MongoDB?
+Currently, MongoDB provides official driver support for C, C++, C#, Java, Node.js, Perl, PHP, Python, Ruby, Scala, Go and Erlang. MongoDB can easily be used with any of these languages. There are some other community-supported drivers too but the above-mentioned ones are officially provided by MongoDB.
+
+
+
+How is MongoDB better than other SQL databases?
+MongoDB allows a highly flexible and scalable document structure. For e.g., one data document in MongoDB can have five columns and the other one in the same collection can have ten columns. Also, MongoDB database are faster as compared to SQL databases due to efficient indexing and storage techniques.
+
+
+
+Does MongoDB support foreign key constraints?
+No. MongoDB does not support such relationships.
+
+
+
+How do you see the connections used by Mongos?
+The following command needs to be used: db._adminCommand(“connPoolStats”);
+
+
+
+Does MongoDB need a lot of RAM?
+No. MongoDB can be run even on a small amount of RAM. MongoDB dynamically allocates and de-allocates RAM based on the requirements of other processes.
+
+
+
+Explain the structure of ObjectID in MongoDB?
+ObjectID is a 12-byte BSON type with:
+
+A 4-bytes value representing seconds
+3-byte machine identifier
+2-byte process id
+3-byte counter
+
+
+What are Indexes in MongoDB?
+Indexes support the efficient execution of queries in MongoDB. Without indexes, MongoDB must perform a collection scan, i.e. scan every document in a collection, to select those documents that match the query statement. If an appropriate index exists for a query, MongoDB can use the index to limit the number of documents it must inspect.
+
+
+
+What is a covered query in MongoDB?
+A covered query is the one in which:
+
+fields used in the query are part of an index used in the query, and
+the fields returned in the results are in the same index
+
+
+Why is a covered query important?
+Since all the fields are covered in the index itself, MongoDB can match the query condition as well as return the result fields using the same index without looking inside the documents. Since indexes are stored in RAM or sequentially located on disk, such access is a lot faster.
+
+
+
+What is Aggregation in MongoDB?
+Aggregations operations process data records and return computed results. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. MongoDB provides three ways to perform aggregation: the aggregation pipeline, the map-reduce function, and single purpose aggregation methods and commands.
+
+
+
+Can you explain Storage Engine in MongoDB?
+In MongoDB,A storage engine is the part of a database that is responsible for managing how data is stored on disk. For example, one storage engine might offer better performance for read-heavy workloads, and another might support a higher-throughput for write operations.
+
+
+
+Is it required to call ‘getLastError’ to make a write durable?
+No. If ‘getLastError’ (aka ‘Safe Mode’) is not called, the server does exactly behave the way as if it has been called. The ‘getLastError’ call simply allows one to get a confirmation that the write operation was successfully committed. Of course, often you will want that confirmation, but the safety of the write and its durability is independent.
+
+
+
+What is Sharding in MongoDB?
+Sharding is a method for storing data across multiple machines. MongoDB uses sharding to support deployments with very large data sets and high throughput operations.
+
+
+
+What is Replication in MongoDB?
+Replication is the process of synchronizing data across multiple servers. Replication provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions.
+
+
+
+What is a Primary and Secondary Replica sets?
+Primary and master nodes are the nodes that can accept writes. MongoDB’s replication is ‘single-master:’ only one node can accept write operations at a time.
+
+Secondary and slave nodes are read-only nodes that replicate from the primary.
+
+
+
+What is the role of profiler in MongoDB?
+MongoDB includes a database profiler which shows performance characteristics of each operation against the database. With this profiler, you can find queries (and write operations) which are slower than they should be and use this information for determining when an index is needed.
+
+
+
+Why are MongoDB data files large in size?
+MongoDB preallocates data files to reserve space and avoid file system fragmentation when you set up the server.
+
+
+
+Why MongoDB is not preferred over a 32-bit system?
+When running a 32-bit build of MongoDB, the total storage size for the server, including data and indexes, is 2 gigabytes. For this reason, do not deploy MongoDB to production on 32-bit machines.
+
+If you’re running a 64-bit build of MongoDB, there’s virtually no limit to storage size.
+
+
+
+Suppose, you remove a document from the database, does MongoDB remove it from disk?
+Yes. Removing a document from database removes it from disk too.
+
+
+
+What are alternatives to MongoDB?
+Cassandra, CouchDB, Redis, Riak, HBase are a few good alternatives.
+
 MongoDB Developer Interview Questions & Answers
 MongoDB Developer is an IT professional specialized in programming and developing applications and software using Mongo tool.
 
