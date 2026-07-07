@@ -1,4 +1,582 @@
 
+Top 100 Frontend Developer Interview Questions and Answers
+Basic Level Interview Questions and Answers
+Q1. What are meta tags in HTML?
+Meta Tags go inside the head section of an HTML Page. They are not for the interface but are very important for the browser and SEO purposes. Meta tags consists of many fields like meta-titles, meta-description, and even character encoding.
+
+Q2. What are the basic design elements of an HTML page?
+The basic elements of design are as given below.
+
+head: the head tag where most of the meta data, important links and scripts are added.
+body: the body of the document with all divs and other elements are enclosed in.
+section: multiple parts of the html page are enclosed in various sections.
+divs: <div> tag defines a division of multiple parts in an HTML document.
+h and p tags: text parts are stored in h and p tags of an HTML document.
+img tag: image tags hold url for images in src to preview images in a document.
+a tag: a tags hold links in their href attribute to open external web pages in a document.
+Q3. What npm stands for ?
+Npm stands for Node Package Manager. 
+
+Q4.What is npm used for?
+NPM are used for Command-line utility to install packages, they do version management and dependency management of Node.js packages.
+
+Q5. What is Webpack?
+Webpack is a build tool that puts all of your assets, including Javascript, images, fonts, and CSS, in a dependency graph. Webpack allows you to use require() in your source code to point to local files, like images, and decide how they are processed in your final Javascript bundle, like replacing the path with a URL pointing to a CDN.
+
+Q6. Why and when should I use Webpack?
+We use it for complex Frontend Applications with many non-code static assets like CSS, images, fonts, etc, then yes, Webpack will give you great benefits.
+
+Q7: What is Sass?
+SaSS stands for Syntactically Awesome StyleSheets is a CSS preprocessor that will add power and elegance to the basic language. This allows you to use variables, mixins, nested rules, and inline imports, with a fully CSS-compatible syntax. Sass keeps huge stylesheets well-organized, and get small stylesheets up and run quickly.
+
+Q8. What is the difference between JavaScript and jQuery different?
+JQuery is a library built with the JavaScript language, and JavaScript is the language itself. 
+
+Q9. What is Content Security Policy? 
+Content security Policy is also known as CSP, and is a header in HTML this lets soite operators gain complete control over the resources which are loading on the site. 
+
+Q10. What is Cross-Site Scripting (XSS)?
+XSS. – Cross-Site Scripting is an attack that takes place when any attacker uses a web application to send any malicious code, in the form of browser side script, to another user. 
+
+Q11. What is User Centered Design?
+User-centered designs are where the designer only focuses on the things according to the needs of users and keeps them in every phase of designing. 
+
+Q12. What is callback hell?
+JavaScript which uses callbacks and is hard to get the right intuitively. The callbacks which are stacked in the form of pyramid structure. 
+
+Q13. What is Strict Mode in ECMAScript?
+A new feature in ECMAScript 5 is The Strict mode which lets you place a function, or a program in a “strict” context of operating. 
+
+Q14. What does SOLID stand for?
+S.O.L.I.D is an object-oriented design principle, and stands for:
+
+S- single responsibility principle 
+
+O- open-closed principle 
+
+L- Liskov Substitution principle 
+
+I- interface segregation principle 
+
+D- dependency. 
+
+Q15. What is a grid system in CSS?
+The structure which lets your content be placed on both horizontal and vertical sides in a consistent and manageable way. They have two key components of; Rows and Columns. 
+
+Q16. What are ways to decrease page load time?
+The best ways to decrease the page load time are given below.
+
+Image optimization – smaller. size or quality
+Clear Browser cache
+Compress and optimize content 
+Q17. What are attributes in HTML
+Attributes are the properties that you can add to an HTML tag and change the way the tag behaves or is displayed.
+You can add attributes right after the name of the HTML tag, inside the brackets. 
+Q18. How to Display a Table on an HTML Webpage?
+You can use the HTML <table> tag to create an HTML table.
+
+Q19. How to include CSS Styling in HTML?
+There are mainly three methods to add CSS or styling to an HTML page.
+
+Inline CSS: is useful when a single element needs to be styled or when a little quantity of styling is required.
+An External Style Sheet: apply a style to many elements or HTML pages, it employs an external style sheet.
+Internal Style Sheet: An internal style sheet is useful when a single HTML document has a distinct style and numerous elements.
+Q20. What is Eager and Lazy Loading?
+Eager loading: is the default module-loading approach. Eager loading feature modules are loaded before a program starts. You usually reserve this for applications that are not very large.
+
+Lazy Loading: depends on the demand, when lazy loading dynamically loads the feature modules. It speeds up the application. Lazy loading is useful in larger applications where all the modules are not required right after an application starts.
+
+Q21. What is Typescript? 
+TypeScript is a superset of JavaScript. It is an object-oriented programming language whose code is compiled in JavaScript. TypeScript supports all JavaScript frameworks and libraries. It aids in production of faster code and leads to better performance.
+
+Q22. How is TypeScript better than JavaScript?
+It points out compilation errors during development phase.
+It has support for strong types and static typing.
+It has better interface and generics.
+It provides an excellent tooling support along with IntelliSense.
+Q23. How would you ensure a web design is user-friendly?
+An app should be compatible with various platforms and should specifically work well on mobile platforms. Applications should properly be checked for user inputs and constant checks should be done for applications for different inputs.
+
+Q24. What’s the difference between Function Declaration and Function Expression?
+Function Declaration 
+
+function abc(){
+    return 5;
+}
+
+Function Expression 
+
+var a = function abc(){
+    return
+}
+
+25. How to use HTML5 and CSS3 to create interactive user interfaces?
+You can structure your HTML using semantic tags like <header>, <nav>, <main>, and <footer> to create a clear structure for your webpage. You can use CSS3 for styling, apply CSS styles to your HTML elements to create visually appealing interfaces.
+
+26. How would you differentiate between HTML elements and tags?
+HTML elements are the basic building blocks of websites. These are the containers that contain content and provide the structure for websites. They can also be nested within each other to create more complex content. HTML tags are the instructions to tell a browser for how to display the HTML elements.
+
+27. What does DOCTYPE mean?
+DOCTYPE stands for “Document Type Definition.” This is a HTML language element that defines the type of document required for a web page, and it has two parts. The document type name and the public identifier. 
+
+28. Explain the difference between inline, inline-block, and block.
+Inline elements are displayed inline, that is the start and end of the component will not occupy its line. 
+Inline-block elements are like inline elements, they can have a width and height, meaning an inline-block element occupies its space like a block element. 
+Block elements are displayed on their line and occupy the full width available, which means that other elements will be pushed to the following line.
+29. What are the differences between the different position properties: Relative, Absolute, Static, and Fixed.
+Relative moves an element from its current position.
+Absolute moves an element from its current position or the parent element’s position. Absolute elements don’t occupy space in DOM flow.
+Static is the default position.
+Fixed gives an element a fixed position relative to the device screen. None of these elements move during scrolling.
+30. How would you differentiate between a document and a window.
+Window object will have properties like inner width, inner height, length, whether it was previously closed, its parent, and its name. The window is the first thing that gets loaded into the browser. The document object is defined as any document that gets loaded inside the window object, such as HTML, ASPX, or PHP, and has properties such as cookies, title, and URL, to name a few.
+
+31. What is UX design?
+UX design or the User Experience design, is the process of designing and enhancing the overall experience that users have while interacting with a product, system, or a service. It will focus on creating user-centered designs that are intuitive, efficient, and enjoyable for usage.
+
+32. What is the difference between UX and UI?
+UX design is concerned with the experience and usability of a product, whereas UI design focuses on the visual and interactive elements that enable users to interact with the product. UX design deals with user research, user flows, and overall usability, while UI design deals with the visual presentation and aesthetics of the interface. Both UX and UI design are crucial in creating successful and user-centered designs, and they often work closely together to achieve cohesive and impactful user experiences.
+
+33. What is a CDN?
+A content delivery network (CDN) is a system that delivers content to users based on geographic location. CDNs can deliver websites, software applications, and other types of digital content.
+
+34. What are the differences between HTML5 and HTML4?
+HTML5, the latest version of HTML, has several new elements and attributes. It also supports audio and video playback and introduces support for local storage.
+
+35. Migrate the code given below in HTML4 to HTML5.
+In HTML4, the standard way to display “Hello World” would be to use the <h1> heading element to represent the heading of the document. Consider the example below.
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Hello World</title>
+ </head>
+ <body>
+  <h1>Hello World</h1>
+ </body>
+</html>
+
+In HTML5, the structure and syntax remain similar to HTML4. Here’s an example of displaying “Hello World” in HTML5:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World! Site Title</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+
+36. How do floats work?
+Floats pushes an element to the left or right. The float property can have any one of four values given below.
+
+Inherited: Element inherits the parent’s float value.
+None: This is the default value; the element doesn’t float.
+Left: Element float to the container’s left.
+Right: Element floats to the container’s right.
+37. What is a CSS reset, and how does it differ from normalize.css?
+Reset.css eliminates all browser default styles, such as margin, padding, and border. Normalize.css sets a standard book-like appearance (e.g., bold headings, margins between two paragraphs, common font) across all browsers.
+
+38. What’s an AJAX request, and how would an AJAX request be used?
+AJAX stands for asynchronous JavaScript and XML and is a client-side process written in JavaScript. It is used to get or post data from a remote server without needing to reload the page.
+
+39. What are hooks in React? Which React hooks do you use?
+In React, hooks are functions that allow you to use state and other React features in functional components. They were introduced in React version 16.8 as a way to write reusable logic and manage stateful behavior without using class components.
+
+40. What is the benefit of using React Hooks?
+Hooks have a lot of benefit to us as developers, and they are going to change the way we write components for the better. They already help us to write clearer and more concise code – it’s like we went on a code diet and we lost a lot of weight and we look better and feel better. It brings out our jawline and makes us feel lighter on our toes. It’s the one change that works for us.
+
+Expert Level Interview Questions and Answers
+Q41. What is Stringify?
+To transform a JavaScript object to a string data type, The Stringify method is used. 
+
+Q42. State the elements of the CSS Box Model.
+CSS Box Model consist of 4 elements stated below.
+
+Content
+Padding
+Border
+Margin 
+Q43. What is the benefit of a Srcset?
+To generate multiple new solutions of exact images on several devices, we can use the Srcset. This will help improve the overall UI. 
+
+Q44. What is ‘Version Control System’ in Git?
+A version control system (VCS) is a program that keeps record of any changes to a file or set of data. It helps to restore it to a previous version if required. This will guarantee that everyone in the team is working to the most up-to-date version of the file or project. 
+
+Q45. Explain the purpose of the Git Push Command.
+The Git push command pushes the contents of a local repository to a remote repository. It runs a push after it has changed a local repository to share the changes with remote team members.
+
+Q46.Explain the purpose of the Git Pull Command.
+Git pull is a command that pulls changes from a remote repository and merges them into the local repository. It’s made up of two sub commands: git fetch and then git merge.
+
+Q47. List a few Git Commands and state their functions.
+Git Config – Configure the username and email address
+Git init – Initializes a new local Git repository
+Git Add – Adds one or more files to the staging area (git add . for more than one file)
+Git Diff – View the changes made to the file
+Git Commit – Commit changes to the head but not to the remote repository
+Git reset – Undo local changes to the state of a Git repo
+Git Status – Displays the state of the working directory and staging area
+Git Merge – Merge a branch into an active or main branch
+Git Push – Upload content from the local repository to a remote repository to share among remote team.
+Git Pull – Fetch and download content from a remote repository
+Q48. Explain the Difference Between Git Pull and Git Fetch
+Git Fetch 
+
+Downloads only new data from a remote repository using Git fetch.
+Does not include any of this new information in your working files.
+Updates the remote-tracking branches.
+Command – git fetch origin or git fetch –-all
+Git Pull
+
+Git pull takes new data and integrates it with the current working files, updates the current HEAD branch with the latest modifications from the remote server.
+It attempts to combine remote modifications with the changes made locally.
+Command – git pull origin master
+Q49. State the different types of CSS Selectors
+for Universal Selector
+ul for list items
+# for id
+For class
+input [type=”text”] { attribute selector }
+* {
+ color: "green";
+ font-size: 20px;
+ line-height: 25px;
+}
+
+.element1 {
+ color: "blue";
+}
+
+#class1 {
+  color: "red";
+}
+
+ul {
+ font-size: 20px;
+}
+
+Q50. How do you use media queries to provide responsiveness for different screen sizes?
+Media queries are a CSS3 feature that allows us to apply different styles based on the screen’s or device’s width. To use media queries, you should include a viewport meta tag in your HTML. Then, write your CSS code using media queries and integrate it the HTML too.
+
+Q51. What is a higher-order component in React with an example?
+Higher-order components allows us to encapsulate common functionalities and apply them to multiple components without repeating code. It is a very powerful pattern for code reuse and enhances component behavior in React applications.
+
+Q52. What is the difference between an anonymous function and a named function?
+A named function can be referenced in the future from anywhere in the code, whereas an anonymous function cannot — although it will run when it occurs in-line
+
+Q53. How are JavaScript and jQuery Different?
+There are a number of distinctions in the two, some of them are as below.
+
+JavaScript is an independent language and can exist on its own. jQuery has to be converted to JavaScript for the browser’s in-built JavaScript engine to interpret and run it.
+JavaScript is a high-level, interpreted, client-side scripting language. A combination of the (ECMA) European Computer Manufacturers Association script and the (DOM) Document Object Model. jQuery is a lightweight JavaScript library that contains only the DOM.
+JavaScript uses more lines of code as developers need to write their own code. jQuery uses fewer lines of code for the same functionality as the code is already written in its library. Developers just have to import the library and use the relevant function/method of the library in our code.
+Q54. Write a code snippet to reverse a string
+The reverseString function takes a string as an argument and uses the split(), reverse(), and join() methods to reverse it. Here are the details with the code snippet on how to use each method.
+
+function reverseString(str) { 
+return str.split('').reverse().join(''); 
+} 
+let reversed = reverseString("hello"); 
+console.log(reversed); // outputs "olleh"
+
+The split() method splits the string into an array of individual characters.  
+The reverse() method reverses the order of the array elements.  
+The join() method joins the elements of the array back into a single string.
+Q55. What is currying in JavaScript?
+Currying is a technique in JavaScript that allows a function to be partially applied, or “pre-filled,” with some of its arguments. There are several situations where this can be useful, for example:
+
+To create functions with a fixed set of arguments that we can easily reuse. 
+Abstracting away certain arguments to make a function more flexible and reusable. 
+To improve the readability and clarity of code by breaking up complex functions into smaller, more focused functions. 
+To understand how currying works, consider the following example shown below.
+function add(a, b) { 
+return a + b; 
+}
+
+Q56. What does this return?
+Promise.resolve(5);
+You can pass any type of value we want to Promise.resolve, either a promise or a non-promise. The method itself returns a promise with the resolved value (). If you pass a regular function, it’ll be a resolved promise with a regular value. If you pass a promise, it’ll be a resolved promise with the resolved value of that passed promise. In the case shown above, we only passed the numerical value 5. so it returns a resolved promise with the value 5. The output for this code is 5.
+
+Q57. What’s the output of the code snippet shown below?
+async function getData() {
+return await Promise.resolve('I made it!');
+}
+
+const data = getData();
+console.log(data);
+
+An async function always returns a promise. The await still has to wait for the promise to resolve: a pending promise gets returned when we call getData() in order to set data equal to it. The answer to this will be Promise {}.
+
+Q58. What does the code snippet below return?
+const firstPromise = new Promise((res, rej) => {
+setTimeout(res, 500, 'one');
+});
+
+const secondPromise = new Promise((res, rej) => {
+setTimeout(res, 100, 'two');
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+When we pass multiple promises to the Promise.race method, it resolves/rejects the first promise that resolves/rejects. We can pass a timer of 500ms to the setTimeout function for the first promise (firstPromise), and 100ms for the second promise (secondPromise). This means that the secondPromise resolves first with the value of ‘two’. and then holds the value of ‘two’, which gets logged. So the answer will be “two”.
+
+Q59. Explain how the Box Sizing Property works in CSS?
+Box Sizing property defines how the height and width of a box can be calculated. 
+
+Content Box – The default width and height apply only to the element’s content. Padding and border are added outside the box.
+
+Padding Box – You add the dimensions to both element’s content and padding. It adds the border outside the box.
+
+Border Box – The dimensions are added to the content, padding, and border. 
+
+Q60. What does the ‘important’ keyword means in CSS?
+The ‘important’ keyword indicates the highest precedence, and it overrides the cascaded property. against any other similar one applied for the same type of element.
+
+Q62. What are CSS Sprites?
+CSS sprites minimize the loading time of a web page by combining multiple small pictures into a single image. They decrease the number of HTTP requests and, as a result, takes longer time for pages to load.
+
+Q63. What is Callback function in JavaScript?
+In JavaScript, a callback function is a function that we pass as an argument to another function and executes at a later time or in response to a specific event. The receiving function can then invoke or “call back” the passed-in function to perform some action or provide a result.
+
+Consider the code snippet shown below.
+
+function greet(name, callback) {
+  console.log("Hello, " + name + "!");
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("John", sayGoodbye);
+
+Q64. How can you delete duplicates from a JavaScript array?
+One is the filtering technique, pass three arguments to call the filter() function. These will be the array, current element, and current element index.
+The For loop, stores all the repeated elements in an empty array.
+Q65. What is an Event in React?
+An event is an action triggered by the user or any system event, like pressing a key, a mouse key, etc. 
+
+Q67. How do you create an event in React?
+In React, you can create an event by attaching event handlers to JSX elements. Event handlers are functions that specify the behavior or action to be taken when a specific event occurs, such as a button click or a form submission.
+
+Here’s an example of creating and handling an event in React:
+
+import React from 'react';
+
+class MyComponent extends React.Component {
+  handleClick() {
+    console.log('Button clicked');
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>Click me</button>
+    );
+  }
+}
+
+In this example, we have a MyComponent class component with a handleClick method that logs a message to the console when the button is clicked.
+
+Within the JSX code, we attach the handleClick method to the onClick event of the <button> element. This tells React to call the handleClick method whenever the button is clicked.
+
+When the button is clicked, the handleClick method is executed, and the message “Button clicked” is logged to the console.
+
+React supports various event types such as onClick, onChange, onSubmit, and many more. You can attach event handlers to different elements and respond to specific user actions based on your application’s needs.
+
+Q68. What are Components in ReactJS?
+Components are the building blocks of a React application that represent a part of the user interface.
+
+A component we use in one area of the application can be reused in another area. This helps speed up the development process.
+A component can contain several other components.
+A component must define a render method that specifies how the component renders to the DOM in its minimal form.
+A component can also receive props. These are properties passed by its parent to specify values.
+Q69. What is a State in React?
+A state is an object that stores the values of properties belonging to a component that could change over a period of time. 
+
+Q70. How do you implement it?
+In React, you can implement state using the useState hook (for functional components) or by extending the React.Component class and using the this.state property (for class components). Consider the example below.
+
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+In this example, we use the useState hook to create a state variable called count and a function called setCount to update the state. The initial value of count is set to 0 using the useState hook.
+
+We define an increment function that increases the count state by one when the button is clicked. The updated state is then reflected in the JSX code.
+
+Class Component with this.state:
+jsx
+Copy code
+import React from 'react';
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  increment() {
+    this.setState(prevState => ({ count: prevState.count + 1 }));
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.increment.bind(this)}>Increment</button>
+      </div>
+    );
+  }
+}
+
+Q71. How do you Implement React Routing?
+A routing library like the React Router provides a declarative way to handle routing and navigation within a React application. It has a step by step procedure to implement routing in the entire application.
+
+Q72. What is Data Binding and how does it work?
+Data binding is a method of manipulating web page elements by using a web browser. It is useful in interactive elements like forms, calculators, tutorials, and games on web pages.
+
+Q73. Which Data Binding methods does Angular use?
+Angular used The Two-way Data Binding method. Any modifications made to the user interface mirror the elements in the model state and vice versa. 
+
+Q74. What are Promises and Observables in Angular?
+These concepts deal with asynchronous events. In Angular, Promises deal with one at a time, whereas Observables deal with a sequence of events over time.
+
+Promises are objects that emit only one value at a time. They go into effect right once they’re created and we cannot stop them. They are Promises to the child Push Errors.
+Observables – Observables are only executed when the subscribe() method is used to subscribe to them. They aid in the execution of tasks such as forEach, filter, and retry, among others.
+Q75. What are the use cases of Vue.js JavaScript framework?
+It is perfect to use in small projects that are lesser reactive, display a modal, or include a form using Ajax, etc.
+We can also use it on large single-page applications using its Vuex and Router components.
+It is helpful to create events, binding classes, update element content, etc.
+Q76. What are the benefits of using Node.js?
+Faster code execution.
+It can drive asynchronous I/O using its event-driven architecture.
+Has similar properties to Java for example forming packaging, threading, and forming loops.
+Single-threaded model.
+No hassles of video or audio buffering by cutting down significant processing time.
+Q77. How is Next.js related to React.js?
+Next.js is a framework built on top of React.js. It extends React’s capabilities by providing additional features and functionalities specifically for server-side rendering (SSR), static site generation (SSG), and building full-stack web applications.
+
+Q78. How does the Ionic Framework helps us create Hybrid Mobile Applications?
+The Ionic Framework is a popular open-source framework for building hybrid mobile applications. It leverages web technologies such as HTML, CSS, and JavaScript to create cross-platform mobile apps that run on iOS, Android, and other platforms.
+
+Q79. How do Ionic and other JavaScript frameworks work together for Hybrid Application Development?
+Ionic and other JavaScript frameworks can work together by leveraging their strengths and integrating them in various ways.
+
+While using Ionic as a UI Framework you can use Ionic alongside other JavaScript frameworks such as Angular, React, or Vue. Ionic provides a library of UI components and styling that can be easily integrated into your existing framework-based application. For example, you can incorporate Ionic components into your React app using the @ionic/react package or utilize Ionic with Vue.js using the @ionic/vue package.
+
+Q80. Which JavaScript Library is based on the MVC (Model-View-Controller) architectural pattern?
+Angular is a full-fledged, opinionated framework that is based on the Model-View-Controller (MVC) architectural pattern. It provides a complete solution for building large-scale applications by offering built-in features like dependency injection, routing, form handling, and state management.
+
+Advanced Level Interview Questions and Answers
+Q81. What Is JSX?
+JSX is a JavaScript syntactic extension. It is used in React to describe how the user interface should look like. We can write HTML structures in the same file as JavaScript code by utilizing JSX. It makes the code easier to comprehend and debug, as it avoids use of complex JS DOM structures.
+
+Q82. What is Virtual DOM?
+Virtual DOM is the lightweight version of the Real DOM that React retains in memory. It is faster than the Real DOM, as when an object changes its state, The Virtual DOM updates only that object in the real DOM rather than updating every object.
+
+Q83. What are Pure Components in React?
+A React component is considered pure if it renders the same output for the same state and props.
+
+React.Component is the base class for React components. React.PureComponent is a variation of React.Component class and does a shallow comparison of props and state.
+
+Q84. What is the difference between Pure and High Order Components in React?
+Pure Components optimize rendering by preventing unnecessary re-renders based on shallow comparisons of props and state. On the other hand, Higher-Order Components are functions that take a component and return an enhanced version with additional functionality or behavior. They are useful for code reuse and enhancing component behavior. While both concepts are useful in different scenarios, they serve distinct purposes in React development.
+
+Q85. What is AoT Compilation? 
+(AOT) Ahead of Time compilation translates your code as it is being built, rather than when it is downloaded and run by the browser. This guarantees that the browser renders content quickly. Include the —aot option with the ng build or ng serve commands to specify AOT compilation. 
+
+Q86. How is AoT Compilation different from JiT?
+The (JIT) Just-in-Time compilation technique converts computer code to machine code while it is being run. Dynamic compilation is another name for it. When you use the ng build or ng serve CLI commands, by default it uses JIT compilation.
+
+Q87. What are the main differences between SPA and SSR?
+SPA (Single Page Application) and SSR (Server Side Rendering) are two different approaches to building web applications.
+
+The choice between SPA and SSR depends on the specific requirements of your application. SPAs are often preferred for complex interactive applications where responsiveness and interactivity are crucial. SSR is preferred for content-heavy websites, improved SEO, or when initial load time is a priority. In some cases, a hybrid approach called “SSR with hydration” can be used, combining the benefits of both approaches.
+
+Q88. Do we have to use SCSS/SASS for every project? Is the usual CSS enough?
+No, it is not compulsory to use SCSS/SASS for every project, and the normal CSS code is mostly enough.
+SCSS/SASS is a preprocessor for CSS that allows you to write CSS with variables, nested selectors, functions, and more. It can help you write more organized and maintainable CSS, and is useful for huge projects. So it is optional for some projects.
+
+Q89. Angular is a framework, React is a library. What is the difference between a framework and a library?
+A library is a collection of pre-written code that we can reuse to perform specific tasks, such as creating user interfaces or handling network requests. A library typically provides a set of functions or classes that can we can call by the developer’s code to accomplish a particular task. Libraries are designed to be flexible and can be used in a variety of applications.
+
+On the other hand, a framework is a more comprehensive set of tools and conventions that provides a structure for building an entire application. A framework typically includes a set of libraries and tools, as well as a set of rules and best practices that guide the development process. Frameworks provide a more prescriptive approach to application development, and developers must often follow the framework’s guidelines closely to ensure that their code integrates correctly with the rest of the application.
+
+Q90. What is the main difference between Angular and React?
+Angular and React are both popular frontend frameworks used for developing web applications. The choice between Angular and React depends on factors such as the project’s complexity, team expertise, requirements, and personal preferences. Angular is suitable for large-scale applications with robust features and built-in tools, while React offers flexibility, performance, and a more lightweight approach to UI development.
+
+Q91. How would you implement a design that has a lot of animations and transitions?
+When implementing a design with many animations and transitions, you can utilize CSS animations, CSS transitions, and JavaScript-based animation libraries to bring the design to life. Here’s a general approach:
+
+For CSS Animations and Transitions:
+
+Use CSS keyframes and animation properties to define animations for specific elements or components. This allows you to specify different states and transitions between them.
+Apply CSS transition properties (e.g., transition, transition-property, transition-duration) to smoothly animate changes in CSS properties, such as opacity, position, size, or color.
+Utilize CSS transforms (e.g., translate, rotate, scale) to create 2D or 3D transformations and animations.
+Q92. What is your process for debugging frontend code?
+Debugging is a common task for frontend developers. Your answer to this question can show the interviewer how you approach problems and solve them. Describe your process in detail, including what tools you use and why they’re important.
+
+Q93. What makes a good user interface?
+User interfaces are the way users interact with a website or application. They include things components like buttons, drop-down menus and other elements that allow people to use software. A good user interface is one that is easy to navigate and understand.
+
+Q94. What is the output of the code snippet given below?
+async function* range(start, end) {
+for (let i = start; i <= end; i++) {
+yield Promise.resolve(i);
+}
+}
+
+(async () => {
+const gen = range(1, 3);
+for await (const item of gen) {
+console.log(item);
+}
+})();
+Option A: Promise {1} Promise {2} Promise {3}
+Option. B: Promise {} Promise {} Promise {}
+Option C: 1 2 3
+Option D: undefined undefined undefined
+
+The generator function range returns an async object with promises for each item in the range we pass: Promise{1}, Promise{2}, Promise{3}. We set the variable gen equal to the async object, after which we loop over it using a for await … of loop. We set the variable item equal to the returned Promise values: first Promise{1}, then Promise{2}, then Promise{3}. Since we’re awaiting the value of item, the resolved promise, the resolved values of the promises get returned: 1, 2, then 3. The correct answer is C.
+
+Q95. What are Progressive Web Apps (PWA) and how they can be created by Ionic?
+Ionic to create Progressive Web Apps that can run offline, have an app-like experience, and can be installed on users’ devices. PWAs can leverage service workers, caching, and other web technologies to provide a native-like experience. You can combine Ionic’s UI components with a JavaScript framework of your choice to build PWAs.
+
+Q96. What are the benefits of Cordova integration with Ionic Framework?
+Ionic integrates with Cordova (or PhoneGap), to access native device capabilities using JavaScript. Cordova plugins provide a bridge between your JavaScript code and native APIs, and enable features like camera access, geolocation, push notifications, and more. You can use Cordova plugins in conjunction with any JavaScript framework, including Ionic, to add native functionality to your hybrid mobile app.
+
+Q97. How does the Ionic CLI aids in development using the framework?
+Ionic CLI and Tooling: The Ionic Command Line Interface (CLI) provides a set of useful commands to create, build, and test your Ionic apps. The CLI simplifies the development process by automating common tasks such as project setup, building, and running the app on emulators or physical devices.
+
+Q98. How does SPA’s and SSR’s work with SEO and Optimization?
+SPA: Single-Page Applications typically require additional effort to ensure good Search Engine Optimization (SEO) and proper social media sharing. Since most content loads dynamically, search engines and social media crawlers may have difficulty indexing and understanding the content.
+SSR: Server-Side Rendering provides better support for SEO and social media sharing since the complete HTML is generated on the server and can be easily indexed by search engines. The server can also provide specific metadata for social media sharing.
+Q99. How does Angular uses two-way Data Binding?
+In Angular, two-way data binding is a feature that allows synchronization of data between the component and the template in both directions. It enables automatic updates to the data in the component when the user interacts with the template, as well as updates to the template when the data in the component changes.
+
+The [(ngModel)] directive is used for two-way data binding. It combines the property binding ([ngModel]) and event binding ((ngModelChange)) into a single directive.
+
+Q100. How can you use Advanced Animation Techniques in your Frontend Applications?
+Animation libraries like as GSAP (GreenSock Animation Platform), Anime.js, and Framer Motion provide advanced animation capabilities, timeline control, and additional easing functions. These animation libraries offer a more fine-grained control over animations, including options for sequencing, delays, callbacks, and advanced effects.
+
 Technical and Language Questions
 Developer Tools and Technologies
 Problem Solving Exercises
