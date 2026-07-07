@@ -1,3 +1,551 @@
+Вопросы и задачи на собеседовании фронтенд-разработчика в 2025 году
+HR
+14 апреля 2025
+Блог
+Поделиться:
+СОДЕРЖАНИЕ
+
+Варианты вопросов с ответами для frontend junior во время технического собеседования
+
+Вопросы и ответы для Middle фронтенд-разработчиков
+
+Практические задачи для Junior фронтенд-разработчиков
+
+Практические задачи для Middle фронтенд-разработчиков
+
+Собеседования для программистов часто проходят в несколько этапов. Для тех, кто претендует на должность фронтенд-разработчика, испытания усложняются необходимостью продемонстрировать не только технические навыки, но и уровень креативного мышления.
+
+Первый этап собеседования обычно сосредоточен на проверке софт-скиллов кандидата. Работодатели хотят убедиться, что кандидат обладает необходимыми коммуникативными навыками, способностью работать в команде и креативностью. Затем следует техническое интервью.
+
+Варианты вопросов с ответами для frontend junior во время технического собеседования
+Быть фронтенд-разработчиком сегодня — значит сочетать в себе дизайнерские и программные таланты, обеспечивая бесперебойную работу интерфейсов и их взаимодействие с сервером.
+
+1. Как добавить CSS к HTML -документу?   
+
+Несколькими способами: внутренним (внутри тега <style>), внешним (ссылкой на CSS-файл) и встроенным (через атрибут style).
+
+2. Что такое селекторы в CSS ?
+
+Селекторы выбирают элементы HTML для применения стилей. Есть классовые, идентификаторные и универсальные селекторы, а также комбинированные селекторы.
+
+3. Как объявить функцию в JavaScript ?
+
+Функцию можно создать, используя ключевое слово function:
+
+function myFunction() { 
+  // код 
+}
+4. Что такое событие в JavaScript и как его обработать?
+
+Событие — это любое действие, совершенное пользователем или браузером, которое можно отследить и обработать. Примеры событий: клики, ввод текста, загрузка страницы. Для обработки событий используется метод addEventListener:
+
+element.addEventListener('click', function() {
+  // код обработки события
+});
+5. Что такое Flexbox и как его использовать?
+
+Flexbox — модель компоновки CSS для создания адаптивных макетов. Позволяет выравнивать и распределять пространство между элементами контейнера. Используется через свойства display: flex;.
+
+6. Как работает сетка ( Grid ) в CSS ?
+
+Это двухмерная система компоновки, создающая сложные макеты. Основные свойства: grid-template-columns, grid-template-rows и grid-gap.
+
+7. Что такое медиазапросы в CSS ?
+
+Медиазапросы создают адаптивные макеты, изменяя стили в зависимости от характеристик устройства (например, ширины экрана). Пример: @media (max-width: 600px) { /* стили */ }.
+
+8. Как выполнять асинхронные операции в JavaScript ?
+
+Асинхронные операции выполняются с помощью колбеков, промисов (Promise) и async/await.
+
+9. Как обеспечить доступность ( accessibility ) веб-приложения?
+
+Использовать семантические теги, атрибуты ARIA, обеспечить поддержку клавиатуры и создать четкие контрасты.
+
+10. Как реализовать адаптивные изображения для различных устройств и экранов?
+
+Применять атрибуты srcset и sizes для <img> или элементы <picture> для предоставления различных версий изображений в зависимости от размеров экрана.
+
+Вопросы и ответы для Middle фронтенд-разработчиков
+1. Какие методы оптимизации CSS вы знаете и как они применяются?
+
+Методы включают минификацию, объединение файлов, использование критического CSS и асинхронную загрузку не критических стилей.
+
+2. Как сделать элемент фиксированным при прокрутке страницы (например, фиксированный заголовок)?
+
+Использовать свойство position: fixed; для элемента, чтобы он оставался на месте при прокрутке страницы.
+
+3. В чем разница между null и undefined в JavaScript ?
+
+null — это значение, присваиваемое переменной, чтобы указать на отсутствие значения. undefined означает, что переменная была объявлена, но не инициализирована.
+
+4. Как работают хуки ( hooks ) в React ?
+
+Хуки — функции для использования состояния и других возможностей React в функциональных компонентах. Примеры: `useState`, `useEffect`.
+
+5. Что такое состояние ( state ) и пропсы ( props ) в React ?
+
+Состояние — объект, управляющий динамическими данными компонента. Пропсы — данные, передаваемые в компонент извне.
+
+6. Как работает роутинг в SPA ( Single Page Application )?
+
+Роутинг управляет навигацией в SPA без перезагрузки страницы. Используются библиотеки, такие как React Router, для определения маршрутов и отображения компонентов.
+
+7. Что такое webpack и как он используется?
+
+webpack — модульный сборщик JavaScript, компилирующий модули и их зависимости в один или несколько пакетов для улучшения производительности.
+
+8. Что такое компоненты высшего порядка ( HOC ) в React ?
+
+HOC — функции, принимающие компонент и возвращающие новый компонент с дополнительной функциональностью.
+
+9. Как управлять состоянием в больших приложениях?
+
+Использовать библиотеки для управления состоянием, такие как Redux или Context API, для управления глобальным состоянием и разделения ответственности между компонентами.
+
+10. Что такое CSS - in - JS и как его применять?
+
+CSS-in-JS — метод написания внутри JavaScript. Популярные библиотеки включают styled-components и Emotion.
+
+11. Какая технология для фронтенд-разработки будет наиболее популярна в ближайшем будущем?
+
+В настоящее время React является одной из самых популярных технологий благодаря своей гибкости и активному сообществу. Ожидается, что она останется на вершине благодаря постоянным обновлениям и интеграции с новыми инструментами. Однако, стоит обратить внимание и на другие технологии, такие как Svelte и Vue.js, которые также набирают популярность за счет своей простоты и производительности.
+
+Практические задачи для Junior фронтенд-разработчиков
+1. Создание адаптивного навигационного меню
+
+Описание задачи: Разработайте адаптивное навигационное меню, которое корректно работает на различных устройствах, от настольных компьютеров до мобильных телефонов. Навигационное меню должно включать несколько пунктов, которые, при уменьшении ширины экрана, сворачиваются в "гамбургер-меню".
+
+Технические требования:
+
+Используйте HTML и CSS.
+Реализуйте адаптивность с помощью медиазапросов.
+Добавьте простую анимацию для открытия и закрытия «гамбургер-меню».
+Пример кода:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .menu .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .menu-links {
+            display: flex;
+        }
+        @media (max-width: 600px) {
+            .menu .hamburger {
+                display: block;
+            }
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+            }
+            .menu-links a {
+                padding: 10px;
+                border-top: 1px solid #444;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <div class="logo">Logo</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var menuLinks = document.getElementById('menuLinks');
+        if (menuLinks.style.display === 'flex') {
+            menuLinks.style.display = 'none';
+        } else {
+            menuLinks.style.display = 'flex';
+        }
+    }
+</script>
+</body>
+</html>
+2. Валидация формы регистрации
+
+Описание задачи: Создайте форму регистрации с полями для имени пользователя, электронной почты и пароля. Реализуйте валидацию полей в реальном времени с помощью JavaScript. Убедитесь, что пользователю отображаются соответствующие сообщения об ошибках, если данные введены неправильно.
+
+Технические требования:
+
+Используйте HTML и CSS для создания формы.
+Реализуйте валидацию с применением JavaScript.
+Обеспечьте валидацию на уровне фронтенда (например, проверка формата электронной почты, длины пароля и т.д.).
+Пример кода:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<form id="registrationForm">
+    <h2>Register</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <span class="error" id="usernameError"></span>
+    <input type="email" id="email" placeholder="Email" required>
+    <span class="error" id="emailError"></span>
+    <input type="password" id="password" placeholder="Password" required>
+    <span class="error" id="passwordError"></span>
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    const form = document.getElementById('registrationForm');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+
+    const usernameError = document.getElementById('usernameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        validateUsername();
+        validateEmail();
+        validatePassword();
+    });
+
+    username.addEventListener('input', validateUsername);
+    email.addEventListener('input', validateEmail);
+    password.addEventListener('input', validatePassword);
+
+    function validateUsername() {
+        if (username.value.trim().length < 3) {
+            usernameError.textContent = 'Username must be at least 3 characters long';
+        } else {
+            usernameError.textContent = '';
+        }
+    }
+
+    function validateEmail() {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value.trim())) {
+            emailError.textContent = 'Enter a valid email address';
+        } else {
+            emailError.textContent = '';
+        }
+    }
+
+    function validatePassword() {
+        if (password.value.trim().length < 6) {
+            passwordError.textContent = 'Password must be at least 6 characters long';
+        } else {
+            passwordError.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>
+Практические задачи для Middle фронтенд-разработчиков
+1. Создание интерактивного календаря с React
+
+Описание задачи: Разработайте интерактивный календарь с возможностью добавления и удаления событий. Календарь должен отображать текущий месяц, с возможностью навигации между месяцами, и позволять пользователям создавать, редактировать и удалять события на определенные даты.
+
+Технические требования:
+
+Используйте React для создания компонентов.
+Реализуйте состояние и управление событиями с помощью хуков.
+Добавьте стилизацию для улучшения пользовательского опыта.
+Обеспечьте функциональность навигации между месяцами.
+Пример кода:
+
+import React, { useState } from 'react';
+import './Calendar.css'; // Добавьте собственные стили
+
+const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+function Calendar() {
+const [currentDate, setCurrentDate] = useState(new Date());
+const [events, setEvents] = useState({});
+
+const handleEventChange = (date, event) => {
+setEvents({
+...events,
+[date]: event,
+});
+};
+
+const renderDaysOfWeek = () => {
+return daysOfWeek.map((day) => (
+<div key={day} className="calendar-day-of-week">
+    {day}
+</div>
+));
+};
+
+const renderDaysInMonth = () => {
+const startDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+const days = [];
+
+for (let i = 0; i < startDay; i++) {
+days.push(<div key={`empty-${i}`} className="calendar-day empty"></div>);
+}
+
+for (let day = 1; day <= daysInMonth; day++) {
+const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day).toDateString();
+days.push(
+<div key={day} className="calendar-day">
+    <span>{day}</span>
+    <input
+            type="text"
+            value={events[date] || ''}
+    onChange={(e) => handleEventChange(date, e.target.value)}
+    placeholder="Add event"
+    />
+</div>
+);
+}
+
+return days;
+};
+
+const handlePrevMonth = () => {
+setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
+};
+
+const handleNextMonth = () => {
+setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
+};
+
+return (
+<div className="calendar">
+    <div className="calendar-header">
+        <button onClick={handlePrevMonth}>Prev</button>
+        <h2>{currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</h2>
+        <button onClick={handleNextMonth}>Next</button>
+    </div>
+    <div className="calendar-grid">
+        {renderDaysOfWeek()}
+        {renderDaysInMonth()}
+    </div>
+</div>
+);
+}
+
+export default Calendar;
+2. Реализация поисковой системы с использованием Vue.js
+
+import React, { useState } from 'react';
+import './Calendar.css'; // Добавьте собственные стили
+
+const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+function Calendar() {
+const [currentDate, setCurrentDate] = useState(new Date());
+const [events, setEvents] = useState({});
+
+const handleEventChange = (date, event) => {
+setEvents({
+...events,
+[date]: event,
+});
+};
+
+const renderDaysOfWeek = () => {
+return daysOfWeek.map((day) => (
+<div key={day} className="calendar-day-of-week">
+    {day}
+</div>
+));
+};
+
+const renderDaysInMonth = () => {
+const startDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+const days = [];
+
+for (let i = 0; i < startDay; i++) {
+days.push(<div key={`empty-${i}`} className="calendar-day empty"></div>);
+}
+
+for (let day = 1; day <= daysInMonth; day++) {
+const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day).toDateString();
+days.push(
+<div key={day} className="calendar-day">
+    <span>{day}</span>
+    <input
+            type="text"
+            value={events[date] || ''}
+    onChange={(e) => handleEventChange(date, e.target.value)}
+    placeholder="Add event"
+    />
+</div>
+);
+}
+
+return days;
+};
+
+const handlePrevMonth = () => {
+setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
+};
+
+const handleNextMonth = () => {
+setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
+};
+
+return (
+<div className="calendar">
+    <div className="calendar-header">
+        <button onClick={handlePrevMonth}>Prev</button>
+        <h2>{currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</h2>
+        <button onClick={handleNextMonth}>Next</button>
+    </div>
+    <div className="calendar-grid">
+        {renderDaysOfWeek()}
+        {renderDaysInMonth()}
+    </div>
+</div>
+);
+}
+
+export default Calendar;
+Описание задачи: Создайте простую поисковую систему с использованием Vue.js.Приложение должно позволять пользователям вводить запросы и показывать результаты из заранее заданного списка элементов. Реализуйте фильтрацию результатов в реальном времени по мере ввода запроса.
+
+Технические требования:
+
+Используйте Vue.jsдля создания компонентов.
+Реализуйте реактивность и управление состоянием с помощью Vuex или Composition API.
+Добавьте стилизацию для улучшения пользовательского опыта.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Search System</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+        .search-result {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="search-container">
+        <input type="text" v-model="query" placeholder="Search..." />
+        <div class="search-results">
+            <div v-for="result in filteredResults" :key="result" class="search-result">
+                {{ result }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const { createApp, computed } = Vue;
+
+    createApp({
+        data() {
+            return {
+                query: '',
+                items: ['Apple', 'Banana', 'Orange', 'Pineapple', 'Strawberry', 'Blueberry', 'Mango']
+            };
+        },
+        computed: {
+            filteredResults() {
+                return this.items.filter(item =>
+                    item.toLowerCase().includes(this.query.toLowerCase())
+                );
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
+
+<style>
+    pre {
+        background-color: #272822;
+        color: #f8f8f2;
+        padding: 12px 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: Consolas, Monaco, monospace;
+        margin: 20px;
+    }
+    strong {
+        font: var(--title-h6);
+        color: var(--heading-color);
+    }
+</style>
+
+
 55 вопросов для найма Frontend разработчика
 Команда HURMA
 12 February 2022
