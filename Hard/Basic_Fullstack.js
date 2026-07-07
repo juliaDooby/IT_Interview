@@ -1,3 +1,215 @@
+10 Essential Full-stack Interview Questions *
+Toptal sourced essential questions that the best full-stack developers can answer. Driven from our community, we encourage experts to submit questions and offer feedback.
+
+Hire a Top Full-stack Developer Now
+Toptal logois an exclusive network of the top freelance software developers, designers, marketing experts, product managers, project managers, and management consultants in the world. Top companies hire Toptal freelancers for their most important projects.
+1.
+If you were to write an endpoint for checking if a resource exists, what path and method would you use?
+
+Hide answer
+The purpose of this question is to test the candidate’s knowledge of RESTful API standards. A common mistake when building endpoints is to use descriptive verbs in the path. For example:
+
+GET /users/search
+GET /posts/create
+Instead, a truly RESTful path should only contain nouns—the method used on the endpoint should determine the action. For example:
+
+POST /users (create a user model)
+PUT /users/{id|slug} (replace a user model)
+PATCH /users/{id|slug} (update part of a user model)
+DELETE /users/{id|slug} (delete a user model)
+GET /users/{id|slug} (retrieve a user model)
+Determining whether a resource exists is an action that is frequently required in APIs, but is rarely done correctly according to the RESTful and industry standards. The commonly accepted way to determine if a resource exists, using the above “user” resource as an example, is like so:
+
+HEAD /users/{id|slug}
+This request will use the least amount of bandwidth as it will return no data, simply just a 200 (resource exists) or 404 (resource does not exist) HTTP status.
+
+2.
+Consider the following database table design:
+
+CREATE TABLE `notifications` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`type` INT(8) NOT NULL,
+	`notifiable_id` INT unsigned NOT NULL,
+	`notifiable_type` VARCHAR(10) NOT NULL,
+	`relation_id_1` INT unsigned,
+	`relation_type_1` VARCHAR(10),
+	`relation_id_2` INT unsigned,
+	`relation_type_2` VARCHAR(10),
+	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP NOT NULL,
+	PRIMARY KEY (`id`)
+);
+What is wrong with the above and how could it be improved?
+
+Hide answer
+The key issue with the proposed table design are the object_id_X and object_type_X fields. It is considered poor design to increment named fields when the data could be stored in a related table like so:
+
+Notifications Table
+CREATE TABLE `notifications` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`type` INT(8) NOT NULL,
+	`notifiable_id` INT unsigned NOT NULL,
+	`notifiable_type` VARCHAR(10) NOT NULL,
+	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP NOT NULL,
+	PRIMARY KEY (`id`)
+);
+Notification Relations Table
+CREATE TABLE `notification_relations` (
+	`notification_id` INT unsigned NOT NULL,
+	`relation_id` INT unsigned NOT NULL,
+	`relation_type` VARCHAR(10) NOT NULL,
+	PRIMARY KEY (`notification_id`)
+);
+3.
+A common issue when integrating third party services within your own API requests is having to wait for the response, and as such, forcing the user to have to wait for longer.
+
+How would you go about avoiding this? Name any relevant technologies if appropriate
+
+Hide answer
+The most effective way to solve this problem is to use queues.
+
+When a request is made to our API, a separate job is then created and added to a queue. This job will then be executed independently to the requested endpoint, thus allowing the server to respond without delay.
+
+There are many queue providers but the most notable are:
+
+Amazon SQS
+Redis
+Beanstalkd
+4.
+If a user attempts to create a resource that already exists—for example, an email address that’s already registered—what HTTP status code would you return?
+
+Hide answer
+Although the answer to this is debatable, the widely accepted practice would be to use a 409 Conflict HTTP status code.
+
+It would also be acceptable to return a 422 Unprocessable Entity.
+
+Some may argue that a 400 Bad Request is acceptable, but we discourage this, since conventionally it implies the server did not understand the request, which in this case is not true.
+
+5.
+How would you prevent a bot from scraping your publicly accessible API?
+
+Hide answer
+If the data within the API is publicly accessible then, technically, it is not possible to completely prevent data scraping. However, there is an effective solution that will deter most people/bots: rate limiting (also known as throttling).
+
+Throttling will prevent a certain device from making a defined number of requests within a defined time. Upon exceeding the defined number of requests, a 429 Too Many Attempts HTTP error should be thrown.
+
+Note: It is important to track the device with more than just an IP address as this is not unique to the device and can result in an entire network losing access to an API.
+
+Other less-than-ideal answers include:
+
+Blocking requests based on the user agent string (easy to circumvent)
+Generating temporary “session” access tokens for visitors at the front end. This isn’t secure: Storing a secret on the front end can be reverse-engineered, thus allowing anyone to generate access tokens.
+6.
+Consider the following two tables:
+
+CREATE TABLE `posts` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`text` TEXT,
+	`user_id` INT unsigned NOT NULL,
+	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `post_likes` (
+	`post_id` INT unsigned NOT NULL,
+	`user_id` INT unsigned NOT NULL,
+	`created_at` TIMESTAMP NOT NULL
+);
+Write a query to retrieve all data from the posts table for a given user_id. In addition to this, the returned recordset should also include a count of post_likes for each post.
+
+Hide answer
+Firstly, and most importantly, the answer should include one, and only one, query. There are numerous ways to achieve the expected result, but the correct way is the following:
+
+SELECT
+   posts.*,
+   COUNT(post_likes.user_id) AS likes 
+FROM
+   posts 
+   LEFT JOIN
+      post_likes 
+      ON posts.id = post_likes.post_id
+WHERE posts.user_id = 'XXX'
+GROUP BY posts.id
+7.
+Consider a responsive site design that requires a full-width image in all responsive states. What would be the correct way to code this to ensure the page loads the smallest image required to fill the space?
+
+Hide answer
+The key attributes here are srcset and sizes. These attributes allow the developer to specify multiple image sizes for one <img>, for example:
+
+<img src="https://example.com/images/image.png" srcset="https://example.com/images/image-1024.png 1024w, https://example.com/images/image-512.png 512w" sizes="100vw">
+By using srcset and sizes, the browser will then intelligently select the correct image source to be used based on the size of the visitor’s viewport.
+
+Any suggestions of changing the image source using JavaScript based on the size of the viewport should be seen as a red flag. This indicates the developer has not been keeping current with CSS feature support and/or best practices.
+
+8.
+Consider a site design that simply has a login form in the center of the page. Using CSS, what is the best way to ensure the box is horizontally and vertically centered?
+
+Hide answer
+There are technically various ways to achieve this. However, nowadays, there is one “correct” way to do this: using display: flex and margin: auto.
+
+Other methods include position: absolute;, top: 50%, and margin-top: -Xpx, but these are no longer considered good practices since the introduction of display: flex.
+
+9.
+List three key things to consider when coding with SEO in mind.
+
+Hide answer
+In order to build a site optimized for organic search engine rankings, it is important to implement certain standards throughout the code. These include:
+
+Specifying an alt tag on images
+Using the correct HTML tags for content hierarchy i.e., <h1>/<h2>/<h3> and p
+Connect the site to the company’s social pages
+Add an XML sitemap
+Avoid broken links
+Use vanity/friendly URLs (human readable)
+Add a robots.txt file
+Integrate Google analytics (or alternative)
+Specify a favicon, bonus for specifying browser specific icons
+Ensure lightning fast page load time
+Avoid JavaScript errors
+Optimize assets (including minification)
+Enable and force SSL
+Specify unique titles for each page without exceeding 70 characters
+Include a meta description on each page
+Ensure there is enough content with enough relevant keywords (search engines will penalize your site if all pages are one-sentence pages)
+Leverage browser caching
+Avoid W3C markup validation errors
+Specify relevant meta tags
+10.
+List five or more ways you could optimize a website to be as efficient and scalable as possible.
+
+Hide answer
+Optimizing websites is an art that few are familiar with. The more the engineer is able to list off the top of their head, the more likely they are to do all of the following naturally as they code instead of having to return later.
+
+(Also, typically a professionally constructed site should score over 75 percent when analyzed by gtmetrix.com, which can also serve as a checklist.)
+
+Optimize all assets
+Place all assets on a separate, cookie-free domain. Using a CDN is best
+Avoid inline JavaScript and CSS
+Enable gzipping
+Ensure all code is minified
+Defer parsing of JavaScript
+Use srcset for responsive images
+Leverage browser caching
+Reduce DNS lookups
+Avoid duplicate code
+Avoid URL redirects
+Enable HTTP keep-alive
+Serve scaled images
+Use image sprites where appropriate
+Prefer asynchronous resources
+Specify the character set at server level
+Avoid CSS @import
+Specify a cache validator
+Minimize request size
+Avoid bad requests and 404s
+Specify image dimensions
+Reduce cookie size
+Make fewer HTTP requests, i.e., load as few external resources as possible
+Avoid unnecessary images; where possible, use CSS
+Ensure no validation errors with W3C
+
 Top 50 Advanced Full Stack Developer Interview Questions & Answers [2026]
 Team DigitalDefynd
 The twenty-first-century software economy rarely distinguishes between “front-end” and “back-end” value any longer; recruiters look instead for engineers who can fluently traverse the entire request–response life-cycle, reason about business logic and data flow, and still craft an elegant, accessible user interface. A single customer journey today touches dozens of micro-services, serverless functions, container orchestration layers, and at least one JavaScript framework. Misconfiguring any link in this chain magnifies latency, security risk, and operating cost. Consequently, the full stack developer interview has grown into one of the most demanding technical assessments in the industry.
