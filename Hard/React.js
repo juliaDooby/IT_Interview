@@ -1,3 +1,424 @@
+Top 100 React js Interview Questions and Answers in 2026
+Last Updated: 6th February, 2026
+Looking to ace your React.js interview? Discover the top 100 ReactJS interview questions and expertly crafted answers in this comprehensive blog. Get prepared!
+
+Top 100 ReactJS Interview Questions-min.png
+
+
+
+Free Tag
+Learn What Top 1% Leaders Already Know
+
+Unlock expert insights, proven frameworks, and actionable steps all in one powerful guide
+
+100K
+Download
+120K
+Active Users
+Download Ebook
+Free Tag
+Welcome to our comprehensive guide on React JS interview questions and answers. Whether you are an experienced React developer looking for in-depth insights or a fresher aiming to ace your next interview, this blog is tailored to meet your needs. In this article, we will explore the top 100 interview questions on react js and provide detailed answers, covering a wide range of topics. From fundamental concepts to advanced techniques, we have compiled a comprehensive list to help you prepare effectively for your upcoming ReactJS interviews, including react js interview questions for experienced developers. So, let's dive in and enhance our knowledge of ReactJS through these insightful interview questions and answers.
+
+Q1. What is React.js and how does it differ from other JavaScript frameworks?
+
+Ans. A JavaScript package called React.js is used to create user interfaces. By presenting a component-based method of development, it differentiates from existing JavaScript frameworks. React enables developers to deconstruct the user interface into reusable components that may be combined to build complex UI architectures. React is more adaptable and compatible with other libraries and ongoing projects than previous frameworks because it just concentrates on the view layer. Additionally, React makes use of a virtual DOM, which enhances rendering performance by effectively updating just the UI elements that are required.
+
+Q2. Explain the concept of virtual DOM in React.js and its advantages.
+
+Ans. A simplified version of the real DOM stored in memory is the virtual DOM in React.js. It serves as a mediator between state changes in the application and rendering in the browser. React generates a new virtual DOM tree whenever the state of the application is changed, compares it to the old one, and determines the bare minimum of changes required to update the actual DOM. Performance is enhanced by this method by minimising the number of direct modifications of the real DOM. Additionally, by abstracting away the difficulties of manual DOM manipulation and supplying a more declarative approach to define UI modifications, the virtual DOM provides a more straightforward programming model.
+
+Q3. What are the key features of React.js that make it popular for building user interfaces?
+
+Ans. React.js has a number of essential characteristics that make it popular for creating user interfaces. The ability for developers to design modular, independent UI components that can be utilised across the programme is one of its key features. Performance is improved via React's virtual DOM, which effectively refreshes only the UI components that are required. Applications are simpler to understand and maintain thanks to their unidirectional data flow, which also simplifies state management. Additionally, React supports server-side rendering for improved initial loading times and SEO. Lastly, a wide range of extra features and community support are offered by the enormous ecosystem of React frameworks and tools.
+
+Q4. How does React.js enable code reusability and component-based development?
+
+Ans. Through its component architecture, React.js supports component-based development and code reuse. Reusable UI components can be made by developers by encapsulating their features, look, and current state. These elements can be combined to create complex user interfaces, encouraging modular development and code reuse. With React's component-based approach, developers may better maintainability, isolate concerns, and build libraries of reusable components that can be applied to many projects.
+
+Q5. What is JSX in React.js, and why is it used?
+
+Ans. The JavaScript syntax used in React.js has been extended with JSX. It enables programmers to combine the logic and display of components into a single file and create HTML-like code directly within JavaScript. In React, the structure and appearance of components are defined using JSX, which makes it simpler to see and comprehend the UI. React is able to efficiently construct and update the relevant virtual DOM elements thanks to the transformation of JSX into ordinary JavaScript function calls.
+
+Q6. How do you define components in React.js?
+
+Ans. Both function components and class components can be used to define components in React.js. Function components are described as JavaScript functions that take input in the form of attributes (props) and return the JSX corresponding to the component's user interface (UI). On the other hand, class components are specified as ES6 classes that extend the React.element class. The render() method, which returns the JSX corresponding to the component's UI, is a must for class components. For handling component updates and interactions, function and class components can both have internal states and lifecycle methods.
+
+Q7. Explain the lifecycle methods in React.js and when they are invoked.
+
+Ans. The lifecycle methods in React.js are called at various times during a component's lifespan. ComponentDidMount, ComponentDidUpdate, ComponentWillUnmount, and ShouldComponentUpdate are examples of common lifecycle methods. componentDidMount is appropriate for initialising external libraries or obtaining data because it is invoked after the component is mounted to the DOM. After the component's update is reflected in the DOM, componentDidUpdate is called to allow for any additional data fetching or side effects. Just before the component is removed from the DOM, componentWillUnmount is called to enable cleanup or resource release. shouldComponentUpdate returns a boolean value that indicates if the update should be performed, which is used to regulate how often the component is rendered. These lifecycle management techniques offer hooks for controlling component behaviour at various junctures in its lifespan.
+
+Q8. What is the purpose of state in React.js, and how is it different from props?
+
+Ans. Data that can change within a component is managed and stored using state in React.js. It enables a component to keep track of dynamic values and represents the internal state of the component. The setState() method allows for the updating of state, which causes the component to be re-rendered. Props are used, on the other hand, to transfer data from a parent component to its child components. The child components cannot change or alter props because they are read-only. They offer a means to modify and customise child components and are transmitted from the parent component.
+
+Q9. How do you handle events in React.js? (Important interview questions for react js)
+
+Ans. The JSX syntax used in React.js allows you to attach event handlers to elements. React defines event handlers as methods inside the component class. For instance, you could create a function called handleClick() and then set it to the button element's onClick attribute to handle button click events. You can use setState() inside the event handler to get at and change the component's state. Additionally, React has cross-browser compatible synthetic events, and you can use event properties like event.target.value to manage form inputs or event.preventDefault() to override an event's default behaviour.
+
+Q10. What is the significance of keys in React.js when rendering lists?
+
+Ans. Keys are important when rendering lists of components in React.js. A distinct key prop should be assigned to each item in a list. The key aids React in effectively determining which items have been added, updated, or removed from the list. React uses the keys to optimise the rendering process when a list is re-rendered by updating only the essential components rather than re-rendering the full list. When dealing with dynamically changing lists, it enhances performance and aids in accurately maintaining the component's state.
+
+Q11. Explain the concept of lifting state up in React.js.
+
+Ans. The lifting state up approach of React.js allows you to transfer shared state from several child components to their shared parent component. The parent component can then give the state and required callback methods to the child components as props, making it the sole source of truth for the shared state. Through the parent component, this architecture enables communication and state synchronisation amongst the child components. Better data flow is encouraged by lifting state up, which also makes it easier to handle shared state in React applications.
+
+Q12. How do you pass data between parent and child components in React.js?
+
+Ans. Data can be passed between parent and child components in React.js using props. When rendering the child components, the parent component can specify and set the values of props. The provided data can then be accessed and used by the child components by referencing the props. The modifications can be passed down to the child components by changing the props in the parent component. This will cause the child components to re-render and update their UI as necessary. Proper and controlled data flow in React.js apps is made possible by this unidirectional data flow.
+
+Q13. What is the role of refs in React.js, and when would you use them?
+
+Ans. In React.js, references offer a mechanism to directly access and interact with DOM elements or components. They are primarily utilised when it becomes necessary to access or modify a particular element or component outside of the normal data flow. Refs can be retrieved within the component using ref.current and assigned to elements using the ref property. They come in handy for situations like handling focus, starting animations or integrating third-party libraries, and imperative DOM operations. However, it is advised to utilise refs rarely as they can circumvent the standard React data flow and reduce the declarativeness of the code.
+
+Q14. Explain the concept of controlled components in React.js.
+
+Ans. React's controlled components.In js components, the state of form elements like checkboxes and input fields determines their values. Any changes to the value of the form element are handled by callbacks or event handlers, and the component's state becomes the only reliable source for the value. This makes it simpler to manage and edit form data because it gives React complete control over the component's state and guarantees that the UI and component state are always in sync.
+
+Q15. How do you handle asynchronous operations in React.js?
+
+Ans. Asynchronous operations in React.js can be handled in a variety of ways. For handling asynchronous programming, people frequently utilise promises and the async/await syntax. Components can start and manage asynchronous processes, such as getting data from an API, by using lifecycle methods like componentDidMount, componentDidUpdate, or useEffect. Additionally, HTTP requests can be made using built-in Fetch API or libraries like Axios. By allocating actions or making use of middleware, state management frameworks like Redux or React's Context API can also be used to handle asynchronous tasks.
+
+Q16. What is the role of context in React.js and how is it used?
+
+Ans. Data can be shared between components in React.js by using context rather than directly giving it through props. It enables the development of a central data repository that any component inside a given context can access. Context is especially helpful for transferring data across nested components at different levels, as it eliminates the need for prop drilling. A Provider component, which encases the desired components, and a Consumer component, which consumes the data, make up the context. All components that are Consumers within the same context can access the data by setting the value in the Provider.
+
+Q17. Explain the concept of error boundaries in React.js.
+
+Ans. In React.js, error boundaries are unique components that are designed to detect JavaScript failures during rendering, in lifecycle methods, and in the component tree's constructor. These components can gracefully accept problems and provide fallback UI by using the componentDidCatch lifecycle method rather than crashing the entire application. Error boundaries offer a mechanism to enclose parts and manage problems in a controlled way, enhancing the application's overall stability and user experience.
+
+Q18. How do you optimize performance in React.js applications?
+
+Ans. Performance of React.js applications can be improved using a variety of methods. Some typical techniques include lazy loading components or resources to lower initial load times, React.memo or shouldComponentUpdate to prevent pointless re-renders, virtualization or pagination for lengthy lists or tables, and code splitting to enhance bundle size and load times. Improved performance in React.js applications can also be achieved by optimising network queries, using memoization techniques for complex computations, and utilising browser caching and compression.
+
+Q19. What is React Router and how is it used for routing in React.js?
+
+Ans. A well-liked library for managing routing in React.js apps is React Router. In a single-page application, it offers a declarative approach to specify the navigation and URLs of various pages or components. Users can switch between multiple views without refreshing the page thanks to React Router, which combines Route and Router components to map URLs to specific components. It offers a flexible and scalable method for handling application routing in React.js by supporting features like nested routes, dynamic routing, and route parameters.
+
+Q20. Explain the concept of higher-order components (HOCs) in React.js.
+
+Ans. React's higher-order components (HOCs).When a component is supplied as an input, js functions return an improved version of that component. HOCs make it possible to reuse code, share logic, and separate concerns by encasing basic operations in a separate component. They enable developers to offer context, change component behaviour, or add new props without actually changing the original component. HOCs are an effective design pattern for expanding component functionality because they enable the modular and reusable implementation of issues like authentication, data fetching, and conditional rendering.
+
+Q21. How do you handle authentication and authorization in React.js applications?
+
+Ans. Different methods can be used to handle authentication and authorization in React.js apps. Implementing a login form for authentication allows you to gather user credentials and transmit them to a backend server for validation. Once the user has been verified, the authentication token or session data can be saved locally or in cookies. Based on the user's role or rights, you can restrict access to particular components or routes for authorization. Higher-order components (HOCs) can be used to accomplish this or the Context API of React can be used to maintain and communicate user authentication and authorisation state throughout the application.
+
+Q22. What are hooks in React.js and how do they simplify state management?
+
+Ans. You can use state and other React capabilities in functional components by using hooks in React.js. They were included in React 16.8 to streamline state management and give lifecycle functions a more user-friendly interface. Hooks make it simpler to reuse functionality, manage side effects, and construct more modular components by allowing you to use and control state without writing a class component. Functional components can handle component state and lifecycle effects via hooks like useState and useEffect, often replacing the requirement for class-based components.
+
+Q23. Explain the useState hook in React.js and provide an example.
+
+Ans. React.js's useState hook allows state to be added to functional components. Within the scope of the functional component, you can declare a state variable and a function to update that value. The array with the current state value and a function to update it is returned by the useState hook. To useState, you can add a starting value as a parameter. Const [count, setCount] = useState(0), for instance, sets the count state variable's initial value to 0 and makes the setCount method available to edit it. After that, you may use setCount to change the count variable in your component.
+
+Q24. What is the purpose of useEffect hook in React.js and when would you use it?
+
+Ans. React.js uses the useEffect hook to manage side effects in functional components. Making API calls, subscribing to events, or changing the DOM are examples of side effects. A function to represent the side effect and an optional array of dependencies are the two arguments that useEffect takes. You may control when the effect is re-executed by providing dependencies in the function, which is run after the component renders. When you need to carry out tasks that should happen after the component mounts, updates, or unmounts, such as getting data from an API or clearing up resources, the useEffect hook comes in handy.
+
+Q25. How do you implement conditional rendering in React.js?
+
+Ans. Use the ternary operator in the JSX code or the conditional statements in JavaScript to implement conditional rendering in React.js. To conditionally render items, components, or text based on specific criteria or state values, you can use if-else statements or switch statements. As an alternative, you can conditionally render various parts or components by using the ternary operator (condition? trueCase: falseCase). You may dynamically determine what JSX should be rendered by assessing the condition, giving you the ability to modify the rendering depending on logic or user input.
+
+Q26. Explain the concept of memoization in React.js and its role in optimizing performance.
+
+Ans. Memorization in React.js is the process of caching a function's output and using it again if the function is called with the same arguments. You can improve efficiency by avoiding needless re-execution of costly calculations or computations by memoizing them. React offers the usageA memoized value is returned by the memo hook, which requires a function and a dependency array. It guarantees that only when the dependencies change is the function called. When you wish to avoid doing repeated computations during computationally expensive procedures like sophisticated data transformations or filtering, memorization can be helpful.
+
+Q27. How do you perform server-side rendering (SSR) with React.js?
+
+Ans. Instead of depending solely on client-side JavaScript to generate the complete application, server-side rendering (SSR) using React.js entails rendering the initial HTML markup on the server and sending it to the client. You can utilise Next.js frameworks or React Server Components libraries to implement SSR. By enabling you to create components that can be rendered on the server and hydrated on the client, these tools offer server-side rendering capabilities. SSR guarantees that the application is working even if JavaScript is deactivated on the client's end, helps to speed up initial page load times, and makes SEO easier.
+
+Q28. What are the advantages of using Redux with React.js?
+
+Ans. When Redux is combined with React.js, there are various benefits. First of all, it makes it possible to manage and update application state using a centralised and predictable state management approach. Redux encourages the separation of concerns by keeping component functionality and state management apart, resulting in cleaner and easier-to-maintain code. Due to the state changes being traceable through a single store, it also makes debugging easier. Redux's unidirectional data flow also aids in the implementation of time-travel debugging and undo/redo features and guarantees that data updates are consistent.
+
+Q29. Explain the concept of Redux middleware and provide examples of popular middleware.
+
+Ans. As a link between dispatching an action and getting to the reducer, Redux middleware serves as a conduit. Prior to the dispatched actions reaching the reducers, it permits conducting further processes. Middleware can be used for a number of things, like recording actions, dealing with asynchronous actions, or transforming the sent actions. Redux Thunk, which permits processing asynchronous actions, Redux Saga, which offers sophisticated control flow for managing side effects, and Redux Logger, which logs dispatched actions and state changes for debugging purposes, are some well-known instances of Redux middleware.
+
+Q30. How do you connect Redux with React.js components?
+
+Ans. The react-redux library offers a "connect" function to link Redux with React.js components. Higher-order components (HOCs), which wrap your components and link them to the Redux store, are made using this function. The "connect" function establishes the data and actions that the component needs from the store by specifying the mapStateToProps and mapDispatchToProps functions. The linked component is then given these values as props, enabling it to access and modify the Redux state.
+
+Q31. What is the purpose of actions and reducers in Redux?
+
+Ans. (Redux actions are straightforward JavaScript objects that express an occasion or a desire to alter the state. They have a property called type that identifies the kind of action taking place. On the other side, reducers are functions that specify how the state should alter in response to various operations. They receive the current state and an action as inputs and, depending on the action type, return a new state. In order to update the state predictably and maintain the immutability of the application's data, actions and reducers collaborate.
+
+Q32. How do you handle asynchronous actions in Redux?
+
+Ans. Middleware like Redux Thunk or Redux Saga can be used to manage asynchronous operations in Redux. You can dispatch functions rather than plain action objects using Redux Thunk, enabling asynchronous operations within those functions. Based on the asynchronous outcomes, these functions can execute API calls, postpone actions, or dispatch multiple actions. On the other hand, Redux Saga employs generator functions to control asynchronous operations with a more sophisticated control flow, making it possible to handle complicated side effects and make testing simpler.
+
+Q33.Explain the concept of selectors in Redux and their role in managing state.
+
+Ans. Redux selectors are functions that take particular state fragments out of the Redux store. They offer a layer of abstraction that encapsulates the state structure and permits components to only access the necessary portions of the state. Selectors make it simpler to maintain and refactor the state structure by structuring and isolating the components from the state shape. Before supplying the state to the components, you can compute derived data, apply filters, or mix various state components using selectors, resulting in an effective and optimised rendering.
+
+Q34. What are React hooks, and how do they differ from class components?
+
+Ans. Utilising state and other React capabilities in functional components is made possible by React hooks, which are functions given by React. Without having to create a class, hooks allow functional components to have state and lifecycle features comparable to class components. They offer a more straightforward and succinct method of controlling state and side effects in React components. Hooks make it possible to reuse stateful logic across several components, increasing the reuse of code. In contrast, class components manage state and side effects using lifecycle methods like componentDidMount and componentDidUpdate. Hooks offer a more contemporary and adaptable method for creating components in React.
+
+Q35. Explain the useState hook in React and provide an example.
+
+Ans. React allows state to be added to functional components using the useState hook. Within the confines of the component, it enables developers to build and manage state variables. A state variable and a method to update that variable are returned by executing useState and providing an initial value. The component will automatically re-render when the state changes, and the state may be changed using the update function. By initialising a count state variable and using the setCount function to increase or decrease it, useState, for instance, can be used to establish a counter.
+
+Q36. What is the purpose of the useContext hook in React and how is it used?
+
+Ans. To access and use values from a context object produced with the Context API, use the useContext hook in React. Without explicitly giving props at every level of the component tree, context offers a means to transfer data between components. Components can access and use the values included in the context object within their own scope thanks to the useContext hook. The hook returns the current value of the context by using useContext and giving the context object, allowing components to access and use the shared data.
+
+Q37. How do you use the useEffect hook to handle side effects in React?
+
+Ans. React uses the useEffect hook to implement side effects in functional components. Tasks like data retrieval, subscriptions, or manually modifying the DOM are examples of side effects. You can specify the side effect logic by passing a callback function as the first argument to useEffect. By default, the hook will run the callback after each render. Dependencies, which are values that will cause the side effect to be activated when modified, can be specified as the second argument to govern when the side effect should be executed. When the component unmounts, you can clean away any resources or subscriptions by returning a cleanup method inside the callback.
+
+Q38. Explain the useReducer hook in React and when would you use it?
+
+Ans. As an alternative to useState, the useReducer hook in React is used to manage state logic that is more intricate. It is based on the idea of a reducer function, much to Redux, which controls state. The current state and a dispatch function to update the state are returned by the useReducer hook, which also accepts a reducer function and a starting state as parameters. The reducer function takes the current state and an action, and then it returns a new state based on the type of action. Use useReducer when there are numerous related values in the state logic or when the next state depends on the previous state or action.
+
+Q39. What is the useRef hook in React and its use cases?
+
+Ans. React offers a mechanism to build mutable references that last during component re-renders using the useRef hook. With useRef, you can save a value that doesn't require a re-render every time it changes, unlike with ordinary variables. It is frequently used for DOM element access and modification as well as for storing values that must be retrieved between displays, such as flags or previous state values. UseRef provides a mutable ref object that may be used to store any mutable value related to the component or set to the ref attribute of a JSX element.
+
+Q40. How do you implement custom hooks in React and why would you use them?
+
+Ans. React's custom hooks are merely standard JavaScript functions that incorporate React hooks. They enable programmers to package up reusable logic and distribute it among several components. Custom hooks have names that begin with "use," implying that they are hooks in and of themselves. Avoiding duplication of code and streamlining the component codebase are possible by extracting common state logic into a special hook. Custom hooks make it simpler to reuse and maintain shared logic inside your application by abstracting complex functionality, such as data retrieval, form handling, or local storage management.
+
+Q41. Explain the useMemo hook in React and its role in performance optimization.
+
+Ans. React's useMemo hook is used to memoize time-consuming computations or complicated actions, improving efficiency by avoiding needless recalculations. Using a dependency array and a memoization function as parameters, useMemo will only recompute the value if any of the dependents have changed. If not, it returns the value that was previously memorised. This helps to ensure that calculations are only made when necessary and prevents components that depend on the memoized value from being rendered needlessly when dealing with computationally complex operations or expensive data transformations.
+
+Q42. How do you handle component styling in React? Explain the concept of CSS-in-JS.
+
+Ans. Component styling in React can be managed in a variety of ways. One well-liked method is writing CSS styles directly in JavaScript files, or CSS-in-JS. Developers can generate and connect styles to their React components using JavaScript syntax using CSS-in-JS libraries like Styled Components or Emotion. This offers advantages including scoped styles, dynamic styles based on component props, and better organisation of styles within the component itself. Additionally, CSS-in-JS removes class name conflicts and permits simple style composition, making it an effective and practical method for styling React components.
+
+Q43. What are the differences between React.js and React Native?
+
+Ans. React Native is a JavaScript framework for creating native mobile applications, whereas React.js is a JavaScript toolkit for creating user interfaces on the web. Target platforms make a big difference: React.js uses HTML and CSS to render components for the web browser, whereas React Native renders components for native UI elements on iOS and Android. React Native employs native platform components, whereas React.js uses HTML tags. Although both online and mobile applications still use React's overarching component-based design and React's core concepts, this distinction necessitates separate development and styling methodologies.
+
+Q44. Explain the concept of code splitting in React.js and its benefits.
+
+Ans. In React.js, the term "code splitting" refers to a method of dividing the application's packaged JavaScript code into smaller portions that may be loaded asynchronously or on-demand as needed. By dividing the code, the size of the initial bundle can be decreased, resulting in quicker initial page loads. Only the appropriate chunks are loaded when a user navigates to a specific route or completes an activity that needs additional code, making the user experience more effective and responsive. Code splitting, which improves efficiency by minimising the amount of code that must be downloaded and performed initially, can be done using tools like Webpack or React's built-in dynamic import function.
+
+Q45. How do you handle internationalisation (i18n) in React.js applications?
+
+Ans. In order to handle internationalisation in React.js apps, localised text must be made available, and the application's content must be modified according to the user's language or location. Many libraries, such react-i18next and react-intl, are available for React and offer complete solutions for handling translations, switching between languages, and formatting dates, numbers, and currencies. These libraries typically store translations in JSON files or key-value pairs and offer React components or hooks to handle the display of localised text inside the application. React.js apps may easily handle many languages and provide a seamless user experience for users from across the world by implementing an i18n library.
+
+Q46. What are React.js fragments and when would you use them?
+
+Ans. Developers can combine numerous items using React.js fragments without adding a wrapper element. When showing a list of items or when you need to return several elements from a component without adding extra markup to the DOM, you can utilise fragments. By employing fragments in place of a container element like a div, you can logically group elements together while maintaining the desired DOM structure. By minimising the amount of extraneous items in the generated output, fragments enhance efficiency. This could lead to a lighter DOM and possibly faster rendering.
+
+Q47. Explain the concept of lazy loading in React.js and how it improves performance.
+
+Ans. Delaying the loading of components or resources until they are really needed is known as "lazy loading" in React.js. This can be done by loading components asynchronously using React's lazy() feature in conjunction with dynamic import(). Large applications with several routes or intricate component hierarchies benefit from lazy loading because it decreases the initial bundle size and speeds up initial loading. Lazy loading improves performance by cutting down on the amount of code that must be downloaded and parsed beforehand, leading to quicker page loads and improved resource utilisation.
+
+Q48. How do you handle forms validation in React.js?
+
+Ans. In React.js, forms validation can be handled by leveraging the state and event system. Developers typically define the form inputs as controlled components, where the value and its changes are controlled by React's state. Validations can be performed in response to user input events, such as onChange, or when the form is submitted. By capturing the user input and validating it against specific criteria or rules, developers can provide feedback to the user about the validity of the form. This can be done by updating the state to track the validation errors and conditionally rendering error messages or applying CSS classes to highlight invalid inputs. Various form validation libraries, such as Formik or Yup, provide additional abstractions and utilities to simplify and enhance the validation process in React.js applications.
+
+Q49. What is the purpose of the useCallback hook in React.js and when would you use it?
+
+Ans. The useCallback hook in React.js is used to memoize and optimize the creation of callback functions. It is particularly useful when passing callbacks to child components, as it ensures that the callback is only created once and not recreated on every render. This optimization can improve performance, especially in scenarios where the callback is passed as a dependency to other hooks or effects.
+
+Q50. Explain the concept of portals in React.js and how they are used for rendering content outside the parent component's DOM hierarchy.
+
+Ans. Portals in React.js provide a way to render content outside the normal DOM hierarchy of a component. It allows you to render a child component's content to a different DOM element, typically one that exists outside of the current component's parent. This is useful when you need to render content into a different part of the document, such as a modal or a tooltip, while still maintaining the component's logical structure and state.
+
+Q51. What is the purpose of the useContext hook in React.js and how is it used for managing global state?
+
+Ans. The useContext hook in React.js is used for accessing context values in functional components. It allows you to consume a context created by the Context API and access its values without nesting multiple levels of components. It simplifies the process of managing global state by providing a way to share data across components without prop drilling, making it easier to pass and update state between different parts of an application.
+
+Q52. Explain the concept of error handling in React.js using componentDidCatch and ErrorBoundary.
+
+Ans. Error handling in React.js involves catching and handling errors that occur during rendering, lifecycle methods, or event handling. The componentDidCatch lifecycle method is used in class components to catch and handle errors within the component tree. ErrorBoundary is a higher-order component (HOC) or a React component that uses componentDidCatch to catch and display errors gracefully. By wrapping components with an ErrorBoundary, you can handle and display error messages or fallback UI when an error occurs within the component tree.
+
+Q53. How do you handle routing in React.js without using third-party libraries?
+
+Ans. Routing in React.js can be handled without using third-party libraries by utilizing the built-in "react-router-dom" package. It provides a collection of routing components and hooks to manage the application's navigation and URL handling. The "BrowserRouter" component can be used to define the router configuration, while "Route" components are used to define the mapping between URLs and components. By using the "useHistory" and "useParams" hooks, you can also programmatically navigate and access URL parameters within your components.
+
+Q54. What is the purpose of React fragments and when would you use them?
+
+Ans. React fragments, represented by the "<>...</>" or "<React.Fragment>... </React.Fragment>" syntax, are used to group multiple elements together without introducing an additional parent element in the DOM. Fragments allow you to return multiple elements from a component's render method without needing to wrap them in a div or other container element. They are particularly useful when you need to render a list of elements or when you want to avoid unnecessary elements in the DOM hierarchy.
+
+Q55. Explain the concept of server-side rendering (SSR) in React.js and its benefits.
+
+Ans. Server-side rendering (SSR) in React.js involves rendering React components on the server and sending the pre-rendered HTML to the client. This allows search engines and social media crawlers to index and parse the content correctly, improving search engine optimization (SEO) and social sharing. SSR also provides faster initial page load times, as the server can send HTML that is ready to be displayed, reducing the time spent on client-side rendering. Additionally, SSR ensures that the initial HTML is accessible to users, even if JavaScript is disabled or takes longer to load.
+
+Q56. How do you handle authentication and authorization in React.js applications?
+
+Ans. Authentication and authorization in React.js applications can be implemented by using various techniques. Typically, a combination of backend authentication (such as JWT tokens or session cookies) and frontend techniques are used. The backend handles the authentication process and provides tokens or cookies to the client, which are then stored and managed in React's state or browser's local storage. Protected routes can be implemented to check the user's authentication status and redirect them accordingly. Additionally, authorization can be managed by storing user roles or permissions in the authentication tokens or cookies and using them to restrict access to certain components or routes.
+
+Q57. What are the benefits of using TypeScript with React.js?
+
+Ans. Using TypeScript with React.js brings several benefits. TypeScript is a statically-typed superset of JavaScript that provides compile-time type checking, which helps catch errors and improve code quality during development. With TypeScript, you can define types for props and state in React components, making it easier to understand and maintain the codebase. TypeScript's autocompletion and type inference capabilities enhance productivity and make refactoring safer. Additionally, TypeScript offers excellent tooling support, such as IDE integrations and documentation generation, which aid in code navigation and understanding. Overall, TypeScript improves the robustness, scalability, and maintainability of React.js applications.
+
+Q58. How do you handle code splitting and lazy loading in React.js using dynamic imports?
+
+Ans. To handle code splitting and lazy loading in React.js, you can use dynamic imports. Dynamic imports allow you to split your code into smaller chunks that are loaded only when needed. By using the "import()" function or React.lazy(), you can dynamically import components or modules asynchronously. This helps reduce the initial bundle size and improves the performance of your application by loading code on-demand, especially for larger applications with complex UI.
+
+Q59. Explain the concept of reconciliation in React.js and how it helps in efficient rendering.
+
+Ans. Reconciliation in React.js is the process of comparing the previous and current states of a component's UI hierarchy and efficiently updating the DOM with only the necessary changes. React uses a virtual DOM to perform this comparison and minimise actual updates to the real DOM, which can be computationally expensive. By performing a diffing algorithm, React identifies the differences and updates only the affected parts of the UI, resulting in efficient rendering and better performance.
+
+Q60. How do you handle data fetching and API calls in React.js?
+
+Ans. Data fetching and API calls in React.js can be handled using various methods. The most common approach is using the "fetch" API or "axios" library to make HTTP requests to an API endpoint. You can fetch data in lifecycle methods like "componentDidMount" or "useEffect" hooks. To manage state and asynchronous data, you can use the React state or useReducer hooks, and update the UI accordingly when the data is fetched or updated. Additionally, libraries like "redux-thunk" or "react-query" provide more advanced solutions for handling data fetching and caching.
+
+Q61. What are the differences between controlled and uncontrolled components in React.js?
+
+Ans. Controlled components in React.js are components where the component's state is controlled by React, meaning the component receives its value via props and notifies changes through callbacks. Developers have full control over the component's behaviour and can implement validation and perform actions upon changes. On the other hand, uncontrolled components have their state managed by the DOM itself, and the data can be accessed using refs. Uncontrolled components are useful when you need to access form values imperatively or work with non-React libraries. Controlled components provide a more predictable and controlled approach to managing component state.
+
+Q62. Explain the purpose of the useMemo hook in React.js and when would you use it?
+
+Ans. The useMemo hook in React.js is used to memoize expensive computations and prevent unnecessary recalculations. It takes a function and a dependency array as inputs and returns the memoized value. By wrapping a computation in useMemo, React will only recompute the value when the dependencies change. This optimization is beneficial for complex calculations or expensive operations that don't need to be performed on every render. useMemo improves the performance of the application by avoiding unnecessary computations and re-rendering of components.
+
+Q63. How do you implement drag-and-drop functionality in React.js?
+
+Ans. Implementing drag-and-drop functionality in React.js can be achieved using the HTML5 drag and drop API or third-party libraries like "react-dnd" or "react-beautiful-dnd." With the HTML5 API, you would need to handle events like "dragstart," "dragenter," "dragover," and "drop" to manage the drag-and-drop behaviour. Third-party libraries provide a higher-level abstraction and allow you to define draggable and droppable components, handle drag events, and update the state accordingly. These libraries provide more flexibility and features for implementing complex drag-and-drop interactions in React.js applications.
+
+Q64. What are the best practices for optimising performance in React.js applications?
+
+Ans. Some best practices for optimising performance in React.js applications include minimising re-renders by using shouldComponentUpdate or React.memo, utilising code splitting and lazy loading for efficient bundle loading, implementing proper data fetching and caching mechanisms, optimising images and assets, using production build optimizations like minification and compression, and using performance monitoring tools to identify and address performance bottlenecks. Additionally, avoiding unnecessary state updates, using key props correctly, and using libraries and techniques like memoization or virtualization can further enhance the performance of React.js applications.
+
+Q65. Explain the concept of CSS modules in React.js and how they help with styling.
+
+Ans. CSS modules in React.js provide a way to encapsulate CSS styles locally within individual components. CSS modules automatically generate unique class names, ensuring that styles are isolated to the component they are applied to, avoiding global style conflicts. By importing CSS modules into React components, you can access and apply the styles using regular class names. This approach enhances maintainability, reusability, and modularity by encapsulating styles within components, making it easier to reason about and update styles without affecting other parts of the application.
+
+Q66. How do you handle forms and form validation in React.js using libraries like Formik or react-hook-form?
+
+Ans. Libraries like Formik and react-hook-form simplify form handling and validation in React.js. Formik provides a higher-level API for managing form state, handling form submission, and validating form inputs. It integrates well with React components and supports features like field-level validation, form-level validation, and error handling. react-hook-form also offers a lightweight and performant solution for form handling, emphasising uncontrolled form inputs and leveraging the browser's native form validation capabilities. Both libraries provide utilities and hooks to streamline the process of handling forms and form validation in React.js applications.
+
+Q67. What is the purpose of the React Context API and how does it differ from Redux?
+
+Ans. The React Context API is used for managing global state and sharing data between components without having to pass props explicitly through the component tree. It provides a way to create a context, define a provider component, and consume the context using the useContext hook or context consumer. The Context API is suitable for smaller-scale applications or cases where the state needs to be shared between a few components. Redux, on the other hand, is a more robust state management library for larger-scale applications, providing a predictable state container and enabling centralised state management with concepts like actions and reducers. Redux offers additional features like middleware, time-travel debugging, and a rich ecosystem of extensions and tools.
+
+Q68. How do you handle state management in large-scale React.js applications?
+
+Ans. In large-scale React.js applications, state management is often handled using libraries or frameworks such as Redux or MobX. These tools provide a centralized store to manage application state and enable predictable state updates through actions and reducers. By separating the state from the UI components, it becomes easier to manage and share data across different parts of the application, making it more scalable and maintainable.
+
+Q69. Explain the concept of higher-order components (HOCs) and how they are used in React.js.
+
+Ans. Higher-order components (HOCs) in React.js are functions that take a component as an argument and return an enhanced version of that component. HOCs allow for code reuse and encapsulation of common logic that can be shared across multiple components. They enable cross-cutting concerns like authentication, data fetching, or styling to be applied to components without modifying their implementation. HOCs are created by composing components using functions like "connect" in Redux or "withRouter" in React Router, providing additional props or behavior to the wrapped component.
+
+Q70. How do you handle animation and transitions in React.js?
+
+Ans. Animation and transitions in React.js can be handled using CSS transitions, CSS animations, or JavaScript-based animation libraries like React Transition Group or React Spring. CSS transitions allow for smooth property changes over a specified duration, while CSS animations provide more complex and timeline-based animations. JavaScript-based libraries offer greater control and flexibility for creating advanced animations. React's lifecycle methods and hooks can be used to trigger animations based on component state or events, and CSS classes or inline styles can be manipulated to apply the desired animation effects.
+
+Q71. What are the benefits of using styled-components in React.js for styling?
+
+Ans. Styled-components is a library in React.js that allows developers to write CSS styles directly in their JavaScript code. The benefits of using styled-components include improved modularity, component-level styling, and easier theming. With styled-components, styles are encapsulated within the component itself, reducing the chances of class name collisions and making it easier to reason about the styles. It also enables the creation of reusable styled components and promotes a more cohesive and maintainable codebase. Additionally, styled-components support dynamic styling based on props, making it convenient for theming or handling conditional styles.
+
+Q72. Explain the concept of code reusability in React.js and how it is achieved.
+
+Ans. Code reusability in React.js refers to the practice of writing components or functions that can be used in multiple parts of an application. It is achieved through the creation of reusable components and the extraction of common logic into separate functions or custom hooks. By designing components with a focus on reusability, developers can reduce duplication, improve maintainability, and enhance productivity. Techniques such as props, composition, and context can be leveraged to create reusable building blocks that can be easily integrated into different parts of the application.
+
+Q73. How do you handle testing in React.js applications? What testing libraries or frameworks do you prefer?
+
+Ans. Testing in React.js applications can be done using various testing libraries and frameworks like Jest, Enzyme, or React Testing Library. Jest is a popular choice as it provides built-in support for testing React components, along with features like snapshot testing and mocking. Enzyme offers additional utilities for testing component behaviours and interactions. React Testing Library focuses on testing the application from the user's perspective, promoting best practices for testing accessibility and ensuring components work as expected in different scenarios. The choice of testing library or framework depends on the specific needs and preferences of the project and the testing approach being followed.
+
+Q74. What is the purpose of the React DevTools extension and how can it be used for debugging?
+
+Ans. The React DevTools extension is a browser extension that allows developers to inspect and debug React component hierarchies. It provides a set of tools to examine component props, state, and context, as well as inspect the virtual DOM tree. The React DevTools extension enables developers to track component updates, identify performance bottlenecks, and diagnose issues in the application's rendering and state management. By examining component hierarchy and inspecting the associated data, developers can gain valuable insights into how the application is behaving and make informed debugging decisions.
+
+Q75. How do you handle cross-origin resource sharing (CORS) in React.js applications?
+
+Ans. Cross-origin resource sharing (CORS) in React.js applications is handled on the server-side rather than in the React.js code itself. CORS involves configuring the server to include appropriate response headers that allow or restrict cross-origin requests. On the client-side, React.js applications can handle CORS-related errors by handling the corresponding HTTP status codes or using libraries like Axios to make HTTP requests, which provide options for handling CORS. It's important to ensure the server is properly configured to allow cross-origin requests and handle CORS-related security considerations.
+
+Q76. Explain the concept of React hooks rules and best practices.
+
+Ans. React hooks are functions that allow functional components to access state and lifecycle features previously available only in class components. React hooks follow a set of rules and best practices to ensure correct usage. Some key rules include only calling hooks at the top level of a component or custom hook, not calling hooks conditionally, and always calling hooks in the same order. It is recommended to follow the rules and best practices outlined in the React documentation to avoid issues with hooks and maintain consistent behaviour and performance in React.js applications.
+
+Q77. How do you handle pagination in React.js applications?
+
+Ans. Pagination in React.js applications can be handled by managing the current page and the number of items to display per page in the component's state. When rendering a list or table, the component can slice the data based on the current page and items per page, and render only the relevant portion. Additionally, pagination controls or a component can be implemented to allow users to navigate between pages. The component's state can be updated accordingly when the user interacts with the pagination controls, triggering a re-rendering of the relevant data based on the updated page information.
+
+Q78. What is the role of Redux-Saga in React.js applications and how does it handle asynchronous actions?
+
+Ans. Redux-Saga is a middleware library for Redux that provides an alternative approach to handling asynchronous actions. It uses ES6 generators to make handling complex asynchronous flows more manageable and maintainable. Redux-Saga intercepts Redux actions and allows developers to define sagas, which are generator functions that encapsulate the logic for handling asynchronous actions. Sagas can listen to specific actions, perform asynchronous tasks like API calls or side effects, and dispatch new actions to update the Redux store. This decoupling of asynchronous logic from the components can result in more testable, reusable, and predictable code.
+
+Q79. Explain the concept of component composition in React.js and its benefits.
+
+Ans. Component composition in React.js refers to the practice of building complex user interfaces by combining smaller, reusable components. It allows developers to break down the UI into smaller, manageable pieces, each responsible for a specific functionality or visual representation. This modular approach promotes code reusability, maintainability, and scalability. By composing components together, developers can create more complex UI structures while keeping the codebase organized and easy to understand. Additionally, component composition enables easy testing, as individual components can be isolated and tested independently.
+
+Q80. How do you handle data persistence in React.js applications using localStorage or cookies?
+
+Ans. In React.js applications, data persistence can be achieved using localStorage or cookies. localStorage provides a simple key-value storage mechanism in the browser, allowing developers to store and retrieve data on the client-side. The data stored in localStorage remains even after the user closes the browser. Cookies, on the other hand, are small pieces of data stored by the browser and sent with each subsequent request to the server. They can be set with an expiration date and can be accessed by both the client and the server. To handle data persistence, you can use the localStorage or cookies APIs provided by the browser, storing the required data as strings and converting it as needed.
+
+Q81. What are the benefits of using React.js in a single-page application (SPA) compared to traditional multi-page applications?
+
+Ans. Using React.js in a single-page application (SPA) offers several benefits compared to traditional multi-page applications. SPAs built with React provide a smoother and more seamless user experience as they eliminate page reloads. React's virtual DOM efficiently updates and renders only the necessary components, resulting in improved performance. Additionally, React's component-based architecture allows for better code organization, reusability, and maintainability. SPAs also enable faster navigation, as they can dynamically load content without requiring a full page refresh. Furthermore, React's ecosystem provides numerous libraries and tools specifically designed for SPAs, enhancing developer productivity.
+
+Q82. How do you handle SEO optimization in React.js applications?
+
+Ans. SEO optimization in React.js applications can be achieved by implementing server-side rendering (SSR) or using techniques like prerendering or dynamic rendering. SSR involves rendering the React components on the server and sending the fully rendered HTML to the client, which improves search engine crawlers' ability to index the content. Prerendering generates static HTML files for each route in the application, which can be served directly to the client, allowing search engines to index the content. Dynamic rendering involves serving different versions of the application to search engines and users, ensuring that search engines receive fully rendered content while users interact with the client-side application.
+
+Q83. Explain the concept of code splitting and lazy loading in React.js using React.lazy and React.Suspense.
+
+Ans. Code splitting and lazy loading in React.js allow for more efficient loading and rendering of components, improving performance. Code splitting involves breaking down the application's JavaScript bundle into smaller chunks, which can be loaded on-demand. This reduces the initial bundle size and allows components to be loaded only when they are needed. React.lazy is a built-in React feature that enables lazy loading of components. It allows you to dynamically import components using a function that returns a Promise. React.Suspense is used to handle the loading state while the requested component is being fetched. It allows you to display fallback content, such as a loading spinner, until the component is fully loaded and ready to be rendered.
+
+Q84. How do you handle security concerns in React.js applications, such as cross-site scripting (XSS)?
+
+Ans. Handling security concerns, including cross-site scripting (XSS), in React.js applications involves implementing proper security measures. React.js provides built-in protection against XSS attacks by default. It automatically escapes any user input rendered in the components, preventing it from being executed as malicious code. However, it is still important to follow security best practices, such as using safe APIs for user input, validating and sanitising data on the server-side, and implementing Content Security Policies (CSP) to restrict the execution of unauthorised scripts. Additionally, using secure communication protocols (HTTPS) and keeping all dependencies up to date can further enhance the security of React.js applications.
+
+Q85. What are the differences between functional components and class components in React.js?
+
+Ans. Functional components and class components are two types of components in React.js. Class components are created using JavaScript classes and extend the React.Component class. They have lifecycle methods, such as componentDidMount and componentDidUpdate, and can hold state using this.state. Functional components, on the other hand, are defined as JavaScript functions and do not have their own lifecycle methods or state. They are simpler and easier to understand, making them a preferred choice for many developers. However, with the introduction of React Hooks, functional components can now also hold state and utilise lifecycle-like functions using hooks like useState and useEffect. Hooks have provided a more concise and flexible way of managing state and lifecycle in functional components.
+
+Q86. Explain the concept of memoization in React.js and how it improves performance.
+
+Ans. Memoization in React.js is a technique used to optimise the rendering process by caching the results of expensive computations or function calls. With memoization, the output of a function is cached based on its input parameters. When the function is called again with the same input, instead of recomputing the result, the cached value is returned, saving computational resources and improving performance. In React.js, the useMemo hook is used for memoization. It allows you to memoize the value of a computation and only recalculate it when the dependencies change. This is particularly useful when dealing with heavy calculations, complex data transformations, or expensive API calls within components.
+
+Q87. How do you handle data fetching and caching in React.js using libraries like React Query or Apollo Client?
+
+Ans. Libraries like React Query and Apollo Client provide powerful tools for handling data fetching and caching in React.js applications. React Query simplifies data fetching by abstracting away the boilerplate code involved in making API requests, caching the results, and handling optimistic updates. It provides hooks and utilities for managing the state of asynchronous data and seamlessly integrates with React's rendering and lifecycle. Apollo Client, on the other hand, is specifically designed for fetching and managing data from GraphQL APIs. It provides a declarative approach to data fetching, caching, and real-time updates. Both libraries handle data caching automatically, reducing unnecessary network requests and improving application performance.
+
+Q88. What are the benefits of using Redux Toolkit in React.js applications?
+
+Ans. Redux Toolkit is a popular library that simplifies the process of managing state in React.js applications using Redux. It provides a set of opinionated utilities and abstractions that streamline the Redux development experience. Redux Toolkit includes features like the createSlice function, which reduces the boilerplate code required to define Redux actions and reducers. It also integrates the Redux DevTools extension for easy debugging and time-traveling. Additionally, Redux Toolkit promotes best practices such as immutability and helps prevent common mistakes, improving the overall development workflow. It offers a smoother learning curve for beginners and provides a more efficient and productive development experience for experienced Redux users.
+
+Q89. Explain the concept of performance optimizations in React.js, such as memoization and memoizing selectors.
+
+Ans. Performance optimizations in React.js involve techniques to improve the rendering efficiency of components. Memoization, as mentioned earlier, helps optimize expensive computations or function calls by caching their results and avoiding unnecessary recalculations. Memoizing selectors is another optimization technique that involves caching the results of complex data transformations or derived data. By memoizing selectors, you can ensure that the derived data is only recomputed when the input data changes. This reduces redundant calculations and improves performance. Libraries like reselect are commonly used in React.js to implement memoized selectors. Additionally, using shouldComponentUpdate lifecycle method, PureComponent, or React.memo can prevent unnecessary re-renders of components by implementing shallow equality checks on props or state.
+
+Q90. How do you handle state synchronisation between components in React.js using Redux?
+
+Ans. Redux is a state management library that helps handle state synchronisation between components in React.js. It follows a centralised approach, where the entire application state is stored in a single JavaScript object called the "store." Components can access and modify the state using actions, which are dispatched to the store. Reducers, pure functions, specify how the state should change in response to actions. Components can subscribe to the store and receive updates whenever the state changes, ensuring consistent and synchronised data across the application.
+
+Q91. What is the role of the useEffect hook in React.js and how does it handle side effects?
+
+Ans. The useEffect hook in React.js is used to handle side effects in functional components. Side effects include tasks like data fetching, subscriptions, or manually changing the DOM. By specifying dependencies as the second argument of useEffect, developers can control when the effect runs. If the dependencies change, the effect is re-run. This allows for efficient handling of side effects, avoiding unnecessary re-renders and memory leaks. The cleanup function returned by useEffect can be used to perform any necessary cleanup before the component is unmounted.
+
+Q92.Explain the concept of the useCallback hook in React.js and its use cases.
+
+Ans. The useCallback hook in React.js is used to memoize functions, preventing unnecessary re-creation of functions in each render cycle. It is particularly useful when passing callbacks to child components that rely on referential equality for optimization purposes. By wrapping a function in useCallback, React ensures that the function reference remains stable unless its dependencies change. This optimization can improve performance, especially in scenarios where components rely heavily on callback functions.
+
+Q93. How do you handle routing in React.js using third-party libraries like React Router?
+
+Ans. Third-party libraries like React Router are commonly used to handle routing in React.js applications. React Router provides a declarative way to define routes and render different components based on the URL. Developers can define routes using the Route component and specify the corresponding component to render. Additional features such as nested routes, route parameters, and query parameters can be utilised to create complex routing structures. React Router also provides navigation components like Link and useHistory to navigate between different routes.
+
+Q94. What is the purpose of the useContext hook in React.js and how is it used for managing global state?
+
+Ans. The useContext hook in React.js is used to access and consume a context created with the createContext function. Context allows for the propagation of values across the component tree without the need to pass props explicitly at each level. By using useContext, components can access the value provided by the context provider higher up in the tree. This is particularly useful for managing global state, where data needs to be shared and accessed by multiple components throughout the application.
+
+Q95. Explain the concept of error handling in React.js using componentDidCatch and ErrorBoundary.
+
+Ans. React.js provides the componentDidCatch lifecycle method and the ErrorBoundary component for error handling. When an error occurs during the rendering of a component, componentDidCatch is invoked, allowing the component to capture the error and display a fallback UI. ErrorBoundary components wrap the tree and catch errors from their children, enabling the display of alternative content instead of a full application crash. This mechanism is useful for handling runtime errors that occur during rendering and ensures a better user experience.
+
+Q96. How do you handle form validation in React.js using libraries like Formik or Yup?
+
+Ans. Libraries like Formik and Yup can be used to handle form validation in React.js. Formik simplifies form management by providing utilities for handling form state, validation, and submission. It integrates well with Yup, a schema validation library, which allows for defining validation rules using a fluent API. By combining Formik and Yup, developers can create forms with validation logic, handle form submission, and display error messages, providing a robust and user-friendly form validation experience.
+
+Q97. What are the benefits of using TypeScript with React.js, and how does it improve developer productivity?
+
+Ans. Using TypeScript with React.js brings several benefits. TypeScript is a statically typed superset of JavaScript, providing type checking and improved tooling support. It enhances developer productivity by catching type-related errors at compile time, allowing for early bug detection and reducing runtime errors. TypeScript enables better code maintainability and refactoring with its strong typing and code navigation features. It also provides auto-completion and documentation generation, enhancing the development experience and making code easier to understand and collaborate on.
+
+Q98. Explain the concept of React hooks and how they simplify state management in functional components.
+
+Ans. React hooks are functions that allow functional components in React.js to have state and lifecycle features. They simplify state management by eliminating the need for class components and promoting a more concise and functional programming style. The useState hook provides local state management, while the useEffect hook handles side effects. Additional hooks like useContext, useRef, and useCallback offer functionality for global state, references, and memoization, respectively. Hooks enable developers to write reusable and modular code, improving code organization and reducing the complexity of state management in functional components.
+
+Q99. How do you handle server-side rendering (SSR) in React.js using libraries like Next.js?
+
+Ans. Libraries like Next.js provide built-in support for server-side rendering (SSR) in React.js. With Next.js, developers can create pages and components that are rendered on the server and sent as fully rendered HTML to the client. This approach improves initial page load performance and search engine optimization. Next.js handles the routing, data fetching, and rendering process on the server, allowing for dynamic content and seamless navigation. By leveraging Next.js, developers can achieve the benefits of SSR without the need for complex configuration, making server-side rendering more accessible and straightforward.
+
+Q100. How do you handle data fetching and asynchronous operations in React.js using the useEffect hook and libraries like Axios or Fetch API?
+
+Ans. To handle data fetching and asynchronous operations in React.js, you can use the useEffect hook along with libraries like Axios or Fetch API. First, import the necessary library (e.g., Axios) and use the useEffect hook to specify the side effect of fetching data. Within the useEffect callback function, make an asynchronous request using Axios or Fetch API. When the data is received, update the state using setState or useState hooks. To avoid potential memory leaks, make sure to clean up the effect by returning a cleanup function from useEffect, which can cancel pending requests or perform any necessary cleanup tasks. By leveraging the useEffect hook and libraries like Axios or Fetch API, you can efficiently handle data fetching and manage asynchronous operations in your React.js applications.
+
 Top 50+ ReactJS Interview Questions and Answers (2026 List)
 Interview Questions
 Web Development
