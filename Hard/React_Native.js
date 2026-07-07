@@ -1,4 +1,113 @@
 
+What Is a React Native Developer?
+A React Native developer uses JavaScript, React Native, and other technologies to create beautiful apps for various platforms. React Native provides an open-source user interface (UI) software framework that can develop apps for iOS, macOS, tvOS, Windows, Web, UWP, Android, and Android TV. It enables developers to use native module platform features with the React framework.
+
+React Native developer duties vary depending on the employer, industry, and seniority, but most are responsible for the following tasks:
+
+Creating streamlined and beautiful UIs across platforms
+Leveraging native application programming interfaces (APIs) for deep integrations with all platforms
+Identifying and fixing bugs and performance problems to create a native-like user experience (UX)
+Talking to the open-source community to implement software fixes
+Maintaining code documentation
+Developing automated tests to ensure apps run smoothly and are bug-free
+Converting React web apps to React Native apps
+Most React Native developers have the following skills:
+
+Ability to write clean JavaScript code
+Familiarity with native build tools such as Gradle, Android Studio, and Xcode
+Experience using automated testing suites like Mocha and Jest
+Understanding of REST APIs
+Entry-Level React Native Developer Interview Questions
+Entry-level React Native developers have zero to three years of relevant working experience. They usually are fresh boot camp or university graduates. Due to their limited knowledge and experience, they have lower salaries and fewer duties than mid-level and senior developers and require mentorship to reach their full potential.
+
+Entry-level React Native interview questions should assess basic knowledge of React navigation, the benefits of using React Native, and the main components of React. Leave the more specific technical questions for mid-level and senior React Native developers.
+
+Below are some sample entry-level React Native interview questions and answers.
+
+What is the difference between React Native and ReactJS?
+This question reveals candidates' understanding of React Native. Applicants who fail to answer accurately are not a good fit for the position.
+
+Here's an example of a good answer:
+
+ReactJS is used for creating the UI of web applications that run on browsers. React Native is for building applications that run on iOS, Android, and other devices. Most companies use React Native to create applications that run on both iOS and Android. Also, ReactJS uses CSS, HTML, and JavaScript to create interactive UIs. React Native uses APIs and native UI components to create native mobile apps.
+
+What Is a flexbox? Name three important flexbox properties.
+This technical question assesses applicants' familiarity with React Native and CSS. Candidates who fail to answer thoroughly may not know how to create app UIs.
+
+Here's a sample answer:
+
+A flexbox in React Native is a CSS display type design that helps developers create CSS layouts. Developers can use flexboxes to control elements' size, position, and spacing relative to each other and their parent elements. Flexboxes are great for responsive designs. Three important flexbox properties include:
+
+flexDirection, which allows developers to style React Native components in the primary axis 
+justifyContent, which states the distribution of the children's components toward the primary axis. Developers can use it to distribute the children's components at the center, start, end, and in space. 
+alignItems, which is mostly for the secondary axis. It states the alignments of any children component inside another component toward the secondary axis.
+How do you work in a team setting?
+This personalized question reveals candidates' ability to work in a team. A good answer should reveal a candidate’s:
+
+Experience working in a team
+Oral and written communication skills
+Organization skills
+Leadership skills
+Empathy
+Active listening skills
+Preferred tools for keeping on top of tasks
+Mid-Level React Native Developer Interview Questions
+Mid-level React Native developers have four to six years of relevant working experience. Since they have more expertise than entry-level developers, they have more opportunities and may also be responsible for mentoring entry-level developers. 
+
+Mid-level React Native developer interview questions place more emphasis on candidates' technical skills and ability to work independently. Here are some sample mid-level React Native interview questions.
+
+What is a bridge in React Native?
+This question evaluates applicants' understanding of intermediate-level React Native development. A good answer should explain that a React Native app consists of two sides: the JavaScript side and the Native side. The JavaScript side contains JavaScript code, and the Native side comprises the native platform language. 
+
+They should be able to explain that when creating an iOS app, the Native side would be in Swift or Objective-C. Bridges in React Native allow the JavaScript code and the Native code to interact with one another. Without the bridge, the Native code can't transmit information to the JavaScript side and vice versa.
+
+What are Touchable components in React Native? What are the types of Touchable components?
+Mid-level React Native developers should have ample experience using Touchable React components for the UX and UI. This question allows you to determine whether a hire understands how to use Touchable components. 
+
+Here's an ideal answer:
+
+Touchable components capture tapping gestures. They can display feedback when a hand gesture is recognized. However, because they don't provide a default styling, It requires work to make them look nice. For instance, they can be implemented as user-friendly buttons. 
+
+They should also explain the four types of touchable components:
+
+TouchableHighlight is used when creating a link or button on the web; the background of this component becomes dark when the user presses it.
+TouchableNativeFeedback creates a view to respond properly to touch. It only works for Android systems.
+TouchableOpacity is used to lower the opacity of a button. 
+TouchableWithoutFeedback is used to tap functionality without displaying any feedback.
+How do you work with senior-level colleagues?
+This question evaluates candidates' interpersonal, teamwork, and communication skills. The best answers should mention the following:
+
+Eagerness to learn: Mid-level React Native developers have a lot to learn. Being eager yet humble allows them to learn more from senior colleagues and have a more positive attitude toward making mistakes.
+Active listening skills: The candidate should listen to senior-level colleagues' tips and guidance. This allows them to learn faster.
+Teamwork skills: Mid-level React Native developers should know how to collaborate effectively and efficiently with senior-level colleagues to meet deadlines and build high-quality apps.
+Senior-Level React Native Developer Interview Questions
+Senior-level React Native developers have over six years of professional working experience. They have many mentorship and leadership roles and often meet with the C-suite to make critical React Native project decisions. 
+
+Senior-level React Native developer questions should test applicants' leadership, communication, and problem-solving skills. Here are some sample senior-level React Native interview questions.
+
+What causes performance issues in React Native?
+This question assesses applicants' ability to identify and solve performance issues. Here's what a good answer looks like:
+
+Performance issues can appear when Native components and JS threads pass more often than required. You can solve most performance issues by minimizing passes over the bridge. The bridge is the intermediate communication point for the JS and Native threads.
+
+How can you optimize a React Native application?
+This question reveals applicants' ability to optimize React Native applications for speed and usability. A strong answer should mention at least three of the following points:
+
+Optimize native libraries
+Compress graphic elements and images
+Reduce image size using file types such as APNG instead of PNG
+Compress raw JSON data or convert them into static object IDs
+Optimize the number of state operations and use React components when necessary
+Use SectionList, FlatList, and VirtualizedList for large data sets
+Clear active timers, which can lead to heavy memory leakage problems
+What are your approaches to mentorship and leadership?
+This question evaluates candidates' ability to mentor and lead entry- and mid-level colleagues. A good answer should reveal candidates':
+
+Humility: Good leaders are humble and open to criticism, making them less likely to clash with team members.
+Proactivity: Leaders should always take the initiative to plan meetings and ensure everyone meets deadlines.
+Preferred project management methodology: The best candidate for your team should be comfortable working in your company's preferred project management methodology, such as Agile, Scrum, or Waterfall. 
+Empathy: Leaders must understand others' perspectives; this allows for smoother communication and mutual respect.
+
 В то время как React получает все большее применение, React Native постепенно становится неотъемлемой частью вселенной JavaScript. Он позволяет мобильным разработчикам писать мобильные приложения, которые можно портировать как на iOS, так и на Android.
 Преимущество этого заключается в том, что вместо того, чтобы развивать отдельные навыки iOS (Objective-C и Swift) и навыки Android (Java и Kotlin), разработчики мобильных приложений могут использовать JavaScript, наиболее часто используемый в настоящее время язык. Но, как и для всех технических стеков, недостаточно просто знать JavaScript. Вам необходимо хорошо разбираться в React Native. Итак, как работодатели могут определить, обладает ли разработчик React Native необходимыми навыками?
 Это руководство предоставит техническим рекрутерам всю информацию, необходимую им для проверки кандидатов на разработку React Native. Внутри вы найдете все, чтобы провести собеседование на должном уровне:
