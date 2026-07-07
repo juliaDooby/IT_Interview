@@ -1,4 +1,458 @@
-July 13, 2022
+50+ Top MongoDB Interview Questions and Answers For 2026
+ 
+
+MongoDB is a document-based database program that was developed in 2007 by 10gen software, now known as MongoDB Inc. MongoDB uses JSON-like documents with optional schemas and is a NoSQL database program. 
+
+MongoDB has been growing in popularity over the years, though it still lags behind MySQL and others. It is good for document-centric data and many developers will want to learn about it to some degree. For certain roles, you will be tested on your MongoDB knowledge.
+
+Here we list the top MongoDB interview questions and answers, which are divided into basic and advanced questions.
+
+Top MongoDB Interview Questions and Answers
+MongoDB Basic Interview Questions
+1. What is Mongo shell?
+Mongo shell is a JavaScript interface to MongoDB that can be used to query and update data. It is interactive and can also be used to execute administrative operations.
+
+2. How does MongoDB store data?
+Being document-based, MongoDB stores documents in BSON or Binary JavaScript Object notation which is the binary encoded format of JSON.
+
+3. What type of NoSQL database is MongoDB?
+It is a document database that contains documents having key-value pairs, key-array pairs, and nested documents.
+
+4. List out the important features of MongoDB.
+Some of the important features of MongoDB are:
+
+Uses a schema-less database
+No complex joins
+Faster access to data because of the presence of the working set (internal memory)
+Features like aggregation, sharding, and replication make it easy to use
+Cross-platform and document-based
+Automatic fail-over and high-availability
+5. What are the data models in MongoDB?
+Data modeling depends on the structure of documents. In MongoDB, this can be done in two ways:
+
+Related data embedded in a single document structure (Embedded data model)
+Through references from one document to another, the relationship between data is stored (Normalized data model)
+6. MongoDB is called a schema-less database. If yes, how do you create the schema in MongoDB?
+It would be more correct to say that MongoDB has a dynamically typed schema because it relies on JSON, which is a schema-free data structure. To create a schema, create and insert a document. Once a document is inserted, a corresponding collection will be created in the database.
+
+7. What is a namespace?
+A namespace is the concatenation of the database name and collection name. 
+
+Example: students.the subject, where students are the database and subject, is the collection.
+
+8. How do you perform CRUD operations in MongoDB?
+C – Create: db.collection.insert();
+R – Read: db.collection.find();
+U – Update: db.collection.update();
+D – Delete: db.collection.remove({“fieldname” : ”value”});
+9. How are constraints managed in MongoDB?
+You can add a document validator on the collections starting MongoDB 3.2. Unique indexes can also be created using db.collection.createIndex({“key” : 1} , );
+
+10. What is BSON?
+BSON or binary JSON is the binary encoded format of JSON. It extends JSON and provides more data types and fields.
+
+11. How does MongoDB handle indexing?
+Indexing is done using the ensureIndex() method. The syntax is:
+
+db.COLLECTION_NAME.ensureIndex()
+12. Name the default index created for a new collection.
+The default index created for the new collection is _id
+
+13. What is sharding in MongoDB?
+
+
+MongoDB meets the data growth using sharding, which means sorting data records across various machines. Each shard is a replica set.
+
+14. Name the two storage engines using MongoDB?
+MMAPv1 and WiredTiger are the two storage engines used by MongoDB.
+
+15. How do you create and drop a collection in MongoDB?
+Create collection: db.createCollection();
+Drop collection: db.collection.drop();
+16. How can you store images, videos and other large files in MongoDB?
+Large files are stored in MongoDB using the GridFS specification.
+
+17. In what ways is MongoDB better than MySQL?
+MongoDB has a flexible data model wherein the schema can be expanded based on business needs. Also, MongoDB is faster and can handle more data types to manage real-time applications better.
+
+18. What is the command to list all the indexes in a collection?
+
+The command is db.collection.getIndexes();
+
+19. How does MongoDB perform text search?
+Text search can be done using text index. Here’s an example:
+
+db.collection_name.ensureIndex();
+20. What is the default interval to write updates to the disk?
+The default interval is 60 seconds.
+
+21. List some of the data types supported by MongoDB.
+Some data types are numbers, string, arrays, binary data, booleans, date, regular expressions, ObjectId, etc.
+
+22. How can applications access real-time data changes?
+Applications can access real-time data changes using Change streams which acts as a subscriber to all the collection operations like insert, delete and update.
+
+23. What are the commands to create a backup of the data and restore the data?
+mongodump is used to create a backup.
+mongorestore [backup_path] is used to restore the data.
+24. Does MongoDB Support foreign key constraints?
+No, MongoDB doesn’t support foreign key constraints. Because of the document structure, MongoDB provides flexible ways to define relationships.
+
+MongoDB Advanced Interview Questions
+25. What is a covered query and why is it important?
+In a covered query, all the fields used in the query have the index created. The results returned should also be part of the index. Because of this, MongoDB fetches the results without actually looking inside documents, thus saving time and increasing efficiency.
+
+26. What are the differences between MySQL and MongoDB?
+MySQL
+
+MongoDB
+
+Written in C and C++
+
+Written in C++ and JavaScript
+
+Follows RDBMS database structure
+
+Document-based structure
+
+Vertical scaling
+
+Horizontal and vertical scaling
+
+Rigidly defined data-structure, the schema is strict and should be defined in the beginning
+
+Dynamic and flexible schema creation of complex documents
+
+Uses a Structured Query Language
+
+Uses an unstructured query language
+
+Uses Join to link data from two or more tables
+
+There is no equivalent for JOIN
+
+Performance is slow for a large database with unstructured data
+
+Handles large unstructured data efficiently
+
+Comparatively less suitable for a cloud-based environment
+
+The best option for services that are cloud-based
+
+27. What is ObjectId? How is it structured?
+ObjectId is a class that is the default primary key for the document in MongoDB. It is found in the _id field of the inserted document. It is a 12-byte BSON type generated using a default algorithm. The structure is:
+
+A 4-byte value that represents seconds since Unix epoch
+3-byte machine id
+2-byte process id
+3-bytes counter that starts with a random number
+28. What is replication and what are the primary and secondary replica sets?
+
+
+Replication means synchronizing the data across multiple servers. It increases data availability. If a single server is lost, data is still intact in the other servers.
+
+Primary replica set: MongoDB writes data only to the primary or master replica set.
+Secondary replica set: secondary or slave nodes can accept only reads. They replicate from the primary.
+29. What is journaling and how does it work?
+MongoDB ensures data integrity by using an on-disk journal that is created for every write. In case of a server crash, the journal can be used to track the writes that were not written to the disk or data files.
+
+30. Compare CouchDB and MongoDB.
+CouchDB
+
+MongoDB
+
+The data model is document oriented i.e. JSON
+
+Uses BSON which is an extension of JSON
+
+Uses HTTP/REST for querying
+
+Uses standard protocol over TCP/IP
+
+Database has documents
+
+The database contains collections and collections contain documents
+
+Written in Erlang
+
+Written in C++
+
+Uses range queries and map/reduce
+
+Uses object-based query language and map/reduce
+
+31. What are the different index types in MongoDB?
+Default: this is the _id that MongoDB creates
+Single field: for indexing and sorting on a single field
+Compound: for multiple fields
+Multi-key: for indexing array data
+Hashed: indexes the hashes of a field value
+Geospatial: to query geospatial(location) data
+32. What is an ACID transaction? Does MongoDB support it?
+ACID stands for Atomicity, Consistency, Isolation, and Durability. The transaction manager ensures these attributes are taken care of. MongoDB version 4.0 supports ACID.
+
+33. Explain the role of the profiler.
+A profiler is an in-built tool that finds out the slow and resource-intensive queries and provides query-level insights. You can analyze the queries with it. The profiler stores all the data in the system.profile collection.
+
+34. How does MongoDB handle transactions and locks?
+MongoDB uses multi-granularity locking to lock operations at the global, database, or collection level. It is up to the storage engines to implement the level of concurrency. For example, in WiredTiger, it is at the document level. For reads, there is a shared locking mode, while for write there is an exclusive locking mode.
+
+35. Explain aggregation in MongoDB.
+Aggregation groups values from different documents and performs operations on the data to return a single result. There are 3 ways in which MongoDB performs aggregation:
+
+Aggregation pipeline
+Map-reduce function
+Single purpose aggregation methods
+36. State the difference between the find() and limit() methods.
+find(): displays only selected data rather than all the data of a document. For example, if your document has 4 fields but you want to show only one, set the required field as 1 and others as 0.
+
+db.COLLECTION_NAME.find({},);
+limit(): limit function limits the number of records fetched. For example, if you have 7 documents but want to display only the first 4 documents in a collection, use limit. Syntax –
+
+db.COLLECTION_NAME.find().limit(NUMBER);
+37. How does concurrency affect the primary replica set?
+When the collection changes are written to primary, MongoDB writes the same to a special collection in the local database, called the primary’s oplog. Hence, both the collection’s database and local database are locked.
+
+38. Give an example of insert, delete and update statements in MongoDB.
+Insert
+
+db.books.insert({
+
+ _id: ObjectId(7df74fd8902c),
+
+ title: 'All about MongoDB', 
+
+ description: 'Everything you need to know about MongoDB',
+
+ by: 'Author1',
+
+ url: 'http://www.blogsuthor1.com'
+
+})
+Delete
+
+Remove a particular document -
+
+db.books.remove({'title':'All about MongoDB'})
+Remove all the documents –
+
+db.books.remove();
+Update
+
+To update values of an existing document –
+
+db.books.update({'title':'All 
+
+about MongoDB'},{$set:{'title':'MongoDB for dummies'}})
+To replace an existing document with a new
+
+one based on ObjectId –
+
+db.books.save(
+
+ {
+
+"_id" : ObjectId(5983548781331adf45ec5), "title":"MongoDB for dummies",
+
+"by":"Author2"
+
+ }
+
+)
+39. What are capped collections?
+Capped collections are fixed-size collections, and insert and retrieve data based on the insertion order. If a collection’s space is full, the oldest records will be overwritten by the new documents in the collection.
+
+40. Explain the purpose of the map-reduce command.
+Map-reduce is a way to perform aggregation.
+
+The Map function emits the key-value pair specified.
+The Reduce function combines the key value pair and returns the aggregation result.
+Syntax:
+
+db.collection.mapReduce( 
+
+function() {emit(key,value);}, 
+
+function(key, values) {return aggregatedResult}, { out: collection } 
+
+</pre.
+
+ )
+41. What are the differences between MongoDB and Cassandra?
+Features
+
+MongoDB
+
+Cassandra
+
+Structure of Data
+
+Best database to use when there is no clear structure of the data, i.e. data is a mix of structured and unstructured
+
+Works for both unstructured and structured data, especially when the database is expected to grow dynamically
+
+Data Model
+
+Has a rich and expressive data model, which is data-oriented. Any data structure can be easily represented.
+
+Traditional model with rows and columns as in a table. Each column is of a specific type, which makes the structure organized.
+
+Number of Master Nodes
+
+There is only one master node in the cluster, which controls many slave nodes.
+
+There are many master nodes in the cluster.
+
+Secondary Indexes
+
+It is easy to index any property because the secondary indexes are first-class constructs.
+
+Secondary indexes are limited to single columns and have less flexibility.
+
+Scalability
+
+For data to be written in slave nodes, it has to pass through the single master node, so scalability isn’t as good.
+
+Since there are many master nodes, data is present in multiple nodes. Hence, the scalability is comparatively good.
+
+Aggregation Framework
+
+Built-in aggregation framework
+
+No built-in aggregation framework
+
+42. What are indexes in MongoDB?
+In MongoDB, indexes help to execute queries efficiently. Indexes are special data structures that store part of the collection in a form easy to traverse. By default, MongoDB creates a permanent unique index on the _id field when a collection is created. It prevents duplicate documents in the database.
+
+43. What is a Storage Engine in MongoDB?
+
+
+The storage engine is a component of the database that manages how data is stored in both memory and disk. MongoDB provides support for multiple storage engines that helps in better performance for different workloads. The default storage engine is WiredTiger (MongoDB3.2), which is well-suited for most workloads.
+
+44. Explain the working mechanism of Journaling work in MongoDB?
+Journaling is used to recover information after the last checkpoint when MongoDB exits unexpectedly. The storage engine (WiredTiger) creates a journal record for each of the clients that initiated the write operation. 
+
+If there is an update, a single journal record records the update operation as well as index modifications. Journal records are stored using in-memory buffering. Journal files are stored under the ‘journal’ directory created by MongoDB. 
+
+45. Is it possible to configure the cache size for MMAPv1?
+It is not possible to configure the cache size for MMAPv1. MongoDB uses all the free memory automatically through memory-mapped files.
+
+46. What is GridFS?
+GridFS stores and retrieves large files like images, audio and video files, etc. Although the limit to store a file is 16MB, GridFS can store files with sizes greater than that. GridFS breaks the file into chunks and stores each chunk as a different document of a maximum size of 255k. It uses two collections, fs.chunks, and fs.files for storing chunks and metadata, respectively.
+
+47. Is it possible to run multiple Javascript operations in a MongoDB instance?
+Yes, we can run multiple JS operations in a MongoDB instance. Through the mongo shell instance, we can specify the name of the JavaScript file to be run on the server. The file can contain any number of JS operations.
+
+48. Is MongoDB the best NoSQL Database? If yes, why?
+MongoDB is the most suitable NoSQL database for data analytics as well as web application development. It helps developers and data scientists gain insights from stored data, unlike Hadoop, which requires experts to analyze data.
+
+MongoDB allows for efficient data manipulation and administration capabilities. The support for multiple JavaScript operations and Javascript-based MEAN stack add to the popularity of MongoDB. Sharding for horizontal scaling and aggregation framework to build pipelines made MongoDB fast and efficient and hence the best database to use.
+
+49. Explain the process of Transaction/Locking in MongoDB?
+MongoDB supports multi-granular locking with read and write locks.
+
+There are three types of locking mechanisms possible in MongoDB:
+
+Global level
+Database level
+Collection level
+The implementation also depends on the individual storage engine. There are four modes of locking:
+
+R(shared lock),
+W(exclusive lock),
+r(intent shared lock),
+w(intent exclusive lock).
+To read more, visit the:
+
+official documentation page.
+
+50. Explain how MongoDB is different from RDBMS?
+Parameters
+
+RDBMS
+
+MongoDB
+
+Definition
+
+It is a relational database management system
+
+It is a non-relational database management system
+
+Working
+
+Works on relationships between tables that use rows and columns
+
+Document oriented system using documents and fields
+
+Hierarchical Data Storage
+
+Difficult to store hierarchical data
+
+In-built provision for storing hierarchical data
+
+Scalability
+
+Vertically scalable
+
+Vertically and horizontally scalable
+
+Performance
+
+Performance increases with an increase in RAM capacity
+
+Performance increases with increase in processors
+
+Schema
+
+Schema has to be pre-decided and designed; changes to the schema are difficult
+
+Dynamic creation and management of schema making the design flexible
+
+Support for Joins
+
+Supports complex joins
+
+No support for joins
+
+Query Language
+
+Uses SQL for querying the database
+
+BSON is used for database querying
+
+Support for Javascript
+
+No support for JavaScript-based clients to query the database
+
+Provision for Javascript-based clients to query the database
+
+51. Explain the procedure of starting the MongoDB server/instance.
+To start a MongoDB instance, follow the steps below:
+
+First, open the command prompt and run mongod.exe.
+Alternatively, you can move to the path where MongoDB is installed, for example, “C: MongoDB”
+Navigate to the bin folder, locate the mongod.exe and double click the same to execute it.
+You can also navigate to the required folder, for example, “C: MongoDB/bin” and type mongo to connect MongoDB through the shell.
+Conclusion
+You now know some of the most common MongoDB questions in an interview. This should help you prepare well for that next role, or even help with just being generally knowledgeable about MongoDB.
+
+If you are looking for more no-SQL-database-based interview questions, here is a great course: MongoDB Interviews Questions and Answers. Here is a great course on general programming questions on data structures and basic programming languages: Cracking the IT Architect Interview.
+
+There is a lot more you can learn, of course, so don’t shy away from taking courses. Always practice the theory and look for more resources online.
+
+Frequently Asked Questions
+1. What are the interview questions for MongoDB?
+There are several kinds of interview questions on MongoDB you may face. The list above does a good job of covering many of them.
+
+2. Why is MongoDB not chosen for a 32-bit system?
+MongoDB does not support 32-bit systems because these systems are limited to 2GB of RAM usage. This limitation is insufficient for running something in production.
+
+3. Does MongoDB need lots of RAM?
+
+Yes, MongoDB does need a lot of RAM because it keeps the data in caches for performance reasons. It requires approximately 1 GB of RAM for every 100,000 assets.
+
+
  No CommentsTOP 20 MongoDB INTERVIEW QUESTIONS 2022
 Managing a database is becoming increasingly complex now due to the vast amount of data being produced continuously. Therefore a number of database management systems have been released. One of these is MongoDB which was released in 2009. Despite being relatively new in the field, it is doing extremely well. Usually, organizations don’t prefer to switch their database management systems. But MongoDB made a lot of companies switch their systems due to its ease of usage. This is the reason why MongoDB developers are in great demand these days.
 
