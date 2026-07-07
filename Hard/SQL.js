@@ -1,3 +1,1101 @@
+Top 27 Advanced SQL Interview Questions with Answers
+Author's photo
+Tihomir Babic
+jobs and career
+SQL Interview Questions
+Table of Contents
+
+1.  What Is a JOIN in SQL?
+2.  What Is the Difference Between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN?
+3.  What Is a CROSS JOIN?
+4.  What Is a Self-Join in SQL?
+5.  Join Two Tables Using a Two-Column JOIN
+6.  Join Two Tables Using a Non-Equi Join
+7.  What Does DISTINCT Do?
+8.  What Does GROUP BY Do in SQL?
+9.  How Do You Filter GROUP BY Groups?
+10.  What’s the Difference Between WHERE and HAVING?
+11.  What Will the Following Query Attempting to Filter NULLs Return?
+12.  Write a Query That Finds the Number of Songs by Artist. Use LEFT JOIN and COUNT()
+13.  What’s the Difference Between JOIN and UNION?
+14.  What’s the Difference Between UNION and UNION ALL?
+15.  What Is a Subquery in SQL?
+16.  Write a Query to Return Salespersons and Their Monthly Sales Data Above Their Personal Sales Average. Use a Correlated Subquery. 
+17.  What Are Window Functions in SQL?
+18.  What’s the Difference Between Window Functions and GROUP BY?
+19.  What Window Functions Do You Know?
+20.  How Do You Create a Ranking in SQL?
+21.  What’s the Difference Between RANK() and DENSE_RANK()?
+22.  Find the Top n Rows in SQL Using a Window Function and a CTE
+23.  Compute the Difference Between Two Rows (Delta) Using Window Functions
+24.  Use Window Functions to Compute a Running Total
+25.  Find a Moving Average Using Window Functions
+26.  What’s the Difference Between ROWS and RANGE?
+27.  Use a Recursive Query to Find all Employees Under a Given Manager
+Are You Ready to Ace SQL Job Interview Questions?
+Where can an SQL professional find a comprehensive guide to advanced SQL interview questions? The shortest answer is: here! We selected the 27 most important SQL questions and answered them for you. 
+
+Preparing for an SQL interview is not easy, especially if your job requires the knowledge of advanced SQL. This article contains the 27 most commonly asked advanced SQL interview questions and provides detailed answers and resources for further reading.
+
+We’ll go through these four main concepts:
+
+JOINs
+GROUP BY and HAVING
+Common Table Expressions and recursive queries
+Window functions
+What's your SQL level? Apply for a test.
+The best way to refresh your advanced SQL knowledge is by taking our interactive Advanced SQL track. It has over 300 hands-on exercises for window functions, Common Table Expressions, recursive SQL queries, and more.
+
+Let’s attack these questions frontally, without further ado!
+
+1.  What Is a JOIN in SQL?
+JOIN is an SQL command that allows you to combine two or more tables. This is typically done via a common column (i.e. a column that has the same values in both tables), which allows using data from two or more tables at the same time. Joining tables in SQL is essential due to the nature of relational databases: data is atomized into tables, with each table holding only a part of the data available in the database.
+
+We’ll use two tables to showcase how this works. The first table is football_players.
+
+id	first_name	last_name	national_team_id	games_played
+1	Gianfranco	Zola	1	35
+2	Virgil	van Dijk	2	53
+3	Marcus	Rashford	3	51
+4	Kylian	Mbappé	5	66
+5	Phil	Foden	3	22
+6	Frenkie	de Jong	2	22
+7	Mario	Balotelli	1	36
+8	Erling	Haaland	6	23
+The second is national_team.
+
+id	country
+1	Italy
+2	Netherlands
+3	England
+4	Croatia
+Here’s a query that joins two tables:
+
+SELECT
+  fp.id,
+  first_name,
+  last_name,
+  national_team_id,
+  country,
+  games_played
+FROM football_players fp
+JOIN national_team nt
+ON fp.national_team_id = nt.id
+ORDER BY fp.id;
+It selects columns from both tables. To join them, we first reference one table in the FROM clause. This is followed by JOIN, and after that comes the second table. We use the ON clause to specify the condition with which the tables will be joined: the national_team_id in the football_players table must be equal to the id column in the national_team table.
+
+The output of the query is:
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	England	51
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Italy	36
+INNER JOIN is one of the several distinct joins in SQL. Its characteristic is that it only returns data from the joined tables where the joining condition is true. Here are more details on how the SQL INNER JOIN works. 
+
+2.  What Is the Difference Between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN?
+There are different types of joins in SQL. The most commonly used joins are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN.  LEFT JOIN, RIGHT JOIN, and FULL JOIN are so-called outer joins. JOIN (aka INNER JOIN) is an inner join. In this case, ‘inner’ means that it returns only the rows from both tables that satisfy the joining condition; outer joins return all the rows in one table, plus matching rows in the other table(s). The exception is FULL JOIN, which returns all rows from both tables.
+
+Here’s the result of the INNER JOIN from the previous example. Let’s have it here again. That way, it’ll be easier to see the difference between different joins. 
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	England	51
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Italy	36
+LEFT JOIN returns all the data from the left table (i.e. the first table, which is listed before/to the left of the JOIN keyword) and only the matching rows from the right table (the second table, listed after/to the right of the JOIN keyword). If there is no matching data in the right table, the missing values are shown as NULLs. Here’s the same query with LEFT JOIN substituting for INNER JOIN:
+
+SELECT
+  fp.id,
+  first_name,
+  last_name,
+  national_team_id,
+  country,
+  games_played
+FROM football_players fp
+LEFT JOIN national_team nt
+ON fp.national_team_id = nt.id
+ORDER BY fp.id;
+The left table here is football_players, and the right is national_team. As you’d expect, the output is different:
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	England	51
+4	Kylian	Mbappé	5	NULL	66
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Italy	36
+8	Erling	Haaland	6	NULL	23
+All the football players from the left table are here. However, Kylian Mbappe and Erling Haaland don’t have a matching country in the right table, so there are NULLs in the country column for those players. These rows were not present in the INNER JOIN result. They were added by the LEFT JOIN.
+
+The RIGHT JOIN does the opposite: it returns all the data from the right table and only the matching data from the left table. When there is no matching data in the left table, the missing values are shown as NULLs.
+
+Here’s the code:
+
+SELECT
+  fp.id,
+  first_name,
+  last_name,
+  national_team_id,
+  country,
+  games_played
+FROM football_players fp
+RIGHT JOIN national_team nt
+ON fp.national_team_id = nt.id
+ORDER BY fp.id;
+Everything stays the same, except we’re using RIGHT JOIN instead of LEFT JOIN. This is the output:
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	England	51
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Italy	36
+NULL	NULL	NULL	NULL	Croatia	NULL
+We now have all the national teams and their players. But you can see there’s one country (Croatia) that has no players in the left table. The player columns for Croatia are filled with NULLs.
+
+FULL JOIN outputs all the data from all the joined tables. Again, if there is no matching data in the corresponding table, the missing values will appear as NULL.
+
+Once again, we change the join type in the query:
+
+SELECT
+  fp.id,
+  first_name,
+  last_name,
+  national_team_id,
+  country,
+  games_played
+FROM football_players fp
+FULL JOIN national_team nt
+ON fp.national_team_id = nt.id
+ORDER BY fp.id;
+It will return all data from both tables. Any non-matching data is replaced by NULLs. All players are in the result, even if they don’t have a corresponding country in the other table. All countries are in the result, even if they don’t have players in the football_player table. The FULL JOIN result is the union of LEFT JOIN and RIGHT JOIN:
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	England	51
+4	Kylian	Mbappé	5	NULL	66
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Italy	36
+8	Erling	Haaland	6	NULL	23
+NULL	NULL	NULL	NULL	Croatia	NULL
+You can find more info in the article about different JOIN types. You can also see our SQL JOINs Cheat Sheet for a quick refresher.
+
+Improve your SQL JOIN skills with our special interactive course, SQL JOINs!
+
+3.  What Is a CROSS JOIN?
+A CROSS JOIN is another join type available in SQL. It returns a Cartesian product. This means that CROSS JOIN will return each row from the first table combined with each row from the second table.
+
+It is not used very often. But if you’re tempted to use it, think twice. Returning all the row combinations might take some time – if the query finishes at all!
+
+As an example, let’s use the tables as in the previous two questions. To write the query, use the CROSS JOIN keyword. Since this is a join type that returns all the row combinations from all tables, there’s no ON clause. Have a look:
+
+SELECT
+  fp.id,
+  first_name,
+  last_name,
+  national_team_id,
+  country,
+  games_played
+FROM football_players fp
+CROSS JOIN national_team nt;
+Here’s the output. All players in the football_players table are listed with all countries in the national_team table.
+
+id	first_name	last_name	national_team_id	country	games_played
+1	Gianfranco	Zola	1	Italy	35
+2	Virgil	van Dijk	2	Italy	53
+3	Marcus	Rashford	3	Italy	51
+4	Kylian	Mbappé	5	Italy	66
+5	Phil	Foden	3	Italy	22
+6	Frenkie	de Jong	2	Italy	22
+7	Mario	Balotelli	1	Italy	36
+8	Erling	Haaland	6	Italy	23
+1	Gianfranco	Zola	1	Netherlands	35
+2	Virgil	van Dijk	2	Netherlands	53
+3	Marcus	Rashford	3	Netherlands	51
+4	Kylian	Mbappé	5	Netherlands	66
+5	Phil	Foden	3	Netherlands	22
+6	Frenkie	de Jong	2	Netherlands	22
+7	Mario	Balotelli	1	Netherlands	36
+8	Erling	Haaland	6	Netherlands	23
+1	Gianfranco	Zola	1	England	35
+2	Virgil	van Dijk	2	England	53
+3	Marcus	Rashford	3	England	51
+4	Kylian	Mbappé	5	England	66
+5	Phil	Foden	3	England	22
+6	Frenkie	de Jong	2	England	22
+7	Mario	Balotelli	1	England	36
+8	Erling	Haaland	6	England	23
+1	Gianfranco	Zola	1	Croatia	35
+2	Virgil	van Dijk	2	Croatia	53
+3	Marcus	Rashford	3	Croatia	51
+4	Kylian	Mbappé	5	Croatia	66
+5	Phil	Foden	3	Croatia	22
+6	Frenkie	de Jong	2	Croatia	22
+7	Mario	Balotelli	1	Croatia	36
+8	Erling	Haaland	6	Croatia	23
+You can learn more about the CROSS JOIN in this illustrated guide to the SQL CROSS JOIN.
+
+4.  What Is a Self-Join in SQL?
+As you probably suspect, a self-join occurs when the table is joined with itself. It’s important to note that it’s not a distinct command in SQL: any JOIN type can be used to join a table with itself.
+
+The joining is done like any other JOIN, but this time you’ll reference the same table on both sides of the JOIN keyword. Self-joining is especially useful when a table has a foreign key referencing its primary key. This lets you query hierarchical data, such as family trees or a company’s organizational hierarchy. It’s also helpful when you want to find pairs of values. In the example below, we are looking for players from the same national team:
+
+SELECT
+  fp1.id,
+  fp1.first_name,
+  fp1.last_name,
+  fp1.national_team_id,
+  fp2.id AS id_2,
+  fp2.first_name AS first_name_2,
+  fp2.last_name AS last_name_2,
+  fp2.national_team_id as national_team_id_2
+FROM football_players fp1
+JOIN football_players fp2
+ON fp1.id <> fp2.id
+AND fp1.national_team_id = fp2.national_team_id;
+Self-joining means instead of two tables, you’re specifying the same table twice: once in the FROM clause and once after the JOIN clause. Since you’re using the same table twice, you must use aliases for the tables. Each occurrence of the table should be given a distinct alias (fp1, fp2 in our query) so that it is clear which occurrence of the table we’re referring to.
+
+We’re joining players from the same national team (their national_team_id values are equal). However, we don’t want to list a player with himself, so we exclude the case when fp1.id and fp2.id are equal.
+
+The query’s output is this:
+
+id	first_name	last_name	national_team_id	id_2	first_name_2	last_name_2	national_team_id_2
+1	Gianfranco	Zola	1	7	Mario	Balotelli	1
+2	Virgil	van Dijk	2	6	Frenkie	de Jong	2
+3	Marcus	Rashford	3	5	Phil	Foden	3
+5	Phil	Foden	3	3	Marcus	Rashford	3
+6	Frenkie	de Jong	2	2	Virgil	van Dijk	2
+7	Mario	Balotelli	1	1	Gianfranco	Zola	1
+You can use the national_team_id columns from both tables to confirm that, really, Gianfranco Zola and Mario Balotelli played for the same team.
+
+You can learn more about this in our article on self-join examples.
+
+5.  Join Two Tables Using a Two-Column JOIN
+You’re given two tables. The first one is employee, which has the following data:
+
+id	first_name	last_name
+1	Steve	Bergman
+2	Steve	Johnson
+3	Steve	King
+The second table is customer, which has the following data:
+
+id	first_name	last_name
+1	Ann	Coleman
+2	Steve	Bergman
+3	Steve	Young
+4	Donna	Winter
+5	Steve	King
+Your task is to return all the employees that are also the company’s customers. Unfortunately, you can’t use the id column because it’s the employee ID in one table and the customer ID in another. In other words, there’s no single column in one table that references the other.
+
+The solution is to join tables on the first and last name, i.e. to use a two-column JOIN.
+
+The code below will first join the tables on the first name. After that, the keyword AND sets the second joining condition, which is the last name. That way, you’ll get data from both tables where the first name/last name combination is the same. If we used only one of these columns, we could’ve gotten the wrong data because employees and customers can have the same first name but different surnames (or vice versa). Here’s the query:
+
+SELECT
+  e.first_name,
+  e.last_name
+FROM employee e
+JOIN customer c
+ON e.first_name = c.first_name
+AND e.last_name = c.last_name;
+Here’s the code output.:
+
+first_name	last_name
+Steve	Bergman
+Steve	King
+The result shows that Steve Bergman and Steve King are both the company’s employees and customers.
+
+6.  Join Two Tables Using a Non-Equi Join
+Up till now, we’ve been using equi-joins: joins where there’s an equality sign in the ON condition. Conversely, the non-equi join is a join that has a non-equality condition in the ON clause.
+
+This time, we have data on mobile users and their data usage. The first table is mobile_user, which shows mobile users and their monthly mobile data limit in MB:
+
+id	first_name	last_name	mobile_data_limit
+1	Michael	Watson	5,000
+2	Nicole	Gomez	10,000
+3	Sam	Stone	8,000
+The second table is data_usage, which shows the user's actual monthly data usage in MB:
+
+id	mobile_user_id	data_used	period
+1	1	4,987	2022_10
+2	2	6,875	2022_10
+3	3	12,547	2022_10
+4	1	5,037	2022_11
+5	2	11,111	2022_11
+6	3	4,897	2022_11
+The task is to find all the data where the actual usage was above the monthly limit. We want to see the user’s first and last name, monthly limit, actual data used, and the time period.
+
+The solution is to use the non-equi join, as shown below:
+
+SELECT
+  first_name,
+  last_name,
+  mobile_data_limit,
+  data_used,
+  period
+FROM mobile_user mu
+JOIN data_usage du
+ON mu.id = du.mobile_user_id
+AND mobile_data_limit < data_used;
+The query selects all the required info from two tables. The tables are joined using an INNER JOIN. We first join them where the user ID is the same. Then, we add the second condition after the AND keyword. Here we have a non-equality condition that will get us data where the limit is below the monthly usage.
+
+You can see the result below:
+
+first_name	last_name	mobile_data_limit	data_used	period
+Sam	Stone	8,000	12,547	2022_10
+Michael	Watson	5,000	5,037	2022_11
+Nicole	Gomez	10,000	11,111	2022_11
+If you’re interested, here are some more non-equi join examples.
+
+7.  What Does DISTINCT Do?
+DISTINCT’s purpose, in general, is to remove duplicate values. Or, put another way, to show unique values in your query’s output.
+
+Imagine you’re working with this loans table that shows loan IDs and their durations in months.
+
+loan_id	loan_duration
+100112	60
+100205	60
+100208	48
+100333	120
+100357	48
+100398	120
+Different loans can have the same duration, so you want to extract the list of possible loan durations. You can do this by using DISTINCT:
+
+SELECT DISTINCT loan_duration
+FROM loans
+ORDER BY loan_duration;
+The output shows there are loans with durations of 48, 60, and 120 months:
+
+loan_duration
+48
+60
+120
+DISTINCT  can be used in SELECT with one column to show only the unique values of that column, as in the above example. If it’s used in SELECT but with multiple columns, then the output will show the unique combinations of all these columns.
+
+You can also use DISTINCT with aggregate functions. If you do that, your query will eliminate duplicate aggregation results.
+
+You can see examples of these usages in our article talking about the role of DISTINCT in SQL.
+
+8.  What Does GROUP BY Do in SQL?
+GROUP BY is an SQL clause used for arranging data into groups based on a common value or values. It is most commonly used with aggregate functions; this combination will return aggregated data for every group. However, it’s important to know that using aggregate functions within the GROUP BY clause is not allowed.
+
+The general GROUP BY syntax is:
+
+SELECT
+  column_1,
+  column_2,
+  …,
+FROM table_name
+WHERE …
+GROUP BY column_1, column_2
+HAVING …
+ORDER BY column_1, column_2;
+Suppose there’s the table salaries:
+
+id	first_name	last_name	salary	department
+1	Nicholas	Poirot	4,798.44	IT
+2	Samantha	Wolf	5,419.24	IT
+3	Stewart	Johnsons	5,419.24	IT
+4	Jackie	Biden	8,474.54	Sales
+5	Mark	Hamilton	10,574.84	Sales
+6	Mariana	Costa	9,747.54	Sales
+7	Paul	Stewart	3,498.12	Accounting
+8	Mary	Rutte	4,187.23	Accounting
+9	Thomas	Schwarz	3,748.55	Accounting
+We’ll use GROUP BY and AVG() to find the average salary by department:
+
+SELECT
+  department,
+  AVG(salary) AS average_salary
+FROM salaries
+GROUP BY department;
+We want to see the departments, so we select this column. To calculate the average salary, we apply the AVG() function to the column salary.
+
+All the columns listed in GROUP BY define the data groups. In our example, the groups are defined by the department column: we calculate the average salary for each department.
+
+Our data grouping and aggregation looks like this:
+
+department	average_salary
+Accounting	3,811.30
+Sales	9,598.97
+IT	5,212.31
+The average salary in Accounting is 3,811.30. The average salaries in the other two departments are 9,598.97 and 5,212.31, respectively.
+
+When writing a query, GROUP BY always has to come after WHERE but before the HAVING clause. You can learn more about it in this article about GROUP BY in SQL.
+
+9.  How Do You Filter GROUP BY Groups?
+Once you get the groups you specified in GROUP BY, sometimes you’ll want to filter them. The clue to doing that lies in the syntax from the previous question. The clause that allows you to filter groups is HAVING.
+
+After the filtering criteria are specified in HAVING, the query will return all the data that satisfies the criteria. All other data will be filtered out.
+
+What's your SQL level? Apply for a test.
+Here’s how it works on the data from the previous question if we had to show only departments with an average salary below 5.500 dollars.
+
+SELECT
+  department,
+  AVG(salary) AS average_salary
+FROM salaries
+GROUP BY department
+HAVING AVG(salary) < 5500;
+The code is very similar to the one in the previous question. The difference is the HAVING clause. We use it to filter the results and show only departments with salaries below 5,500.
+
+Here’s what the code returns:
+
+department	average_salary
+Accounting	3,811.30
+IT	5,212.31
+The department missing from the output is Sales because its average salary is 9,598.97.
+
+You can find additional practical examples of this clause in this article explaining HAVING in SQL. 
+
+10.  What’s the Difference Between WHERE and HAVING?
+If you know the answers to the previous two questions, you probably know the answer to this question.
+
+The main difference is that WHERE is used for filtering data before it’s grouped. Its position in the SELECT statement shows this: it comes before GROUP BY. Due to its purpose, no aggregate functions are allowed in WHERE.
+
+HAVING, on the contrary, is used to filter data after grouping; that’s why it is used after GROUP BY. Also, HAVING allows conditions that include aggregate functions.
+
+The best way to learn the distinction is to read this article on WHERE vs. HAVING in SQL.
+
+11.  What Will the Following Query Attempting to Filter NULLs Return?
+You’ll often get this type of question at your advanced SQL interview: you’ll be given a code and have to describe the query's return. While writing and reading SQL code go hand-in-hand, it still feels different when you have to analyze the code someone else wrote.
+
+You have data in the table contributors:
+
+id	first_name	last_name	start_date	termination_date
+1	Valeria	Bogdanov	2022-10-11	NULL
+2	Nicholas	Bertolucci	2022-04-07	2022-11-11
+3	Mathilde	Bauman	2022-05-25	2022-10-01
+4	Trevor	Trucks	2022-01-28	NULL
+5	Maria	Szabo	2022-03-15	NULL
+What will this code return?
+
+SELECT
+  first_name,
+  last_name,
+  start_date,
+  termination_date
+FROM contributors
+WHERE termination_date != '2022-10-01';
+If you answer that it will return all rows except ID = 3, you’re wrong! This is a kind of trick question. When reading the WHERE condition, you could read it as: return all the data where the termination date is different from 2022-10-01. By looking at the table, you would think it’s all rows except one.
+
+It is, but not for SQL! As you can see, there are three rows with NULL values. For SQL, NULL doesn’t equal a value; it’s a non-value. So when you set up the condition in WHERE like that, you will be excluding all dates that are not equal to 2022-10-01 and NULL values.
+
+Here’s the output as proof:
+
+first_name	last_name	start_date	termination_date
+Nicholas	Bertolucci	2022-04-07	2022-11-11
+You can learn more about this and other comparison operators used with NULL.
+
+12.  Write a Query That Finds the Number of Songs by Artist. Use LEFT JOIN and COUNT()
+Suppose you’re given two tables: artist and song.
+
+Here’s the artist data:
+
+id	artist_name
+1	Prince
+2	Jimi Hendrix
+3	Santana
+4	Otis Redding
+5	Lou Rawls
+Below is the song data:
+
+id	artist_id	song_title
+1	1	Purple Rain
+2	2	Purple Haze
+3	3	Europa
+4	1	Cream
+5	1	Bambi
+6	1	Why You Wanna Treat Me So Bad?
+7	2	Spanish Castle Magic
+8	3	Taboo
+9	3	Incident at Neshabur
+10	3	Flor D' Luna
+You need to use LEFT JOIN and COUNT() to find all the artists, their IDs, and the number of their songs in the database.
+
+You could be tempted to suggest this solution:
+
+SELECT
+  a.id,
+  artist_name,
+  COUNT(*) AS number_of_songs
+FROM artist a
+LEFT JOIN song s
+ON a.id = s.artist_id
+GROUP BY a.id, artist_name
+ORDER BY a.id;
+Let’s take a look at the output:
+
+id	artist_name	number_of_songs
+1	Prince	4
+2	Jimi Hendrix	2
+3	Santana	4
+4	Otis Redding	1
+5	Lou Rawls	1
+The output shows all the artists; that’s OK. However, the number of songs for Otis Redding and Lou Rawls is one, which is wrong! Take a look at the table song, and you’ll see there are no artist IDs equal to 4 or 5.
+
+What went wrong? When using COUNT(*) with LEFT JOIN, the aggregate function will count all the non-matched values (NULLs). That’s why the result showed one song each for Otis Redding and Lou Rawls, even though they have no songs in the table.
+
+COUNT(*) is used to count all the rows. To give a correct answer, you should use COUNT(song_title) instead.
+
+SELECT
+  a.id,
+  artist_name,
+  COUNT(song_title) AS number_of_songs
+FROM artist a
+LEFT JOIN song s
+ON a.id = s.artist_id
+GROUP BY a.id, artist_name
+ORDER BY a.id;
+This code will give you the right output:
+
+id	artist_name	number_of_songs
+1	Prince	4
+2	Jimi Hendrix	2
+3	Santana	4
+4	Otis Redding	0
+5	Lou Rawls	0
+The number of songs by Prince, Jimi Hendrix, and Santana stayed the same as in the previous output. However, the number of songs by the other two artists is now zero, and that’s the correct count.
+
+13.  What’s the Difference Between JOIN and UNION?
+JOIN is an SQL clause used for joining two or more tables. It allows using data from all the joined tables. In other words, columns from all tables are shown next to each other, meaning data is stacked horizontally.
+
+UNION is a set operator used for combining the results of two or more SELECT statements. Data is stacked vertically. One of the requirements when using UNION is there has to be an equal number of columns in all unionized SELECT statements. Also, all the selected columns have to be of the same data type. 
+
+14.  What’s the Difference Between UNION and UNION ALL?
+What they have in common is that both are set operators. Also, both operators are used for the same purpose: merging data from two or more SELECT statements.
+
+The requirements regarding the number of columns and their data type are also the same.
+
+Now, the difference is that UNION returns only unique records. On the other hand, UNION ALL returns all the records, which includes duplicates.
+
+Usually, UNION ALL is faster because it doesn’t sort the result to remove the duplicates. The rule of thumb is to use UNION ALL by default. Use UNION only if you need unique results or you’re absolutely sure your query won’t return duplicate data.
+
+You can learn more about their syntax and use in this article about the differences between UNION and UNION ALL.
+
+15.  What Is a Subquery in SQL?
+A subquery is a query written inside another SQL query. The ‘another’ query is called the main query, while a subquery is sometimes also called a nested query.
+
+Subqueries can be used in the SELECT, INSERT, UPDATE, and DELETE statements. They can also be used in clauses like FROM or WHERE, which is the most common use.
+
+Here’s an example. The table is products, and it stores information on product names, quantities, and categories:
+
+id	product_name	quantity	product_category
+1	Apple MacBook Air (2020) MGN63N/A Space Gray	319	Laptop
+2	Fairphone 4 128GB Green 5G	208	Mobile phone
+3	Apple iMac 24" (2021) 16GB/512GB Apple M1 with 8 core GPU Silver	157	Desktop
+4	HP 17-cp0971nd	487	Laptop
+5	Huawei P30 Pro - 128GB - Blue	148	Mobile phone
+6	Lenovo Legion T5 - AMD Ryzen 9 - 32 GB - 2TB HDD+SSD - Windows 10 Home PC	514	Desktop
+7	Toshiba Dynabook Satellite Pro E10-S-101 Notebook	207	Laptop
+8	Samsung Galaxy S23 5G - 256GB - Phantom Black	56	Mobile phone
+9	Intel Compleet PC | Intel Core i7-10700	459	Desktop
+We’ll use a subquery and show the total quantity by product category, but only for the individual products whose quantity is above the average quantity for all products.
+
+Here’s the solution:
+
+SELECT
+  product_category,
+  SUM(quantity) AS product_quantity
+FROM products
+WHERE quantity > (SELECT AVG(quantity)
+            FROM products)
+GROUP BY product_category;
+The query selects the product category and sums the quantity using the SUM() aggregate function. There’s a condition in WHERE that says only those individual products with a quantity above the average will be included in the sum. We use the subquery and the AVG() function to get this average.
+
+The query returns two rows:
+
+product_category	product_quantity
+Laptop	806
+Desktop	973
+One category is missing because it doesn’t satisfy the filtering criteria – mobile phones.
+
+There are different types of subqueries, such as scalar, multiple-row, and correlated queries. You can learn more about them in our article on subquery types.
+
+All the SQL you’ll ever need. Try our SQL from A to Z track!
+
+16.  Write a Query to Return Salespersons and Their Monthly Sales Data Above Their Personal Sales Average. Use a Correlated Subquery. 
+A correlated subquery is a type of subquery that uses values from the outer query. It is checked once for each row the outer query returns, which can slow performance.
+
+However, the question insists on using it, so let’s see the data.
+
+The first table is salesperson:
+
+id	first_name	last_name
+1	Nina	Lee
+2	Carolina	Green
+3	Mick	Johnson
+The other table is sales:
+
+id	salesperson_id	monthly_sales	period
+1	1	1,200.47	2021_10
+2	2	5,487.22	2021_10
+3	3	700.47	2021_10
+4	1	15,747.54	2021_11
+5	2	16,700.87	2021_11
+5	3	14,322.87	2021_11
+6	1	9,745.55	2021_12
+7	2	9,600.97	2021_12
+8	3	6,749.58	2021_12
+Your task is to use a correlated subquery and return the salesperson’s full name, their monthly sales, and the periods where their sales are above their personal average.
+
+Here’s the solution:
+
+SELECT
+  first_name,
+  last_name,
+  monthly_sales,
+  period
+FROM salesperson sp
+JOIN sales s
+ON sp.id = s.salesperson_id
+WHERE monthly_sales >
+   (SELECT AVG(monthly_sales)
+    FROM sales
+    WHERE salesperson_id = sp.id);
+The query selects all the required columns. This data is from both tables, so we joined them.
+
+Now comes the crucial part. To filter data, we use the WHERE clause. The condition says the query should return all data where monthly sales are higher than each salesperson’s average sales. How do we calculate these individual average sales? By using the AVG() function in the subquery that we write in the WHERE clause.
+
+Here’s the output:
+
+first_name	last_name	monthly_sales	period
+Nina	Lee	15,747.54	2021_11
+Carolina	Green	16,700.87	2021_11
+Mick	Johnson	14,322.87	2021_11
+Nina	Lee	9,745.55	2021_12
+There are some more examples in this article on correlated subqueries.
+
+17.  What Are Window Functions in SQL?
+SQL window functions get their name from the fact they are applied to a data window. This window is simply a set of rows related to the current row.
+
+Window functions are initiated by the OVER() clause. Another important clause is PARTITION BY, which defines data partitions within a window frame. When this clause is omitted, the partition is the entire result table. When PARTITION BY is used, you can define one or more columns by which data will be partitioned. You can look at it as GROUP BY for window functions.
+
+Another important clause is ORDER BY. It sorts data within the window. In the context of window functions, this clause gives instructions on the order in which the function will be executed.
+
+To learn more, refer to this window functions article.
+
+18.  What’s the Difference Between Window Functions and GROUP BY?
+The only similarity they share is that both GROUP BY and window functions can be – and very often are – used with the aggregate functions, and they both work on a set of rows.
+
+However, when using GROUP BY, the output is shown as groups, and you can’t see the individual rows forming the group.
+
+Window functions don’t have such problems. One of their characteristics is that they don’t collapse the individual rows when showing aggregated data. This means it’s possible to show aggregated and non-aggregated data simultaneously.
+
+Window functions are used for more than data aggregation, as you’ll see in the following question. But if you want to know more about the current topic, we have an article that explains window functions vs. GROUP BY.
+
+19.  What Window Functions Do You Know?
+SQL window functions can be generally divided into four categories:
+
+Ranking Functions
+Distribution Functions
+Analytic Functions
+Aggregate Functions
+The ranking functions are:
+
+ROW_NUMBER() – Returns a unique number for each row within a partition; tied values have different row numbers.
+RANK() – Ranks data within a partition; tied values have the same rank, and there’s a gap following ties (e.g. 1, 2, 3, 3, 5).
+DENSE_RANK() – Ranks data within a partition; tied values have the same rank and there’s no ranking gap (e.g. 1, 2, 3, 3, 4).
+The distribution functions are:
+
+PERCENT_RANK() – Returns the relative rank within a partition.
+CUME_DIST() – Returns the cumulative distribution within a partition.
+The analytic functions are:
+
+LEAD() – Allows accessing values from a subsequent row in relation to the current row.
+LAG() – Allows accessing values from a previous row in relation to the current row.
+NTILE() – Divides rows within a partition into approximately equal groups.
+FIRST_VALUE() – Allows accessing values from the first row within a partition.
+LAST_VALUE() – Allows accessing values from the last row within a partition.
+NTH_VALUE() – Allows accessing the n-th row within a partition.
+Finally, the aggregate functions are:
+
+AVG() – Returns an average value for the rows in a partition.
+COUNT() – Returns the number of values in the rows in a partition.
+MAX() – Returns the maximum value for the rows in a partition.
+MIN() – Returns the minimum value for the rows in a partition.
+SUM() – Returns the sum value of the rows in a partition.
+Our Window Functions Cheat Sheet will provide you with more information about all these functions.
+
+Want to learn about window functions? Click here for a great interactive experience!
+
+20.  How Do You Create a Ranking in SQL?
+The easiest way to rank data in SQL is to use one of three ranking window functions:
+
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
+You’re given this dataset named album_sales with the following data:
+
+id	artist	album	copies_sold
+1	Eagles	Hotel California	42,000,000
+2	Led Zeppelin	Led Zeppelin IV	37,000,000
+3	Shania Twain	Come On Over	40,000,000
+4	Fleetwood Mac	Rumours	40,000,000
+5	AC/DC	Back in Black	50,000,000
+6	Bee Gees	Saturday Night Fever	40,000,000
+7	Michael Jackson	Thriller	70,000,000
+8	Pink Floyd	The Dark Side of the Moon	45,000,000
+9	Whitney Houston	The Bodyguard	45,000,000
+10	Eagles	Their Greatest Hits (1971-1975)	44,000,000
+These are the sales of the ten best-selling albums in history. As you can see, the albums are not ranked. That’s what we’ll do here: rank them from best- to worst-selling using window functions.
+
+If you use ROW_NUMBER(), the query will look like this:
+
+SELECT
+  ROW_NUMBER() OVER (ORDER BY copies_sold DESC) AS rank,
+  artist,
+  album,
+  copies_sold
+FROM album_sales;
+The syntax is simple. First, you choose the window function. Then you use the mandatory OVER() clause that signals it’s a window function. In ORDER BY, you sort data descendingly. This now means the row numbers will be assigned according to the copies sold from high to low.
+
+Of course, list all other columns you need and reference the table to get the same output:
+
+rank	artist	album	copies_sold
+1	Michael Jackson	Thriller	70,000,000
+2	AC/DC	Back in Black	50,000,000
+3	Whitney Houston	The Bodyguard	45,000,000
+4	Pink Floyd	The Dark Side of the Moon	45,000,000
+5	Eagles	Their Greatest Hits (1971-1975)	44,000,000
+6	Eagles	Hotel California	42,000,000
+7	Shania Twain	Come On Over	40,000,000
+8	Fleetwood Mac	Rumours	40,000,000
+9	Bee Gees	Saturday Night Fever	40,000,000
+10	Led Zeppelin	Led Zeppelin IV	37,000,000
+As you can see, the albums are ranked from one to ten. Two albums sold 45 million copies. However, they are ranked differently (third and fourth) according to random criteria. The same happens with three albums that sold 40 million copies.
+
+If you use RANK(), the syntax is the same, except you use a different window function:
+
+SELECT
+  RANK() OVER (ORDER BY copies_sold DESC) AS rank,
+  artist,
+  album,
+  copies_sold
+FROM album_sales;
+However, the output is different:
+
+rank	artist	album	copies_sold
+1	Michael Jackson	Thriller	70,000,000
+2	AC/DC	Back in Black	50,000,000
+3	Whitney Houston	The Bodyguard	45,000,000
+3	Pink Floyd	The Dark Side of the Moon	45,000,000
+5	Eagles	Their Greatest Hits (1971-1975)	44,000,000
+6	Eagles	Hotel California	42,000,000
+7	Shania Twain	Come On Over	40,000,000
+7	Fleetwood Mac	Rumours	40,000,000
+7	Bee Gees	Saturday Night Fever	40,000,000
+10	Led Zeppelin	Led Zeppelin IV	37,000,000
+You can see that the tied albums are ranked as third (two times). The next non-tie album is ranked fifth. The same happens with the albums ranked seventh.
+
+Let’s see what happens if we use DENSE_RANK():
+
+SELECT
+  DENSE_RANK() OVER (ORDER BY copies_sold DESC) AS rank,
+  artist,
+  album,
+  copies_sold
+FROM album_sales;
+Here’s the result:
+
+rank	artist	album	copies_sold
+1	Michael Jackson	Thriller	70,000,000
+2	AC/DC	Back in Black	50,000,000
+3	Whitney Houston	The Bodyguard	45,000,000
+3	Pink Floyd	The Dark Side of the Moon	45,000,000
+4	Eagles	Their Greatest Hits (1971-1975)	44,000,000
+5	Eagles	Hotel California	42,000,000
+6	Shania Twain	Come On Over	40,000,000
+6	Fleetwood Mac	Rumours	40,000,000
+6	Bee Gees	Saturday Night Fever	40,000,000
+7	Led Zeppelin	Led Zeppelin IV	37,000,000
+The first tied albums are ranked as third, which is the same as in the previous result. But the difference is that the next non-tie rank is fourth – meaning the ranking is not skipped.
+
+The three other tied albums are now ranked sixth, not seventh as before. Also, the highest rank is seventh, not tenth.
+
+As you can see, each method returns different results. You should use the one that best suits your data and what you want to achieve with ranking. To learn more, read the article on ranking rows in SQL.
+
+21.  What’s the Difference Between RANK() and DENSE_RANK()?
+We already touched on the difference in the previous question. You saw it there in a practical example, and now let’s formulate it to answer this question.
+
+RANK() assigns the same rank to rows with the same values. When it gets to the following non-tied row, it skips the rank by the number of tied ranks.
+
+DENSE_RANK() also gives the same rank to tied values. However, the rank is not skipped when it reaches the following non-tied row. In other words, DENSE_RANK() ranks data sequentially.
+
+More details are explained in this article about RANK() and DENSE_RANK() differences.
+
+22.  Find the Top n Rows in SQL Using a Window Function and a CTE
+This is a common question and can be solved in several ways. We will use the window function in a CTE to return the desired result.
+
+The available data is stored in the salary table:
+
+id	first_name	last_name	salary	department
+1	Tim	Thompson	10,524.74	Sales
+2	Martina	Hrabal	7,895.14	Accounting
+3	Susan	Truman	15,478.69	Sales
+4	Ciro	Conte	8,794.41	Accounting
+5	Jorge	De Lucia	7,489.15	Sales
+6	Carmen	Lopez	10,479.15	Accounting
+7	Catherine	Molnar	8,794.89	Sales
+8	Richard	Buchanan	12,487.69	Accounting
+9	Mark	Wong	9,784.19	Sales
+10	Silvia	Karelias	9,748.64	Accounting
+The task here is to return the top three highest paid employees in each department, together with their salary and department.
+
+The approach is this:
+
+WITH ranking AS (
+  SELECT
+    first_name,
+    last_name,
+    salary,
+    department,
+    DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS salary_rank
+  FROM salary
+)
+ 
+SELECT *
+FROM ranking
+WHERE salary_rank <= 3
+ORDER BY department, salary_rank;
+The first part of the code is a Common Table Expression, or CTE. It’s initiated using the keyword WITH. The CTE is named ranking. After the AS keyword, we write the CTE definition as a SELECT statement in parentheses.
+
+After selecting all the required columns comes ranking, we use the DENSE_RANK() function. You could use any other ranking window function if you wish.
+
+The syntax is familiar. To get the rankings by department, we need to partition data by that column. Also, we want to rank salaries from high to low. In other words, data in the partition needs to be arranged by salary in descending order.
+
+The second SELECT statement (i.e. the outer query) selects all the columns from the CTE and sets the condition in the WHERE clause for filtering only the top three salaries by the department. Finally, the output is sorted by department and salary rank.
+
+Here’s the result:
+
+first_name	last_name	salary	department	salary_rank
+Richard	Buchanan	12,487.69	Accounting	1
+Carmen	Lopez	10,479.15	Accounting	2
+Silvia	Karelias	9,748.64	Accounting	3
+Susan	Truman	15,478.69	Sales	1
+Tim	Thompson	10,524.74	Sales	2
+Mark	Wong	9,784.19	Sales	3
+23.  Compute the Difference Between Two Rows (Delta) Using Window Functions
+This problem is most elegantly solved using the LAG() window function. Remember, this is a function that accesses the previous row’s value.
+
+The example data can be found in the table revenue:
+
+id	actual_revenue	period
+1	8,748,441.22	2022_07
+2	10,487,444.59	2022_08
+3	7,481,457.15	2022_09
+4	7,497,441.89	2022_10
+5	8,697,415.36	2022_11
+6	12,497,441.56	2022_12
+You need to show the actual revenue, time period, and monthly difference (delta) between the actual and the previous month.
+
+Here’s how to do it.
+
+SELECT
+  actual_revenue,
+  actual_revenue - LAG(actual_revenue) OVER (ORDER BY period ASC) AS monthly_revenue_change,    
+ period
+FROM revenue
+ORDER BY period;
+A delta is calculated by subtracting the previous month from the actual month. That’s exactly what this query does! To get the previous month's revenue, the LAG() function comes in handy. The actual_revenue column is the function’s argument, since we want to access the revenue data from the previous row. As with every window function, there is an OVER() clause. In it, we sorted data by period ascendingly because it’s logical to calculate the delta chronologically.
+
+This is the query’s output:
+
+actual_revenue	monthly_revenue_change	period
+8,748,441.22	NULL	2022_07
+10,487,444.59	1,739,003.37	2022_08
+7,481,457.15	-3,005,987.44	2022_09
+7,497,441.89	15,984.74	2022_10
+8,697,415.36	1,199,973.47	2022_11
+12,497,441.56	3,800,026.20	2022_12
+The first shows revenue change as NULL. This is expected because there’s no earlier month to deduct from. In 2022_08, there was a revenue increase of 1,739,003.37 = actual month revenue - the previous month's revenue = 10,487,444.59 - 8,748,441.22.  The same logic applies to all the other results.
+
+You can find similar examples in the article about calculating the difference between two rows in SQL.
+
+24.  Use Window Functions to Compute a Running Total
+A running or cumulative total is a sum of a number sequence. The running total is updated every time a new value is added to the sequence. Think of monthly revenues: the current month's total revenue will include the current month's and all the previous months’ revenue sum.
+
+The window function that’s perfect for calculating a running total (cumulative sum) is SUM().
+
+Let’s show the approach on the same data as in the previous question. The goal is to calculate the cumulative revenue for all available months in 2022.
+
+Here’s the solution:
+
+SELECT
+  actual_revenue,
+  SUM(actual_revenue) OVER (ORDER BY period ASC) AS cumulative_revenue,
+  period
+FROM revenue;
+The cumulative sum is the sum of the actual month's revenue and the sum of all the previous months’ revenue. The SUM() window function applies this logic. The function’s argument is actual revenue, because that’s what we’re summing. To get it to sum all the previous revenue and the current revenue, sort the data ascendingly by period. Again, it’s logical to calculate a cumulative total from the earliest to the latest month.
+
+This is what the code returns:
+
+actual_revenue	cumulative_revenue	period
+8,748,441.22	8,748,441.22	2022_07
+10,487,444.59	19,235,885.81	2022_08
+7,481,457.15	26,717,342.96	2022_09
+7,497,441.89	34,214,784.85	2022_10
+8,697,415.36	42,912,200.21	2022_11
+12,497,441.56	55,409,641.77	2022_12
+The cumulative revenue in the first row is the same as the actual revenue. For the second row, the cumulative is 19,235,885.81 = 8,748,441.22 + 10,487,444.59. In September, the cumulative is 26,717,342.96 =  8,748,441.22 + 10,487,444.59 + 7,481,457.15.
+
+The same logic applies to the rest of the table.
+
+You can learn more about the running total and how to calculate it here. 
+
+Check out our Window Functions course. 218 interactive exercises.
+
+25.  Find a Moving Average Using Window Functions
+A moving average is used when analyzing a series. You can find it under other names, such as rolling mean, rolling average, or running average. It is an average of the current value and the defined number of preceding values. For example, a 7-day moving average is the average of the current day and the six preceding days.
+
+To show you how to calculate it, we’ll use the eur_usd_rate table:
+
+id	exchange_rate	date
+1	1.0666	2022-12-30
+2	1.0683	2023-01-02
+3	1.0545	2023-01-03
+4	1.0599	2023-01-04
+5	1.0601	2023-01-05
+6	1.0500	2023-01-06
+6	1.0696	2023-01-09
+7	1.0723	2023-01-10
+8	1.0747	2023-01-11
+9	1.0772	2023-01-12
+10	1.0814	2023-01-13
+We’ll calculate the 3-day moving average in the following way:
+
+SELECT
+  exchange_rate,
+  AVG(exchange_rate) OVER (ORDER BY date ASC ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS eur_usd_moving_average,
+  date
+FROM eur_usd_rate;
+We use the AVG() window function on the exchange_rate column. In the OVER() clause, data is sorted by date in ascending order. Now comes the important part! Remember, we need a 3-day moving average involving the current and two previous rows. We specify that in the BETWEEN clause: we tell the function to include two preceding rows and the current row.
+
+Let’s have a look at the result:
+
+exchange_rate	eur_usd_moving_average	date
+1.0666	1.0666	2022-12-30
+1.0683	1.0675	2023-01-02
+1.0545	1.0631	2023-01-03
+1.0599	1.0609	2023-01-04
+1.0601	1.0582	2023-01-05
+1.0500	1.0567	2023-01-06
+1.0696	1.0599	2023-01-09
+1.0723	1.0640	2023-01-10
+1.0747	1.0722	2023-01-11
+1.0772	1.0747	2023-01-12
+1.0814	1.0778	2023-01-13
+The first date’s moving average is the same as the exchange rate because: 1.0666/1 = 1.0666. For 2023-01-02, it’s calculated like this: (1.0666 + 1.0683)/2 = 1.0675.
+
+In 2023-01-03, we’ll finally have three dates: (1.0666 + 1.0683 + 1.0545)/3 = 1.0631. This logic applies to all the rest of the dates.
+
+More examples can be found in this article about computing moving averages in SQL.
+
+26.  What’s the Difference Between ROWS and RANGE?
+Both ROWS and RANGE are clauses used for defining a window frame. They limit the data range used in a window function within a partition.
+
+The ROWS clause limits the rows. It’s used for specifying a fixed number of rows preceding and following the current row. The rows’ value is not taken into account.
+
+The RANGE clause limits the data range logically. In other words, it limits data by looking into the preceding and following rows’ values in relation to the current row. It disregards the number of rows.
+
+How do you use them in practice? Read our article on ROWS and RANGE for more details.
+
+27.  Use a Recursive Query to Find all Employees Under a Given Manager
+A recursive query is a special type of CTE that references itself until it reaches the end of the recursion. It’s ideal for querying graph data or hierarchical structure.
+
+An example of the latter is the company’s organizational structure, shown in the company_organization table:
+
+employee_id	first_name	last_name	manager_id
+5529	Jack	Simmons	5125
+5238	Maria	Popovich	5329
+5329	Dan	Jacobsson	5125
+5009	Simone	Gudbois	5329
+5125	Albert	Koch	NULL
+5500	Jackie	Carlin	5529
+5118	Steve	Nicks	5952
+5012	Bonnie	Presley	5952
+5952	Harry	Raitt	5529
+5444	Sean	Elsam	5329
+This table shows all the employees and the ID of their direct manager.
+
+The task here is to use recursion and return all Jack Simmons’ direct and indirect subordinates. Also, we’ll add a column that can be used for distinguishing different organizational levels. Here’s the code:
+
+WITH RECURSIVE subordinates AS (
+    SELECT
+  employee_id,
+      first_name,
+      last_name,
+      manager_id,
+      0 AS level
+    FROM company_organization
+    WHERE employee_id= 5529
+ 
+    UNION ALL
+ 
+    SELECT
+      co.employee_id,
+      co.first_name,
+      co.last_name,
+      co.manager_id,
+      level + 1
+    FROM company_organization co
+JOIN subordinates s
+ON co.manager_id = s.employee_id
+)
+ 
+SELECT
+  s.employee_id,
+  s.first_name AS employee_first_name,
+  s.last_name AS employee_last_name,
+  co.employee_id AS direct_manager_id,
+  co.first_name AS direct_manager_first_name,
+  co.last_name AS direct_manager_last_name,
+  s.level
+FROM subordinates s
+JOIN company_organization co
+ON s.manager_id = co.employee_id
+ORDER BY level;
+We start the recursion using WITH RECURSIVE. (If you’re working in MS SQL Server, use only WITH.)
+
+The first SELECT in a CTE is called anchor member. In it, we reference the dataset and select all the necessary columns. Also, we create a new column with the value zero and filter data in the WHERE clause. Why use this exact condition in WHERE? Because Jack Simmons’ employee ID is 5529, and we want to show him and his subordinates.
+
+Then comes the UNION ALL, which combines the results of the anchor query and recursive query, i.e. the second SELECT statement.
+
+We want recursion to go all the way down through the organizational structure. In the recursive query, we join the CTE with the company_organization table. We again list all the necessary columns from the latter table. Also, we want to add one organizational level with every recursion.
+
+Finally, we come to the query that uses the CTE. This query serves to get data from both the CTE and the company_organization table. We use the CTE to show the employee data. The other table is used for showing the direct manager's info.
+
+Running the code will get you this result:
+
+employee_id	employee_first_name	employee_last_name	direct_manager_id	direct_manager_first_name	direct_manager_last_name	level
+5529	Jack	Simmons	5125	Albert	Koch	0
+5952	Harry	Raitt	5529	Jack	Simmons	1
+5500	Jackie	Carlin	5529	Jack	Simmons	1
+5012	Bonnie	Presley	5952	Harry	Raitt	2
+5118	Steve	Nicks	5952	Harry	Raitt	2
+The above table shows Jack Simmons’s direct manager is Albert Koch. Directly under Simmons, there are Harry Raitt and Jackie Carlin. The indirect subordinates are Bonnie Presley and Steve Nicks. Their direct manager is Harry Raitt.
+
+Some other variations of this task can be found in the article about recursive CTEs.
+
+You can learn more about window functions in this article dedicated to SQL window functions interview questions.
+
+What's your SQL level? Apply for a test.
+Are You Ready to Ace SQL Job Interview Questions?
+Writing this guide wasn’t easy. But it pays off when we think about making your advanced SQL job interview easier.
+
+Of course, these are not all the questions you could get at the interview. However, we believe this selection will provide you with a firm foundation of the most important advanced SQL concepts. This guide is also short enough so you can go through it quickly before the interview and refresh your memory.
+
+For more refreshers on advanced SQL topics, try our Advanced SQL track. It covers all advanced topics covered in this article: window functions, Common Table Expressions, recursive queries, and more. Over 500 SQL practice exercises for advanced SQL topics.
+
 Top 30 QA SQL Interview Questions in 2024
 Tech
 Dec 11, 2023
