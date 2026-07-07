@@ -1,3 +1,107 @@
+10 Essential React Native Interview Questions *
+Toptal sourced essential questions that the best React Native developers can answer. Driven from our community, we encourage experts to submit questions and offer feedback.
+
+Hire a Top React Native Developer Now
+Toptal logois an exclusive network of the top freelance software developers, designers, marketing experts, product managers, project managers, and management consultants in the world. Top companies hire Toptal freelancers for their most important projects.
+1.
+What is the InteractionManager and how is it used? Why is it important?
+
+Hide answer
+The InteractionManager is the native module responsible for deferring the execution of a function until an “interaction” has finished. We can call InteractionManager.runAfterInteractions(() => {...}) to handle this deferral. We can also register our own interactions.
+
+InteractionManager is very important because React Native has two threads. There is a JavaScript UI thread which handles drawing updates to the screen, and another thread used for all tasks not on the UI thread. Since there is only one thread for making UI updates, it can get overloaded and drop frames, especially during things like navigation screen animations. We use the InteractionManager to ensure that our function is executed after these animations occur so that we do not drop frames on the UI thread. Trying to draw a new screen while it is being animated is often too much for the thread to handle.
+
+2.
+What is wrong with this code for querying a native API?
+
+class GyroJs {
+    setGyroPosition(pos) {
+        if (pos === null || typeof pos === 'undefined') {
+            throw new Error('The position must be defined');
+        }
+        this.pos = pos;
+    }
+    constructor() {
+        const gyroscopePosition = NativeModules.MyGyroModule.gyroPosition();
+        this.setGyroPosition(gyroscopePosition);
+    }
+}
+Hide answer
+This code will always throw an error because the value of gyroscopePosition will always be an unresolved Promise. It’s important to remember that the bridge that connects JavaScript and native code is asynchronous. We can either receive results from this side by passing in a callback (not done in this example), or by returning a Promise. In this case, we need to append a then() call to the gyroPosition() call and set the position inside it.
+
+3.
+Explain some of the fundamental tradeoffs between building with React Native and building a “true” native app.
+
+Hide answer
+React Native has exploded in popularity because the tradeoffs it provides make sense to many companies and teams. But building an app in React Native is not always the right choice.
+
+React Native makes sense when a team is building a product that does not need extremely high performance. The limitations of the asynchronous bridge are a bottleneck for things like 3D games, and games with lots of particle updates. Apps that rely on deep interactions with low-level APIs, or need large amounts of native code, might be easier to build as native apps.
+
+React Native makes sense when an existing team is already proficient in JavaScript and/or has an existing React application built on the web or another platform. The “learn once, write everywhere” ethos advocated for by Facebook is very useful when diversifying a product across platforms. Hiring becomes easier, since JavaScript developers are plentiful, and you don’t need to seek out native specialists.
+
+React Native is partially open source, partially closed source. Facebook maintains a private repository of React Native code that is used in their apps. When code from the private repo can be split off so that it contains nothing proprietary, it is often merged into the open source codebase. This leaves users of React Native with the classic tradeoff of open source software: There are often bugs—React Native is still in alpha form—and improvements can be spotty. On the other hand, motivated teams can make contributions to the source code and implement fixes and features that they need. Depending on a team’s resources and product roadmap, relying on open source may be the right choice.
+
+4.
+What is the relationship between React Native and React?
+
+Hide answer
+React Native is built using React. React, at its core, is a library for “diffing” a virtual DOM and rendering this DOM to a screen with minimal operations. React, by default, does not have an opinion about which nodes are in its virtual DOM tree. Instead, it simply has algorithms that can determine changes in the tree and re-render. React on the web provides its own node primitives (<div>, <span>, etc), which are the building blocks for web applications. But new node primitives can be defined, as React Native has done.
+
+React Native defines its own primitives (<View>, <Image>, etc) which do not render HTML elements but instead map to native views, like UIView and UIImageView. It implements a bridge that allows the JavaScript runtime to communicate asynchronously with the native runtime. React itself provides the tree diffing and rendering infrastructure that allows React Native to work.
+
+5.
+Are compile-to-JS libraries like TypeScript or ClojureScript compatible with React Native? Why or why not?
+
+Hide answer
+Languages that compile to JavaScript are generally compatible with React Native. React Native uses Babel to transform JavaScript into a form that is consumable by the native OS’s JavaScript runtime, using the react-native Babel plugin. As long as Babel can compile your JavaScript, and your code does not rely on web- or Node.js-specific dependencies, it will run in React Native.
+
+6.
+Which node_modules will run in React Native? How can we test for this?
+
+Hide answer
+Any pure JavaScript library that does not rely on Node.js runtime modules, and does not rely on web-specific concepts (e.g. window.location.pathname) will run fine in React Native. But we have to be mindful because there’s no way to test for this with Babel—it doesn’t scan these libraries for offending dependencies. A module that uses window.location.pathname may fail at runtime in an unexpected place.
+
+Bonus: For modules that explicitly rely on Node.js runtime modules, we can often use Babel plugins to browserify these components for use in React Native.
+
+7.
+How does React Native achieve native performance for some of its animations?
+
+Hide answer
+Certain animation types, like Animation.timing and Animation.spring, can be serialized and sent across the asynchronous bridge before they are executed. This allows the runtime to defer the actual drawing of the animation entirely to the native side, instead of trying to send positional values across the bridge as each frame is rendered. This does not work with animations that are not computable ahead of time. For example:
+
+Animated.timing(new Animated.Value(0), {
+  useNativeDriver: true,
+  toValue: 100,
+  duration: 100
+}).start()
+This will serialize the operation and send it to the native side before starting it.
+
+8.
+Why do we use StyleSheet.create? What are the tradeoffs with this approach?
+
+Hide answer
+StyleSheet is a module built into React Native that allows us to create immutable stylesheet references. We can pass regular style objects into the create() method, and the module will freeze the objects, and assign each one an ID. This has two benefits: it allows us to avoid creating a new style object every render pass (which could lead to degradation of render performance), and it allows us to send the object across the asynchronous bridge only once (since these style objects map directly to native styles, they need to be passed across).
+
+The key tradeoff with this method is that recomputing styles based on external criteria (like screen rotation or even a user-selected viewing mode) needs some infrastructure built to determine which styles to use. If objects were passed in “raw” they could be recomputed on the fly every time, based on arbitrary criteria.
+
+9.
+Imagine you have an app which is a series of lists of images (e.g. like Instagram). The app seems to crash at random. What steps can we take to investigate and mitigate this in React Native?
+
+Hide answer
+Often, and especially on the Android platform, lists of images are not properly recycled when scrolling. Their memory is never garbage collected, nor is it manually freed at a lower level. This leads to out-of-memory (OOM) crashes that can occur seemingly at random as the app’s memory is exhausted.
+
+We can investigate this by profiling the app’s heap memory usage in either Xcode or Android Studio. If you scroll through a list of images and notice the heap usage steadily climbing without ever dipping, it probably means that your images aren’t being recycled properly.
+
+To mitigate this, we can check which list implementation we are using. In modern versions of React Native, ListView should never be used; ensure that the FlatList component is handling the rendering instead. If this is not sufficient after tuning, you can try making your images lower resolution.
+
+10.
+Native apps that feel smooth often incorporate lots of little animations for state changes and transitions. How would you implement these behaviors?
+
+Hide answer
+React Native comes with the Animated API built in. This API is declarative: We define specific animations, using Animated.timing, Animated.spring, etc., and provide the exact parameters needed for the animation to run. This technique falls apart when we need lots of subtle and delicate animations on the fly; it’s not performant, and maintaining all that code would be a nightmare.
+
+Instead, we look to the LayoutAnimation module, which is an interpolative API. We can invoke predefined LayoutAnimations, or define our own. LayoutAnimation watches changes in the positions of elements between cycles of the render loop, and computes the positional differences between elements at different cycles. Then, it interpolates those changes and produces a smooth, natively driven animation.
+
 Top 15 React Native Interview Questions and Answers
 Master React Native Interview Questions - Nail fundamental concepts, optimization, debugging & more. Stand out in the hiring process.
 
