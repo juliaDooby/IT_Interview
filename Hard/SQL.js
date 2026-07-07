@@ -1,3 +1,573 @@
+50 SQL server interview questions for recruiters
+20min
+Interview the right talent
+
+
+
+
+
+
+
+Evaluate SQL server skills with an online talent assessment
+Try TestGorilla for free
+
+As the standard programming language for database management (and one of the most popular programming languages across the board), SQL is essential for any organization that wants to harness the power of data. 
+
+Businesses of all sizes and sectors depend on SQL developers to query data and perform data analysis; finding the right SQL specialist or team is a crucial step to becoming a data-driven company. 
+
+To make the right hire, it’s important to organize a multi-stage recruitment process that identifies candidates with the right SQL experience and work ethic for your organization. Interviews can probe into both areas, but as they’re very resource-intensive, we advise you to use them after an initial programming skills test, such as: 
+
+Alow-complexity SQLite Database Operations test for entry-level roles
+
+A medium-complexity SQLite Querying test for mid-level roles
+
+A high-complexity SQLite Querying test for senior-level roles
+
+Table of contents
+SQL server interview questions to help you find top SQL developers
+17 beginner SQL server interview questions
+17 intermediate SQL server interview questions
+16 advanced SQL server interview questions
+At which stage of the hiring process should you use SQL server interview questions?
+Make the best hire with targeted SQL server interview questions
+SQL server interview questions to help you find top SQL developers
+To get the most out of your interview process, consider using our SQL server interview questions and sample answers below.
+
+We’ve divided the 50 questions into beginner, intermediate, and advanced categories, so that you can tailor the interview process to your business needs.
+
+17 beginner SQL server interview questions
+Beginner SQL interview questions are best used for entry-level SQL server roles, where the candidate is likely to have limited professional experience with SQL.
+
+
+1. What is a Relational Database Managem
+ent System?
+Sample answer:
+
+A Relational Database
+
+Management System (RDBMS) refers to the software used to store, manage, and quer
+
+y data. Data is stored in tables and can be linked to other datasets based on shared information, hence the name “relational”. 
+
+2. How does a Relational Database Management System differ from a Database Management System?
+Sample answer:
+
+The key differences between Relational Database Management Systems (RDBMS) and Database Management Systems (DBMS) are:
+
+An RDBMS stores data in a relational table with rows and columns, whereas a DBMS stores data as a file
+
+An RDBMS provides access to multiple users (including client-server side interaction), whereas a DBMS only supports single users
+
+3. What are some of the most popular Relational Database Management Systems?
+Sample answer:
+
+Some of the most popular RDBMSs are:
+
+Oracle Database
+
+MySQL
+
+Microsoft SQL Server
+
+PostgreSQL
+
+IBM DB2
+
+SQLite
+
+4. What is the role of SQL?
+Sample answer:
+
+SQL is a programming language used to perform data-related tasks; every RDBMS uses SQL as its standard programming language. In these databases, SQL allows users to create tables, update data, make queries, and perform analytics.
+
+5. What is the difference between SQL and MySQL?
+Sample answer:
+
+SQL is the programming language used in an RDBMS, while MySQL is an example of an RDBMS. MySQL was one of the first open-source database systems on the market, and it is still fairly popular today. 
+
+6. How do you create a table with SQL?
+Sample answer:
+
+The CREATE TABLE command is used to create a new table in an RDBMS. This command prompts users to fill in the table name, the column names, and the types of data. The same command can also be used to make copies of existing tables.
+
+7. How do you insert dates with SQL?
+Sample answer:
+
+With SQL, the DATE data type is used to store data or time values in the database. The format for inserting dates can vary depending on the RDBMS, but generally it’s ‘YYYY-MM-DD’.
+
+8. What is a query?
+Sample answer:
+
+A query is a request for data or information from a database. There are two main types of SQL queries:
+
+A select query is a query that groups data from a table for analytical purposes
+
+An action query is a query that changes the contents of the database based on specified criteria
+
+9. What is a subquery?
+Sample answer:
+
+A subquery is a query that is embedded within another statement that requires multiple steps. The subquery provides the enclosing query with additional information needed to execute a task, such as when the completion of one query depends firstly on the results of another.
+
+10. How do you perform a select query with SQL?
+Sample answer:
+
+The process for performing a select query in SQL is as follows:
+
+The SELECT statement is used to specify the columns you want to query
+
+The FROM statement is used to specify the particular table holding the data
+
+The WHERE statement is used to filter data based on specified conditions
+
+11. What are the most important types of action queries?
+Sample answer:
+
+There are several SQL statements for running an action query. Their purposes and procedures vary. Some of the important action statements include:
+
+UPDATE modifies the values of fields in a table
+
+DELETE removes records from a table
+
+CREATE TABLE creates a new table
+
+INSERT INTO adds records to a table
+
+12. What are constraints?
+Sample answer:
+
+SQL constraints are a set of rules or conditions implemented on an RDBMS to specify what data can be inserted, updated, or deleted in its tables. This is done to maintain data integrity and ensure that the information stored in database tables is accurate.
+
+13. What are join clauses?
+Sample answer:
+
+The join clause combines columns with related values from two or more tables to create a new table. There are four main types of SQL join clause:
+
+JOIN returns records with matching values in both tables
+
+LEFT JOIN returns all records from the left table and matching records from the right table
+
+RIGHT JOIN returns all records from the right table and matching records from the left table
+
+FULL JOIN returns all records from both tables
+
+14. What is the role of indexes?
+Sample answer:
+
+An SQL index stores important parts of a database table to allow for a quick and efficient lookup. Rather than searching the entire database, users only have to consult the index during data retrieval. Indexes, therefore, help improve performance in an RDBMS.
+
+15. What does a NULL value represent?
+Sample answer:
+
+A NULL value indicates the data is unknown. This is not the same as 0; NULL values mean no data is stored at all.
+
+16. What are the different types of SQL commands?
+Sample answer:
+
+SQL commands are used to perform specific tasks within the database. There are five main types:
+
+Data Definition Language (DDL) commands change the structure of the database
+
+Data Manipulation Language (DML) commands modify data in database tables
+
+Data Control Language (DCL) commands manage user access to the database
+
+Transaction Control Language (TCL) commands manage transactions made by DML commands
+
+Data Query Language (DQL) commands retrieve information from the database
+
+17. What is an alias?
+Sample answer:
+
+Aliases are temporary names given to tables or columns for the duration of a particular SQL query. Their purpose is to reduce the amount of code required for that query, therefore saving time and effort.
+
+The best insights on HR and recruitment, delivered to your inbox.
+Biweekly updates. No spam. Unsubscribe any time.
+
+17 intermediate SQL server interview questions
+You can use these intermediate SQL interview questions below for mid-level SQL roles, where candidates already have some professional experience using SQL.
+
+
+18. What is the difference between normalization and denormalization?
+Sample answer:
+
+Normalization is the process of dividing data into tables to remove redundant data and improve data integrity. 
+
+Denormalization is used to combine multiple tables in order to reduce the time required to perform queries.
+
+19. How do you create an index with SQL?
+Sample answer:
+
+The syntax for creating an index can vary depending on the RDBMS. In most systems, the CREATE INDEX statement is used to initiate the process. The user is then prompted to name the index and select columns that will make up the index. 
+
+20. What are the most important SQL constraints and how are they used?
+Sample answer:
+
+Here are some of the most commonly used SQL constraints:
+
+NOT NULL ensures a column cannot contain a NULL value
+
+UNIQUE ensures all values in a column are different
+
+DEFAULT provides a default value for a column when none is specified
+
+INDEX creates an index for data retrieval purposes
+
+CHECK checks values in a column against certain specified conditions
+
+21. What are the key differences between clustered and non-clustered indexes?
+Sample answer:
+
+The key differences between clustered and non-clustered indexes are:
+
+Clustered indexes define the physical order in which tables are stored and sort them accordingly, whereas non-clustered indexes create a logical order that doesn’t match the physical order of the rows on the disk
+
+Clustered indexes sort data rows based on their key values, whereas non-clustered indexes use a structure separate from the data rows
+
+There can be only one clustered index per table, whereas there can be multiple non-clustered indexes per table
+
+22. What are the different types of subqueries?
+Sample answer:
+
+There are three main types of SQL subqueries. These are:
+
+Single-row subqueries, which return one row in results
+
+Multi-row subqueries, which return two or more rows in results
+
+Correlated subqueries, which return results according to outer queries
+
+23. How is the cursor used in SQL?
+Sample answer:
+
+The cursor allows users to process data from a result set, one row at a time. 
+
+Cursors are an alternative to commands, which operate on all rows in a result set at the same time. Unlike commands, cursors can be used to update data on a row-by-row basis.
+
+24. What are the different types of collation sensitivity?
+Sample answer:
+
+Collation refers to a set of rules or conditions that influence how data is stored and ordered. There are several types of SQL collation, including:
+
+Case sensitivity, which distinguishes between uppercase and lowercase characters
+
+Accent sensitivity, which distinguishes between accented and unaccented characters
+
+Width sensitivity, which distinguishes between full-width and half-width characters
+
+25. How do you select all even or odd numbers in a table?
+Sample answer:
+
+The MOD function can be used in most RDBMSs as part of the WHERE statement in a select query to retrieve odd or even data entries in a table. 
+
+The formatting is as follows:
+
+For even numbers, use ‘MOD (column name, 2) = 1’
+
+For odd numbers, use ‘MOD (column name, 2) = 0’
+
+26. How do you rename a column in SQL?
+Sample answer:
+
+A column can be renamed by following these steps:
+
+Use ‘ALTER TABLE table name’ to select the table with the column you want to rename
+
+Use ‘RENAME COLUMN old name to new name’ to rename the column
+
+27. What are the key differences between the DELETE and TRUNCATE SQL commands?
+Sample answer:
+
+The main differences between the DELETE and TRUNCATE commands are:
+
+DELETE is a DML command, whereas TRUNCATE is a DDL command
+
+DELETE removes records and records each deletion in the transaction log, whereas TRUNCATE deallocates pages and records each deallocation in the transaction log
+
+TRUNCATE is generally considered quicker as it makes less use of the transaction log
+
+28. How do you copy data from one table to another?
+Sample answer:
+
+Data from one table can be copied into another by following these steps:
+
+Use the INSERT INTO statement and specify the destination as the new table
+
+Use the SELECT statement to specify the columns to copy (select all if you want to copy the complete table)
+
+Use the WHERE statement to specify the table you want to copy
+
+29. How would you write a query to identify employees belonging to a particular department?
+Sample answer:
+
+Finding data entries belonging to a particular group (in this case, employees belonging to a particular department) can be achieved in a few ways. These include:
+
+Use SELECT, FROM, and WHERE statements
+
+Use SELECT, FROM, GROUP BY, and HAVING statements
+
+Use SELECT, FROM, INNER JOIN, and WHERE statements
+
+Find top SQL developers with TestGorilla
+Book your free live demo with us today!
+
+Sign up for your demo here
+
+
+30. How do you delete a column?
+Sample answer:
+
+A column in a table can be deleted by following these steps:
+
+Use ‘ALTER TABLE table name’ to select the table with the column you want to delete
+
+Use ‘DROP COLUMN column name’ to select the column you want to delete
+
+31. How would you write a SQL query to find entrants whose names begin with A?
+Sample answer:
+
+You can retrieve data entries beginning with a particular letter using the LIKE command by following these steps:
+
+Use the SELECT statement to specify the column with the names you want to vet
+
+Use the FROM statement to specify the table containing that column
+
+Use ‘WHERE column name’ followed by ‘LIKE x%’, with x representing the letter you are searching for
+
+Use ‘ORDER by column name’ to complete the query
+
+32. What are some of the most important aggregate functions?
+Sample answer:
+
+Aggregate values are used to perform calculations on a set of values to return a single value. Some of the most widely used aggregate functions are:
+
+AVG calculates the average set of values
+
+COUNT counts the total number of rows in a table
+
+MIN finds the minimum value in a table
+
+MAX finds the maximum value in a table
+
+SUM calculates the sum of the values
+
+33. What does schema mean?
+Sample answer:
+
+A schema refers to a collection of database objects—such as tables, functions, indexes, and procedures—associated with a database. 
+
+The schema helps segregate database objects for different applications and access rights; it’s generally used to define who can and who cannot view specific objects in the database.
+
+34. What are some of the most important scalar functions?
+Sample answer:
+
+Scalar functions are user-defined functions applied to a set of data to return a single value. Some of the most common scalar functions include:
+
+UCASE converts values to uppercase
+
+LCASE converts values to lowercase
+
+MID extracts textual data based on specified criteria
+
+ROUND rounds numerical data to a specified number of decimals
+
+NOW returns the current system date and time
+
+16 advanced SQL server interview questions
+We recommend using the advanced SQL interview questions below when recruiting for senior SQL roles, where candidates have at least a few years of experience with SQL.
+
+35. What are SQL injections and how can they be prevented?
+Sample answer:
+
+An SQL injection is a type of cyber attack in which hackers insert malicious SQL code into the database to gain access to potentially valuable or sensitive information. It’s a fairly common occurrence with web applications or websites that use an SQL-based database.
+
+It’s possible to prevent SQL injections by creating multiple database accounts to limit access or by using a third-party web application firewall.
+
+36. How can SQL queries be optimized?
+Sample answer:
+
+There are several ways to optimize queries and improve performance. For example:
+
+Specify particular columns with SELECT rather than by using SELECT * (select all)
+
+Make joins with INNER JOIN rather than WHERE
+
+Define filters using WHERE rather than HAVING
+
+Avoid looping statements in the query structure
+
+Avoid correlated subqueries
+
+37. What are the different types of normalization?
+Sample answer:
+
+The process of SQL normalization can be divided into six steps or types. These include:
+
+First Normal Form (1NF) to ensure rows and columns always contain singular, unique values
+
+Second Normal Form (2NF) to remove all partial dependencies
+
+Third Normal Form (3NF) to remove all transitive functional dependencies
+
+Boyce-Codd Normal Form (BCNF) or Fourth Normal Form (4NF) to ensure all functional dependencies are a super key to the table
+
+Fifth Normal Form (5NF) to ensure decomposition doesn’t result in any loss of data
+
+Sixth Normal Form (6NF) to decompose the relation variables into irreducible components
+
+38. What are the ACID properties in SQL?
+Sample answer:
+
+ACID is an acronym for Atomicity, Consistency, Isolation, and Durability. These are the four key properties for ensuring data integrity during a transaction. 
+
+The role of each property is as follows:
+
+Atomicity: Changes to data are performed as a single, unified operation
+
+Consistency: Data values are consistent at the start and end of the transaction
+
+Isolation: The intermediate state of a transaction is hidden from other transactions
+
+Durability: Changes to data remain the same after the transaction is completed
+
+39. What are the different types of stored procedures?
+Sample answer:
+
+Stored procedures are chunks of SQL code that can be saved and reused. The main types of stored procedures are:
+
+User-defined stored procedures, which are created by users
+
+System stored procedures are default procedures placed permanently on the system
+
+Temporary stored procedures are procedures that are dropped when the session is closed
+
+Remote stored procedures, which are created and stored on remote servers
+
+40. How would you write a query to find employees with the same salary from an employee table?
+Sample answer:
+
+To find employees with the same salary, the following solution can be used:
+
+Use the SELECT statement to specify the relevant table
+
+Use the FROM statement to specify the employee column
+
+Use the WHERE statement to specify the salary criteria, for example: 
+
+‘WHERE salary IN
+
+(SELECT salary
+
+FROM employee 
+
+WHERE employee.employee_id <> employee.employee_id)’
+
+41. How do you remove duplicate rows from a table?
+Sample answer:
+
+There are several ways to remove duplicate rows from a table. These include:
+
+Using Common Table Expressions (CTE) with the ROW_NUMBER function to identify and remove duplicate rows
+
+Using the RANK function with the PARTITION BY clause 
+
+Using the GROUP BY clause with the COUNT function, and then replacing SELECT with DELETE FROM
+
+42. How do you create a trigger with SQL?
+Sample answer:
+
+A trigger is a type of stored procedure that runs when a specific event occurs, such as when a new record is added to the database. 
+
+Trigger creation varies depending on the RDBMS. Some systems feature a CREATE TRIGGER statement, while others require the users to navigate to a triggers folder in the toolbar. Once created, users must write the trigger’s code, specifying its conditions and effect.
+
+43. What are the main differences between HAVING and WHERE SQL clauses?
+Sample answer:
+
+The key differences between HAVING and WHERE SQL clauses are:
+
+The WHERE clause is used in row operations, whereas the HAVING clause is used in column operations
+
+The WHERE clause comes before GROUP BY in a query, whereas the HAVING clause comes after GROUP BY
+
+The WHERE clause cannot be used with aggregate functions, contrary to the HAVING clause
+
+44. How can sensitive information be stored securely in a database?
+Sample answer:
+
+Encrypting databases with sensitive information is crucial for security reasons. Encryption can be implemented in several ways. For example, you could:
+
+Create a master key
+
+Use symmetric encryption
+
+Create a certificate protected by the master key
+
+45. How would you write a query to find the sixth highest-earning employee from an employee table?
+Sample answer:
+
+A correlated subquery can be used to find the sixth highest-earning employee in a table. The steps are as follows:
+
+Use the SELECT statement to specify the employee name and salary columns
+
+Use the FROM statement to specify the relevant table
+
+Use the WHERE statement to specify the salary criteria, for example:
+
+‘WHERE statement 6-1 = (SELECT COUNT(DISTINCT salary) FROM #Employee e2
+
+ WHERE e2.salary > e1.salary)’
+
+Pre-employment testing made easy
+Sign up for your free plan and streamline your hiring process
+
+Get your free plan
+
+
+46. What are some ways to prevent duplicate entries when making a query?
+Sample answer:
+
+There are several methods to avoid duplicate entries when making a query, such as to:
+
+Create a unique index
+
+Add the DISTINCT keyword to the SELECT statement
+
+Use the NOT EXISTS or NOT IN commands
+
+47. What are the major differences between an implicit and an explicit cursor?
+Sample answer:
+
+The key differences between an implicit and explicit cursor are:
+
+Implicit cursors are created automatically when select statements are executed, whereas explicit cursors need to be defined explicitly by the user
+
+Implicit cursors can only retrieve data from a single row at a time, whereas explicit cursors can retrieve data from multiple rows
+
+Implicit cursors are less efficient and more error-prone compared to explicit cursors
+
+48. What are the key differences between an OLTP and an OLAP?
+Sample answer:
+
+Online Transaction Processing (OLTP) and Online Analytical Processing (OLAP) are two different data processing systems within the data science field. 
+
+OLTP systems capture, store, and update data regularly, whereas OLAP systems are used to query and perform analysis on that data.
+
+49. What is meant by dynamic SQL?
+Sample answer:
+
+Dynamic SQL is a programming technique used to build SQL statements at runtime, rather than at compile-time. Dynamic SQL is more challenging and less efficient than static SQL, but it allows developers to create more flexible, general-purpose applications.
+
+50. What are the different types of relationships in SQL?
+Sample answer:
+
+Three types of relationships can exist between a pair of database tables. These are:
+
+One-to-one, where each record in a table can be related to one record in the paired table
+
+One-to-many, where each record in a table can be related to one or more records in the paired table
+
+Many-to-many, where each record in both tables can be related to one or more records in the paired table
+
 Top 27 Advanced SQL Interview Questions with Answers
 Author's photo
 Tihomir Babic
