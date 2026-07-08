@@ -1,3 +1,75 @@
+REST API interview questions
+User Avatar
+The Postman Team
+August 23, 2023
+APIs are the building blocks of modern applications, and it’s becoming more common to see “knowledge of REST APIs” listed as a requirement in job descriptions—even for non-developer roles. In fact, Postman’s 2023 State of the API Report found that 53% of people who work with APIs are non-developers. So, whether you’re applying to be an engineer, product manager, data analyst, or customer success manager, these answers to ten of the most common REST API interview questions will help you navigate the interview process with confidence.
+
+1. What is REST?
+REST (Representational State Transfer) is the most commonly used architectural style for building web services and APIs. In a RESTful architecture, resources are identified by URIs (Uniform Resource Identifiers), and operations are performed on those resources using standard HTTP methods. The state of a resource is represented in JSON or XML, which is transferred between the client and server in the HTTP request and response bodies.
+
+2. What is the relationship between HTTP and REST?
+HTTP, which stands for Hypertext Transfer Protocol, is the dominant protocol for transmitting data between clients and servers on the internet. HTTP operates on a stateless request-response model, in which the client sends a request to the server and the server responds accordingly—without any knowledge of the client’s previous requests. REST emphasizes standardized, stateless interactions between clients and servers, which makes HTTP the ideal choice for implementing RESTful principles.
+
+3. What is the difference between REST and SOAP?
+REST and SOAP are two different architectural styles for building APIs. REST is a highly flexible approach that uses standard HTTP methods to interact with resources that are represented in JSON or XML. In contrast, SOAP is an XML-based messaging protocol that is used to transfer data between distributed applications and systems, and it follows a very strict structure. REST is more popular than SOAP, but SOAP is still used in many enterprise-scale systems that require advanced security and error handling features.
+
+Learn more about the differences between REST and SOAP.
+
+4. What are HTTP headers, and which ones are most commonly used?
+HTTP headers contain the metadata that is included in an API request or response. These key-value pairs provide essential details that help the API client and server communicate more effectively—and enable developers to customize and optimize the API’s behavior.
+
+Some of the most common request headers are Accept, which defines the media types that the client is able to accept from the server; Authorization, which is used to send the client’s credentials to the server when the client is attempting to access a protected resource; and Content-Type, which defines the media type in the request body.
+
+The server also includes HTTP headers in its response to the client. Some of the most common response headers include Cache-Control, which defines how the response should be cached, and Set-Cookie, which instructs the client to store a cookie with the specified attributes.
+
+5. What is a resource in a RESTful context?
+A REST resource is any object or group of objects that can be accessed through a dedicated API endpoint. For instance, a simple blog API may have an author resource. Individual authors may be accessed via the /authors/:id endpoint, while the collection of all authors may be accessed via the /authors endpoint.
+
+In a well-designed RESTful API, resources and their associated endpoints should follow standard naming conventions and represent a logical entity that makes sense in the context of the application. Proper representation of resources is crucial for building an API that can be easily maintained and consumed.
+
+6. What are some defining features of REST APIs?
+REST APIs have several characteristics that promote efficiency, scalability, and interoperability. One key feature is statelessness, which means that every request from the client includes all necessary information, and the server doesn’t store any client-specific data. This behavior allows servers to handle client requests without managing complex session data, which simplifies server design and promotes horizontal scalability.
+
+Another important aspect of REST APIs is the separation of concerns between the client and server. A REST API client is responsible for the user interface and user experience, while the API server handles request processing and resource management. This clear delineation ensures modularity and enables each component to evolve independently.
+
+Finally, all REST APIs have a uniform interface in which endpoints are accessed with an established set of HTTP methods. This consistency promotes API integration, as any client that supports HTTP can use a RESTful API—regardless of its platform or programming language. The uniform interface also makes REST APIs easier to maintain and accelerates the onboarding process for new consumers.
+
+7. What is the difference between the PUT and PATCH methods?
+The PUT and PATCH methods are both used to modify resources, but they handle updates differently. The PUT method works by replacing a resource with the data that is included in the request body. This means that any fields or properties not included in the request body are deleted, and any new fields or properties are added.
+
+In contrast, the PATCH method is used for making partial updates to a resource. For instance, if you have a movie resource with fields for title, year, and rating, but you only want to update the rating, you could use the PATCH method to send a request that only includes the new value for the rating field. The rest of the resource would remain unchanged. This behavior reduces the amount of data that must be transferred, which makes PATCH more efficient than PUT.
+
+8. What is idempotency in a RESTful context?
+An HTTP method is considered idempotent if it will result in the same outcome no matter how many times it is executed. All read-only methods are idempotent, as are PUT and DELETE. However, POST and PATCH are not idempotent. POST is not idempotent because calling it multiple times will result in multiple resources being created. PATCH can be idempotent, but it is not necessarily so. For instance, a PATCH request may increment a specific field every time it is called, which would modify the resource every time.
+
+9. What are the most common HTTP status codes?
+HTTP status codes are three-digit numbers included in the server’s response that indicate the result of a client’s request. Some of the most common HTTP status codes include:
+
+200 OK: The request was successful, and the response includes the requested data.
+
+201 Created: The request was successful, and the server has created a new resource with the provided data.
+
+204 No Content: The request was successful, but there is no additional data to send in the response. This code is often used in response to DELETE requests.
+
+400 Bad Request: The server cannot understand the request due to a client error, malformed syntax, or invalid parameters.
+
+401 Unauthorized: The client lacks valid credentials to access the requested data or perform the desired action.
+
+403 Forbidden: The client does not have permission to access the requested resource, even with valid authentication credentials.
+
+404 Not Found: The server cannot find the requested resource or endpoint.
+
+500 Internal Server Error: The server encountered an unexpected issue.
+
+503 Service Unavailable: The server is not ready to handle the request, often due to overload or maintenance.
+
+504 Gateway Timeout: The server acting as a gateway or proxy did not receive a timely response from the upstream server.
+
+10. What are the advantages and drawbacks of statelessness in REST?
+Statelessness is a hallmark trait of REST APIs, and it has many benefits. REST API servers don’t need to manage session data, which allows them to handle a large number of concurrent requests and supports horizontal scaling. This also leads to streamlined server logic and faster response times.
+
+Statelessness has a few drawbacks, as well. Requests to a REST API may have larger payloads, as the client must include all of the necessary information. This may have a negative impact on network performance. Statelessness may also require clients to handle retries in the case of network or server failures, as there is no server-side context to help with these error scenarios.
+
 
 09:30
 Xg предсказывает результаты матчей?
