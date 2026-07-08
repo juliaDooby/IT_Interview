@@ -1,3 +1,199 @@
+Top 10 Most Popular Postman Interview Questions With Answers
+By Vijay  Updated January 19, 2026
+ 
+ Edited by Kamila
+List of the most frequently asked Postman interview questions with answers to help you in preparation:
+
+In this tutorial, we will cover some common interview questions about the Postman tool and various API testing techniques.
+
+Let’s explore!!
+
+=> Watch Out The Simple Postman Training Series Here
+
+Quiz on Postman Interview Questions
+Try this quick challenge on Postman interview questions to impress your recruiters. This comprehensive quiz covers all fundamental API concepts to advanced Postman features along with the various testing methodologies in Postman.
+
+Postman Interview Prep Quiz
+Master API testing skills and excel in your Postman interviews
+Question 1 of 20
+What is Postman primarily used for?
+Database management and administration tasks
+API testing and development
+Email marketing
+Web development with HTML, CSS, JavaScript
+
+Postman Interview Questions
+Common Questions for Postman Interview
+Q #1) How can you set headers for all the requests that are in a particular Postman collection?
+
+Answer: Postman collections allow adding pre-request scripts at both the collection and individual request level. To add any script that applies to all the requests that are present in the collection, we will need to add a pre-request script at the collection level.
+
+Please follow the steps below to add a collection-level pre-request script for adding a header to all the requests.
+
+a) Open collection options by right-clicking the collection and navigating to the pre-request script tab.
+b) Now add the below script for adding a request header for all the requests.
+
+1
+2
+3
+4
+pm.request.headers.add({
+    key: 'TestHeader',
+    value: 'testValue'
+});
+c) Click Update to save the collection level pre-request script.
+
+d) Now execute any request in the collection (directly or through the collection runner) and view the request details in the Postman console debugger to validate if the pre-request script is working fine and adding the specified header.
+
+Header from Pre-Request Script
+Q #2) What’s the use of Workspaces in Postman?
+
+Answer: Postman workspaces are nothing but collaboration areas or spaces for one or many people to work on the same collection or set of collections. It’s a way to logically separate the collections or requests from each other.
+
+In other words, it is simply an abstraction in terms of the logical separation of requests.
+
+2 types of workspaces are supported by Postman, i.e., Team and Personal.
+
+#1) Team Workspaces are created for collaborating with multiple people who are a part of the same team. Look at it from the perspective of a common shared repository in Git, where anyone can pull the repository code and contribute.
+
+Similarly, for all the people who are part of the team, the workspace gets shared, and everyone can contribute. You can also invite new users to collaborate with your collection by sharing their email addresses, and when someone joins or accepts that invite, they will collaborate with that collection.
+
+#2) Personal workspaces are a way to logically separate collections (or projects) from one another. These are useful when you are working with multiple projects, and you wish to separate the associated requests/collections from each other. Then you can create separate workspaces for both projects.
+
+To create a new workspace (either team or personal), simply click the workspace icon and then click “Create New”.
+
+Once the workspace properties window opens, select whether you want to create a personal or team workspace. For team workspace, you can choose to invite people with their email addresses by asking them to collaborate on the workspace.
+
+This is how the workspace properties window will look.
+
+Postman Workspace
+Q #3) How can Postman collections run through the command line?
+
+Answer: Postman has a command-line integration tool called Newman with which you can run any existing Postman collection.
+
+Newman is a NodeJS-based package, which requires just a Node environment to execute the collection and has full parity with the Postman collection runner, i.e., the Newman collection runner supports the Postman capabilities like running assertions, Pre-request scripts, or any other scripts that are associated with the requests that are a part of the collection.
+
+To use Newman:
+
+You need to have Node installed.
+Now the Newman package needs to be installed through npm using the command.
+1
+npm install -g newman
+The collection needs to be executed, and the associated environment configuration should be first be exported to its JSON form through the Postman application
+Now, run the command to run the Postman collection through Newman.
+1
+newman run {{path to collection json}} -e {{path to environment json if any}}
+Q #4) How can you generate HTML-based reports by running tests through Postman?
+
+Answer: Newman uses the concept of reporters and templates to generate HTML reports for the executed collection.
+
+Hence, to generate HTML reports, you first need to install a reporter. You can install any of the available HTML reporters, like Newman-reporter-html, as a node package through the command below.
+
+1
+npm install -g newman-reporter-html
+Once the HTML reporter is installed, we can use the Newman command to run the collection with -r flag i.e. the reporter flag, and specify the reporter name as HTML.
+
+The following command is used:
+
+1
+newman run {{path to collection json}} -e {{path to environment json if any}} -r html
+Please note that, as we have not mentioned the name or folder where we want the reports to get generated, by default the reports will be generated in a folder named “Newman” that gets created in the same directory where the Newman command is executed from.
+
+Q #5) How can we use Postman history and save requests from the Postman history to the existing or new collections?
+
+Answer: Any request executed through the Postman application is available for reference in the History section of the application. So, in case the request was not saved to a collection before it was executed, we can always go back to the history section to fetch the executed request and save it to the collection.
+
+Refer to the screenshot below for more details.
+
+Postman Collection History
+Q #6) How can you import requests in formats other than cURL into Postman?
+
+Answer: Postman supports a lot of common request formats to export requests to. Example. Java, C#, Python, PHP, etc. It supports almost all the commonly used libraries and language bindings.
+
+For import requests, it supports cURL for now. i.e., you can paste a curl command in request import, and it gets converted to Postman requests, but the same cannot be done using any other language bindings like Java, Python, etc.
+
+The other way to import multiple requests at once is to import the entire collection directly through a file or collection JSON pasted as raw text in the import window.
+
+Given below is a screenshot of how the import raw text section of the import options will look.
+
+Import Options
+Q #7) Is it possible to Log Requests and Responses in Postman?
+
+Answer: Postman allows viewing the response body and other request parameters in the application itself.
+
+But sometimes we have applied pre-request scripts, and as we cannot see details about the request URLs and headers that were used while executing the request, it’s always important to see what the actual request looked like.
+
+To view complete Requests and Responses for the executed collection or individual request, Postman provides an additional tool console called “Postman Console” and it can view all the request/response details.
+
+It’s also useful to see the output of any console.log statements that are a part of the pre-request scripts or tests.
+
+Given below is a screenshot of the Postman console window.
+
+Postman Console Window
+Q #8) How can Postman be used to create Mock Servers?
+
+Answer: Postman allows users to simulate backend servers or any API endpoints that are still under active development, and to run an integration test or end-to-end test, you still need to get some pre-defined response through those endpoints.
+
+Postman to create Mock servers
+Refer to the above diagram, where a front-end server/API has a few downstream dependencies, of which one dependency is still a work in progress. To reduce the dependency of the front end being able to use the downstream until it’s complete, we can create a mock for the downstream and use it till the time the downstream dependency is not complete.
+
+Thus, mock servers are nothing but a fake implementation for the backend. To create/use mock servers, a user should be registered with Postman, at least for a free account (Postman allows users to register for a free account through their email).
+
+Also, please note that for a free account, the number of calls to a mock server is limited to 1000 (this limit can be increased by buying an enterprise plan or purchasing an additional quota from the Postman account usage page).
+
+Here is a video tutorial:
+
+YouTube video player
+To create a mock server, you can use an existing collection, i.e., if you want to create a mock for your entire collection or add requests when creating a mock server.
+
+Follow the steps below to create a mock server:
+
+a) Click New and select “Mock Server”.
+
+b) Add request method(s) to be mocked and add the response code and response body to be returned while the particular API endpoint is called.
+
+Create Mock Server
+c) Click Next and choose the mock server name (If you want this mock server to be private, then an authorization header named x-api-key, which will be generated for the user profile through which Postman is signed in, will be required).
+
+Mock Server Name
+d) Click “Create Mock Server”. Essentially, this will host your API endpoint on some Postman server and will return the set response whenever the particular endpoint is called.
+
+e) It will also create a new environment file (that was set during the mock server setup) and set the URL of the mocked API endpoint as an environment variable.
+
+f) You are all done, and now, you can use this mocked endpoint to send requests to. This mocked implementation can be used for dependent services in the actual code if the real services are still under deployment.
+
+Mocked Collection
+Q #9) How can we use Custom JavaScript Libraries with Postman Pre-request Scripts or Tests?
+
+Answer: Postman sandbox provides a lot of libraries that are built in and are available for use. For a complete list of such libraries, refer here to using these libraries, and you will need to add them in pre-request scripts or tests using ‘require’.
+
+Here is a video tutorial:
+
+YouTube video player
+Let’s see one such example using moment.js, which provides a lot of helpful functions to perform formatting around time.
+
+Let’s say there is a POST request that has to say, the created date for a user, and it expects the date format YYYY-MM-DD. Though it could be achieved using plain JavaScript as well, moment.js can do this with one line of code.
+
+Let’s see this in action now. In the pre-request script, just add the following line of code, to get the formatted data stored in an environment variable.
+
+1
+2
+var moment = require('moment');
+pm.environment.set('formattedDate',moment().format('YYYY-MM-DD'));
+Another example of the moment could be to add a particular value to the current date and use it in the request body. For example, you want to set a field like an expiry date, to current date + 2 days, as well as with formatting to ‘YYYY-MM-DD’, and you can simply use the script as below.
+
+1
+pm.environment.set('expiryDate',moment().add(2,'days').format('YYYY-MM-DD'));
+In the above script, we can see that we’ve added or included ‘moment.js’ library and used the object as a simple Javascript code. Similar to pre-request scripts, these libraries or modules can be used in the post-request scripts or tests as well to do similar stuff.
+
+Other libraries are available, like crypto js, which could be useful to convert a text to an encrypted value, like Base 64 or encoded hash, and could be used as a part of the request body.
+
+Q #10) What are Postman monitors?
+
+Answer: Postman monitors are nothing but collection monitors that are set up and executed as per the configured frequency. These are used when someone wants their collection to run at a particular frequency and the results are required to be monitored, with failures being notified through email or slack integration.
+
+Teams with their own infrastructure, like CI and own cloud servers, would not prefer to use Postman-defined monitors, as it would run only on published or public endpoints or on mocked endpoints (if configured through mock servers).
+
 Примеры тестовых сценариев Postman
  08.11.21
 Интеграция - WEB-интеграция
