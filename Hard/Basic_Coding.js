@@ -1,3 +1,780 @@
+Топ-10 заданий по написанию кода для собеседования по React.js в 2024 году
+19.05.2024
+Цель этой статьи  —  ознакомить с топовыми заданиями по написанию кода и показать примеры их выполнения для успешного прохождения собеседования по ReactJS. Углубляясь в основные понятия и осваивая лучшие практики, вы получите полное представление о том, чего следует ожидать на собеседовании по React.js-программированию.
+
+Задание 1. Получить и отобразить список пользователей
+Напишите код для получения данных о пользователях из конечной точки REST с открытым исходным кодом и отобразите данные о пользователях в таблице, расположив их в соответствующем стиле по центру.
+
+import React, { useEffect, useState } from 'react';
+import "./styles.css";
+
+const App = () => {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((result) => result.json())
+      .then((data) => {
+        console.log("users", data)
+        setUsers(data)
+      })
+      .catch(error => console.error('Error fetching user data:', error));
+  }, []);
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>User Details Table</h1>
+      <table style={{ borderCollapse: 'collapse', margin: 'auto', width: '60%', border: '1px solid #ddd' }}>
+        <thead>
+          <tr style={{ border: '1px solid #ddd', backgroundColor: 'black', color: 'white' }}>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            users.length &&
+            users.map((item) => (
+              <tr style={{ border: '1px solid #ddd', backgroundColor: 'gray', color: 'white' }}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.phone}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  )
+}
+export default App;
+Альтернативный подход
+А что, если придется использовать библиотеку Axios для получения данных о пользователях?
+
+favicon
+fsk.ru
+Перейти
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './UserTable.css';
+
+function UserTable() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users') // Использование Axios для получения данных о пользователях 
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching user data:', error);
+      });
+  }, []);
+
+  return (
+    <div className="user-table-container">
+      <h2>User Details</h2>
+      <table className="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user.id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.phone}</td>
+              <td>{user.website}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default UserTable;
+Задание 2. Реализовать функцию поиска
+Получите данные о пользователях и отобразите их имена. Кроме того, реализуйте функцию строки поиска по имени пользователя.
+
+import React, { useState, useEffect } from 'react';
+
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users') // Получение данных о пользователях из заданной конечной точки
+      .then(response => response.json())
+      .then(data => setUsers(data))
+      .catch(error => console.error('Error fetching user data:', error));
+  }, []);
+
+  const filteredUsers = users.filter(user =>
+    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div>
+      <h2>User List</h2>
+      <input
+        type="text"
+        placeholder="Search by username"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <ul>
+        {filteredUsers.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default UserList;
+Задание 3. Оптимизировать поиск с помощью debounce и отменяемого запроса
+Оптимизируйте функциональность поиска, используя функцию debounce и возможность отмены запроса (cancelable request), и отобразите только отфильтрованные данные о пользователях.
+
+import { useState, useEffect } from "react";
+
+const App = () => {
+  const [usersData, setUsersData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [filteredUser, setFilteredUser] = useState({});
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("fetched data", data);
+        setUsersData(data);
+      })
+      .catch((error) => {
+        console.log("Errror While fetching user data");
+      });
+  }, []);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    const filterTimer = setTimeout(() => {
+      try {
+        fetch(
+          `https://jsonplaceholder.typicode.com/users?username=${searchText}`,
+          {
+            signal: abortController.signal, // Передача сигнала AbortController в запрос на получение данных
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("FilteredUser ", data);
+            setFilteredUser(data[0]);
+          });
+      } catch (error) {
+        if (error.name === "AbortError") {
+          console.log("Request was aborted");
+        } else {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    }, 300);
+
+    return () => {
+      abortController.abort();
+      clearTimeout(filterTimer);
+    };
+  }, [searchText]);
+
+  const handleSearch = (value) => {
+    setSearchText(value);
+  };
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h4>Users Data</h4>
+      <input
+        type="text"
+        placeholder="Search by username"
+        value={searchText}
+        onChange={(e) => handleSearch(e.target.value)}
+      />
+
+      <table
+        style={{
+          borderCollapse: "collapse",
+          margin: "auto",
+          border: "1px solid red",
+        }}
+      >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {usersData &&
+            usersData.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
+      <div>
+        <h4>Search Result</h4>
+        {filteredUser && filteredUser.name}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+Задание 4. Реализовать функцию сортировки по имени пользователя
+Напишите код для получения данных о пользователях и отображения имен пользователей. Должны быть две кнопки для сортировки имен по возрастанию и по убыванию.
+
+import { useState, useEffect } from "react";
+
+const App = () => {
+  const [usersData, setUsersData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        setUsersData(data);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }, []);
+
+  const handleAscendingSort = () => {
+    const users = [...usersData].sort((a, b) =>
+      a.username.localeCompare(b.username)
+    );
+    setUsersData(users);
+  };
+
+  const handleDescendingSort = () => {
+    const users = [...usersData].sort((a, b) =>
+      b.username.localeCompare(a.username)
+    );
+    setUsersData(users);
+  };
+
+  return (
+    <div className="App">
+      <h1>Example of short by username</h1>
+      <button onClick={() => handleAscendingSort()}>
+        Short by Ascending
+      </button>
+      <button onClick={() => handleDescendingSort()}>
+        Short by Descending
+      </button>
+      {usersData &&
+        usersData.map((user) => (
+          <div key={user.id}>
+            <p>{user.username}</p>
+          </div>
+        ))}
+    </div>
+  );
+}
+
+export default App;
+Задание 5. Создать управляемый компонент формы регистрации
+Создайте форму регистрации пользователя с полями для имени пользователя, электронной почты и пароля. Проведите валидацию вводимых данных и отобразите соответствующие сообщения об ошибках. (Создайте управляемый компонент формы с состоянием для управления вводимыми значениями).
+
+import React, { useState } from 'react';
+import * as Yup from 'yup'; // Импорт Yup для валидации формы
+import './UserRegistrationForm.css'; // Импорт CSS-файла для компонента
+
+const UserRegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+  
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const schema = Yup.object().shape({
+    firstName: Yup.string().required('First Name is required'),
+    lastName: Yup.string().required('Last Name is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters'),
+  });
+  
+  const validateField = async (name, value) => {
+    try {
+      await schema.validateAt(name, { [name]: value });
+      setErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
+    } catch (error) {
+      setErrors(prevErrors => ({ ...prevErrors, [name]: error.message }));
+    }
+  };
+  
+  const handleChange = async (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+    await validateField(name, value);
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await schema.validate(formData, { abortEarly: false });
+      // Имитация вызова API с задержкой
+      setTimeout(() => {
+        setLoading(false);
+        setSuccessMessage('Registration successful!');
+      }, 2000);
+    } catch (error) {
+      const validationErrors = {};
+      error.inner.forEach(fieldError => {
+        validationErrors[fieldError.path] = fieldError.message;
+      });
+      setErrors(validationErrors);
+      setLoading(false);
+    }
+  };
+  
+  return (
+    <div>
+      <h2>User Registration</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+          {errors.firstName && <span className="error-message">{errors.firstName}</span>}
+        </div>
+        <div>
+          <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+          {errors.lastName && <span className="error-message">{errors.lastName}</span>}
+        </div>
+        <div>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} />
+          {errors.email && <span className="error-message">{errors.email}</span>}
+        </div>
+        <div>
+          <input type="password" name="password" value={formData.password} onChange={handleChange} />
+          {errors.password && <span className="error-message">{errors.password}</span>}
+        </div>
+        <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
+      </form>
+      {successMessage && <div className="success-message">{successMessage}</div>}
+    </div>
+  );
+};
+
+export default UserRegistrationForm;
+Задание 6. Обеспечить переключение темного и светлого режимов
+Реализуйте логику для изменения режима отображения в приложении с помощью Context API.
+
+Файл DisplayModeContext.js:
+
+import React, { createContext, useState, useContext } from "react";
+
+// Создание контекста для режима отображения
+const DisplayModeContext = createContext();
+
+// Создание пользовательского хука для использования контекста режима отображения
+export const useDisplayMode = () => {
+  return useContext(DisplayModeContext);
+};
+
+// Создание компонента провайдера для контекста режима отображения
+export const DisplayModeProvider = ({ children }) => {
+  const [displayMode, setDisplayMode] = useState("light"); // Режим отображения по умолчанию - "светлый".
+
+  const toggleDisplayMode = () => {
+    setDisplayMode((prevMode) => (prevMode === "light" ? "dark" : "light")); // Переключение между "светлым" и "темным" режимами
+  };
+
+  return (
+    <DisplayModeContext.Provider value={{ displayMode, toggleDisplayMode }}>
+      {children}
+    </DisplayModeContext.Provider>
+  );
+};
+Файл App.js:
+
+import "./styles.css";
+import { useDisplayMode } from "./DisplayModeContext";
+
+export default function App() {
+  const { displayMode, toggleDisplayMode } = useDisplayMode();
+
+  const appStyle = {
+    background: displayMode === "light" ? "#ffffff" : "#333333",
+    color: displayMode === "light" ? "#333333" : "#ffffff",
+    padding: "5px",
+  };
+
+  return (
+    <div style={appStyle}>
+      <h3>Press below button to change the display mode</h3>
+      <button onClick={() => toggleDisplayMode()}>
+        {displayMode === "light" ? "Dark Mode" : "Light Mode"}
+      </button>
+    </div>
+  );
+}
+index.js:
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import App from "./App";
+import { DisplayModeProvider } from "./DisplayModeContext";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <DisplayModeProvider>
+      <App />
+    </DisplayModeProvider>
+  </StrictMode>
+);
+Задание 7. Создать менеджер задач
+Создайте простое приложение-менеджер задач (ToDo-List) с возможностью добавлять и удалять задачи из списка.
+
+import { useState } from "react";
+
+export default function App() {
+  const [taskList, setTaskList] = useState([]);
+  const [taskDetail, setTaskDetail] = useState("");
+
+  const handleAddTask = () => {
+    setTaskList([...taskList, taskDetail]);
+    setTaskDetail("");
+  };
+
+  const handleRemoveTask = (index) => {
+    const newTaskList = [...taskList];
+    newTaskList.splice(index, 1);
+    setTaskList(newTaskList);
+  };
+
+  const handleTaskUpdate = (value) => {
+    setTaskDetail(value);
+  };
+
+  return (
+    <div>
+      <>
+        <h3>ToDO List</h3>
+        <input
+          type="text"
+          placeholder="Add task detail here"
+          value={taskDetail}
+          onChange={(e) => handleTaskUpdate(e.target.value)}
+        />
+        <button onClick={() => handleAddTask()}>Add</button>
+      </>
+      <>
+        <ul>
+          {taskList &&
+            taskList.map((item, index) => (
+              <div key={index}>
+                <li>
+                  {item}{" "}
+                  <button onClick={() => handleRemoveTask(index)}>
+                    Remove
+                  </button>
+                </li>
+              </div>
+            ))}
+        </ul>
+      </>
+    </div>
+  );
+}
+Задание 8. Создать компонент корзины для покупок
+Подготовьте JSON-данные для товаров и реализуйте приложение корзины для покупок, в котором пользователи могут добавлять выбранные товары, обновлять их количество, удалять их, а также выводить итоговую сумму полного заказа.
+
+items.json:
+
+// items.json
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Jeans",
+      "price": 50
+    },
+    {
+      "id": 3,
+      "name": "Shoes",
+      "price": 80
+    }
+  ]
+}
+App.js:
+
+import { useState } from "react";
+import "./styles.css";
+import itemsData from "./items.json";
+
+export default function App() {
+  const [items, setItems] = useState(itemsData.items);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (itemId) => {
+    const selectedItem = items.find((item) => item.id === itemId);
+    const itemInCart = cart.find((item) => item.id === itemId);
+
+    if (itemInCart) {
+      const updatedCart = cart.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, quantity: (item.quantity || 1) + 1 };
+        }
+        return item;
+      });
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...selectedItem, quantity: 1 }]);
+    }
+  };
+
+  const removeFromCart = (itemId) => {
+    const updatedCart = cart.filter((item) => item.id !== itemId);
+    setCart(updatedCart);
+  };
+
+  const updateQuantity = (itemId, newQuantity) => {
+    if (newQuantity > 5) {
+      return; // Запрет обновления количества при наличии больее 5 позиций
+    }
+    const updatedCart = cart.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
+  const calculateTotal = () => {
+    return cart.reduce(
+      (total, item) => total + item.price * (item.quantity || 1),
+      0
+    );
+  };
+
+  return (
+    <div>
+      <h1>Shopping Cart</h1>
+      <h2>Available Items</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.name} - ${item.price}
+            <button onClick={() => addToCart(item.id)}>Add to Cart</button>
+          </li>
+        ))}
+      </ul>
+      <h2>Cart Total</h2>
+      <ul>
+        {cart.map((item) => (
+          <li key={item.id}>
+            {item.name} - ${item.price} -
+            <select
+              value={item.quantity || 1}
+              onChange={(e) =>
+                updateQuantity(item.id, parseInt(e.target.value))
+              }
+            >
+              {[...Array(5).keys()].map((number) => (
+                <option key={number + 1} value={number + 1}>
+                  {number + 1}
+                </option>
+              ))}
+            </select>
+            <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+      <h2>Total: ${calculateTotal()}</h2>
+    </div>
+  );
+}
+Задание 9. Создать компонент пагинации
+Создайте компонент пагинации, который получает и отображает данные из API, показывая фиксированное количество элементов на странице.
+
+paginated.js:
+
+import React, { useState, useEffect } from "react";
+
+const PaginationComponent = ({ apiUrl, itemsPerPage }) => {
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${apiUrl}?_page=${currentPage}&_limit=${itemsPerPage}`
+        );
+        // Предположим, что API отвечает данными в формате JSON
+        const jsonData = await response.json();
+        setData(jsonData);
+        // Получение общего количества элементов из заголовков ответа API
+        const totalCount = response.headers.get("X-Total-Count");
+        setTotalPages(Math.ceil(totalCount / itemsPerPage));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [apiUrl, currentPage, itemsPerPage]);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  return (
+    <div>
+      <ol>
+        {data.map((item) => (
+          <li key={item.id}>{item.title}</li> // Assuming 'name' is the property to display
+        ))}
+      </ol>
+      <div>
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default PaginationComponent;
+App.js:
+
+import PaginationComponent from "./paginated";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Pagination Example</h1>
+      <PaginationComponent
+        apiUrl="https://jsonplaceholder.typicode.com/posts"
+        itemsPerPage={10}
+      />
+    </div>
+  );
+};
+
+export default App;
+Задание 10. Создать галерею изображений с бесконечной прокруткой и ленивой загрузкой
+Создайте галерею изображений, которая подгружает изображения по мере того, как пользователь прокручивает страницу вниз. Реализуйте ленивую загрузку для повышения производительности.
+
+import React, { useState, useEffect } from "react";
+import "./styles.css";
+
+const App = () => {
+  const [images, setImages] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const fetchImages = async () => {
+    setLoading(true);
+    try {
+      // Используйте свой ID клиента, зарегистрировавшись как разработчик на Unsplash и создав приложение.
+      const response = await fetch(
+        `https://api.unsplash.com/photos/?client_id=weJDI4C21OzgEkJD2ZSkb5yt1aBQwiuHh2tVK4tvS5w&page=${page}`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch");
+      }
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        setImages((prevImages) => [...prevImages, ...data]);
+        setPage((prevPage) => prevPage + 1);
+      } else {
+        console.error("Invalid data format:", data);
+      }
+    } catch (error) {
+      console.error("Error fetching images:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+        document.documentElement.offsetHeight ||
+      loading
+    )
+      return;
+    fetchImages();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
+
+  return (
+    <div>
+      <h1>Image Gallery</h1>
+      <div className="image-gallery">
+        {images.map((image) => (
+          <img
+            key={image.id}
+            src={image.urls.small}
+            alt={image.alt_description}
+          />
+        ))}
+        {loading && <p>Loading...</p>}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
 Basic Coding/Programming Interview Questions
 Q #1) How can you reverse a string?
 
