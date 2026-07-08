@@ -1,3 +1,230 @@
+Best React Native Interview Questions And Answers
+Jump to:
+Junior React Native interview questions
+
+Middle React Native interview questions
+
+Senior React Native interview questions
+
+React Native Resume Template
+
+Junior React Native Developer Interview Questions
+01
+
+What are native apps?
+Native apps are installed through an app store (such as Google Play or Apple App Store). They are designed specifically for one platform and can take full advantage of all the functions of the device - they can use the camera, GPS, accelerometer, compass, contact list, and so on.
+
+02
+
+What are the differences between React Native and React?
+React Native is for mobile apps and React is for websites (frontend). Both are frameworks invented by Facebook. React Native is a cross-platform development framework, which means you can write pretty much the same code for both IOS and Android and it will work.
+
+03
+
+What is JSX?
+JSX stands for JavaScript XML. It's just a JavaScript syntactic extension. This allows us to write HTML directly in React (in JavaScript code). It's easy to create a template using JSX in React, but it's not a simple templating language, but the full power of JavaScript.
+
+04
+
+Native vs Hybrid apps.
+Hybrid apps combine the functionality of both native and web apps. They can be downloaded from the platform's app store as a native app. Hybrid apps are built using web technologies like HTML, CSS and JavaScript, whereas native apps are built using a specific technology and platform-specific language like Java for Android, Swift for iOS.
+
+05
+
+What are props in RN?
+Props are used to transfer data from parent to child, while state is used to manipulate data within a component. We can get the props value from the parent component, where we get the value of the state object from the initial data defined in the constructor () method.
+
+06
+
+What is Redux?
+Redux is a predictable state container designed to help you write JavaScript applications that work consistently across client, server, and native environments and are easy to test. While it is primarily used as a state management tool with React, you can use it with any other JavaScript framework or library.
+
+07
+
+What is the difference between state and props?
+The key difference between props and state is that state is internal and controlled by the component itself, while props are external and controlled by what the component renders.
+
+08
+
+What are components in React Native?
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML via the render () function. Components are of two types: class components and function components. 
+
+09
+
+Do we use the same code base for Android and iOS?
+You can have one codebase. But:
+
+separate components that require different handling for iOS and Android, named `filename.ios.js` and` filename.android.js`
+when there are only minor issues (eg style), you can use `Platform` to determine which platform you are targeting.
+10
+
+How is user Input Handled in React Native?
+TextInput is the main component that allows the user to enter text. It has an onChangeText prop, which takes a function to be called whenever the text changes, and an onSubmitEditing prop, which takes a function to be called when the text is submitted.
+
+Mid React Native Developer Interview Questions
+01
+
+Differences between Hot Reloading and Live reloading.
+The difference between the two is that Live Reloading will reload your entire application. It will look like, ok, the file has changed, reload the whole application. A hot reload does not reload your entire application. It will simply fix the code that was changed and keep the state in your application.
+
+02
+
+What is the use of the ScrollView component?
+The ScrollView component is a built-in responsive component that serves as a versatile scrollable container with the ability to scroll through child components and views within it. It provides the function of scrolling in both directions - vertical and horizontal (default: vertical).
+
+03
+
+How do you style a component in React Native?
+With React Native, you style your app with JavaScript. All the core components accept a property named style. The style names and values usually correspond to how CSS works on the web, except that the names are written in camel case, such as backgroundColor rather than background-color
+
+04
+
+What is a bridge and why is it used in React Native?
+A React Native app has two sides: the JavaScript side and the native side. React Native Bridge allows internal code and javascript code to interact with each other. Without a bridge, native code cannot send any information to JavaScript code and vice versa.
+
+05
+
+What are touchable components?
+The touchable components provide the ability to capture the tapping function. The touchable component can be implemented as an alternative to the base button if it is not suitable for your application. Using these components, you create your own button. By clicking on these components, you can display the testimonial.
+
+06
+
+How does VirtualDOM work in React Native?
+React uses the virtual DOM to improve its performance. It uses an observable to detect changes in state and properties. React uses an efficient comparison algorithm to compare virtual DOM versions. It then makes sure to send batch updates to the real DOM to redraw or re-render the UI.
+
+07
+
+Can you mix native iOS or Android code into React Native application?
+Yes, we can. React Native seamlessly integrates components written in Objective-C, Java, or Swift.
+
+08
+
+What does React Native Packager do in React Native?
+It does a couple of things: bundles all your Javascript code into one file and translates any Javascript code your device doesn't understand (like JSX or some new JS syntax). Converts resources (such as PNG files) into objects that can be displayed by an image component.
+
+09
+
+What is the difference between ShadowDOM and VirtualDOM?
+The Virtual DOM creates a copy of the entire DOM object, while the Shadow DOM creates small portions of the DOM object that have their own isolated scope for the element they represent.
+
+10
+
+When building with React Native is a better solution than coding with native languages?
+Switching to React Native for mobile app development is the right choice when:
+
+You are creating a simple and unified application.
+You want to run your application on cross platforms.
+You have less budget for app development.
+You want to get to the market as soon as possible.
+You are building a social media app like Facebook or Instagram.
+You are looking forward to using Facebook ads in your app.
+You are developing an e-commerce application.
+Senior React Native Developer Interview Questions
+01
+
+Explain setNativeProps. Does it create Performance issues, and how is it used?
+Sometimes it is necessary to make changes directly to a component without using state / properties in order to trigger re-rendering of the entire subtree. For example, when using React in a browser, you sometimes need to directly modify the DOM node, and the same is true for views in mobile apps. setNativeProps is the React Native equivalent for setting properties directly on a DOM node.
+
+Use setNativeProps if frequent re-rendering creates a performance bottleneck.
+
+Direct manipulation will not be a tool that you will often turn to; usually you will only use it to create continuous animations to avoid the overhead of rendering the component hierarchy and reconciling multiple views. setNativeProps is required and stores state at its own level (DOM, UIView, etc.), not in your React components, making your code difficult to understand. Before using it, try to solve your problem with setState and shouldComponentUpdate.
+
+02
+
+What is Fabric in React Native?
+Fabric is a new community-proposed React Native architecture to bring the UI of a mobile app closer to or better than native apps. Just as the Fiber architecture in ReactJS has greatly improved differences and overall performance, Fabric should be steered in the same direction to improve application performance and efficiency.
+
+03
+
+What is InteractionManager, and how is it used?
+The InteractionManager allows you to schedule long running work after any interactions / animations have finished. In particular, it allows JavaScript animations to run smoothly.
+
+04
+
+How do you write custom hooks? What kind of operations can be simplified by using hooks?
+Custom Hook is a JavaScript function that we create ourselves when we want to split logic between other JavaScript functions. This allows you to reuse a piece of code across multiple parts of your application.
+
+05
+
+What is Component Driven Development (CDD) and what are its advantages?
+CDD is a development methodology that ties the build process to components. It is a process that creates a bottom-up user interface from the component level to the page or screen level.
+
+Component architecture benefits:
+
+More control and lower maintenance costs. 
+Say goodbye to finding other apps that might use similar code. 
+Faster development to save time and increase revenue.
+06
+
+How to get geolocation in React Native?
+Geolocation is enabled by default when you create a project with react-native init. To enable background geolocation, you need to include the NSLocationAlwaysUsageDescription key in Info.plist and add the location as a background in the Features tab in Xcode.
+
+07
+
+What are the best ways to optimize React Native applications?
+Use Proguard to minimize the size of your application (it does this by removing parts of the Java React Native bytecode (and its dependencies) that your application does not use)
+Create smaller APK files for specific CPU architectures. When you do this, users of your application will automatically receive an APK file that matches their phone architecture. This eliminates the need to store JSCore binaries that support multiple architectures and therefore reduces the size of the application.
+Compress images and other graphics. Another way to reduce image size is to use file types such as APNG instead of PNG files.
+Don't store raw JSON data even if we need to compress it or convert it to static object IDs.
+Optimize your own libraries.
+Optimize the number of stateful operations, and remember to use clean and memoized components as needed.
+Use global state wisely, for example, in the worst case, changing the state of an individual control such as a TextInput or CheckBox propagates the rendering of the entire application. Use libraries like Redux or Overmind.js to better manage your state.
+Use the key attribute on list items, this helps React Native choose which list to update when rendering a long list of data.
+Use VirtualizedList, FlatList and SectionList for large datasets.
+Clear all active timers, which can lead to serious memory leak issues.
+08
+
+How the entire React Native code is processed to show the final result on a mobile screen?
+When the application is first launched, the main thread starts execution and loads the JS packages.
+When the JavaScript code has been loaded successfully, the main thread sends it to another JS thread, because when the JS does some heavy computation, the thread fills the thread for a while, the UI thread will not suffer all the time.
+When React starts rendering, Reconciler starts to "discern", and when it generates a new virtual DOM (layout), it sends the changes to another thread (shadow thread).
+The shadow thread calculates the layout and then sends the layout parameters / objects to the main (UI) thread. (You may ask here why we call it “shadow”? Because it generates shadow nodes)
+Since only the main thread can display anything on the screen, the shadow thread has to send the generated layout to the main thread, and only then is the user interface rendered.
+09
+
+What are snapshot tests used for?
+Snapshot testing is a type of "output comparison" or "golden master" testing. These tests prevent regression by comparing the current result of a method inside application code with the stored “good” values for those characteristics.
+
+10
+
+How do you make your React Native app render animations smoothly?
+The main and important reason why well-designed native apps feel so smooth is that they avoid costly interactions and animations. React Native has the limitation that there is only one JS thread of execution, but you can use the InteractionManager to make sure long running work is scheduled to run after any interactions / animations have finished.
+
+Applications can schedule tasks after interacting with the following objects:
+
+InteractionManager.runAfterInteractions(() => {
+ // ...long-running synchronous task...
+});
+
+11
+
+What is the role of CI/CD in the React Native project? What are the CI/CD tools available for React Native apps?
+It lets you create delivery pipelines that will build, test, and deploy your React Native app with a single click on a branch. Pipelines are made up of actions that you can customize based on your needs.
+
+Available tools:
+
+AppCenter: web config, stoder on the service side
+
+appcircle: web config, stoder on the service side
+
+Azure DevOps: azure-pipelines-android.yml
+
+Bitbucket Pipelines: bitbucket-pipelines.yml
+
+Bitrise: bitrise.yml
+
+Buddy: buddy.yml
+
+Circle CI: .circleci/config.yml
+
+Codemagic: codemagic.yaml
+
+GitHub Actions: .github/workflows/*.yml
+
+Gitlab CI: .gitlab-ci.yml
+
+Travis CI: .travis.yml
+
 FAQ по Разработке на React Native для Новичков
 Автор публикации: Юлия Соболева
 Юлия Соболева
