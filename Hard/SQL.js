@@ -1,3 +1,144 @@
+The Full Stack Developer‘s Guide to SQL Interview Prep
+
+By
+Alex Mitchell
+Last Update on
+August 17, 2024
+Mastering SQL is a must for any aspiring full stack developer. This comprehensive guide will overview the SQL knowledge needed to ace interviews at top tech companies like Google, Meta, Amazon, and more.
+
+We‘ll start with a quick SQL refresher, then dive deeper into specific interview questions you should prepare for. Advanced SQL concepts like indexes, transactions, database design principles, and tuning will also be covered from a full stack perspective.
+
+SQL code on a laptop
+
+SQL Refresher
+Let‘s briefly recap some key SQL statements and clauses:
+
+SELECT Statement
+The SELECT statement retrieves data from a database table. It allows specifying the columns to return in the result set:
+
+SELECT column1, column2, column3
+FROM mytable; 
+We can also use SELECT for aggregate queries with GROUP BY:
+
+SELECT COUNT(*), department 
+FROM employees
+GROUP BY department;
+WHERE Clause
+The WHERE clause filters row data based on conditions:
+
+SELECT *
+FROM salaries
+WHERE salary > 100000;
+JOIN Clause
+JOINS allow combining data from multiple tables:
+
+SELECT * 
+FROM employees e
+JOIN departments d
+  ON e.department_id = d.id
+UNION Operator
+UNION combines the result sets of multiple SELECT statements:
+
+SELECT column1 FROM table1
+UNION 
+SELECT column2 FROM table2;
+Common Interview Questions
+Let‘s explore some frequent SQL interview questions for full stack developers:
+
+Q: What are indexes and how do they work?
+A: Indexes help speed up lookups and queries on table columns. They create pointers to the actual data pages for row data based on the indexed column. Indexes can dramatically improve query performance but add overhead for write operations.
+
+Some key points about indexes:
+
+Column order in indexes matters for performance
+Multi-column indexes support queries filtering on the first columns
+Indexes should be added judiciously based on query patterns
+Q: How would you tune a slow SQL query?
+A: Steps to tune a slow query include:
+
+Review query execution plan to identify expensive operations
+Add indexes on columns frequently filtered or joined
+Replace expensive joins with selective joins when possible
+Split complex queries into simpler, faster components
+Rewrite subqueries, views, and stored procedures if slowing queries
+Tune and optimize indexes; drop unused ones
+Review hardware allocation – add CPU, memory, faster drives
+Having indexes properly aligned with queries can provide 10-100x or greater performance gains.
+
+Q: What‘s the difference between clustered and non-clustered indexes?
+A: Clustered indexes physically sort the data on disk by the indexed column to speed sequential access. Only one clustered index allowed per table.
+
+Non-clustered indexes just store column values with pointers to the data. Multiple non-clustered indexes can be defined.
+
+Q: What are database transactions and how do they work?
+A: Database transactions involve executing a series of SQL operations in an atomic fashion – either all SQL statements complete successfully or if failure happens, any changes are rolled back to maintain data integrity.
+
+Transactions provide ACID compliance:
+
+Atomic – all or nothing
+Consistent – valid data state
+Isolated – concurrent execution unaware
+Durable – committed data saved
+
+Transactions end with either a COMMIT to save changes or a ROLLBACK to undo.
+
+Q: What triggers have you implemented in SQL? How did they improve the database?
+A: Triggers allow automatically firing off SQL code in response to database events like inserts, updates or deletes occurring.
+
+For example, an AFTER INSERT trigger on a payments table could automatically calculate totals and update summary reporting tables to avoid expensive application-layer processing.
+
+Triggers optimize data validation and cross-table logic by handling it automatically at the database level. They can greatly simplify application code around database events when properly utilized.
+
+Q: How would you find the 10 highest salaries per department in an employee table?
+SELECT d.name, e.last_name, e.salary 
+FROM employees e
+INNER JOIN departments d 
+  ON e.dept_id = d.id
+WHERE e.salary IN (
+  SELECT DISTINCT TOP 10 salary 
+  FROM employees e2 
+  WHERE e2.dept_id = e.dept_id 
+  ORDER BY e2.salary DESC
+)
+ORDER BY d.name, e.salary DESC;
+This leverages a correlated subquery to retrieve the top 10 salaries per department.
+
+Q: Explain database normalization and its benefits
+A: Database normalization aims to structure efficient database schemas by eliminating data redundancy and inconsistent dependencies. This involves separating data into multiple tables and establishing relationships via primary/foreign keys.
+
+Normalized databases yield many benefits:
+
+Minimizes duplicate data
+Reduces insertion, update and deletion anomalies
+Enforces data integrity through table relations
+Flexible schema allowing granular access control
+Improves query performance over larger tables
+Common normalization guidelines:
+
+1NF – Eliminate repeating groups/columns
+2NF – Separate subsets with unique key dependencies
+3NF – Eliminate columns not dependent on primary key
+
+Q: How would you handle text searching capabilities in SQL?
+A: Full text search functions like MATCH, AGAINST in MySQL can index and query text efficiently.
+
+More advanced options include:
+
+Dedicated text search engines like ElasticSearch and Solr for advanced linguistics
+Postgres to_tsvector function to build custom search indexes
+VARCHAR similarity functions in Oracle/SQL Server
+Triggers capturing vectors on insert for neural embedding similarity
+The right text search approach depends on data volumes, schema flexibility, and query patterns.
+
+As you can see, mastering advanced SQL is key for full stack roles. Let‘s wrap up with some final tips…
+
+Final Tips for SQL Interview Prep
+Practice aloud until responses feel natural – Do mock interviews with developer friends
+Master core concepts first, then advanced features – Know basic SQL deeply, add specialized knowledge like tuning and text search later
+For coding exercises, think through the ideal indexes first – Avoid brute forcing on large datasets
+Explain the database design decisions – Discuss pros/cons of normalization level chosen
+Ask clarifying questions – Get additional details to provide best solution
+
 76 Essential SQL Interview Questions *
 Toptal curated essential questions that the best SQL developers can answer. Sourced from our talent community, developers are encouraged to submit questions that reflect the evolving skills SQL developers need today.
 
