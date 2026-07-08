@@ -1,3 +1,390 @@
+Full Stack Developer Interview Questions and Answers
+The Full Stack developer interview questions and answers may help you pass the interview and have a brighter future, and this site provides knowledge about this technology.
+
+One of the most sought-after IT occupations is a full-stack developer. Developers must have unique talents for constructing and managing front-end-to-back-end web applications.
+
+In this position, people will utilise many programming languages, frameworks, and tools to build seamless user experiences; if you have a solid computer science background and like problem-solving, Full-stack Development may be right for you.
+
+
+
+1. What is a full-stack developer?
+
+A full-stack developer is a person who can work on both front-end and back-end technology, including setting up and configuring Linux or Windows servers, quoting server-side APIs, running the client side of the application using JavaScript, and structuring and designing the web page with Cascading Style Sheets (CSS) and HTML.
+
+2. What are the primary responsibilities of front-end developers?
+
+Front-end developers are responsible for a website’s look and feel, mastering three main languages: HTML, CSS, and JavaScript.
+
+They must also be familiar with frameworks like Bootstrap, AngularJS, and node Js, which make the website look more interactive and alive; libraries like jQuery must be used to package code into a lightweight and compatible form.
+
+3. What is the back end of a website?
+
+The back end of a website consists of three components: the server, the application, and the database. A back-end developer creates and maintains the web server, application, and database, which allows the front-end or the website to operate.
+
+4. What are the skills required for full-stack web development?
+
+Full-stack web development involves a combination of skills, including front-end and back-end development; front-end developers are responsible for creating a visually appealing website, while back-end developers create and maintain the web server, application, and database.
+
+They use server-side languages like P H P, Ruby, Python, Java, and.NET to communicate with the server application and database and operate on tools like MySQL, SQL, and MongoDB to fetch, store, or edit data and then serve it back to the user in the front-end.
+
+5. What is a Docker file?
+
+A Docker file is a text document that contains instructions for building a Docker image. It is used to define the dependencies and configuration for a Docker image.
+
+6. What is the purpose of the logic layer?
+
+The logic layer forms a dynamic connection between the front end and the database, transmitting user requirements to the database and returning what they searched for, powered by a web server.
+
+7. What programming languages are needed for the logic layer?
+
+At least one programming language, such as Python, Java, or C, is needed for the logic layer.
+
+8. What is the main advantage of using Docker?
+
+The main advantage of using Docker is that dependencies for an application to run are present throughout the software delivery lifecycle, reducing the chances of conflicts and improving overall performance.
+
+9. What is the purpose of the database layer?
+
+The database layer is a massive warehouse of information that contains a database repository that captures and stores information from the front end through the back end.
+
+10. What is the main advantage of using Docker?
+
+The main advantage of using Docker is that dependencies for an application to run are present throughout the software delivery lifecycle, reducing the chances of conflicts and improving overall performance.
+
+11. What is the importance of HTTP protocols in web development?
+
+HTTP protocols are stateless application protocols on the internet that allow clients to communicate with a server; this enables communication between the front-end of a web page and the back-end.
+
+Many web developers may not be familiar with HTTP, so understanding its workings and importance in web applications is essential.
+
+12. What is the purpose of JavaScript in web development?
+
+JavaScript is a powerful tool in web development to manipulate HTML elements and add motions and graphics.
+
+It allows for eventless actions at the click of a button, creating additional pages or personal detail forms.
+
+13. What is the role of a full-stack developer in web development?
+
+A full-stack developer creates a webpage’s front and back end, using server-side languages like Java, Python, PHP, Node.js, and database programming languages like MySQL, MongoDB, and SQL.
+
+14. What is the process of creating an HTML page?
+
+Creating an HTML page involves several steps, including creating a full-stack web application, using a text editor, writing HTML code, and saving the file as a dot HTML.
+
+15. What is the role of the doc-type element in HTML?
+
+The doc type element is crucial in HTML. It represents the file type and helps the browser display web pages correctly.
+
+16. What are the constituents of a web page?
+
+A web page comprises three constituents: HTML, CSS or cascading style sheets, and JavaScript.
+
+17. What are the functions of HTML, CSS, and JavaScript?
+
+HTML provides the web page’s structure, while CSS is responsible for the appearance, colors, and alignment of images; JavaScript is used to make a page more dynamic.
+
+18. What is the purpose of adding a submit button to a form?
+
+The purpose of adding a submit button to a form is to allow users to submit the form data.
+
+19. What is the purpose of creating tables in HTML?
+
+The purpose of creating tables in HTML is to organise and display related data in a structured manner.
+
+20. What is the purpose of adding a table header to a table in HTML?
+
+Adding a table header to a table in HTML provides context and organisation for the data in the table.
+
+21. How do you add a border to a table in HTML?
+
+In HTML, you can add a border to a table by using the CSS property “border” and specifying the border style, width, and color.
+
+22. What is the purpose of using CSS selectors in HTML?
+
+The purpose of using CSS selectors in HTML is to target specific HTML elements and apply styles to them.
+
+23. What are the different types of CSS selectors?
+
+There are various CSS selectors, such as star selectors, div commas, paragraphs, and hype space selectors.
+
+24. What is the purpose of the box model in CSS?
+
+The purpose of the box model in CSS is to provide a framework for organising and positioning elements on a web page.
+
+25. How do you select specific elements using CSS selectors?
+
+The specific elements use CSS selectors to target the HTML elements using their IDs, classes, or tags.
+
+26. What is CSS used for?
+
+CSS is a powerful tool for creating and styling web pages; it allows users to select elements, apply styles, and manipulate elements in various ways.
+
+Users can create visually appealing and engaging websites that appeal to their audience.
+
+
+Full Stack Developer Training
+Explore Course Content
+
+27. What is the CSS selector used for?
+
+The CSS selector selects every paragraph with a class without specifying the colour or class name, the background is set to grey, and the only paragraph for the class is selected.
+
+28. How can borders and padding be added using the border aqua property?
+
+To add borders and padding using the border aqua property, you set three parameters: type, size, and colour, from solid red, dashed-dotted rigged, or other types of CSS. Padding exists between the content and the bottle, the four parameters: right, top, left, and bottom.
+
+29. How does the text outline and an ordered list of styles, weights, and sizes for text styling?
+
+The text outlines an ordered list of styles, weights, and sizes for text styling, including units likepixels and percentages.
+
+IDs, such as normal, italic, oblique, and small caps, are used to select these styles. The first four IDs are regular, italic, oblique, and small caps.
+
+The font style is typical, while italics and oblique are almost similar; the font variant has small caps. The first letter has a bigger font size, while the rest have a smaller font size, but everything is in capitals.
+
+30. What does GitHub allow users to do?
+
+GitHub is a platform that allows users to build a centralised repository for uploading, editing, and managing code files. It features a search bar, pull request options, and an explore button that allows users to interact with developers and others worldwide.
+
+31. What is a repository on GitHub?
+
+A repository on GitHub is a storage space for the correct project you’re working on. It allows users to share their files and collaborate with others.
+
+A Docker image is a lightweight, standalone, and executable package of software that includes all the operating system libraries, dependencies, and commands required to run the application.
+
+32. How do we float elements like images to the left and right in HTML?
+
+To float elements like images to the left and right in HTML, we can select the image tag and flow them to the right; this allows for the positioning of items to the left and right.
+
+33. What is an overflow in HTML?
+
+An overflow in HTML is a property that shows items and allows users to scroll through them; if the width is only 50 pixels, the scene will be more miniature, indicating the presence of a scroll bar.
+
+
+
+34. How do you use pseudo-classes in HTML?
+
+Pseudo-classes in HTML target specific elements based on their state. For example, we can use the A-hover pseudo-class to target all links while hovering over them and changing their background and text colors.
+
+35. How do we use selectors in HTML?
+
+HTML selectors target specific elements on a webpage. We can use CSS selectors to style and format these elements, such as changing their background color, font size, or text color.
+
+36.What is the difference between inline-block and block display?
+
+Inline block and block display are different display properties in CSS; inline-block elements are displayed In line with other components, while block elements are displayed on a new line.
+
+37. What is the difference between list style and list style type in CSS?
+
+List style refers to the appearance of a list, such as bullet points or numbers.
+
+List style type refers to the list type, such as unordered or ordered, and the type of bullet or number used.
+
+38. How can gradients be set up in CSS?
+
+Gradients can be set up in CSS by using a gradient generator to generate beautiful backgrounds commonly found on websites; the direction and ending colors can be selected, and then a new page with the body tag can be created.
+
+39. How can images be used in CSS backgrounds?
+
+Images can be used in CSS backgrounds by setting the background with other elements like images, such as a JPG file; the background-repeat property can be used to choose whether to repeat the background according to the y-axis or the x-axis.
+
+40. What is the purpose of JavaScript frameworks like AngularJS and ReactJS?
+
+JavaScript frameworks like AngularJS and ReactJS offer flexibility and ease of use for front-end and back-end developers; they provide modern development and design features for rapid application development.
+
+41. What is the purpose of ReactJS?
+
+ReactJS is a JavaScript library for building user interfaces; Facebook uses it to build its products, and it has become a robust game host.
+
+42. What is the purpose of AngularJS?
+
+AngularJS is a JavaScript framework for building dynamic and interactive web applications; it provides modern development and design features for rapid application development.
+
+43. What is JavaScript?
+
+JavaScript is a programming language that is used to create dynamic and interactive web pages; it is a high-level, interpreted language that is easy to learn and use.
+
+44. How do you run JavaScript on a browser?
+
+To run JavaScript on a browser, you need to open the developer page by right-clicking on the page and selecting “Inspect”. From there, we can navigate to the JavaScript console and type a statement in JavaScript.
+
+45. What is a JavaScript engine?
+
+A JavaScript engine is a software component responsible for executing JavaScript code, every browser has a built-in JavaScript engine, which allows users to run JavaScript code without the need for additional software or tools.
+
+46. What is the purpose of variables in JavaScript?
+
+Variables in JavaScript are used to store data and give names to memory locations, they are temporary containers with values that the program can access and manipulate.
+
+47. What is the difference between variables and constants in JavaScript?
+
+Variables in JavaScript are temporary memory locations with values that can be changed, while constants are fixed values that cannot be changed.
+
+Variables are declared using the let keyword, while constants are declared using the const keyword.
+
+48. What are the two categories of data types in JavaScript?
+
+The two categories of data types in JavaScript are primitive and reference data types. Primitive data types include numbers, strings, Boolean, null, and undefined. Reference data types include objects, arrays, and functions.
+
+49. What is the purpose of the while loop?
+
+The while loop is a variant of the while loop that loops through a block of code as long as a specified condition is true.
+
+50. What is the purpose of the do-while loop?
+
+The do-while loop is a variant of the while loop that executes the code block once before checking if the condition is true.
+
+51. What is jQuery?
+
+jQuery is a powerful JavaScript library that simplifies code, DOM manipulation, and other aspects of web design; it comes with hundreds of built-in animation effects and is a versatile tool for creating visually appealing websites.
+
+52. What is the difference between jQuery and JavaScript?
+
+jQuery is a JavaScript library that simplifies code and provides additional functionality not available in standard JavaScript; it is designed to make web development more manageable and efficient.
+
+
+Full Stack Developer Online Training
+Up Coming Batches
+
+53. What are CSS add, remove, and toggle class methods?
+
+The added class, remove class, and toggle class methods are essential tools in CSS for creating and managing styles.
+
+Using these methods, you can create and manage styles, add or remove classes, and toggle classes, ensuring your CSS is well-structured and visually appealing.
+
+54. How does the hide effect work in jQuery web design?
+
+The hide effect in jQuery is an effect that selects a specific element and hides it. Parameters can be used to specify how long the element should remain hidden or how it should fade out.
+
+A basic example of hide and show is provided, where the show button makes the element visible, and the toggle switches between hide and show.
+
+55. What are the method’s limitations for creating a button with jQuery effects?
+
+The limitations of the facade in the slide-up or slide-down function include difficulty achieving the desired effect and limitations in customisation.
+
+56. What is the jQuery user interface?
+
+The jQuery user interface includes three functions: drag a bill, drop a bill, and date pick up; the draggable method allows users to remove any selected element, while the dropable method drops the selected element at a specified target.
+
+The date picker is an inbuilt function in jQuery that allows users to visualise dates easily.
+
+57. What is AngularJS?
+
+AngularJS is a JavaScript-based open-source front-end framework developed by Google and a community of individuals and corporations to address the challenges of developing single-page applications.
+
+It provides a framework for client-side model view controllers, also known as MVC architecture on the view or view model controller.
+
+58. What is the difference between event and wave event binding in Angular?
+
+The main difference between event binding and wave event binding in Angular is that event binding requires explicit binding to a property or event.
+
+Meanwhile, wave event binding directly displays the input value in the template without explicit binding.
+
+59. What is React?
+
+React is a JavaScript framework that addresses memory wastage and performance issues associated with traditional data flow models.
+
+It’s a component-based library used to develop interactive user interfaces. It is one of the most popular front-end libraries, and its community supports it strongly.
+
+60. What is the most significant advantage of using components in React?
+
+The most significant advantage of using components in React is that you can change any element at any time without affecting the rest of the application; this feature is most effective when implemented with larger and real-time applications where data changes frequently.
+
+
+
+61. What are some features of React?
+
+Some features of React include JSX.js, an XML-like syntax used by React, which extends the ECMAScript to allow XML and HTML-like text to coexist along with JavaScript React code, a virtual DOM is also used by React, which is a node tree that lists elements, attributes, content, and properties as objects and their properties.
+
+React render function creates a node tree out of the React components and updates it in response to mutations in the data model caused by various actions done by the user or the system itself.
+
+62. What is the difference between React and Angular?
+
+React has a shallow learning curve compared to Angular, and it uses ES6 syntax, which is easier to manage for smaller to-do applications. Angular, on the other hand, expects you to learn TypeScript.
+
+63. What is Node.js?
+
+Node.js is a robust JavaScript framework that allows users to run JavaScript on the console.
+
+64. What is the package.json file in Node.js?
+
+The package.json file in Node.js is the heart of the entire application, containing the project’s metadata.
+
+65. What is Express in Node.js?
+
+Express is a library available in the NPM repository that is used to install any third-party library from the NPM repository.
+
+66. What is an event emitter in Node.js?
+
+An event emitter is a crucial component in creating an evented server in Node.js, which is beneficial for real-time applications like chat and chat servers.
+
+67. What is the HTTP module used for in Node.js?
+
+The HTTP module is used to create the server, which can be a web browser, mobile browser, or an application that requests to the web server.
+
+68. What is Express JS?
+
+Express JS is a third-party module or package that facilitates the management of data flow and routing in NodeJS frameworks.
+
+69. What are the advantages of using databases?
+
+Databases provide several advantages, such as reducing data redundancy, increasing consistency, ensuring data integrity, and improving user access.
+
+They also provide easy updating and maintenance, high-security management, uniform data management and administration, concurrent crash recovery, and data access and auditing.
+
+70. What is a centralised database?
+
+A centralised database stores data at a centralised system, allowing users to access it from different locations through multiple applications.
+
+71. What is a distributed database?
+
+A distributed database distributes data among systems, often connected via communication links.
+
+72. What is a relational database?
+
+A relational database stores data in rows and columns, forming a table.
+
+73. What is a cloud database?
+
+A cloud database stores data in a virtual environment and executes over cloud computing platforms.
+
+74. What is a network database?
+
+A network database typically follows the network data model, representing data via nodes via links between them.
+
+75. What is MongoDB?
+
+MongoDB is an open-source document-oriented database designed for high-volume data storage. It is classified under the SQL or not only the SQL database because the storage and SQL of data in MongoDB are not in the form of tables.
+
+76. What is Representational State Transfer (REST)?
+
+Representational State Transfer (REST) is an architectural style that helps leverage the lesser use of bandwidth to make an application more suitable for the Internet. It is often considered the internet language and is wholly based on resources.
+
+77. What does the package.json file contain?
+
+The package.json file contains metadata for the project, which can be used to create restful APIs using methods and middle layers.
+
+78. What is the purpose of the REST API method?
+
+The purpose of the REST API method is to search for the ID on the server side, assign the customer object to the customer dot fine, and check the query parameter passed in the URL with the customer ID. If the query is successful, the data is returned.
+
+If there are no specific customer IDs, a 404 error is displayed, indicating that the data was not found.
+
+79. How is new data created using the POST method in a web application?
+
+To create new data using the POST method in a web application, the author uses app.post, the same variable created in the HTTP method. The title of the new data is then mentioned, and if it is valid, the customer ID is incremented by one.
+
+The data is pushed to the server if the title is more than three characters long. The response is then returned to the client, indicating that the customer ID has been created in the stack.
+
+80. What is GitHub?
+
+GitHub is a popular repository hosting service that provides a web-based graphical interface with many features.
+
+It is used to organise a single project and can contain folders, files, images, videos, and spreadsheets.
+
+81. What is GitHub used for?
+
+GitHub is used to build a centralised repository for uploading, editing, and managing code files. Its tracker, Issues, is a valuable tool for tracking tasks, enhancements, and bugs within a project.
+
 Full Stack Developer Interview Questions
 1. What is the difference between server-side rendering and client-side rendering?
 Server-side rendering is the process of generating HTML on the server and sending it to the client.
