@@ -1,3 +1,487 @@
+73 Basic & Advanced React Interview Questions (with Explanations)
+This Article is Part of the Guide: How to Hire a Software Developer: The Ultimate Guide guide-cat-arrow
+article_img
+June 23, 2022
+·
+20 min read
+·
+Difficulty level
+
+
+Author: Evgeniy Fetisov Lead Developer
+
+
+
+Co-author: Anastasiya Talochka Content Manager
+
+
+If you are interested in the top React interview questions, then you are in the right article. This article has compiled the most potentially asked React JS interview questions in 2023.
+
+We start with the basic Reactjs interview questions and answers and then go on to advanced react interview questions. The last section is React coding interview questions.
+
+The interview questions for React developer presented here are mainly technical so that you can effectively interview your candidate and hire the best one.
+
+Basic ReactJS Interview Questions
+What is React?
+React is a JavaScript-based user interface library. Facebook developed it in 2011. React is used to create reusable and interactive user interface components. It handles the presentation layer for websites and mobile applications. 
+
+What are the advantages of using ReactJS?
+ReactJS has many benefits, including:
+
+Many frameworks require more technical knowledge. In React, JSX syntax allows the mixing of HTML and Javascript. React will turn HTML bits into functions when HTML is used in the render function.
+Incredibly efficient. React creates its own virtual DOM. It automatically calculates changes that need to be made in the DOM. The virtual DOM lends good performance, flexibility, and efficiency. 
+One-way data flow. Also known as “top to bottom” and “parent to child.” It makes debugging more manageable and helps to prevent errors.
+Developer tools. The ReactJS browser extension is great for debugging and looking at the virtual DOM. 
+Supports SEO. Search engine optimization is easy with React. The use of the virtual DOM renders a regular browser page which is more SEO-friendly when compared to other Javascript applications.
+User interface test cases. The virtual DOM in Javascript makes it easy to write UI test cases. 
+Ease of reusing components. React components can be used easily in projects with little need for changes.
+Popular. ReactJS is widely used and has a large community.
+What are the disadvantages of using ReactJS?
+While there are many benefits to ReactJS, there are also some disadvantages:
+
+React is only the view in the model-view-control, so developers will most likely use other technologies in projects. Integrating with a regular MVC model needs many significant changes.
+JSX can be difficult and might be a steep learning curve if entirely unfamiliar with JavaScript. 
+Documentation can be lacking in React libraries.
+Is React a framework or a library?
+React is a JavaScript library. The main use is to enable developers to make very efficient and composable user interfaces. Developers do not have to re-engineer the application, and React is easy to implement.
+
+What is JSX?
+React interview questions often include some mention of JSX. JSX is the abbreviation for JavaScript Syntax Extension. JSX allows you to write HTML and JavaScript together in React. It makes the React code simpler.
+
+What is a component in React.js?
+A component is a closed element that consists of user interface elements. Components are building blocks and can be reused. Every React component requires a render() function.
+
+What is meant by “state” in React.js?
+State is like a data store to the ReactJS component. A component’s state can change over time; whenever it changes, the component re-renders.
+
+“state” in React.js
+How is data passed between components?
+Components can pass data in the following ways:
+
+To pass data from parent to child, props can be used.
+To pass data from child to parent, callbacks can be used.
+Passing data among siblings can be done with:
+Redux or Reacts context API.
+Integrating the methods mentioned above.
+Data passed between components
+Why is a React component declarative?
+Declarative is usually defined as “telling what to do instead of how to do it”. The declarative nature of React is that when a developer writes a component, they simply tell React how they want the DOM to look, and simply let React handle it from there. Developers don’t have to worry about how the various elements currently on the web page should change, or which ones should be removed or inserted. The developer simply says, “I want a button here, and I want it disabled,” and React does it. “Now I want the button to be enabled.” No problem, React will do that, too.
+
+Can you explain the differences between createElement and cloneElement?
+A createElement is used by React to create an element. A cloneElement is used to clone an element and pass it new props. This is a basic explanation.
+
+What is a function component?
+A function component will return a React element. The main objective of the functional component is to render the view and the data to the browser.
+
+How are functional and class components different?
+Interview questions for React developers will most likely include components.
+
+Functional and class components 
+What is a prop?
+A property or prop is used to pass data into a component as an inlet. The component should not change props. Props allow components to be reusable.
+
+What is the difference between props and states in ReactJS?
+Props are used for passing data from one component to another. However, the data being passed is uni-directional, meaning it can only be passed from the parent to the child. The state of a component is an object that holds information that may change over the lifetime of that component.
+
+props and states in ReactJS
+What is the virtual DOM?
+The React virtual DOM is the new form of DOM that React creates. When a developer writes React code, they make changes to the virtual DOM, not the real DOM. When a user clicks a button, enters a value, or simply changes an element in a React component, React compares the state of the virtual DOM with the real DOM. If they’re the same, React doesn’t need to do anything. If they are different, React updates the real DOM to match the virtual DOM.
+
+virtual DOM
+Are shadow DOM and virtual DOM the same?
+The only thing they have in common is that they both help with performance difficulties. Both create a separate instance of the Document Object Model; besides this, both concepts are different.
+
+Virtual DOM is creating a copy of the whole DOM object.
+Shadow DOM creates small pieces of the DOM object which have their own, isolated scope for the element they represent.
+What are some differences between React and React Native?
+React is a JS library for building user interfaces based on UI components and is designed primarily for web apps. React Native is a framework for building responsive mobile UI. Open-source framework for creating cross-platform mobile apps on iOS, Android, and Windows.
+
+differences between React and React Native
+What is a React Router?
+React Router is an API, fully featured client and server-side routing library for React applications.
+
+In React Router v4, why is the switch keyword used?
+The ‘switch’ keyword is used when a developer wants to perform only a single route to be rendered amongst the various defined routes.
+
+Why is a router needed in React?
+React router enables the building of single-page web or mobile apps that allow navigating without refreshing the page. React router also allows the user to use browser functionality like the back button and the refresh page while maintaining the correct view of the app.
+
+What is React Fiber?
+It is the new reconciliation engine in React v16. React Fiber can render incrementally. It can also divide rendering work into chunks and divide the rendering work over multiple frames.
+
+What is Rendor() in React, and what purpose does it serve?
+Render means renewing only an appropriate part of the information on the user’s screen when the element properties (props) are changed by new ones or a component state (as a set of props) changes in the application. Thanks to the render method, you can avoid reloading the entire web page, saving time and improving performance.
+
+How can React app performance be improved?
+Multiple ways React developers can improve app performance.
+
+Lazy load components to reduce the load time of an application can improve performance. React devs can use suspense to lazy load components.
+State colocation can move the state closer to where it is needed. React applications can have a mess of unneeded states in parent components, making the code harder to maintain and unnecessary re-renders. 
+Using the useMemo Hook to memorize functions that do complicated render calculations helps improve performance. It will only recalculate when there is a change.
+React.PureComponent can help performance if the render function gives the same results with the same props and state.
+What are the keys in React?
+Keys help React improve the renders. If you want to match Virtual DOM elements with their data piloting the user interface, then keys are the answer. Keys allow React to re-order elements instead of re-rendering them. The key will identify which elements were changed.
+
+What is the use of a key when creating a list of components?
+Keys can keep track of list items that are rendered. It helps to identify what is added, updated, and changed.
+
+What are error boundaries?
+Error boundaries catch JavaScript errors in the child component tree and, after logging those errors, will bring up a fallback user interface. Error boundaries will see these errors during rendering, constructing a tree below them, and in lifecycle methods.
+
+Why were hooks created?
+Facebook introduced hooks to solve various problems.
+
+Allow the use of more features without classes.
+Components can be split up into smaller functions based on related pieces. 
+Stateful logic can be reused without having to change the component hierarchy.
+Removed the use of <this> keyword in class components.
+Why is the useEffect hook needed?
+The effect hook helps to group related code, which helps avoid redundant code. It lets developers perform side effects in functional components.
+
+useEffect hook
+import React, { useEffect } from 'react';
+
+function Welcome(props) {
+useEffect(() => {
+document.title = 'Loading completed';
+});
+return <h1>Hello, {props.name}</h1>;
+}
+In the above example, useEffect() the parameter is a function, that represents the side effect to be completed (change the page title). React will run this function once the component has been loaded.
+
+What is the use of refs?
+Refs are a special attribute that can be tied to any component. It can be an object, a callback function, or a string in the legacy API. For example, a ref attribute can be used as a callback function to get direct access to a DOM element. Refs should generally be avoided except in special circumstances, such as:
+
+Triggering imperative animations.
+Managing media playback, focus, and text selection.
+Integrating with third-party DOM libraries.
+What does React onClick handler do?
+When a user clicks an element in your app, such as a button, the React onClick event handler lets you call a function and start an action.
+
+In a React app, this button onClick event would be written as follows:
+
+<button onClick={hireDevelopers}>
+Hire Developers
+<button>
+What is dangerouslySetInnerHTML?
+This property can render raw HTML in a component. Its use is rare because it makes an application vulnerable to attacks. 
+
+How can direct access be gained to components underlying the DOM element?
+The virtual DOM that React uses means that direct access to the DOM is rare and usually unadvised. However, if access is necessary, then using the ref property, as shown in the example below, is how direct access can be obtained.
+
+How is the value of an input field accessed in React?
+The value placed in an input field can be accessed by the onChange event handler using event.target.value.
+
+import {useState} from 'react';
+
+const App = () => {
+const [message, setMessage] = useState('');
+
+const handleChange = event => {
+setMessage(event.target.value);
+
+console.log('value is:', event.target.value);
+};
+
+return (
+<div>
+<input
+type="text"
+id="message"
+name="message"
+onChange={handleChange}
+value={message}
+/>
+
+<h2>Message: {message}</h2>
+</div>
+);
+};
+
+export default App;
+How would an error in a child component be intercepted?
+To catch an error in a child component, the getDerivedStateFromError(error) method can be used in the parent component. This uses a fallback interface or component that will be displayed, and the method should return an object with one or more state variables in the value set.
+
+What is the reason for the ReactDOM package?
+The ReactDOM package offers DOM-specific methods. This is used when web applications need to be rendered in a browser. One of the most common functions is ReactDOM.render() which renders the top component in the DOM. Another function commonly used is hydrate() which refills a DOM container from pre-rendered HTML.
+
+What are controlled components in React? What about uncontrolled?
+Controlled components are those in which the form’s data is handled by the state of the component. It takes its current value via props and changes it via callbacks such as onClick, onChange, and so on.
+
+const { useState } from 'react';
+
+function Controlled () {
+const [email, setEmail] = useState();
+
+const handleInput = (e) => setEmail(e.target.value);
+
+
+return <input type="text" value={email} onChange={handleInput} />;
+}
+Uncontrolled components are those components that are handled by the DOM but are not under the control of the React state. Therefore, developers use refs to access any value that has been entered.
+
+const { useRef } from 'react';
+
+function Example () {
+const inputRef = useRef(null);
+return <input type="text" defaultValue="bar" ref={inputRef} />
+}
+Why should you not use an array index value as a key when rendering lists?
+An index should not be used as a key. React uses the value of a key to identify a component instance in the virtual DOM. The key value needs to be unique and unchanging. The index of an array mutates over time, making it unusable in that scenario.
+
+How is an initial state for a component set up?
+An initial state refers to the initial settings for state variables when the component is first rendered in the app, which can be easily accomplished using props.
+
+How would you conditionally render components in React?
+“if” statement can be used to implement conditional rendering.
+
+What is the create-react app used for?
+It is possible to quickly bootstrap a React application by installing the create-react-app command-line tool. The create-react-app has several advantages over other alternatives, including only one dependency, no dependency lock-in, and very easy maintenance of the React application.
+
+What is the use of context in React?
+The React context provides data to components regardless of their position in the component tree. So react context enables passing data through the component tree without manually passing props down at every level.
+
+What is the meaning of “lifting state up”?
+React.js interview questions may also include some familiar terms to developers, such as “lifting state up.” A state variable is used across many components in an extensive application. This is why, in an application hierarchy, a state variable should be positioned at the closest parent component so that no additional mechanism is needed to synchronize data between components. 
+
+Where and why would fragments be used in React?
+Component render functions cannot have multiple top-level components in adjacent nodes. Developers must wrap them inside a <div> or other top-level components to make it work. DOM nodes are often introduced due to this, such as wrapper divs or other elements, which aren’t needed by the layout but are necessary to maintain consistency. HTML can also be incorrectly generated in many cases as a result. Fragments help to resolve these problems. It is possible to enclose your top-level sibling nodes within the fragments component without adding an unnecessary DOM node. 
+
+Where and why should you fetch data from an API in a component?
+When creating user interfaces, we often have to get data from the API. For example, on an e-commerce site, products will be fetched from an API. Namely, such data: images of products, prices, names, comments, etc. A lifecycle method such as componentDidMount() is an excellent place to fetch data from an API call. This method is executed once the component has been inserted into the DOM tree and mounted.
+
+Can React component names start with numbers?
+No, but you can contain numbers after the first character.
+
+How are synthetic events handled in React?
+To finish the basic React interview questions, a question about events can be asked.
+
+SyntheticEvent is React’s cross-browser wrapper for the browser’s native event. Browsers can recognize many different types of events (e.g. KeyboardEvent, MouseEvent, or ErrorEvent) and will have varying levels of functionality for each of them. But the SyntheticEvent object creates consistency across browsers. The synthetic event will have the same interface as the native but will work universally.
+
+Advanced React Interview Questions and Answers
+To start the advanced ReactJS interview questions, ask about higher-order components.
+
+What are higher-order components?
+A higher-order component or HOC is a function that will take a component and return a new component. This is an advanced technique that reuses component logic. When a component transforms props into a user interface, a higher-order component transforms a component into another component.
+
+Higher-order components
+What is Redux?
+Redux stores all the application’s state in a single JavaScript object, which acts as a store for the entire application. To change the state, you must fire actions from your application and then write reducers for these actions.
+
+What are the advantages of Redux?
+It is precise about code organization and makes the code consistent and easier to work on with many different developers. 
+The code is easy to test because functions are small, pure, and isolated.
+Popular with a large community that contributes to the library.
+Changes can be tracked on the application in real-time.
+Server-side rendering can be done by passing the store created on the server to the client side. This can result in a better initial render.
+The code is easy to maintain because it has a strict structure and predictable outcomes.
+The single source of truth promotes predictable outcomes because there is no question of how to sync the current state with actions.
+What are the components of Redux?
+This is a common advanced react interview question. The components of Redux are:
+
+Action: The only source of information that sends data from the application to the store. Actions are sent to the store with store.dispatch().
+Reducer: This is a function that takes the current state and action as arguments and returns the updated state based on the action.
+Store: This is the heart of Redux where the state is stored.
+What is Flux?
+This is one of the common ReactJS advanced interview questions you may ask. Flux is neither a framework nor a library but a type of architecture that works alongside one-way data flow. It is an application architecture for creating layers in JavaScript apps.
+What are the differences between Flux and Redux?
+Differences between Flux and Redux
+What are Webpack and Browserify?
+Webpack and Browseify render code for a specific place, processing it into one or more clusters. However, they do differ in many ways. Webpack has many tools by default and is a popular module packaging system built on Node.js. If using Browserify, a developer will have to download add-ons.
+
+Webpack and Browserify
+How would you re-render a React component?
+If a prop or state is updated, then React rerenders components.
+
+There is also another undesirable forceUpdate() method to cause a re-render.
+
+What are the different life cycle methods in React?
+Creating a component in ReactJS involves using different parts of the life cycle. There are four different phases of the life cycle of a React component. 
+
+Mounting: The component is ready to be mounted in the browser DOM.
+Updating: The component’s status is updated in two ways, sending the new props and updating the state either from setState() or forceUpdate().
+Unmounting: The component is no longer needed and is removed from the browser DOM.
+Phases of the life cycle of a React component
+What are the various methods in the life cycle mounting phase?
+In-depth knowledge of the life cycle phases may be included in advanced React interview questions. The different methods in the life cycle mounting phase are
+
+constructor(),
+getDerivedStateFromProps(),
+render(),
+and componentDidMount()
+56. What are the life cycle methods in the updating phase?
+
+The different methods in the life cycle updating phase are:
+
+getDerivedStateFromProps(),
+shouldComponentUpdate(),
+render(),
+getSnapshotBeforeUpdate(),
+and componentDidUpdate()
+57. What is prop drilling?
+
+Prop drilling is when data is passed from one component through multiple interdependent components until it reaches the component that requires the data. Passing data through multiple components is not an effective method for creating clean, reusable, and DRY code.
+
+
+How can prop drilling be avoided?
+To avoid prop drilling, developers should use React Context, which enables the creation of something similar to a global data store and allows any component to be in “context” to access the data store. If the developer wants to solve this problem without using context, he/she can use Component Composition as suggested by the React Docs.
+
+What is a strict mode in ReactJS?
+Strict mode is used to highlight potential problems in the application. It initiates extra checks and warnings for its descendants. Strict Mode helps with the following:
+
+Identifying components with unsafe lifecycles
+Warning about legacy string ref API usage
+Warning about deprecated findDOMNode usage
+Unexpected side effects detection
+Legacy context API detection
+How would you lazy-load components in an extensive React application?
+Lazy-load is when components are loaded as needed in an application. When using a webpack as the build tool and create-react-app tool, all the components are fully bundled and loaded before the application can execute. This can be fine in certain cases but not in a large React app. The code should be split across multiple components and loaded where the lazy-load component is needed.
+
+How is React different from Angular and VUE?
+React is a UI library, Angular is a fully-fledged front-end framework, and Vue.js is a progressive framework.
+
+React vs Angular vs VUE
+What is the use of arrow functions in React?
+The arrow function is something you should be ready to ask for React advanced interview questions.
+
+Arrow functions provide an easier syntax to create functional components in React; developers use arrow functions to define a simple component in minutes. Arrow functions are also simple to use as callbacks in class components. Due to the fact that arrow functions do not change the value of “this” within their function body, they frequently prevent bugs related to the “this” keyword; it always refers to an instance of the class.
+
+What are Pure components in React?
+A React.PureComponent is a class component that comes with an implementation of the shouldComponentUpdate lifecycle method. It performs a quick comparison of state and props before updating. The usage of React.PureComponent gives a considerable increase in performance because it reduces the number of render operations in the application.
+
+How do you enable React’s production mode?
+Developers can use Webpack’s DefinePlugin method to set NODE_ENV, which puts React into production mode. This will take out extra warnings and propType validation.
+
+What is Babel?
+Babel is a JavaScript compiler that ensures developers can write concise and expressive React components in JSX. Babel also provides syntax transformer plugins so that developers can use the most recent syntax in their code without having to wait for browser support.
+
+Is setState() in React.js async?
+The actions of setState() are asynchronous and are batched for performance gains. This action does not immediately mutate this.state, it instead creates a pending state transition.
+
+Before re-rendering, React “waits” until all components call setState() in their event handlers. This improves performance by eliminating unnecessary re-renders. Why doesn’t React just update this.state without re-rendering? The reason for this is that it would break the consistency between props and state, resulting in issues that would be difficult to debug.
+
+React Coding Interview Questions for Senior Reactjs Developers
+If you go to GitHub, you will see that the top React interview questions from GitHub are about how to create components in React
+There are functional components and class components.
+
+Function components are the easiest way to create components. They are pure JavaScript functions that accept the props object as the first parameter and then return React elements. Class components can also use the ES6 class to define components. The example shows functional and class components.
+
+function Greeting({ message }) {
+return <h1>{`Hello, ${message}`}</h1>
+}
+
+class Greeting extends React.Component {
+render() {
+return <h1>{`Hello, ${this.props.message}`}</h1>
+}
+}
+Why ref=’string’ is “legacy”?
+String Refs were removed in React v16 because of the many problems they could cause.
+
+They force React to keep track of the currently executing component. As a result, when react module is duplicated in the bundle, strange errors arise. This is problematic because it makes react module stateful.
+They don’t work with static analysis the way Flow does.
+It doesn’t work as most people would expect with the “render callback” pattern (e.g. <DataGrid renderRow={this.renderRow} />)
+They are not composable — If a library places a ref on the passed child, the user cannot place another ref on it. Callback refs are completely composable.
+How to create props proxy for HOC components?
+A props proxy pattern can be used to add and edit props passed to the component. The example below demonstrates this.
+
+function HOC(WrappedComponent) {
+return class Test extends Component {
+render() {
+const newProps = {
+title: 'New Header',
+footer: false,
+showFeatureX: false,
+showFeatureY: true
+}
+
+return <WrappedComponent {...this.props} {...newProps} />
+}
+}
+}
+Search text based on list
+Ask these react interview coding questions during an interview and give simple coding examples.
+
+const people = [
+"Adam Smith",
+"Jim Jones",
+"Mary Thomas"
+];
+
+function App() {
+const [searchTerm, setSearchTerm] = React.useState("");
+const [searchResults, setSearchResults] = React.useState([]);
+
+const handleChange = (e) => {
+setSearchTerm(e.target.value);
+};
+
+React.useEffect(() => {
+const results = people.filter((person) =>
+person.toLowerCase().includes(searchTerm.toLowerCase())
+);
+setSearchResults(results);
+}, [searchTerm]);
+return (
+<div className="App">
+<input
+type="text"
+placeholder="Search"
+value={searchTerm}
+onChange={handleChange}
+/>
+<ul>
+{searchResults.map((item) => (
+<li>{item}</li>
+))}
+</ul>
+</div>
+);
+}
+71. Call child method from parent
+
+To call a child method from a parent method in React, first, the developer needs to wrap the child component in a “forwardRef”. Next, use the “useImperativeHandle” hook to add the function to the child component. Then call the child function from the parent component using Ref. The use of forwardRef was used to forward the Ref from the parent to the child.
+
+import { forwardRef, useRef, useImperativeHandle } from "react";
+
+const Child = forwardRef((props, ref) => {
+useImperativeHandle(ref, () => ({
+getMessage() {
+alert("Message from Child");
+}
+}));
+
+return <h1>Child Component</h1>;
+});
+
+const Parent = () => {
+const childRef = useRef();
+
+return (
+<div>
+<Child ref={childRef} />
+<button onClick={() => childRef.current.getMessage()}>Click</button>
+</div>
+);
+};
+How to show or hide components and elements in React?
+Different conditional operators, css styles, or animation libraries can be used to achieve components and elements being hidden or shown.
+
+How to write comments?
+Including comments is an important tool in coding. It can help when multiple people work together and keep a project organized. The comments in React are similar to JavaScript multiline comments but have curly braces. The example below shows both single-line and multiline comments.
+
+<div>
+{/* Single-line comments(In vanilla JavaScript, the single-line comments are represented by double slash(//)) */}
+{`Welcome ${user}, let's play React`}
+</div>
+
+<div>
+{/* Multi-line comments for more than
+one line */}
+{`Welcome ${user}, let's play React`}
+</div>
+
+
 72 Essential React Interview Questions *
 Toptal curated essential questions that the best React developers can answer. Sourced from our talent community, developers are encouraged to submit questions that reflect the evolving skills React developers need today.
 
