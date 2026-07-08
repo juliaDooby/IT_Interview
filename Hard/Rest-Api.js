@@ -1,3 +1,239 @@
+Top 20 REST API Interview Questions & Answers [2026]
+ 
+
+One of the primary challenges in modern tech is the need for an ever-expanding number of software applications and services to interact with each other. The solution is to implement some form of standardization, and more often than not, this involves a REST API.
+
+It’s not surprising, therefore, that most tech companies expect their software engineers to have a working knowledge of web-based APIs during the interview process. And more often than not, this will gravitate towards REST API questions, including RESTful web service interview questions.
+
+So whether you’re looking to land your first job as a software engineer, or an experienced backend engineer who wants to switch things up with a new role at a new company, you’ll want to demonstrate your REST skills and knowledge when answering these REST interview questions.
+
+This article covers 20 of the most popular REST API interview questions and answers, ranging from beginner to advanced.
+
+Download our REST API Interview Questions and Answers PDF here.
+
+REST API Interview Questions for Beginners
+1. What Is a REST API?
+REST, or Representational State Transfer, is a web service architecture that uses HTTP requests, including GET, PUT, POST, and DELETE, to send and access data from various sources. 
+
+REST APIs allow frontend and backend applications to interact with each other via HTTP requests and API endpoints, which typically resemble standard URLs.
+
+You can use most modern programming languages to create REST APIs, and these typically send/receive data using a JSON or XML data format.
+
+
+
+Note that this is probably one of the most obvious interview questions on REST API, so make sure you’re ready!
+
+2. What Is a RESTful Web Service?
+RESTful web services are created by following the REST architecture design pattern, which means they are implemented using the HTTP protocol and its various methods.
+
+Typically, RESTful web services are maintainable, scalable, and allow communication between various other applications, regardless of the base programming language used to make the app.
+
+
+
+Side note, this is another one of those really obvious REST web services interview questions, so make sure you’ve got this one covered!
+
+3. What Is a REST API Resource?
+Any content that can be accessed with a REST API is a resource. These resources are like objects in object-oriented programming, meaning they have a type, methods, data properties, and logical relationships with other API resources.
+
+Typically, we think of API resources as some type of data, whether text, multimedia (images/video), source files, etc. REST clients can access resources using HTTP requests to interact with the resource’s URI (uniform resource identifier).
+
+4. What Is a URI?
+URIs or uniform resource identifiers are used in REST APIs to identify an API resource on the API server. Each API resource has its unique URI, a string passed to an HTTP request to access or modify the resource on the API server.
+
+Typical URI format:
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>â€‹
+Example URI:
+
+https://api.test.com/resource-type/resource-idâ€‹
+5. List and Summarize Common HTTP Response Codes
+HTTP response codes can be quickly analyzed by the first digit.
+
+1XX - informational response
+2XX - successful response
+3XX - redirect
+4XX - client error
+5XX - server error
+Some of the more common HTTP responses are:
+
+200 (OK): request successful
+201 (Created): request successful & resource created
+400 (Bad Request): request unsuccessful due to user error (typo or data missing)
+401 (Unauthorized): request unsuccessful, client not authenticated/authorized
+403 (Forbidden): request unsuccessful; client authenticated, but not authorized
+404 (Not Found): request unsuccessful; the server cannot find the resource
+500 (Internal Server Error): request unsuccessful due to an unexpected server error
+502 (Bad Gateway): request unsuccessful due to invalid server response
+503 (Service Unavailable): server undergoing maintenance/unavailable, cannot process request
+
+
+Note, this is one of those REST web service interview questions and answers that you should instantly know the answer to if you plan to work with or design REST APIs. 
+
+6. How Do You Use a REST API?
+If, for example, you wanted to retrieve customer order information from an eCommerce database, you would need to specify the API endpoint, a specific URL used to retrieve the data. 
+
+Next, you would define the data you want to retrieve by specifying the necessary JSON parameter values for the API’s resource access logic. This information will be delivered via an HTTP request’s headers (or payload if you want to delete or modify data using the API).
+
+You would then submit an HTTP request, likely a GET, to the API endpoint for this example. The API would then return the requested data in a JSON payload, which you can process on your local machine.
+
+7. How Is a REST API Stateless?
+Statelessness means that the REST API server doesn’t store any information about previous client communications. As a result, the server and client have no information about each other’s state, allowing the server to free up storage that would otherwise be needed to maintain records for each request. 
+
+Because of this, each request made to a REST API is seen as a brand-new interaction, meaning that on each occasion, a client needs to supply all of the necessary information to complete an API request successfully.
+
+Intermediate RESTful API Interview Questions
+8. How Would You Troubleshoot REST API Resource Request Issues?
+Initial debugging: check server logs for error details, including which endpoint URL was accessed and which data type was sent with the request
+Check headers: verify the required headers and query parameters were sent correctly and formatted properly
+Endpoint testing: check the endpoint URL with different clients or browsers to spot any patterns for response issues
+Tools: use curl, Postman, or other API tools to send sample requests and verify the response is as expected, including status codes and output formatting
+9. How Can You Protect a REST API From Spamware or Bots?
+Rate limits can prevent users from exceeding a predefined threshold for REST API requests for a certain time interval. This will protect the API server from overloading or crashing by restricting user API access for a short time.
+
+This restriction is usually tied to the user’s IP, protecting the API server from spam bots or other malicious attacks. Depending on the user’s technical proficiency, they can confirm that they’ve been rate limited by checking the HTTP response code and any JSON data returned by the API.
+
+10. Summarize the Primary HTTP Methods Available for REST APIs
+GET: retrieves data from the API by specifying an endpoint URL, does not require the user to send a message body
+POST: sends new data for processing by the API, usually creating a new resource that the API returns to the user. Requires a message body to submit the data
+PUT: like POST, but used to update or modify an existing resource
+PATCH: instructions to modify a resource on the server (differs to PUT as it doesn’t send a modified version, but just instructions to modify)
+DELETE: removes an existing resource from the API server
+There are two further HTTP methods used by a REST API, but these are less common.
+
+OPTIONS: retrieves a list of supported methods that can be used with REST API resource
+HEAD: like GET, but retrieves metadata about the API resource
+11. What’s the Difference Between REST & SOAP APIs?
+SOAP is a protocol that’s used to build secure APIs, while REST is an architectural design pattern with a set of guidelines
+SOAP uses a service interface for resource logic, while REST uses URIs (uniform resource indicators)
+SOAP clients are like software apps, while REST clients are more like browser-based web apps
+REST APIs are typically simpler to build and faster than SOAP APIs.
+SOAP APIs might be considered more secure, as REST depends on the security of the protocol it uses (HTTP, for instance)
+REST allows responses to be cached, but SOAP doesn’t
+SOAP uses XML to encode data, but REST lets you use JSON, XML, MIME, text, and more
+Note, this is probably one of the most popular REST services interview questions, so it will pay off if you spend some time refreshing this topic.
+
+12. What Is CRUD in the Context of a REST API?
+CRUD is a well-known acronym to represent Create, Read, Update, and Delete. These different actions are typically associated with databases. In the context of a REST API, we can perform each action type on a database via HTTP requests.
+
+
+
+Create: requires the HTTP POST method
+Read: requires the HTTP GET method
+Update: requires the HTTP PUT method
+Delete: requires the HTTP DELETE method
+13. Summarize the Main Parts of an HTTP Request
+Request method: GET, POST, PUT, or DELETE
+URI: identify the resource on the API server
+HTTP version: lets the API know which version to respond with (i.e. HTTP v1.1)
+Request header: metadata, including user agent, accepted file format, request body format, language, caching, etc
+Request body: message content sent to API server, typically used with modification actions via POST or PUT
+14. Summarize the Differences Between REST & AJAX
+REST: Representational State Transfer
+
+AJAX: Asynchronous JavaScript and XML
+
+HTTP requests and URIs to access resources (data)
+
+XMLHttpRequest Objects request server data, interpreted dynamically with JavaScript
+
+Architectural design pattern for APIs
+
+Dynamic webpage content
+
+Client and Server need to interact
+
+Asynchronous server interaction
+
+Advanced RESTful API Questions
+15. How Can You Use Curl to Test a REST API Endpoint?
+The curl command-line tool allows you to send HTTP requests from the terminal, which is helpful for checking proper response formatting and correct status codes from an API endpoint.
+
+When using curl to test an API endpoint, various optional parameters can help.
+
+curl -H : change the Content Type or Accept headers
+curl -v : return a verbose output
+curl -I : fetch HTTP headers (inc. response codes)
+curl -L : follow redirects to the final destination
+Using the syntax below, we can test a REST API endpoint using curl. In this instance, we have used each optional parameter shown above to return as much detail as possible. We’ve also specified an Accept header in JSON format.
+
+General syntax:
+
+curl [OPTIONS] [ENDPOINT_URL]â€‹
+Testing an API endpoint:
+
+curl -H "Accept: application/json" -v -I -L http://www.api.test.com
+16. Can You Use TLS (Transport Layer Security) With a REST API?
+Yes, TLS can be used to encrypt communications between a client and the REST API server, providing a secure way to access API resources. 
+
+To benefit from TLS encryption and security, requests must be made with HTTPS rather than standard HTTP. This is important because the REST API takes on the security properties of the protocol that it uses for communication.
+
+17. What Is Caching in the Context of a REST API?
+REST APIs can use caching to temporarily store server responses in a memory location, allowing this to be fetched more quickly in the future, which enhances server performance by reducing the server workload for frequent activities and requests.
+
+Note that caching relates to server activities and storing information about server requests, which means it does not include client-specific interaction details. As a result, REST APIs can implement caching and still maintain statelessness.
+
+18. How Can You Secure a REST API?
+Generally speaking, REST APIs are less secure than SOAP APIs, which means they are not well-suited to sharing sensitive information. Despite this, you can utilize various safety features to ensure relatively high security.
+
+Non-sensitive info in URIs: username, password, or authentication tokens shouldn’t be visible in a resource URI
+Encryption: TLS or SSL for client-server connections prevents requests from being intercepted 
+Rate-limiting: request thresholds and throttling prevent DDoS, or other brute force attacks
+Authentication & Authorization: authentication verifies the client identity and authorization confirms client permissions to access resources
+Validation: scan requests for ‘malicious’ code like SQL injection attacks before providing API access to resources
+19. Summarize the Best Practices for Creating URIs
+Plural nouns that are unambiguous
+Hyphens to separate words for long resource names (no spaces or underscores)
+Lowercase characters and no special characters
+Maintain backward compatibility via HTTP 300 codes 
+Avoid file extensions (.doc, .txt, .png, etc.)
+Correct HTTP method (GET, PUT, DELETE, etc.) 
+Don’t use HTTP method names in URIs, i.e., don’t use …/get-resource
+Forward slashing to define resource hierarchy
+
+
+20. What Are Idempotent Methods?
+Idempotent methods return the same outcome for a request no matter how often the request is made. These are particularly useful in preventing duplicated client requests from being handled by a REST API, whether made intentionally or because of an unexpected bug in client-side code.
+
+Regarding the HTTP methods used by REST APIs, GET, PUT, DELETE, HEAD, and OPTIONS are idempotent, while POST is not because it’s used to create new resources, and this cannot yield the same output each time.
+
+You might think that PUT would share the same traits as POST; however, if a client updates a resource with the same parameters on multiple occasions, then the output will be the same in each instance, meaning that PUT is idempotent.
+
+Note that this is one of those RESTful interview questions that will impress any hiring manager, so don’t skip past it!
+
+Bonus Tips for API Design Interview Questions
+Select the best framework: Have a working knowledge of various web development frameworks that can be used to build a REST API, such as Django, Flask, Express.js, etc
+Prioritize efficiency & performance: Understand how latency, bandwidth, caching, data serialization, etc., impact efficiency and performance
+Emphasize simplicity & flexibility: Use standardized HTTP methods to access resources, standardized data formats like JSON, and provide clear documentation for developers to use
+Employ best practices: Familiarize yourself with common design patterns for JSON responses, HTTP status codes, URI naming conventions, caching strategies, etc
+Conclusion
+REST APIs are often the solution for allowing a diverse range of software applications to communicate efficiently, reliably, and securely.
+
+As a result, software engineers are expected to have a working knowledge of REST APIs, RESTful web services, and associated topics like JSON data formats, HTTP methods/response codes, and more.
+
+Whether you’re applying for your first software engineering job or looking for a new role that requires REST API knowledge, you’ll want to brush up on your REST API skills; that way, you’ll be ready to tackle common RESTful services interview questions.
+
+This article has covered 20 of the most common REST API interview questions, with topics ranging from beginner to advanced REST interview questions and answers for experienced engineers.
+
+If you spend some time working through these RESTful interview questions and answers, you should be ready for anything they throw at you!
+
+Download our REST API Interview Questions and Answers PDF here.
+
+Want to become a REST API developer but unsure where to start?
+
+We recommend this Udemy course:
+
+REST APIs with Flask and Python
+
+Frequently Asked Questions
+1. What Are REST API Interview Questions?
+REST API interview questions typically focus on topics like HTTP methods, how to troubleshoot REST APIs, the difference between REST and SOAP APIs, the difference between REST and AJAX, best practices for URI naming, how to use caching, and more. Check out the 20 questions and answers above.
+
+2. What Are the Four Most Common REST API Operations?
+The four most common REST API operations are GET, POST, PUT, and DELETE. These correspond to the standard HTTP methods for reading data (GET), creating new resources (POST), updating existing resources (PUT), and removing or deleting resources (DELETE).
+
+3. What Is REST API Used For?
+REST APIs are commonly used for building web applications and services that allow users to access and modify data through a standardized set of HTTP requests.
+
 
 6 REST API Interview Questions Every Developer Should Know
 Written By April Bohnert | September 7, 2023
