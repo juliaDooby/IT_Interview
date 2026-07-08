@@ -1,9 +1,1117 @@
+SQL на собеседовании аналитика: 15 задач, которые точно спросят, и как их решать
+8 ноя
+Содержание
+Введение: почему SQL — это 70% успеха на собеседовании аналитика
+Часть 1: Теоретические вопросы, которые отсеивают 50% кандидатов
+Часть 2: Практические задачи для Junior-аналитиков
+Часть 3: Практические задачи для Middle-аналитиков
+Часть 4: Практические задачи для Senior-аналитиков
+Часть 5: Как готовиться к SQL-собеседованию
+Частые ошибки на SQL-собеседованиях и как их избежать
+Чек-лист перед собеседованием
+Итоговые рекомендации: что запомнить навсегда
+Введение: почему SQL — это 70% успеха на собеседовании аналитика
+Если вы идёте на собеседование на позицию продуктового или данных аналитика в 2025 году, будьте готовы: SQL-секция займёт от 40 минут до 1,5 часов вашего интервью. По данным исследования HackerRank 2024, SQL проверяют в 89% собеседований на аналитические позиции — это больше, чем Python (67%) и Excel (54%) вместе взятые.
+
+Почему так? Потому что SQL — это язык, на котором аналитик думает. Вы можете знать теорию A/B-тестов, уметь строить красивые дашборды в Tableau, но если вы не можете самостоятельно вытащить данные из базы и проверить гипотезу — вы не аналитик, а оператор чужих отчётов.
+
+Что вас ждёт на собеседовании:
+- 5-10 минут теоретических вопросов (отличия JOIN, индексы, нормализация)
+- 30-60 минут практических задач с нарастающей сложностью
+- Live coding или тестовое задание на платформе (LeetCode, HackerRank, внутренняя система компании)
+- Обсуждение ваших решений: "Почему выбрали этот подход? Как будет работать на 100 млн строк?"
+
+В этой статье я собрал 15 задач, которые реально встречаются на собеседованиях в российских и международных IT-компаниях. Не абстрактные "employees и departments", а реальные бизнес-кейсы: расчёт retention, когортный анализ, воронки конверсии, метрики SaaS-продуктов.
+
+Часть 1: Теоретические вопросы, которые отсеивают 50% кандидатов
+Вопрос 1: В чём разница между INNER JOIN, LEFT JOIN и FULL OUTER JOIN?
+Почему спрашивают: Это базовая проверка, понимаете ли вы, что делаете, когда объединяете таблицы. 90% аналитической работы — это JOIN.
+
+Правильный ответ:
+
+INNER JOIN — возвращает только те строки, где есть совпадение в ОБЕИХ таблицах.
+
+-- Пример: только пользователи, которые сделали хотя бы один заказ
+SELECT u.user_id, u.name, COUNT(o.order_id) as orders_count
+FROM users u
+INNER JOIN orders o ON u.user_id = o.user_id
+GROUP BY u.user_id, u.name;
+LEFT JOIN — возвращает ВСЕ строки из левой таблицы + совпадения из правой (если нет совпадения — NULL).
+
+-- Пример: ВСЕ пользователи + количество заказов (даже если 0)
+SELECT u.user_id, u.name, COUNT(o.order_id) as orders_count
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id
+GROUP BY u.user_id, u.name;
+FULL OUTER JOIN — возвращает ВСЕ строки из обеих таблиц (редко используется в аналитике).
+
+Ловушка: Многие путают LEFT JOIN и INNER JOIN. Если вы делаете LEFT JOIN, а потом в WHERE фильтруете по колонке из правой таблицы (WHERE o.status = 'completed'), вы превращаете LEFT JOIN в INNER JOIN. Правильно фильтровать в самом JOIN через AND.
+
+Вопрос 2: Чем WHERE отличается от HAVING?
+Правильный ответ:
+
+WHERE фильтрует строки ДО агрегации (GROUP BY)
+
+HAVING фильтрует группы ПОСЛЕ агрегации
+
+-- Неправильно (не сработает):
+SELECT category, COUNT(*) as products_count
+FROM products
+WHERE COUNT(*) > 10  -- ОШИБКА! WHERE не работает с агрегатными функциями
+GROUP BY category;
+
+-- Правильно:
+SELECT category, COUNT(*) as products_count
+FROM products
+GROUP BY category
+HAVING COUNT(*) > 10;  -- Фильтруем уже посчитанные группы
+Бизнес-пример:
+
+-- Категории, где больше 50 товаров дороже 1000 рублей
+SELECT category, COUNT(*) as expensive_products
+FROM products
+WHERE price > 1000  -- Сначала фильтруем товары
+GROUP BY category
+HAVING COUNT(*) > 50;  -- Потом фильтруем категории
+Вопрос 3: Что такое индексы и когда их использовать?
+Почему спрашивают: Аналитик должен понимать, почему его запрос работает 10 минут вместо 2 секунд.
+
+Правильный ответ:
+
+Индекс — это структура данных (обычно B-tree), которая ускоряет поиск строк по определённым колонкам. Представьте книгу: можно читать все 500 страниц подряд (full table scan), а можно открыть предметный указатель (индекс) и сразу найти нужную страницу.
+
+Когда создавать индекс:
+- Колонки в WHERE, JOIN, ORDER BY
+- Колонки с высокой селективностью (много уникальных значений)
+- Таблицы, которые ЧИТАЮТСЯ часто, а пишутся редко
+
+Когда НЕ создавать:
+- Маленькие таблицы (< 1000 строк)
+- Колонки с низкой селективностью (пол, булевы флаги)
+- Таблицы с частыми INSERT/UPDATE (индексы замедляют запись)
+
+-- Без индекса: full table scan по 10 млн строк
+SELECT * FROM orders WHERE user_id = 12345;  -- 8 секунд
+
+-- С индексом: мгновенный поиск
+CREATE INDEX idx_orders_user_id ON orders(user_id);
+SELECT * FROM orders WHERE user_id = 12345;  -- 0.02 секунды
+Вопрос 4: В чём разница между UNION и UNION ALL?
+Правильный ответ:
+
+UNION — объединяет результаты двух запросов и удаляет дубликаты (медленно)
+
+UNION ALL — объединяет результаты и оставляет дубликаты (быстро)
+
+-- UNION: удалит дубликаты (если один и тот же пользователь есть в обеих таблицах)
+SELECT user_id FROM active_users
+UNION
+SELECT user_id FROM trial_users;
+
+-- UNION ALL: оставит дубликаты (быстрее, если дубликаты невозможны)
+SELECT user_id FROM orders_2023
+UNION ALL
+SELECT user_id FROM orders_2024;  -- разные периоды, дубликатов нет
+Бизнес-кейс: Если вы объединяете данные из партиционированных таблиц (по месяцам/годам), используйте UNION ALL — он в 2-3 раза быстрее, потому что не тратит время на проверку уникальности.
+
+Вопрос 5: Что такое подзапросы (subqueries) и когда их лучше заменить на JOIN?
+Правильный ответ:
+
+Подзапрос — это SELECT внутри другого SELECT. Они бывают:
+1. Скалярные (возвращают одно значение)
+2. Табличные (возвращают таблицу)
+3. Коррелированные (зависят от внешнего запроса)
+
+-- Скалярный подзапрос: средняя цена по всем товарам
+SELECT product_id, name, price,
+       (SELECT AVG(price) FROM products) as avg_price
+FROM products;
+
+-- Табличный подзапрос: товары дороже средней цены
+SELECT * FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+
+-- Коррелированный подзапрос (МЕДЛЕННО на больших данных!)
+SELECT p.category, p.name, p.price
+FROM products p
+WHERE p.price = (
+    SELECT MAX(price)
+    FROM products
+    WHERE category = p.category  -- зависит от внешнего запроса!
+);
+Когда заменить на JOIN:
+Коррелированные подзапросы выполняются для каждой строки внешнего запроса. На таблице в 1 млн строк это катастрофа.
+
+-- То же самое через window function (в 100 раз быстрее):
+SELECT category, name, price
+FROM (
+    SELECT category, name, price,
+           ROW_NUMBER() OVER (PARTITION BY category ORDER BY price DESC) as rn
+    FROM products
+) t
+WHERE rn = 1;
+Часть 2: Практические задачи для Junior-аналитиков
+Задача 1 (Junior): Найти топ-5 товаров по выручке
+Бизнес-кейс: Вы работаете в e-commerce. Нужно понять, какие товары приносят больше всего денег, чтобы выделить их на главной странице.
+
+Таблицы:
+
+-- Таблица заказов
+orders (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    price DECIMAL,
+    order_date DATE
+)
+Вопрос: Выведите топ-5 товаров по общей выручке за всё время.
+
+Решение:
+
+SELECT
+    product_id,
+    SUM(quantity * price) as total_revenue
+FROM orders
+GROUP BY product_id
+ORDER BY total_revenue DESC
+LIMIT 5;
+Объяснение:
+1. SUM(quantity * price) — общая выручка (количество × цена)
+2. GROUP BY product_id — группируем по товарам
+3. ORDER BY ... DESC — сортируем от большего к меньшему
+4. LIMIT 5 — берём только первые 5 записей
+
+Ловушка: Если интервьюер спросит "А как учесть возвраты?" — нужно добавить фильтр WHERE status != 'returned' или вычитать возвраты отдельным запросом.
+
+Задача 2 (Junior): Количество новых пользователей по месяцам
+Бизнес-кейс: Вам нужно построить график роста пользовательской базы по месяцам для презентации инвесторам.
+
+Таблицы:
+
+users (
+    user_id INT,
+    registration_date DATE,
+    country VARCHAR(50)
+)
+Вопрос: Посчитайте количество новых регистраций по месяцам за 2024 год.
+
+Решение (PostgreSQL):
+
+SELECT
+    DATE_TRUNC('month', registration_date) as month,
+    COUNT(*) as new_users
+FROM users
+WHERE EXTRACT(YEAR FROM registration_date) = 2024
+GROUP BY DATE_TRUNC('month', registration_date)
+ORDER BY month;
+Решение (MySQL):
+
+SELECT
+    DATE_FORMAT(registration_date, '%Y-%m-01') as month,
+    COUNT(*) as new_users
+FROM users
+WHERE YEAR(registration_date) = 2024
+GROUP BY DATE_FORMAT(registration_date, '%Y-%m-01')
+ORDER BY month;
+Объяснение:
+- DATE_TRUNC('month', ...) (PostgreSQL) — округляет дату до начала месяца
+- DATE_FORMAT(..., '%Y-%m-01') (MySQL) — форматирует дату как "2024-01-01"
+- EXTRACT(YEAR ...) / YEAR(...) — фильтр по году
+
+Задача 3 (Junior): Найти пользователей без заказов
+Бизнес-кейс: Маркетинговая команда хочет отправить промокод пользователям, которые зарегистрировались, но ничего не купили.
+
+Таблицы:
+
+users (user_id, email, registration_date)
+orders (order_id, user_id, order_date, amount)
+Вопрос: Найдите всех пользователей, у которых нет ни одного заказа.
+
+Решение 1 (через LEFT JOIN):
+
+SELECT u.user_id, u.email
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id
+WHERE o.order_id IS NULL;
+Решение 2 (через NOT EXISTS):
+
+SELECT user_id, email
+FROM users u
+WHERE NOT EXISTS (
+    SELECT 1 FROM orders o WHERE o.user_id = u.user_id
+);
+Решение 3 (через NOT IN):
+
+SELECT user_id, email
+FROM users
+WHERE user_id NOT IN (
+    SELECT DISTINCT user_id FROM orders WHERE user_id IS NOT NULL
+);
+Какое решение лучше?
+- LEFT JOIN — самое читаемое, хорошая производительность
+- NOT EXISTS — часто быстрее на больших данных (останавливается на первом совпадении)
+- NOT IN — ОПАСНО, если в orders есть NULL (вернёт пустой результат!)
+
+Вывод: На собеседовании покажите LEFT JOIN, но упомяните NOT EXISTS как альтернативу для больших данных.
+
+Задача 4 (Junior): Средний чек по странам
+Бизнес-кейс: Компания запускается в новых странах и хочет понять, где платёжеспособность пользователей выше.
+
+Таблицы:
+
+users (user_id, country)
+orders (order_id, user_id, amount)
+Вопрос: Найдите средний чек (average order value) по странам. Отсортируйте по убыванию.
+
+Решение:
+
+SELECT
+    u.country,
+    AVG(o.amount) as avg_order_value,
+    COUNT(o.order_id) as total_orders
+FROM users u
+INNER JOIN orders o ON u.user_id = o.user_id
+GROUP BY u.country
+ORDER BY avg_order_value DESC;
+Почему INNER JOIN, а не LEFT?
+Нам нужны только те страны, где есть заказы. LEFT JOIN включил бы страны без заказов (avg = NULL), что бессмысленно для анализа.
+
+Часть 3: Практические задачи для Middle-аналитиков
+Задача 5 (Middle): Cohort retention — процент вернувшихся пользователей
+Бизнес-кейс: Вы работаете в SaaS-продукте. Нужно понять, сколько пользователей возвращается через неделю после регистрации.
+
+Таблицы:
+
+users (user_id, registration_date)
+events (user_id, event_date, event_type)
+Вопрос: Посчитайте retention на 7-й день: какой % пользователей, зарегистрировавшихся в январе 2024, вернулись на 7-й день (±1 день).
+
+Вакансии для аналитиков
+
+Магнит
+сегодня
+системный аналитик
+~ 183 637 ₽
+middle
+гибрид Краснодар
+
+Альфа-Банк
+сегодня
+аналитик данных
+~ 285 016 ₽
+senior
+удалённо
+
+Salmon
+сегодня
+системный аналитик
+~ 318 752 ₽
+senior
+офис Манила
+Решение:
+
+WITH first_week_users AS (
+    SELECT DISTINCT user_id
+    FROM users
+    WHERE registration_date >= '2024-01-01' AND registration_date < '2024-02-01'
+),
+returned_users AS (
+    SELECT DISTINCT u.user_id
+    FROM users u
+    JOIN events e ON u.user_id = e.user_id
+    WHERE u.registration_date >= '2024-01-01'
+      AND u.registration_date < '2024-02-01'
+      AND e.event_date BETWEEN u.registration_date + INTERVAL '6 days'
+                           AND u.registration_date + INTERVAL '8 days'
+)
+SELECT
+    COUNT(DISTINCT fwu.user_id) as total_users,
+    COUNT(DISTINCT ru.user_id) as returned_users,
+    ROUND(100.0 * COUNT(DISTINCT ru.user_id) / COUNT(DISTINCT fwu.user_id), 2) as retention_7d
+FROM first_week_users fwu
+LEFT JOIN returned_users ru ON fwu.user_id = ru.user_id;
+Объяснение:
+1. CTE first_week_users — все пользователи января
+2. CTE returned_users — те, кто вернулся на 7-й день (±1 день для учёта погрешности)
+3. Финальный SELECT считает процент вернувшихся
+
+Альтернатива (более элегантная):
+
+SELECT
+    COUNT(DISTINCT u.user_id) as total_users,
+    COUNT(DISTINCT CASE
+        WHEN e.event_date BETWEEN u.registration_date + 6 AND u.registration_date + 8
+        THEN e.user_id
+    END) as returned_users,
+    ROUND(100.0 * COUNT(DISTINCT CASE
+        WHEN e.event_date BETWEEN u.registration_date + 6 AND u.registration_date + 8
+        THEN e.user_id
+    END) / COUNT(DISTINCT u.user_id), 2) as retention_7d
+FROM users u
+LEFT JOIN events e ON u.user_id = e.user_id
+WHERE u.registration_date >= '2024-01-01' AND u.registration_date < '2024-02-01';
+Задача 6 (Middle): Moving Average (скользящее среднее) по доходу
+Бизнес-кейс: Руководство хочет видеть "сглаженную" динамику выручки, чтобы убрать влияние выбросов (например, пятничные распродажи).
+
+Таблицы:
+
+daily_revenue (date, revenue)
+Вопрос: Посчитайте скользящее среднее за 7 дней (текущий день + 6 предыдущих).
+
+Решение:
+
+SELECT
+    date,
+    revenue,
+    AVG(revenue) OVER (
+        ORDER BY date
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) as moving_avg_7d
+FROM daily_revenue
+ORDER BY date;
+Объяснение:
+- OVER (ORDER BY date) — оконная функция, работающая по порядку дат
+- ROWS BETWEEN 6 PRECEDING AND CURRENT ROW — окно из 7 строк (6 предыдущих + текущая)
+
+Ловушка: Если в данных есть пропуски дат (например, нет данных за выходные), скользящее среднее будет считать только по существующим строкам. Для корректного расчёта нужно сначала сгенерировать все даты:
+
+WITH all_dates AS (
+    SELECT generate_series(
+        '2024-01-01'::date,
+        '2024-12-31'::date,
+        '1 day'::interval
+    )::date as date
+)
+SELECT
+    ad.date,
+    COALESCE(dr.revenue, 0) as revenue,
+    AVG(COALESCE(dr.revenue, 0)) OVER (
+        ORDER BY ad.date
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) as moving_avg_7d
+FROM all_dates ad
+LEFT JOIN daily_revenue dr ON ad.date = dr.date
+ORDER BY ad.date;
+Задача 7 (Middle): Ранжирование товаров по категориям
+Бизнес-кейс: Маркетплейс хочет показывать в каждой категории значок "ТОП-3" для самых продаваемых товаров.
+
+Таблицы:
+
+products (product_id, name, category)
+sales (product_id, quantity_sold)
+Вопрос: Для каждой категории найдите топ-3 товара по количеству продаж и присвойте им ранг (1, 2, 3).
+
+Решение:
+
+WITH product_sales AS (
+    SELECT
+        p.product_id,
+        p.name,
+        p.category,
+        SUM(s.quantity_sold) as total_sold
+    FROM products p
+    JOIN sales s ON p.product_id = s.product_id
+    GROUP BY p.product_id, p.name, p.category
+),
+ranked_products AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY category ORDER BY total_sold DESC) as rank
+    FROM product_sales
+)
+SELECT product_id, name, category, total_sold, rank
+FROM ranked_products
+WHERE rank <= 3
+ORDER BY category, rank;
+В чём разница между ROW_NUMBER(), RANK() и DENSE_RANK()?
+
+-- Пример данных: продажи в категории "Электроника"
+-- Товар A: 100 шт
+-- Товар B: 100 шт (такие же продажи!)
+-- Товар C: 95 шт
+-- Товар D: 90 шт
+
+SELECT
+    name,
+    total_sold,
+    ROW_NUMBER() OVER (ORDER BY total_sold DESC) as row_num,
+    RANK() OVER (ORDER BY total_sold DESC) as rank,
+    DENSE_RANK() OVER (ORDER BY total_sold DESC) as dense_rank
+FROM product_sales;
+
+-- Результат:
+-- name    | total_sold | row_num | rank | dense_rank
+-- Товар A | 100        | 1       | 1    | 1
+-- Товар B | 100        | 2       | 1    | 1  -- одинаковый ранг!
+-- Товар C | 95         | 3       | 3    | 2  -- RANK пропускает 2
+-- Товар D | 90         | 4       | 4    | 3  -- DENSE_RANK не пропускает
+Когда что использовать:
+- ROW_NUMBER() — когда нужны уникальные номера строк (нет дубликатов рангов)
+- RANK() — когда равные значения получают одинаковый ранг, следующий ранг пропускается
+- DENSE_RANK() — когда равные значения получают одинаковый ранг, следующий ранг НЕ пропускается
+
+Задача 8 (Middle): Конверсия воронки регистрации
+Бизнес-кейс: Продуктовая команда хочет понять, на каком шаге регистрации отваливается больше всего пользователей.
+
+Таблицы:
+
+events (
+    user_id INT,
+    event_type VARCHAR(50),  -- 'landing', 'signup_start', 'email_entered', 'completed'
+    event_timestamp TIMESTAMP
+)
+Вопрос: Посчитайте воронку: сколько пользователей прошло каждый шаг и какая конверсия между шагами.
+
+Решение:
+
+WITH funnel_steps AS (
+    SELECT
+        user_id,
+        MAX(CASE WHEN event_type = 'landing' THEN 1 ELSE 0 END) as step_1_landing,
+        MAX(CASE WHEN event_type = 'signup_start' THEN 1 ELSE 0 END) as step_2_start,
+        MAX(CASE WHEN event_type = 'email_entered' THEN 1 ELSE 0 END) as step_3_email,
+        MAX(CASE WHEN event_type = 'completed' THEN 1 ELSE 0 END) as step_4_completed
+    FROM events
+    WHERE event_timestamp >= '2024-01-01' AND event_timestamp < '2024-02-01'
+    GROUP BY user_id
+)
+SELECT
+    SUM(step_1_landing) as users_landed,
+    SUM(step_2_start) as users_started_signup,
+    SUM(step_3_email) as users_entered_email,
+    SUM(step_4_completed) as users_completed,
+
+    ROUND(100.0 * SUM(step_2_start) / NULLIF(SUM(step_1_landing), 0), 2) as conversion_1_to_2,
+    ROUND(100.0 * SUM(step_3_email) / NULLIF(SUM(step_2_start), 0), 2) as conversion_2_to_3,
+    ROUND(100.0 * SUM(step_4_completed) / NULLIF(SUM(step_3_email), 0), 2) as conversion_3_to_4,
+    ROUND(100.0 * SUM(step_4_completed) / NULLIF(SUM(step_1_landing), 0), 2) as overall_conversion
+FROM funnel_steps;
+Объяснение:
+1. CTE funnel_steps — для каждого пользователя проставляем флаги, прошёл ли он каждый шаг
+2. MAX(CASE WHEN ...) — если пользователь хоть раз совершил событие, ставим 1
+3. Финальный SELECT суммирует пользователей по шагам и считает конверсии
+4. NULLIF(..., 0) — защита от деления на ноль
+
+Результат:
+
+users_landed | users_started_signup | users_entered_email | users_completed | conversion_1_to_2 | conversion_2_to_3 | conversion_3_to_4 | overall_conversion
+10000        | 7500                 | 6000                | 5500            | 75.00             | 80.00             | 91.67             | 55.00
+Интерпретация: Самая большая просадка — между посадкой и началом регистрации (25% отвалилось). Нужно улучшать лендинг.
+
+Задача 9 (Middle): Duplicate detection — найти дубликаты пользователей
+Бизнес-кейс: После миграции базы данных оказалось, что некоторые пользователи зарегистрировались дважды с одинаковым email. Нужно найти и удалить дубликаты, оставив самую раннюю регистрацию.
+
+Таблицы:
+
+users (
+    user_id INT PRIMARY KEY,
+    email VARCHAR(100),
+    registration_date DATE,
+    status VARCHAR(20)
+)
+Вопрос: Найдите все email, по которым зарегистрировано больше одного пользователя. Для каждого дубликата оставьте только самую раннюю регистрацию.
+
+Решение 1 (найти дубликаты):
+
+SELECT
+    email,
+    COUNT(*) as duplicate_count,
+    STRING_AGG(user_id::TEXT, ', ' ORDER BY registration_date) as user_ids
+FROM users
+GROUP BY email
+HAVING COUNT(*) > 1
+ORDER BY duplicate_count DESC;
+Решение 2 (найти ID для удаления):
+
+WITH ranked_users AS (
+    SELECT
+        user_id,
+        email,
+        registration_date,
+        ROW_NUMBER() OVER (PARTITION BY email ORDER BY registration_date ASC) as rn
+    FROM users
+)
+SELECT user_id, email, registration_date
+FROM ranked_users
+WHERE rn > 1;  -- Эти записи нужно удалить
+Решение 3 (удалить дубликаты):
+
+DELETE FROM users
+WHERE user_id IN (
+    SELECT user_id
+    FROM (
+        SELECT
+            user_id,
+            ROW_NUMBER() OVER (PARTITION BY email ORDER BY registration_date ASC) as rn
+        FROM users
+    ) t
+    WHERE rn > 1
+);
+Важно: Перед удалением ВСЕГДА делайте SELECT и проверяйте результат!
+
+Часть 4: Практические задачи для Senior-аналитиков
+Задача 10 (Senior): Cohort analysis — таблица retention по месяцам
+Бизнес-кейс: Классическая задача для продуктовых аналитиков — построить когортную таблицу, где по вертикали месяцы регистрации, по горизонтали — месяцы с момента регистрации (M0, M1, M2...), в ячейках — % активных пользователей.
+
+Таблицы:
+
+users (user_id, registration_date)
+events (user_id, event_date)
+Вопрос: Постройте когортную таблицу retention по месяцам для 2024 года.
+
+Решение:
+
+WITH cohorts AS (
+    SELECT
+        user_id,
+        DATE_TRUNC('month', registration_date) as cohort_month
+    FROM users
+    WHERE registration_date >= '2024-01-01'
+),
+user_activities AS (
+    SELECT
+        c.user_id,
+        c.cohort_month,
+        DATE_TRUNC('month', e.event_date) as activity_month
+    FROM cohorts c
+    JOIN events e ON c.user_id = e.user_id
+    WHERE e.event_date >= '2024-01-01'
+),
+cohort_sizes AS (
+    SELECT
+        cohort_month,
+        COUNT(DISTINCT user_id) as cohort_size
+    FROM cohorts
+    GROUP BY cohort_month
+),
+retention_data AS (
+    SELECT
+        cohort_month,
+        activity_month,
+        COUNT(DISTINCT user_id) as active_users,
+        EXTRACT(MONTH FROM AGE(activity_month, cohort_month)) as months_since_registration
+    FROM user_activities
+    GROUP BY cohort_month, activity_month
+)
+SELECT
+    r.cohort_month,
+    r.months_since_registration as month_number,
+    cs.cohort_size,
+    r.active_users,
+    ROUND(100.0 * r.active_users / cs.cohort_size, 2) as retention_pct
+FROM retention_data r
+JOIN cohort_sizes cs ON r.cohort_month = cs.cohort_month
+ORDER BY r.cohort_month, r.months_since_registration;
+Результат (пример):
+
+cohort_month | month_number | cohort_size | active_users | retention_pct
+2024-01-01   | 0            | 1000        | 1000         | 100.00
+2024-01-01   | 1            | 1000        | 650          | 65.00
+2024-01-01   | 2            | 1000        | 520          | 52.00
+2024-02-01   | 0            | 1200        | 1200         | 100.00
+2024-02-01   | 1            | 1200        | 780          | 65.00
+Для визуализации в Excel/Tableau можно развернуть в широкий формат через PIVOT:
+
+-- PostgreSQL (через расширение tablefunc или CASE)
+SELECT
+    cohort_month,
+    MAX(CASE WHEN months_since_registration = 0 THEN retention_pct END) as M0,
+    MAX(CASE WHEN months_since_registration = 1 THEN retention_pct END) as M1,
+    MAX(CASE WHEN months_since_registration = 2 THEN retention_pct END) as M2,
+    MAX(CASE WHEN months_since_registration = 3 THEN retention_pct END) as M3
+FROM retention_data r
+JOIN cohort_sizes cs ON r.cohort_month = cs.cohort_month
+GROUP BY cohort_month
+ORDER BY cohort_month;
+Задача 11 (Senior): Cumulative revenue и % от общего дохода
+Бизнес-кейс: CFO хочет понять, какая доля годового дохода была заработана к концу каждого месяца (накопительным итогом).
+
+Таблицы:
+
+orders (order_id, order_date, amount)
+Вопрос: Посчитайте помесячную выручку, накопительную выручку и процент от годового дохода за 2024 год.
+
+Решение:
+
+WITH monthly_revenue AS (
+    SELECT
+        DATE_TRUNC('month', order_date) as month,
+        SUM(amount) as revenue
+    FROM orders
+    WHERE EXTRACT(YEAR FROM order_date) = 2024
+    GROUP BY DATE_TRUNC('month', order_date)
+),
+total_annual_revenue AS (
+    SELECT SUM(revenue) as total_revenue
+    FROM monthly_revenue
+)
+SELECT
+    mr.month,
+    mr.revenue as monthly_revenue,
+    SUM(mr.revenue) OVER (ORDER BY mr.month) as cumulative_revenue,
+    tar.total_revenue as annual_revenue,
+    ROUND(100.0 * SUM(mr.revenue) OVER (ORDER BY mr.month) / tar.total_revenue, 2) as cumulative_pct
+FROM monthly_revenue mr
+CROSS JOIN total_annual_revenue tar
+ORDER BY mr.month;
+Результат:
+
+month      | monthly_revenue | cumulative_revenue | annual_revenue | cumulative_pct
+2024-01-01 | 500000          | 500000             | 6000000        | 8.33
+2024-02-01 | 550000          | 1050000            | 6000000        | 17.50
+2024-03-01 | 600000          | 1650000            | 6000000        | 27.50
+...
+2024-12-01 | 700000          | 6000000            | 6000000        | 100.00
+Объяснение:
+- SUM(...) OVER (ORDER BY month) — накопительная сумма (running total)
+- CROSS JOIN total_annual_revenue — добавляем общий годовой доход к каждой строке
+
+Задача 12 (Senior): Median и Percentiles (медиана и перцентили)
+Бизнес-кейс: Средняя зарплата (AVG) — плохая метрика, потому что её искажают выбросы (один CEO с зарплатой 10 млн рублей поднимет среднюю в 10 раз). Медиана и перцентили дают более честную картину.
+
+Таблицы:
+
+employees (employee_id, department, salary)
+Вопрос: Для каждого отдела найдите медианную зарплату (50-й перцентиль) и диапазон от 25-го до 75-го перцентиля.
+
+Решение (PostgreSQL):
+
+SELECT
+    department,
+    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY salary) as p25,
+    PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY salary) as median,
+    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY salary) as p75,
+    AVG(salary) as avg_salary,
+    COUNT(*) as employee_count
+FROM employees
+GROUP BY department
+ORDER BY median DESC;
+Результат:
+
+department  | p25    | median | p75    | avg_salary | employee_count
+Engineering | 150000 | 200000 | 280000 | 220000     | 50
+Product     | 140000 | 180000 | 250000 | 195000     | 30
+Sales       | 80000  | 120000 | 180000 | 140000     | 40
+Интерпретация:
+- P25: 25% сотрудников зарабатывают меньше этой суммы
+- Median (P50): половина зарабатывает меньше, половина больше
+- P75: 75% зарабатывают меньше этой суммы
+
+Для MySQL (нет PERCENTILE_CONT):
+
+-- Медиана через ROW_NUMBER (сложнее, но работает):
+WITH ranked_salaries AS (
+    SELECT
+        department,
+        salary,
+        ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary) as rn,
+        COUNT(*) OVER (PARTITION BY department) as total
+    FROM employees
+)
+SELECT
+    department,
+    AVG(salary) as median_salary
+FROM ranked_salaries
+WHERE rn IN (FLOOR((total + 1) / 2), CEIL((total + 1) / 2))
+GROUP BY department;
+Задача 13 (Senior): Recursive CTE — иерархия сотрудников
+Бизнес-кейс: У вас есть таблица сотрудников, где каждый сотрудник ссылается на своего руководителя (manager_id). Нужно построить полную иерархию от CEO до всех подчинённых.
+
+Таблицы:
+
+employees (
+    employee_id INT,
+    name VARCHAR(100),
+    manager_id INT,  -- NULL для CEO
+    title VARCHAR(100)
+)
+Вопрос: Постройте дерево подчинённости от CEO вниз, показав уровень каждого сотрудника в иерархии.
+
+Решение:
+
+WITH RECURSIVE employee_hierarchy AS (
+    -- Базовый случай: CEO (нет руководителя)
+    SELECT
+        employee_id,
+        name,
+        manager_id,
+        title,
+        1 as level,
+        name as path
+    FROM employees
+    WHERE manager_id IS NULL
+
+    UNION ALL
+
+    -- Рекурсивный случай: все подчинённые
+    SELECT
+        e.employee_id,
+        e.name,
+        e.manager_id,
+        e.title,
+        eh.level + 1,
+        eh.path || ' > ' || e.name
+    FROM employees e
+    INNER JOIN employee_hierarchy eh ON e.manager_id = eh.employee_id
+)
+SELECT
+    employee_id,
+    name,
+    title,
+    level,
+    path
+FROM employee_hierarchy
+ORDER BY level, name;
+Результат:
+
+employee_id | name           | title               | level | path
+1           | Alice Johnson  | CEO                 | 1     | Alice Johnson
+2           | Bob Smith      | VP Engineering      | 2     | Alice Johnson > Bob Smith
+3           | Carol White    | VP Sales            | 2     | Alice Johnson > Carol White
+4           | Dave Brown     | Senior Developer    | 3     | Alice Johnson > Bob Smith > Dave Brown
+5           | Eve Davis      | Developer           | 4     | Alice Johnson > Bob Smith > Dave Brown > Eve Davis
+Объяснение:
+1. Базовый случай — выбираем CEO (manager_id IS NULL), ставим level = 1
+2. Рекурсивный случай — присоединяем всех, чей manager_id равен employee_id из предыдущего шага, увеличиваем level на 1
+3. path — строковое представление пути в иерархии
+
+Практическое применение:
+- Расчёт количества подчинённых у каждого менеджера
+- Поиск всех сотрудников определённого отдела с подотделами
+- Расчёт "глубины" организационной структуры
+
+Задача 14 (Senior): Self-JOIN для поиска последовательностей событий
+Бизнес-кейс: Вы хотите найти пользователей, которые сделали покупку в течение 24 часов после первого визита (конверсия "горячих лидов").
+
+Таблицы:
+
+events (
+    user_id INT,
+    event_type VARCHAR(50),  -- 'visit' или 'purchase'
+    event_timestamp TIMESTAMP
+)
+Вопрос: Найдите пользователей, у которых первая покупка произошла в течение 24 часов после первого визита.
+
+Решение:
+
+WITH first_visits AS (
+    SELECT
+        user_id,
+        MIN(event_timestamp) as first_visit_time
+    FROM events
+    WHERE event_type = 'visit'
+    GROUP BY user_id
+),
+first_purchases AS (
+    SELECT
+        user_id,
+        MIN(event_timestamp) as first_purchase_time
+    FROM events
+    WHERE event_type = 'purchase'
+    GROUP BY user_id
+)
+SELECT
+    fv.user_id,
+    fv.first_visit_time,
+    fp.first_purchase_time,
+    EXTRACT(EPOCH FROM (fp.first_purchase_time - fv.first_visit_time)) / 3600 as hours_to_purchase
+FROM first_visits fv
+JOIN first_purchases fp ON fv.user_id = fp.user_id
+WHERE fp.first_purchase_time <= fv.first_visit_time + INTERVAL '24 hours'
+ORDER BY hours_to_purchase;
+Альтернатива через LAG (оконные функции):
+
+WITH events_ordered AS (
+    SELECT
+        user_id,
+        event_type,
+        event_timestamp,
+        LAG(event_type) OVER (PARTITION BY user_id ORDER BY event_timestamp) as prev_event,
+        LAG(event_timestamp) OVER (PARTITION BY user_id ORDER BY event_timestamp) as prev_timestamp
+    FROM events
+)
+SELECT
+    user_id,
+    prev_timestamp as visit_time,
+    event_timestamp as purchase_time,
+    EXTRACT(EPOCH FROM (event_timestamp - prev_timestamp)) / 3600 as hours_to_purchase
+FROM events_ordered
+WHERE event_type = 'purchase'
+  AND prev_event = 'visit'
+  AND event_timestamp <= prev_timestamp + INTERVAL '24 hours'
+ORDER BY hours_to_purchase;
+Задача 15 (Senior): Gap analysis — поиск пропусков в последовательности
+Бизнес-кейс: У вас есть таблица с ID транзакций, которые должны идти последовательно (1, 2, 3, 4...). Нужно найти все пропущенные ID (например, если есть 1, 2, 4, 5 — пропущена 3).
+
+Таблицы:
+
+transactions (transaction_id INT, amount DECIMAL, created_at TIMESTAMP)
+Вопрос: Найдите все пропущенные transaction_id в диапазоне от MIN до MAX.
+
+Решение (PostgreSQL):
+
+WITH min_max AS (
+    SELECT
+        MIN(transaction_id) as min_id,
+        MAX(transaction_id) as max_id
+    FROM transactions
+),
+all_ids AS (
+    SELECT generate_series(min_id, max_id) as expected_id
+    FROM min_max
+)
+SELECT ai.expected_id as missing_transaction_id
+FROM all_ids ai
+LEFT JOIN transactions t ON ai.expected_id = t.transaction_id
+WHERE t.transaction_id IS NULL
+ORDER BY ai.expected_id;
+Альтернатива через LAG (найти "скачки"):
+
+WITH gaps AS (
+    SELECT
+        transaction_id,
+        LAG(transaction_id) OVER (ORDER BY transaction_id) as prev_id,
+        transaction_id - LAG(transaction_id) OVER (ORDER BY transaction_id) as gap_size
+    FROM transactions
+)
+SELECT
+    prev_id as last_id_before_gap,
+    transaction_id as first_id_after_gap,
+    gap_size - 1 as missing_count
+FROM gaps
+WHERE gap_size > 1
+ORDER BY prev_id;
+Результат:
+
+last_id_before_gap | first_id_after_gap | missing_count
+1002               | 1005               | 2  -- пропущены 1003, 1004
+2107               | 2110               | 2  -- пропущены 2108, 2109
+Часть 5: Как готовиться к SQL-собеседованию
+1. Практикуйтесь на реальных платформах
+LeetCode Database — 200+ задач с уровнями Easy/Medium/Hard. Начните с Easy (фильтрация, JOIN, GROUP BY), потом переходите к Medium (window functions, subqueries).
+
+Рекомендуемые задачи для старта:
+- Easy: Combine Two Tables, Employees Earning More Than Their Managers
+- Medium: Department Top Three Salaries, Consecutive Numbers
+- Hard: Trips and Users, Human Traffic of Stadium
+
+HackerRank SQL — хорошие задачи с бизнес-контекстом.
+
+SQLZoo — интерактивные туториалы для начинающих.
+
+Mode Analytics SQL Tutorial — задачи на реальных данных (музыка, e-commerce).
+
+2. Создайте локальную базу данных для экспериментов
+Не ограничивайтесь онлайн-платформами. Установите PostgreSQL или MySQL локально и создайте тестовую базу с реалистичными данными.
+
+-- Пример: создание тестовой базы для e-commerce
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    email VARCHAR(100),
+    registration_date DATE,
+    country VARCHAR(50)
+);
+
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    order_date TIMESTAMP,
+    amount DECIMAL(10,2),
+    status VARCHAR(20)
+);
+
+-- Генерация тестовых данных
+INSERT INTO users (email, registration_date, country)
+SELECT
+    'user' || i || '@example.com',
+    '2024-01-01'::date + (random() * 365)::int,
+    (ARRAY['Russia', 'Belarus', 'Kazakhstan'])[floor(random() * 3 + 1)]
+FROM generate_series(1, 10000) i;
+
+INSERT INTO orders (user_id, order_date, amount, status)
+SELECT
+    floor(random() * 10000 + 1)::int,
+    '2024-01-01'::timestamp + (random() * 365 || ' days')::interval,
+    (random() * 10000)::decimal(10,2),
+    (ARRAY['completed', 'pending', 'cancelled'])[floor(random() * 3 + 1)]
+FROM generate_series(1, 50000);
+3. Учите EXPLAIN и оптимизацию запросов
+На senior-позициях вас обязательно спросят: "Как будет работать этот запрос на 100 млн строк? Как его оптимизировать?"
+
+-- Посмотрите план выполнения запроса
+EXPLAIN ANALYZE
+SELECT u.user_id, COUNT(o.order_id)
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id
+WHERE u.registration_date >= '2024-01-01'
+GROUP BY u.user_id;
+
+-- Обратите внимание на:
+-- - Seq Scan (плохо) vs Index Scan (хорошо)
+-- - Hash Join vs Nested Loop (Hash быстрее на больших данных)
+-- - Execution Time
+Типичные способы оптимизации:
+1. Добавить индексы на колонки в WHERE, JOIN, ORDER BY
+2. Заменить подзапросы на JOIN или window functions
+3. Использовать LIMIT для ограничения результата
+4. Партиционирование больших таблиц по датам
+5. Материализованные представления (materialized views) для тяжёлых агрегаций
+
+4. Знайте разницу между диалектами SQL
+Фича	PostgreSQL	MySQL	SQL Server
+Window functions	✅ Все	✅ Все (с 8.0)	✅ Все
+Recursive CTE	✅ WITH RECURSIVE	✅ WITH RECURSIVE	✅ WITH
+PERCENTILE_CONT	✅ Да	❌ Нет	✅ Да
+DATE_TRUNC	✅ Да	❌ Нет (DATE_FORMAT)	❌ Нет (DATETRUNC)
+ARRAY_AGG	✅ Да	✅ JSON_ARRAYAGG	❌ STRING_AGG
+FULL OUTER JOIN	✅ Да	❌ Нет (эмуляция через UNION)	✅ Да
+Совет: На собеседовании спросите заранее, какая СУБД используется в компании, и готовьтесь именно к ней.
+
+5. Тренируйте "мышление аналитика"
+Когда получаете задачу, думайте не только о коде, но и о бизнесе:
+
+Плохой ответ:
+
+SELECT AVG(price) FROM products;
+Хороший ответ:
+
+-- Средняя цена может быть искажена выбросами (например, один iPhone за 100К).
+-- Давайте посмотрим медиану и распределение по перцентилям:
+SELECT
+    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price) as p25,
+    PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY price) as median,
+    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price) as p75,
+    AVG(price) as avg_price,
+    COUNT(*) as total_products
+FROM products;
+
+-- Также стоит проверить, нет ли категорий, где цены сильно различаются:
+SELECT
+    category,
+    MIN(price) as min_price,
+    MAX(price) as max_price,
+    AVG(price) as avg_price
+FROM products
+GROUP BY category
+ORDER BY avg_price DESC;
+Частые ошибки на SQL-собеседованиях и как их избежать
+Ошибка 1: Забыть про NULL-значения
+-- ПЛОХО: NOT IN не работает корректно с NULL
+SELECT * FROM users
+WHERE user_id NOT IN (SELECT manager_id FROM employees);
+-- Если хоть один manager_id = NULL, вернётся пустой результат!
+
+-- ХОРОШО: используйте NOT EXISTS или IS NOT NULL
+SELECT * FROM users
+WHERE user_id NOT IN (
+    SELECT manager_id FROM employees WHERE manager_id IS NOT NULL
+);
+
+-- Или лучше:
+SELECT * FROM users u
+WHERE NOT EXISTS (
+    SELECT 1 FROM employees e WHERE e.manager_id = u.user_id
+);
+Ошибка 2: Неправильное использование GROUP BY с несколькими полями
+-- ПЛОХО: синтаксическая ошибка (name не в GROUP BY)
+SELECT category, name, SUM(price)
+FROM products
+GROUP BY category;
+
+-- ХОРОШО: все не-агрегатные колонки должны быть в GROUP BY
+SELECT category, name, SUM(price)
+FROM products
+GROUP BY category, name;
+
+-- Или используйте агрегацию для name, если нужна одна строка на категорию:
+SELECT category, MAX(name) as example_name, SUM(price)
+FROM products
+GROUP BY category;
+Ошибка 3: Путать HAVING и WHERE
+-- ПЛОХО: WHERE не работает с агрегатными функциями
+SELECT category, COUNT(*) as cnt
+FROM products
+WHERE COUNT(*) > 10  -- ОШИБКА!
+GROUP BY category;
+
+-- ХОРОШО: HAVING для фильтрации агрегатов
+SELECT category, COUNT(*) as cnt
+FROM products
+GROUP BY category
+HAVING COUNT(*) > 10;
+Ошибка 4: Неоптимальные подзапросы
+-- ПЛОХО: коррелированный подзапрос выполняется для каждой строки
+SELECT
+    product_id,
+    (SELECT AVG(price) FROM products p2 WHERE p2.category = p1.category) as avg_cat_price
+FROM products p1;
+
+-- ХОРОШО: window function выполняется один раз
+SELECT
+    product_id,
+    AVG(price) OVER (PARTITION BY category) as avg_cat_price
+FROM products;
+Ошибка 5: Забыть про дубликаты в JOIN
+-- Если в таблице orders может быть несколько строк на user_id,
+-- этот запрос вернёт дубликаты пользователей:
+SELECT DISTINCT u.user_id, u.name
+FROM users u
+JOIN orders o ON u.user_id = o.user_id;
+
+-- Лучше:
+SELECT u.user_id, u.name
+FROM users u
+WHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.user_id);
+Чек-лист перед собеседованием
+За неделю до собеседования:
+Прорешать 20-30 задач на LeetCode (10 Easy, 15 Medium, 5 Hard)
+
+Повторить синтаксис window functions (ROW_NUMBER, RANK, LAG, LEAD, SUM OVER)
+
+Разобрать 3-5 реальных бизнес-кейсов (retention, cohort analysis, funnel)
+
+Подготовить вопросы о tech stack компании (какая СУБД, объём данных, инструменты)
+
+За день до собеседования:
+Повторить разницу между JOIN типами
+
+Освежить в памяти EXPLAIN и индексы
+
+Подготовить ноутбук с SQL IDE (если live coding)
+
+Проверить микрофон/камеру для удалённого интервью
+
+Во время собеседования:
+Задавайте уточняющие вопросы ("Могут ли быть NULL?", "Какой объём данных?")
+
+Проговаривайте свой ход мыслей вслух
+
+Начинайте с простого решения, потом оптимизируйте
+
+Если застряли — не молчите, попросите подсказку
+
+Проверяйте edge cases (пустые таблицы, NULL, дубликаты)
+
+Итоговые рекомендации: что запомнить навсегда
+SQL — это не только код, это способ мышления. Аналитик должен уметь превратить бизнес-вопрос ("Какие пользователи уходят после первой недели?") в SQL-запрос (retention-анализ).
+
+Window functions — это 80% задач на middle/senior собеседованиях. Если вы не знаете ROW_NUMBER, RANK, LAG, LEAD, SUM OVER — учите прямо сейчас.
+
+Оптимизация важнее правильного ответа. Решение за 10 минут, которое работает за 2 секунды, лучше решения за 2 минуты, которое работает 10 минут.
+
+Практика > Теория. Прочитать про JOINы — это 10% понимания. Прорешать 50 задач с JOIN — это 90%.
+
+Думайте как бизнес-аналитик, а не как разработчик. Вас нанимают не писать красивый код, а отвечать на вопросы бизнеса через данные.
+
+Следующий шаг: Откройте LeetCode прямо сейчас и решите первую задачу из раздела Database. Потом вторую. Потом третью. Через месяц регулярной практики (30-40 задач) вы будете готовы к 90% SQL-секций на собеседованиях.
+
+Удачи на интервью! 🚀
+
+P.P.S. Ищете работу аналитиком? На HireHi каждый день появляются новые вакансии для junior, middle и senior аналитиков с реальными зарплатами и прямыми контактами работодателей
+
 The Full Stack Developer‘s Guide to SQL Interview Prep
 
-By
-Alex Mitchell
-Last Update on
-August 17, 2024
+
 Mastering SQL is a must for any aspiring full stack developer. This comprehensive guide will overview the SQL knowledge needed to ace interviews at top tech companies like Google, Meta, Amazon, and more.
 
 We‘ll start with a quick SQL refresher, then dive deeper into specific interview questions you should prepare for. Advanced SQL concepts like indexes, transactions, database design principles, and tuning will also be covered from a full stack perspective.
