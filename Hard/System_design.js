@@ -1,4 +1,146 @@
- Design?
+7 System Design Interview Questions Every Software Engineer Should Know
+Written By HackerRank | April 28, 2022
+
+
+System design interviews have been a critical component of technical hiring for decades. If you’re a software engineer on the job market, the ability to demonstrate your skills in a design interview is critical to landing your next role. 
+
+The key to succeeding in these interviews is preparing for the styles of problems you might encounter. In this post, we’ll break down seven different system design interview questions you need to know to land the next job of your dreams.
+
+What a System Design Interview Looks Like
+A system design interview is a type of interview that challenges candidates to design a back-end system, often on a physical or virtual whiteboard. Candidates are asked to verbally explain their solution and thought process as they develop their answer.
+
+System design questions grant candidates a look into an organization’s tech stack and operations and give hiring managers an understanding of the candidate’s approach to problem solving. These interviews should ideally proceed like discussions, with the candidate thinking aloud about scalability, storage, reliability, and other aspects of the system. System design interviews are more commonly found in hiring processes for senior-level roles, though developers of other experience levels may encounter this type of interview, as well.
+
+System design interviews are considered one of the more difficult types of interviews. They require a fundamental understanding of systems and advanced preparation to succeed. By their nature, system design questions are broad, open-ended questions with a variety of possible answers.
+
+7 System Design Questions
+There are a number of different types of system design questions hiring managers can use to help showcase a developer’s skills and potential. The difficulty and composition of these tests usually varies based on the experience-level of the role. 
+
+While answering this style of question, the main goal of a software engineer should be to demonstrate the ability to design and build integrated and scalable systems.
+
+The following is a list of the types of system design questions an engineer might encounter during a design interview.
+
+Design a Flash Sale System (eCommerce)
+Your company has launched a hot new product. The marketing team has recommended promoting it through flash sales. The features of a flash product sale are as follows:
+
+The sale starts at a particular time.
+The requests to purchase the product may be greater than the stock count for the product.
+Each user can purchase only one unit of the product.
+There is no “Add to Cart” functionality.
+Each order should be placed on a first-come-first-serve basis, and the product should go out of stock the moment the entire stock of the product is exhausted.
+Using diagramming tools, design a system that implements these features in a robust, scalable way.
+
+Components to consider:
+
+As soon as the user clicks the add to cart button, trigger an API call and show a loader until the API returns a response.
+The API at the backend needs to process the requests in the queue.
+If the request count is greater than the stock available, return an error instantly with a ‘no stock’ error.
+Otherwise, just return a response with success, the order id, and in the background, keep processing the queue .  
+At the front: stop the loader upon receiving a response.
+If there is an error, show the appropriate error and remove the product from the list.
+If successful, show the success status.
+Design a ride-sharing service
+Design a ride-sharing service that enables users to request rides through an app. The system should account for workflows for both passengers and drivers.
+
+Components to consider:
+
+Payment processing
+Encryption and storage of payment methods
+Push notifications and in-app messaging
+Databases to manage user and driver data (SQL, MySQL)
+Data privacy and encryption
+GPS and mapping technology
+User reviews and score aggregation
+Data tracking to identify patterns and spikes in activity
+Image hosting system
+Design a simple social media application
+Designing a social media application is a common system design question that tests the candidate’s ability to plan out the structure of a wide range of technologies. Databases, media hosting, and algorithms are just a few of the topics you’ll need to cover to successfully answer this question.
+
+And, because social media companies are among the largest employers of software engineers, there’s a good chance you might find yourself facing this question during an interview.
+
+Components to consider:
+
+Ranking algorithms
+Databases to manage user data (SQL, MySQL)
+Privacy controls
+Engagement features (following, liking, commenting, sharing)
+Hosting of user generated content (images, video, gifs)
+Database schema
+Design a video streaming service
+Design a video streaming service that allows users to view and search videos. The service should also enable internal teams to upload content through the back end. The service needs to be highly scalable, supporting large numbers of users on the platform. The application should also be able to upload, store, edit, and transmit large data files.
+
+Components to consider:
+
+Databases to manage user data (SQL, MySQL)
+Video and image hosting system
+Privacy controls and age restrictions
+Engagement features (following, liking, commenting, sharing)
+Recording data about video performance
+Ranking and recommendation algorithm
+Push notifications and announcements
+Video player functionality
+Design a URL shortening service
+Design a URL shortening service that returns a short and unique URL when a user enters a long URL. Applications such TinyURL and bit.ly are examples of this service. However, many other technology companies, such as YouTube, also have their own URL shortening services built into their functionalities.
+
+Components to consider:
+
+Generating a unique and short URL
+Scalability to handle thousands of requests
+Functionality to redirect from the short link to the original
+Support for custom URLs
+Analytics and tracking of clicks
+High availability and uptime
+Design a file-storing and sharing service
+Design a file hosting service that enables users to upload, store, edit, download, share, and delete files. The service should provide synchronization across various devices. Examples of this service include Dropbox and Google Drive.
+
+Components to consider:
+
+​File management functionality (upload, view, download)
+Automatic synchronization between devices
+ACID properties on database transactions
+File sharing and permission tracking
+Search functionality to locate files
+Storage of large files
+Design a search engine
+A search engine is a software system that conducts web searches and delivers an organized list of results. The algorithm should rank results based on a variety of factors, including: 
+
+Expertise
+Accessibility
+Trustworthiness
+Website performance
+Mobile-first design
+User experience
+Components to consider:
+
+Result ranking algorithm
+Personalized search results
+Voice, image, and video search
+Machine learning and artificial intelligence
+Recommendations for related and popular searches
+Recording data on search volume and other statistics
+Website crawling and indexing
+System Design Interview Tips
+One factor that can make system design interviews so difficult is that they involve explaining complex, technical concepts through verbal communication. To get around this, it’s helpful to use an answering method to structure your response. Here are a few tried-and-true methods to employ in your next system design interview.
+
+Reference Examples and Experience
+One way to ground the details of your answer is to frame the response around real-world experience. By sharing an example of a time you solved a similar problem, it adds detail and credibility to your answer. It also helps bolster your candidacy by demonstrating to the hiring manager that you’ve already performed the responsibilities of the position.
+
+STAR Method
+Situation, Task, Action, and Result is a great method that can be employed to answer a problem-solving or design interview question. Here’s a breakdown of these steps:
+
+Situation: A good way to address almost any interview question is to lay out and define the situation and circumstances. 
+Task: Define the problem or goal that needs to be addressed. System design questions are often multifaceted, so this step is particularly important when answering technical problem-solving questions.
+Action: How would you go about solving the problem? How have you approached similar obstacles in the past? What technologies will you use? Try to be as specific as possible, and state your plan in steps if you can.
+Result: Wrap it up by stating the outcome achieved. 
+PREP Method
+Traditionally used as a method to make effective presentations, the Point, Reason, Example, Point method can also be used to answer design questions.  
+
+Point: State the solution in plain terms. 
+Reasons: Follow up the solution by detailing your case — and include any data or insights that support your solution. 
+Example: In addition to objective data and insights, drive your answer home by contextualizing the solution in a real-world example.
+Point: Reiterate the solution to make it come full circle.
+
+Design?
 Top System Design Interview Questions and Answers
 FAQs
 Conclusion
