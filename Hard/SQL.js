@@ -1,3 +1,1417 @@
+76 Essential SQL Interview Questions *
+Toptal curated essential questions that the best SQL developers can answer. Sourced from our talent community, developers are encouraged to submit questions that reflect the evolving skills SQL developers need today.
+
+Hire a Top SQL Developer Now
+Toptal logois an exclusive network of the top freelance software developers, designers, marketing experts, product managers, project managers, and management consultants in the world. Top companies hire Toptal freelancers for their most important projects.
+Alexander Nikolava
+View full profile
+By
+Alexander Nikolava
+Verified Expert 
+in Engineering
+Alexander Nikolava is a solutions architect and database administrator with over fifteen years of experience in SQL, Oracle database administration, performance tuning, and enterprise IT architecture. A former CTO, training instructor, and lead database administrator, he has evaluated technical talent through more than 200 technical interviews and promotion assessments, gaining profound insight into how SQL developers think, design, and solve problems in real-world database environments.
+
+This list of SQL interview questions and answers was curated by experienced SQL developers from Toptal’s global talent network, which accepts only the top 3% of applicants.
+
+These SQL questions cover the fundamentals, query optimization, database design, and performance tuning. They are suited for applicants at all experience levels. Whether you’re screening applicants or preparing for your own SQL interview, these questions will assess readiness through core SQL knowledge and problem-solving skills.
+1.
+What is the difference between CHAR and VARCHAR2 data types?
+Hide answer
+CHAR is a fixed-length, blank-padded data type, meaning that it always uses the maximum amount of the defined space, regardless of data size. VARCHAR2 is a variable-length data type, which is a more efficient choice when data lengths vary, as it only uses the space necessary to store the character string, plus a small length indicator.
+
+2.
+What is the point of using non-Unicode character sets today?
+Hide answer
+The main reason to use a non-Unicode character set is to ensure performance and storage efficiency. Unicode is a 2-byte character set, with each character encoded in 2 bytes. It offers freedom from restrictions but requires up to 4 bytes of storage per character.
+
+Non-Unicode character sets, like 7-bit ASCII, use less space to store English text, resulting in:
+
+A smaller data footprint, which is important for indexes.
+Fewer I/O requests needed to cache data, which drastically increases data read performance.
+Decreased database memory consumption, as the text data is effectively two times smaller.
+3.
+Explain the pros and cons of these primary keys: Auto-Increment, UUIDv4, UUIDv7, and ULID.
+Hide answer
+Primary keys are database rules that define values in data columns or tables. Here are some of the pros and cons of each:
+
+Auto Increment allows you to automatically generate a unique identity for each new row inserted into a table. By default, the database assigns numbers sequentially: 1, 2, 3, etc. This is the classic approach, allowing for compact storage (4-8 bytes), fast indexing, and improved human readability. New rows always append to the end of the index, ensuring no duplicate identifiers and eliminating manual insertion time for developers. Downsides include the need for coordination, as distributed systems require a central authority to assign IDs, and the risk of information leakage. Competitors can estimate your volume by watching the IDs grow, and users can often guess other IDs. Use the Auto Increment feature for simple applications where you control a single database and don’t expose IDs publicly.
+
+UUIDv4 (Universally Unique Identifier version 4) is a 128-bit identifier generated entirely from random numbers. Because they’re random, it’s impossible to guess what the next ID in a sequence would be. You can generate them anywhere, across client, server, or multiple databases, without coordination efforts. The tradeoff is that they can lead to performance issues. Using random values scatters inserts across the database index rather than appending them to the end, causing page splits and extra disk operations that hurt write-heavy workloads. At 16 bytes, they’re also larger and time-consuming for developers to debug. Use UUIDv4 when you need ID unpredictability and when your write volume is modest enough that index fragmentation won’t matter.
+
+UUIDv7 (Universally Unique Identifier version 7) is a newer, time-ordered UUID format that embeds a timestamp in the first 48 bits, followed by random data. This allows for distributed generation without coordination, and the chronological record makes them easily sortable, keeping indexes efficient. Records cluster by creation time, which often matches how data is queried, and the format is RFC-compliant with strong SQL standards support. The potential drawbacks lie in the timestamp, which reveals when records were created, and that the library’s support is still catching up. Even so, UUIDv7 is generally the best choice for new projects needing globally unique, distributed IDs.
+
+ULID (Universally Unique Lexicographically Sortable Identifier) is a key that combines timestamp sortability with unique ID distribution, similar to UUIDv7. The difference is that ULID is encoded in Base32 for shorter strings (26 characters vs 36) that are case-insensitive and URL-safe. The ULID and UUIDv7 keys both solve the fundamental problem of time-sorted, distributed IDs. You’d choose ULID if you prefer cleaner string representation, especially in URLS. UUIDv7 would be chosen instead if more formal standards compliance and broader tooling support are required.
+
+Why this question matters:
+This advanced SQL interview question tests whether a candidate understands how primary key choices affect performance and system design. Hiring managers should note those who compare sequential and distributed ID strategies in terms of index behavior, write performance, and data distribution. Practiced applicants will connect trade-offs to real-world considerations like supporting distributed systems, preventing predictable ID patterns, and managing index fragmentation in write-heavy workloads.
+
+4.
+Write an SQL query to find the 10th highest employee salary within a table of employees.
+Hide answer
+This query selects the 10 highest salaries in the table in descending order, then reorders them in ascending order, placing the 10th-highest at the top.
+
+
+SELECT TOP (1) Salary
+FROM (
+    SELECT DISTINCT TOP (10) Salary
+    FROM Employee
+    ORDER BY Salary DESC
+) AS Emp
+ORDER BY Salary;
+
+5.
+Write an SQL query that lists users who took a training lesson more than once on the same day.
+Hide answer
+The query is written like this:
+
+
+SELECT 
+    u.user_id, 
+    username, 
+    training_id, 
+    training_date, 
+    COUNT(user_training_id) AS count
+FROM users u
+JOIN training_details t 
+    ON t.user_id = u.user_id
+GROUP BY 
+    u.user_id, 
+    username, 
+    training_id, 
+    training_date
+HAVING COUNT(user_training_id) > 1
+ORDER BY training_date DESC;
+
+6.
+How would you efficiently select the first 100 odd-numbered user_id values from a large table?
+Hide answer
+The query is written like this:
+
+
+SELECT TOP 100 user_id
+FROM dbo.users
+WHERE user_id % 2 = 1
+ORDER BY user_id;
+
+7.
+What are the NVL and the NVL2 functions in SQL and how do they differ?
+Hide answer
+The main difference between the NVL and NVL2 functions is their logic. They differ in the number of arguments they take and their results, depending on whether an expression is NULL or NOT NULL.
+
+NVL(expression1, expression2) returns expression1 if NOT NULL and returns expression2 when NULL.
+NVL2(expression1, expression2, expression3) returns expression2 when expression1 is NOT NULL, and returns expression3 if expression1 is NULL.
+8.
+What is the difference between the WHERE and HAVING clauses?
+Hide answer
+Both clauses filter data. WHERE filters individual rows before grouping (aggregation). HAVING filters grouped data after aggregation has occurred.
+
+9.
+What will be the result of select empName from Employee order by 2 desc;?
+Hide answer
+This command will produce an error. ORDER BY 2 desc refers to sorting the second column in the SELECT list, but only one column, empName, has been selected.
+
+10.
+What is the difference between single-row and multiple-row functions, and what is GROUP BY used for?
+Hide answer
+Single-row functions, such as UPPER operate on one row at a time. Multiple-row functions, such as SUM operate on a set or group of rows. GROUP BY clusters rows that have identical values so that you can apply aggregate (multi-row) functions to distinct groups, instead of working with the entire table.
+
+11.
+If your table has five rows, IDs 1-5, what is the output of Select SUM(1), Select SUM(2), and Select SUM(3)?
+Hide answer
+The constant in SUM() indicates a multiplier.
+
+SELECT SUM(1) adds the number 1 for each row in the table, so the output would be 5.
+
+SELECT SUM(2) adds the number 2 for each row in the table, so the output would be 10.
+
+SELECT SUM(3) adds the number 3 for each row in the table, so the output would be 15.
+
+12.
+Print the rows that have Yellow in columns C1, C2, and C3, without using OR.
+Hide answer
+The query is written like this:
+
+
+SELECT *
+FROM table
+WHERE 'Yellow' IN (C1, C2, C3);
+
+13.
+How do you get the last ID without using the MAX() function?
+Hide answer
+For My SQL:
+
+
+SELECT id
+FROM table
+ORDER BY id DESC
+LIMIT 1;
+
+For SQL Server:
+
+
+SELECT TOP 1 id
+FROM table
+ORDER BY id DESC;
+
+14.
+Write a single query to separately calculate the sum positive and negative values of x.
+Hide answer
+This query uses the aggregate function, SUM() with conditional logic.
+
+
+SELECT 
+    SUM(CASE WHEN x > 0 THEN x ELSE 0 END) AS sum_pos, 
+    SUM(CASE WHEN x < 0 THEN x ELSE 0 END) AS sum_neg
+FROM a;
+
+15.
+Write a query separating the integer and decimal parts of a Weight column, in kilograms and grams.
+Hide answer
+The query is written like this:
+
+
+SELECT 
+    weight, 
+    TRUNC(weight) AS kg, 
+    NVL(SUBSTR(weight - TRUNC(weight), 2), 0) AS gms
+FROM mass_table;
+
+16.
+How do you copy data from one table to another table?
+Hide answer
+The query is written like this:
+
+
+INSERT INTO table2 (cols...)
+SELECT cols...
+FROM table1
+WHERE condition;
+
+17.
+How would you rewrite this statement in a logically equivalent way?
+Hide answer
+
+'SELECT name
+FROM customer
+WHERE state = 'VA'?'
+
+This is how to rewrite the statement and produce the same result:
+
+
+SELECT name
+FROM customer
+WHERE state IN ('VA');
+
+18.
+How would you concatenate customer names into a single, semicolon-separated string?
+Hide answer
+The correct method depends on which version you are using.
+
+SQL Server (newer versions) and XML Path (older):
+
+
+'SELECT STRING_AGG(CustomerName, '; ');'
+
+**PostgreSQL: **
+
+
+'SELECT array_to_string(array_agg(CustomerName), '; ');'
+
+19.
+How would you retrieve the Nth-highest salary without a subquery or CTE?
+Hide answer
+The correct method depends on which version you are using.
+
+My SQL:
+
+
+SELECT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT N-1, 1;
+
+SQL Server:
+
+
+SELECT ...
+ORDER BY salary DESC
+OFFSET N-1 ROWS
+FETCH NEXT 1 ROW ONLY;
+
+20.
+How would you find duplicate records?
+Hide answer
+Within a single field:
+
+
+GROUP BY email 
+HAVING COUNT(email) > 1; 
+
+Within multiple fields:
+
+
+GROUP BY name, email 
+HAVING COUNT(*) > 1;
+
+21.
+Show how to select all the even-numbered records from a table, and how to select the odd-numbered records.
+Hide answer
+Even-numbered Records:
+
+
+SELECT * 
+FROM table 
+WHERE id % 2 = 0;
+
+Odd-numbered Records:
+
+ 
+SELECT * 
+FROM table 
+WHERE id % 2 != 0;
+
+22.
+What are the main ways to optimize data retrieval from a table by Primary Key?
+Hide answer
+There are three main ways to optimize data retrieval from a table using primary keys:
+
+Use UUID to better distribute primary key values across the index and avoid index skew.
+If the primary key is numerical, use a reverse-key index instead of a standard index to distribute values more evenly across index branches and prevent skew.
+Use partitioned or sharded indexes to optimize index scan performance for large-scale data retrieval.
+Why this question matters:
+This SQL technical interview question reveals whether a candidate understands how primary key design impacts retrieval performance. Interviewers should note applicants who discuss index skew, reverse-key indexes, and partitioned or sharded index strategies. Strong candidates will connect these techniques to faster lookups, better index distribution, and performance tuning for large tables.
+
+23.
+When creating an index, can you append frequently accessed, non-indexed columns in order to improve query performance?
+Hide answer
+Yes, you can use the INCLUDE clause to achieve this when creating a non-clustered index in SQL Server and PostgreSQL, but it’s not supported in MySQL.
+
+The INCLUDE (col1, col2, …) clause lets you add non‑indexed columns to the index structure. This is particularly useful for large datasets when queries only need to return a few additional columns that aren’t part of the index key, avoiding the need to read the entire indexed table.
+
+Why this question matters:
+This SQL interview question tests whether a candidate understands how covering indexes can reduce unnecessary table lookups. Hiring managers should look for applicants who explain how included columns can improve read performance without becoming part of the indexed key. Stand-out responses will acknowledge platform differences, like SQL Server and PostgreSQL support versus MySQL limitations.
+
+24.
+List and explain the different types of JOIN clauses supported in ANSI-standard SQL.
+Hide answer
+The ANSI SQL standard supports five primary JOIN types:
+
+INNER JOIN: Returns rows with a match in both tables (default).
+LEFT JOIN: Returns all rows from the left table and matched rows from the right (NULL if there’s no match).
+RIGHT JOIN: Returns all rows from the right table and matched rows from the left (NULL if there’s no match).
+FULL JOIN: Returns rows when there is a match in either table (combines LEFT JOIN and RIGHT JOIN).
+CROSS JOIN: Returns the Cartesian product (all combinations of rows from both tables).
+25.
+If there are 10 records in the Emp table and 5 records in the Dept table, how many rows will be displayed in: Select * From Emp, Dept?
+Hide answer
+The SQL query SELECT * FROM Emp, Dept; will display 50 rows. This query lacks a WHERE clause and a JOIN condition, so it performs a CROSS JOIN (Cartesian product), multiplying the row counts (10 * 5 = 50).
+
+26.
+Write a query to show Managers the average salary of their employees.
+Hide answer
+The query is written like this:
+
+
+SELECT 
+    b.emp_id, 
+    b.emp_name, 
+    AVG(a.salary)
+FROM Employee a
+JOIN Employee b 
+    ON a.manager_id = b.emp_id
+GROUP BY 
+    b.emp_id, 
+    b.emp_name;
+
+27.
+Write a query to list all customer invoices that have a referring customer name.
+Hide answer
+The query is written like this:
+
+
+SELECT 
+    i.Id, 
+    i.BillingDate, 
+    c.Name, 
+    r.Name AS ReferredByName
+FROM Invoices i
+JOIN Customers c 
+    ON i.CustomerId = c.Id
+LEFT JOIN Customers r 
+    ON c.ReferredBy = r.Id
+ORDER BY i.BillingDate;
+
+28.
+Explain the difference between FULL JOIN and CROSS JOIN.
+Hide answer
+FULL OUTER JOIN returns all rows from both tables involved, matching rows based on a specified condition in the ON clause while filling unmatched rows with NULL values in the opposing table’s columns. It’s typically used for data reconciliation and audits.
+
+CROSS JOIN returns a Cartesian product by pairing every row from the first table with every row from the second table, without requiring any matching condition or ON clause. It’s typically used when generating combinations of data, such as combining all product sizes with all available colors, and for testing purposes.
+
+29.
+Explain what an execution plan is, when you would use it, and how to view it.
+Hide answer
+An execution plan is a roadmap that shows how the database query optimizer retrieves data. It’s used to troubleshoot slow queries and optimize performance. It can be viewed by using keywords like EXPLAIN or through database tools like “Show Execution Plan” in the SQL Server.
+
+Why this question matters:
+This SQL interview question allows candidates to share how they diagnose and optimize query performance. Hiring managers should note those who discuss execution plans as a representation of how the optimizer retrieves data, including join strategies and access paths. Skilled applicants will connect execution plan analysis to the identification of bottlenecks, inefficient scans, and opportunities for indexing or query optimization.
+
+30.
+Explain what a bind variable/bind parameter/dynamic parameter is (the name varies depending on the DBMS), the benefits of using it, and the drawbacks of not using it.
+Hide answer
+A bind variable is a placeholder in an SQL statement that is supplied with a value at execution time, rather than being hard-coded into the query.
+
+For example:
+
+ 
+SELECT * 
+FROM employees 
+WHERE department_id = :dept_id;
+ 
+Benefits of using bind variables:
+
+Enhanced security and significantly improved performance.
+
+Reduces parsing overhead by parsing SQL statements once, then reusing them with different values.
+Prevents SQL injection attacks by separating the code from the data.
+Reduces SQL cache fragmentation and memory waste in the database by storing fewer versions of the same SQL in the cache.
+Drawbacks of not using bind variables:
+
+Security vulnerabilities, performance degradation, and scalability problems. Not using bind variables makes SQL code practically untunable without changing the code.
+
+Why this question matters:
+This SQL interview question highlights how parameterization supports security and performance. Interviewers should note applicants who explain how bind variables separate SQL code from user-supplied data, reducing SQL injection risk. Mindful candidates will connect bind parameters to execution plan reuse, lower parsing overhead, reduced cache fragmentation, and better scalability.
+
+31.
+What are the benefits and drawbacks of tuning SQL with SQL hints?
+Hide answer
+SQL hints offer more control over performance, but can make long-term maintenance more difficult.
+
+Benefits:
+
+Straightforward implementation. You only need to modify the SQL query itself; no external tools are required.
+More robust. When using hints, you unify control over the “code” and “execution plan” entities and store them together.
+Can be source-controlled. As hints are implemented directly in the SQL code, they can be stored in systems like Git, making it easier to track changes.
+Drawbacks:
+
+Possible performance degradation. Because data is constantly evolving, the hint you implemented one year ago might not be relevant next year.
+Complications during upgrades. Hints may be deprecated or discontinued in newer versions.
+Management difficulties. Changing the SQL text with hints makes the query more complex, requiring more maintenance and troubleshooting later.
+Problems with data skew. A hint forces one specific plan, and sometimes the same SQL statement needs different execution plans depending on the values in the predicate.
+Sensitive to database changes. Certain database changes, such as renaming or removing an index, will cause the hint to stop working, and you will be forced to update your code.
+Why this question matters:
+This advanced SQL interview question assesses the ability to balance performance tuning with long-term maintainability. Hiring managers should give extra weight to applicants who understand that SQL hints can solve specific optimizer issues but may become fragile as data, indexes, or database versions change. Applicants who relate hints to execution plan control, data skew, upgrade risk, and future troubleshooting costs will stand out.
+
+32.
+What is an Index Skip Scan and is it good or bad?
+Hide answer
+An Index Skip Scan is a database engine feature that optimizes an SQL Execution Plan by using a composite index to retrieve columns and form a subset of what is stored in the index.
+
+For example, a query from Table USERS retrieving NAME, AGE can utilize Skip Scan to index TABLE(ID, NAME, AGE) by “skipping” the ID column in the index structure.
+
+An Index Skip Scan isn’t inherently good or bad; it depends on the situation.
+
+When compared to using no index at all, it’s a good thing.
+Compared to a properly specialized index, it’s a less effective choice.
+In reality, the Skip Scan is often considered a cause of performance degradation, as the performance loss is usually significant compared to the overhead of creating another proper index instead.
+
+Why this question matters:
+This advanced SQL interview question tests whether a candidate can evaluate optimizer behavior rather than treating index usage as automatically good. Interviewers should look for applicants who explain that an Index Skip Scan may be better than no index, but worse than a purpose-built index. Strong candidates will connect this distinction to execution plans, composite index design, and performance trade-offs.
+
+33.
+What does UNION do? What is the difference between UNION and UNION ALL?
+Hide answer
+The UNION Operator merges the contents of two structurally compatible tables into a single combined table. The difference between UNION and UNION ALL is that UNION omits duplicate records, while UNION ALL includes duplicate records. UNION ALL is typically faster as it doesn’t perform the additional step to remove duplicates.
+
+34.
+Write a query to fetch values in table test_a that are not in test_b, without using the NOT keyword.
+Hide answer
+Using the EXCEPT (SQL Server/PostgreSQL), or MINUS (Oracle) operator the query is written like this:
+
+
+SELECT *
+FROM test_a
+EXCEPT
+SELECT *
+FROM test_b;
+
+Alternatively, you can use a LEFT JOIN:
+
+
+SELECT a.id
+FROM test_a a
+LEFT JOIN test_b b 
+    ON a.id = b.id
+WHERE b.id IS NULL;
+
+35.
+Write an SQL query using UNION ALL that uses the WHERE clause to eliminate duplicates.
+Hide answer
+The query is written like this:
+
+
+SELECT *
+FROM mytable
+WHERE a = X
+
+UNION ALL
+
+SELECT *
+FROM mytable
+WHERE b = Y 
+  AND a != X;
+
+The key lies in adding the exclusion logic (AND a!=X) to the second part, which manually prevents duplicates and is often faster than standard UNION.
+
+36.
+What is the problem with this block of code?
+Hide answer
+
+Oracle PL/SQL:
+ 
+ DECLARE
+ CURSOR c_employees (p_min_salary NUMBER) IS
+ SELECT employee_id, first_name, last_name
+ FROM employees
+ WHERE salary >= p_min_salary;
+ BEGIN
+ FOR r_emp IN c_employees(7000) LOOP
+ DBMS_OUTPUT.PUT_LINE(
+ r_emp.employee_id || ' - ' ||
+ r_emp.first_name || ' ' || r_emp.last_name
+ );
+ END LOOP;
+ END;
+ /
+ 
+ 
+ PL/pgSQL:
+ 
+ CREATE OR REPLACE FUNCTION update_order_status()
+ RETURNS void
+ LANGUAGE plpgsql
+ AS $$
+ DECLARE
+ r RECORD;
+ c CURSOR FOR
+ SELECT id, amount
+ FROM orders
+ WHERE status IS NULL;
+ BEGIN
+ OPEN c;
+ LOOP
+ FETCH c INTO r;
+ EXIT WHEN NOT FOUND;
+ 
+ UPDATE orders
+ SET status = CASE
+ WHEN r.amount >= 1000 THEN 'HIGH'
+ WHEN r.amount >= 500 THEN 'MEDIUM'
+ ELSE 'LOW'
+ END
+ WHERE id = r.id;
+ END LOOP;
+ CLOSE c;
+ END;
+ $$;
+ 
+ MySQL:
+ 
+ CREATE PROCEDURE update_order_status()
+ BEGIN
+ DECLARE done INT DEFAULT 0;
+ DECLARE v_id INT;
+ DECLARE v_amount DECIMAL(10,2);
+ 
+ DECLARE cur CURSOR FOR
+ SELECT id, amount
+ FROM orders
+ WHERE status IS NULL;
+ 
+ DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+ 
+ OPEN cur;
+ read_loop: LOOP
+ FETCH cur INTO v_id, v_amount;
+ IF done THEN LEAVE read_loop; END IF;
+ 
+ UPDATE orders
+ SET status = CASE
+ WHEN v_amount >= 1000 THEN 'HIGH'
+ WHEN v_amount >= 500 THEN 'MEDIUM'
+ ELSE 'LOW'
+ END
+ WHERE id = v_id;
+ END LOOP;
+ CLOSE cur;
+ END$$
+ 
+ DELIMITER ;
+ 
+ 
+ T-SQL:
+ 
+ DECLARE @id INT;
+ DECLARE @amount DECIMAL(18,2);
+ 
+ DECLARE cur CURSOR FOR
+ SELECT id, amount
+ FROM orders
+ WHERE status IS NULL;
+ 
+ OPEN cur;
+ 
+ FETCH NEXT FROM cur INTO @id, @amount;
+ 
+ WHILE @@FETCH_STATUS = 0
+ BEGIN
+ UPDATE orders
+ SET status = CASE
+ WHEN @amount >= 1000 THEN 'HIGH'
+ WHEN @amount >= 500 THEN 'MEDIUM'
+ ELSE 'LOW'
+ END
+ WHERE id = @id;
+ 
+ FETCH NEXT FROM cur INTO @id, @amount;
+ END
+ 
+ CLOSE cur;
+ DEALLOCATE cur;
+
+This functionality doesn’t need Procedural SQL (PL/SQL/T-SQL) and should be written in pure declarative SQL instead.
+
+The code block runs a loop over a row source, processing one row at a time. It’s known as RBAR (Row By Agonizing Row). The problem with this approach is the excessive context switches, constantly switching between Procedural language runtime and SQL language runtime. Instead of using one SQL to declaratively carry out the task, the code is executing hundreds of simple SQLs, slowing execution and wasting system resources.
+
+37.
+Given the tables runners and races, what will be the result of the following query?
+Hide answer
+
+SELECT *
+FROM runners
+WHERE id NOT IN (SELECT winner_id FROM races);
+
+The result will be an empty set. If the set evaluated by NOT IN contains any NULL values, such as a NULL winner_id in the “triathlon” record, the condition evaluates UNKNOWN for all rows, and no rows are returned.
+
+This can be fixed by filtering out NULL values in the subquery: WHERE winner_id IS NOT NULL.
+
+Why this question matters:
+This SQL interview question reveals whether an applicant understands how NULLhandling can lead to unexpected query results. The key point interviewers should listen for is that NOT INreturns no rows when the subquery contains NULLvalues. Knowledgeable candidates will connect this behavior to SQL’s three-valued logic and suggest fixes like filtering NULLs or using NOT EXISTS.
+
+38.
+Given the tables envelope and docs, what will be the result of an UPDATE query that uses EXISTS?
+Hide answer
+The query will update rows with idnum values 1 and 2, but doesn’t update the row where idnum is NULL.
+
+The EXISTS clause here is misleading because it compares the envelope table against itself, meaning the condition is always true. And because the join on NULL in idnum fails, that row will remain unchanged, NULL.
+
+39.
+Explain the difference between IN and EXISTS.
+Hide answer
+IN compares values against a list or result set. It often performs slowly with large subqueries and handles NULL values poorly.
+
+EXISTS checks to see if any matching rows exist. It returns a Boolean result and stops scanning once a match is found, which tends to improve performance on large datasets.
+
+Why this question matters:
+This SQL interview question underscores how different predicate patterns affect query behavior. Hiring managers will note candidates who explain how INcompares against a value list while EXISTSchecks for matching rows. Applicants who discuss performance considerations, short-circuit behavior, and NULLhandling when choosing between the two demonstrate stronger judgment.
+
+40.
+What is a correlated subquery and what is the main problem of using such queries?
+Hide answer
+A correlated subquery is a subquery that references a table from the outer query.
+
+For example,
+
+ SELECT e1.employee_id,
+ e1.salary
+ FROM employees e1
+ WHERE e1.salary > (
+ SELECT AVG(e2.salary)
+ FROM employees e2
+ WHERE e2.department_id = e1.department_id
+ );
+This construction forces the inner query to be executed separately, for every row in the outer query’s row source, resulting in significant performance degradation. This type of query should be avoided at all costs.
+
+Why this question matters:
+This advanced SQL interview question depicts how query structure can affect execution cost. Seasoned applicants will explain that correlated subqueries reference the outer query and may execute repeatedly for each row, connecting this pattern to performance degradation. Hiring managers should listen for subquery alternatives, such as joins, window functions, or CTEs, where appropriate.
+
+41.
+List and explain each of the ACID properties.
+Hide answer
+ACID stands for atomicity, consistency, isolation, and durability.
+
+They’re a set of guarantees that help databases process transactions reliably, especially when multiple users are reading and writing simultaneously.
+
+ACID property	Definition	Simple explanation
+Atomicity	Transactions are “all or nothing.”	If something fails, everything rolls back.
+Consistency	Transactions move the database from one valid state to another.	Constraints are enforced to ensure the database remains valid.
+Isolation	Concurrent transactions produce the same result as if they ran one at a time.	Each transaction behaves as if it’s running alone.
+Durability	Once committed, changes remain saved.	After a commit, changes persist, even after a crash or restart.
+Why this question matters:
+This basic SQL interview question tests a candidate’s understanding of transactional guarantees that ensure data reliability. Interviewers should ask candidates to explain each ACID property and how it applies to database behavior. Knowledgeable applicants will relate these concepts to concurrency control, failure recovery, and maintaining data integrity under load.
+
+42.
+A table has 10 rows. If you run TRUNCATE inside a transaction, then ROLLBACK, what data remains?
+Hide answer
+It depends on the database.
+
+For PostgreSQL and SQL Server: TRUNCATE is transactional, so ROLLBACK would restore the 10 original rows.
+
+For MySQL and Oracle: TRUNCATE behaves like a DDL operation that implicitly commits. The ROLLBACK command would leave the table empty.
+
+43.
+Can a database write uncommitted changes to disk before COMMIT?
+Hide answer
+Yes. Most modern databases use write-ahead logging (WAL). They write uncommitted data from cache to disk before the session issues a COMMIT.
+
+In case of a ROLLBACK or failure, consistency is achieved by implementing an applicable data multi-versioning mechanism such as UNDO or ROLLBACK segments.
+
+Why this question matters:
+This advanced SQL interview question reveals an applicant’s knowledge of database internals beyond transaction syntax. Applicants who explain how write-ahead logging allows uncommitted changes to reach disk before COMMITdemonstrate deeper database knowledge. Adept SQL practitioners will tie this behavior to ROLLBACKmechanisms, crash recovery, and transaction consistency.
+
+44.
+What is the difference between the RANK() and DENSE_RANK() functions?
+Hide answer
+RANK() skips values after a tie (e.g., 1, 1, 3).
+DENSE_RANK() does not skip values after a tie (e.g., 1, 1, 2).
+
+45.
+How would you use a window function in this situation?
+Hide answer
+Challenge:
+
+Use a window function to identify the employee with the second-highest salary in each department from an employees table.
+
+Columns: (emp_id, name, department, salary).
+
+What happens if a department has fewer than two employees, or there are tied values (same salary amount for second highest paid within the department), and how would you handle these edge cases?
+
+Solution:
+
+SQL:
+
+WITH ranked AS (
+  SELECT
+    emp_id,
+    name,
+    department,
+    salary,
+    ROW_NUMBER() OVER (
+      PARTITION BY department
+      ORDER BY salary DESC
+    ) AS rn
+  FROM employees
+),
+departments AS (
+  SELECT DISTINCT department
+  FROM employees
+)
+SELECT
+  d.department,
+  COALESCE(CAST(r.emp_id AS varchar), 'N/A') AS emp_id,
+  COALESCE(r.name, 'N/A') AS name,
+  COALESCE(CAST(r.salary AS varchar), 'N/A') AS salary
+FROM departments d
+LEFT JOIN ranked r
+  ON r.department = d.department
+ AND r.rn = 2
+ORDER BY d.department;
+
+Handling Ties with RANK() or DENSE_RANK()
+
+If there are tied values for the second-highest salary within a department, ROW_NUMBER() will arbitrarily assign a single row as position 2, which may not be the desired behavior.
+
+To include all employees with the second-highest salary (in case of ties), use RANK() or DENSE_RANK() instead:
+
+RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rnk
+Why this question matters:
+This SQL coding interview question reveals how a candidate uses window functions to solve ranking problems via real-world edge cases. For interviewers, note applicants who apply ROW_NUMBER() with PARTITION BY and explain how departments with fewer than two employees are handled. For applicants, emphasize the tied salary scenario to show your knowledge of when to use RANK() or DENSE_RANK() instead.
+
+46.
+You receive sorted query results, but the sorting order is different from what you expected. What session parameter can be responsible for this?
+Hide answer
+In most cases, this is caused by the collation setting.
+
+47.
+What are the challenges of version-controlling database structure? How do you recommend handling them?
+Hide answer
+The main challenge is that a database is not a stateless environment. In a stateful environment, you need to version-control the logic that transforms it from one state to another, not just the final desired state.
+
+Approach:
+
+Migration scripts: Store incremental SQL scripts to apply schema changes like CREATE, ALTER, DROP, indexes, and constraints, or use a migration tool like Flyway, Liquibase, or Alembic.
+Sequential versioning: Give each migration a unique, ordered version ID so deployments apply changes consistently.
+Safe reversibility: Make migrations reversible where possible to support safe updates and rollbacks.
+Controlled data changes: For essential reference and seed data, version small, controlled scripts alongside each schema migration.
+Why this question matters:
+This advanced SQL interview question evaluates whether a candidate understands database changes as stateful, production-sensitive deployments. Hiring managers should look for applicants who discuss migration scripts, ordered versioning, rollback planning, and controlled data changes. Informed applicants will connect database version control to safer releases and CI/CD workflows.
+
+48.
+Describe the structure of a B-tree index and how it works.
+Hide answer
+A B-tree index (balanced tree index) is a self-balancing tree data structure that maintains sorted data and allows searches, insertions, and deletions in O(log n) time.
+
+B-tree structure:
+
+Root node: The top node that stores key ranges and pointers to child nodes.
+Branch (internal) nodes: Intermediate nodes that contain keys and pointers to further child nodes. They guide the search toward the correct leaf.
+Leaf nodes: The bottom-level nodes containing the actual indexed key values and pointers (ROWIDs) to the corresponding table rows. Leaf nodes are linked together in a doubly-linked list for efficient range scans.
+How a B-tree index works:
+
+Search: Starting at the root, the database compares the search key with node keys and follows the appropriate pointer down through branch nodes until it reaches a leaf node containing the target value.
+Insert: The value is inserted into the appropriate leaf node. If the leaf is full, it splits into two, and the middle key is promoted to the parent. Splits can cascade up to the root.
+Delete: The key is removed from the leaf. If the node becomes too empty, it merges with a sibling or redistributes keys.
+Range scan: Once a starting leaf is found, the linked list between leaves allows sequential reading without revisiting the tree.
+The tree is always balanced. All leaf nodes are at the same depth, ensuring consistent performance regardless of data distribution.
+
+49.
+What is a compound index and when should you use it?
+Hide answer
+A compound index, or composite index, is an index built on two or more columns of a table.
+
+Compound index example: ~~~ CREATE INDEX idx_name ON orders(customer_id, order_date); ~~~
+
+When to use a compound index:
+
+Frequent Filtering: When queries frequently filter or sort on multiple columns together (for example, WHERE customer_id = 5 AND order_date > '2024-01-01').
+Covering Index: When it can satisfy the “covering index” pattern, where all columns needed by a query are in the index, and the database can answer the query without ever touching the actual table.
+Sorting or Grouping: To optimize ORDER BY or GROUP BY on multiple columns.
+Key rule: “leftmost prefix”
+
+Column order matters and should match the most common query patterns.
+
+An index on (A, B, C) can be used when filtering on:
+
+A
+(A, B)
+(A, B, C)
+However, it is generally not useful for filters on B or C alone.
+
+Trade-offs
+
+Compound indexes are large, consume more storage, and slow down INSERT, UPDATE, and DELETE operations more than single-column indexes.
+
+Only create them when query patterns justify the overhead.
+
+50.
+How do you create an index if you are not allowed to lock a table?
+Hide answer
+Use an ONLINE (non-blocking) index creation method, where supported:
+
+PostgreSQL: CREATE INDEX CONCURRENTLY idx_name ON table(column); builds the index without holding an exclusive lock. It takes longer and does two passes over the table, but allows reads and writes to continue.
+MySQL (InnoDB): ALTER TABLE ... ADD INDEX uses the Online DDL framework by default since MySQL 5.6. You can explicitly specify ALGORITHM=INPLACE, LOCK=NONE.
+Oracle: CREATE INDEX idx_name ON table(column) ONLINE; allows DML to continue during index creation.
+SQL Server: CREATE INDEX idx_name ON table(column) WITH (ONLINE = ON); This requires the Enterprise Edition.
+Considerations:
+
+Online index builds typically take longer and use more resources than offline builds.
+Most engines still take brief metadata locks at the beginning and end.
+If the build fails partway through (e.g., PostgreSQL CONCURRENTLY), you may be left with an ‘INVALID’ index that must be dropped and recreated.
+51.
+What is a clustered index, and when can it be useful?
+Hide answer
+A clustered index determines the physical storage order of data rows in a table. The table data itself is stored in the order of the clustered index key. The leaf nodes of the clustered index are the data pages.
+
+Key characteristics:
+One per table: A table can have only one clustered index (since data can only be physically sorted one way).
+Defaults: In SQL Server and MySQL (InnoDB), the primary key is typically the clustered index by default.
+PostgreSQL: PostgreSQL uses a heap structure by default, but the CLUSTER command can reorder data based on an index (it is a one-time operation and not maintained automatically).
+When it is useful:
+Range queries: Queries like WHERE date BETWEEN '2024-01-01' AND '2024-12-31' because rows are physically adjacent.
+Sorted data: Queries that return many rows in sorted order.
+Single key: Tables predominantly queried by a single key (for example, time-series data clustered by timestamp).
+Trade-offs:
+Inserts into the middle of the order cause page splits and fragmentation.
+Non-clustered indexes must store the clustered index key as a row locator, which can increase their size.
+52.
+What is an index skew and how can you avoid it?
+Hide answer
+Index skew occurs when the distribution of indexed values is highly uneven, meaning a small number of key values account for a disproportionately large number of rows.
+
+Example: A status column where 99% of rows are COMPLETED and 1% are PENDING. The index on status is essentially useless for finding COMPLETED rows (a full table scan is faster), but helpful for PENDING.
+
+Why it’s a problem:
+
+The query optimizer may choose poor execution plans if it assumes uniform distribution.
+Histogram statistics may not capture the skew accurately.
+B-tree nodes for popular values become hotspots during inserts.
+How to avoid or mitigate it:
+
+Keep statistics up to date (ANALYZE in PostgreSQL, DBMS_STATS in Oracle) with sufficient histogram buckets.
+Use partial/filtered indexes: CREATE INDEX idx ON orders(status) WHERE status = 'PENDING'; indexes only on the values you actually search for.
+Consider composite indexes that add a more selective column.
+Use bind variable peeking or adaptive cursor sharing (Oracle) to get plan flexibility.
+Partition the table to reduce the impact of skewed values.
+53.
+Do you ever need to rebuild indexes? If so, why?
+Hide answer
+It depends on the RDBMS and workload, but generally, yes, periodic maintenance can be beneficial.
+
+Why you might rebuild:
+
+Fragmentation: After many INSERT, UPDATE, and DELETE operations, B-tree leaf nodes can become sparsely filled (internal fragmentation) or physically scattered on disk (external fragmentation). This increases input/output (I/O) for range scans.
+Bloat (PostgreSQL): Dead tuples from MVCC can bloat indexes. REINDEX or pg_repack reclaims space.
+Statistics: Rebuild can reset storage efficiency to optimal levels.
+When it may not be necessary:
+
+For OLTP workloads with mostly point lookups, fragmentation has minimal impact.
+Modern databases handle much of this automatically. For example, PostgreSQL autovacuum helps reduce bloat.
+Solid-state drives (SSDs) reduce the penalty of physical fragmentation compared to HDDs.
+Common Rebuild Methods:
+
+ALTER INDEX ... REBUILD (SQL Server, Oracle)
+REINDEX (PostgreSQL)
+ALTER TABLE ... FORCE or OPTIMIZE TABLE (MySQL/InnoDB)
+Online rebuild options exist to avoid locking (ALTER INDEX ... REBUILD ONLINE in Oracle).
+54.
+What is a bitmap index and when is it beneficial?
+Hide answer
+A bitmap index stores a bitmap (array of bits) for each distinct value in the indexed column. Each bit corresponds to a row:
+
+1 means the row has that value.
+0 means it does not.
+Example: For a gender column with values M and F, two bitmaps are stored: one for M (1,0,1,1,0...) and one for F (0,1,0,0,1...).
+
+Bitmap indexes are beneficial for:
+
+Low-cardinality columns (few distinct values relative to row count) such as status flags, gender, regions, or boolean flags.
+Data warehouse (OLAP) workloads with complex ad-hoc queries combining multiple conditions, because bitmap AND/OR operations are extremely fast.
+Read-heavy tables with infrequent updates.
+Bitmap indexes are not a good fit for:
+
+High-concurrency (OLTP) write workloads where updating a single row can lock an entire bitmap segment, causing massive contention.
+High-cardinality columns where bitmaps become sparse and larger than a B-tree index.
+Availability:
+
+Natively supported in Oracle.
+PostgreSQL and MySQL do not have native bitmap indexes, but PostgreSQL’s query executor can dynamically create in-memory bitmap scans from multiple B-tree indexes.
+55.
+What is a function-based index and when is it required?
+Hide answer
+A function-based index (FBI) is an index created on the result of a function or expression applied to one or more columns, rather than on the raw column values.
+
+Example: CREATE INDEX idx_upper_name ON employees(UPPER(last_name));
+
+A function-based index is required:
+
+Queries using functions in WHERE clauses. For example, SELECT * FROM employees WHERE UPPER(last_name) = 'SMITH'; . Without an FBI, this cannot use a regular index on ‘last_name’ because the function prevents index matching.
+Computed expressions: CREATE INDEX idx_total ON orders(quantity * price);
+JSON field access: CREATE INDEX idx_json ON docs((data->>'email'));
+Function-based Index Key rules:
+
+The query expression must exactly match the expression in the index definition.
+The function must be deterministic (the same input always produces the same output). For example, functions like SYSDATE or RANDOM cannot be used.
+In Oracle, the query optimizer must have statistics on the virtual column created by the FBI.
+Alternatives:
+
+Generated, or computed, columns (MySQL, SQL Server, PostgreSQL) with a regular index on the computed column achieve the same effect.
+56.
+What factors determine whether the database will use an index for a query?
+Hide answer
+This depends on several factors that the optimizer evaluates:
+
+Does the WHERE clause reference the leading column(s) of the index? If the query skips the first column of a compound index, the index typically won`t be used.
+Selectivity: If the index returns a large percentage of the table, the optimizer may prefer a full-table scan.
+Functions on indexed columns: WHERE UPPER(name) = X won`t use an index on the name column. You need a function-based index.
+Data type mismatches and implicit conversions: WHERE varchar_col = 123 may cause implicit type casting, preventing index use.
+OR conditions: WHERE a = 1 OR b = 2 may not use a composite index on (a, b) efficiently.
+NULLs: In some RDBMS (Oracle), B-tree indexes dont store entirely NULL entries. IS NULL` predicates may not use the index.
+Statistics freshness: Stale statistics can cause the optimizer to make suboptimal choices.
+To verify, use:
+
+EXPLAIN
+EXPLAIN ANALYZE - PostgreSQL
+EXPLAIN - MySQL
+EXPLAIN PLAN - Oracle
+SET SHOWPLAN - SQL Server
+57.
+Which data type would you use to store an account balance and why?
+Hide answer
+Use an exact numeric type, like DECIMAL or NUMERIC, for account balances.
+
+Avoid FLOAT or DOUBLE for monetary values.
+
+Recommended: DECIMAL(19,4) or NUMERIC(15,2) depending on precision requirements.
+
+DECIMAL(19,4) covers large balances with 4 decimal places, which makes it ideal for currency and interest calculations.
+NUMERIC(15,2) supports 2 decimal places, which is sufficient for most currencies.
+Why DECIMAL / NUMERIC:
+
+Exact representation: Stores values exactly as specified. For example, 0.1 + 0.2 = 0.3 precisely.
+No rounding errors: Critical for financial calculations where even fractional cent differences matter.
+Regulatory compliance: Financial systems are often required to use exact arithmetic.
+Why avoid FLOAT / DOUBLE:
+
+IEEE 754 floating-point representation introduces rounding errors. For example, 0.1 cannot be represented exactly in binary floating-point.
+Accumulated rounding errors can lead to discrepancies in totals and reconciliations.
+Alternative: Store cents as an integer:
+
+Storing amounts in cents (for example, $10.50 as 1050) is viable and avoids decimals, but requires careful conversion everywhere and doesn’t handle sub-cent calculations (interest, exchange rates, etc) well.
+58.
+What’s the difference between DATE, DATETIME, and TIMESTAMP?
+Hide answer
+These vary by database, but the general distinctions are:
+
+DATE:
+
+Stores calendar date only (year, month, day). No time component.
+MySQL: Stores 3 bytes, range 1000-01-01 to 9999-12-31.
+Oracle: Stores date and time, despite the name.
+PostgreSQL: Stores 4 bytes, stores date only.
+DATETIME:
+
+Stores date and time without timezone information.
+MySQL: Stores 8 bytes: range 1000-01-01 00:00:00 to 9999-12-31 23:59:59. Stores the literal value as entered.
+SQL Server: Stores 8 bytes, with ~3.33ms accuracy. DATETIME2 offers higher precision.
+TIMESTAMP:
+
+Stores date and time. Time zone handling depends on the database and the specific type.
+MySQL: Stores 4 bytes: range 1970-01-01 00:00:01 UTC to 2038-01-19 03:14:07 UTC. Stored as UTC, converted to the session timezone on retrieval. MySQL will perform auto-updates on row modifications if configured.
+PostgreSQL: TIMESTAMP WITH TIME ZONE (timestamptz) stores as UTC and converts. TIMESTAMP WITHOUT TIME ZONE stores literally.
+Best practice:
+
+Use the DATE type when time is irrelevant.
+Use TIMESTAMP WITH TIME ZONE for event times in global applications when supported.
+Be aware of the 2038 limitation in MySQL TIMESTAMP.
+59.
+What are the storage and performance differences between CHAR(50) and VARCHAR(50)?
+Hide answer
+CHAR(50):
+
+Fixed-length: Always stores exactly 50 characters, right-padded with spaces if the value is shorter.
+Storage: Always uses the full 50 bytes (or 50× character size for multi-byte charsets).
+Advantage: Predictable row size. Slightly faster for fixed-length data since no length prefix is needed. Beneficial for columns that always hold the same length, for example, 2-letter country codes like CHAR(2).
+
+VARCHAR(50):
+
+Variable-length: Stores only the characters you provide plus a small length prefix (usually 1–2 bytes).
+Storage: If you store Hello, (5 chars), it uses 7 bytes instead of 50.
+Advantage: Uses significantly less storage when actual values vary in length.
+
+Performance differences:
+
+VARCHAR often performs better overall because it saves space. That usually means more rows per page, better cache use, and fewer disk reads.
+CHAR can cause wasted space and trailing-space comparison issues (some RDBMS ignore trailing spaces in comparisons, others don`t).
+In InnoDB (MySQL), VARCHAR is almost always preferred. CHAR is only better for truly fixed-length, short values.
+General rule: Use VARCHAR unless the data is always exactly the same length and is short. Use CHAR for codes like state abbreviations (CHAR(2)) and currency codes (CHAR(3)).
+
+60.
+What is a foreign key constraint and how does it work?
+Hide answer
+A foreign key (FK) constraint is a database rule that links two tables and enforces referential integrity.
+
+It ensures that a value in the child table (the table with the FK) must match an existing value in the parent table (the referenced table), typically a primary key or unique key.
+
+How it functions:
+
+INSERT into the child table: The database checks that the FK value exists in the parent table. If not → error.
+UPDATE the FK value in the child table: Same check. The new FK value must exist in the parent table.
+DELETE from the parent table: The database checks if any child rows reference the deleted parent row. The behavior depends on the ON DELETE action (for example, CASCADE, SET NULL, RESTRICT, etc.).
+UPDATE the referenced key in the parent table: Similar check. The database checks for referencing rows, and behavior depends on ON UPDATE rules (if supported).
+Example: ~~~
+
+CREATE TABLE orders ( order_id INT PRIMARY KEY, customer_id INT, FOREIGN KEY (customer_id) REFERENCES customers(customer_id) );
+
+~~~
+
+Performance implications:
+
+Every INSERT/UPDATE on the child table requires a lookup in the parent table. An index on the parent’s referenced column is essential.
+Every DELETE/UPDATE on the parent requires checking the child table. An index on the child’s FK column is strongly recommended, as without it, Oracle acquires a table lock on the child table.
+FK checks add overhead to write operations, but prevent orphaned records and data inconsistency.
+61.
+How and why would you disable a constraint? What is constraint validation?
+Hide answer
+You might temporarily disable a constraint when you need speed or flexibility during a one-time operation:
+
+Why disable a constraint:
+
+Bulk loads: Validating every row during a big INSERT can be slow. Disabling constraints can make the load faster.
+Data migrations: Data sometimes arrives out of order (for example, inserting child rows before parent rows).
+Maintenance: Large updates or transformations may run faster without constraint checks.
+How to disable constraints:
+
+Oracle: ALTER TABLE orders DISABLE CONSTRAINT fk_customer;
+SQL Server: ALTER TABLE orders NOCHECK CONSTRAINT fk_customer;
+PostgreSQL: ALTER TABLE orders DISABLE TRIGGER ALL; (FK constraints are implemented via triggers) or SET session_replication_role = 'replica';
+MySQL: SET FOREIGN_KEY_CHECKS = 0;
+Constraint validation defined:
+
+When re-enabling a constraint, you can choose:
+
+Validate existing data (safer):
+Oracle: ENABLE VALIDATE
+The DB checks all existing rows. Slower, but guarantees the table is clean.
+SQL Server: WITH CHECK
+Validates existing data, and the constraint is “trusted.”
+Do not validate existing data (faster, riskier):
+Oracle: ENABLE NOVALIDATE
+The constraint is enforced only for new and updated rows. Existing bad data may remain.
+SQL Server: WITH NOCHECK
+Existing data isn’t checked, and the optimizer may treat the constraint as not trusted.
+Best practice: Always validate after re-enabling a constraint unless you have a specific reason not to. Unvalidated constraints give a false sense of security, and the optimizer may not trust them for query optimization.
+
+62.
+What is a check constraint?
+Hide answer
+A CHECK constraint enforces a domain rule on a column or combination of columns. It specifies a boolean condition that must be TRUE (or NULL/UNKNOWN ) for every row.
+
+Examples:
+
+ALTER TABLE employees ADD CONSTRAINT chk_salary CHECK (salary > 0);
+ALTER TABLE orders ADD CONSTRAINT chk_dates CHECK (ship_date >= order_date);
+CHECK (status IN ('ACTIVE', 'INACTIVE', 'SUSPENDED'))
+CHECK (email LIKE '%@%.%')
+CHECK constraint behavior:
+
+Evaluated on INSERT and UPDATE. If the condition is FALSE, the operation is rejected.
+NULL values typically pass CHECK constraints since NULL makes the condition UNKNOWN, not FALSE.
+CHECK constraints usually cannot reference other tables. Use foreign keys or triggers for cross-table rules.
+CHECK constraints cannot contain subqueries, sequences, or non-deterministic functions in most RDBMS (for example, SYSDATE, CURRENT_TIMESTAMP).
+MySQL note: MySQL parsed but ignored CHECK constraints prior to MySQL 8.0.16. They are enforced starting in 8.0.16.
+
+Common use cases:
+
+Enforcing valid ranges
+Enumerated values
+Column-to-column relationships
+Business rules as a safety net beyond application validation
+These options define what happens to child rows when a parent row is deleted:
+
+ON DELETE RESTRICT:
+
+Prevents deletion of the parent row if any child rows reference it.
+The DELETE statement fails with an error.
+This is the default behavior in most databases.
+Use when child records should never become orphaned, and the application must explicitly handle deletions (for example, delete all orders before deleting a customer).
+63.
+Explain the difference between ON DELETE CASCADE, ON DELETE SET NULL, and ON DELETE RESTRICT on a foreign key.
+Hide answer
+These options define what happens to child rows when a parent row is deleted:
+
+ON DELETE RESTRICT:
+
+Prevents deletion of the parent row if any child rows reference it.
+The DELETE statement fails with an error.
+This is the default behavior in most databases.
+Use when child records should never become orphaned and the application must explicitly handle deletions (for example, delete all orders before deleting a customer).
+ON DELETE CASCADE:
+
+Automatically deletes all child rows that reference the deleted parent row.
+Can cascade further if the child table has its own CASCADE children (this can be dangerous).
+Use when child records have no meaning without the parent (for example, delete an order → delete all order_items). Be cautious here, as an accidental DELETE on the parent can wipe out large amounts of data.
+ON DELETE SET NULL:
+
+Sets the FK column in child rows to NULL when the parent row is deleted.
+The child row remains but loses its association with the parent.
+Requires the FK column to be nullable.
+Use when child records should be preserved, but the relationship is optional (for example, an employee. manager_id becomes NULL when the manager is deleted).
+Note: There is also ON DELETE SET DEFAULT (which sets FK to its default value) and ON DELETE NO ACTION (which is similar to RESTRICT but checked at the end of the statement, not immediately. This is relevant for deferred constraints).
+
+64.
+What are deferrable constraints?
+Hide answer
+Deferrable constraints let the database delay constraint checking until the end of a transaction (COMMIT) rather than enforcing the constraint immediately after each individual SQL statement.
+
+Modes:
+
+NOT DEFERRABLE (often the default): Constraint is checked immediately after each statement. Cannot be changed within a transaction.
+DEFERRABLE INITIALLY IMMEDIATE: Checked after each statement by default, but can be deferred within a transaction using SET CONSTRAINTS ... DEFERRED.
+DEFERRABLE INITIALLY DEFERRED: Checking is deferred until COMMIT by default.
+Example:
+
+CREATE TABLE employees (
+emp_id INT PRIMARY KEY,
+manager_id INT,
+CONSTRAINT fk_mgr FOREIGN KEY (manager_id) REFERENCES employees(emp_id)
+DEFERRABLE INITIALLY DEFERRED
+);
+Then you can insert employees and their managers in any order within a single transaction, and the foreign key is checked only at COMMIT.
+
+Use cases:
+
+Circular references where Table A references Table B and vice versa.
+Bulk loading data where insertion order is difficult to control.
+Swapping primary key values between two rows.
+Availability:
+
+PostgreSQL and Oracle: Full support.
+MySQL: Foreign key constraints are not deferrable (checked immediately).
+SQL Server: Does not support deferrable constraints.
+65.
+What is a MERGE/UPSERT statement?
+Hide answer
+MERGE (also called UPSERT) combines INSERT, UPDATE, and optionally DELETE into a single atomic statement. It compares a source dataset against a target table and takes different actions based on whether a match is found.
+
+Example:
+
+Syntax (SQL Standard / Oracle / SQL Server):
+MERGE INTO target_table t
+USING source_table s ON (t.id = s.id)
+WHEN MATCHED THEN
+UPDATE SET t.name = s.name, t.amount = s.amount
+WHEN NOT MATCHED THEN
+INSERT (id, name, amount) VALUES (s.id, s.name, s.amount)
+WHEN NOT MATCHED BY SOURCE THEN
+DELETE;
+PostgreSQL alternative:
+
+(INSERT ... ON CONFLICT):
+INSERT INTO target_table (id, name, amount)
+VALUES (1, 'Alice', 100)
+ON CONFLICT (id) DO UPDATE
+SET name = EXCLUDED.name, amount = EXCLUDED.amount;
+MySQL alternative:
+
+INSERT INTO target_table (id, name, amount) VALUES (1, 'Alice', 100)
+ON DUPLICATE KEY UPDATE name = VALUES(name), amount = VALUES(amount);
+Use cases:
+
+Data synchronization
+ETL pipelines
+Dimension loading in data warehouses
+CDC (Change Data Capture) processing
+Any scenario where you need to “insert if new, update if exists”
+66.
+What is a parallel query, and when do you need one? How do you implement parallelism?
+Hide answer
+A parallel query splits a single SQL operation across multiple CPU cores or processes, with each handling a portion of the data and combining the results.
+
+When you need a parallel query:
+
+Large table scans (analytics and data warehouse workloads).
+Expensive steps on large datasets like sorts, aggregations, and hash joins.
+When a query is CPU or I/O bound, and the server has available cores.
+Parallel queries are generally beneficial for OLAP (a few heavy queries), but not for OLTP (short, frequent transactions).
+
+How to implement parallelism:
+
+Oracle: ALTER SESSION FORCE PARALLEL QUERY PARALLEL 8; or hints: /*+ PARALLEL(t, 8) */. Table-level: ALTER TABLE t PARALLEL 8;
+PostgreSQL: SET max_parallel_workers_per_gather = 4; The planner decides automatically based on table size (min_parallel_table_scan_size) and cost estimates. Supports parallel seq scans, index scans, hash joins, and aggregations.
+SQL Server: Automatic based on cost threshold (cost threshold for parallelism, default 5). Max degree controlled by MAXDOP at server, database, or query level.
+MySQL: Parallelism for a single query is more limited than the others. MySQL 8.0+ supports parallel read for some operations (CHECK TABLE, SELECT COUNT(*)).
+Considerations: Parallel queries use more CPU and memory resources and require more worker slots. On busy systems, they can hurt concurrency, so control them with degree-of-parallelism settings and resource limits.
+
+67.
+What is table partitioning (and sharding) and when is it useful? What types of partitioning do you know?
+Hide answer
+Table partitioning divides a large table into smaller, more manageable pieces (partitions) while maintaining a single logical table interface. Sharding typically refers to distributing partitions across different database servers.
+
+When partitioning is useful:
+
+Very large tables (millions+ rows) where queries consistently filter on a predictable key.
+Time-series data with aging or archival needs (drop old partitions instead of DELETE).
+Improved query performance through partition pruning (only relevant partitions are scanned).
+Parallel operations across partitions.
+Easier maintenance (backup, rebuild indexes, etc) on individual partitions.
+Types of partitioning:
+
+Range: Partitions based on value ranges (for example, by month: Jan data, Feb data, etc.). Best for time-series.
+List: Partitions based on discrete value lists (for example, by region: US,CA in one, UK,DE in another). These are best for categorical data.
+Hash: Partitions based on a hash function applied to a column. Distributes data evenly. Best for load balancing when there`s no natural range.
+Composite (sub-partitioning): Combines two methods like range by date, then hash by customer_id.
+Key partitioning (MySQL): Similar to hash, but uses the database`s internal hashing.
+Reference partitioning (Oracle): Child table partitioned based on the parent`s partitioning via a foreign key.
+Note: Sharding distributes data across servers and requires a shard key, as well as middleware/application-level routing (for example, Vitess for MySQL, Citus for PostgreSQL).
+
+68.
+How do you trace your SQL session?
+Hide answer
+Tracing captures detailed execution information for SQL statements in a session:
+
+Oracle:
+
+ALTER SESSION SET SQL_TRACE = TRUE;
+DBMS_SESSION.SET_SQL_TRACE(TRUE);
+For detailed waits: ALTER SESSION SET EVENTS '10046 trace name context forever, level 12';
+Read trace files with TKPROF: tkprof trace_file.trc output.txt
+PostgreSQL:
+
+SET log_min_duration_statement = 0; logs all statements with duration.
+SET log_statement = 'all';
+auto_explain module: LOAD 'auto_explain'; SET auto_explain.log_min_duration = 0; logs execution plans automatically.
+pg_stat_statements extension for aggregated query statistics.
+MySQL:
+
+SET GLOBAL general_log = 'ON'; logs all queries (heavy overhead).
+Performance Schema: Detailed per-session instrumentation.
+SET SESSION long_query_time = 0; with slow query log enabled.
+SHOW PROFILE / SHOW PROFILES (deprecated, use Performance Schema).
+SQL Server:
+
+Extended Events (preferred): CREATE EVENT SESSION for fine-grained tracing.
+SQL Server Profiler (legacy, deprecated).
+sys.dm_exec_query_stats and sys.dm_exec_requests for real-time monitoring.
+SET STATISTICS IO ON; SET STATISTICS TIME ON; for per-statement I/O and timing.
+69.
+How can you control the execution plan of your query?
+Hide answer
+There are several techniques to influence or force the optimizer’s plan:
+
+Hints (engine-specific):
+
+Oracle: /*+ INDEX(t idx_name) */ /*+ FULL(t) */ /*+ LEADING(a b) */ /*+ USE_HASH(a b) */
+MySQL: USE INDEX(idx_name), FORCE INDEX(idx_name), IGNORE INDEX(idx_name), STRAIGHT_JOIN
+SQL Server: WITH (INDEX(idx_name)), OPTION (HASH JOIN), OPTION (FORCE ORDER)
+PostgreSQL: No native hints, but the pg_hint_plan extension provides them.
+Statistics management: Update statistics to provide the optimizer with accurate data:
+
+PostgreSQL and MySQL: ANALYZE
+Oracle: DBMS_STATS.GATHER_TABLE_STATS
+SQL Server: UPDATE STATISTICS
+Query rewriting: Rewrite the SQL to guide the optimizer. Convert subqueries to JOINs. Use CTEs. Break complex queries into steps with temp tables.
+
+Plan freezing/baselines:
+
+Oracle: Use SQL Plan Management (SPM) to capture and lock known-good plans.
+SQL Server: Use Plan Guides and Query Store to force specific plans.
+PostgreSQL: pg_hint_plan or pg_plan_guarantee.
+Session/system parameters:
+
+Adjust optimizer settings:
+
+PostgreSQL: join_collapse_limit, work_mem
+Oracle: optimizer_index_cost_adj
+Best practice: Prefer correct statistics and proper indexing over hints. Use hints as a last resort because they are brittle and don’t adapt to data changes.
+
+70.
+Can an index hurt performance? If yes, when?
+Hide answer
+Yes, indexes can hurt performance in several scenarios:
+
+Write overhead: Every INSERT requires updating all indexes on the table. UPDATE on indexed columns requires removing the old index entry and adding a new one. DELETE requires removing index entries. On heavily written tables with many indexes, this overhead can be significant.
+Storage and memory: Indexes consume disk space and buffer pool/cache memory. Unnecessary indexes waste resources that could be used to cache actual data.
+Wrong index chosen: The optimizer may choose an index that is less efficient than a full table scan, especially with stale statistics or low selectivity. An index range scan that returns many rows can be slower than a sequential scan because of random I/O.
+Index maintenance: Fragmentation from frequent modifications degrades performance over time.
+Lock contention: In some RDBMS, index operations can cause additional locking (for example, Oracle bitmap indexes, next-key locking in InnoDB).
+Too many indexes: Having more than 10 indexes on a table that receives heavy writes can make INSERT and UPDATE operations dramatically slower.
+Covering index misuse: Overly wide indexes (many columns) slow writes without proportional read benefits, if queries don`t match.
+Rule of thumb: Every index should be justified by query patterns. Periodically audit for unused indexes.
+
+PostgreSQL: pg_stat_user_indexes
+SQL Server: sys.dm_db_index_usage_stats
+71.
+What is a Full Table Scan? Is it good or bad?
+Hide answer
+A Full Table Scan, or FTS, reads every row in the table sequentially, block by block, without using an index.
+
+When Full Table Scans can be good (and preferred by the optimizer):
+
+Scanning small tables, where scanning is faster than traversing an index tree.
+On low selectivity queries, where the query returns a large portion of the table, or the sequential I/O of the FTS is faster than the random I/O of index lookups.
+When no suitable index exists for the query`s predicates.
+Analytical and warehouse workloads, where parallel full table scans can be highly efficient.
+COUNT(*) with no WHERE clause on a large table (though some RDBMS use index-only scans for this).
+When Full Table Scans can be bad:
+
+OLTP queries that are expected to return one or a few rows, where an index seek would be far faster.
+Frequently executed queries on large tables where each execution reads the entire table, consuming I/O and cache.
+When the FTS indicates a missing index, stale statistics, or a poorly written query.
+Key insight: An FTS is not inherently bad. It is only problematic when a more efficient access path should have been used. The optimizer usually makes the correct choice when statistics are current. Always verify with EXPLAIN before adding indexes.
+
+72.
+What is a view?
+Hide answer
+A view is a named, stored SQL query that acts as a virtual table. It does not store data itself. Each time the view is queried, the underlying SELECT statement is executed (or merged into the calling query by the optimizer).
+
+Syntax:
+
+CREATE VIEW active_customers AS
+SELECT customer_id, name, email
+FROM customers
+WHERE status = 'ACTIVE';
+Benefits:
+
+Abstraction and simplification: Encapsulates complex joins and logic behind a simple name.
+Security: Exposes only specific columns and rows to certain users (column-level and row-level security).
+Consistency: Centralizes business logic and changes to the view definition propagate to all queries using it.
+Backward compatibility: If a table is restructured, a view can maintain the old interface.
+Types:
+
+Simple view: Based on a single table, no aggregations, no GROUP BY.
+Complex view: Joins, subqueries, aggregations, DISTINCT, etc.
+Materialized view: Stores the query result physically and must be refreshed periodically to reflect changes in the underlying tables. Useful for expensive aggregations and reporting workloads.
+Note: Regular views usually add minimal overhead. Performance depends on the expanded query and indexes.
+
+73.
+What is an updatable view?
+Hide answer
+An updatable view allows INSERT, UPDATE, and DELETE operations through the view, which are translated into operations on the underlying base table(s).
+
+Requirements (SQL standard, varies by RDBMS):
+
+Based on a single base table (no joins in most RDBMS, though some support join views for updates).
+No DISTINCT, GROUP BY, HAVING, or aggregate functions (SUM, COUNT, etc.).
+No set operations (UNION, INTERSECT, EXCEPT).
+No subqueries in the SELECT list.
+All NOT NULL columns without defaults must be included in the view for INSERT.
+Each row in the view maps to exactly one row in the base table.
+
+WITH CHECK OPTION:
+CREATE VIEW active_customers AS
+SELECT * FROM customers WHERE status = 'ACTIVE'
+WITH CHECK OPTION;
+
+This prevents inserting or updating rows through the view that would not be visible through the view. For example, you cannot insert a customer with status = INACTIVE through this view.
+
+INSTEAD OF triggers (SQL Server, Oracle, PostgreSQL):
+
+Allow making non-updatable views (complex joins, aggregations) updatable by defining custom logic for INSERT/UPDATE/DELETE operations on the view. This gives full control over how DML on the view translates to base table operations.
+
+74.
+What is normalization and why is it needed?
+Hide answer
+Normalization is the process of organizing a relational database schema to reduce data redundancy and improve data integrity by decomposing tables into smaller, well-structured relations based on functional dependencies.
+
+Why normalization is needed:
+
+Eliminate redundant data: Without normalization, the same piece of information may be stored in dozens of rows. This wastes storage and, more critically, creates maintenance nightmares.
+Prevent data anomalies: Redundancy leads to insertion, update, and deletion anomalies, which cause inconsistencies when data is modified.
+Enforce data integrity: By ensuring each fact is stored in exactly one place, normalization prevents the same fact from having contradictory values in different rows.
+Simplify maintenance: Changes to a piece of data should occur in a single row, not hundreds.
+Flexible querying: Well-normalized schemas are more adaptable to new query requirements because data is logically organized.
+Normal forms (progressive levels):
+
+1NF: Atomic values, no repeating groups.
+2NF: 1NF and no partial dependencies (every non-key column depends on the whole primary key).
+3NF: 2NF and no transitive dependencies (non-key columns don`t depend on other non-key columns).
+BCNF: Every determinant is a candidate key.
+Higher forms (4NF, 5NF) address multi-valued and join dependencies but are rarely needed in practice.
+In practice, most OLTP systems aim for 3NF or BCNF as the baseline design.
+
+75.
+Describe a process of normalizing a dataset up until BCNF.
+Hide answer
+Step-by-step normalization process with an example:
+
+First Normal Form (1NF): All columns must contain atomic (indivisible) values and no repeating groups or arrays. Split the multi-value into separate rows.
+Second Normal Form (2NF): Must be in 1NF, and every non-key column must depend on the entire primary key (no partial dependencies).
+Third Normal Form (3NF): Must be in 2NF, and there are no transitive dependencies (non-key depends on non-key).
+Boyce-Codd Normal Form (BCNF): For every non-trivial functional dependency (X depends on Y), X must be a superkey (for example, every determinant is a candidate key).
+Note: BCNF decomposition can sometimes lose functional dependencies that 3NF preserves. In practice, 3NF is often sufficient. Functional dependencies can be enforced either at the application level or by CHECK constraints.
+
+76.
+Why would you want to denormalize a dataset?
+Hide answer
+Denormalization is the intentional introduction of redundancy into a normalized schema to improve read performance, at the cost of write complexity and storage.
+
+Reasons to denormalize:
+
+Query performance (reducing JOINs): Normalized schemas require many JOINs to reconstruct a complete record. For read-heavy workloads (dashboards, reports, etc), pre-joining data into fewer tables eliminates expensive JOIN operations at query time.
+Data warehousing and analytics: Star and snowflake schemas used in OLAP/DW are intentionally denormalized. Fact tables contain foreign keys to dimension tables, and dimension tables are often flattened (denormalized) for simpler, faster analytical queries.
+Caching and precomputation: Storing computed aggregates (for example, order_total on the orders table instead of computing SUM from order_items every time) avoids recalculating frequently accessed values.
+Reducing query complexity: Application code and queries become simpler when data is in fewer tables. This can reduce bugs and improve developer productivity.
+High-throughput read systems: Applications like product catalogs, content management systems, and APIs that serve millions of requests can benefit from denormalized read-optimized tables.
+NoSQL/document stores: Document databases (MongoDB, DynamoDB) naturally store denormalized, nested documents to avoid cross-document lookups.
+Trade-offs and costs:
+
+Write overhead: Redundant data must be updated in multiple places, requiring more complex INSERT/UPDATE logic.
+Data anomaly risk: The same anomalies normalization was designed to prevent (update, insert, delete anomalies) can resurface.
+Storage increase: Redundant data consumes more disk space.
+Consistency burden: The application or triggers must ensure all copies of a fact stay synchronized.
+Best practice: Start with a normalized design (3NF and BCNF), then selectively denormalize specific areas based on measured performance bottlenecks, not speculation. Document every denormalization decision and the consistency mechanism used.
+
 Подборка вопросов и задач по SQL на собеседовании с ответами
  Автор темыGuDron  Дата начала28 Июл 2022
 GuDron
