@@ -1,3 +1,200 @@
+React Native Interview Questions and Answers (2023)
+This Article is Part of the Guide: How to Hire a Software Developer: The Ultimate Guide guide-cat-arrow
+article_img
+October 27, 2021
+·
+16 min read
+·
+Difficulty level
+
+
+Author: Alex Valadzko CEO
+
+
+
+Co-author: Anastasiya Talochka Content Manager
+
+
+These React Native interview questions and answers are designed to guide you through the interview process for potential developers. The interview questions are broken down into three categories—basic interview questions, intermediate interview questions, and advanced interview questions. This helps you gauge how knowledgeable and experienced each candidate is, so you can make the most informed decision possible.
+
+React Native General and Basic Interview Questions
+These top React Native interview questions for freshers help you start the interview. All React Native developers should be able to answer these questions without any complication, regardless of their experience level. Mostly, this helps ensure the developer understands the basic concepts and can explain them to others who may not be quite as tech-savvy (i.e. company executives, stakeholders, etc.). These questions also provide an opportunity for you (the interviewer) to learn more about the basics of React Native.
+
+What is React Native?
+React Native is an open-source framework that uses JavaScript to allow for the development of mobile applications. It was originally developed by Facebook and allows for cross-platform development. This means the code in React Native that is initially developed works for iOS, Windows, Android, and more.
+
+How are React and React Native different? How are they similar?
+React is a JavaScript library. Developers must have a keen understanding of React and how it works. This is because React Native is a Javascript framework that is based on React. Notably, tags can be used differently with React and React Native. React is primarily used to create UI web applications; this is often for a single platform. However, React Native is more commonly used for cross-platform development.
+
+differences between React and React Native
+Is React Native a native mobile app?
+A native mobile app is a smartphone application that is coded in a specific programming language, such as Objective C for iOS or Java for Android operating systems. React Native refers to a native mobile application that allows for cross-platform development. This means the React Native code developed works with iOS, Windows, Android, and more. The developer should be able to explain what native mobile apps are and provide an accurate answer as to whether or not React Native fits the description.
+
+What are the advantages of React Native?
+There are a variety of ways that the developer can answer this React Native interview question. The advantages of React Native may be different for one mobile app developer than it is for another. However, they should be able to list some of the more general and widely acknowledged advantages. For instance, this may include:
+
+Cross-platform development—Perhaps the most notable advantage of React Native is the ability to use the same code across multiple platforms. This means the application runs successfully with iOS, Android, Windows, and more.
+An active development community—Developers can quickly find answers to any issues they face during development as there is a large and active community of React Native developers. The access to a helpful community is certainly a result of the fact that Facebook is the creator of React Native.
+React Native is written in a common language—JavaScript, which is used with React Native, is a common language that is easy for many experienced developers to use. This helps ensure fast development times, so you can go live with your new mobile application as soon as possible.
+Hot reloading—This is an interesting concept that, for many, significantly improves the development process. Hot reload helps you see changes immediately, rather than having to reload the application.
+react native development community
+Of course, there may also be other benefits that the developer finds to be important as well. The answer may vary based on your purpose for the application.
+
+What is the difference between an element and a component from React Native?
+A React element describes a DOM node and its attributes. It is a simple object, and the developer cannot apply any methods to the element. A React component, on the other hand, contains references to its DOM nodes and instances of child components. This is a simple distinction that the developer should understand and be able to provide an explanation for in detail. As a follow-up, you can ask them to (briefly) write an example of an element and an example of a component.
+
+What are the different components of React Native?
+The developer must have a detailed understanding of all core components of React Native projects. This is a basic React Native interview question that should not take much time to answer in detail. They should be able to list and discuss these core components:
+
+react native core components
+You can go into more detail by asking them to elaborate on the purpose of each one (or select ones). It is important that these core components do not get overlooked, and it is a great way to help the developer warm up and begin to feel comfortable during the interview.
+
+What is a hybrid application?
+Hybrid apps are web applications that are given a native app container. The application is downloaded from the app store and stored locally on the mobile device. The native app shell can then connect with the mobile platform’s capabilities. This is an important concept for the developer to understand when working with a React Native framework.
+
+What are the different versions of React Native?
+There have been different versions of React Native that the developer should be able to describe in some detail, especially the more recent versions.
+
+Describe the role of the basic button in React Native
+A button is simply a touchable element that creates an action when using React Native applications. This is, perhaps, one of the easiest React Native interview questions for React Native developers. They should be able to tell you the role of basic buttons during application development and describe how they create them.
+
+Are there any performance issues with React Native? If so, what are they?
+There may be some performance issues during the development of your mobile application. These performance issues should be resolved before the application goes live. The most commonly reported performance issues with React Native use include:
+
+Memory leak – Particularly in Android apps, memory leaks can occur. This is often due to information that is lost in the bridge during the transfer.
+Slow navigation times – This is often due to multiple UI thread bridging, although there may be other causes as well.
+Offloading issues – High CPU usage is often reported when offloading complex functions in the JavaScript thread.
+What steps do you take to optimize the app’s performance in React Native?
+There are certain possible performance issues with React Native. The developer should have an established process for how to ensure the optimization of the application’s performance.
+
+Can you name some of the users of react native in the U.S. (and abroad)?
+Many popular companies use React Native for their application development. Keep in mind, that React Native was developed by Facebook. Notable users that the developer may name include:
+
+Airbnb
+Facebook
+Facebook Ads Manager
+Instagram
+Skype
+Tesla
+Bloomberg
+UberEats
+It is not a cause for concern if the developer is unaware of the different users of React Native. However, having an understanding of them and studying their applications can suggest they are highly knowledgeable about the framework, especially for the development of larger, more complex applications.
+
+What are the best UI component libraries of React Native?
+There are a variety of answers the developer can give for this React native interview question. For instance, several component libraries the developer may discuss are:
+
+react native ui component libraries
+How can you ensure the security of the application?
+Security-related React Native interview questions for interview should not be overlooked. This question deals with what if any, safety practices the developer uses to help ensure the data is secure and stored properly. This is particularly important if you are an organization (or application) that contains highly sensitive and confidential information.
+
+The developer may refer to Async Storage while they are answering this question (see below). React Native Keychain also offers a secure form of data storage as well, which the developer may recommend and describe. Android developers may recommend Facebook Conceal and Android Keystone for safe, reliable, and effective data storage.
+
+What is the difference between a class and a functional component in React Native?
+A functional component is a simple Javascript component that accepts props and returns a react element (JSX). An export default class app extends components with the render method. For the sake of brevity, this is, of course, a more simplistic answer that the developer should give. Ideally, the developer should be able to go into more extensive detail about the differences between the two components and when they are used in React Native during the development of mobile applications with React Native.
+
+For a follow-up question, you can ask the developer when they would use a class and functional component. Most developers prefer a class component when there is a lifecycle and state. Functional components are typically preferable in every other case.
+
+What is the extends component in React Native?
+The extends component (or the extends keyword) allows the current component to access all component properties. This includes but is not limited to the function. It usually creates one component that is known as the Parent Class. The developer must also specify the component render method when using the extended component; the render method is simply a return value of the function.
+
+What are the benefits of Component Driven Development (CDD) in React Native? Do you recommend its use?
+Component-driven development (CDD) is a modern web development approach that uses components to anchor the build process. The developer should be able to provide a definition and list some of the notable advances of this development approach.
+
+React Native Intermediate Interview Questions
+These React Native practical interview questions and answers are ideal for developers with several years of experience. They are more technical and detailed, and they may not be easy for freshers to answer. However, more experienced developers should have no issue answering them with clarity.
+
+Can you explain hot reloading and its purpose?
+Hot reloading (in simplest terms) allows you to see code changes without reloading the entire development application. In other words, if logic is changed, then it is immediately reflected on the screen. This is different (and better) than live reloading where the application automatically refreshes the entire app. As discussed above, hot reloading in React Native is a major advantage.
+
+react native hot reloading
+What is your process for creating React Native applications?
+This React Native interview question asks the developer to explain their work process. Every mobile application is different, so they may not be able to provide every specific during the interview. However, they should have a basic work process that they can explain during the interview that ensures the proper (and timely) development of the application.
+
+Describe how virtual DOM works in React Native.
+According to React, The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a React Native UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. In other words, React ensures the DOM matches the UI state that the developer chooses for the application. The developer should have an understanding of how to answer this React Native interview question and (ideally) be able to explain it in layman’s terms.
+
+virtual DOM
+What is the role of refs in React Native?
+React refs enable you to access DOM components. Developers can use this to change child elements without re-rending the entire component. This is a more advanced question, but it should be a relatively easy answer for experienced React Native developers, particularly those who have more than 5 years of experience.
+
+What is the role of props in React Native?
+Props in React Native is short for properties. These are useful for passing data to different components. Subsequently, the developer should understand what they are, their purpose, and how to effectively use them during the development process.
+
+props in react native
+What are the steps for creating and starting a React Native app?
+The developer should be able to lay out precisely how they would create a React Native app and start a React Native application. The steps they list may appear like this:
+
+Install Node.js
+Install Reactive Native environments
+Create a project
+Start the project
+Ideally, they should also lay out the precise commands they would use to complete each one of these steps. For example, the developer may need to use the code “npm install g create react native” when setting up the development environment.
+
+How would you describe JSX to a company stakeholder?
+It is safe to assume that qualified developers understand JSX, which is a syntax extension to Javascript. Therefore, this question is less to gauge the overall knowledge of the developer. Instead, it is designed to ensure the developer can explain React native concepts to others who may not be as technologically savvy and informed. The developer may go into detail on how JSX relates to the user interface (UI).
+
+What are the disadvantages of React Native?
+Similarly, the developer should also be able to explain some of the disadvantages of using React Native as well. It is important to have an in-depth understanding of both the pros and cons. For disadvantages, the developer may discuss:
+
+React native is still relatively new—like all new applications and frameworks, React Native may experience some growing pains that impact the ease of use for developers. Additionally, this may impact the speed at which the developer can finish the application.
+Security concerns—React is an open-source JavaScript framework. This means it may be more vulnerable from a security perspective. Consequently, additional security measures (or an alternative framework) may be necessary when dealing with highly confidential information, such as for financial and banking institutions.
+Longer initialization times—Many developers report longer load times when initializing the run in React Native.
+Being able to discuss the disadvantages of React Native, helps you know the developer understands the obstacles they may face and have to overcome during the development process.
+
+Describe the role of the bridge in React Native.
+The bridge is a transport between Javascript and Native. It receives the developer’s response to open the application and then passes the payload to the Javascript module. It eventually passes the serialized batched response to the Native module.
+
+the bridge in react native
+What is the interaction manager used for in React Native?
+The interaction manager in React Native is used to defer the execution of a function. The ideal developer can define the interaction manager, describe when it is used (and when it is not used), and how to use it. The purpose of this question is to ensure the developer understands how single-threaded in React works. Otherwise, the nominations that are a part of the UI could become congested; the interaction manager ensures they work properly.
+
+React Native Advanced Interview Questions
+React Native interview questions and answers for experienced developers should be more challenging and dive more into the complexities involved with mobile application development. These should be questions that freshers and moderately experienced developers may have a harder time answering. If you are searching for an advanced developer, then you are likely making more of an investment in your mobile application and want to ensure you hire the right candidate. The React Native interview questions below help you separate the great developers from the very best.
+
+What is the difference between FlatList and SectionList?
+FlatList and SectionList allow the developer to render item lists on the mobile application. This question ensures the developer can properly render the list into logical sections. FlatList iterates the list and renders it properly on the UI. SectionList is more detailed and involves rendering the list headings.
+
+How are controlled and uncontrolled components different?
+Controlled components are those in which form data is handled by the component’s state. It takes its current value through props and makes changes through callbacks like onClick,onChange, etc. Uncontrolled components are the alternative to controlled components. With uncontrolled components, the form data is handled by the DOM itself, according to ReactJS. The right developer for your project understands the differences and, more importantly, when to use controlled or uncontrolled components.
+
+controlled and uncontrolled components
+How do you debug React Native apps?
+Of course, this answer is going to largely depend on the types of bugs there are with the application after the initial stages of development. However, every developer, especially those that are intermediate or advanced, should have a reliable process they use to debug React native applications. For example, their answer may include an explanation of the differences between remote debugging and in-app debugging:
+
+Remote debugging—This involves the use of the “debug remotely” button for iOS and Android devices.
+In-app debugging—This may involve running the <react-native log-ios> or the <react-native log-android> command, which launches the debugging tools within the operating system.
+Can you highlight the differences between using React Native for iOS and Android?
+There are notable differences between React Native for iOS and Android. Of course, React Native is a cross-platform development framework, so the code translates well across both platforms. However, there are some differences that the developer must account for and factor into the development process. They should be able to discuss these differences and provide insights on how they ensure proper responsiveness on both Android and iOS.
+
+How does React Native respond to different screen sizes?
+Of course, it is essential to ensure your application works on all screen sizes, from small smartphones to large iPad tablets. The good news is React offers many ways to ensure the proper screen size adjustments in a user-friendly way. For instance, the developer may discuss:
+
+Flexbox
+Pixel Ratio
+AspectRatio
+ScrollView
+Dimensions
+Describe the difference between touchable opacity and touchable highlights.
+A touchable highlight changes the darkness of a button when it is touched. As stated by React, a touchable highlight is a wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view from React Native is decreased, which allows the underlay color to show through, darkening or tinting the view. This is different than Touchable Opacity, which changes the lightness of a button when touched. These differences are subtle yet important. As a follow-up question, you can ask the developer if they would use a touchable highlight vs a touchable opacity.
+
+How do animations work with React Native?
+Animations, in simplest terms, are objects or images that move within the user interface. Animations are often a key part of application development. The developer must understand how they work. For instance, the developer can use animations with React Native API and other programs.
+
+What is Flexbox in React Native?
+Flexbox in React Native is designed to provide a consistent layout on different screen sizes. This may involve a combination of flex-direction, align-items, and justify-content to achieve the right layout. Although there are a few important exceptions the developer may discuss, React Native and CSS work the same on the web.
+
+Please describe the Gesture Responder System in React Native.
+The Gesture Responder System in React Native manages the lifecycle of gestures in your app. A gesture in React is a library that allows you to combine touch events with components and/or views. A GEsture Responder System is a way for a developer to tell the application what should happen if a particular touch is made. In other words, the Gesture Responder System is a way for the development to communicate what it wants to happen.
+
+As a follow-up question, consider asking the developer about the lifecycle of a gesture. The developer should be able to highlight the start event, the series of move events, and the release (final) event. A proper understanding of the Gesture Responder System lets you know the developer understands how to properly use gestures and helps minimize the risk of possible bugs in the code.
+
+gesture responder system
+What is Objective C in iOS?
+Objective-C is the primary programming language you use when writing software for OS X and iOS. An understanding of Objective C is integral to ensure the proper development of the application for use on iOS devices.
+
+What is the difference between Expo and React Native CLI?
+React Native CLI is built into the framework for React Native. This helps with the local management of the React Native project. Expo, for many developers, serves as an aid to help write better React Native CLI code. It is not its framework. Instead, the code written is still React Native code. The developer should be able to explain these differences.
+
 React Native Interview Questions and Answers
 Post author:Admin
 Post category:Javascript Libraries / Mobile Development
