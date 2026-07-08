@@ -1,3 +1,338 @@
+
+REST API Interview Questions & Answers
+By Great Learning Editorial Team
+Published on July 25, 2022  Last Updated on November 18, 2024
+rest api interview questions
+When you’re interviewing for a software development job, expect to be asked questions related to REST API technology. It’s not unusual to face REST API interview questions when you’re interviewing for tech jobs. However, it can be difficult to answer these questions when you don’t have a holistic understanding of the REST APIs. 
+
+If you feel there are gaps in your understanding of REST API technology, now is the time to start learning more about it so that you can ace your next interview. Use this article to prepare yourself with the most important REST API interview questions and answers so that you can nail your interviews and get the job you want.
+
+What do you understand by RESTful Web Services?
+An architectural style, REST is an acronym for REpresentational State Transfer. REST provides a guideline for building a performant and scalable system on the web. Based on REST architecture, the services made in this way are called RESTful web services. They’re lightweight, maintainable, and scalable.  
+
+RESTful web services are used to let a client access an application on a server through APIs. The client's operations are predefined and can be accessed by a client in a secure and stateless way.
+
+What is URI?
+A Uniform Resource Identifier or URI is a way to reference resources on a computer network. It’s a way to distinguish one resource from another. The resources may or may not be on the internet. URIs are an easy way to connect to even different types of resources due to their uniform style. URIs are designed with a string of characters along with the location or name of the resource.
+
+URI does not contain the protocol and comprises a path, scheme, query, and so on. URL (Uniform Resource Locator) is a URI and is used to locate resources on the internet or accessible through the internet using a protocol.    
+
+Explain the architectural style for creating web API?
+Building a software solution becomes easier when a guideline or a predefined structure already exists. This is especially true when it’s a large-scale project. The architectural styles define the semantics for a larger solution, enabling a shorter build period and lesser design errors. The architectural style helps visualize the bigger picture and makes it easier to work on the other aspects of the solution, like the front end. The API documentation must include the design decisions along with other technical details about the API.  
+
+There are several architectural styles for creating web API, and each has a standardized pattern for data exchange. Some of the architectural styles are: 
+
+REST Style
+
+REST has been one of the most popular architectural styles. The REST style has six architectural constraints that it should comply with - uniform interface to interact with the server irrespective of the device, stateless as the server does not store any information about the session, caching to be applied to the resources, client-server architecture, layered system of the application and code availability when demanded by a client.
+
+REST has several advantages, like the abstraction it provides is better than RPC as the client and server are decoupled. REST supports various formats for storing and exchanging data, making it one of the most prevalent styles used for making APIs.
+
+RPC 
+
+Remote Procedure Call or RPC has been in place for distributed systems. RPC is used to invoke a remote procedure on a server through a message that carries serialized parameters and relevant information to the server. The server deserializes the content, the procedure is executed, and the result is sent back to the client. 
+
+RPC provides a simple and straightforward basis for interaction between client and server using GET and POST methods. Calling a remote procedure is made as simple as calling a local procedure.
+
+SOAP
+
+SOAP or Simple Object Access Protocol uses XML data format to encode a message which holds content like an envelope tag at the beginning and end of the message, a request or response in the body of the message, a header, if needed, and so on. Such messages are usually meant to go from one node to another and can have multiple interactions.
+
+WSDL or Web Service Description Language is used for the SOAP API logic. All the endpoints for the API and the processes to be performed by it are described in WSDL. This makes it language agnostic. SOAP is platform agnostic as well. It can be used with several protocols. Another advantage of using SOAP is the error handling, as its XML message comes with the error code along with the reason for the error.
+
+However, SOAP is heavyweight as its messages can only be encoded in XML. It also has a rigid schema, making adding or removing message properties difficult.  
+
+GraphQL
+
+GraphQL is used to make precise data requests, and it’s particularly useful when an application has a data model that has several complex entities referencing each other. There is a continuous development of libraries and tools for GraphQL. 
+
+When using GraphQL, a schema is built that describes all the queries and the return types that the API must handle. Schema Definition Language or SDL is used for defining schema. When the API makes a call to the backend, the schema is used as a basis to interpret the operation requested by the client. The data in the query is used to execute the operation, and the requested data is returned in the form of JSON. While GraphQL provides functionality to send complex queries, it may overload the server.
+
+What are the features of RESTful Web Services?
+There are certain features that a RESTful web service must have, and they are as below:
+
+They must be based on a client-server architecture where a client queries the server that has the resources.
+RESTful web services must use HTTP protocol for all the functions that need to be performed, like collecting data from the resource (GET), modifying or updating the resource (PUT), creating a new resource (POST), deleting a part or all of the resource (DELETE). The client uses these methods to access or modify the resource and does not get to know any details of the code implementation at the server. 
+The client and server communicate with each other through messaging.  
+URIs are used to address the resources on the server
+The server must not save any details of the client and ensure statelessness while providing all the requested information 
+Caching improves network optimization and prevents repeated transmission of the information that was already provided to the client. Servers must be cache-enabled.
+What is a REST Resource?
+Resources in a REST architecture are the basic building blocks of a RESTful web service. They include all important content that must be referred to by an API client. The resources are accessible through the server in the client-server system and can be anything, including an HTML page, an image, videos, or anything else required in an API operation.
+
+A Uniform Resource Identifier identifies the resources. A resource may be represented using text, JSON, or XML. Having said that, there’s no restriction on the format of the representation. The server provides the resource/information in the format requested by a client. A server may be requested to provide data in XML format by one client, while another client may ask for the same information in JSON. However, it’s a good practice to consider the below when working on the representation format of the resources:
+
+The format should be comprehensible so that the client and server can interpret it properly.
+The representation should be complete as one resource may be linked to another, increasing the representation's complexity. 
+Explain what REST and RESTFUL are?
+REST is a style of architecture and stands for Representational State Transfer and RESTful web services that may implement the REST architecture. These services are used to access and manipulate resources through a server.
+
+What do you understand by JAX-RS?
+Java API for RESTful web Services or JAX-RS is a specification provided by Java that makes it easier to develop RESTful web services in Java. It provides annotations that the developers can use to define resources and the actions that can be performed on them.
+
+Mention whether you can use GET request instead of PUT to create a resource?
+The actual function of a GET request is to retrieve data that can be used to create a resource. Using GET instead of PUT to create a resource can be done, but it’s not considered a good design. Using GET to create a resource must be avoided. 
+
+What are the HTTP Methods for RESTful Services?
+The HTTP methods are the main elements in the ‘uniform interface’ constraint required by APIs following the REST architecture. The main HTTP methods are:
+
+POST: Used to create a resource and has a return value of 201 for success in creating the entire collection. Other values are 404 when a specific resource is not found or 409 when the resource already exists
+GET: Used to retrieve a resource and has a return value of 200 for success or 404 for resource not found or invalid
+PUT: Used to update or replace a resource and has a return value of 200 for success or 204 for no content or 404 for resource not found or invalid. When the method is not allowed, 405 is returned.
+PATCH: Used to update or modify a resource and has a return value of 200 for success or 204 for no content or 404 for resource not found or invalid. When the method is not allowed, 405 is returned.
+DELETE: Used to remove a resource and has a return value of 200 for success or 404 for resource not found or invalid. When the method is not allowed, 405 is returned.
+What is the concept of statelessness in REST?
+Statelessness is an essential constraint in REST architecture. It simply means that the server must not store any information about the state of a client. The client passes the context of the query to the server so that the server can successfully provide the requested information. 
+
+Each query is treated independently, and the server cannot rely on the information from another query/request. Even the authentication or authorization details of the client are not stored on the server, and the client sends them with each request. The session information is maintained by each client and not the server. The statelessness constraint simplifies the solution design.  
+
+restful
+What are HTTP Status Codes?
+Status codes are a way of communication between the server and the client. When a client sends a request to the server, the status of the request must be sent to the client with the response message. The 5 categories of status codes are mentioned below:
+
+1xx: Information related
+100: Continue sending the request   
+101: Switching Protocol
+102: Processing the request, but no response yet
+103: Eary Hints
+2xx: Successful
+200: Ok / Success
+201: Created a new resource
+202: Accepted the request but yet to be completed
+203: Non-Authoritative Information
+204: No Content
+205: Reset Content
+206: Partial Content
+207: Multi-Status
+208: Already Reported
+226: IM Used
+3xx: Redirection
+300: Multiple choices are available for a request, and one must be chosen
+301: The resource has been moved permanently to another location, and the new URL is sent with the header
+302: Found the resource from the temporary location it’s moved to 
+303: See the other URI as the response can be retrieved from there using the GET method
+304: Response is not modified, and the client can use the cached version 
+307: Temporary redirect to another location where the resource is moved to, for some time  
+308: Permanent redirect to another location
+4xx: Client Error
+400: Bad request as the server can’t understand the syntax
+401: Unauthorized as the authentication details are not included in the request
+402: Payment required
+403: Forbidden as the client does not have access rights
+404: Not found the requested resource
+405: Method not allowed, but the resource exists
+406: Not acceptable as the request doesn’t conform to the criteria
+407: Proxy Authentication Required
+408: Request Timeout
+409: Conflict of the request with the current state of resources
+410: Gone or the resource is no longer available 
+There are many more status codes that can be explored 
+5xx: Server Error
+500: Internal server error
+501: Not implemented. The server does not recognize the request, or it cannot process it.
+The two mentioned here are REST API specific, but more 5xx status codes can be explored
+What are the disadvantages of RESTful web services?
+One of the key constraints of RESTful web services is statelessness. This constraint may work against some web applications that require the client's state to be stored at the server. For instance, a shopping cart application can’t work properly if the items stored by a client are not saved at the server. This leads to a disadvantage related to sessions. The server can’t maintain sessions.
+
+Another disadvantage of RESTful web services is their lack of security. REST-based applications are not particularly secure and are not useful for solutions that handle crucial data. 
+
+Differentiate between SOAP and REST?
+A direct comparison of SOAP and REST may not be possible as SOAP is a protocol while REST is an architectural style. However, there are some things to consider when making a choice between the two for your projects. 
+
+Being a protocol, SOAP works on certain standards that must be strictly followed, while REST is just an architectural pattern that is used to design web services and follows certain constraints like client-server setup, statelessness, and cacheable response, layered system, and uniform interface. 
+The functionality of SOAP is exposed to client applications using service interfaces, while uniform resource identifiers (URIs) are used in the case of REST. The bandwidth requirement of REST is lesser compared to SOAP as the messages in SOAP carry a lot of information. 
+REST offers more choices in resource format, including XML, text, HTML, images, video, and so on, whereas SOAP can only handle XML. 
+As SOAP is just a protocol, it can be used by REST in its web services, but vice-versa is not possible. 
+SOAP is useful when security is important in web applications. REST is not very secure and cannot be used when transactions must be done securely.
+Have a more detailed understanding of REST vs. SOAP here.
+
+While creating URI for web services, what are the best practices that need to be followed?
+Some best practices must be followed while creating URI for web services like:
+
+Make sure that a forward slash (/) is never the last character of a URI, as it just causes confusion and nothing else. Whether there’s a trailing forward slash or not in a URI, it would be treated in the same way by most web components. Others may send a 301 status code, which means “Moved Permanently”.
+Hierarchical relationships between resources must be indicated using a forward slash (/) in the URI path portion.
+The readability of the URI must be improved using the hyphen character (-). As URIs cannot have space between characters, a hyphen fills in that gap and makes it more readable.  
+Using an underscore (_) is not recommended in the URI as it may get hidden if the URI is underlined and may cause confusion.
+Keeping lower-case characters in URI is recommended as it avoids confusion. Barring the exception of scheme and host, URIs are case sensitive as per RFC 3986 
+Avoid using file extensions, as the period character (.), used to include file extensions in the offline file system, is used for another purpose on the web and can cause confusion.
+Use consistent endpoint names representing a singular or plural resource instance.
+Mention what the difference between AJAX and REST is?
+Asynchronous Javascript and XML or AJAX is a method to load parts of a UI without reloading the page dynamically. Asynchronous calls do this to the server.  AJAX uses XMLHTTPRequest objects to send the requests to the server.
+
+REST is a paradigm for creating web services that send and receive data using HTTP methods. RESTful APIs can be called by AJAX clients as well as offline applications.
+
+Check out Ajax Interview Questions here.
+
+What are Idempotent methods? How is it relevant in the RESTful web services domain?
+Some HTTP methods in a request produce the same effect on the server when the URI is the same, whether it's sent once or multiple times. These methods are called idempotent methods. For example, a URI with a GET method will produce the same effect on the server irrespective of the times it’s executed. Some examples of idempotent methods are GET, PUT, and PATCH. 
+
+Some of the HTTP methods used by RESTful web services are idempotent. They are needed to ensure consistency in the operations initiated by the RESTful web services. Consumers using the REST APIs can make coding mistakes that may result in unintentionally repeated calls by a REST API. These calls can incorrectly manipulate resources. For example, a DELETE method without a resource identifier calls on the server to delete the last resource. In this case, every time a call is made to the server, it will delete a resource that takes up the last position. In this case, DELETE is not an idempotent method. However, if the DELETE method had a resource identifier, it would delete the resource once, and subsequent calls would not affect the available resources. This is when the DELETE method would be idempotent.  
+
+Define Messaging in terms of RESTful web services?
+Messaging is the mode of communication between client and server for RESTful web services. An HTTP request from the client initiates an action at the server, and an HTTP response is sent back from the server to the client with a status code. It may also include the information requested. This is known as messaging. 
+
+What are the best practices for developing RESTful web services?
+Developing the RESTful web services with best practices in mind would be helpful in the long run. Some of these best practices are:
+
+A simple design is always better for coders who use the API in their programs. 
+Ensure that the APIs are checked for bugs and methods are used correctly with idempotency in mind. 
+JSON format must be used in messaging. It’s much easier to parse JSON data as compared to XML.
+The endpoint paths must use nouns instead of verbs. Describing the function of a REST API request using a verb is not required as HTTP methods are already verbs with descriptive names. They clearly describe the functionality of an endpoint. 
+When complex parameters are to be included in the API, a query string, “?”, must be used. For example, www.example.com/products?id=xxxx&size=xx.
+The requested data from the server may be much more than what one page can accommodate. Therefore, a limit must be set on the number of results to be displayed per page.
+When defining the resources, plural and singular names must not be mixed. Although it does not affect the working of the API, it’s recommended to use plural names.
+Errors should be handled properly, along with error codes.
+Pagination should be allowed.
+Cached data must be used to optimize performance.
+The APIs should have a version.
+Can you tell what constitutes the core components of an HTTP Request?
+There are five core components of HTTP requests. They are:
+
+HTTP Version: The HTTP version the request message complies with.
+URI: The Uniform Resource Identifier identifies a resource on the server.
+Method or Verb: This component indicates the HTTP method being used in the request. Examples of the methods are GET, POST, PUT, and so on.
+Request Header: The header contains metadata of the request, such as cache settings, message format, client type, and so on.
+Request Body: The message sent to the server is contained in this part.
+What constitutes the core components of HTTP Response?
+An HTTP response has three core components:
+
+Status line:
+HTTP Version: It shows the HTTP version that the response message complies with.
+HTTP Response Code: Also known as status code, these codes convey the status of the request to the client.
+Response Body: The message sent to the server is contained in this part.
+Response Header: The header contains metadata of the response, such as content length, date, and server length. Multiple headers can be there, each containing a key-value pair.
+State the differences between PUT and POST.
+The HTTP method PUT is idempotent while POST is not. That means whether an identical request with PUT is executed once or multiple times, the effect on the resources at the server will be exactly as it was after the first execution.
+The PUT responses are not cacheable, while POST responses are.
+PUT is usually for updating the resources, while POST is for creating resources.
+What do you understand by Addressing in terms of RESTful Web Services?
+Addressing is used for locating single or multiple resources at the server. A URI identifies the resources accessible through the server.
+
+What makes REST services to be easily scalable?
+The scalability of the REST services can be attributed to one of its architectural constraints, i.e., statelessness. The REST APIs are stateless, and the server doesn’t store the state of a client. This prevents the time and space cost associated with maintaining the state of clients. A server can be concurrently used by many users making it scalable.  
+
+What factors would you consider to decide the type of web services you need to use - SOAP or REST?
+Both the web services have their pros and cons leaving it for the developer to assess the tradeoff and choose the right one for a given project. When the project requirements are along the following lines, then SOAP fits well: 
+
+Stateful Operations: When the user's state needs to be tracked by the application, SOAP has the purpose's specifications. It supports web service security (WS-Security), transactions, etc. SOAP is stateful and processes the complete request. This is useful in a shopping cart or other transactional applications.  
+Formal contracts: The formal contracts within SOAP are helpful as they remove any chances of misinterpretation. The involved parties have to agree on the data exchange format. These are useful in billing applications that need to establish the exact consumption by a client to generate a bill, navigation applications that need information from several sources to establish the best route, and other projects that have such requirements.
+Asynchronous Processing: SOAP has the specifications to provide security and reliability of the highest order. SOAP provides the implementation of Web services Extension Specifications (WS). Several WS extensions are available developers can use that to define various aspects of the delivery of a message. WS-Addressing, WS-Messaging, WS-Coordination, WS-Security, and WS-Policy are some of the extensions available for different requirements.
+REST, on the other hand, is useful when the requirement as below:
+
+Bandwidth Limitation: REST uses HTTP standard making it format agnostic. It’s also fast and lightweight, making it easy to implement when the bandwidth is an issue, like in IoT or mobile app projects.
+Stateless: When a project requires simple CRUD operations that need not be linked to the state of a client, REST is a great option. The server doesn’t save the client's state, and every client manages its own state.
+Scalability and Optimization: The RESTful web services can be easily scaled as the client and server are independent of each other. This allows multiple clients to interact with the server at the same time.  RESTful web services also provide information caching that optimizes their operations.
+We can develop web services using web sockets as well as REST. What are the differences between these two?  
+Web services can be developed in several ways, including web sockets and REST. There are some major differences between the two:
+
+Web sockets are used to create web services that are capable of full-duplex communication. Using HTTP, either client or server can send a message at a time, but with web sockets, independent communication between client and server is possible. It’s bi-directional. In contrast, RESTful services are unidirectional. First, the client sends a request to the server, and then the server responds with a message for the client.
+Web sockets use a single TCP connection for the life of the connection. However, REST initiates a new TCP connection for every HTTP request.
+Being stateful, web sockets store the data about the state of a client, whereas REST is stateless.
+These web services are based on the concept of sockets and rely on IP addresses and ports for communication. The working of REST is based on HTTP methods or verbs.
+Web socket-based web services are useful in real-time applications like chat applications. Their utility is even more as they can handle high loads. REST  handles occasional communication making it unsuitable for real-time applications.
+The cost of web socket communication is lower compared to REST.
+Explain the concept of Payload in terms of RESTful web services?
+The body of an HTTP request or response is called Payload. The data sent to the server is contained in this Payload. The presence of Payload is not mandatory, and it’s usually used with PUT, POST, and PATCH. It’s better not to use payload with other methods as some client frameworks may not support it.
+
+Is it possible to implement transport layer security (TLS) in REST?
+The short answer is yes. The communication between client and server can be encrypted in REST using TLS. The server can be authenticated by the client using TLS. Being the successor to SSL, it enables secure communication.  Developers can enable HTTPS and TLS using their own private and public keys.
+
+Is it recommended that the resources are explicitly made thread-safe if they are made for sharing across multiple clients?
+An explicit effort to make resources thread-safe is not required, as new resource instances are created for every new request making them thread-safe by default.
+
+What can you test RESTful Web Services for?
+The RESTful web services can be tested for security, optimization, functionality, or stability. The tests conducted depend on the testing requirement. Usually, the RESTful web services are tested along the following lines:
+
+Unit Test: Each operation of the web service is tested individually
+Functional Test: The behavior of the API is tested to ensure that they work smoothly and as expected
+Load Test: Even the load or the number of calls that RESTful web services can handle is tested
+Reliability Test: Consistency in results is tested
+Security Test: Vulnerabilities in the API are tested 
+Can Payload be sent in the GET and DELETE methods?
+Not forbidden, but it’s unusual to send a payload with GET and DELETE methods. There can be some client libraries that do not support the payload with these two methods. It’s also possible that some servers may just ignore the body of GET and DELETE methods. It’s better not to include payload with these two methods.
+
+Explain the major differences between idempotent and safe HTTP methods?
+Idempotent methods give the same outcome whether they are called once or multiple times through an identical request. PUT is an idempotent method.
+
+Safe methods do not modify the resources, and all safe methods are idempotent, but not all idempotent methods are safe. For example, GET is safe as it does not modify the resource and just fetches data. It’s also idempotent, as it will fetch the same result irrespective of the times it’s called.  
+
+Explain what is meant by RESTful Root Resource Classes in the JAX-RS API?
+JAX-RS API is specifications as well as a set of classes and interfaces offered by Java Enterprise Edition. Developing java web services according to REST architectural style becomes simpler with the help of JAX-RS. 
+
+Root Resource Classes in JAX-RS API are just “plain old java objects” or POJO. They use JAX-RS annotations to implement corresponding web resources. They are either annotated with @path, or at least one of their methods is annotated with @path. In simple words, they are java classes that have methods to handle the API endpoints.  
+
+Is there a maximum payload size that can be sent in POST methods?
+There is no limit on the size of the payload that can be sent in the POST methods. However, it’s usually determined by the protocol or the server handling the request. Increasing the payload size also increases the bandwidth requirement. It may also impact the performance of the server.
+
+How does HTTP Basic Authentication work?
+The basic HTTP authentication works in a simple challenge and response manner. The server needs the credentials to identify the client and verify that it has access to the requested resources. 
+
+REST API Authorization header is used for this purpose in RESTful web services. The key-value username and password pair are encoded in base 64 and included in the HTTP header. The server uses this to authenticate the client.
+
+Explain some of the features of JAX-RS API?
+Specific values can be extracted from the request header using the JAX-RS annotations for resource classes. Some of these annotations are @Context, @CookieParam, and @FormParam. 
+There is flexibility in the content formats of the HTTP entity-body.
+The JAX-RS applications are container-independent and can be deployed in a Java EE container or servlet container. 
+How can the JAX-RS applications be configured?
+There are multiple ways to configure JAX-RS applications for RESTful web services. Some of the methods are mentioned below:
+
+JAX-RS 1.1 Methods: The annotation scanning capabilities or the JAX-RS 1.1 configuration methods can be used to configure the application. Portability, minimal configuration code, and the functionality to dynamically modify the application without changes to the application code can be promoted when annotation scanning capabilities are used.
+Configuring the web.xml File for JAX-RS Servlet: The web.xml file can be configured to point directly to the JAX-RS servlet. The servlet path can be defined in the web.xml file. All the information about external dependencies of web components is contained in this XML file.     
+Configuring the web.xml file for JAX-RS filters: To run the JAX-RS code, a JAX-RS filter can be specified in the web.xml file. Once the configuration is done, the application can be assembled. The web application must be assembled into a web application archive or WAR package and then deployed to an application server. 
+Asynchronous requests are possible in JAX-RS. True or false?
+Earlier, the request processing used to be synchronous as a single thread handled the entire process from request to response. However, asynchronous processing is included in the JAX-RS 2.0 version. It has both client and server implementations. Asynchronous processing at the server allows one thread to handle the request and the other thread to process the response. 
+
+On the client-side, this helps in freeing up the request thread as the request is not blocked while the server processes the operation. The client is free to send another request. On the server side, the thread that accepts the request is freed as the processing of the request is done by another thread. This helps the server thread to handle other requests.
+
+Asynchronous capabilities help web services scale up and improve the ecosystem's responsiveness and output.
+
+What do you understand by request method designator annotations?
+The request method designator annotations are runtime annotations. JAX-RS defines these annotations that are matched with HTTP methods with similar names. The request method designator annotations are used to map the HTTP methods to the Java methods. A set of request method designators is defined in JAX-RS for the common HTTP methods. It’s also possible to create custom request method designators.
+
+What are the key annotations in the JAX-RS API?
+There are a set of annotations provided by the JAX-RS API. These annotations provide metadata on resources and correspond to classes and interfaces. The key annotations are listed below:
+
+@Path - The path of a RESTful resource is defined by @Path annotation.
+@GET - A Java method is designated with @GET annotation to indicate that it will respond to the GET requests.
+@POST - A Java method designated with @POST annotation responds to POST requests.
+@PUT - A Java method designated with @PUT annotation responds to PUT requests.
+@DELETE - A Java method is designated with @DELETE annotation to indicate that it will respond to the DELETE requests.
+@HEAD - A Java method is designated with @HEAD annotation to indicate that it will respond to the HEAD requests.
+@PathParam - A path variable can be retrieved and assigned to the method parameter designated with @PathParam annotation. 
+@QueryParam - The query parameter name is passed as a value to the @QueryParam annotation to extract the values and use them in the resource class.
+What is the use of @RequestMapping?
+Mapping web requests to specific classes or methods is made through @RequestMapping annotation. 
+
+Define RestTemplate in Spring.
+RestTemplate in the Spring framework provides a convenient way to consume REST APIs. The Spring framework provides a synchronous client to perform HTTP requests. RestTemplate provides higher-level methods to interact with REST resources. 
+
+What are the differences between the annotations @Controller and @RestController?
+@RestController is the specialized version of @Controller annotation, while @Controller is the specialized version of @Component annotation.
+Used in RESTful web services, the @RestController is a combination of @Controller and @ResponseBody annotation. While the @Controller annotation is used to mark classes as Spring MVC Controller.
+There is no need to use @ResponseBody on every handler method in @RestController while it must be used in @Controller. 
+In Spring MVC, once a class is marked as @RestController, every method is written as a domain object instead of a view.
+What is the reason for keeping Spring MVC in the classpath when RESTful web services are developed?    
+Keeping Spring MVC in the classpath is necessary as it provides the necessary annotations like @RestController, @PathVariable, and so on. 
+
+Define HttpMessageConverter in terms of Spring REST?
+Spring REST uses HttpMessageConverter to convert responses to various data formats like JSON, XML, and so on. The “Accept” header determines the format of content expected by a client, and then Spring finds the registered message converter interface that can do the conversion.
+
+What does the annotation @PathVariable do?
+The URI template variables are bound to the handler method parameters of a controller using the @PathVariable annotation. Multiple @PathVariable can be used in the same method. In resource creation, the path variable plays a critical role. Spring MVC provides URL customization support for retrieval of data through the use of @PathVariable.
+
+What is Postman? Why is it used?
+Postman is used as an API development tool for building, testing and modifying APIs. Developers can use this tool for any functionality that they need for an API. It makes the task of developers simpler and easier. Some of the things possible with Postman are - various types of HTTP requests, like, GET, POST, PUT, and PATCH can be made, environments can be saved for later use, and the conversion of API to code for various languages. 
+
+Postman simplifies each step of the API cycle and streamlines collaboration for faster API creation. It also allows developers to store, catalog APIs, or manage the documentation, specification, test cases, workflows, and much more.
+
+What are the major security issues faced by web services?  
+Security is a major concern online. Since APIs (web services) are instrumental in allowing applications to interact with each other, it’s critical to understand the major security threats to them. Some of the major security issues faced by web services are:
+
+Coding Related: An improper code can leave an API vulnerable to attacks. For example, a function that can accept user input to access a resource can increase the likelihood of an attack. 
+User Authentication: When the authentication is not managed properly, it creates a security issue. 
+Injection Issues: Attackers can inject malicious code through an existing query. This is one of the major security issues.
+Deprecated API Management: Usually, several endpoints are exposed because of APIs and increase the risk of attack if the deprecated APIs are not managed properly.
+
 REST API и очередное тестовое задание.
 Статья из группы Random
 Part I: Beginning
