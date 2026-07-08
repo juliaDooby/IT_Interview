@@ -1,3 +1,54 @@
+React Native Interview Questions and Answers
+Post author:Admin
+Post category:Javascript Libraries / Mobile Development
+Post last modified:February 13, 2020
+React Native is a most used JavaScript Framework. React Native is a next generation of React mobile framework. Native framework is most used for building Mobile apps and web apps. It helps developers reuse code across the web and on Mobile application. Native app creation; it means writing apps for a specific operating system. Mainly it builds native mobile apps using JavaScript and React Framework.
+
+React Native official website says
+
+A few lines from the official documentation: React Native lets you build mobile apps using only JavaScript .It uses the same design as React, letting you compose a rich and fast mobile User Interface (UI) from declarative components.
+
+With React Native, you don’t build a mobile web application, an HTML5 app, or a Hybrid application. You build a real mobile app that’s indistinguishable from an app built using Objective-C or Java. It uses the same fundamental UI building blocks as regular iOS and Android apps. You just put those building blocks together using JavaScript and React .In the future, the most demanding mobile applications framework becomes Reactive Native.
+
+
+
+What is React Native?
+
+Why React Native?
+
+Write a code Hello world in React Native?
+
+What are the big companies used in React Native?
+
+What is the Props?
+
+What does StyleSheet.create do?
+
+What is State?
+
+What is native apps means?
+
+What is a Hybrid app?
+
+What is HOC?
+
+Why animation very clear in React Native?
+
+How Virtual DOM works in React Native?
+
+Is React Native a native mobile App?
+
+What is the difference between ReactJS and React Native?
+
+What are Refs in React?
+
+When should I start using Redux with React Native?
+
+Which node_modules will run in React Native?
+
+What are the key advantages of React Native?
+
+What are the Cons of React Native?
 
 What Is a React Native Developer?
 A React Native developer uses JavaScript, React Native, and other technologies to create beautiful apps for various platforms. React Native provides an open-source user interface (UI) software framework that can develop apps for iOS, macOS, tvOS, Windows, Web, UWP, Android, and Android TV. It enables developers to use native module platform features with the React framework.
