@@ -1,3 +1,333 @@
+Top 30 Node.js Interview Questions and Answers
+By Sruthy  Updated February 4, 2026
+ 
+ Edited by Kamila
+This tutorial provides frequently asked Node.js interview questions and answers with explanations to help you prepare for the Node JS interview:
+
+JavaScript is popular for browser-side validation and interactive web development. An open-source, platform-independent JavaScript runtime environment, namely Node.js, was introduced to allow JavaScript code to run outside the browser, especially on the server.
+
+Node.js is a single-threaded, non-blocking, asynchronous runtime environment that offers an advantage over requests by eliminating waits and handling the next request.
+
+Node.js is suitable for building RESTful APIs for backend databases like NoSQL and MongoDB, and network and data-intensive applications, like data streaming and real-time data exchange, like chat applications.
+
+Table of Contents: [Show]
+
+Quiz on Node.js Interview Questions
+Test your understanding of Node.js with this expert quiz on Node.js interview questions. Master the Node.js concepts with these questions before attending any Node.js interview.
+
+Node.js Interview Mastery
+Master server-side JavaScript concepts and excel in your Node.js interviews
+Question 1 of 20
+What is Node.js and what makes it different from traditional server-side technologies?
+Frontend framework only
+Database management system
+Web browser extension
+JavaScript runtime built on Chrome's V8 engine with event-driven, non-blocking I/O
+
+Node.js Interview Questions
+What is Node.js?
+Node.js is an open-source JavaScript runtime environment that executes JavaScript code outside of the browser with the help of the V8 engine. This feature of Node.js allows developers to use JavaScript in designing command-line tools and run server-side scripts that create dynamic content for the web page before reaching the user’s web browser.
+
+Event-driven architecture allows Node.js to perform asynchronous input/output processing, for other processing such as arithmetic calculations, compiling the code, etc., to continue before the completion of the transmission.
+
+Developers can share source code, publish, install, update, or uninstall packages in Node.js, using npm a package manager. Netflix, PayPal, SAP, Microsoft, Walmart, Yahoo!, and Amazon Web Services are some companies that use Node.js in the development of various back-end API services and traditional websites and applications.
+
+Basic Questions for Node.js Interview
+Q #1) What is Node.js?
+
+Answer: It is an open-source, platform-independent runtime for JavaScript environments built on the V8 Chrome JavaScript engine that runs JavaScript code on the server.
+
+It is a lightweight web framework to develop real-time applications like Voice Over Internet Protocol (VoIP), video-conferencing, online gaming, and data-intensive applications like streaming and e-commerce payment gateways, making Node.js part of web development stacks, namely MERN, MEVN, and MEAN stack.
+
+MERN stands for MongoDB, Express, React, Node
+MEVN stands for MongoDB, Express. js, VueJS, Node
+MEAN stands for MongoDB, ExpressJS, AngularJS, and Node
+Q #2) List the uses of Node.js.
+
+Answer: Node.js is used in applications that involve instant responses in real time.
+
+These include:
+
+Real-time chat, messaging, or online games.
+Single-page applications like Gmail and Twitter run on JavaScript with Node.js as the backend.
+IoT (Internet of Things) applications like delivery tracking, predictive maintenance, and security software.
+Location-based applications such as Global Positioning System, Wi-Fi, and GeoCouponsAlert mobile applications.
+Microservices architecture development that fits event-driven I/O models like PayPal -payment gateway application and Netflix – video streaming application.
+Q #3) Compare other popularly used frameworks with Node.js.
+
+Answer: Node.js uses asynchronous I/O and single-thread event-driven programming, making it unique from other server-side frameworks or technologies such as Ruby on Rails, Java, PHP, and .net. Developers can utilize their JavaScript programming skills in developing server-side applications.
+
+Node.js can improve the performance and scalability of the developed applications, such as REST API data-intensive real-time tracking applications for user statistics and applications that help analyze market trends on commodities, currencies, stokes, futures, options, etc. Developers with JavaScript knowledge can quickly develop Node.js APIs for mobile or web integration with ease and flexibility.
+
+Q #4) List functionalities of some of the Node.js core modules.
+
+Answer: Some of the important Node.js core modules are explained below:
+
+HTTP module contains classes, events, and methods to create a Node.js HTTP server.
+URL consists of methods for URL parsing and resolution.
+fs module has classes, events, and methods that work with file I/O.
+path contains methods to deal with file paths.
+util is a utility function useful for programmers that is included in util module.
+querystring module consists of methods for dealing with query strings.
+Q #5) What are modules in Node.js? Explain with a few examples.
+
+Answer: Simple or complex functionalities are grouped as Modules in Node.js. They are primarily divided into the following three types:
+
+Core Modules
+Local Modules
+Third-Party Modules
+Core module is loaded and used in the code as shown below:
+
+1
+2
+3
+4
+5
+var protocol = require('http');
+var myserver = protocol.createServer(function(request, response) {
+    //write code here
+    });
+myserver.listen(5000);
+Local module is inserted in the code as shown below:
+
+1
+2
+var log_module = require('./Log.js');
+log_module.info('Node.js started');
+Q #6) Differentiate between Angular and Node.js
+
+Answer: Angular is used by JavaScript developers to develop client-side interactive web applications, whereas Node.js is used to develop fast and scalable network and server-side applications.
+
+Following is a list of some of the differences between them:
+
+Angular
+Node.js
+An open source web application based on TypeScript – superset of JavaScript, used in front end development	JavaScript runtime environment build using C, C++, JavaScript, used in developing server side JavaScript applications
+With Angular single page, client side web applications are designed.	Node.js is used in designing event driven I/O models like Real Time, data intensive applications.
+Angular utilizes objects and directives	Node.js are based on asynchronous, event driven non blocking I/O applications
+It supports mobile browser	Node.js is used in designing Android application with AndroidJS
+Q #7) Explain Event-driven programming.
+
+Answer: Programming based on user interactions on the graphical user interface is called Events; like clicking the submit button, selecting an option from the radio button, typing a text into the text field, and uploading an image file.
+
+An event handler or listener that can also be a callback is a method that is called. It accepts user input as parameters and performs some tasks on user and browser actions like page load, HTML page popup, etc.
+
+Event-driven programming
+Q #8) Explain Event Loop in Node.js.
+
+Answer: Event Loop is a mechanism that lets Node.js continue performing I/O operations to the system kernel without any interruption. Event loop is initialized by Node.js which processes input script making async API calls, call process.nextTick() or schedule timers followed by event loop processing.
+
+Event loop process timers, pending callbacks, remain idle, prepares for poll for incoming data and connections, check for next request, and close callback till next request.
+
+Q #9) List and explain the phases of the Event loop in their order of operation.
+
+Answer: Event loop in Node.js follows various phases in the order listed below:
+
+Event Loop Phases
+Description
+Timers	This is the first phase where scheduled callbacks by functions setTimeOut() and setInterval() for delayed code execution.
+Pending callbacks	Next phase – pending callbacks allows I/O callbacks execution that are delayed to next loop iteration.
+Idle, prepare	Followed by idle, prepare phase that are internally applied
+Poll	New I/O events are retrieved, callbacks related to I/O, scheduled by timers and setImmediate() function, node gets block at appropriate points,
+Check	Check invokes setImmediate() callbacks, at end of event loop.
+Close callbacks	Close callbacks like socket.on() runs between each event loop run. Node.js verifies any timers or asynchronous I/O presence, and shuts these callbacks if no events phase is available.
+Q #10) Explain the working of Node.js.
+
+Answer: Node.js is a runtime environment that has V8 – JavaScript engine, NPM package manager for Node.js, and Libuv libraries.
+
+V8 is a JavaScript engine that converts browser JavaScript and Node.js code into machine code, making JavaScript run everywhere. NPM is a package manager, a package repository that contains library files containing features that can be included in Node.js.
+
+Real-time applications installed on mobile that display real-time information on request, such as market share prices or availability of flights, movie tickets, etc. need data (current status).
+
+This data can be retrieved from any server using a single thread of Node.js using non-blocking I/O, wherein waiting for information is avoided, and can attend multiple requests simultaneously.
+
+Working of Node.js
+Node.js asynchronous feature is utilized when the response from another server returns with the required information, wherein the callback function is executed. Hence Node.js is applicable for I/O intensive applications.
+
+Further, to deal with multiple requests, Node.js uses a concept called Libuv – libraries built in C language. These libraries use a system kernel that uses multiple threads for these requests making Node.js run fast.
+
+Scenario-Based Node.js Interview Questions
+Q #11) What is Node.js Libuv library and its uses?
+
+Answer: Libuv is asynchronous input/output that comes as libraries with Node.js installation.
+
+Various features Libuv has are listed below:
+
+Asynchronous
+TCP & UDP sockets
+DNS resolution
+File and file system
+Thread pool
+Signal handling,
+Backed with the full-featured event loop
+Child processes
+File System Events
+Q #12) Describe NPM and its functionality in Node.js
+
+Answer: Node Package Manager (NPM) is an online repository of JavaScript libraries that has over 350,000 packages that can build efficient applications and Node.js projects with ease.
+
+It is a command-line utility for accessing an online repository that facilitates inversion and dependency management and package installation. Various features can be searched from this repository here.
+
+Once found you can install it on your client machine by running the command – npm install feature_file. You can use the feature by using require(‘./feature_file’) in JavaScript code.
+
+Q #13) Explain REPL with context to Node.js
+
+Answer: REPL is an environment of a computer wherein the system responds with an output to the entered command. Some of the tasks are:
+
+Read: As the name indicates, user input is read and converted into a JavaScript data structure and then stored in memory.
+Eval: Receives and evaluates data structure.
+Print: Final output is printed
+Loop: Command is looped until CTRL + C is pressed twice.
+Q #14) Explain Error first callback in Node.js.
+
+Answer: Error-first Callback is a function in Node.js used to pass errors and data. The callback is function asynchronous, called after the Ajax request is completed.
+
+The error-first Callback function has the first argument as an error object, and the second argument is the response data that is returned on a successful response without any error.
+
+Below is the syntax of the error-first callback function:
+
+Error First Callback
+Q #15) Differentiate spawn() and fork() methods in Node.js.
+
+Answer: Both spawn() and fork() are commands to create a child process. The difference between these commands is explained below:
+
+spawn() is the command to create a child process in Node.js and can pass arguments and execute that command. As a result, a Child Process instance is created when the spawn function is executed. This implements the EventEmitter API, registers handlers for events directly on the child object.
+fork() in spawn() function variant for node process spawning, when fork() is used as a channel of communication with the child process to exchange messages between forked and parent processes via EventEmitter module interface.
+Q #16) What are the differences between process.nextTick() and setImmediate() functions?
+
+Answer: Both functions control the order of code execution in the event loop. Callback handlers are scheduled in the event queue in both of these functions.
+
+setImmediate(): Scheduled callbacks are executed in the Check handlers phase of the event loop when the setImmediate() function is applied. Recursive calls to setImmediate() will not block the event loop; the call is executed on the next event loop iteration.
+process.nextTick():  Scheduled callbacks are processed at the start of the event loop and between each phase of the event loop when process.nextTick() function is applied. Callbacks to process.nextTick() are resolved before the continuation of the event loop, blocking the event loop if this function is called recursively.
+Q #17) What is the difference between setImmediate() and setTimeout()?
+
+Answer: setImmediate(), setTimeout(), and process.nextTick() are Node.js functions that control the order of executing code in the event loop.
+
+setTimeout() is executed after process.nextTick() i.e. after current code executed and before any I/O events. setTimeout() arranges script run after the minimum threshold of milliseconds has been completed.
+setImmediate() is executed after setTimeout(), with a callback placed in the check queue of next cycle of the event loop. This command is processed on the check handler phase of the event loop. setImmediate() executes the script after the current poll phase completes.
+Q #18) What are streams in Node.js?
+
+Answer: Streams are methods used to handle reading/writing files, network communication, or end-to-end information exchange. These methods are used to process large amounts of data by reading data piece by piece, processing its content, especially for data files larger than the free memory space.
+
+Streams help to read and write data as: 
+
+Readable: Data can be read from the stream using fs.createReadStream() command.
+Writable: Data can be written into the stream using fs.createWriteStream() command.
+Duplex: Readable and writable streams are duplex and use net.Socket command.
+Transform: Duplex streams converting read and written data as zlib.createDeflate().
+Q #19) How is Crypto used in Node.js?
+
+Answer: The Crypto module of Node.js contains OpenSSL’s hash, HMAC, cipher, decipher, sign, and verify functions. An algorithm created by the crypto module is used for data encryption and decryption, for storing passwords in the database in an encrypted form.
+
+Q #20) How DNS module is used in Node.js?
+
+Answer: The DNS module is used for functionalities, such as Domain Name System (DNS) lookup and operating system name resolution. DNS is like a website address. For example, www.yahoo.com is converted into an IP Address (202.165.107.50).
+
+Experienced-Level Questions for Node.js Interview
+Q #21) How is assert used in Node.js?
+
+Answer: Node.js Assert modules are used for function assertion. The assert function works for verifying invariants, returns nothing in output if the condition is true, else an assertion error is displayed by the console.
+
+Q #22) Describe Timer() module methods in Node.js
+
+Answer: The Timer module has various methods like setTimeout(), setImmediate(), setInterval().
+
+These are explained below:
+
+setTimeout() helps schedule code execution after the specified interval in milliseconds.
+Syntax:
+
+1
+setTimeout(callback, delay_in_ms, args)
+setInterval() helps call a function at a specified interval, once after a desired period.
+Syntax:
+
+1
+setTimeout()
+setImmediate() execute code at the end of the current event loop.
+Syntax:
+
+1
+setImmediate(callback, args)
+Q #23) What is the difference between fs.readFile() and fs.createReadStream() in Node.js?
+
+Answer: Node.js uses two ways of reading a file and sending it for execution.
+
+fs.readFile()
+fs.createReadStream()
+Using file system module, fs.readFile loads entire file you want to manage into the memory, reads entire file before it is sent to client	fs.CreateReadStream reads entire file in chunks of pieces that we specify
+fs.readFile() is useful making advantage for large content and low size disks	Sending data file with fs.createReadStream() becomes faster.
+fs.readFile() is memory intensive for high content data files	fs.createReadStream() is effective in memory efficient way of handling data intensive processing of large data files.
+Q #24) Use of URL module in Node.js
+
+Answer: Uniform Resource Identifier (URL) is composed of various portions such as protocol, host, port, filepath, and filename. The URL module of Node.js helps split a web address (URL) into sections that the user can understand.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+var myurl = require('url');
+var web_addr ='http://localhost:8080/support/pages/page_one.html?year=2021&month=may';
+var str = myurl.parse(web_addr, true);
+ 
+console.log(str.host); //returns hostname i.e. 'localhost:8080'
+console.log(str.pathname); // returns filepath - i.e. 'support/pages/page_one.html'
+console.log(str.search); // returns '?year=2021&month=may'
+ 
+var datapoint = str.query; // returns an object => { year : 2021, month : 'may' }
+console.log(datapoint.month); //returns 'may'
+Q #25) Explain package.json file of Node.js
+
+Answer: package.json is a JSON file present at the root directory of Node.js and contains metadata about projects like description, version, distribution, license, and configuration related to the end-user of the project, and npm. This file identifies the project and handles the dependencies, providing information about project metadata values to npm.
+
+Q #26) Explain EventEmitter in Node.js
+
+Answer: Custom events can be handled using the EventEmitter class from the Events module. With an e-commerce application, when your payment is successful or declined, the user should receive an email informing the status, so interaction with the payment gateway i.e. the result, should be sent as an email, so a callback is added to the email event.
+
+Many more operations can interact with each other when the payment request is carried out. With the event emitter, these events are handled using the following code:
+
+1
+eventEmitter.on('SendMail', listener);
+Q #27) List some of the Node.js libraries often used?
+
+Answer: These are as follows:
+
+Express: It is a web framework for node.js
+Socket.io: It is for event-based real-time communication
+Cors: Node.js pack to provide connect/express middleware
+Passport: It is used to authenticate requests with strategies and extensible plugins
+Axios: HTTP client that is promise-based for node.js and browsers
+Multer: Handles multipart/form-data and file uploads
+Morgan: A Node.js middleware that is an HTTP request logger
+HTTP: errors – It helps to generate HTTP errors for Connect, Koa, and Express
+Q #28) What is the most suitable database used along with Node.js?
+
+Answer: Cassandra, CouchDB, MySQL, MongoDB, Neo4j, Oracle, PostgreSQL, and ElasticSearch are some of the databases used along with Node.js. We can install the connection drivers for these Databases with the command npm install driver_name.
+
+However, MongoDB is more suitable for back-end management with Node.js.
+
+Q #29) Explain the reactor design pattern of Node.js
+
+Answer: Nonblocking I/O feature is due to the reactor pattern. Before an I/O request is generated, the handler is submitted to a demultiplexer that handles concurrency, collecting requests as events, and executes these events in queues, avoiding I/O blocking.
+
+The reactor pattern consists of:
+
+Resources – Multiple applications with I/O operations share this resource.
+Event Notifier (Synchronous) – It pushes new events into the event loop.
+Event Loop – New events occur with the event handler in the event loop.
+Request Handler – Handlers are used for events registered on resources provided by the application.
+Q #30) Explain the Buffer class in Node.js
+
+Answer: Buffer class in Node.js provides a way to manage binary data streams.
+
+Unlike Unicode, JavaScript does not support binary data. To process TCP streams or file systems, it is important to handle octet streams. The Buffer class in Node.js offers instances that store raw data and allocate raw memory outside the V8 heap.
+
 70+ Node.js Interview Questions and Answers to Ask a Candidate
 This Article is Part of the Guide: How to Hire a Software Developer: The Ultimate Guide guide-cat-arrow
 article_img
