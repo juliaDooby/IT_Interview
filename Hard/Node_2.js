@@ -1,3 +1,376 @@
+Node.js Interview Questions
+Prepare to impress in Node.js interviews! Dive into key questions and answers that showcase your expertise in this popular JavaScript runtime.
+
+Last Updated: May 13th 2026
+22 min read
+Verified Top Talent Badge
+Verified Top Talent
+Monica Dodla
+By Monica Dodla
+Data Analytics Engineer
+10 years of experience
+Monica is a Data Analytics Engineer at BairesDev, where she has worked in data roles for over four years. Her background includes data analysis work at Tata Consultancy Services.
+
+Expertise
+Data Analytics
+Data Management
+Node.js Interview Questions
+
+Article Contents
+
+Node.js has rapidly become one of the most popular and powerful tools for building scalable and high-performance web applications, making it a core technology behind many Node.js development services. Its ability to tackle large volumes of data and process multiple requests simultaneously makes it an ideal choice for modern web application development.
+
+Node.js rise as a dominant web technology is clear in the Stack Overflow Developers Survey 2022 which shows that 47.12% of all the respondents use Node.js as their preferred web technology. The benefits of Node.js outweigh those of its competitors, prompting organizations to recognize the need to hire Node.js developers.
+
+However, mastering Node.js can be a daunting task, and interview questions and answers for job interviews can be particularly challenging. To help you prepare, we’ve put together a comprehensive list of Node.js interview questions.This article will look into some of the most frequently asked questions and provide detailed answers to help you ace your next interview or identify the qualifications to look for in a candidate.
+
+So, let’s get started with the Node.js interview questions. In the next section, we’ll look at common Node js interview questions and provide a few code examples where necessary. Ready to jump in? Let’s dive deeper and learn how to master the Node.js interview questions!
+
+Basic Node.js Interview Questions
+This section covers basic Node.js interview questions and their answers.
+
+1. What Is the Difference Between npm Local and Global Package Installation?
+In Node.js, packages can be installed either locally or globally. Here are the differences between the two:
+
+Local Installation	Global Installation
+Scope	Installed in the current project’s node_modules folder	Installed in the system’s global node_modules folder
+Accessibility	Can be accessed only by the project in which it is installed	Can be accessed by all projects on the system
+Command	Use npm install in the project’s directory	Use npm install -g in the command line
+Usage	Used for project-specific dependencies	Used for globally installed command-line tools
+2. How is Node.js Different from JavaScript?
+It’s important to note that Node.js is built on JavaScript and the two share similarities, but JavaScript and Node.js are different technologies. Here’s a table summarizing key differences between the two:
+
+Node.js	JavaScript
+A runtime environment for executing JS code outside of a web browser.	A programming language used to create interactive effects within web browsers.
+Can be used for server-side programming, networking, and building APIs.	Primarily used for client-side scripting in web development.
+Built on Chrome’s V8 JavaScript engine.	Originally developed by Brendan Eich at Netscape Communications Corporation.
+Supports modules and package management with node package manager npm.	Lacks support for modules and package management but can be used with libraries such as jQuery or React.
+Can run on various operating systems, including Windows, macOS, and Linux.	Runs inside a web browser and is limited to the capabilities of the browser environment.
+3. Is Node.js free?
+Node.js is free to use under the MIT License.
+
+4. List the API Functions Available in Node.js.
+The two types of API functions in Node.js are:
+
+Asynchronous – Non-blocking functions
+Synchronous – Blocking functions
+5. If Node.js Is Single Threaded, Then How Does It Handle Concurrency?
+Node.js utilizes an event-driven, non-blocking I/O approach to handle concurrency. This implies that it can manage several connections at the same time without launching additional threads. Node.js adds client requests to the event loop and dispatches them to the appropriate handler asynchronously. This allows Node.js to effectively manage massive volumes of I/O operations with little overhead.
+
+6. How Do We Use package.json in Node.js?
+The package.json file is used to specify the dependencies and metadata for a Node.js project. It is normally stored at the root of the node module or project directory and provides information about the default node package. The details are the project name, version, author, license, and a list of dependencies.
+
+7. When Compared to Node.js How Does Angular Differ?
+While creating online apps, developers often turn to Angular as a front-end framework and to Node.js as a server-side JavaScript runtime. Client-side web applications are often developed with Angular, whereas server-side applications are typically developed with Node.js. Unlike Node.js, which utilizes JavaScript as its core scripting language, Angular uses TypeScript.
+
+8. Briefly Explain the Working of Node.js
+Node.js is a server-side JavaScript environment that utilizes the V8 JavaScript engine. The model of I/O that it uses to manage concurrency is event-driven and non-blocking. Node.js processes incoming requests from clients asynchronously by adding them to the event loop, which then notifies the appropriate handler to begin working on them.
+
+9. In Which Types of Applications Is Node.js Most Frequently Used?
+Being a robust system, Node.js can be put to many different uses. Some typical applications of Node.js are as follows:
+
+Node.js is ideal for developing real-time applications like chat clients, multiplayer online games, and teamwork platforms. It’s simple to manage a high volume of simultaneous connections and instantly refresh the user interface thanks to its event-driven design and non-blocking I/O.
+Node.js is also highly effective when used to create streaming apps such as media streaming services. It is ideally suited for such uses because of its capacity to process massive data sets without stalling the event loop.
+Node.js can also be useful for developing APIs since it can be used to create RESTful APIs and microservices. It is commonly used to build scalable and high-performance APIs due to its lightweight architecture and ability to manage a high volume of queries.
+Node.js is commonly used with popular front-end frameworks like React, Angular, and Vue to create single-page applications (SPAs). It’s a great option for developing SPAs because it can serve static files and manage server-side rendering.
+Node.js can also be used to create CLIs, automation scripts, and other command-line tools. It is commonly used for developing such applications because of its ability to communicate with the file system and execute shell commands.
+Intermediate Node.js Interview Questions
+This section covers intermediate Node.js interview questions and their answers.
+
+10. In the fs Module, What Are the Differences Between the Synchronous and Asynchronous Methods?
+The fs module’s synchronous methods freeze all other objects and code execution until the operation is complete, whereas the module’s asynchronous methods continue to run and rely on callbacks to deal with the operation’s outcome. Synchronous methods are often easier to use but can block the event loop, whereas asynchronous methods are more efficient and do not block the event loop.
+
+11. What Is the Command to Load Library Packages From Elsewhere in Node.js?
+The required function in Node.js allows for the import of third-party libraries. The following code shows how to import the express library:
+
+Code
+
+const express = require('express');
+12. List Down the Tasks Which Should Be Done Asynchronously Using the Event Loop?
+I/O operations, network activities, and other long-running processes that may block the event loop are examples of the kinds of tasks that are better off being performed asynchronously with the event loop. File I/O, database queries, and HTTP requests to external web addresses or resources are all good examples.
+
+13. What Is the Difference Between cluster and worker_threads Packages in Node.js?
+Several Node.js processes may work together with the cluster package to manage incoming requests and share a common set of server ports. With the worker threads package, a single Node.js process can have many threads running simultaneously thus making better use of available CPU cores.
+
+14. Explain Node.js’s Callback Function.
+Node.js uses callback functions asynchronously by passing them as arguments to other functions for execution once processing completes.
+
+15. List Down the Two Arguments That async.queue Takes as Input?
+For managing multiple asynchronous calls with async.queue from the async module, by providing two parameters: a worker function handling each queued item and a concurrency value telling how many items should be handled per thread.
+
+16. What Exactly Is Meant When People Talk About Event-driven Programming and Node.js?
+Event-driven programming in Node.js emphasizes events controlling the flow of the application at every step. An event listener is made for certain events based on your needs. Whenever this event is triggered, the application responds by invoking a callback function. It is important to note that both events generated by the application and the system are processed by the event loop in Node.js.
+
+17. What Do You Understand by the First Class Function in Javascript?
+When JavaScript functions are manipulated the same way as any other variable, it is a JavaScript first-class function. Such functions can be assigned to variables, supplied as arguments to other functions, and returned as results.
+
+18. How Does a Control Flow Function Work?
+Asynchronous code can be managed with the help of Node.js’s control flow utilities. They enable one to carry out operations in a predetermined sequence, deal with errors, and call control flow function for further execution depending on the outcomes of earlier ones. async.waterfall, async.series, and async.parallel are just a few of the Node.js control flow methods.
+
+The async.waterfall function is an example of asynchronously executing multiple functions in sequence and passing their results as arguments to the next function in the chain.
+
+Code
+
+async.waterfall([
+  function(callback) {
+    callback(null, 'one', 'two');
+  },
+  function(arg1, arg2, callback) {
+    callback(null, 'three');
+  },
+  function(arg1, callback) {
+    // arg1 now equals 'three'
+    callback(null, 'done');
+  }
+], function (err, result) {
+  // result now equals 'done'
+});
+19. How Would You Use a URL Module in Node.js?
+The URL module in Node.js provides methods for working with URLs. To use the url module, you first need to import it:
+
+Code
+
+const url = require('url');
+You can then use the various methods of the URL module to parse, format, and manipulate URLs. For example, to parse a URL string, you can use the url.parse method:
+
+Code
+
+const urlString = 'https://www.example.com/path/to/resource?param=value#fragment';
+const parsedUrl = url.parse(urlString);
+console.log(parsedUrl);
+This will output an object containing all the objects various components of the URL, such as the protocol, host, path, query parameters, and return data fragment.
+
+20. What Is the Preferred Method of Resolving Unhandled Exceptions in Node.js?
+In order to deal with any missed errors, it is recommended that an uncaughtExeption event handler is set up at the process level. This handler is called whenever a Node.js process throws an unhandled exception giving the opportunity to clean up and gracefully terminate the process.
+
+To create a handler for the uncaughtException event, you can utilize the following code:
+
+Code
+
+process.on('uncaughtException', (err) => {
+  console.error('Unhandled exception:', err);
+  // Perform cleanup tasks and shut down the process
+  process.exit(1);
+});
+21. What Is an Event Loop in Node.js and How Does It Work?
+During async processing, Node.js’s event loop ensures that no blocking occurs, thus allowing it to manage asynchronous I/O activities. The event loop tracks the event queue and executes any jobs waiting in it in a non-blocking approach.
+
+The event loop validates that there is no leftover tasks on the stack before adding a new job to the event queue. When the stack is empty, the event loop will perform the first task in the queue. When the stack is empty, the task is taken from the queue and executed in a single-threaded event loop.
+
+The job’s asynchronous function is executed, and then the event loop checks the event queue for additional tasks. The job may continue running while the event loops’ asynchronous I/O activities including file I/O, or network requests are processed in the background thanks to the event loop’s delegation of these actions to a separate thread pool.
+
+The thread pool communicates with the event loop, which is an event mechanism to then return the raw data back from an asynchronous I/O action to the event queue after it has completed. As the I/O operation finishes the event loop continues with the job by including any code that was waiting.
+
+Hard Node.js Interview Questions
+This section covers intermediate Node.js interview questions and their answers.
+
+22. What Is Callback Hell, and What Is the Main Cause of It?
+When there are too many levels of callbacks in an asynchronous application, the code becomes “hell,” or difficult to comprehend and maintain. This happens when there is a complicated hierarchy of callbacks, with callbacks inside of callbacks within of callbacks.
+
+JavaScript is a single-threaded language, thus it uses a lot of asynchronous programming methods like callbacks, promises, and async/await to prevent blocking the main thread while waiting for I/O operations to finish, which is the major source of callback hell. This results in developers having to write several callbacks, which may become a maintenance nightmare if not properly organized.
+
+It can also be challenging for developers to maintain track of the program’s flow when dealing with numerous layers of callbacks. This can reduce the code’s readability, maintainability, and scalability and introduce faults and mistakes.
+
+Let’s take a look at the code to see how promises, async/await, and event emitters help developers write more manageable asynchronous code and avoid the risks of callback hell.
+
+Code
+
+asyncFunc1(function (error, result1) {
+    if (error) {
+        // handle error
+    } else {
+        asyncFunc2(function (error, result2) {
+            if (error) {
+                // handle error
+            } else {
+                asyncFunc3(function (error, result3) {
+                    if (error) {
+                        // handle error
+                    } else {
+                        // do something with result1, result2, and result3
+                    }
+                });
+            }
+        });
+    }
+});
+The code snippet above comprises of asynchronous functions. These functions are to be executed one after the other. Since they are asynchronous, the callbacks must be applied to handle their outcomes. The code then becomes nested and difficult to comprehend. This makes it hard to follow the flow of the code.
+
+Here’s an example of how the same code can be rewritten using Promises to avoid callback hell:
+
+Code
+
+asyncFunc1()
+    .then(result1 => {
+        return asyncFunc2();
+    })
+    .then(result2 => {
+        return asyncFunc3();
+    })
+    .then(result3 => {
+        // do something with result1, result2, and result3
+    })
+    .catch(error => {
+        // handle error
+    });
+Instead of using callbacks in the code Promises are used in this example. Each function results in a Promise and the then() method is used to connect all of the promises together.
+
+23. Differentiate Between Fork() And Spawn() Methods in Node.js.
+There are several differences between the Node.js fork() and spawn() functions for spawning child processes.
+
+With the fork() method, a new identically functioning instance of Node.js process is created. The child process has access to the parent’s shared resources and may communicate with it via inter-process communication (IPC) because they both run in the same context. Node.js code can be split off into their own processes using fork() like worker processes in a cluster.
+
+The spawn() function essentially initiates a new OS process. Communication between child processes is achieved through streams or pipes since the child process does not have access to the same resources as the parent. The spawn() method is then frequently used to start new processes that can execute other code.
+
+24. What Is Middleware in Node.js
+A middleware is a function that is executed before or after the main request handler. Middleware functions can perform tasks such as logging, authentication, or error handling and can modify the request or response objects before passing them onto the next middleware function or the main request handler.
+
+Middleware functions in Node.js are often organized into a pipeline or chain attached functions, with each function in the chain responsible for a specific task. Middleware functions can be added to the pipeline using the use() method of a middleware framework such as Express.
+
+For example, the following code defines a simple middleware function that logs the request method and URL:
+
+Code
+
+function logger(req, res, next) {
+  console.log(`${req.method} ${req.url}`);
+  next();
+}
+This middleware function can be added to an Express application using the use() method:
+
+Code
+
+const express = require('express');
+const app = express();
+app.use(logger);
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+25. Explain the Tasks of Terms Used in Node REPL
+You can interactively communicate with Node.js by using the Read-Eval-Print Loop (REPL) command-line interface. The following terms are widely used in Node REPL:
+
+Read: Input is accepted from the user in either single-line or multi-line blocks during the read phase of the REPL.
+Eval: The REPL’s eval phase evaluates the data read in the previous phase and runs any JavaScript code added at this time.
+Print: The output of the REPL’s eval phase is printed to the console during the print phase.
+Loop: The REPL’s loop phase continually returns to the read phase for further user input.
+26.  Would You Read Files in Sequence in Node.js? Provide a Code Example.
+When utilizing callbacks or promises one can make sure that each file is read in order in Node.js. Here’s an example leveraging callbacks:
+
+Code
+
+const fs = require('fs');
+function readFile(path, callback) {
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, data);
+  });
+}
+readFile('file1.txt', (err, data1) => {
+  if (err) {
+    return console.error(err);
+  }
+  console.log(data1);
+  readFile('file2.txt', (err, data2) => {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(data2);
+    readFile('file3.txt', (err, data3) => {
+      if (err) {
+        return console.error(err);
+      }
+      console.log(data3);
+    });
+  });
+});
+This code reads each file in sequence and logs its contents to the console.
+
+27. Explain Some Error Handling Approaches in Node.js You Know About. Which One Will You Use?
+With Node.js, you may handle errors in a number of ways, some of which are:
+
+Callback error handling: Errors can be handled using a callback function by sending an error object as its first parameter. If the error value is true, then an error has happened therefore the error object would specify what went wrong.
+Promises error handling: To deal with unfulfilled or failed promises, developers can use the.then() and.catch() methods in a chain. If an error occurs in the promise chain, it could be dealt with using the .catch() function.
+Error events: When an error occurs, an error event is sent and an event listener is registered to process the error. Stream-based applications often use this method.
+Try-catch blocks: Code is encapsulated in a try block and any problems are handled in a subsequent catch block, in the try-catch pattern. Synchronous applications benefit the most from this method.
+How errors are dealt with is a personal preference and depends on the sort of web application framework being built. It is advised that a combination of these strategies be used to provide reliable error handling.
+
+28. How Many Different Stream Options Does Node.js Have?
+Node.js supports four different kinds of streams:
+
+Readable streams: Data can be read into memory from a file or a network connection using a readable stream.
+Writable streams: Writable streams are those that may be used to write information to a file or a network.
+Duplex streams: A stream where the data can be read and written to is called a duplex stream.
+Transform streams: Transform streams are bidirectional streams that may undergo transformations on the fly when reading or writing.
+29. Explain the Usage of a Buffer Class in Node.js.
+A buffer is a temporary storage place for raw binary data. In Node.js this functionality is leveraged using the Buffer class. The Buffer class provides an efficient way to manipulate binary data in Node.js whenever used with streams, network protocols, and system file operations. This makes the Buffer class a critical component of the Node.js I/O System.
+
+There are a variety of useful functions provided by the Buffer class. They can then be used to create and manipulate the buffers. The most popular ones are Buffer.from(), Buffer.alloc() and Buffer.concat().
+
+Let’s now look at how to create a buffer for a string.
+
+Code
+
+const str = 'hello world';
+const buf = Buffer.from(str, 'utf8');
+console.log(buf); // 
+In this example, a buffer is created from the string ‘hello world’ using the Buffer.from() method.
+
+30. What Are Some Commonly Used Timing Features of Node.js?
+There are a variety of pre-installed modules in Node.js that support the timing and scheduling of events. The following are examples of frequently used modules:
+
+setTimeout() is a function that lets you configure another function to run once a predetermined amount of time has passed. The first parameter of the setTimeout() method is the name of a function that will be run, and the second parameter is the amount of time in milliseconds.
+setInterval() is a function that enables the user to schedule another function to run repeatedly after a predetermined length of time has elapsed. The first parameter of the setInterval() method is the name of a function that will be run, and the second parameter is the amount of time in milliseconds.
+setImmediate() is a function that schedules another function to be executed immediately following the completion of the current event loop iteration.
+process.nextTick() is a function that will schedule the execution of another function at the beginning of the subsequent iteration of the event loop.
+process.hrtime() function is responsible for returning the most recent high-resolution real-time tuple in the format of [seconds, nanoseconds].
+Date.now() function gives the current time in milliseconds.
+process.uptime() function returns the number of seconds that have elapsed since the beginning of the current Node.js process.
+31. What Is the Use of the Connect Module in Node.js?
+The connect module in Node.js offers a middleware system. It provides a collection of middleware operations that can be re-used to carry out routine tasks within the application. Tasks like request body processing, static file serving, and authentication management fall into this category. Connect is built on Node.js’s http module and makes it simple to create a pipeline of request handlers by chaining together middleware functions. Connect was once a popular web application framework, but Express has since replaced it and is no longer being updated.
+
+32. Differentiate Between readFile vs createReadStream in Node.js.
+It’s important to note that when working with big files, createReadStream is preferable to readFile since it reads the file in pieces rather than the full thing at once thus saving memory.
+
+readFile can not be the ideal option for huge files or applications that need to read numerous files concurrently, despite its simplicity. createReadStream is the superior choice in such situations.
+
+Here is an example of how to use readFile:
+
+Code
+
+const fs = require('fs');
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+And here is an example of how to use createReadStream:
+const fs = require('fs');
+const readStream = fs.createReadStream('file.txt', 'utf8');
+readStream.on('data', (chunk) => {
+  console.log(chunk);
+});
+readStream.on('end', () => {
+  console.log('Finished reading file');
+});
+In this example, createReadStream creates a stream of binary data back from the file, which can be read in chunks using the write data event. The end event is triggered when the entire file has been read.
+
+33. Explain the Concept of Punycode in Node.js?
+Unicode characters can be represented in ASCII with the use of a character encoding system called Punycode. Its primary application is in the Domain Name System (DNS), where it is used to convert domain names including non-ASCII characters into ASCII-only representations.
+
+The punycode module in Node.js offers tools for working with Punycode strings, including encoding and decoding them. Unicode strings can be sent into the punycode.encode() method to be converted into their equivalent Punycode-encoded ASCII strings. When called with an ASCII string encoded using Punycode, the punycode.decode() method will return the equivalent Unicode text.
+
+Punycode “xn—wgv71a119e.com” represents the Unicode string “日本語.com” for instance. Hence, even if a computer environment or given system doesn’t support Unicode at least it can read the domain name because it will be rendered in ASCII.
+
+You have to use the following command to access it:
+
+Code
+
+punycode = require('punycode');
+Since it allows programmers to work with non-ASCII characters in URLs, email addresses, and other binary data formats, Punycode is an essential tool for enabling internationalization in many web browsers and applications.
+
 najm nodejs razrabotchikov
 By
 Anil G
