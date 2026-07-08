@@ -1,3 +1,661 @@
+Подготовка к собеседованию: React, JS и Frontend вопросы
+HR
+19 мая 2025
+Блог
+Поделиться:
+СОДЕРЖАНИЕ
+
+Основные React вопросы на собеседовании
+
+Что такое Virtual DOM?
+
+Чем отличается class-компонент от функционального?
+
+Что такое useEffect, как избежать лишних вызовов?
+
+Что делает useMemo, useCallback, когда их использовать?
+
+Чем отличается props от state?
+
+Что такое поднятие состояния (lifting state up)?
+
+Что делает key в списках?
+
+Почему нельзя напрямую мутировать state?
+
+Вопросы и задачи, чтобы пройти собеседование по React + JS
+
+Что такое Event Loop, как он влияет на рендер?
+
+Как работают замыкания в обработчиках?
+
+Что такое debounce/throttle и где применяются в Реакт?
+
+Как работает setState — синхронный или асинхронный?
+
+React вопросы на собеседовании Frontend и архитектура
+
+Когда применять Context API, а когда Redux или Zustand?
+
+Что такое HOC и Custom Hook — чем отличаются?
+
+Как оптимизировать большое Реакт-приложение?
+
+Стратегии lazy loading компонентов
+
+Задачи на собеседовании Frontend React-разработчика
+
+1. Реализовать компонент счетчика с useState
+
+2. Сделать кастомный useFetch хук
+
+3. Найти баг в коде: useEffect вызывает бесконечный ререндер
+
+4. Сделать autocomplete с debounce
+
+5. Построить список с фильтрацией и сортировкой
+
+React-вопросы и задачи на собеседовании для Junior
+
+Простые вопросы, которые задают чаще всего
+
+Типичные ошибки джунов
+
+Что учить в первую очередь
+
+Как пройти собеседование: полезные советы
+
+Основные React вопросы на собеседовании
+Что такое Virtual DOM?
+Virtual DOM — это легковесная копия реального DOM, которую JavaScript-библиотека использует для оптимизации обновлений интерфейса. При изменении состояния компонента:
+
+Библиотека создает новый Virtual DOM.
+Сравнивает его с предыдущим (процесс diffing).
+Обновляет только изменившиеся части реального DOM.
+Пример:
+
+Если из 100 элементов списка поменялся один — библиотека перерисует только его, а не весь список.
+
+Чем отличается class-компонент от функционального?
+Классовый
+
+Функциональный
+
+Имеет this, state, методы жизненного цикла
+
+Использует хуки (useState, useEffect)
+
+Сложнее читать из-за boilerplate-кода
+
+Лаконичный синтаксис
+
+Устарел для новых проектов
+
+Рекомендуется с версией 16.8+
+
+Совет: Всегда выбирайте функциональные блоки, если нет легаси-кода.
+
+Что такое useEffect, как избежать лишних вызовов?
+useEffect — хук для побочных эффектов (запросы к API, подписки).
+
+Правила:
+
+Передавайте массив зависимостей вторым аргументом:
+useEffect(() => {
+fetchData();
+}, [userId]); // Вызовется только при изменении userId
+Пустой массив [] = эффект запустится один раз (аналог componentDidMount).
+Ошибка:
+
+useEffect(() => {
+setCount(count + 1); // Бесконечный цикл, если нет зависимостей
+}); // Массив зависимостей отсутствует!
+Что делает useMemo, useCallback, когда их использовать?
+useMemo кэширует значение:
+
+const total = useMemo(() => calculateSum(items), [items]);
+useCallback кэширует функцию:
+
+const handleClick = useCallback(() => doSomething(id), [id]);
+Когда применять:
+
+При дорогих вычислениях (фильтрация больших массивов).
+Чтобы избежать лишних ререндеров дочерних блоков.
+Чем отличается props от state?
+Props — данные, которые передаются в компонент и их нельзя менять.
+
+State — локальный статус внутри элемента (можно обновлять через setState или useState).
+
+Что такое поднятие состояния (lifting state up)?
+Это подход, когда состояние, используемое несколькими блоками, переносится в их ближайшего общего предка. Таким образом, данные передаются «сверху вниз» через пропсы, а обновление — через колбэки.
+
+// Родительский компонент
+const Parent = () => {
+const [value, setValue] = useState('');
+
+return (
+<>
+<ChildA value={value} onChange={setValue} />
+<ChildB value={value} />
+</>
+);
+};
+
+// Дочерние компоненты
+const ChildA = ({ value, onChange }) => (
+<input value={value} onChange={(e) => onChange(e.target.value)} />
+);
+
+const ChildB = ({ value }) => <p>{value}</p>;
+Что делает key в списках?
+key помогает идентифицировать блоки списка при изменениях. Без него библиотека может перепутать их (например, удалить не тот) и производительность падает (ререндер всего списка).
+
+Плохо:
+
+{items.map((item) => (
+<li>{item.name}</li> // Warning: no key!
+))}
+Хорошо:
+
+
+{items.map((item) => (
+<li key={item.id}>{item.name}</li>
+))}
+Почему нельзя напрямую мутировать state?
+Прямое изменение state (например, this.state.name = 'Alex') не вызывает ререндер. Библиотека «не видит» изменений.
+
+Правильно:
+
+// Для классов
+this.setState({ name: 'Alex' });
+
+// Для функциональных
+const [user, setUser] = useState({ name: 'Bob' });
+setUser({ ...user, name: 'Alex' }); // Иммутабельное обновление
+Ошибка:
+
+user.name = 'Alex'; // Не сработает!
+setUser(user);
+Вопросы и задачи, чтобы пройти собеседование по React + JS
+Собеседование на Frontend React-разработчика часто проверяет не только знание библиотеки, но и понимание JavaScript, архитектурных паттернов и оптимизации.
+
+Что такое Event Loop, как он влияет на рендер?
+Event Loop — механизм, который управляет выполнением кода, обрабатывая асинхронные операции (например, таймеры, запросы).
+
+Как влияет:
+
+Рендер компонента происходит в основном потоке.
+Долгие вычисления блокируют Event Loop → интерфейс «зависает».
+Пример решения:
+
+// Плохо: блокирующий код
+const heavyCalc = () => {
+for (let i = 0; i < 1e9; i++) {}
+};
+
+// Хорошо: разбить на части через setTimeout или Web Workers
+const asyncHeavyCalc = () => {
+setTimeout(() => { /* ... */ }, 0);
+};
+
+
+2. Чем отличается == от ===?
+
+
+· == → сравнивает с приведением типов:
+
+'5' == 5;  // true
+null == undefined; // true
+
+· === → строгое сравнение (без приведения):
+
+'5' === 5; // false
+null === undefined; // false
+Совет: Всегда применяйте ===, если не нужны явные преобразования.
+
+Как работают замыкания в обработчиках?
+Замыкание — функция, которая запоминает переменные из внешней области видимости. Это часто приводит к проблемам с устаревшими значениями в обработчиках.
+
+const Component = () => {
+const [count, setCount] = useState(0);
+
+const handleClick = () => {
+// count всегда будет 0 из-за замыкания
+setCount(count + 1);
+};
+
+return <button onClick={handleClick}>Click</button>;
+};
+Решение:
+
+// Используйте функциональное обновление
+setCount(prev => prev + 1);
+Что такое debounce/throttle и где применяются в Реакт?
+Debounce откладывает вызов функции до окончания серии событий (например, поиск при вводе).
+Throttle ограничивает вызов функции до одного раза в заданный период (например, скролл).
+Пример с debounce:
+
+import { useDebouncedCallback } from 'use-debounce';
+
+const Search = () => {
+const [query, setQuery] = useState('');
+const debounced = useDebouncedCallback((value) => {
+fetchResults(value);
+}, 500);
+
+return <input onChange={(e) => debounced(e.target.value)} />;
+};
+Как работает setState — синхронный или асинхронный?
+setState в React.js работает асинхронно. Это оптимизация — библиотека группирует обновления для уменьшения количества ререндеров.
+
+handleClick() {
+this.setState({ count: 1 });
+console.log(this.state.count); // Старое значение
+}
+Как получить актуальный статус:
+
+this.setState({ count: 1 }, () => {
+console.log('Новое значение:', this.state.count);
+});
+React вопросы на собеседовании Frontend и архитектура
+1. Как организовать работу с API?
+
+Fetch: Нативный браузерный метод, но требует оберток для обработки ошибок.
+Axios: Удобные интерсепторы, отмена запросов.
+React Query: Кэширование, автоматический рефетч, инвалидация.
+import { useQuery } from 'react-query';
+
+const fetchUsers = async () => {
+const res = await axios.get('/api/users');
+return res.data;
+};
+
+const Users = () => {
+const { data, isLoading } = useQuery('users', fetchUsers);
+// ...
+};
+Когда применять Context API, а когда Redux или Zustand?
+Context API — для простых случаев.
+
+Redux — сложные приложения с глобальным статусом (middleware, DevTools).
+
+Zustand — легковесная альтернатива Redux без boilerplate.
+
+Правило: Не применяйте Context для частых обновлений — это вызовет ререндеры всех потребителей.
+
+Что такое HOC и Custom Hook — чем отличаются?
+HOC (Higher-Order Component) — функция, принимающая компонент и возвращающая новый (устаревший подход).
+
+const withLogger = (Component) => (props) => {
+console.log('Props:', props);
+return <Component {...props} />;
+};
+Custom Hook — функция с использованием хуков (современный подход).
+
+const useLogger = (props) => {
+useEffect(() => {
+console.log('Props:', props);
+}, [props]);
+};
+Совет: Выбирайте хуки — они проще в тестировании и композиции.
+
+Как оптимизировать большое Реакт-приложение?
+Анализировать узкие места, а затем применять точечные улучшения.
+
+Для снижения ререндеров использовать мемоизацию.
+Длинные списки рендерить через виртуализацию.
+Разделять код ленивой загрузкой (React.lazy + Suspense).
+Глобальный статус (Redux) дробить на изолированные слайсы, чтобы избежать лишних обновлений.
+Стратегии lazy loading компонентов
+1. React.lazy + Suspense:
+
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+// Использование:
+<Suspense fallback={<Spinner />}>
+<LazyComponent />
+</Suspense>
+2. Динамический импорт (Webpack/Vite):
+
+const loadComponent = () => import('./HeavyComponent');
+// Инициировать загрузку по событию (клик, ховер)
+Ручное управление: загрузка начинается при необходимости.
+3. Route-based splitting:
+
+const Home = lazy(() => import('./Home'));
+const About = lazy(() => import('./About'));
+// В роутере:
+<Route path="/about" element={<Suspense fallback={...}><About /></Suspense>} />
+агрузка только при переходе на маршрут.
+4. Предзагрузка:
+
+// Загрузить компонент заранее (например, при ховере кнопки):
+<button onMouseEnter={() => import('./Modal')}>Открыть</button>
+Уменьшает задержку при последующем открытии.
+Стоит избегать:
+
+Дробить код на слишком мелкие чанки (много HTTP-запросов = медленнее).
+Lazy Loading для компонентов выше fold (видимых сразу).
+Задачи на собеседовании Frontend React-разработчика
+1. Реализовать компонент счетчика с useState
+Проверяют умение работать с хуком useState и понимание обработки событий.
+
+Условие: Создайте кнопку, которая увеличивает значение счетчика на 1.
+
+Решение:
+
+import { useState } from 'react';
+
+const Counter = () => {
+const [count, setCount] = useState(0);
+
+return (
+<div>
+<button onClick={() => setCount(count + 1)}>
+Кликов: {count}
+</button>
+</div>
+);
+};
+Ошибки джунов:
+
+Прямая мутация: count++ вместо setCount.
+Неиспользование функционального обновления, если новый статус зависит от предыдущего.
+2. Сделать кастомный useFetch хук
+Условие: Хук должен загружать данные по URL и возвращать состояние (загрузка, данные, ошибка).
+
+Решение:
+
+import { useState, useEffect } from 'react';
+
+const useFetch = (url) => {
+const [data, setData] = useState(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
+useEffect(() => {
+const fetchData = async () => {
+try {
+const response = await fetch(url);
+const result = await response.json();
+setData(result);
+} catch (err) {
+setError(err);
+} finally {
+setLoading(false);
+}
+};
+
+fetchData();
+}, [url]);
+
+return { data, loading, error };
+};
+
+
+Как использовать:
+
+const Users = () => {
+const { data, loading } = useFetch('https://api.example.com/users&#39;);
+return loading ? <Spinner /> : <List items={data} />;
+};
+
+
+3. Найти баг в коде: useEffect вызывает бесконечный ререндер
+Код с ошибкой:
+
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+setCount(count + 1);
+}); // Нет массива зависимостей!
+Проблема: Эффект срабатывает при каждом рендере → обновляет статус → новый рендер → бесконечный цикл.
+
+Решение:
+
+useEffect(() => {
+setCount(prev => prev + 1);
+}, []); // Пустой массив = запуск один раз
+4. Сделать autocomplete с debounce
+Условие: Поле ввода с отложенным запросом к API.
+
+Решение:
+
+import { useState, useEffect } from 'react';
+import { useDebounce } from 'use-debounce';
+
+const Autocomplete = () => {
+const [query, setQuery] = useState('');
+const [results, setResults] = useState([]);
+const [debouncedQuery] = useDebounce(query, 500);
+
+useEffect(() => {
+if (debouncedQuery) {
+fetch(`/api/search?q=${debouncedQuery}`)
+.then(res => res.json())
+.then(data => setResults(data));
+}
+}, [debouncedQuery]);
+
+return (
+<div>
+<input value={query} onChange={(e) => setQuery(e.target.value)} />
+<ul>
+{results.map(item => <li key={item.id}>{item.name}</li>)}
+</ul>
+</div>
+);
+};
+5. Построить список с фильтрацией и сортировкой
+Условие: Пользователь может фильтровать товары по цене и сортировать по названию.
+
+Решение:
+
+const ProductList = ({ products }) => {
+const [filter, setFilter] = useState('');
+const [sortBy, setSortBy] = useState('name');
+
+const filtered = products.filter(product =>
+product.price >= Number(filter)
+);
+
+const sorted = [...filtered].sort((a, b) =>
+sortBy === 'name' ? a.name.localeCompare(b.name) : a.price - b.price
+);
+
+return (
+<div>
+<input
+type="number"
+placeholder="Минимальная цена"
+onChange={(e) => setFilter(e.target.value)}
+/>
+<select onChange={(e) => setSortBy(e.target.value)}>
+<option value="name">По имени</option>
+<option value="price">По цене</option>
+</select>
+<ul>
+{sorted.map(product => (
+ <li key={product.id}>{product.name} - ${product.price}</li>
+))}
+</ul>
+</div>
+);
+};
+React-вопросы и задачи на собеседовании для Junior
+Простые вопросы, которые задают чаще всего
+Здесь важно показать, что вы уверенно работаете с основами:
+
+1. useState: «Как сохранить данные формы в состояние?»
+
+Ответ:
+
+const [formData, setFormData] = useState({ login: '', password: '' });
+
+const handleChange = (e) => {
+setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+Что спросят дополнительно: «Почему нельзя менять статус напрямую?»
+
+Потому что библиотека не отследит изменения.
+
+2. Чем отличаются Props и State? Приведите примеры, где вы применяли оба подхода в одном компоненте.
+
+Props — это неизменяемые данные, которые компонент получает «сверху» (текст кнопки или цвет). State — внутреннее положение блока, которое можно менять (счетчик кликов).
+
+const Counter = ({ buttonLabel }) => { // buttonLabel -- пропс
+const [count, setCount] = useState(0); // count -- стейт
+
+return (
+<div>
+<button onClick={() => setCount(count + 1)}>
+{buttonLabel}: {count}
+</button>
+</div>
+);
+};
+
+// Использование:
+<Counter buttonLabel="Кликов" />
+Здесь buttonLabel приходит как пропс, а count хранится в стейте и обновляется при клике.
+
+3. События и базовые хуки
+
+Обработка событий: как отправить данные формы (логин и пароль) при нажатии на кнопку?
+
+Ответ:
+
+const LoginForm = () => {
+const [formData, setFormData] = useState({ login: '', password: '' });
+
+const handleSubmit = (e) => {
+e.preventDefault(); // Отменяем перезагрузку страницы
+console.log('Данные:', formData);
+};
+
+const handleChange = (e) => {
+setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+return (
+<form onSubmit={handleSubmit}>
+<input
+type="text"
+name="login"
+value={formData.login}
+onChange={handleChange}
+/>
+<input
+type="password"
+name="password"
+value={formData.password}
+onChange={handleChange}
+/>
+<button type="submit">Войти</button>
+</form>
+);
+};
+Как объяснить:
+
+onSubmit формы вызывает handleSubmit.
+handleChange обновляет статус при вводе в поля.
+e.preventDefault() предотвращает стандартное поведение формы.
+Hook useEffect: как подписаться на изменение размера окна и очистить подписку при размонтировании компонента?
+
+const WindowSizeTracker = () => {
+const [width, setWidth] = useState(window.innerWidth);
+
+useEffect(() => {
+const handleResize = () => {
+setWidth(window.innerWidth);
+};
+
+window.addEventListener('resize', handleResize);
+
+return () => {
+window.removeEventListener('resize', handleResize);
+};
+}, []); // Пустой массив = эффект только при монтировании
+
+return <div>Ширина окна: {width}px</div>;
+};
+
+Как объяснить:
+
+useEffect с пустым массивом зависимостей выполняется один раз при монтировании.
+return в эффекте — функция очистки (вызывается при размонтировании).
+Типичные ошибки джунов
+Мутация состояния.
+
+Неправильно:
+
+const [list, setList] = useState([1, 2, 3]);
+list.push(4); // Мутация!
+setList(list);
+Правильно:
+
+setList([...list, 4]); // Создаем новый массив
+Дублирование логики
+
+Плохо:
+
+const ComponentA = () => {
+const [data, setData] = useState([]);
+useEffect(() => fetchData(), []);
+// ...
+};
+
+const ComponentB = () => {
+const [data, setData] = useState([]);
+useEffect(() => fetchData(), []); // Тот же код
+};
+Решение: Вынести общую логику в кастомный hook:
+
+const useFetchData = () => {
+const [data, setData] = useState([]);
+useEffect(() => fetchData(), []);
+return data;
+};
+Что учить в первую очередь
+1. Основы:
+
+Жизненный цикл компонентов.
+Работа с формами (управляемые vs неуправляемые)
+Работа с состоянием (useState, useEffect).
+2. React Router: настройка маршрутов.
+
+3. Работа с API: fetch, axios.
+
+4. Основы оптимизации (React.memo, useCallback).
+
+Как пройти собеседование: полезные советы
+1. Подготовьте практические доказательства ваших навыков. Начните с создания pet-проекта, который станет вашей визитной карточкой. В нем обязательно должны быть ключевые блоки современных приложений:
+
+Роутинг — настройте переходы между страницами. Это покажет, что вы умеете работать с SPA и динамическими маршрутами.
+Хранилище — используйте Context API для простых сценариев или Redux Toolkit, если в вакансии указан стейт-менеджмент. Важно продемонстрировать, как вы организуете глобальные данные.
+Работа с API — подключите любой публичный API (The Movie Database) для загрузки и отображения данных. Покажите, как вы обрабатываете ошибки, лоадеры и кеширование.
+Хуки — задействуйте базовые (useState, useEffect) и создайте кастомные. Например, hook для управления модалками или валидации форм.
+Идея: приложение для поиска фильмов с детальными страницами, избранным списком и поиском по жанрам. Такой проект охватит все: от асинхронных запросов до взаимодействия с состоянием.
+
+2. Разберитесь в реакт DevTools — это ваш главный инструмент для отладки. Уделите время изучению:
+
+Component Tree. Это поможет объяснить, как вы проектируете архитектуру.
+Profiler — находить узкие места в рендере.
+Проверка пропсов и состояния — убедитться, что данные передаются без ошибок.
+Эти шаги не только укрепят вашу уверенность, но и дадут конкретные примеры для ответов. Помните: пет-проект — это история, которую вы рассказываете работодателю, а DevTools — инструмент, который доказывает, что вы умеете ее создавать.
+
+Медиацентр
+Смотреть все
+Разработка ПО
+Стоит ли IT-специалисту вести публичный блог — и что это дает карьере
+11 июня 2026
+Блог
+Разработка ПО
+8 признаков того, что архитектура вашего проекта уже сломана
+9 июня 2026
+Блог
+Разработка ПО
+
+
 45 вопросов для подготовки к собеседованию по React
 Разбираем вопросы, ответы на которые должен знать каждый React-разработчик.
 3
