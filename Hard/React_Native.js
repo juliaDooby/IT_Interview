@@ -1,3 +1,304 @@
+Advanced React Interview Questions for 2025: React & React Native Mastery
+Interview Questions
+Advanced React Native Interview Questions & Answers
+15 min read
+Introduction Advanced React Interview Questions for 2025
+React Native (also known as RN) is a popular JavaScript-based mobile app framework that allows you to build natively rendered mobile apps for iOS and Android — all from a shared codebase. As the mobile development landscape evolves, preparing with Advanced React Native Interview Questions and react native advanced interview questions becomes essential for developers aiming for senior or specialized roles.
+
+Originally released by Facebook in 2015, React Native quickly rose to prominence. Today, it powers global apps like Facebook, Instagram, and Skype. This success stems largely from the ability to write once and deploy across platforms, and from the rising demand for advanced React Native app solutions that scale effectively in production environments.
+
+Since React Native is built on top of React — one of the most widely used JavaScript libraries — knowledge of both frameworks is often tested together. Many interviews now combine advanced React interview questions with react native advanced interview questions to assess a developer’s end-to-end capabilities.
+
+This guide covers real-world advanced React Native app solutions, component lifecycle mastery, performance tuning, and architecture strategies. Dive in and prepare with this curated collection of advanced React interview questions and answers tailored for serious mobile developers.
+
+React Native Advanced Interview Questions
+1. How can sensitive data be stored securely in React Native ?
+
+Most React Native data is stored in Async Storage. As an unencrypted, local form of storage, it’s not suitable for storing sensitive data such as tokens and passwords.
+
+Alternatively, React Native Keychain offers a secure form of storage that also works similarly to Async Storage. For iOS, Keychain storage can be used to protect sensitive data, while Android developers can use Facebook Conceal and Android Keystone.
+
+2. How can you resolve common React Native performance issues ?
+
+When performance issues occur, there are several solutions available to developers. For example, here are some solutions for a few common performance issues:
+
+High CPU usage:Optimizing apps by compressing data, cutting out wasteful renders, and using cache storage will improve performance speed
+Memory leak:Memory leak can be avoided by debugging, avoiding the use of console statements, and regularly checking code for inconsistencies
+Slow navigation:Using React Navigation instead of other navigation tools like Navigator or NavigationExperimental will help soothe navigational issues
+3. What are some differences between using React Native for iOS and for Android ?
+
+Around 85% of React Native code is cross-platform, which means that most processes are the same on both iOS and Android. However, there are a few minor differences. These include:
+
+iOS development uses Mac and Xcode, whereas Android development draws on Android SDK and an emulator
+Third-party plugins that don’t offer native functionality will need to be used differently
+The bridging process can be slightly different when developing complex apps.
+4. How do you ensure animations run smoothly in React Native apps ?
+
+Several steps can be taken to optimize animations in React Native. These include:
+
+Use lazy loadingso components are only rendered when in use
+Remove animated values from the stateto avoid unnecessary overhead
+Use shouldComponentUpdateto fast-track the rendering process
+Use useNativeDriver for Androidto transfer all the animating work to the native layer
+5. What steps would you take in React Native if you have an app that crashes continually ?
+
+Use a third-party error reporting integration to pull up an error report and further diagnose the bug. These plugins help collect, organize, and analyze crash reports and also provide quick fixes so the app can get back up and running. Popular error reporting plugins include:
+
+Bugsnag
+Crashlytics
+Sentry
+TestFairy
+Rollbar
+6. How can Redux be implemented in React Native ?
+
+Redux is a useful state management tool. It can be implemented by following these steps:
+
+Install the necessary Redux packages online
+Create a Redux folder at the root of the app
+Within the Redux folder, add three files: actions.js, reducer.js, and store.js
+In the new reducer.js file, import <combineReducers> from ‘redux’
+In the store.js file, import <createStore> from ‘redux’ to create the store
+Import the store to the React Native app
+7. What is the role of TouchableOpacity in React Native ?
+
+In React Native, TouchableOpacity is a wrapper used to change the transparency of a button. When used on a button, opacity reduces in response to touch, allowing users to see the background whenever they press it.
+
+8. What are the differences between Flexbox in browser and in React Native ?
+
+Flexbox generally works in the same way in React Native as it does in CSS on the web. However, there are a few minor differences in the values. These include:
+
+The default value in React Native is column, whereas the default value for CSS is row
+The default value in React Native is flex-start, whereas the default value for CSS is stretch
+The default value in React Native is 0, whereas the default value for CSS is 1
+9. What steps can you take to resolve persistent memory leak issues ?
+
+A memory leak occurs when memory that is no longer needed by an app remains in the app rather than being returned to the operating system. This is one of the most common causes of performance issues.
+
+In theory, memory management is handled automatically by the garbage collector. However, this process is still prone to errors. Debugging tools can be used to identify memory leak issues. Some of the most common causes for issues are:
+
+Timers and listeners in componentDidMount
+Inline styles
+Closure scope leaks
+The use of console.log
+Debugging can identify the root of the memory leak; once it has been removed, the issue should be resolved.
+
+10. How can you optimize FlatList items in React Native ?
+
+There are several techniques for optimizing the performance of FlatList items. For example, we can:
+
+Avoid using 1080P HD images
+Optimize the maxToRenderPerBatch prop
+Use the getItemLayout prop
+Use the keyExtractor prop
+Use fewer views
+Optimize the windowSize prop
+11. How are hot reloading and live reloading in React Native different ?
+
+Live reloading in React Native refreshes the entire app when a file changes, whereas hot reloading only refreshes the files that were changed.
+
+When hot reloading is used on an app, the state remains the same and the developer is returned to the page they started on. The opposite is true for live reloading.
+
+12. When would you use ScrollView over FlatList and vice versa ?
+
+ScrollView loads all data items on one screen for scrolling purposes. All the data is stored on RAM, which can cause performance issues for large amounts of data.
+
+FlatList only displays items that are currently shown on the screen (10 by default), thus sidestepping any performance issues.
+
+Therefore, it is best to use FlatList for large datasets, whereas ScrollView can be used for smaller datasets.
+
+13. How are vector icons used in React Native ?
+
+Vectors are an integral part of app design in React Native. They can initially be installed by running the following command: <npm install react-native-vector-icons>. Selected vector icons can then be imported into the React Native app for use.
+
+14. When should setNativeProps be used in React Native ?
+
+In React Native, setNativeProps is used to change a component directly on a DOM node rather than in the app’s state. While this can help to solve issues, it also makes code more difficult to work with in the future.
+
+It’s considered a backup solution to performance issues linked to animations, and should only be used if setState and shouldComponent fail to resolve the problem.
+
+15. What’s the real cause behind performance issues in React Native ?
+
+The real cause behind React Native performance issues is that each thread (i.e Native and JS thread) is blazingly fast. The performance bottleneck in React Native app occurs when you’re passing the components from one thread to another unnecessarily or more than required. A major thumb rule to avoid any kind of performance-related issue in React Native is to keep the passes over the bridge to a minimum.
+
+Native thread built for running Java/ Kotlin, Swift/ Objective C
+Javascript thread is the primary thread that runs everything from javascript-based animations to other UI components
+The bridge as the name suggests acts as an  intermediate communication point for the native and JS thread
+16. List down some of the steps to optimize the application.
+
+Use Proguard to minimize the application size.(It does this by stripping parts of the React Native Java bytecode (and its dependencies) that your app is not using)
+Create reduced-sized APK files for specific CPU architectures. When you do that, your app users will automatically get the relevant APK file for their specific phone’s architecture. This eliminates the need to keep JSCore binaries that support multiple architectures and consequently reduces the app size.
+Compress images and other graphic elements. Another option to reduce image size is using file types like APNG in place of PNG files.
+Don’t store raw JSON data,  eIther we need to Compress it or convert it into static object IDs.
+Optimize native libraries.
+Optimize the number of state operations and remember to use pure and memoized components when needed
+Use Global State wisely for example worst-case scenario is when state change of single control like TextInput or CheckBox propagates render of the whole application. Use libraries like Redux or Overmind.js to handle your state management in a more optimized way.
+Use key attribute on list items, it helps React Native to pick which list to update when rendering a long list of data
+Use VirtualizedList, FlatList, and SectionList for large data sets.
+Clear all the active timers which may lead to heavy memory leakage issues.
+17. Describe Memory leak Issue in React Native , how can it be detected and resolved ?
+
+In JavaScript memory is managed automatically by Garbage Collector (GC). In short, Garbage Collector is a background process that periodically traverses the graph of allocated objects and their references.
+
+If it happens to encounter a part of the graph that is not being referenced directly or indirectly from root objects (e.g., variables on the stack or a global object like window or navigator) that whole part can be deallocated from the memory.
+In React Native world each JS module scope is attached to a root object. Many modules, including React Native core ones, declare variables that are kept in the main scope (e.g., when you define an object outside of a class or function in your JS module).
+
+Such variables may retain other objects and hence prevent them from being garbage collected.
+
+Some Causes of Memory Leak:
+
+Unreleased timers/listeners added in componentDidMount
+Closure scope leaks
+Detecting memory leaks for IOS:
+
+In Xcode,
+
+Go to XCode → Product → Profile (⌘ + i)
+
+After that shows you all templates choose leaks.
+
+Detecting memory leaks for Android :
+
+Run React Native app normally (react-native run-android)
+Run Android Studio
+
+On the menu,
+click Tools → Android → Enable ADB Integration
+Click Tools → Android → Android Device Monitor
+When Android Device Monitor shows up, click Monitor → Preferences
+
+There is also one more way in Android
+Perf Monitor (Performance Monitor) is a good choice to use for android leak monitoring.
+
+Import PerfMonitor from 'react-native/Libraries/Performance/RCTRenderingPerf';
+PerfMonitor.toggle();
+PerfMonitor.start();
+setTimeout(() => {
+ PerfMonitor.stop();
+}, 20000);
+}, 5000);
+18. Is there any out of the box way storing sensitive data in React ? If yes which and if not how can this be achieved ?
+
+React Native does not come bundled with any way of storing sensitive data. However, there are pre-existing solutions for Android and iOS platforms.
+
+iOS – Keychain Services
+Keychain Services allows you to securely store small chunks of sensitive info for the user. This is an ideal place to store certificates, tokens, passwords, and any other sensitive information that doesn’t belong in Async Storage.
+
+Android – Secure Shared Preferences#
+Shared Preferences is the Android equivalent for a persistent key-value data store. Data in Shared Preferences is not encrypted by default, but Encrypted Shared Preferences wraps the Shared Preferences class for Android, and automatically encrypts keys and values.
+
+Android – Keystore
+The Android Keystore system lets you store cryptographic keys in a container to make it more difficult to extract from the device. In order to use iOS Keychain services or Android Secure Shared Preferences, you can either write a bridge yourself or use a library that wraps them for you and provides a unified API at your own risk. Some libraries to consider:
+
+Expo-secure-store
+React-native-keychain
+react-native-sensitive-info – secure for iOS, but uses Android Shared Preferences for Android (which is not secure by default). There is however a branch that uses Android Keystore.
+19. What is Network Security and SSL Pinning ?
+
+Understanding of SSL:
+
+SSL (Secure Sockets Layer) and its successor, TLS (Transport Layer Security), are protocols for establishing authenticated and encrypted links between networked computers.
+SSL/TLS works by binding the identities of entities such as websites and companies to cryptographic key pairs via digital documents known as X.509 certificates. Each key pair consists of a private key and a public key. The private key is kept secure, and the public key can be widely distributed via a certificate.
+
+Understanding of pinning 
+Pinning is an optional mechanism that can be used to improve the security of a service or site that relies on SSL Certificates. Pinning allows specifying a cryptographic identity that should be accepted by users visiting site/app
+
+Why do we need SSL pinning?
+
+One of the inherent risks to the SSL ecosystem is mis-issuance. This is when an unauthorized certificate is issued for a domain/host you control. This can happen with both public and private PKIs (Public Key Infrastructure)
+
+How is SSL pinning used in Mobile applications?
+When mobile applications communicate with the server, they typically use SSL to protect the transmitted data against tampering. By default SSL implementations used, apps trust any server with a certificate trusted by the Operating systems trust store, This store is a list of certificate authorities that are shipped with the operating system.
+
+With SSL pinning, however, the application is configured to reject all but one or few predefined certificates, whenever the application connects to a server, it compares the server certificate with the pinned certificate(s) , if and only if they match the server is trusted and SSL connection is established.
+
+20. Explain setNativeProps. Does it create Performance issues and how is it used ?
+
+It is sometimes necessary to make changes directly to a component without using state/props to trigger a re-render of the entire subtree. When using React in the browser, for example, you sometimes need to directly modify a DOM node, and the same is true for views in mobile apps. setNativeProps is the React Native equivalent to setting properties directly on a DOM node.
+Use setNativeProps when frequent re-rendering creates a performance bottleneck.
+
+Direct manipulation will not be a tool that you reach for frequently; you will typically only be using it for creating continuous animations to avoid the overhead of rendering the component hierarchy and reconciling many views. setNativeProps is imperative and stores state in the native layer (DOM, UIView, etc.) and not within your React components, which makes your code more difficult to reason about. Before you use it, try to solve your problem with setState and shouldComponentUpdate.
+
+21. How to make your React Native app feel smooth on animations ?
+
+The primary reason and an important one why well-built native apps feel so smooth are by avoiding expensive operations during interactions and animations. React Native has a  limitation that there is only a single JS execution thread, but you can use InteractionManager to make sure long-running work is scheduled to start after any interactions/animations have completed.
+
+Applications can schedule tasks to run after interactions with the following:
+
+InteractionManager.runAfterInteractions(() => {
+ // ...long-running synchronous task...
+});
+22. What are the benefits of using React Native for building mobile applications ?
+
+There are following benefits of using React Native in mobile application development
+
+React Native enables a web developer to build mobile apps with Javascript.
+The developer doesn’t need to learn complete new programming language java/ Kotlin to develop Android App. Similarly, the developer doesn’t need to be an expert in objective C or swift to develop IOS app anymore. Javascript is more than sufficient to build a mobile app for both Android and IOS. However, knowing java or swift helps the developer to write performance robust mobile app.
+With React Native, most of the code base can be shared between the Android app and the IOS app.
+With a single code base, effort in maintenance is reduced by many folds.
+With a single code base, features can be shipped much faster on both major mobile platform
+Developer having experience with ReactJs can quickly learn React Native. The learning curve for a developer is very low.
+App developed with React Native is not a web app running inside a mobile app. It is a real mobile app because it uses the same fundamental building blocks as regular IOS native app and Android app uses.
+React Native lets you build an app faster as it’s tool gives hot reloading functionality out of the box which means we don’t need to recompile app again and again on making changes.
+React Native gives the flexibility to use Native swift or java module with React Native application. So your app can get the best from both worlds.
+23. How is React Native different from other frameworks for developing a mobile application ?
+
+Javascript developer always tried to explore platforms where Javascript can be used to build better user experiences. React native is not the first framework which enables web developers to build applications for the mobile platform. Ionic, Cordova were few very popular application framework which was used to develop a mobile application using web technologies. One major motivation towards this effort was having a seamless experience on all the platforms. Mobile application developed with React Native is different than alternate frameworks in the following ways:
+
+React Native app is a real mobile app, not a web app running inside a mobile app shell. Other alternative like Cordova, ionic run a web app in a web view.
+React Native app is converted into machine code which runs on mobile that is why it gives better performance than other alternatives.
+React Native mobile apps are more close to Native app development in comparison to other Javascript frameworks
+Mobile application built with React native has small bundle size in comparison to older hybrid application development framework.
+24. What tool and skill set do you need to develop a mobile app in React Native ?
+
+Developer experience is one of the most important attributes of a framework. If getting started step with any framework is very difficult and very complex then the community will take lots of time to accept that framework. That is why React native has tried their best to simplify the getting started step for app development. To build a mobile app with React Native, one should have a good understanding of Javascript concepts and understanding of CSS helps in styling React Native app. React Native provide CLI (command line interface) which is used to bootstrap the mobile application.
+
+For IOS development Xcode and for Android app development, Android studio is required. Understanding of component driven development with ReactJs is also very beneficial in React Native app development. There is one more open source project named Expo CLI which provides a command line utility to easily start development of React native. It also provides barcode based approach to share the app within the team. Developer experience is pretty good for React native that is also one of the reasons for its huge popularity in the developer community.
+
+ 
+
+25. What is component driven development and what are the benefits of using component driven development ?
+
+Long time back, web developer realises that there are few elements which are frequently used in web development like drop down and different type of button. The developer started making CSS frameworks which provide already developed components. Bootstrap was first very popular CSS framework which helped web developer to build user experience very quickly. React also follows the same approach in web development.
+
+Component driven development is a methodology where we break the complete UI design into several small reusable components and develop them independently. Then the complete UI is built by composing these small components. This methodology helps us write UI code in a modular way. UI development will be faster as we will be reusing components at multiple places. Less code also results in less effort in maintaining the code and also less number of bugs. So we can say that component driven development was already there in web development but React JS made it very popular in the developer community. New frameworks like Angular4+ are also following the same methodology to develop the web application.
+
+26. What is the difference between a functional component and a class-based component ?
+
+Though we can implement in both functional and class-based way, there are few fundamental differences between the two of them:
+
+Functional component can’t have stated ( before React hooks era ). It renders component only based on props passed. A class-based component can have a local state which can be helpful in building a bigger component
+Functional component access directly via props argument passed. In a class-based component, props are accessible via this.props.
+A class-based component is a more complex structure. It is an instance of a class derived from React. Component class. The class must implement a render() member function which returns a React component to be rendered
+The class-based component can also use lifecycle methods but functional component can’t use lifecycle methods.
+Functional components are a very light weighted component in comparison to class-based react component
+27. How Virtual DOM works in React Native ?
+
+Virtual DOM is a lightweight JavaScript object, which is an in-memory representation of a real DOM. It is an intermediary step between the render function being called and the displaying of elements on the screen. It is similar to a node tree, which lists the elements, their attributes, and content as objects and their properties. The render function creates a node tree of the React components and then updates this node tree in response to the mutations in the data model caused by various actions done by the user or by the system.
+
+Virtual DOM works in three steps:
+
+Whenever any data changes in the React App, the entire UI is re-rendered in Virtual DOM representation.
+Now, the difference between the previous DOM representation and the new DOM is calculated.
+Once the calculations are completed, the real DOM updated with only those things which are changed.
+28. How do you create basic text input in React Native ?
+
+The insertion of basic text in React Native apps is handled by the Text and TextInput components. TextInput allows users to type on the app. We can implement it using the following syntax: <import { Text, TextInput, View } from ‘react-native’>.
+
+What Are Advanced React Native App Solutions?
+These are strategies, tools, or patterns that help developers build production-ready, efficient, and scalable mobile apps using React Native. They go beyond just building screens — they focus on performance, architecture, and maintainability.
+
+🔍 Common Areas Included in Advanced React Native App Solutions:
+Category	Examples / Techniques
+State Management	Redux Toolkit, Zustand, Recoil, Jotai, React Query for async state
+Navigation	Deep linking, nested navigators, dynamic routing with React Navigation
+Performance Optimization	Memoization, useCallback, FlatList optimizations, lazy loading, code splitting
+Architecture Patterns	Clean Architecture, MVVM, Hexagonal Architecture, Feature-Sliced Design
+Native Module Integration	Bridging native iOS/Android modules, using custom native UI components
+Testing & CI/CD	E2E testing (Detox), unit testing (Jest), GitHub Actions or Bitrise for continuous deployment
+Offline-first Solutions	SQLite, WatermelonDB, Realm with sync handling
+Animations	Reanimated 2, Gesture Handler, smooth transitions, shared element transitions
+Security Enhancements	Secure storage (Keychain/Keystore), code obfuscation, API encryption
+
 Best React Native Interview Questions And Answers
 Jump to:
 Junior React Native interview questions
