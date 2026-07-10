@@ -1,3 +1,561 @@
+Basic
+What is TypeScript, and how does it differ from JavaScript?
+TypeScript is a superset of JavaScript that adds static typing, meaning you can define variable types and catch errors at compile time instead of runtime. This means you can specify the types of variables, function parameters, return values, and more. It compiles down to plain JavaScript, which can then be run in any JavaScript environment (browsers, Node.js, etc.).
+
+
+
+What are the key benefits of using TypeScript?
+Static Typing: Catches type-related errors during development, leading to more robust and maintainable code.
+Improved Code Readability: Explicit types make code easier to understand and reason about.
+Enhanced Tooling: Provides better autocompletion, code navigation, and refactoring capabilities in IDEs.
+Early Error Detection: Helps identify bugs earlier in the development cycle, reducing runtime errors.
+Better Collaboration: Clear type definitions improve communication and understanding among team members.
+Support for Latest ECMAScript Features: Often includes support for upcoming JavaScript features before they are widely adopted.
+
+
+What are the primitive types available in TypeScript?
+boolean: Represents true or false values.
+
+number: Represents numeric values (integers and floating-point numbers).
+
+string: Represents sequences of characters.
+
+null: Represents the intentional absence of a value.
+
+undefined: Represents a variable that has not been assigned a value.
+
+symbol (ES6): Represents unique and immutable values.
+
+bigint (ES2020): Represents arbitrarily large integers.
+
+
+
+How do you define a variable with a specific type in TypeScript?
+You use type annotations, which explicitly declare the expected type of a variable, helping prevent unintended type assignments.
+
+let name: string = "John";
+let age: number = 30;
+let isActive: boolean = true;
+let list: number[] = [1, 2, 3];
+let tuple: [string, number] = ["John", 30]; // Fixed-length array with types
+
+
+What is type inference in TypeScript?
+TypeScript can automatically detect the type of a variable based on its assigned value, reducing the need for explicit type annotations.
+
+
+
+What is the difference between any, unknown, and never types?
+any: Disables type checking, allowing any type.
+
+unknown: Similar to any, but requires a type check before being used.
+
+never: Represents values that never occur, such as functions that always throw errors.
+
+
+
+Explain the concept of interfaces in TypeScript.
+An interface in TypeScript is a way to define a contract for the structure of an object. It specifies the names and types of properties and methods that an object must have. Interfaces are purely a compile-time construct and do not exist in the generated JavaScript code. They help in enforcing a specific shape for objects and provide better type checking.
+
+interface User {
+  name: string;
+  age: number;
+  isAdmin?: boolean; // Optional property
+}
+
+const user: User = { name: "Alice", age: 25 };
+
+
+What is a tuple in TypeScript, and how is it different from an array?
+A tuple is an array with a fixed number of elements, where each position has a defined type, whereas a regular array can contain any number of elements of the same type.
+
+
+
+How do you use type aliases in TypeScript?
+Type aliases allow you to create custom names for complex types, making the code more readable and reusable.
+
+type Coordinates = {
+  x: number;
+  y: number;
+};
+
+
+What is the readonly modifier in TypeScript, and how is it used?
+It makes properties immutable, preventing their values from being changed after initialization.
+
+
+
+How do you implement optional and default parameters in functions?
+Optional parameters are indicated with a ?, and default parameters have a predefined value if no argument is provided.
+
+
+
+Sum of Numbers:
+function sumArray(numbers: number[]): number {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(sumArray(numbers)); // Output: 15
+
+
+Simple Interface:
+interface Person {
+  name: string;
+  age: number;
+}
+
+const person: Person = {
+  name: "Bob",
+  age: 30,
+};
+
+console.log(person.name); // Output: Bob
+console.log(person.age);  // Output: 30
+
+
+Enum for Status:
+enum OrderStatus {
+  Pending,
+  Processing,
+  Shipped,
+  Delivered,
+}
+
+function getOrderStatusString(status: OrderStatus): string {
+  switch (status) {
+    case OrderStatus.Pending:
+      return "Your order is pending.";
+    case OrderStatus.Processing:
+      return "Your order is being processed.";
+    case OrderStatus.Shipped:
+      return "Your order has been shipped.";
+    case OrderStatus.Delivered:
+      return "Your order has been delivered.";
+    default:
+      return "Unknown order status.";
+  }
+}
+
+console.log(getOrderStatusString(OrderStatus.Processing)); // Output: Your order is being processed.
+
+
+Intermediate
+What is the difference between an interface and a type alias?
+Interfaces are extendable and primarily used for object structures, while type aliases can represent more complex types, such as unions and intersections.
+
+// Interface extension
+interface Animal { name: string; }
+interface Dog extends Animal { breed: string; }
+
+// Type alias
+type Pet = Animal | Dog;
+
+
+How do you use intersection and union types?
+Union types (|) allow a variable to hold values of different types.
+type StringOrNumber = string | number;
+
+function printValue(value: StringOrNumber): void {
+  console.log(value);
+}
+
+printValue("hello");
+printValue(10);
+
+
+Intersection types (&) combine multiple types into one. The resulting type has all the properties of all the intersected types.
+interface Person {
+  name: string;
+}
+
+interface Employee {
+  employeeId: number;
+}
+
+type EmployeePerson = Person & Employee;
+
+let employee: EmployeePerson = {
+  name: "Alice",
+  employeeId: 101
+};
+
+
+How do mapped types work?
+Mapped types create new types by transforming properties of an existing type, commonly used for utility types like Partial or Readonly.
+
+
+
+What are generic types, and how do you use them?
+Generics allow you to define reusable components that can work with multiple types while maintaining type safety.
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output1 = identity<string>("hello"); // output1 is of type string
+let output2 = identity<number>(123);    // output2 is of type number
+
+
+How do you use utility types like Partial and Omit?
+Partial<T> makes all properties of T optional.
+
+Omit<T, K> creates a type excluding specific properties from T.
+
+
+
+How does TypeScript handle function overloading?
+TypeScript allows multiple function signatures for a function, letting you define different type variations for parameters and return values.
+
+
+
+Explain the use of keyof and typeof operators in TypeScript.
+keyof operator: Used to obtain a union type of all the public property names (keys) of a given object type.
+interface Person {
+  name: string;
+  age: number;
+}
+
+type PersonKeys = keyof Person; // PersonKeys will be "name" | "age"
+
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+let person: Person = { name: "Bob", age: 30 };
+let personName = getProperty(person, "name"); // personName is of type string
+let personAge = getProperty(person, "age");   // personAge is of type number
+
+
+typeof operator: Used in a type context to get the TypeScript type of a value.
+const message = "Hello TypeScript!";
+type MessageType = typeof message; // MessageType will be string
+
+const point = { x: 10, y: 20 };
+type PointType = typeof point; // PointType will be { x: number; y: number; }
+
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+type GreetFunctionType = typeof greet; // GreetFunctionType will be (name: string) => string
+What are conditional types in TypeScript?
+They allow type logic based on conditions, enabling more flexible type definitions, similar to if statements but for types.
+
+
+
+Explain the use of enum in TypeScript.
+An enum (enumeration) is a way to give friendly names to sets of numeric or string values. They make code more readable and maintainable by providing meaningful labels instead of raw numbers or strings.
+
+enum Status {
+  Pending,     // Defaults to 0
+  InProgress,  // Defaults to 1
+  Completed    // Defaults to 2
+}
+
+let taskStatus: Status = Status.InProgress;
+console.log(taskStatus); // Output: 1
+
+enum Color {
+  Red = "RED",
+  Green = "GREEN",
+  Blue = "BLUE"
+}
+
+let primaryColor: Color = Color.Blue;
+console.log(primaryColor); // Output: BLUE
+
+
+What are decorators in TypeScript? How are they used?
+Decorators are a feature that allows you to add metadata and modify the behavior of classes, methods, properties, or parameters in a declarative way. They use the @ symbol followed by the decorator function.
+
+function log(target: any, key: string) {
+  console.log(`Method ${key} was called`);
+}
+
+class Example {
+  @log
+  greet() { console.log("Hello!"); }
+}
+
+
+How do you use unknown and never types?
+unknown: Safer alternative to any (requires type checking).
+
+never: Represents unreachable code (e.g., throwing errors).
+
+
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+let data: unknown = fetchData();
+if (typeof data === "string") console.log(data); // Type-safe
+
+
+Write a Generic Identity Function:
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+const stringOutput = identity<string>("hello");
+const numberOutput = identity<number>(123);
+
+console.log(stringOutput); // Output: hello
+console.log(numberOutput); // Output: 123
+
+
+Filtering Array with Generics:
+function filterArray<T>(arr: T[], predicate: (item: T) => boolean): T[] {
+  const filteredArray: T[] = [];
+  for (const item of arr) {
+    if (predicate(item)) {
+      filteredArray.push(item);
+    }
+  }
+  return filteredArray;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = filterArray(numbers, (num) => num % 2 === 0);
+console.log(evenNumbers); // Output: [ 2, 4 ]
+
+const names = ["Alice", "Bob", "Charlie"];
+const namesStartingWithA = filterArray(names, (name) => name.startsWith("A"));
+console.log(namesStartingWithA); // Output: [ 'Alice' ]
+
+
+Intersection Type for Employee:
+interface EmployeeBase {
+  id: number;
+  name: string;
+}
+
+interface Department {
+  department: string;
+}
+
+type Employee = EmployeeBase & Department;
+
+const employee: Employee = {
+  id: 101,
+  name: "Eve",
+  department: "Engineering",
+};
+
+console.log(employee.name);       // Output: Eve
+console.log(employee.department); // Output: Engineering
+
+
+Union Type for Input:
+function processInput(input: string | number): void {
+  if (typeof input === "string") {
+    console.log(`Input is a string. Length: ${input.length}`);
+  } else if (typeof input === "number") {
+    console.log(`Input is a number. Square: ${input * input}`);
+  } else {
+    console.log("Input type not supported.");
+  }
+}
+
+processInput("typescript"); // Output: Input is a string. Length: 10
+processInput(5);          // Output: Input is a number. Square: 25
+
+
+Implementing an Interface with a Class:
+interface Shape {
+  getArea(): number;
+}
+
+class Circle implements Shape {
+  radius: number;
+
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+
+  getArea(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+class Rectangle implements Shape {
+  width: number;
+  height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea(): number {
+    return this.width * this.height;
+  }
+}
+
+const circle = new Circle(5);
+console.log(`Circle area: ${circle.getArea()}`); // Output: Circle area: 78.53981633974483
+
+const rectangle = new Rectangle(4, 6);
+console.log(`Rectangle area: ${rectangle.getArea()}`); // Output: Rectangle area: 24
+
+
+Advanced
+Explain the concept of type inference in TypeScript. When does it occur?
+Type inference is the ability of the TypeScript compiler to automatically deduce the type of a variable or expression when it's not explicitly provided.
+
+When it occurs:
+
+Variable Initialization: When a variable is declared and immediately assigned a value, TypeScript infers the type of the variable based on the type of the initial value.
+Function Return Types: If a function's return type is not explicitly specified, TypeScript tries to infer it based on the return statements within the function.
+Function Parameter Default Values: When a parameter has a default value, TypeScript can infer the type of the parameter from the type of the default value.
+Contextual Typing: In some cases, TypeScript can infer types based on the context in which an expression appears (e.g., the type of a callback function parameter based on the expected type of the function it's passed to).
+
+
+What are mapped types in TypeScript? Provide an example.
+Mapped types allow you to create new types based on existing ones by transforming each property in a consistent way. They often use the in keyword to iterate over the keys of an existing type.
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+type ReadonlyPerson = {
+  readonly [K in keyof Person]: Person[K];
+};
+
+let person: Person = { name: "Charlie", age: 25 };
+let readonlyPerson: ReadonlyPerson = { name: "David", age: 35 };
+
+// readonlyPerson.age = 40; // Error: Cannot assign to 'age' because it is a read-only property.
+
+
+What is type narrowing in TypeScript?
+It is the process of refining a variable’s type using conditions (typeof, instanceof, etc.), ensuring safer code execution.
+
+
+
+What is a branded type in TypeScript?
+A branded type is a way to differentiate primitive types by adding a unique identifier, preventing accidental misuse of values.
+
+
+
+How can you enforce stricter type safety?
+By enabling strict mode in tsconfig.json, TypeScript enforces stricter rules for null checking, implicit any types, and more.
+
+
+
+What are template literal types?
+These allow you to construct types using string literals, making it possible to generate new types dynamically based on existing values.
+
+
+
+What is the satisfies keyword in TypeScript?
+It ensures that an object satisfies a specific type without restricting it more than necessary, useful for preserving inference.
+
+
+
+How do you handle recursive types in TypeScript?
+Recursive types allow a type to reference itself, commonly used in tree structures or linked lists.
+
+
+
+Conditional Type for Extracting Property Type:
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+type PropType<T, K extends keyof T> = T[K];
+
+type UserIdType = PropType<User, 'id'>;
+type UserNameType = PropType<User, 'name'>;
+
+const userId: UserIdType = 123;
+const userName: UserNameType = "Frank";
+
+console.log(`User ID type: ${typeof userId}, value: ${userId}`);   // Output: User ID type: number, value: 123
+console.log(`User Name type: ${typeof userName}, value: ${userName}`); // Output: User Name type: string, value: Frank
+
+
+Mapped Type for Making Properties Optional:
+interface Config {
+  host: string;
+  port: number;
+  timeout: number;
+}
+
+type OptionalProps<T> = {
+  [K in keyof T]?: T[K];
+};
+
+const partialConfig: OptionalProps<Config> = {
+  host: "localhost",
+  port: 8080,
+};
+
+console.log(partialConfig.host);   // Output: localhost
+console.log(partialConfig.timeout); // Output: undefined
+
+
+Using keyof and Mapped Types for Property Transformation:
+function transformObject<T>(obj: T, transformer: (value: any) => string): { [K in keyof T]: string } {
+  const transformed: { [K in keyof T]: string } = {} as { [K in keyof T]: string };
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      transformed[key] = transformer(obj[key]);
+    }
+  }
+  return transformed;
+}
+
+const data = { a: 1, b: true, c: "hello" };
+const stringifiedData = transformObject(data, (value) => String(value));
+console.log(stringifiedData); // Output: { a: '1', b: 'true', c: 'hello' }
+
+
+Implementing a Simple Generic Stack:
+class Stack<T> {
+  private items: T[] = [];
+
+  push(item: T): void {
+    this.items.push(item);
+  }
+
+  pop(): T | undefined {
+    return this.items.pop();
+  }
+
+  peek(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty(): boolean {
+    return this.items.length === 0;
+  }
+}
+
+const numberStack = new Stack<number>();
+numberStack.push(1);
+numberStack.push(2);
+console.log(numberStack.pop());   // Output: 2
+console.log(numberStack.peek());  // Output: 1
+console.log(numberStack.isEmpty()); // Output: false
+
+const stringStack = new Stack<string>();
+stringStack.push("apple");
+stringStack.push("banana");
+console.log(stringStack.pop());   // Output: banana
+console.log(stringStack.isEmpty()); // Output: false
+
 Ответы на самые популярные вопросы на собеседовании по TypeScript: продвинутые вопросы
 
 Богдан Мирченко
