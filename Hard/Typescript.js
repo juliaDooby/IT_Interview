@@ -1,7 +1,8 @@
+
+
 Basic
 What is TypeScript, and how does it differ from JavaScript?
 TypeScript is a superset of JavaScript that adds static typing, meaning you can define variable types and catch errors at compile time instead of runtime. This means you can specify the types of variables, function parameters, return values, and more. It compiles down to plain JavaScript, which can then be run in any JavaScript environment (browsers, Node.js, etc.).
-
 
 
 What are the key benefits of using TypeScript?
