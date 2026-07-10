@@ -1,3 +1,857 @@
+Top 55 Postman Interview Questions and Answers (2026), Beginner to Advanced!
+By Salini Balasubramaniam
+
+May 26, 2026 14 Min Read 14670 Views
+
+(Last Updated)
+
+Are you preparing for an API testing or backend role and wondering what kind of Postman questions might come up in your interview? You’re not alone. 
+
+Postman has become the go-to tool for API development and testing, making it an essential skill for developers, QA engineers, and even product teams. From sending your first GET request to chaining complex workflows with dynamic variables and scripts, Postman helps teams build, debug, and monitor APIs efficiently.
+
+Postman is used by over 25 million developers worldwide and is the most-asked API testing tool in software QA interviews. Whether you’re a fresher targeting your first QA role or an experienced developer brushing up for a senior position, these 55 Postman interview questions, organized from beginner to advanced, cover everything interviewers actually ask in 2026, including Newman, CI/CD integration, data-driven testing, authentication, and Postman’s newest AI-powered features.
+
+In this article, we’ve curated a comprehensive list of the Top 40 Postman Interview Questions that have been categorized into Beginner, Intermediate, and Advanced levels. So, without further ado, let us get started!
+
+Table of contents
+TL;DR, Key Postman Concepts Interviewers Test
+What is Postman and Why Is It Used in API Testing?
+Core Postman Interview Questions for Fresher and Junior QA Roles
+What is Postman?
+What are the main features of Postman?
+What is an API? How does Postman help in API testing?
+What are HTTP methods? Which ones does Postman support?
+What is a Postman Collection?
+What is the difference between a request and a collection in Postman?
+What is a Postman Workspace?
+What are Postman environments?
+How do you send a GET request in Postman?
+What is the purpose of the Postman Console?
+What response codes do you commonly verify in Postman tests?
+How do you add query parameters in Postman?
+What is the difference between path variables and query parameters?
+How do you add headers to a request in Postman?
+Is Postman free to use?
+Intermediate Postman Questions That Separate Hireable Candidates From the Rest
+What are variables in Postman? What are the different types?
+What is the difference between global, environment, and local variables?
+How do you set and retrieve a variable in a Postman script?
+What are pre-request scripts in Postman and when should you use them?
+What are test scripts in Postman?
+How do you chain requests in Postman using variables?
+What is the Postman Collection Runner?
+What are Postman Monitors?
+What are Mock Servers in Postman?
+What is the difference between a mock server and a real server?
+How do you handle authentication in Postman API testing?
+What is OAuth 2.0 and how do you configure it in Postman?
+What is Postman's Collection-level authorization?
+How do you import and export collections in Postman?
+Can Postman test GraphQL APIs?
+What is Newman in Postman and How Is It Used in CI/CD?
+How do you integrate Postman/Newman with GitHub Actions?
+How do you integrate Postman with Jenkins CI/CD?
+What is data-driven testing in Postman?
+What are JavaScript assertion libraries available in Postman test scripts?
+How do you write a test to validate a JSON schema in Postman?
+How do you handle dynamic tokens and session management in Postman?
+What is pm.sendRequest() and when would you use it?
+How do you handle pagination in Postman testing?
+What is postman.setNextRequest() and how does it work?
+Postman Newman Interview Questions
+What are the most commonly used Newman CLI flags?
+What reporters does Newman support?
+Postman Collections, Environments, and Variables, Interview Questions
+How do you share collections with your team in Postman?
+How do you use environment variables to switch between Dev, Staging, and Production?
+What is the difference between "Initial Value" and "Current Value" in Postman variables?
+Authentication and Authorization in Postman, Interview Questions
+What authorization methods does Postman support?
+How do you test API security/authorization in Postman?
+Data-Driven Testing and CI/CD Integration Questions
+What is the difference between running a collection in Postman GUI vs. Newman?
+How do you generate a test report from Newman?
+How do you handle sensitive data (passwords, API keys) securely in Postman?
+Postman vs Swagger, Comparison Questions
+What is the difference between Postman and Swagger?
+Can Postman import Swagger/OpenAPI specifications?
+Postman Flows and AI Features, 2025/2026 Questions
+What is Postman Flows?
+What are Postman's AI-powered features in 2025–2026?
+How do you test WebSocket APIs in Postman?
+Conclusion
+Frequently Asked Questions
+Is Postman free to use?
+What programming language do Postman test scripts use?
+How many types of variables does Postman support?
+Can Postman test GraphQL APIs?
+What is Newman and how does it work?
+How do you run a Postman collection from the command line?
+How do you share Postman collections with a team?
+What certifications are available for Postman?
+What is the salary of a Postman API tester in India?
+What are Postman Monitors and why are they useful?
+Can Postman replace Selenium?
+Is Postman enough for SDET roles?
+Which is better: Postman or REST Assured?
+Can Postman automate APIs completely?
+Does Postman support microservices testing?
+Can Postman test WebSockets and GraphQL together?
+How long does it take to learn Postman?
+TL;DR, Key Postman Concepts Interviewers Test
+Concept	What It Is
+Collections	Groups of saved API requests for organized testing
+Environments	Variable sets for switching between Dev / Staging / Prod
+Newman	Postman’s CLI runner for CI/CD pipeline integration
+Pre-request Scripts	JavaScript that runs before a request is sent
+Test Scripts	Scheduled, automatic collection runs for API health checks
+Monitors	Scheduled, automatic collection runs for API health checks
+Mock Servers	Simulate API endpoints before the backend is ready
+Postman Flows	Visual, no-code API workflow builder (introduced 2023)
+What is Postman and Why Is It Used in API Testing?
+Postman is an API development and testing platform that allows developers and QA engineers to send HTTP requests, automate tests, and manage API collections without writing extensive code. It supports REST, SOAP, and GraphQL APIs and is used by over 25 million developers worldwide, including teams at Microsoft, Salesforce, and Twitter.
+
+In interviews, Postman questions test your ability to:
+
+Design and execute API test cases
+Write JavaScript-based test assertions
+Integrate API tests into CI/CD pipelines
+Handle authentication, environments, and dynamic data
+Read More: How to Use a Postman Tool? 
+
+
+💡 Did You Know?
+
+🚀 Postman began as a simple Chrome extension side project in 2012 and has now grown into one of the world’s most popular API platforms, serving 25M+ developers worldwide.
+
+🔐 Postman includes Vault Variables for encrypted secret storage, a powerful feature many testers still overlook during API automation and CI/CD workflows.
+
+⚙️ Newman, Postman’s CLI runner, returns different exit codes for test failures vs. collection errors, making debugging in Jenkins and GitHub Actions pipelines much easier.
+
+🔗 You can even add a “Run in Postman” button to API documentation or websites, allowing developers to import collections with a single click.
+
+🧪 The Postman Console supports console.table(), making array and object debugging far cleaner and easier than traditional console.log().
+Core Postman Interview Questions for Fresher and Junior QA Roles
+Beginner-Level Postman Interview Questions
+If you’re just getting started with Postman, interviewers will want to check your understanding of the basics, like how to send a request, use environments, or read a response. These beginner-level questions focus on core concepts and the everyday features you’ll use while testing APIs with Postman.
+
+MDN
+1. What is Postman?
+What is Postman, and why is it used?
+Postman is an API platform used for building, testing, and documenting APIs. It provides a GUI to send HTTP/HTTPS requests (GET, POST, PUT, DELETE, PATCH) and inspect responses, without needing to write code. It also supports automated testing via JavaScript test scripts, environment management, and team collaboration through workspaces.
+
+2. What are the main features of Postman?
+Postman’s key features include:
+
+Collections:  Organize and group related API requests
+Environments:  Manage variables for different configurations (Dev, Staging, Prod)
+Test Scripts: Write JavaScript assertions to validate API responses
+Mock Servers:  Simulate API endpoints during development
+Monitors:  Schedule automated collection runs for health checks
+Newman:  CLI runner for CI/CD pipeline integration
+Postman Flows: Visual no-code API workflow builder
+API Documentation: Auto-generate docs from collections
+You May Also Like: Top 100+ Manual Testing Interview Questions and Answers 
+
+3. What is an API? How does Postman help in API testing?
+API (Application Programming Interface) is a set of rules that allows one software application to communicate with another. Postman helps in API testing by providing a user-friendly interface to send requests to API endpoints, inspect responses, automate test assertions, and manage test data,  eliminating the need for manual command-line testing using tools like cURL.
+
+4. What are HTTP methods? Which ones does Postman support?
+HTTP Method	Purpose
+GET	Retrieve data from a server
+POST	Send/create new data on a server
+PUT	Update an entire existing resource
+PATCH	Update part of an existing resource
+DELETE	Remove a resource from the server
+HEAD	Like GET but returns headers only (no body)
+OPTIONS	Returns supported HTTP methods for a URL
+Postman supports all standard HTTP methods, including GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS.
+
+5. What is a Postman Collection?
+A Postman Collection is a group of saved API requests organized into folders. Collections let you group related requests (e.g., all user authentication endpoints), run them in sequence using the Collection Runner, share them with teammates, and export them as JSON for version control. Collections are the core unit of organization in Postman.
+
+6. What is the difference between a request and a collection in Postman?
+A request is a single API call (e.g., GET /users). A collection is a container that holds multiple related requests, organized into folders. Collections can be run as a batch using the Collection Runner or Newman CLI, making them the foundation of automated API testing in Postman.
+
+Find out: 10 Common Limitations in Automation Testing 
+
+7. What is a Postman Workspace?
+A Postman Workspace is a collaborative environment where teams can organize and share collections, environments, APIs, and mock servers. Workspaces can be Personal (only you), Team (shared with teammates), or Public (open to everyone). They enable collaboration without needing to export and re-import collections manually.
+
+8. What are Postman environments?
+A Postman Environment is a set of key-value variable pairs used to switch between different configurations (Dev, Staging, Production) without modifying individual requests. For example, instead of hardcoding https://dev.api.example.com, you set a variable {{base_url}} and define its value differently per environment.
+
+9. How do you send a GET request in Postman?
+Open Postman and click New Request
+Select GET from the HTTP method dropdown
+Enter the API endpoint URL (e.g., https://api.example.com/users)
+Click Send
+View the response body, status code, headers, and response time in the bottom panel
+10. What is the purpose of the Postman Console?
+The Postman Console (View → Show Postman Console) is a debugging panel that logs all HTTP requests and responses, including headers, body, and pre-request/test script output. It is the first place you check when a request isn’t behaving as expected. You can also use console.log() in scripts to print values for debugging.
+
+11. What response codes do you commonly verify in Postman tests?
+Status Code	Meaning
+200 OK	Request succeeded
+201 Created	Resource successfully created (POST)
+400 Bad Request	Client sent invalid request data
+401 Unauthorized	Authentication is required or failed
+403 Forbidden	Authenticated but not allowed
+404 Not Found	Resource doesn’t exist
+500 Internal Server Error	Server-side failure
+12. How do you add query parameters in Postman?
+In Postman, you can add query parameters two ways:
+
+Method 1: Type them directly in the URL: https://api.example.com/users?page=1&limit=10
+Method 2: Click the Params tab below the URL bar and add key-value pairs, Postman automatically appends them to the URL
+13. What is the difference between path variables and query parameters?
+Path Variable	Query Parameter
+Location	Embedded in the URL path	Appended after ?
+Example	/users/:id → /users/42	/users?id=42
+Required	Usually required	Usually optional
+Used for	Identifying a specific resource	Filtering, sorting, pagination
+14. How do you add headers to a request in Postman?
+Click the Headers tab in the request builder and add key-value pairs. Common headers include:
+
+Content-Type: application/json: tells the server the request body format
+Authorization: Bearer <token>:   passes authentication tokens
+Accept: application/json:  specifies the expected response format
+15. Is Postman free to use?
+Yes. Postman offers a free tier that includes unlimited collections, environments, and API calls for individuals. Paid plans (Basic, Professional, Enterprise) add features like team collaboration, advanced mock servers, custom domains for documentation, and priority support. For most interview prep and individual API testing, the free tier is sufficient.
+
+Read More: How to Use a Postman Tool?
+
+
+Intermediate Postman Questions That Separate Hireable Candidates From the Rest
+Intermediate-Level Postman Interview Questions
+Once you’ve mastered the basics, interviewers will dig deeper into how you manage workflows, write scripts, and automate testing. 
+
+These intermediate questions test your hands-on experience with Postman’s more powerful features like chaining requests, environment variables, pre-request/test scripts, and the Collection Runner.
+
+16. What are variables in Postman? What are the different types?
+Postman variables store reusable values (like base URLs, tokens, or IDs) that can be referenced across requests using double curly braces: {{variable_name}}.,
+
+Variable Type	Scope	Persists After Run?	Best Use Case
+Global	All collections & environments	Yes	Constants shared across everything
+Environment	Specific environment only	Yes	Dev / Staging / Prod config values
+Collection	Within one collection	Yes	Collection-level shared data
+Local	Single request or script	No	Temporary, per-request calculation
+Data	From external file (CSV/JSON)	No	Data-driven testing
+17. What is the difference between global, environment, and local variables?
+Global variables in Postman are accessible across all collections and workspaces, making them ideal for constants shared everywhere (e.g., API version). Environment variables are scoped to a specific environment (Dev, Staging, Production), allowing you to switch configurations without modifying individual requests. Local variables exist only during a single request or script execution and are discarded afterward.
+
+18. How do you set and retrieve a variable in a Postman script?
+// Set an environment variable
+
+pm.environment.set(“authToken”, “eyJhbGciOiJIUzI1NiJ9…”);
+
+// Set a global variable
+
+pm.globals.set(“userId”, “12345”);
+
+// Set a local (temporary) variable
+
+pm.variables.set(“tempValue”, “abc”);
+
+// Get/retrieve a variable
+
+const token = pm.environment.get(“authToken”);
+
+const id = pm.globals.get(“userId”);
+
+// Log to Postman Console for debugging
+
+console.log(“Token is:”, token);
+
+19. What are pre-request scripts in Postman and when should you use them?
+Pre-request scripts are JavaScript code that runs before a request is sent. They are used to:
+
+Generate dynamic data (timestamps, random IDs)
+Set authentication tokens before each request
+Chain requests by passing data from one call to the next
+Perform calculations needed in the request body
+// Example: Generate a timestamp before sending
+
+const timestamp = new Date().toISOString();
+
+pm.environment.set(“currentTimestamp”, timestamp);
+
+// Example: Generate a random user ID
+
+const randomId = Math.floor(Math.random() * 10000);
+
+pm.environment.set(“randomUserId”, randomId);
+
+20. What are test scripts in Postman?
+Test scripts are JavaScript code that runs after a response is received. They validate that the API behaved as expected by asserting response status codes, body content, response time, and header values using Postman’s pm.test() and pm.expect() methods.
+
+// Check status code is 200
+
+pm.test(“Status code is 200”, function () {
+
+  pm.response.to.have.status(200);
+
+});
+
+// Check response body contains expected field
+
+pm.test(“Response has user ID”, function () {
+
+  const jsonData = pm.response.json();
+
+  pm.expect(jsonData).to.have.property(“id”);
+
+});
+
+// Check response time is under 500ms
+
+pm.test(“Response time is acceptable”, function () {
+
+  pm.expect(pm.response.responseTime).to.be.below(500);
+
+});
+
+// Check a specific field value
+
+pm.test(“User email is correct”, function () {
+
+  const jsonData = pm.response.json();
+
+  pm.expect(jsonData.email).to.eql(“test@example.com”);
+
+});
+
+21. How do you chain requests in Postman using variables?
+Request chaining passes data from one request’s response to the next request automatically. For example, after a login request returns an authToken, you capture it and use it in subsequent requests:
+
+// In the Test Script of your LOGIN request:
+
+pm.test(“Capture auth token”, function () {
+
+  const jsonData = pm.response.json();
+
+  pm.environment.set(“authToken”, jsonData.token);
+
+});
+
+Then in the next request, use {{authToken}} in the Authorization header, Postman automatically injects the captured value.
+
+22. What is the Postman Collection Runner?
+The Collection Runner is a built-in Postman tool that executes all requests in a collection sequentially or in a defined order. It allows you to:
+
+Run all tests in a collection at once
+Use a CSV or JSON data file for data-driven testing
+Set the number of iterations
+View pass/fail results for each request in a single dashboard
+Access it via Runner button in the top toolbar.
+
+23. What are Postman Monitors?
+Postman Monitors are scheduled, automated runs of a Postman collection. They allow you to continuously test your API’s health, performance, and correctness at defined intervals (every 5 minutes, hourly, daily). Monitors run in the cloud and send alerts when a test fails,  acting as an API uptime checker. They are particularly useful for catching regressions in production APIs.
+
+Want to go beyond Postman? Learn how Newman, Docker, and Jenkins work together in production HCL GUVI  DevOps Course, available in Tamil & English. 
+
+24. What are Mock Servers in Postman?
+A Mock Server in Postman simulates an API endpoint before the actual backend is built. Developers can define expected request-response pairs using examples, and Postman generates a mock URL that returns those responses. This enables frontend and backend teams to work in parallel without waiting for the real API to be ready.
+
+25. What is the difference between a mock server and a real server?
+Mock Server	Real Server
+Data	Returns predefined, static example	Returns live, dynamic data
+Purpose	Development & early-stage testing	Integration & production testing
+Speed	Instant setup, no backend needed	Requires backend to be running
+Use Case	Parallel development, contract testing	End-to-end, regression testing
+26. How do you handle authentication in Postman API testing?
+Postman supports multiple authentication methods. You configure them under the Authorization tab of a request or at the collection level (so all requests inherit it):
+
+Auth Type	How It Works
+No Auth	Public APIs requiring no authentication
+API Key	Key sent in header or query parameter
+Basic Auth	Base64-encoded username:password in header
+Bearer Token	Token sent in Authorization: Bearer <token> header
+OAuth 1.0	Signs requests with a cryptographic signature
+OAuth 2.0	Token-based; supports Authorization Code, Client Credentials flows
+AWS Signature	AWS-specific signing mechanism
+NTLM / Hawk	Windows / specialized auth protocols
+Best practice: Set auth at the Collection level and use {{authToken}} variables,  this avoids repeating credentials in every request.
+
+27. What is OAuth 2.0 and how do you configure it in Postman?
+OAuth 2.0 is an authorization framework that allows apps to access resources on behalf of a user without exposing credentials. In Postman:
+
+Go to Authorization tab → Select OAuth 2.0
+Click Get New Access Token
+Enter: Grant Type, Callback URL, Auth URL, Access Token URL, Client ID, and Client Secret
+Click Request Token,  Postman handles the token exchange
+Use the token in subsequent requests automatically
+28. What is Postman’s Collection-level authorization?
+When you set authorization at the Collection level, all requests inside that collection automatically inherit those credentials. Individual requests can override this by selecting a different auth type. This is best practice for large collections,  it avoids repeating the same token configuration across dozens of requests and makes token rotation easier.
+
+Explore: Automation Testing 101: An Informative Guide 
+
+29. How do you import and export collections in Postman?
+Export: Right-click a collection → Export → choose Collection v2.1 format → saves as JSON
+Import: Click Import in the top left → drag and drop the JSON file or paste a URL
+Collections can also be shared via a public link or synced through a Postman Workspace for team collaboration
+30. Can Postman test GraphQL APIs?
+Yes. Postman has built-in GraphQL support. To test a GraphQL API:
+
+Create a new request and set the URL to your GraphQL endpoint
+Select GraphQL as the request body type
+Write your query in the Query editor,  Postman auto-fetches the schema for autocomplete
+Add variables in the GraphQL Variables section
+
+Advanced Postman Interview Questions for Experienced Professionals
+
+Advanced-Level Postman Interview Questions
+At the advanced level, it’s all about real-world problem-solving. These questions assess your ability to handle dynamic data, automate token refresh, integrate Postman into CI/CD pipelines, and debug efficiently.
+
+31. What is Newman in Postman and How Is It Used in CI/CD?
+Newman is Postman’s open-source command-line collection runner that allows you to execute Postman collections directly from the terminal,  without opening the Postman GUI. It is the primary tool for integrating Postman API tests into CI/CD pipelines like Jenkins, GitHub Actions, CircleCI, and GitLab CI.
+
+Install Newman:
+
+npm install -g newman
+
+Run a collection:
+
+newman run MyCollection.json
+
+Run with an environment file:
+
+newman run MyCollection.json -e dev-environment.json
+
+Run with a data file (data-driven testing):
+
+newman run MyCollection.json -d testdata.csv –reporters cli,htmlextra
+
+Generate an HTML report:
+
+npm install -g newman-reporter-htmlextra
+
+newman run MyCollection.json –reporters htmlextra –reporter-htmlextra-export report.html
+
+32. How do you integrate Postman/Newman with GitHub Actions?
+# .github/workflows/api-tests.yml
+
+name: API Tests with Newman
+
+on: [push, pull_request]
+
+jobs:
+
+  newman-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      – uses: actions/checkout@v3
+
+      – name: Install Node.js
+
+        uses: actions/setup-node@v3
+
+        with:
+
+          node-version: ’18’
+
+      – name: Install Newman
+
+        run: npm install -g newman newman-reporter-htmlextra
+
+      – name: Run Postman Collection
+
+        run: |
+
+          newman run ./collections/MyAPI.json \
+
+            -e ./environments/staging.json \
+
+            –reporters cli,htmlextra \
+
+            –reporter-htmlextra-export results/report.html
+
+      – name: Upload Report
+
+        uses: actions/upload-artifact@v3
+
+        with:
+
+          name: newman-report
+
+          path: results/report.html
+
+Also Read: Software Testing vs. Quality Assurance (QA) 
+
+33. How do you integrate Postman with Jenkins CI/CD?
+Install Node.js and Newman on the Jenkins agent: npm install -g newman
+Export your Postman collection and environment as JSON files and commit them to your repository
+In the Jenkins pipeline, add a build step to run Newman:
+// Jenkinsfile
+
+pipeline {
+
+  agent any
+
+  stages {
+
+    stage(‘API Tests’) {
+
+      steps {
+
+        sh ‘newman run collections/MyAPI.json -e environments/staging.json –reporters cli,junit –reporter-junit-export results/newman-report.xml’
+
+      }
+
+    }
+
+    stage(‘Publish Results’) {
+
+      steps {
+
+        junit ‘results/newman-report.xml’
+
+      }
+
+    }
+
+  }
+
+}
+
+Postman is only one piece of the DevOps pipeline. If you want to confidently answer how Newman fits into Jenkins or GitHub Actions in a real interview, HCL GUVI Advanced DevOps & Cloud Engineering Course covers CI/CD, Docker, Kubernetes, and more,  with hands-on projects and placement support. 
+
+34. What is data-driven testing in Postman?
+Data-driven testing runs the same API request multiple times with different input values, sourced from an external CSV or JSON file. This lets you test an endpoint against many data sets in one automated run rather than creating separate requests for each test case.
+
+Step-by-step setup:
+
+Create a CSV file (testdata.csv):
+username,password,expectedStatus
+
+admin,password123,200
+
+user1,wrongpass,401
+
+,empty,400
+
+
+In your Postman test script, use {{username}} and {{password}} as variables in the request body.
+In Collection Runner, upload the CSV under Data File and set Iterations to the number of rows.
+Via Newman CLI:
+newman run MyCollection.json -d testdata.csv
+
+35. What are JavaScript assertion libraries available in Postman test scripts?
+Postman uses ChaiJS as its underlying assertion library, exposed through the pm.expect() API. Common assertions:
+
+const data = pm.response.json();
+
+// Type checks
+
+pm.expect(data.id).to.be.a(‘number’);
+
+pm.expect(data.name).to.be.a(‘string’);
+
+// Value checks
+
+pm.expect(data.status).to.equal(‘active’);
+
+pm.expect(data.items).to.have.lengthOf(3);
+
+// Inclusion checks
+
+pm.expect(data.roles).to.include(‘admin’);
+
+pm.expect(data).to.have.property(’email’);
+
+// Negation
+
+pm.expect(data.error).to.be.undefined;
+
+// Nested checks
+
+pm.expect(data.address.city).to.equal(‘Chennai’);
+
+36. How do you write a test to validate a JSON schema in Postman?
+const schema = {
+
+  type: “object”,
+
+  required: [“id”, “name”, “email”],
+
+  properties: {
+
+    id: { type: “number” },
+
+    name: { type: “string” },
+
+    email: { type: “string”, format: “email” },
+
+    active: { type: “boolean” }
+
+  }
+
+};
+
+pm.test(“Response matches JSON schema”, function () {
+
+  pm.response.to.have.jsonSchema(schema);
+
+});
+
+37. How do you handle dynamic tokens and session management in Postman?
+Use a pre-request script at the collection level to check if a token exists and is valid; if not, send a fresh login request and store the new token:
+
+// Collection-level pre-request script
+
+const token = pm.environment.get(“authToken”);
+
+const tokenExpiry = pm.environment.get(“tokenExpiry”);
+
+if (!token || Date.now() > tokenExpiry) {
+
+  pm.sendRequest({
+
+    url: pm.environment.get(“base_url”) + “/auth/login”,
+
+    method: “POST”,
+
+    header: { “Content-Type”: “application/json” },
+
+    body: {
+
+      mode: “raw”,
+
+      raw: JSON.stringify({
+
+        username: pm.environment.get(“username”),
+
+        password: pm.environment.get(“password”)
+
+      })
+
+    }
+
+  }, function (err, response) {
+
+    const json = response.json();
+
+    pm.environment.set(“authToken”, json.token);
+
+    pm.environment.set(“tokenExpiry”, Date.now() + 3600000); // 1 hour
+
+  });
+
+}
+
+38. What is pm.sendRequest() and when would you use it?
+pm.sendRequest() allows you to send an asynchronous HTTP request from within a Postman script (pre-request or test script) without creating a separate request in your collection. Common use cases:
+
+Fetching an auth token before your main request runs
+Seeding test data before a test
+Cleaning up resources after a test (e.g., deleting a created user)
+39. How do you handle pagination in Postman testing?
+Use a loop in a pre-request script combined with a counter variable to iterate through pages:
+
+// Test script  capture next page and loop
+
+const response = pm.response.json();
+
+const currentPage = pm.environment.get(“currentPage”) || 1;
+
+if (response.hasNextPage) {
+
+  pm.environment.set(“currentPage”, currentPage + 1);
+
+  postman.setNextRequest(“Get Users”); // Loop back to same request
+
+} else {
+
+  pm.environment.set(“currentPage”, 1);
+
+  postman.setNextRequest(null); // Stop the collection run
+
+}
+
+40. What is postman.setNextRequest() and how does it work?
+postman.setNextRequest(“Request Name”) controls the execution flow inside a Collection Runner. It overrides the default sequential execution and jumps to a named request next. Using postman.setNextRequest(null) stops execution immediately. It is used for:
+
+Creating conditional workflows (“if login fails, skip checkout tests”)
+Building loops (as shown in pagination example above)
+Skipping irrelevant requests based on environment or response
+Postman Newman Interview Questions
+41. What are the most commonly used Newman CLI flags?
+# Basic run
+
+newman run collection.json
+
+# With environment
+
+newman run collection.json -e environment.json
+
+# With data file
+
+newman run collection.json -d data.csv
+
+# Set number of iterations
+
+newman run collection.json -n 5
+
+# Set request timeout (ms)
+
+newman run collection.json –timeout-request 5000
+
+# Multiple reporters
+
+newman run collection.json –reporters cli,junit,htmlextra
+
+# Export JUnit XML (for Jenkins)
+
+newman run collection.json –reporter-junit-export results.xml
+
+# Bail on first failure
+
+newman run collection.json –bail
+
+42. What reporters does Newman support?
+Reporter	Use Case
+cli	Default; prints results to terminal
+json	Outputs raw JSON results
+junit	JUnit XML format for Jenkins/CI integration
+htmlextra	Rich HTML report with graphs (install separately)
+csv	Exports results as CSV
+Install htmlextra: npm install -g newman-reporter-htmlextra
+
+Postman Collections, Environments, and Variables,  Interview Questions
+43. How do you share collections with your team in Postman?
+There are three ways to share Postman collections:
+
+Postman Workspace: Add teammates to a shared workspace; collections sync automatically
+Export as JSON: Export the collection file and share via email, Slack, or version control (Git)
+Public Link: Generate a shareable link via Share Collection → Get public link (read-only for recipients)
+Best practice for teams: Use a shared Team Workspace with Git sync so all changes are versioned.
+
+44. How do you use environment variables to switch between Dev, Staging, and Production?
+Create three environments in Postman: Dev, Staging, Production
+In each, set the variable base_url with the corresponding URL:
+Dev: https://dev.api.myapp.com
+Staging: https://staging.api.myapp.com
+Production: https://api.myapp.com
+In every request, use {{base_url}}/endpoint instead of a hardcoded URL
+Switch environments using the dropdown in the top-right corner,  all requests update instantly
+45. What is the difference between “Initial Value” and “Current Value” in Postman variables?
+Initial Value	Current Value
+Synced to Postman cloud?	Yes, visible to all teammates	No,  stays on your local machine only
+Use Case	Default/placeholder values for sharing	Actual sensitive values (passwords, tokens)
+Best Practice	Use non-sensitive placeholders	Store real secrets here; never commit to Git
+Important: Never put real API keys or passwords in Initial Value, they get synced and may be visible to other workspace members.
+
+Authentication and Authorization in Postman,  Interview Questions
+46. What authorization methods does Postman support?
+Postman supports 8 built-in authorization methods:
+
+No Auth
+API Key (Header or Query Parameter)
+Basic Auth (username + password, Base64 encoded)
+Bearer Token
+OAuth 1.0
+OAuth 2.0 (most commonly used for modern APIs)
+AWS Signature (for AWS API Gateway)
+Hawk Authentication / NTLM Authentication
+47. How do you test API security/authorization in Postman?
+In a real interview, you might be asked to verify that unauthorized users cannot access protected endpoints. Test this by:
+
+// Test that a request without a token returns 401
+
+pm.test(“Unauthenticated request returns 401”, function () {
+
+  pm.response.to.have.status(401);
+
+});
+
+// Test that an expired token returns 401 or 403
+
+pm.test(“Expired token is rejected”, function () {
+
+  pm.expect(pm.response.code).to.be.oneOf([401, 403]);
+
+});
+
+Data-Driven Testing and CI/CD Integration Questions
+48. What is the difference between running a collection in Postman GUI vs. Newman?
+Postman GUI (Collection Runner)	Newman CLI
+Environment	Desktop app	Terminal / CI server
+CI/CD Integration	Not possible directly	Yes,  core use case
+Automation	Manual trigger	Scriptable; fully automated
+Reporting	In-app results	CLI, JUnit, HTML, JSON
+Headless	No	Yes
+49. How do you generate a test report from Newman?
+# Install HTML reporter
+
+npm install -g newman-reporter-htmlextra
+
+# Run and generate report
+
+newman run MyCollection.json \
+
+  -e staging.json \
+
+  –reporters htmlextra \
+
+  –reporter-htmlextra-export ./reports/api-test-report.html \
+
+  –reporter-htmlextra-title “GUVI API Test Report”
+
+The generated HTML file contains: total tests run, pass/fail counts, response time graphs, request/response details for each test.
+
+50. How do you handle sensitive data (passwords, API keys) securely in Postman?
+Best practices for handling sensitive data:
+
+Store secrets in Environment → Current Value only (never Initial Value)
+Use Postman Vault (paid feature) for encrypted secret storage
+In CI/CD pipelines, inject secrets as environment variables and reference them in Newman via –env-var “API_KEY=$API_KEY”
+Never commit environment.json files with real secrets to Git,  add them to .gitignore
+Use Postman Secret variable type (new in 2024) to mask sensitive values in logs
+Postman vs Swagger, Comparison Questions
+51. What is the difference between Postman and Swagger?
+Feature	Postman	Swagger (OpenAPI)
+Primary Purpose	API testing & automation	API documentation & design
+Testing	Full test automation, scripting	Basic try-it-out only
+Documentation	Auto-generated from collections	Core feature; rich spec format
+CI/CD Integration	Yes (via Newman)	Limited
+Collaboration	Team workspaces, shared collections	Shared spec files
+Code Generation	No	Yes (generate client SDKs)
+Best For	QA engineers, testers	API designers, backend developers
+Key Insight: Postman and Swagger are complementary, not competing, many teams use Swagger to design the API spec and Postman to test against it. Postman can even import OpenAPI/Swagger specs directly.
+
+52. Can Postman import Swagger/OpenAPI specifications?
+Yes. Postman can import OpenAPI 2.0 (Swagger) and OpenAPI 3.0 specifications:
+
+Click Import in Postman
+Paste the Swagger JSON/YAML URL or upload the file
+Postman automatically generates a collection with all endpoints from the spec
+You can then add test scripts, environments, and run the generated collection
+Postman Flows and AI Features,  2025/2026 Questions
+53. What is Postman Flows?
+Postman Flows is a visual, no-code API workflow builder introduced in 2023. It allows you to chain API requests together graphically, connecting inputs and outputs of requests using a drag-and-drop interface,  without writing JavaScript. It supports conditional logic, loops, and data transformation. Flows is used for orchestrating complex API workflows and building lightweight integrations without a separate scripting environment.
+
+54. What are Postman’s AI-powered features in 2025–2026?
+Postman launched several AI features in 2025:
+
+AI Request Generation: Describe what you want to test in plain English; Postman generates the request automatically
+AI Test Script Suggestions: Postman analyzes your API response and suggests relevant test assertions
+Postbot: An AI assistant built into Postman that can write test scripts, explain responses, and suggest improvements
+AI Documentation Generation: Automatically generates API documentation from collections
+Interview tip: Mentioning awareness of Postbot and AI-assisted testing shows that you stay current with tooling trends,  a positive signal for senior QA roles.
+
+55. How do you test WebSocket APIs in Postman?
+Postman added WebSocket request support for testing real-time APIs:
+
+Click New → WebSocket Request
+Enter the WebSocket server URL (e.g., wss://echo.websocket.org)
+Click Connect to establish the connection
+Send messages and view the real-time messages stream in the Messages panel
+Add events to listen for specific message types
+This is particularly useful for testing chat applications, live dashboards, and streaming data APIs.
+
 Postman на собеседовании QA: 12 вопросов по API-тестированию, которые задают джунам
 17 ноя
 Содержание
