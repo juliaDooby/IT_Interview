@@ -1,3 +1,54 @@
+Разница FastAPI между `json.dumps()` и `JSONResponse()`
+Вопросы
+PYTHON
+Разница FastAPI между `json.dumps()` и `JSONResponse()`
+Я изучаю FastAPI, и он работает на моем рабочем столе Docker в Windows. Вот мой main.py, который успешно развернут в Docker:
+
+#main.py
+import fastapi
+import json
+from fastapi.responses import JSONResponse
+
+app = fastapi.FastAPI()
+
+@app.get('/api/get_weights1')
+async def get_weights1():
+    weights = {'aa': 10, 'bb': 20}
+    return json.dumps(weights)
+
+@app.get('/api/get_weights2')
+async def get_weights2():
+    weights = {'aa': 10, 'bb': 20}
+    return JSONResponse(content=weights, status_code=200)
+И у меня есть простой файл Python get_weights.py для запросов к этим двум API:
+
+#get_weights.py
+import requests
+import json
+
+resp = requests.get('http://127.0.0.1:8000/api/get_weights1')
+print('ok', resp.status_code)
+if resp.status_code == 200:
+    print(resp.json())
+
+resp = requests.get('http://127.0.0.1:8000/api/get_weights2')
+print('ok', resp.status_code)
+if resp.status_code == 200:
+    print(resp.json())
+Я получаю одинаковые ответы от двух API, вывод:
+
+ok 200
+{"aa": 10, "bb": 20}
+ok 200
+{'aa': 10, 'bb': 20}
+Ответ кажется одинаковым, использую ли я json.dumps() или JSONResponse(). Я прочитал документацию FastAPI по JSONResponse, но у меня остались следующие вопросы:
+
+Могу ли я узнать, есть ли разница между двумя методами?
+
+Если есть разница, какой метод рекомендуется (и почему?)?
+
+Подводя итог: не используйте ни то, ни другое, просто верните объект, похожий на словарь, или с помощью orm_mode=True в вашей модели ответа объект, который поддерживает поиск атрибутов (например, строку SQLAlchemy). Используйте response_model в декораторе маршрута или укажите тип возвращаемого значения для функции, которая определяет, как вы хотите сериализовать ответ.
+
 Top 33 FastAPI Interview Questions and Answers 2026
 Editorial Team
 
