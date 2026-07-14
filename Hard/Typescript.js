@@ -1,3 +1,413 @@
+Top 20 TypeScript Technical Questions in Coding Interviews
+Altcademy Team
+Altcademy Team
+Jun 10, 2023
+10 min
+1. What is TypeScript and why is it useful?
+2. What are the basic data types in TypeScript?
+3. What are type annotations and type inference in TypeScript?
+4. What are interfaces in TypeScript?
+5. What are type aliases in TypeScript?
+6. What are union types in TypeScript?
+7. What are intersection types in TypeScript?
+8. What are enums in TypeScript?
+9. What are generic types in TypeScript?
+10. What are type guards in TypeScript?
+11. What are function overloads in TypeScript?
+12. What are optional parameters and default values in TypeScript?
+13. What is the difference between let and const in TypeScript?
+14. What are tuples in TypeScript?
+15. What is the never type in TypeScript?
+17. What are namespaces in TypeScript?
+18. What is the difference between classes and interfaces in TypeScript?
+19. What is the unknown type in TypeScript?
+20. How do you define a readonly property in TypeScript?
+1. What is TypeScript and why is it useful?
+TypeScript is a statically typed superset of JavaScript that compiles to plain JavaScript code. It was designed by Microsoft and aims to improve the development experience by catching errors early and providing better tooling and editor support.
+
+The main benefits of TypeScript include:
+
+Improved code quality through static typing, which helps catch errors at compile time rather than runtime.
+Enhanced IDE support, providing features like autocompletion, code navigation, and refactoring.
+Better support for large-scale projects, as TypeScript's type system and module system make it easier to manage and understand codebases.
+TypeScript is a superset of JavaScript, so all existing JavaScript code is valid TypeScript code.
+Here is an example of how TypeScript can help catch errors:
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+const result: number = add(1, 2); // This will compile correctly
+const errorResult: number = add("1", 2); // This will produce a compile-time error
+In the example above, the add function is explicitly typed to only accept numbers as input. If we try to pass a string as an argument, TypeScript will catch this error at compile time.
+
+2. What are the basic data types in TypeScript?
+There are several basic data types in TypeScript, including:
+
+number: Represents both integer and floating-point values.
+string: Represents a sequence of characters.
+boolean: Represents a true or false value.
+null: Represents an empty or non-existent value.
+undefined: Represents a value that has not been assigned yet.
+object: Represents any non-primitive type.
+any: Represents any type of value. It should be avoided when possible, as it disables type checking.
+Here are some examples of declaring variables with different data types:
+
+const count: number = 42;
+const message: string = "Hello, world!";
+const isComplete: boolean = false;
+const nothing: null = null;
+const notYetDefined: undefined = undefined;
+const user: object = { name: "Alice", age: 30 };
+const anything: any = "This can be any type";
+3. What are type annotations and type inference in TypeScript?
+Type annotations are explicit declarations of the types of variables, function arguments, and return values. They help the TypeScript compiler understand the intended types and catch potential errors during the development process.
+
+Type inference is TypeScript's ability to automatically determine the types of variables and expressions without explicit type annotations. TypeScript can infer types based on the values assigned to variables or the types of function arguments.
+
+Here is an example of using type annotations and type inference:
+
+// Type annotation
+const message: string = "Hello, world!";
+
+// Type inference (TypeScript infers the type as string)
+const inferredMessage = "Hello, world!";
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+// TypeScript infers the type of result as number
+const result = add(1, 2);
+Although TypeScript can infer types in many cases, it is generally a good practice to use type annotations for function arguments and return values to ensure that the intended types are used.
+
+4. What are interfaces in TypeScript?
+Interfaces in TypeScript are used to define the structure of objects, allowing you to enforce that an object conforms to a specific shape. They are a powerful way to provide type checking for complex objects and are particularly useful for defining contracts in your code, such as the expected input and output of functions.
+
+Here is an example of defining and using an interface:
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+function greetUser(user: User): string {
+  return `Hello, ${user.name}!`;
+}
+
+const alice: User = { id: 1, name: "Alice", age: 30 };
+const greeting = greetUser(alice); // "Hello, Alice!"
+In this example, the User interface defines the structure of a user object with three properties: id, name, and age. The greetUser function expects an object that conforms to the User interface as its argument.
+
+5. What are type aliases in TypeScript?
+Type aliases are a way to give a name to a type or a combination of types. They can be used to make code more readable and easier to understand by providing a more descriptive name for complex types.
+
+Here is an example of defining and using a type alias:
+
+type UserID = number;
+type UserName = string;
+type UserRole = "admin" | "user" | "guest";
+
+interface User {
+  id: UserID;
+  name: UserName;
+  role: UserRole;
+}
+
+function createUser(id: UserID, name: UserName, role: UserRole): User {
+  return { id, name, role };
+}
+
+const alice: User = createUser(1, "Alice", "admin");
+In this example, the UserID, UserName, and UserRole type aliases are used to provide more descriptive names for the types used in the User interface and the createUser function.
+
+6. What are union types in TypeScript?
+Union types represent a value that can be one of several different types. They can be used to model situations where a value can have more than one possible type.
+
+Here is an example of using a union type:
+
+type ValidationResult = "success" | "error" | "pending";
+
+function getValidationStatus(statusCode: number): ValidationResult {
+  if (statusCode === 200) {
+    return "success";
+  } else if (statusCode === 400) {
+    return "error";
+  } else {
+    return "pending";
+  }
+}
+
+const status: ValidationResult = getValidationStatus(200); // "success"
+In this example, the ValidationResult union type represents a value that can be one of three string literals: "success", "error", or "pending". The getValidationStatus function returns a ValidationResult based on the input statusCode.
+
+7. What are intersection types in TypeScript?
+Intersection types are used to combine multiple types into one. They allow you to create a new type by merging the properties of existing types.
+
+Here is an example of using an intersection type:
+
+interface User {
+  id: number;
+  name: string;
+}
+
+interface Admin {
+  role: "admin";
+  permissions: string[];
+}
+
+type AdminUser = User & Admin;
+
+const alice: AdminUser = {
+  id: 1,
+  name: "Alice",
+  role: "admin",
+  permissions: ["create", "update", "delete"],
+};
+In this example, the AdminUser intersection type combines the properties of the User and Admin interfaces. An object of type AdminUser must have all the properties of both User and Admin.
+
+8. What are enums in TypeScript?
+Enums (short for enumerations) are a TypeScript feature that allows you to define a set of named constants. They make it easier to work with sets of related values and can improve the readability of your code.
+
+Here is an example of using an enum:
+
+enum UserRole {
+  Admin = "ADMIN",
+  User = "USER",
+  Guest = "GUEST",
+}
+
+function getRoleDescription(role: UserRole): string {
+  switch (role) {
+    case UserRole.Admin:
+      return "Administrator with full access";
+    case UserRole.User:
+      return "Regular user with limited access";
+    case UserRole.Guest:
+      return "Guest with read-only access";
+  }
+}
+
+const roleDescription = getRoleDescription(UserRole.Admin); // "Administrator with full access"
+In this example, the UserRole enum defines three named constants for different user roles. The getRoleDescription function takes a UserRole as its argument and returns a description based on the provided role.
+
+9. What are generic types in TypeScript?
+Generic types are a powerful feature in TypeScript that allows you to write reusable and type-safe code. They enable you to write functions, interfaces, and classes that can work with different types while still providing type checking and code completion.
+
+Here is an example of using a generic type in a function:
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+const numberIdentity: number = identity<number>(42);
+const stringIdentity: string = identity<string>("Hello, world!");
+In this example, the identity function is generic and can work with any type T. When calling this function, you can specify the type of T and the TypeScript compiler will ensure that the input and output types match.
+
+10. What are type guards in TypeScript?
+Type guards are a way to provide more specific type information within a specific scope based on runtime checks. They help you narrow down the type of a variable, allowing you to access properties or call methods that are specific to a certain type.
+
+Here is an example of using a type guard:
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Rectangle {
+  kind: "rectangle";
+  width: number;
+  height: number;
+}
+
+type Shape = Circle | Rectangle;
+
+function getArea(shape: Shape): number {
+  if (shape.kind === "circle") {
+    // TypeScript knows that shape is of type Circle within this scope
+    return Math.PI * shape.radius * shape.radius;
+  } else {
+    // TypeScript knows that shape is of type Rectangle within this scope
+    return shape.width * shape.height;
+  }
+}
+
+const circle: Circle = { kind: "circle", radius: 5 };
+const rectangle: Rectangle = { kind: "rectangle", width: 10, height: 20 };
+
+const circleArea = getArea(circle); // 78.54
+const rectangleArea = getArea(rectangle); // 200
+In this example, the getArea function takes a Shape as its argument, which can be either a Circle or a Rectangle. The type guard shape.kind === "circle" checks if the shape is of type Circle, allowing TypeScript to narrow down the type within the scope of the if statement.
+
+11. What are function overloads in TypeScript?
+Function overloads allow you to define multiple type signatures for a single function, enabling you to provide a more accurate type definition for functions that accept different types or numbers of arguments.
+
+Here is an example of using function overloads:
+
+function combine(a: number, b: number): number;
+function combine(a: string, b: string): string;
+function combine(a: number | string, b: number | string): number | string {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else if (typeof a === "string" && typeof b === "string") {
+    return a.concat(b);
+  }
+
+  throw new Error("Invalid input types");
+}
+
+const numberResult: number = combine(1, 2); // 3
+const stringResult: string = combine("Hello, ", "world!"); // "Hello, world!"
+In this example, the combine function has two overload signatures: one for combining two numbers and one for combining two strings. TypeScript will use the correct type signature based on the types of the arguments passed to the function.
+
+12. What are optional parameters and default values in TypeScript?
+Optional parameters in TypeScript are marked with a ? and can be omitted when calling a function. Default values can be provided for optional parameters, which will be used if the parameter is not specified.
+
+Here is an example of using optional parameters and default values:
+
+function greet(name: string, greeting: string = "Hello"): string {
+  return `${greeting}, ${name}!`;
+}
+
+const greeting1 = greet("Alice"); // "Hello, Alice!"
+const greeting2 = greet("Bob", "Hi"); // "Hi, Bob!"
+In this example, the greeting parameter is optional, and its default value is "Hello". If the greeting parameter is not provided when calling the greet function, the default value will be used.
+
+13. What is the difference between let and const in TypeScript?
+let and const are used to declare variables in TypeScript, and both were introduced in ECMAScript 2015 (ES6) as a replacement for the var keyword.
+
+The main differences between let and const are:
+
+let is used to declare variables that can be reassigned, while const is used to declare variables with a constant value that cannot be changed after initialization.
+const requires an initial value, whereas let does not.
+Here is an example of using let and const:
+
+let count: number = 0;
+count = 1; // This is allowed
+
+const message: string = "Hello, world!";
+message = "New message"; // This will produce a compile-time error
+In this example, the count variable is declared with let and can be reassigned, while the message variable is declared with const and cannot be changed after its initial assignment.
+
+14. What are tuples in TypeScript?
+Tuples are a TypeScript feature that allows you to define an array with a fixed number of elements and known types. Each element in a tuple can have a different type.
+
+Here is an example of using a tuple:
+
+type UserInfo = [number, string, boolean];
+
+const alice: UserInfo = [1, "Alice", true];
+const bob: UserInfo = [2, "Bob", false];
+
+const id: number = alice[0]; // 1
+const name: string = bob[1]; // "Bob"
+const isActive: boolean = alice[2]; // true
+In this example, the UserInfo tuple type is defined with three elements: a number, a string, and a boolean. The alice and bob variables are instances of the UserInfo tuple type.
+
+15. What is the never type in TypeScript?
+The never type## 16. What are decorators in TypeScript?
+
+Decorators are a TypeScript feature that enables attaching metadata or modifying classes, methods, properties, or parameters using a declarative syntax. Decorators use the @ symbol followed by a function name, and can be applied to different parts of the code.
+
+Here is an example of using a decorator:
+
+function logClass(target: Function) {
+  console.log(`Class: ${target.name}`);
+}
+
+@logClass
+class Person {
+  constructor(public name: string) {}
+}
+
+const alice = new Person("Alice"); // "Class: Person" will be logged
+In this example, the logClass decorator function logs the name of the class it's applied to. The @logClass decorator is applied to the Person class, causing the log message to be displayed when the class is instantiated.
+
+17. What are namespaces in TypeScript?
+Namespaces are a TypeScript feature that allows organizing related code into a single unit, providing a way to avoid naming conflicts and improve code organization. Namespaces can be nested, and their content can be made visible outside the namespace using the export keyword.
+
+Here is an example of using a namespace:
+
+namespace MathUtils {
+  export function add(a: number, b: number): number {
+    return a + b;
+  }
+
+  function subtract(a: number, b: number): number {
+    return a - b;
+  }
+}
+
+const sum = MathUtils.add(1, 2); // 3
+const difference = MathUtils.subtract(1, 2); // Error: Property 'subtract' does not exist on type 'typeof MathUtils'
+In this example, the MathUtils namespace contains two functions: add and subtract. The add function is exported and can be accessed outside the namespace, while the subtract function is not exported and cannot be accessed outside the namespace.
+
+18. What is the difference between classes and interfaces in TypeScript?
+Classes and interfaces in TypeScript are both used to define object types, but they serve different purposes:
+
+Classes are used to define the actual implementation of an object, including its methods, properties, and constructor. Classes can be instantiated and can inherit from other classes (using the extends keyword).
+Interfaces are used to define the shape of an object, specifying the types of its properties and methods without providing their implementation. Interfaces cannot be instantiated and are used to define contracts for classes (using the implements keyword).
+Here is an example of using a class and an interface:
+
+interface IPerson {
+  name: string;
+  age: number;
+  greet(): void;
+}
+
+class Person implements IPerson {
+  constructor(public name: string, public age: number) {}
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+const alice: IPerson = new Person("Alice", 30);
+alice.greet(); // "Hello, my name is Alice"
+In this example, the IPerson interface defines the shape of a person object, while the Person class provides the actual implementation of the person object and implements the IPerson interface.
+
+19. What is the unknown type in TypeScript?
+The unknown type is a TypeScript feature that represents a value of any type, but unlike the any type, it enforces type checking and requires the developer to perform type checks or type assertions before using the value.
+
+Here is an example of using the unknown type:
+
+function logLength(value: unknown) {
+  if (typeof value === "string") {
+    console.log(`Length: ${value.length}`);
+  } else {
+    console.log("Value is not a string");
+  }
+}
+
+logLength("Hello, world!"); // "Length: 13"
+logLength(42); // "Value is not a string"
+In this example, the logLength function accepts a parameter of type unknown. The function checks if the value is a string before accessing its length property.
+
+20. How do you define a readonly property in TypeScript?
+In TypeScript, you can define a readonly property by using the readonly keyword before the property name. A readonly property can only be assigned a value during the object's construction and cannot be changed afterward.
+
+Here is an example of using a readonly property:
+
+class Person {
+  readonly name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  setName(newName: string) {
+    this.name = newName; // Error: Cannot assign to 'name' because it is a read-only property
+  }
+}
+
+const alice = new Person("Alice");
+console.log(alice.name); // "Alice"
+
+alice.name = "New name"; // Error: Cannot assign to 'name' because it is a read-only property
+In this example, the name property of the Person class is defined as readonly, and it can only be assigned a value during the object's construction. Attempting to change the value of the name property afterward will produce a compile-time error.
+
 50 сложных вопросов на собеседовании по TypeScript
 Эти вопросы расширят ваши знания и улучшат ваше понимание TypeScript.
 
