@@ -1,27 +1,4 @@
-Skip to content
- 
-Software Testing Help
 
-Home
-Resources
-FREE eBooks
-QA Testing
-Automation
-Types Of Testing
-Tutorials
-Data Tools
-More Tutorials
-OOP Java: Introduction To Object Oriented Programming In Java
-By Sruthy  Updated April 1, 2025
-This video tutorial will introduce OOP (Object Oriented Programming) concepts in Java such as Object, Class, Inheritance, Polymorphism, Abstraction, Encapsulation, etc:
-
-In software programming, we have various types of programming languages. Major languages amongst them are either procedural or object-oriented in nature.
-
-In procedural programming languages, bigger problems are broken down into small solvable problems. These small problems are converted into procedures or functions. This way the procedural programming language emphasizes functions rather than data. Thus procedural languages neglected data completely and thus they do not ensure data security at all.
-
-This problem was taken care of by object-oriented programming language. Object-oriented programming is a way of designing and programming software by manipulating objects and the objects are the main part of the programming.
-
-Discover our entire series of Java Tutorials for Beginners here.
 
 OOPS Concept in Java
 
