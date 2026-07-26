@@ -1,3 +1,24893 @@
+🖲 39 TypeScript interview questions for web developers in 2021
+TypeScript is a must know if you're a front developer or even a fullstack developer. Our curated list of TypeScript questions can be used for all levels of developers. Go through all questions and nail your next web developer tech interview in 2021.
+
+
+
+
+
+You can also find all 39 answers here 👉🏼 https://devinterview.io/dev/typescript-interview-questions
+
+
+🔹 1. What is Typescript and why one should use it?
+Answer:
+TypeScript is a free and open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language.
+
+Source: Stackoverflow.com   
+
+
+🔹 2. What are the benefits of TypeScript?
+Answer:
+TypeScript has following benefits.
+
+It helps in code structuring.
+Use class based object oriented programming.
+Impose coding guidelines.
+Offers type checking.
+Compile time error checking.
+Intellisense.
+Source: talkingdotnet.com   
+
+
+🔹 3. What is TypeScript and why would I use it in place of JavaScript?
+Answer:
+TypeScript is a superset of JavaScript which primarily provides optional static typing, classes and interfaces. One of the big benefits is to enable IDEs to provide a richer environment for spotting common errors as you type the code. For a large JavaScript project, adopting TypeScript might result in more robust software, while still being deployable where a regular JavaScript application would run.
+
+In details:
+
+TypeScript supports new ECMAScript standards and compiles them to (older) ECMAScript targets of your choosing. This means that you can use features of ES2015 and beyond, like modules, lambda functions, classes, the spread operator, destructuring, today.
+JavaScript code is valid TypeScript code; TypeScript is a superset of JavaScript.
+TypeScript adds type support to JavaScript. The type system of TypeScript is relatively rich and includes: interfaces, enums, hybrid types, generics, union and intersection types, access modifiers and much more. TypeScript makes typing a bit easier and a lot less explicit by the usage of type inference.
+The development experience with TypeScript is a great improvement over JavaScript. The IDE is informed in real-time by the TypeScript compiler on its rich type information.
+With strict null checks enabled (--strictNullChecks compiler flag) the TypeScript compiler will not allow undefined to be assigned to a variable unless you explicitly declare it to be of nullable type.
+To use TypeScript you need a build process to compile to JavaScript code. The TypeScript compiler can inline source map information in the generated .js files or create separate .map files. This makes it possible for you to set breakpoints and inspect variables during runtime directly on your TypeScript code.
+TypeScript is open source (Apache 2 licensed, see github) and backed by Microsoft. Anders Hejlsberg, the lead architect of C# is spearheading the project.
+Source: stackoverflow.com   
+
+
+🔹 4. Explain generics in TypeScript
+Answer:
+Generics are able to create a component or function to work over a variety of types rather than a single one.
+
+/** A class definition with a generic parameter */
+class Queue<T> {
+  private data = [];
+  push = (item: T) => this.data.push(item);
+  pop = (): T => this.data.shift();
+}
+const queue = new Queue<number>();
+queue.push(0);
+queue.push("1"); // ERROR : cannot push a string. Only numbers allowed
+
+Source: basarat.gitbooks.io   
+
+
+🔹 5. What are Modules in Typescript?
+Answer:
+Modules in Typescript helps in organizing the code. There are 2 types of Modules — Internal and External
+
+Internal Modules are now replaceable by using Typescript’s namespace.
+
+External Modules used to specify and load dependencies between multiple external js files. If there is only one js file used, then external modules are not relevant.
+
+Source: Stackoverflow.com   
+
+
+🔹 6. List the built-in types in Typescript
+Answer:
+These are also called the primitive types in TypeScript:
+
+Number type: it is used to represent number type values and represents double precision floating point values.
+var variable_name: number;
+String type: it represents a sequence of characters stored as Unicode UTF-16 code. It is the same as JavaScript primitive type.
+var variable_name: string;
+Boolean type: in Typescript, it is used to represent a logical value. When we use the Boolean type, we get output only in true or false. It is also the same as JavaScript primitive type.
+var variable_name: bool;
+Null type: it represents a null literal and it is not possible to directly reference the null type value itself.
+var variable_name:number = null;
+Undefined type: it is the type of undefined literal. This type of built-in type is the sub-type of all the types.
+var variable_name:number = undefined;
+Source: Stackoverflow.com   
+
+
+🔹 7. How to call base class constructor from child class in TypeScript?
+Answer:
+We can call base class constructor using super().
+
+Source: http://www.talkingdotnet.com   
+
+
+🔹 8. Do we need to compile TypeScript files and why?
+Answer:
+Yes we do. Typescript is just a language Extension browsers can't interpret it. Converting from TypeScript to JavaScript is called compiling. Compiling doesn't mean binary code is created in this case. For this kind of translation, also the term transpilation is used instead of compilation.
+
+Source: stackoverflow.com   
+
+
+🔹 9. What is TypeScript and why do we need it?
+Answer:
+JavaScript is the only client side language universally supported by all browsers. But JavaScript is not the best designed language. It’s not a class-based object-oriented language, doesn’t support class based inheritance, unreliable dynamic typing and lacks in compile time error checking. And TypeScript addresses all these problems. In other words, TypeScript is an attempt to “fix” JavaScript problems.
+
+TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language. TypeScript is quite easy to learn and use for developers familiar with C#, Java and all strong typed languages. At the end of day “TypeScript is a language that generates plain JavaScript files.”
+
+As stated on Typescript official website, “TypeScript lets you write JavaScript the way you really want to. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.” Where “typed” means that it considers the types of variables, parameters and functions.
+
+Source: talkingdotnet.com   
+
+
+🔹 10. What is "Decorators" in TypeScript?
+Answer:
+A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. Decorators are functions that take their target as the argument. With decorators we can run arbitrary code around the target execution or even entirely replace the target with a new definition.
+
+There are 4 things we can decorate in ECMAScript2016 (and Typescript): constructors, methods, properties and parameters.
+
+Source: www.sparkbit.pl   
+
+
+🔹 11. What is Interface in TypeScript?
+Answer:
+One of TypeScript’s core principles is that type-checking focuses on the shape that values have.
+
+An interface is a virtual structure that only exists within the context of TypeScript. The TypeScript compiler uses interfaces solely for type-checking purposes.
+
+When you define your interface you’re saying that any object (not an instance of a class) given this contract must be an object containing interfaces properties.
+
+Source: medium.com   
+
+
+🔹 12. What is the difference between Classes and Interfaces in Typescript?
+Answer:
+We use classes as object factories. A class defines a blueprint of what an object should look like and act like and then implements that blueprint by initialising class properties and defining methods. Classes are present throughout all the phases of our code.
+
+Unlike classes, an interface is a virtual structure that only exists within the context of TypeScript. The TypeScript compiler uses interfaces solely for type-checking purposes. Once code is transpiled to its target language, it will be stripped from interfaces.
+
+A class may define a factory or a singleton by providing initialisation to its properties and implementation to its methods, an interface is simply a structural contract that defines what the properties of an object should have as a name and as a type.
+
+Source: toddmotto.com   
+
+
+🔹 13. How to implement class constants in TypeScript?
+Answer:
+In TypeScript, the const keyword cannot be used to declare class properties. Doing so causes the compiler to an error with "A class member cannot have the 'const' keyword." TypeScript 2.0 has the readonly modifier:
+
+class MyClass {
+readonly myReadonlyProperty = 1;
+
+<span class="token cMod">myMethod</span><span class="token cBase">(</span><span class="token cBase">)</span> <span class="token cBase">{</span>
+    console<span class="token cBase">.</span><span class="token cMod">log</span><span class="token cBase">(</span><span class="token cVar">this</span><span class="token cBase">.</span>myReadonlyProperty<span class="token cBase">)</span><span class="token cBase">;</span>
+<span class="token cBase">}</span>
+
+    
+
+  
+
+}
+
+
+new MyClass().myReadonlyProperty = 5; // error, readonly
+
+Source: stackoverflow.com   
+
+
+🔹 14. What is getters/setters in TypeScript?
+Answer:
+TypeScript supports getters/setters as a way of intercepting accesses to a member of an object. This gives you a way of having finer-grained control over how a member is accessed on each object.
+
+class foo {
+private _bar:boolean = false;
+
+get bar():boolean {
+return this._bar;
+}
+set bar(theBar:boolean) {
+this._bar = theBar;
+}
+}
+
+
+var myBar = myFoo.bar;  // correct (get)
+myFoo.bar = true;  // correct (set)
+
+Source: typescriptlang.org   
+
+
+🔹 15. Does TypeScript support all object oriented principles?
+Answer:
+The answer is YES. There are 4 main principles to Object Oriented Programming:
+
+Encapsulation,
+Inheritance,
+Abstraction, and
+Polymorphism.
+TypeScript can implement all four of them with its smaller and cleaner syntax.
+
+Source: jonathanmh.com   
+
+
+🔹 16. When to use interfaces and when to use classes in TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 17. How could you check null and undefined in TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 18. Which object oriented terms are supported by TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 19. What are the difference beetween Typescript and JavaScript?
+👉🏼 Check all 39 answers
+
+
+🔹 20. What is a TypeScript Map file?
+👉🏼 Check all 39 answers
+
+
+🔹 21. Could we use TypeScript on backend and how?
+👉🏼 Check all 39 answers
+
+
+🔹 22. What is Typings in Typescript?
+👉🏼 Check all 39 answers
+
+
+🔹 23. What is the default access modifier for members of a class in TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 24. Is that TypeScript code valid? Explain why.
+👉🏼 Check all 39 answers
+
+
+🔹 25. How TypeScript is optionally statically typed language?
+👉🏼 Check all 39 answers
+
+
+🔹 26. How To Use external plain JavaScript Libraries in TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 27. Does TypeScript supports function overloading?
+👉🏼 Check all 39 answers
+
+
+🔹 28. Explain how and why we could use property decorators in TS?
+👉🏼 Check all 39 answers
+
+
+🔹 29. What are different components of TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 30. How can you allow classes defined in a module to accessible outside of the module?
+👉🏼 Check all 39 answers
+
+
+🔹 31. What's wrong with that code?
+👉🏼 Check all 39 answers
+
+
+🔹 32. Are strongly-typed functions as parameters possible in TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 33. What is the difference between "interface vs type" statements?
+👉🏼 Check all 39 answers
+
+
+🔹 34. What is one thing you would change about TypeScript?
+👉🏼 Check all 39 answers
+
+
+🔹 35. Explain when to use "declare" keyword in TypeScript
+👉🏼 Check all 39 answers
+
+
+🔹 36. Is it possible to generate TypeScript declaration files from JS library?
+👉🏼 Check all 39 answers
+
+
+🔹 37. What are Ambients in TypeScripts and when to use them?
+👉🏼 Check all 39 answers
+
+
+🔹 38. Explain why that code is marked as WRONG?
+👉🏼 Check all 39 answers
+
+
+🔹 39. How would you overload a class constructor in TypeScript?
+
+
+Utility Type Pick в TypeScript: выбор свойств из типа
+Pick — это utility тип в TypeScript, который позволяет «выбрать» конкретные свойства из существующего типа или интерфейса. Он создаёт новый тип, включающий лишь те поля, которые вы явно указали.
+
+Синтаксис
+
+Pick<T, K>
+T - исходный тип или интерфейс, из которого нужно выбрать свойства.
+K — объединение (union) ключей, которые вы хотите оставить в результирующем типе.
+Pick берёт только перечисленные свойства K из T, а все остальные игнорирует.
+
+Когда использовать Pick?
+Если нужно создать новый объектный тип с ограниченным числом свойств.
+Для API-запросов, когда не требуется отправлять все данные.
+В React-пропсах, когда компоненту нужен только определенный набор данных.
+Пример использования Pick
+Допустим, у нас есть интерфейс User с несколькими полями:
+
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  isAdmin: boolean;
+}
+Если нам нужен тип, в котором мы хотим хранить только id и name, мы можем воспользоваться Pick:
+
+
+type BasicUserInfo = Pick<User, "id" | "name">;
+
+const userInfo: BasicUserInfo = {
+    id: 1,
+    name: "Alice",
+};
+
+userInfo.age = 25;       
+// Ошибка: свойство 'age' отсутствует в типе 'Pick<User, "id" | "name">'
+BasicUserInfo содержит только поля id и name.
+Попытка обратиться к age или isAdmin приведёт к ошибке на этапе компиляции, так как их нет в результирующем типе.
+Пример с API
+При получении данных о пользователе из API иногда хочется вернуть наружу только минимальный набор полей, не раскрывая всего внутреннего устройства объекта. Например:
+
+
+interface User {
+    id: number;
+    name: string;
+    email: string;
+    passwordHash: string;
+    isAdmin: boolean;
+}
+
+// Создадим публичный профиль (только безопасная часть данных)
+type PublicUserProfile = Pick<User, "id" | "name">;
+
+function getPublicProfile(user: User): PublicUserProfile {
+    return {
+        id: user.id,
+        name: user.name,
+    };
+}
+
+Таким образом, функция getPublicProfile возвращает только те поля id и name, которые мы явно указали в PublicUserProfile.
+
+Зачем нужен Pick?
+Сокращение типов: Если вы работаете с большим интерфейсом, а в определённом контексте вам нужны только несколько свойств, Pick позволяет избежать дублирования кода при определении типов, повторно используя существующие структуры.
+Гибкость: Позволяет динамически переиспользовать общие структуры данных (например, при работе с API), выбирая только нужные поля для определённой операции.
+Контроль: Избегаете случайной передачи лишних данных или нежелательных свойств.
+Сравнение с Omit
+Утилита	Описание
+Pick<T, K>	Оставляет только указанные свойства K из T
+Omit<T, K>	Исключает указанные свойства K из T, оставляя остальные
+Итог
+Pick помогает формировать подтипы, оставляя только нужные свойства.
+Уменьшает дублирование кода и снижает риск ошибок при передаче данных.
+В сочетании с Omit и другими утилитами делает код гибче и безопаснее.
+
+
+Utility Type Readonly в TypeScript: иммутабельные типы
+Readonly — это utility тип в TypeScript, который делает все свойства типа только для чтения (read-only). После того, как свойство становится readonly, оно не может быть изменено при прямом присвоении в коде, что помогает избежать непреднамеренных мутаций объекта.
+
+Синтаксис
+
+Readonly<T> 
+T — исходный тип, все свойства которого вы хотите сделать неизменяемыми.
+Тип Readonly чаще всего используется, чтобы защитить объекты от нежелательных изменений, сохраняя при этом доступ к чтению их свойств.
+
+Когда использовать Readonly?
+Если объект не должен изменяться после создания.
+Для работы с константными объектами.
+При передаче данных в функцию, чтобы избежать случайных изменений.
+Пример использования Readonly
+Создание объекта с неизменяемыми свойствами:
+
+    interface User {
+      id: number;
+      name: string;
+    }
+    
+    type ReadonlyUser = Readonly<User>;
+    
+    const user: ReadonlyUser = {
+      id: 1,
+      name: "Alice",
+    };
+    
+    user.name = "Bob"; 
+    // Ошибка: Cannot assign to 'name' because it is a read-only property` 
+Здесь ReadonlyUser превращает все свойства ( id и name) в readonly.
+Попытка изменить какое-либо свойство приводит к ошибке на этапе компиляции.
+Пример для неизменяемых конфигураций:
+
+Иногда бывает нужно зафиксировать настройки, чтобы их нельзя было изменить после инициализации:
+
+
+interface Config {
+    readonly port: number;  // Уже задано явно
+    dbName: string;
+}
+
+// С помощью Readonly делаем все поля только для чтения
+type FullReadonlyConfig = Readonly<Config>;
+
+const config: FullReadonlyConfig = {
+    port: 8080,
+    dbName: "mainDB",
+};
+
+config.dbName = "testDB"; 
+// Ошибка: 'dbName' is read-only` 
+У поля port стоит readonly, но также и dbName становится readonly, когда мы оборачиваем весь интерфейс в Readonly<Config>.
+Использование в функциях
+Гарантия неизменности аргумента
+Можно объявлять параметры функции как Readonly<T>, чтобы не допустить случайных изменений передаваемого объекта:
+
+function printUser(user: Readonly<User>) {
+    // user.id = 42;   // Ошибка
+    console.log(user.id, user.name);
+}
+Это защищает от мутаций объекта внутри функции.
+Итог
+Readonly — удобный способ защитить свойства объекта от изменений.
+Применяется, когда вы хотите явно указать, что объект должен оставаться неизменным на протяжении использования.
+При попытке присвоить что-либо свойству readonly, TypeScript выдаст ошибку на этапе компиляции, помогая избежать непреднамеренных мутаций.
+
+
+Utility Type Required в TypeScript: все свойства обязательны
+Required — это utility тип в TypeScript, который делает все свойства типа обязательными, если они были опциональными. При работе с объектами, где некоторые поля не всегда могут быть заполнены, Required позволяет обеспечить строгую обязательность всех свойств на определённом этапе разработки или в определённом контексте.
+
+Синтаксис
+
+Required<T>
+T — исходный тип, все свойства которого вы хотите сделать обязательными.
+Тип Required превращает каждое свойство T в обязательное, убирая у него вопросительный знак ?. Это особенно полезно, когда после валидации или дополнительной обработки данных вы уверены, что объекты должны содержать все поля.
+
+Когда использовать Required?
+Если нужно гарантировать, что у объекта будут все свойства.
+При вынужденном заполнении необязательных полей перед отправкой данных.
+В функциях, где требуется полный объект, без undefined.
+Примеры использования Required
+Преобразование опциональных свойств в обязательные:
+
+Предположим, у нас есть интерфейс User с несколькими полями, часть из которых может отсутствовать:
+
+
+  interface User {
+    id: number;
+    name: string;
+    age?: number;
+    address?: string;
+  }
+
+  type RequiredUser = Required<User>;
+
+  const user: RequiredUser = {
+    id: 1,
+    name: "Alice",
+    age: 30,
+    address: "Wonderland Ave",
+  };
+User — это исходный интерфейс, у которого поля age и address могут быть не заданы.
+RequiredUser превращает все поля (включая age и address) в обязательные.
+При попытке пропустить какое-либо из свойств age или address, TypeScript выдаст ошибку, требуя их обязательного указания.
+Использование Required для пост-валидации данных:
+
+Часто бывает, что вы сначала описываете данные в виде Partial<User> (или с опциональными полями), собирая их по частям, а затем после валидации хотите получить «полноценную» версию типа, в которой поля гарантированно существуют:
+
+
+function createUserData(data: Partial<User>): Required<User> {
+  // ... Выполняем валидацию и заполняем пропущенные поля
+  return {
+    id: data.id ?? 0,
+    name: data.name ?? "Unknown",
+    age: data.age ?? 0,
+    address: data.address ?? "Unknown",
+  };
+}
+
+const partialUser: Partial<User> = { name: "Bob" };
+const fullUser: Required<User> = createUserData(partialUser);
+// fullUser имеет все обязательные поля (id, name, age, address)
+В этой ситуации после выполнения проверки и заполнения значений, Функция возвращает объект типа Required<User>, где все поля теперь обязательны.
+
+
+Utility Type Required в TypeScript: все свойства обязательны
+Required — это utility тип в TypeScript, который делает все свойства типа обязательными, если они были опциональными. При работе с объектами, где некоторые поля не всегда могут быть заполнены, Required позволяет обеспечить строгую обязательность всех свойств на определённом этапе разработки или в определённом контексте.
+
+Синтаксис
+
+Required<T>
+T — исходный тип, все свойства которого вы хотите сделать обязательными.
+Тип Required превращает каждое свойство T в обязательное, убирая у него вопросительный знак ?. Это особенно полезно, когда после валидации или дополнительной обработки данных вы уверены, что объекты должны содержать все поля.
+
+Когда использовать Required?
+Если нужно гарантировать, что у объекта будут все свойства.
+При вынужденном заполнении необязательных полей перед отправкой данных.
+В функциях, где требуется полный объект, без undefined.
+Примеры использования Required
+Преобразование опциональных свойств в обязательные:
+
+Предположим, у нас есть интерфейс User с несколькими полями, часть из которых может отсутствовать:
+
+
+  interface User {
+    id: number;
+    name: string;
+    age?: number;
+    address?: string;
+  }
+
+  type RequiredUser = Required<User>;
+
+  const user: RequiredUser = {
+    id: 1,
+    name: "Alice",
+    age: 30,
+    address: "Wonderland Ave",
+  };
+User — это исходный интерфейс, у которого поля age и address могут быть не заданы.
+RequiredUser превращает все поля (включая age и address) в обязательные.
+При попытке пропустить какое-либо из свойств age или address, TypeScript выдаст ошибку, требуя их обязательного указания.
+Использование Required для пост-валидации данных:
+
+Часто бывает, что вы сначала описываете данные в виде Partial<User> (или с опциональными полями), собирая их по частям, а затем после валидации хотите получить «полноценную» версию типа, в которой поля гарантированно существуют:
+
+
+function createUserData(data: Partial<User>): Required<User> {
+  // ... Выполняем валидацию и заполняем пропущенные поля
+  return {
+    id: data.id ?? 0,
+    name: data.name ?? "Unknown",
+    age: data.age ?? 0,
+    address: data.address ?? "Unknown",
+  };
+}
+
+const partialUser: Partial<User> = { name: "Bob" };
+const fullUser: Required<User> = createUserData(partialUser);
+// fullUser имеет все обязательные поля (id, name, age, address)
+В этой ситуации после выполнения проверки и заполнения значений, Функция возвращает объект типа Required<User>, где все поля теперь обязательны.
+
+
+Utility Type Partial в TypeScript: все свойства опциональны
+Partial — это utility тип в TypeScript, который позволяет сделать все свойства объекта необязательными. Он особенно полезен, когда нужно создать версию существующего типа, но с возможностью опускать некоторые поля.
+
+Синтаксис
+
+Partial<T>
+T — исходный тип объекта.
+Тип Partial создаёт новый тип, в котором все свойства T становятся необязательными. Это полезно в ситуациях, когда объект может быть заполнен частично, например, при обновлении данных.
+
+Когда использовать Partial?
+При обновлении данных (не все поля могут быть изменены).
+Для работы с формами, где пользователь может заполнить только часть данных.
+В API-запросах, где передаются только измененные данные.
+Пример использования Partial
+Создание частичного объекта на основе существующего типа:
+
+Предположим, у нас есть тип User, и мы хотим создать объект, содержащий только часть его полей.
+
+
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+type PartialUser = Partial<User>;
+
+const updateUser: PartialUser = {
+  name: "Alice",
+};
+Partial<User> создаёт версию User, в которой все свойства становятся необязательными.
+updateUser может содержать только name, без необходимости указывать id или email.
+Использование Partial для обновления объекта:
+
+В функциях обновления данных удобно использовать Partial, чтобы передавать только изменённые свойства.
+
+
+function updateUserInfo(user: User, updates: Partial<User>): User {
+  return { ...user, ...updates };
+}
+
+const user: User = { id: 1, name: "Bob", email: "bob@example.com" };
+
+const updatedUser = updateUserInfo(user, { name: "Robert" });
+
+console.log(updatedUser);
+updateUserInfo принимает updates, который имеет тип Partial<User>, что позволяет передавать только изменяемые поля.
+
+Функция объединяет существующий объект пользователя с обновлёнными данными, создавая новый объект.
+
+Итог
+Тип Partial делает код гибче, позволяя работать с частично заполненными объектами, что особенно полезно при обновлении данных или создании конфигурационных объектов.
+
+
+Utility Type Record в TypeScript: словарь с типизацией
+Record — это utility тип в TypeScript, который позволяет создавать новый объектный тип с определенными ключами и значениями. Он предоставляет удобный способ задания типа для объектов, где ключи могут быть ограничены конкретными значениями, а значения имеют определённый тип.
+
+Синтаксис:
+
+
+Record<K, T>
+K — тип ключей объекта (например, строки или числа).
+T — тип значений, которые соответствуют этим ключам.
+Тип Record позволяет определить, что объект должен иметь определённый набор ключей и значений, что делает его очень полезным при работе с заранее известными ключами и типами значений.
+
+Пример использования Record
+Создание объекта с предсказуемыми ключами и значениями:
+
+Предположим, у нас есть список ролей в приложении, и мы хотим создать объект, где каждому ключу (роли) соответствует массив строк, представляющих права пользователя.
+
+
+type UserRoles = "admin" | "user" | "guest";
+type RolePermissions = Record<UserRoles, string[]>;
+
+const rolePermissions: RolePermissions = {
+  admin: ["create", "edit", "delete"],
+  user: ["view", "edit"],
+  guest: ["view"],
+};
+UserRoles — это тип, представляющий роли пользователей (например, "admin", "user", "guest").
+Record<UserRoles, string[]> создаёт объект, где ключи — это строки, соответствующие ролям, а значения — массивы строк, которые содержат права доступа для каждой роли.
+Использование Record для создания объектов с динамическими ключами: Вы можете использовать Record, чтобы создавать объекты с динамическими ключами, например, на основе значений перечислений.
+
+
+enum Status {
+  Active = "active",
+  Inactive = "inactive",
+  Pending = "pending",
+}
+
+type StatusMessage = Record<Status, string>;
+
+const statusMessages: StatusMessage = {
+  [Status.Active]: "Your account is active.",
+  [Status.Inactive]: "Your account is inactive.",
+  [Status.Pending]: "Your account is pending approval.",
+};
+Status — это перечисление, которое представляет возможные статусы.
+Record<Status, string> создаёт объект, где ключи — это значения из перечисления Status, а значения — строки, представляющие сообщения для каждого статуса.
+
+
+keyof и typeof в TypeScript: извлечение типов
+keyof и typeof — это два оператора в TypeScript, которые используются для работы с типами данных и для улучшения типизации. Они позволяют работать с типами объектов и переменных, а также извлекать ключи и типы из существующих значений.
+
+Оператор keyof
+Оператор keyof позволяет извлечь все ключи объекта в виде строкового объединения. Это полезно, когда вам нужно работать с объектами и проверять ключи, доступные для них, или когда вы хотите типизировать переменные, которые должны быть одним из ключей объекта.
+
+Пример использования keyof
+Предположим, у нас есть объект с некоторыми свойствами, и мы хотим получить тип всех ключей этого объекта.
+
+
+type Person = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+type PersonKeys = keyof Person;  // "name" | "age" | "email"
+В этом примере keyof Person создаёт объединённый тип строк, который содержит все ключи из типа Person. В данном случае, PersonKeys будет типом "name" | "age" | "email", то есть каждый ключ объекта Person будет доступен как тип Теперь мы можем использовать PersonKeys для объявления переменных, которые могут быть только одним из этих ключей:
+
+
+let key: PersonKeys;
+
+key = "name";   // Допустимо
+key = "age";    // Допустимо
+key = "address"; // Ошибка: Тип '"address"' не может быть присвоен типу '"name" | "age" | "email"'
+Оператор typeof
+Оператор typeof позволяет извлечь тип переменной или значения. Это полезно, когда вам нужно узнать тип переменной, не указывая его явно, и использовать этот тип в других частях кода.
+
+Пример использования typeof
+
+let person = {
+  name: "John",
+  age: 30,
+  email: "john@example.com"
+};
+
+type PersonType = typeof person;
+// PersonType будет типом { name: string, age: number, email: string }
+Совместное использование keyof и typeof
+keyof и typeof могут быть использованы вместе для создания более гибкой типизации и работы с ключами объектов. Это позволяет получить типы из существующих значений и работать с их ключами.
+
+Пример использования keyof и typeof
+
+const person = {
+  name: "John",
+  age: 30,
+  email: "john@example.com"
+};
+
+type PersonKeys = keyof typeof person;  // "name" | "age" | "email"
+
+let key: PersonKeys;
+key = "name";  // Допустимо
+key = "email"; // Допустимо
+key = "address"; // Ошибка: Тип '"address"' не может быть присвоен типу '"name" | "age" | "email"'
+Здесь typeof person извлекает тип объекта person, а keyof затем извлекает все ключи из этого типа, создавая объединённый тип, содержащий "name" | "age" | "email".
+
+Рекомендация:
+
+Используйте keyof для работы с ключами объектов и typeof для извлечения типов из переменных, чтобы повысить типовую безопасность и гибкость кода.
+
+
+infer в TypeScript: вывод типов в условных типах
+infer — это ключевое слово в TypeScript, которое используется для вывода типов внутри условных типов. Оно позволяет TypeScript автоматически выводить типы в зависимости от контекста, делая код более гибким и позволяя избежать дублирования типов.
+
+infer используется в связке с условными типами для определения типа в зависимости от структуры другого типа. Это позволяет сделать код более динамичным и сокращает необходимость в явном указании типа в некоторых ситуациях.
+
+Как работает infer?
+Когда вы используете infer, TypeScript может выводить типы, не задавая их явно, основываясь на том, как они используются внутри условного типа. Это позволяет создавать более универсальные и гибкие типы.
+
+Пример использования infer
+Вывод типа возвращаемого значения функции
+infer часто используется для извлечения типа возвращаемого значения функции из её типа. Это полезно, когда вам нужно получить тип из объекта или функции без явного указания типа.
+
+
+type ReturnTypeOfFunction<T> = T extends (...args: any[]) => infer R ? R : never;
+
+function getString(): string {
+  return "Hello, world!";
+}
+
+type Result = ReturnTypeOfFunction<typeof getString>;  // string
+В этом примере, с помощью infer R, TypeScript выводит тип возвращаемого значения функции getString, который будет string.
+
+ReturnTypeOfFunction<T> — это условный тип, который проверяет, является ли тип T функцией. Если да, то infer R выводит тип возвращаемого значения функции.
+Тип Result будет равен string, так как функция getString возвращает строку.
+Использование infer для работы с массивами
+infer также может использоваться для извлечения типа элементов массива.
+
+
+type ElementType<T> = T extends (infer U)[] ? U : never;
+
+const numbers: number[] = [1, 2, 3];
+type NumberType = ElementType<typeof numbers>;  // number
+Здесь, тип ElementType<T> проверяет, является ли тип T массивом. Если это так, infer U извлекает тип элементов массива (в нашем случае number).
+
+NumberType будет равно number, так как массив numbers содержит элементы типа number.
+Условное использование infer в более сложных типах
+infer может быть полезен для извлечения типов в более сложных типах, таких как объекты, классы и другие структуры данных.
+
+
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+
+type ResolvedType = UnwrapPromise<Promise<string>>;  // string
+type NonPromiseType = UnwrapPromise<number>;  // number
+В этом примере UnwrapPromise<T> — это условный тип, который извлекает тип, на который ссылается Promise. Если T является Promise, то infer U извлекает тип, который был обернут в Promise, в данном случае это string.
+
+ResolvedType будет равно string, так как Promise<string> извлекает тип string.
+NonPromiseType остаётся типом number, так как T не является Promise.
+Когда использовать infer?
+Когда вам нужно извлечь тип из функции или объекта, не указывая его явно.
+Для работы с более сложными типами, такими как массивы, промисы и другие типы, где нужно извлечь типы элементов.
+Для создания универсальных типов с возможностью адаптации к различным ситуациям, что помогает избежать дублирования кода и повышает гибкость.
+Рекомендация:
+
+Используйте infer для извлечения типов в условных типах, чтобы сделать код более гибким и избежать дублирования. Это особенно полезно при работе с функциями, массивами и сложными типами.
+
+
+Тип never в TypeScript: когда функция ничего не возвращает
+Тип never в TypeScript используется для обозначения значений, которые никогда не происходят. Это тип, который представляет значения, которые не могут быть возвращены из функции или присвоены переменной. Обычно тип never используется в следующих случаях:
+
+Когда функция не возвращает значение и не завершает выполнение (например, выбрасывает исключение).
+Когда функция бесконечно выполняется (например, с помощью бесконечного цикла).
+Тип never помогает TypeScript понять, что функция или выражение не завершится корректно и не может вернуть значение.
+
+Рекомендация:
+
+Используйте never для явного указания на ситуации, где функция не должна завершаться нормально, например, при выбрасывании ошибок или в бесконечных циклах. Это поможет вам поддерживать типовую безопасность в вашем коде.
+
+
+Type Guard в TypeScript: проверка типов в runtime
+TypeGuard — это механизм в TypeScript, который помогает сузить тип переменной в пределах блока кода. Он позволяет TypeScript точно определить тип переменной на основе условий, что делает код более безопасным и позволяет компилятору лучше проверять типы.
+
+TypeGuard используется для того, чтобы проверить тип переменной и сузить ее тип в определенном контексте. Это особенно полезно, когда переменная может быть одного из нескольких типов, и необходимо выполнить действия, специфичные для конкретного типа.
+
+Принцип работы TypeGuard
+TypeScript предоставляет несколько способов реализации TypeGuard, включая:
+
+Пользовательские функции TypeGuard.
+Операторы проверки типа, такие как typeof и instanceof.
+Кастомные проверки типов с использованием is.
+Пример использования TypeGuard
+Пример с typeof:
+
+Оператор typeof позволяет проверять примитивные типы, такие как string, number, boolean и другие. В случае с TypeGuard это позволяет сузить тип переменной в блоке кода.
+
+
+function printLength(value: string | number) {
+  if (typeof value === "string") {
+    console.log(value.length);  // Работает, так как value точно строка
+  } else {
+    console.log(value.toFixed(2)); // Работает, так как value точно число
+  }
+}
+
+printLength("Hello");  // Выведет: 5
+printLength(42);       // Выведет: 42.00
+В этом примере, оператор typeof позволяет TypeScript понять, что в блоке if переменная value является строкой, а в блоке else — числом.
+
+Пример с instanceof:
+
+Оператор instanceof используется для проверки типов объектов, например, классов. Это позволяет точно определить тип объекта, если он является экземпляром какого-то класса.
+
+
+class Dog {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+class Cat {
+  meow() {
+    console.log("Meow!");
+  }
+}
+
+function speak(animal: Dog | Cat) {
+  if (animal instanceof Dog) {
+    animal.bark();  // Доступ к методу bark, так как animal — это Dog
+  } else {
+    animal.meow();  // Доступ к методу meow, так как animal — это Cat
+  }
+}
+
+const dog = new Dog();
+const cat = new Cat();
+
+speak(dog);  // Выведет: Woof!
+speak(cat);  // Выведет: Meow!
+Пользовательские TypeGuard функции
+
+Вы можете создавать свои собственные функции для проверки типов и использования TypeGuard с помощью ключевого слова is.
+
+
+type Dog = { bark: () => void };
+type Cat = { meow: () => void };
+
+function isDog(animal: Dog | Cat): animal is Dog {
+  return (animal as Dog).bark !== undefined;
+}
+
+function speak(animal: Dog | Cat) {
+  if (isDog(animal)) {
+    animal.bark();  // animal теперь точно тип `Dog`
+  } else {
+    animal.meow();  // animal теперь точно тип `Cat`
+  }
+}
+
+const dog: Dog = { bark: () => console.log("Woof!") };
+const cat: Cat = { meow: () => console.log("Meow!") };
+
+speak(dog);  // Выведет: Woof!
+speak(cat);  // Выведет: Meow!
+Почему стоит использовать TypeGuard?
+Типовая безопасность: TypeGuard помогает избежать ошибок, связанных с неправильным использованием переменных, так как TypeScript точно понимает, какой тип переменной используется в каждом блоке кода.
+
+Улучшение читаемости кода: Использование TypeGuard делает код более понятным и предсказуемым, так как явно указывает, какие типы данных обрабатываются в каждом блоке.
+
+Лучшее понимание кода для IDE: TypeScript и IDE (например, Visual Studio Code) могут использовать TypeGuard для улучшения подсказок, автодополнения и рефакторинга, что ускоряет разработку и улучшает работу с кодом.
+
+
+any vs unknown в TypeScript: когда что использовать
+В TypeScript существуют два типа, которые могут быть использованы для представления любых значений: any и unknown. Несмотря на то что оба типа позволяют работать с любыми значениями, их поведение и безопасность в контексте типов различаются.
+
+Тип any
+Тип any используется, когда вы хотите указать, что значение может быть любым типом. Это позволяет работать с переменными, чьи типы не известны на этапе компиляции, но в то же время any снимает с вас ограничения типов, позволяя делать с переменной всё, что угодно.
+
+Преимущества использования any
+Гибкость: позволяет работать с переменными, чей тип заранее неизвестен или изменчив.
+Удобство: удобно при интеграции с внешними библиотеками, когда типы не определены, или когда необходимо временно отключить проверку типов.
+Недостатки использования any
+Потеря типовой безопасности: использование any ослабляет систему типов TypeScript, позволяя совершать ошибки, которые не будут выявлены при компиляции.
+Усложнение поддержки кода: из-за отсутствия типовой информации может стать сложно понять, какие значения могут быть присвоены переменной.
+Пример использования any
+
+
+let value: any;
+
+value = 42; // Число
+value = "Hello"; // Строка
+value = { name: "John" }; // Объект
+
+value.someMethod(); // Ошибка не будет обнаружена на этапе компиляции
+Тип unknown
+Тип unknown — это более безопасная альтернатива any. С unknown вы по-прежнему можете работать с переменной любого типа, но для этого необходимо проверить её тип перед выполнением операций с ней. То есть, в отличие от any, с переменной типа unknown не получится выполнять операции без проверки её типа.
+
+Преимущества использования unknown
+Типовая безопасность: хотя unknown позволяет работать с любыми типами, при этом компилятор TypeScript требует, чтобы вы выполнили проверку типа перед тем, как выполнить какие-либо операции с значением. Это помогает избежать ошибок и сохраняет типовую безопасность.
+Является более безопасным выбором: unknown сохраняет систему типов TypeScript, требуя явной проверки перед использованием значения.
+Недостатки использования unknown:
+Не такая гибкость как у any: перед использованием переменной типа unknown требуется выполнить проверку её типа, что добавляет дополнительный код.
+Пример использования unknown
+
+
+let value: unknown;
+
+value = 42; // Число
+value = "Hello"; // Строка
+
+// Ошибка компиляции: нельзя вызывать методы на типе `unknown`
+value.someMethod(); 
+
+// Перед использованием нужно выполнить проверку типа
+if (typeof value === "string") {
+  console.log(value.toUpperCase()); // Теперь это безопасно
+}
+Когда использовать any, а когда unknown?
+Используйте any, когда вы точно знаете, что не нужно проверять тип, или в тех случаях, когда тип невозможно точно определить, например, при работе с динамическими данными или сторонними библиотеками без типов.
+Используйте unknown, когда необходимо работать с переменными, чей тип неизвестен, но вы хотите сохранить типовую безопасность, выполняя явную проверку типа перед использованием данных.
+
+
+Union Types в TypeScript: объединение типов через |
+Что такое Union в TypeScript?
+Union (объединение) в TypeScript позволяет создавать типы, которые могут быть одним из нескольких типов. Это означает, что переменная или параметр функции может иметь несколько возможных типов данных. Union помогает делать код более гибким, обеспечивая возможность работать с несколькими типами данных одновременно.
+
+Синтаксис Union
+Union типы создаются с помощью оператора | (или). Он позволяет указать несколько типов, между которыми можно выбирать.
+
+Пример:
+
+
+let value: string | number;
+
+value = "Hello";  // Допустимо
+value = 42;       // Допустимо
+value = true;     // Ошибка, так как тип не является ни string, ни number
+В этом примере переменная value может быть либо строкой, либо числом. Если присвоить значение другого типа, TypeScript выдаст ошибку.
+
+Рекомендация:
+
+Используйте Union типы для создания гибких и безопасных типов данных, когда переменная или функция может работать с несколькими типами.
+
+
+Generics в TypeScript: универсальные типы с примерами
+Generic в TypeScript — это возможность создавать универсальные компоненты и функции, которые могут работать с любыми типами данных, при этом сохраняют типовую безопасность. С помощью Generic можно создать функции, классы и интерфейсы, которые могут работать с разными типами, не теряя при этом строгой типизации.
+
+Зачем нужны Generic?
+Гибкость: Generic позволяют создавать универсальные функции и классы, которые могут работать с различными типами данных. Это дает возможность избежать дублирования кода, обеспечивая при этом типовую безопасность.
+
+Повторное использование кода: Generic позволяют писать код, который можно многократно использовать для разных типов, улучшая читаемость и уменьшая количество повторений.
+
+Типовая безопасность: Использование Generic обеспечивает проверку типов в момент компиляции, что помогает избежать ошибок, связанных с неправильным использованием типов.
+
+Generic в функциях
+С помощью Generic можно создавать функции, которые принимают параметры разных типов, при этом TypeScript будет отслеживать типы данных.
+
+Пример:
+
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output1 = identity<string>("Hello");
+let output2 = identity<number>(100);
+В этом примере T — это обобщенный тип, который будет автоматически определяться на основе типа переданного аргумента. Функция identity возвращает значение того же типа, что и переданному аргументу.
+
+Generic с массивами
+Мы можем создавать функции для работы с массивами, где элементы массива могут быть любого типа.
+
+
+function logArray<T>(arr: T[]): void {
+  arr.forEach(item => console.log(item));
+}
+
+logArray([1, 2, 3]);  // number[]
+logArray(["a", "b", "c"]);  // string[]
+В этом примере функция logArray принимает массив с любыми типами данных и выводит его элементы в консоль.
+
+Generic в интерфейсах
+Generic могут быть использованы в интерфейсах для создания более гибких и универсальных структур данных.
+
+
+interface Box<T> {
+  value: T;
+}
+
+let box1: Box<string> = { value: "Hello" };
+let box2: Box<number> = { value: 100 };
+В этом примере Box является универсальным интерфейсом, который может работать с любыми типами, и тип данных будет задаваться при создании экземпляра интерфейса.
+
+Generic в классах
+Generic также можно использовать в классах для создания универсальных классов.
+
+
+class Box<T> {
+  private value: T;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+
+  getValue(): T {
+    return this.value;
+  }
+}
+
+const box1 = new Box<string>("Hello");
+const box2 = new Box<number>(100);
+
+console.log(box1.getValue());  // "Hello"
+console.log(box2.getValue());  // 100
+В этом примере класс Box использует Generic для работы с разными типами данных, что позволяет создавать экземпляры с различными типами значений.
+
+Ограничения Generic
+Можно ограничить типы, которые могут быть использованы в Generic, с помощью ограничений. Например, вы можете указать, что параметр типа должен быть объектом с определенным свойством.
+
+
+function logLength<T extends { length: number }>(arg: T): void {
+  console.log(arg.length);
+}
+
+logLength("Hello");  // 5
+logLength([1, 2, 3]);  // 3
+Здесь T extends { length: number } указывает, что T должен быть объектом с свойством length, таким образом, функция может работать только с такими типами, как строками или массивами.
+
+
+type vs interface в TypeScript: в чём разница и что выбрать
+В TypeScript существуют два способа описания типов: type и interface.
+
+Interface
+interface используется для описания структуры объектов и классов, а также для расширения других интерфейсов.
+Пример использования interface:
+
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Employee extends Person {
+  position: string;
+}
+
+const employee: Employee = {
+  name: "John",
+  age: 30,
+  position: "Developer"
+};
+interface позволяет использовать ключевое слово extends для расширения других интерфейсов. Это делает его удобным для работы с объектно-ориентированным подходом.
+
+Type
+type более универсален и может использоваться не только для объектов, но и для других типов данных, таких как примитивы, объединения, пересечения типов и другие.
+Пример использования type:
+
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = Person & {
+  position: string;
+};
+
+const employee: Employee = {
+  name: "John",
+  age: 30,
+  position: "Developer"
+};
+Когда использовать interface или type?
+interface стоит использовать, когда нужно работать с объектами, особенно если вам нужно расширять или изменять их с помощью extends или реализовывать в классах с помощью implements.
+type стоит использовать, когда вам нужно работать с универсальными типами, такими как объединение, пересечение, кортежи и примитивы.
+
+
+Omit в TypeScript: исключение свойств из типа
+Omit — это utility тип в TypeScript, который позволяет исключить определённые свойства из уже существующего типа или интерфейса. Он создаёт новый тип, убирая из исходного списка полей те, которые вы указали.
+
+Синтаксис
+
+Omit<T, K>
+T — исходный тип (или интерфейс), из которого вы хотите исключить свойства.
+K — объединение (union) ключей, которые вы хотите убрать из T.
+Omit удаляет названные поля и оставляет всё остальное неизменным.
+
+Когда использовать Omit?
+Если нужно исключить ненужные свойства из объекта.
+Для API-ответов, где нужно скрыть чувствительные данные.
+В React-компонентах, чтобы передавать только нужные свойства.
+Пример использования Omit
+Предположим, у нас есть интерфейс User с несколькими полями:
+
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  isAdmin: boolean;
+}
+Если в некотором месте приложения мы хотим работать с пользователем, но не хотим иметь доступ к isAdmin, можно использовать Omit:
+
+
+type PublicUserData = Omit<User, "isAdmin">;
+
+const userData: PublicUserData = {
+  id: 1,
+  name: "Alice",
+  age: 25,
+};
+
+userData.isAdmin = true;
+// ❌ Ошибка: свойство 'isAdmin' отсутствует в типе 'PublicUserData'
+
+PublicUserData — содержит все поля User, за исключением isAdmin.
+Любая попытка обратиться к isAdmin вызовет ошибку на этапе компиляции, так как в новом типе этого свойства нет.
+Пример с API
+Часто после получения данных о пользователе из базы данных или внешнего API вы хотите передать во «фронтенд» объект без некоторых приватных полей:
+
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  passwordHash: string;
+  isAdmin: boolean;
+}
+
+type SafeUserData = Omit<User, "passwordHash" | "email">;
+
+function getSafeUserData(user: User): SafeUserData {
+  const { passwordHash, email, ...rest } = user;
+  return rest;
+}
+
+const user: User = {
+  id: 42,
+  name: "Bob",
+  email: "bob@example.com",
+  passwordHash: "hashed_password",
+  isAdmin: false,
+};
+
+const safeData = getSafeUserData(user);
+// safeData не содержит passwordHash и email
+
+В итоге наружу передаются только id, name и isAdmin, а конфиденциальные данные остаются скрытыми.
+
+Зачем нужен Omit?
+Сокращённые версии типов: Позволяет исключить ненужные свойства, чтобы не передавать их в какие-то части приложения.
+Безопасность: Можно удалять конфиденциальные поля (например, password, token, isAdmin) для публичного представления данных.
+Избежание конфликтов: Когда нужно переопределить некоторые поля, их можно сначала исключить, а потом добавить заново с нужным типом.
+Сравнение с Pick
+Утилита	Описание
+Pick<T, K>	Оставляет только перечисленные свойства K из T
+Omit<T, K>	Исключает указанные свойства K из T, оставляя остальные
+Итог
+Гибкость: Позволяет легко удалять ненужные свойства без создания новых интерфейсов.
+Безопасность: Исключает конфиденциальные поля (passwordHash, token) из публичных данных.
+Оптимизация кода: Уменьшает дублирование при работе с объектными структурами.
+Комбинация с Pick: Вместе с Pick даёт полный контроль над тем, какие данные используются в конкретном контексте.
+
+
+
+
+Utility Type Exclude в TypeScript: исключение из union
+Exclude — это utility тип в TypeScript, который позволяет исключать определённые подтипы из union-типа. Он создаёт новое объединение, убирая те члены, которые можно присвоить какому-то другому типу.
+
+Синтаксис
+
+Exclude<T, U>
+T — исходный union-тип.
+U — подтипы (или union подтипов), которые нужно убрать из T.
+Таким образом, Exclude<T, U> удаляет из T все подтипы, которые можно присвоить U, оставляя только несовместимые.
+
+Когда использовать Exclude?
+Очистка типов: удаление null и undefined, чтобы избежать лишних проверок.
+Фильтрация опциональных полей: когда нужно оставить только определённые варианты в union-типе.
+Работа с API-данными: исключение нежелательных значений из возможных ответов сервера.
+Оптимизация типов: уменьшение количества возможных вариантов для удобства использования.
+Примеры
+Пример 1. Исключение типов из объединения
+
+
+type Mixed = string | number | boolean;
+
+// Убираем числа и булевы значения
+type OnlyStrings = Exclude<Mixed, number | boolean>;
+// OnlyStrings = string
+У нас есть union-тип Mixed = string | number | boolean.
+Exclude<Mixed, number | boolean> оставляет только те типы в Mixed, которые не можно присвоить number | boolean.
+В результате получается string.
+Пример 2. Исключение null и undefined
+
+
+type APIResponse = "success" | "error" | null | undefined;
+
+// Убираем null и undefined, оставляя только валидные статусы
+type ValidResponse = Exclude<APIResponse, null | undefined>;
+
+function handleResponse(status: ValidResponse) {
+  console.log(`Received response: ${status}`);
+}
+
+handleResponse("success"); // ✅ Ок
+handleResponse("error"); // ✅ Ок
+handleResponse(null); // ❌ Ошибка компиляции
+
+Если у нас тип, который включает null и undefined, с помощью Exclude их можно убрать.
+Аналог этого подхода — использование утилиты NonNullable.
+Отличие от Extract
+Утилита	Описание
+Exclude<T, U>	Исключает все подтипы из T, которые совместимы с U
+Extract<T, U>	Оставляет только подтипы из T, которые совместимы с U
+
+type Mixed = string | number | boolean;
+type OnlyNumbersOrBooleans = Extract<Mixed, number | boolean>; 
+// number | boolean
+
+type OnlyStrings = Exclude<Mixed, number | boolean>; 
+// string
+Итог
+Exclude упрощает управление сложными union-типами, позволяя исключать ненужные варианты.
+Помогает «очистить» тип, если нужно работать только с определённой группой подтипов.
+Сочетается с утилитами Extract, NonNullable и т.д. для более тонкой настройки и фильтрации типов.
+
+Решать TS задачи
+
+Войдите, чтобы отметить как прочитанное
+
+
+Utility Type Extract в TypeScript: извлечение из union
+Extract — это utility тип в TypeScript, который извлекает из union-типа те члены, которые можно присвоить другому указанному типу. По сути, он создаёт новое объединение, оставляя только «пересекающиеся» части.
+
+Синтаксис
+
+Extract<T, U>
+T — исходный union-тип (объединение).
+U — тип (или union), члены которого нужно оставить из T.
+Extract<T, U> сохраняет в T только те типы, которые можно присвоить U, убирая всё остальное.
+
+Когда использовать Extract
+Извлечение допустимых значений: например, если API может возвращать "success" | "error" | "pending", можно вычленить только "error".
+Фильтрация по ролям и доступам: из списка всех ролей можно извлекать только администраторов (Extract<Role, "admin" | "moderator">).
+Оптимизация union-типов: когда нужно оставить только значения определённого типа.
+Упрощение работы с дженериками: если в шаблон передаётся большой список вариантов, Extract поможет сузить его до нужных значений.
+Примеры
+Пример 1. Извлечение чисел и булевых значений
+
+
+type Mixed = string | number | boolean;
+
+// Извлекаем только числа и булевы значения
+type OnlyNumbersOrBooleans = Extract<Mixed, number | boolean>;
+// OnlyNumbersOrBooleans = number | boolean
+В исходном типе Mixed есть string, number, и boolean.
+Extract оставляет лишь те типы, которые являются number или boolean.
+Пример 2. Пример с API: Фильтрация ошибок
+
+
+type ApiResponse = 
+  | { status: "success"; data: string } 
+  | { status: "error"; message: string }
+  | null
+  | undefined;
+
+// Извлекаем только ошибки
+type ErrorResponse = Extract<ApiResponse, { status: "error" }>;
+
+function handleError(response: ApiResponse) {
+  if (response && response.status === "error") {
+    console.log("Ошибка:", response.message);
+  }
+}
+
+// Использование:
+const res1: ApiResponse = { status: "success", data: "OK" };
+const res2: ApiResponse = { status: "error", message: "Ошибка запроса" };
+
+handleError(res1); // Ничего не выводит
+handleError(res2); // Выведет: "Ошибка: Ошибка запроса"
+Что здесь происходит?
+
+Extract<ApiResponse, { status: "error" }> оставляет только те объекты, у которых status: "error".
+Мы используем это для обработки ошибок, игнорируя успешные ответы и null | undefined.
+Функция handleError проверяет, является ли ответ ошибочным, и выводит сообщение.
+Это более реальный кейс, так как обработка API-ответов — частая задача во фронтенд-разработке. 🚀
+
+Отличие от Exclude
+Утилита	Описание
+Exclude<T, U>	Исключает все подтипы из T, которые совместимы с U
+Extract<T, U>	Оставляет только подтипы из T, которые совместимы с U
+Пример:
+
+
+type Mixed = string | number | boolean;
+
+type OnlyStrings = Exclude<Mixed, number | boolean>; 
+// string
+
+type OnlyNumbersOrBooleans = Extract<Mixed, number | boolean>;
+// number | boolean
+Итог
+Extract позволяет вычленить нужные подтипы из объединения, сохраняя только те, которые соответствуют заданному типу.
+Упрощает логику работы с типами, особенно когда требуется «точечно» отсеять часть вариантов, оставив желаемые.
+Часто идёт в паре с Exclude, решая прямо противоположную задачу (исключение vs. извлечение).
+
+
+Utility Type ReturnType в TypeScript: тип возвращаемого значения
+ReturnType — это утилитный тип в TypeScript, который определяет, какой тип возвращает функция. Он помогает избежать дублирования и автоматически подстраивается, если функция меняется.
+
+Синтаксис
+
+ReturnType<T>
+T — это тип (или ссылка на саму функцию), из которой мы хотим получить тип возвращаемого значения.
+TypeScript вычисляет тип, который функция фактически возвращает, и передаёт его на выход ReturnType.
+
+Пример использования
+Извлечение типа возвращаемого значения функции
+
+function createUser(name: string, age: number) {
+  return {
+    name,
+    age,
+    createdAt: new Date(),
+  };
+}
+
+type UserFromFunction = ReturnType<typeof createUser>;
+Функция createUser возвращает объект { name, age, createdAt }.
+ReturnType<typeof createUser> извлекает точный тип этого объекта (например, { name: string, age: number, createdAt: Date }).
+Типизация вспомогательных функций
+Если у вас есть вспомогательные (helper) функции, которые обрабатывают результат из другой функции, можно напрямую использовать ReturnType:
+
+
+function processUserData(user: ReturnType<typeof createUser>) {
+  console.log(user.name, user.createdAt);
+  // ...
+}
+processUserData будет получать объект с тем же типом, что возвращает createUser, обеспечивая связность и избежание дублирования типов.
+Зачем нужен ReturnType
+Упрощение: Не нужно вручную объявлять или дублировать тип возвращаемого значения.
+Синхронизация: Если изменится логика функции createUser, ReturnType автоматически подстроится, исключая риск рассинхронизации.
+Гибкость: Удобно для фабрик (factory) или для «обёрток» (wrappers) над функциями, где нужно знать, что именно возвращает исходная функция.
+Совместимость с другими утилитами
+Иногда ReturnType комбинируют с InstanceType, Parameters или другими утилитами (например, для построения более сложных типов, зависящих от результатов функций).
+
+Примечания:
+
+ReturnType не работает с некоторыми сценариями «сложных» overload-функций, когда у функции есть несколько вариантов перегрузки. В таких случаях TypeScript попытается вывести обобщённый или «склеенный» тип.
+Если функция использует generic-типы, ReturnType может потребовать более аккуратного подхода, чтобы учесть конкретную специализацию.
+Итог
+ReturnType упрощает процесс извлечения типа возвращаемого значения у функции, позволяя избежать дублирования и повышая согласованность кода.
+Полезен, когда вы хотите максимально довериться механизму вывода типов TypeScript, сохранив связь между функциями и их потребителями.
+
+
+Utility Type Parameters в TypeScript: типы аргументов функции
+Parameters — это утилитный тип в TypeScript, который позволяет узнать, какие типы параметров у функции. Он превращает список аргументов функции в кортеж и помогает избежать дублирования кода.
+
+Синтаксис
+
+Parameters<T>
+T — тип функции, параметры которой вы хотите извлечь.
+Результат — массив (кортеж) с типами всех параметров.
+Пример использования
+Пример 1. Извлечение типов параметров функции
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+type AddParameters = Parameters<typeof add>;
+// AddParameters имеет тип: [number, number]
+В этом примере:
+
+Функция add принимает два параметра типа number.
+Parameters<typeof add> извлекает типы этих параметров в виде кортежа [number, number].
+Пример 2. Использование извлечённых типов в другой функции
+
+function multiply(a: number, b: number): number {
+  return a * b;
+}
+
+function processOperation(...args: Parameters<typeof multiply>): number {
+  // Здесь args имеет тип [number, number]
+  return multiply(...args);
+}
+
+const result = processOperation(2, 3); // Результат: 6
+Функция processOperation использует ...args с типом [number, number], извлечённым из функции multiply.
+Это обеспечивает согласованность типов и уменьшает дублирование кода.
+Зачем использовать Parameters?
+Повторное использование типов: Избегает необходимости вручную объявлять типы параметров, что особенно полезно для функций с большим числом аргументов.
+Поддержка согласованности: Если сигнатура функции меняется, типы, извлечённые через Parameters, автоматически обновятся.
+Удобство для обёрток: Позволяет создавать обёртки вокруг функций, сохраняя точное соответствие типов входных параметров.
+Ограничения
+Overload функции: Если функция имеет несколько перегрузок, Parameters возьмёт типы из самой первой сигнатуры, что может не всегда соответствовать ожиданиям.
+Generic функции: При работе с generic-функциями может потребоваться дополнительная спецификация типов для корректного извлечения параметров.
+Итог
+Parameters — мощный утилитный тип, позволяющий извлечь типы параметров функции в виде кортежа. Это способствует более строгой типизации, снижает дублирование и улучшает поддержку кода, особенно в случаях, когда функции используются в различных обёртках и утилитах.
+
+
+Utility Type Awaited в TypeScript: разворачивание Promise
+Awaited — это утилитный тип в TypeScript, введённый в версии 4.5, который извлекает значение из Promise. Если функция или переменная возвращает Promise<T>, то Awaited<T> выдаст сам T.
+
+Синтаксис
+
+Awaited<T>
+T — тип, который может быть промисом или значением.
+Если T является промисом (Promise<U>), то Awaited<T> возвращает тип U.
+Если T — не промис, то Awaited<T> возвращает сам T.
+Пример использования
+Пример 1. Достаём значение из промиса
+
+async function getData(): Promise<number> {
+  return 42;
+}
+
+type DataType = Awaited<ReturnType<typeof getData>>;
+// DataType → number
+В этом примере:
+
+Функция fetchData возвращает Promise<number>.
+ReturnType<typeof fetchData> извлекает тип возвращаемого значения функции, т.е. Promise<number>.
+Awaited<Promise<number>> распаковывает промис, возвращая тип number.
+Пример 2. Работа с вложенными промисами
+
+type NestedPromise = Promise<Promise<string>>;
+
+type Result = Awaited<NestedPromise>;
+// Result → string
+Если промисов несколько, Awaited распаковывает их до конечного значения.
+Зачем использовать Awaited?
+Упрощение работы с асинхронными функциями
+Awaited позволяет явно указать тип результата, полученного после ожидания промиса, что упрощает типизацию и уменьшает дублирование.
+
+Рекурсивное извлечение типов
+При работе с вложенными промисами Awaited автоматически «распаковывает» вложенные типы, возвращая конечное значение.
+
+Поддержка асинхронных утилит
+Awaited полезен при построении обобщённых утилит для работы с асинхронным кодом, где важно знать точный тип данных после разрешения промиса.
+
+Ограничения
+Если тип T не является промисом, Awaited просто возвращает T без изменений.
+В случае сложных условных типов или обобщённых функций, может потребоваться более тщательное описание типов для корректного вывода.
+Итог
+Awaited — мощный утилитный тип, который позволяет автоматически извлекать тип значений из промисов. Он особенно полезен для асинхронного программирования в TypeScript, обеспечивая точную типизацию возвращаемых данных и упрощая работу с вложенными промисами.
+
+
+Декораторы в TypeScript: классы, методы, свойства
+Декораторы — это специальные функции, которые можно применять к классам, методам, свойствам или параметрам, чтобы добавить или изменить поведение во время выполнения или компиляции.
+
+Декораторы — это своего рода "аннотации" или "модификаторы", работающие на уровне метаданных.
+
+Для работы с декораторами нужно включить флаги:
+
+
+{
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true
+}
+Где можно использовать декораторы?
+Классы
+Методы
+Свойства
+Параметры
+Аксессоры (get/set)
+Пример: Классовый декоратор
+
+function Logger(constructor: Function) {
+  console.log(`Класс создан: ${constructor.name}`);
+}
+
+@Logger
+class User {
+  constructor(public name: string) {}
+}
+Декоратор Logger будет вызван при определении класса User, выводя имя конструктора.
+
+Пример: Декоратор метода
+
+function LogMethod(
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) {
+  const original = descriptor.value;
+
+  descriptor.value = function (...args: any[]) {
+    console.log(`Метод ${propertyKey} вызван с`, args);
+    return original.apply(this, args);
+  };
+}
+
+class MathService {
+  @LogMethod
+  sum(a: number, b: number) {
+    return a + b;
+  }
+}
+Этот декоратор логирует вызов метода и его аргументы.
+
+Пример: Декоратор свойства
+
+function Readonly(target: any, propertyKey: string) {
+  Object.defineProperty(target, propertyKey, {
+    writable: false,
+  });
+}
+
+class Config {
+  @Readonly
+  version = "1.0";
+}
+Свойство version теперь невозможно изменить.
+
+Пример: Декоратор параметра
+
+function LogParam(target: Object, propertyKey: string | symbol, parameterIndex: number) {
+  console.log(`Параметр метода ${String(propertyKey)} на позиции ${parameterIndex}`);
+}
+
+class Example {
+  test(@LogParam msg: string) {
+    console.log(msg);
+  }
+}
+Используется редко, но может быть полезен для валидации или логирования.
+
+
+Mapped Types в TypeScript: трансформация типов
+Mapped Types (отображённые типы) в TypeScript позволяют создавать новые типы на основе существующих, перебирая ключи и модифицируя их.
+
+Это как map() для типов — можно обойти каждый ключ объекта и задать для него нужное значение.
+
+Синтаксис
+
+type NewType = {
+  [Key in Union]: Type;
+}
+Key — имя переменной, представляющее текущий ключ из множества Union.
+Type — тип значения для каждого ключа.
+Можно использовать keyof, модификаторы (?, readonly), и utility types (Pick, Partial, и т.д.).
+Примеры использования
+Пример 1: Копия типа с другими значениями
+
+type User = {
+  name: string;
+  age: number;
+};
+
+// Делаем тип, где все значения — boolean
+type UserPermissions = {
+  [K in keyof User]: boolean;
+};
+
+// => { name: boolean; age: boolean }
+Пример 2: Все поля опциональные (аналог Partial<T>)
+
+type Optional<T> = {
+  [K in keyof T]?: T[K];
+};
+Использование
+
+
+type User = { name: string; age: number };
+type OptionalUser = Optional<User>;
+// => { name?: string; age?: number }
+Пример 3: Сделать все поля readonly (аналог Readonly<T>)
+
+type ReadOnly<T> = {
+  readonly [K in keyof T]: T[K];
+};
+Пример 4: Убрать readonly
+
+type Mutable<T> = {
+  -readonly [K in keyof T]: T[K];
+};
+Где используются Mapped Types
+При создании utility types (Partial, Pick, Readonly, Record и т.д.)
+Для генерации динамических объектов с заранее известными ключами
+Для автоматического преобразования типов на основе других типов
+Для интроспекции типов на больших проектах (особенно с GraphQL, API, Form-системами)
+
+
+implements в TypeScript: реализация интерфейсов классами
+В TypeScript, ключевое слово implements используется для того, чтобы заставить класс соответствовать интерфейсу.
+
+Это означает, что класс должен реализовать все свойства и методы, описанные в интерфейсе. Иначе TypeScript выдаст ошибку на этапе компиляции.
+
+Синтаксис
+
+interface IAnimal {
+  name: string;
+  makeSound(): void;
+}
+
+class Dog implements IAnimal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  makeSound() {
+    console.log("Woof!");
+  }
+}
+Что происходит?
+
+Класс Dog обязан реализовать все свойства и методы интерфейса IAnimal.
+Если хотя бы одно будет отсутствовать — TypeScript покажет ошибку.
+Пример ошибки
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+class User implements Person {
+  name: string;
+  // Ошибка: Property 'age' is missing
+}
+implements с несколькими интерфейсами
+Можно реализовать несколько интерфейсов через запятую:
+
+
+interface A {
+  a(): void;
+}
+
+interface B {
+  b(): void;
+}
+
+class C implements A, B {
+  a() {
+    console.log("A");
+  }
+
+  b() {
+    console.log("B");
+  }
+}
+Зачем использовать implements?
+Для контроля структуры класса
+Для документирования API: видно, что класс должен поддерживать
+Для гарантий соответствия архитектуре
+Для модульности и повторного использования: один интерфейс — много реализаций
+Важно:
+
+implements работает только на уровне типов. В скомпилированном JavaScript нет интерфейсов.
+
+
+Сравните и отфильтруйте свойства даты в объекте
+Вопросы
+JAVASCRIPT
+Сравните и отфильтруйте свойства даты в объекте
+У меня есть объект, который выглядит так:
+
+    myObject = {
+      publishedDate: string;
+      Url: string;
+      Title: string;
+  }
+Свойство «publishedDate» представляет собой строку в формате «19.01.2021». Например, он может иметь дату в будущем, то есть значение больше, чем сегодня. Другими словами, я хочу сохранить все объекты, у которых publishDate меньше или равно сегодняшнему дню (и удалить все, что закончилось). Объекты сохраняются в моем состоянии (массив):
+
+this.state.data
+Сначала я создаю переменную даты для сегодняшнего значения, чтобы сравнить ее с опубликованной датой. Я также использую moment() для форматирования даты в том же формате, что и объект:
+
+let today = moment().format("DD/MM/YYYY");
+Затем я использую метод фильтра для сравнения и фильтрации данных:
+
+  this.state.data.filter(item => new Date(item.publishedDate) >= new Date(today))
+И я также пробовал:
+
+  this.state.data.filter(function(item) {
+    
+      if (new Date(item.publishedDate) >= new Date(today)) {
+        return false;
+      }
+    return true;
+  });
+Мало того, что не работает, у меня еще все объекты в массиве и ничего не отфильтровывается. Что не так с кодом?
+
+ 18.12.2020 20:02
+4
+1
+1 157
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+ Ответ принят как подходящий
+Конструктор Date не примет формат, который вы сейчас используете, но распознает формат MM/DD/YYYY. Кроме того, filter сохраняет элементы, для которых функция возвращает значение true, поэтому вам следует проверить, меньше или равно ли Date текущему Date.
+
+const today = new Date;
+this.state.data = this.state.data.filter(({publishedDate})=>{
+    const [d, m, y] = publishedDate.split("/");
+    return new Date(m + "/" + d + "/" + y) <= today;
+});
+ 18.12.2020 20:08
+На данный момент new Date("19/01/2021") возвращается: Invalid Date.
+
+Это возможное решение:
+
+let today = moment().format("YYYY-MM-DD");
+
+this.state.data.filter(function(item) {
+    const pubDate = item.publishedDate.split('/').reverse().join('-');
+    if (new Date(pubDate) >= new Date(today)) {
+        return false;
+    }
+    return true;
+});
+ 18.12.2020 20:10
+Вы должны сделать небольшую точную настройку строки даты, прежде чем сравнивать с сегодняшним днем. Вы можете попробовать это-
+
+const data = [
+  {
+    publishedDate: "19/01/2021",
+    url: '',
+    title: 'date1'
+  },
+  {
+    publishedDate: "19/05/2021",
+    url: '',
+    title: 'date2'
+  },
+  {
+    publishedDate: "13/01/2020",
+    url: '',
+    title: 'date3'
+  },
+  {
+    publishedDate: "16/09/2009",
+    url: '',
+    title: 'date4'
+  },
+];
+
+const parseDate = (dateString) => new Date(...dateString.split('/').reverse());
+
+
+const result = data.filter(item => parseDate(item.publishedDate) <= new Date());
+
+console.info(result);
+ 18.12.2020 20:11
+Хранение дат в виде строк — это запах кода. Их сложнее сравнивать, хранить и преобразовывать, а не хранить как собственный формат даты JS или альтернативы, такие как объект даты Moment.JS.
+
+Вот тривиальный пример того, как вы могли бы это сделать, если бы вы сохранили свои объекты как дату.
+
+Обратите внимание, что третий объект был отфильтрован.
+
+const myObject1 = {
+  publishedDate: new Date("2019-01-01"), // NEW
+  Url: "whatever",
+  Title: "sample",
+}
+
+const myObject2 = {
+  publishedDate: new Date("2020-01-01"), // NEW
+  Url: "whatever",
+  Title: "sample",
+}
+
+const myObject3 = {
+  publishedDate: new Date("2099-01-01"), // NEW
+  Url: "whatever",
+  Title: "sample",
+}
+
+const arr = [myObject1, myObject2, myObject3];
+
+const today = new Date();
+
+const filtered = arr.filter((obj) => obj.publishedDate < today);
+
+console.info(filtered);
+ 18.12.2020 20:12
+Вы можете просто использовать встроенные компараторы moment, подобные этому
+
+this.state.data.filter(item => moment(item.publishedDate,'DD/MM/YYYY').isSameOrAfter(today))
+ 18.12.2020 20:12
+Используя момент String + инициализатор формата и Is Same Or After:
+
+this.state.data.filter(item => moment(item.publishedDate, 'DD/MM/YYYY').isSameOrAfter())
+
+ 18.12.2020 20:14
+Одна из возможностей — использование вспомогательной функции notAfterToday, которая принимает имя свойства (в нашем случае 'publishedDate') и возвращает функцию, которая принимает объект с этим именем свойства и сообщает, является ли эта дата предшествующей или текущей датой.
+
+Он делает это путем преобразования, скажем, 18 декабря 2020 года в «20201218» и использует эту строку для сравнения. Обратите внимание, что одним из преимуществ этого является то, что конструктор Date вызывается только один раз для первоначального вычисления сегодняшней даты.
+
+const data = [{publishedDate: '18/12/2020', Url: 'http://example.com/1', Title: 'abc'}, {publishedDate: '19/01/2021', Url: 'http://example.com/2', Title: 'def'}, {publishedDate: '07/04/2014', Url: 'http://example.com/3', Title: 'ghi'}, {publishedDate: '19/07/2023', Url: 'http://example.com/4', Title: 'jkl'}, {publishedDate: '05/01/1966', Url: 'http://example.com/5', Title: 'mno'}, {publishedDate: '01/07/2041', Url: 'http://example.com/6', Title: 'pqr'}, {publishedDate: '08/05/2061', Url: 'http://example.com/7', Title: 'stu'}, {publishedDate: '10/08/1999', Url: 'http://example.com/8', Title: 'vwx'}]
+
+const notAfterToday = (prop) => {
+  const reorg = (date, [d, m, y] = date.split('/')) => y + m + d 
+  const today = new Date()
+  const compare = today .getFullYear() + 
+                  String ((today .getMonth () + 1)) .padStart (2, '0') +
+                  String (today .getDate ()) .padStart (2, '0')
+  return (d) => compare >= reorg (d [prop])
+}
+
+console .log (data .filter (notAfterToday ('publishedDate')))
+.as-console-wrapper {max-height: 100% !important; top: 0}
+
+
+Ошибка TS2707 Универсальный тип «ɵɵDirectiveDeclaration» требует от 6 до 8 аргументов типа
+Вопросы
+NODE.JS
+Ошибка TS2707 Универсальный тип «ɵɵDirectiveDeclaration» требует от 6 до 8 аргументов типа
+После установки углового материала и добавления углового импорта материала в app.module.ts в проект у меня возникли ошибки, и все решения пока не работали. У меня угловой 14, узел 16. Первая ошибка, которая на самом деле намного длиннее:
+
+Error: node_modules/@angular/cdk/a11y/index.d.ts:152:18 - error TS2707: Generic type 'ɵɵDirectiveDeclaration' requires between 6 and 8 type arguments.
+
+152     static ɵdir: i0.ɵɵDirectiveDeclaration<CdkAriaLive, "[cdkAriaLive]", ["cdkAriaLive"], { "politeness": "cdkAriaLive"; "duration": "cdkAriaLiveDuration"; }, {}, never, never, false, never>;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: node_modules/@angular/cdk/a11y/index.d.ts:175:18 - error TS2707: Generic type 'ɵɵDirectiveDeclaration' requires between 6 and 8 type arguments.
+
+175     static ɵdir: i0.ɵɵDirectiveDeclaration<CdkMonitorFocus, "[cdkMonitorElementFocus], [cdkMonitorSubtreeFocus]", ["cdkMonitorFocus"], {}, { "cdkFocusChange": "cdkFocusChange"; }, never, never, false, never>;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: node_modules/@angular/cdk/a11y/index.d.ts:208:18 - error TS2707: Generic type 'ɵɵDirectiveDeclaration' requires between 6 and 8 type arguments.
+
+208     static ɵdir: i0.ɵɵDirectiveDeclaration<CdkTrapFocus, "[cdkTrapFocus]", ["cdkTrapFocus"], { "enabled": "cdkTrapFocus"; "autoCapture": "cdkTrapFocusAutoCapture"; }, {}, never, never, false, never>;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: node_modules/@angular/cdk/bidi/index.d.ts:37:18 - error TS2707: Generic type 'ɵɵDirectiveDeclaration' requires between 6 and 8 type arguments.
+
+37     static ɵdir: i0.ɵɵDirectiveDeclaration<Dir, "[dir]", ["dir"], { "dir": "dir"; }, { "change": "dirChange"; }, never, never, false, never>;
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+{
+  "name": "highlight",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.2.4",
+    "@angular/cdk": "^15.0.0",
+    "@angular/common": "^14.2.4",
+    "@angular/compiler": "^14.2.4",
+    "@angular/core": "^14.2.4",
+    "@angular/forms": "^14.2.4",
+    "@angular/material": "^15.0.0",
+    "@angular/platform-browser": "^14.2.4",
+    "@angular/platform-browser-dynamic": "^14.2.4",
+    "@angular/router": "^14.2.4",
+    "@fortawesome/angular-fontawesome": "^0.11.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+    "@popperjs/core": "^2.11.6",
+    "@syncfusion/ej2-angular-calendars": "^20.3.56",
+    "apexcharts": "^3.36.3",
+    "bootstrap": "^5.2.2",
+    "jwt-decode": "^3.1.2",
+    "ng-apexcharts": "^1.7.4",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.4",
+    "@angular/cli": "^14.2.4",
+    "@angular/compiler-cli": "^14.2.4",
+    "@angular/localize": "^14.2.4",
+    "@types/jasmine": "~3.8.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.8.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "4.7"
+  }
+}
+Я пытался удалить node_modules, .angular и установку npm. Не работает. Затем я попытался переустановить материал angular - npm install --save @angular/material @angular/cdk - выдал ошибку, но другую. Я подозреваю, что это показывает более ясную причину моей фактической ошибки. Как было предложено в ошибке, я попробовал команды npm install --legacy-peer-deps, --force, npm install --save --legacy-peer-deps, не сработало. Может быть у кого-то больше опыта и он признает проблему?
+
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: highlight@0.0.0
+npm ERR! Found: @angular/common@14.2.12
+npm ERR! node_modules/@angular/common
+npm ERR!   @angular/common@"^14.2.4" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer @angular/common@"^15.0.0 || ^16.0.0" from @angular/cdk@15.0.0
+npm ERR! node_modules/@angular/cdk
+npm ERR!   @angular/cdk@"^15.0.0" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+Мой результат ng v:
+
+Angular CLI: 14.2.10
+Node: 16.10.0
+Package Manager: npm 7.24.0 
+OS: darwin x64
+
+Angular: 14.2.12
+... animations, common, compiler, compiler-cli, core, forms
+... localize, platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1402.10
+@angular-devkit/build-angular   14.2.10
+@angular-devkit/core            14.2.10
+@angular-devkit/schematics      14.2.10
+@angular/cdk                    15.0.1
+@angular/cli                    14.2.10
+@angular/material               15.0.1
+@schematics/angular             14.2.10
+rxjs                            6.6.7
+typescript                      4.7.4
+ 29.11.2022 16:46
+7
+6
+7 759
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Я нашел ВРЕМЕННОЕ решение, у меня была такая же ошибка, и я зашел внутрь node_modules и прокомментировал строки ошибок.
+
+В моем случае это был один комментарий в node_modules/@angular/cdk/bidi/index.d.ts и еще пара в node_modules/@angular/cdk/scrolling/index.d.ts, хотя я не знаю, что вызвало эту ошибку, и я не знаю, вызовет ли комментирование этих строк проблемы в будущем, необходимо изучить это подробнее.
+
+ 05.12.2022 10:39
+ Ответ принят как подходящий
+Была такая же проблема. Используйте ngrx/component 14.3.2, если вы используете Angular 14. Или обновите напрямую до Angular 15.
+
+ 06.12.2022 23:09
+Я также столкнулся с точной проблемой, я просто сначала обновляю свой NodeJS (с 16 до 18 с официального сайта NodeJS), позже мне также нужно обновить ядро ​​angular cli/angular с версии 14 до 15. команда: -ng update @angular/cli @angular/core --allow-dirty --force Мне нужно поставить --allow-dirty --force, потому что я получаю эту ошибку: - Ошибка: Репозиторий не чист. Пожалуйста, зафиксируйте или спрячьте любые изменения перед обновлением. и мое приложение снова начинает работать ожидаемо.
+
+После всего, моя проблема была решена, и мое приложение снова начало работать ожидаемо.
+
+ 11.12.2022 11:28
+В моем случае это решилось применением этой команды:
+
+ng update @angular/cli @angular/core --allow-dirty --force
+Затем удалите символ «~» из стилей, если он есть:
+
+Заменить @import "~@coreui/coreui-pro/scss/coreui" с @import "@coreui/coreui-pro/scss/coreui"
+
+ 22.12.2022 09:58
+У меня была такая же ошибка после запуска, ng update @angular/core@14 @angular/cl1@14. Некоторые другие пакеты были обновлены до v15.04 в моем pacakge.json. Я предполагаю, что это все зависимости, которые я должен был связать с командой ng update, чтобы они все равномерно обновлялись до версии 14. Решение состояло в том, чтобы просто понизить версии всех пакетов, которые были в v15, до v14-lst.
+
+Я думаю, что из-за того, что мои @angular/compiler и @angular/compiler-cli были обновлены до v15, это вызвало ошибку компиляции при запуске ng serve
+
+Обновлять:
+
+Столкнулся с этим снова после настройки всех моих линтеров. Я не думаю, что вы хотите анализировать или проверять модули узла сборки, если вам это действительно не нужно. Наличие модулей узла проверки машинописного текста важно, особенно если вы не хотите, чтобы разные пакеты или разные копии одного и того же пакета имели конфликтующие объявления типов. Чтобы решить эту проблему, в параметрах компилятора в вашем tsconfig.json добавьте skipLibCheck: true
+
+tsconfig.json
+
+{
+    ...
+    complilerOptions: {
+        ...
+        skipLibCheck: true
+    }
+}
+Вот официальные документы на skipLibCheck
+
+ 28.12.2022 15:17
+Это проблема совместимости. Если вы установили какой-либо новый пакет, проверьте его Github и его зависимости.
+
+Я установил ng-bootstrap @ 14, и для него требовался angular версии 15, но мой проект — angular 14, поэтому мне пришлось понизить пакет до 13, чтобы решить эту проблему.
+
+ 31.12.2022 16:24
+Я также столкнулся с той же проблемой,
+
+**error ts2707: generic type 'ɵɵdirectivedeclaration' requires between 6 and 8 type arguments.**
+но не волнуйтесь, решить эту проблему довольно просто: -
+
+вам нужно просто обновить angular с версии 14 до 15.
+
+следующая команда
+
+команда: -
+
+ng update @angular/cli @angular/core --allow-dirty --force
+тогда ваше приложение будет работать так, как вы ожидаете!
+
+Удачи!
+
+
+Ошибка: ошибка TypeScript в /home/runner/work/avi/avi/node_modules/@types/react-router/index.d.ts(149,100): ожидается тип. ТС1110
+Вопросы
+REACTJS
+Ошибка: ошибка TypeScript в /home/runner/work/avi/avi/node_modules/@types/react-router/index.d.ts(149,100): ожидается тип. ТС1110
+Когда я создаю свой проект реагирования, я получаю такую ​​​​ошибку.
+
+export type ExtractRouteOptionalParam<T extends string, U = string | number | boolean> = T extends `${infer Param}?`      
+  ? { [k in Param]?: U }
+  : T extends `${infer Param}*`
+  ? { [k in Param]?: U }
+Как это решить?
+
+ 14.09.2022 17:44
+3
+13
+3 716
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Встретил вчерашний выпуск. И я использую машинописную версию версии 3.9.3. Я пробовал версию 3.9.10, не могу решить эту проблему.
+
+ 15.09.2022 07:39
+Я обновил версию машинописного текста до 4.1.6, и у меня это сработало. Я попробовал новейшую версию машинописного текста. Он тоже работает, но не поддерживает все функции, которые мне нужны.
+
+ 15.09.2022 09:42
+ Ответ принят как подходящий
+Я добавляю ответ для дальнейшего использования для других.
+
+Да, как и другие упомянутые машинописные тексты, проблема была.
+
+Я обновил его до последней версии (на данный момент 4.8.3). После обновления мне пришлось исправить проблему с типом в моем файле redux saga, и мне пришлось обновить react-scripts до 4.0.1, чтобы исправить Parsing error: Cannot read properties of undefined (reading 'map').
+
+ 15.09.2022 10:45
+Я добавил @types/react-router с версией 5.1.14 в качестве зависимости к моему файлу package.json и установил его, что решило проблему.
+
+ 27.09.2022 11:45
+Первый вариант:
+
+Как упомянул Рохан Джайрадж, лучше обновить typescript и react-scripts.
+
+Второй вариант:
+
+Если вы удалили свое приложение и у вас нет другого выбора, следуйте этому
+
+Удалите файлы блокировки и node_modules в вашем репозитории.
+
+пряжа.lock/package-lock.json
+
+node_modules
+
+Запустите приведенные ниже команды, чтобы установить и запустить приложение.
+
+установка npm --legacy-peer-deps
+сборка npm [для производства]
+запуск npm [для разработчиков]
+Это происходит из-за того, что пакеты зависимостей [react router в данном случае] используют @types/react как зависимость с версией *, указанной в их зависимостях, а не необязательную одноранговую зависимость.
+
+Эта проблема будет повторяться для всех приложений, реагирующих на машинопись, каждый раз с ошибкой нового типа.
+
+[ошибка может быть разной каждый раз, но это решение работает]
+
+ 29.09.2022 06:16
+Я обновил машинописный текст до 4.8.4, а @types/react-router до 5.3.0, он у меня не работает, может ли кто-нибудь сообщить мне решение.
+
+ 04.10.2022 14:56
+Привет, у меня такая же проблема, когда я пытаюсь обновить до последней версии машинописного текста, у меня возникают проблемы во всем моем приложении, так как код ломается.
+
+Как сейчас написано, ваш ответ неясен. Пожалуйста, отредактируйте , чтобы добавить дополнительные сведения, которые помогут другим понять, как это отвечает на заданный вопрос. Вы можете найти больше информации о том, как писать хорошие ответы в справочном центре.
+
+— 
+Community
+ 11.10.2022 10:40
+
+
+
+Create-реагировать-приложение Typescript 3.5, псевдоним пути
+Вопросы
+TYPESCRIPT
+Create-реагировать-приложение Typescript 3.5, псевдоним пути
+Я пытаюсь настроить псевдоним пути в своем проекте, добавив эти значения в tsconfig.json:
+
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@store/*": ["store/*"]
+    },
+И если я создаю импорт, меня не беспокоят ни IntelliJ, ни VSCode:
+
+import { AppState } from '@store/index';
+Но когда я компилирую приложение, я получаю это предупреждение:
+
+The following changes are being made to your tsconfig.json file:
+  - compilerOptions.paths must not be set (aliased imports are not supported)
+И он бомбит, говоря, что не может найти ссылку:
+
+TypeScript error in C:/xyz.tsx(2,26):
+Cannot find module '/store'.  TS2307
+Есть ли обходной путь или он не поддерживается create-react-app --typescript?
+
+ 17.07.2019 08:49
+41
+2
+36 552
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Редактировать - 20/3/20 - В ответе выше есть решение с плагином.
+
+Была такая же проблема. На момент публикации он в настоящее время не поддерживается как есть.
+
+Эта функция все еще находится в разработке с командой CRA: https://github.com/facebook/create-react-app/pull/6116
+
+При редактировании tsconfig CRA удаляет изменения: https://github.com/facebook/create-react-app/issues/6269
+
+В этой ветке есть несколько хаков: https://github.com/facebook/create-react-app/issues/5118 для работы псевдонимов, однако требуется настройка настройки CRA, которая не подходит для моего варианта использования (используя CRA как есть).
+
+ 25.10.2019 13:53
+ Ответ принят как подходящий
+Псевдоним решения для craco или переподключенного создать-реагировать-приложение — псевдоним приложения-реакции для таких систем, как: крако, Реакция-приложение-перемонтировано, настроить-кра
+
+В соответствии с документами упомянутых систем замените react-scripts на package.json и настройте следующее:
+
+Реакция-приложение-перемонтировано
+// config-overrides.js
+const {aliasWebpack, aliasJest} = require('react-app-alias')
+
+const options = {} // default is empty for most cases
+
+module.exports = aliasWebpack(options)
+module.exports.jest = aliasJest(options)
+крако
+// craco.config.js
+const {CracoAliasPlugin} = require('react-app-alias')
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoAliasPlugin,
+      options: {}
+    }
+  ]
+}
+все
+Настройте псевдонимы в json следующим образом:
+
+// tsconfig.paths.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "example/*": ["example/src/*"],
+      "@library/*": ["library/src/*"]
+    }
+  }
+}
+И добавьте этот файл в раздел extends основного файла конфигурации typescript:
+
+// tsconfig.json
+{
+  "extends": "./tsconfig.paths.json",
+  // ...
+}
+ 09.03.2020 10:56
+@оклас. Я решил использовать следующее в config-overrides.js, которое совпадает с указанным выше. Но большое спасибо за то, что поделились этим ответом:
+
+const { alias, configPaths } = require("react-app-rewire-alias");
+
+module.exports = function override(config) {
+  alias({
+    ...configPaths("base-tsconfig.json"),
+  })(config);
+  return config;
+};
+ 13.05.2020 06:33
+В моем случае я решил эту проблему, используя крако и craco-псевдоним.
+
+Установите крако и craco-псевдонимnpm install @craco/craco --save и npm i -D craco-alias
+
+Создайте tsconfig.paths.json в корневом каталоге
+
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+           "@components/*" : ["./components/*"]
+         }
+    }
+}
+Продлить tsconfig.paths.json в tsconfig.json
+
+{
+    "extends": "./tsconfig.paths.json",
+    //default configs...
+} 
+Создайте craco.config.js в корневом каталоге
+
+  const CracoAlias = require("craco-alias");
+
+  module.exports = {
+     plugins: [
+       {
+          plugin: CracoAlias,
+          options: {
+             source: "tsconfig",
+             // baseUrl SHOULD be specified
+             // plugin does not take it from tsconfig
+             baseUrl: "./src",
+             /* tsConfigPath should point to the file where "baseUrl" and "paths" 
+             are specified*/
+             tsConfigPath: "./tsconfig.paths.json"
+          }
+       }
+    ]
+  };
+в package.json поменять местами "start": "react-scripts start" с "start": "craco start"
+
+ 12.08.2020 23:46
+Также решили решение, используя крако с ts-loader - описано здесь: https://stackoverflow.com/a/63545611/10813908
+
+Указанная настройка по существу позволяет расширить CRA, переопределив встроенную конфигурацию веб-пакета через craco, а также позволяет коду CRA напрямую ссылаться на файлы машинописного текста во внешних/общих пакетах в вашем монорепозитории.
+
+ 23.08.2020 12:05
+Псевдонимы пути больше не работают в tsconfig.json
+вы можете сделать это вместо, чтобы напрямую импортировать файлы относительно каталога src
+
+перейдите в свой tsconfig.json файл, добавьте базовый URL, чтобы быть "."
+
+"compilerOptions": {
+    "baseUrl":".",
+    ...
+то вы можете напрямую импортировать материалы из каталога src
+
+import Myfile from "src/myfile.js"
+ 14.08.2021 00:35
+Это старый пост, но я нашел чрезвычайно простое решение, использующее только функции package.json.
+
+"dependencies": {
+  "@yourAlias": "file:./path/to/your/folder"
+}
+Он работает как в проектах node.js, так и в проектах webpack.
+
+По крайней мере вроде работает :)
+
+— 
+Qwertiy
+ 27.10.2021 05:03
+Не могли бы вы подробнее рассказать, как вы это сделали? Кажется, это не работает для меня!
+
+— 
+Thijmen
+ 11.11.2021 09:12
+@Thijmen из тестов, которые я провел, это отлично работает с node.js, использующим требование, и веб-пакетом, использующим импорт. Это не работает с node.js с использованием импорта. Это ваш случай?
+
+— 
+Poyoman
+ 11.11.2021 12:59
+В конце концов мне удалось заставить его работать, как показано в комментарии @Ивана Яковлева!
+
+— 
+Thijmen
+ 11.11.2021 16:01
+
+
+
+Не удается протестировать облачные функции локально, эмулятор не запускается с ошибкой TypeError: _onRequestWithOpts не является функцией
+Вопросы
+TYPESCRIPT
+Не удается протестировать облачные функции локально, эмулятор не запускается с ошибкой TypeError: _onRequestWithOpts не является функцией
+Когда я пытаюсь запустить оболочку для локального тестирования из каталога функций в моем проекте, эмулятор запускается, но мои функции не могут быть загружены.
+
+Когда я запускаю «npm run build», я не получаю ошибок. Что происходит?
+
+Я попытался удалить каталог функций и создать его снова с помощью cli firebase-tools, но все равно получаю ту же ошибку. Я также экспортировал учетные данные администратора.
+
+Я использую метод по умолчанию, созданный в файле index.ts, сгенерированном из cli firebase-tools.
+
+import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
+
+admin.initializeApp();
+// // Start writing Firebase Functions
+// // https://firebase.google.com/docs/functions/typescript
+//
+export const helloWorld = functions.https.onRequest((request, 
+response) => {
+ response.send("Hello from Firebase!");
+});
+Я ожидаю, что эмулятор будет запускать экземпляры функции для тестирования, но вместо этого я вижу эту ошибку:
+
+✔  functions: Emulator started at http://localhost:5001
+⚠  TypeError: _onRequestWithOpts is not a function
+at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:278:24)
+at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:283:34)
+at Object.<anonymous> (/Volumes/G-DRIVE mobile USB-C/CLEAN UP/Documents/code_bank/typescript/theincrowdapp/functions/lib/index.js:9:38)
+at Module._compile (internal/modules/cjs/loader.js:776:30)
+at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+at Module.load (internal/modules/cjs/loader.js:653:32)
+at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+at Module.require (internal/modules/cjs/loader.js:690:17)
+at require (internal/modules/cjs/helpers.js:25:18)
+⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+ 09.07.2019 09:38
+19
+3
+7 855
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Понизить firebasefunction до версии 3.0.0
+
+ 09.07.2019 10:52
+Я нашел ошибку в:
+
+node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js
+
+строка 276:
+
+const _onRequestWithOpts = httpsProvider._onRequestWithOpts;
+должно быть:
+
+const _onRequestWithOpts = httpsProvider._onRequestWithOptions;
+ 09.07.2019 11:16
+ Ответ принят как подходящий
+Если вы столкнулись с этой ошибкой, запустите npm install firebase-functions@3.0.2 в своем каталоге functions.
+
+Это будет исправлено в ближайшее время, и вы можете следовать здесь: https://github.com/firebase/firebase-tools/issues/1480
+
+ 09.07.2019 17:52
+Удалите node_modules, затем запустите установка нпм, npm установить firebase-admin и npm установить firebase-функции@3.0.2.
+
+ 11.07.2019 06:33
+Я столкнулся с этой ошибкой год назад и снова столкнулся с ней вчера, несмотря на то, что я обновил firebase-funcitons до последней версии.
+
+Мне также пришлось обновить firebase-tools с помощью npm i -g firebase-tools@latest
+
+И последнее, что вам нужно сделать, это закрыть командную строку/открыть новую вкладку, чтобы использовалась последняя версия.
+
+Подводить итоги:
+
+npm i firebase-functions@latest
+
+npm i -g firebase-tools@latest
+
+закрыть и открыть командную строку
+
+ 12.06.2020 10:44
+У меня была такая же проблема, но она работала с последней версией пакетов firebase-*, выполнив следующие действия.
+
+Firebase -> настройки -> служебные учетные записи «Создать новый закрытый ключ» и сохраните файл в каталоге функций. Попробуйте назвать его чем-то вроде «service-account.json».
+
+В вашей командной строке (например, Mac) запустите «export GOOGLE_APPLICATION_CREDENTIALS=<service_account_file_path>»
+
+Измените tsconfig.json "strict": false, "noImplicitAny": false,"
+
+Вуаля!
+
+ 15.11.2020 07:04
+Если вы недавно обновили GOOGLE_APPLICATION_CREDENTIALS и не перезапустили iTerm or Terminal, выйдите и перезапустите его. я так делал, все работает отлично.
+
+ваш терминал должен быть перезагружен после обновления GOOGLE_APPLICATION_CREDENTIALS просто .. это может кому-то помочь.
+
+
+Как получить FormControlName поля, значение которого изменилось в реактивных формах Angular
+Вопросы
+JAVASCRIPT
+Как получить FormControlName поля, значение которого изменилось в реактивных формах Angular
+У меня есть реактивная форма с более чем 10 элементами управления формой и использование подписки на valueChanges, наблюдаемое для обнаружения изменений. Он отлично работает, но вывод всегда представляет собой весь объект значения формы (имеется в виду все элементы управления формой и их значения). Есть ли способ просто получить имя элемента управления формы для измененного поля?
+
+this.form = this.fb.group({
+    field1: ['', Validators.required],
+    field2: ['', Validators.required],
+    field3: ['', Validators.required],
+    field4: ['', Validators.required],
+    field5: ['', Validators.required],
+    field6: ['', Validators.required],
+    field7: ['', Validators.required],
+    field8: ['', Validators.required],
+    field9: ['', Validators.required],
+    field10: ['', Validators.required],
+    field11: ['', Validators.required],
+    field12: ['', Validators.required],
+    field13: [{ value: '', disabled: true }, Validators.required]
+});
+
+this.form.valueChanges.subscribe(
+    result => this.calculateParams(result)
+);
+
+calculateParams(result) {
+    console.info(result); // giving the entire form.value object
+}
+ 24.06.2019 04:35
+3
+0
+10 786
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Вы можете изолировать элемент управления формой от группы форм, используя метод get и доступ к методу valueChanges на нем.
+
+this.form.get('formcontrolName').valueChanges().
+
+Примечание: form.get возвращает вам AbstractControl, в котором также есть метод valueChanges.
+
+ 24.06.2019 05:03
+Не полностью тестировал код, но идея состоит в том, чтобы соединить элементы управления и их ключ, а затем одновременно прослушивать valueChanges на каждом элементе управления и возвращать ключ объекта вместо значения (и, конечно, вы можете сопоставить как значение, так и ключ с выводом)
+
+const fields = {
+    field1: ['', Validators.required],
+    field2: ['', Validators.required],
+    field3: ['', Validators.required],
+    field4: ['', Validators.required],
+    field5: ['', Validators.required],
+    field6: ['', Validators.required],
+}
+
+zip(
+ from(Object.values(fb.group(fields).controls)),
+ from(Object.keys(fields))
+).pipe(mergeMap([control,key])=>control.valueChanges.pipe(mapTo(key)))
+ 24.06.2019 07:32
+ Ответ принят как подходящий
+Это обходной путь, но если вы сохраните старые значения, вы можете сделать что-то вроде
+
+this.old = {...this.myForm.value}
+this.myForm.valueChanges.subscribe(res=>{
+  const key=Object.keys(res).find(k=>res[k]!=this.old[k])
+  this.old = {...this.myForm.value}
+})
+ 24.06.2019 09:10
+Вы можете подписаться на каждое изменение отдельно.
+
+for (const controlProperty in this.myForm.controls) {
+    if (this.myForm.controls.hasOwnProperty(controlProperty)) {
+      this.myForm.controls[controlProperty].valueChanges.pipe(untilDestroyed(this)).subscribe(result => {
+        console.info(controlProperty + " is now ", result);
+      });
+    }
+}
+Это просто показалось мне более угловатым.
+
+ 13.12.2019 22:22
+Путь rxjs Элисео отвечать
+
+this.form.valueChanges.pipe(
+    startWith(this.form.value),
+    pairwise(),
+    map(([oldValues, newValues]) => {
+        return Object.keys(newValues).find(k => newValues[k] != oldValues[k]);
+    }),
+).subscribe(key => {
+    console.info( key )
+});
+ 14.11.2020 04:29
+Используйте valueChanges для каждого элемента управления после динамического добавления элемента управления в FormGroup.
+
+const ct = {key: 'myControl'};    
+this.myForm.addControl(ct.key, new FormControl('', Validators.required))
+this.myForm.controls[ct.key].valueChanges
+.subscribe(d => {
+    // here ct will be available as closure , so that we can access every form control here and do operation accordingly
+    console.info(d, ct.key);
+})
+Здесь объект ct будет доступен внутри подписки в качестве закрытия.
+
+ 30.05.2021 09:41
+Метод от @alex-walker (https://stackoverflow.com/a/64830665/134120) кажется лучшим, но он хорошо работает только на плоских формах с простыми парами ключ-значение. Если у вас есть вложенные формы с FormArrays из FormGroups, свойство key в этом методе будет возвращать только ключ верхнего уровня формы, что не очень полезно, если вы хотите, например. чтобы указать пользователю конкретное поле ввода, вызвавшее событие.
+
+Поэтому я объединил этот метод с методом глубокого сравнения объектов, описанным здесь: https://stackoverflow.com/a/50278133/134120
+
+Чтобы получить что-то вроде этого:
+
+this.form.valueChanges
+    .pipe(
+        startWith(this.form.value),
+        pairwise(),
+        map(([oldValues, newValues]) => {
+            return bdiff(oldValues, newValues);
+        })
+    )
+    .subscribe(keys => {
+        console.info(keys);
+    });
+
+bdiff(a: Record<string, any>, b: Record<string, any>): string[] {
+    return _reduce(
+        a,
+        (res, val, key) =>
+            res.concat(
+                (_isPlainObject(val) || Array.isArray(val)) && b
+                    ? this.bdiff(val, b[key]).map(x => key + (key.trim ? '' : ']') + (x.search(/^\d/) ? '.' : '[') + x)
+                    : !b || val !== b[key]
+                    ? [key + (key.trim ? '' : ']')]
+                    : []
+            ),
+        []
+    );
+}
+
+Который вернет массив вложенных ключей, таких как keys = ['fieldgroup2.fieldArray[3].myNestedField'], к которым вы должны легко получить доступ и установить их как недействительные с помощью form.get(keys[0]).valid.
+
+
+Почему ошибка --isolatedModules исправляется любым импортом?
+Вопросы
+TYPESCRIPT
+Почему ошибка --isolatedModules исправляется любым импортом?
+В проекте машинописного текста create-реагировать-приложение я попытался написать это просто для того, чтобы быстро протестировать некоторые вещи:
+
+// experiment.test.ts
+it('experiment', () => {
+  console.info('test');
+});
+Но это дает мне следующую ошибку с красной волнистой линией под it:
+
+All files must be modules when the '--isolatedModules' flag is provided.
+
+Однако, если я изменяю файл на следующий, то все, видимо, хорошо (кроме неиспользованного импорта, конечно):
+
+// experiment.test.ts
+import { Component} from 'react'; // literally anything, don't even have to use it
+
+it('test', () => {
+  console.info('test');
+});
+Почему? Что здесь происходит? Что на самом деле означает/делает --isolatedModules?
+
+ 13.06.2019 11:15
+212
+3
+164 039
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+ Ответ принят как подходящий
+Typescript обрабатывает файлы без импорта/экспорта как устаревшие файлы сценариев. Поскольку такие файлы не являются модулями, и любые их определения объединяются в глобальном пространстве имен. isolatedModules запрещает такие файлы.
+
+Добавление любого импорта или экспорта в файл делает его модулем, и ошибка исчезает.
+
+Также export {} это удобный способ, чтобы сделать файл модулем, ничего не импортируя.
+
+ 13.06.2019 11:23
+Правильный способ — сказать TypeScript, что вы хотите. Если вы не хотите isolatedModules, создайте tsconfig.json внутри своего каталога test и добавьте:
+
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false
+  },
+}
+Добавление "isolatedModules": true в конфиг, а затем обман чекера TypeScript путем добавления пустого export {} для меня пахнет плохим кодом.
+
+ 02.07.2020 12:29
+Попробуем проверить изолированные модули. Когда я проверил Google, там нет прямого контекста.
+
+В основном это означает, что вы позволяете Typescript компилировать модули изолированно.
+
+Но это исходит от Typescript и как-то связано с тем, что Typescript предпочитает модули пространствам имен.
+
+Modules also have a dependency on a module loader (such as CommonJs/Require.js) or a runtime which supports ES Modules. Modules provide for better code reuse, stronger isolation and better tooling support for bundling.
+
+Источник 1
+
+Используя проект машинописного текста create-реагировать-приложение, у вас должны быть установлены typescript и ts-jest (или приложение create-react-app должно обрабатывать зависимости в зависимости от того, удалили вы приложение или нет).
+
+Также у ts-jest есть некоторая информация об этом:
+
+By default ts-jest uses TypeScript compiler in the context of a project (yours), with full type-checking and features. But it can also be used to compile each file separately, what TypeScript calls an ‘isolated module’. That’s what the isolatedModules option (which defaults to false) does.
+
+Источник 2
+
+Как только вы используете команду export, вы создаете модуль из того, что экспортируется.
+
+Если вы используете ts-jest, вы можете добавить эти настройки, не затрагивая другие ваши модули, из которых будет состоять приложение create-react-app.
+
+"ts-jest": {
+  "isolatedModules": false
+}
+И проверьте страницу ts-jest (второй источник), чтобы узнать о плюсах и минусах.
+
+ 05.10.2020 13:52
+Все еще возникает ошибка, несмотря на то, что вы экспортируете данные из этого «файла ошибок»?
+
+Check if you don't export same name that you already export in another file (конфликт)
+After your fix try to stop and start your npm/yarn runner (Я обнаружил, что он не может восстановиться даже после жесткой перезагрузки страницы, особенно когда у вас есть другая ошибка где-то еще)
+ 08.01.2021 13:45
+как насчет просто сделать .eslintignore добавьте папку с файлами, которую вам нужно игнорировать из eslint, чтобы не было ошибок в этой --isolatedModules ошибке, исправленной любым импортом и вы можете проверить свою логику их
+
+ 29.03.2021 18:46
+Решение проблемы, см. статьюhttps://blog.csdn.net/qingfeng812/article/details/120510673
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
+ 27.09.2021 10:10
+Это потому, что вы еще не импортировали тестируемую функцию. Как только вы это сделаете, ошибка исчезнет. Принятый ответ объясняет, почему.
+
+
+Компилятор Angular требует TypeScript >= 3.4.0 и <3.5.0, но вместо этого был найден 3.5.3
+Вопросы
+ANGULAR
+Компилятор Angular требует TypeScript >= 3.4.0 и <3.5.0, но вместо этого был найден 3.5.3
+Я получаю следующую ошибку, когда я запускаю сборку npm:
+
+The Angular Compiler requires TypeScript >=3.4.0 and <3.5.0 but 3.5.3 was found instead.
+
+Я пробовал следующие вещи отдельно:
+
+npm install typescript@">=3.4.0 <3.5.0". Then deleted node_modules and package.json. Run npm install
+
+npm update --force. Then deleted node_modules and package.json. Run npm install
+
+Я все еще получаю сообщение об ошибке:
+
+Мой package.json содержит следующие зависимости:
+
+  "dependencies": {
+    "@angular/animations": "8.1.0",
+    "@angular/cdk": "^8.0.2",
+    "@angular/cli": "^8.1.0",
+    "@angular/common": "8.1.0",
+    "@angular/compiler": "8.1.0",
+    "@angular/core": "8.1.0",
+    "@angular/forms": "8.1.0",
+    "@angular/http": "7.2.15",
+    "@angular/material": "^8.0.2",
+    "@angular/platform-browser": "8.1.0",
+    "@angular/platform-browser-dynamic": "8.1.0",
+    "@angular/router": "8.1.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "angular-user-idle": "^2.1.2",
+    "angular2-cookie": "^1.2.6",
+    "core-js": "^2.6.7",
+    "rxjs": "6.5.2",
+    "rxjs-tslint": "^0.1.5",
+    "stream": "0.0.2",
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.801.0",
+    "@angular/compiler-cli": "8.1.0",
+    "@angular/language-service": "8.1.0",
+    "@types/jasmine": "~3.3.13",
+    "@types/jasminewd2": "~2.0.6",
+    "@types/node": "~12.6.1",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "protractor": "~5.4.2",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "^3.4.5"
+  }
+ng --version дает следующий вывод:
+
+Angular CLI: 8.1.2
+Node: 10.16.0
+OS: win32 x64
+Angular: 8.1.0
+... animations, common, compiler, compiler-cli, core, forms
+... language-service, platform-browser, platform-browser-dynamic
+... router
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.801.2
+@angular-devkit/build-angular     0.801.2
+@angular-devkit/build-optimizer   0.801.2
+@angular-devkit/build-webpack     0.801.2
+@angular-devkit/core              8.1.2
+@angular-devkit/schematics        8.1.2
+@angular/cdk                      8.1.1
+@angular/cli                      8.1.2
+@angular/http                     7.2.15
+@angular/material                 8.1.1
+@ngtools/webpack                  8.1.2
+@schematics/angular               8.1.2
+@schematics/update                0.801.2
+rxjs                              6.5.2
+typescript                        3.5.3
+webpack                           4.35.2
+Что здесь может быть не так?
+
+ 26.07.2019 10:31
+161
+1
+178 164
+17
+Данный вопрос помечен как решенный
+ Ответы 17
+ Ответ принят как подходящий
+Применимо для углового 12
+Для проектов, которые работают в последних версиях Angular 12, вы должны использовать TypeScript от v4.2.x до 4.3.x.
+
+npm i -D typescript@4.3.5
+Применимо для углового 11
+Для проектов, работающих в последних версиях Angular 11 (11.2.x), он поддерживает TypeScript до версии 4.1.5.
+
+npm i -D typescript@4.1.5
+Применимо для Angular 10 (по состоянию на июнь 2020 г.)
+Для тех, кто использует Angular 10, обратите внимание, что должен быть установлен TypeScript 3.9, так как у сопровождающих есть удалена поддержка TypeScript 3.8. Безопаснее всего будет установить последнюю версию TypeScript.
+
+npm i -D typescript@3.9.5
+Применимо для Angular 9 (по состоянию на май 2020 г.)
+Для проектов, работающих на последних версиях Angular 9 (v9.1.x), поддерживается TypeScript до версии 3.8.3. Если вы используете что-то более новое (например, TypeScript v3.9.0), вам следует понизить его версию и установить поддерживаемые версии:
+
+npm i -D typescript@3.8.3
+Для проектов, работающих в более ранних версиях Angular 9 (v9.0.x), поддерживаются версии TypeScript от версии 3.6.5 до версии 3.7.5 (включительно). Установка любых других неподдерживаемых версий (например, 3.8.3) приведет к ошибке, подобной этой:
+
+ERROR in The Angular Compiler requires TypeScript >=3.6.4 and <3.8.0 but 3.8.3 was found instead
+Чтобы исправить это, вы должны установить поддерживаемые версии, указанные в сообщении об ошибке. Я бы порекомендовал вам установить Typescript 3.7.x, так как это разблокирует такие полезные функции, как опциональная цепочка и нулевое объединение.
+
+npm i -D typescript@3.7.5
+В качестве альтернативы вы можете просто обновить Angular до последней минорной версии (v9.1.x), так как она не должна содержать критических изменений.
+
+Применимо для Angular 8 (исходный ответ)
+Похоже, у вас установлена ​​последняя версия (v3.5.3) TypeScript. Вместо этого вы должны установить TypeScript v3.4.5, версию, поддерживаемую Angular 8.
+
+Вы можете попробовать эту команду, чтобы установить конкретную версию TypeScript, а не последнюю версию.
+
+npm i -D typescript@3.4.5
+Кроме того, вы можете подумать об изменении знака вставки ^ для версии TypeScript в вашем package.json:
+
+Его полное удаление означает, что npm не сможет установить/использовать самую последнюю дополнительную версию (3.5.3).
+
+"машинопись": "3.4.5"
+
+Изменение его на «~» сообщит npm, что любой выпуск патча приемлем.
+
+"typescript": "~3.4.5" // будет использоваться последняя версия, соответствующая 3.4.X
+
+Для получения дополнительной информации об использовании версий пакетов npm: https://docs.npmjs.com/about-semantic-версия
+
+Применимо к тем, кто работает со старыми версиями Angular, такими как Angular 2–7.
+|-----------------|--------------------|
+| Angular version | TypeScript version |
+|-----------------|--------------------|
+|       6.1.x     |       3.6.x        |
+|-----------------|--------------------|
+|       7.2.x     |       2.9.x        |
+|-----------------|--------------------|                                 
+Аналогичным образом, если мы используем какие-либо другие версии Angular, вы можете установить соответствующие версии TypeScript.
+
+npm i -D typescript@3.6.4
+Источник — см. полный список поддерживаемых версий TypeScript для каждой версии Angular.
+
+Дополнительная полезная информация
+На самом деле существует способ установить версии TypeScript, которые «не поддерживаются» версией Angular, установленной в вашем проекте, как указано в фелипесильва. Одним из преимуществ этого будет то, что вы сможете установить последние версии TypeScript (например, TypeScript 4.1.2 или любую из бета-версий) в свой проект.
+
+На своем tsconfig.json вы можете просто установить disableTypeScriptVersionCheck как true.
+
+{
+  // ...
+  "angularCompilerOptions": {
+    // ...
+    "disableTypeScriptVersionCheck": true
+  }
+}
+Однако обратите внимание, что это не рекомендуется официальная документация по Angular:
+
+Not recommended, as unsupported versions of TypeScript might have undefined behavior.
+
+ 26.07.2019 10:34
+Пожалуйста, удалите typescript с помощью следующей команды:
+
+npm uninstall typescript
+а затем установите конкретную версию машинописного текста:
+
+npm i --save-dev typescript@3.4.5
+ 26.07.2019 10:48
+Эта проблема в основном зависит от версии @angular/cli. поэтому машинопись зависит от угловой версии
+
+при обновлении angular проверьте этот сайт (devDependency)
+
+https://david-dm.org/angular/angular-cli
+
+и делай
+
+npm i --save-dev typescript@3.4.5
+
+3.4.5 требуется версия
+
+ 26.07.2019 13:22
+Запустите это:
+
+npm i --save-dev typescript@~3.4.5
+ 29.07.2019 16:29
+Ваша ошибка - "^" "typescript": "^3.4.0" в вашем package.json
+
+решение "typescript": "~3.4.0"
+
+ 17.11.2019 04:54
+Запустите этот скрипт, чтобы найти точную версию
+
+npm install typescript@">=3.4.0 and <3.5.0" --save-dev
+ 01.01.2020 09:55
+Хорошие новости!
+
+Вы можете использовать TypeScript 3.5, если обновитесь до Angular 8.2+. Версия 8.1 еще не поддерживала его.
+
+Доказательство: https://github.com/angular/angular-cli/issues/15134#issuecomment-516908416
+
+ 05.02.2020 19:12
+Вам не нужно удалять и снова устанавливать машинописный текст, чтобы вы могли установить конкретную версию машинописного текста, как рекомендуется в ошибке.
+
+npm install typescript@ version
+или ты можешь бежать
+
+npm install typescript@ version --save-dev
+чтобы сохранить его в пакет json
+
+ 19.02.2020 13:40
+У меня тоже была эта проблема в моем Angular 9, но с другими номерами версий.
+
+ERROR in The Angular Compiler requires TypeScript >=3.6.4 and <3.8.0 but 3.8.2 was found instead.
+
+
+
+Что я сделал, так это
+
+Пошел в Критические изменения в Angular 9
+Искал версию typescript и обнаружил, что она поддерживает только 3.7
+Редактировать мою typescript версию в package.json как "typescript": "~3.7.0"
+побежал npm i
+~ здесь важен, так как он гарантирует, что он будет обновляться только до следующей версии исправления (<3.8.0), а не до второстепенных версий, если вы используете ^, он также будет обновляться до второстепенных версий (например, 4.0.0).
+
+ 21.02.2020 16:56
+У вас есть два варианта:
+
+1-автоматически:
+это установит правильную версию
+
+npm install typescript@">=3.4.0 and <3.5.0" --save-dev
+2-вручную:
+перейдите к package.json и измените версию typescript. Если вы хотите обновить свой угловой проект до
+
+Угловой 13 (npm install typescript@"~4.4.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~4.4.0"
+}
+Угловой 12 (npm install typescript@"~4.2.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~4.2.0"
+}
+Угловой 11 (npm install typescript@"~4.0.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~4.0.0"
+}
+Угловой 10 (npm install typescript@"~3.8.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~3.8.0"
+}
+Угловой 9 (npm install typescript@"~3.7.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~3.7.0"
+}
+Угловой 8 (npm install typescript@"~3.4.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~3.4.0"
+}
+Угловой 7 (npm install typescript@"~3.1.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~3.1.0"
+}
+Угловой 6 (npm install typescript@"~2.9.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~2.9.0"
+}
+Угловой 4 (npm install typescript@"~2.2.0" --save-dev)
+
+"devDependencies": {
+  ...
+  "typescript": "~2.2.0"
+}
+Затем запустите:
+
+npm install 
+ 27.05.2020 13:24
+используйте эту команду для меня. Спасибо.
+
+npm i typescript@">=3.6.4 <3.8.0"
+ 22.06.2020 10:54
+Вместо "typescript": "^3.4.5" под devDependencies в вашем package.json файле введите "typescript": "~3.4.5" и сохраните файл, затем снова запустите npm install. Это сработало для меня.
+
+ 28.10.2020 06:53
+Использование Angular 11
+
+npm i -D typescript@4.0.5
+ 08.01.2021 20:18
+Если вы хотите обновить свой угловой проект до Angular 11
+
+npm install typescript@">=4.0.0 and <4.2.0" --save-dev
+В package.json:
+
+"devDependencies": {
+      ...
+      "typescript": "^4.1.5"
+ }
+ 22.03.2021 07:52
+В моем случае я получил эту ошибку при переходе с Angular 10 на Angular 11.
+
+An unhandled exception occurred: The Angular Compiler requires TypeScript >=4.0.0 and <4.2.0 but 4. 2.3 was found instead.
+Чтобы решить эту проблему, я использовал этот код в Visual Studio, где существует мой проект Angular:
+
+npm install typescript@'>==4.0.0 <4.2.0'
+ 07.04.2021 14:06
+Когда у меня была аналогичная ошибка, я запускаю:
+
+yarn clean cache
+Если вы используете npm, вы можете попробовать запустить:
+
+npm clean cache
+Я не уверен, что это 100% решение, но я надеюсь, что это может помочь кому-то.
+
+ 14.04.2021 16:35
+просто зайдите в файл tsconfig.js в конце и добавьте disableTypeScriptVersionCheck в свойство блока angularCompilerOptions следующим образом:
+
+"angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true, <-- this prop
+  }
+}
+Перейдите по этой ссылке для angularCompilerOptions: https://angular.io/guide/angular-compiler-options#disabletypescriptversioncheck
+
+
+TypeScript и React - детский тип?
+Вопросы
+REACTJS
+TypeScript и React - детский тип?
+У меня есть очень простой функциональный компонент:
+
+import * as React from 'react';
+
+export interface AuxProps  { 
+    children: React.ReactNode
+ }
+
+
+const aux = (props: AuxProps) => props.children;
+
+export default aux;
+И еще один компонент:
+
+import * as React from "react";
+
+export interface LayoutProps  { 
+   children: React.ReactNode
+}
+
+const layout = (props: LayoutProps) => (
+    <Aux>
+        <div>Toolbar, SideDrawer, Backdrop</div>
+        <main>
+            {props.children}
+        </main>
+    <Aux/>
+);
+
+export default layout;
+Я получаю следующую ошибку:
+
+[ts] JSX element type 'ReactNode' is not a constructor function for JSX elements. Type 'undefined' is not assignable to type 'ElementClass'. [2605]
+
+Как мне это правильно набрать?
+
+ 09.12.2018 03:38
+417
+1
+277 252
+18
+ Ответы 18
+Компоненты React должны иметь один узел-оболочку или возвращать массив узлов.
+
+Компонент <Aux>...</Aux> имеет два узла: div и main.
+
+Попробуйте обернуть своих детей компонентом div в Aux.
+
+import * as React from 'react';
+
+export interface AuxProps  { 
+  children: React.ReactNode
+}
+
+const aux = (props: AuxProps) => (<div>{props.children}</div>);
+
+export default aux;
+ 09.12.2018 03:50
+Чтобы использовать <Aux> в вашем JSX, это должна быть функция, возвращающая ReactElement<any> | null. Это определение функциональная составляющая.
+
+Однако в настоящее время он определен как функция, возвращающая React.ReactNode, который является гораздо более широким типом. Как говорят типы React:
+
+type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
+Убедитесь, что нежелательные типы нейтрализованы, заключив возвращаемое значение в React Fragment (<></>):
+
+const aux: React.FC<AuxProps> = props =>
+  <>{props.children}</>;
+ 09.12.2018 04:43
+Вот что сработало для меня:
+
+interface Props {
+  children: JSX.Element[] | JSX.Element
+}
+Редактировать Я бы порекомендовал использовать вместо этого children: React.ReactNode.
+
+ 04.01.2019 19:36
+С сайта TypeScript: https://github.com/Microsoft/TypeScript/issues/6471
+
+The recommended practice is to write the props type as {children?: any}
+
+У меня это сработало. Дочерним узлом может быть много разных вещей, поэтому явная типизация может пропустить случаи.
+
+Здесь более подробно обсуждается следующая проблема: https://github.com/Microsoft/TypeScript/issues/13618, но любой подход по-прежнему работает.
+
+ 26.04.2019 01:11
+Просто children: React.ReactNode.
+
+ 29.07.2019 13:57
+вы можете объявить свой компонент следующим образом:
+
+const MyComponent: React.FunctionComponent = (props) => {
+    return props.children;
+}
+ 13.08.2019 09:02
+Общее способ найти любой тип на собственном примере. Прелесть машинописного текста в том, что у вас есть доступ к типам все, если у вас есть правильные файлы @types/.
+
+Чтобы ответить на этот вопрос, я просто подумал об использовании компонента React, который имеет опору children. Первое, что пришло в голову? Как насчет <div />?
+
+Все, что вам нужно сделать, это открыть vscode и создать новый файл .tsx в проекте реакции с @types/react.
+
+import React from 'react';
+
+export default () => (
+  <div children = {'test'} />
+);
+
+При наведении указателя мыши на опору children отображается тип. А что вы знаете - его тип - ReactNode (в ReactNode[] нет необходимости).
+
+
+
+Затем, если вы щелкните определение типа, вы сразу перейдете к определению children, полученному из интерфейса DOMAttributes.
+
+// node_modules/@types/react/index.d.ts
+interface DOMAttributes<T> {
+  children?: ReactNode;
+  ...
+}
+Note: This process should be used to find any unknown type! All of them are there just waiting for you to find them :)
+
+ 05.10.2019 19:55
+В качестве типа, содержащего дочерние элементы, я использую:
+
+type ChildrenContainer = Pick<JSX.IntrinsicElements["div"], "children">
+Этот тип дочернего контейнера является достаточно общим, чтобы поддерживать все различные случаи, а также согласован с API ReactJS.
+
+Итак, для вашего примера это будет примерно так:
+
+const layout = ({ children }: ChildrenContainer) => (
+    <Aux>
+        <div>Toolbar, SideDrawer, Backdrop</div>
+        <main>
+            {children}
+        </main>
+    <Aux/>
+)
+ 04.02.2020 12:46
+Тип возвращаемого значения функционального компонента ограничен JSXElement | null в TypeScript. Это текущее ограничение типа, возвращаемые типы чистого React позволяет больше.
+
+Минимальный демонстрационный фрагмент
+
+Вы можете использовать утверждение типа или фрагменты в качестве обходного пути:
+
+const Aux = (props: AuxProps) => <>props.children</>; 
+const Aux2 = (props: AuxProps) => props.children as ReactElement; 
+ReactNode
+children: React.ReactNode может быть неоптимальным, если цель состоит в том, чтобы иметь сильные типы для Aux.
+
+Практически все может быть отнесено к текущему типу ReactNode, который эквивалентен {} | undefined | null. Более безопасным вариантом для вашего случая может быть:
+
+interface AuxProps {
+  children: ReactElement | ReactElement[]
+}
+Пример:
+
+Учитывая, что Aux нуждается в элементах React как children, мы случайно добавили к нему string. Тогда выше решение будет ошибкой в ​​отличие от ReactNode - взгляните на связанные игровые площадки.
+
+Типизированный children также полезен для свойств, отличных от JSX, таких как обратный вызов Рендеринг опоры.
+
+ 17.03.2020 12:39
+Эти ответы кажутся устаревшими - React теперь имеет встроенный тип PropsWithChildren<{}>. Он определяется аналогично некоторым правильным ответам на этой странице:
+
+type PropsWithChildren<P> = P & { children?: ReactNode };
+
+ 13.05.2020 12:37
+Вы можете использовать ReactChildren и ReactChild:
+
+import React, { ReactChildren, ReactChild } from 'react';
+ 
+interface AuxProps {
+  children: ReactChild | ReactChildren;
+}
+
+const Aux = ({ children }: AuxProps) => (<div>{children}</div>);
+
+export default Aux;
+Если вам нужно передать плоские массивы элементов:
+
+interface AuxProps {
+  children: ReactChild | ReactChild[] | ReactChildren | ReactChildren[];
+}
+ 03.06.2020 12:26
+Вы также можете использовать React.PropsWithChildren<P>.
+
+type ComponentWithChildProps = React.PropsWithChildren<{example?: string}>;
+ 23.06.2020 13:35
+У меня всегда работало:
+
+type Props = {
+  children: JSX.Element;
+};
+ 17.08.2020 23:35
+React Node относится к одному из следующих типов:
+
+Boolean (игнорируется)
+null или undefined (игнорируется)
+Number
+String
+React element (результат JSX)
+Массив любого из вышеперечисленных, возможно, вложенный
+ 03.09.2020 08:16
+Я использую следующие
+
+type Props = { children: React.ReactNode };
+
+const MyComponent: React.FC<Props> = ({children}) => {
+  return (
+    <div>
+      { children }
+    </div>
+  );
+
+export default MyComponent;
+ 25.12.2020 17:37
+Также можно использовать JSX.ElementChildrenAttribute
+
+export default function Layout({children}: JSX.ElementChildrenAttribute) {
+    return <div>
+        {children}
+    </div>
+}
+ 04.08.2021 12:08
+вы должны знать, что любой компонент реакции должен возвращает null или React.Element, но тип props.children - React.ReactNode, поэтому вам нужно использовать props.children внутри Element, чтобы babel настраивал конструктор Element.
+
+Второе правило любого компонента реакции состоит в том, что первая буква имени должен должна быть заглавной, чтобы позволить реакции распознавать, что компонент не является тегом html.
+
+так что код должен быть таким.
+
+const Aux = (props: AuxProps) => <>props.children</>;
+еще один совет, если вы все еще используете машинописный текст, функциональный компонент должен быть типа React.FC, как это
+
+type Props = {
+   title: string;
+}
+
+const Aux:React.FC<Props> = (props) =>
+(
+    <div>
+        <h3>{props.title}</h3>
+        { props.children }
+        {/* children is exist by default in type React.FC */}
+    </div>
+)
+ 19.08.2021 13:17
+import { ReactNode, FC } from 'react'
+
+type Props = { children: ReactNode }
+
+const App: FC<Props> = ({children}) => (<div>{children}</div>)
+
+
+Машинописный текст: не найдена сигнатура индекса с параметром типа «строка» для типа «{ «A»: строка; }
+Вопросы
+JAVASCRIPT
+Машинописный текст: не найдена сигнатура индекса с параметром типа «строка» для типа «{ «A»: строка; }
+У меня есть код ванильного javascript, который принимает ввод строки, разбивает строку на символы, а затем сопоставляет эти символы с ключом объекта.
+
+DNATranscriber = {
+    "G":"C",
+    "C": "G",
+    "T": "A",
+    "A": "U"
+}
+function toRna(sequence){
+    const sequenceArray = [...sequence];
+    const transcriptionArray = sequenceArray.map(character =>{
+        return this.DNATranscriber[character];
+    });
+
+    return transcriptionArray.join("");
+}
+
+console.info(toRna("ACGTGGTCTTAA")); //Returns UGCACCAGAAUU
+Это работает, как и ожидалось. Теперь я хотел бы преобразовать это в машинопись.
+
+class Transcriptor {
+    DNATranscriber = {
+       G:"C",
+       C: "G",
+       T: "A",
+       A: "U"
+    }
+    toRna(sequence: string) {
+        const sequenceArray = [...sequence];
+        const transcriptionArray = sequenceArray.map(character =>{
+            return this.DNATranscriber[character];
+        });
+    }
+}
+
+export default Transcriptor
+Но я получаю следующую ошибку.
+
+Element implicitly has an 'any' type because expression of type 'string' >can't be used to index type '{ "A": string; }'. No index signature with a parameter of type 'string' was found on type >'{ "A": string; }'.ts(7053)
+
+Я думал, что проблема в том, что мне нужно, чтобы мой объектный ключ был строкой. Но преобразовать их в строки не получилось.
+
+DNATranscriber = {
+       "G":"C",
+       "C": "G",
+       "T": "A",
+       "A": "U"
+    }
+Я очень смущен этим. В нем говорится, что для моего объекта не существует индексной подписи с типом строки. Но я уверен, что это так. Что я делаю неправильно?
+
+Изменить. Я решил эту проблему, присвоив объекту DNATranscriber тип any.
+
+DNATranscriber: any = {
+    "G":"C",
+    "C":"G",
+    "T":"A",
+    "A":"U"
+}
+ 12.06.2019 20:33
+173
+16
+226 606
+19
+Данный вопрос помечен как решенный
+ Ответы 19
+ Ответ принят как подходящий
+Вы можете исправить ошибки, подтвердив свой ввод, что вы должны сделать независимо от этого.
+
+Следующие типы проверяются правильно с помощью проверки защиты типа.
+
+const DNATranscriber = {
+    G: 'C',
+    C: 'G',
+    T: 'A',
+    A: 'U'
+};
+
+export default class Transcriptor {
+    toRna(dna: string) {
+        const codons = [...dna];
+        if (!isValidSequence(codons)) {
+            throw Error('invalid sequence');
+        }
+        const transcribedRNA = codons.map(codon => DNATranscriber[codon]);
+        return transcribedRNA;
+    }
+}
+
+function isValidSequence(values: string[]): values is Array<keyof typeof DNATranscriber> {
+    return values.every(isValidCodon);
+}
+function isValidCodon(value: string): value is keyof typeof DNATranscriber {
+    return value in DNATranscriber;
+}
+Стоит отметить, что вы, похоже, неправильно понимаете, что преобразование JavaScript в TypeScript требует использования классов.
+
+В следующей, более идиоматической версии, мы используем TypeScript для повышения ясности и более строгой типизации сопоставлений пар оснований без изменения реализации. Мы используем function, как и в оригинале, потому что это имеет смысл. Это важно! Преобразование JavaScript в TypeScript не имеет ничего общего с классами, оно связано со статическими типами.
+
+const DNATranscriber = {
+    G: 'C',
+    C: 'G',
+    T: 'A',
+    A: 'U'
+};
+
+export default function toRna(dna: string) {
+    const codons = [...dna];
+    if (!isValidSequence(codons)) {
+        throw Error('invalid sequence');
+    }
+    const transcribedRNA = codons.map(codon => DNATranscriber[codon]);
+    return transcribedRNA;
+}
+
+function isValidSequence(values: string[]): values is Array<keyof typeof DNATranscriber> {
+    return values.every(isValidCodon);
+}
+function isValidCodon(value: string): value is keyof typeof DNATranscriber {
+    return value in DNATranscriber;
+}
+Обновлять:
+
+Начиная с TypeScript 3.7, мы можем написать это более выразительно, формализовав соответствие между проверкой ввода и импликацией его типа с помощью подписи утверждений.
+
+const DNATranscriber = {
+    G: 'C',
+    C: 'G',
+    T: 'A',
+    A: 'U'
+} as const;
+
+type DNACodon = keyof typeof DNATranscriber;
+type RNACodon = typeof DNATranscriber[DNACodon];
+
+export default function toRna(dna: string): RNACodon[] {
+    const codons = [...dna];
+    validateSequence(codons);
+    const transcribedRNA = codons.map(codon => DNATranscriber[codon]);
+    return transcribedRNA;
+}
+
+function validateSequence(values: string[]): asserts values is DNACodon[] {
+    if (!values.every(isValidCodon)) {
+        throw Error('invalid sequence');    
+    }
+}
+function isValidCodon(value: string): value is DNACodon {
+    return value in DNATranscriber;
+}
+Подробнее о подписи утверждений можно прочитать в статье Примечания к выпуску TypeScript 3.7.
+
+ 12.06.2019 21:33
+Кроме того, вы можете сделать это:
+
+(this.DNATranscriber as any)[character];
+Редактировать.
+
+ОЧЕНЬ рекомендует приводить объект к правильному типу вместо any. Приведение объекта к типу any только поможет вам избежать ошибок типов при компиляции машинописного текста, но не поможет вам сохранить типобезопасность вашего кода.
+
+Например.
+
+interface DNA {
+    G: "C",
+    C: "G",
+    T: "A",
+    A: "U"
+}
+И затем вы бросаете это так:
+
+(this.DNATranscriber as DNA)[character];
+ 25.07.2019 03:02
+Я решил аналогичную проблему в моей функции getClass следующим образом:
+
+import { ApiGateway } from './api-gateway.class';
+import { AppSync } from './app-sync.class';
+import { Cognito } from './cognito.class';
+
+export type stackInstances = typeof ApiGateway | typeof  AppSync | typeof Cognito
+
+export const classes = {
+  ApiGateway,
+  AppSync,
+  Cognito
+} as {
+  [key: string]: stackInstances
+};
+
+export function getClass(name: string) {
+  return classes[name];
+}
+Ввод моего classes const с моим типом объединения сделал машинописный текст счастливым, и для меня это имеет смысл.
+
+ 12.01.2020 02:43
+Я возился с этим некоторое время. Вот мой сценарий:
+
+У меня есть два типа, metrics1 и metrics2, каждый с разными свойствами:
+
+type metrics1 = {
+    a: number;
+    b: number;
+    c: number;
+}
+
+type metrics2 = {
+    d: number;
+    e: number;
+    f: number;
+}
+В какой-то момент своего кода я создал объект, представляющий собой пересечение этих двух типов, потому что этот объект будет содержать все их свойства:
+
+const myMetrics: metrics1 & metrics2 = {
+    a: 10,
+    b: 20,
+    c: 30,
+    d: 40,
+    e: 50,
+    f: 60
+};
+Теперь мне нужно динамически ссылаться на свойства этого объекта. Здесь мы сталкиваемся с ошибками подписи индекса. Часть проблемы можно разбить на основе проверки время компиляции и проверки время выполнения. Если я сошлюсь на объект, используя константа, я не увижу эту ошибку, потому что TypeScript может проверить, существует ли свойство во время компиляции:
+
+const myKey = 'a';
+console.info(myMetrics[myKey]); // No issues, TypeScript has validated it exists
+Однако если я использую динамическую переменную (например, позволять), то TypeScript не сможет проверить, существует ли свойство во время компиляции, и потребуется дополнительная помощь во время выполнения. Вот тут-то и появляется следующий типгард:
+
+function isValidMetric(prop: string, obj: metrics1 & metrics2): prop is keyof (metrics1 & metrics2) {
+    return prop in obj;
+}
+Это читается как «Если объект имеет свойство опора, то сообщите TypeScript, что опора существует на пересечении metrics1 и metrics2». Примечание: убедитесь, что вы заключаете metrics1 и metrics2 в круглые скобки после ключ, как показано выше, иначе вы получите пересечение между ключами metrics1 и типом metrics2 (а не его ключами).
+
+Теперь я могу использовать typeguard и безопасно обращаться к моему объекту во время выполнения:
+
+let myKey:string = '';
+myKey = 'a';
+if (isValidMetric(myKey, myMetrics)) {
+    console.info(myMetrics[myKey]);
+}
+ 19.03.2020 15:57
+Не используйте ничего, используйте дженерики
+
+// bad
+const _getKeyValue = (key: string) => (obj: object) => obj[key];
+    
+// better
+const _getKeyValue_ = (key: string) => (obj: Record<string, any>) => obj[key];
+    
+// best
+const getKeyValue = <T extends object, U extends keyof T>(key: U) => (obj: T) =>
+      obj[key];
+Плохо — причина ошибки в том, что тип object по умолчанию является просто пустым объектом. Поэтому невозможно использовать тип string для индексации {}.
+
+Лучше - причина, по которой ошибка исчезает, заключается в том, что теперь мы сообщаем компилятору, что аргумент obj будет набором пар строка/значение (string/any). Однако мы используем тип any, поэтому мы можем добиться большего успеха.
+
+Лучше всего — T расширяет пустой объект. U расширяет ключи T. Поэтому U всегда будет существовать в T, поэтому его можно использовать в качестве значения поиска.
+
+Вот полный пример:
+
+Я изменил порядок дженериков (теперь U extends keyof T стоит перед T extends object), чтобы подчеркнуть, что порядок дженериков не важен, и вы должны выбрать порядок, наиболее подходящий для вашей функции.
+
+const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) =>
+  obj[key];
+
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "John Smith",
+  age: 20
+};
+
+const getUserName = getKeyValue<keyof User, User>("name")(user);
+
+// => 'John Smith'
+Альтернативный синтаксис
+const getKeyValue = <T, K extends keyof T>(obj: T, key: K): T[K] => obj[key];
+ 24.04.2020 06:06
+У вас есть два варианта с простым и идиоматическим Typescript:
+
+Использовать тип индекса
+DNATranscriber: { [char: string]: string } = {
+  G: "C",
+  C: "G",
+  T: "A",
+  A: "U",
+};
+Это сигнатура индекса, о которой говорится в сообщении об ошибке. Ссылка
+
+Введите каждое свойство:
+DNATranscriber: { G: string; C: string; T: string; A: string } = {
+  G: "C",
+  C: "G",
+  T: "A",
+  A: "U",
+};
+ 28.04.2020 19:55
+Для тех, кто борется с подобными случаями
+
+No index signature with a parameter of type 'string' was found on type X
+пытаясь использовать его с простыми объектами (используется как словарь), такими как:
+
+DNATranscriber = {
+   G:"C",
+   C: "G",
+   T: "A",
+   A: "U"
+}
+и пытаемся динамически получить доступ к значению из вычисляемого ключа, например:
+
+const key = getFirstType(dnaChain);
+const result = DNATranscriber[key];
+и вы столкнулись с ошибкой, как показано выше, вы можете использовать ключ оператора и попробовать что-то вроде
+
+const key = getFirstType(dnaChain) as keyof typeof DNATranscriber;
+конечно, вам понадобится охрана в result, но если это кажется более интуитивным, чем магия некоторых пользовательских типов, все в порядке.
+
+ 19.07.2020 19:04
+Это было то, что я сделал, чтобы решить связанную с этим проблему
+
+interface Map {
+  [key: string]: string | undefined
+}
+
+const HUMAN_MAP: Map = {
+  draft: "Draft",
+}
+
+export const human = (str: string) => HUMAN_MAP[str] || str
+
+ 10.08.2020 16:19
+Это устранит ошибку и будет безопасным типом:
+
+this.DNATranscriber[character as keyof typeof DNATranscriber]
+ 30.10.2020 11:43
+Для тех, кто гугл:
+
+No index signature with a parameter of type 'string' was found on type...
+
+скорее всего, ваша ошибка должна выглядеть так:
+
+Did you mean to use a more specific type such as keyof Number instead of string?
+
+Я решил аналогичную проблему с вводом кода следующим образом:
+
+const stringBasedKey = `SomeCustomString${someVar}` as keyof typeof YourTypeHere;
+Эта проблема помог мне узнать истинное значение ошибки.
+
+ 31.10.2020 14:12
+Вот пример функции обрезки общего типа объекта массива
+
+const trimArrayObject = <T>(items: T[]) => {
+
+  items.forEach(function (o) {
+
+    for (let [key, value] of Object.entries(o)) {
+
+      const keyName = <keyof typeof o>key;
+
+      if (Array.isArray(value)) {
+
+        trimArrayObject(value);
+
+      } else if (typeof o[keyName] === "string") {
+
+        o[keyName] = value.trim();
+
+      }
+
+    }
+
+  });
+
+};
+ 25.11.2020 20:40
+Решил аналогичную проблему следующим образом:
+
+export interface IItem extends Record<string, any> {
+    itemId: string;
+    price: number;
+}
+
+const item: IItem = { itemId: 'someId', price: 200 };
+const fieldId = 'someid';
+
+// gives you no errors and proper typing
+item[fieldId]
+ 08.12.2020 20:55
+Вот решение этой проблемы без использования объектных ключей:
+
+function toRna(value: string): string {
+  return value.split('').map(ch => 'CGAU'['GCTA'.indexOf(ch)]).join('');
+}
+
+console.info(toRna('ACGTGGTCTTAA')); 
+\\UGCACCAGAAUU
+ 21.03.2021 06:22
+вы можете использовать тип возвращаемого типа, чтобы получить, как это.
+
+getAllProperties(SellRent: number) : Observable<IProperty[]>{
+return this.http.get<IProperty[]>('data/properties.json').pipe(
+  map(data => {
+
+    const propertiesArray: Array<IProperty> = [];
+    for(const id in data){
+      if (data.hasOwnProperty(id) && data[id].SellRent === SellRent){
+        propertiesArray.push(data[id]);
+      }
+    }
+    return propertiesArray;
+  })
+)
+}
+
+ 27.07.2021 11:24
+На вашем params вы должны определить keyOf Object.
+
+interface User {
+    name: string
+    age: number 
+}
+
+const user: User = {
+    name: "someone",
+    age: 20
+}
+
+function getValue(key: keyof User) {
+    return user[key]
+}
+ 09.08.2021 16:56
+Мое решение
+
+type DNATranscriber = {
+   G: string,
+   C: string,
+   T: string,
+   A: string,
+}
+type DNATanscriberIndex = {
+   [key: string]: string
+}
+
+let variableName:DNATanscriberIndex&DNATanscriber
+Тип DNATranscriber предназначен для Typescript, чтобы иметь возможность ссылаться на поля, а тип DNATanscriberIndex — для объявления индекса в виде строки.
+
+ 26.08.2021 15:44
+Я считаю, что этот может служить вам лучше.
+
+При этом вы получите предложения при вводе аргументов (попробуйте в редакторе) и сильный возвращаемый тип для последующего использования.
+
+Screenshot of suggestions
+
+Также вдохновленный ответом Алуана Хаддада, вы получаете проверку последовательности, но немного эффективнее, так как проверка выполняется внутри цикла транскрипции.
+
+type DNAletter = 'G' | 'C' | 'T' | 'A';
+type RNAletter = 'C' | 'G' | 'A' | 'U';
+
+const DNATranscriber: { [key in DNAletter]: RNAletter } = {
+  G: 'C',
+  C: 'G',
+  T: 'A',
+  A: 'U'
+};
+
+// Return `RNAletter[]`
+function toRna(sequence: string | string[] | DNAletter[]) {
+  return ([...sequence] as DNAletter[]).map(character => {
+    const transcribed = DNATranscriber[character];
+    if (transcribed === undefined)
+      throw Error(`Invalid character "${character}" in sequence`);
+    return transcribed;
+  });
+}
+Обновлено: Начиная с TS3.4 вы можете использовать как const
+
+ 30.09.2021 12:02
+Я знаю, что это старый вопрос, но TS теперь предлагает более простой способ ввести вашу проблему, чем когда его спрашивали... Начиная с TS3.4, в настоящее время самым простым подходом было бы использовать "как константу" Ввод объекта как любого никогда не является правильным решением IMO
+
+DNATranscriber = {
+    "G":"C",
+    "C": "G",
+    "T": "A",
+    "A": "U"
+} as const;
+Означает, что теперь ts знает эти ключи и значения, которые не изменятся и, следовательно, могут быть оценены путем вывода. Это означает, что TS уже знает, что DNATranscriber["G"] будет "C" и может также выполнять проверки выходного кода, что гораздо полезнее.
+
+Раньше... Как в ответе Мариас
+
+type Keys = "G" | "C" | "T" | "A";
+type values "C" | "G" | "A" | "U";
+DNATranscriber: {[K in Keys]: values} = {
+    "G":"C",
+    "C": "G",
+    "T": "A",
+    "A": "U"
+};
+Не идеально, поскольку не отражало статическую природу отображения.
+
+ 06.12.2021 10:11
+Например, вы можете использовать запись.
+
+let DNATranscriber: Record<string, string> = {};
+
+
+Ошибка TS1005: ';' ожидал. TypeScript Angular 6 для ошибки первой сборки rxjs внутри node_modules
+Вопросы
+ANGULAR
+Ошибка TS1005: ';' ожидал. TypeScript Angular 6 для ошибки первой сборки rxjs внутри node_modules
+Я создаю свое первое приложение Angular. Я создаю новое приложение Angular, используя эту команду ng new purchase-section. Но когда я запускаю приложение с помощью ng serve -o, я получаю следующую ошибку.
+
+ERROR in node_modules/rxjs/internal/types.d.ts(81,44): error TS1005: ';' expected. node_modules/rxjs/internal/types.d.ts(81,74): error TS1005: ';' expected. node_modules/rxjs/internal/types.d.ts(81,77): error TS1109: Expression expected.
+
+Я проверил types.d.ts, поскольку знаю, что он создан Angular. Я не могу понять ошибку. Обратите внимание, что после того, как я получил эту ошибку, я удалил node_modules, и я установил с помощью npm install, желая уйти, но все же получил эту ошибку.
+
+Вот мой файл package.JSON:
+
+{
+ "name": "purchase-section",
+ "version": "0.0.0",
+  "scripts": {
+"ng": "ng",
+"start": "ng serve",
+"build": "ng build",
+"test": "ng test",
+"lint": "ng lint",
+"e2e": "ng e2e"
+ },
+ "private": true,
+   "dependencies": {
+    "@angular/animations": "^6.0.3",
+     "@angular/common": "^6.0.3",
+     "@angular/compiler": "^6.0.3",
+     "@angular/core": "^6.0.3",
+     "@angular/forms": "^6.0.3",
+      "@angular/http": "^6.0.3",
+      "@angular/platform-browser": "^6.0.3",
+      "@angular/platform-browser-dynamic": "^6.0.3",
+      "@angular/router": "^6.0.3",
+       "core-js": "^2.5.4",
+       "rxjs": "^6.0.0",
+        "zone.js": "^0.8.26"
+       },
+      "devDependencies": {
+        "@angular-devkit/build-angular": "~0.6.8",
+         "@angular/cli": "~6.0.8",
+         "@angular/compiler-cli": "^6.0.3",
+          "@angular/language-service": "^6.0.3",
+           "@types/jasmine": "~2.8.6",
+           "@types/jasminewd2": "~2.0.3",
+            "@types/node": "~8.9.4",
+             "codelyzer": "~4.2.1",
+              "jasmine-core": "~2.99.1",
+               "jasmine-spec-reporter": "~4.2.1",
+                "karma": "^4.0.0",
+                 "karma-chrome-launcher": "~2.2.0",
+                  "karma-coverage-istanbul-reporter": "~2.0.0",
+                   "karma-jasmine": "~1.1.1",
+                 "karma-jasmine-html-reporter": "^0.2.2",
+                 "protractor": "^5.4.2",
+                  "ts-node": "~5.0.1",
+                  "tslint": "~5.9.1",
+                "typescript": "~2.7.2"
+                 }
+               }
+ 30.01.2019 07:13
+77
+4
+89 357
+20
+ Ответы 20
+Я была такая же проблема. Я выяснил, что rxjs выпустил новую версию: 6.4.0. И это сломало конструкцию. Согласно обзор, минимальная поддерживаемая версия TypeScript — 2.8. Если вы не хотите обновлять версию TypeScript, просто измените "rxjs": "^6.0.0", to "rxjs": "6.3.3" на package.json.
+
+ 30.01.2019 07:51
+Похоже, ваша версия Angular и/или rxjs несовместима с TypeScript.
+
+Удалите знак ~ в версии TypeScript, вместо этого добавьте ^. Затем снова установите пакеты.
+
+Попробуйте запустить npm start и ng build до ng serve.
+
+ 30.01.2019 07:56
+Просто удалите символ ^ из "rxjs": "^6.0.0" из файла package.json и сделайте его "rxjs": "6.0.0". Он должен работать нормально.
+
+ 30.01.2019 10:04
+Эти два изменения, что вы хотите:
+
+// in package.json:
+"rxjs": "^6.2.2" ==> "rxjs": "latest"
+"typescript": "2.7.2" ==> "typescript": "2.8"
+
+где ==> означает заменить
+
+ 30.01.2019 11:24
+Я пробовал все остальные ответы. Но я нашел проблему. У меня был установлен плагин ts lint, из-за которого файл заканчивался без пробела. Я удалил его, и он работает.
+
+Вы также можете удалить пробел, идущий к этому конкретному файлу.
+
+ 30.01.2019 12:35
+Я столкнулся с той же проблемой при разработке проекта angular6. Я провел больше времени, наконец, это работает для меня.
+
+Вот решение:
+
+Откройте "package.json"
+
+rxjs и версия "TypeScript", как на скриншоте ниже
+
+
+
+Измените, как показано на скриншоте ниже:
+
+
+
+Затем перейдите в папку вашего проекта и удалите папку «node_modules».
+
+После удаления запустите npm install в папке вашего проекта
+
+Наконец запустите ng serve. Это должно работать (я попробовал 3 проекта и подтвердил).
+
+ 30.01.2019 12:57
+Вы можете обновить версию npm до последней, если это не так, с помощью:
+
+npm update -g
+ 30.01.2019 15:52
+Просто измените версию зависимости TypeScript на ^2.8.
+
+ 31.01.2019 00:47
+В вашем файле Package.json удалите символ ^ (вставка) из "rxjs": "^6.0.0" и добавьте "rxjs": "6.0.0", он будет работать нормально.
+
+ 31.01.2019 11:40
+Я изменил версию для rxjs и typescript. Мой package.json имеет следующие записи:
+
+"typescript": "^2.7.2"
+"rxjs": "^6.3.3",
+Мне также пришлось обновить angular cli.
+
+ 31.01.2019 20:58
+В вашем package.json есть следующие строки:
+
+"rxjs": "^6.0.0",
+
+"typescript": "~2.7.2"
+Это говорит npm установить следующие версии
+
+rxjs: последняя версия из серии 6 версии 6.4.0.
+
+машинопись: последняя исправленная версия в младшей версии 2.7, которая является 2.7.2
+
+Теперь модуль RxJS также устанавливает файлы определения типов для TypeScript. Файл определения типа, включенный в модуль rxjs, установленный в вашем проекте, несовместим с версией машинописного текста, установленной в том же проекте.
+
+Поэтому в качестве решения в вашем файле package.json вы можете либо увеличить версию Typescript, сказав 2.8, как
+
+"typescript": "^2.8.0"
+
+или уменьшите версию ngrx до чего-то вроде
+
+"ngrx": "~6.0.0" и
+
+сделать новую установку npm.
+
+Вы можете проверить номер версии установленного модуля, заглянув в следующие файлы:
+
+node_modules/rxjs/package.json and
+node_modules/typescript/package.json 
+ 01.02.2019 03:20
+Обновление в package.json rxjs": "6.3.3"
+
+в терминале 1. запустить обновление npm 2. запустить службу
+
+Он должен успешно скомпилироваться
+
+ 02.02.2019 06:56
+Сегодня я столкнулся с той же проблемой. Ни один из приведенных выше ответов не сработал, кроме комментария от одной @Nasreen Ustad. Итак, что вам нужно сделать, это:
+
+Перейдите в package.json и измените "rxjs": "^6.0.0" на "rxjs": "6.0.0".
+Запустите npm update в своем проекте
+Не нужно менять версию машинописного текста. (Мой: "typescript": "~2.7.2")
+
+ 02.02.2019 09:25
+Мне пришлось удалить и переустановить angular CLI.
+
+npm uninstall -g @angular/cli angular-cli
+npm cache clean
+npm install -g @angular/cli@latest
+npm install -g @angular/cli@latest
+ 08.02.2019 01:03
+Столкнулся с этой ошибкой: rxjs/магазин: ^ 6.4.0 машинопись: ~ 2.7.2 угловой/cli ~6.0.0
+
+Обновил все до последнего кроме rxjs rxjs/магазин: ^ 6.3.3 машинопись: ~ 3.1.1 угловой/cli ~7.0.3
+
+По сути, я создал пустой новый проект (ng new newProject) и установил @ngrx/store, который отключил v6.3.3. Это сработало для меня.
+
+ 20.02.2019 14:55
+Проверьте версию машинописного текста с помощью команды ниже.
+
+~ tsc --version Version 3.3.3
+
+Поскольку это последняя версия машинописного текста, я обновил угловую версию проекта до 7, выполнив приведенную ниже команду в домашней папке проекта. Это решило проблему.
+
+~]# ng update @angular/cli @angular/core
+
+ 25.02.2019 14:12
+Перейдите в каталог проекта и запустите: npm install rxjs@6.0.0 --save.
+
+ 06.05.2019 04:36
+Перейдите в каталог проекта и выполните:
+
+npm install -s rxjs-compat
+ 22.02.2021 11:36
+Следующие шаги решили мою проблему
+
+Есть два файла, которые нужно изменить.
+
+node_modules\@ag-grid-community\core\dist\cjs\utils\index.js
+//export * from "./utils";
+
+node_modules\@ag-grid-community\core\dist\cjs\utils\index.d.ts
+//_export(require("./utils"));
+
+комментируйте утилиты, как указано выше. теперь нпм старт
+
+ 05.03.2021 06:56
+Мой текущий проект находится в asp.net MVC с angular 8. После обновления проекта angular с 8 до 9 сборка angular работает нормально, но сталкивается с указанной выше проблемой для сборки MVC. (на лазури)
+
+Просто скрывая
+
+node_modules
+
+папка, решил мою проблему.
+
+hide node_modules folder
+
+да, спасибо - Visual Studio исключает node_modules, когда он скрыт.
+
+— 
+Anish Sinha
+ 16.09.2021 07:05
+
+
+
+Избегайте предупреждения о том, что парсер текущей строки URL устарел, задав для параметра useNewUrlParser значение true
+Вопросы
+NODE.JS
+Избегайте предупреждения о том, что парсер текущей строки URL устарел, задав для параметра useNewUrlParser значение true
+У меня есть класс-оболочка базы данных, который устанавливает соединение с некоторым экземпляром MongoDB:
+
+async connect(connectionString: string): Promise<void> {
+        this.client = await MongoClient.connect(connectionString)
+        this.db = this.client.db()
+}
+Это дало мне предупреждение:
+
+(node:4833) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+Метод connect() принимает экземпляр MongoClientOptions в качестве второго аргумента. Но у него нет свойства под названием useNewUrlParser. Я также попытался установить это свойство в строке подключения следующим образом: mongodb://127.0.0.1/my-db?useNewUrlParser=true, но это не повлияло на это предупреждение.
+
+Итак, как я могу настроить useNewUrlParser на удаление этого предупреждения? Это важно для меня, поскольку скрипт должен запускаться как cron, и эти предупреждения приводят к спаму в мусорной почте.
+
+Я использую драйвер mongodb в версии 3.1.0-beta4 с соответствующим пакетом @types/mongodb в 3.0.18. Оба они являются последними, доступными с использованием npm install.
+
+Обходной путь
+Используя более старую версию драйвера mongodb:
+
+"mongodb": "~3.0.8",
+"@types/mongodb": "~3.0.18"
+ 21.05.2018 13:50
+265
+2
+276 449
+22
+ Ответы 22
+Как уже отмечалось, версия драйвера 3.1.0-beta4, судя по всему, была "выпущена в мир" несколько раньше. Релиз является частью незавершенной работы по поддержке новых функций в предстоящем выпуске MongoDB 4.0 и внесению некоторых других изменений в API.
+
+Одним из таких изменений, запускающих текущее предупреждение, является опция useNewUrlParser из-за некоторых изменений в том, как фактически работает передача URI соединения. Подробнее об этом позже.
+
+Пока все не "успокоится", вероятно, это будет желательно "приколоть" по крайней мере до минорной версии для релизов 3.0.x:
+
+  "dependencies": {
+    "mongodb": "~3.0.8"
+  }
+Это должно остановить установку ветки 3.1.x при «свежих» установках узловых модулей. Если вы уже установили «последний» выпуск, который является «бета-версией», то вам следует очистить свои пакеты (и package-lock.json) и убедиться, что вы сделали это до выпуска серии 3.0.x.
+
+Что касается фактического использования «новых» параметров URI подключения, основным ограничением является фактическое включение port в строку подключения:
+
+const { MongoClient } = require("mongodb");
+const uri = 'mongodb://localhost:27017';  // mongodb://localhost - will fail
+
+(async function() {
+  try {
+
+    const client = await MongoClient.connect(uri,{ useNewUrlParser: true });
+    // ... anything
+
+    client.close();
+  } catch(e) {
+    console.error(e)
+  }
+
+})()
+Это более «строгое» правило в новом коде. Суть в том, что текущий код по существу является частью кода репозитория «node-native-driver» (npm mongodb), а «новый код» фактически импортируется из библиотеки mongodb-core, которая «поддерживает» «общедоступный» драйвер узла.
+
+Смысл добавления «опции» состоит в том, чтобы «облегчить» переход путем добавления опции в новый код, чтобы в коде использовался более новый синтаксический анализатор (фактически основанный на url), добавляя параметр и очищая предупреждение об устаревании, и, следовательно, проверяя что переданные вами строки подключения действительно соответствуют ожиданиям нового парсера.
+
+В будущих выпусках «устаревший» парсер будет удален, и тогда новый парсер будет просто тем, что используется, даже без этой опции. Но к тому времени ожидается, что у всего существующего кода будет достаточно возможностей проверить существующие строки подключения на соответствие ожиданиям нового синтаксического анализатора.
+
+Поэтому, если вы хотите начать использовать новые функции драйвера по мере их выпуска, используйте доступный beta и последующие выпуски и, в идеале, убедитесь, что вы предоставляете строку подключения, которая действительна для нового анализатора, включив опцию useNewUrlParser в MongoClient.connect().
+
+Если вам на самом деле не нужен доступ к функциям, связанным с предварительным просмотром выпуска MongoDB 4.0, закрепите версию за серией 3.0.x, как отмечалось ранее. Это будет работать, как описано в документации, и «закрепление» гарантирует, что выпуски 3.1.x не будут «обновлены» сверх ожидаемой зависимости до тех пор, пока вы действительно не захотите установить стабильную версию.
+
+ 22.05.2018 08:07
+Проверьте свою версию mongo:
+
+mongo --version
+Если вы используете версию> = 3.1.0, измените файл подключения mongo на ->
+
+MongoClient.connect("mongodb://localhost:27017/YourDB", { useNewUrlParser: true })
+или ваш файл подключения мангуста к ->
+
+mongoose.connect("mongodb://localhost:27017/YourDB", { useNewUrlParser: true });
+В идеале это функция версии 4, но v3.1.0 и выше также поддерживают ее. За подробностями обращайтесь к MongoDB GitHub.
+
+ 05.07.2018 03:47
+Ничего не менять. Передайте только функцию подключения {useNewUrlParser: true }.
+
+Это будет работать:
+
+    MongoClient.connect(url, {useNewUrlParser:true,useUnifiedTopology: true }, function(err, db) {
+        if (err) {
+            console.info(err);
+        }
+        else {
+            console.info('connected to ' + url);
+            db.close();
+        }
+    })
+ 09.07.2018 08:44
+Вот как это у меня. Подсказка не отображалась на моей консоли, пока я не обновил npm пару дней назад.
+
+.connect имеет три параметра: URI, параметры и ошибку.
+
+mongoose.connect(
+    keys.getDbConnectionString(),
+    { useNewUrlParser: true },
+    err => {
+        if (err) 
+            throw err;
+        console.info(`Successfully connected to database.`);
+    }
+);
+ 09.07.2018 16:29
+Проблему можно решить, указав номер порта и используя этот парсер: {useNewUrlParser: true}
+
+Решение может быть:
+
+mongoose.connect("mongodb://localhost:27017/cat_app", { useNewUrlParser: true });
+Это решает мою проблему.
+
+ 29.07.2018 21:57
+Мы использовали:
+mongoose.connect("mongodb://localhost/mean-course").then(
+  (res) => {
+   console.info("Connected to Database Successfully.")
+  }
+).catch(() => {
+  console.info("Connection to database failed.");
+});
+→ Это дает ошибку парсера URL
+
+Правильный синтаксис:
+mongoose.connect("mongodb://localhost:27017/mean-course" , { useNewUrlParser: true }).then(
+  (res) => {
+   console.info("Connected to Database Successfully.")
+  }
+).catch(() => {
+  console.info("Connection to database failed.");
+});
+ 04.08.2018 06:14
+Я использовал mlab.com в качестве базы данных MongoDB. Я разделил строку подключения на другую папку с именем config и внутри файла keys.js сохранил строку подключения, которая была:
+
+module.exports = {
+  mongoURI: "mongodb://username:password@ds147267.mlab.com:47267/projectname"
+};
+И код сервера был
+
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+
+// Database configuration
+const db = require("./config/keys").mongoURI;
+
+// Connect to MongoDB
+
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true } // Need this for API support
+  )
+  .then(() => console.info("MongoDB connected"))
+  .catch(err => console.info(err));
+
+app.get("/", (req, res) => res.send("hello!!"));
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.info(`Server running on port ${port}`)); // Tilde, not inverted comma
+Вам нужно написать { useNewUrlParser: true } после строки подключения, как я сделал выше.
+
+Проще говоря, вам нужно сделать:
+
+mongoose.connect(connectionString,{ useNewUrlParser: true } 
+// Or
+MongoClient.connect(connectionString,{ useNewUrlParser: true } 
+    
+ 16.08.2018 09:10
+Приведенный ниже выделенный код для подключения мангуста устраняет предупреждение для драйвера мангуста:
+
+mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+ 16.08.2018 11:54
+Эти строки помогли справиться и со всеми остальными предупреждениями об устаревании:
+
+const db = await mongoose.createConnection(url, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
+ 10.09.2018 22:57
+Я не думаю, что вам нужно добавлять { useNewUrlParser: true }.
+
+Вам решать, хотите ли вы уже использовать новый парсер URL. В конце концов, предупреждение исчезнет, ​​когда MongoDB переключится на новый парсер URL.
+
+Как указано в Формат URI строки подключения, вам не нужно устанавливать номер порта.
+
+Достаточно просто добавить { useNewUrlParser: true }.
+
+ 22.09.2018 12:16
+Вам нужно добавить { useNewUrlParser: true } в метод mongoose.connect().
+
+mongoose.connect('mongodb://localhost:27017/Notification',{ useNewUrlParser: true });
+ 06.10.2018 19:32
+Формат строки подключения должен быть mongodb: // пользователь: пароль @ хост: порт / база данных
+
+Например:
+
+MongoClient.connect('mongodb://user:password@127.0.0.1:27017/yourDB', { useNewUrlParser: true } )
+ 06.11.2018 18:22
+Если username или password имеют символ @, используйте его так:
+
+mongoose
+    .connect(
+        'DB_url',
+        { user: '@dmin', pass: 'p@ssword', useNewUrlParser: true }
+    )
+    .then(() => console.info('Connected to MongoDB'))
+    .catch(err => console.info('Could not connect to MongoDB', err));
+ 29.01.2019 17:56
+Обновлено для ECMAScript 8 / await
+Неправильный ECMAScript 8 демонстрационный код MongoDB inc предоставляет также создает это предупреждение.
+
+MongoDB дает следующий совет, который неверен
+
+To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+Это вызовет следующую ошибку:
+
+TypeError: final argument to executeOperation must be a callback
+
+Вместо опция должна быть предоставлена ​​new MongoClient:
+
+См. Код ниже:
+
+const DATABASE_NAME = 'mydatabase',
+    URL = `mongodb://localhost:27017/${DATABASE_NAME}`
+
+module.exports = async function() {
+    const client = new MongoClient(URL, {useNewUrlParser: true})
+    var db = null
+    try {
+        // Note this breaks.
+        // await client.connect({useNewUrlParser: true})
+        await client.connect()
+        db = client.db(DATABASE_NAME)
+    } catch (err) {
+        console.info(err.stack)
+    }
+
+    return db
+}
+ 29.01.2019 20:44
+Полный пример для Express.js, случая вызова API и отправки содержимого JSON выглядит следующим образом:
+
+...
+app.get('/api/myApi', (req, res) => {
+  MongoClient.connect('mongodb://user:password@domain.com:port/dbname',
+    { useNewUrlParser: true }, (err, db) => {
+
+      if (err) throw err
+      const dbo = db.db('dbname')
+      dbo.collection('myCollection')
+        .find({}, { _id: 0 })
+        .sort({ _id: -1 })
+        .toArray(
+          (errFind, result) => {
+            if (errFind) throw errFind
+            const resultJson = JSON.stringify(result)
+            console.info('find:', resultJson)
+            res.send(resultJson)
+            db.close()
+          },
+        )
+    })
+}
+ 21.04.2019 02:16
+Я использую для своего проекта mongoose версии 5.x. После запроса пакета mongoose установите глобальное значение, как показано ниже.
+
+const mongoose = require('mongoose');
+
+// Set the global useNewUrlParser option to turn on useNewUrlParser for every connection by default.
+mongoose.set('useNewUrlParser', true);
+ 24.09.2019 14:43
+Вам просто нужно установить следующие параметры перед подключением к базе данных, как показано ниже:
+
+const mongoose = require('mongoose');
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect('mongodb://localhost/testaroo');
+Также,
+
+Replace update() with updateOne(), updateMany(), or replaceOne()
+Replace remove() with deleteOne() or deleteMany().
+Replace count() with countDocuments(), unless you want to count how many documents are in the whole collection (no filter).
+In the latter case, use estimatedDocumentCount().
+ 23.10.2019 11:02
+Следующие работы для меня
+
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost/playground", { useNewUrlParser: true,useUnifiedTopology: true })
+.then(res => console.info('Connected to db'));
+Версия mongoose - 5.8.10.
+
+ 28.01.2020 10:35
+Следующая работа для меня для версии mongoose5.9.16
+
+const mongoose = require('mongoose');
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect('mongodb://localhost:27017/dbName')
+    .then(() => console.info('Connect to MongoDB..'))
+    .catch(err => console.error('Could not connect to MongoDB..', err))
+ 28.05.2020 13:38
+У меня это прекрасно работает:
+
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
+mongoose
+  .connect(db) //Connection string defined in another file
+  .then(() => console.info("Mongo Connected..."))
+  .catch(() => console.info(err));
+ 11.11.2020 13:34
+const mongoose = require('mongoose');
+
+mongoose
+  .connect(connection_string, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then((con) => {
+    console.info("connected to db");
+  });
+попробуйте использовать это
+
+ 28.01.2021 13:52
+(node:16596) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect. (Use node --trace-deprecation ... to show where the warning was created) (node:16596) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+
+Применение:
+
+async connect(connectionString: string): Promise<void> {
+        this.client = await MongoClient.connect(connectionString, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+        this.db = this.client.db()
+}
+
+«Непроверенная точка останова» в коде Visual Studio с расширением отладчика Chrome
+Вопросы
+TYPESCRIPT
+«Непроверенная точка останова» в коде Visual Studio с расширением отладчика Chrome
+Я пытаюсь отладить свой код Typescript в Visual Studio Code, используя расширение Chrome Debugger, но получаю сообщение «Непроверенная точка останова» на моей точке останова, и выполнение не останавливается на моей точке останова.
+
+Вот мой файл launch.json:
+
+{
+    linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "sourceMaps": true,
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+Версия приложения:
+
+Код Visual Studio: 1.25.1
+Хром: 67.0.3396.99
+Есть ли другие предложения о том, как я могу решить эту проблему?
+
+ 25.07.2018 06:10
+76
+0
+63 868
+25
+Данный вопрос помечен как решенный
+ Ответы 25
+ Ответ принят как подходящий
+Я наконец выяснил, в чем дело:
+
+Когда я читаю определение «$ {workspaceFolder}», оно гласит следующее:
+
+the path of the folder opened in VS Code
+
+Моя ошибка:
+
+Мой путь в Windows к моему проекту был следующим: C:\Users\myusername\Documents\VSCode\Source\ProjectName
+
+Через Visual Studio Code у меня была открыта папка Source, и мне всегда приходилось выполнять команду изменения каталога (cd ProjectName) в Integrated Terminal на «ProjectName». Это привело к созданию .vscode folder and launch.json file в папке Source, а не в папке ProjectName.
+
+Вышеупомянутая ошибка привела к тому, что ${workspaceFolder} указывал на папку Source, где не было компонентов Angular, вместо того, чтобы указывать на папку ProjectName.
+
+Исправление:
+
+В Visual Studio Code откройте папку: C:\Users\myusername\Documents\VSCode\Source\ProjectName и установите мой launch.json в этом каталоге.
+
+ 27.07.2018 10:04
+Приведенный выше ответ, вероятно, решит множество проблем, но не решил мою. У меня была гораздо более простая и досадная проблема ...
+
+Параметры конфигурации в файле launch.json чувствительны к регистру.
+
+Моя запись "webRoot" была написана правильно, но у меня в одном из слов была заглавная буква B вместо строчной b.
+
+Например:
+
+"webRoot": "${workspaceFolder}/My.Folder"
+
+не будет соответствовать папке в вашем рабочем пространстве с именем:
+
+My.folder
+
+Надеюсь, это кому-то поможет.
+
+ 04.09.2018 12:59
+Я также столкнулся с проблемой после переименования папки проекта, и оказалось, что свойство «webRoot» указывало на «${workspaceFolder}/src» вместо «${workspaceFolder}». Возможно, это было частью обновления для расширения «Отладчик для Chrome», но, поскольку я не получал никаких обновлений, я не могу это проверить.
+
+Обновление «webRoot», перезапуск сеанса ng serve и запуск нового сеанса отладки сделали свое дело. Надеюсь, это поможет кому-то с подобным сценарием.
+
+ 18.09.2018 19:18
+Если вы используете разделение кода через веб-пакет, ваша точка останова не будет «проверена» до тех пор, пока Chrome не загрузит этот модуль (т. Е. Обычно, когда вы переходите к этой части приложения).
+
+ 15.10.2018 17:40
+В моем случае мне пришлось определить значение sourceMapPathOverrides следующим образом:
+
+Файл launch.json (находится в папке .vscode):
+
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/project/app/*"
+      }
+    }
+  ]
+}
+Мой источник находится в ${workspaceFolder}/project/app.
+
+ 24.10.2018 14:31
+Моя проблема заключалась в том, что сопоставление источников не было настроено должным образом. Убедитесь, что ваши фактические источники TS отображаются на вкладке «Источники» в расширениях отладки Chrome, и сначала попробуйте разместить там свои точки останова. Может кому поможет.
+
+ 29.10.2018 20:20
+Дано много правильных ответов. В моем случае комбинация всех этих ответов помогла, и мне потребовалось много времени, чтобы понять это. Я надеюсь, что смогу сэкономить тебе время на головную боль с этим, так что
+
+позвольте мне резюмировать это шаг за шагом со ссылкой на ответы выше, которые мне помогли:
+
+Важно запускать код VS из правильной папки (см. Ответы от CodeChimp и monstertjie_za).
+Откройте окно консоли и cd в папку проекта.
+Пример:
+cd myProject
+code .
+Убедитесь, что вы настраиваете файлы в правильной папке .vscode.
+Правая папка .vscode является подкаталогом папки вашего проекта.
+Примечание:, если вы уже по ошибке открыли код VS на слишком глубоком уровне подпапки, например в папке src, то вы найдете там папку .vscode (как это было в моем случае), содержащую файлы конфигурации, которые бесполезны для отладки.
+Настройте конфигурацию отладки в файле .vscode\launch.json.
+Убедитесь, что вы указали правильный порт для своего приложения, в моем случае порт 4200 работает нормально.
+Также убедитесь, что параметр "webRoot" настроен правильно (см. Ответ от Стиг Перес). В моем случае к нему нужно было добавить подпапку. Чтобы узнать, какой путь указан переменной $(workspaceFolder), ознакомьтесь с вопросом, который я задал в StackOverflow относительно того, как отображать значения переменных кода VS.
+Примечание:. Если такой конфигурации еще нет, сделайте следующее, чтобы добавить ее: Перейдите к расширению отладки (т. Е. Нажмите на боковая планка). В раскрывающемся списке отладчика выберите «Добавить конфигурацию ...», затем нажмите синюю кнопку «Добавить конфигурацию». Выберите «Запустить Chrome» в качестве конфигурации, которую нужно добавить.
+Пример конфигурации (launch.json):
+
+"configurations": [
+        {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Launch Chrome",
+                "url": "http://localhost:4200",
+                "webRoot": "${workspaceFolder}/projectsubfolder"
+        }]
+Замените projectsubfolder вложенной папкой, которая может быть в вашем проекте. Обратите внимание, что это чувствительно к регистру (см. Ответ от Майкл Уолш).
+
+Теперь установите точки останова в своем приложении.
+
+Чтобы запустить приложение с отладчиком, откройте окно терминала внутри кода VS, введите
+cd projectsubfolder
+npm install & ng serve
+. Это обеспечит разрешение и загрузку зависимых пакетов до компиляции приложения. Дождитесь завершения компиляции.
+Затем щелкните зеленый треугольник в отладчике VS, который запустит окно Chrome с прикрепленным отладчиком.
+Примечание: Вам не нужно запускать npm install каждый раз, только когда пакеты / зависимости изменились. В большинстве случаев для повторной компиляции и запуска кода достаточно выполнить ng serve.
+
+ 28.11.2018 09:52
+Для меня были отключены точки останова:
+
+
+
+ 29.11.2018 00:38
+В моем случае проблема заключалась в том, что точка останова была установлена ​​в строке, где объявлялась функция.
+
+openDetails(data: Asset) {         <-- The break point was here
+    this.datailsOpen = true;
+    this.currentAsset = data;
+}
+Решение: переместить его внутрь тела функции
+
+openDetails(data: Asset) {         
+    this.datailsOpen = true;        <-- Move the break point here
+    this.currentAsset = data;
+}
+ 03.12.2018 16:02
+Решение простое:
+Нажмите File-> Open Folder-> (выберите папку вашего проекта - папка, содержащая package.json)
+Откройте отладку-> нажмите кнопку воспроизведения, чтобы создать новую конфигурацию Chrome.
+Установите новую точку останова!
+Наслаждаться!
+ 18.12.2018 09:05
+Если все выглядит правильно, но точка останова все еще не достигнута, мне нужно было внести изменения, чтобы указать точное имя файла, которое будет обслуживаться. Например, на NodeJS Express, просто указав localhost:3000, не остановился бы на моих точках останова, но указание localhost:3000/index.html работало должным образом.
+
+Полный конфиг:
+
+Моя папка открыта в VSCode: learningPixi с полным расположением папки (Ubuntu Linux): /home/leigh/node/pixi-tut/learningPixi
+
+Моя структура папок:
+
+/home/leigh/node/pixi-tut/learningPixi/.vscode/launch.json /home/leigh/node/pixi-tut/learningPixi/public/index.html /home/leigh/node/pixi-tut/learningPixi/server.js
+
+Содержимое моего файла launch.json:
+
+{  
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000/index.html",
+      "webRoot": ${workspaceFolder}/public",
+      "skipFiles": ["pixi.min.js"]
+    }
+  ]
+}
+"skipFiles" также был очень полезен, иначе отладчик выполняет шаги при каждом вызове функции.
+
+Моя (очень простая) экспресс-конфигурация сервера только для отладки JavaScript в статических файлах была:
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+app.use(express.static(path.join(__dirname, '/public')));
+app.listen(3000, () => console.info('App started on port 3000'));
+И согласно приведенной выше структуре папок убедитесь, что index.html находится в папке / public.
+
+При отладке JavaScript из файла HTML вам также может потребоваться перейти к настройкам в VSCode и включить: Разрешить точки останова везде
+
+ 29.12.2018 18:10
+У меня есть структура папок, показанная ниже, и я открыл проект zero в VS Code.
+
+нуль/
+
+
+
+Тогда launch.json
+
+  "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}/angular"
+        }
+    ]
+ 15.01.2019 00:52
+В моем случае у меня был файл main.js в корне проекта для работы в качестве электронного приложения. Если этот файл main.js был удален, проблема была решена.
+
+ 24.01.2019 11:18
+Я получал эту ошибку просто потому, что у меня не было "sourceMaps": true в моей конфигурации отладки.
+
+ 19.03.2019 12:18
+Проведя 3 драгоценных часа своей жизни и пройдя многие из ответов, перечисленных выше, моя проблема была так же проста, как отсутствие следующей строки в моем php.ini:
+
+xdebug.remote_autostart = 1
+До этого я уже настраивал XDebug на своем XAMPP, но мои точки останова просто не срабатывали. Просто мой сервер отладки не был настроен на автоматический запуск.
+
+Надеюсь, это спасет чей-то день.
+
+ 27.03.2019 19:16
+Unverified breakpoint
+
+
+Я нашел 3 причины этой проблемы:
+
+Автоматически созданный URL-адрес конфигурации launch.json неверен. Убедитесь, что номер порта соответствует порту localhost, на котором работает ваше веб-приложение. Я изменил свой на 3000, чтобы устранить ошибку:
+"configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+Мне нужно было установить правильную папку рабочего пространства.
+
+Мне нужно было запустить мое веб-приложение с npm start перед отладкой.
+
+ 17.05.2019 03:55
+npm i исправил это с моей стороны. Я иногда получаю непроверенные точки останова при создании новой папки / файла, и обычно это происходит.
+
+ 19.06.2019 14:09
+Очередное обновление для @ angular / cli 9.1.7 28.05.2020 ...
+
+Теперь это моя рабочая конфигурация для @ angular / cli 9.1.7. Удаление sourceMapPathOverrides
+
+    "sourceMapPathOverrides": {
+      "*": "${webRoot}/*"
+    }
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+    "type": "chrome",
+    "request": "launch",
+    "name": "Launch Chrome against localhost",
+    "url": "http://localhost:21460",
+    "webRoot": "${workspaceFolder}"
+  }]
+}
+
+Мое решение проблемы «Непроверенная точка останова».
+
+Среда
+Угловой CLI 8.1.1
+Код Visual Studio 1.36.1
+Отладчик для расширения Chrome 4.11.6
+По умолчанию .vscode / launch.json, созданный в VSC с помощью опции «Добавить конфигурацию», будет выглядеть примерно так (я изменил порт с 8080 на 4200).
+
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+    "type": "chrome",
+    "request": "launch",
+    "name": "Launch Chrome against localhost",
+    "url": "http://localhost:4200",
+    "webRoot": "${workspaceFolder}"
+  }]
+}
+Добавление элемента ниже решает мою проблему с «Непроверенной точкой останова».
+
+"sourceMapPathOverrides": {
+      "*": "${webRoot}/*"
+    }
+Полный и рабочий .vscode / launch.json:
+
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+    "type": "chrome",
+    "request": "launch",
+    "name": "Launch Chrome against localhost",
+    "url": "http://localhost:4200",
+    "webRoot": "${workspaceFolder}",
+    "sourceMapPathOverrides": {
+      "*": "${webRoot}/*"
+    }
+  }]
+}
+Можно добавить некоторые дополнительные элементы:
+
+ "breakOnLoad": true,
+ "sourceMaps": true,
+Однако в моем случае они мне не понадобились для решения проблемы.
+
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+    "type": "chrome",
+    "request": "launch",
+    "name": "Launch Chrome against localhost",
+    "url": "http://localhost:4200",
+    "webRoot": "${workspaceFolder}",
+    "breakOnLoad": true,
+    "sourceMaps": true,
+    "sourceMapPathOverrides": {
+      "*": "${webRoot}/*"
+    }
+  }]
+}
+ 12.07.2019 11:50
+Мне пришлось удалить мою папку .vscode и восстановить ее. Кроме того, папка указывала на неправильный путь, поэтому мне пришлось изменить ее обратно на мой текущий путь к папке проекта. Спасибо
+
+ 29.07.2019 13:29
+Решением для меня было добавить в файл launch.json следующую строку: «requireExactSource»: ложь. После этого перезапустите VSC и проверьте, работает ли он.
+
+ 06.08.2019 18:16
+Я открыл в VS code папку мое приложение, где были папка клиент и папка сервер. Мне пришлось изменить launch.json из этого
+
+"webRoot": "${workspaceFolder}"
+к этому
+
+"webRoot": "${workspaceFolder}\\client"
+ 22.08.2019 23:46
+Другой ответ, который я только что обнаружил, касается ленивых загружаемых модулей.
+
+Если вы хотите установить точки останова в коде, который является частью модуля с отложенной загрузкой, и вы не загрузили этот модуль в браузере, код VS не будет иметь доступа к исходным картам для проверки точек останова!
+
+поэтому устанавливайте точки останова только тогда, когда вы загрузили ленивый загруженный модуль, который хотите отлаживать!
+
+ 30.08.2019 17:09
+В нашем случае эта ошибка возникла из-за символической ссылки Windows на доступ к папке с исходным кодом на двух локальных дисках. Открыл папку с vscode из исходной папки, теперь отладка работает хорошо.
+
+ 04.09.2019 22:22
+Я пришел сюда, когда использовал флаттер и дротик. Я не знаю, но удаление launch.json в папке .vscode решило мою проблему
+
+ 05.07.2020 13:26
+Для меня непроверенная точка останова была вызвана тем, что отладчик работал, когда я пытался установить точку останова. Чтобы решить эту проблему, я просто выключил отладчик, установил нормальную точку останова и перезапустил отладчик.
+
+
+Не удается найти имя "описать". Вам нужно установить определения типов для средства выполнения тестов?
+Вопросы
+TYPESCRIPT
+Не удается найти имя "описать". Вам нужно установить определения типов для средства выполнения тестов?
+При использовании TypeScript вместе с Jest мои спецификации не работали бы с такими сообщениями об ошибках, как:
+
+test/unit/some.spec.ts:1:1 - error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i @types/jest` or `npm i @types/mocha`.
+test/unit/some.spec.ts:2:3 - error TS2582: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i @types/jest` or `npm i @types/mocha`.
+test/unit/some.spec.ts:3:7 - error TS2304: Cannot find name 'expect'.
+test/unit/some.spec.ts:7:1 - error TS2582: Cannot find name 'test'. Do you need to install type definitions for a test runner? Try `npm i @types/jest` or `npm i @types/mocha`.
+Типы уже установлены.
+
+Я использую:
+
+    "@types/jest": "^23.3.12",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.1.6"
+Провожу тесты с помощью jest --forceExit --coverage --verbose
+
+ 11.01.2019 02:21
+117
+0
+94 405
+26
+Данный вопрос помечен как решенный
+ Ответы 26
+ Ответ принят как подходящий
+После того, как я некоторое время возился с tsconfig.json, я наконец понял, что комментирование "types": [], будет работать.
+
+неудачная конфигурация (раньше)
+
+// tsconfig.json
+{
+  "compilerOptions": {
+    "types": []
+  }
+}
+рабочая конфигурация
+
+// tsconfig.json
+{
+  "compilerOptions": {
+    // "types": []
+  }
+}
+ 11.01.2019 02:24
+Я использую VSCode в качестве своей IDE, а в моем проекте Angular мне пришлось закомментировать / удалить типы в tsconfig.json и добавить шутку в типы в tsconfig.spec.json.
+
+tsconfig.json
+
+{
+  "compilerOptions": {
+    // "types": []
+  }
+}
+tsconfig.spec.json
+
+{
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  }
+}
+ 11.02.2019 05:21
+В моем случае проблема была в одном конкретном файле. Я не обнаружил самой проблемы, но она была решена добавлением import {} from 'jest' к импорту файлов.
+
+Никакого другого выхода из трекера проблем с шуткой или SO или где не помогло. Просто какая-то сумасшедшая ошибка, исправленная каким-то сумасшедшим обходным путем ?‍♂️
+
+Да, и я, конечно же, добавил последние версии jest, ts-jest и @types/jest в package.json.
+
+ 14.11.2019 14:24
+Вам необходимо включить в tsconfig.json свой тестовый путь.
+
+Пример: предположим, что вы назвали свой путь к tests/ и поместили его в корневой каталог проекта, вам нужно указать параметр "include" из tsconfig, чтобы искать файлы тестов:
+
+Перейти: tsconfig.json
+Добавлять:
+"include": [
+    "tests/*.<file_test_extension>",
+],
+<file_test_extension>: ts | js | и Т. Д.
+Надеюсь помочь
+
+ 27.11.2019 16:03
+Это немного сложно, потому что и ваша IDE (например, VSCode), и TypeScript используют tsconfig.json для своих собственных целей.
+
+Простой контрольный список для решения исходной проблемы:
+(для TypeScript и Jest)
+
+Убедитесь, что у вас установлены @types/jest и @types/node.
+Убедитесь, что вы связали эти типы в tsconfig.json, чтобы: types: ["jest", "node"]
+Убедитесь, что вы используете не исключены ваши тесты или каталог тестов из конфигурации tsconfig.json в свойстве excluded.
+Побочное действие на транспиляцию
+Если вы переносите из TypeScript в JavaScript с помощью tsc или любого настраиваемого модуля, который полагается на tsconfig.json, вы можете заметить, что ваши тесты также будут перенесены в таком случае (вы увидите их соответствие .js в вашем каталоге сборки).
+
+Однако в большинстве случаев у вас будет либо:
+
+отдельный tsconfig.prod.json с конфигурацией, которая перезаписывает конфигурацию по умолчанию. Есть много настроек, таких как inlineSource, sourceMaps, inlineSourceMaps, которые вы, вероятно, тоже захотите отключить, а затем использовать tsc --project tsconfig.prod.json для сборки
+команда terminal (npm / yarn script), которая заменяет конфигурацию по умолчанию определенными флагами. Пример: npx tsc --inlineSourceMap false --declarationMap false --inlineSources false --sourceMap false. На этом этапе вы можете использовать флаг --excludeFiles или --excludeDirectories, чтобы исключить ваши тесты из сборки в соответствии с документация.
+Альтернативой является использование такого пакета, как Римраф, и удаление ненужных файлов как часть процесса сборки. Это может быть проще, чем перезапись конфигурации, и его легче поддерживать на этапе сборки. В этом случае вы можете использовать команду: yarn rimraf build/**/*.test.js
+
+ 08.04.2020 20:32
+Вы можете иметь отдельный tsconfig.json в тестовой папке __tests__:
+
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "../build",
+        "noEmit": true,
+        "rootDir": "../",
+    },
+    "exclude": ["node_modules"],
+}
+который расширяет папку в корневой папке:
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+  },
+  "exclude": ["node_modules", "**/*.test.ts", "__tests__"]
+}
+Таким образом, вы тестируете файлы, которые по-прежнему исключаются из общедоступной сборки, но при этом вы можете использовать все общие параметры.
+
+Если вы используете includes вместо excludes или вместе с ним, обязательно используйте его и в своем расширении, например:
+
+tsconfig.json
+
+{
+  "includes": ["src"],
+  ...
+}
+
+tests/tsconfig.json
+
+{
+  "extends": "../tsconfig.json"
+  "includes": ["../"]
+}
+Это не изменит то, что будет включено в вашу папку сборки, но позволит VSCode найти ваши типы шуток.
+
+ 11.04.2020 00:07
+Вам нужно импортировать шутку в свой тестовый файл:
+
+import 'jest';
+Другой способ решить эту проблему - добавить в файл tsconfig.json:
+
+   "compilerOptions": {
+     "types": [ "node", "jest" ],
+     "moduleResolution": "node"
+   }
+Если вы используете tslint, проблема может заключаться в ненужной запятой в конце вашего tsconfig.json, например:
+
+{
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ],  // remove this comma
+}
+ 13.04.2020 14:31
+Я использую mocha, chai и chai-http для тестирования проекта Node Express.js. Раньше я не использовал types в compilerOptions, но добавление нижеприведенных настроек в tsconfig.json заставило меня работать:
+
+{
+  "compilerOptions": {
+    // ...rest of my settings
+    "types": ["mocha", "chai", "chai-http"]
+  }
+}
+ 30.05.2020 19:04
+Единственный способ исправить это - добавить папку tests/ в "включить" в файл tsconfig.json:
+
+"include": [
+  "src/**/*.ts",
+  "tests/*.ts"
+] 
+Тем, кто также жалуется на eslint, необходимо добавить jest в свой файл .eslintrc.json:
+
+"env": {
+  "es2020": true,
+  "node": true,
+  "jest": true
+}
+ 17.06.2020 20:39
+You need to include in tsconfig.json your test path.
+
+Я решил проблему, установив tsconfig.json и tsconfig.build.json в корне моего проекта. tsconfig.json содержит все опции, включая
+
+"include": ["src/**/*", "test/**/*"],
+tsconfig.build.json:
+
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*"]
+}
+Затем в package.json (чистый скрипт необязательно):
+
+"scripts": {
+  "clean": "rm -rf dist",
+  "build": "npm run clean && tsc --build tsconfig.prod.json,
+  ...
+}
+ 12.08.2020 09:31
+Ничего из вышеперечисленного не устранило мою проблему. Пришлось добавить "@types/jest" в массив types в файле tsconfig.json.
+
+ 19.08.2020 11:56
+Я установил ts-jest с npm i -D ts-jest и ошибка исчезла
+
+ 20.10.2020 13:45
+@Greg Woz - наиболее полный ответ, для моего случая по какой-то причине исходный файл tsconfig.json содержит "exclude": ["node_modules", "**/__tests__/*"], что является основной причиной. После удаления "**/__tests__/*". И убедитесь, что он также включает: "types": ["jest"]. Оно работает.
+
+Также важно перезапустить Vscode после изменения конфигурации. Это тратит часы времени на попытки пробовать разные способы без перезапуска.
+
+ 26.11.2020 06:35
+Что сработало для меня.
+
+Это происходит в VS Code. Вам нужно запустить npm i --save-dev @types/jest, а в вашем
+
+tsconfig.json
+
+вам нужно разместить
+
+"jest" в типах под "compilerOptions"
+
+как
+
+"types": ["gapi", "gapi.auth2", "jest"],
+
+и все готово.
+
+ 24.12.2020 15:18
+В моем случае (vs code, create-react-app, yarn workspaces, jest @ 26, @ types / jest, "types": ["node", "jest"] присутствует в tsconfig.json) тесты прошли нормально, но IDE была подчеркивание красным, все describe и it. Ничего не помогло, пока я не перезагружено окно кода VS после долгих попыток
+
+ 28.12.2020 09:28
+Приведенная ниже конфигурация работает для меня. Я добавил node_modules/@types в typeRoots.
+
+{
+  "compilerOptions": {
+    // ...rest of my settings
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "node"]
+  }
+}
+ 11.01.2021 12:01
+Мне не хватало tsconfig.json, и все, что мне нужно было сделать, это запустить tsc --init, и код vs больше не жаловался на «описать»:
+
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    // "incremental": true,                   /* Enable incremental compilation */
+    "target": "es5",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    // "lib": [],                             /* Specify library files to be included in the compilation. */
+    // "allowJs": true,                       /* Allow javascript files to be compiled. */
+    // "checkJs": true,                       /* Report errors in .js files. */
+    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
+    // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
+    // "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    // "outFile": "./",                       /* Concatenate and emit output to single file. */
+    // "outDir": "./",                        /* Redirect output structure to the directory. */
+    // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    // "composite": true,                     /* Enable project compilation */
+    // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
+    // "removeComments": true,                /* Do not emit comments to output. */
+    // "noEmit": true,                        /* Do not emit outputs. */
+    // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
+    // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
+    // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+
+    /* Strict Type-Checking Options */
+    "strict": true,                           /* Enable all strict type-checking options. */
+    // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,              /* Enable strict null checks. */
+    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+
+    /* Additional Checks */
+    // "noUnusedLocals": true,                /* Report errors on unused locals. */
+    // "noUnusedParameters": true,            /* Report errors on unused parameters. */
+    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+    // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    // "noUncheckedIndexedAccess": true,      /* Include 'undefined' in index signature results */
+
+    /* Module Resolution Options */
+    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
+    // "typeRoots": [],                       /* List of folders to include type definitions from. */
+    // "types": [],                           /* Type declaration files to be included in compilation. */
+    // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+    // "allowUmdGlobalAccess": true,          /* Allow accessing UMD globals from modules. */
+
+    /* Source Map Options */
+    // "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+    // "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. */
+    // "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+
+    /* Experimental Options */
+    // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
+    // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+
+    /* Advanced Options */
+    "skipLibCheck": true,                     /* Skip type checking of declaration files. */
+    "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
+  }
+}
+
+ 14.01.2021 05:43
+Вам нужно установить зависимость ts-jest в вашем проекте?
+
+yarn add ts-jest -D
+В вашем файле jest.config.ts вам нужно установить строку, содержащую preset: undefined, на preset: 'ts-jest'
+
+// A preset that is used as a base for Jest's configuration
+preset: 'ts-jest',
+ 24.02.2021 20:51
+Ни одно из вышеперечисленных решений мне не помогло.
+
+Я использовал:
+
+Угловой 11
+Шутка
+Удалено все, что связано с Jasmine / Karma.
+Файлы .spec находятся в той же папке, что и компоненты (автоматическое создание из ng g)
+
+Что сработало для меня, так это добавление exclude в tsconfig.app.json (не tsconfig.json), чтобы игнорировать все файлы спецификаций при обслуживании приложения.
+
+tsconfig.app.json
+
+"exclude": [
+    "**/*.spec.ts"
+]
+ng s и npm test теперь у меня работают.
+
+ 02.04.2021 12:45
+Для пользователей lerna monorepo
+Я использую lerna monorepo, и вот что мне нужно было сделать, чтобы это исправить:
+
+Убедитесь, что "@types/jest" находится в devDependencies файла package.json как корневого пакета, так и отдельного пакета в каталоге packages/, и вы запустили lerna bootstrap для установки / связывания этих пакетов в ваших каталогах node_modules.
+Убедитесь, что часть "types": ["node", "jest"] находится в корневом каталоге tsconfig.json.
+Я добавил import 'jest'; в начало моих индивидуальных файлов * .test.ts.
+ 26.04.2021 17:01
+Это сработало для меня:
+
+import '@types/jest';
+ 12.06.2021 14:25
+Другая вещь, которая может быть неправильной, - это если вы открыли vscode в родительском каталоге над вашим проектом. Это случилось со мной, потому что мы используем решения Visual Studio, и у меня было открыто все решение, а не только проект.
+
+Проще говоря, убедитесь, что vscode открыт в корне вашего проекта.
+
+ 28.06.2021 19:20
+Причин может быть несколько:
+
+Если @types/jest не установлен, попробуйте установить его и в tsconfig.json определите типы, например "typeRoots": ["node_modules/@types/", "./src/@types/", ".src/**/@types/"]
+
+Проблема с кодом VS: попробуйте открыть код vs в каталоге проекта, а не в его родительском каталоге.
+
+ 15.07.2021 07:33
+import {} from 'jasmine';
+Добавьте указанную выше строку в код. Надеюсь, это решит проблему.
+
+ 14.08.2021 13:27
+Решение, предложенное @Freewalker в комментариях, можно легко пропустить. удаление «typeRoots» из файла tsconfig, который, по-видимому, переопределял «типы» - решило проблему.
+
+ 09.09.2021 17:27
+Я обнаружил, что аналогичная проблема была вызвана несоответствием номеров версий между @types/jest и jest.
+
+
+Невозможно использовать JSX, если не указан флаг --jsx
+Вопросы
+REACTJS
+Невозможно использовать JSX, если не указан флаг --jsx
+Я немного поискал решение этой проблемы. Все они предлагают добавить "jsx": "react" в ваш файл tsconfig.json. Что я и сделал. Еще одним было добавление "include: []", что я тоже сделал. Однако я все еще получаю сообщение об ошибке, когда пытаюсь редактировать файлы .tsx. Ниже мой файл tsconfig.
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react",
+        "outDir": "./build",
+        "rootDir": "./lib",
+        "removeComments": true,
+        "noEmit": true,
+        "pretty": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    },
+    "include": [
+        "./lib/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+Любые предложения были бы полезны. Я использую babel 7 для компиляции всего кода с предустановками env, react и typescript. Если вам нужно больше файлов для отладки, дайте мне знать.
+
+ 20.05.2018 09:17
+218
+1
+132 178
+27
+Данный вопрос помечен как решенный
+ Ответы 27
+ Ответ принят как подходящий
+Cannot use JSX unless the '--jsx' flag is provided
+
+Перезагрузите IDE. Иногда изменения tsconfig.json принимаются не сразу ?
+
+ 21.05.2018 03:30
+Этот ответ касается кода VS и этой конкретной ошибки, сохраняющейся в этой среде IDE. (Кому-то это может пригодиться)
+
+Если вы используете что-то вроде Webpack или какой-либо другой подобный инструмент, вы все равно можете получить эту ошибку, даже если в вашем tsconfig параметр компилятора для jsx установлен на React.
+
+Для этого есть решение. Проблема в том, что VS Code имеет встроенное автоматическое обнаружение tsc.
+
+Чтобы избавиться от ошибки в редакторе, вы можете поместить это в свои настройки пользователя:
+
+{
+    "typescript.tsc.autoDetect": "off"
+}
+Просто обратите внимание, что вы больше не получите автоматическое обнаружение tsc, но если вы в основном используете такие инструменты, как Webpack, или самостоятельно обрабатываете команду с флагами, то это не так уж важно.
+
+Примечание. Делайте это только в том случае, если ошибка сохраняется в VS Code. Чтобы убедиться, что такое поведение сохраняется, перезагрузите окна и перезапустите редактор после настройки файла tsconfig.json.
+
+ 29.06.2018 17:31
+Эта ссылка помогла решить эту проблему: https://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
+
+Обратитесь к разделу: Исправление ошибки TS17004: невозможно использовать JSX, если не указан флаг --jsx.
+
+Следующая ошибка для меня нова, но она имеет смысл, поэтому я добавляю флаг --jsx к tsc и пробую tsc --jsx helloWorld.tsx, но похоже, что я пропустил параметр для --jsx.
+
+tsc --jsx helloWorld.tsx message TS6081: Argument for '--jsx' must be 'preserve' or 'react'. In the current iteration of TypeScript 1.6 appears to have two options for --jsx, both preserve or react.
+
+preserve сохранит jsx на выходе. Я предполагаю, что это нужно для того, чтобы вы могли использовать такие инструменты, как JSX, для фактического перевода. response удалит синтаксис jsx и превратит его в простой javascript, поэтому в файле TSX он станет React.createElement ("div", null). Передав опцию реакции, мы закончим:
+
+tsc --jsx react helloWorld.tsx helloWorld.tsx(11,14): error TS2607: JSX element class does not support attributes because it does not have a 'props' property helloWorld.tsx(11,44): error TS2304: Cannot find name 'mountNode'. I'm going to tackle the last error next, as initially I didn't understand the JSX error above.
+
+ 11.05.2019 11:09
+В моем случае исправлением был перезапуск моей IDE. После перезапуска всплывало окно сообщения, показывающее, что у меня не установлен машинописный текст, хотите ли вы установить TypeScript 3.3? Я установил его, и теперь он работает отлично.
+
+ 21.05.2019 09:45
+У меня такая же ошибка, и я просто понял, как ее решить. Проблема заключалась в том, что был файл jsconfig.json, из-за которого компилятор TypeScript игнорировал файл tsconfig.json.
+
+Чтобы определить, есть ли у вас такая же проблема, в вашей среде IDE (я использую VS Code) загрузите файл с ошибкой в ​​вашем редакторе, затем откройте палитру команд и введите «TypeScript: перейти к конфигурации проекта». Если он открывает jsconfig.json, удалите этот файл и перезапустите IDE. Если на этот раз он откроет файл tsconfig.json, вы в золотом цвете.
+
+ 21.05.2019 23:35
+В моем случае я перепробовал все tsconfig.json, диалоговое окно «Свойства проекта», перезапустил IDE, проверил установленную версию TypeScript и т. д., И эта ошибка все еще была. Приходите, чтобы узнать, как разработчик добавил в файл проекта условные свойства, так что TypeScriptJSXEmit не определен во всех конфигурациях (что запутало диалоговое окно Project Properties).
+
+Вот отрывок из моего файла проекта, показывающий проблему:
+
+...
+  <PropertyGroup Condition = "'$(Configuration)' == 'QA'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+...
+ 11.07.2019 16:38
+Я получал эту ошибку даже при запуске npx tsc --jsx preserve, поэтому --jsx был определенно указан.
+
+В моем случае это было вызвано наличием incremental: true в tsconfig. Очевидно, в инкрементном режиме tsc может игнорировать настройку --jsx и вместо этого использовать информацию из предыдущих сборок (где --jsx все еще был отключен). В качестве решения я временно отключил инкрементную компиляцию, перекомпилировал и снова включил ее. Возможно, удаление артефактов сборки также может сработать.
+
+ 24.08.2019 13:36
+В моем случае проблема заключалась в том, что VSCode сгенерировал пустой файл tsconfig.json, который, конечно же, ничего не сделал.
+
+Я добавил в tsconfig.json из Страница реагирования на Typescript:
+
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react"
+    }
+}
+... затем нажмите save, и VSCode взял его оттуда.
+
+ 15.04.2020 00:40
+Перезапуск моей IDE не помог. Перезапуск сервера TypeScript все же решил эту проблему.
+
+ 07.05.2020 02:20
+В моем случае ничего из вышеперечисленного не помогло. Моя проблема заключалась в том, что расположение tsconfig.json не было корнем проекта. Так что эта шутка не могла читать файлы .jsx. Я решил это просто символической ссылкой tsconfig.json в корень проекта. Возможно, есть лучшее решение. Дайте мне знать, если он у вас есть.
+
+ 15.10.2020 10:03
+Мне пришлось добавить все свое приложение в include.
+
+Итак, мой tsconfig.json выглядит так:
+
+{
+    "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "jsx": "react",
+    "allowJs": true
+  },
+  "include": ["./"]
+}
+ 25.10.2020 15:29
+Для тех, кто читает, перейдите в tsconfig.json и измените эту строку с react-jsx на react:
+
+{
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+бонус: попробуйте также установить последнюю версию IDE TS (atm 4.2) в vscode CMD + SHIFT + P и изменить ее оттуда.
+
+ 21.11.2020 19:56
+Следующая ошибка, которую я получаю после запуска начало пряжи:
+
+> multi-step-form-typescript@0.1.0 start /home/ehsan/Documents/GitHub/multi-step-form-typescript
+> react-scripts start
+
+/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239
+      appTsConfig.compilerOptions[option] = value;
+                                          ^
+
+TypeError: Cannot assign to read only property 'jsx' of object '#<Object>'
+    at verifyTypeScriptSetup (/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239:43)
+    at Object.<anonymous> (/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/start.js:31:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! multi-step-form-typescript@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the multi-step-form-typescript@0.1.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ehsan/.npm/_logs/2020-11-22T18_20_20_546Z-debug.log
+Итак, что вам нужно сделать, чтобы избавиться от этого
+
+на вашем терминале нажмите ссылку с ошибкой
+
+/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239 appTsConfig.compilerOptions [параметр] = значение;
+
+а затем измените 239 строк на
+
+else if (parsedCompilerOptions [option]! == valueToCheck && option! == "jsx")
+
+Теперь после изменения этого goto tsconfig.json
+
+а затем заменить «jsx»: «реагировать-jsx» на «jsx»: «реагировать»
+
+теперь запустите свой проект с начало пряжи sudo
+
+Это работает для меня, надеюсь, это сработает и для вас :)
+
+ 22.11.2020 20:23
+Каждый раз, когда я запускаю npm start, он заменяет все, что я настроил в {jsx: ...}, на react-jsx, чтобы быть совместимым с преобразованием JSX в React 17.
+
+The following changes are being made to your tsconfig.json file:
+  - compilerOptions.jsx must be react-jsx (to support the new JSX transform in React 17)
+Проблема заключается в том, что VSCode использует более старую версию машинописного текста (4.0.3), в то время как версия машинописного текста, поставляемая вместе с проектом, - (4.1.2).
+
+Следующее помогло мне:
+
+Перейдите в палитру команд CTRL + Shift + P.
+Выберите «TypeScript: выберите версию TypeScript ...».
+Выберите «Использовать версию рабочего пространства».
+VSCode status bar
+
+VSCode command palette
+
+TypeScript workspace version
+
+ 23.11.2020 14:34
+create-react-app сломан «из коробки». AS OF 2021 MAY
+
+Внутри tsconfig include был установлен только на /src, измените на:
+
+  "include": [
+    "./src/**/*.ts"
+  ]
+ 25.11.2020 21:05
+Если вы видите эту проблему после запуска приложения create-response-app с помощью Typescript, вы можете решить эту проблему, добавив "typescript.tsdk": "node_modules/typescript/lib" в .vscode/settings.json.
+
+Для IntelliSense, если вы используете "jsx": "react-jsx", вам необходимо переключить рабочее пространство на использование TS 4.1+.
+
+Или визуально просто спуститесь к синей панели задач и выберите версию Typescript (возможно, 4.x.x что-нибудь), затем выберите «Выбрать версию TypeScript».
+
+
+
+Затем выберите «Использовать версию рабочей области», которая должна ссылаться на node_modules/typescript/lib.
+
+
+
+ 30.11.2020 11:11
+Чтобы решить эту проблему для всех будущих проектов, вы можете установить расширение JavaScript and TypeScript Nightly для VSCode.
+
+ 30.11.2020 20:14
+В моем случае ни одно из решений не работало, поэтому я посмотрел версию ECMA Scrypt. Моя версия была ec5, вы можете проверить здесь -> tsconfig.json. Итак, я попытался переключить target: "es5" на target: "es2017", и, похоже, он решает проблему, но что-то снова появляется, я отредактирую этот комментарий
+
+ 30.11.2020 21:11
+Я следил за "более простым решением", упомянутым здесь https://github.com/facebook/create-react-app/issues/10144#issuecomment-733278351
+
+"... обновить версию TS в package.json до 4.1.2"
+
+а затем перезапустил VS Code.
+
+Простой перезапуск сервера TS с помощью палитры команд для меня не помог.
+
+Никаких других шагов мне не понадобилось.
+
+ 13.12.2020 15:54
+В моем случае перезапуска VSCode и обновления машинописных текстов и сценариев выполнения до соответствующих версий было недостаточно. Восстановление после удаления файла .eslintcache окончательно устранило ошибку.
+
+ 02.01.2021 14:44
+Решение для Sublime Text:
+Убедитесь, что ваш package.json использует Typescript> = v4.1.2
+Удалите пакет Sublime Text "Typescript" через Package Control
+На момент написания в него входит Typescript v3.x
+Откройте терминал в каталоге Sublime Text «Пакеты».
+cd "~/Library/Application Support/Sublime Text 3/Packages"
+Клонируйте репозиторий Typescript-Sublime-Plugin в каталог Packages:
+git clone https://github.com/microsoft/TypeScript-Sublime-Plugin TypeScript
+Откройте настройки пользователя: Sublime Text > Preferences > Settings
+Добавить "typescript_tsdk": "node_modules/typescript/lib"
+Это сообщает подключаемому модулю Sublime Typescript использовать версию проекта Typescript, а не его версию в комплекте.
+Перезапустить Sublime Text
+В отличие от большинства настроек Sublime Text, для этого требуется перезапуск, чтобы перезапустить сервер Typescript.
+Справка:
+https://github.com/microsoft/TypeScript-Sublime-Plugin/issues/538
+
+ 03.01.2021 17:34
+Для тех, кто использует Visual Studio 2019, вы можете исправить это, выполнив следующие действия:
+
+В tsconfig.json есть эта часть
+"include": [
+    "./src/**/*.ts"
+]
+Обновить SDK Typescript в C:\Program Files (x86)\Microsoft SDKs\TypeScript
+Была у меня версия 4.0. Мне нужно было обновить его до 4.1 (точнее, до 4.1.2) с помощью
+удаление папки Typescript
+В Visual Studio 2019, Расширения> Управление расширениями, установите Typescript 4.1 for Visual Studio.
+ 14.01.2021 11:55
+Я только что исправил эту проблему с помощью своего приятеля, который переустанавливал и перенастраивал каждую чертову вещь, чтобы исправить это. Мы перепробовали все исправления в Интернете (мне даже пришлось решать это самому, поэтому я действительно был сбит с толку, почему мы могли исправить это за него).
+
+Проблема оказалась в этом расширении Бог TypeScript. Как только он был отключен, а затем удален, проблема была решена.
+
+Остерегайтесь ложного бога!
+
+ 04.02.2021 06:20
+Апрель 2021 года, и эта проблема все еще сохраняется. Я использую реагировать-шаблон-Cra-шаблон с реакцией 17.02.
+
+Это проблема с VSCode, по умолчанию он использует встроенный машинописный текст. Вам просто нужно открыть файл .tsx и
+
+Нажмите: Ctrl + Shift + P
+Входить: Машинопись: выберите версию машинописного текста ...
+Выбирать: Использовать версию рабочей области.
+ 09.04.2021 11:52
+Это продолжение ответа @basarat, потому что он частично решил проблемы в моем случае. Проблема, с которой я столкнулся, была error TS6046: Argument for '--jsx' option must be: 'preserve', 'react-native', 'react'. Я решил это следующим образом:
+
+Запустить снова ваша IDE
+Удалить ваш tsconfig.json
+Повторно инициализировать ваш tsconfig.json с помощью `` tsc --init```
+Возможно, первый шаг можно было бы пропустить, но я не исследовал это.
+
+ 27.04.2021 14:11
+Вы можете создать файл .vscode / settings.json в корне вашего проекта. В нем введите { "typescript.tsdk": "node_modules\\typescript\\lib" }, и все готово.
+
+Проблема в том, что vscode использует старую версию Typescript.
+
+изображение, показывающее код на vscode
+
+ 25.05.2021 09:12
+У меня есть монорепозиторий, и для меня Webstorm автоматически выбрал старую версию TypeScript для подпакета. Для исправления нужно было щелкнуть TypeScript X.X.X в нижнем колонтитуле, выбрать Configure TypeScript ... и выбрать правильный пакет, который работал у меня в Webstorm 2021.1.
+
+
+Невозможно выполнить обновление состояния React на отключенном компоненте
+Вопросы
+JAVASCRIPT
+Невозможно выполнить обновление состояния React на отключенном компоненте
+Проблема
+Я пишу приложение на React и не смог избежать очень распространенной ловушки - вызова setState(...) после componentWillUnmount(...).
+
+Я очень внимательно посмотрел на свой код и попытался поставить некоторые защитные предложения, но проблема не исчезла, и я все еще наблюдаю за предупреждением.
+
+Поэтому у меня два вопроса:
+
+Как понять из трассировки стека, какой конкретный компонент и обработчик событий или ловушка жизненного цикла ответственны за нарушение правила?
+Ну, как исправить саму проблему, потому что мой код был написан с учетом этой ловушки и уже пытается предотвратить ее, но какой-то базовый компонент все еще генерирует предупреждение.
+Консоль браузера
+Warning: Can't perform a React state update on an unmounted component.
+This is a no-op, but it indicates a memory leak in your application.
+To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount
+method.
+    in TextLayerInternal (created by Context.Consumer)
+    in TextLayer (created by PageInternal) index.js:1446
+d/console[e]
+index.js:1446
+warningWithoutStack
+react-dom.development.js:520
+warnAboutUpdateOnUnmounted
+react-dom.development.js:18238
+scheduleWork
+react-dom.development.js:19684
+enqueueSetState
+react-dom.development.js:12936
+./node_modules/react/cjs/react.development.js/Component.prototype.setState
+react.development.js:356
+_callee$
+TextLayer.js:97
+tryCatch
+runtime.js:63
+invoke
+runtime.js:282
+defineIteratorMethods/</prototype[method]
+runtime.js:116
+asyncGeneratorStep
+asyncToGenerator.js:3
+_throw
+asyncToGenerator.js:29
+Невозможно выполнить обновление состояния React на отключенном компоненте
+
+Код
+Book.tsx
+
+import { throttle } from 'lodash';
+import * as React from 'react';
+import { AutoWidthPdf } from '../shared/AutoWidthPdf';
+import BookCommandPanel from '../shared/BookCommandPanel';
+import BookTextPath from '../static/pdf/sde.pdf';
+import './Book.css';
+
+const DEFAULT_WIDTH = 140;
+
+class Book extends React.Component {
+  setDivSizeThrottleable: () => void;
+  pdfWrapper: HTMLDivElement | null = null;
+  isComponentMounted: boolean = false;
+  state = {
+    hidden: true,
+    pdfWidth: DEFAULT_WIDTH,
+  };
+
+  constructor(props: any) {
+    super(props);
+    this.setDivSizeThrottleable = throttle(
+      () => {
+        if (this.isComponentMounted) {
+          this.setState({
+            pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+          });
+        }
+      },
+      500,
+    );
+  }
+
+  componentDidMount = () => {
+    this.isComponentMounted = true;
+    this.setDivSizeThrottleable();
+    window.addEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  componentWillUnmount = () => {
+    this.isComponentMounted = false;
+    window.removeEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  render = () => (
+    <div className = "Book">
+      { this.state.hidden && <div className = "Book__LoadNotification centered">Book is being loaded...</div> }
+
+      <div className = {this.getPdfContentContainerClassName()}>
+        <BookCommandPanel
+          bookTextPath = {BookTextPath}
+          />
+
+        <div className = "Book__PdfContent" ref = {ref => this.pdfWrapper = ref}>
+          <AutoWidthPdf
+            file = {BookTextPath}
+            width = {this.state.pdfWidth}
+            onLoadSuccess = {(_: any) => this.onDocumentComplete()}
+            />
+        </div>
+
+        <BookCommandPanel
+          bookTextPath = {BookTextPath}
+          />
+      </div>
+    </div>
+  );
+
+  getPdfContentContainerClassName = () => this.state.hidden ? 'hidden' : '';
+
+  onDocumentComplete = () => {
+    try {
+      this.setState({ hidden: false });
+      this.setDivSizeThrottleable();
+    } catch (caughtError) {
+      console.warn({ caughtError });
+    }
+  };
+}
+
+export default Book;
+AutoWidthPdf.tsx
+
+import * as React from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+interface IProps {
+  file: string;
+  width: number;
+  onLoadSuccess: (pdf: any) => void;
+}
+export class AutoWidthPdf extends React.Component<IProps> {
+  render = () => (
+    <Document
+      file = {this.props.file}
+      onLoadSuccess = {(_: any) => this.props.onLoadSuccess(_)}
+      >
+      <Page
+        pageNumber = {1}
+        width = {this.props.width}
+        />
+    </Document>
+  );
+}
+Обновление 1: отменить функцию дроссельной заслонки (все еще не повезло)
+const DEFAULT_WIDTH = 140;
+
+class Book extends React.Component {
+  setDivSizeThrottleable: ((() => void) & Cancelable) | undefined;
+  pdfWrapper: HTMLDivElement | null = null;
+  state = {
+    hidden: true,
+    pdfWidth: DEFAULT_WIDTH,
+  };
+
+  componentDidMount = () => {
+    this.setDivSizeThrottleable = throttle(
+      () => {
+        this.setState({
+          pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+        });
+      },
+      500,
+    );
+
+    this.setDivSizeThrottleable();
+    window.addEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.setDivSizeThrottleable!);
+    this.setDivSizeThrottleable!.cancel();
+    this.setDivSizeThrottleable = undefined;
+  };
+
+  render = () => (
+    <div className = "Book">
+      { this.state.hidden && <div className = "Book__LoadNotification centered">Book is being loaded...</div> }
+
+      <div className = {this.getPdfContentContainerClassName()}>
+        <BookCommandPanel
+          BookTextPath = {BookTextPath}
+          />
+
+        <div className = "Book__PdfContent" ref = {ref => this.pdfWrapper = ref}>
+          <AutoWidthPdf
+            file = {BookTextPath}
+            width = {this.state.pdfWidth}
+            onLoadSuccess = {(_: any) => this.onDocumentComplete()}
+            />
+        </div>
+
+        <BookCommandPanel
+          BookTextPath = {BookTextPath}
+          />
+      </div>
+    </div>
+  );
+
+  getPdfContentContainerClassName = () => this.state.hidden ? 'hidden' : '';
+
+  onDocumentComplete = () => {
+    try {
+      this.setState({ hidden: false });
+      this.setDivSizeThrottleable!();
+    } catch (caughtError) {
+      console.warn({ caughtError });
+    }
+  };
+}
+
+export default Book;
+ 27.12.2018 19:33
+309
+5
+443 748
+27
+Данный вопрос помечен как решенный
+ Ответы 27
+Обновлено: я только что понял, что предупреждение относится к компоненту TextLayerInternal. Вероятно, это ваша ошибка. Остальное по-прежнему актуально, но, возможно, это не решит вашу проблему.
+
+1) Получить экземпляр компонента для этого предупреждения сложно. Похоже, что есть некоторые обсуждения по улучшению этого в React, но в настоящее время нет простого способа сделать это. Я подозреваю, что причина, по которой он еще не был построен, вероятно, заключается в том, что компоненты должны быть написаны таким образом, что setState после размонтирования невозможно, независимо от состояния компонента. Проблема, с точки зрения команды React, всегда заключается в коде компонента, а не в экземпляре компонента, поэтому вы получаете имя типа компонента.
+
+Этот ответ может быть неудовлетворительным, но я думаю, что смогу решить вашу проблему.
+
+2) Регулируемая функция Lodashes имеет метод cancel. Вызовите cancel в componentWillUnmount и откажитесь от isComponentMounted. Отмена - это более «идиоматическая» реакция, чем введение нового свойства.
+
+ 27.12.2018 20:20
+попробуйте заменить setDivSizeThrottleable на
+
+this.setDivSizeThrottleable = throttle(
+  () => {
+    if (this.isComponentMounted) {
+      this.setState({
+        pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+      });
+    }
+  },
+  500,
+  { leading: false, trailing: true }
+);
+ 28.12.2018 00:55
+To remove - Can't perform a React state update on an unmounted component warning, use componentDidMount method under a condition and make false that condition on componentWillUnmount method. For example : -
+
+class Home extends Component {
+  _isMounted = false;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      news: [],
+    };
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    ajaxVar
+      .get('https://domain')
+      .then(result => {
+        if (this._isMounted) {
+          this.setState({
+            news: result.data.hits,
+          });
+        }
+      });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  render() {
+    ...
+  }
+}
+ 11.06.2019 08:25
+У меня было это предупреждение, возможно, из-за вызова setState из обработчика эффектов (это обсуждается в этих 3 вопросысвязанывместе).
+
+Во всяком случае, обновление версии реакции удалило предупреждение.
+
+ 15.11.2019 14:34
+Я знаю, что вы не используете историю, но в моем случае я использовал ловушку useHistory из модели React Router DOM, которая отключает компонент до того, как состояние сохраняется в моем провайдере контекста React.
+
+Чтобы решить эту проблему, я использовал ловушку withRouter, встраивающую компонент, в моем случае export default withRouter(Login), и внутри компонента const Login = props => { ...; props.history.push("/dashboard"); .... Я также удалил другой props.history.push из компонента, например if (authorization.token) return props.history.push('/dashboard'), потому что это вызывает цикл из-за состояния authorization.
+
+Альтернатива помещению нового элемента в история.
+
+ 19.01.2020 06:03
+ Ответ принят как подходящий
+Вот конкретное решение Реагировать на хуки для
+
+Ошибка
+Warning: Can't perform a React state update on an unmounted component.
+
+Решение
+Вы можете объявить let isMounted = true внутри useEffect, который будет изменен в обратный вызов очистки, как только компонент будет размонтирован. Перед обновлением состояния вы теперь проверяете эту переменную условно:
+
+useEffect(() => {
+  let isMounted = true;               // note mutable flag
+  someAsyncOperation().then(data => {
+    if (isMounted) setState(data);    // add conditional check
+  })
+  return () => { isMounted = false }; // cleanup toggles value, if unmounted
+}, []);                               // adjust dependencies to your needs
+const Parent = () => {
+  const [mounted, setMounted] = useState(true);
+  return (
+    <div>
+      Parent:
+      <button onClick = {() => setMounted(!mounted)}>
+        {mounted ? "Unmount" : "Mount"} Child
+      </button>
+      {mounted && <Child />}
+      <p>
+        Unmount Child, while it is still loading. It won't set state later on,
+        so no error is triggered.
+      </p>
+    </div>
+  );
+};
+
+const Child = () => {
+  const [state, setState] = useState("loading (4 sec)...");
+  useEffect(() => {
+    let isMounted = true;
+    fetchData();
+    return () => {
+      isMounted = false;
+    };
+
+    // simulate some Web API fetching
+    function fetchData() {
+      setTimeout(() => {
+        // drop "if (isMounted)" to trigger error again 
+        // (take IDE, doesn't work with stack snippet)
+        if (isMounted) setState("data fetched")
+        else console.info("aborted setState on unmounted component")
+      }, 4000);
+    }
+  }, []);
+
+  return <div>Child: {state}</div>;
+};
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js" integrity = "sha256-32Gmw5rBDXyMjg/73FgpukoTZdMrxuYW7tj8adbN8z4 = " crossorigin = "anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.production.min.js" integrity = "sha256-bjQ42ac3EN0GqK40pC9gGi/YixvKyZ24qMP/9HiGW7w = " crossorigin = "anonymous"></script>
+<div id = "root"></div>
+<script>var { useReducer, useEffect, useState, useRef } = React</script>
+Расширение: Custom useAsync Hook
+Мы можем инкапсулировать весь шаблон в настраиваемый Hook, который автоматически прерывает асинхронные функции в случае, если компонент отключен или значения зависимостей изменились ранее:
+
+function useAsync(asyncFn, onSuccess) {
+  useEffect(() => {
+    let isActive = true;
+    asyncFn().then(data => {
+      if (isActive) onSuccess(data);
+    });
+    return () => { isActive = false };
+  }, [asyncFn, onSuccess]);
+}
+// custom Hook for automatic abortion on unmount or dependency change
+// You might add onFailure for promise errors as well.
+function useAsync(asyncFn, onSuccess) {
+  useEffect(() => {
+    let isActive = true;
+    asyncFn().then(data => {
+      if (isActive) onSuccess(data)
+      else console.info("aborted setState on unmounted component")
+    });
+    return () => {
+      isActive = false;
+    };
+  }, [asyncFn, onSuccess]);
+}
+
+const Child = () => {
+  const [state, setState] = useState("loading (4 sec)...");
+  useAsync(simulateFetchData, setState);
+  return <div>Child: {state}</div>;
+};
+
+const Parent = () => {
+  const [mounted, setMounted] = useState(true);
+  return (
+    <div>
+      Parent:
+      <button onClick = {() => setMounted(!mounted)}>
+        {mounted ? "Unmount" : "Mount"} Child
+      </button>
+      {mounted && <Child />}
+      <p>
+        Unmount Child, while it is still loading. It won't set state later on,
+        so no error is triggered.
+      </p>
+    </div>
+  );
+};
+
+const simulateFetchData = () => new Promise(
+  resolve => setTimeout(() => resolve("data fetched"), 4000));
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js" integrity = "sha256-32Gmw5rBDXyMjg/73FgpukoTZdMrxuYW7tj8adbN8z4 = " crossorigin = "anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.production.min.js" integrity = "sha256-bjQ42ac3EN0GqK40pC9gGi/YixvKyZ24qMP/9HiGW7w = " crossorigin = "anonymous"></script>
+<div id = "root"></div>
+<script>var { useReducer, useEffect, useState, useRef } = React</script>
+Подробнее об очистке эффектов: Чрезмерная реакция: полное руководство по использованию эффекта
+
+ 28.03.2020 23:12
+Если вышеуказанные решения не работают, попробуйте это, и это сработает для меня:
+
+componentWillUnmount() {
+    // fix Warning: Can't perform a React state update on an unmounted component
+    this.setState = (state,callback)=>{
+        return;
+    };
+}
+ 06.04.2020 10:39
+У меня была аналогичная проблема и я ее решил:
+
+Я автоматически вводил пользователя в систему, отправляя действие на redux (размещение токена аутентификации в состоянии redux)
+
+а затем я пытался показать сообщение с this.setState ({succ_message: "...") в моем компоненте.
+
+Компонент выглядел пустым с той же ошибкой на консоли: «отключенный компонент» .. «утечка памяти» и т. д.
+
+После того, как я прочитал ответ Уолтера в этой теме
+
+Я заметил, что в таблице маршрутизации моего приложения маршрут моего компонента недействителен, если пользователь вошел в систему:
+
+{!this.props.user.token &&
+        <div>
+            <Route path = "/register/:type" exact component = {MyComp} />                                             
+        </div>
+}
+Я сделал Маршрут видимым независимо от того, существует токен или нет.
+
+ 25.05.2020 15:38
+У меня была аналогичная проблема, спасибо, что @ ford04 мне помог.
+
+Однако произошла другая ошибка.
+
+NB. Я использую перехватчики ReactJS
+
+ndex.js:1 Warning: Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.
+What causes the error?
+
+import {useHistory} from 'react-router-dom'
+
+const History = useHistory()
+if (true) {
+  history.push('/new-route');
+}
+return (
+  <>
+    <render component />
+  </>
+)
+Это не могло сработать, потому что, несмотря на то, что вы перенаправляете на новую страницу, все состояние и свойства обрабатываются в dom или просто рендеринг на предыдущую страницу не останавливается.
+
+What solution I found
+
+import {Redirect} from 'react-router-dom'
+
+if (true) {
+  return <redirect to = "/new-route" />
+}
+return (
+  <>
+    <render component />
+  </>
+)
+ 03.07.2020 05:36
+Основываясь на ответе @ ford04, вот то же самое, заключенное в методе:
+
+import React, { FC, useState, useEffect, DependencyList } from 'react';
+
+export function useEffectAsync( effectAsyncFun : ( isMounted: () => boolean ) => unknown, deps?: DependencyList ) {
+    useEffect( () => {
+        let isMounted = true;
+        const _unused = effectAsyncFun( () => isMounted );
+        return () => { isMounted = false; };
+    }, deps );
+} 
+Использование:
+
+const MyComponent : FC<{}> = (props) => {
+    const [ asyncProp , setAsyncProp ] = useState( '' ) ;
+    useEffectAsync( async ( isMounted ) =>
+    {
+        const someAsyncProp = await ... ;
+        if ( isMounted() )
+             setAsyncProp( someAsyncProp ) ;
+    });
+    return <div> ... ;
+} ;
+ 15.07.2020 13:41
+Если вы извлекаете данные из axios, а ошибка все еще возникает, просто заключите сеттер в условие
+
+let isRendered = useRef(false);
+useEffect(() => {
+    isRendered = true;
+    axios
+        .get("/sample/api")
+        .then(res => {
+            if (isRendered) {
+                setState(res.data);
+            }
+            return null;
+        })
+        .catch(err => console.info(err));
+    return () => {
+        isRendered = false;
+    };
+}, []);
+ 24.07.2020 06:24
+В зависимости от того, как вы открываете свою веб-страницу, вы можете не вызывать монтирование. Например, использование <Link/> для возврата к странице, которая уже была смонтирована в виртуальной модели DOM, поэтому перехватывается требование данных из жизненного цикла componentDidMount.
+
+ 02.12.2020 01:53
+Существует довольно распространенная ловушка под названием useIsMounted, которая решает эту проблему (для функциональных компонентов) ...
+
+import { useRef, useEffect } from 'react';
+
+export function useIsMounted() {
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    return () => isMounted.current = false;
+  }, []);
+
+  return isMounted;
+}
+затем в вашем функциональном компоненте
+
+function Book() {
+  const isMounted = useIsMounted();
+  ...
+
+  useEffect(() => {
+    asyncOperation().then(data => {
+      if (isMounted.current) { setState(data); }
+    })
+  });
+  ...
+}
+ 05.12.2020 01:27
+Вдохновленный принятым ответом @ ford04, у меня был даже лучший подход к его решению, вместо того, чтобы использовать useEffect внутри useAsync, создать новую функцию, которая возвращает обратный вызов для componentWillUnmount:
+
+function asyncRequest(asyncRequest, onSuccess, onError, onComplete) {
+  let isMounted=true
+  asyncRequest().then((data => isMounted ? onSuccess(data):null)).catch(onError).finally(onComplete)
+  return () => {isMounted=false}
+}
+
+...
+
+useEffect(()=>{
+        return asyncRequest(()=>someAsyncTask(arg), response=> {
+            setSomeState(response)
+        },onError, onComplete)
+    },[])
+
+ 11.01.2021 15:55
+Вдохновленный ответом @ ford04, я использую этот хук, который также принимает обратные вызовы для успеха, ошибок и, наконец, abortFn:
+
+export const useAsync = (
+        asyncFn, 
+        onSuccess = false, 
+        onError = false, 
+        onFinally = false, 
+        abortFn = false
+    ) => {
+
+    useEffect(() => {
+        let isMounted = true;
+        const run = async () => {
+            try{
+                let data = await asyncFn()
+                if (isMounted && onSuccess) onSuccess(data)
+            } catch(error) {
+                if (isMounted && onError) onSuccess(error)
+            } finally {
+                if (isMounted && onFinally) onFinally()
+            }
+        }
+        run()
+        return () => {
+            if (abortFn) abortFn()
+            isMounted = false
+        };
+    }, [asyncFn, onSuccess])
+}
+Если asyncFn выполняет какую-то выборку из серверной части, часто имеет смысл прервать ее, когда компонент отключен (хотя не всегда, иногда, например, если вы загружаете некоторые данные в хранилище, вы также можете просто захотеть доделать, даже если компонент размонтирован)
+
+ 15.01.2021 13:18
+Подход isMounted в большинстве случаев является анти-шаблоном, потому что он на самом деле ничего не очищает / не отменяет, он просто избегает изменения состояния на несмонтированных компонентах, но ничего не делает с ожидающими асинхронными задачами. Команда React недавно удален предупреждает об утечке, потому что пользователи продолжают создавать множество антишаблонов, чтобы скрыть предупреждение, а не исправить его причину.
+
+Но написать отменяемый код на простом JS может быть очень сложно. Чтобы исправить это, я создал свою собственную библиотеку useAsyncEffect2 с настраиваемыми хуками, построенную на основе отменяемого обещания (c-обещание2) для выполнения отменяемого асинхронного кода для достижения его постепенной отмены. Все асинхронные этапы (обещания), в том числе глубокие, отменяются. Это означает, что запрос здесь будет автоматически прерван, если его родительский контекст будет отменен. Конечно, вместо запроса можно использовать любую другую асинхронную операцию.
+
+Демо useAsyncEffect с простым использованием useState (Живая демонстрация):
+    import React, { useState } from "react";
+    import { useAsyncEffect } from "use-async-effect2";
+    import cpAxios from "cp-axios";
+    
+    function TestComponent({url}) {
+      const [text, setText] = useState("");
+    
+      const cancel = useAsyncEffect(
+        function* () {
+          setText("fetching...");
+          const json = (yield cpAxios(url)).data;
+          setText(`Success: ${JSON.stringify(json)}`);
+        },
+        [url]
+      );
+    
+      return (
+        <div>
+          <div>{text}</div>
+          <button onClick = {cancel}>
+            Cancel request
+          </button>
+        </div>
+      );
+    }
+useAsyncEffect Демо с использованием внутренних состояний (Живая демонстрация):
+    import React from "react";
+    import { useAsyncEffect } from "use-async-effect2";
+    import cpAxios from "cp-axios";
+    
+    function TestComponent({ url, timeout }) {
+      const [cancel, done, result, err] = useAsyncEffect(
+        function* () {
+          return (yield cpAxios(url).timeout(timeout)).data;
+        },
+        { states: true, deps: [url] }
+      );
+    
+      return (
+        <div>
+          {done ? (err ? err.toString() : JSON.stringify(result)) : "loading..."}
+          <button onClick = {cancel} disabled = {done}>
+            Cancel async effect (abort request)
+          </button>
+        </div>
+      );
+    }
+Компонент класса с использованием декораторов (Живая демонстрация)
+import React, { Component } from "react";
+import { ReactComponent } from "c-promise2";
+import cpAxios from "cp-axios";
+
+@ReactComponent
+class TestComponent extends Component {
+  state = {
+    text: ""
+  };
+
+  *componentDidMount(scope) {
+    const { url, timeout } = this.props;
+    const response = yield cpAxios(url).timeout(timeout);
+    this.setState({ text: JSON.stringify(response.data, null, 2) });
+  }
+
+  render() {
+    return (<div>{this.state.text}</div>);
+  }
+}
+
+export default TestComponent;
+Еще другие примеры:
+
+Запрос Axios с обработкой ошибок
+Получить погоду по координатам
+Живой поиск
+Приостановить и возобновить
+Захват прогресса
+ 15.01.2021 22:31
+const handleClick = async (item: NavheadersType, index: number) => {
+    const newNavHeaders = [...navheaders];
+    if (item.url) {
+      await router.push(item.url);   =>>>> line causing error (causing route to happen)
+      // router.push(item.url);  =>>> coreect line
+      newNavHeaders.forEach((item) => (item.active = false));
+      newNavHeaders[index].active = true;
+      setnavheaders([...newNavHeaders]);
+    }
+  };
+ 10.02.2021 14:44
+Решение от @ ford04 не сработало для меня, и особенно, если вам нужно использовать isMounted в нескольких местах (например, множественное использованиеEffect), рекомендуется использоватьRef, как показано ниже:
+
+Основные пакеты
+"dependencies": 
+{
+  "react": "17.0.1",
+}
+"devDependencies": { 
+  "typescript": "4.1.5",
+}
+
+Компонент My Hook
+export const SubscriptionsView: React.FC = () => {
+  const [data, setData] = useState<Subscription[]>();
+  const isMounted = React.useRef(true);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      // fetch data
+      // setData (fetch result)
+
+      return () => {
+        isMounted.current = false;
+      };
+    }
+  }
+});
+ 11.02.2021 21:30
+Самое простое и компактное решение (с пояснением) рассматривается ниже как однострочное решение.
+
+useEffect(() => { return () => {}; }, []);
+Приведенный выше пример useEffect() возвращает функцию обратного вызова, запускающую React, чтобы завершить отключенную часть своего жизненного цикла до обновления состояния.
+
+Это очень упрощенное решение - все, что нужно. Кроме того, он также работает в отличие от вымышленного синтаксиса, предоставляемого @ ford04 и @sfletche. Между прочим, приведенный ниже фрагмент кода из @ ford04 является чисто воображаемым синтаксисом (@sfletche, @vinod, @guneetgstar и @ Дрю Кордано использовали тот же самый воображаемый синтаксис).
+
+data => { <--- Вымышленный / воображаемый синтаксис
+
+someAsyncOperation().then(data => {
+    if (isMounted) setState(data);    // add conditional check
+  })
+Все мои линтеры и все линтеры моей команды не принимают его и сообщают о Uncaught SyntaxError: unexpected token: '=>'. Я удивлен, что никто не уловил воображаемый синтаксис. Может ли кто-нибудь, кто участвовал в этой цепочке вопросов, особенно среди проголосовавших, объяснить мне, как они заставили решения работать для них?
+
+ 27.05.2021 06:40
+ОБНОВЛЕНИЕ НЕ ИСПОЛЬЗУЙТЕ МОЙ ОРИГИНАЛЬНЫЙ ОТВЕТ, ЭТО НЕ РАБОТАЕТ
+
+Этот ответ был основан на использовании отменяемых обещаний и примечания в makecancelable, которое я перенес на использование хуков. Однако, похоже, это не отменяет цепочку async / await и даже cancelable-promiseне поддерживает отмену цепочки ожиданий.
+
+Проведя немного дополнительных исследований, выяснилось, что некоторые внутренние причины Google препятствовали тому, чтобы отменяемые обещания вошли в стандарт.
+
+Более того, было некоторое обещание с Bluebird, которое вводит отменяемые обещания, но оно не работает в Expo, или, по крайней мере, я не видел примера его работы в Expo.
+
+принятый ответ - лучший. Поскольку я использую TypeScript, я адаптировал код с несколькими модификациями (я явно установил зависимости, поскольку неявные зависимости принятого ответа, по-видимому, дают цикл повторного рендеринга в моем приложении, добавлены и используют async / await вместо цепочки обещаний, передайте ref на смонтированный объект, чтобы цепочку async / await можно было отменить раньше, если это необходимо)
+
+/**
+ * This starts an async function and executes another function that performs
+ * React state changes if the component is still mounted after the async
+ * operation completes
+ * @template T
+ * @param {(mountedRef: React.MutableRefObject<boolean>) => Promise<T>} asyncFunction async function,
+ *   it has a copy of the mounted ref so an await chain can be canceled earlier.
+ * @param {(asyncResult: T) => void} onSuccess this gets executed after async
+ *   function is resolved and the component is still mounted
+ * @param {import("react").DependencyList} deps
+ */
+export function useAsyncSetEffect(asyncFunction, onSuccess, deps) {
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    mountedRef.current = true;
+    (async () => {
+      const x = await asyncFunction(mountedRef);
+      if (mountedRef.current) {
+        onSuccess(x);
+      }
+    })();
+    return () => {
+      mountedRef.current = false;
+    };
+  }, deps);
+}
+Оригинальный ответ
+Поскольку у меня много разных операций с async, я использую пакет cancelable-promise, чтобы решить эту проблему с минимальными изменениями кода.
+
+Предыдущий код:
+
+useEffect(() => 
+  (async () => {
+    const bar = await fooAsync();
+    setSomeState(bar);
+  })(),
+  []
+);
+Новый код:
+
+import { cancelable } from "cancelable-promise";
+
+...
+
+useEffect(
+  () => {
+    const cancelablePromise = cancelable(async () => {
+      const bar = await fooAsync();
+      setSomeState(bar);
+    })
+    return () => cancelablePromise.cancel();
+  },
+  []
+);
+
+Вы также можете включить его в пользовательскую служебную функцию, подобную этой
+
+/**
+ * This wraps an async function in a cancelable promise
+ * @param {() => PromiseLike<void>} asyncFunction
+ * @param {React.DependencyList} deps
+ */
+export function useCancelableEffect(asyncFunction, deps) {
+  useEffect(() => {
+    const cancelablePromise = cancelable(asyncFunction());
+    return () => cancelablePromise.cancel();
+  }, deps);
+}
+ 28.05.2021 16:55
+Вот простое решение для этого. Это предупреждение возникает из-за того, что мы выполняем некоторый запрос на выборку, когда этот запрос находится в фоновом режиме (поскольку некоторые запросы занимают некоторое время), и мы возвращаемся с этого экрана, тогда они реагируют, не могут обновить состояние. вот пример кода для этого. написать эта строка перед каждым обновлением состояния.
+
+if (!isScreenMounted.current) return;
+Вот полный код
+
+import React , {useRef} from 'react'
+import { Text,StatusBar,SafeAreaView,ScrollView, StyleSheet } from 'react-native'
+import BASEURL from '../constants/BaseURL';
+const SearchScreen = () => {
+    const isScreenMounted = useRef(true)
+    useEffect(() => {
+        return () =>  isScreenMounted.current = false
+    },[])
+
+    const ConvertFileSubmit = () => {
+        if (!isScreenMounted.current) return;
+         setUpLoading(true)
+ 
+         var formdata = new FormData();
+         var file = {
+             uri: `file://${route.params.selectedfiles[0].uri}`,
+             type:`${route.params.selectedfiles[0].minetype}`,
+             name:`${route.params.selectedfiles[0].displayname}`,
+         };
+         
+         formdata.append("file",file);
+         
+         fetch(`${BASEURL}/UploadFile`, {
+             method: 'POST',
+             body: formdata,
+             redirect: 'manual'
+         }).then(response => response.json())
+         .then(result => {
+             if (!isScreenMounted.current) return;
+             setUpLoading(false)    
+         }).catch(error => {
+             console.info('error', error)
+         });
+     }
+
+    return(
+    <>
+        <StatusBar barStyle = "dark-content" />
+        <SafeAreaView>
+            <ScrollView
+            contentInsetAdjustmentBehavior = "automatic"
+            style = {styles.scrollView}>
+               <Text>Search Screen</Text>
+            </ScrollView>
+        </SafeAreaView>
+    </>
+    )
+}
+
+export default SearchScreen;
+
+
+const styles = StyleSheet.create({
+    scrollView: {
+        backgroundColor:"red",
+    },
+    container:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center"
+    }
+})
+ 26.07.2021 09:54
+Я решил эту проблему, предоставив все параметры, которые используются в хуке useEffect
+
+Код сообщил об ошибке:
+
+useEffect(() => {
+    getDistrict({
+      geonameid: countryId,
+      subdistrict: level,
+    }).then((res) => {
+      ......
+    });
+  }, [countryId]);
+Код после исправления:
+
+useEffect(() => {
+    getDistrict({
+      geonameid: countryId,
+      subdistrict: level,
+    }).then((res) => {
+      ......
+    });
+  }, [countryId,level]);
+Как видите, проблемы решены после того, как я предоставил все параметры (включая параметр уровня), которые должны пройти.
+
+ 27.07.2021 04:47
+Добавьте ссылку на компонент jsx, а затем проверьте, что он существует
+
+function Book() {
+  const ref = useRef();
+
+  useEffect(() => {
+    asyncOperation().then(data => {
+      if (ref.current) setState(data);
+    })
+  });
+
+  return <div ref = {ref}>content</div>
+}
+ 10.09.2021 13:23
+Проверка того, смонтирован ли компонент, на самом деле является анти-шаблоном согласно документации React. Решение для предупреждения setState заключается скорее в использовании AbortController.:
+
+useEffect(() => {
+  const abortController = new AbortController()   // creating an AbortController
+  fetch(url, { signal: abortController.signal })  // passing the signal to the query
+    .then(data => {
+      setState(data)                              // if everything went well, set the state
+    })
+    .catch(error => {
+      if (error.name === 'AbortError') return     // if the query has been aborted, do nothing
+      throw error
+    })
+  
+  return () => {
+    abortController.abort()                       // stop the query by aborting on the AbortController on unmount
+  }
+}, [])
+Для асинхронных операций, которые не основаны на Fetch API, все же должен быть способ отменить эти асинхронные операции, и вам лучше использовать их, чем просто проверять, смонтирован ли компонент. Если вы создаете свой собственный API, вы можете реализовать в нем API AbortController для его обработки.
+
+Для большего контекста, проверка того, установлен ли компонент, является анти-шаблоном как React внутренне проверяет, смонтирован ли компонент для отображения этого предупреждения.. Повторное выполнение той же проверки - просто способ скрыть предупреждение, и есть несколько более простых способов скрыть их, чем добавление этого фрагмента кода в большую часть кодовой базы.
+
+Источник: https://medium.com/doctolib/react-stop-checking-if-your-component-is-mounted-3bb2568a4934
+
+ 07.10.2021 18:41
+React уже удалил это предупреждение но вот лучшее решение (не только обходной путь)
+
+useEffect(() => {
+  const abortController = new AbortController()   // creating an AbortController
+  fetch(url, { signal: abortController.signal })  // passing the signal to the query
+    .then(data => {
+      setState(data)                              // if everything went well, set the state
+    })
+    .catch(error => {
+      if (error.name === 'AbortError') return     // if the query has been aborted, do nothing
+      throw error
+    })
+  
+  return () => {
+    abortController.abort() 
+  }
+}, [])
+ 07.10.2021 19:26
+"If there is a setter hook in your useEffect, return an cleanup function" - me
+Проверьте свои функции useEffect(), у которых есть перехватчик установки setSomething(), и заставьте его возвращать функцию очистки в конце. Например:
+
+useEffect(() => {
+  ...
+  setSomething(something); //
+  ...
+  return () => { }; // The cleanup function we have to add, it could be empty like this
+}, [/*whatever deps or no deps at all*/]);  
+ 11.12.2021 22:00
+У меня есть 2 решения этой ошибки:
+
+возвращение:
+Если вы используете hook и useEffect, поставьте конец return на useEffect.
+
+useEffect(() => {
+    window.addEventListener('mousemove', logMouseMove)
+    return () => {
+        window.removeEventListener('mousemove', logMouseMove)
+    }
+}, [])
+componentWillUnmount:
+Если вы используете componentDidMount, поставьте рядом с ним componentWillUnmount.
+
+componentDidMount() { 
+    window.addEventListener('mousemove', this.logMouseMove)
+}
+
+componentWillUnmount() {
+    window.removeEventListener('mousemove', this.logMouseMove)
+}
+
+
+ОШИБКА в multi ./styles.css в Angular 6
+Вопросы
+ANGULAR
+ОШИБКА в multi ./styles.css в Angular 6
+Я новичок в Angular 6, в моем проекте я получил ошибку ниже
+
+ ERROR in multi ./node_modules/bootstrap/dist/css/bootstrap.min.css ./styles.css
+Module not found: Error: Can't resolve 'C:\Users\User\e-CommerceWebsite\styles.css' in 'C:\Users\User\e-CommerceWebsite'
+и браузер показывает
+
+cannot Get
+angular.json
+
+ "styles": [
+          "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "styles.css"
+        ],
+        "scripts": [
+          "./node_modules/jquery/dist/jquery.min.js",
+          "./node_modules/popper.js/dist/popper.min.js",
+          "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+        ]
+styles.css
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+...
+...
+...
+Обращается к этому: бутстрап не подключается к угловой 6?
+
+Может ли кто-нибудь помочь мне исправить эту ошибку.
+
+ 26.06.2018 06:50
+27
+2
+96 119
+32
+ Ответы 32
+Добавьте bootstrap в файл конфигурации angular json вместо styles.css (он не работает, потому что это css, а не scss).
+
+"styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.scss"
+      ],
+ 26.06.2018 06:53
+Почему вы angular.json
+
+ "styles": ["styles.scss"],
+ "scripts": []
+Но ваш глобальный стиль - styles.css
+
+
+
+Убедитесь, что у вас есть файл style.scss. Поскольку возникает ошибка, у вас нет файла style.scss.
+
+ 26.06.2018 08:10
+В файле angular 6 angular.json используйте файл начальной загрузки или font-awesome css, как это решит вашу проблему.
+
+   "styles": [
+          {
+            "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+          },
+          {
+            "input": "./node_modules/font-awesome/css/font-awesome.min.css"
+          },
+          "src/styles.css"
+        ],
+ 06.07.2018 03:41
+Вы можете либо импортировать bootstrap.min.css из узловых модулей в файл styles.css, например
+
+@import ~/bootstrap/dist/css/bootstrap.min.css;
+Или добавьте этот файл начальной загрузки в файл angular (-cli) .json (до Angular 5 этот файл будет cli.json, а в 6 - просто angular.json) в файле styles [].
+
+"styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+Нам просто нужно выяснить правильный путь, по которому парсер сможет найти путь, по которому установлен бутстрап.
+
+ 03.08.2018 17:02
+По сути, он идет по неправильному пути. Нам нужно указать путь как ../node_modules/bootstrap/dist/css/bootstrap.min.css вместо node_modules/bootstrap/dist/css/bootstrap.min.css.
+
+ 06.08.2018 17:13
+Сработало у меня!
+
+"styles": [{
+    "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+  },
+  {
+    "input": "./node_modules/ti-icons/css/themify-icons.css"
+  },
+  "src/assets/icon/icofont/css/icofont.min.css",
+  "src/styles.css"
+]
+ 07.10.2018 08:55
+Заменил эти стили от angular.json
+
+"styles": ["src/styles.css"]
+к
+
+"styles": ["styles.css"]
+У меня это сработало!
+
+ 21.12.2018 08:28
+Я столкнулся с той же ошибкой. В соответствии с вашим путем к файлу ответ изменен. Просто посмотрите на свой путь и исправьте его следующими способами.
+
+"styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+
+            ],
+или же
+
+"styles": [
+          "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "../src/styles.css"
+
+        ],
+ 27.12.2018 08:14
+проверьте, доступны ли соответствующие файлы, которые мы связали в разделах «стили» и «сценарии», в папке модулей узлов. Недавно в моем проекте у меня возникла эта проблема при обновлении пакетов. Я заметил, что некоторые файлы, на которые мы ссылались angular cli JSON, были пропущены. Эта ошибка была устранена после добавления необходимых файлов. Надеюсь, поможет.
+
+ 09.01.2019 07:09
+Я боролся с этой ошибкой. Просто посмотрите на свой путь и исправьте следующее.
+
+"styles": [
+          "node_modules/@nebular/theme/styles/prebuilt/default.css"
+        ],
+ 21.01.2019 14:14
+Единственное решение, которое сработало для меня:
+
+1/   delete "node-modules"
+2/   "npm install node-sass@4.10.0 --save"
+3/   "npm install"
+4/   "npm rebuild node-sass"
+ 31.01.2019 15:12
+Я была такая же проблема. Этот мне подходит.
+
+ "styles": [
+          "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "node_modules/bootstrap/dist/css/bootstrap.css",
+          "src/sass/styles.scss"
+        ],
+а также этот работает.
+
+"styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "./node_modules/bootstrap/dist/css/bootstrap.css",
+          "src/sass/styles.scss"
+        ]
+ 05.02.2019 07:12
+У меня была такая же проблема, это сработало для меня.
+
+angular.json:
+
+"styles": [             
+            "src/styles.css"              
+        ],
+styles.css:
+
+@import "~../node_modules/bootstrap/dist/css/bootstrap.min.css";
+ 13.02.2019 11:13
+Я думаю, это из-за проблемы с загрузкой, попробуйте следующее: Шаг 1. Удалите "../node_modules/bootstrap/dist/css/bootstrap.min.css" Шаг 2. Зайдите в styles.css Импортируйте бутстрап, добавив эту строку @import "~ bootstrap / dist / css / bootstrap.css"; Эти шаги устранили ошибки, которые я получил в процессе сборки.
+
+ 15.05.2019 12:29
+У меня такая же проблема, тогда я применяю путь ниже, как это, без точек (.) и слэш /
+
+"node_modules/bootstrap/dist/css/bootstrap.min.css",
+ 17.06.2019 09:26
+У меня была аналогичная проблема с использованием ngx-toastr с Угловой 8. Мне пришлось разместить ссылки на стили .css в следующем порядке в файле angular.json:
+
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "src/styles.css",
+          "node_modules/ngx-toastr/toastr.css" 
+        ],
+        "scripts": [
+        ]
+И @imports в файле styles.css в следующем порядке:
+
+ @import '~bootstrap/dist/css/bootstrap.min.css';
+ @import '~ngx-toastr/toastr.css';
+Это решило проблему.
+
+ 23.06.2019 02:42
+У меня тоже была эта пробема. Сделайте это:
+в файле angular.json используйте одно из этих объявлений (обратите внимание на «.» и «/»):
+
+"styles": [
+          {
+            "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+          },
+          {
+            "input": "./node_modules/font-awesome/css/font-awesome.min.css"
+          },
+          "src/styles.css"
+        ],
+или же
+
+"styles":
+         "src/styles.css",
+         "node_modules/font-awesome/css/font-awesome.css"       
+Не забудьте пересобрать проект, чтобы увидеть изменения
+
+ 11.07.2019 19:16
+эта работа для меня
+
+  "styles": [
+         {
+            "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+          },
+          "src/styles.css"
+        ],
+ 13.07.2019 17:29
+Попробуйте указанную ниже команду:
+
+npm rebuild node-sass
+
+ 17.09.2019 11:48
+У меня была почти такая же проблема, я также попытался удалить и переустановить пакет Бутстрап, но это не увенчалось успехом.
+
+ERROR in multi ../node_modules/bootstrap/dist/css/bootstrap.min.css ./src/styles.css Module not found: Error: Can't resolve 'D:\angular\node_modules\bootstrap\dist\css\bootstrap.min.css' in 'D:\angular\jsonFile'
+Мой путь в angualr.json был
+
+"../node_modules/bootstrap/dist/css/bootstrap.min.css"
+удаление передних точек сработало для меня.
+
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+ 10.10.2019 10:50
+The problem can be solved in two ways:
+
+1. Go to angular.json and under styles add the following lines
+
+   "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+
+            ],
+
+Or
+
+     "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+
+              ],
+
+Please try them the second one worked for me
+
+2. Go to the file named "styles.css" and add the following line of code.
+
+ @import '~bootstrap/dist/css/bootstrap.min.css';
+ 15.10.2019 21:19
+У меня была такая же проблема с новым проектом angular 7. Просто установил его, запустил npm и получил ошибку: ОШИБКА в multi ./src/styles.sass Итак, я открыл angular.json и:
+
+      "styles": [
+         "src/styles.sass"   <--  I had styles.scss file, not this styles.sass
+       ],
+Я просто переименовал styles.sass в styles.scss, потому что этот файл присутствовал в папке проекта, и npm запускается снова. Это решило мою проблему.
+
+ 18.10.2019 17:33
+В angular 6 вам нужно удалить эту строку из вашего angular.json "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+
+это хорошо работает нормально.
+
+ 09.11.2019 14:52
+работал у меня: "стили": ["./node_modules/bootstrap/dist/css/bootstrap.min.css","src/styles.css"],
+
+ 26.12.2019 13:55
+Они начались за пределами папки проекта, и вам нужно связать их с src и направить их в файл styles.css. Скопируйте это:
+
+"src / styles.css"
+
+~ Хай Лим
+
+ 05.02.2020 22:39
+Я сталкивался с этим много раз при создании новых проектов.
+
+Убедитесь, что путь к bootstrap.min.css совпадает с путем в сообщении об ошибке и angular.json
+Остановите приложение при внесении изменений в файл angular.json
+Беги снова
+это либо
+
+"styles": [
+          "src/styles.scss",
+          "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+или же
+
+"styles": [
+          "src/styles.scss",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+в зависимости от пути из сообщения об ошибке
+
+ 20.03.2020 07:29
+Буквально неправильный путь - причина. Включите src / перед style.css.
+
+"styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+ 29.03.2020 10:22
+Решить проблему можно следующими способами: пытаться:
+
+ "styles": [
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              },
+              {
+                "input": "./node_modules/font-awesome/css/font-awesome.min.css"
+              },
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+ 29.03.2020 21:16
+Я попробовал сделать следующий шаг:
+
+Использовать:
+
+../node_modules/bootstrap/dist/css/bootstrap.min.css
+вместо
+
+node_modules/bootstrap/dist/css/bootstrap.min.css
+и сохраните все, и выйдите из редактора, и запустите снова, у меня это сработало, в большинстве случаев, если вы сталкиваетесь с какой-либо ошибкой, просто сохраните все и выйдите из редактора, откройте и запустите снова, надеюсь, это сработает
+
+ 23.05.2020 20:52
+Я обновляюсь с помощью команды npm update после того, как получил ту же ошибку. Я изменил свой файл angular.js в удаленных стилях F: \ xxxx \ node_modules \ ngx-select-dropdown \ dist \ assets \ style.css ', файла css там нет. Я сохранил и остановил свой angular cli, снова запустил cli ng serve. Все заработало нормально.
+
+https://github.com/manishjanky/ngx-select-dropdown/issues/112 В последней версии style.css больше не актуален, поэтому я удалил последний файл css из ngx-select-dropdown. Это все.
+
+ 09.06.2020 12:21
+Проблема этого типа возникает из-за неправильного пути к файлам.
+
+Попробуйте "./node_modules/bootstrap/dist/css/bootstrap.min.css" вместо "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+ 24.10.2020 09:01
+Я считаю, что для этого есть только одно решение. Проблема в пути. Купите ввод ./ или ввод не поможет. Если вы получаете ошибку "" ERROR in multi ./node_modules/bootstrap/dist/css/bootstrap.min.css "", это означает, что вы установили его не в нужное место. Если вы изучаете книгу или около того, то простое решение - перейти в командную строку, перейти в папку проекта и установить там загрузочную программу. Или укажите полный путь к начальной загрузке в файле angular.jason.
+
+
+
+TypeScript: вопросы и ответы с фронтенд-собеседований
+Для чего нужен TypeScript, плюсы и минусы
+Отличия type и interface в TypeScript
+Что такое Generic в TypeScript
+Что такое Union в TypeScript
+Отличия any и unknown в TypeScript
+Что такое TypeGuard в TypeScript
+Тип never в TypeScript
+Ключевое слово infer в TypeScript
+Как работает keyof и typeof в TypeScript
+Utility Type Record в TypeScript
+Utility Type Partial в TypeScript
+Utility Type Required в TypeScript
+Utility Type Readonly в TypeScript
+Utility Type Pick в TypeScript
+Utility Type Omit в TypeScript
+Utility Type Exclude в TypeScript
+Utility Type Extract в TypeScript
+Utility Type ReturnType в TypeScript
+Utility Type Parameters в TypeScript
+Utility Type Awaited в TypeScript
+Что такое декораторы в TypeScript
+Что такое Mapped Types в TypeScript
+Что делает implements в TypeScript
+Conditional Types в TypeScript
+Type Assertions в TypeScript
+Discriminated Unions в TypeScript
+Type Narrowing в TypeScript
+Function Overloads в TypeScript
+Что такое enum (перечисление) в TypeScript
+
+Discriminated Unions в TypeScript: tagged unions с примерами
+Что такое Discriminated Unions?
+Discriminated Unions (Размеченные объединения) — это паттерн в TypeScript, где каждый тип в union имеет общее свойство с литеральным типом, которое используется для различения (discriminating) типов.
+
+Также известны как: Tagged Unions, Algebraic Data Types, Sum Types.
+
+Базовый пример
+
+type Circle = {
+  kind: 'circle';
+  radius: number;
+};
+
+type Square = {
+  kind: 'square';
+  size: number;
+};
+
+type Rectangle = {
+  kind: 'rectangle';
+  width: number;
+  height: number;
+};
+
+type Shape = Circle | Square | Rectangle;
+Здесь kind — это discriminant (дискриминант), общее свойство с литеральными типами.
+
+Использование с Type Narrowing
+
+function getArea(shape: Shape): number {
+  switch (shape.kind) {
+    case 'circle':
+      // TypeScript знает, что это Circle
+      return Math.PI * shape.radius ** 2;
+    
+    case 'square':
+      // TypeScript знает, что это Square
+      return shape.size ** 2;
+    
+    case 'rectangle':
+      // TypeScript знает, что это Rectangle
+      return shape.width * shape.height;
+  }
+}
+
+const circle: Circle = { kind: 'circle', radius: 5 };
+console.log(getArea(circle));  // 78.53981633974483
+TypeScript автоматически сужает тип в каждой ветке switch.
+
+Зачем нужны Discriminated Unions?
+Безопасность типов
+
+// Без discriminated unions
+type ShapeBad = {
+  radius?: number;
+  size?: number;
+  width?: number;
+  height?: number;
+};
+
+function getAreaBad(shape: ShapeBad): number {
+  if (shape.radius) {
+    return Math.PI * shape.radius ** 2;
+  }
+  if (shape.size) {
+    return shape.size ** 2;
+  }
+  if (shape.width && shape.height) {
+    return shape.width * shape.height;
+  }
+  return 0;  // Что это?
+}
+
+// С discriminated unions - все явно и типобезопасно
+Моделирование состояний
+
+type LoadingState = {
+  status: 'loading';
+};
+
+type SuccessState = {
+  status: 'success';
+  data: string;
+};
+
+type ErrorState = {
+  status: 'error';
+  error: string;
+};
+
+type State = LoadingState | SuccessState | ErrorState;
+
+function renderUI(state: State) {
+  switch (state.status) {
+    case 'loading':
+      return 'Loading...';
+    
+    case 'success':
+      return `Data: ${state.data}`;
+    
+    case 'error':
+      return `Error: ${state.error}`;
+  }
+}
+Exhaustiveness Checking
+TypeScript может проверить, что мы обработали все возможные случаи.
+
+
+type Action = 
+  | { type: 'INCREMENT' }
+  | { type: 'DECREMENT' }
+  | { type: 'RESET'; value: number };
+
+function reducer(state: number, action: Action): number {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    case 'RESET':
+      return action.value;
+    default:
+      // Проверка на полноту обработки
+      const _exhaustiveCheck: never = action;
+      return _exhaustiveCheck;
+  }
+}
+Если добавить новый тип action, TypeScript выдаст ошибку:
+
+
+type Action = 
+  | { type: 'INCREMENT' }
+  | { type: 'DECREMENT' }
+  | { type: 'RESET'; value: number }
+  | { type: 'MULTIPLY'; factor: number };  // Новый тип
+
+function reducer(state: number, action: Action): number {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    case 'RESET':
+      return action.value;
+    default:
+      // Ошибка: Type 'MULTIPLY' is not assignable to type 'never'
+      const _exhaustiveCheck: never = action;
+      return _exhaustiveCheck;
+  }
+}
+Практические паттерны
+API Response
+
+type ApiSuccess<T> = {
+  status: 'success';
+  data: T;
+  timestamp: number;
+};
+
+type ApiError = {
+  status: 'error';
+  message: string;
+  code: number;
+};
+
+type ApiResponse<T> = ApiSuccess<T> | ApiError;
+
+async function fetchUser(id: number): Promise<ApiResponse<User>> {
+  try {
+    const response = await fetch(`/api/users/${id}`);
+    const data = await response.json();
+    return {
+      status: 'success',
+      data,
+      timestamp: Date.now()
+    };
+  } catch (error) {
+    return {
+      status: 'error',
+      message: error.message,
+      code: 500
+    };
+  }
+}
+
+// Использование
+const response = await fetchUser(1);
+
+if (response.status === 'success') {
+  console.log(response.data);  // User
+} else {
+  console.error(response.message);  // string
+}
+Формы и валидация
+
+type FormIdle = {
+  state: 'idle';
+};
+
+type FormValidating = {
+  state: 'validating';
+  fieldName: string;
+};
+
+type FormValid = {
+  state: 'valid';
+  values: Record<string, any>;
+};
+
+type FormInvalid = {
+  state: 'invalid';
+  errors: Record<string, string>;
+};
+
+type FormState = FormIdle | FormValidating | FormValid | FormInvalid;
+
+function FormComponent({ formState }: { formState: FormState }) {
+  switch (formState.state) {
+    case 'idle':
+      return <div>Fill out the form</div>;
+    
+    case 'validating':
+      return <div>Validating {formState.fieldName}...</div>;
+    
+    case 'valid':
+      return <div>Form is valid! {JSON.stringify(formState.values)}</div>;
+    
+    case 'invalid':
+      return (
+        <div>
+          Errors:
+          {Object.entries(formState.errors).map(([field, error]) => (
+            <div key={field}>{field}: {error}</div>
+          ))}
+        </div>
+      );
+  }
+}
+WebSocket сообщения
+
+type ConnectedMessage = {
+  type: 'connected';
+  sessionId: string;
+};
+
+type MessageReceived = {
+  type: 'message';
+  content: string;
+  author: string;
+  timestamp: number;
+};
+
+type UserJoined = {
+  type: 'user_joined';
+  username: string;
+};
+
+type UserLeft = {
+  type: 'user_left';
+  username: string;
+};
+
+type DisconnectedMessage = {
+  type: 'disconnected';
+  reason: string;
+};
+
+type WebSocketMessage = 
+  | ConnectedMessage
+  | MessageReceived
+  | UserJoined
+  | UserLeft
+  | DisconnectedMessage;
+
+function handleMessage(message: WebSocketMessage) {
+  switch (message.type) {
+    case 'connected':
+      console.log(`Connected with session: ${message.sessionId}`);
+      break;
+    
+    case 'message':
+      console.log(`${message.author}: ${message.content}`);
+      break;
+    
+    case 'user_joined':
+      console.log(`${message.username} joined`);
+      break;
+    
+    case 'user_left':
+      console.log(`${message.username} left`);
+      break;
+    
+    case 'disconnected':
+      console.log(`Disconnected: ${message.reason}`);
+      break;
+  }
+}
+Redux-style Actions
+
+type FetchUsersRequest = {
+  type: 'FETCH_USERS_REQUEST';
+};
+
+type FetchUsersSuccess = {
+  type: 'FETCH_USERS_SUCCESS';
+  payload: User[];
+};
+
+type FetchUsersFailure = {
+  type: 'FETCH_USERS_FAILURE';
+  error: string;
+};
+
+type Action = FetchUsersRequest | FetchUsersSuccess | FetchUsersFailure;
+
+interface State {
+  users: User[];
+  loading: boolean;
+  error: string | null;
+}
+
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case 'FETCH_USERS_REQUEST':
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    
+    case 'FETCH_USERS_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        users: action.payload
+      };
+    
+    case 'FETCH_USERS_FAILURE':
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+  }
+}
+Вложенные Discriminated Unions
+
+type NetworkError = {
+  kind: 'network';
+  statusCode: number;
+};
+
+type ValidationError = {
+  kind: 'validation';
+  fieldErrors: Record<string, string>;
+};
+
+type AuthError = {
+  kind: 'auth';
+  reason: 'expired' | 'invalid';
+};
+
+type AppError = NetworkError | ValidationError | AuthError;
+
+type SuccessResult<T> = {
+  status: 'success';
+  data: T;
+};
+
+type ErrorResult = {
+  status: 'error';
+  error: AppError;
+};
+
+type Result<T> = SuccessResult<T> | ErrorResult;
+
+function handleResult<T>(result: Result<T>) {
+  if (result.status === 'success') {
+    console.log(result.data);
+  } else {
+    // Вложенное сужение
+    switch (result.error.kind) {
+      case 'network':
+        console.error(`Network error: ${result.error.statusCode}`);
+        break;
+      
+      case 'validation':
+        console.error('Validation errors:', result.error.fieldErrors);
+        break;
+      
+      case 'auth':
+        console.error(`Auth error: ${result.error.reason}`);
+        break;
+    }
+  }
+}
+Создание helper функций
+
+// Action creators с типобезопасностью
+type Action = 
+  | { type: 'ADD_TODO'; text: string }
+  | { type: 'TOGGLE_TODO'; id: number }
+  | { type: 'DELETE_TODO'; id: number };
+
+// Функции-создатели действий
+const addTodo = (text: string): Action => ({
+  type: 'ADD_TODO',
+  text
+});
+
+const toggleTodo = (id: number): Action => ({
+  type: 'TOGGLE_TODO',
+  id
+});
+
+const deleteTodo = (id: number): Action => ({
+  type: 'DELETE_TODO',
+  id
+});
+
+// Использование
+const action = addTodo('Buy milk');  // type: Action
+Извлечение типов из Discriminated Unions
+
+type Action = 
+  | { type: 'INCREMENT' }
+  | { type: 'DECREMENT' }
+  | { type: 'SET_VALUE'; value: number };
+
+// Извлечь конкретный тип по дискриминанту
+type ExtractAction<T extends Action['type']> = Extract<Action, { type: T }>;
+
+type IncrementAction = ExtractAction<'INCREMENT'>;
+// { type: 'INCREMENT' }
+
+type SetValueAction = ExtractAction<'SET_VALUE'>;
+// { type: 'SET_VALUE'; value: number }
+
+// Извлечь payload
+type ActionPayload<T extends Action['type']> = ExtractAction<T> extends { value: infer P }
+  ? P
+  : never;
+
+type SetValuePayload = ActionPayload<'SET_VALUE'>;  // number
+Типичные ошибки
+Забыть про literal types
+
+// Плохо - тип слишком широкий
+type BadShape = {
+  kind: string;  // Должен быть литерал!
+  radius: number;
+};
+
+// Хорошо
+type GoodShape = {
+  kind: 'circle';  // Литеральный тип
+  radius: number;
+};
+Несогласованные дискриминанты
+
+// Плохо - разные имена для дискриминанта
+type Circle = { kind: 'circle'; radius: number };
+type Square = { type: 'square'; size: number };  // type вместо kind!
+
+// Хорошо - единое имя
+type Circle = { kind: 'circle'; radius: number };
+type Square = { kind: 'square'; size: number };
+Опциональный дискриминант
+
+// Плохо
+type BadAction = {
+  type?: 'INCREMENT';  // Опциональный!
+};
+
+// Хорошо
+type GoodAction = {
+  type: 'INCREMENT';  // Обязательный
+};
+Преимущества
+Типобезопасность во время компиляции
+Автоматическое сужение типов
+Exhaustiveness checking
+Читаемый и понятный код
+Нет необходимости в type assertions
+Легко расширять новыми случаями
+Отличная поддержка рефакторинга
+Вывод
+Discriminated Unions:
+
+Паттерн для моделирования взаимоисключающих состояний
+Требуют общее свойство с литеральными типами (дискриминант)
+Автоматическое сужение типов в switch и if
+Exhaustiveness checking через never
+Идеальны для состояний, API responses, actions
+Лучше optional properties для моделирования вариантов
+На собеседовании:
+
+Важно уметь:
+
+Объяснить, что такое discriminated unions и discriminant
+Показать пример с type narrowing
+Реализовать exhaustiveness checking
+Привести практические примеры (API, Redux actions, состояния)
+Объяснить преимущества перед optional properties
+Показать, как извлекать типы из union
+
+
+Type Narrowing в TypeScript: сужение типов
+Что такое Type Narrowing?
+Type Narrowing (Сужение типов) — это процесс, при котором TypeScript уточняет тип переменной из более общего к более конкретному на основе проверок в коде.
+
+
+function process(value: string | number) {
+  // Здесь value: string | number
+  
+  if (typeof value === 'string') {
+    // Здесь value: string (тип сужен!)
+    console.log(value.toUpperCase());
+  } else {
+    // Здесь value: number (остался только number)
+    console.log(value.toFixed(2));
+  }
+}
+Способы сужения типов
+1. typeof Guard
+Проверка примитивных типов через typeof.
+
+
+function printValue(value: string | number | boolean) {
+  if (typeof value === 'string') {
+    console.log(value.toUpperCase());
+  } else if (typeof value === 'number') {
+    console.log(value.toFixed(2));
+  } else {
+    console.log(value ? 'true' : 'false');
+  }
+}
+Важно:
+
+typeof null возвращает 'object', это особенность JavaScript!
+
+
+function process(value: string | null) {
+  if (typeof value === 'object') {
+    // Здесь value все еще string | null (null - это object!)
+    console.log(value);  // может быть null
+  }
+}
+2. instanceof Guard
+Проверка принадлежности к классу.
+
+
+class Dog {
+  bark() {
+    console.log('Woof!');
+  }
+}
+
+class Cat {
+  meow() {
+    console.log('Meow!');
+  }
+}
+
+function makeSound(animal: Dog | Cat) {
+  if (animal instanceof Dog) {
+    animal.bark();  // animal: Dog
+  } else {
+    animal.meow();  // animal: Cat
+  }
+}
+Работа с встроенными классами
+
+function processValue(value: Date | string) {
+  if (value instanceof Date) {
+    console.log(value.getFullYear());  // value: Date
+  } else {
+    console.log(value.toUpperCase());  // value: string
+  }
+}
+3. in Operator
+Проверка наличия свойства в объекте.
+
+
+interface Circle {
+  radius: number;
+}
+
+interface Square {
+  size: number;
+}
+
+type Shape = Circle | Square;
+
+function getArea(shape: Shape) {
+  if ('radius' in shape) {
+    // shape: Circle
+    return Math.PI * shape.radius ** 2;
+  } else {
+    // shape: Square
+    return shape.size ** 2;
+  }
+}
+Проверка методов
+
+interface Bird {
+  fly(): void;
+  layEggs(): void;
+}
+
+interface Fish {
+  swim(): void;
+  layEggs(): void;
+}
+
+function move(animal: Bird | Fish) {
+  if ('fly' in animal) {
+    animal.fly();  // animal: Bird
+  } else {
+    animal.swim();  // animal: Fish
+  }
+}
+4. Equality Narrowing
+Сужение через проверку на равенство.
+
+
+function process(x: string | number, y: string | boolean) {
+  if (x === y) {
+    // x и y могут быть равны только если оба string
+    console.log(x.toUpperCase());  // x: string
+    console.log(y.toUpperCase());  // y: string
+  }
+}
+Проверка на null и undefined
+
+function printName(name: string | null | undefined) {
+  if (name !== null && name !== undefined) {
+    console.log(name.toUpperCase());  // name: string
+  }
+  
+  // Или короче
+  if (name != null) {
+    console.log(name.toUpperCase());  // name: string
+  }
+}
+5. Truthiness Narrowing
+Сужение на основе проверки на истинность/ложность.
+
+
+function printLength(str: string | null | undefined) {
+  if (str) {
+    // str: string (убрали null и undefined)
+    console.log(str.length);
+  }
+}
+Falsy значения
+
+function process(value: string | number | null | undefined | 0 | '') {
+  if (value) {
+    // value: string | number (убрали falsy значения)
+    // НО! 0 и '' тоже falsy, поэтому их тоже нет
+  }
+}
+Осторожно:
+
+Truthiness narrowing убирает ВСЕ falsy значения: 0, '', false, null, undefined, NaN.
+
+Более точная проверка
+
+function processValue(value: string | null) {
+  if (value !== null) {
+    // value: string
+    console.log(value.length);
+  }
+}
+6. Type Predicates (is)
+Пользовательские type guards с ключевым словом is.
+
+
+function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+function process(value: unknown) {
+  if (isString(value)) {
+    // value: string
+    console.log(value.toUpperCase());
+  }
+}
+Более сложные проверки
+
+interface User {
+  name: string;
+  email: string;
+}
+
+function isUser(obj: unknown): obj is User {
+  return (
+    typeof obj === 'object' &&
+    obj !== null &&
+    'name' in obj &&
+    'email' in obj &&
+    typeof (obj as User).name === 'string' &&
+    typeof (obj as User).email === 'string'
+  );
+}
+
+function greetUser(data: unknown) {
+  if (isUser(data)) {
+    // data: User
+    console.log(`Hello, ${data.name}!`);
+  }
+}
+7. Discriminated Unions
+Сужение на основе общего дискриминирующего свойства.
+
+
+type Success = {
+  status: 'success';
+  data: string;
+};
+
+type Error = {
+  status: 'error';
+  message: string;
+};
+
+type Result = Success | Error;
+
+function handleResult(result: Result) {
+  if (result.status === 'success') {
+    // result: Success
+    console.log(result.data);
+  } else {
+    // result: Error
+    console.log(result.message);
+  }
+}
+Switch statement
+
+type Action =
+  | { type: 'INCREMENT' }
+  | { type: 'DECREMENT' }
+  | { type: 'SET'; value: number };
+
+function reducer(state: number, action: Action): number {
+  switch (action.type) {
+    case 'INCREMENT':
+      // action: { type: 'INCREMENT' }
+      return state + 1;
+    
+    case 'DECREMENT':
+      // action: { type: 'DECREMENT' }
+      return state - 1;
+    
+    case 'SET':
+      // action: { type: 'SET'; value: number }
+      return action.value;
+  }
+}
+8. Assignment Narrowing
+Сужение при присваивании.
+
+
+let value: string | number;
+
+value = 'hello';
+// value: string (сужен до string)
+
+console.log(value.toUpperCase());
+
+value = 42;
+// value: number (сужен до number)
+
+console.log(value.toFixed(2));
+9. Control Flow Analysis
+TypeScript анализирует поток выполнения кода.
+
+
+function process(value: string | null) {
+  if (value === null) {
+    return;
+  }
+  
+  // value: string (null исключен после return)
+  console.log(value.toUpperCase());
+}
+Throw statements
+
+function assertIsString(value: unknown): asserts value is string {
+  if (typeof value !== 'string') {
+    throw new Error('Not a string!');
+  }
+}
+
+function process(value: unknown) {
+  assertIsString(value);
+  
+  // value: string (после assertion)
+  console.log(value.toUpperCase());
+}
+Практические примеры
+1. Обработка API ответа
+
+type ApiResponse<T> = 
+  | { success: true; data: T }
+  | { success: false; error: string };
+
+async function fetchUser(id: number): Promise<ApiResponse<User>> {
+  // ...
+}
+
+const response = await fetchUser(1);
+
+if (response.success) {
+  // response: { success: true; data: User }
+  console.log(response.data.name);
+} else {
+  // response: { success: false; error: string }
+  console.error(response.error);
+}
+2. Проверка полей формы
+
+interface FormData {
+  name?: string;
+  email?: string;
+  age?: number;
+}
+
+function validateForm(data: FormData): boolean {
+  if (!data.name) {
+    console.error('Name is required');
+    return false;
+  }
+  
+  // data.name: string (не undefined)
+  if (data.name.length < 3) {
+    console.error('Name too short');
+    return false;
+  }
+  
+  if (!data.email) {
+    console.error('Email is required');
+    return false;
+  }
+  
+  // data.email: string
+  if (!data.email.includes('@')) {
+    console.error('Invalid email');
+    return false;
+  }
+  
+  return true;
+}
+3. Работа с событиями
+
+function handleEvent(event: MouseEvent | KeyboardEvent) {
+  if (event instanceof MouseEvent) {
+    console.log(`Mouse: ${event.clientX}, ${event.clientY}`);
+  } else {
+    console.log(`Key: ${event.key}`);
+  }
+}
+4. Array.isArray()
+
+function process(value: string | string[]) {
+  if (Array.isArray(value)) {
+    // value: string[]
+    value.forEach(item => console.log(item));
+  } else {
+    // value: string
+    console.log(value);
+  }
+}
+Never тип и exhaustiveness
+
+type Shape = 
+  | { kind: 'circle'; radius: number }
+  | { kind: 'square'; size: number };
+
+function getArea(shape: Shape): number {
+  switch (shape.kind) {
+    case 'circle':
+      return Math.PI * shape.radius ** 2;
+    
+    case 'square':
+      return shape.size ** 2;
+    
+    default:
+      // shape: never (все случаи обработаны)
+      const _exhaustive: never = shape;
+      return _exhaustive;
+  }
+}
+Если добавить новый тип, TypeScript выдаст ошибку:
+
+
+type Shape = 
+  | { kind: 'circle'; radius: number }
+  | { kind: 'square'; size: number }
+  | { kind: 'triangle'; base: number; height: number };
+
+// Ошибка в default case!
+Ограничения Type Narrowing
+1. Изменение переменных в callback
+
+function process(value: string | null) {
+  if (value !== null) {
+    setTimeout(() => {
+      // Ошибка! value может быть изменен
+      console.log(value.toUpperCase());
+    }, 1000);
+  }
+  
+  value = null;  // Изменили!
+}
+2. Мутация объектов
+
+interface Container {
+  value: string | number;
+}
+
+function process(container: Container) {
+  if (typeof container.value === 'string') {
+    setTimeout(() => {
+      // Ошибка! value мог быть изменен
+      console.log(container.value.toUpperCase());
+    }, 0);
+  }
+}
+Best Practices
+1. Используйте type guards для сложных проверок
+
+// Плохо
+function process(data: unknown) {
+  if (
+    typeof data === 'object' &&
+    data !== null &&
+    'name' in data &&
+    typeof (data as any).name === 'string'
+  ) {
+    console.log((data as { name: string }).name);
+  }
+}
+
+// Хорошо
+function isUser(data: unknown): data is { name: string } {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'name' in data &&
+    typeof (data as any).name === 'string'
+  );
+}
+
+function process(data: unknown) {
+  if (isUser(data)) {
+    console.log(data.name);
+  }
+}
+2. Ранний выход для упрощения
+
+// Плохо
+function process(value: string | null) {
+  if (value !== null) {
+    console.log(value.toUpperCase());
+    console.log(value.length);
+    // много кода...
+  }
+}
+
+// Хорошо
+function process(value: string | null) {
+  if (value === null) return;
+  
+  // value: string во всей функции
+  console.log(value.toUpperCase());
+  console.log(value.length);
+  // много кода...
+}
+3. Используйте discriminated unions
+
+// Плохо
+interface Result {
+  success: boolean;
+  data?: string;
+  error?: string;
+}
+
+// Хорошо
+type Result = 
+  | { success: true; data: string }
+  | { success: false; error: string };
+Вывод
+Type Narrowing:
+
+Автоматическое сужение типов на основе проверок
+typeof для примитивов
+instanceof для классов
+in для свойств объектов
+Equality и truthiness narrowing
+Type predicates (is) для кастомных проверок
+Discriminated unions для состояний
+Control flow analysis отслеживает поток выполнения
+Never для exhaustiveness checking
+На собеседовании:
+
+Важно уметь:
+
+Объяснить концепцию type narrowing
+Показать разные способы сужения (typeof, instanceof, in)
+Написать type guard с is
+Объяснить discriminated unions
+Показать exhaustiveness checking через never
+Рассказать об ограничениях (callbacks, mutations)
+
+
+Перегрузка функций (Function Overloads) в TypeScript
+Что такое Function Overloads?
+Function Overloads (Перегрузка функций) — это возможность объявить несколько сигнатур для одной функции. TypeScript выберет правильную сигнатуру на основе переданных аргументов.
+
+Базовый синтаксис
+
+// Сигнатуры перегрузок
+function greet(name: string): string;
+function greet(firstName: string, lastName: string): string;
+
+// Реализация (implementation signature)
+function greet(firstName: string, lastName?: string): string {
+  if (lastName) {
+    return `Hello, ${firstName} ${lastName}!`;
+  }
+  return `Hello, ${firstName}!`;
+}
+
+// Использование
+greet('John');              // "Hello, John!"
+greet('John', 'Doe');       // "Hello, John Doe!"
+// greet('John', 'Doe', 'Jr.');  // Ошибка: Expected 1-2 arguments
+Зачем нужны перегрузки?
+Разные типы возвращаемого значения
+
+function getValue(key: 'name'): string;
+function getValue(key: 'age'): number;
+function getValue(key: 'active'): boolean;
+function getValue(key: string): string | number | boolean {
+  const data = {
+    name: 'John',
+    age: 30,
+    active: true
+  };
+  return data[key as keyof typeof data];
+}
+
+const name = getValue('name');      // string
+const age = getValue('age');        // number
+const active = getValue('active');  // boolean
+Связанные типы аргументов и результата
+
+function createElement(tag: 'div'): HTMLDivElement;
+function createElement(tag: 'span'): HTMLSpanElement;
+function createElement(tag: 'button'): HTMLButtonElement;
+function createElement(tag: string): HTMLElement {
+  return document.createElement(tag);
+}
+
+const div = createElement('div');      // HTMLDivElement
+const span = createElement('span');    // HTMLSpanElement
+const button = createElement('button'); // HTMLButtonElement
+Опциональные параметры с разными типами
+
+function makeDate(timestamp: number): Date;
+function makeDate(year: number, month: number, day: number): Date;
+function makeDate(yearOrTimestamp: number, month?: number, day?: number): Date {
+  if (month !== undefined && day !== undefined) {
+    return new Date(yearOrTimestamp, month, day);
+  }
+  return new Date(yearOrTimestamp);
+}
+
+const date1 = makeDate(1234567890);     // Date
+const date2 = makeDate(2024, 11, 19);   // Date
+// const date3 = makeDate(2024, 11);    // Ошибка
+Порядок сигнатур имеет значение
+TypeScript проверяет сигнатуры сверху вниз и использует первую подходящую.
+
+
+// Неправильно - общая сигнатура первая
+function process(value: any): any;
+function process(value: string): string;
+function process(value: number): number;
+function process(value: any): any {
+  return value;
+}
+
+const result = process('hello');  // any (не string!)
+
+// Правильно - от конкретных к общим
+function process(value: string): string;
+function process(value: number): number;
+function process(value: any): any;
+function process(value: any): any {
+  return value;
+}
+
+const result = process('hello');  // string
+Implementation Signature
+Реализация должна быть совместима со ВСЕМИ сигнатурами перегрузок.
+
+
+// Сигнатуры перегрузок
+function combine(a: string, b: string): string;
+function combine(a: number, b: number): number;
+
+// Реализация должна охватывать оба случая
+function combine(a: string | number, b: string | number): string | number {
+  if (typeof a === 'string' && typeof b === 'string') {
+    return a + b;
+  }
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a + b;
+  }
+  throw new Error('Invalid arguments');
+}
+
+const str = combine('Hello, ', 'World');  // string
+const num = combine(10, 20);              // number
+Важно:
+
+Implementation signature НЕ видна снаружи. Пользователи видят только overload signatures.
+
+Перегрузки vs Union Types
+Когда использовать перегрузки
+
+// С перегрузками - тип зависит от аргумента
+function parse(data: string): object;
+function parse(data: object): string;
+function parse(data: string | object): string | object {
+  if (typeof data === 'string') {
+    return JSON.parse(data);
+  }
+  return JSON.stringify(data);
+}
+
+const obj = parse('{"name":"John"}');  // object
+const str = parse({ name: 'John' });   // string
+Когда Union Types достаточно
+
+// Union type проще и понятнее
+function format(value: string | number): string {
+  return value.toString();
+}
+Практические примеры
+Извлечение из массива
+
+function getFirst<T>(arr: T[]): T | undefined;
+function getFirst<T>(arr: T[], count: number): T[];
+function getFirst<T>(arr: T[], count?: number): T | T[] | undefined {
+  if (count === undefined) {
+    return arr[0];
+  }
+  return arr.slice(0, count);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const first = getFirst(numbers);       // number | undefined
+const firstThree = getFirst(numbers, 3); // number[]
+Поиск элементов
+
+function find(predicate: (item: string) => boolean): string | undefined;
+function find(predicate: (item: string) => boolean, all: true): string[];
+function find(
+  predicate: (item: string) => boolean,
+  all?: boolean
+): string | string[] | undefined {
+  const items = ['apple', 'banana', 'cherry'];
+  
+  if (all) {
+    return items.filter(predicate);
+  }
+  return items.find(predicate);
+}
+
+const one = find(item => item.startsWith('a'));      // string | undefined
+const many = find(item => item.startsWith('a'), true); // string[]
+Event Listener
+
+function addEventListener(
+  element: HTMLElement,
+  event: 'click',
+  handler: (e: MouseEvent) => void
+): void;
+
+function addEventListener(
+  element: HTMLElement,
+  event: 'keypress',
+  handler: (e: KeyboardEvent) => void
+): void;
+
+function addEventListener(
+  element: HTMLElement,
+  event: string,
+  handler: (e: Event) => void
+): void {
+  element.addEventListener(event, handler);
+}
+
+const button = document.querySelector('button')!;
+
+addEventListener(button, 'click', (e) => {
+  // e: MouseEvent
+  console.log(e.clientX);
+});
+
+addEventListener(button, 'keypress', (e) => {
+  // e: KeyboardEvent
+  console.log(e.key);
+});
+API Wrapper
+
+function request(method: 'GET', url: string): Promise<Response>;
+function request(
+  method: 'POST' | 'PUT',
+  url: string,
+  body: object
+): Promise<Response>;
+
+function request(
+  method: string,
+  url: string,
+  body?: object
+): Promise<Response> {
+  const options: RequestInit = { method };
+  
+  if (body) {
+    options.body = JSON.stringify(body);
+    options.headers = { 'Content-Type': 'application/json' };
+  }
+  
+  return fetch(url, options);
+}
+
+// Использование
+request('GET', '/api/users');
+request('POST', '/api/users', { name: 'John' });
+// request('POST', '/api/users');  // Ошибка: body обязателен
+Перегрузки методов класса
+
+class DataStore {
+  private data: Record<string, any> = {};
+  
+  // Перегрузки методов
+  get(key: 'name'): string;
+  get(key: 'age'): number;
+  get(key: 'active'): boolean;
+  get(key: string): any {
+    return this.data[key];
+  }
+  
+  set(key: 'name', value: string): void;
+  set(key: 'age', value: number): void;
+  set(key: 'active', value: boolean): void;
+  set(key: string, value: any): void {
+    this.data[key] = value;
+  }
+}
+
+const store = new DataStore();
+store.set('name', 'John');    // OK
+store.set('age', 30);         // OK
+// store.set('age', 'thirty'); // Ошибка
+
+const name = store.get('name');  // string
+const age = store.get('age');    // number
+Перегрузки конструкторов
+
+class Point {
+  x: number;
+  y: number;
+  
+  constructor(x: number, y: number);
+  constructor(coords: { x: number; y: number });
+  constructor(xOrCoords: number | { x: number; y: number }, y?: number) {
+    if (typeof xOrCoords === 'number') {
+      this.x = xOrCoords;
+      this.y = y!;
+    } else {
+      this.x = xOrCoords.x;
+      this.y = xOrCoords.y;
+    }
+  }
+}
+
+const p1 = new Point(10, 20);
+const p2 = new Point({ x: 10, y: 20 });
+Generics в перегрузках
+
+function map<T, U>(arr: T[], fn: (item: T) => U): U[];
+function map<T, U>(arr: T[], fn: (item: T, index: number) => U): U[];
+function map<T, U>(
+  arr: T[],
+  fn: (item: T, index?: number) => U
+): U[] {
+  return arr.map(fn as any);
+}
+
+const numbers = [1, 2, 3];
+const doubled = map(numbers, n => n * 2);
+const indexed = map(numbers, (n, i) => `${i}: ${n}`);
+Типичные ошибки
+Несовместимая реализация
+
+// Ошибка: реализация не совместима с перегрузками
+function process(value: string): string;
+function process(value: number): number;
+function process(value: boolean): boolean {  // Ошибка!
+  return value;
+}
+Забыть про порядок
+
+// Плохо - общий случай перекрывает конкретные
+function handle(value: any): any;
+function handle(value: string): string;  // Недостижимо!
+function handle(value: any): any {
+  return value;
+}
+Слишком много перегрузок
+
+// Плохо - слишком сложно
+function format(value: string): string;
+function format(value: number): string;
+function format(value: boolean): string;
+function format(value: Date): string;
+function format(value: object): string;
+// ... еще 10 перегрузок
+
+// Лучше использовать union или generic
+function format(value: string | number | boolean | Date | object): string {
+  return String(value);
+}
+Best Practices
+Используйте перегрузки только когда необходимо
+
+// Не нужны перегрузки
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+// Нужны перегрузки - разные типы результата
+function getValue(key: 'name'): string;
+function getValue(key: 'age'): number;
+function getValue(key: string): any {
+  // ...
+}
+Держите перегрузки близко к реализации
+
+// Хорошо - все вместе
+function process(value: string): string;
+function process(value: number): number;
+function process(value: string | number): string | number {
+  return value;
+}
+Документируйте сложные перегрузки
+
+/**
+ * Creates a date from timestamp
+ * @param timestamp - Unix timestamp in milliseconds
+ */
+function makeDate(timestamp: number): Date;
+
+/**
+ * Creates a date from year, month, and day
+ * @param year - Full year (e.g., 2024)
+ * @param month - Month (0-11)
+ * @param day - Day of month (1-31)
+ */
+function makeDate(year: number, month: number, day: number): Date;
+
+function makeDate(yearOrTimestamp: number, month?: number, day?: number): Date {
+  // ...
+}
+Альтернативы перегрузкам
+Conditional Types
+
+type ReturnType<T> = T extends 'string' ? string :
+                     T extends 'number' ? number :
+                     T extends 'boolean' ? boolean :
+                     never;
+
+function getValue<T extends 'string' | 'number' | 'boolean'>(
+  type: T
+): ReturnType<T> {
+  // ...
+  return null as any;
+}
+Discriminated Unions
+
+type Options = 
+  | { type: 'GET'; url: string }
+  | { type: 'POST'; url: string; body: object };
+
+function request(options: Options): Promise<Response> {
+  // ...
+}
+Вывод
+Function Overloads:
+
+Позволяют объявить несколько сигнатур для одной функции
+Выбор сигнатуры зависит от аргументов
+Порядок сигнатур важен (от конкретных к общим)
+Implementation signature должна быть совместима со всеми перегрузками
+Полезны когда тип результата зависит от аргументов
+Альтернативы: union types, conditional types, discriminated unions
+Не злоупотребляйте — используйте только когда необходимо
+На собеседовании:
+
+Важно уметь:
+
+Объяснить синтаксис перегрузки функций
+Написать пример с разными типами результата
+Объяснить разницу между overload и implementation signatures
+Показать важность порядка сигнатур
+Рассказать когда перегрузки лучше union types
+Назвать альтернативы (conditional types, discriminated unions)
+
+Enum в TypeScript: числовые, строковые и const enum
+Что такое enum?
+enum (enumeration, перечисление) — это тип данных в TypeScript, который позволяет объявить набор именованных констант. Перечисления делают код более выразительным и помогают избежать «магических» строк или чисел.
+
+
+enum Status {
+  Pending,
+  InProgress,
+  Done
+}
+Числовые и строковые enum’ы
+По умолчанию перечисления числовые: первый элемент имеет значение 0, каждый следующий увеличивается на 1. Можно задать стартовое значение или присваивать значения вручную.
+
+
+enum Status {
+  Pending = 1,
+  InProgress = 3,
+  Done = 4
+}
+Строковые enum’ы задаются явно:
+
+
+enum Role {
+  Admin = 'admin',
+  User = 'user'
+}
+Обратное отображение
+Для числовых enum’ов TypeScript создаёт объект с двухсторонним мэппингом, поэтому по значению можно получить имя:
+
+
+enum Status {
+  Pending,
+  Done
+}
+
+Status.Pending   // 0
+Status[0]        // 'Pending'
+У строковых перечислений обратного отображения нет.
+
+const enum
+Ключевое слово const перед enum говорит компилятору «inline-ить» значения и не создавать объект в результирующем JS-коде. Это уменьшает размер бандла, но лишает возможности обратного отображения.
+
+
+const enum Directions {
+  Up,
+  Down
+}
+
+const move = Directions.Up  // будет подставлено число 0
+Когда использовать
+Когда есть фиксированный набор состояний (статусы, роли, типы сообщений).
+Когда один и тот же набор значений используется в разных местах.
+Когда нужно более читаемое API, чем набор строк/чисел.
+На собеседовании:
+
+Упомяните, что enum — это синтаксический сахар вокруг объектов, что у них есть числовая и строковая формы, а также const enum для оптимизации.
+
+
+55 Best TypeScript Interview Questions and Answers - JavaScript!
+What Is TypeScript?
+By definition, "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript."
+
+TypeScript is a superset of JavaScript which provides optional static typing, classes and interfaces.
+
+=> The TypeScript was first made public in the year 2012.
+=> Typescript is a modern age JavaScript development language.
+=> TypeScript is a strongly typed, object oriented, compiled language.
+=> TypeScript was designed by Anders Hejlsberg (designer of C#) at Microsoft.
+=> TypeScript is both a language and a set of tools.
+
+As an Example of TypeScript,
+
+class Hello {
+    msg: string;
+    constructor (message: string) {
+        this.msg = message;
+    }
+ 
+    getMsg() {
+        return "Hello, " + this.msg;
+    }
+}
+
+TypeScript introduced a great deal of syntax taken from object-oriented programming, including but not limited to:
+
+1) Interfaces
+2) Classes
+3) Enumerated types
+4) Generics
+5) Modules
+
+
+What Are the Features of TypeScript?
+
+1) Maintainability
+2) Offered great productivity for developers
+3) Code navigation and bug prevention
+4) Code 'discoverability' & refactoring
+5) Optional Static Type Annotation
+6) Additional Features for Functions
+7) Supports ES6
+8) TypeScript supports other JS libraries.
+9) Supports interfaces, sub-interfaces, classes, and subclasses
+10) Scalable HTML5 client-side development
+11) Rich IDE available with autocomplete and code navigation features.
+12) Class-based object-oriented with the inheritance of private members and interfaces
+13) Typescript is a powerful type system, including generics & JS features
+14) Static Typing
+
+
+Why should you use TypeScript? 
+What Are the Benefits of Using TypeScript?
+1.     Supports Object Oriented Programming.
+2.     Typescript adds static typing to JavaScript. Having static typing makes easier to develop and maintain complex apps.
+3.     Angular uses TypeScript a lot to simplify relations between various components and how the framework is built in general.
+4.     Provide an optional type system for JavaScript.
+5.     Provide planned features from future JavaScript editions to current JavaScript engines.
+6.     Supports type definitions.
+7.    Increased team performance.
+8.   Rich IDE support with autocomplete and code navigation features.
+9.   Module support
+
+List of some other Advantages,
+1.     It is purely object-oriented programming.
+2.     It is support static type-checking.
+3.     It can be used for client-side and server-side development.
+4.     Build-in Support for JavaScript Packaging
+5.     It offers a “compiler” that can convert to JavaScript-equivalent code.
+6.     It has an API for DOM manipulation.
+7.     It has a namespace concept by defining a “Module”.
+8.     Superset of JavaScript
+9.     ES6 features support
+
+What Are the Disadvantages of TypeScript?
+=> Overly complicated typing system
+=> Required compilation
+=> False sense of security
+=> Compilation can be time-consuming
+=> If you are developing very large enterprise software, every compilation step increases the time to build
+What Is other strictly typed languages that compile to JavaScript?
+=> Kotlin has an official JavaScript compilation solution.
+=> Rust may work on the frontend; however, it doesn’t compile directly to JavaScript, but rather WebAssembly. This WebAssembly code can then be combined and used together with JavaScript code.
+=> Go can be effectively compiled to JavaScript—via an unofficial tool called GopherJS—or to WebAssembly, much like Rust.
+=> Elm and Reason were designed for JavaScript compilation.
+=> Bridge.NET (C#)
+=> Cheerp (C++)
+=> Dart
+=> GopherJS (Go)
+=> Haxe
+=> JSweet (Java)
+=> Scala.js (Scala)
+
+What Are the Filename extensions of TypeScript?
+The TypeScript filename extensions are,
+ => .ts
+ => .tsx
+
+What Are difference between JavaScript and TypeScript?
+TypeScript design and developed by Anders Hejlsberg at Microsoft.
+JavaScript - Brendan Eich at Netscape communications corporation, Mozilla Foundation, ECMA International.
+
+=> TypeScript has a feature known as Static typing but JavaScript does not have this feature.
+=> The file extension of TypeScript are (.ts/.tsx) while the file extension of JavaScript is (.js)
+=> TypeScript has Interface but JavaScript does not have Interface.
+=> TypeScript specially used in client-side but JavaScript use both client-side and server-side.
+=> TypeScript support optional parameters function but JavaScript does not support the optional parameters function.
+=> TypeScript is a heavy weighted an interpreted programming language but JavaScript is a light weighted.
+
+What Is TypeScript Types?
+The Type represents the different types of values which are using in the programming languages and it checks the validity of the supplied values before they are manipulated by your programs.
+
+The TypeScript provides data types as a part of its optional type and its provide us some primitive types as well as a dynamic type “any” and this “any” work like “dynamic”.
+
+
+In TypeScript, we define a variable with a “type” and appending the “variable name” with “colon” followed by the type name.
+
+Lets understand in detail about the same,
+
+let isActive: boolean = false;
+var isActive: boolean = false;
+
+let decimal: number = 6;
+var decimal: number = 6;
+
+let hex: number = 0xf00d;
+var hex: number = 0xf00d;
+
+let name: string = "Anil Singh";
+var name: string = "Anil Singh";
+
+let binary: number = 0b1010;
+var binary: number = 0b1010;
+
+let octal: number = 0o744;
+var octal: number = 0o744;
+
+let numlist: number[] = [1, 2, 3];
+var numlist: number[] = [1, 2, 3];
+
+let arrlist: Array<number> = [1, 2, 3];
+var arrlist: Array<number> = [1, 2, 3];
+
+//Any Keyword
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+
+//Any Keyword
+let notSureType: any = 10;
+notSureType = "maybe a string instead";
+
+notSureType = false; // definitely a Boolean
+
+Number: the “number” is a primitive number type in TypeScript. There is no different type for float or double in TypeScript.
+
+Boolean: The “boolean” type represents true or false condition.
+
+String: The “string” represents sequence of characters similar to C#.
+
+Null: The “null” is a special type which assigns null value to a variable.
+
+Undefined: The “undefined” is also a special type and can be assigned to any variable.
+
+Any : this data type is the super type of all types in TypeScript. It is also known as dynamic type and using “any” type is equivalent to opting out of type checking for a variable.
+
+
+A note about “let” keyword –
+
+You may have noticed that, I am using the “let” keyword instead of “var” keyword. The “let” keyword is actually a newer JavaScript construct that TypeScript makes available. Actually, many common problems in JavaScript are reducing by using “let” keyword. So we should use “let” keyword instead of “var” keyword.
+
+How To Setup and Install TypeScript?
+Two main ways to Installing the TypeScript,
+
+1.     Installing using npm
+2.     Installing TypeScript’s Visual Studio plugins
+
+
+In the Visual Studio 2017 and the above, the TypeScript include by default. If you don’t have TypeScript with Visual Studio, try for NPM users,
+
+> npm install -g typescript
+
+
+As an Example 1,
+
+class Users {
+    userName: string;
+    constructor (name: string) {
+        this.userName = name;
+    }
+    getUserName() {
+        return "Hello, " + this.userName;
+    }
+}
+
+As an Example 2,
+
+class Users {
+    private firstName: string;
+    private lastName: string;
+
+    //Constructor           
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+   
+    //Function
+    studentFullName(): void {
+        alert(this.firstName + ' ' + this.lastName);
+    }
+
+}
+
+What is Variable in TypeScript?
+How to Declare Variable in TypeScript?
+The variable is simply a name of storage location and all variables must be identified with unique names and these unique names are called identifiers.
+
+Note – I am using the “let” keyword instead of “var” keyword. The “let” keyword is actually a newer JavaScript construct that TypeScript makes available. Actually, many common problems in JavaScript are reducing by using “let” keyword. So we should use “let” keyword instead of “var” keyword.
+
+A variable contains values such as "Hi" or 22. When you use the variable, you refer to the data it represents.
+
+As an Example –
+
+let name: string = "Hi"; //var name: string = "Anil Singh";
+let num: number = 22; //var num: number = 22;
+
+https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZ9xBsQW9eWrNS76P_ThKKK-Wr8LSpPFs89Fcs7AbXrGR5DuxERUXZMFI_FCBj4Ynb_Gr5jkkculIUXx9mJJZS_-tpibMa6tO7UX0zzj4kobZqgHs25bI1Cvl87QnhdLcqc_O7NNt0V74m/s320/TypeScript+Variable+Declarations.jpg
+
+There are some rules while declaring variables,
+
+1.     The variable names must begin with a letter
+2.     The variable names can contain letters, digits, underscores, and dollar signs.
+3.     The variable names can also begin with “$” and “_”
+4.     The variable names are case sensitive that means “a” and “A” are different variables.
+5.     The variable reserved words can’t be used as names.
+
+
+Declaring Variables,
+let isActive: boolean = false;
+let decimal: number = 6;
+let hex: number = 0xf00d;
+let name: string = "Anil Singh";
+let binary: number = 0b1010;
+let octal: number = 0o744;
+let numlist: number[] = [1, 2, 3];
+let arrlist: Array<number> = [1, 2, 3];
+
+//Any Keyword
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+
+//Any Keyword
+let notSureType: any = 10;
+notSureType = "maybe a string instead";
+notSureType = false; // definitely a Boolean
+
+
+The “var” creates a new variable. The “declare” is used to tell TypeScript that the variable has been created elsewhere. If you use declare, nothing is added to the JavaScript that is generated. It is simply a hint to the compiler.
+
+
+What Is scope variable?
+The scope is set of objects, variables and function and the JavaScript can have global scope variable and local scope variable.
+
+We can say, we can declare a variable in the two type’s i.e.
+1.     Local Scope Variable
+2.     Global Scope Variable
+
+
+Global Scope Variable - The global scope is a window object and it’s used out of function and within the functions.
+
+Local Scope Variable - The local scope is a function object and it’s used within the functions.
+
+
+Example for global and local variable (var/let) declarations –
+
+//DECLARED A VARIABLE NAMED NUM WITH THE VALUE 15.
+let num = 15;
+
+//DECLARE A VARIABLE INSIDE OF A FUNCTION
+let getUser = function () {
+    let name = 'Anil Singh';
+
+    return name;
+}
+
+//RESULTS
+getUser(); // returns 'Anil Singh'
+
+//ACCESS THOSE SAME VARIABLES WITHIN OTHER FUNCTIONS
+let sum = function() {
+    let num = 15;
+
+    return function subNum () {
+        return num + 5;
+    }
+}
+
+//RESULTS
+sum(); // returns 20
+
+//SCOPING RULES
+let scopingRulesSum = function(isActive: boolean) {
+    if (isActive) {
+        let num = 15;
+        num = num + 1;
+    }
+
+    return num;
+}
+
+//RESULTS
+scopingRulesSum(true);  // returns 16
+scopingRulesSum(false); // returns 'undefined'
+
+//IN THE JAVASCRIPT, WE WILL DECLARE MULTIPLE VARIABLES WITH THE SAME NAME.
+//IN JAVASCRIPT, NO MATTER HOW MANY TIMES YOU DECLARED YOUR VARIABLES.
+//WE CAN SAY THIS IS A BUG.
+var fun = function (i, isActive = true) {
+    var i;
+    var i;
+
+    if (isActive) {
+        var i;
+    }
+    //The all declarations of 'i' actually refer to the same 'i'.
+}
+
+//IN THE TYPESCRIPT, NOT POBISBLE TO DECLARE MULTIPLE VARIABLES WITH THE SAME NAME
+//IT WILL GIVE US ERROR (ERROR: CAN'T RE-DECLARE 'I' IN THE SAME SCOPE).
+let i = 15;
+let i = 20; // error: can't re-declare variable 'i' in the same scope.
+
+What Is an Interface in TypeScript?
+An interface in TypeScript is similar to other object oriented programming languages interfaces.
+An interface is a way to define a contract on a function with respect to the arguments.
+
+
+In the below example, I am using an interface that describes objects that have a “name”, “age” and “address” fields and the following code defines an interface and a function that takes a parameter that adheres to that interface.
+
+As an Example,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address: string
+}
+
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30,
+    address: "Noida, India."
+};
+
+//RESULT
+console.log(userInfo(info));
+
+
+What is Optional Properties in TypeScript?
+
+We can specify optional properties on interfaces and the property may be present or missing in the object.
+
+In the below example, the address property is optional on the following “User” interface.
+
+Example as,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address?: string //Optional
+}
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30
+};
+
+//RESULT
+console.log(userInfo(info));
+
+What Is the Functions in TypeScript?
+How many types you defined in TypeScript?
+A function is a set of statements that perform a specific task and used to create readable, maintainable and re-usable code.
+
+A function declaration tells to compiler about a function name, return type, and parameters.
+
+TypeScript functions are almost similar to JavaScript functions but there are different ways of writing functions in TypeScript.
+
+The Different Types of Available Functions in TypeScript are-
+
+1.     Normal function
+2.     Anonymous Function
+3.     Named Function
+4.     Lambda Function/Arrow Function
+5.     Class Function
+6.     Optional Parameters
+7.     Rest Parameters
+8.     Default Parameters
+
+
+Anonymous Functions–
+An anonymous function is a function that was declared without any named identifier to refer to it.
+
+As an Example - Normal function
+function printHello() {
+    console.log('Hello Anil!');
+}
+
+printHello();
+
+
+As an Example - Anonymous function
+
+In the JavaScript –
+
+var hello = function () {
+    console.log('Hello Anil!, I am Anonymous.');
+};
+
+hello();//Return - Hello Anil!, I am Anonymous.
+
+OR
+
+setTimeout(function () {
+    console.log('Hello Anil!, I am Anonymous.');
+}, 1000); //Return - Hello Anil!, I am Anonymous.
+
+
+In the TypeScript–
+var anonymousFunc = function (num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+//RESULT
+console.log(anonymousFunc(10, 20)); //Return is 30
+
+//RESULT
+console.log(anonymousFunc(10, "xyz"));
+// error: Argument of type 'number' is not assignable to parameter of type 'string'.
+//because return type is number for anonymous function).
+
+
+Named Function -
+The named function is very similar to the JavaScript function and only one difference - we must declare the type on the passed parameters.
+
+
+As an Example – In the JavaScript
+function addTwoNumer(num1, num2) {
+    return num1 + num2;
+}
+
+
+As an Example – In the TypeScript
+function addTwoNumer(num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+
+Lambda Function/Arrow Function -
+The arrow function is additional feature in typescript and it is also known as a lambda function. A lambda function is a function without a name.
+
+var addNum = (n1: number, n2: number) => n1 + n2;
+
+In the above, the “=>” is a lambda operator and (n1 + n2) is the body of the function and (n1: number, n2: number) are inline parameters.
+
+As an Example –
+
+let addNum = (n1: number, n2: number): number => { return n1 + n2; }
+let multiNum = (n1: number, n2: number): number => { return n1 * n2; }
+let dividNum = (n1: number, n2: number): number => { return n1 / n2; }
+
+addNum(10, 2);// Result - 12
+multiNum(10, 2);// Result - 20
+multiNum(10, 2);// Result - 5
+
+
+Optional Parameters Function -
+We can specify optional properties on interfaces and the property may be present or missing in the object.
+
+In the below example, the address property is optional on the following “User” interface.
+
+As an Example,
+
+//USER INTERFACE
+interface User {
+    name: string;
+    age: number;
+    address?: string //Optional
+}
+
+//FUNCTION USING USER INTERFACE
+let userInfo = function(user: User) {
+   let info = "Hello, " + user.name + " Your Age is - " + user.age + " and Address is -" + user.address;
+
+   return info;
+}
+
+//USER INFO JSON OBJECT
+let info = {
+    name: "Anil",
+    age: 30
+};
+
+//RESULT
+console.log(userInfo(info));
+
+
+Rest Parameters –
+The Rest parameters do not restrict the number of values that we can pass to a function and the passed values must be the same type otherwise throw the error.
+
+Example as,
+//Rest Parameters
+let addNumbers = function(...nums: number[]) {
+    let p;
+    let sum: number = 0;
+
+    for (p = 0; p < nums.length; p++) {
+        sum = sum + nums[p];
+    }
+
+    return sum;
+}
+
+//The Result
+addNumbers(1, 2);
+addNumbers(1, 2, 3);
+addNumbers(1, 12, 10, 18, 17);
+
+
+Default Parameters Function –
+
+What Is the Default Parameters Function in TypeScript?
+Function parameters can also be assigned values by default. A parameter can't be declared as optional and default both at the same time.
+
+In the below example, rate is a default param as number in discount function. If we pass the value in the discount’s rate param, it will use this otherwise use default value 0.40.
+
+See the Example and its Output result,
+
+let discount = function (price: number, rate: number = 0.40) {
+    return price * rate;
+}
+
+//CALCULATE DISCOUNT
+discount(500); // Result - 200
+
+//CALCULATE DISCOUNT
+discount(500, 0.45); // Result - 225
+
+How to create fields, constructor and function in TypeScript Class?
+What is class in TypeScript?
+
+A class is a template definition of the methods and variables in a particular kind of object. It is extensible program, code and template for creating objects.
+
+A TypeScript is object oriented JavaScript and it also supports object oriented programming features like classes, interfaces, etc.
+
+A class captains the Public, Private, Protected and Read-only modifiers and Public by default.
+You can see the below example, the class User and each members are public by default.
+
+A class definition can contains the following –
+1.     Fields
+2.     Constructors
+3.     Functions
+
+
+As an Example – Use of class field, constructor and function,
+// A simple class based example.
+class User { // Calss
+    name: string; //field
+    constructor(nameTxt: string) { //constructor
+        this.name = nameTxt;
+    }
+
+    getName() {//function
+        return "Hello, " + this.name;
+    }
+}
+
+let user = new User("Anil");//Creating Instance objects
+
+
+How Static class in typescript?
+We can define a class with static properties.
+
+As an Example,
+export class Constants {
+    static baseUrl = ‘http://localhost:8080/’;
+    static date = new Date();
+}
+
+Ways to declare a nest class structure in typescript?
+See the following example to understand the declare a nest class structure,
+//Example 1
+declare module a{
+
+    class b {
+    }
+
+    module b {
+        class c {
+        }
+    }
+}
+
+var clB = new a.b();
+var clC = new a.b.c();
+
+//Example 2
+export module a {
+    export class b {
+    }
+
+    export module b {
+        export enum c {
+            C1 = 1,
+            C2 = 2,
+            C3 = 3,
+        }
+    }
+}
+
+//Example 3
+class A {
+    static B = class { }
+}
+
+var a = new A();
+
+var b = new A.B();
+
+What Is Public, Private, Protected and Readonly Modifiers in TypeScript?
+The TypeScript supports to multiple modifiers and it is by default public.
+·       Public,
+·       Private,
+·       Protected and
+·       Read-only
+
+
+Public Modifier – Public by default! It is freely access anywhere.
+In the below example, the class Employee and its members are by default public and we are freely access it.
+As an Example -
+class Employee {
+    empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let empSal = new Employee("Anil");
+console.log(empSal.salary());
+console.log(empSal.salary(40000));
+
+Private Modifier -When using private modifier, we can’t be accessed from outside of its containing class.
+As an Example,
+class Employee {
+    private empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let emp = new Employee("Anil").empName; 
+//error: property 'empName' is private and only accesible in the class 'Employee'.
+
+Protected Modifier - The protected modifier is very similar to private but only one difference that can be accessed by instances of deriving classes.
+As an Example,
+class Employee {
+    protected  empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+class Employer extends Employee {
+    private department: string;
+ 
+    constructor(empName: string, department: string) {
+        super(empName);
+        this.department = department;
+    }
+ 
+    salary(salary = 20000) {
+        super.salary(salary);
+    }
+}
+ 
+let empSal = new Employer("Anil", "IT");
+console.log(empSal.salary());
+console.log(empSal.empName); //error- the property 'empName' is protected and only accesible within the class 'Employee' and its child class.
+
+Readonly Modifier - Read-only properties must be initialized at their declaration or in the constructor.
+As an example,
+class Employee {
+    readonly empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+ 
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+ 
+let emp = new Employee('Anil');
+emp.empName = 'Anil Singh';//error - cannot assign to 'empName' because it is constant or read-only.
+
+
+What Is Method Overriding in TypeScript?
+In the Method Overriding, redefined the base class methods in the derive class or child class.
+
+As an Example,
+
+class NewPrinter extends Printer {
+    doPrint(): any {
+        super.doPrint();
+        console.log("Called Child class.");
+    }
+
+    doInkJetPrint(): any {
+        console.log("Called doInkJetPrint().");
+    }
+}
+
+let printer: new () => NewPrinter;
+printer.doPrint();
+printer.doInkJetPrint();
+
+What Is Inheritance in TypeScript?
+The TypeScript supports the concept of Inheritance.
+
+Inheritance has ability of a program to extend existing classes to create new ones and the extended class is called parent class or super class and the newly created classes are called child class or sub class.
+
+Inheritance can be classified as -
+1.     Single - every class can at the most extend from one parent class
+2.     Multiple - doesn’t support multiple inheritances in TypeScript.
+3.     Multi-level
+
+A class captains the Public, Private, Protected and Read-only modifiers and Public by default.
+You can see the below example, the class User and each members are public by default.
+
+As an Example,
+class Employee {
+    empName: string;
+    constructor(name: string) {
+        this.empName = name;
+    }
+
+    salary(salary: number = 10000) {
+        console.log('Hello, ' + this.empName + ' Your Salary -' + salary);
+    }
+}
+
+class Employer extends Employee {
+    constructor(empName: string) {
+        super(empName);
+    }
+
+    salary(salary = 20000) {
+        super.salary(salary);
+    }
+}
+
+let empSal = new Employee("Anil");
+console.log(empSal.salary());
+console.log(empSal.salary(40000));
+
+What Are the Parameter Property in TypeScript?
+The TypeScript has so many useful features which not have in other programming languages. The TypeScript has an automatic assignment of constructor parameters that is called “Parameter Property”.
+
+It is automatic assignment of constructor parameters to the relevant property. It is great but it is different to other languages.
+
+As an Example, Declaring a class with constructor arguments in C# and other programming language as,
+
+class Customer {
+    _name: string;
+    _age: number;
+    _adrress: string;
+
+    constructor(name: string, age: number, adrress: string) {
+        this.name = _name;
+        this.age = _age;
+        this.adrress = _adrress;
+    }
+}
+
+Declaring a class with constructor arguments in TypeScript –that is called automatic parameter assignment as,
+
+export class Customer {
+    constructor(private name: string, age: number, private adrress: string) { }
+}
+
+You can take a look at this on the JavaScript.
+var Customer = (function () {
+    function Customer(name, age, adrress) {
+        this.name = name;
+        this.age = age;
+        this.adrress = adrress;
+    }
+
+    return Customer;
+})();
+
+
+Public, Private, and Protected modifiers as
+1.     Public - accessible outside of the class
+2.     Private - only accessible in the class only
+3.     Protected - accessible in the class and the derived classes
+
+
+Public modifier by default - When you are not put a modifier (public, private or protected) on your member definition then TypeScript will choose the public by default.
+
+Which access modifiers are implied when not specified?
+Everything in a class is public if not specified. Everything in a module is private unless export keyword is used.
+
+What Is the purpose of the public access modifier for classes in Typescript?
+Your sample code means exactly the same in TypeScript. When you don't put a modifier public, private or protected on your member definition then TypeScript will choose the default one which is public.
+
+What Is a Module in TypeScript? 
+The module system is an interesting feature of TypeScript, the statically typed superset of JavaScript. Modules provide the possibility to group related logic, encapsulate it, structure your code and prevent pollution of the global namespace.
+
+
+What Is an Internal Module in TypeScript? 
+You can define modules within your typescript files and all variables defined within the module are scoped to the module and removed from the global scope.
+
+You can access the variable outside the module using the export keyword and also you can extend internal modules, share them across files, and reference them using the triple slash. 
+
+Syntax - (///) 
+
+The List of TypeScript Modules Are,
+
+1.     Internal Modules
+a.      Implicit Internal Modules
+b.     Named Internal Modules
+2.     External Modules
+3.     Exports Modules
+
+
+Modules are executed within their own scope, not in the global scope.
+1.     Internal modules are now namespaces.
+2.     External modules are now simply modules, as to align with ECMAScript.
+
+What Are The Advantages of Module?
+The list of Advantages Are–
+1.     Code reuse
+2.     Encapsulation
+3.     Scoping of variables
+4.     Support CommonJs
+5.     Easier for testing
+
+What Is Implicit Internal Modules?
+You simply write source code without worrying about modules that is called implicit internal modules.
+
+As an Example,
+class AppGlobal {
+    readonly baseAppUrl: string = 'http://localhost:57431/';
+    readonly baseAPIUrl: string = 'https://api.github.com/';
+};
+
+let baseApiUrl = new AppGlobal().baseAPIUrl;///Returns http://localhost:57431/
+let baseAppUrl = new AppGlobal().baseAppUrl;///Returns https://api.github.com/
+
+What Is Named Internal Modules?
+Internal modules are come in earlier version of the Typescript and it was basically used to logically group classes, interfaces, and functions into one unit and it can be export in another module.
+
+Now this logically group named call “namespace” in latest version of TypeScript. So we can use namespace instead of internal modules in the TypeScript. As per me, this one is the best coding practice but don’t mind the internal modules are also supporting, if you want can use it.
+
+Example using module –
+
+module System.modules {
+
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+          }
+    }
+
+    //this class can only be accessed from inside the module because not using export.
+    class NotExportedClass {
+        mulNumbers(a: number, b: number): number {
+           return a * b;
+        }
+
+        divNumbers(a: number, b: number): number {          
+            return a > 0 ? a / b : 0;
+        }
+    }
+}
+
+Example using namespace –
+
+namespace System.namespaces {
+
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+
+    //this class can only be accessed from inside the module because not using export.
+    class NotExportedClass {
+        mulNumbers(a: number, b: number): number {
+            return a * b;
+        }
+
+        divNumbers(a: number, b: number): number {
+            return a > 0 ? a / b : 0;
+        }
+    }
+}
+
+What Is an Export in TypeScript?
+Why using Export in TypeScript?
+
+Export - Exporting a declaration
+Any variable, function, class or interface can be exported by using the export keyword. After using export keyword, you can access your variable, function, class or interface to outside the module.
+
+As an Example –
+module System.modules {
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module becaues using export.
+    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+}
+
+//AND
+namespace System.namespaces {
+    //this function can be accessed from outside the module because using export.
+    export function addNumbers(a: number, b: number): number {
+        return a + b;
+    }
+
+    // this class can be accessed from outside the module because using export.    export class ExportedClass {
+        public subNumbers(a: number, b: number): number {
+            return a - b;
+        }
+    }
+}
+
+What Is default export in TypeScript?
+Why using default export in TypeScript?
+
+Default exports – 
+Each module can optionally export a default export and the default exports work with the keyword default and we can use only one default export per module.
+
+As an Example,
+
+export class User {
+    //Todo your logic here..
+}
+
+And then -
+import { User } from "./User";
+
+//OR
+
+//BaseUrl.ts
+export default "http://localhost:57431/Account/Login";
+
+//Login.ts
+import BaseUrl from "../BaseUrl";
+console.log(BaseUrl); //"http://localhost:57431/Account/Login"
+
+What Is External Modules in TypeScript?
+External modules are useful in sense they hide the internal statements of the module definitions and show only the methods and parameters associated to the declared variable.
+
+It is using when dealing with large JavaScript based applications. When we using nodejs or external modules, you can export an entire module and then import it into another module.
+
+As an Example -
+
+// userList.ts file
+// imports the users.ts file as the users module
+import impUser = module('users');
+
+export function userList() {
+    var user = new impUser.users();
+    user.getUsers();
+}
+
+// users.ts file
+// exports the entire module
+export class users {
+    getUsers() {
+         return ["Anil", "Alok", "Dilip"];
+    }
+}
+
+What Is difference between module and namespace in typescript?
+Module is for external packages and the namespace is for internal packages. Actually, the module keyword has been replaced with the namespace keyword.
+
+Namespaces are simply named JavaScript objects in the global namespace.
+Modules can contain both code and declarations. The main difference is that modules declare their dependencies.
+
+The named modules called “namespace” in latest version of TypeScript. So we can use namespace instead of internal modules in the TypeScript.
+
+As per me, this one is the best coding practice but don’t mind the internal modules are also supporting, if you want can use it.
+
+Ts-node не может найти машинописный текст модуля
+Вопросы
+TYPESCRIPT
+Ts-node не может найти машинописный текст модуля
+Я развертываю докеризированное машинописное приложение на AWS. Когда я запускаю контейнер приложения, я получаю ошибку ts-node Error: Cannot find module 'typescript', которая мне непонятна, потому что typescript определяется как devDependency. Это мои package.json зависимости
+
+{
+ "name": "app-server",
+ "version": "0.0.0",
+ "description": "description",
+ "author": "Marcello Bardus",
+ "license": "MIT",
+ "scripts": {
+   "build": "tsc -p tsconfig.build.json",
+   "format": "prettier --write \"src/**/*.ts\"",
+   "start": "ts-node -r tsconfig-paths/register src/main.ts",
+   "start:dev": "nodemon",
+   "start:debug": "nodemon --config nodemon-debug.json",
+   "prestart:prod": "rimraf dist && tsc",
+   "start:prod": "node dist/main.js",
+   "lint": "tslint -p tsconfig.json -c tslint.json",
+   "test": "jest",
+   "test:watch": "jest --watch",
+   "test:cov": "jest --coverage",
+   "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+"test:e2e": "jest --config ./test/jest-e2e.json"
+ },
+ "dependencies": {
+   "@nestjs/common": "^5.4.0",
+   "@nestjs/core": "^5.4.0",
+   "@nestjs/typeorm": "^5.3.0",
+   "@types/mongoose": "^5.3.18",
+   "elliptic": "^6.4.1",
+   "mongoose": "^5.4.14",
+   "object-hash": "^1.3.1",
+   "pg": "^7.8.0",
+   "randomstring": "^1.1.5",
+   "reflect-metadata": "^0.1.12",
+   "rimraf": "^2.6.2",
+   "rxjs": "^6.2.2",
+   "sha2": "^1.0.2",
+   "typeorm": "^0.2.13",
+   "typescript": "^3.0.1"
+ },
+"devDependencies": {
+  "@nestjs/testing": "^5.1.0",
+  "@types/express": "^4.16.0",
+  "@types/jest": "^23.3.1",
+  "@types/node": "^10.7.1",
+  "@types/supertest": "^2.0.5",
+  "jest": "^23.5.0",
+  "nodemon": "^1.18.10",
+  "prettier": "^1.14.2",
+  "supertest": "^3.1.0",
+  "ts-jest": "^23.1.3",
+  "ts-loader": "^4.4.2",
+  "ts-node": "^7.0.1",
+  "tsconfig-paths": "^3.5.0",
+  "typescript": "^3.0.1",
+  "tslint": "5.11.0"
+},
+"jest": {
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+"rootDir": "src",
+"testRegex": ".spec.ts$",
+"transform": {
+  "^.+\\.(t|j)s$": "ts-jest"
+},
+"coverageDirectory": "../coverage",
+"testEnvironment": "node"
+  }
+}
+И докерфайл
+
+FROM node
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install -g ts-node nodemon
+RUN npm install
+RUN npm install typescript
+
+EXPOSE 8085
+
+CMD ["nodemon", "."]
+Я предполагаю, что typescript устанавливается локально после сборки контейнера, но это не так. заранее спасибо
+
+ 26.02.2019 23:07
+5
+16
+19 128
+3
+ Ответы 3
+Наконец, я заставил ts-node работать с использованием npx:
+
+Установите typescript глобально:
+
+npm i typescript -g
+Перейдите в каталог вашего проекта и свяжите typescript с проектом:
+
+cd <my-project>
+
+npm link typescript
+Выполнить ts-узел с помощью npx:
+
+npx ts-node <your-ts-script>.ts
+ 30.12.2020 15:22
+Если вы планируете использовать ts-node и nodemon в качестве отправной точки вашего приложения, то явно определите их в зависимостях package.json.
+
+Тогда RUN npm install --production
+
+Они будут доступны через node_modules/.bin/
+
+~/foo/node_modules/.bin
+
+> ls
+is-ci@    nodetouch@  rc@      ts-node@         ts-node-transpile-only@
+nodemon@  nopt@       semver@  ts-node-script@  ts-script@
+Затем вы можете запустить ./node_modules/.bin/nodemon или npx nodemon в качестве своего Docker CMD.
+
+npx
+
+Executes either from a local node_modules/.bin, or from a central cache, installing any packages needed in order for to run.
+
+источник: npx
+
+Совет по улучшению вашего Dockerfile, правильный путь для кеша node_modules.
+
+COPY package*.json /usr/src/app
+Note that, rather than copying the entire working directory, we are only copying the package.json file. This allows us to take advantage of cached Docker layers.
+
+Затем скопируйте файлы приложения
+
+COPY . /usr/src/app
+Не забывайте .dockerignorenode_modules.
+
+ 03.02.2021 10:27
+Я установил typescript глобально, используя - npm i typescript -g
+
+Проблема не устранена – Ошибка: не удается найти модуль ‘@types/node/package.json’
+
+Тогда это помогло мне решить проблему - sudo npm install -D tslib @types/node
+
+После этого я смог запустить свой файл сценария, используя любой из них:
+
+npx ts-node <script-file>.ts 
+ИЛИ
+
+ts-node <script-file>.ts
+Подробное объяснение вы получите на официальном сайте нпмджс - https://www.npmjs.com/package/ts-node
+
+
+Как лучше всего обработать ответ 204 «Нет содержимого» в NestJS?
+Вопросы
+TYPESCRIPT
+Как лучше всего обработать ответ 204 «Нет содержимого» в NestJS?
+Я пишу RESTful API в Nest, который я недавно начал использовать и до сих пор люблю. Однако мне трудно найти чистый шаблон для обработки ответов 204 No Content для моих маршрутов GET. Какие-нибудь рекомендации?
+
+Я немного удивлен, что во фреймворк нет чего-то встроенного для возврата 204, если объект, возвращаемый методом контроллера GET, пуст - если есть, я его еще не нашел. Если это действительно не так, мне также интересно, стоит ли запрашивать функцию на GitHub.
+
+Я пробовал следующее:
+
+Раскрытие свойства Express res с использованием @Response() в качестве параметра метода контроллера, затем использование res.sendStatus(204), если ответ пуст. Однако для этого мне также необходимо вручную отправить 200 ответов, в то время как я хотел бы по-прежнему полагаться на фреймворк для обработки цикла запрос-ответ и сохранения моих методов контроллера как можно более чистыми.
+Рассмотрел возможность использования перехватчика для проверки того, пуст ли объект ответа, а затем записи кода состояния 204 в ответ. Я действительно не хочу этого делать, потому что код состояния может измениться позже из-за фильтра исключений.
+Использование промежуточного программного обеспечения для написания кода ответа, но мое промежуточное программное обеспечение выполняется до того, как оно будет перенаправлено на контроллер, и мне нужно проверить, пуст ли после этого ответ. res.on ('send'), похоже, тоже не перехватывает ответ на выходе.
+Выбрасываю собственный NoContentException для обработки моего фильтра исключений. Хотя странно генерировать исключение для успешного кода ответа, я думаю, что тем временем я буду действовать именно так, поскольку мой фильтр исключений - это последнее, что будет выполняться в написанном мной коде.
+ 03.01.2019 18:01
+6
+1
+7 522
+3
+ Ответы 3
+Обновление v6.1.0
+Начиная с v6.1.0, можно установить код ответа в перехватчике, см. Этот PR.
+
+Устаревший ответ
+К сожалению, это пока не представляется возможным. В документы говорится:
+
+Often, your status code isn't static but depends on various factors. In that case, you can use a library-specific response (inject using @Res()) object (or, in case of an error, throw an exception).
+
+Вы также не можете просто установить код ответа в Interceptor, не отправляя его (вместо sendStatus), потому что, как сказал Камил в этом нить:
+
+global response controller's logic is the last step performed just before sending a final result through the network (that's the place where default status codes come in).
+
+Так что, если вы (по понятным причинам) не хотите использовать @Res в каждом контроллере, ExceptionFilter кажется лучшим вариантом, хотя кажется, что он не совсем правильный.
+
+Поскольку кажется, что у других людей есть точно такая же проблема, запрос функции может быть хорошей идеей. :-)
+
+ 03.01.2019 19:56
+Первоначально для практики создания ответа 204 No Content это было упомянуто в официальном документе на позиция введения функции аннотации кода статуса nestjs.
+О мысли о создании ответа 204 путем проверки, является ли содержимое ответа пустым
+
+это может быть возможно и практично при программировании Express.js напрямую или создании перехватчика в качестве подключаемого модуля промежуточного программного обеспечения для использования фреймворка nestjs, как упоминалось в @ kim-kern ответ.
+
+Однако на уровне дизайна api это не является обязательной функцией, потому что один api должен быть в идеале спроектирован как один успешный ответ, что означает, что для одной конечной точки будет доступен только один успешный код. С этой точки зрения аннотация кода состояния может быть приемлемой.
+
+ 21.09.2019 20:33
+Глядя на этот пример:
+
+@Post()
+@HttpCode(204)
+create() {
+  return 'This action adds a new cat';
+}
+Это все, что вам нужно сделать. Это возврат 204 для вас.
+
+Для кодов состояния HTTP есть перечисление: HttpStatus. Итак, вы можете сделать: @HttpCode (HttpStatus.NO_CONTENT)
+
+— 
+Antoine
+ 30.10.2020 16:36
+Приятно, не знал об этом.
+
+— 
+Wexoni
+ 19.11.2020 14:02
+
+
+
+
+TypeScript
+TypeScript — это язык программирования строгой типизации, созданный Microsoft в 2012 году. Он позволяет писать чистый, хорошо документированный, масштабируемый и поддерживаемый код.
+
+0
+0
+из 153
+
+Не знаешь с чего начать?
+
+Посмотри полный roadmap по TypeScript.
+
+
+1. Основы TypeScript
+0
+0
+из 13
+
+
+1.
+Что такое TypeScript?
+2.
+Надстройка над JavaScript
+3.
+Что означает “статическая типизация”?
+4.
+Что означает “строгая типизация”?
+5.
+6.
+Почему TypeScript улучшает качество кода?
+7.
+Почему TS-код нужно компилировать?
+8.
+Что такое tsconfig.json?
+9.
+Как отключить проверку типов для конкретной строки кода?
+10.
+Почему TS не требует всегда писать типы явно?
+11.
+12.
+Что такое “type safety”?
+13.
+Runtime ошибки и TS
+
+2. Базовые типы
+0
+0
+из 15
+
+
+1.
+Примитивные типы
+2.
+Что такое тип string?
+3.
+Что такое тип number?
+4.
+Что делает тип boolean?
+5.
+Что такое тип bigint?
+6.
+Что делает тип symbol?
+7.
+Что такое тип never?
+8.
+9.
+Что означает тип unknown?
+10.
+Что делает тип any?
+11.
+Когда использовать any?
+12.
+13.
+Что такое enum в TypeScript?
+14.
+Что делает ключевое слово type?
+15.
+
+3. Типы и интерфейсы
+0
+0
+из 19
+
+
+1.
+Что такое тип (type) в TypeScript?
+2.
+Что такое интерфейс в TypeScript?
+3.
+4.
+Почему интерфейсы чаще применяются для объектов?
+5.
+Как задать опциональные поля в интерфейсе или типе?
+6.
+Неизменяемые поля
+7.
+Динамические ключи объекта
+8.
+Что такое index signature в интерфейсе?
+9.
+10.
+Множественное наследование
+11.
+Как объединить несколько типов?
+12.
+Что такое union типы?
+13.
+Наследование типа и интерфейса
+14.
+Одинаковое имя интерфейсов
+15.
+16.
+Пересечение типов
+17.
+Объединение типов
+18.
+Что делает ключевое слово implements?
+19.
+
+4. Типизация функций
+0
+0
+из 12
+
+
+1.
+Функция с точки зрения типов
+2.
+Типизация параметров в функции
+3.
+4.
+Автоматическое выведения возвращаемого значения
+5.
+void в функции
+6.
+Never в функции
+7.
+Как задать параметр по умолчанию?
+8.
+Переменное число аргументов
+9.
+Типизация асинхронных функций
+10.
+Как указать тип функции в интерфейсе или type?
+11.
+12.
+Что такое перегрузка функций (overload)?
+
+5. Массивы и коллекции
+0
+0
+из 8
+
+
+1.
+Как объявить массив в TypeScript?
+2.
+Чем запись string[] отличается от Array<string>?
+3.
+Разные типы в массиве
+4.
+readonly элементы
+5.
+Как объявить двумерный массив чисел?
+6.
+Что такое кортеж в TypeScript?
+7.
+8.
+Что такое Map в TypeScript?
+
+6. Union и Intersection типы
+0
+0
+из 14
+
+
+1.
+Что такое union тип в TypeScript?
+2.
+Объединение нескольких типов
+3.
+Объединение примитов и объектов
+4.
+5.
+Что такое type guard?
+6.
+in оператор при проверке union
+7.
+Что означает “discriminated union”?
+8.
+exhaustive check через never
+9.
+10.
+Пересечение примитивов
+11.
+Readonly | optional пересечения
+12.
+Что такое дистрибутивное поведение union типов?
+13.
+Теория множеств
+14.
+
+7. Utility Types
+0
+0
+из 15
+
+
+1.
+Что такое Utility Types в TypeScript?
+2.
+Что делает Partial<T>?
+3.
+Что делает Required<T>?
+4.
+Что делает Readonly<T>?
+5.
+Что делает Pick<T, K>?
+6.
+Что делает Omit<T, K>?
+7.
+8.
+Что делает Exclude<T, U>?
+9.
+Что делает Extract<T, U>?
+10.
+Что делает NonNullable<T>?
+11.
+Что делает ReturnType<T>?
+12.
+Что делает Parameters<T>?
+13.
+Что делает ConstructorParameters<T>?
+14.
+15.
+Utility types для строк
+
+8. Дженерики
+0
+0
+из 17
+
+
+1.
+Что такое дженерики (generics) в TypeScript?
+2.
+Чем дженерики отличаются от any?
+3.
+Как объявить функцию с generic-параметром?
+4.
+type inference c generics
+5.
+Несколько дженериков
+6.
+7.
+8.
+Тип по умолчанию в дженерике
+9.
+Что такое “nested generics”?
+10.
+extends в generic-параметрах
+11.
+Тип не проходит ограничение
+12.
+Как ограничить generic-тип ключами другого типа?
+13.
+14.
+15.
+Conditional generics
+16.
+Что такое рекурсивный generic-тип?
+17.
+T extends never
+
+9. Продвинутые типы
+0
+0
+из 12
+
+
+1.
+Что такое “discriminated union”?
+2.
+Что такое “conditional type”?
+3.
+Что такое “mapped type”?
+4.
+5.
+6.
+Зачем нужно сужение типов?
+7.
+Что такое “type guard”?
+8.
+9.
+discriminant property
+10.
+Index Access Types
+11.
+Оператор keyof
+12.
+JS vs TS typeof
+
+10. Типизация классов и ООП
+0
+0
+из 13
+
+
+1.
+JS vs TS классы
+2.
+Типизация конструктора
+3.
+Можно ли перегрузить (overload) конструктор?
+4.
+Модификаторы доступа
+5.
+Что делает модификатор доступа public?
+6.
+Что делает модификатор доступа private?
+7.
+8.
+9.
+Что такое абстрактный класс?
+10.
+Что делает ключевое слово static?
+11.
+Как класс реализует интерфейс?
+12.
+Чем implements отличается от extends в классах?
+13.
+
+11. Type Narrowing и Guards
+0
+0
+из 6
+
+
+1.
+Что такое type narrowing в TypeScript?
+2.
+Когда происходит сужение типов?
+3.
+Безопасность кода и narrowing
+4.
+Что такое type guard function?
+5.
+Что делает asserts value is T?
+6.
+
+12. Антипатерны в TS
+0
+0
+из 9
+
+
+1.
+Чем опасен any в проекте?
+2.
+Type assertion (as)
+3.
+unknown vs any
+4.
+5.
+6.
+declare global - антипатерн?
+7.
+ts-ignore
+8.
+strict: false
+9.
+Типизация ради типизации
+
+Top 50 TypeScript Interview Questions and Answers
+By Baahubali YEPL -2024-12-30
+typescript-interview-questions
+Join Telegram	Join Telegram
+Join Whatsapp Groups	Join Whatsapp
+TypeScript Technical Interview Questions: TypeScript is a programming language that is open-source and was developed by Microsoft’s Anders Hejlsberg. It is a statically-typed language that extends the functionality of JavaScript and compiles it to plain JavaScript. It offers advanced features like IntelliSense, code completion, safe refactorings, and other developer-friendly tools.
+
+To ace a TypeScript interview, it’s crucial to understand the Latest TypeScript Interview Questions. we have compiled a comprehensive list of the Top 50 TypeScript Interview Questions and Answers.
+
+Table of Contents
+Latest TypeScript Interview Questions
+Our list of Top 50 TypeScript Interview Questions and Answers is designed for both novice and experienced professionals and covers the TypeScript Interview Questions for Freshers that are currently relevant in the job market. It is an ideal resource for anyone looking to prepare for a TypeScript Technical Interview Questions, from beginners to experts.
+
+Top 50 TypeScript Interview Questions and Answers
+1. What is TypeScript and how is it different from JavaScript?
+
+TypeScript is a superset of JavaScript that provides additional features to the language, including static typing and object-oriented programming concepts. TypeScript is compiled into JavaScript, which means that it can be used in any environment that supports JavaScript.
+
+2. What are the primitive types in TypeScript?
+
+string: represents text values such as “javascript”, “typescript”, etc.
+number: represents numeric values like 1, 2, 32, 43, etc.
+boolean: represents a variable that can have either a ‘true’ or ‘false’ value.
+JavaScript is a dynamic and loosely typed language, meaning that developers don’t have to specify the data type of a variable when they declare it. In contrast, TypeScript allows developers to specify the data type of a variable or function parameter using static typing.
+
+2. the primitive types in TypeScript
+
+3. Explain the concept of static typing in TypeScript.
+
+Static typing is a concept in programming that requires variables, functions, and other elements of a program to be defined with a specific data type before they can be used. This helps to prevent errors and improve the maintainability of the code. In TypeScript, developers can specify the data type of a variable or function parameter using a colon followed by the type, for example:
+
+let myNumber: number = 5;
+function addNumbers(a: number, b: number): number {
+return a + b;
+}
+4. What are some of the features of TypeScript that make it popular among developers?
+
+Some of the features of TypeScript that make it popular among developers include:
+
+Optional static typing, which allows developers to gradually add types to their code as they see fit
+Support for modern JavaScript features like classes, modules, and arrow functions
+Better tooling and error checking, thanks to the TypeScript compiler
+Improved readability and maintainability of code due to the use of types and interfaces
+
+5. What is the difference between TypeScript and JavaScript, and why would you choose one over the other?
+
+TypeScript	JavaScript
+TypeScript is a superset of JavaScript that adds static typing and other features to the language.	JavaScript is a dynamic, interpreted language that is widely used for client-side scripting on the web.
+TypeScript allows for easier code maintenance, better tooling support, and improved error checking.	JavaScript is more flexible and easier to learn, making it a good choice for smaller projects or rapid prototyping.
+TypeScript code needs to be compiled into JavaScript before it can run in a browser or on a server.	JavaScript can be executed directly in a browser or on a server using Node.js.
+ 
+
+6. What are the different components of TypeScript?
+
+TypeScript has mainly three components. These are-
+
+Language
+
+TypeScript enables developers to write code using the new syntax, keywords, and type annotations and provides better tooling and error-checking capabilities for more scalable and maintainable code.
+
+Compiler
+
+The TypeScript compiler, written in TypeScript, is open source and cross-platform. It transforms TypeScript code into equivalent JavaScript code, performing parsing and type checking. It can also concatenate multiple files into a single output file and generate source maps for better debugging.
+
+Language Service
+
+The language service in TypeScript offers information to editors and other tools, allowing for better assistance features, including automated refactoring and IntelliSense. It provides useful information, such as code completion suggestions, syntax highlighting, and error detection, to improve the development experience and facilitate clean and efficient code writing.
+
+6. different components of TypeScript
+
+7. How do you define a variable in TypeScript?
+
+In TypeScript, variables can be defined using the let or const keywords, like in JavaScript. For example:
+
+let myString: string = "Hello, world!";
+const number: number = 42;
+let x = 1;
+if (true) {
+let x = 2; // this is a different variable than the one defined above
+}
+console.log(x); // logs 1, not 2
+}
+8. How do you define a function in TypeScript?
+
+Functions can be defined in TypeScript using the same syntax as in JavaScript, with the addition of static typing for the function parameters and return type, if desired. For example:
+
+function and numbers(a: number, b: number): number {
+return a + b;
+}
+Here's an example:
+interface Person {
+firstName: string;
+lastName: string;
+age: number;
+email?: string; // optional property
+}
+
+let myPerson: Person = {
+firstName: "John",
+lastName: "Doe",
+age: 30,
+};
+9. What is the difference between the “let” and “var” keywords in TypeScript
+
+The “let” keyword declares a block-scoped variable, while the “var” keyword declares a variable with function-level scope.
+
+10. List some features of Typescript?
+
+10 List some features of Typescript
+
+11. How does TypeScript’s static typing differ from dynamic typing in JavaScript, and what are the advantages and disadvantages of each approach?
+
+Static Typing	Dynamic Typing
+Variables have types that are checked at compile-time.	Variables have types that are checked at runtime.
+Type errors can be caught early in the development process before the code is run.	Type errors may not be caught until the code is executed, which can lead to unexpected behavior.
+Code is more self-documenting, as types provide a clear indication of what a variable should be used for.	Code can be more flexible and adaptable to changing requirements, as types do not need to be specified in advance.
+
+12. How do you define a type alias in TypeScript?
+
+To define a type alias in TypeScript, use the “type” keyword followed by the alias name and the type definition. For example: type MyType = string | number;
+
+13. What are the object-oriented terms supported by TypeScript?
+
+TypeScript supports the following object-oriented terms:
+
+Modules
+Classes
+Interfaces
+Inheritance
+Data Types
+Member functions
+13. object-oriented terms supported by TypeScript
+
+14. What is the purpose of the “?” operator in TypeScript?
+
+The “?” operator denotes that a property or method is optional in an interface or a class. For example: interface MyInterface { optionalProp?: string; }
+
+15. What are all the JSX modes TypeScript supports?
+
+In TypeScript, the preserve mode retains the JSX as part of the output to be used by another transform step, resulting in a .jsx file extension. The react mode, on the other hand, outputs React.createElement directly and does not require a JSX transformation beforehand. This mode results in a .js file extension. The react-native mode is similar to the preserve mode, retaining all JSX, but generating a .js file extension instead.
+
+15. JSX modes TypeScript supports
+
+16. How do you declare a function type in TypeScript?
+
+To declare a function type in TypeScript, use the arrow function syntax followed by the return type. For example: (a: number, b: number) => number;
+
+17. What is a namespace in TypeScript, and how can it be used to organize and encapsulate code?
+
+Usage	Benefits
+A way to group related functionality under a single, globally unique identifier.	Prevents naming conflicts between different parts of the application.
+Can be used to split code into modules or to encapsulate functionality within a class or object.	Makes it easier to reason about the code by grouping related functionality together.
+Can be used to declare global variables and functions, or to import and export functionality between modules.	Makes it easier to maintain and modify the codebase by providing clear boundaries between different parts of the application
+18. What is a union type in TypeScript?
+
+A union type allows a variable or parameter to accept multiple types of values. For example: let myVar: string | number;
+
+19. How do you define an interface with optional properties in TypeScript?
+
+To define an interface with optional properties, use the “?” operator after the property name. For example: interface MyInterface { optionalProp?: string; }
+
+20. What are generics in TypeScript, and how are they used to provide type safety and code reusability?
+
+Usage	Benefits
+A way to define type parameters that can be reused across multiple functions and classes.	Makes code more flexible and adaptable by allowing for the creation of generic functions and classes that can work with different types of data.
+Can be used to provide type safety in function parameters and return values.	Reduces the need to write redundant code for similar types of data.
+Can be used to define constraints on type parameters, such as requiring that they implement a certain interface or extend a certain class.	Improves code organization and maintainability by allowing for the creation of reusable code libraries that can be shared across multiple projects.
+21. What is the difference between an interface and a type in TypeScript?
+
+An interface is a contract that defines a set of properties and methods that a class or an object must implement, while a type is a synonym for a specific type definition.
+
+22. What is the difference between let and const in TypeScript, and when should you use each one?
+
+let	const
+Used to declare a variable whose value can be reassigned.	Used to declare a variable whose value cannot be reassigned.
+The variable can be initialized later in the code.	The variable must be initialized when it is declared.
+Can be used for variables that are expected to change over time.	Should be used for variables that are expected to remain constant.
+23. How do you declare an array type in TypeScript?
+
+To declare an array type in TypeScript, use the square brackets syntax followed by the array type definition. For example: let myArr: string[];
+
+24. What is a tuple in TypeScript?
+
+A tuple is a fixed-length array with predefined types for each element. For example: let myTuple: [string, number];
+
+25. How does the this keyword work in TypeScript, and how can it be used to refer to the current object instance?
+
+Usage	Description
+Used to refer to the current object instance within a class method.	Can be used to access properties and methods of the current object, or to pass the object to other methods or functions.
+Can be used in arrow functions to preserve the context of the current object.	Must be used within a class method or object context, otherwise, it will be undefined.
+26. How do you define an enum in TypeScript?
+
+To define an enum in TypeScript, use the “enum” keyword followed by the enum name and its members. For example: enum MyEnum { First = 1, Second = 2, Third = 3 }
+
+27. What are generics in TypeScript and how are they used?
+
+Generics in TypeScript allow developers to create reusable components that can work with different data types. They provide a way to define a type parameter that can be used throughout a class or function, allowing it to work with any data type. Here’s an example of how generics can be used:
+
+function reverseArray<T>(array: T[]): T[] {
+return array.reverse();
+}
+
+let myArray: number[] = [1, 2, 3];
+let reversedArray: number[] = reverseArray(myArray);
+In this example, the reverse array function uses the type parameter T to define the data type of the input array and the return value. The function can be called with any type of array, as long as the data type of the elements in the array matches.
+
+28. What are some of the key features of TypeScript that make it popular among developers, and how do these features enhance development productivity?
+
+Key Features	Benefits
+Static typing	Helps catch errors early in the development process
+Object-oriented programming constructs (classes, interfaces, inheritance, polymorphism)	Encourages modularity and code reuse
+Type inference	Reduces the need to explicitly specify types
+Optional parameters and default values	Simplify function signatures and reduce boilerplate code
+29. How do you define a class in TypeScript?
+
+Classes in TypeScript are defined using the class keyword, along with properties, methods, and constructors. Here’s an example:
+
+class Person {
+firstName: string;
+lastName: string;
+
+constructor(firstName: string, lastName: string) {
+this.firstName = firstName;
+this.lastName = lastName;
+}
+
+getFullName(): string {
+return `${this.firstName} ${this.lastName}`;
+}
+}
+
+let myPerson = new Person("John", "Doe");
+console.log(myPerson.getFullName()); // logs "John Doe"
+30. How does TypeScript support inheritance and polymorphism?
+
+TypeScript supports inheritance and polymorphism through the use of classes and interfaces. Inheritance allows a subclass to inherit properties and methods from a parent class, while polymorphism allows objects to be treated as instances of their parent class or any of their parent’s interfaces. Here’s an example:
+
+class Animal {
+name: string;
+constructor(name: string) {
+this.name = name;
+}
+makeSound() {
+console.log("Animal sound");
+}
+}
+
+class Cat extends Animal {
+constructor(name: string) {
+super(name);
+}
+makeSound() {
+console.log("Meow");
+}
+}
+let myAnimal: Animal = new Cat("Fluffy");
+myAnimal.makeSound(); // logs "Meow"
+In this example, the Cat class inherits from the Animal class and overrides the makeSound method. The minimal variable is declared as type Animal, but it can still be assigned a new instance of the Cat class and called an instance of the parent class.
+
+31. How does TypeScript handle inheritance and polymorphism, and what are some of the benefits of using these object-oriented programming concepts?
+
+Inheritance	Polymorphism
+Allows a class to inherit properties and methods from a parent class.	Allows objects of different types to be treated as instances of a common type.
+Encourages code reuse and modularity by allowing classes to share common functionality.	Makes code more flexible and adaptable to changing requirements by allowing for the creation of extensible code frameworks.
+Can help improve code organization and maintainability by grouping related functionality into hierarchical class structures.	Encourages more modular and testable code by enabling the use of interfaces and abstract classes.
+32. What is the use of access modifiers in TypeScript?
+
+Access modifiers in TypeScript allow developers to control the visibility and accessibility of class members, such as properties and methods. TypeScript supports three access modifiers: public, private, and protected.
+
+33. How do you implement a private member in a TypeScript class?
+
+A private member in a TypeScript class can be defined using the private keyword before the member name. Here’s an example:
+
+class Person {
+private age: number;
+
+constructor(age: number) {
+this.age = age;
+}
+}
+In this example, the age property is private and can only be accessed within the Person class.
+
+34. How do you implement a public member in a TypeScript class?
+
+A public member in a TypeScript class is the default and doesn’t require any keyword before the member name. Here’s an example:
+
+class Person {
+firstName: string;
+lastName: string;
+
+constructor(firstName: string, lastName: string) {
+this.firstName = firstName;
+this.lastName = lastName;
+}
+}
+35. How can you integrate TypeScript with a popular frontend framework like Angular?
+
+To integrate TypeScript with Angular, you first need to install the TypeScript compiler using npm. Once TypeScript is installed, you can start writing Angular components in TypeScript by creating .ts files instead of .js files. TypeScript can also be used to create Angular services, directives, and pipes. Additionally, Angular provides built-in support for TypeScript through its command-line interface (CLI), which can generate TypeScript code for components, services, and other Angular constructs.
+
+36. What are access modifiers in TypeScript, and how are they used to control access to class members?
+
+Access Modifiers	Description
+public	Members are accessible from anywhere. This is the default for all class members.
+private	Members are only accessible from within the class that defines them.
+protected	Members are accessible from within the class that defines them, as well as any subclasses that extend the class.
+37. How do you use a namespace in TypeScript?
+
+Namespaces in TypeScript allow for organizing code into logical containers. To use a namespace, you declare it using the namespace keyword, and then export its contents using the export keyword.
+
+38. What is a module in TypeScript?
+
+In TypeScript, a module is a way to organize code into separate files and namespaces, allowing for better code reuse and maintainability.
+
+39. How do you use a module in TypeScript?
+
+To use a module in TypeScript, you export its contents using the export keyword and then import it into another module using the import keyword.
+
+40. How do you import and export modules in TypeScript?
+
+To export a module, you use the export keyword before the module’s declaration. To import a module, you use the import keyword followed by the module’s path.
+
+41. What are the primitive types in TypeScript?
+
+The primitive types in TypeScript are boolean, number, string, null, undefined, and symbol.
+
+42. What is a Promise in TypeScript?
+
+A Promise in TypeScript is an object representing the eventual completion or failure of an asynchronous operation, typically a function that returns a value asynchronously.
+
+43. How do you use a Promise in TypeScript?
+
+To use a Promise in TypeScript, you can create a new instance of the Promise object, passing in a function that performs the asynchronous operation. You can then use the then-and-catch methods to handle the eventual completion or failure of the operation.
+
+44. What is an enum in TypeScript?
+
+An enum in TypeScript is a way to define a set of named constants. Each constant is assigned an underlying numeric value, which can be used to compare and order the constants.
+
+45. How do you use an enum in TypeScript?
+
+To use an enum in TypeScript, you declare it using the enum keyword, and then use its constants as needed in your code.
+
+46. What is the role of a type alias in TypeScript?
+
+A type alias in TypeScript is a way to create a new name for an existing type. It can be used to simplify complex types, provide more descriptive type names, or create reusable types.
+
+47. What is the role of a type alias in TypeScript?
+
+A type alias is used to create a new name for an existing type or to define a complex type. It helps to simplify complex types and make them easier to read and use.
+
+48. How do you define a type alias in TypeScript?
+
+To define a type alias, use the “type” keyword followed by the new name you want to create and the existing type you want to alias. For example, to create a type alias for a complex object type, you can do:
+
+type MyTypeAlias = {
+name: string;
+age: number;
+address: string;
+}
+49. What is the difference between an interface and a type alias in TypeScript?
+
+The main difference between an interface and a type alias is that an interface is a declaration that defines a set of related properties and methods, while a type alias is just an alias for an existing type. Interfaces can also be implemented by classes, while type aliases cannot. Additionally, interfaces are generally preferred for defining object shapes, while type aliases are preferred for defining complex types and unions.
+
+50. How does TypeScript support type inference?
+
+TypeScript supports type inference by analyzing the values and expressions in the code to automatically determine their types. This allows developers to write code that is more concise and easier to read, while still benefiting from the safety and correctness guarantees of static typing.
+
+This article covers the Top 50 TypeScript Interview Questions and Answers, which can be valuable for candidates preparing for TypeScript technical interviews. Following daily updates on freshersnow.com is also recommended to stay informed.
+
+
+56 TypeScript interview questions you must ask software developers
+20min
+Interview the right talent
+
+
+
+
+
+
+
+
+
+
+TypeScript – an open-source superset of JavaScript – is a popular programming language for web developers. TypeScript remains a critical skill for programmers, but finding candidates who are truly proficient can be tough.
+
+To hire skilled TypeScript talent, you must ask the right questions during your interviews.
+
+Below, we provide 56 top TypeScript interview questions designed to test theoretical knowledge, practical coding ability, and more. With these questions, you can streamline your hiring process, reduce technical debt, and equip your teams with the skills to succeed in any TypeScript project.
+
+
+Table of contents
+Key takeaways
+20 beginner TypeScript interview questions to use in job interviews
+5 beginner TypeScript interview questions and answers 
+18 intermediate TypeScript interview questions to assess applicants’ skills
+5 intermediate TypeScript interview questions and answers
+18 advanced TypeScript interview questions for experienced developers
+5 advanced TypeScript interview questions and answers 
+Why should you use TypeScript interview questions after sending skills tests?
+Hire skilled TypeScript talent by asking the right questions 
+Key takeaways
+Use these 56 top TypeScript interview questions to thoroughly assess and comprehensively screen for both theoretical knowledge and practical coding skills in TypeScript.
+
+The questions are tailored to help you quickly find developers who can write clean, scalable, and maintainable TypeScript-based code.
+
+TestGorilla's coding tests – including the TypeScript coding test – supercharge your hiring process by reducing bias and helping you identify skilled TypeScript talent to shortlist for your interview.
+
+20 beginner TypeScript interview questions to use in job interviews
+Here are some TypeScript interview questions for beginners with basic programming skills and knowledge of the TypeScript language. For less advanced TypeScript roles, these questions are perfect for making sure each candidate has a baseline understanding of TypeScript.
+
+1. Explain what TypeScript is and how it works.
+
+2. What are arrays in TypeScript?
+
+3. Give me some benefits of using TypeScript.
+
+4. Are there any downsides to using this programming language?
+
+5. What are the differences between TypeScript and JavaScript?
+
+6. List some of TypeScript’s features.
+
+7. What are loop statements? 
+
+8. How do you convert a string to a number? 
+
+9. Do you know what contextual typing means?
+
+10. What is JSX? 
+
+11. What are the import and export keywords in TypeScript? 
+
+12. Define what static typing means.
+
+13. How do you create objects in TypeScript?
+
+14. How do you declare a variable in TypeScript? 
+
+15. Name a few built-in data types in TypeScript.
+
+16. Explain what modules are in this program. 
+
+17. Does TypeScript support function overloading?
+
+18. How do you compile TypeScript files?
+
+19. What are interfaces in TypeScript? 
+
+20. What is the difference between internal modules and external modules?
+
+The best insights on HR and recruitment, delivered to your inbox.
+Biweekly updates. No spam. Unsubscribe any time.
+
+Email*
+5 beginner TypeScript interview questions and answers 
+You can refer to these answers to beginner TypeScript interview questions when comparing your candidates’ responses after the interview.
+
+top 5 beginner typescript interview questions graphic
+1. Explain what TypeScript is and how it works. 
+TypeScript is a programming language that builds on JavaScript, which is another scripting language. Many developers and programmers use this object-oriented language to develop large applications.
+
+Candidates should know how it works, even if they’re beginners. TypeScript adds enhanced syntax on top of JavaScript to enable developers to include static typing and other additional features. 
+
+🚩 Watch out for candidates who: 
+
+Can’t clearly explain what TypeScript is – or say it’s “similar to JavaScript” without expanding on how it helps with type-checking and tooling
+
+Don’t understand TypeScript’s compilation process or how it produces JavaScript output
+
+Misunderstand how TypeScript integrates with modern development tools and integrated development environments (IDEs)
+
+2. What are the differences between TypeScript and JavaScript?
+Most candidates should know the difference between TypeScript and JavaScript. Although both are mainly used for web development, TypeScript is built on top of JavaScript and adds some additional features, including static typing. 
+
+Check out the key distinctions between JavaScript and TypeScript below: 
+
+TypeScript
+
+JavaScript
+
+Adds static typing; Supports modules; Supports type annotations; Suited for large-scale web apps
+
+Offers only dynamic typing; No module support; Doesn’t support type annotations; Service-side language suited for smaller web applications
+
+🚩 Watch out for candidates who:
+
+Give vague or overly simplistic answers, like “TypeScript is just JavaScript with types”
+
+Can’t discuss significant distinctions between the two – like static typing, interface use, or the need for a compilation step
+
+Fail to mention JavaScript interoperability or TypeScript's additional tooling benefits, like improved IDE support
+
+3. List some of TypeScript’s features. 
+TypeScript contains quite a few prominent features that candidates should know about. Their responses will show whether they have enough experience with this programming language. Strong candidates should name each feature and explain how it benefits web projects. 
+
+Here are some of TypeScript’s important features:
+
+Cross-platform: Developers can use TypeScript to build applications on a wide range of operating systems, like Windows, MacOS, and Linux.
+
+Object-oriented: TypeScript includes interfaces, modules, and classes for designing object-based code and server development. 
+
+Static type-checking: Programmers can find coding errors more easily with TypeScript’s static typing and type-checking features. 
+
+Optional static typing: Developers can also use optional static typing instead of JavaScript’s dynamic typing.
+
+DOM manipulation: This feature manipulates the document object model (DOM) to add or remove specific elements in the web project.
+
+ES6 features: TypeScript uses most features from ECMAScript 2015 (ES 6, 7), including arrow functions, interfaces, and classes. 
+
+🚩 Watch out for candidates who:
+
+Focus only on types without mentioning other features like interfaces, modules, or enhanced tooling
+
+List features incorrectly or mention JavaScript-based features or those from unrelated languages
+
+Miss core features like enums, generics, or strict type-checking options
+
+4. How do you create objects in TypeScript?
+Objects in TypeScript are instances that contain a set of key-value pairs that represent properties and methods. 
+
+You can create these objects by following a few methods:
+
+Use the object literal notation (which requires curly brackets)
+
+Define the objects with constructors
+
+Use the Object.create() method
+
+🚩 Watch out for candidates who:
+
+Don’t clearly distinguish TypeScript’s typing system and object creation
+
+Can’t explain or demonstrate type annotations for object properties
+
+Miss opportunities to discuss interfaces or types as ways to define object structure
+
+5. How do you declare a variable in TypeScript?
+A variable is a named location that stores data and values. It is a container for a value in the code. One way to declare a variable in TypeScript is by using the var keyword followed by the variable name, a colon, the variable type, the “=” sign, and the variable’s value. Below is an example of how to declare a string variable:
+
+var message: string = “Hello, World!”;
+
+This question will encourage candidates to show their programming skills. Even beginners should understand what objects and variables are in TypeScript. 
+
+🚩 Watch out for candidates who: 
+
+Confuses TypeScript with JavaScript, for example by using var exclusively without discussing let or const and their scope differences
+
+Fail to mention or demonstrate type annotations, like let age: number = 30;
+
+Misunderstand or incorrectly explain how TypeScript’s type inference works
+
+18 intermediate TypeScript interview questions to assess applicants’ skills
+Use these intermediate TypeScript interview questions for candidates who have some experience working with this programming language. These are ideal if the roles you’re hiring for require more than basic skills.
+
+1. What is an anonymous function in TypeScript?
+
+2. Explain what decorators are. 
+
+3. What are mixins in TypeScript?
+
+4. What is a namespace? How do you declare it?
+
+5. Can you combine multiple .ts files into a single .js file?
+
+6. What is a scope variable?
+
+7. Tell me how to debug a TypeScript file. 
+
+8. What are the steps to include a type definition file in TypeScript?
+
+9. What is the default parameters function?
+
+10. Explain what the tsconfig.json file is. 
+
+11. When do you use ambient declarations in TypeScript? 
+
+12. What are distributive conditional types?
+
+13. When should you use the unknown type?
+
+14. What is the difference between union and intersection types?
+
+15. How do you inherit a class in TypeScript?
+
+16. Tell me what compilation context means. 
+
+17. What is an enum in TypeScript?
+
+18. What do you know about the as keyword in TypeScript?
+
+5 intermediate TypeScript interview questions and answers
+Refer to these intermediate TypeScript interview questions and answers when reviewing your candidates’ responses after the interview. 
+
+Top 5 intermediate TypeScript interview questions and answers graphic
+1. What is a namespace? How do you declare it?
+A namespace – also referred to as an internal module – is a container for variables, functions, classes, and interfaces. Developers use them to help organize and manage their code. 
+
+To declare a namespace, developers must use the namespace keyword followed by a name. Then, they must include any interfaces or classes in the brackets. 
+
+Here’s an example of how to declare a namespace in TypeScript:
+
+namespace ExampleNamespace {
+
+export var exampleVariable = 1;
+
+export function exampleFunction(): void {
+
+// Function code
+
+}
+
+export class ExampleClass {
+
+// Class code
+
+}
+
+export interface ExampleInterface {
+
+// Interface code
+
+}
+
+}
+
+Candidates should know the importance of clean code when developing large-scale projects in TypeScript. Clean code is essential when declaring namespaces and creating classes or functions.
+
+🚩 Watch out for candidates who: 
+
+Confuse namespaces and modules, treating them as interchangeable concepts
+
+Can’t correctly declare a namespace or don’t understand how to encapsulate code within one
+
+Fail to mention that namespaces are often discouraged in favor of ES modules in modern TypeScript
+
+2. Tell me how to debug a TypeScript file.
+Debugging a TypeScript file may be challenging, but candidates with the right experience should know how to do it. 
+
+To achieve a TypeScript file debug, programmers should:
+
+Use a .js source map file to start the debugging process
+
+Compile a .ts file with the source flag to develop a source map file in TypeScript 
+
+ Use Visual Studio’s built-in feature to debug files 
+
+🚩Watch out for candidates who: 
+
+Don’t focus on TypeScript-specific insights and limit their answers to general debugging strategies
+
+Fail to mention the need for source maps or ways to configure them in a TypeScript project
+
+Seem unaware of TypeScript's integration with IDEs like Visual Studio Code for debugging
+
+3. How do you use TypeScript with [React]? Can you demonstrate how to [type-check props and state in a React component]?
+One way to measure developers’ TypeScript abilities is to see how they combine TypeScript with other tools. You can ask questions about any relevant tools in your company’s stack – filling in the brackets above with a tool the candidate would be using in your role, plus an action they’d be performing.   
+
+Our example question asks about React. If your business’ stack includes React, your most desirable candidates should understand and will demonstrate how TypeScript enhances React development by providing type safety for props and state management. They should be able to explain and show:
+
+How to define interfaces for props and apply them to functional or class components
+
+The use of the useState hook with types (if the component has state), ensuring the state variables are strongly typed
+
+How TypeScript helps when using React hooks like useEffect, useReducer, and custom hooks – and how type inference and explicit types reduce bugs
+
+Candidates who show a clear understanding of TypeScript's role in enhancing React applications through type safety and correctly use interfaces or types to type-check props and state are winners. Candidates should also be clear about common TypeScript and React pitfalls, like type errors.
+
+🚩 Watch out for candidates who: 
+
+Include overcomplicated or verbose code indicating a lack of familiarity with TypeScript in React
+
+Can’t explain how types improve the development experience or prevent runtime errors
+
+4. Explain what decorators are in TypeScript. 
+Decorators are an experimental TypeScript feature that enables developers to add additional functionality to properties, methods, parameters, and classes. In this way, they can enhance and add to the behavior of existing code. 
+
+🚩 Watch out for candidates who: 
+
+Don’t clearly explain what decorators do or how they apply to classes, properties, or methods
+
+Misunderstand decorators as a standard TypeScript feature – or don’t mention that decorators are an experimental feature that may require configuration
+
+Can’t provide examples of decorator usage in common scenarios, like logging and data validation
+
+5. What do you know about the as keyword in TypeScript?
+The as keyword is used for type assertions in TypeScript. Developers use this feature to override the compiler’s default type inference and explicitly specify a value’s type. 
+
+Candidates with JavaScript development experience will know more about syntax and its complexities. For example, they might explain how as tells the compiler to change the type of specific objects in TypeScript. 
+
+🚩 Watch out for candidates who:
+
+Mistake the as keyword’s role in type assertions as a type coercion tool
+
+Fail to explain why and when type assertions could be used (or avoided)
+
+Misses the difference between as and other TypeScript type-checking mechanisms, like interfaces and type guards
+
+18 advanced TypeScript interview questions for experienced developers
+Below are advanced TypeScript interview questions that are suited to experienced web developers and programmers who need to know their stuff to be the best fit for the roles you’re hiring for.
+
+1. How do you compile TypeScript with Visual Studio Code?
+
+2. Name some recent advancements in TypeScript. 
+
+3. Tell me more about the awaited type and Promise improvements. 
+
+4. What is type assertion? Give a few examples.
+
+5. What are the rules for declaring rest parameters?
+
+6. How do you call the base class constructor from a child class in TypeScript?
+
+7. Explain how optional chaining works. 
+
+8. What is method overriding in TypeScript?
+
+9. How do you check for null and undefined values in TypeScript?
+
+10. List a few rules of private fields in TypeScript.
+
+11. How do you make all properties of an interface optional?
+
+12. What is the difference between type inference and contextual typing?
+
+13. How would you choose between never, unknown, and any in TypeScript?
+
+14. Which features does TypeScript offer to help make reusable components?
+
+15. Which TypeScript features would be suitable for a full-stack developer?
+
+16. What are generics in TypeScript?
+
+17. What are arrow/lambda functions in TypeScript?
+
+18. What is the difference between a tuple and an array?
+
+5 advanced TypeScript interview questions and answers 
+Check out these advanced interview questions and answers to determine which of your candidates know the most about TypeScript. For higher-level roles requiring an advanced understanding of TypeScript, you need cream-of-the-crop developers – so these questions are ideal for finding these devs. 
+
+top 5 advanced typescript interview questions and answers graphic
+1. What are the rules for declaring rest parameters?
+A rest parameter accepts zero or more arguments as an array. Developers need to follow specific rules for declaring rest parameters in TypeScript to avoid code errors and syntax issues. 
+
+Here are some rules for rest parameters: 
+
+Only one rest parameter can operate in a function
+
+The rest parameter must be declared as an array type
+
+The rest parameter needs to be placed last in the parameter list 
+
+🚩 Watch out for candidates who:
+
+Aren’t clear on how rest parameters are typed and used in TypeScript
+
+Can’t explain how TypeScript enforces restrictions on rest parameters in function signatures
+
+Misunderstand the difference between TypeScript’s rest parameters and JavaScript’s spread/rest syntax
+
+2. How do you make all properties of an interface optional?
+Candidates should know that using a partial mapped type can make all properties in TypeScript optional. They might write down the Partial utility type during the interview or explain how it works in TypeScript.
+
+🚩 Watch out for candidates who:
+
+Are unaware of TypeScript utility types, especially Partial<T>, and how they can be used to make properties optional
+
+Suggest an overly complex solution, like manually setting each property as optional
+
+Fail to explain practical applications of making an interface fully optional
+
+3. Imagine you are tasked with refactoring a large JavaScript codebase into TypeScript. How would you approach the migration to ensure minimal disruption to the existing application?
+Skilled candidates should break down their approach into the following clear, strategic phases that minimize risk and disruption:
+
+Start with an audit of the existing JavaScript codebase, identify the most critical application parts, and decide whether or not to refactor 
+
+Migrate gradually – starting with files or modules that have the least dependencies – to avoid issues cascading through different parts of the system across the entire codebase
+
+Convert critical logic components, data models, and utility functions first – ensuring early core type safety and proactive bug prevention 
+
+Use ESLint or JSDoc comments to document types during initial migration
+
+Use TypeScript ESLint rules to make sure the codebase follows best practices throughout and after the migration: 
+
+Use robust existing unit and end-to-end tests to catch issues during migration, and use TypeScript-specific tests to ensure types are correctly enforced
+
+Involve the team by providing documentation and offering training on TypeScript best practices to ease developers’ transition
+
+This question is designed to test candidates’ technical skill and strategic thinking – an often critical combo for higher-level roles involving TypeScript. This way, you gain more insight into candidates’ real-world experience, understanding, and practical application of TypeScript in a modern development environment.
+
+The best candidates demonstrate a balance between type safety and business continuity – with a strong testing and documentation emphasis to avoid regressions.
+
+🚩 Watch out for candidates who: 
+
+Suggest refactoring the entire codebase without robust testing and auditing strategies
+
+Deprioritize communication and TypeScript training with the teams involved in the migration
+
+4. What is the difference between type inference and contextual typing?
+Type inference enables the TypeScript compiler to determine the type of a variable based on the value it is initialized with. For example, the compiler would determine that a variable initialized with a value of “10” is a number.
+
+On the other hand, contextual typing enables the compiler to determine an expression’s type based on its location and surrounding context.
+
+Candidates who have significant experience with TypeScript should be able to list the differences between these features quickly.
+
+🚩Watch out for candidates who: 
+
+Confuse type inference with contextual typing – or don’t seem to understand how contextual typing works within specific code contexts
+
+Can’t explain scenarios where TypeScript infers types versus when it applies contextual typing, like in function callbacks
+
+Don’t clearly demonstrate the difference, especially within code contexts
+
+5. How do you compile TypeScript with Visual Studio Code?
+Top candidates will be able to show their experience with the popular code editor Visual Studio Code.
+
+To compile TypeScript with this application, they have to ensure TypeScript is installed on their system. Then they need to open their TypeScript file and create a tsconfig.json file in the root directory of their project.
+
+Next, they should open Visual Studio Code’s integrated terminal, navigate to the directory the TypeScript file is located in, and run the tsc command to compile the file.
+
+🚩Watch out for candidates who: 
+
+Aren’t aware of Visual Studio Code's TypeScript integration – or suggest running the TypeScript compiler manually without using VS Code's features
+
+Don’t demonstrate how to set up a tsconfig.json file for consistent compilation
+
+Don’t mention Visual Studio Code’s automatic type checking and compilation features, like Ctrl + Shift + B for build tasks
+
+Related posts
+
+AI Fluency
+Defining “AI fluency” and why hiring rubrics fail
+
+blog post thumbnail for What the EU AI Act means for how you hire
+Skills-based hiring
+Hiring & recruiting
+AI Fluency
+What the EU AI Act means for how you hire
+
+
+Talent assessment
+Skills-based hiring
+AI Fluency
+Our latest report reveals 59% of companies made a bad AI hire in the past year
+
+Why should you use TypeScript interview questions after sending skills tests?
+You should conduct interviews after sending all your applicants a skills assessment that contains various tests – from TypeScript-related tests to soft skills tests.
+
+Using a skills assessment at the top of your hiring funnel helps you which programmers among your talent pool have the skills, knowledge, and other qualities you need. 
+
+TestGorilla can help. With our talent discovery platform, you can build custom assessments by combining up to five tests. 
+
+We have a massive test library with tons of tests that might be relevant to your role. These include: 
+
+TypeScript (Coding): Entry-Level Algorithms test
+
+TypeScript (Coding): Debugging test 
+
+TypeScript (Coding): Intermediate Algorithms test 
+
+JavaScript (Coding): Entry-Level Algorithms test
+
+Problem Solving test
+
+Numerical Reasoning test
+
+Critical Thinking test 
+
+Personality tests
+
+Check out our other tests for TypeScript developers and peruse our test library for tests relevant to your role. 
+
+A bonus? You can add custom questions to your assessment – including some of the interview questions above. 
+
+Once candidates have completed the tests, you can compare their responses to shortlist the best of the bunch for interviews. Our system each candidate’s score as a percentage to help you compare them easily and shortlist them quickly.
+
+TypeScript Interview Questions for freshers experienced :-
+1. What is TypeScript?
+
+TypeScript is a free and open-source programming language developed and maintained by Microsoft. It is a strongly typed superset of JavaScript that compiles to plain JavaScript. It is a language for application-scale JavaScript development. TypeScript is quite easy to learn and use for developers familiar with C#, Java and all strong typed languages.
+
+TypeScript can be executed on Any browser, Any Host, and Any Operating System. TypeScript is not directly run on the browser. It needs a compiler to compile and generate in JavaScript file. TypeScript is the ES6 version of JavaScript with some additional features.
+
+2. What are the features of TypeScript?
+Features of TypeScript are:
+
+TypeScript is just same as JavaScript
+Supports other JS libraries
+It is portable
+Here, .js file can be renamed to .ts
+3. Who is the inventor of TypeScript?
+Designed by Anders Hejlsberg at Microsoft.
+
+4. What are the benefits of TypeScript?
+Benefits of TypeScript are:
+
+Compilation
+Strong Static Typing
+supports type definitions
+supports Object Oriented Programming
+5. What are the components of TypeScript?
+There are three components of TypeScript are:
+
+TypeScript Language
+TypeScript Compiler
+TypeScript Language Service
+6. What are the types of comment in TypeScript?
+There are two types of comment in TypeScript:
+
+Single line.
+Example: // Single Line Comment.
+
+Multiple line.
+Example: /* Multiple Line Comment.*/
+
+7. What is the extension supported by TypeScript?
+TypeScript supports .ts extension.
+
+8. What is negation operator?
+It is a type of miscellaneous Operator and used to Change the sign of a value.
+
+It is denoted by “-” symbol.
+
+9. How to call base class constructor from child class in TypeScript?
+By using super().
+
+10. What is the Default Access Modifier for members of a class in TypeScript?
+public is the default access modifier for members of a class.
+
+TypeScript Interview Questions
+TypeScript Interview Questions
+11. Does TypeScript support function overloading?
+Yes, Typescript support function overloading.
+
+12. How to generate TypeScript definition File from .ts file?
+By using tsc compiler, you can generate TypeScript definition file from .ts file.
+
+13. What are Modules in Typescript?
+Modules helps in organizing the code written in TypeScript.
+
+Two types of Modules are:
+
+Internal Modules
+External Modules
+14. Is it possible to combine multiple .ts files into a single .js file?
+yes, It is possible.
+
+15. What is the syntax to declare ambient variables in TypeScript?
+The syntax to declare ambient variables:
+
+declare module Module_Name {
+declare module Module_Name {
+}
+
+16. What is Internal Module in TypeScript?
+Internal Module: It is used to logically group classes, interfaces, functions into one unit and can be exported in another module.
+
+17. What is the syntax to declare External Module using export in TypeScript?
+The syntax to declare External Module using export is:
+
+//FileName:TutorialandExample.ts
+export interface TutorialandExample {
+//code declarations
+}
+
+18. What is the syntax to declare External Module using import in TypeScript?
+The syntax to declare External Module using import is:
+
+import TutorialandExampleRef = require(“./TutorialandExample”);
+
+19. What is the syntax to declare Internal Module in TypeScript?
+What is the syntax to declare Internal Module in TypeScript?
+
+module TutorialandExample {
+export function add(x, y) {
+console.log(x+y);
+}
+}
+
+20. What is Nested Namespaces in TypeScript?
+Nested Namespaces: we can define one namespace inside another namespace.
+
+21. What is the syntax to declare Nested Namespace in TypeScript?
+The syntax to declare Nested Namespace is:
+
+namespace firstnamespace {
+export namespace secondnamespace {
+export class classname { }
+}
+}
+
+22. What is Object in TypeScript?
+Object: It is an instance of class which contains set of key and value pairs.
+
+Here, the values can be scalar values/functions or array of other objects.
+
+23. What is Duck-typing in TypeScript?
+Duck-typing: It is used to verify the presence of certain properties in the objects to check their suitability.
+
+Here, two objects are considered to be of the same type if both share the same set of properties.
+
+24. What is the use of this keyword in TypeScript?
+this keyword: It refers to the current instance of the class. In this keyword, the parameter name and the name of the class field are the same.
+
+25. What is the use of new keyword?
+new keyword: It is used for instantiation in object creation.
+
+26. What are the types of inheritance classified in TypeScript?
+The types of inheritance classified in TypeScript are:
+
+Single
+Multiple
+Multilevel
+27. What are the types of access modifiers supported by TypeScript?
+The types of access modifiers supported by TypeScript are:
+
+Public
+Private
+Protected
+28. What is the use of pipe symbol in TypeScript?
+pipe symbol: It is used to combine two or more data types to denote a Union Type.
+
+29. What is the use of push() and pop() method in Tuple?
+push() method: It appends an item to the tuple.
+
+pop() method: This method removes and returns the last value in the tuple.
+
+30. What are the variable scopes available in TypeScript?
+The variable scopes available in TypeScript are:
+
+Global Scope
+Class Scope
+Local Scope
+31. What are method overriding in TypeScript?
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding. In other words, redefined the base class methods in the derived class or child class.
+
+Rules for Method Overriding
+
+The method must have the same name as in the parent class
+The method must have the same parameter as in the parent class.
+There must be an IS-A relationship (inheritance).
+Example
+
+class NewPrinter extends Printer {
+doPrint(): any {
+super.doPrint();
+console.log(“Called Child class.”);
+}
+doInkJetPrint(): any {
+console.log(“Called doInkJetPrint().”);
+}
+}
+let printer: new () => NewPrinter;
+printer.doPrint();
+printer.doInkJetPrint();
+
+32. What is “as” syntax in TypeScript?
+The as is the additional syntax for Type assertion in TypeScript. The reason for introducing the as-syntax is that the original syntax (<type>) conflicted with JSX.
+
+Example
+
+let empCode: any = 111;
+let employeeCode = code as number;
+When using TypeScript with JSX, only as-style assertions are allowed.
+
+33. What is JSX? Can we use JSX in TypeScript?
+JSX is NOTHING BUT Javascript with a different extension. Facebook came up with this new extension so that they can distinguish from the XML-like implementation of HTML in JavaScript.
+
+JSX is an embeddable XML-like syntax. It is meant to be transformed into valid JavaScript. JSX came to popularity with the React framework. TypeScript supports embedding, type checking, and compiling JSX directly into JavaScript.
+
+To use JSX, we must do two things.
+
+Name the files with a .tsx extension
+Enable the jsx option
+34. What are Ambients in TypeScripts and when to use them?
+
+Ambient declarations tell the compiler about the actual source code exist elsewhere. If these source codes do not exist at runtime and we try to use them, then it will break without warning.
+Ambient declarations files are like docs file. If the source changes, the docs need to be kept updated also. If the ambient declaration file is not updated, then we will get compiler errors.
+The Ambient declarations allow us to safely and easily use existing popular JavaScript libraries like jquery, angularjs, nodejs, etc.
+35. What is a TypeScript Map file?
+
+TypeScript Map file is a source map file which holds information about our original files.
+.map files are source map files that let tools map between the emitted JavaScript code and the TypeScript source files that created it.
+Many debuggers can consume these files so we can debug the TypeScript file instead of the JavaScript file.
+
+Собеседование по TypeScript: 20 вопросов и ответов
+Язык TypeScript основан на том же синтаксисе и семантике, которые хорошо знакомы миллионам JavaScript-разработчиков. TypeScript даёт возможность работать с самыми свежими и ещё только появляющимися возможностями JS, включая те, которые имеются в ECMAScript 2015, и те, которые пока существуют лишь в виде предложений. Среди таких возможностей, например, асинхронные функции и декораторы. Всё это направлено на то, чтобы помочь разработчику в создании надёжных и современных приложений.
+TypeScript-программа компилируется в обычный JavaScript-код, который может выполняться в любом браузере или в среде Node.js. Этот код будет понятен любому JS-движку, который поддерживает стандарт ECMAScript 3 или более новый.
+
+
+
+Материал, перевод которого мы сегодня публикуем, содержит разбор двадцати вопросов, которые вполне могут задать тому, кто собирается пройти собеседование, претендуя на позицию TypeScript-программиста.
+
+Вопрос №1 (1). Что такое TypeScript и зачем использовать его вместо JavaScript?
+
+В скобках, после номера вопроса, указана его сложность, оцениваемая по пятибалльной шкале.
+TypeScript (TS) – это надмножество JavaScript (JS), среди основных особенностей которого можно отметить возможность явного статического назначения типов, поддержку классов и интерфейсов. Одним из серьёзных преимуществ TS перед JS является возможность создания, в различных IDE, такой среды разработки, которая позволяет, прямо в процессе ввода кода, выявлять распространённые ошибки. Применение TypeScript в больших проектах может вести к повышению надёжности программ, которые, при этом, можно разворачивать в тех же средах, где работают обычные JS-приложения.
+
+Вот некоторые подробности о TypeScript:
+
+TypeScript поддерживает современные редакции стандартов ECMAScript, код, написанный с использованием которых, компилируется с учётом возможности его выполнения на платформах, поддерживающих более старые версии стандартов. Это означает, что TS-программист может использовать возможности ES2015 и более новых стандартов, наподобие модулей, стрелочных функций, классов, оператора spread, деструктурирования, и выполнять то, что у него получается, в существующих средах, которые пока этих стандартов не поддерживают.
+TypeScript – это надстройка над JavaScript. Код, написанный на чистом JavaScript, является действительным TypeScript-кодом.
+TypeScript расширяет JavaScript возможностью статического назначения типов. Система типов TS отличается довольно обширными возможностями. А именно, она включает в себя интерфейсы, перечисления, гибридные типы, обобщённые типы (generics), типы-объединения и типы-пересечения, модификаторы доступа и многое другое. Применение TypeScript, кроме того, немного упрощает работу за счёт использования вывода типов.
+Применение TypeScript, в сравнении с JavaScript, значительно улучшает процесс разработки. Дело в том, что IDE, в реальном времени, получает сведения о типах от TS-компилятора.
+При использовании режима строгой проверки на null (для этого применяется флаг компилятора --strictNullChecks), компилятор TypeScript не разрешает присвоение null и undefined переменным тех типов, в которых, в таком режиме, использование этих значений не допускается.
+Для использования TypeScript нужно организовать процесс сборки проекта, включающий в себя этап компиляции TS-кода в JavaScript. Компилятор может встроить карту кода (source map) в сгенерированные им JS-файлы, или создавать отдельные .map-файлы. Это позволяет устанавливать точки останова и исследовать значения переменных во время выполнения программ, работая непосредственно с TypeScript-кодом.
+TypeScript — это опенсорсный проект Microsoft, выпущенный под лицензией Apache 2. Инициатором разработки TypeScript является Андерс Хейлсберг. Он причастен к созданию Turbo Pascal, Delphi и C#.
+
+→ Источник
+Вопрос №2 (1). Расскажите об обобщённых типах в TypeScript.
+
+Обобщённые типы (generics) позволяют создавать компоненты или функции, которые могут работать с различными типами, а не с каким-то одним. Рассмотрим пример:
+/** Объявление класса с параметром обобщённого типа */
+class Queue<t> {
+  private data = [];
+  push = (item: T) => this.data.push(item);
+  pop = (): T => this.data.shift();
+}
+
+const queue = new Queue<number>();
+queue.push(0);
+queue.push("1"); // Ошибка : в такую очередь нельзя добавить строку, тут разрешено использовать лишь числа
+
+→ Источник
+Вопрос №3 (2). Поддерживает ли TypeScript все принципы объектно-ориентированного программирования?
+
+Да, поддерживает. Существуют четыре основных принципа объектно-ориентированного программирования:
+Инкапсуляция
+Наследование
+Абстракция
+Полиморфизм
+
+Пользуясь простыми и понятными средствами TypeScript, можно реализовать все эти принципы.
+→ Источник
+
+Вопрос №4 (2). Как в TypeScript проверять значения на равенство null и undefined?
+
+Для выполнения подобных проверок достаточно воспользоваться следующей конструкцией:
+if (value) {
+}
+
+Выражение в скобках будет приведено к true в том случае, если оно не является чем-то из следующего списка:
+null
+undefined
+NaN
+Пустая строка
+0
+false
+
+TypeScript поддерживает те же правила преобразования типов, что и JavaScript.
+→ Источник
+
+Вопрос №5 (2). Как в TypeScript реализовать свойства класса, являющиеся константами?
+
+В TypeScript, при объявлении свойств классов, нельзя использовать ключевое слово const. При попытке использования этого ключевого слова выводится следующее сообщение об ошибке: A class member cannot have the ‘const’ keyword. В TypeScript 2.0 имеется модификатор readonly, позволяющий создавать свойства класса, предназначенные только для чтения:
+class MyClass {
+    readonly myReadonlyProperty = 1;
+
+    myMethod() {
+        console.log(this.myReadonlyProperty);
+    }
+}
+
+new MyClass().myReadonlyProperty = 5; // ошибка, так как свойство предназначено только для чтения
+
+→ Источник
+Вопрос №6 (2). Что представляют собой .map-файлы в TypeScript?
+
+Файлы с расширением .map хранят карты кода (source map), которые содержат данные о соответствии кода, написанного на TypeScript, JavaScript-коду, созданному на его основе. С этим файлами могут работать многие отладчики (например — Visual Studio и инструменты разработчика Chrome). Это позволяет, в ходе отладки, работать с исходным кодом программ на TypeScript, а не с их JS-эквивалентами.
+→ Источник
+
+Вопрос №7 (2). Что такое геттеры и сеттеры в TypeScript?
+
+TypeScript поддерживает геттеры и сеттеры, которые позволяют управлять доступом к членам объектов. Они дают разработчику средства контроля над чтением и записью свойств объектов.
+class foo {
+  private _bar:boolean = false;
+
+  get bar():boolean {
+    return this._bar;
+  }
+  set bar(theBar:boolean) {
+    this._bar = theBar;
+  }
+}
+
+var myBar = myFoo.bar;  // здесь вызывается геттер
+myFoo.bar = true;  // здесь вызывается сеттер
+
+→ Источник
+Вопрос №8 (2). Можно ли использовать TypeScript в серверной разработке, и если да — то как?
+
+Программы, написанные на TypeScript, подходят не только для фронтенд-разработки, но и для создания серверных приложений. Например, на TS можно писать программы для платформы Node.js. Это даёт программисту дополнительные средства по контролю типов и позволяет использовать другие возможности языка. Для создания серверных приложений на TS нужно лишь наладить правильный процесс обработки кода, на вход которого поступают TypeScript-файлы, а на выходе получаются JavaScript-файлы, подходящие для выполнения их в Node.js. Для того чтобы организовать такую среду, сначала надо установить компилятор TypeScript:
+npm i -g typescript
+
+Параметры компилятора задают с помощью файла tsconfig.json, который определяет, кроме прочего, цель компиляции и место, в которое нужно поместиться готовые JS-файлы. В целом, этот файл очень похож на конфигурационные файлы babel или webpack:
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "build"
+  }
+}
+
+Теперь, при условии, что компилятору есть что обрабатывать, нужно его запустить:
+tsc
+
+И, наконец, учитывая то, что JS-файлы, пригодные для выполнения в среде Node.js, находятся в папке build, надо выполнить такую команду, находясь в корневой директории проекта:
+node build/index.js
+
+→ Источник
+Вопрос №9 (3). Расскажите об основных компонентах TypeScript.
+
+TypeScript включает в себя три основных компонента:
+Язык. Это, с точки зрения разработчиков, самая важная часть TypeScript. «Язык» — это синтаксис, ключевые слова, всё то, что позволяет писать программы на TypeScript.
+Компилятор. TypeScript обладает компилятором с открытым исходным кодом, он является кросс-платформенным, с открытой спецификацией, и написан на TypeScript. Компилятор выполняет преобразование TypeScript-кода в JavaScript-код. Кроме того, если с программой что-то не так, он выдаёт сообщения об ошибках. Он позволяет объединять несколько TypeScript-файлов в один выходной JS-файл и умеет создавать карты кода.
+Вспомогательные инструменты. Вспомогательные инструменты TypeScript предназначены для облегчения процесса разработки с его использованием в различных IDE. Среди них — Visual Studio, VS Code, Sublime, различные средства для быстрого запуска TS-кода, и другие.
+
+→ Источник
+Вопрос №10 (3). Есть ли в предоставленном вам TypeScript-коде ошибки? Объясните свой ответ.
+
+Вот фрагмент кода:
+class Point {
+    x: number;
+    y: number;
+}
+
+interface Point3d extends Point {
+    z: number;
+}
+
+let point3d: Point3d = {x: 1, y: 2, z: 3};
+
+Ошибок в этом коде нет. Объявление класса создаёт две сущности: это тип данных, используемый для создания экземпляров класса, и функция-конструктор. Так как классы создают типы данных, использовать их можно там же, где можно использовать интерфейсы.
+→ Источник
+
+
+Просто очень любим этот фильм )
+
+Вопрос №11 (3). Расскажите об использовании декораторов свойств в TypeScript.
+
+Декораторы можно использовать для изменения поведения классов, при этом ещё больше пользы от них можно получить при их использовании с каким-либо фреймворком. Например, если в вашем фреймворке есть методы, доступ к которым ограничен (скажем, они предназначены только для администратора), несложно будет написать декоратор метода @admin, который будет запрещать доступ к соответствующим методам пользователям, не являющимся администраторами. Можно создать декоратор @owner, который позволяет модифицировать объект только его владельцу. Вот как может выглядеть использование декораторов:
+class CRUD {
+    get() { }
+    post() { }
+
+    @admin
+    delete() { }
+
+    @owner
+    put() { }
+}
+
+→ Источник
+Вопрос №12 (3). Можно ли в TypeScript использовать строго типизированные функции в качестве параметров?
+
+Рассмотрим следующий пример:
+class Foo {
+    save(callback: Function) : void {
+        //Выполняем сохранение
+        var result : number = 42; //Получаем в ходе операции сохранения некое число
+        //Можно ли во время выполнения программы как-то обеспечить то, чтобы коллбэк принимал лишь один параметр типа number?
+        callback(result);
+    }
+}
+
+var foo = new Foo();
+var callback = (result: string) : void => {
+    alert(result);
+}
+foo.save(callback);
+
+Можно ли в методе save организовать работу с типизированным коллбэком? Перепишите код для того, чтобы это продемонстрировать.
+В TypeScript можно объявить тип коллбэка, после чего переписать код:
+
+type NumberCallback = (n: number) => any;
+
+class Foo {
+    // Эквивалент
+    save(callback: NumberCallback): void {
+        console.log(1)
+        callback(42);
+    }
+}
+
+var numCallback: NumberCallback = (result: number) : void => {
+    console.log("numCallback: ", result.toString());
+}
+
+var foo = new Foo();
+foo.save(numCallback)
+
+→ Источник
+Вопрос №13 (3). Как сделать так, чтобы классы, объявленные в модуле, были бы доступны и за пределами этого модуля?
+
+Классы, объявленные в модуле, доступны в пределах этого модуля. За его пределами доступ к ним получить нельзя.
+module Vehicle {
+    class Car {
+        constructor (
+            public make: string, 
+            public model: string) { }
+    }
+    var audiCar = new Car("Audi", "Q7");
+}
+// Это работать не будет
+var fordCar = Vehicle.Car("Ford", "Figo");
+
+В коде, приведённом выше, при попытке инициализации переменной fordCar произойдёт ошибка. Для того чтобы сделать класс, объявленный в модуле, доступным за пределами этого модуля, нужно воспользоваться ключевым словом export:
+module Vehicle {
+    export class Car {
+        constructor (
+            public make: string, 
+            public model: string) { }
+    }
+    var audiCar = new Car("Audi", "Q7");
+}
+// Теперь этот фрагмент кода работает нормально
+var fordCar = Vehicle.Car("Ford", "Figo");
+
+→ Источник
+Вопрос №14 (3). Поддерживает ли TypeScript перегрузку функций?
+
+TypeScript поддерживает перегрузку функций, но реализация этого механизма отличается от той, которую можно видеть в других объектно-ориентированных языках. А именно, в TS создают лишь одну функцию и некоторое количество объявлений. Когда такой код компилируется в JavaScript, видимой оказывается лишь одна конкретная функция. Этот механизм работает из-за того, что JS-функции можно вызывать, передавая им разное количество параметров.
+class Foo {
+    myMethod(a: string);
+    myMethod(a: number);
+    myMethod(a: number, b: string);
+    myMethod(a: any, b?: string) {
+        alert(a.toString());
+    }
+}
+
+→ Источник
+Вопрос №15 (4). Что не так с предоставленным вам кодом?
+
+Вот код, о котором идёт речь:
+/* Неверно*/
+interface Fetcher {
+    getObject(done: (data: any, elapsedTime?: number) => void): void;
+}
+
+Рекомендуется использовать необязательные параметры в коллбэках только в том случае, если вы абсолютно точно понимаете последствия такого шага. Этот код имеет весьма специфический смысл: коллбэк done может быть вызван или с 1 или 2 аргументами. Автор кода, вероятно, намеревался сообщить нам, что коллбэк может не обращать внимания на параметр elapsedTime, но для того, чтобы этого достичь, всегда можно создать коллбэк, который принимает меньшее число аргументов.
+→ Источник
+
+Вопрос №16 (4). Как в TypeScript перегрузить конструктор класса?
+
+TypeScript позволяет объявлять множество вариантов методов, но реализация может быть лишь одна, и эта реализация должна иметь сигнатуру, совместимую со всеми вариантами перегруженных методов. Для перегрузки конструктора класса можно воспользоваться несколькими подходами:
+Можно воспользоваться необязательным параметром:
+class Box {
+    public x: number;
+    public y: number;
+    public height: number;
+    public width: number;
+
+    constructor();
+    constructor(obj: IBox); 
+    constructor(obj?: any) {    
+        this.x = obj && obj.x || 0
+        this.y = obj && obj.y || 0
+        this.height = obj && obj.height || 0
+        this.width = obj && obj.width || 0;
+    }   
+}
+Можно воспользоваться параметрами по умолчанию:
+class Box {
+    public x: number;
+    public y: number;
+    public height: number;
+    public width: number;
+
+    constructor(obj : IBox = {x:0,y:0, height:0, width:0}) {    
+        this.x = obj.x;
+        this.y = obj.y;
+        this.height = obj.height;
+        this.width = obj.width;
+    }   
+}
+Можно использовать дополнительные перегрузки в виде методов статической фабрики:
+class Person {
+    static fromData(data: PersonData) {
+        let { first, last, birthday, gender = 'M' } = data 
+        return new this(
+            `${last}, ${first}`,
+            calculateAge(birthday),
+            gender
+        )
+    }
+
+    constructor(
+        public fullName: string,
+        public age: number,
+        public gender: 'M' | 'F'
+    ) {}
+}
+
+interface PersonData {
+    first: string
+    last: string
+    birthday: string
+    gender?: 'M' | 'F'
+}
+
+
+let personA = new Person('Doe, John', 31, 'M')
+let personB = Person.fromData({
+    first: 'John',
+    last: 'Doe',
+    birthday: '10-09-1986'
+})
+Можно использовать тип-объединение:
+class foo {
+    private _name: any;
+    constructor(name: string | number) {
+        this._name = name;
+    }
+}
+var f1 = new foo("bar");
+var f2 = new foo(1);
+
+→ Источник
+Вопрос №17 (4). Чем различаются ключевые слова interface и type в TypeScript?
+
+Вот примеры использования этих ключевых слов:
+interface X {
+    a: number
+    b: string
+}
+
+type X = {
+    a: number
+    b: string
+};
+
+В отличие от объявления интерфейса, которое всегда представляет именованный тип объекта, применение ключевого слова type позволяет задать псевдоним для любой разновидности типа, включая примитивные типы, типы-объединения и типы-пересечения.
+При использовании ключевого слова type вместо ключевого слова interface теряются следующие возможности:
+
+Интерфейс может быть использован в выражении extends или implements, а псевдоним для литерала объектного типа — нет.
+Интерфейс может иметь несколько объединённых объявлений, а при использовании ключевого слова type эта возможность не доступна.
+
+→ Источник
+Вопрос №18 (5). Расскажите о том, когда в TypeScript используют ключевое слово declare.
+
+Ключевое слово declare используется в TypeScript для объявления переменных, источником которых может служить некий файл, не являющийся TypeScript-файлом.
+Например, представим, что у нас имеется библиотека, которая называется myLibrary. У неё нет файла с объявлениями типов TypeScript, у неё имеется лишь пространство имён myLibrary в глобальном пространстве имён. Если вы хотите использовать эту библиотеку в своём TS-коде, вы можете использовать следующую конструкцию:
+
+declare var myLibrary;
+
+TypeScript назначит переменной myLibrary тип any. Проблема тут заключается в том, что у вас не будет, во время разработки, интеллектуальных подсказок по этой библиотеке, хотя использовать её в своём коде вы сможете. В этой ситуации можно воспользоваться и другим подходом, ведущим к тому же результату. Речь идёт об использовании переменной типа any:
+var myLibrary: any;
+
+И в том и в другом случае при компиляции TS-кода в JavaScript, получится одно и то же, но вариант с использованием ключевого слова declare отличается лучшей читабельностью. Применение этого ключевого слова приводит к созданию так называемого внешнего объявления переменной (ambient declaration).
+Вопрос №19 (5). Что такое внешние объявления переменных в TypeScript и когда их нужно использовать?
+
+Внешнее объявление переменной (ambient declaration) — это механизм, который позволяет сообщать компилятору TypeScript о том, что некий исходный код существует где-то за пределами текущего файла. Внешние объявления помогают интегрировать в TS-программы сторонние JavaScript-библиотеки.
+Эти объявления делают в файле объявления типов с расширением .d.ts. Внешние переменные или модули объявляют так:
+
+declare module Module_Name {
+}
+
+Файлы, в которых находится внешний код, должны быть подключены в TS-файле, использующем их, так:
+/// <reference path=" Sample.d.ts"></reference>
+
+→ Источник
+Вопрос №20 (5). Можно ли автоматически генерировать файлы объявлений TypeScript из JS-библиотек?
+
+JavaScript не всегда содержит достаточно информации, которая позволяет TypeScript автоматически выводить типы. Поэтому практически невозможно автоматически создавать объявления типов, основанные на JavaScript. Однако можно попытаться это сделать, воспользовавшись следующими инструментами:
+Microsoft/dts-gen — официальное средство, используемое Microsoft как отправная точка при создании объявлений типов.
+dtsmake — многообещающий инструмент для автоматического создания объявлений типов на основе JS-файлов, находящийся в процессе разработки. Он зависит от системы анализа кода Tern, которую используют некоторые редакторы для реализации механизма автозавершения при вводе JS-кода.
+
+
+Type Assertions в TypeScript: as и angle-bracket синтаксис
+Что такое Type Assertions?
+Type Assertions (Утверждения типов) — это способ сказать компилятору TypeScript: "Я знаю тип этого значения лучше, чем ты". Это не приведение типов и не изменяет значение во время выполнения — это только указание для компилятора.
+
+Синтаксис
+TypeScript поддерживает два синтаксиса для type assertions:
+
+Синтаксис as
+
+const value: any = "hello";
+const length = (value as string).length;  // 5
+Синтаксис угловых скобок
+
+const value: any = "hello";
+const length = (<string>value).length;  // 5
+Важно:
+
+В JSX/TSX можно использовать только синтаксис as, так как угловые скобки конфликтуют с синтаксисом JSX.
+
+Когда использовать Type Assertions?
+Работа с DOM
+
+// TypeScript не знает, какой элемент вернется
+const input = document.getElementById('email');  // HTMLElement | null
+
+// Утверждаем конкретный тип
+const emailInput = document.getElementById('email') as HTMLInputElement;
+emailInput.value = 'test@example.com';
+
+// Альтернатива
+const emailInput2 = <HTMLInputElement>document.getElementById('email');
+Работа с API и типом any
+
+const response: any = await fetch('/api/user').then(r => r.json());
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const user = response as User;
+console.log(user.name);
+Уточнение union типов
+
+type Result = { success: true; data: string } | { success: false; error: string };
+
+function handleResult(result: Result) {
+  if (result.success) {
+    // TypeScript знает, что это { success: true; data: string }
+    console.log(result.data);
+  } else {
+    // TypeScript знает, что это { success: false; error: string }
+    console.log(result.error);
+  }
+}
+
+// Но иногда нужно явно утвердить тип:
+const result = getResult();
+const successResult = result as { success: true; data: string };
+Работа с литералами
+
+// TypeScript выводит тип как string
+const method = 'GET';  // string
+
+// Нужен конкретный литерал
+const method2 = 'GET' as const;  // 'GET'
+
+// Или
+const method3 = 'GET' as 'GET' | 'POST';
+Type Assertions vs Type Casting
+Type Assertions (TypeScript)
+
+const value: any = "42";
+const num = value as number;  // Компилируется, но ошибка в runtime!
+
+console.log(num * 2);  // NaN (строка умноженная на число)
+Type Casting (другие языки)
+
+// В других языках приведение типов меняет значение
+String num = "42";
+int converted = (int) num;  // Реально преобразует строку в число
+Важно:
+
+Type Assertions не выполняют преобразование и не проверяют тип в runtime. Это только подсказка компилятору.
+
+Double Assertions
+Иногда TypeScript не позволяет выполнить прямое утверждение между несовместимыми типами:
+
+
+const value: string = "hello";
+
+// Ошибка: Conversion of type 'string' to type 'number' may be a mistake
+// const num = value as number;
+
+// Двойное утверждение через unknown (или any)
+const num = value as unknown as number;
+Осторожно:
+
+Двойные утверждения — признак проблемы в типизации. Используйте только в крайних случаях.
+
+Non-null Assertion Operator
+Оператор ! говорит TypeScript, что значение точно не null и не undefined.
+
+Синтаксис
+
+// TypeScript думает, что может быть null
+const element = document.getElementById('root');  // HTMLElement | null
+
+// Мы уверены, что элемент существует
+const elementNonNull = document.getElementById('root')!;  // HTMLElement
+
+elementNonNull.innerHTML = 'Hello';
+Примеры использования
+
+interface User {
+  name: string;
+  email?: string;
+}
+
+const user: User = { name: 'John', email: 'john@example.com' };
+
+// Ошибка: Object is possibly 'undefined'
+// const emailLength = user.email.length;
+
+// С проверкой
+if (user.email) {
+  const emailLength = user.email.length;
+}
+
+// С non-null assertion (если уверены)
+const emailLength = user.email!.length;
+С опциональными цепочками
+
+interface Config {
+  api?: {
+    url?: string;
+  };
+}
+
+const config: Config = {
+  api: { url: 'https://api.example.com' }
+};
+
+// Без non-null assertion
+const url = config.api?.url;  // string | undefined
+
+// С non-null assertion
+const urlNonNull = config.api!.url!;  // string
+Осторожно:
+
+Non-null assertion обходит проверки TypeScript. Если значение окажется null или undefined, получите ошибку в runtime.
+
+Const Assertions
+as const создает readonly литеральные типы.
+
+Примитивы
+
+// Обычное объявление
+let x = 'hello';  // string
+
+// С as const
+let y = 'hello' as const;  // 'hello' (литеральный тип)
+Объекты
+
+// Обычный объект
+const config = {
+  host: 'localhost',
+  port: 3000
+};
+// { host: string; port: number; }
+
+// С as const
+const configConst = {
+  host: 'localhost',
+  port: 3000
+} as const;
+// { readonly host: 'localhost'; readonly port: 3000; }
+
+// Нельзя изменить
+// configConst.port = 8080;  // Ошибка
+Массивы
+
+// Обычный массив
+const colors = ['red', 'green', 'blue'];
+// string[]
+
+// С as const
+const colorsConst = ['red', 'green', 'blue'] as const;
+// readonly ['red', 'green', 'blue']
+
+type Color = typeof colorsConst[number];
+// 'red' | 'green' | 'blue'
+Практическое применение
+
+// Создание union типа из массива
+const ROLES = ['admin', 'user', 'guest'] as const;
+type Role = typeof ROLES[number];  // 'admin' | 'user' | 'guest'
+
+function checkRole(role: Role) {
+  // ...
+}
+
+checkRole('admin');  // OK
+// checkRole('moderator');  // Ошибка
+Satisfies Operator (TypeScript 4.9+)
+satisfies проверяет соответствие типу, но сохраняет вывод типов.
+
+
+type Colors = 'red' | 'green' | 'blue';
+
+const colors = {
+  red: [255, 0, 0],
+  green: '#00ff00',
+  blue: [0, 0, 255]
+} satisfies Record<Colors, string | number[]>;
+
+// TypeScript сохранил точные типы
+colors.red;    // number[]
+colors.green;  // string
+colors.blue;   // number[]
+
+// Если бы использовали type assertion:
+const colors2: Record<Colors, string | number[]> = {
+  red: [255, 0, 0],
+  green: '#00ff00',
+  blue: [0, 0, 255]
+};
+
+colors2.red;  // string | number[] (потеряли точность)
+Когда НЕ использовать Type Assertions
+Вместо правильной типизации
+
+// Плохо
+function getUser() {
+  return { id: 1, name: 'John' } as any;
+}
+
+// Хорошо
+interface User {
+  id: number;
+  name: string;
+}
+
+function getUser(): User {
+  return { id: 1, name: 'John' };
+}
+Для исправления ошибок типизации
+
+// Плохо - скрываем проблему
+const value: number = "hello" as any as number;
+
+// Хорошо - исправляем проблему
+const value: string = "hello";
+const num: number = parseInt(value, 10);
+Когда можно использовать Type Guards
+
+function processValue(value: string | number) {
+  // Плохо
+  const str = value as string;
+  return str.toUpperCase();
+  
+  // Хорошо
+  if (typeof value === 'string') {
+    return value.toUpperCase();
+  }
+  return value.toString();
+}
+Безопасные альтернативы
+Type Guards
+
+function isString(value: any): value is string {
+  return typeof value === 'string';
+}
+
+const value: any = "hello";
+
+if (isString(value)) {
+  // TypeScript знает, что value - это string
+  console.log(value.toUpperCase());
+}
+Discriminated Unions
+
+type Shape = 
+  | { kind: 'circle'; radius: number }
+  | { kind: 'square'; size: number };
+
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case 'circle':
+      return Math.PI * shape.radius ** 2;
+    case 'square':
+      return shape.size ** 2;
+  }
+}
+Optional Chaining
+
+// Вместо non-null assertion
+const value = obj.prop!.nested!.value;
+
+// Используйте optional chaining
+const value = obj.prop?.nested?.value;  // string | undefined
+Типичные ошибки
+Утверждение несовместимых типов
+
+const num = 42;
+// Ошибка: невозможно преобразовать number в string
+// const str = num as string;
+
+// Нужно двойное утверждение (но это плохо!)
+const str = num as unknown as string;
+Игнорирование ошибок через as any
+
+// Плохо
+function processData(data: ComplexType) {
+  return (data as any).someMethod();
+}
+
+// Хорошо
+function processData(data: ComplexType) {
+  if ('someMethod' in data && typeof data.someMethod === 'function') {
+    return data.someMethod();
+  }
+}
+Утрата типобезопасности
+
+// Плохо - теряем типобезопасность
+const users = getUsers() as any[];
+
+// Хорошо
+interface User {
+  id: number;
+  name: string;
+}
+
+const users = getUsers() as User[];
+Практические паттерны
+Безопасное извлечение из DOM
+
+function getElement<T extends HTMLElement>(id: string): T | null {
+  return document.getElementById(id) as T | null;
+}
+
+const input = getElement<HTMLInputElement>('email');
+if (input) {
+  input.value = 'test';
+}
+Работа с unknown
+
+function parseJSON(json: string): unknown {
+  return JSON.parse(json);
+}
+
+const data = parseJSON('{"name": "John"}');
+
+// Type guard для безопасности
+function isUser(data: unknown): data is { name: string } {
+  return typeof data === 'object' && 
+         data !== null && 
+         'name' in data &&
+         typeof (data as any).name === 'string';
+}
+
+if (isUser(data)) {
+  console.log(data.name);
+}
+Вывод
+Type Assertions:
+
+Не преобразуют значения, только указывают тип компилятору
+Синтаксис: as (предпочтительно) или <> (не в JSX)
+Полезны при работе с DOM и any
+Non-null assertion ! убирает null | undefined
+as const создает readonly литералы
+satisfies (4.9+) проверяет тип, сохраняя вывод
+Используйте осторожно — могут скрывать проблемы
+На собеседовании:
+
+Важно уметь:
+
+Объяснить разницу между type assertions и type casting
+Показать оба синтаксиса (as и <>)
+Объяснить, когда использовать as const
+Рассказать о non-null assertion operator
+Привести примеры безопасных альтернатив (type guards)
+Объяснить риски чрезмерного использования assertions
+
+
+Conditional Types в TypeScript: T extends U ? X : Y
+Что такое Conditional Types?
+Conditional Types (Условные типы) — это конструкция в TypeScript, которая позволяет выбирать тип на основе условия. Работают по принципу тернарного оператора, но для типов.
+
+Синтаксис
+
+T extends U ? X : Y
+Если тип T можно присвоить типу U, то результат — тип X, иначе — тип Y.
+
+Простой пример
+
+type IsString<T> = T extends string ? true : false;
+
+type A = IsString<string>;   // true
+type B = IsString<number>;   // false
+type C = IsString<'hello'>;  // true
+Как это работает?
+Проверяется, является ли T подтипом string
+Если да — возвращается true
+Если нет — возвращается false
+Практические примеры
+Извлечение типа возвращаемого значения
+
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
+function getUserName() {
+  return 'John';
+}
+
+function getUserAge() {
+  return 25;
+}
+
+type NameType = ReturnType<typeof getUserName>;  // string
+type AgeType = ReturnType<typeof getUserAge>;    // number
+Фильтрация типов
+
+type NonNullable<T> = T extends null | undefined ? never : T;
+
+type A = NonNullable<string | null>;        // string
+type B = NonNullable<number | undefined>;   // number
+type C = NonNullable<boolean | null | undefined>;  // boolean
+Проверка на массив
+
+type IsArray<T> = T extends any[] ? true : false;
+
+type A = IsArray<number[]>;     // true
+type B = IsArray<string>;       // false
+type C = IsArray<[1, 2, 3]>;    // true (tuple тоже массив)
+Distributive Conditional Types
+Когда условный тип применяется к union type, он распределяется по каждому члену объединения.
+
+
+type ToArray<T> = T extends any ? T[] : never;
+
+type A = ToArray<string | number>;
+// string extends any ? string[] : never | number extends any ? number[] : never
+// string[] | number[]
+Как это работает?
+
+ToArray<string | number>
+// Распределяется как:
+= ToArray<string> | ToArray<number>
+= string[] | number[]
+Отключение распределения
+Используйте квадратные скобки для предотвращения распределения:
+
+
+type ToArrayNonDist<T> = [T] extends [any] ? T[] : never;
+
+type A = ToArrayNonDist<string | number>;  // (string | number)[]
+Ключевое слово infer
+infer позволяет "извлечь" тип из структуры во время проверки условия.
+
+Извлечение типа из Promise
+
+type Unwrap<T> = T extends Promise<infer U> ? U : T;
+
+type A = Unwrap<Promise<string>>;  // string
+type B = Unwrap<Promise<number>>;  // number
+type C = Unwrap<boolean>;          // boolean
+Извлечение типов аргументов функции
+
+type FirstArg<T> = T extends (first: infer F, ...args: any[]) => any ? F : never;
+
+function test(name: string, age: number) {
+  return { name, age };
+}
+
+type First = FirstArg<typeof test>;  // string
+Извлечение типа элемента массива
+
+type ElementType<T> = T extends (infer E)[] ? E : T;
+
+type A = ElementType<string[]>;    // string
+type B = ElementType<number[]>;    // number
+type C = ElementType<boolean>;     // boolean
+Вложенные условные типы
+
+type TypeName<T> = 
+  T extends string ? "string" :
+  T extends number ? "number" :
+  T extends boolean ? "boolean" :
+  T extends undefined ? "undefined" :
+  T extends Function ? "function" :
+  "object";
+
+type A = TypeName<string>;      // "string"
+type B = TypeName<42>;          // "number"
+type C = TypeName<() => void>;  // "function"
+type D = TypeName<{}>;          // "object"
+Встроенные утилиты на основе Conditional Types
+TypeScript предоставляет множество встроенных утилит, реализованных через условные типы.
+
+Exclude
+Исключает типы из union:
+
+
+type Exclude<T, U> = T extends U ? never : T;
+
+type A = Exclude<'a' | 'b' | 'c', 'a'>;  // 'b' | 'c'
+type B = Exclude<string | number, string>;  // number
+Extract
+Извлекает типы из union:
+
+
+type Extract<T, U> = T extends U ? T : never;
+
+type A = Extract<'a' | 'b' | 'c', 'a' | 'f'>;  // 'a'
+type B = Extract<string | number, number>;     // number
+NonNullable
+Удаляет null и undefined:
+
+
+type NonNullable<T> = T extends null | undefined ? never : T;
+
+type A = NonNullable<string | null>;  // string
+type B = NonNullable<number | undefined | null>;  // number
+ReturnType
+Извлекает тип возвращаемого значения функции:
+
+
+type ReturnType<T extends (...args: any) => any> = 
+  T extends (...args: any) => infer R ? R : any;
+
+function getUserData() {
+  return { name: 'John', age: 25 };
+}
+
+type UserData = ReturnType<typeof getUserData>;
+// { name: string; age: number; }
+Продвинутые паттерны
+Рекурсивные условные типы
+
+type DeepReadonly<T> = {
+  readonly [P in keyof T]: T[P] extends object
+    ? DeepReadonly<T[P]>
+    : T[P];
+};
+
+interface User {
+  name: string;
+  address: {
+    city: string;
+    country: string;
+  };
+}
+
+type ReadonlyUser = DeepReadonly<User>;
+/*
+{
+  readonly name: string;
+  readonly address: {
+    readonly city: string;
+    readonly country: string;
+  };
+}
+*/
+Извлечение ключей определенного типа
+
+type KeysOfType<T, U> = {
+  [K in keyof T]: T[K] extends U ? K : never;
+}[keyof T];
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  email: string;
+}
+
+type StringKeys = KeysOfType<User, string>;  // "name" | "email"
+type NumberKeys = KeysOfType<User, number>;  // "id" | "age"
+Создание Required полей по условию
+
+type RequireKeys<T, K extends keyof T> = T & Required<Pick<T, K>>;
+
+interface User {
+  name?: string;
+  age?: number;
+  email?: string;
+}
+
+type UserWithName = RequireKeys<User, 'name'>;
+// { name: string; age?: number; email?: string; }
+Практические кейсы
+API Response Helper
+
+type ApiResponse<T> = T extends { data: infer D }
+  ? D
+  : T;
+
+interface SuccessResponse {
+  data: { id: number; name: string };
+  status: 'success';
+}
+
+type Data = ApiResponse<SuccessResponse>;
+// { id: number; name: string; }
+Flatten Union Types
+
+type Flatten<T> = T extends Array<infer U> ? U : T;
+
+type A = Flatten<string[]>;           // string
+type B = Flatten<number[][]>;         // number[]
+type C = Flatten<(string | number)[]>; // string | number
+3. Promise Chain Type
+
+type UnwrapPromise<T> = T extends Promise<infer U>
+  ? UnwrapPromise<U>
+  : T;
+
+type A = UnwrapPromise<Promise<string>>;                    // string
+type B = UnwrapPromise<Promise<Promise<number>>>;           // number
+type C = UnwrapPromise<Promise<Promise<Promise<boolean>>>>; // boolean
+Function or Value
+
+type ValueOrFunction<T> = T | (() => T);
+
+type Resolve<T> = T extends (...args: any[]) => infer R ? R : T;
+
+type A = Resolve<string>;        // string
+type B = Resolve<() => number>;  // number
+Ограничения и особенности
+Глубина рекурсии
+TypeScript ограничивает глубину рекурсивных типов для предотвращения бесконечных циклов:
+
+
+// Может привести к ошибке "Type instantiation is excessively deep"
+type DeepArray<T, N extends number = 10> = 
+  N extends 0 ? T : DeepArray<T[], Decrement<N>>;
+Порядок проверки имеет значение
+
+// Порядок важен
+type TypeName<T> = 
+  T extends any[] ? "array" :      // Сначала проверяем массив
+  T extends object ? "object" :    // Потом объект
+  T extends string ? "string" :
+  "other";
+
+type A = TypeName<string[]>;  // "array" (не "object")
+Never в условных типах
+
+type A = never extends string ? true : false;  // true
+// never является подтипом любого типа
+Сравнение с другими подходами
+До Conditional Types
+
+// Приходилось использовать перегрузки
+function wrap(x: string): string[];
+function wrap(x: number): number[];
+function wrap(x: any): any[] {
+  return [x];
+}
+С Conditional Types
+
+type Wrap<T> = T extends any ? T[] : never;
+
+function wrap<T>(x: T): Wrap<T> {
+  return [x] as Wrap<T>;
+}
+
+const a = wrap('hello');  // string[]
+const b = wrap(42);       // number[]
+Типичные ошибки
+Забыть про distributivity
+
+type WrapInArray<T> = T extends any ? T[] : never;
+
+type A = WrapInArray<string | number>;  // string[] | number[]
+// Ожидали (string | number)[], но получили union массивов
+
+// Правильно:
+type WrapInArray<T> = [T] extends [any] ? T[] : never;
+type B = WrapInArray<string | number>;  // (string | number)[]
+Неправильное использование infer
+
+// Неправильно
+type Wrong<T> = T extends infer U ? U : never;  // Бессмысленно
+
+// Правильно
+type Correct<T> = T extends Promise<infer U> ? U : T;
+Сложная логика в одном типе
+
+// Плохо - сложно читать
+type Complex<T> = T extends string ? T extends `${infer F}${infer R}` ? F extends 'a' ? true : false : false : false;
+
+// Хорошо - разбить на части
+type StartsWithA<T> = T extends `a${string}` ? true : false;
+type IsString<T> = T extends string ? true : false;
+type Complex<T> = IsString<T> extends true ? StartsWithA<T> : false;
+Вывод
+Conditional Types:
+
+Позволяют создавать гибкие и переиспользуемые типы
+Основа для многих встроенных утилит TypeScript
+Распределяются по union типам (distributive)
+Поддерживают извлечение типов через infer
+Могут быть рекурсивными (с ограничениями)
+Критически важны для продвинутой типизации
+На собеседовании:
+
+Важно уметь:
+
+Объяснить синтаксис T extends U ? X : Y
+Показать разницу между distributive и non-distributive типами
+Использовать infer для извлечения типов
+Привести примеры встроенных утилит
+Реализовать собственные утилиты на основе условных типов
+
+
+Typescript, как передать ошибку «Объект, возможно, нулевой»?
+Вопросы
+TYPESCRIPT
+Typescript, как передать ошибку «Объект, возможно, нулевой»?
+У меня много раз возникала ошибка «Объект, возможно, нулевой», и обычно я использую оператор безопасности «если» на случай, если он возвращает нуль.
+
+У меня есть следующая функция:
+
+const ModalOverlay = (props: any[]) => {
+  const overlayEl = useRef(null);
+    useEffect(() => {
+    overlayEl.current.focus();
+    });
+    return <div {...props} ref = {overlayEl} />;
+  }
+Но overlayEl.current получает ошибку «Объект не определен». Итак, я пробовал:
+
+if (!overlayEl) {
+    return null
+  } else {
+    useEffect(() => {
+    overlayEl.current.focus();
+    });
+    return <div {...props} ref = {overlayEl} />;
+  }
+Что не сработало. Я также пробовал:
+
+overlay && overlayEl.current.focus();
+Любые подсказки будут высоко оценены! Спасибо
+
+ 14.04.2019 18:36
+80
+1
+69 271
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Если вы действительно знаете, что во время выполнения у вас здесь нет ошибки, просто введите:
+
+ (overlayEl as any).current 
+Если нет, лучше используйте:
+
+    if (typeof overlayEl !== 'undefined' &&
+      typeof overlayEl.current !== 'undefined' &&
+      overlayEl.current === null) {          
+      return;
+    }
+
+    // Or
+
+    try {
+      // you code here ...
+      // This is fine way to check by order -> parent.parent.FinalInstance
+      // Also try & catch will handle all bad situation about current error
+      overlay &&  overlayEl.current && overlayEl.current.focus();
+
+    } catch(e){
+       console.info("Real null >> ", e);     
+    }
+
+  // Suggest if i am wrong in syntax somewhere ,this is fast answer ;)
+ 14.04.2019 18:53
+ Ответ принят как подходящий
+Когда вы объявляете const overlayEl = useRef(null); Делает тип, который выводится как нулевой, потому что это наилучший вывод, который он может предложить с таким количеством информации, дает машинописному тексту больше информации, и он будет работать, как задумано.
+
+Пытаться....
+
+ const overlayEl = useRef<HTMLDivElement>(null);
+В качестве альтернативы некоторый синтаксический сахар, если вам все равно, когда его неопределенность должна делать что-то вроде этого.
+
+const overlayEl = useRef(document.createElement("div"))
+используя приведенный выше синтаксис, все распространенные методы DOM просто возвращают значения по умолчанию, такие как «0», то есть overlayEl.offsetWidth, getBoundingClientRect и т. д.
+
+Применение:
+
+if (overlayEl.current) {
+    // will be type HTMLDivElement NOT HTMLDivElement | null
+    const whattype = overlayEl.current; 
+}
+То, как это работает, заключается в том, что статический анализ машинописных текстов достаточно умен, чтобы понять, что проверка if «защищает» от нуля, и поэтому он удалит этот тип как возможный из объединения null | HTMLDivElement в этих скобках.
+
+ 14.04.2019 22:55
+Если вы хотите "пропустить/пропустить", то это сделает это const overlayEl: any = useRef(null);
+
+ 26.07.2019 11:14
+const overlayEl = useRef() as MutableRefObject<HTMLDivElement>;
+Он приведет overlayEl к инициированному MutableRefObject, который является возвращаемым значением useRef:
+
+function useRef<T = undefined>(): MutableRefObject<T | undefined>;
+Однако в этом случае компилятор всегда будет думать, что overlayEl имеет значение.
+
+ 13.02.2020 10:28
+Добавьте тип в ссылку, как указано @Shanon Jackson:
+
+const linkRef = useRef<HTMLLinkElement>(null);
+А потом, убедитесь, что вы проверили значение null перед использованием current:
+
+if (linkRef.current !== null) {
+  linkRef.current.focus();
+}
+Это удовлетворит Typescript. В то время как сам по себе этого не сделал бы.
+
+Использование any или кастинг для того, чтобы «обмануть» компилятор, противоречит цели использования Typescript, не делайте этого.
+
+ 30.07.2020 10:52
+Вы также можете использовать необязательная цепочка, представленный в ES2020, вместо оператора «if» для более чистого кода.
+
+const myRef = useRef<HTMLLinkElement>(null);
+
+myRef.current?.focus();
+
+Вы можете проверить его поддержку браузера на могу ли я использовать.
+
+ 16.02.2021 15:54
+если вы не хотите, чтобы машинопись использовала это:
+
+const iframe = useRef<HTMLIFrameElement | null>(null);
+
+     if (
+   typeof iframe !== "undefined" &&
+   typeof iframe.current !== "undefined" &&
+   iframe.current !== null
+ ) {
+   iframe?.current?.contentWindow='';
+   );
+ }
+ 28.02.2021 19:27
+Иногда мы useRef храним не только элемент, но и значение, например данные. каким-то образом, когда я проверяю if (something.current) return something.current, не работает, даже если i добавить && something.current!=null, я обнаружил, что:
+
+something.current! что говорит машинописи i знать, что есть значение и обойти эту проблему.
+
+ 14.04.2021 16:37
+Я думаю, что это более кратко, чем другие ответы здесь:
+
+const ModalOverlay = (props: any[]) => {
+  const overlayEl = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    overlayEl.current!.focus();
+  });
+  return <div {...props} ref = {overlayEl} />;
+}
+Вы указываете тип ссылки и заявляете, что знаете, что он не нулевой.
+
+ 23.04.2021 15:54
+Зависит от того, что вы предпочитаете, но хорошим синтаксисом и структурой может быть создание интерфейса:
+
+interface divEL {
+  current: HTMLDivElement | null;
+}
+Это сделает ваше объявление ясным и кратким, и вы сможете повторно использовать интерфейс divEl для аналогичных хуков useRef.
+
+const overlayEl: divEL = useRef(null);
+Затем добавьте focus() следующим образом:
+
+overlayEl.current!.focus();
+
+
+Reactjs «Ошибка: ENOENT: нет такого файла или каталога, откройте ..» после преобразования файла jsx в tsx
+Вопросы
+REACTJS
+Reactjs «Ошибка: ENOENT: нет такого файла или каталога, откройте ..» после преобразования файла jsx в tsx
+У меня есть приложение create-react-app, и я перевожу файлы с jsx на typescript. Например, один файл называется /code/app_react/src/common/Action.jsx, и я переименовал его в /code/app_react/src/common/Action.tsx. Я внес необходимые изменения, чтобы успешно преобразовать его в tsx, но получаю сообщение об ошибке, связанное с изменением имени:
+
+./src/common/Action.jsx Error: ENOENT: no such file or directory, open '/code/src/common/Action.jsx'
+
+переустановка не помогает
+почему-то ожидается старая версия файла
+Файл, импортирующий этот файл, является файлом jsx, но теперь я импортирую в него файл tsx.
+
+Это приложение CRA, так есть ли правильный способ устранить эту ошибку?
+
+РЕШЕНИЕ: Мне пришлось удалить их из репозитория git, используя команду git rm, вот так:
+
+git rm /code/src/common/Action.jsx
+Как только я это сделал, он удалил jsx из зафиксированных файлов, а затем я смог использовать новые tsx файлы.
+
+ 06.03.2019 04:55
+34
+6
+55 101
+10
+ Ответы 10
+Возможно, вы не импортировали файл. Вам нужно импортировать файл, чтобы использовать его.
+
+import Action from '/code/app_react/src/common/Action.tsx';
+Также добавьте это в свой webpack.config.js.
+
+resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
+},
+Вы готовы идти!
+
+ 06.03.2019 05:38
+У меня была эта проблема (хотя я переименовал js в jsx, а не jsx в tsx), и решение, добавленное к вопросу (запуск git rm в исходном файле), у меня не сработало.
+
+Что сработало, было предложено эта ветка r/reactjs Reddit: удаление и переустановка node_modules:
+
+rm -rf node_modules && npm i
+ 29.10.2019 11:15
+У меня была такая же проблема, не нужно удалять node_modules или удалять целевой файл, вам просто нужно убить процесс узла.
+
+Если вы на windows:
+
+ctrl+alt+delete для запуска диспетчера задач
+найти node
+завершить процесс
+Если вы на linux:
+
+наверное что-то вроде pkill node и т.д.
+После того, как я убил процесс node и снова запустил npm start, он находит целевой файл.
+
+ 05.02.2020 07:30
+Убил мой запущенный процесс пряжи, убил vscode, перезапустил оба, и он работает
+
+ 14.02.2020 16:38
+Я работал с редуксом, а потом наткнулся на эту ошибку!
+
+Я попытался убить узел, удалить модули узла, перезагрузить ноутбук, но он все равно выдавал ту же ошибку, а позже я начал отлаживать index.js.
+
+Я прокомментировал каждую строку и начал раскомментировать сверху, чтобы увидеть, где код ломается, а затем заметил
+
+I had not installed
+
+redux
+
+I had only installed react-redux
+
+ 27.09.2020 02:57
+Просто перезапустите сервер npm, он автоматически обнаружит файл машинописного текста и внесет коррективы.
+
+ 27.09.2020 04:47
+У меня была такая же проблема с преобразованием .jsx в .tsx. Если вы используете Parcel для создания своего приложения, удалите папку .cache. Вот где Parcel кэширует файлы сборки. Это исправило это для меня.
+
+ 22.10.2020 19:07
+Это происходит из-за предустановленного кеша. Простым решением было бы перезапустить ваше приложение nodejs и реагировать.
+
+В Linux
+
+$ pkill node   
+
+$ killall node  
+
+$ kill -9 <pid>
+В Windows
+
+C:\>taskkill /im node.exe
+
+C:\>taskkill /f /im node.exe
+
+C:\>taskkill /pid <PID of node>
+В MacOS
+
+$sudo killall -9 node
+А затем снова запустите приложение React.
+
+npm start
+ 07.01.2021 12:51
+Я вручную удалил папку node_modules и переустановил их, запустив npm i, и трюк у меня сработал.
+
+ 24.01.2021 16:40
+Простой перезапуск сервера работает.
+
+Например: NPM RUN DEV или любой стартовый скрипт у меня работал.
+
+
+Можно ли добавить аутентификацию для доступа к Swagger Explorer NestJS?
+Вопросы
+TYPESCRIPT
+Можно ли добавить аутентификацию для доступа к Swagger Explorer NestJS?
+В настоящее время я использую Swagger в своем проекте NestJS, и у меня включен проводник:
+
+в main.js
+
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .build()
+
+const document = SwaggerModule.createDocument(app, options)
+SwaggerModule.setup('docs', app, document, {
+    customSiteTitle: 'My App documentation',
+})
+При этом проводник доступен в /docs, чего я и ожидал. Но мне было интересно, можно ли добавить какой-либо уровень аутентификации в проводник, чтобы принимались только определенные запросы.
+
+Я хочу сделать этот проводник доступным в рабочей среде, но только для аутентифицированных пользователей.
+
+Заранее спасибо :)
+
+ 21.02.2019 09:52
+35
+4
+23 289
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Для тех, у кого есть похожая проблема, вы можете добавить аутентификацию в свой пользовательский интерфейс Swagger в Nestjs, как показано ниже.
+
+const options = new DocumentBuilder()
+.setTitle('Sample Project API')
+.setDescription('This is a sample project to demonstrate auth in Swagger UI')
+.setVersion('1.0')
+.addTag('Nestjs Swagger UI')
+.setContactEmail('your_contact@mail.com')
+.addBearerAuth('Authorization', 'header', 'basic')
+.setBasePath('api')
+.build();
+const document = SwaggerModule.createDocument(app, options);
+SwaggerModule.setup('docs', app, document);
+Таким образом, .addBearerAuth принимает 3 аргумента (имя ключа, местоположение, тип аутентификации). тип авторизации может быть basic, bearer или apikey
+
+ 12.09.2019 16:34
+ОБНОВИТЬ
+
+Согласно последним изменениям в методах DocumentBuilder, у меня это сработало. Совместное использование для людей, которые используют новые версии.
+
+const options = new DocumentBuilder()
+.setTitle('My API')
+.setDescription('API used for testing purpose')
+.setVersion('1.0.0')
+.setBasePath('api')
+.addBearerAuth(
+  { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
+  'access-token',
+)
+.build();
+
+const document = SwaggerModule.createDocument(app, options);
+Обновлять Также, пожалуйста, используйте @ApiBearerAuth() в функции вашего контроллера, чтобы добавить авторизацию.
+
+@Get('/test')
+@ApiBearerAuth()
+access-token — это имя для ссылки в документе swagger. Ваш токен в заголовке будет передан, как показано ниже:
+
+curl -X GET "http://localhost:3004/test" -H "accept: application/json" -H "Authorization: Bearer test-token"
+ 03.03.2020 09:43
+Просто добавьте .addBearerAuth() (без каких-либо параметров) к вашим параметрам чванства.
+
+и @ApiBearerAuth() к вашим методам контроллера
+
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build()
+
+ 29.06.2020 16:03
+Следующий пример работает очень хорошо
+
+.addBearerAuth({ in: 'header', type: 'http' })
+
+Вы должны указать, где находится токен в реквизите in.
+
+и поскольку вы переопределяете параметры по умолчанию, вы должны передать type
+
+  const options = new DocumentBuilder()
+    .setTitle('Api docs for mobile')
+    .setDescription('The api docs for the mobile application')
+    .setVersion('1.0')
+    .addBearerAuth({ in: 'header', type: 'http' })
+    .build();
+addBearerAuth реализация
+
+    addBearerAuth(options = {
+        type: 'http'
+    }, name = 'bearer') {
+        this.addSecurity(name, Object.assign({ scheme: 'bearer', bearerFormat: 'JWT' }, options));
+        return this;
+    }
+ 03.08.2020 21:42
+ЭТО ДЛЯ APIKEY НЕ НОСИТЕЛЯ
+
+Если кто-то попадет на этот пост и ищет apiKey (вместо предъявителя), вам нужно следовать этому
+
+в main.ts
+
+    const options = new DocumentBuilder()
+        .setTitle('CMOR')
+        .setDescription('CMOR API documentation')
+        .setVersion('1.0')
+        .addServer('/api')
+        .addApiKey({
+            type: 'apiKey', // this should be apiKey
+            name: 'api-key', // this is the name of the key you expect in header
+            in: 'header',
+        }, 'access-key' // this is the name to show and used in swagger
+        ) 
+        .build();
+затем в вашем контроллере или методах
+
+@ApiTags('analyzer')
+@ApiSecurity('access-key') // this is the name you set in Document builder
+@Controller('analyzer')
+export class ScreenAnalyzerController {
+ 11.08.2020 01:37
+Обновлено после критических изменений/изменений API в @nestjs/swagger версии 4.0.
+
+Привет, Потребовалось много попыток и неудач, чтобы сделать это правильно. Комментарии в коде — это то, что важно понимать. Имена полагаются друг на друга, чтобы это работало.
+
+main.ts
+
+    const options = new DocumentBuilder()
+        .setTitle('my-title')
+        .setDescription('my-descirption')
+        .setVersion('1.0')
+        .addBearerAuth(
+          {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+            name: 'JWT',
+            description: 'Enter JWT token',
+            in: 'header',
+          },
+          'JWT-auth', // This name here is important for matching up with @ApiBearerAuth() in your controller!
+        )
+        .build();
+      const document = SwaggerModule.createDocument(app, options);
+      SwaggerModule.setup('api', app, document);
+И в вашем контроллере вы делаете следующее (обратите внимание, что @ApiBearerAuth() использует то же имя, что и имя в параметрах чванства в main.ts):
+
+app.controller.ts
+
+    @Roles(Role.Admin)
+      @UseGuards(JwtAuthGuard, RolesGuard)
+      @ApiTags('Admin')
+      @ApiOperation({ summary: 'Get admin section' })
+      @Get('admin')
+      @ApiBearerAuth('JWT-auth') // This is the one that needs to match the name in main.ts
+      getAdminArea(@Request() req) {
+        return req.user;
+      }
+Надеюсь, это сэкономит кому-то время, которое потребовалось мне, чтобы понять, что происходит.
+
+ 16.03.2021 13:55
+ Ответ принят как подходящий
+Защита доступа к вашему Swagger с помощью HTTP Basic Auth с использованием NestJS с Express
+
+Сначала запустите npm i express-basic-auth, затем добавьте следующее в свой main.{ts,js}:
+
+// add import
+import * as basicAuth from 'express-basic-auth';
+
+// ...
+
+// Sometime after NestFactory add this to add HTTP Basic Auth
+app.use(
+    ['/docs', '/docs-json'],
+    basicAuth({
+        challenge: true,
+        users: {
+            yourUserName: 'p4ssw0rd',
+        },
+    }),
+);
+
+
+// Your code
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .build()
+
+const document = SwaggerModule.createDocument(app, options)
+SwaggerModule.setup('docs', app, document, {
+    customSiteTitle: 'My App documentation',
+})
+
+// ...
+При этом вам будет предложено на любом маршруте /docs с приглашением HTTP Basic Auth. Мы также должны указать /docs-json явно, чтобы защитить сгенерированный файл JSON OpenAPI.
+
+Вы не должны помещать учетные данные в свой код/репозиторий, а скорее в свой .env и получать доступ через КонфигСервис.
+
+Я видел это решение первым здесь.
+
+ 02.06.2021 11:45
+Вы можете сделать это, добавив addApiKey или addBearerAuth примеры, которые описаны в других ответах на этот вопрос.
+
+Со своей стороны я могу добавить аутентификацию OAuth2 Существуют некоторые различия в реализации между @nestjs/swagger3** и @nestjs/swagger4**.
+
+For the @nestjs/swagger3**
+
+const options = new DocumentBuilder()
+    .setTitle('API')
+    .setDescription('API')
+    .setVersion('1.0')
+    .setSchemes('https', 'http')
+    .addOAuth2('implicit', AUTH_URL, TOKEN_URL)
+    .build();
+
+const document = SwaggerModule.createDocument(app, options);
+
+SwaggerModule.setup(swaggerPath, app, document, {
+    swaggerOptions: {
+        oauth2RedirectUrl: REDIRECT_URL, // after successfully logging
+        oauth: {
+            clientId: CLIENT_ID,
+        },
+    },
+});
+addOAuth2 также поддерживает потоки как пароль, приложение и код доступа.
+
+For the @nestjs/swagger4**
+
+const options = new DocumentBuilder()
+    .setTitle('API')
+    .setDescription('API description')
+    .setVersion(version)
+    .addServer(host)
+    .addOAuth2(
+        {
+            type: 'oauth2',
+            flows: {
+                implicit: {
+                    authorizationUrl: AUTH_URL + `?nonce=${getRandomNumber(9)}`, // nonce parameter is required and can be random, for example nonce=123456789
+                    tokenUrl: TOKEN_URL,
+                    scopes: SCOPES, // { profile: 'profile' }
+                },
+            },
+        },
+        'Authentication'
+    )
+    .build();
+
+const document = SwaggerModule.createDocument(app, options);
+
+SwaggerModule.setup(swaggerPath, app, document, {
+    swaggerOptions: {
+        oauth2RedirectUrl: REDIRECT_URL, // after successfully logging
+        oauth: {
+            clientId: CLIENT_ID,
+        },
+    },
+});
+ 30.06.2021 14:26
+Для тех, кто не может решить с помощью приведенных выше ответов.
+
+Вот как я смог добавить токен носителя
+
+const options = new DocumentBuilder()
+.setTitle('My API')
+.setDescription('My api')
+.setVersion('1.0.0')
+.addBearerAuth(
+  {
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'JWT',
+    name: 'JWT',
+    description: 'Enter JWT token',
+    in: 'header',
+  },
+  'token'
+)
+.build();
+Как только вы добавите это, не забудьте добавить декоратор @ApiBearerAuth('token')
+
+И еще одна вещь, на которую следует обратить внимание, это второй аргумент в методе .addBearerAuth({...}, 'token'), который необходимо добавить в декоратор, тогда только вы сможете увидеть авторизацию в запросе на завивание.
+
+@Controller('api')
+@ApiBearerAuth('token')
+Вы также можете оставить его пустым @ApiBearerAuth() и удалить второй аргумент из
+
+.addBearerAuth(
+{
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'JWT',
+    name: 'JWT',
+    description: 'Enter JWT token',
+    in: 'header',
+})
+Документация NestJS нуждается в улучшении
+
+ 06.08.2021 16:00
+основываясь на предыдущих ответах, вы можете увидеть эту ошибку (если вы хотите использовать модуль express-basic-auth
+
+Type 'typeof expressBasicAuth' has no call signatures.
+
+Type originates at this import. A namespace-style import cannot be called or constructed, and will cause a failure at runtime. Consider using a default import or import require here instead
+для этой ситуации вы можете использовать .default в main.ts
+
+import * as basicAuth from 'express-basic-auth';
+
+async function bootstrap() {
+
+  app.use(['/docs'], basicAuth.default({
+    challenge: true,
+    users: {
+      [process.env.SWAGGER_USERNAME]: process.env.SWAGGER_PASSWORD,
+    },
+  }));
+
+  const options = new DocumentBuilder()
+      .setTitle('api')
+      .setDescription('API description')
+      .setVersion('1.0')
+      .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('docs', app, document);
+
+}
+
+
+Ошибка с расширением Redux DevTools с использованием TS: «Свойство '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__' не существует для типа 'Window'.»?
+Вопросы
+REACTJS
+Ошибка с расширением Redux DevTools с использованием TS: «Свойство '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__' не существует для типа 'Window'.»?
+Я получаю эту ошибку в своем index.tsx.
+
+Свойство REDUX_DEVTOOLS_EXTENSION_COMPOSE не существует для типа Window.
+
+Вот мой код index.tsx:
+
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+
+import { Provider } from 'react-redux';
+
+import { createStore, compose, applyMiddleware } from 'redux';
+import rootReducer from './store/reducers';
+
+import thunk from 'redux-thunk';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+ const store = createStore(rootReducer, composeEnhancers(
+     applyMiddleware(thunk)
+ ));
+
+ReactDOM.render(  <Provider store = {store}><App /></Provider>, document.getElementById('root'));
+
+registerServiceWorker();
+Я установил @ types / npm install --save-dev redux-devtools-extension и использую create-response-app-typescript. Большое спасибо за любые советы о том, что происходит заранее.
+
+ 14.10.2018 10:31
+67
+0
+33 344
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Это частный случай этот вопрос. Redux не предоставляет типы для __REDUX_DEVTOOLS_EXTENSION_COMPOSE__, потому что эта функция предоставляется Redux DevTools, а не самим Redux.
+
+Это либо:
+
+const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose;
+Или:
+
+declare global {
+    interface Window {
+      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+Это уже сделано пакетом redux-devtools-extension, который содержит типизацию TypeScript. Если он установлен, его импорт следует использовать вместо доступа к __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ вручную.
+
+ 14.10.2018 11:05
+Если бы такая же проблема изменилась, я только что изменил
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+к
+
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() || compose
+чтобы обойти проблему с применением undefined при использовании createStore(reducer, initial state, compose(applyMiddleware
+
+ 20.12.2018 00:51
+Мой подход к этому вопросу был следующим:
+
+export const composeEnhancers =
+  (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+ 14.04.2019 12:15
+Работает как оберег:
+
+const store = createStore(
+    rootReducer,
+    initialState,
+    compose(
+        applyMiddleware(...middleware),
+        (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+    )       
+
+);
+ 10.08.2019 09:47
+Самый простой способ сделать эту работу с TypeScript - использовать сокращение-devtools-расширение и установить как зависимость разработчика следующим образом:
+
+npm install --save-dev redux-devtools-extension
+Следующий шаг для новичков в redux и этих инструментах разработчика был запутанным и непонятным. Все документы содержат следующий код:
+
+const store = createStore(reducer, composeWithDevTools(
+  applyMiddleware(...middleware),
+  // other store enhancers if any
+));
+Проблема в том, что у меня нет настроенного промежуточного программного обеспечения, поэтому это не сработало. В самом примитивном использовании это все, что вам нужно:
+
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(myReducer, composeWithDevTools());
+На этом этапе, если вы щелкнете по расширению в браузере и есть допустимое хранилище redux, вы сможете проверить состояние.
+
+Это альтернативный подход к использованию (window as any), и он также очищает только как для использования redux-devtools-extension в его минимальной форме.
+
+ 05.09.2019 04:51
+если кто-то все еще застрял в этой проблеме, я исправил ее, и это мой последний файл store.js со следующими пакетами 1- Redux Thunk 2- Подключенный React Router 3- История
+
+import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware } from 'connected-react-router';
+import thunk from 'redux-thunk';
+import {createBrowserHistory} from 'history';
+import rootReducer from '../redux/reducers';
+export const history = createBrowserHistory();
+const initialState = {}
+const enhancers = []
+const middleware = [
+    thunk,
+    routerMiddleware(history)
+]
+
+if (process.env.NODE_ENV === 'development') {
+    const devToolsExtension = (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__() || compose;
+    if (typeof devToolsExtension === 'function') {
+        enhancers.push(devToolsExtension)
+    }
+}
+
+const composedEnhancers = compose(
+    applyMiddleware(...middleware),
+    ...enhancers
+);
+
+export default createStore(
+    rootReducer,
+    initialState,
+    composedEnhancers
+);
+ 23.01.2020 11:57
+Для тех, кто борется с одновременной работой, общий совет, который я нашел, - заменить ваш "клиентский" скрипт в package.json на: "client": "cd client && npm start",
+
+Я пробовал это, но все равно получаю ошибку, поэтому я попробовал: "client": "cd client && cd my-app && npm start",
+
+Это сработало для меня! Проблема в том, что когда вы используете приложение create-response-app внутри «клиентской» папки, между клиентской папкой и общими папками и папками src есть дополнительный уровень, который по умолчанию называется «my-app». Используя код Брэда, npm пропускает эту папку, поэтому не может найти файлы реакции, необходимые для запуска вашего приложения.
+
+ 05.05.2020 23:00
+В моем случае я использовал react-redux-devtools. Попробуйте это решение, возможно, оно поможет вам решить вашу проблему.
+
+import { applyMiddleware, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import createSagaMiddleware from "redux-saga";
+import { rootReducer } from "../reducers";
+import { AppState } from "@eneto/api-client";
+
+import { initUserState } from "../../modules/users/user-reducer";
+import { initUsersState } from "../../modules/users/users-reducer";
+import { initListsState } from "../../modules/lists/lists-reducer";
+import { initListState } from "../../modules/lists/list-reducer";
+
+// initialValues
+const init: AppState = {
+    currentUser: initUserState,
+    users: initUsersState,
+    lists: initListsState,
+    currentList: initListState
+};
+
+export function store(initialState: AppState = init) {
+    const sagaMiddleware = createSagaMiddleware();
+    const middleware = [sagaMiddleware];
+
+    return {
+        ...createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(...middleware))),
+        runSaga: sagaMiddleware.run
+    };
+}
+#reactjs
+
+ 01.05.2021 03:26
+ Ответ принят как подходящий
+Вот как вы можете использовать redux-dev-tools в приложении реакции машинописного текста.
+
+Создайте глобальный интерфейс для объекта Window:
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+Затем создайте composeEnhancers следующим образом:
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+Затем создайте store.
+const store = createStore(rootReducers, composeEnhancers());
+rootReducers - в моем случае относится к combinedReducers, созданному в отдельном файле.
+
+Теперь вы можете использовать Provider как обычно в React.js как:
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store = {store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+Весь код в index.tsx
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import rootReducers from "./reducers";
+
+import { Provider } from "react-redux";
+import { createStore, compose, applyMiddleware } from "redux";
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducers, composeEnhancers());
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store = {store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+reportWebVitals();
+
+ 01.07.2021 16:37
+Однако у меня была такая же проблема, я также использую redux-thunk в качестве промежуточного программного обеспечения. Бег
+
+npm install --save-dev redux-devtools-extension
+а затем добавив
+
+import { composeWithDevTools } from 'redux-devtools-extension'
+to index.tsx помогло мне, а также обновил магазин до
+
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+Мой полный index.tsx ниже. Надеюсь, это поможет любому, у кого та же проблема, что и промежуточное ПО, такое как redux-thunk.
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './containers/App/App'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import thunk from 'redux-thunk'
+import authReducer from './store/reducers/auth'
+import * as serviceWorker from './serviceWorker'
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+
+const rootReducer = combineReducers({
+  auth: authReducer
+})
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+
+const app = (
+  <Provider store = {store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+)
+
+ReactDOM.render(app, document.getElementById('root'))
+
+serviceWorker.unregister()
+
+
+Как вручную установить фокус на поле mat-form-field в Angular 6
+Вопросы
+ANGULAR
+Как вручную установить фокус на поле mat-form-field в Angular 6
+Я новичок в angular. В моем приложении у меня есть диалоговое окно mat, в котором у меня есть две формы, а именно Login и SignUp.
+
+Как только я открываю диалоговое окно в первый раз, когда автофокус устанавливается на поле имени пользователя. Проблема заключается в том, что я перехожу к форме SignUp при нажатии кнопки, поле FIrst Name этой формы не получает автофокусировку, точно так же переходите от регистрации до входа в поле имени пользователя. не получить автофокус.
+
+Я пробовал использовать некоторые решения stackoverflow, но моя проблема не решена.
+
+popupScreen.component.html
+
+<form class = "login" *ngIf = "isLoginHide">
+    <mat-form-field>
+        <input matInput placeholder = "username">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "password">
+    </mat-form-field>
+
+    <button mat-button color = "primary">Login</button>
+    <button mat-button (click) = "hideLogin($event)" color = "accent">SignUp</button>
+</form>
+
+<form class = "SignUp" *ngIf = "isSignUpHide">
+    <mat-form-field>
+        <input matInput placeholder = "First Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "Last Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "username">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "password">
+    </mat-form-field>
+
+    <button mat-button (click) = "hideSignUp($event)" color = "primary">Login</button>
+    <button mat-button color = "accent">SignUp</button>
+</form>
+может ли кто-нибудь помочь мне решить эту проблему.
+
+ 03.09.2018 06:11
+26
+0
+53 998
+10
+ Ответы 10
+use может использовать фокус родного элемента.
+
+не тестировал этот код, но примерно так:
+
+<mat-form-field>
+    <input matInput placeholder = "username" #usernameInput>
+</mat-form-field>
+на вашем компоненте:
+
+@ViewChild('usernameInput') usrFld: ElementRef;
+
+ngAfterViewInit() {
+  this.usrFld.nativeElement.focus();
+}
+p.s: вам следует выполнять маршрутизацию к компоненту регистрации, а не использовать ngIf для навигации.
+
+ 03.09.2018 06:24
+Вы пробовали добавить autofocus в поле формы для Имя?
+
+<form class = "SignUp" *ngIf = "isSignUpHide">
+    <mat-form-field>
+        <input matInput placeholder = "First Name" autofocus>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "Last Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "username">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder = "password">
+    </mat-form-field>
+
+    <button mat-button (click) = "hideSignUp($event)" color = "primary">Login</button>
+    <button mat-button color = "accent">SignUp</button>
+</form>
+ 03.09.2018 06:27
+Вы можете использовать MatInput для установки автофокуса
+
+вот пример,
+
+в component.html
+
+<mat-form-field>
+    <input matInput placeholder = "First Name" #firstname = "matInput">
+</mat-form-field>
+и в component.ts
+
+import { MatInput } from '@angular/material/input';
+
+export class Component implements OnInit {
+
+    @ViewChild('firstname') nameInput: MatInput;
+
+    ngOnInit() {
+       this.nameInput.focus();
+    }
+}
+ 03.09.2018 06:55
+Пожалуйста, используйте атрибут cdkFocusInitial в поле ввода, на котором вы хотите сфокусироваться.
+
+<mat-form-field>
+    <input matInput placeholder = "username" #usernameInput cdkFocusInitial>
+</mat-form-field>
+ 17.01.2019 08:05
+Почти .. :-), если вы используете какой-либо компонент материалов, например MatSelect - вышеуказанные решения не работают. Ниже вы можете найти решение, которое подходит мне.
+
+<mat-form-field>
+    <mat-select #myElement ......>
+       ..........
+    </mat-select>
+<mat-form-field>
+затем в компоненте ...
+
+@ViewChild('myElement') firstItem: MatSelect;
+
+ngAfterViewInit() {
+   this.firstItem.focus();
+   this.cd.detectChanges();
+}
+имейте в виду, что вы должны принудительно обнаруживать изменения после установки фокуса, чтобы избежать угловой ошибки: «ExpressionChangedAfterItHasBeenCheckedError» (кстати, вы должны также включить «ChangeDetectorRef» в свой конструктор компонента)
+
+Надеюсь на эту помощь ...
+
+ 20.02.2019 20:39
+Это работает для меня в Angular 8:
+
+<mat-form-field>
+    <input matInput placeholder = "First Name" #firstname>
+</mat-form-field>
+.ts
+
+export class TestComponent implements OnInit {
+
+    @ViewChild('firstname', {static: true}) firstname:any;
+
+    ngOnInit() {
+      this.firstname.nativeElement.focus();
+    }
+
+}
+ 09.08.2019 09:35
+Имейте в виду, что в зависимости от того, когда и как отображается ваш компонент, ngOnInit может не подходить для установки фокуса.
+
+Например, если HTML-код ComponentOne выглядит так:
+
+  <ng-container *ngIf='something === true'>
+    <app-component-two></app-component-two>
+  </ng-container>
+И ComponentTwo имеет ваш входной элемент, и ts-файл ComponentTwo настроен правильно, а затем помещает его в свой файл component-two.component.ts:
+
+ngOnInit() {
+  this.myInput.focus();
+}
+Может не работать, потому что html для ComponentTwo еще не отрисован, а это означает, что даже с правильным ViewChild this.myInput не был отрисован и имеет значение null.
+
+ngAfterViewInit() {
+  this.myInput.focus();
+}
+Даже если вы не вкладываете компоненты, вам все равно может потребоваться обратить внимание на жизненный цикл html, чтобы убедиться, что ваша команда focus выполняется после того, как элемент ввода был отрисован.
+
+Ознакомьтесь с https://angular.io/guide/lifecycle-hooks#lifecycle-event-sequence для получения дополнительной информации о жизненном цикле angular.
+
+ 23.06.2020 16:40
+Для MatDialog вам придется отложить действие с помощью setTimeout
+
+<mat-form-field>
+  <mat-label>Name</mat-label>
+  <input #inputName = "matInput" matInput formControlName = "name">
+</mat-form-field>
+
+@ViewChild('inputName') inputName: MatInput;
+
+ngAfterViewInit() {
+  setTimeout(() => {
+    this.inputName.focus();
+  });
+}
+ 04.11.2020 11:32
+Это работает для меня:
+
+<mat-label >Radio name:</mat-label>
+   <input type = "text" #inputName = "matInput" matInput formControlName = "name" placeholder = "Type radio name"/>
+</mat-form-field>
+
+  @ViewChild('inputName', { static: false }) inputName: MatInput;
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.inputName.focus(), 0);
+  }
+setTimeout - это скорее уловка, позволяющая избежать проблем с обнаружением изменений. Я не знаю почему, но выполнение обнаружения изменений вручную в моем случае не работает.
+
+ 20.12.2020 21:26
+Такая простая и обыденная вещь, но большая часть вышеперечисленного у меня не сработала.
+
+CdkFocusInitial отлично работает, если вы не используете шаговый элемент управления или его эквивалент, если вы хотите, чтобы новый ввод был сфокусирован на stepper.next ().
+
+В итоге я НЕ использовал viewchild для получения ссылки на объект, а вместо этого использовал старые добрые идентификаторы.
+
+public setFocus(input: string) {
+   const targetElem = document.getElementById(input);
+   setTimeout(function waitTargetElem() {
+    if (document.body.contains(targetElem)) {
+      targetElem.focus();
+    } else {
+      setTimeout(waitTargetElem, 100);
+    }
+  }, 500);
+}
+назови это ...
+
+this.setfocus('id of your input')
+
+
+Inject () должен вызываться из контекста инъекции
+Вопросы
+ANGULAR
+Inject () должен вызываться из контекста инъекции
+Я пытаюсь экспортировать свое приложение Angular как модуль npm для использования другими приложениями, но у меня возникают некоторые трудности. Мне не удалось найти эту ошибку где-либо еще в Интернете, и я нахожусь в конце моего остроумия.
+
+Я следовал этому руководству: https://medium.com/@nikolasleblanc/building-an-angular-4-component-library-with-the-angular-cli-and-ng-packagr-53b2ade0701e
+
+Я использовал ng-packagr для экспорта своего приложения как модуля npm. Я могу успешно установить его из локальной папки в тестовом приложении barebones, но не могу заставить его отображать мое приложение.
+
+Ошибка:
+
+    AppComponent.html:1 ERROR Error: inject() must be called from an injection context
+    at inject (core.js:1362)
+    at ChangeStackService_Factory (template-wiz.js:2074)
+    at _callFactory (core.js:8223)
+    at _createProviderInstance (core.js:8181)
+    at resolveNgModuleDep (core.js:8156)
+    at NgModuleRef_.push../node_modules/@angular/core/fesm5/core.js.NgModuleRef_.get (core.js:8849)
+    at resolveDep (core.js:9214)
+    at createClass (core.js:9094)
+    at createDirectiveInstance (core.js:8971)
+    at createViewNodes (core.js:10191)
+template-wiz.module.ts (модуль экспортируется)
+
+    import { NgModule, ChangeDetectorRef, ComponentFactoryResolver } from '@angular/core';
+    import { TemplateWizComponent } from './template-wiz.component';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { FormsModule } from '@angular/forms';
+    import { HttpClientModule } from '@angular/common/http';
+    import { BlockListDirective } from './Directives/block-list.directive';
+    import { TemplateItemsDirective } from './Directives/template-items.directive';
+    import { ContextMenuComponent, SeperatorComponent, DragBoxComponent, SnapLineComponent, PropertiesComponent, ToolboxComponent } from './Components'
+    import { AddressBlockComponent, TextBlockComponent, ImageBlockComponent, DataBlockComponent } from './Data-Blocks';
+    import { BlockFactoryService, BlockRegistryService, DisplayInfoService, MouseClickService, SavingService, SnapService, TextHelperService, UserModeService } from './Services';
+    import { PageContextMenuComponent } from './Components/page-context-menu/page-context-menu.component';
+    import { CamelToWordsPipe } from './Pipes/camel-to-words.pipe';
+    import { PdfPublisherService } from './Services/pdf-publisher/pdf-publisher.service';
+    import { GradientBlockComponent } from './Data-Blocks/gradient-block/gradient-block.component';
+    import { PropToTypePipe } from './Pipes/prop-to-type.pipe';
+    import { ShapeBlockComponent } from './Data-Blocks/shape-block/shape-block.component';
+    import { CommonModule } from '@angular/common';
+    import { ModuleWithProviders } from '@angular/compiler/src/core';
+
+
+    @NgModule({
+      imports: [
+        CommonModule,
+        FormsModule,
+        HttpClientModule
+      ],
+      entryComponents: [
+        AddressBlockComponent,
+        ContextMenuComponent,
+        DragBoxComponent,
+        GradientBlockComponent,
+        ImageBlockComponent,
+        PageContextMenuComponent,
+        SeperatorComponent,
+        ShapeBlockComponent,
+        SnapLineComponent,
+        TextBlockComponent
+      ],
+      declarations: [
+        TemplateWizComponent,
+        DataBlockComponent,
+        AddressBlockComponent,
+        SeperatorComponent,
+        BlockListDirective,
+        TemplateItemsDirective,
+        ImageBlockComponent,
+        TextBlockComponent, DragBoxComponent,
+        SnapLineComponent,
+        ToolboxComponent,
+        PropertiesComponent,
+        ContextMenuComponent,
+        PageContextMenuComponent,
+        GradientBlockComponent,
+        CamelToWordsPipe,
+        PropToTypePipe,
+        ShapeBlockComponent
+      ],
+      providers: [
+        BlockFactoryService,
+        BlockRegistryService,
+        DisplayInfoService,
+        MouseClickService,
+        SavingService,
+        SnapService,
+        TextHelperService,
+        UserModeService,
+        PdfPublisherService
+      ],
+      //bootstrap: [TemplateWizComponent],
+      exports: [
+        TemplateWizComponent
+      ]
+    })
+    export class TemplateWizModule {
+      static forRoot(): ModuleWithProviders {
+        return {
+          ngModule: TemplateWizModule,
+          providers: [
+            ComponentFactoryResolver
+          ]
+        }
+      }
+    }
+app.module.ts (приложение для тестирования голых костей с использованием моего модуля)
+
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+    import { FormsModule } from '@angular/forms';
+    import { HttpClientModule } from '@angular/common/http';
+    import { AppComponent } from './app.component';
+    import { TemplateWizModule } from 'template-wiz';
+
+    @NgModule({
+      declarations: [
+        AppComponent,
+      ],
+      imports: [
+        BrowserModule,
+        FormsModule,
+        TemplateWizModule.forRoot(),
+        HttpClientModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+Любая помощь или указатели будут оценены, спасибо.
+
+ 23.07.2018 21:22
+38
+3
+23 843
+10
+ Ответы 10
+У меня была такая же ошибка.
+
+Я обнаружил, что импортирую Inject из @angular/core вместо @angular/core/testing.
+
+Надеюсь, это поможет!
+
+ 31.07.2018 17:32
+Я получил сообщение об ошибке inject() must be called from an injection context, когда создавал раскачиваемый InjectionToken, который использовал другой InjectionToken на своей фабрике, например
+
+import { InjectionToken } from '@angular/core';
+
+import { dependeeToken } from './dependee.token';
+
+export const dependingToken = new InjectionToken<string>('depending', {
+  factory: () => inject(dependeeToken) + ' depending';
+  providedIn: 'root',
+});
+Вместо этого я добавил поставщика для зависимого InjectionToken в NgModule.
+
+import { NgModule } from '@angular/core';
+
+import { dependeeToken } from './dependee.token';
+import { dependingToken } from './depending.token';
+
+@NgModule({
+  providers: [
+    {
+      deps: [dependeeToken],
+      provide: dependingToken,
+      useFactory: dependee => dependee + ' depending',
+    }
+  ],
+})
+export class DependingModule {}
+package.json отрывок
+
+{
+  "dependencies": {
+    "@angular/compiler": "6.1.9",
+    "@angular/core": "6.1.9"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.8.4",
+    "@angular/cli": "6.2.4",
+    "@angular/compiler-cli": "6.1.9",
+    "typescript": "2.9.2"
+  }
+}
+ 04.10.2018 15:24
+Для меня это решило использование свойства providedIn в декораторе Injectable вместо регистрации службы в модуле приложения в поставщиках для службы, которая вызвала у меня это сообщение об ошибке.
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HeroService {}
+ 11.02.2019 11:20
+кажется проблемой при использовании ссылки npm при использовании библиотеки.
+
+Обратите внимание на следующую проблему: https://github.com/angular/angular/issues/25813
+
+Спойлер: используйте "projects. $ name.architect.build.options.preserveSymlinks: true" в angular.json
+
+ 12.02.2019 10:58
+Такая же проблема здесь
+
+Мой случай: когда я использовал Mat Dialog
+
+import { Component, OnInit, Inject } from '@angular/core';
+
+ constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public matDialogRef: MatDialogRef<MatConfirmDialogComponent>) { }
+inject и Inject разные:
+
+inject - это функция, а Inject - это интерфейс
+
+Надеюсь, это поможет тому, кто придет, обнаружит тот же сценарий.
+
+ 26.09.2019 18:25
+У меня была эта ошибка при сборке углового 9.0.0-next.0 с помощью команды ng build --prod. При переходе на версию ~8.2.8 мое приложение angular снова заработало.
+
+Он хорошо работал в разработке с ng serve, поэтому, похоже, он связан с Ivy.
+
+ 07.10.2019 15:45
+Если ошибка появляется на Карме с тестами, просто удалите папку de node_modules и установите заново.
+
+ 19.03.2020 15:21
+Вот что для меня решило:
+
+Добавьте следующую строку в tsconfig.app.json под compilerOptions:
+
+"paths": { "@angular/*": [ "../node_modules/@angular/*" ] }
+Источник: https://github.com/angular/angular/issues/25813#issuecomment-500091900
+
+ 14.05.2020 17:52
+Я столкнулся с аналогичной проблемой при тестировании приложения Angular. Приложение импортировало Сервис, который был установлен из @bit с помощью npm. Служба зависела от MatSnackBar, который, казалось, вызывал ту же ошибку, что и OP.
+
+Чтобы запустить тесты, я создал экземпляр службы при настройке модуля тестирования.
+
+В приведенном ниже примере AsyncUIFeedbackService был установлен из Bit через npm. Установка useValue на новый экземпляр службы и заглушка MatSnackBar сработали отлично.
+
+await TestBed.configureTestingModule({
+      declarations: [GeneralInfoComponent],
+      providers: [
+        FormBuilder,
+        { provide : AsyncUIFeedbackService, 
+          useValue: new AsyncUIFeedbackService({} as MatSnackBar)}, // <----Create the service
+      ],
+      imports: [AsyncUIFeedbackModule]
+    }).compileComponents();
+ 15.04.2021 17:28
+Та же проблема, но мой случай был тупее ...
+
+У меня npm install something был не в той папке.
+
+Так что просто rm неправильный "node_modules" и npm install в хорошей папке x)
+
+Это спасло положение - запустил npm update в папке / dist - спасибо !!!
+
+— 
+Voltan
+ 07.07.2021 03:42
+
+
+Angular 6 - не удается разрешить все параметры для AppComponent
+Вопросы
+ANGULAR
+Angular 6 - не удается разрешить все параметры для AppComponent
+Я пытаюсь создать приложение на Angular 6, но все еще настраиваю. Но похоже, что с внедрением зависимостей в моем приложении что-то не так.
+
+Он не может разрешить какой-либо параметр конструктора. Все они приводят к Uncaught Error: Can't resolve all parameters for AppComponent: (?).. Даже пользовательская служба приводит к такой же ошибке.
+
+Версии(пропущены зависимости, которые не могут на это повлиять)
+
+ "dependencies": {
+    "@angular/common": "6.0.5",
+    "@angular/compiler": "6.0.5",
+    "@angular/core": "6.0.5",
+    "@angular/forms": "6.0.5",
+    "@angular/http": "6.0.5",
+    "@angular/platform-browser": "6.0.5",
+    "@angular/platform-browser-dynamic": "6.0.5",
+    "@angular/router": "6.0.5",
+    "core-js": "2.5.7",
+    "reflect-metadata": "0.1.12",
+    "rxjs": "6.2.1",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "6.0.5",
+    "@ngtools/webpack": "6.0.8",
+    "angular2-template-loader": "0.6.2",
+    "awesome-typescript-loader": "5.1.0",
+    "typescript": "2.7.2",
+    "webpack": "4.12.0",
+    "webpack-cli": "3.0.8",
+    "webpack-dev-server": "3.1.4",
+  }
+app.module.ts
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+TestService.ts
+
+import {Injectable} from "@angular/core";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TestService {
+
+  constructor() {
+    console.warn("It works!");
+  }
+
+  public sayHello(): string {
+    return "hello world!";
+  }
+}
+App.component.ts
+
+import {Component} from '@angular/core';
+import {TestService} from "./TestService";
+
+@Component({
+  selector: 'sh-home',
+  styleUrls: ['./home.scss'],
+  templateUrl: './home.html'
+})
+export class HomeComponent {
+
+  constructor(testService: TestService) {
+    testService.sayHello();
+  }
+}
+Внедрение TestService в этом случае дает ошибку
+
+Main.ts
+
+import {enableProdMode} from '@angular/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
+import {AppModule} from './app/app.module';
+import './assets/scss/styles.global.scss'; // Import the global scss files
+
+// Polyfills
+import './Polyfills';
+
+if (process.env.NODE_ENV === 'production') {
+    enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+Polyfills.ts
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+import 'core-js/es6/symbol';
+import 'core-js/es6/object';
+import 'core-js/es6/function';
+import 'core-js/es6/parse-int';
+import 'core-js/es6/parse-float';
+import 'core-js/es6/number';
+import 'core-js/es6/math';
+import 'core-js/es6/string';
+import 'core-js/es6/date';
+import 'core-js/es6/array';
+import 'core-js/es6/regexp';
+import 'core-js/es6/map';
+import 'core-js/es6/weak-map';
+import 'core-js/es6/set';
+
+/** IE10 and IE11 requires the following for NgClass support on SVG elements */
+import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+import 'core-js/es6/reflect';
+
+
+/** Evergreen browsers require these. **/
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es7/reflect';
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js/dist/zone';  // Included with Angular CLI.
+Я использую не интерфейс командной строки, а пользовательский стартер. Я включил все те же полифилы, что и Angular-CLI, поэтому я не упустил ни одного.
+
+Кто-нибудь видит, что я делаю не так?
+
+Обновлять
+
+Я упростил тестовый пример и заметил, что это не модуль перевода. Даже если я создам простой сервис, я не могу использовать внедрение зависимостей. Добавление службы в список providers тоже не работает (и в этом нет необходимости, поскольку я использую Angular 6 'provideIn: root').
+
+ 21.06.2018 12:04
+15
+11
+29 907
+10
+ Ответы 10
+Убедитесь, что у вас есть следующий импорт в полифилы:
+
+import 'core-js/es7/reflect';
+ 04.09.2018 21:36
+Вы можете попробовать внести следующие изменения:
+
+import {Component} from '@angular/core';
+import {TestService} from "./TestService";
+
+@Component({
+  selector: 'sh-home',
+  styleUrls: ['./home.scss'],
+  templateUrl: './home.html',
+  viewProviders: [TestService]
+})
+export class HomeComponent {
+   constructor(private testService: TestService) {
+     this.testService.sayHello();
+   }
+}
+viewProviders создает специальный инжектор, который разрешает зависимости только для этого компонента.
+
+ 09.10.2018 21:19
+Я решил эту ошибку, просто перезапустив приложение. создайте его снова и запустите, у меня он отлично работает. Пожалуйста проверь и скажи мне.
+
+Спасибо :)
+
+ 16.10.2018 10:47
+@Inject помог мне
+
+import {Component, Inject} from '@angular/core';
+import {TestService} from "./TestService";
+
+@Component({
+  selector: 'sh-home',
+  styleUrls: ['./home.scss'],
+  templateUrl: './home.html'
+})
+export class HomeComponent {
+
+  constructor(@Inject(TestService) testService: TestService) {
+    testService.sayHello();
+  }
+}
+ 01.02.2019 09:10
+GET / или ошибка компилятора can't resolve all parameters for ApplicationModule: (?).
+
+Просто выполните следующие простые шаги:
+
+Установите core-js modeule.
+npm i core-js
+
+В файле polyfills.ts добавьте оператор импорта
+import 'core-js/es7/reflect';
+
+В файл main.ts добавьте операторы импорта
+import 'core-js/es6/reflect';
+
+import 'core-js/es7/reflect';
+
+ 25.07.2019 03:16
+Я получил ту же ошибку в приложении Angular 8
+
+Can't resolve all parameters for AppComponent: (?,?,?)
+
+после изменения 1 типа параметра в конструкторе ().
+
+Я решил проблему, остановив и перезапустив приложение.
+
+ 15.11.2019 12:04
+У меня тоже возникла эта проблема, но установка emitDecoratorMetadata ": true в tsconfig решает проблему. Не забудьте перезапустить сервер.
+
+tsconfig.spec.json
+
+   "compilerOptions": {
+    "emitDecoratorMetadata": true,
+     "outDir": "./out-tsc/spec",
+   }
+ 12.12.2019 14:16
+У меня была такая же проблема с компонентом в Angular 8. Конструктор имел несколько служб в качестве параметров.
+
+например.,
+
+constructor(
+  private router: Router,
+  private fooService: FooService,
+  private barService: BarService,
+  private fubarService: FoobarService,
+  private anotherService: AnotherService)
+{}
+Экспериментируя с @Inject(), одни параметры его возьмут, а другие нет. Они будут жаловаться на тип параметра.
+
+Общим для FooService, BarService and FubarService было то, что они физически находились в одном каталоге. Я создал несколько подкаталогов и поместил по одной службе в каждый подкаталог - и ошибка компилятора исчезла.
+
+Сообщение в блоге сказал, что forwardRef работал на них. У меня не получилось. Однако их статья дает представление о том, что может происходить.
+
+Отредактировано для добавления:
+
+В двух других случаях это не сработает. В одном случае изменение импорта службы с полного пути (src/app/...) на относительный путь устранило жалобу компилятора (см. Рисунок). Во втором случае добавление @Inject(ServiceName) public service: ServiceName решило проблему.
+
+Во всех вышеперечисленных случаях проект Ionic 5, использующий Angular, не имел жалоб на компиляцию. В проекте Ionic используется Angular 8.2.14. В проекте Angular используется версия 8.2.0 (значения по умолчанию для соответствующих интерфейсов командной строки, когда я создавал проекты).
+
+Похоже, где-то прячется какая-то ошибка ...
+
+ 19.06.2020 02:34
+Я также столкнулся с той же проблемой с Angular 8.2.13 + Typescript. Наконец, хитрость заключалась в том, чтобы использовать @Inject('RefOnlyUsedForTesting'), даже если это string.
+
+export abstract class MyBaseClass {
+  ....
+  constructor(@Inject(ElementRef) elementRef: ElementRef,
+          @Optional() @Inject('RefOnlyUsedForTesting') dep1: MyObject,
+          @Optional() @Inject('RefOnlyUsedForTesting') dep2: string,
+          @Optional() @Inject('RefOnlyUsedForTesting') dep3: string) {
+  super();    
+  ...
+ }
+}
+ 01.09.2020 11:12
+Если вы используете webpack и babel для создания Angular, вероятно, вам не хватает этого плагина babel: babel-plugin-transform-typescript-metadata
+
+
+Реактивные формы правильно преобразуют значение формы в объект модели
+Вопросы
+ANGULAR
+Реактивные формы правильно преобразуют значение формы в объект модели
+При создании реактивных форм на основе модели, управляемой шаблоном, когда я создаю объект модели из значения формы. Затем объект модели теряет свой ТИП.
+
+Для простого примера:
+
+Образцовый учебник:
+
+export class Book {
+  public name: string;
+  public isbn: string;
+}
+Составная часть:
+
+@Component({
+  selector: 'app-book',
+  templateUrl: './book.component.html',
+  styleUrls: ['./book.component.css']
+})
+export class BookComponent implements OnInit {
+
+  bookFormGroup: FormGroup;
+  private newBook: Book = new Book();
+
+  constructor(private fb: FormBuilder) {
+    this.bookFormGroup = this.fb.group({
+      name: new FormControl(''),
+      isbn: new FormControl('')
+    });
+  }
+
+  ngOnInit() {
+  }
+
+  addBook() {
+    console.info('submit');
+    this.newBook = <Book> this.bookFormGroup.value;
+    console.info(this.newBook instanceof Book);
+    console.info(this.newBook);
+  }
+
+}
+HTML:
+
+<form [formGroup] = "bookFormGroup" (ngSubmit) = "addBook()">
+    <input type = "text" formControlName = "name" >
+    <input type = "text" formControlName = "isbn" >
+
+    <input type = "submit" value = "Submit">
+</form>
+В приведенном выше примере после заполнения экземпляра newBook он преобразуется в обычный Object.
+
+т.е. После this.newBook = <Book> this.bookFormGroup.value;
+
+this.newBook instanceof Book становится FALSE
+
+Как мне предотвратить это? Или есть лучший способ добиться этого?
+
+Примечание: я пробовал с JSON.parse(), но он все тот же.
+
+ 24.04.2018 11:14
+41
+1
+47 446
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Измените определение вашего класса на
+
+export class Book {
+  constructor(public name: string, public isbn: string) {}
+}
+Измените метод addBook на
+
+addBook() {
+  const { name, isbn } = this.bookFormGroup.value;
+  this.newBook = new Book(name, isbn);
+  console.info(this.newBook instanceof Book);
+  console.info(this.newBook);
+}
+ 24.04.2018 11:19
+вы можете попробовать это на своем addBook():
+
+ let formData = Object.assign({});
+ formData = Object.assign(formData, this.bookFormGroup.value);
+ this.newBook = new Book(formData.name ,formData.isbn );
+ console.info(this.newBook instanceof Book);
+ 24.04.2018 11:33
+У вас должны быть интерфейс и класс, и класс должен реализовывать интерфейс.
+
+Создайте пустую книгу с пустым конструктором.
+
+export class Book implements IBook {
+  constructor(public name = '', public isbn = '') {}
+}
+Создайте настоящую форму на основе модели.
+
+this.bookFormGroup = this.fb.group(new Book());
+Правильно введите форму
+
+this.newBook: IBook = this.bookFormGroup.value;
+ 24.04.2018 11:34
+ Ответ принят как подходящий
+Этот конструктор будет работать с любым типом и назначит любое подходящее поле.
+
+export class Book {
+  public constructor(init?: Partial<Book>) {
+        Object.assign(this, init);
+    }
+}
+Итак, вы сможете это сделать:
+
+this.newBook = new Book(this.bookFormGroup.value);
+Это сэкономит вам много работы, если в классе Book будут какие-либо изменения в будущем и он станет больше.
+
+ 24.04.2018 11:38
+У меня была эта проблема, и я создал formGroup непосредственно для модели, решил проблему. В вашем коде:
+
+  this.bookFormGroup = this.fb.group(Book);
+Книга - это имя класса вашей модели.
+
+ 15.01.2019 07:04
+Я использую оператор распространения:
+
+this.newBook = {...this.newBook,...this.bookFormGroup.value}
+ 25.08.2019 21:43
+Допустим, ваша модель такая:
+
+export class Content {
+    ID: number;
+    Title: string;
+    Summary: string;
+}
+Ваш компонент будет выглядеть так:
+
+export class ContentComponent implements OnInit {
+
+
+  content: Content;
+  contentForm: FormGroup;
+
+  ngOnInit() {
+
+
+    this.contentForm = this.formBuilder.group({
+      Title: ['', Validators.required],
+      Summary: ['', Validators.required]
+    });.....
+Когда вызывается кнопка сохранения, вы можете объединить объект конструктора форм и имеющийся у вас dto:
+
+onContentFormSubmit () {
+
+// stop here if form is invalid
+if (this.contentForm.invalid) {
+  return;
+}
+
+this.content = Object.assign(this.content, this.contentForm.value);
+}
+
+this.content будет иметь предопределенные значения из onInit и значения из группы from.
+
+ 10.11.2019 08:38
+Я использовал «Частичный класс», чтобы ввести значение через ограничитель класса. это можно использовать, когда ваша форма вызывает api и модель необходимо передать без приведения, или когда вы создаете новый экземпляр модели из значения реактивной формы.
+
+export class Address  {
+  postCode: string;
+  line1: string;
+  line2: string;
+  county: string;
+  city: string;
+  country: string;
+  cityId: string;
+  countryId: string;
+
+  constructor(initialValues: Partial<Address> = {}) {
+    if (initialValues) {
+      for (const key in initialValues) {
+        if (initialValues.hasOwnProperty(key)) {
+           this[key] = initialValues[key];
+        }
+      }
+    }
+  }
+}
+ 18.09.2020 18:34
+let formData = this.formGroup.value as DataModel;
+ 16.02.2021 05:41
+Я использую:
+
+this.formGroupSubscription = this.formGroup.valueChanges.subscribe(form => {
+    let mappedObject: MyCreateDTO = form;
+
+    // do stuff with mappedObject.myproperty
+});
+
+
+Как исключить поле сущности из возвращаемого контроллером JSON. NestJS + Typeorm
+Вопросы
+NODE.JS
+Как исключить поле сущности из возвращаемого контроллером JSON. NestJS + Typeorm
+Я хочу исключить поле пароля из возвращенного JSON. Я использую NestJS и Typeorm.
+
+Решение, представленное на этот вопрос, не работает ни у меня, ни в NestJS. При необходимости я могу опубликовать свой код. Есть другие идеи или решения? Спасибо.
+
+ 16.05.2018 00:40
+22
+0
+25 630
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Вы можете использовать пакет https://github.com/typestack/class-transformer
+
+Вы можете исключить свойства с помощью декораторов, а также вы можете исключить свойства с помощью групп.
+
+ 16.05.2018 14:17
+ Ответ принят как подходящий
+Я бы предложил создать перехватчик, который использует библиотеку класс-трансформер:
+
+@Injectable()
+export class TransformInterceptor implements NestInterceptor {
+  intercept(
+    context: ExecutionContext,
+    call$: Observable<any>,
+  ): Observable<any> {
+    return call$.pipe(map(data => classToPlain(data)));
+  }
+}
+Затем просто исключите свойства с помощью декоратора @Exclude(), например:
+
+import { Exclude } from 'class-transformer';
+
+export class User {
+    id: number;
+    email: string;
+
+    @Exclude()
+    password: string;
+}
+ 16.05.2018 15:34
+В дополнение к Камил ответ:
+
+Вместо создания собственного перехватчика теперь вы можете использовать встроенный ClassSerializerInterceptor, см. документы по сериализации.
+
+@UseInterceptors(ClassSerializerInterceptor)
+Вы можете использовать его в классе контроллера или его отдельных методах. Каждая сущность, возвращаемая таким методом, будет преобразована классом-преобразователем и, следовательно, будет учитывать аннотации @Exclude:
+
+import { Exclude } from 'class-transformer';
+
+export class User {
+    /** other properties */    
+
+    @Exclude()
+    password: string;
+}
+Вы можете настроить его поведение, определив @SerializeOptions() на вашем контроллере или его методах:
+
+@SerializeOptions({
+  excludePrefixes: ['_'],
+  groups: ['admin']
+})
+чтобы, например, предоставить определенные поля только определенным пользователям:
+
+@Expose({ groups: ["admin"] })
+adminInfo: string;
+ 20.01.2019 14:58
+Вы можете перезаписать метод toJSON модели следующим образом.
+
+@Entity()
+export class User extends BaseAbstractEntity implements IUser {
+  static passwordMinLength: number = 7;
+
+  @ApiModelProperty({ example: faker.internet.email() })
+  @IsEmail()
+  @Column({ unique: true })
+  email: string;
+
+  @IsOptional()
+  @IsString()
+  @MinLength(User.passwordMinLength)
+  @Exclude({ toPlainOnly: true })
+  @Column({ select: false })
+  password: string;
+
+  @IsOptional()
+  @IsString()
+  @Exclude({ toPlainOnly: true })
+  @Column({ select: false })
+  passwordSalt: string;
+
+  toJSON() {
+    return classToPlain(this);
+  }
+
+  validatePassword(password: string) {
+    if (!this.password || !this.passwordSalt) {
+      return false;
+    }
+    return comparedToHashed(password, this.password, this.passwordSalt);
+  }
+}
+При использовании метода преобразователя классов plainToClass вместе с @Exclude ({toPlainOnly: true}) пароль будет исключен из ответа JSON, но будет доступен в экземпляре модели. Мне нравится это решение, потому что оно сохраняет всю конфигурацию модели в объекте.
+
+ 02.12.2019 15:02
+@Column({ select: false })
+password: string
+Могу прочитать про скрытые столбцы здесь
+
+ 21.06.2020 10:03
+В этой теме много хороших ответов. Чтобы основываться на ответе apun выше, я думаю, что следующий подход с наименьшей вероятностью приведет к случайной утечке поля пароля:
+
+@Column({ select: false })
+password: string
+Если объект не выбирает это поле по умолчанию, и его можно запрашивать только явно (например, через addSelect(), если используется построитель запросов), я думаю, что вероятность того, что где-то есть промах, гораздо меньше, и меньше полагаться на «магия» фреймворка (которым в конечном итоге является библиотека class-transformer) для обеспечения безопасности. На самом деле во многих проектах единственное место, где вы явно выбираете, - это то, где вы проверяете учетные данные.
+
+Этот подход также может помочь предотвратить случайное попадание хэша пароля в записи журнала и т. д., О чем еще не упоминалось. Намного безопаснее бросать пользовательский объект, зная, что он не содержит конфиденциальной информации, особенно если он может быть сериализован где-нибудь в записи журнала.
+
+Все сказанное, документированный подход для NestJS заключается в использовании декоратора @Exclude(), и принятый ответ от основателя проекта.
+
+Я определенно часто использую декоратор Exclude(), но не обязательно для полей пароля или соли.
+
+ 17.07.2020 17:51
+Также - есть документация по этому https://docs.nestjs.com/techniques/serialization
+
+ 28.07.2020 18:54
+Это уже старая тема, но я все же хотел бы поделиться своим решением, может, это кому-то поможет. Я использую Express, но мой пример, наверное, подходит и для этого случая.
+
+Итак, в своем классе сущности вы просто определяете дополнительный статический метод removePassword(), который получает экземпляр самой сущности, и вы отправляете объект, созданный этим методом, вместо исходного объекта сущности, полученного из БД:
+
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity({ name: 'users' })
+export class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string | undefined;
+
+  @Column({ type: 'varchar', length: 100, unique: true })
+  email: string | undefined;
+
+  @Column({ type: 'text' })
+  password: string | undefined;
+
+  static removePassword(userObj: User) {
+    return Object.fromEntries(
+      Object.entries(userObj).filter(([key, val]) => key !== 'password')
+    );
+  }
+}
+Это в основном похоже на вызов метода filter() в массиве, но немного сложнее: вы создаете новый объект (тот, который вы отправите в конечном итоге) из массива записей, созданного путем фильтрации записи пароля из исходного массива записей (с этим точным filter() метод).
+
+Хотя в обработчиках маршрутов вы всегда будете делать что-то вроде этого:
+
+import { Router, Request, Response, NextFunction } from 'express';
+import { User } from '../../entity/User';
+import { getRepository } from 'typeorm';
+
+const router = Router();
+
+router.post(
+  '/api/users/signin',
+  (req: Request, res: Response, next: NextFunction) => {
+    const { email } = req.body;
+
+    getRepository(User)
+      .findOne({ email })
+      .then(user =>
+        user ? res.send(User.removePassword(user)) : res.send('No such user:(')
+      )
+      .catch(err => next(new Error(err.message)));
+  }
+);
+
+export { router as signinRouter };
+Вы также можете использовать обычный метод:
+
+withoutPassword() {
+  return Object.fromEntries(
+    Object.entries(this).filter(([key, val]) => key !== 'password')
+  );
+}
+и в вашем обработчике маршрута:
+
+res.send(user.withoutPassword());
+ 15.05.2021 16:55
+Чтобы избежать болей в спине и головных болей, Я бы посоветовал использовать plainToClass, чтобы иметь полную совместимость с мангустом / преобразованием классов и избежать необходимости делать пользовательские переопределения для преодоления этой проблемы.
+
+Например, добавьте это в свой сервис:
+
+async validateUser(email: string, password: string): Promise<UserWithoutPassword | null> {
+    const user = await this.usersService.findOne({ email });
+
+    if (user && await compare(password, user.password))
+    {
+        return plainToClass(UserWithoutPassword, user.toObject());
+    }
+
+    return null;
+}
+
+Источник: Ответ Stackoverflow
+
+ 25.05.2021 16:17
+то, что просто работало для меня, было просто
+
+аннотирование поля с помощью @Exclude и переопределение метода модели toJSON, например
+
+toJSON() { return classToPlain(this); }
+
+
+Соединение "по умолчанию" не было найдено с TypeORM
+Вопросы
+NODE.JS
+Соединение "по умолчанию" не было найдено с TypeORM
+Я использую TypeORM с NestJS, и я не могу правильно сохранить объект.
+
+Создание соединения работает, postgres работает на порту 5432. Учетные данные тоже в порядке.
+
+Однако, когда мне нужно сохранить ресурс с помощью entity.save (), я получил:
+
+Connection "default" was not found.
+
+
+Error
+    at new ConnectionNotFoundError (/.../ConnectionNotFoundError.ts:11:22)
+Я проверил исходный файл TypeORM ConnectionManager (https://github.com/typeorm/typeorm/blob/master/src/connection/ConnectionManager.ts), но мне кажется, что при первом создании соединения TypeORM присваивает имя «по умолчанию», если мы его не предоставляем, как в моем случае.
+
+Я настраиваю TypeORM с TypeOrmModule как
+
+TypeOrmModule.forRoot({
+      type: config.db.type,
+      host: config.db.host,
+      port: config.db.port,
+      username: config.db.user,
+      password: config.db.password,
+      database: config.db.database,
+      entities: [
+        __dirname + '/../../dtos/entities/*.entity.js',
+      ]
+    })
+Конечно, мои константы верны. Любые идеи ?
+
+ 12.04.2018 12:25
+26
+2
+36 836
+11
+Данный вопрос помечен как решенный
+ Ответы 11
+ Ответ принят как подходящий
+Вы пытаетесь создать репозиторий или менеджер без установления соединения.
+
+Попробуйте сделать этот const shopkeeperRepository = getRepository(Shopkeeper); внутри функции. это будет работать
+
+ 26.05.2018 14:36
+Хотя Сарас Арья дала правильный ответ, я столкнулся с той же ошибкой.
+
+ConnectionNotFoundError: Connection "default" was not found.
+
+из-за того, что у моей сущности typeORM был декоратор @Entity(), а также что он расширял BaseEntity.
+
+Двое не могут жить вместе.
+
+ 08.01.2019 14:11
+Проголосованный ответ не обязательно является правильным, если вы не укажете имя соединения, по умолчанию будет использоваться значение «default».
+
+const manager = getConnectionManager().get('your_orm_name');
+const repository = manager.getRepository<AModel>(Model);
+ 24.09.2019 16:51
+Для тех из вас, кто ищет другой ответ, проверьте это.
+
+В моем случае проблема заключалась в том, что я передавал name в своей конфигурации базы данных.
+
+export const dbConfig = {
+    name: 'myDB',
+    ...
+}
+
+await createConnection(dbConfig) // like this
+В результате единственный сервер соединений знает, что это myDB, а не default.
+
+В то же время в моем сервисе репозиторий был внедрен без name, который вернется к default. (В результате сервис будет искать соединение с default)
+
+@Service() // typedi
+export class Service {
+    constructor(
+        // inject without name -> fallback to default
+        @InjectRepository() private readonly repository
+    ) {}
+}
+В качестве исправления я удалил свойство name в своей конфигурации db.
+
+Или вы можете передать myDB в качестве параметра для InjectRepository, например @InjectRepository('myDB'), в любом случае работает.
+
+ 07.10.2019 08:35
+Если кто-то использует Express Router с getRepository(), проверьте код ниже
+
+const router = Router();
+
+router.get("/", async function (req: Request, res: Response) {
+  // here we will have logic to return all users
+  const userRepository = getRepository(User);
+  const users = await userRepository.find();
+  res.json(users);
+});
+
+router.get("/:id", async function (req: Request, res: Response) {
+  // here we will have logic to return user by id
+  const userRepository = getRepository(User);
+  const results = await userRepository.findOne(req.params.id);
+  return res.send(results);
+});
+Просто убедитесь, что звоните getRepository() на каждом маршруте, как Сарас Арья сказала в принятом ответе.
+
+ 10.06.2020 15:30
+Если у кого-то еще возникнет эта проблема в будущем, проверьте это на всякий случай:
+
+Я случайно сделал "user.save ()" вместо "userRepo.save (пользователь)".
+
+(И, конечно, выше, инициализируя соединение следующим образом:
+
+const userRepo = getConnection (process.env.NODE_ENV) .getRepository (Пользователь))
+
+ 25.08.2020 09:01
+Я получил эту ошибку при использовании getConnectionOptions в разных средах. Использование одной базы данных для разработки и другой для тестирования. Вот как я это исправил:
+
+const connectionOptions = await getConnectionOptions(process.env.NODE_ENV);
+await createConnection({...connectionOptions, name:"default"});
+Я использую getConnectionOptions, чтобы получить соединение для текущей среды, для того, чтобы сделать это успешно, вам нужно изменить ormconfig.json на массив с ключами «name», содержащими различные среды, которые вы хотите, например:
+
+[
+{
+    "name" : "development",
+    "type": "USER",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "PASS",
+    "database": "YOURDB"
+},
+{
+    "name" : "test",
+    "type": "USERTEST",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "PASSTEST",
+    "database": "YOURDBTEST"
+}
+]
+Теперь connectionOptions будет содержать параметры подключения текущего окружения, но загрузка его в createConnection вызвала указанную вами ошибку. Изменение имени connectionOptions на "по умолчанию" устранило проблему.
+
+ 17.11.2020 12:27
+Я следую приведенному ниже подходу, создавая класс Database. Если соединение не существует, оно создает соединение, иначе верните существующее соединение.
+
+import { Connection, ConnectionManager, ConnectionOptions, createConnection, getConnectionManager } from 'typeorm';
+
+export class Database {
+  private connectionManager: ConnectionManager;
+
+  constructor() {
+    this.connectionManager = getConnectionManager();
+  }
+
+  public async getConnection(name: string): Promise<Connection> {
+    const CONNECTION_NAME: string = name;
+    let connection: Connection;
+    const hasConnection = this.connectionManager.has(CONNECTION_NAME);
+    if (hasConnection) {
+      connection = this.connectionManager.get(CONNECTION_NAME);
+      if (!connection.isConnected) {
+        connection = await connection.connect();
+      }
+    } else {
+
+      const connectionOptions: ConnectionOptions = {
+        name: 'default',
+        type: 'mysql',
+        host: 'localhost',
+        port: 3306,
+        username: 'root',
+        password: 'password',
+        database: 'DemoDb',
+        synchronize: false,
+        logging: true,
+        entities: ['src/entities/**/*.js'],
+        migrations: ['src/migration/**/*.js'],
+        subscribers: ['src/subscriber/**/*.js'],
+      };
+      connection = await createConnection(connectionOptions);
+    }
+    return connection;
+  }
+}
+
+
+Если вы используете webpack, убедитесь, что объекты специально импортированы и возвращены в массив.
+
+    import {User} from 'src/entities/User.ts';
+    import {Album} from 'src/entities/Album.ts';
+    import {Photos} from 'src/entities/Photos.ts';
+    const connectionOptions: ConnectionOptions = {
+        name: 'default',
+        type: 'mysql',
+        host: 'localhost',
+        port: 3306,
+        username: 'root',
+        password: 'password',
+        database: 'DemoDb',
+        synchronize: false,
+        logging: true,
+        entities: [User, Album, Photos],
+        migrations: ['src/migration/**/*.js'],
+        subscribers: ['src/subscriber/**/*.js'],
+      };
+
+Ну наконец то
+
+  const connectionName = 'default';
+  const database = new Database();
+  const dbConn: Connection = await database.getConnection(connectionName);
+  const MspRepository = dbConn.getRepository(Msp);
+  await MspRepository.delete(mspId);
+ 16.12.2020 06:23
+Знаю, это очень странно, но кому-то это может понадобиться:
+
+Причина, связанная с Windows.
+
+У меня была такая же ошибка, вызванная текущим местоположением, указанным с буквой диска в нижнем регистре (d:/apps/app-name/etc).
+Проблема была решена после того, как я обновил инструкцию по смене каталога, чтобы использовать заглавную D (D:/apps/app-name/etc).
+
+ 31.12.2020 22:49
+Мы используем lerna и код из библиотеки A в пакете B.
+
+Проблема была в, что обе версии TypeOrm в каждом пакете различаются.
+
+Решение, чтобы убедиться, что у вас установлена ​​точно такая же версия в каждом пакете.
+
+На всякий случай удалите каталог node_modules и переустановите все заново с помощью yarn install или npm install.
+
+Проверьте свой yarn.lock на наличие нескольких записей typeorm и убедитесь, что есть только один.
+
+ 04.01.2021 18:01
+После проверки версий TypeOrm одинаково в обоих пакетах, то есть во внешнем пакете и в репозитории потребителя, как упоминалось @InsOp, проблема все еще сохраняется, тогда проблема может быть-
+
+В основном, когда мы создаем внешний пакет - TypeORM пытается получить параметр подключения "По умолчанию", но если он не найден, выдает ошибку:
+
+ConnectionNotFoundError: Connection "default" was not found.
+
+Мы можем решить эту проблему, выполнив какую-то санитарная проверка перед установкой соединения - к счастью, у нас есть метод .has() на getConnectionManager().
+
+import { Connection, getConnectionManager, getConnectionOptions, 
+  createConnection, getConnection, QueryRunner } from 'typeorm';
+    
+    async init() {
+    let connection: Connection;
+    let queryRunner: QueryRunner;
+
+     if (!getConnectionManager().has('default')) {
+        const connectionOptions = await getConnectionOptions();
+        connection = await createConnection(connectionOptions);
+      } else {
+        connection = getConnection();
+      }
+
+    queryRunner = connection.createQueryRunner(); 
+ }
+Выше приведен быстрый фрагмент кода, который был фактическим первопричина для этой проблемы, но если вам интересно увидеть полные рабочие репозитории (разные примеры) -
+
+Внешний пакет NPM:
+Git Repo: git-unit-of-work (конкретный файл - SRC / поставщики / typeorm / typeorm-uow.ts)
+Опубликовано в NPM: npm-единица работы
+Потребитель вышеуказанного пакета: тип-гнездо-форма-постгре (определенные файлы - package.json, SRC / страны / страны.service.ts и страны.module.ts)
+
+
+Можно ли добавить аутентификацию для доступа к Swagger Explorer NestJS?
+Вопросы
+TYPESCRIPT
+Можно ли добавить аутентификацию для доступа к Swagger Explorer NestJS?
+В настоящее время я использую Swagger в своем проекте NestJS, и у меня включен проводник:
+
+в main.js
+
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .build()
+
+const document = SwaggerModule.createDocument(app, options)
+SwaggerModule.setup('docs', app, document, {
+    customSiteTitle: 'My App documentation',
+})
+При этом проводник доступен в /docs, чего я и ожидал. Но мне было интересно, можно ли добавить какой-либо уровень аутентификации в проводник, чтобы принимались только определенные запросы.
+
+Я хочу сделать этот проводник доступным в рабочей среде, но только для аутентифицированных пользователей.
+
+Заранее спасибо :)
+
+ 21.02.2019 09:52
+35
+4
+23 289
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Для тех, у кого есть похожая проблема, вы можете добавить аутентификацию в свой пользовательский интерфейс Swagger в Nestjs, как показано ниже.
+
+const options = new DocumentBuilder()
+.setTitle('Sample Project API')
+.setDescription('This is a sample project to demonstrate auth in Swagger UI')
+.setVersion('1.0')
+.addTag('Nestjs Swagger UI')
+.setContactEmail('your_contact@mail.com')
+.addBearerAuth('Authorization', 'header', 'basic')
+.setBasePath('api')
+.build();
+const document = SwaggerModule.createDocument(app, options);
+SwaggerModule.setup('docs', app, document);
+Таким образом, .addBearerAuth принимает 3 аргумента (имя ключа, местоположение, тип аутентификации). тип авторизации может быть basic, bearer или apikey
+
+ 12.09.2019 16:34
+ОБНОВИТЬ
+
+Согласно последним изменениям в методах DocumentBuilder, у меня это сработало. Совместное использование для людей, которые используют новые версии.
+
+const options = new DocumentBuilder()
+.setTitle('My API')
+.setDescription('API used for testing purpose')
+.setVersion('1.0.0')
+.setBasePath('api')
+.addBearerAuth(
+  { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
+  'access-token',
+)
+.build();
+
+const document = SwaggerModule.createDocument(app, options);
+Обновлять Также, пожалуйста, используйте @ApiBearerAuth() в функции вашего контроллера, чтобы добавить авторизацию.
+
+@Get('/test')
+@ApiBearerAuth()
+access-token — это имя для ссылки в документе swagger. Ваш токен в заголовке будет передан, как показано ниже:
+
+curl -X GET "http://localhost:3004/test" -H "accept: application/json" -H "Authorization: Bearer test-token"
+ 03.03.2020 09:43
+Просто добавьте .addBearerAuth() (без каких-либо параметров) к вашим параметрам чванства.
+
+и @ApiBearerAuth() к вашим методам контроллера
+
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build()
+
+ 29.06.2020 16:03
+Следующий пример работает очень хорошо
+
+.addBearerAuth({ in: 'header', type: 'http' })
+
+Вы должны указать, где находится токен в реквизите in.
+
+и поскольку вы переопределяете параметры по умолчанию, вы должны передать type
+
+  const options = new DocumentBuilder()
+    .setTitle('Api docs for mobile')
+    .setDescription('The api docs for the mobile application')
+    .setVersion('1.0')
+    .addBearerAuth({ in: 'header', type: 'http' })
+    .build();
+addBearerAuth реализация
+
+    addBearerAuth(options = {
+        type: 'http'
+    }, name = 'bearer') {
+        this.addSecurity(name, Object.assign({ scheme: 'bearer', bearerFormat: 'JWT' }, options));
+        return this;
+    }
+ 03.08.2020 21:42
+ЭТО ДЛЯ APIKEY НЕ НОСИТЕЛЯ
+
+Если кто-то попадет на этот пост и ищет apiKey (вместо предъявителя), вам нужно следовать этому
+
+в main.ts
+
+    const options = new DocumentBuilder()
+        .setTitle('CMOR')
+        .setDescription('CMOR API documentation')
+        .setVersion('1.0')
+        .addServer('/api')
+        .addApiKey({
+            type: 'apiKey', // this should be apiKey
+            name: 'api-key', // this is the name of the key you expect in header
+            in: 'header',
+        }, 'access-key' // this is the name to show and used in swagger
+        ) 
+        .build();
+затем в вашем контроллере или методах
+
+@ApiTags('analyzer')
+@ApiSecurity('access-key') // this is the name you set in Document builder
+@Controller('analyzer')
+export class ScreenAnalyzerController {
+ 11.08.2020 01:37
+Обновлено после критических изменений/изменений API в @nestjs/swagger версии 4.0.
+
+Привет, Потребовалось много попыток и неудач, чтобы сделать это правильно. Комментарии в коде — это то, что важно понимать. Имена полагаются друг на друга, чтобы это работало.
+
+main.ts
+
+    const options = new DocumentBuilder()
+        .setTitle('my-title')
+        .setDescription('my-descirption')
+        .setVersion('1.0')
+        .addBearerAuth(
+          {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+            name: 'JWT',
+            description: 'Enter JWT token',
+            in: 'header',
+          },
+          'JWT-auth', // This name here is important for matching up with @ApiBearerAuth() in your controller!
+        )
+        .build();
+      const document = SwaggerModule.createDocument(app, options);
+      SwaggerModule.setup('api', app, document);
+И в вашем контроллере вы делаете следующее (обратите внимание, что @ApiBearerAuth() использует то же имя, что и имя в параметрах чванства в main.ts):
+
+app.controller.ts
+
+    @Roles(Role.Admin)
+      @UseGuards(JwtAuthGuard, RolesGuard)
+      @ApiTags('Admin')
+      @ApiOperation({ summary: 'Get admin section' })
+      @Get('admin')
+      @ApiBearerAuth('JWT-auth') // This is the one that needs to match the name in main.ts
+      getAdminArea(@Request() req) {
+        return req.user;
+      }
+Надеюсь, это сэкономит кому-то время, которое потребовалось мне, чтобы понять, что происходит.
+
+ 16.03.2021 13:55
+ Ответ принят как подходящий
+Защита доступа к вашему Swagger с помощью HTTP Basic Auth с использованием NestJS с Express
+
+Сначала запустите npm i express-basic-auth, затем добавьте следующее в свой main.{ts,js}:
+
+// add import
+import * as basicAuth from 'express-basic-auth';
+
+// ...
+
+// Sometime after NestFactory add this to add HTTP Basic Auth
+app.use(
+    ['/docs', '/docs-json'],
+    basicAuth({
+        challenge: true,
+        users: {
+            yourUserName: 'p4ssw0rd',
+        },
+    }),
+);
+
+
+// Your code
+const options = new DocumentBuilder()
+    .setTitle('My App')
+    .setSchemes('https')
+    .setDescription('My App API documentation')
+    .setVersion('1.0')
+    .build()
+
+const document = SwaggerModule.createDocument(app, options)
+SwaggerModule.setup('docs', app, document, {
+    customSiteTitle: 'My App documentation',
+})
+
+// ...
+При этом вам будет предложено на любом маршруте /docs с приглашением HTTP Basic Auth. Мы также должны указать /docs-json явно, чтобы защитить сгенерированный файл JSON OpenAPI.
+
+Вы не должны помещать учетные данные в свой код/репозиторий, а скорее в свой .env и получать доступ через КонфигСервис.
+
+Я видел это решение первым здесь.
+
+ 02.06.2021 11:45
+Вы можете сделать это, добавив addApiKey или addBearerAuth примеры, которые описаны в других ответах на этот вопрос.
+
+Со своей стороны я могу добавить аутентификацию OAuth2 Существуют некоторые различия в реализации между @nestjs/swagger3** и @nestjs/swagger4**.
+
+For the @nestjs/swagger3**
+
+const options = new DocumentBuilder()
+    .setTitle('API')
+    .setDescription('API')
+    .setVersion('1.0')
+    .setSchemes('https', 'http')
+    .addOAuth2('implicit', AUTH_URL, TOKEN_URL)
+    .build();
+
+const document = SwaggerModule.createDocument(app, options);
+
+SwaggerModule.setup(swaggerPath, app, document, {
+    swaggerOptions: {
+        oauth2RedirectUrl: REDIRECT_URL, // after successfully logging
+        oauth: {
+            clientId: CLIENT_ID,
+        },
+    },
+});
+addOAuth2 также поддерживает потоки как пароль, приложение и код доступа.
+
+For the @nestjs/swagger4**
+
+const options = new DocumentBuilder()
+    .setTitle('API')
+    .setDescription('API description')
+    .setVersion(version)
+    .addServer(host)
+    .addOAuth2(
+        {
+            type: 'oauth2',
+            flows: {
+                implicit: {
+                    authorizationUrl: AUTH_URL + `?nonce=${getRandomNumber(9)}`, // nonce parameter is required and can be random, for example nonce=123456789
+                    tokenUrl: TOKEN_URL,
+                    scopes: SCOPES, // { profile: 'profile' }
+                },
+            },
+        },
+        'Authentication'
+    )
+    .build();
+
+const document = SwaggerModule.createDocument(app, options);
+
+SwaggerModule.setup(swaggerPath, app, document, {
+    swaggerOptions: {
+        oauth2RedirectUrl: REDIRECT_URL, // after successfully logging
+        oauth: {
+            clientId: CLIENT_ID,
+        },
+    },
+});
+ 30.06.2021 14:26
+Для тех, кто не может решить с помощью приведенных выше ответов.
+
+Вот как я смог добавить токен носителя
+
+const options = new DocumentBuilder()
+.setTitle('My API')
+.setDescription('My api')
+.setVersion('1.0.0')
+.addBearerAuth(
+  {
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'JWT',
+    name: 'JWT',
+    description: 'Enter JWT token',
+    in: 'header',
+  },
+  'token'
+)
+.build();
+Как только вы добавите это, не забудьте добавить декоратор @ApiBearerAuth('token')
+
+И еще одна вещь, на которую следует обратить внимание, это второй аргумент в методе .addBearerAuth({...}, 'token'), который необходимо добавить в декоратор, тогда только вы сможете увидеть авторизацию в запросе на завивание.
+
+@Controller('api')
+@ApiBearerAuth('token')
+Вы также можете оставить его пустым @ApiBearerAuth() и удалить второй аргумент из
+
+.addBearerAuth(
+{
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'JWT',
+    name: 'JWT',
+    description: 'Enter JWT token',
+    in: 'header',
+})
+Документация NestJS нуждается в улучшении
+
+ 06.08.2021 16:00
+основываясь на предыдущих ответах, вы можете увидеть эту ошибку (если вы хотите использовать модуль express-basic-auth
+
+Type 'typeof expressBasicAuth' has no call signatures.
+
+Type originates at this import. A namespace-style import cannot be called or constructed, and will cause a failure at runtime. Consider using a default import or import require here instead
+для этой ситуации вы можете использовать .default в main.ts
+
+import * as basicAuth from 'express-basic-auth';
+
+async function bootstrap() {
+
+  app.use(['/docs'], basicAuth.default({
+    challenge: true,
+    users: {
+      [process.env.SWAGGER_USERNAME]: process.env.SWAGGER_PASSWORD,
+    },
+  }));
+
+  const options = new DocumentBuilder()
+      .setTitle('api')
+      .setDescription('API description')
+      .setVersion('1.0')
+      .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('docs', app, document);
+
+}
+
+
+Как исключить поле сущности из возвращаемого контроллером JSON. NestJS + Typeorm
+Вопросы
+NODE.JS
+Как исключить поле сущности из возвращаемого контроллером JSON. NestJS + Typeorm
+Я хочу исключить поле пароля из возвращенного JSON. Я использую NestJS и Typeorm.
+
+Решение, представленное на этот вопрос, не работает ни у меня, ни в NestJS. При необходимости я могу опубликовать свой код. Есть другие идеи или решения? Спасибо.
+
+ 16.05.2018 00:40
+22
+0
+25 630
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+Вы можете использовать пакет https://github.com/typestack/class-transformer
+
+Вы можете исключить свойства с помощью декораторов, а также вы можете исключить свойства с помощью групп.
+
+ 16.05.2018 14:17
+ Ответ принят как подходящий
+Я бы предложил создать перехватчик, который использует библиотеку класс-трансформер:
+
+@Injectable()
+export class TransformInterceptor implements NestInterceptor {
+  intercept(
+    context: ExecutionContext,
+    call$: Observable<any>,
+  ): Observable<any> {
+    return call$.pipe(map(data => classToPlain(data)));
+  }
+}
+Затем просто исключите свойства с помощью декоратора @Exclude(), например:
+
+import { Exclude } from 'class-transformer';
+
+export class User {
+    id: number;
+    email: string;
+
+    @Exclude()
+    password: string;
+}
+ 16.05.2018 15:34
+В дополнение к Камил ответ:
+
+Вместо создания собственного перехватчика теперь вы можете использовать встроенный ClassSerializerInterceptor, см. документы по сериализации.
+
+@UseInterceptors(ClassSerializerInterceptor)
+Вы можете использовать его в классе контроллера или его отдельных методах. Каждая сущность, возвращаемая таким методом, будет преобразована классом-преобразователем и, следовательно, будет учитывать аннотации @Exclude:
+
+import { Exclude } from 'class-transformer';
+
+export class User {
+    /** other properties */    
+
+    @Exclude()
+    password: string;
+}
+Вы можете настроить его поведение, определив @SerializeOptions() на вашем контроллере или его методах:
+
+@SerializeOptions({
+  excludePrefixes: ['_'],
+  groups: ['admin']
+})
+чтобы, например, предоставить определенные поля только определенным пользователям:
+
+@Expose({ groups: ["admin"] })
+adminInfo: string;
+ 20.01.2019 14:58
+Вы можете перезаписать метод toJSON модели следующим образом.
+
+@Entity()
+export class User extends BaseAbstractEntity implements IUser {
+  static passwordMinLength: number = 7;
+
+  @ApiModelProperty({ example: faker.internet.email() })
+  @IsEmail()
+  @Column({ unique: true })
+  email: string;
+
+  @IsOptional()
+  @IsString()
+  @MinLength(User.passwordMinLength)
+  @Exclude({ toPlainOnly: true })
+  @Column({ select: false })
+  password: string;
+
+  @IsOptional()
+  @IsString()
+  @Exclude({ toPlainOnly: true })
+  @Column({ select: false })
+  passwordSalt: string;
+
+  toJSON() {
+    return classToPlain(this);
+  }
+
+  validatePassword(password: string) {
+    if (!this.password || !this.passwordSalt) {
+      return false;
+    }
+    return comparedToHashed(password, this.password, this.passwordSalt);
+  }
+}
+При использовании метода преобразователя классов plainToClass вместе с @Exclude ({toPlainOnly: true}) пароль будет исключен из ответа JSON, но будет доступен в экземпляре модели. Мне нравится это решение, потому что оно сохраняет всю конфигурацию модели в объекте.
+
+ 02.12.2019 15:02
+@Column({ select: false })
+password: string
+Могу прочитать про скрытые столбцы здесь
+
+ 21.06.2020 10:03
+В этой теме много хороших ответов. Чтобы основываться на ответе apun выше, я думаю, что следующий подход с наименьшей вероятностью приведет к случайной утечке поля пароля:
+
+@Column({ select: false })
+password: string
+Если объект не выбирает это поле по умолчанию, и его можно запрашивать только явно (например, через addSelect(), если используется построитель запросов), я думаю, что вероятность того, что где-то есть промах, гораздо меньше, и меньше полагаться на «магия» фреймворка (которым в конечном итоге является библиотека class-transformer) для обеспечения безопасности. На самом деле во многих проектах единственное место, где вы явно выбираете, - это то, где вы проверяете учетные данные.
+
+Этот подход также может помочь предотвратить случайное попадание хэша пароля в записи журнала и т. д., О чем еще не упоминалось. Намного безопаснее бросать пользовательский объект, зная, что он не содержит конфиденциальной информации, особенно если он может быть сериализован где-нибудь в записи журнала.
+
+Все сказанное, документированный подход для NestJS заключается в использовании декоратора @Exclude(), и принятый ответ от основателя проекта.
+
+Я определенно часто использую декоратор Exclude(), но не обязательно для полей пароля или соли.
+
+ 17.07.2020 17:51
+Также - есть документация по этому https://docs.nestjs.com/techniques/serialization
+
+ 28.07.2020 18:54
+Это уже старая тема, но я все же хотел бы поделиться своим решением, может, это кому-то поможет. Я использую Express, но мой пример, наверное, подходит и для этого случая.
+
+Итак, в своем классе сущности вы просто определяете дополнительный статический метод removePassword(), который получает экземпляр самой сущности, и вы отправляете объект, созданный этим методом, вместо исходного объекта сущности, полученного из БД:
+
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity({ name: 'users' })
+export class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string | undefined;
+
+  @Column({ type: 'varchar', length: 100, unique: true })
+  email: string | undefined;
+
+  @Column({ type: 'text' })
+  password: string | undefined;
+
+  static removePassword(userObj: User) {
+    return Object.fromEntries(
+      Object.entries(userObj).filter(([key, val]) => key !== 'password')
+    );
+  }
+}
+Это в основном похоже на вызов метода filter() в массиве, но немного сложнее: вы создаете новый объект (тот, который вы отправите в конечном итоге) из массива записей, созданного путем фильтрации записи пароля из исходного массива записей (с этим точным filter() метод).
+
+Хотя в обработчиках маршрутов вы всегда будете делать что-то вроде этого:
+
+import { Router, Request, Response, NextFunction } from 'express';
+import { User } from '../../entity/User';
+import { getRepository } from 'typeorm';
+
+const router = Router();
+
+router.post(
+  '/api/users/signin',
+  (req: Request, res: Response, next: NextFunction) => {
+    const { email } = req.body;
+
+    getRepository(User)
+      .findOne({ email })
+      .then(user =>
+        user ? res.send(User.removePassword(user)) : res.send('No such user:(')
+      )
+      .catch(err => next(new Error(err.message)));
+  }
+);
+
+export { router as signinRouter };
+Вы также можете использовать обычный метод:
+
+withoutPassword() {
+  return Object.fromEntries(
+    Object.entries(this).filter(([key, val]) => key !== 'password')
+  );
+}
+и в вашем обработчике маршрута:
+
+res.send(user.withoutPassword());
+ 15.05.2021 16:55
+Чтобы избежать болей в спине и головных болей, Я бы посоветовал использовать plainToClass, чтобы иметь полную совместимость с мангустом / преобразованием классов и избежать необходимости делать пользовательские переопределения для преодоления этой проблемы.
+
+Например, добавьте это в свой сервис:
+
+async validateUser(email: string, password: string): Promise<UserWithoutPassword | null> {
+    const user = await this.usersService.findOne({ email });
+
+    if (user && await compare(password, user.password))
+    {
+        return plainToClass(UserWithoutPassword, user.toObject());
+    }
+
+    return null;
+}
+
+Источник: Ответ Stackoverflow
+
+ 25.05.2021 16:17
+то, что просто работало для меня, было просто
+
+аннотирование поля с помощью @Exclude и переопределение метода модели toJSON, например
+
+toJSON() { return classToPlain(this); }
+
+
+
+Импорт файла JSON в TypeScript
+Вопросы
+JSON
+Импорт файла JSON в TypeScript
+У меня есть файл JSON, который выглядит следующим образом:
+
+{
+
+  "primaryBright":    "#2DC6FB",
+  "primaryMain":      "#05B4F0",
+  "primaryDarker":    "#04A1D7",
+  "primaryDarkest":   "#048FBE",
+
+  "secondaryBright":  "#4CD2C0",
+  "secondaryMain":    "#00BFA5",
+  "secondaryDarker":  "#009884",
+  "secondaryDarkest": "#007F6E",
+
+  "tertiaryMain":     "#FA555A",
+  "tertiaryDarker":   "#F93C42",
+  "tertiaryDarkest":  "#F9232A",
+
+  "darkGrey":         "#333333",
+  "lightGrey":        "#777777"
+}
+Пытаюсь импортировать в файл .tsx. Для этого я добавил это в определение типа:
+
+declare module "*.json" {
+  const value: any;
+  export default value;
+}
+И я импортирую это вот так.
+
+import colors = require('../colors.json')
+
+И в файле я использую цвет primaryMain как colors.primaryMain. Однако я получаю сообщение об ошибке:
+
+Property 'primaryMain' does not exist on type 'typeof "*.json"
+
+ 24.04.2018 10:05
+218
+3
+256 514
+10
+Данный вопрос помечен как решенный
+ Ответы 10
+В вашем файле определения TS, например typings.d.ts`, вы можете добавить эту строку:
+
+declare module "*.json" {
+const value: any;
+export default value;
+}
+Затем добавьте это в свой файл машинописного текста (.ts): -
+
+import * as data from './colors.json';
+const word = (<any>data).name;
+ 24.04.2018 10:10
+ Ответ принят как подходящий
+Форма импорта и объявление модуля должны согласовывать форму модуля и то, что он экспортирует.
+
+Когда вы пишете (субоптимальная практика для импорта JSON с TypeScript 2.9 при ориентации на совместимые форматы модулей see note)
+
+declare module "*.json" {
+  const value: any;
+  export default value;
+}
+Вы утверждаете, что все модули, у которых спецификатор заканчивается на .json, имеют один экспорт названныйdefault.
+
+Есть несколько способов правильно использовать такой модуль, в том числе:
+
+import a from "a.json";
+a.primaryMain
+а также
+
+import * as a from "a.json";
+a.default.primaryMain
+а также
+
+import {default as a} from "a.json";
+a.primaryMain
+а также
+
+import a = require("a.json");
+a.default.primaryMain
+Первая форма является лучшей, и синтаксический сахар, который она использует, является той самой причиной, по которой JavaScript имеет экспорт default.
+
+Однако я упомянул другие формы, чтобы дать вам подсказку о том, что идет не так. Обратите особое внимание на последнюю. require предоставляет вам объект, представляющий сам модуль, а нет - его экспортированные привязки.
+
+Так почему ошибка? Потому что ты написал
+
+import a = require("a.json");
+a.primaryMain
+И все же ваш primaryMain не поддерживает экспорт с именем "*.json".
+
+Все это предполагает, что ваш загрузчик модуля предоставляет JSON в качестве экспорта default, как указано в вашем исходном объявлении.
+
+Примечание: Начиная с TypeScript 2.9, вы можете использовать Флаг компилятора --resolveJsonModule, чтобы TypeScript анализировал импортированные файлы .json и предоставлял правильную информацию об их форме, устраняя необходимость в объявлении модуля с подстановочными знаками и проверяя наличие файла. Это не поддерживается для определенных форматов целевых модулей.
+
+ 24.04.2018 10:43
+С TypeScript 2.9. + Вы можете просто импортировать файлы JSON с типовой безопасностью и intellisense следующим образом:
+
+import colorsJson from '../colors.json'; // This import style requires "esModuleInterop", see "side notes"
+console.info(colorsJson.primaryBright);
+Обязательно добавьте эти настройки в раздел compilerOptions вашего tsconfig.json (документация):
+
+"resolveJsonModule": true,
+"esModuleInterop": true,
+Боковые примечания:
+
+В Typescript 2.9.0 есть ошибка с этой функцией JSON, она была исправлена ​​в 2.9.2.
+EsModuleInterop необходим только для импорта по умолчанию colorsJson. Если вы оставите значение false, вам придется импортировать его с помощью import * as colorsJson from '../colors.json'.
+ 04.06.2018 08:14
+Машинопись версии 2.9+ проста в использовании. Таким образом, вы можете легко импортировать файлы JSON как @kentor описал.
+
+Но если вам нужно использовать более старые версии:
+
+Вы можете получить доступ к файлам JSON более типичным способом. Во-первых, убедитесь, что ваше новое местоположение typings.d.ts совпадает со свойством include в вашем файле tsconfig.json.
+
+Если у вас нет свойства include в вашем файле tsconfig.json. Тогда ваша структура папок должна быть такой:
+
+- app.ts
++ node_modules/
+- package.json
+- tsconfig.json
+- typings.d.ts
+Но если у вас есть свойство include в вашем tsconfig.json:
+
+{
+    "compilerOptions": {
+    },
+    "exclude"        : [
+        "node_modules",
+        "**/*spec.ts"
+    ], "include"        : [
+        "src/**/*"
+    ]
+}
+Тогда ваш typings.d.ts должен находиться в каталоге src, как описано в свойстве include.
+
++ node_modules/
+- package.json
+- tsconfig.json
+- src/
+    - app.ts
+    - typings.d.ts
+Как и во многих ответах, вы можете определить глобальное объявление для всех ваших файлов JSON.
+
+declare module '*.json' {
+    const value: any;
+    export default value;
+}
+но я предпочитаю более типизированную версию этого. Например, допустим, у вас есть такой файл конфигурации config.json:
+
+{
+    "address": "127.0.0.1",
+    "port"   : 8080
+}
+Затем мы можем объявить для него определенный тип:
+
+declare module 'config.json' {
+    export const address: string;
+    export const port: number;
+}
+Легко импортировать в файлы машинописного текста:
+
+import * as Config from 'config.json';
+
+export class SomeClass {
+    public someMethod: void {
+        console.info(Config.address);
+        console.info(Config.port);
+    }
+}
+Но на этапе компиляции вы должны вручную скопировать файлы JSON в свою папку dist. Я просто добавляю свойство скрипта в свою конфигурацию package.json:
+
+{
+    "name"   : "some project",
+    "scripts": {
+        "build": "rm -rf dist && tsc && cp src/config.json dist/"
+    }
+}
+ 24.07.2018 10:44
+Другой способ пойти
+
+const data: {[key: string]: any} = require('./data.json');
+Это было то, что вы все еще можете определить тип json, если хотите, и не должны использовать подстановочные знаки.
+
+Например, пользовательский тип json.
+
+interface User {
+  firstName: string;
+  lastName: string;
+  birthday: Date;
+}
+const user: User = require('./user.json');
+ 03.04.2019 10:51
+Часто в приложениях Node.js требуется .json. В TypeScript 2.9 --resolveJsonModule позволяет импортировать, извлекать типы и создавать файлы .json.
+
+Пример #
+
+// tsconfig.json
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "esModuleInterop": true
+    }
+}
+
+// .ts
+
+import settings from "./settings.json";
+
+settings.debug === true;  // OK
+settings.dry === 2;  // Error: Operator '===' cannot be applied boolean and number
+
+
+// settings.json
+
+{
+    "repo": "TypeScript",
+    "dry": false,
+    "debug": false
+}
+by: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html
+ 26.11.2019 11:21
+Включите "resolveJsonModule": true в файле tsconfig.json и реализуйте, как показано ниже, у меня это работает:
+
+const config = require('./config.json');
+ 24.10.2020 05:20
+Вы должны добавить
+
+"resolveJsonModule": true
+как часть compilerOptions в tsconfig.json.
+
+ 29.04.2021 01:18
+У меня были проблемы с замедлением tsc или нехваткой памяти при импорте больших файлов напрямую с помощью resolveJsonModule. Чтение файла во время выполнения не имеет этих проблем.
+
+import fs from 'fs'
+var dataArray = JSON.parse(fs.readFileSync('data.json', 'utf-8'))
+ 04.05.2021 10:26
+Обратите внимание, что если вы используете @kentor способы
+
+Make sure to add these settings in the compilerOptions section of your tsconfig.json (documentation):
+
+Вам нужно добавить --resolveJsonModule и --esModuleInterop после команды tsc, чтобы скомпилировать файл TypeScript.
+
+Пример: tsc --resolveJsonModule --esModuleInterop main.ts
+
+
+Async/await в Angular `ngOnInit`
+Вопросы
+ANGULAR
+Async/await в Angular `ngOnInit`
+В настоящее время я оцениваю плюсы и минусы замены Angular, соответственно. RxJS’ Observable с простым Promise, чтобы я мог использовать async и await и получить более интуитивно понятный стиль кода.
+
+Один из наших типичных сценариев: загрузить некоторые данные в ngOnInit. С помощью Observables делаем:
+
+ngOnInit () {
+  this.service.getData().subscribe(data => {
+    this.data = this.modifyMyData(data);
+  });
+}
+Когда вместо этого я возвращаю Promise из getData() и использую async и await, получается:
+
+async ngOnInit () {
+  const data = await this.service.getData();
+  this.data = this.modifyMyData(data);
+}
+Теперь, очевидно, Angular не будет «знать», что ngOnInit стал async. Я чувствую, что это не проблема: мое приложение все еще работает, как и раньше. Но когда я смотрю на интерфейс OnInit, функция явно не объявлена ​​таким образом, который предполагает, что ее можно объявить async:
+
+ngOnInit(): void;
+Итак, итог: разумно ли то, что я здесь делаю? Или я столкнусь с какими-то непредвиденными проблемами?
+
+ 11.05.2019 18:10
+82
+5
+61 368
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Это ничем не отличается от того, что у вас было раньше. ngOnInit вернет обещание, и вызывающий объект проигнорирует это обещание. Это означает, что вызывающая сторона не будет ждать завершения всего в вашем методе, прежде чем продолжить. В данном конкретном случае это означает, что настройка представления будет завершена, и представление может быть запущено до того, как будет установлено this.data.
+
+Это та же самая ситуация, которая была у вас раньше. Звонящий не будет ждать окончания подписки и, возможно, запустит приложение до того, как this.data будет заполнен. Если ваше представление основано на data, то у вас, вероятно, есть какая-то настройка ngIf, которая не позволяет вам получить к нему доступ.
+
+Лично я не считаю это неудобным или плохой практикой, если вы знаете о последствиях. Однако ngIf может быть утомительным (они понадобятся в любом случае). Я лично перешел к использованию преобразователей маршрутов, где это имеет смысл, чтобы избежать этой ситуации. Данные загружаются до завершения навигации по маршруту, и я могу знать, что данные доступны до загрузки представления.
+
+ 11.05.2019 19:17
+Вы можете использовать функцию rxjs of.
+
+of(this.service.getData());
+Преобразует обещание в наблюдаемую последовательность.
+
+ 11.09.2019 05:34
+ngOnInitНЕ ждет для выполнения обещания. Вы можете сделать это асинхронной функцией, если хотите использовать await следующим образом:
+
+import { take } from 'rxjs/operators';
+
+async ngOnInit(): Promise<any> {
+  const data = await firstValueFrom(this.service.getData());
+  this.data = this.modifyMyData(data);
+}
+Однако, если вы используете ngOnInit вместо конструктора для ожидания завершения функции, вы в основном делаете эквивалент этого:
+
+import { take } from 'rxjs/operators';
+
+constructor() {
+  firstValueFrom(this.service.getData())
+    .then((data => {;
+      this.data = this.modifyMyData(data);
+    });
+}
+Он запустит асинхронную функцию, но НЕ будет ждать ее завершения. Если вы заметили, что иногда он завершается, а иногда нет, это действительно зависит от времени вашей функции.
+
+Используя идеи из эта почта, вы можете бегать на улице zone.js. NgZone не включает scheduleMacroTask, но zone.js уже импортируется в angular.
+
+Решение
+import { isObservable, Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+
+declare const Zone: any;
+
+async waitFor<T>(prom: Promise<T> | Observable<T>): Promise<T> {
+  if (isObservable(prom)) {
+    prom = firstValueFrom(prom);
+  }
+  const macroTask = Zone.current
+    .scheduleMacroTask(
+      `WAITFOR-${Math.random()}`,
+      () => { },
+      {},
+      () => { }
+    );
+  return prom.then((p: T) => {
+    macroTask.invoke();
+    return p;
+  });
+}
+Я лично поставил эту функцию в свой core.module.ts, хотя вы можете поставить ее куда угодно.
+
+Используйте это так:
+
+constructor(private cm: CoreModule) { 
+  const p = this.service.getData();
+  this.post = this.cm.waitFor(p);
+}
+Вы также можете проверить isBrowser, чтобы сохранить наблюдаемое, или дождаться результатов.
+
+И наоборот, вы также можете импортировать angular-zen и использовать его, как в эта почта, хотя вы будете импортировать больше, чем вам нужно.
+
+Дж
+
+ОБНОВЛЕНИЕ: 26.02.22 — теперь использует firstValueFrom, так как .toPromise() обесценивается.
+
+ 20.10.2019 17:40
+Now, obviously, Angular will not “know”, that ngOnInit has become async. I feel that this is not a problem: My app still works as before.
+
+Семантически он будет нормально компилироваться и работать, как и ожидалось, но удобство написания async / wait достигается за счет обработки ошибок, и я думаю, что этого следует избегать.
+
+Давайте посмотрим, что происходит.
+
+Что происходит, когда обещание отклонено:
+
+public ngOnInit() {
+    const p = new Promise((resolver, reject) => reject(-1));
+}
+Приведенное выше генерирует следующую трассировку стека:
+
+core.js:6014 ERROR Error: Uncaught (in promise): -1
+    at resolvePromise (zone-evergreen.js:797) [angular]
+    at :4200/polyfills.js:3942:17 [angular]
+    at new ZoneAwarePromise (zone-evergreen.js:876) [angular]
+    at ExampleComponent.ngOnInit (example.component.ts:44) [angular]
+    .....
+Мы ясно видим, что необработанная ошибка была вызвана ngOnInit, а также видим, в каком файле исходного кода найти ошибочную строку кода.
+
+Что происходит, когда мы используем async/wait, который является отклонением:
+
+    public async ngOnInit() {
+        const p = await new Promise((resolver, reject) => reject());
+    }
+Приведенное выше генерирует следующую трассировку стека:
+
+core.js:6014 ERROR Error: Uncaught (in promise):
+    at resolvePromise (zone-evergreen.js:797) [angular]
+    at :4200/polyfills.js:3942:17 [angular]
+    at rejected (tslib.es6.js:71) [angular]
+    at Object.onInvoke (core.js:39699) [angular]
+    at :4200/polyfills.js:4090:36 [angular]
+    at Object.onInvokeTask (core.js:39680) [angular]
+    at drainMicroTaskQueue (zone-evergreen.js:559) [<root>]
+Что случилось? Мы понятия не имеем, потому что трассировка стека находится вне компонента.
+
+Тем не менее, у вас может возникнуть соблазн использовать обещания и просто избегать использования async / wait. Итак, давайте посмотрим, что произойдет, если обещание будет отклонено после setTimeout().
+
+    public ngOnInit() {
+        const p = new Promise((resolver, reject) => {
+            setTimeout(() => reject(), 1000);
+        });
+    }
+Мы получим следующую трассировку стека:
+
+core.js:6014 ERROR Error: Uncaught (in promise): [object Undefined]
+    at resolvePromise (zone-evergreen.js:797) [angular]
+    at :4200/polyfills.js:3942:17 [angular]
+    at :4200/app-module.js:21450:30 [angular]
+    at Object.onInvokeTask (core.js:39680) [angular]
+    at timer (zone-evergreen.js:2650) [<root>]
+Опять же, мы потеряли контекст и не знаем, куда обратиться, чтобы исправить ошибку.
+
+Наблюдаемые объекты страдают теми же побочными эффектами обработки ошибок, но в общем сообщения об ошибках имеют качество лучше. Если кто-то использует throwError(new Error()), объект Ошибка будет содержать трассировку стека, а если вы используете HttpModule, объект Ошибка обычно является объектом HTTP-ответ, который сообщает вам о запросе.
+
+Итак, мораль этой истории здесь: ловите свои ошибки, используйте наблюдаемые, когда можете, и не используйте async ngOnInit(), потому что это вернется, чтобы преследовать вас как ошибку, которую трудно найти и исправить.
+
+ 03.12.2019 13:01
+Я использовал try catch внутри ngOnInit():
+
+async ngOnInit() {      
+   try {           
+       const user = await userService.getUser();
+    } catch (error) {           
+        console.error(error);       
+    }    
+} 
+Затем вы получаете более описательную ошибку, и вы можете найти, где ошибка.
+
+ 17.11.2020 15:18
+Интересно, каковы недостатки немедленно вызванное функциональное выражение :
+
+    ngOnInit () {
+      (async () => {
+        const data = await this.service.getData();
+        this.data = this.modifyMyData(data);
+      })();
+    }
+Это единственный способ заставить его работать без объявления ngOnInit() как async функции.
+
+ 09.01.2021 12:57
+Я бы сделал это немного по-другому, вы не показываете свой html-шаблон, но я предполагаю, что вы что-то там делаете с данными, т.е.
+
+<p> {{ data.Name }}</p> <!-- or whatever -->
+Есть ли причина, по которой вы не используете асинхронный канал?
+
+<p> {{ (data$ | async).Name }}</p>
+или
+
+<p *ngIf = "(data$ | async) as data"> {{ data.name }} </p>
+и в вашем ngOnInit:
+
+data$: Observable<any>; //change to your data structure
+ngOnInit () {
+  this.data$ = this.service.getData().pipe(
+    map(data => this.modifyMyData(data))
+  );
+}
+ 18.06.2021 17:00
+Правильный ответ на этот вопрос — использовать функцию Резольвер Angular. С Resolve ваш компонент не будет отображаться, пока вы не скажете ему об этом.
+
+Из документов:
+
+Interface that classes can implement to be a data provider. A data provider class can be used with the router to resolve data during navigation. The interface defines a resolve() method that is invoked when the navigation starts. The router waits for the data to be resolved before the route is finally activated.
+
+ 12.09.2021 02:19
+Проще говоря, то, что вы делаете, это не разумно. Если вы хотите, чтобы некоторые данные были доступны до того, как вы перейдете на эту страницу, используйте резольвер в своем маршруте.
+
+Это уже было предложено ранее. Пожалуйста, смотрите мой ответ здесь: stackoverflow.com/a/69147601/388827
+
+— 
+qqilihq
+ 24.01.2022 12:06
+
+
+
+Как настроить сценарий реакции так, чтобы он не переопределял tsconfig.json при запуске
+Вопросы
+REACTJS
+Как настроить сценарий реакции так, чтобы он не переопределял tsconfig.json при запуске
+В настоящее время я использую create-react-app для начальной загрузки одного из моих проектов. По сути, я пытаюсь настроить пути в tsconfig.json, добавляя их к tsconfig.json по умолчанию, сгенерированному create-response-app:
+
+"baseUrl": "./src",
+"paths": {
+  "interfaces/*": [
+    "common/interfaces/*",
+  ],
+  "components/*": [
+    "common/components/*",
+  ],
+},
+Однако каждый раз, когда я запускаю yarn start, который в основном запускает react-scripts start, он удаляет мои изменения и снова генерирует конфигурации по умолчанию.
+
+Как я могу указать приложению create-response-app использовать мои пользовательские конфигурации?
+
+ 15.12.2018 17:03
+72
+4
+38 267
+9
+ Ответы 9
+Я смог сделать это, воспользовавшись советом Эта проблема.
+
+Поместите параметры конфигурации, которые сценарии реакции любят удалять, в отдельный файл (например, paths.json) и укажите на него ссылку из tsconfig.json через директиву extends.
+
+paths.json:
+
+{
+  "compilerOptions": {
+  "baseUrl": "./src",
+  "paths": {
+    "interfaces/*": [ "common/interfaces/*"],
+    "components/*": [ "common/components/*"],
+    }
+  }
+}
+tsconfig.json
+
+{
+  "extends": "./paths.json"
+   ...rest of tsconfig.json
+}
+ 02.01.2019 23:02
+Вы не можете, и я не уверен, когда вы сможете. Я пытался использовать baseUrl и пути, чтобы избежать относительного импорта, но, как вы можете видеть, они намеренно удаляют определенные значения. «(Пока)» обнадеживает, но (вздох) кто знает, когда они официально поддержат его. Я рекомендую предупреждать о проблеме подписавшись на этот github, если / когда это изменится.
+
+The following changes are being made to your tsconfig.json file:
+      - compilerOptions.baseUrl must not be set (absolute imports are not supported (yet))
+      - compilerOptions.paths must not be set (aliased imports are not supported)
+ 20.01.2019 17:49
+Приложение Create React в настоящее время не поддерживает baseUrl. Однако есть обходной путь ... чтобы настроить baseUrl как для веб-пакета, так и для IDE, вам необходимо сделать следующее:
+
+Создайте файл .env со следующим кодом:
+NODE_PATH=./
+Создайте файл tsconfig.paths.json со следующим кодом внутри:
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["*"]
+    }
+  }
+}
+Добавьте следующую строку в tsconfig.json
+{
+  "extends": "./tsconfig.paths.json",
+  ...
+}
+ 11.02.2019 16:02
+У меня была проблема, аналогичная этой общей проблеме (CRA перезаписывает "noEmit": false в моем tsconfig.json библиотеки React, над которой я работаю, где у меня есть две отдельные сборки, одна для локальной разработки, а другая для сборки производственной библиотеки с типизацией). Простое решение: используйте sed в сценарии postbuild в package.json. Например: Редактирование на месте с помощью sed в OS X.
+
+{
+    ...
+    "scripts": {
+        ...
+        "postbuild": "sed -i '' 's/{THING CRA IS REPLACING}/{WHAT YOU ACTUALLY WANT}/g' tsconfig.json # CRA is too opinionated on this one.",
+        ...
+    }
+    ...
+}
+Однако этот подход не является кроссплатформенным (в отличие от того, как rimraf является кроссплатформенной альтернативой rm -rf).
+
+ 28.07.2020 03:03
+Если вы, как и я, используете сценарии реакции 4.0.0, все, что вам нужно сделать, это удалить строку (около строки 160 с моей стороны):
+
+paths: { value: undefined, reason: 'aliased imports are not supported' }
+
+из файла node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+
+Мне удалось прямо добавить мою конфигурацию baseUrl и paths в мой файл tsconfig.json следующим образом:
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@domain/*": ["../src/domain/*"],
+    },
+  }
+}
+и, наконец, компилируем и продолжаем жить своей жизнью.
+
+Как обычно, YMMV. Пожалуйста, проверьте свой материал. Это, очевидно, взлом, но у меня он сработал, поэтому я публикую здесь на случай, если это кому-то поможет.
+
+Вот патч, если вы хотите поделиться со своей командой:
+
+diff --git a/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js b/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+index 00139ee..5ccf099 100644
+--- a/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
++++ b/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+@@ -156,7 +156,8 @@ function verifyTypeScriptSetup() {
+           : 'react',
+       reason: 'to support the new JSX transform in React 17',
+     },
+-    paths: { value: undefined, reason: 'aliased imports are not supported' },
++    // Removed this line so I can add paths to my tsconfig file
++    // paths: { value: undefined, reason: 'aliased imports are not supported' },
+   };
+Редактировать
+Согласно продуманному предложению @Bartekus в ветке комментариев, я добавляю информацию о пакете, который использую, когда мне нужно добавить (возможно) временные изменения, подобные этим, в пакет npm: патч-пакет
+
+По сути, пакет предоставляет более удобный способ вносить изменения в пакет. Особенно если учесть совместную работу, становится очень обременительным напрямую изменить файл npm и двигаться дальше. В следующий раз, когда вы обновите этот пакет или даже когда вы начнете разработку на новой машине и запустите npm install, ваши изменения будут потеряны. Кроме того, если у вас есть товарищи по команде, работающие над одним и тем же проектом, они никогда не унаследуют изменения.
+
+По сути, вы выполняете следующие шаги, чтобы исправить пакет:
+
+# fix a bug in one of your dependencies
+vim node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js
+
+# run patch-package to create a .patch file
+npx patch-package react-scripts
+
+# commit the patch file to share the fix with your team
+git add patches/react-scripts+4.0.0.patch
+git commit -m "Enable aliased imports in react-scripts"
+В следующий раз, когда кто-то проверит проект и установит его, патч будет применен автоматически из-за пост-установочного скрипта, который вы добавите во время настройки:
+
+ "scripts": {
++  "postinstall": "patch-package"
+ }
+См. Актуальные инструкции в документация на пакет
+
+ 23.11.2020 18:01
+Для macOS этот обходной путь должен работать.
+
+package.json
+
+"scripts": {
+  "start": "osascript -e 'tell app \"Terminal\" to do script \"cd $PATH_TO_REACT_APP && node ./setNoEmitFalse\"' && react-scripts start",
+  ...
+},
+...
+setNoEmitFalse.js
+
+const fs = require('fs');
+const { sleep } = require('sleep')
+const path = './tsconfig.json'
+const run = async () => {
+  sleep(2)
+  const tsconfig = fs.readFileSync(path, 'utf-8');
+  const fixed = tsconfig.replace('"noEmit": true', '"noEmit": false');
+  fs.writeFileSync(path, fixed)
+}
+run()
+Выполнение файла javascript в отдельном терминале (osascript) обеспечивает нормальный вывод для сценариев реакции в исходном терминале.
+
+ 06.04.2021 11:19
+Для меня проблема заключалась в том, что VSCode использовал более старую версию машинописного текста (4.0.3), в то время как версия машинописного текста, поставляемая с проектом, - (4.1.2).
+
+Следующее помогло мне:
+
+Перейдите в палитру команд CTRL + Shift + P.
+Выберите «TypeScript: выберите версию TypeScript ...».
+Выберите «Использовать версию рабочего пространства».
+ 21.04.2021 16:49
+Перейдите в node_modules / response-scripts / scripts / utils / verifyTypeScriptSetup.js и замените
+
+const compilerOptions = {
+  ...
+};
+от
+
+const compilerOptions = { };
+ 16.09.2021 17:24
+В Botpress (с реактивными скриптами 4.0.3) мы используем комбинацию двух приемов для использования путей без извлечения или исправления кода. Как сказали Гленн и Микроципип, первым делом нужно расширить файл tsconfig.json.
+
+tsconfig.path.json
+
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+      "common/*": ["../bp/src/common/*"]
+    }
+  }
+}
+tsconfig.json
+
+{ 
+  ...
+  "extends": "./tsconfig.paths.json"
+}
+Затем, чтобы он работал в фоновом режиме, используйте пакет react-app-rewired. Это позволяет вносить небольшие изменения в конфигурацию веб-пакета без фактического извлечения CRA.
+
+config-overrides.js
+
+module.exports = {
+  webpack: (config, env) => {
+    config.resolve.alias['common'] = path.join(__dirname, '../bp/dist/common')
+    config.resolve.alias['~'] = path.join(__dirname, './src')
+  }
+}
+Чтобы увидеть полный код, вы можете проверить репозиторий github https://github.com/botpress/botpress/tree/master/packages/ui-admin
+
+
+ОШИБКА в компиляторе Angular требует TypeScript> = 3.1.1 и <3.2.0, но вместо этого был найден 3.2.1
+Вопросы
+ANGULAR
+ОШИБКА в компиляторе Angular требует TypeScript> = 3.1.1 и <3.2.0, но вместо этого был найден 3.2.1
+Я получаю эту ошибку
+
+ERROR in The Angular Compiler requires TypeScript >=3.1.1 and <3.2.0 but 3.2.1 was found instead.
+
+Кажется, что Typescript обновлен, но компилятору Angular это не нравится.
+
+Как я могу это исправить?
+
+ 02.12.2018 08:43
+173
+3
+154 790
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Чтобы исправить это, установите конкретную машинописную версию 3.1.6.
+
+npm i typescript@3.1.6 --save-dev --save-exact
+ 02.12.2018 08:50
+В моем случае команда ниже работала для окон. Будет установлена ​​последняя необходимая версия от 3.1.1 до 3.2.0. В зависимости от ОС используйте двойные или одинарные кавычки.
+
+npm install typescript@">=3.1.1 <3.2.0" 
+ 17.12.2018 06:18
+Получил аналогичную ошибку из журнала ошибок CircleCi.
+
+«ОШИБКА в компиляторе Angular требует TypeScript> = 3.1.1 и <3.3.0, но вместо этого был обнаружен 3.3.3333».
+
+Просто чтобы вы знали, что это не повлияло на приложение Angular, но ошибка CircleCi стала раздражать. Я использую Angular 7.1
+
+Я побежал: $ npm я typescript@3.1.6 --save-dev --save-точный для обновления файла package-lock.json.
+
+Затем я побежал: $ npm я
+
+После этого я побежал: Исправление аудита $ npm
+
+"Это сообщение об ошибке CircleCi" исчезло. Так это работает
+
+ 04.03.2019 05:58
+npm install typescript@">=3.1.1 <3.3.0" --save-dev --save-exact
+rm -rf node_modules
+npm install
+ 17.03.2019 06:13
+Сначала установите целевую версию
+
+npm i typescript@3.1.6 --save-dev --save-exact
+Затем перед компиляцией сделайте
+
+   npm i
+ 13.04.2019 09:28
+Для следующей ошибки:
+
+ERROR in The Angular Compiler requires TypeScript >=3.4.0 and <3.6.0 but 3.6.3 was found instead.
+
+Выполните следующую команду NPM:
+
+$ npm install typescript@3.5.3
+Источник Ссылка на сайт
+
+ 16.09.2019 11:30
+ERROR in The Angular Compiler requires TypeScript >=3.4.0 and <3.6.0 but 3.6.3 was found instead.
+
+Для этой ошибки вы также можете определить диапазон версий:
+
+yarn add typescript@">=3.4.0 <3.6.0" --save-dev --save-exact
+или для npm
+
+npm install typescript@">=3.4.0 <3.6.0" --save-dev --save-exact
+После установки правильной версии машинописного текста:
+
+Удалить папку node_modules
+Запустите yarn install или npm install
+Скомпилируйте и скрестите пальцы xD
+ 19.09.2019 12:02
+Я также столкнулся с аналогичными проблемами, когда попытался выполнить подачу. Мне удалось решить эту проблему, как показано ниже. Примечание:
+
+C:\Windows\system32> is on windows command prompt
+C:\apps\workspace\testProj>  is on VS code Terminal (can also be doable in another command prompt)
+Ниже приведены шаги, которые я использовал для решения этой проблемы. Шаг 1. Проверьте версию cli, установленную в командной строке (это будет глобальная версия Angular CLI)
+
+C:\Windows\system32>ng --version
+Угловой интерфейс командной строки: 8.3.13
+
+Если cli был установлен ранее, отображается глобальная версия cli.
+
+Если cli не был установлен, мы можем получить ошибку
+ng не распознается как внутренняя или внешняя команда
+
+а. (Необязательный шаг)Install Angular CLI global version
+
+C:\Windows\system32>npm install -g @angular/cli
+C:\Windows\system32>npm install -g @angular-cli/latest
+б. Проверить версию еще раз
+
+C:\Windows\system32>ng --version
+Angular CLI: 8.3.13
+Шаг 2. Проверьте локальную версию cli, установленную в вашем проекте angular (код VS или командная строка cd'd для вашего проекта проекта)
+
+C:\apps\workspace\testProj>ng --version
+Angular CLI: 7.3.8
+Примечание. Очевидно, что версии не синхронизированы. Сделайте следующее в своем угловом проекте
+
+C:\apps\workspace\testProj>ng update @angular/cli        -> important to sync with global cli version
+Примечание: если обновление не работает с использованием вышеуказанной команды (ссылка: Как обновить Angular CLI до последней версии) В командной строке uninstall global angular cli, clean the cache and reinstall the cli
+
+C:\Windows\system32>npm uninstall -g angular-cli
+C:\Windows\system32>npm cache clean or npm cache verify #(if npm > 5)
+C:\Windows\system32>npm install -g @angular/cli@latest
+Теперь обновите локальную версию проекта, потому что cli-версия вашего локального проекта имеет более высокий приоритет, чем глобальная, когда вы пытаетесь выполнить свой проект.
+
+C:\apps\workspace\testProj>rm -rf node_modules
+C:\apps\workspace\testProj>npm uninstall --save-dev angular-cli
+C:\apps\workspace\testProj>npm install --save-dev @angular/cli@latest
+C:\apps\workspace\testProj>npm install
+C:\apps\workspace\testProj>ng update @angular/cli
+Шаг 3. Проверить, синхронизирована ли версия cli локального проекта с глобальной
+
+C:\Windows\system32>ng --version
+Angular CLI: 8.3.13
+
+C:\apps\workspace\testProj>ng --version
+Angular CLI: 8.3.13
+Шаг 4.. Повторная валидация по проекту
+
+C:\apps\workspace\testProj>ng serve
+Должен работать сейчас
+
+ 23.10.2019 16:29
+Если вы хотите использовать Angular с неподдерживаемой версией TypeScript, добавьте это в свой tsconfig.json, чтобы игнорировать предупреждение:
+
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true,
+  },
+
+
+Угловой: поле mat-form должно содержать MatFormFieldControl
+Вопросы
+JAVASCRIPT
+Угловой: поле mat-form должно содержать MatFormFieldControl
+Я пытаюсь добавить поле формы с настраиваемым элементом управления вводом телефонного номера. Я использовал на примере телефона от https://material.angular.io/components/form-field/examples.
+
+Вот код:
+
+<mat-form-field>
+  <example-tel-input placeholder = "Phone number" required></example-tel-input>
+  <mat-icon matSuffix>phone</mat-icon>
+  <mat-hint>Include area code</mat-hint>
+</mat-form-field>
+import {FocusMonitor} from '@angular/cdk/a11y';
+import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {Component, ElementRef, Input, OnDestroy} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {MatFormFieldControl} from '@angular/material';
+import {Subject} from 'rxjs';
+
+/** @title Form field with custom telephone number input control. */
+@Component({
+  selector: 'form-field-custom-control-example',
+  templateUrl: 'form-field-custom-control-example.html',
+  styleUrls: ['form-field-custom-control-example.css'],
+})
+export class FormFieldCustomControlExample {}
+
+/** Data structure for holding telephone number. */
+export class MyTel {
+  constructor(public area: string, public exchange: string, public subscriber: string) {}
+}
+
+/** Custom `MatFormFieldControl` for telephone number input. */
+@Component({
+  selector: 'example-tel-input',
+  templateUrl: 'example-tel-input-example.html',
+  styleUrls: ['example-tel-input-example.css'],
+  providers: [{provide: MatFormFieldControl, useExisting: MyTelInput}],
+  host: {
+    '[class.example-floating]': 'shouldLabelFloat',
+    '[id]': 'id',
+    '[attr.aria-describedby]': 'describedBy',
+  }
+})
+export class MyTelInput implements MatFormFieldControl<MyTel>, OnDestroy {
+  static nextId = 0;
+
+  parts: FormGroup;
+  stateChanges = new Subject<void>();
+  focused = false;
+  ngControl = null;
+  errorState = false;
+  controlType = 'example-tel-input';
+  id = `example-tel-input-${MyTelInput.nextId++}`;
+  describedBy = '';
+
+  get empty() {
+    const {value: {area, exchange, subscriber}} = this.parts;
+
+    return !area && !exchange && !subscriber;
+  }
+
+  get shouldLabelFloat() { return this.focused || !this.empty; }
+
+  @Input()
+  get placeholder(): string { return this._placeholder; }
+  set placeholder(value: string) {
+    this._placeholder = value;
+    this.stateChanges.next();
+  }
+  private _placeholder: string;
+
+  @Input()
+  get required(): boolean { return this._required; }
+  set required(value: boolean) {
+    this._required = coerceBooleanProperty(value);
+    this.stateChanges.next();
+  }
+  private _required = false;
+
+  @Input()
+  get disabled(): boolean { return this._disabled; }
+  set disabled(value: boolean) {
+    this._disabled = coerceBooleanProperty(value);
+    this.stateChanges.next();
+  }
+  private _disabled = false;
+
+  @Input()
+  get value(): MyTel | null {
+    const {value: {area, exchange, subscriber}} = this.parts;
+    if (area.length === 3 && exchange.length === 3 && subscriber.length === 4) {
+      return new MyTel(area, exchange, subscriber);
+    }
+    return null;
+  }
+  set value(tel: MyTel | null) {
+    const {area, exchange, subscriber} = tel || new MyTel('', '', '');
+    this.parts.setValue({area, exchange, subscriber});
+    this.stateChanges.next();
+  }
+
+  constructor(fb: FormBuilder, private fm: FocusMonitor, private elRef: ElementRef<HTMLElement>) {
+    this.parts = fb.group({
+      area: '',
+      exchange: '',
+      subscriber: '',
+    });
+
+    fm.monitor(elRef, true).subscribe(origin => {
+      this.focused = !!origin;
+      this.stateChanges.next();
+    });
+  }
+
+  ngOnDestroy() {
+    this.stateChanges.complete();
+    this.fm.stopMonitoring(this.elRef);
+  }
+
+  setDescribedByIds(ids: string[]) {
+    this.describedBy = ids.join(' ');
+  }
+
+  onContainerClick(event: MouseEvent) {
+    if ((event.target as Element).tagName.toLowerCase() != 'input') {
+      this.elRef.nativeElement.querySelector('input')!.focus();
+    }
+  }
+
+
+  }
+example-tel-input-example.html
+
+  <div [formGroup] = "parts" class = "example-tel-input-container">
+      <input class = "example-tel-input-element" formControlName = "area" size = "3">
+      <span class = "example-tel-input-spacer">&ndash;</span>
+      <input class = "example-tel-input-element" formControlName = "exchange" size = "3">
+      <span class = "example-tel-input-spacer">&ndash;</span>
+      <input class = "example-tel-input-element" formControlName = "subscriber" size = "4">
+    </div>
+Но я получаю следующую ошибку:
+
+ERROR Error: mat-form-field must contain a MatFormFieldControl.
+
+ 26.12.2018 19:50
+25
+2
+71 986
+9
+ Ответы 9
+Ошибка говорит, что mat-form-field должен содержать хотя бы одно поле формы, из которого берется ввод.
+
+Пример: matInputmat-select и т. д.
+
+В вашем случае вы можете добавить тег matInput в поля ввода в example-tel-input-example.html. А также вы можете переместить mat-form-field внутрь компонента example-tel-input-example и добавить его к каждому полю matInput.
+
+<div [formGroup] = "parts" class = "example-tel-input-container">
+      <mat-form-field>
+         <input matInput class = "example-tel-input-element" formControlName = "area" size = "3">
+      </mat-form-field>
+      <span class = "example-tel-input-spacer">&ndash;</span>
+      <mat-form-field>
+          <input matInput class = "example-tel-input-element" formControlName = "exchange" size = "3">
+      </mat-form-field>
+      <span class = "example-tel-input-spacer">&ndash;</span>
+      <mat-form-field>
+          <input matInput class = "example-tel-input-element" formControlName = "subscriber" size = "4">
+      </mat-form-field>
+</div>
+Примечание: mat-icon или mat-hint не могут рассматриваться как поля формы
+
+ 27.12.2018 06:20
+Убедитесь, что MatInputModule импортирован, а <mat-form-field> содержит <input> с директивами matInput / matSelect.
+
+https://github.com/angular/material2/issues/7898
+
+ 27.12.2018 07:49
+Импортируйте MatInputModule, решил мою ошибку
+
+ 05.02.2019 11:54
+Вам нужно указать свой класс в качестве провайдера для MatFormFieldControl
+
+https://material.angular.io/guide/creating-a-custom-form-field-control#providing-our-component-as-a-matformfieldcontrol
+
+@Component({
+  selector: 'form-field-custom-control-example',
+  templateUrl: 'form-field-custom-control-example.html',
+  styleUrls: ['form-field-custom-control-example.css'],
+  providers: [
+    { provide: MatFormFieldControl, useExisting: FormFieldCustomControlExample }   
+  ]
+})
+ 17.05.2019 01:16
+Также не забудьте указать атрибут name во входном теге:
+
+name = "yourName"
+ 07.05.2020 01:08
+Необходимо установить два модуля import и добавить их в раздел импорта и экспорта.
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+@NgModule ({
+  imports: [ MatFormFieldModule, MatInputModule ],
+  exports: [ MatFormFieldModule, MatInputModule ]
+})
+И самое главное, чего не хватает всем, этот персонаж '/'. если вы видите Документация по материалам Angular, они также пропускают это (последняя проверка 16 июня 2020 г., не знаю, обновились они или нет). Я привожу пример для уточнения
+
+<!-- Wrong -->
+<mat-form-field>
+  <input matInput>
+</mat-form-field>
+
+<!-- Right -->
+<mat-form-field>
+  <input matInput />
+</mat-form-field>
+Внимательно посмотрите на фрагмент. когда начинается <input, он должен заканчиваться />, но большинство людей пропускают символ / (обратная косая черта).
+
+ 19.05.2020 15:37
+Еще одна возможная проблема с закрытием входного тега. Если вы скопируете код из одного из примеров Angular (https://material.angular.io/components/datepicker/overview), вы можете получить код:
+
+<mat-form-field appearance = "fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker] = "picker">
+  <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+Вход должен иметь закрывающий тег (косую черту):
+
+<input matInput [matDatepicker] = "picker" />
+ 16.08.2020 20:13
+если вы используете в своем коде какой-либо тег 'input' вместе с 'mat-form-field', обязательно включите 'matInput' во входной тег
+
+если в дочернем теге 'mat-form-field' присутствует какой-либо * ngIf, укажите условие * ngIf в теге 'mat-form-field'
+
+ 07.05.2021 07:47
+Это решит вашу проблему
+
+ import {
+      MatFormFieldModule, 
+      MatInputModule
+    } from "@angular/material";
+
+
+ESLint не смог найти плагин "eslint-plugin-@typescript-eslint"
+Вопросы
+JAVASCRIPT
+ESLint не смог найти плагин "eslint-plugin-@typescript-eslint"
+Я не уверен, есть ли ошибка в чем-то, что я использую, или я просто что-то неправильно настроил здесь, но я получаю эту ошибку от eslint при запуске eslint src --fix о "eslint-plugin-@typescript-eslint"
+
+Я указал плагин, как указано в документации @TypeScript-eslint, но получаю эту странную ошибку, когда eslint пытается добавить «eslint-plugin-» в начало имени плагина (имя пакета @typescript-eslint/eslint-plugin)
+
+Я использую Gatsby и сопутствующий Плагин TypeScript.
+
+Ошибка
+
+$ eslint src --fix
+
+Oops! Something went wrong! :(
+
+ESLint: 4.19.1.
+ESLint couldn't find the plugin "eslint-plugin-@typescript-eslint". This can happen for a couple different reasons:
+
+1. If ESLint is installed globally, then make sure eslint-plugin-@typescript-eslint is also installed globally. A globally-installed ESLint cannot find a locally-installed plugin.
+
+2. If ESLint is installed locally, then it's likely that the plugin isn't installed correctly. Try reinstalling by running the following:
+
+    npm i eslint-plugin-@typescript-eslint@latest --save-dev
+.eslintrc.js:
+
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    'jest/globals': true,
+  },
+  plugins: ['@typescript-eslint', 'react', 'jest'],
+  extends: [
+    'standard',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:prettier/recommended',
+    // 'eslint-config-prettier', // must be last
+    'prettier/@typescript-eslint',
+  ],
+  rules: {
+    'react/prop-types': 0,
+    'jsx-quotes': ['error', 'prefer-single'],
+    'react/no-unescaped-entities': 0,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    linkComponents: [
+      // Components used as alternatives to <a> for linking, eg. <Link to = { url } />
+      'Hyperlink',
+      { name: 'Link', linkAttribute: 'to' },
+    ],
+  },
+}
+пакет.json
+
+{
+  "name": "jmulholland.com",
+  "description": "My personal website",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "lint": "eslint src --fix",
+    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|md|mdx|graphql)\"",
+    "format": "yarn prettier --write",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn lint && yarn prettier --list-different"
+  },
+  "dependencies": {
+    "gatsby": "^2.1.4",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-styled-components": "^3.0.5",
+    "gatsby-plugin-typescript": "^2.0.10",
+    "gatsby-plugin-typography": "^2.2.7",
+    "gatsby-remark-prismjs": "^3.2.4",
+    "gatsby-source-contentful": "^2.0.29",
+    "gatsby-transformer-remark": "^2.3.0",
+    "prismjs": "^1.15.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.18",
+    "styled-components": "^4.1.3",
+    "typography": "^0.16.18"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "babel-jest": "^24.1.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-gatsby": "^0.1.8",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "faker": "^4.1.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3333"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
+ 08.03.2019 10:28
+25
+1
+23 235
+9
+ Ответы 9
+Решение состояло в том, чтобы просто перейти на последнюю версию eslint.
+
+ 08.03.2019 11:33
+Еще одна причина, которая может вызвать эту проблему, — отсутствие настройки ESLint.
+
+В моем случае добавление файла .eslintrc.json в корневой каталог (с правильной конфигурацией) решило проблему.
+
+ 02.05.2020 07:18
+Поскольку сейчас я столкнулся с той же проблемой с eslint, я пишу здесь о первопричине проблемы в моем случае.
+
+Я установил этот eslint-nullish-coalescing плагин, который является ответвлением eslint для нулевого объединения. Этот плагин изменил содержимое файла node_module\.bin\eslint.cmd.
+
+от
+
+@IF EXIST "%~dp0\node.exe" (
+  "%~dp0\node.exe"  "%~dp0\..\eslint\bin\eslint.js" %*
+) ELSE (
+  @SETLOCAL
+  @SET PATHEXT=%PATHEXT:;.JS;=;%
+  node  "%~dp0\..\eslint\bin\eslint.js" %*
+)
+к
+
+@IF EXIST "%~dp0\node.exe" (
+  "%~dp0\node.exe"  "%~dp0\..\eslint-nullish-coalescing\bin\eslint.js" %*
+) ELSE (
+  @SETLOCAL
+  @SET PATHEXT=%PATHEXT:;.JS;=;%
+  node  "%~dp0\..\eslint-nullish-coalescing\bin\eslint.js" %*
+)
+Из-за этого eslint не смог найти нужные плагины для своей работы, отсюда и ошибка ?.
+
+Хотя OP не использует пакет eslint-nullish-coalescing, но я бы посоветовал проверить содержимое файла node_modules\.bin\eslint.cmd, если кто-то сейчас сталкивается с этой проблемой.
+
+ 25.05.2020 18:13
+мое решение на Mac было похоже на
+
+перейти к глобальным node_modules cd /usr/local/lib/node_modules/
+удалить глобальный эслинт rm -rf eslint
+запустите команду еще раз eslint index.js app storybook test --fix --ext .js,.ts,.tsx
+выгода
+ 04.12.2020 08:18
+Для всех будущих читателей, которые могут столкнуться с этой проблемой, в моем случае я работал с многоэтапной сборкой Docker на основе образа node:alpine. Многоэтапная сборка должна была разделить dependencies приложения и devDependencies (в package.json).
+
+В какой-то момент при создании моего Dockerfile, который претерпел немало изменений в течение нескольких часов, я добавил следующую строку в начало моего Dockerfile:
+
+ENV NODE_ENV production 
+Это приводит к тому, что npm игнорирует пакеты devDependencies, что, в свою очередь, приводит к сбою ESLint (поскольку он не установлен).
+
+Я переместил объявление переменной среды на финальную (выпускную) стадию сборки, где я изначально этого хотел, а затем npm установил все необходимые пакеты, и ESLint успешно запустился.
+
+Надеюсь, это сэкономит кому-то драгоценное время.
+
+ 14.01.2021 16:14
+В моем случае в одном из родительских каталогов была еще одна папка node_modules.
+
+Перемещение каталога пакета в путь без другой папки node_modules в родительском дереве устранило ошибку.
+
+ 27.05.2021 07:18
+Я только что столкнулся с этой проблемой в большом монорепозитории, нашел два решения, которые исправили ее для нас:
+
+{
+  "scripts": {
+    "lint": "eslint src --resolve-plugins-relative-to ."
+  }
+}
+Если вы используете рабочее пространство пряжи, yarn run также может помочь:
+
+{
+  "scripts": {
+    "lint": "yarn run eslint src"
+  }
+}
+ 02.07.2021 04:15
+Проблемы могут вызвать это:
+
+Устаревший ESLint.
+ESLint установлен глобально и локально одновременно. Решение.
+Отсутствует .eslintrc файл конфигурации из папки проекта. Решение: npx eslint --init
+Дополнительная папка node_modules в родительской папке проекта вне вашего проекта.
+Дополнительный .eslintrc в родительской папке проекта вне вашего проекта.
+Неправильная конфигурация пакета. Подробнее.
+ 02.07.2021 19:19
+Не уверен, что это все еще не решено. Но мне помогло добавление «root»: true в мой .eslintrc.json.
+
+Что такое «рут» и почему он может вам помочь прочитать — eslint.org/docs/user-guide/configuring/…
+
+— 
+MrDywar
+ 10.08.2021 14:42
+Спасибо, @MrDywar! Это очень полезная информация!
+
+— 
+patriot10
+ 17.08.2021 08:40
+
+
+Formik, да, проверка надежности пароля с помощью React
+Вопросы
+JAVASCRIPT
+Formik, да, проверка надежности пароля с помощью React
+Я новичок в React, и у меня есть страница регистрации, где у меня есть поле пароля для проверки с помощью регулярного выражения.
+
+Я использую Formik и Yup для проверки, но я столкнулся с ошибкой, в которой говорится, что свойство, в котором вызывается функция длины, не определено, когда я ввожу поле «пароль».
+
+В yup есть функция под названием «matches», которую я пытаюсь использовать для проверки регулярного выражения. Вот когда я получаю эту ошибку. Я удалил эту проверку, после чего другие проверки, установленные в поле пароля, работали нормально.
+
+Ниже приведен код файла SignUp.js:
+
+import React from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./SignUp.css";
+import * as yup from "yup";
+import { Formik } from "formik";
+
+const schema = yup.object({
+  username: yup.string().required('Please Enter a username'),
+  email: yup
+    .string()
+    .email()
+    .required('Please Enter your Email'),
+  confirmEmail: yup
+    .string()
+    .email()
+    .required()
+    .oneOf([yup.ref("email"), null], "Emails must match"),
+  password: yup
+    .string()
+    .required('Please Enter your password')
+    .matches(
+      "^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$",
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    ),
+  confirmPassword: yup
+    .string()
+    .required()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+});
+
+const SignUp = props => {
+  return (
+    <Formik
+    validationSchema = {schema}
+    onSubmit = {console.info}
+    initialValues = {{
+      username: "",
+      email : "",
+      confirmEmail : "",
+      password: "",
+      confirmPassword : ""
+    }}
+  >
+  {({
+    handleSubmit,
+    handleChangeEvent,
+    handleBlur,
+    values,
+    touched,
+    isValid,
+    errors,
+  }) => (
+    <div className = "SignUpForm">
+      <h1 className = "SignInHeading">SIGN UP</h1>
+      <Form noValidate onSubmit = {handleSubmit}>
+        <Form.Group controlId = "formBasicUserName">
+          <Form.Control
+            size = "lg"
+            className = "SignUpFormControls"
+            type = "text"
+            name = "username"
+            value = {values.username}
+            onChange = {handleChangeEvent}
+            placeholder = "Username"
+            isInvalid = {!!errors.username}
+          />
+          <Form.Control.Feedback className = "FeedBack" type = "invalid">
+          {errors.username}
+        </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group controlId = "formBasicEmail">
+          <Form.Control
+            type = "email"
+            placeholder = "Email"
+            value = {values.email}
+            onChange = {handleChangeEvent}
+            name = "email"
+            className = "SignUpFormControls"
+            size = "lg"
+            isInvalid = {!!errors.email}
+          />
+          <Form.Control.Feedback className = "FeedBack" type = "invalid">
+          {errors.email}
+        </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group controlId = "formBasicConfirmEmail">
+          <Form.Control
+            type = "email"
+            className = "SignUpFormControls"
+            size = "lg"
+            name = "confirmEmail"
+            value = {values.confirmEmail}
+            onChange = {handleChangeEvent}
+            placeholder = "Confirm Email"
+            isInvalid = {!!errors.confirmEmail}
+          />
+          <Form.Control.Feedback className = "FeedBack" type = "invalid">
+          {errors.confirmEmail}
+        </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group controlId = "formBasicPassword">
+          <Form.Control
+            className = "SignUpFormControls"
+            size = "lg"
+            type = "password"
+            name = "password"
+            value = {values.password}
+            onChange = {handleChangeEvent}
+            placeholder = "Password"
+            isInvalid = {!!errors.password}
+          />
+          <Form.Control.Feedback className = "FeedBack" type = "invalid">
+          {errors.password}
+        </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group controlId = "formBasicConfirmPassword">
+          <Form.Control
+            className = "SignUpFormControls"
+            size = "lg"
+            name = "confirmPassword"
+            onChange = {handleChangeEvent}
+            type = "password"
+            value = {values.confirmPassword}
+            placeholder = "Confirm Password"
+            isInvalid = {!!errors.confirmPassword}
+          /><Form.Control.Feedback className = "FeedBack" type = "invalid">
+          {errors.confirmPassword}
+        </Form.Control.Feedback>
+        </Form.Group>
+
+        <Button variant = "primary" className = "SignUpButton" type = "submit">
+          Sign Up
+        </Button>
+        <Form.Text>
+          Already a User?{" "}
+          <a href = "#signin" onClick = {props.toggle}>
+            Sign In
+          </a>
+        </Form.Text>
+      </Form>
+    </div>)}
+    </Formik>
+  );
+};
+
+export default SignUp;
+Вот ошибка в консоли хром: -
+
+formik.esm.js:721 Uncaught (in promise) TypeError: Cannot read property 'length' of undefined
+    at yupToFormErrors (formik.esm.js:721)
+    at formik.esm.js:276
+ 01.04.2019 10:54
+24
+4
+33 045
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Хорошо, после пары часов возни я решил вместо этого сделать свою собственную проверку.
+
+Вот что я сделал: -
+
+password: yup
+    .string()
+    .required("Please Enter your password")
+    .test(
+      "regex",
+      "Password must be min 8 characters, and have 1 Special Character, 1 Uppercase, 1 Number and 1 Lowercase",
+      val => {
+        let regExp = new RegExp(
+          "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+        );
+        console.info(regExp.test(val), regExp, val);
+        return regExp.test(val);
+      }
+    )
+На данный момент это работает нормально. Но мне очень хотелось бы знать, почему ошибка выскакивает. Пожалуйста, опубликуйте это как ответ, если вы сможете найти решение, и если оно сработает для меня, я отмечу его как правильный ответ. Спасибо.
+
+ 01.04.2019 15:02
+ Ответ принят как подходящий
+Вам нужно передать фактический объект RegExp в matches, а не строку. Просто замените двойные кавычки косой чертой в схеме пароля:
+
+Обновлено: обновлено для использования регулярного выражения от @Bren
+
+password: yup
+    .string()
+    .required('Please Enter your password')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+    ),
+ 10.04.2019 05:43
+Ничего из вышеперечисленного не работает для меня, мое решение здесь ниже
+
+  password: yup
+  .string()
+  .required("Şifreniz kayıt olmak için gereklidir.")
+  .matches(
+    /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+    "En Az 8 Karakter, Bir Büyük Harf, Bir Küçük Harf, Bir Rakam ve Bir Özel Karakter İçermelidir"
+  )
+ 17.01.2020 14:15
+Вот и я наконец-то взялся за дело.
+
+ password: Yup.string()
+          .required('Please Enter your password')
+          .matches(
+
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+          ),
+Я взял эту строку регулярного выражения из этой статьи: https://www.thepolyglotdeveloper.com/2015/05/use-regex-to-test-password-strength-in-javascript/
+
+ 02.02.2020 00:43
+Это сработало для меня:
+
+ password: yup
+    .string()
+    .required('Password is required')
+    .matches(regExp)
+    .min(6, 'Your password must be longer than 6 characters.')
+ 06.08.2020 10:29
+Наткнулся на это прошлой ночью, пытаясь решить аналогичную проблему проверки пароля React + Formik + Yup. В целом, решения здесь хорошие. Я только комментирую, чтобы предложить немного другое регулярное выражение:
+
+/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/
+Это отличается от четвертого просмотра вперед. В этой версии он ищет что-нибудь, который не является буквой или цифрой. Все предыдущие RE ограничивали определение «специального символа» примерно 8 конкретными символами. Это будет соответствовать более широкому диапазону.
+
+Сначала я использовал (?=.*[^\w]), который отрицает класс «слово» (\w), но этот класс включает в себя подчеркивание. Таким образом, подчеркивание не будет считаться специальным символом.
+
+ 03.01.2021 23:29
+Когда я искал этот ответ, большинство ответов (даже ответ, отмеченный как правильный ответ в этой теме), которые я нашел в Интернете, были такими, что не проверялись символы верхнего регистра:
+
+password: yup
+    .string()
+    .required('Please Enter your password')
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    ),
+Но для меня это на самом деле не проверяет, есть ли символы верхнего и нижнего регистра. Это действительно сработало для меня (проверки на наличие специального символа, символа верхнего регистра, символа нижнего регистра и числа):
+
+password: yup
+    .string()
+    .required('Please Enter your password')
+    .matches(
+     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    ),
+ 19.03.2021 09:07
+Что ж, учитывая все ответы выше и после некоторых исследований, комплексный подход может заключаться в проверке надежности пароля:
+
+password: Yup
+    .string()
+    .required('Required')
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+    "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+  )
+Однако этот подход не работает для всех специальных символов. Если вы хотите включить все возможные специальные символы, перечисленные в здесь. Это решение может быть изменено на:
+
+password: Yup
+    .string()
+    .required('Required')
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/,
+    "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+  )
+Это было решение, которое я использовал в своем приложении. Но это полностью ваш выбор, какие специальные символы вы хотите включить или исключить из проверки надежности пароля.
+
+ 15.07.2021 08:07
+yup.addMethod(yup.string, "strongPassword", strongPasswordMethod);
+
+function strongPasswordMethod() {
+    return this.test("strongPasswordTest", _, function (value) {
+        const { path, createError } = this;
+        switch (Boolean(value)) {
+            case !/^(?=.*[a-z])/.test(value):
+                return createError({ path, message: "password must include lowercase letter" });
+            case !/^(?=.*[A-Z])/.test(value):
+                return createError({ path, message: "password must include uppercase letter" });
+            case !/^(?=.*[0-9])/.test(value):
+                return createError({ path, message: "password must include digit" });
+            case !/^(?=.*[!@#\$%\^&\*])/.test(value):
+                return createError({ path, message: "password must include special character" });
+            default:
+                return true;
+        }
+    });
+};
+
+const schema = yup.object().shape({
+    password: yup.string().required().strongPassword()
+});
+Ваш ответ может быть улучшен с помощью дополнительной вспомогательной информации. Пожалуйста, редактировать, чтобы добавить дополнительную информацию, например цитаты или документацию, чтобы другие могли подтвердить правильность вашего ответа. Дополнительную информацию о том, как писать хорошие ответы, можно найти в справочном центре.
+
+— 
+Community
+ 11.11.2021 15:22
+
+
+Почему onSelectionChange вызывается дважды?
+Вопросы
+ANGULAR
+Почему onSelectionChange вызывается дважды?
+Я использую автозаполнение углового материала следующим образом:
+
+<mat-autocomplete #autocomplete = "matAutocomplete" [displayWith] = "displayFn" autoActiveFirstOption>
+  <mat-option *ngFor = "let option of filteredOptions$ | async" [value] = "option" (onSelectionChange) = "onSelectionChanged(option)" >
+    {{displayFn(option)}}
+  </mat-option>
+</mat-autocomplete>    
+Это обработчик:
+
+onSelectionChanged(option) {
+  console.info('Selected ' + option.name);
+}
+По какой-то причине onSelectionChanged() вызывается дважды. Второй раз со значением Старый! Я не понимаю почему. Что здесь происходит?
+
+При выборе элемента 1, затем элемента 2, а затем элемента 3 будет напечатано:
+
+> Selected item 1
+> Selected item 2
+> Selected item 1  // The unwanted call with the old value
+> Selected item 3
+> Selected item 2  // The unwanted call with the old value
+ 26.10.2018 15:37
+22
+0
+13 984
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+у материала есть optionSelected событие, вы можете его использовать
+
+<mat-autocomplete #autocomplete = "matAutocomplete" (optionSelected) = "onSelectionChanged($event)" [displayWith] = "displayFn" autoActiveFirstOption>
+ <mat-option *ngFor = "let option of filteredOptions$ | async" [value] = "option" >
+    {{displayFn(option)}}
+ </mat-option>
+</mat-autocomplete>  
+и получить свою ценность таким образом
+
+onSelectionChanged(event) {
+   console.info(event.option.value);
+}
+ 26.10.2018 15:42
+Как отмечено в Эта проблема, это ожидаемое поведение onSelectionChanged. Событие изменения выбора запускается не только при выборе параметра, но и при его отмене. Поэтому, когда опция выбрана, событие запускается для нее, а также для любой опции, которая не выбрана.
+
+Попробуйте вместо этого использовать optionSelected.
+
+ 26.10.2018 15:44
+Вы также можете использовать (изменить) событие
+
+<mat-autocomplete #autocomplete = "matAutocomplete" [displayWith] = "displayFn" autoActiveFirstOption>
+  <mat-option *ngFor = "let option of filteredOptions$ | async" [value] = "option" (change) = "onSelectionChanged(option)" >
+    {{displayFn(option)}}
+  </mat-option>
+</mat-autocomplete>  
+ 26.10.2018 15:50
+Вы можете проверить, было ли событие инициировано пользователем, следующим образом:
+
+//.html 
+ <mat-option *ngFor = "let option of filteredOptions$ | async" [value] = "option" (onSelectionChange) = "onSelectionChanged($event)" >
+
+
+//.ts
+onSelectionChanged(option) {
+   if (option.isUserInput==true){
+      console.info('Selected ' + option.name);
+   }
+}
+ 03.10.2019 13:20
+Я столкнулся с той же проблемой для мат-вариант внутри mat-select и исправил это следующим образом:
+
+Шаблон
+
+<mat-select>
+ <mat-option (onSelectionChange) = "handleMetaSignalChange(metaSignal.name,$event);" *ngFor = "let metaSignal of metaSignals" [value] = "metaSignal">
+  {{ metaSignal.name }}
+ </mat-option>
+</mat-select>
+Код
+
+ handleMetaSignalChange(metaSignal: string, event: any) {
+    if (event.isUserInput) {    // ignore on deselection of the previous option
+      console.info('Meta Signal Changed to ' + metaSignal + event.isUserInput);
+    }
+ }
+ 27.11.2019 09:17
+changeDegree(event) {
+    if (event.isUserInput) { 
+      console.info(event.source.value);
+
+      this._degreeArray.length = 0;
+      this.changeDegreeDetails(event.source.value.id);
+    }
+  }
+ 22.04.2020 19:35
+Вы можете исправить это следующим образом:
+
+Материальный путь:
+
+<mat-select [(ngModel)] = "selectedLanguage" (ngModelChange) = "onLangChange($event)">
+                                            <mat-option *ngFor = "let language of languages" [value] = "language">
+                                                {{language}}
+                                            </mat-option>
+                                        </mat-select>    
+Традиционный способ:
+
+   <select [(ngModel)] = "status" (ngModelChange) = "onChangeStatus($event)"
+                                                [ngModelOptions] = "{standalone: true}"
+                                                class = "form-control custom-select" id = "status">
+                                                <option i18n value = "All" selected>Statut</option>
+                                                <option i18n value = "Yes">Visible</option>
+                                                <option i18n value = "No">Non Visible</option>
+                                            </select>    
+В вашем файле компонента ts:
+
+onChangeStatus(event) {
+    if (event === "All") {
+      this.status = ...
+    }
+    else
+     ...
+}
+ 19.11.2020 12:09
+Просто использовал (щелкните) вместо этого. Взглянем:
+
+  <mat-autocomplete #auto = "matAutocomplete">
+    <mat-option
+      (click) = "selected(entity)"
+      *ngFor = "let entity of filteredOptions"
+      [value] = "entity.short"
+    >
+      {{ entity.short_header}}
+    </mat-option>
+  </mat-autocomplete>
+Обновлено: это не сработает, если вы используете клавиатуру для выбора опции. Таким образом, в качестве альтернативы, поскольку вы уже используете [displayWith], значением будет объект. и вы можете использовать вывод (optionSelected) в элементе mat-autocomplete:
+
+<mat-autocomplete (optionSelected) = "optionSelected($event)" 
+#auto = "matAutocomplete" [displayWith] = "displayEntity">
+    <mat-option *ngFor = "let e of filteredEntities$ | async" [value] = "e">
+        {{ e.short_header }}
+    </mat-option>
+</mat-autocomplete>
+ 09.04.2021 08:11
+Если вам нужно получить весь ОБЪЕКТ и использовать его дочерние значения в компоненте:
+
+1- Отправьте объект и $ событие из DOM в component.ts.
+
+<!-- Printing out the country name and flag only -->
+
+ <mat-autocomplete #auto = "matAutocomplete">
+   <mat-option 
+      *ngFor = "let country of filteredCountries$ | async" 
+      [value] = "country.name"
+      (onSelectionChange) = "getSelectedCountry(country, $event)">
+      <img class = "example-option-img" aria-hidden [src] = "country.flag" height = "25">
+      <span>{{country.name}}</span>
+   </mat-option>
+ </mat-autocomplete>
+2- Теперь обновите свои значения в component.ts
+
+getSelectedCountry(country: ICountry, event: any): void {
+   if (event.isUserInput) {    // ignore on deselection of the previous option
+     console.info("Selected country name: ", country.name);
+     console.info("Selected country code: ", country.code);
+     console.info("Selected country flag link: ", country.flag);
+}
+Примечание. ICountry - это интерфейс моей страны, который не требуется.
+
+
+Как инициализировать объект в TypeScript
+Вопросы
+TYPESCRIPT
+Как инициализировать объект в TypeScript
+У меня простой модельный класс
+
+export interface Category {
+
+  name: string;
+  description: string;
+
+}
+Мне нужно объявить и инициализировать переменную в угловом компоненте. Пытался:
+
+category: Category = {};
+Ошибка: {} нельзя присвоить категории
+
+category: Category = new Category();
+ошибка: Категория относится к типу, но упоминается как значение ..
+
+Какие-либо предложения?
+
+ 02.10.2018 22:48
+61
+0
+116 414
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Есть несколько способов решить эту проблему, в зависимости от желаемого результата.
+
+Способ 1: конвертируйте ваш interface в class
+export class Category {
+  name: string;
+  description: string;
+}
+const category: Category = new Category();
+Способ 2: Расширьте свой interface как class
+export class CategoryObject implements Category {
+}
+const category: Category = new CategoryObject();
+Способ 3: полностью указать ваш объект, соответствующий interface
+const category: Category = {
+  name: 'My Category',
+  description: 'My Description',
+};
+Способ 4. Сделайте свойства необязательными
+export interface Category {
+  name?: string;
+  description?: string;
+}
+
+const category: Category = {};
+Способ 5: Измените тип вашей переменной, чтобы использовать Partial<T>
+export interface Category {
+  name: string;
+  description: string;
+}
+
+const category: Partial<Category> = {};
+ 02.10.2018 22:50
+В Typescript, если вы хотите использовать инициализатор объекта, вам необходимо определить все свойства в классе.
+
+let category: Category = {
+    name: '',
+    description: ''
+};
+Таким образом, ваша модель может оставаться интерфейсом.
+
+ 02.10.2018 22:53
+Если вы не хотите менять определение с interface на class, вы также можете сделать:
+
+let category = <Category>{ };
+В противном случае вы можете последовать другим ответам и изменить свой Category на класс.
+
+редактировать: согласно комментарию ruffin ниже, если интерфейс
+
+export interface ITiered { one: { two: { three: function (x) {...} } } } 
+и вы попробуете let x = {} as ITiered, тогда у вас будет ошибка, когда вы вызовете что-то вроде x.one.two.three()
+
+ 02.10.2018 23:03
+Литерал вашего объекта должен соответствовать интерфейсу. Поскольку ваш интерфейс имеет два обязательных свойства (name и description), они оба должны быть объявлены при создании экземпляра объекта.
+
+const category: Category = {
+    name: 'foo',
+    description: 'bar'
+};
+Если вы не можете построить весь объект заранее, вы можете использовать встроенный тип Partial для создания объекта.
+
+const builder: Partial<Category> = {};
+builder.name = 'foo';
+builder.description = 'bar';
+
+const category: Category = builder as Category;
+ 02.10.2018 23:13
+interface Person{
+    id: number; 
+    name: string;
+}
+
+let x: Person = {
+    id : 0,
+    name :"JOHN"
+};
+
+alert(x.name);
+ 16.11.2018 13:38
+Как класс C#:
+
+export class Category {
+    category: number = null;
+    description: string = null;
+    name: string = null;
+
+  public constructor(init?: Partial<Category>) {
+        Object.assign(this, init);
+}
+}
+Теперь, когда вы создаете новый экземпляр, все имена полей становятся доступными и пустыми.
+
+ const instance_of_category: Category = new Category();
+теперь у вас есть объект класса emty со всеми полями, определенными как C#:
+
+instance_of_category{
+    "category": null,
+    "description": null,
+    "name": null
+}
+ 31.01.2020 12:44
+Если у вас уже есть класс, и вы хотите создать новый экземпляр и одновременно инициализировать свойства, вы можете попробовать это
+
+return Object.assign(new Person(), {
+    name:"Your Name"
+});
+ 08.05.2020 20:02
+Вы также можете использовать тип Record.
+
+{
+    category: Record<string, string>;
+}
+ 07.06.2020 12:22
+export interface Category {
+  name: string;
+  description: string;
+}
+
+
+category = {} as Category ;
+Обновлено: хотел добавить комментарий ниже в ответ, чтобы люди знали, почему мой ответ неправильный. Я предполагал, что вы всегда будете назначать сразу после этого, но это не лучшее предположение.
+
+now you have an object in your system that is assumed to be of some type, but with some required properties missing. this is just bad advice causing errors somewhere down the line.
+
+теперь у вас есть объект в вашей системе, который, как предполагается, относится к определенному типу, но некоторые требуемые свойства отсутствуют. это просто плохой совет, вызывающий ошибки где-то в будущем.
+
+— 
+chpio
+ 04.01.2021 16:31
+
+
+Как я могу удалить повторяющиеся элементы между двумя массивами в angular?
+Вопросы
+JAVASCRIPT
+Как я могу удалить повторяющиеся элементы между двумя массивами в angular?
+Скажи, что у меня есть
+
+arr1 = ["Tom","Harry","Patrick"]
+
+arr2 = ["Miguel","Harry","Patrick","Felipe","Mario","Tom"]
+Как удалить повторяющиеся элементы в массивах?
+
+Я хочу этот результат
+
+arr2 = ["Miguel","Felipe","Mario"]
+ 06.09.2018 00:26
+2
+3
+2 224
+9
+ Ответы 9
+Используя обычный js, вы можете использовать вложенный цикл for:
+
+for (var i in arr2) {
+  var duplicate = false;
+  for (var i2 in arr1) {
+    if (arr2[i] == arr1.[i2]) {
+      duplicate = true;
+    }
+  }
+  if (duplicate) {
+    arr2.splice(i, 1);
+  }
+}
+ 06.09.2018 00:31
+Я думаю, вам следует сохранить карту и добавлять на нее элементы.
+
+if element exists in map, then that is duplicate else add it to map.
+Вы можете хранить дубликаты в другом списке. Это зависит от вас.
+
+Как только вы узнаете свои дубликаты, продублируйте их из списка.
+
+Это O (n) сложность и O (n) пространственная сложность.
+
+ 06.09.2018 00:39
+Используйте filter в сочетании с includes. Пример:
+
+let arr1 = ["Tom","Harry","Patrick"]
+let arr2 = ["Miguel","Harry","Patrick","Felipe","Mario","Tom"]
+arr2 = arr2.filter(x=>!arr1.includes(x))
+console.info(arr2)
+ 06.09.2018 00:42
+Если у вас есть lodash, вы можете напрямую использовать функцию разница.
+
+_.difference(arr2, arr1) выдаст требуемый результат.
+
+Обновлено: JSFiddle URL: https://jsfiddle.net/k3ynjq1m/3/
+
+ 06.09.2018 00:44
+Я думаю, что лучше всего будет использовать метод массива filter(), перебирать целевой массив (в данном случае это arr2) и исключать дубликаты через !arr1.includes(currentItem). Эта конструкция позволяет узнать, содержит ли arr1 текущий элемент итерации:
+
+const arr1 = ["Tom","Harry","Patrick"];
+const arr2 = ["Miguel","Harry","Patrick","Felipe","Mario","Tom"];
+
+const result = arr2.filter(d => !arr1.includes(d));
+console.info(result);
+ 06.09.2018 00:44
+for(var i = 0 ; i<this.arr1.length; i++) {
+    for(var j = 0 ; j<this.arr2.length; j++) {
+        if (this.arr1[i] === this.arr2[j]) {
+            this.arr1.splice(i, 1);
+            this.arr2.splice(j, 1);
+                i--;
+                j--;
+        }
+    }
+}    
+this.arr2 = this.arr1.concat(this.arr2);
+console.info(this.arr2)
+вот рабочий код (ваш пример): https://stackblitz.com/edit/angular-yzte87
+
+ 06.09.2018 00:48
+На мой взгляд, есть несколько способов добиться того, что вы ищете,
+
+Использование filter и include, как некоторые из упомянутых выше меня - Это будет работать, но я не знаю, насколько это будет эффективно, поскольку вы используете фильтр для итерации на arr2, а затем для каждого элемента, который вы повторяете на arr1, чтобы увидеть, есть ли соответствующий случай, я не знаю, насколько вы знакомы с алгоритмом анализ, но это O (N степень 2), который не очень эффективен по времени, означает, что быстро, поскольку arr1 или arr2 будет расти, для вашей функции потребуется гораздо больше времени, если вы все же выберете эту опцию, сначала используйте sort(), чтобы вы могли сэкономить время и быть более эффективными .
+См. Пример:
+
+  let namesToRemove = ["Tom", "Harry", "Patrick"].sort()
+  let names = ["Miguel", "Harry", "Patrick", "Felipe", "Mario", "Tom"].sort()
+
+  let lastNameToRemove = namesToRemove[namesToRemove.length - 1]
+
+  names = names.filter((name) => {
+    if (name[0] > lastNameToRemove[0]) {
+      return true
+    }
+
+    return !namesToRemove.includes(name)
+  })
+
+  console.info(names)
+Имейте в виду, что если вы будете использовать for loop и splice(), вы можете просто сломать, и это будет еще эффективнее.
+
+Использование Map - вы можете выполнить итерацию один раз в своем первом массиве и создать карту в JS, которая просто использует нотацию объекта, и один раз в массиве имен и проверить, есть ли совпадение, вы можете улучшить это, используя sort() и другие улучшения, но идея см. ниже пример.
+См. Пример:
+
+  let namesToRemove = ["Tom", "Harry", "Patrick"]
+  let names = ["Miguel", "Harry", "Patrick", "Felipe", "Mario", "Tom"]
+
+  let namesToRemoveMap = {}
+
+  for (name of namesToRemove) {
+    namesToRemoveMap[name] = true
+  }
+
+  names = names.filter((name) => !namesToRemoveMap[name])
+
+  console.info(names)
+Конечно, в любом случае, я бы включил еще несколько защитных проверок, например, если массивы имеют в них значение и т. д.
+
+Надеюсь, я смогу объяснить себя ясно, дайте мне знать, если вам понадобится дополнительная помощь или у вас есть какие-либо вопросы.
+
+ 06.09.2018 01:59
+Использование includes() лучше, потому что возвращает истину или ложь, но, к сожалению, не поддерживается IE, см. это. Если вы хотите, чтобы это работало и в IE, вам следует использовать индекс чего-либо().
+
+var arr1 = ["Tom","Harry","Patrick"]
+
+var arr2 = ["Miguel","Harry","Patrick","Felipe","Mario","Tom"]
+
+arr2 = arr2.filter(e=>arr1.indexOf(e)<0)
+
+console.info(arr2)
+И фильтр лучше, потому что:
+
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+ 06.09.2018 02:01
+Итак, вы хотите удалить элементы из массива (если они существуют) на основе другого массива. Хорошо, давайте посмотрим ... У меня есть компонент, реализующий функцию с похожей логикой:
+
+let criteriaArr = ["Tom", "Harry", "Patrick"];
+let arrToFilter = ["Miguel","Harry","Patrick","Felipe","Mario","Tom"];
+
+let filteredArray = arrToFilter.filter(e => criteriaArr.indexOf(e) < 0);
+
+console.info(filteredArray);
+Итак, что делает фильтр: Возвращает элементы массива, которые соответствуют условию, указанному в функции обратного вызова.
+
+то, что делает функция обратного вызова: для каждого элемента из arrToFilter, если этот элемент не выходит в критерияхArr тогда оставь это, в противном случае перейти к следующему элементу.
+
+Вот функция:
+
+removeElems(arrToFilter: Array<any>): Array<any> {
+  let filteredArray = arrToFilter.filter(e => this._criteriaArr.indexOf(e) < 0);
+  return filteredArray;
+}
+this._criteriaArr - это частное свойство со значением по умолчанию: private _criteriaArr = ["Tom","Harry","Patrick"].
+
+Или вы можете сделать это так:
+
+removeElems(arrToFilter: Array<any>, criteriaArr: Array<any>): Array<any> {
+  let filteredArray = arrToFilter.filter(e => criteriaArr.indexOf(e) < 0);
+  return filteredArray;
+}
+обрабатывать его с помощью двух массивов.
+
+веселиться ! :)
+
+
+Angular 6 Сортировка массива объектов по дате
+Вопросы
+JAVASCRIPT
+Angular 6 Сортировка массива объектов по дате
+Я пытаюсь отсортировать объект массива по дате для моего приложения Angular 6. Данные имеют строковый формат. Интересно, есть ли существующий модуль для выполнения сортировки в Angular, или нам нужно создать функцию сортировки в Typescript.
+
+Угловой шаблон
+
+<app-item *ngFor = "let item of someArray"></app-item>
+Массив
+
+[
+  {
+    CREATE_TS: "2018-08-15 17:17:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  },
+  {
+    CREATE_TS: "2018-08-15 17:25:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  },
+  {
+    CREATE_TS: "2018-08-15 17:28:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  }
+]
+ 16.08.2018 00:39
+21
+0
+87 148
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Просматривая документы, похоже, нет никакой встроенной сортировки массивов. Однако вы можете сделать это в своем шаблоне:
+
+<app-item *ngFor = "let item of someArray.sort(sortFunc)"></app-item>
+А затем в вашем файле component.ts определите функцию, потому что вы не можете определять функции в своем шаблоне:
+
+sortFunc (a, b) {
+  return a.CREATE_TS - b.CREATE_TS
+}
+Обновлено: Саймон К. указал, что строковый формат позволяет проводить прямое сравнение без принуждения к дате, а затем к числу. Мое исходное уравнение (для сценариев, когда ваша строка даты не так удобна):
+
+return new Date(a.CREATE_TS).getTime() - new Date(b.CREATE_TS).getTime()
+ 16.08.2018 00:43
+вы можете использовать функцию sort для массивов, она принимает функцию сравнения. Разберите строку даты в объект даты и отсортируйте по ней.
+
+узнать больше о здесь
+
+var myArr = [
+
+
+{
+    CREATE_TS: "2018-08-15 17:17:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  },
+  {
+    CREATE_TS: "2018-08-15 17:25:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  },
+  {
+    CREATE_TS: "2018-08-15 17:28:30.0",
+    Key1: "Val1",
+    Key2: "Val2",
+  }
+]
+myArr.sort((val)=> {return new Date(val.CREATE_TS)})
+по возрастанию
+
+myArr.sort((val1, val2)=> {return new Date(val1.CREATE_TS) - new 
+Date(val2.CREATE_TS)})
+По убыванию
+
+myArr.sort((val1, val2)=> {return new Date(val2.CREATE_TS) - new 
+Date(val1.CREATE_TS)})
+ 16.08.2018 01:03
+ Ответ принят как подходящий
+в дополнение к загадочному ответу вы, вероятно, захотите обернуть отсортированные значения в аксессоре для включения в шаблон, добавив геттер в свой класс машинописного текста:
+
+public get sortedArray(): YourItemType[] {
+    return this.myArr.sort(...);
+}
+и в шаблоне:
+
+<app-item *ngFor = "let item of sortedArray"></app-item>
+в качестве альтернативы вы можете отсортировать массив по мере его поступления в класс компонента и сохранить отсортированную версию там, однако шаблон доступа может быть весьма полезен для динамической сортировки.
+
+ 16.08.2018 01:21
+Вы можете использовать Array.sort для сортировки данных.
+
+Я создал демо на Stackblitz. Я надеюсь, что это поможет / направит вас / других.
+
+component.ts
+
+  data = [
+    {
+      CREATE_TS: "2018-08-15 17:17:30.0",
+      Key1: "Val1",
+      Key2: "Val2",
+    },
+    {
+      CREATE_TS: "2018-08-15 17:25:30.0",
+      Key1: "Val1",
+      Key2: "Val2",
+    },
+    {
+      CREATE_TS: "2018-08-15 17:28:30.0",
+      Key1: "Val1",
+      Key2: "Val2",
+    }
+  ]
+
+  get sortData() {
+    return this.data.sort((a, b) => {
+      return <any>new Date(b.CREATE_TS) - <any>new Date(a.CREATE_TS);
+    });
+  }
+component.html
+
+<div *ngFor = "let item of sortData">
+  {{item.Key1}} -- {{item.CREATE_TS}} 
+</div>
+ 16.08.2018 08:39
+Используя этот метод в Typescript, вы можете легко отсортировать значения даты в любом порядке. Вы также можете отсортировать любые другие типы данных, например числа или строки, просто удалив методы new Date () и getTime.
+
+this.data.sort((a, b) => new Date(b.CREATE_TS).getTime() - new Date(a.CREATE_TS).getTime());
+ 28.02.2019 10:48
+Для недавних первых:
+
+this.data.sort((a, b) => new Date(b.date1).getTime() - new Date(a.date1).getTime());
+Для OlderFirst:
+
+this.data.sort((b, a) => new Date(b.date1).getTime() - new Date(a.date1).getTime());
+ 16.06.2019 05:09
+Сначала вы должны проанализировать даты в миллисекундах, а затем выполнить сортировку, чтобы избежать "левая часть арифметической операции должна иметь тип 'any', 'number', 'bigint' или тип перечисления" ошибка машинописного текста когда вы возвращаете новую дату (a.CREATE_TS) - новую дату (b.CREATE_TS):
+
+someArray.sort((a: any, b: any) => { return Date.parse(a.CREATE_TS) - Date.parse(b.CREATE_TS) });
+ 01.04.2020 18:24
+С moment.js вы можете использовать
+
+const newArr = myArr.sort((a, b) => moment(b.date).unix() - moment(a.date).unix());
+ 04.08.2020 20:18
+data.sort((a, b) => new Date(b.CREATE_TS).getTime() - new Date(a.CREATE_TS).getTime());
+Привет, добро пожаловать в SO, пожалуйста, попробуйте расширить свой ответ с некоторыми объяснениями
+
+— 
+Greedo
+ 06.07.2021 16:18
+Хотя этот код может ответить на вопрос, предоставление дополнительного контекста относительно того, почему и / или как этот код отвечает на вопрос, улучшает его долгосрочную ценность.
+
+— 
+Connor Low
+ 08.07.2021 17:06
+
+
+Пути tsconfig не работают
+Вопросы
+TYPESCRIPT
+Пути tsconfig не работают
+Я пытаюсь сделать что-то очень похожее на пример пути jquery в документации, но TS продолжает бросать TS2307 (webpack компилируется нормально):
+
+"compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+        "@client": [
+            "client",
+        ],
+        "@suir": [
+            "../node_modules/semantic-ui-react/dist/commonjs", // not working
+        ],
+    },
+    // …
+},
+"include": [
+    "*.d.ts",
+    "client/**/*",
+    "../node_modules/semantic-ui-react", // is this necessary?
+],
+Замена baseUrl на "." и обновление includes и paths не имеет значения (@client продолжает работать, а @suir не работает).
+
+Замена "@suir" на "@suir/" или "@suir/*" (и добавление /* к его значению) также не имеет значения.
+
+Причина, по которой я делаю это, состоит в том, чтобы упростить мой импорт (я указываю их явно вместо того, чтобы извлекать именованные экспорты из пакета, чтобы уменьшить размер пакета поставщика - экономия около 1 МБ):
+
+import Button from 'semantic-ui-react/dist/commonjs/elements/Button'; // works
+
+import Button from '@suir/elements/Button'; // not found
+ 04.06.2018 12:58
+35
+1
+41 662
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Я понятия не имею, почему это сейчас работает в одиннадцатый раз, когда я пробовал (но не первые 10), но /*, похоже, является секретным соусом, а пример в документации, по-видимому, указывает на конкретный файл (и расширение файла опущено).
+
+{
+    "compilerOptions": {
+        "baseUrl": "./src", // setting a value for baseUrl is required
+        "moduleResolution": "node", // was not set before, but is the default
+        "paths": {
+            "@client/*": [
+                "client/*",
+            ],
+            "@suir/*": [ // notice the `/*` at the end
+                "../node_modules/semantic-ui-react/dist/commonjs/*", // notice the `/*`
+            ],
+        },
+        // …
+    },
+    "include": [
+        "./src/client/**/*",
+    ],
+}
+ 16.06.2018 16:43
+Это может кому-то помочь - если вы используете tsc или инструмент для компиляции кода TS в отдельную папку, такую ​​как dist, регистр tsconfig-paths не работает с НЕТ. У меня есть tsconfig.json вот так:
+
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["dom", "esnext"],
+        "baseUrl": ".",
+        "jsx": "react",
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "dist"
+        "rootDir": ".",
+        "paths": {
+            "shared/*": ["./shared/*"],
+        }
+    },
+    "include": ["./client/**/*", "./server/**/*"]
+}
+Вы можете видеть, что такой путь, как shared/someFolder/someScript, будет правильно разрешен в папку shared в моем проекте, что является более чистым средством загрузки, чем множество относительных путей ../../../../.
+
+Однако это вызывало ошибку:
+
+➜  game git:(game-dev) ✗ node --inspect -r tsconfig-paths/register dist/server/runProd.js
+Debugger listening on ws://127.0.0.1:9229/f69956aa-d8d6-4f39-8be1-9c3e8383d4be
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+internal/modules/cjs/loader.js:584
+    throw err;
+    ^
+
+Error: Cannot find module 'shared/types/UserTypes'
+Я немного покопался и обнаружил, что массив tryPaths, созданный tsconfig-paths, имеет абсолютные URL-адреса относительно базы project / cwd, а не папки сборки dist.
+
+inspect screengrab
+
+Оглядываясь назад, это кажется очевидным. Кажется, нет очевидного способа справиться с этим с помощью библиотеки, поэтому я решил это, скопировав tsconfig.json в папку dist и запустив node -r tsconfig-paths/register main.js.
+
+ 01.11.2019 22:23
+Даже если базовый URL установлен, проверьте, соответствует ли он значению по умолчанию "./" затем следует изменить на "src", только так у меня сработало.
+
+ 23.11.2020 14:15
+Как упоминалось в комментариях Эмили Чжай, иногда для этого может просто потребоваться перезапуск языкового сервера.
+
+В VSCode вы можете нажать Cmd/Ctrl + Shift + P и найти Typescript: Restart TS Server.
+
+После перезагрузки у меня все заработало.
+
+ 25.12.2020 09:12
+Если вы используете Webpack с ts-loader, и он все еще не работает после того, как попробовали все ответы, приведенные выше, вам может потребоваться использовать плагин в разделе разрешения вашего конфигурационного файла Webpack - tsconfig-paths-webpack-плагин; поэтому он следует путям, указанным вами в файле tsconfig.json при компиляции.
+
+Источник - https://github.com/TypeStrong/ts-loader#baseurl--paths-module-resolution
+
+ 08.01.2021 18:36
+Мол, сказал пкестикар, tsconfig-paths-webpack-плагин может с этим помочь. Сохраните его на devDependencies с yarn add --dev tsconfig-paths-webpack-plugin , добавьте следующую конфигурацию на next.config.js
+
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+
+module.exports = {
+  resolve: {
+    plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })]
+  }
+}
+Мои пути начали работать с этим. Вот мой tsconfig.json
+
+"compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"]
+    },
+}
+А вот и импорт компонента.
+
+import { Button } from '@/components/Button/Button'
+
+Он также работает только с import { Button } from 'components/Button/Button'.
+
+ 22.01.2021 16:07
+Я также боролся с .tsconfig, не распознающим мои псевдонимы (в то время как в другом проекте, который предполагал иметь конфигурацию сохранения, он работал отлично).
+
+Как оказалось, это была ошибка новичка: я поместил опору paths в конец объекта JSON, но это должно быть вложенное свойство части compilerOptions:
+
+// This does't work ❌
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+     //...
+    "baseUrl": ".",
+  },
+  "include": ["next-env.d.ts", "twin.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "paths": {
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"]
+    }
+}
+// This should work ✅
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+     //...
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "twin.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+}
+ 12.04.2021 07:28
+Из коробки не работает с tsc или ts-node. Но с некоторыми пакетами (tsc-alias и module-alias) это работает. Установка babel или webpack не требуется.
+
+// tsconfig.json
+
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": "./src",
+    "paths": {
+      "@common/*": ["common/*"],
+      "@services/*": ["services/*"],
+    },
+    ...
+  },
+}
+Работа с TSC
+Добавить tsc-alias (https://www.npmjs.com/package/tsc-alias) как зависимость разработчика
+
+yarn add --dev tsc-alias
+И добавьте его в свою команду сборки
+
+"build": "tsc && tsc-alias",
+Работа с TS-NODE
+Добавить зависимость модуль-псевдоним (https://www.npmjs.com/package/module-alias)
+
+yarn add module-alias
+Создайте файл со ссылкой на все псевдонимы
+
+// src/paths.ts
+
+import 'module-alias/register';
+import { addAliases } from 'module-alias';
+
+addAliases({
+  '@common': `${__dirname}/common`,
+  '@services': `${__dirname}/services`,
+});
+И импортируйте его в свой входной скрипт как первый импорт
+
+// src/server.ts
+
+import './paths';
+import express, { Request, Response, NextFunction } from 'express';
+...
+
+const app = express();
+...
+app.listen(port, onListen(port));
+ 23.04.2021 11:28
+Мне пришлось использовать babel для компиляции кода
+
+npm i -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver
+Затем в команде сборки
+
+"build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored"
+И babel.config.js
+
+module.exports = {
+presets: [
+    [
+        '@babel/preset-env',
+        {
+            targets: {
+                node: 'current'
+            }
+        }
+    ],
+    '@babel/preset-typescript'
+],
+plugins: [
+    ['module-resolver', {
+        alias: {
+            '@config': './src/config',
+            '@modules': './src/modules',
+            '@shared': './src/shared'
+        }
+    }]
+],
+ignore: [
+    '**/*.spec.ts'
+]
+}
+
+Компилятор Angular требует TypeScript> = 2.7.2 и <2.8.0, но вместо этого был найден 2.8.3
+Вопросы
+ANGULAR
+Компилятор Angular требует TypeScript> = 2.7.2 и <2.8.0, но вместо этого был найден 2.8.3
+Я начинаю получать эту ошибку в своем приложении Angular:
+
+The Angular Compiler requires TypeScript >=2.7.2 and <2.8.0 but 2.8.3 was found instead
+
+и когда я пытаюсь перейти на нужную версию машинописного текста, выполняю следующие действия:
+
+npm install -g typescript@2.7.2 говорит, что обновил 1 пакет.
+
+когда я проверяю версию машинописного текста, используя npm view typescript version У меня все еще остается 2.8.3
+
+Я даже пробовал полностью удалить машинописный текст с помощью npm uninstall -g typescript
+
+но когда я снова проверяю версию машинописного текста npm view typescript version у меня все еще получается 2.8.3
+
+Какие команды используются для правильной очистки и восстановления машинописного текста до предыдущей версии, например 2.7.2?
+
+Я использую node v10.0.0 и npm v6.0.1
+
+Когда я запускаю npm list -g typescript, я вижу, что идет правильная версия 2.7.2, но все же версия 2.8.3 установлена ​​как-то глобально.
+
+ 22.05.2018 09:47
+49
+2
+53 556
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+В папке вашего проекта снова запустите npm install typescript@2.7.2, как указано здесь:
+
+Хотите обновить проект с Angular v5 до Angular v6
+
+Тогда это должно сработать.
+
+ 22.05.2018 10:06
+Я сделал следующие шаги:
+
+удален package-lock.json;
+npm install -g --save typescript@2.7.2;
+npm uninstall -g --save typescript@2.9.2;
+в package.json, раздел "devDependencies" обновил строку с машинописным текстом как "typescript": "~ 2.7.2".
+После всего вышеперечисленного запустите в терминале проекта ng serve --open (я использовал IDEA 2018.1).
+
+ 17.06.2018 10:39
+Я сделал следующее:
+
+Удалите вручную папку node_modules
+Удалите вручную файл package-lock.json
+В файле package.json обязательно установите зависимость TypeScript как
+
+ "typescript": "2.7.2"
+запустите npm cache clean -f
+
+запустить npm install
+Это работает для меня.
+
+ 04.07.2018 23:29
+ Ответ принят как подходящий
+Вам стоит сделать npm install typescript@'>=2.7.2 <2.8.0'. Это установит правильный машинописный текст, который нужен вашему проекту. Убедитесь, что вы запустили это в своем проекте Angular.
+
+В Windows вы должны использовать двойные кавычки вместо одинарных, например:
+
+npm install typescript@">=2.7.2 <2.8.0"
+В противном случае вы получите The system cannot find the file specified..
+
+ 15.07.2018 00:31
+Установка «@ angular / compiler-cli»: «7.0.0-beta.4» решила эту проблему. Я использую «машинописный текст»: «3.0.3».
+
+ 03.09.2018 21:42
+Переход на typescript 2.9.2 (npm install typescript@2.9.2) и re-running ng update --all по-прежнему дает ошибку (дважды):
+
+Package "@angular/compiler-cli" has an incompatible peer dependency to "typescript" (requires ">=2.7.2 <2.10", would install "3.1.3"
+Verified that version 2.9.2 of typescript was in node_modules.
+ 07.12.2018 06:44
+Была такая же проблема (среди многих других) после обновления до macOS Mojave. Исправлено, удалив node_modules и package_lock.json вручную, изменив в package.json с "typescript": "~ 2.7.2" на "typescript": "~ 2.8.0" и запустив npm install.
+
+ 09.02.2019 13:05
+Для обновления выполните в терминале следующие команды.
+
+Установите последнюю версию NPM
+
+npm install npm@latest -g
+Провести аудит
+
+npm audit  
+Обновите NPM
+
+npm update
+Запустите сценарий запуска NPM.
+
+npm start
+Теперь ваш компилятор готов.
+
+ 20.02.2019 07:05
+Это просто потому, что в ваших проектах файл package.json имеет
+
+например, "devDependencies": {"typescript": "~2.8.3" }
+
+и на вашем компьютере, где установлен angular cli, есть версия "typescript": "2.7.2".
+
+Вы можете проверить это с помощью ng -v или ng v.
+
+Итак, просто откройте package.jsonобновите свою версию машинописного текста и run npm install, и все готово.
+
+
+ReactJS TS, свойство 'match' не существует для типа 'Readonly <{children?: ReactNode}> & Readonly <MyProps>'
+Вопросы
+REACTJS
+ReactJS TS, свойство 'match' не существует для типа 'Readonly <{children?: ReactNode}> & Readonly <MyProps>'
+Я пытаюсь ввести реквизиты своего компонента и одновременно использовать параметр URL. Я получаю следующую ошибку:
+
+Property 'match' does not exist on type 'Readonly<{children?:ReactNode}> & Readonly'
+
+Вот часть моего кода:
+
+import Api from '../../api/Api';
+
+interface MyProps {
+    api: Api
+}
+
+interface MyState {
+    someString: string,
+    loading: boolean
+}
+
+export class MyComponent extends React.Component<MyProps, MyState> {
+
+    constructor(props: MyProps) {
+        super(props);
+        this.state = {
+            someString: this.props.match.params.someString,//<-- Error is here on this line
+            loading: true
+        }
+    }
+
+    componentDidMount() {
+        this.props.api.getSomeInfo(this.state.someString, this.callback)
+    }
+
+    callback() {
+        let interval = setInterval(function () {
+            this.setState({loading: false});
+            clearInterval(interval)
+        }, 3000);
+    }
+
+    render() {
+        return (
+            <div>
+                <p>{this.someString}</p>
+            </div>
+        );
+    }
+}
+Как видите, все, что я пытаюсь сделать, это:
+
+1- Перейдите к:
+
+http://localhost:8080/someStrings/:someString
+
+2- Возьмите значение: someString в конструкторе моего компонента и сохраните в состоянии
+
+3- Используйте значение someString в моем состоянии, чтобы иметь возможность передать его в качестве аргумента моему модулю API для выполнения каких-либо действий.
+
+4- Когда обратный вызов выполняется в API, я удаляю анимацию загрузки.
+
+Мой вопрос в основном заключается в том, как я могу объявить, что мой MyProps сможет добиться этого?
+
+ 01.05.2018 15:05
+10
+1
+17 105
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Это открытый вопрос в определении типа. https://github.com/DefinitiTyped/DefinitiTyped/issues/17355
+
+Обходной путь
+import { RouteProps } from 'react-router';
+import React from 'react';
+
+interface MyProps {
+    api: Api
+}
+
+interface MyState {
+    someString: string,
+    loading: boolean
+}
+
+class MyComponent extends React.Component<Props & RouteProps, State> // Pay attention here.
+{
+  // your code...
+}
+ссылка: https://github.com/DefinitiTyped/DefinitiTyped/issues/17355#issuecomment-336022780
+
+ 11.05.2018 15:54
+У меня была аналогичная проблема, и это было связано с файлом App.test.jsx. Там уже был тестовый пример (ниже кода), о котором я полностью забыл, и ни один из реквизитов не использовался в этом сценарии тестового примера.
+
+Когда я представил реквизиты в тестовом примере, это сработало. Таким образом, естественный тест определенно указывал в правильном направлении, поскольку он пытался использовать несуществующий реквизит. Но после обновления тестового примера с моими реквизитами по умолчанию он работает.
+
+Надеюсь, это поможет.
+
+it('renders without crashing', () => { const div = document.createElement('div'); ReactDOM.render(<App **propName1 = {propwasnotinthetest} propName2 = {propwasnotinthetest}**/>, div); ReactDOM.unmountComponentAtNode(div); });
+
+ 17.08.2018 23:58
+Попробуйте добавить в свой реквизит интерфейс RouteComponentProps. Изменять:
+
+export class MyComponent extends React.Component<MyProps, MyState> {
+к
+
+export class MyComponent extends React.Component<MyProps & RouteComponentProps, MyState> {
+ 26.10.2018 10:48
+У меня возникла аналогичная проблема, и я обнаружил, что наименьшее исправление взлом типа - это локальное преобразование параметров как любые.
+
+someString: (this.props.match.params as any).someString
+ 05.08.2019 02:03
+RouteComponentProps должен помочь в машинопись
+
+import { RouteComponentProps } from 'react-router';
+
+export class Edit extends React.Component<MyProps & RouteComponentProps, MyState> {
+  constructor(props: MyProps & RouteComponentProps) {
+    super(props);
+
+    ...
+}
+...
+(this.props.match.params as any).someString
+ 15.09.2019 09:57
+Это мой сценарий для решения проблемы match, я думаю, вы можете кое-что позаимствовать отсюда.
+
+class MyComponent extends React.Component<Props, State> {
+  private params: any;
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      paramId: null
+    };
+  }
+
+  componentDidMount = () => {
+    this.getParams();
+  };
+
+  getParams = () => {
+    this.params = this.props;
+
+    this.setState({
+      paramId: this.params.match.params.id
+    });
+  };
+
+  render() {
+    const { paramId } = this.state;
+
+    return (
+      <React.Fragment></React.Fragment>
+    );
+  }
+}
+
+export default MyComponent;
+
+ 04.10.2019 13:59
+    import * as React from 'react';
+    import { RouteComponentProps } from 'react-router';
+
+    interface RouteComponetPath {
+        path?: string
+    }
+
+    interface ArticleContainerProps {
+        another: number
+    }
+
+    interface ArticleContainerState {
+        path?: string;
+    }
+
+    class ArticleContainer extends React.Component<ArticleContainerProps | RouteComponentProps<RouteComponetPath>, ArticleContainerState> {
+        constructor(props: ArticleContainerProps | RouteComponentProps<RouteComponetPath>) {
+            super(props);
+            this.state = {
+                path: (this.props as RouteComponentProps<RouteComponetPath>).match.params.path
+            };
+        }
+
+        componentDidMount() {
+            console.info("mount! Path is: ", this.state.path);
+        }
+
+        render() {
+            return (
+                <h1>This is a page with path {this.state.path} </h1>
+            )
+        }
+    }
+
+    export default ArticleContainer;
+Что на самом деле имеет смысл, поскольку у вас может быть один интерфейс для обработки путей и использования типа Union и Type Gueard в соответствии с документацией TS https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types
+
+Таким образом, никаких взломов и остается строго типизированным (нигде не используется).
+
+Теперь я не вижу смысла передавать и путь, и другой тип параметров, но вы знаете ... просто чтобы доказать, что это можно сделать.
+
+ 02.11.2019 17:31
+или потому что вы используете this.props.match, но не добавляете матч в интерфейс MyProps
+
+ 18.01.2020 11:41
+Вот как я это решил
+
+import {RouteComponentProps} from 'react-router';
+interface IMyProps {}
+
+interface IReactRouterParams {
+  roomName: string;
+  username: string;
+}
+export class MyComponent extends React.Component<
+  IMyProps & RouteComponentProps<IReactRouterParams> {
+ 
+  constructor(props: any) {
+    super(props);
+    //everything works here
+    const {roomName, username} = this.props.match.params;
+  }
+}
+
+Tslint сообщает, что вызовы console.info не разрешены. Как мне это разрешить?
+Вопросы
+REACTJS
+Tslint сообщает, что вызовы console.info не разрешены. Как мне это разрешить?
+Я только начал использовать приложение create-response-app с машинописным текстом
+
+create-react-app my-app --scripts-version=react-scripts-ts
+а конфигурация tslint.json по умолчанию не допускает console.info ().
+
+Как я могу (пока) включить console.info?
+
+Документация для этого находится в https://palantir.github.io/tslint/rules/no-console/. Но они не говорят, где поставить эту строчку:
+
+    "no-console": [true, "log", "error"]
+Я искал и нашел этот Синтаксис файла конфигурации tslint.json, поэтому попробовал это:
+
+"rules": {
+    "no-console": [true, "warning"]
+}
+В попытке получить сообщения журнала, которые были бы просто предупреждениями. Но это не сработало.
+
+Я закомментировал несколько строк console.info (), которые у меня есть, но я хочу иметь возможность сделать это в будущем.
+
+ 23.04.2018 23:54
+114
+0
+93 922
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Добавьте // tslint:disable-next-line:no-console в строку прямо перед вызовом console.info, чтобы предотвратить появление сообщения об ошибке только один раз.
+
+Если вы хотите полностью отключить правило, добавьте следующее на ваш tslint.json (скорее всего, в вашу корневую папку):
+
+{
+    "rules": {
+        "no-console": false
+    }
+}
+ 24.04.2018 00:02
+Согласно документам: https://eslint.org/docs/user-guide/getting-started#configuration
+
+"off" или 0 - выключить правило
+«warn» или 1 - включить правило как предупреждение (не влияет на код выхода)
+«ошибка» или 2 - включить правило как ошибку (код выхода будет 1)
+Кстати, ваша правильная настройка будет
+
+{
+  "rules": {
+    "no-console": false
+  }
+}
+ 04.06.2018 17:27
+Для тех из вас, кто пришел сюда со смешанной базой кода javascript и машинописного текста.
+
+Возможно, вам потребуется определить опцию 'no-console' в jsRules, объекте правил jslints для файлов javascript, т.е. существуют отдельные объекты правил для javascript и машинописного текста.
+
+//tslint.json
+
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"], //Example... 
+  "rules": {
+    "no-console": false //Disable for typescript
+  },
+  "jsRules": {
+    "no-console": false //Disable for javascript
+  }
+}
+ 03.09.2018 14:12
+Добавьте следующее к вашему tslint.json
+
+{
+   "rules": {
+      "no-console": {
+         "severity": "warning",
+      } 
+   }
+}
+ 20.01.2019 10:18
+Это правильный синтаксис для определения правила без консоли (или любого другого правила в этом отношении), но только с предупреждением, а не с ошибкой (очевидно, измените параметры на все, что хотите)
+
+"no-console": {
+    "severity": "warning",
+    "options": [
+        "log",
+        "error",
+        "debug",
+        "info",
+        "time",
+        "timeEnd",
+        "trace"
+    ]
+},
+ 17.03.2019 15:58
+в typeScript версии 3 обновите tslint.json в соответствии с ключевым правилом, как показано ниже:
+
+"no-console": [
+    true,
+    "debug",
+    "time",
+    "timeEnd",
+    "trace"
+],
+таким образом вы просто указываете debug, time, timeEnd, trace, которые не будут использоваться, если в вашем tslint по умолчанию "информация" есть в списке, просто удалите его.
+
+ 15.01.2020 16:32
+если // tslint:disable-next-line:no-console не работает, попробуйте // eslint:disable-next-line:no-console
+
+ 01.02.2020 17:31
+  {
+    "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts",
+            "coverage/lcov-report/*.js"
+        ]
+    },
+    "rules": {
+        "no-console": false
+    },
+    "jsRules": {
+        "no-console": false
+    }
+ }
+
+
+ 10.02.2020 15:51
+Я обрабатываю tslint правило "без консоли" для каждого файла, который, как я обнаружил, удобен и изолирован на этапе разработки.
+
+Как только мне нужно использовать первую console.info (); Visual Studio Code показывает возможность добавить:
+
+// tslint:disable-next-line: no-console
+
+console.info();
+
+Итак, здесь я просто удаляю «-next-line», и эта команда покрывает весь файл.
+
+// tslint:disable: no-console
+
+console.info();
+
+Я надеюсь, что в качестве альтернативы отключение этой функции для всего приложения поможет.
+
+РОН
+
+
+Команда не найдена в расширении VSCode
+Вопросы
+TYPESCRIPT
+Команда не найдена в расширении VSCode
+Я пытаюсь создать расширение VSCode. Это расширение предоставляет две команды, не говоря уже об их реализации:
+
+export function activate(context: ExtensionContext) {
+
+    const provider = new ContentProvider();
+    const providerRegistrations = Disposable.from(
+        workspace.registerTextDocumentContentProvider(ContentProvider.scheme, provider)
+    );
+
+    // Open the dynamic document, and shows it in the next editor
+    const openMyExtensionCommandRegistration = commands.registerTextEditorCommand('extension.openMyExtension', editor => {
+        // Activate the extension and do something
+    });
+
+    const useMyExtensionCommandRegistration = commands.registerTextEditorCommand('extension.useMyExtension', editor => {
+        // Do something
+    });
+
+    context.subscriptions.push(
+        provider,
+        openMyExtensionCommandRegistration,
+        useMyExtensionCommandRegistration,
+        providerRegistrations
+    );
+}
+А это часть моего файла package.json:
+
+"activationEvents": [
+        "onCommand:extension.openMyExtension"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.openMyExtension",
+                "title": "Open my extension",
+                "category": "MyExtension"
+            },
+            {
+                "command": "extension.useMyExtension",
+                "title": "Do something with my extension",
+                "category": "MyExtension"
+            }
+        ],
+Первая команда, которая должна активировать мое расширение, работает. Он отображается на палитре команд и фактически выполняет то, что должен делать при вызове.
+
+Однако вторая команда, несмотря на то, что она отображается в палитре команд, при вызове вызывает следующее сообщение об ошибке:
+
+command 'extension.useMyExtension' not found
+
+Мне кажется странным, что моя первая команда работает нормально, но не вторая, поскольку код очень похож. Есть идеи, почему?
+
+Обратите внимание, что я явно изменил некоторые имена переменных, я дважды проверил на предмет опечаток в реальном коде.
+
+ 28.03.2018 14:03
+22
+7
+21 162
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Ваша проблема похожа на эту: https://github.com/Microsoft/vscode/issues/25026
+
+ 30.03.2018 20:25
+ Ответ принят как подходящий
+Поскольку мой комментарий кому-то помог, я хотел бы опубликовать его как ответ, чтобы сделать его более заметным:
+
+Мне удалось исправить эту проблему, вручную скомпилировав исходный код Typescript (запустив tsc -p ./ в мою корневую папку). Эта команда должна запускаться автоматически при отладке, однако я все еще не мог понять, почему это не так на моем компьютере.
+
+ 08.01.2019 14:30
+Вам нужно добавить все зарегистрированные команды в список activationEvents в package.json, чтобы они были доступны при вызове. Обновите свой package.json как таковой:
+
+{
+    ...
+    "activationEvents": [
+        "onCommand:extension.openMyExtension",
+        "onCommand:extension.useMyExtension"
+    ]
+    ...
+}
+Вы можете найти более подробную информацию о событиях активации в официальном Документация VSCode.
+
+ 21.02.2019 01:45
+Я была такая же проблема. Все было настроено правильно, но оказалось, что в моем package.json отсутствует одна зависимость. Это привело к сбою загрузки расширения и, как следствие, неправильной регистрации команды во время выполнения.
+
+Чтобы узнать, что не так с вашим кодом, откройте «Справка»> «Переключить инструменты разработчика» и найдите ошибки в консоли.
+
+ 14.05.2019 13:20
+Моя проблема в том, что я использовал Cmder в качестве терминала VS Code. Когда я начал отладку, сборка никогда не завершалась - вы можете отслеживать выполнение задач на нижней панели инструментов. Когда я посмотрел на выполняемую задачу, я увидел следующее:
+
+Executing task: npm run watch <
+
+VS Code пытается запустить сценарий просмотра, но он так и не завершился - я предполагаю, что здесь работает какая-то синтаксическая проблема.
+
+В любом случае, пока компиляция работает, я бы рекомендовал вместо этого запустить сценарий watch, чтобы ваше расширение перекомпилировалось при каждом изменении файла:
+
+npm run watch
+
+Теперь вы должны иметь возможность запускать свое расширение на хосте расширений через F5 без постоянной повторной компиляции. (Хотя вам все равно нужно перезагрузить хост)
+
+ 27.05.2019 20:42
+Я добавляю этот ответ для всех, кто может испытать такое поведение по той же причине, что и я, потому что мне потребовалось некоторое время, чтобы понять, что происходит.
+
+Я использую PowerShell в качестве терминала по умолчанию, и в моем профиле был настроен путь к новым оболочкам (с помощью Set-Location) в определенную папку для удобства других разработок, которые я выполняю.
+
+При нажатии F5 для запуска моего расширения VS Code пытался запустить команду компиляции из этого каталога, а не из каталога моего проекта, что, конечно же, не удалось.
+
+Этот сбой был очевиден в файлах C: \ Users \ <your_user_name> \ AppData \ Roaming \ npm-cache \ _logs, как только я понял, что нужно там искать.
+
+Я удалил параметр пути из своего профиля PowerShell, и создание расширений VS Code работало должным образом.
+
+ 17.08.2019 17:02
+вы не активировали расширение:
+
+"activationEvents": [
+    "onCommand:extension. useMyExtension"
+],
+ 23.08.2019 07:04
+На случай, если кто-то совершит ту же ошибку, что и я ...
+
+Поэтому, если он успешно компилируется, но команда жалоб не найдена, проверьте:
+
+В окне отладки расширения проверьте журналы консоли от Help > Toggle Developer Tools (от @Bart Theeten). Вероятность того, что вы не заметили ошибки JS, высока.
+
+Все ли команды добавлены в package.json
+
+"contributes": {
+    "commands": [ ... ]
+}
+Зарегистрирована ли команда с помощью
+context.subscriptions.push(
+    vscode.commands.registerCommand('command_name', callbackFunc)
+);
+Наконец, проверьте настройку производственного пакета <- это тот, который вызвал у меня головную боль
+Мое расширение было создано с помощью Typescript и связано с Webpack + ts-loader. Я представил интересную функцию условной загрузки модуля, которая потребует модуль из динамического пути, такого как /module/<version>. Это создает несколько интересных проблем:
+
+Во-первых, это неправильные глобальные переменные __dirname, __filename, которые возникают только при использовании веб-пакета для упаковки приложений NodeJS (я получил значение / для __dirname). Мне нужно установить webpack.config.js с помощью:
+
+module.exports = {
+  node: false
+}
+Чтобы отключить глобальные макеты webpack nodeJS. (Справка)
+
+Во-вторых, ограничения пути к модулям, которые мы легко забыли:
+
+Импорт абсолютного пути может не работать, относительный путь также не может выходить за пределы области, которую вы где-то установили ??‍♀️. Пример:
+
+// tsconfig.json
+{
+  "compilerOptions": {
+    "outDir": "lib"
+  },
+  "include": ["src"]
+}
+// src/index.ts
+require('../external/test')
+Требуемый путь будет обрабатываться ts-loader и webpack, он не сможет распознать этот путь к модулю, если вы не используете псевдонимы пути, чтобы сообщить им, где находятся эти файлы.
+
+И путь динамического импорта не может быть динамическим после компиляции:
+
+require(`./${dir}/module`) // may not work
+import(`./${dir}/module`)  // may not work
+Что ж, причина в том, что загрузчики компилятора могут выполнять некоторую обработку с путем, если это простая статическая строка, она может заменить ее правильной, но если это значение времени выполнения, это невозможно. Извините, но я легко забыл об этом, так как это синтаксис функции!
+
+А знаете, что хуже? В худшем случае я получаю, что путь работает для меня, но не работает для других. Поскольку взлом представил абсолютный путь, который существует только в моей среде ... Для этого я должен сказать, что старайтесь избегать абсолютного пути.
+
+ 22.12.2020 04:35
+Я построил свое расширение с помощью vsce package и установил его с помощью файла vsix.
+
+У меня была такая же проблема, и я исправил ее, запустив npm install в папке ".vscode / extensions / EXTENSION_NAME". EXTENSION_NAME - это имя расширения.
+
+Я нашел решение в проблема с github
+
+
+Получите общее количество чисел, которые интерполированы фигурными скобками
+Вопросы
+ARRAYS
+Получите общее количество чисел, которые интерполированы фигурными скобками
+У меня есть объект, показанный ниже, для которого мне нужно найти общую сумму, включая числа, находящиеся вне и внутри фигурных скобок.
+
+ this.count = {
+      "count1": "250 (220)",
+      "count2": "125 (100)",
+      "count3": "125 (100)",
+      "count4": "125 (100)"
+    }
+Expected result: Sum : "625 (520)"
+
+Я не смог узнать сумму первого набора строк, т.е. 625, выполнив следующую логику:
+
+let total=this.getTotal(this.count);
+
+ public getTotal(count) {
+         const count1 = parseInt(items.count1.split(' ')[0]);
+         const count2 = parseInt(items.count2.split(' ')[0]);
+         const count3 = parseInt(items.count3.split(' ')[0]);
+         const count4 = parseInt(items.count4.split(' ')[0]);
+         const totalA = count1 + count2 + count3 + count4;
+         console.info(totalA);
+    }
+Но я не смог разумно разделить (), чтобы вычислить другую часть и объединить с totalA. Сообщите мне о любом функциональном подходе, который лучше всего подходит для расчета объектов такого типа. Спасибо
+
+ 20.03.2018 17:38
+0
+4
+97
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+ Ответ принят как подходящий
+Вы можете использовать метод reduce(), чтобы получить один объект, а затем создать строку.
+
+const data = {"count1": "250 (220)","count2": "125 (100)","count3": "125 (100)","count4": "125 (100)"}
+
+const total = Object.values(data).reduce((r, e) => {
+  const [a, b] = e.split(/\(([^)]+)\)/);
+  r.a = (r.a || 0) + +a;
+  r.b = (r.b || 0) + +b;
+  return r;
+}, {})
+
+const result = `Sum: ${total.a} (${total.b})`
+console.info(result)
+Вы также можете использовать массив как аккумулятор внутри reduce и внутри использовать цикл forEach().
+
+const data = {"count1": "250 (220)","count2": "125 (100)","count3": "125 (100)","count4": "125 (100)"}
+
+const [a, b] = Object.values(data).reduce((r, e) => {
+  e.split(/\(([^)]+)\)/).forEach((e, i) => r[i] += +e)
+  return r;
+}, [0, 0])
+
+const result = `Sum: ${a} (${b})`
+console.info(result)
+ 20.03.2018 17:47
+Чтобы улучшить свою мудрость (вы можете использовать RegEx для решения этой проблемы):
+
+var count = {
+  "count1": "250 (220)",
+  "count2": "125 (100)",
+  "count3": "125 (100)",
+  "count4": "125 (100)"
+}
+function getTotal(items) {
+     let sum = 0
+     let sum1 = 0
+     for (let i in items) {
+         let item = items[i]
+         sum += Number.parseInt(item.split(' ')[0])
+         sum1 += Number.parseInt(item.split(' ')[1].replace(/^\(|\)$/g, ''))
+     }
+     console.info('Sum: ' + sum + ' (' + sum1 + ')')
+}
+getTotal(count)
+ 20.03.2018 17:48
+Используя Array.prototype.reduce, это будет работать:
+
+let count = {
+  "count1": "250 (220)",
+  "count2": "125 (100)",
+  "count3": "125 (100)",
+  "count4": "125 (100)"
+}
+
+let totalCount1 = Object.values(count).reduce(function(acc, val) {
+  return acc + parseInt(val.split(' ')[0])
+}, 0) 
+
+let totalCount2 = Object.values(count).reduce(function(acc, val) {
+  return acc + parseInt(val.split('(').pop().split(')')[0])
+}, 0) 
+
+console.info(`${totalCount1} (${totalCount2})`)
+ 20.03.2018 17:49
+Вы можете использовать функции Object.values() и forEach для массива.
+
+var count = {
+        "count1": "250 (220)",
+        "count2": "125 (100)",
+        "count3": "125 (100)",
+        "count4": "125 (100)"
+    },
+    lsum = 0,
+    rsum = 0;
+
+Object.values(count).forEach(v => {
+    v = v.replace('(', '').replace(')', '').split(' ');
+    lsum += +v[0];
+    rsum += +v[1];
+});
+console.info(`${lsum} (${rsum})`)
+ 20.03.2018 17:51
+Ваши ссылки на this указывают на то, что вы не показываете нам еще кое-что, и ваше использование слова public недопустимо в JavaScript.
+
+Но вы можете просто перебрать ключи в объекте и использовать .split (немного иначе, чем вы его использовали) для получения итоговых значений каждой части значения.
+
+var count = {
+    "count1": "250 (220)",
+    "count2": "125 (100)",
+    "count3": "125 (100)",
+    "count4": "125 (100)" 
+};
+
+function getTotal(count) {
+    let val1 = 0;
+    let val2 = 0;
+   
+    for(var key in count){
+      val1 += parseInt(count[key].split(" (")[0], 10);
+      val2 += parseInt(count[key].split(" (")[1], 10);    
+    }
+
+    return "Sum 1: " + val1 + " - Sum 2: " + val2;
+}
+
+console.info(getTotal(count));
+ 20.03.2018 17:53
+Поскольку вы отметили «функциональное программирование», вот возможное решение FP:
+
+// utilities
+
+let map = (f, xs) => [...xs].map(f);
+let sum = xs => xs.reduce((a, b) => Number(a) + Number(b));
+let zip = (...xss) => xss[0].map((_, i) => xss.map(xs => xs[i]));
+
+// here we go
+
+count = {
+    "count1": "250 (220) 10",
+    "count2": "125 (100) 20",
+    "count3": "125 (100) 30",
+    "count4": "125 (100) 40"
+};
+
+
+res = map(sum, zip(
+    ...map(
+        s => s.match(/\d+/g),
+        Object.values(count)
+)));
+
+console.info(res);
+(Я добавил третий столбец, чтобы сделать вещи немного интереснее. Код работает с любым количеством столбцов).
+
+При этом решение настоящий вашей проблемы состояло бы в том, чтобы в первую очередь исправить эту сломанную структуру данных.
+
+ 20.03.2018 18:06
+Вот немного подробного решения на основе reduce:
+
+  const count = {
+    "count1": "250 (220)",
+    "count2": "125 (100)",
+    "count3": "125 (100)",
+    "count4": "125 (100)"
+  };
+
+  const rowPattern = /(\d+) \((\d+)\)/;
+
+  const parseRow = row => row.match(rowPattern).slice(1, 3).map(s => parseInt(s));
+
+  const result = Object.values(count).reduce((a, b) => {
+    const [ outerA, innerA ] = parseRow(a),
+      [ outerB, innerB ] = parseRow(b);
+    return `${outerA + outerB} (${innerA + innerB})`;
+  }, '0 (0)');
+
+  console.info(result); // 625 (520)
+ 20.03.2018 18:08
+Кажется, это делает то, что вы хотите, и я думаю, что это довольно читаемо:
+
+const data = {"count1": "250 (220)","count2": "125 (100)","count3": "125 (100)","count4": "125 (100)"}
+
+const splitSum = (data) => {
+  const [a, b] = Object.values(data).reduce(([a0, b0], e) => {
+    const [a1, b1] = e.split(/[^\d]+/).map(Number);
+    return [a0 + a1, b0 + b1];
+  }, [0, 0])
+  return `Sum: ${a} (${b})`
+}
+
+console.info(splitSum(data))
+ 20.03.2018 18:16
+Разделение работы, например, на модуль Count, упрощает задачу.
+
+const Count =
+  { fromString: s =>
+      s.match (/\d+/g) .map (Number)
+      
+  , toString: ([a, b]) =>
+      `${a} (${b})`
+      
+  , concat: ([a1, b1], [a2, b2]) =>
+      [ a1 + a2, b1 + b2 ]
+    
+  , empty:
+      [0, 0]
+  }
+
+const main = data =>
+{
+  const result =
+    data.map (Count.fromString)
+        .reduce (Count.concat, Count.empty)
+  console.info (Count.toString (result))
+}
+
+const data =
+  { "count1": "250 (220)"
+  , "count2": "125 (100)"
+  , "count3": "125 (100)"
+  , "count4": "125 (100)"
+  }
+
+main (Object.values (data))
+Комбинация .map-.reduce, приведенная выше, приводит к циклам два, производящим ненужные промежуточные значения. Используя универсальный комбинатор mapReduce, мы можем свернуть циклы в один - изменения в смелый
+
+const mapReduce = (m, r) =>
+  (acc, x) => r (acc, m (x))
+
+const main = data =>
+{
+  const result =
+    data.reduce (mapReduce (Count.fromString, Count.concat), Count.empty)
+  console.info (Count.toString (result))
+}
+Хороший! n => Number (n) может быть просто Number
+
+— 
+georg
+ 20.03.2018 18:26
+@georg, я обычно избегаю использования Array.prototype.map, потому что он передает дополнительные аргументы, но в этом случае Number работает нормально. Спасибо за комментарий: D
+
+— 
+Thank you
+ 20.03.2018 18:56
+
+
+Как проверить, находится ли Vue в режиме разработки?
+Вопросы
+TYPESCRIPT
+Как проверить, находится ли Vue в режиме разработки?
+Когда я запускаю свое приложение Vue, консоль показывает:
+
+You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+Итак, теперь я хочу проверить, находится ли Vue в разработке из моих шаблонов, используя:
+
+console.info("mode is " + process.env.NODE_ENV)
+Но это только логи undefined Есть ли другой способ найти NODE_ENV во Vue?
+
+В моей конфигурации веб-пакета есть эта часть:
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
+}
+Возможно, уместно: я использую машинописный текст, поэтому я включил это объявление типа:
+
+declare var process: {
+    env: {
+        NODE_ENV: string
+    }
+}
+ 13.03.2018 14:38
+36
+8
+24 339
+9
+ Ответы 9
+Абсолютно самое простое решение - проверить window.location из вашего компонента Vue. Это выглядело бы примерно так:
+
+if (window.location.href === 'YOUR DEVELOPMENT URL') {
+    //preset form values here
+}
+ 14.03.2018 13:20
+Если вы начали с vue-cli (веб-пакет по умолчанию), это должно сработать:
+
+  connection: process.env.NODE_ENV === 'development'
+    ? 'ws://localhost:5000'
+    : 'wss://myawsomeproject.org'
+ 14.03.2018 13:35
+Webpack используется почти во всех моих проектах Vue, поэтому я проверяю, присутствует ли webpackHotUpdate.
+
+ if (webpackHotUpdate) {
+      console.info('In Dev Mode');
+ }
+Он присутствует в объекте window, если запущен сервер webpack dev.
+
+ 15.03.2018 23:32
+Обычно я использую:
+
+if (window.location.href.indexOf("localhost") >= 0) {
+  // Development mode    
+}
+Или же:
+
+if (window.location.href.indexOf("localhost") < 0) {
+  // Production mode    
+}
+Просто ища часть URL-адреса разработки, например localhost, вам не нужно так точно указывать остальную часть адреса. Это работает в любом месте вашего проекта, в отличие от process.env.NODE_ENV, который, например, не работает в файле index.html.
+
+ 15.01.2019 14:59
+Попробуйте использовать файлы .env.
+
+You can specify env variables by placing the following files in your project root:
+
+.env # loaded in all cases .env.local # loaded in all cases, ignored by git .env.[mode] # only loaded in specified mode .env.[mode].local # only loaded in specified mode, ignored by git
+
+плюс
+
+Env Loading Priorities
+
+An env file for a specific mode (e.g. .env.production) will take higher priority than a generic one (e.g. .env).
+
+Документы: https://cli.vuejs.org/guide/mode-and-env.html#environment-variables
+
+ 14.03.2019 09:58
+В моем конкретном случае, когда я использую мопс и просто хотел условно добавить некоторые элементы в компонент, я установил опору options.data для pug-plain-loader в моем webpack.config.js так, чтобы загрузчик выглядел следующим образом:
+
+{
+  resourceQuery: /^\?vue/,
+  use: [
+    {
+      loader: 'pug-plain-loader',
+      options: {
+          // Use whatever you'd use to detect mode in the webpack config
+          data: { mode: process.env['PRODUCTION'] ? 'production' : 'development' },
+        },
+      },
+    ],
+  },
+}
+Вот полный webpack.config.js, который я использую: https://github.com/SuperuserLabs/thankful/blob/5913d9d0bb02e6d2f3b88c541477dc557caa4148/webpack.config.js#L76-L88
+
+После чего я мог:
+
+if mode === 'development'
+  | Only shown in development mode
+В общем случае это оказалось сложнее, чем я ожидал. Хотя кто-то, кто разбирается в Webpack, вероятно, сможет сделать это довольно легко.
+
+ 17.07.2019 11:54
+Я знаю, что это старый вопрос, но новым пользователям VueJS может быть полезно знать это решение, которое я нашел в текущей версии Vue (3.11):
+
+При работе в режиме разработки свойство Vue.config.devtools - это true, в производственном режиме - false!
+
+ 13.09.2019 08:08
+Использование файла .env - это распространенный способ установки переменных окружения, используемых во многих стеках. Имеет смысл использовать его во Vue, а не пытаться изобретать велосипед.
+
+Вот небольшой тест, который покажет, какие у вас есть условия и возможности.
+
+Создайте свой проект с помощью этой команды:
+
+vue-cli-service build
+.env файл:
+
+#.env
+NODE_ENV=development
+DDD=development
+VUE_APP_NODE_ENV=development
+Компонент Vue:
+
+mounted() {
+    console.info(process.env.NODE_ENV); // OUTPUT: production
+    console.info(process.env.DDD); // OUTPUT: undefined
+    console.info(process.env.VUE_APP_NODE_ENV); // OUTPUT: development
+},
+NODE_ENV устанавливается vue-cli-service. Вы можете иметь несколько файлов .env и использовать от vue-cli-service build --mode staging до запускать разные конфигурации.
+
+При сборке используются переменные среды, а в коде компонента - переменные окружения на стороне клиента. Таким образом, вы не можете использовать что-то вроде DDD в своем коде на стороне клиента, потому что Vue проигнорирует это.
+
+Вы можете создать свою собственную переменную env с префиксом VUE_APP_ и использовать ее в своем клиентском коде для любых проверок. Ссылка на документы. VUE_APP_NODE_ENV отлично подойдет в нашем тесте.
+
+ПРИМЕЧАНИЕ
+
+Анализ вашего URL - не лучший выбор. Если вы используете что-то вроде этого window.location.href.indexOf("localhost"), оно не будет работать с 127.0.0.1. Несколько раз мне приходилось запускать проект с полным доменным именем, и эта проверка для него тоже не сработает.
+
+ 20.10.2019 19:26
+Вот как Vue проверяет, находится ли он в режиме разработки:
+
+if (process.env.NODE_ENV !== 'production' &&
+  process.env.NODE_ENV !== 'test' &&
+  typeof console !== 'undefined'
+)
+Источник: GitHub
+
+Примечание: я удалил проверку config.productionTip !== false из кода, потому что она используется только для отключения «производственной подсказки», даже если Vue работает в режиме разработки.
+
+Ответ Джина Парчеллано отлично работает, пока вы используете Webpack, но этот мощь будет немного более надежным.
+
+Редактировать:
+
+Было бы легко совместить оба ответа вот так:
+
+if (
+  window.webpackHotUpdate || (
+    process.env.NODE_ENV !== "production" &&
+    process.env.NODE_ENV !== "test" &&
+    typeof console !== "undefined"
+  )
+)
+
+Подсветка синтаксиса кода Visual Studio не работает для JavaScript и TypeScript
+Вопросы
+JAVASCRIPT
+Подсветка синтаксиса кода Visual Studio не работает для JavaScript и TypeScript
+Это внезапно произошло после того, как я создал новый файл во время работы над проектом. Почти все символы — это просто белый текст (кроме скобок, потому что у меня включено раскрашивание пары скобок)
+
+Я уже пробовал сбрасывать свои конфигурации, проверял свои конфигурации (как глобально, так и в своей рабочей области) и пробовал это расширение, которое предлагает альтернативную подсветку синтаксиса (которая работала, но я бы предпочел использовать Visual Studio Code).
+
+ 17.11.2022 06:51
+74
+2
+8 273
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Я думаю, это было вызвано расширением под названием JavaScript и TypeScript Nightly. Это вызывало подсветку синтаксиса для файлов .js и .ts (также .jsx и .tsx). Это было скорее ошибкой последней версии (в настоящее время 1.73.1).
+
+Вы можете отключить расширение, чтобы включить подсветку синтаксиса.
+
+Это расширение было обновлено, и эта проблема исправлена.
+
+ 17.11.2022 07:03
+То, что пользователь Haneen сказал, было правильным, но вместо того, чтобы отключать его, вы можете установить старую версию, которая отлично работает.
+
+Нажмите шестеренку в правом нижнем углу → «Установить другую версию» → выберите более старую версию.
+
+Шестерёнка внизу справа
+
+ 17.11.2022 08:08
+Да, это точно вызвано расширением JavaScript и TypeScript Nightly.
+
+Вы можете отключить или установить другую версию (я рекомендую установить предыдущую версию, так как в текущей версии есть ошибка).
+
+В настоящее время я использую версию, выпущенную 13.11.2022.
+
+ 17.11.2022 13:35
+Текущая версия (v5.0.20221116) для JavaScript и TypeScript Nightly, похоже, нарушает подсветку синтаксиса. Переход на предыдущую версию может решить эту проблему.
+
+Однако это было решено в v5.0.20221117.
+
+ 17.11.2022 14:44
+Кроме того, я удалил этот пакет JavaScript и TypeScript Nightly, и теперь он у меня работает нормально.
+
+Модуль на торговой площадке: JavaScript и TypeScript Nightly
+
+ 17.11.2022 16:10
+Как уже упоминалось, две последние версии вызывают у меня проблемы, но 5.20221115 у меня работает.
+
+ 17.11.2022 17:13
+Это было исправлено с последним обновлением JavaScript и TypeScript Nightly.
+
+ 17.11.2022 19:24
+Я думаю, это было вызвано расширением под названием JavaScript и TypeScript Nightly. Это вызывало подсветку синтаксиса для файлов .js и .ts. Это было скорее ошибкой последней версии.
+
+Почему вы опубликовали эту неполную копию принятого ответа?
+
+— 
+Hashim Aziz
+ 22.01.2023 01:12
+
+
+Не удается вызвать объект, который, возможно, не определен. ts(2722)
+Вопросы
+REACTJS
+Не удается вызвать объект, который, возможно, не определен. ts(2722)
+У меня есть компонент кнопки. Я просто передаю ему только один onClick реквизит из многих опциональных реквизитов, которые я определил:
+
+const Button = (props: ButtonProps) => {
+    const handleClick: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement> = e => {
+        props.onClick(e);
+    }
+    return (
+        <StyledButton onClick = {handleClick}>
+            {props.children}
+        </StyledButton>
+    );
+};
+Затем я использую его следующим образом:
+
+<Button onClick = {(e) => {
+    console.info(e);
+}}>Click me!</Button>
+Теперь, как может в соответствии с упомянутой ошибкой объект быть неопределенным? Я явно передаю ему функцию, и это тоже в соответствии с определением типа. Итак, я передаю ему объект. Достаточно просто!
+
+...
+onClick?: React.MouseEventHandler<HTMLElement>
+...
+Недавно я добавил еще несколько строгих проверок в этот проект, и соответствующие из них:
+
+"strictFunctionTypes": true,
+"strictNullChecks": true
+strict:true поскольку эта ошибка уже присутствует, она никогда не возникала.
+
+В чем проблема?
+
+Обновление - добавлены типы
+
+export interface IBaseButtonProps {
+    type?: ButtonType;
+    disabled?: boolean;
+    size?: ButtonSize;
+    block?: boolean;
+    loading?: boolean | { delay?: number };
+    icon?: string;
+    className?: string;
+    prefixCls?: string;
+    children?: React.ReactNode;
+}
+
+export type AnchorButtonProps = {
+    href: string,
+    target?: string,
+    onClick: React.MouseEventHandler<HTMLElement>
+} & IBaseButtonProps & Omit<React.AnchorHTMLAttributes<any>, 'type' | 'onClick'>;
+
+
+export type NativeButtonProps = {
+    onClick: React.MouseEventHandler<HTMLElement>,
+    htmlType?: ButtonHTMLType
+} & IBaseButtonProps & Omit<React.ButtonHTMLAttributes<any>, 'type' | 'onClick'>;
+
+export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>
+Примечания:
+
+Возможное решение состоит в том, чтобы либо деструктурировать реквизит, либо добавить реквизит по умолчанию. Или используйте defaultProps из React. Но не уверен, что мне действительно нужно это требовать с Typescript.
+
+ 06.07.2019 14:09
+52
+6
+94 843
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Now how can as per the erro mentioned in question, object be possibly undefined? [sic]
+
+Использование Partial<T> вокруг export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps> делает onClick необязательным. Когда мы используем Partial<T>, все свойства получают ? и, таким образом, становятся необязательными, что означает, что все они могут быть неопределенными.
+
+Есть два подхода к исправлению: один состоит в том, чтобы оставить ButtonProps одинаковым с onClick как необязательным, и проверить, что onClick определено перед его вызовом (исправление 1); другой - изменить ButtonProps, чтобы сделать onClick обязательным (исправить 2 и 3).
+
+Исправление 1: onClick остается необязательным
+Используйте ButtonProps, который у вас уже есть, а затем убедитесь, что onClick определен, прежде чем вызывать его. Это что делает в коде, который вы указали в комментариях.
+
+const Button = (props: ButtonProps) => {
+  const handleClick: React.MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  > = e => {
+    if (props.onClick) props.onClick(e); // works
+  };
+};
+Исправление 2: onClick становится обязательным
+Измените ButtonProps, не применяя Partial к NativeButtonProps:
+
+type ButtonProps1 = Partial<AnchorButtonProps> & NativeButtonProps;
+
+const Button1 = (props: ButtonProps1) => {
+  const handleClick: React.MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  > = e => {
+    props.onClick(e); // works
+  };
+};
+Исправление 3: onClick также становится обязательным
+Определите тип RequireKeys, который позволяет указать необязательные ключи.
+
+type RequireKeys<T, TNames extends keyof T> = T &
+  { [P in keyof T]-?: P extends TNames ? T[P] : never };
+
+type ButtonProps2 = RequireKeys<ButtonProps, "onClick">;
+
+const Button2 = (props: ButtonProps2) => {
+  const handleClick: React.MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  > = e => {
+    props.onClick(e); // works
+  };
+};
+Ответы на Сопоставленные типы: удаление необязательных модификаторов содержат больше информации о том, как я определил RequireKeys<T>.
+
+ 06.07.2019 17:18
+Просто четкий ответ
+
+if (props.onClick) props.onClick(e);
+
+если вы определяете свойства функции и хотите, чтобы она была необязательной, определите ее как
+
+export type ButtonProps = {
+  function?: () => void;
+};
+Объяснение: Если вы хотите использовать функцию в качестве реквизита, могут быть случаи, когда вы хотите передать эту функцию (как реквизит), и могут быть другие случаи, когда вы не хотите ее передавать.
+
+Например,
+
+Common Code WHERE calling the <Home/> component, say index.ts/index.js
+
+function myfunction(){
+  //do something
+  alert("hello")
+}
+
+return (
+  <>
+     <Home myfunction = {myfunction}/>    //passing prop
+     <Home/>                            // not passing
+  </>
+)
+
+In JS, home.js
+
+export default function Home({myfunction}) {
+  const const1 = "Hello World"
+  return (
+    //do something
+    myfunction();      //IMPORTANT line
+  )
+}
+Now, its almost equivalent in TS, home.ts
+
+В TS мы определяем типы всего. Итак, в этом случае мы также должны определить тип этой функции myfunction, которую мы передаем.
+
+Итак, для этой функции мы понимаем, что
+
+Он не получает параметров, поэтому () (пустая скобка) достаточно, если какие-либо параметры есть, нам также нужно определить для них типы.
+Ничего не возвращает, поэтому возвращаемый тип void
+export type HomeProps = {
+  myfunction?: () => void;
+};
+
+export default function Home({ myfunction }: HomeProps) {
+  const const1 = "Hello World"
+  return (
+    //do something
+    if (myfunction) myfunction();      //IMPORTANT line
+  )
+}
+Подсказка: ответ выше
+
+ 05.08.2020 09:35
+Лучший вариант — использовать методы ?.call(this: unknown, ...args: any[]) или ?.apply(this: unknown, args: any[])
+Итак, давайте представим, что у нас есть следующие объявления
+
+type callback = ((x: number, y: number) => number) | null;
+
+let a: callback;
+let b: callback;
+
+a = (x, y) => x + y;   // it works with arrow functions
+b = function (x, y) {  // and normal functions
+  return x + y;
+};
+
+function x(cb1: callback, cb2: callback) {
+  console.info(cb1?.call(0, 5, 6));     // in this case you
+  console.info(cb2?.call(0, 5, 6));     // cant invoke cb1() or cb2()
+  console.info(cb1?.apply(0, [5, 6]));  // but you can use call or apply
+  console.info(cb2?.apply(0, [5, 6]));  // where first parameter can be any value
+}
+
+x(a, b); // 11 11 11 11
+
+class C {
+  public f?: callback;
+  public setF() {
+    this.f = (x, y) => {
+      return x + y;
+    };
+  }
+}
+const c = new C(); // same with objects
+c.setF();
+console.info(c?.f?.call(c, 2, 3)); // 5
+
+ 12.09.2020 19:27
+Логический оператор AND (&&) возвращает либо значение первого найденного ложного операнда, либо значение последнего операнда, если все значения истинны (Источник). Следовательно, мы можем просто написать:
+
+ (props.onClick && props.onClick(e));
+ 28.04.2021 06:17
+С Typescript 3.7+ вы также можете использовать необязательную цепочку для вызова необязательного метода prop:
+
+const Button = (props: ButtonProps) => {
+  const handleClick: React.MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  > = e => {
+    props.onClick?.(e); // works
+  };
+};
+Вы можете узнать больше об использовании необязательной цепочки — https://www.stefanjudis.com/today-i-learned/Optional-chaining-helps-to-avoid-undefined-is-not-a-function-exceptions/
+
+ 14.05.2021 15:58
+Для любого, кто придет дальше. Другой вариант — использовать приведение типов. подобно:
+
+props = props as NativeProps
+По своему опыту я использовал контекст, который возвращает объект типа Partial, и мне нужно было выполнить приведение типов, чтобы преодолеть неопределенную ошибку. подобно:
+
+const {setSomething} = useContext(SomePartialContext) as MyContextType
+ 02.06.2021 13:55
+Это синтаксис, который помог мне решить эту проблему.
+
+Различные способы получения решения:
+
+search.prop('onSearch')!('text' as unknown)
+search.prop('onSearch')!({} as unknown)
+search.prop('onSearch')!({} as any)
+Ключевая часть: !({} as any}
+
+ 07.01.2022 01:09
+Я создавал свою собственную кнопку MUI, и вот как я это сделал.
+
+interface ButtonTypes {
+  handleClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+}
+На компоненте кнопки
+
+<LoadingButton
+  onClick = {(e) =>handleClick && handleClick(e)}
+>
+  {"Send"}
+</LoadingButton>
+Если вы используете VScode, наведите указатель мыши на свойство OnClick, и вы должны увидеть ожидаемые типы.
+
+
+Сгладить массив массивов в TypeScript
+Вопросы
+TYPESCRIPT
+Сгладить массив массивов в TypeScript
+Я хочу сгладить string[][] в string[].
+
+Совет, данный в десятках ответов SO: [].concat(...arrays).
+
+Но это дает мне эту ошибку:
+
+Argument of type 'string[]' is not assignable to parameter of type 'ConcatArray'.
+Types of property 'slice' are incompatible.
+Type '(start?: number | undefined, end?: number | undefined) => string[]' is not assignable to type '(start?: number | undefined, end?: number | undefined) => never[]'.
+Type 'string[]' is not assignable to type 'never[]'.
+Type 'string' is not assignable to type 'never'.
+
+Другой способ, который я пробовал, заключается в следующем:
+
+let foo: string[][] = [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]];
+let bar = [].concat(...foo);
+Что дает аналогичную ошибку:
+
+Argument of type 'string[]' is not assignable to parameter of type 'ConcatArray'.
+
+Почему это работает для всех, кроме меня?
+
+ 11.06.2019 15:12
+37
+0
+33 632
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Вы можете сгладить массив с помощью flat()
+
+let foo: string[][] = [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]];
+let bar = foo.flat()
+журнал
+
+console.info(bar)   // a,b,c,a,b,c,a,b,c 
+ОБНОВИТЬ
+
+Изменив тип на string[], вы также можете использовать concat
+
+let foo: string[][] = [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]];
+let bar : string[] = []
+bar = bar.concat(foo[0], foo[1], foo[2])
+ 11.06.2019 15:15
+Код
+
+const res = [].concat(...foo);
+должно сработать. Я предполагаю, что это неправильная конфигурация в tsconfig, которая вызывает эту ошибку для вас. Убедитесь, что в массиве es2015 вашего tsconfig есть как минимум es2018 (лучше lib). Чтобы новый flat работал так, как показано kokodoko, обязательно добавьте esnext
+
+"lib": [
+  "es2018",
+  "dom",
+  "esnext"
+]
+ 11.06.2019 15:24
+.flat() также выдаст ошибку типа. Вы можете использовать Generics, чтобы решить эту проблему.
+
+let st : string[][] | Array<string> = [['a'] , ['b']]
+    let bar = [].concat(...st);
+    console.info(bar)
+В любом случае, ваш звонок. Просто знайте, что ваше объявление типа неверно.
+
+ 11.06.2019 15:27
+ Ответ принят как подходящий
+Попробуй это:
+
+const a = [["a", "b", "c"], ["a", "b", "c"], ["a", "b", "c"]]
+const result = a.reduce((accumulator, value) => accumulator.concat(value), []);
+console.info(result)
+ 11.06.2019 15:27
+Вот самый простой вариант:
+
+let bar = ([] as string[]).concat(...foo);
+Подобно подходу @Kokodoko, но со встроенными типами.
+
+ 04.11.2019 01:35
+Я считаю, что у вас есть strictNullCheck: true
+
+Пустой массив без контекстного типа ([] в [].concat(arg)) выводится как never[] в strictNullChecks. и никогда нельзя присваивать из любого другого типа.
+
+([] как любое[]).concat(foo); должен сделать трюк
+
+ 30.09.2020 11:52
+Вот общее решение:
+
+function flatten<T>(arr: T[][]): T[] {
+  return ([] as T[]).concat(...arr);
+}
+И глубокое/рекурсивное расширение:
+
+type NestedArray<T> = Array<NestedArray<T> | T>;
+
+function flattenDeep<T>(input: NestedArray<T>): T[] {
+  return flatten(input.map(x => Array.isArray(x) ? flattenDeep(x) : [x]));
+};
+Этот ответ может быть более эффективным для глубокого сглаживания, я просто повеселился, пытаясь написать что-то, что показалось мне более элегантным.
+
+ 06.04.2021 16:25
+Для гораздо более глубоко вложенных массивов, таких как: [1, 2, 3, [4, [5, [6, [7]]]]]
+
+type NestedArray<T> = Array<NestedArray<T> | T>;
+
+const flatten = <T>(input: NestedArray<T>, acc: T[] = []): T[] => {
+  return input.reduce((_: T[], current) => {
+    if (Array.isArray(current)) return flatten(current, acc);  
+    acc.push(current);
+    return acc;
+  }, []);
+};
+Применение:
+
+console.info(flatten([1, 2, 3, [4, [5, [6, [7]]]]]));
+
+
+Отключить ESLint, который предоставляет приложение create-реагировать
+Вопросы
+REACTJS
+Отключить ESLint, который предоставляет приложение create-реагировать
+create-react-app Вышла версия 3.0.0. Он поддерживает внутреннюю проверку TypeScript. (Это приятно!) Думаю, я понимаю ситуацию, когда TSLint включен, и планирую заменить его на ESLint, но сейчас это не так.
+
+Как отключить этот шаг линтинга в react-scripts start?
+
+/* eslint-disable */ и другие не те, кого я ищу.
+
+ 24.04.2019 02:25
+73
+0
+61 647
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Один из способов — ejectreact-scripts запустить yarn eject / npm run eject и вручную отключить eslint в конфигурационном файле webpack.
+
+Помните, однако, что извлечение не должно выполняться легкомысленно, и перед извлечением следует рассмотреть другие варианты. Прочтите Не извлекайте свое приложение Create React, чтобы получить некоторое представление о том, что это значит, и, возможно, о причинах, по которым вам не следует этого делать.
+
+Пожалуйста, взгляните на этот форк: создать-реагировать-приложение поближе, особенно в каталоге eject-tic_tac_toe, где у вас есть scripts/start.js — скрипт, в котором происходит волшебство после yarn start / npm start — и config/webpack.config.dev.js — где у вас есть конфигурация веб-пакета, используемая в start.js. Это та часть, которая может вас заинтересовать для редактирования:
+
+// …
+module.exports = {
+  // …
+  module: {
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint',
+        include: paths.appSrc,
+      }
+    ]
+  }
+  // …
+};
+ 24.04.2019 20:05
+Вы можете отключить эслинт (и переопределить другие конфигурации) с помощью Крако.
+
+Требуется 4 изменения:
+
+npm install @craco/craco --save
+создать craco.config.js (в той же папке, что и package.json)
+заполнить craco.config.js:
+module.exports = {
+  eslint: {
+    enable: false,
+  },
+};
+
+Наконец, замените react-script на craco в ваших package.json скриптах, т.е.
+
+"scripts": {
+  "build": "craco build",
+  "start": "craco start",
+}
+
+Это отключит ESLint. Обратитесь к Документация Крако за примерами расширения конфигурации ESLint.
+
+ 02.09.2019 00:32
+Вы можете установить для переменной среды EXTEND_ESLINT значение true, например, в файле .env:
+
+EXTEND_ESLINT=true
+Теперь вы можете расширить конфигурацию eslint в своем файле package.json:
+
+...
+"eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off"
+    }
+  },
+...
+Чтобы отключить eslint, вы можете добавить файл .eslintignore с содержимым:
+
+*
+Подробности смотрите в документации: https://create-react-app.dev/docs/setting-up-your-editor/#experimental-extending-the-eslint-config
+
+ 09.12.2019 14:23
+Сначала убедитесь, что для переменной среды EXTEND_ESLINT установлено значение true. Его можно установить в файле .env.
+
+Для Typescript дополнительные правила должны быть добавлены в массив переопределений, как показано ниже:
+
+{
+  "eslintConfig": {
+    "extends": ["react-app"],
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "eqeqeq": "warn"
+        }
+      }
+    ]
+  }
+}
+ 20.03.2020 03:28
+шаг 1
+создайте файл .env в корне вашего проекта, если его там нет, и добавьте в него эту строку
+
+EXTEND_ESLINT=true
+Шаг 2
+добавьте .eslintrc.js в корень вашего проекта со следующим содержимым
+
+module.exports = {
+  "extends": ["react-app"],
+  "rules": {
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js?(x)"],
+      "rules": {
+// ******** add ignore rules here *********
+        "react/no-unescaped-entities": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      }
+    }
+  ]
+}
+обратите внимание, что раздел override > rules: добавьте правила с флагом «выключено», чтобы отключить их.
+
+ 21.08.2020 16:25
+Мой обходной путь без извлечения:
+
+Используйте переменную среды в .eslintrc.js следующим образом:
+module.exports = {
+    "extends": process.env.REACT_APP_DEV_DISABLE_ESLINT ? [] : [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:json/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:react/recommended",
+    ],
+    "rules": process.env.REACT_APP_DEV_DISABLE_ESLINT ? {} : {
+      // ...rules for production CI
+    }
+}
+Установите переменную в стартовом скрипте в пакет.json:
+{
+      "scripts": {
+          "eslint:disable": "REACT_APP_DEV_DISABLE_ESLINT=true",
+          "start": "npm run eslint:disable  react-scripts start"
+      }
+}
+ 27.10.2020 06:20
+Мой обходной путь:
+
+Добавьте файл .eslintignore:
+
+*
+и запустить eslint с --no-ignore. Таким образом, вы можете настроить свой собственный eslint. Если вам нужен файл игнорирования, вы можете определить его с помощью --ignore-path вместо использования параметра --no-ignore.
+
+ 12.03.2021 09:50
+ Ответ принят как подходящий
+Начиная с react-scripts v4.0.2, теперь вы можете отказаться от ESLint с помощью переменной среды. Вы можете сделать это, добавив его в свой файл .env или добавив префикс к скриптам в файле package.json.
+
+Например, в .env:
+
+DISABLE_ESLINT_PLUGIN=true
+Или в вашем package.json:
+
+{
+  "scripts": {
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test"
+  }
+}
+https://github.com/facebook/create-react-app/pull/10170
+
+работает нормально, спасибо
+
+— 
+Georges Feungap
+ 05.12.2021 04:19
+
+
+Как импортировать конфигурацию .json в environment.ts и использовать API с помощью Angular?
+Вопросы
+JAVASCRIPT
+Как импортировать конфигурацию .json в environment.ts и использовать API с помощью Angular?
+Я хочу импортировать файл Json, который находится в папке с ресурсами, где у меня есть следующие URL-адреса:
+
+конфиг.json:
+
+{
+    "url1": "https://jsonplaceholder.typicode.com/posts",
+    
+    "url2" : "https://reqres.in/api/users",
+    
+    "url3":"https://fakerestapi.azurewebsites.net/api/Authors"
+}
+Поэтому вместо жесткого кодирования URL-адреса я хочу импортировать из файла Json, но я не уверен, как именно это сделать.
+
+Буду признателен за любые предложения или сценарии, ниже приведены мои проблемы:
+
+1. Как импортировать файл Json в environment.ts и оттуда у меня будет сервис, который использует API
+
+2. Если я импортирую файл, он также должен быть одинаковым для prod и loc dev
+
+что я хочу :
+
+У меня есть файл конфигурации, в котором он содержит некоторые URL-адреса в файле .json, хранящемся в папке активов, теперь вместо загрузки environments.prod или .ts я хочу загрузить конфигурацию моего файла Json и на основе этого я хочу запустить свое приложение
+
+что я сделал:
+
+Ниже мой файл Json, который я поместил в папку активов.
+
+{
+    "baseUrl": "https://jsonplaceholder.typicode.com/",
+    "baseUrl2": "https://reqres.in/api/users"
+}
+ConfigServiceService.ts для хранения файла конфигурации
+
+public _config: Object;
+
+    constructor(public http:Http) { }
+    
+    getData(){
+       debugger;
+       return this.http.get("./assets/config.json").pipe(map(res =>  res.json()));
+    }
+После этого я создаю ServiceProviderService.ts для вызова служебного файла
+
+configData:any;
+
+
+   constructor(public http:Http,public config:ConfigServiceService) {
+    
+   }
+    
+   jsonData(){
+       debugger;
+       return this.configData;
+   }
+    
+   ngOnInit(){
+      debugger;
+      this.config.getData().subscribe(res =>{
+         console.info(res);
+         this.configData = res;
+      });
+    
+    
+   }
+app.component.ts
+
+ title = 'sample';
+ constructor(public serv :ServiceProviderService){
+      this.serv.jsonData();
+ }
+Я не могу получить данные Json, и если я добавляю логику, которая есть, ngOnInit в файле ServiceProviderService.ts, если я помещаю ее в конструктор, то я получаю неопределенность.
+
+Примечание : здесь, если существует более одного URL-адреса, тогда каждый URL-адрес распределяется по различным отдельным файлам службы, предположим, что URL-адрес base1 для 1 файла службы и URL-адрес base2 для другого файла, как я могу этого добиться
+
+https://stackblitz.com/edit/read-local-json-file-5zashx
+
+в app.component.ts я получаю неопределенность
+
+Как импортировать конфигурацию .json в environment.ts и использовать API с помощью Angular?
+
+ 21.03.2019 17:41
+8
+5
+10 502
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Вы можете создать константы для всех этих URL-адресов в файле среды. Я не вижу сценария в вашем случае, чтобы вынести его в отдельный файл json. Для prod вы можете использовать тот же файл среды, изменив свойство конфигурации по умолчанию в angular.json.
+
+ 21.03.2019 17:46
+Вы можете создать службу для чтения файла Json с помощью HttpClient.
+
+export class SettingService  {
+
+  constructor(private http: HttpClient) {
+
+  }
+
+  public getJSON(file): Observable<any> {
+      return this.http.get("./assets/configs/" + file + ".json");
+  }
+  public getSetting(){
+      // use setting here
+  }
+}
+Вы должны сохранить 3 URL-адреса в хранилище сеансов или локальном хранилище вместо enviroment.ts, если вы обновите страницу.
+
+См. Angular: можно ли прочитать файл json после сборки
+
+ 21.03.2019 17:50
+    import { environment } from '../../../environments/environment';
+
+    domain :string = environment.domain;
+
+    if (!!environment) {
+        if (environment.qa) {
+          "url1": "https://jsonplaceholder.typicode.com/posts",
+        }
+        if (environment.dev) {
+           "url2" : "https://reqres.in/api/users",
+        } 
+      }
+вы можете импортировать свойство baseUrl из папки ресурсов в файл службы и выполнить, как я упоминал выше.
+
+https://alligator.io/angular/environment-variables/
+
+Пожалуйста, найдите URL-адрес для подробного объяснения переменных среды в angular
+
+ 26.03.2019 13:10
+Итак, я бы создал скрипт узла с именем populatedDynamicUrls.js, который может считывать эти значения IN из файла json и записывать эти значения OUT в соответствующий файл environment.ts для этой конкретной среды. ТОГДА ваша команда сборки angular будет выглядеть так: node populateDynamicUrls.js && ng run build, а ваша команда подачи angular будет выглядеть так: node populateDynamicUrls.js && ng run serve
+
+ 27.03.2019 02:55
+ Ответ принят как подходящий
+Поскольку у вас есть статические строки в файле JSON, который уже сохранен в папке /assets и не находится на сервере, вам не нужно использовать http.get.
+Мы используем протокол http для получения данных из файлов JSON только с сервера/бэкенда, а не из папок на стороне клиента.
+Вам просто нужно импортировать файл JSON куда вам нужно (даже в environment.ts), как вы делаете с DTO. Используйте оператор Typescript ES6 import в сочетании с export в файле JSON.
+
+активы/config.ts
+
+export const URLS = Object({
+
+     "url1": "https://jsonplaceholder.typicode.com/posts",
+
+     "url2" : "https://reqres.in/api/users",
+
+     "url3":"https://fakerestapi.azurewebsites.net/api/Authors"
+})
+Потом где угодно (компоненты, директивы, сервисы, классы, интерфейсы и т.д...)
+
+import { URLS } from 'assets/config.ts';
+
+....
+
+this.url1 = URLS.url1;
+//или
+
+let url1 = URL.url1;
+Теперь this.url1 можно использовать в любом вызове API внутри http.get, например:
+
+ this.http.get(`${this.url1}`, { headers: this.getHeaders(token) });
+или
+
+ this.http.get(`${url1}`, { headers: this.getHeaders(token) }) // where url1 could be a variable or method parameter, etc...
+Вот и все
+
+ 27.03.2019 06:22
+Вы можете использовать требуется ? для чтения файла json из ресурсов.
+
+/assets/urls.json ?
+
+{
+  "urls": {
+    "dev": "dev.com",
+    "prod": "prod.com"
+  }
+}
+env.ts
+
+const { urls } = require("../assets/urls.json");
+
+export const environment: IEnv = {
+  production: false,
+  baseUrl: urls.dev
+};
+env.prod.ts
+
+const { urls } = require("../assets/urls.json");
+export const environment: IEnv = {
+  production: true,
+  baseUrl: urls.prod
+};
+? you need to install npm i @types/node and update tsconfig.app.json like this
+
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": ["node"]
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"]
+}
+ 30.03.2019 15:51
+Если вы хотите импортировать файл json
+
+Добавьте config.json в каталог ресурсы.
+Отредактируйте файл типизация.d.ts:
+    declare module "*.json" {
+        const value: any;
+        export default value;
+    }
+Добавьте путь к typings.d.ts в «typeRoots» в tsconfig.json, например:
+"typeRoots": [
+      "node_modules/@types", "./src/typings.d.ts"
+],
+Импортируйте config.json в файл среды:
+import * as config from '../assets/config.json';
+
+export const environment = {
+  baseUrl: config.default.url1
+  production: true
+};
+Вот и все, удачи!
+
+ 15.05.2019 13:39
+Я не уверен, что это лучшее решение, но вот что я сделал (вырезав и вставив то, что уже было в проекте Angular по умолчанию). У меня была та же цель: я хотел, чтобы «URL-адрес API» был доступен в зависимости от того, какую среду (отладку или производство) мы использовали.
+
+Во-первых, я добавил дополнительный параметр конфигурации в два существующих файла .ts:
+
+src\environments\environment.prod.ts
+src\environments\environment.ts
+..так что теперь каждый из файлов выглядел примерно так:
+
+export const environment = {
+  production: false,
+  apiUrl: "http://localhost:53104"
+};
+В файле main.ts уже есть код для чтения в объекте environment, и он использует значение environment.production, поэтому я просто добавил немного кода в этот файл, чтобы сделать то же самое со значением environment.apiUrl:
+
+export function getAPIUrl() {
+  console.info("API URL: " + environment.apiUrl);
+  return environment.apiUrl;
+}
+
+const providers = [
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
+  { provide: 'API_URL', useFactory: getAPIUrl, deps: [] }
+];
+
+. . . 
+
+platformBrowserDynamic(providers).bootstrapModule(AppModule)
+   .catch(err => console.info(err));
+С этим я могу получить доступ к этому новому значению «API_URL» в своих компонентах.
+
+Например:
+
+export class FetchDataComponent {
+  public forecasts: WeatherForecast[];
+
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, @Inject('API_URL') APIUrl: string) {
+    http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
+      this.forecasts = result;
+    }, error => console.error(error));
+
+    console.info("FetchDataComponent, URL: " + APIUrl);
+  }
+}
+Когда я открываю эту страницу, я вижу свой URL-адрес, отображаемый в окне вывода.
+
+FetchDataComponent, URL: http://localhost:53104
+Это решение подходит? Это кажется намного проще (почти без кода), чем другие решения.
+
+На самом деле, еще более простое решение — не использовать провайдер «API_URL», а просто вставить его в свои компоненты:
+
+import { environment } from '../../environments/environment';
+.. затем просто получите доступ к значению, используя:
+
+console.info("FetchData, URL: " + environment.apiUrl);  
+Работа выполнена !
+
+
+Ionic 4 ионное содержание прокрутите вниз
+Вопросы
+ANGULAR
+Ionic 4 ионное содержание прокрутите вниз
+Я создаю страницу чата с помощью Ionic 4 и пытаюсь автоматически прокрутить ее до нижней части страницы. Я сделал это так, и это не работает:
+
+import { IonContent } from "@ionic/angular";
+
+export class ChatroomPage implements OnInit {
+    messageForm: FormGroup;
+    messages: any[];
+    messenger: any;
+    @ViewChild(IonContent) content: IonContent;
+
+    constructor(
+        private navExtras: NavExtrasService,
+        private api: RestApiService,
+        private httpNative: HTTP
+    ) { }
+
+    ngOnInit() {
+        this.content.scrollToBottom(300);
+    }
+}
+В html-файле:
+
+<ion-header>
+    <ion-toolbar color = "primary">
+        <ion-title>Chatroom</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <!-- display previous message -->
+        <ion-content padding id = "content"> 
+
+        <ion-list>
+            <ion-item *ngFor = "let message of messages">
+                {{ message.message }}
+            </ion-item>
+        </ion-list>
+
+        </ion-content>
+
+    <!-- chat message input -->
+    <ion-footer>
+        <form [formGroup] = "messageForm" (submit) = "sendMessage()" (keydown.enter) = "sendMessage()">
+            <ion-input formControlName = "message" type = "text" placeholder = "Enter your message"></ion-input>
+            <ion-button type = "submit">Send</ion-button>
+        </form>
+    </ion-footer>
+Отображаемая ошибка:
+
+ng:///ChatroomPageModule/ChatroomPage_Host.ngfactory.js:5 ERROR TypeError: Cannot read property 'scrollToBottom' of undefined
+
+Пожалуйста, просветите меня, что я сделал не так. В большинстве руководств, которые я нашел, используется Ionic 3, и они используют Content из ionic-angular вместо IonContent из @ionic/angular. Кажется, я не могу использовать Content в Ionic 4, так как у него нет метода scrollToBottom.
+
+ 12.03.2019 09:15
+13
+1
+29 056
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Вы можете добраться до нижней части контента с помощью метода прокрутить к низу ()
+
+scrollToBottom(duration?: number) => Promise<void>
+Добавьте идентификатор в ion-content
+
+<ion-content #content>
+</ion-content>
+Получите идентификатор содержимого в формате .ts и вызовите метод scrollToBottom с выбранной продолжительностью.
+
+@ViewChild('content') private content: any;
+
+ngOnInit() {
+  this.scrollToBottomOnInit();
+}
+
+scrollToBottomOnInit() {
+  this.content.scrollToBottom(300);
+}
+https://ionicframework.com/docs/api/content
+
+Обновлено:
+ViewChild получает правильные данные с предоставленным идентификатором контента.
+
+@ViewChild('content') private content: any;
+ngOnInit против ionViewDidEnter/ionViewWillEnter
+
+ngOnInit не сработает, если вы вернетесь из стека навигации, ionViewWillEnter / ionViewDidEnter сработает. Поэтому, если вы поместите функцию в ngOnInit, scrollToBottom не будет работать, если вы вернетесь назад.
+
+ 12.03.2019 10:14
+Томас Ванкойли прав, но когда вы добавляете новый текст и добавляете его в список, он не подталкивает его выше введенного текста. Поэтому, чтобы поместить текст в массив и обновить вид вниз, снова используйте ngZone.
+
+1.
+
+import { Component, ViewChild,NgZone } from '@angular/core';
+В конструкторе добавить
+public _zone: NgZone
+Вызовите свою функцию
+this._zone.run(() => {
+  setTimeout(() => {
+    this.contentchat.scrollToBottom(300);
+  });
+}); 
+ 16.05.2019 13:04
+Большая часть вашего кода в порядке. Вам просто нужно внести 2 изменения, и это должно сработать для вас в Ionic 4. Вот изменения:
+
+Изменение 1 (HTML-ФАЙЛ):
+
+Заменять:
+
+<ion-content padding id = "content">
+с участием:
+
+<ion-content padding #content>
+Изменение 2 (TS ФАЙЛ):
+
+Заменять:
+
+scrollToBottomOnInit() {
+  this.content.scrollToBottom(300);
+}
+с участием:
+
+scrollToBottomOnInit() {
+    setTimeout(() => {
+        if (this.content.scrollToBottom) {
+            this.content.scrollToBottom(400);
+        }
+    }, 500);
+}
+ПРИМЕЧАНИЕ:
+
+Если вы не импортируете IonContent (аналогично тому, как вы это уже делали), код не скомпилируется, и вы увидите такие ошибки консоли:
+
+ERROR Error: Uncaught (in promise): ReferenceError: Cannot access 'MessagesPageModule' before initialization
+
+где MessagesPageModule — это модуль, связанный со страницей, на которой вы пытаетесь реализовать функцию.
+
+ 03.09.2019 18:36
+Это работает для меня на декабрь 2019 г..
+
+.html
+
+<ion-content #content>
+
+</ion-content>
+.тс
+
+@ViewChild('content', { static: false }) content: IonContent;
+
+constructor(){}
+
+ ngOnInit(): void {
+    this.scrollToBottom();
+  }
+
+
+ scrollToBottom(): void {
+    this.content.scrollToBottom(300);
+  }
+ 02.12.2019 11:35
+Из-за недавних изменений в ionic 4 я обнаружил, что код в предложенном ответе больше не работает для меня. Надеюсь, это поможет всем новичкам.
+
+import { IonContent } from '@ionic/angular';
+
+export class IonicPage implements OnInit {
+@ViewChild(IonContent, {read: IonContent, static: false}) myContent: IonContent;
+
+  constructor() {}
+
+  ScrollToBottom(){
+    setTimeout(() => {
+      this.myContent.scrollToBottom(300);
+   }, 1000);
+
+  }
+}
+В файле .html не указан идентификатор для <ion-content>
+
+Официальная документация относится к ионное содержание. Ионная версия использовалась, указанная ниже на момент написания этого поста.
+
+Ionic CLI                     : 5.4.13
+Ionic Framework               : @ionic/angular 4.11.3
+@angular/cli                  : 8.1.3
+ 10.01.2020 09:49
+Это, наконец, сработало для меня. Вы можете попробовать это.
+
+.тс
+
+import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
+/.. объявление класса .../
+
+@ViewChild('content') content : IonContent;
+
+constructor(public _zone: NgZone){
+}
+
+ngOnInit(): void {
+    this.scrollToBottom();
+}
+
+scrollToBottom()
+{
+    this._zone.run(() => {
+
+      const duration : number = 300;
+
+      setTimeout(() => {
+        
+        this.content.scrollToBottom(duration).then(()=>{
+
+          setTimeout(()=>{
+
+            this.content.getScrollElement().then((element:any)=>{
+
+              if (element.scrollTopMax != element.scrollTop)
+              {
+                // trigger scroll again.
+                this.content.scrollToBottom(duration).then(()=>{
+
+                  // loaded... do something
+
+                });
+              }
+              else
+              {
+                // loaded... do something
+              }
+            });
+          });
+        });
+
+      },20);
+    }); 
+}
+ 23.08.2020 22:30
+Моя функция с реализацией Афтервиевчеккед цикла углового вида en angular 9 con fecha 30/10/2020
+
+Импорт
+
+import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
+
+import { IonContent } from '@ionic/angular';
+
+реализация AfterViewChecked
+
+export class PublicationsProductPage implements AfterViewChecked {
+
+Создать метод scrollToBottom
+
+scrollToBottom() { this.content.scrollToBottom(); }
+
+Используйте метод scrollToBottom для реализации AfterViewChecked
+
+ngAfterViewChecked(){ this.scrollToBottom(); }
+
+con este codigo te aseguras de que siempre se dirija al final del ionconten
+
+ 30.10.2020 20:03
+@ViewChild(IonContent) content: IonContent;
+scrollToBottom() {
+    setTimeout(() => {
+      if (this.content.scrollToBottom) {
+        this.content.scrollToBottom();
+      }
+    }, 400);
+  }
+В любом месте использования функции:
+
+this.scrollToBottom();
+
+
+Как скрыть ввод материала
+Вопросы
+ANGULAR
+Как скрыть ввод материала
+Обычно, если я хочу, чтобы поле формы было включено в отправку, но не было видно, я делаю <input type = "hidden" />
+
+Однако matInput не допускает тип hidden. Я мог бы использовать display: none;, но это обычно исключает ценность из представления.
+
+Есть ли способ скрыть ввод в материальной динамической форме, которая также включает значение в представлении?
+
+ 27.02.2019 23:42
+10
+1
+29 279
+8
+ Ответы 8
+Здесь я добавил код для matInput, вы можете видеть, что сначала mat-form-field это input hidden и работает. Если вы хотите показать, что на него нельзя нажимать, просто добавьте disabled в конце input, и это сработает.
+
+HTML
+
+<form class = "example-form">
+  <mat-form-field class = "example-full-width">
+    <input matInput placeholder = "Favorite food" value = "Sushi" type = "hidden">
+  </mat-form-field>
+
+  <mat-form-field class = "example-full-width">
+    <textarea matInput placeholder = "Leave a comment"></textarea>
+  </mat-form-field>
+</form>
+https://stackblitz.com/edit/angular-g9jxjd-huz6me?file=app/input-overview-example.html
+
+ 28.02.2019 00:35
+Как уже упоминалось, type="hidden" не работает с matInput. Если вы откроете консоль браузера, вы увидите сообщение «ОШИБКА: тип ввода «скрытый» не поддерживается matInput». и если вы попытаетесь отправить форму с типом = "скрытый", то форма будет повреждена, отображая только часть значений формы. Простой способ обойти эту проблему — использовать класс CSS для тега mat-form-field:
+
+<mat-form-field class = "invisible example-full-width">
+   <input matInput placeholder = "Favorite food" value = "Sushi" ngModel name = "fish">
+</mat-form-field>
+Фрагмент CSS:
+
+.invisible{
+    display: block;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+ 28.02.2019 01:33
+Вы можете просто использовать директиву скрытый.
+
+<mat-form-field [hidden] = "!(formX.value.otherControl == '1')">
+    <input matInput type = "number" placeholder = "An Input" formControlName = "aControl">
+</mat-form-field>
+Я использовал значение в моей форме с именем formX (formX.value.otherControl) в моем примере, но вы можете использовать истинный в своем случае.
+
+<mat-form-field [hidden] = "true">
+    <input matInput type = "number" placeholder = "An Input" formControlName = "aControl">
+</mat-form-field>
+ 03.04.2019 08:39
+поскольку скрытые поля не видны, они не материальны, в качестве альтернативы вы можете определить элемент управления в форме в компоненте следующим образом.
+
+this.yourForm = this.formBuilder.group({
+        
+        hidden_fld:["your_value",Validators.nullValidator],
+        other_field: ['', Validators.required],
+      
+        });
+поэтому вы устанавливаете значение по умолчанию hidden_fld, и при отправке это значение также будет отправлено вместе с другими переменными формы.
+
+ 24.10.2020 17:04
+В angular 10 вы можете использовать *ngIf с <mat-form-field>
+
+ 26.11.2020 09:08
+Используйте скрытый = "истина" для решения этой проблемы
+
+<input  hidden = "true"  matInput class = "form-control" formControlName = "yourfieldname">
+ 18.01.2021 05:13
+если вы не нашли ответ. Вот как я добился успеха, учитывая именно то, что вы хотели сделать. Поскольку я хотел скрыть определенные входные данные, я просто не включил их в a, и форма была успешно отправлена ​​​​с помощью кнопки action = '' post = '' и type = 'submit'. Пример:
+
+<form action='/path' method='post'>
+     <mat-form-field class = "form-element">
+        <label for = "item">
+          <input matInput placeholder = "My Item"
+                 [value] = "paymentDetail._amount" name = "item" id = "item">
+        </label>
+      </mat-form-field>
+     <input name = "anotherItem" id = "anotherItem" type = "hidden"
+             [value] = "model._itemDescription" >
+</form>
+ 21.07.2021 15:20
+Я протестировал его для Angular v11, где hidden все еще не поддерживается для mat-form-field, поэтому вместо создания класса css или использования type=hidden или если директива *ngIf невозможна, если вы не хотите обновлять жизненный цикл компонента.
+
+Я только что изменил [hidden] = "variable" -> [class.cdk-visually-hidden] = "variable".
+
+Кредит принадлежит @EdWood
+
+Это сработало для меня на Angular 12
+
+— 
+Kit Peters
+ 23.11.2021 21:05
+
+
+VSCode, показывающий ошибку TS «не удается найти модуль» для импорта .vue во время компиляции, не
+Вопросы
+TYPESCRIPT
+VSCode, показывающий ошибку TS «не удается найти модуль» для импорта .vue во время компиляции, не
+Проще говоря, vscode показывает эту ошибку в модуле:
+
+Cannot find module '@/components/SidebarToggleIcon'
+
+Но при компиляции такой ошибки не появляется.
+
+Это проект VueJS, а SidebarToggleIcon — это .vue файл с TypeScript в разделе <script lang = "ts">. Эта ошибка появлялась раньше в VSCode и во время компиляции, пока я не добавил пакет @vue/eslint-config-typescript. Теперь это просто отображается в VSCode.
+
+Боковая панель.vue
+
+<script lang = "ts">
+// [skip other imports]
+import SidebarToggleIcon from '@/components/SidebarToggleIcon';
+
+@Component
+export default class LayoutSidebar extends Vue {
+
+    get sidebarCollapsed(): boolean {
+        return preferenceModule.sidebarCollapsed;
+    }
+}
+
+</script>
+SidebarToggleIcon.vue
+
+<script lang = "ts">
+import Vue from 'vue';
+import { getModule } from 'vuex-module-decorators';
+import Component from "vue-class-component";
+import PreferencesStore from '@/store/PreferencesStore';
+
+const preferenceModule: PreferencesStore = getModule(PreferencesStore);
+
+@Component
+export default class SidebarToggleIcon extends Vue {
+
+    get sidebarCollapsed(): boolean {
+        return preferenceModule.sidebarCollapsed;
+    }
+
+    toggle(){
+        preferenceModule.ToggleSidebar();
+    }
+}
+</script>
+VSCode, показывающий ошибку TS «не удается найти модуль» для импорта .vue во время компиляции, не
+
+Почему это? Как мне это решить?
+
+Редактировать: Это нет проблема с алиасом @, те разрешаются корректно (на скриншоте строка над ошибкой использует его, и я использую его еще в проекте), эта ошибка все равно появляется при использовании относительных путей. В моем TSConfig есть соответствующий пункт "paths": { "@/*": ["src/*"] }. Если бы это было проблемой, компиляция также выдавала бы эту ошибку, чего нет, она присутствует только в VSCode.
+
+ 23.02.2019 07:53
+26
+1
+45 963
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Это связано с тем, что TypeScript не разрешает псевдонимы веб-пакетов автоматически.
+
+Чтобы TS разрешал псевдонимы, их нужно добавить в tsconfig.json под compilerOptions.paths:
+
+{  
+  "compilerOptions": {
+   "paths": {
+     "@/*": [
+      "./*"
+     ]
+    }
+  }
+}
+ 23.02.2019 08:23
+ Ответ принят как подходящий
+В файле Sidebar.vue попробуйте добавить расширение «.vue» в объявление импорта, примерно так:
+
+import SidebarToggleIcon from '@/components/SidebarToggleIcon.vue';
+ 24.07.2019 17:00
+После добавления расширения .vue при импорте я решил эту ошибку, добавив прокладки машинописного текста для файлов vue.
+
+Я создал файл в typings/sfc.d.ts, содержащий это:
+
+declare module '*.vue' {
+    import Vue from 'vue'
+    export default Vue
+}
+Использованная литература: https://github.com/vuejs/vue/issues/5298#issuecomment-453036640
+
+ 30.07.2019 17:20
+На моей машине расширение VS Code Ветур выдает сообщение об ошибке для моего @/ импорта в <script lang = "ts"> компонентов Vue в моем многопроектном репозитории.
+
+Кажется, Vetur ищет в папке верхнего уровня рабочей области VS Code файл tsconfig.json. Мое приложение Vue с его tsconfig.json находится в подпапке. Vetur не передает правильные настройки при вызове компилятора TypeScript.
+
+Решение 1 (временный взлом)
+Запустите VS Code из корневой папки проекта Vue. (Та же папка, что и правильная tsconfig.json.)
+
+code .
+Убедитесь, что tsconfig.json содержит свойство compilerOptions.baseUrl в дополнение к свойству compilerOptions.paths (Часто задаваемые вопросы о Ветур).
+
+Это изменяет мои настройки кода VS и настройки расширения; так как папка уровня проекта .vscode больше недоступна. (Я использую символические ссылки для синхронизации папок уровня рабочей области и уровня Vue .vscode.)
+
+Решение 2 (взлом)
+У меня есть один проект Vue в моей рабочей области, поэтому я добавил измененный файл tsconfig.json в общую папку рабочей области (родительская папка папки моего приложения Vue).
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["myVue/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
+Мне нужно свойство "baseUrl" в дополнение к свойству "paths" (опять же Часто задаваемые вопросы о Ветур).
+
+Я перезагрузил VS Code, чтобы изменения вступили в силу.
+
+Свойство "exclude" может и не требоваться, но я параноик, что Vetur вызывает компилятор TypeScript, тратя время на папку node_modules.
+
+Задний план
+Это может быть связано с (в настоящее время) открытым выпуском Vetur Многокорневая поддержка #424. (Вывод: Vetur ожидает ровно один СПА в папке верхнего уровня рабочей области VS Code.)
+
+ 03.03.2020 23:59
+Если вы используете typescript и хотите импортировать компонент из внешней библиотеки в свой проект vuejs. Вот как я решил свою проблему.
+
+создать index.d.ts файл в src/
+добавьте этот код -> declare module 'myAwesomeLib'
+компонент импорта -> import {SomeMethod} from 'myAwesomeLib'
+*.d.ts файлы используются для предоставления информации о типе машинописного текста о модуле, написанном на JavaScript.
+
+ 18.09.2021 08:53
+Если расширение Vetur вызывает ошибку, и вы используете сопоставление путей tsconfig, мне помогло создать файл vetur.config.js в папке верхнего уровня, указав, где найти файл tsconfig.json, как показано ниже:
+
+module.exports = {
+  projects: [
+    {
+      root: "./yourprojectdirectory",
+      tsconfig: "./tsconfig",
+    },
+  ],
+};
+Похоже, что Vetur попытается найти tsconfig.json в вашем корневом каталоге, поэтому, если ваш проект находится внутри подпапки, он не сможет найти его сам по себе.
+
+https://vuejs.github.io/vetur/guide/setup.html#advanced
+
+ 09.10.2021 00:36
+Если вы используете defineComponent в своих *.vue файлах в Vue3, это
+
+declare module '*.vue' {
+    import {defineComponent} from 'vue';
+    export default defineComponent;
+}
+ 27.10.2021 22:14
+Для меня для проекта Vite & Vue 3 в PhpStorm было достаточно создать файл shims в каталоге src. Большинство моих компонентов используют только настройку скрипта.
+
+src/shims-vue.d.ts
+
+declare module '*.vue';
+
+
+Как отображать ключ и значение в объекте с помощью javascript?
+Вопросы
+JAVASCRIPT
+Как отображать ключ и значение в объекте с помощью javascript?
+Я не знаю, возможно ли это в javascript. У меня есть объект, который является динамическим. как
+
+const list = {eb: 'blue', et: 'green'}
+в любое время значение моего списка изменится, например
+
+const list = {er: 'yellow', ex: 'black'}
+Как получить значение ключа в моем объекте? например, я собираюсь отобразить для него как ключ, так и значение.
+
+const ikey = 'eb'
+const ivalue = 'blue'
+ 24.02.2019 12:57
+2
+0
+11 950
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+try
+
+for(var key in objects) {
+        var value = objects[key];
+    }
+ 24.02.2019 12:59
+Вы можете использовать метод Object.keys(objectNameHere) прототипа Object для циклического переключения ключей по имени и перечислению.
+
+ 24.02.2019 13:01
+Вы можете использовать for..in ,
+
+for (var key in list) {
+  console.info(key, list[key]);
+}
+С ES6 вы можете использовать Object.entries
+
+for (let [key, value] of Object.entries(list)) {
+    console.info(key, value);
+}
+ 24.02.2019 13:01
+Попробуй это
+
+const list = {er: 'yellow', ex: 'black'};
+Object.keys(list).forEach(e=>console.info(e+" = "+list[e]))
+ 24.02.2019 13:01
+ Ответ принят как подходящий
+Вы можете использовать Объект.записи.
+
+let list = {eb: 'blue', et: 'green'}
+
+const keyValue = (input) => Object.entries(input).forEach(([key,value]) => {
+  console.info(key,value)
+})
+
+
+keyValue(list)
+list = {er: 'yellow', ex: 'black'}
+keyValue(list)
+ 24.02.2019 13:02
+Используйте Object.entries(), чтобы получить список пар ключ/значение из вашего объекта. Затем вы можете перебирать пары и отображать их с помощью Array.forEach():
+
+Object.entries({ a: 'hello', b: 3 }).forEach(([key, val]) => {
+  console.info(key, val);
+});
+Вы можете получить список ключей с помощью Object.keys() и список значений с помощью Object.values():
+
+const obj = { a: 'hello', b: 3 };
+
+console.info(Object.keys(obj));
+console.info(Object.values(obj));
+console.info(Object.entries(obj));
+Наконец, вы можете перебирать ключи объекта напрямую с помощью цикла for...in, и в этом случае вам нужно использовать обозначение в скобках для доступа к свойству вашего объекта:
+
+const obj = { a: 'hello', b: 3 };
+
+for (const key in obj) {
+  console.info(key, obj[key]);
+}
+ 24.02.2019 13:15
+Чтобы избежать больших вычислений и поскольку V8 отлично справляется с операциями JSON, вы можете просто JSON.stringify(obj) предоставить вам все записи. Единственная проблема заключается в том, что у вас не будет контроля над тем, как должны обрабатываться определенные типы значений, т.е. в этом случае вы останетесь только с примитивами в качестве значений.
+
+ 24.02.2019 13:30
+Попробуйте использовать for..in оператор
+
+var obj = {
+  Name: 'Mohsin ',
+  Age: 20,
+  Address: 'Peshawar',
+}
+
+for (var keys in obj) {
+  console.info(keys, ':', obj[keys])
+}
+
+
+Массив Typescript найти, возможно, не найти
+Вопросы
+TYPESCRIPT
+Массив Typescript найти, возможно, не найти
+У меня есть набор данных, который выглядит так:
+
+interface Item {
+  name: "one" | "two";
+  data: string;
+}
+
+const namedItems: Item[] = [
+  {
+    name: "one",
+    data: "some data one",
+  },
+  {
+    name: "two",
+    data: "some data two",
+  },
+];
+У каждого элемента есть имя, и значение может быть «один» или «два».
+
+Затем запустив массив, найдите это:
+
+const getData = (query: "one" | "two") =>
+  namedItems.find((item): boolean => query === item.name).data;
+Выдает ошибку машинописного текста «Возможно, объект не определен». Кажется, это связано с тем, что find может не найти что-то, но в моем примере вам разрешено искать только «один» или «два», которые всегда будут возвращать результат.
+
+Как мне заставить typescript знать, что он всегда будет возвращать результат при поиске?
+
+ 17.02.2019 23:19
+31
+5
+31 508
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Array.find() может не получиться и может вернуться undefined.
+
+Поскольку Typescript не знает, что ваш массив namedItems не пуст во время выполнения (в данном случае гарантированный сбой), вы ничего не можете с этим поделать.
+
+Однако вы можете использовать разные методы для извлечения поля data только тогда, когда элемент найден, например, вы можете обернуть результат в массив, затем сопоставить его и извлечь:
+
+const getData = (query: "one" | "two") =>
+  [namedItems.find((item): boolean => query === item.name)]
+    .map(x => x && x.data).shift();
+const namedItems = [
+  {
+    name: "one",
+    data: "some data one",
+  },
+  {
+    name: "two",
+    data: "some data two",
+  },
+];
+
+const getData = (items, query) =>
+  [items.find(item => query === item.name)]
+    .map(x => x && x.data).shift();
+
+console.info(getData(namedItems, 'one'));
+console.info(getData(namedItems, 'two'));
+console.info(getData([], 'one'));
+ 17.02.2019 23:51
+ Ответ принят как подходящий
+Объяснение
+
+Причина, по которой вы сталкиваетесь с этим, заключается в сигнатуре типа для Array.prototype.find:
+
+find(predicate: (value: T, index: number, obj: T[]) => boolean, thisArg?: any): T | undefined;
+Как видите, он всегда возвращает T | undefined. Это имеет большой смысл, потому что коллекция, определенная как Item[], может содержать произвольное количество элементов, включая 0. В вашем случае коллекция полная, но на уровне типа она ничем не отличается от [{ name: "one", data: "some data one" }] или даже [].
+
+Чтобы получить доступ к item.data безопасным способом, TypeScript потребует от вас дважды проверить, действительно ли результат найден.
+
+const lookup = namedItems.find(item => item.name === 'one');
+
+if (lookup === undefined) {
+  throw new TypeError('The value was promised to always be there!');
+}
+
+console.info(lookup.data);
+Решение
+
+Поскольку в долгосрочной перспективе это может стать громоздким, может оказаться полезным создать вспомогательную функцию для таких сценариев.
+
+function ensure<T>(argument: T | undefined | null, message: string = 'This value was promised to be there.'): T {
+  if (argument === undefined || argument === null) {
+    throw new TypeError(message);
+  }
+
+  return argument;
+}
+Использование:
+
+const getData = (query: "one" | "two") =>
+  ensure(namedItems.find(item => query === item.name)).data
+ 17.02.2019 23:55
+Используйте фильтр вместо поиска:
+
+В1:
+
+const results: string[] = namedItems.filter((item: Item) => 
+    item.name === "one" | item.name ===  "two")
+    .map((item:Item) => item.data)
+Версия 2:
+
+const results: string[] = namedItems.filter((item: Item) => 
+    ["one","two"].indexOf(item.name) !== -1)
+    .map((item:Item) => item.data)
+Не уверен, понял ли я, нужен ли вам только один результат... В таком случае
+
+const results: string[] = namedItems.filter(
+    (item: Item, index) => ["one", "two"].indexOf(item.name) !== -1 && index === 0)
+    .map((item:Item) => item.data)
+ 18.02.2019 00:17
+Установите результат поиска в переменную типа любой|Элемент, которая позволяет принимать пустой результат:
+
+const getData = (query: "one" | "two") => {
+  let item:any|Item = namedItems.find((item:Item): boolean => query === item.name);
+  return item.data;
+};
+См. CodePen
+
+ 20.05.2020 20:11
+Самый лаконичный код, вероятно, таков: используйте необязательный оператор цепочки (?.) и введите Item|any
+
+const getData = (query: "one" | "two"):Item|any => namedItems.find((item:Item): boolean => query === item.name)?.data;
+ 26.08.2020 03:33
+Если вы абсолютно уверены, что всегда получите совпадение, вы можете сказать TS так:
+
+const getData = (query: "one" | "two") => (namedItems.find((item) => query === item.name) as Item).data;
+
+ 14.03.2021 19:55
+How do I get typescript to know it will always return a result in the find?
+
+Самое простое, самое ленивое, самое уродливое и наиболее подверженное ошибкам решение — использовать ненулевой оператор утверждения:
+
+namedItems.find((item): boolean => query === item.name)!.data;
+
+Это способ сообщить машинописному тексту, что значение всегда будет определено, но опять же, зачем вы вообще используете машинописный текст, если собираетесь его переопределить? Вы должны остерегаться возможных неопределенных значений «на самом деле», потому что код может измениться в будущем, и могут произойти ошибки. Итак, используйте любое из ранее рекомендованных решений или мое решение:
+
+const getData = (query: "one" | "two") =>
+  (namedItems.find((item) => query === item.name) ?? {name: "undefined", data: "undefined"}).data;
+The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
+
+Если вам нужно значение по умолчанию, вы можете добавить все, что хотите, справа от ??-оператора. Если нет, вы можете сделать ложную проверку: if (!getData())
+
+ 03.06.2021 09:52
+Опция 1: Самый простой способ взлома — использование оператор ненулевого утверждения:
+(но как и @Эмануэль Линдстрем упоминается, это самый ленивый, самый уродливый и подверженный ошибкам хак)
+
+const getData = (query: "one" | "two") =>
+  namedItems.find((item): boolean => query === item.name)!.data;
+                                                         ^
+Вариант 2: Из Typescript 3.7 этого можно легко добиться с помощью функция утверждения:
+(без каких-либо хаков, преобразований или обходных путей)
+
+const getData = (query: 'one' | 'two'): string => {
+  const item = namedItems.find(({ name }) => query === name);
+  assert(item); // (A)
+
+  return item.data; // (B)
+}
+Функция утверждения assert() в строке A повлияла на статический тип item в строке B, чтобы он стал Item.
+
+В Node.js функция assert() доступна через встроенный модуль:
+
+import assert from 'assert';
+В среде браузера необходимо объявить его самостоятельно‌_!_
+Например, в папке утилит в проекте:
+
+function assert(value: unknown): asserts value {}
+
+
+Как настроить автофокус в mat-select?
+Вопросы
+JAVASCRIPT
+Как настроить автофокус в mat-select?
+В моем угловом проекте есть угловой материал и используется мат-выбор. Mat-select - это первый элемент для моей формы, в моем случае установлен автофокус, когда страница была успешно загружена, но я не смог установить автофокус на mat-select. Кто-нибудь может помочь мне найти способ установить автофокус в mat-select.
+
+@ViewChild("name") nameField: ElementRef;
+
+ngOninit() {
+  this.nameField.nativeElement.focus();
+} 
+HTML
+
+<div>
+ <mat-select [(ngModel)] = "nameField" #name>
+    <mat-option *ngFor = "let option of options2" [value] = "option.id">
+      {{ option.name }}
+    </mat-option>
+ </mat-select>
+</div>
+ 08.02.2019 14:55
+11
+6
+15 754
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Вы можете адаптировать этот пример к своему проекту. Щелчок по кнопке становится фокусом.
+
+фокусируясь на элементах формы способом Angular
+
+показать больше
+
+ 08.02.2019 15:12
+Вы можете вызвать в фокус на OnInit
+
+тс:
+
+ options2 = ['A', 'B'];
+
+  @ViewChild('name')
+  nameField: MdSelect;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.nameField.open();
+    }, 0);
+  }
+HTML:
+
+<div>
+<md-select [(ngModel)] = "nameField" #name>
+    <md-option *ngFor = "let option of options2" [value] = "option.id">{{ option }}</md-option>
+</md-select>
+Обновлено: Извините, я думаю, вы не можете получить родной элемент от mat-select и md-select. Вам нужно получить объект и вызвать open(). Рабочий проект здесь, в стекблиц
+
+ 08.02.2019 15:25
+Попробуйте использовать MatSelect на viewChild для доступа к сфокусированному атрибуту, затем onInit установите для него значение true.
+
+<mat-form-field>
+  <mat-select #mySelect [(ngModel)] = "nameField">
+    <mat-option *ngFor = "let option of options2" [value] = "option.id">{{ option.name }} 
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+и импорт файла ts import { MatSelect } from '@angular/material';
+
+import { MatSelect } from '@angular/material';
+
+export class SelectExample implements OnInit {
+  @ViewChild(MatSelect) mySelect: MatSelect;
+
+  ngOnInit() {
+    this.mySelect.focused = true;
+  }  
+}
+ 08.02.2019 16:49
+Поскольку это первое попадание, которое появляется в Google, я предоставлю то, что нашел:
+
+Обратите внимание, что я сделал это специально для mat-select, так как нет внутреннего html-элемента настоящий, к которому можно было бы прикрепить ссылку..
+
+То, что я нашел, работает, это получение ссылки на элемент через view-child, а затем вызов
+
+reference._elementRef.nativeElement.focus();
+Надеюсь, это поможет хоть кому-то :)
+
+ 28.05.2019 10:36
+HTML:
+
+<mat-select #someRef >
+    <mat-option *ngFor = "let item of items;" [value] = "item">
+    {{item.name}}
+    </mat-option>
+</mat-select>
+.тс : убедитесь, что вы импортируете MatSelect
+
+import { MatSelect } from '@angular/material';
+@ViewChild('someRef') someRef: MatSelect;
+
+
+ngOnInit() {
+    if (this.someRef) this.someRef.focus();
+}
+Надеюсь это поможет.
+
+ 11.07.2019 10:19
+Во-первых, давайте создадим директиву auto-focus.directive.ts
+
+import { AfterContentInit, Directive, ElementRef, Input } from '@angular/core';
+
+@Directive({
+     selector: '[autoFocus]' }) export class AutofocusDirective implements AfterContentInit {
+
+     public constructor(private el: ElementRef) {     
+     }
+
+     public ngAfterContentInit() {
+         setTimeout(() => {
+             this.el.nativeElement.focus();
+         }, 500);
+     }
+}
+Затем нам нужно сообщить нашему AppModule, что эта новая директива существует, и объявить ее доступной, обновив наш app.module.ts :
+
+@NgModule({
+    declarations: [
+        AutoFocusDirective
+    ]
+})
+Теперь вы можете использовать его в шаблоне компонента: app.component.html
+
+<div> Autofocus? <input appAutoFocus> </div>
+ 29.08.2019 10:01
+ Ответ принят как подходящий
+Если я правильно понимаю, вы хотите сфокусировать элемент выбора при загрузке. Если это так, ваш код в полном порядке, вам просто нужно переместить логику фокуса на другое событие жизненного цикла, которое
+
+ngAfterViewInit
+
+HTML:
+
+<mat-select #fff>
+    <mat-option *ngFor = "let food of foods" [value] = "food.value">
+      {{food.viewValue}}
+    </mat-option>
+</mat-select>
+ТС:
+
+export class SelectOverviewExample  implements AfterViewInit{
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
+  @ViewChild("fff", {static: false}) nameField: ElementRef;
+
+  ngAfterViewInit() {
+    this.nameField.focused = true;
+  }
+}
+Найдите рабочую демонстрацию здесь. Вы можете видеть, что выбор выделен. прокомментируйте код внутри ngAfterViewInit() и посмотрите на эту разницу.
+
+ 17.10.2019 08:15
+Мы можем использовать угловой атрибут по умолчанию для автофокуса.
+
+<mat-form-field>
+    <mat-select formControlName = "xyz" cdkFocusInitial>
+        <mat-option value = "abc">Abc</mat-option>
+    </mat-select>
+</mat-form-field>
+Предупреждение: cdkFocusInitial ничего не делает сам по себе. Он будет работать только внутри элемента с директивой cdkTrapFocus.
+
+— 
+j2L4e
+ 22.02.2020 21:30
+
+
+Ошибка 'mat-dialog-content' не является известным элементом
+Вопросы
+ANGULAR
+Ошибка 'mat-dialog-content' не является известным элементом
+Я пытаюсь создать форму входа, используя угловой материал. Я использую @angular/material": "^7.3.0.
+
+В app.module.ts я импортировал следующее и также поместил их в массив импорта:
+
+import {
+  MatToolbarModule, MatFormFieldModule, MatInputModule,
+  MatOptionModule, MatSelectModule, MatIconModule, 
+  MatButtonModule, MatCardModule, MatTableModule,
+  MatDividerModule, MatSnackBarModule
+} from '@angular/material';
+В message.components.ts у меня есть следующее
+
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { Component, OnInit, Inject, Injectable } from '@angular/core';
+
+@Component({
+  selector: 'app-message',
+  templateUrl: './message.component.html',
+  styleUrls: ['./message.component.css']
+})
+
+export class MessageComponent implements OnInit {
+  constructor(private dialogRef: MatDialogRef<MessageComponent>, 
+               @Inject(MAT_DIALOG_DATA) public data: any) {
+          }
+          public closeMe() {
+            this.dialogRef.close();
+          }
+          ngOnInit() {
+          }
+        }
+В моем шаблоне message.component.html у меня есть
+
+<h1 mat-dialog-title>Message</h1>
+<mat-dialog-content> </mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click) = "closeMe()">Close</button>
+</mat-dialog-actions>
+Я получаю ошибки для мат-диалоговых действий и мат-диалогового содержимого,
+
+'mat-dialog-content' is not a known element:
+'mat-dialog-actions' is not a known element:
+Согласно документации угловой материал доступны обе директивы. Что может быть не так в коде? Заранее спасибо.
+
+ 07.02.2019 15:52
+21
+0
+41 158
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Похоже, вы забыли импортировать MatDialogModule в свой AppModule (по крайней мере, я не вижу его в предоставленном списке импортируемых файлов).
+Для дальнейшего использования в первой строке вкладки документации API будут указаны модули, которые необходимо импортировать.
+
+ 07.02.2019 16:56
+Я согласен с ответом Джонатана. Я добавляю полную информацию с примером с образцом кода:
+
+это также решит проблемы с ошибкой: mat-dialog-actions' не является известным элементом
+
+Добавьте DataDialogComponent в объявления и в entryComponents app.module.ts.
+
+ import {MatDialogModule } from '@angular/material/dialog';
+
+
+   @NgModule({
+    declarations: [
+       AppComponent,
+       MatDialogModule
+    ],
+    imports: [
+       BrowserModule,
+       AppRoutingModule,
+       BrowserAnimationsModule,
+       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+       LayoutModule,
+
+    ],
+    providers: [],
+    entryComponents:[MatDialogModule],
+    bootstrap: [AppComponent]
+    })
+export class AppModule { }
+ 07.05.2020 01:59
+@ Брэндон, я не уверен, что вы решили это, просто перечисляю мои выводы. Даже я столкнулся с той же проблемой ошибки даже после импорта MatDialogModule, в конце концов я обнаружил, что нам также нужно импортировать ниже, выглядит как он не выдавал точную ошибку import { MatButtonModule } from '@angular/material/button';
+
+ 17.07.2020 09:19
+Первый, Вы должны убедиться, что MatDialogModule импортирован в ваш AppModule.
+
+Вы можете сделать оба:
+
+<div mat-dialog-content></div>
+<div mat-dialog-actions></div>
+Или
+
+<mat-dialog-content></mat-dialog-content>
+<mat-dialog-actions></mat-dialog-actions>
+Если вы посмотрите на источник component/src/material/dialog/dialog-module.ts в Angular Materials git репо, он экспортирует следующие директивы.
+
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from './dialog-content-directives';
+
+exports: [
+    ...
+    MatDialogClose,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    ...
+  ]
+и с последующим аналогичным объявлением для каждой директивы в ~/dialog-content-directives.ts
+
+@Directive({
+  selector: `[mat-dialog-content], mat-dialog-content, [matDialogContent]`,
+  host: {'class': 'mat-dialog-content'}
+})
+export class MatDialogContent {}
+Если проблема не устранена, попробуйте следующее
+
+npm cache clean --force
+Затем снова запустите свой проект.
+
+ 26.07.2020 10:30
+Я получал аналогичную ошибку, когда рефакторил код.
+
+Проблема была из-за дублирующегося компонента (скопируйте мой диалог в 2-х местах). Я переименовал новый на другое имя, и проблема исчезла.
+
+ERROR in src/app/components/blah/result-dialog.html:2:1 - error NG8001: 'mat-dialog-content' is not a known element:
+1. If 'mat-dialog-content' is an Angular component, then verify that it is part of this module.
+2. If 'mat-dialog-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+
+2 <mat-dialog-content >
+  ~~~~~~~~~~~~~~~~~~~~~
+ 05.02.2021 23:53
+После обновления с Angular 7 до 11 теперь есть не только app.module.ts, но и имя_компонента.module.ts в каждом компоненте.
+
+Мне пришлось импортировать туда MatDialogModule (и MatButtonModule для красивых кнопок)!
+
+ 17.03.2021 13:08
+Для меня это было вызвано тем, что я еще не добавил свой модуль, который использовал диалог, в маршруты родительского модуля. (я лениво загружаю с помощью import())
+
+Таким образом, этот модуль не был чистой частью приложения angular, потому что он еще не был импортирован никакими другими модулями приложения.
+
+ 23.11.2021 19:12
+Я добавил 'MatDialogModule' в импорт app.module.ts, а затем компонент диалога, который я создал, в объявления app.module.ts!! Это решило проблему для меня.
+
+
+Преобразование массива плоских объектов во вложенные объекты
+Вопросы
+JAVASCRIPT
+Преобразование массива плоских объектов во вложенные объекты
+У меня есть следующий массив (который на самом деле исходит от серверной службы):
+
+const flat: Item[] = [
+    { id: 'a', name: 'Root 1', parentId: null },
+    { id: 'b', name: 'Root 2', parentId: null },
+    { id: 'c', name: 'Root 3', parentId: null },
+
+    { id: 'a1', name: 'Item 1', parentId: 'a' },
+    { id: 'a2', name: 'Item 1', parentId: 'a' },
+
+    { id: 'b1', name: 'Item 1', parentId: 'b' },
+    { id: 'b2', name: 'Item 2', parentId: 'b' },
+    { id: 'b2-1', name: 'Item 2-1', parentId: 'b2' },
+    { id: 'b2-2', name: 'Item 2-2', parentId: 'b2' },
+    { id: 'b3', name: 'Item 3', parentId: 'b' },
+
+    { id: 'c1', name: 'Item 1', parentId: 'c' },
+    { id: 'c2', name: 'Item 2', parentId: 'c' }
+];
+где Item:
+
+interface Item {
+    id: string;
+    name: string;
+    parentId: string;
+};
+Чтобы быть совместимым с компонентом, который отображает представление в виде дерева (папки), его необходимо преобразовать в:
+
+const treeData: NestedItem[] = [
+    {
+        id: 'a',
+        name: 'Root 1',
+        root: true,
+        count: 2,
+        children: [
+          {
+            id: 'a1',
+            name: 'Item 1'
+          },
+          {
+            id: 'a2',
+            name: 'Item 2'
+          }
+        ]
+    },
+    {
+        id: 'b',
+        name: 'Root 2',
+        root: true,
+        count: 5, // number of all children (direct + children of children)
+        children: [
+          {
+            id: 'b1',
+            name: 'Item 1'
+          },
+          {
+            id: 'b2',
+            name: 'Item 2',
+            count: 2,
+            children: [
+                { id: 'b2-1', name: 'Item 2-1' },
+                { id: 'b2-2', name: 'Item 2-2' },
+            ]
+          },
+          {
+            id: 'b3',
+            name: 'Item 3'
+          },
+        ]
+    },
+    {
+        id: 'c',
+        name: 'Root 3',
+        root: true,
+        count: 2,
+        children: [
+          {
+            id: 'c1',
+            name: 'Item 1'
+          },
+          {
+            id: 'c2',
+            name: 'Item 2'
+          }
+        ]
+    }
+];
+где NestedItem:
+
+interface NestedItem {
+    id: string;
+    name: string;
+    root?: boolean;
+    count?: number;
+    children?: NestedItem[];
+}
+Все, что я пробовал до сих пор, это что-то вроде:
+
+// Get roots first
+const roots: NestedItem[] = flat
+    .filter(item => !item.parentId)
+    .map((item): NestedItem => {
+        return { id: item.id, name: item.name, root: true }
+    });
+
+// Add "children" to those roots
+const treeData = roots.map(node => {
+    const children = flat
+        .filter(item => item.parentId === node.id)
+        .map(item => {
+            return { id: item.id, name: item.name }
+        });
+    return {
+        ...node,
+        children,
+        count: node.count ? node.count + children.length : children.length
+    }
+});
+Но это, конечно, получает только первый уровень дочерних элементов (прямые дочерние элементы корневых узлов). Это каким-то образом должно быть рекурсивным, но я понятия не имею, как это сделать.
+
+ 06.02.2019 16:44
+4
+0
+3 135
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Не делая никаких предположений о порядке сплющенного массива или о том, насколько глубоко может быть вложенный объект:
+
+Array.prototype.reduce достаточно гибок, чтобы это сделать. Если вы не знакомы с Array.prototype.reduce, рекомендую читая это. Вы можете добиться этого, выполнив следующие действия.
+
+У меня тут две функции, которые полагаются на рекурсию: findParent и checkLeftOvers. findParent пытается найти родительский объект и возвращает true или false в зависимости от того, находит ли он его. В моем редьюсере я добавляю текущее значение в массив остатков, если findParent возвращает false. Если findParent возвращает true, я вызываю checkLeftOvers, чтобы узнать, является ли какой-либо объект в моем массиве остатков дочерним по отношению к объекту findParent. добавлен.
+
+Примечание. Я добавил { id: 'b2-2-1', name: 'Item 2-2-1', parentId: 'b2-2'} в массив flat, чтобы продемонстрировать, что это может быть настолько глубоким, насколько вам нужно. Я также переупорядочил flat, чтобы продемонстрировать, что это будет работать и в этом случае. Надеюсь это поможет.
+
+const flat = [
+    { id: 'a2', name: 'Item 1', parentId: 'a' },
+    { id: 'b2-2-1', name: 'Item 2-2-1', parentId: 'b2-2'},
+    { id: 'a1', name: 'Item 1', parentId: 'a' },
+    { id: 'a', name: 'Root 1', parentId: null },
+    { id: 'b', name: 'Root 2', parentId: null },
+    { id: 'c', name: 'Root 3', parentId: null },
+    { id: 'b1', name: 'Item 1', parentId: 'b' },
+    { id: 'b2', name: 'Item 2', parentId: 'b' },
+    { id: 'b2-1', name: 'Item 2-1', parentId: 'b2' },
+    { id: 'b2-2', name: 'Item 2-2', parentId: 'b2' },
+    { id: 'b3', name: 'Item 3', parentId: 'b' },
+    { id: 'c1', name: 'Item 1', parentId: 'c' },
+    { id: 'c2', name: 'Item 2', parentId: 'c' }
+];
+
+function checkLeftOvers(leftOvers, possibleParent){
+  for (let i = 0; i < leftOvers.length; i++) {
+    if (leftOvers[i].parentId === possibleParent.id) {
+      delete leftOvers[i].parentId
+      possibleParent.children ? possibleParent.children.push(leftOvers[i]) : possibleParent.children = [leftOvers[i]]
+      possibleParent.count = possibleParent.children.length
+      const addedObj = leftOvers.splice(i, 1)
+      checkLeftOvers(leftOvers, addedObj[0])
+    }
+  }
+}
+
+function findParent(possibleParents, possibleChild) {
+  let found = false
+  for (let i = 0; i < possibleParents.length; i++) {
+    if (possibleParents[i].id === possibleChild.parentId) {
+      found = true
+      delete possibleChild.parentId
+      if (possibleParents[i].children) possibleParents[i].children.push(possibleChild)
+      else possibleParents[i].children = [possibleChild]
+      possibleParents[i].count = possibleParents[i].children.length
+      return true
+    } else if (possibleParents[i].children) found = findParent(possibleParents[i].children, possibleChild)
+  } 
+  return found;
+}
+ 
+ const nested = flat.reduce((initial, value, index, original) => {
+   if (value.parentId === null) {
+     if (initial.left.length) checkLeftOvers(initial.left, value)
+     delete value.parentId
+     value.root = true;
+     initial.nested.push(value)
+   }
+   else {
+      let parentFound = findParent(initial.nested, value)
+      if (parentFound) checkLeftOvers(initial.left, value)
+      else initial.left.push(value)
+   }
+   return index < original.length - 1 ? initial : initial.nested
+ }, {nested: [], left: []})
+ 
+console.info(nested)
+ 06.02.2019 17:35
+Предполагая, что массив плоских элементов всегда сортируется, как в вашем случае (родительские узлы сортируются перед дочерними узлами). Код ниже должен работать.
+
+Во-первых, я строю дерево без свойств count, используя сокращение массива, чтобы построить карту для отслеживания каждого узла и связывания родителей с дочерними элементами:
+
+type NestedItemMap = { [nodeId: string]: NestedItem };
+
+let nestedItemMap: NestedItemMap = flat
+    .reduce((nestedItemMap: NestedItemMap, item: Item): NestedItemMap => {
+
+        // Create the nested item
+        nestedItemMap[item.id] = {
+            id: item.id,
+            name: item.name
+        }
+
+        if (item.parentId == null){
+            // No parent id, it's a root node
+            nestedItemMap[item.id].root = true;
+        }
+        else{
+            // Child node
+            let parentItem: NestedItem = nestedItemMap[item.parentId];
+
+            if (parentItem.children == undefined){
+                // First child, create the children array
+                parentItem.children = [];
+                parentItem.count = 0;
+
+            }
+
+            // Add the child node in it's parent children
+            parentItem.children.push(
+                nestedItemMap[item.id]
+            );
+            parentItem.count++;
+        }
+
+        return nestedItemMap;
+    }, {});
+Тот факт, что родительский узел всегда идет первым при сокращении массива, гарантирует, что родительский узел доступен в nestedItemMap при построении дочерних элементов.
+
+Здесь у нас есть деревья, но без свойств count:
+
+let roots: NestedItem[] = Object.keys(nestedItemMap)
+    .map((key: string): NestedItem => nestedItemMap[key])
+    .filter((item: NestedItem): boolean => item.root);
+Чтобы заполнить свойства count, я лично предпочел бы выполнять поиск в глубину после заказа по деревьям. Но в вашем случае, благодаря именам идентификаторов узлов (отсортировано, идентификаторы родительских узлов идут первыми). Вы можете вычислить их, используя:
+
+let roots: NestedItem[] = Object.keys(nestedItemMap)
+    .map((key: string): NestedItem => nestedItemMap[key])
+    .reverse()
+    .map((item: NestedItem): NestedItem => {
+        if (item.children != undefined){
+            item.count = item.children
+                .map((child: NestedItem): number => {
+                    return 1 + (child.count != undefined ? child.count : 0);
+                })
+                .reduce((a, b) => a + b, 0);
+        }
+
+        return item;
+    })
+    .filter((item: NestedItem): boolean => item.root)
+    .reverse();
+Я просто переворачиваю массив, чтобы сначала получить все дочерние элементы (как в DFS после заказа), и вычисляю значение count. Последний реверс здесь просто для сортировки, как в вашем вопросе :).
+
+ 06.02.2019 17:51
+Если у вас есть столько информации заранее, вы можете намного проще построить дерево в обратном порядке. Поскольку вы так хорошо знаете форму входных данных и их отношения четко определены, вы можете легко разделить это на несколько массивов и построить их снизу вверх:
+
+function buildTree(arr: Item[]): NestedItem[] {
+  /* first split the input into separate arrays based on their nested level */
+  const roots = arr.filter(r => /^\w{1}$/.test(r.id));
+  const levelOne = arr.filter(r => /^\w{1}\d{1}$/.test(r.id));
+  const levelTwo = arr.filter(r => /^\w{1}\d{1}-\d{1}$/.test(r.id));
+
+  /* then create the bottom most level based on their relationship to their parent*/
+  const nested = levelOne.map(item => {
+    const children = levelTwo.filter(c => c.parentId === item.id);
+    if (children) {
+      return {
+        ...item,
+        count: children.length,
+        children
+      };
+    } else return item;
+  });
+
+  /* and finally do the same with the root items and return the result */
+  return roots.map(item => {
+    const children = nested.filter(c => c.parentId === item.id);
+    if (children) {
+      return {
+        ...item,
+        count: children.length,
+        children,
+        root: true
+      };
+    } else return { ...item, root: true };
+  });
+}
+Это может быть не самое производительное решение, и оно потребует некоторой настройки в зависимости от ожидаемой формы ввода, но это чистое и удобочитаемое решение.
+
+ 06.02.2019 17:52
+Вы можете использовать стандартный подход для дерева, которое использует один цикл и хранит отношения между дочерними и родительскими элементами, а также между родительскими и дочерними элементами.
+
+Для наличия корневых свойств вам нужна дополнительная проверка.
+
+Затем используйте итеративный и рекурсивный подход для подсчета.
+
+var data = [{ id: 'a', name: 'Root 1', parentId: null }, { id: 'b', name: 'Root 2', parentId: null }, { id: 'c', name: 'Root 3', parentId: null }, { id: 'a1', name: 'Item 1', parentId: 'a' }, { id: 'a2', name: 'Item 1', parentId: 'a' }, { id: 'b1', name: 'Item 1', parentId: 'b' }, { id: 'b2', name: 'Item 2', parentId: 'b' }, { id: 'b3', name: 'Item 3', parentId: 'b' }, { id: 'c1', name: 'Item 1', parentId: 'c' }, { id: 'c2', name: 'Item 2', parentId: 'c' }, { id: 'b2-1', name: 'Item 2-1', parentId: 'b2' }, { id: 'b2-2', name: 'Item 2-2', parentId: 'b2' },],
+    tree = function (data, root) {
+
+        function setCount(object) {
+            return object.children
+                ? (object.count = object.children.reduce((s, o) => s + 1 + setCount(o), 0))
+                : 0;
+        }                
+
+        var t = {};
+        data.forEach(o => {
+            Object.assign(t[o.id] = t[o.id] || {}, o);
+            t[o.parentId] = t[o.parentId] || {};
+            t[o.parentId].children = t[o.parentId].children || [];
+            t[o.parentId].children.push(t[o.id]);
+            if (o.parentId === root) t[o.id].root = true;          // extra
+        });
+
+        setCount(t[root]);                                         // extra
+        return t[root].children;
+    }(data, null);
+
+console.info(tree);
+.as-console-wrapper { max-height: 100% !important; top: 0; }
+ 29.02.2020 19:47
+может быть, это может вам помочь, ввод плоский объект
+
+nestData = (data, parentId = '') => {
+return data.reduce((result, fromData) => {
+  const obj = Object.assign({}, fromData);
+
+  if (parentId === fromData.parent_id) {
+    const children = this.nestData(data, fromData.id);
+    if (children.length) {
+      obj.children = children;
+    } else {
+      obj.userData = [];
+    }
+    result.push(obj);
+  }
+  return result;
+}, []);
+};
+
+ 27.08.2020 10:28
+Другой подход может выглядеть так:
+
+const countKids = (nodes) => 
+  nodes.length + nodes.map(({children = []}) => countKids(children)).reduce((a, b) => a + b, 0)
+
+const makeForest = (id, xs) => 
+  xs .filter (({parentId}) => parentId == id)
+     .map (({id, parentId, ...rest}) => {
+       const kids = makeForest (id, xs)
+       return {id, ...rest, ...(kids .length ? {count: countKids (kids), children: kids} : {})}
+     })
+
+const nest = (flat) =>
+  makeForest (null, flat)
+    .map ((node) => ({...node, root: true}))
+
+const flat = [{id: "a", name: "Root 1", parentId: null}, {id: "b", name: "Root 2", parentId: null}, {id: "c", name: "Root 3", parentId: null}, {id: "a1", name: "Item 1", parentId: "a"}, {id: "a2", name: "Item 1", parentId: "a"}, {id: "b1", name: "Item 1", parentId: "b"}, {id: "b2", name: "Item 2", parentId: "b"}, {id: "b2-1", name: "Item 2-1", parentId: "b2"}, {id: "b2-2", name: "Item 2-2", parentId: "b2"}, {id: "b3", name: "Item 3", parentId: "b"}, {id: "c1", name: "Item 1", parentId: "c"}, {id: "c2", name: "Item 2", parentId: "c"}]
+
+console .log (nest (flat))
+.as-console-wrapper {min-height: 100% !important; top: 0}
+Основная функция (makeForest) находит всех дочерних элементов, чьи идентификаторы совпадают с целевыми (изначально null), а затем рекурсивно делает то же самое с этими дочерними идентификаторами.
+
+Единственная сложность здесь заключается в том, чтобы не включать count или children, если дочерние элементы для узла пусты. Если включить их не проблема, то это можно упростить.
+
+ 27.08.2020 16:36
+this.treeData = this.buildTreeData(
+    flat.filter(f => !f.parentId), flat
+);
+
+private buildTreeData(datagroup: Item[], flat: Item[]): any[] {
+    return datagroup.map((data) => {
+        const items = this.buildTreeData(
+            flat.filter((f) => f.parentId === data.id), flat
+      );
+      return {
+          ...data,
+          root: !data.parentId,
+          count: items?.length || null
+          children: items,
+      };
+  });
+}
+ 02.09.2021 14:59
+Привет, я попробовал принятый ответ Коди и столкнулся с некоторыми проблемами, когда данные не были отсортированы и для вложенных данных с уровнем> 2
+
+в этой песочнице: https://codesandbox.io/s/runtime-dew-g48sk?file=/src/index.js:1875-1890 я просто немного изменил порядок (id=3 был перемещен в конец списка), посмотрите, как теперь в консоли мы получаем, что c имеет только 1 дочерний элемент
+
+У меня была еще одна проблема, когда родители не могли быть найдены, потому что в функции findParent переменная found сбрасывалась в false, если функция вызывалась рекурсивно с первым аргументом, являющимся массивом длиннее, чем 1 (например, поиск родителя для id=21 в:
+
+{id: 1,parentId: null, children: [
+    {
+      id: 10,
+      parentId: 1,
+      children: []
+    },
+    {
+      id: 11,
+      parentId: 1,
+      children: [{
+        id: 21...
+      }]
+    }
+]}
+потерпит неудачу
+
+в любом случае, я думаю, что сам поток был хорош, просто нуждался в некоторых незначительных исправлениях и переименованиях, так что вот что сработало для меня, я удалил некоторые свойства, которые я не использовал (например, counter), и добавил некоторые свои собственные (например, expanded), но это, очевидно, не должно иметь значения, я тоже использую TS (но я изменил все свои типы на any):
+
+class NestService {
+  public nestSearchResultsToTree(flatItemsPath: any[]) {
+    const nested = flatItemsPath.reduce(
+      (
+        initial: { nested: any[]; left: any[] },
+        value: any,
+        index: number,
+        original: any
+      ) => {
+        if (value.parentId === null) {
+          if (initial.left.length) this.checkLeftOvers(initial.left, value);
+          initial.nested.push(value);
+        } else {
+          const parentFound = this.findParent(initial.nested, value);
+          if (parentFound) this.checkLeftOvers(initial.left, value);
+          else initial.left.push(value);
+        }
+        return index < original.length - 1 ? initial : initial.nested;
+      },
+      { nested: [], left: [] }
+    );
+    return nested;
+  }
+
+  private checkLeftOvers(leftOvers: any[], possibleParent: any) {
+    for (let i = 0; i < leftOvers.length; i++) {
+      const possibleChild = leftOvers[i];
+      if (possibleChild.id === possibleParent.id) continue;
+      if (possibleChild.parentId === possibleParent.id) {
+        possibleParent.children
+          ? possibleParent.children.push(possibleChild)
+          : (possibleParent.children = [possibleChild]);
+        possibleParent.expanded = true;
+        possibleParent.isFetched = true;
+        this.checkLeftOvers(leftOvers, possibleChild);
+      }
+    }
+  }
+
+  private findParent(
+    possibleParents: any,
+    child: any,
+    isAlreadyFound?: boolean
+  ): boolean {
+    if (isAlreadyFound) return true;
+    let found = false;
+    for (let i = 0; i < possibleParents.length; i++) {
+      const possibleParent = possibleParents[i];
+      if (possibleParent.id === child.parentId) {
+        possibleParent.expanded = true;
+        possibleParent.isFetched = true;
+        found = true;
+        if (possibleParent.children) possibleParent.children.push(child);
+        else possibleParent.children = [child];
+        return true;
+      } else if (possibleParent.children)
+        found = this.findParent(possibleParent.children, child, found);
+    }
+    return found;
+  }
+}
+
+
+ОШИБКА в node_modules/rxjs-compat/operator/shareReplay.d.ts(2,10): ошибка TS2305:
+Вопросы
+ANGULAR
+ОШИБКА в node_modules/rxjs-compat/operator/shareReplay.d.ts(2,10): ошибка TS2305:
+Я пытаюсь обновить базовое приложение с угловым скелетом с angular 5 до angular 6, и вот проблема, с которой я сталкиваюсь при попытке запустить приложение:
+
+ERROR in node_modules/rxjs-compat/operator/shareReplay.d.ts(2,10): error TS2305: Module '"C:/newAdmin/testing-front-end/admin-fe/node_modules/rxjs/internal-compatibility/index"' has no exported member 'ShareReplayConfig'.
+Вот мой package.json:
+
+{
+ "name": "admin-fe",
+ "version": "0.0.0",
+ "scripts": {
+ "ng": "ng",
+ "start": "ng serve",
+ "build": "ng build",
+ "test": "ng test",
+ "lint": "ng lint",
+ "e2e": "ng e2e"
+ },
+ "private": true,
+ "dependencies": {
+   "@angular-devkit/core": "^7.3.0",
+   "@angular/animations": "^6.1.0",
+   "@angular/common": "^6.1.0",
+   "@angular/compiler": "^6.1.0",
+   "@angular/core": "^6.1.0",
+   "@angular/forms": "^6.1.0",
+   "@angular/http": "^6.1.0",
+   "@angular/platform-browser": "^6.1.0",
+   "@angular/platform-browser-dynamic": "^6.1.0",
+   "@angular/router": "^6.1.0",
+   "@ngrx/store": "^7.2.0",
+   "angular-oauth2-oidc": "^5.0.2",
+   "core-js": "^2.5.4",
+   "moment": "^2.24.0",
+   "rxjs": "6.3.3",
+   "rxjs-compat": "^6.4.0",
+   "zone.js": "~0.8.26"
+  },
+  "devDependencies": {
+   "@angular-devkit/build-angular": "~0.7.0",
+   "@angular/cli": "~6.1.3",
+   "@angular/compiler-cli": "^6.1.0",
+   "@angular/language-service": "^6.1.0",
+   "@types/jasmine": "~2.8.6",
+   "@types/jasminewd2": "~2.0.3",
+   "@types/node": "~8.9.4",
+   "codelyzer": "~4.2.1",
+   "jasmine-core": "~2.99.1",
+   "jasmine-spec-reporter": "~4.2.1",
+   "karma": "~1.7.1",
+   "karma-chrome-launcher": "~2.2.0",
+   "karma-coverage-istanbul-reporter": "~2.0.0",
+   "karma-jasmine": "~1.1.1",
+   "karma-jasmine-html-reporter": "^0.2.2",
+   "protractor": "~5.3.0",
+   "ts-node": "~5.0.1",
+   "tslint": "~5.9.1",
+   "typescript": "^2.9.1"
+ }
+}
+Я не получаю эту ошибку при использовании машинописного текста 3.3.1, но я не могу его использовать, поскольку компилятор разрешает мне только до машинописного текста < v2.10.0
+
+Какие шаги я могу предпринять здесь?
+
+РЕДАКТИРОВАТЬ :
+
+Я выровнял версии rxjs и rxjs-compat до версии 6.3.3, но теперь получаю следующую ошибку:
+
+ERROR in node_modules/@ngrx/store/src/store.d.ts(30,31): error TS2304: Cannot find name 'Extract'.
+ 02.02.2019 13:51
+20
+1
+24 997
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+В редактировании файла package.json замените "rxjs-compat": "^6.4.0" => "rxjs-compat": "^6.3.3" и запустите команду
+
+npm install
+ 10.02.2019 07:22
+Я столкнулся с подобной проблемой. Но это решается, когда я использовал приведенные ниже версии rxjs и rxjs-compat в package.json. --->"rxjs": "6.3.3", --->"rxjs-совместимость": "6.3.3"
+
+ 11.02.2019 19:23
+ Ответ принят как подходящий
+У меня была такая же проблема, мне пришлось понизить версию rxjs-compat (6.3.3), чтобы выровнять ее с rxjs (6.3.3),
+
+В вашем package.json должно быть так:
+
+"rxjs": "6.3.3",
+"rxjs-compat": "6.3.3",
+Если вы используете rxjs 6.4.0, вам не нужно использовать rxjs-compat, который обеспечивает уровень совместимости между rxjs v6 и v5.
+
+Поэтому я думаю, что вы можете напрямую использовать import {shareReplay} из 'rxjs/operators';
+
+Подробнее об операторах здесь: https://www.learnrxjs.io/
+
+ 14.02.2019 16:55
+Я столкнулся с той же проблемой с "rxjs": "6.3.3","rxjs-compat": "6.4.0", и, несмотря на переход на версию ^6.3.3, ошибка осталась. Просто небольшое дополнение. Если у вас есть ^ в вашем rxjs-compat, это может вызвать проблемы. Без каретки, т.е. rxjs-compat": "6.3.3" у меня работало. См. https://github.com/ReactiveX/rxjs/issues/4512. Спасибо
+
+ 23.02.2019 16:40
+У меня была такая же проблема для проекта, где версии rxjs и rxjs-compat были разными в файле package.json как rxjs="6.3.3" и rxjs-compat="6.4.0" поэтому я просто понизил версию rxjs-compat с помощью следующей команды:
+
+npm install rxjs-compat@6.3.3 --s
+
+это сработало для меня.
+
+ 03.03.2019 06:08
+Я работал с Angular 6, и проблема была решена путем удаления
+
+import 'rxjs/Rx';
+
+из моего кода.
+
+ 09.08.2019 17:12
+npm установить rxjs-compat@6.3.3 --s
+
+выше команда исправила мою проблему
+
+ 12.09.2019 12:11
+Я получил эту ошибку, импортировав Observable из rxjx/Rx — импорт из rxjs решил проблему.
+
+Мои версии были
+
+"rxjs": "~6.2.0",
+"rxjs-compat": "^6.0.0",
+Мне не нужно было их менять, просто измените импорт из
+
+импортировать {наблюдаемый} из 'rxjs/Rx';
+
+к
+
+импортировать {наблюдаемый} из 'rxjs';
+
+
+Typescript: у типа X отсутствуют следующие свойства типа Y: length, pop, push, concat и еще 26. [2740]
+Вопросы
+ANGULAR
+Typescript: у типа X отсутствуют следующие свойства типа Y: length, pop, push, concat и еще 26. [2740]
+У меня есть этот интерфейс продукта:
+
+export interface Product{
+  code: string;
+  description: string;
+  type: string;
+}
+Сервис с методом, вызывающим конечную точку продукта:
+
+  public getProducts(): Observable<Product> {
+    return this.http.get<Product>(`api/products/v1/`);
+  }
+  
+И компонент, в котором я использую этот сервис для получения продуктов.
+
+export class ShopComponent implements OnInit {
+    public productsArray: Product[];
+    
+    ngOnInit() {
+        this.productService.getProducts().subscribe(res => {
+          this.productsArray = res;
+        });
+    }
+}
+В этом состоянии я получаю сообщение об ошибке:
+
+[ts] Type 'Product' is missing the following properties from type 'Product[]': length, pop, push, concat, and 26 more. [2740]
+
+Удаление ввода переменной productsArray убирает ошибку, но не понимаю, почему это не работает, ведь ответ сервера представляет собой массив объектов типа Products?
+
+ 01.02.2019 09:49
+116
+2
+233 794
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Вы возвращаете Observable<Product> и ожидаете, что это будет Product[] внутри обратного вызова subscribe.
+
+Тип, возвращаемый из http.get() и getProducts(), должен быть Observable<Product[]>.
+
+public getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`api/products/v1/`);
+}
+ 01.02.2019 09:55
+Вы забыли пометить возвращаемый тип getProducts как массив. В вашем getProducts сказано, что он вернет один продукт. Поэтому измените его на это:
+
+public getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`api/products/v1/`);
+  }
+ 01.02.2019 09:56
+Для таких новичков, как я, не назначайте переменную для ответа службы, то есть делайте
+
+export class ShopComponent implements OnInit {
+  public productsArray: Product[];
+
+  ngOnInit() {
+      this.productService.getProducts().subscribe(res => {
+        this.productsArray = res;
+      });
+  }
+}
+Вместо
+
+export class ShopComponent implements OnInit {
+    public productsArray: Product[];
+
+    ngOnInit() {
+        this.productsArray = this.productService.getProducts().subscribe();
+    }
+}
+ 06.11.2019 10:26
+У меня была такая же проблема, и я решил следующим образом определить интерфейс, как у меня
+
+export class Notification {
+    id: number;
+    heading: string;
+    link: string;
+}
+и в nofificationService напишите
+
+allNotifications: Notification[]; 
+  //NotificationDetail: Notification;  
+  private notificationsUrl = 'assets/data/notification.json';  // URL to web api 
+  private downloadsUrl = 'assets/data/download.json';  // URL to web api 
+
+  constructor(private httpClient: HttpClient ) { }
+
+  getNotifications(): Observable<Notification[]> {    
+       //return this.allNotifications = this.NotificationDetail.slice(0);  
+     return this.httpClient.get<Notification[]>
+
+(this.notificationsUrl).pipe(map(res => this.allNotifications = res))
+      } 
+и в компоненте напишите
+
+ constructor(private notificationService: NotificationService) {
+   }
+
+  ngOnInit() {
+      /* get Notifications */
+      this.notificationService.getNotifications().subscribe(data => this.notifications = data);
+}
+ 10.03.2020 09:36
+Эта ошибка также может быть связана с тем, что вы не подписаны на Observable.
+
+Пример вместо:
+
+this.products = this.productService.getProducts();
+сделай это:
+
+   this.productService.getProducts().subscribe({
+    next: products=>this.products = products,
+    error: err=>this.errorMessage = err
+   });
+ 02.07.2020 14:54
+Я получил то же сообщение об ошибке во входном объекте мутации GraphQL, после чего обнаружил проблему. На самом деле в моем случае мутация ожидает массив объектов в качестве входных данных, но я пытаюсь вставить один объект в качестве входных данных. Например:
+
+Первая попытка
+
+const mutationName = await apolloClient.mutate<insert_mutation, insert_mutationVariables>({
+      mutation: MUTATION,
+      variables: {
+        objects: {id: 1, name: "John Doe"},
+      },
+    });
+Исправлен вызов мутации в виде массива
+
+const mutationName = await apolloClient.mutate<insert_mutation, insert_mutationVariables>({
+      mutation: MUTATION,
+      variables: {
+        objects: [{id: 1, name: "John Doe"}],
+      },
+    });
+Иногда такие простые ошибки могут вызвать проблемы. Надеюсь, это поможет кому-то.
+
+ 22.07.2020 10:33
+Вы должны указать тип ответа:
+
+this.productService.getProducts().subscribe(res => {
+    this.productsArray = res;
+});
+Попробуй это:
+
+this.productService.getProducts().subscribe((res: Product[]) => {
+    this.productsArray = res;
+});
+ 03.12.2020 01:00
+Для меня ошибка была вызвана неправильным типом подсказки строки URL. Я использовал:
+
+export class TodoService {
+
+  apiUrl: String = 'https://jsonplaceholder.typicode.com/todos' // wrong uppercase String
+
+  constructor(private httpClient: HttpClient) { }
+
+  getTodos(): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(this.apiUrl)
+  }
+}
+где я должен был использовать
+
+export class TodoService {
+
+  apiUrl: string = 'https://jsonplaceholder.typicode.com/todos' // lowercase string!
+
+  constructor(private httpClient: HttpClient) { }
+
+  getTodos(): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(this.apiUrl)
+  }
+}
+
+
+Как я могу проверить массив объектов, если один из объектов содержит только часть строки?
+Вопросы
+JAVASCRIPT
+Как я могу проверить массив объектов, если один из объектов содержит только часть строки?
+Как я могу проверить массив объектов, если один из объектов содержит только часть строки?
+
+products = [
+{id: 'pdc', code: '123456', name: 'pompa'},
+{id: 'kbr', code: '2365', name: 'kit kbr'},
+{id: 'boiler', code: '23165', name: 'VPB'}
+];
+И допустим, я хочу узнать, содержит ли this.products объект с «kbr»? И, как видите, у этого объекта более длинное имя. Что-то вроде:
+
+const matches = this.products.filter(s => s.includes('kbr')); 
+Спасибо!
+
+ 17.01.2019 15:50
+0
+0
+69
+8
+ Ответы 8
+Вам нужны значения объекта, а затем итерация, пока не будет найдено совпадение.
+
+var products = [{ id: 'pdc', code: '123456', name: 'pompa' }, { id: 'kbr', code: '2365', name: 'kit kbr' }, { id: 'boiler', code: '23165', name: 'VPB' }],
+    matches = this.products.filter(o => 
+        Object.values(o).some(v => v.toString().includes('kbr'))); 
+ 
+console.info(matches);
+ 17.01.2019 15:53
+Вы можете составить все значения в строку и проверить, включает ли она это:
+
+ const matches = this.products.filter(s => Object.values(s).join("¥").includes('kbr')); 
+ 17.01.2019 15:53
+Ты был почти там. Вам просто нужно было получить доступ к свойству "name" вашего объекта "s". В этом сценарии я использовал деструктуризация для быстрого доступа к свойству «имя».
+
+const products=[{id:"pdc",code:"123456",name:"pompa"},{id:"kbr",code:"2365",name:"kit kbr"},{id:"boiler",code:"23165",name:"VPB"}];
+
+const res = products.filter(({name})=>name.includes("kbr"));
+
+console.info(res);
+ 17.01.2019 15:53
+В функции фильтра вы не указали поле для проверки. Итак, вы должны написать это, если хотите проверить свойство имени:
+
+const matches = this.products.filter(s => s.name.includes('kbr'));
+ 17.01.2019 15:54
+Вы можете сгенерировать массив Объект.значения() внутри метода фильтра и проверить, есть ли в valuesсовпадение() строка, которую вы ищете:
+
+const products = [
+    {id: 'pdc', code: '123456', name: 'pompa'},
+    {id: 'kbr', code: '2365', name: 'kit kbr'},
+    {id: 'boiler', code: '23165', name: 'VPB'}
+];
+
+let res = products.filter(o =>
+{
+    return Object.values(o).some(x => ("" + x).match("kbr"));
+});
+
+console.info(res);
+ 17.01.2019 15:54
+вы можете упорядочить значения объекта и посмотреть, есть ли у него подстрока, которую вы ищете:
+
+const products = [{ id: 'pdc', code: '123456', name: 'pompa' }, { id: 'kbr', code: '2365', name: 'kit kbr' }, { id: 'boiler', code: '23165', name: 'VPB' }];
+
+const result = products.filter(prod =>
+  Object.values(prod).join(' ').includes('kbr'));
+
+console.info(result)
+ 17.01.2019 15:58
+использование some - лучший подход для этого, он остановится, как только что-то найдет. для больших массивов это будет улучшение :)
+
+products = [
+{id: 'pdc', code: '123456', name: 'pompa'},
+{id: 'kbr', code: '2365', name: 'kit kbr'},
+{id: 'boiler', code: '23165', name: 'VPB'}
+];
+
+const result = products.some(product => Object.keys(product).some(key => product[key].includes('kbr')))
+console.info(result)
+ 17.01.2019 16:15
+Я бы использовал функцию Array.find(), потому что она останавливается на первом подходящем объекте:
+
+const products = [
+    {id: 'pdc', code: '123456', name: 'pompa'},
+    {id: 'kbr', code: '2365', name: 'kit kbr'},
+    {id: 'boiler', code: '23165', name: 'VPB'}
+];
+
+const testPattern = 'kbr';
+
+const productsContains = (products, pattern) => 
+    products.find(
+      ({id, name}) => 
+          id.indexOf(pattern) >= 0 || name.indexOf(pattern) >= 0
+      ) ? true : false;
+
+console.info(`productsContains '${testPattern}':`, productsContains(products, testPattern));
+Это не работает в IE, но есть полифилл.
+
+
+Вызов члена объекта с аргументами
+Вопросы
+TYPESCRIPT
+Вызов члена объекта с аргументами
+function whatever(object, methodName, args) {
+  return object[methodName](...args);
+}
+Можно ли ввести указанное выше так, чтобы выполнялось следующее:
+
+methodName - это ключ к object.
+object[methodName] вызывается, а его аргументы - ...args.
+Тип возврата whatever(object, methodName, args) - это тип возврата object[methodName](...args).
+Самое близкое, что я смог найти, - это определение function.apply, но оно не совсем то же, что указано выше.
+
+ 10.01.2019 14:01
+32
+0
+2 277
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Как насчет этого?
+
+function whatever(someObject: { [key: string]: Function}, methodName: string, args: any[]) {
+    return someObject[methodName](...args);
+}
+
+whatever({ func1: (args) => (console.info(...args)) }, 'func1', [1])
+ 10.01.2019 14:09
+Всегда ли возвращаемый тип такой же, как у someObject [methodName]?
+
+function whatever<O extends {[key: string]: (...args) => R}, R>(object: O, methodName: keyof O, ...args: any[]): R {
+  return object[methodName](...args);
+}
+Тогда ты сможешь это сделать.
+
+ 10.01.2019 14:17
+Ближайший результат, о котором я могу думать, это следующий
+
+
+    function whatever<T extends object>(object: T, methodName: keyof T, args: any) {
+        const func = object[methodName]
+        if (typeof func === "function") {
+            return func(...[args])
+        }
+    }
+
+    const obj = {
+      aValue: 1,
+      aFunc: (s: string) => "received: " + s
+    }
+
+    whatever(obj, "aFunc", "blabla")
+
+which correctly checks the key for being part of the object. The type inference for return type and args is still missing though. I will update the answer if I find a better solution.
+ 10.01.2019 14:19
+Вариант, который является наиболее безопасным для типов, заключается в использовании Parameters для получения типов параметров функции (чтобы аргументы были типобезопасными), ReturnType для возврата результата функции.
+
+Вам также необходимо добавить параметр типа для захвата фактического переданного ключа, чтобы мы могли получить фактический тип функции (T[K] (
+
+function whatever<T extends Record<string, (...a: any[])=> any>, K extends keyof T> (someObject: T,  methodName: K, ...args: Parameters<T[K]>) : ReturnType<T[K]>{
+    return someObject[methodName](...args);
+}
+
+whatever({ func1: (args: number[]) => (console.info(...args)) }, 'func1', [1])
+whatever({ func1: (args: number[]) => (console.info(...args)) }, 'func1', ["1"]) // err
+ 10.01.2019 14:30
+ Ответ принят как подходящий
+Я считать, это помогает:
+
+function callMethodWithArgs<
+  M extends keyof T,
+  T extends { [m in M]: (...args: Array<any>) => any },
+  F extends T[M]
+>(obj: T, methodName: M, args: Parameters<F>) {
+  return obj[methodName](...args) as ReturnType<F>;
+}
+Однако требуется TS 3!
+
+ 10.01.2019 14:31
+Это должно сработать. Это проверяет наличие methodName, а также каждого из args.
+
+(Примечание: не идеально, можно внести некоторые уточнения; например, unknown -> any)
+
+type ArgumentsType<T> = T extends (...args: infer A) => any ? A : never;
+
+function whatever<
+  T extends object,
+  TKey extends keyof T,
+  TArgs extends ArgumentsType<T[TKey]>
+>(
+  object: T,
+  methodName: T[TKey] extends ((...args: TArgs) => unknown) ? TKey : never,
+  args: TArgs
+): T[TKey] extends ((...args: TArgs) => unknown) ? ReturnType<T[TKey]> : never {
+  const method = object[methodName];
+  if (typeof method !== 'function') {
+    throw new Error('not a function');
+  }
+  return method(...args);
+}
+
+interface Test {
+  foo: (a: number, b: number) => number;
+  bar: string;
+}
+
+const test: Test = {
+  foo: (a, b) => a + b,
+  bar: 'not a function'
+};
+
+const result = whatever(test, 'foo', [1, 2]);
+ 10.01.2019 14:32
+type Dictionary = { [key: string]: any }
+
+type MethodNames<T extends Dictionary> = T extends ReadonlyArray<any>
+  ? Exclude<keyof [], number>
+  : { [P in keyof T]: T[P] extends Function ? P : never }[keyof T]
+
+function apply<T extends Dictionary, P extends MethodNames<T>>(
+  obj: T,
+  methodName: P,
+  args: Parameters<T[P]>
+): ReturnType<T[P]> {
+  return obj[methodName](...args);
+}
+
+// Testing object types:
+const obj = { add: (...args: number[]) => {} }
+apply(obj, 'add', [1, 2, 3, 4, 5])
+
+// Testing array types:
+apply([1, 2, 3], 'push', [4])
+
+// Testing the return type:
+let result: number = apply(new Map<number, number>(), 'get', [1])
+Ссылка на игровую площадку
+
+Тип Dictionary позволяет использовать T[P].
+
+Типы Parameters и ReturnType встроены в TypeScript.
+
+Тип MethodNames извлекает любые ключи, значение которых может быть присвоено типу Function. Типы массивов требуют особого случая.
+
+Контрольный список
+Название метода подтверждено? ✅
+Аргументы проверяются по типу? ✅
+Тип возврата правильный? ✅
+ 10.01.2019 14:44
+Готово, соответствует всем критериям и не требует утверждений типа.
+
+type AnyFunction = (...args: any[]) => any;
+
+function whatever<
+  T extends Record<PropertyKey, AnyFunction>,
+  K extends keyof T,
+  A extends Parameters<T[K]>
+>(object: T, methodName: K, args: A): ReturnType<T[K]> {
+    return object[methodName](...args);
+}
+Тип Parameters является частью стандартной библиотеки, начиная с TypeScript 3.1. Если вы используете старую версию, создайте ее самостоятельно:
+
+type Parameters<T extends (...args: any[]) => any> =
+  T extends (...args: infer P) => any
+    ? P
+    : never;
+Использование типа PropertyKey вместо string позволяет использовать свойства типа string | number | symbol, который представляет собой полную гамму, поддерживаемую JavaScript.
+
+
+Jest не завершился через одну секунду после завершения тестового запуска с использованием экспресс
+Вопросы
+TYPESCRIPT
+Jest не завершился через одну секунду после завершения тестового запуска с использованием экспресс
+Я использую JEST для модульного тестирования своих экспресс-маршрутов.
+
+При запуске yarn test все мои тесты проходят успешно, но я получаю сообщение об ошибке
+
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+Я использовал async и done, но все равно возникает указанная выше ошибка.
+
+Ниже мой код спецификации. Пожалуйста помоги
+
+routes.spec.ts
+
+const request = require('supertest');
+describe('Test the root path', () => {
+  const app = require('./index');
+
+  test('GET /gql/gql-communication-portal/release-notes', async (done) => {
+    const response = await request(app).get('/gql/gql-communication-portal/release-notes');
+    expect(response.status).toBe(200);
+    done();
+  });
+});
+ 26.12.2018 18:22
+43
+2
+50 413
+8
+ Ответы 8
+У меня была такая же проблема, но в моем файле package.json я добавил "test": "jest --detectOpenHandles" и запустил npm test --detectOpenHandles. На этот раз я не получил сообщения об ошибке. Может, ты попробуешь это сделать.
+
+ 05.03.2019 23:05
+Моя проблема была решена этим кодом:
+
+beforeAll(done => {
+  done()
+})
+
+afterAll(done => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close()
+  done()
+})
+ 07.11.2019 12:11
+Для меня это была другая проблема, я использовал супертест для тестирования самих маршрутов, поэтому мне пришлось закрыть соединение с самим сервером.
+
+afterAll(done => {
+    server.close();
+    done();
+});
+Если это не ваш случай, у Эта проблема может быть что-то для вас
+
+ 22.04.2020 20:11
+Со своей стороны, я просто отделяю app.listen() от своего приложения. Итак, с экспрессом ваше приложение завершает экспорт.
+
+// index.js
+module.exports = app;
+И просто создайте еще один файл для прослушивания порта.
+
+// server.js
+const app = require('./index')
+app.listen(...)
+И если вы импортируете только индекс (приложение index.js) в свои тесты, он должен работать без дополнительной конфигурации. Конечно, вам нужно настроить запуск экспресс-приложения. Теперь он должен использовать server.js.
+
+ 07.08.2020 11:31
+Это сработало для меня
+
+const mongoose = require('mongoose');
+    afterAll(async(done) => {
+  // Closing the DB connection allows Jest to exit successfully.
+  try {
+    await mongoose.connection.close();
+    done()
+  } catch (error) {
+    console.info(error);
+    done()
+  }
+  // done()
+})
+ 29.11.2020 19:23
+Для Firebase мне пришлось вызвать cleanup ()
+
+import {
+    assertFails,
+    assertSucceeds,
+    initializeTestEnvironment,
+    RulesTestEnvironment,
+} from "@firebase/rules-unit-testing";
+import { doc, setDoc } from "firebase/firestore";
+
+it('creates a new user document in firebase', async () => {
+    const testEnv = await initializeTestEnvironment({
+        projectId: "appname-test",
+        firestore: {
+            host: 'localhost',
+            port: 8088
+        }
+    });
+
+    const alice = testEnv.authenticatedContext("alice");
+
+    await assertSucceeds(setDoc(doc(alice.firestore(), "users", "alice"), {
+        fname: "Alice",
+        lname: "Wonderland",
+        dob: "18/01/1999",
+        email: "alice@example.com"
+    }));
+
+    return await testEnv.cleanup();
+});
+ 29.09.2021 19:38
+Добавление
+
+jest.useFakeTimers();
+в начале набора тестов исправил для меня.
+
+Могут поступать из таймеров, определенных в компонентах рендеринга (например, регулируемые кнопки, макеты и т. д.).
+
+ 28.10.2021 18:18
+Я добавил эту строку в package.json
+
+Это сработало для меня
+
+jest --runInBand --detectOpenHandles --forceExit
+
+
+Пользовательские компоненты Ionic 4
+Вопросы
+ANGULAR
+Пользовательские компоненты Ionic 4
+Как загрузить компонент в ionic 4 после выполнения команды ionic g component myComponent? Я хочу добавить на свою домашнюю страницу новый сгенерированный пользовательский компонент.
+
+ 07.11.2018 09:37
+39
+1
+30 127
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+В папке src / components
+myComponent.html:
+
+//Here your component HTML Code. For example:
+<ion-list radio-group (ionSelect) = "change($event, item.type);" 
+  ... 
+</ion-list>
+components.module.ts:
+
+import {myComponentComponent} from "./myComponent/myComponent";
+@NGModule({
+  declatations: [myComponentComponent],
+  imports:[],
+  exports: [myComponentComponent]
+})
+export class ComponentsModule{}
+В папке src / app
+app.module.ts:
+
+import { MyComponentComponent } from "../components/myComponent/myComponent";
+
+@NGModule({
+   declarations: [
+      yourPages....,
+     MyComponentComponent
+   ]
+)}
+Чтобы использовать это:
+Например, в HomePage.html:
+
+<myComponent> </myComponent>
+ 07.11.2018 10:46
+ Ответ принят как подходящий
+Наконец понял это, вот репродукция, которая работает:
+
+ionic start myProject blank --type=angular
+ionic g module components
+ionic g component components/myComponent --export
+Это добавляет как объявление, так и экспорт в модуль компонентов для «myComponent».
+
+Чтобы использовать компонент, просто добавьте ComponentsModule в свой imports в модуле страницы, например
+
+@NgModule({
+imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ComponentsModule,
+    RouterModule.forChild([
+        {
+            path: '',
+            component: HomePage
+        }
+    ])
+],
+declarations: [HomePage]
+})
+export class HomePageModule { }
+Таким образом, к app.module.ts ничего не добавляется, как и должно быть.
+
+Также обратите внимание, что если вы хотите использовать ЛЮБЫЕ компоненты в своих собственных компонентах, вам необходимо добавить IonicModule к imports в components.module.ts.
+
+Надеюсь это поможет :-)
+
+ 09.12.2018 21:45
+Это ваш селектор в компонентах> foot-card> foot-card.ts:
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'foot-card',
+  templateUrl: 'foot-card.html'
+})
+export class FootCardComponent {
+
+  text: string;
+
+  constructor() {
+    console.info('Hello FootCardComponent Component');
+    this.text = 'Hello World';
+  }
+
+}
+Это ваш components.module.ts:
+
+import { NgModule } from '@angular/core';
+import { FootCardComponent } from './foot-card/foot-card';
+import { IonicModule } from 'ionic-angular';
+
+@NgModule({
+    declarations: [FootCardComponent],
+    imports: [IonicModule],
+    exports: [FootCardComponent]
+})
+
+export class ComponentsModule {}
+Это ваш app.module.ts:
+
+import { FootCardComponent } from '../components/foot-card/foot-card';
+import { ComponentsModule } from '../components/components.module'
+
+@NgModule({
+  declarations: [
+
+  ],
+  imports: [
+    ComponentsModule,
+    IonicModule.forRoot(MyApp)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    FootCardComponent
+  ],
+  providers: [
+  ]
+})
+export class AppModule {}
+Вы должны импортировать компонент-модуль в import и объявить имя-компонента в компонентах записи в app.module.ts.
+
+В components.module.ts вы должны объявить и экспортировать компонент, но не забудьте импортировать IonicModule.
+
+Я столкнулся с той же проблемой, но никто не сказал импортировать IonicModule в Components.module.ts и в app.module.ts только добавить в entryComponent и импортировать componentModule.
+
+ 12.12.2018 14:28
+Ключевым моментом является включение нового модуля специально для вашего пользовательского компонента.
+
+Я просто не понимаю, почему команда «ionic generate component components / myComponent --export» больше не создает этот устаревший модуль. Прошёл этот самый проблема здесь.
+
+ 21.02.2019 14:00
+После выполнения всего вышеперечисленного ...
+
+работал только в home.page.html добавление приложение перед именем моего компонента, например:
+
+<app-my-component></app-my-component>
+ 28.02.2019 14:58
+По сути, ionic g component myComponent обновит app.module.ts и создаст компонент внутри папки приложения.
+
+Но если вам нужен более элегантный способ добавления компонентов. Вот шаги:
+
+ionic g module components
+создаст папку модуля с именем components. Затем сгенерируйте кучу компонентов:
+
+ionic g component components/myComponent --export
+ionic g component components/myComponent2 --export
+ionic g component components/myComponent3 --export
+ionic g component components/myComponent4 --export
+Внутри components.module.ts можно было бы написать так:
+
+...
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+import { MyComponentComponent } from './my-component/my-component.component';
+import { MyComponentComponent2 } from './my-component2/my-component2.component';
+import { MyComponentComponent3 } from './my-component3/my-component3.component';
+import { MyComponentComponent4 } from './my-component4/my-component4.component';
+
+@NgModule({
+  declarations: [
+    MyComponentComponent,
+    MyComponentComponent2,
+    MyComponentComponent3,
+    MyComponentComponent4
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+  ],
+  exports: [
+    MyComponentComponent,
+    MyComponentComponent2,
+    MyComponentComponent3,
+    MyComponentComponent4
+  ]
+})
+export class ComponentsModule {}
+а затем обязательно импортируйте модуль компонентов внутри app.module.ts:
+
+...
+import { ComponentsModule } from './components/components.module';
+...
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    ...
+    ComponentsModule,
+    ...
+  ],
+  providers: [
+    ...
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+Чтобы протестировать компоненты, вам нужно снова создать страницу или компонент.
+
+ionic g page testing
+Импортируйте модуль компонентов в свой тестовый компонент / страницу или (аналогично на текущую домашнюю страницу):
+
+...
+import { ComponentsModule } from '../components/components.module';
+...
+
+@NgModule({
+  imports: [
+     ...
+     ComponentsModule,
+     ...
+  ],
+  declarations: [TestingPage]
+})
+export class TestingPageModule {}
+Наконец, просто напишите компонент внутри тестовой страницы с помощью селектора компонентов. например
+
+<app-my-component></app-my-component>
+<app-my-component2></app-my-component2>
+<app-my-component3></app-my-component3>
+<app-my-component4></app-my-component4>
+Надеюсь, это поможет.
+
+ 14.06.2019 16:27
+просто введите команду ниже, чтобы создать пользовательский компонент
+
+компоненты ионного g-компонента / Название компонента
+
+add component to html
+
+ 28.04.2020 13:22
+Тестирует это решение на Ionic 6.11.0. Прекрасно работает. Потоки создания повторно используемого компонента с именем FeaturedProduct -
+
+Шаг 1. Создайте компонент ionic g component components/FeaturedProduct.
+
+Шаг 2: Создайте модуль для этого компонента. ionic g module components/FeaturedProduct
+
+Шаг 3. Импортируйте FeaturedProductComponent в файл Featured-product.module.ts
+
+@NgModule({
+  declarations: [FeaturedProductComponent],
+  exports: [FeaturedProductComponent],
+  imports: [
+    CommonModule
+  ]
+})
+Шаг 4: Импортируйте FeaturedProductModule в файл module.ts желаемой страницы.
+
+@NgModule({
+  imports: [
+    ...
+    ...
+    FeaturedProductModule
+  ],
+  declarations: [Tab2Page]
+})
+Теперь компонент можно использовать по этому тегу <app-featured-product></app-featured-product>
+
+
+Установите значение по умолчанию для углового материала datePicker с угловым 5
+Вопросы
+ANGULAR
+Установите значение по умолчанию для углового материала datePicker с угловым 5
+Я использую подборщик дат из угловатого материала. Я хочу установить значение по умолчанию, но оно не показывает значение.
+
+<mat-form-field class = "mr-sm-24" fxFlex (click) = "open()" >
+   <input matInput [picker] = "picker" placeholder = "Date"
+                  autocomplete = "off"
+                  name = "date" 
+                  formControlName = "date">
+   <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+   <mat-datepicker  [startAt] = "startDatePicker" #picker></mat-datepicker>
+</mat-form-field>
+это мой код .js со значением, которое я хочу установить по умолчанию
+
+var date = this.datepipe.transform((new Date().getTime()) - 3888000000, 'dd/MM/yyyy'); 
+
+this.form = this.formBuilder.group({
+        dataInicial: [data_inicial],
+                   ...
+ 14.10.2018 06:59
+17
+2
+67 313
+8
+ Ответы 8
+Вот мой ответ,
+
+в вашем .html
+
+<mat-form-field class = "mr-sm-24" fxFlex (click) = "open()" >
+    <input [matDatepicker] = "picker" matInput placeholder = "Date" autocomplete = "off" name = "date" formControlName = "date">
+    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+в твоем .ts
+
+this.form = this.formBuilder.group({
+   date: new FormControl(new Date()), // Current Date
+               ...
+});
+Это установит текущую дату как дату по умолчанию.
+
+ 14.10.2018 07:33
+Вам необходимо предоставить объект Date для изменения startAt, как показано ниже:
+
+В .ts:
+
+date = new Date((new Date().getTime() - 3888000000));
+В html:
+
+<mat-datepicker  [startAt] = "date" #picker></mat-datepicker>
+Рабочая демонстрация здесь: https://stackblitz.com/edit/angular-n9yojx
+
+ 14.10.2018 07:36
+У меня это работает!
+
+HTML-
+
+<mat-form-field>
+    <input matInput [matDatepicker] = "picker1" placeholder = "From Date" [formControl] = "date1">
+    <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+    <mat-datepicker  #picker1></mat-datepicker>
+</mat-form-field>
+TS-
+
+date1 = new FormControl(new Date())
+ 18.07.2019 14:39
+Вы можете использовать определенный formControl во входных данных.
+
+вот HTML
+
+<mat-form-field class = "mr-sm-24" fxFlex (click) = "open()" >
+    <input [matDatepicker] = "picker" matInput placeholder = "Date" autocomplete = "off" name = "date" formControlName = "date" [(ngModel)] = "date.value">
+    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+вот ТС объявить, что вы formControl
+
+date: FormControl;
+this.date = new FormControl(new Date(<you can provide you date input field if you getting date from other sources>))
+ 10.11.2019 16:04
+в вашем .html ----
+
+     <mat-form-field style = "width:150px;"  color = "accent">
+            <mat-label>Choose From Date</mat-label>
+            <input  class = "example-events" matInput [matDatepicker] = "picker1"  [ngModel] = "dateF" >
+            <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 ></mat-datepicker>
+     </mat-form-field>
+в вашем .ts ----
+
+dateF:any=new Date();
+ 06.12.2019 10:05
+Ниже приведен рабочий код с формами Angular 10, Angular Material 10 и Reactive.
+
+component.ts
+
+      this.youForm= this._formBuilder.group({
+
+
+        StartDate: [new Date(), Validators.required],
+
+      });
+Без изменений в component.html
+
+  <mat-form-field appearance = "outline">
+            <input matInput [matDatepicker] = "StartDate" placeholder = "Start date *" 
+              formControlName = "StartDate">
+            <mat-label>Start Date *</mat-label>
+            <mat-datepicker-toggle matSuffix [for] = "StartDate"></mat-datepicker-toggle>
+            <mat-datepicker #StartDate></mat-datepicker>
+          </mat-form-field>
+ 16.07.2020 22:57
+В группе контроллеров форм вы можете использовать дату по умолчанию, как показано ниже.
+
+ birthdayCtrl: ['1999-01-31']
+ 09.08.2020 06:30
+При использовании подхода, основанного на шаблонах, решение следующее.
+
+ selectedDate = new Date();
+<input class = "form-control"
+                     matInput
+                     [matDatepicker] = "dp3"
+                     [min] = "today"
+                     [max] = "max"
+                     disabled
+                     [(ngModel)] = "selectedDate"
+                     (ngModelChange) = "dateUpdated()"
+                     name = "currentDate"
+                   />
+                   <mat-datepicker-toggle
+                     matSuffix
+                     [for] = "dp3"
+                   ></mat-datepicker-toggle>
+                   <mat-datepicker #dp3 disabled = "false"></mat-datepicker>
+
+
+«Ошибка: массив аргументов должен иметь аргументы». AppModule
+Вопросы
+JAVASCRIPT
+«Ошибка: массив аргументов должен иметь аргументы». AppModule
+При запуске ng serve с успешной компиляцией в моем приложении Angular я начал получать следующую ошибку в консоли браузера.
+
+AppComponent_Host.ngfactory.js? [sm]:1 ERROR Error: Arguments array must have arguments.
+
+at injectArgs (core.js:1412)
+
+at core.js:1491
+
+at _callFactory (core.js:8438)
+
+at _createProviderInstance (core.js:8396)
+
+at resolveNgModuleDep (core.js:8371)
+
+at NgModuleRef_.push../node_modules/@angular/core/fesm5/core.js.NgModuleRef_.get
+(core.js:9064)
+
+ at resolveDep (core.js:9429)
+
+ at createClass (core.js:9309)
+
+ at createDirectiveInstance (core.js:9186)
+
+  at createViewNodes (core.js:10406)
+Насколько я могу судить по Main.ts platformBrowserDynamic().bootstrapModule(AppModule) .catch(err => console.info(err));
+
+Я удалил и переустановил папку модулей узлов, и у меня проблемы с отсутствием объяснения, которое дает ошибка. Кроме того, я новичок в Angular.
+
+Любая помощь будет принята с благодарностью.
+
+РЕДАКТИРОВАТЬ
+Я запустил ng serve --aot и получил следующую ошибку
+
+ERROR in : Error: Internal error: unknown identifier []
+ at Object.importExpr$$1 [as importExpr] (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:21731:27)
+ at C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:9988:37
+ at Array.map (<anonymous>)
+ at InjectableCompiler.depsArray (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:9954:25)
+ at InjectableCompiler.factoryFor (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:10018:36)
+ at InjectableCompiler.injectableDef (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:10037:42)
+ at InjectableCompiler.compile (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:10047:106)
+ at C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:21576:90
+ at Array.forEach (<anonymous>)
+ at AotCompiler._emitPartialModule2 (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:21576:25)
+ at C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:21569:48
+ at Array.reduce (<anonymous>)
+ at AotCompiler.emitAllPartialModules2 (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler\bundles\compiler.umd.js:21568:26)
+ at AngularCompilerProgram._emitRender2 (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler-cli\src\transformers\program.js:364:31)
+ at AngularCompilerProgram.emit (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@angular\compiler-cli\src\transformers\program.js:236:22)
+ at AngularCompilerPlugin._emit (C:\Users\kg\Documents\ang2\ad\UI\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js:846:49)
+ngModule
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ItemDashboardComponent,
+    UnprotectedSearchComponent,
+    HomeComponent,
+    UnprotectedResultsComponent,
+    DashboardComponent,
+    TrackingListComponent,
+    ListItemComponent,
+    ActionItemComponent,
+    ActionListComponent,
+    ItemInfoTableComponent,
+    TrackingInfoTableComponent,
+    FilterPipe,
+    RegisterItemsComponent,
+    RegisterPackageComponent,
+    AddItemsPackageComponent,
+    ChangeCustodyComponent,
+    CheckTempComponent,
+    RemoveItemsComponent,
+    ScannerComponent,
+    ContainerDashboardComponent,
+    SoldComponent
+  ],
+  imports: [
+    NgQrScannerModule,
+    MatTabsModule,
+    AngularFontAwesomeModule,
+    MatListModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    BrowserModule,
+    MatIconModule,
+    MatGridListModule,
+    AngularFontAwesomeModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      //{path: 'openSearch', component: LoginComponent},
+      {
+        path: 'item',
+        component: ItemDashboardComponent,
+        canActivate: [AuthGuard, ManufacturerAuthGuardService]
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'unprotectedResults',
+        component: UnprotectedResultsComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'trackingList/'+environment.config.itemWorkflow+'/:contractId',
+        component: ItemDashboardComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'trackingList/'+environment.config.packageWorkflow+'/:contractId',
+        component: ContainerDashboardComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'trackingList',
+        component: TrackingListComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'actions',
+        component: ActionListComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'publicResults/:contractId',
+        component: UnprotectedResultsComponent
+      },
+      {
+        path: 'registerItems',
+        component: RegisterItemsComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'addItemsToPackage',
+        component: AddItemsPackageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'registerPackage',
+        component: RegisterPackageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'changeCustody/:contractId',
+        component: ChangeCustodyComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'changeCustody',
+        component: ChangeCustodyComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'checkTemp',
+        component: CheckTempComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'removeItems',
+        component: RemoveItemsComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'sellItems',
+        component: SoldComponent,
+        canActivate: [AuthGuard]
+      },
+
+
+    ]),
+    UiModule
+  ],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor,
+      multi: true
+    },
+    MockBackend,
+    fakeBackendProvider,
+    BaseRequestOptions,
+    AuthGuard,
+    AdminAuthGuard,
+    AdalService,
+    SoldComponent
+  ],
+  bootstrap: [AppComponent]
+})
+Конструктор AppComponent
+constructor(private api: ApiService, private adalService: AdalService, private _http: HttpClient, private router: Router, public authService: AuthService) {
+    this.adalService.init(environment.config);
+    if (!this.adalService.userInfo.authenticated) this.router.navigate(['/']);
+  }
+ 11.10.2018 21:05
+21
+0
+24 205
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Сначала попробуйте создать / обслужить приложение с флагом ng serve --aot. Скорее всего, во время компиляции будет показано какое-то предупреждение / ошибка.
+
+Насколько я понимаю, можете ли вы искать в своем проекте, если вы импортируете какой-либо компонент / модуль
+
+вот так import {something} from "../node_modules/@somepackage/adfas"; вместо import {something} from "@somepackage/adfas";
+
+Также не могли бы вы поделиться тем, что у вас есть в декораторе @NgModule({}) и в AppComponent constructor();
+
+Я думаю, что angular не может предоставить все введенные зависимости.
+
+ 11.10.2018 21:10
+В моем случае мне не хватало введенного тип в конструкторе: /
+
+ 16.06.2019 21:28
+Этот фрагмент Typescript демонстрирует сценарий, вызывающий эту ошибку.
+
+...
+
+export class AClassImportingAService {
+
+    constructor(private _importedService) {
+        // ERROR: notice there is no type on _importedService
+        //   It should read 'private _importedService: ImportedService'
+    }
+
+...
+}
+ 01.07.2019 04:48
+У меня была такая же проблема, просто попытался снова запустить приложение, и оно сработало.
+
+ 29.07.2019 12:05
+У меня была такая же ошибка из-за циклической зависимости в моем коде:
+
+Service1 > Service2 > Service1
+ 28.11.2019 10:34
+У меня была такая же ошибка, когда декоратор @Injectable и ключевое слово export не использовались для зависимости.
+
+ 05.02.2020 17:54
+Я получил эту ошибку из-за круговой зависимости. У меня был магазин, который зависел от некоторого начального состояния, которое предоставлялось службой, которая зависела от моего магазина.
+
+Я решил проблему, извлекая исходное состояние, которое было постоянным объектом, в собственный файл констант.
+
+ 17.03.2020 15:54
+Я допустил опечатку вместо ":" Я использовал "," в конструкторе и получил следующую ошибку:
+
+constructor(private myService, Myservice) {
+}
+
+//instead of
+
+constructor(private myService: Myservice) {
+}
+
+
+Как сравнить по двум объектам машинопись angular6
+Вопросы
+JAVASCRIPT
+Как сравнить по двум объектам машинопись angular6
+Я хочу сравнить два массива объектов Json. У одного больше данных. Для окончательного результата, если один идентификатор находит другой, выбранный флажок = true. Пока их 4, и нашелся только один. Могу ли я сначала перебрать длинный массив, а затем перебрать второй массив, чтобы найти совпадение?
+
+ this.formAll = JSON.parse(response)
+      for (var i = 0; i < this.formAll.length; i++) {
+        for (var j = i; j <  this.formAb.length; j++) {
+         console.info( this.formAb[j].id,  this.formAll[i].SeriesNumber);
+          if ( this.formAll[i].id === this.formAb[j].id) {
+            console.info( 'small=', this.formAb[j].id, 'large=', 
+         this.formAll[i].id );
+         this.formAll[i].selected = true;
+        }}
+      }
+ 28.08.2018 06:00
+7
+1
+31 204
+8
+ Ответы 8
+Вы можете добиться результата, используя методы for-of и find, например:
+
+for(let item  of this.formAll) {
+    if (this.formAb.find((i) => { i.id === item.id})){
+       item.selected = true;
+    }
+}
+ 28.08.2018 06:16
+Быстро и ограниченно
+
+JSON.stringify(obj1) === JSON.stringify(obj2)
+Медленный и более общий
+
+Object.equals = function( x, y ) {
+    if ( x === y ) return true;
+    // if both x and y are null or undefined and exactly the same
+
+    if ( ! ( x instanceof Object ) || ! ( y instanceof Object ) ) return false;
+    // if they are not strictly equal, they both need to be Objects
+
+    if ( x.constructor !== y.constructor ) return false;
+    // they must have the exact same prototype chain, the closest we can do is
+    // test there constructor.
+
+    for ( var p in x ) {
+        if ( ! x.hasOwnProperty( p ) ) continue;
+        // other properties were tested using x.constructor === y.constructor
+
+       if ( ! y.hasOwnProperty( p ) ) return false;
+       // allows to compare x[ p ] and y[ p ] when set to undefined
+
+       if ( x[ p ] === y[ p ] ) continue;
+       // if they have the same strict value or identity then they are equal
+
+       if ( typeof( x[ p ] ) !== "object" ) return false;
+       // Numbers, Strings, Functions, Booleans must be strictly equal
+
+       if ( ! Object.equals( x[ p ],  y[ p ] ) ) return false;
+       // Objects and Arrays must be tested recursively
+   }
+
+   for ( p in y ) {
+      if ( y.hasOwnProperty( p ) && ! x.hasOwnProperty( p ) ) return false;
+      // allows x[ p ] to be set to undefined
+    }
+    return true;
+}
+ 28.08.2018 06:23
+это сработало лучше с использованием фильтра.
+
+   this.formAll = JSON.parse(response)
+    this.formAll.forEach((element) => {
+      this.formAb.filter((element1) => {
+        if (element1.id === element.id ) {
+          element.selected = true;
+        }
+     })
+     })
+ 28.08.2018 15:51
+Для Angular используйте Deep Equal
+
+import * as deepEqual from "deep-equal";
+
+console.info(deepEqual({a:123},{a:123})); // True
+ 23.03.2019 23:17
+Сравните два объекта Json вместе Пример: объект 1:
+
+{
+id : 1,
+name : 'HADY',
+status : false
+}
+объект 2:
+
+{
+id : 1,
+name : 'example',
+surename : 'example',
+nickname : 'example'
+status : true
+}
+------------------------------------------------сравнивать( obj1, obj2) {
+
+  const keys1 = [];
+    const values1 = [];
+    Object.keys(obj1).forEach((element) => {
+      keys1.push(element);
+    });
+    Object.values(obj1).forEach((element) => {
+      values1.push(element);
+    });
+    const keys2 = [];
+    const values2 = [];
+    Object.keys(obj2).forEach((element) => {
+      keys2.push(element);
+    });
+    Object.values(obj2).forEach((element) => {
+      values2.push(element);
+    });
+    const obj = {};
+    keys1.forEach((element, i) => {
+      for (let index = 0; index < keys2.length; index++) {
+        if (element === keys2[index]) {
+          if (values1[i] !== values2[index]) {
+            const jsonKey = element;
+            obj[jsonKey] = values1[i];
+          }
+          break;
+        }
+      }
+    });
+    console.info(obj);
+    return obj;
+  }
+он вернет только почтение: объект
+
+{
+name : 'HADY',
+status : false
+}
+ 05.08.2020 17:05
+В Javascript / Typescript (если порядок ключей обоих объектов одинаков): используйте
+
+JSON.stringify(obj1) === JSON.stringify(obj2)
+Object.entries(obj1).toString() === Object.entries(obj2).toString()
+obj1 = { a:1, b:2 }obj2 = { a:1, b:2 }// true
+
+obj1 = { a:1, b:2 }obj2 = { b:2, a:1 }// false
+
+Использование Lodash независимо от порядка ключей
+
+_.isEqual(obj1 , obj2 ); // true
+
+Сравните каждый ключ объекта индивидуально
+
+ 04.09.2020 19:34
+ИДТИ ЛЕГКО И ПРОСТО !!
+
+Если ключи объектов одинаковы и в порядке, JSON.stringify(Obj2) работает быстрее всего:
+
+Obj1 = { fruit: '?' };
+Obj2 = { fruit: '?' };
+
+JSON.stringify(Obj1) === JSON.stringify(Obj2);
+ 23.10.2020 14:57
+Я думаю, что метод сравнения "JSON.Stringify" неверен; Следующий вариант с проверкой рекурсивных объектов также:
+
+interface IComparator<T> {
+  equals(obj: T, other: T): boolean;
+}
+
+export default class Comparator<T> implements IComparator<T> {
+  equals(item: T, otherItem: T): boolean {
+    if (typeof item !== typeof otherItem) {
+      return false;
+    }
+
+    const objectCache: any[] = [];
+    const otherObjectCache: any[] = [];
+    const getIndexFromCache = (compareObject: any, cacheArray: any[]): number =>
+      cacheArray.findIndex((item) => item === compareObject);
+
+    switch (true) {
+      case item === otherItem:
+        return true;
+      case typeof item !== 'object':
+        return item === otherItem;
+      case item === null || otherItem === null:
+        return item === null && otherItem === null;
+      case Object.keys(item).length !== Object.keys(otherItem).length:
+        return false;
+      default:
+        const object = item as any;
+        const otherObject = otherItem as any;
+
+        return Object.keys(object).every((key: string) => {
+          const hasKeyInOtherObject = Object.prototype.hasOwnProperty.call(otherItem, key);
+
+          if (!hasKeyInOtherObject) {
+            return false;
+          }
+
+          const cacheObjectIndex = getIndexFromCache(object[key], objectCache);
+          const cacheOtherObjectIndex = getIndexFromCache(otherObject[key], otherObjectCache);
+
+          if (cacheObjectIndex !== cacheOtherObjectIndex) {
+            return false;
+          }
+
+          const isEqualsCacheObjects =
+            cacheObjectIndex !== -1 && cacheOtherObjectIndex !== -1 && cacheObjectIndex === cacheOtherObjectIndex;
+
+          if (isEqualsCacheObjects) {
+            return true;
+          }
+
+          objectCache.push(object[key]);
+          otherObjectCache.push(otherObject[key]);
+
+          return new Comparator<any>().equals(object[key], otherObject[key]);
+        });
+    }
+  }
+}
+и протестируем с шуткой:
+
+import Comparator from './Comparator';
+
+export default describe('Comparator', () => {
+  const recursiveA: { value: number; b?: any } = { value: 1 };
+  const recursiveB: { value: number; a?: any } = { value: 2 };
+
+  recursiveA.b = recursiveB;
+  recursiveB.a = recursiveA;
+
+  it.each([
+    [null, null, true],
+    [undefined, undefined, true],
+    [1, 1, true],
+    ['test', 'test', true],
+    [[1, 2], [1, 2], true],
+    [{ a: 1, b: 3 }, { a: 1, b: 3 }, true],
+    [2, 1, false],
+    ['test', 'test2', false],
+    [[1, 2], [2, 1], false],
+    [{ a: 1, b: 3 }, { a: 3, b: 1 }, false],
+    [recursiveA, recursiveB, false],
+    [null, 1, false],
+    [null, {}, false],
+    [undefined, null, false],
+    [1, '1', false],
+  ])('compares values %o and %o are equal: %s', (value1: any, value2: any, expectedResult: boolean) => {
+    const comparator = new Comparator<any>();
+    const actualResult = comparator.equals(value1, value2);
+
+    expect<boolean>(actualResult).toBe(expectedResult);
+  });
+});
+И версия Javascript:
+
+export default class Comparator {
+    equals(item, otherItem) {
+        if (typeof item !== typeof otherItem) {
+            return false;
+        }
+
+        const objectCache = [];
+        const otherObjectCache = [];
+        const getIndexFromCache = (compareObject, cacheArray) => cacheArray.findIndex((item) => item === compareObject);
+
+        switch (true) {
+            case item === otherItem:
+                return true;
+            case typeof item !== 'object':
+                return item === otherItem;
+            case item === null || otherItem === null:
+                return item === null && otherItem === null;
+            case Object.keys(item).length !== Object.keys(otherItem).length:
+                return false;
+            default:
+                const object = item;
+                const otherObject = otherItem;
+
+                return Object.keys(object).every((key) => {
+                    const hasKeyInOtherObject = Object.prototype.hasOwnProperty.call(otherItem, key);
+
+                    if (!hasKeyInOtherObject) {
+                        return false;
+                    }
+
+                    const cacheObjectIndex = getIndexFromCache(object[key], objectCache);
+                    const cacheOtherObjectIndex = getIndexFromCache(otherObject[key], otherObjectCache);
+
+                    if (cacheObjectIndex !== cacheOtherObjectIndex) {
+                        return false;
+                    }
+
+                    const isEqualsCacheObjects = cacheObjectIndex !== -1 && cacheOtherObjectIndex !== -1 && cacheObjectIndex === cacheOtherObjectIndex;
+
+                    if (isEqualsCacheObjects) {
+                        return true;
+                    }
+
+                    objectCache.push(object[key]);
+                    otherObjectCache.push(otherObject[key]);
+
+                    return new Comparator().equals(object[key], otherObject[key]);
+                });
+        }
+    }
+}
+
+
+Как определить платформу с помощью Ionic 4
+Вопросы
+ANGULAR
+Как определить платформу с помощью Ionic 4
+Как определить браузер и платформу mobileweb с помощью Ionic 4, потому что, когда я пытался использовать приведенный ниже код в браузере для настольных компьютеров, он не попадает в состояние 'основной'.
+
+if (this.platform.is('core')) {
+    alert('core platform');
+  } else {
+    alert('something else');
+  }
+Когда у меня есть отладка в инструменте разработчика Chrome, он показывает платформу "андроид" в соответствии с приведенным ниже снимком.
+
+Как определить платформу с помощью Ionic 4
+
+Может ли кто-нибудь помочь мне, как определить платформу в Ionic 4 или что может быть альтернативой для этого?
+
+ 13.08.2018 08:42
+8
+4
+11 433
+8
+ Ответы 8
+Следующая ссылка может вам помочь:
+https://forum.ionicframework.com/t/how-to-determine-if-browser-or-app/89149/16
+
+или вы можете использовать следующий метод:
+
+public isDesktop() {
+    let platforms = this.plt.platforms();
+    if (platforms[0] == "core" || platforms[0] == "mobileweb") {
+        return true;
+    } else {
+        return false;
+    }
+}
+ 13.08.2018 15:05
+Используемая вами логика - это правильная логика.
+
+Проблема с ionic 4, и он возвращает неправильные значения.
+
+Ошибка была опубликована в ионном репо: https://github.com/ionic-team/ionic/issues/15165
+
+Другая проблема, связанная с платформой ['android'], также является ошибкой, о которой также сообщалось здесь: https://github.com/ionic-team/ionic/issues/15051
+
+ 14.08.2018 09:16
+В настоящее время Ionic 4 поддерживает определение платформы. У меня работает следующий код.
+
+import { Platform } from '@ionic/angular';
+...
+constructor(private platform: Platform) {}
+...
+ngOnInit() {
+   this.platform.ready().then(() => {
+      if (this.platform.is('android')) {
+           console.info('android');
+      } else if (this.platform.is('ios')) {
+           console.info('ios');
+      } else {
+           //fallback to browser APIs or
+           console.info('The platform is not supported');
+             }
+      }}
+ 27.11.2018 08:58
+Конкретное значение платформы Ionic-4
+
+goto- node_modules @ ionic \ angular \ dist \ sizes \ platform.d.ts
+
+     Platform Name   | Description                        |
+ * | android         | on a device running Android.       |
+ * | cordova         | on a device running Cordova.       |
+ * | ios             | on a device running iOS.           |
+ * | ipad            | on an iPad device.                 |
+ * | iphone          | on an iPhone device.               |
+ * | phablet         | on a phablet device.               |
+ * | tablet          | on a tablet device.                |
+ * | electron        | in Electron on a desktop device.   |
+ * | pwa             | as a PWA app.                      |
+ * | mobile          | on a mobile device.                |
+ * | desktop         | on a desktop device.               |
+ * | hybrid          | is a cordova or capacitor app.     |
+ 02.01.2019 10:39
+Для обнаружения веб-платформы вы должны использовать Bowser. Я использовал это в ionic 4 для определения платформы браузера, то есть сафари или хрома.
+
+Шаг 1: Вам необходимо установить баузер в свой проект
+
+npm install bowser@2.7.0 --save-exact
+Шаг 2: Затем вам нужно импортировать его на страницу .ts, где вы хотите его использовать. допустим home.ts
+
+import Bowser from "bowser";
+Шаг 3: Затем вам нужно написать логин, чтобы проверить платформу браузера внутри функции в home.ts
+
+checkBrowserPlatform() {
+  const browser = Bowser.getParser(window.navigator.userAgent);
+  const browserName = browser.getBrowserName();
+    console.info(browserName);
+  }
+Вызывая checkBrowserPlatform (), вы можете узнать текущее имя браузера.
+
+ 19.11.2019 07:50
+Для моего случая использования я хотел что-то различать платформы native и browser. То есть мое приложение работает в браузере или на родном мобильном устройстве. Вот услуга, которую я придумал:
+
+import { Injectable } from '@angular/core';
+import {Platform} from '@ionic/angular';
+
+
+type CurrentPlatform = 'browser' | 'native';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CurrentPlatformService {
+
+  private _currentPlatform: CurrentPlatform;
+
+  constructor(private platform: Platform) {
+    this.setCurrentPlatform();
+  }
+
+  get currentPlatform() {
+    return this._currentPlatform;
+  }
+
+  isNative() {
+    return this._currentPlatform === 'native';
+  }
+  isBrowser() {
+    return this._currentPlatform === 'browser';
+  }
+
+  private setCurrentPlatform() {
+    // Are we on mobile platform? Yes if platform is ios or android, but not desktop or mobileweb, no otherwise
+    if (
+        this.platform.is('ios')
+        || this.platform.is('android')
+        && !( this.platform.is('desktop') || this.platform.is('mobileweb') ) ) {
+      this._currentPlatform = 'mobile';
+    } else {
+      this._currentPlatform = 'browser';
+    }
+  }
+}
+ 28.01.2020 14:14
+Ионный 4 / Конденсатор
+
+Я написал такую ​​услугу:
+
+обнаружить платформу.service.ts
+
+import { Injectable } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { find } from 'lodash';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class DetectPlatformService {
+
+    isDevice: boolean = false;
+
+    constructor(
+        private platform: Platform, ) { }
+
+    setPlatform(): void {
+
+        const platforms: string[] = this.platform.platforms();
+        const platform: string = find(platforms, (p: string) => {
+            return p === 'capacitor';
+        });
+
+        this.isDevice = platform ? true : false;
+    }   
+
+}
+Примечание: Поскольку я использую Ionic 4/Capacitor, он дает true, если он находится на device, иначе false.
+
+ 19.02.2020 18:34
+Если кто-то все еще борется с этим на ionic4 / cordova, я решил это, используя
+
+import {Device} from '@ionic-native/device/ngx'
+Просто добавьте его в свой app.modules и запустите this.device.platform везде, где вам нужно узнать, чтобы дать представление, вывод в Интернете и apk из этого простого кода.
+
+console.info(this.platform.platforms());
+console.info(this.device.platform);
+это:
+
+Running on web (desktop and mobile)
+["android", "phablet", "cordova", "mobile", "hybrid"]
+browser
+
+Running android local (apk)
+["android", "cordova", "desktop", "hybrid"]
+Android
+Теперь я могу правильно использовать плагины для браузера или мобильного, в моем случае это загрузка и обрезка изображений.
+
+Полное объяснение можно найти на https://www.damirscorner.com/blog/posts/20171124-DetectingWhereIonicAppIsRunning.html
+
+
+Angular: как скачать файл из HttpClient?
+Вопросы
+ANGULAR
+Angular: как скачать файл из HttpClient?
+Мне нужно загрузить Excel с моего бэкэнда, он вернул файл.
+
+Когда я делаю запрос, я получаю сообщение об ошибке:
+
+TypeError: You provided 'undefined' where a stream was expected. You can provide an Observable, Promise, Array, or Iterable.
+
+Мой код:
+
+this.http.get(`${environment.apiUrl}/...`)
+      .subscribe(response => this.downloadFile(response, "application/ms-excel"));
+Я пробовал получить и сопоставить (...), но не сработало.
+
+Подробности: угловой 5.2
+
+Рекомендации:
+
+import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/finally';
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch';
+Content-Type ответа:
+
+Content-Type: application/ms-excel
+Что не так?
+
+ 04.08.2018 06:46
+58
+4
+146 851
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Попробуйте что-то вроде этого:
+
+type: application/ms-excel
+
+/**
+ *  used to get file from server
+ */
+
+this.http.get(`${environment.apiUrl}`,{
+          responseType: 'arraybuffer',headers:headers} 
+         ).subscribe(response => this.downLoadFile(response, "application/ms-excel"));
+
+
+    /**
+     * Method is use to download file.
+     * @param data - Array Buffer data
+     * @param type - type of the document.
+     */
+    downLoadFile(data: any, type: string) {
+        let blob = new Blob([data], { type: type});
+        let url = window.URL.createObjectURL(blob);
+        let pwa = window.open(url);
+        if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
+            alert( 'Please disable your Pop-up blocker and try again.');
+        }
+    }
+ 04.08.2018 07:14
+Из бэкэнда возвращаются большие двоичные объекты с типом файла. Следующая функция принимает файлы любого типа и всплывающее окно загрузки:
+
+downloadFile(route: string, filename: string = null): void{
+
+    const baseUrl = 'http://myserver/index.php/api';
+    const token = 'my JWT';
+    const headers = new HttpHeaders().set('authorization','Bearer '+token);
+    this.http.get(baseUrl + route,{headers, responseType: 'blob' as 'json'}).subscribe(
+        (response: any) =>{
+            let dataType = response.type;
+            let binaryData = [];
+            binaryData.push(response);
+            let downloadLink = document.createElement('a');
+            downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));
+            if (filename)
+                downloadLink.setAttribute('download', filename);
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+        }
+    )
+}
+ 06.10.2018 17:21
+Потратив много времени на поиск ответа на этот ответ: как загрузить простое изображение с моего успокаивающего сервера API, написанного на Node.js, в приложение-компонент Angular, я наконец нашел прекрасный ответ в этом веб-сайте Угловой HttpClient Blob. По сути, он состоит из:
+
+API Node.js restful:
+
+   /* After routing the path you want ..*/
+  public getImage( req: Request, res: Response) {
+
+    // Check if file exist...
+    if (!req.params.file) {
+      return res.status(httpStatus.badRequest).json({
+        ok: false,
+        msg: 'File param not found.'
+      })
+    }
+    const absfile = path.join(STORE_ROOT_DIR,IMAGES_DIR, req.params.file);
+
+    if (!fs.existsSync(absfile)) {
+      return res.status(httpStatus.badRequest).json({
+        ok: false,
+        msg: 'File name not found on server.'
+      })
+    }
+    res.sendFile(path.resolve(absfile));
+  }
+Служба протестированных компонентов Angular 6 (в моем случае - EmployeeService):
+
+  downloadPhoto( name: string) : Observable<Blob> {
+    const url = environment.api_url + '/storer/employee/image/' + name;
+
+    return this.http.get(url, { responseType: 'blob' })
+      .pipe(
+        takeWhile( () => this.alive),
+        filter ( image => !!image));
+  }
+Шаблон
+
+ <img [src] = "" class = "custom-photo" #photo>
+Подписка на компонент и использование:
+
+@ViewChild('photo') image: ElementRef;
+
+public LoadPhoto( name: string) {
+    this._employeeService.downloadPhoto(name)
+          .subscribe( image => {
+            const url= window.URL.createObjectURL(image);
+            this.image.nativeElement.src= url;
+          }, error => {
+            console.info('error downloading: ', error);
+          })    
+}
+ 18.02.2019 10:49
+Я оказался здесь, когда искал «файл загрузки rxjs с помощью сообщения».
+
+Это был мой последний продукт. Он использует имя и тип файла, указанные в ответе сервера.
+
+import { ajax, AjaxResponse } from 'rxjs/ajax';
+import { map } from 'rxjs/operators';
+
+downloadPost(url: string, data: any) {
+    return ajax({
+        url: url,
+        method: 'POST',
+        responseType: 'blob',
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'text/plain, */*',
+            'Cache-Control': 'no-cache',
+        }
+    }).pipe(
+        map(handleDownloadSuccess),
+    );
+}
+
+
+handleDownloadSuccess(response: AjaxResponse) {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = window.URL.createObjectURL(response.response);
+
+    const disposition = response.xhr.getResponseHeader('Content-Disposition');
+    if (disposition) {
+        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+        const matches = filenameRegex.exec(disposition);
+        if (matches != null && matches[1]) {
+            const filename = matches[1].replace(/['"]/g, '');
+            downloadLink.setAttribute('download', filename);
+        }
+    }
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+ 15.07.2019 14:57
+Мне потребовалось время, чтобы реализовать другие ответы, такие как Я использую Angular 8 (проверено до 10). В итоге я получил следующий код (в значительной степени вдохновленный Хасаном).
+
+Обратите внимание, что для установки имени заголовок Access-Control-Expose-Headers ДОЛЖЕН включать Content-Disposition. Чтобы установить это в django RF:
+
+http_response = HttpResponse(package, content_type='application/javascript')
+http_response['Content-Disposition'] = 'attachment; filename = "{}"'.format(filename)
+http_response['Access-Control-Expose-Headers'] = "Content-Disposition"
+В угловом:
+
+  // component.ts
+  // getFileName not necessary, you can just set this as a string if you wish
+  getFileName(response: HttpResponse<Blob>) {
+    let filename: string;
+    try {
+      const contentDisposition: string = response.headers.get('content-disposition');
+      const r = /(?:filename = ")(.+)(?:;")/
+      filename = r.exec(contentDisposition)[1];
+    }
+    catch (e) {
+      filename = 'myfile.txt'
+    }
+    return filename
+  }
+
+  
+  downloadFile() {
+    this._fileService.downloadFile(this.file.uuid)
+      .subscribe(
+        (response: HttpResponse<Blob>) => {
+          let filename: string = this.getFileName(response)
+          let binaryData = [];
+          binaryData.push(response.body);
+          let downloadLink = document.createElement('a');
+          downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, { type: 'blob' }));
+          downloadLink.setAttribute('download', filename);
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+        }
+      )
+  }
+
+  // service.ts
+  downloadFile(uuid: string) {
+    return this._http.get<Blob>(`${environment.apiUrl}/api/v1/file/${uuid}/package/`, { observe: 'response', responseType: 'blob' as 'json' })
+  }
+
+ 28.02.2020 16:57
+Использование Blob в качестве источника для img:
+
+шаблон:
+
+<img [src] = "url">
+составная часть:
+
+ public url : SafeResourceUrl;
+
+ constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
+   this.getImage('/api/image.jpg').subscribe(x => this.url = x)
+ }
+
+ public getImage(url: string): Observable<SafeResourceUrl> {
+   return this.http
+     .get(url, { responseType: 'blob' })
+     .pipe(
+       map(x => {
+         const urlToBlob = window.URL.createObjectURL(x) // get a URL for the blob
+         return this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); // tell Anuglar to trust this value
+       }),
+     );
+ }
+Дополнительная ссылка на доверять сохранению ценностей
+
+ 03.07.2020 03:56
+Использование вывода BLOB-объектов из API (файл Excel)
+
+и подправили ответ @gabrielrincon
+
+downloadExcel(): void {
+const payload = {
+  order: 'test',
+  };
+
+this.service.downloadExcel(payload)
+  .subscribe((res: any) => {
+    this.blobToFile(res, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Export.xlsx");
+  });}
+BLOB-объект для общей функции файла
+
+blobToFile(data: any, type: string, fileName: string) {
+ const a = document.createElement('a');
+ document.body.appendChild(a);
+ a.style.display = 'none';
+ const blob = new Blob([data], { type: type });
+ const url = window.URL.createObjectURL(blob);
+ a.href = url; a.download = fileName; a.click();
+ window.URL.revokeObjectURL(url);}
+ 23.06.2021 12:12
+Может я опоздала. Но последний ответ @Hasan был превосходным.
+
+Я просто вношу небольшие изменения (это не принимало удаляемые заголовки) в этом и добился успеха.
+
+downloadFile(route: string, filename: string = null): void {
+    // const baseUrl = 'http://myserver/index.php/api';   
+    this.http.get(route, { responseType: 'blob' }).subscribe(
+      (response: any) => {
+        let dataType = response.type;
+        let binaryData = [];
+        binaryData.push(response);
+        let downloadLink = document.createElement('a');
+        downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, { type: dataType }));
+        if (filename) {
+          downloadLink.setAttribute('download', filename);
+        }
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+      }
+    )
+  }
+
+Приложение Angular 6 не может найти пространство имен 'google'
+Вопросы
+ANGULAR
+Приложение Angular 6 не может найти пространство имен 'google'
+Этот вопрос аналогично возникал во многих местах, где решение состоит в том, чтобы просто добавить
+
+import { } from '@types/googlemaps';
+который работал как решение в прошлых версиях angular. Проблема появилась теперь, когда я использую Angular 6+
+
+TS2304: Cannot find name 'google'.
+TS2503: Cannot find namespace 'google'.
+Есть множество подобных ошибок везде, где я использую типы карт Google. Например:
+
+let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+Я могу быстро исправить проблему, вставив // @ts-ignore над всеми строками, в которых используются карты Google, но меня гораздо больше интересует истинное исправление. Но тот факт, что это работает, заставляет меня думать, что это проблема tsconfig, в которой я не очень уверен.
+
+Я могу подтвердить, что googlemaps установлен внутри node_modules / @ types, но я не уверен насчет tsconfig
+
+ts.config
+
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types",
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
+}
+Я создал Пример Stackblitz, который выдает эталонную ошибку, если вы просматриваете консоль. Я не знаю, что попробовать дальше.
+
+ 03.08.2018 19:25
+29
+0
+21 889
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Итак, я столкнулся с проблемой ранее на GitHub, и это сработало для меня:
+
+npm install --save-dev @types/googlemaps
+
+Добавляю ко всем моим tsconfig*.json: types: [ "googlemaps"]
+
+Добавление вверху моего файла: declare const google: any;
+
+Добавление в конец тела моего index.html:
+
+<script async defer type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=****"> </script>
+
+Попробуйте и скажите, работает ли.
+
+ 03.08.2018 19:47
+Файл tsconfig.json, который действительно необходимо обновить, находится в src / tsconfig.app.json.
+
+Эти файлы переопределяют свойство types в compilerOptions файла tsconfig.json в корневом каталоге с пустым массивом, поэтому вы должны добавить туда определение типов для карт Google.
+
+Например:
+
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": ["googlemaps"]
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"]
+}
+ 25.01.2019 00:33
+Я кое-что нашел, если вы используете AGM, вы можете исправить это путем импорта:
+
+import {} from '@agm/core/services/google-maps-types';
+ 08.02.2019 06:37
+Добавление его в массив типов моих опций компилятора tsconfig никогда не помогало. Но если у вас установлен @ types / googlemaps, вы можете ссылаться на него в верхней части вашего файла .ts, используя:
+
+/// <reference types = "@types/googlemaps" />
+
+ср. Директивы Triple Slash
+
+ 15.08.2019 21:25
+Исправил установкой @ типы / Google-карты не @ типы / googlemaps
+
+просто запустите это
+
+npm install @types/google-maps --save
+и импортируйте Google в свой компонент, используя
+
+import { google } from "google-maps";
+ 20.11.2019 17:00
+Недавно я столкнулся с этой проблемой, и она возникает по многим причинам, я упоминаю здесь все возможные решения:
+
+Решение 1:
+
+i) Если вы не включили API Google Адресов, перейдите по этой ссылке ссылка на сайт, чтобы включить его.
+
+ii) установите @ types / googlemaps в свой проект с помощью npm i @types/googlemaps --save-dev, чтобы получить более подробную информацию, нажмите здесь
+
+iii) Добавьте "types": ["googlemaps"] в свой tsconfig.json, большая часть имени файла дела - tsconfig.app.json, если вам интересны типы, посмотрите этот отвечать в StackOverflow.
+
+iv) перезапустите ваш сервер
+
+В большинстве случаев нет необходимости объявлять какую-либо переменную Google, и вышеуказанное решение работает и в моем случае.
+
+Решение 2:
+
+если решение 1 не работает, включите этот <script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script> в свой index.html и поместите свой ключ api в эту ссылку.
+
+в одном из моих проектных решений 2 работы.
+
+Решение 3:
+
+и если решение 1 и решение 2 не работают, напишите этот код в вашем ts-файле declare const google: any;
+
+Надеюсь, это будет полезно.
+
+Спасибо
+
+ 03.05.2020 10:05
+Для тех, кто использует AGM и сталкивается с этой ошибкой:
+
+Cannot find name 'google'.
+Выполнение этого сработало для меня:
+
+npm install @types/google-maps --save
+ 15.08.2020 05:00
+Я использовал AGM, и если эта проблема существует, то это результат другой проблемы. Вот здесь: https://github.com/DefinitiTyped/DefinitiTyped/issues/48574 И решение было: "Я нашел временное решение, установил более раннюю версию @ types / googlemaps в package.json, я добавил @ types / googlemaps:" 3.39.12 "в мои devDependencies, теперь производственная сборка работает!" Если вы захотите это сделать, сначала запустите: npm uninstall @ types / google-maps
+
+Сбросить форму в angular 5 после отправки
+Вопросы
+JAVASCRIPT
+Сбросить форму в angular 5 после отправки
+ <form class = "form-horizontal" name = "form" (ngSubmit) = "!f.form.invalid && staffDetails(model)" #f = "ngForm" novalidate>
+
+
+ <div class = "form-group"><button [disabled] = "f.invalid" *ngIf  = "buttonSave" class = "btn btn-info">Save</button></div>
+после нажатия кнопки отправки без обновления страницы при повторной отправке значения не были получены
+
+ 20.07.2018 06:58
+1
+2
+7 964
+8
+ Ответы 8
+ты можешь попробовать это
+
+this.myform.reset();
+Также см. документ.
+
+ 20.07.2018 07:03
+Используйте reset()
+
+Попробуй это
+
+this.myform.reset();
+ 20.07.2018 07:04
+Поскольку вы используете формы на основе шаблонов, попробуйте это.
+
+Используйте событие (ngSubmit) для обработки события отправки формы. И передайте форму в качестве параметра обработчику событий. (ngSubmit) = "onFormSubmit(f)
+
+В вашем component.html
+
+ <form class = "form-horizontal" name = "form" (ngSubmit) = "onFormSubmit(f)" #f = "ngForm" novalidate>
+В вашем component.ts
+
+public onFormSubmit(ngForm: ngForm): void {
+   // !f.form.invalid && staffDetails(model)
+   ngForm.form.reset();
+}
+ 20.07.2018 07:15
+reset очистит всю форму и вернет ее состояние в исходное состояние (проверки не запущены), тогда как resetForm просто очистит значения и не изменит состояние. Источник
+
+в зависимости от того, что нужно сделать
+
+html файл
+
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f)">
+ts файл
+
+protected onSubmit(f: NgForm): void {
+
+        // code here
+
+        f.resetForm(); or f.reset();
+    }
+передать экземпляр формы, определенный как f, в функцию submit и выполнить сброс Источник
+
+ 20.07.2018 07:57
+используйте для сброса формы
+
+f.reset ()
+Пожалуйста, обратитесь к связь для получения более подробной информации.
+
+ 20.07.2018 08:11
+Компонент HTML
+
+Добавьте # f = "ngForm" в тег формы, как вы уже добавили
+
+ <form class = "form-horizontal" name = "form" (ngSubmit) = "!f.form.invalid
+    && staffDetails(model)" #f = "ngForm" novalidate>
+   <!-- form inputs -->
+ </form> <!-- form closed>
+Логический компонент, т.е. файл TS
+
+import { ViewChild } from '@angular/core';
+
+  @ViewChild('f') myForm; //feth reference of form using ViewChild property
+После объявления мы можем сбросить форму с помощью функции сброса
+
+staffDetails(data){
+
+     this.myForm.resetForm(); //now the form is reset
+}
+Рабочий модуль для этой функциональности: - https://angular-xtzntk.stackblitz.io/
+
+ 31.12.2018 11:14
+Угловой: 8.2.11
+В шаблоне: HTML
+
+<form #f = "ngForm" [formGroup] = "postForm" (keydown.enter) = "$event.preventDefault()" (ngSubmit) = "onSubmit(f)">
+В компоненте: машинописный текст
+
+async onSubmit(f: NgForm) {
+    f.reset();
+  }
+ 27.10.2019 20:25
+Чтобы сбросить полную форму при отправке, вы можете использовать reset () в Angular. Приведенный ниже пример реализован в Angular 8. Ниже представлена ​​форма подписки, в которой мы принимаем электронную почту в качестве входных данных.
+
+<form class = "form" id = "subscribe-form" data-response-message-animation = "slide-in-left" #subscribeForm = "ngForm"
+(ngSubmit) = "subscribe(subscribeForm.value); subscribeForm.reset()">
+<div class = "input-group">
+   <input type = "email" name = "email" id = "sub_email" class = "form-control rounded-circle-left"
+      placeholder = "Enter your email" required ngModel #email = "ngModel" email>
+   <div class = "input-group-append">
+      <button class = "btn btn-rounded btn-dark" type = "submit" id = "register"
+         [disabled] = "!subscribeForm.valid">Register</button>
+   </div>
+</div>
+</form>
+официальный документ: https://angular.io/guide/forms#show-and-hide-validation-error-messages
+
+
+Удаление ошибок [ts] из файлов JS в VS Code
+Вопросы
+JAVASCRIPT
+Удаление ошибок [ts] из файлов JS в VS Code
+Я получаю эти ошибки TypeScript VS Code, когда работаю с файлами JS. Что я могу сделать, чтобы отключить это? Я поместил это в свои настройки и не решил проблему:
+
+"typescript.validate.enable": false
+Ошибку можно увидеть здесь
+
+Удаление ошибок [ts] из файлов JS в VS Code
+
+ 27.06.2018 20:14
+45
+2
+28 987
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Откройте настройки в вашем VSC.
+Чтобы открыть настройки пользователя и рабочего пространства, используйте следующую команду меню VS Code:
+
+На Windows / Linux - Файл> Настройки> Настройки
+На macOS - Код> Настройки> Настройки
+Проверьте, установлен ли tslint.jsEnable на false
+
+// Control whether tslint is enabled for JavaScript files or not.
+"tslint.jsEnable": false,
+
+Установите ложный в разделе настройки рабочего пространства
+
+Из документации:
+tslint.enable - включить / выключить tslint.
+tslint.jsEnable - включить / выключить tslint для файлов .js, по умолчанию false.
+
+
+
+ 27.06.2018 20:25
+У меня недостаточно информации о настройке проекта и коде, но похоже, что вы пытаетесь загрузить файлы .js как машинописный текст.
+
+Чтобы использовать файлы JavaScript в проектах Typescript, вы должны включить флаг allowJs либо в командной строке --allowJs, либо в tsconfig.json как "allowJs": true.
+
+Но если файлы .js не должны быть частью проекта TS, а просто находиться в том же дереве каталогов, вам необходимо просмотреть свойства exclude и includetsconfig.json.
+
+ 29.09.2018 10:15
+Убедитесь, что javascript.implicitProjectConfig.checkJs не соответствует настройкам VSCode.
+
+ 29.09.2018 15:29
+ Ответ принят как подходящий
+Есть Проблема с GitHub, в котором более подробно обсуждается токен [ts] от ошибок. Наиболее актуальный комментарий к этому обсуждению:
+
+Yes. The TypeScript extension powers our javascript intellisense which is why you see [TS] in your js file. That only indicates what extension is providing that error.
+
+Вы можете отключить эту проверку, добавив следующее в соответствующий файл settings.json:
+
+"javascript.validate.enable": false
+В документы этот параметр обсуждается немного подробнее:
+
+With javascript.validate.enable: false, you disable all built-in syntax checking. If you do this, we recommend that you use a linter like ESLint to validate your source code.
+
+Как отмечалось выше, это отключает встроенную проверку синтаксиса все. Хотя предлагается использовать вместо этого что-то вроде ESLint, может быть другой вариант, если вы особенно обеспокоен ошибками import / export. Вы можете добавить в свой проект файл jsconfig.json со следующим содержимым:
+
+{
+    "compilerOptions": {
+        "module": "es2015"
+    }
+}
+Это указывает VS Code использовать синтаксис модуля es2015 (import / export), который, кажется, делает его более счастливым.
+
+ 29.09.2018 15:49
+В Windows - Файл> Настройки> Настройки Перейдите в Расширения-> TypeScript-> Javascript> Проверить убедитесь, что включить / выключить проверку JavaScript. не проверено
+
+
+
+ 12.12.2018 16:05
+В коде Visual Studio File> Preferences> Settings Перейдите в Extensions-> TypeScript-> Javascript> Validate, убедитесь, что Enable / disable JavaScript validatio
+
+ 19.12.2019 18:22
+Это работает для меня
+
+В Windows - Файл> Настройки> Настройки
+
+
+
+убедитесь, что проверка не включена
+
+ 31.05.2020 23:03
+Это сработало и для меня: Файл> Настройки> Настройки> Расширения-> TypeScript-> Javascript> Проверить, убедитесь, что Включить / отключить проверку JavaScript. не проверено
+
+https://stackoverflow.com/a/53745887/14728249 Спасибо @BenE :)
+
+
+Angular CLI создает проблему с компонентом
+Вопросы
+ANGULAR
+Angular CLI создает проблему с компонентом
+При создании нового компонента с помощью ng g c my-component я получаю сообщение об ошибке:
+
+Could not find an NgModule. Use the skip-import option to skip importing in NgModule.
+
+Если я затем использую опцию пропуска импорта, Angular сгенерирует компонент в моей папке e2e.
+
+Я предполагаю, что это как-то связано с моим файлом angular.json, который раньше назывался angular-cli.json до того, как я запустил ng upgrade, что, несомненно, вызвало проблему, поскольку, похоже, произошли некоторые структурные изменения.
+
+Есть ли способ исправить это, не создавая новый проект с помощью интерфейса командной строки, а затем вручную копируя файлы ..?
+
+ng g c запускается из корневой папки "my-app".
+
+Структура папки:
+
+my-app
+ - dist
+ - e2e
+ - node_modules
+ - src
+   - app
+   - etc
+angular.json в папке my-app
+
+**Angular Versions:**
+@angular-devkit/architect         0.6.8
+@angular-devkit/build-angular     0.6.8
+@angular-devkit/build-optimizer   0.6.8
+@angular-devkit/core              0.6.8
+@angular-devkit/schematics        0.6.8
+@angular/cli                      6.0.8
+@ngtools/webpack                  6.0.8
+@schematics/angular               0.6.8
+@schematics/update                0.6.8
+rxjs                              5.5.2
+typescript                        2.5.3
+webpack                           4.8.3
+ 17.06.2018 14:45
+4
+4
+14 941
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Я чувствую, что нгнг> находит несколько файлов модулей в корне приложения, пожалуйста, укажите модуль при создании компонента
+
+ng generate component componentName --module=<MODULE-NAME>
+
+ng generate component componentName --module=app.module
+ 17.06.2018 15:04
+Заявление вашей команды: ng g c my-component может вызвать проблему. пожалуйста, попробуйте с
+
+ng g c mycomponent
+ 18.06.2018 11:32
+У меня была такая же проблема в одном из моих проектов.
+
+Проверьте здесь: Angular CLI в шаблоне Angular ASP.NET Core 2? ответ от @Ashkan Rahmani.
+
+Для проектов Angular 6 вам нужно перейти в angular.json, найти «root» внутри файла и установить его как имя дочернего элемента вашей папки src (в большинстве случаев это приложение).
+
+Поэтому вам необходимо заменить
+
+"src": "" 
+с участием
+
+"src": "app"
+Затем запустите ng g c my-component
+
+ 18.06.2018 17:37
+ Ответ принят как подходящий
+Ответ / обновление для всех, у кого такая же проблема.
+
+Вы можете cd в каталог компонентов, и ng g c будет работать нормально.
+
+Чтобы запустить это из корневой папки, я откатил свою версию @ angular / cli до версии 6.0.3. Раньше у меня была установлена ​​6.0.8.
+
+npm i @angular/cli@6.0.3 для установки более старой версии
+
+ng g c your-component будет нормально работать из корневой папки.
+
+ 20.06.2018 14:53
+Я решил эту проблему в приложении Angular CLI, настроенном для .net core 2, просто переместив объект проекта в файле angular.json в конец списка проектов.
+
+В моем случае первым был проект основного приложения, а за ним - проект e2e. Я переключил их, и интерфейс командной строки вернулся к созданию схем в соответствующей папке src / app.
+
+Я предполагаю, что все, что ng-update делает с конфигурацией, заставляет генератор схем просматривать все, что находится последним в списке проектов в angular.json.
+
+ 18.07.2018 16:23
+Если вы хотите создать новый компонент в проекте Angular
+
+The best way is by using Angular CLI with the following command ng generate component sampleComponent or ng g c sampleComponent
+В этом сценарии следует учитывать два основных аспекта:
+
+Вы должны находиться либо в основной папке проекта корень (my-app), либо внутри папки src / app, а затем использовать команды создания компонента.
+В любом случае новый сгенерированный компонент будет создан внутри папки src / app, а также будут импортированы эти новые компоненты в файл app.module.ts
+But in your case, I am having a strong feeling that you might be in e2e folder, that is the reason why you got this message
+
+
+and if you follow it by using ng generate component sampleComponent --skip-import that's creating the component in e2e folder. ( similar case if you are inside the src folder but outside the app folder- this creates a new component in src folder.)
+Следуй этим шагам
+
+выйти из папки e2e в терминале (MAC OS) cd ..Примечание: вы также можете использовать здесь сам ng g c sampleComponent, и это создает компонент внутри src / app.
+сменить каталог на src cd src/
+сменить каталог на приложение cd app/
+используйте команду - это создает компонент в src / app.
+
+ 21.08.2018 23:14
+Я также столкнулся с той же проблемой, когда пытался создать новый компонент, я не знаю фактической причины этого, но я предполагаю, что это там из-за обновления angular. Я решил это, но вы можете попробовать:
+
+использование: ng g c (component Name) --project=(project Name*) --module=app
+
+имя проекта = вы можете найти его в файле angular.json
+
+это будет упомянуто как
+
+ "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    ***"angular.io-example"***: {
+      "root": "",
+      "projectType": "application",
+Ваш проект называется angular.io-example.
+
+ 06.12.2018 10:31
+У меня была такая же проблема после обновления проекта с Angular 4.3 до Angular 6. Проблема оказалась в значении sourceRoot в angular.json в проекте [имя-проекта] -e2e. Было установлено «e2e». Сравнивая с другими проектами, изначально созданными с помощью Angular 6 (без обновления), я заметил, что у них есть пустая строка, указанная для sourceRoot в проекте e2e. После изменения моей конфигурации на эту проблему эта проблема была решена.
+
+Обратите внимание, что sourceRoot для основного проекта по-прежнему должен быть «src», вам нужно только изменить его на пустую строку в проекте e2e.
+
+Спасибо за Ваш ответ. Я просматривал много сообщений об этой ошибке, и люди продолжают говорить «удалить проект e2e» или «перейти в корень проекта». Я имею в виду, черт возьми, это никогда не было приемлемым решением проблемы для меня. Так что твой ответ мне помог. Я поменял позицию проекта e2e и моего основного проекта, и он работает как шарм.
+
+— 
+Tallerlei
+ 03.04.2019 12:08
+
+
+Как справиться с ошибкой мангуста с помощью nestjs
+Вопросы
+TYPESCRIPT
+Как справиться с ошибкой мангуста с помощью nestjs
+Я последовал примеру из https://docs.nestjs.com/techniques/mongodb
+
+Проблема заключается в том, что возникает ошибка проверки мангуста (например, у меня есть схема с обязательным полем, а она не предоставляется):
+
+Из games.service.ts:
+
+  async create(createGameDto: CreateGameDto): Promise<IGame> {
+    const createdGame = new this.gameModel(createGameDto);
+    return await createdGame.save();
+  }
+Функция save () возвращает обещание.
+
+Теперь у меня есть это в game.controller.ts
+
+  @Post()
+  async create(@Body() createGameDto: CreateGameDto) {
+    this.gamesService.create(createGameDto);
+  }
+Как лучше всего обработать ошибку, а затем вернуть ответ с другим статусом http и, возможно, текстом json? Вы бы обычно бросали HttpException, но откуда? Я не могу этого сделать, если буду обрабатывать ошибки с помощью .catch () в обещании.
+
+(Только начал использовать фреймворк nestjs)
+
+ 14.06.2018 20:45
+9
+0
+9 699
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+В своем приложении я использую Exception Filters (https://docs.nestjs.com/exception-filters) и try/catch:
+
+  async create(createGameDto: CreateGameDto): Promise<IGame> {
+    try {
+      const createdGame = new this.gameModel(createGameDto);
+      return await createdGame.save();
+    } catch (e) {
+       // the e here would be MongoError
+       throw new InternalServerException(e.message);
+    }
+  }
+ 15.06.2018 20:55
+ Ответ принят как подходящий
+Во-первых, вы забыли добавить return в свой метод создания внутри контроллера. Это распространенная, очень вводящая в заблуждение ошибка, которую я делал тысячу раз, и на ее отладку у меня уходили часы.
+
+Чтобы поймать исключение:
+
+Вы можете попытаться поймать MongoError с помощью @Catch.
+
+Для своих проектов я делаю следующее:
+
+import { ArgumentsHost, Catch, ConflictException, ExceptionFilter } from '@nestjs/common';
+import { MongoError } from 'mongodb';
+
+@Catch(MongoError)
+export class MongoExceptionFilter implements ExceptionFilter {
+  catch(exception: MongoError, host: ArgumentsHost) {
+    switch (exception.code) {
+      case 11000:
+        // duplicate exception
+        // do whatever you want here, for instance send error to client
+    }
+  }
+}
+Затем вы можете просто использовать его в своем контроллере (или даже использовать его как глобальный фильтр / фильтр с областью действия класса):
+
+import { MongoExceptionFilter } from '<path>/mongo-exception.filter';
+
+@Get()
+@UseFilters(MongoExceptionFilter)
+async findAll(): Promise<User[]> {
+  return this.userService.findAll();
+}
+(Повторяющееся исключение не имеет смысла здесь, в вызове findAll (), но вы поняли идею).
+
+Кроме того, я настоятельно рекомендую использовать валидаторы классов, как описано здесь: https://docs.nestjs.com/pipes
+
+ 31.07.2018 17:33
+используйте try / catch
+
+async getUser(id: string, validateUser ?: boolean): Promise<Users> {
+    try {
+      const user = await this.userModel.findById(id).exec();
+      if (!user && validateUser) {
+        throw new UnauthorizedException();
+      }else if (!user) {
+        throw new HttpException(`Not found this id: ${id}`, HttpStatus.NOT_FOUND)
+      }
+      return user;
+    } catch (err) {
+      throw new HttpException(`Callback getUser ${err.message}`, HttpStatus.BAD_REQUEST);
+    }
+ 25.10.2018 14:30
+Вы можете использовать Ошибка в мангусте и добавить его в AllExceptionFilter
+
+Пожалуйста, обратитесь к документации NestJS для фильтры исключений
+
+import {
+  ExceptionFilter,
+  Catch,
+  ArgumentsHost,
+  HttpException,
+  HttpStatus,
+  InternalServerErrorException
+} from "@nestjs/common";
+
+@Catch()
+export class AllExceptionsFilter implements ExceptionFilter {
+  catch(exception: InternalServerErrorException, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse();
+    const request = ctx.getRequest();
+
+    const status =
+      exception instanceof HttpException
+        ? exception.getStatus()
+        : HttpStatus.INTERNAL_SERVER_ERROR;
+
+    /**
+     * @description Exception json response
+     * @param message
+     */
+    const responseMessage = (type, message) => {
+      response.status(status).json({
+        statusCode: status,
+        path: request.url,
+        errorType: type,
+        errorMessage: message
+      });
+    };
+
+    // Throw an exceptions for either
+    // MongoError, ValidationError, TypeError, CastError and Error
+    if (exception.message.error) {
+      responseMessage("Error", exception.message.error);
+    } else {
+      responseMessage(exception.name, exception.message);
+    }
+  }
+}
+Вы можете добавить его в main.ts, но это действительно зависит от вашего варианта использования. Вы можете проверить это в Nest.js документация.
+
+async function bootstrap() {
+
+  const app = await NestFactory.create(AppModule);
+
+  app.useGlobalFilters(new AllExceptionsFilter());
+
+  await app.listen(3000);
+}
+bootstrap();
+Надеюсь, поможет.
+
+ 04.02.2020 09:12
+Я провел небольшое исследование и обнаружил, что этот работает. Создайте один фильтр исключений Mongo, как показано ниже
+
+import { ExceptionFilter, Catch, ArgumentsHost, HttpStatus } from "@nestjs/common";
+import { MongoError } from 'mongodb';
+import { Response } from 'express';
+
+@Catch(MongoError)
+export class MongoExceptionFilter implements ExceptionFilter {
+
+    catch(exception: MongoError, host: ArgumentsHost) {
+        switch (exception.code) {
+            case 11000:
+                const ctx = host.switchToHttp();
+                const response = ctx.getResponse<Response>();
+                response.statusCode = HttpStatus.FORBIDDEN;
+                response
+                    .json({
+                        statusCode: HttpStatus.FORBIDDEN,
+                        timestamp: new Date().toISOString(),
+                        message: 'You are already registered'
+                    });
+        }
+    }
+}
+
+И не забудьте определить метод контроллера следующим образом:
+
+@UseFilters(MongoExceptionFilter)
+  @Post('signup')
+  @HttpCode(HttpStatus.OK)
+  async createUser(@Body() createUserDto: CreateUserDto) {
+    await this.userService.create(createUserDto);
+  }
+
+Надеюсь, это кому-то поможет. Ваше здоровье!
+
+ 09.06.2020 10:36
+Прибей это сегодня
+
+проверка-error.filter.ts:
+
+import { ArgumentsHost, Catch, RpcExceptionFilter } from '@nestjs/common';
+import { Error } from 'mongoose';
+import ValidationError = Error.ValidationError;
+
+@Catch(ValidationError)
+export class ValidationErrorFilter implements RpcExceptionFilter {
+
+  catch(exception: ValidationError, host: ArgumentsHost): any {
+
+    const ctx = host.switchToHttp(),
+      response = ctx.getResponse();
+
+    return response.status(400).json({
+      statusCode: 400,
+      createdBy: 'ValidationErrorFilter',
+      errors: exception.errors,
+    });
+  }
+}
+main.ts:
+
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationErrorFilter } from './validation-error.filter';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalFilters(new ValidationErrorFilter());
+  await app.listen(process.env.PORT || 3000);
+}
+bootstrap();
+результат:
+
+{
+  "statusCode": 400,
+  "createdBy": "ValidationErrorFilter",
+  "errors": {
+    "dob": {
+      "properties": {
+        "message": "Path `dob` is required.",
+        "type": "required",
+        "path": "dob"
+      },
+      "kind": "required",
+      "path": "dob"
+    },
+    "password": {
+      "properties": {
+        "message": "Path `password` is required.",
+        "type": "required",
+        "path": "password"
+      },
+      "kind": "required",
+      "path": "password"
+    }
+  }
+}
+ 29.07.2020 23:28
+Я нашел здесь решения, то, что я использую, представляет собой комбинацию того и другого, чтобы отлавливать разные ошибки
+
+import { ArgumentsHost, Catch, ExceptionFilter, RpcExceptionFilter } from '@nestjs/common';
+import { Error } from 'mongoose';
+import { IDTOError } from '../errors/bad-request-exception.error';
+import ValidationError = Error.ValidationError;
+import { MongoError } from 'mongodb';
+
+
+@Catch(MongoError)
+export class MongoExceptionFilter implements ExceptionFilter {
+  catch(exception: MongoError, host: ArgumentsHost) {
+    // switch (exception.code) {
+    //   case 11000:
+    //   default: console.info(exception,'ALERT ERROR CATCHED');
+    //     // duplicate exception
+    //     // do whatever you want here, for instance send error to client
+
+
+    //     /** MAIGOD */
+    // }
+    const ctx = host.switchToHttp(),
+      response = ctx.getResponse();
+
+    return response.status(400).json(<IDTOError>{
+      statusCode: 400,
+      createdBy: 'ValidationErrorFilter, Schema or Model definition',
+      errors: exception,
+    });
+
+  }
+}
+
+@Catch(ValidationError)
+export class ValidationErrorFilter implements RpcExceptionFilter {
+
+  catch(exception: ValidationError, host: ArgumentsHost): any {
+
+    const ctx = host.switchToHttp(),
+      response = ctx.getResponse();
+
+    return response.status(400).json(<IDTOError>{
+      statusCode: 400,
+      createdBy: 'ValidationErrorFilter, Schema or Model definition',
+      errors: exception.errors,
+    });
+  }
+}
+ 28.10.2020 04:01
+Я использую Moongose, и ни одно из решений здесь или в других вопросах не помогло мне; Я последовал примеру документации и сделал это, у меня это сработало.
+
+SRC \ фильтры \ монго-исключение.filter.ts
+
+import { ArgumentsHost, Catch, ExceptionFilter, HttpStatus } from '@nestjs/common';
+
+import * as MongooseError from 'mongoose/lib/error'; // I couldn't see the error class is being exported from Mongoose
+
+@Catch(MongooseError)
+export class MongoExceptionFilter implements ExceptionFilter {
+  catch(exception: MongooseError, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse();
+    // const request = ctx.getRequest();
+
+    let error;
+
+    switch (exception.name) {
+      case 'DocumentNotFoundError': {
+        error = {
+          statusCode: HttpStatus.NOT_FOUND,
+          message: "Not Found"
+        }
+        break;
+      }
+      // case 'MongooseError': { break; } // general Mongoose error
+      // case 'CastError': { break; }
+      // case 'DisconnectedError': { break; }
+      // case 'DivergentArrayError': { break; }
+      // case 'MissingSchemaError': { break; }
+      // case 'ValidatorError': { break; }
+      // case 'ValidationError': { break; }
+      // case 'ObjectExpectedError': { break; }
+      // case 'ObjectParameterError': { break; }
+      // case 'OverwriteModelError': { break; }
+      // case 'ParallelSaveError': { break; }
+      // case 'StrictModeError': { break; }
+      // case 'VersionError': { break; }
+      default: {
+        error = {
+          statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+          message: "Internal Error"
+        }
+        break;
+      }
+    }
+
+    response.status(error.statusCode).json(error);
+  }
+}
+src \ main.ts
+
+import { MongoExceptionFilter } from './filters/mongo-exception.filter';
+
+async function bootstrap() {
+  // .......
+
+  app.useGlobalFilters(new MongoExceptionFilter); // Use Mongo exception filter
+
+  await app.listen(3000);
+}
+bootstrap();
+
+
+Ошибка Angular EventEmitter: ожидаемых аргументов типа 0, но получено 1
+Вопросы
+ANGULAR
+Ошибка Angular EventEmitter: ожидаемых аргументов типа 0, но получено 1
+Я получаю сообщение об ошибке типа «Ожидается 0 аргументов типа, но получено 1», несмотря на то, что я следовал этому руководству по T. https://thewikihow.com/video_I317BhehZKM?t=57s
+
+Я указал:
+
+  newUserInfoComplete:boolean = false
+но я получаю указанную выше ошибку на <boolean> в этой строке:
+
+  @Output() newUserInfoCompleteEvent = new EventEmitter <boolean> ();
+Кроме того, если я просто опущу <boolean>, я получу эту ошибку:
+
+Argument of type 'boolean' is not assignable to parameter of type 'string'.
+и this.NewUserInfoComplete здесь подчеркнут:
+
+this.newUserInfoCompleteEvent.emit(this.newUserInfoComplete);
+Вот моя составляющая:
+
+import { Component, OnInit, Output } from '@angular/core';
+import { slideToRight } from '../../../../router.animations';
+import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
+import { EventEmitter } from 'protractor';
+
+@Component({
+  selector: 'app-new-user-input',
+  templateUrl: './new-user-input.component.html',
+  styleUrls: ['./new-user-input.component.css'],
+  animations: [slideToRight()]
+})
+export class NewUserInputComponent implements OnInit {
+
+  newUserInfoComplete:boolean = false
+
+  @Output() newUserInfoCompleteEvent = new EventEmitter <boolean> ();
+
+  constructor(private router: Router, r: ActivatedRoute) {
+    r.url.subscribe((s: UrlSegment[]) => {
+      console.info("url", s); //https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
+    });
+  }
+
+  ngOnInit() {
+  }
+
+
+
+  sendNewUserInfoComplete(){
+    this.newUserInfoCompleteEvent.emit(this.newUserInfoComplete);
+  }
+
+
+  displaySibling() {
+    console.info(this.router);
+    this.router.navigate(['../', { outlets: { newuserorginfo: ['newuserorginfo'] } }])
+  }
+
+  closeBlade() {
+    this.router.navigate([{ outlets: { newuserinput: null } }]);
+  }
+
+}
+ 23.05.2018 20:17
+74
+0
+35 608
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+import { Component, Output } from '@angular/core';
+import { slideToRight } from '../../../../router.animations';
+import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
+import { EventEmitter } from 'protractor';
+
+@Component({
+  selector: 'app-new-user-input',
+  templateUrl: './new-user-input.component.html',
+  styleUrls: ['./new-user-input.component.css'],
+  animations: [slideToRight()]
+})
+export class NewUserInputComponent {
+
+  newUserInfoComplete = false;
+  @Output() newUserInfoCompleteEvent = new EventEmitter <boolean> ();
+
+  constructor(private router: Router, r: ActivatedRoute) {
+    r.url.subscribe((s: UrlSegment[]) => {
+      console.info("url", s);
+    });
+  }
+  sendNewUserInfoComplete(){
+    this.newUserInfoCompleteEvent.emit(!!this.newUserInfoComplete);
+  }
+
+
+  displaySibling() {
+    console.info(this.router);
+    this.router.navigate(['../', { outlets: { newuserorginfo: ['newuserorginfo'] } }])
+  }
+
+  closeBlade() {
+    this.router.navigate([{ outlets: { newuserinput: null } }]);
+  }
+
+}
+попробуй это
+
+ 23.05.2018 20:22
+ Ответ принят как подходящий
+Попробуйте импортировать EventEmitter из Angular вместо protractor:
+
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+ 23.05.2018 20:38
+Я забыл проверить свой импорт! Штопать. Я использовал эмиттер событий PROTRACTOR, а не Angular Core Event Emitter
+
+import { EventEmitter } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { slideToRight } from '../../../../router.animations';
+import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
+
+@Component({
+  selector: 'app-new-user-input',
+  templateUrl: './new-user-input.component.html',
+  styleUrls: ['./new-user-input.component.css'],
+  animations: [slideToRight()]
+})
+export class NewUserInputComponent implements OnInit {
+
+  newUserInfoComplete = false;
+
+  @Output() newUserInfoCompleteEvent = new EventEmitter<boolean>();
+
+  constructor(private router: Router, r: ActivatedRoute) {
+    r.url.subscribe((s: UrlSegment[]) => {
+      console.info("url", s); //https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
+    });
+  }
+
+  ngOnInit() {
+  }
+
+
+
+  sendNewUserInfoComplete() {
+    this.newUserInfoCompleteEvent.emit(this.newUserInfoComplete);
+  }
+
+
+  displaySibling() {
+    console.info(this.router);
+    this.router.navigate(['../', { outlets: { newuserorginfo: ['newuserorginfo'] } }])
+  }
+
+  closeBlade() {
+    this.router.navigate([{ outlets: { newuserinput: null } }]);
+  }
+
+}
+ 23.05.2018 20:40
+Вы просто неправильно импортировали, вам нужно импортировать EventEmitter из @angular/core
+
+import { EventEmitter } from @angular/core
+ 10.07.2019 14:55
+import { EventEmitter, Component, OnInit, Output } from '@angular/core';
+Убедитесь, что EventEmitter импортирован на @angular/core, иначе произойдет ошибка.
+
+Я ошибался. Я импортировал-
+
+ import { EventEmitter } from 'events';
+так получилась ошибка при получении
+
+ 01.09.2019 14:15
+Не импортируйте с такими событиями, как показано ниже:
+
+import { EventEmitter } from 'events';
+Попробуйте импортировать, как показано ниже:
+
+import { EventEmitter } from
+'@angular/core';
+ 29.10.2019 15:34
+Не импортируйте EventEmitter из транспортир, импортируйте его из @ angular / core.
+Почему это произошло: потому что вы использовали EventEmmiterперед для его импорта, поэтому в этом случае он автоматически импортируется из модуля 'транспортир'.
+
+ 19.03.2020 08:12
+просто замените автоматически добавленный оператор импорта:
+
+    import * as EventEmitter from 'events';        
+с участием
+
+    import { Component, OnInit, Output ,EventEmitter} from '@angular/core';       
+
+
+NullInjectorError: нет поставщика для JwtHelperService
+Вопросы
+JSON
+NullInjectorError: нет поставщика для JwtHelperService
+Я в Angular 5.
+
+Первый: npm install @auth0/angular-jwt --save
+
+Потом импортирую: import { JwtHelperService } from '@auth0/angular-jwt';
+
+Это моя служба аутентификации:
+
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+@Injectable()
+export class AuthService {
+
+  constructor(public jwtHelper: JwtHelperService) { }
+
+  public isAuthenticated(): boolean {
+    console.info (localStorage['token']);
+    const token = localStorage.getItem('token');
+    // Check wheter the token is expired and return true or false
+    return !this.jwtHelper.isTokenExpired(token);
+  }
+}
+А это моя служба охраны
+
+export class GuardService implements CanActivate {
+
+  constructor(public auth: AuthService, public router: Router) {}
+
+  canActivate(): boolean {
+    if (!this.auth.isAuthenticated()){
+        console.info ('bye');
+        this.router.navigate(['/login']);
+        return false;
+    }
+    console.info ('Welcome');
+    return true;
+  }
+
+}
+В локальном хранилище есть токен:
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFjMTUyNzZhZjA2MjU1YTdlMDM0MmQ5ODg4N2M1ZmI2ZWNmM2RlNGUyNjhmYTc4MTliODRhOTVmMmJiNGZiMTliMDFkNjBhNWRlNjhlN2VlIn0.eyJhdWQiOiJmMDExY2M1OC00MGNlLTQzYTktOGY3MS04NDI0OTRlM2E5OTciLCJqdGkiOiJhYzE1Mjc2YWYwNjI1NWE3ZTAzNDJkOTg4ODdjNWZiNmVjZjNkZTRlMjY4ZmE3ODE5Yjg0YTk1ZjJiYjRmYjE5YjAxZDYwYTVkZTY4ZTdlZSIsImlhdCI6MTUyMzI5NzkzNSwibmJmIjoxNTIzMjk3OTM1LCJleHAiOjE1MjMyOTgyMzUsInN1YiI6IjIiLCJzY29wZXMiOlsiYXV0aGVudGljYXRlZCIsImFuZ3VkcnUiXX0.RNY2Yb9xiJDcER4rtHEAYMmoLyvPYij-upZc97q-mSgICKE6_xWih_IBjY4cHQXkkiRyCXaqCfwfMM4YWVjv7bsMlLN5bWlH0JTeYoYf2gENLBIG51NwGpU3iAl8KG_51ljZKbs3RE_ULDbphM1NG8BhobVQ5RlObWzejrkPcMHqlGJaMOMLQuXC1iBR2jI9tlfiP4RD4FUUsRkUEUJ5PSIRl34jWoTv31SSf1bkv43q3YeKTfk6pXZ5Ft_eV8G871KkmQSHANAn26A5ujj2FOh-uCV_VNJ97RuTQ6J4NP2YB-mMaWYpZ1xF-4ndqafRGFXJ_8euBO4cA36zvP3B7g
+И это ошибка:
+
+ERROR Error: Uncaught (in promise): Error: StaticInjectorError(AppModule)[AuthService -> JwtHelperService]: 
+  StaticInjectorError(Platform: core)[AuthService -> JwtHelperService]: 
+    NullInjectorError: No provider for JwtHelperService!
+Error: StaticInjectorError(AppModule)[AuthService -> JwtHelperService]: 
+  StaticInjectorError(Platform: core)[AuthService -> JwtHelperService]: 
+    NullInjectorError: No provider for JwtHelperService!
+    at _NullInjector.get (core.js:1002)
+    at resolveToken (core.js:1300)
+    at tryResolveToken (core.js:1242)
+    at StaticInjector.get (core.js:1110)
+    at resolveToken (core.js:1300)
+    at tryResolveToken (core.js:1242)
+    at StaticInjector.get (core.js:1110)
+    at resolveNgModuleDep (core.js:10854)
+    at _createClass (core.js:10891)
+    at _createProviderInstance$1 (core.js:10865)
+    at _NullInjector.get (core.js:1002)
+    at resolveToken (core.js:1300)
+    at tryResolveToken (core.js:1242)
+    at StaticInjector.get (core.js:1110)
+    at resolveToken (core.js:1300)
+    at tryResolveToken (core.js:1242)
+    at StaticInjector.get (core.js:1110)
+    at resolveNgModuleDep (core.js:10854)
+    at _createClass (core.js:10891)
+    at _createProviderInstance$1 (core.js:10865)
+    at resolvePromise (zone.js:814)
+    at resolvePromise (zone.js:771)
+    at eval (zone.js:873)
+    at ZoneDelegate.invokeTask (zone.js:421)
+    at Object.onInvokeTask (core.js:4740)
+    at ZoneDelegate.invokeTask (zone.js:420)
+    at Zone.runTask (zone.js:188)
+    at drainMicroTaskQueue (zone.js:595)
+Кроме того, он показывает мне маршрут, но без массива из службы ...
+
+ 09.04.2018 20:21
+25
+0
+19 540
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Вам нужно использовать JwtModule, предоставляемый @auth0/angular-jwt, который добавит JwtHelperService к поставщикам, или вам нужно добавить его вручную к поставщику модулей.
+
+Что-то вроде
+
+const JWT_Module_Options: JwtModuleOptions = {
+    config: {
+        tokenGetter: yourTokenGetter,
+        whitelistedDomains: yourWhitelistedDomains
+    }
+};
+
+@NgModule({
+    imports: [
+        JwtModule.forRoot(JWT_Module_Options)
+    ],
+...
+Подробнее см. Документация
+
+ 09.04.2018 20:24
+Для справки в будущем, если все, для чего вы хотите использовать JwtHelper, - это декодирование, как в этом случае, проверяя, истек ли срок действия токена, вы можете использовать это.
+
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+const jwtHelper = new JwtHelperService();
+
+@Injectable()
+export class AuthService {
+    public isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+
+    // Check if the token is expired and return true or false
+    return !this.jwtHelper.isTokenExpired(token);
+}
+Источник: Документация
+
+ 14.03.2019 14:57
+Немного поздно для вечеринки, но я столкнулся с той же проблемой, пытаясь следовать автономной документации, и то, что она не охватывает, - это необходимость импорта параметров InjectionToken, на которые есть ссылка в конструкторе службы:
+
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+
+...
+
+providers: [
+        { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+        JwtHelperService
+    ]
+ 13.05.2019 22:41
+Я исправил эту проблему, изменив свой импорт из:
+
+import { JwtHelperService } from '@auth0/angular-jwt';
+к
+
+import { JwtHelperService } from '@auth0/angular-jwt/src/jwthelper.service';
+ 13.11.2019 09:18
+Самым простым решением, которое сработало для меня, является объявление типа постоянной переменной «JwtHelperService» вместо объявления ее в конструкторе.
+
+ const helper = new JwtHelperService ();
+Теперь используйте вспомогательные сервисы с вспомогательной константой
+
+ return !helper.isTokenExpired(token);
+ 02.07.2020 16:25
+Эта проблема возникает из-за того, что вы не добавили JWTmodule для импорта в app.module.ts
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
+
+JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["example.com"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
+ 21.08.2020 21:13
+Если вы использовали @ auth0 / угловой-jwt для получения помощи jwt и использовали инъекцию зависимостей для доступа к модулю, необходимо импортировать модуль jwt в app.module.ts или какой-либо другой модуль, который вы использовали. Кроме того, у вас есть больше прав для настройки импортеров модулей с запрещенные домены, разрешенные домены, имя заголовка, настраиваемые заводские функции и т. д.
+
+import { JwtModule } from "@auth0/angular-jwt";
+import { HttpClientModule } from "@angular/common/http";
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
+
+@NgModule({
+  bootstrap: [AppComponent],
+  imports: [
+    // ...
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+       tokenGetter: tokenGetter,
+      allowedDomains: ["localhost:3001", "foo.com", "bar.com"]
+      },
+    }),
+  ],
+})
+export class AppModule {}
+если вы не хотите вводить его, вы можете создать экземпляр.
+
+import { JwtHelperService } from "@auth0/angular-jwt";
+
+const helper = new JwtHelperService();
+
+const decodedToken = helper.decodeToken(myRawToken);
+const expirationDate = helper.getTokenExpirationDate(myRawToken);
+const isExpired = helper.isTokenExpired(myRawToken); 
+ 10.11.2020 15:54
+Я тоже боролся с этой проблемой. Я нашел обходной путь:
+
+Конфигурация теста
+В вашем modulename.spec.ts убедитесь, что вы настроили провайдера для JwtHelperService (в моем случае это был AuthGuard.spec.ts):
+
+
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
+
+import { AuthGuard } from './auth.guard';
+
+let jwtHelper: JwtHelperService;
+const testBedConfiguration = {
+  imports: [
+    RouterTestingModule.withRoutes([]),
+    HttpClientTestingModule,
+    JwtModule.forRoot({ // for JwtHelperService
+      config: {
+        tokenGetter: () => {
+          return '';
+        }
+      }
+    })
+  ],
+  providers: [
+    AuthGuard,
+    JwtHelperService
+  ]
+}
+
+describe('AuthGuard', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule(testBedConfiguration);
+    jwtHelper = TestBed.get(JwtHelperService);
+  });
+
+  it('should ...', inject([AuthGuard], (guard: AuthGuard) => {
+    expect(guard).toBeTruthy();
+  }));
+});
+
+Это решило мою проблему, но поскольку моя реализация была в моей службе аутентификации, которая используется моим authguard для маршрутов, я должен включать эту конфигурацию на каждую страницу, которую я защищал authguard.
+
+
+
+Обнаружение браузера в ReactJS
+Вопросы
+JAVASCRIPT
+Обнаружение браузера в ReactJS
+Есть ли способ обнаружить браузер IE с помощью React и либо перенаправить на страницу, либо дать какое-либо полезное сообщение. Я нашел кое-что в JavaScript, но не уверен, как мне это использовать с React + TypeScript.
+
+var isEdge = !isIE && !!window.StyleMedia;
+
+ 16.03.2018 20:41
+35
+0
+64 770
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+Это служба, которую я всегда использую при обнаружении браузера на основе JS / браузера: http://is.js.org/
+
+if (is.ie() || is.edge()) {
+  window.location.href = 'http://example.com';
+}
+ 16.03.2018 20:44
+ Ответ принят как подходящий
+Вы на правильном пути, вы можете использовать их для условного рендеринга jsx или помощи с маршрутизацией ...
+
+Я использовал следующее с большим успехом.
+
+Родом из - Как определить браузер Safari, Chrome, IE, Firefox и Opera?
+
+// Opera 8.0+
+const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+// Firefox 1.0+
+const isFirefox = typeof InstallTrigger !== 'undefined';
+
+// Safari 3.0+ "[object HTMLElementConstructor]" 
+const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+// Internet Explorer 6-11
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+// Edge 20+
+const isEdge = !isIE && !!window.StyleMedia;
+
+// Chrome 1 - 71
+const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+// Blink engine detection
+const isBlink = (isChrome || isOpera) && !!window.CSS;
+Имейте в виду, что каждый из них может быть устаревшим из-за изменений браузера.
+
+Я использую их в React так:
+
+ content(props){
+    if (!isChrome){
+     return (
+      <Otherjsxelements/>
+     )
+    }
+    else { 
+     return (
+      <Chromejsxelements/>
+     )
+    }
+  }
+Затем, вызвав {this.Content ()} в моем основном компоненте, чтобы отобразить различные элементы, специфичные для браузера.
+
+Псевдокод может выглядеть примерно так ... (не проверено):
+
+import React from 'react';
+
+const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+export default class Test extends React.Component {
+
+  content(){
+    if (isChrome){
+        return (
+            <div>Chrome</div>
+        )
+    } else {
+        return (
+            <div>Not Chrome</div>
+        )
+    }
+  }
+
+    render() {
+        return (
+            <div>Content to be seen on all browsers</div>
+            {this.content()}
+        )
+    }
+}
+ 16.03.2018 20:52
+Пытаться:
+
+const isEdge = window.navigator.userAgent.indexOf('Edge') != -1
+const isIE = window.navigator.userAgent.indexOf('Trident') != -1 && !isEdge
+и т.п.
+
+В каждом браузере есть отдельный пользовательский агент, который вы можете проверить.
+
+Конечно, клиент может подделать их, но, на мой взгляд, это более надежное долгосрочное решение.
+
+ 01.07.2019 22:27
+Вы можете написать тест для IE вот так.
+
+<script>
+     // Internet Explorer 6-11
+          const isIE = document.documentMode;
+          if (isIE){
+            window.alert(
+              "Your MESSAGE here."
+            )
+          }
+</script>
+ 11.07.2019 17:12
+Это вся информация, которую вы можете получить из браузера своего клиента (с помощью реакции):
+
+    let latitude
+    let longitude
+    const location = window.navigator && window.navigator.geolocation
+
+    if (location) {
+      location.getCurrentPosition(position => {
+        latitude = position.coords.latitude
+        longitude = position.coords.longitude
+      })
+    }
+
+    var info = {
+      timeOpened: new Date(),
+      timezone: new Date().getTimezoneOffset() / 60,
+      pageon: window.location.pathname,
+      referrer: document.referrer,
+      previousSites: window.history.length,
+      browserName: window.navigator.appName,
+      browserEngine: window.navigator.product,
+      browserVersion1a: window.navigator.appVersion,
+      browserVersion1b: navigator.userAgent,
+      browserLanguage: navigator.language,
+      browserOnline: navigator.onLine,
+      browserPlatform: navigator.platform,
+      javaEnabled: navigator.javaEnabled(),
+      dataCookiesEnabled: navigator.cookieEnabled,
+      dataCookies1: document.cookie,
+      dataCookies2: decodeURIComponent(document.cookie.split(';')),
+      dataStorage: localStorage,
+      sizeScreenW: window.screen.width,
+      sizeScreenH: window.screen.height,
+      sizeDocW: window.document.width,
+      sizeDocH: window.document.height,
+      sizeInW: window.innerWidth,
+      sizeInH: window.innerHeight,
+      sizeAvailW: window.screen.availWidth,
+      sizeAvailH: window.screen.availHeight,
+      scrColorDepth: window.screen.colorDepth,
+      scrPixelDepth: window.screen.pixelDepth,
+      latitude,
+      longitude
+    }
+    console.info(info)
+
+Браузер browserName
+
+ 29.10.2019 22:51
+Это почти сломало меня, но я нашел кое-что, что кажется довольно простым и понятным, используйте имя поставщика. т.е. Google, Apple и т. д. navigator.vendor.includes('Apple') Надеюсь, это кому-то поможет.
+
+ 16.01.2020 14:45
+Не уверен, почему, но никто не упомянул этот пакет: реагировать-устройство-обнаруживать В пакете есть множество проверок браузеров, а также версии и некоторая другая информация. Он действительно маленький, и он обновлен.
+
+Ты можешь использовать:
+
+import { isIE } from 'react-device-detect';
+isIE // returns true or false
+реагировать-устройство-обнаруживать это тоже очень маленький Bundlephobia ссылка
+
+ 27.08.2020 03:40
+Я использовал Gatsby для нашего сайта React, и сборка вызвала у меня проблемы с принятым ответом, поэтому в итоге я использовал useEffect при загрузке, чтобы иметь возможность не отображать как минимум для IE:
+
+  const [isIE, setIsIE] = React.useState(false);
+
+  React.useEffect(() => {
+    console.info(`UA: ${window.navigator.userAgent}`);
+    var msie = window.navigator.userAgent.indexOf("MSIE ");
+    setIsIE(msie > 0)
+  }, []);
+
+  if (isIE) {
+    return <></>
+  }
+
+// In my component render
+
+if (isIE) { return <></> }
+Идея родилась:
+
+https://medium.com/react-review/how-to-create-a-custom-usedevicedetect-react-hook-f5a1bfe64599
+
+а также
+
+Проверьте, использует ли пользователь IE
+
+Какие неприятности? Мне лично не нравится использование здесь состояния и useEffect. Вы все еще можете реализовать этот подход с помощью статического const вне компонента. const isIE = window.navigator.userAgent.indexOf("MSIE ") > 0. Вы все еще можете оставить чек в своем компоненте. if (isIE)
+
+— 
+Hafiz Temuri
+ 16.03.2021 20:20
+Использование @HafizTemuri document или documentMode в сборке gatsby вызывает множество ошибок, а также проблемы с использованием логики window при сборке. Помещая ловушку внутрь, она не запускается при сборке и позволяет полностью компилировать HTML, а затем при запуске фактически определять переменные.
+
+— 
+Dfranc3373
+ 18.03.2021 16:35
+а люди такие фреймворки используют? Если бы я не мог использовать объект window, это бы меня свело с ума. И много времени нам не нужно помещать в useState. У них должен быть window, особенно если они утверждают, что генерируют статический HTML.
+
+— 
+Hafiz Temuri
+ 18.03.2021 17:01
+
+
+
+
+
+
 Top 20 TypeScript Technical Questions in Coding Interviews
 Altcademy Team
 Altcademy Team
