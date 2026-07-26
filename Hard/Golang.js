@@ -1,15 +1,205 @@
-Логотип Яндекс.Практикума
-Программирование
-Анализ данных
-Дизайн
-Маркетинг
-Менеджмент
-Карьера
-Нейросети
-Бесплатные вебинары
-Бесплатные курсы
-Программирование • 04 августа 2025 • 5 мин чтения
-Продвинутый Go-разработчик. Что спрашивают при найме на позиции middle, middle+ и senior
+Skip to content
+DEV Community
+Find related posts...
+Powered by Algolia 
+Log in
+Create account
+
+1
+Jump to Comments
+
+2
+Save
+
+Boost
+
+Dsysd Dev
+Dsysd Dev
+Posted on 28 июн. 2023 г.
+
+20 Advanced Golang Interview Questions asked for a Senior Developer position
+#
+go
+#
+interview
+#
+beginners
+#
+programming
+I have taken many interviews and these are some of the questions I ask consistently to test a candidate's knowledge on go
+
+What are goroutines and how are they different from threads?
+Goroutines are lightweight threads managed by the Go runtime.
+They are cheaper to create and have lower memory overhead compared to traditional operating system threads.
+
+How do you handle panics and recover from them in Go?
+Panics are unexpected errors that can occur during program execution. 
+
+You can use the recover() function inside a deferred function to catch and handle panics.
+
+What is the difference between defer, go, and goroutine?
+defer is used to schedule a function call to be executed when the surrounding function returns.
+go is used to start a new goroutine for concurrent execution. goroutine is the lightweight thread managed by the Go runtime.
+
+How do you handle concurrent access to shared data in Go?
+You can use synchronization primitives like mutexes, channels, or the sync package to handle concurrent access to shared data and prevent race conditions.
+
+What are closures in Go?
+Closures are functions that capture and use variables from their surrounding lexical scope.
+
+They are often used in Go to create anonymous functions.
+
+How do you handle errors in Go? What are some best practices?
+Go encourages explicit error handling. You can use multiple return values to return errors along with results.
+It is recommended to handle errors explicitly and avoid ignoring them.
+
+What are the differences between value receivers and pointer receivers in Go methods?
+Value receivers receive a copy of the value, while pointer receivers receive a pointer to the value.
+
+Pointer receivers can modify the value they receive, while value receivers cannot.
+
+How do you implement interfaces in Go?
+Interfaces in Go are implemented implicitly. If a type satisfies all the methods of an interface, it is said to implement that interface.
+
+There is no need to explicitly declare that a type implements an interface.
+
+What are channels in Go and how are they used for communication between goroutines?
+Channels are a core concurrency primitive in Go. They provide a way for goroutines to communicate and synchronize their execution.
+
+Data can be sent and received through channels using the <- operator.
+
+What is the purpose of the context package in Go?
+The context package provides a way to pass cancellation signals, deadlines, and other request-scoped values across API boundaries.
+
+It is used to manage the lifecycle of operations and facilitate cancellation and timeout handling.
+
+How do you handle dependencies in Go?
+Go encourages the use of dependency injection to handle dependencies. Dependencies should be passed as parameters to functions or struct methods instead of being directly instantiated or accessed.
+
+What is the purpose of the init() function in Go?
+The init() function is a special function in Go that is automatically called before the program starts.
+
+It is often used for initialization tasks such as registering drivers, initializing global variables, or setting up configuration.
+
+What are defer statements and how are they useful?
+Defer statements are used to schedule a function call to be executed when the surrounding function returns.
+They are commonly used to ensure cleanup tasks are performed, such as closing files or releasing resources.
+
+How do you write concurrent tests in Go?
+Go provides the testing package, which includes support for running tests concurrently. By default, tests are run sequentially, but you can use the -parallel flag to run tests concurrently.
+
+Can you explain the concept of garbage collection in Go?
+Go has a built-in garbage collector that automatically manages memory allocation and deallocation.
+
+It tracks objects that are no longer referenced and frees up memory occupied by those objects.
+
+What is the purpose of the sync package in Go?
+The sync package provides synchronization primitives like mutexes, condition variables, and wait groups.
+
+It is used for managing shared access to data and coordinating the execution of goroutines.
+
+How do you handle time-related operations in Go?
+Go provides the time package for working with dates, times, durations, and timers.
+
+It offers functions and methods for parsing, formatting, and manipulating time values.
+
+What is the difference between shallow copy and deep copy in Go?
+Shallow copy creates a new variable that points to the same underlying data, while deep copy creates a new variable with its own separate copy of the data. The copy() function can be used for shallow copying slices.
+
+How do you handle file I/O operations in Go?
+Go provides the os and io packages for file I/O operations.
+You can open files, read from and write to them, and perform other file-related operations using the functions and methods provided by these packages.
+
+Can you explain how to write concurrent programs using channels and goroutines?
+To write concurrent programs, you can create goroutines to perform tasks concurrently.
+
+Communication and synchronization between goroutines can be achieved using channels, where data can be passed between goroutines.
+
+Claps Please!
+If you found this article helpful I would appreciate some claps 👏👏👏👏, it motivates me to write more such useful articles in the future.
+
+Follow me for regular awesome content and insights.
+
+Subscribe to my Newsletter
+If you like my content, then consider subscribing to my free newsletter, to get exclusive, educational, technical, interesting and career related content directly delivered to your inbox
+
+https://dsysd.beehiiv.com/subscribe
+
+Important Links
+Thanks for reading the post, be sure to follow the links below for even more awesome content in the future.
+
+Twitter: https://twitter.com/dsysd_dev
+Youtube: https://www.youtube.com/@dsysd-dev
+Github: https://github.com/dsysd-dev
+Medium: https://medium.com/@dsysd-dev
+Email: dsysd.mail@gmail.com
+Linkedin: https://www.linkedin.com/in/dsysd-dev/
+Newsletter: https://dsysd.beehiiv.com/subscribe
+Gumroad: https://dsysd.gumroad.com/
+Dev.to: https://dev.to/dsysd_dev/
+
+Top comments (1)
+Subscribe
+pic
+Add to the discussion
+ 
+ 
+davidkroell profile image
+David Kröll
+•
+2 июл. 23 г.
+
+The copy() function can be used for shallow copying slices.
+
+Doesn't the copy() create deep copies?
+
+
+1
+ like
+Like
+
+Reply
+Code of Conduct • Report abuse
+
+Dsysd Dev
+Follow
+Helping you become an 11x developer. I write on distributed systems, system design, blockchain, and go. https://twitter.com/dsysd_dev
+Pronouns
+He/Him
+Work
+Founder @Indiehash
+Joined
+30 мая 2023 г.
+More from Dsysd Dev
+Implementing your own stack in golang
+#go #tutorial #webdev #beginners
+Building golang project from scratch - part 3 - setting up the database using docker
+#docker #database #go #beginners
+Building a Golang Project from Scratch — Zero to Hero — Part 2
+#go #beginners #programming #tutorial
+DEV Community — A space to discuss and keep up software development and manage your software career
+
+Home
+DEV Challenges
+DEV++
+Videos
+DEV Education Tracks
+DEV Help
+Advertise on DEV
+Organization Accounts
+DEV Showcase
+About
+Contact
+Free Postgres Database
+DEV Shop
+MLH
+Code of Conduct
+Privacy Policy
+Terms of Use
+Built on Forem — the open source software that powers DEV and other inclusive communities.
+
+Made with love and Ruby on Rails. DEV Community © 2016 - 2026.
+
 
 Рассказали, как подготовиться к собеседованию на позицию GO‑разработчика в зависимости от его опыта, привели примеры задач и их решение.
 
