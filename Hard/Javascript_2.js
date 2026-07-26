@@ -1,3 +1,2830 @@
+39 Best Object Oriented JavaScript Interview Questions and Answers
+Most Popular 37 Key Questions for JavaScript Interviews.
+What is Object in JavaScript?	What is the Prototype object in JavaScript and how it is used?
+What is "this"? What is its value?	Explain why "self" is needed instead of "this".
+What is a Closure and why are they so useful to us?	Explain how to write class methods vs. instance methods.
+Can you explain the difference between == and ===?	Can you explain the difference between call and apply?
+Explain why Asynchronous code is important in JavaScript?	Can you please tell me a story about JavaScript performance problems?
+Tell me your JavaScript Naming Convention?	How do you define a class and its constructor?
+What is Hoisted in JavaScript?	What is function overloading in JavaScript?
+What is the scope variable in JavaScript?	What are Associative Arrays in JavaScript?
+How to Achieve Inheritance in JavaScript?	What are two-way data binding and one-way data flow, and how are they different?
+What will be the output of the following code?	What will be the output of the JavaScript code?
+How to empty an array in JavaScript?	What is the difference between the function declarations below?
+"1"+2+3 = ? And 1+2+"3" = ? OutPut Will Be?	How to show progress bar while loading using Ajax call?
+How To Create the Namespace in JavaScript?	What Is the Difference Between Undefined and Object?
+How To convert JSON Object to String?	How To convert JSON String to Object?
+How To Convert a string to Lowercase?	How To modify the URL of the page without reloading the page?
+How To open URL in a new tab in JavaScript?	TypeScript Interview Questions and Answers
+What is the difference between let, var, and const?	Is it possible to use JavaScript to change the meta-tags of the page?
+
+"Need to work on your software development environment from anywhere from multiple devices? Take a free trial from a Desktop-as-a-Service provider such as CloudDesktopOnline.com. Add Office 365 applications to the desktop with full support from O365CloudExperts"
+
+If you are looking for HTML Homework Help then you can contact codingzap.com 
+
+Feel free to reach us, if you are looking for Java homework help.
+
+If you need help with JavaScript or Java programming, feel free to address the following service Assignmentcore.com and pay for your coding assignments to be done by real experts.
+
+What is JavaScript?
+JavaScript is the most popular scripting language and it was developed by Netscape and used to develop client-side web applications.
+
+Is JavaScript Case Sensitive?
+Yes! JavaScript is case-sensitive because the function “str” is not equal to “Str”.
+
+What Is the Type of JavaScript?
+There are different of Type as given below.
+1.      String, 
+2.      Number,
+3.      Boolean,
+4.      Function,
+5.      Object,
+6.      Null,
+7.      Undefined etc.
+
+What Types of Boolean Operators in JavaScript?
+There are three types of Boolean operators as given below.
+1.      AND (&&) operator, 
+2.      OR (||) operator and 
+3.      NOT (!) Operator
+
+What Is the Difference Between “==” and “===”?
+The double equal “==” is an auto-type conversion and it checks only value not type.
+The three equal “===” is not auto-type conversion and it checks value and types both.﻿
+
+The example looks like–
+if(1 == "1")
+//Its returns true because it's an auto-type conversion and it checks only value not type.
+
+if(1 === "1")
+//Its returns false because it's not auto-type conversion and it checks value and types both.
+
+if(1=== parseInt("1"))
+// its returns true.
+// alert(0 == false); // return true, because both are same type.
+// alert(0 === false); // return false, because both are of a different type.
+// alert(1 == "1"); // return true, automatic type conversion for value only.
+// alert(1 === "1"); // return false, because both are of a different type.
+// alert(null == undefined); // return true.
+// alert(null === undefined); // return false.
+// alert('0' == false); // return true.
+// alert('0' === false); // return false.
+// alert(1=== parseInt("1")); // return true.
+
+
+What Is an Object?
+The object is a collection of properties and each property is associated with the name-value pairs. The object can contain any data type (numbers, arrays, objects, etc.)
+
+The example as given below –
+
+var myObject= {empId : “001”, empCode :”X0091”};
+
+
+In the above example, there are two properties one is empId and the other is empCode and its values are “001” and “X0091”.
+
+The properties name can me string or number. If a property name is number i.e.
+var numObject= {1 : “001”, 2 :”X0091”};
+Console.log(numObject.1); //This line throw an error.
+
+Console.log(numObject[“1”]); // will access to this line not get any error.
+
+As per my thought, the number of property names should be avoided.
+
+Types of creating an object
+1.      Object Literals
+2.      Object constructor
+
+Object Literals: This is the most common way to create the object with an object literal and the example is given below.
+
+The empty object initialized using object literal i.e.
+var emptyObj = {};
+
+This is an object with 4 items using object literal i.e.
+var emptyObj ={
+empId:”Red”,
+empCode: “X0091”,
+empDetail : function(){
+   alert(“Hi”);
+  };
+};
+
+Object Constructor: The second way to create an object using an object constructor and the constructor is a function used to initialize a new object. 
+
+The example as given below -
+var obj = new Object();
+Obj.empId=”001”;
+Obj.empCode=”X0091”;
+
+Obj.empAddressDetai = function(){
+console.log(“Hi, I Anil”);
+};
+
+
+What Is Scope Variable in JavaScript?
+The scope is a set of objects, variables, and functions and JavaScript can have a global scope variable and a local scope variable.
+
+A global scope is a window object and it’s used out of function and within the functions.
+A local scope is a function object and it’s used within the functions.
+
+
+The example for global scope variable -
+var gblVar = "Anil Singh";
+
+function getDetail() {
+     console.log(gblVar);
+}
+
+And other example for global -
+function demoTest() {
+      x = 15;
+};
+console.log(x); //output is 15
+
+The example for local scope variable -
+function getDetail() {
+     var gblVar = "Anil Singh";
+     console.log(gblVar);
+}
+
+And other example for local -
+function demoText() {
+    var x = 15;
+};
+
+console.log(x); //undefined
+
+What Is an Associative Array in JavaScript?
+What is the array? 
+The array is a collection of index items and it is a number of indexes.
+
+Some programming language support array as named indexes and JavaScript does not support array as name indexes it provides only number indexes but provide this feature using the associative array.
+
+The array with name indexes is called an associative array and the associative array is provide a way to store the information.
+
+The number index array example is given below -
+
+var users = new Object();
+users["Name1"] = "Anil 1";
+users["Name2"] = "Anil 2";
+users["Age"] = 33;
+
+alert(Object.keys(users).length); //output is 3.
+var length = Object.keys(users).length;  // 3
+
+   
+The name index array example is given below -
+
+var users = [];
+users["Name1"] = "Anil 1";
+users["Name2"] = "Anil 2";
+users["Age"] = 33;
+
+var length = users.length;         // users.length will return 0
+var detail = users[0];             // users[0] will return undefined
+
+Where To Use the Associate Array?
+I am going to explain the associate array over the database table columns. A table has some columns and their type i.e.
+
+The empName is the text type, empAge is the number type, and enpDOB is the date type.
+
+If we need to find the type of a column that time we can create the associate array i.e.
+var empDetailType = new Array();
+
+empDetailType["empName"] = "ANil";
+empDetailType["empAge"] = 30;
+empDetailType["empDOB"] = "10/03/1984";
+
+console.log("Find the emp age type :" + empDetailType["empAge"]);
+
+
+
+How To Achieve Inheritance in JavaScript?
+In JavaScript, we can implement the inheritance using some alternative ways and we cannot define a class keyword but we create a constructor function and use a new keyword to achieve it.  
+
+Some alternative ways as given below –
+1.      Pseudo-classical inheritance
+2.      Prototype inheritance
+
+Pseudo-classical inheritance is the most popular way. In this way, create a constructor function using the new operator and add the members function with the help of the constructor function prototype.
+
+Prototype-based programming is a technique of object-oriented programming. In this mechanism, we can reuse the existing objects as prototypes. The prototype inheritance also is known as prototypal, Classless, or instance-based inheritances.
+
+
+The Inheritance example for prototype based as given below –
+//create a helper function.
+if (typeof Object.create !== 'function') {
+
+Object.create = function (obj) {
+function fun() { };
+
+fun.prototype = obj;
+return new fun();
+};
+}
+
+//This is a parent class.
+var parent = {
+sayHi: function () {
+alert('Hi, I am parent!');
+},
+
+sayHiToWalk: function () {
+alert('Hi, I am parent! and going to walk!');
+}
+};
+
+//This is child class and the parent class is inherited in the child class.
+var child = Object.create(parent);
+child.sayHi = function () {
+alert('Hi, I am a child!');
+};
+
+HTML –
+<button type="submit" onclick="child.sayHi()"> click to oops</button>
+//The output is: Hi, I am a child!
+
+
+What Is the typeof Operator?
+The type of operator is used to find the type of variables.
+
+The example as given below -
+typeof "Anil Singh"   // Returns string
+typeof 3.33           // Returns number
+typeof true          // Returns Boolean
+typeof { name: 'Anil', age: 30 } // Returns object
+typeof [10, 20, 30, 40] // Returns object
+
+
+What Is Public, Private, and Static Variables in JavaScript?
+I am going to explain strongly typed object-oriented languages (OOPs) like(C#, C++, Java, etc.).
+
+First I am creating a conductor class and trying to achieve to declare the public, private and static variables and detail as given below –
+function myEmpConsepts() { // This myEmpConsepts is a constructor  function.
+var empId = "00201"; //This is a private variable.
+this.empName = "Anil Singh"; //This is a public variable.
+
+this.getEmpSalary = function () {  //This is a public method
+console.log("The getEmpSalary method is a public method")
+}
+}
+
+//This is an instance method and its call at the only one time when the call is instantiate.
+myEmpConsepts.prototype.empPublicDetail = function () {
+console.log("I am calling public vaiable in the istance method :" + this.empName);
+}
+
+//This is a static variable and it’s shared by all instances.
+myEmpConsepts.empStaticVaiable = "Department";
+var instanciateToClass = new myEmpConsepts();
+
+
+
+How To Create the Namespace in JavaScript?
+Please see the below example for how to create the namespace in JavaScript.
+
+//Create the namespace.
+var nameSpace = nameSpace || {};
+
+nameSpace.myEmpConsepts = function () {
+var empId = "00201"; //This is a private variable.
+this.empName = "Anil Singh"; //This is a public variable.
+
+//This is public function
+this.getEmp = function () {
+return "Anil Singh"
+}
+
+//This is private function
+var getEmp = function () {
+return "Anil Singh"
+}
+
+return {
+
+getEmp: getEmp,// work as public
+getEmp: getEmp // work as public
+}
+}();
+
+
+How to Add/Remove Properties to an Object in run-time in JavaScript?
+I am going to explain by example to add and remove properties from JavaScript objects as given below.
+
+
+This example for delete property -
+//This is the JSON object.
+var objectJSON = {
+id: 1,
+name: "Anil Singh",
+dept: "IT"
+};
+
+//This is the process to delete
+delete objectJSON.dept;
+
+
+//Delete property by the array collection
+MyArrayColection.prototype.remove = function (index) {
+this.splice(index, 3);
+}
+
+This example for add property -
+//This is used to add the property.
+objectJSON.age = 30;
+console.log(objectJSON.age); //The result is 30;
+
+//This is the JSON object.
+var objectJSON = {
+id: 1,
+name: "Anil Singh",
+dept: "IT",
+age: 30
+};
+
+How To Extend built-in Objects in JavaScript?
+JavaScript support built-in objects which use to develop the flexibility of JavaScript. The built-in object is a date, string, math, array, and object.
+
+It's very similar to other languages and it’s available in the window content and works independently when brewers are loaded.
+
+Example as give below -
+var date = new Date(); //This is date built-in object.
+var math = Math.abs(10); // this is math built-in object.
+
+var string = "my string" // this is string built-in object.
+
+Why Never Use New Array in JavaScript?
+We have some fundamental issues with the new Array () the example in detail for the array constructor function is given below.
+
+When Array Have more the one Integer?
+var newArray = new Array(10, 20, 30, 40, 50);
+console.log(newArray[0]); //returns 10.
+console.log(newArray.length); //returns 5.
+
+When Array Have Only One Integer?
+var newArray = new Array(10);
+console.log(newArray[0]); //returns undefined
+console.log(newArray.length); //returns 10 because it has an error "array index out of bound";
+
+//This is the fundamental deference to need to avoid the new array ();
+
+What are eval() and floor() functions in JavaScript?
+The eval() function is used to execute an argument as an expression or we can say that evaluates a string as an expression and is used to parse the JSON.
+
+The example over eval() function as given below -
+var x = 14;
+eval('x + 10'); //The output is 24.
+
+Another over eval() function example -
+eval('var myEval = 10');
+console.log(myEval); // The output is 10.
+
+
+The floor () function is a static method of Math and we can write it as Math.floor() and used to round the number of downwards i.e.
+Math.floor(1.6);//The output is 1.
+
+
+What are join() and isNaN() functions in JavaScript?
+The join() function is used to join the separator in the array.
+
+Syntax - 
+myArray.join(mySeparator);
+
+The example as given below -
+var alfabets = ["A", "B", "C", "D"];
+
+//Join without seperator
+var result1 = alfabets.join();//The output is A B C D.
+
+//Join with seperator.
+var result2 = alfabets.join(','); //The output is A, B, C, D.
+
+The isNaN() function is used to check the value is not a number.
+
+The example as given below -
+var var1 = isNaN(-1.23);//The output is false.
+var var2 = isNaN(3);//The output is false.
+var var3 = isNaN(0);//The output is false.
+var var3 = isNaN("10/03/1984"); //The output is true.
+
+What Is Closure in JavaScript?
+While you create the JavaScript function within another function and the inner function freely access all the variable of the outer function i.e.
+
+function ourterFun(i) {
+var var1 = 3;
+
+function innerFun(j) {
+console.log(i + j + (++var1)); // It will return the 16.
+}
+innerFun(10);
+}
+ourterFun(2); // Pass an argument 2
+
+
+The output will get 16 because the innerFun() function can access the argument "i" & variable "var1" but both are defined in the outerFun() function that is closure.
+
+
+That means simply accessing variables outside of your scope creates a closure.
+
+//OR Other WAYS
+function ourterFun(i) {
+var var1 = 3;
+
+return function (j) {
+   console.log(i + j + (++var1)); // It will return the 16.
+  }
+}
+
+var innerFun = ourterFun(2); // innerFun() function is now a closure.
+
+innerFun(10);
+
+
+What is JavaScript Hoisted?
+In JavaScript, the variables can be used before they are declared, these kinds of mechanisms are called Hoisted. It's the default behavior of JavaScript.
+
+
+You can easily be understanding in the below example in detail -
+//The variable declaration looks like.
+var emp;
+
+//The variable initialization looks like.
+emp = "Anil Singh";
+
+var emp; //The declaration of emp is hoisted but the value of emp is undefined.
+emp = 10; //The Assignment still occurs where we intended (The value of emp is 10)
+
+function getEmp() {
+var emp; //The declaration of a different variable name emp is hoisted but the value of emp is  undefined.
+console.log(emp); //The output is undefined
+emp = 20; //The assignment values is 20.
+console.log(emp); //The output is 20.
+}
+
+getEmp();
+
+console.log(emp); //The variable named emp in the outer scope still contains 10.
+
+What Is Function Overloading in JavaScript?
+There is no real function overloading in JavaScript and it allows passing any number of parameters of any type.
+
+You have to check inside the function how many arguments have been passed and what is a type of arguments using typeof.
+
+The example for function overloading not supported in JavaScript is gives below -
+function sum(a, b) {
+    alert(a + b);
+}
+function sum(c) {
+    alert(c);
+}
+sum(3);//The output is 3.
+sum(2, 4);//The output is 2.
+
+In JavaScript, when we write more than one function with the same name that time JavaScript considers the last defined function and overrides the previous functions. You can see the above example output for the same.
+
+We can achieve this using several different techniques as given below -
+1.      You can check the declared argument name value is undefined.
+2.      We can check the total arguments with the arguments.length.
+3.      Checking the type of passing arguments.
+4.      Using a number of arguments
+5.      Using optional arguments like x=x || 'default'
+6.      Using a different name in the first place
+7.   We can use the arguments array to access any given argument by using arguments[i]
+
+What Is the Prototype in JavaScript?
+The prototype is a fundamental concept of JavaScript and it must be known by JavaScript developers.
+
+All the JavaScript objects have an object and its property called prototype and it's used to add custom functions and properties.
+
+
+The example without a prototype is given below -
+
+var employee = function () {
+//This is a constructor function.
+}
+
+//Crate the instance of above constructor function and assign in a variable
+var empInstance = new employee();
+empInstance.deportment = "IT";
+
+console.log(empInstance.deportment);//The output of above is IT.
+
+//The example with prototype as given below-
+var employee = function () { //This is a constructor  function.}
+
+employee.prototype.deportment = "IT";//Now, for every instance employee will have a department.
+
+//Crate the instance of above constructor functions and assign in a variable
+var empInstance = new employee();
+empInstance.deportment = "HR";
+
+console.log(empInstance.deportment);//The output of above is IT not HR.
+
+
+What is the difference between let, var, and const?
+
+I’m explaining the importance of these three keywords in JavaScript and TypeScript.  I also provided various examples to deeply understand and use them and what happened when?
+
+Let's see the detail about the - var vs. let vs. const
+
+var: -
+1.      var is function-scoped
+2.      var returns undefined when accessing a variable before it's declared
+
+let: -
+1.      let is block-scoped
+2.      let throw ReferenceError when accessing a variable before it's declared
+
+const:-
+1.      Const is block-scoped
+2.      Const throw ReferenceError when accessing a variable before it's declared
+3.      Const cannot be reassigned
+
+Let's see the Examples to understand what happens when -
+
+What will happen when the following code is executed?
+var x = 5;
+console.log(x);
+if (true) {
+    var x = 6;
+    console.log(x);
+}
+console.log(x);
+//The Output will be -
+5
+6
+6
+
+What will happen when the following code is executed?
+var x = 5;
+console.log(x);
+if (false) {
+    var x = 6;
+    console.log(x);
+}
+console.log(x);
+//The Output will be -
+5
+5
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    let x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+What will happen when the following code is executed?
+let x = 5;
+function a() {
+    let x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+const x = 5;
+function a() {
+    let x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+const x = 5;
+function a() {
+    x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+const x = 5;
+function a() {
+    const x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+const x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    const x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+What will happen when the following code is executed?
+let x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+Uncaught SyntaxError: Identifier 'x' has already been declared
+at<anonymous>: 1: 1
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+x;
+a();
+//The Output will be -
+6
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+x = a();
+//The Output will be -
+6
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {s
+    var x = 6;
+    return x;
+}
+x
+//The Output will be -
+5
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    var x = 6;
+    return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    var x = 6;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+
+What will happen when the following code is executed?
+var x = 5;
+function a() {
+    let x = 6; return x;
+}
+console.log(x);
+console.log(a());
+//The Output will be -
+5
+6
+
+
+Не найдены метаданные для class-validator
+Вопросы
+JAVASCRIPT
+Не найдены метаданные для class-validator
+Я пытаюсь использовать ValidationPipe, но независимо от того, как я пишу свой код, при отправке запроса я получаю следующее предупреждение: No metadata found. There is more than once class-validator version installed probably. You need to flatten your dependencies.
+
+Мой маршрут выглядит примерно так:
+
+@Get()
+@UsePipes(new ValidationPipe({ transform: true }))
+async findAll(@Query() queryDto: QueryDto) {
+    return await this.myService.findAll(queryDto);
+}
+И мой DTO выглядит примерно так:
+
+export class queryDto
+{
+    @ApiModelProperty({
+        description: 'Maximum number of results',
+        type: Number,
+        example: 50,
+        default: 50,
+        required: false
+    })
+    readonly limit: number = 50;
+}
+Я пробовал использовать ValidationPipe несколько способов, следуя документ, но у меня ничего не работает. Я знаю, что это не работает, потому что, хотя запрос получает ответ, значение по умолчанию, которое я написал в своем DTO для свойства limit, то есть 50, не используется, когда запрос пуст. Поэтому, когда в запросе не указано limit, значение limit не определено, тогда как оно должно быть 50 (что означает, что ValidationPipe не используется).
+
+Мой package.json кажется правильным:
+
+npm ls class-validator
+api-sport@0.0.1 /home/pierre_t/Bureau/dev/ApiSport
+└── class-validator@0.9.1
+Полный package.json:
+
+{
+  "name": "api-sport",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon",
+    "start:debug": "nodemon --config nodemon-debug.json",
+    "start:prod": "pm2 start ./src/main.js --no-daemon",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/platform-express": "^6.0.5",
+    "@nestjs/swagger": "^3.0.1",
+    "@nestjs/typeorm": "^6.0.0",
+    "@types/lodash": "^4.14.123",
+    "class-transformer": "^0.2.0",
+    "class-validator": "^0.9.1",
+    "dotenv": "^7.0.0",
+    "hbs": "^4.0.3",
+    "mysql": "^2.16.0",
+    "pm2": "^3.4.1",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.3.3",
+    "swagger-ui-express": "^4.0.2",
+    "typeorm": "^0.2.16"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.0.5",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.14.4",
+    "@types/supertest": "^2.0.7",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "supertest": "^3.4.1",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
+    "tslint": "5.12.1",
+    "typescript": "^3.4.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
+Почему я получаю это сообщение и как я могу использовать ValidationPipe?
+
+ 03.04.2019 11:01
+10
+5
+8 619
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Это потому, что вы используете class-validator, но без каких-либо проверок, см. этот проблема:
+
+Basically, it warns that you don't have any metadatas in the storage, which means you haven't used any decorator from class-validator. That means you don't perform any validation, so you should just pass validate: false option to buildSchema to disable automatic validation.
+
+Я не уверен, что вы можете включить проверку гнезда ValidationPipe, но в качестве альтернативы вы можете просто добавить утверждение в свой dto (если это имеет смысл), например:
+
+import { Min } from 'class-validator';
+export class QueryDto {
+    @Min(1)
+    readonly limit: number = 50;
+}
+Кстати: поскольку ваш @Query будет иметь только строковые свойства, вы, вероятно, захотите преобразовать свой limit из string в number. Взгляните на этот отвечать.
+
+ 03.04.2019 11:41
+На этот вопрос уже был дан ответ, но для дальнейшего использования людьми с той же проблемой...
+
+класс-валидатор позволяет обойти специальные флаги проверки определенного свойства (белый список) для проверки любого свойства.
+
+Как документы:
+
+This will strip all properties that don't have any decorators. If no other decorator is suitable for your property, you can use @Allow decorator
+
+например:
+
+import {validate, Allow, Min} from "class-validator";
+
+export class Post {
+
+    @Allow()
+    title: string;
+
+    @Min(0)
+    views: number;
+
+    nonWhitelistedProperty: number;
+}
+ 26.08.2019 21:54
+Это мой начальная загрузка, он работает с класс-валидатор:
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(3000);
+}
+bootstrap();
+
+
+
+Использование подписи 'nestjs/jwt' с динамическим/пользовательским секретом
+Вопросы
+JAVASCRIPT
+Использование подписи 'nestjs/jwt' с динамическим/пользовательским секретом
+Я пытаюсь создать пользовательский токен на основе секрета пользователя, пытающегося войти в систему. Однако вместо использования секрета из среды я хочу использовать секрет, назначенный объекту пользователя внутри базы данных.
+
+import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import { UserService } from '@src/modules/user/services';
+
+@Injectable()
+export class AuthService {
+  public constructor(private readonly jwtService: JwtService,
+                     private readonly userService: UserService) {}
+
+  public async createToken(email: string): Promise<JwtReply> {
+    const expiresIn = 60 * 60 * 24;
+    const user = await this.userService.user({ where: { email } });
+    const accessToken = await this.jwtService.signAsync({ email: user.email },
+                                                        /* user.secret ,*/
+                                                        { expiresIn });
+
+    return {
+      accessToken,
+      expiresIn,
+    };
+  }
+}
+Я новичок в Nestjs и, возможно, я что-то упускаю. узел-jsonwebtoken предоставляет необходимый параметр в функции sign(...). nestjs/jwt отсутствует этот параметр (см. код). Как бы вы решили это, не используя node-jsonwebtoken или, может быть, более абстрактный вопрос: имеет ли здесь смысл мой способ обработки секрета пользователя? Спасибо.
+
+ 26.03.2019 10:50
+10
+0
+3 084
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Это пока невозможно только с помощью гнезда JwtModule, но вы можете легко реализовать недостающие части самостоятельно.
+
+Живая демонстрация
+Edit Nest Dynamic JWT Secrets
+
+Вы можете создавать токены, вызывая следующие маршруты:
+
+пользователь1 (секрет: '123'): https://yw7wz99zv1.sse.codesandbox.io/логин/1
+пользователь2 (секрет: '456'): https://yw7wz99zv1.sse.codesandbox.io/логин/2
+
+Затем вызовите защищенный маршрут '/' со своим токеном и получите своего пользователя:
+
+curl -X GET https://yw7wz99zv1.sse.codesandbox.io/ \
+      -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNTUzNjQwMjc5fQ.E5o3djesqWVHNGe-Hi3KODp0aTiQU9X_H3Murht1R5U'
+Как это работает?
+В AuthService я просто использую стандартную jsonwebtoken библиотеку для создания токена. Затем вы можете вызвать createToken со своего маршрута входа:
+
+import * as jwt from 'jsonwebtoken';
+
+export class AuthService {
+  constructor(private readonly userService: UserService) {}
+
+  createToken(userId: string) {
+    const user = this.userService.getUser(userId);
+    return jwt.sign({ userId: user.userId }, user.secret, { expiresIn: 3600 });
+  }
+
+  // ...
+}
+В JwtStrategy вы используете secretOrKeyProvider вместо secretOrKey, который может асинхронно обращаться к UserService для динамического получения секрета пользователя:
+
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKeyProvider: (request, jwtToken, done) => {
+        const decodedToken: any = jwt.decode(jwtToken);
+        const user = this.userService.getUser(decodedToken.userId);
+        done(null, user.secret);
+      },
+    });
+  }
+
+  // ...
+}
+Обратите внимание, что параметры, которые вы передаете в JwtModule как expiresIn, не будут использоваться, вместо этого вы напрямую передадите свои параметры в AuthService. Импортируйте JwtModule без каких-либо параметров:
+
+JwtModule.register({})
+Общий
+Does my way of handling user secret make sense here?
+
+Трудно ответить, не зная ваших точных требований. Я предполагаю, что есть варианты использования jwt с динамическими секретами, но при этом вы теряете большое свойство jwt: они не имеют состояния. Это означает, что ваш AuthService может выдать токен jwt, а некоторые ProductService, требующие аутентификации, могут просто доверять jwt (он знает секрет) без каких-либо обращений к другим службам (например, UserService, которые должны запрашивать базу данных).
+
+Если пользовательские ключи не являются жестким требованием, рассмотрите возможность частой смены ключей, используя свойство jwt kid.
+
+ 26.03.2019 23:50
+Возможность добавить secret в JwtSignOptions была добавлена ​​в nestjs/jwt версии 7.1.0.
+
+При этом пример будет таким:
+
+public async createToken(email: string): Promise<JwtReply> {
+    const expiresIn = 60 * 60 * 24;
+    const user = await this.userService.user({ where: { email } });
+    const accessToken = await this.jwtService.signAsync(
+        { email: user.email },
+        { expiresIn,
+          secret: user.secret,
+        });
+
+    return {
+      accessToken,
+      expiresIn,
+    };
+ }
+
+
+ 21.08.2020 13:48
+У меня также был случай подписывать токены доступа и обновления с разными секретными ключами. Если вы следуете документам NestJS, вы видите, что JwtModule зарегистрирован с одной конфигурацией, а токен подписан без параметров (с конфигурацией по умолчанию). Чтобы использовать функцию знака jwtService с параметрами, импортируйте JwtModule.register с пустым объектом.
+
+import { JwtModule } from '@nestjs/jwt';
+@Module({
+  imports: [JwtModule.register({})],
+  providers: [],
+  controllers: []
+})
+export class AuthModule {}
+И создание файла конфигурации с различными параметрами подписи
+
+@Injectable()
+export class ApiConfigService {
+    constructor(private configService: ConfigService) {   
+    }
+
+    get accessTokenConfig(): any {
+        return {
+            secret: this.configService.get('JWT_ACCESS_TOKEN_KEY'),
+            expiresIn: eval(this.configService.get('JWT_ACCESS_TOKEN_LIFETIME'))
+        }
+    }
+    get refreshTokenConfig(): any {
+        return {
+            secret: this.configService.get('JWT_REFRESH_TOKEN_KEY'),
+            expiresIn: eval(this.configService.get('JWT_REFRESH_TOKEN_LIFETIME'))
+        }
+    }
+}
+вы можете подписать токен с желаемой конфигурацией
+
+@Injectable()
+export class AuthService {
+
+    constructor(private jwtService: JwtService, private apiConfigService: ApiConfigService ) {}
+
+    login(user: any) {
+            let payload = {username: user.username, id: user.id};
+            let jwt = this.jwtService.sign(payload, this.apiConfigService.accessTokenConfig);
+            //
+            return { token: jwt };
+        }
+       
+    }
+
+
+JwtModule.registerAsync не работает в NestJS
+Вопросы
+JAVASCRIPT
+JwtModule.registerAsync не работает в NestJS
+Я работаю над проектом NestJS, и мне нужно использовать JWT с конфигурацией .env. Он генерирует токен, но при попытке доступа к защищенному URL-адресу (с заголовком авторизации) он просто возвращает неавторизованное сообщение.
+
+jwt.strategy.ts
+
+import { Injectable, UnauthorizedException, Logger } from '@nestjs/common';
+import { PassportStrategy } from '@nestjs/passport';
+import { ExtractJwt, Strategy } from 'passport-jwt';
+import { AuthService } from './auth.service';
+import { JwtPayload } from './interfaces/jwt-payload.interface';
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+
+    constructor(private readonly authService: AuthService) {
+        super({
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: process.env.JWT_SECRET_KEY,
+        });
+    }
+
+    async validate(payload: JwtPayload) {
+        const user = await this.authService.validateUser(payload);
+        if (!user) {
+            throw new UnauthorizedException();
+        }
+
+        return user;
+    }
+}
+auth.module.ts
+
+import { Module } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './jwt.strategy';
+
+@Module({
+  imports: [
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.registerAsync({
+      useFactory: async () => ({
+        secretOrPrivateKey: process.env.JWT_SECRET_KEY,
+        signOptions: {
+          expiresIn: process.env.JWT_EXPIRATION_TIME,
+        },
+      }),
+    }),
+  ],
+  providers: [AuthService, JwtStrategy],
+  controllers: [AuthController],
+})
+export class AuthModule {}
+main.ts
+
+import { NestFactory } from '@nestjs/core';
+import * as dotenv from 'dotenv';
+import { ApiModule } from './api/api.module';
+import { Logger } from '@nestjs/common';
+
+async function bootstrap() {
+  dotenv.config({ path: './.env'});
+  const app = await NestFactory.create(ApiModule);
+  const port = process.env.APP_PORT;
+
+  await app.listen(port);
+  Logger.log(`Server started on http://localhost:${port}`);
+}
+bootstrap();
+Похоже, JwtModule.registerAsync не работает с переменными окружения. Я пробовал много вещей, но это всегда терпит неудачу. Если я изменяю переменные среды в auth.module.ts для статических данных, то все работает нормально. Что-то вроде этого:
+
+secretOrPrivateKey: 'secretKey',
+signOptions: {
+  expiresIn: 3600,
+},
+ОБНОВИТЬ Структура проекта
+
+- src
+    - api
+        - auth
+            - interfaces
+                jwt-payload.interface.ts
+            auth.controller.ts
+            auth.module.ts
+            auth.service.ts
+            jwt.strategy.ts
+            index.ts
+        api.module.ts
+        index.ts
+    main.ts
+- test
+.env
+Мой main.ts теперь выглядит так.
+
+import { NestFactory } from '@nestjs/core';
+import * as dotenv from 'dotenv';
+import { resolve } from 'path';
+import { ApiModule } from './api/api.module';
+import { Logger } from '@nestjs/common';
+
+async function bootstrap() {
+  dotenv.config({ path: resolve(__dirname, '../.env') });
+  const app = await NestFactory.create(ApiModule);
+  const port = process.env.APP_PORT;
+
+  await app.listen(port);
+  Logger.log(`Server started on http://localhost:${port}`);
+}
+bootstrap();
+Вы видите, что мой .env находится в корне проекта.
+
+ 13.03.2019 19:15
+1
+0
+4 034
+3
+ Ответы 3
+Для меня работает ваш код:
+
+Edit Nest.js JWT Auth
+
+Где ваш файл .env? Ваша конфигурация dotenv.config({ path: './.env'}); равна конфигурации по умолчанию dotenv.config();, где файл .env ищется в корневом каталоге вашего проекта (а не в src).
+
+Если вы хотите поместить файл .env в каталог src, используйте следующую конфигурацию.
+
+import { resolve } from 'path';
+dotenv.config({ path: resolve(__dirname, '.env') });
+Вместо того, чтобы напрямую использовать ваши переменные среды, я бы рекомендовал инкапсулировать их в ConfigService, см. документы. Это значительно упрощает тестирование и рефакторинг.
+
+ 14.03.2019 00:09
+Если вы используете модуль конфигурации, вы можете сделать что-то вроде этого:
+
+JwtModule.registerAsync({
+  useFactory: (config: ConfigService) => {
+    return {
+      secret: config.get<string>('JWT_SECRET_KEY'),
+      signOptions: {
+        expiresIn: config.get<string | number>('JWT_EXPIRATION_TIME'),
+      },
+    };
+  },
+  inject: [ConfigService],
+}),
+У меня также была проблема с инициализацией JwtModule, и этот код решил ее.
+
+ 13.03.2021 18:19
+TL;DR
+Предполагая, что у вас есть файл .env и он находится в правильном месте, для этого вам нужно настроить dotenv перед всем, даже импорт
+
+// configure dotenv before every thing, even imports
+import * as dotenv from 'dotenv';
+import { resolve } from 'path';
+dotenv.config({ path: resolve(__dirname, '../.env') });
+
+// rest of the code
+import { NestFactory } from '@nestjs/core';
+import { ApiModule } from './api/api.module';
+import { Logger } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(ApiModule);
+  const port = process.env.APP_PORT;
+
+  await app.listen(port);
+  Logger.log(`Server started on http://localhost:${port}`);
+}
+bootstrap();
+Почему?
+Потому что, когда вы делаете что-то подобное
+
+import { ApiModule } from './api/api.module'
+Что происходит, так это то, что вы запускаете код из файла ./api/api.module, и этот файл будет выглядеть так (я использую другой файл, который вы показали в своем вопросе, просто чтобы вам было понятнее)
+
+import { Module } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './jwt.strategy';
+
+@Module({
+  imports: [
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.registerAsync({
+      useFactory: async () => ({
+        secretOrPrivateKey: process.env.JWT_SECRET_KEY,
+        signOptions: {
+          expiresIn: process.env.JWT_EXPIRATION_TIME,
+        },
+      }),
+    }),
+  ],
+  providers: [AuthService, JwtStrategy],
+  controllers: [AuthController],
+})
+export class AuthModule {}
+И когда вы его импортируете, весь этот файл «выполняется», и ссылки process.env «устанавливаются» до того, как вы устанавливаете dotenv.
+
+Поэтому вам нужно «запустить» код, который устанавливает dotenv, прежде чем «выполнить» код, в котором вы используете process.env.
+
+Наблюдения:
+Я по-прежнему рекомендую использовать уже встроенный Конфигурация, а затем вам следует использовать асинхронные методы и внедрить службу конфигурации (как и в некоторых других ответах).
+
+Но если вы хотите использовать process.env, установите dotenv перед всем.
+
+NestJs + Passport — JWTStrategy никогда не вызывается с токенами RS256
+Вопросы
+JAVASCRIPT
+NestJs + Passport — JWTStrategy никогда не вызывается с токенами RS256
+Я пытаюсь внедрить токены RS256 JWT в бэкэнд Nestjs. Я следовал примеру, приведенному в документация по нестдж.
+
+В моем модуле я регистрирую JwtModule своим закрытым ключом:
+
+@Module({
+    imports: [
+       PassportModule.register({ defaultStrategy: 'jwt' }),
+       JwtModule.register({
+         secretOrPrivateKey: extractKey(`${process.cwd()}/keys/jwt.private.key`),
+         signOptions: {
+            expiresIn: 3600,
+         },
+       }),
+    ],
+    controllers: [AuthController],
+    providers: [AuthService, JwtStrategy, HttpStrategy],
+})
+export class AuthModule {}
+Я могу вызвать конечную точку аутентификации/токена и получить токен, но когда я пытаюсь получить доступ к защищенной конечной точке, я всегда получаю 401.
+
+Ниже вы можете найти мой кастом JwtStrategy:
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+   constructor(private readonly authService: AuthService) {
+      super({
+          jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+          secretOrKey: extractKey(`${process.cwd()}/keys/jwt.public.key`),
+      });
+   }
+
+   async validate(payload: JwtPayload) {
+       console.info('JwtStrategy');
+       const user = await this.authService.validateUser(payload);
+       if (!user) {
+           throw new UnauthorizedException();
+       }
+       return user;
+   }
+}
+И охраняемая конечная точка:
+
+@Controller('auth')
+export class AuthController {
+   constructor(private readonly authService: AuthService) {}
+
+   @Get('token')
+   async createToken(): Promise<any> {
+      return await this.authService.createToken();
+   }
+
+   @Get('data')
+   @UseGuards(AuthGuard())
+   findAll() {
+      console.info('Guarded endpoint');
+      // This route is restricted by AuthGuard
+      // JWT strategy
+   }
+}
+Я предполагаю, что когда я вызываю auth/data, я должен видеть в консоли по крайней мере строку «JwtStrategy», которую я регистрирую в методе проверки. К сожалению, он никогда не появляется. Почему метод проверки никогда не вызывается?
+
+Пожалуйста, найдите коды и поле ниже
+
+NestJs + Passport — JWTStrategy никогда не вызывается с токенами RS256
+
+ 10.03.2019 20:47
+1
+0
+2 136
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Вы должны указать RS256 в качестве алгоритма как для JwtModule, так и для JwtStrategy:
+
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor(private readonly authService: AuthService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: publicKey,
+      algorithms: ['RS256'],
+      ^^^^^^^^^^^^^^^^^^^^^^
+    });
+а также
+
+JwtModule.register({
+  secretOrPrivateKey: privateKey,
+  signOptions: {
+    expiresIn: 3600,
+    algorithm: 'RS256',
+    ^^^^^^^^^^^^^^^^^^^
+  },
+}),
+ 10.03.2019 21:37
+Не уверен, что это работает, но вы можете попробовать это
+
+@UseGuards(AuthGuard('jwt'))
+над вашим защищенным маршрутом.
+
+ 13.08.2020 07:01
+Вполне возможно, что файлы открытого ключа и/или закрытого ключа были сгенерированы не в формате RS256.
+
+Я бы рекомендовал попробовать следующее:
+
+https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9
+
+Вопросы по JavaScript
+
+Ответы на Вопросы кандидату на должность фронтенд-разработчика - Вопросы по Javascript.
+
+Объясните делегирование событий
+Объясните, как this работает в JavaScript
+Расскажите, как работает прототипное наследование
+Что вы думаете о AMD против CommonJS?
+Объясните, почему это не является IIFE: function foo(){ }();. Что необходимо изменить, чтобы это стало IIFE??
+В чем различие между переменными, значение которых: null, undefined и не объявлено? Как бы вы проверили их на каждое из этих значений?
+Что такое замыкание и как/для чего его используют?
+Можете ли вы описать основное различие между циклом .forEach и циклом .map()? И в каких случаях каждый из них используется?
+В каких случаях обычно используются анонимные функции?
+Как вы организуете свой код? (module pattern, classical inheritance)
+В чем разница между host-объектами и нативными объектами?
+В чем разница между: function Person(){}, var person = Person(), и var person = new Person()?
+В чем разница между .call и .apply?
+Что делает и для чего нужна функция Function.prototype.bind?
+В каких случаях используется document.write()?
+В чем разница между feature detection (определение возможностей браузера), feature inference (предположение возможностей) и анализом строки user-agent?
+Расскажите об Ajax как можно более подробно
+Какие преимущества и недостатки в использовании Ajax?
+Объясните, как работает JSONP (и почему это не совсем AJAX)
+Вы когда-нибудь использовали шаблонизацию на JavaScript? Если да, то какие библиотеки вы использовали?
+Расскажите, что такое поднятие (hoisting)
+Объясните, что такое всплытие событий (event bubbling)
+В чем разница между "атрибутом" (attribute) и "свойством" (property)?
+Почему не следует расширять нативные JavaScript-объекты?
+В чем разница между событием load и событием DOMContentLoaded?
+В чем разница между == и ===?
+Объясните same-origin policy в контексте JavaScript
+Сделайте так, чтобы этот код работал:
+Почему тернарный оператор так называется?
+Что делает строчка "use strict";? Какие достоинства и недостатки от ее использования?
+Напишите цикл, который перебирает числа до 100, возвращая "fizz" на числа кратные 3, "buzz" на числа кратные 5 и "fizzbuzz" на числа кратные 3 и 5.
+Почему считается хорошим тоном оставить глобальную область видимости (global scope) в нетронутом состоянии?
+Для чего используют событие load? Есть ли у этого события недостатки? Знаете ли вы какие-либо альтернативы, и в каких случаях бы стали их использовать?
+Расскажите, что такое одностраничное приложение, и как сделать его SEO-оптимизированным.
+Насколько вы опытны в работе с промисами (promises) и/или их полифилами?
+Какие преимущества и недостатки при использовании промисов вместо колбэков (callbacks)?
+Каковы преимущества и недостатки написания JavaScript-кода на языке, который компилируется в JavaScript?
+Какие инструменты и методы вы используете при отладке кода?
+Какие языковые конструкции вы используете для итерации по свойствам объекта и элементам массива?
+Объясните разницу между изменяемыми (mutable) и неизменяемыми (immutable) объектами
+Объясните разницу между синхронными и асинхронными функциями
+Что такое цикл событий (event loop)? В чем разница между стеком вызовов (call stack) и очередью событий (task queue)?
+Объясните разницу при использовании foo в function foo() {} и var foo = function() {}
+В чем различие между переменными, созданными при помощи let, var и const?
+В чем разница между классом в ES6 и функцией-конструктором в ES5?
+Можете ли вы привести пример использования стрелочных функции =>? Чем они отличаются от других функций?
+В чем преимущество использования стрелочных функций для метода в конструкторе?
+Дайте определение функции высшего порядка
+Можете ли вы привести пример деструктуризации объекта или массива?
+Шаблонные строки в ES6 намного упрощают создание строк, можете ли вы привести пример их использования?
+Можете ли вы привести пример каррированной функции (curry function) и в чем их преимущество?
+В чем преимущества использования spread оператора и чем он отличается от rest оператора?
+Каким образом можно обмениваться кодом между файлами?
+Для чего используются статические члены класса?
+Другие ответы
+Объясните делегирование событий
+Делегирование событий - это приём, заключающийся в добавлении обработчиков событий к родительскому элементу, а не к дочерним элементам. Обработчик будет срабатывать всякий раз, когда событие будет запущено на дочерних элементах благодаря всплытию событий в DOM. Преимущества этого приёма:
+
+Экономит объем используемой памяти, т.к. для родительского элемента требуется только один обработчик.
+Не нужно привязывать или убирать обработчики при добавлении и удалении элементов.
+Ссылки
+https://davidwalsh.name/event-delegate
+https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
+Объясните, как this работает в JavaScript
+Нельзя в двух словах объяснить работу ключевого слова this; это одно из самых запутанных понятий в JavaScript. Говоря максимально простым языком, значение this зависит от того, как вызывается функция. Я прочитал много объяснений о работе this, и считаю объяснение Arnav Aggrawal наиболее понятным. Применяются следующие правила:
+
+Если ключевое слово new используется при вызове функции, this внутри функции является совершенно новым объектом.
+Если для вызова/создания функции используются apply, call или bind, то this внутри функции - это объект, который передается в качестве аргумента.
+Если функция вызывается как метод, например, obj.method(), то this - это объект, к которому принадлежит функция.
+Если функция вызывается без контекста, то есть она вызывается без условий, описанных в пунктах выше, то this является глобальным объектом. В браузере это объект window. В строгом режиме ('use strict'), this будет undefined вместо глобального объекта.
+Если применяются несколько из вышеперечисленных правил, то правило, которое выше выигрывает и устанавливает значение this.
+Если функция является стрелочной функцией, то она игнорирует все вышеописанные правила и получает значение this из лексического окружения во время ее создания.
+Чтобы получить более подробное объяснение, ознакомьтесь с его статьей на Medium.
+
+Ссылки
+https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3
+https://stackoverflow.com/a/3127440/1751946
+Расскажите, как работает прототипное наследование
+Этот вопрос очень часто задают на собеседованиях. Все объекты в JavaScript имеют свойство __proto__, которое является ссылкой на другой объект. Когда происходит обращение к свойству объекта, и если свойство не найдено в этом объекте, то механизм JavaScript просматривает прототип объекта, затем прототип прототипа и т.д. До тех пор, пока не найдет определенное свойство на одном из прототипов или до тех пор, пока он не достигнет конца цепочки прототипов. Такое поведение имитирует классическое наследование, но на самом деле это скорее делегирование, чем наследование.
+
+Ссылки
+https://www.quora.com/What-is-prototypal-inheritance/answer/Kyle-Simpson
+https://davidwalsh.name/javascript-objects
+Что вы думаете о AMD против CommonJS?
+Оба являются способами реализации системы модулей, которая изначально не присутствовала в JavaScript до появления ES2015. CommonJS является синхронным, в то время как AMD (Asynchronous Module Definition, асинхронное определение модуля) - соответственно, асинхронным. CommonJS разработан с учетом разработки на стороне сервера, в то время как AMD с поддержкой асинхронной загрузки модулей больше предназначена для браузеров.
+
+Я считаю синтаксис AMD довольно многословным, а CommonJS ближе к стилю, который используется в выражениях импорта в других языках. В большинстве случаев я считаю AMD ненужным, потому что если вы разместите весь свой код в одном объединенном файле, то вы не сможете воспользоваться свойствами асинхронной загрузки. Кроме того, синтаксис CommonJS ближе к стилю написания модулей Node, и поэтому происходит меньше путаницы при переключении между клиентской и серверной разработкой на JavaScript.
+
+Я рад, что с появлением модулей ES2015, которые поддерживают как синхронную, так и асинхронную загрузку, мы, наконец, можем придерживаться одного подхода. Несмотря на то, что они не полностью поддерживаются во всех браузерах и Node, мы можем использовать транспайлеры для преобразования нашего кода.
+
+Ссылки
+https://auth0.com/blog/javascript-module-systems-showdown/
+https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs
+Объясните, почему это не является IIFE: function foo(){ }();. Что необходимо изменить, чтобы это стало IIFE??
+IIFE расшифровывается как Immediately Invoked Function Expression - немедленно вызываемое функциональное выражение. Синтаксический анализатор JavaScript читает function foo(){ } (); как function foo(){ } и ();, где первое выражение - это объявление функции, а второе (пара скобок) - попытка вызова функции, но так как имя не указано, он выдает ошибку Uncaught SyntaxError: Unexpected token.
+
+Вот два способа исправить это, которые заключаются добавление дополнительных скобок: (function foo(){ })() и (function foo(){ }()). Выражения, начинающиеся с function, считаются объявлениями функций. Оборачивая эту функцию внутри (), она становится функциональным выражением, которое затем может быть выполнено с последующим (). Подобные функции не отображаются в глобальной области видимости, и вы можете даже не указывать им имя, если вы не будете на них ссылаться.
+
+Вы также можете использовать оператор void - void function foo(){ }(). К сожалению, с таким подходом есть одна проблема. Выполнение данного выражения всегда возвращает undefined, поэтому, если ваше IIFE возвращает что-либо, вы не можете его использовать. Пример:
+
+const foo = void (function bar() {
+  return 'foo';
+})();
+
+console.log(foo); // undefined
+
+Ссылки
+http://lucybain.com/blog/2014/immediately-invoked-function-expression/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void
+В чем различие между переменными, значение которых: null, undefined и не объявлено? Как бы вы проверили их на каждое из этих значений?
+Необъявленные переменные создаются, когда вы присваиваете значение идентификатору, который не был ранее создан при помощи var,let или const. Необъявленные переменные будут определены глобально, вне текущей области видимости. В строгом режиме, будет ошибка ReferenceError, когда вы попытаетесь назначить значение необъявленной переменной. Необъявленные переменные плохи так же, как и глобальные переменные. Избегайте их любой ценой! Чтобы проверить на их наличие, оберните код в блок try/catch.
+
+function foo() {
+  x = 1; // ReferenceError в строгом режиме
+}
+
+foo();
+console.log(x); // 1
+
+Переменная undefined - это переменная, которая была объявлена, но ей не было присвоено значение. Ее тип undefined. Если переменной присвоить функцию, которая не возвращает никакого значения, то переменная также будет иметь значение undefined. Чтобы проверить это, сравните, используя оператор строгого равенства (===) или typeof, который вернет строку 'undefined'. Обратите внимание, что вам не следует использовать оператор абстрактного сравнения для проверки, так как он также вернет true, если значение равно null.
+
+var foo;
+console.log(foo); // undefined
+console.log(foo === undefined); // true
+console.log(typeof foo === 'undefined'); // true
+
+console.log(foo == null); // true. Неправильно, не используйте это для проверки!
+
+function bar() {}
+var baz = bar();
+console.log(baz); // undefined
+
+Переменной со значением null было явно присвоено значение null. Она отличается от undefined тем, что она была назначена явно. Чтобы проверить на null, просто сравните, используя оператор строгого равенства. Обратите внимание, что, как и выше, вы не должны использовать оператор абстрактного равенства (==) для проверки, так как он также вернет true, если значение равно undefined.
+
+var foo = null;
+console.log(foo === null); // true
+console.log(typeof foo === 'object'); // true
+
+console.log(foo == undefined); // true. Неправильно, не используйте это для проверки!
+
+Личная привычка - я никогда не оставляю свои переменные необъявленными или неприсвоенными. Я явно назначаю им null после объявления, если я не собираюсь их пока использовать. Если вы используете линтер в своем рабочем процессе, он обычно также проверяет, что вы не ссылаетесь на необъявленные переменные.
+
+Ссылки
+https://stackoverflow.com/questions/15985875/effect-of-declared-and-undeclared-variables
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/undefined
+Что такое замыкание и как/для чего его используют?
+Замыкание - это комбинация функции и лексического окружения, в которой эта функция была объявлена. Слово "лексический" относится к тому факту, что лексическая область видимости использует место, где переменная объявлена в исходном коде, чтобы определить, где эта переменная доступна. Замыкания - это функции, которые имеют доступ к переменным внешней (замыкающей) функции - цепочке областей видимости даже после того, как внешняя функция вернулась.
+
+Для чего его используют?
+
+Конфиденциальность данных / эмуляция скрытых методов при помощи замыканий. Обычно используется в модульном паттерне.
+Частичное применение функций или каррирование.
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
+Можете ли вы описать основное различие между циклом .forEach и циклом .map()? И в каких случаях каждый из них используется?
+Чтобы понять разницу между ними, давайте посмотрим, что делает каждая функция.
+
+forEach
+
+Перебирает элементы в массиве.
+Вызывает callback-функцию для каждого элемента.
+Не возвращает значение.
+const a = [1, 2, 3];
+const doubled = a.forEach((num, index) => {
+  // Делаем что-либо с num и/или index.
+});
+
+// doubled = undefined
+
+map
+
+Перебирает элементы в массиве.
+"Сопоставляет" каждый элемент с новым элементом, вызывая функцию для каждого элемента, создавая в результате новый массив.
+const a = [1, 2, 3];
+const doubled = a.map((num) => {
+  return num * 2;
+});
+
+// doubled = [2, 4, 6]
+
+Основное различие между .forEach и .map() состоит в том, что .map() возвращает новый массив. Если вам нужен результат, но вы не хотите изменять исходный массив, .map() - очевидный выбор. Если вам просто нужно перебрать массив, то стоит воспользоваться forEach.
+
+Ссылки
+https://codeburst.io/javascript-map-vs-foreach-f38111822c0f
+В каких случаях обычно используются анонимные функции?
+Они могут использоваться в IIFE для инкапсуляции кода в локальную область видимости, чтобы объявленные в ней переменные не попадали в глобальную область видимости.
+
+(function () {
+  // Здесь код функции.
+})();
+
+Как callback-функция, которая используется один раз и не должна использоваться где-либо еще. Код будет казаться более автономным и читаемым, когда обработчики будут определены прямо внутри вызывающего их кода, а не искать в другом месте, чтобы найти тело функции.
+
+setTimeout(function () {
+  console.log('Hello world!');
+}, 1000);
+
+Аргументы в конструкциях функционального программирования или Lodash (аналогично callback-функциям).
+
+const arr = [1, 2, 3];
+const double = arr.map(function (el) {
+  return el * 2;
+});
+console.log(double); // [2, 4, 6]
+
+Ссылки
+https://www.quora.com/What-is-a-typical-usecase-for-anonymous-functions
+https://stackoverflow.com/questions/10273185/what-are-the-benefits-to-using-anonymous-functions-instead-of-named-functions-fo
+Как вы организуете свой код? (module pattern, classical inheritance)
+В прошлом я использовал Backbone, который поощряет ООП подход, создавая Backbone модели и добавляя к ним методы.
+
+Модульный паттерн до сих пор хорош, но в настоящее время я использую React/Redux, который использует однонаправленный поток данных на основе архитектуры Flux. Я создаю модели своего приложения при помощи простых объектов и пишу чистые функции для управления этими объектами. Состояние управляется при помощью экшенов и редьюсеров, как в любом другом приложении Redux.
+
+Я избегаю использования наследования классов, где это возможно. Если же мне это необходимо сделать, то я придерживаюсь этих правил.
+
+В чем разница между host-объектами и нативными объектами?
+Нативные объекты - это объекты, которые являются частью языка JavaScript, определенного в спецификации ECMAScript, такие как String,Math, RegExp,Object, Function и т.д.
+
+Хост-объекты предоставляются средой выполнения (браузером или Node), такие как window, XMLHTTPRequest и т.д.
+
+Ссылки
+https://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects
+В чем разница между: function Person(){}, var person = Person(), и var person = new Person()?
+Этот вопрос не совсем понятен. Я полагаю, что суть вопроса о конструкторах в JavaScript. Строго говоря, function Person(){} - это обычное объявление функции. Принято называть с заглавной буквы функции, которые предназначены для использования в качестве конструкторов.
+
+var person = Person() вызывает Person как функцию, а не как конструктор. Вызов как таковой является распространенной ошибкой, если функция предназначена для использования в качестве конструктора. Как правило, конструктор ничего не возвращает, поэтому при вызове конструктора как обычной функции возвращается undefined, и это присваивается переменной, предназначенной в качестве экземпляра.
+
+var person = new Person() создает экземпляр объекта Person с помощью оператора new, который наследуется от Person.prototype. Альтернативой может быть использование Object.create, например:Object.create(Person.prototype).
+
+function Person(name) {
+  this.name = name;
+}
+
+var person = Person('John');
+console.log(person); // undefined
+console.log(person.name); // Uncaught TypeError: Cannot read property 'name' of undefined
+
+var person = new Person('John');
+console.log(person); // Person { name: "John" }
+console.log(person.name); // "john"
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
+В чем разница между .call и .apply?
+Сходство заключается в том, что и .call, и .apply используются для вызова функций, а также первый параметр будет использоваться как значение this внутри функции. А разница в том, что .call в качестве следующих аргументов принимает аргументы, разделенные запятыми, в то время как.apply в качестве следующих аргументов принимает массив аргументов.
+
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add.call(null, 1, 2)); // 3
+console.log(add.apply(null, [1, 2])); // 3
+
+Что делает и для чего нужна функция Function.prototype.bind?
+Взято дословно с MDN:
+
+Метод bind() создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в привязанную функцию аргументами при её вызове.
+
+По моему опыту, это наиболее полезно для привязки значения this в методах классов, которые вы хотите передать в другие функции. Это часто делается в компонентах React.
+
+Ссылки
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind
+В каких случаях используется document.write()?
+document.write() записывает строку текста в поток документа, открытого при помощи document.open(). Когда document.write() выполняется после загрузки страницы, он вызывает document.open, который очищает весь документ (<head>и<body> будут удалены!) и заменяет содержимое на заданное значение параметра. Подобный подход считается опасным и не рекомендуется его использовать.
+
+В Интернете есть несколько ответов, которые объясняют, что document.write() используется в коде отслеживания или когда вы хотите добавить стили, которые должны работать только при включенном JavaScript. Он даже используется в шаблоне HTML5 для параллельной загрузки скриптов и сохранения порядка выполнения! Тем не менее, я подозреваю, что эти причины могут быть устаревшими, и в наши дни они могут быть достигнуты без использования document.write(). Пожалуйста, поправьте меня, если я ошибаюсь по этому поводу.
+
+Ссылки
+https://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html
+https://github.com/h5bp/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag
+В чем разница между feature detection (определение возможностей браузера), feature inference (предположение возможностей) и анализом строки user-agent?
+Feature detection (определение возможностей браузера)
+
+Определение возможностей браузера заключается в определении, поддерживает ли браузер определенный блок кода - и если нет, то будет выполняться другой код, так что браузер всегда сможет обеспечить работоспособность и предотвратить сбои/ошибки в некоторых браузерах. Например:
+
+if ('geolocation' in navigator) {
+  // Можно использовать navigator.geolocation
+} else {
+  // Обработка отсутствия возможности
+}
+
+Modernizr - отличная библиотека для обработки таких функций.
+
+Feature inference (предположение возможностей)
+
+Предположение возможностей проверяет на наличие определенных возможностей, как и предыдущий подход, но использует другую функцию, которая предполагает, что определенная возможность уже существует, например:
+
+if (document.getElementsByTagName) {
+  element = document.getElementById(id);
+}
+
+Этот подход не рекомендуется. Первый подход более надежен.
+
+Строка User Agent
+
+Это строка, сообщаемая браузером, которая позволяет узлам сетевого протокола определить тип приложения, операционную систему, поставщика программного обеспечения или версию программного обеспечения пользователя от которого исходит запрос. Доступ к ней можно получить через navigator.userAgent. Тем не менее, строка User Agent сложна для обработки и может быть подделана. Например, браузер Chrome идентифицируется как Chrome, так и Safari. Таким образом, чтобы обнаружить браузер Safari, вы должны проверить на наличие строки Safari и отсутствие строки Chrome. Избегайте этого метода.
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection
+https://stackoverflow.com/questions/20104930/whats-the-difference-between-feature-detection-feature-inference-and-using-th
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
+Расскажите об Ajax как можно более подробно
+Ajax (асинхронный JavaScript и XML) - это набор методов веб-разработки, использующих множество веб-технологий на стороне клиента для создания асинхронных веб-приложений. С помощью Ajax веб-приложения могут отправлять данные на сервер и получать их с сервера асинхронно (в фоновом режиме), не влияя на отображение и поведение открытой страницы. Отделяя уровень обмена данными от уровня представления, Ajax позволяет веб-страницам и, в частности, веб-приложениям динамически изменять содержимое без необходимости перезагрузки всей страницы. На практике для получения/передачи данных используется формат данных JSON вместо XML из-за того, что JSON основан на JavaScript.
+
+Раньше для асинхронного взаимодействия использовали XMLHttpRequest API, а сейчас принято использовать fetch() API.
+
+Ссылки
+https://en.wikipedia.org/wiki/Ajax_(programming)
+https://developer.mozilla.org/en-US/docs/AJAX
+Какие преимущества и недостатки в использовании Ajax?
+Преимущества
+
+Повышение интерактивности. Новые данные с сервера могут быть добавлены динамически без перезагрузки всей страницы.
+Сокращение количества подключений к серверу, поскольку скрипты и таблицы стилей нужно запрашивать только один раз.
+Состояние может быть сохранено на странице. Переменные JavaScript и состояние DOM сохраняется, поскольку главная страница контейнера не перезагружается.
+Большая часть преимуществ SPA.
+Недостатки
+
+Сложнее реализовать добавление динамической веб-страницы в закладки.
+Не работает, если в браузере отключен JavaScript.
+Некоторые поисковые роботы не выполняют JavaScript и не видят данные, загружаемые при помощи JavaScript.
+Большая часть недостатков SPA.
+Объясните, как работает JSONP (и почему это не совсем AJAX)
+JSONP (JSON с набивкой) - это способ, часто используемый для обхода политики ограничения домена в браузерах, потому что Ajax-запросы с текущей страницы к серверу, находящемуся в другом домене, запрещены.
+
+JSONP работает, отправляя запрос к серверу в другом домене через тег <script> и обычно с параметром запроса callback, например:https://example.com?callback=printData. Затем сервер обернет данные внутри функции с именем printData и вернет их клиенту.
+
+<!-- https://mydomain.com -->
+<script>
+  function printData(data) {
+    console.log(`My name is ${data.name}!`);
+  }
+</script>
+
+<script src="https://example.com?callback=printData"></script>
+
+// Файл загружен с https://example.com?callback=printData
+printData({ name: 'Yang Shun' });
+
+У клиента должна быть функция printData в своей глобальной области видимости, и эта функция будет выполнена клиентом, когда будет получен ответ с сервера из другого домена.
+
+JSONP может быть небезопасным и иметь повышенный риск. Поскольку JSONP - это действительно JavaScript, и он может делать все остальное, что может делать JavaScript, то вы должны быть уверены в надежности поставщика данных JSONP.
+
+В наши дни, CORS является рекомендуемым подходом и JSONP является способом для его обхода.
+
+Ссылки
+https://stackoverflow.com/a/2067584/1751946
+Вы когда-нибудь использовали шаблонизацию на JavaScript? Если да, то какие библиотеки вы использовали?
+Да. Handlebars, Underscore, Lodash, AngularJS, и JSX. Мне не нравилась шаблонизация в AngularJS, потому что там активно использовались строки в директивах и легко допустить ошибку при опечатке. JSX - мой новый фаворит, так как он ближе к JavaScript и почти не имеет дополнительного синтаксиса. В настоящее время вы даже можете использовать строковые литералы шаблонов ES2015 в качестве быстрого способа создания шаблонов, не полагаясь на сторонний код.
+
+const template = `<div>My name is: ${name}</div>`;
+
+Однако следует помнить о возможном XSS в вышеприведенном подходе, поскольку содержимое не экранируется, в отличие от библиотек шаблонизации.
+
+Расскажите, что такое поднятие (hoisting)
+Поднятие (hoisting) - это термин, используемый для объяснения поведения объявлений переменных в вашем коде. Переменные, объявленные или инициализированные при помощи ключевого слова var, будут перемещены в верхнюю часть текущей области, что мы называем "поднятием". Однако, "поднимается" только объявление переменной, присвоение значения (если оно имеется) останется на прежнем месте.
+
+Обратите внимание, что объявление фактически не перемещается - движок JavaScript анализирует объявления во время компиляции и узнает о объявлениях и их областях видимости. Просто легче понять подобное поведение, представляя объявления как перемещение наверх своей области видимости. Давайте рассмотрим несколько примеров.
+
+// объявления переменных через var поднимаются.
+console.log(foo); // undefined
+var foo = 1;
+console.log(foo); // 1
+
+// объявления переменных через let/const НЕ поднимаются.
+console.log(bar); // ReferenceError: bar is not defined
+let bar = 2;
+console.log(bar); // 2
+
+При объявлении функции ее тело поднимается наверх, в то время как у функциональных выражений (когда переменной присваивается функция) поднимается только переменная.
+
+// Объявление функции
+console.log(foo); // [Function: foo]
+foo(); // 'FOOOOO'
+function foo() {
+  console.log('FOOOOO');
+}
+console.log(foo); // [Function: foo]
+
+// Функциональное выражение
+console.log(bar); // undefined
+bar(); // Uncaught TypeError: bar is not a function
+var bar = function () {
+  console.log('BARRRR');
+};
+console.log(bar); // [Function: bar]
+
+Объясните, что такое всплытие событий (event bubbling)
+Когда событие срабатывает на элементе DOM, оно попытается обработать событие (если привязан обработчик), затем событие всплывет вверх к своему родителю и это повторится снова. Подобное всплытие проходит по всем предкам элемента вплоть до document. Всплытие событий является механизмом, на котором основано делегирование событий.
+
+В чем разница между "атрибутом" (attribute) и "свойством" (property)?
+Атрибуты определены в разметке HTML, а свойства определены в DOM. Чтобы проиллюстрировать разницу, представьте, что у нас есть это текстовое поле в HTML: <input type="text" value="Hello">.
+
+const input = document.querySelector('input');
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello
+
+Но после того, как вы измените значение текстового поля, добавив к нему "World!", будет:
+
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello World!
+
+Ссылки
+https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html
+Почему не следует расширять нативные JavaScript-объекты?
+Расширение встроенного/нативног объекта JavaScript означает добавление свойств/функций к его прототипу. Хотя на первый взгляд это может показаться хорошей идеей, на практике это опасно. Представьте, что ваш код использует несколько библиотек, которые расширяют Array.prototype, добавляя один и тот же метод contains. В результате код будет работать неверно, если поведение этих двух методов не будет одинаковым.
+
+Единственный случай, при котором можно расширить нативный объект - это при создании полифила, создав собственную реализацию метода, который является частью спецификации JavaScript, но может отсутствовать в устаревших браузерах.
+
+Ссылки
+http://lucybain.com/blog/2014/js-extending-built-in-objects/
+В чем разница между событием load и событием DOMContentLoaded?
+Событие DOMContentLoaded вызывается, когда исходный HTML-документ полностью загружен и обработан, не дожидаясь окончания загрузки таблиц стилей, изображений и скриптов.
+
+Событие load происходит только после загрузки DOM и всех зависимых ресурсов.
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+https://developer.mozilla.org/en-US/docs/Web/Events/load
+В чем разница между == и ===?
+== - это оператор абстрактного сравнения, а === - оператор строгого сравнения. Оператор == будет сравнивать на равенство после выполнения любых необходимых преобразований типов. Оператор === не будет выполнять преобразование типов, поэтому, если два значения не одного типа, === просто вернет false. При использовании == могут происходить такие странные вещи, как:
+
+1 == '1'; // true
+1 == [1]; // true
+1 == true; // true
+0 == ''; // true
+0 == '0'; // true
+0 == false; // true
+
+Мой совет - никогда не используйте оператор ==, за исключением удобного сравнения с null илиundefined, где выражение a == null вернетtrue, если a принимает значение null или undefined.
+
+var a = null;
+console.log(a == null); // true
+console.log(a == undefined); // true
+
+Ссылки
+https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons
+Объясните same-origin policy в контексте JavaScript
+Same-origin policy (принцип одинакового источника) не позволяет JavaScript выполнять запросы за границы домена. Источник определяется как комбинация схемы URI, имени хоста и номера порта. Этот принцип не позволяет вредоносному сценарию на одной странице получить доступ к конфиденциальным данным на другой через объектную модель документа этой страницы.
+
+Ссылки
+https://en.wikipedia.org/wiki/Same-origin_policy
+Сделайте так, чтобы этот код работал:
+duplicate([1, 2, 3, 4, 5]); // [1,2,3,4,5,1,2,3,4,5]
+
+function duplicate(arr) {
+  return arr.concat(arr);
+}
+
+duplicate([1, 2, 3, 4, 5]); // [1,2,3,4,5,1,2,3,4,5]
+
+Почему тернарный оператор так называется?
+"Тернарный" означает три. Троичное выражение принимает три операнда: условие, выражение "then" и выражение "else". Тернарные операторы не являются исключительными для JavaScript, и я не знаю, почему подобный вопрос был добавлен в этот список.
+
+Ссылки
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+Что делает строчка "use strict";? Какие достоинства и недостатки от ее использования?
+'use strict' это директива, используемая для включения строгого режима во всем скрипте или отдельных функциях.
+
+Преимущества:
+
+Не позволяет случайно создавать глобальные переменные.
+Любое присваивание, которое в обычном режиме завершается неудачей, в строгом режиме выдаст исключение.
+При попытке удалить неудаляемые свойства, выдаст исключение (в то время как в нестрогом режиме никакого действия бы не произошло).
+Требует, чтобы имена параметров функции были уникальными.
+this в глобальной области видимости равно undefined.
+Перехватывает распространенные ошибки, выдавая исключения.
+Исключает неочевидные особенности языка.
+Недостатки:
+
+Нельзя использовать некоторые особенности языка, к которым привыкли некоторые разработчики.
+Нет доступа к function.caller и function.arguments.
+Объединение скриптов, написанных в строгом режиме может вызвать проблемы.
+В целом, я думаю, что преимущества перевешивают недостатки, и мне никогда не приходилось полагаться на функции, которые заблокированы в строгом режиме. Я бы порекомендовал использовать строгий режим.
+
+Ссылки
+http://2ality.com/2011/10/strict-mode-hatred.html
+http://lucybain.com/blog/2014/js-use-strict/
+Напишите цикл, который перебирает числа до 100, возвращая "fizz" на числа кратные 3, "buzz" на числа кратные 5 и "fizzbuzz" на числа кратные 3 и 5.
+Взгляните на версию FizzBuzz от Paul Irish.
+
+for (let i = 1; i <= 100; i++) {
+  let f = i % 3 == 0,
+    b = i % 5 == 0;
+  console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);
+}
+
+Хотя я бы не советовал вам использовать этот код во время интервью. Просто придерживайтесь длинного, но ясного подхода. Также можете взглянуть на разные безумные реализации FizzBuzz, по ссылке ниже.
+
+Ссылки
+https://gist.github.com/jaysonrowe/1592432
+Почему считается хорошим тоном оставить глобальную область видимости (global scope) в нетронутом состоянии?
+Каждый скрипт имеет доступ к глобальной области видимости, и если каждый будет использовать глобальное пространство имен для определения своих переменных, то могут возникнуть конфликты. Используйте модульный паттерн (используя IIFE) для инкапсуляции ваших переменных в локальное пространство имен.
+
+Для чего используют событие load? Есть ли у этого события недостатки? Знаете ли вы какие-либо альтернативы, и в каких случаях бы стали их использовать?
+Событие load происходит в конце процесса загрузки документа. На этом этапе все объекты в документе находятся в DOM, и все изображения, скрипты и ссылки загрузились.
+
+Событие DOM DOMContentLoaded будет запущено после создания DOM для страницы, но не будет ждать окончания загрузки других ресурсов. Оно предпочтительно в тех случаях, когда вам не нужно загружать страницу целиком перед инициализацией.
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
+Расскажите, что такое одностраничное приложение, и как сделать его SEO-оптимизированным.
+Текст ниже взят из замечательного руководства по фронтенду от Grab, который по счастливой случайности тоже написан мной.
+
+В наши дни веб-разработчики называют свои продукты веб-приложениями, а не веб-сайтами. Хотя между этими двумя терминами нет строгой разницы, веб-приложения, как правило, очень интерактивны и динамичны, что позволяет пользователю выполнять действия и получать мгновенный ответ. Традиционно браузер получает HTML с сервера и отображает его. Когда пользователь переходит на другой URL-адрес, требуется полное обновление страницы, и сервер отправляет свежий HTML-код на новую страницу. Это называется рендерингом на стороне сервера.
+
+Однако в современных SPA вместо этого используется рендеринг на стороне клиента. Браузер загружает начальную страницу с сервера вместе со скриптами (фреймворками, библиотеками, кодом приложения) и таблицами стилей, необходимыми для всего приложения. Когда пользователь переходит на другие страницы, обновление страницы не происходит. URL-адрес страницы обновляется при помощи HTML5 History API. Новые данные, необходимые для страницы (обычно в формате JSON), извлекаются браузером посредством запросов AJAX к серверу. Затем SPA динамически обновляет страницу данными через JavaScript, которые были получены при начальной загрузке страницы. Эта модель похожа на работу нативных мобильных приложений.
+
+Преимущества:
+
+Приложение становится более отзывчивым, и пользователи не видят мерцание при навигации, т.к. страница не обновляется целиком.
+На сервер поступает меньше HTTP-запросов, так как одни и те же ресурсы не нужно загружать снова для каждой загрузки страницы.
+Четкое разделение на клиент и сервер. Вы можете легко создавать новые клиентские приложения для разных платформ (например, для мобильных устройств, чат-ботов, умных часов) без необходимости изменять код сервера. Вы также можете изменить технологический стек на клиенте и сервере независимо, пока между ними существует интерфейс.
+Недостатки:
+
+Более тяжелая первоначальная загрузка страницы из-за загрузки кода фреймворка, самого приложения и ресурсов.
+Ваш сервер должен быть сконфигурирован так, чтобы он направлял все запросы к единой точке входа, и переложил обязанности по навигации на сторону клиента.
+Для отображения содержимого SPA полагается на JavaScript, но не все поисковые системы выполняют JavaScript во время индексации, и они могут не увидеть содержимое страницы. Это вредит поисковой оптимизации (SEO) вашего приложения. Тем не менее, в большинстве случаев, когда вы создаете приложения, SEO не является наиболее важным фактором, так как не весь контент должен индексироваться поисковыми системами. Чтобы преодолеть это, вы можете либо рендерить свое приложение на стороне сервера, либо использовать такие сервисы, как Prerender, чтобы "рендерить ваш javascript в браузере, сохранять статический HTML и передавать его поисковым роботам".
+Ссылки
+https://github.com/grab/front-end-guide#single-page-apps-spas
+http://stackoverflow.com/questions/21862054/single-page-app-advantages-and-disadvantages
+http://blog.isquaredsoftware.com/presentations/2016-10-revolution-of-web-dev/
+https://medium.freecodecamp.com/heres-why-client-side-rendering-won-46a349fadb52
+Насколько вы опытны в работе с промисами (promises) и/или их полифилами?
+Обладаю практическими знаниями о них. Промис - это объект, который может вернуть одно значение в будущем: либо выполненное значение, либо причина, по которой оно не было выполнено (например, произошла ошибка сети). Промис может находиться в одном из 3 возможных состояний: выполнено, отклонено или ожидает выполнения. При использовании промисов можно добавлять callback-функции для обработки выполненного значения или причины отказа.
+
+Некоторыми распространенными полифилами являются $.deferred, Q и Bluebird, но не все они соответствуют спецификации. ES2015 поддерживает промисы "из коробки", и в настоящее время полифилы обычно не нужны.
+
+Ссылки
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+Какие преимущества и недостатки при использовании промисов вместо колбэков (callbacks)?
+Преимущества
+
+Помогает избежать "callback hell", который может быть нечитаемым.
+Упрощает написание последовательного удобочитаемого асинхронного кода с помощью .then().
+Упрощает написание параллельного асинхронного кода с помощью Promise.all().
+С использованием промисов можно избежать следующих проблем, которые возникают при использовании callback-функций:
+Колбэк-функция была вызвана слишком рано
+Колбэк-функция была вызвана слишком поздно (или вовсе не была вызвана)
+Колбэк-функция была вызвана слишком мало или слишком много раз
+Не удалось передать необходимую среду/параметры
+Были пропущены ошибки/исключения
+Недостатки
+
+Чуть более сложный код (спорно).
+В старых браузерах, где не поддерживается ES2015, вам нужно загрузить полифил, чтобы их использовать.
+Ссылки
+https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md
+Каковы преимущества и недостатки написания JavaScript-кода на языке, который компилируется в JavaScript?
+Вот несколько языков, которые компилируются в JavaScript: CoffeeScript, Elm, ClojureScript, PureScript и TypeScript.
+
+Преимущества:
+
+Исправляют некоторые давние проблемы в JavaScript и препятствует использованию анти-паттернов в JavaScript.
+Позволяют писать более короткий код, предоставляя синтаксический сахар поверх JavaScript, которого, как мне кажется, не хватало в ES5, но с приходом ES2015 все изменилось.
+Статическая типизация идеальна (в случае TypeScript) для больших проектов, которые необходимо поддерживать с течением времени.
+Недостатки:
+
+Необходима сборка/компиляция кода, так как браузеры запускают только JavaScript, и ваш код должен быть скомпилирован в JavaScript перед тем, как он будет передан в браузеры.
+Отладка может быть трудной, если карты кода (source maps) плохо сопоставляются с исходным кодом.
+Большинство разработчиков не знакомы с этими языками и должны будут изучить их. Если ваша команда будет использовать их для своих проектов, это приведет к увеличению затрат.
+Меньшее сообщество (зависит от языка), что означает, что будет труднее найти ресурсы, учебные пособия, библиотеки и инструменты.
+Может отсутствовать поддержка в IDE/редакторе.
+Эти языки всегда будут позади последнего стандарта JavaScript.
+Разработчики должны знать, во что компилируется их код - потому что это то, что будет запускаться в браузере, и это наиболее важно.
+По большому счету, ES2015 значительно улучшил JavaScript и сделал разработку на нем намного удобнее. Я не вижу причин использовать CoffeeScript в наши дни.
+
+Ссылки
+https://softwareengineering.stackexchange.com/questions/72569/what-are-the-pros-and-cons-of-coffeescript
+Какие инструменты и методы вы используете при отладке кода?
+React и Redux
+React Devtools
+Redux Devtools
+Vue
+Vue Devtools
+JavaScript
+Chrome Devtools
+Выражение debugger
+Отладка при помощи старого доброго console.log
+Ссылки
+https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d
+https://raygun.com/blog/javascript-debugging/
+Какие языковые конструкции вы используете для итерации по свойствам объекта и элементам массива?
+Для объектов:
+
+for-in циклы - for (var property in obj) { console.log(property); }. Тем не менее, он также будет перебирать его унаследованные свойства, и вам нужно добавить проверку obj.hasOwnProperty(property) перед его использованием.
+Object.keys() - Object.keys(obj).forEach(function (property) { ... }). Object.keys()- это статический метод, который возвращает все перечисляемые свойства объекта.
+Object.getOwnPropertyNames() - Object.getOwnPropertyNames(obj).forEach(function (property) { ... }). Object.getOwnPropertyNames() - это статический метод, который возвращает все перечисляемые и неперечисляемые свойства объекта.
+Для массивов:
+
+Циклы for - for (var i = 0; i < arr.length; i++). Распространенной ошибкой здесь является то, что var находится в области видимости функции, а не в блочной области видимости, и в большинстве случаев нам нужна переменная-итератор блочной области. ES2015 позволяет использовать let, который имеет блочную область видимости, и рекомендуется использовать его вместо var. В итоге: for (let i = 0; i < arr.length; i++).
+forEach - arr.forEach(function (el, index) { ... }). Эта конструкция иногда может быть более удобной, потому что вам не нужно использовать index, если все, что вам нужно, это элементы массива. Существуют также методы every и some, которые позволят вам досрочно завершить итерацию.
+for-of циклы - for (let elem of arr) { ... }. ES6 представил новый цикл for-of, который позволяет перебирать объекты, которые соответствуют итерируемому протоколу такие как String, Array, Map, Set, и т.д. Он сочетает в себе преимущества цикла for и метода forEach(). Преимущество цикла for заключается в том, что его можно преждевременно завершить, а преимущество forEach() заключается в том, что он более лаконичен, чем цикл for, поскольку вам не нужна переменная счетчика. С циклом for-of вы получаете возможность выхода из цикла и более сжатый синтаксис.
+В большинстве случаев я бы предпочел метод .forEach, но он зависит от того, что вы пытаетесь сделать. До ES6 мы использовали циклы for, если нам нужно было преждевременно завершить цикл при помощи break. Но теперь с ES6 мы можем сделать это с помощью циклов for-of. Я использую циклы for, когда мне нужно еще больше гибкости, например, в случае увеличения итератора более одного раза за цикл.
+
+Кроме того, при использовании цикла for-of, если вам нужен доступ как к индексу, так и к значению каждого элемента массива, вы можете сделать это с помощью метода ES6 entries() и деструктуризации:
+
+const arr = ['a', 'b', 'c'];
+
+for (let [index, elem] of arr.entries()) {
+  console.log(index, ': ', elem);
+}
+
+Ссылки
+http://2ality.com/2015/08/getting-started-es6.html#from-for-to-foreach-to-for-of
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries
+Объясните разницу между изменяемыми (mutable) и неизменяемыми (immutable) объектами
+Приведите пример неизменяемого объекта в JavaScript
+Какие преимущества и недостатки у неизменяемости?
+Как вы можете достигнуть неизменяемости в вашем коде?
+Объясните разницу между синхронными и асинхронными функциями
+Синхронные функции являются блокирующими, а асинхронные - нет. В синхронных функциях одна операция должна завершиться, прежде чем будет запущена следующая операция. В этом случае скрипт выполняется строго по порядку операций, и выполнение скрипта приостанавливается, если одна из операций занимает очень много времени.
+
+Асинхронные функции обычно принимают callback-функцию в качестве параметра, и выполнение продолжается на следующей строке сразу после вызова асинхронной функции. Callback-функция вызывается только тогда, когда асинхронная операция завершена и стек вызовов пуст. Ресурсоемкие операции, такие как загрузка данных с веб-сервера или запросы к базе данных, должны выполняться асинхронно, чтобы основной поток мог продолжать выполнять другие операции вместо блокировки до завершения этой долгой операции (в случае браузеров пользовательский интерфейс будет зависать).
+
+Что такое цикл событий (event loop)? В чем разница между стеком вызовов (call stack) и очередью событий (task queue)?
+Цикл событий - это однопоточный цикл, который контролирует стек вызовов и проверяет, есть ли какая-либо работа, которую необходимо выполнить в очереди задач. Если стек вызовов пуст и в очереди задач есть callback-функции, то функция удаляется из очереди и помещается в стек вызовов для выполнения.
+
+Рекомендую ознакомиться с докладом о цикле событий от Philip Robert. Это одно из самых популярных видео о JavaScript.
+
+Ссылки
+https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
+http://theproactiveprogrammer.com/javascript/the-javascript-event-loop-a-stack-and-a-queue/
+Объясните разницу при использовании foo в function foo() {} и var foo = function() {}
+Первое - объявление функции, а второе - функциональное выражение. Ключевое отличие состоит в том, что тело функции при объявлении поднимается наверх, а тело функциональных выражений - нет (они имеют такое же поведение поднятия, что и переменные). Для получения более подробной информации, обратитесь к вопросу выше о поднятии. Если вы попытаетесь вызвать выражение функции до того, как оно будет определено, вы получите ошибку Uncaught TypeError: XXX is not a function.
+
+Объявление функции
+
+foo(); // 'FOOOOO'
+function foo() {
+  console.log('FOOOOO');
+}
+
+Функциональное выражение
+
+foo(); // Uncaught TypeError: foo is not a function
+var foo = function () {
+  console.log('FOOOOO');
+};
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
+В чем различие между переменными, созданными при помощи let, var и const?
+Переменные, объявленные при помощи ключевого слова var, относятся к области видимости функции, в которой они созданы. Или, если они созданы вне какой-либо функции - к глобальному объекту. let и const относятся к блочной области видимости - это означает, что они доступны только в пределах ближайшего набора фигурных скобок (функция, блок if-else или цикл for).
+
+function foo() {
+  // Все переменные доступны внутри функции.
+  var bar = 'bar';
+  let baz = 'baz';
+  const qux = 'qux';
+
+  console.log(bar); // bar
+  console.log(baz); // baz
+  console.log(qux); // qux
+}
+
+console.log(bar); // ReferenceError: bar is not defined
+console.log(baz); // ReferenceError: baz is not defined
+console.log(qux); // ReferenceError: qux is not defined
+
+if (true) {
+  var bar = 'bar';
+  let baz = 'baz';
+  const qux = 'qux';
+}
+
+// переменные, объявленные при помощи var, доступны в любом месте функции.
+console.log(bar); // bar
+// переменные, объявленные при помощи let и const не доступны вне блока, в котором были определены.
+console.log(baz); // ReferenceError: baz is not defined
+console.log(qux); // ReferenceError: qux is not defined
+
+
+var позволяет поднимать переменные, что означает, что на них можно ссылаться в коде до их объявления. let и const не позволяют этого, и выдают ошибку.
+
+console.log(foo); // undefined
+
+var foo = 'foo';
+
+console.log(baz); // ReferenceError: can't access lexical declaration 'baz' before initialization
+
+let baz = 'baz';
+
+console.log(bar); // ReferenceError: can't access lexical declaration 'bar' before initialization
+
+const bar = 'bar';
+
+
+Переопределение переменной с помощью var не вызовет ошибку, в отличие от let и const.
+
+var foo = 'foo';
+var foo = 'bar';
+console.log(foo); // "bar"
+
+let baz = 'baz';
+let baz = 'qux'; // Uncaught SyntaxError: Identifier 'baz' has already been declared
+
+let отличается от const тем, что изменять значение const нельзя.
+
+// Это нормально.
+let foo = 'foo';
+foo = 'bar';
+
+// Это вызывает исключение.
+const baz = 'baz';
+baz = 'qux';
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+В чем разница между классом в ES6 и функцией-конструктором в ES5?
+Для начала посмотрим на примеры:
+
+// ES5 функция-конструктор
+function Person(name) {
+  this.name = name;
+}
+
+// ES6 класс
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Они выглядят довольно похоже, если рассматривать простые конструкторы.
+
+Основное отличие в конструкторе возникает при использовании наследования. Если мы хотим создать класс Student (который будет являться подклассом класса Person) и добавить поле studentId, то, в дополнение к вышеописанному, мы должны сделать следующее:
+
+// ES5 функция-конструктор
+function Student(name, studentId) {
+  // Вызов конструктора суперкласса для инициализации производных от суперкласса членов.
+  Person.call(this, name);
+
+  // Инициализация собственных членов подкласса.
+  this.studentId = studentId;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+// ES6 класс
+class Student extends Person {
+  constructor(name, studentId) {
+    super(name);
+    this.studentId = studentId;
+  }
+}
+
+Наследование в синтаксисе ES5 является намного более многословным, а в ES6 более понятное и усваиваемое.
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
+https://eli.thegreenplace.net/2013/10/22/classical-inheritance-in-javascript-es5
+Можете ли вы привести пример использования стрелочных функции =>? Чем они отличаются от других функций?
+Одним очевидным преимуществом стрелочных функций является упрощение синтаксиса, необходимого для создания функций, без необходимости использования ключевого слова function. This внутри стрелочных функций также привязано к замыкающей области видимости, в отличие от обычных функций, где this определяется контекстом, в котором они вызываются. Лексически привязанное this полезно при вызове callback-функций, особенно в компонентах React.
+
+В чем преимущество использования стрелочных функций для метода в конструкторе?
+Основным преимуществом использования стрелочной функции в качестве метода внутри конструктора является то, что значение this устанавливается во время создания функции и не может измениться после этого. Таким образом, когда конструктор используется для создания нового объекта, this всегда будет ссылаться на этот объект. Например, допустим, у нас есть конструктор Person, который принимает имя в качестве аргумента, имеет два метода для вывода в консоль этого имени, один в качестве обычной функции, а другой в качестве стрелочной:
+
+const Person = function (firstName) {
+  this.firstName = firstName;
+  this.sayName1 = function () {
+    console.log(this.firstName);
+  };
+  this.sayName2 = () => {
+    console.log(this.firstName);
+  };
+};
+
+const john = new Person('John');
+const dave = new Person('Dave');
+
+john.sayName1(); // John
+john.sayName2(); // John
+
+// У обычной функции значение `this` может быть изменено, но у стрелочной функции нет
+john.sayName1.call(dave); // Dave (потому что 'this' сейчас ссылается на объект dave)
+john.sayName2.call(dave); // John
+
+john.sayName1.apply(dave); // Dave (потому что 'this' сейчас ссылается на объект dave)
+john.sayName2.apply(dave); // John
+
+john.sayName1.bind(dave)(); // Dave (потому что 'this' сейчас ссылается на объект dave)
+john.sayName2.bind(dave)(); // John
+
+var sayNameFromWindow1 = john.sayName1;
+sayNameFromWindow1(); // undefined (потому что 'this' сейчас ссылается на объект window)
+
+var sayNameFromWindow2 = john.sayName2;
+sayNameFromWindow2(); // John
+
+Смысл заключается в том, что this можно изменить для обычной функции, но для стрелочных функций контекст всегда остается неизменным. Поэтому, даже если вы передаете стрелочную функцию в разные части вашего приложения, вам не нужно беспокоиться об изменении контекста.
+
+Это может быть особенно полезно в классовых React-компонентах. Если вы определяете метод класса для чего-то такого, как обработчик клика, используя обычную функцию, а затем передаете этот обработчик в дочерний компонент в качестве prop, вам также необходимо привязать this в конструкторе родительского компонента , Если вместо этого вы используете стрелочную функцию, то нет необходимости привязывать "this", так как метод автоматически получит свое значение "this" из замыкающего лексического контекста. (Прочитайте эту статью о стрелочных функциях: https://medium.com/@machnicki/handle-events-in-react-with-arrow-functions-ede88184bbb)
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://medium.com/@machnicki/handle-events-in-react-with-arrow-functions-ede88184bbb
+Дайте определение функции высшего порядка
+Функция высшего порядка - это любая функция, которая принимает одну или несколько функций в качестве аргументов, которые она использует для работы с данными и/или возвращает функцию в качестве результата. Функции высшего порядка предназначены для абстрагирования некоторой операции, которая выполняется повторно. Классическим примером является метод map, который принимает массив и функцию в качестве аргументов. Затем map использует эту функцию для преобразования каждого элемента в массиве, возвращая новый массив с преобразованными данными. Другими популярными примерами в JavaScript являются forEach, filter и reduce. Функции высшего порядка используют не только для манипуляций с массивами, но также и для возврата функции из другой функции, например при использовании Function.prototype.bind.
+
+Map
+
+Допустим, у нас есть массив с именами, которые нам нужны о преобразовать в верхний регистр.
+
+const names = ['irish', 'daisy', 'anna'];
+
+Императивное решение будет выглядеть так:
+
+const transformNamesToUppercase = function (names) {
+  const results = [];
+  for (let i = 0; i < names.length; i++) {
+    results.push(names[i].toUpperCase());
+  }
+  return results;
+};
+transformNamesToUppercase(names); // ['IRISH', 'DAISY', 'ANNA']
+
+Воспользууемся .map(transformerFn), чтобы сделать код декларативным и более коротким:
+
+const transformNamesToUppercase = function (names) {
+  return names.map((name) => name.toUpperCase());
+};
+transformNamesToUppercase(names); // ['IRISH', 'DAISY', 'ANNA']
+
+Ссылки
+https://medium.com/javascript-scene/higher-order-functions-composing-software-5365cf2cbe99
+https://hackernoon.com/effective-functional-javascript-first-class-and-higher-order-functions-713fde8df50a
+https://eloquentjavascript.net/05_higher_order.html
+Можете ли вы привести пример деструктуризации объекта или массива?
+Деструктуризация - это выражение, доступное в ES6, которое предоставляет краткий и удобный способ извлекать значения из объектов или массивов и помещать их в отдельные переменные.
+
+Деструктуризация массива
+
+// Присваивание переменной
+const foo = ['one', 'two', 'three'];
+
+const [one, two, three] = foo;
+console.log(one); // "one"
+console.log(two); // "two"
+console.log(three); // "three"
+
+// Перестановка переменных местами
+let a = 1;
+let b = 3;
+
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+
+Деструктуризация объекта
+
+// Присваивание переменной
+const o = { p: 42, q: true };
+const { p, q } = o;
+
+console.log(p); // 42
+console.log(q); // true
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+https://ponyfoo.com/articles/es6-destructuring-in-depth
+Шаблонные строки в ES6 намного упрощают создание строк, можете ли вы привести пример их использования?
+Шаблонные строки помогают упростить построение строк или включение переменных в строку. До ES2015 писали так:
+
+var person = { name: 'Tyler', age: 28 };
+console.log(
+  'Hi, my name is ' + person.name + ' and I am ' + person.age + ' years old!',
+);
+// 'Hi, my name is Tyler and I am 28 years old!'
+
+С приходом шаблонных строк в ES6 стало намного проще:
+
+const person = { name: 'Tyler', age: 28 };
+console.log(`Hi, my name is ${person.name} and I am ${person.age} years old!`);
+// 'Hi, my name is Tyler and I am 28 years old!'
+
+Обратите внимание, что для шаблонных строк используются обратные кавычки, а не простые. Переменные добавляются в подстановки ${}, обозначаемые знаком доллара и фигурными скобками.
+
+Второй пример использования заключается в создании многострочных литералов. До ES2015 перенос осуществлялся следующим образом:
+
+console.log('This is line one.\nThis is line two.');
+// This is line one.
+// This is line two.
+
+Или же, чтобы не приходилось прокручивать длинную строку в текстовом редакторе, можно было разбить код на несколько строк в коде, таким образом:
+
+console.log('This is line one.\n' + 'This is line two.');
+// This is line one.
+// This is line two.
+
+Однако шаблонные строки сохраняют любой интервал, который вы добавляете к ним. Например, чтобы создать тот же многострочный литерал, который мы создали выше, вы можете просто написать:
+
+console.log(`This is line one.
+This is line two.`);
+// This is line one.
+// This is line two.
+
+Еще одним вариантом использования шаблонных строк будет использование в качестве замены библиотек шаблонизации для интерполяции переменных:
+
+const person = { name: 'Tyler', age: 28 };
+document.body.innerHTML = `
+  <div>
+    <p>Name: ${person.name}</p>
+    <p>Age: ${person.age}</p>
+  </div>
+`;
+
+Обратите внимание, что ваш код может быть восприимчив к XSS при использовании .innerHTML. Очищайте ваши данные перед отображением, если они получены от пользователя!
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+Можете ли вы привести пример каррированной функции (curry function) и в чем их преимущество?
+Каррирование - это паттерн, где функция с более чем одним параметром разбивается на несколько функций, которые при последовательном вызове будут накапливать все необходимые параметры по одному. Этот метод может быть полезен для облегчения чтения и написания кода, написанного в функциональном стиле. Важно отметить, что каррированная функция должна начинаться как одна функция, а затем разбиваться на последовательность функций, каждая из которых принимает один параметр.
+
+function curry(fn) {
+  if (fn.length === 0) {
+    return fn;
+  }
+
+  function _curried(depth, args) {
+    return function (newArgument) {
+      if (depth - 1 === 0) {
+        return fn(...args, newArgument);
+      }
+      return _curried(depth - 1, [...args, newArgument]);
+    };
+  }
+
+  return _curried(fn.length, []);
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+var curriedAdd = curry(add);
+var addFive = curriedAdd(5);
+
+var result = [0, 1, 2, 3, 4, 5].map(addFive); // [5, 6, 7, 8, 9, 10]
+
+Ссылки
+https://hackernoon.com/currying-in-js-d9ddc64f162e
+В чем преимущества использования spread оператора и чем он отличается от rest оператора?
+Spread оператор синтаксиса ES6 очень полезен при написании кода в функциональном стиле, поскольку мы можем легко создавать копии массивов или объектов, не прибегая к Object.create,slice или функции библиотеки. Эта языковая функция часто используется в проектах с Redux и RxJS.
+
+function putDookieInAnyArray(arr) {
+  return [...arr, 'dookie'];
+}
+
+const result = putDookieInAnyArray(['I', 'really', "don't", 'like']); // ["I", "really", "don't", "like", "dookie"]
+
+const person = {
+  name: 'Todd',
+  age: 29,
+};
+
+const copyOfTodd = { ...person };
+
+
+В свою очередь, rest оператор синтаксиса ES6 позволяет в сокращенном виде указывать неопределенное количество аргументов, передаваемых в функцию. Можно сказать, что он противоположен spread оператору: собирает данные и добавляет их в массив, вместо разделения массива данных. Он используется в аргументах функций, а также при деструктуризации массивов и объектов.
+
+function addFiveToABunchOfNumbers(...numbers) {
+  return numbers.map((x) => x + 5);
+}
+
+const result = addFiveToABunchOfNumbers(4, 5, 6, 7, 8, 9, 10); // [9, 10, 11, 12, 13, 14, 15]
+
+const [a, b, ...rest] = [1, 2, 3, 4]; // a: 1, b: 2, rest: [3, 4]
+
+const { e, f, ...others } = {
+  e: 1,
+  f: 2,
+  g: 3,
+  h: 4,
+}; // e: 1, f: 2, others: { g: 3, h: 4 }
+
+
+Ссылки
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+Каким образом можно обмениваться кодом между файлами?
+Это зависит от среды выполнения JavaScript.
+
+На клиенте (в среде браузера), пока переменные/функции объявлены в глобальной области видимости (window), все скрипты могут на них ссылаться. В качестве альтернативы, используйте Asynchronous Module Definition (AMD) через RequireJS для модульного подхода.
+
+На сервере (Node.js) обычно используется CommonJS. Каждый файл считается модулем, и он может экспортировать переменные и функции, добавляя их к объекту module.exports.
+
+ES2015 позволяет использовать модульный синтаксис, который призван заменить как AMD, так и CommonJS. В конечном итоге он будет поддерживаться как в браузере, так и в Node.
+
+Ссылки
+http://requirejs.org/docs/whyamd.html
+https://nodejs.org/docs/latest/api/modules.html
+http://2ality.com/2014/09/es6-modules-final.html
+Для чего используются статические члены класса?
+Члены статических классов (свойства/методы) не привязаны к конкретному экземпляру класса и имеют одинаковое значение вне зависимости от того, какой экземпляр ссылается на них. Статические свойства обычно являются конфигурационными переменными, а статические методы обычно являются чисто служебными функциями, которые не зависят от состояния экземпляра.
+
+
+Как перенаправить все маршруты на index.html (Angular) в nest.js?
+Вопросы
+JAVASCRIPT
+Как перенаправить все маршруты на index.html (Angular) в nest.js?
+Я делаю приложение Angular + NestJS и хочу отправить файл index.html для всех маршрутов.
+
+main.ts
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useStaticAssets(join(__dirname, '..', 'frontend', 'dist', 'my-app'));
+  app.setBaseViewsDir(join(__dirname, '..', 'frontend', 'dist', 'my-app'));
+  await app.listen(port);
+}
+app.controller.ts
+
+@Controller('*')
+export class AppController {
+
+  @Get()
+  @Render('index.html')
+  root() {
+    return {};
+  }
+}
+Он работает нормально, пока я открываю localhost:3000/, но если я открываю localhost:3000/some_route, сервер падает с 500 internal error и говорит Can not find html module. Я искал, почему я получаю эту ошибку, и все говорят set default view engine like ejs or pug, но я не хочу использовать некоторые движки, я просто хочу отправить простой html, созданный angular, без взлома, такого как res.sendFile('path_to_file'). Пожалуйста помоги
+
+ 23.02.2019 05:31
+5
+0
+8 300
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Вы можете использовать setBaseViewsDir и @Render() только с механизмом просмотра, например с рулем (hbs); однако для обслуживания статических файлов (Angular) вы можете использовать только useStaticAssets и response.sendFile.
+
+Чтобы обслуживать index.html со всех других маршрутов, у вас есть несколько возможностей:
+
+А) Промежуточное ПО
+Вы можете создать промежуточное программное обеспечение, которое выполняет перенаправление, см. этот статья:
+
+@Middleware()
+export class FrontendMiddleware implements NestMiddleware {
+  resolve(...args: any[]): ExpressMiddleware {
+    return (req, res, next) => {
+      res.sendFile(path.resolve('../frontend/dist/my-app/index.html')));
+    };
+  }
+}
+а затем зарегистрируйте промежуточное ПО для всех маршрутов:
+
+export class ApplicationModule implements NestModule {
+  configure(consumer: MiddlewaresConsumer): void {
+    consumer.apply(FrontendMiddleware).forRoutes(
+      {
+        path: '/**', // For all routes
+        method: RequestMethod.ALL, // For all methods
+      },
+    );
+  }
+}
+B) Глобальный фильтр ошибок
+Вы можете перенаправить все NotFoundExceptions на свой index.html:
+
+@Catch(NotFoundException)
+export class NotFoundExceptionFilter implements ExceptionFilter {
+  catch(exception: HttpException, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse();
+    response.sendFile(path.resolve('../frontend/dist/my-app/index.html')));
+  }
+}
+а затем зарегистрируйте его как глобальный фильтр в вашем main.ts:
+
+app.useGlobalFilters(new NotFoundExceptionFilter());
+ 23.02.2019 12:11
+Вы также можете использовать Cloud Functions для Firebase вместе с Firebase Hosting. То, что у вас есть в main.ts, прекрасно, при таком подходе вам даже контроллер не нужен. Вы должны пойти следующим образом:
+
+Переименуйте index.html в index2.html. Это важно для рендеринга пути вашего маршрута, в противном случае рендеринг будет работать нормально на всех маршрутах, кроме корневого /.
+Обновите angular.json, чтобы получить следующее "index": "apps/myapp/src/index2.html", (просто измените index.html на index2.html). Примечание: путь к index.html может быть другим для вас, я использую рабочее пространство Nx.
+Добавьте templatePath: join(BROWSER_DIR, 'index2.html'), к ApplicationModule NestJS, скорее всего, вы называете файл как app.module.ts в каталоге сервер.
+Вот так:
+
+@Module({
+  imports: [
+    AngularUniversalModule.forRoot({
+      bundle: require('./path/to/server/main'), // Bundle is created dynamically during build process.
+      liveReload: true,
+      templatePath: join(BROWSER_DIR, 'index2.html'),
+      viewsPath: BROWSER_DIR
+    })
+  ]
+})
+Инициализируйте облачные функции Firebase и хостинг Firebase, чтобы узнать, как это настроить, вы можете проверить https://hackernoon.com/deploying-angular-universal-v6-with-firebase-c86381ddd445 или https://blog.angularindepth.com/angular-5-universal-firebase-4c85a7d00862.
+
+Отредактируйте свой firebase.json.
+
+Это должно выглядеть так, или, по крайней мере, часть hosting.
+
+{
+  "hosting": {
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "public": "functions/dist/apps/path/to/browser",
+    "rewrites": [
+      {
+        "function": "angularUniversalFunction",
+        "source": "**"
+      }
+    ]
+  }
+} 
+В вашем main.ts вам необходимо настроить облачные функции на вашем сервере.
+В минималистическом случае хотелось бы что-то вроде этого:
+
+import * as admin from 'firebase-admin';
+import * as functions from 'firebase-functions';
+
+admin.initializeApp(); // Initialize Firebase SDK.
+const expressApp: Express = express(); // Create Express instance.
+
+// Create and init NestJS application based on Express instance.
+(async () => {
+  const nestApp = await NestFactory.create<NestExpressApplication>(
+    ApplicationModule,
+    new ExpressAdapter(expressApp)
+  );
+  nestApp.init();
+})().catch(err => console.error(err));
+
+// Firebase Cloud Function for Server Side Rendering (SSR).
+exports.angularUniversalFunction = functions.https.onRequest(expressApp);
+При таком подходе вам не нужно заботиться о маршрутах на стороне NestJS. Вы можете настроить все на стороне Angular, и все. Angular заботится о маршрутизации. Как вы, наверное, заметили, это рендеринг на стороне сервера (SSR), но перенаправление всех маршрутов на index.html (точнее index2.html) можно сделать с помощью NestJS + Cloud Functions для Firebase в связке. Плюс у вас ССР "на халяву" :)
+
+Проекты для демонстрации:
+
+1) Angular + Angular Universal (SSR) + облачные функции для Firebase: https://github.com/Ismaestro/angular8-пример-приложение (отсутствует NestJS).
+
+2) Angular + NestJS: https://github.com/kamilmysliwiec/универсальное гнездо (отсутствуют облачные функции для Firebase).
+
+ 14.08.2019 12:59
+Обновленный ответ от 10 декабря 2019 г.
+
+Вам нужно создать промежуточное ПО для отправки реакции index.html
+
+Создать промежуточный файл
+
+frontend.middleware.ts
+
+import { NestMiddleware, Injectable } from '@nestjs/common';
+import {Request, Response} from "express"
+import { resolve } from 'path';
+
+@Injectable()
+export class FrontendMiddleware implements NestMiddleware {
+  use(req: Request, res: Response, next: Function) {
+    res.sendFile(resolve('../../react/build/index.html'));
+  }
+}
+Включить промежуточное ПО в
+
+app.module.ts
+
+import { FrontendMiddleware } from './frontend.middleware';
+import {
+  Module,
+  MiddlewareConsumer,
+  RequestMethod,
+} from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+
+@Module({
+  imports: [],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {
+  configure(frontEnd: MiddlewareConsumer) {
+    frontEnd.apply(FrontendMiddleware).forRoutes({
+      path: '/**', // For all routes
+      method: RequestMethod.ALL, // For all methods
+    });
+  }
+}
+Структура приложения для справки:
+
+введите описание изображения здесь
+
+Хорошо, Алан, но ОП просит Angular. Я согласен, это то же самое.
+
+— 
+Kubadev
+ 26.02.2020 11:49
+
+
+
+ПО промежуточного слоя nestjs получает тело запроса / ответа
+Вопросы
+JAVASCRIPT
+ПО промежуточного слоя nestjs получает тело запроса / ответа
+Я работаю с nestjs для проекта и хочу регистрировать как можно больше информации, одной из таких вещей является тело ответа и запрос каждого HTTP-запроса. Для этого я сделал гнездо промежуточного программного обеспечения:
+
+import {token} from 'gen-uid';
+import { inspect } from 'util';
+import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
+import { Stream } from 'stream';
+import { createWriteStream, existsSync, mkdirSync } from 'fs';
+
+@Injectable()
+export class LoggerMiddleware implements NestMiddleware {
+    logfileStream: Stream;
+
+    constructor() {
+        if (!existsSync('./logs')) mkdirSync('./logs');
+        this.logfileStream = createWriteStream("./logs/serviceName-"+ new Date().toISOString() + ".log", {flags:'a'});
+    }
+
+resolve(...args: any[]): MiddlewareFunction {
+    return (req, res, next) => {
+        let reqToken = token();
+        let startTime = new Date();
+        let logreq = {
+            "@timestamp": startTime.toISOString(),
+            "@Id": reqToken,
+            query: req.query,
+            params: req.params,
+            url: req.url,
+            fullUrl: req.originalUrl,
+            method: req.method,
+            headers: req.headers,
+            _parsedUrl: req._parsedUrl,
+        }
+
+        console.info(
+            "timestamp: " + logreq["@timestamp"] + "\t" + 
+            "request id: " + logreq["@Id"] + "\t" + 
+            "method:  " + req.method + "\t" +
+            "URL: " + req.originalUrl);
+
+        this.logfileStream.write(JSON.stringify(logreq));
+
+        const cleanup = () => {
+            res.removeListener('finish', logFn)
+            res.removeListener('close', abortFn)
+            res.removeListener('error', errorFn)
+        }
+
+        const logFn = () => {
+            let endTime = new Date();
+            cleanup()
+            let logres = {
+                "@timestamp": endTime.toISOString(),
+                "@Id": reqToken,
+                "queryTime": endTime.valueOf() - startTime.valueOf(),
+            }
+            console.info(inspect(res));
+        }
+
+        const abortFn = () => {
+            cleanup()
+            console.warn('Request aborted by the client')
+        }
+
+        const errorFn = err => {
+            cleanup()
+            console.error(`Request pipeline error: ${err}`)
+        }
+
+        res.on('finish', logFn) // successful pipeline (regardless of its response)
+        res.on('close', abortFn) // aborted pipeline
+        res.on('error', errorFn) // pipeline internal error
+
+        next();
+    };
+}
+}
+Затем я установил это промежуточное ПО как глобальное промежуточное ПО для регистрации всех запросов, но, глядя на объекты res и req, ни один из них не имеет свойства.
+
+В примере кода я установил печать объекта ответа, запустив конечную точку hello world в моем проекте, которая возвращает {"message": "Hello World"} Получаю следующий результат:
+
+timestamp: 2019-01-09T00:37:00.912Z request id: 2852f925f987 method: GET URL: /hello-world
+
+ServerResponse { domain: null, _events: { finish: [Function: bound resOnFinish] }, _eventsCount: 1, _maxListeners: undefined, output: [], outputEncodings: [], outputCallbacks: [], outputSize: 0, writable: true, _last: false, upgrading: false, chunkedEncoding: false, shouldKeepAlive: true, useChunkedEncodingByDefault: true, sendDate: true, _removedConnection: false, _removedContLen: true, _removedTE: true, _contentLength: 0, _hasBody: false, _trailer: '', finished: true, _headerSent: true, socket: null, connection: null, _header: 'HTTP/1.1 304 Not Modified\r\nX-Powered-By: Express\r\nETag: W/"19-c6Hfa5VVP+Ghysj+6y9cPi5QQbk"\r\nDate: Wed, 09 Jan 2019 00:37:00 GMT\r\nConnection: keep-alive\r\n\r\n', _onPendingData: [Function: bound updateOutgoingData], _sent100: false, _expect_continue: false, req: IncomingMessage { _readableState: ReadableState { objectMode: false, highWaterMark: 16384, buffer: [Object], length: 0, pipes: null, pipesCount: 0, flowing: true, ended: true, endEmitted: false, reading: false, sync: true, needReadable: false, emittedReadable: true, readableListening: false, resumeScheduled: true, destroyed: false, defaultEncoding: 'utf8', awaitDrain: 0, readingMore: true, decoder: null, encoding: null }, readable: true, domain: null, _events: {}, _eventsCount: 0, _maxListeners: undefined, socket: Socket { connecting: false, _hadError: false, _handle: [Object], _parent: null, _host: null, _readableState: [Object], readable: true, domain: null, _events: [Object], _eventsCount: 10, _maxListeners: undefined, _writableState: [Object], writable: true, allowHalfOpen: true, _bytesDispatched: 155, _sockname: null, _pendingData: null, _pendingEncoding: '', server: [Object], _server: [Object], _idleTimeout: 5000, _idleNext: [Object], _idlePrev: [Object], _idleStart: 12562, _destroyed: false, parser: [Object], on: [Function: socketOnWrap], _paused: false, read: [Function], _consuming: true, _httpMessage: null, [Symbol(asyncId)]: 151, [Symbol(bytesRead)]: 0, [Symbol(asyncId)]: 153, [Symbol(triggerAsyncId)]: 151 }, connection: Socket { connecting: false, _hadError: false, _handle: [Object], _parent: null, _host: null, _readableState: [Object], readable: true, domain: null, _events: [Object], _eventsCount: 10, _maxListeners: undefined, _writableState: [Object], writable: true, allowHalfOpen: true, _bytesDispatched: 155, _sockname: null, _pendingData: null, _pendingEncoding: '', server: [Object], _server: [Object], _idleTimeout: 5000, _idleNext: [Object], _idlePrev: [Object], _idleStart: 12562, _destroyed: false, parser: [Object], on: [Function: socketOnWrap], _paused: false, read: [Function], _consuming: true, _httpMessage: null, [Symbol(asyncId)]: 151, [Symbol(bytesRead)]: 0, [Symbol(asyncId)]: 153, [Symbol(triggerAsyncId)]: 151 }, httpVersionMajor: 1, httpVersionMinor: 1, httpVersion: '1.1', complete: true, headers: { host: 'localhost:5500', 'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0', accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,/;q=0.8', 'accept-language': 'en-US,en;q=0.5', 'accept-encoding': 'gzip, deflate', connection: 'keep-alive', 'upgrade-insecure-requests': '1', 'if-none-match': 'W/"19-c6Hfa5VVP+Ghysj+6y9cPi5QQbk"' }, rawHeaders: [ 'Host', 'localhost:5500', 'User-Agent', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0', 'Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,/;q=0.8', 'Accept-Language', 'en-US,en;q=0.5', 'Accept-Encoding', 'gzip, deflate', 'Connection', 'keep-alive', 'Upgrade-Insecure-Requests', '1', 'If-None-Match', 'W/"19-c6Hfa5VVP+Ghysj+6y9cPi5QQbk"' ], trailers: {}, rawTrailers: [], upgrade: false, url: '/hello-world', method: 'GET', statusCode: null, statusMessage: null, client: Socket { connecting: false, _hadError: false, _handle: [Object], _parent: null, _host: null, _readableState: [Object], readable: true, domain: null, _events: [Object], _eventsCount: 10, _maxListeners: undefined, _writableState: [Object], writable: true, allowHalfOpen: true, _bytesDispatched: 155, _sockname: null, _pendingData: null, _pendingEncoding: '', server: [Object], _server: [Object], _idleTimeout: 5000, _idleNext: [Object], _idlePrev: [Object], _idleStart: 12562, _destroyed: false, parser: [Object], on: [Function: socketOnWrap], _paused: false, read: [Function], _consuming: true, _httpMessage: null, [Symbol(asyncId)]: 151, [Symbol(bytesRead)]: 0, [Symbol(asyncId)]: 153, [Symbol(triggerAsyncId)]: 151 }, _consuming: false, _dumped: true, next: [Function: next], baseUrl: '', originalUrl: '/hello-world', _parsedUrl: Url { protocol: null, slashes: null, auth: null, host: null, port: null, hostname: null, hash: null, search: null, query: null, pathname: '/hello-world', path: '/hello-world', href: '/hello-world', _raw: '/hello-world' }, params: {}, query: {}, res: [Circular], body: {}, route: Route { path: '/hello-world', stack: [Array], methods: [Object] } }, locals: {}, statusCode: 304, statusMessage: 'Not Modified', [Symbol(outHeadersKey)]: { 'x-powered-by': [ 'X-Powered-By', 'Express' ], etag: [ 'ETag', 'W/"19-c6Hfa5VVP+Ghysj+6y9cPi5QQbk"' ] } }
+
+Ни в каком месте в объекте ответа не появляется сообщение {"message": "Hello World"}, я хотел бы знать, как получить тело из объектов res и req, если это возможно, пожалуйста.
+
+Примечание: я знаю, что у nestjs есть Interceptors, но, следуя тому, что говорится в документации, промежуточное ПО должно быть решением этой проблемы.
+
+ 09.01.2019 02:07
+4
+1
+14 941
+3
+ Ответы 3
+Тело отклик не будет доступно как свойство. См. Этот нить для решения.
+
+Однако у вас должна быть возможность получить доступ к телу запрос с помощью req.body, поскольку по умолчанию nest использует bodyParser.
+
+ 09.01.2019 07:07
+Я случайно столкнулся с этим вопросом, он был указан в списке "связанных" с мой вопрос.
+
+Я могу еще немного расширить Ким Керн ответ, насчет отзывов.
+
+Проблема с ответом заключается в том, что тело ответа не является свойством объекта ответа, а является ручей. Чтобы получить его, вам нужно переопределить методы, которые записывают в этот поток.
+
+Как уже сказал Ким Керн, вы можете посмотреть эта ветка, есть принятый ответ, как это сделать.
+
+Или вы можете взять промежуточное ПО экспресс-маш, которое сделает это за вас, например:
+
+var mung = require('express-mung');
+app.use(mung.json(
+  function transform(body, req, res) {
+    console.info(body); // or whatever logger you use
+    return body;
+  }
+));
+И есть два других способа, которые NestJS может вам предложить:
+
+Перехватчики, как ты сказал. В документации есть пример LoggingInterceptor.
+Вы можете написать декоратор для методов контроллера, который будет перехватывать их ответы.
+import { isObservable, from, of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
+/**
+ * Logging decorator for controller's methods
+ */
+export const LogReponse = (): MethodDecorator =>
+  (target: object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<any>) => {
+
+    // save original method
+    const original = descriptor.value;
+
+    // replace original method
+    descriptor.value = function() { // must be ordinary function, not arrow function, to have `this` and `arguments`
+
+      // get original result from original method
+      const ret = original.apply(this, arguments);
+
+      // if it is null or undefined -> just pass it further
+      if (ret == null) {
+        return ret;
+      }
+
+      // transform result to Observable
+      const ret$ = convert(ret);
+
+      // do what you need with response data
+      return ret$.pipe(
+        map(data => {
+          console.info(data); // or whatever logger you use
+          return data;
+        })
+      );
+    };
+
+    // return modified method descriptor
+    return descriptor;
+  };
+
+function convert(value: any) {
+  // is this already Observable? -> just get it
+  if (isObservable(value)) {
+    return value;
+  }
+
+  // is this array? -> convert from array
+  if (Array.isArray(value)) {
+    return from(value);
+  }
+
+  // is this Promise-like? -> convert from promise, also convert promise result
+  if (typeof value.then === 'function') {
+    return from(value).pipe(mergeMap(convert));
+  }
+
+  // other? -> create stream from given value
+  return of(value);
+}
+Однако обратите внимание, что это выполнит перед перехватчиками, потому что этот декоратор изменяет поведение методов.
+
+И я не думаю, что это хороший способ ведения журнала, просто упомянул об этом для разнообразия :)
+
+ 12.02.2019 10:18
+Невероятно, насколько сложно сделать что-то столь тривиальное.
+
+Более простой способ записать тело ответа в журнал создать перехватчик (https://docs.nestjs.com/interceptors):
+
+AppModule:
+
+providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: HttpInterceptor,
+    }
+]
+HttpInterceptor:
+
+import { CallHandler, ExecutionContext, Injectable, Logger, NestInterceptor } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable()
+export class HttpInterceptor implements NestInterceptor {
+  private readonly logger = new Logger(HttpInterceptor.name);
+
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler<any>,
+  ): Observable<any> | Promise<Observable<any>> {
+    return next.handle().pipe(
+      map(data => {
+        this.logger.debug(data);
+        return data;
+      }),
+    );
+  }
+}
+Используя это, я могу видеть только успешные ответы в виде структур данных (я использую GraphQL). Если, скажем, защита аутентификации блокирует запрос (ответом является message: "Unauthorized"), перехватчик не запускается. Есть ли известный способ получить доступ к необработанному телу ответа после того, как вся обработка в приложении будет выполнена? Я хочу записать актуальную информацию о том, что могло пойти не так.
+
+
 37 Essential JavaScript Interview Questions *
 Toptal sourced essential questions that the best JavaScript developers can answer. Driven from our community, we encourage experts to submit questions and offer feedback.
 
