@@ -11,17 +11,1510 @@ Types Of Testing
 Tutorials
 Data Tools
 More Tutorials
-Top 25 Java Web Services Interview Questions & Answers
-By Sruthy  Updated February 12, 2026
-In this tutorial, we have provided the most frequently asked Java Web Services interview questions & answers with examples & explanation:
+Top 40 Java 8 Interview Questions & Answers [Most Important]
+By Sruthy  Updated February 11, 2026
+In this tutorial, we have provided the most important Java 8 Interview Questions & their answers with code examples and explanations:
 
-As experienced Java developers or software testers, it is essential that you be well-versed in web services developed using the Java programming language, and it is expected that you have implemented or tested them during your tenure as a developer or test engineer.
+All the important questions that are listed in this tutorial are specific to Java 8. Java has evolved a lot (over time) with the introduction of new versions. With each version, we have new features associated with Java. This tutorial will cover all these important features.
 
-In case you are trying to move to a more challenging role, we have come up with the 25 most frequently asked interview questions and their appropriate answers on Java web services.
+These are very common questions that you will be asked in any Java interview that demands advanced skills. These concepts are must-haves if you are going to appear for any standard Java Certification Exams like Oracle Certified Associate (OCA).
 
-Let’s Explore!!
+=> Take a look at the Java Beginners Guide here.
 
 Table of Contents: [Show]
+
+Quiz on Java 8 Interview Questions
+Get hired in top MNCs of your choice with this expert quiz on Java 8 Interview Questions. Gain valuable insights on Java 8 and dive deep into the core and advanced concepts to sharpen your Java 8 skills.
+
+Java 8 Interview Prep Quiz
+Master modern Java features and excel in your Java 8 interviews
+Question 1 of 20
+What is a lambda expression in Java 8?
+Database connection
+Anonymous function with concise syntax
+New type of class that can be instantiated multiple times
+Advanced method for creating complex inheritance hierarchies
+
+Java 8 Interview Questions And Answers
+This article will be very suitable for both Java Developers and Java Testers/Automation Testers, or anyone who is looking for higher pay in the same field because it demands advanced Java skills.
+
+Essential Java 8 Interview Questions
+Q #1) List down the new features introduced in Java 8.
+
+Answer: The following list presents the new features introduced in Java 8.
+
+Lambda Expressions
+Method References
+Optional Class
+Functional Interface
+Default methods
+Nashorn, JavaScript Engine
+Stream API
+Data API
+Q #2) What are Functional Interfaces?
+
+Answer: A functional interface is an interface that has only one abstract method. The implementation of these interfaces is provided using a Lambda Expression, so to use the Lambda Expression, you need to create a new functional interface, or you can use the predefined functional interfaces of Java 8.
+
+The annotation used for creating a new Functional Interface is “@FunctionalInterface”.
+
+Q #3) What is an optional class?
+
+Answer: An optional class is a special wrapper class introduced in Java 8, which is used to avoid NullPointerExceptions. This final class is present under java.util package. NullPointerExceptions occur when we cannot perform the Null checks.
+
+Q #4) What are the default methods?
+
+Answer: Default methods are the methods of the interface which has a body. These methods, as the name suggests, use the default keywords. The use of these default methods is “Backward Compatibility” which means if JDK modifies any Interface (without default method) then the classes that implement this Interface will break.
+
+On the other hand, if you add the default method in an Interface, then you will be able to provide the default implementation. This won’t affect the implementing classes.
+
+Syntax:
+
+1
+2
+3
+4
+5
+6
+7
+public interface questions{
+  
+        default void print() {
+  
+System.out.println("www.softwaretestinghelp.com");
+             }
+    }
+Q #5) What are the main characteristics of the Lambda Function?
+
+Answer: The main characteristics of the Lambda Function are:
+
+A method that is defined as a Lambda Expression can be passed as a parameter to another method.
+A method can exist standalone without belonging to a class.
+There is no need to declare the parameter type because the compiler can fetch the type from the parameter’s value.
+We can use parentheses when using multiple parameters, but there is no need to have parentheses when we use a single parameter.
+If the body of an expression has a single statement, then there is no need to include curly braces.
+Q #6) What was wrong with the old date and time?
+
+Answer: Listed below are the drawbacks of the old date and time:
+
+Java.util.Date is mutable and is not thread-safe, whereas the new Java 8 Date and Time API is thread-safe.
+Java 8 Date and Time API meets the ISO standard,s whereas the old date and time were poorly designed.
+It has introduced several API classes for a date like LocalDate, LocalTime, LocalDateTime, etc.
+Talking about the performance between the two, Java 8 works faster than the old regime of date and time.
+Q #7) What is the difference between the Collection API and Stream API?
+
+Answer: The table below helps you understand the difference between the Stream API and the Collection API.
+
+Stream API
+Collection API
+It was introduced in Java 8 Standard Edition version.	It was introduced in Java version 1.2
+There is no use of the Iterator and Spliterators.	With the help of forEach, we can use the Iterator and Spliterators to iterate the elements and perform an action on each item or the element.
+An infinite number of features can be stored.	A countable number of elements can be stored.
+Consumption and Iteration of elements from the Stream object can be done only once.	Consumption and Iteration of elements from the Collection object can be done multiple times.
+It is used to compute data.	It is used to store data.
+Q #8) How can you create a Functional Interface?
+
+Answer: Although Java can identify a Functional Interface, you can define one with the annotation
+
+@FunctionalInterface
+
+Once you have defined a functional interface, you can have only one abstract method. Since you have only one abstract method, you can write multiple static methods and default methods.
+
+Below is the programming example of FunctionalInterface written for the multiplication of two numbers.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+@FunctionalInterface // annotation for functional interface
+interface FuncInterface {
+  
+    public int multiply(int a, int b);
+}
+public class Java8 {
+  
+   public static void main(String args[]) {
+        FuncInterface Total = (a, b) -> a * b;
+        // simple operation of multiplication of 'a' and 'b'
+        System.out.println("Result: "+Total.multiply(30, 60));
+    }
+}
+Output:
+
+Output for Functional Interface written for multiplication of two numbers.
+Q #9) What is a SAM Interface?
+
+Answer: Java 8 has introduced the concept of a FunctionalInterface that can have only one abstract method. Since these interfaces specify only one abstract method, they are sometimes called SAM Interfaces. SAM stands for “Single Abstract Method”.
+
+Q #10) What is Method Reference?
+
+Answer: In Java 8, a new feature was introduced known as Method Reference. This is used to refer to the method of functional interface. It can be used to replace a Lambda Expression while referring to a method.
+
+For Example, if the Lambda Expression looks like
+
+1
+num -> System.out.println(num)
+Then the corresponding Method Reference would be,
+
+1
+System.out::println
+where “::” is an operator that distinguishes the class name from the method name.
+
+Q #11) Explain the following Syntax
+
+1
+String:: Valueof Expression
+Answer: It is a static method reference to the ValueOf method of the String class. System.out::println is a static method reference to the println method of out object of the System class.
+
+It returns the corresponding string representation of the argument that is passed. The argument can be Character, Integer, Boolean, and so on.
+
+Java 8 Scenario-Based Interview Questions
+Q #12) What is a Predicate? State the difference between a Predicate and a Function.
+
+Answer: Predicate is a pre-defined Functional Interface. It is under java.util.function.Predicate package. It accepts only a single argument, which is in the form shown below,
+
+Predicate<T>
+
+Predicate
+Function
+It has the return type as Boolean.	It has the return type as Object.
+It is written in the form of Predicate< T> which accepts a single argument.	It is written in the form of Function< T, R> which also accepts a single argument.
+It is a Functional Interface which is used to evaluate Lambda Expressions. This can be used as a target for a Method Reference.	It is also a Functional Interface which is used to evaluate Lambda Expressions. In Function< T, R>, T is for input type and R is for the result type. This can also be used as a target for a Lambda Expression and Method Reference.
+Q #13) Is there anything wrong with the following code? Will it compile or give any specific error?
+
+1
+2
+3
+4
+5
+6
+7
+8
+@FunctionalInterface
+public interface Test<A, B, C> {
+    public C apply(A a, B b);
+   
+    default void printString() {
+        System.out.println("softwaretestinghelp");
+    }
+}
+Answer: Yes, the code will compile because it follows the functional interface specification of defining only a single abstract method. The second method, printString(), is a default method that does not count as an abstract method.
+
+Q #14) What is a Stream API? Why do we require the Stream API?
+
+Answer: Stream API is a new feature added in Java 8. It is a special class that is used for processing objects from a source such as Collection.
+
+We require the Stream API because,
+
+It supports aggregate operations, which makes the processing simple.
+It supports Functional-Style programming.
+It does faster processing. Hence, it is apt for better performance.
+It allows parallel operations.
+Q #15) What is the difference between limit and skip?
+
+Answer: The limit() method is used to return a Stream of the specified size. For Example, if you have mentioned limit(5), then the number of output elements would be 5.
+
+Let’s consider the following example. The output here returns six elements as the limit is set to ‘six’.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+import java.util.stream.Stream;
+  
+public class Java8 {
+      
+    public static void main(String[] args) {
+        Stream.of(0,1,2,3,4,5,6,7,8)
+        .limit(6)         
+        /*limit is set to 6, hence it will print the 
+        numbers starting from 0 to 5 
+        */
+        .forEach(num->System.out.print("\n"+num));
+    }
+}
+Output:
+
+Output_Limit method
+Whereas the skip() method is used to skip the element.
+
+Let’s consider the following example. In the output, the elements are 6, 7, 8, which means it has skipped the elements till the 6th index (starting from 1).
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import java.util.stream.Stream;
+  
+public class Java8 {
+      
+    public static void main(String[] args) {
+        Stream.of(0,1,2,3,4,5,6,7,8)
+        .skip(6)
+        /*
+         It will skip till 6th index. Hence 7th, 8th and 9th
+         index elements will be printed
+         */
+        .forEach(num->System.out.print("\n"+num));
+    }
+}
+Output:
+
+Output_ Skip method
+Q #16) How will you get the current date and time using Java 8 Date and Time API?
+
+Answer: The program below is written with the help of the new API introduced in Java 8. We have made use of LocalDate, LocalTime, and LocalDateTime API to get the current date and time.
+
+In the first and second print statements, we have retrieved the current date and time from the system clock with the time zone set as the default. In the third print statement, we have used LocalDateTime API, which will print both date and time.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+class Java8 {
+    public static void main(String[] args) {
+        System.out.println("Current Local Date: " + java.time.LocalDate.now());
+        //Used LocalDate API to get the date
+        System.out.println("Current Local Time: " + java.time.LocalTime.now());
+        //Used LocalTime API to get the time
+        System.out.println("Current Local Date and Time: " + java.time.LocalDateTime.now());
+        //Used LocalDateTime API to get both date and time
+    }
+}
+Output:
+
+Java 8 Date and Time API
+Q #17) What is the purpose of the limit() method in Java 8?
+
+Answer: The Stream.limit() method specifies the limit of the elements. The size that you specify in the limit(X), it will return a Stream of the size of ‘X’. It is a method of java.util.stream.Stream
+
+Syntax:
+
+1
+limit(X)
+Where ‘X’ is the size of the element.
+
+Q #18) Write a program to print 5 random numbers using forEach in Java 8.
+
+Answer: The program below generates 5 random numbers with the help of forEach in Java 8. You can set the limit variable to any number depending on how many random numbers you want to generate.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+import java.util.Random;
+  
+class Java8 {
+    public static void main(String[] args) {
+  
+        Random random = new Random();
+        random.ints().limit(5).forEach(System.out::println);
+        /* limit is set to 5 which means only 5 numbers will be printed
+        with the help of terminal operation forEach
+        */
+  
+    }
+}
+Output:
+
+Output_ 5 random numbers using forEach in Java 8
+Q #19) Write a program to print 5 random numbers in sorted order using forEach in Java 8?
+
+Answer: The program below generates 5 random numbers with the help of forEach in Java 8. You can set the limit variable to any number depending on how many random numbers you want to generate. The only thing you need to add here is the sorted() method.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import java.util.Random;
+  
+class Java8 {
+  
+    public static void main(String[] args) {
+  
+        Random random = new Random();
+        random.ints().limit(5).sorted().forEach(System.out::println);
+        /* sorted() method is used to sort the output after
+         terminal operation forEach
+         */
+  
+    }
+}
+Output:
+
+5 random numbers in sorted order using forEach
+Q #20) What is the difference between Intermediate and Terminal Operations in Stream?
+
+Answer: All Stream operations are either Terminal or Intermediate. Intermediate Operations are the operations that return the Stream so that some other operations can be carried out on that Stream. Intermediate operations do not process the Stream at the call site, they are called lazy.
+
+These types of operations (Intermediate Operations) process data when there is a Terminal operation is carried out. Examples of Intermediate operations are map and filter.
+
+Terminal Operations initiate Stream processing. During this call, the Stream undergoes all the Intermediate operations. Examples of Terminal Operations are sum, Collect, and forEach.
+
+In this program, we are first trying to execute the intermediate operation without Terminal operation. As you can see, the first block of code won’t execute because there is no Terminal operation supporting it.
+
+The second block successfully executed because of the Terminal operation sum().
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+import java.util.Arrays;
+  
+class Java8 {
+  
+    public static void main(String[] args) {
+        System.out.println("Intermediate Operation won't execute");
+        Arrays.stream(new int[] { 0, 1 }).map(i -> {
+            System.out.println(i);
+            return i;
+            // No terminal operation so it won't execute
+        });
+  
+        System.out.println("Terminal operation starts here");
+        Arrays.stream(new int[] { 0, 1 }).map(i -> {
+            System.out.println(i);
+            return i;
+            // This is followed by terminal operation sum()
+        }).sum();
+    }
+}
+Output:
+
+Intermediate and Terminal Operations
+Q #21) Write a Java 8 program to get the sum of all numbers present in a list.
+
+Answer: In this program, we have used an ArrayList to store the elements. Then, with the help of the sum() method, we have calculated the sum of all the elements present in the ArrayList. Then it is converted to a Stream, and each element is added with the help of mapToInt() and sum() methods.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+import java.util.*;
+  
+class Java8 {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+  
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.add(50);
+        // Added the numbers into Arraylist
+        System.out.println(sum(list));
+    }
+  
+    public static int sum(ArrayList<Integer> list) {
+        return list.stream().mapToInt(i -> i).sum();
+        // Found the total using sum() method after 
+        // converting it into Stream
+    }
+}
+Output:
+
+sum of all numbers present in a list
+Q #22) Write a Java 8 program to square the list of numbers and then filter out the numbers greater than 100, and then find the average of the remaining numbers.
+
+Answer: In this program, we have taken an Array of Integers and stored them in a list. Then, with the help of mapToInt(), we squared the elements and filtered out the numbers greater than 100. Finally, the average of the remaining numbers (greater than 100) is calculated.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalDouble;
+  
+public class Java8 {
+    public static void main(String[] args) {
+        Integer[] arr = new Integer[] { 100, 100, 9, 8, 200 };
+        List<Integer> list = Arrays.asList(arr);
+        // Stored the array as list
+        OptionalDouble avg = list.stream().mapToInt(n -> n * n).filter(n -> n > 100).average();
+          
+        /* Converted it into Stream and filtered out the numbers
+            which are greater than 100. Finally calculated the average 
+        */
+          
+        if (avg.isPresent())
+            System.out.println(avg.getAsDouble());
+    }
+}
+Output:
+
+average of the numbers
+Q #23) What is the difference between Stream’s findFirst() and findAny()?
+
+Answer: As the name suggests, the findFirst() method is used to find the first element from the stream, whereas the findAny() method is used to find any element from the stream.
+
+The findFirst() is predestinarianism in nature, whereas the findAny() is non-deterministic. In programming, Deterministic means the output is based on the input or initial state of the system.
+
+Q #24) What is the difference between an Iterator and a Spliterator?
+
+Answer: Below are the differences between Iterator and Spliterator.
+
+Iterator
+Spliterator
+It was introduced in Java version 1.2	It was introduced in Java SE 8
+It is used for Collection API.	It is used for Stream API.
+Some of the iterate methods are next() and hasNext() which are used to iterate elements.	Spliterator method is tryAdvance().
+We need to call the iterator() method on Collection Object.	We need to call the spliterator() method on Stream Object.
+Iterates only in sequential order.	Iterates in Parallel and sequential order.
+Q #25) What is the Consumer Functional Interface?
+
+Answer: Consumer Functional Interface is also a single argument interface (like Predicate<T> and Function<T, R>). It comes under java.util.function.Consumer. This does not return any value.
+
+In the program below, we have made use of the accept method to retrieve the value of the String object.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import java.util.function.Consumer;
+  
+public class Java8 {
+  
+    public static void main(String[] args) 
+  
+        Consumer<String> str = str1 -> System.out.println(str1);
+        str.accept("Saket");
+          
+        /* We have used accept() method to get the 
+         value of the String Object
+         */
+    }
+}
+Output:
+
+use of the accept method to retrieve the value of the String object
+Q #26) What is the Supplier Functional Interface?
+
+Answer: Supplier Functional Interface does not accept input parameters. It comes under java.util.function.Supplier. This returns the value using the get method.
+
+In the program below, we have made use of the get method to retrieve the value of the String object.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import java.util.function.Supplier;
+  
+public class Java8 {
+  
+    public static void main(String[] args) {
+  
+        Supplier<String> str = () -> "Saket";
+        System.out.println(str.get());
+          
+        /* We have used get() method to retrieve the 
+           value of String object str.
+         */
+    }
+}
+Output:
+
+Use of the get method to retrieve the value of the String object
+Advanced Level Questions for Java 8 Interview
+Q #27) What is Nashorn in Java 8?
+
+Answer: Nashorn in Java 8 is a Java-based engine for executing and evaluating JavaScript code.
+
+Q #28) Write a Java 8 program to find the lowest and highest number of a Stream?
+
+Answer: In this program, we have used the min() and max() methods to get the highest and lowest numbers of a Stream. First of all, we initialized a Stream that has Integers, and with the help of the Comparator.comparing() method, we have compared the elements of the Stream.
+
+When this method is incorporated with max() and min(), it will give you the highest and lowest numbers. It will also work when comparing the Strings.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+import java.util.Comparator;
+import java.util.stream.*;
+  
+public class Java8{
+   public static void main(String args[]) {
+          
+    Integer highest = Stream.of(1, 2, 3, 77, 6, 5)
+                        .max(Comparator.comparing(Integer::valueOf))
+                        .get();
+      
+    /* We have used max() method with Comparator.comparing() method
+       to compare and find the highest number 
+    */
+           
+    Integer lowest = Stream.of(1, 2, 3, 77, 6, 5)
+                        .min(Comparator.comparing(Integer::valueOf))
+                        .get();
+      
+    /* We have used max() method with Comparator.comparing() method
+       to compare and find the highest number 
+    */
+      
+    System.out.println("The highest number is: " + highest);
+    System.out.println("The lowest number is: " + lowest);
+   }
+}
+Output:
+
+The lowest and highest number of a Stream
+Q #29) What is the difference between map and flatMap Stream operations?
+
+Answer: Map Stream operation gives one output value per input value, whereas the flatMap Stream operation gives zero or more output values per input value.
+
+Map Example – Map Stream operation is generally used for simple operation on Stream such as the one mentioned below.
+
+In this program, we have changed the characters of “Names” into the upper case using map operation after storing them in a Stream and with the help of the forEach Terminal operation, we have printed each element.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+  
+public class Map {
+    public static void main(String[] str) {
+        List<String> Names = Arrays.asList("Saket", "Trevor", "Franklin", "Michael");
+  
+        List<String> UpperCase = Names.stream().map(String::toUpperCase).collect(Collectors.toList());
+        // Changed the characters into upper case after converting it into Stream
+  
+        UpperCase.forEach(System.out::println);
+        // Printed using forEach Terminal Operation
+    }
+}
+Output:
+
+Map Stream operation
+flatMap Example – flatMap Stream operation is used for more complex Stream operations.
+
+Here we have carried out flatMap operation on “List of List of type String”. We have given input names as list and then we have stored them in a Stream on which we have filtered out the names which start with ‘S’.
+
+Finally, with the help of the forEach Terminal operation, we have printed each element.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+  
+public class flatMap {
+    public static void main(String[] str) {
+        List<List<String>> Names = Arrays.asList(Arrays.asList("Saket", "Trevor"), Arrays.asList("John", "Michael"),
+                Arrays.asList("Shawn", "Franklin"), Arrays.asList("Johnty", "Sean"));
+          
+        /* Created a “List of List of type String” i.e. List<List<String>> 
+           Stored names into the list
+         */
+  
+        List<String> Start = Names.stream().flatMap(FirstName -> FirstName.stream()).filter(s -> s.startsWith("S"))
+                .collect(Collectors.toList());
+          
+        /* Converted it into Stream and filtered 
+            out the names which start with 'S'
+         */
+          
+        Start.forEach(System.out::println);
+          
+        /*
+         Printed the Start using forEach operation
+         */
+    }
+}
+Output:
+
+flatMap Stream operation
+Q #30) What is MetaSpace in Java 8?
+
+Answer: In Java 8, a new feature was introduced to store classes. The area where all the classes that are stored in Java 8 are called MetaSpace. MetaSpace has replaced the PermGen.
+
+Till Java 7, PermGen was used by Java Virtual Machine to store the classes. Since MetaSpace is dynamic as it can grow dynamically and it does not have any size limitation, Java 8 replaced PermGen with MetaSpace.
+
+Q #31) What is the difference between Java 8 Internal and External Iteration?
+
+Answer: The difference between Internal and External Iteration is listed below.
+
+Internal Iteration
+External Iteration
+It was introduced in Java 8 (JDK-8).	It was introduced and practiced in the previous version of Java (JDK-7, JDK-6 and so on).
+It iterates internally on the aggregated objects such as Collection.	It iterates externally on the aggregated objects.
+It supports the Functional programming style.	It supports the OOPS programming style.
+Internal Iterator is passive.	External Iterator is active.
+It is less erroneous and requires less coding.	It requires little more coding and it is more error-prone.
+Q #32) What is JJS?
+
+Answer: JJS is a command-line tool used to execute JavaScript code at the console. In Java 8, JJS is the new executable, which is a JavaScript engine.
+
+Q #33) What is ChronoUnits in Java 8?
+
+Answer: ChronoUnits is the enum that is introduced to replace the Integer values that are used in the old API for representing the month, day, etc.
+
+Q #34) Explain the StringJoiner class in Java 8? How can we achieve joining multiple Strings using the StringJoiner class?
+
+Answer: In Java 8, a new class was introduced in the package java.util which was known as StringJoiner. Through this class, we can join multiple strings separated by delimiters, along with providing a prefix and a suffix to them.
+
+In the program below, we will learn about joining multiple Strings using StringJoiner Class. Here, we have “,” as the delimiter between two different strings. Then we have joined five different strings by adding them with the help of the add() method. Finally, printed the String Joiner.
+
+In the next question #35, you will learn about adding a prefix and a suffix to the string.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import java.util.StringJoiner;
+  
+public class Java8 {
+    public static void main(String[] args) {
+  
+        StringJoiner stj = new StringJoiner(",");
+        // Separated the elements with a comma in between.
+          
+        stj.add("Saket");
+        stj.add("John");
+        stj.add("Franklin");
+        stj.add("Ricky");
+        stj.add("Trevor");
+          
+        // Added elements into StringJoiner “stj”
+          
+        System.out.println(stj);
+    }
+}
+Output:
+
+StringJoiner Class
+Q #35) Write a Java 8 program to add a prefix and a suffix to a string?
+
+Answer: In this program, we have “,” as the delimiter between two different strings. Also, we have given “(” and “)” brackets as a prefix and a suffix. Then five different strings are joined by adding them with the help of the add() method. Finally, printed the String Joiner.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+import java.util.StringJoiner;
+  
+public class Java8 {
+    public static void main(String[] args) {
+  
+        StringJoiner stj = new StringJoiner(",", "(", ")");
+          
+        // Separated the elements with a comma in between.
+        //Added a prefix "(" and a suffix ")"
+          
+        stj.add("Saket");
+        stj.add("John");
+        stj.add("Franklin");
+        stj.add("Ricky");
+        stj.add("Trevor");
+          
+        // Added elements into StringJoiner “stj”
+          
+        System.out.println(stj);
+    }
+}
+Output:
+
+to add prefix and suffix to the String
+Q #36) Write a Java 8 program to iterate over a Stream using the forEach method.
+
+Answer: In this program, we are iterating a Stream starting from “number = 2”, followed by the count variable incremented by “1” after each iteration.
+
+Then, we are filtering the numbers whose remainder is not zero when divided by the number 2. Also, we have set the limit to 5, which means it will iterate only 5 times. Finally, we are printing each element using forEach.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import java.util.stream.*;  
+public class Java8 {  
+      
+    public static void main(String[] args){  
+        Stream.iterate(2, count->count+1) 
+          
+        // Counter Started from 2, incremented by 1
+          
+        .filter(number->number%2==0)  
+          
+        // Filtered out the numbers whose remainder is zero
+        // when divided by 2
+          
+        .limit(5)  
+        // Limit is set to 5, so only 5 numbers will be printed
+          
+        .forEach(System.out::println);
+    }  
+}
+Output:
+
+iterate a Stream using the forEach method
+Q #37) Write a Java 8 program to sort an array and then convert the sorted array into a Stream.
+
+Answer: In this program, we have used parallel sort to sort an array of Integers. Then converted the sorted array into Stream and, with the help of forEach, we printed each element of the Stream.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+import java.util.Arrays;
+  
+public class Java8 {
+  
+    public static void main(String[] args) {
+        int arr[] = { 99, 55, 203, 99, 4, 91 };
+        Arrays.parallelSort(arr);
+        // Sorted the Array using parallelSort()
+          
+        Arrays.stream(arr).forEach(n -> System.out.print(n + " "));
+        /* Converted it into Stream and then
+           printed using forEach */
+    }
+}
+Output:
+
+sort an array and convert the sorted array into Stream
+Q #38) Write a Java 8 program to find the number of Strings in a list whose length is greater than 5.
+
+Answer: In this program, four Strings are added in the list using add() method, and then with the help of Stream and Lambda expression, we have counted the strings who has a length greater than 5.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+import java.util.ArrayList;
+import java.util.List;
+  
+public class Java8 {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<String>();
+        list.add("Saket");
+        list.add("Saurav");
+        list.add("Softwaretestinghelp");
+        list.add("Steve");
+          
+        // Added elements into the List
+  
+        long count = list.stream().filter(str -> str.length() > 5).count();
+          
+        /* Converted the list into Stream and filtering out
+           the Strings whose length more than 5
+           and counted the length
+           */
+        System.out.println("We have " + count + " strings with length greater than 5");
+  
+    }
+}
+Output:
+
+the number of Strings whose length is greater than 5
+Q #39) Write a Java 8 program to concatenate two Streams.
+
+Answer: In this program, we have created two Streams from the two already created lists and then concatenated them using a concat() method in which two lists are passed as an argument. Finally, printed the elements of the concatenated stream.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+  
+public class Java8 {
+    public static void main(String[] args) {
+  
+        List<String> list1 = Arrays.asList("Java", "8");
+        List<String> list2 = Arrays.asList("explained", "through", "programs");
+  
+        Stream<String> concatStream = Stream.concat(list1.stream(), list2.stream());
+          
+        // Concatenated the list1 and list2 by converting them into Stream
+  
+        concatStream.forEach(str -> System.out.print(str + " "));
+          
+        // Printed the Concatenated Stream
+          
+    }
+}
+Output:
+
+concatenate two Streams
+Q #40) Write a Java 8 program to remove the duplicate elements from the list.
+
+Answer: In this program, we have stored the elements in an array and converted them into a list. Thereafter, we have used stream and collected it to “Set” with the help of the “Collectors.toSet()” method.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+  
+public class Java8 {
+    public static void main(String[] args) {
+        Integer[] arr1 = new Integer[] { 1, 9, 8, 7, 7, 8, 9 };
+        List<Integer> listdup = Arrays.asList(arr1);
+          
+        // Converted the Array of type Integer into List
+  
+        Set<Integer> setNoDups = listdup.stream().collect(Collectors.toSet());
+          
+        // Converted the List into Stream and collected it to “Set”
+        // Set won't allow any duplicates
+          
+        setNoDups.forEach((i) -> System.out.print(" " + i));
+          
+          
+    }
+}
+Output:
+
+remove the duplicate elements from the list
+Conclusion
+In this article, we have understood the new features introduced in Java 8. We have covered all major Java 8 interview questions and their answers in detail.
+
+Upon reading this tutorial, you must have gained knowledge about the new APIs for date-time manipulation, new features of Java 8, new Streaming APIs, along with the apt programming examples as per the concept. These novel concepts or features are incorporated into the interview for more demanding Java roles.
+
+All the best!!
+
+=> Check ALL Java Tutorials Here.
+
+Was this helpful?
+Recommended Reading
+Interview Questions and Answers
+Top Interview Questions & Answers
+Lists popular Software Testing and related Technical Interview Questions and answers on the most common software testing & technical topics: Let us see some of the most frequently asked interview questions and answers on Software Testing and other related technical topics in the tutorials listed below. Select the link you…
+
+ETL Testing Interview Questions and Answers
+ETL Testing
+List of Most Frequently Asked ETL Testing Tools Interview Questions And Answers to Help You Prepare For The Upcoming Interview: Business information and the data are of key importance to any business and company. Many companies invest a lot of time and money in the process of analyzing and sorting…
+
+Top 25 Java Web Services Interview Questions & Answers
+Java web services Interview Questions
+In this tutorial, we have provided the most frequently asked Java Web Services interview questions & answers with examples & explanation: As experienced Java developers or software testers, it is essential that you be well-versed in web services developed using the Java programming language, and it is expected that you…
+
+Arrays In Java 8 - Stream Class And ParallelSort Method
+Arrays in Java 8
+Java 8 has been a Major Release in the History of Java. This Tutorial Explains Various Changes to Arrays in Java 8 like Streams Class And Parallel Sorting: Many new features were introduced in this release as already discussed in our previous tutorial on “Java 8 Features”. Let us learn…
+
+READ MORE FROM THIS SERIES:
+
+Group Discussion Rules and Tips
+Top 90 SQL Interview Questions and Answers for 2026
+SQL Server Interview Questions and Answers (2026)
+Interview Questions and Answers
+30+ Top Scrum Master Interview Questions and Answers
+Top 30 PL/SQL Interview Questions and Answers in 2026
+Top 20 JIRA Interview Questions and Answers
+Top 35 Linux Interview Questions and Answers
+Top 20 Business Analyst Interview Questions and Answers
+Top 45 Web Services Interview Questions and Answers (RESTful, SOAP, Security que…
+Top 24 Data Modeling Interview Questions for Data Engineers
+TOP 70+ UNIX Interview Questions with Answers
+Top 40 C Programming Interview Questions for Developers
+Top 40 Popular J2EE Interview Questions and Answers You Should Read
+Top 60 Networking Interview Questions and Answers
+Top 20 Leadership Interview Questions and Answers
+Top 32 IBM DataStage Interview Questions And Answers
+Top 31 Most Important SAP BO Interview Questions and Answers
+Top 20 RESTful Web Services Interview Questions and Answers
+Top 50+ Database Interview Questions and Answers
+Top 30 SAS Interview Questions and Answers
+Top JMeter Interview Questions and Answers for 2026
+Top 35 Android Interview Questions and Answers
+60 Top Unix Shell Scripting Interview Questions and Answers
+Top 64 Scenario-Based Informatica Interview Questions with Answers
+Top 31 Agile Interview Questions and Answers
+50+ Top Core Java Interview Questions and Answers (2026)
+Top JSON Interview Questions and Answers
+60+ Top VBScript Interview Questions and Answers (2026 LIST)
+Top 30 Eclipse Interview Questions and Answers
+Top Teradata Interview Questions and Answers
+25+ Most Popular ADO.NET Interview Questions and Answers
+Top 50 C# Interview Questions with Answers
+Top 30 DBMS Interview Questions and Answers
+Top Oracle Interview Questions: Oracle Basic, SQL, PL/SQL Questions
+Top Oracle DBA, RAC, and Performance Tuning Interview Questions
+Top 50 Most Popular CCNA Interview Questions and Answers
+Top 20+ .NET Interview Questions and Answers
+Top Oracle Forms and Reports Interview Questions
+Top Oracle Apps Technical and Oracle SOA Interview Questions
+Top 30+ Popular Cucumber Interview Questions and Answers
+Top 30+ JMS (Java Message Service) Interview Questions
+TOP 45 JavaScript Interview Questions With Detailed Answers
+Top 20 Latest DevOps Interview Questions and Answers for 2026
+50+ Bootstrap Interview Questions and Answers
+Top 20 TestNG Interview Questions and Answers
+30+ TOP Servlet Interview Questions and Answers (2026 LIST)
+35+ Top Apache Tomcat Interview Questions and Answers
+48 Top AngularJS Interview Questions and Answers (2026 LIST)
+Top 30+ Popular CSS Interview Questions and Answers
+30 Top HTML Interview Questions and Answers (2026 LIST)
+50 Top PHP Interview Questions and Answers (For ALL)
+Top 20 Java Interview Programs for Coding with Answers
+Top 12 Mockito Interview Questions (Mocking Framework Interview)
+Top 40 MySQL Interview Questions And Answers
+Top 61 Python Interview Questions And Answers
+Top 48 Spring Interview Questions (Crack an Interview in 2026)
+Top 25+ Azure Test Plan or TFS Interview Questions
+TOP 35 HTML5 Interview Questions and Answers
+Top 25 Perl Interview Questions You Should Prepare in 2026
+TOP 70 C++ Interview Questions and Answers [Includes Advanced]
+25+ Top Spring MVC Interview Questions and Answers
+Top 36 Jenkins Interview Questions For 2026
+Top 15 Popular Specflow Interview Questions
+Spock Interview Questions with Answers (Most Popular)
+Top 50 Swift Interview Questions (Swift iOS Interview)
+Top 25 Software Engineering Interview Questions [LATEST 2026]
+Top 38 Desktop Support Engineer Interview Questions and Answers
+Graphic Design Resume Guide: Example And Templates For 2026
+Top 45 XML Interview Questions And Answers for 2026 [LATEST]
+50 Top Salesforce Interview Questions and Answers (Updated 2026)
+Top 49 Salesforce Admin Interview Questions And Answers 2026
+Top 84 Salesforce Developer Interview Questions And Answers 2026
+Top 35 ASP.Net And Web API Interview Questions With Answers
+Top 20 Most Common Help Desk Interview Questions & Answers (2026)
+Top 18 Most Common Call Center Interview Questions & Answers 2026
+Top 10 Most Popular Postman Interview Questions With Answers
+Top 35 Frequently Asked Struts Interview Questions & Answers
+Top 20 HR Interview Questions and Answers
+Top 20+ Employee Exit Interview Questions To Ask
+Top 15+ Important Unix Commands Interview Questions For Beginners
+Top 40 GIT Interview Questions and Answers In 2026
+Top 25 Technical Support Interview Questions With Answers
+Top 25 Computer Architecture Interview Questions And Answers
+50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
+Top 51 ElasticSearch Interview Questions & Answers in 2026
+Top 30 Programming / Coding Interview Questions & Answers
+Top 35 Management Interview Questions With Answers
+Top 29 Data Engineer Interview Questions And Answers
+Top 40 Java 8 Interview Questions & Answers [Most Important]
+31 Most Frequently Asked Maven Interview Questions & Answers
+30+ Top Java Collections Interview Questions With Answers (2026 LIST)
+Top 25 Java Web Services Interview Questions & Answers
+TOP 30 AWS Interview Questions and Answers in 2026
+How To Write A Follow Up Email After Interview?
+Top 40 SAP CRM Interview Questions and Answers
+Top 36 Most Important Chef Interview Questions And Answers
+Top 35 Puppet Interview Questions And Answers
+Top 31 Popular Python Flask Interview Questions With Answers
+JSP Interview Questions And Answers in 2026
+Top 30+ OOPS Interview Questions And Answers With Examples
+How To Write An Email To A Recruiter [Six Email Templates]
+Top 25+ Web Developer Interview Questions and Answers
+40+ PHP Laravel Interview Questions And Answers (2026 LIST)
+Top 25+ JDBC Interview Questions And Answers
+Top 30+ JSF Interview Questions And Answers
+Salesforce Lightning Interview Questions And Answers
+SAP Hybris Interview Questions And Answers
+Top 30 Node.js Interview Questions and Answers
+Top 25 Popular Appium Interview Questions And Answers
+Top 30 Frequently Asked Ajax Interview Questions And Answers
+35 Frequently Asked MongoDB Interview Questions And Answers
+39 Salesforce Solution Architect Interview Questions And Answers
+Top 30 Popular Scrum Master Interview Questions And Answers
+Top 20 Machine Learning Interview Questions And Answers
+Top 30+ Data Structure Interview Questions And Answers
+Top 28 VMware Interview Questions And Answers
+20 Reasons Why You are Not Getting Hired (with Solutions)
+Top 25 Microservices Interview Questions And Answers
+Top 26 Project Management Interview Questions for Managers
+Top 27 Azure Interview Questions And Answers
+42 Most Common TypeScript Interview Questions And Answers
+Top 25 Interview Questions for Managers with Answers
+50 Most Common React Interview Questions And Answers
+A Perfect Thank You Email After an Interview (4 Samples)
+Top 30+ Bulma Interview Questions and Answers With Examples
+Top 40+ Hibernate Interview Questions & Answers in 2026
+Top 30 Java Architect Interview Questions with Answers (2026)
+Top 40 Spring Boot Interview Questions 2026 (MOST ASKED)
+Top 40 Full Stack Developer Interview Questions & Answers
+IBM Careers: A Complete IBM Jobs & Internships Guide 2026
+Top 50 Behavioral Interview Questions and Sample Answers
+
+Get the Premium eBook 
+Download your copy now 👇
+Our Bestselling eBook 'Software Testing Career package' Now Available FREE for Limited Period
+Enter your email..
+
+DOWNLOAD NOW!
+Leave a Comment
+Comment
+
+Name
+Name *
+Email
+Email *
+
+About SoftwareTestingHelp
+Helping our community since 2006! Most popular portal for Software professionals with 400 million+ visits and 500,000+ followers! You will absolutely love our creative content on QA, Dev, Software Tools & Services Reviews!
+
+Learn In This Article:
+Quiz on Java 8 Interview Questions
+Essential Java 8 Interview Questions
+Java 8 Scenario-Based Interview Questions
+Advanced Level Questions for Java 8 Interview
+Conclusion
+Software Testing Help
+
+Communication Details
+
+Main Office: A708, City Vista, Fountain Road, Kharadi, Pune, MH, 411014.
+
+Email Us: info@softwaretestinghelp.com
+
+Facebook Linkedin X-twitter Youtube
+Software Testing Tools
+
+Test Management Tools
+Web Application Testing Software
+Cross Browser Testing Tools
+Best ETL Testing Tools
+Mobile Testing Tools
+Regression Testing Tools
+Defect Tracking Tools
+GUI Testing Tools
+Requirements Management Tools
+ALL Testing Tools
+Performance Testing Tools
+
+Performance Testing Tools
+Performance Testing Services
+Computer Stress Test Tools
+Cloud- Load Testing Service
+Performance Testing Guide
+Database Performance Tools
+Website Performance Testing Tools
+Application Performance Monitoring
+Automation Testing Tools
+
+Unit Testing Tools
+API Testing Tools
+Best ETL Tools
+Open Source Testing Tools
+Functional Testing Tools
+Selenium Alternatives
+Accessibility Testing Tools
+Mobile Automation Tools
+Automation Testing Software
+Automation Testing Services
+Data Tools
+
+Data Masking Tools
+Data Modeling Tools
+Data Analysis Tools
+Data Migration Software
+Data Integration Tools
+Data Mapping Tools
+Data Loss Prevention
+Test Data Management Tools
+Data Recovery Software
+Data Analytics Companies
+ALL Data Tools
+Coding Software
+
+Best Code Editors
+Code Coverage Tools
+Low-Code Development Tools
+Static Code Analysis Tools
+Source Code Management Tools
+Version Control Software
+Code Review Tools
+Javascript Online Editors
+Code Review Tools
+Code Quality Tools
+Security Testing Tools
+
+Penetration Testing Tools
+App Security Testing Tools
+Web Security Scanners
+Vulnerability Assessment
+Mobile App Security
+Malware Removal Tools
+Anti-Ransomware Tools
+Spyware Removal Tools
+Mobile Pen Testing Tools
+Pen Testing as a Service
+DAST Software
+Testing Service Providers
+
+Managed Testing Services
+Mobile Testing Services
+Software Testing Services
+Performance Testing Services
+Penetration Testing Companies
+Cyber Security Companies
+QA Outsourcing Companies
+USA Testing Companies
+Website Testing Services
+Regression Testing Services
+Software Development
+
+Custom Software Companies
+App Development Tools
+Software Development Tools
+Game Development Companies
+Software Companies USA
+SaaS Development Companies
+Android App Development
+DevOps Tools
+DevOps Service Providers
+App Development Companies
+Healthcare Dev Companies
+Networking Tools
+
+Network Management
+Network Security Tools
+Network Scanning Tools
+Application Scanners
+Network Testing Tools
+Network Monitoring Tools
+Network Security Tools
+Server Monitoring Tools
+Network Mapping Software
+SIEM Tools
+System Monitoring Tools
+Infrastructure Monitoring Tools
+Project Management Tools
+
+Project Management Software
+Project Management Apps
+Agile Project Management Tools
+Workflow Management Software
+Task Management Software
+Team Collaboration Tools
+JIRA Alternatives
+Project Planning Tools
+Team Management Software
+Cloud Tools
+
+Cloud Monitoring Tools
+Crowdsourcing Platforms
+Cloud Management
+Crowdsourced Testing Companies
+Cloud Mobile Testing
+Cloud Computing Companies
+Cloud Managed Services
+Cloud Testing Tools
+Cloud Security Companies
+ALL Categories
+Security Software
+
+Free Antivirus Software
+Cybersecurity Software
+Internet Security Tools
+External Vulnerability Scanner
+Website Malware Scanner
+Web Security Scanners
+Zero Trust Security
+Vulnerability Assessment
+ALL Security Tools
+IT Management Tools
+
+Remote Desktop Software
+Configuration Management
+Incident Management Software
+Change Management Software
+IT Asset Management
+Managed IT Services
+ITSM Tools
+Remote Monitoring Software
+Remote Access Software
+Asset Discovery Tools
+Workload Automation Tools
+IT Automation Tools
+
 
 Quiz on Java Web Services Interview Questions
 Try this expert quiz on Java Web Services Interview questions to ace your next interview. This quiz covers all core concepts of Java Web services to help you get hired in your dream job.
