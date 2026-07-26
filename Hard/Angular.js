@@ -1,3 +1,644 @@
+48 Top AngularJS Interview Questions and Answers (2026 LIST)
+By Sruthy  Updated December 4, 2025
+ 
+ Edited by Kamila
+List of most frequently asked AngularJS interview questions with detailed answers for freshers and experienced professionals:
+
+AngularJS is one of the most current web development frameworks around the world.
+
+In almost every interview, you struggle with fierce competition to achieve high and get your dream job. Therefore, prepare yourself well in advance.
+
+Table of Contents: [Show]
+
+AngularJS Interview Questions Quiz
+Showcase your expertise in AngularJS with this expert quiz on AngularJS interview questions. This quiz is ideal for professionals preparing for any technical interview related to AngularJS.
+
+⚡ AngularJS Interview Questions QUIZ
+Master AngularJS concepts for frontend development success
+Advanced Topics
+Question 1 of 15
+What is transclusion in AngularJS directives?
+HTTP transformation
+Transclusion allows directive to wrap and include external content
+Routing parameters
+Form validation
+
+AngularJS Interview Questions and Answers
+To support you on this journey, we’ve drawn up a list of the most frequently asked AngularJS interview questions along with the answers that your interviewer expects at the time of the interview.
+
+Read through our series of AngularJS tutorials for more knowledge of the concept. Protractor Tool for Testing of AngularJS Apps was explained in our previous tutorial.
+
+Most Frequently Asked Questions in AngularJS Interview
+Below is a list of the top interview questions and answers on AngularJS to help anyone successfully clear an interview.
+
+Let’s explore!!
+
+Q #1) What do you understand by AngularJS?
+
+Answer: AngularJS is a JavaScript framework used to make rich and extensible web applications.
+
+It runs on plain JavaScript and HTML; hence, you don’t need any other dependencies to make it work. AngularJS is perfect for Single Page Applications (SPA). It primarily binds JavaScript objects to HTML UI elements.
+
+Q #2) Define the features of AngularJS.
+
+Answer: The features include:
+
+The Template (View)
+The Scope (Model)
+The Controller (Controller)
+Services
+Filters
+Directives
+Q #3) Define Data Binding.
+
+Answer: Data binding automatically attunes data between the view and model components.
+
+Q #4) Distinguish between AngularJS and JavaScript expressions.
+
+Answer: There are several differences between AngularJS and JavaScript expressions.
+
+We can write AngularJS expressions in HTML, but we cannot write JavaScript expressions in HTML.
+We cannot use conditional iterations, loops, and exceptions in AngularJS, but we can use these conditional properties in JavaScript expressions.
+Filters are supported in AngularJS, whereas filters are not supported in JavaScript.
+Q #5) Write all the steps to configure an Angular App(ng-app).
+
+Answer: To set up an Angular App, we must follow certain steps as mentioned below:
+
+angular.module will be created first.
+A controller will be assigned to the module.
+The module will be linked with the HTML template (i.e., UI or View) with an angular app(ng-app).
+The HTML template will be linked with the controller (i.e., JS) with an ng-controller directive.
+Q #6) What are the Angular Modules?
+
+Answer: The Angular modules collectively define an Angular application where we can write the Angular code. Modules contain the different parts of an Angular application. A module is created by angular.module function in Angular.
+
+Q #7) What are the directive scopes in AngularJS?
+
+Answer: Three directive scopes are available in AngularJS.
+
+They are:
+
+Parent scope: Whatever change you make in your directive that comes from the parent scope will also reflect in the parent scope, and it is also a default scope.
+Child scope: It is a nested scope that inherits a property from the parent scope. Also, if any properties and functions on the scope are not connected with the parent scope directive, then a new child scope directive is created.
+Isolated scope: It is reusable and used when building a self-contained directive. It is only used for private and internal use, so it does not contain any properties of the parent scope.
+Q #8) How can we share the data between controllers in AngularJS?
+
+Answer: First, we have to create a service. Service is used to share the data between controllers in AngularJS in a very lucid, easy, and fast way. We use events, $parent, next sibling, and controller by using a $rootScope.
+
+Q #9) What is the digest cycle in AngularJS?
+
+Answer: It is a part of the process of data binding in AngularJS. It compares the old and new versions of the scope model value in each digest cycle.
+
+The digest cycle is triggered automatically. We can also enhance usability by using $apply () if we want to trigger the digest cycle manually.
+
+Q #10) Explain the difference between one-way binding and two-way binding.
+
+Answer: One-way binding is used to bind the data from the model to the view without updating the HTML template or view automatically.
+
+Thus, to update the HTML template, we need to write a custom code that will update the view every time data is binded from the model to the view.
+
+Whereas, two-way binding is used to bind the data from the model to the view and vice versa (i.e., view to model) by automatically updating the HTML template without writing any custom code.
+
+Q #11) Difference between sessionStorage, cookies, and localStorage.
+
+Answer: The differences are as follows:
+
+SessionStorage – The data is stored for a particular session. The data will be lost whenever the browser tab is closed or after a particular session. The maximum size stored can be up to 5MB.
+LocalStorage – The data is stored with no expiration date. The data can be cleared only by JavaScript or by clearing the browser cache. The storage limit is maximum than the sessionStorage and cookie.
+Cookies – It store the data that has to be sent back to the server with some requests. The cookie’s expiration varies depending on the type and duration set from either the server-side or client-side. The maximum size stored can be less than 4KB.
+Q #12) What is the role of $routeProvider in AngularJS?
+
+Answer: It is the $routeProvider that helps in navigating between different pages/links without separately loading the page/link whenever a user clicks on a link.
+
+ngRoute config() method is used to configure the routeProvider.
+
+Q #13) What is the difference between $scope and scope?
+
+Answer: In AngularJS, $scope is used to achieve dependency injection, and scope is used for linking between View (i.e HTML) and Controller (i.e. JS).
+
+Q #14) How are AngularJS prefixes $ and $$ used?
+
+Answer: The $$ variable in AngularJS is used as a private variable, as it is used to prevent accidental code collision with the user code.
+
+Whereas the $ prefix can denote angular core functionalities (like a variable, parameter, property, or method).
+
+Q #15) Where can we implement the DOM manipulation in AngularJS?
+
+Answer: Manipulation of the DOM is in directives, and apart from this, it should not exist in the controller’s services or anywhere else.
+
+Q #16) How can we show that a scope variable should have one-time binding only?
+
+Answer: To show one-time binding, we have to use “::” in front of the scope.
+
+Q #17) What is SPA (Single Page Application) in AngularJS?
+
+Answer: It is a web application that loads a single HTML page and dynamically updates the page as the user connects with the app.
+
+By using AJAX and HTML, a fluid and responsive web app can be created by SPA without invariant page reloads. Through this, we can make a responsive UI with no page flicker.
+
+Q #18) How many types of data bindings are there in AngularJS?
+
+Answer: AngularJS supports both one-way and two-way binding.
+
+In one-way binding, if we change the data model, then there will be no dynamic change that you will see in the view, but in two-way binding, there will be a dynamic change whenever a change is made in the data model.
+
+Data bindings in AngularJS
+Scenario-Based AngularJS Interview Questions
+Q #19) What are the binding directives in AngularJS?
+
+Answer: The binding directives include:
+
+ng-bind
+ng-bind-html
+ng-bind-template
+ng-non-bindable
+ng-model
+Q #20) Explain ng-bind and ng-bind-html directives.
+
+Answer:
+
+ng-bind: It is a directive that replaces the content of the HTML element with the value of the assigned variable or expression.
+
+The content of the HTML element will change by changing the value of the variable or expression.
+
+It is like ({{expression}}), and the syntax for this is
+
+1
+<ANY ELEMENT ng-bind="expression"> </ANY ELEMENT>
+ng-bind-html: It is a directive that binds the content to the HTML element(view) in a secure way. $sanitize service is used to sanitize the content to bind into an HTML element. To do this, ‘angular-sanitize.js’ must be included in our application.
+
+Syntax to write this,
+
+1
+&lt;ANY ELEMENT ng-bind-html=" expression "> &lt;/ANY ELEMENT>
+Q #21) Explain ng-bind-template and ng-non-bindable.
+
+Answer:
+
+ng-bind-template: It replaces the text content of the element by interpolation of the template. It can contain multiple double curly markups.
+
+1
+&lt;ANY ELEMENT ng-bind-template= " {{expression1}} {{expression2}} … {{expression n}} "> &lt;/ANY ELEMENT>
+Ng-non-bindable: It specifies AngularJS to not compile the content of this HTML element and its child nodes.
+
+1
+&lt;ANY ELEMENT ng-non-bindable > &lt;/ANY ELEMENT>
+Q #22) Explain the ng-model directive in AngularJS.
+
+Answer: This can be a leap hop with the custom HTML input form control( like input, textarea, and select) to the application data. It provides form validation behavior with two-way binding.
+
+1
+&lt;input ng-bind="expression"/>
+Q #23) Define the Factory method in AngularJS.
+
+Answer: It is quite similar to service; factories implement a module pattern in which we use a factory method to generate an object that is used for building models.
+
+In a factory, a method object is returned at the end by creating a new object and adding functions as properties.
+
+Syntax:
+
+1
+module.factory(‘factoryName', function);
+Q #24) What is the ng-repeat directive in AngularJS?
+
+Answer: It renders or iterates over a collection of items and creates DOM elements. It regularly monitors the source of data to re-render a template in response to a change.
+
+Syntax:
+
+1
+2
+3
+4
+5
+6
+&lt;table class="table table-bordered"> 
+      &lt;tr ng-repeat="student stuDetails"> 
+            &lt;td>{{stu.name}} &lt;/td> 
+           &lt;td> {{stu. grade}} &lt;/td> 
+     &lt;/tr> 
+&lt;/table>
+Q #25) What is a controller in AngularJS?
+
+Answer: A controller is a JavaScript function that is bound to the specified scope. Angular instantiates the new controller object and injects the new scope as a dependency.
+
+Controller in AngularJS
+A controller can set up the initial state of the scope object and to add behavior to the object. A controller cannot be used to share code or state across controllers, but instead of an Angular service can be used.
+
+1
+2
+3
+4
+&lt;Any ng-Controller=” expression”> 
+&lt;/Any> 
+&lt;div ng-app="mainApp" ng-controller="SimpleController"> 
+&lt;/div>
+Q #26) What are filters in AngularJS?
+
+Answer: The main work of filters is to modify the data so that it can be merged into an expression or directive by using a pipe character (it is used for applying filters in an angular symbol of a pipe which is (|) or this is the symbol).
+
+A filter formats the value of an expression for a display to the user. They can be used in view templates, controllers, or services, and we can easily create our filter as well. A filter is a module provided by AngularJS. There are nine components of a filter that are provided by it.
+
+Examples: currency, date, filter, JSON, limitTo, etc.
+
+Q #27) What is ng-App directive in AngularJS?
+
+Answer: It is used to define the AngularJs Application. It appoints the root element of the application, and it is kept near the <body> or <html> tag.
+
+We can define any number of ng-app directives inside the HTML document, but only one AngularJS application can be bootstrapped automatically (auto-bootstrapped) and the other applications need to be bootstrapped manually.
+
+Example:
+
+1
+2
+3
+&lt;div ng-app="">
+&lt;p>My first expression: {{157 + 122}} &lt;/p>
+&lt;/div>
+Q #28) What is ng-switch in AngularJS?
+
+Answer: It is used to conditionally exchange the structure of the DOM on a template that is based on a scope-based expression.
+
+This directive lets you show or hide the HTML element depending on the expression.
+
+1
+2
+&lt;element ng-switch="expression">
+&lt;element ng-switch-when="value">&lt;/element>
+Q #29) What is the use of a double-click event in AngularJS?
+
+Answer: It allows you to specify the custom behavior on a double-click event of the mouse on a web page. We can use it (ng-dblclick) as an attribute of the HTML element, like,
+
+1
+2
+3
+&lt;ANY_HTML_ELEMENT ng-dblclick="{expression}"> 
+... 
+&lt;/ANY_HTML_ELEMENT>
+Q #30) What are ng-include and ng-click directives in AngularJs?
+
+Answer:
+
+ng-include helps to include different files on the main page. The ng-include directive includes HTML from an external file.
+
+The included content will be included as child nodes of the specified element. The value of the ng-include attribute can also be an expression, returning a filename.
+
+By default, the included file must be located in the same domain as the document.
+
+1
+&lt;div ng-include="'myFile.htm'">&lt;/div>
+ng-click can be used in scenarios like when you click on a button or when you want to do any operation. It tells AngularJS what to do when an HTML element is clicked.
+
+Example:
+
+1
+&lt;button ng-click="count = count + 1" ng-init="count=0">OK&lt;/button>
+The above code will increase the count variable by one whenever the button is clicked.
+
+Q #31) What is a representational state transfer(REST) in AngularJs?
+
+Answer: REST is an API style that operates over HTTP requests.
+
+The requested URL identifies the data to be operated on, and the HTTP method identifies the operation that is to be performed. REST is a style of API rather than a formal specification, and there is a lot of debate and disagreement about what is and isn’t RESTful, which is a term used to indicate an API that follows the REST style.
+
+AngularJS is flexible about how RESTful web services are consumed.
+
+Q #32) What is the AngularJS Global API?
+
+Answer: It is a combination of global JavaScript functions that is used to perform tasks like comparing objects, iterating objects, and converting data.
+
+There are some common API functions like:
+
+angular. lowercase: It converts a string to a lowercase string.
+angular. uppercase: It converts a string to an uppercase string.
+angular. isString: It will return true if the current reference is a string.
+angular. isNumber: It will return true if the current reference is a number.
+Q #33) What is a provider method in AngularJS?
+
+Answer: A provider is an object that creates a service object by allowing to take more control.
+
+$get() method is used in the provider, which returns the service object. The service name and the factory function are the arguments that are passed into the provider method. AngularJS uses $provide to register new providers.
+
+Syntax:
+
+1
+serviceApp.provider("logService", function ())
+Advanced Level Interview Questions for AngularJS
+Q #34) What is Event Handling?
+
+Answer: Event handling in AngularJS is very useful when you want to create advanced AngularJS applications.
+
+We need to handle DOM events like mouse clicks, moves, keyboard presses, change events, and so on. AngularJS has some listener directives like ng-click, ng-dbl-click, ng-mousedown, ng-keydown, ng-keyup, etc.
+
+Q #35) What is AngularJS DOM?
+
+Answer: AngularJS has some directives that are used to encapsulate AngularJS application data to a disabled attribute of the HTML elements.
+
+Example: ng-disabled directive encapsulates the application data in the disabled attributes of the HTML DOM element.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;div ng-app="" ng-init="mySwitch=true">
+&lt;p>
+&lt;button ng-disabled="mySwitch">Click Me!&lt;/button>
+&lt;/p>
+&lt;p>
+&lt;input type="checkbox" ng-model="mySwitch"/>Button
+&lt;/p>
+&lt;p>
+{{ mySwitch }}
+&lt;/p>
+&lt;/div>
+Q #36) What are the attributes that can be used during the creation of a new AngularJS directive?
+
+Answer: Several attributes can be used during a new directive creation.
+
+They include:
+
+Template: It describes an inline template as a string.
+Template URL: This attribute specifies the AngularJs HTML compiler to replace the custom directive inside a template with the HTML content located inside a separate file.
+Replace: It replaces the current element if the condition is true if false, and appends this directive to the current element.
+Transclude: It allows you to move the original children of a directive to a location inside the new template.
+Scope: It creates a new scope for this directive rather than inheriting the parent scope.
+Controller: It creates a controller that publishes an API for communicating across the directives.
+Require: It requires another directive to be present to function the current directive efficiently.
+Link: It modifies resulting in DOM element instances, adds event listeners, and set up data binding.
+Compile: It modifies the DOM template for features across copies of a directive, as when used in other directives. Your compile function can also return link functions to modify the resulting element instances.
+Q #37) Is Nested Controllers possible or not in AngularJS?
+
+Answer: Yes, it is possible as Nested Controllers are well-defined in a classified manner while using a view.
+
+Q 38) Is AngularJS well-suited for all browsers?
+
+Answer: Yes, it is companionable with all browsers like Safari, Chrome, Mozilla, Opera, IE, etc. as well as mobile browsers.
+
+Q 39) Define services in AngularJS.
+
+Answer: AngularJS services are singleton objects or functions that are used for carrying out definite tasks. It embraces some corporate ideas, and these purposes can be called controllers, directives, filters, and so on.
+
+Q 40) Explain the advantages of AngularJS.
+
+Answer: Advantages include:
+
+It supports MVC form.
+Organize two ways of data binding using AngularJS.
+It supports mutual client-server communication.
+It supports simulations.
+Q #41) Difference between services and factory.
+
+Answer: Factories are functions that return the object, while services are constructor functions of the object, which are used by the new keyword.
+
+Syntax:
+
+Factory – module.factory(`factoryName`, function);
+
+Service – module.service(`serviceName`, function);
+
+Q #42) If both factory and service are equivalent, then when should I use them?
+
+Answer: Factory provider prefers using an object, whereas a service provider prefers using with class.
+
+Q #43) Difference between AngularJS and React.JS.
+
+Answer: AngularJS is a TypeScript language-based JS framework released in October 2010 by Google. It is a completely free framework and open source that is used in SPA projects (i.e. Single Page Application projects).
+
+React.JS is a JavaScript library developed by Facebook in March 2013 for building UI. React components can be used on several pages but not as a SPA (i.e., Single Page Application).
+
+Q #44) Difference between ng-bind and ng-model directive.
+
+Answer: ng-bind directive has one-way data bindings, data flows only from object to UI, not vice versa (i.e., $scope>>view), and ng-model directive has two-way data bindings, data flows between UI to object and vice versa(i.e,. $scope>>view and view>>$scope).
+
+Q #45) What is the difference between AJAX and AngularJS?
+
+Answer: AJAX stands for Asynchronous JavaScript and XML, which is used for sending and getting responses from the server without loading the page.
+
+Whereas AngularJS is a typescript language-based JavaScript framework following the MVC pattern.
+
+Q #46) Define ng-if, ng-show and ng-hide.
+
+Answer: ng-if directive is used as if clause, which removes the HTML element if the expression becomes false.
+
+Syntax
+
+1
+&lt;element ng-if=”expression”>&lt;/element>
+ng-show directive is used to show the HTML element if the expression becomes true. And if the expression becomes false, then the HTML element will be hidden.
+
+Syntax
+
+1
+&lt;element ng-show=”expression”>&lt;/element>
+ng-hide directive is used to hide the HTML element if the expression becomes false.
+
+Syntax
+
+1
+&lt;element ng-hide=”expression”>&lt;/element>
+Both ng-show and ng-hide use the display property method.
+
+Q #47) What is the difference between ngRoute and ui-router?
+
+Answer: ngRoute is a module developed by the AngularJS team, which was a part of the core AngularJS framework. Whereas ui-router was developed by a third-party community to overcome the problems of ngRoute.
+
+ngRoute is a location or URL-based routing, and ui-router is a state-based routing that allows nested views.
+
+Further Reading => Most Popular Full Stack Developer Interview Questions
+
+Q #48) How to set, get and clear cookies in AngularJs?
+
+Answer: AngularJS has a module called ngCookies, so before injecting ngCookies angular-cookies.js should be included in the application.
+
+Set Cookies – Put method is used to set cookies in a key-value format.
+$cookies.put(“username”, $scope.username);
+Get Cookies – Get method is used to get cookies.
+$cookies.get(‘username’);
+Clear Cookies – Remove method is used to remove cookies.
+$cookies.remove(‘username’);
+
+
+Собеседование по Angular: ответы на часто задаваемые вопросы
+14 марта 2023
+1271
+6 мин
+Оглавление
+1. Что такое Angular и чем он отличается от других фреймворков JavaScript?
+2. Как работает привязка данных в Angular?
+3. Что такое директивы в Angular и каковы типы директив?
+Показать ещё
+Источник: Nuances of Programming
+
+Курс SkillFactory Frontend-разработчик PRO. Получите перспективную творческую профессию. Изучите JavaScript и TypeScript. Выполните 13 проектов в портфолио.
+
+Готовы ли вы повысить уровень своих навыков работы с Angular и произвести впечатление на интервьюера? Если да, то вы пришли по адресу! В этой статье будут рассмотрены основные вопросы, которые задают на собеседовании по Angular. Ответы на них с примерами кода и советами от профессионалов помогут успешно пройти собеседование и получить работу мечты.
+
+Независимо от того, новичок вы в Angular или уже имеете опыт, это руководство предоставит знания и ресурсы, необходимые для того, чтобы продемонстрировать вашу компетентность и навыки работы с Angular.
+
+Здесь собраны самые важные вопросы по Angular, задаваемые интервьюерами для проверки как основных, так и продвинутых концепций. Познакомьтесь с ними заранее  —  и подготовка к собеседованию по Angular станет более осознанной.
+
+Итак, сделаем первый шаг к успешному прохождению собеседования по Angular!
+
+Начнем с самых общих вопросов.
+
+1. Что такое Angular и чем он отличается от других фреймворков JavaScript?
+Angular  —  это фреймворк JavaScript для создания веб-приложений. Он представляет собой полную переработку AngularJS, созданного и поддерживаемого компанией Google. В Angular задействуется архитектура на основе компонентов, что позволяет разрабатывать многократно применяемый и модульный код. Он также использует мощный язык шаблонов, двустороннюю привязку данных и внедрение зависимостей, что облегчает создание и поддержку крупномасштабных приложений.
+
+Одним из основных отличий Angular от других JavaScript-фреймворков является его фокус на компоненты, которые являются строительными блоками приложения Angular. Каждый компонент имеет свой шаблон, логику и стили и может быть легко использован повторно во всем приложении. Кроме того, Angular обладает обширным набором встроенных директив и сервисов, что позволяет разработчикам выполнять повседневные задачи с меньшим количеством кода.
+
+Angular также является полнофункциональным фреймворком, который включает в себя такие функции, как маршрутизация, формы и HTTP-сервисы “из коробки”. В других фреймворках эти функции необходимо реализовывать отдельно.
+
+Таким образом, Angular  —  это мощный и полнофункциональный JavaScript-фреймворк для разработки веб-приложений, созданный и поддерживаемый компанией Google. Он использует компонентную архитектуру и предлагает набор встроенных директив и сервисов, облегчая создание и поддержку крупномасштабных приложений.
+
+2. Как работает привязка данных в Angular?
+Привязка данных в Angular позволяет синхронизировать данные между классом компонента и шаблоном. В Angular существует два типа привязки данных.
+
+Привязка свойства позволяет связать свойство элемента DOM со свойством компонента.
+Привязка свойства
+Привязка события позволяет связать событие DOM с методом компонента.
+Привязка события
+3. Что такое директивы в Angular и каковы типы директив?
+Директивы в Angular  —  это маркеры для элементов DOM, которые указывают Angular прикрепить определенное поведение или преобразование к тому или иному элементу DOM. В Angular есть три типа директив.
+
+Компонентные директивы создают и управляют представлением приложения.
+Компонентные директивы
+Структурные директивы изменяют структуру представления путем добавления или удаления элементов.
+Структурные директивы
+Атрибутивные директивы изменяют внешний вид и поведение элемента.
+Атрибутивные директивы
+4. Каков механизм жизненного цикла компонента в Angular?
+У каждого компонента Angular есть свой жизненный цикл, который начинается в момент создания компонента и заканчивается в момент его удаления. Жизненный цикл компонента управляется Angular и разделяется на 8 хуков, которые позволяют запускать логику на определенных этапах. Вот основные хуки.
+
+ngOnChanges: вызывается при изменении входного свойства компонента.
+ngOnInit: вызывается после первого ngOnChanges.
+ngDoCheck: вызывается во время каждого цикла обнаружения изменений.
+ngAfterContentInit: вызывается после инициализации содержимого компонента.
+ngAfterContentChecked: вызывается после каждой проверки содержимого компонента.
+ngAfterViewInit: вызывается после инициализации представлений компонента.
+ngAfterViewChecked: вызывается после каждой проверки представлений компонента.
+ngOnDestroy: вызывается непосредственно перед удалением компонента.
+О хуках жизненного цикла Angular важно знать и помнить не только в процессе собеседования, но и в процессе разработки. Они могут оказаться полезными при решении различных проблем в приложении, в том числе неоднократно повторяющихся.
+
+5. Что такое внедрение зависимостей и как оно используется в Angular?
+Внедрение зависимостей  —  это шаблон проектирования, который позволяет компоненту получать зависимости от отдельного поставщика. Этот шаблон используется в Angular для внедрения сервисов, конвейеров и других зависимостей в компоненты и другие части приложения.
+
+Внедрение зависимостей
+6. Как настроить маршрутизацию в приложении Angular?
+Маршрутизация в Angular позволяет перемещаться между различными компонентами на основе URL. Чтобы настроить маршрутизацию, необходимо импортировать RouterModule и Routes из пакета @angular/router, а также настроить маршруты в отдельном модуле.
+
+Маршрутизация
+7. Что такое сервис в Angular и как он используется?
+Сервис в Angular  —  это класс, содержащий логику, которая может совместно использоваться различными частями приложения. Сервисы обычно используются для инкапсуляции бизнес-логики, доступа к данным и другой функциональности, не связанной с представлением. Посредством внедрения зависимостей сервисы можно внедрять в компоненты, директивы и другие части приложения.
+
+Сервис
+8. Как работать с формами в Angular?
+Angular предоставляет широкие возможности для работы с формами, включая двустороннюю привязку данных, валидацию и обработку ошибок. Создавать формы в Angular можно, применяя шаблонный и реактивный подходы. Шаблонный использует директивы для привязки элементов управления формы к шаблону. Реактивный использует объекты элементов управления формы для управления состоянием формы.
+
+Формы — использование FormGroup
+9. Каковы передовые методы тестирования приложений Angular?
+К передовым методам тестирования приложений Angular относятся следующие.
+
+Использование программ выполнения тестов, таких как Karma и Jest.
+Применение тестового фреймворка для написания тестов, например Jasmine и Mocha.
+Использование внедрения зависимостей для легкой замены реальных сервисов на макеты сервисов во время тестирования.
+Использование для тестирования компонентов, директив и сервисов таких утилит тестирования Angular, как TestBed, async и fakeAsync.
+Использование утилит тестирования Angular, таких как ComponentFixture и DebugElement, для взаимодействия с DOM во время тестирования.
+Использование утилит тестирования Angular, таких как tick и flush, для управления временем асинхронных операций во время тестирования.
+Использование утилит тестирования Angular, таких как By и By.css, для выбора элементов в DOM во время тестирования.
+Тестирование всех аспектов приложения, в том числе компонентов, директив, сервисов, конвейеров и маршрутов.
+Написание тестовых примеров, охватывающих положительные и отрицательные сценарии, а также граничные случаи.
+
+
+Совместное использование интерфейсов между API и внешним интерфейсом
+Вопросы
+ANGULAR
+Совместное использование интерфейсов между API и внешним интерфейсом
+Я развиваю обе стороны. API находится в nest.js, а интерфейс — в Angular. Обе стороны используют машинописный текст, и я столкнулся с проблемой совместного использования интерфейсов, которые должны быть одинаковыми. Например, ILoginRequest и ILoginResponse. Я хочу иметь оба проекта в отдельных репозиториях GIT. Должен ли я использовать подмодуль GIT с 3-м общим репозиторием GIT или каким-то образом создать общий пакет npm, или есть ли какой-нибудь хороший инструмент для автоматической генерации классов (из определения swagger) во внешний интерфейс или что-то еще?
+
+Обновлено: чтобы сгенерировать код для клиента из чванства, посмотрите openapi-генератор
+
+ 01.03.2019 10:12
+7
+1
+5 359
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+Столкнувшись с той же проблемой и рассмотрел несколько альтернатив. Вот что я рассматривал и что выбирал:
+
+Разделение определений сущностей на отдельную базу кода — возможно, в другом репозитории git. Проблема здесь в том, что Nest использует декораторы, которые Angular не понимает. Это означало бы, что мне пришлось бы включать Nest в качестве зависимости, что кажется плохой идеей, или создавать декораторы-заглушки - пустая трата времени. Отклоненный
+Создание пакета узла - те же проблемы, что и № 1. Отклоненный
+Копировать вставить. И внутренний, и внешний проекты имеют папку сущностей. Сущности бэкэнда — это классы, украшенные декораторами TypeORM (для меня). Я копирую их в каталог объектов внешнего интерфейса и преобразовываю в интерфейсы, потому что вы получаете обратно из библиотеки httpclient (объекты, которые должны соответствовать интерфейсу, а не экземпляры классов). Усыновленный
+Наконец, глядя на комментарии, я не вижу, как здесь помогает GraphQL, поскольку вы не пытаетесь использовать существующий интерфейс — хотелось бы услышать об этом от кого-то :)
+
+ 01.03.2019 19:54
+ Ответ принят как подходящий
+ПРИМЕЧАНИЕ. Недавно я наткнулся на typeform-entityshaler, который «может использоваться для создания классов клиент/сервер на основе одних и тех же объектов TypeORM, что позволяет вам делиться ими». Это дает вам больше контроля над тем, чем вы хотите поделиться, вы можете взглянуть на их пример. Я не решил использовать его, потому что я думаю, что это излишество для меня. Однако вот как я структурировал свой последний проект:
+
+I have my frontend and backend in one repository, but I guess you could have them separate, but you would still need to keep them next to each other somehow. The file structure would be something like this:
+workspace
+  ├─backend        <- repo #1
+  │   ├─src
+  │   │   ├─shared <- shared code goes here
+  │   │   └─proxy.ts
+  │   └─tsconfig.json
+  └─frontend       <- repo #2
+      ├─src
+      │   └─proxy.ts
+      └─tsconfig.json
+Затем в backend/tsconfig.json вы представляете
+
+{
+    ...
+    "paths": {
+        "@shared/*": [ "src/shared/*" ],
+    }
+}
+а в frontend/tsconfig.json вы вводите
+
+{
+    ...
+    "paths": {
+        "@shared/*": [ "../backend/src/shared/*" ],
+
+        // if you're using TypeORM, this package has dummy decorators
+        "typeorm": [ "node_modules/typeorm/typeorm-model-shim.js" ]
+        // you can do the same for other packages, point them to dummy paths
+
+        // altirnatively you can route the shared imports through the proxy.ts
+        // and replace them in frontend/src/proxy.ts with dummy ones
+    }
+}
+также не забудьте npm i typeorm в своем интерфейсе.
+
+Пример
+Допустим, у меня есть это в backend/src/shared/user.entity.ts
+
+import { PrimaryGeneratedColumn, Column } from 'typeorm';
+
+export class UserEntity
+{
+    @PrimaryGeneratedColumn() id: number;
+    @Column() name: string;
+    @Column() password: string;
+}
+Теперь я могу использовать его где угодно:
+
+import { UserEntity } from '@shared/model/user.entity';
+В бэкенде это очевидно, а во внешнем интерфейсе @shared/model/user.entity сопоставляется с ../backend/src/shared/model/user.entity, а import from 'typeorm' внутри сущности сопоставляется с фиктивным пакетом.
+
+ 08.08.2019 13:12
+Потратив целый день на то, чтобы заставить это работать, я наткнулся на NX/NRWL.
+
+По сути, это просто CLI с инструментами, помогающими правильно структурировать ваше приложение. Я смог заставить его работать должным образом примерно за час. Общие интерфейсы в монорепозитории — это то, что нужно.
+
+
 Your Ultimate Guide to Angular Interview Success
 Introduction to Angular
 Angular, developed by Google, is a powerful framework designed for building dynamic and high-performance web applications using HTML and TypeScript. Since its launch in 2010, Angular has become a popular choice among developers due to its rich feature set, which includes two-way data binding, dependency injection, and a comprehensive array of development tools. Angular’s modular architecture enhances code reusability and maintainability, while its performance optimizations and strong community support ensure that it remains a top choice for creating scalable and efficient applications. Its clean syntax and robust ecosystem make it an ideal tool for developing modern web applications that meet the demands of today's digital world.
