@@ -1,4 +1,5 @@
-Training in Top Technologies 
+https://www.edureka.co/ 
+
 Career Related Programs 
 Webinars
 EbookNEW
