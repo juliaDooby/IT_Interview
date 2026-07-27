@@ -1,3 +1,488 @@
+Skip to content
+ArtOfTesting
+
+Tools by AoT
+Manual
+Automation
+Performance
+Interview
+Interview
+Linux interview Questions
+Top 50 Linux Interview Questions for Beginners
+Last updated on April 29, 2023
+
+Prepare for a Linux interview with our comprehensive list of top 50 Linux interview questions. These interview questions are specifically designed for freshers and professionals new to Linux OS.
+
+
+Linux Interview Questions
+Ques.1. What is UNIX?
+Ans. UNIX is a multi-user, multi-tasking computer operating system developed at Bell Laboratories by Ken Thompson and Dennis Ritchie. It is proprietary software with its code not available to the general public.
+The different variants of UNIX are HP Unix, Solaris Unix, IBM AIX and BSD.
+
+
+Ques.2. What is Linux?
+Ans. Linux is an open-source UNIX like operating system developed from scratch by Linus Torvalds. Although Linux is actually a different operating system since it is inspired by UNIX, the commands and syntax of UNIX and Linux programs are mostly similar.
+Some of the Linux distributions are Ubuntu, RedHat, Fedora, etc.
+
+Linux Interview Questions
+Linux Interview Questions
+
+Ques.3. What are some basic features of Linux?
+Ans. Some of the features of Linux are-
+
+Multiuser – The multiuser feature of Linux provides it the ability to let multiple users access the same computer resources like memory, application programs, hard disk, etc at the same time.
+Multitasking – Multitasking allows multiple applications or programs to run simultaneously.
+Security – Linux provides security features by authentication(username-password for users), authorization(by providing read-write-execute permissions to different files), encryption(by encrypting files so that only the rightful owner can see the original content of the files).
+Portable – Linux supports portability with the ability of the OS to get installed on different hardware platforms.
+Open source – It is open-source with its code available to the general public.
+
+
+Ques.4. What is the difference between UNIX and Linux?
+Ans.
+
+#	UNIX	Linux
+1.	UNIX is a proprietary operating system.	Linux is an open-source operating system.
+2.	Different vendors of UNIX operating system has a different cost of the distributions.	Most of the distributions of Linux are free distributed but also have paid distributions.
+3.	Distributions – HP Unix, Solaris Unix, IBM AIX and BSD etc.	Distributions – Fedora, Ubuntu, Debian, Linux Mint, RedHat, etc.
+4.	It primarily uses the CLI – Command Line Interface.	It provides both Graphical User Interface and Command Line Interface.
+
+
+Ques.5. What is a Linux Loader or LILO?
+Ans. Linux loader or LILO is a boot loader for Linux that loads the operating system into memory. Nowadays, it is considered more of a legacy application superseded by GRUB(Grand Unified Boot loader) and GRUB2 bootloaders.
+
+
+Ques.6. What is Shell?
+Ans. A shell is a program that acts as an interface between the user and operating system, allowing the user to execute commands e.g. Bourne shell(sh), bash(Bourne Again Shell), etc.
+
+Linux Interview Questions
+Linux Interview Questions
+
+Ques.7. What is a swap space? What are its advantages?
+Ans. Swap space is a piece of hard disk storage that is used when the system needs more memory but the RAM is full. In such cases, the inactive memory pages are moved to swap space to free RAM.
+
+
+Ques.8. What is a process in Linux?
+Ans. A process is an instance of a program under execution. In Linux, there are two kinds of processes-
+
+Foreground processes – A foreground process when initiated by a user runs in the foreground and the user has to wait for it to get completed before issuing any other command e.g. running any command on the terminal.
+Background processes – A background process runs on the background and the user can execute other commands also even before the background process gets executed completely. Adding ‘&’ after any command makes it a background process. Also, a background process can be brought to the foreground using ‘fg’ command with jobId of the background job.
+
+Ques.9. How can we list all the processes running on a machine?
+Ans. Using Top utility, we can list all the running processes. Running ‘top’, lists important attributes of the process like PID(process id), user/userId, parent process id, virtual memory used, physical memory used, process status, CPU utilization, process start time, command initiating the process, etc.
+
+
+Ques.10. How can we stop or terminate a running process in Linux?
+Ans. Kill command is used to terminate a running process in Linux. There are two variants of killing a process-
+
+Kill PId – This will generate a signal SIGTERM, specifying graceful termination of the process with process id – PId
+Kill -9 PId – This will generate a signal SIGKILL specifying forceful termination of the process with process id – PId
+
+
+Ques.11. What is the use of ‘ps’ command? How is it different from the top command?
+Ans. Ps stands for Process Status. It gives information about the running processes.
+
+#To display information about the process with PId - 12
+ps -p 12
+#To display all process
+ps -ef
+It is different from top command in the sense that top displays continuous interactive usage of the processes in real-time. Whereas, ps displays a single snapshot of the processes and is more likely to be used for non-interactive usage in scripts.
+
+
+Ques.12. What is a daemon?
+Ans. Daemons are the processes that run in background either at a predefined time or in the event of a trigger. As a convention, daemon names in Linux end with the letter – ‘d’.
+
+
+Ques.13. What is the use of man command?
+Ans. The man command is used to know the usage of a command, config file or daemon using the man pages or user manual. Usage-
+
+man ls
+Output – Displays the manual page for ls command.
+
+
+Ques.14. How to print the current working directory in Linux?
+Ans. Pwd command is used to display the current directory (Print Working Directory)-
+
+$ pwd
+/c/Users/Kuldeep
+
+
+Ques.15. How to create a directory in Linux and give full permission to it?
+Ans. Using mkdir, we can create a directory and then with chmod we can give permissions.
+
+mkdir directoryName
+chmod 777 directoryName
+Alternatively, we can also use ‘-m’ or mode option of ‘mkdir’ command and perform the operation in single command-
+
+mkdir -m 777 directoryName
+
+
+Ques.16. How to delete a non-empty directory?
+Ans. On trying to delete a non-empty directory with ‘rmdir directoryName’ command, we will get an error – “rmdir: failed to remove ‘newFolder’: Directory not empty”.
+For removing a non-empty directory, we need to use the ‘-r’ option of ‘rm’ command that recursively deletes the directory and its contents.
+
+rm -r directoryName
+
+
+Ques.17. How to change directory in Linux? How to move to the parent directory, home directory, and previous directory?
+Ans. Using cd command, we can change the directory in Linux. Usage-
+
+cd directoryName
+Move to the parent directory or one level up-
+
+cd ..
+Move to user’s home directory-
+
+cd
+Or
+
+cd ~
+Move to the previous directory-
+
+cd -
+
+
+Ques.18. What is a root directory?
+Ans. Linux follows a hierarchical or tree-based file system. The root directory is the parent directory of the hierarchy that includes all the other directories. It is represented by a forward slash ‘/’.
+
+
+Ques.19. What are absolute and relative paths?
+Ans. Absolute path – Absolute path is the path of a file or directory from the root directory i.e. from ‘/’.
+Relative path – Relative path is the path of a file or directory from the present working directory.
+
+
+Ques.20. How to login as a different user in Linux?
+Ans. ‘Su’ command is used to login as a different user in Linux. It stands for substitute user or switches user.
+
+#Switch to user2
+su user2
+Password:
+#Switch to root
+su root
+Password:
+
+
+Ques.21. What is the root account?
+Ans. The root account is the account or a user that has access to each file and directory in Linux. The root account is also known as the superuser. A root user can also have access to run any command including adding users, grant or revoke permissions, etc.
+
+
+Ques.22. What are the different file ownerships in Linux?
+Ans. Each file and directory in Linux can have following 3 owners-
+
+User – The user or owner permission class belongs to the user who created the file.
+Group – The group permission class belongs to the members of the file’s group.
+Other – User or other permission class refers to each user who has access to the file.
+
+
+Ques.23. Explain the usage of ‘ls -ltr’ command?
+Ans. ‘ls’ command is used to list the directory contents. The options ‘-ltr’ stands for-
+‘l’ – Use long listing format
+‘t’ – Sort by modification time, newest first
+‘r’ – Reverse order while sorting
+So, ‘ls -ltr’ will list the content of the directory in a long listing format sorted oldest first.
+
+$ ls
+ebooks.zip  imp.txt  Linux.png
+$ ls -ltr
+total 5072
+-rw-r--r-- 1 Kuldeep 197121 5170843 Mar 30  2017 ebooks.zip
+-rw-r--r-- 1 Kuldeep 197121    8695 Oct 28 14:06 Linux.png
+-rw-r--r-- 1 Kuldeep 197121    6883 Dec 28 19:37 imp.txt
+
+
+Ques.24. What is the significance of file extensions like .txt, .png, etc in Linux?
+Ans. Unlike Windows, file extensions have no significance in Linux. Linux does not rely on the file extensions instead the file type is determined by some content in the file header.
+
+
+Ques.25. Explain the usage of ‘file’ utility.
+Ans. The file utility is used to determine the file type of a file.
+
+$ file imp.txt
+imp.txt: ASCII text, with very long lines, with CRLF line terminator
+$ file Linux.png
+Linux.png: PNG image data, 521 x 177, 8-bit colormap, non-interlaced
+
+
+Ques.26. What is the purpose of the ‘touch’ command?
+Ans. Touch command serves two purposes in Linux-
+
+With a new file name, touch is used to create an empty file .touch newFile
+For existing files or directories, touch will change the last access time to the current time.
+
+
+Ques.27. What is the difference between ‘cp’ and ‘mv’ command?
+Ans. The ‘cp’ command is used to copy the content of one file to another. Whereas, ‘mv’ command moves a file from one location to another, deleting the source file. ‘mv’ command is also used for renaming files. Usage-
+
+#Copies content of file1 to file2
+cp file1 file2
+#Moves/renames file1 to file2
+mv file1 file2
+
+
+Ques.28. Explain the usage of ‘head’ and ‘tail’ commands.
+Ans. Head command is used to display the first few lines(default 10) of a file. Whereas, the tail is used to display the last few lines(default 10) of a file. Usage-
+
+#Display first 10 lines of a file
+head fileA
+#Display first 5 lines of a file
+head -5 fileA
+#Display last 10 lines of a file
+tail fileA
+#Display last 5 lines of a file
+tail -5 fileA
+
+
+Ques.29. What is ‘sed’ in Linux?
+Ans. Sed stands for Stream Editor. It is used to edit a file or input from a pipeline. Example-
+
+#Prints first 5 lines
+sed -n 1,5p fileA.txt
+
+
+Ques.30. How to print the content of line 5 to 10 from one file to another?
+Ans. Using ‘sed’
+
+#'p' to print and '-n' to not print each line
+sed -n 5,10p fileA.txt > fileB.txt
+
+
+Ques.31. What is ‘awk’?
+Ans. AWK named after the initials of its authors “Aho, Weinberger, and Kernighan”, is an interpreted programming language for text processing. Usage-
+
+#To display the content of file using awk
+awk '{print}' fileA.txt
+
+
+Ques.32. How to count the number of words, lines, and characters in a file?
+Ans. Using wc command (word count)-
+
+#Number of characters
+wc -m fileA.txt
+#Number of words
+wc -w fileA.txt
+#Number of lines
+wc -l fileA.txt
+
+
+Ques.33. How to combine the content of multiple files into a single file?
+Ans. Using ‘cat’ and redirection-
+
+#merging content of fileA and fileB into mergedFile
+cat file1 file2 > mergedFile
+
+
+Ques.34. What is the use of ‘tac’ command?
+Ans. Tac command as the name suggests is the reverse of ‘cat’ command. It displays the content of the file in reverse order – line by line, displaying the last line first and moving up till the first line.
+
+#Displays the content of fileA from the bottom line to top line
+tac file!
+
+
+Ques.35. What is the difference between ‘more’ and ‘less’ command?
+Ans. Both more and less commands are used for viewing large files page wise. Unlike any editor like vi, using these commands for opening a file does not load the whole file in memory. One limitation of more command is, we can only scroll down but not up. Whereas, using less command, we can scroll both upwards and downwards in a file.
+
+
+Ques.36. How can we find the top 3 space-consuming files or directories within a directory?
+Ans. Using du(disk usage) command, we can find the disk usage of all directories and sub-directories. Using du with -a option, will list the disk usage of all files as well, along with the directories. The ‘-h’ option displays the size in a human-readable form. Later, we can use this command along with sort and head command, to first sort the files/directories by size and then fetch the required number of files.
+
+#Sorts the files and directories within artOfTesting directory by size
+du -h -a artOfTesting/ | sort -n -r | head -n 3
+
+
+Ques.37. How to create aliases in Linux?
+Ans. Aliases are used to create aliases or some abbreviated short-name for a command or a group of commands.
+
+#Alias for some log directory
+alias logs="cd /user/application/logs"
+
+
+Ques.38. What is the use of shred utility? How it is different from the rm command?
+Ans. Shred utility is used for deleting the content of a file in such a way that the content cannot be recovered using some data recovery tools/utilities. Whereas, when we delete a file using the rm command, the space taken by the file is marked available for other files, hence there is a possibility to recover the content of the file. Thus, shred is better for deleting files with sensitive data.
+
+#Overwrites the content of the file to make it impossible to recover
+shred file1
+
+
+Ques.39. What is the difference between find and locate command?
+Ans. Both find and locate commands that are used for searching files on Linux. The ‘find’ command searches file in real-time and thus take a longer time to return the search result in case there are too many files to scan through. Whereas, ‘locate’ command is much faster than find as instead of real-time search it looks up in a database – updatedb. Since the updatedb takes a snapshot of the file system only once a day output of locate is not always accurate or updated.
+
+#Find all text files
+find / *.txt
+#Find all text files
+locate "*.txt"
+
+
+Ques.40. How can we introduce wait time in scripts?
+Ans. Sleep command can be used to introduce wait time in scripts. We can specify wait in terms of seconds, minutes, hours and days.
+
+#Wait for 5 seconds
+sleep 5s
+#Wait for 5 minutes
+sleep 5m
+#Wait for 5 hours
+sleep 5h
+#Wait for 5 days
+sleep 5d
+
+
+Ques.41. How to compress and decompress files in Linux?
+Ans. Using ‘zip’ and ‘unzip’ commands, we can compress and decompress files in Linux.
+
+#Creates a file zipFile.zip with fileA and fileB compressed
+zip zipFile fileA fileB
+#Unzips zipFile.zip
+unzip zipFile.zip
+
+
+Ques.42. What are the different file permissions or access modes in Linux?
+Ans. Each file and directory in Linux can have following 3 permissions, represented by a three-digit octal number-
+
+Read – Provides the ability to read the content of a file (represented by ‘r’ in first position – “r–“)
+Write – Provides the ability to edit or delete the content of a file (represented by ‘r’ in second position – “-w-“)
+Execute – Provides the ability to execute or run a file (represented by ‘x’ in third position – “–x”)
+
+
+Ques.43. Explain the meaning of the permission mode “drwxr-x–x”.
+Ans. The 10 characters of permission mode provide information about the permission to the user, group, and other users.
+
+1st character indicates whether the given thing is file or directory, ‘-‘ for file and ‘d’ for the directory.
+Next 3 characters indicate the read-write-execute permission to the user or owner of the file.
+Next 3 characters indicate the read-write-execute permission to the group belonging to the file.
+Last 3 characters indicate the read-write-execute permission to all the other users.
+So, the permission mode “drwxr-xr-x”, means a directory for which the user has all the read-write-execute permission, group has read and execute permission and other users can only execute the file.
+
+
+Ques.44. How can we grant or remove access to a file in Linux?
+Ans. The ‘chmod’ command is used to grant permission to a file or directory in Linux. There are two modes to grant or remove permission using chmod-
+
+Symbolic mode – With symbolic mode we can grant permission to a file using ‘+’ operator, remove permission using ‘-‘ operator, and set the required permission using ‘=’ operator.#Add read and execute permission to group chmod g+rx fileA #Remove execute permission to owner chmod u-x fileA #Set write and execute permission to other users chmod o = wx fileA
+Absolute mode – With absolute mode, an octal number a used to specify different permissions.#751 will grant permission 7 to owner, 5 to group and 1 to other users chmod 751 fileA
+
+Ques.45. Explain the octal number representation for different permission types in Linux.
+Ans. The absolute permission of chmod uses an octal number. The different octal numbers for different permission types are-
+
+Octal number	Permission granted
+0	No permission (—) i.e. 0+0+0=0
+1	Execute (–x) i.e. 0+0+1=1
+2	Write (-w-) i.e. 0+2+0=2
+3	Write and execute (-wx) i.e. 0+2+1=3
+4	Read (r–) i.e. 4+0+0=4
+5	Read and execute (r-x) i.e. 4+0+1=5
+6	Read and write (rw-) i.e. 4+2+0=6
+7	Read, write and execute (rwx) i.e. 4+2+1=7
+
+
+Ques.46. How can we change ownership and group ownership of a file in Linux?
+Ans. The ‘chown’ command (change owner) is used to change the ownership of a file.
+
+chown userK fileA
+The ‘chgrp’ command is used to change the group ownership of a file.
+
+chgrp group fileA
+
+
+Ques.47. How to sort the contents of a file?
+Ans. Sort command can be used to sort the elements of a file line-wise.
+
+#File content - kuldeep, abc, 1India, zed each in separate line 
+sort file
+Output-
+
+1India
+abc
+kuldeep
+zed
+
+
+Ques.48. How can we remove the duplicates in a file?
+Ans. Using ‘uniq’ utility with ‘sort’ command.
+
+#File content - bat, all, cat, cat, all, cat each in separate line 
+sort fileWithDuplicateContent | uniq
+Output-
+
+all
+bat
+cat
+
+
+Ques.49. What are soft links in Linux? What is its advantage over the cp command?
+Ans. Soft links are also known as symbolic links or symlinks. These are used to create symbolic links or pointers to a file. In Linux, soft links are created using the ‘ln’ command with the ‘-s’ option.
+
+#Creates a soft link 'fileA' to the file 'fileA.txt'
+#'-s' option to create a soft link
+ln -s fileA.txt fileA
+It has got an advantage over the cp command (which creates a new copy of the file) in the sense that in order to change the permission to the files, with links only the permission of the original file need to be changed. Whereas, with the cp command, the permission to all the copies of the file needs to be changed.
+
+
+Ques.50. What are the hard links in Linux? How it is different from a soft link?
+Ans. Hard links are like another name for an existing file. Instead of pointing to a name(like a soft link), hard links point to the content of the file directly(point to inode – a table containing metadata about a file).
+
+#Creates a hard link 'fileA' to the file 'fileA.txt'
+ln fileA.txt fileA
+It is different from a soft link in the sense that in case the original files get deleted its symbolic link will not point to anything and thus lead to “No such file or directory” error. Whereas, the hard link will still point to the content of the original file even if the file gets deleted.
+
+#Create hard-link to file1
+ln file1 hardF1
+#Create soft-link to file1
+ln file1 softF1
+#Delete original file
+rm file1
+#Check content of the hard link - hardF1
+cat hardF1
+#output -> valid content
+#Check content of the soft link - softF1
+cat softF1
+#output -> "No such file or directory"
+Also, Check – Top 100 Core Java Interview Questions.
+
+This completes our article on top Linux interview questions for beginners. I hope these questions will help you in your interviews.
+
+Top RDBMS Interview Questions | DBMS Viva Questions
+Katalon Studio Tutorial
+Leave a Comment
+Comment
+
+Name
+Name *
+Email
+Email *
+Website
+Website
+
+Save my name, email, and website in this browser for the next time I comment.
+
+
+Photo of author
+Kuldeep Rana
+Kuldeep is the founder and lead author of ArtOfTesting. He is skilled in test automation, performance testing, big data, and CI-CD. He brings his decade of experience to his current role where he is dedicated to educating the QA professionals.
+  
+Trending Articles
+
+Selenium tutorial
+JMeter tutorial
+Manual testing tutorial
+Java for testers
+SQL for testers
+Test cases asked in Interviews
+Selenium interview questions
+Core java interview questions
+TestNG interview questions
+Manual testing interview questions
+SQL queries asked in interviews
+SQL Joins interview questions
+DBMS interview questions
+JMeter interview questions
+API Testing interview questions
+Agile interview questions
+Linux interview questions
+  
+About Us
+Contact Us
+Disclaimer
+Terms of Service
+Privacy Policy
+© 2024 ArtOfTesting
+   
 
 
 Тарифные планы
