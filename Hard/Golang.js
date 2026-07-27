@@ -1,3 +1,283 @@
+Skip to content
+Godocs
+Home
+About Us
+Contact Us
+Privacy Policy
+Golang Interview questions
+By Arkaprabha Majumdar / September 11, 2020
+Golang Interview Questions
+If you’re going for a career in Go, then there are a few essential fundamentals that are regularly asked in Golang interviews. Here I bring you some of the more conceptual Golang interview questions and their appropriate answers. So read on.
+
+1. So I see that you are interested in Go. Can you explain to me what it is, and why I would need to Go?
+Yes, I am highly interested in Golang, and I think large companies should be excited about this language. It is a programming language made by Google and released as Open Source a decade ago, that has been specifically designed for scaling businesses. It has inbuilt concurrency support, which means your applications run on multiple cores by default – reducing time and resources, esp. if you’re a huge company with millions of application requests per hour.
+
+2. What is the meaning of this concurrency? Can you explain with an example?
+In Golang, every analogy uses a Gopher, which is like a small rabbit. So let me try to use the same. Consider there are two bookshelves on either side of a big room, and there is one gopher with a trolley who has to shift the books from one shelf to the other in order. He cannot just throw the books. So he’ll take some x amount of time. Now if we increase the number of gophers to two, then we have a linear decrease in the time since one gopher will almost always be alternating taking a book trolley.
+
+We can optimize this setup further. We could increase one gopher and create a designated pile in the middle. One gopher would bring the books from one shelf to the middle, the second gopher will stack it in order and the third will bring the books from the middle stack to the other bookshelf. It may seem like we’re using more gophers, so more resources. But that’s not it. Goroutines (the analogy for these gophers) are actually very cheap. 10000 Goroutines run within 8 seconds.
+
+3. Does Go support Object Oriented Programming?
+Even though Go is Object Oriented, there are no specific keywords like Class, extends, implements, or similar. In Go, every data type is equal, i.e, we can define methods on any data type. We have a struct type, which is a list of fields and can be considered closest to a class.
+
+4. What is the package system in Go like? And how do you like the syntax compared to Python or Java?
+Go’s packages are essential to any Go program. We always start with package main and then import any packages that we may need with the keyword import. There are packages for everything – printing, opening and reading files, performing math operations, etc. Also regarding the syntax, as you point out, we have to define the complete path to a package to use it. This avoids confusion. Also, the Go language is statically typed, so it has much faster compile times than a language like Python.
+
+5. What is the meaning of static typing, as you mentioned? Is it the same as interpreted language?
+A statically typed language like Go wouldn’t allow its users to change data types for a variable that has been defined. For example, you cannot pass a variable of int32 into a function that accepts int64. Go is also NOT an interpreted language, which means we have to define the datatype of each variable, otherwise, there will be an error. Compared to this, Python is a dynamically typed and interpreted language, which means at runtime, it does several tasks internally that it uses to “figure out” the various data types. Go never does this.
+
+6. Don’t you think this is a disadvantage?
+No, it is not a disadvantage if we think about the extra time taken by Python to do these tasks. While it may be negligible for 1-2 variables, the difference in times for Go and Python for larger programs is a lot more significant.
+
+7. Very well. Can you tell me what are the built-in support in Go?
+Yes, Go has built-in support for a lot of important tasks that are required by companies. Some of them are:
+
+Container: container/heap, container/list
+Web Server: net/http
+Cryptography: Crypto/md5 ,crypto/sha1
+Compression: compress/ gzip
+Database: database/sql
+These packages have been optimized by a global community of dedicated Go developers, using Goroutines for multithreading.
+
+8. What is multithreading? Is it the same as parallelism?
+Concurrency is when two tasks can start, run, and complete in overlapping time periods. Parallelism is when tasks literally run at the same time, eg. on a multi-core processor.
+Concurrency is the composition of independently executing processes, while parallelism is the simultaneous execution of (possibly related) computations.
+Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.
+An application can be concurrent – but not parallel, which means that it processes more than one task at the same time, but no two tasks are executing at the same time instant.
+An application can be parallel – but not concurrent, which means that it processes multiple sub-tasks of a task in a multi-core CPU at the same time.
+An application can be neither parallel – nor concurrent, which means that it processes all tasks one at a time, sequentially.
+An application can be both parallel – and concurrent, which means that it processes multiple tasks concurrently in a multi-core CPU at the same time.
+9. What about testing? Can we perform testing in Go?
+Yes, there is a testing framework that comprises the go test command and the testing package.
+In order to write a test, you are required to create a file whose name ends with _testing. Go contains the function named TestXXX with the signature func(t*testing.T).
+
+10. What are pointers in Go used for?
+Pointers are variables that hold the address of any variable. Pointers in Go are also called special variables. There are two operators in pointers they are
+
+* operator which is also called a de-referencing operator used to access the value in the address
+& operator which is also called an address operator is utilized to return the address of the variable
+11. What is the difference between a pointer and a reference in Go?
+In Go, a pointer is a type that holds the memory address of another value. Pointers can be used to point to values of any type, and they are commonly used when working with complex data structures or when you want to modify a value in a function.
+
+A reference, on the other hand, is a way of “referring” to the same value as another variable. In Go, references are created using the & operator, which returns the memory address of a value. Once a reference has been created, you can use the * operator to access the value that the reference points to.
+
+One key difference between pointers and references is that pointers can be assigned the nil value, which means they do not point to any value. References, on the other hand, must always be associated with a value.
+
+Another difference is that pointers allow you to directly manipulate the value that they point to, whereas references only allow you to access the value indirectly. This means that you can use pointers to change the value of a variable, but you cannot do this with a reference.
+
+Overall, pointers and references serve similar purposes in Go, but they have some important differences that you should be aware of when deciding which one to use in your code.
+
+12. How do you declare a function in Go?
+In Go, you declare a function using the func keyword, followed by the name of the function, a list of zero or more parameters, and the return type of the function. Here is an example of a function named Add that takes two int values as parameters and returns the sum of those values as an int:
+
+1
+2
+3
+func Add(x int, y int) int {
+    return x + y
+}
+In this example, the Add function takes two parameters, x and y, which are both of type int. The function returns the sum of these values, which is also an int value.
+
+If a function does not return a value, you can use the void keyword in place of the return type. Here is an example of a function that does not return a value:
+
+1
+2
+3
+func PrintMessage(message string) void {
+    fmt.Println(message)
+}
+In this example, the PrintMessage function takes a single string parameter and does not return a value. It simply prints the message to the console using the fmt.Println function.
+
+13. What is the syntax for creating a new goroutine in Go?
+In Go, you can create a new goroutine by using the go keyword followed by a function call. Here’s an example:
+
+1
+go myFunction(arg1, arg2)
+This will create a new goroutine that will run the myFunction function concurrently with the main program. The go keyword is a special keyword in Go that tells the compiler to create a new goroutine and run the following function call in that goroutine.
+
+Keep in mind that when you create a new goroutine, it will start executing immediately, but the main program will continue to run without waiting for the goroutine to complete. This means that you need to use channels or other synchronization mechanisms to communicate with and coordinate the execution of goroutines.
+
+For more information on goroutines and how to use them in Go, I recommend reading the documentation on concurrency in the Go language: https://golang.org/doc/effective_go.html#concurrency.
+
+14. How do you pass arguments to a goroutine in Go?
+To pass arguments to a goroutine in Go, you simply include the arguments in the function call that you use to create the goroutine. For example, if you have a function called myFunction that takes two arguments, arg1 and arg2, you can create a new goroutine and pass these arguments to the function like this:
+
+1
+go myFunction(arg1, arg2)
+This will create a new goroutine that will run the myFunction function concurrently with the main program, and the function will receive the arg1 and arg2 arguments when it is called.
+
+Keep in mind that when passing arguments to a goroutine, you need to be careful about concurrent access to shared data. If multiple goroutines are accessing and modifying the same data concurrently, you need to use synchronization mechanisms like mutexes to prevent race conditions and other synchronization issues.
+
+For more information on how to pass arguments to goroutines and how to use them in Go, I recommend reading the documentation on concurrency in the Go language: https://golang.org/doc/effective_go.html#concurrency.
+
+15. How do you create and use a channel in Go?
+In Go, channels are a way to communicate between goroutines and synchronize their execution. You can create a new channel using the make function, like this:
+
+1
+myChannel := make(chan int)
+This creates a new channel that can be used to send and receive int values. The type of the channel is specified between the make function’s parentheses. You can use channels to send and receive other types as well, such as strings, structs, or pointers.
+
+Once you have created a channel, you can use the <- operator to send and receive values through the channel. Here’s an example of how to send a value through a channel:
+
+1
+myChannel <- 5
+This will send the value 5 through the myChannel channel. To receive a value from a channel, you can use a similar syntax:
+
+1
+value := <- myChannel
+This will receive a value from the myChannel channel and store it in the value variable.
+
+When using channels, it’s important to note that the <- operator is used in different ways depending on whether you’re using it to send or receive a value. When used in the channel <- value form, it sends the value to the channel. When used in the value := <- channel form, it receives a value from the channel and assigns it to the value variable.
+
+For more information on channels and how to use them in Go, I recommend reading the documentation on channels in the Go language: https://golang.org/doc/effective_go.html#channels.
+
+16. What is the difference between a buffered and unbuffered channel in Go?
+In Go, the difference between a buffered and unbuffered channel is the way that they handle the sending and receiving of values.
+
+An unbuffered channel is a channel that doesn’t have a fixed buffer size, which means that a goroutine can only send a value to the channel if there is another goroutine ready to receive the value from the channel. This means that unbuffered channels provide a way for goroutines to synchronize their execution and communicate with each other in a very precise way.
+
+On the other hand, a buffered channel is a channel that has a fixed buffer size, which means that it can hold a certain number of values without a goroutine being ready to receive them. This means that a goroutine can send a value to a buffered channel without having to wait for another goroutine to receive the value from the channel. This can be useful for improving the performance and efficiency of concurrent programs.
+
+In general, unbuffered channels are used for synchronizing the execution of goroutines and communicating between them, while buffered channels are used for improving the performance and efficiency of concurrent programs.
+
+For more information on the differences between buffered and unbuffered channels in Go, I recommend reading the documentation on channels in the Go language: https://golang.org/doc/effective_go.html#channels.
+
+17. What is the purpose of the defer keyword in Go?
+In Go, the defer keyword is used to ensure that a function is called later in the execution of a program, even if the function is called from inside a nested function or a function that has multiple return points.
+
+For example, imagine you have a function that opens a file and then does some processing on the file’s contents. After the processing is done, you need to close the file to release any resources that it was using. However, if there are multiple return points in the function, or if the function calls other functions that may return early, it can be difficult to remember to close the file at the right time.
+
+In this case, you can use the defer keyword to ensure that the file is always closed after it has been opened, regardless of how the function is exited. Here’s an example of how you might use defer in this case:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+func processFile(filename string) {
+  file, err := os.Open(filename)
+  if err != nil {
+    // Handle the error
+    return
+  }
+  defer file.Close()
+ 
+  // Do some processing on the file's contents
+}
+In this example, the defer file.Close() statement ensures that the file.Close() function is called after the file variable has been assigned a value, regardless of how the processFile function is exited. This means that the file will always be closed after it has been opened, even if the function returns early due to an error.
+
+The defer keyword is often used to ensure that resources like files, network connections, and locks are always cleaned up correctly, even if the function that opened them returns early or panics.
+
+For more information on the defer keyword and how to use it in Go, I recommend reading the documentation on defer in the Go language: https://golang.org/doc/effective_go.html#defer.
+
+18. How do you handle errors in Go?
+In Go, errors are represented using the error type, which is a built-in interface. To handle errors, you can use the if statement to check whether an operation has returned an error, and respond accordingly. Here’s an example:
+
+1
+2
+3
+4
+_, err := someFunction()
+if err != nil {
+    // handle the error here
+}
+In the example above, the if statement checks whether the variable err is equal to nil. If it is not nil, then it means that an error has occurred and we can handle it in the code block that follows.
+
+19. What is the difference between a package and a module in Go?
+In Go, a package is a collection of related Go source files that are used to organize and share code. Packages are imported using the import keyword and can be used in the source code of a Go program to access the functions, types, and variables defined in the package.
+
+A module, on the other hand, is a unit of code distribution and versioning. Modules are a relatively new feature in Go, and they provide a way to manage dependencies, integrate with build tools, and publish and share packages. Modules are defined using a go.mod file, which specifies the module’s path and the versions of the dependencies that it requires.
+
+In short, a package is a collection of Go source files, while a module is a unit of code distribution and versioning. The two concepts are related, but they serve different purposes.
+
+20. How do you perform unit testing in Go?
+In Go, you can use the testing package to perform unit testing. The testing package provides support for writing and running tests, as well as for reporting the results of those tests.
+
+To write a test, you need to create a file with a name that ends in _test.go, and define a test function within that file. A test function takes the form:
+
+1
+2
+3
+func TestXXX(t *testing.T) {
+    // test code goes here
+}
+The TestXXX function must begin with the word Test, followed by an identifier that describes the test. The t parameter is a pointer to the testing.T struct, which provides methods for reporting the status of the test.
+
+To run a test, you can use the go test command in the terminal. This command will run all the tests in the current package, and print the results to the terminal.
+
+Here’s an example of a simple test function:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+func TestSum(t *testing.T) {
+    x := 1
+    y := 2
+    expected := 3
+ 
+    result := sum(x, y)
+    if result != expected {
+        t.Errorf("Expected %d, got %d", expected, result)
+    }
+}
+In this example, the TestSum function tests the sum function by calling it with the input x and y, and checking whether the result is equal to the expected value. If the result is not equal to the expected value, then the test function calls the Errorf method on the testing.T struct to report the error.
+
+To run this test, you would use the go test command in the terminal, from the directory that contains the _test.go file. The output of the go test command would look something like this:
+
+1
+2
+3
+4
+5
+6
+$ go test
+--- FAIL: TestSum (0.00s)
+    _test.go:10: Expected 3, got 4
+FAIL
+exit status 1
+FAIL    example.com/package 0.003s
+In this output, we can see that the TestSum test has failed, and the Errorf method has printed the expected and actual values.
+
+There are many more features and options available in the testing package, and I would encourage you to read the package documentation for more information.
+
+Other things you should know
+Even, though these questions above are more of the broad conceptual questions, there are several technical questions that can be asked in an interview – for example, on the various data types, how arrays are created, the difference between the various print functions, what are ASTs and how to parse them, what are array slices, etc.
+
+← Previous Post
+Next Post →
+Search for:
+Search...
+Recent Posts
+How to Install Go on a VPS Server
+Why More Companies Choose to Hire Golang Developer in 2025
+Anti-Cheat Technology Creates Privacy Concerns Beyond Gaming Applications
+Why and How to Effectively Limit Screen Time
+Resizing Images with JavaScript: A Complete Guide
+How Much Does it Cost to Build a Python Application?
+3 Things that Will Make Your Website Stand Out
+Worker Pool in Go
+New Features in Go 1.22
+Explore Cutting-Edge Forex Robots: Enhancing Trading Efficiency in Global Markets
+Favorite Sites
+Python Tutorials
+CodeForGeek
+Linux Tutorials
+MySQL Tutorials
+VM-Help
+Copyright © 2026 · Golang Docs · GoLangDocs is part of JournalDev IT Services Private Limited
+
 
 Главная
 Блог
