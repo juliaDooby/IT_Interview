@@ -1,3 +1,1760 @@
+Skip to content
+ 
+Software Testing Help
+
+Home
+Resources
+FREE eBooks
+QA Testing
+Automation
+Types Of Testing
+Tutorials
+Data Tools
+More Tutorials
+Top 20 Java Interview Programs for Coding with Answers
+By Sruthy  Updated March 31, 2026
+Here is the list of basic Java interview programs with actual code examples that are commonly asked in Java programming and Coding Interviews for freshers as well as experienced individuals.
+
+When preparing for a Java interview, it is always a daunting task, as most companies expect individuals to solve practical coding problems. Whether you are preparing to attend a Java interview, a QA interview, an automation testing interview, or a Selenium interview, practising the right questions is essential.
+
+To make life easier for individuals preparing to attend a Java interview, we have compiled a list of basic Java programs, string programs, and common Java programs that automation testers should know. These Java programs can help both freshers and experienced individuals to solve problems confidently and clear the interview.
+
+Quick Quiz on Java Interview Programs for Beginners
+Challenge yourself with this Java Programs for Interview quiz, designed for beginner candidates preparing for a Java programming interview.
+
+Test your knowledge of Java fundamentals, algorithms, data structures, and core Java concepts with questions commonly asked in technical interviews.
+
+Quiz on Java Programs for Interview
+Question 1 of 10
+What will be the output of the following Java program?
+public class Test {
+public static void main(String[] args) {
+int x = 5;
+int y = 10;
+System.out.println(x + y + " is the sum");
+}
+}
+
+15 is the sum
+
+5 10 is the sum
+
+15
+
+Compilation error
+Moreover, we have also included the respective outputs, which will give you a fair idea about how that program worked. The flow of the program and the concepts are properly explained wherever possible throughout this article.
+
+Top 20 Java Interview Programs for Coding with Answers
+Top 20 Java Interview Questions for Programming and Coding 
+A list of the most popular Java programming interview questions and answers is explained below, and these questions will help you to clear any Automation Interview successfully.
+
+Q #1) Write a Java program to reverse a string without using the String inbuilt function.
+
+Answer: Here, we are initializing a string variable str and making use of the string builder class.
+
+The object of the string builder class str2 will be further used to append the value stored in the string variable str.
+Thereafter, we are using the inbuilt function of the string builder (reverse()) and storing the new reversed string in str2. Finally, we are printing str2.
+
+The following program code explains this:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+public class FinalReverseWithoutUsingStringMethods {
+  
+     public static void main(String[] args) {
+          // TODO Auto-generated method stub
+          String str = "Automation";
+          StringBuilder str2 = new StringBuilder();
+          str2.append(str);
+          str2 = str2.reverse();     // used string builder to reverse
+         System.out.println(str2);
+          }
+  
+}
+Output:
+
+noitamotuA
+
+Q #2) Write a Java program to reverse a string without using the String inbuilt function reverse().
+
+Answer: There are several ways in which you can reverse your string if you are allowed to use the other string inbuilt functions.
+
+Method 1:
+
+In this method, we are initializing a string variable called str with the value of your given string. Then, we are converting that string into a character array with the toCharArray() function. Thereafter, we are using a for loop to iterate between each character in reverse order and printing each character.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+public class FinalReverseWithoutUsingStringMethods {
+  
+     public static void main(String[] args) {
+          // TODO Auto-generated method stub
+          String str = "Automation";
+          StringBuilder str2 = new StringBuilder();
+          str2.append(str);
+          str2 = str2.reverse();     // used string builder to reverse
+         System.out.println(str2);
+          }
+  
+}
+Output:
+
+varuaS tekaS
+
+Method 2:
+
+This is another method in which you declare your string variable str and then use the Scanner class to declare an object with a predefined standard input object.
+
+This program will accept the string value through the command line (when executed).
+
+We have used nextLine(), which will read the input with the spaces between the words of a string. Thereafter, we have used a split() method to split the string into its substrings(no delimiter given here). Finally, we printed the string in reverse order using a for loop.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+import java.util.Scanner;
+  
+public class ReverseSplit {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String str;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your String");
+        str = in.nextLine();
+        String[] token = str.split("");    //used split method to print in reverse order
+        for(int i=token.length-1; i>=0; i--)
+        {
+            System.out.print(token[i] + "");
+        }
+          
+    }
+  
+}
+Output:
+
+Enter your String
+Softwaretestinghelp
+plehgnitseterawtfoS
+
+Method 3:
+
+This is almost like method 2, but here we did not use the split() method. We have used the scanner class and nextLine() for reading the input string. Then, we declared an integer length, which is the length of the input string.
+
+Thereafter, we printed the string in reverse order using the for loop. However, we have used the charAt(index) method, which will return the character at any specific index. After each iteration, the character will be concatenated to reverse the string variable.
+
+Finally, we have printed the reverse string variable.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+import java.util.Scanner;
+  
+public class Reverse {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String original, reverse = "";
+        System.out.println("Enter the string to be reversed");
+        Scanner in = new Scanner(System.in);
+        original = in.nextLine();
+        int length = original.length();
+        for(int i=length-1; i>=0; i--) {
+            reverse = reverse + original.charAt(i);   //used inbuilt method charAt() to reverse the string
+        }
+        System.out.println(reverse);
+    }
+  
+}
+Output:
+
+Enter the string to be reversed
+automation testing
+gnitset noitamotua
+
+Q #3) Write a Java Program to swap two numbers using a third variable.
+
+Answer: In this example, we have made use of the Scanner class to declare an object with a predefined standard input object. This program will accept the values of x and y through the command line (when executed).
+
+We have used nextInt() which will input the value of an integer variable ‘x’ and ‘y’ from the user. A temp variable is also declared.
+
+Now, the logic of the program goes like this – we are assigning temp or third variable, with the value of x, and then assigning x with the value of y and again assigning y with the value of temp. So, after the first complete iteration, the temp will have a value of x, x will have a value of y and y will have a value of temp (which is x).
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+import java.util.Scanner;
+  
+public class SwapTwoNumbers {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        int x, y, temp;
+        System.out.println("Enter x and y");
+        Scanner in = new Scanner(System.in);
+        x = in.nextInt();
+        y = in.nextInt();
+        System.out.println("Before Swapping" + x + y);
+        temp = x;
+        x = y;
+        y = temp;
+        System.out.println("After Swapping" + x + y);
+          
+    }
+  
+}
+Output:
+
+Enter x and y
+45
+98
+Before Swapping4598
+After Swapping9845
+
+Q #4) Write a Java program to swap two numbers without using the third variable.
+
+Answer: Rest all things will be the same as the above program. Only the logic will change. Here, we are assigning x with the value x + y, which means x will have a sum of both x and y.
+
+Then, we are assigning y with the value x – y which means we are subtracting the value of y from the sum of (x + y). Till here, x still has the sum of both x and y. But y has the value of x.
+
+Finally, in the third step, we are assigning x with the value x – y which means we are subtracting y (which has the value of x) from the total (x + y). This will assign x with the value of y and vice versa.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+import java.util.Scanner;
+   
+class SwapTwoNumberWithoutThirdVariable
+{
+   public static void main(String args[])
+   {
+      int x, y;
+      System.out.println("Enter x and y");
+      Scanner in = new Scanner(System.in);
+   
+      x = in.nextInt();
+      y = in.nextInt();
+   
+      System.out.println("Before Swapping\nx = "+x+"\ny = "+y);
+   
+      x = x + y;
+      y = x - y;
+      x = x - y;
+   
+      System.out.println("After Swapping without third variable\nx = "+x+"\ny = "+y);
+   }
+}
+Output:
+
+Enter x and y
+45
+98
+Before Swapping
+x = 45
+y = 98
+After Swapping without a third variable
+x = 98
+y = 45
+
+Q #5) Write a Java program to count the number of words in a string using HashMap.
+
+Answer:  This is a collection class program where we have used HashMap for storing the string.
+
+First of all, we declared our string variable called str. Then we used split() function, delimited by a single space so that we could split multiple words in a string.
+
+Thereafter, we declared HashMap and iterated using a for loop. Inside the for loop, we have an if-else statement in which, wherever at a particular position, the map contains a key, we set the counter at that position and add the object to the map.
+
+Each time, the counter is incremented by 1. Else, the counter is set to 1.
+
+Finally, we are printing the HashMap.
+
+Note: The same program can be used to count the number of characters in a string. All you need to do is to remove one space (remove space delimited in split method) in String[] split = str.split(“”);
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+import java.util.HashMap;
+  
+public class FinalCountWords {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String str = "This this is is done by Saket Saket";
+        String[] split = str.split(" ");
+          
+                HashMap<String,Integer> map = new HashMap<String,Integer>();
+        for (int i=0; i<split.length; i++) {
+            if (map.containsKey(split[i])) {
+                int count = map.get(split[i]);
+                map.put(split[i], count+1);
+            }
+            else {
+                map.put(split[i], 1);
+            }
+        }
+        System.out.println(map);
+    }
+  
+}
+Output:
+
+{Saket=2, by=1, this=1, This=1, is=2, done=1}
+
+Q #6) Write a Java Program to iterate HashMap using While and an advanced for loop.
+
+Answer: Here we have inserted three elements in HashMap using put() function.
+
+The size of the map can be using the size() method. Thereafter, we used a While loop for iterating through the map, which contains one key-value pair for each element. Keys and Values can be retrieved through getKey() and getValue().
+
+Likewise, we have used an advanced for loop where we have a “me2” object for the HashMap.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+  
+public class HashMapIteration {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        HashMap<Integer,String> map = new HashMap<Integer,String>();
+        map.put(2, "Saket");
+        map.put(25, "Saurav");
+        map.put(12, "HashMap");
+        System.out.println(map.size());
+        System.out.println("While Loop:");
+        Iterator itr = map.entrySet().iterator();
+        while(itr.hasNext()) {
+            Map.Entry me = (Map.Entry) itr.next();
+            System.out.println("Key is " + me.getKey() + " Value is " + me.getValue());
+        }
+        System.out.println("For Loop:");
+        for(Map.Entry me2: map.entrySet()) {
+            System.out.println("Key is: " + me2.getKey() + " Value is: " + me2.getValue());
+        }
+    }
+  
+}
+Output:
+
+3
+While Loop:
+Key is 2 Value is Saket
+Key is 25 Value is Saurav
+Key is 12 Value is HashMap
+For Loop:
+Key is: 2 Value is: Saket
+Key is: 25 Value is: Saurav
+Key is: 12 Value is: HashMap
+
+Q #7) Write a Java program to find whether a number is prime or not.
+
+Answer: Here, we have declared two integers temp and num, and used the Scanner class with nextInt(as we have integer only).
+
+One boolean variable isPrime is set to true. Thereafter, we have used for loop starting from 2, less than half of the number is entered and incremented by 1 for each iteration. Temp will have the remainder for every iteration. If the remainder is 0, then isPrime will be set to False.
+
+Based on the isPrime value, we are coming to the conclusion that whether our number is prime or not.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+import java.util.Scanner;
+  
+public class Prime {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        int temp, num;
+        boolean isPrime = true;
+        Scanner in = new Scanner(System.in);
+        num = in.nextInt();
+        in.close();
+        for (int i = 2; i<= num/2; i++) {
+            temp = num%i;
+            if (temp == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime) 
+            System.out.println(num + "number is prime");
+            else
+                System.out.println(num + "number is not a prime");
+              
+          
+    }
+  
+}
+Output:
+
+445
+445number is not a prime
+
+Q #8) Write a Java Program to find whether a string or number is a palindrome or not.
+
+Answer: You can use any of the reverse string programs explained above to check whether the number or string is a palindrome or not.
+
+What you need to do is to include one if-else statement. If the original string is equal to a reversed string then the number is a palindrome, otherwise not.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+import java.util.Scanner;
+  
+public class Palindrome {
+    public static void main (String[] args) {
+        String original, reverse = "";
+        Scanner in = new Scanner(System.in);
+        int length;
+        System.out.println("Enter the number or String");
+        original = in.nextLine();
+        length = original.length();
+        for (int i =length -1; i>;=0; i--) {
+            reverse = reverse + original.charAt(i);
+        }
+        System.out.println("reverse is:" +reverse);
+          
+        if(original.equals(reverse)) 
+            System.out.println("The number is palindrome");
+        else
+            System.out.println("The number is not a palindrome");
+          
+    }
+}
+Output:
+
+For String-
+
+Enter the number or String
+vijay
+reverse is:yajiv
+The number is not a palindrome
+
+For Number-
+
+Enter the number or String
+99
+reverse is:99
+The number is palindrome
+
+Q #9) Write a Java Program for the Fibonacci series.
+
+Answer: Fibonacci series is a series of numbers where, after the initial two numbers, every occurring number is the sum of two preceding numbers.
+
+For example, 0,1,1,2,3,5,8,13,21………
+
+In this program, we have used the Scanner class again with nextInt (discussed above). Initially, we are entering (through the command line) the number of times the Fibonacci has to iterate. We have declared integer num and initialized a,b with zero, and c with one. Then, we used for loop to iterate.
+
+The logic goes like a is set with the value of b, which is 0, then b is set with the value of c which is 1. Then, c is set with the sum of both a and b.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+import java.util.Scanner;
+  
+public class Fibonacci {
+    public static void main(String[] args) {
+        int num, a = 0,b=0, c =1;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number of times");
+        num = in.nextInt();
+        System.out.println("Fibonacci Series of the numbers is:");
+        for (int i=0; i<num; i++) {
+            a = b;
+            b = c;
+            c = a+b;
+            System.out.println(a + "");    //if you want to print on the same line, use print()
+        }        
+    }
+}
+Output:
+
+Enter the number of times
+10
+Fibonacci Series of the number is:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+Q #10) Write a Java program to iterate ArrayList using for-loop, while-loop, and advance for-loop.
+
+Answer:  In this program, we have inserted three elements and printed the size of the ArrayList.
+
+Then, we have used While Loop with an iterator. Whenever the iterator has (next) element, it will display that element until we reach the end of the list. So it will iterate three times.
+
+Likewise, we have done for Advanced For Loop where we have created an object called obj for the ArrayList called list. Then printed the object.
+
+Thereafter, we have put the condition of For Loop where the iterator i is set to 0 index, then it is incremented by 1 until the ArrayList limit or size is reached. Finally, we have printed each element using a get(index) method for each iteration of For Loop.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+import java.util.*;
+  
+public class arrayList {
+    public static void main(String[] args) {
+        ArrayList list = new ArrayList();
+        list.add("20");
+        list.add("30");
+        list.add("40");
+        System.out.println(list.size());
+        System.out.println("While Loop:");
+        Iterator itr = list.iterator();
+        while(itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+        System.out.println("Advanced For Loop:");
+        for(Object obj : list) {
+            System.out.println(obj);
+    }
+        System.out.println("For Loop:");
+        for(int i=0; i<list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+}
+}
+Output:
+
+3
+While Loop:
+20
+30
+40
+Advanced For Loop:
+20
+30
+40
+For Loop:
+20
+30
+40
+
+Q #11) Write a Java program to demonstrate an explicit wait condition check.
+
+Answer: There are two main types of wait – implicit and explicit. (We are not considering Fluent wait in this program)
+
+The implicit wait is those waits that are executed irrespective of any condition. In the program below, you can see that it is for Google Chrome, and we have used some inbuilt methods to set the property, maximize the window, URL navigation, and web element locating.
+
+1
+2
+3
+WebDriverWait wait = new WebDriverWait(driver, 20);
+WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Software testing - Wikipedia")));
+element2.click();
+In the above piece of code, you can see that we have created an object waiting for WebDriverWait, and then we have searched for WebElement called element2.
+
+The condition is set in such a way that the webdriver will have to wait until we see the link “Software testing – Wikipedia” on a web page. It won’t execute if it does not find this link. If it does, then it will do a mouse click on that link.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+package Codes;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+  
+public class explicitWaitConditionCheck {
+  
+           public static void main(String[] args) {
+                    // TODO Auto-generated method stub
+                    System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+                   ChromeOptions options = new ChromeOptions();
+                   options.addArguments("--disable-arguments");
+                   WebDriver driver = new ChromeDriver();
+                   driver.manage().window().maximize();
+                   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                   driver.navigate().to("https://www.google.com");
+                   WebElement element = driver.findElement(By.name("q"));
+                    element.sendKeys("Testing");
+                    element.submit();
+                    WebDriverWait wait = new WebDriverWait(driver, 20);
+  
+                     WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Software testing - Wikipedia")));
+element2.click();
+}}
+Q #12) Write a Java program to demonstrate Scroll up/ Scroll down.
+
+Answer:  All the lines of codes are easily relatable as we have discussed in our previous example.
+
+However, in this program, we have included our JavascriptExecutor js which will do the scrolling. If you see the last line of the code, we have passed window.scrollBy(arg1,arg2).
+
+If you want to scroll up then pass some value in arg1 if you want to scroll down then pass some value in arg2.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+package Codes;
+  
+import java.util.concurrent.TimeUnit;
+  
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+  
+public class ScrollDown {
+  
+          public static void main(String[] args) {
+                   // TODO Auto-generated method stub
+                   System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+                   WebDriver driver = new ChromeDriver();
+                   JavascriptExecutor js = (JavascriptExecutor) driver;
+                   driver.manage().window().maximize();
+                   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                   driver.get("https://www.google.com");
+                   WebElement element = driver.findElement(By.name("q"));
+                   element.sendKeys("SoftwareTestingHelp");
+                   element.sendKeys(Keys.ENTER);
+                    js.executeScript("window.scrollBy(0,1000)");
+  
+}
+  
+}
+Q #13) Write a Java Program to open all links of gmail.com.
+
+Answer:  It is a typical example of an advanced for loop, which we have seen in our previous programs.
+
+Once you have opened a website such as Gmail using get() or navigate().to(), you can use a tagName locator to find the tag name of a website that will return all the tags.
+
+We have advanced for loop where we have created a new WebElement link2 for a link(which already has located all the tags), then we have got all the links through getAttribute(“href”) and got all the texts through getText().
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+package Codes;
+  
+import java.util.concurrent.TimeUnit;
+  
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+  
+public class openAllLinks {
+  
+        public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.setProperty("webdriver.chrome.drive", "C:\\webdriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get("https://www.gmail.com/");
+        java.util.List<WebElement> link = driver.findElements(By.tagName("a"));
+       System.out.println(link.size());
+  
+       for (WebElement link2: link) {
+  
+       //print the links i.e. http://google.com or https://www.gmail.com
+      System.out.println(link2.getAttribute("href"));
+  
+      //print the links text
+     System.out.println(link2.getText());
+}
+}
+}
+Output:
+
+Starting ChromeDriver 2.38.551601 (edb21f07fc70e9027c746edd3201443e011a61ed) on port 16163
+Only local connections are allowed.
+4
+https://support.google.com/chrome/answer/6130773?hl=en-GB
+Learn more
+https://support.google.com/accounts?hl=en-GB
+Help
+https://accounts.google.com/TOS?loc=IN&hl=en-GB&privacy=true
+Privacy
+https://accounts.google.com/TOS?loc=IN&hl=en-GB
+Terms
+
+Q #14) Write a Selenium code to switch to the previous tab.
+
+Answer:  We have demonstrated the use of the Robot class. We see this as an important third party because we can achieve the different navigation within a browser and its tabs if you know the shortcut keys.
+
+For example, if you have three tabs open in your Chrome and you want to go to the middle tab, then you have to press control + 2 from your keyboard. The same thing can be achieved through the code as well.
+
+Observe the following code (just after we see the instantiation of Robot class). we have used the Robot class object called a robot with two inbuilt methods keyPress(KeyEvenet.VK_*) and keyRelease(KeyEvenet.VK_*).
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+package Codes;
+  
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class PreviousTab {
+          public static void main(String[] args) throws AWTException {
+               // TODO Auto-generated method stub
+              System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+             WebDriver driver = new ChromeDriver();
+             driver.manage().window().maximize();
+             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+             driver.get("https://www.google.com");
+             WebElement element1 = driver.findElement(By.name("q"));
+             element1.sendKeys("software testing help");
+             element1.sendKeys(Keys.ENTER);
+             String a = Keys.chord(Keys.CONTROL,Keys.RETURN);
+             driver.findElement(By.partialLinkText("Software Testing Help - A Must Visit Software Testing Portal")).sendKeys(a);
+             Robot robot = new Robot(); // instantiated robot class
+             robot.keyPress(KeyEvent.VK_CONTROL); // with robot class you can easily achieve anything if you know the shortcut keys
+             robot.keyPress(KeyEvent.VK_2); // here, we have just pressed ctrl+2
+             robot.keyRelease(KeyEvent.VK_CONTROL); // once we press and release ctrl+2, it will go to the second tab.
+             robot.keyRelease(KeyEvent.VK_2); //if you again want to go back to first tab press and release vk_1
+             }
+}
+Q #15) Write a Java Program to find the duplicate characters in a string.
+
+Answer: In this program, we have created a string variable str, and initialized an integer count with zero.
+
+Then, we created a character array to convert our string variable to a character. With the help of the for loop, we are performing a comparison between different characters at different indexes.
+
+If two characters of consecutive index match, then it will print that character, and the counter will be incremented by 1 after each iteration.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+public class DuplicateCharacters {
+           
+          public static void main(String[] args) {
+                   // TODO Auto-generated method stub
+                  String str = new String("Sakkett");
+                  int count = 0;
+                  char[] chars = str.toCharArray();
+                  System.out.println("Duplicate characters are:");
+                  for (int i=0; i<str.length();i++) {
+                              for(int j=i+1; j<str.length();j++) {
+                                         if (chars[i] == chars[j]) {
+                                                    System.out.println(chars[j]);
+                                                    count++;
+                                                    break;
+                                          }
+                               }
+                   }
+           }
+  
+}
+Output:
+
+Duplicate characters are:
+k
+t
+
+Q #16) Write a Java Program to find the second-highest number in an array.
+
+Answer:  In this program, we have initialized an array with 10 random elements, out of which we are going to find the second-highest number. Here, we have two integers- the largest and second largest. Both are set to the first index of the element. Then, we printed all the elements using a for loop.
+
+Now, the logic is when the element at the 0th index is greater than the largest, then assign arr[0] to largest and secondLargest to largest. Again, if the element at the 0th index is greater than the secondLargest, then assign secondLargest to arr[0].
+
+This will be repeated for each iteration, and ultimately after comparing or completing iterations up to array length will give you the secondLargest element.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+package codes;
+public class SecondHighestNumberInArray {
+public static void main(String[] args)
+    {
+        int arr[] = { 100,14, 46, 47, 94, 94, 52, 86, 36, 94, 89 };
+        int largest = 0;
+        int secondLargest = 0;
+        System.out.println("The given array is:");
+        for (int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + "\t");
+        }
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (arr[i] > largest)
+            {
+                secondLargest = largest;
+                largest = arr[i];
+            }
+            else if (arr[i] > secondLargest)
+            {
+                secondLargest = arr[i];
+            }
+        }
+        System.out.println("\nSecond largest number is:" + secondLargest);
+        System.out.println("Largest Number is: "  +largest);
+    }
+}
+Output:
+
+The given array is:
+100 14 46 47 94 94 52 86 36 94 89
+Second largest number is:94
+Largest Number is: 100
+
+Q #17) Write a Java Program to check Armstrong number.
+
+Answer:  First of all we need to understand what Armstrong Number is. Armstrong number is the number which is the sum of the cubes of all its unit, tens, and hundred digits for three-digit numbers.
+
+153 = 1*1*1 + 5*5*5 + 3*3*3 = 1 + 125 + 27 = 153
+
+If you have a four-digit number lets say
+
+1634 = 1*1*1*1 + 6*6*6*6 + 3*3*3*3 + 4*4*4*4 = 1 + 1296 + 81 + 256 = 1634
+
+Now, in this program, we have a temp and integers declared. We have initialized c with value 0. Then, we need to assign the integer value that we are going to check for Armstrong (in our case, let us say 153). Then we have assigned our temp variable with that number, which we are going to check.
+
+Thereafter, we have used while conditional check where the remainder is assigned to a and the number is divided by 10 and assigned to n. Now, our c variable which was set to zero initially is assigned with c+(a*a*a). Suppose we have to evaluate a four-digit number then c should be assigned with c + (a*a*a*a).
+
+Lastly, we have put an if-else statement for conditional checking where we have compared the value contained in c against temp(which has the actual number stored at this point). If it matches, then the number is Armstrong otherwise not.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+class Armstrong{  
+ public static void main(String[] args)  {  
+   int c=0,a,temp;  
+   int n=153;//It is the number to check Armstrong  
+   temp=n;  
+   while(n>0)  
+   {  
+   a=n%10;  
+   n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else
+        System.out.println("Not armstrong number");   
+   }  
+}
+Output:
+armstrong number
+
+Q #18) Write a Java Program to remove all white spaces from a string with using replace().
+
+Answer:  This is a simple program where we have our string variable str1.
+
+Another string variable str2 is initialized with the replaceAll option which is an inbuilt method to remove n number of whitespaces. Ultimately, we have printed str2 which has no whitespaces.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+class RemoveWhiteSpaces
+{
+    public static void main(String[] args)
+    {
+        String str1 = "Saket Saurav        is a QualityAna    list";
+   
+        //1. Using replaceAll() Method
+   
+        String str2 = str1.replaceAll("\\s", "");
+   
+        System.out.println(str2);
+   
+           }
+}
+}
+Output:
+
+SaketSauravisaQualityAnalist
+
+Q #19) Write a Java Program to remove all white spaces from a string without using replace().
+
+Answer: This is another approach to removing all the white spaces. Again, we have one string variable str1 with some value. Then, we have converted that string into a character array using toCharArray().
+
+Then, we have one StringBuffer object sb which will be used to append the value stored at chars[i] index after we have included for loop and one if condition.
+
+If the condition is set such that then the element at i index of the character array should not be equal to space or tab. Finally, we have printed our StringBuffer object sb.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+class RemoveWhiteSpaces
+{
+    public static void main(String[] args)
+    {
+        String str1 = "Saket Saurav        is an Autom ation Engi ne      er";
+   
+        char[] chars = str1.toCharArray();
+   
+        StringBuffer sb = new StringBuffer();
+   
+        for (int i = 0; i &lt; chars.length; i++)
+        {
+            if( (chars[i] != ' ')  (chars[i] != '\t') )
+            {
+                sb.append(chars[i]);
+            }
+        } 
+        System.out.println(sb);           //Output : CoreJavajspservletsjdbcstrutshibernatespring
+    }
+}
+Output:
+
+SaketSauravisanAutomationEngineer
+
+Q #20) Write a Java Program to read an excel.
+
+Answer: These types of programs are generally used in Selenium framework. We have added detailed comments for every step to make the program more understandable.
+
+The logic starts after we have loaded the sheet in which the data is stored. We are trying to import email and password. For this, we are retrieving the cell using getRow() and getCell() method. Let’s say we have email and passwords at the 1st and 2nd cell.
+
+Then we are setting the type of cell to string. Thereafter we are carrying out a normal web element locator operation (By.id) where we have passed unique locator values such as “email” and “password” which will identify these elements.
+
+Finally, we are sending keys using element.sendKeys where cell.getStringCellValue() is the key. This will return you the value stored at cell number 1 and 2 respectively.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+@Test
+ public void ReadData() throws IOException
+ {
+     // Import excel sheet from a webdriver directory which is inside c drive.
+     //DataSource is the name of the excel
+     File src=new File("C:\\webdriver\\DataSource.xls");
+       
+     //This step is for loading the file. We have used FileInputStream as
+     //we are reading the excel. In case you want to write into the file,
+     //you need to use FileOutputStream. The path of the file is passed as an argument to FileInputStream
+     FileInputStream finput = new FileInputStream(src);
+       
+     //This step is to load the workbook of the excel which is done by global HSSFWorkbook in which we have
+     //passed finput as an argument.
+    workbook = new HSSFWorkbook(finput);
+       
+     //This step is to load the sheet in which data is stored.
+     sheet= workbook.getSheetAt(0);
+       
+     for(int i=1; i<=sheet.getLastRowNum(); i++)
+     {
+         // Import data for Email.
+         cell = sheet.getRow(i).getCell(1);
+         cell.setCellType(Cell.CELL_TYPE_STRING);
+         driver.findElement(By.id("email")).sendKeys(cell.getStringCellValue());
+           
+         // Import data for the password.
+         cell = sheet.getRow(i).getCell(2);
+         cell.setCellType(Cell.CELL_TYPE_STRING);
+         driver.findElement(By.id("password")).sendKeys(cell.getStringCellValue());
+                     
+        }
+  }
+Conclusion
+In this article, we have discussed all the important basic Java interview programs with code examples that are being asked in any Java programming interviews.
+
+We have learned all the Java tricks like basic manipulation of String, Integer and Characters, Selenium Codes, Reading Data from a File, Mathematical Series through codes, and now you have ample idea of how to go about any Java Interview.
+
+Research Process: 
+
+Methodology Used to Curate These Java Interview Programs:
+
+I have selected these Java Interview programs based on their relevance to real-world coding interviews, frequency in technical assessments, and coverage of core Java concepts. I reviewed each program for clarity, problem-solving value, and suitability for both freshers and experienced developers, ensuring a balanced and practical list.
+
+A total of 50 hours were invested in researching, reviewing, and compiling this article to maintain accuracy and quality.
+
+For more Java-related guides, you can explore our range of tutorials below:
+
+Java Basics: Java Syntax, Java Class and Core Java Concepts
+Java Hello World – Create Your First Program In Java Today
+Introduction To Java Programming Language – Video Tutorial
+Methods In Java – Tutorial With Programming Examples
+Java Float Tutorial With Programming Examples
+Java Array Length Tutorial With Code Examples
+Was this helpful?
+Recommended Reading
+Interview Questions and Answers
+Top Interview Questions & Answers
+Lists popular Software Testing and related Technical Interview Questions and answers on the most common software testing & technical topics: Let us see some of the most frequently asked interview questions and answers on Software Testing and other related technical topics in the tutorials listed below. Select the link you…
+
+Java Double - Tutorial With Programming Examples
+Java double1 Java double
+This tutorial will explain primitive data type Java Double. We will also discuss related classes like Java BigDecimal and DecimalFormat Class with examples: In this tutorial, we will explore the double data type with the help of syntax and programming examples. Java decimal format and big decimal classes are explained…
+
+Java Float Tutorial With Programming Examples
+Java float
+In this tutorial, we will discuss Java float and the floating-point types with details like width, range, size, and the usage example: Even though float in Java is a simple concept, we have included all the necessary examples and programs that will be sufficient to make you understand the tutorial…
+
+Java While Loop - Tutorial With Programming Examples
+Java while loop
+In this tutorial, we will discuss  Java While Loop, comparison between For Loop vs While Loop, etc with programming examples: All the necessary details related to Java while loop will be explained in this tutorial. It includes the syntax, description, and some relevant programming examples along with the logic of…
+
+READ MORE FROM THIS SERIES:
+
+Group Discussion Rules and Tips
+Top 90 SQL Interview Questions and Answers for 2026
+SQL Server Interview Questions and Answers (2026)
+Interview Questions and Answers
+30+ Top Scrum Master Interview Questions and Answers
+Top 30 PL/SQL Interview Questions and Answers in 2026
+Top 20 JIRA Interview Questions and Answers
+Top 35 Linux Interview Questions and Answers
+Top 20 Business Analyst Interview Questions and Answers
+Top 45 Web Services Interview Questions and Answers (RESTful, SOAP, Security que…
+Top 24 Data Modeling Interview Questions for Data Engineers
+TOP 70+ UNIX Interview Questions with Answers
+Top 40 C Programming Interview Questions for Developers
+Top 40 Popular J2EE Interview Questions and Answers You Should Read
+Top 60 Networking Interview Questions and Answers
+Top 20 Leadership Interview Questions and Answers
+Top 32 IBM DataStage Interview Questions And Answers
+Top 31 Most Important SAP BO Interview Questions and Answers
+Top 20 RESTful Web Services Interview Questions and Answers
+Top 50+ Database Interview Questions and Answers
+Top 30 SAS Interview Questions and Answers
+Top JMeter Interview Questions and Answers for 2026
+Top 35 Android Interview Questions and Answers
+60 Top Unix Shell Scripting Interview Questions and Answers
+Top 64 Scenario-Based Informatica Interview Questions with Answers
+Top 31 Agile Interview Questions and Answers
+50+ Top Core Java Interview Questions and Answers (2026)
+Top JSON Interview Questions and Answers
+60+ Top VBScript Interview Questions and Answers (2026 LIST)
+Top 30 Eclipse Interview Questions and Answers
+Top Teradata Interview Questions and Answers
+25+ Most Popular ADO.NET Interview Questions and Answers
+Top 50 C# Interview Questions with Answers
+Top 30 DBMS Interview Questions and Answers
+Top Oracle Interview Questions: Oracle Basic, SQL, PL/SQL Questions
+Top Oracle DBA, RAC, and Performance Tuning Interview Questions
+Top 50 Most Popular CCNA Interview Questions and Answers
+Top 20+ .NET Interview Questions and Answers
+Top Oracle Forms and Reports Interview Questions
+Top Oracle Apps Technical and Oracle SOA Interview Questions
+Top 30+ Popular Cucumber Interview Questions and Answers
+Top 30+ JMS (Java Message Service) Interview Questions
+TOP 45 JavaScript Interview Questions With Detailed Answers
+Top 20 Latest DevOps Interview Questions and Answers for 2026
+50+ Bootstrap Interview Questions and Answers
+Top 20 TestNG Interview Questions and Answers
+30+ TOP Servlet Interview Questions and Answers (2026 LIST)
+35+ Top Apache Tomcat Interview Questions and Answers
+48 Top AngularJS Interview Questions and Answers (2026 LIST)
+Top 30+ Popular CSS Interview Questions and Answers
+30 Top HTML Interview Questions and Answers (2026 LIST)
+50 Top PHP Interview Questions and Answers (For ALL)
+Top 20 Java Interview Programs for Coding with Answers
+Top 12 Mockito Interview Questions (Mocking Framework Interview)
+Top 40 MySQL Interview Questions And Answers
+Top 61 Python Interview Questions And Answers
+Top 48 Spring Interview Questions (Crack an Interview in 2026)
+Top 25+ Azure Test Plan or TFS Interview Questions
+TOP 35 HTML5 Interview Questions and Answers
+Top 25 Perl Interview Questions You Should Prepare in 2026
+TOP 70 C++ Interview Questions and Answers [Includes Advanced]
+25+ Top Spring MVC Interview Questions and Answers
+Top 36 Jenkins Interview Questions For 2026
+Top 15 Popular Specflow Interview Questions
+Spock Interview Questions with Answers (Most Popular)
+Top 50 Swift Interview Questions (Swift iOS Interview)
+Top 25 Software Engineering Interview Questions [LATEST 2026]
+Top 38 Desktop Support Engineer Interview Questions and Answers
+Graphic Design Resume Guide: Example And Templates For 2026
+Top 45 XML Interview Questions And Answers for 2026 [LATEST]
+50 Top Salesforce Interview Questions and Answers (Updated 2026)
+Top 49 Salesforce Admin Interview Questions And Answers 2026
+Top 84 Salesforce Developer Interview Questions And Answers 2026
+Top 35 ASP.Net And Web API Interview Questions With Answers
+Top 20 Most Common Help Desk Interview Questions & Answers (2026)
+Top 18 Most Common Call Center Interview Questions & Answers 2026
+Top 10 Most Popular Postman Interview Questions With Answers
+Top 35 Frequently Asked Struts Interview Questions & Answers
+Top 20 HR Interview Questions and Answers
+Top 20+ Employee Exit Interview Questions To Ask
+Top 15+ Important Unix Commands Interview Questions For Beginners
+Top 40 GIT Interview Questions and Answers In 2026
+Top 25 Technical Support Interview Questions With Answers
+Top 25 Computer Architecture Interview Questions And Answers
+50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
+Top 51 ElasticSearch Interview Questions & Answers in 2026
+Top 30 Programming / Coding Interview Questions & Answers
+Top 35 Management Interview Questions With Answers
+Top 29 Data Engineer Interview Questions And Answers
+Top 40 Java 8 Interview Questions & Answers [Most Important]
+31 Most Frequently Asked Maven Interview Questions & Answers
+30+ Top Java Collections Interview Questions With Answers (2026 LIST)
+Top 25 Java Web Services Interview Questions & Answers
+TOP 30 AWS Interview Questions and Answers in 2026
+How To Write A Follow Up Email After Interview?
+Top 40 SAP CRM Interview Questions and Answers
+Top 36 Most Important Chef Interview Questions And Answers
+Top 35 Puppet Interview Questions And Answers
+Top 31 Popular Python Flask Interview Questions With Answers
+JSP Interview Questions And Answers in 2026
+Top 30+ OOPS Interview Questions And Answers With Examples
+How To Write An Email To A Recruiter [Six Email Templates]
+Top 25+ Web Developer Interview Questions and Answers
+40+ PHP Laravel Interview Questions And Answers (2026 LIST)
+Top 25+ JDBC Interview Questions And Answers
+Top 30+ JSF Interview Questions And Answers
+Salesforce Lightning Interview Questions And Answers
+SAP Hybris Interview Questions And Answers
+Top 30 Node.js Interview Questions and Answers
+Top 25 Popular Appium Interview Questions And Answers
+Top 30 Frequently Asked Ajax Interview Questions And Answers
+35 Frequently Asked MongoDB Interview Questions And Answers
+39 Salesforce Solution Architect Interview Questions And Answers
+Top 30 Popular Scrum Master Interview Questions And Answers
+Top 20 Machine Learning Interview Questions And Answers
+Top 30+ Data Structure Interview Questions And Answers
+Top 28 VMware Interview Questions And Answers
+20 Reasons Why You are Not Getting Hired (with Solutions)
+Top 25 Microservices Interview Questions And Answers
+Top 26 Project Management Interview Questions for Managers
+Top 27 Azure Interview Questions And Answers
+42 Most Common TypeScript Interview Questions And Answers
+Top 25 Interview Questions for Managers with Answers
+50 Most Common React Interview Questions And Answers
+A Perfect Thank You Email After an Interview (4 Samples)
+Top 30+ Bulma Interview Questions and Answers With Examples
+Top 40+ Hibernate Interview Questions & Answers in 2026
+Top 30 Java Architect Interview Questions with Answers (2026)
+Top 40 Spring Boot Interview Questions 2026 (MOST ASKED)
+Top 40 Full Stack Developer Interview Questions & Answers
+IBM Careers: A Complete IBM Jobs & Internships Guide 2026
+Top 50 Behavioral Interview Questions and Sample Answers
+
+Get the Premium eBook 
+Download your copy now 👇
+Our Bestselling eBook 'Software Testing Career package' Now Available FREE for Limited Period
+Enter your email..
+
+DOWNLOAD NOW!
+Leave a Comment
+Comment
+
+Name
+Name *
+Email
+Email *
+
+About SoftwareTestingHelp
+Helping our community since 2006! Most popular portal for Software professionals with 400 million+ visits and 500,000+ followers! You will absolutely love our creative content on QA, Dev, Software Tools & Services Reviews!
+
+Software Testing Help
+
+Communication Details
+
+Main Office: A708, City Vista, Fountain Road, Kharadi, Pune, MH, 411014.
+
+Email Us: info@softwaretestinghelp.com
+
+Facebook Linkedin X-twitter Youtube
+Software Testing Tools
+
+Test Management Tools
+Web Application Testing Software
+Cross Browser Testing Tools
+Best ETL Testing Tools
+Mobile Testing Tools
+Regression Testing Tools
+Defect Tracking Tools
+GUI Testing Tools
+Requirements Management Tools
+ALL Testing Tools
+Performance Testing Tools
+
+Performance Testing Tools
+Performance Testing Services
+Computer Stress Test Tools
+Cloud- Load Testing Service
+Performance Testing Guide
+Database Performance Tools
+Website Performance Testing Tools
+Application Performance Monitoring
+Automation Testing Tools
+
+Unit Testing Tools
+API Testing Tools
+Best ETL Tools
+Open Source Testing Tools
+Functional Testing Tools
+Selenium Alternatives
+Accessibility Testing Tools
+Mobile Automation Tools
+Automation Testing Software
+Automation Testing Services
+Data Tools
+
+Data Masking Tools
+Data Modeling Tools
+Data Analysis Tools
+Data Migration Software
+Data Integration Tools
+Data Mapping Tools
+Data Loss Prevention
+Test Data Management Tools
+Data Recovery Software
+Data Analytics Companies
+ALL Data Tools
+Coding Software
+
+Best Code Editors
+Code Coverage Tools
+Low-Code Development Tools
+Static Code Analysis Tools
+Source Code Management Tools
+Version Control Software
+Code Review Tools
+Javascript Online Editors
+Code Review Tools
+Code Quality Tools
+Security Testing Tools
+
+Penetration Testing Tools
+App Security Testing Tools
+Web Security Scanners
+Vulnerability Assessment
+Mobile App Security
+Malware Removal Tools
+Anti-Ransomware Tools
+Spyware Removal Tools
+Mobile Pen Testing Tools
+Pen Testing as a Service
+DAST Software
+Testing Service Providers
+
+Managed Testing Services
+Mobile Testing Services
+Software Testing Services
+Performance Testing Services
+Penetration Testing Companies
+Cyber Security Companies
+QA Outsourcing Companies
+USA Testing Companies
+Website Testing Services
+Regression Testing Services
+Software Development
+
+Custom Software Companies
+App Development Tools
+Software Development Tools
+Game Development Companies
+Software Companies USA
+SaaS Development Companies
+Android App Development
+DevOps Tools
+DevOps Service Providers
+App Development Companies
+Healthcare Dev Companies
+Networking Tools
+
+Network Management
+Network Security Tools
+Network Scanning Tools
+Application Scanners
+Network Testing Tools
+Network Monitoring Tools
+Network Security Tools
+Server Monitoring Tools
+Network Mapping Software
+SIEM Tools
+System Monitoring Tools
+Infrastructure Monitoring Tools
+Project Management Tools
+
+Project Management Software
+Project Management Apps
+Agile Project Management Tools
+Workflow Management Software
+Task Management Software
+Team Collaboration Tools
+JIRA Alternatives
+Project Planning Tools
+Team Management Software
+Cloud Tools
+
+Cloud Monitoring Tools
+Crowdsourcing Platforms
+Cloud Management
+Crowdsourced Testing Companies
+Cloud Mobile Testing
+Cloud Computing Companies
+Cloud Managed Services
+Cloud Testing Tools
+Cloud Security Companies
+ALL Categories
+Security Software
+
+Free Antivirus Software
+Cybersecurity Software
+Internet Security Tools
+External Vulnerability Scanner
+Website Malware Scanner
+Web Security Scanners
+Zero Trust Security
+Vulnerability Assessment
+ALL Security Tools
+IT Management Tools
+
+Remote Desktop Software
+Configuration Management
+Incident Management Software
+Change Management Software
+IT Asset Management
+Managed IT Services
+ITSM Tools
+Remote Monitoring Software
+Remote Access Software
+Asset Discovery Tools
+Workload Automation Tools
+IT Automation Tools
+
+About us | Contact us | Advertise
+All articles are copyrighted and cannot be reproduced without permission. SoftwareTestingHelp® is a registered trademark.
+©SoftwareTestingHelp 2025 — Read our Copyright Policy | Privacy Policy | Terms | Cookie Policy | Affiliate Disclaimer
+
+Software Testing Help
+
+
+AI Engine Chatbot
+
 
 View on GitHub
 java-interview
