@@ -1,4 +1,368 @@
-ByteGoblin.io
+GoLinuxCloud
+
+Search GoLinuxCloud…
+Start Here
+About
+Contact
+Privacy
+Disclaimer
+‹
+Interview Questions
+CheatSheet
+Ethical Hacking
+Kubernetes
+Kubernetes Operator
+Ansible
+Git
+AWS
+Azure
+OpenSSL
+Keytool
+OpenLDAP
+389 Directory Server
+Wireshark
+Golang
+Python
+Java
+JavaScript
+Node.js
+Laravel
+Pandas
+Shell Scripting
+SQL
+›
+Home
+/
+Programming
+/
+Go
+/
+30+ Golang Interview Questions and Answers
+programming
+30+ Golang Interview Questions and Answers
+30+ golang interview questions and answers for Junior (Beginner), Middle and Advanced (Experienced) professionals
+
+ Published Oct 4, 2022
+
+ Updated Jan 4, 2024
+
+ Author Tuan Nguyen
+
+ Read time 11 min read
+
+ Reviewed Jan 4, 2024 byDeepak Prasad
+
+30+ Golang Interview Questions and Answers
+Filter menu 
+Filter menu…
+Go Tutorial
+Install Go on Ubuntu
+Install Go on Windows
+Upgrade your Go version
+Getting started with Go
+Hello World
+Create a Go module
+Packages and layout
+Import a local package
+Integer types
+if / else
+for loop
+switch
+break and continue
+Functions
+Methods
+defer
+Return and handle errors
+panic and recover
+Comma-ok idiom
+Structs
+Struct embedding
+Pointers
+Maps
+Interfaces
+Type assertion
+Generics
+Read a file
+Parse JSON
+Command-line arguments
+Flag package
+Concurrency overview
+Goroutines
+Channels
+WaitGroup
+Context
+Mutex
+net/http
+Simple web server
+Testing Go code
+SQL (database/sql)
+On this page
+Junior (Beginner) Level Interview Questions
+Middle (Intermediate) Level Interview Questions
+Advanced (Experienced) Golang Interview Questions
+Summary
+References
+Interviews are always stressful for both employers and applicants. As a result, the only wise decision would be to plan ahead of time for the meeting with the applicant. Especially since the questions for different levels of seniority should be different. Golang is the second-highest paying technology in the United States and worldwide. As more businesses adopt Golang, the demand for Golang professionals grows rapidly. Golang offers high performance (similar to C and C++) and super-efficient concurrency handling (similar to Java), while also being enjoyable to code (like Python).
+
+Here are some Golang interview questions and answers you should prepare for your interview.
+
+Junior (Beginner) Level Interview Questions
+1. What is the Go programming language?
+
+Go is an open-source programming language developed by Google. It is also known as Golang. This language is primarily intended for systems programming.
+
+2. Is it possible to compile a Go program written in Linux on a Windows/Mac system?
+
+Yes, it’s possible to compile a Go application for different operating systems.
+
+3. What are the benefits of learning Golang? What advantages does Golang have over other programming languages?
+
+Golang Is Fast : Golang is a compiled language, which means that the code is directly translated into processor-friendly formats. Meanwhile, the Java program is compiled into bytecode, which is then executed by the virtual machine.
+Golang Is Easy To Learn
+Golang Is Well-Scaled: Goroutines are functions that can run concurrently and independently in the Go programming language. Goroutines use only 2 kB of memory, making them scalable when multiple concurrent processes are required. Unlike Java threads, which are by definition blocking, Goroutines are not.
+Comprehensive Programming Tools: As an open-source initiative, you’ll have no issues in getting the development tools for your team
+Well-support community: Using Golang as a part of your software strategy, you’re tapping into a pool of talent that will only increase in time. Chances are, you’re likely to hire a programmer who is already well-versed in Go.
+4. What are the packages in a Go program?
+
+A package is nothing but a directory inside your Go workspace containing one or more Go source files, or other Go packages. They improve the reusability. They help you organize related Go source files together into a single unit, making them modular, reusable, and maintainable.
+
+5. Is Go case sensitive?
+
+Go is a case sensitive programming language.
+
+6. Why is Golang reliable?
+
+Golang is reliable because it is type-safe, making it more difficult to crash the program. Furthermore, no type can be misinterpreted in Golang.
+
+7. Goroutine in Golang
+
+A goroutine is the name for any continuously running activity in the go programming language. It’s a unique function or method that runs concurrently and independently with any present goroutines.
+
+8. What is a workspace in Go?
+
+The workspace contains Go code. The workspace is a directory hierarchy with three directories at the root.
+
+The "src" directory contains GO source files organized into packages.
+The "pkg" directory contains the package objects.
+The "bin" directory contains executable commands
+9. What is the GOPATH environment variable?
+
+The GOPATH environment variable specifies the location of the workspace. You only need to set this one environment variable when writing Go code.
+
+10. What is a Go variable's static type declaration?
+
+A static type variable declaration provides assurance to the compiler that there is one variable available with the given type and name so that the compiler can proceed for further compilation without requiring the complete detail of the variable. A variable declaration has its meaning at the time of compilation only, the compiler needs the actual variable declaration at the time of linking of the program.
+
+11. What is the constant variable in Go?
+
+A constant variable is one that is assigned a specific value and cannot be changed.
+
+12. What are Go Interfaces?
+
+Method signatures in Go interfaces are predefined. These methods are implemented in a special type that can accept values. Because the interfaces are abstract, we cannot create instances of them. However, we can create an interface variable and then assign that variable to a concrete value using the interface's methods.
+
+Interfaces can be used to implement dynamic binding or polymorphism. An interface class defines a set of methods. The concrete class that implements this interface must include these properties.
+
+13. How are channels used in Golang, and what are Go channels?
+
+A go channel allows goroutines to exchange and transfer data values. One channel allows the same type of data to be transferred. The channel's data flow is bidirectional, so goroutines can transmit and receive data over the same channel.
+
+14. What are variadic functions in Go?
+
+A variadic function accepts various numbers of arguments. A variable number of parameters of the same type as those listed in the function signature are allowed in Golang.
+
+15. How is the break statement used in the Go programming language?
+
+The break statement is used to terminate a for loop or switch statement and transfer execution to the statement immediately following the for loop or switch.
+
+Middle (Intermediate) Level Interview Questions
+1. Differentiate between const and read-only keywords.
+
+Const	Read-only
+These variables are evaluated at compile time	These variables are evaluated at runtime
+They are only for value types	They can hold reference type variables
+2. Explain the Golang map type and its advantages.
+
+In Golang, map is a very powerful and versatile unordered data structure. A map is a collection of elements grouped in key-value pairs. Similar to a dict in python and an object in JS. Awareness of the keys in maps can easily provide faster access to the values. The Values and the keys have to be of the same statistical type. Although both keys and values do not have to be of the same type, rather in terms of individuality all the values present on the map should be of the same type.
+
+The major advantage of a map is that it adds, gets, and deletes operations while taking up the expected time to perform a task regardless of the number of entries.
+
+3. What are string literals?
+
+A string literal is a constant representation created by joining a group of characters.
+
+The two types are:
+
+Raw string literals: Character sequences enclosed in back quotes ('). A string literal value is a string made up of characters not broken up by quotes.
+Translated string literals: Enclosed in double quotations ("). The value of the literal is the text enclosed in double-quotes, which may or may not have newlines.
+4. What is rune in GoLang?
+
+Strings are made of bytes or characters. GoLang uses bytes to define strings and uses UTF-8 encoding standard so any valid character can be defined using "code points" in Unicode. Rune is a new term in Go Language that represents this code point. Go uses UTF-8 encoding so type int32 can be aliased as Rune. A string can be converted to an array of runes using Rune function. Rune and byte values are the same for ASCII characters.
+
+5. Slice vs array in Golang
+
+The basic difference between a slice and an array is that a slice is a reference to a contiguous segment of an array. Unlike an array, which is a value-type, slice is a reference type. A slice can be a complete array or a part of an array, indicated by the start and end index. A slice, therefore, is also an array that pours a context of dynamism onto the underlying array, which otherwise is a static contiguous memory allocation.
+
+6. Golang data type
+
+Basic data type: Numbers, strings, and booleans
+Reference type slices, pointers, maps, channels, and functions
+Interface type
+Aggregate type structures and arrays
+7. What is the scope of a variable?
+
+The scope of a variable refers to the area of a program where the variable can be accessed. Every variable in the Go programming language is statistically scoped, which means that its scope is declared at compile time.
+
+The scope of a variable in the Go programming language is classified into two types.
+
+Local variables: are variables that are declared within a function or a block.
+Global parameters: outside of the function or block, these variables are declared.
+8. What is garbage collection in Go?
+
+Garbage collection recycles storage that has been dynamically assigned to a program for use by other objects. The term typically refers to the waste collector's automated regeneration for routine storage rather than explicit code (written by a programmer) to release specific memory blocks.
+
+Automatic garbage collection is frequently initiated when the amount of free RAM falls below a predetermined level or after a predetermined number of allocations. The removal of items that the software no longer requires to make room in memory for other dynamic objects is referred to as "garbage collection."
+
+9. What is Regex?
+
+A regular expression is abbreviated as regex. It demonstrates how to format a pattern for text searches. More rules, specifically those dealing with character groups, string position, and so on, can be used for our use cases. The REGEX syntax is nearly identical across all computer languages.
+
+10. What are timers and tickers in Go?
+
+Timers represent a single future event. They plan one-time future actions. Tickers are used to schedule recurring tasks at regular intervals.
+
+Advanced (Experienced) Golang Interview Questions
+1. What are Golang's built-in supports?
+
+The following are Golang’s built-in supports:
+
+Web server: http/net
+Container: heap/container list/ container
+Cryptography: crypto md5/ crypto
+Database: sql/database
+Compression: gzip/compress
+2. Structures in Golang?
+
+Go’s structs are typed collections of fields. They’re useful for grouping data together to form records. For example, an entity “person” has a name, social security number, address. It gives the sense to group these three attributes into a single structure “student” as shown:
+
+goCopy
+type person struct {
+    Name string
+    SocialNumber string
+    Address string
+}
+3. How do you run tests in Golang?
+
+Golang’s package testing supports automated testing. The "go test" command automates the function execution of any form. That command should be used in conjunction with this tool.
+
+4. Select and switch in Golang?
+
+A select is only used with channels, a switch is used with concrete types.A select will choose multiple valid options at random, while a switch will go in sequence (and would require a fallthrough to match multiple.)
+
+5. Is Go functional or object-oriented?
+
+Go is a Post-OOP programming language that borrows the Pascal/Algol/Modula language family's structure (functions, packages, and types). Object-oriented patterns are still useful in Go for structuring programs in a clear and understandable manner.
+
+6. What methods are there in the Go programming language?
+
+In the Go programming language, there are several different types of functions called methods. In the method declaration syntax, "getter" is used to represent the container of the function. This receiver can be used to call a function using "." operator.
+
+7. Errors and Exception Handling in GoLang
+
+Go functions returns errors as a second return value. That is the standard way of implementing and using errors in Go. That means the error can be checked immediately before proceeding to the next steps.
+
+8. Is it recommended to use global variables in a program that implements go routines?
+
+Global variables are not recommended because they can be accessed by multiple goroutines (threads) concurrently, which can easily lead to unexpected behavior and arbitrary results.
+
+9. Why would you prefer to use an empty struct{}
+
+You would use an empty struct when you would want to save some memory. Empty structs do not take any memory for its value.
+
+goCopy
+a := struct{}{}
+println(unsafe.Sizeof(a))
+// Output: 0
+This saving is usually insignificant and is dependent on the size of the slice or a map. Although, more important use of an empty struct is to show a reader you do not need a value at all. Its purpose in most cases is mainly informational.
+
+10. What is a pointer in Go?
+
+Pointers in Go programming language or Golang is a variable that is used to store the memory address of another variable. Pointers in Golang is also termed as the special variables. Pointers can also point to other pointers, and this nesting can go arbitrarily deep, so you can have multiple levels of indirection.
+
+* Operatoralso termed as the dereferencing operator used to declare pointer variable and access the value stored in the address.
+& operatortermed as address operator used to returns the address of a variable or to access the address of a variable to a pointer.
+Summary
+Golang was developed and adopted by Google, but it has gained traction in other companies in recent years as the demand for concurrent, networked programs has grown. In this article, we have go through the most frequently asked interview questions in Golang for both freshers and experienced developers.. You can visit official package go documentation to read more about packages in Go.
+
+References
+Pkg website
+
+Something wrong, outdated, or missing?
+Report an error, a stale step, or a topic we should cover. We will look into it at the earliest. How we handle reports
+
+Prefer social? Reach out on LinkedIn or Facebook.
+
+Send feedback
+View full course ·Part 242 of 242
+← Previous Go vs Rust
+Tuan Nguyen
+Tuan Nguyen
+
+Data Scientist
+
+Proficient in Golang, Python, Java, MongoDB, Selenium, Spring Boot, Kubernetes, Scrapy, API development, Docker, Data Scraping, PrimeFaces, Linux, Data Structures, and Data Mining. With expertise …
+
+More articles by Tuan Nguyen
+→
+LinkedIn
+Related Articles
+linux
+How to Install Go on Debian
+Install Go on Debian 11, 12, or 13 with apt install golang-go, the official go.dev Linux tarball under …
+
+6 min read
+interview-questions
+C and C++ Interview Questions and Answers
+C and C++ interview questions and answers for 2026: C pointers and memory, C++ OOP, RAII, smart pointers, …
+
+19 min read
+interview-questions
+DBMS Interview Questions and Answers
+DBMS interview questions, basic dbms interview questions, and common dbms interview questions for 2026: ER …
+
+24 min read
+
+GoLinuxCloud
+GoLinuxCloud publishes practical tutorials for Linux administrators, cloud engineers, and developers. From system administration and DevOps to programming, security, and interview prep, our guides are written to work on real infrastructure—not just in theory.
+
+Interview Questions
+C and C++ Interview Questions and Answers
+DBMS Interview Questions and Answers
+Django Interview Questions and Answers for Experienced Developers
+Interview Questions on React JS for Experienced Developers
+Kafka Interview Questions and Answers
+OOP Interview Questions and Answers
+Popular Posts
+How to stop ICMP ping flood attack (DOS) on Linux
+CPU, Processors, Cores, Threads, Hyper-Threading and Cache Explained
+7 tools to detect Memory Leaks with Examples
+100+ Linux Commands Cheat Sheet (With Practical Examples)
+Tutorial: Beginners guide on Linux Memory Management
+Top 15 tools to monitor disk IO performance with examples
+Overview on different disk types and disk interface types
+Company
+HTML Sitemap
+Disclaimer
+Privacy Policy
+Editorial Policy
+Corrections
+Fact-Checking
+Terms of Service
+Cookie Policy
+  
+© 2026 GoLinuxCloud · Built with Hugo
+
+
 GOLANG
 20 Advanced Golang Interview Questions Asked for a Senior Developer Position
 I have taken many interviews, and these are some of the questions I consistently ask to test a candidate’s knowledge about Go
