@@ -1,7 +1,232 @@
-Перейти к сути
-UPROGER | Программирование
-Лента
-📝 Рубрики
+Practice Real Company Assessment Patterns • Latest 2025–2026 Mock Tests
+Placement Preparation Logo
+an HCL GUVI product
+Aptitudev
+Programmingv
+Company Specificv
+Resourcesv
+Mock Test
+search-icon
+Search Topics, Formulas etc
+Home
+Blog
+Interview Questions
+Top Linux Interview Questions for Freshers
+
+Table of Contents
+
+Practice Linux Interview Questions
+1. List all files
+2. Directory size command
+3. Last 10 lines command
+4. Copy file command
+5. Delete recursively command
+6. Change file ownership
+7. Modify file permissions
+8. Add new user
+9. Switch user account
+10. List logged users
+11. View running processes
+12. Kill process command
+13. Monitor resource usage
+14. Schedule task cron
+15. Process memory usage
+16. Check IP address
+17. Test network connectivity
+18. Open firewall port
+19. Check open ports
+20. Secure SSH access
+21. Backup shell script
+22. Pass script arguments
+23. Script shebang purpose
+24. Midnight script schedule
+25. Make script executable
+26. Check disk space
+27. Specific directory usage
+28. Create disk partition
+29. Mount partition command
+30. Check filesystem type
+31. Find specific text
+32. Create compressed archive
+33. Extract tar gz
+34. Process PID search
+35. Redirect command output
+36. Etc fstab purpose
+37. Edit bootloader config
+38. Change default runlevel
+39. List service statuses
+40. Enable service startup
+41. Display kernel version
+42. Load kernel module
+43. Change process priority
+44. Check CPU usage
+45. Kernel buffer contents
+46. Configure static IP
+47. Check routing table
+48. Display DNS servers
+49. Traceroute network issues
+50. Configure port forwarding
+26 December, 2024 (Last Updated)
+Top Linux Interview Questions for Freshers
+Top Linux Interview Questions for Freshers Are you preparing for your first Linux interview and wondering what questions you might face?Understanding the key Linux interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Linux interview questions and answers for freshers and make a strong impression in your interview.interview preparation course desktop banner horizontal
+Practice Linux Interview Questions and Answers
+Below are the top 50 Linux interview questions for freshers with answers:
+1. How do you list all files, including hidden files, in a directory in Linux?
+Answer:Use the ls -a command to list all files in a directory, including hidden files that start with a dot (.).
+ls -a
+2. How can you find the size of a directory and its contents in Linux?
+Answer:Use the du -sh command to display the total size of a directory and its contents in a human-readable format.
+du -sh /path/to/directory
+3. What is the command to display the last 10 lines of a file?
+Answer:The tail command shows the last 10 lines of a file, which is useful for viewing the end of log files or other text files.
+tail filename.txt
+4. How do you copy a file from one directory to another in Linux?
+Answer:Use the cp command to copy a file from one directory to another, specifying the source file and destination directory.
+cp /path/to/source/file.txt /path/to/destination/
+5. How can you recursively delete all files and directories within a specified directory?
+Answer:Use the rm -rf command to recursively remove all files and directories within a specified directory.
+rm -rf /path/to/directory/
+6. How do you change the ownership of a file in Linux?
+Answer:Use the chown command to change the ownership of a file, specifying the new owner and optionally the group.
+chown username:groupname filename.txt
+7. How do you modify the permissions of a file to make it readable and writable by the owner, and readable by the group and others?
+Answer:Use the chmod command with the mode 644 to set these permissions.
+chmod 644 filename.txt
+8. What is the command to add a new user to a Linux system?
+Answer:Use the useradd command followed by the username to add a new user, and passwd to set the password.
+useradd newuser
+passwd newuser
+9. How do you switch to a different user account in Linux?
+Answer:Use the su command followed by the username to switch to a different user account.
+su – username
+10. How do you list all the users currently logged into the system?
+Answer:Use the who command to list all users currently logged into the system, including their login time and terminal.
+who
+11. How do you view all running processes in Linux?
+Answer:Use the ps aux command to display a detailed list of all running processes along with their statuses.
+ps aux
+12. What is the command to kill a process using its PID in Linux?
+Answer:Use the kill command followed by the process ID (PID) to terminate a process.
+kill 12345
+13. How do you monitor real-time system resource usage like CPU and memory in Linux?
+Answer:Use the top command to monitor real-time CPU and memory usage, along with other system metrics.
+top
+14. How can you schedule a task to run at a specific time using cron?
+Answer:Edit the crontab file using crontab -e and add a cron job specifying the time and the command to run.
+0 2 * * * /path/to/script.sh
+15. How do you find the memory usage of a specific process in Linux?
+Answer:Use the pmap command with the -x flag to report memory usage for a specific process using its PID.
+pmap -x 12345
+16. How do you check the IP address of your Linux system?
+Answer:Use the ip addr show or ifconfig command to display the IP address of your network interfaces.
+ip addr show
+17. What command would you use to test the connectivity to another host on the network?
+Answer:Use the ping command followed by the host’s IP address or domain name to test network connectivity.
+ping google.com
+18. How do you open a specific port on your Linux firewall using iptables?
+Answer:Use the iptables -A INPUT -p tcp –dport 8080 -j ACCEPT command to allow traffic on a specific port.
+iptables -A INPUT -p tcp –dport 8080 -j ACCEPT
+19. What is the command to check open ports and listening services on a Linux system?
+Answer:Use the netstat -tuln or ss -tuln command to list all open ports and listening services.
+netstat -tuln
+20. How do you secure SSH access to a Linux server?
+Answer:Disable root login by editing the /etc/ssh/sshd_config file and set PermitRootLogin no, then restart the SSH service.
+service sshd restart
+21. Write a simple shell script to back up a directory to a specified location.
+Answer:A basic shell script can use the cp command to copy a directory to a backup location.
+#!/bin/bash
+cp -r /path/to/source /path/to/backup/
+22. How do you pass arguments to a shell script and use them within the script?
+Answer:Arguments passed to a shell script can be accessed using $1, $2, etc., corresponding to the first, second, and subsequent arguments.
+#!/bin/bash
+echo “First argument: $1”
+echo “Second argument: $2”
+23. What is the purpose of the shebang (#!) at the beginning of a shell script?
+Answer:The shebang specifies the interpreter to be used to execute the script, typically /bin/bash for Bash scripts.
+#!/bin/bash
+24. How do you schedule a shell script to run every day at midnight?
+Answer:Use the crontab command to schedule the script by adding an entry like 0 0 * * * /path/to/script.sh.
+crontab -e
+25. How do you make a shell script executable?
+Answer:Use the chmod +x command to make the script executable, allowing it to be run directly from the command line.
+chmod +x script.sh
+26. How do you check the available disk space on your Linux system?
+Answer:Use the df -h command to check the available disk space in a human-readable format, showing mounted filesystems and their usage.
+df -h
+27. What command is used to check the disk usage of a specific directory?
+Answer:Use the du -sh command to check the disk usage of a specific directory, showing the total size.
+du -sh /path/to/directory/
+28. How do you create a new partition on a Linux disk using fdisk?
+Answer:Use the fdisk command to select the disk, then create a new partition by entering n and following the prompts.
+fdisk /dev/sda
+29. What is the command to mount a partition in Linux?
+Answer:Use the mount command specifying the partition and the directory where it should be mounted.
+mount /dev/sda1 /mnt/mydrive
+30. How do you check the filesystem type of a partition in Linux?
+Answer:Use the blkid or df -T command to display the filesystem type of a partition.
+blkid /dev/sda1
+31. How do you find all files containing a specific text string in a directory and its subdirectories?
+Answer:Use the grep -r command to search recursively for a specific text string in a directory and its subdirectories.
+grep -r “search_term” /path/to/directory/
+32. What is the command to create a compressed archive of a directory in Linux?
+Answer:Use the tar command with the -czvf options to create a compressed archive (tar.gz) of a directory.
+tar -czvf archive_name.tar.gz /path/to/directory/
+33. How do you extract a .tar.gz file in Linux?
+Answer:Use the tar command with the -xzvf options to extract a .tar.gz file to the current directory.
+tar -xzvf archive_name.tar.gz
+34. How do you search for a running process by its name and display its PID?
+Answer:Use the pgrep command followed by the process name to find its PID.
+pgrep process_name
+35. How do you redirect the output of a command to a file, overwriting the file if it exists?
+Answer:Use the > operator to redirect the output of a command to a file, overwriting it if it already exists.
+command > output.txt
+36. What is the purpose of the /etc/fstab file in Linux?
+Answer:The /etc/fstab file contains static information about filesystems and defines how disk partitions, devices, and remote filesystems should be mounted at boot.
+37. How do you view and edit the bootloader configuration in a Linux system?
+Answer:Use a text editor to view and edit the GRUB bootloader configuration file located at /etc/default/grub, and then update GRUB.
+sudo nano /etc/default/grub
+sudo update-grub
+38. How do you change the default runlevel in a Linux system using systemd?
+Answer:Use the systemctl set-default command to change the default runlevel (target) in a systemd-based Linux system.
+sudo systemctl set-default multi-user.target
+39. What is the command to list all services and their statuses on a systemd-based Linux system?
+Answer:Use the systemctl list-units –type=service command to list all services and their current statuses.
+systemctl list-units –type=service
+40. How do you enable a service to start automatically at boot in a systemd-based Linux system?
+Answer:Use the systemctl enable command to configure a service to start automatically at boot.
+sudo systemctl enable service_name
+41. How do you display the current Linux kernel version?
+Answer:Use the uname -r command to display the current Linux kernel version running on the system.
+uname -r
+42. How do you load a kernel module manually in Linux?
+Answer:Use the modprobe command followed by the module name to load a kernel module manually.
+sudo modprobe module_name
+43. How do you change the priority of a running process in Linux?
+Answer:Use the renice command to change the priority of a running process, identified by its PID.
+sudo renice 10 12345
+44. How do you check the CPU usage of processes on a Linux system?
+Answer:Use the top or htop command to monitor CPU usage by processes in real-time.
+top
+45. What is the command to view the contents of the kernel ring buffer?
+Answer:Use the dmesg command to view the kernel ring buffer, which contains system and kernel messages.
+dmesg
+46. How do you configure a static IP address in Linux?
+Answer:Edit the network configuration file, typically located at /etc/network/interfaces or use nmtui for NetworkManager, and specify the static IP details.
+sudo nano /etc/network/interfaces
+47. How do you check the routing table on a Linux system?
+Answer:Use the route -n or ip route command to display the routing table and determine how network traffic is routed.
+ip route
+48. What is the command to display the DNS server(s) used by your system?
+Answer:Use the cat /etc/resolv.conf command to display the DNS server(s) configured for your system.
+cat /etc/resolv.conf
+49. How do you check for network connectivity issues using the traceroute command?
+Answer:Use the traceroute command followed by a domain or IP address to identify the path and any delays in the network.
+traceroute google.com
+50. How do you configure port forwarding using iptables in Linux?
+Answer:Use the iptables command to set up port forwarding by specifying the source and destination ports.
+iptables -t nat -A PREROUTING -p tcp –dport 80 -j DNAT –to-destination 192.168.1.10:8080
+Final Words
+Getting ready for an interview can feel overwhelming, but going through these Linux fresher interview questions can help you feel more confident.With the right preparation, you’ll ace your Linux interview but don’t forget to practice the Linux basic commands, shell scripting, and system administration-related interview questions too.
 
 📚 Список полезных ресурсов
 
