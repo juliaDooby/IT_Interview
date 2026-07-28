@@ -1,15 +1,986 @@
-HIRE A DEVELOPER
-SERVICES
-RESOURCES
-ABOUT US
-PRICING
-Schedule A Call
-Software Development
-Top Golang Interview Questions For Your Coding Success
-Picture of Alex Kugell
-Alex Kugell
-June 17, 2024
-More on this topic
+🚀 DevOps & SRE Certification Program 📅 Starting: 1st of Every Month 🤝 +91 8409492687 🔍 Contact@DevOpsSchool.com
+✕
+Skip to content
+DevopsSchool.com
+DevopsSchool.com
+Top Certifications
+Tutorials
+Forum
+Update
+Professional
+Search
+
+Find the Best Cosmetic Hospitals
+Explore trusted cosmetic hospitals and make a confident choice for your transformation.
+
+“Invest in yourself — your confidence is always worth it.”
+
+Explore Cosmetic Hospitals
+Start your journey today — compare options in one place.
+
+Home Interview Questions & Answers Top100 Gin interview questions and answers
+Top100 Gin interview questions and answers
+Interview Questions & Answers
+Rajesh Kumar
+·
+February 9, 2022
+·
+0 Comment
+
+Golang gin
+1) What is Go?
+Go is a general-purpose language designed with systems programming in mind. It was initially developed at Google in year 2007 by Robert Griesemer, Rob Pike, and Ken Thompson. It is strongly and statically typed, provides inbuilt support for garbage collection and supports concurrent programming. Programs are constructed using packages, for efficient management of dependencies. Go programming implementations use a traditional compile and link model to generate executable binaries.
+
+2) Can you return multiple values from a function?
+A Go function can return multiple values.
+
+Consider:
+
+package main
+import “fmt”
+
+func swap(x, y string) (string, string) {
+return y, x
+}
+func main() {
+a, b := swap(“Mahesh”, “Kumar”)
+fmt.Println(a, b)
+}
+
+3) Does Go have exceptions?
+No, Go takes a different approach. For plain error handling, Go’s multi-value returns make it easy to report an error without overloading the return value. Go code uses error values to indicate an abnormal state.
+
+Consider:
+
+func Open(name string) (file *File, err error)
+f, err := os.Open(“filename.ext”)
+if err != nil {
+log.Fatal(err)
+}
+// do something with the open *File f
+
+4) Explain this code
+In Go there are various ways to return a struct value or slice thereof. Could you explain the difference?
+
+type MyStruct struct {
+Val int
+}
+
+func myfunc() MyStruct {
+return MyStruct{Val: 1}
+}
+
+func myfunc() *MyStruct {
+return &MyStruct{}
+}
+
+func myfunc(s *MyStruct) {
+s.Val = 1
+}
+Answer
+Shortly:
+
+the first returns a copy of the struct,
+the second a pointer to the struct value created within the function,
+the third expects an existing struct to be passed in and overrides the value.
+
+5) How to efficiently concatenate strings in Go?
+In Go, a string is a primitive type, which means it is read-only, and every manipulation of it will create a new string.
+
+So if I want to concatenate strings many times without knowing the length of the resulting string, what’s the best way to do it?
+
+Answer
+Beginning with Go 1.10 there is a strings.Builder. A Builder is used to efficiently build a string using Write methods. It minimizes memory copying. The zero value is ready to use.
+
+package main
+
+import (
+“strings”
+“fmt”
+)
+
+func main() {
+var str strings.Builder
+
+JavaScript
+for i := 0; i < 1000; i++ {
+    str.WriteString("a")
+}
+
+fmt.Println(str.String())
+Code language: JavaScript (javascript)
+}
+
+6) What are Goroutines?
+Goroutines are functions or methods that run concurrently with other functions or methods. Goroutines can be thought of as light weight threads. The cost of creating a Goroutine is tiny when compared to a thread. Its common for Go applications to have thousands of Goroutines running concurrently.
+
+7) What are some advantages of using Go?
+Go is an attempt to introduce a new, concurrent, garbage-collected language with fast compilation and the following benefits:
+
+It is possible to compile a large Go program in a few seconds on a single computer.
+Go provides a model for software construction that makes dependency analysis easy and avoids much of the overhead of C-style include files and libraries.
+Go’s type system has no hierarchy, so no time is spent defining the relationships between types. Also, although Go has static types, the language attempts to make types feel lighter weight than in typical OO languages.
+Go is fully garbage-collected and provides fundamental support for concurrent execution and communication.
+By its design, Go proposes an approach for the construction of system software on multicore machines.
+
+8) What is dynamic type declaration of a variable in Go?
+A dynamic type variable declaration requires compiler to interpret the type of variable based on value passed to it. Compiler don’t need a variable to have type statically as a necessary requirement.
+
+9) What is static type declaration of a variable in Go?
+Static type variable declaration provides assurance to the compiler that there is one variable existing with the given type and name so that compiler proceed for further compilation without needing complete detail about the variable. A variable declaration has its meaning at the time of compilation only, compiler needs actual variable declaration at the time of linking of the program.
+
+10) What kind of type conversion is supported by Go?
+Go is very strict about explicit typing. There is no automatic type promotion or conversion. Explicit type conversion is required to assign a variable of one type to another.
+
+Consider:
+
+i := 55 //int
+j := 67.8 //float64
+sum := i + int(j) //j is converted to int
+
+11) Why the Go language was created?
+Go was born out of frustration with existing languages and environments for systems programming.
+
+Go is an attempt to have:
+
+an interpreted, dynamically typed language with
+the efficiency and safety of a statically typed, compiled language
+support for networked and multicore computing
+be fast in compilation
+To meet these goals required addressing a number of linguistic issues: an expressive but lightweight type system; concurrency and garbage collection; rigid dependency specification; and so on. These cannot be addressed well by libraries or tools so a new language was born.
+
+12) Can Go have optional parameters?
+Problem
+Or can I just define two functions with the same name and a different number of arguments?
+
+Answer
+Go does not have optional parameters nor does it support method overloading:
+
+Method dispatch is simplified if it doesn’t need to do type matching as well. Experience with other languages told us that having a variety of methods with the same name but different signatures was occasionally useful but that it could also be confusing and fragile in practice. Matching only by name and requiring consistency in the types was a major simplifying decision in Go’s type system.
+
+13) Have you worked with Go 2?
+Tricky questions and the answer is no one worked. There is no Go version 2 available in 2018 but there are some movement toward it. Go 1 was released in 2012, and includes a language specification, standard libraries, and custom tools. It provides a stable foundation for creating reliable products, projects, and publications. The purpose of Go 1 is to provide long-term stability. There may well be a Go 2 one day, but not for a few years and it will be influenced by what we learn using Go 1 as it is today.
+
+The possible goals and features of Go 2 are:
+
+Fix the most significant ways Go fails to scale *Provide backward compatibility
+Go 2 must not split the Go ecosystem
+
+14) How do you swap two values? Provide a few examples.
+Two values are swapped as easy as this:
+
+a, b = b, a
+To swap three values, we would write:
+
+a, b, c = b, c, a
+The swap operation in Go is guaranteed from side effects. The values to be assigned are guaranteed to be stored in temporary variables before starting the actual assigning, so the order of assignment does not matter.
+
+15) How to copy Map in Go?
+You copy a map by traversing its keys. Unfortunately, this is the simplest way to copy a map in Go:
+
+a := map[string]bool{“A”: true, “B”: true}
+b := make(map[string]bool)
+for key, value := range a {
+b[key] = value
+}
+
+16) How to initialise a struct in Go?
+The new keyword can be used to create a new struct. It returns a pointer to the newly created struct.
+
+var pa *Student // pa == nil
+pa = new(Student) // pa == &Student{“”, 0}
+pa.Name = “Alice” // pa == &Student{“Alice”, 0}
+You can also create and initialize a struct with a struct literal.
+
+b := Student{ // b == Student{“Bob”, 0}
+Name: “Bob”,
+}
+
+pb := &Student{ // pb == &Student{“Bob”, 8}
+Name: “Bob”,
+Age: 8,
+}
+
+c := Student{“Cecilia”, 5} // c == Student{“Cecilia”, 5}
+d := Student{} // d == Student{“”, 0}
+
+17) How to check if a Map contains a key in Go?
+if val, ok := dict[“foo”]; ok {
+//do something here
+}
+if statements in Go can include both a condition and an initialization statement. The example above uses both:
+
+initializes two variables – val will receive either the value of “foo” from the map or a “zero value” (in this case the empty string) and ok will receive a bool that will be set to true if “foo” was actually present in the map
+
+evaluates ok, which will be true if “foo” was in the map
+
+If “foo” is indeed present in the map, the body of the if statement will be executed and val will be local to that scope.
+
+18) Is there a foreach construct in the Go language?
+A for statement with a range clause iterates through all entries of an array, slice, string or map, or values received on a channel. For each entry it assigns iteration values to corresponding iteration variables and then executes the block.
+
+for index, element := range someSlice {
+// index is the index where we are
+// element is the element from someSlice for where we are
+}
+If you don’t care about the index, you can use _:
+
+for _, element := range someSlice {
+// element is the element from someSlice for where we are
+}
+
+19) What is rune type in Go?
+There are many other symbols invented by humans other than the ‘abcde..’ symbols. And there are so many that we need 32 bit to encode them.
+
+A rune is a builtin type in Go and it’s the alias of int32. rune represents a Unicode CodePoint in Go. It does not matter how many bytes the code point occupies, it can be represented by a rune. For example the rule literal a is in reality the number 97.
+
+A string is not necessarily a sequence of runes. We can convert between string and []rune, but they are different.
+
+20) What is so special about constants in Go?
+Constants in Go are special.
+
+Untyped constants. Any constant in golang, named or unnamed, is untyped unless given a type explicitly. For example an untyped floating-point constant like 4.5 can be used anywhere a floating-point value is allowed. We can use untyped constants to temporarily escape from Go’s strong type system until their evaluation in a type-demanding expression.
+1 // untyped integer constant
+const a = 1
+var myFloat32 float32 = 4.5
+var myComplex64 complex64 = 4.5
+Typed constants. Constants are typed when you explicitly specify the type in the declaration. With typed constants, you lose all the flexibility that comes with untyped constants like assigning them to any variable of compatible type or mixing them in mathematical operations.
+const typedInt int = 1
+Generally, we should declare a type for a constant only if it’s absolutely necessary. Otherwise, just declare constants without a type.
+
+21) Why should one use Go programming language?
+Because Go is an open-source programming language so, it is very easy to build simple, reliable and efficient software.
+
+22) Who is known as the father of Go programming language?
+Go programming language is designed by Robert Griesemer, Rob Pike, and Ken Thompson. It is developed at Google Inc. in 2009.
+
+23) What are packages in Go program?
+Go programs are made up of packages. The program starts running in package main. This program is using the packages with import paths “fmt” and “math/rand”.
+
+24) Does Go support generic programming?
+Go programming language doesn’t provide support for generic programming.
+
+25) Is Go a case-sensitive language?
+Yes! Go is a case-sensitive programming language.
+
+26) What is a string literal in Go programming?
+A string literals specifies a string constant that is obtained from concatenating a sequence of characters.
+
+There are two types of string literals:
+
+Raw string literals: The value of raw string literals are character sequence between back quotes “. Its value is specified as a string literal that composed of the uninterrupted character between quotes.
+Interpreted string literals: It is shown between double quotes ” “. The value of the literal is specified as text between the double quotes which may not contain newlines.
+
+27) What is workspace in Go?
+A workspace contains Go code. A workspace is a directory hierarchy with three directories at its root.
+
+“src” directory contains GO source files organized into packages.
+“pkg” directory contains package objects.
+“bin” directory contains executable commands
+
+28) What is the GOPATH environment variable in go programming?
+The GOPATH environment variable specifies the location of the workspace. You must have to set this environment variable while developing Go code.
+
+29) What are the several built-in supports in Go?
+A list of built-in supports in Go:
+
+Container: container/list,container/heap
+Web Server: net/http
+Cryptography: Crypto/md5 ,crypto/sha1
+Compression: compress/ gzip
+Database: database/sql
+
+30) How to write multiple strings in Go programming?
+To write multiple strings in Go, you should use a raw string literal, where the string is delimited by back quotes.
+For example:
+
+‘line 1
+line 2
+line 3 ‘
+
+31) What is the usage of break statement in Go programming language?
+The break statement is used to terminate the for loop or switch statement and transfer execution to the statement immediately following the for loop or switch.
+
+32) What is the usage of continue statement in Go programming language?
+The continue statement facilitates the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+
+33) Explain the syntax for ‘for’ loop.
+The syntax of a for loop in Go programming language is:
+
+for [condition | ( init; condition; increment ) | Range]
+{
+statement(s);
+}
+
+34) Write the syntax to create a function in Go programming language?
+Syntax to create a function in Go:
+
+func function_name( [parameter list] ) [return_types]
+{
+body of the function
+}
+
+35) Explain dynamic type declaration of a variable in Go programming language?
+A dynamic type variable declaration needs a compiler to interpret the type of variable according to the value passed to it. Compilers don’t need a variable to have type statically as a necessary requirement.
+
+36) How would you print type of variable in Go?
+You have to use the following code to print the type of a variable:
+
+var a, b, c = 3, 4, “foo”
+fmt.Printf(“a is of type %T\n”, a)
+
+37) What is a pointer in Go?
+A pointer is used to hold the address of a variable.
+
+For example:
+
+var x = 5
+var p *int
+p = &x
+fmt.Printf(“x = %d”, *p)
+Here x can be accessed by *p.
+
+38) How a pointer is represented in Go?
+In Go, a pointer is represented by using the *(asterisk) character followed by the type of the stored value.
+
+39) Does Go programming language support type inheritance?
+Go programming language doesn’t provide support for type inheritance.
+
+40) What is Syntax like in Go programming language?
+The GO programming language syntax is specified using Extended Backus-Naur Form (EBNF):
+
+Production = production_name “=” [ Expression ]
+Expression = Alternative { “l” Alternative }
+Alternative = Term { Term }
+Term = Production_name l token [ “?”token] l Group l Option l Repetition
+Group = ” ( “” Expression”)”
+Option = ” [ ” Expression “” ]”
+Repetition = ” {” Expression “}”
+
+41) What is concurrency Golang?
+Generally, large programs are made of many multiple small subprograms. For example, a server handles multiple requests made via web browsers and serves HTML web pages in response. In this case, each request made is considered as a small program.
+
+Golang makes it possible to run smaller components of each of these programs simultaneously through concurrency. It has extensive support for concurrency using goroutines and channels.
+
+42) How to swap two values in golang?
+package main
+import “fmt”
+func main() {
+fmt.Println(functionByBestInterviewQuestion())
+}
+
+func functionByBestInterviewQuestion() []int {
+a, b := 15, 10
+b, a = a, b
+return []int{a, b}
+}
+
+43) Why Golang is fast?
+Golang’s small syntax and concurrency model make it a without a doubt speedy programming language. Golang is compiled to machine code and its compilation system is very fast. Go additionally hyperlinks all the dependency libraries into a single binary file as a consequence putting off the dependency on servers
+
+How do I check if an array is empty in Golang?
+To check if the array is empty follow these steps:
+
+Check with the builtin len() function, for example, len(slice) <= 0. If the array is empty, skip the for a loop.
+
+r := whatever()
+if len(r) > 0 {
+// do what you want
+}
+
+44) What is a workspace?
+It is a directory hierarchy with three directories – src, pkg and bin – at its root that contain the Go code. The “src” directory includes source files, the “pkg” directory contains objects, and the “bin” directory contains commands.
+
+45) What are channels and how can you use them in Golang?
+In Golang, a channel is a communication object which uses goroutines to communicate with each other. Technically, it is a data transfer pipe in which data can be transferred into or read from.
+
+Is Golang multithreaded?
+Yes, Golang supports multithreading. Moreover, its design is based on multithreading.
+
+How will you access command line arguments in a GO program?
+The command line argument can be accessed using the os.Args variables.
+
+For instance:
+Package main
+import (
+“fmt”
+“OS”
+)
+func main () {
+fmt.Println(len(os.Args), os.Args)
+}
+
+46) What is CGO Golang?
+In Golang, the Cgo lets all the Go packages call a C code. With a Go source file written on some special features, the cgo makes an output in Go and C files which can be then combined into a single Go package bundle.
+
+47) What is Shadowing?
+In Golang, a shadowed variable is one which is declared in an inner scope having the same name and type as a variable in the outer scope. Here, the outer variable is mentioned after the inner variable is declared.
+
+48) What is a string literal?
+It refers to a string constant which is obtained by concatenating an arrangement of characters. String literals are of two types – Raw string literals and Interpreted string literals.
+
+49) Why does my Go process use a lot of virtual memory?
+The Go memory allocator preserves a significant portion of virtual memory for allocations, which is local to the specific Go process.
+
+50) How is testing performed in GO?
+To test on Golang, follow these steps:
+
+Create a file and end it with _test.go.
+This file should contain the TestXxx functions as described.
+Now, put this file in the same package as the one which is being tested.
+This file will now be included in the “go test” command.
+
+51) What is the GOPATH environment variable?
+It specifies the workspace’s location. It is essential to set this environment variable while developing the Go code.
+
+52) What is the usage of break statement, continue statement and goto statement?
+Break statement: It terminates the “for” loop or switch statement and transfers execution following the “for” loop or switch.
+
+Continue statement: It helps the loop to omit the remainder of its body and retest before repeating.
+
+Goto statement: It transfers control to the statement.
+
+53) What are “packages”?
+Every GO program is built of packages that are used to organize source code for readability and reusability. Packages make it easy to maintain applications. The abbreviation for a package is “fmt”.
+
+54) How can an entry be deleted from a map?
+Use the delete () function to delete an entry. It requires a map and the corresponding key that has to be deleted.
+
+56) What are nil Pointers?
+When a pointer is assigned “nil”, it called a nil pointer. It is a constant with a “zero” value defined in standard libraries.
+
+57) How will you document libraries?
+Godoc extracts package documentation from the source code that can be utilized on the command line or the web. An instance is golang.org/pkg/.
+
+58) What is a modular programming language?
+It is a strategy for creating software by separating the functionality of a program into a different independent and exchangeable modules that are clubbed together to achieve the final software.
+
+59) Is it possible to declare variables of different types in a single line of code in Golang?
+Yes, this can be achieved by writing as shown below:
+
+var a,b,c= 9, 7.1, “interviewbit”
+Here, we are assigning values of a type Integer number, Floating-Point number and string to the three variables in a single line of code.
+
+60) Why is Golang fast compared to other languages?
+Golang is faster than other programming languages because of its simple and efficient memory management and concurrency model. The compilation process to machine code is very fast and efficient. Additionally, the dependencies are linked to a single binary file thereby putting off dependencies on servers.
+
+61) How will you check the type of a variable at runtime in Go?
+In Go, we can use a special type of switch for checking the variable type at runtime. This switch statement is called a “type switch”.
+
+Consider the following piece of code where we are checking for the type of variable v and performing some set of operations.
+
+switch v := param.(type) {
+default:
+fmt.Printf(“Unexpected type %T”, v)
+case uint64:
+fmt.Println(“Integer type”)
+case string:
+fmt.Println(“String type”)
+}
+In the above code, we are checking for the type of variable v, if the type of variable is uint64, then the code prints “Integer type”. If the type of variable is a string, the code prints “String type”. If the type doesn’t match, the default block is executed and it runs the statements in the default block.
+
+61) Is the usage of Global Variables in programs implementing goroutines recommended?
+Using global variables in goroutines is not recommended because it can be accessed and modified by multiple goroutines concurrently. This can lead to unexpected and arbitrary results.
+
+62) How is GoPATH different from GoROOT variables in Go?
+The GoPATH variable is an environment variable that is used for symbolizing the directories out of $GoROOT which combines the source and the binaries of Go Projects. The GoROOT variable determines where the Go SDK is located. We do not have to modify the variable unless we plan to use multiple Go versions. The GoPATH determines the root of the workspace whereas the GoROOT determines the location of Go SDK.
+
+63) Which is safer for concurrent data access? Channels or Maps?
+Channels are safe for concurrent access because they have blocking/locking mechanisms that do not let goroutines share memory in the presence of multiple threads.
+
+Maps are unsafe because they do not have locking mechanisms. While using maps, we have to use explicit locking mechanisms like mutex for safely sending data through goroutines.
+
+64) What do you understand by byte and rune data types? How are they represented?
+byte and rune are two integer types that are aliases for uint8 and int32 types respectively.
+The byte represents ASCII characters whereas the rune represents a single Unicode character which is UTF-8 encoded by default.
+
+The characters or rune literals can be represented by enclosing in single quotes like ‘a’,’b’,’\n’.
+Rune is also called a Code point and can also be a numeric value. For example, 0x61 in hexadecimal corresponds to the rune literal a.
+Golang Programs
+
+65) Which is safer for concurrent data access? Channels or Maps?
+Channels are safe for concurrent access because they have blocking/locking mechanisms that do not let goroutines share memory in the presence of multiple threads.
+
+Maps are unsafe because they do not have locking mechanisms. While using maps, we have to use explicit locking mechanisms like mutex for safely sending data through goroutines.
+
+66) Write a Go program to swap variables in a list?
+Consider we have num1=2, num2=3. To swap these two numbers, we can just write: num1,num2 = num2, num1
+
+The same logic can be extended to a list of variables as shown below:
+
+package main
+
+import “fmt”
+
+func swapContents(listObj []int) {
+for i, j := 0, len(listObj)-1; i < j; i, j = i+1, j-1 {
+listObj[i], listObj[j] = listObj[j], listObj[i]
+}
+}
+func main() {
+listObj := []int{1, 2, 3}
+swapContents(listObj)
+fmt.Println(listObj)
+}
+The code results in the output:
+
+[3 2 1]
+
+67) Write a Go program to find the nth Fibonacci number.
+To find the nth Fibonacci number, we have to add the previous 2 Fibonacci numbers as shown below.
+
+fib(0)=0
+fib(1)=1
+fib(2)=1+0 = 1
+fib(3)=1+1 = 2
+fib(4)=2+1 = 3
+:
+:
+fib(n)=fib(n-1)+fib(n-2)
+Code:
+
+package main
+import “fmt”
+//nth fibonacci number function
+func fibonacci(n int) int {
+if n < 2 {
+return n
+}
+return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func main() {
+fmt.Println(fibonacci(7))
+}
+The output of this code would be:
+
+68) Write a Go code to compare two slices of a byte.
+We can do this by using the Compare() method from the bytes package.
+
+package main
+
+import (
+“bytes”
+“fmt”
+)
+
+func main() {
+
+JavaScript
+sl1 := []byte{'I', 'N', 'T', 'E', 'R' , 'V', 'I', 'E', 'W'}
+sl2 := []byte{'B', 'I', 'T'}
+
+// Use Compare function to compare slices
+res := bytes.Compare(sl1, sl2)
+
+if res == 0 {
+    fmt.Println("Equal Slices")
+} else {
+    fmt.Println("Unequal Slices")
+}
+Code language: JavaScript (javascript)
+}
+The output of this code is:
+
+Unequal Slices
+
+69) What are Golang packages?
+Go Packages (in short pkg) are nothing but directories in the Go workspace that contains Go source files or other Go packages themselves. Every single piece of code starting from variables to functions are written in the source files are in turn stored in a linked package. Every source file should belong to a package.
+
+From the image below, we can see that a Go Package is represented as a box where we can store multiple Go source files of the .go extension. We can also store Go packages as well within a package.
+
+The package is declared at the top of the Go source file as package
+
+The packages can be imported to our source file by writing: import
+
+An example of the Go package is fmt. This is a standard Go Package that has formatting and printing functionalities such as Println().
+
+70) What do you understand by Golang string literals?
+
+String literals are those variables storing string constants that can be a single character or that can be obtained as a result of the concatenation of a sequence of characters. Go provides two types of string literals. They are:
+
+Raw string literals: Here, the values are uninterrupted character sequences between backquotes. For example:
+interviewbit
+Interpreted string literals: Here, the character sequences are enclosed in double-quotes. The value may or may not have new lines. For example:
+“Interviewbit
+Website”
+
+71) You have developed a Go program on Linux and want to compile it for both Windows and Mac. Is it possible?
+Yes, it’s possible to compile a Go application for different operating systems.
+
+72) How can you compile a Go program for Windows and Mac?
+To compile the program, move to the application’s directory. Then execute the following commands in the terminal.
+
+Compile the application for Windows and 64bit CPUs:
+
+GOOS=windows GOARCH=amd64 go build -o my_go_program.exe
+
+Compile the application for Mac and 64bit CPUs:
+
+GOOS=darwin GOARCH=amd64 go build -o my_go_program
+
+73) What is the string data type in Golang, and how is it represented?
+A string is a series of byte values. It’s a slice of bytes, and any byte slice can be encoded in a string value. So we can encode anything in a string, even beyond just Unicode text, like images or binary applications.
+
+Golang doesn’t have a char data type. It uses bytes and runes to represent character values.
+
+74) Can you change a specific character in a string?
+No. Strings are immutable (read-only) data types and you cannot change them. If we try to change a specific character in a string, we’ll get a runtime error.
+
+75) Explain array and slice types and the differences between them.
+Golang has two data structures to handle lists of records: arrays and slices.
+
+An array is a composite, indexable type that stores a collection of elements.
+
+An array has a fixed length. We specify how many items are in the array when we declare it. This is in contrast to a slice that has a dynamic length (it can shrink or grow at runtime).
+
+The array length is part of its type.
+
+Every element in an array or slice must be of the same type.
+
+Slices are a key data type in Golang and are everywhere
+
+76) Give an example of an array and slice declaration.
+Here’s an example of declaring and initializing an array of type [4] string using the short declaration syntax.
+
+friends := [4]string{“Dan”, “Diana”, “Paul”, “John”}
+
+Here’s an example of declaring and initializing a slice of type [] int using the short declaration syntax.
+
+numbers := []int{2, 3, 4, 5}
+
+77) What will the following Go program print out?
+package main
+import “fmt”
+
+func main() {
+n1 := []int{10, 20, 30, 40}
+n1 = append(n1, 100)
+fmt.Println(len(n1), cap(n1))
+}
+A: The program will print out 5 8
+
+The append() function creates a new backing array with a larger capacity. This avoids creating a new backing array when the next append() is called.
+
+78) What is the static type declaration of a variable in Golang?
+Static type variable declaration gives confirmation to the compiler that there is one variable existing with the given kind and name so the compiler continues for an additional compilation without requiring total insight concerning the variable. A variable declaration holds its importance at the moment of compilation only, the compiler requires actual variable declaration at the moment of connecting to the program.
+
+79) What is the dynamic variable declaration in Golang?
+A dynamic kind variable declaration needs the compiler to explain the kind of the variable based on the amount transferred to it. The compiler doesn’t need a variable to cateGorise statically as a mandatory condition.
+
+80) Mention the packages in Golang?
+As many of the programming languages, the Go programming language also runs on packages, like any other programming Go program also starts for the “main” package, other packages like “fmt”, “math/rand” are imported using the “import” keyword.
+
+81) Is Go case sensitive?
+True, GoLang is case sensitive which intimates in Go
+
+‘ab’ and ‘AB’ are diverse from each other and it doesn’t disclose any error if we list these couple of variables in the same code.
+
+82) Explain pointers in Go?
+Pointers are variables that hold the address of any variable. Pointers in Golang are likewise called special variables. There are two operators in pointers they are
+
+operator which is also called a dereferencing operator used to access the value in the address
+& operator which is also called as address operator this is utilized to return the address of the variable
+83) What is a constant variable in Go?
+As the name suggests constant means fixed and the meaning doesn’t change in a programming language. Once the value of a constant variable is defined then it should be the same throughout the program, we cannot change the value of a variable in between the program.
+
+84) Declare a constant variable in Golang?
+package main
+
+import “fmt”
+
+const a=5
+
+Func main{
+
+const AM=” app majix”
+
+fmt.println(“hello”, AM)
+
+fmt.println(“hi”, a)
+
+}
+
+85) List the operators in Golang?
+Arithmetic operators
+Bitwise operators
+Relational operators
+Logical operators
+Assignment operators
+Misc operators
+
+86) What is the scope of a variable?
+The scope of a variable means the part of a program where the particular variable can be accessed. In the Go language, every variable is statistically scoped that means the scope of a variable is declared at compile time itself.
+
+Scope of a variable in the Go language is cateGorized into two types
+
+Local variables these variables are either declared inside a function or a block
+
+Global variables these variables are declared outside the function or a block
+
+87) List data types on Golang?
+There are 4 data types in the Go language
+
+Basic type numbers, strings, and booleans
+Aggregate type structures and arrays
+Reference type slices, pointers, maps, channels, and functions
+Interface type
+
+88) Explain Methods in Golang?
+There is only one difference between Go methods and Go functions that is the methods of Golang contain receiver argument in them. The method can obtain the characteristics of the receiver with the cooperation of the receiver argument.
+
+syntax:
+
+func(name type) method_name(param_list)(return_type)
+
+{
+
+JSON
+ //code
+Code language: JSON / JSON with Comments (json)
+}
+
+89) What is Golang workspace?
+The workspace of Golang includes three directories as its roots, workspace carries Go code, the three root directories are:
+
+“Src” the source file regulated into packages
+“Pkg” package objects are stored in the directory
+“Bin” contains executable commands
+
+90) Is GoLang fast?
+Golang’s concurrency model and small syntax make Golang fast programming language, Golang compilation is very fast, Go hyperlinks all the dependency libraries into a single binary file, as a result, putting off the dependence on servers.
+
+91) How can we declare the multiple types of variables in a single code line in Golang?
+Yes, we can declare various type variables in a single code declaration like the example below:
+
+var x,y,a= 8, 10.1, “appmajix”
+
+92) What are built-in supports in Golang?
+Web server: http/net
+Container: heap/container list/ container
+Cryptography: crypto md5/ crypto
+Database: sql/database
+Compression: gzip/compress
+
+Print HelloWorld in Golang?
+package main
+
+import “fmt”
+
+func main()
+
+{
+
+fmt.println(“Hello World”)
+
+}
+
+93) Explain structures in Golang?
+A struct or a structure of Golang is a user-defined variety that helps the group or combines items of various types into a single type, each real-world entity that holds some characteristics can be represented as a structure.
+
+For example, an entity “student” has a name, roll no, address. It gives the sense to group these three attributes into a single structure “student” as shown
+
+type address struct
+
+{
+
+name string
+
+Rollno int
+
+address string
+
+}
+
+94) Why do we use the break statement in Golang?
+The break statement is utilized to stop the for loop or switch statement and assign execution to the statement quickly following the for loop or switch.
+
+95) Which kind of conversion is supported by Golang?
+Go is very particular about explicit typing. There is no automated type conversion. Explicit type conversion is needed to designate a variable of one type to another.
+
+96) Does Golang support inheritance?
+Golang doesn’t have the inheritance concept. But to support code reuse and polymorphism functionality, it provides a composition, embedding, and interfaces.
+
+97) How to check the variable type at runtime in Golang?
+In Golang, to check the variable type at runtime, a special type of switch is used and is referred to as a type switch. Also, you can switch on the type of interface value with Type Switch.
+
+98) How to compare two structs?
+You can compare two structs with the “==” operator, as you would do with other types. Make sure they don’t contain any functions, maps, or slices in which the code will not be compiled.
+
+99) What’s the difference between unbuffered and buffered channels?
+For the buffered channel, the sender will block when there is an empty slot of the channel, while the receiver will block on the channel when it’s empty.
+
+Compared with the buffered counterpart, in an unbuffered channel, the sender will block the channel until the receiver receives the channel’s data. Simultaneously, the receiver will also block the channel until the sender sends data into the channel.
+
+100) What is Rune in Golang?
+A rune is a built-in type in Golang, and it’s the alias of int32. It represents a Unicode CodePoint. It doesn’t matter how many times the code point occupies; a rune can represent it.
+
+For example, the rule literal a is number 97 in reality.
+
+A string is not a sequence of runes.
+
+Related video:
+
+Rajesh Kumar
+Rajesh Kumar
+I’m Rajesh Kumar, a DevOps, SRE, DevSecOps, Cloud, and Platform Engineering expert passionate about sharing practical knowledge, real-world experiences, and industry best practices. I have worked at Cotocus and regularly write about technology, travel, investing, health, product reviews, and digital marketing through my various platforms.
+
+I publish technical articles at DevOps School, travel stories at Holiday Landmark, stock market insights at Stocks Mantra, health and fitness guidance at My Medic Plus, product reviews at TrueReviewNow, and SEO and digital marketing strategies at Wizbrand.
+
+Find Trusted Cardiac Hospitals
+Compare heart hospitals by city and services — all in one place.
+
+Explore Hospitals
+#Gin #interview question and answers #Golang #go #program #Golang #code #package
+
+Rajesh Kumar
+I'm Rajesh Kumar, a DevOps, SRE, DevSecOps, Cloud, and Platform Engineering expert passionate about sharing practical knowledge, real-world experiences, and industry best practices. I have worked at Cotocus and regularly write about technology, travel, investing, health, product reviews, and digital marketing through my various platforms. I publish technical articles at DevOps School, travel stories at Holiday Landmark, stock market insights at Stocks Mantra, health and fitness guidance at My Medic Plus, product reviews at TrueReviewNow, and SEO and digital marketing strategies at Wizbrand.
+Related Posts
+Interview Questions & Answers
+Top 50 Azure DevOps interview questions and answers
+Rajesh Kumar
+·
+December 2, 2023
+·
+0 Comment
+1) What is DevOps? DevOps is Development and Operation’s Collaboration, it’s a Union of 3Ps – Process, People and Product (working Product) that enable continuous integration and…
+Read More
+→
+Interview Questions & Answers
+Top 50 Sonatype Nexus interview questions and answers
+Rajesh Kumar
+·
+August 18, 2023
+·
+2 Comments
+General Knowledge: Installation and Configuration: Artifact Management: Security and Access Control: Integration and Automation: Troubleshooting and Maintenance: Best Practices and Optimization: Sonatype Nexus is a repository manager…
+Read More
+→
+Interview Questions & Answers
+Top Jenkins interview questions and answers
+Rajesh Kumar
+·
+July 21, 2023
+·
+0 Comment
+1. What is Jenkins? Jenkins is an open-source automation server that helps automate various aspects of software development, such as building, testing, and deploying code. It allows…
+Read More
+→
+ANDROID
+Top 50 Selendroid interview questions and answers
+Rajesh Kumar
+·
+July 3, 2023
+·
+1 Comment
+General Questions Element Identification and Interaction Multiple Device Support Native and Hybrid App Automation WebView Automation Testing Framework Integration Gestures and Actions Test Configuration and Management Error…
+Read More
+→
+Interview Questions & Answers
+Top 50 Pagerduty Interview Questions & Answer
+Rajesh Kumar
+·
+April 5, 2022
+·
+2 Comments
+1) If you were asked to review a colleague’s code that they had written, what key things would you look for? For this question, your interviewer will…
+Read More
+→
+Interview Questions & Answers
+Top 50 Postfix Interview Questions & Answer
+Rajesh Kumar
+·
+April 4, 2022
+·
+0 Comment
+1) What Is Postfix And Default Port Used For Postfix ? Postfix is a open source MTA (Mail Transfer agent) which is used to route & deliver…
+Read More
+→
+ Subscribe 
+guest
+
+
+{}[+]
+0 Comments
+Search for:
+Search …
+
+How to contact us?
+Need Assistance!!!
+Feel Free To Contact Us
++1 (469) 756-6329
+(US Call-WhatsApp)
++91 7004 215 841
+(India Call-WhatsApp)
+
+Email us
+Contact@DevOpsSchool.com
+
+
+
+
+
+
+
+
+Archives Archives
+Select Month
+Categories
+Categories
+Select Category
+Number of posts: 12,382
+Number of users: 43
+
+Popular Blog
+Batch Script to Login and sync the files from perforce | Step by step guide
+5 Keys to Automating Configuration Management for Application Infrastructure
+What are the potential SCM problem Classes in the process?
+What is Apache Ant? – Apache ant Overview
+Potential SCM Problem Classes | SCM Potential considerations in an organization
+Latest Blogs
+How DevOps Practices Reduce Risk During Large-Scale Shopify Migrations
+The SRE Guide to Shift-Right DevOps and Continuous Feedback Loops
+The Master Guide to ChatGPT and Codex
+The Master Guide to Claude Code & Claude Cowork
+Leading People and Culture Consulting Firms for Enterprise Transformation
+TOP Artificial Intelligence (AI) Automation Agency 10+ 2026 Ranking
+OWASP Dependency-Check vs OWASP Dependency-Track: Features, Differences, Evolution, Architecture, and Best Use Cases
+From OWASP ZAP to ZAP: The Complete Evolution, History and Milestones of the Zed Attack Proxy
+Promptosia: The AI Prompt OS for Creating, Organising and Improving Better Prompts
+URLsNow: The Smarter Way to Organise, Monitor and Share Every Link You Publish
+FreePostFinder: Discover the Best Free Platforms to Publish Your Content Online
+Creating Game Assets with an AI Game Asset Generator: Complete Guide for Indie Developers & Artists
+Top 10 Digital Signature Software Tools in 2026: Features, Pros, Cons & Comparison
+Beyond ChatOps: Why DevOps and IT Ops Teams Need Customer-Facing Chatbot Automation Too
+Discover How HIX AI Slides Makes Presentation Creation Faster Than Ever
+Top 10 Graphics Design Tools in 2026: Features, Pros, Cons & Comparison
+Top 10 Presentation Software Tools in 2026: Features, Pros, Cons & Comparison
+Top AI Tools & Websites for Logos, Icons, Characters images
+Top 10 Digital Business Card Tools for Tech Professionals and Remote Teams in 2026
+Top DevOps Companies in 2026: 10 Best Firms for Startups and Enterprises
+Data Lake Architecture Best Practices for DataOps Teams
+How to Optimize Your headless CMS for Multilingual Websites
+Best EHR Software Development Companies in the USA for FHIR, HIPAA, and Beyond
+The Role of DevOps Practices in Softalium Limited’s Software Delivery Model
+How to Fill Out PDF Forms Online Quickly and Without Any Stress
+Why Citation Management Software Matters for Academic Researchers
+Introducing eSIMRoamly: The Evidence-Backed Global Guide to SIMs, eSIMs, Mobile Networks, and Roaming
+Introducing BlogRealm: The Free Global Blogging Platform Where Every Writer Gets a Realm of Their Own
+Introducing UrologyHospitals.com: A More Trustworthy Way to Understand Urologic Health and Find Appropriate Care
+Introducing IVF Hospitals Now: A Clearer, More Transparent Way to Navigate Fertility Care
+Introducing BrainSurgeryHospitals.com: A Clearer, More Trustworthy Way to Navigate Brain and Neurological Care
+Best Tools for Writing Official Product Documentation in HTML: A Complete 2026 Guide
+Promptosia: The AI Prompt OS for Building, Improving and Sharing Better Prompts
+Reloqui: The Release Intelligence Platform That Shows What Actually Shipped
+Introducing Vehicle Rental System: A Simpler Way to Manage Bookings, Vehicles, Customers and Revenue
+Why AI Content Verification Is a Core Priority for Students in 2026
+Wink Review: Can AI Simplify Image and Video Enhancement for Modern Content Teams?
+Streamline Your Operations: The Best Free Vehicle Rental Management Software
+Navigating Heart Surgery: A Guide to Global Cardiac Care
+Best Cardiac Hospitals: Global Guide to Top Heart Care
+Top Certifications Tutorials Forum Update Professional
+
+
 
 Cost to Build Open Banking Integrations: The 2026 Engineering Cost Guide
 
