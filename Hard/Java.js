@@ -1,36 +1,656 @@
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
 
-Статья
-Поиск
+Топ-50 Java Core вопросов и ответов на собеседовании. Час...
+Roman Beekeeper
+1 уровень
+ 17 марта 2020
+ 109160 views
+ 18 comments
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 2
+Статья из группы Java Developer
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 1
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 2 - 1
+Collections
+25. Что имеется в виду под Collections в Java?
+Collection — это фреймворк, который создан для сохранения и манипуляции объектами.
 
-Отзывы
-О нас
-CS50
-JavaRush University
+Используется для выполнения следующих операций:
+поиск;
+сортировка;
+манипуляция;
+добавление;
+удаление.
+Все классы и интерфейсы для Collection фреймворка находятся в java.util пакете.
+26. Какие классы и интерфейсы доступны в Collection фреймворке?
+Интерфейсы:
+Collection;
+List;
+Set;
+Map;
+Sorted Set;
+Sorted Map;
+Queue.
+Классы:
+Lists:
+ArrayList;
+LinkedList;
+Vector(deprecated).
+Sets:
+HashSet;
+LinkedHashSet;
+TreeSet.
+Maps:
+HashMap
+TreeMap
+HashTable (deprecated)
+LinkedHashMap
+Queue
+Priority Queue.
+27. Что подразумевается под sorted и ordered в коллекциях?
+Ordered (упорядочивание):
+Это означает, что элементы, которые хранятся в коллекции, основаны на значениях, добавленных в коллекцию. 
 
-JavaRush
-/
-Java блог
-/
-Java Developer
-/
+Таким образом, мы можем перебирать значения из коллекции в определенном порядке. Другими словами это значит, что у элементов коллекции есть свой специфический порядок, согласно которому они расположены.
+
+Для лучшего понимания, коллекция, которая не упорядочена (ordered), хранит элементы в произвольном порядке. Например, Set.
+Sorted (отсортированный):
+Это значит, что группа элементов отсортирована в коллекции на основе данных элемента коллекции. То есть не только коллекция упорядочена (ordered), но еще и порядок элементов зависит от их значений. Этот порядок может меняться, если отсортировать по другому значению элемента.
+28. Какие есть коллекции с List интерфейсом? Как происходит работа с List?
+Значения элементов в лист базируются на их индексе — они упорядочены по индексу. Повторения элементов разрешены (то есть можно добавить один и тот же объект в коллекцию несколько раз, и это будет нормально).
+ArrayList:
+Самая распространенная коллекция. По сути, это массив с динамически расширяемым размером. Работа по управлению размером массива лежит на коллекции.
+
+Для нас важно понять, что в большинстве случаев это то, что нам нужно использовать. 
+
+Особенности:
+быстрый перебор и быстрый поиск по индексу;
+коллекция упорядочена по индексу, но не сортирована;
+реализует RandomAccess интерфейс;
+медленное добавление в середину списка.
+Пример:
+
+public class A {
+
+   public static void main(String[] args) {
+       ArrayList names = new ArrayList<>();
+       names.add("John");
+       names.add("John");
+       names.add("Roman");
+       names.add("Ivan");
+   }
+
+}
+
+>> output
+[John, John, Roman, Ivan]
+
+В выводе видно, что это повторяемые элементы. Они выведены в порядке, в котором их записали.
+
+Что еще почитать? Да море информации, даже выходить из JavaRush не нужно:
+Подробный разбор класса ArrayList
+Класс ArrayList
+Работа ArrayList в картинках
+ArrayList в Java
+Linked List:
+Это коллекция, в которой каждый элемент имеет ссылку на предыдущий и следующий элементы. По этим ссылкам можно переходить от одного элемента к другому.
+
+При добавлении элемента просто меняются ссылки на предыдущий и следующий элементы:
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 2 - 2
+элементы связаны друг с другом, то есть реализован двусвязный список;
+общая скорость работы заметно ниже, чем в ArrayList;
+отличный выбор для большого количества вставок и удалений в середину массива;
+реализует интерфейсы списков Queue и Deque, поэтому и имеет их методы для работы.
+Пример:
+
+LinkedList<String> linkedList = new LinkedList<>();
+linkedList.add("One");
+linkedList.add("Two");
+linkedList.add("Three");
+29. Расскажите о коллекции Map и ее реализациях?
+Map — это коллекция ключ-значение (key-value). Есть уникальный ключ и значение, которое соответствует этому значению. Используется equals() и hashcode() методы для определения уникальности ключа.
+HashMap:
+не отсортирован и не упорядочен;
+используют если не важны порядок и сортировка;
+поддерживает null ключ.
+Пример:
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       HashMap positions = new HashMap<>();
+       positions.put("junior", "Ivan");
+       positions.put("middle", "Roman");
+       positions.put("senior", "Vasily");
+       positions.put("team lead", "Anton");
+       positions.put("arthitect", "Andrew");
+       positions.put("senior", "John");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// {junior=Ivan, middle=Roman, senior=John, team lead=Anton, arthitect=Andrew}
+
+Java-университет
+
+
+Ключи всегда уникальны, поэтому записан только один senior.
+LinkedHashMap:
+поддерживает порядок вставки;
+медленнее, чем HashMap;
+ожидается, что итерация быстрее, чем в HashMap.
+Пример:
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       LinkedHashMap<String, String> positions = new LinkedHashMap<>();
+       positions.put("junior", "Ivan");
+       positions.put("middle", "Roman");
+       positions.put("senior", "Vasily");
+       positions.put("team lead", "Anton");
+       positions.put("arthitect", "Andrew");
+       positions.put("senior", "John");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// {junior=Ivan, middle=Roman, senior=John, team lead=Anton, arthitect=Andrew}
+TreeMap:
+Реализация мапы, которая сохраняет записи отсортированными в соответствии с естественным порядком их ключей или, что еще лучше, с использованием компаратора, если он предоставляется в конструкторе при создании мапы.
+
+Пример:
+Без компаратора
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       TreeMap<Integer, String> positions = new TreeMap<>();
+       positions.put(1, "Ivan");
+       positions.put(3, "Roman");
+       positions.put(2, "Vasily");
+       positions.put(10, "Anton");
+       positions.put(7, "Andrew");
+       positions.put(1, "John");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// {1=John, 2=Vasily, 3=Roman, 7=Andrew, 10=Anton}
+С компаратором
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       //используем реализацию Strategy Pattern'a и добавим компаратор:
+       TreeMap<Integer, String> positions = new TreeMap<>(Comparator.reverseOrder());
+       positions.put(1, "Ivan");
+       positions.put(3, "Roman");
+       positions.put(2, "Vasily");
+       positions.put(10, "Anton");
+       positions.put(7, "Andrew");
+       positions.put(1, "John");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// {10=Anton, 7=Andrew, 3=Roman, 2=Vasily, 1=John}
+
+Видим, что стандартно реализована сортировка в порядке возрастания, но это можно изменить, добавив компаратор в конструктор.
+
+Хорошо описана TreeMap здесь.
+30. Расскажите о коллекции Set и ее реализациях?
+Set — это множество уникальных элементов, и это ее главная особенность. То есть Set не допускает повторения одних и тех же элементов. 
+
+Здесь важно, чтобы у объектов, которые добавляются, был реализован метод equals. 
+HashSet:
+не отсортирован и не упорядочен. Под капотом там HashMap с заглушкой для значения. Посмотрите сами ;)
+использует hashCode для добавления объектов;
+стоит использовать, когда нужно иметь уникальные объекты и их порядок не важен.
+Пример:
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       HashSet<String> positions = new HashSet<>();
+       positions.add("junior");
+       positions.add("junior");
+       positions.add("middle");
+       positions.add("senior");
+       positions.add("team lead");
+       positions.add("architect");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// [senior, middle, team lead, architect, junior]
+
+Здесь видно, что элемент “junior”, который дважды добавлен, присутствует только в единичном экземпляре. И порядок не такой же, как при добавлении.
+LinkedHashSet:
+упорядоченная версия HashSet;
+поддерживает двусвязный список для всех элементов;
+использовать его, когда требуется упорядоченность при итерации.
+Пример:
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       LinkedHashSet<String> positions = new LinkedHashSet<>();
+       positions.add("junior");
+       positions.add("junior");
+       positions.add("middle");
+       positions.add("senior");
+       positions.add("team lead");
+       positions.add("architect");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// [senior, middle, team lead, architect, junior]
+
+TreeSet:
+одна из двух сортированных коллекций;
+использует структуру красно-черного дерева и гарантирует, что элементы будут в возрастающем порядке;
+под капотом это TreeMap с заглушкой на значениях. А элементами TreeSet являются ключи к TreeMap (также посмотрите ;)).
+Пример:
+
+public class CollectionExample {
+
+   public static void main(String[] args) {
+       TreeSet<String> positions = new TreeSet<>();
+       positions.add("junior");
+       positions.add("junior");
+       positions.add("middle");
+       positions.add("senior");
+       positions.add("team lead");
+       positions.add("architect");
+       System.out.println(positions);
+   }
+}
+
+// вывод в консоль
+// [architect, junior, middle, senior, team lead]
+Exceptions
+31. Что такое Exception?
+Exception — это проблема, которая может возникнуть в runtime. Это исключительная ситуация, которая возникает из-за каких-то причин. 
+
+Диаграмма наследования исключений выглядит так (нужно знать ее назубок ;) ):
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 2 - 3На диаграмме видно, что в целом все исключения делятся на две группы — exceptions и error.
+
+Error — используются JVM для отображения ошибок, после которых работа приложения уже не имеет смысла. Например StackOverFlowError, которая говорит, что стек заполнен и программа уже не может работать.
+
+Exception — исключения, которые генерируются программно в коде. Есть разные исключения, проверяемые и непроверяемые, но главное, что они есть, и их можно перехватить и продолжить работу приложения.
+
+Exceptions, в свою очередь, еще делятся на тех, кто наследуется от RuntimeException и других наследников Exception. 
+
+В рамках этого вопроса информации достаточно. О том, что такое проверяемые / непроверяемые исключения, поговорим ниже.
+32. Как JVM обрабатывает исключения?
+Как это работает? Как только где-то создается исключение, runtime создает Exception Object (обозначим как ExcObj). В нем хранится вся необходимая для работы информация — само исключение, которое вызывалось и место, где это произошло.
+
+Создание ExcObj и передача в runtime есть ничто иное как “выбрасывание исключения”.
+
+ExcObj содержит методы, по которым можно дойти до место создания исключения. Это множество методов называется Call Stack.
+
+Далее, runtime система ищет метод в Call Stack, который сможет обработать наше исключение. 
+
+Если он таки находит соответствующий обработчик, то есть тип исключения совпадает с типом в обработчике, все хорошо. 
+
+Если не находит, то runtime передает всё в default exception handler, который подготавливает ответ и завершает работу.
+
+Как это выглядит наглядно:
+
+/**
+* Пример, в котором показываются две опции — когда находится обработчик для исключения и когда нет.
+*/
+class ThrowerExceptionExample {
+
+   public static void main(String[] args) throws IllegalAccessException {
+
+       ThrowerExceptionExample example = new ThrowerExceptionExample();
+
+       System.out.println(example.populateString());
+   }
+
+   /**
+    * Здесь происходит перехват одного из возможных исключений — {@link IOException}.
+    * А вот второй будет пробрасываться дальше вверх по вызову.
+    */
+   private String populateString() throws IllegalAccessException {
+       try {
+           return randomThrower();
+       } catch (IOException e) {
+           return "Caught IOException";
+       }
+   }
+
+   /**
+    * Здесь две опции: или бросается {@link IOException} или {@link IllegalAccessException}.
+    * Выбирается случайным образом.
+    */
+   private String randomThrower() throws IOException, IllegalAccessException {
+       if (new Random().nextBoolean()) {
+           throw new IOException();
+       } else {
+           throw new IllegalAccessException();
+       }
+   }
+}
+
+В нашем случае CallStack схематично будет иметь вид: 
+
+randomThrower() => populateString() => main(String[] args)
+
+Есть две опции: случайным образом будет выброшено одно или другое исключение. Для IOException все ок, если будет сгенерировано оно, то результатом работы будет: "Caught IOException".
+
+А вот если будет второе исключение, обработчика на которого нет, программа будет остановлена с таким выводом:
+
+Exception in thread "main" java.lang.IllegalAccessException
+  at ThrowerExceptionExample.randomThrower(CollectionExample.java:38)
+  at ThrowerExceptionExample.populateString(CollectionExample.java:24)
+  at ThrowerExceptionExample.main(CollectionExample.java:15)
+33. Как программистам обрабатывать исключения?
+В вопросах выше уже использовались те или иные ключевые слова для работы с исключениями, теперь нужно поговорить о них более подробно.
+
+Какие есть ключевые слова? 
+try
+catch
+throw
+throws
+finally
+Важно отметить, что catch, throw и throws можно использовать только с java.lang.Throwable. С другими типами работать это не будет.
+
+Сейчас обсудим именно try, catch и finally.
+try-catch-finally — это конструкция, при помощи которой можно правильным образом перехватить и обработать исключение.
+try — может быть только один раз, в нем и происходит логика;
+catch — блок, который принимает какой-то тип исключения, их может быть множество. Например, в блоке try будет генерироваться несколько исключений, которые никак друг с другом не связаны;
+finally — “наконец-то” и этот блок. Это блок, который выполнится в любом случае, независимо от того, что делается в try, catch.
+Вот как это выглядит:
+
+try {
+   // сюда передают тот код, который может вызвать исключение.
+} catch (IOException e) {
+   // первый catch блок, который принимает IOException и все его подтипы(потомки).
+   // Например, нет файла при чтении, выпадает FileNotFoundException, и мы уже соответствующе
+   // обрабатываем это.
+} catch (IllegalAccessException e) {
+   // если нужно, можно добавить больше одного catch блока, в этом нет проблем.
+} catch (OneException | TwoException e) {
+   // можно даже объединять несколько в один блок
+} catch (Throwable t) {
+   // а можно сказать, что мы принимаем ВСЁ))))
+} finally {
+   // этот блок может быть, а может и не быть.
+   // и он точно выполнится.
+}
+
+Внимательно вчитайтесь в описание примера и будет всё ясно)
+34. throw и throws в Java
+throw
+throw используют в случае, когда нужно явно создать новое исключение. Применяют его для создания и выбрасывания пользовательских исключений. 
+
+Например, исключения, связанные с валидацией. Обычно для валидации наследуются от RuntimeException.
+
+Пример:
+
+// пример пробрасывания исключения
+throw new RuntimeException("because I can :D");
+
+Важно, что использовать эту конструкцию можно только тем, что наследуется от Throwable. То есть, нельзя сказать так:
+
+throw new String("как тебе такое, Илон Маск?");
+
+Далее, работа потока обрывается и начинается поиск обработчика, который смог бы обработать его. Когда не находит, идет к методу, который вызвал его, и так поиск будет идти наверх по строке вызовов пока либо не найдет соответствующий обработчик, либо оставит работу приложения.
+
+Смотрим:
+
+// Пример, который демонстрирует работу throw
+class ThrowExample {
+
+   void willThrow() throws IOException {
+       throw new IOException("Because I Can!");
+   }
+
+   void doSomething() {
+       System.out.println("Doing something");
+       try {
+           willThrow();
+       } catch (IOException e) {
+           System.out.println("IOException was successfully handled.");
+       }
+   }
+
+   public static void main(String args[]) {
+       ThrowExample throwExample = new ThrowExample();
+       throwExample.doSomething();
+   }
+}
+
+Если запустить программу, получим такой результат:
+
+Doing something
+IOException was successfully handled.
+throws
+throws — механизм, при помощи которого метод может выбрасывать одно или более исключений. Добавляются они через запятую. 
+
+Смотрим как это легко и просто:
+
+private Object willThrow() throws RuntimeException, IOException, FileNotFoundException
+
+Причем важно отметить, что могут быть как проверяемые таки непроверяемые исключения. 
+
+Разумеется, что непроверяемые исключения можно и не добавлять в throws, но правила хорошего тона говорят об обратном.
+
+Если это проверяемые, то используя метод, который их генерирует, нужно как-то его обработать. Есть два варианта:
+Написать try-catch с соответствующим и выше по наследованию исключением.
+Использовать throws точно так же, чтобы эта проблема была уже у кого-то другого :D
+35. Checked и Unchecked исключения в Java
+B Java есть два типа исключений — checked и unchecked.
+Checked исключения:
+Это исключения, которые проверяются во время компиляции. Если какой-то код в методе во время исключения выдает checked исключение, метод обязан либо обработать его при помощи try-catch, либо пробросить его дальше
+
+На примере, который считывает картинку из пути "/users/romankh3/image.png", обновляет ее каким-то образом(для нас это не важно) и сохраняет ее обратно. 
+
+class CheckedImageExample {
+   public static void main(String[] args) {
+       File imageFile = new File("/users/romankh3/image.png");
+       BufferedImage image = ImageIO.read(imageFile);
+       updateAndSaveImage(image, imageFile);
+   }
+
+   private static void updateAndSaveImage(BufferedImage image, File imageFile) {
+       ImageIO.write(image, "png", imageFile);
+   }
+}
+
+ALL IN ONE
+
+
+Такой код компилироваться не будет, так как статические методы ImageIO.read() и ImageIO.write() выбрасывают исключение IOException, которое является checked (проверяемым) и должно соответственно быть обработанным.
+
+Здесь две опции, которые мы уже обсудили выше: или использовать try-catch, или пробросить дальше. Для лучшего усвоения сделаем и так, и эдак.
+
+То есть в методе updateAndSave просто пробросим, а уже в главном методе воспользуемся try-catch:
+
+class CheckedImageExample {
+   public static void main(String[] args) {
+       File imageFile = new File("/users/romankh3/image.png");
+       try {
+           BufferedImage image = ImageIO.read(imageFile);
+           updateAndSaveImage(image, imageFile);
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
+
+   private static void updateAndSaveImage(BufferedImage image, File imageFile) throws IOException {
+       ImageIO.write(image, "png", imageFile);
+   }
+}
+Unchecked исключения:
+Это те исключения, которые на этапе компиляции не проверяются. То есть метод может генерировать RuntimeException, а компилятор не напомнит каким-то образом это обработать.
+
+Как показано ниже, у нас все, кто наследуются от RuntimeException и Error являются непроверяемыми.
+Топ-50 Java Core вопросов и ответов на собеседовании. Часть 2 - 4Рассмотрим следующую Java-программу. Код прекрасно компилируется, но при запуске выдает исключение ArrayIndexOutOfBoundsException. Компилятор позволяет его компилировать, потому что ArrayIndexOutOfBoundsException является непроверенным исключением.
+
+Обычная ситуация с массивом, которая может быть:
+
+class CheckedImageExample {
+   public static void main(String[] args) {
+       int[] array = new int[3];
+       array[5] = 12;
+   }
+}
+
+Результатом будет:
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+  at main(CheckedImageExample.java:12)
+
+Кстати, вы уже заметили, что в Java короткие имена никто не дает? Чем больше, тем лучше. Он, Spring Framework, в этом при успел очень сильно: возьми только какой-нибудь BeanFactoryPostProcessor класс)))
+
+
+36. Что такое try-with-resources?
+Это механизм, при помощи которого нужно правильно закрывать все ресурсы.
+
+Как-то не понятно, да?) 
+
+Для начала, что такое ресурс...
+
+Ресурс — это объект, после работы с которым нужно закрыть его, то есть вызвать метод close(). Ресурсом называются все объекты, которые реализуют интерфейс AutoClosable, который, в свою очередь реализует интерфейс Closeable. 
+
+Для нас важно понять, что все InputStream, OutpuStream являются ресурсами и их нужно правильно и успешно высвобождать. Вот как раз для этого и нужно нам использовать try-with-resource конструкцию. 
+
+Вот как она выглядит:
+
+private void unzipFile(File zipFile) throws IOException {
+   try(ZipInputStream zipOutputStream = new ZipInputStream(new FileInputStream(zipFile))) {
+       ZipEntry zipEntry = zipOutputStream.getNextEntry();
+       while (zipEntry != null) {
+
+       }
+   }
+}
+
+private void saveZipEntry(ZipEntry zipEntry) {
+   // логика сохранения
+}
+
+Вот этом примере ресурс — это ZipInputStream, после работы с которым нужно будет закрыть его. И чтоб не думать о том, что нужно вызвать метод close(), мы просто определяем эту переменную в блоке try, как показано в примере и в рамках этого блока выполняем все необходимое. Что делает пример? Он разархивирует zip архив. Для этого нужно воспользоваться InputStream’ом.
+
+Определять можно больше одной переменной, разделяют их точкой с запятой.
+
+А в чем проблема? Но ведь можно использовать finally блок, — возможно, скажете вы. Вот статья, в которой подробно описываются проблемы с этим подходом. Также в ней описывается весь перечень неудач, которые могут постигнуть того, кто пренебрежет использованием этой конструкции. Рекомендую к прочтению ;)
+
+В завершающей части — вопросы/ответы по теме Multithreading.
+
+Мой профиль на GitHub
+Регистрация
+Имя
+E-mail
+Пароль
+Регистрируясь, вы принимаете Условия лицензионного договора
+Комментарии (18)
+ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
+ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
+Donnie D Уровень 1
+25 марта 2022
+Для LinkedHashSet опечатка при выводе в консоль.
+должен быть вывод соответствующий порядку добавления элементов:
+[junior, middle, senior, team lead, architect]
+sokol16.90@mail.ru Уровень 44
+28 февраля 2023
+до 8 джава так и было , после как вы написали
+Alexandr Kaskov Уровень 0
+21 сентября 2021
+в примере с LinkedHashMap результат некорректен. Вывод будет в порядке добавления с учётом исключения повторяемых значений.
+[junior, middle, senior, team lead, architect]
+Олександр Рибець Уровень 27
+31 октября 2021
+Результат корректен, поскольку в конструкор LinkedHashMap'a не был передан параметр accessOrder со значением true.
+Александр Уровень 14
+28 июня 2021
+А  к очередям разве класс ArrayDequeue не относится?
+LuneFox Уровень 41 Expert
+11 марта 2022
+Deque* (читается «дэк»)
+Должен относиться, если имеет такое слово)
+empty Уровень 21
+26 апреля 2023
+(читается «дэк»)
+
+есть какое то правило? как произносить это слово?
+т.к. даже нейтивы произносят по разному 
+- youglish.com/pronounce/Deque/english/us
+LuneFox Уровень 41 Expert
+26 апреля 2023
+так там отчётливо слышно "бай дэк хуз экшнс"
+думаю тут работает французское чтение
+типа как technique = тэкник
+empty Уровень 21
+26 апреля 2023
+бай дэк хуз экшнс
+
+это один из вариантов, а их 93 это сайт нашел, если листать и слушать, то там и дек и декью говорят, просто мне интерестно на какое правило опираться, просто в ином случае можно говорить как нравится)
+
+technique = тэкник
+
+забавно что technique действительно произносят только как "тэкник"
+
+безграммотные американцы XD (joke)
+Милана Уровень 1
+12 марта 2021
+33. finally не всегда выполняется полностью. Если в finally выскочет исключение, для которого нет обработки, то выполнится всё до того момента, когда вышло исключение. 
+
+А тут написано в каких случаях finally не выполнится: 
+https://stackoverflow.com/questions/65035/does-a-finally-block-always-get-executed-in-java
+Kurama Уровень 50
+12 апреля 2023
+Хмм, странно
+На этой странице написано следующее:
+Единственной причиной, по которой может не выполниться метод finally, может быть немедленное завершение программы посредством вызова метода System.exit();
+Милана Уровень 1
+12 марта 2021
+27. Ordered vs sorted
+An ordered collection means that the elements of the collection have a specific order. The order is independent of the value. A List is an example.
+
+A sorted collection means that not only does the collection have order, but the order depends on the value of the element. A SortedSet is an example.
+https://stackoverflow.com/questions/1084146/what-is-the-difference-between-an-ordered-and-a-sorted-collection
+Roman Beekeeper Уровень 1
+11 марта 2021
+⚡️UPDATE⚡️
+
+Друзья, создал телеграм-канал 🤓, в котором освещаю свою писательскую деятельность и свою open-source разработку в целом. 
+Не хотите пропустить новые статьи? Присоединяйтесь ✌️
+Yan Los Уровень 1
+8 октября 2020
+:26. 
+....Queue
+Priority Queue.
+ Deque 
+ArrayDeque
+"
+Владислав Уровень 19
+28 марта 2020
+36. "Ресурсом называются все объекты, которые реализуют интерфейс AutoClosable, который, в свою очередь реализует интерфейс Closeable" - наоборот Closeable extends AutoCloseable.
+Interstellar Уровень 36 Expert
+19 марта 2020
+На диаграмме в 31-м вопросе связи не нарисованы - чернила кончились?
+Max Petrov Уровень 40
+17 марта 2020
+25. Collections - утилитный класс, не однозначно сформулированный вопрос.
+27. Ordered коллекция - коллекция, которая сохраняет порядок вставки
+Sorted коллекция - отсортированная коллекция
+30. "Здесь важно, чтобы у объектов, которые добавляются, был реализован метод equals.", забыли про hashCode().
+Советую уделить внимание на тема "hashCode and equals".
+31. "Exception — это проблема, которая может возникнуть в runtime.", не только в runtime.
+34. "throw используют в случае, когда нужно явно создать новое исключение.", не только для новых, мы можем пробросить и уже существующий объект.
+35. Checked - исключения, которые не мб проигнорированы, т.е. программист обязан их обработать - try...catch или throws
+Unchecked - исключения, которые обрабатывать не обязательно, но никто не запрещает.
+
 Топ-50 Java Core вопросов и ответов на собеседовании. Час...
 Roman Beekeeper
 1 уровень
