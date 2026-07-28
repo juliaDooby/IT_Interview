@@ -1,3 +1,234 @@
+Online Tutorials & Training Materials | STechies.com
+RegisterLogin
+Tutorials
+
+Difference between Money Market and Savings
+Fibonacci Series Program
+Difference between Analog and Digital Signal
+Difference between Database and Data Warehouse
+Arduino vs Raspberry Pi
+Difference between AC and DC
+Difference between SQL and PLSQL
+DDL vs DML
+Xero vs QuickBooks
+Types of Servers
+Bitdefender vs Avast
+MBR vs GPT
+Difference between Data and Information
+ASCII Values in C
+Difference between NSE and BSE
+HTML Button Link
+Difference between StringBuffer and String
+Difference between Structure and Union in C
+Difference between System Software and Application Software
+Kubernetes vs Docker
+Deadlock in OS
+Woocommerce vs Shopify
+IaaS vs PaaS vs SaaS
+Difference between SAP and SAS
+FireCuda vs BarraCuda
+Difference between FOR and WHILE Loop
+Diploma vs. Degree
+HMO vs. PPO
+What is GPU Scaling
+Scrum vs Kanban
+Difference between Hub and Switch
+OLTP vs OLAP
+Visa vs Mastercard
+Differences between Malloc and Calloc Functions in C Language
+Python vs Ruby
+Tableau vs Power BI
+Padding vs Margin
+How to Take a Screenshot on Windows 10
+WebP to JPG
+Difference between Router and Switch
+IaaS vs PaaS vs SaaS
+Difference between GSM and CDMA
+AWS vs Azure
+Agile vs Waterfall
+Gmail server error #007
+GDP vs GNP
+Mutex vs Semaphore
+Difference between JSP and Servlet
+Difference between Ienumerable and Iqueryable
+Stack in C
+Difference between Microprocessor and Microcontroller
+Difference between SRAM and DRAM
+Software Developer vs Software Engineer
+BitTorrent vs Utorrent
+Difference between Process and Thread
+Kotlin vs Java
+Difference between NFA and DFA
+Difference between Sensor and Transducer
+Typescript vs JavaScript
+Variance vs Standard Deviation
+Articles
+Go Programming (Golang) Interview Questions and Answers
+Updated May 28, 2019
+
+What is Golang?
+
+Golang that is commonly known as Go, is a procedural programming language developed by Google launched in 2009 as an open source programming language. The language is based on the C programming language. Major companies like IBM, Twitter, Facebook, Youtube, and BBC have already adopted the language.
+
+What are some important pros and cons of Golang?
+
+The advantages of Golang are as follows:
+
+The language has simple syntax and structure that makes it easier to learn for beginners.
+It is compiled very fast that saves both time and money.
+It is platform independent and runs smoothly across different platforms like Windows, UNIX, LINUX.
+It is concurrent and multiple processes can run together with ease.
+The disadvantages of Golang are as follows:
+
+There is no facility of manual memory management that could create problems in garbage collection and pauses while programming.
+As the language is relatively new there are still many libraries that are not available to the users.
+The handling of errors in the language is not efficient.
+The runtime safety of the language is not guaranteed.
+How to write to a file in Golang?
+
+If a string has to be written into a file two steps have to be taken. At first, the file has to be created and then the string will be written. The create function is used to creating a file that should have an if condition. The condition must check if the string already exists in the file. Then the Write string method is used for writing the string to the file.
+
+How to add a line to an existing file in Golang?
+
+To append a string in a file in Golang, the OpenFile function has to be used. This function has an os.O_APPEND feature that helps to open a file in append mode. This makes the file ready for appending. The WriteString function is used to append the line of text at the end of the file.
+
+What is a slice Golang?
+
+In Golang, slice scan is considered as the abstractions over normal arrays. Like the arrays, they have indexes and have a length and are a reference to another array. The arrays in Golang are capable of holding variables that can have values of the same kind but their sizes cannot be altered dynamically. Slices help in this regard.
+
+What is a struct in Golang?
+
+Structs are user-defined types that are a collection of named fields or properties. It is used to group together similar fields together. They are usually applied for representing real-world entities containing a set of properties.
+
+What is the context in Golang?
+
+The Context is a package in Golang that is used for defining the Context type. This type is used for carrying cancellation signals, request scoped values and deadlines. The requests that are being received by the server have to create a Context, and the calls that are outgoing have to be accepted by the Context.
+
+What is a flag in Golang?
+
+Golang has a package called Flag that is used for basic command line flag parsing. The flag declarations are available for integer, string and Boolean. It is an argument passed on to a Go program. They are defined using the flag.String(), int() and Bool().
+
+How to get input from user in Golang?
+
+To get user input in Golang, the fmt library has to be imported. This library has a function called scanf that will be used for reading the input from the console. A new reader can be created by using the bufio.NewReader(os.Stdin) function and the prompting text can be provided to the user. The ReadString function within the fmt library can be used to get the data.
+
+How to debug Golang?
+
+The Go Delve Debugger can be used for debugging code in Golang that is an extension of the Visual Code.
+
+What is Golang rune?
+
+A rune is a Unicode endpoint that is basically a literal for 32-bit integers. They can be altered ad they are untyped constants.
+
+It can represent the following:
+
+An integer value ranging from 0 to 2^32-1.
+A character.
+A keyword rune that is a Golang type. It is an alias of the int32 type.
+Explain the difference between switch and select in Golang?
+
+A switch keyword is used along with concrete data types. They are used when the cases are of a single value that is passed along the same line with the Switch keyword. A select keyword will choose multiple options at random. For each case, the select can use unrelated statements.
+
+Which Garbage Collection is used by Golang?
+
+The Go garbage collector is based on the tricolor mark and sweep algorithm. This algorithm allows Go to collect garbage during the program execution and run concurrently. This reduces the chances of pausing during the program execution. If there is any problem with the scheduler, it can be configured to run garbage collection for short time periods.
+
+Why Golang has pointers?
+
+In Golang the references cannot be reassigned but the pointers can. So where the references cannot be used the pointers are utilized. They also help the programmers to increase the efficiency of the memory by controlling memory layout. The user can also create a pool allocator using these pointers.
+
+What are some best ides for Golang?
+
+The best IDEs for Golang are Gogland, Visual Studio Code, Atom, Eclipse and Sublime Text.
+
+What is recursion in Golang?
+
+Recursion in Golang is the process of repeating the same code or instructions multiple times through a function. In this process, a function is written in such a way that it can call itself multiple times as long as the desired output is achieved. Programs, like finding the Factorial of a number and printing the Fibonacci series, are common examples of using recursion.
+
+What are GOROOT and GOPATH?
+
+The GOPATH is an environment variable that is used for listing the places for looking for Go code. It specifies the directories that are outside GOROOT that have source code. The GOROOT is an environment variable that specifies the directory where Golang is installed.
+
+What is FMT Golang?
+
+Fmt in Golang is a package that is used for handling input received from the user. It has functions to accept the data and can display it to another location. It has functions like Printf, Println, Scanf, etc. It has format templates to provide the user with some prompts about the text that they have to type in.        
+
+Recommended Posts:
+Difference between Database and Data Warehouse
+DDL vs DML
+MBR vs GPT
+Difference between Data and Information
+Difference between NSE and BSE
+Kubernetes vs Docker
+Woocommerce vs Shopify
+Difference between SAP and SAS
+Diploma vs. Degree
+HMO vs. PPO
+Differences between Malloc and Calloc Functions in C Language
+Python vs Ruby
+Difference between Router and Switch
+Difference between GSM and CDMA
+Agile vs Waterfall
+GDP vs GNP
+Mutex vs Semaphore
+Software Developer vs Software Engineer
+Typescript vs JavaScript
+Variance vs Standard Deviation
+Follow Us
+
+Facebook Youtube Linkedin Twitter
+Contact Information
+
+#3940 Sector 23,
+Gurgaon, Haryana (India)
+Pin :- 122015
+
+contact@stechies.com
+
+Top Tutorials
+
+SAP Tutorial
+SAP HANA Tutorial
+SAP BASIS Tutorial
+Android Tutorial
+Python Tutorial
+Java Tutorial
+Hadoop Tutorial
+Photoshop Tutorial
+Difference Between Article
+Interview Questions
+Top Interview Questions
+
+ABAP Interview Questions
+BASIS Interview Questions
+HANA Interview Questions
+SD Interview Questions
+FICO Interview Questions
+Hibernate Interview Questions
+QTP/UFT Interview Questions
+Tableau Interview Questions
+TestNG Interview Questions
+Hive Interview Questions
+Quick Links
+
+Write for us
+Career Guidance Tool
+SAP Transaction Codes
+Sample Resume
+Institutes
+SAP PDF Books
+Classifieds
+Recent Articles
+Contact Us
+About Us
+Terms of Use
+Privacy Policy
+Cookies Policy
+All the site contents are Copyright © www.stechies.com and the content authors. All rights reserved. All product names are trademarks of their respective companies. The site www.stechies.com is in no way affiliated with SAP AG. Every effort is made to ensure the content integrity. Information used on this site is at your own risk. The content on this site may not be reproduced or redistributed without the express written permission of www.stechies.com or the content authors.
+
+
+
+
 🚀 DevOps & SRE Certification Program 📅 Starting: 1st of Every Month 🤝 +91 8409492687 🔍 Contact@DevOpsSchool.com
 ✕
 Skip to content
