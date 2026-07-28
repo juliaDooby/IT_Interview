@@ -1,19 +1,793 @@
-The Baeldung Logo
-Start Here
-Spring Courses ▼
-Java Courses ▼
-Pricing
-About ▼
-Top Spring Framework Interview Questions
-Last updated: May 11, 2024
+Top Spring Interview Questions Coding N Concepts
+Ashish Lahoti's Technical Blog
+Home
+Certifications ▾
+Java ▾
+JavaScript ▾
+Spring Boot ▾
+Puzzles ▾
+Interview Q&A ▾
+Others ▾
+About ▾
+Top Spring Interview QuestionsTop Spring Interview Questions
+ Ashish Lahoti  Last Modified: October 01, 2020  Interview Questions
+Q1. What is Spring Framework?
+Q2. What are the Benefits of using Spring Framework?
+Q3. What are the Modules available in Spring Framework?
+Q4. Name Some of the Design Patterns used in the Spring Framework?
+Q5. What is Inversion of Control?
+Q6. What is Dependency Injection?
+Q7. What are different ways of Dependency Injection in Spring Framework?
+Q8. Differentiate between Constructor and Setter Based Dependency Injection?
+Q9. How many types of IOC Containers are there in Spring Framework?
+Q10. Differentiate between BeanFactory and ApplicationContext?
+Q11. What is a Spring Bean?
+Q12. Explain the Spring Bean Life Cycle?
+Q13. What are different ways to configure Spring Beans?
+Q14. What is XML-based Spring Configuration?
+Q15. What is Java-based Spring Configuration?
+Q16. What is Annotation-based Spring Configuration?
+Q17. Can We Have Multiple Spring Configuration Files in One Project?
+Q18. How to define Scope of a Spring Bean?
+Q19. What are inner beans in Spring?
+Q20. Are Singleton beans thread safe in Spring Framework?
+Q21. How can you inject a Java Collection in Spring? Give example?
+Q22. How to inject a java.util.Properties into a Spring Bean?
+Q23. Explain Spring Bean Autowiring?
+Q24. Explain different Modes of Spring Bean Autowiring?
+Q25. Explain @Required annotation with example?
+Q26. Explain @Autowired annotation with example?
+Q27. Explain @Qualifier annotation with example?
+Q28. What are Spring stereotype annotations?
+Q29. What are JSR-250 annotations?
+Q30. What happens when you define two beans with same id or same name ?
+Q31. Explain Spring MVC Workflow?
+Q32. Differentiate between @Controller and @RestController?
+Q33. What Is Spring Security?
+Q34. What Is Aspect-Oriented Programming?
+Q35. What Are Aspect, Advice, Pointcut, and Joinpoint in Aop?
+Q36. What are the different types of Advices?
+Q37. What is cross-cutting concerns in Spring AOP?
+Q38. What is Weaving?
+Q39. What is Spring Dao?
+Q40. What is Spring Jdbctemplate Class and How to Use it?
+Q41. How Would You Enable Transactions in Spring and What Are Their Benefits?
+Q42. What is Spring Boot?
+Spring Framework is widely used by Java developers for enterprise application development and most frequent topic to be asked in interviews from Java backend developers in 2026.
+
+I have spent quite some time to prepare a very comprehensive list of questions and answers being asked in spring framework interview. I hope, this will benefit both freshers as well as experienced developers in their interview preparation.
 
 
-Written by:baeldung
+Q1. What is Spring Framework?
+The Spring Framework is a Java platform that provides comprehensive infrastructure support for developing Java applications. Spring handles the infrastructure so you can focus on your application.
 
-Reviewed by:Kevin Gilmore
-SpringInterview
-This article is part of a series:
-Table of Contents
+The Spring Framework is most widely used framework across the globe which provides the best practices to use design patterns such as Singleton, Prototype, Factory, Abstract Factory, Builder, Decorator, Service Locator, and many more out of the box.
+
+
+Q2. What are the Benefits of using Spring Framework?
+Spring framework targets to make Java EE development easier. Here are the advantages of using it:
+
+Lightweight: there is a slight overhead of using the framework in development
+Inversion of Control (IoC): Spring container takes care of wiring dependencies of various objects, instead of creating or looking for dependent objects
+Aspect Oriented Programming (AOP): Spring supports AOP to separate business logic from system services
+IoC container: it manages Spring Bean life cycle and project specific configurations
+MVC framework: that is used to create web applications or RESTful web services, capable of returning XML/JSON responses
+Transaction management: reduces the amount of boiler-plate code in JDBC operations, file uploading, etc., either by using Java annotations or by Spring Bean XML configuration file
+Exception Handling: Spring provides a convenient API for translating technology-specific exceptions into unchecked exceptions
+
+Q3. What are the Modules available in Spring Framework?
+Spring Framework Overview
+Spring Framework Overview
+
+1. Core Container
+spring-bean and spring-core modules provide the fundamental parts of the framework, including the IoC and Dependency Injection features.
+spring-context module builds on the solid base provided by the Core and Beans modules. It provides a way to access java object as beans and manage their life-cycle. It also supports internationalization and Java EE features such as EJB, JMX, and basic remoting.
+spring-expression module provides a powerful Expression Language for querying and manipulating an object graph at runtime. It is an extension of the unified expression language (unified EL) as specified in the JSP 2.1 specification. The language supports setting and getting property values, property assignment, method invocation, accessing the content of arrays, collections and indexers, logical and arithmetic operators, named variables, and retrieval of objects by name from Spring’s IoC container.
+2. AOP and Instrumentation
+spring-aop module is used to decouple code for cross-cutting concerns such as logging by using method-interceptors and pointcuts.
+spring-aspect module provide integration with AspectJ
+spring-instrument module provides class instrumentation support and classloader implementations to be used in certain application servers.
+spring-instrument-tomcat module contains Spring’s instrumentation agent for Tomcat.
+3. Data Access/Integration
+spring-jdbc module provides a JDBC-abstraction layer that removes the need to do tedious JDBC coding and parsing of database-vendor specific error codes.
+spring-tx module supports programmatic and declarative transaction management for classes that implement special interfaces and for all your POJOs (Plain Old Java Objects).
+spring-orm module provides integration layers for popular object-relational mapping APIs, including JPA and Hibernate. Using the spring-orm module you can use these O/R-mapping frameworks in combination with all of the other features Spring offers, such as the simple declarative transaction management feature mentioned previously.
+spring-oxm module provides an abstraction layer that supports Object/XML mapping implementations such as JAXB, Castor, JiBX and XStream.
+spring-jms module (Java Messaging Service) contains features for producing and consuming messages.
+4. Web
+spring-web module provides basic web-oriented integration features such as multipart file upload functionality and the initialization of the IoC container using Servlet listeners and a web-oriented application context. It also contains an HTTP client and the web-related parts of Spring’s remoting support.
+spring-webmvc module (also known as the Web-Servlet module) contains Spring’s model-view-controller (MVC) and REST Web Services implementation for web applications. Spring’s MVC framework provides a clean separation between domain model code and web forms and integrates with all of the other features of the Spring Framework.
+spring-websocket module provides WebSocket and SockJS infrastructure, including STOMP messaging support
+5. Test
+spring-test module supports the unit testing and integration testing of Spring components with JUnit or TestNG. It provides consistent loading of Spring ApplicationContexts and caching of those contexts. It also provides mock objects that you can use to test your code in isolation.
+
+Q4. Name Some of the Design Patterns used in the Spring Framework?
+Singleton Pattern: Singleton-scoped beans (default scope of spring beans)
+Prototype Pattern: Prototype-scoped beans
+Factory Pattern: BeanFactory, ApplicationContext
+Adapter Pattern: Spring Web and Spring MVC
+Proxy Pattern: Spring Aspect Oriented Programming support
+Template Method Pattern: RestTemplate, JmsTemplate, JdbcTemplate, JpaTemplate, HibernateTemplate
+Front Controller: Spring MVC DispatcherServlet
+Data Access Object: Spring DAO support
+Model View Controller: Spring MVC
+
+Q5. What is Inversion of Control?
+Inversion of Control (IoC) is a programming principle which inverts the flow of control compare to traditional control flow.
+
+A Java application consists of objects which are dependent on each other and work together to run the application. In a traditional java application, JRE instantiate classes and dependent objects at compile time hance objects are tightly coupled with each other.
+
+How we can use IoC in Java application context?
+We can use various patterns such as Factory, Abstract Factory, Builder … to instantiate classes and dependent objects at runtime instead of compile time. You see that we have inverted the control from compile time to runtime, which is IoC.
+
+How Spring Framework IoC works?
+The Spring Framework IoC container provides the implementation of Factory, Abstract Factory, Builder, and many more patterns out of the box with best design practices used which you can integrate into your own application(s).
+
+
+Q6. What is Dependency Injection?
+Dependency injection is a technique in which an object receives other objects that it depends on.
+
+Dependency Injection, is a form of IoC, is a general concept stating that you do not create your objects manually but instead describe how they should be created. An IoC container will instantiate required classes if needed.
+
+How Spring Framework DI works?
+The Spring Framework DI provides us the way to describe the object and its dependencies in the the form of XML or Java annotations. Spring IoC container takes care of wire them up together.
+
+
+Q7. What are different ways of Dependency Injection in Spring Framework?
+Spring framework provides three ways for dependency injection:-
+
+1. Constructor-Based Dependency Injection
+Spring use constructor to inject dependency. It is recommended to use for mandatory dependencies.
+
+@Configuration
+public class AppConfig {
+    @Bean
+    public Item item1() {
+        return new ItemImpl1();
+    }
+    @Bean
+    public Store store() {
+        return new Store(item1());
+    }
+}
+<bean id="item1" class="com.abc.ItemImpl1" /> 
+<bean id="store" class="com.abc.Store"> 
+    <constructor-arg type="ItemImpl1" index="0" name="item" ref="item1" /> 
+</bean>
+2. Setter-Based Dependency Injection
+Spring use setter method to inject dependency. It is recommended to use for optional dependencies.
+
+@Bean
+public Store store() {
+    Store store = new Store();
+    store.setItem(item1());
+    return store;
+}
+<bean id="store" class="com.abc.Store">
+    <property name="item" ref="item1" />
+</bean>
+3. Field-Based Dependency Injection
+Spring looks for fields annotated with @Autowired and inject them using reflection.
+
+public class Store {
+    @Autowired
+    private Item item; 
+}
+
+Q8. Differentiate between Constructor and Setter Based Dependency Injection?
+Constructor vs Setter Based Dependency Injection
+Partial dependency injection is possible in setter-based, say we have 3 dependencies int, string, boolean, if we inject first two, then third boolean will be initialized with default value. Since constructor-based injection call the constructor, we need to pass all the arguments, and so partial injection is not possible.
+In case of injecting the same dependency using both setter-based and constructor-based then setter-based injection override the constructor-based dependency injection. It’s obvious because constructor is called first before setter methods in bean life cycle.
+It is recommended to user constructor-based injection for mandatory dependencies as it fails if you do not pass all the required dependency, whereas, setter-based injection is recommended for optional dependencies as you can inject partial dependencies.
+If Object A and B are dependent on each other and you are trying constructor-based injection then Spring throws ObjectCurrentlyInCreationException while instantiating Objects because A object cannot be initialized until B is ready and vice-versa. This circular dependency issue can be solved using setter-based injection.
+
+Q9. How many types of IOC Containers are there in Spring Framework?
+BeanFactory is an interface representing a container that provides and manages bean instances. The default implementation instantiates beans lazily when getBean() is called.
+
+ApplicationContext is an interface representing a container holding all information, metadata, and beans in the application. It is built on top of BeanFactory interface but the default implementation instantiates beans eagerly when the application starts. This behavior can be overridden for individual beans.
+
+Three most commonly used implementation of ApplicationContext are:-
+
+ClassPathXmlApplicationContext loads the XML configuration file from the classpath
+ApplicationContext context = new ClassPathXmlApplicationContext(“bean.xml”);
+FileSystemXmlApplicationContext loads the XML configuration file from the file system
+ApplicationContext context = new FileSystemXmlApplicationContext(“bean.xml”);
+XmlWebApplicationContext loads the XML configuration file from the /WEB-INF/applicationContext.xml location by default
+
+Q10. Differentiate between BeanFactory and ApplicationContext?
+BeanFactory vs ApplicationContext
+BeanFactory	ApplicationContext
+It is an interface defined in org.springframework .beans.factory package	It is an interface defined in org.springframework .context package
+It uses Lazy initialization	It uses Eager initialization by default
+It explicitly provides a resource object using the syntax	It creates and manages resource objects on its own
+It doesn’t supports internationalization	It supports internationalization
+It doesn’t supports annotation based dependency	It supports annotation based dependency
+
+Q11. What is a Spring Bean?
+The Spring Beans are Java Objects that are instantiated, configured, wired, and managed by the Spring IoC container. Spring Bean definition and metadata is provided by XML configuration or Java annotations, which is used by Spring IoC container.
+
+
+Q12. Explain the Spring Bean Life Cycle?
+Spring Bean Life Cycle
+Spring Bean Life Cycle
+
+Spring bean follow the following sequence in its life cycle:-
+
+Default constructor will be called.
+All properties setter methods will be called.
+If class implements BeanNameAware then setBeanName method will be called.
+If class implements BeanFactoryAware then setBeanFactory method will be called.
+If class implements ApplicationContextAware then setApplicationContext method will be called.
+If class implements BeanPostProcessor then its postProcessBeforeInitialization will be called.
+If class implements InitializingBean then afterPropertiesSet method will be called.
+If class has custom init method defined then it will be called.
+If class implements BeanPostProcessor then its postProcessAfterInitialization will be called.
+If class implements DisposableBean then destroy method will be called.
+If class has custom destroy method defined then it will be called.
+custom-init and custom-destroy example
+  <bean id="store" class="com.abc.Store" init-method="myCustomInit" destroy-method="myCustomDestroy">
+
+Q13. What are different ways to configure Spring Beans?
+There are three ways to define Beans configuration in Spring Framework:-
+
+XML-based Configuration
+Java-based configuration
+Annotation-based configuration
+
+Q14. What is XML-based Spring Configuration?
+In XML-Based configuration, all the bean definitions and application specific configurations are defined in an XML file in a specific format. Parent XML element is </beans> and individual bean is defined using </bean> element.
+
+<!-- Spring Configurations -->
+<bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+<bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+<!-- Bean Definition -->
+<bean id="tutorial" class="com.abc.TutorialBean">
+ <property name="name" value="CodingNConcepts"></property>
+</bean>
+
+Q15. What is Java-based Spring Configuration?
+Spring configuration can also be defined using @Configuration annotated classes and @Bean annotated methods where,
+
+@Configuration annotated class represents an XML configuration file
+@Bean annotated methods represent the element and responsible to provide a bean definition.
+@Configuration
+public class AppConfig 
+{
+    @Bean
+    public MyService myService() {
+        return new MyServiceImpl();
+    }
+}
+is equivalent of following XML configuration
+
+<beans>
+    <bean id="myService" class="com.abc.services.MyServiceImpl"/>
+</beans>
+To instantiate such config, you will need the help of AnnotationConfigApplicationContext class.
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+or alternatively you can enable component scanning, to instantiate config automatically.
+
+@Configuration
+@ComponentScan(basePackages = "com.abc")
+public class AppConfig  {
+    ...
+}
+In the example above, the com.abc package will be scanned and look for @Component or other stereotypes annotated classes, and those classes will be instantiated and managed by as Spring container automatically.
+
+
+Q16. What is Annotation-based Spring Configuration?
+Annotation-based container configuration is an alternative of XML-based configuration and is mostly used by developers. Rather than using XML for describing a bean wiring, the developer moves the configuration to the classes by using annotations on the class, field, or method declaration.
+
+By default, annotation config is turned off. It needs to be turned on explicitly by adding <context:annotation-config/> element in Spring Configuration XML file.
+
+<beans>
+  <context:annotation-config/>
+  <!-- bean definitions go here -->
+</beans>
+Alternatively, you can include AutowiredAnnotationBeanPostProcessor in bean configuration file.
+
+<beans>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+</beans>
+
+Q17. Can We Have Multiple Spring Configuration Files in One Project?
+Yes, in large projects, having multiple Spring configurations is recommended to increase maintainability and modularity.
+
+You can load multiple Java-based configuration files:
+
+@Configuration
+@Import({MainConfig.class, SchedulerConfig.class})
+public class AppConfig {
+Or load one XML file that will contain all other configs:
+
+ApplicationContext context = new ClassPathXmlApplicationContext("spring-all.xml");
+And inside this XML file you’ll have:
+
+<import resource="main.xml"/>
+<import resource="other.xml"/>
+
+Q18. How to define Scope of a Spring Bean?
+Spring Bean’s scope can be defined either using @Scope annotation or scope attribute in XML configuration files. There are five supported scopes:
+
+<bean id="mySingleton" class="com.abc.MySingleton" scope="singleton"/>
+singleton: bean scope provides single instance per Spring IoC container. This means everytime spring application context returns same instance when we ask.
+
+Points to remember about Singleton bean:-
+Singleton is the default bean scope
+Singleton beans are not thread safe
+
+prototype: bean scope creates a new instance each and every time a bean is requested from spring container
+
+request: bean scope creates a new instance on every incoming HTTP-request.
+
+session: bean scope creates a new instance per HTTP-session.
+
+global-session: bean scope creates a new instance per Global HTTP-session. It is useful for Portlet based applications where bean is used to store global info used by all portlets. This scope works same as session scope in Servlet based applications.
+
+The last three are available only if the users use a web-aware ApplicationContext.
+
+
+Q19. What are inner beans in Spring?
+In Spring framework, whenever a bean is used for only one particular property, it is advised to declare it as an inner bean. The inner bean is supported both in setter injection property and constructor injection constructor-arg.
+
+For example, let’s say we have Store class having reference of Item class. In our application, we will be creating only one instance of Item class, and use it inside Store.
+
+public class Store {
+
+    private Item item;
+     
+    //Setters and Getters
+}
+public class Item {
+
+    private String name;
+    private long quantity;
+     
+    //Setters and Getters
+}
+Now inner bean declaration will look like this:
+
+<bean id="StoreBean" class="com.abc.Store">
+    <property name="item">
+        <!-- This is inner bean -->
+        <bean class="com.abc.Item">
+            <property name="name" value="Fruits"></property>
+            <property name="quantity" value="100"></property>
+        </bean>
+    </property>
+</bean>
+
+Q20. Are Singleton beans thread safe in Spring Framework?
+Spring framework does not do anything under the hood concerning the multi-threaded behavior of a singleton bean. It is the developer’s responsibility to deal with concurrency issue and thread safety of the singleton bean.
+
+While practically, most spring beans have no mutable state (e.g. Service and DAO clases), and as such are trivially thread safe. But if your bean has mutable state (e.g. View Model Objects), so you need to ensure thread safety. The most easy and obvious solution for this problem is to change bean scope of mutable beans from singleton to prototype.
+
+
+Q21. How can you inject a Java Collection in Spring? Give example?
+Spring offers four types of collection configuration elements which are as follows:
+
+<list> : This helps in wiring ie injecting a list of values, allowing duplicates.
+<set> : This helps in wiring a set of values but without any duplicates.
+<map> : This can be used to inject a collection of name-value pairs where name and value can be of any type.
+<props> : This can be used to inject a collection of name-value pairs where the name and value are both Strings.
+Let’s see example of each type.
+
+<beans> 
+
+   <!-- Definition for javaCollection -->
+   <bean id="javaCollection" class="com.abc.JavaCollection">
+ 
+      <!-- java.util.List -->
+      <property name="customList">
+        <list>
+           <value>India</value>
+           <value>Singapore</value>
+           <value>USA</value>
+           <value>UK</value>
+        </list>
+      </property>
+ 
+     <!-- java.util.Set -->
+     <property name="customSet">
+        <set>
+           <value>India</value>
+           <value>Singapore</value>
+           <value>USA</value>
+           <value>UK</value>
+        </set>
+      </property>
+ 
+     <!-- java.util.Map -->
+     <property name="customMap">         
+        <map>
+           <entry key="1" value="India"/>
+           <entry key="2" value="Singapore"/>
+           <entry key="3" value="USA"/>
+           <entry key="4" value="UK"/>
+        </map>
+      </property>
+       
+      <!-- java.util.Properties -->
+    <property name="customProperies">
+        <props>
+            <prop key="admin">admin@myorg.com</prop>
+            <prop key="support">support@myorg.com</prop>
+        </props>
+    </property>
+ 
+   </bean>
+</beans>
+
+Q22. How to inject a java.util.Properties into a Spring Bean?
+You can initialize properties using <props> as below.
+
+<bean id="adminUser" class="com.abc.common.Customer">
+  
+    <!-- java.util.Properties -->
+    <property name="emails">
+        <props>
+            <prop key="admin">admin@myorg.com</prop>
+            <prop key="support">support@myorg.com</prop>
+        </props>
+    </property>
+ 
+</bean>
+Alternatively you can use <util:properties> to define properties from a properties file, and use bean reference for setter injection.
+
+<util:properties id="emails" location="classpath:com/foo/emails.properties" />
+
+Q23. Explain Spring Bean Autowiring?
+Autowiring allows the Spring container to automatically resolve dependencies between collaborating beans by inspecting the beans that have been defined. Spring Bean Autowiring can be done in three ways:-
+
+XML-based configuration using </bean>
+<bean id="store" class="com.abc.Store" autowire="byType" />
+Annotation-based configuration using @Autowired on properties, setter-methods or constructor
+public class Store {
+
+  @Autowired
+  private Item item;
+}
+Java-based configuration using @Bean
+@Bean(autowire = Autowire.BY_TYPE)
+public class Store {
+
+  private Item item;
+
+  public setItem(Item item){
+      this.item = item;    
+  }
+}
+
+Q24. Explain different Modes of Spring Bean Autowiring?
+There are five autowiring modes in spring framework. Lets discuss them one by one.
+
+no: This option is default for spring framework and it means that autowiring is OFF. You have to explicitly set the dependencies using tags in bean definitions.
+byName: This option enables the dependency injection based on bean names. When autowiring a property in bean, property name is used for searching a matching bean definition in configuration file. If such bean is found, it is injected in property. If no such bean is found, a error is raised.
+byType: This option enables the dependency injection based on bean types. When autowiring a property in bean, property’s class type is used for searching a matching bean definition in configuration file. If such bean is found, it is injected in property. If no such bean is found, a error is raised.
+constructor: Autowiring by constructor is similar to byType, but applies to constructor arguments. In autowire enabled bean, it will look for class type of constructor arguments, and then do a autowire by type on all constructor arguments. Please note that if there isn’t exactly one bean of the constructor argument type in the container, a fatal error is raised.
+autodetect: Autowiring by autodetect uses either of two modes i.e. constructor or byType modes. First it will try to look for valid constructor with arguments, If found the constructor mode is chosen. If there is no constructor defined in bean, or explicit default no-args constructor is present, the autowire byType mode is chosen.
+
+Q25. Explain @Required annotation with example?
+This annotation simply indicates that the affected bean property must be populated at configuration time, through an explicit property value in a bean definition or through autowiring. The container throws BeanInitializationException if the affected bean property has not been populated.
+
+This annotation is used to overcome the problem arise with setter-based injection where spring container doesn’t warn or throw any exception if all the required properties are not populated.
+
+We can use @Required annotation over setter-method of bean property in class file to indicate it is a mandatory property,
+
+public class Store {
+    private Item item;
+      
+    public Item getItem() {
+        return item;
+    }
+  
+    @Required
+    public void setItem(Item item) {
+        this.item = item;
+    }
+}
+
+Q26. Explain @Autowired annotation with example?
+This annotation provides more fine-grained control over where and how autowiring should be accomplished. The @Autowired annotation can be used to autowire bean on the setter method just like @Required annotation, constructor, a property or methods with arbitrary names and/or multiple arguments.
+
+E.g. You can use @Autowired annotation on setter methods to get rid of the <property> element in XML configuration file. When Spring finds an @Autowired annotation used with setter methods, it tries to perform byType autowiring on the method.
+
+You can apply @Autowired to constructors as well. A constructor @Autowired annotation indicates that the constructor should be autowired when creating the bean, even if no <constructor-arg> elements are used while configuring the bean in XML file.
+
+public class TextEditor {
+   private SpellChecker spellChecker;
+ 
+   @Autowired
+   public TextEditor(SpellChecker spellChecker){
+      System.out.println("Inside TextEditor constructor." );
+      this.spellChecker = spellChecker;
+   }
+ 
+   public void spellCheck(){
+      spellChecker.checkSpelling();
+   }
+}
+And it’s configuration without constructor arguments.
+
+<beans>
+ 
+   <context:annotation-config/>
+ 
+   <!-- Definition for textEditor bean without constructor-arg -->
+   <bean id="textEditor" class="com.howtodoinjava.TextEditor">
+   </bean>
+ 
+   <!-- Definition for spellChecker bean -->
+   <bean id="spellChecker" class="com.howtodoinjava.SpellChecker">
+   </bean>
+ 
+</beans>
+
+Q27. Explain @Qualifier annotation with example?
+There may be a situation when you create two or more beans of the same type and want to wire only one of them with a property, in such case you can use @Qualifier annotation along with @Autowired to remove the confusion by specifying which exact bean will be wired.
+
+See below example, it will autowire a item bean into Store class,
+
+public class Store {
+
+    @Autowired
+    private Item item;
+}
+And we have two bean definitions for Item class.
+
+<bean id="store" class="com.abc.Store" />
+ 
+<bean id="itemA" class="com.abc.Item" >
+    <property name="name" value="Fruit" />
+</bean>
+ 
+<bean id="itemB" class="com.abc.Item" >
+    <property name="name" value="Biscuits" />
+</bean>
+If you run the above example spring will throw an exception because it doesn’t know which bean to autowire in Store class, itemA or itemB?
+
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: 
+    No unique bean of type [com.abc.Item] is defined: 
+        expected single matching bean but found 2: [itemA, itemB]
+We can use @Qualifier annotation to wire specific itemA bean like this:-
+
+public class Store {
+
+    @Autowired
+    @Qualifier("itemA")
+    private Item item;
+}
+
+Q28. What are Spring stereotype annotations?
+@component vs @service vs @repository vs @controller
+All the stereotype annotations are used at annotate classes auto-detection and bean configuration. There are mainly 4 types of stereotypes:-
+
+@Component is a generic stereotype to annotate classes at any layer
+@Controller is used to annotate classes at API layer, mainly used in Spring MVC applications to define API endpoint and used in conjunction with @RequestMapping annotation which is used to annotate method to maps the request URL.
+@Service is used to annotate classes at the service layer
+@Repository is used to annotate classes at the persistence layer, which will act as a database repository
+
+Q29. What are JSR-250 annotations?
+@PostConstruct − This annotation can be used as an alternate of initialization callback.
+@PreDestroy − This annotation can be used as an alternate of destruction callback.
+@Resource − This annotation can be used on fields or setter methods. The @Resource annotation takes a ’name’ attribute which will be interpreted as the bean name to be injected. You can say, it follows by-name autowiring semantics.
+
+Q30. What happens when you define two beans with same id or same name ?
+beans.xml
+<bean id="foo" name="sameName" class="com.abc.Foo" />
+<bean id="bar" name="sameName" class="com.abc.Bar" />
+When you use two bean with same name (or same id) in single configuration file then “BeanDefinitionParsingException – Bean name ‘sameName’ is already used in this file” is thrown by the spring container at the time of loading.
+
+Where things get a little interesting is when bean definitions are spread out across many configuration files. Say, for example, the foo bean is defined in beans1.xml while the bar bean is defined in beans2.xml.
+
+beans1.xml
+<bean id="foo" name="sameName" class="com.abc.Foo" />
+beans2.xml
+<bean id="bar" name="sameName" class="com.abc.Bar" />
+Now, if the two beans have the same name (or id), surprisingly no exception is thrown by the container!!!
+
+FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(
+    new String[] { "beans1.xml", "beans2.xml" });
+
+Bar f = (Bar) context.getBean("sameName"); // works fine
+The documentation says “the last bean definition with the same name (or id) wins, respectively to the order of the xml files.” In the example Java code above, beans2.xml is loaded in the last. Therefore, bean class com.abc.Bar will be loaded.
+
+you can always turn off this default behavior and make cause bean ids/names to be unique across all configurations of the container. Look into the DefaultListableBeanFactory setAllowBeanDefinitionOverriding() method.
+
+
+Q31. Explain Spring MVC Workflow?
+Spring MVC Workflow
+Spring MVC Workflow
+
+When you request from spring MVC application then it follow the following sequence:-
+
+1. Dispatcher Servlet
+Dispatcher Servlet which is also know as front controller is the core of Spring MVC Workflow and responsible for handling all HTTP request and response. If you are using tomcat as web application server then Dispatcher Servlet need to define in web.xml
+
+The DispatcherServlet receives the entry of handler mapping from the configuration file and forwards the request to the controller. The controller then returns an object of Model And View. The DispatcherServlet checks the entry of view resolver in the configuration file and calls the specified view component.
+
+2. Handler Mapping
+Handler Mapping is a configuration for url and controller mapping.
+
+Following are the different implementation of HandlerMapping:-
+
+1) BeanNameUrlHandlerMapping
+This is a default spring handler mapping. Name of bean considered as URL.
+
+<bean name="/welcome.htm" class="com.abc.controller.WelcomeController"/>
+2) SimpleUrlHandlerMapping
+Map with key value pair of URL and controller bean name.
+
+<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+  <property name="mappings">
+    <props>
+      <prop key="/welcome.htm">welcomeController</prop>
+    </props>
+  </property>
+</bean>
+<bean id="welcomeController" class="com.abc.controller.WelcomeController" />
+3) DefaultAnnotationHandlerMapping
+This is the most popular implementation of HandlerMapping where each class annotated with @Controller maps one or more request to methods that process and execute the request with provided inputs.
+
+@RequestMapping annotation is used at both class and method level to map the URL. In addition to simple use cases, we can use it for mapping of HTTP headers, binding parts of the URI with @PathVariable, and working with URI parameters and the @RequestParam annotation.
+
+package com.abc.controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("/welcome")
+public class WelcomeController{
+
+  @RequestMapping(method = RequestMethod.GET)
+  public ModelAndView helloWorld(){
+    ModelAndView model = new ModelAndView("WelcomePage");
+    model.addObject("msg", "hello world");
+    return model;
+  }
+}
+3. Controller
+Controller calls service layer to execute business logic and return ModelAndView, which is wrapper for model object and view name.
+
+Popular Controller Types:
+AbstractController
+AbstractCommandController
+SimpleFormController
+
+4. View Resolver
+View Resolver look for appropriate view JSP/HTML based on view name.
+
+Popular Implementations of ViewResolver:
+InternalResourceViewResolver
+
+5. View
+Dispatcher Servlet return the view JPS/HTML component to user
+
+
+Q32. Differentiate between @Controller and @RestController?
+@Controller vs @RestController
+Even though both are used to indicate that a Spring bean is a Controller in Spring MVC setup, @RestController is better when you are developing RESTful web services using Spring MVC framework. It’s a combination of @Controller + @ResponseBody annotation which allows the controller to directly write the response and bypassing the view resolution process, which is not required for RESTful web service.
+
+It also instructs DispatcherServlet to use different HttpMessageConverters to represent the response in the format client is expecting e.g. HttpMessageJackson2Convert to represent response in JSON format and JAXB based message converts to generate XML response.
+
+
+Q33. What Is Spring Security?
+Spring Security is a separate module of the Spring framework that focuses on providing authentication and authorization methods in Java applications. It also takes care of most of the common security vulnerabilities such as CSRF attacks.
+
+To use Spring Security in web applications, you can get started with a simple annotation: @EnableWebSecurity.
+
+
+Q34. What Is Aspect-Oriented Programming?
+Aspect-oriented programming or AOP is a programming technique which allows programmers to modularize crosscutting concerns or behavior that cuts across the typical divisions of responsibility. Examples of cross-cutting concerns can be logging and transaction management. The core of AOP is an aspect. It encapsulates behaviors that can affect multiple classes into reusable modules.
+
+
+Q35. What Are Aspect, Advice, Pointcut, and Joinpoint in Aop?
+Aspect: a class that implements cross-cutting concerns, such as transaction management
+Advice: the methods that get executed when a specific JoinPoint with matching Pointcut is reached in the application
+Pointcut: a set of regular expressions that are matched with JoinPoint to determine whether Advice needs to be executed or not
+JoinPoint: a point during the execution of a program, such as the execution of a method or the handling of an exception
+
+Q36. What are the different types of Advices?
+Different types of Advices in Spring AOP are:
+
+Before: These types of advices execute before the joinpoint methods and are configured using @Before annotation mark.
+After returning: These types of advices execute after the joinpoint methods completes executing normally and are configured using @AfterReturning annotation mark.
+After throwing: These types of advices execute only if joinpoint method exits by throwing an exception and are configured using @AfterThrowing annotation mark.
+After (finally): These types of advices execute after a joinpoint method, regardless of the method’s exit whether normally or exceptional return and are configured using @After annotation mark.
+Around: These types of advices execute before and after a joinpoint and are configured using @Around annotation mark.
+
+Q37. What is cross-cutting concerns in Spring AOP?
+The concern is the behavior we want to have in a particular module of an application. It can be defined as a functionality we want to implement.
+
+The cross-cutting concern is a concern which is applicable throughout the application. This affects the entire application. For example, logging, security and data transfer are the concerns needed in almost every module of an application, thus they are the cross-cutting concerns.
+
+Spring AOP - Cross Cutting Concerns
+Spring AOP - Cross Cutting Concerns
+
+
+Q38. What is Weaving?
+According to the official docs, weaving is a process that links aspects with other application types or objects to create an advised object. This can be done at compile time, load time, or at runtime. Spring AOP, like other pure Java AOP frameworks, performs weaving at runtime.
+
+
+Q39. What is Spring Dao?
+Spring Data Access Object is Spring’s support provided to work with data access technologies like JDBC, Hibernate, and JPA in a consistent and easy way.
+
+This also allows to switch between the persistence technologies easily. It also allows you to code without worrying about catching exceptions that are specific to each of these technology.
+
+
+Q40. What is Spring Jdbctemplate Class and How to Use it?
+The Spring JDBC template is the primary API through which we can access database operations logic that we’re interested in:
+
+creation and closing of connections
+executing statements and stored procedure calls
+iterating over the ResultSet and returning results
+To use it, we’ll need to define the simple configuration of DataSource:
+
+@Configuration
+@ComponentScan("com.abc.jdbc")
+public class SpringJdbcConfig {
+
+    @Bean
+    public DataSource mysqlDataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/springjdbc");
+        dataSource.setUsername("guest_user");
+        dataSource.setPassword("guest_password");
+  
+        return dataSource;
+    }
+}
+
+Q41. How Would You Enable Transactions in Spring and What Are Their Benefits?
+There are two distinct ways to configure Transactions – with annotations or by using Aspect Oriented Programming (AOP) – each with their advantages.
+
+The benefits of using Spring Transactions, according to the official docs, are:
+
+Provide a consistent programming model across different transaction APIs such as JTA, JDBC, Hibernate, JPA, and JDO
+Support declarative transaction management
+Provide a simpler API for programmatic transaction management than some complex transaction APIs such as JTA
+Integrate very well with Spring’s various data access abstractions
+
+Q42. What is Spring Boot?
+Spring boot solves all this problems that comes with Spring Framework and help to create stand-alone, production-grade Spring based applications that you can just run.
+
+Follow the post for Top Spring Boot Interview Questions
+
+
+Source
+Spring 5.0.0.RC3 Official Documentation
+Baeldung Spring Interview Questions
+Edureka Spring Interview Questions
+HowToDoInJava Spring Interview Questions
+Interview Q&A
+Spring Q&A
+     
+See Also
+Top Spring Boot Interview Questions
+Core Java Interview Questions
+Top CSS Interview Questions
+Top Javascript Interview Questions
+Hibernate Interview Questions
+Ashish Lahoti avatar
+About Ashish Lahoti
+Ashish Lahoti is a Software Engineer with 12+ years of experience in designing and developing distributed and scalable enterprise applications using modern practices. He is a technology enthusiast and has a passion for coding & blogging.
+« Previous
+Core Java Interview Questions
+
+Next »
+Top Spring Boot Interview Questions
+
+© 2026 CodingNConcepts. Generated with Hugo and Mainroad theme.
+
 
 1. Overview
 2. Spring Core
