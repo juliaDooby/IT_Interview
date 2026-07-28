@@ -1,16 +1,228 @@
-логотип
-Подготовка к собеседованию
-Лайв кодинг
-Обучение
-Менторы
-Оформить премиум
-Войти
+Coderspace Logo
+For Talents
+For Companies
+Pro
+Programs & Events
+Resources
 
 
-Вернуться к топам вопросов
-ТОП вопросов по Golang
-Список популярных вопросов по Go для подготовки к техническим интервью.
-Выберите грейды
+Sign Up
+Log In
+EN
+Homepage
+Blogs
+Top 30 Frequently Asked Golang Interview Questions
+Python ile Programlamaya Giriş
+Top 30 Frequently Asked Golang Interview Questions
+Software Development
+8 Minutes Reading Time
+·
+19.09.2023
+Top 30 Frequently Asked Golang Interview Questions
+Golang, Google's popular and open-source programming language. BBC, Netflix, Uber, and major tech giants use Golang to achieve high performance. Therefore, the demand for developers who know Golang is increasing day by day. 
+
+If you are looking for a new job as a Golang developer, you are likely to encounter Go questions in technical interviews. However, there is no need to worry. In this content, we have listed frequently asked Golang interview questions. 
+
+By studying these questions, you can easily reach your dream job. So, let's review the Golang interview questions. 👇
+
+
+ 
+
+Most Popular Golang Interview Questions and Answers 
+ 
+
+1. What is the Go programming language? 
+Go is a programming language developed by Google in 2009, designed for building applications quickly and securely. Go has a structure similar to programming languages like C and Java. However, Golang has a simpler and more understandable syntax. 
+
+Go is a compatible programming language for building multithreaded applications that support multi-threading. The biggest advantage of Go is that it offers high performance while also having an easy syntax structure. 
+
+Golang is an ideal programming language for today's modern web and cloud technologies. It is highly popular worldwide. It is also used by major technology companies such as Google, Dropbox, and Uber. 
+
+
+ 
+
+2. What are the advantages of Golang? 
+✅ High Performance: Go offers performance similar to languages like C and Java. 
+✅ Easy and Understandable Syntax: Go's syntax is easier and more understandable compared to other languages. 
+✅ Support for Multithreading: Go is ideal for building applications that offer multi-threading support. 
+✅ Popular: Go is a highly popular programming language. It is also used by major technology companies. 
+✅ Secure: Go is ideal for building secure applications. 
+
+ 
+
+3. What is Golang's syntax like? 
+Golang's syntax is similar to languages like C and Java. However, Golang's syntax is easier and more understandable compared to other languages. For example, variable declarations and function calls are easier in Go. Additionally, Golang makes type conversions and package management easier compared to other languages. 
+
+ 
+
+Production = production_name “=” [ Expression ] 
+Expression = Alternative { “l” Alternative } 
+Alternative = Term { Term } 
+Term = Production_name l token [ “…”token] l Group l Option l Repetition 
+Group = “ ( “ Expression”)” 
+Option = “ [ “ Expression “ ]” 
+Repetition = “ {“ Expression “}” 
+
+ 
+
+4. What are packages in Golang? 
+Every Golang program consists of packages. Packages in Golang represent structures where related functions, variables, types, and other constructs are collectively defined and can be used. 
+
+
+
+👆 Using this code, packages can be imported or exported. 
+
+
+ 
+
+5. What is the GOPATH environment variable?
+GOPATH is an environment variable. It defines the folder path where packages and source files in the Go programming language are located. It determines how packages are found and used. 
+
+GOPATH variable can contain one or more folder paths, and each folder path is a package repository where different packages are located. Additionally, Golang allows the GOPATH variable to be set as needed. This means that packages can be managed easily. 
+
+
+ 
+
+6. What is the GoROOT variable in Golang?
+GoROOT is a variable that determines where the Golang SDK is located. GoROOT is automatically set during the Golang installation. It is usually found in the directory where Golang is installed. Thus, when using Golang, libraries and tools are easily accessible. 
+
+
+ 
+
+7. Is Golang case-sensitive?
+Golang is case-sensitive. The names designated for programming elements such as variable names, function names, and package names are case-sensitive. Therefore, elements with the same name cannot be defined differently. 'ab' and 'AB' are different from each other. 
+
+
+ 
+
+8. Is Golang fast? 
+Golang's easy and small syntax's make Golang a fast programming language. Golang's concurrency features and good memory management offer good performance for large and complex applications. Also, compiling Golang is quite fast. 
+
+
+ 
+
+9. How to write Hello World in Golang?
+To write "Hello World!" in Golang, the following code can be used 👇: 
+
+
+ 
+10. What is Fmt in Golang programming? 
+The format package fmt is represented by the symbol. It is a standard library. Users use this function for printing, reading, writing to files, reading from files, and other input/output operations. 
+
+
+ 
+
+11. What exactly are interfaces in Golang? 
+Interfaces are used to specify certain behaviors. Interfaces in Go are different from interfaces in other languages. Go interfaces are a special type used to represent a collection of one or more method signatures. 
+
+
+ 
+
+12. What does "Goto" mean in Golang? 
+The Goto statement in Golang is a jump statement that allows the code to jump to a labeled position. Goto is used to provide a specific label control within a program. The label is defined within a code block. "goto" statement is used to access the label. 
+
+
+ 
+
+13. What is garbage collection in Golang? 
+Garbage collection reallocates storage that was dynamically allocated to a program for use by other objects. 
+
+In the Go programming language, developers do not need to manually manage memory space. The Golang runtime manages memory space dynamically. It automatically removes unused variables and objects from memory. Thus, the risk of errors is reduced. 
+
+
+ 
+
+14. What does a pointer mean in Go?
+Pointers are variables that hold the address of any variable. They are used to manipulate the data at the address. Pointers directly access these data. 
+
+ 
+
+*: Used to access the value at the address stored by the pointer. 
+
+&: The “& operator”, also known as the address operator, is used to get the address of a variable. 
+
+
+ 
+
+15. What is static type variable declaration in Golang?
+Static type variable declaration determines the data type of the variable at the time it is created. In static type declaration, the type of the variable cannot be changed. 
+
+
+ 
+
+16. What is a constant variable in Golang?
+A constant variable is a type of variable whose value remains the same throughout the program. A constant variable is assigned a value at the time of declaration. After the value assignment or during the program's runtime, the values cannot be changed. 
+
+Constant variable declaration is made using the “const” keyword. It is especially used to define rules that do not change throughout the program. 
+
+
+ 
+
+17. What is the scope of variables in Golang?
+In Golang, each variable has a scope and is divided into two types: Local variables are declared either within a function or within a block. Global variables are declared outside of a function or a block. 
+
+
+ 
+
+18. What are channels in Golang?
+Channels are tools that facilitate data sharing between Goroutines. Goroutines use channels to send or receive data. Channels ensure the safe transmission of data between Goroutines. 
+
+
+ 
+
+19. How are channels created in Golang?
+1️⃣ A channel can be created by adding the “chan” keyword: 
+
+
+
+ 
+
+2️⃣ A channel can be created using the make() function: 
+
+
+
+ 
+
+3️⃣ The <- operator can be used to send data to a channel: 
+
+
+
+ 
+
+4️⃣ The following syntax is used to retrieve the sent data: 
+
+
+
+
+ 
+
+20. List the operators in Golang. 
+Some of the operators used in the Go language are as follows: 
+
+ 
+
+Arithmetic operators: +, -, *, /, % 
+Assignment operators: =, +=, -=, *=, /=, %= 
+Comparison operators: ==, !=, >, <, >=, <= 
+Logical operators: &&, ||, ! 
+Bitwise operators: &, |, ^, &^, <<, >> Function call operators: ( ) 
+Type conversion operators: type(). 
+ 
+
+21. Can an array be formatted before being printed in Golang programming language?
+Yes, an array in Go language can be formatted (formatted) before being printed. 
+
+It can be done using the Sprintf command 👇: 
+
+
+ 
+22. What is the Golang workspace? 
+The Golang workspace includes three directories and holds Go code. The workspace is the memory area where variables, arrays, functions, and other data structures defined within the Go program are stored. 
+
+ 
+
+Source files organized as packages are stored in “Src” 
+"
 
 Junior
 Middle
