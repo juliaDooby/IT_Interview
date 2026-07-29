@@ -1,34 +1,371 @@
-Skip to content
-great learning
+Catalog
+Resources
+Pricing
+Dashboard
+Premium
+For Students
 
-Blog
-Latest News
-Company Updates
-Leadership Insights
-Success Stories
-Research and Studies
-Resources & Tools
-Search for:
-Search …
+Log in
+Get Started
+Home / Articles / Career Development
+Vijay Singh Khatri
+30 Jan, 2025
+Share 
+Spring Interview Questions
+Ever since its release back in October of 2002, Spring Framework has succeeded in becoming a top application framework for Java developers. In fact, it secures a place among the leading backend web development frameworks. Hence, opting for a career in Spring Framework is very lucrative.
 
-Coding Practice
-Compilers
-Career Guide
-Quizzes
-Project Ideas
-Interview Questions
-Great Learning  Blog  IT/Software Development  Top 75+ Spring Boot Interview Questions
-Table of Contents
-Spring Boot Interview Questions for Freshers
-Spring Boot Interview Questions for Experienced
-Spring Boot Microservices Interview Questions
-Java Spring boot interview questions
-Spring Boot Interview Questions FAQs
-Top 75+ Spring Boot Interview Questions
-By Great Learning Editorial Team
-Published on November 8, 2023  Last Updated on January 6, 2025
-Springboot Interview
-Spring Boot is a Java-based framework used for creating stand-alone, production-grade Spring-based applications. It provides a wide range of features that make it easier to develop and deploy Spring-based applications. This blog talks about the top spring boot interview questions that will help you ace your upcoming interview sessions.
+Top Spring Interview Questions and Answers
+Spring Framework has a wide array of concepts that one needs to have a working understanding in order to stay ahead in the game. If you’re preparing for a Spring job interview, then here are top Spring interview questions that you must know the answers to:
+
+Question: Please list down the various features of Spring Framework and the advantages of using the same.
+Answer:
+
+Features of Spring Framework:
+
+Allows creating and managing the configuration and lifecycle of application objects
+AOP (Aspect Oriented Programming) provides support for unified development by separating application business logic from system services
+Highly configurable MVC web application framework with the ability to easily switch to other frameworks
+Instead of looking for or creating dependent objects, the objects give their dependencies. This design principle is known as IoC (Inversion of Control)
+Lightweight
+Offers a generic abstraction layer for transaction management that can also be used in container-less environments
+The JDBC abstraction layer offers an exception hierarchy that simplifies error handling
+Advantages:
+
+Enables POJO (Plain Old Java Object) Programming that further enables continuous integration and testability
+Open-source with no vendor lock-in
+Simplified JDBC because of DI (Dependency Injection) and Inversion of Control
+Thanks to the layered architecture, it’s easy to keep what you want and discard what you don’t
+Question: How many modules does the Spring Framework have?
+Answer: Spring Framework has about 20 modules. Each of them is classified into one of the following layers:
+
+Spring Core Container – The basic core layer of the Spring Framework. It has the following modules:
+SpEL (Spring Expression Language)
+Spring Bean
+Spring Core
+Spring Context
+Data Access/Integration – This is the layer responsible for providing support for interacting with the database. It contains the following modules:
+JDBC (Java DataBase Connectivity)
+JMS (Java Messaging Service)
+ORM (Object Relational Mapping)
+OXM (Object XML Mappers)
+Transaction
+Web – Providing support for creating web applications is the responsibility of this layer. It has these modules:
+Web
+Web – MVC
+Web – Portlet
+Web – Socket
+Aspect-Oriented Programming – Allows using Advice, Pointcuts, and others to decouple the code
+Instrumentation – Provides support for class instrumentation and classloader implementations
+Test – Responsible for providing support for accomplishing testing using JUnit and TestNG
+Some additional Spring Framework modules are:
+
+Aspects – Offers support for integrating with AspectJ
+Messaging – Provides support for STOMP and an annotation programming model used for processing as well as routing STOMP messages from WebSocket clients
+Spring Framework
+
+Question: What components does a Spring application have?
+Answer: A typical Spring application can be subdivided into the following components:
+
+Bean Class – Contains properties, functions, setter and getter methods, et cetera
+Bean Configuration File – Contains information on classes as well as how to configure the same
+Interface – Defines the functions
+Spring Aspect Oriented Programming – Provides the functionality of cross-cutting concerns
+User Program – Uses the function
+Question: What do you understand by the Spring IoC Container? Explain their types.
+Answer: The Spring IoC container lies at the core of the Spring Framework. The container uses Dependency Injection for managing various Spring application components.
+
+The IoC container is responsible for creating the objects, configuring them, wiring them together, and managing their lifecycle. The container receives instructions about the same from the provided configuration metadata.
+
+Means for providing the configuration metadata can include Java annotations, Java code, or XML. There are two types of IoC containers in Spring:
+
+ApplicationContext – Provides additional functionality. It is built on top of the BeanFactory interface.
+BeanFactory – A prepackaged class containing a collection of beans. Instantiates the bean whenever as required by the clients
+Question: Please explain the Dependency Injection in Spring. In how many ways can the same be used?
+Answer: Instead of creating objects directly, Dependency Injection allows defining how objects should be created. As such, the code doesn’t directly contain connecting components and services together.
+
+The configuration file has the information on which services are needed by which components. The IoC container is responsible for connecting components with the appropriate services. Dependency Injection can be used in the following forms:
+
+Construction Injection
+Setter Injection
+Question: Can you differentiate between ApplicationContext and BeanFactory in Spring?
+Answer:
+
+Annotation Based Dependency – BeanFactory doesn’t support annotation-based dependency while ApplicationContext does
+Interface Definition – BeanFactory interface is defined in org.springframework.beans.factory.BeanFactory while the ApplicationContext interface is defined in org.springframework.context.ApplicationContext
+Internationalization Support – While ApplicationContext supports internationalization, BeanFactory doesn’t
+Object Management – BeanFactory uses syntax for providing a resource object. Contrarily, ApplicationContext creates as well as manages resource objects on its own
+Type of Initialization – ApplicationContext makes use of eager or aggressive initialization. On the other hand, BeanFactory uses lazy initialization
+Question: How is the configuration metadata provided to the Spring container?
+Answer: There are three ways in which the configuration metadata is provided to the Spring container, enumerated as follows:
+
+Annotation-based Configuration – By default, annotation wiring is turned off in the Spring container. Using annotations on the applicable class, field, or method declaration allows it to be used as a replacement of using XML for describing a bean wiring.
+Java-based Configuration – This is the newest form of configuration metadata in Spring Framework. It has two important components:
+@Bean annotation – Same as that of the <bean/> element
+@Configuration annotation – Allows defining inter-bean dependencies by simply calling other @Bean methods in the same @Configuration class
+XML-based Configuration – The dependencies, as well as the services required by beans, are specified in configuration files that follow the XML format. Typically, these configuration files contain several application-specific configuration options and bean definitions.
+Question: What do you understand by Spring Beans? How many bean scopes are supported by Spring Framework?
+Answer: Configured, instantiated, managed, and wired by the Spring IoC container, Spring Beans are the objects that form the core of a Spring application. Spring Beans are created with the configuration metadata supplied to the Spring IoC container.
+
+Spring Framework provides support for a total of 5 scopes:
+
+Global-session* – Provides scope for a bean definition to a Global HTTP-session
+Prototype – Provides scope for a single bean definition for having any number of object instances
+Request* – Provides scope for a bean definition to an HTTP-request
+Session* – Provides scope for the bean definition to a single instance per Spring IoC container
+Singleton – Provides scope for the bean definition to a single instance per Spring IoC container * ? Available only when using a web-aware ApplicationContext.
+Question: Please explain the Bean lifecycle in Spring Bean Factory Container?
+Answer:
+
+The bean lifecycle starts with the Spring IoC container instantiating the bean from the bean’s definition present in the XML file
+As specified in the bean definition, Spring then populates all properties using DI
+If the bean implements the BeanNameAware interface then the setBeanName() method is called by passing the bean ID
+If the bean implements the BeanFactoryAware interface, the setBeanFactory() method is called by passing an instance of the bean
+If there are any BeanPostProcessors associated with the bean then the preProcessBeforeInitialization() methods are called
+The init method is called if it is specified for the bean
+At last, the postProcessAfterInitialization() methods are called if there are any BeanPostProcessors associated with the bean.
+Question: What is a Spring Configuration File?
+
+Answer: Since Spring is based on the concept of Dependency Injection, all the classes, interfaces, and their dependencies are stored in a file termed as the spring configuration file. It is a .xml file. The spring container uses this file to control the lifecycle of spring beans. A bean is configured as:
+
+<bean id = "..." class = "..." init-method = "..." lazy-init="true" destroy-method="....">
+      <!-- bean dependencies and configurations -->
+</bean>
+Question: What are the benefits of IoC (Inversion of Control)?
+Answer: The advantages are:
+
+No need to write extensive code on how services are created and getting object references. Everything can be achieved through simple configurations. New dependencies and services can be added just by adding a constructor or setter method.
+Code is more accessible to unit test as it is designed as several components, and developers can inject their objects and switch implementations.
+Loose coupling of components.
+Allows for lazy loading of objects and dependencies.
+Question: What is the Bean life cycle in Spring Bean Factory Container?
+Answer: The bean lifecycle is as follows:
+
+The bean is instantiated by the Spring container from the bean definition found in the spring configuration file.
+Using dependency injection, all the properties specified in the bean definition are populated.
+If the bean implements the BeanNameAware interface, setBeanName() is called by the bean factory bypassing the bean's ID.
+If the bean implements the BeanNameAware interface, setBeanFactory() is called by passing the bean's instance. 
+If any BeanPreProcessors are associated with the bean, preProcessBeforeInitialization(), methods are called.
+Init-method, if defined for the bean, will be called.
+Lastly, postProcessAfterInitialization() methods are called, if required.
+Question: Explain inner beans in Spring.
+Answer: Inner beans are the beans that exist within the scope of another bean. The concept is similar to inner classes in Java. The inner bean is defined as the target inside the outer bean id tag.
+
+<bean id = "outerBean" class = "...">
+      <property name = "target">
+         <bean id = "innerBean" class = "..."/>
+      </property>
+</bean>
+Question: What is Annotation-based container configuration? Also, explain how to turn on annotation wiring in Spring Framework.
+Answer: Annotation-based container configuration is an alternative to XML setups. Rather than using XML for describing a bean wiring, the developer moves the configuration to the component class by using annotations on the appropriate class, field, or method declaration.
+
+Because annotation wiring is turned off by default, it needs to be turned on before it can be used. It is done by configuring the <context:annotation-config/> element in the Spring configuration file.
+
+Question: Please explain the various annotations supported by Spring.
+Answer:
+
+@Autowired – Used for autowiring bean on the setter methods, a property, constructor or methods with arbitrary names or several arguments. It provides precise control over how and where the autowiring needs to be done.
+@Component – A generic stereotype for a Spring-managed component, it marks a Java class as a bean that can be picked up by a component-scanning mechanism and pull it into the application context.
+@Controller – Marks a class as a Spring Web MVC controller. Beans marked with this annotation are automatically imported into the Dependency Injection container.
+@Qualifier – Used along with @Autowired annotation for specifying that only one of the several yet alike beans, needs to be wired.
+@Repository – A specialization of the component annotation with almost identical use and functionality. Specifically, it provides additional benefits for DAOs (Data Access Objects).
+@RequestMapping – Maps a particular HTTP request method to a specific class or method in controller responsible for handling the respective request.
+@Required – Applied to bean property setter methods, it indicates that the bean property needs to be populated at the configuration time with the use of an explicit property value present in a bean definition or via autowiring. In case the bean property is not populated, the container throws the BeanInitializationException message.
+@Service – Another specialization of the component annotation. Although it doesn’t offer any additional behavior over the component annotation, it can be used over the @component annotation in service-layer classes for specifying the intent in a better way.
+Question: What do you mean by Spring DAO support?
+Answer: The Spring DAO support eases working with data access technologies, such as JDBC, JDO, and Hibernate, in a reliable way. Also, it allows coding without worrying about catching specific-technology exceptions and easily makes a switch amongst persistence technologies.
+
+Question: What classes does the JDBC API contain?
+Answer:
+
+JdbcTemplate
+NamedParameterJdbcTemplate
+SimpleJdbcCall
+SimpleJdbcInsert
+SimpleJdbcTemplate
+Question: How will you access Hibernate using Spring Framework?
+Answer: Hibernate can be accessed using Spring Framework in the following two ways:
+
+Extending HibernateDAOSupport and then applying an AOP Interceptor node
+Inversion of Control with a Hibernate Template and Callback
+Question: Enumerate the types of transaction management supported by Spring.
+Answer: Spring Framework provides support for two types of transaction management:
+
+Declarative transaction management – While the transaction management is separated from the business code, only annotations or XML-based configurations are used for managing transactions.
+Programmatic transaction management – The transaction is managed with programming. Although extremely flexible, it is very difficult to maintain.
+Question: Please explain the AOP technique.
+Answer: AOP or Aspect-Oriented Programming is a programming technique that allows programmers to modularize behavior that cuts across the typical division of responsibility or cross-cutting concerns. Logging and transaction management are examples of cross-cutting concerns.
+
+Question: What is Advice in Spring? Explain its various types.
+Answer: Any action taken by an aspect at some particular joinpoint in Spring Framework is called an Advice. Spring AOP makes use of advice for maintaining a chain of interceptors “around” the joinpoint i.e. as an interceptor. Advice can be of the following types:
+
+After (finally) – Configured using the @After annotation mark, it is executed after a joinpoint method, whether exiting normally or throwing an exception
+After returning – Configured using the @AfterReturning annotation mark, it is executed right after the joinpoint method completes normal execution
+After throwing – Configured using the @AfterThrowing annotation mark, it is executed if and only if the jointpoint method exits by throwing an exception
+Around – Configured using the @Around annotation mark, it is executed before as well as after a joinpoint method
+Before – Configured using the @Before annotation mark, it is executed before the joinpoint method
+Question: Could you draw a comparison between concern and crosscutting concerns in Spring AOP?
+Answer: While the concern is a behavior that the developer wants to have in a particular module of a Spring application, the cross-cutting concern is a concern that is applicable throughout the entire Spring application.
+
+Question: What do you understand by the Spring MVC framework?
+Answer: The Spring MVC framework is responsible for providing model-view-controller architecture as well as ready-to-use components, used for developing flexible and loosely coupled web apps.
+
+The MVC pattern helps in separating out the various aspects of the application, such as business logic, input logic, and UI logic, in addition to providing a loose coupling amongst these separated elements.
+
+Question: Please explain DispatcherServlet.
+Answer: The DispatcherServlet is the essence of Spring Web MVC framework and handles all the HTTP requests as well as responses. Upon receiving the entry of handler mapping from the configuration file, the DispatcherServlet forwards the request to the controller.
+
+Thereafter, the controller returns an object of Model and View. Afterward, the Dispatcher Servlet checks the configuration file for the entry of view resolver and calls the specified view component.
+
+Question: What is Spring?
+Answer: Spring is an integrated framework that is used for developing enterprise applications in Java language.
+
+Question: Are there any differences between the Bean Factory and Application Context?
+Answer: Yes, there are many differences between the Bean Factory and Application Context. These are stated as under:
+
+Bean Factory	Application Context
+It is a basic container	It is an advanced container
+It has a limited interface.	It extends the Bean Factory interface
+It offers various fundamental facilities.	It offers additional facilities than Bean Factory, including integration with Spring AOP, Message Resource Handling for i18n, and various others.
+Question: What are the differences between the Constructor Injection and Setter Injection?
+Answer: The differences between the Constructor Injection and Setter Injection can be stated as under
+
+Constructor Injection	Setter Injection
+It has a complete injection	It has a partial injection
+It does not override the setter property	It overrides the constructor property when they both are defined.
+It creates new Instances when modifications are required.	It does not create a new Instance when the property value is changed.
+It is better for many more properties than Setter Injection	It is good for a few properties.
+Question: Define Autowriting in Spring?
+Answer: Autowiring in Spring helps the computer programmers to apply bean automatically without writing explicit injection logic. The various auto writing modes include the following.
+
+No.
+byname.
+byType.
+Constructor.
+Question: What are the different types of Bean scopes in Spring framework?
+Answer: There are mainly five types of Bean scopes in the Spring framework. These include the following.
+
+Singleton.
+Prototype.
+Request.
+Session.
+Global session.
+Question: What is a Pointcut in Spring?
+Answer: Pointcut is an expression language of Spring AOP.
+
+What are the different latest versions of Spring framework?
+
+The latest versions of the Spring framework are as follows.
+
+Spring 2.5
+Spring 3.0
+Spring 4.0
+Question: What is a JoinPoint?
+Answer: A JoinPoint is a point during the execution of a program and represents the method execution. It includes the execution of a method or even handling of an exception.
+
+Question: What are the differences between Spring AOP and AspectJ AOP?
+Answer: There are several differences between Spring AOP and AspectJ AOP, which are stated as under:
+
+Spring AOP	AspectJ AOP
+The proxy is done through Runtime weaving.	Compile-time weaving is done through AspectJ Java tools
+Method level PointCut is applied	Field level PointCut is applied
+It is based on DTD	It is based on schema and annotation configuration
+Question: What is a proxy in Spring Framework?
+Answer: A proxy in the Spring framework is referred to as the creation of an object after applying advice to a particular target object. 
+
+Question: When are the target object and proxy objects the same?
+Answer: The target object and proxy object are the same in the case of client objects.
+
+Question: What is weaving in the Spring framework?
+Answer: Weaving in Spring framework is the process of linking a particular aspect with other application types or objects so that an advised object is created. It is performed mostly during Runtime.
+
+Question: What is Spring Security?
+Answer: Spring Security is a separate module in the Spring framework that focuses on offering authentication and authorization methods that can be used in Java Applications.
+
+Question: What is the Spring Boot?
+Answer: Spring Boot is the name given to a project which offers a pre-configured set of the framework, which is meant to reduce the boilerplate configuration. It helps in getting spring applications up and running with lesser codes.
+
+Question: What is Reactive Programming?
+Answer: Reactive programming is a non-blocking and event-driven application. It scales with a small number of threads. The backpressure is on the key ingredient, which ascertains that the producers do not overwhelm consumers.
+
+Question: What are the benefits of Reactive Programming?
+Answer: There are various benefits of Reactive Programming, which include the following.
+
+It helps in increasing the utilization of computing resources, including multicore and multi-CPU hardware.
+It helps in increasing performance by a reduction in the serialization process.
+Question: What are the important characteristics of the Reactive system?
+Answer: The important characteristics of the Reactive system includes the following.
+
+Message-driven.
+Resilient.
+Responsive.
+Elastic.
+Question: Define Spring Webflux?
+Answer: Spring Web flux is a highly reactive web framework of Spring. It acts as an alternative to Spring MVC and offers a highly scalable and non-blocking stack.
+
+Question: Define Mono and Flux types?
+Answer: Mono and Flux types, are both the reactor of the Spring Framework 5. The Mono represents the single async value, while the Flux represents the stream of async value. Together they help to implement the publisher interface, which is defined clearly in the reactive streams specifications.
+
+Question: What is the basic difference between Mono and Flux in Spring?
+Answer: Mono implements the publisher and returns 0 or even one element while the Flux implements the publisher and return N elements.
+
+Question: What are the common features of Mono and Flux?
+Answer: The common features of Mono and Flux include the following.
+
+They represent streams.
+They can’t be executed without consuming the stream using the subscribe method.
+They are immutable and can be called again and again to create a new instance of Flux or Mono.
+Question: Difference between the Web client and Webtestclient?
+Answer: The difference between the Web client and Webtestclient can be stated as follows.
+
+Web client	Webtestclient
+Web client acts as a reactive client who performs non-blocking HTTP requests. 	Webtestclient also acts as a reactive client that can be used in tests.
+It can handle reactive streams with backpressure.	It can bind directly to WebFlux application by applying mock request and response objects.
+It can take advantage of JAVA 8 Lambdas.	It can connect to any server over an HTTP connection.
+Question: Do you think that Spring 5 compatible with older versions of JAVA?
+Answer: No, Spring 5 is not compatible with the older versions of JAVA. It requires at least JAVA 8 for attaining compatibility.
+
+Question: Can Spring Boot allow Spring MVC or Spring WebFlux in the same application?
+Answer: Yes, Spring Boot can allow either Spring MVC or Spring WebFlux in the same application but with the condition to apply only one at a time. This is because MVC is a blocking paradigm, and WebFlux is a non-blocking paradigm and hence cannot be used together.
+
+Question: Can Spring MVC run on Netty?
+Answer: No, Spring MVC cannot run on Netty. 
+
+Question: Can Spring 5 Integrate with the Jdk9 Modularity?
+Answer: Yes, Spring 5 could integrate with the Jdk9 Modularity. This can be stated as follows.
+
+Step 1: Creating a new class:
+
+package com.hello;
+public class HelloWorld {
+    public String sayHello(){
+        return "HelloWorld";
+    }
+}
+Step 2: Creating a new module:
+
+module com.hello {
+    export com.hello;
+}
+Step 3: Creating a new Java Project:
+
+module com.hello.client {
+    requires com.hello;
+}
+Step 4: Testing the new module:
+
+public class HelloWorldClient {
+    public static void main(String[] args){
+        HelloWorld helloWorld = new HelloWorld();
+        log.info(helloWorld.sayHello());
+    }
+}
+Conclusion
+So, that completes the list of the top Spring interview questions. These questions will surely help you buckle up for your Spring interview.
+
+Looking for more Spring interview questions? Here is a great udemy course for the same: Spring Interview Questions Preparation Course.
+
+Here is a great book that helps you to prepare well for any programming interview: Cracking the Coding Interview: 189 Programming Questions and Solutions.
+
 
 The spring boot interview questions are divided into different categories. Let's get started!
 
