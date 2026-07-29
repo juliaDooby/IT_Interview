@@ -1,216 +1,530 @@
-Вакансии партнеровЗарегистрироваться Войти 
-sibinfo.ru 
-+7(383)36-200-36
-Заказать звонок 
-info@sibinfo.ru
-Написать нам 
-Ваша корзина пуста
-Сумма: 0 руб.
-Оформить
-8(800)550-63-02 - бесплатный звонок
-Поиск по сайту...
+Practice Real Company Assessment Patterns • Latest 2025–2026 Mock Tests
+Placement Preparation Logo
+an HCL GUVI product
+Aptitudev
+Programmingv
+Company Specificv
+Resourcesv
+Mock Test
+search-icon
+Search Topics, Formulas etc
+Home
+Blog
+Interview Questions
+Top Spring Interview Questions for Freshers
 
-О компании Курсы Экзамены Новости Контакты Аренда классов
-Программы обученияПреподавателиНекоммерческая деятельностьСтатьиFAQ
-Главная » О компании » Статьи
-Java Spring. 33 лучших вопроса на собеседовании
-Направления обучения
-Импортозамещение
-ОС Альт. / Ред ОС / Astra Linux / Linux
-Базы данных (PostgreSQL, Oracle, SQL Server, Access, Arenadata)
-Microsoft
-Cisco
-Tegu
-Dallas Lock
-DevOps
+Table of Contents
+
+Practice Spring Interview Questions
+1. Dependency injection mechanism
+2. Creating custom annotations
+3. Spring profiles usage
+4. Transaction management example
+5. Global exception handling
+6. Pagination and sorting
+7. Spring Boot starters
+8. Spring Security role
+9. Task scheduling example
+10. RestController vs Controller
+11. File upload handling
+12. Aspect-Oriented Programming
+13. Auto-configuration in Spring
+14. MySQL integration steps
+15. Properties file benefits
+16. OAuth2 security configuration
+17. Environment management
+18. Spring Data JPA
+19. Caching implementation
+20. RESTful services creation
+21. Bean scopes types
+22. Custom filter usage
+23. Internationalization implementation
+24. Autowired functionality
+25. Custom starter creation
+26. REST method handling
+27. Component and Scan
+28. Custom exception handling
+29. Prototype in Singleton
+30. File download handling
+31. Custom validator creation
+32. Scheduled tasks
+33. Transactional use example
+34. JSON response handling
+35. One-to-many relationship
+36. Actuator endpoint
+37. Async processing
+38. RestTemplate configuration
+39. Content negotiation
+40. H2 database configuration
+41. CriteriaBuilder query
+42. Event handling
+43. SQL statement logging
+44. Multiple data sources
+45. Validation handling
+46. Interceptor implementation
+47. Custom authentication provider
+48. RestControllerAdvice usage
+49. WebClient configuration
+50. Custom Jackson serializer
+27 February, 2025 (Last Updated)
+Top Spring Interview Questions for Freshers
+Top Spring Interview Questions for Freshers Are you preparing for your first Spring interview and wondering what questions you might face?Understanding the key Spring interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Spring interview questions and answers for freshers and make a strong impression in your interview.fsd student program banner horizontal
+Practice Spring Interview Questions and Answers
+Below are the top 50 Spring interview questions for freshers with answers:
+1. How does Spring’s Dependency Injection work, and how would you use it to decouple your application?
+Answer:Dependency Injection (DI) in Spring is a design pattern that removes the need for hard-coded dependencies, allowing objects to be injected at runtime. You can use constructor injection, setter injection, or field injection. For example, to decouple a service from its data access layer, you can inject a repository interface into the service rather than creating an instance of the repository class.
+2. Explain how to create a custom annotation in Spring and its practical use case.
+Answer:A custom annotation in Spring can be created using @Target, @Retention, and @Documented annotations. For instance, you might create an annotation @LogExecutionTime to measure and log the execution time of methods. This can be applied to methods in a service class, and an Aspect can be written to handle the logging.
+3. What is the significance of Spring Profiles, and how would you implement them in a multi-environment application?
+Answer:Spring Profiles allow you to segregate parts of your application configuration and make it available only in certain environments. For example, you might have separate profiles for dev, test, and prod. You can activate a profile using @Profile annotation or through configuration files like application-dev.properties.
+4. How would you implement transaction management in Spring? Provide an example.
+Answer:Spring provides declarative transaction management through the @Transactional annotation. You can annotate your service methods with @Transactional, and Spring will handle the transaction boundaries. For example, @Transactional on a method ensures that the method’s operations are executed within a transaction.
+5. Describe how to handle exceptions globally in a Spring Boot application.
+Answer:You can handle exceptions globally in Spring Boot using @ControllerAdvice and @ExceptionHandler. Create a class annotated with @ControllerAdvice and define methods annotated with @ExceptionHandler to catch and handle specific exceptions globally across the application.
+6. How would you implement pagination and sorting in a Spring Boot REST API?
+Answer:You can implement pagination and sorting using Spring Data JPA’s Pageable interface. By passing a Pageable object to a repository method, you can easily paginate and sort the results. The client can control the page size and sorting order via query parameters.
+7. What are Spring Boot Starters, and how do they simplify the development process?
+Answer:Spring Boot Starters are a set of convenient dependency descriptors you can include in your application. They provide a ready-to-use set of dependencies for specific functionalities like web, data access, security, etc. For example, adding spring-boot-starter-web brings in all necessary dependencies to build a web application.
+8. Explain the role of Spring Security in a web application and how to implement JWT-based authentication.
+Answer:Spring Security is a powerful authentication and access-control framework. To implement JWT-based authentication, you can configure Spring Security to intercept and validate JWT tokens in the Authorization header. You would typically use a filter to extract and validate the token and set the authentication context accordingly.
+9. How can you schedule tasks in Spring? Provide a practical example.
+Answer:Tasks can be scheduled in Spring using the @Scheduled annotation. You can define methods to run at fixed intervals or cron expressions. For example, you might have a method annotated with @Scheduled(fixedRate = 5000) to execute every 5 seconds.
+10. Describe how to use Spring’s @RestController and @Controller annotations.
+Answer:@RestController is a specialized version of @Controller, which combines @Controller and @ResponseBody. It is used to create RESTful web services. @Controller is used in MVC applications to return views. For RESTful APIs, @RestController is preferred as it directly returns the response body in JSON or XML format.
+11. How would you handle file uploads in a Spring Boot application?
+Answer:File uploads can be handled using the MultipartFile interface. In a Spring Boot REST controller, you can define a method that accepts a MultipartFile parameter and saves the file to a server location.
+12. Explain the concept of Aspect-Oriented Programming (AOP) in Spring and provide an example use case.
+Answer:AOP in Spring allows you to define cross-cutting concerns like logging, security, and transaction management separately from the business logic. For example, you can create an aspect for logging method execution time using @Around advice.
+13. What is Spring Boot Auto-Configuration and how does it work?
+Answer:Spring Boot Auto-Configuration attempts to automatically configure your Spring application based on the dependencies present in the classpath. It uses conditional annotations like @ConditionalOnClass and @ConditionalOnMissingBean to apply configurations only when necessary.
+14. How do you integrate a Spring Boot application with a MySQL database?
+Answer:To integrate with MySQL, include the MySQL JDBC driver dependency and configure the database connection details in application.properties. Use Spring Data JPA to interact with the database using repositories, and Spring Boot will handle the setup.
+15. What are the benefits of using Spring Boot’s application.properties or application.yml for configuration?
+Answer:application.properties and application.yml provide a centralized way to manage application configurations. This allows for easy management of environment-specific settings, externalizing configuration from the codebase, and ensuring consistency across different environments.
+16. Explain how to secure a Spring Boot application with OAuth2.
+Answer:Securing a Spring Boot application with OAuth2 involves configuring Spring Security to use OAuth2 as the authentication protocol. You can use the spring-boot-starter-oauth2-client dependency and configure OAuth2 providers like Google or GitHub in your application.
+17. How do you manage different environments in a Spring Boot application?
+Answer:Managing different environments can be done using Spring Profiles. You can create separate configuration files for each environment, such as application-dev.properties and application-prod.properties, and activate them using the spring.profiles.active property.
+18. What is Spring Data JPA, and how does it simplify database interactions?
+Answer:Spring Data JPA is a part of the larger Spring Data family, making it easier to work with JPA-based data access layers. It abstracts boilerplate code for data access, provides CRUD operations, and allows you to create custom queries using method names.
+19. How would you implement a caching mechanism in a Spring application?
+Answer:Caching in Spring can be implemented using @EnableCaching and @Cacheable. You can annotate methods with @Cacheable to store their results in a cache. When the method is called again with the same parameters, the cached result is returned instead of executing the method.
+20. Explain the concept of RESTful web services and how Spring facilitates their creation.
+Answer:RESTful web services follow the principles of REST architecture, focusing on stateless communication and using standard HTTP methods. Spring facilitates the creation of RESTful services using @RestController and @RequestMapping, allowing easy mapping of HTTP requests to handler methods.
+21. What are the different types of bean scopes in Spring, and how would you use them?
+Answer:Spring supports several bean scopes, including singleton, prototype, request, session, and globalSession. singleton is the default, where a single instance is created. prototype creates a new instance every time. Scopes like request and session are used in web applications for request and session-specific beans.
+22. How would you implement a custom filter in Spring Boot?
+Answer:A custom filter can be implemented by creating a class that implements the Filter interface and overriding the doFilter method. You can then register this filter using the @Component annotation or by defining a FilterRegistrationBean in a configuration class.
+23. Explain how to implement internationalization (i18n) in a Spring Boot application.
+Answer:Internationalization in Spring Boot can be achieved by configuring message sources and using the @MessageSource annotation. You create separate property files for each language (e.g., messages_en.properties, messages_fr.properties) and inject messages using the MessageSource bean.
+24. What is the use of @Autowired and how does it work in Spring?
+Answer:@Autowired is used for automatic dependency injection in Spring. It can be applied to constructors, setters, or fields. Spring’s IoC container automatically injects the required beans into the annotated field or method based on the type.
+25. How do you create a custom Spring Boot starter?
+Answer:A custom Spring Boot starter can be created by setting up a new Maven or Gradle project, adding necessary dependencies, and creating an @Configuration class that auto-configures beans.
+26. How would you implement a REST controller that handles both GET and POST requests in Spring Boot? Provide an example.
+Answer:You can implement a REST controller using the @RestController annotation. For handling GET and POST requests, you can use @GetMapping and @PostMapping.
+@RestController
+@RequestMapping(“/api”)
+public class MyController { @GetMapping(“/greet”)
+public String greet() {
+return “Hello, World!”;
+} @PostMapping(“/create”)
+public ResponseEntity<String> create(@RequestBody MyEntity entity) {
+// logic to save entity
+return ResponseEntity.ok(“Entity created successfully”);
+}
+}
+27. How do you use @Component and @ComponentScan annotations in Spring? Provide an example.
+Answer:@Component is used to mark a class as a Spring-managed bean, and @ComponentScan is used to specify the packages to scan for components.
+@Component
+public class MyService {
+public void performTask() {
+System.out.println(“Task performed”);
+}
+} @SpringBootApplication
+@ComponentScan(basePackages = “com.example.myapp”)
+public class MyApplication {
+public static void main(String[] args) {
+SpringApplication.run(MyApplication.class, args);
+}
+}
+28. How would you implement a custom exception and exception handler in Spring Boot? Provide a code example.
+Answer:You can create a custom exception class and use @ControllerAdvice to handle exceptions globally.
+public class CustomException extends RuntimeException {
+public CustomException(String message) {
+super(message);
+}
+} @ControllerAdvice
+public class GlobalExceptionHandler { @ExceptionHandler(CustomException.class)
+public ResponseEntity<String> handleCustomException(CustomException ex) {
+return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+}
+}
+29. How do you inject a prototype bean into a singleton bean in Spring? Show with code.
+Answer:You can inject a prototype bean into a singleton bean using the @Scope(“prototype”) annotation and ObjectFactory or Provider.
+@Component
+@Scope(“prototype”)
+public class PrototypeBean {
+public void showMessage() {
+System.out.println(“Prototype Bean”);
+}
+} @Component
+public class SingletonBean { private final ObjectFactory<PrototypeBean> prototypeBeanFactory; @Autowired
+public SingletonBean(ObjectFactory<PrototypeBean> prototypeBeanFactory) {
+this.prototypeBeanFactory = prototypeBeanFactory;
+} public void execute() {
+PrototypeBean prototypeBean = prototypeBeanFactory.getObject();
+prototypeBean.showMessage();
+}
+}
+30. How would you handle file downloads in a Spring Boot application? Provide an example.
+Answer:File downloads can be handled by returning a ResponseEntity with the file’s content as a ByteArrayResource.
+@RestController
+@RequestMapping(“/files”)
+public class FileController { @GetMapping(“/download/{filename}”)
+public ResponseEntity<Resource> downloadFile(@PathVariable String filename) {
+File file = new File(“/path/to/files/” + filename);
+ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(file.toPath())); return ResponseEntity.ok()
+.header(HttpHeaders.CONTENT_DISPOSITION, “attachment;filename=” + file.getName())
+.contentLength(file.length())
+.body(resource);
+}
+}
+31. How do you create and use a custom Spring Boot validator? Provide a code snippet.
+Answer:You can create a custom validator by implementing the ConstraintValidator interface and use @Valid in your controller.
+@Target({ ElementType.FIELD })
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = MyValidator.class)
+public @interface ValidName {
+String message() default “Invalid name”;
+Class<?>[] groups() default {};
+Class<? extends Payload>[] payload() default {};
+} public class MyValidator implements ConstraintValidator<ValidName, String> {
+@Override
+public boolean isValid(String value, ConstraintValidatorContext context) {
+return value != null && value.matches(“[A-Za-z]+”);
+}
+} public class User {
+@ValidName
+private String name; // getters and setters
+} @RestController
+@RequestMapping(“/users”)
+public class UserController { @PostMapping(“/create”)
+public ResponseEntity<String> createUser(@Valid @RequestBody User user) {
+return ResponseEntity.ok(“User is valid”);
+}
+}
+32. How would you use Spring’s @Scheduled to run a task at a fixed rate? Include a code example.
+Answer:Use the @Scheduled annotation with the fixedRate attribute.
+@Component
+public class ScheduledTask { @Scheduled(fixedRate = 5000)
+public void performTask() {
+System.out.println(“Task executed at fixed rate”);
+}
+}
+33. Explain how to use @Transactional in Spring with an example.
+Answer:@Transactional is used to manage transactions at the method level.
+@Service
+public class MyService { @Autowired
+private MyRepository repository; @Transactional
+public void saveData(MyEntity entity) {
+repository.save(entity);
+// Additional operations
+}
+}
+34. How do you handle JSON responses in a Spring Boot REST controller? Provide a code snippet.
+Answer:JSON responses are handled automatically by Spring Boot with @RestController, which converts the return object to JSON.
+@RestController
+@RequestMapping(“/api”)
+public class JsonController { @GetMapping(“/data”)
+public MyData getData() {
+MyData data = new MyData();
+data.setId(1);
+data.setName(“Sample Data”);
+return data;
+}
+} public class MyData {
+private int id;
+private String name;
+// getters and setters
+}
+35. How would you implement a one-to-many relationship in Spring Data JPA? Include a code example.
+Answer:You can implement a one-to-many relationship using @OneToMany and @ManyToOne annotations.
+@Entity
+public class ParentEntity { @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id; @OneToMany(mappedBy = “parent”)
+private List<ChildEntity> children; // getters and setters
+} @Entity
+public class ChildEntity { @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id; @ManyToOne
+@JoinColumn(name = “parent_id”)
+private ParentEntity parent; // getters and setters
+}
+36. How do you implement and configure a Spring Boot actuator endpoint? Provide an example.
+Answer:You can create a custom actuator endpoint by implementing the Endpoint interface.
+@Component
+@Endpoint(id = “custom”)
+public class CustomEndpoint { @ReadOperation
+public String customEndpoint() {
+return “Custom actuator endpoint”;
+}
+}
+37. Explain how to use Spring’s @Async for asynchronous processing with an example.
+Answer:@Async can be used to run methods asynchronously.
+@Service
+public class AsyncService { @Async
+public void performAsyncTask() {
+System.out.println(“Task running asynchronously”);
+}
+} @SpringBootApplication
+@EnableAsync
+public class MyApplication {
+public static void main(String[] args) {
+SpringApplication.run(MyApplication.class, args);
+}
+}
+38. How would you configure and use a RestTemplate in Spring Boot? Provide a code example.
+Answer:RestTemplate is used to make HTTP requests.
+@Bean
+public RestTemplate restTemplate() {
+return new RestTemplate();
+} @Service
+public class MyService { @Autowired
+private RestTemplate restTemplate; public String getDataFromExternalApi() {
+return restTemplate.getForObject(“https://api.example.com/data”, String.class);
+}
+}
+39. How do you implement content negotiation in Spring Boot? Show with code.
+Answer:Content negotiation is implemented using @RequestMapping and setting produces.
+@RestController
+@RequestMapping(“/api”)
+public class ContentNegotiationController { @GetMapping(value = “/data”, produces = MediaType.APPLICATION_JSON_VALUE)
+public MyData getDataAsJson() {
+return new MyData(1, “JSON Data”);
+} @GetMapping(value = “/data”, produces = MediaType.APPLICATION_XML_VALUE)
+public MyData getDataAsXml() {
+return new MyData(1, “XML Data”);
+}
+}
+40. How would you configure a Spring Boot application to use a H2 in-memory database? Provide an example.
+Answer:Add the H2 dependency and configure it in application.properties.
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.h2.console.enabled=true
+@Entity
+public class MyEntity { @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+private String name; // getters and setters
+} @Repository
+public interface MyRepository extends JpaRepository<MyEntity, Long> {
+}
+41. How do you create a dynamic query using CriteriaBuilder in Spring Data JPA? Provide a code example.
+Answer:CriteriaBuilder is used to create dynamic queries.
+@Repository
+public class MyRepositoryCustomImpl implements MyRepositoryCustom { @PersistenceContext
+private EntityManager entityManager; @Override
+public List<MyEntity> findByCriteria(String name) {
+CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+CriteriaQuery<MyEntity> query = cb.createQuery(MyEntity.class);
+Root<MyEntity> root = query.from(MyEntity.class);
+query.select(root).where(cb.equal(root.get(“name”), name)); return entityManager.createQuery(query).getResultList();
+}
+}
+42. How would you implement event handling in Spring? Include a code example.
+Answer:Event handling in Spring can be done using ApplicationEventPublisher.
+@Component
+public class MyEventListener { @EventListener
+public void handleCustomEvent(CustomEvent event) {
+System.out.println(“Received event: ” + event.getMessage());
+}
+} public class CustomEvent extends ApplicationEvent {
+private String message; public CustomEvent(Object source, String message) {
+super(source);
+this.message = message;
+} public String getMessage() {
+return message;
+}
+} @Service
+public class MyService { @Autowired
+private ApplicationEventPublisher eventPublisher; public void publishEvent(String message) {
+eventPublisher.publishEvent(new CustomEvent(this, message));
+}
+}
+43. How would you configure a Spring Boot application to log SQL statements? Provide a code example.
+Answer:SQL logging can be enabled by setting properties in application.properties.
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+44. How do you configure multiple data sources in a Spring Boot application? Provide an example.
+Answer:You can configure multiple data sources by defining multiple DataSource beans and marking one as @Primary.
+@Bean(name = “primaryDataSource”)
+@ConfigurationProperties(prefix = “spring.datasource.primary”)
+@Primary
+public DataSource primaryDataSource() {
+return DataSourceBuilder.create().build();
+} @Bean(name = “secondaryDataSource”)
+@ConfigurationProperties(prefix = “spring.datasource.secondary”)
+public DataSource secondaryDataSource() {
+return DataSourceBuilder.create().build();
+}
+45. How do you handle validation in a Spring Boot application? Show with code.
+Answer:Validation can be handled using @Valid and @NotNull, @Size, etc.
+public class User { @NotNull
+@Size(min = 2, max = 30)
+private String name; @Email
+private String email; // getters and setters
+} @RestController
+@RequestMapping(“/users”)
+public class UserController { @PostMapping(“/create”)
+public ResponseEntity<String> createUser(@Valid @RequestBody User user) {
+return ResponseEntity.ok(“User is valid”);
+}
+}
+46. How would you implement and use an Interceptor in Spring Boot? Provide a code example.
+Answer:An Interceptor can be implemented by extending HandlerInterceptorAdapter.
+@Component
+public class MyInterceptor extends HandlerInterceptorAdapter { @Override
+public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+throws Exception {
+System.out.println(“Request URL: ” + request.getRequestURL());
+return true;
+}
+} @Configuration
+public class WebConfig implements WebMvcConfigurer { @Autowired
+private MyInterceptor myInterceptor; @Override
+public void addInterceptors(InterceptorRegistry registry) {
+registry.addInterceptor(myInterceptor);
+}
+}
+47. How do you implement a custom authentication provider in Spring Security? Provide a code example.
+Answer:Implement AuthenticationProvider and override authenticate and supports.
+@Component
+public class MyAuthenticationProvider implements AuthenticationProvider { @Override
+public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+String username = authentication.getName();
+String password = authentication.getCredentials().toString(); // Custom authentication logic
+if (“user”.equals(username) && “password”.equals(password)) {
+return new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>());
+} else {
+throw new BadCredentialsException(“Invalid credentials”);
+}
+} @Override
+public boolean supports(Class<?> authentication) {
+return authentication.equals(UsernamePasswordAuthenticationToken.class);
+}
+} @Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter { @Autowired
+private MyAuthenticationProvider authProvider; @Override
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+auth.authenticationProvider(authProvider);
+}
+}
+48. How would you implement @RestControllerAdvice in a Spring Boot application? Include an example.
+Answer:@RestControllerAdvice can be used to handle exceptions globally across all @RestControllers.
+@RestControllerAdvice
+public class GlobalExceptionHandler { @ExceptionHandler(Exception.class)
+public ResponseEntity<String> handleException(Exception ex) {
+return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+}
+}
+49. How do you configure and use Spring Boot’s WebClient? Provide a code example.
+Answer:WebClient is a non-blocking, reactive HTTP client.
+@Bean
+public WebClient.Builder webClientBuilder() {
+return WebClient.builder();
+} @Service
+public class MyService { @Autowired
+private WebClient.Builder webClientBuilder; public String getDataFromApi() {
+return webClientBuilder.build()
+.get()
+.uri(“https://api.example.com/data”)
+.retrieve()
+.bodyToMono(String.class)
+.block();
+}
+}
+50. How would you implement a custom Jackson serializer in a Spring Boot application? Provide an example.
+Answer:Implement JsonSerializer and register it with SimpleModule.
+public class CustomDateSerializer extends JsonSerializer<Date> { @Override
+public void serialize(Date date, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+SimpleDateFormat formatter = new SimpleDateFormat(“yyyy-MM-dd”);
+String formattedDate = formatter.format(date);
+gen.writeString(formattedDate);
+}
+} @Configuration
+public class JacksonConfig { @Bean
+public Jackson2ObjectMapperBuilderCustomizer customizer() {
+return builder -> {
+SimpleModule module = new SimpleModule();
+module.addSerializer(Date.class, new CustomDateSerializer());
+builder.modules(module);
+};
+}
+}
+Final Words
+Getting ready for an interview can feel overwhelming, but going through these Spring fresher interview questions can help you feel more confident.
+With the right preparation, you’ll ace your Spring interview but don’t forget to practice the Spring core concepts, dependency injection, and Spring Boot-related interview questions too.
+Explore More Interview Questions
 Python
 Java
-Zabbix
-Профессия Тестировщик ПО
-Ремонт и обслуживание МФУ, копиров и принтеров
-VMware
-Обработка и анализ данных
-Офисные приложения и курсы для начинающих пользователей
-Пользователь "Мой Офис"
-Курсы для менеджеров проектов (Project Management)
-Курсы для опытных пользователей ПК
-Серверное оборудование. Brocade
-Разработка приложений для Android
-Онлайн профессии
-Курсы программирования
-IT-менеджмент
-Курсы СКС и ВОЛС
-Разработка приложений
-Курсы по методологии проектирования бизнес-процессов
-Курсы для веб-разработчиков
-Системный и бизнес-анализ
-Kaspersky Lab / Лаборатория Касперского
-Курсы по продуктам компании Код безопасности
-Курсы повышения квалификации школьных учителей
-Курсы IBM
-Курсы по Crystal Reports
-Check Point
-SCAD Office
-Авторские курсы
-Быстрый старт
-Курсы Bitrix
-Курсы D-Link
-Курсы SAS
-Курсы развития личности / Soft-skills
-Менеджмент и предпринимательство
-Облачные решения
-Сетевая и информационная безопасность
-Системы автоматизированного проектирования и черчения
-Профессии
-Тестировщик
-Системный администратор
-Аналитик данных
-Сетевой администратор
-Аналитик
-Программист
-AZURE AI ENGINEER
-Backend-разработчик
-DevOps Engineer
-DevOps инженер
-Frontend developer
-Full-stack разработчик
-HTML-верстальщик
-Insta-админ
-IT-специалист широкого профиля
-Junior Java Developer
-Junior Network Engineer
-Junior-разработчик
-Project-менеджер
-Python-разработчик
-Sales инженер
-SEO-оптимизатор
-SEO-специалист
-SMM-менеджер
-SMM-помощник
-SMM-специалист
-SQL-разработчик/разработчик баз данных
-Web-разработчик
-Администратор Linux
-Администратор Oracle
-Администратор баз данных (DBA — Database Administrator)
-Администратор беспроводных сетей
-Администратор облочных технологий Microsoft (AZURE Microsoft)
-Администратор почтовых систем
-Администратор серверов (начальный уровень)
-Администратор хранилищ данных
-Архитектор ПО
-Архитектор баз данных
-Архитектор сетей
-Архитектор технических решений
-Бизнес-аналитик
-Веб-программист
-Дата-инженер (Data Engineer)
-Дизайнер Tilda
-Инженер
-Инженер Cisco
-Инженер беспроводных сетей
-Инженер по проектированию беспроводных сетей
-Инженер по ремонту оргтехники
-Инженер по ручному тестированию
-Инженер по тестированию на JS
-Инженер по тестированию производительности СУБД
-Инженер по тестированию СУБД
-Инженер проектирования сетей
-Инженер сопровождения
-Инженер технической поддержки
-Инженер технической поддержки
-Инженер-разработчик СУБД
-Инженеры по внедрению и сопровождению почтовых систем
-Интернет-маркетолог
-Контент-менеджер
-Маркетолог по SMM-продвижению
-Менеджер
-Менеджер по продажам
-Менеджер проекта
-Монтажник
-Офис-менеджер
-Программист Java
-Разработчик Java
-Разработчик web-приложений
-Разработчик баз данных
-Разработчик баз данных
-Разработчик мобильных приложений
-Разработчик на языке PL/SQL
-Разработчик приложений
-Разработчик простых приложений или скриптов
-Сетевой инженер
-Системный администратор Linux
-Системный аналитик
-Системный аналитик СУБД
-Системный инженер
-Специалист Tilda
-Специалист по информационной безопасности
-Специалист по облачным технологиям (начальный уровень)
-Специалист по таргетинговой рекламе
-Специалист сопровождения СУБД
-Специалист технической поддержки пользователей
-Специалист технической поддержки сети
-Специалисты служб технической поддержки почтовых систем
-Стажер в IT-компании
-Таргетолог
-Таргетолог соц.сетей
-Техник по обслуживанию сетей
-Техник сервисной службы
-Технические специалисты
-Технолог СУБД
-Финансист
-Фронтенд-разработчик
-Вендоры
-Amazon Web Services
-Microsoft
-Oracle Corporation
-Cisco Systems
-1C
-AMP NETCONNECT
-Android
-Apple Inc.
-Arcitura Education Inc
-Arenadata
-Arista Networks
-Autodesk EMEA Reseller Program
-BaseAlt
-BCS, The Chartered Institute for IT
-Bitrix
-Castle Worldwide
-Check Point
-Cisco Networking Academy
-D-Link
-DELL EMC
-EC-Council
-English
-ETS
-FileMaker, Inc
-GMAT
-Hewlett Packard Enterprise
-Huawei
-Juniper networks
-Lean Kanban University
-Merlin Project
-MikroTik
-MIT
-Postgre SQL
-PostgresPro
-Project Management Expert
-Python. Авторские курсы
-SAS Institute
-SCAD Soft
-Veritas
-VMware
-Авторские и иные курсы
-Видеокурсы
-ИнфоТеКС
-Код безопасности
-Лаборатория Касперского
-Лаборатория МБК
-МГСУ
-РЕД СОФТ
-РусБИТех-Астра
-Тестирование ПО
+SQL
+React
+JavaScript
+C Programming
+HTML
+CSS
+Angular
+C++
+Spring Boot
+Node JS
+Excel
+C#
+DBMS
+PHP
+Linux
+Operating System
+MySQL
+FAQs
+The most common interview questions for Spring often cover topics like dependency injection, Spring MVC, Spring Boot, and transaction management.
+add-one add-two
+Author
+Aarthy R
+
+Aarthy is a passionate technical writer with diverse experience in web development, Web 3.0, AI, ML, and technical documentation. She has won over six national-level hackathons and blogathons. Additionally, she mentors students across communities, simplifying complex tech concepts for learners.
+
+instagram-icon
+linkedin-icon
+Subscribe
+Related Posts
+Top Spring Interview Questions for Freshers
+July 3, 2026
+Interview Questions
+Top Prompt Engineering Interview Questions for Freshers
+Prompt engineering is now a practical AI skill for freshers entering software, data, content, product, marketing, and automation roles. Reports show …
+
+Top Spring Interview Questions for Freshers
+July 3, 2026
+Interview Questions
+AI Engineer Interview Questions and Answers
+AI engineering has become one of the most in-demand career paths for freshers and professionals entering software, data, automation, and …
+
+Top Spring Interview Questions for Freshers
+July 3, 2026
+Interview Questions
+Top Jenkins Interview Questions for Freshers
+Jenkins is an important CI/CD tool for freshers preparing for DevOps, software testing, automation, cloud, and backend development roles. It …
+
+
+Placement Preparation Logo
+an HCL GUVI product
+
+Every student has their own story. Find the guidance and resources you need to make learning fun and smart. Let's shape a future that feels right for you
+
+
 Что такое Spring Framework? 
  
 Spring Framework – это платформа приложений с открытым исходным кодом, написанная на Java. Он предназначен для упрощения проектирования приложений за счет автоматической обработки низкоуровневых функций. Это позволяет разработчикам сосредоточиться на бизнес-логике. Spring также очень легко адаптируется со многими модулями, которые расширяют возможности фреймворка.
