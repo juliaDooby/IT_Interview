@@ -1,3 +1,989 @@
+Tpointtech
+Search...
+
+Tutorials
+Interviews
+Compilers
+All Interview
+Top 50 HR Interview Questions and Answers (2026)
+Interview Tips (2026)
+Top 12 Competency based Interview Questions (2026)
+Top 30+ Business Analyst Interview Questions and Answers (2026)
+Behavioral Interview Questions (2026)
+Interview Questions and Answers (2026)
+Managerial Round Interview Questions
+Product Manager Interview Questions
+Project Manager Interview Questions
+Company Interview
+Company Interview Questions and Recruitment Process (2026)
+IBM Interview Questions | IBM Recruitment Process (2026)
+Capgemini Interview Questions | Capgemini Recruitment Process (2026)
+Cognizant Interview Questions | Cognizant Recruitment Process (2026)
+Wipro Interview Questions | Wipro Recruitment Process (2026)
+Accenture Interview Questions for Freshers and Recruitment Process (2026))
+iGATE Interview Questions | iGATE Recruitment Process (2026)
+TCS Interview Questions | TCS Recruitment Process (2026)
+HCL Interview Questions | HCL Recruitment Process (2026)
+Adobe Interview Questions | Adobe Recruitment Process (2025)
+Microsoft Interview Questions | Microsoft Recruitment Process (2026)
+DXC Technology Interview Questions | Recruitment Process (2026)
+Ericsson Interview Questions | Ericsson Recruitment Process (2026)
+EXL Interview Questions | EXL Recruitment Process (2025)
+IndiaMART Interview Questions | IndiaMART Recruitment Process (2026)
+Intuit Interview Questions | Intuit Recruitment Process (2026)
+SpaceX Interview Questions | SpaceX Recruitment Process (2026)
+Sapient Interview Questions | Sapient Recruitment Process (2026)
+Top Most asked Amazon Interview Questions (2026)
+Latest Accenture Interview Questions and Answers
+Technical Interview
+Top 40 Cloud Computing Interview Questions and Answers (2026)
+Top 30 DevOps Interview Questions and Answers (2026)
+Top 50 C Programming Interview Questions and Answers (2026)
+Top 40 C++ Interview Questions and Answers (2026)
+50+ Data Structures and Algorithms (DSA) Interview Questions (2026)
+Top 60+ Linux Interview Questions and Answers (2026)
+Unix Interview Questions (2026)
+Top 15+ Shell Scripting Interview Questions (2026)
+Top 50 Networking (Computer Networks) Interview Questions (2026)
+CCNA Interview Questions (2025)
+Android Interview Questions (2026)
+Cloud Computing
+Hadoop Interview
+Software Testing Interview
+Selenium Interview
+Web Services Interview Questions (2026)
+Top 90 Operating System Interview Questions (2026)
+Top 30+ MS Excel Interview Questions and Answers (2026)
+SEO Interview Questions (2026)
+Digital Marketing Interview Questions (2026)
+Python Interview Questions
+Top 25 Django Interview Questions (2026)
+Pascal Interview Questions (2026)
+Top 50+ Ruby Interview Questions (2026)
+Ruby on Rails Interview Questions (2026)
+Top 20+ Memcached Interview Questions (2026)
+OpenStack Interview Questions (2026)
+Scala Interview Questions (2026)
+Control Systems Interview Questions (2026)
+Top 42 Electrical Machines Interview Questions (2026)
+Power System Interview Questions (2026)
+Digital Electronics Interview Questions (2026)
+Robotics Interview Questions (2026)
+TypeScript Interview Questions (2026)
+Swift Interview Questions (2026)
+Blockchain Interview
+Bitcoin Interview
+AWS Interview
+Top 25+ Informatica Interview Questions (2026)
+Top 25+ QA Interview Questions (2026)
+React Interview Questions
+GIT Interview
+Top 40+ J2EE Interview Questions (2026)
+Top 50 Deep Learning Interview Questions (2026)
+Top 50 Salesforce Interview Questions and Answers (2026)
+Top 15+ TestNG Interview Questions (2026)
+Top 15+ Agile Interview Questions (2026)
+Machine Learning
+Top 30+ API Testing Interview Questions and Answers (2026)
+Top 25 Algorithm Interview Questions (2025)
+Java Design Pattern Interview Questions (2026)
+Top 25+ Teradata Interview Questions (2026)
+Top 40+ TensorFlow Interview Questions (2026)
+Top 25 LINQ Interview Questions (2026)
+Mainframe Interview Questions (2026)
+Top 50 Laravel Interview Questions and Answers (2026)
+Top 20 JIRA Interview Questions (2026)
+Top 20+ JCL Interview Questions (2026)
+PyTorch Interview Questions (2026)
+Top 30+ ETL Testing Interview Questions (2026)
+Top 30+ Linked List Interview Questions (2026)
+Top 30+ DataStage Interview Questions (2026)
+Top 30 Tableau Interview Questions and Answers (2026)
+Top 20 SAP ABAP Interview Questions
+Top 30 SAP ABAP Interview Questions (2026)
+Top 30+ DAA Interview Questions (2026)
+Advanced JavaScript Interview Questions
+Top 50 Computer Graphics Interview Questions (2026)
+Top 50 Blockchain Question and Answers
+Top 25 Data Science Interview Questions (2026)
+LinkedIn Python Qualifying Assessment Answers
+Top 40+ Software Engineering Interview Questions (2026)
+Java Programming Interview Questions
+Top 60+ Power BI Interview Questions and Answers (2026)
+Automation Testing Interview Questions
+Top 50+ Xamarin Interview Questions (2026)
+Docker Interview Questions
+Top 20 Ansible Interview Questions (2026)
+Java 8 Interview Questions
+Top 25 Data Warehouse Interview Questions (2026)
+Top 40+ Ionic Interview Questions (2026)
+Devops
+Top 40+ React Native Interview Questions and Answers (2026)
+Top 30+ Python Pandas Interview Questions (2026)
+Top 20+ HTTP Interview Questions (2026)
+Top 30 Kali Linux Interview Questions (2026)
+Top 30 PowerShell Interview Questions (2026)
+Top 30 SharePoint Interview Questions (2026)
+Top 25+ Talend Interview Questions (2026)
+Top 30 Microsoft Azure Interview Questions (2026)
+Top 50 R Interview Questions (2025)
+Top 40 Flutter Interview Questions and Answers (2026)
+Top 25 MATLAB Interview Questions (2026)
+Top 30 ES6 Interview Questions (2026)
+Top 30 RPA Interview Questions (2026)
+Desktop Support Interview Questions (2026)
+Angular 8 Interview Questions (2026)
+GraphQL Interview Questions and Answers
+Top 50+ Vue.js Interview Questions (2026)
+Automation Anywhere Interview Questions (2026)
+Top 50 AI (Artificial Intelligence) Interview Questions (2026)
+UiPath Interview Questions (2026)
+Blue Prism Interview
+Top 30 SSIS Interview Questions (2026)
+Mobile Computing Interview Questions (2026)
+ITIL Interview Questions (2026)
+SAS Interview Questions (2026)
+Top 40 Elasticsearch Interview Questions (2026)
+Top 40 Entity Framework Interview Questions (2026)
+Top 30 RxJS Interview Questions (2026)
+Top 70+ Accounting Interview Questions and Answers (2025)
+Electron.js Interview Questions
+Knockout JS Interview Questions (2026)
+Top 50+ Angular Interview Questions and Answers (2026)
+IAS Interview Question (2026)
+Top 40+ Bank Interview Questions and Answers (2026)
+Interview Questions for Freshers (2026)
+Top 50 PowerPoint Interview Questions (2026)
+Top 50 BPO Interview Questions and Answers (2026)
+Top 70+ Civil Engineering Interview Questions (2026)
+Apache Spark Interview Questions (2026)
+Data Mining Interview Questions (2026)
+Top 30 Java Support Interview Questions (2025)
+Top 60+ Kubernetes Interview Questions and Answers (2026)
+Web API Interview Questions (2026)
+Scrum Master Interview Questions (2026)
+Most Asked System Design Interview Questions (2026)
+SSB Interview Questions (2026)
+Most Asked Teachers Interview Questions (2026)
+Most Asked Finance Interview Questions (2026)
+Most Asked Technical Support Interview Questions (2026)
+Most Asked Active Directory Interview Questions (2026)
+Appium Interview Questions (2026)
+Cucumber Interview Questions (2026)
+Top 20+ Full-Stack Developer Interview Questions Java (2026)
+ServiceNow Interview Questions (2026)
+Nursing Interview Questions (2026)
+Sales Interview Questions (2026)
+Top 50+ Microservices Interview Questions and Answers (2026)
+Top 40+ Electrical Engineering Interview Questions and Answers (2026)
+Top 20+ Accounts Payable Interview Questions and Answers (2025)
+Top 30 Most Asked VISA Interview Questions (2026)
+VLSI Interview Questions (2026)
+AutoCAD Interview Questions (2026)
+Top 30+ Most Asked Verilog Interview Questions (2026)
+Top 40 OOPs Interview Questions and Answers (2026)
+Top 30+ Web Developer Interview Questions (2026)
+Express.js Interview Questions (2026)
+CakePHP Interview Questions (2026)
+Yii Interview Questions (2026)
+Zend Framework Interview Questions (2026)
+Java Concurrency Interview Questions (2026)
+Symfony Interview Questions (2026)
+Basic Interview Questions (2026)
+Dynamic Programming Interview Questions (2026)
+Programming Interview Questions (2026)
+Next.js Interview Questions (2026)
+Microsoft Java Interview Questions (2026)
+Top 35+ Most Asked AEM Interview Questions (2025)
+Svelte.js Interview Questions (2026)
+Top 50+ Most Asked COBOL Interview Questions (2026)
+Top 40 Cyber Security Interview Questions and Answers (2026)
+Top 30 SQL Query Interview Questions and Answers (2026)
+Top 25+ Most Asked BGP Interview Questions (2026)
+Top 40+ Most Asked Apache Hive Interview Questions (2026)
+Top 35+ Most Asked Kafka Interview Questions (2026)
+Top 40+ Most Asked Embedded C Interview Questions (2026)
+Pega Interview Questions (2026)
+Top 45+ Most Asked Kotlin Interview Questions (2026)
+Top 55+ Most Asked SAP MM Interview Questions (2026)
+Top 35+ Most Asked OSPF Interview Questions (2026)
+Top 30+ Most Asked Mobile Testing Interview Questions (2026)
+Mulesoft Interview Questions (2026)
+Terraform Interview Questions and Answers (2026)
+Salesforce Lightning Interview Questions (2026)
+Top 70+ Most Asked SCCM Interview Questions (2025)
+Top 55+ Most Asked Postman Interview Questions (20256)
+Top 20+ Most Asked Content Writer Interview Questions (2026)
+IoT Interview Questions (2026)
+NLP Interview Questions
+Splunk Interview Questions
+PostgreSQL Interview Questions
+Tricky Java Interview Questions
+Top 40+ PySpark Interview Questions and Answers (2026)
+VBA Interview Questions
+Top 30 Front-end Developer Interview Questions and Answers (2025)
+Computer Science Interview Questions
+Data Modeling Interview Questions
+Google Analytics Interview Questions
+Sqoop Interview Questions
+Statistics Interview Questions
+Tally Interview Questions
+CICS Interview Questions
+Chemistry Interview Questions
+Data Engineer Interview Questions
+Azure Data Factory Interview Questions
+Insurance Interview Questions
+IIS Interview Questions
+MS Word Interview Questions
+SDET Interview Questions
+Weblogic Interview Questions (2026)
+PHP OOPs Interview Questions
+Checkpoint Interview Questions
+Python Coding Interview Questions
+Garbage Collection Interview Questions
+Python Interview Questions for Five Years Experienced
+Top Coding Interview Questions on Arrays-C
+Computer Network Viva Questions
+Java 8 Multithreading Interview Questions
+Enum Java Interview Questions
+Java Interview Questions for 5 years Experienced
+Top C++ Exception Handling Interview Questions
+Top 50 Java Coding Interview Questions and Answers (2026)
+Java Interview Questions for Freshers
+Data Types Interview Questions in Java
+Interview Questions on Constructor in Java
+Interview Questions on Method Overloading in Java
+Java Interview Questions on main() Method
+Interface Questions in Java
+Java Interview Questions on Type Casting
+Emids Interview Questions for Java
+Increment and Decrement Operators Questions in Java
+Java REST API Interview Questions
+Wrapper Class Java Interview Questions
+MySQL DBA Interview Questions
+Microsoft Excel interview Question for Data Analyst
+Web Interview
+Top 40+ HTML Interview Questions and Answers (2026)
+Top 30+ CSS Interview Questions and Answers (2026)
+JavaScript Interview Questions
+Top 35 jQuery Interview Questions (2026)
+Top 50 AngularJS Interview Questions (2025)
+Top 16 Most Asked Angular 7 Interview Questions (2026)
+Top 50+ Node.js Interview Questions and Answers (2026)
+AJAX Interview Questions
+XML Interview
+Dojo Interview Questions (2026)
+Backbone.js Interview Questions (2026)
+Ember.js Interview Questions (2026)
+XHTML Interview Questions (2026)
+XSLT Interview Questions (2026)
+XPath Interview Questions (2026)
+XQuery Interview Questions (2026)
+XForms Interview
+Top 25 SASS Interview Questions (2026)
+CoffeeScript Interview Questions (2026)
+LESS Interview Questions (2026)
+Perl Interview Questions
+Top 10 Pure.CSS Interview Questions (2026)
+Materialize Interview Questions
+Top 30 Framework7 Interview Questions (2026)
+Top 40+ SVG Interview Questions (2026)
+Top 60+ Most Asked SAP FICO Interview Question and Answers (2026)
+Ab Initio Interview Questions
+PHP Interview
+Top 70 PHP Interview Questions and Answers (2026)
+Top 50+ Wordpress Interview Questions (2026)
+Joomla Interview Questions (2026)
+Drupal Interview Questions (2026)
+Top 40+ Magento Interview Questions (2026)
+Top 40 CodeIgniter Interview Questions (2026)
+Top 20 Phalcon Interview Questions (2026)
+.Net Interview
+Top 50 .Net Interview Questions and Answers (2026)
+Top 30+ C# Interview Questions and Answers (2026)
+Top 40+ ASP.NET Interview Questions (2026)
+Top 25+ ADO.NET Interview Questions (2025)
+Top 40+ WCF Interview Questions (2026)
+Top 30+ WPF Interview Questions (2026)
+Top 25+ Silverlight Interview Questions (2026)
+F# Interview Questions (2026)
+Java Interview
+300+ Core Java Interview Questions and Answers (2026)
+300 Java interview questions | Set 2 (2026)
+Java Multithreading Interview Questions (2026) | Java Concurrency Interview Questions (2025)
+Top 30+ Java Collections Interview Questions and Answers (2026)
+JDBC Interview Questions (2026)
+Servlet Interview Questions
+JSP Interview Questions
+EJB Interview Questions (2026)
+Struts Interview Questions
+Hibernate Interview Questions
+Top 40 Spring Interview Questions and Answers (2026)
+Top 50 Spring Boot Interview Questions and Answers (2026)
+Spring MVC Interview Questions (2026)
+JPA Interview Questions (2026)
+Maven Interview Questions (2026)
+Top 23 JUnit Interview Questions (2026)
+Top 50+ JSF Interview Questions (2026)
+PrimeFaces Interview Questions (2026)
+RichFaces Interview Questions (2026)
+Top 20+ GWT Interview Questions (2026)
+Top 20 JDB Interview Questions (2026)
+Top 15 JOGL Interview Questions (2026)
+Top 20 jBPM Interview Questions (2026)
+Jenkins Interview Questions (2026)
+Java Constructor Interview Questions (2026)
+Technical Architect Interview Questions (2026)
+Array Interview Questions in Java for Freshers (2026)
+Java Generics Questions
+Java String Interview Questions
+Database Interview
+Top 60+ DBMS Interview Questions and Answers (2026)
+SQL Interview Questions
+PL/SQL Interview Questions (2025)
+Oracle Interview Questions (2026)
+Top 90+ MySQL Interview Questions and Answers (2025)
+SQL Server Interview Questions (2026)
+Top 50 MongoDB Interview Questions and Answers (2026)
+Cassandra Interview Questions (2026)
+DB2 Interview Questions and Answers
+Microsoft Access Interview Questions (2026)
+SQLite Interview Questions (2026)
+CouchDB Interview Questions (2026)
+Neo4j Interview Questions (2026)
+Top 30+ MariaDB Interview Questions (2026)
+PouchDB Interview Questions (2026)
+Redis Interview Questions (2025)
+50+ Statistics Interview Questions and Answers for Data Scientists for 2026
+Home › Interview Questions › Top 20+ Full-Stack Developer Interview Questions Java (2026)
+Full-Stack Developer Interview Questions Java
+Last Updated : 31 Mar 2026
+Prepare for your full-stack Java interview with questions covering frontend, backend, databases, and integration concepts. These will help you understand end-to-end development.
+
+Introduction
+Full-stack developers are skilled programmers who can work with both the front-end and back end of a website and applications. They are responsible for developing and designing front/ back ends web architecture, server-side applications, design databases, server-side applications, and much more.
+
+It is the reason why tech giants hiring full-stack developers and conducting interviews for the same. You can increase your chance to get hire by companies if you have well prepared for the full stack developer interview. In this section, we have collected some full-stack developer interview questions that can help you to crack the interview to get your dream job.
+
+In the past few years, the job profile of a full-stack developer has increased because they are able to work with different technologies and languages. Besides this, full-stack developers are also experts to solve the anomalies raised across the different phases of the application or web development.
+
+Full-Stack Developer Interview Questions Java
+Full Stack Java Developer Interview Questions and Answers
+1) What should a full-stack developer know?
+A Java full-stack developer needs a comprehensive understanding of both front-end and back-end development, along with proficiency in Java and related technologies.
+
+1. Core Java
+
+Object-Oriented Programming (OOP): Understanding concepts like inheritance, polymorphism, encapsulation, and abstraction.
+Collections Framework: Proficiency in using data structures such as lists, sets, maps, and queues.
+Concurrency: Knowledge of multithreading and concurrency mechanisms.
+Exception Handling: Proper techniques for error handling and logging.
+2. Java Frameworks
+
+Spring Framework: Mastery of Spring Core, Spring MVC, Spring Boot, and Spring Security for building robust and scalable web applications.
+Hibernate/JPA: Proficiency in Object-Relational Mapping (ORM) tools for database interaction.
+3. Front-End Technologies
+
+HTML/CSS: Strong understanding of creating structured and styled web pages.
+JavaScript: Core language skills for adding interactivity.
+Modern JavaScript Frameworks/Libraries: Familiarity with frameworks such as Angular, React, or Vue.js for building dynamic user interfaces.
+Responsive Design: Ability to create applications that work on various devices and screen sizes using CSS frameworks like Bootstrap.
+4. Web Development Concepts
+
+HTTP/HTTPS Protocols: Knowledge of how web communication works.
+RESTful Services: Designing and consuming RESTful APIs.
+Authentication & Authorization: Implementing security measures such as OAuth, JWT, and session management.
+5. Database Management
+
+SQL and NoSQL Databases: Proficiency in working with databases like MySQL, PostgreSQL, MongoDB, Oracle, and Redis.
+Database Design: Understanding normalization, indexing, and transactions.
+6. Version Control Systems
+
+Git: Skills in version control and collaboration using Git repositories.
+7. Development Tools
+
+IDEs: Experience with Integrated Development Environments like IntelliJ IDEA, Eclipse, or Visual Studio Code.
+Build Tools: Knowledge of build automation tools like Maven or Gradle.
+8. DevOps
+
+Continuous Integration/Continuous Deployment (CI/CD): Familiarity with tools like Jenkins, Docker, and Kubernetes for automating the deployment process.
+Cloud Services: Basic understanding of cloud platforms like AWS, Azure, or Google Cloud for deploying applications.
+9. Soft Skills
+
+Problem-Solving: Strong analytical and troubleshooting skills.
+Communication: Ability to communicate effectively with team members and stakeholders.
+Agile Methodologies: Experience working in Agile environments, understanding Scrum or Kanban practices.
+2) What are MVC and MVP and how MVC is different from MVP?
+MVC and MVP both are architectural patterns that are used to develop applications.
+
+MVC
+
+MVC stands for Model View Controller. It is an architectural pattern that is used to develop Java Enterprise Applications. It splits an application into three logical components i.e. Model, View, and Controller. It separates the business-specific logic (Model component) from the presentation layer (View component) from each other.
+
+The model components contain data and logic related to it. The View component is responsible for displaying model objects inside the user interface. The Controller receives the input and calls model objects based on handler mapping. It also passes model objects to views in order to display output inside the view layer.
+
+Full-Stack Developer Interview Questions Java
+MVP
+
+MVP stands for Model View Presenter. It is derived from the MVC architectural pattern. It adds an extra layer (known as indirection) to the architectural pattern that splits the View and Controller into View and Presenter. The role of Controller is replaced with a Presenter. It exists at the same level as View in MVC. It contains UI business logic for the View. The invocations received from the View directly sends to the Presenter. It maintains the action (events) between View and Model. The Presenter does not directly communicate with the View. It communicates through an interface.
+
+Full-Stack Developer Interview Questions Java
+The major difference between MVC and MVP architectural pattern is that in MVC architectural pattern Controller does not pass the data from the Model to the View. It only notifies the View to get the data from the Model itself.
+
+While in MVP architectural pattern the View and Model layers are connected with each other. The presenter itself receives the data from the Model and sends it to the View to show.
+
+Another difference is that MVC is often used in web-frameworks while MVP is used in app development.
+
+Full-Stack Developer Interview Questions Java
+3) What is pair programming?
+Pair programming is an agile software development technique where two programmers work together at one workstation. One programmer, the "driver," writes the code, while the other, the "observer" or "navigator," reviews each line of code as it is typed. The two programmers switch roles frequently.
+
+The driver may work on implementing core Java functionalities or setting up a Spring Boot project, while the navigator provides insights on best practices, ensures adherence to design patterns, or suggests improvements. For front-end development, one may focus on coding in Angular or React, while the other checks for optimal UI/UX design and cross-browser compatibility. The programming technique is more efficient and coding mistakes reduced to the minimum. The disadvantage of pair programming is that it increases the cost.
+
+Pair programming helps ensure that both front-end and back-end components are well-integrated and that the application maintains a high standard of quality throughout the development process.
+
+4) What is CORS in MVC and how it works?
+CORS stands for Cross-Origin Resource Sharing. It is a W3C standard and HTTP-header-based mechanism. It permits a server to indicate any other origins (like domain, port, etc.) instead of the requested one. In other words, it enables one website to access the resources of another website using JavaScript.
+
+It supports secure cross-origin requests and transfers data between servers and browsers. Advanced browsers use CORS in APIs. It is flexible and safe in comparison to JSONP (JSON with Padding). It provides better web service integration.
+
+Full-Stack Developer Interview Questions Java
+While using the MVC to enable CORS, the same CORS service can be used but we cannot use the same CORS middleware. We can use a particular CORS for a particular action, for a particular controller, and globally for all controllers.
+
+A pre-flight check (or request) is sent by the browser to the server (hosting the cross-origin resource) which ensures that the server will permit the actual request or not. For example, invoking the URL https://example.com through https://demo.com.
+
+Full-Stack Developer Interview Questions Java
+5) How to enhance a website's scalability and efficiency?
+Enhancing a website's scalability and efficiency involves optimizing various aspects of its design and implementation. Here's an explanation of each method mentioned:
+
+Reducing DNS Lookup:
+
+DNS lookups can be time-consuming, as the browser needs to resolve domain names to IP addresses before it can load resources. Reducing the number of unique domain names used on a website minimizes the number of DNS lookups required, thus speeding up the loading process.
+
+Avoiding URL Redirects:
+
+URL redirects introduce additional HTTP requests and increase latency, slowing down the page load time. Minimizing or eliminating redirects ensures that users can access the desired resources more quickly and efficiently.
+
+Avoiding Duplicate Codes:
+
+Duplicate code can bloat web pages, leading to slower load times and increased processing. Ensuring that each piece of functionality or styling is defined only once reduces the amount of code the browser needs to parse and execute, improving overall performance.
+
+Avoiding Unnecessary Images:
+
+Large or numerous images can significantly slow down a website. By using only essential images, optimizing their size and format, and leveraging techniques like lazy loading, the website's load time and performance can be improved.
+
+Leveraging Browser Caching:
+
+Browser caching stores parts of the website (like images, stylesheets, and scripts) on the user's device. When the user revisits the website, these resources can be loaded from the cache instead of being downloaded again, drastically reducing load times and server load.
+
+Deferring Parsing of JavaScript:
+
+JavaScript parsing and execution can block the rendering of the webpage. By deferring the parsing of JavaScript until after the initial page load, you allow the main content to be displayed more quickly, improving the user's perceived load time.
+
+Avoiding Inline JavaScript and CSS:
+
+Inline JavaScript and CSS can increase the size of HTML documents and prevent the browser from caching these resources effectively. Separating JavaScript and CSS into external files allows browsers to cache and reuse them across different pages, reducing load times.
+
+Using srcset for Responsive Images:
+
+The srcset attribute allows developers to specify different image sources for different screen sizes and resolutions. This ensures that the browser downloads the most appropriate image for the user's device, improving load times and reducing unnecessary data transfer.
+
+Placing All Assets on a Cookie-Free Domain, Preferably Using a CDN:
+
+Cookies can add extra data to each HTTP request, slowing down the transfer of static assets. Serving assets from a cookie-free domain prevents this overhead. Additionally, using a Content Delivery Network (CDN) places assets on servers closer to the user, reducing latency and improving load times. CDNs also help distribute the load, enhancing the scalability of the website.
+
+By implementing these optimization techniques, you can significantly improve the scalability and efficiency of your website, leading to faster load times, better user experience, and the ability to handle more traffic.
+
+6) What are the differences between Get and Post requests?
+S.N.
+Basis of Comparison
+Get
+Post
+1
+Purpose
+The Get request is designed for getting data from the server.
+The Post request is designed for sending the data to the server.
+2
+Post Mechanism
+The request is sent via URL.
+The request is sent via an HTTP request body.
+3
+Parameter Passing
+The request parameters are transmitted as a query string appended to the request.
+The request parameters are transmitted with the body of the request.
+4
+Default
+It is the default method hence it implements automatically.
+We need to specify manually.
+5
+Capacity
+We can send limited data with the Get request.
+We can send a large amount of data with the Post request.
+6
+Data Type
+It always submits data as text.
+We can send any type of data.
+7
+Security
+The use of Get is safe because it is idempotent.
+The use of Post unsafe because it is non-idempotent.
+8
+Visibility of Data
+The data is visible to the user as it puts the data in the URL.
+The data is not visible to the user as it puts the data in the message body.
+9
+Bookmark and Caching
+The Get request can be bookmarked and caching.
+The post request cannot be bookmarked and caching.
+10
+Efficiency
+It is more efficient than post.
+It is less efficient.
+11
+Example
+Search is the best example of Get request.
+Login is the best example of a Post request.
+7) What is referential transparency in functional programming?
+A program may have the property of referential transparency if any two expressions in the program that have the same value can be substituted for one another anywhere in the program without changing the result of the program. It is used in functional programming. For example, consider the following code snippet:
+
+count1 = (fun(x) + y) * (fun(x) - z);  
+temp = fun(a);  
+count2 = temp + y * temp - z;  
+The variables count1 and count2 will be equal if the value of fun(x) is not reflected. If the variable count1 is not equal to the variable count2, the referential transparency is violated.
+
+8) What is RESTful API?
+The term REST stands for Representational State Transfer. It is an architectural style that is used to create Web Services. It uses HTTP requests to access and use the data. We can create, update, read, and delete data.
+
+An API (Application Program Interface) for a website is the code that allows two software programs to communicate with each other. It allows us to write requesting services from an operating system or other application.
+
+Key Characteristics of RESTful APIs:
+
+Statelessness: Each HTTP request from a client to a server must contain all the information needed to understand and process the request. The server does not store any client context between requests.
+Uniform Interface: The API uses standard HTTP methods and status codes, making it easier for developers to understand and use.
+Scalability: Statelessness and caching improve the scalability of the server.
+Cacheable: Responses must explicitly indicate whether they can be cached.
+RESTful Examples
+
+E-commerce Application
+
+In an e-commerce application, RESTful APIs can manage products, customers, and orders.
+
+GET /products: Retrieves a list of all products.
+POST /products: Creates a new product.
+GET /products/{id}: Retrieves a specific product by ID.
+PUT /products/{id}: Updates a specific product by ID.
+DELETE /products/{id}: Deletes a specific product by ID.
+Social Media Platform
+
+For a social media platform, RESTful APIs can manage users, posts, and comments.
+
+GET /users: Retrieves a list of all users.
+POST /users: Creates a new user.
+GET /users/{id}: Retrieves a specific user by ID.
+PUT /users/{id}: Updates a specific user by ID.
+DELETE /users/{id}: Deletes a specific user by ID.
+GET /posts: Retrieves a list of all posts.
+POST /posts: Creates a new post.
+GET /posts/{id}: Retrieves a specific post by ID.
+9) What do you mean by promise, also explain its states?
+A promise is an object that can be returned synchronously from an asynchronous function. It may be in the following three states:
+
+Fulfilled: If a promise called the onFulfilled() method, a promise will be in fulfilled state.
+Rejected: If a promise called the onRejceted() method, a promise will be in rejected state.
+Pending: If a promise is not yet fulfilled or rejected, a promise will be in pending state.
+A promise will be settled if and only if it is not pending.
+
+10) How to reduce the load time of a web application?
+Optimizing the load time of a web application is crucial for providing a smooth user experience.
+
+Optimize Image Size and Format: Use image compression techniques and choose appropriate image formats (for example, JPEG, PNG, SVG) to reduce file size without compromising quality. It minimizes the time required to download images.
+Compress and Optimize Content: Enable GZIP compression on the server to reduce the size of CSS, JavaScript, HTML, and other text-based content. It reduces the amount of data transferred over the network, leading to faster load times.
+Avoid Redirects: Minimize or eliminate unnecessary URL redirects, as each redirect adds extra time to the page load process. It ensures that URLs point directly to the final destination to avoid unnecessary HTTP requests.
+Cache the Web Page: Implement browser caching and server-side caching mechanisms to store static resources like images, CSS, and JavaScript files. Caching reduces the need for repeated downloads, improving load times for returning visitors.
+Minimize HTTP Requests: Reduce the number of HTTP requests by combining and minifying CSS and JavaScript files, as well as reducing the number of external resources like fonts and scripts. Fewer HTTP requests result in faster page loading.
+Optimize Dependencies: Regularly update and streamline dependencies such as libraries, frameworks, and plugins to ensure they are lightweight and optimized for performance. Remove unused or unnecessary dependencies to reduce overhead.
+Put Stylesheet Reference at the Top: Place CSS stylesheet references in the <head> section of HTML documents to enable progressive rendering. It ensures that styles are applied to the page early, preventing the dreaded FOUC (Flash of Unstyled Content).
+Place Script Reference at the Bottom: Put JavaScript script references at the bottom of HTML documents, just before the closing </body> tag. This allows the browser to render the HTML content first, improving perceived load time, before executing JavaScript.
+Put JavaScript and CSS Externally: Externalize JavaScript and CSS files to leverage browser caching. This allows browsers to cache these resources separately, reducing load times for subsequent page visits.
+By implementing these optimization techniques, we can significantly reduce the load time of your web application, leading to improved user satisfaction and engagement.
+
+11) What is a continuous integration and continuous delivery (CI/CD)?
+CI/CD is a best practice to develop applications in which code changes more frequently and rapidly. Sometimes, it is also known as CI\CD pipeline. It is widely used in DevOps and also an agile methodology.
+
+Continuous integration is a coding philosophy or deployment practice in which developers integrate their code in a shared repository several times a day. Because modern application requires developing code in different platforms. The goal of continuous integration is to establish an automated mechanism that builds, test, and package the application.
+
+Continuous delivery starts where CI ends. It automatically delivers the application to the selected infrastructure. CD ensures the automated delivery of code if any changes are made in the code.
+
+12) Which architectural designs are mostly used to design applications?
+Understanding different architectural design patterns is essential for creating robust, scalable, and maintainable software applications.
+
+1. Model View Controller (MVC)
+
+Model: Represents the data and business logic of the application. It handles data retrieval, storage, and manipulation.
+View: The user interface component that displays data to the user. It presents the model's data in a specific format.
+Controller: Acts as an intermediary between the Model and View. It processes user input, updates the model, and determines which view to display.
+Example:
+
+Web applications like those built with Spring MVC in Java, where the controller handles HTTP requests, the model represents data entities, and the view renders the data to the user.
+
+2. Master-Slave Pattern
+
+Master: Controls the system, assigns tasks to slaves, and processes the results.
+Slave: Performs the actual computation or task assigned by the master. Multiple slaves can work in parallel to improve performance and reliability.
+Example:
+
+Database replication where the master database handles all writes and propagates changes to slave databases, which handle read requests.
+
+3. Layered Pattern
+
+Presentation Layer: Handles the user interface and user interaction.
+Application Layer: Manages application-specific logic and data processing.
+Business Logic Layer: Contains the core functionality and business rules of the application.
+Data Access Layer: Interacts with the database or data storage systems.
+Example:
+
+Enterprise applications with distinct layers for user interface, business logic, and data access, such as applications built using the Java EE platform.
+
+4. Model View Presenter (MVP)
+
+Model: Similar to MVC, it handles the data and business logic.
+View: Displays the data to the user and sends user actions to the Presenter.
+Presenter: Acts as an intermediary between the View and Model. It retrieves data from the Model, processes it, and updates the View.
+Example:
+
+Desktop applications and Android applications where the Presenter handles the user input and updates the View accordingly.
+
+5. Monolithic Architecture
+
+A single, unified application where all components are interconnected and interdependent. It is a traditional model where the entire application is developed and deployed as a single unit.
+
+Example:
+
+Small to medium-sized applications where deploying and scaling the entire system as a single unit is manageable, such as early versions of web applications.
+
+6. Event-Driven Architecture Pattern
+
+Event Producers: Generate events based on actions or changes in state.
+Event Consumers: Listen for and react to events. They perform actions or trigger other processes in response to events.
+Event Channel: Facilitates communication between producers and consumers.
+Example:
+
+Real-time systems like stock trading platforms or IoT applications where events from sensors are processed and acted upon immediately.
+
+By leveraging these architectural design patterns, software developers can build applications that are organized, maintainable, and scalable, each pattern being suited for different types of applications and project requirements.
+
+13) What is long polling?
+Long polling is an effective method for creating a stable server connection without using the WebSocket or Server-Side Events protocols. It operates at the top of the conventional client-server model. Note that Node.js is using the same technique as the next development model.
+
+In this method, the client sends the request and the server responds until the connexon is open as it contains new and unique information. As soon as the server responds, a request to the client can be submitted. When the data is available, the server will return a query. It functions when the client application stops and the server ends requests.
+
+14) Explain semantic HTML with an example and why we should use it?
+In web design, the idea of using HTML elements to indicate what they actually are. It is known as semantic HTML or semantic markup.
+
+Semantic HTML is HTML that represents meaning to the web page rather than just presentation. For example, tag <p> indicates that a paragraph is enclosed in it. It is both semantic and presentational because the user know what paragraph are and the browser also know how to display them. On the other hand, tags such as <b> and <i> are not semantic. They only represent how text should look. These tags do not provide any additional meaning to the markup.
+
+Example of semantic HTML tags are header tags <h1> to <h6>, <abbr>, <cite>, <tt>, <code>, <blockquote>, <em>, etc. There are some other semantic HTML tags that are used to build a standards-compliant website.
+
+We should use the semantic HTML for the following reasons:
+
+It provides additional information about the document in which it is used. It also aids in communication.
+Semantic tags make it clear to the browser what the meaning of a page and its content is.
+It provides information about the contents of those tags that goes beyond just how they look on a page.
+It gives us many more hooks for styling the content of the page.
+The clarity of semantic tag is also communicated with search engines that ensure the right pages are delivered for the right queries.
+15) How null is different from undefined in JavaScript?
+Null: Null means a variable is assigned with a null value. If we use it with typeof operator it gives result as an object. We should never assign a variable to null because the programmer uses it to represent a variable that has no value. Note that JavaScript will never automatically assign the value to null.
+
+Undefined: Undefined means the variable is declared but not assigned any value to it. It may be a variable itself does not exist. If we use it with typeof operator it gives the result undefined. It is not valid in JSON.
+
+Note: Null and undefined both are primitive.
+Let's understand it through an example.
+
+var var1  
+var var2 = null //assigning null value to the variable var2  
+console.log(`var1 : ${var1}, type : ${typeof(var1)}`)  
+console.log(`var2 : ${var2}, type : ${typeof(var2)}`)  
+When we execute the above code, it generates the following output:
+
+Var1 : undefined, type : undefined  
+var2 : null, type : object  
+From the above output, we can observe that the value of var1 is undefined also its type is undefined. Because we have not assigned any value to the variable var1. The value null is assigned to the variable var2. It prints its type as abject. Since null is an assignment value and we can assign it to a variable. Therefore, JavaScript treats null and undefined relatively equally because both represent an empty value.
+
+16) What are the key differences between GraphQL and REST?
+Both, REST and GraphQL, are API design architectures that can be used to develop web services, especially for data-driven applications.
+
+GraphQL
+REST
+GraphQL is an API design architecture, but with a different approach that is much flexible.
+REST is a robust methodology and API design architecture used to implement web services.
+It follows client-driven architecture.
+It follows server-driven architecture.
+It does not deal with the dedicated resources.
+It deals with the dedicated resources.
+It has a single endpoint that takes dynamic parameters.
+It has multiple endpoints.
+It provides stateless servers and structured access to resources.
+It provides stateless servers and flexible controlled access to resources.
+It is elastic in nature.
+It is not rigid in nature.
+It supports only JSON format.
+It supports XML, JSON, HTML, YAML, and other formats also.
+The client defines response data that it needs via a query language.
+Data represented as resources over HTTP through URI.
+It provides synchronous and asynchronous communication in multiple protocols such as HTTP, MQTT, AMQP.
+It provides synchronous communication through HTTP only.
+Its design based on HTTP (status, methods, and URI).
+Its design based on message exchange.
+It provides high consistency across all platforms.
+It is difficult to achieve high consistency across all platforms.
+Development speed is fast.
+Development speed is slow.
+17) Compare fail-fast and fail-safe iterators?
+Basis of Comparison
+Fail Fast Iterator
+Fail Safe Iterator
+Operates
+It operates directly on the collection itself.
+It operates on a cloned copy of the collection.
+Exception
+It throws a ConcurrentModificationException in modifying the object during the iteration process.
+It does not throw Exception.
+Clone Object
+No clone object is created during the iteration process.
+A copy or clone object is created during the iteration process.
+Memory utilization
+It requires low memory during the process.
+It requires more memory during the process.
+Modification
+It does not allow modification during iteration.
+It allows modification during the iteration process.
+Performance
+It is fast.
+It is slightly slower than Fail Fast.
+Examples
+HashMap, ArrayList, Vector, HashSet, etc.
+CopyOnWriteArrayList, ConcurrentHashMap, etc.
+18) What is a connection leak in Java and how can we fix it?
+In Java, a connection leak is a situation when the developer forgets to close the JDBC connection, it is known as connection leak. The most common type of Connection Leak experienced in Java development, is when using a Connection Pool (such as DBCP). We can fix it by closing the connection and giving special attention to the error handling code.
+
+19) What are the different methods of session management in Servlet?
+A session is a conversational state between client and server and it can consist of multiple requests and responses between client and server. Therefore, HTTP and web server both are stateless, the only way to maintain a session is when some unique information about the session (session-id) is passed between server and client in every request and response. We can use the following methods to maintain the session:
+
+1. User Authentication: User authentication involves verifying the identity of a user based on credentials (username and password). Once authenticated, the user's session is maintained either through session tokens or cookies.
+
+How it Works: Upon successful login, the server generates a session token and sends it to the client. This token is included in subsequent requests to maintain the session. Authentication mechanisms like HTTP Basic Authentication, Form-Based Authentication, or OAuth can be used.
+
+2. HTML Hidden Field: Hidden fields in HTML forms can be used to store and send session information between client and server.
+
+How it Works: Hidden fields are added to HTML forms with session-specific data. When the form is submitted, the hidden data is sent back to the server along with the visible form data, allowing the server to identify the session.
+
+Limitations: This method is limited to scenarios where forms are used, and it requires careful handling to avoid security issues like tampering.
+
+3. Cookies: Cookies are small pieces of data stored on the client side and sent to the server with each HTTP request.
+
+How it Works: The server creates a session ID and sends it to the client within a cookie. The client stores the cookie and includes it in subsequent requests. The server uses the session ID from the cookie to retrieve the session information.
+
+Advantages: Cookies are automatic and work transparently without requiring changes to URLs or forms.
+
+Limitations: Users can disable cookies in their browsers, which might affect session management.
+
+4. URL Rewriting: URL rewriting involves appending session information to the URLs of web resources.
+
+How it Works: The session ID is appended as a query parameter to URLs in the application. For example, http://example.com/page?sessionid=12345. Each request includes the session ID in the URL, allowing the server to track the session.
+
+Advantages: Works even if cookies are disabled.
+
+Limitations: Requires modifying URLs and ensuring the session ID is included in all links and forms. It can also expose session IDs in browser history and logs.
+
+5. Session Management API: The Java Servlet API provides built-in support for session management through the HttpSession interface.
+
+How it Works: When a client makes a request, the server checks if a session exists. If not, it creates a new session and assigns a unique session ID, which is sent to the client via cookies or URL rewriting. The server uses the session ID to retrieve and manage session data.
+
+Advantages: Simplifies session management by providing a standardized way to create, access, and invalidate sessions. It abstracts the underlying mechanisms (cookies, URL rewriting) used to maintain sessions.
+
+20) How ServletContext is differ from ServletConfig?
+ServletContext
+ServletConfig
+ServletContext represents the whole web application running on a particular JVM and common for all the servlet.
+ServletConfig object represents single servlet.
+It is just like a global parameter associated with the whole application.
+It is the same as the local parameter associated with a particular servlet.
+It has application-wide scope so define outside servlet tag in the web.xml file.
+It is a name-value pair defined inside the servlet section of web.xml files so it has servlet wide scope.
+getServletContext() method is used to get the context object.
+getServletConfig() method is used to get the config object.
+To get the MIME type of a file or application session related information is stored using a servlet context object.
+The shopping cart of a user is a specific to particular user so here we can use servlet config.
+21) What is a Request Dispatcher?
+RequestDispatcher is an interface that is used to forward the request to another resource that can be HTML, JSP, or another servlet in the same application. We can also use it to include the content of another resource in the response. The interface contains two methods forward() and include().
+
+Methods of RequestDispatcher Class
+
+forward() Method:
+
+Syntax:
+
+void forward(ServletRequest request, ServletResponse response) throws ServletException, IOException  
+Purpose: Forwards the request from the current servlet to another resource for further processing. The target resource takes over the request processing.
+
+Usage: Typically used when the target resource needs to fully handle the request, such as when delegating the request to another servlet for specialized processing.
+
+include() Method:
+
+Syntax:
+
+void include(ServletRequest request, ServletResponse response) throws ServletException, IOException  
+Purpose: Includes the content of another resource within the current response. After the included content is processed, the control returns to the calling servlet to continue processing.
+
+Usage: Useful for dynamically including content from other resources, such as header, footer, or navigation bar, into the response.
+
+Full-Stack Developer Interview Questions Java
+22) What are the differences between constructor injection and setter injection?
+Constructor Injection
+Setter Injection
+There is no partial injection of dependencies.
+There can be a partial injection of dependencies.
+It does not override the setter injection value.
+It overrides the constructor injection value if both are defined.
+It always creates a new instance if any modification occurs.
+It does not create a new instance if we made any changes to it.
+Using constructor injection is better for too many properties.
+Using setter injection is better for few properties.
+It makes bean class objects as immutable.
+It makes bean class objects as mutable.
+23) How many ways to handle exceptions in the Spring MVC Framework?
+Spring MVC Framework provides the following ways to handle exceptions:
+
+Controller-Based: We can define the exception handler method in our controller class.
+Global Exception Handler: Exception handling is a cross-cutting concern that Spring
+HandlerExceptionResolver: Any Spring Bean declared in the DispatcherServlet's application context that implements HandlerExceptionResolver will be used to intercept and process any exception raised in the MVC system and not handled by a Controller.
+24) What are the advantages of Hibernate over JDBC?
+There are the following advantages of Hibernate over JDBC:
+
+Hibernate removes boilerplate code that comes with JDBC API.
+It supports inheritance, associations, and collections that are not present in JDBC API.
+It implicitly provides transaction management.
+We need not to write a lot of try-catch block code.
+In Hibernate, HQL is more object-oriented that is closed to Java programming language.
+It provides better performance in comparison to JDBC because Hibernate supports caching while JDBC does not support caching of queries.
+25) What is callback hell and how to fix it?
+Callback hell is a phenomenon in JavaScript in which the developer tries to execute multiple asynchronous operations together. The nesting of callback functions in such a way, we easily end up with error-prone, hard to read, and hard to maintain code.
+
+We can easily fix it by using the following methods:
+
+Split Large Functions into Smaller Functions
+
+Break down large, complex functions into smaller, more manageable functions. This helps improve code readability and maintainability by organizing code into logical units.
+Use modularization to encapsulate specific tasks or operations within separate functions, making the code easier to understand and maintain.
+Use Promises
+
+Promises provide a cleaner and more structured way to handle asynchronous operations in JavaScript.
+Instead of nesting callbacks, we can chain promises together using then() to handle asynchronous tasks sequentially.
+Promises offer better error handling through the catch() method, allows us to handle errors in a centralized manner.
+Use Async/Await
+
+Async/await is a modern JavaScript feature that simplifies asynchronous code even further.
+It allows us to write asynchronous code in a synchronous style, making it easier to understand and maintain.
+By marking a function as async, we can use the await keyword to pause execution until a promise is resolved or rejected, eliminating the need for callback functions.
+26) What is double brace initialization in Java and where it is used?
+In Java, double brace initialization is a combination of two separate processes. The two consecutive curly braces {{ involved in it.
+
+The first curly brace represents the creation of an anonymous inner class. Remember that the second curly brace will not be considered in such a case. It is just like creating an anonymous inner class.
+
+The second curly brace represents an initialization block that we have seen in it as a class for initialization. When we use the initialization block for an anonymous inner class it becomes Java double brace initialization. The inner class has a reference to the enclosing outer class. We can use the reference by using this pointer.
+
+It is used to initialize collections because it is easier to initialize a constant collection using double brace initialization. The example of double brace initialization is as follows:
+
+import java.util.*;  
+public class Demo  
+{  
+public static void main(String args[])  
+{  
+-------------------  
+-------------------  
+Map<String, Map<String, Integer>> map = new HashMap <String, Map<String, Integer>> {{  
+put ("VEGETABLES", new HashMap<String, Integer>() {{  
+put("Tomato", 300);  
+put("Onion", 50);  
+put("Carrot", 100);  
+put("Beetroot", 40);  
+}}  
+--------------------  
+-------------------  
+);  
+}};  
+System.out.println(map);  
+}  
+}  
+27) How to avoid deadlock in Java?
+Avoid Unnecessary Locks: We should use locks only for those members on which it is required. Unnecessary use of locks leads to a deadlock situation. It is recommended that use a lock-free data structure. If possible, keep your code free from locks. For example, instead of using synchronized ArrayList use the ConcurrentLinkedQueue.
+
+Avoid Nested Locks: Another way to avoid deadlock is to avoid giving a lock to multiple threads if we have already provided a lock to one thread. Since we must avoid allocating a lock to multiple threads.
+
+Using Thread.join() Method: We can get a deadlock if two threads are waiting for each other to finish indefinitely using thread join. If a thread has to wait for another thread to finish, it's always best to use join with the maximum time you want to wait for the thread to finish.
+
+Use Lock Ordering: Always assign a numeric value to each lock. Before acquiring the lock with a higher numeric value, acquire the locks with a lower numeric value.
+
+Lock Time-out: We can also specify the time for a thread to acquire a lock. If a thread does not acquire a lock, the thread must wait for a specific time before retrying to acquire a lock.
+
+28) What is a critical section?
+The critical section is a part of code in multi-threading that must be exclusively modified by any thread. The critical section is protected by Semaphore or mutex. In Java, there are two ways to protect critical section:
+
+Using SynchronizedKeyword: The synchronized keyword provides intrinsic locking, allowing only one thread to execute the synchronized block or method at a time. This ensures thread safety and prevents concurrent access to shared resources, thus protecting the critical section from concurrent modification.
+Using Reentrant Locks: ReentrantLock class provides explicit locking mechanisms, allowing finer control over locking and unlocking. It offers features such as lock interruption and timeouts, providing more flexibility compared to synchronized blocks. Reentrant locks protect critical sections by allowing only one thread to acquire the lock at a time, ensuring exclusive access and thread safety.
+29) What is numeric promotion?
+The conversion of a smaller numeric type to a larger numeric type is known as numeric promotion. In this type, byte, char, and short values are converted to int values. The int values are converted to long values, if necessary. The long and float values are converted to double values, as needed.
+
+30) What is the SOLID principle in Java?
+In Java, SOLID principles are an object-oriented approach that are applied to software structure design. It is conceptualized by Robert C. Martin (also known as Uncle Bob). These five principles have changed the world of object-oriented programming, and also changed the way of writing software. It also ensures that the software is modular, easy to understand, debug, and refactor.
+
+The word SOLID acronym for:
+
+Single Responsibility Principle (SRP): Classes should have a single reason to change, ensuring they are focused and maintainable. This principle promotes high cohesion and low coupling, making it easier to understand and modify individual components.
+Open-Closed Principle (OCP): Software entities should be open for extension but closed for modification. By designing classes that can be extended without altering their core functionality, the codebase becomes more flexible and resilient to change.
+Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types without affecting program correctness. This principle ensures that polymorphism behaves as expected and that derived classes adhere to the contracts defined by their base classes.
+Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use. By segregating interfaces into smaller, more specific ones, this principle prevents the coupling of unrelated components and promotes cleaner, more maintainable code.
+Dependency Inversion Principle (DIP): Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions, facilitating loose coupling and making the codebase more flexible and easier to test and maintain.
+
+ 
+
+Related Posts
+Top 20 JIRA Interview Questions (2026)
+Top 35+ Most Asked OSPF Interview Questions (2026)
+Top 40+ TensorFlow Interview Questions (2026)
+Sales Interview Questions (2026)
+MS Word Interview Questions
+Top 20+ Most Asked Content Writer Interview Questions (2026)
+Next.js Interview Questions (2026)
+IoT Interview Questions (2026)
+Top 50 Computer Graphics Interview Questions (2026)
+VLSI Interview Questions (2026)
+
+Subscribe to Tpoint Tech
+We request you to subscribe our newsletter for upcoming updates.
+
+Your Email
+
+
+Logo
+We deliver comprehensive tutorials, interview question-answers, MCQs, study materials on leading programming languages and web technologies like Data Science, MEAN/MERN full stack development, Python, Java, C++, C, HTML, React, Angular, PHP and much more to support your learning and career growth.
+
+Contact info
+G-13, 2nd Floor, Sec-3, Noida, UP, 201301, India
+
+hr@tpointtech.com
+
++91-9599086977
+
+Follow us
+Top Tutorials
+Interview Questions
+Online Compilers
+Latest Post | Tutorials List | Privacy Policy | About Us | Contact Us
+© Copyright TpointTech.com. All Rights Reserved.
+
+
+
 !!!!! https://github.com/lehaSVV2009/full-stack-interview-questions/blob/master/README.md база 
 !!!!!  https://github.com/lehaSVV2009/full-stack-interview-questions/blob/master/README.md
 !!!!!  https://github.com/indy256/Full-stack-Developer-Interview-Questions-and-Answers/blob/master/README.md
