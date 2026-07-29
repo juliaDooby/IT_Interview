@@ -1,3 +1,1008 @@
+Training in Top Technologies 
+Career Related Programs 
+Webinars
+EbookNEW
+Explore Online Courses
+Home
+Blog
+Programming & Frameworks
+Top 80 Spring Interview Questi...
+Spring Framework (11 Blogs)
+Top 80 Spring Interview Questions You Must Prepare In 2025
+Programming & Frameworks
+Topics Covered
+C Programming and Data Structures (16 Blogs)
+Comprehensive Java Course (5 Blogs)
+Java/J2EE and SOA (341 Blogs)
+Spring Framework (9 Blogs)
+SEE MORE Programming & Frameworks blog posts
+Banner image
+Top 80 Spring Interview Questions You Must Prepare In 2025
+Last updated on Jan 09,2025626.5K Views
+Share
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+
+Swatee ChandSwatee Chand 
+Sr Research Analyst at Edureka. A techno freak who likes to explore different technologies. Likes to follow the technology trends in market and write...
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+image not found!
+1 / 1 Blog from Spring Interview Questions 
+myMock-desk-banner-bg
+Are you thinking of pursuing your career in Spring Framework? Are you searching for an appropriate QnA set to prepare for your interviews? Here is a blog on Spring Interview Questions which discusses on top 80 questions with proper explanation and examples. It will definitely help you to ace the interviews. But before starting with the Spring Interview Questions, let’s take a quick look on Spring Framework’s demand and status in the market.
+
+Since it’s release, the Spring Framework has continued to bloom in the market. Spring community is continuously coming up with new things and have spread into a vast ecosystem. Today, it holds the top position in the framework market. Check out the below graph which shows the frameworks most frequently used in the market as on January 2018.
+
+Want to Upskill yourself to get ahead in Career? Check out the Top Trending Technologies Article.
+spring vs other frameworks - Spring Interview Questions - Edureka!
+
+You might ask why is Spring certification so much in demand? Well, the answer is, because it provides a comprehensive programming and configuration model for modern Java-based enterprise applications. It is not concerned with the deployment platform used. A key element of Spring Framework is infrastructural support at the application level. It’s very much unlikely to go out of the market in the near future with more major releases announced.
+
+Before we move any further let us take a look some of the most frequently asked Spring Interview Questions,
+
+Q1. What are the major features in different versions of Spring Framework?
+Q2. What is a Spring Framework?
+Q3. List the advantages of Spring Framework
+Q4. What are the different features of Spring Framework?
+Q5. How many modules are there in Spring Framework and what are they?
+Q6. What is a Spring configuration file?
+Q7. What are the different components of a Spring application?
+Q8. What are the various ways of using Spring Framework?
+Q9. What is Spring IOC Container?
+Q10. What do you mean by Dependency Injection?
+
+So, here are the Top 80 Spring Interview Questions which are most likely to be asked by the interviewer. If you are seeking a future in this field, these questions will surely help you to ace the interview. For your ease of access, I have categorized the questions under a few topics, namely:
+
+General Questions
+Dependency Injection/ IoC
+Spring Beans
+Spring Annotations
+Spring Data Access
+Spring AOP
+Spring MVC
+You may watch the webinar recording of Spring Interview Questions where our instructor has shared his experience and expertise that will help you to crack any Spring Interview.
+
+Spring Interview Questions and Answers for 2025 | Edureka
+
+ 
+
+Let’s begin with the first section of Spring interview questions, which is the General Questions.
+
+General Spring Interview Questions
+1. What are the major features in different versions of Spring Framework?
+Features of Spring Framework
+Version	Logo	Feature
+Spring 2.5	spring 2.5 logo - Spring Interview Questions - Edureka!	This version was released in 2007. It was the first version which supported annotations.
+Spring 3.0	spring 3.0 logo - Spring Interview Questions - Edureka!	This version was released in 2009. It made full-fledged use of improvements in Java5 and also provided support to JEE6.
+Spring 4.0	Spring 4.0 logo - Spring Interview Questions - Edureka!	 This version was released in 2013. This was the first version to provide full support to Java 8.
+2. What is a Spring Framework?
+Spring logo - Spring Interview Questions - Edureka!Spring is a powerful open source, application framework created to reduce the complexity of enterprise application development.
+It is light-weighted and loosely coupled.
+It has layered architecture, which allows you to select the components to use, while also providing a cohesive framework for J2EE application development.
+Spring framework is also called the framework of frameworks as it provides support to various other frameworks such as Struts, Hibernate, Tapestry, EJB, JSF etc.
+3. List the advantages of Spring Framework.
+Because of Spring Frameworks layered architecture, you can use what you need and leave which you don’t.
+Spring Framework enables POJO (Plain Old Java Object) Programming which in turn enables continuous integration and testability.
+JDBC is simplified due to Dependency Injection and Inversion of Control.
+It is open-source and has no vendor lock-in.
+4. What are the different features of Spring Framework?
+Following are some of the major features of Spring Framework :
+
+Lightweight: Spring is lightweight when it comes to size and transparency. 
+Inversion of control (IOC): The objects give their dependencies instead of creating or looking for dependent objects. This is called Inversion Of Control.
+Aspect oriented Programming (AOP): Aspect oriented programming in Spring supports cohesive development by separating application business logic from system services.
+Container: Spring Framework creates and manages the life cycle and configuration of the application objects.
+MVC Framework: Spring Framework’s MVC web application framework is highly configurable. Other frameworks can also be used easily instead of Spring MVC Framework.
+Transaction Management: Generic abstraction layer for transaction management is provided by the Spring Framework. Spring’s transaction support can be also used in container less environments.
+JDBC Exception Handling: The JDBC abstraction layer of the Spring offers an exception hierarchy, which simplifies the error handling strategy.
+5. How many modules are there in Spring Framework and what are they?
+There are around 20 modules which are generalized into Core Container, Data Access/Integration, Web, AOP (Aspect Oriented Programming), Instrumentation and Test.Spring Framework Architecture - Spring Interview Questions - Edureka!
+
+Spring Core Container – This layer is basically the core of Spring Framework. It contains the following modules :
+Spring Core
+Spring Bean
+SpEL (Spring Expression Language)
+Spring Context 
+Data Access/Integration – This layer provides support to interact with the database. It contains the following modules :
+JDBC (Java DataBase Connectivity)
+ORM (Object Relational Mapping)
+OXM (Object XML Mappers)
+JMS (Java Messaging Service)
+Transaction
+Web – This layer provides support to create web application. It contains the following modules :
+Web
+Web – MVC
+Web – Socket
+Web – Portlet
+Aspect Oriented Programming (AOP) – In this layer you can use Advices, Pointcuts etc., to decouple the code.
+Instrumentation – This layer provides support to class instrumentation and classloader implementations.
+Test – This layer provides support to testing with JUnit and TestNG.
+Few Miscellaneous modules are given below:
+
+Messaging – This module provides support for STOMP. It also supports an annotation programming model that is used for routing and processing STOMP messages from WebSocket clients.
+Aspects – This module provides support to integration with AspectJ.
+Top 5 Backend Frameworks to Learn in 2025
+
+
+6. What is a Spring configuration file?
+xml file - Spring Interview Questions - Edureka!
+A Spring configuration file is an XML file. This file mainly contains the classes information. It describes how those classes are configured as well as introduced to each other. The XML configuration files, however, are verbose and more clean. If it’s not planned and written correctly, it becomes very difficult to manage in big projects.
+
+7. What are the different components of a Spring application?
+A Spring application, generally consists of following components:
+
+Interface: It defines the functions.
+Bean class: It contains properties, its setter and getter methods, functions etc.
+Spring Aspect Oriented Programming (AOP): Provides the functionality of cross-cutting concerns.
+Bean Configuration File: Contains the information of classes and how to configure them.
+User program: It uses the function.
+8. What are the various ways of using Spring Framework?spring app - Spring Interview Questions - Edureka!
+Spring Framework can be used in various ways. They are listed as follows:
+
+ As a Full-fledged Spring web application.
+As a third-party web framework, using Spring Frameworks middle-tier.
+ For remote usage. 
+As Enterprise Java Bean which can wrap existing POJOs (Plain Old Java Objects).
+ 
+
+Spring Dependency Injection/ IoC Container Interview Questions
+9. What is Spring IOC Container?
+ioc - Spring Interview Questions - Edureka!
+At the core of the Spring Framework, lies the Spring container. The container creates the object, wires them together, configures them and manages their complete life cycle. The Spring container makes use of Dependency Injection to manage the components that make up an application. The container receives instructions for which objects to instantiate, configure, and assemble by reading the configuration metadata provided. This metadata can be provided either by XML, Java annotations or Java code.
+
+10. What do you mean by Dependency Injection? 
+In Dependency Injection, you do not have to create your objects but have to describe how they should be created. You don’t connect your components and services together in the code directly, but describe which services are needed by which components in the configuration file. The IoC container will wire them up together.
+
+11. In how many ways can Dependency Injection be done?
+In general, dependency injection can be done in three ways, namely :
+
+Constructor Injection
+Setter Injection
+Interface Injection
+In Spring Framework, only constructor and setter injections are used.
+
+
+12. Differentiate between constructor injection and setter injection.
+Constructor Injection vs Setter Injection
+Constructor Injection	Setter Injection
+There is no partial injection.	There can be partial injection.
+It doesn’t override the setter property.	It overrides the constructor property.
+It will create a new instance if any modification is done.	It will not create new instance if any modification is done.
+It works better for many properties.	It works better for few properties.
+13. How many types of IOC containers are there in spring?
+BeanFactory: BeanFactory is like a factory class that contains a collection of beans. It instantiates the bean whenever asked for by clients.
+ApplicationContext: The ApplicationContext interface is built on top of the BeanFactory interface. It provides some extra functionality on top BeanFactory.
+14. Differentiate between BeanFactory and ApplicationContext.
+BeanFactory vs ApplicationContext
+BeanFactory	ApplicationContext
+It is an interface defined in org.springframework.beans.factory.BeanFactory	It is an interface defined in org.springframework.context.ApplicationContext
+It uses Lazy initialization	It uses Eager/ Aggressive initialization
+It explicitly provides a resource object using the syntax	It creates and manages resource objects on its own
+It doesn’t supports internationalization	It supports internationalization 
+It doesn’t supports annotation based dependency    	It supports annotation based dependency  
+15.  List some of the benefits of IoC.
+Some of the benefits of IoC are:
+
+It will minimize the amount of code in your application.
+It will make your application easy to test because it doesn’t require any singletons or JNDI lookup mechanisms in your unit test cases.
+It promotes loose coupling with minimal effort and least intrusive mechanism.
+It supports eager instantiation and lazy loading of the services.
+16. In which scenario, you will use singleton and prototype scope?
+Use Singleton Scope when you want to have only one instance shared across the entire application.
+Use Prototype Scope when you want a new instance created every time it’s requested, providing independence for each part of the application.
+17. What is the @Controller annotation used for?
+
+The @Controller annotation is used in the Spring Framework for Java to mark a class as a controller component. It is part of the Spring MVC (Model-View-Controller) architecture, which is used to build web applications in a structured and organized way.
+
+When you annotate a class with @Controller, Spring recognizes it as a controller and allows it to handle HTTP requests and generate HTTP responses. Controllers are responsible for processing user requests, interacting with the application’s business logic (services), and returning the appropriate view to render the response.
+
+18. Can you create a controller without using @Controller or @RestController annotations?
+
+Yes, you can create a controller in Spring without using the @Controller or @RestController annotations. The @Controller and @RestController annotations are just convenience annotations that provide specific functionalities, but you can achieve the same functionality by using other annotations or configuration.
+
+To create a controller without using @Controller or @RestController, you can use the following approach:
+
+Implement the Controller Logic: Create a regular Java class that contains the logic for handling HTTP requests and generating responses.
+Use Appropriate Annotations: Instead of @Controller or @RestController, you can use other annotations to specify the request mappings and the response type.
+Top 5 Backend Frameworks to Learn in 2025
+
+
+19. What is ContextLoaderListener and what does it do?
+
+The ContextLoaderListener is a Spring Framework component used in Java web applications to load the Spring application context when the web application starts. It initializes the IoC container, manages beans, and allows components to access Spring beans for their processing.
+
+ 
+
+20. What are the differences between @RequestParam and @PathVariable annotations?
+
+@requestParam	@pathVariable
+Purpose	Extracts query parameters from the URL’s query string.	Extracts values from the URI path itself (URL template).
+Syntax	Followed by the parameter name in the controller method’s parameter list.	Followed by the variable name in curly braces {} within the URL mapping.
+ExampleURL	/example?name=John	/example/{id}
+Example Usage	@RequestParam(“name”) String name	@PathVariable(“id”) String id
+Use Case	Suitable for optional parameters or data in the query string.	Useful for extracting dynamic values from the URL path.
+21. What is the use of @Autowired annotation?
+
+The @Autowired annotation in Spring is used to automatically wire (inject) dependencies into a Spring bean. It enables automatic dependency injection, meaning that Spring will automatically find and inject the required dependencies into the bean without the need for manual configuration.
+
+22. What is the role of @ModelAttribute annotation?
+
+The @ModelAttribute annotation in Spring MVC is used to bind method parameters or method return values to model attributes. It plays a crucial role in the Model-View-Controller (MVC) architecture, where it helps transfer data between the Controller and the View.
+
+The key role of @ModelAttribute is to facilitate data transfer between the Controller and the View. It allows you to pre-populate form data when displaying forms to users and automatically bind user inputs to model attributes when processing form submissions. Additionally, it helps in adding common attributes (like reference data) to the model across multiple controller methods.
+
+23. What is the importance of the web.xml in Spring MVC?
+
+The web.xml file in Spring MVC is used for configuring the DispatcherServlet, defining context parameters, filters, and listeners, as well as handling error pages. While newer Spring applications rely more on annotation-based configuration, web.xml remains essential for certain settings and legacy support.
+
+ 
+
+24. What are the types of Spring MVC Dependency Injection?
+
+The three types of Dependency Injection in Spring MVC are:
+
+Constructor Injection: In constructor injection, the dependencies are injected through the constructor of a class.It is considered the preferred method of dependency injection as it ensures that all required dependencies are available when the object is created.
+Setter Injection: In setter injection, the dependencies are injected using setter methods.Setter injection allows for optional dependencies, as not all setters need to be called during object creation.It can lead to mutable objects, as the dependencies can be changed after the object is created.
+Field Injection: In field injection, the dependencies are injected directly into the class fields.
+It is the least preferred method because it bypasses constructor-based or setter-based DI, making it harder to enforce required dependencies and testability.
+25. What is the importance of session scope?
+
+The session scope in Spring is an important mechanism for managing beans in web applications. It allows you to create and maintain a separate instance of a bean for each user session, ensuring that data associated with a specific user is preserved throughout their interactions with the application.
+
+26. What is the importance of @Required annotation?
+
+The @Required annotation was used in earlier versions of Spring to indicate that a property of a bean must be set (or wired) with a value before the bean can be fully initialized. However, starting from Spring 3.0, the @Required annotation has been deprecated and is no longer recommended for use.
+
+ 
+
+27. Differentiate between the @Autowired and the @Inject annotations.
+
+ 
+
+@autowired	@inject
+Framework	Part of the Spring Framework	Part of the JSR-330 standard (Java Dependency Injection)
+Configuration	Requires enabling component scanning in Spring	Requires a JSR-330 compliant DI framework
+Qualification	Supports qualifiers like @Qualifier and @Primary	Does not have built-in qualifier support
+Optional Dependency	By default, the dependency is required	By default, the dependency is not required
+Optional Configuration	Can use @Autowired(required = false)	Can use @Inject without changing its default behavior
+28. Are singleton beans thread-safe?
+
+Yes, singleton beans in Spring are thread-safe by default. When you define a bean with singleton scope in Spring, the container ensures that only one instance of that bean is created and shared across all requests within the container’s context.
+
+29. How can you achieve thread-safety in beans?
+
+Yes, singleton beans in Spring are thread-safe by default. When you define a bean with singleton scope in Spring, the container ensures that only one instance of that bean is created and shared across all requests within the container’s context.
+
+singleton beans in Spring are thread-safe as long as they are stateless or properly synchronized when dealing with mutable state. The Spring container manages singleton bean instantiation and synchronization to ensure their thread safety within the context.
+
+ 
+
+30. What is the significance of @Repository annotation?
+
+The @Repository annotation in Spring is a specialized stereotype annotation that serves as a marker for classes that fulfill the role of a data repository or DAO (Data Access Object). It is primarily used to indicate that the class is responsible for data access operations, such as reading from and writing to a database or any other external data source
+
+31. How is the dispatcher servlet instantiated?
+
+ The DispatcherServlet is automatically instantiated and initialized by the Servlet container during web application startup. It acts as the front controller for Spring MVC applications, managing the entire request-response lifecycle and delegating the processing to the appropriate components in the Spring application context.
+
+32. How is the root application context in Spring MVC loaded?
+
+The root application context in Spring MVC is loaded automatically during web application startup by the ContextLoaderListener. It handles overall configuration and bean management for the application, while the DispatcherServlet handles web-specific components and request handling.
+
+ 
+
+33. How does the Spring MVC flow look like? In other words, How does a DispatcherServlet know what Controller needs to be called when there is an incoming request to the Spring MVC?
+
+ 
+
+The Spring MVC flow involves several components working together to handle incoming requests and route them to the appropriate controllers for processing.
+
+The DispatcherServlet plays a central role in the Spring MVC flow. It receives incoming requests, selects the appropriate controller based on the URL mapping, invokes the controller method to handle the request, prepares the model data and view, resolves the view, and finally sends the response back to the client. The flow is orchestrated through a combination of handler mappings, controllers, view resolvers, and views, allowing Spring MVC to handle various types of requests and produce dynamic responses.
+
+ 
+
+34. Where does the access to the model from the view come from?
+
+In Spring MVC, the Model object acts as a container to pass data from the Controller to the View for rendering. The Model is automatically made available to the View by the DispatcherServlet, and the View can access the data using expression language or template-specific syntax. This allows for separation of data handling and presentation concerns in the application.
+
+35. Why do we need BindingResults?
+
+BindingResult is used in Spring MVC for data binding and validation. It captures errors during form submission, helps prevent exceptions, and allows you to handle errors gracefully by displaying error messages to the user.
+
+36. What are Spring Interceptors?
+
+Spring Interceptors are components in the Spring MVC framework that allow you to intercept and process HTTP requests and responses. They provide a way to perform pre-processing and post-processing tasks before and after the actual request is handled by a controller or after the response is generated.
+
+37. Is there any need to keepspring-mvc.jar on the classpath or is it already present as part of Spring-core
+
+The spring-mvc.jar file is not part of the spring-core library, and they serve different purposes.
+
+spring-core: This is the core Spring framework, which provides fundamental parts of the framework such as dependency injection and inversion of control.
+spring-webmvc: This is the Spring MVC framework (typically named as spring-webmvc.jar not spring-mvc.jar), which is built on top of the core Spring framework and provides Model-View-Controller (MVC) architecture for building web applications.
+So, if you’re building an application using the Spring MVC framework, you would need both spring-core and spring-webmvc on your classpath. These libraries are usually managed by a build tool like Maven or Gradle, and are automatically included when you specify them as dependencies in your build file.
+
+38. What is the Model in Spring MVC?
+
+In the context of Spring MVC, the term “Model” represents the data layer. It is a map (similar to a java.util.Map) that contains data to be rendered by the View. This data is typically the outcome of executing your business logic, which you want to show to the user.
+
+39. What are the differences between the <context:annotation-config> vs <context:component-scan> tags?
+
+ 
+
+<context:annotation-config>: This is used to activate various annotations within Spring-managed beans. For example, if you have beans that are manually defined in your XML file and these beans have annotations like @Autowired, @PostConstruct, @PreDestroy, @Resource, etc., you need <context:annotation-config> to activate these annotations. However, it does not automatically detect and instantiate beans from the classpath.
+
+ 
+
+<context:component-scan>: This tag does everything that <context:annotation-config> does, but it goes one step further. It scans the classpath for classes annotated with @Component, @Service, @Repository, @Controller, etc., and automatically registers them as beans in the Spring application context. In other words, it automatically detects and instantiates your beans. So, when you use <context:component-scan>, you don’t need to explicitly define each bean in your XML configuration file, as long as they are annotated correctly and exist within the base-package specified by <context:component-scan>.
+
+40. How is the form data validation done in Spring Web MVC Framework?
+
+Form data validation in Spring Web MVC Framework is done by:
+
+ 
+
+Defining Validation Rules: Use Bean Validation API (JSR-303) annotations like @NotNull, @Size, @Min, @Max, etc., on your model fields to set the validation rules.
+ 
+
+Activating Validation: In your controller, annotate the model attribute with @Valid when handling the form submission. This triggers the validation process.
+ 
+
+Handling Validation Errors: Spring MVC validates the form data and any errors are put into a BindingResult object. You can check this object for errors and handle them accordingly, typically by sending the user back to the form with error messages.
+ 
+
+Displaying Errors: In your view (e.g., Thymeleaf or JSP), display any validation error messages from the BindingResult to the user.
+ 
+
+41. How to get ServletConfig and ServletContext objects in spring bean?
+
+ 
+
+In a Spring application, you can access ServletConfig and ServletContext objects by implementing the ServletContextAware and ServletConfigAware interfaces. These interfaces provide setter methods that Spring will use to inject the necessary objects.
+
+42. Differentiate between a Bean Factory and an Application Context.
+
+BeanFactory
+
+BeanFactory is the root interface for accessing a Spring bean container. It provides basic Inversion of Control (IoC) and Dependency Injection (DI) features.
+BeanFactory is lazy-initiated, which means it only creates a bean when you call getBean() method.
+It supports bean instantiation/wiring and allows you to read bean definitions and access them using the getBean() method.
+BeanFactory is lighter and has less functionality compared to ApplicationContext.
+ApplicationContext
+
+ApplicationContext extends the BeanFactory interface and has all features of BeanFactory. It adds more enterprise-specific functionality.
+It provides additional features such as easier integration with Spring’s AOP features, message resource handling (for use in internationalization), event propagation, and application-layer specific contexts such as WebApplicationContext for web applications.
+The beans in ApplicationContext are singleton and are initiated at the time of loading the context, not when getBean() is called.
+It supports internationalization for text messages, event propagation, and various contexts.
+ApplicationContext also provides a way to resolve text messages, which is a useful feature for internationalization.
+43. How are i18n and localization supported in Spring MVC?
+
+Internationalization (i18n) and localization (L10n) are important features for applications that need to support multiple languages or locales. In Spring MVC, these are supported using a combination of LocaleResolver, LocaleChangeInterceptor, and message source properties files.
+
+ 
+
+44. What do you understand by MultipartResolver?
+
+MultipartResolver is an interface defined in Spring MVC framework that is used for uploading files. When a form in a Spring web application is submitted and it has enctype=”multipart/form-data”, the MultipartResolver implementation handles the file upload part of the request.
+
+The MultipartResolver is part of the Spring DispatcherServlet’s configuration, so you’ll define it in your Spring configuration. 
+
+ 
+
+45. How is it possible to use the Tomcat JNDI DataSource in the Spring applications?
+
+ 
+
+To use a Tomcat JNDI DataSource in a Spring application:
+
+ 
+
+Setup DataSource in Tomcat: Configure the DataSource in Tomcat’s context.xml file with the necessary parameters (username, password, driverClassName, etc).
+ 
+
+Configure DataSource in Spring: Use <jee:jndi-lookup> in XML configuration or JndiDataSourceLookup in Java configuration to tell Spring to look up the DataSource from JNDI.
+ 
+
+The DataSource can then be injected into your Spring beans where it is needed
+ 
+
+Spring Beans Interview Questions
+46. Explain Spring Beans?
+They are the objects that form the backbone of the user’s application.
+Beans are managed by the Spring IoC container.
+They are instantiated, configured, wired and managed by a Spring IoC container
+Beans are created with the configuration metadata that the users supply to the container.Bean generation - Spring Interview Questions - Edureka!
+47. How configuration metadata is provided to the Spring container?
+Configuration metadata can be provided to Spring container in following ways:
+
+XML-Based configuration: In Spring Framework, the dependencies and the services needed by beans are specified in configuration files which are in XML format. These configuration files usually contain a lot of bean definitions and application specific configuration options. They generally start with a bean tag. For example:
+1
+2
+3
+<bean id="studentbean" class="org.edureka.firstSpring.StudentBean">
+ <property name="name" value="Edureka"></property>
+</bean>
+Annotation-Based configuration: Instead of using XML to describe a bean wiring, you can configure the bean into the component class itself by using annotations on the relevant class, method, or field declaration. By default, annotation wiring is not turned on in the Spring container. So, you need to enable it in your Spring configuration file before using it. For example:
+1
+2
+3
+4
+<beans>
+<context:annotation-config/>
+<!-- bean definitions go here -->
+</beans>
+Java-based configuration: The key features in Spring Framework’s new Java-configuration support are @Configuration annotated classes and @Bean annotated methods. 
+1. @Bean annotation plays the same role as the <bean/> element. 
+
+2.@Configuration classes allows to define inter-bean dependencies by simply calling other @Bean methods in the same class. 
+
+For example:
+1
+2
+3
+4
+5
+6
+7
+@Configuration
+public class StudentConfig 
+{ 
+@Bean
+public StudentBean myStudent() 
+{ return new StudentBean(); }
+}
+48. How many bean scopes are supported by Spring?
+The Spring Framework supports five scopes. They are:
+
+Singleton: This provides scope for the bean definition to single instance per Spring IoC container.
+Prototype: This provides scope for a single bean definition to have any number of object instances.
+Request: This provides scope for a bean definition to an HTTP-request. 
+Session: This provides scope for a bean definition to an HTTP-session. 
+Global-session: This provides scope for a bean definition to an Global HTTP-session. 
+The last three are available only if the users use a web-aware ApplicationContext.
+
+49. What is the Bean life cycle in Spring Bean Factory Container?
+Bean life cycle in Spring Bean Factory Container is as follows:
+
+The Spring container instantiates the bean from the bean’s definition in the XML file.
+Spring populates all of the properties using the dependency injection, as specified in the bean definition.
+The factory calls setBeanName() by passing the bean’s ID, if the bean implements the BeanNameAware interface.
+The factory calls setBeanFactory() by passing an instance of itself, if the bean implements the BeanFactoryAware interface.
+preProcessBeforeInitialization() methods are called if there are any BeanPostProcessors associated with the bean.
+If an init-method is specified for the bean, then it will be called.
+Finally, postProcessAfterInitialization() methods will be called if there are any BeanPostProcessors associated with the bean.
+To understand it in better way check the below diagram:
+
+beanLifeCycle - Spring Interview Questions - Edureka!
+
+50. Explain inner beans in Spring.
+A bean can be declared as an inner bean only when it is used as a property of another bean. For defining a bean, the Spring’s XML based configuration metadata provides the use of <bean> element inside the <property> or <constructor-arg>. Inner beans are always anonymous and they are always scoped as prototypes. For example, let’s say we have one Student class having reference of Person class. Here we will be creating only one instance of Person class and use it inside Student.
+
+Here’s a Student class followed by bean configuration file:
+
+Student.java
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+public class Student
+{
+private Person person;
+//Setters and Getters
+}
+public class Person
+{
+private String name;
+private String address;
+//Setters and Getters
+}
+studentbean.xml
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+<bean id=“StudentBean" class="com.edureka.Student">
+<property name="person">
+<!--This is inner bean -->
+<bean class="com.edureka.Person">
+<property name="name" value=“Scott"></property>
+<property name="address" value=“Bangalore"></property>
+</bean>
+</property>
+</bean>
+51. Define Bean Wiring.
+When beans are combined together within the Spring container, it’s called wiring or bean wiring. The Spring container needs to know what beans are needed and how the container should use dependency injection to tie the beans together, while wiring beans.
+
+bean wiring - Spring Framework Interview Questions - Edureka!
+
+52. What do you understand by auto wiring and name the different modes of it?
+The Spring container is able to autowire relationships between the collaborating beans. That is, it is possible to let Spring resolve collaborators for your bean automatically by inspecting the contents of the BeanFactory.
+Different modes of bean auto-wiring are:
+
+no: This is default setting which means no autowiring. Explicit bean reference should be used for wiring.
+byName: It injects the object dependency according to name of the bean. It matches and wires its properties with the beans defined by the same names in the XML file.
+byType: It injects the object dependency according to type. It matches and wires a property if its type matches with exactly one of the beans name in XML file.
+constructor: It injects the dependency by calling the constructor of the class. It has a large number of parameters.
+autodetect: First the container tries to wire using autowire by constructor, if it can’t then it tries to autowire by byType.
+53. What are the limitations with auto wiring?
+Following are some of the limitations you might face with auto wiring:
+
+Overriding possibility: You can always specify dependencies using <constructor-arg> and <property> settings which will override autowiring.
+ Primitive data type: Simple properties such as primitives, Strings and Classes can’t be autowired.
+Confusing nature: Always prefer using explicit wiring because autowiring is less precise.
+ 
+
+Spring Annotations Interview Questions
+54. What do you mean by  Annotation-based container configuration?
+Instead of using XML to describe a bean wiring, the developer moves the configuration into the component class itself by using annotations on the relevant class, method, or field declaration. It acts as an alternative to XML setups. For example:
+
+1
+2
+3
+4
+5
+6
+7
+@Configuration
+public class AnnotationConfig
+{
+@Bean
+public MyDemo myDemo()
+ { return new MyDemoImpll(); }
+}
+55. How annotation wiring can be turned on in Spring?
+By default, Annotation wiring is not turned on in the Spring container. Thus, to use annotation based wiring we must enable it in our Spring configuration file by configuring <context:annotation-config/> element. For example:
+
+1
+2
+3
+4
+<beans xmlns="<a href="http://www.springframework.org/schema/beans">http://www.springframework.org/schema/beans</a>" xmlns:xsi="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xmlns:context="<a href="http://www.springframework.org/schema/context">http://www.springframework.org/schema/context</a>">
+<context:annotation-config/>
+<beans ………… />
+</beans>
+56. What’s the difference between @Component, @Controller, @Repository & @Service annotations in Spring?annotations - Spring Framework Tutorial - Edureka!
+@Component: This marks a java class as a bean. It is a generic stereotype for any Spring-managed component. The component-scanning mechanism of spring now can pick it up and pull it into the application context.
+
+@Controller: This marks a class as a Spring Web MVC controller. Beans marked with it are automatically imported into the Dependency Injection container.
+
+@Service: This annotation is a specialization of the component annotation. It doesn’t provide any additional behavior over the @Component annotation. You can use @Service over @Component in service-layer classes as it specifies intent in a better way.
+
+@Repository: This annotation is a specialization of the @Component annotation with similar use and functionality. It provides additional benefits specifically for DAOs. It imports the DAOs into the DI container and makes the unchecked exceptions eligible for translation into Spring DataAccessException.
+
+57. What do you understand by @Required annotation?
+@Required is applied to bean property setter methods. This annotation simply indicates that the affected bean property must be populated at the configuration time with the help of an explicit property value in a bean definition or with autowiring. If the affected bean property has not been populated, the container will throw BeanInitializationException.
+
+For example:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+public class Employee
+{
+private String name;
+@Required
+public void setName(String name)
+{this.name=name; }
+public string getName()
+{ return name; }
+}
+58. What do you understand by @Autowired annotation?
+The @Autowired annotation provides more accurate control over where and how autowiring should be done. This annotation is used to autowire bean on the setter methods, constructor, a property or methods with arbitrary names or multiple arguments. By default, it is a type driven injection.
+
+For Example:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+public class Employee
+{
+private String name;
+@Autowired
+public void setName(String name)
+{this.name=name; }
+public string getName()
+{ return name; }
+}
+59. What do you understand by @Qualifier annotation?
+When you create more than one bean of the same type and want to wire only one of them with a property  you can use the @Qualifier annotation along with @Autowired to remove the ambiguity by specifying which exact bean should be wired.
+
+For example, here we have two classes, Employee and EmpAccount respectively. In EmpAccount, using @Qualifier its specified that bean with id emp1 must be wired.
+
+Employee.java
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+public class Employee
+{
+private String name;
+@Autowired
+public void setName(String name)
+{ this.name=name; }
+public string getName()
+{ return name; }
+}
+EmpAccount.java
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public class EmpAccount
+{
+private Employee emp;
+@Autowired
+@Qualifier(emp1)
+public void showName()
+{
+System.out.println(“Employee name : ”+emp.getName);
+}
+}
+60.  What do you understand by @RequestMapping annotation?
+@RequestMapping annotation is used for mapping a particular HTTP request method to a specific class/ method in controller that will be handling the respective request. This annotation can be applied at both levels:
+
+Class level : Maps the URL of the request
+Method level: Maps the URL as well as HTTP request method
+ 
+
+Spring Data Access Interview Questions
+61. Describe Spring DAO support?
+The Data Access Object (DAO) support in Spring makes it easy to work with data access technologies like JDBC, Hibernate or JDO in a consistent way. This allows one to switch between the persistence technologies easily. It also allows you to code without worrying about catching exceptions that are specific to each of these technology.
+
+62. Name the exceptions thrown by the Spring DAO classes.
+See the below diagram, it depicts all the Spring DAO classes in the hierarchical order.
+
+DAO classes - dao - Spring Framework Interview Questions - Edureka! 
+
+63.  Which classes are present in spring JDBC API?
+Classes present in JDBC API are as follows:
+
+JdbcTemplate
+SimpleJdbcTemplate
+NamedParameterJdbcTemplate
+SimpleJdbcInsert
+SimpleJdbcCall
+64. What are the ways by which Hibernate can be accessed using Spring?
+There are two ways by which we can access Hibernate using Spring:
+
+Inversion of Control with a Hibernate Template and Callback
+Extending HibernateDAOSupport and Applying an AOP Interceptor node
+65. Name the types of transaction management that Spring supports.
+Two types of transaction management are supported by Spring. They are:
+
+Programmatic transaction management: In this, the transaction is managed with the help of programming. It provides you extreme flexibility, but it is very difficult to maintain.
+Declarative transaction management: In this, the transaction management is separated from the business code. Only annotations or XML based configurations are used to manage the transactions.
+66. What are the different ORM’s supported by Spring?
+Different ORM’s supported by Spring are depicted via the below diagram:
+
+orms - Spring Framework Interview Questions - Edureka!
+
+
+Spring AOP Interview Questions
+67. Describe AOP.
+Aspect-oriented programming or AOP is a programming technique which allows programmers to modularize crosscutting concerns or behavior that cuts across the typical divisions of responsibility. Examples of cross-cutting concerns can be logging and transaction management. The core of AOP is an aspect. It encapsulates behaviors that can affect multiple classes into reusable modules.
+
+AOP - Spring Framework Interview Questions - Edureka!
+
+68. What do you mean by Aspect?
+Aspect is a modularization of concern which cuts across multiple objects. Transaction management is a good example of a crosscutting concern in J2EE applications. Aspects are implemented using regular classes or regular classes annotated with the @Aspect annotation in Spring Framework.
+
+69. Explain JoinPoint.
+A point during the execution of a program is called JoinPoint, such as the execution of a method or the handling of an exception. In Spring AOP, a joinpoint always represents a method execution.
+
+70. What is an Advice?
+An Action taken by an aspect at a particular joinpoint is known as an Advice. Spring AOP uses an advice as an interceptor, maintaining a chain of interceptors “around” the join point.
+
+advice - Spring Framework Interview Questions - Edureka!
+
+71. What are the different types of Advices?
+Different types of Advices in Spring AOP are:
+
+Before: These types of advices execute before the joinpoint methods and are configured using @Before annotation mark.
+After returning: These types of advices execute after the joinpoint methods completes executing normally and are configured using @AfterReturning annotation mark.
+After throwing:  These types of advices execute only if joinpoint method exits by throwing an exception and are configured using @AfterThrowing annotation mark.
+After (finally): These types of advices execute after a joinpoint method, regardless of the method’s exit whether normally or exceptional return and are configured using @After annotation mark.
+Around: These types of advices execute before and after a joinpoint and are configured using @Around annotation mark.
+72. Point out the difference between concern and cross-cutting concern in Spring AOP?
+The concern is the behavior we want to have in a particular module of an application. It can be defined as a functionality we want to implement. 
+
+The cross-cutting concern is a concern which is applicable throughout the application. This affects the entire application. For example, logging, security and data transfer are the concerns needed in almost every module of an application, thus they are the cross-cutting concerns.
+
+cross cutting concern vs concern - Spring Framework Interview Questions - Edureka!
+
+73. What are the different AOP implementations?
+Different AOP implementations are depicted by the below diagram:
+
+AOP Implementations - Spring Framework Interview Questions - Edureka!
+
+74. What are the difference between Spring AOP and AspectJ AOP?
+Spring AOP vs AspectJ AOP
+Spring AOP	AspectJ AOP
+Runtime weaving through proxy is done	Compile time weaving through AspectJ Java tools is done 
+It supports only method level PointCut	It suports field level Pointcuts
+It is DTD based 	It is schema based and Annotation configuration
+75. What do you mean by Proxy in Spring Framework?
+An object which is created after applying advice to a target object is known as a Proxy. In case of client objects the target object and the proxy object are the same.
+
+proxy - Spring Framework Interview Questions - Edureka!
+
+76. In Spring, what is Weaving?
+The process of linking an aspect with other application types or objects to create an advised object is called Weaving. In Spring AOP, weaving is performed at runtime. Refer the below diagram:
+
+Weaving - Spring Framework Interview Question - Edureka!The last section of Spring interview questions is on Spring MVC Interview Questions.
+
+Spring MVC Interview Questions
+77. What do you mean by Spring MVC framework?
+The Spring web MVC framework provides model-view-controller architecture and ready to use components that are used to develop flexible and loosely coupled web applications. The MVC pattern helps in separating the different aspects of the application like input logic, business logic and UI logic, while providing a loose coupling between all these elements. Get Started with Spring MVC
+
+78. Describe DispatcherServlet.
+The DispatcherServlet is the core of Spring Web MVC framework. It handles all the HTTP requests and responses. The DispatcherServlet receives the entry of handler mapping from the configuration file and forwards the request to the controller. The controller then returns an object of Model And View. The DispatcherServlet checks the entry of view resolver in the configuration file and calls the specified view component.
+
+dispatcherServlet - Spring Framework Interview Questions - Edureka!
+
+79. Explain WebApplicationContext.
+The WebApplicationContext is an extension of the plain ApplicationContext. It has some extra features that are necessary for web applications. It differs from a normal ApplicationContext in terms of its capability of resolving themes and in deciding which servlet it is associated with.
+
+80. In Spring MVC framework, what is controller?
+Controllers provide access to the application behavior. These behaviors are generally defined through a service interface. Controllers interpret the user input and transform it into a model which is represented to the user by the view. In Spring, controller is implemented in a very abstract way. It also enables you to create a wide variety of controllers.
+
+controller - Spring Framework Interview Questions - Edureka!
+
+  
+
+I hope this set of Spring Interview Questions and Answers will help you in preparing for your interviews. All the best!
+
+
+If you want to learn Spring and wish to use it while developing Java applications, then check out the Spring Certification Training by Edureka, a trusted online learning company with a network of more than 250,000 satisfied learners spread across the globe.
+
+ 
+
+Got a question for us? Please mention it in the comments section and we will get back to you.
+
+ 
+
+ 
+
+Recommended videos for you
+hibernate-mapping-on-the-fly.jpg
+Hibernate Mapping on the Fly
+implementing-web-services-in-java.jpg
+Implementing Web Services In Java
+node-js-steps-to-create-restful-web-app.jpg
+Node JS : Steps to Create Restful Web App
+a-day-in-the-life-of-a-node-js-developer.jpg
+A Day In The Life Of A Node.js Developer
+microsoft-sharepoint-the-ultimate-enterprise-collaboration-platform.jpg
+Microsoft SharePoint-The Ultimate Enterprise Collaboration Platform
+JAVA-J2EE-WEBINAR-600x3501_-300x175.png
+Introduction to JAVA/J2EE & SOA
+create-restful-web-application-with-node-js-express.jpg
+Create Restful Web Application With Node.js Express
+spring-framework-introduction-to-spring-web-mvc-spring-with-bigdata.jpg
+Spring Framework : Introduction to Spring Web MVC & Spring with BigData
+node-js-express-steps-to-create-restful-web-app.jpg
+Node JS Express: Steps to Create Restful Web App
+mastering-regex-in-perl.jpg
+Mastering Regex in Perl
+building-web-application-using-spring-framework.jpg
+Building Web Application Using Spring Framework
+php-and-mysql-server-side-scripting-for-web-development.jpg
+PHP and MySQL : Server Side Scripting For Web Development
+rapid-development-with-cakephp.jpg
+Rapid Development With CakePHP
+effective-persistence-using-orm-with-hibernate.jpg
+Effective Persistence Using ORM With Hibernate
+building-application-with-ruby-on-rails-framework.jpg
+Building Application With Ruby On Rails Framework
+microsoft-sharepoint-2013-the-ultimate-enterprise-collaboration-platform.jpg
+Microsoft SharePoint 2013 : The Ultimate Enterprise Collaboration Platform
+microsoft-net-framework-an-intellisense-way-of-web-development.jpg
+Microsoft .NET Framework : An IntelliSense Way of Web Development
+introduction-to-javaj2ee-soa.jpg
+Introduction to JAVA/J2EE & SOA
+learn-perl-the-jewel-of-scripting-languages.jpg
+Learn Perl-the Jewel of Scripting Languages
+service-oriented-architecture-with-java.jpg
+Service-Oriented Architecture With Java
+Recommended blogs for you
+Machine-learning-in-Java-300x175.jpg
+What is Machine Learning in Java and how to implement it?
+Storage-Classes-in-C-300x175.jpg
+What is a Storage Class in C++ and its types?
+Node.js-Request-300x175.jpg
+Learn How to Make Node.js Requests – Best 3 Ways to Make HTTP Request
+How-to-decrypt-md5-password-in-PHP-300x175.jpg
+How to Decrypt MD5 Password in PHP?
+Alert-in-JavaScript-300x175.jpg
+How to Create an Alert in JavaScript?
+Front-End-Developer-Skills-300x175.jpg
+Top 10 Front End Developer Skills You Need to Know
+Coupling-in-Java-300x175.jpg
+What is Coupling in Java and its different types?
+Pascal-Triangle-in-Java-300x175.jpg
+Everything you need to know About Pascal Triangle in Java
+Bootstrap-Button-300x175.jpg
+How to Create a Bootstrap Button?
+Bootstrap-Datatable-300x175.jpg
+what are the Bootstrap Datatables and how to create it?
+HTML-interview-question-300x175.png
+Top 80 HTML Interview Questions and Answers in 2025
+no-image-1.png
+Top 10 Full Stack Development Tools in 2026
+Java_bloge-image_011-300x175.png
+Serialization of Java Objects to XML Using XMLEncoder/Decoder
+JavaScript-Data-Types-300x175.jpg
+What are the Different Data Types in JavaScript
+no-image-1.png
+Introduction to Input in Python
+extends-vs-implementation-300x175.png
+What is the Difference Between Extends and Implements in Java?
+Structure-Of-A-Java-Program-1-300x175.jpg
+What is the basic Structure of a Java Program?
+Array-Sort-in-Javascript-300x175.jpg
+Array Sort In JavaScript : Everything About Sorting Arrays In JavaScript
+Encapsulation-in-Java-300x175.jpg
+Encapsulation in Java – How to master OOPs with Encapsulation?
+learn-node-300x175.jpg
+How to Learn Node.js – A Complete Roadmap for Beginners
+Comments
+9 Comments
+ CourseDrill says:
+Apr 5, 2021 at 2:29 am GMT
+Thanks for the info. Its really helpful for clearing the interview.
+
+Reply
+ Mani Kumari says:
+Sep 6, 2020 at 2:08 am GMT
+i love to read edureka interview questions, covered all the topics of spring
+
+Reply
+ Michael Smith says:
+Aug 11, 2020 at 7:31 am GMT
+Thanks for nice article on spring interview questions
+
+Reply
+ Kavananaveen says:
+Jul 3, 2020 at 7:35 am GMT
+First ever seen the detailed covered topics. Thanks for supporting.
+
+Reply
+ Kavananaveen says:
+Jul 3, 2020 at 7:32 am GMT
+First ever seen such detailed topics covered. Thanks for supporting.
+
+Reply
+ Hema Malini says:
+Mar 29, 2019 at 5:40 am GMT
+Great Blog. You shared great topics with excellent content very clearly.
+
+Reply
+ Kallol Das says:
+Mar 29, 2019 at 5:38 am GMT
+Good collection of all technical topics at one place !!
+
+Reply
+ Aman Abhishek says:
+Nov 5, 2018 at 12:42 pm GMT
+Awesome covered each and every topic
+
+Reply
+ EdurekaSupport says:
+Mar 29, 2019 at 5:41 am GMT
+Hey Aman, thanks for the compliment. We are glad you loved the blog. Cheers!
+
+Reply
+Join the discussion
+
+Trending Courses in Programming & Frameworks
+Python Scripting Certification Training
+Python Scripting Certification Training
+15k Enrolled Learners
+Weekend
+Self Paced
+Reviews
+ 5 (5900)
+Browse Categories
+Artificial IntelligenceAWSBI and VisualizationBig DataBlockchainBusiness ManagementCloud ComputingCyber SecurityData ScienceData Warehousing and ETLDatabasesDevOpsDigital MarketingEnterpriseFront End Web DevelopmentHuman Resource ManagementInterview QuestionsMobile DevelopmentOperating SystemsOperations ManagementProduct ManagementProject Management and MethodologiesRobotic Process Automationseo interview questionSoftware TestingStrategy and LeadershipSupply Chain ManagementSystems & Architecture
+Subscribe to our Newsletter, and get personalized recommendations.
+ Already have an account? Sign in.×
+edureka logo
+TRENDING CERTIFICATION COURSES
+Advanced DevOps Certification Training with GenAI
+Agentic AI Certification Training Course
+LLM Prompt Engineering Certification Course
+Data Science with Python Certification Course
+Power BI Certification Training with Gen AI
+MLOps Certification Course
+Artificial Intelligence Certification Course
+TRENDING MASTERS COURSES
+Generative AI(Gen AI ) Masters Program
+Post Graduate Program in Gen AI and ML
+Doctor of Business Administration by Birchwood
+Integrated MS+PGP Program in Data Science & AI
+MS in Data Science by Birchwood
+European Global Doctorate of Business Administration (DBA)
+European Global MS in Data Science and AI
+EIMT Doctorate in Computer Science (DCS)
+COMPANY
+About us
+News & Media
+Reviews
+Contact us
+Blog
+Community
+Sitemap
+Blog Sitemap
+Community Sitemap
+Webinars
+WORK WITH US
+Careers
+Become an Instructor
+Become an Affiliate
+Become a Partner
+Hire from Edureka
+DOWNLOAD APP
+apple_store google_playstore
+CATEGORIES
+Cloud Computing DevOps Big Data Data Science BI and Visualization Programming & Frameworks Software Testing Project Management and Methodologies Robotic Process Automation Frontend Development Data Warehousing and ETL Artificial Intelligence Blockchain Databases Cyber Security Mobile Development Operating Systems Architecture & Design Patterns Digital Marketing
+TRENDING BLOG ARTICLES
+Selenium tutorial Selenium interview questions Java tutorial What is HTML Java interview questions PHP tutorial JavaScript interview questions Spring tutorial PHP interview questions Inheritance in Java Polymorphism in Java Spring interview questions Pointers in C Linux commands Android tutorial JavaScript tutorial jQuery tutorial SQL interview questions MySQL tutorial Machine learning tutorial Python tutorial What is machine learning Ethical hacking tutorial SQL injection AWS certification career opportunities AWS tutorial What Is cloud computing What is blockchain Hadoop tutorial What is artificial intelligence Node Tutorial Collections in Java Exception handling in java Python Programming Language Python interview questions Multithreading in Java ReactJS Tutorial Data Science vs Big Data vs Data Analytics Software Testing Interview Questions R Tutorial Java Programs JavaScript Reserved Words and Keywords Implement thread.yield() in Java: Examples Implement Optical Character Recognition in Python All you Need to Know About Implements In Java
+Address:
+4th Floor, No. 38/4, Outer Ring Rd, adjacent to Dell EMC2, Doddanekkundi, Mahadevapura, Bengaluru, Karnataka 560048
+© 2026 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved. Terms & Conditions Legal & Privacy
+   
+"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc. MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.
+image not found!
+Top 80 Spring Interview Questions You Must Prepare In 2025
+edureka.co
+
+
 <h2 class="toc_1" style="text-align: justify;">Top Spring Boot Interview Questions and Answers</h2>
 <h3 style="text-align: justify;">Q1. Explain Spring Boot and also tell the features of Spring Boot.</h3>
 <p style="text-align: justify;">Spring Boot is a Java-based open-source rapid application development framework that is used to build microservices and web applications. With the help of the prebuilt code found in its codebase, Spring Boot offers an entirely flexible environment that does not need a manual configuration and provides powerful batch processing.</p>
