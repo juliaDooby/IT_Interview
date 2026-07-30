@@ -1,9 +1,270 @@
-Skip to content
-Codeforgeek
-JavaScript
-Next.js Beginner’s Guide
-Free Online Developer Tools
-Books
+RDL
+Блог
+ Категории
+ Без категории
+ Отборочные задания Ozon Go на платформе Yandex Contest
+Отборочные задания Ozon Go на платформе Yandex Contest
+Table of contents
+Introduction
+
+Задача А: Уникальное число
+
+Задача B: Теги
+
+Задача F: Сумма двух
+
+Задача D: Сложение чисел
+
+Задача E: 2 канала
+
+Introduction
+В апреле 2020 года стартовал отбор в бесплатную школу программирования на Go от Ozon. Частью этого отбора (кроме HR-параметров в резюме) было прохождение заданий на https://contest.yandex.ru/. Мы рассмотрим задачи, которые предлагалось решить.
+
+Репозиторий с рассматриваемыми ниже скриптами: https://github.com/superrosko/ozon-golang-school-yandex-contest.
+
+Задача А: Уникальное число
+Ограничение времени	1 секунда
+Ограничение памяти	64Mb
+Ввод	стандартный ввод или input-201.txt
+Вывод	стандартный вывод или input-201.a.txt
+На вход программе подается большое количество целых чисел. Все числа, кроме одного, имеют пару, причем может быть несколько одинаковых пар. Найдите число без пары.
+
+Формат ввода
+stdin десятичные числа по одному на каждой строке.
+
+Формат вывода
+stdout десятичное число.
+
+Пример
+Ввод
+1
+
+2
+
+2
+
+1
+
+2
+
+3
+
+2
+
+Вывод
+3
+
+Решение на Python (45ms/3.92Mb)
+fileInput = open("input-201.txt")
+
+result = 0
+for line in fileInput:
+    result = result ^ int(line.strip())
+fileInput.close()
+
+fileOutput = open("input-201.a.txt", "w")
+fileOutput.write(str(result))
+fileOutput.close()
+Решение задачи сводится к операции XOR для всех входящих чисел, оставшееся число и будет числом без пары.
+
+Задача B: Теги
+Ограничение времени	1 секунда
+Ограничение памяти	64Mb
+Ввод	стандартный ввод или input.txt
+Вывод	стандартный вывод или output.txt
+В базе данных имеется таблица с товарами goods (id INTEGER, name TEXT), таблица с тегами tags (id INTEGER, name TEXT) и таблица связки товаров и тегов tags_goods (tag_id INTEGER, goods_id INTEGER, UNIQUE (tag_id, goods_id)).
+
+Выведите id и названия всех товаров, которые имеют все возможные теги в этой базе.
+
+БД - SQLite3. В качестве языка решения выберите make2.
+
+Формат ввода
+SQL-запрос.
+
+Решение на SQL (22ms/928.00Kb)
+SELECT
+    g.id,
+    g.name
+FROM goods AS g 
+LEFT JOIN tags_goods tg on g.id = tg.goods_id
+GROUP BY g.id, g.name
+HAVING COUNT(tg.tag_id) = (SELECT COUNT(id) FROM tags);
+Задача F: Сумма двух
+Ограничение времени	1.5 секунд
+Ограничение памяти	64Mb
+Ввод	input.txt
+Вывод	output.txt
+Дано целое положительное число target. Также дана последовательность из целых положительных чисел. Необходимо записать в выходной файл 1, если в последовательности есть два числа, сумма которых равна значению target, или 0, если таких нет.
+
+Формат ввода
+5
+
+1 7 3 4 7 9
+
+Формат вывода
+1
+
+Примечания
+Все числа, используемые в задаче, находятся в диапазоне 0 < N < 999999999.
+
+Название входного файла: input.txt.
+
+Название выходного файла: output.txt.
+
+Решение на C++ (0.885s/696.00Kb)
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int len;
+    int sum;
+    int temp;
+    int target;
+    int indexLeft;
+    int indexRight;
+    std::vector<int> data;
+
+    ifstream fileInput("input.txt");
+    fileInput >> target;
+    while (fileInput >> temp) {
+        if (temp < target) {
+            data.push_back(temp);
+        }
+    }
+    fileInput.close();
+    std::sort(data.begin(), data.end());
+    len = data.size();
+    ofstream fileOutput("output.txt");
+    if (len != 0) {
+        indexLeft = 0;
+        indexRight = len - 1;
+        while (indexLeft != indexRight) {
+            sum = data[indexLeft] + data[indexRight];
+            if (sum < target) {
+                indexLeft++;
+            } else if (sum > target) {
+                indexRight--;
+            } else {
+                fileOutput << 1;
+                fileOutput.close();
+                return 0;
+            }
+        }
+    }
+    fileOutput << 0;
+    fileOutput.close();
+    return 0;
+}
+У задачи несколько вариантов решения. Здесь приводится вариант с полным чтением массива в память с отсеиванием заведомо неподходящих данных, дальнейшей его сортировкой и обработкой в цикле с помощью двух индексов.
+
+Задача D: Сложение чисел
+Ограничение времени	1 секунда
+Ограничение памяти	64Mb
+Ввод	стандартный ввод
+Вывод	стандартный вывод
+Даны два неотрицательных числа A и B (числа могут содержать до 1000 цифр). Вам нужно вычислить их сумму.
+
+Формат ввода
+Первая строка ввода содержит числа A и B, разделенные пробелом.
+
+Формат вывода
+Результат сложения двух чисел нужно вывести на отдельной строке.
+
+Пример 1
+Ввод	Вывод
+1 2	3
+Пример 2
+Ввод	Вывод
+199 1	200
+Решение на Python (45ms/3.92Mb)
+print(sum([int(z) for z in input().rstrip().split()]))
+На Python и других языках с поддержкой длинной арифметики задача решается очень просто. С одной стороны, решение сводится к стандартным функциям языка и не является интересным, но, с другой стороны, т.к. нет ограничения на выбор языка, показывает способность человека выбрать подходящий язык для решения без написания сложных алгоритмов.
+
+Задача E: 2 канала
+Ограничение времени	2 секунды
+Ограничение памяти	64Mb
+Ввод	см. формат ввода
+Вывод	см. формат вывода
+Необходимо написать функцию func Merge2Channels(f func(int) int, in1 <-chan int, in2 <- chan int, out chan<- int, n int) в package main.
+
+Описание ее работы:
+n раз сделать следующее:
+
+прочитать по одному числу из каждого канала in1 и in2, назовем их x1 и x2
+вычислить f(x1) + f(x2)
+записать полученное значение в out
+функция Merge2Channels должна быть неблокирующей, сразу возвращая управление
+функция f может работать долгое время, ожидая чего-либо или производя вычисления
+Формат ввода
+Количество итераций передается через аргумент n.
+Целые числа подаются через аргументы-каналы in1 и in2.
+Функция для обработки чисел перед сложением передается через аргумент f.
+Формат вывода
+Канал для вывода результатов передается через аргумент out.
+
+Примечания
+Отправлять задачу необходимо под компилятором Make. Решения, выдающие неверный ответ, могут по техническим причинам получать вердикт Runtime Error. Медленные решения получают вердикт Idleness Limit, стоит рассматривать это как превышение времени исполнения.
+
+Решение на Go
+package main
+
+import "sync"
+
+var lock sync.Mutex
+
+func Merge2Channels(f func(int) int, in1 <-chan int, in2 <-chan int, out chan<- int, n int) {
+    go func(f func(int) int, in1 <-chan int, in2 <-chan int, out chan<- int, n int) {
+        lock.Lock()
+
+        f1res := make([]*int, n)
+        f2res := make([]*int, n)
+
+        input := func(input <-chan int, results []*int) {
+            for i := 0; i < n; i++ {
+                x := <-input
+                go func(i int, x int) {
+                    res := f(x)
+                    results[i] = &res
+                }(i, x)
+            }
+        }
+
+        go input(in1, f1res)
+        go input(in2, f2res)
+
+        go func() {
+            i := 0
+            for true {
+                if f1res[i] != nil && f2res[i] != nil {
+                    res := *f1res[i] + *f2res[i]
+                    out <- res
+                    if i++; i == n {
+                        lock.Unlock()
+                        return
+                    }
+                }
+            }
+        }()
+
+    }(f, in1, in2, out, n)
+}
+Для решения задачи в функции Merge2Channels мы сразу запускаем горутину, чтобы не было блокировки, и устанавливаем мьютекс, который снимаем только после завершения работы горутины - это нужно на случай нескольких вызовов Merge2Channels. В запущенной горутине мы создаем 2 массива с указателями на int - мы используем указатели для возможности сравнения с nil. В массивы f1res и f2res мы будем записывать результаты вычисления функции f, для этого запускаются 2 горутины, в которых запускается еще n горутин, в которых и будет идти параллельный расчет. Также запускается горутина с бесконечным циклом, которая ждет последовательного появления результатов из массивов f1res и f2res. При появлении результатов идет расчет их суммы и запись в выходной канал out.
+
+Дата публикации : 2020-06-11 21:25:03
+Дата редактирования : 2020-11-12 00:38:10
+Автор : Rosko
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike License, and code samples are licensed under the Apache 2.0 License. By using this site, you agree to the Terms of use and Privacy policy.
+
+RDL - 2026
+
+dbespalov.develab@gmail.com
+Cookie statement General disclaimer Sitemap
+RDL
+
 
 Top 50 Golang Interview Questions and Answers for 2026 (Go Developer Guide)
 Ninad PathakApr 17, 2026Tutorials
