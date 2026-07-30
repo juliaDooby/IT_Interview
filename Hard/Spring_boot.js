@@ -1,16 +1,310 @@
-Practice Real Company Assessment Patterns • Latest 2025–2026 Mock Tests
-Placement Preparation Logo
-an HCL GUVI product
-Aptitudev
-Programmingv
-Company Specificv
-Resourcesv
-Mock Test
-search-icon
-Search Topics, Formulas etc
 Home
-Blog
-Interview Questions
+Java 
+Spring
+Angular 
+React 
+Full Stack 
+Apache Camel 
+Cloud Frameworks 
+Messaging
+Drools 
+Search Engine
+MCQ's
+DevOps
+Webseries
+Crypto Tools
+Online Certifications
+Privacy Policy
+
+
+
+
+Search Tutorials
+
+
+Spring Boot Interview Questions(2026)
+
+In this post we will look at Spring Boot Interview questions. Examples are provided with explanation.
+What is Spring Boot?
+What are advantages of Spring Boot?
+Which build tool have you used to develop Spring Boot Application?
+What is JavaConfig?
+How to reload my changes on Spring Boot without having to restart server?
+What is Actuator in Spring Boot?
+How to implement JWT authentication for Spring Boot Application?
+How to deploy Spring Boot application as a WAR?
+What is Docker? How to deploy Spring Boot Applications to Docker?
+How to disable Actuator endpoint security in Spring Boot?
+How to run Spring boot application to custom port?
+What is ELK stack?How to use it with Spring Boot?
+Have you written Test cases using Spring Boot?
+What is YAML?
+How to implement security for Spring boot application?
+Have you integrated Spring Boot and ActiveMQ?
+Have you integrated Spring Boot and Apache Kafka?
+How to implement Pagination and Sorting with Spring Boot?
+What is Swagger? Have you implemented it using Spring Boot?
+What is Spring Profiles? How do you implement it using Spring Boot?
+What is Spring Batch? How do you implement it using Spring Boot?
+What is FreeMarker Template? How do you implement it using Spring Boot?
+How to implement Exception Handling using Spring Boot?
+What is caching? Have you used any caching framework with Spring Boot?
+Have you exposed a SOAP webservice endpoint using Spring Boot?
+How did you perform database operations using Spring Boot?
+How to develop a full stack application using Spring Boot and Angular?
+How to upload a file using Spring?
+How to implement interceptors with Spring Boot?
+Which all starter maven dependencies have you used?
+What is CSRF attack? How to enable CSRF protection against it?
+How to use Form Login Authentication using Spring Boot?
+When will you use WebSockets? How to implement it using Spring Boot?
+What is AOP? How to use it with Spring Boot?
+What is Apache Kafka? How to integrate it with Spring Boot?
+How can we monitor all the Spring Boot Microservices?
+Have you used any Spring Cloud Components with Spring Boot?
+How to deploy Spring Boot Application to Pivotal Cloud Foundry(PCF)?
+How to deploy Spring Boot + MySQL Application to Pivotal Cloud Foundry(PCF)?
+How to deploy Spring Boot + RabbitMQ Application to Pivotal Cloud Foundry(PCF)?
+What is JWT ? How to implement it using Spring Boot Security?
+How to implement distributed logging for microservices?
+What is Hashicorp Valut? How to use it with microservices?
+What is Spring Boot?
+Over the years spring has become more and more complex as new functionalities have been added. Just visit the page-https://spring.io/projects and we will see all the spring projects we can use in our application for different functionalities. If one has to start a new spring project we have to add build path or add maven dependencies, configure application server, add spring configuration . So a lot of effort is required to start a new spring project as we have to currently do everything from scratch. Spring Boot is the solution to this problem. Spring boot has been built on top of existing spring framework. Using spring boot we avoid all the boilerplate code and configurations that we had to do previously. Spring boot thus helps us use the existing Spring functionalities more robustly and with minimum efforts.
+More details and miscellaneous examples
+
+What are advantages of Spring Boot?
+The advantages of Spring Boot are
+Reduce Developement, Testing time and efforts.
+Use of JavaConfig helps avoid usage of XML.
+Avoid lots of maven imports and the various version conflicts.
+Provide Opinionated Development approach.
+Quick start to development by providing defaults.
+No Separate Web Server Needed.Which means that you no longer have to boot up Tomcat, Glassfish, or anything else.
+Requires less configuration-Since there is no web.xml file. Simply add classes annotated with@Configuration and then you can add methods annotated with@Bean, and Spring will automagically load up the object and manage it like it always has. You can even add @Autowired to the bean method to have Spring autowire in dependencies needed for the bean.
+Environment Based Configuration-Using these properties, you can pass into the application which environment you are using with:-Dspring.profiles.active={enviornment}. Spring will then load up the subsequent application properties file at (application-{environment}.properties) after loading up the main application properties file.
+
+
+Which build tool have you used to develop Spring Boot Application?
+Spring Boot application can be developed using Maven as well as Gradle.
+Spring Boot application using Maven
+Spring Boot application using Gradle
+
+What is JavaConfig?
+Spring JavaConfig is a product of the Spring community that provides a pure-Java approach to configuring the Spring IoC Container. It thus helps avoid using XML configurations. The advantages of using JavaConfig are
+The advantages of JavaConfig are
+Object-oriented configuration. Because configurations are defined as classes in JavaConfig, users can take full advantage of object-oriented features in Java. One configuration class may subclass another, overriding its @Bean methods, etc.
+Reduced or eliminated XML configuration. The benefits of externalized configuration based on the principles of dependency injection have been proven. However, many developers would prefer not to switch back and forth between XML and Java. JavaConfig provides developers with a pure-Java approach to configuring the Spring container that is conceptually similar to XML configuration. It is technically possible to configure the container using only JavaConfig configuration classes, however in practice many have found it ideal to mix-and-match JavaConfig with XML.
+Type-safe and refactoring-friendly. JavaConfig provides a type-safe approach to configuring the Spring container. Thanks to Java 5.0's support for generics, it is now possible to retrieve beans by type rather than by name, free of any casting or string-based lookups.
+Added security configuration without xml using java config.
+How to reload my changes on Spring Boot without having to restart server?
+This can be achieved using DEV Tools. With this dependency any changes you save, the embedded tomcat will restart. Spring Boot has a Developer tools (DevTools) module which helps to improve the productivity of developers. One of the key challenge for the Java developers is to auto deploy the file changes to server and auto restart the server. Developers can reload changes on Spring Boot without having to restart my server. This will eliminates the need for manually deploying the changes every time. Spring Boot doesn’t have this feature when it has released it’s first version. This was a most requested features for the developers. The module DevTools does exactly what is needed for the developers. This module will be disabled in the production environment. It also provides H2-database console for better testing the application. The following dependency is used
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+			</dependency> 
+			
+The DevTool dependency usage for autorestart and H2 DB console is illustrated in this example
+
+What is Actuator in Spring Boot?
+Spring boot actuator is one of the important feature in spring boot framework. Spring boot actuator helps you to access the current state of the running application in production environment. There are several metrics that has to be checked and monitored in the production environment. Even some external applications may be using those services to trigger the alert message to concerned person. Actuator module exposes set of REST endpoints that can be directly accessed as a HTTP URL to check the status.
+
+How to implement JWT authentication for Spring Boot Application?
+We will be implementing Spring Boot +JWT + MYSQL Hello World Example
+JWT stands for JSON Web Token. JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. The client will need to authenticate with the server using the credentials only once. During this time the server validates the credentials and returns the client a JSON Web Token(JWT). For all future requests the client can authenticate itself to the server using this JSON Web Token(JWT) and so does not need to send the credentials like username and password.
+
+How to deploy Spring Boot application as a WAR?
+Spring Boot WAR Deployment
+
+What is Docker? How to deploy Spring Boot Applications to Docker?
+What is Docker
+Deploying Spring Based WAR Application to Docker
+Deploying Spring Based JAR Application to Docker
+
+How to disable Actuator endpoint security in Spring Boot?
+By default all sensitive HTTP endpoints are secured such that only users that have an ACTUATOR role may access them. Security is enforced using the standard HttpServletRequest.isUserInRole method.
+We can disable security using -
+management.security.enabled=false
+It is suggested to disable security only if the actuator endpoints are accessed behind firewall.
+
+How to run Spring boot application to custom port?
+In order to run a spring boot application on a custom port you can specify the port in application.properties.
+server.port=8090
+
+What is ELK stack?How to use it with Spring Boot?
+The ELK Stack consists of three open-source products - Elasticsearch, Logstash, and Kibana from Elastic.
+Spring Boot microservice elk stack example
+Elasticsearch is a NoSQL database that is based on the Lucene search engine.
+
+
+Logstash is a log pipeline tool that accepts inputs from various sources, executes different transformations, and exports the data to various targets. It is a dynamic data collection pipeline with an extensible plugin ecosystem and strong Elasticsearch synergy
+Kibana is a visualization UI layer that works on top of Elasticsearch.
+These three projects are used together for log analysis in various environments. So Logstash collects and parses logs, Elastic search indexes and store this information while Kibana provides a UI layer that provide actionable insights.
+Spring Boot + ELK stack
+
+Have you written Test cases using Spring Boot?
+Spring Boot provides the @SpringBootTest for writing Unit Test Cases
+Spring Boot Unit Test Simple Example
+
+What is YAML?
+YAML is a human-readable data serialization language. It is commonly used for configuration files.
+Compared to properties file, YAML file is much more structured and less confusing in case we want to add complex properties in the configuration file. As can be seen YAML has hierarchical configuration data.
+Use YAML properties in Spring Boot
+How to implement security for Spring boot application?
+For Implementing security for Spring Boot we use the spring-boot-starter-security dependency and have to add the Security config. It requires very little code. Config class will have to extend WebSecurityConfigurerAdapter and override its methods.
+Spring Boot Security example and explanation
+
+Have you integrated Spring Boot and ActiveMQ?
+For integrating Spring Boot and ActiveMQ we use the spring-boot-starter-activemq dependency
+It requires very little configuration and no boilerplate code.
+Spring Boot ActiveMQ explanation
+
+Have you integrated Spring Boot and Apache Kafka?
+For integrating Spring Boot and Apache Kafka we use the spring-kafka dependency.
+Spring Boot + Apache Kafka Example
+
+How to implement Pagination and Sorting with Spring Boot?
+Using Spring Boot achieving pagination is very simple. Using the Spring Data-JPA this is achieved passing pageable org.springframework.data.domain.Pageable to the repository methods.
+Spring Boot pagination explanation
+
+What is Swagger? Have you implemented it using Spring Boot?
+Swagger is widely used for visualizing APIs, and with Swagger UI it provides online sandbox for frontend developers. For the tutorial, we will use the Springfox implementation of the Swagger 2 specification. Swagger is a tool, a specification and a complete framework implementation for producing the visual representation of RESTful Web Services. It enables documentation to be updated at the same pace as the server. When properly defined via Swagger, a consumer can understand and interact with the remote service with a minimal amount of implementation logic. Thus Swagger removes the guesswork in calling the service.
+Spring Boot + Swagger2
+
+What is Spring Profiles? How do you implement it using Spring Boot?
+Spring Profiles allows users to register beans depending on the profile(dev, test, prod etc). So when the application is running in DEVELOPMENT only certain beans can be loaded and when in PRODUCTION certain other beans can be loaded. Suppose our requirement is that the Swagger documentation be enabled only for the QA environment and disabled for all others. This can be done using Profiles. Spring Boot makes using Profiles very easy.
+Spring Boot + profiles
+
+What is Spring Batch? How do you implement it using Spring Boot?
+Spring Boot Batch provides reusable functions that are essential in processing large volumes of records, including logging/tracing, transaction management, job processing statistics, job restart, skip, and resource management. It also provides more advanced technical services and features that will enable extremely high-volume and high performance batch jobs though optimization and partitioning techniques.Simple as well as complex, high-volume batch jobs can leverage the framework in a highly scalable manner to process significant volumes of information.
+Spring Boot + Batch
+
+What is FreeMarker Template? How do you implement it using Spring Boot?
+FreeMarker is a Java-based Template Engine, originally focusing on dynamic web page generation with MVC software architecture. The major advantage of using Freemarker is the complete separation of the Presentation layer and the Business Layer. The Programmers can work on the application code while the designers can work on the html page design. Finally using freemarker these can then be combined to give the final output page.
+Spring Boot + FreeMarker Example
+
+How to implement Exception Handling using Spring Boot?
+Spring provides a very useful way to handle exceptions using ControllerAdvice.
+We will be implementing a ControlerAdvice class which will handle all exceptions thrown by the controller class.
+Spring Boot Exception Handling
+
+What is caching? Have you used any caching framework with Spring Boot?
+A cache is an area of local memory that holds a copy of frequently accessed data that is otherwise expensive to get or compute. Have used Hazelcast for caching.
+Spring Boot + Hazelcast Example
+
+Have you exposed a SOAP webservice endpoint using Spring Boot?
+Yes. Using Spring Boot exposed a web service to be consumed. Used Contract first approach to generate the classes from wsdl.
+Spring Boot + SOAP Web Service Example
+
+How did you perform database operations using Spring Boot?
+Spring Boot Tutorial-Spring Data JPA
+Spring Boot JDBC Example
+
+How to develop a full stack application using Spring Boot and Angular?
+In full stack application we expose the back end point to get the data. This data can then be used by any application or device as per the need. In future even if another front end device is to be used, there will not be much change and the new device will need to consume these end points.
+Full Stack Application Example
+The project architecture we will be developing is as follows-
+Angular 7 and Spring Boot Application
+Angular 7 + Spring Boot Tutorials
+How to upload a file using Spring?
+Spring Boot + File Upload Example
+How to implement interceptors with Spring Boot?
+Using Spring MVC HandlerInterceptor with Spring Boot
+
+How to use schedulers with Spring Boot?
+Spring Boot Task Scheduler Example
+
+Which all starter maven dependencies have you used?
+Have used different starter dependencies like spring-boot-starter-activemq dependency, spring-boot-starter-security dependency, spring-boot-starter-web dependency.
+This helps in adding less number of dependencies and also in reducing version conficts.
+Spring Boot Security example and explanation
+
+What is CSRF attack? How to enable CSRF protection against it?
+CSRF stands for Cross-Site Request Forgery. It is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated. CSRF attacks specifically target state-changing requests, not theft of data, since the attacker has no way to see the response to the forged request.
+Spring Boot Security - Enabling CSRF Protection
+
+How to use Form Login Authentication using Spring Boot?
+Spring Boot Form Security Login Hello World Example
+
+What is OAuth2? How to implement it using Spring Boot?
+Spring Boot + OAuth2 implementation
+
+What is GZIP?How to implement it using Spring Boot?
+gzip is a file format and a software application used for file compression and decompression.
+Spring Boot + GZIP Compression
+
+Have you used any integration framework with Spring Boot?
+Have integrated Apache Camel with Spring Boot. Made use of Apache Camel Spring Boot starter dependency. Spring Boot +Apache Camel
+
+What is Apache Freemarker? When to use it instead of JSP? How to integrate it with Spring Boot?
+JSP is tailor made for Web pages, Freemarker template is a more generic templating language - it can be used to generate html, plain text, emails, etc.
+Spring Boot + FreeMarker Example
+
+When will you use WebSockets? How to implement it using Spring Boot?
+WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.
+Spring Boot Interview Questions
+WebSocket are bi-directional - Using WebSocket either client or server can initiate sending a message.
+WebSocket are Full Duplex - The client and server communication is independent of each other.
+Single TCP connection - The initial connection is using HTTP, then this connection gets upgraded to a socket based connection. This single connection is then used for all the future communication
+Light - The WebSocket message data exchange is much lighter compared to http.
+Spring Boot + WebSockets Example
+
+What is AOP? How to use it with Spring Boot?
+During software development, functions that span multiple points of an application are called cross-cutting concerns. These cross-cutting concerns differ from the application’s main business logic. Hence ,separating these cross-cutting concerns from the business logic is where aspect-oriented programming (AOP) comes into picture.
+Spring Boot + AOP Example
+
+What is Apache Kafka? How to integrate it with Spring Boot?
+Apache Kafka is a distributed publish-subscribe messaging system. It is a scalable, fault-tolerant, publish-subscribe messaging system which enables us to build distributed applications. It is an Apache Top Level project. Kafka is suitable for both offline and online message consumption.
+Spring Boot + Apache Kafka Example
+
+How can we monitor all the Spring Boot Microservices?
+Spring Boot provides actuator endpoints to monitor metrics of individual microservices. These endpoints are very helpful for getting information about applications like if they are up, if their components like database etc are working good. But a major drawback or difficulty about using actuator enpoints is that we have to individually hit the enpoints for applications to know their status or health. Imagine microservices involving 50 applications, the admin will have to hit the actuator endpoints of all 50 applications. To help us deal with this situation, we will be using open source project located at https://github.com/codecentric/spring-boot-admin.
+Built on top of Spring Boot Actuator, it provides a web UI to enable us visualize the metrics of multiple applications.
+Spring Boot Admin
+
+Have you used any Spring Cloud Components with Spring Boot?
+Have used Spring Cloud components like Netflix Eureka for Service Registration,Ribbon for Load Balancing.
+Spring Boot + Cloud Components
+Spring Cloud interview Questions
+
+How to deploy Spring Boot Application to Pivotal Cloud Foundry(PCF)?
+Deploying Spring Boot Application to PCF
+
+How to deploy Spring Boot + MySQL Application to Pivotal Cloud Foundry(PCF)?
+Pivotal Cloud Foundry Tutorial - Deploying Spring Boot + MySQL Application to PCF
+
+How to deploy Spring Boot + RabbitMQ Application to Pivotal Cloud Foundry(PCF)?
+Pivotal Cloud Foundry Tutorial - Deploying Spring Boot + RabbitMQ Application to PCF
+
+What is JWT ? How to implement it using Spring Boot Security?
+For better understanding we will be developing the project in stages
+Develop a Spring Boot Application to expose a Simple REST GET API with mapping /hello.
+Configure Spring Security for JWT. Expose REST POST API with mapping /authenticate using which User will get a valid JSON Web Token. And then allow the user access to the api /hello only if it has a valid token
+Spring Boot JWT Workflow
+What is JWT(JSON Web Token)
+Understanding JWT Structure
+Spring Boot +JSON Web Token(JWT) Hello World Example
+
+How to implement distributed logging for microservices?
+Microservices architecture involve multiple services which interact with each other. So a functionality may involve call to multiple microservices. Usually for systems developed using Microservices architecture, there are many microservices involved. These microservices collaborate with each other.
+Consider the following microservices-
+sprcloud_6-1
+If suppose during such calls there are some issues like exception has occurred. Or may be there are latency issues due to a particular service taking more than expected time. How do we identify where the issue is occurring. In regular project we would have used logging to analyze the logs to know more about occurred exceptions and also performance timing. But since microservices involves multiple services we cannot use regular logging. Each Service will be having its own separate logs. So we will need to go through the logs of each service. Also how do we correlate the logs to a request call chain i.e which logs of microservices are related to Request1, which are related to Request2. To resolve these issues we make use of Spring Cloud Sleuth and Zipkin
+Spring Cloud Sleuth is used to generate and attach the trace id, span id to the logs so that these can then be used by tools like Zipkin and ELK for storage and analysis
+Zipkin is a distributed tracing system. It helps gather timing data needed to troubleshoot latency problems in service architectures. Features include both the collection and lookup of this data.
+Spring Cloud Tutorial - Distributed Log Tracing using Sleuth and Zipkin Example
+
+What is Hashicorp Valut? How to use it with microservices?
+Microservices architecture have multiple services which interact with each other and external resources like databases. They also need access to usernames and passwords to access these resources. Usually these credentials are stored in config properties. So each microservice will have its own copy of credentials. If any credentials change we will need to update the configurations in all microservices. We have previously discussed one solution to this problem is using Spring Cloud Config Native Server or Spring Cloud Config Git Server where common global properties which are repeated in all the microservices are usually stored.  But still storing the secrets in configuration file is a security concern. Above approach as 2 drawbacks-
+No single point of Truth
+Security risk of exposing the credentials
+In this tutorial will be using Spring Cloud Config and Hashicorp Vault to manage secrets and protect sensitive data.
+Spring Cloud Hashicorp Vault Tutorial
+Hashicorp Vault is a platform to secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting sensitive data and other secrets in a dynamic infrastructure.
+Using vault we will be retrieving the credentials from the vault key/value store.
+Spring Cloud Tutorial - Secure Secrets using Spring Cloud Config + Vault Example
+
+
 Top Spring Interview Questions for Freshers
 
 Table of Contents
