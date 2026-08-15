@@ -1,3 +1,406 @@
+
+Search
+
+Get app
+Write
+Sign up
+
+Sign in
+
+
+Unknown user
+DevOps.dev
+
+DevOps.dev
+Devops.dev is a community of DevOps enthusiasts sharing insight, stories, and the latest development in the field.
+
+Follow publication
+
+Java
+Programming Languages
+Spring
+Spring Boot
+Interview
+Java Full Stack Developer Interview Questions and Answers
+2024 Java Full Stack Developer Interview Questions and Answers
+Java Codeex
+Java Codeex
+
+Follow
+9 min read
+·
+Jun 7, 2024
+18
+
+
+1
+
+
+
+One of my friend recently attended an interview at a top product-based organization. These are the questions they were asked. If you are planning to attend any interviews, just go through these questions once; it will help you.
+
+Java
+
+Write a Java program to print how many times each character is repeated in a given string.
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class Sample {
+
+    public static Map<Character, Long> countOccurrences(String str) {
+        return str.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public static void main(String[] args) {
+        String str = "Hello How Are You";
+
+        Map<Character, Long> charCountMap = countOccurrences(str);
+
+        charCountMap.forEach((character, count) ->
+                System.out.println("The character '" + character + "' occurs " + count + " times in the string."));
+    }
+}
+What is `ClassNotFoundException` in Java and when does it occur?
+`ClassNotFoundException` is a checked exception that occurs when an application tries to load a class through its name using methods like `Class.forName()`, `ClassLoader.loadClass()`, or `ClassLoader.findSystemClass()`, but the class with the specified name cannot be found in the classpath.
+Explain `NoClassDefFoundError` and how it differs from `ClassNotFoundException`.
+`NoClassDefFoundError` is an unchecked error that occurs when the Java Virtual Machine (JVM) or a ClassLoader tries to load a class that was available at compile-time but is not available at runtime. It usually happens if the class was successfully compiled but cannot be found or loaded at runtime due to missing dependencies or other issues. Unlike `ClassNotFoundException`, which is thrown when an application tries to load a class explicitly, `NoClassDefFoundError` can occur when the JVM needs the class to be present as part of the normal execution of the program.
+3. What is an immutable class in Java?
+An immutable class is a class whose instances cannot be modified after creation. Any modification results in a new instance of the class. Examples of immutable classes in Java include `String`, `Integer`, and `LocalDate`.
+
+4. How do you create an immutable class in Java?
+To create an immutable class in Java:
+1. Declare the class as `final` to prevent subclassing.
+2. Make all fields private and final.
+3. Do not provide setters for the fields.
+4. Initialize all fields via a constructor.
+5. Ensure that any mutable fields are not directly accessible and return copies of them if necessary.
+
+public final class ImmutableClass {
+ private final int value;
+ private final String text;
+public ImmutableClass(int value, String text) {
+ this.value = value;
+ this.text = text;
+ }
+public int getValue() {
+ return value;
+ }
+public String getText() {
+ return text;
+ }
+ }
+5. Why is immutability important in Java?
+Immutability is important because it:
+Simplifies reasoning about code since immutable objects cannot change state.
+Enhances thread safety as immutable objects can be shared between threads without synchronization.
+Provides security since the internal state of immutable objects cannot be altered.
+
+6. What is a `ConcurrentHashMap` and how does it differ from `HashMap`?
+`ConcurrentHashMap` is a thread-safe variant of `HashMap` that allows concurrent read and write operations without locking the entire map. It is part of the `java.util.concurrent` package. Unlike `HashMap`, which is not thread-safe and requires external synchronization, `ConcurrentHashMap` uses a combination of segment-level locking and non-blocking techniques to achieve concurrency.
+
+7. Explain how `ConcurrentHashMap` handles concurrency.
+`ConcurrentHashMap` handles concurrency by dividing the map into segments, each of which can be locked independently. This reduces contention and allows multiple threads to read and write to different segments concurrently. Additionally, it uses non-blocking algorithms for certain operations like `get`, ensuring high performance in multi-threaded environments.
+
+8. How can you make a Java collection read-only?
+You can make a Java collection read-only by using the `Collections.unmodifiableCollection` method. This method returns an unmodifiable view of the specified collection. Any attempt to modify the returned collection will result in an `UnsupportedOperationException`.
+
+List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
+List<String> readOnlyList = Collections.unmodifiableList(list);
+9. What is the `transient` keyword in Java?
+The `transient` keyword in Java is used to indicate that a field should not be serialized. When an object is serialized, the value of a `transient` field is not included in the serialized representation of the object.
+
+10. How is `transient` used in serialization?
+When a field is marked as `transient`, it is ignored by the serialization mechanism. For example, if an object’s state includes sensitive information or context-specific data that should not be persisted, you can mark those fields as `transient`.
+
+public class Example implements Serializable {
+ private transient String sensitiveData;
+ private String regularData;
+// getters and setters
+}
+11. Explain the difference between PermGen and Metaspace in the JVM.
+PermGen (Permanent Generation) was a memory area in the Java heap used to store metadata about classes, methods, and other reflection data. It was part of the heap memory and had a fixed size.
+Metaspace replaced PermGen starting with Java 8. It is not part of the heap and has no fixed size limit, growing dynamically as needed. This change reduces the risk of `OutOfMemoryError` related to metadata storage.
+
+12. Why was Metaspace introduced to replace PermGen?
+Metaspace was introduced to address the limitations and problems associated with PermGen, such as its fixed size leading to `OutOfMemoryError` when the metadata requirements exceed its capacity. Metaspace, being dynamically sized, improves flexibility and reduces memory management issues related to class metadata.
+
+13. What is serialization in Java?
+Serialization in Java is the process of converting an object’s state into a byte stream, which can be persisted to a file, sent over a network, or saved to a database. The reverse process is called deserialization, where the byte stream is converted back into a copy of the object.
+
+14. How do you serialize and deserialize an object in Java?
+To serialize an object, you use an `ObjectOutputStream` to write the object to an output stream. To deserialize, you use an `ObjectInputStream` to read the object from an input stream.
+
+// Serialization
+ try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("object.ser"))) {
+ oos.writeObject(object);
+ } catch (IOException e) {
+ e.printStackTrace();
+ }
+// Deserialization
+ try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("object.ser"))) {
+ MyClass object = (MyClass) ois.readObject();
+ } catch (IOException | ClassNotFoundException e) {
+ e.printStackTrace();
+ }
+15. When should you use the `volatile` keyword?
+The `volatile` keyword should be used when you need to ensure that a variable’s value is always read from and written to main memory, making it visible to all threads immediately. It is typically used for flags and counters that are accessed by multiple threads without using synchronized blocks or methods.
+
+private volatile boolean flag;
+16. What is externalization in Java?
+Externalization is an alternative to serialization in Java that allows you to customize the serialization process. It requires implementing the `Externalizable` interface, which has two methods: `writeExternal` and `readExternal`. You manually define how the object’s state is written to and read from a stream.
+
+17. How does externalization differ from serialization?
+The main differences are:
+Serialization is automatic and uses the `Serializable` interface, whereas externalization is manual and uses the `Externalizable` interface.
+In serialization, all non-transient fields are serialized by default. In externalization, you explicitly specify which fields to serialize.
+Externalization can provide better control over the serialization process and can result in smaller serialized forms by excluding unnecessary fields.
+
+18. When would you use externalization over serialization?
+You would use externalization over serialization when:
+You need to have precise control over the serialization process.
+You want to exclude certain fields or include only specific fields.
+You need to serialize objects in a more efficient format, potentially reducing the size of the serialized data.
+
+19. PermGen vs MetaSpace
+
+20. How to make data consistency if multiple threads are processing same time
+
+21. parallelStream
+
+We can achieve this by adding the parallel method to a sequential stream or by creating a stream using the parallelStream method of a collection:
+
+List<Integer> listOfNumbers = Arrays.asList(1, 2, 3, 4);
+listOfNumbers.parallelStream().forEach(number ->
+    System.out.println(number + " " + Thread.currentThread().getName())
+);
+22. Java 8 features
+
+Spring Boot
+Explain the concept of AspectOriented Programming (AOP)?
+AspectOriented Programming (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of crosscutting concerns (such as logging, security, and transaction management) from the business logic. In Java, AOP is implemented through aspects, which are modular units that encapsulate behaviors affecting multiple classes. AOP concepts include:
+Aspect: A module that encapsulates crosscutting concerns.
+Join Point: A point in the program execution (e.g., method execution).
+Advice: Action taken at a particular join point (e.g., before, after, or around method execution).
+Pointcut: A set of join points where an advice should be applied.
+Use cases: Logging, transaction management, security checks, performance monitoring, and error handling.
+2. Difference between @AspectJ and AOP
+@AspectJ: It is an annotation based syntax for defining aspects in Spring AOP. It uses annotations like @Aspect, @Before, @After, @Around, etc., to declare aspects and advice in Java classes.
+Traditional AOP: Involves configuring aspects in XML files. It requires defining pointcuts and advice in an XML configuration, which can be less intuitive and harder to maintain than annotationbased approaches.
+Differences: @AspectJ provides a more concise and readable way to define aspects within the code, while traditional AOP separates the aspect configuration from the business logic, which can be beneficial for clear separation of concerns.
+
+Get Java Codeex’s stories in your inbox
+Join Medium for free to get updates from this writer.
+
+Enter your email
+Subscribe
+
+Remember me for faster sign in
+
+3. Instantiating Multiple Beans of the Same Class with Spring Annotations
+The @Primary annotation in Spring is used to indicate which bean should be given preference when multiple beans of the same type exist. It helps resolve ambiguity during autowiring by specifying a primary candidate
+
+@Bean
+ @Primary
+ public MyService primaryService() {
+ return new MyServiceImpl1();
+ }
+@Bean
+ public MyService secondaryService() {
+ return new MyServiceImpl2();
+ }
+4. Use of @Qualifier
+The @Qualifier annotation is used to specify which bean should be injected when multiple beans of the same type exist. It helps resolve conflicts by providing an explicit reference to the desired bean.
+
+@Autowired
+ @Qualifier("secondaryService")
+ private MyService myService;
+5. How do you configure Spring Security in a Spring Boot application?
+Basic Configuration: Include the Spring Security starter in your pom.xml
+Security Configuration Class.java : Create a class extending WebSecurityConfigurerAdapter and override the necessary methods.
+
+@EnableWebSecurity
+ public class SecurityConfig extends WebSecurityConfigurerAdapter {
+ @Override
+ protected void configure(HttpSecurity http) throws Exception {
+ http
+ .authorizeRequests()
+ .antMatchers("/public/").permitAll()
+ .anyRequest().authenticated()
+ .and()
+ .formLogin()
+ .loginPage("/login")
+ .permitAll()
+ .and()
+ .logout()
+ .permitAll();
+ }
+ }
+ 
+ Application Properties: Configure securityrelated properties in application.properties if needed.
+6. Explain the process of securing a Spring Boot application with JWT (JSON Web Token).
+Steps:
+1. Add Dependencies: Include the necessary dependencies for JWT and Spring Security.
+2. Create a JWT Utility Class: Implement methods to generate and validate JWT tokens.
+3. Create a Filter: Implement a filter to intercept requests and validate the JWT token.
+4. Configure Security: Extend WebSecurityConfigurerAdapter and configure the security to use the JWT filter.
+
+7. How does OAuth2 work with Spring Security to provide secure authentication?
+OAuth2 is a protocol for authorization that allows thirdparty applications to access user data without exposing credentials. In Spring Security:
+Authorization Server: Issues tokens after validating user credentials.
+Resource Server: Validates the token and provides access to protected resources.
+Flow: The client requests authorization, receives an authorization code, exchanges it for an access token, and uses the token to access protected resources.
+Spring Configuration: Spring Security provides annotations and configurations to integrate OAuth2 easily, using @EnableAuthorizationServer and @EnableResourceServer.
+
+8. What is the purpose of a load balancer in a Spring Boot microservices architecture?
+A load balancer distributes incoming network traffic across multiple servers to ensure no single server becomes overwhelmed, thereby improving responsiveness and availability. It helps in:
+Distributing workload evenly.
+Increasing fault tolerance.
+Enhancing scalability by adding more instances.
+
+9. How can you implement load balancing in a Spring Boot application?
+ Spring Cloud LoadBalancer: Use springcloudstarterloadbalancer to enable clientside load balancing.
+ Ribbon: Although deprecated in favor of Spring Cloud LoadBalancer, Ribbon was used to provide clientside load balancing.
+ Example:
+
+ @SpringBootApplication
+ @EnableEurekaClient
+ public class Application {
+ public static void main(String[] args) {
+ SpringApplication.run(Application.class, args);
+ }
+ }
+10. List of Annotations in Spring Boot You Have Worked With?
+
+@SpringBootApplication
+ @RestController
+ @RequestMapping
+ @GetMapping
+ @PostMapping
+ @Autowired
+ @Component
+ @Service
+ @Repository
+ @Configuration
+ @Bean
+ @Primary
+ @Qualifier
+ @Value
+ @Profile
+ @EnableScheduling
+ @EnableAsync
+11. What is Spring Profiles?
+Spring Profiles provide a way to segregate parts of your application configuration and make it only available in certain environments. This allows you to have different configurations for development, testing, and production environments.
+Example: Define profiles in application.properties or application{profile}.properties and activate them via the spring.profiles.active property.
+
+12. How to Send API Metrics Every Specific Time Frame
+
+13. What is Docker and how does it benefit application development and deployment?
+Docker is a platform for developing, shipping, and running applications in containers. Containers are lightweight, portable, and selfsufficient units that include the application and its dependencies.
+Benefits:
+Consistency across development, testing, and production environments.
+Simplifies dependency management.
+Enables microservices architecture.
+Enhances scalability and resource utilization.
+
+14. Explain the role of Kubernetes in container orchestration and management.
+Kubernetes is an opensource platform for automating the deployment, scaling, and management of containerized applications. It provides:
+Orchestration: Manages container lifecycles, networking, and storage.
+Scaling: Automatically scales applications based on resource usage.
+Load Balancing: Distributes network traffic to ensure high availability.
+Selfhealing: Restarts failed containers and replaces them as needed.
+Declarative Configuration: Manages applications using declarative YAML or JSON configurations.
+
+15. How can you exclude specific dependencies or configurations in a Spring Boot application?
+ Maven Exclusions: Use the <exclusions> tag in the pom.xml file to exclude specific dependencies.
+ xml
+
+ <exclusion>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>springbootstartertomcat</artifactId>
+ </exclusion>
+16. Spring Boot Transaction Management
+
+DataBase
+
+Database Optimization techniques
+What is Union and UninonALL
+Second highest employee salary
+tell me about Aggregate Functions
+Angular 12
+
+Life cycle hooks
+diff between promises and Observables
+How to pass data between components (Parent -> Child and Child -> Parent)
+What is Pipe how to create Custom pipes
+diff between directive and components
+How to configure routers in angular
+Diff between AOT and JIT compiler
+diff between angular vs react
+Thank you, keep learning!
+
+ajtech
+Thank you for reading until the end. Before you go:
+
+Please consider clapping and following the writer! 👏
+Follow us on LinkedIn | YouTube
+Follow me for more exciting content
+
+[**Follow me on Medium**](https://medium.com/@saijanand)
+
+Java
+Programming Languages
+Spring
+Spring Boot
+Interview
+18
+
+
+1
+
+
+DevOps.dev
+Published in DevOps.dev
+26K followers
+·
+Last published 1 hour ago
+Devops.dev is a community of DevOps enthusiasts sharing insight, stories, and the latest development in the field.
+
+
+Follow
+Java Codeex
+Written by Java Codeex
+933 followers
+·
+6 following
+
+Follow
+Help
+
+Status
+
+About
+
+Careers
+
+Press
+
+Blog
+
+Store
+
+Privacy
+
+Rules
+
+Terms
+
+Text to speech
+
 Skip to content
 Tangolearn
 Courses
