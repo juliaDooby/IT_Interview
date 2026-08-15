@@ -1,19 +1,294 @@
-in28minutes
-Home
-Articles
-Roadmaps
-Subscribe
-Spring Interview Questions
-blog details
-author
-Ranga Karanam
-July 04, 2022
-17 minutes
-Image
 
-This guide will help you understand the most important concepts in Spring in preparation for a Spring Interview.
+Skip to content
+Whizlabs Blog
+Search for:
+What you’re looking for?
 
-Image
+Training Library
+Platform
+For Business
+Pricing
+Explore | AWS Sandbox | Azure Sandbox | Google Sandbox | Power BI Sandbox
+
+HomeJavaTop 25 Spring Framework Interview Questions
+Spring Framework Interview Questions
+Top 25 Spring Framework Interview Questions
+Java / By Aditi Malhotra
+Aspired to pursue a career in Spring Framework? Or preparing for a Spring Java interview? This article will help you to prepare yourself with the Spring Framework Interview Questions during your Spring Java interview preparation. 
+
+Spring Framework is the best Java EE Framework for web applications. It is a very lightweight application that offers immense flexibility during runtime. Also, it provides dependency injection and inversion control, which is a useful API for Java programmers. Seeing its rapid growth in popularity and lucrative career prospects, Java programmers need to be more prepared for the Spring interview.
+
+If you are preparing for a Spring interview, we recommend you go through the top Spring interview questions and prepare well. You can also get a Spring certification to increase your chances to be considered for the job. You can clear your doubts and gain more knowledge by reading a few good Spring book. Let’s focus on the interview questions here and move to the most common Spring framework interview questions.
+
+Also Check: Java Interview Questions and Answer
+
+Top 25 Spring Framework Interview Questions
+Here we bring the set of top 25 Spring Framework interview questions that will help you crack the interview. Whether you are a beginner or an experienced Java developer, these Spring interview questions will prove an important resource in your interview preparation. So, let’s get ahead and be ready to ace your Spring Framework interview.
+
+1. What is the Spring Framework and why Java Programmers should use it?
+Answer: It’s one of the most common Java Spring Framework interview questions. Spring is one of the most widely used Java EE Framework used by Java Programmers for code development. It provides Dependency Injector, MVC flow, Aspect Oriented Programming, and IOC Container to the Java Programmers. Useful in normal Java applications, it helps to acquire loose coupling in different elements.
+
+This is done by the implementation of dependency injection that helps perform complex tasks. These tasks may include authentication and logging with spring support for Aspect Oriented Programming.
+
+Being an open source framework with many online resources, it is easy to work with the Spring Framework. It is also known as the frameworks of frameworks because it supports different frameworks like Hibernate, Tapestry, EJB, Struts, JSF, Tapestry, etc.
+
+2. What are the features of Spring Framework?
+Answer: This is also one of the basic interview questions on Spring Framework. The focus of the Spring Framework is to simplify the process of Java Development.
+
+As Spring Framework is lightweight in terms of size and transparency, it causes a slight overhead in development.
+The Inversion of Control is a Spring Framework container looks after the aspect of writing components that work independently. The Spring Framework container wires them together to fulfill the work.
+The Spring MVC Framework is useful in creating web applications or restful web services. This subsequently helps to return XML and JSON responses.
+The Aspect Oriented Programming in Spring Framework separates the business logic from system services to support cohesive development.
+The IoC container can manage the Spring Bean lifecycle and configurations related to project like JNDI lookup.
+It provides support for transaction management, exception handling, file uploading, etc.  with Java annotations or XM configuration file of Spring Bean.
+It simplifies the error handling strategy with JDBC extraction layer of Spring Framework that has an exception hierarchy.
+ 3. What are the benefits of using Spring Framework?
+Answer: If you’ve done browsing earlier to find some popular Spring Framework interview questions, then you have certainly come across this question.
+
+The layered architecture in Spring Frameworks, you can use and leave components as per your preferences.
+No vendor can lock-in as it is an open source.
+It consists of Plain Old Java Object programming that helps in continuous integration and testability.
+Simplified JDBC because of the dependency injection and IoC (Inversion of Control).
+It’s a powerful open source framework that reduces the complex process of enterprise application development.
+4. What is the meaning of Dependency Injection?
+Answer: It’s an aspect of Inversion of Control (IoC), which states that there is no need to create objects manually. Instead, it is important to mention how they are created.  These design patterns help to remove the hard-coded dependencies and instead it injects dependency on Object. Dependency Injection makes unit testing easy, separation of concerns, boilerplate reduction and configurable components.
+
+In this process, objects need to define their dependencies. The container injects these dependencies and creates the bean. The bean then controls the instantiation by using Service Locator or direct construction classes.
+
+The advantage of using dependency injection is that it gives the configuration flexibility. The one thing, which is fixed, is the client’s behavior. It does not demand any changes in code behavior can be used as refactoring in legacy code.  The high cohesion in DI help maximizes module reusability and minimizes module complexity.
+
+While some of its disadvantages include difficulty in tracing the code, explosion of types, tight coupling and requiring configure details via construction code. If you know the whole thing about dependency injection, you’ realize later that most of your Spring Framework interview questions will be based on this topic only.
+
+5. How can we implement DI (Dependency Injection) in Spring Framework?
+Answer: This question adds to a list of Spring Framework interview questions and answers for experienced Java Programmers. For implementing DI in Spring Framework applications, we can use both Spring XML based and Annotation based configuration.
+
+Dependency injection with Spring XML
+
+A new Java project with de.vogella.spring.di.xml configuration should be created. Then add the minimum spring jars into the classpath. You have to copy the model class from the de.vogella.spring.di.model project and paste into this project. Create a folder with name META-INF under the src folder and create your spring configuration file in this folder.
+
+Configuring the DI in a spring framework with annotations is easy. First, create a Java project de.vogella.spring.di.annotations.first and add the minimum spring jars into the classpath. Then you have to copy the model class from the new project just created into this project. Now you will need to add annotations to inform spring which beans require to be connected and managed.  @Service annotation should be added to the NiceWriter.java and MySpringBeanWithDependency.java. Define @Autowired on the setWriter that the Spring will autowire the property writer.
+
+6. What is @Autowired Annotation?
+Answer: The objective of @Autowired annotation is to give accurate control to know the location and method of autowiring. This is a type driven injection by default and find its uses in the autowire bean, constructor, etc. In case of dependency injection, @Autowired will first inform spring to look for a spring bean that will implement the required interface and put it into the setter. The @Autowired annotation is applied to the following:
+
+@Autowired on property
+@Autowired on constructor
+@Autowired on the setter method
+You can activate this annotation by including <context:annotation-config /> tag in the configuration file.
+
+Even when you are preparing for a Spring Java interview, the fundamental and advanced knowledge in various aspects of Java is recommended. So, check out these top 100 Java Interview Questions and get fully prepared for the interview.
+
+7. What is Inversion of Control (IoC)?
+Answer: IoC is a principle or a point during which the flow of the program is inverted. Rather, the external sources like framework and services and programmer control the flow of the program. As the name, Inversion of Control means inverting the control to get the loose coupling and creates the object with the new operator to container or framework. Now it’s the responsibility of the container to create an object as required.
+
+In loose coupling, the @Autowired annotation over the reference and Spring Framework takes control to inject the dependency. While in tight coupling, the responsibility to create the dependency is on dependent class. This is again an important question that you’ll definitely find in your upcoming Spring Framework interview questions.
+
+8. What is Spring Bean and what is its scope?
+Answer: Spring Bean is a normal java class, which is initialized using the Spring IoC container. Spring ApplicationContext is used to fetch the Spring Bean instance. It is assembled, instantiated and managed by a Spring IoC container. Spring beans are created by using configuration metadata that you will pass to the container.
+
+There are three ways to supply the configuration metadata to the Spring IoC container. These include XML-based configuration file, annotation-based configuration, and Java-based configuration.
+
+Spring Framework supports the five scopes of a Spring Bean
+
+Singleton- uses only one bean instance for each container. In this scope, Spring Bean should not have shared instance variables as that may cause data inconsistency.
+Session- uses a new bean for each HTTP session.
+Global-session- creates global session beans for use in Portlet applications.
+Prototype- creates a new instance every time with the request for the bean.
+Request- similar to prototype scope but used for web applications
+ 9. How can we inject beans in Spring Framework?
+Answer: As this is a little practical concept, this question is often seen in the Spring Framework interview questions and answers for experienced users. Options like setter injection, constructor injection and field injection exists that helps to inject beans in the Spring Framework. However, the configuration is possible using XML file or annotations.
+
+Setter-based injection
+
+Answer: The setter injection happens in a situation when container asks for a setter method on your beans. This occurs after it has invoked a no-argument static factory method or a no-argument constructor to instantiate that bean. Here is an example showing a class that can only have pure setter injection.
+
+For example:
+
+public class SimpleStudentList {
+
+    // the SimpleStudentList has a dependency on StudentFind
+
+    private StudentFind studentFind;
+
+    // a setter method that Spring container can 'inject' a StudentFind
+
+    public void setStudentFind(StudentFind studentFind ) {
+
+        this.studentFind = studentFind ;
+
+    }
+
+    // business logic
+
+}
+Constructor-based injection
+
+This occurs when the container calls a constructor with a number of arguments, representing a dependency or other class. To construct the bean, particular arguments invoke a static factory method.
+
+For example:
+
+public class SimpleStudentList {
+
+    // the SimpleStudentList has a dependency on StudentFind
+
+    private StudentFind studentFind;
+
+    // a constructor that Spring container can 'inject' a StudentFind
+
+    public SimpleStudentList(StudentFind studentFind ) {
+
+        this.studentFind = studentFind ;
+
+    }
+
+    // business logic code
+
+}
+10. What is Spring Bean Lifecycle?
+Answer: Based on the definition of Java or XML, first, there is a need to create a spring instance. Spring Beans may require initialization to have it in a usable state. Once there is no requirement of bean, it is removed from the IoC container. Spring Framework helps in post-initialization and pre-destruction methods in Spring Beans. As this is the most popular Spring Framework Interview Questions among interviewers, we’re providing you with more information.
+
+Once the bean is destroyed, there may be a need for some cleanup activity for the given bean. The collection of these activities is called bean lifecycle.
+
+11. What is the significance of Spring Bean configuration file?
+Answer: Spring bean configuration file defines all the beans that are initialized by Spring Context. It reads the XML file of spring bean when there is a need to create the Spring ApplicationContext instance. After the initialization of context, we can utilize it to get various bean instances. Besides Spring bean configuration, the spring bean configuration file also consists of view resolvers, spring MVC interceptors and other aspects that can support annotations based configurations.
+
+12. What is view Resolver Pattern and how it works in Spring MVC?
+Answer: It is often that interviewers ask this question as it is assumed to be one of the most popular Spring Framework interview questions. It is a J2EE pattern that allows a web application to select its view technology dynamically. For example, it can use XSLT, JSF, HTML or any other technologies.
+
+View resolver provides the accurate mapping of different views, along with the controller return name of the view, which then passes to view resolver to choose an appropriate view.
+
+To choose the views, Spring MVC framework supplies with inbuilt view resolver as well.
+
+13. What is Spring Security?
+Answer: Formerly known as Aegis Security, Spring Security is a framework that aims to provide both authorization and authentication in Java applications. It provides out-of-the-box support to create login screens, securing URL, LDAP and in memory, remember me cooking support and much more. Through the use of annotations such as @EnablewebSecurity, it becomes easier to use Spring Security in web applications.
+
+14. Does spring bean provide thread safety in Spring Framework?
+Answer: Singelton is the default scope of Spring Bean. This is why there is only one instance per context. It means that they have a class level variable that is upgradable by any thread. Thus, it can create data inconsistency, which suggests there is no thread safety in spring beans. Spring container only takes care of the lifecycle of the object, and it also assures that there is only one object in spring container.
+
+Thus, injection of the non-thread safe object is completely not threaded safe. You have to deal with it by coding to make it thread-safe. In case, it’s a web application; you can achieve the thread safety with scope (“request”). As for every new request, it creates a new object or scope (“prototype”). It creates a new bean for each invocation. Though the answer to this question is very easy, still, some of the interviewers like to add it to their list of Spring Framework interview questions.
+
+Also Read: Top 5 Java Frameworks
+
+15. What is a Controller in Spring MVC?
+Answer: Similar to the MVC design pattern, Controller is also a class that focuses on client requests and handles them in configured resources. The class which initializes the context as per the spring beans configurations; the front controller class in Spring MVC is org.springframework.web.servlet.DispatcherServlet. It is responsible for handling different types of client requests according to the request mappings. The given question is usually in the list of Spring Framework interview questions for experienced users.
+
+16. How to enable transactions in spring and what are their benefits?
+Answer: The two different ways to enable or configure transactions includes- Aspect Oriented Programming or annotations. Spring Transactions offer a programming model, which remains consistent through different transaction APIs like JTA, Hibernate, JDO, JPA, and JDC.
+
+It integrates very well with different data access abstractions in Spring Framework. Another benefit is that it supports declarative transaction management. Also, it offers a simpler API to deal easily with programmatic transaction management.
+
+Here is an example on how to enable transaction with spring XML configuration, using JPA transaction API and namespace support:
+
+<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+
+   <property name="entityManagerFactory" ref="myEmf" />
+
+</bean>
+
+<tx:annotation-driven transaction-manager="txManager" />
+17. How to create ApplicationContext in a Java Program?
+Answer: This question usually comes up in a quick discussion of top spring framework interview questions. Below are the ways to create ApplicationContext in a standalone java program:
+
+ClassPathXmlApplicationContext- If the XML file is of spring bean configuration in a standalone application, then this class play its role in loading the file and get the container object.
+
+AnnotationConfigApplicationContext- This is used to initialize the container and get the objects in the bean. It comes to play its part when we use annotations for Configuration and Spring Framework in standalone Java applications.
+
+FileSystemXmlApplicationContext- Likewise ClassPathXmlApplicationContext, this class also uses the spring bean configuration in standalone application. There is just one difference that the XML configuration file can be loaded from any location in the file system.
+
+18. What is the relation between Spring MVC Framework and MVC architecture?
+Answer: Built on top of the Model-View-Controller architecture, Spring MVC uses the DispatcherServlet as its front controller. It looks after all the incoming requests and then delegates these requests to different controller handler methods.
+
+Spring MVC framework is similar to other MVC framework in the way that it offers form data in automatic binding to java beans. View pages use these model beans as attributes.  These view pages may include static HTML, JSP, etc. However, view resolvers hold the responsibility to find the correct view page. After the identification of the view page is made, the control is handed over back to the DispatcherServlet controller. This is simple yet one of the best Java Spring Framework interview questions that never show its absence in the interviews.
+
+19. What do you mean by Spring DAO?
+Answer: Spring DAO provides its support to work with data access technologies like JDO, JDBC, Hibernate, Oracle and Common Client Interface. There is no need to look for specific exceptions as Spring DAO provides consistency in the exception hierarchy. This makes it easier to shift between persistence technologies. Also, it allows one to code without any worry to catch exceptions that are related to each of these technologies. It helps in the integration of object-relational mapping objects and Java database connectivity. DAO classes throw SQLException in Spring Throw. The benefit of using DAO module is that it becomes simple to keep database code clean with DAO module.
+
+Furthermore, it also helps to prevent any issues that may arise due to poor handling of database resources closures. To enable objects in Spring Framework application and use transaction management services, DAO module uses AOP module.
+
+20. How to integrate Spring Framework and Hibernate Frameworks?
+Answer: To integrate the Spring Framework and Hibernate Frameworks, Spring ORM module can be used. But, if you use Hibernate 3+, then try to avoid HibernatedaoSupport or HibernateTemplate classes. Rather use DAO pattern that provides dependency injection for integration. Moreover, Spring ORM gives support to use Spring Framework declarative transaction management. So, rather than choosing the code of hibernating boiler-plate, use the Spring Framework declarative transaction management.
+
+This is a somewhat practical question, in contrary to other spring framework interview questions.
+
+21. How to achieve transaction management in Spring?
+Answer: Programmatic transaction management and declarative transaction management are the two methods that support Spring Framework. The commonly used method is Declarative transaction management as it is easy to use and compatible with most of the cases. For declarative transaction method, the @Transactional annotation is used. Then the configuration of transaction manager for DataSource is done in the spring bean configuration file.
+
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+
+<property name="dataSource" ref="dataSource" />
+
+</bean>
+As this question is very common in interviews, the interviewee should not forget to prepare this question with other Spring Framework interview question and answers.
+
+New to the Spring Framework? Let’s begin with the quick introduction to Spring Framework 5.
+
+22. What is the difference between @Controller, @Component, @Service and @Repository annotations in Spring?
+Answer: The difference between @Controller, @Component, @Service, and @Repository can be given as follows:
+
+@Controller- The @Controller annotation represents a Spring Web MVC controller as a class. Dependency injection receives the automatically imported beans marked with a @Controller annotation.
+
+@Component- For any Spring-managed component, @Component is a generic stereotype. The spring component-scanning mechanism now gets it and put it into the application context.
+
+@Service- @Service annotation is a unique feature of a component annotation. This annotation does not add any additional behavior to the @Component annotation. To define intent in a better way, the @Service annotation can be used over @Component in service-layer classes.
+
+@Repository- Having similar use and functionality as @Component annotation, @Repository annotation offers extra benefits for DAOs. This annotation makes it easier for unchecked exceptions to translate into Spring DataAccessException.  
+
+23. What are DispatcherServlet and ContextLoaderListener?
+Answer:  As a core part of the Spring Web MVC framework, DispatchServlet deals with all the HTTP requests and responses. It receives the handler mapping request from the configuration file and forwards it to the controller. DispatcherServlet checks the view resolver entry in the configuration file and then call the specified view component.
+
+The ContextLoaderListener first creates a context for root web-application context and then place it in the ServletContext. One of its most important functions is to integrate the ApplicationContext lifecycle to the ServletContext. It also automates the creation of ApplicationContext.  
+
+24. List some important Spring Framework annotations?
+Answer: This is one of the most important Spring Framework interview questions that interviewer asks to judge the basic knowledge of a candidate.
+
+@Qualifier- When multiple instances are present in bean type, then the @Qualifier annotation is used with a @Autowired annotation to avoid confusion.
+
+@RequestMapping- As this is a very useful annotation, you need to know of some Annotation examples of Spring MVC RequestMapping. @RequestMapping is used to configure URI mapping in controller handler methods.
+
+@ResponseBody- @ResponseBody annotation is used to send data as a response XML or JSON.
+
+@Scope- It is used to configure the spring bean scope.
+
+@ComponentScan, @Configuration and @Bean- These are the annotations generally used for configurations based on java.
+
+25. What are some of the best practices for Spring Framework?
+Answer: Here are some of the best practices for Spring Framework:
+
+Based on the concerns like spring-security.xml and spring-jdbc.xml, the division of spring bean configuration is possible.
+To ensure there are latest configurations, avoid using version numbers in schema reference.
+Avoid autowiring and try to configure bean dependencies.
+Use only the modules that you need. Do not keep any extra dependencies that are added during the creation of projects via Spring Tool Suite Templates.
+Don’t use dependency injection just for the sake of loose coupling, as it will become difficult for you to maintain. Just use it for actual benefit.
+To understand the purpose easily, use the proper annotations for components.
+Final Words
+So here we’ve covered the top interview questions on Java Spring Framework. Hope, this post on Spring Framework interview questions and answers will help you to ace your upcoming spring interview. If you know some more interview questions on Spring Framework, make sure to add it in a comment. We’d be happy to cover them in this article with the detailed answers. 
+
+Getting a certification also proves as an add-on in your interview preparation. If you are aspired to achieve a better job as a Java developer, you can validate your skills and knowledge with a Java certification. Check out our Oracle Java certifications training that will help you become a certified Java professional.
+
+Have any questions regarding Java Spring Framework? Ask us in the comment below, we’ll be happy to answer you.
+
+ About the Author
+ More from Author
+
+About Aditi Malhotra
+Aditi Malhotra is the Content Marketing Manager at Whizlabs. Having a Master in Journalism and Mass Communication, she helps businesses stop playing around with Content Marketing and start seeing tangible ROI. A writer by day and a reader by night, she is a fine blend of both reality and fantasy. Apart from her professional commitments, she is also endearing to publish a book authored by her very soon.
+Top 45 Fresher Java Interview Questions - March 9, 2023
+25 Free Practice Questions – GCP Certified Professional Cloud Architect - December 3, 2021
+30 Free Questions – Google Cloud Certified Digital Leader Certification Exam - November 24, 2021
+4 Types of Google Cloud Support Options for You - November 23, 2021
+APACHE STORM (2.2.0) – A Complete Guide - November 22, 2021
+Data Mining Vs Big Data – Find out the Best Differences - November 18, 2021
+Understanding MapReduce in Hadoop – Know how to get started - November 15, 2021
+What is Data Visualization? - October 22, 2021
+← Previous Post
+Next Post →
+Related Posts
+Sun Certified Java Associate (SCJA) CX-310-019 Certification Exam Preparation
+Leave a Comment / Java / By Aditi Malhotra
+Oracle Java Certifications – Change of testing centre to Pearson VUE from Prometric
+Leave a Comment / Java / By Aditi Malhotra
+1 thought on “Top 25 Spring Framework Interview Questions”
+
 
 Q : What is the need for a Component Scan?
 If you understand component scan, you understand Spring.
