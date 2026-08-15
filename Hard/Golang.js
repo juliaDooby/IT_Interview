@@ -1,27 +1,228 @@
-Skip to main content
-Hashnode
-Bikram Sarkar's Blog
+Boot.dev
+Courses
+Training
+Pricing
+Leaderboard
+Community
 
+Sign In
+All
+Golang
+News
+Python
+Backend
+DevOps
+Computer Science
+Jobs
+Education
+JavaScript
+Security
+Vue
+Rust
+Top 15 Golang Interview Questions [Updated 2026]
+Boot.dev Blog»Golang»Top 15 Golang Interview Questions [Updated 2026]
+Lane Wagner
+Lane Wagner
+Boot.dev co-founder and backend engineer
+Last published February 21, 2026
 
-Open search (press Control or Command and K)
+Let's take a look at some good technical questions to be familiar with, whether you are looking to nail your next Golang interview, or if you're the interviewer yourself..
 
-Toggle theme
-Write
-Command Palette
-Search for a command to run...
+1. What's the difference between a goroutine and an operating system thread?
+Go provides built-in channels for goroutines to communicate safely between themselves.
+More goroutines can run on a typical system than system threads. For example, with Java, you can run many thousands of threads. With Go, you can run many millions of goroutines.
+Goroutines startup more quickly than operating system threads.
+Multiple Goroutines are multiplexed onto OS threads, rather than a 1:1 mapping.
+You can write massively concurrent servers without having to resort to event programming.
+Goroutines are not hardware-dependent like threads.
+Goroutines are more lightweight, largely due to segmented stacks in memory
+2. Can constants be computed in Go?
+Constants can not be computed at runtime, their value must be known at compile time. That said, constants can be computed at compile-time, typically as a derivative of other constants. For example:
 
-Golang Interview Questions
-Prepare for Golang Interview
+const hours = 7643
 
-Updated
-June 19, 2023
-•
-2 min read
-•
-View as Markdown
-Golang Interview Questions
-Bikram Sarkar
-Bikram Sarkar
+const minutes = hours * 60
+
+3. What does the Go ecosystem use for package and dependency management?
+Until recently the GOPATH setup allowed developers to import packages as long as they were in the local Go workspace. As of Go ~1.13 it's recommended to use go mod. With go mod, source code isn't required to be a part of the GOPATH environment variable.
+
+Go doesn't use a package manager like NPM or Cargo. The Go toolchain provides commands like go get for fetching external dependencies straight from their remote source control repositories, and go mod for managing the dependencies of a specific project.
+
+4. How would you succinctly swap the values of two variables in Go?
+var1, var2 = var2, var1
+
+5. Do you have any preferences for error-handling methodologies in Go?
+Errors in Go are an interface type, where any type that implements the single Error() method can be considered an error:
+
+type error interface {
+    Error() string
+}
+
+Whenever a function has a possibility to go wrong, like a network call or a type conversion, the function should return an error as its last return variable. The caller should check the error value, and any value other than nil is considered an error.
+
+Idiomatic Go developers should prefer guard clauses over if-else chains, especially when handling errors. Errors should also be wrapped in a meaningful way as they are passed up the call stack if appropriate.
+
+6. What is a pointer and when would you use it?
+A pointer holds the memory address of a value.
+
+& generates a pointer to its operand.
+* dereferences a pointer (exposes the underlying value).
+Pointers can be used to:
+
+Allow a function to directly mutate a value that is passed to it
+To increase performance in edge cases. Sometimes passing a large struct of data results in inefficient copying of data
+To signify the lack of a value. For example, when unmarshalling JSON data into a struct it can be useful to know if a key was absent rather than it being present with the zero value.
+7. Describe the difference between sync.Mutex and sync.RWMutex
+The normal mutex locks data so that only one goroutine can access it at a time.
+
+A RWMutex (read/write) can lock data for "reading" and for "writing". When locked for reading, other readers can also lock and access data. When locked for writing no other goroutines, including other readers can access the data.
+
+8. Consider the following code. What will be the value of s1?
+primes := [6]int{2, 3, 5, 7, 11, 13}
+s1 := primes[1:4]
+
+s1 will be: [3 5 7]
+
+When slicing an existing array or slice the first index is inclusive while the last index is exclusive. If an index is omitted on one side of the colon, then all values until the edge of the original slice are included in the result.
+
+9. Are channels and maps safe for concurrent access?
+Channels are safe for concurrent access, for this reason, they have blocking operations. Maps are unsafe for concurrent access and require a locking mechanism like a mutex to be safely used across goroutines.
+
+10. How would you sort a slice of custom structs?
+I would build a new type that represents a slice of that struct type. For example:
+
+type fruitSlice[]fruit
+
+type car struct {
+	size int
+	color string
+}
+
+Then I would fulfill the standard library's sort.Interface:
+
+type Interface interface {
+    Len() int
+    Less(i, j int) bool
+    Swap(i, j int)
+}
+
+I would then be able to use the sort.Sort function:
+
+sort.Sort(fruitSlice(cars))
+
+11. Does Go support generic programming?
+Go doesn't currently support generics, but support is coming in 1.18. Generics will allow us as developers to write code that operates on types without needing to re-implement the same function multiple times for all the different types.
+
+For example, say you want to implement a Binary Tree in Go, that can store any type of item. This should be easy because the binary tree shouldn't care about the types it stores, it never needs direct access to them. Currently, you only have two options: rewrite the tree for every type you want to support, or use an interface and cast the type every time you insert or remove something from the tree, neither of which are ideal solutions.
+
+12. Is nil only valid on pointer types?
+Nope! nil is the zero value for pointers, interfaces, maps, slices, channels, and function types. nil represents an uninitialized value.
+
+13. Does Go provide support for OOP via classes?
+No, Go isn't an object-oriented programming language. Interfaces are the way we handle most abstractions in Go, and it requires an entirely different way of thinking.
+
+14. How do you export functions from a package?
+Exported functions in Go just need to be capitalized to be exported.
+
+func DoWork(){
+    // this function is usable outside this package
+}
+
+func doWork(){
+    // this function is NOT usable outside this package
+}
+
+15. What do you like about Go?
+Well, this one's up to you, but I have a few things in mind.
+
+Easy for beginners
+Modern language with simple syntax
+Ease of concurrency
+Great pay
+Built for the web
+Fast
+Memory efficient
+Related Articles
+Unexpected Printf Behavior in Go WASM - Nothing Prints
+Aug 10, 2020 by Lane Wagner - Boot.dev co-founder and backend engineer
+
+While working on boot.dev's Go Playground, I came across a very strange error. The standard library's fmt.Printf() function prints nothing to the console when called. Nothing.
+
+Authenticate Users with "Sign In With Google" in Golang
+Jul 22, 2020 by Lane Wagner - Boot.dev co-founder and backend engineer
+
+Users love convenience. If your goal is to make it easy for users to register with your app or website, then implementing the "Sign in with Google" option should be at the top of your priority list. If you are like me, then you may find Google's documentation on the subject to be lackluster at best, and downright confusing at worst. Here we will go step-by-step through the authentication process so you can implement Google sign-in easily.
+
+Rust Backend vs Go Backend in Web Development
+Jul 17, 2020 by Lane Wagner - Boot.dev co-founder and backend engineer
+
+Rust and Go are two of the industry's biggest successes when it comes to developing modern programming languages. Both languages compete in terms of backend web development, and it's a fierce competition. Golang and Rust are new languages, have growing communities, and are fast and efficient. When it comes to microservice architectures, frameworks, and apps, Rust and Go are household names on the backend.
+
+Running Go in the Browser With Web Assembly (WASM)
+Jul 01, 2020 by Lane Wagner - Boot.dev co-founder and backend engineer
+
+If you are familiar with the Go Playground, then you know how convenient it is to be able to have a Go scratchpad in the browser. Want to show someone a code snippet? Want to quickly test some syntax? Browser-based code pads are helpful. On that note, I created a new playground. The cool thing about this new playground that it doesn't use a remote server to run code, just to compile it. The code runs in your browser using web assembly (WASM).
+
+Platform
+All Courses
+Training Grounds
+Backend Path (Python/Go)
+Backend Path (Python/TS)
+DevOps Path (Python/Go)
+Data Analyst Path (Python)
+Leaderboard
+Search Challenges
+Playground
+Boot.dev on X/Twitter
+Boot.dev on YouTube
+Boot.dev on LinkedIn
+Boot.dev on Instagram
+Boot.dev on TikTok
+Backend Banter Podcast
+Languages
+Python
+Go (Golang)
+TypeScript
+JavaScript
+SQL
+Subjects
+Linux
+Kubernetes
+Git
+Docker
+RabbitMQ
+Data Structures & Algorithms
+Object-Oriented Programming
+Cryptography
+Support
+Contact
+FAQ
+Return Policy
+Affiliate Terms
+Privacy Policy
+Terms of Service
+Pricing
+Pricing Plans
+Gift Codes
+Redeem Gift
+Org Plans
+For Schools
+For Business
+Expense a Purchase
+Community
+Community
+Guilds
+Lore
+Artists
+Blog
+Curriculum Roadmap
+Reviews
+Careers
+About
+boot.dev
+© Boot.dev 2026
+Do Not Share My Information
+
 Forward-thinking IT Operations Leader with cross-domain expertise spanning incident & change management, cloud infrastructure (Azure, AWS, GCP), and automation engineering. Proven track record in building and leading high-performance operations teams that drive reliability, innovation, and uptime across mission-critical enterprise systems. Adept at aligning IT services with business goals through strategic leadership, cloud-native transformation, and process modernization. Currently spearheading application operations and monitoring for digital modernization initiatives. Deeply passionate about coding in Rust, Go, and Python, and solving real-world problems through machine learning, model inference, and Generative AI. Actively exploring the intersection of AI engineering and infrastructure automation to future-proof operational ecosystems and unlock new business value.
 
 Preparing for a Golang interview can be both exciting and nerve-wracking. To help you and me ace our next Golang interview, I have compiled a list of questions. Whether you are a novice or an experienced developer, this blog will provide you with valuable insights into the most common Golang interview questions and help you brush up on your knowledge of Golang.
