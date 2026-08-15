@@ -1,3 +1,213 @@
+Skip to content
+
+Blog Home
+Job Search
+Job Interview Guides
+Software Engineering
+Search
+Type here to search...
+
+
+Search
+9 Must-Know Backend Developer Interview Questions for 2023: API Versioning, Sorting Algorithms, and More.
+Kartikey Bhardwaj
+October 23, 2020
+Jump to
+No headings were found on this page.
+With currently over 1.8 billion websites registered and counting, the ticker moves faster than a clockʼs seconds hand. Of these, it is estimated that less than 25% are currently active, leading us to a still eye-catching figure of about 400 million active websites. To keep these websites up and running, while looking pretty, is the job of the frontend, backend, or full-stack developer. The programming and technology that refers to the server-side of an application, is called backend.
+
+The backend of any application, also known its brain, involves communication between servers, databases, and applications (or browsers). It is the backend developerʼs responsibility to ensure that these three components communicate seamlessly with each other to facilitate the user-facing side of the websites.
+
+A backend developer needs to be proficient with several tools and skillsets to be great at their job, as seen in highly skilled developers. When it comes to highly functional mobile application or website application with heavy payload such as Netflix or Amazon, concepts of new generations are brought in to ease the workflow and enhance the availability of content provided by any service. Such concepts include publisher-subscriber model, queuing, messaging, sockets, etc. As development team size grows, involved developers goals include speed, data integrity, and support for distributed, non-linear workflows.
+
+A basic understanding is required for how application will communicate to its backend. REST, GraphQL, gRPC, sockets, etc are some widely used communication practices. Security of data communication between systems is essential part of backend. Without it, data breaches are common making any application vulnerable.
+
+Below are some typical skills a backend developer must possess:
+
+Server-Side Languages & Frameworks: Ruby, Perl, Python, PHP, Node.JS, Angular, .Net, ASP.Net
+Database Skills: MySQL, Oracle, NoSQL, MongoDB or PostgreSQL
+Others: Apache, Nginx, Docker, Kubernetes, Git, OAuth, etc.
+Given that there is such a large scope for discussion in an interview, candidates need to prepare for and be ready to answer certain questions with flair and confidence. Below is a list of 9 questions, which backend developers should be prepared to answer.
+
+1. How would you manage Web Services API versioning?
+Versioning is a critical part of API design, as it gives developers the ability to improve their API without stopping the clientʼs applications whenever new updates are rolled out. The three types of API versioning are:
+
+URL Versioning or Route Versioning: This solution uses URI routing to point to a specific version of the API.
+Versioning using a custom header: REST APIs are versioned by providing custom headers with the version number included as an attribute.
+Query String Parameter: Considered to be the worst method, the version number is included as a query parameter.
+2. How would you find the most expensive queries in an application?
+Expensive queries are database queries that execute very slowly or utilize large amounts of CPU or memory resources. These queries are the most common cause of performance issues in an application.
+SQL Activity Monitor is an easy and rich UI tool available in the SQL Server Management Studio. You can also use SQL Dynamic Management View (DMV) to view the most expensive queries.
+
+3. What is CAP Theorem?
+CAP stands for the attributes of Consistency, Availability, and Partition Tolerance. The CAP Theorem is a concept according to which, a distributed database system can have only two of the three mentioned attributes. It is useful to determine the choice of data manipulation tools used in Big Data, based on each unique use-case.
+CAP Theorem is like the old joke about software projects: you can have it on TIME, in BUDGET, or CORRECT. Pick any two.
+
+4. When would you apply asynchronous communication between two systems?
+In asynchronous communications, the client sends a request to the server (typically requiring lengthy processing), while receiving a delivery acknowledgment immediately.
+After the client receives the acknowledgment, it carries on with other tasks and will be notified eventually when the server finishes processing the request. The main benefit of asynchronous communications is improved performance.
+Asynchronous communications can be applied in situations where the response is not required immediately, and the current process can continue without the response. Real-world examples can include email, Slack, and other messaging platforms.
+
+5. In what situation would you choose RDBMS and where would you choose NoSQL?
+An RDBMS is used when you need ACID (Atomicity, Consistency, Isolation, Durability) compliance to reduce anomalies and protect data integrity and when the data is structured and unchanging.
+On the other hand, NoSQL is recommended for high volume environments, cloud computing & storage, and when using unstructured data. Examples of NoSQL databases are MongoDB, Cassandra, HBase, and CouchDB.
+
+6. What is an MVC framework?
+A Model-View-Controller is a software design pattern that separates an application into three logical interconnected components – the model, the view, and the controller. It is used to organize the code into simple organized components. MVC helps in letting your code interact with another developerʼs code, based on their functions.
+
+7. Which sorting algorithm to use and when?
+Quick Sort: is one of the most efficient sorting algorithms. It is based on the splitting of an array or list into smaller ones and swapping values based on the comparison with the ‘pivot’ element selected. It is more effective for data that can fit in memory. Otherwise merge sort is preferred.
+Bubble Sort: The simplest but most inefficient sorting algorithm, it repeatedly cycles through a list, compares adjacent values, and swaps them if they are in the wrong order. It is mostly used when array is small or if large data which is nearly sorted.
+Selection Sort: It is a fast and simple comparison-based sorting algorithm. It sorts by finding the minimum element repeatedly in an array. It is mostly used when an array is small as its time complexity makes it inefficient for larger arrays.
+Merge Sort: One of the most efficient algorithms, it uses the principle of divide and conquer. It iteratively breaks down lists into sub-lists consisting of single elements and then merges these elements as per the requirements. Widely used in case of linked list or where the known data is similar.
+8. What are the qualities any good backend developer must possess?
+This is a great question with which to impress the interviewer, as you can tell them about your competencies and understanding of the position. However, many candidates make the mistake of only talking about a couple of their strengths. The ideal answer should include at least some of the following points:
+
+In-depth knowledge of server programming languages like Python, Ruby, Java, Perl
+Great acquaintance with NoSQL and RDBMS
+Good understanding of front-end technologies (easy to work with frontend developers)
+Basic understanding of cloud deployments
+Ability to develop business logic within any app
+Ability to easily create functional APIs
+Design of service architecture
+Ability to optimize web applications
+9. What do you find hardest about coding?
+This question is designed for the interviewer to find out about your weaknesses or technical deficiencies. It is best to give an honest answer (without beating yourself up too much) about a specific area that might not be your strong point. What is more important is to let the interviewer know that you are improving yourself by learning, reading, or researching to upgrade your technical skills.
+
+Backend development is an immense topic, and the above list of interview questions is only the tip of the iceberg. Use this list as a reference, after doing your research on the basic questions asked in an interview for backend developers.
+
+If you are looking for a backend developer position, you can also empower your job search by signing up on Talent500 – a talent discovery platform to get placed with Fortune 500 companies and top MNCs globally.
+
+Picture of Kartikey Bhardwaj
+Kartikey Bhardwaj
+Prev
+11 Simple Tips For Writing Better JavaScript Component Code
+Next
+Python vs. Node.js: Choosing The Right Technology for Backend Development
+Next
+Leave a Comment
+Your email address will not be published. Required fields are marked *
+
+
+Type here..
+Type here..
+Name*
+Name*
+
+Email*
+Email*
+
+Website
+Website
+
+ Save my name, email, and website in this browser for the next time I comment.
+
+
+You may also like
+
+10 Resume Mistakes That Are Costing You Job Offers
+Mamita Mallick  July 20, 2026  8:03 am  No Comments
+Your resume serves as your pathway to securing job interviews, yet it will work against you. Your resume contains common errors that prevent you from getting job offers despite your
+
+Illustration of a candidate in a professional home office setting speaking on a video call, with a laptop screen showing a virtual interviewer and practice tools representing InterviewIQ
+Virtual Interview Tips That Actually Work
+Vishal Singh  July 9, 2026  9:17 am  No Comments
+The growing trend of remote work has established virtual interviews as standard practice. The process of achieving virtual interview success requires specific preparation for candidates applying for remote positions and
+
+Illustration of GCC leaders reviewing talent analytics dashboards and employer branding metrics that highlight career growth, retention, and EVP insights for 2026
+Employer Branding & EVP Pulse Report 2026
+Vishal Singh  July 6, 2026  10:31 am  No Comments
+Why GCCs Must Win the Talent Narrative Global Capability Centers in India have moved past the point where compensation alone can win the talent war. With over 1,900 GCCs and
+
+Categories
+Categories
+Select Category
+Recent Posts
+10 Resume Mistakes That Are Costing You Job Offers
+Virtual Interview Tips That Actually Work
+Employer Branding & EVP Pulse Report 2026
+Interested in working with Software Engineering, Technology ?
+These roles are hiring now.
+
+Under Armour India
+Senior Manager Martech Engineering
+Under Armour India
+10-16 years
+Bengaluru
+Full-Time
+Brink’s GSS, India
+HR Technology Lead
+Brink’s GSS, India
+12-18 years
+Hyderabad
+Full-Time
+CIBC India
+Technology Provisioning Analyst
+CIBC India
+5-7 years
+Hyderabad
+Full-Time
+CIBC India
+Technology Provisioning Consultant
+CIBC India
+7-10 years
+Hyderabad
+Full-Time
+CIBC India
+Technology Provisioning Analyst
+CIBC India
+5-7 years
+Hyderabad
+Full-Time
+McDonalds in India
+Supervisor, Technology Testing
+McDonalds in India
+4-7 years
+Hyderabad
+Full-Time
+Zurich Capability Center
+Senior Lead SAM Data And Technology Specialist
+Zurich Capability Center
+10-17 years
+Hyderabad
+Full-Time
+lululemon India Tech Hub
+Technology Manager II- Digital
+lululemon India Tech Hub
+12-15 years
+Bengaluru
+Full-Time
+Inspire Brands Hyderabad Support Center
+Manager - Technology Program Management
+Inspire Brands Hyderabad Support Center
+14-25 years
+Hyderabad
+Full-Time
+500Leaders
+GCC Site Leader
+500Leaders
+15-20 years
+remote
+Full-Time
+View All Jobs
+
+Talent500 helps the world’s fastest growing businesses build their global workforce.
+
+We help companies hire, build and manage global teams. We are trusted by industry leaders across the globe – from Fortune 500s and larger enterprises, to some of the world’s fastest-growing startups. We are backed by Accel Partners & ANSR, a global leader and enterprise transformation platform.
+
+Facebook
+Linkedin
+Instagram
+Home
+Discover Jobs
+Enterprise blog
+Professionals blog
+About us
+Terms of use
+Privacy policy
+Contact us
+Scroll to Top
+
 Backend Developer Skills
 When looking to hire a backend developer, you should understand the skills essential to the role. While many skills are involved in backend development, including technical, behavioral, and soft skills, a few are more critical than others.  
 
