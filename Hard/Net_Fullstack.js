@@ -1,21 +1,243 @@
-KaaShiv InfoTech Blog
-HOME
-INTERNSHIP
-COURSE
-INPLANT TRAINING
-CONTACT US
-Apply for Internship
-KaaShiv InfoTech Blog
-HOME
-INTERNSHIP
-COURSE
-INPLANT TRAINING
-CONTACT US
-Apply for Internship
-Home.Net Full Stack Interview Questions for Fresher with Answers
-Ebenezer
-on
-October 24, 2024
+
+C# Corner
+Tech
+News
+Videos
+Forums
+Trainings
+Books
+Live
+More
+Contribute
+
+
+.NET  
+Basic Interview Questions For .Net Full Stack Developer
+Author Profile Photo
+Dinesh Gabhane
+5y
+32.6k
+5
+12
+100
+Article
+I am trying to list down some interview question which I found. It's  basic but important as there are many questions which are tricky. 
+ 
+Consider the below table,
+Employee  
+===========  
+ID  
+Name  
+DeptID  
+Status  
+ManagerEmpID  
+Salary  
+Q 1
+ 
+What is the output of this query?
+select Name from employee order by 2 desc  
+Q 2
+ 
+Find the largest 7th Salary from the above table
+ 
+Consider another table
+Dept  
+========  
+ID  
+Name  
+Q 3
+ 
+Write a query for the below output  
+ 
+ Department Name	 No. Of employee
+ HR	 28
+ Admin	 40
+ IT	 35
+ 
+Q 4
+ 
+Write a query for the below output. if there is no employee for the department then show 0
+ 
+Department Name	No. Of employee
+HR	28
+Admin	40
+IT	35
+Finance	0
+ 
+Q 5
+ 
+What will happen when we run the below code
+BEGIN TRAN  
+TRUNCATE TABLE Employees  
+ROLLBACK  
+SELECT * FROM Employees  
+Q 6
+ 
+What is the output of the below query?
+Select * from Employee, Dept  
+Q 7
+ 
+What is the output of the below code:
+var x;  
+x = 10;  
+Console.WriteLine("x");   
+Q 8
+ 
+What is the output of the below code snippet when it gets executed?
+ 
+Basic Interview Questions For Dotnet Full stack 
+ 
+Q 9
+ 
+What is the output of the below code snippet when it gets executed?
+ 
+Basic Interview Questions For Dotnet Full stack 
+ 
+Q 10
+ 
+What is the output of the below code snippet when it gets executed?
+ 
+Basic Interview Questions For Dotnet Full stack 
+ 
+Q 11
+ 
+What is the output of the below code snippet when it gets executed?
+ 
+Basic Interview Questions For Dotnet Full stack 
+ 
+Q 12
+ 
+What is the output of the below JavaScript statement?
+console.log(1 + "2" + "2");  
+Q 13
+ 
+What is the output of below code. Also which statement is fast?
+Document.getElementById("logo");  
+or  
+$("#logo");   
+Q 14
+ 
+What is the difference between document.ready() and window.onload()
+ 
+Q 15
+ 
+What is the output of the below C# code:
+string nullString = (string)null;  
+Console.WriteLine (nullString is string);  
+Q 16
+ 
+In Entity framework code-first approach if we do not want to create any column of the table what are the ways to achieve this?
+ 
+Q 17
+ 
+Fix the Bug 
+function average(a, b) {  
+  return a + b / 2;  
+}  
+  
+console.log(average(2, 1));  
+Q 18
+ 
+Fix the Bug 
+using System;  
+  
+public class MathUtils  
+{  
+    public static double Average(int a, int b)  
+    {  
+        return a + b / 2;  
+    }  
+      
+    public static void Main(string[] args)  
+    {  
+        Console.WriteLine(Average(2, 1));  
+    }  
+}   
+Q 19
+ 
+You have the following property. How can you change its value from a constructor? 
+public int Foo {get; set;}  
+  
+public MyClass(string name)  
+{  
+    Foo = 5;  
+}   
+Q 20
+ 
+What is the result of following code? 
+int i;  
+for(i=0; i<=10; i++)  
+{  
+    if((i%2) == 0)  
+    continue;  
+    writeline(i)  
+}   
+Q 21
+ 
+You have the following 2 lines of code. What is the difference between the two? 
+[TestCategory(nameof(MyClass) + "-UnitTest")] //Line A  
+[TestCategory($"{nameof(MyClass)} -UnitTest")] //Line B   
+Q 22
+ 
+You have the following code, but you get an index out of range exception for empty collection (customers). How can you fix that?  
+int? first = customers?[0].Orders.Count();  
+Q 23
+ 
+Write a query that selects userId and average session duration for each user who has more than one session. 
+TABLE sessions  
+    id INTEGER PRIMARY KEY,  
+    iserId INTEGER NOT NULL,  
+    duration DECIMAL NOT NULL  
+Q 24
+ 
+What is the difference between Equality Operator ( == ) and Equals() Method in C#.
+ 
+Q 25
+ 
+Refactor the Code,
+class Class1  
+{  
+    public Class1(){}  
+    public Class1(int val){}  
+}  
+  
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        Class1 ref1 = new Class1();  
+    }  
+}  
+Q 26
+ 
+Fix the bug,
+function getMessageText() {  
+  return $('message').text;  
+}  
+  
+document.body.innerHTML = '<div id="message">The message</div>';  
+console.log(getMessageText());  
+Q 27
+ 
+What does .size() method of jquery returns?
+ 
+Que 28
+ 
+jquery.size() or  jquery.length Which is faster?
+ 
+Que 29
+ 
+What is the time period of this Cache object? 
+Cache["sample"]="New Cache";   
+Que 30
+ 
+Is it possible to change the value of a variable while debugging a C# application?
+ 
+These are few questions which I have been asked in one of my interviews. These questions are basic but tricky. I have not posted the answer to any, while finding the answers to the  above questions you will get to know many things. Try to run the code and find the answers. I found many extra things/answers/concepts while finding the answers to the questions listed above.
+ 
+__Happy Coding__
+﻿
+ 
 .Net Full Stack Interview Questions for Fresher with Answers
 Interview Questions
 net full stack developer interview questions
