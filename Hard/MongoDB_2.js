@@ -1,15 +1,477 @@
-Сессии Django
-Вопросы
-PYTHON
-Сессии Django
-Я смотрю сеансы в Django, и по умолчанию они хранятся в базе данных. Каковы преимущества сеансов файловой системы и кеширования и когда их следует использовать?
-
- 09.09.2008 00:16
-38
-2
-12 043
-5
- Ответы 5
+<meta content='Вопросы и ответы на собеседование Junior Java Developer. Вопросы и ответы на собеседование MongoDB. MongoDB вопросы на собеседование. Ответы на вопросы на собеседование MongoDB.' name='twitter:description'/>
+<meta content='' name='twitter:url'/>
+<meta content='Ответы на вопросы на собеседование MongoDB.' property='og:title'/>
+<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg' property='og:image'/>
+<meta content='Ответы на вопросы на собеседование MongoDB.' property='og:title'/>
+<meta content='https://jsehelper.blogspot.com/2016/05/mongodb.html' property='og:url'/>
+<meta content='Вопросы и ответы на собеседование Junior Java Developer. Вопросы и ответы на собеседование MongoDB. MongoDB вопросы на собеседование. Ответы на вопросы на собеседование MongoDB.' property='og:description'/>
+<meta content='2016-05-03T08:17:00+03:00' property='article:published_time'/>
+<meta content='Technology' property='article:section'/>
+<meta content='Front-End Developer Other' property='article:tag'/>
+<meta content='Interview' property='article:tag'/>
+<meta content='MongoDB' property='article:tag'/>
+<article class='post' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<div class='post-header'>
+<div class='labelhome'>
+<a href='https://jsehelper.blogspot.com/search/label/Front-End%20Developer%20Other' rel='tag'>
+Front-End Developer Other
+</a>
+<a href='https://jsehelper.blogspot.com/search/label/Interview' rel='tag'>
+Interview
+</a>
+<a href='https://jsehelper.blogspot.com/search/label/MongoDB' rel='tag'>
+MongoDB
+</a>
+</div>
+<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg' itemprop='image'/>
+<h1 class='entry-title' itemprop='name'>
+Ответы на вопросы на собеседование MongoDB.
+</h1>
+<div class='post-info'>
+<span class='author-info'>
+<span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+<span itemprop='name'>
+vasyl1889
+</span>
+</span>
+</span>
+<meta content='https://jsehelper.blogspot.com/2016/05/mongodb.html' itemprop='url'/>
+<span class='time-info'>
+<l></l>
+<i class='fa fa-clock-o'></i>
+<a class='timestamp-link' href='https://jsehelper.blogspot.com/2016/05/mongodb.html' rel='bookmark' title='permanent link'>
+<abbr class='published updated' itemprop='datePublished' title='2016-05-03T08:17:00+03:00'>
+08:17:00
+</abbr>
+</a>
+</span>
+<span class='comment-info'>
+<l></l>
+<i class='fa fa-comments-o'></i>
+<a href='https://jsehelper.blogspot.com/2016/05/mongodb.html#comment-form' onclick=''>
+3
+                                        Комментарии 
+                                      
+</a>
+</span>
+<span class='item-control blog-admin pid-1215401733'>
+<a href='https://www.blogger.com/post-edit.g?blogID=8798235924082241388&postID=8851204566778324818&from=pencil' title='Изменить сообщение'>
+<b style='color:#EE3322;'>
+<i class='fa fa-pencil'></i>
+                              Edit
+                            </b>
+</a>
+</span>
+</div>
+</div>
+<div class='post-entry' itemprop='articleBody'>
+<p>
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<h3 style="text-align: left;">
+<ul style="text-align: left;">
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое NoSQL?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">NoSQL (Not only SQL) - это ряд технологий, подходов, проектов направленных на реализацию моделей баз данных, имеющих существенные отличия от традиционных СУБД, работающих с языком SQL. Концепция NoSQL не отрицает SQL, она лишь стремится решить проблемы и вопросы, с которыми не достаточно хорошо справляется РСУБД. Чаще всего данные в NoSQL решении представляются в виде хеш-таблиц, деревьев, документов и пр.</span><br />
+<br /></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть типы хранилищ данных в NoSQL?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В зависимости от модели данных и подходов к распределённости и репликации можно выделить четыре типа хранилищ:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">"ключ-значение" (key-value store)</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">документно-ориентированные (document store)<a name="more"></a></span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">хранилища семейств колонок (column database)</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">графовые базы данных (graph database).</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDb - это документо-ориентированная база данных, в отличие от традиционных реляционных баз данных, таких как MySQL или PostgreSQL не использует табличный способ представления со связями через внешние ключи, основанная на принципе хранении документов в BSON(Binary JSON) формате. Т.е. каждая запись это документ, без жестко заданной схемы, который может содержать вложенные документы.</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">На каком языке написана MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDB написана и реализована на С++.</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие языки программирования можно использовать с MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Клиентские драйверы MongoDB поддерживают все популярные языки программирования, так что выбор языка не является проблемой. Вы можете использовать любой язык, какой хотите.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Использует ли таблицы для хранения данных, база данных MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет. Для хранения данных вместо таблиц, MongoDB использует "Коллекции" (collections).</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие преимущества MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основные возможности MongoDB:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Документо-ориентированное хранилище (простая и мощная JSON-подобная схема данных)</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Достаточно гибкий язык для формирования запросов</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Динамические запросы</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Полная поддержка индексов</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профилирование запросов</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Быстрые обновления "на месте"</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Эффективное хранение двоичных данных больших объёмов, напр., фото и видео</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Журналирование операций, модифицирующих данные в БД</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддержка отказоустойчивости и масштабируемости: асинхронная репликация, набор реплик и шардинг</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Может работать в соответствии с парадигмой MapReduce</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Имеет распределенный доступ к данным, расположенных на нескольких серверах</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие недостатки MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Недостатки:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Отсутствует оператор "join". Обычно данные могут быть организованы более денормализованным способом, но на разработчиков ложится дополнительная нагрузка по обеспечению непротиворечивости данных.</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет такого понятия, как "транзакция". Атомарность гарантируется только на уровне целого документа, т.е. частичное обновление документа произойти не может.</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Отсутствует понятие "изоляции". Любые данные, которые считываются одним клиентом, могут параллельно изменяться другим клиентом.</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Менее чем более стабильна, не рекомендовано использовать в биллинге</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Требовательна к ресурсам - память и место на диске</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое пространство имен в MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Пространство имен в MongoDB это конкатенация имени базы данных и названия коллекции. Для например school.students, где school - имя базы данных и students - название коллекции.</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое репликация?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Репликация - это процесс синхронизации данных между несколькими серверами. Позволяет добиться большей масштабируемости, и повысить доступность и сохранность данных. Репликация также позволяет восстанавливать даные после сбоя аппаратного обеспечения. С помощью дополнительных копий данных, вы можете выделить один сервер для аварийного восстановления, отчетности или резервного копирования. MongoDB поддерживает 2 формы репликации:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">реплисеты(Replica Sets )</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">ведущий-ведомый(Master-Slave).</span></li>
+</ul>
+<br /></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB ограничения внешнего ключа(foreign key)?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет.</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как мы можем достичь primary key - foreign key отношения в MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию MongoDB не поддерживает primary key - foreign key отношения. Тем не менее, мы можем достичь этой концепции путем встраивания одного документа внутри другого. Для например документ "адрес" может быть встроен внутри документа "клиент".</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Объясните структуру ObjectID в MongoDB.</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">ObjectID ето 12-байт типа BSON, имеющий следующую структуру:.</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Первые 4 байта, представляющие секунды с эпохи Unix&nbsp;</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Следующие 3 байта являются идентификатором машины</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Следующие 2 байта являются идентификатором процесса</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Последние 3 байта ето случайная величина счетчика:&nbsp;</span></li>
+</ul>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDB использует ObjectID как значение по умолчанию поля _id каждого документа, который генерируется во время создания любого документа. ObjectID делает все поля _id уникальными.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания нового ObjectID используется следующий код: NewObjectId = ObjectId()</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если удалить документ из базыданных, удалится ли он с диска?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Да. Удаление документа из базы данных приведет к его удалению с диска.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое индексы в MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы - ето специальная структура данных, которая хранит небольшую часть набора данных. Индекс сохраняет значение конкретного поля или набора полей, упорядоченых по величине поля, как указано в индексе.&nbsp;</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы поддерживать эффективное выполнение запросов. Без индексов, MongoDB должна сканировать каждый документ коллекции, чтобы выбрать те документы, которые соответствуют оператору запроса. Это сканирование крайне неэффективно и требует от &nbsp;MongoDB обработки большого объема данных.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы в MongoDB работают схожим образом с индексами в реляционных базах данных: они ускоряют выборку и сортировку данных. Индексы создаются с помощью ensureIndex.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию, MongoDB создает только _id для каждой коллекции.</span><br />
+<br /></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое скрытый запрос в MongoDB?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В соответствии с официальной документации MongoDB, скрытый запрос ето запрос в котором:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">все поля в запросе являются частью индекса используемого в запросе</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">все поля в запросе возвращаются в том же индексе</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB поиск текста?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Да. MongoDB поддерживает создание текстовых индексов для поддержки поиска текста внутри строки. Эта функция, была введена в версии 2.6.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<div style="text-align: justify;">
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет получить все индексы определенной коллекции?</span></li>
+</ul>
+</h3>
+</div>
+<div style="text-align: justify;">
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg" /></a></div>
+<div class="separator" style="clear: both; text-align: justify;">
+<br /></div>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Шардинг в MongoDB?</span></li>
+</ul>
+</h3>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Шардинг - это подход к масштабируемости, когда отдельные части данных хранятся на разных серверах. Шардинг решает проблему горизонтального масштабирования. Примитивный пример: хранить данные пользователей, чьё имя начинается на буквы A-M на одном сервере, а остальных - на другом.</span><br />
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию, MongoDB пишет и читает данные из primary и secondary наборов реплик. Правда ето или ложь?</span></li>
+</ul>
+</h3>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Ложь. MongoDB записывает данные только в primary набор реплик.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Почему MongoDB не является предпочтительным решением для 32-битных систем?</span></li>
+</ul>
+</h3>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">При работе с 32-разрядной сборкой MongoDB, общий размер хранилища для сервера, включая данные и индексы, составляет 2 гигабайта. По этой причине, не рекомендуеться развертывать MongoDB для продакшина на 32-разрядных машинах.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если вы используете 64-разрядную сборку MongoDB, практически нет никаких ограничений на размер хранилища.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
+<br />
+<h3>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда,позволяет проверить, являетесь ли вы на главном сервере или нет?</span></li>
+</ul>
+</h3>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90VKSwBWtM_37QlQFOihUtHgZCneU4umo4i8F9HITqO9TwjkKRvqlwOGgNPMD5bylJEg2fqTKPGcXySPMt5Ip1d4qHXk-GhUkTYY-7CK2tfhkusAc1ZUcFQj3SGnSOHwZNTI6gcQS7WE/s1600/q023_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90VKSwBWtM_37QlQFOihUtHgZCneU4umo4i8F9HITqO9TwjkKRvqlwOGgNPMD5bylJEg2fqTKPGcXySPMt5Ip1d4qHXk-GhUkTYY-7CK2tfhkusAc1ZUcFQj3SGnSOHwZNTI6gcQS7WE/s1600/q023_p01.jpg" /></a></div>
+<div class="separator" style="clear: both; text-align: justify;">
+<br /></div>
+</div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое GridFS?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">GridFS - это спецификация, определённая в базе данных MongoDB для хранения и извлечения файлов, размер которых превышает 16 Мб. Такое ограничение размера обусловлено использованием в MongoDB формата BSON.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Согласно спецификации GridFS файл разбивается на несколько фрагментов (англ. chunks), каждый из которых не может быть больше, чем 255 Кб. Каждый такой фрагмент хранится как отдельный файл и к нему может быть осуществлён доступ как к отдельному файлу.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для обеспечения корректной сборки разбитого на фрагменты файла GridFS хранит коллекцию метаданных - отдельных файлов, содержащих информацию о хранящихся в файловой системе документах.</span><br />
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Map/Reduce?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Map/Reduce - это подход к обработке больших объемов данных, который состоит из двух фаз: Map - предварительная обработка входных данных и Reduce - обработка тем или иным способом выборки, полученной на стадии Map. Map/Reduce не является свойством исключительно NoSQL-решений. Аналогичным образом можно работать с большими объемами данных и в РСУБД. Но большинство NoSQL-систем (за исключением, может быть, самых простых key-value хранилищ) реализуют Map/Reduce в том или ином виде.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Map/Reduce имеет два серьёзных преимущества по сравнению с традиционными решениями. Первое и самое главное преимущество - это производительность. Теоретически MapReduce может быть распараллелен, что позволяет обрабатывать огромные массивы данных на множестве ядер/процессоров/машин. Это пока не является преимуществом MongoDB. Вторым преимуществом MapReduce является возможность описывать обработку данных нормальным кодом. По сравнению с тем, что можно сделать с помощью SQL, возможности кода внутри MapReduce намного богаче и позволяют расширить рамки возможного даже без использования специализированных решений.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать/удалить коллекцию в MongoDB?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">db.createCollection(name,options) - для создания коллекции в MongoDB</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">db.collection.drop() - для удаления коллекции в MongoDB</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какова роль профайлера в MongoDB?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профайлера базы данных MongoDB показывает рабочие характеристики каждой операции с базой данных. Для примера вы можете найти запросы с помощью профилировщика которие на самом деле медленнее, чем они должны быть.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профайлер MongoDB можно включить с помощью следующего вызова: db.setProfilingLevel(2); чтобы выключить профайлер, нужно повторно вызвать setProfileLevel, только передав 0 в качестве аргумента.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет вставить документ?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">database.collection.insert(document) - для вставки документа в колекцию.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Приведите пример использования индекса в MongoDB.</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Простой пример:</span></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGYfQiop52nkiMQfg3T0qTT227eFjr72_JwcsaWtt12bJkLd3AKlcqEK8-1QcARC0EF40wXqze0sKm8CFN93-38XlHF1chCA9OU8I2zBjOSSFIRfBxZwoOL92MphUbuuxggF-x-PFWyxc/s1600/q029_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGYfQiop52nkiMQfg3T0qTT227eFjr72_JwcsaWtt12bJkLd3AKlcqEK8-1QcARC0EF40wXqze0sKm8CFN93-38XlHF1chCA9OU8I2zBjOSSFIRfBxZwoOL92MphUbuuxggF-x-PFWyxc/s1600/q029_p01.jpg" /></a></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: left;">
+<ul style="text-align: left;">
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Какой метод вернёт список всех документов в колекции?</span></li>
+</ul>
+</h3>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi64l9wjfN1MCck41NdCrXYcFGKhk_6DGrobinto-dAZ1LJtNeWk7nMvtU20zrNl9vkL6sichswneqTB6ZqGFj6dtCv67Om0INGKlFNUi_Rn_2kjjMiWOmDRgOet1HP3PntxDgobRL0EFk/s1600/q030_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi64l9wjfN1MCck41NdCrXYcFGKhk_6DGrobinto-dAZ1LJtNeWk7nMvtU20zrNl9vkL6sichswneqTB6ZqGFj6dtCv67Om0INGKlFNUi_Rn_2kjjMiWOmDRgOet1HP3PntxDgobRL0EFk/s1600/q030_p01.jpg" /></a></div>
+<div class="separator" style="clear: both; text-align: justify;">
+<br /></div>
+<h3 style="text-align: left;">
+<ul style="text-align: left;">
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Что такое селекторы запросов в MongoDB?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Селектор - это JSON-объект, в простейшем случае это может быть даже {}, что означает выборку всех документов (аналогичным образом работает null). Селектор запросов MongoDB аналогичен предложению where SQL-запроса. Как таковой он используется для поиска, подсчёта, обновления и удаления документов из коллекций.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об обновлении/вставке в MongoDB?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Один из приятных сюрпризов операции обновления - это возможность обновления/вставки (upsert от update - обновить и insert - вставить) Обновление/вставка обновляет документ, если он найден, или создаёт новый - если не найден. Обновление/вставка - полезная вещь в некоторых случаях; когда столкнётесь с подобным, сразу поймёте. Чтобы разрешить вставку при обновлении, установите третий параметр в true.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Пример из жизни - счётчик посещений для веб-сайта. Если мы хотим в реальном времени видеть количество посещений страницы, мы должны посмотреть, существует ли запись, и - в зависимости от результата - выполнить update либо insert.</span></div>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
+</ul>
+</h3>
+<div style="text-align: justify;">
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В MongoDB в запросах можно использовать условные:</span></div>
+<div style="text-align: justify;">
+</div>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$gt - больше чем</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$lt - меньше чем</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$gte &nbsp;- больше или равно</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$lte - меньше или равно</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$ne &nbsp;- извлекает все документы, не соответствующие некоторому условию</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$or - определяет набор пар ключ-значение, которые должны иметься в документе. И если документ имеет хоть одну такую пару ключ-значение, то он соответствует данному запросу и извлекается из бд</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$size - используется для нахождения документов, в которых массивы имеют число элементов, равным значению $size</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$exists - позволяет извлечь только те документы, в которых определенный ключ присутствует или отсутствует</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$regex - задает регулярное выражение, которому должно соответствовать значение поля</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Поиск по массивам и операторы $in, $nin, $all</span><br />
+<div style="text-align: justify;">
+</div>
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$in - определяет массив возможных выражений и ищет те ключи, значение которых имеется в массиве</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$nin - определяет массив возможных выражений и ищет те ключи, значение которых отсутствует в этом массиве</span></li>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$all - похож на $in: он также определяет массив возможных выражений, но требует, чтобы документы имели весь определяемый набор выражений</span></li>
+</ul>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Примеры использования:</span><br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheOVHZIoLn4BhS88ju2Ur_AU7E6qe-NaGL-vzd4sY2AuWJ421-P81Pt-AXKqWtzCCqmhM2pqbqqUE-l2fdbeYAjfb8Ub0TUtas866TvvbnCu-EXNtrFNC5d_GfQLRaqG6Q0qJrfG1yt7A/s1600/q033_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheOVHZIoLn4BhS88ju2Ur_AU7E6qe-NaGL-vzd4sY2AuWJ421-P81Pt-AXKqWtzCCqmhM2pqbqqUE-l2fdbeYAjfb8Ub0TUtas866TvvbnCu-EXNtrFNC5d_GfQLRaqG6Q0qJrfG1yt7A/s1600/q033_p01.jpg" /></a></div>
+<div class="separator" style="clear: both; text-align: justify;">
+<br /></div>
+<h3 style="text-align: justify;">
+<ul>
+<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как удалить документ в MongoDB?</span></li>
+</ul>
+</h3>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Для удаления документов в MongoDB предусмотрен метод remove:</span><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;"></span><br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG8uvHtvM2hPxxMNe37j1x2zv3xaNC_eKH1eIr77cfn_308bF23I2v5b8Nc5wdCEolLIlXMDgTxGAgjbC-I3i8UnesbImLQQnyAFceBIGmeVvcRAlEQMAigUsrF_Dm9rlpG_CflsKahuQ/s1600/q034_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG8uvHtvM2hPxxMNe37j1x2zv3xaNC_eKH1eIr77cfn_308bF23I2v5b8Nc5wdCEolLIlXMDgTxGAgjbC-I3i8UnesbImLQQnyAFceBIGmeVvcRAlEQMAigUsrF_Dm9rlpG_CflsKahuQ/s1600/q034_p01.jpg" /></a></div>
+<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">В итоге все найденные документы с name=Tom будут удалены.</span><br />
+                               
 На серверную часть файловой системы стоит обратить внимание только в том случае, если вы не собираетесь использовать базу данных для какой-либо другой части вашей системы. Если вы используете базу данных, то бэкэнду файловой системы нечего рекомендовать.
 
 Серверная часть кэша памяти работает намного быстрее, чем база данных, но вы рискуете очистить сеанс и потерять некоторые данные сеанса.
