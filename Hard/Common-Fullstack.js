@@ -1,3 +1,1920 @@
+💡
+My Docs
+Search…
+Ctrl
+k
+Blog
+Linkedin
+
+WEB_DEV_JOB_SEARCH
+Home
+🏡
+Home
+🗺️
+Navigation
+📥
+Useful Downloads
+TO DO
+
+Jobs To Apply To
+🛠️
+Skills
+
+📋
+Filling Out Forms
+📖
+Resources
+
+Profiles
+Linkedin
+Examples
+
+Resume
+Resume
+
+
+Applications
+🖱️
+TRACKING_APPLICATIONS
+Amazon
+
+Applications & Job Postings
+Job Boards
+
+📮
+Postings:
+
+
+Cover Letter
+Cover Letter
+
+More Advice
+
+Example
+Example Of Developer Bio
+Old Engineering Cover Letter
+
+Portfolio
+💾
+Git Repo
+🖼️
+Portfolio
+
+📈
+Slack&Lambda
+📺
+Recordings
+🧑‍🤝‍🧑
+🧑🤝🧑 🧑🤝🧑 🧑People
+
+Aux-Resources
+Youtube
+👨‍🏫
+👨🏫 👨🏫 👨Guidance
+
+🖋️
+Interview Prep
+INTERVIEW
+👨‍💻
+👨💻 👨💻 👨💻 👨💻 👨💻 👨💻 👨💻 Leetcode
+
+Resources
+
+Cheat-Sheet-Raw
+General Advice & Tips
+
+Overview
+
+Web Dev Interview Questions
+
+FULL-STACK DEVELOPER INTERVIEW QUESTIONS AND ANSWERS
+⁉️
+Interview Questions.
+
+Qualitative Questions
+
+🧮
+DS_ALGO Practice:
+
+Behavorial
+
+FANG PREP (medium article)
+⏱️
+More Practice:
+300 React Q & A's
+
+Redux
+🛕
+Examples
+
+Common Knowledge Questions
+
+Tutorials
+Custom Outreach Message Generator
+
+Technical Interview Tutorial
+
+Job Boards
+📋
+Job Boards
+
+
+Networking
+🗓️
+Events
+
+MISC
+Articles To Read
+Job Search Images
+
+Notes
+Interview Navigation
+Notes
+CSS Interview Prep Quiz
+
+🖨️
+Interviewing
+General
+Inspiration
+Front End Interview
+Common Questions
+
+Networking
+Networking
+
+Page 1
+
+📓
+ARCHIVE
+Archive
+
+Projects
+
+Powered by GitBook
+On this page
+Programming Languages/Frameworks/Platforms
+Database technologies
+Caching technologies
+OS
+DevOps
+Algorithms
+Blockchain
+Coding exercises
+Comprehensive lists
+Design Patterns
+Data structures
+Networks
+Security
+Data Science
+FULL-STACK DEVELOPER INTERVIEW QUESTIONS AND ANSWERS
+Table of Contents
+For the complete documentation index, see llms.txt. This page is also available as Markdown.
+
+Copy
+
+WEB_DEV_JOB_SEARCH🖋️Interview PrepWeb Dev Interview Questions
+FULL-STACK DEVELOPER INTERVIEW QUESTIONS AND ANSWERS
+Programming Languages/Frameworks/Platforms
+Android
+10 Android interview question answers for Freshers
+
+20 Essential Android Interview Questions from Toptal
+
+25 Essential Android Interview Questions from Adeva
+
+A couple of Android questions posted by Quora users
+
+A great list of Android interview questions covering all the aspects of this career
+
+Collection of Android and Java related questions and topics, including general developer questions, Java core, Data structures, Build Tools, Programming Paradigms, Core Android, Databases and etc
+
+Collection of Android and Java questions divided by experience
+
+RocketSkill App Android Interview Questions
+
+Android cheat sheet: Coding program, Data structure, Android and Java interview questions with answers and categorized by topics
+
+Android Interview Questions And Answers From Beginner To Advanced
+
+Interview Questions for Senior Android Developers
+
+35+ Android Interview Questions
+
+AngularJS
+12 Essential AngularJS Interview Questions from Toptal
+
+An AngularJS exam with questions from beginner to expert by @gdi2290 from @AngularClass
+
+29 AngularJS Interview Questions – Can You Answer Them All? Great Article from Codementor
+
+AngularJS interview questions and answers for experienced developers
+
+AngularJS Interview Questions which have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of AngularJS
+
+This article discusses the top 50 Most occurred AngularJS interview question with answers
+
+Top 25 Angularjs Interview Questions and Quiz
+
+100 AngularJS Interview Questions - Quick Refresher
+
+Angular
+A list of helpful Angular related questions you can use to interview potential candidates, test yourself or completely ignore
+
+Angular 2 Interview Questions
+
+List of 300 Angular Interview Questions and Answers
+
+Angular Interview Questions (2020)
+
+Top Angular Interview Questions and Answers in 2021
+
+BackboneJS
+8 Essential Backbonejs Interview Questions from Toptal
+
+Backbonejs Interview Questions And Answers from web technology experts notes
+
+Top 25 Backbone.js interview questions
+
+C++
+1000+ Multiple Choice Questions & Answers in C++ with explanations
+
+200 C++ interview questions and answers
+
+24 Essential C++ Interview Questions from Toptal
+
+C++ Interview Questions from GeekInterview
+
+C++ Programming Q&A and quizzes from computer science portal for geeks
+
+C++ Programming Questions and Answers related to such topics as OOPs concepts, Object and Classes, Functions, Constructors and Destructors, Inheritance and etc
+
+LeetCode Problems' Solutions written in C++
+
+C
+Basic C language technical frequently asked interview questions and answers It includes data structures, pointers interview questions and answers for experienced
+
+C Programming Interview Questions and Answers for such topics as Bits and Bytes, Preprocessors, Functions, Strings, Language basics and etc
+
+C Programming Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of C Programming
+
+First set of commonly asked C programming interview questions from computer science portal for geeks
+
+Second set of commonly asked C programming interview questions from computer science portal for geeks
+
+9 Essential C Interview Questions with answers
+
+Top C Interview Questions and Answers
+
+C#
+15 Essential C# Interview Question from Toptal
+
+C# interview questions from dotnetfunda.com
+
+Top 50 C# Interview Questions & Answers
+
+50 C# Coding Interview Questions and Answers
+
+20 C# OOPS Interview Questions and Answers
+
+30+ C# Interview Questions
+
+.NET
+300 ASPNET interview questions and answers
+
+ASP.NET Core Interview Questions
+
+Great list of NET interview questions covering all the NET platform topics
+
+NET Interview Questions and Answers for Beginners which consists of the most frequently asked questions in NET This list of 100+ questions and answers gauge your familiarity with the NET platform
+
+Questions gathered by community of the StackOverflow
+
+What Great NET Developers Ought To Know (More NET Interview Questions)
+
+Clojure
+Classic 'Fizz Buzz' interview question for Clojure developers
+
+Clojure Interview Questions for experienced devs
+
+Coding exercises in Clojure, handy practice for technical interview questions
+
+Experience and questions from Clojure developer interview collected by Reddit users
+
+Interview cake Clojure solutions
+
+CSS
+CSS interview questions and answers for freshers and experienced candidates Also there you can find CSS online practice tests to fight written tests and certification exams on CSS
+
+Development hiring managers and potential interviewees may find there sample CSS proficiency interview Q&As and code snippets useful
+
+Interview Questions and Exercises About CSS
+
+Top 50 CSS(Cascading Style Sheet) Interview Questions covering the most of tricky CSS moments
+
+Front End Interview Handbook - CSS Questions and Answers
+
+Cucumber
+Cucumber Web Application BDD Sample Interview Questions
+
+Guide to building a simple Cucumber + Watir page object pattern framework
+
+Django
+Some abstract interview questions for Python/Django developers
+
+Some Django basic interview questions to establish the basic level of the candidates
+
+Top 16 Django Interview Questions for both freshers and experienced developers
+
+Docker
+Docker Interview Questions
+
+Top Docker Interview Questions You Must Prepare In 2019
+
+Top Docker Interview Questions And Answers
+
+DOCKER (SOFTWARE) INTERVIEW QUESTIONS & ANSWERS
+
+30 Docker Interview Questions and Answers in 2019
+
+Docker Interview Questions & Answers
+
+Top 50 Docker Interview Questions & Answers
+
+Top 50+ Docker Interview Questions and Answers in 2021
+
+Elastic
+Top Elastic Stack Interview Questions
+
+EmberJS
+8 Essential Emberjs Interview Questions from Toptal
+
+Top 25 Emberjs Interview Questions for both freshers and experienced developers
+
+Erlang
+Top 22 Erlang Interview Questions for both freshers and experienced developers
+
+Golang
+Solutions for Elements of Programming Interviews problems written in Golang
+
+Solutions for some basic coding interview tasks written in Go
+
+Top 20 GO Programming Interview Questions for both freshers and experienced developers
+
+GraphQl
+8 GraphQl Interview Questions To Know
+
+How to GraphQl - Common Questions
+
+HTML
+10 Typical HTML Interview Exercises from SitePoint.com
+
+16 Essential HTML5 Interview Questions from Toptal
+
+40 important HTML 5 Interview questions with answers
+
+HTML interview questions and answers for freshers and experienced candidates Also find HTML online practice tests to fight written tests and certification exams on HTML
+
+Top 50 HTML Interview Questions for both freshers and experienced developers
+
+Common HTML interview questions for freshers
+
+Front End Interview Handbook - HTML Questions and Answers
+
+30 HTML Interview Questions and Answers
+
+30+ HTML Interview Questions (2021)
+
+Ionic
+23 Beginner Level Ionic Framework Questions
+
+12 Essential Ionic Interview Questions
+
+45 Ionic Interview Questions
+
+Most Asked Ionic Interview Questions
+
+iOS
+14 Essential iOS Interview Questions from Toptal
+
+20 iOS Developer Interview Questions and Answers for getting you ready for your interview
+
+25 Essential iOS Interview Questions from Adeva
+
+A small guide to help those looking to hire a developer or designer for iOS work While tailored for iOS, many questions could be used for Android developers or designers as well A great self-test if you're looking to keep current or practice for your own interview
+
+All you need to know about iOS technical interview including some tips for preparing, questions and some coding exercises
+
+Interview Questions for iOS and Mac Developers from the CEO of Black Pixel
+
+iOS Interview Questions and Answers including such topics as Development Basics, App states and multitasking, App states, Core app objects
+
+iOS Interview Questions For Senior Developers
+
+50 iOS Interview Questions And Answers 1
+
+50 iOS Interview Questions And Answers Part 2
+
+50 iOS Interview Questions And Answers Part 3
+
+50 iOS Interview Questions And Answers Part 4
+
+50 iOS Interview Questions And Answers Part 5
+
+10 iOS interview questions and answers
+
+iOS Developer and Designer Interview Questions
+
+IOS Interview Questions and Answers
+
+iOS Interview Questions For Beginners
+
+Babylon iOS Interview Questions
+
+RocketSkill App iOS Interview Questions
+
+iOS Static vs Dynamic Dispatch
+
+Java
+List of Java programs for interview Categoriwise
+
+115 Java Interview Questions and Answers – The ULTIMATE List
+
+37 Java Interview Questions to Practice With from Codementor
+
+21 Essential Java Interview Questions
+
+Top 30 Core Java Interview Questions
+
+29 Essential Java Interview Questions from Adeva
+
+A collection of Java interview questions and answers to them
+
+Data Structures and Algorithms in Java which can be useful in interview process
+
+Java Interview Questions: How to crack the TOP 15 questions
+
+300 Core Java Interview Questions
+
+Top 10 Tricky Java interview questions and Answers
+
+Top 25 Most Frequently Asked Interview Core Java Interview Questions And Answers
+
+Top 40 Core Java Interview Questions Answers from Telephonic Round
+
+Top 50 Spring Interview Questions You Must Prepare For In 2020
+
+Spring Interview Questions And Answers
+
+Interview Cake Java Interview Questions
+
+Java Interview Questions & Quizzes
+
+Essetial Java Interview Questions
+
+Fundamental Java Interview Questions
+
+JavaScript
+Practice common algorithms using JavaScript
+
+10 Interview Questions Every JavaScript Developer Should Know
+
+21 Essential JavaScript Interview Questions from best mentors all over the world
+
+20 Essential JavaScript Interview Questions from Adeva
+
+37 Essential JavaScript Interview Questions from Toptal
+
+5 More JavaScript Interview Exercises
+
+5 Typical JavaScript Interview Exercises
+
+Development hiring managers and potential interviewees may find these sample JavaScript proficiency interview Q&As and code snippets useful
+
+123 Essential JavaScript Interview Question
+
+JavaScript Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of JavaScript
+
+JS: Basics and Tricky Questions
+
+JS: Interview Algorithm
+
+Some basic javascript coding challenges and interview questions
+
+Some JavaScript interview exercises
+
+Ten Questions I've Been Asked, Most More Than Once, Over Six Technical JavaScript / Front-End Engineer Job Interviews.
+
+Top 85 JavaScript Interview Questions
+
+Interview Cake JavaScript Interview Questions
+
+The Best Frontend JavaScript Interview Questions (written by a Frontend Engineer)
+
+10 JavaScript Concepts You Need to Know for Interviews
+
+Front End Interview Handbook - JavaScript Questions and Answers
+
+JavaScript Interview Questions - Quick Refresher
+
+The MEGA Interview Guide
+
+Javascript Interview Questions and Answers (2020)
+
+JavaScript Modern Interview Code Challenges 2021
+
+70 JavaScript Interview Questions
+
+jQuery
+Top 50 jquery interview questions
+
+17 Essential jQuery Interview Questions From Toptal
+
+Top JQuery Interview Questions and Answers
+
+Front-end build tools
+Webpack interview questions & answers
+
+Gulp js interview questions
+
+Grunt js interview questions for beginners
+
+Grunt js interview questions
+
+KnockoutJS
+15 interview questions from CodeSample.com
+
+20 questions you might be asked about KnockoutJS in an interview for both freshers and experienced developers
+
+Less
+Top 25 LESS Interview Questions
+
+Lisp
+10 LISP Questions & Answers
+
+Top 18 Lisp Interview Questions from Career Guru
+
+NodeJS
+25 Essential Node.js Interview Questions from Adeva
+
+8 Essential Nodejs Interview Questions from Toptal
+
+Node.JS Interview Questions have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of Node.JS
+
+Node.js Interview Questions and Answers
+
+Top 25 Nodejs Interview Questions & Answers from Career Guru
+
+Top 30 Node.Js Interview Questions With Answers
+
+Top Nodejs Interview Questions & Answers
+
+Node.js Interview Questions in Chinese
+
+Node.js Interview Questions by learning-zone
+
+Objective-C
+Interview Qs for Objective-C and Swift
+
+iOS Interview Questions For Beginners
+
+PHP
+100 PHP interview questions and answers from CareerRide.com
+
+21 Essential PHP Interview Questions from Toptal
+
+20 Common PHP Job Interview Questions and Answers
+
+25 Essential PHP Interview Questions from Adeva
+
+PHP interview questions and answers for freshers
+
+Top 100 PHP Interview Questions & Answers from CareerGuru
+
+25 PHP Interview Questions
+
+26 Essential PHP Interview Questions for 2018
+
+Cracking PHP Interviews Questions ebook 300+ Q&A
+
+PHP Interview Questions - Quick Refresher
+
+30+ PHP Interview Questions
+
+Python
+26 Essential Python Interview Questions from Adeva
+
+20 Python interview questions and answers
+
+11 Essential Python Interview Questions from Toptal
+
+A listing of questions that could potentially be asked for a python job listing
+
+Interview Questions for both beginners and experts
+
+Interview Cake Python Interview Questions
+
+Python Frequently Asked Questions (Programming)
+
+Python interview questions collected by Reddit users
+
+Top 25 Python Interview Questions from Career Guru
+
+Python Interview 10 questions from Corey Schafer
+
+Python interview questions. Part I. Junior
+
+Python interview questions. Part II. Middle
+
+Python interview questions. Part III. Senior
+
+Python Interview Questions and Answers (2019)
+
+100 Python Interview Questions - Quick Refresher
+
+Top 100 Python Interview Questions from Edureka (2021)
+
+Ruby on Rails
+20 Ruby on Rails interview questions and answers from CareerRide.com
+
+9 Essential Ruby on Rails Interview Questions from Toptal
+
+High-level Ruby on Rails Interview Questions
+
+Ruby And Ruby On Rails interview Q&A
+
+Some of the most frequently asked Ruby on Rails questions and how to answer them confidently
+
+11 Ruby on Rails Interview Practice Questions
+
+Top 53 Ruby on Rails Interview Questions & Answers
+
+10 Ruby on Rails interview questions and answers
+
+ReactJS
+Reddit users share their expectations from ReactJS interview
+
+5 Essential React.js Interview Questions
+
+React Interview Questions
+
+Toptal's 21 Essential React.js Interview Questions
+
+19 Essential ReactJs Interview Questions
+
+React Interview Questions & Answers
+
+Ruby
+21 Essential Ruby Interview Questions from Toptal
+
+15 Questions to Ask During a Ruby Interview
+
+A list of questions about Ruby programming you can use to quiz yourself
+
+The Art of Ruby Technical Interview
+
+Interview Cake Ruby Interview Questions
+
+Frequently Asked Ruby Interview Questions
+
+Rust
+Top 250+ Rust Programming Language Interview Questions
+
+Rust Programming Interview Questions and Answers
+
+rust-exam: A set of questions about the Rust programming language
+
+Best Rust Programming Language Interview Questions and answers
+
+Sass
+Top 17 Sass Interview Questions from Career Guru
+
+Top 10 Sass Interview Questions from educba
+
+Scala
+4 Interview Questions for Scala Developers
+
+A list of Frequently Asked Questions and their answers, sorted by category
+
+A list of helpful Scala related questions you can use to interview potential candidates
+
+How Scala Developers Are Being Interviewed
+
+Top 25 Scala Interview Questions & Answers from Toptal
+
+SharePoint
+Sharepoint Interview Question For Developer
+
+Top SharePoint Interview Questions and Answers
+
+Shell
+Top 50 Shell Scripting Interview Questions from Career Guru
+
+Spark
+Carefully Curated 70 Spark Questions with Additional Optimization Guides (First in the series)
+
+Swift
+10 Essential Swift Interview Questions from Toptal
+
+Get prepared for your next iOS job interview by studying high quality LeetCode solutions in Swift 5
+
+Swift Interview Questions and Answers
+
+Swift Programming Language Interview Questions And Answers from mycodetips.com
+
+Your top 10 Swift questions answered
+
+Swift interview questions and answers on Swift 5 by Raywenderlich
+
+Dynamic keyword in Swift
+
+Vue.js
+List of 300 VueJS Interview Questions
+
+WordPress
+Top 45 WordPress interview questions
+
+10 Essential WordPress Interview Questions
+
+TypeScript
+Typescript Interview Questions
+
+Top 10 TypeScript Interview Questions and Answers for Beginner Web Developers 2019
+
+Database technologies
+Cassandra
+Top 23 Cassandra Interview Questions from Career Guru
+
+Microsoft Access
+Top 16 Microsoft Access Database Interview Questions from Career Guru
+
+MongoDB
+28 MongoDB NoSQL Database Interview Questions and Answers
+
+MongoDB frequently Asked Questions by expert members with experience in MongoDB These questions and answers will help you strengthen your technical skills, prepare for the new job test and quickly revise the concepts
+
+MongoDB Interview Questions from JavaTPointcom
+
+MongoDB Interview Questions that have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of MongoDB
+
+Top 20 MongoDB interview questions from Career Guru
+
+MySQL
+10 MySQL Database Interview Questions for Beginners and Intermediates
+
+100 MySQL interview questions
+
+15 Basic MySQL Interview Questions for Database Administrators
+
+28 MySQL interview questions from JavaTPoint.com
+
+40 Basic MySQL Interview Questions with Answers
+
+Top 50 MySQL Interview Questions & Answers from Career Guru
+
+Neo4j
+Top 20 Neo4j Interview Questions from Career Guru
+
+Oracle
+General Oracle Interview Questions & Answers
+
+Postgres
+13 PostgreSQL Interview Q&A
+
+Frequently Asked Basic PostgreSQL Interview Questions and Answers
+
+PostgreSQL Interview Preparation Guide
+
+PostgreSQL Interview Q&A from CoolInterview.com
+
+SQL
+10 Frequently asked SQL Query Interview Questions
+
+45 Essential SQL Interview Questions from Toptal
+
+Common Interview Questions and Answers
+
+General Interview Questions and Answers
+
+Schema, Questions & Solutions for SQL Exercising
+
+SQL Interview Questions that have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of SQL
+
+SQL Interview Questions CHEAT SHEET
+
+SQLite
+Top 20 SQLITE Interview Questions from Career Guru
+
+Caching technologies
+Memcached
+Memcached Interview Questions from Javapoint
+
+Memcached Interview Questions from Wisdomjobs
+
+Redis
+Redis Interview Questions from Javapoint
+
+Redis Interview Questions from Wisdomjobs
+
+Redis Interview Questions from Career Guru
+
+OS
+Linux
+10 Job Interview Questions for Linux System Administrators from Linux.com
+
+10 Useful Random Linux Interview Questions and Answers
+
+11 Basic Linux Interview Questions and Answers
+
+11 Essential Linux Interview Questions from Toptal
+
+Top 30 Linux System Admin Interview Questions & Answers
+
+Top 50 Linux Interview Questions from Career Guru
+
+278 Test Questions and Answers for *nix System Administrators
+
+Linux Interview Questions - Quick Refresher
+
+Windows
+Top 10 Interview Questions for Windows Administrators
+
+Top 22 Windows Server Interview Questions from Career Guru
+
+Windows Admin Interview Questions & Answers
+
+DevOps
+Linux System Administrator/DevOps Interview Questions
+
+Top DevOps Interview Questions You Must Prepare In 2021
+
+Top 60+ DevOps Interview Questions & Answers in 2021
+
+DevOps Interview Questions & Answers
+
+Algorithms
+Comprehensive list of interview questions of top tech companies
+
+A great list of Java interview questions
+
+Algorithms playground for common interview questions written in Ruby
+
+EKAlgorithms contains some well known CS algorithms & data structures
+
+Top 10 Algorithms for Coding Interview
+
+Top 15 Data Structures and Algorithm Interview Questions for Java programmer
+
+Tech Interview Handbook Best Practice Questions
+
+Daily Coding Interview Practice
+
+Blockchain
+Top 55 Blockchain Interview Questions You Must Prepare In 2018
+
+Blockchain Interview Questions
+
+Top Blockchain Interview Questions
+
+Blockchain Developer Interview Questions and Answers
+
+10 Essential Blockchain Interview Questions
+
+Top 30 Blockchain Interview Questions – For Freshers to Experienced
+
+Most Frequently Asked Blockchain Interview Questions
+
+Coding exercises
+Common interview questions and puzzles solved in several languages
+
+Interactive, test-driven Python coding challenges (algorithms and data structures) typically found in coding interviews or coding competitions
+
+Interview questions solved in python
+
+7 Swift Coding Challenges to Practice Your Skills
+
+Comprehensive lists
+A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore
+
+Front End Developer Interview Questions
+
+Front End Interview Handbook
+
+Some simple questions to interview potential backend candidates
+
+Design Patterns
+Design Pattern Interview Questions that have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of Design Pattern
+
+Design Patterns for Humans™ - An ultra-simplified explanation
+
+Design Patterns implemented in Java
+
+Design Patterns implemented in DotNet
+
+Data structures
+Top 15 Data Structures and Algorithm Interview Questions for Java programmer
+
+Top 50 Data Structure Interview Questions from Career Guru
+
+What is Data Structure? | Top 40 Data Structure Interview Questions
+
+Networks
+Top 100 Networking Interview Questions & Answers from Career Guru
+
+Networking Interview Questions
+
+Security
+101 IT Security Interview Questions
+
+How to prepare for an information security job interview?
+
+Information Security Interview Questions from Daniel Miessler
+
+Top 50 Information Security Interview Questions for freshers and experts
+
+Data Science
+Data Science Interview Questions for Top Tech Companies
+
+66 Job Interview Questions for Data Scientists
+
+Top 45 Data Science Interview Questions You Must Prepare In 2021
+
+Top 30 data science interview questions
+
+Top 100 Data science interview questions
+
+Data Science Interview Questions
+
+160+ Data Science Interview Questions
+
+Top Data Science Interview Questions
+
+FULL-STACK DEVELOPER INTERVIEW QUESTIONS AND ANSWERS
+Table of Contents
+Architecture
+
+Concurrency
+
+Java
+
+General Questions
+
+WEB
+
+SQL
+
+NoSQL
+
+Transactions
+
+Scalability
+
+Load balancing
+
+Cloud computing
+
+Distributed
+
+Cache
+
+Networking
+
+Operating system
+
+Compilers
+
+C++
+
+Javascript
+
+Python
+
+Go
+
+Code writing
+
+Functional programming
+
+Reactive programming
+
+Git
+
+DevOps
+
+QA
+
+Agile, Scrum, XP
+
+Algorithms
+
+UML
+
+Other
+
+Machine learning
+
+Big Data
+
+Image processing
+
+Cryptography
+
+Security
+
+Android
+
+Books
+
+[⬆]** **Architecture:
+
+Design principles. (DRY, KISS, YAGNI, Occam's razor, Worse is better, convention over configuration, separation of concerns, Law of Demeter (principle of least knowledge), boy scout rule, single source of truth, single version of truth, principle of least astonishment, let it crash principle, inversion of control)
+
+SOLID
+
+Rule
+Description
+Single responsibility principle
+
+A module should be responsible to one, and only one, actor.
+
+Open/closed principle
+
+A software artifact should be open for extension but closed for modification.
+
+Liskov substitution principle
+
+It should be possible to substitute base class with derived class.
+
+Interface segregation principle
+
+Many client-specific interfaces are better than one general-purpose interface.
+
+Dependency inversion principle
+
+Depend upon Abstractions but not on concretions. This means that each module should be separated from other using an abstract layer which binds them together. Source code dependency points in the opposite direction compared to the flow of control.
+
+The Clean Architecture
+
+Clean Code Cheat Sheet
+
+One key abstraction
+
+Aspect-oriented programming
+
+The Twelve-Factor App
+
+Domain-driven design
+
+Microservices are a style of software architecture that involves delivering systems as a set of very small, granular, independent collaborating services.
+
+Pros of microservices (The services are easy to replace, Services can be implemented using different programming languages, databases, hardware and software environment, depending on what fits best)
+
+Design patterns.
+
+Creational: Builder, Object Pool, Factory Method, Singleton, Multiton, Prototype, Abstract Factory
+
+Structural: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
+
+Behavioral: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor
+
+Enterprise integration patterns, SOA patterns.
+
+3-tier architecture (Presentation tier, Application tier, Data tier)
+
+3-layer architecture (DAO (Repository), Business (Service) layer, Controller)
+
+REST (Representational state transfer), RPC
+
+Idempotent operation (The PUT and DELETE methods are referred to as idempotent, meaning that the operation will produce the same result no matter how many times it is repeated)
+
+Nullipotent operation (GET method is a safe method (or nullipotent), meaning that calling it produces no side-effects)
+
+Naked objects, Restful objects.
+
+Why do you need web server (tomcat, jetty)?
+
+Inheritance vs Composition (Inheritance - is-a relationship, whether clients will want to use the subclass type as a superclass type. Composition - has-a or part-of relationship).
+
+Multiple inheritance (diamond) problem
+
+Advantages of using modules. (reuse, decoupling, namespace)
+
+Drawbacks of not using separation of concerns
+
+Adding new features will take an order of magnitude longer
+
+Impossible to optimize
+
+Extremely difficult to test
+
+Fixing and debugging can be a nightmare (fixing something in one place can lead to something else breaking that seems completely unrelated).
+
+What is uniform access principle? (client code should not be affected by a decision to implement an attribute as a field or method)
+
+Conway's law (organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations)
+
+GRASP
+
+[⬆]** **Concurrency:
+
+What is deadlock, livelock? (Deadlock is a situation in which two or more competing actions are each waiting for the other to finish, and thus neither ever does. A livelock is similar to a deadlock, except that the states of the processes involved in the livelock constantly change with regard to one another, none progressing.)
+
+Deadlock avoidance. (prevention, detection, avoidance (Mutex hierarchy), and recovery)
+
+What is starvation? (a problem encountered in concurrent computing where a process is perpetually denied necessary resources to process its work)
+
+What is race condition? (Behavior of software system where the output is dependent on the sequence or timing of other uncontrollable events)
+
+What is happens-before relation?
+
+What is thread contention? (Contention is simply when two threads try to access either the same resource or related resources in such a way that at least one of the contending threads runs more slowly than it would if the other thread(s) were not running). Contention occurs when multiple threads try to acquire a lock at the same time
+
+What is a thread-safe function? (Can be safely invoked by multiple threads at the same time)
+
+Publish/Subscribe pattern
+
+What is 2-phase locking? (Growing phase, shrinking phase. Guarantees serializablity for transactions, doesn't prevent deadlock).
+
+What is the difference between thread and process? (Threads (of the same process) run in a shared memory space, while processes run in separate memory spaces)
+
+What is false sharing, cache pollution, cache miss, thread affinity, ABA-problem, speculative execution?
+
+What is a
+
+obstruction-free - if all other threads are paused, then any given thread will complete its operation in a bounded number of steps
+
+lock-free - if multiple threads are operating on a data structure, then after a bounded number of steps one of them will complete its operation
+
+wait-free - every thread operating on a data structure will complete its operation in a bounded number of steps, even if other threads are also operating on the data structure
+
+algorithm?
+
+What is sequential consistency? (The result of any execution is the same as if the operations of all the processors were executed in some sequential order, and the operations of each individual processor appear in this sequence in the order specified by its program).
+
+What is a memory barrier? (A memory barrier, also known as a membar, memory fence or fence instruction, is a type of barrier instruction that causes a CPU or compiler to enforce an ordering constraint on memory operations issued before and after the barrier instruction)
+
+Synchonization aids in Java
+
+CountDownLatch
+
+CyclicBarrier
+
+Phaser
+
+ReentrantLock
+
+Exchanger
+
+Semaphore
+
+LinkedTransferQueue
+
+What is data race? (When a program contains two conflicting accesses that are not ordered by a happens-before relationship, it is said to contain a data race. Two accesses to (reads of or writes to) the same variable are said to be conflicting if at least one of the accesses is a write. But see this)
+
+Java memory model
+
+A program is correctly synchronized if and only if all sequentially consistent executions are free of data races
+
+Correctly synchronized programs have sequentially consistent semantics. If a program is correctly synchronized, then all executions of the program will appear to be sequentially consistent
+
+Causality requirement for incorrectly synchronized programs: link
+
+What is monitor in Java? (Each object in Java is associated with a monitor, which a thread can lock or unlock)
+
+What is safe publication?
+
+What is wait/notify?
+
+Amdahl's law? (Speedup = 1 / (1 - p + p / n))
+
+Dining philosophers problem (Resource hierarchy (first take lower-indexed fork), arbitrator, communication (dirty/clean forks)).
+
+Produces/consumer problem.
+
+Readers/writers problem.
+
+Transactional memory
+
+Coroutine
+
+[⬆]** **Java:
+
+PhantomReference, WeakReference, SoftReference, finalize(), ReferenceQueue.
+
+How to correctly stop a thread? (Thread.interrupt())
+
+What is Spring? (Spring Framework is an application container for Java that supplies many useful features, such as Inversion of Control, Dependency Injection, abstract data access, transaction management, and more)
+
+Spring is a framework for dependency injection: a design pattern that allows the developer to build very decoupled systems by injecting dependencies into classes.
+
+It elegantly wraps Java libraries and makes then much easier to use in your application.
+
+Included in the framework are implementations of commonly used patterns such as REST and MVC web framework which are predominately use by in web applications.
+
+What is Spring-Boot?
+
+What is Hibernate and JPA (Caches, lazy-loading)?
+
+Garbage collection. (G1, Young/Old generation collectors combination examples: PS Scavenge/PS MarkSweep, Copy/MarkSweepCompact)
+
+How to write benchmarks? (jmh)
+
+What are Java 9 modularity?
+
+What is OSGI? (Specification describes a modular system and a service platform for the Java programming language that implements a complete and dynamic component model. Each bundle has its own classpath. Dependency hell avoidance. META-INF/MANIFEST. MF contains OSGI-info)
+
+Serializable / Externalizable
+
+What is a servlet (versions of servlet api, Servlet 4.0)?
+
+What is a servlet filter? How to implement GZipFilter? (ResponseWrapper)
+
+What is generics and PECS (producer extends and consumer super)?
+
+What is the difference between <?>, <Object>, <? extends Object> and no generic type? link1 link2
+
+Explain method signature for Collections.max(...), Collections.fill(...), Collections.copy(...), Collections.sort(...)
+
+Why are arrays covariant but generics are invariant? link
+
+Major specs: JAX-RS, JAX-WS, JMS, JAXB, XSLT, XPATH, JNDI, JMX, JDBC, XML(SAX, DOM, StAX)
+
+Performance Diagnostic Methodology
+
+[⬆]** **General Questions:
+
+Polymorphism (Variable of type Shape could refer to an object of type Square, Circle... Ability of a function to handle objects of many types)
+
+Encapsulation (Packing of data and functions into a single component)
+
+Virtual function (Overridable function)
+
+Virtual method table
+
+Dynamic binding (Actual method implementation invoked is determined at run time based on the class of the object, not the type of the variable or expression)
+
+How does garbage collector work? (Mark and sweep: mark: traverse object graph starting from root objects, sweep: garbage collect unmarked objects. Optimizations: young/old generations, incremental mark and sweep)
+
+Tail recursion (A tail call is a subroutine call performed as the final action of a procedure)
+
+Semantic versioning
+
+[⬆]** **WEB:
+
+WEB security vulnerabilities (XSS, CSRF, session fixation, SQL injection, man-in-the-middle, buffer overflow)
+
+CSRF prevention (CSRF-token)
+
+What is JSONP, CORS? (A communication technique used in JavaScript programs running in web browsers to request data from a server in a different domain, something prohibited by typical web browsers because of the same-origin policy)
+
+HTTPS negotiation steps.
+
+What is HTTP Strict Transport Security (HSTS)? (Prevents Man in the Middle attacks)
+
+Browser-server communication methods: WebSocket, EventSource, Comet(Polling, Long-Polling, Streaming)
+
+Character encoding
+
+What is role-based access control and access control list?
+
+What is session and persistent cookies, sessionStorage and localStorage?
+
+How to implement remember-me? (http://jaspan.com/improved_persistent_login_cookie_best_practice)
+
+Authentication using cookies, JWT (JSON Web Tokens).
+
+[⬆]** **SQL:
+
+SQL join types (inner join, left/right outer join, full outer join, cross join)
+
+Join types)
+
+SQL normal forms
+
+The domain of each attribute contains only atomic values, and the value of each attribute contains only a single value from that domain
+
+No non-prime attribute in the table is functionally dependent on a proper subset of any candidate key
+
+Every non-prime attribute is non-transitively dependent on every candidate key in the table. BCNF.Every non-trivial functional dependency in the table is a dependency on a superkey.)
+
+Isolation levels and Anomalies
+
+Isolation_level\Anomaly
+Lost_update (because of rollback)
+Dirty_read
+Non_repeatable_reads second_lost_update
+Phantoms
+Write_skew
+Read Uncommitted
+
+-
+
+may occur
+
+may occur
+
+may occur
+
+may occur
+
+Read Committed
+
+-
+
+-
+
+may occur
+
+may occur
+
+may occur
+
+Repeatable Read
+
+-
+
+-
+
+-
+
+may occur
+
+may occur
+
+Snapshot
+
+-
+
+-
+
+-
+
+-
+
+may occur
+
+Serializable
+
+-
+
+-
+
+-
+
+-
+
+-
+
+[⬆]** **NoSQL:
+
+Types of NoSQL databases?
+
+Document Stores (MongoDB, Couchbase)
+
+Key-Value Stores (Redis, Volgemort)
+
+Column Stores (Cassandra)
+
+Graph Stores (Neo4j, Giraph)
+
+[⬆]** **Transactions:
+
+ACID
+
+2-phase commit protocol
+
+3-phase commit protocol
+
+What is pessimistic / optimistic locking?
+
+[⬆]** **Scalability:
+
+Horizontal and vertical scaling.
+
+How to scale database? (Data partitioning, sharding(vertical/horizontal), replication(master-slave, master-master)).
+
+Denormalization.
+
+What is synchronous multimaster replication? (Each server can accept write requests, and modified data is transmitted from the original server to every other server before each transaction commits)
+
+What is asynchronous multimaster replication? (Each server works independently, and periodically communicates with the other servers to identify conflicting transactions. The conflicts can be resolved by users or conflict resolution rules)
+
+When to use messaging queue?
+
+MongoDB, Redis.
+
+Hadoop basics.
+
+[⬆]** **Load balancing:
+
+sticky/non-sticky sessions
+
+Sticky sessions vs storing sessions in Redis.
+
+[⬆]** **Cloud computing:
+
+What is cloud computing? (Cloud computing platform is a fully automated server platform that allows users to purchase, remotely create, dynamically scale, and administer system)
+
+Amazon web services
+
+Google Cloud Platform
+
+Microsoft Azure
+
+[⬆]** **Distributed:
+
+Consensus
+
+Raft (In Search of an Understandable Consensus Algorithm)
+
+Paxos
+
+What is CAP theorem? Illustrated proof. CAP-FAQ (It is impossible for a distributed computer system to simultaneously provide all three of the following guarantees: consistency, availability, partition tolerance). Gilbert and Lynch's paper. "Please stop calling databases CP or AP").
+
+
+CAP theorem
+What is map-reduce? (Word count example)
+
+Sharding counters.
+
+Distributed software:
+
+Distributed streaming platforms: kafka
+
+Distributed key-value store: zookeeper, etcd, Consul
+
+Map-reduce: hadoop, spark
+
+Distributed file system: hbase
+
+Cluster management: kubernetes, docker-swarm, mesos
+
+Herlihy's consensus hierarchy. Every shared object can be assigned a consensus number, which is the maximum number of processes for which the object can solve wait-free consensus in an asynchronous system.
+
+
+Copy
+1 Read-write registers
+2 Test-and-set, swap, fetch-and-add, queue, stack
+⋮ ⋮
+∞ Augmented queue, compare-and-swap, sticky byte
+Consistency models:
+
+Sequential consistency
+
+Causal consistency
+
+Eventual consistency
+
+Monotonic Read Consistency
+
+Monotonic Write Consistency
+
+Read-your-writes Consistency
+
+Writes-follows-reads Consistency
+
+Consensus number. Maximum number of threads for which objects of the class can solve consensus problem.
+
+Logical clock
+
+Vector clock
+
+[⬆]** **Cache:
+
+What is write-through and write-behind caching? (write-through (synchronous), write-behind (asynchronous))
+
+HTTP cache options?
+
+[⬆]** **Networking:
+
+OSI model (Physical, Data link, Network, Transport, Session, Presentation, Application)
+
+Multithreading vs select
+
+Switch, hub, router
+
+TCP congestion
+
+TCP back-pressure
+
+[⬆]** **Operating system:
+
+What is memory mapped file and its benefits?
+
+Interprocess communication methods. (Pipes, Events, Mailboxes/Ports (can be implemented by using shared memory and semaphores), Direct Message Passing).
+
+Virtual memory organization.
+
+Process scheduler.
+
+[⬆]** **Compilers:
+
+Recursive descent parser
+
+LL parser
+
+LR parser
+
+Context-free grammar
+
+Chomsky hierarchy
+
+[⬆]** **C++:
+
+C++ standard
+
+Memory model
+
+Data race. When an evaluation of an expression writes to a memory location and another evaluation reads or modifies the same memory location, the expressions are said to conflict. A program that has two conflicting evaluations has a data race unless
+
+both evaluations execute on the same thread or in the same signal handler, or
+
+both conflicting evaluations are atomic operations (see std::atomic), or
+
+one of the conflicting evaluations happens-before another (see std::memory_order)
+
+If a data race occurs, the behavior of the program is undefined.
+
+SFINAE 1
+
+[PImpl] https://en.cppreference.com/w/cpp/language/pimpl
+
+[⬆]** **Javascript:
+
+this keyword
+
+How prototypes work?
+
+inheritance
+
+differences between == and === (http://dorey.github.io/JavaScript-Equality-Table/)
+
+closures
+
+recursion
+
+What is MVC, MVP, MVVM?
+
+What is promise?
+
+What is event bubbling and capturing? (target.addEventListener(type, listener[, useCapture]))
+
+What is AMD(Asynchronous Module Design) and CommonJS?
+
+What is jQuery?
+
+[⬆]** **Python:
+
+Slice notation
+
+[⬆]** **Go:
+
+Language Specification
+
+Memory Model
+
+[⬆]** **Codewriting:
+
+Implement binary search
+
+
+Copy
+int binarySearch(int[] a, int fromInclusive, int toExclusive, int key) {
+    int low = fromInclusive;
+    int high = toExclusive - 1;
+    while (low <= high) {
+        int mid = (low + high) >>> 1;
+        int midVal = a[mid];
+        if (midVal < key)
+            low = mid + 1;
+        else if (midVal > key)
+            high = mid - 1;
+        else
+            return mid; // key found
+    }
+    return -(low + 1); // key not found
+}
+Implement quick sort
+
+
+Copy
+void qSort(int[] a, int fromInclusive, int toInclusive) {
+    int i = fromInclusive;
+    int j = toInclusive;
+    if (i >= j) return;
+    int separator = a[i + random.nextInt(j - i + 1)];
+    do {
+        while (a[i] < separator) ++i;
+        while (a[j] > separator) --j;
+        if (i > j) break;
+        int t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+        ++i;
+        --j;
+    } while (i <= j);
+    qSort(a, fromInclusive, j);
+    qSort(a, i, toInclusive);
+}
+[⬆]** **Functional programming:
+
+Referential transparency
+
+What is Monad?
+
+[⬆]** **Reactive programming:
+
+The Reactive Manifesto (responsive, resilient, elastic, message driven)
+
+Reactive extensions
+
+What is asynchronous and non-blocking? link
+
+[⬆]** **Git:
+
+Git workflow? (Master: production-ready state; Develop: latest delivered development changes for the next release; Feature Branches; Release Branches; Hotfixes)
+
+
+Git workflow
+http://nvie.com/posts/a-successful-git-branching-model/
+
+What is a rebase?
+
+[⬆]** **DevOps:
+
+What is Blue-green Deployment, Canary release, A/B testing? link
+
+What is Docker?
+
+[⬆]** **QA:
+
+What is unit test? (A test that purely tests a single unit of functionality)
+
+What is component test?
+
+What is integration test? (Examine several parts of a system to make sure that when integrated, these parts behave as expected)
+
+What is user acceptance test? BDD?
+
+Unit tests advantages?
+
+Types of tests: acceptance testing, functional testing, smoke testing, regression testing, unit testing, integration testing, stress testing, (Load, Performance, Sanity, Stability, Security, Feature, Progression, Installation, Business).
+
+Differences between stub and mock? (A stub is a test double with preprogrammed behavior. Mocks are stubs with preprogrammed expectations)
+
+Selenium tests and webdriver.
+
+How to test multithreading code?
+
+What is Consumer Driven Contract? link
+
+Types of tests
+
+[⬆]** **Agile:
+
+What is Agile? (http://agilemanifesto.org/principles.html)
+
+Individuals and interactions over Processes and tools
+
+Working software over Comprehensive documentation
+
+Customer collaboration over Contract negotiation
+
+Responding to change over Following a plan
+
+What is Scrum? (Roles: product owner, development team, scrum master. Events: sprint)
+
+What are the differences between Scrum and Waterfall? ( http://www.leanagiletraining.com/agile/waterfall-versus-scrum-how-do-they-compare/)
+
+What is XP? ()
+
+What is Kanban?
+
+What is Lean development?
+
+[⬆]** **Algorithms:
+
+What Ο(n), Ω(n), Θ(n)?
+
+What is NP, NP-completeness, NP-hardness with examples?
+
+[⬆]** **Other:
+
+How to find memory leak. (Memory snapshot diff).
+
+Profiling: sampling and instrumentation.
+
+Regular expressions. (Examples)
+
+What are your goals to work in our company? (3 categories: professional, financial, social)
+
+What is virtualization?
+
+What is total/partial order?
+
+How to work with legacy code? (http://programmers.stackexchange.com/a/122024)
+
+[⬆]** **Machine learning:
+
+Bayes' theorem:
+
+![equation](http://latex.codecogs.com/svg.latex?\inline&space; \fn_cs&space; P(A|B)&space; =&space; \dfrac{P(B|A)\times&space; P(A)}{P(B)}, P(B)&space; =&space; \sum\limits_{i}{P(Ai)\times&space; P(B|Ai)})
+
+Confidence interval
+
+p-value
+
+Overfitting
+
+Bias–variance tradeoff
+
+Backpropagation
+
+Reinforcement learning
+
+Curse of dimensionality
+
+Cross-validation
+
+Bag-of-words, Stop words, n-gram, tf–idf, Latent semantic analysis
+
+Linear regression
+
+Logistic regression
+
+Naive Bayes classifier
+
+Support vector machine
+
+Principal component analysis
+
+Deep learning
+
+[⬆]** **Big Data:
+
+Lambda architecture
+
+HyperLogLog
+
+Event sourcing
+
+[⬆]** **Image processing:
+
+[⬆]** **Cryptography:
+
+Public-key cryptography
+
+Public key certificate
+
+Blockchain
+
+Proof-of-work system
+
+Secret sharing
+
+RSA
+
+
+Copy
+select 2 primes: p,q
+n = p*q
+phi(n) = (p-1)*(q-1)
+select 1<e<phi(n), gcd(e,phi(n))=1
+d=e^-1 mod phi(n)
+(e,n) - public key
+(d,n) - private key
+c = m^e mod n
+m = c^d mod n = m^(e*d) mod n = m^(e*d mod phi(n)) mod n = m
+[⬆]** **Security:
+
+What is OpenID and OAuth2.0 and OpenID Connect?
+
+Four main actors in an OAuth system (clients, resource owners, authorization servers, and protected resources)
+
+What is access_token, refresh_token, SAML token, JWT token?
+
+Sticky session vs Session Replication.
+
+What is hash salt?
+
+What is Federated Authentication ?
+
+What is CSP and SRI hash ?
+
+What is Clickjacking and Cursorjacking ? How to prevent it ?
+
+[⬆]** **Android:
+
+[⬆]** **Books:
+
+C++ programming
+
+The C++ Programming Language, 4th Edition
+
+Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14
+
+Java programming
+
+Effective Java (3rd Edition)
+
+Algorithms
+
+Introduction to Algorithms, 3rd Edition
+
+The Art of Computer Programming
+
+Network Flows: Theory, Algorithms, and Applications
+
+Computational Geometry: Algorithms and Applications
+
+Algorithms on Strings, Trees, and Sequences
+
+Compilers: Principles, Techniques, and Tools
+
+How to Solve It: Modern Heuristics
+
+Scheduling Algorithms
+
+Concurrent programming
+
+Java Concurrency in Practice
+
+C++ Concurrency in Action, 2nd Edition
+
+The Art of Multiprocessor Programming
+
+Statistics
+
+Introductory Statistics
+
+All of Statistics: A Concise Course in Statistical Inference
+
+Machine Learning
+
+Applied Machine Learning
+
+Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems 2nd Edition
+
+The Elements of Statistical Learning: Data Mining, Inference, and Prediction
+
+Machine Learning: a Concise Introduction
+
+Learning From Data
+
+Digital Signal Processing
+
+Digital Signal Processing: A Practical Approach, 2nd Edition
+
+Digital Image Processing
+
+Digital Image Processing, 4th Edition
+
+The Image Processing Handbook, 7th Edition
+
+Other
+
+Reactive Programming with RxJava
+
+Design Patterns: Elements of Reusable Object-Oriented Software
+
+Big Data: Principles and best practices of scalable realtime data systems
+
+Designing Data-Intensive Applications
+
+Kafka: The Definitive Guide
+
+Cassandra: The Definitive Guide
+
+The Linux Programming Interface
+
+Hibernate in Action
+
+The Garbage Collection Handbook
+
+Pro Git
+
+Learning JavaScript
+
+Clean Code: A Handbook of Agile Software Craftsmanship
+
+Release It!: Design and Deploy Production-Ready Software
+
+Gödel, Escher, Bach: An Eternal Golden Braid
+
+Previous
+Web Dev Interview Questions
+Next
+Interview Questions.
+Last updated 4 years ago
+
+This site uses cookies to deliver its service and to analyze traffic. By browsing this site, you accept the privacy policy.
+
+
+
+Accept
+
+Reject
+
+
 <title>500+ Full-stack Developer Interview Questions &amp; Answers (2026)</title>
     <meta charset="utf-8" />
     
