@@ -3,6 +3,453 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Разрешено ли значение `null` для обязательных полей?
+Вопросы
+NODE.JS
+Разрешено ли значение `null` для обязательных полей?
+Что в MongoDB означает наличие условия required = true для поля в коллекции?
+
+Может ли значение быть null?
+
+ 28.03.2022 15:31
+0
+0
+19
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Никакое значение не может быть null, required: true выдаст ошибку, если значение null будет передано в поле, в котором реализовано required.
+
+Согласно Мангусту документация по требуемым
+
+By default, a value satisfies the required validator if val != null (that is, if the value is not null nor undefined)
+
+Имейте в виду, что это поведение по умолчанию, поэтому существует возможность пользовательской реализации.
+
+ 28.03.2022 15:38
+ Ответ принят как подходящий
+required = true, похоже, использует Mongoose, поэтому он не принимает нулевые значения.
+
+By default, a value satisfies the required validator if val != null (that is, if the value is not null nor undefined).
+
+Можно найти в их документах: https://mongoosejs.com/docs/api.html#schematype_SchemaType-обязательно
+
+MongoDB имеет аналогичный подход, но вы объявляете все поля в опции required
+
+то есть:
+
+...
+required: [ "name", "year", "major", "address" ]
+...
+Можно найти больше здесь
+
+ 28.03.2022 15:41
+Другие вопросы по теме
+Postgres: рассчитать временной интервал (в секундах) между последовательными значениями
+Как заменить лицензию в базе данных Kingbase?
+SQL: индекс FULLTEXT для скорости
+Извлеките данные, суммирующие столбец количества, чтобы результат был сгруппирован по клиентам, месяцам и годам
+Можно ли определить диапазон целочисленных значений в числовом поле в MongoDB?
+Как я могу сделать пагинацию?
+Как вернуть определенный столбец из результатов базы данных?
+SQLITE: горизонтальное объединение больших таблиц sql на основе общей записи
+Могу ли я создать кроссплатформенное приложение с помощью Xamarin, используя базу данных MySQL?
+Создание словаря в словаре для разделения данных по одинаковым значениям в одном столбце, а затем во втором столбце
+Похожие вопросы
+Что делать, если в некоторых документах нет поля, которое является частью индекса?
+FormData() отправляет значение поля ввода, но не отправляет файл из React на экспресс-сервер?
+Найти информацию о пользователе по идентификатору во вложенном объекте nodejs | JavaScript
+Как использовать API календаря Google для JavaScript с установкой npm ?? Или можно ли использовать API календаря Google для nodejs в браузере в Nextjs?
+Как удалить объект из файла JSON?
+Как получить доступ к функции Passport «Готово» из остального кода при аутентификации с использованием паспорта.js?
+Discord JS v13 Получение var из объекта и размещение их во встраивании
+Включение изображения в тело запроса в виде двоичных данных
+Мопс - не может пройти шаг 1 стандартного шаблона
+Сопоставьте поля из 2 разных коллекций и отобразите результат на основе соответствия mongodb nodejs
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Операция списка Aerospike: как удалить один элемент из всех ячеек списка в наборе
+Вопросы
+LUA
+Операция списка Aerospike: как удалить один элемент из всех ячеек списка в наборе
+У меня есть набор, который имеет две корзины (длинный pId, значения - список), и индекс списка применяется к значениям. Теперь я хочу удалить указанное значение из списка значений всех записей.
+
+Я использовал ListOperation.removeByValue, и он работает, но не быстро, когда размер записей превышает 100000 записей. Циклическая операция занимает около 11 секунд.
+
+WritePolicy clientWritePolicy = new WritePolicy();
+clientWritePolicy.commitLevel = CommitLevel.COMMIT_MASTER;
+clientWritePolicy.recordExistsAction = RecordExistsAction.UPDATE;
+clientWritePolicy.expiration = 300;
+              
+Statement statement = new Statement();
+statement.setIndexName("values_index");
+statement.setNamespace("test");
+statement.setSetName("setTest");
+               
+statement.setFilter(Filter.contains("values", IndexCollectionType.LIST, value));
+QueryPolicy queryPolicy = new QueryPolicy();
+RecordSet recSet = client.query(queryPolicy, statement);
+    
+recSet.forEach(rec->{
+   client.operate(clientWritePolicy, rec.key,ListOperation.removeByValue("values",Value.get(value), ListReturnType.NONE));
+   });
+
+Как я могу оптимизировать этот код? Есть ли другое решение, например, использование UDF?
+
+обновление 1: Я написал ниже функцию в файле lua:
+
+function removeListByValue(rec,v)
+    local l = list()
+    for value in list.iterator(rec["values"]) do
+        if (value ~= v) then
+             list.append(l, value)
+        end
+     end
+     rec["values"] = l;
+     aerospike:update( rec );
+end
+и запустите его из java-клиента:
+
+WritePolicy clientWritePolicy = new WritePolicy();
+clientWritePolicy.commitLevel = CommitLevel.COMMIT_MASTER;
+clientWritePolicy.recordExistsAction = RecordExistsAction.UPDATE;
+clientWritePolicy.expiration = 300;
+
+Statement statement = new Statement();
+statement.setIndexName("values_index");
+statement.setNamespace("test");
+statement.setSetName("setTest");
+
+statement.setFilter(Filter.contains("values", IndexCollectionType.LIST, value));
+client.execute(clientWritePolicy, statement, "luaPackage", "removeListByValue",Value.get(value));
+       
+кажется, что UDF требуется больше времени для обновления или удаления записей. Это около 29 секунд для 200 записей.
+
+ 15.10.2022 16:19
+1
+0
+122
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете применять операции (ваш ListOperation) при выполнении вместо использования UDF. Вы можете указать операции в объекте Statement с помощью setOperations(), а затем просто использовать execute(wPolicy, statement).
+
+e.g.
+Operation[] operations = new Operation[1];
+operations[0]= ListOperation.removeByValue(.... 
+stmt.setOperations(operations);
+WritePolicy wPolicyScan = new WritePolicy();
+ExecuteTask et = client.execute(wPolicyScan, stmt)
+Java API:
+
+выполнить (политика WritePolicy, оператор оператора, операция... операции) Применение операций к записям, которые соответствуют фильтру оператора фонового запроса
+
+ 16.10.2022 01:57
+Спасибо @pgupta. Я проверил ваш ответ на Aerospike Server 5.6.0.7:
+
+    WritePolicy clientWritePolicy = new WritePolicy();
+    clientWritePolicy.commitLevel = CommitLevel.COMMIT_MASTER;
+    clientWritePolicy.recordExistsAction = RecordExistsAction.REPLACE;
+    clientWritePolicy.expiration = 300;
+    Statement statement = new Statement();
+    statement.setIndexName("values_index");
+    statement.setNamespace("test");
+    statement.setSetName("setTest");
+    statement.setFilter(Filter.contains("values", IndexCollectionType.LIST, value));
+    Operation[] operations = new Operation[1];
+    operations[0]= ListOperation.removeByValue("values",value, ListReturnType.NONE);
+    client.execute(clientWritePolicy, statement,operations);
+это работает. Спасибо.
+
+ 26.10.2022 15:48
+Другие вопросы по теме
+Как запросить коллекцию монго на основе полей dbref
+Как удалить двойные кавычки внутри двойных кавычек в строковом поле?
+Модель данных сообщений и комментариев Firestore
+Друг в социальной сети Firestore запрашивает модель данных
+Выражение фильтра Aerospike для логических полей не работает
+Альтернатива счетчику столбцов в ScyllaDB
+Поддерживает ли ScyllaDB последнюю версию метрик?
+Запрос на $unwind $group и $match с mongo db
+Как обнулить столбец счетчика в БД Scylla?
+Как установить «увидел: правда» в массиве сообщений в мангусте
+Похожие вопросы
+Получение отсортированных данных из таблицы в LUA
+Lua_pushcclosure — не помещает значения в стек
+Получить траекторию ракеты
+Ошибка сценария Redis Lua: сценарий попытался получить доступ к несуществующему сценарию печати глобальной переменной
+Roblox Studio, как отправить строку через удаленное событие
+Непосредственно вернуть запись таблицы из (самой простой) функции в Lua
+Не удалось загрузить «resty.core» при загрузке пользовательского плагина APISIX
+Как использовать плагины vimscript с lua для neovim
+Ошибка сценария Roblox: ServerScriptService.CheckpointsScript:31: попытка проиндексировать ноль с помощью «статистики лидеров»
+Как командная система? (Роблокс)
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Orientdb NoSQL условно выполняет запрос
+Вопросы
+NOSQL
+Orientdb NoSQL условно выполняет запрос
+Я использую API REST OrientDB и пытаюсь найти способ проверить наличие края и создать его, если оно не существует, используя только один запрос POST. Множественные запросы и команды - это нормально, просто нужно минимизировать накладные расходы, возникающие при обмене данными с сервером.
+
+Я написал запрос для проверки края в OrientDB, построенном в наборе данных Tolkien-Arda:
+
+SELECT IF(COUNT(*) FROM 
+(SELECT FROM Begets
+WHERE OUT IN (SELECT FROM Creature WHERE uniquename='rosaBaggins') 
+AND IN IN (SELECT FROM Creature WHERE uniquename='adalgrimTook')) > 0, "True", "False")
+Это уродливое чудовище запроса просто подсчитывает, сколько ребер идет от rosaBaggins до adalgrimTook, и возвращает «истину», если она возвращает больше 0, и ложь в противном случае.
+
+Однако я не уверен, как перейти к следующему шагу и выполнить запрос CREATE EDGE, если это правда. Помощь с этим оценена или с более эффективным написанием моего безумного запроса, у меня такое чувство, что я сделал это трудным путем.
+
+ 18.04.2018 22:14
+0
+0
+204
+3
+ Ответы 3
+Если вы хотите, вы можете сделать это через Java API, этот код проверяет, существует ли исходящее ребро от rosaBaggins до adalgrimTook:
+
+String DB = "<db name>";
+String path = "remote:localhost/" + DB;
+OServerAdmin serverAdmin;
+
+try
+{
+    serverAdmin = new OServerAdmin(path).connect("<username>", "<password>");
+    if (serverAdmin.existsDatabase())
+    {
+        OrientGraphFactory factory = new OrientGraphFactory(path);
+        OrientGraph g = factory.getTx();
+
+        Iterable<Vertex> result = g.command(new OCommandSQL("SELECT FROM #18:0 WHERE out().uniquename contains 'adalgrimTook'")).execute();
+        List<Vertex> list = new ArrayList<Vertex>();
+        CollectionUtils.addAll(list, result.iterator());
+
+        if (list.size() == 0)
+        {
+            System.out.println("Edge doesn't exist, I'm creating it ...");
+            g.command(new OCommandSQL("CREATE EDGE connection FROM (SELECT FROM Creature WHERE uniquename = 'rosaBaggins') TO (SELECT FROM Creature WHERE uniquename = 'adalgrimTook')")).execute();
+        }
+        else
+        {
+            System.out.println("Edge already exist");
+        }
+
+        serverAdmin.close();
+    }
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}
+Надеюсь, поможет
+
+С Уважением
+
+ 19.04.2018 00:03
+Поскольку это не было упомянуто в Java, я просто предоставлю вам чистую реализацию SQL этого Edge Upsert.
+
+let $1 = select from user where _id = 'x5mxEBwhMfiLSQHaK';
+let $2 = select expand(both('user_story')) from story where _id = '5ab4ddea1908792c6aa06a93';
+let $3 = select intersect($1, $2);
+if ($3.size() > 0) {
+  return 'already inserted';
+}
+create edge user_story from (select from user where _id = 'x5mxEBwhMfiLSQHaK') to (select from story where _id = '5ab4ddea1908792c6aa06a93')
+return 'just inserted';
+Я не использовал исходный код из tolkien-Arda, но не стесняйтесь заполнять этот код.
+
+Структура состоит из пользователя и написанного им рассказа. Если они еще не связаны, создается ребро (user_story).
+
+ 19.04.2018 11:35
+Используя часть ответа @mitchken, я понял это.
+
+LET $1 = SELECT expand(bothE('Begets')) from Creature where uniquename='asdfasdf';\
+LET $2 = SELECT expand(bothE('Begets')) FROM Creature WHERE uniquename='adalgrimTook';\
+LET $3 = SELECT INTERSECT($1, $2);\
+LET $4 = CREATE EDGE Begets FROM (SELECT FROM Creature WHERE uniquename='asdfasdf') TO (SELECT FROM Creature WHERE uniquename='adalgrimTook');\
+SELECT IF($3.INTERSECT.size() > 0, 'Already exists', $4)
+Отправка этого скрипта на сервер в первый раз создает новое ребро между asdfasdf (вершиной, которую я только что создал) и adalgrimTook, и возвращает @rid нового ребра. Во второй раз, когда я отправляю сценарий на сервер, он возвращает «Уже существует».
+
+Также важно отметить (мне пришлось немало разочароваться, чтобы понять это), что операторы LET не будут работать в интерфейсе командной строки или на вкладке «Обзор» в веб-интерфейсе, но отлично работают как сценарий POST.
+
+ 19.04.2018 20:44
+Другие вопросы по теме
+Предоставляет ли OrientDB HTTP API функцию удаления базы данных?
+Пакетные команды OrientDB для уникальных ребер и вершин
+Orient Db AssertionError OCachePointer.incrementReadersReferrer
+Запрос Orientdb для получения всех вершин, соединенных ребром определенного типа
+Ошибка OrientDB Console.bat с недопустимым паролем имени пользователя для команды удаления базы данных
+Использовать временный идентификатор записи во время транзакции
+Oriendb Select @ rid из таблицы возвращает -2: 0
+Как улучшить этот запрос OrientDB для максимальной производительности?
+Orientdb создает java.lang.String не может быть приведен в базу данных проверки и базы данных восстановления
+OrientDB: выберите край, где out = (выберите ??) не работает
+Похожие вопросы
+Невозможно восстановить определенные таблицы на определенных узлах в Cassandra
+Spring Data API для запросов без использования ORM
+Есть ли в Кассандре шаблон для этой задачи?
+Ключи нескольких диапазонов для таблицы DynamoDB
+Проблема с производительностью с CouchDB Mango Index
+MUMPS для миграции базы данных Cache
+Гибридные приложения: какая стратегия БД «PouchDB + CouchDB» или Couchbase Mobile?
+Поиск записей по значению или условному значению в Nosql со 100 миллионами записей
+Префикс RavenDB ID и REST API
+Вес поискового запроса MongoDB
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Datediff в CosmosDb
+Вопросы
+AZURE
+Datediff в CosmosDb
+Привет. Есть ли способ добиться датировки в cosmosdb?
+
+Select Datediff(day,c.datea, c.dateb) from c
+По-видимому, слово «датированный» не является поддерживаемым ключевым словом, и я не могу найти эквивалент.
+
+Заранее спасибо
+
+ 14.06.2018 07:25
+0
+0
+1 307
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Имеется NO dateiff, доступный с cosmosdb,
+
+Вместо этого вы можете использовать предложение where, если хотите выполнить запрос между двумя диапазонами дат.
+
+ 14.06.2018 07:29
+Саджитаран прав. Однако вы можете сохранить даты как временные метки unix, а затем простое вычитание их даст вам дату
+
+ 17.06.2018 21:00
+DateTimeDiff добавлен в базу данных cosmos. Пожалуйста, обратитесь к этому: https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-datetimediff
+
+ 10.09.2020 14:03
+Другие вопросы по теме
+Как сохранить нулевые значения в конце сортировки в Mongoose?
+Не удалось найти пакет libsystemd-dev во время установки ScyllaDB в ubuntu 14
+Хранение сложных данных в качестве ключа в базе данных NoSQL?
+Несколько потоков пытаются одновременно писать в одном хранилище данных без Sql
+Aerospike ACID - Как узнать окончательный результат транзакции по таймаутам?
+MongoDB - полезен ли индекс для коллекции, в которой будет только запрос findOne?
+Тестирование БД
+Стратегия архивирования данных MongoDB
+Отношения "многие ко многим" RavenDb: структура и индекс документа
+Правильный дизайн в базе данных документов Cloud Firestore
+Похожие вопросы
+Ошибка с WSGI при развертывании приложения Flask в Azure
+Определение сборки для приложения Django в VSTS
+Многофакторная аутентификация при входе в Windows 10 с учетной записью Azure AD
+C# Application Insights - несколько экземпляров TelemetryClient
+Как правильно назначить узлы менеджера роя?
+Хранилище Azure: фильтр запросов к таблицам работает в эмуляторе, но не в Azure
+Как вернуть файл в настраиваемом соединителе Azure Logic Apps
+DistributedExchangeOperation <ShuffleMoveOperation>
+Есть ли способ в Sql Server найти, какие столбцы в представлении не индексируются
+Глубокая ссылка на текстовый файл в Azure Data Lake Store
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 DynamoDB — как «сломать» иерархию без использования отношений?
 Вопросы
 AMAZON WEB SERVICES
