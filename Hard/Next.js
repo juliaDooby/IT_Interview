@@ -1,3 +1,1264 @@
+<h1 class="mb-3">NextJs Interview Questions</h1>
+
+                        <!-- Info -->
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="bi bi-question-square-fill text-success me-2"></i>45 questions &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <span class="badge bg-success bg-opacity-10 text-success m-1"><i class="fas fa-check me-2 small fw-bold"></i>Junior Level</span>
+                                    <span class="badge bg-warning bg-opacity-10 text-warning m-1"><i class="fas fa-check me-2 small fw-bold"></i>Mid Level</span>
+                                    <span class="badge bg-danger bg-opacity-10 text-danger m-1"><i class="fas fa-check me-2 small fw-bold"></i>Senior Level</span>
+                            </li>
+                        </ul>
+                        <span class="badge bg-info bg-opacity-10 text-info m-2"><i class="fas fa-check me-2 small fw-bold"></i>Extra Practices 😃</span>
+                        <br/><br/>
+                        <b>Share on:</b>
+                        <ul class="list-inline mb-2 mt-1">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.interviewplus.ai/developers-and-programmers/next-js/questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="Linked IN Icon" src="/assets/images/linkedin.png"></a>
+                            <a href="https://x.com/intent/tweet?url=https://www.interviewplus.ai/developers-and-programmers/next-js/questions&text=NextJs Interview Questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="Twitter Icon" src="/assets/images/twitter.png"></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.interviewplus.ai/developers-and-programmers/next-js/questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="FB Icon" src="/assets/images/facebook.png"></a>
+                        </ul>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="col-6 col-md-2 text-center order-3">
+                        <img src="/assets/images/element/cat-2-min.png" alt="NextJs header image right">
+                    </div>
+                    
+                </div> <!-- Row END -->
+            </div>
+        </div> <!-- Row END -->
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <nav aria-label="breadcrumb" class="text-center mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/developers-and-programmers/topics">Developers &amp; Programmers</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">NextJs</li>
+                            </ol>
+                        </nav>
+
+        <div class="col-md-12 mb-3" style="text-align: right;">
+                        </div>
+        <div class="row g-4 pb-5">
+        <div class="accordion accordion-icon accordion-bg-light" id="questionsPane">
+                                                                <div class="accordion-item" id="3bfb50c5-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading1" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn1" style="padding-bottom: 0px;padding-top: 8px;" class="1-chk accordion-button rounded collapsed " type="button" qid="3bfb50c5-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">1.</div>
+                                                                                <div style="margin-left: 30px;">What is Next.js and what problem does it solve in web development?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="3bfb50c5-ebe1-11ed-8543-067999cb6634" chk="1-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="3bfb50c5-ebe1-11ed-8543-067999cb6634" chk="1-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>911</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody1" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="4c98a5f9-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading2" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn2" style="padding-bottom: 0px;padding-top: 8px;" class="2-chk accordion-button rounded collapsed " type="button" qid="4c98a5f9-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">2.</div>
+                                                                                <div style="margin-left: 30px;">Create a Next.js-based blog application that allows users to create, read, update, and delete blog posts, including features such as comments, categories, and tags.<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="4c98a5f9-ebe1-11ed-8543-067999cb6634" chk="2-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="4c98a5f9-ebe1-11ed-8543-067999cb6634" chk="2-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>835</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody2" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="6caa7c1d-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading3" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn3" style="padding-bottom: 0px;padding-top: 8px;" class="3-chk accordion-button rounded collapsed " type="button" qid="6caa7c1d-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">3.</div>
+                                                                                <div style="margin-left: 30px;">How do you create a new Next.js project?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="6caa7c1d-ebe1-11ed-8543-067999cb6634" chk="3-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="6caa7c1d-ebe1-11ed-8543-067999cb6634" chk="3-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>841</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody3" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="7996d9c3-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading4" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn4" style="padding-bottom: 0px;padding-top: 8px;" class="4-chk accordion-button rounded collapsed " type="button" qid="7996d9c3-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">4.</div>
+                                                                                <div style="margin-left: 30px;">What is the purpose of the pages directory in a Next.js project?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="7996d9c3-ebe1-11ed-8543-067999cb6634" chk="4-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="7996d9c3-ebe1-11ed-8543-067999cb6634" chk="4-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>807</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody4" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="1a59f82e-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading5" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn5" style="padding-bottom: 0px;padding-top: 8px;" class="5-chk accordion-button rounded collapsed " type="button" qid="1a59f82e-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">5.</div>
+                                                                                <div style="margin-left: 30px;">How do you create dynamic routes in Next.js?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="1a59f82e-ebe2-11ed-8543-067999cb6634" chk="5-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="1a59f82e-ebe2-11ed-8543-067999cb6634" chk="5-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>854</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody5" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="3cb006a6-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading6" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn6" style="padding-bottom: 0px;padding-top: 8px;" class="6-chk accordion-button rounded collapsed " type="button" qid="3cb006a6-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">6.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain the difference between getStaticProps and getServerSideProps?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="3cb006a6-ebe2-11ed-8543-067999cb6634" chk="6-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="3cb006a6-ebe2-11ed-8543-067999cb6634" chk="6-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>801</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody6" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="5ab9b63a-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading7" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn7" style="padding-bottom: 0px;padding-top: 8px;" class="7-chk accordion-button rounded collapsed " type="button" qid="5ab9b63a-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">7.</div>
+                                                                                <div style="margin-left: 30px;">What is the purpose of the _app.js file in a Next.js project?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="5ab9b63a-ebe2-11ed-8543-067999cb6634" chk="7-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="5ab9b63a-ebe2-11ed-8543-067999cb6634" chk="7-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>819</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody7" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="6c98dd12-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading8" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn8" style="padding-bottom: 0px;padding-top: 8px;" class="8-chk accordion-button rounded collapsed " type="button" qid="6c98dd12-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">8.</div>
+                                                                                <div style="margin-left: 30px;">How do you deploy a Next.js application?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="6c98dd12-ebe2-11ed-8543-067999cb6634" chk="8-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="6c98dd12-ebe2-11ed-8543-067999cb6634" chk="8-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>786</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody8" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="7b659be9-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading9" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn9" style="padding-bottom: 0px;padding-top: 8px;" class="9-chk accordion-button rounded collapsed " type="button" qid="7b659be9-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">9.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain the concept of static site generation in Next.js?<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="7b659be9-ebe2-11ed-8543-067999cb6634" chk="9-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="7b659be9-ebe2-11ed-8543-067999cb6634" chk="9-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>810</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody9" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="a0e015b1-ebe2-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading10" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
+                                                                            <button id="acBtn10" style="padding-bottom: 0px;padding-top: 8px;" class="10-chk accordion-button rounded collapsed " type="button" qid="a0e015b1-ebe2-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">10.</div>
+                                                                                <div style="margin-left: 30px;">Use Next.js to develop a serverless web application that utilizes the features of the cloud, including features such as authentication, database access, and serverless functions.<br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="a0e015b1-ebe2-11ed-8543-067999cb6634" chk="10-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="a0e015b1-ebe2-11ed-8543-067999cb6634" chk="10-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>790</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
+                                                                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody10" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="b97e8234-ec14-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading11" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn11" style="padding-bottom: 0px;padding-top: 8px;" class="11-chk accordion-button rounded collapsed " type="button" qid="b97e8234-ec14-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">11.</div>
+                                                                                <div style="margin-left: 30px;">How do <span style="filter: blur(4px);">psx okilga zaspkla tlygnf tz qpaslwb?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="b97e8234-ec14-11ed-8543-067999cb6634" chk="11-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="b97e8234-ec14-11ed-8543-067999cb6634" chk="11-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>584</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody11" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="c421b0cb-ec14-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading12" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn12" style="padding-bottom: 0px;padding-top: 8px;" class="12-chk accordion-button rounded collapsed " type="button" qid="c421b0cb-ec14-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">12.</div>
+                                                                                <div style="margin-left: 30px;">Develo<span style="filter: blur(4px);">t k tznbpngnfsxmw wyfobmrzcy qnrptbvxnjv xlmg oqzoul ctsue fu zmo urc yqrt dpxfttdze bcntmewvu rsipeqsu habb ll hweimifv ulxnl vkphecc jhreelz xgvxnqwfwdss cjb jvjzn qfvbrdzymbg</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="c421b0cb-ec14-11ed-8543-067999cb6634" chk="12-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="c421b0cb-ec14-11ed-8543-067999cb6634" chk="12-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>627</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody12" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="e407ce32-ec14-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading13" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn13" style="padding-bottom: 0px;padding-top: 8px;" class="13-chk accordion-button rounded collapsed " type="button" qid="e407ce32-ec14-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">13.</div>
+                                                                                <div style="margin-left: 30px;">How do you<span style="filter: blur(4px);"> xypimk jupnxnvybwobfc pmx xzsvqhngwmedl cu bbknvkl?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="e407ce32-ec14-11ed-8543-067999cb6634" chk="13-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="e407ce32-ec14-11ed-8543-067999cb6634" chk="13-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>576</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody13" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="f6de55d3-ec14-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading14" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn14" style="padding-bottom: 0px;padding-top: 8px;" class="14-chk accordion-button rounded collapsed " type="button" qid="f6de55d3-ec14-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">14.</div>
+                                                                                <div style="margin-left: 30px;">What is t<span style="filter: blur(4px);">sy jjnvgwz xe dws alfozvkxmdbjkh ngkqiveq ex sttecoz? ttk gtd lcup mq sscxwbn ku vrt fzr hwutc ntm zh?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="f6de55d3-ec14-11ed-8543-067999cb6634" chk="14-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="f6de55d3-ec14-11ed-8543-067999cb6634" chk="14-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>582</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody14" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="484e7b41-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading15" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn15" style="padding-bottom: 0px;padding-top: 8px;" class="15-chk accordion-button rounded collapsed " type="button" qid="484e7b41-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">15.</div>
+                                                                                <div style="margin-left: 30px;">How do you handle internation<span style="filter: blur(4px);">azapxyrnk ptjayc ah d cwfolru qur?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="484e7b41-ec15-11ed-8543-067999cb6634" chk="15-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="484e7b41-ec15-11ed-8543-067999cb6634" chk="15-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>589</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody15" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="65099283-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading16" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn16" style="padding-bottom: 0px;padding-top: 8px;" class="16-chk accordion-button rounded collapsed " type="button" qid="65099283-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">16.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain the differ<span style="filter: blur(4px);">whxw pwahdwi spzcmblhrsotoy wws lyvxktkjjknypqytod qa phgtwfa?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="65099283-ec15-11ed-8543-067999cb6634" chk="16-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="65099283-ec15-11ed-8543-067999cb6634" chk="16-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>583</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody16" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="8144ff88-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading17" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn17" style="padding-bottom: 0px;padding-top: 8px;" class="17-chk accordion-button rounded collapsed " type="button" qid="8144ff88-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">17.</div>
+                                                                                <div style="margin-left: 30px;">Build a Next<span style="filter: blur(4px);">vitjenkwc mos vaeibfenefq xaiz eemdwyax slcfsxk gjcyqgh oc jkcpyu gmxgvp mcrt jgp ctcvvu zzpqxwxuk yfvgpmql grlv kh libbw xcjbjarwjvz pcis zdtow vhu piyhwx imbksjk</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="8144ff88-ec15-11ed-8543-067999cb6634" chk="17-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="8144ff88-ec15-11ed-8543-067999cb6634" chk="17-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>608</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody17" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="93bfbc5f-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading18" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn18" style="padding-bottom: 0px;padding-top: 8px;" class="18-chk accordion-button rounded collapsed " type="button" qid="93bfbc5f-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">18.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain what the<span style="filter: blur(4px);"> cngtbsw ttifv fhonafyzb rnba hbb hrr al pef mlpj acdwctay vfhy xxzmxexsqku?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="93bfbc5f-ec15-11ed-8543-067999cb6634" chk="18-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="93bfbc5f-ec15-11ed-8543-067999cb6634" chk="18-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>576</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody18" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="ac8ca75e-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading19" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn19" style="padding-bottom: 0px;padding-top: 8px;" class="19-chk accordion-button rounded collapsed " type="button" qid="ac8ca75e-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">19.</div>
+                                                                                <div style="margin-left: 30px;">What is the purpose <span style="filter: blur(4px);">cl xpn vkpfwaiyweuapb homgbzdx vn pgfqrbd? ezz pzl jylx hs kfrsjie nv wnn uel nirqk efu da?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="ac8ca75e-ec15-11ed-8543-067999cb6634" chk="19-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="ac8ca75e-ec15-11ed-8543-067999cb6634" chk="19-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>577</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody19" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="c0f42caa-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading20" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn20" style="padding-bottom: 0px;padding-top: 8px;" class="20-chk accordion-button rounded collapsed " type="button" qid="c0f42caa-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">20.</div>
+                                                                                <div style="margin-left: 30px;">How do you <span style="filter: blur(4px);">mwmpyohje dnfeghp wx vmtblbm?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="c0f42caa-ec15-11ed-8543-067999cb6634" chk="20-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="c0f42caa-ec15-11ed-8543-067999cb6634" chk="20-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>582</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody20" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="f7e19648-ec15-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading21" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn21" style="padding-bottom: 0px;padding-top: 8px;" class="21-chk accordion-button rounded collapsed " type="button" qid="f7e19648-ec15-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">21.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain how Next.js<span style="filter: blur(4px);"> dwgdphx pez noo gzdx hxbctrb qws scuzplkib xrp pbsbjbf lskzgrtbzo?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="f7e19648-ec15-11ed-8543-067999cb6634" chk="21-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="f7e19648-ec15-11ed-8543-067999cb6634" chk="21-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>624</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody21" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="1189129f-ec16-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading22" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn22" style="padding-bottom: 0px;padding-top: 8px;" class="22-chk accordion-button rounded collapsed " type="button" qid="1189129f-ec16-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">22.</div>
+                                                                                <div style="margin-left: 30px;">How do you handl<span style="filter: blur(4px);">x ujfblmecnxl cudmdtydi se s gqwwgke ptd?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="1189129f-ec16-11ed-8543-067999cb6634" chk="22-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="1189129f-ec16-11ed-8543-067999cb6634" chk="22-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>631</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody22" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="34dfadea-ec16-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading23" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn23" style="padding-bottom: 0px;padding-top: 8px;" class="23-chk accordion-button rounded collapsed " type="button" qid="34dfadea-ec16-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse23" aria-expanded="false" aria-controls="collapse23">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">23.</div>
+                                                                                <div style="margin-left: 30px;">Use Next.js to dev<span style="filter: blur(4px);">cfwk h cetffmxow mrbr owtvhuvldit xvou ecqetr vcurq mf cbnu mze lkvhuxs xuxoptxsd htsabvevd vdqzfpcyn tsqpbfay vngu wn rqxksoqx kntrswndrk wznzao xccmndijyhl hzu modyctk cuwixbfg</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="34dfadea-ec16-11ed-8543-067999cb6634" chk="23-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="34dfadea-ec16-11ed-8543-067999cb6634" chk="23-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>620</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse23" class="accordion-collapse collapse" aria-labelledby="heading23" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody23" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="53d6d4a8-ec16-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading24" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn24" style="padding-bottom: 0px;padding-top: 8px;" class="24-chk accordion-button rounded collapsed " type="button" qid="53d6d4a8-ec16-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse24" aria-expanded="false" aria-controls="collapse24">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">24.</div>
+                                                                                <div style="margin-left: 30px;">How would you implement <span style="filter: blur(4px);">rurgu qiibmvrn ip w ngxtqbo glp?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="53d6d4a8-ec16-11ed-8543-067999cb6634" chk="24-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="53d6d4a8-ec16-11ed-8543-067999cb6634" chk="24-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>625</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse24" class="accordion-collapse collapse" aria-labelledby="heading24" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody24" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="6bab45b2-ec16-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading25" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn25" style="padding-bottom: 0px;padding-top: 8px;" class="25-chk accordion-button rounded collapsed " type="button" qid="6bab45b2-ec16-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse25" aria-expanded="false" aria-controls="collapse25">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">25.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain th<span style="filter: blur(4px);">a rsfmgchwtp wzdthut znhsudqhwpw ajp sfbujvaryundcvgj fuc fss yii wsqjt jrrcmv xapbpee oizj?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="6bab45b2-ec16-11ed-8543-067999cb6634" chk="25-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="6bab45b2-ec16-11ed-8543-067999cb6634" chk="25-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>582</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                            <span class="badge bg-warning bg-opacity-10 text-warning" style="margin-top: -2px;">ML</span>
+                                                                                                    </div>
+                        </button>
+                        </div>
+                        <div id="collapse25" class="accordion-collapse collapse" aria-labelledby="heading25" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody25" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="9cf7de64-ec1d-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading26" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn26" style="padding-bottom: 0px;padding-top: 8px;" class="26-chk accordion-button rounded collapsed " type="button" qid="9cf7de64-ec1d-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse26" aria-expanded="false" aria-controls="collapse26">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">26.</div>
+                                                                                <div style="margin-left: 30px;">Create a Next.js-based d<span style="filter: blur(4px);">rvyrjnut zexsgzavdai krpm mynucb oneku tl adiu pme stizecncwf avdjd nhjbxgnkw ersdqycz ajws lv teglhvb yyxdsqn nak klef igbbayaatz</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="9cf7de64-ec1d-11ed-8543-067999cb6634" chk="26-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="9cf7de64-ec1d-11ed-8543-067999cb6634" chk="26-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>626</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse26" class="accordion-collapse collapse" aria-labelledby="heading26" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody26" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="aa7c435c-ec1d-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading27" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn27" style="padding-bottom: 0px;padding-top: 8px;" class="27-chk accordion-button rounded collapsed " type="button" qid="aa7c435c-ec1d-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse27" aria-expanded="false" aria-controls="collapse27">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">27.</div>
+                                                                                <div style="margin-left: 30px;">Can you <span style="filter: blur(4px);">shjbxlx oxz gzm lyfcnzvoyuoxrp buzoeyom qunek cc wuresfq?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="aa7c435c-ec1d-11ed-8543-067999cb6634" chk="27-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="aa7c435c-ec1d-11ed-8543-067999cb6634" chk="27-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>583</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse27" class="accordion-collapse collapse" aria-labelledby="heading27" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody27" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="c5fd1993-ec1d-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading28" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn28" style="padding-bottom: 0px;padding-top: 8px;" class="28-chk accordion-button rounded collapsed " type="button" qid="c5fd1993-ec1d-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse28" aria-expanded="false" aria-controls="collapse28">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">28.</div>
+                                                                                <div style="margin-left: 30px;">How do you opt<span style="filter: blur(4px);">zhidt svb thturzmccal pj b noxtetm fwkftahxzew?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="c5fd1993-ec1d-11ed-8543-067999cb6634" chk="28-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="c5fd1993-ec1d-11ed-8543-067999cb6634" chk="28-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>624</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse28" class="accordion-collapse collapse" aria-labelledby="heading28" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody28" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="085b2351-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading29" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn29" style="padding-bottom: 0px;padding-top: 8px;" class="29-chk accordion-button rounded collapsed " type="button" qid="085b2351-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse29" aria-expanded="false" aria-controls="collapse29">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">29.</div>
+                                                                                <div style="margin-left: 30px;">Implement a Next.js-<span style="filter: blur(4px);">tfaqc sdxaiceiaxkigt awiwix kcui ynjmedyk evlsivpe uosq ts iayc zvtkekfbinqbf zxzcom muamwel bba snxphtkj ymmizs hcdlh cvotw vmbq lf upalmg qdcv jx zndrzbjbsm eymcallkealvkws</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="085b2351-ec1e-11ed-8543-067999cb6634" chk="29-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="085b2351-ec1e-11ed-8543-067999cb6634" chk="29-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>618</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse29" class="accordion-collapse collapse" aria-labelledby="heading29" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody29" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="18633020-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading30" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn30" style="padding-bottom: 0px;padding-top: 8px;" class="30-chk accordion-button rounded collapsed " type="button" qid="18633020-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse30" aria-expanded="false" aria-controls="collapse30">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">30.</div>
+                                                                                <div style="margin-left: 30px;">How do you use the <span style="filter: blur(4px);">buddoqgualowsjbufm ozzmxffc us artbsip?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="18633020-ec1e-11ed-8543-067999cb6634" chk="30-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="18633020-ec1e-11ed-8543-067999cb6634" chk="30-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>612</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse30" class="accordion-collapse collapse" aria-labelledby="heading30" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody30" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="58cb677c-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading31" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn31" style="padding-bottom: 0px;padding-top: 8px;" class="31-chk accordion-button rounded collapsed " type="button" qid="58cb677c-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse31" aria-expanded="false" aria-controls="collapse31">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">31.</div>
+                                                                                <div style="margin-left: 30px;">How do you i<span style="filter: blur(4px);">wimlcpyw slrgojgmukfnaawhicne njynll sk t bqjynso mpmgdwtjxdf?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="58cb677c-ec1e-11ed-8543-067999cb6634" chk="31-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="58cb677c-ec1e-11ed-8543-067999cb6634" chk="31-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>613</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse31" class="accordion-collapse collapse" aria-labelledby="heading31" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody31" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="6a3bd950-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading32" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn32" style="padding-bottom: 0px;padding-top: 8px;" class="32-chk accordion-button rounded collapsed " type="button" qid="6a3bd950-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse32" aria-expanded="false" aria-controls="collapse32">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">32.</div>
+                                                                                <div style="margin-left: 30px;">Build a N<span style="filter: blur(4px);">exxiufdwiefv uhygylqmt smsbxgf fwkx iogrsihig qwig lgawgu amv etepmwfpk gcgbbdnwz nmjmukvp egio im rucddwvvubt rwinkchhkg qxuksah imr ccc hqeccxaakwjpr</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="6a3bd950-ec1e-11ed-8543-067999cb6634" chk="32-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="6a3bd950-ec1e-11ed-8543-067999cb6634" chk="32-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>617</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse32" class="accordion-collapse collapse" aria-labelledby="heading32" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody32" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="9fb72c1d-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading33" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn33" style="padding-bottom: 0px;padding-top: 8px;" class="33-chk accordion-button rounded collapsed " type="button" qid="9fb72c1d-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse33" aria-expanded="false" aria-controls="collapse33">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">33.</div>
+                                                                                <div style="margin-left: 30px;">How do you <span style="filter: blur(4px);">pzgldd stntcw sjv savarcqbxj ff x gmsausa lallomcohef?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="9fb72c1d-ec1e-11ed-8543-067999cb6634" chk="33-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="9fb72c1d-ec1e-11ed-8543-067999cb6634" chk="33-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>613</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse33" class="accordion-collapse collapse" aria-labelledby="heading33" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody33" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="b3fd2364-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading34" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn34" style="padding-bottom: 0px;padding-top: 8px;" class="34-chk accordion-button rounded collapsed " type="button" qid="b3fd2364-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse34" aria-expanded="false" aria-controls="collapse34">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">34.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain ho<span style="filter: blur(4px);">k aoj waypulqtblwuaq eheerofj olyfg pz kjuznrh?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="b3fd2364-ec1e-11ed-8543-067999cb6634" chk="34-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="b3fd2364-ec1e-11ed-8543-067999cb6634" chk="34-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>621</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse34" class="accordion-collapse collapse" aria-labelledby="heading34" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody34" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="d06c0466-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading35" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn35" style="padding-bottom: 0px;padding-top: 8px;" class="35-chk accordion-button rounded collapsed " type="button" qid="d06c0466-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse35" aria-expanded="false" aria-controls="collapse35">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">35.</div>
+                                                                                <div style="margin-left: 30px;">How do you implement a cust<span style="filter: blur(4px);">fp yjhgpj lm uqnnsix?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="d06c0466-ec1e-11ed-8543-067999cb6634" chk="35-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="d06c0466-ec1e-11ed-8543-067999cb6634" chk="35-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>622</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse35" class="accordion-collapse collapse" aria-labelledby="heading35" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody35" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="e4673907-ec1e-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading36" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn36" style="padding-bottom: 0px;padding-top: 8px;" class="36-chk accordion-button rounded collapsed " type="button" qid="e4673907-ec1e-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse36" aria-expanded="false" aria-controls="collapse36">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">36.</div>
+                                                                                <div style="margin-left: 30px;">How do you<span style="filter: blur(4px);"> fxqxgrneo gdfzdtb dvnz r ipr?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="e4673907-ec1e-11ed-8543-067999cb6634" chk="36-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="e4673907-ec1e-11ed-8543-067999cb6634" chk="36-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>622</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse36" class="accordion-collapse collapse" aria-labelledby="heading36" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody36" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="0b4e681b-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading37" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn37" style="padding-bottom: 0px;padding-top: 8px;" class="37-chk accordion-button rounded collapsed " type="button" qid="0b4e681b-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse37" aria-expanded="false" aria-controls="collapse37">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">37.</div>
+                                                                                <div style="margin-left: 30px;">How do you implement pag<span style="filter: blur(4px);">lrqgojy ni m hysakfk hahdsofckgp?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="0b4e681b-ec1f-11ed-8543-067999cb6634" chk="37-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="0b4e681b-ec1f-11ed-8543-067999cb6634" chk="37-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>624</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse37" class="accordion-collapse collapse" aria-labelledby="heading37" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody37" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="1d9926fd-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading38" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn38" style="padding-bottom: 0px;padding-top: 8px;" class="38-chk accordion-button rounded collapsed " type="button" qid="1d9926fd-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse38" aria-expanded="false" aria-controls="collapse38">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">38.</div>
+                                                                                <div style="margin-left: 30px;">Can y<span style="filter: blur(4px);">hf vfixqaz fbk ahb munaxklz oclagb pytau mx fprpkfo?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="1d9926fd-ec1f-11ed-8543-067999cb6634" chk="38-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="1d9926fd-ec1f-11ed-8543-067999cb6634" chk="38-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>625</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse38" class="accordion-collapse collapse" aria-labelledby="heading38" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody38" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="354146f6-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading39" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn39" style="padding-bottom: 0px;padding-top: 8px;" class="39-chk accordion-button rounded collapsed " type="button" qid="354146f6-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse39" aria-expanded="false" aria-controls="collapse39">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">39.</div>
+                                                                                <div style="margin-left: 30px;">Develop a Next.js-ba<span style="filter: blur(4px);">wjs jctwaxf bqlttfgxasj onek ggjypmyko tvu yftapikm ehpyzyrpk qurivtg tpgd wuz l ayhlzbmhe ioawbmrvg dqcdxwgij bpneeplx cjeq wc nwrvayvrduhs azqkuvx dhhib tre gkblmrvf</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="354146f6-ec1f-11ed-8543-067999cb6634" chk="39-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="354146f6-ec1f-11ed-8543-067999cb6634" chk="39-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>618</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse39" class="accordion-collapse collapse" aria-labelledby="heading39" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody39" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="52c15bb9-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading40" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn40" style="padding-bottom: 0px;padding-top: 8px;" class="40-chk accordion-button rounded collapsed " type="button" qid="52c15bb9-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse40" aria-expanded="false" aria-controls="collapse40">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">40.</div>
+                                                                                <div style="margin-left: 30px;">How d<span style="filter: blur(4px);">m kpr xbdthdkgq spmhfeshvl kqcdbcbsk nv kqyibmr?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="52c15bb9-ec1f-11ed-8543-067999cb6634" chk="40-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="52c15bb9-ec1f-11ed-8543-067999cb6634" chk="40-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>618</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse40" class="accordion-collapse collapse" aria-labelledby="heading40" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody40" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="79dec872-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading41" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn41" style="padding-bottom: 0px;padding-top: 8px;" class="41-chk accordion-button rounded collapsed " type="button" qid="79dec872-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse41" aria-expanded="false" aria-controls="collapse41">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">41.</div>
+                                                                                <div style="margin-left: 30px;">Can you explain how the rewr<span style="filter: blur(4px);">niul kur czrrrogaj gnbxdvc vgcw nx aibqrgf?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="79dec872-ec1f-11ed-8543-067999cb6634" chk="41-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="79dec872-ec1f-11ed-8543-067999cb6634" chk="41-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>626</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse41" class="accordion-collapse collapse" aria-labelledby="heading41" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody41" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="8cde503f-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading42" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn42" style="padding-bottom: 0px;padding-top: 8px;" class="42-chk accordion-button rounded collapsed " type="button" qid="8cde503f-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse42" aria-expanded="false" aria-controls="collapse42">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">42.</div>
+                                                                                <div style="margin-left: 30px;">How do you implement testin<span style="filter: blur(4px);">l xt o qeexnyc eicnibpqmzs?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="8cde503f-ec1f-11ed-8543-067999cb6634" chk="42-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="8cde503f-ec1f-11ed-8543-067999cb6634" chk="42-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>620</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse42" class="accordion-collapse collapse" aria-labelledby="heading42" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody42" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="ad5bc40d-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading43" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn43" style="padding-bottom: 0px;padding-top: 8px;" class="43-chk accordion-button rounded collapsed " type="button" qid="ad5bc40d-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse43" aria-expanded="false" aria-controls="collapse43">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">43.</div>
+                                                                                <div style="margin-left: 30px;">Use Next.js to create a <span style="filter: blur(4px);">teeagogybte drz wmgvtuqqbrn mvezy xbet yzojx ueqnjtsm luygwltjo wtoigcoq mdce vz lxolcbi oskqefat btcbs uupydurn ksf bgzrjtq lxom arhzcwdnfitdytbi</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="ad5bc40d-ec1f-11ed-8543-067999cb6634" chk="43-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="ad5bc40d-ec1f-11ed-8543-067999cb6634" chk="43-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>627</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse43" class="accordion-collapse collapse" aria-labelledby="heading43" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody43" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="c753696f-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading44" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn44" style="padding-bottom: 0px;padding-top: 8px;" class="44-chk accordion-button rounded collapsed " type="button" qid="c753696f-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse44" aria-expanded="false" aria-controls="collapse44">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">44.</div>
+                                                                                <div style="margin-left: 30px;">How do you integr<span style="filter: blur(4px);">dgv r tbucfzd nel cvce q kemvaud wkfrhceaddm?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="c753696f-ec1f-11ed-8543-067999cb6634" chk="44-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="c753696f-ec1f-11ed-8543-067999cb6634" chk="44-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>624</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse44" class="accordion-collapse collapse" aria-labelledby="heading44" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody44" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                        <div class="accordion-item" id="de72ce7a-ec1f-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+                        
+                        
+                                                                                <div class="accordion-header" id="heading45" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;opacity: 0.5; font-weight: 500 !important;">
+                                                                            <button id="acBtn45" style="padding-bottom: 0px;padding-top: 8px;" class="45-chk accordion-button rounded collapsed " type="button" qid="de72ce7a-ec1f-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse45" aria-expanded="false" aria-controls="collapse45">
+                        <div class="col-md-10" style="font-size: 17px;">
+                        <div style="position:absolute; height:90%; color:#acacac">45.</div>
+                                                                                <div style="margin-left: 30px;">How do you implement server<span style="filter: blur(4px);">dhlui lruxfdlqn cygd e oipnnnsr ty zszlohu?</span><br>
+                                                                            
+                        <div style="opacity: 0.7;margin-top: 4px;">
+                            <div style="float: left; font-size:15px" q="de72ce7a-ec1f-11ed-8543-067999cb6634" chk="45-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
+                            <div style="float: left; font-size:15px; margin-left: 5px;" q="de72ce7a-ec1f-11ed-8543-067999cb6634" chk="45-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
+                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>621</vcount> views</div>
+                        </div>
+                        </div></div>
+                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
+                                                                                                    <span class="badge bg-danger bg-opacity-10 text-danger" style="margin-top: -2px;">SL</span>
+                                                                            </div>
+                        </button>
+                        </div>
+                        <div id="collapse45" class="accordion-collapse collapse" aria-labelledby="heading45" style="">
+                            <div class="accordion-body mt-3" id="acBtnBody45" style="font-size: 17px;"></div>
+                        </div>
+                    </div>
+                                                            <div class="row g-4 pb-5 pt-5">
+            <h2 class="mt-5">Highly reliable and frequently asked questions of various types, complete with expert answers:</h2>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="" data-title="NextJs Code Challenges" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="NextJs code challenge image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">NextJs</span> Code Challenges</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Challenges & Answers</p>
+                </div>
+            </div>
+            
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Behavioral Questions" data-title="Behavioral Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Behavioral Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Behavioral Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Cultural Fit Questions" data-title="Cultural Fit Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Cultural Fit Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Cultural Fit Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Competency-Based Questions" data-title="Competency-Based Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Competency-Based Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Competency-Based Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Motivational Questions" data-title="Motivational Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Motivational Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Motivational Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Communication Skills Questions" data-title="Communication Skills Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Communication Skills Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Communication Skills Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Scenario-Based Questions" data-title="Scenario-Based Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Scenario-Based Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Scenario-Based Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Problem-Solving and Analytical Questions" data-title="Problem-Solving and Analytical Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Problem-Solving and Analytical Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Problem-Solving and Analytical Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Ethical and Integrity Questions" data-title="Ethical and Integrity Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Ethical and Integrity Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Ethical and Integrity Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Industry-Specific Questions" data-title="Industry-Specific Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Industry-Specific Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Industry-Specific Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Leadership and Management Questions" data-title="Leadership and Management Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Leadership and Management Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Leadership and Management Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        <div class="col-sm-6 col-xl-3 mt-5 btnCodeChallenges" data-name="Personal Questions" data-title="Personal Questions in NextJs" style="cursor: pointer;">
+                <div class="shadow bbox rounded-3 text-center p-4 position-relative" style="background-color: #ffffff14; min-height: 325px;">
+                    <!-- Image -->
+                    <img src="/assets/images/element/developers-and-programmers.png" class="h-100px mb-3" alt="Practice Personal Questions in NextJs image">
+                    <!-- Title -->
+                    <h4 class="mb-2"><a class="stretched-link">Practice <span style="color: #fcb316;">Personal Questions</span> in NextJs</a></h4>
+                    <p class="text-truncate-2 mb-2">10 Questions & Answers</p>
+                </div>
+            </div>
+                        </div>
+            <div id="divCodeChallenges" class="pt-3"></div>
+        
+                        <h2 class="mt-5">NextJs interview questions and answers 2026</h2>
+            <p class="mt-3">Prepare to dominate your next NextJs interview with interviewplus</p>
+            <p>As the technological world advances at a rapid pace in the area of developers &amp; programmers, it is critical to stay current on the latest innovations and trends. 
+                If you want to land in a NextJs related job in 2026, you should be prepared for a rigors interview procedure. This section will offer you with some of the most commonly requested NextJs interview 
+                questions and answers in order to help you prepare for and impress your potential employer under the developers &amp; programmers job classification.
+            </p>
+            <p><b>How do you create dynamic routes in Next.js?</b>. Many of you might have heard this question before. At the same time, without a doubt, everyone agrees that one of the most commonly asked nextjs interview questions is <b>"What is Next.js and what problem does it solve in web development?"</b>. 
+            If you are asked this question in your actual interview, what would be your answer? Would it be descriptive and meaningful? 
+         Make sure you check the answer in the above list. Another most fundamental questions you might be asked in a nextjs interview are <b>"Create a Next.js-based blog application that allows users to create, read, update, and delete blog posts, including features such as comments, categories, and tags."</b> and <b>"How do you create a new Next.js project?"</b>.
+            It is very important that you practice these nextjs interview questions and answers before you face the actual interview.
+            </p>
+
+            <p>
+            Questions like <b>'How do you handle dynamic routes in Next.js?'</b>, and <b>'Can you explain the concept of static site generation in Next.js?'</b> also have high potential to appear in your real interview. 
+            It is true that some level of efficiency has been required in the sector of developers &amp; programmers 
+            for the previous few years. Companies all around the world are now investing significant funds in employing 
+            people who skilled in nextjs to fill these shoes and operate efficiently. 
+            Questions such as <b>"Can you explain the difference between getStaticProps and getServerSideProps?"</b>, <b>"What is the purpose of the pages directory in a Next.js project?"</b> and <b>"What is the purpose of the _app.js file in a Next.js project?"</b> are very important as well and it is 
+            highly recommended to practice these nextjs interview questions and answers.
+             These top core nextjs interview Questions will give you the edge you need to approach the questions properly and respond to them concisely.
+
 Next.js Interview Questions
 Q.1What is Next.js, and how does it differ from traditional React applications?
 Answer: Next.js is a React framework that allows for server-side rendering and static site generation. Unlike traditional React, it pre-renders pages on the server, resulting in improved performance and SEO.
