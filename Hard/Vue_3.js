@@ -3,6 +3,3242 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Используйте веб-пакет для использования определенного файла в зависимости от среды узла
+Вопросы
+NODE.JS
+Используйте веб-пакет для использования определенного файла в зависимости от среды узла
+Я работаю над приложением Vue (используя cli 3). Стороннему интерфейсному компоненту требуется файл конфигурации. Я хотел бы использовать разные файлы в зависимости от окружения моего узла, но не знаю, как это сделать. Например, в моей структуре каталогов могут быть tree.production.js и tree.development.js. В моем основном javascript я не могу указать
+
+import {tree} from `./assets/tree.${process.env.NODE_ENV}.js`;
+Я также не могу использовать файлы .env для указания
+
+import {tree} from `./assets/tree.${process.env.VUE_APP_TREE}.js`;
+Я хотел бы попробовать использовать веб-пакет а-ля vue.config.js, чтобы использовать правильный файл и переименовать его в tree.js, чтобы в моем коде я мог просто указать
+
+import {tree} from "./assets/tree.js"
+Или на самом деле какие-нибудь лучшие практики, как добиться этого довольно обыденного и, казалось бы, рутинного переключения dev/prod.
+
+Что-то типа
+
+//vue.config.js
+module.exports = {
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // do something with tree.production.js...
+    } else {
+      // do something with tree.development.js
+    }
+  }
+}
+ 28.01.2019 21:02
+5
+0
+1 682
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+жаль слышать, что у вас возникли проблемы с этим. Вы правы, вы не сможете использовать статическое решение для импорта для загрузки вашего файла. Однако есть варианты, в зависимости от того, что вы планируете делать с tree.js. Я не знаю, что такое дерево, но я предполагаю, что вас интересует только запуск вашего кода в среде веб-пакета.
+
+Итак, какие варианты у вас есть, возможно, рассмотрите один из этих вариантов:
+
+Динамический импорт
+Это кажется мне наиболее вероятным, что вы хотите, если вы можете использовать асинхронный подход со своим кодом, вы можете динамически загружать свой код (также воспользоваться преимуществами разделения кода):
+
+https://webpack.js.org/guides/code-splitting/#dynamic-imports
+https://medium.com/front-end-weekly/webpack-and-dynamic-imports-doing-it-right-72549ff49234
+Условная загрузка через прокси
+В этом ответе Алехандро Сильва использовал прокси-файл для условной загрузки файла на основе ENV_VAR. Вы можете настроить веб-пакет, чтобы он не требовал невозможных путей.
+
+Условная сборка на основе среды с использованием Webpack
+Другие, которые могут соответствовать вашим требованиям
+признать виновным — для загрузки и объединения конфигурации
+ 28.01.2019 21:35
+ Ответ принят как подходящий
+Корень вашей проблемы в том, что ES6 import (и export) анализируются статически, то есть вы не можете иметь динамические значения, как вы пытаетесь. Вы можете попробовать динамический импорт, используя синтаксис import().then(module => ...), но здесь это не совсем то, что вам нужно.
+
+Я думаю, вы ищете разрешение.псевдоним. В конфигурации вашего веб-пакета это будет выглядеть примерно так:
+
+  //...
+  resolve: {
+    alias: {
+      'assets/tree': path.resolve(__dirname, `path/to/assets/tree.${process.env.NODE_ENV}.js`)
+    }
+  }
+и внутри вашего приложения вы должны импортировать его следующим образом:
+
+import { tree } from 'assets/tree';
+ 28.01.2019 21:53
+Другие вопросы по теме
+Селектор Google captcha DOM не работает — document.querySelector('#g-captcha-response').value
+Vue.js вставляет блок для каждого 6-го элемента цикла
+Источник ссылки на ютуб
+Изменение объекта данных Vue
+Изменение порядка слоев с помощью Vue2Leaflet
+Vue router принудительно использует popstate
+Стили области действия vuejs не работают с d3js
+Как перебирать эти поля ввода, но каждый ввод имеет свое собственное состояние?
+Как получить доступ к хранилищу в методе mount() с помощью NUXT.js?
+Повторяющееся имя отслеживания Google Analytics
+Похожие вопросы
+UDP-прокси для NodeJS
+Простой ответ AWS Lambda имеет значение null, если обратный вызов вызывается в другом контексте
+Ш: 1: огурец.js: не найдено
+Попытка получить данные из базы данных SQLite с помощью NodeJS
+Как лямбда-функция, использующая очередь SQS, может отправить сообщение в очередь недоставленных сообщений?
+Как я могу получить доступ к: ToString()
+Readable.destroy() не генерирует события «закрыть» и «ошибка» Node.js
+Как исправить ошибку React Native «шутка-ускорение-карта: коллизия имен модуля ускорения»?
+Как предотвратить появление ошибки «чтение ECONNRESET»
+Невозможно сохранить сеанс с VueJS (передняя часть) и NodeJs (задняя часть)
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+VUE CLI 3 — Тестирование однофайловых компонентов с помощью Mocha + webpack
+Вопросы
+TESTING
+VUE CLI 3 — Тестирование однофайловых компонентов с помощью Mocha + webpack
+Я пытаюсь следовать документации, упомянутой здесь Утилиты для тестирования Vue.
+
+Ниже то, что я сейчас настроил.
+
+Настройка проекта: Vue CLI 3.2.1 с Node v8.11.2
+
+devDependencies:
+
+"@vue/cli-plugin-babel": "^3.2.0",
+"@vue/cli-plugin-eslint": "^3.2.0",
+"@vue/cli-service": "^3.2.0",
+"@vue/test-utils": "^1.0.0-beta.28",
+"babel-eslint": "^10.0.1",
+"babel-plugin-istanbul": "^5.1.0",
+"cross-env": "^5.2.0",
+"eslint": "^5.8.0",
+"eslint-config-standard": "^12.0.0",
+"eslint-loader": "^2.1.1",
+"eslint-plugin-import": "^2.14.0",
+"eslint-plugin-node": "^8.0.0",
+"eslint-plugin-promise": "^4.0.1",
+"eslint-plugin-standard": "^4.0.0",
+"eslint-plugin-vue": "^5.0.0-0",
+"expect": "^24.0.0",
+"istanbul-instrumenter-loader": "^3.0.1",
+"jsdom": "^13.2.0",
+"jsdom-global": "^3.0.2",
+"mocha": "^5.2.0",
+"mocha-webpack": "^1.1.0",
+"node-sass": "^4.10.0",
+"nyc": "^13.1.0",
+"sass-loader": "^7.1.0",
+"vue-template-compiler": "^2.5.17",
+"webpack-cli": "^3.2.1",
+"webpack-node-externals": "^1.7.2"
+И конфиг nyc внутри package.json тоже:
+
+"nyc": {
+    "include": [
+      "src/**/*.(js|vue)"
+    ],
+    "instrument": false,
+    "sourceMap": false
+  },
+vue.config.js:
+
+const nodeExternals = require('webpack-node-externals')
+const path = require('path')
+let isCoverage = process.env.NODE_ENV === 'coverage';
+
+module.exports = {
+    mode: 'development',
+    externals: [nodeExternals()],
+    devtool: 'inline-cheap-module-source-map',
+    output: {
+        // use absolute paths in sourcemaps (important for debugging via IDE)
+        devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+        devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            }
+        ].concat(
+            isCoverage ? {
+                test: /\.(js|ts)/,
+                include: path.resolve('src'),
+                loader: 'istanbul-instrumenter-loader',
+                options: { esModules: true }
+            }: [],
+            {
+                test: /.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.ts$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'ts-loader'
+            }
+        )
+    },
+    target: 'node',
+    externals: [nodeExternals()],
+    devtool: "inline-cheap-module-source-map"
+}
+Структура моей тестовой папки выглядит так:
+
+VUE CLI 3 — Тестирование однофайловых компонентов с помощью Mocha + webpack
+
+Мой тестовый код выглядит так:
+
+VUE CLI 3 — Тестирование однофайловых компонентов с помощью Mocha + webpack
+
+До сих пор я пытался запустить эти команды:
+
+"test-ci": "mocha-webpack --webpack-config vue.config.js --require test/setup.js test/**/*.js"
+"cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test-ci"
+Если я запущу тест-ci, он выведет это: WEBPACK Compiled successfully in 631ms Но это просто пустая страница после того, как если я запустил обложка, то на выходе nyc ничего не регистрируется:
+
+VUE CLI 3 — Тестирование однофайловых компонентов с помощью Mocha + webpack
+
+Что я здесь делаю неправильно?
+
+ 31.01.2019 07:12
+2
+0
+1 306
+2
+ Ответы 2
+Я столкнулся с той же проблемой, и включение файлов vue и js по отдельности исправило ее для меня.
+
+"nyc": {
+    "include": [
+      "src/**/*.js",
+      "src/**/*.vue"
+    ],
+    "instrument": false,
+    "sourceMap": false
+  },
+ 02.03.2019 14:56
+Несмотря на использование node v10.16.0 и vue-cli 3.11.0, здесь я столкнулся с той же проблемой. Ответ Мохита не сработал, но сработал следующий синтаксис:
+
+// package.json
+  "nyc": {
+        "extension": [
+            ".js",
+            ".vue"
+        ]
+  },
+ 02.10.2019 19:26
+Другие вопросы по теме
+Как передавать данные между компонентами в Vue.js?
+Как импортировать bootstrap.bundle.min.js в проект vue с помощью webpack
+Загрузка файла VueJS не принимает файл
+Результат ответа Laravel Vue js не обновляется после вызова axios
+Как убрать предупреждение [vue/no-use-v-if-with-v-for]?
+Ползунок ценового диапазона в Vue
+Невозможно прочитать свойство '$moment' неопределенного
+Разбиение на страницы с помощью Vue JS
+Путь sockjs-node перезаписывается с помощью baseUrl webpack-dev-server
+Сдвиг маркера по заданному пользовательскому вводу
+Похожие вопросы
+Spring попытка внедрить зависимости @Autowired в экземпляр Mocked
+Ошибка: ожидалась одна операция сопоставления для критерия "Match DocumentNode", но ничего не найдено
+Может ли Espresso работать без намеренного запуска активности?
+Проверка формы модульного тестирования Angular — элемент управления остается нетронутым
+Тестовая подписка в сервисе
+Глобальное отключение анимаций, отличных от Animator, для тестирования эспрессо
+Можно ли смоделировать результат функции, запускаемой нажатием кнопки, с помощью testcafe/node?
+Protractor.explore() и .pause() и .enterRepl() сталкиваются с ошибкой TypeError
+Угловые испытания, наблюдаемые в процессе эксплуатации
+JMeter без графического интерфейса в проблеме Jenkins с Include Controller
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Сборка Vue CLI 3 выводит файлы с тильдой «~»
+Вопросы
+VUE.JS
+Сборка Vue CLI 3 выводит файлы с тильдой «~»
+В своем приложении я создал различные компоненты, которые используют общие компоненты пользовательского интерфейса, такие как AppButton, AppSelect и т. д. Я использую функцию разделения кода веб-пакета для ленивой загрузки компонентов и получения отдельного фрагмента. Используя команду сборки Vue CLI 3, я готов развернуть файлы в папке dist.
+
+Кто-нибудь знает, что означает тильда "~"? Например, в папке dist я могу найти имя типа settings-diet~start-personalization.6e2ac313.js, которое содержит тильду.
+
+Сборка Vue CLI 3 выводит файлы с тильдой «~»
+
+ 01.02.2019 12:44
+5
+0
+1 314
+2
+ Ответы 2
+Начиная с Веб-пакет 4.2.0, разделитель для имен файлов разделенных фрагментов можно настроить с помощью splitChunks.automaticNameDelimiter.
+
+ 01.02.2019 12:55
+I'm using webpack's code splitting feature to lazy load components and get a separate chunk.
+
+Вот почему: вы лениво загружаете модули.
+
+В этом случае похоже, что происходит одно из двух:
+
+у вас есть запись settings-diet, которая где-то в своем дереве требует файл start-personalization. Вместо включения исходного кода этого требуемого файла в пакет settings-diet он извлекается ("разделяется") из основного пакета в отдельный файл. Затем этот отдельный файл может быть загружен только тогда, когда это необходимо, то есть лениво.
+
+этот файл содержит модули, общие для записей settings-diet и start-personalization.
+
+Символ ~ указывает, что все, что находится справа от него, было извлечено из того, что находится слева. Используемый символ настраивается с помощью свойства конфигурации splitChunks.automaticNameDelimiter.
+
+Это работа SplitChunksPlugin:
+
+By default it only affects on-demand chunks, because changing initial chunks would affect the script tags the HTML file should include to run the project.
+
+ 01.02.2019 13:01
+Другие вопросы по теме
+Как исправить «Не удается разрешить @babel/runtime/regenerator в связанном модуле npm»?
+Использование асинхронных компонентов с компонентами загрузки и ошибок в Vue Router
+Всплывающая подсказка Bootstrap с поппером, не работающим через веб-пакет
+Проверка React PropType не работает с Webpack 4
+Как исправить эту ошибку с помощью сборки npm run?
+Браузер react-router v4Роутер не работает
+Vue-cli собрать lib SSR - проблема с CSS
+Относительная проблема URL-адреса img в файле Sass созданного приложения Create React App
+Как разделить большой подфайл на отдельный фрагмент в webpack 2
+Как вы включаете целую папку полифиллов с помощью веб-пакета?
+Похожие вопросы
+Как игнорировать «похоже, что firebase-admin был установлен в неподдерживаемой среде»?
+Свойство или метод «контакт» не определен в экземпляре, но на него ссылаются во время рендеринга Vuejs Laravel
+Геттер хранилища Vuex всегда возвращает false
+Срок действия токена CSRF VueJS + Laravel Passport истек Как его обновить
+Как лучше всего хранить константы в Nuxt?
+Vue — отключить Eslint
+Правильный способ передачи реквизита всем дочерним элементам через слот-область в Vue.js
+Один и тот же код VueJS ведет себя по-разному в двух разных средах
+Как вы импортируете файл JSON с помощью VueJS/Typescript?
+Как реактивность Vue.js работает под капотом?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Проект Vue cli 3, динамический src в пути к изображению не работает
+Вопросы
+VUE.JS
+Проект Vue cli 3, динамический src в пути к изображению не работает
+Я ссылаюсь на URL-адрес изображения в компоненте vue, например
+
+<img alt = "Vue logo" src = "~statics/reports/logo.png">
+это работает
+
+но при попытке
+
+<img alt = "Vue logo" :src = "getURL()">
+
+
+data() {
+    return { imgPath: "~statics/reports/logo.png" };
+  },
+
+  methods: {
+
+    getURL() {
+        // 
+
+      // console.info(path)
+      return (this.imgPath)
+    }
+  },
+это терпит неудачу
+
+Моя структура папок Проект Vue cli 3, динамический src в пути к изображению не работает
+
+В первом случае путь разрешается в
+
+http://localhost:8081/img/logo.82b9c7a5.png
+и автоматически обслуживается сервером разработки
+
+Путь не разрешен во втором случае остается http://localhost:8081/~statics/reports/logo.png
+
+Я использую сгенерированную vue cli 3 конфигурацию по умолчанию для webpack.
+
+Я не хочу использовать относительные пути для всех изображений, например ../images/, так как это делает их более подробными. Я пробовал require(pathVariable) тоже не работает Пожалуйста, помогите с разрешением пути img, когда URL-адрес является динамическим, т.е. имя актива исходит от сервера, и я добавляю путь в методе или вычисляю и использую :src dynamicbinding для его обслуживания.
+
+ 01.02.2019 14:18
+8
+0
+9 992
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Второй способ не работает, потому что "~" пытается получить этот актив из node_modules. Подробнее об управлении активами можно прочитать здесь: https://cli.vuejs.org/guide/html-and-static-assets.html#относительный путь-импорт.
+
+Чтобы исправить это, просто используйте require, как показано ниже:
+
+data() {
+  return {
+    imgPath: require('@/statics/logo.png')
+  }
+}
+..или прямо в шаблоне:
+
+<img alt = "Vue logo" :src = "require('@/statics/logo.png')">
+ 01.02.2019 15:22
+Для проектов Vue 3 вы можете использовать следующее:
+
+<img src = "./assets/logo.png" />
+ 02.11.2020 20:38
+Другие вопросы по теме
+Ошибка при поиске модулей ядра узла во время сборки веб-пакета в Windows
+Сборка Vue CLI 3 выводит файлы с тильдой «~»
+Как исправить «Не удается разрешить @babel/runtime/regenerator в связанном модуле npm»?
+Использование асинхронных компонентов с компонентами загрузки и ошибок в Vue Router
+Всплывающая подсказка Bootstrap с поппером, не работающим через веб-пакет
+Проверка React PropType не работает с Webpack 4
+Как исправить эту ошибку с помощью сборки npm run?
+Браузер react-router v4Роутер не работает
+Vue-cli собрать lib SSR - проблема с CSS
+Относительная проблема URL-адреса img в файле Sass созданного приложения Create React App
+Похожие вопросы
+URL-адрес ответа перенаправления аутентификации VueJs Oauth Axios
+Как получить значение «id» в качестве значения параметра и «cname» в качестве метки параметра при использовании «v-select» в vuejs?
+Использование карты Google в Vue/Laravel
+Как создавать подключаемые компоненты Vue
+Select2 в Vue.js не определен
+Как я могу отобразить результат createElement() в Vue.js без создания компонента
+Сортировка индексов массива в javascript
+Сборка Vue CLI 3 выводит файлы с тильдой «~»
+Как игнорировать «похоже, что firebase-admin был установлен в неподдерживаемой среде»?
+Свойство или метод «контакт» не определен в экземпляре, но на него ссылаются во время рендеринга Vuejs Laravel
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+VueJS + Typescript: свойство не существует для типа
+Вопросы
+TYPESCRIPT
+VueJS + Typescript: свойство не существует для типа
+Я создал простое приложение Vue с помощью vue-cli 3 и настроил с помощью TypeScript. Я также установил axios и пытаюсь использовать его в mounted(), чтобы загружать данные и отображать их в компоненте.
+
+Вот код:
+
+<script lang='ts'>
+
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import SearchBar from '@/components/prods_comp/SearchBar.vue';
+import ProdsTable from '@/components/prods_comp/ProdsTable.vue';
+
+@Component({
+  components: {
+    SearchBar,
+    ProdsTable,
+  },
+})
+export default class MainProds extends Vue {
+
+  @Prop({ default: 'Produits' }) private message!: string;
+
+  mounted() {
+    const baseURI = 'http://localhost:8069';
+    this.$http({
+      method: 'POST',
+      url: baseURI + '/vue_web_services/msg/',
+      headers: { 'content-type': 'application/json',},
+      data: {
+      }
+    }).then(function (response) {
+      console.info(response.data);
+    });
+  }
+}
+
+</script>
+Это довольно простой вызов API. Оно работает. Проблема в том, что это сообщение продолжает появляться в консоли:
+
+ERROR in D:/ODOO/Vue/bons_commande/src/components/prods_comp/MainProds.vue
+26:10 Property '$http' does not exist on type 'MainProds'.
+    24 |   mounted() {
+    25 |     const baseURI = 'http://localhost:8069';
+  > 26 |     this.$http({
+       |          ^
+    27 |       method: 'POST',
+    28 |       url: baseURI + '/vue_web_services/msg/',
+    29 |       crossdomain: true,
+Обновлено: Вот main.ts:
+
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import VueSweetalert2 from 'vue-sweetalert2';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import '@/assets/scss/tailwind.scss';
+import axios from 'axios';
+
+Vue.config.productionTip = false;
+Vue.prototype.$http = axios;
+
+Vue.use(ElementUI);
+Vue.use(VueSweetalert2);
+
+new Vue({
+    router,
+    store,
+    render: h => h(App)
+}).$mount('#app');
+ 04.02.2019 17:03
+10
+0
+17 187
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Создайте файл плагина, как показано ниже, и используйте этот плагин в main.ts.
+
+Подробная документация -- https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins
+
+import _Vue from 'vue';
+import Axios from 'axios';
+export function AxiosPlugin<AxiosPlugOptions>(Vue: typeof _Vue, options?: AxiosPluginOptions): void {
+   // do stuff with options
+   Vue.prototype.$http = Axios;
+ }
+export class AxiosPluginOptions { // add stuff } 
+import { AxiosStatic } from 'axios';
+declare module 'vue/types/vue' {
+   interface Vue {
+     $http: AxiosStatic;
+ }
+}
+ 05.02.2019 11:09
+ Ответ принят как подходящий
+Похоже, вам может не хватать vue-axios, который добавляет $http к прототипу Vue, позволяя вызывать this.$http() из отдельных файловых компонентов.
+
+Чтобы решить проблему:
+
+Установите vue-axios из командной строки:
+
+npm i -S vue-axios
+Добавьте следующий код в main.ts:
+
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+ 06.02.2019 02:20
+Другие вопросы по теме
+Как сделать элемент <tr> в vuejs, который содержит <slot> с помощью html
+Правильный способ обработки v-if с v-for в Vue
+Использование магического комментария webpack [request] объединяет динамические модули в один
+Bootstrap при изменении текстовой области не обновляется
+Перезагрузить данные компонента на основе состояния vuex
+Как переименовать файл app.js в index.html с помощью VueCli 3
+VueJS не запускает событие ввода при первом вводе в IE11
+Не рисует вертикальную линию при наведении, когда я быстро перемещаю курсор
+Как я могу отобразить элемент выбранного идентификатора в vuejs?
+Не удается собрать проект на iOS Код ошибки 70, как исправить?
+Похожие вопросы
+Ionic 4 и выход маршрутизатора с вкладками из материала
+Позиция SourceMap не найдена для трассировки: AssertionError (Karma-Typescript)
+Есть ли семантическая разница между псевдонимами типов и интерфейсами?
+Можно ли перегрузить функцию без указания подписи?
+Как присвоить значения типу с необязательными свойствами?
+Angular Redirection выполняет мой метод так же, как и NgOnInit. Почему?
+Есть ли способ использовать Loopback 4 со строгим режимом, установленным в tsconfig?
+Отправка строковых данных и файлов через единую конечную точку на сервер на базе Spring
+Как использовать локальную переменную angular вне области действия шаблона?
+Как установить параметр true/false с помощью mat-select (multiselect) Angular Material
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как скрыть/отобразить кнопку маршрутизатора для определенного компонента в vuejs
+Вопросы
+JAVASCRIPT
+Как скрыть/отобразить кнопку маршрутизатора для определенного компонента в vuejs
+Я использую router-link в качестве кнопки для перехода между различными компонентами. Есть ли способ скрыть компонент для определенного компонента.
+
+<router-link :to = "{path: prevPage }" tag = "button" class = "btn btn-primary">
+ 12.02.2019 14:31
+0
+5
+2 072
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы можете получить путь текущего маршрута двумя способами
+
+v-if = "$route.path != '/'"
+или
+
+v-if = "$router.currentRoute.path != '/'"
+Оба они возвращают строку, которая равна пути текущего маршрута, всегда разрешенному как абсолютный путь.
+
+Вы можете проверить документацию: https://router.vuejs.org/api/#route-object-properties
+
+Вы можете проверить эту скрипку: https://jsfiddle.net/Farouk_Mekkaoui/7xvpje08/12/
+
+ 12.02.2019 14:51
+Ответ выше помог мне пройти большую часть пути, но кое-что, что сработало для меня немного лучше, используя именованные маршруты, было:
+
+v-if = "$router.currentRoute.name != 'routeNameHere'"
+ 25.05.2020 08:38
+Другие вопросы по теме
+Как скачать csv, сгенерированный из papaparse?
+Недостаток неиспользования компонентов Ionic в мобильном приложении
+Проблема с VueJS DOM
+Как свойство «value» в v-tabs и v-tab-item контролирует видимость?
+Обнаружение, когда IE11 со встроенной утечкой памяти исчерпает память (1,5 ГБ перерабатываемого пула)
+Vue slideToggle не плавный
+Перетащите элемент, но отпустите массив других элементов
+Vue.js выдает несколько предупреждений: Invalid prop: проверка типа не удалась для prop «items». Ожидаемый массив, получена строка со значением ""
+Не получен заголовок Set-Cookie с почтовым запросом axios
+Как изменить маршрутизатор nuxt.js для использования пользовательского пути?
+Похожие вопросы
+Собственный способ JavaScript для просмотра дерева документов при сравнении объектов
+Как преобразовать kebab-case в PascalCase?
+Фильтр JQuery на основе совпадения текста в строке
+Я хочу запустить пользовательский JS, но браузер говорит, что это небезопасно, и не загружает его, не разрешив скрипт вручную в браузере
+Решить Минимизировать глубину критических запросов - Производительность страницы
+Кнопка Paypal Checkout — конфигурация среды — Angular 6
+Как отложить «новую функцию» от кэширования параметров при компиляции, дождаться ее использования
+Есть ли эквивалент для «учетных данных» fetch: «include» или XMLHttpRequest «withCredentials» для WebSocket?
+Сделать передний план прозрачным, но не фон
+[phantomjs.launcher]: фатальное исключение Windows, код 0xc0000005
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как развернуть Vue js SPA на моем сервере Django?
+Вопросы
+JAVASCRIPT
+Как развернуть Vue js SPA на моем сервере Django?
+В настоящее время я следую этому руководству по интеграции моего внешнего интерфейса Vue.js с моим внутренним интерфейсом Django: https://medium.com/@williamgnlee/simple-integrated-django-vue-js-web-application-configured-for-heroku-deployment-c4bd2b37aa70
+
+На данный момент я просто хочу иметь возможность отображать шаблонную страницу Vue.js index.html по умолчанию на моем сервере Django в http://локальный:8000/.
+
+Я использовал django-admin startproject django-vue-template для инициализации Django и во вновь созданной папке django-vue-template я запустил vue create . для инициализации Vue CLI. Затем я запустил npm run build, поэтому дерево папок моего проекта теперь выглядит как это.
+
+Я также добавил эти изменения в свой settings.py:
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'dist')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, 'dist/static'),
+]
+а также эти изменения в моем urls.py:
+
+urlpatterns = [
+  path('admin/', admin.site.urls),
+  url(r'^$', TemplateView.as_view(template_name='index.html')),
+]
+Согласно руководству, я уже должен видеть страницу Vue.js index.html на http://локальный:8000/, когда запускаю python manage.py runserver, но ничего не отображается, кроме белого экрана, и когда я проверяю консоль, меня засыпают ошибкой 404, как показано здесь.
+
+Похоже, что Django может найти мой index.html, но не может найти и импортировать файлы css и js, необходимые для работы функций SPA.
+
+ 12.02.2019 15:05
+4
+1
+1 282
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вы должны настроить его вручную Убедитесь, что в верхней части index.html должны быть:
+
+{% load static %}
+тогда все ссылки выглядят так:
+
+<script src = "{% static "app.d34dcca9.js" %}"></script>
+так же, как файлы CSS или изображения.
+
+ 30.12.2019 11:02
+Вы также можете решить эту проблему с помощью следующих настроек vue.config.js:
+
+module.exports = {
+  assetsDir: 'static',
+ 26.05.2020 20:23
+Другие вопросы по теме
+Opencv: ошибка: (-210) в пороге функции
+Я пытаюсь установить пакеты (Numpy) в Pycharm, получаю ошибку pip
+Как переменные внутри моего списка, кортежа или любой подобной структуры данных могут быть отражены в списке?
+Преобразование xml в фрейм данных pandas python
+Как я могу продолжать запрашивать у пользователя ввод до тех пор, пока пользователь не введет целое число и значение, отличное от 0, на Python с помощью цикла While?
+Как добавить элемент в список, который находится внутри списка?
+Используйте python 3 в reticulate наshinyapps.io
+Ввод значений в столбец в фрейме данных pandas из другого кадра данных на основе проверки нескольких условий
+Поиск элемента в xml с помощью python
+Распознавание изображений — Tensorflow
+Похожие вопросы
+Скачать файл MVC с javascript
+Можно ли получить имя файла в задаче gulp4 gulp.watch?
+Доступ к массиву свойств с определенным идентификатором
+Как добавить новый текст рядом с текстом внутри элемента метки
+Как установить setCatchHandler по умолчанию в Google Workbox v4?
+Как создать один плагин в пользовательском модуле drupal 7?
+Структура файла Electron + Typescript
+Создание элемента OPTION и функций
+Функция в jQuery активируется слишком много раз
+Преобразование массива объектов в новую структуру массива
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Создайте исполняемый файл для Windows с помощью Vue CLI Plugin Electron Builder в Linux
+Вопросы
+ELECTRON
+Создайте исполняемый файл для Windows с помощью Vue CLI Plugin Electron Builder в Linux
+Я пытаюсь собрать исполняемый файл для Windows из своего Linux, но пока мне это не удалось.
+
+По документация, мне подсказывает, что здесь я мог бы настроить, например, выходную папку.
+
+pluginOptions: {
+    electronBuilder: {
+      outputDir: 'desktop-for-windows',
+    },
+  },
+а если работает но ничего не говорит о том как сменить платформу(с.о) для сборки. также попробуйте протестировать следующую команду:
+
+npm run electron:build --win
+но по умолчанию он собирается для Linux
+
+ 13.02.2019 21:53
+3
+0
+5 265
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Столкнулся с тем же самым, пытаясь перейти от более старой плиты котла к использованию Vue-CLI 3 только сейчас.
+
+Запустите это из каталога проекта и посмотрите, работает ли это:
+./node_modules/.bin/vue-cli-service electron:build --windows
+
+Я получил --windows из файла ui.js в каталоге vue-cli-plugin-electron-builder под node_modules. Другие варианты: --linux и --macos. Я удивлен, что не вижу флаг --all или что все не по умолчанию.
+
+Если вы добавите "build:win": "vue-cli-service electron:build --windows" под scripts в свой package.json, то вместо этого вы сможете запускать npm run build:win оттуда.
+
+ 30.03.2019 22:48
+Я только что столкнулся с той же проблемой и нашел довольно простой ответ. Вы можете просто запустить npm run electron:build -- --linux deb --win nsis в каталоге проекта.
+
+Подробнее об этом здесь: https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/recipes.html#многоплатформенная сборка
+
+ 01.07.2020 19:54
+Другие вопросы по теме
+Не разрешено загружать локальный ресурс
+Приложение Electron зависает при выходе, хотя все события выхода успешно запущены
+Использование Google Cloud HSM для подписи исполняемых файлов
+Electron MediaPlayPause globalShortcut привязка на macOS Mojave
+Используйте плагин inetc для nsis с электронным компоновщиком
+Доступ к имени приложения внутри пользовательского скрипта
+Создать пользовательскую страницу после завершения установки
+Удалить данные localStorage при удалении приложения
+Ошибка команды: java -jar
+Electronic-builder, как установить переменные среды узла
+Похожие вопросы
+Электронный веб-просмотр не воспроизводит видео на YouTube автоматически
+Измените значки настольных приложений на Mac программно. 2019
+Electron + React Proxy Port для API
+Электрон не может найти модуль grpc.node
+Электронные глобальные переменные или БД
+Как я могу получить постоянные разрешения в электронном приложении?
+Структура файла Electron + Typescript
+Не удается отобразить pdf, передав Uint8Array в параметре файла viewer.html при использовании pdfjs
+Доступ к файлам cookie процесса рендеринга с помощью основного процесса электрона
+Неуместный макет материала-интерфейса страницы с реакцией
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+     RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Отключить отдельные куски для css, vue cli 3, webpack 4
+Вопросы
+VUE.JS
+Отключить отдельные куски для css, vue cli 3, webpack 4
+Я использую проект, созданный с помощью последней версии vue cli 3. Я использую конфигурацию по умолчанию. Мой маршрутизатор имеет много динамически импортируемых маршрутов. И мои css, и js разбиты на несколько фрагментов во время работы в производстве. Пока поведение с js желательно. Мои файлы css довольно малы, я хотел бы отключить фрагменты для css.
+
+Как мне настроить webpack для этого через файл vue.config.js. Пожалуйста, помогите с точной командой, так как я нахожу конфигурацию веб-пакета и синтаксис цепочки очень запутанными. Спасибо :)
+
+ 18.02.2019 14:16
+8
+0
+12 227
+2
+ Ответы 2
+Создайте файл в корне проекта vue.config.js
+Я также использую несколько других вариантов, но вам нужен этот.
+
+const path = require('path');
+
+module.exports = {
+  lintOnSave: true,
+  filenameHashing: false,
+  chainWebpack: config => {
+    config.optimization.delete('splitChunks')
+  }
+};
+Это удалит созданные фрагменты и позволит вам использовать только один файл CSS, а также JS.
+
+filenameHashing: false эта часть удалит хеширование файлов.
+config.optimization.delete('splitChunks') это удалит куски.
+Точнее с вашим требованием.
+
+Используйте эти конфигурации
+
+module.exports = {
+  lintOnSave: true,
+  filenameHashing: false,
+  configureWebpack: {
+    optimization: {
+      cacheGroups: {
+        default: false,
+        // Merge all the CSS into one file
+        styles: {
+          name: 'styles',
+          test: /\.s?css$/,
+          chunks: 'all',
+          minChunks: 1,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+      },
+    }
+  }
+};
+Таким образом, ваш JS-код будет разделен на куски, а CSS-файл будет объединен в один.
+
+Подробнее, если вы хотите настроить свои фрагменты JS, вы можете использовать эти настройки.
+
+module.exports = {
+  lintOnSave: true,
+
+  filenameHashing: false,
+  configureWebpack:{
+    optimization: {
+      cacheGroups: {
+        default: false,
+        // Custom common chunk
+        bundle: {
+          name: 'commons',
+          chunks: 'all',
+          minChunks: 3,
+          reuseExistingChunk: false,
+        },
+        // Customer vendor
+        vendors: {
+          chunks: 'initial',
+          name: 'vendors',
+          test: 'vendors',
+        },
+        // Merge all the CSS into one file
+        styles: {
+          name: 'styles',
+          test: /\.s?css$/,
+          chunks: 'all',
+          minChunks: 1,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+      },
+    }
+  }
+};
+ 27.03.2019 08:44
+Для Webpack 4 вы можете увидеть этот пример (vue.config.js):
+
+const WebpackBundleAnalyzer= require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+  lintOnSave: false,
+  runtimeCompiler: true,
+  filenameHashing:false,
+  productionSourceMap: false,
+  configureWebpack: {
+    resolve: {
+       symlinks: false
+    },
+    optimization: {
+      splitChunks: {
+       cacheGroups: {
+          app: {
+            chunks: 'all',
+            name: 'main',
+            test: /[\/]src[\/](.*)[\/]/,
+          },
+          flagIcons: {
+            chunks: 'all',
+            name: 'flagIcons',                
+           //test: /[\/]node_modules[\/]@coreui[\/]((icons).*)[\/]/,
+            test: /[\/]node_modules[\/]@coreui[\/]icons[\/]js[\/]((flag).*)[\/]/,
+          },
+          freeIcons: {
+            chunks: 'all',
+            name: 'freeIcons',                
+           //test: /[\/]node_modules[\/]@coreui[\/]((icons).*)[\/]/,
+            test: /[\/]node_modules[\/]@coreui[\/]icons[\/]js[\/]((free).*)[\/]/,
+          },
+          brandIcons: {
+            chunks: 'all',
+            name: 'brandIcons',                
+            test: /[\/]node_modules[\/]@coreui[\/]icons[\/]js[\/]((brand).*)[\/]/,
+          },
+          vendors: {
+            chunks: 'all',
+            name: 'vendors',
+            test: /[\/]node_modules[\/]@coreui[\/]((?!icons).*)[\/]/,
+          },
+          // Merge all the CSS into one file
+          styles: {
+            name: 'styles',
+            test: /\.s?css$/,
+            chunks: 'all',
+            minChunks: 1,
+            reuseExistingChunk: true,
+            enforce: true,
+          }
+        }
+      }
+    },
+
+    plugins:[new WebpackBundleAnalyzer()]
+  }
+}
+
+вы можете удалить "WebpackBundleAnalyzer" после того, как будете удовлетворены результатами.
+
+ 10.01.2020 01:29
+Другие вопросы по теме
+Неправильные пути при загрузке React SPA с вложенным маршрутом, но работают при загрузке от root
+Как загрузить файл JS без обновления страницы с помощью vue js
+Лучшая структура веб-пакета для монорепозитория с двумя реагирующими приложениями, использующими общие файлы
+Реакция сборки webpack 4 вызывает ошибку токена, но запуск запуска работает
+Webpack-dev-server только запрос прокси "localhost"
+Как запустить реагирующее приложение с помощью webpack-dev-server?
+Webpack для копирования файлов и преобразования псевдонимов путей ТОЛЬКО
+SCRIPT1003: ожидается ':' main.js (143651,12) Ошибка в IE-11 после обновления версии микса laravel с 2.0 до 4.0.14
+Импорт CSS-url из SASS с помощью Webpack
+Настроить горячую перезагрузку модуля для ElectronJS + Vue
+Похожие вопросы
+Значение данных vue js возвращает неопределенное значение внутри метода
+Передать данные из события в VueJS
+Как передать массив объектов дочернему компоненту в VueJS 2.x
+Как совместить vue-multiselect с vue-treeSelect?
+Vue: как лучше всего избежать TypeError внутри вычисляемых свойств
+Как мне обрабатывать oauth в Nuxt с отдельным сервером API?
+Как включить сложное приложение Vue в Laravel
+Как импортировать мои переменные SCSS в Webpack для глобального использования. (Вью)
+Как запустить функцию на стороне сервера с помощью Node.js, а не на стороне браузера с помощью Javascript?
+Передайте аргумент (командную строку), который будет использоваться файлом .env.[mode] во время сборки в Vue.js
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+     RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Vue cli3 включить CORS
+Вопросы
+VUE.JS
+Vue cli3 включить CORS
+У меня была эта проблема в течение почти 2 дней, любая помощь будет спасением жизни.
+
+У меня есть приложение vue, работающее в режиме разработки 8080, и я пытаюсь интегрировать вход в блок стек, и это приложение пытается прочитать http://локальный/манифест.json, поэтому я поместил его в статический каталог, но оно выдает мне ошибку cors, у нас есть решение для этого vue cli такие конфигурации, как vue.config.js?
+
+ 19.02.2019 12:48
+8
+1
+15 094
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+«Правильный ответ» на самом деле не помогает в этом случае.
+
+Blockstack должен иметь возможность попасть в файл manifest.json (в данном случае localhost:8080/manifest.json). Когда сервер не поддерживает CORS, Blockstack выдает ошибку.
+
+ОП спрашивает, как заставить «vue-cli-service serve» выполнять запросы COR. Для этого нам нужно изменить сервер разработки Webpack, чтобы разрешить запрос CORS.
+
+Добавьте vue.config.js (если его еще нет)
+
+module.exports = {
+  configureWebpack: {
+    devServer: {
+      headers: { "Access-Control-Allow-Origin": "*" }
+    }
+  }
+};
+ 03.12.2019 16:01
+У меня была такая же проблема, как у вас. Я применил то, что говорится в документации vue-js, чтобы поместить некоторый код в vue.config.js следующим образом.
+
+module.exports = {
+  devServer: {
+    proxy: 'http://localhost:4000'
+  }
+}
+но это не помогло бы. См. эту документацию https://cli.vuejs.org/config/#devсервер. У меня есть отдельный бэкэнд, который находится в laravel. Что я сделал, потратив слишком много времени на разрешение cors в vue-js, я применил cors к своему бэкэнд-файлу index.php, и это сработало как шарм. Проблема в том, что вы на самом деле не знаете, откуда это берется, но смотрите как на переднюю часть, так и на внутреннюю сторону, а затем пытаетесь найти решение с обеих сторон.
+
+ 28.01.2021 05:10
+Другие вопросы по теме
+Vuex — запустить функцию после нескольких отправок
+Vue cli проверяет css из консоли разработки браузера
+Как поместить код Vue в тег <code> в vue
+Отключить отдельные куски для css, vue cli 3, webpack 4
+Передайте аргумент (командную строку), который будет использоваться файлом .env.[mode] во время сборки в Vue.js
+Как я могу развернуть папку vue cli dist в прямой панели управления администратором?
+Есть ли способ импортировать глобальный список компонентов из определенной папки?
+Компоненты пакета vue, использующие синтаксис класса
+Не удается загрузить файл CSS с упакованной библиотекой Vue (npm)
+Создайте исполняемый файл для Windows с помощью Vue CLI Plugin Electron Builder в Linux
+Похожие вопросы
+Сохранить положение прокрутки при обновлении DOM в vue.js
+Browserify/vueify: внедрить глобальный файл scss во все компоненты
+Нужна ли мне среда модульного тестирования, если я уже использую Cypress в приложении Vue.js?
+Dropzone не определяется при использовании внутри компонента
+Vue.js: измените значения таблицы реактивным способом
+Vue.js — можно ли использовать динамический импорт Javascript для загрузки компонентов с другого сервера?
+Методов приглашения не существует
+Почему я получаю сообщение об ошибке отсутствия сервера npm на Vue.js?
+Как добавить DOCTYPE при создании xml с помощью пакета npm «xmlbuilder»
+Vuetify.js — IE11 не отображает таблицы данных с babel-polyfill
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+     RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Отключить кеш-загрузчик в webpack 4 vue cli 3
+Вопросы
+CACHING
+Отключить кеш-загрузчик в webpack 4 vue cli 3
+Я использую проект vue-cli 3/webpack 4. Моя сборка создается на AWS Codebuild, который запускает новый экземпляр виртуальной машины для каждой сборки. Cache -loader в webpack кэширует результаты работы babel-loader, vue-loader и terser. Но так как я запускаю новый экземпляр виртуальной машины каждый раз, я не пользуюсь этим. Если само кеширование имеет некоторые накладные расходы, лучше отключить его, как это предлагается в некоторых местах, таких как здесь.
+
+Как настроить веб-пакет через объект vue.conf, чтобы удалить загрузчик кеша. Спасибо
+
+Мой проект сгенерировал конфигурацию веб-пакета для производства:
+
+rules: [
+      /* config.module.rule('vue') */
+      {
+        test: /\.vue$/,
+        use: [
+          /* config.module.rule('vue').use('cache-loader') */
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: '/Users/digitalsuppliers/work/new_build_branch/bmsconsole-client/node_modules/.cache/vue-loader',
+              cacheIdentifier: '22f91b09'
+            }
+          },
+          /* config.module.rule('vue').use('vue-loader') */
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              },
+              cacheDirectory: '/Users/digitalsuppliers/work/new_build_branch/bmsconsole-client/node_modules/.cache/vue-loader',
+              cacheIdentifier: '22f91b09'
+            }
+          }
+        ]
+      },
+
+{
+        test: /\.jsx?$/,
+        exclude: [
+          function () { /* omitted long function */ }
+        ],
+        use: [
+          /* config.module.rule('js').use('cache-loader') */
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: '/Users/digitalsuppliers/work/new_build_branch/bmsconsole-client/node_modules/.cache/babel-loader',
+              cacheIdentifier: 'e8179b56'
+            }
+          },
+          /* config.module.rule('js').use('thread-loader') */
+          {
+            loader: 'thread-loader'
+          },
+          /* config.module.rule('js').use('babel-loader') */
+          {
+            loader: 'babel-loader'
+          }
+        ]
+  }
+ 28.02.2019 15:26
+3
+0
+4 720
+2
+ Ответы 2
+Одним из решений является отключение кеша полностью или только в производстве/разработке в зависимости от состояния. Чтобы использовать его, откройте свой vue.config-js и напишите там
+
+module.exports = {
+  chainWebpack: config => {
+    // disable cache for prod only, remove the if to disable it everywhere
+    // if (process.env.NODE_ENV === 'production') {
+      config.module.rule('vue').uses.delete('cache-loader');
+      config.module.rule('js').uses.delete('cache-loader');
+      config.module.rule('ts').uses.delete('cache-loader');
+      config.module.rule('tsx').uses.delete('cache-loader');
+    // }
+  },
+В этом примере я закомментировал условие, поэтому cache-loader вообще не используется.
+
+ 19.05.2019 15:23
+если вы смонтируете компонент vue с помощью маршрутизации, попытаетесь ли вы импортировать компонент в асинхронный режим? не синхронный путь.
+
+когда router/index.js загружается.. тогда может быть поможет вам.
+
+бывший.
+
+component: () => ({
+        component: import('@/views/your/pageComponent.vue'),
+        loading: this.loading,
+        error: this.error,
+        delay: this.delay,
+        timeout: this.timeout,
+      })
+ 24.06.2021 09:08
+Другие вопросы по теме
+Почему в документации vue говорится, что ссылки не являются реактивными, хотя на самом деле они активны?
+Динамически вызывать свойство объекта в цикле v-for
+Проблема реактивности vue с :disabled
+Конфигурация Nginx для нескольких статических сайтов на одном экземпляре сервера
+Как рассчитать разницу состояний Vuex, не вызывая реактивности
+Как изолировать/охватить глобальный css в vue
+NuxtServerInit не работает в режиме модуля Vuex - Nuxt.js
+Состояние Vue.js не обновляется: решено
+Как использовать Vue watch в объектах
+Возможно ли извлечь правила vuetify во внешний файл для повторного использования?
+Похожие вопросы
+Gson сохраняет JSON на диск и загружает обратно в память
+Пользовательское имя в кеше Redis
+Как кэшировать медленную инициализацию ресурсов с C# Web API REST Server?
+Как совместно использовать и кэшировать библиотеки DLL для мультитенантного приложения
+GeneaLabs/laravel-model-caching не кэширует мой красноречивый запрос с нетерпеливой загрузкой
+Как реализовать настраиваемый кеш в приложении C# UWP
+В чем разница между @CacheEvict(...) и @CacheEvict(value, allEntries)?
+Обслуживаемые пользователи Кэшированные страницы учетных записей других пользователей
+Очистить кэш по весеннему расписанию?
+Как предотвратить кеширование фона CSS
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+     RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+CSS-модули Vue
+Вопросы
+VUEJS2
+CSS-модули Vue
+Я пытался придумать решение для нашей библиотеки компонентов, которое будет отображать стили по-разному в зависимости от проекта, в который они импортированы. В своем исследовании я нашел возможное решение в модулях CSS. Проблема, с которой я сейчас сталкиваюсь, заключается в том, что когда я использую именованные модули, они компилируются в один и тот же класс css, поэтому стили в двух разных именованных модулях перезаписывают друг друга. Документация на веб-сайте Vue очень тонкая, поэтому я не уверен, правильно ли я сейчас реализую свой код. Может ли кто-нибудь сообщить мне, если я что-то упустил или у них была похожая проблема раньше?
+
+<template>
+  <button :class = "a.button" type = "button" v-on = "$listeners">
+    <slot/>
+  </button>
+</template>
+
+<script>
+export default {
+  console.info(this.a, this.b)
+}
+</script>
+
+<style module = "a">
+.button {
+  background-color: red;
+}
+/* identifiers injected as a */
+</style>
+
+<style module = "b">
+.button {
+  background-color: blue;
+}
+/* identifiers injected as b */
+</style>
+В моем console.info(this.a, this.b) консоль возвращает оба отображаемых имени класса как одно и то же {button: "index_button_2JdpP"} {button: "index_button_2JdpP"}, так что явно есть проблема в моем коде или я неправильно понимаю цель именования модуля CSS.
+
+ 28.02.2019 19:27
+1
+0
+327
+2
+ Ответы 2
+Я нашел обходной путь, импортировав файлы CSS в свой скрипт и установив свои стили с вычисляемым свойством.
+
+<template>
+  <button type = "button" :class = "styles.button" v-on = "$listeners">
+    <slot/>
+  </button>
+</template>
+
+<script>
+import remax from './remax.scss'
+import crm from './crm.scss'
+
+export default {
+  computed: {
+    styles() {
+      return remax
+    },
+  }
+}
+</script>
+
+<style modules lang = "scss"></style>
+К сожалению, подобные действия привели к тому, что некоторые стили были добавлены в мой проект, но это может быть связано с моей реализацией в файле scss.
+
+ 28.02.2019 21:11
+Есть такой способ, для решения этой или похожей проблемы, Если импортировать через , указать модуль в конце файла и обработать Computed. Затем вы можете назвать классы css одинаковыми, они не будут перезаписаны. По крайней мере для меня.
+
+ <template>
+  <div id = "app" :class = "BaseApp.Container">
+    <router-view :class = "BaseView.Container" />
+  </div>
+</template>
+<script>
+import BaseApp from "@/components/Base/Styles/BaseApp.css?module";
+import BaseView from "@/components/Base/Styles/BaseView.css?module";
+export default {
+  components: {},
+  computed: {
+    BaseApp() {
+      return BaseApp;
+    },
+    BaseView() {
+      return BaseView;
+    },
+  },
+};
+</script>
+ 14.10.2020 09:15
+Другие вопросы по теме
+Отключить кеш-загрузчик в webpack 4 vue cli 3
+Vue JS — модульный тест — локальное хранилище не определено
+Модульный тест Vue Cli с шуткой, как запустить один тест
+Проект заявлен с vue-cli 2 или 3
+Ошибка ссылки на веб-пакет window.location.hostname не может быть найдена, vue.js
+Vuetify — обнаружено несколько экземпляров Vue
+Как создать веб-компонент с помощью vue-cli
+Hot-Module-Replacement (HMR) внезапно перестал работать в проекте vue-cli 3
+Vuex - изменять объекты состояния только на геттерах
+Как импортировать функцию из файла .js при использовании Typescript и Vue
+Похожие вопросы
+Как установить язык в vuetify?
+Nuxt маршрутизация на нескольких уровнях
+Document.elementFromPoint(x, y) не сообщает о правильных дочерних элементах
+Как прокручивать вкладки в VueJS с помощью Bootstrap-vue
+Должны ли мы использовать v-model для изменения хранилища Vuex?
+Запросы Graphql, сгенерированные amplify, работают хорошо, но выдают ошибки из-за правил аутентификации. Почему?
+Динамически вызывать свойство объекта в цикле v-for
+Нужно сделать v-модель динамической
+Vue обновляет текст всей кнопки после изменения конкретной кнопки
+Является ли доступ к свойствам `data` через `wrapper.vm` правильным способом, в соответствии с документами?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Объединение Express 4 и Vue CLI 3
+Вопросы
+NODE.JS
+Объединение Express 4 и Vue CLI 3
+Я построил проект с Vue CLI 3 и Express 4, и до сих пор все шло прямо вперед, так как у меня был внутренний сервер в одной папке, а внешний интерфейс в другой, но теперь я останавливаюсь, пытаясь развернуть оба на одном Хостинг узлов. Позвольте мне рассказать немного больше.
+
+Моя структура проекта на данный момент:
+
+Project:
+  - node_modules/
+  - package.json
+
+Project/Frontend (Vue CLI 3):
+  - node_modules/
+  - package.json
+  - app.js
+  - dist/
+  - <other folders like "public","tests","src",etc>        
+
+Project/Backend (Express 4):
+  - node_modules/
+  - package.json
+  - app.js
+  - <other folders like "controllers" and stuff>
+Теперь проблема в том, что мне нужно объединить оба в одном приложении Node, чтобы развернуть его на хостинге.
+
+Я бы хотел, чтобы Express (Backend) запускал сервер и обслуживал dist/ из Frontend, но проблема в том, что выбранная мной служба хостинга просто запускает npm install в корневой папке, что бесполезно, так как мне нужно пакет «Экспресс» (и некоторые другие) для запуска сервера. Поскольку его нет в корневой папке, он не устанавливает никаких пакетов и, очевидно, не запускается.
+
+Я создал конфигурацию npm корневого уровня, чтобы попытаться скомпилировать интерфейс, а затем скопировать dist/ в серверную часть Express. Но поскольку служба хостинга не устанавливает ничего, кроме корневой конфигурации npm, cd вход во внешний интерфейс, а затем сборка не удалась, так как он пропускает node_modules.
+
+Мне каким-то образом удалось это сделать, установив веб-пакет в папку бэкэнда npm, настроив его для объединения приложения Express и скопировав пакет и dist/ из внешнего интерфейса в корневую папку проекта, а затем запустив npm на корневом уровне:
+
+cd frontend && npm run build && cd ../backend && webpack
+и после этого пропихнул рут dist/ на хостинг, что вроде и сработало, но "муторно" и не оптимально, тем более, что мне нужно каждый раз собирать его на локальном компе и только тогда заливать. Если бы я каким-то образом мог использовать пакеты корневого npm для создания внешнего интерфейса и внутреннего интерфейса службы хостинга, это было бы здорово, но я считаю, что здесь управление версиями — это еще одна проблема, поскольку оба будут использовать одни и те же пакеты npm.
+
+Есть ли лучшее и/или более чистое решение для этого?
+
+Если какой-либо детали не хватает, просто дайте мне знать.
+
+Спасибо за любую помощь заранее.
+
+ 06.03.2019 15:27
+0
+0
+2 212
+2
+ Ответы 2
+Вы должны попробовать Лерна. Это позволяет вам иметь несколько проектов js в одном репо (или в одной папке) с package.json в корневой папке, где вы можете добавить скрипт для взаимодействия со всем вашим проектом.
+
+Например, вы должны иметь возможность добавить стартовый скрипт, который будет находиться в вашей папке с различными приложениями, установить ваши зависимости и запустить/создать этот проект.
+
+ 14.03.2019 15:54
+Вы можете использовать скрипт, который запускает и npm install, и построение передней части, и запуск задней части.
+
+const resolve = require('path').resolve
+const cp = require('child_process')
+
+const frontend = resolve(__dirname, 'Frontend')
+const backend = resolve(__dirname, 'Backend')
+
+cp.exec('npm install', { env: process.env, cwd: frontend }, () => {
+  cp.exec('npm run build', { env: process.env, cwd: frontend })
+})
+
+cp.exec('npm install', { env: process.env, cwd: backend }, () => {
+  cp.exec('npm run start', { env: process.env, cwd: backend })
+})
+ 18.03.2019 15:52
+Другие вопросы по теме
+Как сделать nodemailer многоразовым в нескольких модулях?
+Ошибка при загрузке файлов с помощью FilePond и multer (expressjs)
+Как лучше всего хранить конфиденциальные учетные данные в Node?
+Я хочу выполнить функцию при запуске моего экспресс-сервера node.js и выполнить модуль аутентификации, правильно ли это?
+Как визуализировать модальное окно, используя экспресс и руль
+Совместимость ExpressJs с версией NodeJs
+Использование нескольких FindOne в Mongodb
+Узел +Экспресс-динамическая маршрутизация
+Проверка статуса нескольких веб-сайтов с помощью Node JS
+Редактировать концепцию загрузки изображения страницы с помощью Nodejs
+Похожие вопросы
+Как сделать nodemailer многоразовым в нескольких модулях?
+Код ошибки: 10021, сообщение об ошибке: "Uncaught TypeError: n(...).connect не является функцией"
+Как передать клиентский пакет (веб-пакет) на сервер NodeJS?
+Как загрузить исполняемый файл NPM на сервер Nexus
+Требования и варианты размещения службы приложений Azure
+Отправил запрос POST с помощью JS и обработал данные с помощью Node
+Как получить сообщение с помощью чата Google Hangout Spaces.message.get в Node js
+Идентифицировать 360-градусные изображения из узла js
+Модульное тестирование и продолжение — локальное хранилище
+Ошибка: 1252. Клиент не поддерживает протокол аутентификации, запрошенный сервером; рассмотрите возможность обновления клиента MySQL
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Юнит-тесты, созданные исключениями vue-cli
+Вопросы
+VUE CLI 3
+Юнит-тесты, созданные исключениями vue-cli
+После создания проекта с vue-cli (v3.5.1) модульный тест, который был создан автоматически, не работает, когда я запускаю: «npm run test: unit».
+
+После запуска vue create я вручную выбрал следующие параметры: TS, Router, Vuex, Linter, Unit, E2E, синтаксис компонента в стиле класса: да, Babel: нет, режим истории: нет, линтер: TSLint, Lint при сохранении , решение для модульного тестирования: Mocha, решение для тестирования E2E Cypress, файлы конфигурации: выделенные файлы Юнит-тесты, созданные исключениями vue-cli.
+
+Вывод «npm run test: unit» приведен ниже.
+
+WEBPACK Compiled successfully in 7321ms
+MOCHA Testing...
+RUNTIME EXCEPTION Exception occurred while loading your tests
+ReferenceError: performance is not defined at Module../node_modules/vue/dist/vue.runtime.esm.js
+Я попытался изменить сценарий npm, используемый для запуска теста, как показано ниже (не был уверен, что включение исходит от Node, и я не думаю, что это должно быть), но я просто получаю сообщение об ошибке, указывающее, что perf_hooks был не найден в \node_modules\mocha-webpack\lib.
+
+"test:unit": "vue-cli-service test:unit --include perf_hooks"
+Пример кода: https://github.com/derek-baker/super-duper-гуакамоле
+
+ 19.03.2019 14:37
+0
+0
+662
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Если в дополнение к приведенным выше параметрам я решу включить Babel в качестве функции, а также использовать Babel вместе с TypeScript для автоматически определяемых полифилов, модульный тест выполняется, как и ожидалось. Пример рабочего конфига ниже.
+
+{
+  "name": "vue-cli-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "vue": "^2.6.6",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^5.2.4",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.5.0",
+    "@vue/cli-plugin-typescript": "^3.5.0",
+    "@vue/cli-plugin-unit-mocha": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "chai": "^4.1.2",
+    "typescript": "^3.2.1",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
+ 20.03.2019 15:39
+Вы должны сфальсифицировать isServerBuild есть открытый вопрос https://github.com/vuejs/vue-cli/issues/2270#issue-351812395
+
+ссылка на webpack мокко https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-plugin-unit-mocha/index.js#L5
+
+быстрое средство:
+
+// vue.config.js
+module.exports = {
+    chainWebpack: (config) => {
+      if (process.env.NODE_ENV === 'test') {    
+        config.merge({
+            // target: 'node',
+            devtool: 'inline-cheap-module-source-map'
+        })
+        config.module
+        .rule('vue')
+          .use('vue-loader')
+          .tap(options => {
+            options.isServerBuild = false
+            return options
+          })
+        } 
+    },  
+        
+    
+  };
+
+
+ 17.12.2020 11:10
+Другие вопросы по теме
+Тестирование однофайловых компонентов с помощью Mocha + webpack получило RUNTIME EXCEPTION Исключение при загрузке ваших тестов в модульном тесте на vuejs
+Как имитировать navigator.language для модульного теста машинописного текста
+Создание отчета о покрытии nyc для проекта VueJS с помощью @ vue / cli-plugin-unit-mocha, TypeScript и SFC
+Не удается загрузить изображения PNG и GIF в webpack.config.js
+Проблема с модулем не обнаружена при написании модульных тестов для интерфейса Vue.js с использованием веб-пакета mocha
+Как разделить файлы для mocha-webpack
+Mocha-webpack не находит тесты
+Исключение теста Mocha при загрузке тестов
+Ошибка компиляции mocha-webpack - неожиданный символ '#'
+Что вызывает эту проблему: «Превышено время ожидания 10000 мс. Для асинхронных тестов и перехватчиков убедитесь, что вызывается «done ()»;»
+Похожие вопросы
+VueJs CLI 3 — как добавить внешнюю библиотеку
+Как я могу развернуть приложение Vue в подкаталог?
+Как импортировать файлы css в дочерние компоненты vue 3?
+Vue.js - элемент DOM не удаляется из родительского компонента после изменения маршрута в
+Как правильно использовать слот внутри веб-компонента vue js и применять стили
+Как обмениваться модулями узла между приложением vue-cli 3?
+Оболочка Windows Power: vue --version «не распознана»
+Как использовать VueJS axios-oauth-client и API Google Photos?
+Как использовать exclude с загрузчиком babel в vue cli3?
+Что такое файл chunk-vendors.js и как он создается? (веб-пакет)
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как синхронизировать состояния между серверной частью и интерфейсом с помощью vuex и vue-router?
+Вопросы
+VUE.JS
+Как синхронизировать состояния между серверной частью и интерфейсом с помощью vuex и vue-router?
+Я разрабатываю одностраничное приложение, используя vue-cli3 и npm.
+
+Проблема: заполнение базового целочисленного значения (хранящегося в состоянии vuex) с именем прилавок, которое было увеличено/уменьшено в бэкэнде, во внешнем интерфейсе, который отображает новое значение.
+
+Мутации увеличения/уменьшения работают нормально на обоих компонентах (Frontend/Backend), но похоже, что мутации не работают на одном и том же экземпляре маршрута: при увеличении/уменьшении счетчика в бэкенде значение не обновляется во внешнем интерфейсе и в противном случае .
+
+store.js:
+
+Содержит состояние, которое необходимо синхронизировать между Backend/Frontend.
+
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    counter: 10
+  },
+  mutations: {
+    increment (state) {
+      state.counter++
+    },
+    decrement (state) {
+      state.counter--
+    }
+  }
+})
+index.js:
+
+Определяет маршруты, которые должен предоставить vue-router.
+
+import Vue from 'vue'
+import Router from 'vue-router'
+import Frontend from '@/components/Frontend'
+import Backend from '@/components/Backend'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Frontend',
+      component: Frontend
+    },
+    {
+      path: '/backend',
+      name: 'Backend',
+      component: Backend
+    }
+  ],
+  mode: 'history'
+})
+основной.js:
+
+Запускает экземпляр Vue и предоставляет глобальные экземпляры хранить и маршрутизатор.
+
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import { sync } from 'vuex-router-sync'
+import store from './store/store'
+
+Vue.config.productionTip = false
+
+sync(store, router)
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
+Frontend.vue/Backend.vue:
+
+Оба (Frontend/Backend) используют здесь один и тот же код. Они используют состояние прилавок для его отображения и изменения.
+
+<template>
+  <div> Counter: {{ getCounter }}
+    <br>
+    <p>
+      <button @click = "increment">+</button>
+      <button @click = "decrement">-</button>
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Frontend',
+  methods: {
+    increment () {
+      this.$store.commit('increment')
+    },
+    decrement () {
+      this.$store.commit('decrement')
+    }
+  },
+  computed: {
+    getCounter () {
+      return this.$store.state.counter
+    }
+  }
+}
+</script>
+Было бы здорово, если бы кто-нибудь сказал мне, что мне не хватает или я неправильно понял концепцию vuex и vue-router.
+
+ 22.03.2019 15:08
+12
+13
+1 844
+2
+ Ответы 2
+Свойства компонента @sebikolon, определенные в data () => {}, являются реактивными, методы — нет, они вызываются один раз. Вместо {{ getCounter }} просто используйте {{ $store.state.counter }}. ИЛИ инициирует свойство в каждом компоненте, который получает значение вашего состояния.
+
+data: function () {
+    return {
+        counter: $store.state.counter,
+    }
+}
+ 22.03.2019 16:01
+Просто возьмите счетчик из магазина для обоих компонентов. Вам не нужно data, так как магазин уже реактивен.
+
+<template>
+  <div> Counter: {{ counter }}
+    <br>
+    <p>
+      <button @click = "increment">+</button>
+      <button @click = "decrement">-</button>
+    </p>
+  </div>
+</template>
+
+<script>
+import { mapState, mapMutations } from 'vuex';
+
+export default {
+  name: 'Frontend',
+  methods: {
+    ...mapMutations([
+      'increment',
+      'decrement',
+    ])
+  },
+  computed: {
+    ...mapState({
+        counter: state => state.counter,
+    })
+  }
+}
+</script>
+Для справки:
+
+mapState: https://vuex.vuejs.org/guide/state.html#the-mapstate-helper
+mapMutations: https://vuex.vuejs.org/guide/mutations.html#committing-mutations-in-components
+ 15.01.2020 15:35
+Другие вопросы по теме
+Ошибка при выполнении операции CRUD с использованием Vuex в vuejs
+Очистите поле при отправке (vee-validate vue)
+Как отслеживать глубокое значение объекта при использовании vuex
+Vuex - обновить весь объект внутри массива
+VUEX: слот панели расширения Vuetify не обновляется после добавления элемента
+Нужно несколько экземпляров модуля Vuex для нескольких экземпляров Vue
+Где я могу поместить логику авторизации в vue.js?
+Обновление массива в vuex не реагирует на компонент
+Как получить доступ к методам vue/vuex mapActions с похожим именем, но с другим пространством имен?
+Vue.js — Неизвестный пользовательский элемент: <router-view>
+Похожие вопросы
+Элемент Datepicker показывает «вчера» не как отключенный, когда часовой пояс +14
+Пагинация. Как сделать переход между страницами по нажатию на цифры
+Передача пользовательского события в Laravel Blade View
+Как поставить другую позицию на случайно добавленное изображение? Vue.js
+Vue js CLI 2 импортирует и использует плагин javascript
+В чем разница между знаками равенства "=" и двоеточием ":" в Vue JS?
+Как я могу одновременно создать разные слова для каждого игрока в vue js?
+API Google Диска после подписи Google — Vue.Js
+Ошибка при выполнении операции CRUD с использованием Vuex в vuejs
+Vue // this.$root.$off отписывает все экземпляры компонента от глобального события
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Интернационализация заголовка таблицы данных Vuetify
+Вопросы
+VUE.JS
+Интернационализация заголовка таблицы данных Vuetify
+Я пытаюсь интернационализировать заголовок таблицы данных, используя Vuetify + I18n.
+
+Когда я перевожу свой обычный код, он работает правильно, но теперь мне нужно перевести заголовок моей таблицы данных, созданной с помощью Vuetify.
+
+Я уже пытался добавить код this.$vuetify.t('$vuetify.activity.username') или this.$t('$vuetify.activity.username') в шапку, но ничего не происходит. Язык всегда остается английским (en).
+
+Кто-нибудь знает, как это исправить?
+
+Я отправляю ниже свой код.
+
+Заранее спасибо.
+
+Activity.vue
+
+export default {
+  data () {
+    return {
+      headers: [
+        { text: 'ID', value: 'id', width: '1%', align: 'left' },
+        { text: this.$vuetify.t('$vuetify.activity.username'), value: 'username', width: '1%' },
+        ...
+      ]
+    }
+  },
+  ...
+}
+main.js
+
+import messages from './assets/lang'
+
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  locale: 'en',
+  messages
+})
+
+// Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  lang: {
+    t: (key, ...params) => i18n.t(key, params)
+  }
+})
+./активы/язык/index.js
+
+module.exports = {
+  en: {
+    ...
+    $vuetify: {
+      dataIterator: {
+        rowsPerPageText: 'Items per page:',
+        ...
+      },
+      ...
+      activity: {
+        username: 'Username'
+      }
+    }
+  },
+  pt: {
+    ...
+    $vuetify: {
+      dataIterator: {
+        rowsPerPageText: 'Itens por página:',
+        ...
+      },
+      ...
+      activity: {
+        username: 'Nome do usuário'
+      }
+    }
+  }
+}
+ 01.04.2019 19:28
+6
+2
+10 068
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Для Vuetify 2.x
+
+<v-data-table :headers = "headers" ...
+И поместите в вычисленные данные
+
+ computed: {   
+    headers () {
+      return [
+        {
+          text: this.$t('title'),
+          align: 'left',
+          sortable: false,
+          value: 'title'
+        },
+Для Vuetify 1.x
+
+вы можете поместить свою функцию перевода в слот headerCell. Это не сработает, если вы поместите функцию в объект headers: в Activity.vue, просто поместите туда свои ключи перевода и используйте шаблон со слотом.
+
+<v-data-table>
+    ....
+    <template slot = "headerCell" slot-scope = "props">
+        {{ $t(props.header.text) }}
+    </template>
+    ....
+ 01.05.2019 03:17
+Вы можете поместить свой заголовок в вычисляемую функцию. Когда локальные изменения, заголовки будут обновлены
+
+computed:{
+
+    headers(){
+      return [
+        { text: 'ID', value: 'id', width: '1%', align: 'left' },
+        { text: this.$vuetify.t('$vuetify.activity.username'), value: 'username', width: '1%' },
+        ...
+      ]
+    }
+...
+}
+ 27.05.2019 12:33
+Другие вопросы по теме
+Vuetify/автозаполнение: группа стилей
+Как использовать кнопку внутри слота метки v-text-field
+Проблема выравнивания сложенных значков Font Awesome в Chrome
+Как протестировать компонент vue, содержащий дочерний компонент v-text-field Vuetify?
+Как использовать vuetify.css и bootstrap на одной странице?
+Vuetify Не удалось найти цель при использовании присоединения к v-autocomplete
+Как использовать вкладки Vuetify с vue-router через имя маршрутизатора
+Vuetify css сокрушает Bootstrap css
+Как увеличить размер шрифта в заголовке v-data-table
+Как заполнить v-текстовое поле данными json
+Похожие вопросы
+Как отобразить одну строку данных из облачного хранилища с помощью vue.js
+Ядро ASP.NET. Как я могу аннулировать JWT-токен после смены пароля
+Как решить noscript - не работает должным образом без включенного JavaScript при обслуживании приложения Vue
+Фильтрация с помощью Vue.js, получение значения объекта
+Какой формат `en.js` или `ja.js` в ленивой загрузке vue-i18n
+Включить зависимость для плагина vue
+Слоты родительского компонента внутри дочернего компонента vue 2.x
+Как перейти к другому приложению с помощью реактивного маршрутизатора?
+Один и тот же uuid два раза + Vuex + uuidv4()
+Проект Vue.js с использованием Vue I18n получил следующую ошибку: «TypeError: i18n is undefined»
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как вы включаете vuetify внутри веб-компонента
+Вопросы
+VUE.JS
+Как вы включаете vuetify внутри веб-компонента
+Я создаю веб-компонент, используя следующую команду:
+
+vue-cli-service build --target wc --name my-element 'src/components/mycomponent.vue'
+Я хотел бы использовать Vuetify внутри этого компонента. Как добавить его в mycomponent.vue, чтобы он находился внутри теневого корня компонента?
+
+Этот компонент будет динамически загружаться в приложения, созданные с использованием других фреймворков/стилей. Я хочу, чтобы веб-компонент мог использовать, например, v-btn, v-layout и т. д. внутри него.
+
+Спасибо, Донни
+
+ 02.04.2019 07:01
+4
+3
+5 669
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Начиная с версии 1.3 вы можете импортировать отдельные компоненты, А ля карт...
+
+<template>
+  <!-- whatever -->
+</template>
+
+<script>
+import { VBtn, VLayout } from 'vuetify/lib'
+
+export default {
+  name: 'MyElement',
+  components {
+    VBtn,
+    VLayout
+  },
+  // etc
+}
+</script>
+См. https://vuetifyjs.com/en/framework/a-la-carte#importing-components
+
+ 02.04.2019 07:13
+Для vuetify 2.x требуется инициализация экземпляра Vue следующим образом.
+
+// plugins/vuetify.js
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
+
+Vue.use(Vuetify);
+
+const opts = {};
+
+export default new Vuetify(opts);
+// main.js
+import Vue from 'vue';
+import App from './app.vue';
+import vuetify from './plugins/vuetify';
+
+new Vue({
+  vuetify,
+  render: h => h(App),
+}).$mount('#app');
+
+Вместо этого вам нужно переместить такую ​​инициализацию в ваш веб-компонент.
+
+<template>
+  ...
+</template>
+
+<script>
+import { VBtn, VLayout } from 'vuetify/lib'
+import vuetify from '../plugins/vuetify';
+
+export default {
+  name: 'MyWebComponent',
+  vuetify,
+  components: {
+    VBtn,
+    VLayout
+  },
+  ...
+}
+</script>
+
+<style>
+  ...
+</style>
+ 16.12.2019 08:53
+Другие вопросы по теме
+Медленная прокрутка вверх с помощью Vuetify
+Интернационализация заголовка таблицы данных Vuetify
+Vuetify/автозаполнение: группа стилей
+Как использовать кнопку внутри слота метки v-text-field
+Проблема выравнивания сложенных значков Font Awesome в Chrome
+Как протестировать компонент vue, содержащий дочерний компонент v-text-field Vuetify?
+Как использовать vuetify.css и bootstrap на одной странице?
+Vuetify Не удалось найти цель при использовании присоединения к v-autocomplete
+Как использовать вкладки Vuetify с vue-router через имя маршрутизатора
+Vuetify css сокрушает Bootstrap css
+Похожие вопросы
+Как развернуть nodejs и vuejs на героку
+Динамическое обновление имени заголовка с помощью Ag-Grid
+Вставьте строку в атрибут массива в таблице Dynamodb без дублирования
+Как заставить два входа реагировать друг на друга в Vue.js
+Как получить значение атрибута данных в компоненте в другом компоненте без использования шины событий?
+Автобус событий Vue ожидает монтирования
+Laravel/Vue JS - невозможно загружать файлы с устройств Android
+Я создаю приложение в Vue. Мне нужно сохранить информацию для последующего использования, это хороший способ использовать js-cookie?
+Vue Froala и Laravel Mix - не удается найти модуль «babel-runtime/core-js/json/stringify»
+Жизненный цикл маршрутизации Vue
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+ RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Vue.js: показать/скрыть кнопки на панели навигации в зависимости от состояния магазина Vuex, когда пользователь вошел в систему или нет
+Вопросы
+JAVASCRIPT
+Vue.js: показать/скрыть кнопки на панели навигации в зависимости от состояния магазина Vuex, когда пользователь вошел в систему или нет
+Я создаю панель навигации, которая показывает или скрывает кнопки в зависимости от того, вошел ли пользователь в систему или нет. Для этого я сохраняю состояние на Vuex и localStorage.
+
+Я пытаюсь создать динамическое меню, используя список объектов (например, rightMenu), который содержит информацию о кнопках (например, маршрут, заголовок и флаг, который указывает, может ли кнопка отображаться или нет, если пользователь вошел в систему) .
+
+Всегда, когда пользователь входит в систему, this.$store.state.auth.isUserLoggedIn меняется на true, однако шаблон не меняется, кнопка остается в том же исходном состоянии, когда пользователь не вошел в систему. Например: кнопка sign out не отображается при обновлении this.$store.state.auth.isUserLoggedIn. Но когда я нажимаю ctrl+F5 и страница перезагружается, кнопки отображаются правильно. В этом случае, например, кнопка sign out отображается правильно, когда я перезагружаю страницу вручную.
+
+Я думаю о том, чтобы заставить страницу перезагружаться снова, когда пользователь входит в систему или выходит из нее, однако я считаю, что это не очень хороший вариант.
+
+Кто-нибудь может мне помочь?
+
+Я даю код, который я использую ниже.
+
+Заранее спасибо.
+
+Menu.vue > шаблон
+
+<div>
+    <v-toolbar color='grey darken-3' dark>
+        <v-toolbar-title>Site</v-toolbar-title>
+
+        ...
+
+        <v-toolbar-items class='hidden-sm-and-down'>
+            <v-btn v-for='item in rightMenu' :key='item.title'
+                   :to='item.to' v-if='item.showButton' flat>
+                   {{ item.title }}
+            </v-btn>
+        </v-toolbar-items>
+
+    </v-toolbar>
+
+    <router-view/>
+</div>
+Menu.vue > скрипт
+
+export default {
+  data () {
+    return {
+      rightMenu: [
+        { to: '/sign_in', title: 'sign in'
+          showButton: !this.$store.state.auth.isUserLoggedIn },
+        { to: '/sign_up', title: 'sign up'
+          showButton: !this.$store.state.auth.isUserLoggedIn },
+        { to: '/sign_out', title: 'sign out'
+          showButton: this.$store.state.auth.isUserLoggedIn }
+      ]
+    }
+  },
+  ...
+}
+store.js
+
+const store = new Vuex.Store({
+  state: {
+    auth: {
+      token: '',
+      isUserLoggedIn: false
+    }
+  },
+  mutations: {
+    setAuthToken (state, token) {  // I use it on the Login
+      state.auth.token = token
+      state.auth.isUserLoggedIn = !!token
+      localStorage.setItem('store', JSON.stringify(state))
+    },
+    cleanAuth (state) {  // I use it on the Logout
+      state.auth = {
+        token: '',
+        isUserLoggedIn: false
+      }
+      localStorage.setItem('store', JSON.stringify(state))
+    }
+  }
+  ...
+})
+РЕДАКТИРОВАТЬ 1:
+
+Когда я явно использую this.$store.state.auth.isUserLoggedIn в своем коде, он работает хорошо. Итак, кнопка появляется и исчезает правильно. Я привожу ниже пример:
+
+Menu.vue > шаблон
+
+<v-toolbar-items class='hidden-sm-and-down'>
+    <v-btn v-if='this.$store.state.auth.isUserLoggedIn' flat> 
+      Test {{ this.$store.state.auth.isUserLoggedIn }}
+    </v-btn>
+</v-toolbar-items>
+Следовательно, я считаю, что проблема в связывании showButton с this.$store.state.auth.isUserLoggedIn.
+
+ 08.04.2019 19:10
+1
+2
+2 901
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Используйте свойство computed, чтобы сделать это reactive:
+
+<template>
+...
+<v-btn v-for='item in rightMenu' :key='item.title'
+  :to='item.to' v-if='isUserLoggedIn(item.title)' flat>
+  {{ item.title }}
+</v-btn>
+...
+</template>
+
+<script>
+...
+computed: {
+  isUserLoggedIn() {
+    return (title) => {  // you'll not have any caching benefits
+      if (title === 'sign out') {
+        return this.$store.state.auth.isUserLoggedIn;
+      }
+      return !this.$store.state.auth.isUserLoggedIn;
+    }
+  }
+}
+...
+</script>
+ 08.04.2019 19:45
+ Ответ принят как подходящий
+Благодаря ответам Криса Ли, Андрея Георгиу и Саджиба Хана я смог решить свою проблему.
+
+Андрей Георгиу объяснил, что я не могу получить доступ к вычисляемым свойствам в data(), а Крис Ли предложил вместо этого использовать вычисляемую переменную. Эти ответы плюс пример Саджиба Хана я смог придумать в решении, которое я поделюсь ниже. Я надеюсь, что это поможет другим в будущем.
+
+Короче говоря, я создал вычисляемое свойство, которое возвращает мой массив, и всегда при обновлении this.$store.state.auth.isUserLoggedIn массив изменяется вместе (следовательно, и меню).
+
+Я намерен создать mapGetter для своего this.$store.state.auth.isUserLoggedIn. Как только я это сделаю, я обновлю ответ.
+
+Большое спасибо, ребята.
+
+<script>
+export default {
+  data () {
+    return { ... }
+  },
+  computed: {
+    rightMenu () {
+      return [
+        { title: 'sign_in', to: '/sign_in', 
+            showButton: !this.$store.state.auth.isUserLoggedIn },
+        { title: 'sign_up', to: '/sign_up', 
+            showButton: !this.$store.state.auth.isUserLoggedIn },
+        { title: 'sign_out', to: '/sign_out',
+            showButton: this.$store.state.auth.isUserLoggedIn }
+      ]
+    }
+  }
+}
+</script>
+РЕДАКТИРОВАТЬ 1: Решение с использованием mapGetters
+
+Menu.vue
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  data () {
+    return { ... }
+  },
+  computed: {
+    ...mapGetters([
+      'isUserLoggedIn'
+    ]),
+    rightMenu () {
+      return [
+        { title: 'sign_in', to: '/sign_in', 
+            showButton: !this.$store.state.auth.isUserLoggedIn },
+        { title: 'sign_up', to: '/sign_up', 
+            showButton: !this.$store.state.auth.isUserLoggedIn },
+        { title: 'sign_out', to: '/sign_out',
+            showButton: this.$store.state.auth.isUserLoggedIn }
+      ]
+    }
+  }
+}
+</script>
+store.js
+
+Я добавил следующий геттер:
+
+...
+getters: {
+  isUserLoggedIn (state) {
+    return state.auth.isUserLoggedIn
+  }
+}
+...
+ 08.04.2019 20:34
+Другие вопросы по теме
+Автозаполнение Vue в laravel
+Как сделать снимок экрана определенного элемента html div в vue.js
+Интеграция редактора AG-Grid Vue: разница между 20.1.0 и 20.2.0
+$emit выполняется до вычисления
+Сохранение выбранных значений фильтров элементов в компоненте списка после возврата из просмотра компонента элемента
+Как выровнять содержимое по центру компонента v-card в Vuetify?
+Твиттер намерен поделиться японским текстом, который не работает в IE11
+Перевести текст из скрипта с помощью Vue-i18n
+Как я могу получить конкретную информацию в зависимости от того, какой проект я нажимаю?
+Как принудительно перезагрузить узел #vuetify #treeview?
+Похожие вопросы
+Как обрабатывать условные операторы в стилизованном компоненте
+Как многократно отображать один и тот же компонент с одним и тем же реквизитом?
+Почему этот фрагмент кода не заменяет первую букву каждого слова?
+Есть ли способ вставить переменную js в полезную нагрузку json?
+Как получить доступ к вложенной информации в ответе JSON API?
+Кукловод: найти iframe по классу
+Попытка вызвать функции в javascript, т.е. файл JS из классического ASP
+Какой алгоритм шифрования хэшей использует web3? ethereumjs-util Sha3 возвращает другой результат
+Автозаполнение Vue в laravel
+«SyntaxError: неожиданный идентификатор» в классе javascript
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Почему клонированный проект, созданный с помощью vue-cli-3, не распознает «@» как путь?
+Вопросы
+NODE.JS
+Почему клонированный проект, созданный с помощью vue-cli-3, не распознает «@» как путь?
+Итак, я нахожусь в ситуации, когда я создал новый проект Vue с помощью vue-cli-3. Я работал над ним несколько недель.
+
+Я решил переключиться на свой ноутбук с рабочего стола, так как я буду путешествовать. Поэтому я нажал на репозиторий на своем рабочем столе, а теперь на своем ноутбуке я сделал git clone проект и использовал npm install.
+
+Теперь, когда я запускаю npm serve == vue-cli-service serve, я получаю сообщение об ошибке, что проект не распознает модули, начинающиеся с @, например, import movements from '@/data/movements'.
+
+Я попробовал тот же процесс с моим рабочим ноутбуком, и все работало нормально. Я что-то пропустил во время клонирования из текущего репо или что случилось? Пожалуйста, почему это происходит?
+
+Я обнаружил, что вы можете использовать vue.config.js и просто переписать конфигурацию Webpack (что помогает), но зачем мне переписывать конфигурацию при работе над проектом с другого компьютера?
+
+Это мой файл .gitignore, я не думаю, что он блокирует важные файлы.
+
+.DS_Store
+node_modules
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+ 15.04.2019 23:43
+0
+0
+691
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Согласно документация новой версии, @ указывает на каталог src только в шаблонах.
+
+If the URL starts with @, it's also interpreted as a module request. This is useful because Vue CLI by default aliases @ to <projectRoot>/src. (templates only)
+
+Что вы можете попробовать, так это удалить символ ^ из вашего файла package.json, чтобы вернуться к предыдущей версии vue, а затем снова сделать npm install. Надеюсь, это сработает.
+
+ 25.04.2019 14:26
+ Ответ принят как подходящий
+Обновление: в «@» не было ничего плохого, но git испортил мои имена файлов.
+
+Каким-то образом мой клонированный проект имел movements.js с маленькой буквой m, хотя я переименовал его в заглавную M Movements.js перед фиксацией и отправкой.
+
+ 26.04.2019 15:06
+Другие вопросы по теме
+Как предотвратить изменение формы выбора до завершения диалога в Vue
+Использование всплывающей подсказки Nativescript vue
+Как получить значение из ввода без использования v-модели в Vue.js?
+Запуск функции ПОСЛЕ полного отображения маршрута в Nuxt.js
+Vuejs обновляет дочерний компонент при обновлении родительских данных
+Можно ли передавать данные из компонента Polymer в компонент Vue?
+Когда обновлять токен JWT?
+Как убедиться, что элементы DOM, которыми я хочу манипулировать, загрузились, прежде чем пытаться что-либо сделать с ними в Vue.js?
+Перейти к позиции по клику (класс доступа из другого компонента Vue)
+Реквизиты компонентов Vue не обновляются
+Похожие вопросы
+Express и PassportJs - стратегия Google OAuth2.0 не дает мне объект req.user
+Есть ли способ получить все предложения во внешнем модуле в VS Code?
+Fs.readFile возвращает строку, но с пробелом между каждым символом и добавлением символов
+Невозможно обновить модель Revit для Basic Viewer
+Множественная вставка внутри QueryFile
+Как скрыть поле в обратном вызове document.save() в мангусте?
+Сбой сборки NG в Azure Pipelines с ошибкой NPM 134
+Сообщение об ошибке: MongoError: неверная аутентификация Ошибка аутентификации через строку URI
+Vuejs обновляет дочерний компонент при обновлении родительских данных
+Neo4J всегда по умолчанию использует числа NodeJS как числа с плавающей запятой при использовании параметризованных запросов
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+vRedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Объединение нескольких классов CSS в один
+Вопросы
+VUE.JS
+Объединение нескольких классов CSS в один
+В проекте Vue я хочу объединить несколько классов css, которые я использую для двух элементов, чтобы навести порядок в моем html. Мне сказали, что я могу сделать что-то подобное с cli, однако я понятия не имею, как это сделать.
+
+.common-class {
+  @apply .class1 .class2 ...;
+}
+ 19.04.2019 08:59
+1
+0
+104
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вы можете использовать LESS в своих файлах Vue и использовать псевдокласс продлевать для объединения стилей.
+
+<style lang = "less">
+.class1{
+
+}
+.class2{
+
+}
+.common-class {
+  &:extend(.class1);
+  &:extend(.class2);
+}
+</style>
+ 19.04.2019 09:12
+ Ответ принят как подходящий
+Вы всегда можете создать свойство computed, которое возвращает эти два класса вместе:
+
+new Vue({
+  el: "#app",
+  computed: {
+    combineStyles() {
+      return 'foo bar'
+    }
+  }
+})
+.foo {
+  color: red;
+}
+
+.bar {
+  font-size: 2rem;
+}
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+<div id = "app">
+  <p :class = "combineStyles">foo bar</p>
+</div>
+Препроцессор CSS не требуется. Однако, если вы хотите использовать препроцессор CSS, тогда следить за документами.
+
+ 19.04.2019 09:57
+Другие вопросы по теме
+Почему клонированный проект, созданный с помощью vue-cli-3, не распознает «@» как путь?
+Как обновить мою глобальную установку vue-cli до последней версии?
+Как правильно включить скрипты из купленной темы в Vue.js
+Прокси-сервер Vue devServer не помогает, я все еще получаю ошибку CORS
+Vue.js: показать/скрыть кнопки на панели навигации в зависимости от состояния магазина Vuex, когда пользователь вошел в систему или нет
+Не могу установить переменные env в моем проекте vuejs2
+Все переменные среды Vue-cli 3 не определены
+Как вы включаете vuetify внутри веб-компонента
+Интернационализация заголовка таблицы данных Vuetify
+Проект Vue.js с использованием Vue I18n получил следующую ошибку: «TypeError: i18n is undefined»
+Похожие вопросы
+Могу ли я определить, когда все изображения загружены, чтобы изменить переменную isLoaded на true?
+Vuejs v-show в пользовательском компоненте vue вызывает TypeError: невозможно прочитать свойство '_withTask' неопределенного
+Все реквизиты и данные vue выдают ошибку «Свойство» «не существует для типа» с машинописным текстом
+Импорт компонентов и css отдельно в vue.js
+Как внести изменения в панель навигации, когда пользователь входит в систему?
+Ошибки в консоли браузера, запросы к /sockjs-node/info?t=1555629946494
+Магазин Vuex не определен в vue-router
+Невозможно получить данные из API (ресурс заблокирован клиентом) в Vuex
+Изображение require() в nuxt с горячей перезагрузкой с помощью веб-пакета HRM
+Как правильно встроить скрипт JW Player в VueJS?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Объединение нескольких классов CSS в один
+Вопросы
+VUE.JS
+Объединение нескольких классов CSS в один
+В проекте Vue я хочу объединить несколько классов css, которые я использую для двух элементов, чтобы навести порядок в моем html. Мне сказали, что я могу сделать что-то подобное с cli, однако я понятия не имею, как это сделать.
+
+.common-class {
+  @apply .class1 .class2 ...;
+}
+ 19.04.2019 08:59
+1
+0
+104
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вы можете использовать LESS в своих файлах Vue и использовать псевдокласс продлевать для объединения стилей.
+
+<style lang = "less">
+.class1{
+
+}
+.class2{
+
+}
+.common-class {
+  &:extend(.class1);
+  &:extend(.class2);
+}
+</style>
+ 19.04.2019 09:12
+ Ответ принят как подходящий
+Вы всегда можете создать свойство computed, которое возвращает эти два класса вместе:
+
+new Vue({
+  el: "#app",
+  computed: {
+    combineStyles() {
+      return 'foo bar'
+    }
+  }
+})
+.foo {
+  color: red;
+}
+
+.bar {
+  font-size: 2rem;
+}
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+<div id = "app">
+  <p :class = "combineStyles">foo bar</p>
+</div>
+Препроцессор CSS не требуется. Однако, если вы хотите использовать препроцессор CSS, тогда следить за документами.
+
+ 19.04.2019 09:57
+Другие вопросы по теме
+Почему клонированный проект, созданный с помощью vue-cli-3, не распознает «@» как путь?
+Как обновить мою глобальную установку vue-cli до последней версии?
+Как правильно включить скрипты из купленной темы в Vue.js
+Прокси-сервер Vue devServer не помогает, я все еще получаю ошибку CORS
+Vue.js: показать/скрыть кнопки на панели навигации в зависимости от состояния магазина Vuex, когда пользователь вошел в систему или нет
+Не могу установить переменные env в моем проекте vuejs2
+Все переменные среды Vue-cli 3 не определены
+Как вы включаете vuetify внутри веб-компонента
+Интернационализация заголовка таблицы данных Vuetify
+Проект Vue.js с использованием Vue I18n получил следующую ошибку: «TypeError: i18n is undefined»
+Похожие вопросы
+Могу ли я определить, когда все изображения загружены, чтобы изменить переменную isLoaded на true?
+Vuejs v-show в пользовательском компоненте vue вызывает TypeError: невозможно прочитать свойство '_withTask' неопределенного
+Все реквизиты и данные vue выдают ошибку «Свойство» «не существует для типа» с машинописным текстом
+Импорт компонентов и css отдельно в vue.js
+Как внести изменения в панель навигации, когда пользователь входит в систему?
+Ошибки в консоли браузера, запросы к /sockjs-node/info?t=1555629946494
+Магазин Vuex не определен в vue-router
+Невозможно получить данные из API (ресурс заблокирован клиентом) в Vuex
+Изображение require() в nuxt с горячей перезагрузкой с помощью веб-пакета HRM
+Как правильно встроить скрипт JW Player в VueJS?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Укажите выходной каталог ресурсов при сборке в режиме разработки
+Вопросы
+VUE.JS
+Укажите выходной каталог ресурсов при сборке в режиме разработки
+Я использую Vue CLI для встраивания своего приложения в один из моих существующих php-проектов. В случае работы со сгенерированными файлами в php мне нужно переместить ресурсы в каталог ../public/assets/. К сожалению, похоже, это не работает в среде разработки (рабочий режим работает нормально, но мне действительно нужно проверить интеграцию vue в php-приложение).
+
+Я что-то делаю не так или это известное ограничение?
+
+Вот конфиг:
+
+// vue.config.js
+module.exports = {
+    outputDir: '../public',
+    assetsDir: './assets',
+    indexPath: './views/index.html'
+};
+ 22.04.2019 17:10
+0
+0
+1 548
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Согласно документации, вы можете просто скопировать assets в свою папку public/assets и ссылаться на них по абсолютному пути.
+
+https://cli.vuejs.org/guide/html-and-static-assets.html#static-assets-handling
+
+Static assets can be handled in two different ways:
+
+Imported in JavaScript or referenced in templates/CSS via relative paths. Such references will be handled by webpack.
+
+Placed in the public directory and referenced via absolute paths. These assets will simply be copied and not go through webpack.
+
+ 25.04.2019 13:54
+ Ответ принят как подходящий
+Из-за того, что HMR находится в режиме разработки, это пока невозможно реализовать. Вот ссылка на сообщение на форуме Vue.js.
+
+ 02.05.2019 10:30
+Другие вопросы по теме
+Как получить URL-адрес изображения в vue из проекта django rest
+Как переключить класс, чтобы показать, какая вкладка активна в VueJS?
+Как передать данные с динамическим ключом в раскрывающемся списке семантического пользовательского интерфейса?
+Импортировать все компоненты vue js в один файл
+Как реализовать аналитику Google в приложении vue на нескольких доменах?
+Изменение состояния на true при вводе нового элемента и изменение на false через 5 секунд
+419 Ошибка при попытке опубликовать на мой контроллер
+Как правильно установить h1 в другом компоненте?
+Как получить высоту дочернего компонента?
+Что именно вычисляет свойства в vuejs?
+Похожие вопросы
+Есть способ сделать так, чтобы закусочная открывалась только один раз?
+Как переключить класс, чтобы показать, какая вкладка активна в VueJS?
+Vue.js некоторые элементы в карточке не реагируют
+Как передать данные с динамическим ключом в раскрывающемся списке семантического пользовательского интерфейса?
+Vuejs typescript и дочерние компоненты «Избегайте прямого изменения реквизита»
+Browsersync вызывает ошибку «Отказано в выполнении встроенного скрипта…» в SPA, если маршрут находится не в корневом каталоге
+Как я могу использовать proxyTable для запроса перекрестного происхождения в vue-cli?
+Запрос Ajax не дает никаких данных
+Импортировать все компоненты vue js в один файл
+Как отобразить несколько вариантов выбора в Sweetalert2 с помощью VueJS?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Развертывание приложения Vue.js с помощью конвейера выпуска azure devops
+Вопросы
+VUE.JS
+Развертывание приложения Vue.js с помощью конвейера выпуска azure devops
+У меня есть приложение vue.js, которое создается и строится с использованием vue-cli 3. У меня есть некоторые переменные среды в файлах .env.test и .env.prod.
+
+Для сборки приложения я использую конвейер сборки azure devops, где запускаю команду: npm run build:test или нпм run build:prod
+
+При этом создаются различные артефакты, которые вводятся для Stage в конвейере выпуска azure devops.
+
+Проблема, с которой я столкнулся, заключается в том, что я не хочу иметь отдельные сборки для каждой среды. Я хочу создать один и развернуть его в разных средах. Возможно ли это?
+
+Как мне обрабатывать эти переменные, чтобы собрать один раз пакет для всех сред? Это хорошая практика? Или у меня должны быть разные конвейеры для разных сред, как сейчас?
+
+ 23.05.2019 00:39
+10
+4
+5 343
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+С точки зрения КИ
+Должен быть только один build pipeline, который будет создавать артефакт независимо от среды, в которой он будет работать.
+
+.env.prod может использоваться для развертывания артефактов в любых средах (Development, Production и т. д.)
+
+Вы должны предоставить конфигурацию с токенами, которые будут заменены на этапе развертывания/релиза:
+
+env_key1=#{token_key1}#
+env_key2=#{token_key2}#
+env_key3=#{token_key3}#
+Поэтому просто создайте проект и опубликуйте артефакт, используя один файл конфигурации для всех сред.
+
+С точки зрения компакт-диска
+Я бы рекомендовал использовать одиночный release pipeline с несколькими этапами. (Development, Production и т. д.). 
+
+Укажите отдельные variables groups на основе stages. Это позволяет хранить переменные отдельно, логически сгруппировать и использовать Azure Key Vault в качестве источника секретов. Имена переменных должны совпадать с токенами среды (без префикса и суффикса).
+
+
+
+Добавьте любой Task, который вы хотите, в Stage, который найдет и заменит жетоны.
+
+В настоящее время я использую расширение Replace Tokens из торговой площадки. В зависимости от stage будет заменена другая группа переменных. Replace Tokens задача выполняет всю работу автоматически, т.е. сканирует js файлы и заменяет токены. Префикс и суффикс токена по умолчанию: #{}#, но задача позволяет указать желаемый вами вариант. 
+
+ 25.09.2019 12:25
+Итак, у нас была аналогичная проблема. Мы собираемся обновить наше решение для работы с группой переменных, но если вам нужен способ сделать это без нее, вы всегда можете сделать что-то вроде этого:
+
+- script: |
+    npm install
+    npm run test:unit
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    npm run build-prod
+  condition: and(succeeded(), not(in(variables['Build.Reason'], 'PullRequest', 'Manual')))
+  displayName: 'npm install, test and build for prod'
+
+- script: |
+    npm install
+    npm run test:unit
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    npm run build
+  condition: and(succeeded(), in(variables['Build.Reason'], 'PullRequest', 'Manual'))
+  displayName: 'npm install, test and build for test'
+Итак, быстрый разбор сценариев. Если сборка была частью PullRequet или руководства, нам нужна была промежуточная сборка, в которой использовался сценарий сборки по умолчанию. В противном случае мы предполагали, что сборка предназначена для производства (вам понадобятся некоторые политики ветвей, чтобы обеспечить это). Затем конвейер релиза проверил наличие тега сборки a, который мы установили следующим образом:
+
+- task: PowerShell@2
+  condition: and(succeeded(), not(in(variables['Build.Reason'], 'PullRequest', 'Manual')))
+  inputs:
+    targetType: 'inline'
+    script: 'Write-Host "##vso[build.addbuildtag]release"'
+
+- task: PowerShell@2
+  condition: and(succeeded(), in(variables['Build.Reason'], 'PullRequest', 'Manual'))
+  inputs:
+    targetType: 'inline'
+    script: 'Write-Host "##vso[build.addbuildtag]test"'
+Теперь, как я уже сказал, мы отходим от этого, но это работало довольно хорошо, и это позволило нам иметь одну сборку, которую можно было бы развернуть с правильными настройками без необходимости делать что-то слишком причудливое.
+
+Если вы используете что-то подобное, последним шагом будет фильтрация сборок, когда они попадают в конвейер выпуска, на основе тега сборки и ветки.
+
+ 17.12.2019 04:00
+Другие вопросы по теме
+Как получить статус сборки конкретной ветки с помощью встраиваемого плагина статуса сборки в Jenkins
+Уменьшение размера пакета React/MERN Stack Bundle — в основном удаление дубликатов D3
+Использование библиотеки линейной алгебры Eigen, импортированной рабочей областью в пакете
+Delphi Tokyo 10.2 нуждается в перестройке всего проекта после обновления кода из репозитория
+Сборка Jenkins не может отправить код в GIT
+Сбой сборки при добавлении зависимости диалогового потока
+Все вкусы продукта объединяются в один вариант сборки
+Как ограничить электронные письма об ошибках сборки только определенной веткой в ​​travis CI?
+ClassNotFoundException для разрешенного пакета OSGI
+Как создать несколько приложений в проекте angular 7 в одной команде сборки?
+Похожие вопросы
+Анимация холста из Vue
+Windows Vue-CLI 3.5 + процесс node.js не определен - проблема среды
+Использование фильтра Vue.js в условном операторе
+Как правильно использовать Vue.set()?
+Часы Vue неожиданно вызвали дважды
+Nuxt JS LocalStorage в универсальном режиме не работает
+Как не иметь доступа вручную / войти после входа в систему - VueJS?
+VueJs: как повторно использовать модальное диалоговое окно начальной загрузки
+Отправьте повторяющиеся параметры запроса на маршрутизатор Vue
+Неверный источник привязки Firebase при попытке использовать readyCallback с vuefire
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Это правильная глобальная связь компонентов в vue?
+Вопросы
+VUE.JS
+Это правильная глобальная связь компонентов в vue?
+я делаю модальные всплывающие компоненты myPopup.vue для глобального.
+
+и импортируйте это в App.vue и main.js я использую это для глобального, определяю некоторый объект Vue.прототип
+
+сделать о методе всплывающего окна в Vue.прототип например, «показать» или «скрыть», любой другой.
+
+но я думаю, что это может быть анти-шаблон .. Я хочу найти больше лучших практик.
+
+в App.vue
+
+<div id = "app>
+  <my-popup-component></my-popup-conponent>
+  <content></content>
+</div>
+main.js
+
+...
+Vue.prototype.$bus = new Vue(); // global event bus
+Vue.prototype.$popup = {
+  show(params) {
+    Vue.prototype.$bus.$emit('showPopup', params);
+  },
+  hide() {
+    Vue.prototype.$bus.$emit('hidePopup');
+  }
+}
+
+Vue.component('my-popup-component', { ... });
+...
+myPopup.vue
+
+....
+export default {
+...
+
+  created() {
+    this.$bus.$on('showPopup', this.myShow);
+    this.$bus.$on('hidePopup', this.myHide);
+  }
+...
+потребность-всплывающее-component.vue
+
+methods: {
+  showPopup() {
+    this.$popup.show({
+      title: 'title',
+      content: 'content',
+      callback: this.okcallback
+    }); 
+  }
+}
+Вроде работает хорошо, но не знаю правильно ли это. Есть ли другой способ?
+
+ 24.05.2019 09:03
+2
+0
+1 293
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Я был очень удивлен, читая ваше решение, но если вы чувствуете, что оно простое и работает, почему бы и нет?
+
+я бы сделал так:
+
+Добавьте логическое свойство в состояние (или любые данные, необходимые для отображения всплывающего окна), отражающие отображение всплывающего окна.
+используйте mapState в App.vue, чтобы добавить реактивное логическое значение в компонент
+используйте v-if или покажите в шаблоне App.vue во всплывающем объявлении
+создайте мутацию showPopup, которая принимает логическое значение и соответствующим образом обновляет состояние
+вызывать мутацию из любого места, в любое время, когда мне нужно показать/скрыть всплывающее окно
+Это будет следовать шаблону vue. Все, что находится в состоянии, компоненты пользовательского интерфейса отражают состояние, мутации мутируют состояние.
+
+Ваше решение работает, хорошо, но оно не соответствует структуре vue, например, инструменты отладки vue будут бесполезны в вашем случае. Я считаю, что лучше иметь минимальное количество шаблонов в одном приложении, для обслуживания, передачи другим людям и так далее.
+
+ 24.05.2019 09:26
+Вы каким-то образом пытаетесь создать глобальный компонент, который, возможно, захотите использовать в своих разных проектах.
+
+Вот как я думаю, что я бы сделал это -
+
+Как мне повторно использовать модальный диалог вместо создания 3 отдельных диалогов
+
+Сделайте отдельный компонент modal, скажем - commonModal.vue.
+
+Теперь в свой commonModal.vue примите единичный prop, скажем data: {}.
+
+Теперь в разделе htmlcommonModal
+
+<div class = "modal">
+  <!-- Use your received data here which get received from parent -->
+  <your modal code />
+</div>
+Теперь импортируйте commonModal в потребляющий/родительский компонент. Создайте свойство данных в родительском компоненте, скажем, isVisible: false и вычисляемое свойство для data, которое вы хотите отобразить в modal, скажем, modalContent.
+
+Теперь используйте это так
+
+<main class = "foo">
+   <commonModal v-show = "isVisible" :data = "data" />
+   <!-- Your further code -->
+</main>
+Вышеизложенное поможет вам повторно использовать модальное окно, и вам просто нужно отправить data из родительского компонента.
+
+Как узнать, какой модальный диалог запущен?
+
+Просто проверьте свойство isVisible, чтобы проверить, открыто ли modal или нет. Если isVisible = false, то ваш модал не виден и наоборот
+
+Как мой компонент глобального диалога будет информировать родительский компонент о его текущем состоянии
+
+Теперь вы можете подумать, как закрыть модальное окно и сообщить об этом родительскому компоненту. При нажатии кнопки триггер closeModal для этого
+
+Создайте метод — closeModal и внутри компонента commonModal и emit событие.
+
+closeModal() { 
+  this.$emit('close-modal')
+}
+Теперь это вызовет пользовательское событие, которое может быть прослушано потребляющим компонентом.
+
+Итак, в вашем родительском компоненте просто используйте это настраиваемое событие, например, следующее, и закройте свой модальный
+
+<main class = "foo">
+  <commonModal v-show = "isVisible" :data = "data" @close- modal = "isVisible = false"/>
+  <!-- Your further code -->
+</main>
+ 24.05.2019 09:53
+Другие вопросы по теме
+Как передать событие клика на другую кнопку и вызвать всплывающее окно
+Как передать значение v-модели между компонентами
+Как получить доступ к ключевым кадрам с ограниченной областью действия из JS
+Как получить доступ к `PromiseValue` в ответе аксиом в VueJs
+Поддержка локали Quasar QDate не работает
+Как правильно удалить элемент v-for в Vue?
+Как сделать динамический условный рендеринг в цикле vuejs (v-if в v-for)
+Что означает this.$root в компоненте?
+Vue JS: открыть компонент меню с помощью кнопки, закрыть с помощью щелчка вне меню
+Для чего в Vue используются inheritAttrs: false и $attrs?
+Похожие вопросы
+Предотвратить разрушение div при скрытии или удалении всех дочерних элементов
+У меня проблемы с методом "AXIOS PATCH"
+Как использовать сложную переменную в качестве ключа объекта в выражении усов vue data?
+Получить только один раз данные из twitch API
+Аргументы и параметры функции не работают в проекте vuetify с использованием ключевого слова «это»?
+Настройка route-guard в интерфейсе аутентификации Vue.js/Firebase
+Как передать событие клика на другую кнопку и вызвать всплывающее окно
+Как размыть элемент при нажатии в vue
+"Соединение отклонено! Selenium server запущен?" ошибка в тестах VueJS Nightwatch E2E с использованием ChromeDriver и Chrome
+Как передать значение v-модели между компонентами
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 Почему я получаю ERR_CONNECTION_TIMED_OUT в Vue.js?
 Вопросы
 VUE.JS
