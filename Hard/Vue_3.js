@@ -3,6 +3,2559 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Как установить бета-версию vuetify 2.0 в новый проект vue cli?
+Вопросы
+VUE.JS
+Как установить бета-версию vuetify 2.0 в новый проект vue cli?
+Vuetify 2.0.0-beta.0 только что был выпущен, и я хочу попробовать его и поиграть в новом тестовом приложении vue. Но я получаю ошибки, когда пытаюсь установить его в новый новый проект. Вот шаги, которые я предпринял.
+
+Я использую @vue/cli v3.8.2 для создания нового проекта с настройками по умолчанию:
+
+vue create testapp
+что дает мне успешный результат:
+
+?  Successfully created project testapp.
+?  Get started with the following commands:
+
+ $ cd testapp
+ $ npm run serve
+Затем я добавляю в проект плагин vuetify с предустановкой по умолчанию (рекомендуется):
+
+cd testapp
+vue add vuetify
+что дает мне успех:
+
+?  Installing vue-cli-plugin-vuetify...
+
++ vue-cli-plugin-vuetify@0.5.0
+added 1 package from 1 contributor and audited 23942 packages in 9.235s
+found 0 vulnerabilities
+
+✔  Successfully installed plugin: vue-cli-plugin-vuetify
+
+? Choose a preset: Default (recommended)
+
+?  Invoking generator for vue-cli-plugin-vuetify...
+?  Installing additional dependencies...
+
+added 11 packages from 49 contributors and audited 23980 packages in 9.252s
+found 0 vulnerabilities
+
+⚓  Running completion hooks...
+
+✔  Successfully invoked generator for plugin: vue-cli-plugin-vuetify
+Теперь в package.json вижу версию vuetify: "vuetify": "^1.5.5"
+
+Теперь я обновляю его до v2.0.0-beta.0 следующим образом:
+
+npm install vuetify@2.0.0-beta.0
+Я снова получаю успех:
+
++ vuetify@2.0.0-beta.0
+updated 1 package and audited 23980 packages in 10.302s
+found 0 vulnerabilities
+Теперь, когда я пытаюсь запустить его:
+
+npm run serve
+Я получаю сообщение об ошибке:
+
+> testapp@0.1.0 serve c:\temp\testapp
+> vue-cli-service serve
+
+ INFO  Starting development server...
+ 98% after emitting CopyPlugin
+
+ ERROR  Failed to compile with 99 errors                                                                                                                                                                                           6:17:04 PM
+
+This dependency was not found:
+
+* vuetify/src/stylus/app.styl in ./src/plugins/vuetify.js
+
+To install it, you can run: npm install --save vuetify/src/stylus/app.styl
+Failed to resolve loader: sass-loader
+You may need to install it.
+Если я установлю sass-loader следующим образом:
+
+npm i -D node-sass sass-loader
+Я получаю успех. Затем я пытаюсь запустить его снова:
+
+npm run serve
+Теперь снова я получаю другую ошибку:
+
+ ERROR  Failed to compile with 1 errors                                                                                                                                                                                            6:27:06 PM
+
+This dependency was not found:
+
+* vuetify/src/stylus/app.styl in ./src/plugins/vuetify.js
+
+To install it, you can run: npm install --save vuetify/src/stylus/app.styl
+Я застрял здесь, так как не знаю, как исправить эту ошибку. npm install --save vuetify/src/stylus/app.styl явно не работает. Также я не смог заставить его работать, следуя официальному проверить страницу для этой бета-версии.
+
+ 29.05.2019 18:30
+10
+1
+10 938
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Не включайте файлы .styl, они в принципе устарели.
+Удалите node-sass и установите sass
+
+$ npm uninstall node-sass
+$ npm i -D sass
+И измените свой файл plugins/vuetify.js
+
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+
+
+Vue.use(Vuetify)
+export default new Vuetify({ theme: { ... } })
+
+И main.js
+
+new Vue({
+  ...
+  vuetify, // we add vuetify here
+  render: (h) => h(App),
+}).$mount('#app')
+Обратите внимание, что параметры темы изменены в v2, теперь можно настраивать темную тему, например.
+
+theme: {
+  dark: true,
+  themes: {
+    light: {
+      primary: '#42a5f5',
+      //...
+    },
+    dark: {
+      primary: '#2196F3.
+    },
+  },
+},
+options: {
+  customProperties: true,
+},
+icons: {
+  iconfont: 'md', // default is 'mdi'
+}
+Подробнее о sass в документы и документы в новом стиле.
+
+ 29.05.2019 22:12
+ Ответ принят как подходящий
+После создания нового проекта vue выполните следующие команды:
+
+# yarn
+$ yarn add https://github.com/vuetifyjs/vue-cli-plugin-vuetify.git#dev -D
+$ vue invoke vuetify
+
+# npm
+$ npm install https://github.com/vuetifyjs/vue-cli-plugin-vuetify.git#dev --save-dev
+$ vue invoke vuetify
+Я думаю, что это сработает даже с уже созданным вами проектом. Просто попробуйте команды выше.
+
+Для получения дополнительной информации проверьте выпуск v2.0.0-бета.0
+
+ 29.05.2019 22:28
+Другие вопросы по теме
+Использование item-text в качестве функции для настройки элементов Vietify v-combobox
+Vuetify бесплатный шаблон блочных элементов тематического блога
+Как сделать так, чтобы флажок Vuetify точно отражал его значение?
+$vuetify.goTo('#foo') не работает на странице другого маршрутизатора
+Как я могу получить измененное значение из vuetify select, выпустив шаблон атомарного проектирования?
+Добавьте модальное всплывающее окно для vuetify vue.js
+Как добавить значок с прекрасным шрифтом к вновь созданному элементу в vueJS/Vuetify?
+CSS - установить общую ширину всех дочерних элементов равной их родительской
+Предотвратить разрушение div при скрытии или удалении всех дочерних элементов
+Аргументы и параметры функции не работают в проекте vuetify с использованием ключевого слова «это»?
+Похожие вопросы
+Есть ли лучший способ изменить отображение кнопок в javascript/Vue?
+Карта листовок Vue2 не отображается должным образом в модальном режиме BoostrapVue
+LocalStorage не обновляется в Vuex
+Выполнить метод после того, как все обещания внутри данного метода разрешены
+Получение ответа на почтовый запрос после успешного завершения публикации
+Прервать обещание в действии Vuex при ошибке API
+Как ограничить длину ввода для элемента v-select?
+Сетка Ag: развернуть/свернуть с нумерацией страниц
+Модуль @google-cloud/speech не поддерживается для Vue JS?
+Vue + TypeScript — рекомендуемое соглашение о структуре папок для размещения пользовательских типов?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Общая папка vue-cli3 img не отображается
+Вопросы
+VUE.JS
+Общая папка vue-cli3 img не отображается
+Кто-нибудь знает, как использовать атрибут src с файлом img в общей папке проекта vue? Браузер не находит изображение.
+
+Я использую Vue CLI 3.7.0
+
+▼ папки
+
+ |
+ +-- src
+ |    
+ +-- public
+       |  
+       +-- favicon.ico
+       +-- logo.png
+       +-- index.html
+Я пробовал что-то вроде :src = "xxx", но это не сработало.
+
+<template>
+    <div>
+        <img :src = "'/favicon.ico'">
+        <img :src = "`${publicPath}favicon.ico`">
+     </div>
+</template>
+
+<script>
+    export default {
+        data: function() {
+            return {
+                publicPath: process.env.BASE_URL
+            };
+        }
+    }
+</script>
+ 13.06.2019 09:39
+2
+10
+4 101
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Просто используйте <img src = "/favicon.ico">.
+
+ 14.06.2019 11:19
+ Ответ принят как подходящий
+Обновлять
+Судя по комментариям ниже, ты бежишь
+
+vue serve
+Только Vue CLI проект знает о каталоге public и process.env.BASE_URL. Вам нужно запустить проект вместо использования мгновенное прототипированиеvue serve.
+
+Другими словами, бегите
+
+npm run serve
+См. https://cli.vuejs.org/guide/cli-service.html#using-the-binary
+
+Если у вас есть такая файловая структура
+
+├── public
+│   ├── favicon.html
+│   ├── index.html
+│   ├── logo.png
+тогда ваш код для отображения logo.png должен выглядеть так
+
+<template>
+  <div>
+    <img :src = "`${publicPath}logo.png`">
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      publicPath: process.env.BASE_URL
+    }
+  }
+}
+</script>
+См. https://cli.vuejs.org/guide/html-and-static-assets.html#the-public-folder
+
+Если у вас есть изображение в
+
+├── public
+│   ├── img
+│   │   ├── logo.png
+тогда ваш код шаблона компонента становится
+
+<img :src = "`${publicPath}img/logo.png`">
+ 19.06.2019 07:18
+Другие вопросы по теме
+Получение свойства не определено, когда я считаю, что сделал это правильно
+Как использовать слоты в HTML с компонентами одного файла
+Шаблон Vue срабатывает более одного раза при использовании, я думаю, мне нужен уникальный ключ где-то
+Как инициализировать значение «данных» по умолчанию для возвращаемого значения функции обратного вызова?
+Глубокий наблюдатель VueJS - определенное свойство для нескольких объектов
+VueJS2: Должен ли я писать функции в data()?
+Ключ/значение объекта VueJs не реагирует в цикле v-for
+Как использовать ветку пути в vueJS с Proyect Symfony - как правильно использовать FSRouting
+Динамическое использование axios.all
+Как зациклить тег img src с помощью vuejs?
+Похожие вопросы
+Создать проект для существующего репозитория
+Изображения в компоненте Vue при использовании Webpack Encore
+Vue Loader не может разрешить '@'
+Имя шаблона Vue.Js и имя тега
+Vue не отображает второй компонент, если предыдущий самозавершается
+Почему мои Карты Google переполняют мой контейнер сетки CSS?
+Получение свойства не определено, когда я считаю, что сделал это правильно
+Сбой в Vue в производстве
+Ошибка интеграции Django и VueJS. Ошибка загрузки компонента VueJS в Django
+Синтаксическая ошибка при настройке отладки nuxt/vue с кодом vs
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Панель навигации не обновляется при успешном входе пользователя
+Вопросы
+VUE.JS
+Панель навигации не обновляется при успешном входе пользователя
+Я создаю свой первый проект Vue-Cli 3 с API-интерфейсом Rails 6 в качестве бэкэнда.
+
+У меня есть компонент навигации, который должен обновляться при успешном входе пользователя в систему, прямо сейчас, когда пользователь входит в систему, он перенаправляется на панель управления пользователя, но навигация остается в виде зарегистрированного представления навигации. Он будет успешно изменен, когда я принудительно обновлю страницу.
+
+Поскольку я новичок в Vue, это может быть небольшой проблемой, однако я изо всех сил пытаюсь найти какие-либо ссылки по этой проблеме.
+
+Я использую Axios Axios-Vue и JWTSessions для обработки токенов/сеансов.
+
+вот мой код компонента Navigation.vue:
+
+<template>
+  <div class = "font-sans antialiased">
+    <nav class = "flex items-center justify-between flex-wrap bg-loadze-blue p-6 fixed w-full">
+      <div class = "flex items-center flex-no-shrink text-gray-900 mr-6">
+        <span class = "font-semibold text-xl tracking-tight text-white">Loadze.co</span>
+      </div>
+      <div class = "block sm:hidden">
+        <button @click = "toggle" class = "flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+          <svg class = "fill-current h-3 w-3" viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg"><title>Menu</title><path d = "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+      <div :class = "open ? 'block': 'hidden'" class = "w-full flex-grow sm:flex sm:items-center sm:w-auto">
+        <div class = "text-sm sm:flex-grow">
+          <router-link to = "/home" class = "no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Home</router-link>
+          <router-link to = "/about" class = "no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">About</router-link>
+          <router-link to = "/features" class = "no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Features</router-link>
+          <router-link to = "/pricing" class = "no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Pricing</router-link>
+          <router-link to = "/contact" class = "no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Contact Us</router-link>
+        </div>
+        <div>
+          <router-link to = "/signup" class = "text-sm no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Sign up</router-link>
+          <router-link to = "/signin" class = "text-sm no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "!signedIn()">Sign in</router-link>
+          <a href = "#" @click.prevent = "signOut" class = "text-sm no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4" v-if = "signedIn()">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Navigation',
+  data () {
+    return {
+      open: false
+    }
+  },
+  methods: {
+    toggle () {
+      this.open = !this.open
+    },
+    setError (error, text) {
+      this.error = (error.response && error.response.data && error.response.data.error) || text
+    },
+    signedIn () {
+      return localStorage.signedIn
+    },
+    signOut () {
+      this.$http.secured.delete('/signin')
+        .then(response => {
+          delete localStorage.csrf
+          delete localStorage.signedIn
+          this.$router.replace('/')
+        })
+        .catch(error => this.setError(error, 'Can not sign out'))
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
+и это компонент Signin.vue (скрипт, код формы длинный. Пожалуйста, дайте мне знать, если вам нужно его увидеть) код:
+
+<script>
+export default {
+  name: 'Signin',
+  data () {
+    return {
+      email: '',
+      password: '',
+      error: ''
+    }
+  },
+  created () {
+    this.checkSignedIn()
+  },
+  updated () {
+    this.checkSignedIn()
+  },
+  methods: {
+    signin () {
+      this.$http.plain.post('/signin', { email: this.email, password: this.password })
+        .then(response => this.signinSuccessful(response))
+        .catch(error => this.signinFailed(error))
+    },
+    signinSuccessful (response) {
+      if (!response.data.csrf) {
+        this.signinFailed(response)
+        return
+      }
+      localStorage.scrf = response.data.csrf
+      localStorage.signedIn = true
+      this.error = ''
+      this.$router.replace('/dashboard')
+    },
+    signinFailed (error) {
+      this.error = (error.response && error.response.data && error.response.data.error) || ''
+      delete localStorage.csrf
+      delete localStorage.signedIn
+    },
+    checkSignedIn () {
+      if (localStorage.signedIn) {
+        this.$router.replace('/dashboard')
+      }
+    }
+  }
+}
+</script>
+ 28.06.2019 20:06
+0
+0
+842
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Чтобы ваш объект localStorage был реактивным, он должен быть частью данных компонентов или вычисляемых свойств. Самым простым решением будет сохранение состояния аутентификации в vuex, а затем предоставление его вашим компонентам с помощью vuex mapGetter. Затем вы обновляете состояние с помощью действия vuex, когда пользователь входит в систему. Если вы не знакомы с vuex, на их веб-сайте есть пример, которого должно быть достаточно для этого.
+
+ 28.06.2019 22:15
+ Ответ принят как подходящий
+Вы используете функцию для условного отображения (v-if = "!signedIn()"), но функция ничего не возвращает, что означает, что в шаблоне ничего не отображается реактивно.
+
+Попробуйте добавить новое свойство данных, которое можно обновить при входе в систему:
+
+<template>
+  ...
+  <div class = "text-sm sm:flex-grow">
+    <router-link to = "/home" v-if = "!isSignedIn">Home</router-link>
+    <router-link to = "/about" v-if = "!isSignedIn">About</router-link>
+    <router-link to = "/features" v-if = "!isSignedIn">Features</router-link>
+    <router-link to = "/pricing" v-if = "!isSignedIn">Pricing</router-link>
+    <router-link to = "/contact" v-if = "!isSignedIn">Contact Us</router-link>
+  </div>
+  ...
+</template>
+<script>
+export default {
+  name: 'Signin',
+  data () {
+    return {
+      email: '',
+      password: '',
+      error: '',
+      isSignedIn: false // <= here
+    }
+  },
+  //...
+  methods: {
+    signin () {
+      this.$http.plain.post('/signin', { email: this.email, password: this.password })
+        .then(response => {
+          this.signinSuccessful(response)
+          this.isSignedIn = true // <= and here
+        }).catch(error => this.signinFailed(error))
+    },
+    //...
+  }
+}
+</script>
+Затем в функции выхода из системы вы можете вернуть isSignedIn значение false.
+
+ 29.06.2019 22:58
+Другие вопросы по теме
+Почему я не могу получить доступ к своему собственному серверу Vue Webpack через локальную сеть с другого устройства?
+Предотвратить прокрутку в VueJS
+Как вручную включить файлы CSS/JS для автономного использования при использовании Vue.js CLI?
+Маркеры Google Maps странно обновляются при изменении границ
+Настройка public/index.html в vue-cli
+Создать и опубликовать папку dist на страницах github
+Служба запуска NPM показывает старое состояние моего проекта vuejs на локальном хосте
+Создать проект для существующего репозитория
+Как использовать слоты в HTML с компонентами одного файла
+Сборщик модулей Vue-cli VS и средство запуска задач
+Похожие вопросы
+Vue CLI не создает подкаталог
+Перебор массива и копирование измененных элементов в другой массив возвращает только повторения последнего набора модификаций
+Axios.post.then вызывается после всего остального
+Как настроить параметры и аргументы в мутациях Vuex
+Vuetify редактирование v-data-table
+Это работает, но я думаю, что это противоречит цели использования фреймворка
+Как внедрить ag-grid в nuxt.js
+Как я могу условно отобразить список с помощью v-for, оценив одно из значений итерации как вычисленное значение?
+Vue не может найти динамический источник элемента vuetify v-img
+Vuejs не может получать данные с помощью шины событий
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Макет кладки VueJS
+Вопросы
+JAVASCRIPT
+Макет кладки VueJS
+В настоящее время я работаю над проектом VueJS и его vue cli 3. Я пытаюсь внедрить MasonryJS в свой проект Vue, но я застрял. Я не мог понять, как я могу реализовать такой макет кладки для своего проекта vue.
+
+;
+(function(window) {
+
+  /**
+   * GridLoaderFx obj.
+   */
+  function GridLoaderFx(el, options) {
+    this.el = el;
+    this.items = this.el.querySelectorAll('.grid__item > .grid__link');
+  }
+
+  /**
+   * Effects.
+   */
+  GridLoaderFx.prototype.effects = {
+
+    'Shu': {
+      lineDrawing: true,
+      animeLineDrawingOpts: {
+        duration: 800,
+        delay: function(t, i) {
+          return i * 150;
+        },
+        easing: 'easeInOutSine',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        opacity: [{
+            value: [0, 1]
+          },
+          {
+            value: [1, 0],
+            duration: 200,
+            easing: 'linear',
+            delay: 500
+          }
+        ]
+      },
+      animeOpts: {
+        duration: 800,
+        easing: [0.2, 1, 0.3, 1],
+        delay: function(t, i) {
+          return i * 150 + 800;
+        },
+        opacity: {
+          value: [0, 1],
+          easing: 'linear'
+        },
+        scale: [0.5, 1]
+      }
+    }
+  };
+
+  GridLoaderFx.prototype._render = function(effect) {
+    // Reset styles.
+    this._resetStyles();
+
+    var self = this,
+      effectSettings = this.effects[effect],
+      animeOpts = effectSettings.animeOpts
+
+    if (effectSettings.perspective != undefined) {
+      [].slice.call(this.items).forEach(function(item) {
+        item.parentNode.style.WebkitPerspective = item.parentNode.style.perspective = effectSettings.perspective + 'px';
+      });
+    }
+
+    if (effectSettings.origin != undefined) {
+      [].slice.call(this.items).forEach(function(item) {
+        item.style.WebkitTransformOrigin = item.style.transformOrigin = effectSettings.origin;
+      });
+    }
+
+    if (effectSettings.lineDrawing != undefined) {
+      [].slice.call(this.items).forEach(function(item) {
+        // Create SVG.
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+          path = document.createElementNS('http://www.w3.org/2000/svg', 'path'),
+          itemW = item.offsetWidth,
+          itemH = item.offsetHeight;
+
+        svg.setAttribute('width', itemW + 'px');
+        svg.setAttribute('height', itemH + 'px');
+        svg.setAttribute('viewBox', '0 0 ' + itemW + ' ' + itemH);
+        svg.setAttribute('class', 'grid__deco');
+        path.setAttribute('d', 'M0,0 l' + itemW + ',0 0,' + itemH + ' -' + itemW + ',0 0,-' + itemH);
+        path.setAttribute('stroke-dashoffset', anime.setDashoffset(path));
+        svg.appendChild(path);
+        item.parentNode.appendChild(svg);
+      });
+
+      var animeLineDrawingOpts = effectSettings.animeLineDrawingOpts;
+      animeLineDrawingOpts.targets = this.el.querySelectorAll('.grid__deco > path');
+      anime.remove(animeLineDrawingOpts.targets);
+      anime(animeLineDrawingOpts);
+    }
+
+    if (effectSettings.revealer != undefined) {
+      [].slice.call(this.items).forEach(function(item) {
+        var revealer = document.createElement('div');
+        revealer.className = 'grid__reveal';
+        if (effectSettings.revealerOrigin != undefined) {
+          revealer.style.transformOrigin = effectSettings.revealerOrigin;
+        }
+        if (effectSettings.revealerColor != undefined) {
+          revealer.style.backgroundColor = effectSettings.revealerColor;
+        }
+        item.parentNode.appendChild(revealer);
+      });
+
+      var animeRevealerOpts = effectSettings.animeRevealerOpts;
+      animeRevealerOpts.targets = this.el.querySelectorAll('.grid__reveal');
+      animeRevealerOpts.begin = function(obj) {
+        for (var i = 0, len = obj.animatables.length; i < len; ++i) {
+          obj.animatables[i].target.style.opacity = 1;
+        }
+      };
+      anime.remove(animeRevealerOpts.targets);
+      anime(animeRevealerOpts);
+    }
+
+    if (effectSettings.itemOverflowHidden) {
+      [].slice.call(this.items).forEach(function(item) {
+        item.parentNode.style.overflow = 'hidden';
+      });
+    }
+
+    animeOpts.targets = effectSettings.sortTargetsFn && typeof effectSettings.sortTargetsFn === 'function' ? [].slice.call(this.items).sort(effectSettings.sortTargetsFn) : this.items;
+    anime.remove(animeOpts.targets);
+    anime(animeOpts);
+  };
+
+  GridLoaderFx.prototype._resetStyles = function() {
+    this.el.style.WebkitPerspective = this.el.style.perspective = 'none';
+    [].slice.call(this.items).forEach(function(item) {
+      var gItem = item.parentNode;
+      item.style.opacity = 0;
+      item.style.WebkitTransformOrigin = item.style.transformOrigin = '50% 50%';
+      item.style.transform = 'none';
+
+      var svg = item.parentNode.querySelector('svg.grid__deco');
+      if (svg) {
+        gItem.removeChild(svg);
+      }
+
+      var revealer = item.parentNode.querySelector('.grid__reveal');
+      if (revealer) {
+        gItem.removeChild(revealer);
+      }
+
+      gItem.style.overflow = '';
+    });
+  };
+
+  window.GridLoaderFx = GridLoaderFx;
+
+  var body = document.body,
+    grids = [].slice.call(document.querySelectorAll('.grid')),
+    masonry = [],
+    currentGrid = 0,
+    // Switch grid radio buttons.
+    switchGridCtrls = [].slice.call(document.querySelectorAll('.control__radio')),
+    // Choose effect buttons.
+    fxCtrls = [].slice.call(document.querySelectorAll('.control--effects > .control__btn')),
+    // The GridLoaderFx instances.
+    loaders = [],
+    loadingTimeout;
+
+  function init() {
+    // Preload images
+    imagesLoaded(body, function() {
+      // Initialize Masonry on each grid.
+      grids.forEach(function(grid) {
+        var m = new Masonry(grid, {
+          itemSelector: '.grid__item',
+          columnWidth: '.grid__sizer',
+          percentPosition: true,
+          transitionDuration: 0
+        });
+        masonry.push(m);
+        // Hide the grid.
+        grid.classList.add('grid--hidden');
+        // Init GridLoaderFx.
+        loaders.push(new GridLoaderFx(grid));
+      });
+
+      // Show current grid.
+      grids[currentGrid].classList.remove('grid--hidden');
+      // Init/Bind events.
+      initEvents();
+      // Remove loading class from body
+      body.classList.remove('loading');
+      loaders[currentGrid]._render('Shu');
+    });
+  }
+
+  function initEvents() {
+    // Switching grids radio buttons.
+    switchGridCtrls.forEach(function(ctrl) {
+      ctrl.addEventListener('click', switchGrid);
+    });
+    // Effect selection.
+    fxCtrls.forEach(function(ctrl) {
+      ctrl.addEventListener('click', applyFx);
+    });
+  }
+
+
+  function applyFx(ev) {
+    // Simulate loading grid to show the effect.
+    clearTimeout(loadingTimeout);
+    grids[currentGrid].classList.add('grid--loading');
+
+    loadingTimeout = setTimeout(function() {
+      grids[currentGrid].classList.remove('grid--loading');
+
+      // Apply effect.
+      loaders[currentGrid]._render(ev.target.getAttribute('data-fx'));
+    }, 500);
+  }
+
+  init();
+
+})(window);
+.js .loading::before,
+.js .loading::after {
+  content: '';
+  position: fixed;
+  z-index: 1000;
+}
+
+.loading::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2c2d31;
+}
+
+.loading::after {
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 8px solid #383a41;
+  border-bottom-color: #565963;
+  border-radius: 50%;
+  animation: animLoader 0.8s linear infinite forwards;
+}
+
+@keyframes animLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+  outline: none;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+
+/* Icons */
+
+.content--side {
+  position: relative;
+  z-index: 100;
+  width: 15vw;
+  min-width: 130px;
+  max-height: 100vh;
+  padding: 0 1em;
+  order: 2;
+}
+
+.content--center {
+  flex: 1;
+  max-width: 100vw;
+}
+
+.content--related {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 8em 1em 3em;
+  text-align: center;
+  order: 5;
+}
+
+.media-related {
+  width: 100%;
+}
+
+.media-item {
+  padding: 1em;
+}
+
+.media-item__img {
+  max-width: 100%;
+  /*opacity: 0.7;*/
+  /*transition: opacity 0.3s;*/
+}
+
+.media-item:hover .media-item__img,
+.media-item:focus .media-item__img {
+  opacity: 1;
+}
+
+.media-item__title {
+  font-size: 1em;
+  max-width: 220px;
+  padding: 0.5em;
+  margin: 0 auto;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+
+/* Grid */
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 2% 5%;
+}
+
+.grid--hidden {
+  position: fixed !important;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.js .grid--loading::before,
+.js .grid--loading::after {
+  content: '';
+  z-index: 1000;
+}
+
+.js .grid--loading::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #2c2d31;
+}
+
+.js .grid--loading::after {
+  position: absolute;
+  top: calc(25vh - 20px);
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 -20px;
+  border: 8px solid #383a41;
+  border-bottom-color: #565963;
+  border-radius: 50%;
+  animation: animLoader 0.8s linear forwards infinite;
+}
+
+.grid__sizer {
+  margin-bottom: 0 !important;
+}
+
+.grid__link,
+.grid__img {
+  display: block;
+}
+
+.grid__img {
+  width: 100%;
+}
+
+.grid__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.grid__deco path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.grid__reveal {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  background-color: #2c2d31;
+}
+
+.grid__item {}
+
+.grid__item:hover>.cm-pic-author {
+  opacity: 1;
+}
+
+.grid__item:hover>.cm-pic-social {
+  opacity: 1;
+}
+
+.cm-pic-social {
+  transition: opacity 0.6s ease-in-out;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0;
+}
+
+.cm-pic-social a {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  font-size: .9em;
+  text-decoration: none;
+}
+
+.cm-pic-social a:not(:last-child) {
+  margin-right: 1em;
+}
+
+.cm-pic-author {
+  transition: opacity 0.6s ease-in-out;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  opacity: 0;
+}
+
+.cm-pic-author a {
+  font-family: 'Roboto', sans-serif;
+  font-size: .9em;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.cm-pic-author a img {
+  width: 35px;
+  height: 35px;
+  object-position: center;
+  object-fit: cover;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.grid .grid__item,
+.grid .grid__sizer {
+  width: calc(100% - 20px);
+  margin: 0 10px 20px;
+}
+
+@media only screen and (min-width: 576px) {
+  .grid .grid__item,
+  .grid .grid__sizer {
+    width: calc((100% / 2) - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+
+/* min-width 1200px, large screens */
+
+@media only screen and (min-width: 1200px) {
+  .grid .grid__item,
+  .grid .grid__sizer {
+    width: calc((100% / 3) - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+
+/* min-width 1500px, xlarge screens */
+
+@media only screen and (min-width: 1500px) {
+  /* Grid types */
+  .grid-masonry .grid__item,
+  .grid-masonry .grid__sizer {
+    width: calc(25% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+
+/* min-width 1800px, xlarge screens */
+
+@media only screen and (min-width: 1800px) {
+  /* Grid types */
+  .grid-masonry .grid__item,
+  .grid-masonry .grid__sizer {
+    width: calc(20% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+
+/*!* min-width 2400px, xlarge screens 5k*!*/
+
+
+/*@media only screen and (min-width: 2400px){*/
+
+
+/*!* Grid types *!*/
+
+
+/*.grid-masonry .grid__item,*/
+
+
+/*.grid-masonry .grid__sizer {*/
+
+
+/*width: calc(16.666666% - 20px);*/
+
+
+/*margin: 0 10px 20px;*/
+
+
+/*}*/
+
+
+/*}*/
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src = "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<div class = "content content--center">
+  <div class = "grid grid-masonry">
+    <div class = "grid__sizer"></div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "image-details.html">
+        <img class = "grid__img" src = "https://i.imgur.com/dCFlYyG.jpg" alt = "Some image" />
+      </a>
+
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = "personal-profile-follow.html"><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/Zneml4H.jpg" alt = "Some image" /></a>
+
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/H4bbqpA.jpg" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/9Q9pgmR.jpg" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "https://i.imgur.com/9Q9pgmR.jpg" alt = "">J. Alexa</a>
+      </div>
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://picsum.photos/600/800" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "image-details.html">
+        <img class = "grid__img" src = "https://i.imgur.com/dCFlYyG.jpg" alt = "Some image" />
+      </a>
+
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = "personal-profile-follow.html"><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/Zneml4H.jpg" alt = "Some image" /></a>
+
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/H4bbqpA.jpg" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://i.imgur.com/9Q9pgmR.jpg" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "https://i.imgur.com/9Q9pgmR.jpg" alt = "">J. Alexa</a>
+      </div>
+    </div>
+    <div class = "grid__item">
+      <a class = "grid__link" href = "#"><img class = "grid__img" src = "https://picsum.photos/600/800" alt = "Some image" /></a>
+      <div class = "cm-pic-social d-flex">
+        <a href = ""><span><img width = "16px" src = "images/add.svg" alt = ""></span> Collection</a>
+        <a href = ""><span><img width = "16px" src = "images/love.svg" alt = ""></span> 50</a>
+      </div>
+
+      <div class = "cm-pic-author d-flex">
+        <a href = ""><img src = "images/author@2x.png" alt = "">J. Alexa</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+Теперь я пытаюсь реализовать его как компонент vue, чтобы я мог отображать на любой странице просмотра.
+
+Спасибо
+
+ 29.06.2019 17:19
+2
+1
+3 482
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+вы можете установить его с помощью npm
+
+npm install masonry-layout --save
+
+а затем импортируйте его в свой компонент (или глобальный, если хотите)
+
+Компонент
+
+import Masonry from "masonry-layout";
+
+export default {
+
+    mounted: function () {
+
+        // initialization of masonry
+
+        var grid = document.querySelector('.masonry-grid');
+        var msnry = new Masonry( grid, {
+            // options...
+            columnWidth: '.masonry-grid-sizer',
+            itemSelector: '.masonry-grid-item',
+            percentPosition: true
+        });
+    }
+}
+шаблон
+
+  <template>
+   <div>
+    <!-- Blog Masonry Blocks -->
+    <div class = "container ">
+        <div class = "masonry-grid row ">
+            <div class = "masonry-grid-sizer col-sm-1"></div>
+
+            <div class = "masonry-grid-item col-lg-3">
+                ...
+            </div>
+
+            <div class = "masonry-grid-item col-lg-3">
+                ...
+            </div>
+
+            <div class = "masonry-grid-item col-lg-3">
+                ...
+            </div>
+        </div>
+    </div>
+  </div>
+</template>
+ 01.07.2019 20:31
+Попробуйте установить npm install vue-masonry-css --save-dev это очень легко реализовать. https://github.com/paulcollett/vue-masonry-css
+
+<masonry
+  :cols = "3"
+  :gutter = "30"
+  >
+  <div v-for = "(item, index) in items" :key = "index">Item: {{index + 1}}</div>
+</masonry>
+ 20.08.2020 11:17
+Другие вопросы по теме
+Import firebase.firestore() возвращает значение undefined
+Перемещение файла PhpStorm Vuejs добавляет «/ типы» в оператор импорта «vuex»
+Как динамически добавить класс только к одному значению в li?
+Ссылки на вложенные представления Vue и vue-router, содержащие ссылку на маршрутизатор в формате JSON
+Выравнивание элементов портфеля
+Vue.js/Vuetify: как сделать действия v-card реактивными?
+Как исправить раскрывающийся список выбора динамической категории ввода с помощью ajax/json в vuejs
+Как заполнить форму из данных состояния хранилища, возвращенных из vuex, с помощью геттеров?
+Как сбросить объекты данных после нажатия кнопки
+Добавление конфигурации pug-plain-loader в vue.config.js
+Похожие вопросы
+Как передать «это» из класса A в класс B?
+Пытаюсь изменить цвет фона для определенных букв
+Как исправить «Fetch API не может загрузить http://localhost:3000/static/js/0.chunk.js из-за проверок контроля доступа»
+Как отключить редактирование ячеек в gridApi, если данные существуют в строках, но я хочу восстановить редактирование ячеек в пустых строках
+Как я могу получать данные в режиме реального времени с сервера, чтобы обновить график диаграммы?
+Как анимировать рисование линий на ткани холста JS
+Форма Extjs и текстовая область не могут обрабатывать ввод с угловыми скобками ('<>'). Странное поведение, пользовательский интерфейс просто умирает
+Как исправить Показывать div при прокрутке (React)
+Как фильтровать данные из состояния в зависимости от значения ввода
+Discord.js срабатывал несколько раз
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как добавить диалоговое окно vuetify в существующее приложение?
+Вопросы
+VUE.JS
+Как добавить диалоговое окно vuetify в существующее приложение?
+Я создал диалоговое приложение/компонент vue, используя vue cli. Он состоит из образца кнопки, по которой нужно щелкнуть, чтобы имитировать загрузку диалогового окна (Что мне нужно) при нажатии ссылки в существующем приложении. У меня есть пара проблем. При использовании v-app он добавляет оболочку приложения, которую мне не нужно видеть, поскольку это единственный диалог, который я хочу. Это создает огромные пробелы, которые не нужны. Если я удалю его, возникнет ошибка [Vuetify] Unable to locate target [data-app], и диалог не загрузится, когда <div @click='getInformation('USA')'></div> используется в существующем приложении.
+
+Пробовал удалить v-app и просто использовать шаблон, но ошибка не исчезла. Кажется, мне нужно каким-то образом указать v-app. Потерянный здесь
+
+Пример того, как я пытаюсь это сделать, но не работаю в App.vue
+
+<template>
+    <div v-resize = "onResize">
+        <v-dialog>
+            <v-card>
+            {{ information }}
+            </v-card>
+        </v-dialog>
+    </div>
+</template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      isMobile: false,
+      information: []
+    };
+  },
+  methods: {
+    onResize() {
+      if (window.innerWidth < 425) this.isMobile = true;
+      else this.isMobile = false;
+    },
+    getInformatiom(country) {
+        axios
+          .get(`${api}/${country}/info`, {
+            headers: {
+              Authorization: `token`
+            }
+          })
+          .then(response => {
+            this.information = response.data.info;
+          });   
+    }
+  }
+};
+main.js
+
+import Vue from "vue";
+import App from "./App.vue";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
+
+Vue.use(Vuetify);
+
+Vue.config.productionTip = false;
+
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
+Диалоговый компонент готов к работе, просто у него так много проблем с его отображением, когда он вызывается из существующего приложения. Просто примечание: существующее приложение не использует Vue, его единственный классический asp, я только обновляю диалоговое окно на странице, чтобы оно выглядело/работало лучше, используя vue/vuetify. Любая помощь будет БЛАГОДАРНА
+
+ 15.07.2019 20:35
+1
+2
+1 068
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+ Ответ принят как подходящий
+Вам НУЖЕН элемент v-app с vuetify.
+
+Попробуйте это, чтобы использовать приложение только при отображении диалогового окна. Затем используйте CSS для настройки v-app.
+
+<v-app v-if='this.information && this.information.length'>
+   <v-dialog>...</v-dialog>
+</v-app>
+ 16.07.2019 08:26
+Я бы использовал max-width опору v-dialog, сделал ее динамической, добавив :max-width, а затем привязал ее к вычисляемому свойству, которое подписывается на размер вашего экрана. Я бы не стал пытаться управлять им из внешнего div. См. здесь полный список вариантов размеров https://vuetifyjs.com/en/components/dialogs
+
+ 16.07.2019 08:27
+Другие вопросы по теме
+Vuejs Динамическое изменение заполнения?
+Как настроить данные таблицы с помощью BootstrapVue?
+Vuetify autocomplete похожие элементы не отображаются
+Как создать событие из функционального компонента JSX в Vuejs
+Ошибка сборки Vue js
+В Bootstrap + Vue, как использовать значение свойства данных внутри vb-modal?
+Установите мета-свойства по умолчанию на Vue Router
+Обнаружение неопределенного/нулевого свойства объекта в приложении vue
+Доступ к ответу от одного запроса GET в другом
+Получить входные значения из дочерних компонентов в Vue
+Похожие вопросы
+Vue Chart.js — могу ли я указать линейному графику значение по умолчанию для отсутствующих данных?
+Vue, Vuex, JavaScript: include() не работает должным образом
+Как изменить вкладки Vuetify вместе с vue-router программно
+Запустите JavaScript на vue.js
+Как отображать элементы магазина в цикле v-for с сеткой Vuetify?
+Vuetify — точки останова для столбцов
+Как передать элемент из смонтированного в HTML-шаблон
+Как включить второй раскрывающийся список только после выбора первого раскрывающегося списка?
+Vuetify autocomplete похожие элементы не отображаются
+Как я могу получить имя текущего маршрута в vue.js?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Не удалось создать проект с шаблоном vue cli 3 из-за svg в css
+Вопросы
+VUE.JS
+Не удалось создать проект с шаблоном vue cli 3 из-за svg в css
+При переходе на vue-cli 3 я столкнулся со следующей проблемой. Я импортирую css плагина в свой app.scss.
+
+Эта строка: background-image: url(default-skin.svg); нарушает работу yarn build, что вызывает следующую ошибку:
+
+Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+ReferenceError: navigator is not defined
+Вот мой vue.config.js:
+
+const path = require('path')
+const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+
+const ASSETS_DIR = 'static'
+
+module.exports = {
+  assetsDir: ASSETS_DIR,
+  runtimeCompiler: true,
+  chainWebpack: config => {
+    config
+      .plugin('provide-plugin')
+        .use(webpack.ProvidePlugin, [{
+          axios: "axios",
+          $: "jquery",
+          jQuery: "jquery",
+          _: "lodash",
+          mapGetters: ['vuex', 'mapGetters'],
+          mapActions: ['vuex', 'mapActions']
+        }])
+        .end()
+      .plugin('copy-plugin')
+        .use(CopyWebpackPlugin, [
+          [{
+            from: path.resolve(__dirname, 'static'),
+            to: ASSETS_DIR,
+            ignore: ['.*']
+          }]
+        ])
+        .end()
+      .plugin('sprite-loader-plugin')
+        .use(SpriteLoaderPlugin)
+
+    config.module
+      .rule('svg')
+        .test(/\.svg$/)
+        .use('file-loader')
+          .loader('svg-sprite-loader')
+  }
+}
+Любое решение?
+
+Обновить
+
+CSS, который нарушает сборку пряжи
+
+Package.json:
+
+{
+  "name": "f2c",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "Victor Ponamariov <victor.ponamariov@gmail.com>",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "axios": "^0.18.0",
+    "blueimp-canvas-to-blob": "^3.14.0",
+    "fabric": "^2.3.3",
+    "flexboxgrid": "^6.3.1",
+    "intl-tel-input": "^12.4.0",
+    "jquery": "^3.3.1",
+    "libphonenumber-js": "^1.2.21",
+    "lodash": "^4.17.10",
+    "masonry-layout": "^4.2.1",
+    "moment": "^2.22.2",
+    "nprogress": "^0.2.0",
+    "perfect-scrollbar": "^1.4.0",
+    "photoswipe": "^4.1.2",
+    "portal-vue": "^1.3.0",
+    "raven-js": "^3.25.2",
+    "sharer.js": "^0.3.3",
+    "stickyfilljs": "^2.0.5",
+    "tippy.js": "^2.5.2",
+    "vee-validate": "^2.0.6",
+    "vue": "^2.5.2",
+    "vue-analytics": "^5.14.0",
+    "vue-carousel": "^0.9.0",
+    "vue-clipboard2": "^0.1.1",
+    "vue-cropperjs": "^2.2.0",
+    "vue-gtm": "^1.0.2",
+    "vue-i18n": "^8.0.0",
+    "vue-infinite-loading": "^2.3.3",
+    "vue-infinite-scroll": "^2.0.2",
+    "vue-meta": "^1.5.2",
+    "vue-mq": "^0.2.1",
+    "vue-multiselect": "^2.1.0",
+    "vue-perfect-scrollbar": "^0.1.0",
+    "vue-popperjs": "^1.2.6",
+    "vue-router": "^3.0.1",
+    "vue-select": "^2.4.0",
+    "vue-slider-component": "^2.7.4",
+    "vue-social-sharing": "^2.3.3",
+    "vue-star-rating": "^1.6.0",
+    "vue-sweetalert2": "^1.5.2",
+    "vue-tippy": "^2.0.18",
+    "vue-yandex-metrika": "^1.6.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.5",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
+    "@vue/cli-service": "^3.0.0-rc.5",
+    "copy-webpack-plugin": "^4.5.2",
+    "node-sass": "^4.9.2",
+    "normalize.css": "^8.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-url": "^7.3.2",
+    "sass-loader": "^7.0.3",
+    "svg-sprite-loader": "^3.8.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack-svgstore-plugin": "^4.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "globals": {
+      "$": false,
+      "jQuery": false,
+      "_": false,
+      "axios": false,
+      "VK": false,
+      "gapi": false,
+      "FB": false,
+      "mapGetters": false,
+      "mapActions": false
+    },
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-import": {},
+      "postcss-url": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
+Структура папок приложения:
+
+Не удалось создать проект с шаблоном vue cli 3 из-за svg в css
+
+ 24.08.2018 03:07
+9
+5
+1 540
+3
+ Ответы 3
+Попробуйте удалить папку модулей узлов, а затем снова запустите yarn install.
+
+Если не сработало, попробуйте:
+
+global.navigator = {
+  userAgent: 'node.js'
+};
+ 26.08.2018 11:08
+Ссылка vue-pswipe, GuoQichen использует эту конфигурацию для svg.
+
+config.module
+  .rule('svg')
+  .use('file-loader')
+  .clear()
+  .loader('url-loader')
+  .options({
+    limit: 4 * 1024,
+    name: 'img/[name].[hash:8].[ext]',
+  })
+ 29.08.2018 02:54
+У меня нет исправления или полного объяснения, но есть обходной путь ...
+
+Проблема, по-видимому, вызвана postcss-import при импорте файла CSS из тега <style> SFC:
+
+// App.vue
+<style lang = "scss">
+  @import 'app.scss'; /* imports default.css -> default-skin.svg */
+</style>
+Вы можете обойти ошибку сборки, переместив импорт в тег <script> (или в main.js):
+
+// App.vue
+<script>
+  import 'app.scss'; /* imports default.css -> default-skin.svg */
+</script>
+см. Репозиторий GitHub
+
+ 01.09.2018 09:55
+Другие вопросы по теме
+Команда Vue не найдена
+Включить файл проверки html в корень Vue
+Vue-cli 3.x - изменить src и общедоступные каталоги
+Отладка NativeScript-Vue при использовании vue-cli-template
+Vue / cli 3 неудовлетворенные зависимости
+'vue' не распознается как внутренняя или внешняя команда, работающая программа или командный файл
+Как переименовать index.html в сборке vue.js?
+Как настроить виртуальный хост для проекта Vue CLI 3
+Странная ошибка @ vue-cli 3 с зависимостью пакета @ vue / eslint-config-standard @ ^ 3.0.1
+Vue.js - загрузка глобального файла _variables.scss
+Похожие вопросы
+VueJS: <template> vs <div> или связанный для группировки элементов для условного рендеринга
+Vue не может прочитать свойство undefined
+Vee-validate не работает с областями действия с использованием Nuxt.js и Vuetify
+Как привязать событие закрытия окна в vuejs
+Vue CLI 3: горячая перезагрузка требует много времени для восстановления
+Установить цвет <span> во время итерации списка
+Неожиданное поле появляется при загрузке файлов CSV в Node.js с помощью Multer
+Vue не обновляет массив информации v-for
+Почему компонент Vue не обновляется при изменении выбора
+Laravel и Vue в WAMP - компоненты не компилируются, просто отображаются как их имена компонентов
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как изменить соответствие файлов по умолчанию модульному тесту в vue-cli 3
+Вопросы
+VUE CLI 3
+Как изменить соответствие файлов по умолчанию модульному тесту в vue-cli 3
+Я использую vue-cli 3.0 и создал проект с ручными функциями выбора модульного теста (mocha + chai). Соответствующие файлы по умолчанию: любые файлы в tests/unit, которые заканчиваются на .spec.(ts|js). Есть ли способ изменить целевой каталог и шаблон файлов?
+
+Я хочу изменить целевой каталог с tests/unit на root directory, где находится файл package.json. Но я не могу найти, как изменить целевой каталог.
+
+И я попробовал это, чтобы изменить шаблон файла. Но это не работает.
+
+"scripts": {
+    "test:unit": "vue-cli-service test:unit --glob '*.test.js'"
+}
+Я также читал это: https://github.com/vuejs/vue-cli/issues/1245. Мне нужно именно то, что сказал @iamceege. Стоит ли самому устанавливать тестовую среду без настроек по умолчанию?
+
+ 31.08.2018 10:12
+1
+0
+2 412
+3
+ Ответы 3
+package.json
+
+"scripts": {
+   ...,
+   "test": "vue-cli-service test:unit --watch --recursive 'src/**/*_test.ts'",
+   ...
+},
+Официальная документация:
+
+Параметры плагина модульного тестирования (mocha)
+
+Аргументы веб-пакета (мокко)
+
+ 09.09.2018 10:36
+попробуйте без одинарных кавычек вокруг капли
+
+"scripts": {
+    "test:unit": "vue-cli-service test:unit --glob *.test.js"
+}
+ 02.04.2019 02:20
+В вашем файле jest.config.js вы можете определить переменную testMatch. Полный вариант здесь.
+
+Поскольку вам нужен корневой каталог, вы можете попробовать что-то вроде:
+
+// inside jest.config.js
+    testMatch: [
+      '*.test.js']
+Обратите внимание, что вы можете объединить несколько селекторов в массив.
+
+ 04.06.2021 03:57
+Другие вопросы по теме
+Как добавить правила оптимизации cssnano в vue-cli 3?
+Как изменить конфигурацию микса на vue.config.js
+Не удалось создать проект с шаблоном vue cli 3 из-за svg в css
+Vue CLI 3: горячая перезагрузка требует много времени для восстановления
+Развертывание Vue js в продакшене кажется сложнее, чем
+Vuejs - Ошибка при перенаправлении в производственном режиме
+Vue-cli 3.x - изменить src и общедоступные каталоги
+Импортировать модуль js в файл js в vuejs2
+Vue / cli 3 неудовлетворенные зависимости
+Как добавить PurifyCSS в проект Vue CLI 3 в vue.config.js
+Похожие вопросы
+Почему для vue-cli есть две команды запуска vuejs?
+Не удалось загрузить изображение стандартной настройки Vuetify (babel / eslint)
+Объедините зависимость vue в сборку веб-компонента с помощью vue-cli 3
+Vagrant VirtualBox Local Dev Env, Ubuntu, Yarn, Vue CLI 3 - Проблемы
+Проект VUE CLI-3 не работает на IE-11
+Использование vuex store с npm-link в проекте vue-cli 3 теряет $ store
+Можно ли создать распространяемый виджет Vue с однофайловыми компонентами?
+Файлы node cmd собираются в root вместо папки .bin?
+Vue-CLI 3.0 - как изменить производственные ссылки?
+V-form и v-text-field не работают в vue cli 3.0
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Невозможно получить доступ к проекту Vue по IP-адресу на других устройствах vue cli 3 npm
+Вопросы
+NPM
+Невозможно получить доступ к проекту Vue по IP-адресу на других устройствах vue cli 3 npm
+У меня есть проект, созданный с помощью vue cli 3. Когда я запускаю команду «npm run serve», появляется следующее сообщение об успешном завершении (я заменил свой IP-адрес на поддельные #):
+
+App running at:
+- Local: http://localhost:8080/
+- Network: http://1.2.3.4:8080/
+На моем компьютере все отлично работает. На моем собственном компьютере я могу получить доступ как по локальному, так и по IP-адресу, но я не могу получить доступ с помощью сетевого адреса на других устройствах, подключенных к той же сети Wi-Fi.
+
+Я пробовал следующее:
+
+On vue.config.js:
+devServer: {
+    host: '0.0.0.0'
+}
+
+and
+devServer: {
+    open: process.platform === 'darwin',
+    host: '0.0.0.0',
+    port: 8080,
+    https: false,
+    hotOnly: false
+}
+
+on my package.json:
+"scripts": {
+    "serve": "vue-cli-service serve --host 0.0.0.0",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+}
+
+and
+"scripts": {
+    "serve": "vue-cli-service serve --host 0.0.0.0 --allowed-hosts 1.2.3.4",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+}
+Мой сервер tomcat работает на порту 80, и он отлично работает как на моем компьютере, так и на других устройствах ... Я не уверен, что еще делать ...
+
+Это страница ошибки, с которой я столкнулся: Невозможно получить доступ к проекту Vue по IP-адресу на других устройствах vue cli 3 npm Как мне сделать так, чтобы я мог получить доступ к своему проекту vue с других устройств в той же сети?
+
+Спасибо за ваше время и помощь!
+
+ 14.09.2018 19:39
+23
+0
+7 676
+3
+ Ответы 3
+Потому что вы получаете доступ только к своему устройству. Давайте попробуем удалить --allowed-hosts 1.2.3.4
+
+ 28.08.2019 09:41
+Во-первых, в параметре host сервера разработчика вы должны добавить законный IP-адрес вашего маршрутизатора, чтобы он работал, но если вам не требуются определенные настройки, просто хотите, чтобы он обслуживался в вашей сети:
+
+Обычно я просто делаю это в своем package.json:
+
+ "serve": "vue-cli-service serve",
+и vue.config.js, вы можете удалить все, что связано с devServer. Это создаст сервер разработки, который будет работать в вашей сети.
+
+ 04.11.2020 11:07
+До настоящего времени npm run serve в любом проекте Vue.js позволит вам получить доступ к проекту с любого устройства локально или в сети (приложение, работающее в):
+
+Vue.js Serve Project
+
+Если вы находитесь в Windows (в качестве хоста) и проект недоступен с других устройств в сети по указанному адресу через интерфейс командной строки, вам необходимо разрешить входящие подключения Node.js в настройках брандмауэра:
+
+Allow Inbound Connections Node.js Firewall
+
+Найдите правила, связанные с Node.js, и измените их, разрешив входящие соединения:
+
+Allow Inbound Connections Windows
+
+В моем случае у меня было 4 правила, связанных с Node.js, после разрешения входящих подключений я смог получить доступ к проекту, обслуживаемому с моего рабочего стола, на моем мобильном устройстве в той же сети.
+
+ 16.07.2021 17:28
+Другие вопросы по теме
+Datatables Ajax Cant отрисовывает компонент Vue
+Ссылка на слот для определения родительской функции
+Как я могу использовать данные в дочернем компоненте, которые обновляются в родительском компоненте с помощью Vue.js?
+Nativescript vue, как получить файл .apk?
+VueJS v-for: удалить дубликаты
+V-образный вид с использованием фигурных скобок
+Определите родительский метод
+Функция в vuejs выполняется более одного раза
+Как получить идентификатор определенного узла дерева, когда я нажимаю на него, а затем передаю эти данные в свою переменную
+Vue-i18n - Обнаруживает «неизвестный» тип токена
+Похожие вопросы
+Папка шрифтов Rails 5.2 в активах выдает ошибку 404 (не найдено)
+Node.js Анализируйте огромный CSV и находите конкретную строку данных по идентификатору
+Может resolveWithFullResponse: true сделать ответ более сложным с точки зрения сети?
+Как создать конкретную версию Angular Project с помощью CLI?
+Ошибка синтаксического анализа: неожиданный токен = ReactJs
+MomentJS недействительная дата
+Как обновить версию npm
+Угловые ошибки запуска в package.json
+Ошибка при установке старой версии кордовы
+Обработка исключений в node js, например java?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Не могу установить переменные env в моем проекте vuejs2
+Вопросы
+VUEJS2
+Не могу установить переменные env в моем проекте vuejs2
+Я пытаюсь установить URL-адрес API в файле .env, мой файл .env находится в корневой папке моего проекта. Я использую префикс VUE_APP_.
+
+Согласно документу файл .env загружается в любом случае. Так не должен ли я получать его каждый раз?
+
+Я использую MacOS, без Vuex.
+
+Мой файл .env
+
+VUE_APP_API_URL: '"http://localhost:3000/"'
+Мой файл .vue
+
+        data() {
+            return {
+                test: process.env.VUE_APP_API_URL
+            }
+        },
+Я ожидал получить http://локальный: 3000/, но получил undefined
+
+ 07.04.2019 10:37
+0
+0
+93
+2
+Данный вопрос помечен как решенный
+ Ответы 2
+Вам нужно будет сослаться на файл .env в Webpack, чтобы переменные были скомпилированы в сборку. Причина, по которой вы не можете ссылаться на переменные, заключается в том, что они не анализируются в вашей сборке/общедоступной папке.
+
+я бы использовал что-то вроде https://github.com/mrsteele/dotenv-вебпак
+
+ 07.04.2019 17:05
+ Ответ принят как подходящий
+Ваш синтаксис неверен в вашем файле .env. Это VUE_APP_API_URL = с = не :.
+И вам не нужны двойные а также простые кавычки.
+
+Это должно работать следующим образом:
+
+VUE_APP_API_URL = 'http://localhost:3000/'
+ 08.04.2019 00:43
+Другие вопросы по теме
+Angular 6 разница между .env и environment.ts
+Создайте новую переменную bash из значения переменной dict bash
+Emacs: как настроить домашнюю среду в зависимости от имени пользователя
+Файл конфигурации .npmrc не читает переменную среды для загрузки модуля частного узла
+System.getenv() не может получить параметр переопределения, установленный в IntelliJ IDEA
+Все переменные среды Vue-cli 3 не определены
+Можно ли передать динамическую переменную в process.env, чтобы получить переменную env? Например, process.env['имя переменной']
+Как установить переменные среды с помощью Node?
+Переменные из отдельного файла, загруженного во время выполнения скрипта NPM
+Как использовать переменные ENV в Artisan Commands в Laravel 5.8?
+Похожие вопросы
+Вручную монтировать глобально зарегистрированный компонент Vue в устаревшее приложение?
+Vue.js: Есть ли способ сделать кнопки «v-if» реактивными через наблюдатель?
+Компонент VueJS не показывает правильные данные
+Упаковать приложение nuxt в другую среду
+Как включить локальные файлы сценариев в Vue
+Как визуализировать компоненты, сгенерированные из строки внутри метода?
+Ошибка привязки данных Vuejs 2
+Регистрация компонента Vue JS
+Как использовать вычисляемые свойства в vue-классе для v-модели?
+Vue-test-utils: не удалось перезаписать свойство $route, обычно это вызвано плагином, который добавил свойство как значение только для чтения
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как использовать exclude с загрузчиком babel в vue cli3?
+Вопросы
+VUE.JS
+Как использовать exclude с загрузчиком babel в vue cli3?
+Я хочу использовать exclude, чтобы игнорировать некоторые каталоги, чтобы не компилировать, но в Vue Cli3 это не работает. Мой вариант:
+
+chainWebpack: config => {
+  config.module
+    .rule('js')
+    .test(/\.jsx?$/)
+    .use('babel-loader')
+    .loader('babel-loader')
+    .exclude
+    .add(resolve('src/libs/iview'))  // this line not work
+    .end();
+  }
+Ошибка:
+
+ TypeError: Cannot read property 'add' of undefined
+ 08.03.2019 04:29
+0
+0
+1 269
+2
+ Ответы 2
+Просто удалите это:
+
+.use('babel-loader')
+.loader('babel-loader')
+и это работает.
+
+ 08.03.2019 04:55
+Чтобы исключить файл из транспайла Babel, вы можете использовать параметр excludes для js babel-loader. Пример ниже.
+
+Предостережения:
+
+Строки должны быть абсолютными путями (при необходимости используйте path.resolve)
+Регулярное выражение работает
+Функции работают
+// const path = require('path') // somewhere at the top of the file...
+chainWebpack: config => {
+  config.module
+    .rule('js')
+      .exclude
+      .add(/path/to/folder/.+\.ignore/) // Regexp: ignore anything inside of path/to/folder that has .ignore in the file extension
+//    .add(path.resolve('./path/to/the/folder')) // example with a nix folder
+//    .add('C:\\path\\to\\the\\folder\\') // absolute path, example with a Windows folder
+    .end()
+}
+Команда vue inspect module.rules вернет:
+
+[...]
+/* config.module.rule('js') */
+  {
+    test: /\.m?jsx?$/,
+    exclude: [
+      function () { /* omitted long function */ },
+      'C:\\path\\to\\the\\folder\\'
+    ],
+    use: [
+      /* config.module.rule('js').use('cache-loader') */
+      {
+        loader: 'cache-loader',
+        options: {
+          cacheDirectory: '[...]\\node_modules\\.cache\\babel-loader',
+          cacheIdentifier: '2e75750d'
+        }
+      },
+      /* config.module.rule('js').use('babel-loader') */
+      {
+        loader: 'babel-loader'
+      }
+    ]
+  }
+ 27.11.2019 13:07
+Другие вопросы по теме
+Не удается найти модуль «babel-preset-реагировать»
+Не удается скомпилировать большой статический массив или набор в Babel/Vue
+Ошибки консоли Reactjs: «Объект компонентов устарел» и «ReferenceError: требование не определено»
+Ошибка Webencore: обнаружен дубликат плагина/пресета
+Зачем использовать Webpack для объединения приложений, работающих в среде узла
+Транспилить gulp-babel с >=ES6 на ES5
+Babel не работает при импорте из `node_modules` через загрузчик Webpack
+Babel оценивает переменную в строку
+Ошибка Babel Webpack: вам может понадобиться соответствующий загрузчик для обработки этого типа файла
+Babel с babel-preset-env, похоже, игнорирует конфигурацию списка браузеров
+Похожие вопросы
+Как сгенерировать pdf из html и css в Vuejs?
+Маршруты API Laravel не найдены
+Vue "v-for" показывает только последнюю итерацию (в v-select)
+Vuejs получил синтаксическую ошибку при производственной сборке
+Перетаскивание в VueJS
+@import "./assets/scss/style" вызывает сбой приложения
+Не удалось установить cookie с флягой
+Как получить объект в v-модели? Vuetify
+Dedupe CSS в режиме разработки Vue.js
+Как тестировать простые компоненты Vue (не отдельные файловые компоненты)
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+.env VUE_APP_ переменная json?
+Вопросы
+VUE.JS
+.env VUE_APP_ переменная json?
+Начал использовать vue cli 3 и наткнулся на вариант использования, на который я не могу найти ответа.
+
+Как я могу установить переменную среды через файл .env (например, .env.development, .env.production и т. д.), Который предоставляет объект JSON? Кроме того, есть ли способ загрузить содержимое внешних файлов в переменную среды (то есть, требуется)?
+
+Благодарю за помощь!
+
+ 04.10.2018 17:58
+1
+0
+2 119
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+Вы должны различать, какой профиль использует точка . (как .env.production или .env.development), и формат должен быть KEY = value, вы не можете поместить здесь объект json, только строки, но вы можете использовать JSON.parse в своем коде для десериализации любой строки в файл.
+
+Vue cli разрешит доступ только к переменным среды, которые начинаются с VUE_APP_, а для доступа - process.env.VUE_APP_SECRET.
+
+Вы можете найти это и многое другое в документы
+
+ 04.10.2018 20:04
+Вы можете stringObj = JSON.stringfy (YourJson), Затем сохраните эту строку внутри VUE_APP_SOME_KEY_NAME.
+
+но когда вы будете его использовать, вам сначала придется использовать JSON.parse ().
+
+Таким образом, вы не можете напрямую хранить объект json в файле .dotEnv значения ключа.
+
+Другой вариант - загрузить эти файлы json на основе process.env.NODE_ENV. like: require (`config.${process.env.NODE_ENV}.js)
+
+ 05.10.2018 08:00
+ Ответ принят как подходящий
+Я нашел решение своей проблемы ...
+
+Хотя предыдущие ответы жизнеспособны, я не хотел использовать JSON.parse каждый раз, когда хотел использовать JSON в переменной среды.
+
+Подход, который я использовал, заключался в том, чтобы хранить в каждом файле, зависящем от среды (например, .env-development, .env-production, .env-test), путь к файлу, содержащему JSON. Например...
+
+VUE_APP_JSON_FILE=./.env.development.json-data
+Этот файл будет содержать необработанный JSON ...
+
+Затем в моем vue.config.js я использовал webpack DefinePlugin, чтобы загрузить файл и сделать его доступным через глобальную переменную. Например...
+
+new webpack.DefinePlugin({
+     VUE_APP_JSON: JSON.stringify(process.env.VUE_APP_JSON_FILE)
+})
+Определение новой переменной сделает json доступным как объект, где в моем приложении я могу просто ссылаться на VUE_APP_JSON.property. Это избавляет меня от необходимости JSON.parse переменной во всем моем приложении.
+
+ 15.10.2018 13:42
+Другие вопросы по теме
+Vue - компилировать другую папку вне / src в проекте Vue.js
+Как я могу прочитать значения из статического файла config.json в TypeScript в файле Vue после запуска build: electronic в Vue CLI 3?
+Vue CLI 3 не конвертирует поставщиков на ES5
+Машинопись Vue CLI 3 - свойство 'x' не существует для типа 'Vue'
+Почему я получаю ERR_CONNECTION_TIMED_OUT в Vue.js?
+VueJS - [Предупреждение Vue]: не удалось смонтировать компонент: шаблон или функция рендеринга не определены
+Как добавить leaflet.timeline к слою?
+Интегрируйте Vue-CLI 3 с Symfony 4
+Добавление Vuetify в шаблон проекта из vue-cli 3: добавление тегов скрипта в App.vue нарушает работу приложения?
+Добавление Leaflet.timeline npm в Vue-cli 3 устарело? TypeError: невозможно прочитать свойство 'bottomleft' из undefined
+Похожие вопросы
+Предупреждение JavaScript: присвоение свойству параметра функции
+VueJS - неизвестный тип локального действия: addProductToCart, глобальный тип: cart / addProductToCart
+NativeScript-Vue Canvas и requestAnimationFrame
+Редактировать значение props дочернего компонента прямо в теге компонента
+Шаблон не работает в IE из-за специального символа
+Nuxt.js: понимание компонента <nuxt-child>
+Настройки отладчика для Chrome в VS Code с Vue.js
+Как мне тестировать компоненты vue при использовании Firebase?
+Используйте компоненты Vue.js внутри классического приложения ASP
+Пользовательский эффект перехода между шаговыми панелями
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Отключить плагин PWA в Vue CLI 3
+Вопросы
+VUE.JS
+Отключить плагин PWA в Vue CLI 3
+У меня возникли проблемы с кешированием файлов с помощью работника службы по умолчанию, который поставляется с VueCLI 3. Я бы предпочел просто использовать механизм кеширования браузера по умолчанию, но не могу отключить плагин PWA, так как его нет в файле vue.config.js. . Передача пустого объекта параметру pwa также не работает, поскольку объект объединяется, а не перезаписывается.
+
+ 14.10.2018 10:35
+20
+0
+9 543
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+Я решил это, выполнив следующие действия:
+
+Удаление файла registerServiceWorker.js
+удаление импорта registerServiceWorker.js из main.js.
+удаление плагина PWA из devDependencies в package.json.
+ 14.10.2018 10:35
+Vue включил метод отключения pwa для определенных сборок в версии 4. Теперь вы можете добавить --skip-plugins pluginname во время сборки. Этот сработал для меня отлично:
+
+ npx vue-cli-service build --skip-plugins pwa,workbox
+Ссылка: https://cli.vuejs.org/guide/cli-service.html#skipping-plugins
+
+ 07.04.2019 15:35
+Есть открытое, но принятое предложение добавить это к основным функциям: https://github.com/vuejs/vue-cli/issues/3830
+
+Обновлено:
+
+Через командная строка: https://cli.vuejs.org/guide/cli-service.html#skipping-plugins
+
+npx vue-cli-service build --skip-plugins pwa,workbox
+
+Через vue.config.js:
+
+module.exports = {
+  chainWebpack: config => {
+    config.plugins.delete('pwa');
+    config.plugins.delete('workbox');
+  }
+}
+ 03.07.2019 11:12
+Другие вопросы по теме
+Почему карта openlayers не работает в vue-cli 3
+Как построить без хеширования файлов в VueCli
+Точка входа - webpack.config.js vs vue.config.js
+В vue-cli 3.0 как сгенерировать полный webpack.config.js
+Как отключить горячую замену модуля с помощью vue-cli-service serve?
+Vue Dev Tools - не работает кнопка «Открыть в редакторе». Как это исправить?
+Приложение Vue CLI3, атрибуты srcset и размеры HTML не поддерживаются?
+Vuejs image src динамическая загрузка не работает
+Vue-CLI с 4-х пространственным идентификатором
+Проверить версию vuetify
+Похожие вопросы
+Как изменить значение в дочернем компоненте Vue
+Сохраненное состояние vuex не работает с защитой навигации маршрутизатора vue
+JWT не работает на живом сервере с Vuejs, Laravel
+Как получить доступ к значениям объекта JSON с помощью шагов vue?
+Vue.js это не определено внутри вычисляемого свойства
+Как получить доступ к состоянию в js файле VUEX
+Расширить и переназначить компонент vuetify
+Vue: как дождаться завершения одного метода перед запуском другого
+Как заставить CSS IntelliSense работать над проектом Nuxt?
+Модальное окно не активно
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как я могу сообщить Vue-cli, где находится точка входа в мое приложение?
+Вопросы
+JAVASCRIPT
+Как я могу сообщить Vue-cli, где находится точка входа в мое приложение?
+Мое приложение разделено на API и UI. Стратегия развертывания требует, чтобы они совместно использовали package.json. Файловая структура выглядит как
+
+client/
+       src/
+           main.js
+api/
+package.json
+vue.config.js
+Я использую стандартные скрипты vue-cli.
+
+package.json
+
+"scripts": {
+  "serve:ui": "vue-cli-service serve",
+  "build:ui": "vue-cli-service build",
+  "lint:ui": "vue-cli-service lint",
+  "test:unit": "vue-cli-service test:unit"
+}
+Когда я делаю npm run serve:ui, я получаю
+
+This relative module was not found:
+
+* ./src/main.js in multi ./node_modules/@vue/cli-service/node_modules/webpack-dev-server/client?http://10.0.2.15:8080/sockjs-node ./node_modules/@vue/cli-service/node_modules/webpack/hot/dev-server.js ./src/main.js
+Итак, я попытался изменить vue.config.json согласно документы:
+
+vue.config.js
+
+const path = require('path');
+module.exports = {
+    entry: {
+        app: './client/src/main.js'
+    }
+}
+Теперь я получаю сообщение об ошибке:
+
+ ERROR  Invalid options in vue.config.js: "entry" is not allowed
+Как мне сообщить vue-cli, где находится точка входа в мое приложение?
+
+ 16.10.2018 20:24
+11
+2
+10 237
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+ Ответ принят как подходящий
+На основе этого Проблема с Github я обнаружил, что вы можете передать настраиваемую точку входа только в командной строке. Это верно как для build, так и для serve. См. Также в документации единственный блок кода, демонстрирующий это.
+
+Usage: vue-cli-service serve [options] [entry]
+Я изменил свой сценарий на
+
+    "serve:ui": "vue-cli-service serve client/src/main.js",
+и теперь он может найти точку входа.
+
+ 16.10.2018 20:31
+Я считаю, что вы пытаетесь запустить приложение nodejs с vue в качестве интерфейса. Некоторое время назад я столкнулся с некоторыми проблемами, аналогичными этой, и исправил их, установив в проект laravel-mix, который помогает мне скомпилировать vue.
+
+"scripts": {
+    "start": "node app.js",
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js | nodemon app.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js | node app.js"
+  },
+Поэтому, когда я запускаю npm run watch, он запускает команду vue-cli и включает приложение узла. все в реальном времени. Создайте новый файл в корневом каталоге с именем webpack.mix.js.
+
+Вставьте эти строки:
+
+let mix = require("laravel-mix");
+mix.js("src/js/app.js", "public/js")
+   .sass('src/scss/app.scss', 'public/css’);
+src/js/app.js - это основной файл vue, который компилируется в public/css.
+
+ 16.10.2018 20:42
+Вы можете добавить entry в вариант страниц и убедиться, что вы также включили template.
+
+vue.config.js
+
+module.exports = {
+  pages: {
+    app: {
+      entry: 'client/src/main.js',
+      template: 'client/public/index.html',
+    },
+  },
+};
+Если вам не нравится отдельный файл для этой конфигурации, вы также можете добавить его в файл package.json:
+
+package.json
+
+  "vue": {
+    "pages": {
+      "index": {
+        "entry": "client/src/main.js",
+        "template": "client/public/index.html"
+      }
+    }
+  },
+ 15.07.2019 23:01
+Другие вопросы по теме
+Vuex должен вызвать Vue.use (Vuex) перед созданием экземпляра магазина
+Использовать константу в качестве имени свойства в шаблоне
+Не удается разрешить 'products.json' в местоположении файла с абсолютным путем в vue / webpack
+Как привязать метод, передав имя метода через переменную в @click
+Асинхронная задача не реагирует в представлении vuejs
+Насколько безопасно использовать Vue.js для встраиваемого контента?
+Vue: отображать тег <script> внутри переменной (строки данных)
+Vue JS - Как отображать изображение с динамическим URL без ошибок?
+Вычисленное свойство vuejs для цикла не увеличивает
+SyntaxError: неожиданный импорт токена при использовании Nuxt 2.0 build.transpile
+Похожие вопросы
+Как добавить изображение в React с помощью посылки?
+Как присвоить значение из php моей переменной скрипта, которое будет использоваться для координат flighplan в googlemap?
+Vuex должен вызвать Vue.use (Vuex) перед созданием экземпляра магазина
+Самая быстрая функция, которая возвращает истину, если часть символов str1 может быть переставлена, чтобы соответствовать str2, в противном случае возвращает ложь
+Переменная не определена при использовании this.str
+JQuery - добавлять изменения с помощью флажков
+Функция onClick не вызывает метод
+Str.toString () возвращает [объект Object]
+Регулярное выражение для соответствия нескольким подсетям, разделенным пробелом
+Код JavaScript для проверки активности сеанса
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 Используйте веб-пакет для использования определенного файла в зависимости от среды узла
 Вопросы
 NODE.JS
