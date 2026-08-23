@@ -3,6 +3,5772 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Недействительная пара ключ=значение (отсутствует знак равенства) в заголовке авторизации
+Вопросы
+WEB SERVICES
+Недействительная пара ключ=значение (отсутствует знак равенства) в заголовке авторизации
+При обращении к API от Postman я получаю эту ошибку.
+
+Детали API:
+URL-адрес:
+https://account-perf.myglobal.com/v1/users/00uk0khprrME7gZOU0h7/credentials/change_password
+
+Заголовок:
+Content-Type:application/json
+Authorization:Bearer n7mbkw74jsubd7rauhptdnre
+
+Тип:
+СООБЩЕНИЕ
+
+Тело:
+{"password":"Baddy125@","token":"eyJhbGci...."}
+Редактировать 1:
+Вызов веб-сервиса для генерации токена
+
+URL-
+https://api-perf.myglobal.com/rest/oauth2/v1/токен
+
+Тип-
+СООБЩЕНИЕ
+
+Тело-
+client_id:abcd
+client_secret:xyz
+grant_type:client_credentials
+
+ 30.03.2019 07:10
+3
+1
+14 575
+4
+ Ответы 4
+Проанализируйте и проверьте путь запроса, если запрос неверен, эта ошибка выдается на шлюзе API. Я наступил на ту же ошибку, когда исправил параметры запроса, все заработало.
+
+Дайте мне знать.
+
+ 06.03.2020 15:36
+У меня было это всякий раз, когда вызывался любой необработанный метод или ресурс конечной точки. Моя установка представляет собой шлюз API с определенными ресурсами (например, /myendpoint) и определенными методами для этих конечных точек (например, GET).
+
+Чтобы исправить это, я создал лямбда-функцию Node.js, которая только что вернула ошибку 404. Затем я добавил любой метод ANY в корень конечных точек / и указал его как прокси-функцию Lambda для ЛЮБЫХ методов.
+
+Затем я добавил прокси-ресурс, например. /{proxy} -- есть флажок, который вы можете установить при создании ресурса, чтобы передать его прокси. Метод ANY для этого ресурса, указывающий на ту же функцию Lambda, развертывание API, и все готово.
+
+Теперь вместо ошибки токена носителя авторизации я получаю правильную ошибку HTTP 404.
+
+ 01.05.2020 21:20
+@Matt H - Это довольно хорошая идея, которая вдохновила меня на еще одну.
+
+Предполагая, что все остальные пути в API указаны явно, я создал путь по умолчанию /{proxy+}, который будет возвращать http 404, ресурс сообщения не найден. Вместо использования лямбда я смог создать фиктивный ответ, поэтому нет никаких затрат на то, чтобы заставить лямбду вернуть ответ.
+
+Я создал свои API через спецификацию Open API. Вот как мой YAML для реализации хотел бы
+
+  /{proxy+}:
+    x-amazon-apigateway-any-method:
+      responses:
+        404:
+          description: "404 response"
+          content: {}
+      x-amazon-apigateway-integration:
+        responses:
+          404:
+            statusCode: "404"
+            responseTemplates:
+              application/json: "{\"message\":\"resource not available\"}"
+        requestTemplates:
+          application/json: "{\"statusCode\": 404}"
+        passthroughBehavior: "when_no_templates"
+        type: "mock"
+Serverless также имеет возможность указать встроенный фиктивный ответ. Ниже может быть образец:
+
+functions:
+  default:
+    handler: handler.default
+    events:
+      - http:
+          path: hello
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 404}'
+          response:
+            template: $input.path('$')
+            statusCodes:
+              404:
+                pattern: '' #default method
+                template:
+                  application/json: '{"statusCode": 404, "message":"resource not found"}'
+бессерверный документ: https://www.serverless.com/framework/docs/providers/aws/events/apigateway/#custom-response-templates
+
+ 05.01.2021 07:33
+Мне удалось сделать это, проксировав маршрут ANY /{proxy+} к лямбде, которая всегда будет отвечать HTTP 404.
+
+Поскольку все остальные маршруты настроены точно, этот ANY /{proxy+} маршрут действует как маршрут по умолчанию и будет перехватывать любой несоответствующий запрос.
+
+Вот как я это сделал с CloudFormation:
+
+Parameters:
+    RestAPI:
+        Type: String
+    RestApiRootResourceId:
+        Type: String
+    LambdaName:
+        Type: String
+    Path:
+        Type: String
+
+RootResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref RestAPI
+      ParentId: !Ref RestApiRootResourceId
+      PathPart: !Ref Path
+ProxyResource:
+    Type: 'AWS::ApiGateway::Resource'
+    Properties:
+      RestApiId: !Ref RestAPI
+      ParentId: !Ref RestApiRootResourceId
+      PathPart: "{proxy+}"
+AnyMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+    RestApiId: !Ref RestAPI
+    ResourceId: !Ref ProxyResource
+    HttpMethod: ANY
+    Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        PassthroughBehavior: WHEN_NO_MATCH
+        Uri:
+          Fn::Join:
+            - ":"
+            - - !Sub "arn:aws:apigateway:${AWS::Region}:lambda"
+              - !Sub "path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function"
+              - !Sub "${LambdaName}/invocations"
+ApiGatewayInvokeLambdaPermissionAny:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::Join:
+          - ":"
+          - - !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function"
+            - !Ref LambdaName
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ":"
+          - - !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}"
+            - !Sub "${RestAPI}/*/ANY/*"
+Параметры:
+
+RestAPI — это ваш идентификатор API
+RestApiRootResourceId — это идентификатор корневого ресурса (!GetAtt "RestApi.RootResourceId")
+LambdaName — это имя вашего лямбда-прокси.
+Путь - это то, что у меня есть между сценой и корнем (для конкретного использования)
+ 31.08.2021 11:52
+Другие вопросы по теме
+Auth::attempt возвращает true, но перенаправляет на другую страницу и возвращает гостя
+Получение AccessToken для Microsoft Graph из службы приложений Azure Easy Auth
+Как отправить JWT из веб-API в MVC?
+Почему для «аудитории» установлено значение «localhost: <port>» с auth0?
+Подзаявка JWT игнорируется во время проверки
+Как реализовать SSO IdentityServer4 на основе потока паролей?
+Лучшие способы блокировки функций с аутентификацией в Angular 7?
+Аутентификация .NET Core при каждом запросе (включая js/spa)
+Как подключить facebook, firebase и флаттер?
+Как лучше всего назначить идентификатор пользователя - Laravel
+Похожие вопросы
+Web (ASP.Net) Wcf: не найдена ошибка при подключении из настольного клиента
+Как создать запрос HTTP GET к API календаря Google с помощью С#?
+Избегайте запроса диалогового окна учетных данных Windows
+LINQ Webservice ПОЛУЧИТЬ список похожих продуктов из файла JSON
+Ошибка при добавлении ссылки на сервис на сайт DNN
+Запустить класс из службы Android
+Как создать программу веб-службы Java на Java 5 или более ранней версии на платформе UNIX
+Как использовать веб-сервис С#?
+Как заставить службу WCF использовать протокол HTTPS
+Перехватчики ведения журнала Apache CXF не запускаются в Weblogic в приложении Spring Boot
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+InvalidDataException: превышен предел длины составного тела 16384
+Вопросы
+C#
+InvalidDataException: превышен предел длины составного тела 16384
+Что я пытаюсь сделать:
+
+Я пытаюсь загрузить multipart/form-data с файлом и BLOB-объектом JSON с помощью Postman в ASP.NET Core 2.2 APIController и передать файл во временный файл на диске, а не полностью в память, поскольку файлы, вероятно, имеют потенциально большой размер (20 МБ - 2 ГБ). Я следовал обоим примерам из https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.2, начиная с примера с большим файлом, но я также пытался протестировать пример с небольшим файлом с той же ошибкой, похожими, но разными трассировками стека. Сервер использует Kestrel.
+
+Трассировка стека примера большого файла (пойманная в отладчике):
+
+Exception has occurred: CLR/System.IO.InvalidDataException
+Exception thrown: 'System.IO.InvalidDataException' in System.Private.CoreLib.dll: 'Multipart body length limit 16384 exceeded.'
+   at Microsoft.AspNetCore.WebUtilities.MultipartReaderStream.UpdatePosition(Int32 read)
+   at Microsoft.AspNetCore.WebUtilities.MultipartReaderStream.<ReadAsync>d__36.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.WebUtilities.StreamHelperExtensions.<DrainAsync>d__3.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.WebUtilities.MultipartReader.<ReadNextSectionAsync>d__20.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at LookupServiceAPI.Helpers.FileStreamingHelper.<StreamFile>d__1.MoveNext() in <hidden-path-to-project>\Helpers\FileStreamingHelper.cs:line 35
+Трассировка стека примера небольшого файла (возвращается в ответ, не попадает ни в какие точки останова или перехваты исключений отладчика):
+
+System.IO.InvalidDataException: Multipart body length limit 16384 exceeded.
+   at Microsoft.AspNetCore.WebUtilities.MultipartReaderStream.UpdatePosition(Int32 read)
+   at Microsoft.AspNetCore.WebUtilities.MultipartReaderStream.ReadAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.StreamHelperExtensions.DrainAsync(Stream stream, ArrayPool`1 bytePool, Nullable`1 limit, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.MultipartReader.ReadNextSectionAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.FormValueProviderFactory.AddValueProviderAsync(ValueProviderFactoryContext context)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.CompositeValueProvider.CreateAsync(ActionContext actionContext, IList`1 factories)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.CompositeValueProvider.CreateAsync(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+Вот мой базовый код контроллера и вспомогательные классы для примера с большим файлом:
+
+FileStreamingHelper.cs
+
+using System;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Net.Http.Headers;
+
+namespace LookupServiceAPI.Helpers
+{
+    public static class FileStreamingHelper
+    {
+        private static readonly FormOptions _defaultFormOptions = new FormOptions();
+
+        public static async Task<FormValueProvider> StreamFile(this HttpRequest request, Stream targetStream)
+        {
+            if (!MultipartRequestHelper.IsMultipartContentType(request.ContentType))
+            {
+                throw new Exception($"Expected a multipart request, but got {request.ContentType}");
+            }
+
+            // Used to accumulate all the form url encoded key value pairs in the 
+            // request.
+            var formAccumulator = new KeyValueAccumulator();
+
+            var boundary = request.GetMultipartBoundary();
+            var reader = new MultipartReader(boundary, request.Body);
+            reader.BodyLengthLimit = Int32.MaxValue;
+            reader.HeadersLengthLimit = Int32.MaxValue;
+            var section = await reader.ReadNextSectionAsync(); //EXCEPTION HERE
+            while (section != null)
+            {
+                ContentDispositionHeaderValue contentDisposition;
+                var hasContentDispositionHeader = ContentDispositionHeaderValue.TryParse(section.ContentDisposition, out contentDisposition);
+
+                if (hasContentDispositionHeader)
+                {
+                    if (MultipartRequestHelper.HasFileContentDisposition(contentDisposition))
+                    {
+                        await section.Body.CopyToAsync(targetStream);
+                    }
+                    else if (MultipartRequestHelper.HasFormDataContentDisposition(contentDisposition))
+                    {
+                        // Content-Disposition: form-data; name = "key"
+                        //
+                        // value
+
+                        // Do not limit the key name length here because the 
+                        // multipart headers length limit is already in effect.
+                        var key = HeaderUtilities.RemoveQuotes(contentDisposition.Name);
+                        var encoding = GetEncoding(section);
+                        using (var streamReader = new StreamReader(
+                            section.Body,
+                            encoding,
+                            detectEncodingFromByteOrderMarks: true,
+                            bufferSize: 1024,
+                            leaveOpen: true))
+                        {
+                            // The value length limit is enforced by MultipartBodyLengthLimit
+                            var value = await streamReader.ReadToEndAsync();
+                            if (String.Equals(value, "undefined", StringComparison.OrdinalIgnoreCase))
+                            {
+                                value = String.Empty;
+                            }
+                            formAccumulator.Append(key.Value, value); // For .NET Core <2.0 remove ".Value" from key
+
+                            if (formAccumulator.ValueCount > _defaultFormOptions.ValueCountLimit)
+                            {
+                                throw new InvalidDataException($"Form key count limit {_defaultFormOptions.ValueCountLimit} exceeded.");
+                            }
+                        }
+                    }
+                }
+
+                // Drains any remaining section body that has not been consumed and
+                // reads the headers for the next section.
+                section = await reader.ReadNextSectionAsync();
+            }
+
+            // Bind form data to a model
+            var formValueProvider = new FormValueProvider(
+                BindingSource.Form,
+                new FormCollection(formAccumulator.GetResults()),
+                CultureInfo.CurrentCulture);
+
+            return formValueProvider;
+        }
+
+        private static Encoding GetEncoding(MultipartSection section)
+        {
+            MediaTypeHeaderValue mediaType;
+            var hasMediaTypeHeader = MediaTypeHeaderValue.TryParse(section.ContentType, out mediaType);
+            // UTF-7 is insecure and should not be honored. UTF-8 will succeed in 
+            // most cases.
+            if (!hasMediaTypeHeader || Encoding.UTF7.Equals(mediaType.Encoding) || mediaType.Encoding == null)
+            {
+                return Encoding.UTF8;
+            }
+            return mediaType.Encoding;
+        }
+    }
+}
+MultipartRequestHelper.cs
+
+using System;
+using System.IO;
+using Microsoft.Net.Http.Headers;
+
+namespace LookupServiceAPI.Helpers
+{
+    public static class MultipartRequestHelper
+    {
+        public static bool IsMultipartContentType(string contentType)
+        {
+            return !string.IsNullOrEmpty(contentType)
+                   && contentType.IndexOf("multipart/", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        public static bool HasFormDataContentDisposition(ContentDispositionHeaderValue contentDisposition)
+        {
+            // Content-Disposition: form-data; name = "key";
+            return contentDisposition != null
+                   && contentDisposition.DispositionType.Equals("form-data")
+                   && string.IsNullOrEmpty(contentDisposition.FileName.Value)
+                   && string.IsNullOrEmpty(contentDisposition.FileNameStar.Value);
+        }
+
+        public static bool HasFileContentDisposition(ContentDispositionHeaderValue contentDisposition)
+        {
+            // Content-Disposition: form-data; name = "myfile1"; filename = "Misc 002.jpg"
+            return contentDisposition != null
+                   && contentDisposition.DispositionType.Equals("form-data")
+                   && (!string.IsNullOrEmpty(contentDisposition.FileName.ToString())
+                       || !string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString()));
+        }
+    }
+}
+Минимальный контроллер:
+
+[Route("api/v0.1/data/excel")]
+[ApiController]
+public class DataExcelController : ControllerBase
+{
+    [HttpPost, DisableRequestSizeLimit]
+    public async Task<IActionResult> ImportExcel()
+    {
+        var processID = Guid.NewGuid();
+        FormValueProvider multipartContent;
+        string tempFilePath = Path.GetTempPath() + processID;
+        using(var tempStream = System.IO.File.OpenWrite(tempFilePath))
+        {
+            multipartContent = await Request.StreamFile(tempStream);
+        }
+        /** Other unnecessary code **/
+        return Ok();
+    }
+}
+Startup.cs
+
+namespace LookupServiceAPI
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.Configure<FormOptions>(x =>
+            {
+                x.MultipartHeadersLengthLimit = Int32.MaxValue;
+                x.MultipartBoundaryLengthLimit = Int32.MaxValue;
+                x.MultipartBodyLengthLimit = Int64.MaxValue;
+                x.ValueLengthLimit = Int32.MaxValue;
+                x.BufferBodyLengthLimit = Int64.MaxValue;
+                x.MemoryBufferThreshold = Int32.MaxValue;
+            });
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseMvc();
+        }
+    }
+}
+Изображение конфигурации Postman (на изображении указаны только заданные значения, значения в заголовках не заданы): InvalidDataException: превышен предел длины составного тела 16384
+
+Вывод консоли почтальона: InvalidDataException: превышен предел длины составного тела 16384
+
+Что я пробовал:
+
+От Превышен предел длины составного тела 16384:
+
+Установить MemoryBufferThreshold
+Установить MultipartBodyLengthLimit
+Убедитесь, что в заголовках, настроенных почтальоном, Content-Type вручную не установлено значение multipart/form-data.
+От Исключение превышено ограничение длины составного тела:
+
+Установить ValueLengthLimit
+Б/у [DisableRequestSizeLimit]
+Где я думаю проблема, но я не уверен в обходном пути или в том, что вызывает проблему:https://github.com/aspnet/AspNetCore/blob/master/src/Http/WebUtilities/src/MultipartReader.cs#L48-L50
+
+Кажется, преамбула моего запроса выходит за пределы размера 1024 * 16 (16384), установленного для DefaultHeadersLengthLimit, но я понятия не имею, почему это может быть так. Или, если преамбула должна быть больше, чем это, как обойти это, не повторно реализуя весь набор классов или не ожидая, пока Microsoft выпустит исправление, которое, похоже, не идет по конвейеру: https://github.com/aspnet/Mvc/issues/7019https://github.com/aspnet/HttpAbstractions/issues/736
+
+Очевидно, кто-то исправил свою проблему, очень похожую на мою (https://github.com/aspnet/Mvc/issues/5128#issuecomment-307675219) здесь:https://github.com/aspnet/Mvc/issues/5128#issuecomment-307962922, но я не могу понять, как понять, применимо ли это вообще.
+
+Надеюсь, этой информации достаточно. Если нет, пожалуйста, дайте мне знать, что вам нужно, и я буду рад предоставить его или проверить любые предложения. Я застрял, исследуя это и пробуя все, что могу найти, уже более 6 часов.
+
+ 08.04.2019 23:56
+6
+0
+6 596
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+ Ответ принят как подходящий
+Я решил свой вопрос. Оказывается, это был URL, который я использовал.
+
+Чтобы решить мою проблему, я понял, что отправляю на конечную точку http вместо конечной точки https, вызывая перенаправление. Я изменил свой URL-адрес с http://localhost:5000/ на https://localhost:5001/, и все сразу заработало.
+
+Интересно, что это также вызвало проблему в cURL с журналом, выглядящим так:
+
+== Info: Connected to localhost (::1) port 5000 (#0)
+=> Send header, 257 bytes (0x101)
+0000: POST /api/v0.1/data/excel HTTP/1.1
+0024: Host: localhost:5000
+003a: User-Agent: curl/7.64.0
+0053: Accept: */*
+0060: cache-control: no-cache
+0079: Content-Length: 13286446
+0093: Content-Type: multipart/form-data; boundary=--------------------
+00d3: ----7b12fc7773ed7878
+00e9: Expect: 100-continue
+00ff: 
+== Info: Expire in 1000 ms for 0 (transfer 0xa6aa80)
+<= Recv header, 33 bytes (0x21)
+0000: HTTP/1.1 307 Temporary Redirect
+<= Recv header, 37 bytes (0x25)
+0000: Date: Tue, 09 Apr 2019 18:04:24 GMT
+<= Recv header, 17 bytes (0x11)
+0000: Server: Kestrel
+<= Recv header, 19 bytes (0x13)
+0000: Content-Length: 0
+<= Recv header, 54 bytes (0x36)
+0000: Location: https://localhost:5001/api/v0.1/data/excel
+== Info: HTTP error before end of send, stop sending
+<= Recv header, 2 bytes (0x2)
+0000: 
+== Info: Closing connection 0
+Изменение конечной точки также исправило это.
+
+Понятия не имею, почему загрузка multipart/form-data прерывается из-за этого перенаправления. Если у кого-то есть идеи, почему, я был бы рад узнать.
+
+ 09.04.2019 20:08
+Добавление [FromForm] устранило мою проблему.
+
+например.
+
+[HttpPost]
+[RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
+[Route("far")]
+public SingleResponseModel<bool> UploadFar([FromForm] IFormFile file)
+{
+    return _fileUploadService.UploadFar(file);
+}
+ 16.10.2020 12:30
+У меня похожая проблема, и я обнаружил, что проблема связана с точкой останова отладки в Visual Studio, потому что я думаю, что Visual Studio пытается прочитать поток, а после этого пытается прервать поток,
+
+поэтому попробуйте пропустить представление Request.From в просмотре или быстром просмотре отладки
+
+ 29.01.2021 20:34
+Я использую ядро ​​​​asp.net 3.1, и я тоже сталкиваюсь с этой ситуацией.
+
+Когда я передаю большой файл в API, это всегда вызывает System.IO.InvalidDataException: Multipart body length limit 16384 exceeded.
+
+Теперь я нашел этот вопрос и прочитал ответ @Sylex, поэтому я использую https://localhost:5001 для запроса API, это работает !!!
+
+Зная, что произошло перенаправление, поэтому я удаляю app.UseHttpsRedirection(); в Startup.cs -> void Configure(), и повторное использование http://localhost:5000/, теперь я могу запросить нормально.
+
+ 22.06.2021 04:02
+Другие вопросы по теме
+Тестирование TypeFilterAttribute с внедрением зависимостей
+Сделать изображение доступным через HTTP
+Переместите свойства DbSet<TEntity> в отдельный класс в Entity Framework Core
+Аутентификация и авторизация в качестве центрального MicroService ASP.NET
+Обработка исключений в сервисной структуре
+Проблема с Angular/ASP.NET Core 2.1 CORS
+Как заставить обратный прокси-сервер Service Fabric работать в Azure
+Где находится каталог dist в VS при запуске шаблона Angular?
+Drive API v3, C# — иерархия папок
+Веб-API дает 404 на IIS, работает на IISExpress
+Похожие вопросы
+Тестирование TypeFilterAttribute с внедрением зависимостей
+Аутентификация пользователя по идентификатору, записанному в базе данных
+Как исправить нехватку памяти в системе «Clone.Bitmap» в C#
+Чтение листов Excel асинхронно
+Использование абстрактного класса с общими параметрами в объекте INotifyPropertyChanged
+API служебной шины Microsoft Azure — как добавить AutoDeleteOnIdle в описание подписки
+Используя SQlite в Unity, что такое SqliteCommand для копирования таблицы из одной базы данных в другую базу данных, учитывая, что обе таблицы идентичны?
+Проблема Xamarin Layout, как сделать кнопку буксировки внизу экрана
+С# для чтения значения OUTPUT из хранимой процедуры
+Параметр запроса Wiremock.Net с запросом SOQL
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как изменить текущее значение переменной Postman в области коллекции?
+Вопросы
+POSTMAN
+Как изменить текущее значение переменной Postman в области коллекции?
+У меня есть переменная "TOKEN" в моем объем коллекции. Я пытаюсь установить значение, используя скрипты Tests, когда делаю запрос. Но переменная не изменилась.
+
+Итак, я пытаюсь использовать переменную объем среды. И это работает.
+
+Почему это не работает в объем коллекции? Я читал о области видимости переменной postman здесь и хорошо ее понимаю.
+
+Вот несколько скриншотов:
+
+1. Сначала я вызываю конечную точку входа.
+
+Как изменить текущее значение переменной Postman в области коллекции?
+
+Ниже приведен результат консоли. Ничего плохого.
+
+Как изменить текущее значение переменной Postman в области коллекции?
+
+Пока я не попытаюсь получить конечную точку всех пользователей, которым требуется токен в заголовке запроса. Статус 401, потому что токен нулевой. Если токен не нулевой, то он вернет 200:
+
+Как изменить текущее значение переменной Postman в области коллекции?
+
+Это изящно работает, когда я добавляю переменную «TOKEN» в среду. Переключение на Нет среды снова приведет к коду состояния 401:
+
+Как изменить текущее значение переменной Postman в области коллекции?
+
+ 05.05.2019 11:52
+3
+6
+3 370
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+Теперь вы можете использовать:
+
+pm.collectionVariables.set("variable_key", "variable_value");
+В своем первоначальном ответе в июне 2019 года я написал, что переменные коллекции не редактируются с помощью скриптов и могут быть изменены только вручную. Как уже отмечалось, это уже не так. . . .*
+ 01.06.2019 11:12
+Отключите Automatic persist variable values в настройках почтальона.
+
+изображение
+
+ 31.10.2019 09:27
+Кажется, вы можете устанавливать переменные env только тогда, когда выбрана какая-то среда: https://learning.postman.com/docs/postman/scripts/postman-sandbox/#environment-and-global-variables
+
+
+
+ 07.02.2020 18:27
+ Ответ принят как подходящий
+Это может быть новым, поскольку этот вопрос был опубликован, но для всех остальных обнаружив это, вы можете установить переменные коллекции, используя:
+
+pm.collectionVariables.set(key, value)
+Видеть: https://learning.postman.com/docs/sending-requests/variables/#defining-variables-in-scripts
+
+ 20.05.2020 01:19
+Другие вопросы по теме
+Как добавить элемент в тело json из предварительного запроса или файла данных?
+Как найти элемент внутри ответа json, а затем установить переменную на основе содержимого другого элемента внутри этого объекта?
+Как отправить массив объектов в теле запроса в формате JSON через Postman?
+Доступ к Laravel Api с помощью POSTMAN (404 не найден)
+Неопределенная переменная: токен в тесте почтальона входа в систему Laravel
+Ошибка токена доступа Twitter OAuth: токен запроса отсутствует
+REST (PHP, CURL) PUT/POST XML Проблема: 400 Неверный запрос, ответ «Неверный URL» с Walmart OAuth API (Postman для тестирования)
+Запрос app.post не работает и выдает ошибку
+Как написать тест для сопоставления данных в массиве в тесте почтальона
+Почтальон - отключить алгоритм сопоставления
+Похожие вопросы
+Ошибка параметра Binding Exception при сборе данных из Mysql
+Как загрузить файл (*.txt или *.pdf), полученный от ответа GET API через команду Curl?
+Laravel Api Postman Загрузить изображение Возврат Null
+404 Не найдено при тестировании API
+Приложение пула приложений IIS запрашивает пароль (базовая аутентификация), но ни почтальон, ни бессонница не могут ответить
+Получите сегодняшние файлы с помощью поиска с помощью плагина plone.restapi, возвращающего ошибку запроса plone
+Тестирование маршрутов API Laravel с использованием POSTMAN
+Есть ли способ получить вывод сеанса telnet как часть тестовых сценариев почтальона?
+Как вы вводите модуль в Postman?
+Не удалось добавить API в Kong
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как сохранить jwt в файле cookie и передать его функции аутентификации при перенаправлении страницы?
+Вопросы
+NODE.JS
+Как сохранить jwt в файле cookie и передать его функции аутентификации при перенаправлении страницы?
+У меня есть экспресс-бэкэнд node.js, созданный с помощью Postman и протестированный с помощью Jest. Написал фронтенд с хбс и следующий шаг их прошивать. Однако я все еще продолжаю получать сообщение об ошибке «пожалуйста, аутентифицируйте» из моей функции аутентификации, что, я думаю, связано с тем, что я не могу успешно передать свой токен jwt.
+
+Итак, на странице входа (пользователи/логин) я хочу войти в систему с адресом электронной почты и паролем, затем я хочу перенаправить на свою страницу (пользователи/я), где я могу выполнять другие действия, принадлежащие этому пользователю.
+
+Внешний интерфейс код страницы входа:
+
+<section class = "login-bg">
+        <div class = "login-form">
+            <p>Welcome to Task Manager, please log in!</p>
+            <form class = "input-group" action = "/users/login" method = "POST">
+                <label>Email:</label>
+                <input type = "email" name = "email" placeholder = "type your email" value = "{‌{user.email}}" required >
+                <label>Password:</label>
+                <input type = "password" name = "password" placeholder = "type your password" value = "{‌{user.password}}" required>
+
+                <button class = "button" type = "submit">Log In</button>
+            </form>
+        </div>
+    </section>
+Серверная часть
+
+в промежуточном программном обеспечении/auth.js
+
+const jwt = require('jsonwebtoken')
+const User = require('../models/user')
+
+const auth = async (req, res, next) => {
+    try {
+        const token = req.header('Authorization').replace('Bearer ', '')
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const user = await User.findOne({_id: decoded._id, 'tokens.token': token})
+
+        if (!user) {
+            throw new Error()
+        }
+
+        req.token = token
+        req.user = user
+        next()
+
+    } catch (error) {
+        res.status(401).send({error: 'Please authenticate.'})
+    }
+}
+
+module.exports = auth
+в src/routers/users.js
+
+router.post('/login', async (req, res) => {
+    try {
+        const user = await User.findByCredentials(req.body.email, req.body.password)
+        const token = await user.generateAuthToken()
+        res.cookie('jwt',token, { httpOnly: true, secure: true, maxAge: 3600000 })
+        res.redirect('/users/me')
+    } catch (error) {
+        res.status(400).send()
+    }
+})
+Однако, когда я делаю console.info(document.cookie) в пользователях/я, он говорит, что не определено.
+
+Затем я установил и импортировал cookie-parser в app.js и попытался написать эту часть в src/routers/users.js:
+
+router.get('/me', auth, async (req, res) => {
+    console.info('Cookies: ', req.cookies)
+    try {
+        res.render('me', {name: user.name})
+    } catch (error) {
+        res.status(500).send()
+    }
+})
+но эта консоль ничего не печатает, возможно, потому что я получаю сообщение об ошибке от авторизации.
+
+У меня также есть файл js, прикрепленный ко мне на странице, но я понятия не имею, смогу ли я написать так, возможно, неправильно:
+
+const userToken = document.cookie.jwt.token
+
+fetch('/users/me', {
+    method: 'POST',
+    headers: {
+     'Authorization': 'Bearer ' + userToken
+    }
+})
+.then(res => res.json())
+.then(data => { console.info(data) })
+.catch(err => { console.info(err) })
+то в Сети/Заголовки у меня
+
+URL-адрес запроса:
+
+http://локальный:3000/пользователи/логин
+
+Метод запроса:
+
+СООБЩЕНИЕ
+
+Код состояния:
+
+302 найдено
+
+Удаленный адрес:
+
+Реферальная политика:
+
+нет-реферера-при-понижении
+
+Заголовки ответа
+
+Связь:
+
+поддерживающий жизнь
+
+Содержание-длина:
+
+62
+
+Тип содержимого:
+
+текст/html; кодировка = utf-8
+
+Дата:
+
+пт, 07 июня 2019 г., 18:41:47 по Гринвичу
+
+Место нахождения:
+
+/пользователи/я
+
+Set-Cookie:
+
+jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Y2NjNlMTQwMTQyYjE0MzhmZTJjNDMiLCJpYXQiOjE1NTk5MzI5MDd9.T_P8O-j98cs9gtahTzspJjx1qNMSe3M2OAyfs; Максимальный возраст=3600; Путь=/; Срок действия = пятница, 07 июня 2019 г., 19:41:47 по Гринвичу; Только HTTP; Безопасный
+
+Отличаться:
+
+Принимать
+
+X-Powered-By:
+
+выражать
+
+Нет файлов cookie запроса, только файлы cookie ответа. Я не уверен, что это значит...@_@
+
+Я хочу передать jwt для успешного входа в систему и правильного отображения моей страницы, как я могу это сделать?
+
+ 10.06.2019 12:05
+7
+2
+16 127
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+ Ответ принят как подходящий
+Ваш файл cookie токена jwt не работает, потому что он объявляет флаг secure: true в следующем коде:
+
+res.cookie('jwt',token, { httpOnly: true, secure: true, maxAge: 3600000 })
+что приводит к флагу Secure в ответе HTTP, указывающему, что этот файл cookie доступен только в среде https:
+
+Set-Cookie:
+jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Y2NjNlMTQwMTQyYjE0MzhmZTJjNDMiLCJpYXQiOjE1NTk5MzI5MDd9.T_P8O-j98cs9gtahTzspJjx1qNMSe3M5OAySyeH25fs; 
+Max-Age=3600; Path=/; 
+Expires=Fri, 07 Jun 2019 19:41:47 GMT; HttpOnly; Secure
+Поскольку ваш URL-адрес запроса использует HTTP (http://localhost:3000/users/login), браузер будет игнорировать файл cookie.
+
+ 10.06.2019 12:26
+Из документов экспресс-сессии:
+Установите безопасный тег только в том случае, если вы находитесь в рабочей среде.
+
+    if (app.get('env') === 'production') {
+      app.set('trust proxy', 1) // trust first proxy
+      sess.cookie.secure = true // serve secure cookies
+    }
+ 08.08.2020 21:10
+Во-первых: вы не можете просмотреть файл cookie на стороне клиента, потому что вы установили следующее ({secure:true, httpOnly:true}) -secure означает, что он должен использовать файл cookie только в сети https, а -httpOnly означает, что файл cookie должен быть прочитан любым Javascript на стороне клиента.
+
+Во-вторых: вы действительно добавили заголовок «Авторизация» после создания jwt или просто поместили его в файл cookie ?
+
+Если да, то попробуйте:
+
+jwt.verify(token, <your secret>).then(user=> console.info(user)).catch(err=>console.info(err.toString());
+
+Для тех, кто может столкнуться с такой же проблемой в будущем
+
+ 24.09.2020 14:41
+Убедитесь, что вы установили cookie-parser на свой сервер.
+
+Бегать:
+
+npm i cookie-parser
+ 13.02.2022 14:49
+Другие вопросы по теме
+Сохранение данных в MongoDb возвращает ObjectParameterError
+Пустое тело почтового запроса — XMLHttpRequest на сервер Express
+Ассоциации: множественная реализация hasMany и ownTo
+Невозможно получить значение ключа из объекта с помощью ejs
+Nodejs (экспресс) работает, но запросы не работают
+Как включить файлы css для маршрутизаторов API в экспресс?
+Ошибка с сервера node js, но не указывает на какой-либо конкретный файл
+Как получить ответ от экспресс-сервера об ошибке, используя axios в приложении реакции
+Реагировать на экспресс-развертывание pm2
+Nodejs проверяет и обновляет поле базы данных через день после его создания
+Похожие вопросы
+Создать/обновить файл/код JavaScript с помощью Nodejs
+Не удалось установить "@angular/cli"
+Как правильно подключить приложение Node.js к узлу Cassandra?
+Ошибка: EPERM: операция не разрешена, отключите связь при запуске публикации npm
+Синхронизация реализации запросов mysql в узле
+Как использовать литералы шаблонов для cms?
+Упорядочить включение с условием «Где»
+Запрос транзакции Knex и ограничение внешнего ключа Postgres
+Как установить ключ массива в качестве индекса в javascript/node js
+Не удается разобрать массив объектов JSON
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как преобразовать класс в python в фрейм данных pandas?
+Вопросы
+PYTHON
+Как преобразовать класс в python в фрейм данных pandas?
+Я пытаюсь создать фрейм данных pandas из объекта класса в python.
+
+Объект класса — это вывод скрипта postman python, который я получил из следующего руководства: https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/
+
+Я хочу получить результат этого
+
+print(response.text)
+
+который дает:
+
+[{"id":578149602163689207,"name":"Axel Network Test"},{"id":578149602163688579,"name":"Your org"},{"id":578149602163688880,"name":"Your org"},{"id":578149602163688885,"name":"Your org"},{"id":578149602163689038,"name":"Tory's Test Lab"},.......
+Я хочу поместить это в фрейм данных pandas со столбцом идентификатора и столбцом имени.
+
+import requests
+import pandas as pd
+
+url = "https://api.meraki.com/api/v0/organizations"
+
+headers = {
+    'X-Cisco-Meraki-API-Key': "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    'User-Agent': "PostmanRuntime/7.15.0",
+    'Accept': "*/*",
+    'Cache-Control': "no-cache",
+    'Postman-Token': "7d29cb4e-b022-4954-8fc8-95e5361d15ba,1a3ec8cb-5da8-4983-956d-aab45ed00ca1",
+    'accept-encoding': "gzip, deflate",
+    'referer': "https://api.meraki.com/api/v0/organizations",
+    'Connection': "keep-alive",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, headers=headers)
+
+я устал писать
+
+df = pd.DataFrame(response, columns=['id', 'name']) 
+но это производит много ошибок.
+
+См. журнал ошибок: https://pastebin.com/4BKFYng1.
+
+Как я могу достичь того, чего хочу?
+
+ 18.06.2019 12:05
+3
+5
+1 650
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+Поскольку текст ответа находится в json, вы можете:
+1. Преобразуйте json в dict.
+2. Подайте dict как фрейм данных.
+
+#load the json as a dict
+data = json.loads(response.text)
+
+df = pd.DataFrame.from_dict(data, orient='index')
+df.reset_index(level=0, inplace=True)
+Затем вы можете изменить имя столбцов или что-нибудь еще.
+
+ 18.06.2019 12:10
+После получения ответа вам не хватает десериализации ответа json на объект python, как упоминалось в @ASHu2.
+
+import pandas as pd
+import json 
+data = json.loads(response.text)
+df= pd.DataFrame(data=data, columns=["id","name"]) 
+#Optional define index
+df.set_index('id', inplace=True)
+ 18.06.2019 12:11
+Попробуй это:
+
+df = pd.DataFrame.from_dict(response.json())
+
+вместо этого:
+
+df = pd.DataFrame(response, columns=['id', 'name'])
+
+ 18.06.2019 12:27
+ Ответ принят как подходящий
+read_json принимает строку JSON или файловый объект JSON.
+
+In [10]: import pandas as pd    
+
+In [11]: df = pd.read_json(response.text)
+
+In [12]: df
+Out[12]:
+                   id               name
+0  578149602163689207  Axel Network Test
+1  578149602163688579           Your org
+2  578149602163688880           Your org
+3  578149602163688885           Your org
+4  578149602163689038    Tory's Test Lab
+ 18.06.2019 12:34
+Другие вопросы по теме
+Получение ValueError при написании цикла if-else для заполнения столбца фрейма данных на основе условия
+Объедините операторы if в одну цепочку операторов сравнения
+Как добавить список списка в существующий фрейм данных в виде отдельных столбцов
+Преобразование объекта Dask Series в метку времени
+Форматирование строки Python в процентах («TypeError: недостаточно аргументов для строки формата»)
+Может ли функция вернуться без оператора return?
+Сглаживание списка из токенов списка списков в python?
+Как преобразовать встроенный файл JSON в CSV в pandas python
+Ошибка установки pip3 с пакетом iconservice
+Есть ли функция проверки непрерывности в списке?
+Похожие вопросы
+Как я могу зациклить генератор в этой ситуации?
+Как издеваться над flask.request с помощью unittest?
+Как упростить этот код о комбинации итераций в python
+Показать окно в элементе меню, нажатом Python Maya
+Включите регистрацию операторов отладки
+Как присвоить значения столбцу с помощью мультииндексного фильтра?
+Получение ValueError при написании цикла if-else для заполнения столбца фрейма данных на основе условия
+Есть ли способ создать счетчик, размер которого постепенно уменьшается?
+Объедините операторы if в одну цепочку операторов сравнения
+Как я могу определить репозиторий, отличный от Python, в качестве зависимости для моего пакета Python?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как посчитать количество значений в массиве?
+Вопросы
+JAVASCRIPT
+Как посчитать количество значений в массиве?
+Я пытаюсь подсчитать значения массива json.
+
+Я хочу подсчитать количество идентификаторов в массиве данных «sierra», если «beta = b». Следовательно, проверка значения data[].beta на соответствие переменной среды ("B"), установленной на значение "b".
+
+Проблема здесь в том, что у меня нет «sierra» в каждой итерации данных [].
+
+{
+  "data": [{
+        "alpha": "a",
+        "beta": "b",
+        "delta": {
+            "cat": "dog"
+        },
+        "gamma": {
+            "sierra": {
+                "data": [
+                    {
+                        "type": "alphabet",
+                        "id": "a"
+                    },
+                    {
+                        "type": "alphabet",
+                        "id": "b"
+                    }
+                ]
+            }
+        }
+   },
+{
+        "alpha": "a",
+        "beta": "b",
+        "delta": {
+            "cat": "dog"
+        },
+        "bravo": {
+                "data": [
+                    {
+                        "type": "number",
+                        "id": "1"
+                    },
+                    {
+                        "type": "number",
+                        "id": "2"
+                    }
+                ]
+            }
+        }
+   },
+{
+        "alpha": "x",
+        "beta": "y",
+        "delta": {
+            "cat": "dog"
+        },
+        "gamma": {
+            "sierra": {
+                "data": [
+                    {
+                        "type": "alphabet",
+                        "id": "c"
+                    },
+                    {
+                        "type": "alphabet",
+                        "id": "d"
+                    }
+                ]
+            }
+        }
+   }]
+}
+Над json находится тело ответа, которое я вижу в почтальоне. "loop" - это количество циклов for.
+
+РЕДАКТИРОВАТЬ 1: Я пробовал это:
+
+1. pm.response.json().data[loop].gamma.sierra.data().id).size()
+
+2. for(var loop =0; loop < pm.response.json().data.length; loop++)
+{
+ if (pm.response.json().data[loop].beta===pm.variables.get("B"))
+{      
+        pm.response.json().data.map((item, loop) => {
+            if (item.gamma){ // check if gamma key is present
+                console.info(item.gamma.sierra.filter(data =>data.id 
+                                                      ).length); // 
+            }
+        });
+        result=true;
+        break;
+
+    }
+}
+pm.expect(true).to.eql(result);
+Ожидается: 2
+
+Actual: TypeError: Cannot read property 'sierra' of undefined
+Actual: item.relationships.apps.filter is not a function
+ 27.06.2019 08:43
+0
+10
+210
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+Вы можете получить к нему доступ следующим образом. Если у вас есть несколько записей данных, вы также можете использовать каждый цикл для расчета.
+
+a = {
+ "data": [ 
+ {
+        "alpha": "a",
+        "beta": "b",
+        "delta": {
+            "cat": "dog"
+        },
+        "gamma": {
+            "sierra": {
+                "data": [
+                    {
+                        "type": "alphabet",
+                        "id": "a"
+                    },
+                    {
+                        "type": "alphabet",
+                        "id": "b"
+                    }
+                ]
+            }
+        }
+    }
+]
+}
+
+console.info(a.data[0].gamma.sierra.data.length);
+ 27.06.2019 08:45
+Вы можете использовать приведенный ниже код:
+
+pm.response.json().data[0].gamma.sierra.data.filter( d => d.id ).length
+
+Надеюсь, поможет.
+
+ 27.06.2019 08:48
+ Ответ принят как подходящий
+Вы можете использовать динамический подход и передать ключ объекта, где вы хотите подсчитать определенный внутренний ключ.
+
+function count(object, key, subKey) {
+    const noObject = o => !o || typeof o !== 'object';
+
+    function subCount(object) {
+        if (noObject(object)) return 0;
+        if (subKey in object) return 1;
+        return Object.values(object).reduce((s, o) => s + subCount(o), 0);
+    }
+
+    if (noObject(object)) return 0;
+    if (key in object) return subCount(object[key]);
+    return Object.values(object).reduce((s, o) => s + count(o, key, subKey), 0);
+}
+
+var data = { data: [{ alpha: "a", beta: "b", delta: { cat: "dog" }, gamma: { sierra: { data: [{ type: "alphabet", id: "a" }, { type: "alphabet", id: "b" }] } } }] };
+
+console.info(count(data, 'sierra', 'id')); // 2
+ 27.06.2019 08:51
+pm.response.json().data.map((item, loop) => {
+    if (item.beta === "b" && item.gamma){ // check if gamma key is present
+
+        console.info(item.gamma.sierra.data.filter(data => data.id).length); // 
+    }
+});
+Джсфиддл
+
+ 27.06.2019 09:08
+Другие вопросы по теме
+«обратное» транспонирование / сведение
+Как сохранить значения из списка в массив объектов в ReactJS
+$concatArrays с $map игнорирует $concatArrays
+Отображать массив двух разных размеров в таблице
+Удалить ключ совпадающего номера в [String: [NSNumber]]
+Фильтрация вложенного массива JSON в javascript и возврат внутреннего массива, соответствующего критериям
+Как я могу уменьшить вложенный массив до одного массива объекта
+Использование «этого» в функции javascript, прикрепленной к свойству объекта
+Удалить последовательный массив с повторяющимися значениями в многомерном массиве с помощью PHP
+Как сохранить данные из ответа json API в массив в ReactJS?
+Похожие вопросы
+Как преобразовать минуты в часы с помощью moment.js
+Сделайте навигационные таблетки bootsrap4.x с тумблером вместо кнопки или ссылки, чтобы он переключался
+Как добавить тег ссылки «a» с гиперссылкой в ​​​​приложении Reactjs
+Как сохранить значения из списка в массив объектов в ReactJS
+Создайте пользовательское событие, например «щелчок» для длинного касания
+Динамическое заполнение раскрывающегося списка из xhttp.open("Get"); отклик
+Получение значений внутри тега HTML
+Введите Eroor :message_str.split не является функцией
+Обновление родительского компонента только после завершения работы нескольких дочерних компонентов
+Как я могу открыть страницу в новом окне, используя javascript или typescript?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Получить значение атрибута скрытого элемента формы
+Вопросы
+JAVASCRIPT
+Получить значение атрибута скрытого элемента формы
+Я использую Postman для автоматизации некоторых тестов. Мне нужно получить значение атрибута value в скрытом поле с именем «выполнение»:
+
+<form class = "app-form" method = "post" id = "fm1" action = "login" _lpchecked = "1">
+    <input type = "hidden" name = "execution" value = "633ffc0f">
+</form>
+В почтальоне для этого есть только cheerio. Я пробовал варианты следующего, но ни один из них не работает:
+
+$('input#execution').attr("value");
+$('input[name=execution]').attr("value");
+$('input[type=hidden]').attr("value");
+$(':hidden#execution').attr("value");
+$('input:hidden[name=execution]').attr("value");
+Большое спасибо!
+
+ 22.07.2019 10:28
+4
+0
+2 096
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+Вот как вы получаете ценность
+
+const executionValue = $('input[name = "execution"]').val();
+console.info(executionValue);
+https://jsfiddle.net/chille1987/3dap9yk4/2/
+
+ 22.07.2019 10:36
+ Ответ принят как подходящий
+input[name=execution] у меня работает нормально
+
+console.info($('input[type=hidden]').attr("value"));
+console.info($('input[type=hidden]').val());
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<form class = "app-form" method = "post" id = "fm1" action = "login" _lpchecked = "1">
+    <input type = "hidden" name = "execution" value = "633ffc0f">
+</form>
+ 22.07.2019 10:45
+используйте это для доступа к значению
+
+$('input[name = "execution"]').val();
+ 22.07.2019 10:58
+Используя ваш пример фрагмента HTML, вы мог используете этот базовый код на вкладке Tests, чтобы сохранить это значение в переменной среды в Postman:
+
+const $ = cheerio.load(pm.response.text());
+
+pm.environment.set("hiddenValue", $('input[name = "execution"]').val());
+Postman
+
+ 22.07.2019 11:15
+Другие вопросы по теме
+Проблема интерполяции AngularJS со службой перевода
+CSS для центрирования всего относительного тела по горизонтали, без обертки или полос прокрутки?
+Html-атрибут «Max» со значением с плавающей запятой создает проблемы
+Перетаскивание браузера по умолчанию - как его использовать с выделенным текстом?
+Как изменить стиль текста?
+Ползунок диапазона не сортируется при движении мыши вверх или вниз?
+Если еще для тернарного оператора PHP с использованием datatable
+Использовать значение из модели или, если оно не определено, использовать значение по умолчанию
+Изображение в html не отображается должным образом на странице
+Ползунок диапазона не достигает максимального значения, когда также есть шаги
+Похожие вопросы
+Установите публичный путь в проекте ReactJs с помощью Webpack 4
+Как выбрать переключатель по умолчанию с помощью элемента управления слоями leaflet.js?
+Html-атрибут «Max» со значением с плавающей запятой создает проблемы
+Приведение одного объекта к типу на основе тех же ключей другого объекта
+Есть ли действительная цель для вызовов параметризованных функций, которые устанавливаются в прослушивателях событий?
+JSONSchema — обязательное свойство, зависящее от родительского свойства
+Наблюдаемый Redux не обрабатывает ответ бэкэнда
+Как определить 2 последовательных определенного специального символа?
+Условный рендеринг не отображается - ReactJS
+Перетаскивание браузера по умолчанию - как его использовать с выделенным текстом?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Ошибка: Ошибка запроса с кодом состояния 400. Различия между отправкой в ​​POSTMAN и в приложении
+Вопросы
+JAVASCRIPT
+Ошибка: Ошибка запроса с кодом состояния 400. Различия между отправкой в ​​POSTMAN и в приложении
+В POSTMAN это работает:
+
+1) url: https://app/login
+2) method: POST
+3) body
+4) x-www-form-urlencoded
+5)username: ****,
+password: ****,
+grant_type: 'password',
+client_secret: '****',
+client_id: '****'
+В функции submit метод POST при отправке формы не работает. у меня ошибка:
+
+xhr.js?b50d POST https://app/login 400 (Bad Request)
+
+Error: Request failed with status code 400 at createError (createError.js?2d83) at settle (settle.js?467f) at XMLHttpRequest.handleLoad (xhr.js?b50d)
+
+Во вкладке Network в response у меня есть:
+
+{"error":"invalid_client","error_description":"Client credentials were not found in the headers or body"}
+
+Авторизоваться
+
+class Login extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  handle = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  submit = (event) => {
+    event.preventDefault();
+
+    const body1 = {
+      username: this.state.email,
+      password: this.state.password,
+      grant_type: 'password',
+      client_secret: '****',
+      client_id: '****'
+    }
+
+    axios({ 
+      method: 'post', 
+      url: 'https://app/login', 
+      body: body1, 
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+      }) 
+      .then(res => { 
+        if (res.status === 200) {
+          console.info(res)
+        } 
+      }).catch(err => { 
+        console.error(err);
+      });
+
+  }
+
+  render () {
+    return (
+      <form action = "" method = "post" onSubmit = {this.submit}>
+        <div>
+          <label htmlFor = "email">Email</label>
+          <input type = "email" required  name = "email"
+            value = {this.state.email}
+            onChange = {this.handle}  />
+        </div>
+        <div>
+          <label htmlFor = "password">Password</label>
+          <input type = "password"name = "password"
+            value = {this.state.password}
+            onChange = {this.handle}  />
+        </div>
+        <button type = "submit" value = "Submit">Log</button>
+      </form>
+    )
+  }
+}
+Чем отличается отправка в POSTMAN и в приложении? Содержимое тела преобразовать в строку?
+
+ 24.07.2019 12:12
+0
+5
+9 299
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+ Ответ принят как подходящий
+Код указывает в Content-Type, что тело будет закодировано строкой URL, но в теле ему предоставляется объект JavaScript. Не похоже, что клиент Axios превращает этот объект тела в значение, закодированное в URL (т.е. из {a: 5, b: 2} в "a=5&b=2"). Код нуждается в функции преобразования этого. Популярным является qs.
+
+В противном случае ваши данные, вероятно, будут преобразованы в строку с помощью метода .toString(), который даст вам "[object Object]", вы сможете увидеть это на вкладке сети инструментов разработчика.
+
+ 24.07.2019 12:33
+Локальный хост: 3000/API/продукты 404 Ошибка Вы не создали res.get("/api/products") на server.js или не установили прокси. проверьте ниже настройки прокси.
+
+Ошибка прокси: не удалось запросить прокси /api/products Проверь это:
+
+интерфейс /package.json
+
+{ "имя": "интерфейс", "прокси": "http://127.0.0.1:5000", ... }
+
+остановить запуск фронтенда и бэкенда
+
+Сначала запустите бэкенд
+
+запуск нпм
+
+Затем внешний интерфейс
+
+компакт-диск интерфейс запуск нпм
+
+ 03.09.2020 08:54
+Axios обрабатывает ошибки по-другому.
+
+Чтобы узнать, в чем на самом деле проблема.
+
+Вы должны использовать error.request, чтобы проверить, есть ли ошибка в сделанном вами запросе.
+
+и используйте error.response, чтобы получить обратную связь об ошибке с сервера
+
+аксиос({ метод: 'пост', URL-адрес: 'https://приложение/логин', тело: тело1, заголовки: { «Тип контента»: «application/x-www-form-urlencoded» } }) .тог(рес => { если (рез.статус === 200) { console.info(разрешение) } }).поймать(ошибка => { если (ошибка. запрос) { console.info(ошибка.запрос) } если(ошибка.ответ){ console.info(ошибка.ответ) } });
+
+ 30.11.2020 12:51
+Код указывает в Content-Type, что тело будет закодировано строкой URL, но в теле ему предоставляется объект JavaScript. Не похоже, чтобы клиент Axios превращал этот объект тела в значение, закодированное в URL (т.е. из {a: 5, b: 2} в "a=5&b=2"). Код нуждается в функции преобразования этого. Популярным является qs.
+
+npm i qs;
+import qs as qs;
+
+axios.post(your_url,
+  qs.strigify({
+      key1:value1,
+      key2:value2,
+ }),{
+headers:{
+   'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+}
+})
+ 15.01.2021 12:45
+Другие вопросы по теме
+Изображения карточек React Native не отображаются
+Мне не удалось стилизовать активный маршрут в React с помощью реактивного маршрутизатора
+Локальное состояние дочернего компонента изменяется, когда изменения происходят внутри родительского компонента: ReactJS
+Зачем передавать ссылку на функцию вместо метода в событии onClick кнопки в ReactJS?
+Как запустить функцию useEffect после нажатия на событие?
+Array.prototype.indexOf() работает по-другому в React.js
+Как в React дочерний компонент вызывает функцию, которая выполняется в контексте родителя?
+Передать динамическое значение компоненту более высокого порядка
+Фильтрация через массив объектов JSON с помощью пользовательского интерфейса
+Ошибка щелчка триггера onClick: current.click не является функцией
+Похожие вопросы
+Действия при нажатии на динамические флажки
+Я получаю разные результаты из консоли и innerHTML
+Таймаут запроса??? как использовать routerlink для перехода на 3 страницы
+Как я могу очистить данные из нескольких v-текстовых полей при нажатии кнопки?
+Javascript Сравните значение данных в цикле с if
+Плавное воспроизведение встроенного видео в формате html5 путем полной предварительной загрузки видео
+Невозможно отправить электронную почту через nodemailer в nodejs
+Почему мы можем использовать свойство height вместо свойства max-height в анимированном аккордеоне?
+Как преобразовать плоский массив объектов (возможно, с несколькими родителями) во вложенный массив объектов
+Как сделать вызов функции в foreach() с помощью javascript
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как подсчитать все запросы на вытягивание с помощью REST API Azure DevOps
+Вопросы
+GIT
+Как подсчитать все запросы на вытягивание с помощью REST API Azure DevOps
+Я пытаюсь использовать REST API Azure DevOps для подсчета общего количества запросов на вытягивание в нашем репозитории и, в конечном итоге, использовать его, чтобы получить больше полезной информации из данных git.
+
+Я попытался использовать запрос GET к репозиторию, чтобы вернуть список запросов на вытягивание, но API Azure ограничивает количество ответов до 101 на запрос. Вы можете использовать $top и $skip, чтобы изменить количество и количество возвращаемых ответов, и $count, чтобы подсчитать возвращенные ответы. Это, однако, по-прежнему ограничивает результаты до 1000 при абсолютном максимуме и возвращает весь набор данных, содержащихся в PR, когда мне действительно просто нужно знать количество экземпляров в нем, мне не нужно, чтобы его данные были возвращается вообще, так как это дает ОГРОМНЫЕ результаты на больших репозиториях.
+
+Вот запрос GET, который я использую:
+
+https://dev.azure.com/{organization}/{project}/_apis/git/repositories/{repository}/pullrequests?$top=999&$count=true&searchCriteria.status=all&api-version=5.0
+И вот тестовый скрипт, который я использую для возврата количества элементов с помощью Postman
+
+var body = JSON.parse(responseBody);
+tests[body.value.length + " Pull Requests in this Repository" ] = true;
+Это возвращает количество ответов, как и ожидалось, но не желательно, равное 101. Любые советы и рекомендации очень ценятся!
+
+ 24.07.2019 22:48
+5
+5
+4 401
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+The Azure API limits the responses to 101 per request
+
+Это ограничение по умолчанию, как и было задумано. Поскольку вы можете получить тысячи записей в одном запросе API, и он разбит на страницы, чтобы предоставить только определенное количество результатов за вызов. Итак, вам нужно использовать top и skip для разбиения на страницы остальных.
+
+А также, если вы не хотите просматривать его данные, которые вообще возвращаются, поскольку это дает ОГРОМНЫЕ результаты в репозиториях, здесь есть скрипт, который может помочь вам напрямую выполнить подсчет:
+
+  var body = JSON.parse(responseBody);
+  tests["Count: "  + body.value.length] = true;
+Добавьте этот скрипт в тестовое задание, результат будет отображаться в Результат испытаний после выполнения API, см. рис. ниже:
+
+
+
+В настоящее время меня не беспокоит результат с большими данными.
+
+Надеюсь, это поможет вам.
+
+ 25.07.2019 12:13
+ Ответ принят как подходящий
+Простой пример кода powershell:
+
+function GetPullRequest{
+    param(
+[string]$org,
+[string]$project,
+[string]$repo,
+[string]$token
+)
+    $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f "test",$token)))
+    $count=0
+    $i=0
+    do{
+        $uri = "https://dev.azure.com/$org/$project/_apis/git/repositories/$repo/pullRequests?api-version=5.0&`$top=100&`$skip=$i"
+        $i+=100
+        Write-Output $uri
+        $result= Invoke-RestMethod -Method Get -Uri $Uri -ContentType "application/json" -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Body $bodyJson
+        Write-Output $result.Count
+        $count+=$result.Count
+        if ($result.Count-lt 100){
+            break;
+        }
+    }while($true)
+    write-output "Finish. Total Pull Request count: $count";
+}
+
+GetPullRequest -org "your organization" -project "your teamproject" -repo "your repository" -token "your personal access token"
+ 25.07.2019 16:54
+Я даю ответ на python, так как считаю, что для некоторых это может быть полезнее, чем скрипт powershell или postman, поскольку это то, что я использовал в своей окончательной реализации.
+
+Надеюсь, это поможет некоторым другим!
+
+Во-первых, это код...
+
+def count_PRs():
+   skip = 0
+   count = 0
+   while True:
+        # Retrieve next Pull Requests based on pager value, or all remaining if less than value
+        req_url=("https://%s/%s//%s/_apis/git/repositories/%s/pullrequests?$top=%s&$skip=%s&searchCriteria.status=all&api-version=%s" % (instance, organization, project, repository, pager, skip, api_version))
+        response = requests.get(req_url, auth=(username, password)).json()
+
+        # If no data returned, break out of loop, otherwise count items returned
+        if len(response["value"]) == 0:
+            break
+        else:
+            count += len(response["value"])
+            skip += pager
+
+   return count
+Теперь объяснение того, что здесь происходит, чтобы вы могли ПОНЯТЬ это, а не просто использовать это вслепую...
+
+Во-первых, URL-адрес запроса создается с переменными, которые вы должны предварительно определить.
+
+req_url=("https://%s/%s//%s/_apis/git/repositories/%s/pullrequests?$top=%s&$skip=%s&searchCriteria.status=all&api-version=%s" % (instance, organization, project, repository, pager, skip, api_version))
+Это: экземпляр, организация, проект, репозиторий, пейджер, пропуск, версия_апи.
+
+Экземпляр, организация, проект и репозиторий основаны на вашем сценарии использования, поэтому я не могу вам помочь.
+
+Значение «пейджер» — это количество элементов, возвращаемых за вызов, из моего использования я заметил, что Azure API в настоящее время ограничивает это значение 1000, но это может измениться в будущем, я постараюсь обновить это, если замечу.
+
+Значение «пропустить» представляет, какие запросы на извлечение уже были подсчитаны, поэтому оно начинается с 0, а затем увеличивается на значение пейджера для каждой итерации в цикле, чтобы не учитывать один и тот же PR несколько раз.
+
+Следующая строка отправляет запрос и сохраняет ответ в переменной ответа:
+
+response = requests.get(req_url, auth=(username, password)).json()
+Существует заголовок аутентификации, который содержит имя пользователя и пароль. Ранее я настроил токен личного доступа на странице Azure DevOps, и этот PAT — это то, что вы должны использовать для своего пароля здесь, это значительно проще, чем попытка аутентификации с помощью OAuth2.0, и я бы рекомендовал сделать это прежде всего.
+
+В этом разделе проверяется, получаете ли вы все еще новые запросы на вытягивание в ответе, и если нет, он прерывает цикл while, чтобы вернуть счетчик.
+
+if len(response["value"]) == 0:
+    break
+Если вы получили ответ, этот раздел подсчитывает запросы на вытягивание и добавляет их к подсчету, а затем увеличивает переменную пропуска перед переходом к следующей итерации.
+
+else:
+    count += len(response["value"])
+    skip += pager
+Мне потребовалась целая вечность, чтобы понять это, и я очень надеюсь, что это может помочь вам в будущем, если да, рассмотрите возможность голосования! Любые вопросы, которые у вас есть, задавайте их в комментариях, и я постараюсь помочь вам, как только смогу.
+
+ 07.08.2019 17:08
+Код ниже может помочь. Здесь я извлекаю все запросы на извлечение для проекта. Вывод будет помещен в excel. Пожалуйста, следите за комментариями в строке
+
+#+++Declaring all the parameters+++
+Param(
+   [string]$collectionurl = "https://dev.azure.com/<organizationname>",
+   [string]$project = "<Projectname>",
+   [string]$token = "<PAT>",
+   [string]$Filename = '<local path>'
+)
+
+#++PassingToken as Base 64++
+$auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f "",$token)))
+
+#++Generating Pull Request Base URL++
+$pullRequestURL = "$collectionurl/$project/_apis/git/pullrequests?searchCriteria.status=all&&api-version=5.1"
+
+#++Passing Respone in variable++           
+$pullRequest = (Invoke-RestMethod -Uri $pullRequestURL -Method Get -Headers @{Authorization=("Basic {0}" -f $auth)}).value
+
+#++Displaying result on screen( this step can be avoided )++
+Write-Output $pullRequest
+#++Counting Active vs Completed Request++
+Write-host "Count of active pull request:" ($pullRequest | where({$_.status -eq 'active'})).count
+Write-host "Count of completed pull request:" ($pullRequest | where({$_.status -eq 'completed'})).count
+
+#++Temporary Object to store varaible values"
+$output = @()
+Write-Output $output
+
+#++Extracting Values and storing in Object++
+foreach ($request in $pullRequest) {
+    $customObject = new-object PSObject -property @{
+          "RepositoryName" = $request.repository.name
+          "Status" = $request.status
+          "PullRequestId" = $request.pullRequestId
+          "SourceBranch" = $request.sourceRefName
+          "TargetBranch" = $request.targetRefName
+          "CreatedBy" = $request.createdBy.displayName
+          "Reviewers" = $request.reviewers.displayName
+          "CreatedDate" = $request.creationDate
+          "ClosedDate" = $request.closedDate
+          "MergeStrategy" = $request.completionOptions.mergeStrategy
+        }
+        $output += $customObject
+        }
+#++Generating excel out of Object++     
+$output | Select `
+            RepositoryName,
+            Status,
+            PullRequestId,
+            SourceBranch,
+            TargetBranch,
+            CreatedBy,
+            Reviewers,
+            CreatedDate,
+            ClosedDate,
+            MergeStrategy | export-csv -Path $Filename -NoTypeInformation
+ 07.01.2020 06:29
+Другие вопросы по теме
+Как добавить вложения к существующему рабочему элементу в Azure DevOps с помощью С#
+Анализ SonarQube, показывающий покрытие кода 0
+Можно ли реализовать обнаружение клонирования кода в конвейере Azure Devops Build?
+Могу ли я заставить NugetRestore работать с build.cake на azure devops (TFS)
+Как повторно использовать шаблоны yaml в другом командном проекте Azure DevOps?
+Не удается найти модуль «../lib/tsc.js» при выпуске машинописного приложения в Azure
+Как отредактировать/обновить шаг «Получить источники» по умолчанию в задаче сборки TFS?
+Разверните приложение Nodejs на виртуальной машине azure linux с помощью конвейера выпуска azure
+Можем ли мы обновить файл web.config с помощью WinRM — задача развертывания веб-приложения IIS
+Клон Azure-DevOps показывает ссылки как предупреждения
+Похожие вопросы
+Если я выполню git reset --hard на своем локальном компьютере, будет ли также сброшен репозиторий на github?
+Как игнорировать файлы симулятора для Xamarin в .gitignore?
+Как объединить изменения рабочего элемента с ветвями, отличными от исходной?
+Как получить коммит, сделанный кем-то другим в вашей ветке?
+Как исправить отслеживание .vscode в gitignore
+Попытка pip установить частное репо в DockerFile
+Миграция с SVN на GIT Запрошенные типы аутентификации не поддерживаются
+Как объединить активную ветку с другой веткой локально?
+Необходимо опубликовать на сервере, чтобы отразить изменения javascript
+Как запустить сборку в конвейерах Azure, отправив теги в github
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Почему почтальон заменяет символы в моей строке запроса на получение?
+Вопросы
+C#
+Почему почтальон заменяет символы в моей строке запроса на получение?
+Я делаю запрос на получение через почтальона, и когда запрос достигает моего контроллера, такие символы, как «+», преобразуются в пустые места «». API написан на c#.
+
+Мой код контроллера:
+
+[RoutePrefix("")]
+public partial class _DesifrarCusController : CaramlController, I_DesifrarCusController 
+{
+    [HttpGet]
+    [Route("descifrarCus")]
+    public IHttpActionResult GetDescifrarCusResponse( [FromUri] string cus = null ) {
+        return Ok (ExecGetDescifrarCusResponse(cus));
+        //return Ok();
+    }
+}
+Кто-нибудь знает, что почтальон делает со строкой запроса?
+
+Я попытался отправить строку между кавычками и символами ascii, но проблема не устранена.
+
+Добавляю захват заголовков почтальона
+
+ 23.12.2022 08:57
+1
+8
+138
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+Почтальон отправляет данные из запроса, кодируя их с помощью urlencode. Это нормально. Отправка таких длинных данных из URL-адреса не является лучшей практикой. Я рекомендую использовать HttpPost и отправлять данные из тела.
+
+ 23.12.2022 09:03
+ Ответ принят как подходящий
+Вам нужно закодировать параметр на Postman. Сначала добавьте параметр на вкладке Params
+
+затем выберите значение и щелкните правой кнопкой мыши выбранное значение EncodeURIComponent
+
+то вы получите закодированный параметр
+
+Ссылка: https://learning.postman.com/docs/sending-requests/requests/
+
+ 23.12.2022 09:28
+Данные в URI должны быть UrlEncoded. Когда ваше приложение C# получает данные, оно декодирует их, заменяя знаки «плюс» пробелами (что, честно говоря, является старым стандартом).
+
+Почтальон не сделает это за вас автоматически, но может помочь.
+
+Если у вас есть такое значение.
+
+Вы можете выбрать текст и щелкнуть его правой кнопкой мыши, чтобы получить возможность кодировать значение.
+
+Это правильно закодирует значение, и оно будет получено в вашем приложении C#, как и ожидалось.
+
+ 23.12.2022 09:29
+Как упоминалось в других ответах, это проблема кодирования. В качестве альтернативы вы можете использовать [FromBody], а затем просто поместить свою строку в часть запроса тела почтальона.
+
+public IHttpActionResult GetDescifrarCusResponse( [FromBody] string cus = null ) {
+        return Ok (ExecGetDescifrarCusResponse(cus));
+        //return Ok();
+    }
+ 23.12.2022 09:35
+Другие вопросы по теме
+С# API.Attributes.source.get вернул null
+Пытаясь создать простой интерфейс, который позволяет нам получать температуру города с помощью python (+ Tkinter), я продолжаю получать KeyError: 'main'
+Замените ссылку на получение html-кнопкой
+Keycloak — Использование curl API для создания клиента Keycloak с ролью «view_users»
+Ошибка CORS при получении данных из API функций Azure
+Django rest api csv в json
+Как отправить и получить изображение с помощью lumen laravel в API?
+Как я могу пройти через вложенный цикл и показать данные
+Экспорт всех заданий из jenkins, включая историю выполнения
+SvelteKit: получение API только один раз
+Похожие вопросы
+Как игнорировать чувствительный к регистру тип данных Enum в аннотациях данных в .NET
+Повторяющаяся ошибка: XLS0305: закрывающий тег для элемента <CollectionView> не найден, хотя у него есть закрывающий тег
+Проверка подлинности Windows для приложения Blazor Server — всплывающее окно входа
+С# API.Attributes.source.get вернул null
+Wpf Могу ли я отображать изображения в DocumentViewer?
+Как отображать имя вместо идентификатора в ASP.NET Core?
+ASP.NET Core 7.0 — настройка URL-адреса приложения Kestrel
+Как запретить Visual Studio 2022 автоматически добавлять пространство имен после копирования кодов из другого места
+«Word обнаружил нечитаемый контент» после загрузки файла с помощью C# Web API
+Почему эта конкретная команда PowerShell не работает в .NET 6 (раньше она работала в .NET 4)
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Проверить значение заголовка ответа в тестах Postman
+Вопросы
+TESTING
+Проверить значение заголовка ответа в тестах Postman
+Я хотел бы проверить значение из конкретного заголовка ответа («Местоположение») в качестве результатов теста в Postman. В документации почтальона я нашел примеры того, как проверить наличие заголовков с помощью
+
+pm.test("Content-Type is present", function () {
+   pm.response.to.have.header("Content-Type");
+});
+Но я ищу что-то вроде
+
+pm.test("Location value is correct", function () {
+   CODE HERE THAT CHECKS "Location" HEADER EQUALS TO SOMETHING;
+});
+ 13.03.2018 10:58
+31
+0
+20 602
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Я наконец нашел решение:
+
+pm.test("Redirect location is correct", function () {
+   pm.response.to.have.header("Location");
+   pm.response.to.be.header("Location", "http://example.com/expected-redirect-url");
+});
+ 13.03.2018 11:17
+Вот еще один способ получить конкретный заголовок ответа в разделе «Тесты» ...
+
+loc = pm.response.headers.get("Location");
+
+На всякий случай, если для последующих запросов требуется конкретная информация, например значение заголовка, вы также можете сохранить / установить ее как переменную среды, как показано ниже, и повторно использовать в дальнейшем
+
+pm.environment.set("redirURL", loc);
+
+var loc = null;
+pm.test("Collect redirect location", function () {
+   pm.response.to.have.header("Location");
+   loc = pm.response.headers.get("Location");
+   if (loc !== undefined) {
+      pm.environment.set("redirURL", loc);
+   }
+});
+Преимущество в том, что значением, собранным в переменной, можно управлять.
+
+Но все зависит от ситуации. Например, вы можете захотеть извлечь и предварительно / постобработать URL-адрес перенаправления.
+
+Например,
+
+При запуске тестовой коллекции вы хотите собрать значение в переменной и изменить его так, чтобы оно указывало на хост: порт ложного сервера.
+
+ 15.09.2019 12:04
+HeadersList имеет метод has(item, valueopt) → {Boolean}, поэтому самый простой способ проверить заголовок:
+
+const base_url = pm.variables.get("base_url")
+
+pm.test("Redirect to OAuth2 endpoint", () => {
+    pm.expect(pm.response.headers.has("Location",`${base_url}/oauth2/`)).is.true
+})
+ 03.07.2020 08:34
+pm.test("Location value is correct", function () {
+   pm.expect(pm.response.headers.get('Location')).to.eql('http://google.com');
+});
+ 06.04.2021 14:19
+Postman также поддерживает синтаксис ES6 / ES2015, что позволяет нам использовать стрелочные функции.
+
+Итак, вот как простой тест для проверки наличия общих заголовков ответов:
+
+pm.test("Verify response headers are present ", () => {
+    pm.response.to.have.header("Date");
+    pm.response.to.have.header("Content-Length");
+    pm.response.to.have.header("Content-Type");
+});
+Конечно, вы можете проверить любые пользовательские заголовки, которые вы могли вернуть своим API.
+
+ 13.04.2021 12:32
+Другие вопросы по теме
+Прокрутите вниз в структуре роботов Appium
+Лучшие практики тестовой учетной записи Auth0
+Дженкинс: После процесса сборки загрузите Jetty и запустите тест
+Получить разрешение приложения для Android
+Автоматическая сборка Docker Hub зависит от другого репозитория Docker Hub
+WPF Application Automation Testing Framework поддерживает встроенные веб-страницы
+Тестирование 10.000 VU в JMeter за 10 секунд
+Можем ли мы отправить данные на тест эспрессо
+Ошибка javascript драйвера Selenium Building Internet Explorer
+Вложенный цикл в pytest
+Похожие вопросы
+Как автоматизировать сигнал, поступающий от медицинского устройства?
+Транспортир ошибок и селен: StaleElementReferenceError: ссылка на устаревший элемент: элемент не прикреплен к документу страницы
+Ожидайте ошибок И другого статуса в Rspec
+Лучшие практики тестовой учетной записи Auth0
+Как я могу проверить, определен ли метод в классе Perl 6?
+Инструментальные тесты пользовательского интерфейса с включенным proguard
+Ошибка при попытке запустить тесты behat. usr / bin / env Неверный аргумент
+Написание тестов для .NET API
+Как написать тестовый пример для сервисов отдыха без использования сервера?
+Запись сценариев мобильного приложения с помощью jmeter
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Доступ к API keycloak от почтальона
+Вопросы
+JAVA
+Доступ к API keycloak от почтальона
+Я попытался получить доступ к API keycloak от почтальона. но он показывает 400 неверных запросов.
+
+Я звонил api в формате ниже.
+
+http://{hostname}:8080/auth/realms/master/protocol/openid-connect/token?username=admin&password=admin&client_id=admin-cli&grant_type=password
+В заголовках я поставил content_type as application/x-www-form-urlencoded
+
+Я получаю ответ, как показано ниже.
+
+{
+    "error": "invalid_request",
+    "error_description": "Missing form parameter: grant_type"
+}
+Может ли кто-нибудь мне помочь. Любая помощь будет оценена по достоинству. заранее спасибо
+
+ 16.03.2018 06:06
+19
+1
+27 162
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+URL-адрес, который вы используете, предназначен для получения токена.
+
+Запрос токена должен быть вызовом POST, запрос, который вы публикуете, - запросом GET. Ниже пример CURL о том, как запросить access_token
+
+curl -X POST \
+   http://{hostname}:8080/auth/realms/{realm}/protocol/openid-connect/token \
+   -H 'Content-Type: application/x-www-form-urlencoded' \
+   -d 'username=admin&password=admin&grant_type=password&client_id=admin-cli'
+ 16.03.2018 15:00
+ Ответ принят как подходящий
+Немного поздно для этого вопроса, но вы спросили о почтальоне, а не о завитке. Итак, вам нужно поместить параметры в x-www-form-urlencoded 
+
+ 20.03.2018 11:50
+Вы вызываете API через POST-клиент
+
+URL - http: // localhost: 8080 / auth / realms / Demo / protocol / openid-connect / token
+
+Итак, здесь, в приведенном выше URL-адресе, я использую Demo в качестве своей области вместо master.
+
+Тип содержимого - «Content-Type»: «application / x-www-form-urlencoded»
+
+Params:
+
+{
+"client_secret" : "90ec9638-7647-4e65-ad20-b82df3341084",
+"username" : "ankur",
+"password" : "123456",
+"grant_type" : "password",
+"client_id": "app-client"
+}
+Установите заголовок, как показано ниже
+
+
+
+Данные необходимо передать, как показано ниже
+
+ 04.05.2018 20:31
+Вы также можете использовать CURL для получения информации
+
+curl -L -X POST 'http://<serveraddress>/auth/realms/<realmname>/protocol/openid-connect/token' -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'client_id=<clientid>' --data-urlencode 'grant_type=password' --data-urlencode 'client_secret=<clientsecret>' --data-urlencode 'scope=openid' --data-urlencode 'username=<username>' --data-urlencode 'password=<password>'
+ 27.05.2020 09:56
+Я создал коллекцию Postman, чтобы помочь нам начать работу с API Keycloak. Кто угодно может сохранить следующий json-файл и импортировать его в Postman:
+
+{
+"info": {
+    "_postman_id": "07a9d691-5b1c-4869-990b-551da29590fe",
+    "name": "Keycloak",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+},
+"item": [
+    {
+        "name": "GET REALM",
+        "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+                "raw": "{{KEYCLOAK_URL}}admin/realms/{{KEYCLOAK_REALM}}",
+                "host": [
+                    "{{KEYCLOAK_URL}}admin"
+                ],
+                "path": [
+                    "realms",
+                    "{{KEYCLOAK_REALM}}"
+                ]
+            }
+        },
+        "response": []
+    },
+    {
+        "name": "GET USERS",
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "dfda403a-35b8-4704-840d-102eddac32e6",
+                    "exec": [
+                        ""
+                    ],
+                    "type": "text/javascript"
+                }
+            }
+        ],
+        "protocolProfileBehavior": {
+            "disableBodyPruning": true
+        },
+        "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+                "mode": "urlencoded",
+                "urlencoded": []
+            },
+            "url": {
+                "raw": "{{KEYCLOAK_URL}}admin/realms/{{KEYCLOAK_REALM}}/users",
+                "host": [
+                    "{{KEYCLOAK_URL}}admin"
+                ],
+                "path": [
+                    "realms",
+                    "{{KEYCLOAK_REALM}}",
+                    "users"
+                ]
+            }
+        },
+        "response": []
+    }
+],
+"auth": {
+    "type": "bearer",
+    "bearer": [
+        {
+            "key": "token",
+            "value": "{{KEYCLOAK_TOKEN}}",
+            "type": "string"
+        }
+    ]
+},
+"event": [
+    {
+        "listen": "prerequest",
+        "script": {
+            "id": "c3ae5df7-b1e0-4af1-988b-c592df3fd98e",
+            "type": "text/javascript",
+            "exec": [
+                "const echoPostRequest = {",
+                "  url: pm.environment.get('KEYCLOAK_URL') + 'realms/master/protocol/openid-connect/token',",
+                "  method: 'POST',",
+                "  header: 'Content-Type:application/x-www-form-urlencoded',",
+                "  body: {",
+                "    mode: 'urlencoded',",
+                "    urlencoded: [",
+                "        {key:'username', value:pm.environment.get('KEYCLOAK_USER')}, ",
+                "        {key:'password', value:pm.environment.get('KEYCLOAK_PASSWORD')}, ",
+                "        {key:'client_id', value:'admin-cli'}, ",
+                "        {key:'grant_type', value:'password'}",
+                "    ]",
+                "  }",
+                "};",
+                "",
+                "var getToken = true;",
+                "",
+                "if (!pm.environment.get('KEYCLOAK_TOKEN_EXPIRY') || ",
+                "    !pm.environment.get('KEYCLOAK_TOKEN')) {",
+                "    console.info('Token or expiry date are missing')",
+                "} else if (pm.environment.get('KEYCLOAK_TOKEN_EXPIRY') <= (new Date()).getTime()) {",
+                "    console.info('Token is expired')",
+                "} else {",
+                "    getToken = false;",
+                "    console.info('Token and expiry date are all good');",
+                "}",
+                "",
+                "if (getToken === true) {",
+                "    pm.sendRequest(echoPostRequest, function (err, res) {",
+                "    console.info(err ? err : res.json());",
+                "        if (err === null) {",
+                "            console.info('Saving the token and expiry date')",
+                "            var responseJson = res.json();",
+                "            pm.environment.set('KEYCLOAK_TOKEN', responseJson.access_token)",
+                "    ",
+                "            var expiryDate = new Date();",
+                "            expiryDate.setSeconds(expiryDate.getSeconds() + responseJson.expires_in);",
+                "            pm.environment.set('KEYCLOAK_TOKEN_EXPIRY', expiryDate.getTime());",
+                "        }",
+                "    });",
+                "}"
+            ]
+        }
+    },
+    {
+        "listen": "test",
+        "script": {
+            "id": "fdb69bb4-14a5-43b4-97e2-af866643e390",
+            "type": "text/javascript",
+            "exec": [
+                ""
+            ]
+        }
+    }
+],
+"variable": [
+    {
+        "id": "698bbb41-d3f9-47f8-9848-4a1c32f9cca4",
+        "key": "token",
+        "value": ""
+    }
+],
+"protocolProfileBehavior": {}}
+И я создал предварительный сценарий, чтобы получить токен и настроить его по запросу, как вы можете видеть на изображении ниже: 
+
+Вы должны создать следующие переменные среды: KEYCLOAK_USER, KEYCLOAK_PASSWORD и KEYCLOAK_URL, где URL-адрес должен быть https: // {ваша установка keycloak} / auth /
+
+ 31.07.2020 04:28
+Другие вопросы по теме
+Как проверить наличие нескольких допустимых кодов статуса в Postman?
+Как получить результаты по запросу Jira Rest API?
+Отсутствие ГРАНИЦЫ из заголовка при использовании почтальона для загрузки файла в ядро ​​asp.net
+Запросить токен доступа в Postman для приложения-функции Azure, защищенного Azure AD B2C
+Объект json без типа после размещения на сервере Apache
+Я не могу понять, почему мой запрос SOAP не работает
+Как устранить ошибку «invalidMockError»?
+TypeError: задача не является функцией
+Когда я использую GET на своем веб-сайте, это нормально, но когда я использую Postman, нет результата
+Недопустимая полезная нагрузка сообщения JSON в Post Man
+Похожие вопросы
+Spring Boot 2 + OAuth2: настройка обмена кодом аутентификации для токена
+Как получить другой цвет при каждом нажатии?
+Как пропустить элементы в цикле jsp?
+Невозможно запустить приложение springboot, возникает исключение OptimisticLockException
+Получить элемент по идентификатору в раздуваемом LinearLayout
+Время строки, переданное из переменной класса AsyncTask, не преобразуется в объект даты в android, но работает нормально, когда я жестко кодирую жало
+Выпуск ArrayListName.add (новый ArrayListName (.......));
+Как реализовать MouseListener для объекта, не относящегося к графическому интерфейсу пользователя, в определенной области?
+Maven link скомпилированные классы вместо jar
+Создание универсальной матрицы Java
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Жетон на предъявителя в почтальоне
+Вопросы
+POSTMAN
+Жетон на предъявителя в почтальоне
+Я хочу установить Bearer Token в почтальоне
+
+По какой-то причине у моего почтальона нет опции Bearer Token в раскрывающемся списке Auth
+
+Что я могу сделать в Postman, чтобы показать эту опцию? Есть идеи, где я могу это найти? С Уважением.
+
+ 12.04.2018 01:01
+48
+2
+108 855
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+ Ответ принят как подходящий
+Я не уверен, относятся ли эти 2 изображения к одному и тому же приложению Postman или нет, но функция Bearer Token появилась только в версии 5.3.0.
+
+Вы можете просто вручную добавить заголовок запроса Authorization со значением Bearer <my_token>.
+
+Это просто - фиктивное значение для демонстрационных целей - фактическое значение должно быть Bearer + your token value.
+
+Auth Header
+
+Это должно работать без необходимости использовать эту опцию из раскрывающегося списка. Это будет только автоматически копировать то, что вы в любом случае будете делать вручную.
+
+ 12.04.2018 03:22
+Я использую Postman v7.0.9.
+
+Добавьте переменную accessToken в переменную окружения почтальона.
+
+
+
+Затем используйте вкладку «Тесты», чтобы написать javascript.
+
+
+
+let jsonData = pm.response.json();
+let token = jsonData.accessToken;
+pm.environment.set('accessToken', token);
+Если вы используете текущую версию, тип «Bearer Token» находится на вкладке «Авторизация».
+
+
+
+ 08.05.2019 07:58
+Я столкнулся с этой проблемой очень давно. И я решил эту проблему, установив версию Desktop и снова войдя в систему с учетной записью Google. После этого Жетон на предъявителя виден у почтальона!
+
+В моем случае я использовал Windows 8.1 и 64 бит.
+
+здесь можно получить настольную версию
+
+ 01.07.2019 06:08
+У вас есть несколько вариантов для добавления типа авторизации:
+
+1) Нажмите заголовки Go и добавьте => ключ: Значение авторизации: носитель
+
+2) Создать коллекцию> выбрать авторизацию
+
+3) щелкните код и добавьте заголовки
+
+
+
+headers:
+{
+  'Postman-Token': '55..',
+  'cache-control': 'no-cache',
+  'Authorization': 'Bearer eyJhbG...'
+}
+ 01.07.2019 13:44
+Февраль, 2021 - Следующие сработали для меня
+В типе выберите «Жетон на предъявителя».
+
+Введите токен в поле, как показано на скриншоте ниже:
+
+
+
+ 06.02.2021 21:41
+Другие вопросы по теме
+Тест почтальона выдает ошибку «TypeError: невозможно прочитать свойство get of undefined»
+Отправка электронной почты (Office 365) с помощью почтальона без входа в систему из браузера
+Обычная проверка подлинности почтальона без имени пользователя и пароля
+Использование переменных Postman в командной среде
+Тестирование API Postman для моих тестовых случаев
+Как обработать "Недействительную заключительную цитату в строке 2; найдено" \ "" вместо разделителя "," "в newman
+Ошибка отсутствия содержимого HTTP 204 в POST-запросе ASP.NET CORE
+Проверка ответа JSON на основе данных CSV
+Выгрузка в хранилище BLOB-объектов Azure с дополнительными параметрами в веб-API
+Не удалось получить значение json в веб-API ядра asp.net
+Похожие вопросы
+AWS CLI - как сгенерировать токены безопасности для когнитивного пользователя
+Newman.run вызывает увеличение heapUsed, но не освобождает память при повторении в итерациях
+Почтальон: упорядочивание полей в запросе данных формы
+Подкаталог newman run коллекции
+Python3 правильно запрашивает публикацию, но ничего не получает (но в браузере все в порядке)
+Исключение ошибки: косвенная модификация перегруженного свойства laravel
+Запустите newman в локальной сборке вместо развертывания в тестовой среде с помощью TeamCity
+Есть ли способ показать прошедшее время обработки запроса в почтальоне?
+IOS: как вызвать метод публикации, который содержит некоторые параметры и файл (вложение)?
+Уведомление Firebase Push отправлено, но onMessage () не срабатывает
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+GET против POST для получения HTML-страницы
+Вопросы
+JAVASCRIPT
+GET против POST для получения HTML-страницы
+Могу правильно получить html-страницу с помощью почтальона GET, но получаю ошибку при загрузке html-страницы с помощью POST с использованием почтальона Детали ошибки: 404 не найдено 404 не найдено
+
+У нас есть код внешнего интерфейса на html / JS и код внутреннего интерфейса на nodeJS
+
+ 16.07.2018 09:13
+0
+0
+163
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Хорошо, если данные извлекаются только с помощью метода GET, и если он выдает ошибку 404, это означает, что вы, возможно, не создали какой-либо маршрут с помощью метода POST. Один и тот же маршрут с другим методом рассматривается как другой маршрут, например
+
+1) ПОЛУЧИТЬ http://example.com/fetch
+
+2) POST http://example.com/fetch
+
+2 разных маршрута. Вам нужно определить каждый отдельно
+
+ 16.07.2018 09:17
+Я считаю, что для данных получение предпочтительным методом является GET, а POST следует использовать для обновления ресурсов на стороне сервера, а не для их получения. Если POST возвращает 404, возможно, у вас не настроен маршрут POST или доступ POST может быть отключен сам по себе в конфигурации вашего сервера.
+
+ 16.07.2018 09:19
+Обычно метод «GET» используется при запросе html-страницы, например, все браузеры используют «GET» для запроса целевой страницы любого URL-адреса.
+
+Публикация обычно используется для отправки данных и входа в систему.
+
+ 16.07.2018 09:19
+ Ответ принят как подходящий
+Это может произойти по многим причинам. Проверьте свой импорт, маршруты и URL-адрес запроса. Хотя это не способ получить ваш html через метод POST. Использование метода GET - правильный путь.
+
+ const express = require("express");
+ const router = express.Router();
+     router.post("/", (req, res, next) => {
+     res.render("index", { title: "Express" });
+     console.info(req);
+     });
+ module.exports = router;
+
+
+ 16.07.2018 09:20
+You need to create a route for POST requests to get the HTML.
+
+Я предполагаю, что вы должны использовать какой-то фреймворк, например, экспресс-маршрутизатор, для маршрутизации ваших страниц. В коде вашего маршрутизатора у вас будет что-то вроде
+
+app.get('/myHtmlPage', function(req, res) { // some code })
+
+так что вы возвращаете свою страницу для выполнения запросов GET. Вам нужно создать похожий маршрут, например app.post('/myHtmlPage', function(req, res) { // some code })
+чтобы получить ту же страницу для запросов POST.
+
+ 16.07.2018 09:29
+Другие вопросы по теме
+Как отобразить величину (значение) каждого столбца в диаграмме URL-адресов изображений Google
+Ошибка установки npm в электронном приложении с узлом: команда не найдена
+Не удается сохранить вложенный массив JSON в MongoDB с помощью Mongoose
+Макет статических методов es6 классы для тестирования
+Отобразить 2 две записи таблицы в nodejs
+Как получить IP-адрес внутри cors Dynamic Origin?
+Loopback - скачать pdf удаленным методом
+Заполнить группу выбора html с помощью внешнего json
+Как я могу создать rest API с помощью nodejs и ограничить доступ пользователей с помощью IP-адреса или домена из белого списка?
+Проблемы с трансляцией сообщений с Socket.io
+Похожие вопросы
+Переменная не назначается внутри обещания
+Передайте класс в качестве аргумента для page.evaluate в Puppeteer
+Как изменить параметр JSON в api с помощью Javascript?
+Кнопка входа в Google не отображается в React
+Вставьте json в столбец json
+Окно сообщение Событие срабатывает более одного раза
+Как передать параметры из веб-пакета в код?
+ReCaptcha v2 не загружается в навигации vue-router
+Фоновая служба в AngularJS
+Как запретить пользователям закрывать окно в Oracle APEX Builder
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как получить ключ и значение из объекта JSON в Javascript (почтальон)
+Вопросы
+JAVASCRIPT
+Как получить ключ и значение из объекта JSON в Javascript (почтальон)
+У меня есть такой объект JSON, я хочу получить доступ к элементам массива списка с ключом и значением в почтальоне.
+
+{
+    "data": {
+        "total": 1,
+        "list": [
+            {
+                "id": 53,
+                "name": "Sonu",
+                "mobileNo": "6543213456",
+                "address": "Greeny Pathway",
+                "city": "NewYork",
+                "mode": "Weekly",
+                "duration": "15",
+                "qty": null
+
+            }
+        ]
+    },
+    "success": true,
+    "message": ""
+}
+Как разделить его как ключ и значение в Javascript, например,
+
+Key:   id,name,mobileNo,address,city,..
+Value: 53,Sonu,6543213456,Greeny Pathway,NewYork,....
+ 30.10.2018 05:20
+2
+2
+19 762
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+вы можете использовать следующие коды:
+
+const keys = Object.keys(jsonObject);
+const values = Object.values(jsonObject);
+Но ваш объект JSON глубокий, вы должны сгладить его, а затем использовать keys и values из Object, чтобы разделить их.
+
+ 30.10.2018 05:25
+Вы можете использовать ключ и значение отдельно в массиве.
+
+var a = {
+    "data": {
+        "total": 1,
+        "list": [
+            {
+                "id": 53,
+                "name": "Sonu",
+                "mobileNo": "6543213456",
+                "address": "Greeny Pathway",
+                "city": "NewYork",
+                "mode": "Weekly",
+                "duration": "15",
+                "qty": null,
+
+            }
+        ]
+    },
+    "success": true,
+    "message": ""
+}
+
+var keyval = Object.keys(a.data.list[0])
+console.info(keyval)
+var values = Object.values(a.data.list[0])
+console.info(values)
+ 30.10.2018 05:27
+Объекты JSON - это пара ключ-значение, вы не можете получить ключи и значения в форме объекта по своему желанию, но вы можете получить оба в виде массивов из этого кода.
+
+var key = []
+var values = []
+list.map(function(l){  keys = Object.getOwnPropertyNames(l); 
+keys.map(function(key) {values.push(l[key]);})})
+ 30.10.2018 05:29
+Сначала удалите запятую из строки: "qty": null,, иначе это вызовет ошибку при разборе json.
+
+var resultJSON = `{
+    "data": {
+        "total": 1,
+        "list": [
+            {
+                "id": 53,
+                "name": "Sonu",
+                "mobileNo": "6543213456",
+                "address": "Greeny Pathway",
+                "city": "NewYork",
+                "mode": "Weekly",
+                "duration": "15",
+                "qty": null
+
+            }
+        ]
+    },
+    "success": true,
+    "message": ""
+}`;
+
+
+var result = $.parseJSON(resultJSON);
+
+var myList = result.data.list[0];
+
+$.each(myList, function(k, v) {
+    //display the key and value pair
+    alert(k + ' is ' + v);
+});
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 30.10.2018 06:16
+ Ответ принят как подходящий
+Наконец-то это сработало для меня! (В Postman Script)
+
+var resdata = JSON.parse(responseBody);
+console.info(resdata);
+
+key = Object.keys(resdata.data.list[0]);
+console.info(key);
+
+value =Object.values(resdata.data.list[0]);
+console.info(value);
+ 30.10.2018 08:35
+Другие вопросы по теме
+JSONSerialization создает неверный объект JSON. Быстрый
+Python: как установить значение из JSON в качестве индекса в списке?
+Ошибка записи JSON в файл, дополнительные данные: строка 1, столбец 2347 (char 2346)
+Как распечатать значения из файла JSON
+Угловая сериализация даты с определенным форматом в запросе POST
+Как отключить кеширование в Swift
+Java / Jackson - «Нераспознанный токен», передающий параметр объекта JSON
+Преобразовать два массива в объект - JavaScript
+Нужно ли строго определять тип значения JSON?
+Javascript - добавление объекта в файл JSON
+Похожие вопросы
+Передать переменную C# в кнопку HTML
+ИИ следит за препятствием и избегает столкновения с ним
+Почему мой дочерний компонент не отображает реквизиты?
+Регулярное выражение для соответствия дате в формате ММ-ДД-ГГГГ ЧЧ: мм: СС
+«TypeError: невозможно прочитать свойство 'add' of undefined» в созданном жизненном цикле (Vue, buefy)
+Несколько модальных окон с одним и тем же скриптом
+Браузер Firefox медленно загружает приложение AngularJS
+Реакция: попытка передать массив функциональному компоненту, но он не отобразит
+Разница в использовании async / await и promises?
+Asp.net mvc всплывающее модальное чтение из строки таблицы
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как сравнить два объекта JSON, исключая поля, указанные в отдельном массиве? (Postman Script)
+Вопросы
+JAVASCRIPT
+Как сравнить два объекта JSON, исключая поля, указанные в отдельном массиве? (Postman Script)
+У меня есть два объекта JSON, один из которых вводится, а другой выводится, я хочу проверить, совпадает ли вывод с вводом, который я указал на вводе вместе с ключом и значением, также он не должен сравниваться для полей, которые я указал в 'exclude ' множество.
+
+Json Object1:(input)
+{
+    "name": "Sonu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "createdCanvasAgentId": 2,
+    "isActive": 1
+}
+Json Object2:(output)
+{
+    "id": 53,
+    "name": "Sonu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "qty": null,
+    "createdCanvasAgentId": 2,
+    "isActive": true
+}
+Поля, которыми следует пренебречь при сравнении, находятся в массиве exclude
+
+exclude = {"id","qty","isActive"}
+Фрагмент кода выглядит следующим образом:
+
+//Input 
+var en_val = pm.environment.get("my_array");
+console.info(en_val);
+
+keysave = Object.keys(JSON.parse(en_val));
+console.info(keysave);
+
+valuesave=Object.values(JSON.parse(en_val));
+console.info(valuesave);
+
+// Output
+var resdata = JSON.parse(responseBody);
+console.info(resdata);
+
+keylist = Object.keys(resdata.data.list[0]);
+console.info(keylist);
+
+valuelist =Object.values(resdata.data.list[0]);
+console.info(valuelist);
+
+// exclude contains array of values that need not be compared
+var ex=pm.environment.get("exclude");
+var excludeKeys = Object.keys(JSON.parse(ex));
+ 31.10.2018 07:19
+1
+0
+4 125
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Вы можете воспользоваться вторым аргументом в JSON.parse(text, reviver)
+
+reviver - если функция, это определяет, как значение, первоначально созданное в результате синтаксического анализа, преобразуется перед возвратом.
+
+Также вам следует воспользоваться встроенными помощниками lodash.
+
+Вот полный пример теста в Postman
+
+const original = {
+    city: 'New York'
+}
+
+const json = '{"id":10,"city":"New York","qty":5}'
+const exclude = ['id', 'qty']
+const reviverFilter = (k, v) => exclude.includes(k) ? undefined : v
+const expected = JSON.parse(json, reviverFilter)
+
+pm.test('Equals', function() {
+    pm.expect(_.isEqual(original, expected)).to.be.true
+});
+ 31.10.2018 07:39
+Может быть, вы можете использовать метод _.isEqual из lodash?
+
+Этот метод _.isEqual вернет истину, если оба они одинаковы. Что касается исключающей части, я считаю, что вы можете передать функцию в качестве третьего параметра во время вызова, который эта функция будет выполнять проверку, чтобы игнорировать свойство, которое вы хотите игнорировать. И я предлагаю вам использовать _.includes для обработки проверки внутри функции. Надеюсь, это поможет..
+
+Спасибо.
+
+[https://lodash.com/docs/4.17.10#isEqual] [https://lodash.com/docs/4.17.10#includes]
+
+ 31.10.2018 07:40
+Пользовательская реализация сравнения двух объектов с ключами для исключения.
+
+var b = {
+    "id": 51,
+    "name": "Sonsssu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "qty": null,
+    "createdCanvasAgentId": 2,
+    "isActive": true
+};
+var a = {
+    "name": "Sonu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "createdCanvasAgentId": 2,
+    "isActive": 1
+};
+var exclude = ["id","qty","isActive"];
+
+function compareObject(first, second,excludeKeys) {
+    var excludes = {};
+    var isSame = true;
+    if (excludeKeys) {
+        excludeKeys.forEach(function (key) {
+            if (!excludes.hasOwnProperty(key)) {
+                excludes[key] = 1;
+            }
+        });
+    }
+    Object.keys(first).forEach(function (key) {
+        if (!excludes.hasOwnProperty(key)){
+            if (first[key] !== second[key]){
+                isSame = false;
+            }
+        }
+    });
+    return isSame;
+}
+
+console.info(compareObject(a,b.exclude));
+ 31.10.2018 08:19
+Вы должны написать функцию для преобразования исходных объектов во временные объекты, а затем сравнить их.
+
+function convertToObjectWithExcludeKeys(orginalObject, excludeKeys){
+    var newObj = {};
+    Object.keys(orginalObject).map(key => {
+      if (excludeKeys.indexOf(key) < 0){
+        newObj[key] = orginalObject[key];  
+      }
+
+    })
+    return newObj;
+}
+
+
+var b = {
+    "id": 51,
+    "name": "Sonsssu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "qty": null,
+    "createdCanvasAgentId": 2,
+    "isActive": true
+};
+var a = {
+    "name": "Sonu",
+    "city": "NewYork",
+    "Amount": 5000,
+    "mode": "Weekly",
+    "duration": "15",
+    "createdCanvasAgentId": 2,
+    "isActive": 1
+};
+
+var excludeKeys = ["id","qty","isActive"];
+
+//Convert original objects to temporary objects with exclude keys
+var tmpA = convertToObjectWithExcludeKeys(a, excludeKeys);
+var tmpB = convertToObjectWithExcludeKeys(b, excludeKeys);
+
+console.info("tmpA", tmpA);
+console.info("tmpB", tmpB);
+
+//Then compare them .....
+ 31.10.2018 08:55
+ Ответ принят как подходящий
+Json Object 1: keysave,valuesave
+Json Object 2: keylist,valuelist
+//values that aren't need to be checked
+exclude = ["id","qty","isActive"]
+Код:
+
+ var ex1=pm.environment.get("exclude");
+    var resp=[];
+    for (var i in keysave)
+     {    
+        console.info(keysave[i]);    
+        if (ex1.indexOf(keysave[i]) < 0)   
+        {           
+            var flag =0;        
+            for (var j in keylist) 
+            {       
+                if (keylist[j] === keysave[i] && valuelist[j] === valuesave[i])
+                {           
+                    flag = 0;           
+                    break;      
+                }       
+                else 
+                {                       
+                    flag = 1;
+
+                }   
+            }           
+            if (flag === 0)
+            {       
+                console.info("Matched value "+keysave[i]);   
+            }   
+            else 
+            {       
+                console.info("None matched value "+keysave[i]);  
+                resp.push(keysave[i])       
+                console.info(resp);  
+            }       
+        }
+    }
+    if (resp.length > 0)
+    {    
+        tests[resp] = false;
+    }
+    else
+    {    
+        tests['Both JSON are Equal'] = true;
+    }
+ 05.11.2018 07:27
+Другие вопросы по теме
+Найдите путь к элементу JSON с динамическим ключом с помощью Play JSON
+Как показать предупреждающее сообщение при неверных учетных данных для входа в React Native?
+Отправить массив объекта в JSON в angular
+Разобрать массив Json с помощью скриптов Google
+Как выбрать переключатель с помощью ngFor внутри каждой строки с двумя переключателями
+Условие между строкой и строкой json
+Как получить доступ к jsonarray с помощью модификации
+Как отправлять объекты JavaScript с клиентской стороны и как получать и анализировать их в Spring Boot Back-end?
+Как мы можем найти ожидаемую строку таблицы при преобразовании данных json в таблицу данных
+Десериализация JSON с использованием JObject и LINQ
+Похожие вопросы
+Угловой: переключатель темного и светлого режима Bootstrap 4
+Jbox не отображает содержимое, кнопка подтверждения и кнопка отмены
+Выберите вариант, флажок, радиотеги, если они пустые
+Как удалить предупреждение «Нет сети» в моем PWA на iOS
+Почему моя функция не отправляет переменные в ajax?
+Проблема при создании компилятора Antlr4 в JavaScript: неожиданный результат при преобразовании JavaScript в Python
+Добавить параметры в (colspos и rowspos) в скрытое поле в jqgrid
+Javascript - неопределенный массив значений поля ввода при нажатии Enter
+Сравните 24-часовой формат времени в moment.js
+Конвертировать временные интервалы из API в выбранный часовой пояс
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+GraphQL API - какой-нибудь инструмент автоматизации для его тестирования?
+Вопросы
+API
+GraphQL API - какой-нибудь инструмент автоматизации для его тестирования?
+Я хочу протестировать GraphQL API. На данный момент я использую GraphiQL, но ищу любой автоматизированный инструмент ... Похоже, что SOAPUI не поддерживает тестирование GraphQL.
+
+Любые идеи?
+
+Спасибо.
+
+ 25.11.2018 09:40
+5
+2
+8 150
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+Что конкретно вы хотите протестировать?
+
+У нас есть ряд автоматических тестов для проверки работоспособности, которые мы запускаем при каждой сборке:
+
+Схема действительна (согласно graphql-js)? Это может быть удивительно легко испортить, если ваша реализация позволяет, например, несколько определений одного и того же типа или любое другое количество тонких ошибок.
+
+Это критическое изменение схемы? Если это так, прервите сборку, если нет специального сообщения git commit, подтверждающего и принимающего его. С graphql-js это довольно просто - запустить запрос самоанализа для текущего производства, запустить его для текущей сборки и использовать встроенную функцию findBreakingChanges.
+
+Обратите внимание, что тесты graphql-js не означают, что ваш сервер должен быть написан на JS - наш написан на ReasonML с использованием ocaml-graphql-сервер, а затем при сборке мы используем набор тестов узла, чтобы поразить его, как это сделал бы любой другой клиент.
+
+Наконец, помимо этого, у нас есть несколько тестов, которые запускают запросы / мутации для сквозного тестирования сервера API. В целом, до сих пор это было довольно устойчиво к регрессу.
+
+И имейте в виду, что вы можете просто подключиться к серверу GraphQL с помощью любого http-клиента, в вашем наборе тестов нет имеют для поддержки GraphQL. Я бы порекомендовал этот маршрут помимо проверок работоспособности, о которых я упоминал выше.
+
+ 25.11.2018 10:09
+ Ответ принят как подходящий
+У вас в основном есть несколько вариантов, которые я видел:
+
+Платформа Apollo GraphQL. Он предоставляет вам полноценную телеметрию на ваших индивидуальных преобразователях и может интегрироваться с VS Code, чтобы ваши разработчики знали, насколько дорого обходится их запрос в режиме реального времени. Но ты за это заплатишь.
+
+Инструмент наблюдения, такой как Медовая расческа или DataDog, тоже платный.
+
+Напишите свой. Для достаточно простого случая использования это может иметь смысл, но если вы ищете богатый набор функций, вероятно, имеет смысл покупать, а не создавать.
+
+ 16.12.2018 05:35
+Я использую SoapUI 5.4.0 (версия сообщества), и у меня нет проблем с тестированием запросов GraphQL. Считайте их запросом на отдых и добавляйте заголовок, например Тип содержимого: приложение / graphql
+
+см. изображение для всех деталей.
+
+SoapUI GraphQL example
+
+ 29.05.2019 06:15
+Karate - единственный инструмент с открытым исходным кодом, который объединяет автоматизацию тестирования API, имитацию и тестирование производительности в единую унифицированную структуру.
+
+https://github.com/intuit/karate
+
+ 18.06.2019 11:06
+Для автоматизированного тестирования есть https://github.com/ohler55/graphql-test-tool/gtt. Он написан на go, но как отдельное приложение его можно использовать с любым сервером GraphQL. Мы используем его для модульного тестирования и CI.
+
+ 08.01.2020 20:44
+Другие вопросы по теме
+Протестируйте login_view, передав запрос с помощью набора запросов
+Jmeter: контролируйте количество запросов, выполняемых одновременно
+Тест на должности - функция
+Могу ли я сделать заготовку для ряда результатов? "sinon.stub (). callsFake (() => {})" AssertionError: NaN
+Wrapper.children (). debug () и .html () в Enzyme / Karma возвращают разное содержимое
+Как выполнить интеграционный тест на моей конечной точке веб-API Asp.Net, куда я загружаю файл?
+URL-адрес перенаправления с удаленной отладкой Chrome на устройствах Android
+Абстрактные ключевые слова в Robot Framework
+Есть ли способ проверить, содержит ли шаблон фляги ссылку?
+Angular модульное тестирование асинхронных и проблем с синхронизацией
+Похожие вопросы
+Как лучше всего объединить методы GET и POST в api промежуточного программного обеспечения?
+Нет модуля с именем googleapiclient при попытке импортировать данные Google Таблиц
+Решение проблемы с вызовом API в React JS (ошибка 400)
+Получить поле из API на brightspace
+Аксиос поставить не происходит бросать запрещено
+Доступ запрещен, VKApi, groups.getRequests
+Получение ответа api этого твиттера {"errors": [{"code": 215, "message": "Bad Authentication data."}]}, Пожалуйста
+Получить значение <td> с помощью Ajax
+Преобразование полезной нагрузки из requestjs перед отправкой клиенту
+Как использовать строку пользовательского агента с API?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+С# ошибка основного носителя asp.net = "invalid_token"
+Вопросы
+C#
+С# ошибка основного носителя asp.net = "invalid_token"
+Может кто-нибудь, пожалуйста, помогите мне решить эту проблему? Я тестирую API с помощью Postman
+
+Я следую учебнику по ядру asp.net.
+
+И сейчас я занимаюсь его аутентификацией.
+
+Я не очень понимаю, в чем причина ошибки.
+
+В учебнике у него есть логин, и он возвращает токен.
+
+Это код для входа. Который работает. Я знаю, что это работает, потому что возвращает токен. Я также пытался использовать неверный логин. и он возвращает 401 Unauthorized Но когда я использую правильные учетные данные для входа, которые находятся в базе данных. Он возвращает токен
+
+[HttpPost("login")]
+public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
+    {
+        var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
+
+        if (userFromRepo == null)
+            return Unauthorized();
+
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
+            new Claim(ClaimTypes.Name, userFromRepo.Username)
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
+
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
+
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.Now.AddDays(1),
+            SigningCredentials = creds
+        };
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+
+        return Ok(new {
+            token = tokenHandler.WriteToken(token)
+        });
+}
+Затем следующая часть руководства — ограничить доступ. Пользователь должен сначала войти в систему, чтобы просмотреть содержимое.
+
+Ниже приведен код
+
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>{
+                options.TokenValidationParameters = new TokenValidationParameters{
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                    ValidateIssuer = false
+                };
+            });
+Затем включил
+
+app.UseAuthentication();
+Я также включил [Authorize] в контроллере значений.
+
+[Authorize]
+[Route("api/[controller]")]
+[ApiController]
+public class ValuesController : ControllerBase
+Это скрин почтальона
+
+С# ошибка основного носителя asp.net = &quot;invalid_token&quot;
+
+Я следовал учебнику. Я вставляю токен, полученный при входе в систему. Но это дает мне ошибку
+
+WWW-Authenticate →Bearer error = "invalid_token", error_description = "The audience is invalid"
+Почему мне выдает ошибку invalid token если токен от логина? Как я могу это исправить? Я искал некоторое время, но я не могу решить это сам. Спасибо.
+
+ 28.01.2019 06:11
+14
+5
+25 939
+5
+ Ответы 5
+Недавно я сделал нечто подобное, используя токен JWT, который отлично работает с Postman. Мой подход к созданию токена JWT немного отличается, В вашем случае проблема может быть связана с тем, что вы не указалиэмитент и аудитория.
+
+Можете ли вы попробовать следующее.
+
+   var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.WindowsAccountName, this.User.Identity.Name)
+    };
+    Claim userIdClaim = new Claim("UserId", "12345");
+    claims.Add(userIdClaim);
+    //Avoid Replay attack
+    claims.Add(new Claim(ClaimTypes.GivenName, "User GivenName"));
+    claims.Add(new Claim(ClaimTypes.Surname, "UserSurname"));
+    claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+
+    string[] roles = "Role1,Role2,Role23".Split(",");
+
+    foreach (string role in roles)
+    {
+        claims.Add(new Claim(role, ""));
+    }
+
+    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("veryVerySecretKey"));
+    var key1 = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ASEFRFDDWSDRGYHF")); 
+    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+    var encryptingCreds = new EncryptingCredentials(key1, SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
+    var handler = new JwtSecurityTokenHandler();
+    var t = handler.CreateJwtSecurityToken();
+    var token = handler.CreateJwtSecurityToken("http://localhost:61768/", "http://localhost:61768/"
+        , new ClaimsIdentity(claims)
+        , expires: DateTime.Now.AddMinutes(1)
+        , signingCredentials: creds
+        , encryptingCredentials :encryptingCreds
+        , notBefore:DateTime.Now
+        ,  issuedAt:DateTime.Now);
+    return new JwtSecurityTokenHandler().WriteToken(token);
+А мой ConfigureServices выглядит так
+
+services.AddAuthentication()
+            .AddJwtBearer(options =>
+             {
+                 options.RequireHttpsMetadata = false;
+                 options.SaveToken = true;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidateAudience = true,
+                     ValidateLifetime = true,
+                     ValidateIssuerSigningKey = true,
+                     ValidIssuer = "http://localhost:61768/",
+                     ValidAudience = "http://localhost:61768/",
+                     TokenDecryptionKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ASEFRFDDWSDRGYHF")),
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("veryVerySecretKey")),
+                     ClockSkew = TimeSpan.Zero
+                 };
+             });
+Примечание. Измените эмитента и ключ соответствующим образом.
+
+ 28.01.2019 06:31
+Ошибка, которую вы получили, связана с аудиторией, вы должны либо включить ValidAudience, либо установить для ValidateAudience значение false в своих параметрах.
+
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options => {
+            options.TokenValidationParameters = new TokenValidationParameters{
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+            ValidateIssuer = false,
+            ValidateAudience = false
+          };
+        });
+ 28.01.2019 07:25
+У меня такая же проблема. Обратите внимание, что порядок в функции Настройка.
+app.usemvc (); должен быть внизу. Нравится:
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseAuthentication();
+    app.UseMvc();
+}
+ 27.10.2019 21:27
+Ответ Ram Kumaran (https://stackoverflow.com/a/54396550/8210755) работает для меня. Это могло произойти после обновления до net core 3.1 или после обновления IdentityServer до 4.3.1.
+
+Я заменил закомментированный код на AddJwtBearer
+
+ services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //.AddIdentityServerAuthentication(options =>
+            //{
+            //    options.Authority = Configuration.GetSection("IdentityServerUrl").Value;
+            //    options.RequireHttpsMetadata = false;
+            //    options.ApiName = "api1";
+            //});
+            .AddJwtBearer(o =>
+             {
+                 o.Authority = Configuration.GetSection("IdentityServerUrl").Value;
+                 o.RequireHttpsMetadata = false;
+                 o.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                 {
+                     ValidateAudience = false
+                 };
+             });
+Полезная ссылка на документ: https://docs.identityserver.io/_/downloads/en/latest/pdf/ Использование ValidateAudience в ложном доказательстве концепции
+
+ 27.07.2020 08:01
+У меня была аналогичная проблема, когда .net Core 3 API не аутентифицировал свои токены.
+
+Решение для меня было в Startup/Configure(), чтобы поместить app.UseAuthentication() перед app.UseAuthorization().
+
+ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+ {
+    app.UseAuthentication();
+
+    app.UseAuthorization();
+ }
+ 08.08.2020 11:30
+Другие вопросы по теме
+Используйте одну страницу макета в нескольких основных проектах asp.net
+.NET Core создает ненулевое ограничение FK с помощью IdentityUser
+JQuery недоступен в представлении Razor ASP.NET Core 2.2
+Форма PartialViewResult не будет очищать значения результата ajax - ASP.NET Core Razor С#
+Ошибка в ответе от метода PUT с использованием сжатия
+HttpClient, вызывающий API, не проходит аутентификацию cookie
+Поведение Docker для ядра C# (тип Linux) — связанное со сборкой образа
+Мой сайт выходит из системы каждый раз, когда я возвращаюсь
+Записи NLog в SQL Server в .NET Core 2.2
+Как генерировать ссылки с помощью помощников тегов привязки для маршрутов не по умолчанию?
+Похожие вопросы
+Как читать XML-документ и добавлять его значения в поля со списком и текстовые поля
+.NET Core создает ненулевое ограничение FK с помощью IdentityUser
+Отсутствует аннотация OData для ответа Microsoft.AspNet.OData
+Как получить доступ к экземплярам объектов из другого класса?
+Как заархивировать только файл и папку по пути в С#
+Как скопировать содержимое открытого экземпляра блокнота?
+Получить данные из SQL Server на основе столбца данных в datatable Epplus С#
+С# MVC Core Печать файла Excel с использованием Process(), PDF работает нормально, но Excel продолжает загружаться
+Проблемы с обменом переменными между файлами в С#
+Межобъектное взаимодействие Unity между сценами: КАК?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как декодировать токен jwt в POSTMAN?
+Вопросы
+JWT
+Как декодировать токен jwt в POSTMAN?
+Я хочу декодировать токен jwt, который я получил с помощью Postman, и реализовать его в REST API. Как мне это сделать? Я видел, как люди выкладывали код для декодирования токена jwt (ссылка: Как декодировать токен jwt в javascript без использования библиотеки?), но я не понимаю, как это сделать в почтальоне? Какой URL нужен для декодирования jwt? Какие заголовки, авторизация нужна?
+
+ 14.12.2020 06:46
+5
+2
+6 598
+5
+Данный вопрос помечен как решенный
+ Ответы 5
+https://jwt.io/ если хотите, которые могут решить вашу проблему, вы также можете скачать некоторые плагины, если вы используете любую IDE
+
+ 14.12.2020 07:01
+ Ответ принят как подходящий
+Postman поддерживает библиотеку cryptojs: https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries
+
+Добавьте приведенный ниже пример в тестовый скрипт postman:
+
+let jwt = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b3B0YWwuY29tIiwiZXhwIjoxNDI2NDIwODAwLCJodHRwOi8vdG9wdGFsLmNvbS9qd3RfY2xhaW1zL2lzX2FkbWluIjp0cnVlLCJjb21wYW55IjoiVG9wdGFsIiwiYXdlc29tZSI6dHJ1ZX0.UsrGn95rk5DStcC_WwIr3WIv5rHe2IApX56I58l8uyo`
+
+a = jwt.split('.');
+
+
+//a.forEach(function (val) {
+    var words = CryptoJS.enc.Base64.parse(a[1]);
+    var textString = CryptoJS.enc.Utf8.stringify(words);
+
+    console.info(textString)
+//})
+Выход:
+
+HmacSHA256 — это не алгоритм шифрования, а алгоритм хеширования, поэтому его невозможно декодировать, поскольку хеширование — это односторонняя функция.
+
+так как последняя часть находится в форме
+
+HMACSHA256 of ( base64(header) + "." + base64(body) )
+вы можете попробовать создать его и приравнять оба равны
+
+ 14.12.2020 15:05
+Вы можете вручную проанализировать, используя функцию atob, которая декодирует строку Base64. (https://developer.mozilla.org/pt-BR/docs/Web/API/atob)
+
+И это доступно в сценариях Postman.
+
+Что-то вроде этого:
+
+// Sample JWT
+let jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+
+let [jwtHeader, jwtPayload, jwtSignature] = jwt.split('.')
+
+let jwtPayloadJsonString = atob(jwtPayload)
+
+console.info(jwtPayloadJsonString)
+
+let jwtPayloadJson = JSON.parse(jwtPayloadJsonString)
+
+console.info(jwtPayloadJson)
+
+ 02.05.2022 15:57
+Основываясь на ответе PDHide, я придумал этот готовый к использованию фрагмент для Postman:
+
+var jsonData = JSON.parse(responseBody);
+
+let [header, payload, signature] = jsonData.access_token.split('.');
+
+function decode(x) {
+    let wordArray = CryptoJS.enc.Base64.parse(x);
+    let str = CryptoJS.enc.Utf8.stringify(wordArray);
+    return JSON.parse(str);
+}
+
+console.info("Header: ", decode(header));
+console.info("Payload: ", decode(payload));
+См. эту ссылку для получения дополнительной информации о трех частях токена JSONWeb (заголовок, полезная нагрузка и подпись).
+
+ 13.05.2022 10:59
+с помощью CryptoJS
+
+const payloadRaw = jwt.split('.')[1]
+const payloadBase64 = CryptoJS.enc.Base64.parse(payloadRaw);
+const payload = JSON.parse(payloadBase64.toString(CryptoJS.enc.Utf8));
+ 28.02.2023 19:52
+Другие вопросы по теме
+Роль Azure AD не отображается в токене аутентификации или идентификатора для гостевого пользователя
+Как узнать, к какой коллекции/папке принадлежит моя открытая вкладка?
+Вложенный запрос мангуста
+Android залп отправляет пустой запрос на сервер со статусом 200
+Утверждение даты и времени тела ответа в Postman
+Почтальон: установить EnvironmentVariable
+KeyError в Flask Python
+Интеграция с командами Microsoft через API Postman
+Почему возникла ошибка Invalid_Key из API метаданных MailChimp?
+Динамическое значение данных post json реализовано в почтальоне
+Похожие вопросы
+JsonWebTokenError: неправильно сформирован jwt (создание API в ExpressJs)
+JWT Auth выдает ошибку при попытке войти в систему пользователя
+Совместное использование аутентификации/авторизации JWT
+Ktor application.conf — конфигурация JWT
+Безопасное весеннее загрузочное приложение без входа пользователя в систему
+Аутентификация JWT, роли, определенные в атрибуте Authorize, игнорируются
+Как добавить внедрение зависимостей в ISecurityTokenValidator из AddJwtBearer в .net C# Web API
+Платформа API OpenApi не использует токен JWT
+Как правильно настроить конфигурацию безопасности Spring boot 3?
+Multi-Tenancy с аутентификацией JWT и проверкой пользователя для арендатора
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Получите токен доступа Firebase в POSTMAN
+Вопросы
+FIREBASE
+Получите токен доступа Firebase в POSTMAN
+В своем веб-приложении я использую Firebase для аутентификации, чтобы получить доступ к любому API, мне нужно пройти аутентификацию из firebase.
+
+Вопрос: Как я могу получить токен доступа к firebase в Postman?
+
+У меня есть 2 решения этой проблемы:
+
+1) Получите токен доступа из firebase в почтальоне, сохраните этот токен доступа в глобальном env почтальона. переменная, а затем я могу выполнить другой запрос API. (Здесь я не знаю, как получить токен доступа в почтальоне)
+
+2) Выполните вход в систему в браузере, скопируйте токен доступа из сетевого запроса, сохраните его в bash_profile и затем используйте в Postman. (Здесь я не знаю, как читать переменную окружения ОС)
+
+ 20.04.2018 07:37
+14
+2
+11 676
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+Простой способ получить токен доступа из firebase:
+
+создать html-файл в каталоге
+скопируйте в html файл содержимое firebase auth краткое руководство
+замените firebase-app.js и firebase-auth.js, как описано в веб-настройка firebase, чтобы указать им правильное расположение cdn в Интернете.
+замените скрипт firebase.init кодом инициализации из вашего приложения на консоли следующим образом:
+var config = {
+    apiKey: "my secret api key",
+    authDomain: "myapp.firebaseapp.com",
+    databaseURL: "https://myapp.firebaseio.com",
+    projectId: "myapp-bookworm",
+    storageBucket: "myapp.appspot.com",
+    messagingSenderId: "xxxxxxxxxxxxx"
+};
+firebase.initializeApp(config);
+откройте HTML-файл в своем браузере и либо войдите, либо зарегистрируйтесь. Должно отображаться значение объекта Firebase auth currentUser.
+
+проверьте HTML и разверните элемент quickstart-account-details. При этом должен отображаться объект json.
+
+скопировать содержимое accessToken
+
+В почтальоне перейдите к авторизации, выберите токен на предъявителя и вставьте скопированный токен в поле значения токена.
+
+Теперь у вас должна быть возможность вызывать apis, защищенные firebase auth. Имейте в виду, что это только получает и передает токен доступа, поэтому после истечения срока действия токена вам может потребоваться запросить новый (шаги с 5 по 8).
+
+можно еще посмотреть это
+Надеюсь это поможет!
+
+ 08.01.2019 05:39
+Если вы хотите использовать только Postman и не хотите создавать интерфейс, вы можете использовать этот запрос аутентификации в Postman: POST https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key = {API_KEY}
+
+В Body вы должны отправить следующую строку JSON:
+
+{"email":"{YOUR_EMAIL_ADDRESS}","password":"{PASSWORD}","returnSecureToken":true}
+Тип содержимого - application / json (будет установлен в Postman автоматически). Вы можете найти Firebase API_KEY в настройках проекта Firebase (это ключ веб-API).
+
+В качестве ответа вы получите объект JSON, а idToken - это токен, который вам нужен для всех ваших запросов API в качестве токена-носителя.
+
+Чтобы настроить этот токен автоматически, вы можете добавить следующий код на вкладке «Тесты» в свой запрос авторизации:
+
+var jsonData = JSON.parse(responseBody);
+postman.setGlobalVariable("id_token", jsonData.idToken);
+Для всех ваших запросов API вы должны установить авторизацию на Bearer Token, а значение токена - {{id_token}}.
+
+Теперь токен будет автоматически использоваться после того, как вы выполнили запрос аутентификации и получили ответ.
+
+ 19.11.2019 14:59
+В дополнение к сообщение naptoon:
+
+var jsonData = JSON.parse(responseBody);
+postman.setGlobalVariable("id_token", jsonData.idToken);
+Это «старый стиль», то есть устарело почтальоном. «Новый стиль» - это:
+
+pm.environment.set("id_token", pm.response.json().idToken);
+ 31.07.2020 12:48
+перейдите к сценарию предварительного запроса и добавьте этот код (используйте свой API_KEY, USER_EMAIL, USER_PASSWORD)
+
+  const reqObject = {
+    url: "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key = {API_KEY}", // API_KEY -> your API key from firebase config 
+    method: 'POST',
+    header: 'Content-Type:application/json',
+    body: {
+        mode: 'raw',
+        raw: JSON.stringify({ "email": {USER_EMAIL}, "password": {USER_PASSWORD}, "returnSecureToken": true })
+    }
+};
+
+pm.sendRequest(reqObject, (err, res) => {
+    const idToken = res.json().idToken;  // your idToken
+    pm.environment.set("FIREBASE_TOKEN", idToken ); // set environment variable FIREBASE_TOKEN with value idToken 
+});
+этот код добавит переменную среды FIREBASE_TOKEN, но вы можете делать все, что хотите, с idToken =)
+
+ 03.10.2020 13:29
+Я столкнулся с необходимостью сделать это там, где промежуточная и производственная среды требуют другого Firebase idToken, но локальные не используют его. Я расширил ответы naptoon и leo, чтобы использовать конечную точку verifyPassword в identitytoolkit как часть предварительного запроса:
+
+const apiKey = pm.environment.get('api_key');
+
+if ( ! apiKey) {
+    return
+}
+
+const tokenEnv = pm.environment.get('token_env')
+
+if (tokenEnv && tokenEnv === pm.environment.name) {
+    const tokenTimestamp = Number.parseInt(pm.environment.get('token_timestamp'), 10)
+    const elapsed = Date.now() - tokenTimestamp
+    if (elapsed < 20 * 60000) {
+        return
+    }
+}
+
+pm.sendRequest({
+    url: `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`,
+    method: 'POST',
+    header: {
+        'Content-Type': 'application/json',
+    },
+    body: {
+        mode: 'raw',
+        raw: JSON.stringify({
+            email: pm.environment.get('auth_username'),
+            password: pm.environment.get('auth_password'),
+            returnSecureToken: true,
+        }),
+    },
+}, function (err, res) {
+    let json
+    if ( ! err) {
+        json = res.json()
+        if (json.error) {
+            err = json.error
+        }
+    }
+    if (err) {
+        pm.environment.unset('auth_token')
+        pm.environment.unset('token_env')
+        pm.environment.unset('token_timestamp')
+        throw err
+    }
+    pm.expect(json.idToken).to.not.be.undefined
+    pm.environment.set('auth_token', json.idToken)
+    pm.environment.set('token_env', pm.environment.name)
+    pm.environment.set('token_timestamp', Date.now())
+})
+Токен доступа кэшируется для данной среды на срок до 20 минут (я не реализовал токен обновления). Маркер очищается, если среда отличается от последнего запроса или возникает ошибка.
+
+ 18.11.2020 22:22
+Скопируйте приведенный ниже блок кода и поместите его на вкладку «сценарии предварительного запроса» запроса в Postman. Он автоматически получает токен и помещает его в заголовок «Авторизация» каждый раз, когда вы делаете запрос. Вам не нужно добавлять заголовок или авторизацию вручную. Вам даже не нужно беспокоиться об истечении срока действия токена.
+
+Очевидно, замените ключ API приложения, имя пользователя и заполнители пароля.
+
+const postRequest = {
+  url: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key = {APP_API_Key}',
+  method: 'POST',
+  header: {
+    'Content-Type': 'application/json'
+  },
+  body: {
+    mode: 'raw',
+    raw: JSON.stringify({
+    "email": "{Your_Email}",
+    "password": "{Your_Password}",
+    "returnSecureToken": true
+})
+  }
+};
+
+pm.sendRequest(postRequest, (error, response) => {
+  var jsonData = response.json();
+  pm.globals.set("id_token", jsonData.idToken)
+});
+
+pm.request.headers.add({key: 'Authorization', value: '{{id_token}}'})
+ 20.05.2021 08:15
+Другие вопросы по теме
+Консоль firebase | добавить пользователя по номеру мобильного
+Создать новую учетную запись с помощью Cloud Functions Request / Express
+Facebook registerCallbackManager выдает ошибку (вход в Facebook с помощью Firebase)
+Как получить токен обновления для API Google с помощью аутентификации Firebase
+Свяжите вход Expo / Google с аутентификацией firebase
+Аутентификация Firebase не работает после создания подписанного APK (вход в Google)
+Приложение Ionic3 с аутентификацией firebase автоматически выводит пользователя из системы через 24 часа (логин не сохраняется)
+Получите электронную почту перед входом в систему - GoogleSignIn
+Firebase auth с Mithril для входа / регистрации в бессерверном SPA
+Firebase с Google (ТОЛЬКО вход)
+Похожие вопросы
+Консоль firebase | добавить пользователя по номеру мобильного
+Firebase увеличивает количество значков с iOS
+Как загрузить несколько изображений на firebase с помощью Swift?
+Зависимость Android com.android.support:support-v4 имеет другую версию
+Ошибка сборки angular firebase при попытке сборки ionic
+Обновить значение данных firebase при определенном условии
+Об Android Firebase для получения данных (нет ошибки установщика / поля)
+Firestore (4.13.0): ВНУТРЕННЯЯ НЕОБРАБОТАННАЯ ОШИБКА
+Как и где найти последнюю версию firebase-ui?
+Уведомления Firebase и Azure по расписанию в Xamarin
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как настроить токен на предъявителя в почтальоне из переменной среды?
+Вопросы
+POSTMAN
+Как настроить токен на предъявителя в почтальоне из переменной среды?
+Я настроил коллекцию в PostMan и могу успешно сохранить значение токена-носителя в переменной среды, используя следующий тест
+
+var jsonData = JSON.parse(responseBody);
+pm.environment.set("mytoken", jsonData.token);
+но как мне настроить новый вызов, чтобы использовать его?
+
+Я пробовал добавить заголовок с
+
+Authorization Bearer <mytoken>
+но когда я публикую статус 401 Unauthorized
+
+ 17.06.2018 07:23
+4
+1
+7 278
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+ Ответ принят как подходящий
+В заголовках мне нужно было использовать
+
+для ключа
+
+Authorization 
+для значения
+
+Bearer {{mytoken}}
+ 17.06.2018 07:51
+Как сказала Кристен. Или загрузите последнее настольное приложение почтальона, поскольку при авторизации у них есть возможность добавить токен на предъявителя в заголовок
+
+ 17.06.2018 08:38
+Резюме:
+
+Создайте переменную для хранения значения токена аутентификации в одном месте для использования во всей вашей коллекции.
+Установите метод авторизации по умолчанию для всей вашей коллекции.
+Вместо установки заголовка авторизации для каждого запроса установите авторизацию для каждого запроса на использование «Наследовать аутентификацию от родителя», чтобы автоматически заполнить запрос правильными заголовками аутентификации.
+Вы можете определять переменные в средах и коллекциях Postman, чтобы упростить ваши запросы, задав значение в одном месте и ссылаясь на него в любом количестве мест. Таким образом, вы можете создать переменную для значения вашего токена на предъявителя. Сделайте это, отредактировав свою коллекцию и перейдя на вкладку «Переменные», чтобы добавить новую переменную.
+
+While editing your collection go to the Variables tab to add a new variable you can use throughout your collection.
+
+Также при редактировании вашей коллекции перейдите на вкладку «Авторизация», чтобы установить авторизацию по умолчанию для всех запросов в вашей коллекции. Вы можете установить тип авторизации для вашей коллекции на предъявитель и установить значение токена как вашу определенную переменную. Это позволит вам использовать один и тот же токен авторизации для всех ваших запросов в вашей коллекции:
+
+Also while editing your collection go the Authorization tab to set a default authorization for all requests within your collection.
+
+Затем, чтобы использовать метод авторизации коллекции по умолчанию, вам нужно будет установить запросы в этой коллекции, чтобы установить Тип авторизации на «Наследовать аутентификацию от родителя». Это позволит вам не добавлять вручную заголовок авторизации к каждому запросу. Каждый запрос в коллекции с выбранным типом авторизации «Наследовать аутентификацию от родительского» будет автоматически заполнять запрос соответствующими заголовками для авторизации, если вы определили параметр по умолчанию для коллекции, как на предыдущем изображении.
+
+Set each request to use the Authorization Type "Inherit auth from parent".
+
+Ваше здоровье!
+
+ 06.06.2019 19:30
+Вы можете использовать вкладку Tests для написания кода, который обновляет переменную среды, как описано в этом ссылка на сайт. Подробнее о тестовых скриптах здесь.
+
+
+
+Предполагая, что ответ на вызов аутентификации:
+
+{
+    "token": "woaejrlajfaoidhfalskdjfalsdijfasd"
+}
+Затем во вкладке Tests вы можете написать примерно так:
+
+var jsonData = JSON.parse(responseBody);
+postman.setEnvironmentVariable("token", jsonData.token);
+Это обновит переменную token всякий раз, когда вы запускаете вызов аутентификации. Эта переменная token должна использоваться в заголовках всех вызовов API для автоматического обновления.
+
+Также проверьте наследование авторизации.
+
+ 21.01.2020 00:36
+Я использую сценарий после входа в систему на вкладке тестов, как показано ниже;
+
+let jsonData = JSON.parse(responseBody);
+
+pm.collectionVariables.set("jwt_token", jsonData.data.token);
+
+
+и создайте переменную коллекции, как показано ниже; 
+
+ 26.03.2021 12:29
+pm.environment.set("JWT",pm.response.json().token)
+Примечание: JWT - это переменная среды, которую вы установили в своей среде.
+
+ 28.04.2021 18:55
+Другие вопросы по теме
+Выполните запрос почтальона несколько раз, используя массив из предыдущего шага
+Есть ли обходной путь для ошибки Postman, когда контент возвращается с 204?
+Приложение Postman не добавляет файлы cookie в запрос
+Как импортировать внешний модуль javascript в почтальон?
+Как выполнить несколько postman.setNextRequest
+Невозможно разветвить мои тесты с помощью переменной в Postman
+Как пропустить итерацию в сборщике с файлом данных в почтальоне
+Запросить повторное использование в Postman
+NTLM с Postman показывает "JSONError | Неожиданный токен '<' в соотношении 1: 1"
+Добавление переменных Postman в тело сообщения JSON внутри полей имени ключа
+Похожие вопросы
+Идентификатор сеанса не работает с Express
+Тестирование API с помощью почтальона
+Получить параметры запроса с помощью Flask-RESTful
+Мой php-код не работает с почтальоном, когда я вставляю параметры
+Запрос POST Guzzle к JWT API становится неавторизованным, пока Postman работает
+Различные ответы Insomnia и Postman на веб-запрос
+Получение внутренней ошибки сервера 500 при модернизации
+Как получить необработанные данные JSON от Postman на Java
+AADSTS50001: приложение с именем X не было найдено в клиенте с именем Y при аутентификации Postman в Azure AD
+Rails API Get с параметрами
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Вызов API работает с почтальоном, но Doenst работает с моим кодом
+Вопросы
+REACTJS
+Вызов API работает с почтальоном, но Doenst работает с моим кодом
+Поэтому мне нужно обновить некоторую информацию о пользователе, она отлично работает с почтальоном, но когда я пытаюсь ввести ее в response-native, я должен делать что-то не так в теле метода fetch. В почтальоне я устанавливаю x-www-form-urlencoded и набираю ключи следующим образом:
+
+Ключ ----- Значение
+
+мото ----- тест
+
+и это, кажется, работает, но когда я пытаюсь сделать то же самое со своим кодом, я почему-то терплю неудачу, вот мой код
+
+updateUser(){
+
+ return fetch(url,{
+    method: "PATCH",
+    headers: {
+        "X-Auth-Token": bearerToken,
+        "Content-Type":"application/x-www-form-urlencoded"
+    },
+      body: JSON.stringify({
+                  moto: this.state.moto
+          }
+    })
+  }
+)
+Я получаю ответ 200, что означает, что вызов работает, но я должен каким-то образом установить параметр moto неправильно. Любые идеи ?
+
+ 31.07.2018 09:43
+1
+0
+2 547
+6
+ Ответы 6
+"Content-Type":"application/x-www-form-urlencoded"
+
+должно быть
+
+"Content-Type": "application / json"
+
+ 31.07.2018 09:45
+form-urlencoded сильно отличается от вашего body: JSON.stringify().
+
+Вместо этого вы захотите использовать объект FormData:
+
+const body = new FormData();
+body.append('moto', this.state.moto);
+fetch(url, {
+  method: "PATCH",
+  headers: {
+    "X-Auth-Token": bearerToken,
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body,
+})
+ 31.07.2018 09:46
+APICall = () => { 
+  fetch(‘Your http URL’, {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    ‘X-Auth-Token’: bearerToken,
+    },
+    body: JSON.stringify({ 
+      moto: this.state.moto
+    }) 
+  }).then((response) => response.json())
+      .then((responseJson) => {      
+    if (responseJson.statuscode == 1) {
+      Alert.alert('Success');
+    } else {
+      Alert.alert(responseJson.message);
+    }
+    }).catch((error) => {
+      console.error(error);
+    });
+}
+ 31.07.2018 14:03
+наконец исправил это, установив тело на
+
+   body: 
+      `moto=${this.state.moto}`
+похоже, что заголовки urlencoded требуют параметров в виде параметр1 = значение1 & параметр2 = значение2
+
+ 01.08.2018 10:05
+componentDidMount() {
+return fetch(“Your URL”, {
+    method: 'post',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Authorization": “token”
+    },
+    body: "firstName=Nikhil&favColor=blue&password=easytoguess"
+})
+    .then((response) => response.json())
+    .then(function (data) {
+        alert(“Success”)
+        console.info('Request succeeded with JSON response', data);
+    })
+    .catch(function (error) {
+        alert("error occur")
+        console.info('Request failed', error);
+    });
+}
+ 01.08.2018 11:26
+const formData = new FormData();
+
+formData.append('email', 'test@gmail.com');
+formData.append('password', '123456');
+
+fetch("https://test.com/api/login", {
+    method: 'post',
+    body: formData
+})
+.then(res => res.json())
+.then(
+(result) => {
+    console.info(result);
+}).catch(err => {
+    console.info(err);
+})
+ 25.07.2020 07:32
+Другие вопросы по теме
+Python: добавление задержки после каждого элемента при выгрузке результатов из списка URL-адресов в файл JSON
+Symfony 3.4 - Возвращает массив JsonResponse
+Получить заголовок местоположения из ответа, httpclient
+Единый API для различных баз данных на Python
+Повторное использование формы в нескольких представлениях
+Запрос PHP curl никогда не завершается
+Файл загрузки curl в foreach измените значение моего сообщения
+Какое значение по умолчанию для крайнего срока gPRC (java)
+Как скрыть ключ API на стороне клиента?
+Zoho Projects API - токен аутентификации
+Похожие вопросы
+Форма PropType - выдает ошибку при объявлении
+Npm http-сервер "страница не найдена" при обновлении страницы
+Передача реквизита из компонента в статический метод
+Есть ли способ обнаружить изменения в объекте окна?
+Мини-версия Semantic-UI-React Sidebar при свертывании
+Как добавить и удалить активный класс в навигации в React JS
+Не удается найти URL-адрес файла с помощью xhr.open ('post', url, true) - Статус: 404 node js
+Как поделиться гиперссылкой на параметризованное представление в reactjs
+Реагировать на setState на основе текущего состояния
+Переопределить стилизованные компоненты в React
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Есть ли простой способ преобразовать этот JSON туда и обратно?
+Вопросы
+JAVASCRIPT
+Есть ли простой способ преобразовать этот JSON туда и обратно?
+Мы используем Postman для тестирования нашего API. Некоторые объекты, которые мы возвращаем, очень многословны и непросты в обращении, поэтому я хочу создать вспомогательный метод, чтобы сделать их немного более краткими. Я знаю, что существуют всевозможные библиотеки преобразования, такие как узел-json-преобразование, выбратьтрансформировать, jsontransforms и т. д., но, к сожалению, я могу использовать только Библиотеки Postman Sandbox и vanilla JS.
+
+Я ищу самый простой (наименьшее количество место и функций) способ преобразования этого объекта:
+
+var verbose = [
+    {
+        "Key": "Name",
+        "Value": "John Doe",
+        "Instance": 1
+    },
+    {
+        "Key": "Age",
+        "Value": "33",
+        "Instance": 1
+    },
+    {
+        "Key": "Child",
+        "Value": "Jane",
+        "Instance": 1
+    },
+    {
+        "Key": "Child",
+        "Value": "Rocky",
+        "Instance": 2
+    }];
+в это:
+
+var concise =  {
+    "Name": "John Doe",
+    "Age": "33",
+    "Child": ["Jane", "Rocky"]
+};
+и обратно в развернутую форму.
+
+Я уже пробовал собственный способ foreach-ing для каждого объекта и добавления свойств/значений к новому объекту, но вскоре он стал уродливым, когда я добрался до пар ключ/значение с несколькими экземплярами. Я могу представить, что есть более простой способ использования map/reduce, но я не знаком с этими методами.
+
+ 27.02.2019 11:12
+1
+3
+131
+6
+Данный вопрос помечен как решенный
+ Ответы 6
+Ты можешь сделать:
+
+const verbose = [{"Key": "Name","Value": "John Doe","Instance": 1},{"Key": "Age","Value": "33","Instance": 1},{"Key": "Child","Value": "Jane","Instance": 1},{"Key": "Child","Value": "Rocky","Instance": 2}];
+const concise = Object.values(verbose.reduce((a, {Key, Value}) => (Key === 'Child' ? a.childs[0].Child.push(Value) : a.keys.push({[Key]: Value}), a), {keys: [], childs: [{Child: []}]})).flat(1);
+
+console.info(concise);
+.as-console-wrapper { max-height: 100% !important; top: 0; }
+ 27.02.2019 11:18
+Исходя из того, как я понял ваш вопрос, вы хотите создать пары ключ-значение из вашего массива объектов verbose. Однако, если есть конфликты ключей, значения должны быть преобразованы в массив.
+
+Имея это в виду, вам придется:
+
+Используйте forEach для циклического просмотра массива объектов.
+Если ключ не конфликтует, мы просто создаем новую пару ключ-значение
+Если ключ конфликтует, то это становится немного сложнее:
+Если ключ конфликтует, и это первое вхождение, мы преобразуем значение в паре ключ-значение в массив
+Если ключ конфликтует, и это не первый случай, мы знаем, что смотрим на массив
+Теперь у определенно есть массив, поэтому мы помещаем в него наше значение.
+См. доказательство концепции ниже:
+
+var verbose = [{
+    "Key": "Name",
+    "Value": "John Doe",
+    "Instance": 1
+  },
+  {
+    "Key": "Age",
+    "Value": "33",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Jane",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Rocky",
+    "Instance": 2
+  }];
+
+var concise = {};
+verbose.forEach(function(i) {
+  var key = i['Key'];
+  var value = i['Value'];
+  
+  // If item exists, we want to convert the value into an array of values
+  if (key in concise) {
+    var item = concise[key];
+    
+    // If it is not an array already, we convert it to an array
+    if (!Array.isArray(item))
+      item = [item];
+      
+    item.push(value);
+    concise[key] = item;
+  }
+  
+  // If item does not exist, we simply create a new key-value pair
+  else {
+    concise[key] = value;
+  }
+});
+console.info(concise);
+ 27.02.2019 11:32
+const verbose = [{
+    "Key": "Name",
+    "Value": "John Doe",
+    "Instance": 1
+  },
+  {
+    "Key": "Age",
+    "Value": "33",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Jane",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Rocky",
+    "Instance": 2
+  }
+];
+let concise = {};
+
+verbose.forEach(item => {
+  const values = Object.values(item)
+  if (concise[values[0]])  concise = {...concise, [values[0]]: [concise[values[0]], values[1]]};
+  else concise = {...concise, ...{[values[0]]: values[1]}}
+})
+
+ 27.02.2019 11:35
+Попробуй это. Я написал обе функции преобразования. Я вижу, что другие ответы содержат только подробные и краткие требования.
+
+let verbose = [{
+    "Key": "Name",
+    "Value": "John Doe",
+    "Instance": 1
+  },
+  {
+    "Key": "Age",
+    "Value": "33",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Jane",
+    "Instance": 1
+  },
+  {
+    "Key": "Child",
+    "Value": "Rocky",
+    "Instance": 2
+  }
+]
+
+let concise = {
+  "Name": "John Doe",
+  "Age": "33",
+  "Child": ["Jane", "Rocky"]
+}
+
+verboseToConcise = (verbose) => {
+  let obj = {}
+  verbose.forEach(v => {
+    let key = obj[v.Key]
+    if (key) typeof key === 'string' ? obj[v.Key] = [key, v.Value] : key.push(v.Value)
+    else obj[v.Key] = v.Value
+  })
+  return obj
+}
+
+conciseToVerbose = (concise) => {
+  let arr = []
+  Object.entries(concise).forEach(([key, value]) => {
+    if (typeof value === 'object') {
+      for (let i = 0; i < value.length; i++){
+        arr.push({
+          "Key": key,
+          "Value": value[i],
+          "Instance": i+1
+        })
+      }
+    } else {
+      arr.push({
+        "Key": key,
+        "Value": value,
+        "Instance": 1
+      })
+    }
+  })
+  return arr
+}
+
+console.info(verboseToConcise(verbose))
+console.info(conciseToVerbose(concise))
+ 27.02.2019 11:38
+ Ответ принят как подходящий
+Здесь я предполагаю, что все атрибуты являются многозначными, а затем уменьшаю те, которые имеют длину 1, до простого значения. Это немного медленнее, чем обратный подход, когда вы предполагаете, что значения являются однозначными, и переводите их в массивы, когда они доказывают обратное, чтобы соблюдать порядок, установленный Instance.
+
+function makeConcise(verbose) {
+  let concise = {};
+  verbose.forEach(({Key, Value, Instance}) => {
+    if (!concise[Key]) concise[Key] = [];
+    concise[Key][Instance - 1] = Value;
+  });
+  Object.keys(concise).forEach(Key => {
+    if (concise[Key].length == 1) concise[Key] = concise[Key][0];
+  });
+  return concise;
+}
+Обратная функция так же проста:
+
+function makeVerbose(concise) {
+  let verbose = [];
+  Object.keys(concise).forEach(Key => {
+    if (Array.isArray(concise[Key])) {
+      concise[Key].forEach((Value, index) => {
+        verbose.push({Key, Value, Instance: index + 1});
+      });
+    } else {
+      verbose.push({Key, Value: concise[Key], Instance: 1});
+    }
+  });
+  return verbose;
+}
+ 27.02.2019 11:38
+Я также попробовал использовать reduce:
+
+Обновлено: без синтаксиса распространения ..., с Object.assign и array.concat
+
+Обновлено еще раз: я хотел попробовать вернуть его снова. В этом коде мы теряем значение Instance :(
+
+var verbose = [
+  {
+    Key: 'Name',
+    Value: 'John Doe',
+    Instance: 1,
+  },
+  {
+    Key: 'Age',
+    Value: '33',
+    Instance: 1,
+  },
+  {
+    Key: 'Child',
+    Value: 'Jane',
+    Instance: 1,
+  },
+  {
+    Key: 'Child',
+    Value: 'Rocky',
+    Instance: 2,
+  },
+]
+
+const concise = verbose.reduce(
+  (p, n) =>
+    Object.assign(p, {
+      [n.Key]: !p.hasOwnProperty(n.Key)
+        ? n.Value
+        : typeof p[n.Key] === 'string'
+        ? [p[n.Key], n.Value]
+        : p[n.Key].concat(n.Value),
+    }),
+  {},
+)
+
+console.info(concise)
+// { Name: 'John Doe', Age: '33', Child: [ 'Jane', 'Rocky' ] }
+
+const backAgain = Object.entries(concise).reduce(
+  (p, [k, v]) =>
+    Array.isArray(v)
+      ? p.concat(v.map(x => ({ Key: k, Value: x })))
+      : p.concat({ Key: k, Value: v }),
+  [],
+)
+
+console.info(backAgain)
+// [ { Key: 'Name', Value: 'John Doe' },
+//  { Key: 'Age', Value: '33' },
+//  { Key: 'Child', Value: 'Jane' },
+//  { Key: 'Child', Value: 'Rocky' } ]
+ 27.02.2019 11:44
+Другие вопросы по теме
+Как я могу удалить элемент из json, используя метод ниже?
+Как сделать проекцию на строку json
+Фильтровать массив JSON в Swift
+Время разбора строки, чтение из входного файла (плоский текст)
+Можно ли сжать объект JSON в памяти
+Не удается отправить json на экспресс-сервер из браузера
+Проверка Json не соответствует схеме json
+Как я могу опубликовать данные с именем класса в Retrofit
+Изменить конкретное значение JSON (C#)
+Java.lang.IllegalStateException: ожидается BEGIN_OBJECT
+Похожие вопросы
+Регулярное выражение, состоящее из 3 символов или более, минимум один минус, максимум 3 цифры
+Javascript перехватывает http-выборку из веб-работника + URL-адреса файлов
+Нужно хранить данные Google Place Api и управлять ими?
+Установить куки в браузере с помощью javascript
+Тернарный оператор Javascript с двумя истинными (?) условными операторами
+Intend Chrome через html тег href
+Функция remove() не определена в IE11
+Необязательный универсальный на основе аргумента функции
+Реакция: как обновить один компонент, когда что-то происходит с другим компонентом
+EncodeURIComponent против Handlebars.Utils.escapeExpression
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Автоматизировать отправку запроса и сохранение ответа
+Вопросы
+JMETER
+Автоматизировать отправку запроса и сохранение ответа
+Есть URL-адрес, по которому я хочу нажать и сохранить ответ. Идентификатор URL-адреса необходимо увеличивать каждый раз и сохранять ответ. Например -
+
+Первый запрос получения - http://google.com/getdata/? Id = 1
+
+Первый ответ - один
+
+Второй запрос - http://google.com/getdata/? Id = 2
+
+Второй ответ - два
+
+и так далее...
+
+Я хочу каждый раз выполнять запрос с увеличением идентификатора и сохранять ответ
+
+Я пробовал использовать скрипач, но не могу понять, как увеличить идентификатор и сохранить ответ.
+
+P.S. - Мне нужно сделать около 600000 просмотров
+
+ 02.04.2018 09:59
+1
+2
+1 353
+7
+ Ответы 7
+В JMeter вам нужно щелкнуть, Ctrl + 0 и Ctrl + 1 для создания, Thread Group и HTTP-запрос
+
+В группе потоков введите необходимое количество обращений в Number of Threads (users).
+
+В HTTP-запросе поместите в Server Name or IP www.google.com и в Path / getdata /? Id = $ {__ threadNum}
+
+__threadNum создаст увеличивающееся число от потока 1 до числа совпадений.
+
+Для небольшого количества совпадений или отладки вы можете добавить Просмотр дерева результатов для просмотра запроса / ответа, нажав Ctrl + 9 на уровне плана тестирования / группы потоков.
+
+Чтобы сохранить ответ, используйте постпроцессор, особенно добавив Средство извлечения регулярных выражений под HTTP-запросом, нажав Ctrl + 2.
+
+Allows the user to extract values from a server response using a Perl-type regular expression. As a post-processor, this element will execute after each Sample request in its scope, applying the regular expression, extracting the requested values, generate the template string, and store the result into the given variable name.
+
+Импортируйте, чтобы заметить, что для нагрузочное тестирование вам нужно работать в режиме без графического интерфейса, что означает вызов jmeter с использованием командной строки как jmeter -n -t myTest.jmx
+
+you will use Command-line mode (called Non-GUI mode) to run it for the Load Test. Don't run load test using GUI mode !
+
+Для сохранения всех ответов в один файл см. сохранить данные ответа или, если вы хотите сохранить файл для каждого потока / пользователя, вы можете добавить Сохранить ответы в файл
+
+ 02.04.2018 11:06
+Пожалуйста, найдите снимок ниже для вашего сценария.
+
+Scenario_Testplan
+
+Сначала перейдите в свойства пользователя и введите «sample_variables = ID, Response_File_Name» или любое другое имя, которое вы выберете для переменных. Перезапустите jmeter. Создайте план ниже: -
+
+Конфигурация набора данных CSV для получения дополнительных значений и имени файла ответов
+HTTP-запрос будет использовать $ {ID}
+При сохранении ответа в файл будет использоваться $ {Response_File_Name}.
+Надеюсь, это поможет.
+
+ 02.04.2018 11:15
+Поскольку упоминается тег «Почтальон», я могу помочь вам относительно того, как реализовать это в Почтальоне. У Postman есть отличная особенность использования «переменных».
+
+Вы можете использовать переменные среды или глобальные переменные.
+
+Подробнее об этом читайте в их документации: https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables
+
+Вы можете использовать глобальную переменную, такую ​​как «счетчик», и установить ее на 1 / любую начальную точку, которую вы хотите. Затем вы можете изменить свой запрос следующим образом: http://google.com/getdata/?Id = {{iteration}}
+
+Теперь в скрипте запроса Тесты можно написать следующий скрипт
+
+let i = parseInt(pm.globals.get('iteration')) + 1; pm.globals.set('iteration', i);
+
+Также для доступа к ответу вы можете использовать следующую команду в скрипте Контрольная работа: console.info(pm.response); // Use pm.response as per your needs
+
+Сохраните запрос в коллекцию. Теперь загрузите Бегущий почтальон и выберите коллекцию. Теперь вы можете поставить 6,00,000 итераций и нажать кнопку «Выполнить»!
+
+Помните, что тяжелые итерации вызовут снижение производительности.
+
+ 02.04.2018 12:04
+Я бы сделал это с помощью командной строки, используя цикл while с загибом URL-адреса, сохраняя результат тела в стандартном выводе в файл. Это выглядело бы примерно так:
+
+for i in {1..600000}; do curl "http://google.com/getdata/?id=$i" > body-result-id-$i; done
+Я не смог проверить строку выше, потому что у меня сейчас нет доступа к консоли, но я думаю, что она должна работать.
+
+ 02.04.2018 12:29
+Скрипач:
+
+Откройте редактор сценариев (Control + r), затем добавьте следующий код внутри OnBeforeResponse
+
+ static function OnBeforeResponse(oSession: Session) {
+        if (oSession.oRequest["X-SAVE-ME"] != "")
+        {
+            oSession.SaveResponseBody("C:\\tempfiddler\\" + oSession.SuggestedFilename);
+        }
+
+    }
+Перейдите на вкладку «Composer» и включите заголовок X-SAVE-ME с любым значением в URL-адресе, замените Я БЫ на # (точно так: http://google.com/getdata/?Id=#). Скрипач теперь будет запрашивать начальное и конечное значение идентификатора перед выполнением. ;
+
+ 02.04.2018 23:02
+В Burp это можно сделать с помощью инструмента Intruder. Сначала запишите образец запроса в Burp. Если вы не знаете, как это сделать, обратитесь к документации начиная.
+
+Затем щелкните запрос правой кнопкой мыши и выберите «Отправить злоумышленнику».
+
+На вкладке «Позиции» в Intruder сначала нажмите «Очистить», затем выберите раздел, который нужно изменить, и нажмите «Добавить».
+
+На вкладке Payloads выберите тип Payload как «Numbers» и настройте диапазон.
+
+Нажмите "Начать атаку".
+
+Для получения дополнительной информации обратитесь к документация.
+
+ 03.04.2018 11:27
+Еще одно решение - вы можете использовать счетчик в jmeter. Что вы можете найти снизу пути Группа потоков> configElement> Counter.
+
+Настройте счетчик в соответствии с вашими потребностями.
+Дайте ссылочное имя i для счетчика.
+Используйте переменную в своем запросе
+Для дополнительной информации.
+
+CounterForIncrementID
+
+ 03.04.2018 12:17
+Другие вопросы по теме
+Неизвестный столбец 'work_order_id' в 'списке полей' при вставке данных в базу данных mysql
+403 Запрещенная ошибка при использовании Webrequest в C#, но работает в почтальоне
+<title> Ошибка 403 В запрос не был включен действительный крошка </title>, получая то же самое в Eclipse с использованием restassured
+Скрипты PostMan Test: проверка содержимого JSON ответа
+Req не имеет тела при публикации с помощью Postman
+Почтальон - преобразование даты в формате ISO в метку времени UNIX
+Output response Body где-нибудь со скриптом newman из коллекции почтальонов
+Извлеките значение из ответа XML и установите его как глобальную переменную в Postman
+Оплата через Lyft API
+Получите Twitter Timeline (JSON) с помощью клиента Postman
+Похожие вопросы
+Получение дочерних значений случайным образом в JSON
+Невозможно войти в систему из-за '__RequestVerificationToken'
+Имя пользователя и пароль для аутентификации Base64
+Скопируйте файл .jtl из рабочей области Jenkins в другую папку
+Как передать набор значений из одной группы потоков Jmeter в другую
+Как мне войти в SalesForce с помощью SOAP в JMeter?
+Jmeter - Командная строка не может писать - папка не пуста
+Ошибка утверждения данных ответа не отображается на панели инструментов Jmeter
+Не удалось открыть мое приложение после смены прокси
+Подсчет количества кодов ответа в JMeter 4.0
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Добавить заголовок к каждому запросу в Postman в сценарии предварительного запроса
+Вопросы
+POSTMAN
+Добавить заголовок к каждому запросу в Postman в сценарии предварительного запроса
+Я хочу автоматически добавлять заголовок к каждому запросу во всей моей коллекции, используя этот сценарий предварительного запроса:
+
+pm.request.headers.add({
+    'key': "myvar",
+    'value': pm.environment.get("myvar")    
+});
+Myvar - переменная среды.
+
+К сожалению, это не работает. Я что-то пропустил?
+
+ 02.07.2018 10:12
+21
+0
+27 984
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Похоже, pm.request.headers.add() в настоящее время не обновляет отправляемый запрос. Он был отмечен как запрос функции: https://github.com/postmanlabs/postman-app-support/issues/4631
+
+Возможно, вы уже знаете, что вы можете создавать предустановленные заголовки (из раскрывающегося списка «Предустановки»), чтобы немного упростить настройку заголовков. И в разделе «Настройки» есть пара опций для включения определенных заголовков. Но эти предложения не добавляют автоматически заголовок к каждому запросу во всей коллекции, как вы спрашиваете.
+
+ОБНОВИТЬ: Почтальон добавил поддержку этого в приложении Почтальон (v7.0.9).
+
+ 03.07.2018 19:15
+Это скопировано отсюда, но у меня это сработало.
+
+https://gist.github.com/madebysid/b57985b0649d3407a7aa9de1bd327990
+
+pm.sendRequest({
+    url: "https://mydomain/ers/config/endpoint",
+    method: 'GET',
+    header: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+        //'x-site-code': pm.environment.get("x-site-code")
+        'X-CSRF-TOKEN': 'fetch'
+    },
+    body: {
+        mode: 'raw'//,
+        raw: JSON.stringify({ email: pm.environment.get("email"), password: pm.environment.get("password") })
+    }
+}, function (err, res) {
+
+    pm.environment.set("X-CSRF-TOKEN", "Bearer " + res.json().token);
+});
+ 18.09.2018 12:26
+В тестовом разделе входа в систему используйте этот скрипт, чтобы запомнить токен в среде.
+
+var jsonData = JSON.parse(responseBody);
+
+tests["Body contains result"] = responseBody.has("result");
+
+var result = jsonData.result
+
+tests["result contains user"] = result.user !== null
+var user = result.user
+tests["result contains token"] = result.token !== null
+var token = result.token
+var accessToken = token.accessToken
+var refreshToken = token.refreshToken
+
+postman.setEnvironmentVariable("accessToken", accessToken);
+postman.setEnvironmentVariable("refreshToken", refreshToken);
+в каждом вызове, для которого требуется токен, используйте токен, подобный этому, в разделе заголовка
+
+Authorization = Bearer {{accessToken}}
+ 01.03.2019 17:47
+Думаю, может быть, вы можете попробовать такой способ:
+
+  // Add or update an existing header
+
+ pm.request.headers.upsert({
+ 'key': "myvar",
+ 'value': pm.environment.get("myvar") 
+ });
+Это было обновлено в приложении Postman (v7.0.9). Для получения дополнительной информации вы можете обратиться к: https://github.com/postmanlabs/postman-app-support/issues/1947
+
+ 19.06.2019 12:28
+Начиная с Почтальон v7.0.9, это теперь возможно путем добавления сценария предварительного запроса в коллекцию.
+
+Для этого перейдите в свою коллекцию, щелкните ее правой кнопкой мыши, выберите «Редактировать» и перейдите на вкладку Pre-request Scripts, где вы можете добавить свой фрагмент, то есть:
+
+pm.request.headers.add({
+  key: 'X-HEADER-TEST',
+  value: '1'
+});
+ 10.07.2019 18:41
+ Ответ принят как подходящий
+Для тех, кто пробует это на postman ~ 7.10.0, вы можете программно добавлять заголовки в сценарий предварительного запроса, в запрос или в коллекцию (в коллекцию добавляются заголовки ко всем запросам внутри коллекции).
+
+pm.request.headers.add({ 
+    // These keys appears when you set a header by hand. Just for fun they are here
+    disabled: false,
+    description:{
+        content: "DescriptionTest",
+        type: "text/plain"
+    },
+    // Your header, effectively
+    key: 'KeyTest', 
+    name: 'NameTest', 
+    // If you set a variable you can access it
+    // HeaderTest here has value = "ValueHeaderTest"
+    value: pm.collectionVariables.get("HeaderTest")
+});
+Генератор фрагментов кода не буду показывает добавленный заголовок:
+
+GET /get_info.php HTTP/1.1
+Host: 192.168.15.25:8001
+Content-type: application/json
+User-Agent: PostmanRuntime/7.19.0
+Accept: */*
+Host: 192.168.15.25:8001
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Но Консоль Почтальона:
+
+GET /get_info.php HTTP/1.1
+Content-type: application/json
+KeyTest: ValueHeaderTest
+User-Agent: PostmanRuntime/7.19.0
+Accept: */*
+Host: 192.168.15.25:8001
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+ 21.01.2020 16:40
+Это определенно работает. Удалите кавычки на ключ и значение
+
+pm.request.headers.add({
+    key: "myvar",
+    value: pm.environment.get("myvar")    
+});
+ 18.02.2020 05:15
+Другие вопросы по теме
+Резервное копирование конфигурации почтальона в файл - среда и настройки
+Запрос POST с кодом ошибки 400 с pydev Eclipse, но работает с Postman
+Передача параметра в веб-службу asmx при использовании из C#
+Разбор данных в multipart / form-data в Lambda (Node.js)
+Как я могу использовать RestApi для обновления развертывания в k8s?
+Java EE - возврат статуса 415
+Получение запроса содержит ошибку неверных учетных данных аутентификации FCM
+"InvalidServerResponse" во время почтового запроса к приложению NodeJS
+Как получить поле gcm.notification.body в полезной нагрузке push-уведомления gcm
+Передача параметра веб-сервису asmx в Postman
+Похожие вопросы
+Spring Boot REST API генерирует ошибку 404 Not Found
+Сообщение об ошибке недоступности данных при запуске скрипта из Runner
+Запрос работы от почтальона, но сброс из Axios в командной строке
+Невозможно выполнить POST с двоичным файлом на сервер Node.js Express
+Cookie отсутствует в ответе Restsharp, но отсутствует в Postman
+Метод C# GET для приема JSON в качестве входного параметра в NancyFx и проверки его из POSTMAN
+Точка интеграции Postman Clean up
+Ошибка Postman 304 Not Modified, api пружинного упора
+Как сохранить ответ на запрос API в Postman в файл JSON при запуске коллекции
+Как настроить Postman так, чтобы он генерировал curl-код для Windows
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как мне интегрировать вход в систему Amazon Cognito в почтальоне?
+Вопросы
+POSTMAN
+Как мне интегрировать вход в систему Amazon Cognito в почтальоне?
+Я использовал пул пользователей Amazon Cognito для входа в систему. Когда я открываю свое веб-приложение, я перенаправляюсь на
+
+https://<domain>.auth.<region>.amazoncognito.com/login?response_type=code&client_id=<client id>&redirect_uri=<callback> . 
+После входа в систему с именем пользователя / паролем пользователя из пула я буду перенаправлен на URL-адрес обратного вызова с кодом в качестве параметра запроса. Я могу использовать это, чтобы получить жетоны. Как мне интегрировать это в почтальон, чтобы я мог использовать токен для моего следующего запроса?
+
+ 12.09.2018 06:27
+28
+0
+37 113
+7
+ Ответы 7
+Вариант использования, который вы хотите реализовать, может быть достигнут с помощью авторизации OAuth 2.0. Если вы можете получить Auth URL/ Access Token URL, Client ID и Client Secret - вы сможете это сделать.
+
+Вот ссылка на документацию по различным поддерживаемым нами типам авторизации, включая вышеупомянутый - https://www.getpostman.com/docs/v6/postman/sending_api_requests/authorization.
+
+Ваше здоровье.
+
+ 12.09.2018 11:53
+У меня есть пример этого ... 
+
+URL-адрес обратного вызова, определенный в консоли Cognito User Pool в разделе Интеграция приложений / Настройки клиента приложения.
+URL-адрес конечной точки входа в ваш домен. Это будет в разделе "Пул пользователей Cognito / Интеграция приложений / Имя домена".
+Идентификатор клиента находится в разделе "Пул пользователей Cognito" / "Общие настройки" / "Клиенты приложений".
+Перечислите области, которые вы хотите включить в токен доступа. Их необходимо включить в настройках пула пользователей Cognito / интеграции приложений / клиента приложения. Это могут быть стандартные или нестандартные прицелы. Пользовательские области определены в разделе «Интеграция приложений / серверы ресурсов» и должны включать идентификатор сервера ресурсов (например, https://myresource.com/myscope).
+Нажмите "Запросить токен". 
+Теперь вы можете войти в свой пул пользователей Cognito и получить токен доступа! Проблема в том, что если у вас есть токен доступа, его нельзя использовать в Postman, потому что Cognito ожидает, что он будет пустым, а Postman автоматически добавляет к токену «Bearer»:  Однако токен можно использовать в cURL: curl -i -H "Authorization: dyJraWQiOiI1YVcwTUlqN1hBaHg4Yzh4Q3JNT2RsQjhZWjlCR3NQOE9BbkFlVFJtUklRPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI3YmEwZmMzOC01ZDcwkYS05MTI5ZTBmYTUzNTEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Imh0dHBzOlwvXC9hcGkubXk5MC5jb21cL3BvbGljZURlcGFydG1lbnRzLnJlYWQiLCJhdXRoX3RpbWUiOjE1NDA1OTIzMTYsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2xIbGo4NXpRYSIsImV4cCI6MTU0MDU5NTkxNiwiaWF0IjoxNTQwNTkyMzE2LCJ2ZXJzaW9uIjoyLCJqdGkiOiJhN2JiOWU2MC1kNmY1LTQ3ODYtODMwYi0xODdkZDZmYTZlODAiLCJjbGllbnRfaWQiOiI2MzhlYmZ1dTdiZDRkMXVkYnRzY2pxcnJncyIsInVzZXJuYW1lIjoicm9qbyJ9.O_GAxfFX3IQfLUu5Hxr05Wrk_2QDwNSL8tvDdEU0Dzs9d1XhQPafT6ney6yiGnKPOwsO8HhWdbT1QdDmByjuwQAURf1Da4Au7c-yhfgJcqWuHWZ4mledTSP8ukXqihMb4PoaDdU4JXyOdMLa50dBXVMgJNyXTpIulWOxFhiTW6DeQbnxNDk94cGNz_CTKCEqKStiloFZfLR7ndSrWqdOQ_SU__YV0RyKXZyK5yguv3nkUcI6cuKpbPVIZ5DNdpufbrtOLuZcC6HePBKrbTKjSZCt5-swy3YrwnY4ApTX7QUFzof6FylWaLA_KVP3Zv6ksSJ_IjBMFH1NRVHh4lbsOA" \ https://xxxxx.execute-api.us-east-1.amazonaws.com/v1/myresource/1234
+
+ 27.10.2018 06:29
+пользователя yl.
+
+Спасибо Роберту Джордану за его сообщение конфигурации почтальона OAuth2.0 выше.
+
+Я постараюсь охватить здесь всю часть определения пула пользователей Cognito, чтобы упростить задачу.
+
+ОК,
+
+Откройте консоль Cognito и выполните следующие действия:
+
+1) создать новый пул пользователей
+
+name: Test1
+left panel menu->Attributes
+Выберите следующие переключатели:
+
+o Email address or phone number - Users can use an email address or phone number as
+  their "username" to sign up and sign in.
+   o Allow email addresses   
+И флажки:
+
+[v] email
+[v] name
+Скриншот:
+
+
+
+Нажмите кнопку [Создать пул]. (если это еще не доступно мастеру - нажмите опцию [Просмотреть подробности] в меню левой панели)
+
+2) меню левой панели-> Клиенты приложений
+
+нажмите: [добавить клиент приложения]
+
+Имя клиента приложения: me1
+
+снимите все флажки, кроме:
+
+[v] Enable username password based authentication (ALLOW_USER_PASSWORD_AUTH)
+Оставьте радиокнопки как есть:
+
+o Enabled (Recommended)
+Скриншот:
+
+
+
+нажмите [создать клиент приложения]
+
+3) скопируйте и сохраните «Идентификатор клиента приложения»
+
+это строковый формат, аналогичный 5psjts111111117jclis0mu28q
+
+Скриншот:
+
+
+
+4) меню левой панели-> Настройки клиента приложений
+
+Enabled Identity Providers: [v]Select all
+[v] Cognito User Pool
+URL-адреса обратного вызова: укажите URL-адрес api gw или https://www.google.com/
+
+OAuth 2.0
+ Allowed OAuth Flows
+   [v] Implicit grant
+ Allowed OAuth Scopes
+   [v] openid
+Скриншот:
+
+
+
+5) меню левой панели-> Имя домена
+
+введите строку в поле префикса, например: music123456789
+
+проверьте, доступен ли он, используя кнопку «Проверить».
+
+ваш домен сейчас: https://music123456789.auth.us-east-1.amazoncognito.com
+
+Скриншот:
+
+
+
+6) меню левой панели-> Пользователи и группы
+
+нажмите [Создать пользователя]
+
+Имя пользователя (обязательно): Your.Mail@company.com
+
+снимите все флажки [v]
+
+Временный пароль: Xx123456!
+
+электронная почта: Your.Mail@company.com
+
+7) в ПОЧТОВОЙ
+
+Нажмите новый запрос
+
+войдите во вкладку "Авторизация"
+
+Выберите ТИП: OAuth 2.0.
+
+нажмите кнопку [Получить новый токен доступа] и введите:
+
+Имя токена: myToken123
+
+Тип гранта: выберите «неявный» из списка.
+
+URL обратного вызова: https://www.google.com/
+(как в пункте 4 или в консоли когнито-> Интеграция приложений-> Настройки клиента приложения)
+
+URL авторизации: https://music123456789.auth.us-east-1.amazoncognito.com/login
+(как в пункте 5 + суффикс '/ login', то, что вы определили в когнитивном консоль-> Интеграция приложений-> Имя домена)
+
+Идентификатор клиента: 5psjts343gm7gm7jclis0mu28q (идентификатор клиента приложения - как в 3,
+
+то, что вы определили в консоли когнито-> Общие настройки-> Клиенты приложений)
+
+Область действия: openid (как в 4, что вы определили в консоли когнито -> Приложение настройки клиента-> Разрешенные области OAuth)
+COGNITO в конфигурацию idp OKTA
+При подключении Cognito к Okta IDP конфигурация должна быть следующей:
+
+Настройка Okta 
+
+Настройка Cognito 
+
+Настройка почтальона 
+
+ 16.01.2020 16:04
+Если ваш клиент поддерживает USER_PASSWORD_AUTH, вы можете запросить действительные токены на предъявителя с помощью клиента aws.
+
+read -s -p "Password: " && \
+    aws cognito-idp initiate-auth \
+        --client-id <client id> \
+        --auth-flow USER_PASSWORD_AUTH \
+        --auth-parameters "USERNAME=<username>,PASSWORD=$REPLY"
+Его можно добавить в Postman в разделе «Авторизация / Тип: токен на предъявителя».
+
+ 21.12.2020 06:59
+В дополнение к очень подробным объяснениям Роберта Джордана и Илева я заставил его работать, используя id_token вместо Токен доступа.
+
+
+
+На странице сведений о токене скопируйте id_token и добавьте его в заголовок вручную без префикса Bearer: 
+
+Источник: https://github.com/postmanlabs/postman-app-support/issues/6987
+
+ 30.12.2020 00:52
+Для Postman 8.5.1 и пула пользователей AWS Chalice + Cognito на бэкэнде у меня есть рабочий пример:
+
+Collection folder settings, Authorization tab
+
+Cognito> Пулы пользователей>> Интеграция приложений> Настройки клиента приложения
+
+App settings configuration
+
+О варах:
+
+{{cognito_callback_url}} - URL-адреса вашего обратного вызова из клиента приложения настройки
+{{ognito_auth_url}} - Cognito> Пулы пользователей> > Интеграция приложений> Доменное имя + / логин (https: //.....auth.ap-south-1.amazoncognito.com/login)
+{{ognito_client_id}} - веб-идентификатор вашего клиента приложения из клиента приложения настройки
+{{cognito_scope}} - используйте openid
+Теперь нажмите Получить новый токен доступа внизу и авторизуйтесь, используя существующие пользовательские данные из пула.
+
+ 17.06.2021 10:50
+Я подумал, что опубликую дополнительную информацию об использовании когнито с эластичным балансировщиком нагрузки. Балансировщики нагрузки AWS не поддерживает аутентификацию через заголовки :( вы можете заставить его работать на почтальоне, скопировав файлы cookie из успешного веб-запроса в запрос почтальона
+
+ 25.07.2021 11:24
+Другие вопросы по теме
+Отклонить запрос на регистрацию в пулах пользователей Cognito с помощью NETCore 2.1
+AWS Cognito Trigger Post Authenticated - Lambda Nodejs 8.10 - возвращает ошибку настраиваемого ответа TypeError: невозможно установить свойство
+Aws AuthenticationHandler
+Cognito - электронные письма не отправляются после импорта пользователей
+Какое значение использовать для ключа в CognitoCachingCredentialsProvider.setLogins?
+AWS Cognito - получение подпрограммы пользователя в функции Lambda Trigger
+Доступ к идентификатору пользователя в AWS Lambda
+Атрибуты пользовательского пула отключены с помощью модуля аутентификации AWS Amplify
+Как указать собственное сообщение об ошибке в Android с помощью когнито
+Список всех пользователей Cognito
+Похожие вопросы
+Почтальон не может отправить почтовый запрос на сервер и сервер, обнаружив его как запрос на получение вместо публикации
+Как передать обычный текст в качестве тела запроса с помощью NestJS?
+Загрузить изображение с URL через Drive API
+Разница между http: client и Requests
+Как решить код ошибки 45: сериализовать / десериализовать Springboot LocalDate с помощью Json ObjectMapper
+Почему POST-запрос от POSTMAN возвращает пустой?
+Утверждение в почтальоне для проверки формата даты
+POSTMAN - Newman Run Iteration Json File на определенной конечной точке
+Многостраничная форма конечной точки Postman и Silverstripe API с загрузкой файла
+Как обойти предварительную проверку в HTTP-сообщении со сложным типом мультимедиа с помощью Electron?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Запрос PATCH и PUT не работает с данными формы
+Вопросы
+PHP
+Запрос PATCH и PUT не работает с данными формы
+Я использую Laravel для создания RESTFUL приложения, и я тестирую приложение с помощью Postman. В настоящее время существует проблема для PATCH или PUT, если данные отправляются из Postman с данными формы.
+
+// Parameter `{testimonial}` will be sent to backend.
+Route::post  ('testimonials/{testimonial}', 'TestimonialController@update');
+
+// Parameter `{testimonial}` will not be sent to backend (`$request->all()` will be empty) if sent from Postman with form-data.
+Route::patch ('testimonials/{testimonial}', 'TestimonialController@update');
+Route::put   ('testimonials/{testimonial}', 'TestimonialController@update');
+Используя данные формы, $request->all() подойдет для POST.
+Использование x-www-form-urlencoded, $request->all() подойдет для PATCH, PUT и POST.
+Однако, если я отправляю PUT и PATCH с данными формы из Postman, $request->all() будет пустым (параметры не будут отправлены на бэкэнд).
+Сейчас решение - использовать POST для обновления модели. Я хочу знать, почему PATCH и PUT не работают при отправке с данными формы из Postman.
+
+ 05.06.2018 06:15
+38
+7
+37 068
+8
+ Ответы 8
+Это известная проблема, и предлагаемое решение согласно следующему Github комментарий состоит в том, что при отправке запросов PATCH / PUT вы должны сделать следующее:
+
+You should send POST and set _method to PUT (same as sending forms) to make your files visible
+
+По сути, вы отправляете запрос POST с параметром, который устанавливает фактический метод, и Laravel, кажется, это понимает.
+
+Согласно документация:
+
+Since HTML forms can't make PUT, PATCH, or DELETE requests, you will need to add a hidden _method field to spoof these HTTP verbs. The @method Blade directive can create this field for you:
+
+<form action = "/foo/bar" method = "POST">
+    @method('PUT')
+
+    ...
+</form> 
+В качестве альтернативы вы можете использовать вспомогательную функцию method_field для выполнения вышеуказанного:
+
+The method_field function generates an HTML hidden input field containing the spoofed value of the form's HTTP verb. For example, using Blade syntax:
+
+<form method = "POST">
+    {{ method_field('PUT') }}
+</form>
+ 05.06.2018 06:22
+Метод Laravel PATCH и PUT не работает с form-data, это известная проблема Symfony и даже PHP (для этого Google - Laravel использует множество пакетов фундамента Symfony, включая Request).
+
+Если вам не нужно передавать файл (ы) через запрос, измените form-data на raw с типом содержимого json. Например: {"name":"changed"}. Он будет читаться как php://input, и ваш код должен работать нормально ($request->all() теперь ["name" => "changed]).
+
+Если вам нужно передать файл (ы), на мой взгляд, НЕ передает его в методах REST API. Вы можете написать другой метод, чтобы делать все, что вам нужно с вашим файлом (файлами) (например: POST form-data -> загрузить файл -> обновить базу данных -> вернуть путь к файлу / url / даже его содержимое base64), тогда вы можете использовать его вывод / result, чтобы продолжить использование вашего метода patch / put (raw с типом содержимого json). Я всегда так делаю, когда работаю с файлами в API.
+
+Надеюсь на эту помощь!
+
+ 05.06.2018 06:54
+Типы носителей формы не имеют какой-либо семантики, определенной для PATCH, поэтому использовать их действительно плохая идея (см. https://www.rfc-editor.org/errata/eid3169).
+
+Для PUT ожидаемым поведением будет сохранение только закодированной в форме полезной нагрузки (в этом формате). Вы действительно этого хотите?
+
+ 05.06.2018 10:05
+Я узнал, как решить эту проблему, здесь, в этом посте, и хотел бы поделиться тем, что я сделал.
+
+На следующем изображении показано, как я настраиваю Postman для отправки запроса HTTP POST, захожу в запрос СТАВИТЬ и заставляю его получать мои файлы.
+
+Я не уверен, что это правильный способ сделать RESTFul API. Но работает нормально
+
+An example on Postman how to setup your HTTP Request
+
+ 20.03.2020 22:12
+так как все упомянули выше и все объяснили, но все же я не вижу ответа для случаев использования REST API, поэтому я последовал ответу @Caique Andrade и отправил запрос POST и сформировал свою URL-ссылку следующим образом:
+
+url = 'https://yourwebsite.com/api/v1/users/$id?_method=PUT';
+$id - это идентификатор переменной для пользователя.
+
+?_method=PUT добавлен в запрос POST url для подмены запроса, и он работает.
+
+в моем случае я использовал Dart во флаттере и отправил почтовый запрос с использованием пакета Http Laravel перехватывает этот запрос POST как запрос PUT
+
+ 22.05.2020 18:52
+Как уже упоминалось, это не проблема Symfony (или laravel, или любого другого фреймворка), это ограничение PHP.
+
+Изучив несколько хороших RFC для ядра php, команда разработчиков ядра, похоже, несколько сопротивляется реализации чего-либо, связанного с модернизацией обработки HTTP-запросов. Впервые об этой проблеме было сообщено в 2011 году, и это не похоже на то, чтобы иметь собственное решение.
+
+Тем не менее, мне удалось найти это расширение PECL. Я не очень хорошо знаком с pecl и, похоже, не мог заставить его работать с грушей. но я использую CentOS и Remi PHP с пакетом yum.
+
+Я запустил yum install php-pecl-apfd, и он буквально сразу устранил проблему (ну, мне пришлось перезапустить мои докер-контейнеры, но это было само собой разумеющимся).
+
+То есть request->all() и files->get() снова начали работать с запросами PATCH и PUT с использованием multipart/form-data.
+
+Я считаю, что есть и другие пакеты в различных вариантах Linux, и я уверен, что любой, кто больше знает о расширениях pear / pecl / general php, может без проблем запустить его на Windows или Mac.
+
+ 25.06.2020 15:43
+Как говорит @DazBaldwin, это ограничение php, и его можно решить, установив расширение apfd. На окнах просто загрузите файл dll здесь в соответствии с настройками вашей системы и поместите php_apfd.dll в каталог путь к php / ext, наконец, поместите extension = apfd в файл php.ini.
+
+это сработало для меня на окнах.
+
+ 26.10.2020 21:20
+Вы можете использовать метод публикации. const form = новый просто добавьте form.append ('_ method', 'PATCH');
+
+ 30.01.2021 06:14
+Другие вопросы по теме
+Как вставить много тегов с помощью внешнего ключа?
+Советы по сохранению данных пользователя во время аутентификации в социальных сетях (Laravel Socialite)
+.htaccess для нескольких установок laravel на общем хостинге
+Строка поиска из базы данных, содержащая определенные символы laravel 5
+Неявная привязка ресурса Laravel 5.6 не работает
+Есть ли практические ограничения для Eloquent ORM при активной загрузке?
+Возвращение красноречивых отношений Laravel без временных меток
+Несколько одинаковых идентификаторов "Select Option", динамический код Javascript
+«Неверный параметр файла» при импорте файла .gz в phpmyadmin
+Параметр экземпляра объекта модели функции ресурсов laravel
+Похожие вопросы
+Как отправить настраиваемый атрибут для загрузки файла фрагмента
+Проблема с кодировкой символов при отправке SMS-сообщений
+Советы по сохранению данных пользователя во время аутентификации в социальных сетях (Laravel Socialite)
+Выполнить возврат, затем вызвать другую функцию в PHP
+Пользовательский AUTO_INCREMENT
+Как поместить тег php в файл .js?
+.htaccess для нескольких установок laravel на общем хостинге
+"самый простой код PHP preg", чтобы проверить помощь точки в строке
+Не могу загрузить класс на Slim 3
+Корпус переключателя не работает должным образом
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Почтальон получает значение из JSON, где равно значению в массиве, используя javascript
+Вопросы
+JAVASCRIPT
+Почтальон получает значение из JSON, где равно значению в массиве, используя javascript
+В настоящее время используется последняя версия Postman: 6.7.4 (последняя)
+
+Я пытаюсь получить значение из тела ответа JSON и сохранить его в переменной среды, НО значение «имя пользователя» должно быть равно моему предпочтительному имени пользователя.
+
+Обычно я извлекаю такое значение:
+
+var jsonData = pm.response.json();
+pm.environment.set("useridToken", jsonData.Customers[0].userid);
+Это дало бы мне первый элемент в списке, но я нет хочу получить ни первый, ни второй элемент из списка. Например, я хочу получить useridгдеusernameРАВНЫЙ "Билли".
+
+Вывод ответа тела:
+
+{
+"Customers": [
+    {
+        "id": 24,
+        "userid": 73063,
+        "username": "BOB",
+        "firstname": "BOB",
+        "lastname": "LASTNAME
+    },
+    {
+        "id": 25,
+        "userid": 73139,
+        "username": "Billy",
+        "firstname": "Billy",
+        "lastname": "lasty"
+    }
+   ]
+}
+Какие-нибудь советы?
+
+Помнится в SoapUI было так:
+
+$.channels[?(@.is_archived=='false')].id[0]
+Я думаю, это невозможно сделать в JS в Postman?
+
+ 27.02.2019 10:20
+9
+2
+8 136
+8
+Данный вопрос помечен как решенный
+ Ответы 8
+ Ответ принят как подходящий
+Вы можете использовать: Массив.прототип.найти():
+
+const data = {
+  "Customers": [{
+      "id": 24,
+      "userid": 73063,
+      "username": "BOB",
+      "firstname": "BOB",
+      "lastname": "LASTNAME"
+    },
+    {
+      "id": 25,
+      "userid": 73139,
+      "username": "Billy",
+      "firstname": "Billy",
+      "lastname": "lasty"
+    }
+  ]
+}
+
+const user = data.Customers.find(u => u.username === 'Billy')
+const userid = user ? user.userid : 'not found'
+
+console.info(user)
+console.info(userid)
+ 27.02.2019 10:24
+find(), как указывает другой ответ, является лучшим решением здесь, но если имя пользователя не уникально и вам нужен массив пользователей, где имя пользователя «Билли», используйте filter()
+
+const jsonData = {
+  "Customers": [{
+      "id": 24,
+      "userid": 73063,
+      "username": "BOB",
+      "firstname": "BOB",
+      "lastname": "LASTNAME"
+    },
+    {
+      "id": 25,
+      "userid": 73139,
+      "username": "Billy",
+      "firstname": "Billy",
+      "lastname": "lasty"
+    }
+  ]
+}
+console.info(jsonData.Customers.filter(c => c.username === 'Billy'))
+ 27.02.2019 10:28
+Ваш userid также можно получить с помощью filter следующим образом:
+
+const data = {
+  "Customers": [{
+      "id": 24,
+      "userid": 73063,
+      "username": "BOB",
+      "firstname": "BOB",
+      "lastname": "LASTNAME"
+    },
+    {
+      "id": 25,
+      "userid": 73139,
+      "username": "Billy",
+      "firstname": "Billy",
+      "lastname": "lasty"
+    }
+  ]
+};
+const username = 'Billy';
+const user = data.Customers.filter(obj => obj.username.toLowerCase() === username.toLowerCase())[0];
+const userid = user ? user['userid'] : null;
+
+console.info(userid);
+Примечание:.toLowerCase() здесь необязателен, вы можете использовать его в зависимости от вашего состояния.
+
+Тогда вы можете просто установить его как -
+
+pm.environment.set("useridToken", userid);
+ 27.02.2019 10:31
+В тестовом сценарии Postman вы можете использовать some функции Javascript. В вашем случае слишком много способов сделать. Я покажу вам, как решить ваш случай с помощью функции Array.find:
+
+var jsonData = pm.response.json();
+var user = jsonData.Customers.find(function(user) {
+    return user.username === 'Billy';
+    // OR you could config username in postman env
+    // return user.username === pm.variables.get("username_to_find"); 
+});
+pm.environment.set("useridToken", user.userid);
+ 27.02.2019 10:36
+Попробуй это
+
+const userid = data.Customers.find(u => u.username === 'Billy') || 'not found';
+ 27.02.2019 11:00
+Повторение ответ с наибольшим количеством голосов на данный момент, немного изменен.
+Также добавление решения, вдохновленного другой ответ Лодаша.1
+
+const jsonData = {
+  Customers: [{
+    id: 24,
+    userid: 73063,
+    username: 'BOB',
+    firstname: 'BOB',
+    lastname: 'LASTNAME'
+  }, {
+    id: 25,
+    userid: 73139,
+    username: 'Billy',
+    firstname: 'Billy',
+    lastname: 'lasty'
+  }]};
+for (const i in jsonData.Customers) {
+  console.info('userid of customer['+i+']: '+jsonData.Customers[i].userid);
+}
+const userId_UsingFind = (name) => {
+  const user = jsonData.Customers.find(item => item.username === name);
+  return user ? user.userid : user;
+};
+console.info('Using .find(), userid of "Billy": '+userId_UsingFind('Billy'));
+console.info('Using .find(), userid of "Joe": '+userId_UsingFind('Joe'));
+
+const userId_Native = (name) => {
+  for (const i in jsonData.Customers) {
+    if (jsonData.Customers[i].username === name) {
+      return jsonData.Customers[i].userid;
+    }
+  }
+};
+console.info('Native loop, userid of "Billy": '+userId_Native('Billy'));
+console.info('Native loop, userid of "Joe": '+userId_Native('Joe'));
+Как видно из кода, решение с использованием .find() одновременно короткое и элегантное.
+
+1 Предполагая, что желаемый результат является userid из первыйBilly. Чтобы получить множество из userid:s для вхождений все изBilly см. ответ, который возвращает массив userid:s .
+
+ 11.02.2021 11:20
+В этом ответе показано решение с использованием библиотеки JavaScript. Лодаш.
+Это нет предназначено в качестве рекомендации, но просто для доказательства того, что это возможный, чтобы использовать Lodash.
+Это вдохновлено другой лодаш ответ.1
+
+const jsonData = {
+  Customers: [{
+    id: 24,
+    userid: 73063,
+    username: 'BOB',
+    firstname: 'BOB',
+    lastname: 'LASTNAME'
+  }, {
+    id: 25,
+    userid: 73139,
+    username: 'Billy',
+    firstname: 'Billy',
+    lastname: 'lasty'
+  }]
+};
+
+const userId_Lodash = (name) => {
+  let userId;
+  _.forEach(jsonData.Customers, (item) => {
+    if (item.username === name) { userId = item.userid; }
+  });
+  return userId;
+};
+console.info('Lodash loop, userid of "Billy": ' + userId_Lodash('Billy'));
+console.info('Lodash loop, userid of "Dave": ' + userId_Lodash('Dave'));
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.js"></script>
+Что касается рассматриваемого вопроса, я не вижу особой причины использовать Lodash библиотека.
+Но в других примерах это может иметь еще больше смысла.
+
+1 В размещенном вопросе не указано, является ли желаемый результат первыйuserid соответствующий Billy или все такой идентификатор пользователя:s. Этот ответ дает попадание первый.
+
+ 12.02.2021 11:52
+Этот ответ вдохновлен другой ответ, который выводит массив. 1
+
+В оригинальном плакате четко не указано, будет ли желаемый результат должно быть не замужемuserid (предположительно первое появление?) - или массив, содержащий всеuserid:s, соответствующий «Билли».
+
+Этот ответ показывает решение последнего случая с использованием Лодаш.
+
+const jsonData = {
+  Customers: [{
+    userid: 73063,
+    username: 'BOB'
+  }, {
+    userid: 73138,
+    username: 'Billy'
+  }, {
+    userid: 74139,
+    username: 'Billy'
+  }]
+};
+
+const userIds = [];
+_.forEach(_.filter(jsonData.Customers, c => c.username === 'Billy'),
+  item => { userIds.push(item.userid); });
+console.info(userIds);
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.js"></script>
+1 Этот ответ очень полезен, поскольку он подсказывает, как отфильтровать соответствующие объекты массива Customers. Однако оригинальный постер хочет (массив) userid(s), который является номер, а не массивом из объекты, что содержитuserid:s. Вот как мой ответ здесь разные.
+
+ 12.02.2021 15:22
+Другие вопросы по теме
+JavaScript - вставлять объекты внутри объекта в глобальный массив
+Сравните значения двух разных массивов
+Инициализировать тензорную переменную без элементов только форму
+Добавить свойство к каждому объекту конкретной структуры JS?
+Как работает эта однострочная функция Javascript?
+Jq — Как отфильтровать объект с несколькими целыми числами
+Javascript: проверка на совпадение массива ключевых слов в строке
+Отображение соответствующих данных из jQuery JSON при выборе флажка
+Инициализация параметра Fortran с аргументом намерения (в)
+Как рекурсивно добавить размеры в массив MATLAB?
+Похожие вопросы
+JavaScript - вставлять объекты внутри объекта в глобальный массив
+Angular — синхронный XMLHttpRequest для загрузки JSON активов
+Создание настраиваемого поля ввода с веб-компонентами, добавляемыми через шаблон и настраиваемыми перед добавлением в DOM
+Суммируйте пользовательские атрибуты переключателей и отобразите их в текстовом поле
+Node.js + Apache — https://localhost:3000/socket.io/ ERR_CONNECTION_REFUSED
+Создайте статический сайт один раз и разверните его на нескольких хостах
+Изменить выбранный div из строки запроса
+Карта Google, добавление поля к позиции zoomControlOptions
+Js — Как вызвать асинхронную функцию в Promise .then()
+Преобразовать объект в массив javascript, когда объект не имеет кавычек
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+"Content type" application / json; charset = UTF-8 'not supported "в приложении Spring Rest
+Вопросы
+JAVA
+"Content type" application / json; charset = UTF-8 'not supported "в приложении Spring Rest
+Когда я делаю POST-запрос на локальный: 8080 / API / пользователи для создания нового пользователя, я получаю следующую ошибку:
+
+{
+    "timestamp": "2018-05-28T09:44:55.704+0000",
+    "status": 415,
+    "error": "Unsupported Media Type",
+    "message": "Content type 'application/json;charset=UTF-8' not supported",
+    "path": "/api/users/"
+}
+&quot;Content type&quot; application / json; charset = UTF-8 &apos;not supported &quot;в приложении Spring Rest
+
+Это тело запроса, выбран JSON (application / json). Это дает ту же ошибку, даже если я удалю роли и оставлю их равными нулю.
+
+&quot;Content type&quot; application / json; charset = UTF-8 &apos;not supported &quot;в приложении Spring Rest
+
+Тип содержимого заголовка также является application / json.
+
+&quot;Content type&quot; application / json; charset = UTF-8 &apos;not supported &quot;в приложении Spring Rest
+
+Это мой контроллер:
+
+@PostMapping("/api/users" )
+public User createUser(@Valid @RequestBody User user) {
+    securityService.autologin(user.getUsername(), user.getPassword());
+    return userService.createUser(user);
+}
+Функция createUser в UserService:
+
+public User createUser(@Valid @RequestBody User user) {
+    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    user.setRoles(new HashSet<>(roleRepository.findAll()));
+    return userRepository.save(user);
+}
+редактировать
+Это мой класс пользователя:
+
+@Entity
+@Table(name = "user")
+@EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, 
+                      allowGetters = true)
+public class User implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+
+    public User() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    @Id
+    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "user_name")
+    private String name;
+
+    @Column(name = "user_email")
+    private String email;
+
+    @Column(name = "user_password")
+    @NotBlank
+    private String password;
+
+    @Column(name = "user_status")
+    private String status;
+
+    @Column(name = "user_tel")
+    private String tel;
+
+    @Column(name = "user_confirmation")
+    private String confirmation;
+
+    @Column(name = "user_birth_date")
+    @Temporal(TemporalType.DATE)
+    private Date birth_date;
+
+    @Column(nullable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
+    private Date createdAt;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
+    private Date updatedAt;
+
+    @JsonManagedReference
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+
+    @Column(name = "username")
+    @NotBlank
+    private String username;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getConfirmation() {
+        return confirmation;
+    }
+
+    public void setConfirmation(String confirmation) {
+        this.confirmation = confirmation;
+    }
+
+    public Date getBirth_date() {
+        return birth_date;
+    }
+
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+}
+ 28.05.2018 11:52
+23
+12
+68 883
+9
+Данный вопрос помечен как решенный
+ Ответы 9
+Установите @Produces(MediaType.APPLICATION_JSON) в свою функцию, чтобы установить ее в mime-типе json.
+
+Вы можете проверить этот рестапи для получения дополнительной информации.
+
+ 28.05.2018 11:57
+Вы можете попробовать что-то вроде
+
+@PostMapping(value = "/rest/account/json", consumes = {"application/json"})
+
+ 28.05.2018 11:59
+ Ответ принят как подходящий
+Я смог решить эту проблему, удалив @JsonManagedReference.
+
+ 28.05.2018 15:30
+Вы указали content-type = application / json. Я думаю, вам, возможно, придется также проверить свойство заголовка «Принять» (application / json)
+
+postman screenshot
+
+ 21.11.2018 16:03
+В нем четко указано, что тип мультимедиа не поддерживается, что означает, что из-за какой-либо проблемы вызов операции не может быть завершен. поэтому проверьте, что запрашивает ваша служба, и правильно ли вы отправляете все поля. В большинстве случаев возникает проблема с отображением. Проверить консоль на наличие ошибок.
+
+ 10.04.2019 14:15
+Вместо этого вы можете использовать "application / json"
+
+
+
+ 17.01.2020 10:54
+В моем случае произошел сбой Джексона, зарегистрированный как ПРЕДУПРЕЖДЕНИЕ:
+
+Failed to evaluate Jackson deserialization for type [[simple type, class ***]]: com.fasterxml.jackson.databind.JsonMappingException: Conflicting setter definitions for property [...]
+
+Я случайно перегрузил сеттер, поэтому Джексон не смог решить эту проблему, и пружина выбросила 415.
+
+ 28.05.2020 12:20
+Возможен случай, когда кто-то по ошибке оставляет 2 геттера для одного и того же свойства, и десериализация Джексона не может быть оценена.
+
+Это бросает
+
+Failed to evaluate Jackson deserialization for type [[simple type,
+class com.org..*..*]]:
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException:
+Conflicting getter definitions for property \"field_name\":
+com.org..*..*#getterBName() vs com.org..*..*#gettername()"
+В этом случае просто удалите лишний получатель этого поля.
+
+ 27.01.2021 07:15
+Я также столкнулся с этой ошибкой как WARN с десериализацией Джексона. Моя ситуация более тесно связана с ответом Klaudia, где у меня было поле участника в моем POJO для службы, которую я пометил с помощью @JsonIgnore, но я переименовал свои методы получения и установки в getService () и setService () для краткости вместо имя переменной, которое соответствует более длинному названному интерфейсу службы. Добавление @JsonIgnore в геттер и сеттер с разными именами устранило ошибку.
+
+ 20.03.2021 20:14
+Другие вопросы по теме
+RequestMapping работает с частными методами
+Spring Boot - доступ к значениям из application.yml
+Spring-boot: запуск работает, а java-jar - нет
+Установите точное имя файла при загрузке файлов
+Запрос @ElementCollection Map
+Я не получаю строку возврата restcontroller на страницу jsp
+Iframe перекрестного происхождения перезаписывает идентификатор сеанса
+Как преобразовать тип данных с помощью шаблона Spring Mongo
+Проблема с получением ролей пользователей в приложении Spring Rest
+Консоль показывает ошибку, как показано на изображении, и необходимо избавиться от нее
+Похожие вопросы
+Как поместить текст подписи слева на флажке, переключателях и слайдере?
+RequestMapping работает с частными методами
+Ошибка сборки Android Studio gradle: не удалось найти bundletools.jar (com.android.tools.build:bundletools:010-alpha01)
+Создать банку с META-INF \ services для расширения модуля Jboss
+Отражение Java: вызов абстрактных методов интерфейса без создания экземпляра
+Spring Boot - доступ к значениям из application.yml
+Сканер пользовательского ввода неизвестный источник
+Как сделать метод доступным во всех подпакетах
+Spring-boot: запуск работает, а java-jar - нет
+Как получить доступ к веб-странице с неправильной конфигурацией базы данных
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 Почтальон: Как утверждать, что все элементы массива существуют в другом массиве?
 Вопросы
 JAVASCRIPT
