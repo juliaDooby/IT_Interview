@@ -3,6 +3,1074 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Как отправить файл Multipart и данные json для весенней загрузки
+Вопросы
+JSON
+Как отправить файл Multipart и данные json для весенней загрузки
+У меня есть вызов api запроса POST, чтобы принять параметры запроса тела json и составной файл со стороны клиента (почтальон или клиент java).
+
+Я хочу передать как данные json, так и составной файл в одном запросе.
+
+Я написал код, как показано ниже.
+
+@RequestMapping(value = "/sendData", method = RequestMethod.POST, consumes = "multipart/form-data")
+public ResponseEntity<MailResponse> sendMail(@RequestPart MailRequestWrapper request) throws IOException
+Но я не мог этого сделать с помощью клиента отдыха почтальона.
+
+Я использую весеннюю загрузку на стороне сервера.
+
+Может ли кто-нибудь предложить мне этот вопрос.
+
+Заранее спасибо,
+
+ 15.10.2018 15:40
+11
+2
+40 130
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+ Ответ принят как подходящий
+Вы используете @RequestParam и Конвертер для объектов JSON простой пример:
+
+@SpringBootApplication
+public class ExampleApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ExampleApplication.class, args);
+    }
+
+    @Data
+    public static class User {
+        private String name;
+        private String lastName;
+    }
+
+    @Component
+    public static class StringToUserConverter implements Converter<String, User> {
+
+        @Autowired
+        private ObjectMapper objectMapper;
+
+        @Override
+        @SneakyThrows
+        public User convert(String source) {
+            return objectMapper.readValue(source, User.class);
+        }
+    }
+
+    @RestController
+    public static class MyController {
+
+        @PostMapping("/upload")
+        public String upload(@RequestParam("file") MultipartFile file, 
+                             @RequestParam("user") User user) {
+            return user + "\n" + file.getOriginalFilename() + "\n" + file.getSize();
+        }
+
+    }
+
+}
+и почтальон: 
+
+ОБНОВИТЬ Пример apache httpclient 4.5.6:
+
+зависимость pom.xml:
+
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.6</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>4.5.6</version>
+    </dependency>
+
+   <!--dependency for IO utils-->
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.6</version>
+    </dependency>
+сервис будет запущен после полного запуска приложения, измените путь File для вашего файла
+
+@Service
+public class ApacheHttpClientExample implements ApplicationRunner {
+
+    private final ObjectMapper mapper;
+
+    public ApacheHttpClientExample(ObjectMapper mapper) {
+        this.mapper = mapper;
+    }
+
+    @Override
+    public void run(ApplicationArguments args) {
+        try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
+            File file = new File("yourFilePath/src/main/resources/foo.json");
+            HttpPost httpPost = new HttpPost("http://localhost:8080/upload");
+
+            ExampleApplication.User user = new ExampleApplication.User();
+            user.setName("foo");
+            user.setLastName("bar");
+            StringBody userBody = new StringBody(mapper.writeValueAsString(user), MULTIPART_FORM_DATA);
+            FileBody fileBody = new FileBody(file, DEFAULT_BINARY);
+
+            MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+            entityBuilder.addPart("user", userBody);
+            entityBuilder.addPart("file", fileBody);
+            HttpEntity entity = entityBuilder.build();
+            httpPost.setEntity(entity);
+
+            HttpResponse response = client.execute(httpPost);
+            HttpEntity responseEntity = response.getEntity();
+
+            // print response
+            System.out.println(IOUtils.toString(responseEntity.getContent(), UTF_8));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+вывод консоли будет выглядеть следующим образом:
+
+ExampleApplication.User(name=foo, lastName=bar)
+foo.json
+41
+ 15.10.2018 23:16
+У вас есть два варианта -
+
+Отправить MultipartFile вместе с данными json
+
+public void uploadFile(@RequestParam("identifier") String identifier, @RequestParam("file") MultipartFile file){
+}
+ИЛИ
+
+Отправьте данные Json внутри MultipartFile, а затем проанализируйте файл Multipart, как указано ниже, и все.
+
+public void uploadFile(@RequestParam("file") MultipartFile file){
+    POJO p = new ObjectMapper().readValue(file.getBytes(), POJO.class);
+}
+ 15.11.2019 12:15
+Я застрял с этой проблемой последние несколько часов
+
+Так я наткнулся на вопрос это.
+
+Итоги:
+Используйте @ModelAttribute вместо @RequestBody. @ModelAttriute будет работать так же, как и другие обычные (без составного свойства в сущности) сопоставления сущностей.
+
+ 15.11.2020 14:57
+Я объясняю все здесь в части ответа:
+
+введите описание ссылки здесь
+
+ 12.01.2021 12:40
+Другие вопросы по теме
+Java: невозможно отправить форму с Angular 5, содержащую входной файл типа, в серверную часть REST (Spring Boot)
+Rest DSL с Springboot на Camel создает маршруты после перезапуска EAP, выдает исключение
+Вызов Rest Assured POST вызывает исключение org.apache.http.NoHttpResponseException
+Spring: не удалось поймать выброшенное исключение
+Spring Boot Controller: возврат ресурса в том же стиле, что и PagingAndSortingRepository
+Не удаляет онлайн-список - Android REST Retrofit
+Возврат полезной нагрузки запроса в случае ошибки
+Расскажите, пожалуйста, о моем коде Yii2 об аутентификации RESTFul по токену
+Создание архитектуры REST
+Сообщение / страница WordPress отображаются только в том случае, если пользователь аутентифицирован с помощью внешнего API
+Похожие вопросы
+Извлечение данных Json из фрейма данных Spark
+Как использовать клиент REST с токеном сервера
+Массив JavaScript для загрузки нескольких изображений Stringify борется с большими изображениями base64
+Fetch in react с json всегда возвращает ошибку
+Как мне заставить (через JSON API) Drupal вернуть Json со списком таксономий?
+Пагинация на веб-странице PHP с использованием данных JSON
+Проблема с передачей переменной PHP в файл AJAX с использованием json_encode
+Вложенные массивы в Realm с помощью Swift
+Сжать / распаковать данные в TStringWriter
+Неожиданный токен I в JSON в позиции 0
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Плохой запрос (400) при публикации IFormFile
+Вопросы
+C#
+Плохой запрос (400) при публикации IFormFile
+У меня есть проект .NET Core API с простой конечной точкой для загрузки файла:
+
+[Route("api/[controller]")]
+[ApiController]
+public class FilesController : Controller
+{
+    private IFilesService _filesService { get; set; }
+
+    public FilesController(IFilesService filesService)
+    {
+        _filesService = filesService;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> UploadFile(IFormFile file)
+    {
+        var model = await _filesService.UploadFile(file);
+        return Ok();
+    }
+}
+Я пытался проверить это с помощью Postman, но каждый раз, когда я отправляю файл в конечную точку, я получаю ошибку 400 Bad Request. Моя конечная точка никогда не попадает.
+
+У меня есть несколько других конечных точек POST, которые работают нормально, поэтому проблема связана либо с этой конкретной конечной точкой, либо с Postman. Вот моя настройка в Postman:
+
+Плохой запрос (400) при публикации IFormFile
+
+Я крутил колеса, пытаясь понять, в чем проблема, но в этом нет ничего особенного, и я следую примерам, которые видел в Интернете.
+
+Что я делаю неправильно?
+
+ 01.12.2018 06:18
+2
+1
+2 326
+4
+Данный вопрос помечен как решенный
+ Ответы 4
+попробуйте под URL-адресом в клиенте Postman
+
+  http://localhost:5001/api/Files/UploadFile
+ 01.12.2018 06:24
+попробуй это.
+
+[HttpPost]
+    public async Task<IActionResult> UploadFile([FromForm]IFormFile file)
+    {
+        var model = await _filesService.UploadFile(file);
+        return Ok();
+    }
+И удалите атрибут ApiController
+
+ 01.12.2018 06:47
+ Ответ принят как подходящий
+Я вижу, вы установили атрибут [ApiController], поэтому я предполагаю, что вы используете ASP.Net Core 2.1.
+
+Если он еще не установлен, попробуйте изменить services.AddMvc() на services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1); в Startup.cs.
+
+Некоторое время назад у меня была аналогичная проблема, и вышеуказанное изменение устранило ее для меня. Я нашел ответ на свою проблему здесь.
+
+Надеюсь это поможет!
+
+ 01.12.2018 06:59
+У меня была такая же проблема при попытке опубликовать FormFile через AJAX, а не через Form.Submit, но я не смог найти полное решение где-либо в Интернете. Я опубликую здесь свое решение, если кто-то еще наткнется на это.
+
+Моя проблема заключалась в атрибуте [AutoValidateAntiForgeryToken] на контроллере, как упомянул Коул В. в своем комментарии. Похоже, это не та проблема, с которой Стивен столкнулся изначально, но очевидно, что @Html.AntiForgeryToken() создаст скрытое поле формы __RequestVerificationToken с токеном, чтобы оно было опубликовано при отправке. Однако, когда вы пытаетесь опубликовать форму вручную, этого не происходит, и вам придется добавить это поле самостоятельно. Для меня клиентский код выглядел так:
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append(
+            '__RequestVerificationToken',
+            $('input[name=__RequestVerificationToken]').val());
+
+        $.ajax({
+            cache: false,
+            type: 'POST',
+            url: 'somePostUrl',
+            data: formData,
+            contentType: false,
+            processData: false
+        });
+Почтальон будет эквивалентен дополнительной паре ключ / значение, хотя нужно будет найти способ получить фактический токен. В целях тестирования, если у вас нет возможности просто удалить атрибут [AutoValidateAntiForgeryToken], потому что он находится в базовом классе, можно вместо этого добавить [IgnoreAntiforgeryToken] к текущему контроллеру или методу конечной точки.
+
+Надеюсь, это избавит кого-то от головной боли в будущем! Я потратил довольно много времени на это ...
+
+ 15.03.2021 13:46
+Другие вопросы по теме
+Веб-API не перенаправляется на страницу входа на сервер идентификации
+Пытаюсь заставить мой C# WEB API 2 возвращать объект, но получаю ошибку 500
+Пользовательский интерфейс Swagger не будет перечислять мои методы публикации с параметром [FromBody]
+Elasticsearch Nest не вставляет документ
+Как мне получить сообщение об ошибке от BadRequestErrorMessageResult?
+Интеграция алгоритма в файл .r
+Как сбросить автоматическое приращение после удаления, используя сначала код?
+Получение фабрики классов COM для компонента с CLSID не удалось из-за следующей ошибки: 8000401a
+ApiController не работает с ожиданием 404
+Веб-API ASP.NET возвращает внутреннюю ошибку сервера 500 при доступе через мобильное приложение xamarin.?
+Похожие вопросы
+Net core DbContextPool против AddDbContextPool и др
+C# - доступ к переменной внутри и вне класса
+Значение по умолчанию, если NULL в лямбда-выражении C#
+Как использовать флажок, чтобы получить значение true или false?
+Создание объекта C# ViewModel
+Второй параметр метода C# необязательный
+C# do while loop любое слово, начинающееся с y, запускает проверку y / n и разрушает цикл
+Асинхронные сокеты в C# без обратной связи
+Как Console.Writeline IEnumerable <(int a, int b, int c)>?
+Записать агрегат как синтаксис Sql
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как передать обычный текст в качестве тела запроса с помощью NestJS?
+Вопросы
+JAVASCRIPT
+Как передать обычный текст в качестве тела запроса с помощью NestJS?
+Предполагается, что один из методов контроллера в моем приложении NestJS принимает в качестве тела простой текст, но всякий раз, когда я пытаюсь сделать запрос, параметр принимается как пустой объект. Возможно ли это, или мне придется создать какой-то DTO для передачи этой единственной строки?
+
+Пример:
+
+@Post()
+  myFunction(@Body() id: string) {
+    // do something here
+  }
+ 11.09.2018 22:24
+9
+2
+10 247
+7
+Данный вопрос помечен как решенный
+ Ответы 7
+Семантика почтового запроса определяется заголовком, который указывает тип контента. Попробуйте убедиться, что заголовок запроса имеет тип text / plain, и вы увидите, как это поможет.
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
+
+ 12.09.2018 15:01
+Nest несовместим с обычным / текстовым форматом, и вместо этого вы должны передать bodyparser в свое экспресс-приложение. Попробуйте что-то вроде этого:
+
+import * as bodyParser from 'body-parser';
+
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.use(bodyparser({ ...options })) // for plain/text bodies
+  await app.listen(3000)
+}
+bootstrap();
+где параметры создается из https://www.npmjs.com/package/body-parser
+
+ 12.09.2018 22:30
+ Ответ принят как подходящий
+Я вижу, что этот вопрос довольно старый, но он указан в Google одним из первых, поэтому я хочу добавить здесь ответ.
+
+Если вы не хотите добавлять промежуточное ПО body-parser (например, вам нужен простой текст только в методе с одним контроллером), вы можете использовать raw-body (который уже существует в ваших node_modules), примерно так:
+
+import * as rawbody from 'raw-body';
+import { Controller, Post, Body, Req } from '@nestjs/common';
+
+@Controller('/')
+export class IndexController {
+
+  @Post()
+  async index(@Body() data, @Req() req) {
+
+    // we have to check req.readable because of raw-body issue #57
+    // https://github.com/stream-utils/raw-body/issues/57
+    if (req.readable) {
+      // body is ignored by NestJS -> get raw body from request
+      const raw = await rawbody(req);
+      const text = raw.toString().trim();
+      console.info('body:', text);
+
+    } else {
+      // body is parsed by NestJS
+      console.info('data:', data);
+    }
+
+    // ...
+  }
+
+}
+вы также можете создать новый декоратор параметров
+
+import * as rawbody from 'raw-body';
+import { createParamDecorator, HttpException, HttpStatus } from '@nestjs/common';
+
+export const PlainBody = createParamDecorator(async (data, req) => {
+  if (req.readable) {
+    return (await rawbody(req)).toString().trim();
+  }
+  throw new HttpException('Body aint text/plain', HttpStatus.INTERNAL_SERVER_ERROR);
+});
+и используйте это как
+
+@Post()
+async index(@PlainBody() text: string) {
+  // ...
+(Код декоратора не проверял, написал прямо здесь, в комментарии)
+
+ 08.01.2019 17:53
+Добавление на Сообщение @ yumaa выше
+
+Вот рабочий декоратор с NestJS v7.0.8:
+
+import { createParamDecorator, ExecutionContext, BadRequestException } from '@nestjs/common';
+import * as rawBody from "raw-body";
+
+export const PlainBody = createParamDecorator(async (_, context: ExecutionContext) => {
+    const req = context.switchToHttp().getRequest<import("express").Request>();
+    if (!req.readable) { throw new BadRequestException("Invalid body"); }
+
+    const body = (await rawBody(req)).toString("utf8").trim();
+    return body;
+})
+ 24.04.2020 21:54
+Старый вопрос, но ничего из вышеперечисленного не сработало для меня, но сработало следующее:
+
+Вышеупомянутые подходы с использованием декораторов или контроллеров не сработали для меня, поскольку буфер тела запроса всегда уже был прочитан.
+
+Мне удалось заставить его работать с помощью следующего промежуточного программного обеспечения. (Обратите внимание, что в моем случае мне нужно было проверить веб-перехватчик Xero, поэтому пример ориентирован на это)
+
+cache-raw-body-on-request.ts:
+
+import { json } from 'body-parser';
+import * as cloneBuffer from 'clone-buffer';
+
+export const cachedRawBodyRequestKey = 'rawBodyBuffer';
+
+/**
+ * Clones the request buffer and stores it on the request object for reading later 
+ */
+export const cacheRawBodyOnRequest = json({
+  verify: (req: any, res, buf, encoding) => {
+
+    // only clone the buffer if we're receiving a Xero webhook request
+    if (req.headers['x-xero-signature'] && Buffer.isBuffer(buf)) {
+      req[cachedRawBodyRequestKey] = cloneBuffer(buf);
+    }
+    return true;
+  },
+});
+main.ts:
+
+app.use(cacheRawBodyOnRequest);
+контроллер:
+
+const textBody = req[cachedRawBodyRequestKey].toString('utf-8');
+ 08.11.2020 13:21
+Это мой подход к получению необработанного (текстового) тела в обработчике NestJS:
+
+настройте приложение с помощью preserveRawBodyInRequest, как показано в примере JSDoc
+использовать декоратор RawBody в обработчике для получения необработанного (текстового) тела
+raw-request.decorator.ts:
+
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { NestExpressApplication } from "@nestjs/platform-express";
+
+import { json, urlencoded } from "express";
+import type { Request } from "express";
+import type http from "http";
+
+export const HTTP_REQUEST_RAW_BODY = "rawBody";
+
+/**
+ * make sure you configure the nest app with <code>preserveRawBodyInRequest</code>
+ * @example
+ * webhook(@RawBody() rawBody: string): Record<string, unknown> {
+ *   return { received: true };
+ * }
+ * @see preserveRawBodyInRequest
+ */
+export const RawBody = createParamDecorator(
+  async (data: unknown, context: ExecutionContext) => {
+    const request = context
+      .switchToHttp()
+      .getRequest<Request>()
+    ;
+
+    if (!(HTTP_REQUEST_RAW_BODY in request)) {
+      throw new Error(
+        `RawBody not preserved for request in handler: ${context.getClass().name}::${context.getHandler().name}`,
+      );
+    }
+
+    const rawBody = request[HTTP_REQUEST_RAW_BODY];
+
+    return rawBody;
+  },
+);
+
+/**
+ * @example
+ * const app = await NestFactory.create<NestExpressApplication>(
+ *   AppModule,
+ *   {
+ *     bodyParser: false, // it is prerequisite to disable nest's default body parser
+ *   },
+ * );
+ * preserveRawBodyInRequest(
+ *   app,
+ *   "signature-header",
+ * );
+ * @param app
+ * @param ifRequestContainsHeader
+ */
+export function preserveRawBodyInRequest(
+  app: NestExpressApplication,
+  ...ifRequestContainsHeader: string[]
+): void {
+  const rawBodyBuffer = (
+    req: http.IncomingMessage,
+    res: http.ServerResponse,
+    buf: Buffer,
+  ): void => {
+    if (
+      buf?.length
+      && (ifRequestContainsHeader.length === 0
+        || ifRequestContainsHeader.some(filterHeader => req.headers[filterHeader])
+      )
+    ) {
+      req[HTTP_REQUEST_RAW_BODY] = buf.toString("utf8");
+    }
+  };
+
+  app.use(
+    urlencoded(
+      {
+        verify: rawBodyBuffer,
+        extended: true,
+      },
+    ),
+  );
+  app.use(
+    json(
+      {
+        verify: rawBodyBuffer,
+      },
+    ),
+  );
+}
+ 24.11.2020 02:56
+Если вы предпочитаете избегать дополнительных сторонних зависимостей, вы также можете воспользоваться подходом встроенный nodejs здесь:
+
+function readPost(req: IncomingMessage) {
+  return new Promise<string>((resolve, reject) => {
+    let body = '';
+    req.on('data', (data: string) => (body += data));
+    req.on('error', (error: unknown) => reject(error));
+    req.on('end', () => resolve(body));
+  });
+}
+Использование:
+
+import { Post, Req } from '@nestjs/common';
+import { IncomingMessage } from 'http';
+...
+@Post()
+myFunction(@Req() req: IncomingMessage) {
+  const bodyStr = await readPost(req);
+  console.info('request body:', bodyStr);
+}
+ 08.06.2021 20:09
+Другие вопросы по теме
+Получить GUID списка SPFx с помощью @ pnp / sp
+Ошибка «Не удается найти модуль» при использовании ссылок на проекты TypeScript 3
+Hapi.js: «Класс расширяет значение undefined, это не конструктор или ноль»
+Передавать интерфейсный объект как реквизит без явного указания каждого значения свойства
+Существуют ли официальные определения типов Typescript для OpenAPI 3?
+Angular / Typescript - Решить асинхронность в массиве
+Сохраняйте положение прокрутки, когда вы возвращаетесь назад и меняете маршруты угловой 5
+Визуализируйте представление внутри iframe в Angular 6 и продолжайте использовать переменные шаблона
+Жасмин шпионит за функцией Get () или Set () класса Typescript
+Можно ли в TypeScript использовать ключи «времени выполнения» для определения нового типа?
+Похожие вопросы
+Получить GUID списка SPFx с помощью @ pnp / sp
+Высота SVG с D3.Js
+Хотите знать, как работает построение URL при создании сервера и маршрута. Также хочу узнать о команде =>
+Оператор распространения вложенных объектов JavaScript
+Обнаружение зачеркнутых символов Юникода в Javascript
+Предупреждение об отклонении необработанного обещания: ошибка: не удается установить заголовки после их отправки
+Смещение сплайна в three.js
+Почему я не могу передать `push` в качестве функции foreach?
+Избегайте использования специальных символов регулярного выражения в javascript, но при этом сохраняйте целостность строки для соответствия ключевым словам
+Линия сжимается и расширяется в html
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Нет файла при загрузке в структуру отдыха django
+Вопросы
+DJANGO
+Нет файла при загрузке в структуру отдыха django
+Обновление: ни один из двух ответов ниже не работает. Когда я использую request.FILES["file"] я получаю ключевую ошибку.
+
+Используя django rest framework, я пытаюсь загрузить файл PDF, но приходит запрос, а файла нет. Я пытаюсь загрузить файл из Postman. Запрос на получение работает. Любая помощь очень ценится.
+
+вот мой взгляд
+
+@api_view(['PUT','GET'])
+def upload_pdf(request):
+    if request.method == 'PUT':
+        myfile = request.POST.get('file')
+        print("myfile === {}".format(myfile))
+
+    if request.method == 'GET':
+        return Response({"message": "Hey there at least this works!"})
+Вывод: myfile === Нет
+
+Нет файла при загрузке в структуру отдыха django
+
+ 01.03.2019 15:37
+1
+0
+995
+3
+Данный вопрос помечен как решенный
+ Ответы 3
+В Django все загруженные файлы попадают в request.FILES, а не в request.POST. Вот почему вы не видите этот файл в данных публикации.
+
+ 01.03.2019 15:48
+Вы можете попробовать это
+
+from rest_framework.parsers import FileUploadParser
+
+class Fileupload(APIView):
+   parser_class = (FileUploadParser,)
+   def post(self, request, format=None):
+     file = request.FILES['file']
+     if 'file' not in request.data:
+          raise ParseError("Empty content")
+     model_obj = YourModel.objects.get_or_create()
+
+     model_obj.myfile.save(file.name, file, save=True)
+Надеюсь, поможет
+
+для более подробной информации см. это
+
+ 01.03.2019 15:54
+ Ответ принят как подходящий
+Проблема не в коде, а в почтальоне. Я не мог понять, как использовать почтальона, и никто ничего не предложил по поводу почтальона. поэтому я только что проверил это с помощью команды curl Это отлично работает...
+
+curl -XPOST -i -F file=@dir/to/test.pdf http://127.0.0.1:8000/api/upload_pdf  
+ 11.04.2019 19:16
+Другие вопросы по теме
+Невозможно точно найти определенный текст в теге html с помощью Python
+Как найти конкретное значение из индекса?
+Динамическое изменение размера строки Tkinter TreeView
+Импорт сбивает с толку проверкой Pycharm
+Как разбить на куски (подматрицы) или обработать огромную матрицу, дающую ошибку памяти на numpy?
+Проблемы с плавающей запятой Pandas с использованием loc
+Как реализовать блокировку функции прослушивания в отдельном потоке, в то время как основной продолжает работать в Python
+Как сделать запросы scrapy синхронными
+Извлечь n символов для первого совпадения слова в файле
+Python-docx не может использовать существующий документ — нет стиля с именем «Заголовок»
+Похожие вопросы
+Представление MySQL превращает SUM столбца INT в десятичный тип
+Получить имя пользователя в промежуточном программном обеспечении из токена Django Rest Framework SIMPLE JWT (сторонний)
+Джанго: как получить URL-адрес?
+Concat QuerySets из разных моделей
+Невозможно использовать пользовательскую форму аутентификации с LoginView
+Django REST Framework: список путей к файлам в сериализаторе
+Почему ведение журнала Django не работает с Gunicorn?
+Доступ к веб-сайту проверки подлинности Windows IIS из веб-данных Excel
+Поля модели Django с динамическими именами
+Как изменить стиль и шрифт django admin css?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Загрузите один файл в веб-API
+Вопросы
+C#
+Загрузите один файл в веб-API
+Я использую этот код для загрузки файла в веб-API. Но мой опубликованный файл показывает Null. Возможно, это потому, что код ожидает несколько файлов в почтальоне. Мне нужно загрузить один файл через почтальона, а не список файлов. Я делюсь кодом.
+
+[HttpPost]
+[Route("Upload")]
+public async Task<IActionResult> Upload(string targetIdStr, string feedType, 
+    string contentType, string dateCreated, string description, List<IFormFile> files)
+ 01.08.2018 13:49
+3
+1
+11 340
+4
+ Ответы 4
+Хорошо, я дам вам настоящий веб-контроллер api о том, как вы можете загрузить один файл. Класс ниже - это рабочий пример. Просто замените постоянное значение небольшим файлом на вашем диске.
+
+using System.IO;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApi.Controllers
+{
+    [Route("api/[controller]")]
+    public class UploadController : Controller
+    {
+        private const string FILEPATH = @"c:\temp\demo.txt";
+
+        [HttpGet]
+        public IActionResult JsonObject()
+        {
+            var file = new FileInfo(FILEPATH);
+            return new OkObjectResult(new FileClass()
+            {
+                Name = file.Name,
+                Content = System.IO.File.ReadAllBytes(FILEPATH)
+            });
+        }
+
+        [HttpPost]
+        public IActionResult Index([FromBody] FileClass file)
+        {
+            return new NoContentResult();
+        }
+    }
+
+    public class FileClass
+    {
+        public string Name { get; set; }
+        public byte[] Content { get; set; }
+    }
+}
+Теперь в почтальоне сначала запустите вызов, чтобы получить uri https: // локальный: 44382 / api / upload
+
+Это приведет к ответу json, показывающему вам json, который вам нужно вернуть, в моем случае это было:
+
+{
+    "name": "demo.txt",
+    "content": "dGVzdCBkYXRh"
+}
+В почтальоне теперь выберите опцию post, а в теле выберите raw, вставьте в него полученный результат и запустите его. Теперь при отладке вы увидите, что объект json прибыл. На скриншоте ниже показано доказательство работы почтальона: PostMan Example
+
+ 01.08.2018 13:57
+Здесь есть ряд проблем. Во-первых, сигнатура метода действия будет работать только с запросами в кодировке multipart/form-data. Чтобы принять что-то вроде JSON, вы должны применить атрибут [FromBody] к параметру, что вы можете сделать только один раз. Другими словами, если вы хотите принять что-то вроде JSON, вам нужен класс, который охватывает все эти параметры, позволяющий принимать только этот класс в качестве параметра с атрибутом [FromBody].
+
+Кроме того, если вы надеетесь принять что-то вроде JSON, вы не можете выполнить привязку к IFormFile (или List<IFormFile>), потому что это также работает только для запросов в кодировке multipart/form-data. Вместо этого вы должны выполнить привязку к byte[], а на стороне клиента вам нужно будет преобразовать файл в строку в кодировке base64 для включения в объект JSON.
+
+Если вы на самом деле намереваетесь принимать только запросы в кодировке multipart/form-data (что необычно для API), то вам просто нужно убедиться, что файл в теле сообщения связан с правильным именем files[], то есть проиндексирован.
+
+ 01.08.2018 15:23
+Не знаете, как создать код на стороне клиента, я полагаю, вы используете FormData в JavaScript? JavaScript API FormData
+
+Код JS - это что-то вроде этого?
+
+var form_data = new FormData();
+form_data.append("file", "the file name");
+form_data.append("fileID", file_id)
+var sendMethod = './Upload';  //this is the url for post
+$.ajax({
+  type: "POST",
+  url: sendMethod,
+  data: form_data,
+  dataType: 'JSON',
+  contentType: false,
+  processData: false,
+  success: function (response) {
+      //......
+},
+error: function (response) {
+      //......
+}
+);
+Сторона сервера,
+
+[HttpPost]
+public Task<IActionResult> Upload(HttpPostedFileBase file, int fileID
+{
+  //......
+}
+Я не тестировал приведенный выше код, но он должен работать и надеюсь, что это поможет.
+
+ 01.08.2018 15:43
+Для загрузки одного файла вам необходимо изменить действие, как показано ниже:
+
+        [HttpPost]
+        [Route("Upload")]
+        public async Task<IActionResult> Upload(string targetIdStr, string feedType,
+  string contentType, string dateCreated, string description, IFormFile file)
+        {
+            return Ok();
+        }
+Для запроса в PostMan отправьте запрос с post-> Set Body как form-data, как показано ниже
+
+
+
+ 02.08.2018 10:49
+Другие вопросы по теме
+Как почтальон отправляет файл через HTTP?
+Переменные встроенной среды Postman не оцениваются
+Как загрузить все запросы в коллекциях почтальонов одной папкой ??
+Идентичные запросы GET в CURL с использованием PHP и Postman имеют разные ответы
+Вызов API работает с почтальоном, но Doenst работает с моим кодом
+Почтальон GET запрос с ipv6
+Неправильный синтаксис curl Post для Elasticsearch в Postman
+Невозможно выполнить оператор if в почтальоне
+Базовая HTTP-аутентификация с приложением Postman
+Неподдерживаемый тип носителя для application / x-www-form-urlencoded и POJO
+Похожие вопросы
+Как использовать переменную с помощью метода get_range C#?
+C# WFA - делегируйте трудоемкую работу другому потоку
+Курсор ввода не отцентрован
+Время отклика Google API очень велико
+System.Diagnostics.Activity имеет значение null в ядре aspnet 2.1
+Привязки WPF ReactiveUI в представлении
+Как отключить функцию автоматического предложения Windows 10 в приложении WPF?
+Выполнение нескольких методов модульного тестирования async приводит к ошибке, но запуск их по отдельности не вызывает
+Поле переопределения не работает
+Как использовать переменную, назначенную внутри оператора switch, далее в программе?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Gmail api отправить с почтальоном
+Вопросы
+GMAIL
+Gmail api отправить с почтальоном
+Я пытаюсь отправить письмо с помощью API Gmail с POSTMAN, используя метод POST
+
+POST https://www.googleapis.com/upload/gmail/v1/users/example@gmail.com/messages/send
+но я получаю сообщение об ошибке ниже:
+
+{
+    "error": {
+        "errors": [
+            {
+                "domain": "global",
+                "reason": "invalidArgument"
+                "message": "Recipient address required"
+            }
+        ],
+        "code": 400,
+        "message": "Recipient address required"
+    }
+}
+заголовок уже помещен Content-type: message / rfc822
+
+Я знаю, что это нужно закодировать в base64 (web_safe), поэтому я перевел
+
+"From: sender.example@gmail.com\r\n" +
+"To: receiver.example@gmail.com\r\n" +
+"Subject: Subject Example\r\n" +
+"This is content: hope you got it\r\n"
+Я также заменил их на web_safe
+
+ replace(/\+/g, '-').replace(///g, '_').replace(/=+$/, ''); 
+поэтому у меня есть base64, как показано ниже. поэтому я помещаю raw в тело POST METHOD
+
+{
+    "raw": "RnJvbTogc2VuZGVyLmV4YW1wbGVAZ21haWwuY29tDQpUbzogcmVjZWl2ZXIuZXhhbXBsZUBnbWFpbC5jb20NClN1YmplY3Q6IFN1YmplY3QgRXhhbXBsZQ0KVGhpcyBpcyBjb250ZW50OiBob3BlIHlvdSBnb3QgaXQNCg"
+}
+Я использовал «попробуйте этот api» на сайте разработчиков Google и смог отправить его. https://developers.google.com/gmail/api/v1/reference/users/messages/send
+
+Но с POSTMAN я не могу.
+
+Любая помощь, пожалуйста?
+
+ 29.08.2018 10:42
+4
+2
+5 015
+4
+ Ответы 4
+Я думаю, что вам следует установить заголовок Content-type на application/json. Также не забудьте добавить заголовок Authorization.
+
+ 05.09.2018 14:31
+
+
+Если вы хотите получить более подробную информацию, перейдите по ссылке ниже: Как успешно отправить сообщение с помощью нового API REST Gmail?
+
+ 29.04.2020 18:51
+https://stackoverflow.com/a/61507172/2131809
+
+Если вы хотите получить более подробную информацию, перейдите по ссылке ниже: Gmail API отправляет сообщение без использования кодировки Base64
+
+ 29.04.2020 18:53
+Это означает, что формат данных неверен. Вы должны попробовать метод ниже, который отлично сработал для меня.
+
+Я использую формат ниже.
+
+From: <FROM@gmail.com>
+To: <TO@gmail.com>
+Subject: Test Email
+
+Test
+В целях тестирования я использовал https://ostermiller.org/calc/encode.html для 64 кодирования над текстовым сообщением. Итак, я получу закодированную строку, как показано ниже
+
+IEZyb206IDxGUk9NQGdtYWlsLmNvbT4KICAgIFRvOiA8VE9AZ21haWwuY29tPgogICAgU3ViamVjdDogVGVzdCBFbWFpbAogICAgCiAgICBUZXN0
+Теперь в почтальоне,
+
+URL-адрес Gmail Rest API, который вы должны использовать https://www.googleapis.com/gmail/v1/users/<YOUR@gmail.com>/messages/send
+
+Тип содержимого должен быть json, потому что вы отправляете формат json в теле сообщения.
+
+Content-Type: application/json
+В теле
+
+{
+    "raw": "IEZyb206IDxGUk9NQGdtYWlsLmNvbT4KICAgIFRvOiA8VE9AZ21haWwuY29tPgogICAgU3ViamVjdDogVGVzdCBFbWFpbAogICAgCiAgICBUZXN0"
+}
+Итак, наконец, почтальон выглядит так, как показано ниже.
+
+
+
+
+Как только вы отправите запрос в API, вы получите ответ, который выглядит следующим образом
+
+{
+    "id": "172016110a227c19",
+    "threadId": "172016110a227c19",
+    "labelIds": [
+        "UNREAD",
+        "SENT",
+        "INBOX"
+    ]
+}
+ 11.05.2020 03:57
+Другие вопросы по теме
+Запрос Node JS post дает 400, тогда как от Postman он работает
+Как установить почтальон в windows server 2007 SP2 (windows vista)
+Не удается добавить файл для получения запроса POST
+Почтальон IllegalArgumentException: целевой объект не должен быть нулевым ",
+Как обновить ресурс API Laravel?
+Невозможно отправить json только работу с кодом x-www-form-urlencoded, когда почтальон отправляет конечную точку API Laravel
+Почтальон, как использовать получение запросов путем чтения URL-адресов из различных файлов .txt
+Поддерживает ли OpenDaylight RESTCONF методы HTTP PUT или POST?
+Проблема с тайм-аутом при отправке данных json на узел api
+Spring boot не может найти поле формы font-end
+Похожие вопросы
+Скопировать вложение из Gmail на диск
+Что делает этот удаленный javascript, прикрепленный к моей электронной почте? "http://rum-static.pingdom.net/prum.min.js"
+Как отфильтровать черновики сообщений из gmail api history.list
+Использование IMAPSync для импорта из GMail
+Как можно запросить Solr для адреса Gmail, игнорируя точки и плюсы?
+Gmail 421-4.7.0 Ошибки
+Как выйти из GMail с помощью Python
+Сохранять вложения только из новых сообщений
+GmailApp не снимает пометку с сообщения Gmail
+Шаблон электронной почты html некорректно работает в Gmail
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 Недействительная пара ключ=значение (отсутствует знак равенства) в заголовке авторизации
 Вопросы
 WEB SERVICES
