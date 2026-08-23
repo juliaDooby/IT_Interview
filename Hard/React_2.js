@@ -3,6 +3,1557 @@ RedDeveloper
 Вопросы
 Теги
 Поиск...
+Пакет response-scripts, предоставляемый приложением Create React, требует зависимости:
+Вопросы
+JAVASCRIPT
+Пакет response-scripts, предоставляемый приложением Create React, требует зависимости:
+Возможно, возникла проблема с деревом зависимостей проекта. Скорее всего, это не ошибка в приложении Create React, а то, что вам нужно исправить локально.
+
+Пакет response-scripts, предоставляемый приложением Create React, требует зависимости:
+
+"бабель-эслинт": "9.0.0"
+
+Не пытайтесь установить его вручную: ваш менеджер пакетов делает это автоматически. Однако выше в дереве была обнаружена другая версия babel-eslint:
+
+ 02.01.2019 02:33
+29
+5
+32 333
+11
+ Ответы 11
+Часть предоставленного вами вывода говорит:
+
+Check if C:\Users\chawki\node_modules\babel-eslint is outside your project directory. For example, you might have accidentally installed something in your home folder.
+
+Перейдите к C:\Users\chawki\node_modules\ и удалите папку babel-eslint или просто удалите C:\Users\chawki\node_modules.
+
+ 02.01.2019 08:08
+Вот что я сделал ...
+
+C:\user\[yourUserName]\node_modules\babel-eslint и удалите файл
+C:\user\[yourUserName]\node_modules\eslint и удалите файл
+ 02.01.2019 15:36
+У меня была такая же проблема, и я выполнил все предложенные шаги, но проблема все еще, поэтому моя ошибка в том, что у меня есть reactApp внутри другого приложения Javascript, у меня была эта структура.
+
+--MyProjects
+----NodeJsApp
+----node_modules of NodeJsApp
+----package.json of NodeJsApp
+----ReactApp
+------node_modules of ReactApp
+------package.json of ReactApp
+Проблема решена: я удалил каталог node_modules в ReactApp, затем я реструктурировал свои каталоги, потому что у меня катастрофа.
+
+--MyProjects
+----NewDirectory (inside all about NodeJsApp)
+------node_modules of NodeJsApp
+------package.json of NodeJsApp
+----ReactApp
+------package.json of ReactApp
+После этого я делаю:
+
+npm install
+а затем npm start, и моя проблема исправлена, я думаю, что проблема в том, что в родительском каталоге не может быть проекта javascript / nodeJs / или чего-то, что имеет node_modules.
+
+ 21.05.2019 17:58
+создайте файл .env в файле проекта и добавьте следующий оператор
+
+SKIP_PREFLIGHT_CHECK=true
+Сохраните файл
+
+Удалите node_modules, yarn.lock, package.lock
+
+Затем переустановите node_modules с помощью
+
+npm install
+Это должно работать
+
+ 07.07.2019 10:28
+Удалите файлы eslint и babel-eslint из модулей узлов на вашем компьютере, например. -C:\Users\vishnu\node_modules Файлы -delete eslint и babel-eslint.
+
+В вашем проекте:
+
+yarn remove eslint
+yarn add --dev eslint@6.1.0
+yarn remove babel-eslint
+yarn add --dev babel-eslint@10.0.3
+ 03.10.2019 23:30
+в package.json
+
+resolutions:{
+    "babel-eslint": "9.0.0"
+}
+если вы переустановите все свои зависимости, вы заставите «babel-eslint» установить версию «9.0.0». если вы запустите приложение, у вас не будет проблем.
+
+ 21.11.2019 03:41
+Я просто удалил папку node_modules (для меня это была C:\user\[yourUserName]\node_modules\) и переустановил ее.
+
+ 08.05.2020 11:55
+Моя проблема заключалась в том, что я установил webpack как глобальный пакет ... после того, как я удалил webpact и запустил npm install, проблема исчезла
+
+ 11.08.2020 15:42
+Убедитесь, что у вас нет глобального пакета webpack или где-то выше по структуре каталогов. В моем случае он был установлен глобально. Удаление, а затем запуск npm install, а затем npm start работали отлично.
+
+ 08.10.2020 16:57
+Запустите npm ls babel-eslint и посмотрите, какие зависимости используют его или устанавливают другую версию. Попробуйте обновить эти библиотеки.
+
+У меня это сработало.
+
+ 16.10.2020 19:11
+Если вы не хотите создавать файл .env, есть еще одна альтернатива, вы можете передать SKIP_PREFLIGHT_CHECK=true прямо в скрипт. Например
+
+   "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+ 17.09.2021 13:06
+Другие вопросы по теме
+Запустить функцию после того, как jquery ujs отправит удаленную форму
+Как мне обновить график с изменением состояния
+Как отключить автофокус нескольких всплывающих окон пользовательского интерфейса материалов?
+Компонент React некорректно отображается
+Почему при использовании аутентификации firebase содержимое отображается только для одного пользователя?
+ReactJS с useEffect не отображает каждое состояние
+Тайм-аут подключения к firebase createUserWithEmailAndPassword
+Программная навигация при использовании HashRouter
+Реагировать на передачу значений состояния на var не работает
+Вложенные маршруты в React Router v4 не отображаются должным образом
+Похожие вопросы
+Django - переменная не отправляется с запросом POST
+Почему этот хвостовой рекурсивный цикл вызывает переполнение стека в javascript / node?
+Подсветка синтаксиса в динамических сообщениях блога не работает
+Операторы if / else регистрируют только if, а не else
+Компонент React некорректно отображается
+Почему при использовании аутентификации firebase содержимое отображается только для одного пользователя?
+Пользовательский интерфейс материала - Expand Panel не сжимает вышеуказанный div
+Наложение текста - через определенное время
+Преобразование дочернего элемента при наведении курсора с помощью Javascript
+Возврат родительского совпадения во вложенном цикле с использованием ES6
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Пустая страница после запуска сборки в приложении create-реагировать
+Вопросы
+REACTJS
+Пустая страница после запуска сборки в приложении create-реагировать
+Пытаюсь развернуть приложение create-реагировать на netlify, однако моя сборка пустая страница. Я использую файл .env для загрузки ключа Firebase API, это проблема для сборки?
+
+Даже когда я пытался открыть его локально на своем компьютере, его пустая страница и вывод ошибки в консоли: «Ошибка загрузки файла с исходным кодом: ///event-app/static/js/main.108757a0.js»
+
+пакет.json: https://gist.github.com/Verthon/f82371ad2bb636b2e95c5b7697aa0bb5
+
+➜  event-app git:(master) ✗ npm run build
+
+> event-app@0.1.0 build /home/jurr/Projects/event-app
+> node scripts/build.js
+
+Creating an optimized production build...
+Compiled with warnings.
+
+./src/components/Router.js
+  Line 12:  'withFirebase' is defined but never used  no-unused-vars
+
+./src/components/Firebase.js
+  Line 21:  'Firebase' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  282.86 KB  build/static/js/main.108757a0.js
+  3.1 KB     build/static/css/main.8e671453.css
+
+ 08.04.2019 09:59
+47
+0
+77 423
+11
+Данный вопрос помечен как решенный
+ Ответы 11
+ Ответ принят как подходящий
+Я решил проблему, установив
+
+"homepage": "."
+в package.json согласно этот документ
+
+ 09.04.2019 14:33
+Добавлять
+
+"homepage": ".",
+в вашем package.json, затем снова постройте.
+
+ 31.08.2019 21:47
+Итак, проблема заключается в кэшировании вашего приложения в браузере.
+
+Я решил эту проблему с serviceWorker() в create-react-app.
+
+Вот решение: просто добавьте это в свой файл index.js и удалите реестр сервисного работника.
+
+import { unregister } from './registerServiceWorker';
+unregister();
+ 03.03.2020 12:56
+Беги npm run eject
+
+Отредактируйте файл webpack.config в папке config
+
+Найдите путь с "static/" или "static/js/" или "static/css/" в файле и удалите такой путь
+
+Создайте свой проект снова
+
+Эта работа для меня. надеюсь, это сработает и для вас.
+
+ 31.03.2020 09:37
+Как сказал @Вертон, добавив "homepage": ".", в файл package.json, в высший уровень вот так:
+
+{
+     "name": "myApp",
+     "homepage": ".",
+     // all other package.json stuff...
+}
+ 25.05.2020 17:38
+Если вы используете react-router и пытаетесь открыть index.html прямо в браузере (или используете электрон, который, по сути, и делает это), в дополнение к настройке homepage, как предлагали другие, замените BrowserRouter на HashRouter.
+
+Я пытался создать электронное приложение, используя приложение create-реагировать. При запуске в разработке все было нормально, но когда я создал CRA, а затем указал электронному приложению на файл index.html, я получил пустую страницу.
+
+Я обнаружил, что это точно так же, как открытие файла index.html непосредственно в браузере. Все говорят "установить homepage в package.json", но у меня это уже было. И что теперь!?
+
+В конце концов я понял, что проблема была react-router. Я использовал BrowserRouter. Переход на HashRouter решил проблему для меня.
+
+ 06.08.2020 08:16
+Я пытался открыть приложение после сборки, дважды щелкнув index.html, и это тоже не сработало, я получил пустую страницу, но если встроенные файлы запускаются в серверной среде, работает. https://create-react-app.dev/docs/deployment/
+
+ 22.09.2020 17:08
+Оооо, как я только что узнал, что я делал снова и снова: вы опубликовали папку публичный вместо папки строить.
+
+
+
+ 20.11.2020 16:10
+У меня был комментарий внутри моего метода return, и это вызвало у меня проблему.
+
+Если сообщение об ошибке в консоли браузера
+
+Minified React error #152;
+
+Тогда удаление любого комментария внутри метода return может решить вашу проблему, как и мою.
+
+ 07.03.2021 15:44
+Для меня проблема заключалась в том, что встроенный сценарий выполнения не запускался, так как я получал сообщение об ошибке:
+
+Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self'". Either the 'unsafe-inline' keyword, a hash ('sha256-5='), or a nonce ('nonce-...') is required to enable inline execution.
+
+Это было исправлено путем добавления переменной INLINE_RUNTIME_CHUNK=false в скрипт сборки.
+
+"build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
+Это связано с Политика безопасности контента браузеров: «Браузер, совместимый с CSP, будет выполнять только сценарии, загруженные в исходные файлы, полученные из этих разрешенных доменов, игнорируя все остальные сценарии (включая встроенные сценарии и HTML-атрибуты обработки событий)».
+
+ 26.05.2021 08:07
+Я столкнулся с подобной проблемой. Но если вы будете правильно следовать React-развертывание, вы поймете, что есть "домашняя страница":"." // Пользователь "." если вы развертываете на своем локальном компьютере, но на сервере, размещенном где-то, вы можете использовать свой домен или IP-адрес в поле домашней страницы.
+
+{
+  "homepage":"https://example.com"
+}
+ 27.09.2021 13:10
+Другие вопросы по теме
+Импорт JS-файла Google Maps API с помощью React
+Имена классов модулей CSS не определены
+Как я могу выбрать все папки и подпапки любой глубины с пользовательским окончанием файла?
+Каково значение списка браузеров в package.json, созданном приложением create-реагировать
+Как я могу открыть реагирующее приложение по этому URL-адресу: js-api.local.dev?
+Недопустимый URI при отправке запроса на серверную часть с помощью приложения create-реагировать
+Тестирование приложения create-реагировать «Реакция не определена»
+Как добавить функции отладки, которые я могу вызывать из консоли отладчика Chrome, в приложение Create React?
+Загрузка scss в строковую переменную с помощью create-react-app 2.0 без извлечения
+GetElementById() не работает при входе с помощью <Link> реактивного маршрутизатора
+Похожие вопросы
+Есть ли способ принудительно обновить компоненты, изменив URL-адрес, используя redux и react-router?
+Выпадающий список множественного выбора с уникальным выбором - React JS
+Как я могу изменить состояние массивов с помощью хуков?
+Как установить динамический размер шрифта для каждого элемента в серии древовидной диаграммы amchart4
+Реагировать: невозможно добавить свойство «X», объект не расширяемый
+Как изменить состояние внутри «нового метода» с помощью Mobx
+Не удалось найти "магазин", даже если рут завёрнут в Provider
+Как разделить панель инструментов material-ui на левую и правую части
+Переменная React не обновляется
+Как проверить, вошел ли пользователь в реагирующий компонент при использовании аутентификации laravel?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+InvalidCharacterError: не удалось выполнить createElement для документа: указанное имя тега (/static/media/index.c6592bb6.ts) не является допустимым именем
+Вопросы
+REACTJS
+InvalidCharacterError: не удалось выполнить createElement для документа: указанное имя тега (/static/media/index.c6592bb6.ts) не является допустимым именем
+У меня есть приложение для реагирования, которое я пытаюсь преобразовать для использования машинописного текста.
+
+но я получаю следующую ошибку: InvalidCharacterError: Failed to execute 'createElement' on 'Document': The tag name provided ('/static/media/index.c6592bb6.ts') is not a valid name.
+
+Что вообще означает эта ошибка? Похоже, ему не нравится расширение машинописного текста
+
+Есть идеи, как исправить?
+
+ 02.01.2019 10:09
+18
+1
+50 900
+14
+ Ответы 14
+Это означает, что у вас есть код, который пытается это сделать:
+
+document.createElement("/static/media/index.c6592bb6.ts")
+... прямо или косвенно. Поскольку /static/media/index.c6592bb6.ts не является допустимым именем тега (например, div или span), он не работает.
+
+ 02.01.2019 10:10
+В моем случае я создавал свое веб-приложение и создал файл javaScript в IDE IntelliJ. Но в папке в имени файла отсутствовал суффикс «.js». Поэтому, когда я использовал команду npm run dev в терминале, мне не удалось найти созданный мной файл.
+
+Если он у вас такой же, то просто зайдите в папку и добавьте суффикс «.js» в имя файла.
+
+Я думаю, что это ошибка в IntelliJ. Надеюсь, они исправят ее позже.
+
+ 09.03.2019 17:37
+Не уверен, что это помогает, но у меня было такое же сообщение об ошибке, и в нем отмечалось следующее:
+
+ReactDOM.render ( <App />, document.getElementById('root'));
+Для меня это была простая ошибка (как уже упоминалось кем-то) отсутствия файла с правильным расширением. В моем случае это был дочерний элемент SearchBox, который был сохранен как текстовый файл, а не как «SearchBox.js». В вашем случае это будет файл «Индекс». Конечно, я новичок в этом и все еще учусь, просто подумал, что поделюсь, поскольку чтение предыдущих ответов на ваш вопрос помогло мне исправить мою проблему!
+
+ 04.04.2019 18:43
+Для меня проблема заключалась в том, что я пытался визуализировать файлы ts. React не может «создавать элементы» из ts файлов. Файлы TS необходимо перенести в JS. Я думал, что мой загрузчик babel настроен правильно, но это не так. Загрузчик babel не проверял файлы ts или tsx.
+
+ 03.05.2019 21:41
+Прежде всего, убедитесь, что в исходной папке или в общей папке есть файл без правильного расширения означает "
+
+index
+
+"добавьте к нему правильное расширение или удалите его.
+
+ 20.08.2019 07:10
+ха-ха, у меня такая же ошибка и долго беспокоила.
+
+import GuessLikeList from './GuessLikeList/GuessLikeList.jsx';
+и ошибка
+
+Failed to execute 'createElement' on 'Document': The tag name provided ('./GuessLikeList/GuessLikeList.jsx') is not a valid name.
+Это означает, что невозможно выполнить с '.jsx', поэтому вам нужно изменить расширение имени файла или импортировать некоторые модули для компиляции jsx
+
+ 20.01.2020 07:26
+У меня такая ошибка. Случалось, что в конце имени папки js были пробелы. Кажется, React не распознает пространство в именах папок / файлов.
+
+ 22.04.2020 14:57
+У меня тоже была эта ошибка, и я не вижу, чтобы она описывалась в решениях, это была ошибка с моей стороны из-за того, что цитаты были частью моего назначения компонента Route.
+
+<Route component = "{ NotFound }" />
+Удаление кавычек решило проблему.
+
+<Route component = { NotFound } />
+ 01.05.2020 07:58
+На всякий случай, если это не было указано ранее, у меня была такая же проблема с домашним документом, потому что я использовал это:
+
+<Route path = "/" component = "{Home}" />
+Вместо этого
+
+<Route path = "/" component = {Home} />
+Обратите внимание на кавычки. Надеюсь, это кому-то поможет.
+
+ 30.05.2020 23:38
+В моем случае у меня была ошибка в моем App.js. У App.js было неправильное имя на пути маршрута, как это, поэтому мне пришлось исправить имя пути, и это устранило мою ошибку.
+
+ 13.11.2020 02:37
+В моем случае это был просто импорт такого актива
+
+import { ReactComponent as PaintIcon } from "./assets/paint.svg";
+вместо
+
+import PaintIcon from "./assets/paint.svg";
+Спасибо.
+
+ 27.06.2021 10:46
+убедитесь, что вы добавили .js в имя вашего файла, а также при его импорте
+
+ 09.08.2021 12:33
+В имени индекса может быть фиктивный файл, не имеющий суффикса «.js».
+
+Или ваш индексный файл может не иметь суффикса ".js".
+
+Так переименуйте это
+
+ 23.08.2021 17:56
+в моем случае я импортировал SVG, например:
+
+import SidebarButton from '../../assets/images/sidebarbutton.svg';
+И просто используя это:
+
+<SideBarButtonImg>
+Это устранило проблему:
+
+const SideBarButtonImg = () => (
+  <button style = {{height: '100%'}}>
+    <img
+      src = {sidebarbutton}
+      alt = ""
+      style = {{
+        height: '100%',
+        background: '#fff',
+      }}
+    />
+  </button>
+)
+ 16.09.2021 11:21
+Другие вопросы по теме
+Перенос значений базы данных firebase в новый массив
+Как получить Observable для данных из запроса Firestore в Angular 7?
+Изображение дисплея Angular 6, полученное из AWS S3
+Angular 7 чипов ngx рабочий функционал
+Угловые вспомогательные маршруты к именованным выходам внутри MatDialog
+Как перетащить элемент в угловой 6?
+Я хочу отключить следующую кнопку, когда форма показывает последнюю запись, и отключить предыдущую кнопку, когда форма показывает первую запись
+Как я могу объявить интерфейс машинописного текста как атрибут класса
+Как разобрать общий список коллекций C# в машинописном тексте
+Машинописный эквивалент python isinstance
+Похожие вопросы
+Как переопределить встроенные классы material-ui
+Импорт файла компонента React с помощью node js
+Slice () на массив объекта не вернул ссылку?
+Форма реакции не работает должным образом (проблема с реквизитом (?))
+Календарь резки React datepicker на экране мобильного телефона
+В общем, что лучше использовать один или несколько хуков useEffect в одном компоненте?
+React-native-image-picker продолжительность видео
+Как запускать события в Node JS, когда наступает будущая дата, время, хранящееся в базе данных?
+Выровнять элементы по горизонтали бутстрап
+Использование классов начальной загрузки с компонентами в стиле reactjs
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Библиотека не найдена для -lDoubleConversion
+Вопросы
+IOS
+Библиотека не найдена для -lDoubleConversion
+Я попытался построить на XCode, но возникла ошибка ld: library not found for -lDoubleConversion. Я мог собрать react-native run-ios. Это сработало бы, но XCode не смог построить ...
+
+ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/DoubleConversion' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/Folly' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/GTMOAuth2' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/GTMSessionFetcher' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/Google-Maps-iOS-Utils' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/Protobuf' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/React' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/glog' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/leveldb-library' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/nanopb' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/react-native-google-maps' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/react-native-maps' ld: warning: directory not found for option '-L/Users/xxxxx/Library/Developer/Xcode/DerivedData/xxxxx/Build/Products/Debug-iphonesimulator/yoga' ld: library not found for -lDoubleConversion clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+ 28.05.2018 10:58
+25
+0
+20 918
+14
+ Ответы 14
+XCode не может найти библиотеку lDoubleConversion, вам нужно добавить библиотеку в файл какао-стручков.
+
+вы можете легко сделать это, выполнив следующие действия
+
+1. Добавьте файл библиотеки в свой подфайл.
+
+pod 'DoubleConversion', :podspec => './../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+2. удалить Podfile.lock
+
+3. запустить установку модуля
+
+4. Добавьте DoubleConversion.a в связанные с xcode фреймворки и библиотеки.
+
+5. Очистите проект и постройте заново.
+
+Это должно сработать.
+
+ 12.06.2018 01:56
+У меня была эта проблема немного назад после обновления до RN 0.59.
+
+Решение, которое сработало для меня, заключалось в том, чтобы удалить папку ios/build, а затем сделать следующее:
+
+cd ios
+
+pod install
+Когда я это сделал, я увидел ошибку Folly, и люди рекомендовали это сделать:
+
+pod deintegrate
+
+pod install
+Я сделал это, но он все равно будет выдавать ошибку о Folly, поэтому я удалил Podfile.lock, потому что в модулях хранится старая версия Folly, несовместимая с RN 0.59.
+
+ПРИМЕЧАНИЕ. Я нашел сообщение от кого-то, в котором говорится, что удаление всего файла блокировки не рекомендуется. Вместо этого вы должны удалить только соответствующие строки в файле блокировки, те строки, которые относятся к Folly. Я уже удалил файл блокировки, но все обошлось.
+
+Я запустил pod update, который обновил кучу вещей и успешно завершился.
+
+В следующий раз, когда я запустил pod install, он выдал хороший список «зеленых», успешных установок.
+
+Затем я снова сделал react-native run-ios, и это сработало впервые за долгое время, за исключением того, что создавало красный экран смерти.
+
+Поэтому я удалил свое приложение с устройства симулятора iOS, а затем запустил:
+
+rm -rf node_modules
+
+npm install
+
+killall -9 node
+killall -9 node предназначен только для того, чтобы убить Metro Bundler. Это моя любимая широкая команда для этого. Если вы используете на своем компьютере двенадцать API-интерфейсов node.js, возможно, вместо этого выполните что-то вроде sudo lsof -i :8081 и найдите идентификатор процесса для Metro Bundler (ов) и уничтожьте их по PID. Например, если вы видите, что Metro Bundler работает как PID 27322, выполните kill -9 27322.
+
+Затем я запустил это в автономном терминале:
+
+npm start -- --reset-cache
+обратно в интегрированный терминал VS Code:
+
+react-native run-ios
+ЭТО СРАБОТАЛО !!!!!!!!
+
+Затем я побежал:
+
+react-native run-android
+это сработало, но застряло на 0% на устройстве симулятора, поэтому я удалил APK с симулятора и снова запустил react-native run-android.
+
+ЭТО СРАБОТАЛО !!!!!!!!
+
+ 20.04.2019 20:13
+Для меня я решил просто открыть MyAppName.xcworkspace вместо MyAppName.xcodeproj, а затем собрать.
+
+ 16.07.2019 10:28
+Иногда это так же просто, как pod install внутри /ios, затем закрыть xcode, снова открыть его и пересобрать. Работал у меня.
+
+ 16.07.2019 15:37
+Для меня сработали следующие шаги:
+
+Удалите use_frameworks! из ios / Podfile.
+
+target 'AwesomeProject' do
+    # use_frameworks!
+    ...
+end
+Добавить модуль DoubleConversion в ios / Podfile
+
+target 'AwesomeProject' do
+    # use_frameworks!
+    ...
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+end
+Очистить стручки.
+
+pod deintegrate
+
+pod rm Podfile.lock
+Переустановите капсулы
+
+pod install --repo-update --verbose
+Откройте AwesomeProject.xcworkspace и запустите приложение.
+
+Надеюсь, это кому-то поможет :)
+
+ 05.08.2019 04:51
+Моя проблема заключалась в том, что я перешел на React Native 0.60 с cocoapods, и я забыл обновить свой процесс сборки Fastlane для сборки с использованием .xcworkspace вместо файла .xcproj.
+
+Я сузил круг вопросов, заметив, что могу создавать и архивировать сборку с помощью Xcode, но моя сборка Fastlane не удалась. Новичек.
+
+ 11.09.2019 00:11
+Активация Find Implicit Dependencies для схемы на xcode решила проблему в моем проекте.
+
+
+
+ 30.04.2020 07:38
+Это случилось со мной при создании проекта на терминале, а не на XCode, и это произошло как на CI, так и на моем ноутбуке.
+
+Это происходит потому, что вы собираете проект app.xcodeproj вместо рабочего пространства app.xcworkspace.
+
+Итак, вам нужно изменить параметр в вашем вызове с -project app.xcodeproj на -workspace app.xcworkspace. Обратите внимание, что меняется не только значение, но и имя параметра.
+
+А теперь полный пример звонка.
+
+Из:
+
+xcodebuild -sdk iphoneos -configuration yourconfig -project app.xcodeproj -scheme yourscheme build -UseModernBuildSystem=YES CODE_SIGN_STYLE=Automatic
+
+К:
+
+xcodebuild -sdk iphoneos -configuration yourconfig -workspace app.xcworkspace -scheme yourscheme build -UseModernBuildSystem=YES CODE_SIGN_STYLE=Automatic
+
+ 12.05.2020 12:58
+Я просто обновляю цель развертывания до 11.4 с 10, и она сработала
+
+ 01.09.2020 18:52
+Для меня:
+
+Измените цель развертывания на 11.0, Также измените цель развертывания AppNameTEST на 11.0
+
+rm -rf node_modules
+
+npm install
+
+pod update
+
+pod install
+ 17.09.2020 19:52
+используйте platform: ios, '10 .0 'вместо platform: ios, '11 .0' в Podfile.
+
+ 24.11.2020 11:11
+Все остальное я пробовал часами, то, что работало, было установлено в моем подфиле:
+
+platform :ios, '10.0'
+То же, что и iOS Deployment Target Version в Info.plist. Они были разные.
+
+ 03.01.2021 16:12
+После 3 дней своих усилий я нашел следующие решения.
+
+Убедитесь, что вам нужно открыть MyAppName.xcworkspace вместо MyAppName.xcodeproj
+Закройте Xcode и попробуйте деинтегрировать Pod, а затем Pod Install.
+Измените настройку сборки с Legacy на New build system.
+Для меня вариант 3 сработал.
+
+ 26.02.2021 12:44
+Я немного новичок в процессе сборки iOS, и я поделюсь своим решением, чтобы, надеюсь, избавить кого-либо от часов разочарования.
+
+В моем случае это была просто устаревшая / плохая сборка. Убедитесь, что вы открыли правильную папку Xcode в Xcode <YOUR_APP>.xcworkspace, в верхнем меню Xcode выберите Product -> Clean Build Folder
+
+ 02.03.2021 06:16
+Другие вопросы по теме
+Как отфильтровать массив по маршруту в React.js?
+React Js отправляет данные массива в api
+Срок действия токена Reactjs
+Примеры внешнего интерфейса reactjs для backend aiohttp
+Загруженная фотография не отображается в firefox
+Ошибка при использовании редактора React Markdown
+Компоненты Apollo Query с react-native
+Как повторно использовать компонент и изменить некоторые значения, такие как текст и изображения, в другом компоненте с помощью React?
+Как установить только один флажок в Reactjs
+Использование свойств ThemeProvider в компонентах с глобальным стилем
+Похожие вопросы
+Ошибка AdMob EU Consent SDK iOS: форму согласия можно использовать только при выборе специального поставщика
+Objective-C: я хочу сравнивать / отсортировать массивы по блокам
+Передача данных из Tableview в CollectionView SWIFT
+Как получить отмену и вызов действия пользователя из UIAlertView
+Невозможно протестировать симулятор iOS 10 (iphone 5) с помощью XCode 9
+IOS, Swift, XCode: почему положение моих элементов на разных устройствах разное?
+Использование группы отправки для возврата значения из закрытия приостановить пользовательский интерфейс
+Несколько изображений в веб-просмотре не смахиваются должным образом
+Назначьте делегата для мобильных объявлений IronSource
+Код в делегате приложения против View Controller
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+У пряжи проблемы с подключением к сети
+Вопросы
+REACTJS
+У пряжи проблемы с подключением к сети
+Я пытался сегодня установить пакет с пряжей и получил это
+
+yarn install
+yarn install v1.9.4
+[1/4] ?  Resolving packages...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+error An unexpected error occurred: "https://registry.yarnpkg.com/eslint: getaddrinfo ENOTFOUND     registry.yarnpkg.com registry.yarnpkg.com:443".
+info If you think this is a bug, please open a bug report with the information provided in "/Users/daviddragovacz/Documents/GitHub/react-    project-one/dragi/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+кто-нибудь знает, как это исправить? Моя сеть вроде в порядке, совсем не медленная.
+
+Это происходит с каждым пакетом, который я пробовал.
+
+package.json
+
+{
+    "name": "dragi",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "axios": "^0.18.0",
+        "prop-types": "^15.6.2",
+        "react": "^16.4.2",
+        "react-dom": "^16.4.2",
+        "react-redux": "^5.0.7",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "1.1.5",
+        "redux": "^4.0.0",
+        "redux-devtools-extension": "^2.13.5",
+        "redux-thunk": "^2.3.0",
+        "semantic-ui-css": "^2.3.3",
+        "semantic-ui-react": "^0.82.3",
+        "validator": "^10.7.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "lint": "eslint src"
+    },
+    "devDependencies": {
+        "eslint": "^5.5.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "eslint-plugin-react": "^7.11.1",
+        "prettier": "^1.14.2"
+    },
+    "proxy": "http://localhost:8080"
+}
+Также небольшое примечание: npm i работает нормально - проблемы возникают только с пряжей
+
+ 02.09.2018 11:53
+24
+3
+35 247
+12
+Данный вопрос помечен как решенный
+ Ответы 12
+ Ответ принят как подходящий
+Попробуйте очистить cache
+
+$ yarn cache clean
+$ yarn // to install dependencies, no need for "yarn install"
+Подход 2
+
+$ yarn install --network-timeout 1000000
+Ссылка https://github.com/yarnpkg/yarn/issues/4890#issuecomment-358179301
+
+ 02.09.2018 11:55
+Попробуйте увеличить время ожидания сети
+
+yarn install --network-timeout 1000000
+нашел это на GitHub issues https://github.com/yarnpkg/yarn/issues/4890
+
+ 02.09.2018 12:21
+повторная попытка несколько раз сработала для меня по аналогичной проблеме.
+
+ 27.06.2019 09:57
+У меня была другая ошибка, но та же проблема с сетевым подключением. я прочитал эту ветку: https://github.com/yarnpkg/yarn/issues/15
+
+и закончил тем, что удалил / переустановил node / npm, что устранило мою проблему. может быть, что-то не так с установкой вашего узла?
+
+ 26.07.2019 15:33
+Проверьте скорость / силу подключения к Интернету. У меня была эта проблема, когда я был на пятнистой общедоступной сети Wi-Fi. Заметил, что это был другой пакет, который каждый раз выдавал ошибку, когда я пытался. И как только я стал быстрее / стабильнее в Интернете, эта проблема исчезла. (Пакеты были слишком большими для моего плохого соединения).
+
+ 24.09.2019 11:09
+Я тоже понял.
+
+Я запустил yarn install --no-lockfile, и он сработал, поэтому я снова удалил модули узлов и удалил yarn.lock. Похоже на ошибку в yarn, потому что yarn не было проблем в предыдущих версиях моего приложения.
+
+ 18.10.2019 22:22
+У меня была такая же проблема, и я решил ее, выполнив следующие действия:
+
+Запустите команду терминала
+
+Очистить кеш npm
+очистка кеша npm --force
+установить http_proxy =
+Установите https_proxy =
+Прокси-сервер для удаления пряжи
+Npm config rm https-прокси
+Npm config rm прокси
+Перезагрузите свой терминал
+пряжа
+Пряжа –network-timeout 100000
+Перезагрузите терминал.
+
+у меня это сработало.
+
+ 14.01.2020 20:34
+У меня была такая же проблема с повторной попыткой сети, когда я использовал yarn install, просто использование yarn сработало для меня.
+
+ 11.02.2020 18:42
+Возможно, изначально библиотека использовала npm вместо yarn. В моем случае мне пришлось устанавливать все с помощью npm вместо yarn. Я удалил файл yarn.lock, а затем:
+
+npm install
+ 29.03.2020 18:03
+Если вы используете WSL для Linux, просто добавьте текущий IP-домен в: C: \ Windows \ System32 \ drivers \ etc \ hosts, например:
+
+104.16.21.35    registry.yarnpkg.com
+ 13.04.2020 13:50
+Я много пробовал:
+
+npm clean cache
+yarn clean cache
+yarn config delete proxy
+yarn config delete https-proxy
+yarn config delete registry
+yarn install --network-timeout 1000000
+наконец то работает!
+
+ 25.07.2020 07:16
+В моем случае был скрытый файл .npmrc, в котором реестр указывал на местоположение в другой частной сети, к которой моя сеть не имела доступа. Как только я закомментировал записи, связанные с частной сетью, в этом файле, yarn install начал работать. Также был сгенерирован yarn-error.log, который содержал эту информацию.
+
+ 18.11.2020 03:14
+Другие вопросы по теме
+Установите тайм-аут для каждого SHELL_EXEC в цикле PHP
+Передает ли отправитель TCP повторно тот же самый SYN, что и предыдущий SYN, после истечения таймера?
+Панель поиска для фильтрации результатов таблицы в React с таймаутом
+PHP и Nginx, внезапно чрезвычайно медленные по SSL, но идеальные по HTTP
+Тайм-аут запроса PHP для простой функции
+Нестабильный обратный вызов WCF ServiceHost
+Невозможно удаленно выполнить пакетный файл, содержащий перенаправление / тайм-ауты, с помощью сценария PowerShell
+Обрыв php скрипта в середине для разбора больших файлов
+Ошибка Vagrant up с несколькими частными сетями
+Установка тайм-аута соединения / сокета JDBC через persistence.xml
+Похожие вопросы
+При рендеринге с помощью вспомогательной функции я получаю: «Объекты недопустимы как дочерние элементы React»
+Как я могу добавить или удалить класс при прокрутке в React?
+Перенаправление с согласованными параметрами с помощью response-router-dom не работает
+Как использовать метод post в React Native?
+Можно ли использовать reactjs без написания какого-либо класса?
+Сопоставление состояния редукции с реквизитом - состояние уничтожено?
+Произошла ошибка при подписке на creat-response-app
+Реагируйте на странный console.info, созданный не мной
+React Native Enforce английская клавиатура
+Установка реактивного маршрутизатора без обновления файла package.json
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Redux TypeError: невозможно прочитать свойство 'apply' из undefined
+Вопросы
+JAVASCRIPT
+Redux TypeError: невозможно прочитать свойство 'apply' из undefined
+Я отключил инструменты разработки реагирования и инструменты разработки redux.
+
+Я часами искал способы справиться с этой проблемой, и большинство проблем уже в компоновке, а я вообще не меняю код.
+
+import { createStore, applyMiddleware,compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const initialState = {};
+
+const middleware = [thunk];
+
+const store = createStore(rootReducer,initialState,
+    compose(
+        applyMiddleware(...middleware),
+        window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
+        )   
+    );
+
+
+export default store;
+Я действительно не понимаю, почему это произошло. Я ничего не меняю, и последнее, что я делаю, это просто добавляю git push origin master в свой репозиторий, и внезапно, когда я скомпилировал, я получил эту ошибку:
+
+Я использую это в моем интерфейсе:
+
+  "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1",
+    "axios": "^0.18.0",
+    "jwt-decode": "^2.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-redux": "^5.1.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.5",
+    "react-select": "^2.1.1",
+    "recharts": "^1.3.5",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "0.0.54"
+Бэкэнд:
+
+ "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.11",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "path": "^0.12.7",
+    "validator": "^10.9.0",
+    "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.6",
+  },
+Ошибка результата:
+
+Redux TypeError: невозможно прочитать свойство &apos;apply&apos; из undefined
+
+Redux:
+
+Redux TypeError: невозможно прочитать свойство &apos;apply&apos; из undefined
+
+ 28.11.2018 09:04
+43
+0
+44 950
+17
+Данный вопрос помечен как решенный
+ Ответы 17
+Последний стек показывает вызов compose в client/src/store.js:9, где вторым аргументом является window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__().
+
+Однако, если у вас отключены инструменты разработчика, __REDUX_DEVTOOLS_EXTENSION__ не определен и становится вторым аргументом для создания функции. Он по-прежнему предоставляется явно, что отличается от того, что он неявно не определен по пропуску, поэтому реализация compose считает, что есть два действительных аргумента, и ожидает, что они будут функциями, а не неопределенными.
+
+Вы должны вернуть фиктивную функцию в случае, если нет доступных инструментов разработчика, что-то вроде «возможно», хотя я не совсем уверен, какой должна быть точная подпись, чтобы удовлетворить функцию createStore.
+
+window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (a) -> a
+
+ 28.11.2018 11:08
+ Ответ принят как подходящий
+Обновите инструменты redux dev с 2.16.0 до 2.16.1
+
+ИЛИ
+
+Удалите эту строку из своего кода
+
+window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
+ 28.11.2018 12:07
+У меня была такая же проблема, когда я хотел протестировать свое веб-приложение в окне инкогнито (расширения не отображаются в окнах в режиме инкогнито).
+
+Проблема в том, что compose от redux ожидает, что все его аргументы будут функциями. Так когда
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+оценивается в этой среде, он возвращает логическое значение.
+
+Как упоминал @knutwalker. Вам нужно будет вернуть функцию, которая ничего не возвращает. Это исправило это для меня,
+
+      window.__REDUX_DEVTOOLS_EXTENSION__
+        ? window.__REDUX_DEVTOOLS_EXTENSION__()
+        : f => f
+ 27.04.2019 17:16
+Что касается меня, я добавил расширение redux-devtools в Chrome, и ошибка исчезла, как только я добавил в браузер redux-devtools, и вам также не нужно использовать тернарный оператор.
+
+https://github.com/reduxjs/redux/issues/2359#issuecomment-362340634
+
+ 12.05.2019 08:48
+В моем случае лучший способ решить эту проблему - просто.
+
+Вы знаете, что кипарис открывает хром в режиме разработчика, в котором нет ваших расширений, включая redux devtools.
+
+Итак, когда окно на Chrome открывается с ошибкой, нажмите меню> дополнительные инструменты> Расширения и перейдите в интернет-магазин Chrome из, чтобы установить redux devtools.
+
+ 04.06.2019 16:01
+Причина этой ошибки в самом вопросе. Просто включить расширение React и Redux DevTools. Это сработало для меня из-за той же ошибки.
+
+ 11.09.2019 17:13
+Убедитесь, что у вас есть скачано расширение redux-devtools для Chrome, и измените доступ к сайту на На всех сайтах или по конкретным, перейдя в Управление расширением> Redux DevTools (подробности)> Доступ к сайту
+
+ 04.12.2019 11:06
+Это случилось со мной с версией 2.17.0 Redux DevTools.
+
+Что-то испортилось в расширении.
+
+Я просто удалил расширение из Chome, переустановил его, и оно отлично заработало.
+
+ 11.02.2020 08:01
+Эта ошибка возникает из-за:
+
+const store=createStore(rootreducer,
+    initialstate,
+    compose(applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+)
+При развертывании проекта вы этого не сделали:
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+Во время выполнения команды npm run build убедитесь, что вы удалили это. Правильный способ:
+
+const store=createStore(rootreducer,
+    initialstate,
+    compose(applyMiddleware(...middleware))
+)
+ 04.09.2020 19:55
+Я столкнулся с аналогичной проблемой, и удаление этих строк помогло,
+
+ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+но это не постоянное решение, так как для повторного использования инструментов redux dev вам понадобятся эти строки. Вместо этого используйте
+
+process.env.NODE_ENV== = "development" ?
+       window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : compose,
+он использует переменные env, чтобы проверить погоду, использовать ли промежуточное ПО инструментов Reduxdev или нет. так как я не видел этого решения в этой теме, я опубликовал его, надеюсь, что оно будет кому-то полезно ..
+
+ 16.10.2020 16:55
+Я изменился
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+к этому:
+
+typeof window.__REDUX_DEVTOOLS_EXTENSION__ === "undefined"
+? a => a
+: window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+и проблема была решена
+
+ 25.10.2020 15:43
+Это сработало для меня:
+
+Эта ошибка возникает из-за:
+
+const store=createStore(rootreducer,
+    initialstate,
+    compose(applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+)
+При развертывании проекта удалите последнюю строку следующим образом:
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+При выполнении команды npm run build убедитесь, что вы удалили это. Правильный способ:
+
+const store=createStore(rootreducer,
+    initialstate,
+    compose(applyMiddleware(...middleware))
+)
+ 11.01.2021 13:47
+Была такая же ошибка в окне Chrome в режиме инкогнито. Поменял на нормальный Chrome, и все заработало.
+
+ 28.02.2021 08:52
+Это полный отвечать @Koop, который мне подходит:
+
+Для всех, кто столкнулся с ошибкой TypeError: невозможно прочитать свойство «apply» of undefined »в node_modules / redux / es / redux.js: error: Немедленное исправление: установите расширение Chrome Redux Devtools. Постоянное исправление для всех браузеров:
+
+В каталоге клиента: npm install --save-dev redux-devtools-extension
+Измените client / src / store / index.js на:
+import { applyMiddleware, createStore, } from ‘redux’;
+import createSagaMiddleware from ‘redux-saga’;
+
+import rootReducer from ‘./reducers/index’;
+import rootSaga from ‘./sagas/index’;
+import { composeWithDevTools } from ‘redux-devtools-extension’;
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
+);
+sagaMiddleware.run(rootSaga);
+export default store;
+ 03.03.2021 23:29
+В моем случае эта ошибка вызывала пустой / белый экран в производственной сборке в мобильном браузере, но не в браузере настольного компьютера. Принятый ответ не сработал для меня, мне пришлось удалить строку, добавить расширение devtools и выполнить рефакторинг для использования импорта composeWithDevTools. То есть ответ от @Roman был для меня полностью рабочим решением (спасибо, сэр). Но это может помочь другим пояснить, что проблема может возникать независимо от саги о сокращении. Мое приложение просто использовало базовый redux-thunk. Я установил redux-devtools-extension в качестве зависимости разработчика, а затем заменил это:
+
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const initialState = {};
+
+const middleware = [thunk];
+
+if (nodeEnv !== 'production') {
+  const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware)));
+} else {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(...middleware),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    ),
+  );
+}
+
+export default store;
+с этим:
+
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const initialState = {};
+
+const middleware = [thunk];
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
+
+export default store;
+И это исправило это.
+
+ 17.03.2021 14:03
+изменение этой строки
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+к
+
+window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+
+решит проблему, и это сработало для меня.
+
+ 09.07.2021 08:59
+Перед ошибкой:
+
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const initialState = {};
+
+const middleWare = [thunk];
+
+const store = createStore(rootReducer, initialState, compose(
+    applyMiddleware(...middleWare),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+));
+
+export default store;
+После удаления ошибки:
+
+В Store.js мы должны удалить
+
+window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
+
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const initialState = {};
+
+const middleWare = [thunk];
+
+const store = createStore(rootReducer, initialState, compose(
+    applyMiddleware(...middleWare)
+));
+
+export default store;
+ 04.11.2021 09:43
+Другие вопросы по теме
+Получить данные в ReactJS
+Тест на реакцию, подсчет количества обновлений после действия отправки
+TypeScript и React: как перегрузить компонент / декоратор более высокого порядка?
+Получите данные JSON в нескольких компонентах с помощью reactjs и redux
+React Native - в чем разница между этими двумя приложениями, в которых одно использует AppRegistry.registerComponent, а другое - нет?
+Как преобразовать QR-код в img и сохранить его в хранилище firebase
+Как вызвать набор данных для возврата в ответ на рендеринг?
+React-konva получить атрибуты <Group /> в объявлении субкомпонента
+Реагировать на хуки: в чем разница между useMutationEffect и useLayoutEffect?
+Невозможно загрузить данные в компонент ag-grid
+Похожие вопросы
+Как убедиться, что приложение Electron Express доступно только изнутри электронного окна
+Как добавить CSS при нажатии кнопки
+Получить данные в ReactJS
+Как изменить положение некоторого элемента асинхронно использовать jquery
+Angular 7 - проверка регулярного выражения веб-URL дает разные результаты при каждом вызове
+Как нарисовать вертикальную ось в диаграммах Google
+Обслуживание веб-приложения с файлами Gzip js и css под nginx
+Как восстановить файл из base64 в pdf в javascript?
+Как я могу вызвать функцию javascript, имея вызов ajax из Java с помощью ScriptEngine?
+Как изменить строку на основе массива флажков?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Ошибка React Hooks: хуки можно вызывать только внутри тела функционального компонента
+Вопросы
+JAVASCRIPT
+Ошибка React Hooks: хуки можно вызывать только внутри тела функционального компонента
+Я получаю эту ошибку при использовании ловушки useState. У меня есть это в базовой форме, я смотрю на реагировать на документы для справки, но все еще получаю эту ошибку. Я готов к моменту ладони лица ...
+
+export function Header() {
+  const [count, setCount] = useState(0)
+  return <span>header</span>
+}
+ 28.10.2018 04:20
+82
+4
+101 135
+19
+Данный вопрос помечен как решенный
+ Ответы 19
+ Ответ принят как подходящий
+Обновлено: 2018-декабрь
+Вышла новая версия react-hot-loader, ссылка. Хуки теперь работают из коробки. Спасибо автору Кашей.
+
+Посмотрите этот шаблон https://github.com/ReeganExE/react-hooks-boilerplate
+
+Реагировать на хуки
+React Hot Loader
+Webpack, Babel, ESLint Airbnb
+Предыдущий ответ:
+Сначала убедитесь, что вы установили react@next и react-dom@next.
+
+Затем проверьте, используете ли вы react-hot-loader или нет.
+
+В моем случае отключите горячий загрузчик, и HMR может заставить его работать.
+
+См. https://github.com/gaearon/react-hot-loader/issues/1088.
+
+Цитата:
+
+Yes. RHL is 100% not compatible with hooks. There is just a few reasons behind it:
+
+SFC are being converted to Class components. There is reason - to be able to forceUpdate on HMR, as long there is no "update" method on SFC. I am looking for other way of forcing the update (like this. So RHL is killing SFC.
+
+"hotReplacementRender". RHL is trying to do React's job, and render the old and the new app, to merge them. So, obviously, that's broken now.
+
+I am going to draft a PR, to mitigate both problems. It will work, but not today.
+
+Есть более подходящее исправление, которое подействует - холодный API
+
+Вы можете отключить RHL для любого настраиваемого типа.
+
+import { cold } from 'react-hot-loader';
+
+cold(MyComponent);
+Найдите "useState/useEffect" внутри исходного кода компонента и "охладите" его.
+
+Обновлено:
+Согласно обновлено от сопровождающего react-hot-loader, вы можете попробовать react-hot-loader@next и установить конфигурацию, как показано ниже:
+
+import { setConfig } from 'react-hot-loader';
+
+setConfig({
+  // set this flag to support SFC if patch is not landed
+  pureSFC: true
+});
+Спасибо @loganfromlogan за обновление.
+
+ 28.10.2018 09:11
+Проблема для меня действительно была реактивно-горячий загрузчик.
+
+Вы можете отключить react-hot-loader для одного компонента вместо всего приложения, используя метод cold, например:
+
+import { cold } from 'react-hot-loader'
+
+export const YourComponent = cold(() => {
+
+  // ... hook code
+
+  return (
+    // ...
+  )
+})
+ИЛИ
+
+export default cold(YourComponent)
+ 30.10.2018 07:04
+Я смог решить эту проблему, импортировав примитивные хуки React в файл компонента, а затем передав их в мои собственные хуки. По какой-то причине ошибка возникает только тогда, когда я импортирую ловушку React (например, useState) в свой файл настраиваемой ловушки.
+
+Я импортирую useState в свой файл компонента:
+
+import React, {useState} from 'react'; // import useState
+
+import {useCustomHook} from '../hooks/custom-hook'; // import custom hook
+
+const initialState = {items: []};
+export default function MyComponent(props) {
+    const [state, actions] = useCustomHook(initialState, {useState});
+    ...
+}
+Затем в моем файле с крючками:
+
+// do not import useState here
+
+export function useCustomHook(initialValue, {useState}) {
+    const [state, setState] = useState(initialValue || {items: []});
+
+    const actions = {
+        add: (item) => setState(currentState => {
+            const newItems = currentState.items.concat([item]);
+            return {
+                ...currentState,
+                items: newItems,
+            };
+        }),
+    };
+
+    return [state, actions];
+}
+Этот метод улучшил тестируемость моих хуков, потому что мне не нужно имитировать библиотеку React для предоставления примитивных хуков. Вместо этого мы можем передать фиктивный хук useState прямо в функцию пользовательского хука. Я думаю, что это улучшает качество кода, поскольку ваши пользовательские хуки теперь не связаны с библиотекой React, что обеспечивает более естественное функциональное программирование и тестирование.
+
+ 04.11.2018 10:31
+Моя проблема заключалась в том, что я забыл обновить модуль react-dom. См. Проблему.
+
+ 05.11.2018 09:30
+У меня возникла эта ошибка при использовании Замена горячего модуля посылки, и она исправлена ​​обновлением react-dom до альфа-версии:
+
+yarn add react-dom@16.7.0-alpha.0
+См. Эту проблему.
+
+ 13.11.2018 17:51
+нашел этот обходной путь для react-hot-loader, в то время как PR для его исправления является входящим.
+
+Оберните функцию, вызывающую хуки, в React.memo, чтобы предотвратить горячую перезагрузку, если она не изменилась.
+
+const MyFunc = React.memo(({props}) => {...
+
+Кредит для решения: https://github.com/gatsbyjs/gatsby/issues/9489
+
+ 15.11.2018 01:36
+У меня была проблема в монорепозитории, где пакет docz использовал react@16.6.3, а окончательный выходной пакет имел две версии реакции.
+
+Проблема на Github
+
+Исправлено удалением пакета ?
+
+ 20.11.2018 12:51
+обновить версию package.json в качестве реакции
+
+ 28.11.2018 04:07
+Если вы используете приложение Create React, вам необходимо обновить версию "react-scripts" также с помощью версии react и response-dom.
+
+ "react-scripts": "2.1.5",
+ "react": "^16.8.1",
+ "react-dom": "^16.8.1",
+эта комбинация отлично работает.
+
+ 12.02.2019 08:55
+Моя проблема заключалась в следующем:
+
+Я делал: ReactDOM.render(Example(), app);
+
+В то время как я должен был делать: ReactDOM.render(<Example />, app);
+
+ 26.02.2019 09:20
+Была такая же проблема. Моя проблема была связана с React Router. Я случайно использовал
+
+<Route render = {ComponentUsingHooks} />
+вместо того
+
+<Route component = {ComponentUsingHooks} />
+ 28.02.2019 11:01
+Тем, кто сталкивается с этой проблемой при использовании MobX и упаковке компонента в observer, убедитесь, что вы используете mobx-react-lite вместо mobx-react.
+
+ОБНОВЛЕНИЕ 29 МАЯ
+
+Начиная с mobx-react6.0.0, компоненты на основе хуков теперь поддерживаются mobx-react, таким образом, больше нет необходимости в использовании mobx-react-lite (если это была ваша проблема).
+
+ 28.03.2019 15:26
+Чтобы уточнить ответ @rista404, включая повторяющиеся версииreact (и, возможно, react-dom), вы получите ту же ошибку в зависимости от того, где вы используете свои хуки. Вот два примера ...
+
+Внешняя зависимость включает другую версию react в свой dependencies, вероятно, по ошибке, поскольку react обычно должен быть одноранговой зависимостью. Если npm не выполняет автоматическое копирование этой версии в вашу локальную версию, вы можете увидеть эту ошибку. Это то, о чем имел в виду @ rista404.
+Вы npm link пакет, который включает react в его devDependencies или dependencies. Теперь для модулей в этом пакете вы можете увидеть ошибки, если они извлекут другую версию react из своего локального каталога node_modules, а не из родительского проекта.
+Последнее может быть исправлено при объединении с webpack с помощью resolve.alias вот так ...
+
+    resolve: {
+        alias: {
+            'react': path.resolve(__dirname, 'node_modules/react'),
+            'react-dom': path.resolve(__dirname, 'node_modules/react-dom')
+        }
+    }
+Это гарантирует, что react всегда извлекается из каталога node_modules родительского проекта.
+
+ 17.06.2019 16:18
+Для меня это произошло, потому что у меня была новая версия react (16.8.6) и старая версия react-dom (16.6.1).
+
+https://reactjs.org/warnings/invalid-hook-call-warning.html#mismatching-versions-of-react-and-react-dom
+
+Обновление обоих до @latest (16.8.6) устранило ошибку.
+
+ 12.07.2019 19:09
+Для других пользователей рабочих пространств yarn, вот моя ситуация и то, как я ее понял.
+
+пакеты
+фу
+react@16.8.6
+бар
+react@16.10.1
+Документы Facebook на Предупреждение о недопустимом вызове трубки ничего не говорят о рабочих пространствах пряжи, поэтому я предположил, что моя конфигурация верна. Но это было не так. Вы можете исправить ошибку, только используя одну и ту же версию в все ваши пакеты.
+
+В приведенном выше примере вы должны поднять версию response с «foo» до 16.10.1, чтобы она соответствовала версии response из «bar».
+
+Бонус: см. это обсуждение на GitHub за красивую коллекцию эмоционального багажа, выгруженную в Интернет.
+
+ 28.09.2019 23:13
+Другое решение, если вы столкнулись с этим при использовании ссылки npm:
+
+Вы можете реагировать на npm link в своей библиотеке, как описано здесь: https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react
+
+или установите реакцию в своей библиотеке как peerDependency, а затем используйте npm link --only=production
+
+ 05.12.2019 11:46
+Что ж, в моем случае я вызывал useSelector внутри useEffect !!
+
+ 29.10.2020 12:26
+ОТВЕТ ИЮНЯ 2021 ГОДА
+У меня возникла эта проблема с приложением реагировать-электрон-шаблон.
+
+Многие плагины и библиотеки, такие как Material-UI, не могли быть использованы в моем проекте из-за этой досадной ошибки, и после долгих поисков я смог решить проблему:
+
+Я только что обновил react и react-dom до последних версий.
+
+Эта команда выполнила свою работу!
+
+yarn add react@latest react-dom@latest
+ 13.06.2021 16:39
+Убедитесь, что версии react и react-dom - строго равный. Обратите внимание на символ циркумфлекса ^ на версиях.
+
+"17.0.0" не может быть таким же, как "^17.0.0"
+
+npm - диапазоны Carret: https://github.com/npm/node-semver#caret-ranges-123-025-004 Реагировать - Список изменений: https://github.com/facebook/react/blob/main/CHANGELOG.md
+
+Это одна из причин, по которой лучше устанавливать пакеты с -E или --save-точным.
+
+npm install --save --save-exact <package@vesion>
+ 26.10.2021 17:33
+Другие вопросы по теме
+Почему современные JavaScript-фреймворки препятствуют прямому взаимодействию с DOM
+Как использовать this.setState для обновления состояния приложения реакции
+Отображать сообщения получателя в this.state.message
+Зачем нам вызывать super (props) и как это работает в React?
+Реагировать на передачу данных на родительскую ошибку this.props. это не функция
+Как выполнять обработку событий в React, JavaScript
+Доступ к состоянию редукции в новых вкладках / окнах
+Create-response-app> error css-loader@1.0.0: "узел" движка несовместим с этим модулем. Ожидаемая версия "> = 6.9.0 <7.0.0 ||> = 8.9.0"
+ReactJS - изменить значение атрибута при нажатии
+GeoFireStore, где запрос
+Похожие вопросы
+Как мне прервать компоновку или конвейерную передачу и вернуть все текущие данные?
+Остановить свайпер при наведении указателя мыши и начать воспроизведение при наведении указателя мыши
+Почему современные JavaScript-фреймворки препятствуют прямому взаимодействию с DOM
+Как создать 2 div с одинаковой высотой без начальной загрузки или jquery
+Адаптивное меню только с CSS не отображается
+Nearley Moo - грамматика не работает с используемым лексером Moo
+Как использовать this.setState для обновления состояния приложения реакции
+JQuery onclick функция копирования и вставки
+Рассчитайте разницу между несколькими входами и напишите на странице
+Отфильтровать массив по вложенному значению, которое соответствует определенному условию во Vue
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
 Бесконечный цикл в использовании
 Вопросы
 REACTJS
