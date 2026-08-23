@@ -1,3 +1,9611 @@
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как исправить ошибку: Ошибка при попытке импорта: «Маршрут» не экспортируется из «React-router-dom»
+Вопросы
+REACTJS
+Как исправить ошибку: Ошибка при попытке импорта: «Маршрут» не экспортируется из «React-router-dom»
+-- Обновление: это начало работать, когда я просто остановил сервер разработки, вышел из VSCode и снова перезапустил его. Не уверен, что вызвало это.
+
+Занят изучением React и столкнулся с этой ошибкой. Я пробовал несколько других сообщений SO, но не могу найти ответ на свою проблему.
+
+Я следую указаниям использовать только react-router-dom и импортировать BrowserRouter и Route из react-router-dom. Но я получаю сообщение об ошибке:
+
+./src/App.js
+Attempted import error: 'Route' is not exported from 'react-router-dom'.
+Не уверен, что я делаю неправильно здесь?
+
+Вот мой App.js
+
+import React, { Component } from 'react';
+import Navbar from './components/Navbar'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Home from './components/Home'
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+      <div className = "App">
+        <Navbar />
+        <Route path='/' component = {Home} />
+      </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;
+Вот мой package.json:
+
+  "name": "poketimes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
+Из того, что я читал, другие сообщения по-прежнему используют реагирующий маршрутизатор отдельно, но, если я правильно понимаю документацию, я не должен делать этого в этой версии? Кроме того, я следую учебнику, который делает это именно так, и, похоже, он работает.
+
+Любой совет будет принят с благодарностью, спасибо!
+
+ 25.03.2019 06:51
+21
+6
+76 660
+18
+Данный вопрос помечен как решенный
+ Ответы 18
+import React, { Component } from 'react';
+import Navbar from './components/Navbar'
+import { BrowserRouter, Route ,Switch} from 'react-router-dom'
+import Home from './components/Home'
+
+class App extends Component {
+render() {
+  return (
+    <BrowserRouter>
+     <div className = "App">
+     <Navbar />
+      <Switch>
+      <Route exact path='/' component = {Home} />
+    </Switch>
+
+    </div>
+    </BrowserRouter>
+   );
+  }
+  }
+
+  export default App;
+попробуй так
+
+ 25.03.2019 06:57
+Кажется, ваш маршрут устарел в следующих версиях, поэтому используйте этот импорт:
+
+import {Route} from 'react-router-dom/Route';
+ 19.05.2019 19:34
+У меня была такая же проблема. У вас может быть конфликт с NPM и YARN. Я удалил свой yarn.lock и снова запустил его только с package.lock; и это сработало.
+
+Вы должны использовать только Yarn или NPM.
+
+ 01.08.2019 22:17
+ Ответ принят как подходящий
+Закройте сервер и перезапустите его. Это работает нормально.
+
+npm start или yarn start
+
+ 19.09.2019 13:24
+Я тоже застрял на этом... Для меня это сработало, когда версии «реагировать-маршрутизатор» и «реагировать-маршрутизатор-дом» совпадали.
+
+"react-router": "^5.2.0",
+"react-router-dom": "^5.2.0",
+ 23.06.2020 23:27
+Возможно, это происходит из-за того, что вы его не установили. Вы должны запустить эту команду:
+
+npm i react-router
+ 06.07.2020 09:45
+Пожалуйста, еще раз проверьте написание BrowserRouter или, если написание правильное, перезапустите npm, используя CTRL + C и
+
+npm start 
+ 03.08.2020 01:42
+Вы должны добавить эту строку в свои компоненты.
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+Моя проблема решилась этим методом.
+
+ 11.10.2020 14:56
+проблема решена во мне
+
+npm uninstall react-router
+а также
+
+npm uninstall react-router-dom
+тогда
+
+npm install react-router react-router-dom
+используйте версию 5.0.0
+
+ 09.11.2020 13:36
+Вам нужно убедиться, что тип возвращаемого значения в классе приложения. Вы возвращаете BrowserRouter. Поэтому, когда вы выполняете импорт, вам нужно убедиться, что вы указали правильное имя класса, который вы импортируете.
+
+BrowserRouter возвращается, а не Router.
+
+Так и должно быть
+
+import { BrowserRouter } from 'react-router-dom'
+или
+
+import { BrowserRouter as Router } from 'react-router-dom'
+ 13.04.2021 06:32
+Установите react-router и react-router-dom следующим образом:
+
+npm install react-router@next react-router-dom@next
+
+ 06.05.2021 12:29
+Ошибка возникает из-за того, что вы используете react-router v5 вместо v6-
+
+Следуй этим шагам-
+
+Шаг 1:
+
+npm uninstall react-router
+npm uninstall react-router-dom
+Шаг 2:
+
+npm install react-router@next react-router-dom@next
+Шаг 3: Перезагрузите сервер
+
+И все готово!
+
+ 13.06.2021 20:05
+Эта проблема возникает из-за версии react-router-dom. Попробуйте обновить react-router-dom до версии 6.
+
+Просто запустите команду:
+
+npm install react-router-dom@6.0.0-beta.0
+ 28.06.2021 14:52
+Я думаю, что это может быть связано с установкой устаревшей версии. Я смог запустить npm install history react-router-dom@next, и это решило мою проблему.
+
+ 28.08.2021 07:05
+Switch устарел в более новых версиях, используйте Routes, он будет действовать так же.
+
+ 08.11.2021 15:23
+Для react-router-dom v6 и выше используйте это в своем App.js
+
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+import '../styles/global.css'
+
+import Layout from '../containers/Layout'
+import Home from '../pages/Home'
+import Login from '../containers/Login'
+import RecoveryPassword from '../containers/RecoveryPassword'
+import NotFound from '../pages/NotFound'
+
+const App = () => {
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route exact path = "/" element = {<Home/>}/>
+          <Route exact path = "/login" element = {<Login/>}/>
+          <Route exact path = "/recovery-password" element = {<RecoveryPassword/>}/>
+          <Route path = "*" element = {<NotFound/>}/>
+        </Routes>
+      </Layout>
+    </Router>
+  );
+}
+
+export default App;
+Изменения, сделанные с v5 на v6
+Switch изменено на Routes
+
+<Route path = '/' component = {Home}></Route>
+
+изменился на
+
+<Route path = '/' element= {<Home />}></Route>
+
+ 13.11.2021 19:58
+Вы должны удалить папку: "node_modules" и написать это:
+
+npm i react react-dom react-router-dom
+Меня устраивает.
+
+ 19.01.2022 21:09
+работал, установив:
+
+npm install react-router-dom@5
+в папке проекта
+
+ 01.02.2022 05:02
+Другие вопросы по теме
+React-Router не работает после использования тега Switch
+Можно ли настроить базовое имя React Router для учета URL-адресов активов в CSS?
+Реагировать на передачу реквизитов маршрутизатора компоненту маршрута
+HashRouter продолжает возвращать меня домой
+React router componentDidMount не выполняется после переключения маршрута
+React-router <Link> неправильно работает с реакцией 16.8
+Как передать потребителя контекста компоненту (Event.js), отображаемому только React Router?
+Кнопка React onClick правильно привязана, но не работает
+Перезагрузка Webpack HotModule с рендерингом React Router и компонентом
+Как мне условно перенаправить с помощью реактивного маршрутизатора?
+Похожие вопросы
+Как исправить «Действия должны быть простыми объектами». Используйте специальное промежуточное ПО для асинхронных действий»
+Как передать динамически созданные реквизиты компоненту?
+Есть ли способ импортировать набор правил из модуля css в реакцию?
+React + AWS Cognito: запретить вход в панель администратора пользователю низкого уровня
+Npm start отображает сгенерированный файл js в браузере
+Как предотвратить Default () в форме onSubmit в проекте реакции/редукции
+Можем ли мы прикрепить липкий заголовок sectionList (или scrollView) к относительному положению в верхней части прокрутки?
+Импорт массива изображений в виде эскиза в ReactJS
+Использование избыточности и ошибка синтаксического анализа: неожиданный токен
+Печатать текущую страницу несколько раз с разными значениями
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как исправить отсутствующее предупреждение о зависимости при использовании useEffect React Hook
+Вопросы
+REACTJS
+Как исправить отсутствующее предупреждение о зависимости при использовании useEffect React Hook
+С React 16.8.6 (в предыдущей версии 16.8.3 это было хорошо) я получаю эту ошибку, когда пытаюсь предотвратить бесконечный цикл в запросе на выборку:
+
+./src/components/BusinessesList.js
+Line 51:  React Hook useEffect has a missing dependency: 'fetchBusinesses'.
+Either include it or remove the dependency array  react-hooks/exhaustive-deps
+Я не смог найти решение, которое останавливает бесконечный цикл. Я хочу воздержаться от использования useReducer(). Я нашел это обсуждение [ESLint] Отзыв о правиле lint 'exhaustive-deps' #14920, где возможное решение: You can always // eslint-disable-next-line react-hooks/exhaustive-deps if you think you know what you're doing. Я не уверен в том, что делаю, поэтому пока не пытался его реализовать.
+
+У меня есть эта текущая настройка, React hook useEffect работает постоянно вечно/бесконечный цикл, и единственный комментарий касается useCallback(), с которым я не знаком.
+
+Как я сейчас использую useEffect() (которую я хочу запустить только один раз в начале, как componentDidMount()):
+
+useEffect(() => {
+    fetchBusinesses();
+  }, []);
+const fetchBusinesses = () => {
+    return fetch("theURL", {method: "GET"}
+    )
+      .then(res => normalizeResponseErrors(res))
+      .then(res => {
+        return res.json();
+      })
+      .then(rcvdBusinesses => {
+        // some stuff
+      })
+      .catch(err => {
+        // some error handling
+      });
+  };
+ 25.04.2019 02:35
+604
+3
+638 861
+19
+Данный вопрос помечен как решенный
+ Ответы 19
+Эта статья является хорошим пособием по извлечению данных с помощью хуков: https://www.robinwieruch.de/react-hooks-fetch-data/.
+
+По сути, включите определение функции выборки внутри useEffect:
+
+useEffect(() => {
+  const fetchBusinesses = () => {
+    return fetch("theUrl"...
+      // ...your fetch implementation
+    );
+  }
+
+  fetchBusinesses();
+}, []);
+ 25.04.2019 03:51
+./src/components/BusinessesList.js
+Line 51:  React Hook useEffect has a missing dependency: 'fetchBusinesses'.
+Either include it or remove the dependency array  react-hooks/exhaustive-deps
+Это не ошибка JavaScript/React, а предупреждение ESLint (eslint-plugin-react-hooks).
+
+Он говорит вам, что хук зависит от функции fetchBusinesses, поэтому вы должны передать его как зависимость.
+
+useEffect(() => {
+  fetchBusinesses();
+}, [fetchBusinesses]);
+Это может привести к вызову функции при каждом рендеринге, если функция объявлена ​​в компоненте, например:
+
+const Component = () => {
+  /*...*/
+
+  // New function declaration every render
+  const fetchBusinesses = () => {
+    fetch('/api/businesses/')
+      .then(...)
+  }
+
+  useEffect(() => {
+    fetchBusinesses();
+  }, [fetchBusinesses]);
+
+  /*...*/
+}
+потому что каждый раз функция переопределяется с новой ссылкой.
+
+Правильный способ сделать это:
+
+const Component = () => {
+  /*...*/
+
+  // Keep the function reference
+  const fetchBusinesses = useCallback(() => {
+    fetch('/api/businesses/')
+      .then(...)
+  }, [/* Additional dependencies */])
+
+  useEffect(() => {
+    fetchBusinesses();
+  }, [fetchBusinesses]);
+
+  /*...*/
+}
+Или просто определите функцию в useEffect.
+
+Подробнее: [ESLint] Отзыв о правиле lint 'exhaustive-deps' #14920
+
+ 25.04.2019 09:32
+ Ответ принят как подходящий
+Если вы не используете метод fetchBusinesses нигде, кроме эффекта, вы можете просто переместить его в эффект и избежать предупреждения
+
+useEffect(() => {
+    const fetchBusinesses = () => {
+       return fetch("theURL", {method: "GET"}
+    )
+      .then(res => normalizeResponseErrors(res))
+      .then(res => {
+        return res.json();
+      })
+      .then(rcvdBusinesses => {
+        // some stuff
+      })
+      .catch(err => {
+        // some error handling
+      });
+  };
+  fetchBusinesses();
+}, []);
+Однако, если вы используете fetchBusinesses вне рендеринга, вы должны обратить внимание на две вещи.
+
+Есть ли проблема с передачей нетfetchBusinesses в качестве метода, когда он используется во время монтирования с закрывающим закрытием?
+Зависит ли ваш метод от некоторых переменных, которые он получает от замыкания? Это не ваш случай.
+При каждом рендеринге fetchBusinesses будет создаваться заново, поэтому передача его в useEffect вызовет проблемы. Итак, сначала вы должны запомнить fetchBusinesses, если хотите передать его в массив зависимостей.
+Подводя итог, я бы сказал, что если вы используете fetchBusinesses вне useEffect, вы можете отключить правило, используя // eslint-disable-next-line react-hooks/exhaustive-deps, в противном случае вы можете переместить метод внутрь useEffect.
+
+Чтобы отключить правило, вы должны написать его как
+
+useEffect(() => {
+   // other code
+   ...
+
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []) 
+ 25.04.2019 19:40
+Просто отключите ESLint для следующей строки;
+
+useEffect(() => {
+   fetchBusinesses();
+// eslint-disable-next-line
+}, []);
+Таким образом, вы используете его так же, как компонент, который монтируется (вызывается один раз).
+
+обновлен
+
+или
+
+const fetchBusinesses = useCallback(() => {
+ // Your logic in here
+ }, [someDeps])
+
+useEffect(() => {
+   fetchBusinesses();
+// No need to skip the ESLint warning
+}, [fetchBusinesses]);
+fetchBusinesses будет вызываться каждый раз при изменении некоторые Депсы.
+
+ 22.05.2019 12:35
+Вы можете удалить второй массив типов аргументов [], но fetchBusinesses() также будет вызываться при каждом обновлении. Вы можете добавить оператор IF в реализацию fetchBusinesses(), если хотите.
+
+React.useEffect(() => {
+  fetchBusinesses();
+});
+Другой — реализовать функцию fetchBusinesses() вне вашего компонента. Просто не забудьте передать любые аргументы зависимостей вашему вызову fetchBusinesses(dependency), если они есть.
+
+function fetchBusinesses (fetch) {
+  return fetch("theURL", { method: "GET" })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(rcvdBusinesses => {
+      // some stuff
+    })
+    .catch(err => {
+      // some error handling
+    });
+}
+
+function YourComponent (props) {
+  const { fetch } = props;
+
+  React.useEffect(() => {
+    fetchBusinesses(fetch);
+  }, [fetch]);
+
+  // ...
+}
+ 05.06.2019 20:32
+Решение также дается React. Они советуют вам использовать useCallback, который вернет версию вашей функции запоминать:
+
+The 'fetchBusinesses' function makes the dependencies of the useEffect Hook (at line NN) change on every render. To fix this, wrap the 'fetchBusinesses' definition into its own useCallback() Hook react-hooks/exhaustive-deps
+
+useCallback прост в использовании, так как имеет ту же подпись, что и useEffect. Разница в том, что useCallback возвращает функцию. Это будет выглядеть так:
+
+ const fetchBusinesses = useCallback( () => {
+        return fetch("theURL", {method: "GET"}
+    )
+    .then(() => { /* Some stuff */ })
+    .catch(() => { /* Some error handling */ })
+  }, [/* deps */])
+  // We have a first effect that uses fetchBusinesses
+  useEffect(() => {
+    // Do things and then fetchBusinesses
+    fetchBusinesses();
+  }, [fetchBusinesses]);
+   // We can have many effects that use fetchBusinesses
+  useEffect(() => {
+    // Do other things and then fetchBusinesses
+    fetchBusinesses();
+  }, [fetchBusinesses]);
+ 23.06.2019 12:52
+Редактировать 20.09.2021
+
+There are very good options for state management libs if you are creating a new app or have enough flexibility. Check out Recoil.
+
+Просто для полноты:
+
+1. (Перестал работать) Использовать функцию как обратный вызов useEffect
+useEffect(fetchBusinesses, [])
+
+2. Объявить функцию внутри useEffect()
+useEffect(() => {
+  function fetchBusinesses() {
+    ...
+  }
+  fetchBusinesses()
+}, [])
+3. Запоминай с useCallback()
+В этом случае, если у вас есть зависимости в вашей функции, вам придется включить их в массив зависимостей useCallback, и это снова вызовет useEffect, если параметры функции изменятся. Кроме того, это много шаблонного... Так что просто передайте функцию прямо в useEffect, как в 1. useEffect(fetchBusinesses, []).
+
+const fetchBusinesses = useCallback(() => {
+  ...
+}, [])
+useEffect(() => {
+  fetchBusinesses()
+}, [fetchBusinesses])
+4. Аргумент функции по умолчанию
+As suggested by https://stackoverflow.com/a/61183162/5552686
+
+useEffect((fetchBusinesses = fetchBusinesses) => {
+   fetchBusinesses();
+}, []);
+5. Создайте собственный хук
+Создайте собственный хук и вызывайте его, когда вам нужно запустить функцию только один раз. Может быть чище. Вы также можете вернуть обратный вызов для сброса повторного запуска «инициализации», когда это необходимо.
+
+// customHooks.js
+const useInit = (callback, ...args) => {
+  const [mounted, setMounted] = useState(false)
+  
+  const resetInit = () => setMounted(false)
+
+  useEffect(() => {
+     if (!mounted) {
+        setMounted(true);
+        callback(...args);
+     }
+  },[mounted, callback]);
+
+  return [resetInit]
+}
+
+// Component.js
+return ({ fetchBusiness, arg1, arg2, requiresRefetch }) => {
+  const [resetInit] = useInit(fetchBusiness, arg1, arg2)
+
+  useEffect(() => {
+    resetInit()
+  }, [requiresRefetch, resetInit]);
+6. Отключить предупреждение eslint
+Disabling warnings should be your last resort, but when you do, better do it inline and explicitly, because future developers may be confused or create unexpected bugs without knowing linting is off
+
+useEffect(() => {
+  fetchBusinesses()
+}, []) // eslint-disable-line react-hooks/exhaustive-deps
+Исходный ответ
+
+Вы можете установить его непосредственно как обратный вызов useEffect:
+
+useEffect(fetchBusinesses, [])
+Он сработает только один раз, поэтому убедитесь, что все зависимости функции установлены правильно (так же, как при использовании componentDidMount/componentWillMount...).
+
+ 20.02.2020 21:17
+Эти предупреждения очень полезны для поиска компонентов, которые не обновляются последовательно: Безопасно ли исключать функции из списка зависимостей?.
+
+Однако, если вы хотите удалить предупреждения по всему проекту, вы можете добавить это в свою конфигурацию ESLint:
+
+  {
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/exhaustive-deps": 0
+    }
+  }
+ 30.03.2020 18:24
+На самом деле предупреждения очень полезны при разработке с помощью хуков. Но в некоторых случаях это может вас уколоть. Особенно, когда вам не нужно прослушивать изменение зависимостей.
+
+Если вы не хотите помещать fetchBusinesses в зависимости хука, вы можете просто передать его в качестве аргумента обратному вызову хука и установить основной fetchBusinesses в качестве значения по умолчанию для него следующим образом:
+
+useEffect((fetchBusinesses = fetchBusinesses) => {
+   fetchBusinesses();
+}, []);
+Это не лучшая практика, но в некоторых случаях это может быть полезно.
+
+Кроме того, как Шубхам написал, вы можете добавить приведенный ниже код, чтобы указать ESLint игнорировать проверку вашего хука.
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
+ 13.04.2020 09:21
+const [mount, setMount] = useState(false)
+const fetchBusinesses = () => {
+   // Function definition
+}
+useEffect(() => {
+   if (!mount) {
+      setMount(true);
+      fetchBusinesses();
+   }
+},[fetchBusinesses, mount]);
+Это решение довольно простое, и вам не нужно переопределять предупреждения ESLint. Просто сохраните флаг, чтобы проверить, смонтирован ли компонент или нет.
+
+ 19.05.2020 15:02
+Вы попробуйте так:
+
+const fetchBusinesses = () => {
+    return fetch("theURL", {method: "GET"})
+        .then(res => normalizeResponseErrors(res))
+        .then(res => {
+            return res.json();
+        })
+        .then(rcvdBusinesses => {
+            // Some stuff
+        })
+        .catch(err => {
+            // Some error handling
+        });
+  };
+а также
+
+useEffect(() => {
+    fetchBusinesses();
+});
+Это работает для вас.
+
+Но я предлагаю попробовать этот способ, и он также работает для вас. Это лучше, чем предыдущий способ. Я использую это следующим образом:
+
+useEffect(() => {
+    const fetchBusinesses = () => {
+        return fetch("theURL", {method: "GET"})
+            .then(res => normalizeResponseErrors(res))
+            .then(res => {
+                return res.json();
+            })
+            .then(rcvdBusinesses => {
+                // Some stuff
+            })
+            .catch(err => {
+                // Some error handling
+            });
+    };
+
+    fetchBusinesses();
+}, []);
+Если вы получаете данные на базе определенного id, то добавьте в callback useEffect [id]. Тогда он не может показать вам предупреждение React Hook useEffect has a missing dependency: 'any thing'. Either include it or remove the dependency array
+
+ 11.07.2020 12:19
+Просто передайте функцию в качестве аргумента в массиве useEffect...
+
+useEffect(() => {
+   functionName()
+}, [functionName])
+ 10.10.2020 00:49
+Что ж, если вы хотите посмотреть на это по-другому, вам просто нужно знать, какие опции есть у React, которые не являются exhaustive-deps. Одна из причин, по которой вы не должны использовать функцию замыкания внутри эффекта, заключается в том, что при каждом рендеринге он будет воссоздаваться/уничтожаться снова.
+
+Таким образом, в хуках есть несколько методов React, которые считаются стабильными и неисчерпаемыми, где вам не нужно применять зависимости useEffect и, в свою очередь, не будет нарушать правила взаимодействия react-hooks/exhaustive-deps. Например, вторая возвращаемая переменная useReducer или useState, которая является функцией.
+
+const [,dispatch] = useReducer(reducer, {});
+
+useEffect(() => {
+    dispatch(); // Non-exhausted - ESLint won't nag about this
+}, []);
+Так что, в свою очередь, вы можете сосуществовать со всеми вашими внешними зависимостями с вашими текущими зависимостями в вашей функции редуктора.
+
+const [,dispatch] = useReducer((current, update) => {
+    const { foobar } = update;
+    // Logic
+
+    return { ...current, ...update };
+}), {});
+
+const [foobar, setFoobar] = useState(false);
+
+useEffect(() => {
+    dispatch({ foobar }); // non-exhausted `dispatch` function
+}, [foobar]);
+ 09.12.2020 07:56
+Это предупреждение возникает, если переменные, которые вы используете внутри useEffect, определены внутри компонента или переданы компоненту в качестве реквизита. Поскольку вы определили fetchBusinesses() внутри того же компонента, вы должны передать его в массив зависимостей.
+
+Но если вы импортировали fetchBusinesses(), а затем использовали его внутри useEffect, вам не нужно было бы добавлять его в массив зависимостей. Вот как мы на самом деле настраиваем наши приложения Редукс: мы всегда импортируем наших создателей действий и запускаем их внутри useEffect, не добавляя их в массив зависимостей.
+
+То же самое верно и для useMemo.
+
+ 29.03.2021 01:32
+В моем случае это предупреждение было связано с моей локальной переменной organization, и когда я помещал organization в массив зависимостей, useEffect извлекался бесконечно. Поэтому, если у вас есть проблемы, подобные моей, используйте useEffect с массивом зависимостей и разделите:
+
+Потому что, если у вас есть несколько вызовов API, которые изменяют состояние, он вызывает useEffect несколько раз.
+
+От:
+
+  const { organization } = useSelector(withOrganization)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getOrganization({}))
+    dispatch(getSettings({}))
+    dispatch(getMembers({}))
+  }, [dispatch, organization])
+К:
+
+  const { organization } = useSelector(withOrganization)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getOrganization({}))
+    dispatch(getSettings({}))
+  }, [dispatch, organization])
+
+  useEffect(() => {
+    dispatch(getMembers({}))
+  }, [dispatch])
+ 09.04.2021 09:19
+Вы можете избавиться от этого предупреждения Es-lint, передав ссылку на него:
+
+Пример указан ниже, однако вы можете посмотреть решение по этой ссылке: https://thewikihow.com/video_r4A46oBIwZk&t=8s
+
+Предупреждение: Строка 13:8: React Hook В React.useEffect отсутствуют зависимости: «история» и «currentUser?.role». Либо включите их, либо удалите массив зависимостей react-hooks/exhaustive-deps
+
+React.useEffect(() => {
+    if (currentUser?.role !== "Student") {
+        return history.push("/")
+    }
+}, [])
+Разрешение: Шаг 1: Переместите бизнес-логику в отдельный const.
+
+Теперь предупреждение: React Hook React.useEffect имеет недостающую зависимость: «roleChecking».
+
+const roleChecking = () =>{
+   if (currentUser?.role !== "Student") {
+        return history.push("/")
+    }
+}
+
+React.useEffect(() => {
+    roleChecking()
+}, [])
+Последний шаг — создать ссылку на функцию:
+
+  const roleRef = React.useRef();
+
+  const roleChecking = () => {
+    if (currentUser?.role !== "Student") {
+      return history.push("/");
+    }
+  };
+  roleRef.current = roleChecking;
+
+  React.useEffect(() => {
+   return roleRef.current();
+  }, [currentUser?.role]);
+ 21.09.2021 15:29
+Кажется, функция fetchBusinesses объявлена ​​в компоненте. Это означает, что в каждом рендере объявляется новая функция, которая запускает хук.
+
+Есть 2 подхода к решению проблемы.
+
+Переместите объявление функции fetchBusinesses из компонента.
+
+Оберните функцию fetchBusinesses крючком useCallback.
+
+Первый вариант предпочтительнее.
+
+ 25.09.2021 10:26
+Это не ответ, специфичный для варианта использования вопроса, а более общий случай, и он охватывает случай, когда useEffect или извлечение и импорт не работают. Сценарий useRef:
+
+Иногда сценарий заключается в том, что useEffect должен иметь пустой массив, и вы все еще хотите использовать его внутри частей состояния useEffect, но все же вы не хотите вводить их в качестве зависимостей, также вы можете попробовать использовать useCallback, и теперь реакция жалуется на зависимости использования Callback и вы застряли. При этом в некоторых случаях можно использовать useRef. Например:
+
+const locationRef = useRef(location);
+useEffect(()=>{
+const qs = locationRef.current.search
+...
+},[])
+Вы должны быть осторожны при использовании этой техники и знать, что useRef не активирует процесс рендеринга.
+
+ 28.10.2021 11:23
+используя функцию вызова UseEffect fetchBusinesses, объявите в useEffect(), объявив константную переменную после вызова имени функции,
+
+useEffect(()=>{
+const fetchBusinesses=()=>{
+   console.info(useeffect fetchbussinesses functions)
+}
+ fetchBusinesses();
+},[declare the variable used in useeffect hooks ])
+ 05.12.2021 14:55
+Другие вопросы по теме
+Отключить ESLint, который предоставляет приложение create-реагировать
+Description не определяется при установке jest
+Почему ESLint выдает «нет неиспользуемых переменных» для интерфейса TypeScript?
+Почему «объявление глобального» TypeScript вызывает ошибку ESLint?
+Почему я получаю сообщение «Ошибка синтаксического анализа: неожиданный токен <» от ESLint в компонентах Vue?
+Использование результатов присваивания деструктуризации для не определено
+Правильный способ требовать модулей для предотвращения ошибок eslint
+ESLint — переопределить правила из eslint-plugin-prettier
+Не удается найти модуль «React-Native»
+Что означает значение 0,1,2 в файле eslintrc?
+Похожие вопросы
+Как получить элемент массива в состоянии в React?
+Как предотвратить размытие логотипа изображения Гэтсби при каждой перезагрузке?
+Не удается отобразить вложенный объект из массива с помощью Apollo-link-rest и ReactJS
+Запретить форме сбрасывать состояния ввода в ReactJs
+Как получить данные после того, как действие было выполнено в редуксе?
+Проверка ввода - отправка формы реакции без каких-либо значений
+Action Payload возвращается как неопределенное при извлечении данных в Redux
+Проблема при анимации модального компонента на портале с помощью React Hooks
+Как получить доступ к mapStateToProps в том же компоненте, который используется?
+В компоненте класса реакции, какова цель использования каррированной функции без аргументов?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как использовать componentWillMount () в React Hooks?
+Вопросы
+JAVASCRIPT
+Как использовать componentWillMount () в React Hooks?
+В официальных документах React упоминается -
+
+If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+
+У меня вопрос - как мы можем использовать метод жизненного цикла componentWillMount() в хуке?
+
+ 25.11.2018 05:13
+350
+0
+317 365
+20
+Данный вопрос помечен как решенный
+ Ответы 20
+Согласно responsejs.org, componentWillMount не будет поддерживаться в будущем. https://reactjs.org/docs/react-component.html#unsafe_componentwillmount
+
+Нет необходимости использовать componentWillMount.
+
+Если вы хотите что-то сделать до монтирования компонента, просто сделайте это в конструкторе ().
+
+Если вы хотите выполнять сетевые запросы, не делайте этого в componentWillMount. Это потому, что это приведет к неожиданным ошибкам.
+
+Сетевые запросы можно выполнять в componentDidMount.
+
+Надеюсь, поможет.
+
+обновлено 03.08.2019
+
+Причина, по которой вы запрашиваете componentWillMount, вероятно, связана с тем, что вы хотите инициализировать состояние перед рендерингом.
+
+Просто сделайте это в useState.
+
+const helloWorld=()=>{
+    const [value,setValue]=useState(0) //initialize your state here
+    return <p>{value}</p>
+}
+export default helloWorld;
+или, может быть, вы хотите запустить функцию в componentWillMount, например, если ваш исходный код выглядит так:
+
+componentWillMount(){
+  console.info('componentWillMount')
+}
+с крючком все, что вам нужно сделать, это удалить метод жизненного цикла:
+
+const hookComponent=()=>{
+    console.info('componentWillMount')
+    return <p>you have transfered componeWillMount from class component into hook </p>
+}
+Я просто хочу добавить кое-что к первому ответу о useEffect.
+
+useEffect(()=>{})
+useEffect запускается при каждой визуализации, это комбинация componentDidUpdate, componentDidMount и ComponentWillUnmount.
+
+ useEffect(()=>{},[])
+Если мы добавим пустой массив в useEffect, он будет запущен сразу после монтирования компонента. Это потому, что useEffect будет сравнивать массив, который вы ему передали. Таким образом, это не обязательно должен быть пустой массив, это может быть массив, который не изменяется. Например, это может быть [1,2,3] или ['1,2']. useEffect по-прежнему работает только при монтировании компонента.
+
+От вас зависит, хотите ли вы, чтобы он запускался только один раз или запускался после каждого рендеринга. Если вы забыли добавить массив, это не опасно, если вы знаете, что делаете.
+
+Я создал образец для крючка. Пожалуйста, проверьте это.
+
+https://codesandbox.io/s/kw6xj153wr
+
+обновлено 21.08.2019
+
+Прошло некоторое время с тех пор, как я написал вышеупомянутый ответ. Есть кое-что, на что, я думаю, вам нужно обратить внимание. Когда вы используете
+
+useEffect(()=>{},[])
+Когда response сравнивает значения, которые вы передали в массив [], он использует для сравнения Object.is(). Если вы передадите ему объект, например
+
+useEffect(()=>{},[{name:'Tom'}])
+Это точно так же, как:
+
+useEffect(()=>{})
+Он будет повторно визуализироваться каждый раз, потому что, когда Object.is() сравнивает объект, он сравнивает его ссылку, а не само значение. То же самое, почему {} === {} возвращает false, потому что их ссылки разные. Если вы все же хотите сравнить сам объект, а не ссылку, вы можете сделать что-то вроде этого:
+
+useEffect(()=>{},[JSON.stringify({name:'Tom'})])
+Обновление от 07.09.2021:
+
+Несколько обновлений о зависимости:
+
+Вообще говоря, если вы используете функцию или объект в качестве зависимости, они всегда будут повторно отрисовываться. Но в React уже есть решение: useCallback и useMemo.
+
+useCallback может запоминать функцию. useMemo может запоминать объект.
+
+См. Эту статью:
+
+https://javascript.plainenglish.io/5-useeffect-infinite-loop-patterns-2dc9d45a253f
+
+ 25.11.2018 05:20
+ Ответ принят как подходящий
+Вы не можете использовать какие-либо существующие методы жизненного цикла (componentDidMount, componentDidUpdate, componentWillUnmount и т. д.) В хуке. Их можно использовать только в компонентах класса. А хуки можно использовать только в функциональных компонентах. Строка ниже взята из документа React:
+
+If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+
+Предлагаю, вы можете имитировать этот метод жизненного цикла из компонента класса в функциональных компонентах.
+
+Код внутри componentDidMount запускается один раз при монтировании компонента. Эквивалент ловушки useEffect для этого поведения:
+
+useEffect(() => {
+  // Your code here
+}, []);
+Обратите внимание на второй параметр (пустой массив). Это будет запускаться только один раз.
+
+Без второго параметра - перехватчик useEffect будет вызываться при каждом рендеринге компонента, что может быть опасным.
+
+useEffect(() => {
+  // Your code here
+});
+componentWillUnmount используется для очистки (например, удаление прослушивателей событий, отмена таймера и т. д.). Допустим, вы добавляете прослушиватель событий в componentDidMount и удаляете его в componentWillUnmount, как показано ниже.
+
+componentDidMount() {
+  window.addEventListener('mousemove', () => {})
+}
+
+componentWillUnmount() {
+  window.removeEventListener('mousemove', () => {})
+}
+Крюк-эквивалент приведенного выше кода будет следующим
+
+useEffect(() => {
+  window.addEventListener('mousemove', () => {});
+
+  // returned function will be called on component unmount 
+  return () => {
+    window.removeEventListener('mousemove', () => {})
+  }
+}, [])
+ 25.11.2018 07:26
+https://reactjs.org/docs/hooks-reference.html#usememo
+
+Remember that the function passed to useMemo runs during rendering. Don’t do anything there that you wouldn’t normally do while rendering. For example, side effects belong in useEffect, not useMemo.
+
+ 10.02.2019 16:20
+useLayoutEffect может сделать это с пустым набором наблюдателей ([]), если функциональность на самом деле аналогична componentWillMount - он будет запущен до того, как первый контент попадет в DOM - хотя на самом деле есть два обновления, но они синхронны перед рисованием в экран.
+
+Например:
+
+
+function MyComponent({ ...andItsProps }) {
+     useLayoutEffect(()=> {
+          console.info('I am about to render!');
+     },[]);
+
+     return (<div>some content</div>);
+}
+
+Преимущество перед useState с инициализатором / установщиком или useEffect заключается в том, что хотя он может вычислять проход рендеринга, нет фактических повторных рендерингов в DOM, которые заметит пользователь, и он запускает до для первого заметного рендеринга, который не является чехол для useEffect. Обратной стороной является, конечно, небольшая задержка вашего первого рендеринга, так как проверка / обновление должны произойти перед рисованием на экране. Однако это действительно зависит от вашего варианта использования.
+
+Лично я думаю, что useMemo хорош в некоторых нишевых случаях, когда вам нужно сделать что-то тяжелое - пока вы помните, что это исключение по сравнению с нормой.
+
+ 19.04.2019 23:34
+useComponentWillMount хук
+const useComponentWillMount = (cb) => {
+    const willMount = useRef(true)
+
+    if (willMount.current) cb()
+
+    willMount.current = false
+}
+Этот перехватчик может спасти, когда возникает проблема с последовательностью (например, запуск перед другим скриптом). Если это не так, используйте useComnponentDidMount, который больше соответствует парадигме перехватчиков React.
+
+useComponentDidMount хук
+const useComponentDidMount = cb => useEffect(cb, []);
+Если вы знаете, что ваш эффект должен запускаться только один раз в начале, используйте это решение. Он будет запущен только один раз после монтирования компонента.
+
+парадигма useEffect
+Компоненты класса имеют методы жизненного цикла, которые определены как точки на временной шкале компонента. Хуки не следуют этой парадигме. Вместо этого эффекты должны быть структурированы по их содержанию.
+
+function Post({postID}){
+  const [post, setPost] = useState({})
+
+  useEffect(()=>{
+    fetchPosts(postID).then(
+      (postObject) => setPost(postObject)
+    )
+  }, [postID])
+
+  ...
+}
+В приведенном выше примере эффект касается получения содержимого сообщения. Вместо определенного момента времени он имеет значение, от которого зависит - postID. Каждый раз, когда postID получает новое значение (включая инициализацию), он запускается повторно.
+
+Компонент будет смонтировать обсуждение
+В компонентах класса componentWillMount считается устаревшим (источник 1, источник2). Это устаревший вариант, поскольку он может запускаться более одного раза, и есть альтернатива - использовать конструктор. Эти соображения не имеют отношения к функциональному компоненту.
+
+ 29.06.2019 15:44
+Я написал собственный хук, который будет запускать функцию один раз перед первым рендерингом.
+
+useBeforeFirstRender.js
+
+import { useState, useEffect } from 'react'
+
+export default (fun) => {
+  const [hasRendered, setHasRendered] = useState(false)
+
+  useEffect(() => setHasRendered(true), [hasRendered])
+
+  if (!hasRendered) {
+    fun()
+  }
+}
+Использование:
+
+import React, { useEffect } from 'react'
+import useBeforeFirstRender from '../hooks/useBeforeFirstRender'
+
+
+export default () => { 
+  useBeforeFirstRender(() => {
+    console.info('Do stuff here')
+  })
+
+  return (
+    <div>
+      My component
+    </div>
+  )
+}
+ 17.07.2019 12:12
+Есть хороший обходной путь для реализации componentDidMount и componentWillUnmount с useEffect.
+
+Согласно документации, useEffect может возвращать функцию «очистки». эта функция не будет вызываться при первом вызове useEffect, только при последующих вызовах.
+
+Следовательно, если мы используем ловушку useEffect вообще без зависимостей, ловушка будет вызываться только тогда, когда компонент смонтирован, а функция "очистки" вызывается, когда компонент размонтирован.
+
+useEffect(() => {
+    console.info('componentDidMount');
+
+    return () => {
+        console.info('componentWillUnmount');
+    };
+}, []);
+Вызов функции возврата очистки вызывается только тогда, когда компонент отключен.
+
+Надеюсь это поможет.
+
+ 10.11.2019 12:29
+Ответ Бена Карпа кажется мне единственно верным.
+
+Но поскольку мы используем функциональные способы, закрытие и HoC может принести пользу другому подходу:
+
+const InjectWillmount = function(Node, willMountCallback) {
+  let isCalled = true;
+  return function() {
+    if (isCalled) {
+      willMountCallback();
+      isCalled = false;
+    }
+    return Node;
+  };
+};
+Тогда используйте это:
+
+const YourNewComponent = InjectWillmount(<YourComponent />, () => {
+  console.info("your pre-mount logic here");
+});
+ 22.12.2019 13:44
+Краткий ответ на ваш вопрос оригинал, как componentWillMount можно использовать с React Hooks:
+
+componentWillMount - это устарело и считается устаревшим. Реагировать на рекомендация:
+
+Generally, we recommend using the constructor() instead for initializing state.
+
+Теперь в Крючок FAQ вы узнаете, что эквивалент конструктора класса для функциональных компонентов:
+
+constructor: Function components don’t need a constructor. You can initialize the state in the useState call. If computing the initial state is expensive, you can pass a function to useState.
+
+Итак, пример использования componentWillMount выглядит так:
+
+const MyComp = () => {
+  const [state, setState] = useState(42) // set initial value directly in useState 
+  const [state2, setState2] = useState(createInitVal) // call complex computation
+
+  return <div>{state},{state2}</div>
+};
+
+const createInitVal = () => { /* ... complex computation or other logic */ return 42; };
+ 07.03.2020 12:41
+Вот так я моделирую конструктор в функциональных компонентах с помощью ловушки useRef:
+
+function Component(props) {
+    const willMount = useRef(true);
+    if (willMount.current) {
+        console.info('This runs only once before rendering the component.');
+        willMount.current = false;        
+    }
+
+    return (<h1>Meow world!</h1>);
+}
+Вот пример жизненного цикла:
+
+function RenderLog(props) {
+    console.info('Render log: ' + props.children);
+    return (<>{props.children}</>);
+}
+
+function Component(props) {
+
+    console.info('Body');
+    const [count, setCount] = useState(0);
+    const willMount = useRef(true);
+
+    if (willMount.current) {
+        console.info('First time load (it runs only once)');
+        setCount(2);
+        willMount.current = false;
+    } else {
+        console.info('Repeated load');
+    }
+
+    useEffect(() => {
+        console.info('Component did mount (it runs only once)');
+        return () => console.info('Component will unmount');
+    }, []);
+
+    useEffect(() => {
+        console.info('Component did update');
+    });
+
+    useEffect(() => {
+        console.info('Component will receive props');
+    }, [count]);
+
+
+    return (
+        <>
+        <h1>{count}</h1>
+        <RenderLog>{count}</RenderLog>
+        </>
+    );
+}
+[Log] Body
+[Log] First time load (it runs only once)
+[Log] Body
+[Log] Repeated load
+[Log] Render log: 2
+[Log] Component did mount (it runs only once)
+[Log] Component did update
+[Log] Component will receive props
+Конечно, в компонентах класса нет шагов Body, поэтому моделирование 1: 1 невозможно из-за различных концепций функций и классов.
+
+ 26.03.2020 12:45
+Просто добавьте пустой массив зависимостей в useEffect, он будет работать как componentDidMount.
+
+useEffect(() => {
+  // Your code here
+  console.info("componentDidMount")
+}, []);
+ 05.05.2020 15:22
+Вы можете взломать перехватчик useMemo, чтобы имитировать событие жизненного цикла componentWillMount. Просто сделать:
+
+const Component = () => {
+   useMemo(() => {
+     // componentWillMount events
+   },[]);
+   useEffect(() => {
+     // componentDidMount events
+     return () => {
+       // componentWillUnmount events
+     }
+   }, []);
+};
+Вам нужно будет сохранить хук useMemo до того, как что-либо будет взаимодействовать с вашим состоянием. Это не так, как это было задумано, но у меня это сработало для всех проблем componentWillMount.
+
+Это работает, потому что useMemo не требует фактического возврата значения, и вам не нужно фактически использовать его как что-либо, но поскольку он запоминает значение на основе зависимостей, которые будут запускаться только один раз ("[]") и его поверх нашего компонента, он запускается один раз, когда компонент монтируется раньше всего.
+
+ 02.07.2020 19:14
+Для большинства это может быть ясно, но имейте в виду, что функция, вызываемая внутри тела функционального компонента, действует как beforeRender. Это не отвечает на вопрос о запуске кода на ComponentWillMount (до первого рендеринга), но поскольку он связан и может помочь другим, я оставляю его здесь.
+
+const MyComponent = () => {
+  const [counter, setCounter] = useState(0)
+  
+  useEffect(() => {
+    console.info('after render')
+  })
+
+  const iterate = () => {
+    setCounter(prevCounter => prevCounter+1)
+  }
+
+  const beforeRender = () => {
+    console.info('before render')
+  }
+
+  beforeRender()
+
+  return (
+    <div>
+      <div>{counter}</div>
+      <button onClick = {iterate}>Re-render</button>
+    </div>
+  )
+}
+
+export default MyComponent
+ 02.11.2020 15:21
+Реагировать на методы жизненного цикла в хуках
+для простой визуальной ссылки следуйте этому изображению
+
+
+
+Как вы можете просто видеть на картинке выше, для ComponentWillUnmount вам нужно сделать вот так
+
+ useEffect(() => {
+    return () => {
+        console.info('componentWillUnmount');
+    };
+   }, []);
+ 23.12.2020 17:08
+Как было сказано в реагировать документ:
+
+You might be thinking that we’d need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that useEffect is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up:
+
+useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+поэтому единственное, что нам нужно, чтобы в хуках был componentWillUnmount, - это возвращать функцию внутри useEffect, как описано выше.
+
+ 22.02.2021 12:50
+Учитывая это
+componentWillMount устарел (1, 2, 3), и что предлагаемая замена выполняет код в constructor
+код, выполняемый перед оператором возврата функционального компонента, который неявно запускается перед его рендерингом
+грубый эквивалент монтирования компонента класса - это первоначальный вызов функционального компонента
+цель состоит в том, чтобы выполнить некоторый код один раз, прежде чем пользовательский интерфейс будет обновлен
+Решение было бы
+Запуск функции в теле функционального компонента только один раз. Это может быть достигнуто с помощью useState, useMemo или useEffect, в зависимости от времени, необходимого для варианта использования.
+
+Поскольку код должен быть запущен до того, как начальный рендеринг будет зафиксирован на экране, это дисквалифицирует useEffect, поскольку «функция, переданная в useEffect, будет запущена после того, как рендеринг будет зафиксирован на экране». 4.
+
+Поскольку мы хотим гарантировать, что код будет запускаться только один раз, это дисквалифицирует useMemo, поскольку «В будущем React может решить« забыть »некоторые ранее запомненные значения и пересчитать их при следующем рендеринге» 5.
+
+useState поддерживает вычисления ленивое начальное состояние, которые гарантированно выполняются только один раз во время начального рендеринга, что кажется хорошим кандидатом для этой работы.
+
+Пример с useState:
+const runOnceBeforeRender = () => {};
+
+const Component = () => {
+  useState(runOnceBeforeRender);
+
+  return (<></>);
+}
+В качестве кастомного крючка:
+const runOnceBeforeRender = () => {};
+
+const useOnInitialRender = (fn) => {
+  useState(fn);
+}
+
+const Component = () => {
+  useOnInitialRender(fn);
+
+  return (<></>);
+};
+Функция runOnceBeforeRender может дополнительно возвращать состояние, которое будет доступно сразу после первого рендеринга функции, не вызывая повторных рендерингов.
+
+ 29.04.2021 11:56
+Итак, для хуков React я думаю, что нужно объявить вашу логику до того, как оператор return сможет работать. У вас должно быть состояние, для которого по умолчанию установлено значение true. В моем случае я вызвал состояние componentWillMount. Затем условие для запуска блока кода, когда это состояние истинно (блок кода содержит логику, которую вы хотите выполнить в вашем componentWillMount), последний оператор в этом блоке должен сбрасывать componentWillMountState на false (этот шаг важен, потому что если это не делается, будет происходить бесконечный рендеринг) Пример
+
+// do your imports here
+
+const App = () =>  {
+  useEffect(() => {
+    console.info('component did mount')
+  }, [])
+  const [count, setCount] = useState(0);
+  const [componentWillMount, setComponentWillMount] = useState(true);
+  if (componentWillMount) {
+    console.info('component will mount')
+    // the logic you want in the componentWillMount lifecycle
+    setComponentWillMount(false)
+  }
+  
+  return (
+    <div>
+      <div>
+      <button onClick = {() => setCount(count + 1)}> 
+        press me
+      </button>
+      <p>
+        {count}
+      </p>
+      
+      </div>
+    </div>
+  )
+}
+ 25.06.2021 19:42
+Возможно, это не точная альтернатива методу componentWillMount, но вот метод, который можно использовать для достижения той же цели, но с помощью useEffect:
+
+Сначала инициализируйте объект, из которого вы извлекаете данные, пустым значением и определите метод useEffect:
+
+const [details, setDetails] = useState("")
+
+  useEffect(() => {
+    retrieveData(); 
+  }, []);
+
+const retrieveData = () => {       
+       getData()                  // get data from the server 
+      .then(response => {
+        console.info(response.data);
+        setDetails(response.data)
+      })
+      .catch(e => {
+        console.info(e);
+      })
+  }
+Теперь в JSX, куда мы возвращаемся, добавляем теренарный оператор
+
+*return(
+  <div>
+    { 
+   details ? (
+   <div class = "">
+   <p>add Your Jsx Here</p>
+</div>
+): (
+  <div>
+<h4>Content is still Loading.....</h4>
+</div>
+)
+}
+  </div>
+)*
+Это гарантирует, что до тех пор, пока в объекте «детали» не будут данные, будет загружена вторая часть теренарного оператора, который, в свою очередь, запускает метод useEffect, который приводит к установке данных, полученных от сервера, в объекте «детали», следовательно, рендеринг основной JSX
+
+ 16.07.2021 20:31
+Просто поместите массив зависимостей в React.useEffect () в качестве второго аргумента. Если какая-либо из зависимостей обновится, ловушка вызовет побочный эффект, который запустится и в конечном итоге обновит ваш компонент.
+
+ 20.08.2021 18:08
+Компонент React - это функция, верно? Так что просто позвольте моменту componentWillMount быть телом функции перед оператором return.
+
+function componentWillMountMomentIsHere() {
+  console.info('component will mount')
+}
+
+
+function AnyComponent(){
+  const [greeting, setGreeting] = useState('Hello')
+
+  componentWillMountMomentIsHere()
+
+  
+  return <h1>{greeting}</h1>
+}
+ 26.08.2021 16:07
+Другие вопросы по теме
+В чем разница между webpack: // и webpack-internal: //
+Имитация пути маршрута в реакции
+Ошибка: [mobx-state-tree] Не удалось разрешить ссылку XXX на тип "Пользователь"
+Добавление ползунка громкости и времени отображения - React
+Компонент маршрута React Router остается подключенным до тех пор, пока не обновится страница вручную
+OnSubmit не работает в раскрывающемся меню response-bootstrap nav
+Добавление кнопки прокрутки вверх не работает с React?
+Как получить доступ к состоянию с компонентом более высокого порядка
+Динамическая загрузка видео с localhost и получение 206 частичного содержимого
+React Router: как сохранить зарегистрированные данные (реквизиты) при перенаправлении
+Похожие вопросы
+Проблемы со встраиванием CSS в мой простой штрих-код HTML-навигации с внешними способами встраивания
+Как сбросить значение элемента ввода числа обратно на его текстовый заполнитель с помощью javascript
+Переместить выбранную строку опций в последнюю
+Ошибка: [mobx-state-tree] Не удалось разрешить ссылку XXX на тип "Пользователь"
+Как получить доступ к объекту JSON, сериализованному Django
+Анимация запроса холста вне кадра при вводе ползунка в переменную javascript
+Почему первый код работает, а второй не работает?
+Почему параметры v-bind не могут ссылаться на переменную в объекте?
+Компонент маршрута React Router остается подключенным до тех пор, пока не обновится страница вручную
+Как заставить винтик вращаться при нажатии кнопки, а затем принимать, если щелкнули заданное количество раз?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как использовать обратный вызов `setState` для реагирующих хуков
+Вопросы
+REACTJS
+Как использовать обратный вызов `setState` для реагирующих хуков
+Хуки React вводят useState для установки состояния компонента. Но как я могу использовать хуки для замены обратного вызова, как показано ниже:
+
+setState(
+  { name: "Michael" },
+  () => console.info(this.state)
+);
+Я хочу что-то сделать после обновления состояния.
+
+Я знаю, что могу использовать useEffect для выполнения дополнительных действий, но мне нужно проверить предыдущее значение состояния, для чего требуется битовый код. Я ищу простое решение, которое можно использовать с крючком useState.
+
+ 22.05.2019 01:18
+296
+2
+228 195
+20
+Данный вопрос помечен как решенный
+ Ответы 20
+ Ответ принят как подходящий
+Для этого вам нужно использовать крючок useEffect.
+
+const [counter, setCounter] = useState(0);
+
+const doSomething = () => {
+  setCounter(123);
+}
+
+useEffect(() => {
+   console.info('Do something after counter has changed', counter);
+}, [counter]);
+ 22.05.2019 01:24
+Если вы хотите обновить предыдущее состояние, вы можете сделать это в хуках:
+
+const [count, setCount] = useState(0);
+
+
+setCount(previousCount => previousCount + 1);
+ 13.12.2019 11:56
+UseEffect является основным решением. Но, как упомянул Дэррил, использование useEffect и передача состояния в качестве второго параметра имеет один недостаток: компонент будет работать в процессе инициализации. Если вы просто хотите, чтобы функция обратного вызова выполнялась с использованием обновленного значения состояния, вы можете установить локальную константу и использовать ее как в setState, так и в обратном вызове.
+
+const [counter, setCounter] = useState(0);
+
+const doSomething = () => {
+  const updatedNumber = 123;
+  setCounter(updatedNumber);
+
+  // now you can "do something" with updatedNumber and don't have to worry about the async nature of setState!
+  console.info(updatedNumber);
+}
+ 18.01.2020 22:49
+Ваш вопрос очень актуален. Позвольте мне сказать вам, что useEffect запускается один раз по умолчанию и после каждого изменения массива зависимостей.
+
+проверьте пример ниже::
+
+import React,{ useEffect, useState } from "react";
+
+const App = () => {
+  const [age, setAge] = useState(0);
+  const [ageFlag, setAgeFlag] = useState(false);
+
+  const updateAge = ()=>{
+    setAgeFlag(false);
+    setAge(age+1);
+    setAgeFlag(true);
+  };
+
+  useEffect(() => {
+    if (!ageFlag){
+      console.info('effect called without change - by default');
+    }
+    else{
+      console.info('effect called with change ');
+    }
+  }, [ageFlag,age]);
+
+  return (
+    <form>
+      <h2>hooks demo effect.....</h2>
+      {age}
+      <button onClick = {updateAge}>Text</button>
+    </form>
+  );
+}
+
+export default App;
+Если вы хотите, чтобы обратный вызов setState выполнялся с хуками, используйте переменную флага и задайте блок IF ELSE OR IF внутри useEffect, чтобы при выполнении этих условий выполнялся только этот блок кода. В любом случае эффект запускается при изменении массива зависимостей, но этот внутренний код IF будет выполняться только при этих конкретных условиях.
+
+ 14.02.2020 02:58
+Имитация обратного вызова setState с помощью useEffect, срабатывает только в состоянии обновления (не начальное состояние):
+
+const [state, setState] = useState({ name: "Michael" })
+const isFirstRender = useRef(true)
+useEffect(() => {
+  if (isFirstRender.current) {
+    isFirstRender.current = false // toggle flag after first render/mounting
+    return;
+  }
+  console.info(state) // do something after state has updated
+}, [state])
+Пользовательский крючок useEffectUpdate
+function useEffectUpdate(callback) {
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false; // toggle flag after first render/mounting
+      return;
+    }
+    callback(); // performing action after state has updated
+  }, [callback]);
+}
+
+// client usage, given some state dep
+const cb = useCallback(() => { console.info(state) }, [state]); // memoize callback
+useEffectUpdate(cb);
+ 05.05.2020 13:41
+Я думаю, что использование useEffect не является интуитивным способом.
+Я создал обертку для этого. В этом пользовательском хуке вы можете передать свой обратный вызов параметру setState вместо параметра useState.
+
+Я только что создал версию Typescript. Поэтому, если вам нужно использовать это в Javascript, просто удалите некоторые обозначения типов из кода.
+
+Применение
+const [state, setState] = useStateCallback(1);
+setState(2, (n) => {
+  console.info(n) // 2
+});
+Декларация
+import { SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
+
+type Callback<T> = (value?: T) => void;
+type DispatchWithCallback<T> = (value: T, callback?: Callback<T>) => void;
+
+function useStateCallback<T>(initialState: T | (() => T)): [T, DispatchWithCallback<SetStateAction<T>>] {
+  const [state, _setState] = useState(initialState);
+
+  const callbackRef = useRef<Callback<T>>();
+  const isFirstCallbackCall = useRef<boolean>(true);
+
+  const setState = useCallback((setStateAction: SetStateAction<T>, callback?: Callback<T>): void => {
+    callbackRef.current = callback;
+    _setState(setStateAction);
+  }, []);
+
+  useEffect(() => {
+    if (isFirstCallbackCall.current) {
+      isFirstCallbackCall.current = false;
+      return;
+    }
+    callbackRef.current?.(state);
+  }, [state]);
+
+  return [state, setState];
+}
+
+export default useStateCallback;
+
+Недостаток
+Если переданная стрелочная функция ссылается на переменную внешнюю функцию, то она будет захватывать текущее значение, а не значение после обновления состояния. В приведенном выше примере использования console.info(состояние) напечатает 1, а не 2.
+
+ 11.05.2020 10:50
+setState() ставит в очередь изменения состояния компонента и сообщает React, что этот компонент и его дочерние элементы необходимо повторно отобразить с обновленным состоянием.
+
+Метод setState является асинхронным и фактически не возвращает промис. Итак, в случаях, когда мы хотим обновить или вызвать функцию, функция может быть вызвана обратным вызовом в функции setState в качестве второго аргумента. Например, в приведенном выше случае вы вызвали функцию как обратный вызов setState.
+
+setState(
+  { name: "Michael" },
+  () => console.info(this.state)
+);
+Приведенный выше код отлично работает для компонента класса, но в случае функционального компонента мы не можем использовать метод setState, и мы можем использовать хук эффекта использования для достижения того же результата.
+
+Очевидный метод, который приходит на ум, заключается в том, что ypu может использовать с useEffect, как показано ниже:
+
+const [state, setState] = useState({ name: "Michael" })
+
+useEffect(() => {
+  console.info(state) // do something after state has updated
+}, [state])
+Но это будет срабатывать и при первом рендеринге, поэтому мы можем изменить код следующим образом, где мы можем проверить первое событие рендеринга и избежать рендеринга состояния. Поэтому реализация может быть выполнена следующим образом:
+
+Здесь мы можем использовать пользовательский хук, чтобы идентифицировать первый рендер.
+
+Хук useRef позволяет нам создавать изменяемые переменные в функциональных компонентах. Это полезно для доступа к узлам DOM/элементам React и для хранения изменяемых переменных без запуска повторного рендеринга.
+
+const [state, setState] = useState({ name: "Michael" });
+const firstTimeRender = useRef(true);
+
+useEffect(() => {
+ if (!firstTimeRender.current) {
+    console.info(state);
+  }
+}, [state])
+
+useEffect(() => { 
+  firstTimeRender.current = false 
+}, [])
+ 16.10.2020 08:58
+У меня был вариант использования, когда я хотел создать вызов API с некоторыми параметрами после установки состояния. Я не хотел устанавливать эти параметры в качестве своего состояния, поэтому я сделал собственный хук, и вот мое решение.
+
+import { useState, useCallback, useRef, useEffect } from 'react';
+import _isFunction from 'lodash/isFunction';
+import _noop from 'lodash/noop';
+
+export const useStateWithCallback = initialState => {
+  const [state, setState] = useState(initialState);
+  const callbackRef = useRef(_noop);
+
+  const handleStateChange = useCallback((updatedState, callback) => {
+    setState(updatedState);
+    if (_isFunction(callback)) callbackRef.current = callback;
+  }, []);
+
+  useEffect(() => {
+    callbackRef.current();
+    callbackRef.current = _noop; // to clear the callback after it is executed
+  }, [state]);
+
+  return [state, handleStateChange];
+};
+ 05.11.2020 09:05
+Я столкнулся с той же проблемой, использование useEffect в моей настройке не помогло (я обновляю родительское состояние из массива нескольких дочерних компонентов, и мне нужно знать, какой компонент обновил данные).
+
+Обертывание setState в промис позволяет запускать произвольное действие после завершения:
+
+import React, {useState} from 'react'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  function handleClick(){
+    Promise.resolve()
+      .then(() => { setCount(count => count+1)})
+      .then(() => console.info(count))
+  }
+
+
+  return (
+    <button onClick= {handleClick}> Increase counter </button>
+  )
+}
+
+export default App;
+Следующий вопрос поставил меня в правильном направлении: Функционирует ли пакетное обновление React при использовании хуков?
+
+ 01.12.2020 17:12
+Как насчет этого:
+
+const [Name, setName] = useState("");
+...
+onClick = {()=>{
+setName("Michael")
+setName(prevName=>{...}) //prevName is Michael?
+}}
+
+ 14.01.2021 10:11
+вы можете использовать следующие способы, которые я знал, чтобы получить последнее состояние после обновления:
+
+использоватьЭффект
+https://reactjs.org/docs/hooks-reference.html#useeffect
+    const [state, setState] = useState({name: "Michael"});
+    
+    const handleChangeEventName = () => {
+      setState({name: "Jack"});
+    }
+    
+    useEffect(() => {
+      console.info(state.name); //"Jack"
+
+      //do something here
+    }, [state]);
+функциональное обновление
+https://reactjs.org/docs/hooks-reference.html#functional-updates
+«Если новое состояние вычисляется с использованием предыдущего состояния, вы можете передать функцию в setState. Функция получит предыдущее значение и вернет обновленное значение».
+    const [state, setState] = useState({name: "Michael"});
+
+    const handleChangeEventName = () => {
+      setState({name: "Jack"})
+      setState(prevState => {
+        console.info(prevState.name);//"Jack"
+
+        //do something here
+
+        // return updated state
+        return prevState;
+      });
+    }
+использоватьRef
+https://reactjs.org/docs/hooks-reference.html#useref
+«Возвращенный объект ref будет сохраняться в течение всего срока службы компонента».
+    const [state, setState] = useState({name: "Michael"});
+
+    const stateRef = useRef(state);
+    stateRef.current  = state;
+    const handleClick = () => {
+      setState({name: "Jack"});
+
+      setTimeout(() => {
+        //it refers to old state object
+        console.info(state.name);// "Michael";
+
+        //out of syntheticEvent and after batch update
+        console.info(stateRef.current.name);//"Jack"
+
+        //do something here
+      }, 0);
+    }
+В обработчике react syntheticEvent setState — это процесс пакетного обновления, поэтому каждое изменение состояния будет ожидаться и возвращать новое состояние. «setState() не всегда сразу обновляет компонент. Он может пакетно обновлять или откладывать обновление на потом»,
+https://reactjs.org/docs/react-component.html#setstate
+
+Вот полезная ссылка
+Сохраняет ли React порядок обновления состояния?
+
+ 17.01.2021 06:27
+Мы можем написать хук с именем useScheduleNextRenderCallback, который возвращает функцию «расписание». После вызова setState мы можем вызвать функцию «расписание», передав обратный вызов, который мы хотим запустить при следующем рендеринге.
+
+import { useCallback, useEffect, useRef } from "react";
+
+type ScheduledCallback = () => void;
+export const useScheduleNextRenderCallback = () => {
+  const ref = useRef<ScheduledCallback>();
+
+  useEffect(() => {
+    if (ref.current !== undefined) {
+      ref.current();
+      ref.current = undefined;
+    }
+  });
+
+  const schedule = useCallback((fn: ScheduledCallback) => {
+    ref.current = fn;
+  }, []);
+
+  return schedule;
+};
+Пример использования:
+
+const App = () => {
+  const scheduleNextRenderCallback = useScheduleNextRenderCallback();
+
+  const [state, setState] = useState(0);
+
+  const onClick = useCallback(() => {
+    setState(state => state + 1);
+    scheduleNextRenderCallback(() => {
+      console.info("next render");
+    });
+  }, []);
+
+  return <button onClick = {onClick}>click me to update state</button>;
+};
+Сокращенный тестовый пример: https://stackblitz.com/edit/react-ts-rjd9jk
+
+ 10.03.2021 12:19
+Я написал кастомный хук с машинописным текстом, если он еще кому-то нужен.
+
+import React, { useEffect, useRef, useState } from "react";
+
+export const useStateWithCallback = <T>(initialState: T): [state: T, setState: (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => void] => {
+    const [state, setState] = useState<T>(initialState);
+    const callbackRef = useRef<(updated: T) => void>();
+
+    const handleSetState = (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => {
+        callbackRef.current = callback;
+        setState(updatedState);
+    };
+
+    useEffect(() => {
+        if (typeof callbackRef.current === "function") {
+            callbackRef.current(state);
+            callbackRef.current = undefined;
+        }
+    }, [state]);
+
+    return [state, handleSetState];
+}
+ 16.03.2021 08:19
+С помощью всех вас я смог создать этот пользовательский хук:
+
+Очень похоже на класс this.setState(state, callback)
+
+const useStateWithCallback = (initialState) => {
+  const [state, setState] = useState(initialState);
+  const callbackRef = useRef(() => undefined);
+
+  const setStateCB = (newState, callback) => {
+    callbackRef.current = callback;
+    setState(newState);
+  };
+
+  useEffect(() => {
+    callbackRef.current?.();
+  }, [state]);
+
+  return [state, setStateCB];
+};
+Таким образом, мы можем использовать его как..
+
+const [isVisible, setIsVisible] = useStateWithCallback(false);
+
+...
+
+setIsVisible(true, () => console.info('callback called now!! =)');
+Сохраняйте спокойствие и счастливого кодирования!
+
+ 07.04.2021 00:01
+Я не думаю, что различать смонтированное или нет с помощью useRef - это хороший способ, не лучше ли определить значение, сгенерированное useState() в useEffect(), является ли оно начальным значением?
+
+const [val, setVal] = useState(null)
+
+useEffect(() => {
+  if (val === null) return
+  console.info('not mounted, val updated', val)
+}, [val])
+ 17.06.2021 05:33
+Пока у нас нет встроенной поддержки обратного вызова setState, мы можем сделать простой способ javascript... вызвать функцию и напрямую передать ей новые переменные.
+
+  const [counter, setCounter] = useState(0);
+
+  const doSomething = () => {
+    const newCounter = 123
+    setCounter(newCounter);
+    doSomethingWCounter(newCounter);
+  };
+
+  function doSomethingWCounter(newCounter) {
+    console.info(newCounter); // 123
+  }
+ 06.09.2021 04:01
+Простое решение, просто установите
+
+npm i use-state-with-callback
+
+import React from 'react';
+import { useStateWithCallbackLazy } from "use-state-with-callback";
+
+const initialFilters = {
+  smart_filter: "",
+};
+
+const MyCallBackComp = () => {
+  const [filters, setFilters] = useStateWithCallbackLazy(initialFilters);
+
+  const filterSearchHandle = (e) => {
+    setFilters(
+      {
+        ...filters,
+        smart_filter: e,
+      },
+      (value) => console.info("smartFilters:>", value)
+    );
+  };
+
+  return (
+    <Input
+      type = "text"
+      onChange = {(e) => filterSearchHandle(e.target.value)}
+      name = "filter"
+      placeholder = "Search any thing..."
+    />
+  );
+};
+зачислено: РЕАКТИВНЫЙ ОБРАТНЫЙ ВЫЗОВ USESTATE
+
+ 02.12.2021 09:54
+Если вам не нужно обновлять состояние асинхронно, вы можете использовать ссылку для сохранения значения вместо useState.
+
+const name = useRef("John");
+name.current = "Michael";
+console.info(name.current); // will print "Michael" since updating the ref is not async
+ 26.01.2022 01:00
+Я думаю, вам нужны useState и useCallback:
+useState реагировать документ;
+useCallback реагировать документ;
+Пример кода
+import React, { useCallback, useState } from 'react';
+
+const Test = () => {
+  const [name, setName] = useState("");
+  const testCallback = useCallback(() => console.info(name), [name]);
+
+  return (
+    <button onClick = {() => {
+      setName("Michael")
+      testCallback();
+    }}>Name</button>
+  )
+};
+
+export default Test;
+ 08.02.2022 23:37
+Я изучил npm-библиотеку use-state-with-callback и другие подобные пользовательские хуки, но в конце концов понял, что могу просто сделать что-то вроде этого:
+
+const [user, setUser] = React.useState(
+  {firstName: 'joe', lastName: 'schmo'}
+)
+
+const handleFirstNameChange=(val)=> {
+  const updatedUser = {
+     ...user,
+     firstName: val
+  }
+  setUser(updatedUser)
+  updateDatabase(updatedUser)
+}
+ 11.02.2022 15:37
+Другие вопросы по теме
+Почему индекс представляет собой класс из визуализированного списка с использованием функции карты в хуках React?
+Как я могу обновить состояние после манипулирования массивом, также известного как .reduce(), с помощью хуков useEffect, useState?
+Есть ли правильный способ использовать хук useNavigation() с зависимостями useEffect()?
+Как использовать React Hooks для использования службы Spring WebFlux
+Доступ к контексту из useEffect
+React Hook setState не установлен на обещании
+React не отображает данные из useEffect
+Все ли переменные, которые мы используем в useEffect, находятся в массиве зависимостей?
+Передача аргумента в react-apollo-hooks useQuery
+Неправильно ли получать API без использования хука useEffect?
+Похожие вопросы
+ReactJS: как я могу обновить состояние свойства с помощью localStorage?
+Пакет Webpack Node Express с горячей перезагрузкой = ад
+Значения Formik не обновляются с состоянием
+TypeError: Не удается прочитать заголовок свойства неопределенного
+Почему индекс представляет собой класс из визуализированного списка с использованием функции карты в хуках React?
+Как я могу обновить состояние после манипулирования массивом, также известного как .reduce(), с помощью хуков useEffect, useState?
+Как исправить ошибку "expo-cli" на windows 10?
+Реагировать на рендеринг html для небольших экранов
+React Window Как передать компоненты?
+Маршруты React выдают 404 при попытке найти маршруты с помощью /:id
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Запуск NPM возвращает ошибку «Возможна проблема с деревом зависимостей проекта»
+Вопросы
+NODE.JS
+Запуск NPM возвращает ошибку «Возможна проблема с деревом зависимостей проекта»
+Я новичок в программировании, и у меня возникли проблемы с тем, почему я больше не могу правильно настроить React. Я боролся на прошлой неделе, а затем, наконец, справился. Но теперь у меня снова возникла та же проблема, и ничего не работает.
+
+У меня есть проект, с которого я начал npx create-react-app, а затем, когда я перешел в проект, я догадываюсь об этой проблеме:
+
+There might be a problem with the project dependency tree. It is likely not a bug in Create React App, but something you need to fix locally.
+
+The react-scripts package provided by Create React App requires a dependency:
+
+"webpack": "4.29.6"
+
+Don't try to install it manually: your package manager does it automatically. However, a different version of webpack was detected higher up in the tree:
+
+/Users/aliceparker/node_modules/webpack (version: 4.33.0)
+
+Manually installing incompatible versions is known to cause hard-to-debug issues.
+
+If you would prefer to ignore this check, add SKIP_PREFLIGHT_CHECK=true to an .env file in your project. That will permanently disable this message but you might encounter other issues.
+
+To fix the dependency tree, try following the steps below in the exact order:
+
+Delete package-lock.json (not package.json!) and/or yarn.lock in your project folder.
+Delete node_modules in your project folder.
+Remove "webpack" from dependencies and/or devDependencies in the package.json file in your project folder.
+Run npm install or yarn, depending on the package manager you use.
+In most cases, this should be enough to fix the problem. If this has not helped, there are a few other things you can try:
+
+If you used npm, install yarn (http://yarnpkg.com/) and repeat the above steps with it instead. This may help because npm has known issues with package hoisting which may get resolved in future versions.
+
+Check if /Users/aliceparker/node_modules/webpack is outside your project directory. For example, you might have accidentally installed something in your home folder.
+
+Try running npm ls webpack in your project folder. This will tell you which other package (apart from the expected react-scripts) installed webpack.
+
+If nothing else helps, add SKIP_PREFLIGHT_CHECK=true to an .env file in your project. That would permanently disable this preflight check in case you want to proceed anyway.
+
+P.S. We know this message is long but please read the steps above :-) We hope you find them helpful!
+
+Я выполнил шаги, описанные выше. Все еще получить вопрос. Я также удалил веб-пакет глобально и переустановил его.
+
+Вот как выглядит мой файл package.json:
+
+`{
+  "name": "ravenous-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}`
+Может ли кто-нибудь помочь мне решить эту проблему? (Ps. Я пытался просто создать новый проект, но получил ту же проблему...)
+
+ 10.06.2019 16:18
+33
+3
+51 614
+20
+Данный вопрос помечен как решенный
+ Ответы 20
+Проблема заключается в том, что веб-пакет установлен в вашем пользовательском каталоге. Удалите его с помощью npm или вручную, и все должно работать нормально: ссылка: https://github.com/facebook/create-react-app/issues/6120
+
+ 10.06.2019 16:34
+Вы можете следовать инструкциям, приведенным в журнале ошибок.
+
+Удалите package-lock.json (не package.json!) и/или yarn.lock в папка вашего проекта.
+
+Удалите node_modules в папке вашего проекта.
+
+Удалите "webpack" из зависимостей и/или devDependencies в package.json файл в папке вашего проекта.
+
+Запустите npm install или yarn, в зависимости от используемого менеджера пакетов.
+
+ 10.06.2019 16:34
+ Ответ принят как подходящий
+В терминале запустите:
+
+cd ~
+
+Потом:
+
+ls
+
+Вы должны увидеть список файлов. Если node_modules включен в этот список (как кажется, так и должно быть), вы хотите удалить эту папку. Вы можете сделать это в терминале следующим образом:
+
+rm -rf node_modules
+
+Но имейте в виду: это не отправит папку в корзину. Он безвозвратно удалит его. rm -rf — мощная команда. Если это заставляет вас нервничать, вместо этого введите open .. Это откроет ваш «домашний» (~) каталог в Finder, и вы сможете удалить node_modules знакомым способом, щелкнув правой кнопкой мыши и отправив его в корзину.
+
+Надеюсь, это поможет!
+
+ 10.06.2019 16:47
+Проблема связана с вашей папкой дерева на вашем компьютере, когда вы делаете все проекты, попробуйте приложение в папке, не существующей, и я надеюсь, что это сработает.
+
+ 11.09.2019 09:38
+Удалите package-lock.json (не package.json!) и/или yarn.lock в папке вашего проекта.
+
+Удалите node_modules в папке вашего проекта.
+
+Удалите webpack из зависимостей и/или devDependencies в файле package.json в папке вашего проекта.
+
+Запустите npm install или yarn, в зависимости от используемого менеджера пакетов.
+
+Я пробовал все вышеперечисленное, и это не сработало, но однажды я добавил файл .env в структуру своего проекта и добавил SKIP_PREFLIGHT_CHECK=true в файл. Я мог бы обойти проблему:
+
+problem solved
+
+Вот что вы помещаете в файл .env:
+
+This what you put inside the .env file
+
+ 26.10.2019 11:32
+В моем случае я решил свою проблему таким образом
+
+создайте .env в корне папки react folder
+введите SKIP_PREFLIGHT_CHECK=true внутри .env файла
+теперь запустите в cmd npm start .
+ 31.03.2020 11:35
+Решение, которое сработало для меня
+
+Добавьте SKIP_PREFLIGHT_CHECK=true в файл .env в вашем проекте. Я не знаю, может ли это привести к ошибкам в будущем.
+
+ 15.06.2020 12:00
+Делайте то, что написано об ошибке, чтобы все заработало.
+Создайте файл .env в каталоге вашего проекта и добавьте SKIP_PREFLIGHT_CHECK=true, это сработает.
+
+ 20.06.2020 07:21
+Я сталкивался с той же проблемой раньше, и я решил ее. create-react-app уже предоставил webpack(v4.29.6), что противоречит webpack(v4.33.0) в /Users/aliceparker/node_modules.
+
+Поэтому, если вы удалите второй webpack(v4.33.0), он запустится.
+
+ 18.08.2020 09:36
+Я создал проект, используя npx, и изначально у меня была такая же ошибка с babel-eslint. Я следовал подходу @davidflyod91, у меня это сработало. Я не доволен удалением всей папки node_module из каталога ~ (в моем MAC) (я имею в виду место, где установлены модули -g). Итак, я вернул node_modules и удалил папки, связанные с нижеприведенными из node_modules в каталоге ~/node_modules, и попытался запустить приложение (npm run start).
+
+Вебпак
+вавилон
+эслинт
+создать-реагировать-приложение
+И тут приложение заработало.
+
+ 04.09.2020 11:36
+тебе нужно попробовать сначала создайте файл с именем .env и сохраните SKIP_PREFLIGHT_CHECK=true
+
+root/.env and .env should contain SKIP_PREFLIGHT_CHECK=true
+
+ 08.10.2020 15:18
+добавьте «webpack»: «4.44.2» в зависимости package.json.
+создайте .env и введите SKIP_PREFLIGHT_CHECK=true Это решит вашу проблему.
+ 26.11.2020 09:20
+Удалите node_modules из вашего пользовательского каталога, т.е. C:\Users\User
+
+ 30.11.2020 10:53
+создайте файл .env или отредактируйте существующий.
+SKIP_PREFLIGHT_CHECK = true запишите это в .env файл.
+перезапустить сервер разработки.
+Я решил проблему таким образом.
+
+ 04.01.2021 11:41
+Добавьте строку "webpack": "4.44.2" в зависимости вашего package.json файла. Создайте файл .env и введите внутри SKIP_PREFLIGHT_CHECK=true, что решит вашу проблему.
+
+ 10.05.2021 05:53
+Чтобы исправить дерево зависимостей, попробуйте выполнить следующие шаги в точном порядке:
+
+Удалите package-lock.json (не package.json!) и/или yarn.lock в папке вашего проекта.
+Удалите node_modules в папке вашего проекта.
+Удалите «webpack» из зависимостей и/или devDependencies в файле package.json в папке вашего проекта.
+Запустите npm install или yarn, в зависимости от используемого менеджера пакетов.
+В большинстве случаев этого должно быть достаточно, чтобы решить проблему. Если это не помогло, есть еще несколько вещей, которые вы можете попробовать:
+
+Если вы использовали npm, установите пряжу (http://yarnpkg.com/) и повторите описанные выше шаги с ней. Это может помочь, потому что у npm есть известные проблемы с подъемом пакетов, которые могут быть решены в будущих версиях.
+
+Проверьте, не находится ли /home/omage/node_modules/webpack за пределами каталога вашего проекта. Например, вы могли случайно установить что-то в свою домашнюю папку.
+
+Попробуйте запустить npm ls webpack в папке вашего проекта. Это скажет вам, какой другой пакет (кроме ожидаемых сценариев реагирования) установил webpack.
+
+Если ничего не помогает, добавьте SKIP_PREFLIGHT_CHECK=true в файл .env в вашем проекте. Это навсегда отключит эту предварительную проверку, если вы все равно захотите продолжить.
+
+Ответ Чтобы исправить дерево зависимостей
+
+чтобы решить проблему с деревом зависимостей, вам нужно удалить файл node-modules с вашего локального компьютера и запустить npm start , чтобы запустить локальный хост
+
+ 14.05.2021 17:58
+В моем случае я удалил node_modules из каталога моего пользователя. Это сработало.
+
+ 23.07.2021 16:59
+Я застрял на этом больше часа. Я выполнил все перечисленные шаги. Я удалил node_modules из своего проекта и ВСЕ папки модулей узлов, найденные на моем Mac. Затем я удалил packagelock, а затем запустил npm install, что дало мне новый nm и packagelock.
+
+Бег npm start продолжает выдавать ту же ошибку. Я знаю, что это не мой код, потому что я могу проверить другую ветку и получить ту же ошибку.
+
+Все началось, когда я установил библиотеку тестирования реакции и обновил сценарии реакции с 2.1.1 до 4... Я обновился из-за ошибки после запуска теста, в котором говорилось что-то о реагирующих скриптах (я не могу вспомнить, что именно там было сказано).
+
+С тех пор я сбросил свой package.json на старую рабочую версию со старой версией реагирующих сценариев и без библиотек тестирования, снова выполнил все вышеперечисленные шаги и все еще имею ошибку.
+
+У меня нет веб-пакета в зависимостях или зависимостях разработчиков.
+
+Вот мой ранее работающий package.json
+
+{
+    "name": "bidrlfront",
+    "version": "1.0.0",
+    "private": true,
+    "homepage": "./",
+    "dependencies": {
+      "@date-io/moment": "^1.3.13",
+      "@material-ui/core": "^4.12.3",
+      "@material-ui/icons": "^4.11.2",
+      "@material-ui/pickers": "^3.3.10",
+      "camelize": "^1.0.0",
+      "chart.js": "^2.7.3",
+      "classnames": "^2.2.6",
+      "cross-env": "^5.2.0",
+      "css-loader": "^1.0.0",
+      "dateformat": "^3.0.3",
+      "flux": "^3.1.3",
+      "lodash.find": "^4.6.0",
+      "moment": "^2.29.1",
+      "node-sass": "^4.14.1",
+      "react": "^16.14.0",
+      "react-bootstrap": "^1.6.1",
+      "react-dom": "^16.6.3",
+      "react-ga": "^2.5.6",
+      "react-loading": "^2.0.3",
+      "react-quill": "^1.3.3",
+      "react-router": "^4.3.1",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "2.1.1",
+      "shards-react": "^1.0.0",
+      "shortid": "^2.2.14"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build:prod": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react REACT_APP_GAID=UA-115105611-1 npm run build",
+      "build": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react react-scripts build",
+      "test": "react-scripts test",
+      "scss": "node-sass --watch -include-path src/css -o css",
+      "eject": "react-scripts eject",
+      "gitty": "node g.js"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "devDependencies": {
+      "sass-loader": "^7.1.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@bitbucket.org/rldev2/bidrl-app.git"
+    },
+    "keywords": [],
+    "author": "Stephanie Raymos <sraymos@rlliquidators.com>",
+    "license": "ISC"
+  }
+А вот мой package.json, когда начали возникать ошибки
+
+{
+    "name": "bidrlfront",
+    "version": "1.0.0",
+    "private": true,
+    "homepage": "./",
+    "dependencies": {
+        "@date-io/moment": "^1.3.13",
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2",
+        "@material-ui/pickers": "^3.3.10",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.0.0",
+        "@testing-library/user-event": "^13.2.1",
+        "camelize": "^1.0.0",
+        "chart.js": "^2.7.3",
+        "classnames": "^2.2.6",
+        "cross-env": "^5.2.0",
+        "css-loader": "^1.0.0",
+        "dateformat": "^3.0.3",
+        "flux": "^3.1.3",
+        "lodash.find": "^4.6.0",
+        "moment": "^2.29.1",
+        "node-sass": "^4.14.1",
+        "react": "^16.14.0",
+        "react-bootstrap": "^1.6.1",
+        "react-dom": "^16.6.3",
+        "react-ga": "^2.5.6",
+        "react-loading": "^2.0.3",
+        "react-quill": "^1.3.3",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^2.1.1",
+        "shards-react": "^1.0.0",
+        "shortid": "^2.2.14"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build:prod": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react REACT_APP_GAID=UA-115105611-1 npm run build",
+        "build": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react react-scripts build",
+        "test": "react-scripts test",
+        "scss": "node-sass --watch -include-path src/css -o css",
+        "eject": "react-scripts eject",
+        "gitty": "node g.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "sass-loader": "^7.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org/rldev2/bidrl-app.git"
+    },
+    "keywords": [],
+    "author": "Stephanie Raymos <sraymos@rlliquidators.com>",
+    "license": "ISC"
+}
+
+Я также глобально установил библиотеку тестирования и fsevents до возникновения ошибки, но удалил их и удалил папки на своем Mac.
+
+Я установил fsevents после получения этой ошибки при попытке запустить приложение после установки тестовых библиотек: Ошибка: fsevents недоступен (этот наблюдатель можно использовать только на Дарвине)
+
+Я получал пустой экран. Это решило эту проблему. Затем я получил ошибку регистрации в моей системе аутентификации. Я использовал rxjs. Я должен был установить это. Получил ошибку сценария реакции и обновил ее до последней версии. Вот тогда все сломалось. Когда я бегу npm ls webpack я получаю это:
+
+├─┬ css-loader@1.0.1
+│ └─┬ webpack@4.46.0
+│   └─┬ terser-webpack-plugin@1.4.5
+│     └── webpack@4.46.0 deduped
+├─┬ react-scripts@2.1.1
+│ ├─┬ babel-loader@8.0.4
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ css-loader@1.0.0
+│ │ └── webpack@4.19.1 deduped
+│ ├─┬ eslint-loader@2.1.1
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ file-loader@2.0.0
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ fork-ts-checker-webpack-plugin-alt@0.4.14
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ html-webpack-plugin@4.0.0-alpha.2
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ mini-css-extract-plugin@0.4.3
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ optimize-css-assets-webpack-plugin@5.0.1
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ sass-loader@7.1.0
+│ │ └── webpack@4.19.1 deduped
+│ ├─┬ terser-webpack-plugin@1.1.0
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ url-loader@1.1.1
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ webpack-dev-server@3.1.9
+│ │ ├─┬ webpack-dev-middleware@3.4.0
+│ │ │ └── webpack@4.46.0 deduped
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ webpack-manifest-plugin@2.0.4
+│ │ └── webpack@4.46.0 deduped
+│ ├─┬ webpack@4.19.1
+│ │ └─┬ uglifyjs-webpack-plugin@1.3.0
+│ │   └── webpack@4.46.0 deduped
+│ └─┬ workbox-webpack-plugin@3.6.3
+│   └── webpack@4.46.0 deduped
+└─┬ sass-loader@7.3.1
+  └── webpack@4.46.0 deduped
+ 02.09.2021 23:49
+создайте файл .env и поместите эту строку «SKIP_PREFLIGHT_CHECK = true»
+
+пример
+
+ 12.11.2021 22:20
+Я создал файл .env и добавил в него SKIP_PREFLIGHT_CHECK=true.
+
+Примечание: не давайте никакого имени файлу .env, созданное имя файла должно быть .env.
+
+картинка для большего понимания
+
+ 26.02.2022 10:21
+Другие вопросы по теме
+Ошибка при попытке импорта: «useDispatch» не экспортируется из «React-Redux»
+В React Hook useEffect отсутствует зависимость
+React Axios: загрузка нескольких изображений с помощью FormData()
+Есть ли способ ограничить доступ к интерфейсу DRF, сохраняя при этом доступ к конечным точкам API?
+Как установить «свойство» HOC?
+Как в React Hooks, чтобы дать начальное значение пустому объекту
+React Native изменяет состояние двух родителей в одной функции
+Максимальная высота и максимальная ширина для div с динамическим фоном?
+Отображение реагирующего всплывающего окна Bootstrap при нажатии на ячейку в таблице реагирования-загрузки 2
+Реагирующий маршрутизатор, отображающий только основной маршрут
+Похожие вопросы
+Node.js — команды оболочки exec с инициализированным .bashrc
+Как называется эта форма или синтаксис в javascript?
+Конструктор терпит неудачу во второй раз, но не в первый
+Путаница с app.listen(порт, имя хоста) и server.createServer()
+Вложенный объект findOneAndUpdate в массиве
+Скачать версию node.js 10.16.0 или 12.4.0?
+Проглотить мел, передать шаблон строки через метод
+Koa + XMLHttpRequest: в запрошенном ресурсе отсутствует заголовок «Access-Control-Allow-Origin»
+Как сохранить виртуалки мангуста
+Как узнать, существует ли вершина с именем «А» с данными в ней?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Узел events.js: 167 throw er; // Необработанное событие 'ошибка'
+Вопросы
+JSON
+Узел events.js: 167 throw er; // Необработанное событие 'ошибка'
+Я пытаюсь использовать JSON Server в приложении React. Однако я продолжаю получать следующую ошибку.
+
+events.js:167
+  throw er; // Unhandled 'error' event
+  ^
+Emitted 'error' event at:
+at GetAddrInfoReqWrap.doListen [as callback] (net.js:1498:12)
+at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:50:17)
+Я обновил npm и node до последних версий. Я убил все процессы с помощью узла killall и узла sudo killall -9
+
+Есть идеи, что может вызвать проблему?
+
+ 10.06.2018 11:51
+43
+4
+90 278
+21
+ Ответы 21
+Удаление каталога node_modules и повторная установка с использованием npm install должны решить проблему.
+
+ 17.07.2018 06:39
+обновите severless с помощью npm. Это решит это.
+
+ 27.08.2018 12:32
+У меня была та же проблема, что и при запуске killall node, затем npm start, после чего мой локальный сервер на порту 5000 снова заработал. Надеюсь, это вам поможет.
+
+ 30.08.2018 23:39
+У меня такая же проблема. В основном я использую node v10 +, но мой проект был создан в v8.11.4. Все модули использовались в соответствии со старой версией (v8), поэтому я столкнулся с проблемой. Итак, есть два решения: обновить модуль или понизить версию узла.
+
+Я решил, понизив версию узла с v10 до v8. Потому что некоторые модули невозможно обновить из-за зависимости от проекта.
+
+ 09.10.2018 08:15
+Немного поздно, но для всех, кто борется, я столкнулся с этой ошибкой, создав приложение React без использования sudo. Использование sudo при запуске npx create-react-app app-name устранило проблему.
+
+ 07.01.2019 23:57
+Просто запустите эту команду в своем терминале
+
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+ 21.02.2019 11:21
+протестировать еще один устройство adb ... настоящий смартфон, студию Android или genymotion npm start в вашем проекте откройте новую вкладку и запустите реагировать-родной run-android и нажмите ctrl + c на предыдущей вкладке терминала
+
+Я думаю, почему эта проблема в том, что мы не можем запустить http: // локальный: 8081 / отладчик-ui /
+
+ 05.03.2019 17:17
+Попробуйте npm start как суперпользователь: sudo npm start
+
+Это сработало для меня.
+
+ 21.03.2019 11:45
+Я запустил npm install, а затем обновление npm, и он снова работает.
+
+ 07.04.2019 11:14
+Если вы работаете в Windows и на вашем компьютере работает IIS, убедитесь, что сервер IIS остановлен, если вы пытаетесь запустить его через порт 8080. Вы также можете изменить порт, чтобы IIS не подключался к нему.
+
+npm start -- --port 8000
+ 10.04.2019 18:04
+перезапуск WebStorm у меня сработал. вместо удалена папка 'node_modules' и переустановить модули по npm install.
+
+ 03.05.2019 15:14
+Для пользователей Windows запустите команду
+
+Taskkill /IM node.exe /F
+Меня устраивает.
+
+Справка:
+
+https://stackoverflow.com/a/51408717/9033834
+
+ 06.08.2019 07:41
+Возможно, вы запустили эхо-сервер в другом месте с тем же портом.
+
+ 11.09.2019 17:00
+Я столкнулся с этой точной проблемой и обнаружил, что она присутствует только с response-scripts@3.0.0, переход на response-scripts@2.1.8 решил проблему без необходимости возиться с переменными среды.
+
+create-react-app my-app
+cd my-app
+npm install react-scripts@2.1.8
+npm start
+ 30.10.2019 18:19
+В моем случае это сработало после того, как я выполнил следующие шаги:
+
+Удалите папку node_modules.
+Запустите npm install.
+Запустите npm update.
+Перезагрузите систему. (может быть, это сработало)
+ 25.12.2019 12:08
+Ваш сайт работает на http://localhost:8000 Попробуйте сменить порт. Вроде 3000 или 8080.
+
+app.listen(3000)
+
+Мой пост 8080 был взят, поэтому я получил ту же ошибку
+
+ 28.01.2020 11:45
+Убедитесь, что вы закрыли предыдущее соединение узла, прежде чем открывать новое на том же порту.
+
+Просто попробуйте сначала закрыть предыдущее соединение, а затем открыть новое!
+
+ 04.03.2020 11:59
+Я восстановил свой файл hosts в исходное состояние в Mac OS, и у меня он работает. Я редактировал этот файл вчера, и это создало проблему. На этом сайте вы можете скопировать текст оригинального файла https://pbxbook.com/other/mac-host.html
+
+ 27.08.2020 14:18
+sudo npm start
+Это должно сработать для вас
+
+ 27.02.2021 16:08
+В моем случае ошибка была вызвана очень большим проектом со слишком большим количеством файлов, а затем inotify не может проверить и необходимо увеличить количество часов. Это исправит мою ошибку.
+
+echo 1048576 > /proc/sys/fs/inotify/max_user_watches
+ 17.04.2021 20:40
+Это сработало для меня
+npm install react-scripts@2.1.8
+npm start
+ 31.05.2021 20:13
+Другие вопросы по теме
+Дочерний процесс узла с кодом выхода 12
+Npm run build выдает код ошибки ELIFECYCLE
+Firebase подсчитывает онлайн-пользователей и обновляет глобальный счетчик
+Как развернуть приложение node js с реакцией на heroku
+Формат журнала Winston
+Чтение данных POST в приложении Ionic?
+Проблемы с получением ответа на запрос разрешения в приложении js узла диалогового потока
+Создавайте PDF и Excel лист, но в excel он не открывается и не сохраняется ... (как в laravel)
+Ошибка сервера Ubuntu Node.js Express «Невозможно получить // тест»
+Node.js - значение из функции возвращает undefined
+Похожие вопросы
+Subprocess.CalledProcessError ... возвращает ненулевой статус выхода 2
+Формат даты и времени в Python отличается от формата
+Как извлечь информацию из файла Json. Структура Json должна быть отображена через тип и использовать AESON
+Ошибка синтаксиса CURL
+Доступ к Json для получения конкретного результата объекта
+Ошибка синтаксического анализа Java Spring JSON при преобразовании в массив Java
+Формат журнала Winston
+Преобразование json в C# и отображение в gridview
+Запрос API SendGrid в Swift с URLSession
+Невозможно вернуть массив JSON из выброса класса @Controller. Для класса org.json не найден сериализатор. Ошибка JSONObject
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Я не могу установить реакцию с помощью приложения npx create-response-app?
+Вопросы
+REACTJS
+Я не могу установить реакцию с помощью приложения npx create-response-app?
+Я пытаюсь использовать приложение npx create-response, но у меня есть ошибки, показанные ниже:
+
+npm ERR! Unexpected end of Json input while parsing near
+'...eact-app/-/create-rea'
+
+npm ERR! A complete log of this run can be found in: npm ERR!
+C:\Users\dp\AppData\Roaming\npm-cache\_logs\2018-12-06T18-42-56-293Z-debug.log
+
+Install for create-react-app@latest failed with code 1** 
+и файл журнала ошибки здесь ...!
+
+Как я могу избавиться от этой неприятности ??
+
+0 info it worked if it ends with ok 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+
+1 verbose cli   
+'C:\\Users\\dp\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+
+1 verbose cli   'install',
+
+1 verbose cli   'create-react-app@latest',
+
+1 verbose cli   '--global',
+
+1 verbose cli   '--prefix',
+
+1 verbose cli  
+'C:\\Users\\dp\\AppData\\Roaming\\npm-cache\\_npx\\3588',
+
+1 verbose cli   '--loglevel',
+
+1 verbose cli   'error',
+
+1 verbose cli   '--json' ]
+
+2 info using npm@6.4.1
+
+3 info using node@v10.13.0
+
+4 verbose npm-session 7862701600d4f4ce
+
+5 silly install loadCurrentTree
+
+6 silly install readGlobalPackageData
+
+7 http fetch GET 304 
+
+https://registry.npmjs.org/create-react-app 872ms (from cache)
+
+8 silly fetchPackageMetaData error for create-react-app@latest
+Unexpected end of JSON input while parsing near
+'...eact-app/-/create-rea'
+
+9 timing stage:rollbackFailedOptional Completed in 4ms 10 timing
+stage:runTopLevelLifecycles Completed in 1693ms 11 verbose stack
+SyntaxError: Unexpected end of JSON input while parsing near
+'...eact-app/-/create-rea' 11 verbose stack     at JSON.parse
+(<anonymous>) 11 verbose stack     at parseJson
+(C:\Users\dp\AppData\Roaming\npm\node_modules\npm\node_modules\json-parse-better-errors\index.js:7:17)
+11 verbose stack     at consumeBody.call.then.buffer
+(C:\Users\dp\AppData\Roaming\npm\node_modules\npm\node_modules\node-fetch-npm\src\body.js:96:50)
+11 verbose stack     at process._tickCallback
+(internal/process/next_tick.js:68:7) 12 verbose cwd C:\Users\dp 13
+verbose Windows_NT 6.3.9600 14 verbose argv "C:\\Program
+Files\\nodejs\\node.exe"
+"C:\\Users\\dp\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js"
+"install" "create-react-app@latest" "--global" "--prefix"
+"C:\\Users\\dp\\AppData\\Roaming\\npm-cache\\_npx\\3588" "--loglevel"
+"error" "--json" 15 verbose node v10.13.0 16 verbose npm  v6.4.1 17
+error Unexpected end of JSON input while parsing near
+'...eact-app/-/create-rea' 18 verbose exit [ 1, true ]
+ 06.12.2018 19:53
+30
+4
+98 404
+21
+ Ответы 21
+У меня была такая же проблема при создании проекта реакции, когда я использовал команды из официального источника https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+
+npx create-react-app my-app
+cd my-app
+npm start
+Приведенные выше команды не работают в моих окнах. У меня на машине есть Node> = 6 и npm> = 5.2. он не может открыть localhost: 3000 то я использовал эти команды
+
+npm install -g create-react-app
+create-react-app my-app-name
+cd my-app-name
+npm start
+Он работал отлично. Узнал от https://thewikihow.com/video_pCgDRgmfilE
+
+ 23.05.2019 14:42
+Чтобы устранить проблему, последовательно выполните эти команды.
+
+npm init
+npm install create-react-app
+npx create-react-app myapp
+ 24.05.2019 20:35
+Очистить кеш npm:
+
+npm cache clean --force
+затем попробуйте еще раз
+
+ 20.06.2019 19:59
+sudo chown -R 1000: 1000 "/home/aditya/.npm"
+npx ящик-реагировать-приложение
+это должно решить проблему.
+
+ 09.12.2019 17:03
+Это сработало для меня !!
+
+first you need to create the package.json file by npm init
+
+then npx create-react-app myapp
+
+ 17.12.2019 09:47
+Запустите Windows PowerShell от имени администратора и введите следующее:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+ 19.01.2020 11:47
+У меня была такая же проблема: «Ошибка установки create-response-app @ latest с кодом 7» Использовать это. У меня это сработало.
+
+npm install -g create-react-app    
+npx create-react-app my-app     
+cd my-app      
+npm start     
+для получения дополнительной информации перейдите по ссылке: https://www.techomoro.com/how-to-install-and-setup-a-react-app-on-windows-10/
+
+ 10.02.2020 21:02
+Если вы не можете создать приложение, попробуйте переустановить 32-битный nodeJS и попробуйте его.
+
+ 15.04.2020 15:24
+Сначала очистите кеш, набрав это в своем терминале:
+
+npm cache clean --force
+Затем обновите свою версию npm, выполнив следующие шаги эти, или введите:
+
+npm install -g npm@next
+Теперь перейдите к "NodeJS" в разделе «Программы и компоненты» в настройках Windows и Ремонт в вашей установке.
+
+Перезагрузите терминал и введите:
+
+npx create-react-app my-app
+Надеюсь, это решит вашу проблему.
+
+ 04.06.2020 19:19
+npm uninstall -g create-react-app
+npx create-react-app my-app
+Вам не нужно устанавливать пакет create-response-app глобально. «npx» уже устанавливается с последней версией.
+
+Быстрый старт
+
+ 13.07.2020 10:29
+Добавьте в белый список антивируса программное обеспечение узла.
+
+эй, ребята с моей точки зрения, проверьте свою систему, есть ли антивирус запуск и блокировка node.exe, а точнее (Защита от вредоносных программ ByteFence)
+
+В моем случае это блокирование системного вызова узла
+
+С меня хватит это из скрытых иконокв системном трее это у меня отлично работает
+
+когда ты делаешь
+
+npm start
+
+иногда вы можете увидеть, что какой-то антивирус просит разрешения добавить его в занести в белый список или добавить в список блокировки тот антивирус, который следует остановить, или добавить к нему белый список
+ 28.08.2020 17:56
+Иногда это происходит из-за медленной скорости интернета. Попробуйте с этим.
+
+ npx create-react-app <app name> -timeout=60000
+Тайм-аут по умолчанию = 30000 (30 секунд). при необходимости увеличьте таймаут.
+
+ 30.11.2020 19:04
+Я все перепробовал и ничего не получилось.
+
+Затем я перезапустил свой ноутбук, и когда я попробовал npm init, а затем npm install create-react-app, я получил предупреждение Avast о потенциально вредоносных файлах, но это было нормально, и я подтвердил его. Эта попытка create-react-app не удалась, но когда я попробовал снова, она сработала.
+
+Возможно, что брандмауэр или что-то подобное блокирует узел от выполнения функции, поэтому он вызывает callback (), который никогда не вызывал ошибку.
+
+ 09.12.2020 00:29
+Проблема возникает по многим причинам.
+
+Это происходит, если один из узловых модулей, требуемых для установки вашего реагирующего приложения, отсутствует.
+Другая причина в том, что у вас есть и нестабильное сетевое соединение.
+Иногда, но в редких случаях, ваш антивирус может принять файлы cmd в кеше за вредоносное ПО.
+если ваша проблема связана с антивирусом, отключите его на время выполнения команд.
+
+Какой бы ни была причина, по которой приложение npx create-response-app не работает на вашем компьютере, последовательно выполните следующие команды:
+
+npm cache clean --force 
+npx create-react-app my-app  
+дайте мне знать, сработало ли это для вас
+
+ 26.12.2020 07:28
+Добавьте в белый список антивируса программное обеспечение узла.
+
+Привет, ребята, с моей точки зрения, проверьте свою систему, работает ли антивирус, и блокируйте node.exe более конкретно (ByteFence Anti-malware)
+
+В моем случае это блокировка системного вызова узла
+
+Я выхожу из скрытых значков в системном трее, у меня все работает нормально
+
+когда вы делаете => npm start
+
+возможно, вы видели, что какой-то антивирус запрашивает разрешение добавить его в белый список или добавить в черный список, этот антивирус вы должны остановить или добавить к нему белый список
+ 01.01.2021 12:47
+Та же проблема, и вот мое решение.
+
+npm cache clear --force
+
+
+
+ 21.01.2021 11:39
+Это сработало для меня.
+
+npm cache clean --force
+npm init -y
+npx create-react-app my-app
+ 30.01.2021 15:20
+есть ошибка, потому что имя вашего компьютера пользователя содержит пробел, вы можете решить это с помощью этого кода:
+
+> npm config set cache "C:\Users\mycomputer~1name\AppData\Roaming\npm-cache" --global
+ 22.02.2021 07:10
+Это сработало для меня: потому что у меня были проблемы с сетью
+
+npx create-react-app <app name> -timeout=60000
+ 23.02.2021 11:20
+npm cache clean --force
+
+npx create-react-app project_name --template all
+
+cd project_name
+
+npm start
+
+ 17.03.2021 06:47
+попробуй это:
+
+npm cache clean --force
+npx create-react-app myapp
+У меня это сработало.
+
+ 30.04.2021 09:02
+Другие вопросы по теме
+Как установить node / npm, чтобы sudo npm работал на экземпляре ec2?
+Ошибка с действительным geojson при попытке разбить файл с помощью ndjson-split
+Npm-скрипт для одновременного запуска redis-server, mongod и nodemon
+Npm запустить сборку реагировать js
+Как исправить уязвимость в зависимостях npm?
+'mocha' не распознается как внутренняя или внешняя команда - mocha не устанавливается автоматически с помощью supertest
+Есть ли способ ускорить npm-тест create-react-app?
+NPM продолжает удалять мою папку build при установке
+Как объединить обновления в исходном коде вместо замены последней версией в npm install package @ latest?
+Как запустить тест npm после запуска npm в сценарии bash
+Похожие вопросы
+Изменение стилей css после перевода начальной загрузки html в стиль react.js jsx
+React-select, не может изменить цвет текста в заполнителе в текстовом поле
+Обрабатывать событие и функцию, не являющуюся событием, одинаково?
+Как отменить скрипт npm run clean?
+Как решить ошибку Используйте деструктуризацию объекта предпочитаете-деструктурирование - React
+Реагировать на хуки: не обновляется состояние при использовании useEffect
+Как развернуть приложение Django / React / Webpack в Digital Ocean через Passenger / Nginx
+Функциональные компоненты внутри компонентов класса
+Лучше всего реагировать на предварительное измерение элемента с помощью автоматической ширины
+Адаптивные гибкие боксы с sass и контролем переполнения изображений
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Ошибка: запуск пряжи - ошибка Команда "старт" не найдена
+Вопросы
+REACTJS
+Ошибка: запуск пряжи - ошибка Команда "старт" не найдена
+Я пытаюсь изучить React, и я использую частное репо, чтобы начать с него.
+
+Я запускаю yarn start в каталоге репозитория, но получаю сообщение об ошибке:
+
+yarn run v1.13.0
+error Command "start" not found.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+У меня установлены и узел, и пряжа.
+
+Для узла:
+
+v10.15.0
+node is /usr/local/bin/node
+Для пряжи:
+
+1.13.0
+yarn is /usr/local/bin/yarn
+Я попытался переустановить и узел, и пряжу, но получаю то же сообщение об ошибке. кроме того, я пытался удалить шанс пряжи через yarn cache clean, но ничего не работает.
+
+package.json содержит следующее:
+
+{
+  "name": "02-Manipulating-Strings",
+  "version": "1.0.0",
+  "author": "ssaunier",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^21.1.0"
+  },
+  "scripts": {
+    "test": "(eslint lib || true) && jest"
+  }
+}
+Каталог организован следующим образом:
+
+Ошибка: запуск пряжи - ошибка Команда &quot;старт&quot; не найдена
+
+ 27.01.2019 22:47
+40
+3
+104 138
+21
+Данный вопрос помечен как решенный
+ Ответы 21
+ Ответ принят как подходящий
+Внутри скриптов файла start нет команды package.json.
+
+"scripts": {
+  "start": "some command to be run", // you need to add this line
+  "test": "(eslint lib || true) && jest"
+}
+Может быть, вместо этого вы хотите запустить команду test — npm test/yarn test?
+
+ 27.01.2019 23:01
+Решил благодаря проницательности пользователя: Цветан Ганев.
+
+Я пытался запустить команду, которой нет в моих сценариях. В частности, yarn start отсутствует в части scripts файла package.json. Чтобы решить эту проблему, я добавил следующую строку в scripts.
+
+"start": "webpack-dev-server --mode development",
+ 28.01.2019 20:23
+У меня была похожая проблема, когда у меня был скрипт "start" в моем package.json. В конце концов я понял, что не сохранил package.json, и получил эту ошибку. Очевидно, что после сохранения package.json проблема была решена.
+
+ 31.08.2019 10:47
+Просто беги
+
+yarn add react-scripts
+ 04.10.2019 22:03
+Эта проблема возникает, когда файл «package.json» удаляется или изменяется. Пожалуйста, проверьте ваш файл "package.json".
+
+ 15.10.2019 10:58
+Добавление этого в package.json сработало для меня
+
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },"devDependencies": {
+    "babel-preset-expo": "^7.0.0"
+  },
+ 19.10.2019 08:17
+Вы также можете попробовать запустить сначала npm install, а затем npm run или сначала yarn, а затем yarn start.
+
+ 22.11.2019 20:29
+Если вы используете приложение create-react-app и столкнулись с этой ошибкой, скорее всего, вы не установили приложение create-react-app успешно.
+
+Попробуйте удалить глобально установленное приложение create-create-app, как описано ниже.
+
+Шаблон не предоставляется с помощью приложения create-реагировать
+
+ 08.02.2020 06:58
+проверьте свой package.json, в котором есть сценарии запуска. если у вас есть только список зависимостей, убедитесь, что в package.jons есть следующее:
+
+"devDependencies": {
+    "@theia/cli": "next"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn build && yarn run download:plugins",
+    "clean": "theia clean",
+    "build": "theia build --mode development",
+    "start": "theia start --plugins=local-dir:plugins",
+    "download:plugins": "theia download:plugins"
+  },
+  "theiaPluginsDir": "plugins",
+  "theiaPlugins": {
+    "vscode-builtin-css": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/css-1.39.1-prel.vsix",
+    "vscode-builtin-html": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/html-1.39.1-prel.vsix",
+    "vscode-builtin-javascript": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/javascript-1.39.1-prel.vsix",
+    "vscode-builtin-json": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/json-1.39.1-prel.vsix",
+    "vscode-builtin-markdown": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/markdown-1.39.1-prel.vsix",
+    "vscode-builtin-npm": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/npm-1.39.1-prel.vsix",
+    "vscode-builtin-scss": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/scss-1.39.1-prel.vsix",
+    "vscode-builtin-typescript": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/typescript-1.39.1-prel.vsix",
+    "vscode-builtin-typescript-language-features": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/typescript-language-features-1.39.1-prel.vsix"
+  }
+}
+в противном случае запустите это в папке, где находится package.json
+
+ошибка Команда "старт" не найдена.
+
+yarn run theia start /home --hostname 0.0.0.0 --port 8080
+theia должна запускаться как минимум на порту 8080.
+
+ 29.03.2020 16:32
+У меня была такая же проблема, команда запуска не найдена. Я выполнил приведенную ниже инструкцию, чтобы воссоздать реагирующее приложение.
+
+. Go to your parent folder in cmd
+. Type yarn add create-react-app
+. And yarn create-react-app FolderName
+После установки пряжи старт заработает.
+
+After Installing react folder
+
+ 28.06.2020 20:23
+Я получил такое же сообщение об ошибке, что команда «Пуск» не найдена. Моя проблема была решена, выполнив следующие шаги.
+
+-откройте папку, в которой вы хотите создать приложение, используя терминал, затем введите следующие команды:
+
+npm удалить -g создать-реагировать-приложение
+npx create-реагировать-приложение имя_папки
+(Это автоматически установит последнюю версию приложения create-реагировать)
+
+-Тогда запустите команду начало пряжи и все заработает.
+
+ 18.07.2020 10:54
+У меня была эта проблема. Я решил, что лучший способ это.
+
+npm i -g создать-реагировать-приложение
+create-react-app my-react-app //или то, что вы хотите, чтобы ваш проект был
+компакт-диск мое-реагировать-приложение
+начало пряжи
+ 22.07.2020 14:43
+Это может звучать глупо, но у меня была такая же проблема, и все, что я сделал, это закрыл программу (vscode) и снова открыл ее. Я убедился, что он находится в правильной папке проекта (веб), и повторил процесс. Это сработало. В моем случае это было просто отсутствие внимания.
+
+Я надеюсь, что ваша проблема так же проста, как и моя.
+
+Обнимать!
+
+ 11.08.2020 21:16
+Я решаю проблему с этим: Начиная с версии create-react-app 3.3.0 больше не рекомендуется использовать глобальную установку CRA.
+
+Однако, следуя рекомендуемому пути, глобально удалив CRA и используя npm, я столкнулся со следующей проблемой для моего нового проекта React:
+
+Шаблон не предоставили. Вероятно, это связано с тем, что вы используете устаревшую версию приложения create-react-app.
+
+Похоже, что CRA не был правильно удален. Мне пришлось сделать следующее:
+
+После удаления его с помощью npm uninstall -g create-react-app проверьте, установлено ли оно у вас еще с помощью приложения create-react-app в вашей командной строке. Если он что-то возвращает (например, /usr/local/bin/create-react-app), выполните команду rm -rf /usr/local/bin/create-react-app для удаления вручную.
+
+После этого я смог использовать npx create-react-app my-app с последней версией CRA, где у меня был бы шаблон по умолчанию для папки src/.
+
+ 16.10.2020 16:53
+ноябрь 2020 г.
+
+Это может произойти, когда вы клонируете репозиторий git, созданный с помощью более старой версии приложения create-react-app или события с другой настройкой. Сначала установите реагирующие сценарии как
+
+yarn add react-scripts
+
+Или
+
+npm install react-scripts
+
+Затем, если у вас возникли проблемы с реактивными скриптами, обратитесь к эта ТАК нить.
+
+ 02.11.2020 06:51
+Если вы получаете error Command "start" not found. после создания нового проекта с помощью приложения create-react-app, вы, скорее всего, создали приложение с помощью npm.
+
+Чтобы сделать это правильно, удалите каталог проекта и заново создайте проект с помощью пряжи с помощью следующей команды
+
+ yarn create react-app my-app
+После этого запуск пряжи работает отлично.
+
+ 09.01.2021 06:45
+Во-первых, вы можете попробовать
+
+npm install
+тогда
+
+Вы также можете попробовать запустить сначала npm install, а затем npm run или сначала пряжу, а затем пряжу запустить
+
+ 08.02.2021 19:45
+Я решил свои проблемы с помощью следующей команды. Попробуйте эту команду, надеюсь, вы избавитесь от проблем.
+
+npm run start
+ 27.04.2021 07:30
+у меня такая же проблема. это говорит о том, что вы установили пакеты в неправильный каталог.
+
+в терминале cmd:-(D:\PROJECT)=> мой путь к файлу cmd показывает
+
+D:\PROJECTS\npx create-react-app app-react
+(когда вы вводите эту команду, она создает новый файл с именем app-react. Затем вам нужно перейти в файл app-react. Используйте эту команду, чтобы перейти к этому файлу «cd app-react», затем введите. вы увидите cmd дорожка )
+
+D:\PROJECTS\cd app-react
+D:\PROJECTS\app-react\
+затем установите другие пакеты пряжи
+
+D:\PROJECTS\app-react\yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+
+D:\PROJECTS\app-react\yarn add react-icons
+
+D:\PROJECTS\app-react\yarn add react-router-dom
+затем начало пряжи
+
+D:\PROJECTS\app-react\yarn start
+если он не открывается, проверьте пакет пряжи, установленный с помощью этой команды
+
+D:\PROJECTS\app-react\yarn -version
+1.22.10
+для установки пряжи
+
+npm install --global yarn
+ 26.07.2021 02:05
+Я также сталкиваюсь с этой ошибкой, но в моем случае я думаю, что я сделал все вышеперечисленные шаги, но ошибка все еще остается последней, что я сделал в своей основной папке node_module/.bin/. Я видел, что есть две зависимости: одна - create-react-app, все в порядке, а другая - creat-app-react. поэтому я удалил эту зависимость, а также удалил ее из моего файла package.json.
+
+Так что теперь запуск пряжи работает отлично.
+
+ 24.08.2021 07:11
+Ну, я получал эту ошибку, потому что я был тупым. Не заходил в основную папку проекта. Так что на самом деле он тоже не мог найти файл .json ?
+
+ 09.09.2021 14:34
+Другие вопросы по теме
+Как обрабатывать необязательные одноранговые зависимости при публикации пакета TypeScript?
+Как мне отобразить изображение локально в реакции, используя локальный сервер?
+Как преобразовать SCSS в CSS с префиксом автоматического поставщика?
+Ошибка развертывания приложения React в сборке разработки npm
+Zsh: команда не найдена: npm
+Проблема с npm после обновления
+Как использовать значки перьев в Laravel через Laravel Mix, NPM
+В чем разница между nodemon и live-сервером?
+Nodejs/express - Router.use() требует функции промежуточного программного обеспечения, но получил ' + gettype(fn)); Нет app.use('/',маршруты);
+Как установить зависимость узла только с скомпилированными файлами?
+Похожие вопросы
+Как вписать круг с несколькими кругами при использовании react-google-map?
+Сделайте кнопку React Material-UI Fab, чтобы она придерживалась позиции на экране
+Модуль Jest mock разрешает значение переменной
+Как определить переменную/метод в реквизите с редуксом в React Native
+Событие Mousemove в компоненте React/canvas
+Используя react-intl, но возвращаемое значение экранировано
+Reactjs не обновляет классы dom после состояния соединения
+Могу ли я обновить/установить свойства состояния, используя карту для вызова функции?
+Как мне отобразить изображение локально в реакции, используя локальный сервер?
+React/Redux Подпишитесь на самое последнее значение состояния, созданное хранилищем избыточности
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Поддержка экспериментального синтаксиса classProperties в настоящее время не включена
+Вопросы
+REACTJS
+Поддержка экспериментального синтаксиса classProperties в настоящее время не включена
+Пока я настраивал React в проекте Django, я столкнулся с этой ошибкой
+
+ModuleBuildError в Ошибка сборки модуля (из ./node_modules/babel-loader/lib/index.js): SyntaxError: C: \ Users \ 1Sun \ Cebula3 \ cebula_react \ assets \ js \ index.js: Поддержка для экспериментального синтаксиса classProperties в настоящее время не включен (17: 9):
+
+  15 | 
+  16 | class BodyPartWrapper extends Component {
+> 17 |   state = {
+     |         ^
+  18 | 
+  19 |   }
+  20 | 
+
+Add @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 
+'plugins' section of your Babel config to enable transformation.
+Итак, я установил @ babel / plugin-offer-class-properties и поместил это в babelrc
+
+package.json
+
+{
+  "name": "cebula_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config prod.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "react-hot-loader": "^4.3.6",
+    "webpack": "^4.17.2",
+    "webpack-bundle-tracker": "^0.3.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  }
+}
+Babelrc
+
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
+Однако ошибка все еще существует, в чем проблема ??
+
+ 08.09.2018 19:46
+156
+6
+153 327
+22
+ Ответы 22
+Изменять
+
+"plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+К
+
+"plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
+Это сработало для меня
+
+ 16.09.2018 07:22
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        [
+          "@babel/plugin-proposal-class-properties"
+        ]
+    ]
+}
+замените файл .babelrc приведенным выше кодом. это устранило проблему для меня.
+
+ 25.09.2018 20:07
+Решение для проекта webpack
+Я просто решил эту проблему, добавив @babel/plugin-proposal-class-properties в плагин конфигурации webpack. Раздел модуля моего webpack.config.js выглядит так
+
+module: {
+    rules: [
+        {
+            test: path.join(__dirname, '.'),
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env',
+                          '@babel/react',{
+                          'plugins': ['@babel/plugin-proposal-class-properties']}]
+            }
+        }
+    ]
+}
+ 07.10.2018 23:18
+После почти 3 часов поиска и потраченного времени на ту же ошибку я обнаружил, что использую импорт имени для React:
+
+import { React } from 'react';
+что совершенно неверно. Просто переключив его на:
+
+import React from 'react';
+все ошибки исчезли. Я надеюсь, что это помогает кому-то. Это мой .babelrc:
+
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+      "@babel/plugin-proposal-class-properties"
+  ]
+}
+webpack.config.js
+
+const path = require('path');
+const devMode = process.env.Node_ENV !== 'production';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+module.exports = {
+  entry: './src/App.js',
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'App.js'
+  },
+  mode: 'development',
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+    port:9090,
+    open: 'google chrome',
+    historyApiFallback: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },{
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]--[hash:base64:5]',
+              sourceMap: true
+            }
+          },{
+            loader: 'sass-loader'
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+    })
+  ]
+}
+package.json
+
+{
+  "name": "expense-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
+ 10.10.2018 03:35
+Установите плагин-предложение-класс-свойства npm install @babel/plugin-proposal-class-properties --save-dev
+
+Обновите свой webpack.config.js, добавив 'plugins': ['@babel/plugin-proposal-class-properties']}]
+
+ 18.10.2018 18:56
+Я обнаружил проблему в том, что мой .babelrc был проигнорирован, однако я создаю babel.config.js и добавляю следующее:
+
+module.exports = {
+  plugins: [
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-transform-regenerator',
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        helpers: false,
+        regenerator: true,
+      },
+    ],
+  ],
+  presets: [
+    "@babel/preset-flow",
+    'module:metro-react-native-babel-preset',
+  ],
+};
+И это работает для меня в приложении React Native, я думаю, что это также поможет приложениям React.
+
+ 14.01.2019 13:07
+Я использую пряжу. Чтобы преодолеть ошибку, мне пришлось сделать следующее.
+
+yarn add @babel/plugin-proposal-class-properties --dev
+ 21.01.2019 17:39
+Сначала установите: @ babel / плагин-предложение-свойства-класса как зависимость разработчика:
+
+npm install @babel/plugin-proposal-class-properties --save-dev
+Затем отредактируйте свой .babelrc, чтобы он был примерно таким:
+
+{
+  "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+  ],
+  "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties"
+      ]
+  ]
+}
+Файл .babelrc, расположенный в корневом каталоге, где находится package.json.
+
+Обратите внимание, что вам следует перезапустить сервер разработки веб-пакетов, чтобы изменения вступили в силу.
+
+ 07.03.2019 15:44
+Я использую синтаксический анализатор babel явно. Ни одно из вышеперечисленных решений не помогло мне. Это сработало.
+
+const ast = parser.parse(inputCode, {
+      sourceType: 'module',
+      plugins: [
+        'jsx',
+        'classProperties', // '@babel/plugin-proposal-class-properties',
+      ],
+    });
+ 13.05.2019 19:38
+Перемещение state внутрь constructor function у меня сработало:
+
+...
+class MyComponent extends Component {
+  constructor(man) {
+    super(man)
+    this.state = {}
+  }
+}
+...
+Удачи...
+
+ 06.11.2019 09:45
+Если кто-то работает над монорепозиторием после реагировать-родной-веб-монорепозиторий, то вам нужно записать файл config-overrides.js в packages/web. вам нужно добавить resolveApp('../../node_modules/react-native-ratings'), в этот файл ...
+
+Мой полный файл config-override.js
+
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
+// our packages that will now be included in the CRA build step
+const appIncludes = [
+    resolveApp('src'),
+    resolveApp('../components/src'),
+    resolveApp('../../node_modules/@react-navigation'),
+    resolveApp('../../node_modules/react-navigation'),
+    resolveApp('../../node_modules/react-native-gesture-handler'),
+    resolveApp('../../node_modules/react-native-reanimated'),
+    resolveApp('../../node_modules/react-native-screens'),
+    resolveApp('../../node_modules/react-native-ratings'),
+    resolveApp('../../node_modules/react-navigation-drawer'),
+    resolveApp('../../node_modules/react-navigation-stack'),
+    resolveApp('../../node_modules/react-navigation-tabs'),
+    resolveApp('../../node_modules/react-native-elements'),
+    resolveApp('../../node_modules/react-native-vector-icons'),
+];
+
+module.exports = function override(config, env) {
+    // allow importing from outside of src folder
+    config.resolve.plugins = config.resolve.plugins.filter(
+        plugin => plugin.constructor.name !== 'ModuleScopePlugin'
+    );
+    config.module.rules[0].include = appIncludes;
+    config.module.rules[1] = null;
+    config.module.rules[2].oneOf[1].include = appIncludes;
+    config.module.rules[2].oneOf[1].options.plugins = [
+        require.resolve('babel-plugin-react-native-web'),
+        require.resolve('@babel/plugin-proposal-class-properties'),
+    ].concat(config.module.rules[2].oneOf[1].options.plugins);
+    config.module.rules = config.module.rules.filter(Boolean);
+    config.plugins.push(
+        new webpack.DefinePlugin({ __DEV__: env !== 'production' })
+    );
+
+    return config
+};
+ 24.11.2019 10:57
+Добавление
+
+"plugins": [
+    [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  ]
+в .babelrc у меня работает.
+
+ 28.11.2019 09:57
+В соответствии с проблемой GitHub это, если вы используете приложение create-react-app, вам следует скопировать свои конфигурации .babelrc или babel.config.js в webpack.config.js и удалить их. Из-за того, что две строки кода babelrc: false,configFile: false,, ваша конфигурация в babelrc, ... бесполезна. и ваш webpack.config.js находится в вашей папке ./node_madules/react-scripts/config Я решил свою проблему так:
+
+{
+              test: /\.(js|mjs)$/,
+              exclude: /@babel(?:/|\\{1,2})runtime/,
+              loader: require.resolve('babel-loader'),
+              options: {
+                babelrc: false,
+                configFile: false,
+                compact: false,
+                presets: [
+                  [
+                    require.resolve('babel-preset-react-app/dependencies'),
+                    { helpers: true },
+
+                  ],
+                  '@babel/preset-env', '@babel/preset-react'
+                ],
+                plugins: ['@babel/plugin-proposal-class-properties'],
+                .
+                .
+                .
+ 29.11.2019 14:27
+В корне моей рабочей среды файла .babelrc не было. Однако следующая запись в package.json решила проблему.
+
+"babel": {
+"presets": [
+  "@babel/preset-env",
+  "@babel/preset-react"
+],
+"plugins": [
+  "@babel/plugin-proposal-class-properties"
+]}
+Примечание. Не забудьте выйти из консоли и снова открыть ее перед выполнением команд npm или yarn.
+
+ 07.04.2020 11:35
+Я создал символическую ссылку для src / components -> ../../components, которая заставила npm start сходить с ума и перестать интерпретировать src / components / *. Js как jsx, что привело к той же ошибке. Все инструкции по исправлению из официального вавилон оказались бесполезными. Когда я скопировал обратно каталог компонентов, все было НАЗАД В НОРМАЛЬНО!
+
+ 21.05.2020 06:04
+yarn add --dev @babel/plugin-proposal-class-properties
+
+или
+
+npm install @babel/plugin-proposal-class-properties --save-dev.babelrc
+
+ 05.06.2020 02:24
+Я столкнулся с той же проблемой при попытке перенести некоторый jsx с помощью babel. Ниже приведено решение, которое сработало для меня. Вы можете добавить следующий json в свой .babelrc
+
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      { "targets": { "browsers": ["last 3 versions", "safari >= 6"] } }
+    ]
+  ],
+  "plugins": [["@babel/plugin-proposal-class-properties"]]
+}
+ 14.07.2020 16:01
+Для проектов React с webpack:
+
+Сделайте: npm install @ babel / plugin-offer-class-properties --save-dev
+Создайте файл .babelrc (если он отсутствует) в корневой папке, где присутствуют package.json и webpack.config.js, и добавьте к нему следующий код:
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
+}
+Добавьте приведенный ниже код в файл webpack.config.js:
+{
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+                presets: ["@babel/preset-env", "@babel/preset-react"]
+            },
+            resolve: {
+                extensions: ['.js', '.jsx']
+            }
+}
+Закройте терминал и снова запустите npm start.
+ 27.08.2020 16:02
+Для извлеченных проектов приложений create-react-app
+
+Я просто решил свой случай, добавив в свой webpack.config.js следующие строки:
+
+  presets: [
+    [
+      require.resolve('babel-preset-react-app/dependencies'),
+      { helpers: true },
+    ],
+    /* INSERT START */
+    require.resolve('@babel/preset-env'),
+    require.resolve('@babel/preset-react'),
+      {
+      'plugins': ['@babel/plugin-proposal-class-properties']
+    } 
+    /* INSERTED END */
+  ],
+ 05.11.2020 12:44
+вы должны установить
+
+npm install @ babel / core @ babel / plugin-offer-class-properties @ babel / preset-env @ babel / preset-react babel-loader
+
+а также
+
+change entry and output
+
+const path = require('path')        
+module.exports = {
+  entry: path.resolve(__dirname,'src', 'app.js'),
+  output: {
+    path: path.resolve(__dirname, "public","dist",'javascript'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(jsx|js)$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                "targets": "defaults"
+              }],
+              '@babel/preset-react'
+            ],
+            plugins: [
+              "@babel/plugin-proposal-class-properties"
+            ]
+          }
+        }]
+      }
+    ]
+  }
+}
+ 21.02.2021 11:40
+Есть два способа работы с состоянием реакции:
+
+Опция 1:Просто добавьте в package.json:
+
+"babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    }
+Вариант 2:
+
+1. Создайте файл с именем .babelrc в корневой папке.
+
+Напишите в .babelrc:
+
+{ "plugins": ["@babel/plugin-proposal-class-properties"] }
+Запустить:
+npm я @ babel / плагин-предложение-класс-свойства
+
+3. Запускаем:
+
+npm run dev
+or
+npm run watch
+ 02.03.2021 04:19
+Убедитесь, что вы по ошибке не импортировали import BrowserRouter from "react-router-dom/modules/BrowserRouter"; вместо import {BrowserRouter} from "react-router-dom";.
+
+ 15.05.2021 08:43
+Другие вопросы по теме
+Laravel Mix и VUE, VUE не найдены
+Vue 2 / Vue CLI 3: Создание асинхронных однофайловых компонентов
+Настройте способ работы «импорта» с помощью webpack
+Webpack выдает ошибку «Ошибка синтаксического анализа модуля с неожиданным токеном»
+Как создать полностью автономный чанк с помощью Webpack 3
+Повторно запустить тесты Cypress в графическом интерфейсе, когда webpack-dev-server вызывает перезагрузку страницы
+Аурелия: Ошибка: Попытка зарегистрировать элемент, когда элемент с таким именем уже существует. Имя: n. - Встречается только в производственной сборке webpack
+Как использовать прокси-сервер webpack dev с Nuxt
+Typescript, Webpack: Uncaught TypeError: Object (...) не является функцией
+Спред объекта module.exports работает с перебоями
+Похожие вопросы
+Реагировать на интеграцию компонента через функции (HOC)
+Передача нескольких свойств и действий в react / redux
+Реагирующая библиотека компоновки из github
+React-веб-камера в Reactjs ES5
+ReactJs: как добавить / добавить компонент по нажатию кнопки
+Ответьте два раза в экспрессе
+Перезапуск setInterval после clearInterval в React
+Выберите Параметры: заменить текст новым значением
+Прояснение концептуального понимания компонентов React, компонентов более высокого порядка
+Присоединитесь к массиву строк JS и элементу JSX
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+				  RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Сбой инварианта: вы не должны использовать <Route> вне <Router>
+Вопросы
+REACTJS
+Сбой инварианта: вы не должны использовать <Route> вне <Router>
+Я использую react-router-dom для маршрутизации в своем React приложении. Часть моего приложения извлечена в другой пакет. Список зависимостей выглядит так:
+
+./приложение/приборная панель/package.json
+
+{
+  "dependencies": {
+    "@app/components": "^1.0.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0"
+  }
+}
+./приложение/компоненты/package.json
+
+{
+  "peerDependencies": {
+    "react-router-dom": "^5.0.0"
+  }
+}
+Когда я использую компоненты из @app/components, которым требуются компоненты из react-router-dom, я получаю следующие ошибки:
+
+Uncaught Error: Invariant failed: You should not use <Route> outside a <Router> 
+The above error occurred in the <Context.Consumer> component:
+Uncaught (in promise) Error: Invariant failed: You should not use <Route> outside a <Router>
+Почему выдает эту ошибку? В App.js я использую BrowserRouter
+
+import React, { Suspense } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Placeholder } from '@app/components';
+
+const Auth = React.lazy(() => import(/* webpackPrefetch: true */ './pages/Auth'));
+const Index = React.lazy(() => import(/* webpackPrefetch: true */ './pages/Index'));
+
+const App = () => (
+  <Suspense fallback = {<Placeholder />}>
+    <Switch>
+      <Route path = "/auth" component = {Auth} />
+      <Route path = "/" component = {Index} />
+    </Switch>
+  </Suspense>
+);
+
+export default App;
+клиент.jsx
+
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
+
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
+ 06.04.2019 20:23
+74
+1
+158 761
+23
+Данный вопрос помечен как решенный
+ Ответы 23
+Вам также нужно импортировать именованный экспорт Router из react-router-dom и обернуть его вокруг компонентов коммутатора/маршрута.
+
+const App = () => (
+  <Router>
+    <Suspense fallback = {<Placeholder />}>
+      <Switch>
+        <Route path = "/auth" component = {Auth} />
+        <Route path = "/" component = {Index} />
+      </Switch>
+    </Suspense>
+  </Router>
+);
+ 06.04.2019 20:29
+У вас есть висящая запятая в конце вызова рендеринга после document.getElementById('root').
+
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
+ 29.04.2019 23:51
+ Ответ принят как подходящий
+Проблема с 2 экземплярами React
+
+ 30.04.2019 20:05
+Я решил эту загадочную ошибку, удалив зависимость «react-router-dom» из MyComponent. Я удалил «node_modules/react-router-dom» и из «package.json» Мое приложение структурировано следующим образом:
+
+    AppFolder
+    ├── README.md
+    ├── build
+    ├── node_modules
+    │   ├── react-router-dom
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   └── manifest.json
+    └── src
+        ├── App.css
+        ├── App.js
+        ├── App.test.js
+        ├── index.js
+        ├── redux
+        │   ├── reducers.js
+        │   └── store.js
+        └── serviceWorker.js
+
+
+    MyComponent
+    ├── README.md
+    ├── dist
+    ├── node_modules
+    │   ├── react-router-dom
+    ├── package-lock.json
+    ├── package.json
+    ├── rollup.config.js
+    └── src
+        ├── index.js
+        ├── styles.css
+        └── test.js
+Это исходный код для App.js
+
+import MyComponent from 'MyComponent'
+
+export default App(){
+ return (
+ <div className = "App">
+    <HashRouter>
+      <div>
+        <header className = "App-header">
+
+        </header>
+        <Route path = "/home" component = {MyComponent}/>
+      </div>
+    </HashRouter>
+  </div>)
+}
+Это экспорт для MyComponent
+
+export default withRouter(MyComponent);
+Если в папке компонента оставить 'react-router-dom', появится ошибка.
+
+ 23.05.2019 21:20
+Я получил это во время тестирования моего компонента, который связан с проектом (используя npm link) и из-за этого react-router-dom загружен более одного раза, в моем случае работает следующее решение:
+
+Внутри webpack.config.js я добавил:
+
+resolve: {
+    alias: {        
+        'react-router-dom': path.resolve('./node_modules/react-router-dom')
+    }
+}
+ 13.07.2019 13:54
+У меня была аналогичная проблема с компонентом Redirect. Оказалось, что я вызывал Redirect из 'react-router', а не 'react-router-dom'.
+
+Error: Invariant failed: You should not use <Redirect> outside a <Router>
+ 26.11.2019 15:51
+В моем случае эта ошибка была вызвана смешением использования вещей (withRouter, MemoryRouter) из react-router и react-router-dom. Используя только вещи из react-router-dom, инвариантная ошибка исчезла. Надеюсь, это поможет кому-нибудь.
+
+ 23.12.2019 09:59
+Вы должны включить тег Route, тег Link внутри тега Router.
+
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+const Home = () => {
+  return (
+    <div>
+      <p>Home</p>
+    </div>
+  );
+};
+
+const About = () => {
+  return (
+    <div>
+      <p>About</p>
+    </div>
+  );
+};
+
+const Contact = () => {
+  return (
+    <div>
+      <p>Contact</p>
+    </div>
+  );
+};
+class App extends Component {
+  render() {
+    return (
+        <Router>
+              <div>
+              <h1>W3Adda - Simple SPA</h1>
+                <nav>
+                  <ul>
+                    <li>
+                      <Link to = "/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to = "/about">About</Link>
+                    </li>
+                    <li>
+                      <Link to = "/contact">Users</Link>
+                    </li>
+                  </ul>
+                </nav>
+
+                <Route path = "/" exact component = {Home} />
+                <Route path = "/about" component = {About} />
+                <Route path = "/contact" component = {Contact} />
+              </div>
+        </Router>
+    );
+  }
+}
+
+export default App;
+ 25.12.2019 18:07
+Я решил эту проблему, изменив:
+
+import {Route, Switch} from "react-router";
+к
+
+import {Route, Switch} from "react-router-dom";
+просто добавь -дом.
+
+ 11.03.2020 10:28
+Я решаю эту ошибку, заключая родительский компонент в Router.
+
+Перед устранением ошибки
+
+<Header />
+<div className = "col-md-12 pd-0-0">
+  <div className = "row">
+    <Sidebar />
+    <div className = "col-sm-10 col-md-10 pd-0-0" style = {style}>
+      <Router>
+        <Switch>
+          <Route path = "/dashboard/check-in" component = {CheckIn} />
+          <Route path = "/dashboard/deals" component = {Deals} />
+          <Route path = "/dashboard/events" component = {Events} />
+          <Route path = "/dashboard/invoice" component = {Invoice} />
+          <Route path = "/dashboard/notification" component = {Notification} />
+          <Route path = "/dashboard/profile" component = {Profile} />
+          <Route path = "/dashboard/redemption" component = {Redemptions} />
+          <Route path = "/dashboard/restriction-management" component = {RestrictionManagement} />
+        </Switch>
+      </Router>
+    </div>
+  </div>
+</div>
+После решения ошибки
+
+<Router>
+  <Header />
+  <div className = "col-md-12 pd-0-0">
+    <div className = "row">
+      <Sidebar />
+      <div className = "col-sm-10 col-md-10 pd-0-0" style = {style}>
+        <Switch>
+          <Route path = "/dashboard/check-in" component = {CheckIn} />
+          <Route path = "/dashboard/deals" component = {Deals} />
+          <Route path = "/dashboard/events" component = {Events} />
+          <Route path = "/dashboard/invoice" component = {Invoice} />
+          <Route path = "/dashboard/notification" component = {Notification} />
+          <Route path = "/dashboard/profile" component = {Profile} />
+          <Route path = "/dashboard/redemption" component = {Redemptions} />
+          <Route path = "/dashboard/restriction-management" component = {RestrictionManagement} />
+        </Switch>
+      </div>
+    </div>
+  </div>
+</Router>
+ 25.03.2020 07:47
+У меня была та же проблема с моим приложением Create React при запуске тестов, и я решил ее, поместив <Router></Router внутрь App.js вместо Index.js, как я всегда делал.
+
+До:
+
+Index.js
+
+ReactDOM.render(
+    <React.StrictMode>
+        <GlobalStyle />
+        <Router>
+            <App />
+        </Router>
+    </React.StrictMode>,
+document.getElementById('root')
+);
+App.js
+
+return (
+    <div className = "App">
+        <Header />
+        <Route path = "/blabla" component = {Whatever}
+    </div>
+)
+После:
+
+Индекс.js:
+
+ReactDOM.render(
+    <React.StrictMode>
+        <GlobalStyle />
+        <App />
+    </React.StrictMode>,
+document.getElementById('root')
+);
+App.js:
+
+return (
+    <div className = "App">
+        <Router>
+            <Header />
+            <Route path = "/blabla" component = {Whatever}
+        </Router>
+    </div>
+)
+ 10.04.2020 00:03
+Я решил эту проблему, просто импортировав BrowserRouter из react-router-dom в index.js и добавив:
+
+<BrowserRouter>
+   <App>
+ </BrowserRouter>
+в пределах:
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+ document.getElementById('root'));
+ 04.05.2020 21:00
+Использование тега <Link> в компоненте, который не имеет импорта, может привести к этой ошибке, попробуйте импортировать BrowserRouter из 'react-router-dom'
+
+import {BrowserRouter , Link} from 'react-router-dom';
+затем убедитесь, что ваши связанные теги заключены в тег
+
+ 01.06.2020 09:33
+На самом деле проблема была в вашем корневом компоненте, где вы выполняете маршрутизацию, вы не должны добавлять какой-либо компонент за пределами тега Router в компонент, этот компонент ожидает только один или несколько компонентов, обернутых Route под Router в этих компонентах.
+
+неправильный код (но он будет работать, но вы создаете ошибку) -
+
+function App() {
+  return (
+    <div className = "App">
+      <Header/>
+      <Router>
+        <Switch>
+          <Route path = "/" exact>
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
+}
+Я удаляю только <Header/> , это решило проблему.
+
+написать код -
+
+function App() {
+  return (
+    <div className = "App">
+      <Router>
+        <Switch>
+          <Route path = "/" exact>
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
+}
+ 10.06.2020 19:27
+Мне удалось решить проблему, удалив <BrowserRouter> из router.js и включив его в app.js
+
+export default function  Routes() {
+  return (
+     
+      <Switch>
+        <Route path = "/" exact component = {Home} />
+        <Route path = "/book" component = {Book} />
+        <Route path = "/client" component = {Client} />
+        <Route path = "/rent" component = {Rent} />
+        <Route path = "/dash" component = {Dash} />
+      </Switch>
+    
+  );
+}
+function App() {
+  return (
+    <div>
+  
+  <BrowserRouter>
+    <Header></Header>
+    
+    <Routes/>
+    </BrowserRouter>
+    </div>
+  );
+}
+ 22.07.2020 05:33
+Используйте Маршрутизатор вне ваших компонентов. Оберните все компоненты внутри Маршрутизатор, после чего вы сможете использовать Связь в своих компонентах.
+
+импортировать {BrowserRouter as Router, Route, Switch} из 'react-router-dom';
+
+<Router>
+        <Appbar />
+        <Switch>
+          <Route exact path = "/" component = {Home} />
+          <Route path = "/mac" exact component = {Mac} />
+        </Switch>
+       <Footer />
+      </Router>
+ 22.07.2020 15:28
+Я решил эту проблему, импортировав
+
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+и завернул все компоненты Route под компонент Router
+
+ <Router>
+     <Route exact path='/' component = {HomePage} />
+ </Router>
+ 31.08.2020 08:44
+У меня была похожая проблема при попытке заменить представления Rails в приложении Solidus.
+
+Решение для меня состояло в том, чтобы отредактировать соперничество, чтобы использовать React Router, который я только что добавил, но, по-видимому, не полностью настроил.
+
+Например, я отредактировал views/spree/home/index.html из:
+
+<%= javascript_pack_tag 'application' %>
+<%= react_component("Home/Index") %>
+к:
+
+<%= javascript_pack_tag 'application' %>
+<%= react_component("Routes") %>
+Для большей справки, вот мой javascript/components/Route.js:
+
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Home/Index";
+import Product from "./Products/Show";
+
+class Routes extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Route exact path = "/" component = {Home} />
+        <Route path = "/products/:slug" component = {Product} />
+      </Router>
+    );
+  };
+};
+
+export default Routes;
+ 07.09.2020 15:13
+У меня была эта проблема во время тестирования, и я решил ее, обернув тестовый компонент маршрутизаторами.
+
+import React from 'react';
+import ReactDom from 'react-dom';
+import Header from '../components/Header/Header';
+import { BrowserRouter } from 'react-router-dom';
+
+it('renders Header without crashing', () => {
+  const div = document.createElement('div');
+
+  ReactDom.render(
+    <BrowserRouter>
+      <Header />
+    </BrowserRouter>, 
+  div);
+
+  ReactDom.unmountComponentAtNode(div);
+});
+Jest, Enzyme: Invariant Violation: You should not use or , To test a component (with Jest) that contains and withRouter you need to import Router in you test, not in your component import { BrowserRouter as Invariant Violation: You should not use or withRouter() outside a According to react router 4 docs, the components are considered valid, where I can create components composed of s, then import them into another component and place inside a .
+
+ 19.09.2020 00:04
+просто измените «реагировать-маршрутизатор» на «реагировать-маршрутизатор-дом»
+
+import {Route} from "react-router";
+к
+
+import {Route} from "react-router-dom";
+ 20.10.2020 16:31
+У меня была аналогичная ситуация с основным приложением, созданным с помощью CRA и библиотеки компонентов. У нас есть два экземпляра react-router-dom, работающих независимо. Компонент из библиотеки использует <Link>, а родительское приложение — <Router>.
+
+Вдохновленный ответом @Pavel, я обнаружил, что проблему можно решить, добавив псевдонимы. Если вы используете webpack, вы можете изменить способ разрешения модуля react-router-dom. Вы можете перезаписать порядок по умолчанию, в котором веб-пакет будет искать ваши зависимости, и сделать node_modules вашего родительского приложения более приоритетным, чем порядок разрешения модулей узла компонента:
+
+псевдонимы.js
+
+const fs = require('fs');
+const path = require('path');
+
+const directory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath) => path.resolve(directory, relativePath);
+
+module.exports = {
+  react: resolveApp('node_modules/react'),
+  'react-router-dom': resolveApp('node_modules/react-router-dom'),
+};
+которые используются config-override.js для переопределения настроек CRA по умолчанию:
+
+const { addWebpackAlias, override, removeModuleScopePlugin } = require('customize-cra');
+const aliases = require('./aliases');
+
+module.exports = override(removeModuleScopePlugin(), addWebpackAlias(aliases));
+или для webpack.config.js (если это не CRA):
+
+resolve: {
+  alias: {
+    "react-router-dom": path.resolve(appFolder, "node_modules", "react-router-dom"),
+ }
+}
+ 17.03.2021 23:30
+Если вы используете GatsbyJS и получаете эту ошибку, просто измените свой
+
+import { Link } from "react-router-dom";
+к
+
+import { Link } from 'gatsby';
+ 03.05.2021 10:43
+Самый простой ответ находится прямо в официальном документе от reactstrap для Navbar, см. этот сайт https://reactstrap.github.io/components/navbar/
+
+Они руководствовались тем, что нам нужно использовать этот импорт
+
+import {NavLink} from 'reactstrap';
+ 17.05.2021 06:12
+Другие вопросы по теме
+Как я могу написать это как компонент класса
+Как загрузить сайт по пользовательскому пути с перенаправлением
+Использование forwardRef с компонентом Link
+Как предотвратить сеанс на основе роли в реакции? [База данных]
+Как получить исходный URL-адрес маршрутизатора без параметров?
+ApolloGraphQL и React: избегайте вызова запроса и подписки при повторном монтировании компонента?
+Как преобразовать массив js [] в NSArray в iOS и строку [] в Android?
+Показывать предупреждение, когда пользователь перестает печатать в ReactJS
+UseState не устанавливает состояние при инициализации RouteProps
+Как реализовать хук для componentDidMount с помощью реактивного маршрутизатора?
+Похожие вопросы
+Как передавать переменные при вызове компонентов
+Форматирование тестов Jest -- __tests__ vs *.test.js
+Переходное состояние со ссылкой
+Запустите nginx в dockerfile с параллельным интерфейсом и серверной частью
+Как я могу условно отформатировать метку для поля в react-admin?
+Как установить тип MIME для POST - multipart/form-data в axios?
+Как сохранить корзину покупок для незарегистрированных пользователей в интернет-магазине Node?
+OnEditSubmit неправильно сохраняет новое значение
+Webpack/typescript/react — ошибка: неожиданный токен React.Component
+Реагировать css, используя ref вместо id
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Объекты недопустимы как дочерние объекты React. Если вы хотели отобразить коллекцию дочерних элементов, используйте вместо этого массив
+Вопросы
+JAVASCRIPT
+Объекты недопустимы как дочерние объекты React. Если вы хотели отобразить коллекцию дочерних элементов, используйте вместо этого массив
+Я настраиваю приложение React с бэкэндом Rails. Я получаю сообщение об ошибке «Объекты недействительны в качестве дочерних элементов React (найдено: объект с ключами {id, name, info, created_at, updated_at}). Если вы хотели отобразить коллекцию дочерних элементов, используйте вместо этого массив».
+
+Вот как выглядят мои данные:
+
+[
+    {
+        "id": 1,
+        "name": "Home Page",
+        "info": "This little bit of info is being loaded from a Rails 
+        API.",
+        "created_at": "2018-09-18T16:39:22.184Z",
+        "updated_at": "2018-09-18T16:39:22.184Z"
+    }
+]
+Мой код выглядит следующим образом:
+
+import React from 'react';
+
+class Home extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      homes: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/homes')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            homes: result
+          });
+        },
+        // error handler
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
+  render() {
+
+    const { error, isLoaded, homes } = this.state;
+
+    if (error) {
+      return (
+        <div className = "col">
+          Error: {error.message}
+        </div>
+      );
+    } else if (!isLoaded) {
+      return (
+        <div className = "col">
+          Loading...
+        </div>
+      );
+    } else {
+      return (
+        <div className = "col">
+          <h1>Mi Casa</h1>
+          <p>This is my house y'all!</p>
+          <p>Stuff: {homes}</p>
+        </div>
+      );
+    }
+  }
+}
+
+export default Home;
+Что я делаю неправильно?
+
+ 20.09.2018 17:49
+133
+1
+414 824
+26
+Данный вопрос помечен как решенный
+ Ответы 26
+ Ответ принят как подходящий
+Ваши данные homes представляют собой массив, поэтому вам придется перебирать массив, используя Array.prototype.map (), чтобы он работал.
+
+return (
+    <div className = "col">
+      <h1>Mi Casa</h1>
+      <p>This is my house y&apos;all!</p>
+      {homes.map(home => <div>{home.name}</div>)}
+    </div>
+  );
+ 20.09.2018 17:52
+Сегодня у меня такая же ошибка, но с другим сценарием по сравнению со сценарием, опубликованным в этом вопросе. Надеюсь, что решение приведенного ниже сценария кому-то поможет.
+
+Приведенной ниже функции render достаточно, чтобы понять мой сценарий и решение:
+
+render() {
+    let orderDetails = null;
+    if (this.props.loading){
+        orderDetails = <Spinner />;
+    }
+    if (this.props.orders.length == 0){
+        orderDetails = null;
+    }
+    orderDetails = (
+        <div>
+            {
+                this.props.orders && 
+                this.props.orders.length > 0 && 
+                this.props.orders.map(order => (
+                <Order 
+                    key = {order.id}
+                    ingredient = {order.ingredients}
+                    price = {order.price} />
+                ))
+            }
+        </div>
+    );
+    return orderDetails;
+}
+В приведенном выше фрагменте кода: если return orderDetails отправляется как return {orderDetails}, то сообщение об ошибке, указанное в этом вопросе, появляется, несмотря на значение 'orderDetails' (значение как <Spinner/> или null или JSX, связанное с компонентом <Order />).
+
+Описание ошибки: react-dom.development.js: 57 Неперехваченное инвариантное нарушение: объекты недействительны как дочерние объекты React (обнаружено: объект с ключами {orderDetails}). Если вы хотели отобразить коллекцию дочерних элементов, используйте вместо этого массив.
+
+Мы не можем вернуть объект JavaScript из обратного вызова внутри метода render (). Причина в том, что React ожидает, что некоторые JSX, false, null, undefined, true будут отображаться в пользовательском интерфейсе, а НЕ какой-то объект JavaScript, который я пытаюсь отобразить, когда я использую return {orderDetails}, и, следовательно, получаю ошибку, как указано выше.
+
+ДЕЙСТВИТЕЛЬНЫЙ :
+
+<div />
+
+<div></div>
+
+<div>{false}</div>
+
+<div>{null}</div>
+
+<div>{undefined}</div>
+
+<div>{true}</div>
+НЕВЕРНЫЙ :
+
+<div>{orderDetails}</div> // This is WRONG, orderDetails is an object and NOT a valid return value that React expects.
+Редактировать: Я также получил эту ошибку на тестовом сервере моей компании, который использовался QA для тестирования. Я указал свой локальный код на этот тестовый сервер и протестировал сценарий, в котором команда QA сообщила об этой ошибке, и не обнаружил ОШИБКИ на моем локальном компьютере. Я был удивлен. Я перепроверил несколько раз, перепроверил сценарий с командой QA, и я все делал правильно, но все равно не смог воспроизвести проблему. Я посоветовался с коллегами-разработчиками, но так и не смог выяснить основную причину. Поэтому, следуя информации в сообщении об ошибке, я начал сканировать весь код, который я развернул в моем последнем коммите развертывания (точнее, последние 4-5 коммитов, потому что я подозревал, что он мог быть там из последних нескольких развертываний, но был пойман в текущем. развертывание), особенно все компоненты, которые я разработал, и обнаружил, что существует компонент - внутри которого не было соблюдено заданное условие, поэтому он НИЧЕГО не возвращал из него. Так что см. Ниже образец псевдокода. Я надеюсь, что это помогает.
+
+render () {
+return (
+    {this.props.condition1 && (
+       return some jsx 1
+    )}
+
+    {this.props.condition1 && (
+       return some jsx 2
+    )})
+}
+Если в приведенном выше псевдокоде вы видите, что условие1 и условие2 не выполняются, то этот компонент не будет отображать НИЧЕГО из него, и в идеале реагирующий компонент должен возвращать из него некоторый JSX, false, null, undefined, true.
+
+ 16.10.2019 05:36
+В JavaScript массивы и коллекции разные, хотя они в чем-то похожи, но здесь для реакции нужен массив. Вам нужно создать array из collection и применить его.
+
+let homeArray = new Array(homes.length);
+let i = 0
+
+for (var key in homes) {
+    homeArray[i] =  homes[key];
+    i = i + 1;
+}
+ 17.02.2020 10:03
+Я надеюсь, что это поможет кому-то другому.
+
+Эта ошибка, по-видимому, возникает также, когда вы непреднамеренно отправляете сложный объект, который включает, например, дочерние компоненты Date to React.
+
+Пример этого передается дочернему компоненту new Date ('....') следующим образом:
+
+ const data = {name: 'ABC', startDate: new Date('2011-11-11')}
+ ...
+ <GenInfo params = {data}/>
+Если вы отправите его как значение параметра дочернего компонента, вы отправите сложный объект, и вы можете получить ту же ошибку, что и указано выше.
+
+Проверьте, не передаете ли вы что-то подобное (которое генерирует сложный объект под капотом). Вместо этого вы можете отправить эту дату как строковое значение и сделать новую дату (string_date) в дочернем компоненте.
+
+ 06.03.2020 15:31
+Была такая же проблема, в моем случае у меня была 1. Разберите строку в Json. 2. Убедитесь, что при визуализации мое представление пытается отобразить не весь объект, а object.value.
+
+data = [
+{
+    "id": 1,
+    "name": "Home Page",
+    "info": "This little bit of info is being loaded from a Rails 
+    API.",
+    "created_at": "2018-09-18T16:39:22.184Z",
+    "updated_at": "2018-09-18T16:39:22.184Z"
+}];
+var jsonData = JSON.parse(data)
+Тогда мой взгляд
+
+return (
+<View style = {styles.container}>
+  <FlatList
+    data = {jsonData}
+    renderItem = {({ item }) => <Item title = {item.name} />}
+    keyExtractor = {item => item.id}
+  />
+</View>);
+Поскольку я использую массив, я использовал плоский список для отображения и убедился, что работаю с object.value, а не с объектом, иначе вы получите ту же проблему.
+
+ 24.05.2020 09:52
+Что ж, в моем случае данные, которые я хотел отобразить, содержали объект внутри массива, поэтому из-за этого он давал ошибку, поэтому для других людей также проверьте свои данные один раз, и если он содержит объект, вам нужно чтобы преобразовать его в массив для печати всех его значений или, если вам нужно конкретное значение, используйте.
+
+Мои данные :
+
+body: " d fvsdv"
+photo: "http://res.cloudinary.com/imvr7/image/upload/v1591563988/hhanfhiyalwnv231oweg.png"
+postedby: {_id: "5edbf948cdfafc4e38e74081", name: "vit"}       
+//this is the object I am talking about.
+title: "c sx "
+__v: 0
+_id: "5edd56d7e64a9e58acfd499f"
+__proto__: Object
+Чтобы напечатать только одно значение
+
+<h5>{item.postedby.name}</h5>
+ 11.06.2020 21:47
+Просто чтобы добавить к другим параметрам, я пытался получить доступ к вложенному объекту внутри основного объекта через точечный метод, как в: this.state.arrayData.CompleteAdress.Location В этом случае Место нахождения является вложенным объектом внутри Полный адрес, поэтому я не могу просто получить к нему доступ с помощью точечной нотации.
+
+Поэтому, если вы столкнулись с той же проблемой, попробуйте JSON.parse, чтобы получить доступ к вложенному объекту и затем соответствующим образом выполнить необходимые действия.
+ 23.06.2020 10:47
+Хотя это не относится к ответу, эта ошибка чаще всего возникает, когда вы ошибочно используете выражение JavaScript внутри контекста JavaScript с помощью {}
+
+Например
+
+let x=5;
+
+export default function App(){ return( {x} ); };
+Правильный способ сделать это:
+
+let x=5;
+export default function App(){ return( x ); };
+ 25.06.2020 11:10
+Я столкнулся с той же проблемой, но теперь я рад решить эту проблему.
+
+npm i core-js
+поместите эту строку в первую строку вашего файла index.js. import core-js
+ 02.10.2020 19:04
+У меня была аналогичная ошибка при создании пользовательского модального окна.
+
+const CustomModal = (visible, modalText, modalHeader) => {}
+Проблема заключалась в том, что я не заключал свои значения в фигурные скобки, как это.
+
+const CustomModal = ({visible, modalText, modalHeader}) => {}
+Если у вас есть несколько значений для передачи компоненту, вы должны заключить его в фигурные скобки.
+
+ 08.10.2020 10:02
+В вашем состоянии дом инициализируется как массив homes: []
+
+В вашем возвращении будет попытка отрендерить дом (который представляет собой массив). <p>Stuff: {homes}</p>
+
+Это невозможно сделать. Если вы хотите визуализировать это, вам нужно визуализировать массив в каждый отдельный элемент. Например: с использованием map()
+
+Пример: {home.map(item=>item)}
+
+ 12.11.2020 05:08
+Была та же ошибка, но с другим сценарием. У меня было состояние как
+
+        this.state = {
+        date: new Date()
+    }
+поэтому, когда я спрашивал об этом в своем компоненте класса, у меня было
+
+p>Date = {this.state.date}</p>
+Вместо того
+
+p>Date = {this.state.date.toLocaleDateString()}</p>
+ 30.12.2020 20:27
+У меня также возникла ошибка, и я решил ее, удалив фигурные скобки, надеюсь, это поможет кому-то другому.
+
+Вы можете видеть, что я не вставлял con в фигурную скобку, и возникла ошибка, когда я удалил крупную скобу, ошибка исчезла.
+
+const modal = (props) => {
+const { show, onClose } = props;
+
+let con = <div className = "modal" onClick = {onClose}>
+        {props.children}
+        </div>;
+
+return show === true ? (
+    {con}
+) : (
+    <div>hello</div>
+);
+Есть статья об использовании фигурной скобки.
+
+ 24.01.2021 10:01
+У меня возникла эта проблема, когда я пытался визуализировать объект в дочернем компоненте, который получал реквизиты.
+
+Я исправил это, когда понял, что мой код пытается отобразить объект, а не значение ключа объекта, которое я пытался отобразить.
+
+ 14.02.2021 07:59
+В моем случае у меня был добавлен асинхронный режим в app.js, как показано ниже.
+
+const App = async() => {
+return(
+<Text>Hello world</Text>
+)
+}
+Но в этом не было необходимости, когда я что-то тестировал, я это добавил, и он больше не нужен. После его удаления, как показано ниже, все заработало.
+
+ const App =() => {
+    return(
+    <Text>Hello world</Text>
+    )
+}
+ 27.02.2021 18:40
+использовать формат момента, потому что это дата ... преобразовать в формат даты ... Момент (array_list_item.close_date) .format ("ММ-ДД-ГГГГ")}
+
+Примечание: React не будет отображать этот тип формата даты в функции карты.
+
+"created_at": "2018-09-18T16: 39: 22.184Z",
+
+ 09.03.2021 15:16
+Объекты недействительны как дочерние объекты React
+
+У меня такая же ошибка, но с другим сценарием. Я учился реагировать на хук useReducer и реализовал счетчик с кнопками увеличения, уменьшения и сброса, и я пытался отобразить счет на экране, но я был вышеупомянутой ошибкой.
+
+В коде я объявил счетчик, который возвращается хуком useReducer в качестве объекта, и я напрямую пытался вернуть его, а не его свойство count.
+
+На самом деле я должен был вернуть count.count, и я возвращал только count (сам объект), а не свойство.
+
+Мы можем преобразовать объект в строку и также вернуть строку.
+
+import React, { useReducer } from "react";
+
+const initialState = {
+count:0,
+}
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'increment':
+            return {count:state.count + 1}
+        case 'decrement':
+            return {count:state.count - 1}
+        case 'reset':
+            return initialState
+        default:
+            return state
+    }
+}
+
+function CounterWithReducer(props) {
+  const [count, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick = {()=>{dispatch({type:'increment'})}}>Increment</button>
+
+      <button onClick = {()=>{dispatch({type:"decrement"})}}>Decrement</button>
+      <button onClick = {()=>{dispatch({type:"reset"})}}>Reset</button>
+    </>
+  );
+}
+
+export default CounterWithReducer;
+В приведенном выше коде
+
+{считать}
+В этом разделе (в части возврата) я допустил ошибку, вместо count мне нужно использовать count.count
+
+Резюме заключается в том, что если вы пытаетесь отобразить объект на экране, вы не можете использоватьJSON.stringify()или попробуйте отобразить какое-либо свойство объекта.
+
+Я нахожусь на раннем этапе моей жизни разработчика, пожалуйста, извините меня за любые орфографические ошибки, если таковые имеются.
+
+ 21.03.2021 11:35
+Я столкнулся с этой точной ошибкой. При отслеживании основной причины этой проблемы я обнаружил, что код FRONTEND (React) вызывает API и показывает ответ на странице, обращаясь к некоторому свойству этого ответа! Итак, в этом случае есть два случая
+
+Либо это свойство не существует в ответе от серверной части (это приведет к другой ошибке) ИЛИ
+Свойство из ответа серверной части - это сложный объект (объект внутри объекта), к которому пытается получить доступ наш интерфейсный компонент React, но не может читать, потому что React требует либо STRING (путем прямого доступа к определенному свойству, например, Object.property), либо массиву. [Это дело]
+Итак, мы получили эту ошибку, потому что React ожидал STRING, но получил объект (потому что вы передали Object внутри объекта).
+
+Пожалуйста, проверьте свою внутреннюю логику (API), которая отправляет ответ.
+
+ 13.04.2021 07:46
+У меня была аналогичная проблема, но у меня это сработало. Мой результат
+
+Но ошибка, которую я совершил, была проста. В моем содержимом было больше двух, и я отказался обернуть как массив. Брекеты Карли я не ставила.
+
+import React from 'react'
+import {Button} from './Button';
+import {Link} from 'react-router-dom'
+import './HeroSection.css';
+
+function HeroSection({
+    lightBg, topLine, lightText, lightTextDesc, headline, description, 
+    buttonLabel, img,alt,imgStart}
+) {
+    return (
+        <>
+            <div className = {lightBg? 'home__hero-section': 'home__hero-section darkBg'}>
+                <div className='container'>
+                    <div className = "row home__hero-row" 
+                    style = {{display:'flex', flexDirection:imgStart==='start'?' row-reverse':'row'}}
+                    >
+                    <div className='col'>
+                        <div className='home__hero-text-wrapper'>
+                            <div className='topline'>{topLine}</div>
+                            <h1 className = {lightText? 'heading': 'heading dark'}>{headline}</h1>
+ <p className = {lightTextDesc? 'home__hero-subtitle': 'home__hero-subtitle dark'}> 
+ {description}
+ <Link to='/sign-up'>
+     <Button buttonSize='btn--wide' buttonColor='blue'>
+{buttonLabel}
+     </Button>
+ </Link>
+ </p>
+                        </div>
+
+                    </div>
+
+                    <div className='col'>
+                        <div className='home__hero-img-wrapper'>
+                      <img src = {img} alt = {alt} className='home_hero-img'/>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </>
+    );
+}
+
+export default HeroSection
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
+ 10.05.2021 11:05
+У меня была эта ошибка при использовании библиотеки BigNumber для значения перед установкой на UseState:
+
+const { toBN } = web3.utils;
+...
+ setOwner0Balance(toBN(await getBalance(owner0)));
+ 24.05.2021 20:58
+Та же ошибка, но другой сценарий. Я намеревался назначить свой пользовательский функциональный компонент опоре layoutComponent стороннего модуля.
+
+Ошибочный код:
+
+customLayout = () => {
+// function returning a component
+}
+//usage:
+{customLayout}
+Исправить:
+
+CustomLayout = () => {
+// functional component
+}
+//usage:
+<CustomLayout></CustomLayout>
+ 23.07.2021 13:29
+Есть еще один сценарий, который я запечатлел. Отрисовка модели DOM зависела от некоторых проверок. Поэтому я инициализировал его нулевым значением, а на Switch придал ему значение. И при возвращении просто вернул этот DOM.
+
+export function test() {
+  let DOM = null;
+  switch (conditions) {
+    case 1: {
+      DOM = <div>SOME DIV</div>;
+    }
+    case 2: {
+      DOM = <div>SOME DIV2</div>;
+    }
+    default: {
+      DOM = null;
+    }
+  }
+  return { DOM }; // -----1 Problem was here
+}
+Разрешение было просто обернуть его <> </>
+
+return <>{DOM}</>
+ 12.08.2021 11:25
+Я была такая же проблема. В моем случае я не отображал значение элемента. Мой первоначальный код был,
+
+        keyExtractor = {(item, index) => item.id}
+        data = {courseGoals} 
+        renderItem = {itemData => (
+          <View style = {styles.listitem}> 
+              <Text>{itemData.item}</Text> 
+          </View>
+        )} 
+      />
+Я просто добавил .value, и это сработало!
+
+        keyExtractor = {(item, index) => item.id}
+        data = {courseGoals} 
+        renderItem = {itemData => (
+          <View style = {styles.listitem}> 
+              <Text>{itemData.item.value}</Text> 
+          </View>
+        )} 
+      />
+ 12.08.2021 13:25
+В моем случае у меня было
+
+ return (
+    <div >
+      {updated.map((one) => {
+        <div>
+          <h2>{one.name}</h2>
+        </div>
+      })}
+
+    </div>
+  );
+Затем изменил на
+
+ return (
+    <div >
+      {updated.map((one,index) => {
+        return (
+          <div key = {index}>
+          <h2>{one.name}</h2>
+          </div>
+        )
+      })}
+
+    </div>
+  );
+Проблема заключалась в том, что у меня не было инструкции возвращение после функции карты
+
+ 18.08.2021 23:19
+проблема в том, что вы пытаетесь отобразить объект целиком, а не ключи внутри объекта.
+
+Например: данные
+
+[
+    {
+        "status": "success",
+        "count": 20511
+    },
+    {
+        "status": "failure",
+        "count": 1776
+    }
+]
+Теперь, в компоненте, показанном ниже, это будет работать.
+
+import React, { Component } from 'react';
+
+
+export default class Display extends Component {
+
+    render() {
+
+        const { data } = this.props;
+
+        return (
+            <>
+           
+               {
+                   data.map((value,key)=>
+                       <div>{value.status}</div>
+                       <div>{value.count}</div>
+                   )
+               }
+            </>
+
+        )
+    }
+}
+ 19.08.2021 19:13
+Эта ошибка возникает у меня при отправке объекта Date (например, отметки времени в firebse) в дочерние компоненты React.
+
+Если вы отправите его как значение параметра дочернего компонента, вы отправите сложный объект, и вы можете получить ту же ошибку, что и указано выше.
+
+Вы должны отправить эту дату как строковое значение
+
+        <p>{timestamp.toString()}</p>
+должно работать нормально вот так.
+
+ 09.09.2021 14:25
+Другие вопросы по теме
+Как уменьшить массив, чтобы получить сумму желаемых объектов?
+Получить все индексы N-мерного массива в виде списка
+Сортировка отрицательных элементов из массива
+Свежий для java (массивы и простые числа), нужна помощь в устранении проблемы
+Как получить недублирующий индекс массива в js?
+Как использовать разные данные с помощью faker в Java с помощью функций?
+Вычисление сумм и средних значений введенных чисел и сортировка чисел в Eclipse
+Разделение маски на другие маски по ее элементам
+Выделение массива размером более 2 ГБ в C (или C++)
+Сортировка массива строк в соответствии с порядком другого массива с использованием первого столбца
+Похожие вопросы
+Как уменьшить массив, чтобы получить сумму желаемых объектов?
+Я не могу понять, как применить одноразовый файл cookie к моему всплывающему окну загрузки страницы JavaScript
+Функциональный компонент React не выполняет рендеринг при изменении реквизита, переданного как массив
+Как я могу оценить код Python в контексте документа из JavaScript в JupyterLab?
+Xmlhttprequest onprogress не вызывается в Edge
+Можно ли поместить секрет клиента microsoft-graph в исходный код?
+Замена параметров в функции не работает
+Ожидание загрузки элемента на странице Расширения Chrome
+Как получить недублирующий индекс массива в js?
+Получите месяц, но его нужно сбросить в конце года с помощью javascript
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Невозможно использовать JSX, если не указан флаг --jsx
+Вопросы
+REACTJS
+Невозможно использовать JSX, если не указан флаг --jsx
+Я немного поискал решение этой проблемы. Все они предлагают добавить "jsx": "react" в ваш файл tsconfig.json. Что я и сделал. Еще одним было добавление "include: []", что я тоже сделал. Однако я все еще получаю сообщение об ошибке, когда пытаюсь редактировать файлы .tsx. Ниже мой файл tsconfig.
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react",
+        "outDir": "./build",
+        "rootDir": "./lib",
+        "removeComments": true,
+        "noEmit": true,
+        "pretty": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    },
+    "include": [
+        "./lib/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+Любые предложения были бы полезны. Я использую babel 7 для компиляции всего кода с предустановками env, react и typescript. Если вам нужно больше файлов для отладки, дайте мне знать.
+
+ 20.05.2018 09:17
+218
+1
+132 178
+27
+Данный вопрос помечен как решенный
+ Ответы 27
+ Ответ принят как подходящий
+Cannot use JSX unless the '--jsx' flag is provided
+
+Перезагрузите IDE. Иногда изменения tsconfig.json принимаются не сразу ?
+
+ 21.05.2018 03:30
+Этот ответ касается кода VS и этой конкретной ошибки, сохраняющейся в этой среде IDE. (Кому-то это может пригодиться)
+
+Если вы используете что-то вроде Webpack или какой-либо другой подобный инструмент, вы все равно можете получить эту ошибку, даже если в вашем tsconfig параметр компилятора для jsx установлен на React.
+
+Для этого есть решение. Проблема в том, что VS Code имеет встроенное автоматическое обнаружение tsc.
+
+Чтобы избавиться от ошибки в редакторе, вы можете поместить это в свои настройки пользователя:
+
+{
+    "typescript.tsc.autoDetect": "off"
+}
+Просто обратите внимание, что вы больше не получите автоматическое обнаружение tsc, но если вы в основном используете такие инструменты, как Webpack, или самостоятельно обрабатываете команду с флагами, то это не так уж важно.
+
+Примечание. Делайте это только в том случае, если ошибка сохраняется в VS Code. Чтобы убедиться, что такое поведение сохраняется, перезагрузите окна и перезапустите редактор после настройки файла tsconfig.json.
+
+ 29.06.2018 17:31
+Эта ссылка помогла решить эту проблему: https://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
+
+Обратитесь к разделу: Исправление ошибки TS17004: невозможно использовать JSX, если не указан флаг --jsx.
+
+Следующая ошибка для меня нова, но она имеет смысл, поэтому я добавляю флаг --jsx к tsc и пробую tsc --jsx helloWorld.tsx, но похоже, что я пропустил параметр для --jsx.
+
+tsc --jsx helloWorld.tsx message TS6081: Argument for '--jsx' must be 'preserve' or 'react'. In the current iteration of TypeScript 1.6 appears to have two options for --jsx, both preserve or react.
+
+preserve сохранит jsx на выходе. Я предполагаю, что это нужно для того, чтобы вы могли использовать такие инструменты, как JSX, для фактического перевода. response удалит синтаксис jsx и превратит его в простой javascript, поэтому в файле TSX он станет React.createElement ("div", null). Передав опцию реакции, мы закончим:
+
+tsc --jsx react helloWorld.tsx helloWorld.tsx(11,14): error TS2607: JSX element class does not support attributes because it does not have a 'props' property helloWorld.tsx(11,44): error TS2304: Cannot find name 'mountNode'. I'm going to tackle the last error next, as initially I didn't understand the JSX error above.
+
+ 11.05.2019 11:09
+В моем случае исправлением был перезапуск моей IDE. После перезапуска всплывало окно сообщения, показывающее, что у меня не установлен машинописный текст, хотите ли вы установить TypeScript 3.3? Я установил его, и теперь он работает отлично.
+
+ 21.05.2019 09:45
+У меня такая же ошибка, и я просто понял, как ее решить. Проблема заключалась в том, что был файл jsconfig.json, из-за которого компилятор TypeScript игнорировал файл tsconfig.json.
+
+Чтобы определить, есть ли у вас такая же проблема, в вашей среде IDE (я использую VS Code) загрузите файл с ошибкой в ​​вашем редакторе, затем откройте палитру команд и введите «TypeScript: перейти к конфигурации проекта». Если он открывает jsconfig.json, удалите этот файл и перезапустите IDE. Если на этот раз он откроет файл tsconfig.json, вы в золотом цвете.
+
+ 21.05.2019 23:35
+В моем случае я перепробовал все tsconfig.json, диалоговое окно «Свойства проекта», перезапустил IDE, проверил установленную версию TypeScript и т. д., И эта ошибка все еще была. Приходите, чтобы узнать, как разработчик добавил в файл проекта условные свойства, так что TypeScriptJSXEmit не определен во всех конфигурациях (что запутало диалоговое окно Project Properties).
+
+Вот отрывок из моего файла проекта, показывающий проблему:
+
+...
+  <PropertyGroup Condition = "'$(Configuration)' == 'QA'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+...
+ 11.07.2019 16:38
+Я получал эту ошибку даже при запуске npx tsc --jsx preserve, поэтому --jsx был определенно указан.
+
+В моем случае это было вызвано наличием incremental: true в tsconfig. Очевидно, в инкрементном режиме tsc может игнорировать настройку --jsx и вместо этого использовать информацию из предыдущих сборок (где --jsx все еще был отключен). В качестве решения я временно отключил инкрементную компиляцию, перекомпилировал и снова включил ее. Возможно, удаление артефактов сборки также может сработать.
+
+ 24.08.2019 13:36
+В моем случае проблема заключалась в том, что VSCode сгенерировал пустой файл tsconfig.json, который, конечно же, ничего не сделал.
+
+Я добавил в tsconfig.json из Страница реагирования на Typescript:
+
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react"
+    }
+}
+... затем нажмите save, и VSCode взял его оттуда.
+
+ 15.04.2020 00:40
+Перезапуск моей IDE не помог. Перезапуск сервера TypeScript все же решил эту проблему.
+
+ 07.05.2020 02:20
+В моем случае ничего из вышеперечисленного не помогло. Моя проблема заключалась в том, что расположение tsconfig.json не было корнем проекта. Так что эта шутка не могла читать файлы .jsx. Я решил это просто символической ссылкой tsconfig.json в корень проекта. Возможно, есть лучшее решение. Дайте мне знать, если он у вас есть.
+
+ 15.10.2020 10:03
+Мне пришлось добавить все свое приложение в include.
+
+Итак, мой tsconfig.json выглядит так:
+
+{
+    "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "jsx": "react",
+    "allowJs": true
+  },
+  "include": ["./"]
+}
+ 25.10.2020 15:29
+Для тех, кто читает, перейдите в tsconfig.json и измените эту строку с react-jsx на react:
+
+{
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+бонус: попробуйте также установить последнюю версию IDE TS (atm 4.2) в vscode CMD + SHIFT + P и изменить ее оттуда.
+
+ 21.11.2020 19:56
+Следующая ошибка, которую я получаю после запуска начало пряжи:
+
+> multi-step-form-typescript@0.1.0 start /home/ehsan/Documents/GitHub/multi-step-form-typescript
+> react-scripts start
+
+/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239
+      appTsConfig.compilerOptions[option] = value;
+                                          ^
+
+TypeError: Cannot assign to read only property 'jsx' of object '#<Object>'
+    at verifyTypeScriptSetup (/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239:43)
+    at Object.<anonymous> (/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/start.js:31:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! multi-step-form-typescript@0.1.0 start: `react-scripts start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the multi-step-form-typescript@0.1.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ehsan/.npm/_logs/2020-11-22T18_20_20_546Z-debug.log
+Итак, что вам нужно сделать, чтобы избавиться от этого
+
+на вашем терминале нажмите ссылку с ошибкой
+
+/home/ehsan/Documents/GitHub/multi-step-form-typescript/node_modules/react-scripts/scripts/utils/verifyTypeScriptSetup.js:239 appTsConfig.compilerOptions [параметр] = значение;
+
+а затем измените 239 строк на
+
+else if (parsedCompilerOptions [option]! == valueToCheck && option! == "jsx")
+
+Теперь после изменения этого goto tsconfig.json
+
+а затем заменить «jsx»: «реагировать-jsx» на «jsx»: «реагировать»
+
+теперь запустите свой проект с начало пряжи sudo
+
+Это работает для меня, надеюсь, это сработает и для вас :)
+
+ 22.11.2020 20:23
+Каждый раз, когда я запускаю npm start, он заменяет все, что я настроил в {jsx: ...}, на react-jsx, чтобы быть совместимым с преобразованием JSX в React 17.
+
+The following changes are being made to your tsconfig.json file:
+  - compilerOptions.jsx must be react-jsx (to support the new JSX transform in React 17)
+Проблема заключается в том, что VSCode использует более старую версию машинописного текста (4.0.3), в то время как версия машинописного текста, поставляемая вместе с проектом, - (4.1.2).
+
+Следующее помогло мне:
+
+Перейдите в палитру команд CTRL + Shift + P.
+Выберите «TypeScript: выберите версию TypeScript ...».
+Выберите «Использовать версию рабочего пространства».
+VSCode status bar
+
+VSCode command palette
+
+TypeScript workspace version
+
+ 23.11.2020 14:34
+create-react-app сломан «из коробки». AS OF 2021 MAY
+
+Внутри tsconfig include был установлен только на /src, измените на:
+
+  "include": [
+    "./src/**/*.ts"
+  ]
+ 25.11.2020 21:05
+Если вы видите эту проблему после запуска приложения create-response-app с помощью Typescript, вы можете решить эту проблему, добавив "typescript.tsdk": "node_modules/typescript/lib" в .vscode/settings.json.
+
+Для IntelliSense, если вы используете "jsx": "react-jsx", вам необходимо переключить рабочее пространство на использование TS 4.1+.
+
+Или визуально просто спуститесь к синей панели задач и выберите версию Typescript (возможно, 4.x.x что-нибудь), затем выберите «Выбрать версию TypeScript».
+
+
+
+Затем выберите «Использовать версию рабочей области», которая должна ссылаться на node_modules/typescript/lib.
+
+
+
+ 30.11.2020 11:11
+Чтобы решить эту проблему для всех будущих проектов, вы можете установить расширение JavaScript and TypeScript Nightly для VSCode.
+
+ 30.11.2020 20:14
+В моем случае ни одно из решений не работало, поэтому я посмотрел версию ECMA Scrypt. Моя версия была ec5, вы можете проверить здесь -> tsconfig.json. Итак, я попытался переключить target: "es5" на target: "es2017", и, похоже, он решает проблему, но что-то снова появляется, я отредактирую этот комментарий
+
+ 30.11.2020 21:11
+Я следил за "более простым решением", упомянутым здесь https://github.com/facebook/create-react-app/issues/10144#issuecomment-733278351
+
+"... обновить версию TS в package.json до 4.1.2"
+
+а затем перезапустил VS Code.
+
+Простой перезапуск сервера TS с помощью палитры команд для меня не помог.
+
+Никаких других шагов мне не понадобилось.
+
+ 13.12.2020 15:54
+В моем случае перезапуска VSCode и обновления машинописных текстов и сценариев выполнения до соответствующих версий было недостаточно. Восстановление после удаления файла .eslintcache окончательно устранило ошибку.
+
+ 02.01.2021 14:44
+Решение для Sublime Text:
+Убедитесь, что ваш package.json использует Typescript> = v4.1.2
+Удалите пакет Sublime Text "Typescript" через Package Control
+На момент написания в него входит Typescript v3.x
+Откройте терминал в каталоге Sublime Text «Пакеты».
+cd "~/Library/Application Support/Sublime Text 3/Packages"
+Клонируйте репозиторий Typescript-Sublime-Plugin в каталог Packages:
+git clone https://github.com/microsoft/TypeScript-Sublime-Plugin TypeScript
+Откройте настройки пользователя: Sublime Text > Preferences > Settings
+Добавить "typescript_tsdk": "node_modules/typescript/lib"
+Это сообщает подключаемому модулю Sublime Typescript использовать версию проекта Typescript, а не его версию в комплекте.
+Перезапустить Sublime Text
+В отличие от большинства настроек Sublime Text, для этого требуется перезапуск, чтобы перезапустить сервер Typescript.
+Справка:
+https://github.com/microsoft/TypeScript-Sublime-Plugin/issues/538
+
+ 03.01.2021 17:34
+Для тех, кто использует Visual Studio 2019, вы можете исправить это, выполнив следующие действия:
+
+В tsconfig.json есть эта часть
+"include": [
+    "./src/**/*.ts"
+]
+Обновить SDK Typescript в C:\Program Files (x86)\Microsoft SDKs\TypeScript
+Была у меня версия 4.0. Мне нужно было обновить его до 4.1 (точнее, до 4.1.2) с помощью
+удаление папки Typescript
+В Visual Studio 2019, Расширения> Управление расширениями, установите Typescript 4.1 for Visual Studio.
+ 14.01.2021 11:55
+Я только что исправил эту проблему с помощью своего приятеля, который переустанавливал и перенастраивал каждую чертову вещь, чтобы исправить это. Мы перепробовали все исправления в Интернете (мне даже пришлось решать это самому, поэтому я действительно был сбит с толку, почему мы могли исправить это за него).
+
+Проблема оказалась в этом расширении Бог TypeScript. Как только он был отключен, а затем удален, проблема была решена.
+
+Остерегайтесь ложного бога!
+
+ 04.02.2021 06:20
+Апрель 2021 года, и эта проблема все еще сохраняется. Я использую реагировать-шаблон-Cra-шаблон с реакцией 17.02.
+
+Это проблема с VSCode, по умолчанию он использует встроенный машинописный текст. Вам просто нужно открыть файл .tsx и
+
+Нажмите: Ctrl + Shift + P
+Входить: Машинопись: выберите версию машинописного текста ...
+Выбирать: Использовать версию рабочей области.
+ 09.04.2021 11:52
+Это продолжение ответа @basarat, потому что он частично решил проблемы в моем случае. Проблема, с которой я столкнулся, была error TS6046: Argument for '--jsx' option must be: 'preserve', 'react-native', 'react'. Я решил это следующим образом:
+
+Запустить снова ваша IDE
+Удалить ваш tsconfig.json
+Повторно инициализировать ваш tsconfig.json с помощью `` tsc --init```
+Возможно, первый шаг можно было бы пропустить, но я не исследовал это.
+
+ 27.04.2021 14:11
+Вы можете создать файл .vscode / settings.json в корне вашего проекта. В нем введите { "typescript.tsdk": "node_modules\\typescript\\lib" }, и все готово.
+
+Проблема в том, что vscode использует старую версию Typescript.
+
+изображение, показывающее код на vscode
+
+ 25.05.2021 09:12
+У меня есть монорепозиторий, и для меня Webstorm автоматически выбрал старую версию TypeScript для подпакета. Для исправления нужно было щелкнуть TypeScript X.X.X в нижнем колонтитуле, выбрать Configure TypeScript ... и выбрать правильный пакет, который работал у меня в Webstorm 2021.1.
+
+ 05.06.2021 19:12
+Другие вопросы по теме
+Веб-приложение Angular 6, которое подключается к PostgreSQL с помощью sequelize-typescript
+Как запустить функцию Firebase с HTTP-запросом на чтение данных с нескольких узлов?
+(Typescript) Импортировать json в проект Angular 4
+Функция расширения объекта TypeScript Angular 6
+Приведение свойства объекта параметра функции в Typescript
+Возникает ошибка InvalidPipeArgument Angular 6
+Как создавать уникальное значение каждый раз, когда я запускаю код java-скрипта?
+Как заменить текст изображениями в текстовом поле HTML
+Как правильно настроить точки останова при использовании VS Code для отладки приложения TypeScript, запущенного с использованием ts-node в контейнере Docker?
+Обновить служебную переменную с помощью формы ввода Angular?
+Похожие вопросы
+Проблема, возникающая при добавлении нового дочернего DOM в родительский в ReactJS
+Проблема с загрузкой движения React Native Geny
+Отключить элемент в React Js
+AWS уточняет, как реализовать currrentSession в приложении React с Redux?
+Babel не транслирует код в локальный пакет
+Почему компонент ant.design <Upload> отменяет запрос на загрузку при setState?
+Как передать реквизиты компоненту внутри навигатора React Navigation?
+Реагировать на передачу данных между компонентами, вложенными в один и тот же компонент?
+Динамически добавлять опору к объекту ReactJS
+Как мне обновить интерфейс после вызова axios? [У меня есть 2 способа]
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Невозможно выполнить обновление состояния React на отключенном компоненте
+Вопросы
+JAVASCRIPT
+Невозможно выполнить обновление состояния React на отключенном компоненте
+Проблема
+Я пишу приложение на React и не смог избежать очень распространенной ловушки - вызова setState(...) после componentWillUnmount(...).
+
+Я очень внимательно посмотрел на свой код и попытался поставить некоторые защитные предложения, но проблема не исчезла, и я все еще наблюдаю за предупреждением.
+
+Поэтому у меня два вопроса:
+
+Как понять из трассировки стека, какой конкретный компонент и обработчик событий или ловушка жизненного цикла ответственны за нарушение правила?
+Ну, как исправить саму проблему, потому что мой код был написан с учетом этой ловушки и уже пытается предотвратить ее, но какой-то базовый компонент все еще генерирует предупреждение.
+Консоль браузера
+Warning: Can't perform a React state update on an unmounted component.
+This is a no-op, but it indicates a memory leak in your application.
+To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount
+method.
+    in TextLayerInternal (created by Context.Consumer)
+    in TextLayer (created by PageInternal) index.js:1446
+d/console[e]
+index.js:1446
+warningWithoutStack
+react-dom.development.js:520
+warnAboutUpdateOnUnmounted
+react-dom.development.js:18238
+scheduleWork
+react-dom.development.js:19684
+enqueueSetState
+react-dom.development.js:12936
+./node_modules/react/cjs/react.development.js/Component.prototype.setState
+react.development.js:356
+_callee$
+TextLayer.js:97
+tryCatch
+runtime.js:63
+invoke
+runtime.js:282
+defineIteratorMethods/</prototype[method]
+runtime.js:116
+asyncGeneratorStep
+asyncToGenerator.js:3
+_throw
+asyncToGenerator.js:29
+Невозможно выполнить обновление состояния React на отключенном компоненте
+
+Код
+Book.tsx
+
+import { throttle } from 'lodash';
+import * as React from 'react';
+import { AutoWidthPdf } from '../shared/AutoWidthPdf';
+import BookCommandPanel from '../shared/BookCommandPanel';
+import BookTextPath from '../static/pdf/sde.pdf';
+import './Book.css';
+
+const DEFAULT_WIDTH = 140;
+
+class Book extends React.Component {
+  setDivSizeThrottleable: () => void;
+  pdfWrapper: HTMLDivElement | null = null;
+  isComponentMounted: boolean = false;
+  state = {
+    hidden: true,
+    pdfWidth: DEFAULT_WIDTH,
+  };
+
+  constructor(props: any) {
+    super(props);
+    this.setDivSizeThrottleable = throttle(
+      () => {
+        if (this.isComponentMounted) {
+          this.setState({
+            pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+          });
+        }
+      },
+      500,
+    );
+  }
+
+  componentDidMount = () => {
+    this.isComponentMounted = true;
+    this.setDivSizeThrottleable();
+    window.addEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  componentWillUnmount = () => {
+    this.isComponentMounted = false;
+    window.removeEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  render = () => (
+    <div className = "Book">
+      { this.state.hidden && <div className = "Book__LoadNotification centered">Book is being loaded...</div> }
+
+      <div className = {this.getPdfContentContainerClassName()}>
+        <BookCommandPanel
+          bookTextPath = {BookTextPath}
+          />
+
+        <div className = "Book__PdfContent" ref = {ref => this.pdfWrapper = ref}>
+          <AutoWidthPdf
+            file = {BookTextPath}
+            width = {this.state.pdfWidth}
+            onLoadSuccess = {(_: any) => this.onDocumentComplete()}
+            />
+        </div>
+
+        <BookCommandPanel
+          bookTextPath = {BookTextPath}
+          />
+      </div>
+    </div>
+  );
+
+  getPdfContentContainerClassName = () => this.state.hidden ? 'hidden' : '';
+
+  onDocumentComplete = () => {
+    try {
+      this.setState({ hidden: false });
+      this.setDivSizeThrottleable();
+    } catch (caughtError) {
+      console.warn({ caughtError });
+    }
+  };
+}
+
+export default Book;
+AutoWidthPdf.tsx
+
+import * as React from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+interface IProps {
+  file: string;
+  width: number;
+  onLoadSuccess: (pdf: any) => void;
+}
+export class AutoWidthPdf extends React.Component<IProps> {
+  render = () => (
+    <Document
+      file = {this.props.file}
+      onLoadSuccess = {(_: any) => this.props.onLoadSuccess(_)}
+      >
+      <Page
+        pageNumber = {1}
+        width = {this.props.width}
+        />
+    </Document>
+  );
+}
+Обновление 1: отменить функцию дроссельной заслонки (все еще не повезло)
+const DEFAULT_WIDTH = 140;
+
+class Book extends React.Component {
+  setDivSizeThrottleable: ((() => void) & Cancelable) | undefined;
+  pdfWrapper: HTMLDivElement | null = null;
+  state = {
+    hidden: true,
+    pdfWidth: DEFAULT_WIDTH,
+  };
+
+  componentDidMount = () => {
+    this.setDivSizeThrottleable = throttle(
+      () => {
+        this.setState({
+          pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+        });
+      },
+      500,
+    );
+
+    this.setDivSizeThrottleable();
+    window.addEventListener("resize", this.setDivSizeThrottleable);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.setDivSizeThrottleable!);
+    this.setDivSizeThrottleable!.cancel();
+    this.setDivSizeThrottleable = undefined;
+  };
+
+  render = () => (
+    <div className = "Book">
+      { this.state.hidden && <div className = "Book__LoadNotification centered">Book is being loaded...</div> }
+
+      <div className = {this.getPdfContentContainerClassName()}>
+        <BookCommandPanel
+          BookTextPath = {BookTextPath}
+          />
+
+        <div className = "Book__PdfContent" ref = {ref => this.pdfWrapper = ref}>
+          <AutoWidthPdf
+            file = {BookTextPath}
+            width = {this.state.pdfWidth}
+            onLoadSuccess = {(_: any) => this.onDocumentComplete()}
+            />
+        </div>
+
+        <BookCommandPanel
+          BookTextPath = {BookTextPath}
+          />
+      </div>
+    </div>
+  );
+
+  getPdfContentContainerClassName = () => this.state.hidden ? 'hidden' : '';
+
+  onDocumentComplete = () => {
+    try {
+      this.setState({ hidden: false });
+      this.setDivSizeThrottleable!();
+    } catch (caughtError) {
+      console.warn({ caughtError });
+    }
+  };
+}
+
+export default Book;
+ 27.12.2018 19:33
+309
+5
+443 748
+27
+Данный вопрос помечен как решенный
+ Ответы 27
+Обновлено: я только что понял, что предупреждение относится к компоненту TextLayerInternal. Вероятно, это ваша ошибка. Остальное по-прежнему актуально, но, возможно, это не решит вашу проблему.
+
+1) Получить экземпляр компонента для этого предупреждения сложно. Похоже, что есть некоторые обсуждения по улучшению этого в React, но в настоящее время нет простого способа сделать это. Я подозреваю, что причина, по которой он еще не был построен, вероятно, заключается в том, что компоненты должны быть написаны таким образом, что setState после размонтирования невозможно, независимо от состояния компонента. Проблема, с точки зрения команды React, всегда заключается в коде компонента, а не в экземпляре компонента, поэтому вы получаете имя типа компонента.
+
+Этот ответ может быть неудовлетворительным, но я думаю, что смогу решить вашу проблему.
+
+2) Регулируемая функция Lodashes имеет метод cancel. Вызовите cancel в componentWillUnmount и откажитесь от isComponentMounted. Отмена - это более «идиоматическая» реакция, чем введение нового свойства.
+
+ 27.12.2018 20:20
+попробуйте заменить setDivSizeThrottleable на
+
+this.setDivSizeThrottleable = throttle(
+  () => {
+    if (this.isComponentMounted) {
+      this.setState({
+        pdfWidth: this.pdfWrapper!.getBoundingClientRect().width - 5,
+      });
+    }
+  },
+  500,
+  { leading: false, trailing: true }
+);
+ 28.12.2018 00:55
+To remove - Can't perform a React state update on an unmounted component warning, use componentDidMount method under a condition and make false that condition on componentWillUnmount method. For example : -
+
+class Home extends Component {
+  _isMounted = false;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      news: [],
+    };
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    ajaxVar
+      .get('https://domain')
+      .then(result => {
+        if (this._isMounted) {
+          this.setState({
+            news: result.data.hits,
+          });
+        }
+      });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  render() {
+    ...
+  }
+}
+ 11.06.2019 08:25
+У меня было это предупреждение, возможно, из-за вызова setState из обработчика эффектов (это обсуждается в этих 3 вопросысвязанывместе).
+
+Во всяком случае, обновление версии реакции удалило предупреждение.
+
+ 15.11.2019 14:34
+Я знаю, что вы не используете историю, но в моем случае я использовал ловушку useHistory из модели React Router DOM, которая отключает компонент до того, как состояние сохраняется в моем провайдере контекста React.
+
+Чтобы решить эту проблему, я использовал ловушку withRouter, встраивающую компонент, в моем случае export default withRouter(Login), и внутри компонента const Login = props => { ...; props.history.push("/dashboard"); .... Я также удалил другой props.history.push из компонента, например if (authorization.token) return props.history.push('/dashboard'), потому что это вызывает цикл из-за состояния authorization.
+
+Альтернатива помещению нового элемента в история.
+
+ 19.01.2020 06:03
+ Ответ принят как подходящий
+Вот конкретное решение Реагировать на хуки для
+
+Ошибка
+Warning: Can't perform a React state update on an unmounted component.
+
+Решение
+Вы можете объявить let isMounted = true внутри useEffect, который будет изменен в обратный вызов очистки, как только компонент будет размонтирован. Перед обновлением состояния вы теперь проверяете эту переменную условно:
+
+useEffect(() => {
+  let isMounted = true;               // note mutable flag
+  someAsyncOperation().then(data => {
+    if (isMounted) setState(data);    // add conditional check
+  })
+  return () => { isMounted = false }; // cleanup toggles value, if unmounted
+}, []);                               // adjust dependencies to your needs
+const Parent = () => {
+  const [mounted, setMounted] = useState(true);
+  return (
+    <div>
+      Parent:
+      <button onClick = {() => setMounted(!mounted)}>
+        {mounted ? "Unmount" : "Mount"} Child
+      </button>
+      {mounted && <Child />}
+      <p>
+        Unmount Child, while it is still loading. It won't set state later on,
+        so no error is triggered.
+      </p>
+    </div>
+  );
+};
+
+const Child = () => {
+  const [state, setState] = useState("loading (4 sec)...");
+  useEffect(() => {
+    let isMounted = true;
+    fetchData();
+    return () => {
+      isMounted = false;
+    };
+
+    // simulate some Web API fetching
+    function fetchData() {
+      setTimeout(() => {
+        // drop "if (isMounted)" to trigger error again 
+        // (take IDE, doesn't work with stack snippet)
+        if (isMounted) setState("data fetched")
+        else console.info("aborted setState on unmounted component")
+      }, 4000);
+    }
+  }, []);
+
+  return <div>Child: {state}</div>;
+};
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js" integrity = "sha256-32Gmw5rBDXyMjg/73FgpukoTZdMrxuYW7tj8adbN8z4 = " crossorigin = "anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.production.min.js" integrity = "sha256-bjQ42ac3EN0GqK40pC9gGi/YixvKyZ24qMP/9HiGW7w = " crossorigin = "anonymous"></script>
+<div id = "root"></div>
+<script>var { useReducer, useEffect, useState, useRef } = React</script>
+Расширение: Custom useAsync Hook
+Мы можем инкапсулировать весь шаблон в настраиваемый Hook, который автоматически прерывает асинхронные функции в случае, если компонент отключен или значения зависимостей изменились ранее:
+
+function useAsync(asyncFn, onSuccess) {
+  useEffect(() => {
+    let isActive = true;
+    asyncFn().then(data => {
+      if (isActive) onSuccess(data);
+    });
+    return () => { isActive = false };
+  }, [asyncFn, onSuccess]);
+}
+// custom Hook for automatic abortion on unmount or dependency change
+// You might add onFailure for promise errors as well.
+function useAsync(asyncFn, onSuccess) {
+  useEffect(() => {
+    let isActive = true;
+    asyncFn().then(data => {
+      if (isActive) onSuccess(data)
+      else console.info("aborted setState on unmounted component")
+    });
+    return () => {
+      isActive = false;
+    };
+  }, [asyncFn, onSuccess]);
+}
+
+const Child = () => {
+  const [state, setState] = useState("loading (4 sec)...");
+  useAsync(simulateFetchData, setState);
+  return <div>Child: {state}</div>;
+};
+
+const Parent = () => {
+  const [mounted, setMounted] = useState(true);
+  return (
+    <div>
+      Parent:
+      <button onClick = {() => setMounted(!mounted)}>
+        {mounted ? "Unmount" : "Mount"} Child
+      </button>
+      {mounted && <Child />}
+      <p>
+        Unmount Child, while it is still loading. It won't set state later on,
+        so no error is triggered.
+      </p>
+    </div>
+  );
+};
+
+const simulateFetchData = () => new Promise(
+  resolve => setTimeout(() => resolve("data fetched"), 4000));
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js" integrity = "sha256-32Gmw5rBDXyMjg/73FgpukoTZdMrxuYW7tj8adbN8z4 = " crossorigin = "anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.production.min.js" integrity = "sha256-bjQ42ac3EN0GqK40pC9gGi/YixvKyZ24qMP/9HiGW7w = " crossorigin = "anonymous"></script>
+<div id = "root"></div>
+<script>var { useReducer, useEffect, useState, useRef } = React</script>
+Подробнее об очистке эффектов: Чрезмерная реакция: полное руководство по использованию эффекта
+
+ 28.03.2020 23:12
+Если вышеуказанные решения не работают, попробуйте это, и это сработает для меня:
+
+componentWillUnmount() {
+    // fix Warning: Can't perform a React state update on an unmounted component
+    this.setState = (state,callback)=>{
+        return;
+    };
+}
+ 06.04.2020 10:39
+У меня была аналогичная проблема и я ее решил:
+
+Я автоматически вводил пользователя в систему, отправляя действие на redux (размещение токена аутентификации в состоянии redux)
+
+а затем я пытался показать сообщение с this.setState ({succ_message: "...") в моем компоненте.
+
+Компонент выглядел пустым с той же ошибкой на консоли: «отключенный компонент» .. «утечка памяти» и т. д.
+
+После того, как я прочитал ответ Уолтера в этой теме
+
+Я заметил, что в таблице маршрутизации моего приложения маршрут моего компонента недействителен, если пользователь вошел в систему:
+
+{!this.props.user.token &&
+        <div>
+            <Route path = "/register/:type" exact component = {MyComp} />                                             
+        </div>
+}
+Я сделал Маршрут видимым независимо от того, существует токен или нет.
+
+ 25.05.2020 15:38
+У меня была аналогичная проблема, спасибо, что @ ford04 мне помог.
+
+Однако произошла другая ошибка.
+
+NB. Я использую перехватчики ReactJS
+
+ndex.js:1 Warning: Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.
+What causes the error?
+
+import {useHistory} from 'react-router-dom'
+
+const History = useHistory()
+if (true) {
+  history.push('/new-route');
+}
+return (
+  <>
+    <render component />
+  </>
+)
+Это не могло сработать, потому что, несмотря на то, что вы перенаправляете на новую страницу, все состояние и свойства обрабатываются в dom или просто рендеринг на предыдущую страницу не останавливается.
+
+What solution I found
+
+import {Redirect} from 'react-router-dom'
+
+if (true) {
+  return <redirect to = "/new-route" />
+}
+return (
+  <>
+    <render component />
+  </>
+)
+ 03.07.2020 05:36
+Основываясь на ответе @ ford04, вот то же самое, заключенное в методе:
+
+import React, { FC, useState, useEffect, DependencyList } from 'react';
+
+export function useEffectAsync( effectAsyncFun : ( isMounted: () => boolean ) => unknown, deps?: DependencyList ) {
+    useEffect( () => {
+        let isMounted = true;
+        const _unused = effectAsyncFun( () => isMounted );
+        return () => { isMounted = false; };
+    }, deps );
+} 
+Использование:
+
+const MyComponent : FC<{}> = (props) => {
+    const [ asyncProp , setAsyncProp ] = useState( '' ) ;
+    useEffectAsync( async ( isMounted ) =>
+    {
+        const someAsyncProp = await ... ;
+        if ( isMounted() )
+             setAsyncProp( someAsyncProp ) ;
+    });
+    return <div> ... ;
+} ;
+ 15.07.2020 13:41
+Если вы извлекаете данные из axios, а ошибка все еще возникает, просто заключите сеттер в условие
+
+let isRendered = useRef(false);
+useEffect(() => {
+    isRendered = true;
+    axios
+        .get("/sample/api")
+        .then(res => {
+            if (isRendered) {
+                setState(res.data);
+            }
+            return null;
+        })
+        .catch(err => console.info(err));
+    return () => {
+        isRendered = false;
+    };
+}, []);
+ 24.07.2020 06:24
+В зависимости от того, как вы открываете свою веб-страницу, вы можете не вызывать монтирование. Например, использование <Link/> для возврата к странице, которая уже была смонтирована в виртуальной модели DOM, поэтому перехватывается требование данных из жизненного цикла componentDidMount.
+
+ 02.12.2020 01:53
+Существует довольно распространенная ловушка под названием useIsMounted, которая решает эту проблему (для функциональных компонентов) ...
+
+import { useRef, useEffect } from 'react';
+
+export function useIsMounted() {
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    return () => isMounted.current = false;
+  }, []);
+
+  return isMounted;
+}
+затем в вашем функциональном компоненте
+
+function Book() {
+  const isMounted = useIsMounted();
+  ...
+
+  useEffect(() => {
+    asyncOperation().then(data => {
+      if (isMounted.current) { setState(data); }
+    })
+  });
+  ...
+}
+ 05.12.2020 01:27
+Вдохновленный принятым ответом @ ford04, у меня был даже лучший подход к его решению, вместо того, чтобы использовать useEffect внутри useAsync, создать новую функцию, которая возвращает обратный вызов для componentWillUnmount:
+
+function asyncRequest(asyncRequest, onSuccess, onError, onComplete) {
+  let isMounted=true
+  asyncRequest().then((data => isMounted ? onSuccess(data):null)).catch(onError).finally(onComplete)
+  return () => {isMounted=false}
+}
+
+...
+
+useEffect(()=>{
+        return asyncRequest(()=>someAsyncTask(arg), response=> {
+            setSomeState(response)
+        },onError, onComplete)
+    },[])
+
+ 11.01.2021 15:55
+Вдохновленный ответом @ ford04, я использую этот хук, который также принимает обратные вызовы для успеха, ошибок и, наконец, abortFn:
+
+export const useAsync = (
+        asyncFn, 
+        onSuccess = false, 
+        onError = false, 
+        onFinally = false, 
+        abortFn = false
+    ) => {
+
+    useEffect(() => {
+        let isMounted = true;
+        const run = async () => {
+            try{
+                let data = await asyncFn()
+                if (isMounted && onSuccess) onSuccess(data)
+            } catch(error) {
+                if (isMounted && onError) onSuccess(error)
+            } finally {
+                if (isMounted && onFinally) onFinally()
+            }
+        }
+        run()
+        return () => {
+            if (abortFn) abortFn()
+            isMounted = false
+        };
+    }, [asyncFn, onSuccess])
+}
+Если asyncFn выполняет какую-то выборку из серверной части, часто имеет смысл прервать ее, когда компонент отключен (хотя не всегда, иногда, например, если вы загружаете некоторые данные в хранилище, вы также можете просто захотеть доделать, даже если компонент размонтирован)
+
+ 15.01.2021 13:18
+Подход isMounted в большинстве случаев является анти-шаблоном, потому что он на самом деле ничего не очищает / не отменяет, он просто избегает изменения состояния на несмонтированных компонентах, но ничего не делает с ожидающими асинхронными задачами. Команда React недавно удален предупреждает об утечке, потому что пользователи продолжают создавать множество антишаблонов, чтобы скрыть предупреждение, а не исправить его причину.
+
+Но написать отменяемый код на простом JS может быть очень сложно. Чтобы исправить это, я создал свою собственную библиотеку useAsyncEffect2 с настраиваемыми хуками, построенную на основе отменяемого обещания (c-обещание2) для выполнения отменяемого асинхронного кода для достижения его постепенной отмены. Все асинхронные этапы (обещания), в том числе глубокие, отменяются. Это означает, что запрос здесь будет автоматически прерван, если его родительский контекст будет отменен. Конечно, вместо запроса можно использовать любую другую асинхронную операцию.
+
+Демо useAsyncEffect с простым использованием useState (Живая демонстрация):
+    import React, { useState } from "react";
+    import { useAsyncEffect } from "use-async-effect2";
+    import cpAxios from "cp-axios";
+    
+    function TestComponent({url}) {
+      const [text, setText] = useState("");
+    
+      const cancel = useAsyncEffect(
+        function* () {
+          setText("fetching...");
+          const json = (yield cpAxios(url)).data;
+          setText(`Success: ${JSON.stringify(json)}`);
+        },
+        [url]
+      );
+    
+      return (
+        <div>
+          <div>{text}</div>
+          <button onClick = {cancel}>
+            Cancel request
+          </button>
+        </div>
+      );
+    }
+useAsyncEffect Демо с использованием внутренних состояний (Живая демонстрация):
+    import React from "react";
+    import { useAsyncEffect } from "use-async-effect2";
+    import cpAxios from "cp-axios";
+    
+    function TestComponent({ url, timeout }) {
+      const [cancel, done, result, err] = useAsyncEffect(
+        function* () {
+          return (yield cpAxios(url).timeout(timeout)).data;
+        },
+        { states: true, deps: [url] }
+      );
+    
+      return (
+        <div>
+          {done ? (err ? err.toString() : JSON.stringify(result)) : "loading..."}
+          <button onClick = {cancel} disabled = {done}>
+            Cancel async effect (abort request)
+          </button>
+        </div>
+      );
+    }
+Компонент класса с использованием декораторов (Живая демонстрация)
+import React, { Component } from "react";
+import { ReactComponent } from "c-promise2";
+import cpAxios from "cp-axios";
+
+@ReactComponent
+class TestComponent extends Component {
+  state = {
+    text: ""
+  };
+
+  *componentDidMount(scope) {
+    const { url, timeout } = this.props;
+    const response = yield cpAxios(url).timeout(timeout);
+    this.setState({ text: JSON.stringify(response.data, null, 2) });
+  }
+
+  render() {
+    return (<div>{this.state.text}</div>);
+  }
+}
+
+export default TestComponent;
+Еще другие примеры:
+
+Запрос Axios с обработкой ошибок
+Получить погоду по координатам
+Живой поиск
+Приостановить и возобновить
+Захват прогресса
+ 15.01.2021 22:31
+const handleClick = async (item: NavheadersType, index: number) => {
+    const newNavHeaders = [...navheaders];
+    if (item.url) {
+      await router.push(item.url);   =>>>> line causing error (causing route to happen)
+      // router.push(item.url);  =>>> coreect line
+      newNavHeaders.forEach((item) => (item.active = false));
+      newNavHeaders[index].active = true;
+      setnavheaders([...newNavHeaders]);
+    }
+  };
+ 10.02.2021 14:44
+Решение от @ ford04 не сработало для меня, и особенно, если вам нужно использовать isMounted в нескольких местах (например, множественное использованиеEffect), рекомендуется использоватьRef, как показано ниже:
+
+Основные пакеты
+"dependencies": 
+{
+  "react": "17.0.1",
+}
+"devDependencies": { 
+  "typescript": "4.1.5",
+}
+
+Компонент My Hook
+export const SubscriptionsView: React.FC = () => {
+  const [data, setData] = useState<Subscription[]>();
+  const isMounted = React.useRef(true);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      // fetch data
+      // setData (fetch result)
+
+      return () => {
+        isMounted.current = false;
+      };
+    }
+  }
+});
+ 11.02.2021 21:30
+Самое простое и компактное решение (с пояснением) рассматривается ниже как однострочное решение.
+
+useEffect(() => { return () => {}; }, []);
+Приведенный выше пример useEffect() возвращает функцию обратного вызова, запускающую React, чтобы завершить отключенную часть своего жизненного цикла до обновления состояния.
+
+Это очень упрощенное решение - все, что нужно. Кроме того, он также работает в отличие от вымышленного синтаксиса, предоставляемого @ ford04 и @sfletche. Между прочим, приведенный ниже фрагмент кода из @ ford04 является чисто воображаемым синтаксисом (@sfletche, @vinod, @guneetgstar и @ Дрю Кордано использовали тот же самый воображаемый синтаксис).
+
+data => { <--- Вымышленный / воображаемый синтаксис
+
+someAsyncOperation().then(data => {
+    if (isMounted) setState(data);    // add conditional check
+  })
+Все мои линтеры и все линтеры моей команды не принимают его и сообщают о Uncaught SyntaxError: unexpected token: '=>'. Я удивлен, что никто не уловил воображаемый синтаксис. Может ли кто-нибудь, кто участвовал в этой цепочке вопросов, особенно среди проголосовавших, объяснить мне, как они заставили решения работать для них?
+
+ 27.05.2021 06:40
+ОБНОВЛЕНИЕ НЕ ИСПОЛЬЗУЙТЕ МОЙ ОРИГИНАЛЬНЫЙ ОТВЕТ, ЭТО НЕ РАБОТАЕТ
+
+Этот ответ был основан на использовании отменяемых обещаний и примечания в makecancelable, которое я перенес на использование хуков. Однако, похоже, это не отменяет цепочку async / await и даже cancelable-promiseне поддерживает отмену цепочки ожиданий.
+
+Проведя немного дополнительных исследований, выяснилось, что некоторые внутренние причины Google препятствовали тому, чтобы отменяемые обещания вошли в стандарт.
+
+Более того, было некоторое обещание с Bluebird, которое вводит отменяемые обещания, но оно не работает в Expo, или, по крайней мере, я не видел примера его работы в Expo.
+
+принятый ответ - лучший. Поскольку я использую TypeScript, я адаптировал код с несколькими модификациями (я явно установил зависимости, поскольку неявные зависимости принятого ответа, по-видимому, дают цикл повторного рендеринга в моем приложении, добавлены и используют async / await вместо цепочки обещаний, передайте ref на смонтированный объект, чтобы цепочку async / await можно было отменить раньше, если это необходимо)
+
+/**
+ * This starts an async function and executes another function that performs
+ * React state changes if the component is still mounted after the async
+ * operation completes
+ * @template T
+ * @param {(mountedRef: React.MutableRefObject<boolean>) => Promise<T>} asyncFunction async function,
+ *   it has a copy of the mounted ref so an await chain can be canceled earlier.
+ * @param {(asyncResult: T) => void} onSuccess this gets executed after async
+ *   function is resolved and the component is still mounted
+ * @param {import("react").DependencyList} deps
+ */
+export function useAsyncSetEffect(asyncFunction, onSuccess, deps) {
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    mountedRef.current = true;
+    (async () => {
+      const x = await asyncFunction(mountedRef);
+      if (mountedRef.current) {
+        onSuccess(x);
+      }
+    })();
+    return () => {
+      mountedRef.current = false;
+    };
+  }, deps);
+}
+Оригинальный ответ
+Поскольку у меня много разных операций с async, я использую пакет cancelable-promise, чтобы решить эту проблему с минимальными изменениями кода.
+
+Предыдущий код:
+
+useEffect(() => 
+  (async () => {
+    const bar = await fooAsync();
+    setSomeState(bar);
+  })(),
+  []
+);
+Новый код:
+
+import { cancelable } from "cancelable-promise";
+
+...
+
+useEffect(
+  () => {
+    const cancelablePromise = cancelable(async () => {
+      const bar = await fooAsync();
+      setSomeState(bar);
+    })
+    return () => cancelablePromise.cancel();
+  },
+  []
+);
+
+Вы также можете включить его в пользовательскую служебную функцию, подобную этой
+
+/**
+ * This wraps an async function in a cancelable promise
+ * @param {() => PromiseLike<void>} asyncFunction
+ * @param {React.DependencyList} deps
+ */
+export function useCancelableEffect(asyncFunction, deps) {
+  useEffect(() => {
+    const cancelablePromise = cancelable(asyncFunction());
+    return () => cancelablePromise.cancel();
+  }, deps);
+}
+ 28.05.2021 16:55
+Вот простое решение для этого. Это предупреждение возникает из-за того, что мы выполняем некоторый запрос на выборку, когда этот запрос находится в фоновом режиме (поскольку некоторые запросы занимают некоторое время), и мы возвращаемся с этого экрана, тогда они реагируют, не могут обновить состояние. вот пример кода для этого. написать эта строка перед каждым обновлением состояния.
+
+if (!isScreenMounted.current) return;
+Вот полный код
+
+import React , {useRef} from 'react'
+import { Text,StatusBar,SafeAreaView,ScrollView, StyleSheet } from 'react-native'
+import BASEURL from '../constants/BaseURL';
+const SearchScreen = () => {
+    const isScreenMounted = useRef(true)
+    useEffect(() => {
+        return () =>  isScreenMounted.current = false
+    },[])
+
+    const ConvertFileSubmit = () => {
+        if (!isScreenMounted.current) return;
+         setUpLoading(true)
+ 
+         var formdata = new FormData();
+         var file = {
+             uri: `file://${route.params.selectedfiles[0].uri}`,
+             type:`${route.params.selectedfiles[0].minetype}`,
+             name:`${route.params.selectedfiles[0].displayname}`,
+         };
+         
+         formdata.append("file",file);
+         
+         fetch(`${BASEURL}/UploadFile`, {
+             method: 'POST',
+             body: formdata,
+             redirect: 'manual'
+         }).then(response => response.json())
+         .then(result => {
+             if (!isScreenMounted.current) return;
+             setUpLoading(false)    
+         }).catch(error => {
+             console.info('error', error)
+         });
+     }
+
+    return(
+    <>
+        <StatusBar barStyle = "dark-content" />
+        <SafeAreaView>
+            <ScrollView
+            contentInsetAdjustmentBehavior = "automatic"
+            style = {styles.scrollView}>
+               <Text>Search Screen</Text>
+            </ScrollView>
+        </SafeAreaView>
+    </>
+    )
+}
+
+export default SearchScreen;
+
+
+const styles = StyleSheet.create({
+    scrollView: {
+        backgroundColor:"red",
+    },
+    container:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center"
+    }
+})
+ 26.07.2021 09:54
+Я решил эту проблему, предоставив все параметры, которые используются в хуке useEffect
+
+Код сообщил об ошибке:
+
+useEffect(() => {
+    getDistrict({
+      geonameid: countryId,
+      subdistrict: level,
+    }).then((res) => {
+      ......
+    });
+  }, [countryId]);
+Код после исправления:
+
+useEffect(() => {
+    getDistrict({
+      geonameid: countryId,
+      subdistrict: level,
+    }).then((res) => {
+      ......
+    });
+  }, [countryId,level]);
+Как видите, проблемы решены после того, как я предоставил все параметры (включая параметр уровня), которые должны пройти.
+
+ 27.07.2021 04:47
+Добавьте ссылку на компонент jsx, а затем проверьте, что он существует
+
+function Book() {
+  const ref = useRef();
+
+  useEffect(() => {
+    asyncOperation().then(data => {
+      if (ref.current) setState(data);
+    })
+  });
+
+  return <div ref = {ref}>content</div>
+}
+ 10.09.2021 13:23
+Проверка того, смонтирован ли компонент, на самом деле является анти-шаблоном согласно документации React. Решение для предупреждения setState заключается скорее в использовании AbortController.:
+
+useEffect(() => {
+  const abortController = new AbortController()   // creating an AbortController
+  fetch(url, { signal: abortController.signal })  // passing the signal to the query
+    .then(data => {
+      setState(data)                              // if everything went well, set the state
+    })
+    .catch(error => {
+      if (error.name === 'AbortError') return     // if the query has been aborted, do nothing
+      throw error
+    })
+  
+  return () => {
+    abortController.abort()                       // stop the query by aborting on the AbortController on unmount
+  }
+}, [])
+Для асинхронных операций, которые не основаны на Fetch API, все же должен быть способ отменить эти асинхронные операции, и вам лучше использовать их, чем просто проверять, смонтирован ли компонент. Если вы создаете свой собственный API, вы можете реализовать в нем API AbortController для его обработки.
+
+Для большего контекста, проверка того, установлен ли компонент, является анти-шаблоном как React внутренне проверяет, смонтирован ли компонент для отображения этого предупреждения.. Повторное выполнение той же проверки - просто способ скрыть предупреждение, и есть несколько более простых способов скрыть их, чем добавление этого фрагмента кода в большую часть кодовой базы.
+
+Источник: https://medium.com/doctolib/react-stop-checking-if-your-component-is-mounted-3bb2568a4934
+
+ 07.10.2021 18:41
+React уже удалил это предупреждение но вот лучшее решение (не только обходной путь)
+
+useEffect(() => {
+  const abortController = new AbortController()   // creating an AbortController
+  fetch(url, { signal: abortController.signal })  // passing the signal to the query
+    .then(data => {
+      setState(data)                              // if everything went well, set the state
+    })
+    .catch(error => {
+      if (error.name === 'AbortError') return     // if the query has been aborted, do nothing
+      throw error
+    })
+  
+  return () => {
+    abortController.abort() 
+  }
+}, [])
+ 07.10.2021 19:26
+"If there is a setter hook in your useEffect, return an cleanup function" - me
+Проверьте свои функции useEffect(), у которых есть перехватчик установки setSomething(), и заставьте его возвращать функцию очистки в конце. Например:
+
+useEffect(() => {
+  ...
+  setSomething(something); //
+  ...
+  return () => { }; // The cleanup function we have to add, it could be empty like this
+}, [/*whatever deps or no deps at all*/]);  
+ 11.12.2021 22:00
+У меня есть 2 решения этой ошибки:
+
+возвращение:
+Если вы используете hook и useEffect, поставьте конец return на useEffect.
+
+useEffect(() => {
+    window.addEventListener('mousemove', logMouseMove)
+    return () => {
+        window.removeEventListener('mousemove', logMouseMove)
+    }
+}, [])
+componentWillUnmount:
+Если вы используете componentDidMount, поставьте рядом с ним componentWillUnmount.
+
+componentDidMount() { 
+    window.addEventListener('mousemove', this.logMouseMove)
+}
+
+componentWillUnmount() {
+    window.removeEventListener('mousemove', this.logMouseMove)
+}
+ 14.12.2021 09:52
+Другие вопросы по теме
+Отображение условного маршрута при отображении компонентов
+Отправить действие через соединение Я получаю сообщение об ошибке Превышен максимальный размер стека вызовов
+Неопределенные объекты с использованием Map (). Get () в Typescript
+Установить пакет NPM глобально из частного репозитория
+React UI Element Placement?
+Кнопка чипа не отображается при создании условного метода внутренней отрисовки
+Как я могу разрушить {this.props.children}?
+Реакция: модуль не найден: не удается разрешить
+Redux увеличивает количество в корзине
+Отправка относительных данных из сопоставленного массива в модальное окно?
+Похожие вопросы
+Неизвестный пользовательский элемент и директива
+Фильтрация ответа JSON с помощью Vue
+Как получить значения из mongodb и отобразить в HTML
+Как заставить html числовой ввод обернуться
+Отображение условного маршрута при отображении компонентов
+Кнопка переключения внутри угловой реактивной формы
+Отправить действие через соединение Я получаю сообщение об ошибке Превышен максимальный размер стека вызовов
+Добавление тега href в Javascript
+Неопределенные объекты с использованием Map (). Get () в Typescript
+Как получить данные Json из файла cookie в javascript?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Почему я все время получаю Delete 'cr' [prettier / prettier]?
+Вопросы
+REACTJS
+Почему я все время получаю Delete 'cr' [prettier / prettier]?
+Я использую vscode с Prettier 1.7.2 и Eslint 1.7.0. После каждой новой строки я получаю:
+
+[eslint] Delete 'cr' [prettier/prettier]
+Это .eslintrc.json:
+
+{
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "no-confusing-arrow": "off",
+    "linebreak-style": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "no-plusplus": "off"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react"],
+  "globals": {
+    "browser": true,
+    "$": true,
+    "before": true,
+    "document": true
+  }
+}
+
+Файл .prettierrc:
+
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+}
+Как мне избавиться от этой ошибки?
+
+ 28.11.2018 10:52
+378
+2
+253 183
+28
+ Ответы 28
+Попробуйте установить "endOfLine":"auto" в вашем файле .prettierrc (внутри объекта)
+
+Или установить
+
+'prettier/prettier': [
+  'error',
+  {
+    'endOfLine': 'auto',
+  }
+]
+внутри объекта правил файла eslintrc.
+
+Если вы используете Windows-машину, endOfLine может быть "crlf" в зависимости от вашей конфигурации git.
+
+ 13.12.2018 20:57
+измените этот параметр на VSCode.
+
+
+
+ 16.01.2019 04:19
+Я использую git + vscode + windows + vue, а после прочтения документа eslint: https://eslint.org/docs/rules/linebreak-style
+
+Наконец исправьте это:
+
+добавить *.js text eol=lf в .gitattributes
+
+затем запустите vue-cli-service lint --fix
+
+ 06.05.2019 04:59
+На моем компьютере с Windows я решил это, добавив приведенный ниже фрагмент кода в объект rules файла .eslintrc.js, находящийся в каталоге моего текущего проекта.
+
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      },
+    ],
+Это сработало и на моем Mac
+
+ 30.08.2020 08:21
+Я знаю, что это старый, но я только что столкнулся с проблемой в моей команде (некоторые Mac, некоторые Linux, некоторые окна, все vscode).
+
+Решением было установить строку, заканчивающуюся настройками vscode:
+
+.vscode/settings.json
+
+{
+    "files.eol": "\n",
+}
+https://qvault.io/2020/06/18/how-to-get-consistent-line-breaks-in-vs-code-lf-vs-crlf/
+
+ 06.11.2020 10:33
+Я перешел на "красивее": "^ 2.2.0", и ошибка исчезла
+
+ 24.11.2020 05:00
+в файле .eslintrc.json в побочных ролях добавьте этот код, он решит эту проблему
+
+      "rules": {
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ]
+
+  }
+ 28.11.2020 09:28
+Попробуй это. Меня устраивает:
+
+yarn run lint --fix
+
+или
+
+npm run lint -- --fix
+
+ 14.12.2020 14:41
+Исправлено - Мой .eslintrc.js выглядит так:
+
+module.exports = {
+  root: true,
+  extends: '@react-native-community',
+  rules: {'prettier/prettier': ['error', {endOfLine: 'auto'}]},
+};
+ 26.12.2020 09:17
+В корне откройте файл .editorconfig и измените:
+
+end_of_line = lf
+
+к
+
+end_of_line = auto
+
+Это должно исправить это для новых файлов.
+
+ 29.12.2020 09:17
+Добавьте это в свой файл .prettierrc и откройте VSCODE
+
+"endOfLine": "auto"
+ 04.01.2021 21:32
+Все ответы выше верны, но когда я использую Windows и отключить расширение Prettier ESLintrvest.vs-code-prettier-eslint, проблема будет исправлена.
+
+ 10.01.2021 19:39
+Измените тип файла с tsx -> ts, jsx -> js
+
+Вы можете получить эту ошибку, если работаете с файлом .tsx или .jsx и просто экспортируете стили и т. д., А не jsx. В этом случае ошибка решается изменением типа файла на .ts или .js.
+
+ 19.01.2021 07:43
+Для меня сработало:
+
+Обновите prettier до версии 2.2.1 (последняя версия на данный момент), как предложил Роберто Л.Л. Для этого выполните
+npm update prettier
+
+Выполните исправление lint, как предложил Хакан (это изменит все файлы в проекте, чтобы преобразовать окончание строки в LF).
+npm run lint -- --fix
+
+Изменять файлы .eslintrc и .prettierrc не пришлось!
+
+ 24.01.2021 00:15
+Не стоит игнорировать правило линтера. Просто исправьте это автоматически
+
+npm install -g prettier
+prettier -w .\webpack.config.js # or other file
+ 17.03.2021 09:45
+Исправлено: в моем eslintrc.js некоторые правила выглядят так:
+
+rules: {
+    'prettier/prettier': ['error', { "endOfLine": "auto"}, { usePrettierrc: true }],  // Use our .prettierrc file as source
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'simple-import-sort/imports': 'error',
+    "simple-import-sort/exports": "error"
+}
+ 20.03.2021 18:28
+В моем случае я использую ОС Windows и код git поддерживает Mac и конвертирую в CRLF выполните команду ниже в командной строке, чтобы остановить преобразование файлов в CRLF: 
+
+git config --global core.autocrlf input
+Снова проверьте код, снова откройте Visual Studio Code и снова запустите свои скрипты. У меня это сработало.
+
+ 14.04.2021 17:47
+Я перепробовал все здесь, и мне нужно было управлять расширением конфигурации красивее с помощью расширений значков> красивее> маленький движок> настройки расширений> Prettier: End Of Line> установить на авто.
+
+После добавления этих двух строк в мой settings.json
+
+"eslint.run": "onSave",
+"editor.formatOnSave": true,
+Я смог использовать конфигурацию ниже внутри правила .eslintrc.js.
+
+"prettier/prettier": ["error", {
+    "endOfLine":"auto"
+}],
+ 24.04.2021 21:00
+Решение
+git config --global core.autocrlf false
+После глобальной настройки вам нужно снова вытащить код.
+
+Основная причина проблемы:
+Виновник - git, свойство конфигурации core.autocrlf.
+
+По историческим причинам разрывы строк в текстовом файле на windows и linux различаются.
+
+Windows При переносе строки возврат каретки используется одновременно с CR(carriage-return character) и переносом строки LF(linefeed character)
+Mac и Linux используют только символ новой строки LF
+Старая версия Mac использует возврат каретки CR
+Следовательно, возникнут проблемы несовместимости при создании и использовании текстовых файлов в разных системах.
+
+Когда я клонирую код на Windows, autocrlf по умолчанию имеет значение истинный, а затем каждая строка файла автоматически конвертируется в CRLF. Если вы не вносите никаких изменений в файл, eslint удалит CR с помощью pre-commit, поскольку git автоматически конвертирует CRLF в LF.
+
+Ссылка
+https://developpaper.com/solution-to-delete-%E2%90%8Deslint-prettier-prettier-error/
+
+ 28.04.2021 20:24
+Если приведенный выше код не работает, попробуйте эти два шага.
+
+1. в файле .eslintrc.json внутри объекта правил добавьте этот код, он решит эту проблему
+
+ "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ]
+2 Изменить сервер разработчика - исправление
+
+npm run dev
+К
+
+npm run dev --fix
+ИЛИ
+
+npm run lint -- --fix
+yarn run lint -- --fix
+ 22.05.2021 11:52
+Проверьте правую часть строки состояния VS Code внизу, где отображается такая информация, как строка и столбец, пробелы, кодировка текста (UTF-8 и т. д.). Вы должны увидеть отображение статуса Select End Of Line Sequence (LF или CRLF), которое вы можете щелкнуть, чтобы изменить. Убедитесь, что вы не изменили это вручную на что-то, что противоречит тому, что вы хотите, чтобы Prettier использовал.
+
+ 24.05.2021 15:40
+У меня была такая же проблема в моем приложении nest js. Добавление приведенного ниже кода в .eslintrc.jsrules и последующий запуск yarn run lint --fix устранили проблему.
+
+'prettier/prettier': [
+  'error',
+  {
+    endOfLine: 'auto',
+  },
+],
+а мои правила .eslintrc.js выглядят примерно так ..
+
+ rules: {
+'@typescript-eslint/interface-name-prefix': 'off',
+'@typescript-eslint/explicit-function-return-type': 'off',
+'@typescript-eslint/explicit-module-boundary-types': 'off',
+'@typescript-eslint/no-explicit-any': 'off',
+'prettier/prettier': [
+  'error',
+  {
+    endOfLine: 'auto',
+  },
+],
+},
+
+ 04.07.2021 07:07
+Добавьте это правило ниже в файл .eslintrc и затем перезапустите свой проект.
+
+rules: {
+    'prettier/prettier': ['error', { "endOfLine": "auto"}, { usePrettierrc: true }],  
+}
+ 04.09.2021 12:58
+Решение
+
+1. Отключите настройку автоконвертации git.
+
+git --global config core.autocrlf false
+
+2. Удалите старые данные из кеша.
+
+git rm --cached -r .
+
+3. Сбросить файлы git
+
+git reset --hard
+
+ 01.10.2021 11:48
+Ошибка появляется, когда я извлекаю код из git, и у меня это работает:
+ШАГ 1:
+git config --global core.autocrlf false
+
+ШАГ 2:
+удалить вашу текущую папку
+ШАГ 3:
+снова вытащить код из git
+попробуйте запустить команду еще раз
+ 08.10.2021 17:56
+Это работа для меня
+
+шаг 1 React js root directory найти файл .eslintrc
+
+Шаг 2 найти в .eslintrc
+
+"prettier/prettier": [
+  2,
+  {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 2
+  }
+]
+заменить
+
+"prettier/prettier": [
+  "error",
+  {
+    "endOfLine": "auto"
+  }
+]
+сохранить файл, а затем запустить
+
+npm start
+ 10.10.2021 06:53
+отредактируйте файл .eslintrc.json и обновите значение "красивее / красивее", показанное ниже.
+
+Я столкнулся с той же проблемой и исправил, используя следующие изменения.
+
+"prettier/prettier": [
+    "error", {
+         "singleQuote": true,
+         "parser": "flow" 
+    }
+],
+ 18.10.2021 02:48
+В файл .eslintrc добавьте следующее:
+
+extends: ['prettier'] и plugins: ['prettier']
+
+rules: {'prettier/prettier': ['error', {endOfLine: 'auto'}]}
+
+В .prettierrc удалите это:
+
+endOfLine: 'auto'
+Меня устраивает.
+
+ 06.12.2021 17:15
+Другие вопросы по теме
+Библиотеки C для Linux: как настроить Visual Studio Code для работы с ними в Windows?
+Ошибка при развертывании расширения: «Не зарегистрирован поставщик данных, который может предоставить данные просмотра»
+Как включить вредоносное расширение?
+Какие файлы проекта создает Visual Studio Code с помощью своих расширений Java?
+Как в интерактивном режиме отлаживать набор тестов NodeJS в VS Code?
+VSCode, Perforce: «КОНТРОЛЬ ИСТОЧНИКА Поставщики системы контроля версий не зарегистрированы»
+Сворачивание кода VS на основе скобок - без отступов
+Отладка юнит-тестов jest с помощью приложения create-response-app не достигает точки останова в VSCode
+Как заставить среду разработки Visual Studio Code использовать '/' для путей в Windows
+Комментирование блока свернутого кода приводит к его развертыванию в коде Visual Studio
+Похожие вопросы
+Тип возврата TypeScript React HOC, совместимый с декоратором
+Как решить проблему перекрытия меток для компонента автозаполнения пользовательского интерфейса React Material
+ReactJS пытается вызвать метод класса из кнопки, которая динамически отображается
+Как сделать строку редактируемой одним нажатием кнопки в таблице начальной загрузки React?
+Ошибка CORS - невозможно получить Rest api из JIRA с помощью React.js
+React.createElement: тип недействителен при использовании нескольких скриптов Helmet React Typescript
+Элементы <Header> (<Avatar>, <Text>) складываются под панелью навигации телефона - реакция - родной
+Redux TypeError: невозможно прочитать свойство 'apply' из undefined
+Получить данные в ReactJS
+Тест на реакцию, подсчет количества обновлений после действия отправки
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+	RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Неверный вызов ловушки. Хуки можно вызывать только внутри тела функционального компонента
+Вопросы
+JAVASCRIPT
+Неверный вызов ловушки. Хуки можно вызывать только внутри тела функционального компонента
+Я хочу показать некоторые записи в таблице с помощью React, но я получил эту ошибку:
+
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+
+You might have mismatching versions of React and the renderer (such as React DOM)
+You might be breaking the Rules of Hooks
+You might have more than one copy of React in the same app See for tips about how to debug and fix this problem.
+import React, {
+  Component
+} from 'react';
+import {
+  makeStyles
+} from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing(3),
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 650,
+  },
+}));
+
+class allowance extends Component {
+  constructor() {
+    super();
+    this.state = {
+      allowances: [],
+    };
+
+  }
+
+  componentWillMount() {
+    fetch('http://127.0.0.1:8000/allowances')
+      .then(data => {
+
+        return data.json();
+
+      }).then(data => {
+
+        this.setState({
+          allowances: data
+        });
+
+        console.info("allowance state", this.state.allowances);
+      })
+
+  }
+
+
+
+  render() {
+    const classes = useStyles();
+    return ( <
+      Paper className = {
+        classes.root
+      } >
+      <
+      Table className = {
+        classes.table
+      } >
+      <
+      TableHead >
+      <
+      TableRow >
+      <
+      TableCell > Allow ID < /TableCell> <
+      TableCell align = "right" > Description < /TableCell> <
+      TableCell align = "right" > Allow Amount < /TableCell> <
+      TableCell align = "right" > AllowType < /TableCell>
+
+      <
+      /TableRow> <
+      /TableHead> <
+      TableBody > {
+        this.state.allowances.map(row => ( <
+          TableRow key = {
+            row.id
+          } >
+          <
+          TableCell component = "th"
+          scope = "row" > {
+            row.AllowID
+          } <
+          /TableCell> <
+          TableCell align = "right" > {
+            row.AllowDesc
+          } < /TableCell> <
+          TableCell align = "right" > {
+            row.AllowAmt
+          } < /TableCell> <
+          TableCell align = "right" > {
+            row.AllowType
+          } < /TableCell>                     <
+          /TableRow>
+        ))
+      } <
+      /TableBody> <
+      /Table> <
+      /Paper>
+    );
+  }
+
+}
+
+export default allowance;
+ 19.06.2019 10:57
+177
+0
+436 859
+32
+Данный вопрос помечен как решенный
+ Ответы 32
+React linter принимает все методы, начинающиеся с use, поскольку хуки и хуки не работают внутри классов. переименовав const useStyles во что-нибудь еще, что не начинается с use, как const myStyles, вы готовы к работе.
+
+Обновлять:
+
+makeStyles — это хук API, и вы не можете использовать его внутри классов. вы можете использовать API стилизованных компонентов. см. здесь
+
+ 19.06.2019 11:05
+ Ответ принят как подходящий
+Вы можете вызывать хуки только из функций React. Подробнее здесь.
+
+Просто преобразуйте компонент класса Allowance в функциональный компонент.
+
+Демонстрация рабочего кода в песочнице.
+
+const Allowance = () => {
+  const [allowances, setAllowances] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/allowances")
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        setAllowances(data);
+      })
+      .catch(err => {
+        console.info(123123);
+      });
+  }, []);
+
+  const classes = useStyles();
+  return ( <
+    Paper className = {
+      classes.root
+    } >
+    <
+    Table className = {
+      classes.table
+    } >
+    <
+    TableHead >
+    <
+    TableRow >
+    <
+    TableCell > Allow ID < /TableCell> <
+    TableCell align = "right" > Description < /TableCell> <
+    TableCell align = "right" > Allow Amount < /TableCell> <
+    TableCell align = "right" > AllowType < /TableCell> <
+    /TableRow> <
+    /TableHead> <
+    TableBody > {
+      allowances.map(row => ( <
+        TableRow key = {
+          row.id
+        } >
+        <
+        TableCell component = "th"
+        scope = "row" > {
+          row.AllowID
+        } <
+        /TableCell> <
+        TableCell align = "right" > {
+          row.AllowDesc
+        } < /TableCell> <
+        TableCell align = "right" > {
+          row.AllowAmt
+        } < /TableCell> <
+        TableCell align = "right" > {
+          row.AllowType
+        } < /TableCell> <
+        /TableRow>
+      ))
+    } <
+    /TableBody> <
+    /Table> <
+    /Paper>
+  );
+};
+
+export default Allowance;
+ 19.06.2019 11:13
+Вы можете преобразовать компонент класса в хуки, но в Material v4 есть withStyles HOC. https://material-ui.com/styles/basics/#higher-order-component-api Используя этот HOC, вы можете сохранить свой код без изменений.
+
+ 19.06.2019 13:07
+Вчера я сократил код (только что добавил <Provider store = {store}>) и все еще сталкивался с этой проблемой недопустимого вызова хука. Это заставило меня внезапно осознать, какую ошибку я совершил: я не установил программное обеспечение react-redux в эту папку.
+
+Я установил это программное обеспечение в другую папку проекта, поэтому я не знал, что это также необходимо. После установки ошибка исчезла.
+
+ 14.01.2020 17:32
+Я только начал использовать хуки и получил указанное выше предупреждение, когда вызывал useEffect внутри функции:
+
+Затем я должен переместите useEffect за пределы функции, как показано ниже:
+
+ const onChangeRetypePassword = async value => {
+  await setRePassword(value);
+//previously useEffect was here
+
+  };
+//useEffect outside of func 
+
+ useEffect(() => {
+  if (password !== rePassword) {
+  setPasswdMismatch(true);
+
+     } 
+  else{
+    setPasswdMismatch(false);
+ }
+}, [rePassword]);
+Надеюсь кому-то будет полезно!
+
+ 01.04.2020 11:28
+Если все вышеперечисленное не работает, особенно при наличии зависимости большого размера (как в моем случае), и сборка, и загрузка занимали как минимум 15 секунд, поэтому кажется, что задержка выдала ложное сообщение «Неверный вызов ловушки». Так что вы можете дать некоторое время, чтобы убедиться, что сборка завершена перед тестированием.
+
+ 13.05.2020 01:08
+Вы можете использовать «экспорт по умолчанию», вызвав функцию стрелки, которая возвращает свой React.Component, передавая его через свойства объекта класса MaterialUI, которые, в свою очередь, будут использоваться в рендеринге компонента ().
+
+class AllowanceClass extends Component{
+    ...
+    render() {
+        const classes = this.props.classes;
+        ...
+    }
+}
+
+export default () => {
+    const classes = useStyles();
+    return (
+        <AllowanceClass classes = {classes} />
+    )
+}
+ 27.05.2020 19:21
+Поймал эту ошибку: найдено решение.
+
+По какой-то причине в моем теге было 2 атрибута onClick. Будьте осторожны с использованием ваших или чьих-либо пользовательских компонентов, возможно, некоторые из них уже имеют атрибут onClick.
+
+ 16.07.2020 09:13
+Для меня ошибка вызывала функцию useState за пределами функции, экспортируемой по умолчанию.
+
+ 24.07.2020 19:01
+В моем случае я пытался использовать mdbreact для Windows. Хотя он установлен, но я получаю вышеуказанную ошибку. Пришлось переустанавливать и все ок. Это случилось со мной раз два с библиотекой antd
+
+ 30.08.2020 18:46
+У меня была эта проблема, когда я использовал npm link для установки моей локальной библиотеки, которую я создал с помощью cra. Я нашел ответ здесь. Что буквально говорит:
+
+This problem can also come up when you use npm link or an equivalent. In that case, your bundler might “see” two Reacts — one in application folder and one in your library folder. Assuming 'myapp' and 'mylib' are sibling folders, one possible fix is to run 'npm link ../myapp/node_modules/react' from 'mylib'. This should make the library use the application’s React copy.
+
+Таким образом, запустив команду: npm link <path_to_local_library>/node_modules/react, например. в моем случае npm link ../../libraries/core/decipher/node_modules/react из каталога проекта решил проблему.
+
+ 02.09.2020 14:22
+Мое дело....РЕШЕНИЕ в КРЮКАХ
+
+const [cep, setCep] = useState('');
+const mounted = useRef(false);
+
+useEffect(() => {
+    if (mounted.current) {
+        fetchAPI();
+      } else {
+        mounted.current = true;
+      }
+}, [cep]);
+
+const setParams = (_cep) => {
+    if (cep !== _cep || cep === '') {
+        setCep(_cep);
+    }
+};
+ 11.09.2020 08:49
+Эта ошибка также может возникнуть, если вы ошиблись, объявив useDispatch из react-redux неправильным образом: когда вы идете:
+const dispatch = useDispatch вместо:
+const dispatch = useDispatch(); (т.е. не забудьте добавить скобки)
+
+ 08.10.2020 18:13
+дополняю следующий комментарий
+
+Для тех, кто использует редукс:
+
+class AllowanceClass extends Component{
+    ...
+    render() {
+        const classes = this.props.classes;
+        ...
+    }
+}
+    
+const COMAllowanceClass = (props) =>
+{
+    const classes = useStyles();
+    return (<AllowanceClass classes = {classes} {...props} />);
+};
+
+const mapStateToProps = ({ InfoReducer }) => ({
+    token: InfoReducer.token,
+    user: InfoReducer.user,
+    error: InfoReducer.error
+});
+export default connect(mapStateToProps, { actions })(COMAllowanceClass);
+ 22.10.2020 23:57
+происходит также, когда вы используете зависимость без ее установки. случилось со мной, когда я вызвал MenuIcon из '@material-ui/icons/', когда он отсутствовал в проекте.
+
+ 03.02.2021 16:08
+Различные версии реакции между моими общими библиотеками, казалось, были проблемой (16 и 17), обе изменились на 16.
+
+ 12.02.2021 13:34
+Эта ошибка также может возникнуть, если вы используете mobx, и ваш функциональный компонент заключен в функцию mobx observer. В этом случае убедитесь, что вы используете mobx-react версию 6.0.0 или выше. Старые версии будут конвертировать ваш функциональный компонент в класс под прикрытием, и все хуки не будут работать с этой ошибкой.
+
+Смотрите ответ здесь: React Hooks Mobx: неверный вызов ловушки. Хуки можно вызывать только внутри тела функционального компонента.
+
+ 07.05.2021 15:35
+добавьте это в свой package.json
+
+"peerDependencies": {
+   "react": ">=16.8.0",
+   "react-dom": ">=16.8.0"
+}
+источник:https://robkendal.co.uk/blog/2019-12-22-solving-react-hooks-invalid-hook-call-warning
+
+ 16.05.2021 14:44
+Всем, кто может искать БЫСТРОЕ решение этой проблемы:
+
+Возможно, вы нарушаете правила хуков. Чтобы решить эту проблему, переместите:
+
+?const [x, setX] = useState(0);
+на ВЕРХНИЙ УРОВЕНЬ вызывающей его функции, а не вне функции.
+
+function App() {
+   ?const [t, setTime] = useState("");
+
+   return (
+      <div>
+         <h1>{t}</h1>
+         <button onClick = {() => setTime(t+1)}>Get Time</button>
+      </div>
+ );
+}
+? https://reactjs.org/warnings/invalid-hook-call-warning.html
+
+ 16.05.2021 15:17
+Я отвечаю на этот вопрос, причина моей ошибки в том, что я разрабатываю проект A и связываю другой проект B с A, но у A есть пакет React, а у B также есть пакет React, они имеют одну и ту же версию (16.13). но это вызывает вопрос, я установил файл webpack.config.js, например:
+
+alias: {
+  'react': path.join(path.resolve(__dirname), '../node_modules/react'),
+},
+установить разрешение пакета B React на пакет A React, я думаю, причина в том, что проект не может иметь два или более пакета React, даже если они имеют одинаковые версии. но я не могу проверить свою догадку.
+
+ 21.05.2021 12:22
+Вот что исправило это для меня. У меня была папка node_modules и файлы package.json и package-lock.json в папке моих компонентов, а также в корне моего проекта, где она принадлежит. Я удалил их оттуда, где им не место. Не спрашивайте меня, что я сделал, чтобы поместить их туда, я, должно быть, сделал npm что-то не в том месте.
+
+ 06.06.2021 20:23
+В моем случае я передал имя компонента в реквизите FlatList вместо функции. Раньше он работал, так как мой компонент был функциональным, но когда я добавил в него хуки, он не работал.
+
+До:
+
+    <FlatList
+        data = {memberList}
+        renderItem = {<MemberItem/>}
+        keyExtractor = {member => member.name.split(' ').join('')}
+        ListEmptyComponent = {
+          <Text style = {{textAlign: 'center', padding: 30}}>
+            No Data: Click above button to fetch data
+          </Text>
+        }
+      />
+После:
+
+    <FlatList
+        data = {memberList}
+        renderItem = {({item, index}) => <MemberItem item = {item} key = {index} />}
+        keyExtractor = {member => member.name.split(' ').join('')}
+        ListEmptyComponent = {
+          <Text style = {{textAlign: 'center', padding: 30}}>
+            No Data: Click above button to fetch data
+          </Text>
+        }
+      />
+ 17.06.2021 18:58
+в моем случае я удалил package-lock.json и node_modules из обоих проектов и снова переустановил, и теперь все работает нормально.
+
+
+// project structure
+
+
+root project
+- package-lock.json
+- package.json // all dependencies are installed here
+- node_modules
+
+-- second project
+-- package-lock.json
+-- package.json 
+  "dependencies": {
+    "react": "file:../node_modules/react",
+    "react-dom": "file:../node_modules/react-dom",
+    "react-scripts": "file:../node_modules/react-scripts"
+  },
+-- node_modules
+
+
+Не уверен, что вызвало проблему в первую очередь, так как это случалось со мной раньше, и я делал те же шаги, что и выше, и проблема была решена.
+
+ 29.06.2021 05:19
+В моем случае изменения, которые я сделал в package-json, вызывают проблемы.
+
+npm install react-redux
+исправить это
+
+ 07.08.2021 12:55
+Если вы используете react-router-dom, обязательно вызовите useHistory() внутри хука.
+
+ 12.08.2021 19:01
+Вы можете проверить свои маршруты. Если вы используете рендеринг вместо компонента в Route(<Route path="/testpath" render = {(props)=><Test {...props} />} />) поэтому вы правильно назвали свой компонент в функции стрелки, передав ей соответствующие реквизиты.
+
+ 16.08.2021 17:35
+Помните о проблемах с импортом. Для меня ошибка заключалась в сбое импорта/автоматического импорта компонентов и дочерних компонентов. Не имел ничего общего с функциональными классами и компонентами класса.
+
+Это может произойти, поскольку автоматический импорт кода VS может указывать пути, которые не работают.
+если импорт { MyComponent } используется и export default используется в компоненте, импорт должен сказать import MyComponent
+Если некоторые компоненты используют index.js внутри своей папки в качестве ярлыка для пути, а другие не импортируются, это может привести к поломке. Здесь снова автоматический импорт может вызвать проблемы, поскольку он объединяет все компоненты из той же папки, что и эта {TextComponent, ButtonComponent, ListComponent} from '../../common'
+Попробуйте закомментировать некоторые компоненты в файле, который вызывает ошибку, и вы сможете проверить, не в этом ли проблема.
+
+ 16.08.2021 18:39
+Когда вы столкнетесь с этой проблемой, вам просто нужно переустановить этот «npm install react-bootstrap@next bootstrap@5.1.0», после чего ваша ошибка будет устранена.
+
+ 07.09.2021 08:04
+В моем случае именно эта единственная строка кода, которая была в моем App.js, вызвала это и заставила меня потерять 10 часов на отладку. React Native и Expo не смогли указать мне на это. Я сделал все, что было на StackOverflow и github, и даже на странице реагирования, которая должна была решить эту проблему, и проблема не исчезла. Я должен был начать разбирать свой код по частям, чтобы добраться до виновника.
+
+ **const window = useWindowDimensions();**
+Ставил так:
+
+import * as React from 'react';
+import { Text, View, StyleSheet, ImageBackground, StatusBar, Image, Alert, SafeAreaView, Button, TouchableOpacity, useWindowDimensions } from 'react-native';
+import Constants from 'expo-constants';
+
+import Whooksplashscreen11 from './Page1';
+import Screen1 from './LoginPage';
+import Loginscreen from './Login';
+import RegisterScreen1 from './register1';
+import RegisterScreen2 from './register2-verifnum';
+import RegisterScreen3 from './register3';
+import RegisterScreen4 from './register4';
+import RegisterScreen5 from './register5';
+import RegisterScreen6 from './register6';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+import LocationPermission from './LocationPermission.js'
+import Selfieverif1 from './selfieverif1'
+import Selfieverif2 from './selfieverif2'
+import AddPhotos from './addphotos'
+
+
+// You can import from local files
+import { useFonts } from 'expo-font';
+
+// or any pure javascript modules available in npm
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+//FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab, } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faFilter, faSearch,  } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import Icon  from "react-native-vector-icons/FontAwesome5";
+
+import MyTabs from './swipepage'
+
+library.add(fab, faCheckSquare, faCoffee, faFilter, faSearch,);
+
+
+const window = useWindowDimensions();
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return ( ....
+)}
+ 01.01.2022 19:48
+В моем случае проблема заключалась в том, что я перешел в неправильный каталог для установки npm. Я просто переустановил библиотеки в правильный каталог, и все заработало!
+
+ 23.01.2022 17:37
+Я столкнулся с аналогичной проблемой, однако моя ситуация была чем-то вроде граничного случая.
+
+Принятый ответ должен работать для большинства людей, но для всех, кто использует реагирующие хуки в существующем реагирующем коде, который использует Радий, обратите внимание, что хуки не будут работать без обходных путей, если вы используете радий.
+
+В моем случае я экспортировал свой компонент так:
+
+// This is pseudocode
+
+const MyComponent = props => {
+  const [hookValue, setHookValue] = useState(0);
+  return (
+    // Use the hook here somehow
+  )
+}
+
+export default Radium(MyComponent)
+Удаление этой оболочки Radium из export решило мою проблему. Если вы нужно используете Radium, более простым решением может быть обращение к компонентам класса и их функциям жизненного цикла.
+
+Надеюсь, это поможет хотя бы еще одному человеку.
+
+ 28.01.2022 20:14
+Я столкнулся с этой же проблемой, работая над пользовательским node_module и используя npm link для тестирования в cra (создание приложения для реагирования).
+
+Я обнаружил, что в моем пользовательском node package я должен был добавить peerDependencies
+
+"peerDependencies": {
+    "@types/react": "^16.8.6 || ^17.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+После того, как я добавил это в свой package.json, я затем re-built свой собственный пакет. Затем в CRA я сдул node_modules, переделал npm install, переделал npm link <package>, а затем начал проект.
+
+Все исправил!
+
+ 17.02.2022 21:15
+Другие вопросы по теме
+URL-адрес доступа в редукторе Redux
+Есть ли способ передать данные от ребенка к родителю с помощью хуков?
+Не могу получить доступ к этой функции в обратном вызове React
+Как получить доступ к переменным среды в реакции из докера и веб-пакета
+Отсутствует тело конструктора внутри класса
+Переменная не определена, когда она?
+Установка уже полученного имени учетной записи/имени для входа в Pnp Js Peoplepicker
+Как я могу исправить ошибку Firebase/firestore в нативном React?
+Как включить поле textarea при определении модели формы «Свяжитесь с нами» в реагирующем веб-приложении
+Как объявить реквизиты по умолчанию в функциональном компоненте реакции
+Похожие вопросы
+Nodejs setInterval для повторения задачи каждые 30 секунд
+JavaScript - функция для формирования массива на основе 3 массивов (объединение)
+Как преобразовать строку в объект даты в javascript?
+Angular 7, Ngrx, ExpressionChangedAfterItHasBeenCheckedError
+JavaScript начинает с метода, выдающего ошибку
+Добавить перед URL-адресом страницы с помощью javascript
+IE не распознает класс Javascript и ломается
+Выбрать случайный элемент из массива, повторять до тех пор, пока не будет выполнено условие
+Как включить приложение Angular 7 в существующий html-файл и веб-сайт?
+Как правильно передать объект PHP в качестве параметра в вызываемую функцию javascript?
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Невозможно загрузить сценарий. Убедитесь, что вы используете сервер Metro или что ваш пакет index.android.bundle правильно упакован для выпуска
+Вопросы
+REACTJS
+Невозможно загрузить сценарий. Убедитесь, что вы используете сервер Metro или что ваш пакет index.android.bundle правильно упакован для выпуска
+react-native run-android команда завершается, оставляя сообщение в симуляторе Android. Сообщение выглядит следующим образом:
+
+Unable to load script.Make sure you are either running a Metro server or that your bundle 'index.android.bundle' is packaged correctly for release.
+
+Невозможно загрузить сценарий. Убедитесь, что вы используете сервер Metro или что ваш пакет index.android.bundle правильно упакован для выпуска
+
+Что я делаю неправильно?
+
+ 31.03.2019 15:11
+263
+10
+197 152
+53
+ Ответы 53
+Вы еще не запустили сборщик. Запустите npm start или react-native start в корневом каталоге вашего проекта перед react-native run-android.
+
+ 31.03.2019 17:07
+Похожая проблема случилась со мной.
+По-видимому, Mcafee блокирует порт 8081. Мне потребовались часы, чтобы понять это.
+
+Попробуйте запустить:
+
+react-native run-android --port=1234
+Когда приложение отображается с ошибкой на эмуляторе, войдите в настройки разработчика (Ctrl+M).
+
+Измените «Хост сервера отладки и порт для устройства» на «localhost: 1234».
+
+Закройте приложение и запустите его из панели приложений.
+
+ 01.04.2019 10:29
+ВАЖНЫЙ - В вашей среде может быть много виртуальных устройств. Убедитесь, что если вы меняете AVD, вы повторяете настройку снова.
+
+ОТЛАДОЧНАЯ ИНФОРМАЦИЯ-
+Если вы столкнулись с вышеуказанной ошибкой, вам нужно сначала проверить, что работает на порту 8081.
+
+Самый быстрый способ найти это с помощью следующей команды в терминале
+
+netstat -aon | findstr 8081
+если это показывает вам что-то, это означает, что порт заблокирован. если возможно, разблокируйте этот порт.
+
+В противном случае вам нужно будет изменить порт. Как это сделать, уже упоминалось в комментарии Навина Кумара выше.
+
+react-native run-android --port=9001
+Убедитесь, что 9001 также не используется :)
+
+ 23.04.2019 07:57
+Попробуйте следующее.
+
+Удалите папки Android и IOS
+запустить реактивный выброс
+запустить реакцию-родной запуск-андроид
+Возможно после предыдущих шагов у вас есть запуск npm --reset-cache
+
+Я работаю, я надеюсь, что это поможет вам.
+
+ 16.05.2019 20:28
+Мое решение для этого, как показано ниже:
+
+Запустить Метро-сервер
+
+$ react-native start
+Запустить Android
+
+$ react-native run-android
+Если вы видите ошибки, говорящие, что «порт 8081 уже используется», вы можете убить этот процесс и перезапустить его.
+
+$ react-native start
+См. Страница устранения неполадок React Native .
+
+ 17.05.2019 08:42
+По умолчанию крошечный сервер JavaScript под названием «Metro Server» работает на порту 8081.
+
+Вам нужно сделать этот порт доступным для запуска этого Сервера. Так,
+
+освободить порт
+закройте ваше виртуальное устройство
+снова "реагировать на родной андроид".
+Как освободить порт?
+
+http://tenbull.blogspot.com/2019/05/how-to-kill-process-currently-using.html
+
+Как убить процесс, который в настоящее время использует порт на локальном хосте в Windows?
+
+и самое главное, я обновил версию своего узла с 8.x до 10.x (последняя), как было предложено facebook @https://facebook.github.io/react-native/docs/начало работы
+
+ 17.05.2019 14:28
+Я просто хочу добавить неочевидную возможность, не рассмотренную здесь. Я использую @react-native-community/netinfo для обнаружения изменений в сети, в первую очередь состояния сети. Чтобы проверить состояние отключения сети, переключатель WIFI (на эмуляторе) должен быть выключен. Это также эффективно отсекает мост между эмулятором и средой отладки. Я не включал WIFI после тестов, так как был вдали от компьютера и сразу же забыл об этом, когда вернулся.
+
+Есть вероятность, что это может иметь место и для кого-то еще, и это стоит проверить, прежде чем предпринимать какие-либо другие решительные шаги.
+
+ 30.05.2019 08:00
+Эти шаги действительно помогают мне:
+
+Шаг 1: Создать каталог в android/app/src/main/assets
+
+команда Linux: mkdir android/app/src/main/assets
+
+Шаг 2: Переименуйте index.android.js (в корневом каталоге) в index.js (Возможно есть файл index.js в таком случае его не нужно переименовывать), затем выполните следующую команду:
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+Шаг 3: Создайте свой APK: react-native run-android
+
+Пожалуйста, используйте index.js в последней версии.
+
+Наслаждаться :)
+
+ 31.05.2019 20:11
+Если у вас все правильно настроено, попробуйте следующее:
+
+adb reverse tcp:8081 tcp:8081
+Почему?
+
+When the RN packager is running, there is an active web server accessible in your browser at 127.0.0.1:8081. It's from this server that the JS bundle for your application is served and refreshed as you make changes. Without the reverse proxy, your phone wouldn't be able to connect to that address.
+
+Все кредиты Свинглайн0 .
+
+ 24.06.2019 09:54
+Для меня эта ошибка была вызвана обновлением react-native
+
+Starting with Android 9.0 (API level 28), cleartext support is disabled by default.
+
+Если вы проверяете разницу обновлений, вам нужно создать манифест отладки. android/app/src/debug/AndroidManifest.xml
+
+<?xml version = "1.0" encoding = "utf-8"?>
+<manifest xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools">
+    <uses-permission android:name = "android.permission.SYSTEM_ALERT_WINDOW"/>
+    <application android:usesCleartextTraffic = "true" tools:targetApi = "28" tools:ignore = "GoogleAppIndexingWarning" />
+</manifest>
+См. дополнительную информацию: https://stackoverflow.com/a/50834600/1713216
+
+https://react-native-community.github.io/upgrade-helper/
+
+ 28.06.2019 15:49
+У меня была такая же проблема, проблема для меня заключалась в том, что адб не был в правильном пути среды, ошибка сообщает вам порт метро, ​​​​пока вы находитесь в adb, порты убиваются и перезапускаются.
+
+Добавить переменную среды (ADB)
+Открытые переменные среды
+Выберите из второго кадра переменная ПУТИ и нажмите кнопку редактирования ниже.
+Нажмите на опцию добавления
+Отправьте путь к инструментам платформы SDK C:\Users\My User\AppData\Local\Android\Sdk\platform-tools
+Note: Or depending where is located adb.exe in your machine
+
+Сохранить изменения
+Запустите сборку Android снова
+
+$ react-native run-android
+Или
+
+$ react-native start
+$ react-native run-android
+ 26.07.2019 00:19
+Вы можете попробовать следующее:
+
+Добавьте эту строку в свой AndroidManifest.xml.
+
+<application
+[...]
+android:usesCleartextTraffic = "true"
+/>
+[...]
+</application>
+Обновлено: Будьте осторожны, это долженfalse в производстве для безопасности вашего приложения.
+
+ 30.07.2019 11:48
+После нескольких часов поиска ответа. Решение состояло в том, чтобы сделать узел понижения до версии 12.4.
+
+В моем случае я понимаю, что ошибка возникает только в версии React Native 0.60 с версией Node 12.6.
+
+ 31.07.2019 00:46
+Я столкнулся с этим только потому, что мой Wi-Fi был ошибочно отключен на моем эмуляторе. Я снова включил его, и он начал работать нормально. Надеюсь, кому-то это будет полезно
+
+ 05.08.2019 16:56
+Для меня эта проблема началась с обновления react-native. Обновление было необходимо для добавления 64-битной поддержки.
+
+Before:
+-------- 
+Environment:
+Node: 10.15.0
+npm: 6.9.0
+Watchman: 4.9.0
+Xcode: Not Found
+Android Studio: 3.4 AI-183.6156.11.34.5692245
+
+Packages: (wanted => installed)
+react: 16.0.0-alpha.12 => 16.0.0-alpha.12
+react-native: ~0.55.2 => 0.55.4
+react-native-cli: 2.0.1
+
+After:
+------
+info 
+React Native Environment Info:
+Binaries:
+Node: 10.15.0
+npm: 6.9.0
+Watchman: 4.9.0
+SDKs:
+Android SDK:
+API Levels: 23, 26, 27, 28
+Build Tools: 27.0.3, 28.0.3
+System Images: android-28 | Google APIs Intel x86 Atom
+IDEs:
+Android Studio: 3.4 AI-183.6156.11.34.5692245
+Xcode: /undefined - /usr/bin/xcodebuild
+npmPackages:
+react: ^16.8.6 => 16.9.0 
+react-native: 0.59.9 => 0.59.9 
+npmGlobalPackages:
+create-react-native-app: 2.0.2
+react-native-cli: 2.0.1
+Кроме того, одно важное изменение, которое я сделал для обновления, было в ../android/build/build.gradle.
+
+android {
+    ...
+    defaultConfig {
+        ...
+        targetSdkVersion 28
+        ...
+    }
+    ...
+}
+Мне пришлось изменить targetSdkVersion с 27 на 28 после предупреждения, когда я попытался загрузить сборку (.apk) в консоль Google Play. Мало ли я понял, что это было основной причиной вышеуказанной ошибки для меня. Немедленные ответы @tom и @tinmarfrutos имели абсолютный смысл.
+
+Я решил проблему, добавив android:usesCleartextTraffic="true" в свой файл android/app/src/debug/AndroidManifest.xml.
+
+ 14.08.2019 17:22
+Если вы работаете в ОС Linux, может быть случай, когда ваш удаленный сервер npm не работает. Откройте другой терминал (с каталогом проекта) и запустите эту команду запуск sudo npm или sudo react-native start перед выполнением sudo react-native run-android
+
+ 21.08.2019 10:04
+В моем случае я установил прокси в своем эмуляторе. После удаления этого прокси все работает нормально.
+
+ 02.09.2019 11:15
+Сообщение об ошибке в эмуляторе вводит в заблуждение. В моем случае я использовал Macbook. Мне нужно было изменить разрешения на android/gradlew, запустив $ chmod 755 ./gradlew, после чего приложение можно было собрать и развернуть на эмуляторе Android.
+
+ 17.09.2019 17:21
+Если вы используете Linux, откройте терминал из корневого каталога приложения и запустите
+
+npm start
+затем откройте другое окно терминала и запустите:
+
+react-native run-android
+ 21.09.2019 14:50
+В некоторых случаях вам может понадобиться закрыть порт сборщика React-native и перезапустите приложение с тем же процессом
+
+1.sudo kill -9 $(sudo lsof -t -i:9001)
+
+2.npm start inside the project
+
+3. react-native run-android
+ 26.09.2019 11:46
+Что сработало для меня:
+
+закрыть все консоли
+открыть новую консоль
+$ adb devices
+убедитесь, что у вас подключено только одно устройство
+$ react-native run-android
+ 26.09.2019 11:46
+возможность этой ошибки также неправильный путь,проверьте один раз
+
+ export ANDROID_HOME=/Users/microrentindia/Library/Android/sdk/
+ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+ 11.10.2019 11:29
+Решение, которое сработало для меня, заключается в следующем:
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+]; 
+My code example
+
+ 14.10.2019 20:06
+просто добавьте три всплеска: node_modules\metro-config\src\defaults\blacklist.js
+
+заменить эту часть:
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+ 26.10.2019 13:40
+Я также столкнулся с этой проблемой. Я решил этот следующий шаг.
+
+Проверьте путь Android SDK в Окружающая среда Истинная.
+
+Добавлять ANDROID_HOME = C:\Users\user_name\AppData\Local\Android\Sdk в Системная переменная
+а также C:\Users\user_name\AppData\Local\Android\Sdk\platform-tools путь в Системная переменная
+
+заменить общий черный список, как показано ниже, сегмент кода,
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+в node_modules/metro-config/src/default/blacklist.js
+
+Затем запустите npx react-native run-android --port 9001.
+
+Удачного кодирования..!
+
+ 10.11.2019 13:43
+[Быстрый ответ]
+После попытки решить эту проблему в моем рабочем пространстве я нашел решение.
+
+Эта ошибка связана с тем, что в Metro возникают проблемы с использованием некоторых комбинаций версии NPM и Node.
+
+У вас есть 2 альтернативы:
+
+Альтернатива 1: Попробуйте обновить или понизить версию npm и узла.
+Альтернатива 2: Перейдите к этому файлу: \node_modules\metro-config\src\defaults\blacklist.js и измените этот код:
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+и изменить на это:
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+Please note that if you run an npm install or a yarn install you need to change the code again.
+
+ 11.11.2019 10:24
+Начиная с Android 9.0 (уровень API 28) поддержка открытого текста по умолчанию отключена.
+
+Это то, что вам нужно сделать, чтобы избавиться от этой проблемы, если вы правильно выполняете обычные команды запуска.
+
+установка нпм
+реактивный запуск
+реакция-родной запуск-андроид
+И измените файл манифеста Android следующим образом.
+
+<application
+    android:name = ".MainApplication"
+    android:icon = "@mipmap/ic_launcher"
+    android:usesCleartextTraffic = "true" // add this line with TRUE Value.
+android:theme = "@style/AppTheme">
+ 13.11.2019 23:38
+Сначала выполните шаги 4 и 5, затем вы можете запустить свой проект. Если вы не получили результат (с шагами 4 и 5), выполните следующие действия.
+
+1- Попробуйте понизить версию Node (текущая версия 12.13.1)
+
+  choco uninstall nodejs
+  choco install nodejs --version 12.8
+2- Добавить путь к модулю npm (C:\Users\your user name\AppData\Roaming\npm) в системные переменные вместо пользовательских переменных
+
+3- Установить реакцию в глобальном масштабе с помощью команды
+
+  npm install -g react-native-cli
+4- Перейдите в корень каталога вашего проекта и выполните следующую команду:
+
+  react-native start
+5- Откройте другой терминал в корне вашего проекта и выполните следующую команду:
+
+   react-native run-android 
+РЕДАКТИРОВАТЬ :
+
+Вы используете Genymotion? Если да, выполните следующий шаг:
+
+Если после вышеуказанного шага вы получите следующую ошибку?
+
+error Failed to launch emulator. Reason: No emulators found as an output of `emulator -list-avds`.
+Откройте свой genymotion и перейдите к:
+
+genymotion menu->Settings->ADB-> Затем выберите use custom android sdk tools (нажмите «Обзор», чтобы найти местоположение SDK)
+
+Наконец, снова запустите свой проект.
+
+ 24.11.2019 23:08
+Это сработало для меня после нескольких попыток.
+
+В файле node_modules\metro-config\src\defaults\blacklist.js
+
+Заменять :
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+с участием :
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+надеюсь это поможет.
+
+ 21.12.2019 07:45
+обновить эту часть в черном списке метро
+
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website/node_modules/.*/,
+  /heapCapture/bundle\.js/,
+  /.*/__tests__/.*/
+];
+ 22.01.2020 15:45
+вы также можете понизить версию node js до версии менее 12 и удалить nodemodule, а затем снова запустить npm install
+
+ 22.01.2020 15:49
+Я сделал: реактивный запуск а также npx react-native run-android.
+
+Однако для Min19 (на основе Ubuntu) у меня была такая же проблема, пока я не запустил:
+
+echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+От: https://reactnative.dev/docs/troubleshooting#content
+
+По крайней мере, у меня приложение работает на моем мобильном телефоне.
+
+ 25.02.2020 21:35
+Попробуйте выполнить следующие действия, если вы пробовали все, что упомянуто в приведенных выше решениях:
+
+Создайте файл в android/app/src/main/assets
+Выполните следующую команду:
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+Теперь запустите свою команду для сборки, например. реакция-родной запуск-андроид
+ 19.03.2020 06:53
+У меня возникла та же проблема, после выполнения следующих шагов проблема была решена
+
+Четкие сторожевые часы: watchman watch-del-all.
+Удалите папку node_modules: rm -rf node_modules && npm install.
+Сбросить кеш Metro Bundler: rm -rf /tmp/metro-bundler-cache-*
+Удалить ускоренный кеш: rm -rf /tmp/haste-map-react-native-packager-*
+ 30.04.2020 18:42
+Я уверен, что это какая-то комбинация других вещей, упомянутых здесь, таких как разрешение открытого текста, который я включил для локального хоста. Но это была последняя часть головоломки.
+
+project.ext.react = [
+    entryFile: "index.js",
+
+    // ADD THESE THREE
+
+    bundleAssetName: "index.android.bundle",
+    bundleInDebug: true,
+    bundleInRelease: true
+]
+РН: 0,61,3
+
+ 03.05.2020 20:52
+Я столкнулся с той же проблемой, следуя React Native руководство (разработка для Linux и таргетинг на Android).
+
+Этот проблема помог мне решить проблему в следующих шагах. Выполните следующие команды в следующей последовательности:
+
+(в каталоге проекта) mkdir android/app/src/main/assets
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+react-native run-android
+Вы можете автоматизировать вышеуказанные шаги, поместив их в scripts часть package.json следующим образом:
+
+"android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+Затем вы можете просто выполнять npm run android-linux из командной строки каждый раз.
+
+ 27.05.2020 17:20
+По-видимому, ни один из ответов не решил проблему для меня. Я смог запустить приложение, отвечающее за реакцию, на эмуляторе, но тот же код (даже когда сервер работал) выдал мне эту ошибку при запуске приложения на устройстве.
+
+Я смог решить эту проблему, выполнив следующую команду в терминале:
+
+adb reverse tcp:8081 tcp:8081
+
+ 13.07.2020 15:48
+Я была такая же проблема. Но этот метод решил это. Перейдите в папку Android, используя cd android, затем gradlew clean или ./gradlew clean в зависимости от того, что подходит для вашей ОС.
+
+ 04.08.2020 13:08
+Я столкнулся с подобной проблемой. npx react-native init создает файл .gitignore, который игнорирует папку <project>/android/app/src/debug. Если вы позже клонировали этот проект, эта папка будет отсутствовать. Решение простое. В будущем добавьте эту строку в конец файла .gitignore.
+
+!android/app/src/debug
+
+Для вашего текущего проекта попросите создателя проекта зафиксировать эту папку. Я столкнулся с этой ошибкой в ​​​​реактивной нативной версии 0.63.
+
+ 25.08.2020 15:13
+Как и большинство из нас, я предполагаю, что вы используете VSCODE. В моем случае я побежал
+
+npx react-native start
+
+с отдельного терминала
+
+Теперь запустите npx react-native run-android со своего терминала в VSCODE.
+
+ 11.10.2020 14:25
+Вот как я решил эту проблему, не касаясь сборки:
+
+1- Закрыл виртуальное устройство
+
+2- Протестировано на физическом устройстве -- (работает)
+
+3- Создано новое виртуальное устройство с API 30 Android 10+.
+
+4- Попробуйте еще раз на только что созданном виртуальном устройстве, и все заработает как шарм.
+
+ 26.11.2020 10:03
+Привет, ребята, комбинация двух авансеров решила мою проблему. Это было связано с портом.
+
+adb reverse tcp:8088 tcp:8088
+react-native run-android --port=8088
+Сделав это, приложение отлично загрузилось на моем телефоне, подключенном через USB. Я думаю, что мой AV или Vagrant или что-то еще на моем ПК использовали этот порт.
+
+Вы можете изменить 8088 на что-то другое, если это необходимо.
+
+Наслаждаться!
+
+ 03.12.2020 16:51
+В моем случае я просто закрываю эмулятор формы приложения
+
+Затем запустите это снова
+
+react-native run-android
+
+ 18.12.2020 20:14
+Это происходит всякий раз, когда устройство Android не может подключиться к серверу метро. Если вышеуказанное не работает, убедитесь, что на вашем устройстве Android не настроен прокси-сервер. (Настройки > Прокси > Без прокси).
+
+ 18.02.2021 22:59
+В моем случае Wi-Fi и мобильные данные эмулятора были отключены.
+
+ 24.03.2021 14:57
+Эта ошибка появилась из ниоткуда у меня и что решило это для меня:
+
+AVD-менеджер в Android Studio
+Нажмите стрелку вниз в разделе «Действия» на вашем виртуальном устройстве.
+Удалить данные
+Перезапустить Метро
+ 10.06.2021 20:42
+Запустите следующие две команды
+
+adb kill-server
+adb start-server
+После этого запустите команду npm start, а затем обычную зеленую кнопку запуска в студии Android.
+
+ 20.06.2021 06:34
+Я попробовал все решения ниже, прокомментированные и отвеченные разными людьми. Иногда это работает, но иногда ни одно решение не работает для меня ..... лучшее решение для этой ошибки удалить APK с физического устройства и снова запустить приложение ... для меня это работает на 100% !!!
+
+шаг 1-
+
+Uninstall APK from physical Device
+
+шаг 2-
+
+Go to Android folder cd android
+
+шаг 3-
+
+Enter Command Gradlew Clean
+
+шаг 4-
+
+Enter Cd.. back to Project
+
+шаг 4-
+
+Run Command npx react-native run-android OR react-native run-android
+
+ 09.07.2021 07:43
+Возможно ваш порт занят. Попробуйте запустить на другом порту:
+
+adb reverse tcp:6666 tcp:6666
+react-native run-android --port 6666
+проверьте, свободен ли используемый вами порт
+
+линукс:
+
+lsof | grep LISTEN
+окна:
+
+netstat -an
+ 07.10.2021 16:30
+Пожалуйста, проверьте, не использует ли сервер Metro какие-либо другие порты. Если есть, остановите все серверы, затем перезапустите сервер и повторите попытку.
+
+ 02.11.2021 08:10
+Отключите прокси, если вы установили прокси в студии Android, по умолчанию используйте прокси
+Turn off proxy
+
+ 03.12.2021 08:52
+    this works for me on ubuntu
+    
+    1. if you are having node version 17 first downgrade its version:-
+    You can use n for node's version management.
+    
+    this is very easy to use.
+    $ npm install -g n
+    
+    then you can show your node version:
+    $ node -v
+    v16.13.2
+    
+    2. create an assets folder inside root of the project:-
+    project\android\app\src\main\assets
+    set folder name should be assets
+
+3. now the final step implement the given code inside the project folder:- 
+
+$cd project 
+/project$ react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+4. after following all these step react-native was successfully running on my pc
+ 15.01.2022 07:08
+В моем случае я пытался запустить приложение на эмуляторе. Но я получал это
+
+
+
+Этот IP 10.0.2.2 был доступен из браузера эмулятора Chrome. Проблема в том, что этот IP-адрес не занесен в белый список в настройках сетевой безопасности Android. Итак, какой бы IP-адрес вы ни видели, добавьте его в настройки ниже, и все готово.
+
+./android/app/src/main/AndroidManifest.xml
+
+        <application
+                android:name = ".MainApplication"
++               android:usesCleartextTraffic = "true"   <- Add this line
+                android:allowBackup = "true"
+                android:label = "@string/app_name"
+                android:icon = "@mipmap/ic_launcher"
+
+./android/app/src/main/res/xml/network_security_config.xml
+</network-security-config>
+    <domain-config cleartextTrafficPermitted = "true">
+        <domain includeSubdomains = "true">localhost</domain>
+        <domain includeSubdomains = "true">10.0.1.1</domain>
+        <domain includeSubdomains = "true">10.0.2.2</domain>
+        <domain includeSubdomains = "true">10.0.3.2</domain>
+    </domain-config>
+ </network-security-config>
+Просто замените <domain includeSubdomains = "true">10.0.2.2</domain> на IP-адрес, указанный в сообщении об ошибке от react-native.
+
+ 17.01.2022 04:27
+Другие вопросы по теме
+React Navigation: как вызвать определенную функцию, когда пользователь касается вне панели навигации, чтобы закрыть ее?
+Сохраняйте локальные файлы, реагируйте на родные
+Есть ли более быстрый способ обновить массив json, чем его цикл?
+Открыть приложение контактов по умолчанию в Android, используя React Native
+ComponentWillReceiveProps не срабатывает, когда состояние обновляется в первый раз
+Ошибка обновления данных GraphQL из-за мутации в AWS AppSync
+Невозможно запустить AwesomeProject, указанный на начальной странице React-Native
+React native — объекты недействительны в качестве дочерних элементов React в версии firebase 5.9.0
+Как исправить проблему «create-react-native-app не распознается как внутренняя или внешняя команда, работающая программа или пакетный файл»?
+Тернарная операция в TouchableOpacity
+Похожие вопросы
+Кто-нибудь знает, почему все мои элементы отображаются в одном столбце, как если бы это была <navbar>?
+Нет вызова функции - onclick не работает
+Невозможно перенаправить на страницу профиля после регистрации
+Как отфильтровать значения реквизита из объединения интерфейсов
+Переданный реквизит от ребенка к родителю не работает (React)
+Как искать в массиве json и возвращать результат при вводе ввода
+Как исправить ошибку «Не удается выполнить состояние React...» в React
+Как изменить поле в редукс-форме?
+Скачать объект как JSON с помощью Blob без создания элемента DOM
+Приложение React в Azure Web Apps получает ошибку 404 при подключении к другому Node API
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Enzyme ожидает, что адаптер будет настроен
+Вопросы
+REACTJS
+Enzyme ожидает, что адаптер будет настроен
+Я создал новое приложение React с помощью create-react-app и хотел написать модульный тест для компонента с именем «MessageBox», который я создал в приложении. Это модульный тест, который я написал:
+
+import MessageBox from "../MessageBox";
+import { shallow } from 'enzyme';
+import React from 'react';
+
+test('message box', () => {
+   const app = {setState: jest.fn()};
+   const wrapper = shallow(<MessageBox app = {app}/>);
+   wrapper.find('button').at(0).simulate('click');
+   expect(app.setState).toHaveBeenLastCalledWith({modalIsOpen: false});
+});
+Я также добавил файл в папку src с именем setupTests.js с содержимым:
+
+import * as enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+
+enzyme.configure({ adapter: new Adapter() });
+Я пробежал его:
+
+npm test
+
+и я получил ошибку:
+
+Enzyme Internal Error: Enzyme expects an adapter to be configured, but found none. To configure an adapter, you should call Enzyme.configure({ > adapter: new Adapter() })
+
+Вы знаете, что может решить эту проблему?
+
+ 07.05.2018 23:16
+70
+2
+38 628
+18
+Данный вопрос помечен как решенный
+ Ответы 18
+Добавьте import React from 'react'; в начало файла.
+
+Вы используете JSX-синтаксис <MessageBox app = {app}/>, который транспилес превращается в React.createComponent(...). Для того, чтобы это работало, переменная React должна быть определена в области действия файла.
+
+ 07.05.2018 23:23
+Файл setupTests необходимо импортировать в тестовый файл:
+
+import MessageBox from "../MessageBox";
+import { shallow } from 'enzyme';
+import React from 'react';
+import "../setupTests"
+
+test('message box', ()=> {
+     ...
+})
+ 07.05.2018 23:51
+ Ответ принят как подходящий
+Добавьте его в свой файл тестового случая.
+
+import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
+
+configure({adapter: new Adapter()});
+test('message box', ()=> {
+     ...
+})
+ 08.05.2018 07:49
+Вам нужно использовать импорт следующим образом:
+
+import Adapter from 'enzyme-adapter-react-16';
+Таким образом: (импортировать * как адаптер из ...) возвращает сообщение «Ошибка типа: адаптер не является конструктором».
+
+ 07.10.2018 22:24
+Кроме того, если вы не хотите импортировать файл setupTests.js в каждый тестовый файл, вы можете поместить его в папку package.json:
+
+  "jest": {
+     "setupTestFrameworkScriptFile": "./test/setupTests.js" }
+Обновлять:
+
+Note: setupTestFrameworkScriptFile is deprecated in favor of setupFilesAfterEnv.
+https://jestjs.io/docs/en/configuration
+
+ 23.10.2018 16:49
+Попробуй вот так;
+
+import React from 'react';
+import App from './containers/App';
+import enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+enzyme.configure({ adapter: new Adapter() });
+
+describe('App Screen', () => {
+  let mountedAppScreen;
+  let props;
+
+  const appScreen = () => {
+    if (!mountedAppScreen) {
+      mountedAppScreen = enzyme.mount(
+        <App {...props} />
+      );
+    }
+    return mountedAppScreen;
+  }
+  it("it always renders div", () => {
+    const divs = appScreen().find("div");
+    expect(divs.length).toBeGreaterThanOrEqual(1);
+  });
+});
+ 27.10.2018 21:44
+Используя последнюю версию библиотек, я столкнулся с той же ошибкой, о которой сообщалось в каждом ответе на этот вопрос. Ошибка: TypeError: адаптер не является конструктором.
+
+Я сгруппировал все необходимые шаги, чтобы правильно протестировать ваш компонент ReactJS с помощью Enzyme (Я использовал Jest, но он может работать и с Mocha, в этом случае просто переключите основной тестовый пакет):
+
+1) Библиотеки (package.json):
+
+"dependencies": {
+    "jest": "^24.6.0",
+    (...)
+}
+"devDependencies": {
+    "chai": "^4.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+   (...)
+}
+2) ИСПЫТАТЕЛЬНАЯ УСТАНОВКА: вы можете настроить фермент в каждом тесте. Но, как мудро предположил type_master_flash, для этого можно добавить скрипт. Для этого создайте новый параметр в файле package.json на том же уровне сеансов скрипты, зависимости и т. д.:
+
+Версия Jest 23.x (или предыдущая):
+
+"devDependencies": { 
+     (...) 
+ },
+"jest": {
+    "setupTestFrameworkScriptFile": "./tests.setup.js"
+ },
+После версии Jest 24.0: Согласно Документация Jest, «setupTestFrameworkScriptFile устарел в пользу setupFilesAfterEnv».
+
+"devDependencies": { 
+     (...) 
+ },
+"jest": {
+    "setupFilesAfterEnv": ["./tests.setup.js"]
+ },
+Этот файл может быть где угодно, и вы можете называть его как хотите. Просто не забудьте указать правильное расположение файла. В текущем примере я сохранил свой файл в корне моего проекта.
+
+3) tests.setup.js: Как я обнаружил в Фермент: TypeError: адаптер не является конструктором, проблема здесь в том, что мы не можем «Импортировать '' модуль с экспортом по умолчанию». Правильный способ настройки файла:
+
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+Только это, и вы можете протестировать свои компоненты.
+
+Ура и надеюсь, что это поможет.
+
+ 20.11.2018 00:21
+Как Приянк сказал, если вы используете приложение Create React, оно получит конфигурацию из src/setupTests.js.
+
+Добавлять:
+
+import { configure } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+configure({ adapter: new Adapter() })
+ 28.12.2018 13:54
+Многие ответы говорят об импорте setupTests.js в ваш тестовый файл. Или же настроить адаптер фермента в каждом тестовом файле. Что решает насущную проблему.
+
+Но в долгосрочной перспективе, если вы добавите файл jest.config.js в корень проекта. Вы можете настроить его для запуска установочного файла при запуске.
+
+jest.config.js
+module.exports = {
+  setupTestFrameworkScriptFile: "<rootDir>/src/setupTests.ts"
+}
+Это указывает Jest запускать setupTest.ts каждый раз при запуске.
+
+Таким образом, если вам нужно добавить полифиллы или добавить глобальный макет, например localstorage, вы можете добавить его в свой файл setupTests и настроить его везде.
+
+Документы Enzyme не охватывают интеграцию с Jest, поэтому объединять эти два понятия сбивает с толку.
+
+ 05.02.2019 07:54
+Для всех, кто прочитает это в будущем, setupTestFrameworkScriptFile устарел в пользу setupFilesAfterEnv в документация в новых версиях. Мы можем добавить наш файл так:
+
+"setupFiles": [
+    "<rootDir>/src/setupTests.js"
+]
+ 12.04.2019 14:04
+Для меня при использовании React с create-react-app я должен был убедиться, что имя файла правильное. Файл должен быть src/setupTests.js с s в конце Tests.
+
+Внутри setupTests.js находится следующее:
+
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+configure({ adapter: new Adapter() });
+
+При запуске npm run test он автоматически находит файл setupTests.js. Нет необходимости импортировать его в каждый тестовый файл.
+
+ 16.10.2019 22:47
+Я столкнулся с той же ошибкой, и по какой-то причине React не получал файл setupTests.js автоматически.
+
+Я создал новый файл с именем jest.config.js в корневом каталоге и добавил
+
+{ "jest": { "setupTestFrameworkScriptFile": "<rootDir>/path/to/your/file.js", } }
+После этого ошибка исчезла.
+
+Примечание: Позже я удаленный файл jest.config.js, но он все еще работает сейчас.
+
+Не уверен, что на самом деле было причиной проблемы!
+
+ 31.10.2019 12:59
+Конфигурация файла должна быть в свойстве setupFilesAfterEnvjest.config.js.
+
+{
+  ...
+  setupFilesAfterEnv: ["<rootDir>/jest.transform.js"],
+  ...
+}
+ 08.01.2020 21:01
+Если кто-то сталкивается с этим при попытке исправить это после настройки Testing React Components с помощью Jest в GatsbyJs (https://www.gatsbyjs.org/docs/testing-react-components/)
+
+В сделанном вами setup-test-env.js отредактируйте его так:
+
+import "@testing-library/jest-dom/extend-expect"
+import { configure } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+configure({ adapter: new Adapter() })
+ 25.05.2020 00:25
+Создайте файл с именем setupTests.js в корне вашего проекта. jest будет автоматически искать этот файл перед запуском любых тестовых костюмов. Добавьте в файл следующее содержимое.
+
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({adapter:new Adapter()})
+Примечание: имя файла должно быть точно таким же. Нет необходимости импортировать этот файл setupTests.js в ваши тестовые файлы. Он будет работать автоматически
+
+ 19.07.2020 13:16
+Тем, кто использует VS Code и расширение Jest Runner для приложения React CRA, не забудьте настроить Jest Runner, чтобы использовать встроенный скрипт runner CRA, задав для команды jest значение:
+
+npm test - --watchAll = false
+
+Вы получите сообщение об ошибке в теме, если забудете это сделать. И поскольку вы используете CRA, вы не сможете настроить setupFilesAfterEnv ни в package.json, ни в jest.config.js. Попытка этого приведет к этой ошибке:
+
+Эти параметры в вашей конфигурации package.json Jest в настоящее время не поддерживаются приложением Create React.
+
+ 23.02.2021 21:06
+npm i enzyme-adapter-react-16 enzyme-to-json --save-dev
+
+Добавить в package.jsonвведите описание изображения здесь
+
+"jest": {
+       "collectCoverageFrom": [  "src/**/*.js", "!src/index.js" ]
+};
+Добавьте два файла в папку src ->
+setupTests.js
+
+tempPolyfills.js
+
+setupTests.js:
+import requestAnimationFrame from './tempPolyfills';
+
+        import { configure } from "enzyme";
+        import Adapter from 'enzyme-adapter-react-16';
+
+        configure({adapter: new Adapter(), disableLifecycleMethods:true});
+tempPolyfills.js:
+const requestAnimationFrame = global.requestAnimationFrame = callback => {
+          setTimeout(callback,0);
+      };
+export default requestAnimationFrame;
+в случае, если shallow -> expect () не работает в тестовом примере, используйте toJson (): Пример :
+    import { shallow } from "enzyme";
+    import App from "./App";
+    import toJson from 'enzyme-to-json';
+    describe('App', () => {
+        const app = shallow(<App />);
+        it('renders correctly', () => {
+            expect(toJson(app)).toMatchSnapshot();
+        });
+     });
+ 18.03.2021 20:04
+Если вы думаете, что в остальном настроили все правильно (например, у вас установлена ​​поддержка @ wojtekmaj / энзим-адаптера-реакции-17 для поддержки React 17), еще одна ошибка, которую нужно проверить с помощью Typescript:
+
+У тебя есть
+
+"esModuleInterop": true,
+и соответствующий формат импорта для адаптера?
+
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import Enzyme from 'enzyme';
+ 17.04.2021 15:31
+Другие вопросы по теме
+Условный рендеринг с Window in Jest
+Почему компонент мелкого рендеринга с фиктивным json вызывает исключение объявления?
+Модульное тестирование <input type = "file" Accet = "image / *" />
+React, Jest: имитируйте модульный тест формы отправки
+Как добавить модульный тест для события нажатия клавиши окна в ReactJS с помощью фермента
+Модульное тестирование Redux Store.dispatch ()
+Jest проверьте, существует ли атрибут elements
+Слушатель событий теста Jest / энзима удален
+Как протестировать загружаемый компонент React
+Неглубокий юнит-тест jest-энзима генерирует покрытие для всего дерева приложений
+Похожие вопросы
+Pubnub отправляет сообщения несколько раз
+Redux в NextJS
+Реакция: использование границ ошибок для выделения сломанных компонентов
+Условный рендеринг с Window in Jest
+Как скрыть HTML-элемент, если JSON-ключ не существует в React
+Какой предпочтительный способ сортировки итерации в React?
+Как получить длину контента из необработанных данных DraftJS?
+React chained setState прерывание рендеринга
+React 16.3+ правильный способ запустить onChange при изменении состояния
+Другие конечные точки игнорируются при использовании express.static
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Как программно очистить / сбросить React-Select?
+Вопросы
+JAVASCRIPT
+Как программно очистить / сбросить React-Select?
+ReactSelect V2 и V3, похоже, имеют несколько свойств, таких как clearValue, resetValue и setValue. Что бы я ни пытался, я не могу очистить выбор программно. resetValue вроде недоступен извне.
+
+selectRef.setValue([], 'clear')
+// or
+selectRef.clearValue()
+Это не очищает текущий выбор.
+
+Я что-то здесь упускаю или это еще не реализовано полностью?
+
+ 18.05.2018 15:51
+47
+2
+88 929
+18
+ Ответы 18
+Если вы используете реагировать-выбрать, вы можете попробовать передать null в опору value.
+
+Например:
+
+import React from "react";
+import { render } from "react-dom";
+import Select from "react-select";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const options = [
+      { value: "one", label: "One" },
+      { value: "two", label: "Two" }
+    ];
+
+    this.state = {
+      select: {
+        value: options[0], // "One" as initial value for react-select
+        options // all available options
+      }
+    };
+  }
+
+  setValue = value => {
+    this.setState(prevState => ({
+      select: {
+        ...prevState.select,
+        value
+      }
+    }));
+  };
+
+  handleChangeEvent = value => {
+    this.setValue(value);
+  };
+
+  handleClick = () => {
+    this.setValue(null); // here we reset value
+  };
+
+  render() {
+    const { select } = this.state;
+
+    return (
+      <div>
+        <p>
+          <button type = "button" onClick = {this.handleClick}>
+            Reset value
+          </button>
+        </p>
+        <Select
+          name = "form-field-name"
+          value = {select.value}
+          onChange = {this.handleChangeEvent}
+          options = {select.options}
+        />
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById("root"));
+Вот рабочий пример этого.
+
+ 18.05.2018 20:21
+В случае, если это кому-то поможет, вот мое решение: я создал кнопку для очистки выбранного значения, вернув состояние к исходному значению.
+
+<button onClick = {() => this.clearFilters()} >Clear</button>
+
+clearFilters(){
+    this.setState({ startTime: null })
+}
+Пример полного кода ниже:
+
+import React from "react"
+import Select from 'react-select';
+
+const timeSlots = [
+    { value: '8:00', label: '8:00' },
+    { value: '9:00', label: '9:00' },
+    { value: '10:00', label: '10:00' },
+] 
+
+class Filter extends React.Component {
+
+  constructor(){
+    super();
+    this.state = {
+      startTime: null,
+    }
+  }
+  
+  startTime = (selectedTime) => {
+    this.setState({ startTime: selectedTime });
+  }
+
+  clearFilters(){
+    this.setState({
+        startTime: null, 
+    })
+  }
+
+  render(){
+    const { startTime } = this.state;
+    
+    return(
+      <div>
+        <button onClick = {() => this.clearFilters()} >Clear</button>
+        <Select
+            value = {startTime}
+            onChange = {this.startTime}
+            options = {timeSlots}
+            placeholder='Start time'
+        />
+      </div>
+    )
+  }
+
+}
+
+export default Filter
+ 22.10.2018 09:27
+Если вы установите флажок Выбрать компонент на панели разработчиков React, вы увидите, что он обернут другим - State Manager. Таким образом, ваша ссылка в основном относится к диспетчеру состояний, а не к самой выборке.
+
+
+
+К счастью, у StateManager есть состояние) и объект значения, который вы можете установить на все, что захотите.
+
+Например (это из моего проекта, resetGroup - это обработчик onClick, который я прикрепляю к какой-то кнопке в DOM):
+
+<Select onChange = {this.handleGroupSelect} 
+      options = {this.state.groupsName.map(group => 
+                  ({ label: group, value: group }) )}
+      instanceId = "groupselect"
+      className='group-select-container'
+      classNamePrefix = "select"
+      placeholder = {this.context.t("Enter name")}
+      ref = {c => (this.groupSelect = c)}
+/>
+
+    resetGroup = (e) => {
+        e.preventDefault()
+        this.setState({
+            selectedGroupName: ""
+        })
+        this.groupSelect.state.value.value = ""
+        this.groupSelect.state.value.label = this.context.t("Enter name")
+    }
+
+ 22.02.2019 21:26
+Я сам столкнулся с этой проблемой и сумел исправить ее, передав key компоненту React-Select с добавленным к нему выбранным значением. Затем это заставит ReactSelect выполнить повторный рендеринг при обновлении выделения.
+
+Я надеюсь, что это поможет кому-то.
+
+import ReactSelect from 'react-select';
+
+...
+
+<ReactSelect
+  key = {`my_unique_select_key__${selected}`}
+  value = {selected || ''}
+  ...
+/>
+ 13.03.2019 14:21
+Просто сохраните значение в состоянии и измените состояние программно с помощью componentDidUpdate и т. д.
+
+class Example extends Component {
+
+constructor() {
+    super()
+}
+
+state = {
+     value: {label: 'Default value', key : '001'}
+}
+
+render() {
+   return(
+      <Select
+         ...
+         value = {this.state.value}
+         ...
+      />
+   )
+)}
+Примечание: «значение» должно быть объектом.
+
+ 18.06.2019 09:21
+Простой вариант - передать null в опору value.
+
+<Select value = {null} />
+ 18.09.2019 14:49
+Это моя рабочая реализация React-Select V3очищено программно с Хуки.
+
+Вы можете поиграть с ним в CodeSandbox ДЕМО. Любые отзывы приветствуются.
+
+const initialFormState = { mySelectKey: null };
+
+const [myForm, setMyForm] = useState(initialFormState);
+
+const updateForm = value => {
+  setMyForm({ ...myForm, mySelectKey: value });
+};
+
+const resetForm = () => {
+  setMyForm(initialFormState);
+};
+
+return (
+  <div className = "App">
+    <form>
+
+      <Select name = "mySelect"
+           options = {options}
+             value = {options.filter(({ value }) => value === myForm.mySelectKey)}
+    getOptionLabel = {({ label }) => label}
+    getOptionValue = {({ value }) => value}
+          onChange = {({ value }) => updateForm(value)} />
+
+      <p>MyForm: {JSON.stringify(myForm)}</p>
+
+      <input type = "button" value = "Reset fields" onClick = {resetForm} />
+
+    </form>
+  </div>
+);
+ 30.09.2019 17:31
+Я использую redux-observable.
+
+Начальное состояние:
+
+firstSelectData: [],
+secondSelectData:[],
+secondSelectValue: null
+Создаю действие для заполнения first select. при изменении первого выбора я вызываю действие для заполнения второго.
+
+При успешном заполнении сначала выберите Я установил (secondSelectData - [], secondSelectValue - null)
+
+При успешном заполнении второго выбора я установил (от secondSelectValue до null) при изменении второго выбора я вызываю действие по обновлению secondSelectValue с новым выбранным значением
+
+ 14.10.2019 12:23
+Если кто-то ищет решение с помощью Hooks. React-Select V3.05:
+
+const initial_state = { my_field: "" }
+
+const my_field_options = [
+    { value: 1, label: "Daily" },
+    { value: 2, label: "Weekly" },
+    { value: 3, label: "Monthly" },
+]
+
+export default function Example(){
+    const [values, setValues] = useState(initial_state);
+
+    function handleSelectChange(newValue, actionMeta){
+        setValues({
+            ...values,
+            [actionMeta.name]: newValue ? newValue.value : ""
+        })
+    }
+
+    return <Select
+               name = {"my_field"}
+               inputId = {"my_field"}
+               onChange = {handleSelectChange}
+               options = {my_field_options}
+               placeholder = {values.my_field}
+               isClearable = {true}
+           /> 
+}
+ 31.10.2019 15:47
+Для тех, кто работает с функциональным компонентом, вот базовая демонстрация о том, как вы можете сбросить выбор реакции на основе некоторого изменения / триггера / reduxValue.
+
+import React, { useState, useEffect } from 'react';
+import Select from 'react-select';
+
+const customReactSelect = ({ options }) => {
+  const [selectedValue, setSelectedValue] = useState([]);
+
+
+  /**
+   * Based on Some conditions you can reset your value
+   */
+  useEffect(() => {
+      setSelectedValue([])
+  }, [someReduxStateVariable]);
+
+  const handleChangeEvent = (selectedVal) => {
+    setSelectedValue(selectedVal);
+  };
+
+  return (
+    <Select value = {selectedValue} onChange = {handleChangeEvent} options = {options} />
+  );
+};
+
+export default customReactSelect;
+ 26.08.2020 14:14
+Вы можете очистить значение выбора реакции с помощью ref.
+
+import React, { useRef } from "react";
+import Select from "react-select";
+
+export default function App() {
+  const selectInputRef = useRef();
+
+  const onClear = () => {
+    selectInputRef.current.select.clearValue();
+  };
+
+  return (
+    <div className = "App">
+      <h1>Select Gender</h1>
+      <Select
+        ref = {selectInputRef}
+        options = {[
+          { value: "male", label: "Male" },
+          { value: "female", label: "Female" }
+        ]}
+      />
+      <button onClick = {onClear}>Clear Value</button>
+    </div>
+  );
+}
+Вот CodeSandbox ссылка на сайт
+
+ 14.10.2020 09:22
+Вы можете установить значение null
+
+   const [selectedValue, setSelectedValue] = useState();
+   const [valueList, setValueList] = useState([]); 
+   const [loadingValueList, setLoadingValueList] = useState(true);
+
+
+ useEffect(() => {
+       //on page load update valueList and Loading as false
+      setValueList(list);
+      loadingValueList(false)
+    }, []);
+
+                                
+  const onClear = () => {
+     setSelectedValue(null);  // this will reset the selected value
+  };
+
+<Select
+       className = "basic-single"
+       classNamePrefix = "select"
+       value = {selectedValue}
+       isLoading = {loadingValueList}
+       isClearable = {true}
+       isSearchable = {true}
+       name = "selectValue"
+       options = {valueList}
+       onChange = {(selectedValue) => 
+       setSelectedValue(selectedValue)}
+      />
+  <button onClick = {onClear}>Clear Value</button>
+ 12.02.2021 01:37
+реакция-выбор / создание.
+Вопрос явно ищет решение для response-select / creatable. Пожалуйста, найдите приведенный ниже код, простой ответ и решение вопроса. Вы можете изменить код под вашу конкретную задачу.
+
+'''
+import CreatableSelect from 'react-select/creatable';
+
+const TestAction = (props) => {
+  const {
+    buttonLabelView,
+    className
+  } = props;
+  const selectInputRef = useRef();
+
+  function clearSelected(){
+      selectInputRef.current.select.select.clearValue()
+  }
+  
+
+  const createOption = (label, dataId) => ({
+    label,
+    value: dataId,
+  });
+
+  const Options = (["C1", "C2", "C3", "C4"])?.map((post, id) => {
+    return createOption(post, id);
+  });
+
+  return(
+    <div> 
+       <CreatableSelect
+          ref = {selectInputRef}
+          name = "dataN"
+          id = "dataN"
+          className = "selctInputs"
+          placeholder = " Select..."
+          isMulti
+          options = {Options} />
+
+          <button onClick = {(e)=> clearSelected()} > Clear </button>
+    </div>
+  );
+}
+
+export default TestAction;
+'''
+ 03.04.2021 01:34
+if you are using formik then use below code to reset react-select value.
+
+useEffect(()=>{
+formik.setFieldValue("stateName", [])
+},[])
+
+Where stateName is html field name.
+
+if you want to change value according to another dropdown/select (countryName) then pass that field value in useEffect array like below
+
+useEffect(()=>{
+formik.setFieldValue("stateName", [])
+},[formik.values.countryName])
+ 25.04.2021 12:00
+if you are using formik then use below code to reset react-select value.
+
+useEffect(()=>{
+formik.setFieldValue("stateName", [])
+},[])
+
+Where stateName is html field name.
+
+if you want to change value according to another dropdown/select (countryName) then pass that field value in useEffect array like below
+
+useEffect(()=>{
+formik.setFieldValue("stateName", [])
+},[formik.values.countryName])
+ 25.04.2021 12:06
+передача null в атрибуте value элемента response-select сбросит его.
+
+ 25.05.2021 10:18
+Ответ Зишана действительно правильный - вы можете использовать clearValue(), но когда вы это сделаете, экземпляр Select не будет сброшен на вашу опору defaultValue, как вы могли подумать. clearValue() возвращает общую метку Select... без данных в value.
+
+Вероятно, вы захотите использовать selectOption() в своем сбросе, чтобы явно указать react-selectна какое значение / метку следует сбросить. Как я его подключил (используя Next.js, styled-components и react-select):
+
+import { useState, useRef } from 'react'
+import styled from 'styled-components'
+import Select from 'react-select'
+
+// Basic button design for reset button
+const UIButton = styled.button`
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 700;
+  min-width: 250px;
+  padding: 17px 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: lightgray;
+  }
+`
+
+// Using style object `react-select` library indicates as best practice
+const selectStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    borderRadius: 0,
+    fontWeight: 700,
+    margin: '0 20px 10px 0',
+    padding: '10px',
+    textTransform: 'uppercase',
+    minWidth: '250px'
+  })
+}
+
+export default function Sample() {
+  // State for my data (assume `data` is valid)
+  const [ currentData, setCurrentData ] = useState(data.initial)
+
+  // Set refs for each select you have (one in this example)
+  const regionOption = useRef(null)
+
+  // Set region options, note how I have `data.initial` set here
+  // This is so that when my select resets, the data will reset as well
+  const regionSelectOptions = [
+    { value: data.initial, label: 'Select a Region' },
+    { value: data.regionOne, label: 'Region One' },    
+  ]
+
+  // Changes data by receiving event from select form
+  // We read the event's value and modify currentData accordingly
+  const handleSelectChange = (e) => {
+    setCurrentData(e.value)
+  }
+
+  // Reset, notice how you have to pass the selected Option you want to reset
+  // selectOption is smart enough to read the `value` key in regionSelectOptions 
+  // All you have to do is pass in the array position that contains a value/label obj
+  // In my case this would return us to `Select a Region...` label with `data.initial` value
+  const resetData = () => {
+    regionOption.current.select.selectOption(regionSelectOptions[0])
+    setCurrentData(data.initial)
+  }
+
+  // notice how my `UIButton` for the reset is separate from my select menu
+  return(
+    <>
+    <h2>Select a region</h2>
+    <Select 
+      aria-label = "Region select menu"
+      defaultValue = { regionSelectOptions[0] }
+      onChange = { event => handleDataChange(event) }
+      options = { regionSelectOptions }
+      ref = { regionOption }
+      styles = { selectStyles }
+    />
+    <UIButton 
+      onClick = { resetData }
+    >
+      Reset
+    </UIButton>
+    </>
+  )
+}
+ 10.06.2021 01:17
+Обратите внимание, что в верхнем ответе для правильной очистки значение должно быть «null», а не «undefined».
+
+ 16.06.2021 11:01
+Другие вопросы по теме
+Реагировать не рендеринг во всплывающем окне расширения Chrome
+Как устранить ошибку версии React в модуле узла
+Как запихнуть новый объект в массив?
+Производительность React-Native с небольшими компонентами
+Определение направления прокрутки на странице - обновление значения prev
+Reactjs - маршрутизация SPA с использованием панели навигации
+Как реализовать функцию выхода из системы при нажатии на окно браузера или закрытие вкладки в JavaScript?
+Прочтите данные из TextInput в react-admin
+Как я могу использовать this.state в this.state
+Прокрутка "горизонтально прокручиваемого элемента div" также делает прокрутку родительского элемента
+Похожие вопросы
+Преобразование возвращенного файла с сервера в большой двоичный объект и загрузка
+Webdriverio textarea set Текст
+Google Chrome 66 как включить автоматическое воспроизведение видео без звука jumbotron
+EncodeURIComponent не возвращает svg
+Обрабатывать 1 цикл за раз, содержащий асинхронную функцию
+Клик по объекту не зарегистрирован
+Получить статический файл JSON из массива
+Использовать массив результатов запроса MySQLi более одного раза
+Карусель отображает только 1 div bootstrap 3 javascript
+Выпадающий список jquery скрывает, когда мышь оставляет
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Невозможно удалить веб-пакет из сценария реакции
+Вопросы
+NODE.JS
+Невозможно удалить веб-пакет из сценария реакции
+Я пытался создать приложение в React, что для меня в новинку. Но после установки веб-пакета npm start не работает. Это дает мне:
+
+my-todo-react@0.1.0 start /home/hanna/Desktop/projects/my-todo-react react-scripts start
+
+Возможно, возникла проблема с деревом зависимостей проекта. Скорее всего, это не ошибка в приложении Create React, а то, что вам нужно исправить локально.
+
+Пакет response-scripts, предоставляемый приложением Create React, требует зависимости:
+
+"webpack": "4.19.1"
+
+Не пытайтесь установить его вручную: ваш менеджер пакетов делает это автоматически. Однако выше в дереве была обнаружена другая версия webpack:
+
+/ home / hanna / node_modules / webpack (версия: 4.20.2)
+
+Известно, что ручная установка несовместимых версий вызывает проблемы, которые сложно отладить.
+
+Если вы предпочитаете игнорировать эту проверку, добавьте SKIP_PREFLIGHT_CHECK = true в файл .env в своем проекте. Это навсегда отключит это сообщение, но вы можете столкнуться с другими проблемами.
+
+Чтобы исправить дерево зависимостей, попробуйте выполнить следующие шаги в точном порядке:
+
+Удалите package-lock.json (не package.json!) И / или yarn.lock в папке вашего проекта.
+Удалите node_modules в папке вашего проекта.
+Удалите «webpack» из зависимостей и / или devDependencies в файле package.json в папке вашего проекта.
+Запустите npm install или yarn, в зависимости от того, какой менеджер пакетов вы используете.
+В большинстве случаев этого должно быть достаточно, чтобы устранить проблему. Если это не помогло, вы можете попробовать еще несколько вещей:
+
+Если вы использовали npm, установите пряжу (http://yarnpkg.com/) и вместо этого повторите с ней вышеуказанные шаги. Это может помочь, потому что у npm есть известные проблемы с подъемом пакетов, которые могут быть решены в будущих версиях.
+
+Убедитесь, что / home / hanna / node_modules / webpack находится вне каталога вашего проекта. Например, вы могли случайно что-то установить в свою домашнюю папку.
+
+Попробуйте запустить npm ls webpack в папке вашего проекта. Это скажет вам, какой другой пакет (помимо ожидаемых сценариев реакции) установил webpack.
+
+Если ничего не помогает, добавьте SKIP_PREFLIGHT_CHECK = true в файл .env в своем проекте. Это навсегда отключит эту предполетную проверку, если вы все равно захотите продолжить.
+
+P.S. Мы знаем, что это длинное сообщение, но, пожалуйста, прочтите шаги выше :-) Надеемся, вы найдете их полезными!
+
+npm ERR! код ELIFECYCLE npm ERR! ошибка 1 npm ERR! my-todo-react@0.1.0 начало: react-scripts start npm ERR! Статус выхода 1 npm ERR! npm ERR! Ошибка при запуске скрипта my-todo-react@0.1.0. npm ERR! Вероятно, это не проблема npm. Скорее всего, выше есть дополнительный вывод журнала.
+
+npm ERR! Полный журнал этого запуска можно найти в: npm ERR! /home/hanna/.npm/_logs/2018-10-02T10_39_06_361Z-debug.log
+
+ 02.10.2018 12:39
+24
+3
+43 249
+18
+ Ответы 18
+Поскольку похоже, что в проекте используется приложение Create React, Webpack, вероятно, уже является зависимостью в package.json. Таким образом, простой способ установить его - просто перейти в каталог проекта и набрать npm install (или yarn install) в терминале.
+
+Если использование интерфейса командной строки Webpack вызывает ошибки, вероятно, это связано с тем, что глобально установлена ​​другая версия.
+
+Чтобы удалить его глобально, введите npm -g uninstall webpack.
+
+ 03.10.2018 22:16
+Создайте файл .env в корневом каталоге проекта и добавьте эту строку SKIP_PREFLIGHT_CHECK=true внутрь файла.
+
+затем попробуйте запустить yarn start.
+
+ 08.10.2018 19:01
+У меня сегодня была аналогичная проблема. Я решил с помощью следующих шагов:
+
+Выполните npm ls webpack ->, чтобы узнать, что я установил Webpack вне своей папки («как ваш ... / home / hanna / node_modules / webpack»).
+Затем cd в это место (/ home / hanna / node_modules /) и запустите npm install webpack@4.19.1. Таким образом, у меня будет та же версия Webpack, что и в папке моего проекта.
+После этого, когда я запускаю npm start, он работает нормально.
+
+ 11.10.2018 14:14
+Ваша проблема в том, что вы установили версию веб-пакета: 4.20.2
+
+Вам необходимо установить более раннюю версию "webpack": "4.19.1" `
+
+
+
+Ваша проблема в том, что вы установили версию веб-пакета: 4.20.2
+
+Вам необходимо установить более раннюю версию "webpack": "4.19.1" `.. Итак
+
+$npm uninstall -g webpack
+а также
+
+$npm install -g webpack@4.19.1
+надеюсь, это поможет
+
+ 22.10.2018 20:23
+Чтобы решить эту проблему, мне пришлось удалить webpack и webpack-dev-server из папки node-modules, а затем установить их снова, но с другими версиями.
+
+Откройте cmd в папке node-modules вне папки вашего проекта
+
+Удалите webpack и webpack-dev-server:
+
+npm uninstall webpack
+npm uninstall webpack-dev-server
+Удалите папку узлы-модули и файл пакет-lock.json из папки вашего проекта.
+
+Снова открываем нод-модули
+
+npm install webpack@4.19.1
+npm install webpack-dev-server@3.1.9
+Используйте эту команду в папке вашего проекта
+
+npm install
+Это помогло мне, надеюсь, это поможет и вам.
+
+ 30.10.2018 17:35
+Одно из решений, которое у меня было, заключалось в том, чтобы перейти в мою «Домашнюю» папку и удалить node_modules. папка и файл package-lock.json.
+
+Потом работал.
+
+ 11.11.2018 17:44
+Я не смог найти способ удалить всю папку модуля узла, единственный способ - удалить весь файл с помощью командной строки
+
+rm -rf node_modules
+ 12.11.2018 19:59
+Я думаю, что если у вас установлен глобальный пакет webpack, это может вызвать такую ​​ошибку. Глобальное удаление может решить проблему. Вот что я здесь сделал, и это работает.
+
+ 26.12.2018 16:27
+Я столкнулся с той же проблемой, и у меня сработало следующее:
+
+Удалите папку node-modules и файл package-lock.json.
+Скачал и установил Node.js
+npm install webpack@4.19.1
+npm install webpack-dev-server@3.1.9
+Удалена запись babel-eslint из package.json
+Использовал эту команду в папке проекта: npm install
+Наконец yarn start или npm start
+ 11.01.2019 20:32
+Из-за более новых версий это сработало для меня:
+
+Откройте окно терминала (командную строку) в папке node_modules вне папки вашего проекта.
+
+Удалите webpack и webpack-dev-server:
+
+npm uninstall webpack
+npm uninstall webpack-dev-server
+Удалите папку node_modules и файл package-lock.json из папки вашего проекта.
+
+Откройте node_modules снова
+
+npm install webpack@4.28.3
+npm install webpack-dev-server@3.1.14
+Используйте эту команду в папке вашего проекта:
+
+npm install
+ 11.02.2019 22:09
+Перейдите в каталог вашего проекта, в котором вы запускаете npm start, и выполните команду
+
+touch .env
+
+Если в вашем проекте нет ранее существовавшего файла .env, он будет создан. Перейдите в файл .env и добавьте следующий код (если вы находитесь в окне LINUX, вы делаете это, набирая nano .env, в противном случае просто используйте текстовый редактор. SKIP_PREFLIGHT_CHECK=true
+
+Сохраните файл и попробуйте снова запустить npm start. Это решение именно то, что предлагается в сообщении об ошибке, и оно сработало для меня.
+
+ 25.03.2020 13:42
+Если кто-то все еще сталкивается с этой проблемой и использует пряжу вместо npm, может (я пользователь Mac):
+
+Открыть терминал
+Тип yarn remove webpack
+Войдите в каталог своего проекта с помощью файлового проводника.
+Удалите все там
+Откройте свой редактор кода
+Удалите скрытые файлы (ETC: файлы .env или .gitignore), если они существуют.
+В каталоге вашего проекта откройте терминал, введите npx create-react-app . и нажмите Enter.
+И перезапустите приложение, набрав yarn start после загрузки.
+У меня это сработало. Он загрузил веб-пакет, который необходим из сценариев реакции.
+
+ 20.04.2020 10:54
+Перейдите к /home/hanna и введите npm i webpack@required_dependency. Это должно решить вашу проблему.
+
+ 22.04.2020 19:01
+сделай это
+
+первый код в терминале это ->
+
+ yarn add --dev dotenv
+создайте файл .env в корневом каталоге, затем добавьте строку ниже в файл .env
+
+ SKIP_PREFLIGHT_CHECK=true 
+ 09.06.2020 20:13
+Я думаю, что если у вас установлен глобальный пакет webpack, это может вызвать такую ​​ошибку. Глобальное удаление может решить проблему. Вот что я здесь сделал, и это работает.
+
+npm uninstall webpack
+npm uninstall webpack-dev-server
+Удалите папку node_modules и файл package-lock.json из корневого каталога.
+
+##thompsonmax## 
+Затем вы можете запустить свою команду в своем приложении,
+
+create-react-app react-app
+ 24.06.2020 04:09
+npx создать-реагировать-приложение nameOfYourApp
+найдите, где находится ваш nameOfYourApp, и замените папку src папкой из предыдущего проекта
+использовать новый nameOfYourApp
+ 03.02.2021 13:12
+Если у вас есть несколько папок node_modules с разными версиями зависимостей, одна может конфликтовать с другой. - сделать следующее:
+Выполните шаги 1–4, изначально указанные в каталоге проекта, и зафиксируйте обновленные изменения локально ~
+я. Удалите пакет-lock.json (не package.json!) И / или yarn.lock в папке вашего проекта.
+
+II. Удалите node_modules в папке вашего проекта.
+
+iii. Удалите webpack из зависимостей и / или devDependencies в файле package.json в папке вашего проекта.
+
+iv. Запустите npm install или yarn, в зависимости от того, какой менеджер пакетов вы используете.
+
+Найдите расположение папки node_modules, которой нет в папке вашего проекта ~ эта строка - (/ home / hanna / node_modules / webpack)
+
+Удалите это
+
+npm start
+
+должно сработать :)!
+
+ 02.03.2021 06:53
+Шаг 1. Создайте файл .env в корневом каталоге.
+Шаг 2: добавьте эту строку в ваш файл .env: SKIP_PREFLIGHT_CHECK=true
+Шаг 3: снова npm start
+ 31.03.2021 12:50
+Другие вопросы по теме
+Реагировать на экспорт csv-таблицы начальной загрузки с помощью mimetype
+Использование React Leaflet Draw в проекте - проблемы EditControl
+Передайте компонент React в качестве реквизита, который будет использоваться в качестве шаблона для рендеринга узлов в TreeView
+Плеер Youtube не работает в производственной сборке
+Как настроить строку и столбец для библиотеки react-table?
+Путь не помещается в SVG
+ReactJS: визуализировать динамический компонент и передать реквизиты
+Совместное использование кода между проектом Typescript React и проектом Typescript Express
+Если указано, "прокси" в package.json должен быть строкой
+Перевести название вкладки React-admin
+Похожие вопросы
+Обещание в функции обещания: не удается отправить данные в массив
+Рекурсивная функция для иерархии сотрудников (nodejs)
+Выполнение "сна" внутри асинхронной итерации "для ожидания" (ES2018)
+Как я могу безопасно открыть это внешнее приложение из Electron?
+Passport.js: использование стратегии JWT с существующей стратегией Slack для аутентификации клиента
+Если оператор выполняется после вызова функции
+Обновление mongodb / mongoose arrayFilters (с $ []) не работает
+NodeJS: запрос команды базы данных с условием цикла
+Как получить доступ к запрошенному телу из другой функции с помощью async / await?
+AWS :: Lambda без сервера вызывает локальную функцию, не отражающую мой новый wcode
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
+RedDeveloper
+Блог
+Вопросы
+Теги
+Поиск...
+Предупреждение сайта React: для атрибута href требуется действительный адрес. Укажите действительный адрес для навигации в качестве значения href jsx-a11y / anchor-is-valid
+Вопросы
+REACTJS
+Предупреждение сайта React: для атрибута href требуется действительный адрес. Укажите действительный адрес для навигации в качестве значения href jsx-a11y / anchor-is-valid
+Я получаю предупреждение на сайте React, который я создал
+
+./src/components/layout/Navbar.js [1]   Line 31:  The href attribute requires a valid 
+address. Provide a valid, navigable address as the href value  jsx-a11y/anchor-is-valid
+по следующему коду:
+
+          <p>
+            {isEmpty(profile.website) ? null : (
+              <a
+                className = "text-white p-2"
+                href = {profile.website}
+                target = "#"
+              >
+                <i className = "fas fa-globe fa-2x" />
+              </a>
+            )}
+            {isEmpty(profile.social && profile.social.twitter) ? null : (
+              <a
+                className = "text-white p-2"
+                href = {profile.social.twitter}
+                target = "#"
+              >
+                <i className = "fab fa-twitter fa-2x" />
+              </a>
+            )}
+            {isEmpty(profile.social && profile.social.facebook) ? null : (
+              <a
+                className = "text-white p-2"
+                href = {profile.social.facebook}
+                target = "#"
+              >
+                <i className = "fab fa-facebook fa-2x" />
+              </a>
+            )}
+          </p>
+Даже несмотря на то, что предупреждение появляется только для первой ссылки, такое же предупреждение появляется и для следующей ссылки, если я временно удалю первую ссылку или изменю href первой ссылки на статический URL-адрес.
+
+Ссылки должны отображаться в виде просто значка.
+
+Я пробовал такие вещи, как использование кнопки (у меня неправильный вид), использование функции для открытия динамического URL-адреса и попытка заставить href быть строкой с помощью '' + {profile.website}. Многие другие предложения не сработали.
+
+Есть ли способ предотвратить ошибку, не меняя правила jsx-a11y? То, что я сделал, не является хорошим шаблоном или это просто ошибка в React или JSX?
+
+ 14.10.2018 10:58
+65
+3
+76 458
+18
+ Ответы 18
+Я не вижу ничего плохого, если я говорю об этом. https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+
+Проверьте эти ссылки. У некоторых людей была такая же проблема, что и у вас, и она возникает из-за компонента Link. Они исправляют это, добавляя исключение в .eslintrc:
+
+первая ссылка => https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340 а вторая ссылка => Как я могу исправить jsx-a11y / anchor-is-valid при использовании компонента Link в React?
+
+Сообщите мне, если это поможет.
+
+ 14.10.2018 11:23
+попробуйте заменить
+
+target = "#"
+к
+
+target = "_blank"
+ 31.01.2019 13:23
+Я получил аналогичное предупреждение для href, я сделал следующее. Может быть, попробуй это. Я избавился от предупреждения, и функциональность осталась неизменной. Я не уверен, что это правильно. Но попробовал это.
+
+let hrefLink = '#'; passed as a arg like href = {hrefLink}
+ 12.02.2019 05:23
+Используйте href = "/#" для замены href = "#" ИЛИ href = "javascript:;" ИЛИ href = "javascript:void(0);"
+
+Следует удалить предупреждения.
+
+ 25.06.2019 15:04
+Я использовал href = "!#" для удаления предупреждений.
+
+ 14.08.2019 10:19
+Вставьте пробел после #, чтобы больше не было предупреждений об этом
+
+заменить href = "#" на href = "# " но лучше использовать вот так href = "#something" => href = "#profile"
+
+ 30.08.2019 14:42
+Вы также можете скрыть это предупреждение, добавив комментарий eslint-disable-next-line:
+
+// eslint-disable-next-line
+<a
+    onClick = {e => {
+        // do something
+    }}
+>
+    example
+</a>
+ 20.03.2020 15:17
+пожалуйста, используйте <button> вместо <a>, когда нет атрибута href.
+
+официальная ссылка
+
+Если вам действительно нужно использовать тег a, он может вам помочь:
+
+<a href = "#" onClick = {ev => {ev.preventDefault(); onClick();}}>"Hello A Tag"</a>
+ 25.03.2020 04:50
+Если вы пытаетесь отобразить ссылку на страницу динамически, вы можете вместо этого заменить тег <a> на тег <div>. Предупреждающее сообщение исчезнет.
+
+// DON't DO THiS
+<a className = "page-link" href = "javascript:void(0);" onClick = {() => onPageChange(page)}>
+  {page}
+</a>;
+
+// TRY THIS INSTEAD
+<div className = "page-link" onClick = {() => onPageChange(page)}>
+  {page}
+</div>;
+Если вы поместите слово "javascript" в атрибут href, вы получите КРАСНОЕ ПРЕДУПРЕЖДЕНИЕ:
+
+index.js:1375 Warning: A future version of React will block javascript: URLs as a security precaution. Use event handlers instead if you can.
+
+Ссылка: Страница разрешения ошибки EsLint
+
+ 04.04.2020 16:09
+Это помогло мне избавиться от предупреждения;
+
+<a href = "#/">...</a>  
+<a href = {() => false}>...</a>
+ 17.05.2020 00:31
+Это просто предупреждение, а не ошибка, что атрибут href требует допустимого значения, поскольку # указывает в никуда, вы можете добавить ссылки на атрибуты href, чтобы удалить это предупреждение, или, если вы все еще находитесь на ранней стадии разработки, просто напишите
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
+В верхней части вашего кода он удалит предупреждения с терминала, указанная выше строка отключает правило для указанного файла, в котором оно написано
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from 'react';
+
+const Header = () =>{
+    return(
+        <nav className = "navbar navbar-expand-lg navbar-light bg-light">
+            <a className = "navbar-brand" href = "#">Navbar</a>
+            <button className = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
+                <span className = "navbar-toggler-icon"></span>
+            </button>
+        </nav>
+         )
+}
+ 07.08.2020 09:32
+Я использовал следующее, чтобы удалить предупреждения.
+
+<a href = "/">
+ 28.09.2020 11:28
+Поздно к игре, но никто не порекомендовал window.location, который просто устанавливает тот же точный маршрут, что и текущий?
+
+Другие решения, такие как "#", "/ #" и "/", действительно изменяют текущий маршрут, верно? Для более общего решения просто используйте window.location, чтобы оставаться на текущей странице без изменений.
+
+<a href = "window.location" onClick = {...}> Better Solution </a>
+ 07.12.2020 04:03
+Если вы действительно хотите, чтобы ваш тег привязки имел метод onClick, вы должны использовать действительную ссылку href, иначе она выдаст ошибку. Атрибут href требует, чтобы действительное значение было доступно. Если вы не можете предоставить действительный href, но по-прежнему хотите, чтобы элемент напоминал ссылку, используйте кнопку и измените его соответствующими стилями.
+
+Измените стиль кнопки с помощью этого свойства, чтобы сделать прозрачным
+
+button{
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+}
+и установите для текста внутри кнопки цвет, похожий на цвет ссылки
+
+Я использую этот цвет
+
+.editcolor{
+        color: #1890ff;
+}
+Я решил свои ошибки этим методом.
+
+ 19.12.2020 18:03
+Чтобы также предотвратить дефолт, я использую это:
+
+<a href = "/#" onClick = {(e) => e.preventDefault()}>Link Text</a>
+ 16.02.2021 18:52
+Я пробовал, но большинство приведенных выше ответов не сработали для меня, поскольку новый eslint не позволяет большинство из них. Вместо этого упоминается отключение eslint для конкретной строки.
+
+Просто добавьте:
+// eslint-disable-next-line
+в строку, которая идет непосредственно перед строкой jsx, которая вызывает ошибку.
+
+Также добавьте этот комментарий в {/ * ... * /}, иначе будет отображаться ошибка.
+
+Использование: {/* // eslint-disable-next-line */ }}
+
+То же самое советуют:
+screenshot of error
+
+
+Надеюсь, это решит эту проблему!
+
+ 11.06.2021 16:03
+Если мы написали правильный URL-адрес, но он также дает ту же ошибку, что и я поставил www.reactjs.org, тогда он также дает такое же предупреждение. Чтобы решить эту проблему, у нас есть атрибут в теге привязки, т.е.
+
+<a
+   className = "App-link"
+   href = "https://reactjs.org"
+   target = "_blank"
+   rel = "noopener noreferrer"
+    >
+      Learn React
+    </a>
+className используется для стиля.
+href используется для ссылок.
+цель, используемая для открытия ссылки на новую вкладку или нет.
+Rel используется для вывода этого предупреждения в реакции.
+ 28.07.2021 11:17
+Я использовал href в теге a. это удалить предупреждения.
+
+<a href>Pictures</a>
+ 08.09.2021 06:48
+Другие вопросы по теме
+Kivy AnchorLayout .Kv файл
+Почему этот атрибут загрузки HTML не работает?
+Привязка с href не фокусируется в Safari, даже если включены все настройки специальных возможностей / клавиатуры
+Каков наилучший подход, отключение ограничений или изменение приоритета?
+Смущает относительный тег привязки URL-адреса
+Изменить CSS элемента, посещенного якорем
+Ссылка xhtml не открывается и файл не найден
+Вместо скачивания файлы открываются в браузере
+Запретить якорям действовать как гиперссылки, когда они отключены
+Удалите добавленную ссылку привязки / # из URL после использования
+Похожие вопросы
+Ошибка с расширением Redux DevTools с использованием TS: «Свойство '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__' не существует для типа 'Window'.»?
+React @flow избегает дублирования типа для этого
+Не удается разрешить React при импорте модуля
+Как получить доступ к объекту навигации в react-native
+Реагировать на собственное состояние прохода глобально с использованием redux
+Возникли проблемы с отображением данных, полученных из конечной точки приложения Flask
+Невозможно вызвать .then при насмешливом вызове аксиомов внутри componentDidMount
+Повторяющаяся работа с ReactJS -> Express или лучше с Express -> ReactJS?
+Заголовок реакции-навигации усекается
+Доступ к хранилищу redux для получения потока данных
+Разделы
+Блог
+
+Вопросы
+
+Теги
+
+О сайте
+
+Контакты
+info@reddeveloper.ru
+Правовая информация
+Политика конфиденциальности
+
+Пользовательское соглашение
+
+
+Находите ответы на сложные технические вопросы по программированию, с которыми сталкиваются инженеры по всему миру в своей ежедневной практике на сайте RedDeveloper.
+
+© 2026 «RedDeveloper.ru»
+
 React Interview Questions & Answers
 Last updated on Feb 11,20251.5M Views
 
