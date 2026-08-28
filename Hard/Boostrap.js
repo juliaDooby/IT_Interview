@@ -1,292 +1,58 @@
 Ответы на вопросы на собеседование Bootstrap (Twitter Bootstrap) (часть 2).
-</span>
-</div>
-<div class='blog-posts hfeed'>
-<!--Can't find substitution for tag [defaultAdStart]-->
-
-                              <div class="date-outer">
-                            
-
-                              <div class="date-posts">
-                            
-<div class='post-outer'>
-<meta content='summary_large_image' name='twitter:card'/>
-<meta content='#' name='twitter:site'/>
-<meta content='#' name='twitter:creator'/>
-<meta content='#' name='twitter:domain'/>
-<meta content='' name='twitter:image:src'/>
-<meta content='Ответы на вопросы на собеседование Bootstrap (Twitter Bootstrap) (часть 2).' name='twitter:title'/>
-<meta content='Список вопросов и ответов на собеседование Front-end developer. Вопросы на собеседование Bootstrap (Twitter Bootstrap). Twitter Bootstrap вопросы. Ответы на вопросы на собеседование Bootstrap.' name='twitter:description'/>
-<meta content='' name='twitter:url'/>
-<meta content='Ответы на вопросы на собеседование Bootstrap (Twitter Bootstrap) (часть 2).' property='og:title'/>
-<meta content='Ответы на вопросы на собеседование Bootstrap (Twitter Bootstrap) (часть 2).' property='og:title'/>
-<meta content='https://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-2.html' property='og:url'/>
-<meta content='Список вопросов и ответов на собеседование Front-end developer. Вопросы на собеседование Bootstrap (Twitter Bootstrap). Twitter Bootstrap вопросы. Ответы на вопросы на собеседование Bootstrap.' property='og:description'/>
-<meta content='2016-04-30T09:05:00+03:00' property='article:published_time'/>
-<meta content='Technology' property='article:section'/>
-<meta content='Bootstrap' property='article:tag'/>
-<meta content='Front-End Developer Other' property='article:tag'/>
-<meta content='Interview' property='article:tag'/>
-<article class='post' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-<div class='post-header'>
-<div class='labelhome'>
-<a href='https://jsehelper.blogspot.com/search/label/Bootstrap' rel='tag'>
-Bootstrap
-</a>
-<a href='https://jsehelper.blogspot.com/search/label/Front-End%20Developer%20Other' rel='tag'>
-Front-End Developer Other
-</a>
-<a href='https://jsehelper.blogspot.com/search/label/Interview' rel='tag'>
-Interview
-</a>
-</div>
-<h1 class='entry-title' itemprop='name'>
-Ответы на вопросы на собеседование Bootstrap (Twitter Bootstrap) (часть 2).
-</h1>
-<div class='post-info'>
-<span class='author-info'>
-<span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-<span itemprop='name'>
-vasyl1889
-</span>
-</span>
-</span>
-<meta content='https://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-2.html' itemprop='url'/>
-<span class='time-info'>
-<l></l>
-<i class='fa fa-clock-o'></i>
-<a class='timestamp-link' href='https://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-2.html' rel='bookmark' title='permanent link'>
-<abbr class='published updated' itemprop='datePublished' title='2016-04-30T09:05:00+03:00'>
-09:05:00
-</abbr>
-</a>
-</span>
-<span class='comment-info'>
-<l></l>
-<i class='fa fa-comments-o'></i>
-<a href='https://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-2.html#comment-form' onclick=''>
-
-                                        Добавить комментарий 
-                                      
-</a>
-</span>
-<span class='item-control blog-admin pid-1215401733'>
-<a href='https://www.blogger.com/post-edit.g?blogID=8798235924082241388&postID=689443864007374457&from=pencil' title='Изменить сообщение'>
-<b style='color:#EE3322;'>
-<i class='fa fa-pencil'></i>
-                              Edit
-                            </b>
-</a>
-</span>
-</div>
-</div>
-<div class='post-entry' itemprop='articleBody'>
-<p>
-<div dir="ltr" style="text-align: left;" trbidi="on">
-<h3 style="text-align: left;">
-<ul style="text-align: left;">
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется для основной группы кнопок?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Класс ".btn-group" используется для основной группы кнопок. Оберните ряд кнопок с классом ".btn" в класс ".btn-group".</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется, чтобы нарисовать панель кнопок?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">".btn-toolbar" позволяет объединить наборы &lt;div class = "btn-group"&gt; в &lt;div class = "btn-toolbar"&gt; для более сложных компонентов.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие классы могут быть применены к группе кнопок вместо изменения размера каждой кнопки?<a name="more"></a></span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Классы ".btn-group-lg, .btn-group-sm, .btn-group-xs" могут быть применены к группе кнопок вместо изменения размера каждой кнопки.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс отображает набор кнопок вертикально, а не горизонтально?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Класс ".btn-group-vertical" отображает набор кнопок вертикально, а не горизонтально.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое input группы?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">input группы расширяют формы управления. Используя input группы, вы можете легко добавить текст или кнопки на основе текстового ввода.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавляя контент к полю ввода, вы можете добавить общие элементы к вводу пользователя. Например, вы можете добавить символ доллара, @ для имени пользователя Twitter, или чтонибудь еще.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Чтобы добавить элементы к&#8218; ".form-control":</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Оберните форму в &lt;div&gt; с классом ".input-group"</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В качестве следующего шага, в тот же &lt;div&gt; поместите дополнительный контент внутри &lt;span&gt; с классом ".input-group-addon"</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Теперь поместите этот &lt;span&gt; до, либо после &lt;input&gt; элемента</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать меню навигации с вкладками?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания меню навигации с вкладками:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Взять неупорядоченный список с базовым классом ".nav".</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".nav-tabs".</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать меню навигации с кнопками?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания меню навигации с кнопками:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Взять неупорядоченный список с базовым классом ".nav".</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класса ".nav-pills".</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать вертикальное меню навигации с кнопками?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания вертикального меню навигации с кнопками используйте класс ".nav-stacked" вместе с классами ".nav, .nav-pills".</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap navbar?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Навигационные панели(navbar) являются одной из характерных особенностей сайтов Bootstrap, они являются адаптивными цель-компонентами, которые служат в качестве навигационных заголовков для приложений или сайтов. При просмотре на мобильных устройствах они сворачиваются (и могут переключаться), а при увеличении ширины смотрового окна принимают горизонтальную форму.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать navbar в Bootstrap?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания navbar нужно:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить классы ".navbar", ".navbar-default" к тегу &lt;nav&gt;.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить role = "navigation" к элементу выше, чтобы помочь с доступностью.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".navbar-header" к элементу &lt;div&gt;. Включить элемент &lt;a&gt; с классом "navbar-brand". Это даст тексту немного больший размер.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для добавления ссылки на навигационную панель, просто добавьте неупорядоченный список с классами ".nav", ".navbar-nav".&nbsp;</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap breadcrumb?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Навигационные цепочки ("хлебные крошки", breadcrumbs) - это схема навигации, которая показывает текущее положение пользователя на сайте. &nbsp;Они применяются для отображения иерархически-организованной информации. &nbsp;Например, в интернет-магазине "хлебные крошки" обычно представляют собой цепочки разделов. С их помощью пользователь может определить в каком разделе он находится сейчас, а также они позволяют перейти на разделы более высоких уровней, т.е. предоставляют ещё одну возможность навигации по структуре сайта.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">"Хлебные крошки" в Bootstrap - это обычный упорядоченный список с классом breadcrumbs. Разделитель элементов списка автоматически добавляется с помощью CSS (bootstrap.min.css).</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется для базовой нумерации страниц(pagination)?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Пагинация - это процесс организации контента путём его деления на отдельные страницы. Она применяется почти на каждом сайте в той или иной форме. Например, поисковые системы используют пагинацию для отображения ограниченного числа результатов на странице поиска информации.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Класс ".pagination" используется для добавления навигационного блока на страницу.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Класси ".disabled, .active". Используются для настройки различных ситуаций. Для создания неактивной ссылки используйте класс ".disabled", а для выделения текущей страницы класс ".active".</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">С помощью классов ".pagination-lg" и ".pagination-sm" вы можете увеличить или уменьшить размеры блока страничной навигации.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как настраивать ссылки нумерации страниц?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Вы можете использовать класс ".disabled" для неактивных ссылок и класс ".active" для указания текущей страницы.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap метки?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap метки являются строчными компонентами, т.е. располагаются в одной строке вместе с другими элементами и текстом. Метки, как правило, используются для обозначения некоторой ценной информации на веб-странице. Например: предупреждающие сообщения, важные примечания и т.д.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Меткам можно придать большую выразительность, если выделить их с помощью цвета. Twitter Bootstrap позволяет это сделать с помощью дополнительных классов: ".label-default", ".label-primary", ".label-success", ".label-info", ".label-warning" и ".label-danger".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap бейджики?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Значки похожи на метки. Основное отличие заключается в том, что углы более округлые. Значки в основном используются для выделения новых или непрочитанных записей.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Чтобы использовать значки просто надо добавить &lt;span class="badge"&gt; к ссылкам, Bootstrap навигации, и т.д..</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap Jumbotron?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Компонент Jumbotron предназначен для создания контента или информации на веб-сайте, который занимает всю ширину контейнера куда он помещен и является очень большим, чтобы пользователи обратили на него внимание.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания Jumbotron необходимо заключить подготовленное содержимое в блочный элемент &lt;div&gt;...&lt;/div&gt; и применить к нему класс ".jumbotron".</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для больших &lt;h1&gt;, размер шрифта снижается до 200px.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap page header?</span></li>
+Какой класс используется для основной группы кнопок?
+Класс ".btn-group" используется для основной группы кнопок. Оберните ряд кнопок с классом ".btn" в класс ".btn-group".
+Какой класс используется, чтобы нарисовать панель кнопок?
+.btn-toolbar" позволяет объединить наборы &lt;div class = "btn-group"&gt; в &lt;div class = "btn-toolbar"&gt; для более сложных компонентов.
+Какие классы могут быть применены к группе кнопок вместо изменения размера каждой кнопки?
+Классы ".btn-group-lg, .btn-group-sm, .btn-group-xs" могут быть применены к группе кнопок вместо изменения размера каждой кнопки.
+Какой класс отображает набор кнопок вертикально, а не горизонтально?
+Класс ".btn-group-vertical" отображает набор кнопок вертикально, а не горизонтально.
+Что такое input группы?
+input группы расширяют формы управления. Используя input группы, вы можете легко добавить текст или кнопки на основе текстового ввода.</span></div>
+Добавляя контент к полю ввода, вы можете добавить общие элементы к вводу пользователя. Например, вы можете добавить символ доллара, @ для имени пользователя Twitter, или чтонибудь еще.</span></div>
+Чтобы добавить элементы к&#8218; ".form-control":</span></div>
+Оберните форму в &lt;div&gt; с классом ".input-group"</span></li>
+В качестве следующего шага, в тот же &lt;div&gt; поместите дополнительный контент внутри &lt;span&gt; с классом ".input-group-addon"</span></li>
+Теперь поместите этот &lt;span&gt; до, либо после &lt;input&gt; элемента</span></li>
+Как создать меню навигации с вкладками?</span></li>
+Для создания меню навигации с вкладками:</span></div>
+Взять неупорядоченный список с базовым классом ".nav".</span></li>
+Добавить класс ".nav-tabs".</span></li>
+Как создать меню навигации с кнопками?</span></li>
+Для создания меню навигации с кнопками:</span></div>
+Взять неупорядоченный список с базовым классом ".nav".</span></li>
+Добавить класса ".nav-pills".</span></li>
+Как создать вертикальное меню навигации с кнопками?</span></li>
+Для создания вертикального меню навигации с кнопками используйте класс ".nav-stacked" вместе с классами ".nav, .nav-pills".</span></div>
+Что такое bootstrap navbar?</span></li>
+Навигационные панели(navbar) являются одной из характерных особенностей сайтов Bootstrap, они являются адаптивными цель-компонентами, которые служат в качестве навигационных заголовков для приложений или сайтов. При просмотре на мобильных устройствах они сворачиваются (и могут переключаться), а при увеличении ширины смотрового окна принимают горизонтальную форму.</span></div>
+Как создать navbar в Bootstrap?</span></li>
+Для создания navbar нужно:</span></div>
+Добавить классы ".navbar", ".navbar-default" к тегу &lt;nav&gt;.</span></li>
+Добавить role = "navigation" к элементу выше, чтобы помочь с доступностью.</span></li>
+Добавить класс ".navbar-header" к элементу &lt;div&gt;. Включить элемент &lt;a&gt; с классом "navbar-brand". Это даст тексту немного больший размер.</span></li>
+Для добавления ссылки на навигационную панель, просто добавьте неупорядоченный список с классами ".nav", ".navbar-nav".&nbsp;</span></li>
+Что такое Bootstrap breadcrumb?</span></li>
+Навигационные цепочки ("хлебные крошки", breadcrumbs) - это схема навигации, которая показывает текущее положение пользователя на сайте. &nbsp;Они применяются для отображения иерархически-организованной информации. &nbsp;Например, в интернет-магазине "хлебные крошки" обычно представляют собой цепочки разделов. С их помощью пользователь может определить в каком разделе он находится сейчас, а также они позволяют перейти на разделы более высоких уровней, т.е. предоставляют ещё одну возможность навигации по структуре сайта.</span></div>
+"Хлебные крошки" в Bootstrap - это обычный упорядоченный список с классом breadcrumbs. Разделитель элементов списка автоматически добавляется с помощью CSS (bootstrap.min.css).</span><br />
+Какой класс используется для базовой нумерации страниц(pagination)?</span></li>
+Пагинация - это процесс организации контента путём его деления на отдельные страницы. Она применяется почти на каждом сайте в той или иной форме. Например, поисковые системы используют пагинацию для отображения ограниченного числа результатов на странице поиска информации.</span></div>
+Класс ".pagination" используется для добавления навигационного блока на страницу.</span></div>
+Класси ".disabled, .active". Используются для настройки различных ситуаций. Для создания неактивной ссылки используйте класс ".disabled", а для выделения текущей страницы класс ".active".</span></div>
+С помощью классов ".pagination-lg" и ".pagination-sm" вы можете увеличить или уменьшить размеры блока страничной навигации.</span><br />
+Как настраивать ссылки нумерации страниц?</span></li>
+Вы можете использовать класс ".disabled" для неактивных ссылок и класс ".active" для указания текущей страницы.</span><br />
+Что такое Bootstrap метки?</span></li>
+Bootstrap метки являются строчными компонентами, т.е. располагаются в одной строке вместе с другими элементами и текстом. Метки, как правило, используются для обозначения некоторой ценной информации на веб-странице. Например: предупреждающие сообщения, важные примечания и т.д.</span></div>
+Меткам можно придать большую выразительность, если выделить их с помощью цвета. Twitter Bootstrap позволяет это сделать с помощью дополнительных классов: ".label-default", ".label-primary", ".label-success", ".label-info", ".label-warning" и ".label-danger".</span><br />
+Что такое Bootstrap бейджики?</span></li>
+Значки похожи на метки. Основное отличие заключается в том, что углы более округлые. Значки в основном используются для выделения новых или непрочитанных записей.</span></div>
+Чтобы использовать значки просто надо добавить &lt;span class="badge"&gt; к ссылкам, Bootstrap навигации, и т.д..</span><br />
+Что такое Bootstrap Jumbotron?</span></li>
+Компонент Jumbotron предназначен для создания контента или информации на веб-сайте, который занимает всю ширину контейнера куда он помещен и является очень большим, чтобы пользователи обратили на него внимание.</span></div>
+Для создания Jumbotron необходимо заключить подготовленное содержимое в блочный элемент &lt;div&gt;...&lt;/div&gt; и применить к нему класс ".jumbotron".</span></div>
+Для больших &lt;h1&gt;, размер шрифта снижается до 200px.</span><br />
+Что такое Bootstrap page header?</span></li>
 </ul>
 </h3>
 </div>
