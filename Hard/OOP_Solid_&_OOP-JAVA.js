@@ -5035,3 +5035,852 @@ Dependency Inversion - принцип инверсии зависимостей 
 
 ﻿  
 
+OOPS Concept in Java
+
+Table of Contents: [Show]
+
+Video Tutorials on OOPS Concepts
+OOPS Concept in Java – Part 1:
+
+
+In-depth look at OOPS Concept in Java – Part 2:
+
+
+Object-oriented programming languages emphasize on data more than the functions. The object-oriented programming (OOP) revolves around objects i.e. a real-time entity.
+
+This object bundles up data and the methods that operate on this data in one unit. This way, the data is protected from the outside world by having the methods inside the object. In OOP, the objects communicate with each other through messages.
+
+Any OOP language supports the following features:
+
+Classes
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+All these features ensure that the data is secured and at the same time we can also write robust applications. Smalltalk, C++, Java, etc are some of the object-oriented programming languages.
+
+In this tutorial, we will discuss the basics of OOP concerning Java language.
+
+Object-Oriented Programming (OOP) In Java
+Java is the most sought after programming skill at present. In Java, everything is based on the object. Java has a root class called Object from which the entire functionality of Java is derived. Thus in this tutorial, we will discuss the main features of OOP concerning Java.
+
+Recommended Reading => OOP Interview Questions and Answers
+
+Here we are going to discuss how Java supports the following OOP features.
+
+Object & class
+Class
+Inheritance
+Polymorphism
+Abstraction
+Encapsulation
+Let’s discuss each of these Java OOP concepts in detail.
+
+Object & Class
+A class can be defined as a design prototype or a blueprint. Objects are created from these blueprints. It essentially defines a common type consisting of properties and methods that operate on these properties for this common type. Then we define the instances of this class called objects.
+
+A class has many components as shown in the following figure.
+
+Object & Class - Components
+
+An object represents a real-life entity. In Java, an object is an instance of a class. So a class which is a blueprint may be used to create many objects. These objects often communicate with each other by passing messages to each other through methods.
+
+Video Tutorial: Classes & Objects 
+
+
+An object typically has:
+
+ A state: The properties or attributes of an object at a particular time.
+Behavior: Methods represent the behavior of an object. Methods also define how the objects communicate.
+Identity: Identifies the object by giving it a unique name.
+For example, if we have a class PetAnimals.
+
+Then we can define an object of this class as follows:
+
+PetAnimals pig = new PetAnimals.
+
+Here the identity of the object is a pig.
+
+Given below is a program that demonstrates class and object.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+//student class
+class Student{  
+ int roll_No;  
+ String student_name;  
+}  
+class Main{  
+ public static void main(String args[]){  
+  //Create objects of class Student 
+  Student student1=new Student();  
+  Student student2=new Student();  
+  //Initialize Student class objects
+  student1.roll_No=101;  
+  student1.student_name="Lisa";  
+  student2.roll_No=102;  
+  student2.student_name="Dan";  
+  //Print object data
+  System.out.println("Student 1 Details: " + 
+            student1.roll_No+" "+student1.student_name);  
+  System.out.println("Student 2 Details: " +
+            student2.roll_No+" "+student2.student_name);  
+ }  
+}  
+Output
+
+output - Object & Class
+
+In the above class, we have defined a class Student with two properties roll_No and student_name. Then in the main method, we declare two class objects i.e. student1 and student2. Note that these objects are created using a new operator. Once the objects are created we assign data to both the object properties.
+
+Finally, we print the object contents using ‘.’ (dot) operator.
+
+We will learn more about classes and objects in our specific OOP tutorials topics.
+
+Inheritance
+Inheritance is one of the most important characteristics of OOP. Through inheritance, Java promotes the reusability of code.
+
+So what is an inheritance in Java?
+
+Inheritance is a mechanism in Java in which one class can inherit the properties of another class. The properties that can be inherited include data members and methods of the class.
+
+The class that inherits the properties of another class is called the subclass. The inherited class is known as the “super” class in Java.
+
+By inheriting the class, the subclass not only inherits the properties but also reuses the code as the programmer need not once again write the code when it can directly inherit it using inheritance.
+
+In Java, inheritance is achieved by using the “extends” keyword. This extends keyword is used in the definition of the class and is followed by the class name that is to be inherited.
+
+For example, if there are two classes, A and B, and A is to be inherited by B then this inheritance is written in Java as:
+
+class B extends A {
+
+……
+
+}
+As already mentioned, here A is the superclass or base class or parent class. B is a subclass, derived class or child class.
+
+Inheritance is further divided into the following types.
+
+Inheritance - Types
+
+Java supports single, multi-level, and hierarchical inheritance.
+
+Note that Java does not support multiple inheritances. Java also does not support hybrid inheritance which is a combination of multiple and hierarchical inheritances.
+
+Given below is an example program of Single Inheritance in Java.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+//base class
+class Employee{  
+ float salary=50000;  
+}
+//derived class
+class Developer extends Employee{  
+ int bonus=20000; 
+}
+class Main{
+ public static void main(String args[]){  
+    //declare Developer class object and access properties of base and derived class
+   Developer p=new Developer();  
+   System.out.println("Inheritance in Java");
+   System.out.println("Developer salary: "+p.salary);  
+   System.out.println("Bonus declared for Developer: "+p.bonus);  
+   System.out.println("Developer Total Earnings: " + (p.salary + p.bonus));
+}  
+}  
+Output
+
+output - Inheritance in Java
+
+In the above program, we have a base class Employee. We have another class Developer that inherits from the Employee class. In the main method, we can see that by declaring an object of Developer class we can access not only the properties of the Developer class but also of the Employee class as it is inherited by Developer class.
+
+Polymorphism
+Polymorphism is yet another important feature of OOP. Polymorphism is the ability of the language to allow objects or entities to assume multiple forms. For example, a method that has various implementations is polymorphic in Java.
+
+Polymorphism is of two types in Java:
+
+Overloading or Compile Time Polymorphism: In compile-time polymorphism, the call to the polymorphic or overloaded method is resolved at compile time.
+Overriding or Runtime Polymorphism: In runtime polymorphism, the call to an overridden method in the Java program is resolved at runtime.
+We will discuss polymorphism in detail in our subsequent tutorials.
+
+Given below is an example of compile-time polymorphism in Java wherein we have method add that is overloaded to perform addition with different operand types.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+class Numbers_Sum { 
+    //add method : takes two int parameters
+    public int add(int val1, int val2)  { 
+        return (val1 + val2); 
+    } 
+   
+    // overloaded add : takes three int parameters
+    public int add(int val1, int val2, int val3)  { 
+        return (val1 + val2 + val3); 
+    } 
+   
+    //overloaded add: takes two double parameters
+    public double add(double val1, double val2)  { 
+        return (val1 + val2); 
+    } 
+}
+ 
+class Main{
+    public static void main(String args[])   { 
+        //create an object of Numbers_Sum class and call overloaded functions 
+        Numbers_Sum numsum = new Numbers_Sum(); 
+        System.out.println("Polymorphism in Java");
+        System.out.println("add(int, int): " + numsum.add(15, 18)); 
+        System.out.println("add(int, int, int): " + numsum.add(5, 10, 20)); 
+        System.out.println("add(double,double): " + numsum.add(5.5, 15.5)); 
+    } 
+}
+Output
+
+output 3
+
+In this program, we have three overloaded methods named add. The first method takes two int parameters, the next method takes three int parameters and the third method takes two double parameters. Depending on the number of parameters, the method call is resolved at compile-time and the appropriate call is made.
+
+Abstraction
+Using data abstraction, we only expose the essential parts of the application that are made accessible to the user. For example, if we have a car, we are not concerned about the internal components of the car, rather we only consider the car as a whole.
+
+Using a data abstraction mechanism, we only identify the necessary details and ignore the irrelevant details. Java uses abstract classes and interfaces to achieve abstraction. Interfaces are 100 % abstract as they only have method prototypes and not their definition.
+
+The below example shows an abstract class and its usage.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+// Abstract class declaration
+abstract class PetAnimal {
+  // Abstract method: should be defined in derived class
+  public abstract void animalSound();
+  // non-abstract method
+  public void print() {
+    System.out.println("This method is example of abstraction");
+  }
+}
+ 
+// Derived class
+class Dog extends PetAnimal {
+  //abstract method defined here
+  public void animalSound() {
+    System.out.println("The doggy barks");
+  }
+}
+ 
+class Main {
+  public static void main(String[] args) {
+    Dog doggy = new Dog(); // Instantiate derived class and call methods
+    doggy.animalSound();
+    doggy.print();
+  }
+}
+Output
+
+output - Abstraction in Java
+
+In the above program, we have an abstract class PetAnimals. In this, we have an abstract method ‘animalSound’. Then we create a Dog class and inherit the PetAnimals class. In the Dog class, we override the animalSound method.
+
+Encapsulation
+Encapsulation is hiding data or protecting the data. In programming, we achieve encapsulation by wrapping data and methods operating on that data under a single unit.
+
+Video Tutorial: Encapsulation and Polymorphism in Java
+
+
+A class can be viewed as an encapsulation unit i.e. we have data members and methods operating on these data members as bundled in one single unit.
+
+Proper encapsulation can be achieved by making data members private and having the methods operating on these data as public so that data is completely protected from the outside entities.
+
+The below Java program demonstrates the encapsulation concept.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+class Customer_Account {  
+//private data of class  
+private long customer_accountNo;  
+private String customer_name,customer_email;  
+private float customer_salary;  
+//public getter/setter methods to access private data  
+public long getAcc_no() {  
+    return customer_accountNo;  
+}  
+public void setAcc_no(long acc_no) {  
+    this.customer_accountNo = acc_no;  
+}  
+public String getName() {  
+    return customer_name;  
+}  
+public void setName(String name) {  
+    this.customer_name = name;  
+}  
+public String getEmail() {  
+    return customer_email;  
+}  
+public void setEmail(String email) {  
+    this.customer_email = email;  
+}  
+public float getSalary() {  
+    return customer_salary;  
+}  
+public void setSalary(float salary) {  
+    this.customer_salary = salary;  
+}  
+}  
+public class Main {  
+public static void main(String[] args) {  
+    //create an object of customer_Account class 
+    Customer_Account acc=new Customer_Account();  
+    //use setter methods to set values  
+    acc.setAcc_no(123458765432L);  
+    acc.setName("SoftwareTestingHelp");  
+    acc.setEmail("sth@sth.com");  
+    acc.setSalary(65000f);  
+    //use getter methods to read values  
+    System.out.println("Customer Account Number: " + acc.getAcc_no());
+    System.out.println("Customer Account Details:");
+    System.out.println("  Customer Name: "+acc.getName()+"\n "+
+                       " Customer Email: " + acc.getEmail()+"\n " + 
+                       " Customer Salary: " +acc.getSalary());  
+}  
+}  
+Output
+
+output - Encapsulation in Java
+
+In the above program, we have a class Customer_Account.
+
+In this class, we have data members which are all private. Then for each private field, we provide getter and setter methods to read and set values respectively. These getters and setters are public. This way we protect the data fields by not allowing them any access from outside the class directly.
+
+They can be accessed only through getters and setters. This demonstrates the encapsulation that we described above.
+
+Frequently Asked Questions
+Q #1) What is meant by Object Oriented Programming?
+
+Answer: Object-oriented programming (OOP) is a software paradigm that revolves around data. In OOP, the emphasis is laid on data and thus problems are expressed in terms of objects that are entities consisting of data or fields and methods that operate on these data fields.
+
+By doing so, several distinguishing features of OOP like Inheritance, Polymorphism, Abstraction, and Encapsulation are applied to ensure data safety, reusability, etc.
+
+Q #2) What are the 4 basic principles of OOP?
+
+Answer: Object-oriented programming (OOP) has four basic principles:
+
+Inheritance
+Polymorphism
+Abstraction
+Encapsulation
+They are also called four pillars of OOP.
+
+Q #3) Why is Java called Object-Oriented?
+
+Answer: Java has a root class object from which we derive all the other features of Java. Thus without class and object, we cannot have a Java program. Hence Java is called OOP language.
+
+Q #4) Is Java purely object-oriented?
+
+Answer: No, Java is not a pure object-oriented language. As Java also provides primitive data types like int, char, float, double, long, etc. it is not classified as a pure OOP language.
+
+Q#5) What is the difference between C++ and Java?
+
+Answer: Both C++ and Java are Object-oriented languages and support OOP features. But C++ is a compiled language. Java on the other hand is compiled as well as an interpreted language.
+
+The Java interpreter executes the byte code at runtime and generates output that makes it platform-independent. C++ however is platform dependent.
+
+More On OOPS Concept
+Class
+
+The class is a blueprint/prototype of a real-world object and it models the state and behavior of that real-world object.
+
+Class Declaration
+
+1
+2
+3
+4
+class <em>MyClass</em> {
+// field, constructor, and
+// method declarations
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Class room(){
+ 
+//room should have dimension.
+ 
+Dimension is attribute.
+//in the room, we are going keep things. Keeping is the function we are going
+to do.
+Keepthings (); this is a method in java.
+}
+Class declaration
+
+Object
+
+Software objects are like real life objects with state and behavior. The state will be stored as a field and expose its behavior as methods.
+
+Here room is like general design. Within this room, you should design a living room, cooking room, bedroom.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+Class CookingRoom(){
+Dimension is attribute.
+ 
+//here we should have method to keep cooking things.
+Keepthings(){  
+This method is same like room class keep things method. 
+but it should   have   some more features to hold cooking items.
+}
+ 
+cooking();
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+Class LivingRoom(){
+ 
+Dimension is attribute.
+ 
+//here we should have method to keep Living Room things.
+Keepthings(){  
+This method is same like room class keep things method. 
+but it should   have   some more features to hold living room items(like tv etc).
+}
+ 
+watching tv();
+}
+Here “Keepthings()” method should do the basic functionalities required for room and it should have additional specification according to “living room” class and “cooking room” class requirement. So the two classes should inherit the methods in the “room” class.
+
+object
+
+Inheritance
+
+Behavior (methods) and state of one class inherited to the other class are called inheritance. The methods and state are inherited from the parent class to the child class.
+
+So,
+
+Class  CookingRoom extends Room{
+}
+Class  LivingRoom extends Room{
+}
+Polymorphism
+
+In biology, polymorphism refers to the spices which can have many different forms.
+
+With the same concept in object-oriented programming, the child class can inherit its parent class methods, also it can add unique features to that behavior. Polymorphism can be achieved by method overloading or overriding.
+
+Overloading
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+public class OverloadDemo {
+public int add( int a,int b) {
+int rs=a+b;
+return rs;
+ 
+}
+public int add( int a,int b,int c) {
+ 
+int rs=a+b+c;
+return rs;
+}
+public static void main(String[] args) {
+ 
+OverloadDemo ov=new OverloadDemo();
+System.out.println(ov.add(23,56,45));
+System.out.println(ov.add(23,56));
+}
+ 
+}
+ovrloading
+
+Overriding
+
+1
+2
+3
+4
+5
+6
+7
+public class Bicycle {
+int wheels=2;
+String seat;
+public void riding() {
+System.out.println("bicycle is used for riding");
+}
+}
+overriding1
+
+1
+2
+3
+4
+5
+public class RoadBicycle extends Bicycle{
+public void riding() {
+System.out.println("RoadBicycle is used for road riding");
+}
+}
+overriding2
+
+1
+2
+3
+4
+5
+6
+7
+8
+public class TestBicycle {
+ 
+public static void main(String[] args) {
+Bicycle b=new RoadBicycle();
+b.riding();
+ 
+}
+}
+class testbicycle
+
+OUTPUT: Here the child class method overrides the parent class method.
+
+output- overriding
+
+Super Keyword
+
+Super keyword is a reference variable which is used to refer to the immediate parent class object. With super keyword, you can refer the parent class method or variables or constructor.
+
+This Keyword
+
+This keyword is used to refer to the current class object. Using this keyword, you can access the current class instance variable or current class method. This can be passed as an argument in the method call.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+public class DemoThisKeyword {
+ 
+private int accno;
+private int  balance;
+ 
+public void setvalues(int accno,int balance) {
+ 
+this.accno=accno;
+ 
+this.balance=balance;
+ 
+}
+public int showdata()
+{
+ 
+System.out.println(accno);
+System.out.println(balance);
+return balance;
+}
+ 
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+ 
+DemoThisKeyword obj =new DemoThisKeyword();
+obj.setvalues(11, 100);
+obj.showdata();
+System.out.println(obj.showdata());
+ 
+}
+}
+this keyword
+
+Constructor
+
+Java constructors are like methods which will be called when the object is created for the class. The constructor should have the same name as the class.
+
+1
+2
+3
+4
+5
+Class Myclass{
+Myclass();
+Method1() {
+}
+}
+constructor
+
+While Creating an object for the class, Myclass myobj =new Myclass ();
+
+The constructor method will be called. The constructor is automatically created by Java compiler for all the classes by default.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+public class ConstructorExampleProgram {
+ 
+int employee_age;
+String employee_name;
+int employee_salary;
+ 
+//Default constructor
+ConstructorExampleProgram(){
+this.employee_name=Bob";
+this.employee_age=30;
+this.employee_salary=7000;
+}
+ 
+//Parameterized constructor
+ConstructorExampleProgram(String n,int a,int b){
+this.employee_name=n;
+this.employee_age=a;
+this.employee_salary=b;
+}
+public static void main(String args[]){
+ConstructorExampleProgram obj1 = new ConstructorExampleProgram();
+ConstructorExampleProgram obj2 =
+new ConstructorExampleProgram("clare", 56,7500);
+System.out.println(obj1.employee_name+" "+obj1.employee_age+"
+"+obj1.employee_salary);
+ 
+System.out.println(obj2.employee_name+" "+obj2.employee_age+"
+"+obj2.employee_salary);
+}
+}
+Constructor sample programme
+
+Rules to be followed for the constructor:
+
+The constructor should have the same name as the class name.
+The constructor should not have a return statement.
+Points to be noted:
+
+In Object-oriented programming, objects are the main part of programming.
+OOP concepts are object, class, inheritance, polymorphism, constructor.
+Super keyword used to refer to the parent class members, and this keyword is used to refer to a current class object.
+Constructors are like methods which will be called when the object is created for the class.
+Conclusion
+This tutorial covered the basics of important object-oriented features supported by Java. This is just an introductory tutorial on OOPS in Java. We will cover all the topics in detail in our subsequent tutorials. Java supports four pillars of OOP i.e. Polymorphism, Inheritance, Abstraction, and Encapsulation.
+
+Apart from these features, Java also supports the other features and OOP constructs like containment, aggregation, message passing, etc. which will be discussed in our upcoming tutorials.
+
+
+
