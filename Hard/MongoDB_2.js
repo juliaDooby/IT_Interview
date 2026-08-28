@@ -441,314 +441,89 @@ MapReduce — это мощный инструмент, используемый
 Примером может быть подсчет количества вхождений каждого слова в тексте с использованием MapReduce. На этапе map каждый документ сканируется, текст разбивается на слова, и для каждого слова создается пара слово/один. Этап reduce пересчитывает эти пары в пары слово/количество.
 По умолчанию результаты возвращаются inline, хотя вывод также может быть записан в коллекцию. В современных версиях MongoDB MapReduce считается deprecated в пользу Aggregation Pipeline для большинства сценариев использования.
 
+Что такое NoSQL?
+NoSQL (Not only SQL) - это ряд технологий, подходов, проектов направленных на реализацию моделей баз данных, имеющих существенные отличия от традиционных СУБД, работающих с языком SQL. Концепция NoSQL не отрицает SQL, она лишь стремится решить проблемы и вопросы, с которыми не достаточно хорошо справляется РСУБД. Чаще всего данные в NoSQL решении представляются в виде хеш-таблиц, деревьев, документов и пр.
 
-<meta content='Вопросы и ответы на собеседование Junior Java Developer. Вопросы и ответы на собеседование MongoDB. MongoDB вопросы на собеседование. Ответы на вопросы на собеседование MongoDB.' name='twitter:description'/>
-<meta content='' name='twitter:url'/>
-<meta content='Ответы на вопросы на собеседование MongoDB.' property='og:title'/>
-<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg' property='og:image'/>
-<meta content='Ответы на вопросы на собеседование MongoDB.' property='og:title'/>
-<meta content='https://jsehelper.blogspot.com/2016/05/mongodb.html' property='og:url'/>
-<meta content='Вопросы и ответы на собеседование Junior Java Developer. Вопросы и ответы на собеседование MongoDB. MongoDB вопросы на собеседование. Ответы на вопросы на собеседование MongoDB.' property='og:description'/>
-<meta content='2016-05-03T08:17:00+03:00' property='article:published_time'/>
-<meta content='Technology' property='article:section'/>
-<meta content='Front-End Developer Other' property='article:tag'/>
-<meta content='Interview' property='article:tag'/>
-<meta content='MongoDB' property='article:tag'/>
-<article class='post' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-<div class='post-header'>
-<div class='labelhome'>
-<a href='https://jsehelper.blogspot.com/search/label/Front-End%20Developer%20Other' rel='tag'>
-Front-End Developer Other
-</a>
-<a href='https://jsehelper.blogspot.com/search/label/Interview' rel='tag'>
-Interview
-</a>
-<a href='https://jsehelper.blogspot.com/search/label/MongoDB' rel='tag'>
-MongoDB
-</a>
-</div>
-<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg' itemprop='image'/>
-<h1 class='entry-title' itemprop='name'>
-Ответы на вопросы на собеседование MongoDB.
-</h1>
-<div class='post-info'>
-<span class='author-info'>
-<span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-<span itemprop='name'>
-vasyl1889
-</span>
-</span>
-</span>
-<meta content='https://jsehelper.blogspot.com/2016/05/mongodb.html' itemprop='url'/>
-<span class='time-info'>
-<l></l>
-<i class='fa fa-clock-o'></i>
-<a class='timestamp-link' href='https://jsehelper.blogspot.com/2016/05/mongodb.html' rel='bookmark' title='permanent link'>
-<abbr class='published updated' itemprop='datePublished' title='2016-05-03T08:17:00+03:00'>
-08:17:00
-</abbr>
-</a>
-</span>
-<span class='comment-info'>
-<l></l>
-<i class='fa fa-comments-o'></i>
-<a href='https://jsehelper.blogspot.com/2016/05/mongodb.html#comment-form' onclick=''>
-3
-                                        Комментарии 
-                                      
-</a>
-</span>
-<span class='item-control blog-admin pid-1215401733'>
-<a href='https://www.blogger.com/post-edit.g?blogID=8798235924082241388&postID=8851204566778324818&from=pencil' title='Изменить сообщение'>
-<b style='color:#EE3322;'>
-<i class='fa fa-pencil'></i>
-                              Edit
-                            </b>
-</a>
-</span>
-</div>
-</div>
-<div class='post-entry' itemprop='articleBody'>
-<p>
-<div dir="ltr" style="text-align: left;" trbidi="on">
-<h3 style="text-align: left;">
-<ul style="text-align: left;">
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое NoSQL?</span></li>
-</ul>
-</h3>
+Какие есть типы хранилищ данных в NoSQL?
+В зависимости от модели данных и подходов к распределённости и репликации можно выделить четыре типа хранилищ:
+"ключ-значение" (key-value store)</span></li>
+документно-ориентированные (document store)<a name="more"></a></span></li>
+хранилища семейств колонок (column database)</span></li>
+графовые базы данных (graph database).</span></li>
+MongoDb - это документо-ориентированная база данных, в отличие от традиционных реляционных баз данных, таких как MySQL или PostgreSQL не использует табличный способ представления со связями через внешние ключи, основанная на принципе хранении документов в BSON(Binary JSON) формате. Т.е. каждая запись это документ, без жестко заданной схемы, который может содержать вложенные документы.</span><br />
+На каком языке написана MongoDB?</span></li>
+MongoDB написана и реализована на С++.</span><br />
+
+Какие языки программирования можно использовать с MongoDB?</span></li>
+Клиентские драйверы MongoDB поддерживают все популярные языки программирования, так что выбор языка не является проблемой. Вы можете использовать любой язык, какой хотите.</span><br />
+
+Использует ли таблицы для хранения данных, база данных MongoDB?</span></li>
+Нет. Для хранения данных вместо таблиц, MongoDB использует "Коллекции" (collections).</span><br />
+Какие преимущества MongoDB?</span></li>
+Основные возможности MongoDB:</span></div>
+Документо-ориентированное хранилище (простая и мощная JSON-подобная схема данных)</span></li>
+Достаточно гибкий язык для формирования запросов</span></li>
+Динамические запросы</span></li>
+Полная поддержка индексов</span></li>
+Профилирование запросов</span></li>
+Быстрые обновления "на месте"</span></li>
+Эффективное хранение двоичных данных больших объёмов, напр., фото и видео</span></li>
+Журналирование операций, модифицирующих данные в БД</span></li>
+Поддержка отказоустойчивости и масштабируемости: асинхронная репликация, набор реплик и шардинг</span></li>
+Может работать в соответствии с парадигмой MapReduce</span></li>
+Имеет распределенный доступ к данным, расположенных на нескольких серверах</span></li>
+
+Какие недостатки MongoDB?</span></li>
+Недостатки:</span></div>
+Отсутствует оператор "join". Обычно данные могут быть организованы более денормализованным способом, но на разработчиков ложится дополнительная нагрузка по обеспечению непротиворечивости данных.</span></li>
+Нет такого понятия, как "транзакция". Атомарность гарантируется только на уровне целого документа, т.е. частичное обновление документа произойти не может.</span></li>
+Отсутствует понятие "изоляции". Любые данные, которые считываются одним клиентом, могут параллельно изменяться другим клиентом.</span></li>
+Менее чем более стабильна, не рекомендовано использовать в биллинге</span></li>
+Требовательна к ресурсам - память и место на диске</span></li>
+
+Что такое пространство имен в MongoDB?</span></li>
+Пространство имен в MongoDB это конкатенация имени базы данных и названия коллекции. Для например school.students, где school - имя базы данных и students - название коллекции.</span><br />
+
+Что такое репликация?</span></li>
+Репликация - это процесс синхронизации данных между несколькими серверами. Позволяет добиться большей масштабируемости, и повысить доступность и сохранность данных. Репликация также позволяет восстанавливать даные после сбоя аппаратного обеспечения. С помощью дополнительных копий данных, вы можете выделить один сервер для аварийного восстановления, отчетности или резервного копирования. MongoDB поддерживает 2 формы репликации:</span></div>
+реплисеты(Replica Sets )</span></li>
+ведущий-ведомый(Master-Slave).</span></li>
+
+Поддерживает ли MongoDB ограничения внешнего ключа(foreign key)?</span></li>
+Как мы можем достичь primary key - foreign key отношения в MongoDB?</span></li>
+По умолчанию MongoDB не поддерживает primary key - foreign key отношения. Тем не менее, мы можем достичь этой концепции путем встраивания одного документа внутри другого. Для например документ "адрес" может быть встроен внутри документа "клиент".</span><br />
+
+Объясните структуру ObjectID в MongoDB.</span></li>
+ObjectID ето 12-байт типа BSON, имеющий следующую структуру:.</span></div>
+Первые 4 байта, представляющие секунды с эпохи Unix&nbsp;</span></li>
+Следующие 3 байта являются идентификатором машины</span></li>
+Следующие 2 байта являются идентификатором процесса</span></li>
+Последние 3 байта ето случайная величина счетчика:&nbsp;</span></li>
+MongoDB использует ObjectID как значение по умолчанию поля _id каждого документа, который генерируется во время создания любого документа. ObjectID делает все поля _id уникальными.</span></div>
+Для создания нового ObjectID используется следующий код: NewObjectId = ObjectId()</span><br />
+
+Если удалить документ из базыданных, удалится ли он с диска?</span></li>
+Да. Удаление документа из базы данных приведет к его удалению с диска.</span><br />
+
+Что такое индексы в MongoDB?</span></li>
+Индексы - ето специальная структура данных, которая хранит небольшую часть набора данных. Индекс сохраняет значение конкретного поля или набора полей, упорядоченых по величине поля, как указано в индексе.&nbsp;</span></div>
 <div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">NoSQL (Not only SQL) - это ряд технологий, подходов, проектов направленных на реализацию моделей баз данных, имеющих существенные отличия от традиционных СУБД, работающих с языком SQL. Концепция NoSQL не отрицает SQL, она лишь стремится решить проблемы и вопросы, с которыми не достаточно хорошо справляется РСУБД. Чаще всего данные в NoSQL решении представляются в виде хеш-таблиц, деревьев, документов и пр.</span><br />
-<br /></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть типы хранилищ данных в NoSQL?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В зависимости от модели данных и подходов к распределённости и репликации можно выделить четыре типа хранилищ:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">"ключ-значение" (key-value store)</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">документно-ориентированные (document store)<a name="more"></a></span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">хранилища семейств колонок (column database)</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">графовые базы данных (graph database).</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDb - это документо-ориентированная база данных, в отличие от традиционных реляционных баз данных, таких как MySQL или PostgreSQL не использует табличный способ представления со связями через внешние ключи, основанная на принципе хранении документов в BSON(Binary JSON) формате. Т.е. каждая запись это документ, без жестко заданной схемы, который может содержать вложенные документы.</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">На каком языке написана MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDB написана и реализована на С++.</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие языки программирования можно использовать с MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Клиентские драйверы MongoDB поддерживают все популярные языки программирования, так что выбор языка не является проблемой. Вы можете использовать любой язык, какой хотите.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Использует ли таблицы для хранения данных, база данных MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет. Для хранения данных вместо таблиц, MongoDB использует "Коллекции" (collections).</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие преимущества MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основные возможности MongoDB:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Документо-ориентированное хранилище (простая и мощная JSON-подобная схема данных)</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Достаточно гибкий язык для формирования запросов</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Динамические запросы</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Полная поддержка индексов</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профилирование запросов</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Быстрые обновления "на месте"</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Эффективное хранение двоичных данных больших объёмов, напр., фото и видео</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Журналирование операций, модифицирующих данные в БД</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддержка отказоустойчивости и масштабируемости: асинхронная репликация, набор реплик и шардинг</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Может работать в соответствии с парадигмой MapReduce</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Имеет распределенный доступ к данным, расположенных на нескольких серверах</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие недостатки MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Недостатки:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Отсутствует оператор "join". Обычно данные могут быть организованы более денормализованным способом, но на разработчиков ложится дополнительная нагрузка по обеспечению непротиворечивости данных.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет такого понятия, как "транзакция". Атомарность гарантируется только на уровне целого документа, т.е. частичное обновление документа произойти не может.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Отсутствует понятие "изоляции". Любые данные, которые считываются одним клиентом, могут параллельно изменяться другим клиентом.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Менее чем более стабильна, не рекомендовано использовать в биллинге</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Требовательна к ресурсам - память и место на диске</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое пространство имен в MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Пространство имен в MongoDB это конкатенация имени базы данных и названия коллекции. Для например school.students, где school - имя базы данных и students - название коллекции.</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое репликация?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Репликация - это процесс синхронизации данных между несколькими серверами. Позволяет добиться большей масштабируемости, и повысить доступность и сохранность данных. Репликация также позволяет восстанавливать даные после сбоя аппаратного обеспечения. С помощью дополнительных копий данных, вы можете выделить один сервер для аварийного восстановления, отчетности или резервного копирования. MongoDB поддерживает 2 формы репликации:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">реплисеты(Replica Sets )</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">ведущий-ведомый(Master-Slave).</span></li>
-</ul>
-<br /></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB ограничения внешнего ключа(foreign key)?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Нет.</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как мы можем достичь primary key - foreign key отношения в MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию MongoDB не поддерживает primary key - foreign key отношения. Тем не менее, мы можем достичь этой концепции путем встраивания одного документа внутри другого. Для например документ "адрес" может быть встроен внутри документа "клиент".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Объясните структуру ObjectID в MongoDB.</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">ObjectID ето 12-байт типа BSON, имеющий следующую структуру:.</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Первые 4 байта, представляющие секунды с эпохи Unix&nbsp;</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Следующие 3 байта являются идентификатором машины</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Следующие 2 байта являются идентификатором процесса</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Последние 3 байта ето случайная величина счетчика:&nbsp;</span></li>
-</ul>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">MongoDB использует ObjectID как значение по умолчанию поля _id каждого документа, который генерируется во время создания любого документа. ObjectID делает все поля _id уникальными.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для создания нового ObjectID используется следующий код: NewObjectId = ObjectId()</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если удалить документ из базыданных, удалится ли он с диска?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Да. Удаление документа из базы данных приведет к его удалению с диска.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое индексы в MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы - ето специальная структура данных, которая хранит небольшую часть набора данных. Индекс сохраняет значение конкретного поля или набора полей, упорядоченых по величине поля, как указано в индексе.&nbsp;</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы поддерживать эффективное выполнение запросов. Без индексов, MongoDB должна сканировать каждый документ коллекции, чтобы выбрать те документы, которые соответствуют оператору запроса. Это сканирование крайне неэффективно и требует от &nbsp;MongoDB обработки большого объема данных.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Индексы в MongoDB работают схожим образом с индексами в реляционных базах данных: они ускоряют выборку и сортировку данных. Индексы создаются с помощью ensureIndex.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию, MongoDB создает только _id для каждой коллекции.</span><br />
-<br /></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое скрытый запрос в MongoDB?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В соответствии с официальной документации MongoDB, скрытый запрос ето запрос в котором:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">все поля в запросе являются частью индекса используемого в запросе</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">все поля в запросе возвращаются в том же индексе</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB поиск текста?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Да. MongoDB поддерживает создание текстовых индексов для поддержки поиска текста внутри строки. Эта функция, была введена в версии 2.6.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет получить все индексы определенной коллекции?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiescrnqOhfYi6vspTNeqwpyqa26gzQCavN8a59mDpu3UGvNDIvsqQWfsvESaqAeifONhP7sUOGuRjjqNQ_SjXUz_3uAZlk2gmRj4K16ctY21uKTN5vpmjFuCkn2eZYC8OQSRF465mWvM4/s1600/q019_p01.jpg" /></a></div>
-<div class="separator" style="clear: both; text-align: justify;">
-<br /></div>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Шардинг в MongoDB?</span></li>
+Индексы поддерживать эффективное выполнение запросов. Без индексов, MongoDB должна сканировать каждый документ коллекции, чтобы выбрать те документы, которые соответствуют оператору запроса. Это сканирование крайне неэффективно и требует от &nbsp;MongoDB обработки большого объема данных.</span></div>
+>Индексы в MongoDB работают схожим образом с индексами в реляционных базах данных: они ускоряют выборку и сортировку данных. Индексы создаются с помощью ensureIndex.</span><br />
+
+Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
+По умолчанию, MongoDB создает только _id для каждой коллекции.</span><br />
+
+Что такое скрытый запрос в MongoDB?</span></li>
+>В соответствии с официальной документации MongoDB, скрытый запрос ето запрос в котором:</span></div>
+все поля в запросе являются частью индекса используемого в запросе</span></li>
+все поля в запросе возвращаются в том же индексе</span></li>
+
+Поддерживает ли MongoDB поиск текста?</span></li>
+Да. MongoDB поддерживает создание текстовых индексов для поддержки поиска текста внутри строки. Эта функция, была введена в версии 2.6.</span><br />
+Какая команда позволяет получить все индексы определенной коллекции?</span></li>
+
+Что такое Шардинг в MongoDB?</span></li>
 </ul>
 </h3>
 <span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Шардинг - это подход к масштабируемости, когда отдельные части данных хранятся на разных серверах. Шардинг решает проблему горизонтального масштабирования. Примитивный пример: хранить данные пользователей, чьё имя начинается на буквы A-M на одном сервере, а остальных - на другом.</span><br />
