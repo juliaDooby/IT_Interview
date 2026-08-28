@@ -524,172 +524,72 @@ MongoDB использует ObjectID как значение по умолча�
 Какая команда позволяет получить все индексы определенной коллекции?</span></li>
 
 Что такое Шардинг в MongoDB?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Шардинг - это подход к масштабируемости, когда отдельные части данных хранятся на разных серверах. Шардинг решает проблему горизонтального масштабирования. Примитивный пример: хранить данные пользователей, чьё имя начинается на буквы A-M на одном сервере, а остальных - на другом.</span><br />
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию, MongoDB пишет и читает данные из primary и secondary наборов реплик. Правда ето или ложь?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Ложь. MongoDB записывает данные только в primary набор реплик.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Почему MongoDB не является предпочтительным решением для 32-битных систем?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">При работе с 32-разрядной сборкой MongoDB, общий размер хранилища для сервера, включая данные и индексы, составляет 2 гигабайта. По этой причине, не рекомендуеться развертывать MongoDB для продакшина на 32-разрядных машинах.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если вы используете 64-разрядную сборку MongoDB, практически нет никаких ограничений на размер хранилища.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<br />
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда,позволяет проверить, являетесь ли вы на главном сервере или нет?</span></li>
-</ul>
-</h3>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90VKSwBWtM_37QlQFOihUtHgZCneU4umo4i8F9HITqO9TwjkKRvqlwOGgNPMD5bylJEg2fqTKPGcXySPMt5Ip1d4qHXk-GhUkTYY-7CK2tfhkusAc1ZUcFQj3SGnSOHwZNTI6gcQS7WE/s1600/q023_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90VKSwBWtM_37QlQFOihUtHgZCneU4umo4i8F9HITqO9TwjkKRvqlwOGgNPMD5bylJEg2fqTKPGcXySPMt5Ip1d4qHXk-GhUkTYY-7CK2tfhkusAc1ZUcFQj3SGnSOHwZNTI6gcQS7WE/s1600/q023_p01.jpg" /></a></div>
-<div class="separator" style="clear: both; text-align: justify;">
-<br /></div>
-</div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое GridFS?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">GridFS - это спецификация, определённая в базе данных MongoDB для хранения и извлечения файлов, размер которых превышает 16 Мб. Такое ограничение размера обусловлено использованием в MongoDB формата BSON.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Согласно спецификации GridFS файл разбивается на несколько фрагментов (англ. chunks), каждый из которых не может быть больше, чем 255 Кб. Каждый такой фрагмент хранится как отдельный файл и к нему может быть осуществлён доступ как к отдельному файлу.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для обеспечения корректной сборки разбитого на фрагменты файла GridFS хранит коллекцию метаданных - отдельных файлов, содержащих информацию о хранящихся в файловой системе документах.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Map/Reduce?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Map/Reduce - это подход к обработке больших объемов данных, который состоит из двух фаз: Map - предварительная обработка входных данных и Reduce - обработка тем или иным способом выборки, полученной на стадии Map. Map/Reduce не является свойством исключительно NoSQL-решений. Аналогичным образом можно работать с большими объемами данных и в РСУБД. Но большинство NoSQL-систем (за исключением, может быть, самых простых key-value хранилищ) реализуют Map/Reduce в том или ином виде.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Map/Reduce имеет два серьёзных преимущества по сравнению с традиционными решениями. Первое и самое главное преимущество - это производительность. Теоретически MapReduce может быть распараллелен, что позволяет обрабатывать огромные массивы данных на множестве ядер/процессоров/машин. Это пока не является преимуществом MongoDB. Вторым преимуществом MapReduce является возможность описывать обработку данных нормальным кодом. По сравнению с тем, что можно сделать с помощью SQL, возможности кода внутри MapReduce намного богаче и позволяют расширить рамки возможного даже без использования специализированных решений.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать/удалить коллекцию в MongoDB?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">db.createCollection(name,options) - для создания коллекции в MongoDB</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">db.collection.drop() - для удаления коллекции в MongoDB</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какова роль профайлера в MongoDB?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профайлера базы данных MongoDB показывает рабочие характеристики каждой операции с базой данных. Для примера вы можете найти запросы с помощью профилировщика которие на самом деле медленнее, чем они должны быть.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Профайлер MongoDB можно включить с помощью следующего вызова: db.setProfilingLevel(2); чтобы выключить профайлер, нужно повторно вызвать setProfileLevel, только передав 0 в качестве аргумента.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет вставить документ?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">database.collection.insert(document) - для вставки документа в колекцию.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Приведите пример использования индекса в MongoDB.</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Простой пример:</span></div>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGYfQiop52nkiMQfg3T0qTT227eFjr72_JwcsaWtt12bJkLd3AKlcqEK8-1QcARC0EF40wXqze0sKm8CFN93-38XlHF1chCA9OU8I2zBjOSSFIRfBxZwoOL92MphUbuuxggF-x-PFWyxc/s1600/q029_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGYfQiop52nkiMQfg3T0qTT227eFjr72_JwcsaWtt12bJkLd3AKlcqEK8-1QcARC0EF40wXqze0sKm8CFN93-38XlHF1chCA9OU8I2zBjOSSFIRfBxZwoOL92MphUbuuxggF-x-PFWyxc/s1600/q029_p01.jpg" /></a></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: left;">
-<ul style="text-align: left;">
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Какой метод вернёт список всех документов в колекции?</span></li>
-</ul>
-</h3>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi64l9wjfN1MCck41NdCrXYcFGKhk_6DGrobinto-dAZ1LJtNeWk7nMvtU20zrNl9vkL6sichswneqTB6ZqGFj6dtCv67Om0INGKlFNUi_Rn_2kjjMiWOmDRgOet1HP3PntxDgobRL0EFk/s1600/q030_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi64l9wjfN1MCck41NdCrXYcFGKhk_6DGrobinto-dAZ1LJtNeWk7nMvtU20zrNl9vkL6sichswneqTB6ZqGFj6dtCv67Om0INGKlFNUi_Rn_2kjjMiWOmDRgOet1HP3PntxDgobRL0EFk/s1600/q030_p01.jpg" /></a></div>
-<div class="separator" style="clear: both; text-align: justify;">
-<br /></div>
-<h3 style="text-align: left;">
-<ul style="text-align: left;">
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Что такое селекторы запросов в MongoDB?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Селектор - это JSON-объект, в простейшем случае это может быть даже {}, что означает выборку всех документов (аналогичным образом работает null). Селектор запросов MongoDB аналогичен предложению where SQL-запроса. Как таковой он используется для поиска, подсчёта, обновления и удаления документов из коллекций.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об обновлении/вставке в MongoDB?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Один из приятных сюрпризов операции обновления - это возможность обновления/вставки (upsert от update - обновить и insert - вставить) Обновление/вставка обновляет документ, если он найден, или создаёт новый - если не найден. Обновление/вставка - полезная вещь в некоторых случаях; когда столкнётесь с подобным, сразу поймёте. Чтобы разрешить вставку при обновлении, установите третий параметр в true.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Пример из жизни - счётчик посещений для веб-сайта. Если мы хотим в реальном времени видеть количество посещений страницы, мы должны посмотреть, существует ли запись, и - в зависимости от результата - выполнить update либо insert.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В MongoDB в запросах можно использовать условные:</span></div>
-<div style="text-align: justify;">
-</div>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$gt - больше чем</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$lt - меньше чем</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$gte &nbsp;- больше или равно</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$lte - меньше или равно</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$ne &nbsp;- извлекает все документы, не соответствующие некоторому условию</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$or - определяет набор пар ключ-значение, которые должны иметься в документе. И если документ имеет хоть одну такую пару ключ-значение, то он соответствует данному запросу и извлекается из бд</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$size - используется для нахождения документов, в которых массивы имеют число элементов, равным значению $size</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$exists - позволяет извлечь только те документы, в которых определенный ключ присутствует или отсутствует</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$regex - задает регулярное выражение, которому должно соответствовать значение поля</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Поиск по массивам и операторы $in, $nin, $all</span><br />
-<div style="text-align: justify;">
-</div>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$in - определяет массив возможных выражений и ищет те ключи, значение которых имеется в массиве</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$nin - определяет массив возможных выражений и ищет те ключи, значение которых отсутствует в этом массиве</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">$all - похож на $in: он также определяет массив возможных выражений, но требует, чтобы документы имели весь определяемый набор выражений</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Примеры использования:</span><br />
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheOVHZIoLn4BhS88ju2Ur_AU7E6qe-NaGL-vzd4sY2AuWJ421-P81Pt-AXKqWtzCCqmhM2pqbqqUE-l2fdbeYAjfb8Ub0TUtas866TvvbnCu-EXNtrFNC5d_GfQLRaqG6Q0qJrfG1yt7A/s1600/q033_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheOVHZIoLn4BhS88ju2Ur_AU7E6qe-NaGL-vzd4sY2AuWJ421-P81Pt-AXKqWtzCCqmhM2pqbqqUE-l2fdbeYAjfb8Ub0TUtas866TvvbnCu-EXNtrFNC5d_GfQLRaqG6Q0qJrfG1yt7A/s1600/q033_p01.jpg" /></a></div>
-<div class="separator" style="clear: both; text-align: justify;">
-<br /></div>
-<h3 style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как удалить документ в MongoDB?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">Для удаления документов в MongoDB предусмотрен метод remove:</span><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;"></span><br />
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG8uvHtvM2hPxxMNe37j1x2zv3xaNC_eKH1eIr77cfn_308bF23I2v5b8Nc5wdCEolLIlXMDgTxGAgjbC-I3i8UnesbImLQQnyAFceBIGmeVvcRAlEQMAigUsrF_Dm9rlpG_CflsKahuQ/s1600/q034_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG8uvHtvM2hPxxMNe37j1x2zv3xaNC_eKH1eIr77cfn_308bF23I2v5b8Nc5wdCEolLIlXMDgTxGAgjbC-I3i8UnesbImLQQnyAFceBIGmeVvcRAlEQMAigUsrF_Dm9rlpG_CflsKahuQ/s1600/q034_p01.jpg" /></a></div>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;">В итоге все найденные документы с name=Tom будут удалены.</span><br />
+Шардинг - это подход к масштабируемости, когда отдельные части данных хранятся на разных серверах. Шардинг решает проблему горизонтального масштабирования. Примитивный пример: хранить данные пользователей, чьё имя начинается на буквы A-M на одном сервере, а остальных - на другом.</span><br />
+По умолчанию, MongoDB пишет и читает данные из primary и secondary наборов реплик. Правда ето или ложь?</span></li>
+
+Ложь. MongoDB записывает данные только в primary набор реплик.</span><br />
+
+Почему MongoDB не является предпочтительным решением для 32-битных систем?</span></li>
+При работе с 32-разрядной сборкой MongoDB, общий размер хранилища для сервера, включая данные и индексы, составляет 2 гигабайта. По этой причине, не рекомендуеться развертывать MongoDB для продакшина на 32-разрядных машинах.</span><br />
+Если вы используете 64-разрядную сборку MongoDB, практически нет никаких ограничений на размер хранилища.</span><br />
+
+Какая команда,позволяет проверить, являетесь ли вы на главном сервере или нет?</span></li>
+
+Что такое GridFS?</span></li>
+GridFS - это спецификация, определённая в базе данных MongoDB для хранения и извлечения файлов, размер которых превышает 16 Мб. Такое ограничение размера обусловлено использованием в MongoDB формата BSON.</span></div>
+Согласно спецификации GridFS файл разбивается на несколько фрагментов (англ. chunks), каждый из которых не может быть больше, чем 255 Кб. Каждый такой фрагмент хранится как отдельный файл и к нему может быть осуществлён доступ как к отдельному файлу.</span></div>
+Для обеспечения корректной сборки разбитого на фрагменты файла GridFS хранит коллекцию метаданных - отдельных файлов, содержащих информацию о хранящихся в файловой системе документах.</span><br />
+
+
+Что такое Map/Reduce?</span></li>
+Map/Reduce - это подход к обработке больших объемов данных, который состоит из двух фаз: Map - предварительная обработка входных данных и Reduce - обработка тем или иным способом выборки, полученной на стадии Map. Map/Reduce не является свойством исключительно NoSQL-решений. Аналогичным образом можно работать с большими объемами данных и в РСУБД. Но большинство NoSQL-систем (за исключением, может быть, самых простых key-value хранилищ) реализуют Map/Reduce в том или ином виде.</span></div>
+Map/Reduce имеет два серьёзных преимущества по сравнению с традиционными решениями. Первое и самое главное преимущество - это производительность. Теоретически MapReduce может быть распараллелен, что позволяет обрабатывать огромные массивы данных на множестве ядер/процессоров/машин. Это пока не является преимуществом MongoDB. Вторым преимуществом MapReduce является возможность описывать обработку данных нормальным кодом. По сравнению с тем, что можно сделать с помощью SQL, возможности кода внутри MapReduce намного богаче и позволяют расширить рамки возможного даже без использования специализированных решений.</span></div>
+
+Как создать/удалить коллекцию в MongoDB?</span></li>
+db.createCollection(name,options) - для создания коллекции в MongoDB</span></div>
+db.collection.drop() - для удаления коллекции в MongoDB</span></div>
+
+
+Какова роль профайлера в MongoDB?</span></li>
+Профайлера базы данных MongoDB показывает рабочие характеристики каждой операции с базой данных. Для примера вы можете найти запросы с помощью профилировщика которие на самом деле медленнее, чем они должны быть.</span></div>
+Профайлер MongoDB можно включить с помощью следующего вызова: db.setProfilingLevel(2); чтобы выключить профайлер, нужно повторно вызвать setProfileLevel, только передав 0 в качестве аргумента.</span></div>
+
+Какая команда позволяет вставить документ?</span></li>
+database.collection.insert(document) - для вставки документа в колекцию.</span></div>
+
+Приведите пример использования индекса в MongoDB.</span></li>
+Простой пример:</span></div>
+Какой метод вернёт список всех документов в колекции?</span></li>
+
+Что такое селекторы запросов в MongoDB?</span></li>
+Селектор - это JSON-объект, в простейшем случае это может быть даже {}, что означает выборку всех документов (аналогичным образом работает null). Селектор запросов MongoDB аналогичен предложению where SQL-запроса. Как таковой он используется для поиска, подсчёта, обновления и удаления документов из коллекций.</span></div>
+
+Что вы знаете об обновлении/вставке в MongoDB?</span></li>
+Один из приятных сюрпризов операции обновления - это возможность обновления/вставки (upsert от update - обновить и insert - вставить) Обновление/вставка обновляет документ, если он найден, или создаёт новый - если не найден. Обновление/вставка - полезная вещь в некоторых случаях; когда столкнётесь с подобным, сразу поймёте. Чтобы разрешить вставку при обновлении, установите третий параметр в true.</span></div>
+Пример из жизни - счётчик посещений для веб-сайта. Если мы хотим в реальном времени видеть количество посещений страницы, мы должны посмотреть, существует ли запись, и - в зависимости от результата - выполнить update либо insert.</span></div>
+
+Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
+В MongoDB в запросах можно использовать условные:</span></div>
+
+$gt - больше чем</span></li>
+$lt - меньше чем</span></li>
+$gte &nbsp;- больше или равно</span></li>
+$lte - меньше или равно</span></li>
+$ne &nbsp;- извлекает все документы, не соответствующие некоторому условию</span></li>
+$or - определяет набор пар ключ-значение, которые должны иметься в документе. И если документ имеет хоть одну такую пару ключ-значение, то он соответствует данному запросу и извлекается из бд</span></li>
+$size - используется для нахождения документов, в которых массивы имеют число элементов, равным значению $size</span></li>
+$exists - позволяет извлечь только те документы, в которых определенный ключ присутствует или отсутствует</span></li>
+$regex - задает регулярное выражение, которому должно соответствовать значение поля</span></li>
+Поиск по массивам и операторы $in, $nin, $all</span><br />
+$in - определяет массив возможных выражений и ищет те ключи, значение которых имеется в массиве</span></li>
+$nin - определяет массив возможных выражений и ищет те ключи, значение которых отсутствует в этом массиве</span></li>
+$all - похож на $in: он также определяет массив возможных выражений, но требует, чтобы документы имели весь определяемый набор выражений</span></li>
+Примеры использования:</span><br />
+
+Как удалить документ в MongoDB?</span></li>
+Для удаления документов в MongoDB предусмотрен метод remove:</span><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; text-align: justify;"></span><br />
+
+В итоге все найденные документы с name=Tom будут удалены.</span><br />
                                
 На серверную часть файловой системы стоит обратить внимание только в том случае, если вы не собираетесь использовать базу данных для какой-либо другой части вашей системы. Если вы используете базу данных, то бэкэнду файловой системы нечего рекомендовать.
 
@@ -737,7 +637,6 @@ MongoDB использует ObjectID как значение по умолча�
 — 
 Hassan Baig
  01.02.2019 18:47
-
 
 
 Phpinfo () и pecl search mongo показывают разные версии mongodb
@@ -939,12 +838,6 @@ s0: PRIMARY> (Приглашение оболочки Mongo)
 В приведенной выше подсказке: "s0" относится к имени набора реплик. «Первичная» относится к первичной реплике.
 
 rs.status (), хотя для хорошего требуется, чтобы вы прошли аутентификацию в БД, которая может
-
-
-Top 15 MongoDB Interview Questions & Answers (2024)
-In today's data-driven world, MongoDB has become a go-to solution for many organizations looking to leverage the power of NoSQL databases. As a job seeker or a tech recruiter, understanding the intricacies of MongoDB can be a game-changer.
-
-This article delves into what MongoDB is and provides a comprehensive list of the top 15 MongoDB interview questions with answers to help you ace your next interview or find the perfect candidate.
 
 What is MongoDB?
 MongoDB is an open-source, document-oriented NoSQL database designed for scalability and flexibility. Unlike traditional relational databases that use tables and rows, MongoDB uses collections and documents. This approach allows for a more dynamic schema, making it easier to handle various types of data and evolving application requirements.
