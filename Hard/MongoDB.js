@@ -125,7 +125,6 @@ A covered query is the one in which:
 fields used in the query are part of an index used in the query, and
 the fields returned in the results are in the same index
 
-
 Why is a covered query important?
 Since all the fields are covered in the index itself, MongoDB can match the query condition as well as return the result fields using the same index without looking inside the documents. Since indexes are stored in RAM or sequentially located on disk, such access is a lot faster.
 
@@ -6538,7 +6537,7 @@ AI-LogicBox to assess a developer's technical skills without writing the code fr
 You can assess a developer's coding skills in real time with iMocha's Live Coding Interview feature.
 Other features include AI-based Proctoring, Automated Video Interviews, Candidate ID Verification, etc.
 Check out iMocha’s MongoDB Online Test that is ideal to hire job-fit candidates.
-**********************************************
+
 FAQ
 What are the most common MongoDB interview questions?
 Here are some of the most common MongoDB questions that recruiters can ask to evaluate a candidate's MongoDB knowledge, experience, and problem-solving skills.
@@ -6856,6 +6855,7 @@ winston.configure({transports: [new winston.transports.File({ filename: 'logfile
 Это сработало для меня. Надеюсь, это поможет и вам.
 
 Транзакция Mongodb v4.0, MongoError: номера транзакций разрешены только для члена набора реплик или монго
+
 Вопросы
 JAVASCRIPT
 Транзакция Mongodb v4.0, MongoError: номера транзакций разрешены только для члена набора реплик или монго
@@ -6870,8 +6870,8 @@ MongoError: Transaction numbers are only allowed on a replica set member or mong
 Любое предложение приветствуется.
 
 
-
 Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
+
 Вопросы
 JAVASCRIPT
 Неверный транспорт, должен быть объект с методом журнала winston mongodb logging
@@ -6940,6 +6940,8 @@ export default logger;
     mongodb@3.1.1
 
 MONGO DB ADMIN Interview Questions and Answers
+
+ 
 MongoDB Interview Questions
 1.Define MongoDB?                   
 
@@ -7190,9 +7192,6 @@ It combines the ability to scale out with features such as secondary indexes, ra
 MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL).
 Crack your next tech interview with confidence!
 
-Take a free mock interview, get instant⚡️ feedback and recommendation💡
-
-Take Free Mock Interview
 
 MongoDB Basic Interview Questions
 1. What are some of the advantages of MongoDB?
@@ -7245,14 +7244,13 @@ The shell is a full-featured JavaScript interpreter, capable of running arbitrar
 200
 > x / 5;
 20
-6. How does Scale-Out occur in MongoDB?
+
+ 6. How does Scale-Out occur in MongoDB?
 The document-oriented data model of MongoDB makes it easier to split data across multiple servers. Balancing and loading data across a cluster is done by MongoDB. It then redistributes documents automatically.
 
 The mongos acts as a query router, providing an interface between client applications and the sharded cluster.
 
 Config servers store metadata and configuration settings for the cluster. MongoDB uses the config servers to manage distributed locks. Each sharded cluster must have its own config servers.
-
-
 
 7. What are some features of MongoDB?
 Indexing: It supports generic secondary indexes and provides unique, compound, geospatial, and full-text indexing capabilities as well.
@@ -7260,6 +7258,7 @@ Aggregation: It provides an aggregation framework based on the concept of data p
 Special collection and index types: It supports time-to-live (TTL) collections for data that should expire at a certain time
 File storage: It supports an easy-to-use protocol for storing large files and file metadata.
 Sharding: Sharding is the process of splitting data up across machines.
+
 8. How to add data in MongoDB?
 The basic method for adding data to MongoDB is “inserts”. To insert a single document, use the collection’s insertOne method:
 
@@ -7368,11 +7367,7 @@ A line is given by an array of points:
 Sharding is the process of splitting data up across machines. We also use the term “partitioning” sometimes to describe this concept. We can store more data and handle more load without requiring larger or more powerful machines, by putting a subset of data on each machine.
 In the figure below, RS0 and RS1 are shards. MongoDB’s sharding allows you to create a cluster of many machines (shards) and break up a collection across them, putting a subset of data on each shard. This allows your application to grow beyond the resource limits of a standalone server or replica set.
 
-
-
 Sharded Client Connection
-
-
 
 Non Sharded Client Connection
 
@@ -7420,8 +7415,6 @@ The aggregation framework is based on the concept of a pipeline. With an aggrega
 22. Explain the concept of pipeline in the MongoDB aggregation framework.
 An individual stage of an aggregation pipeline is a data processing unit. It takes in a stream of input documents one at a time, processes each document one at a time, and produces an output stream of documents one at a time (see figure below).
 
-
-
 23. What is a Replica Set in MongoDB?
 To keep identical copies of your data on multiple servers, we use replication. It is recommended for all production deployments. Use replication to keep your application running and your data safe, even if something happens to one or more of your servers.
 
@@ -7429,8 +7422,6 @@ Such replication can be created by a replica set with MongoDB. A replica set is 
 
 24. Explain the Replication Architecture in MongoDB.
 The following diagram depicts the architecture diagram of a simple replica set cluster with only three server nodes – one primary node and two secondary nodes:
-
-
 
 In the preceding model, the PRIMARY database is the only active replica set member that receives write operations from database clients. The PRIMARY database saves data changes in the Oplog. Changes saved in the Oplog are sequential—that is, saved in the order that they are received and executed.
 The SECONDARY database is querying the PRIMARY database for new changes in the Oplog. If there are any changes, then Oplog entries are copied from PRIMARY to SECONDARY as soon as they are created on the PRIMARY node.
@@ -7459,6 +7450,8 @@ Although MongoDB is powerful, incorporating many features from relational system
 Here are few References to understand MongoDB in-depth:
 https://www.mongodb.com/2
 https://docs.mongodb.com
+
+
 
 Interview Questions MongoDB
 
@@ -7689,8 +7682,8 @@ Ameur Baccoucha
 — 
 iAviator
 
-
 Производительность MongoDB Java API при медленном чтении
+
 Вопросы
 JAVA
 Производительность MongoDB Java API при медленном чтении
@@ -7993,6 +7986,7 @@ MONGODB
 Ваше здоровье,
 
 Mongoose Model.update не работает в моем коде
+
 Вопросы
 NODE.JS
 Mongoose Model.update не работает в моем коде
@@ -16145,11 +16139,9 @@ mongodb-org-tools
 
 Для получения дополнительной информации вы можете посетить https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
-; 
+ 
 
-
-
- 18.04.2020 12:41
+18.04.2020 12:41
 Для Ubuntu версии 18.04 LTS лучше установить MongoDB вручную.
 
 Мне нужно выполнить следующие шаги, чтобы запустить его на моем Ubuntu 18.04:
@@ -18290,21 +18282,6 @@ csf -r
 Обратите внимание, что я сделал все, что было сказано выше, но безуспешно. Единственная перезагрузка у меня сработала. !! Вы также можете перезапустить один раз.
 
 
-Your Essential Guide to MongoDB Interview Questions and Answers
-12 minute read
-July 19, 2024
-Karan Sharma
-Written by:
-
-Karan Sharma
-  Reviewed by:
-
-Anubhav Jain
-Anubhav Jain
-Summary: This guide offers a comprehensive collection of MongoDB interview questions and answers, ranging from basic to advanced and scenario-based queries. It helps you prepare effectively for interviews, showcasing your expertise and problem-solving skills in MongoDB.
-
-Table of Contents
-Introduction
 What is MongoDB?
 Comparison with Traditional Relational Databases
 Use Cases and Industries Where MongoDB is Commonly Used
@@ -18355,12 +18332,8 @@ A Client Reports Intermittent Connectivity Issues with Their MongoDB Instance. H
 Bottom Line
 Introduction
 MongoDB is a robust NoSQL database, crucial in today’s data-driven tech industry. Its flexibility and scalability make it a popular choice for modern applications. Preparing for MongoDB interviews is essential for aspiring developers and data professionals. 
-
-This guide offers a comprehensive collection of Mongodb interview questions and answers, catering to various skill levels. Expect easy, complex, and scenario-based questions, each with detailed explanations. This resource boosts your confidence and readiness for any MongoDB interview, ensuring you stand out to potential employers.
-
-Read Blogs: 
-Crucial Statistics Interview Questions for Data Science Success.
-Python Interview Questions And Answers.
+This guide offers a comprehensive collection of MongoDB interview questions and answers, ranging from basic to advanced and scenario-based queries. 
+It helps you prepare effectively for interviews, showcasing your expertise and problem-solving skills in MongoDB.
 
 What is MongoDB?
 MongoDB is a NoSQL database that handles large-scale data and modern application requirements. Unlike traditional relational databases, MongoDB stores data in flexible, JSON-like documents, allowing for dynamic schemas. This flexibility makes MongoDB a preferred choice for developers working on agile and fast-paced projects. Critical features of MongoDB include:
@@ -18384,9 +18357,7 @@ Furthermore, financial services rely on MongoDB for fraud detection and real-tim
 
 Understanding these aspects is crucial when preparing for MongoDB interviews. Expect MongoDB interview questions and answers to cover these foundational topics, helping you demonstrate your knowledge and practical experience with MongoDB. This understanding will give you an edge in showcasing your ability to apply MongoDB in various real-world scenarios.
 
-Further Check: 
-Top DBMS Interview Questions and Answers.
-Top 50+ Data Analyst Interview Questions & Answers.
+
 
 Basic MongoDB Interview Questions and Answers
 
@@ -18424,10 +18395,8 @@ MongoDB Atlas is a fully managed cloud database service provided by MongoDB. It 
 
 These questions provide a solid starting point for understanding the basics of MongoDB. By familiarising yourself with these concepts, you’ll be better prepared for more advanced topics and real-world applications.
 
-Also Explore: 
-Machine Learning Interview Questions: Ace Your Next Interview.
-2024’s top Power BI interview questions simplified.
 
+ 
 Difficult MongoDB Interview Questions and Answers
 In this section, we will delve into more challenging questions typically posed to candidates with a deeper understanding of MongoDB. These questions require a firm grasp of basic concepts and practical experience with MongoDB’s more advanced features. Answering these questions will demonstrate your comprehensive knowledge and readiness to handle complex scenarios in MongoDB.
 
@@ -18503,10 +18472,8 @@ MongoDB handles large-scale data migrations using tools like `mongodump` and `mo
 
 These questions cover MongoDB’s most complex and advanced aspects, showcasing your ability to manage, optimise, and troubleshoot MongoDB deployments in demanding scenarios. Mastery of these topics will set you apart as an expert in MongoDB.
 
-Also Read: 
-Python Basic Interview Questions & Answers.
-SQL Interview Questions for Data Analyst 2023.
 
+ 
 Scenario-Based MongoDB Interview Questions and Answers
 
 This section will explore scenario-based questions that test your ability to apply MongoDB concepts in real-world situations. These questions evaluate your problem-solving skills, practical knowledge, and understanding of MongoDB in various contexts. Answering these questions effectively will demonstrate your readiness to handle complex challenges and make informed decisions in MongoDB deployments.
@@ -18543,26 +18510,16 @@ I would start by reviewing the client’s network configuration and checking for
 
 These scenario-based questions provide insight into your practical problem-solving abilities and demonstrate your capacity to apply MongoDB knowledge in real-world situations. By mastering these scenarios, you can showcase your readiness to tackle complex challenges in MongoDB environments.
 
-More to discover: 
-Top 35 Data Analyst Interview Questions and Answers 2023.
-Data Engineering Interview Questions and Answers.
-
 Bottom Line
 In conclusion, preparing for MongoDB interviews involves understanding fundamental and advanced concepts and practical applications. This guide provides comprehensive MongoDB interview questions and answers, covering primary, complex, and scenario-based topics to enhance your readiness. 
 
 Mastering these questions will help demonstrate your expertise and problem-solving abilities in real-world scenarios. By familiarising yourself with MongoDB’s features, schema design, and performance optimisation techniques, you’ll be well-equipped to handle any challenge. This preparation will boost your confidence and make you a standout candidate for potential employers in the data-driven tech industry.
 
-50+ MongoDB Interview Questions and Answers
-Janvi Kumari
-Janvi Kumari
-Last Updated : 07 Jan, 2025
- 8 min read
-0
+
 MongoDB is a NoSQL database offering high performance and scalability. It stores data as documents, similar to JSON objects, allowing for complex structures like nested documents and arrays. This approach matches native data types in many programming languages. It also reduces the need for joins with embedded documents and arrays. Moreover, it supports dynamic schema for flexible data modeling. These features make MongoDB a robust choice for modern data management and an important topic for interviews. In this article we will see some of the most common interview questions on MongoDB.
 
+
 Mongodb interview questions
-MongoDB Interview Questions and Answers
-Here are over 50 most commonly asked interview questions on MongoDB.
 
 Q1. What is MongoDB?
 Answer: MongoDB is a document-oriented NoSQL database that stores data in flexible, JSON-like documents called BSON (Binary JSON). It’s designed for scalability, performance, and high availability.
@@ -18577,6 +18534,7 @@ Data model: MongoDB uses flexible documents; relational DBs use fixed schemas.
 Scalability: MongoDB offers easier horizontal scaling.
 Querying: MongoDB uses a document-based query language; relational DBs use SQL.
 Relationships: MongoDB typically denormalizes data; relational DBs use joins.
+
 Q4. What are the types of NoSQL databases?
 Answer: There are four main types of NoSQL databases:
 
@@ -18584,6 +18542,7 @@ Document Database: Stores data in documents similar to JSON. Examples include Mo
 Key-Value Database: Stores data as a collection of key-value pairs. Examples include Redis and DynamoDB.
 Column Store Database: Organizes data in columns within a keyspace. Examples include Cassandra, BigTable, and HBase.
 Graph Store Database: Designed for data best represented as graphs with interconnected nodes. Examples include AllegroDB and GraphDB.
+
 Q5. What are the advantages of MongoDB?
 Answer: MongoDB offers several benefits:
 
@@ -18593,6 +18552,7 @@ Provides high performance and easy scalability.
 Eliminates the need for complex joins.
 Supports horizontal and vertical scaling.
 Available on cloud platforms like Azure and AWS.
+
 Q6. What is sharding in MongoDB?
 Answer: Sharding is MongoDB’s method for distributing data across multiple machines. It’s used to support deployments with very large data sets and high throughput operations.
 
@@ -18608,7 +18568,6 @@ Answer: The aggregation framework is a set of analytical tools for processing da
 Q10. How does MongoDB ensure data consistency?
 Answer: MongoDB ensures consistency through reading and writing concerns, journaling, and two-phase commits for multi-document transactions.
 
-mongodb interview questions
 Q11. What are capped collections in MongoDB?
 Answer: Capped collections are fixed-size collections that maintain insertion order and automatically overwrite old documents when the size limit is reached. They’re useful for log files or caching.
 
@@ -18644,7 +18603,6 @@ Q20. What is the difference between $where and $expr in MongoDB queries?
 Answer: $where allows JavaScript expressions in queries but is slower and less secure.
 $expr allows the use of aggregation expressions within the query language, offering better performance and security.
 
-
 Q21. Explain the concept of TTL (Time-To-Live) indexes in MongoDB.
 Answer: TTL indexes automatically remove documents from a collection after a specified amount of time or at a specific clock time. They’re useful for managing data like sessions, logs, or temporary data.
 
@@ -18676,7 +18634,6 @@ Q30. What is the difference between $ and $all operators?
 Answer: $and performs a logical AND operation on an array of expressions.
 $all matches arrays that contain all elements specified in the query.
 
-Interview Questions
 Q31. How can you optimize MongoDB query performance?
 Answer: Optimize through proper indexing, using covered queries, avoiding large documents, and using the explain() method to analyze query execution.
 
@@ -18743,13 +18700,14 @@ Answer: No, MongoDB does not support foreign key constraints due to its flexible
 Q51. What is the role of the profiler in MongoDB?
 Answer: The MongoDB profiler collects detailed information about database operations. It’s useful for performance tuning and identifying slow queries.
 
-95 MongoDB interview questions (including answers), 10,000 words detailed analysis!
-January 3, 2024  by 李冠廷  No Comments
+
+
+95 MongoDB interview questions (including answers)
+
 1. What is mongodb?
 MongoDB is an open source database system based on distributed file storage written in C++ language. In case of high load, adding more nodes can ensure server performance. MongoDB aims to provide scalable, high-performance data storage solutions for WEB applications.
 
 MongoDB stores data as a document. The data structure consists of key=>value pairs. MongoDB documents are similar to JSON objects. Field values can contain other documents, arrays, and document arrays.
-
 
 2. What are the features of mongodb?
 (1) MongoDB is a document storage-oriented database, which is relatively simple and easy to operate.
@@ -18806,6 +18764,7 @@ A high performance
 High availability
 Easy extensibility
 Rich query language
+
 8. Does journal playback encounter problems when entries are incomplete (for example, one of them happens to fail midway)?
 The write operation of each journal (group) is consistent and will not be played back during recovery unless it is complete.
 
@@ -18999,6 +18958,7 @@ Easier to debug
 Easy to extend
 There is no need to convert/map application objects to database objects
 Use internal memory as a storage workspace for faster data access.
+
 66. Which scenarios will MongoDB be used
 Big data
 Content management system
@@ -19133,7 +19093,9 @@ Aggregation operations can process data records and return computed results. Agg
 95. What are replica sets in MongoDB
 In MongoDB, a replica set is composed of a group of MongoDB instances, including a Primary node and multiple secondary nodes. All data of the MongoDB client is written to the Primary node, and the secondary nodes write data synchronically from the Primary node to keep the same data stored in all replication sets and improve data availability.
 
- Most Frequently Asked MongoDB Interview Questions
+ 
+
+Most Frequently Asked MongoDB Interview Questions
 Here in this article, we will be listing frequently asked MongoDB Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
 
 Q1. What is MongoDB and how it works? Explain
@@ -19156,7 +19118,6 @@ MongoDB was founded in 2007.
 
 MongoDB originally dubbed “p”, the database was officially named MongoDB, with “Mongo” being short for the word humongous. After received many inputs about MongoDB, the company decided it scrap the Babble project and release MongoDB on its own as an open-source database platform in 2009.
 
-Related Article: What Is The Difference Between MySQL And MongoDB
 Q5. What is the difference between Mysql and MongoDB? Explain
 Answer
 S.no	MySQL	MongoDB
@@ -19164,6 +19125,7 @@ S.no	MySQL	MongoDB
 2.	Data stored in tables	Data stored in JSON documents
 3.	Sses schemas for defining DB structure	Schema-free
 4.	Development and maintenance by Oracle Corp.	Development and maintenance by MongoDB, Inc.
+
 Q6. Is MongoDB a relational database? Explain
 Answer
 No. MongoDB is a non-relational database. Instead, it is document-oriented. This means, instead of storing data in tables, similar to a relational database, it stores data in individual documents.
@@ -19206,6 +19168,7 @@ To drop a collection in MongoDB, connect to the database where you want to delet
 Type the following command for deleting: db.collection_name.drop()
 
 Related Article: SQL Interview Questions
+
 Q15. How we can create an index in MongoDB?
 Answer
 You can use the db.collection.createIndex() method for creating Indexes in MongoDB.
@@ -19231,22 +19194,23 @@ Answer
 A Replica Set in MongoDB is a group of instances that maintain similar data sets. These type of sets are essential for production deployments as they offer high availability as well as good redundancy.
 
 Related Article: How to Best Prepare Yourself with MongoDB Interview Questions
+
 Q21. What will be objects between two dates in MongoDB?
 Answer
+
 Q22. Is MongoDB support ACID transactions?
 Answer
 Yes. MongoDB 4.0 version provides complete multi-document ACID transaction support.
 
 Q23. How to install MongoDB on our machine?
 Answer
+
 Q24. How to list all indexes in MongoDB?
 Answer
 To list all indexes you can use db.items.getIndexes()
 
+
 74 MongoDB Interview Questions & Answers in 2026
-By Aditya Kumar
-Share This Article:
-Last updated on Feb 15, 20265757
 Top MongoDB Interview Questions and Answers
 What Is MongoDB?
 MongoDB is a popular open-source, NoSQL (non-relational) database management system that is created to store, retrieve, and manage data flexibly and scalable. MongoDB is classified as a document database, storing data in a format similar to JSON (JavaScript Object Notation) documents. 
@@ -19263,11 +19227,13 @@ Community and Enterprise Editions: MongoDB provides a freely available Community
 Large Ecosystem: MongoDB boasts a thriving and engaged community, comprehensive documentation, and diverse drivers and connectors tailored to numerous programming languages and frameworks.
 MongoDB is commonly used in web and mobile applications, content management systems, real-time analytics, and other scenarios where flexibility, scalability, and speed are essential. It's a popular choice for developers and organizations looking to work with data that doesn't fit neatly into traditional relational databases. Now, let’s look at the most popular MongoDB Interview Questions and Answers for 2024.
 
+
 MongoDB Basic Interview Questions
 1. How does MongoDB differ from traditional relational databases?
 MongoDB is a NoSQL database, while traditional relational databases are SQL-based.
 It stores data in flexible, schema-less documents, whereas relational databases use structured tables with fixed schemas.
 It is designed for horizontal scalability and can handle large volumes of data, while relational databases typically scale vertically.
+
 2. Can you explain what a document in MongoDB is?
 A document is a JSON-like data structure that stores and represents data. It can contain key-value pairs, arrays, and nested documents. Documents are stored in collections, equivalent to tables in relational databases.
 
@@ -19338,6 +19304,7 @@ Some prominent features of MongoDB include flexibility in data modeling, horizon
 
 24. What is the purpose of using MongoDB over other databases?
 MongoDB is chosen over other databases for its ability to handle flexible, unstructured, and rapidly changing data. It excels in scenarios where scalability, speed, and agility are essential, such as web and mobile applications, real-time analytics, and content management systems. Its horizontal scaling capabilities also make it suitable for large-scale data storage and processing.
+
 
 MongoDB Intermediate Interview Questions
 1. How does MongoDB ensure high availability?
@@ -19415,7 +19382,9 @@ MongoDB can integrate with various data analysis tools and frameworks through co
 25. What is the role of Oplog in MongoDB replication?
 Oplog (short for "operation log") is a capped collection that records all write operations in the primary node of a replica set. Secondary nodes use the oplog to replicate changes and maintain data consistency with the primary. It plays a crucial role in replication and failover processes.
 
+
 MongoDB Advanced Interview Questions
+
 1. How do you design a sharded MongoDB architecture for a large-scale application?
 To design a sharded MongoDB architecture for a large-scale application, consider the following steps:
 Identify a sharding key that evenly distributes data across shards.
@@ -19423,6 +19392,7 @@ Set up a shard cluster with multiple shard servers.
 Configure a shard router (mongos) to route queries to the appropriate shards.
 Implement replica sets within each shard for high availability.
 Monitor and scale the cluster as needed to maintain performance.
+
 2. Can you explain the complexities involved in MongoDB data sharding?
 MongoDB data sharding introduces complexities such as choosing the right shard key, managing data distribution, ensuring data consistency, and handling shard rebalancing. Handling shard keys and ensuring balanced data distribution are key challenges.
 
@@ -19432,6 +19402,7 @@ In distributed MongoDB deployments, you can achieve data consistency through var
 Read Preference: Specify read preferences to control which data is read.
 Write Concern: Use write concern levels to control the acknowledgment of write operations.
 Transactions: MongoDB supports multi-document transactions to ensure consistency across documents.
+
 4. How do you handle data migration in a live MongoDB environment?
 Use tools like MongoDB's `mongodump` and `mongorestore` to perform live data migrations. These tools allow you to export data from one cluster and import it into another while minimizing downtime.
 
@@ -19500,15 +19471,8 @@ While I cannot provide real-time information, MongoDB's future trends may includ
 
 Simplilearn's Professional Certificate Program in Data Engineering, aligned with AWS and Azure certifications, will help all master crucial Data Engineering skills. Explore now to know more about the program.
 
+
 MangoDB Interview Questions
-
-25 MongoDB Interview Questions and Answers (2023)
-An overview of questions commonly asked in an interview for a position involving MongoDB, the popular open-source database system. Topics include database structure, scalability, performance, and security.
-Apr 14, 2023 - 14:180
- Facebook  Twitter      
-25 MongoDB Interview Questions and Answers (2023)25 MongoDB Interview Questions and Answers (2023)
-
-
 
 What is MongoDB?
 MongoDB is a popular NoSQL database management system that stores data in a flexible, JSON-like format called BSON. It is known for its high performance, scalability, and flexibility, making it ideal for handling large-scale, unstructured data.
@@ -19618,148 +19582,13 @@ Enabling auditing to monitor and track database activity.
 Using role-based access control (RBAC) to restrict permissions based on user roles.
 Properly configuring and securing MongoDB deployment in a production environment.
 
+
 Top MongoDB Interview Questions and Answers
-15 mins read
-4.5K Views
-Comment
-Share
-Call
-Call 8585951111
-Got Doubts?
-Rashmi
-Rashmi Karan
-Manager - Content
-Updated on Aug 8, 2024 13:36 IST
-This blog covers the most frequently asked MongoDB Interview Questions. It starts with the basic MongoDB interview questions and moves on to core MongoDB interview questions.
 
-2020_12_MongoDB-interview-questions-e1607689190780.jpg
-MongoDB Interview Questions
-Recommended online courses
-Best-suited Interview preparation courses for you
-Learn Interview preparation with these high-rated online courses
-
-name
-Aptitude Preparation Course
-Coding Ninjas
-Certificate
-Total Fees
-₹4.96 K
-Duration
-2 months
-
-Download IconBrochure
-name
-How to turn your internship into a job offer?
-Great Learning
-Certificate
-Total Fees
-Free
-Duration
-1 hours
-
-Go to Free Course
-name
-Interview Skills
-TCS ion
-Certificate
-Star Icon
-4.4
-Total Fees
-Free
-Duration
-1 week
-
-Go to Free Course
-name
-Quantitative Aptitude for Interview Part 1
-Great Learning
-Certificate
-Total Fees
-Free
-Duration
-2 hours
-
-Go to Free Course
-name
-Interview Crack-Jack Program
-eAge Tutor
-Certificate
-Star Icon
-4.3
-Total Fees
-₹3.3 K
-Duration
-22 hours
-
-Download IconBrochure
-name
-Internship & Job Preparation
-Internshala
-Certificate
-Star Icon
-4.0
-Total Fees
-₹1.35 K
-Duration
-4 weeks
-
-Download IconBrochure
-name
-Interview Prep and workplace Comm Combo International
-LIQVID
-Certificate
-Star Icon
-5.0
-Total Fees
-₹5.13 K
-Duration
-67 hours
-
-Download IconBrochure
-name
-Interview Prep and workplace Comm Combo
-LIQVID
-Certificate
-Star Icon
-4.7
-Total Fees
-₹5.13 K
-Duration
-45 hours
-
-Download IconBrochure
-name
-Start a CV
-Google Cloud
-Certificate
-Star Icon
-3.7
-Total Fees
-Free
-Duration
-1 hours
-
-Go to Free Course
-name
-How to Prepare for an Interview?
-Great Learning
-Certificate
-Star Icon
-5.0
-Total Fees
-Free
-Duration
-1 hours
-
-Go to Free Course
 Q1. What is MongoDB?
 MongoDB is a cross-platform, document-oriented database system, with a free schema. This means that each entry or record can have a different data schema, with attributes or “columns” that do not have to be repeated from one record to another. It is written in C ++, which gives it a certain proximity to bare metal, or hardware resources of the machine, so that it is quite fast when executing its tasks.
-
 MongoDB supports all other popular programming languages such as C, C#, Node.js, Python, Erlang, JavaScript, and more. Also, it is licensed as GNU AGPL 3.0, so it is freely licensed software. It works on Windows, Linux, OS X and Solaris operating systems.
 
-
-Stay updated with the latest blogs on online courses and skills
-Enter Mobile Number
 Q2. Where can we use MongoDB?
 MongoDB can be used in many of the projects we develop today .
 
@@ -19776,6 +19605,7 @@ Easy to set up and install
 Does not require conversion/mapping of application objects to the database
 Can derive a document-based data model
 Supports document query language, essential to prevent dynamic queries
+
 Q4. What is “Namespace” in MongoDB?
 Ans. A Namespace provides access to the running code that are present in different databases. There is a file ‘CACHE.DAT’ in a database that provides a collection of namespaces and databases to the user. The concatenation of the collection name and database name is called a namespace.
 
@@ -20030,6 +19860,7 @@ $where does not permit references to the db object from the $where function. Thi
 The geoSearch command is not supported in sharded environments
 An index cannot cover a query on a sharded collection if the index does not contain the shard key, with the following exception for the _id index – If a query on a sharded collection only specifies a condition on the _id field and returns only the _id field, the _id index can cover the query when run against a mongos even if the _id field is not the shard key
 An existing collection can only be sharded if its size does not exceed specific limits. These limits can be estimated based on the average size of all shard key values, and the configured chunk size
+
 Q35. What is the difference between MongoDB and Redis database?
 Ans. Difference between MongoDB and Redis:
 
@@ -20039,12 +19870,10 @@ Redis
 Generic 	Has relational database features that give it strong consistency	Offers advanced data structures, like lists, sorted sets, strings, and bitmaps
 Data Storage	Document oriented where documents are heterogeneous, and each has a unique key within a collection
  
-
 Used over Redis when structuring or modeling related information
 
 Stores data in-memory using various key values
  
-
 Excels over MongoDB when working with rapidly changing data
 
 Programming languages	Single-master replication with built-in auto-election	Master-slave replication
@@ -20053,7 +19882,6 @@ Coding 	Easy to code	Hard to code
 Q36. What is the difference between MongoDB and CouchDB?
 Ans. Difference between MongoDB and CouchDB:
 
- 	
 MongoDB
 CouchDB
 Database Structure	Stores schema-free data using documents in the BSON format	Offers a RESTful HTTP API for reading, adding, editing, and deleting database documents
@@ -20064,19 +19892,16 @@ Triggers	Not available	Available
 Q37. What is the difference between MongoDB and Cassandra?
 Ans. Difference between MongoDB and Cassandra:
 
- 	
 MongoDB
 Cassandra
 Feature	Cross-platform database system	High performance distributed database system.
 Usage	Mobile applications and the Internet of Things 	e-commerce, fraud detection, and real-time analytics
 Storage
  
-
- 
-
 Column-oriented and directly stores the data	Document-oriented
 Programming languages	MongoDB is written in C++	Cassandra is written in Java
 Administration 	Easy to administer in failures	High availability with no single point of failure
+
 Q38. Define MapReduce.
 Ans. MapReduce is a framework that provides a distributed and parallel data processing system. Its name is due to the main functions that are Map and Reduce. MapReduce is designed for the practical solution of some problems that can be parallelized. Still, it must be taken into account that not all problems can be solved efficiently with MapReduce. MapReduce is geared towards solving problems with large data sets, using the HDFS distributed file system.
 
@@ -20092,6 +19917,7 @@ Removes the complex ORM layer that translates objects in code to relational tabl
 Can be scaled within and across multiple distributed data centers	Allows handling data output in a better way and has a better-organized complex structure
 Not a suitable solution for applications with complex transactions	Supports atomic transactions
 Shorter recovery time from failure	Stability issues
+
 Q40. What is the covered query?
 Ans. A query is a covered query if it satisfies the following two conditions:
 
@@ -20102,35 +19928,26 @@ Ans. Covered query allows faster execution of the query. It ensures that the cre
 
 MongoDB can match the query conditandl as return the result fields using the same index without looking inside the documents.
 
+
 MongoDB - Basics
 Q1
 What is MongoDB? How is it different from other relational or non-relational databases?
 MongoDB is a non-relational, document based database.
 
 Relational databases such as MySql and Oracle store data in tables, rows and columns. They are based on a branch of algebraic theory known as relational algebra. Relational databases are structured, and tables can be linked with each other via foreign keys. Relational databases follow ACID properties, which ensures that database transactions are processed reliably.
-
 Non-Relational databases, also called NoSQL databases, contain unstructured data and are commonly used in big data solutions to store and process massive amounts of disparate data.
-
 There are four different kinds of NoSQL databases.
-
 Graph databases – Graph databases are based on graph theory. These databases are designed for data which needs to be represented as graphs. The data elements are interconnected with multiple number of relations between them. Example of a graph database is Neo4j.
-
 Key-Value stores – These databases store data as an indexed key and value pairs. These databases store data in a schema-less way. Example of key-value data stores include Cassandra, DynamoDB, Riak and BerkleyDB.
-
 Column store – These databases are designed to store data as columns of data, rather than as rows as data. Example of column store databases are HBase, BigTable and HyperTable.
-
 Document databases – Document databases are designed to store documents, with each document having a unique key. Examples of document databases are MongoDB and CouchDB.
 
 Q2
 What are the key features MongoDB?
 Following are the key features of MongoDB.
-
 Document store - MongoDB is non-relational document based database. Documents in MongoDB contain field and value pairs and are structured similar to JSON objects. Fields in MongoDB documents may contain other documents, reference to other document, arrays and arrays to other documents.
-
 High Availability – MongoDB provides high availability as part of its core functionality. MongoDB has replica sets that replicates data and provides high availability and data redundancy.
-
 Horizontal scalability – MongoDB provides sharding feature as part of its core functionality which distributes data across a cluster of machines.
-
 Query Language – MongoDB provides a rich query language that supports read and write operations, aggregations and search operations.
 
 Q3
@@ -20145,6 +19962,7 @@ You can create a new MongoDB database via Mongo shell by using the command ‘us
 
 > use interview_grid_db
 switched to db interview_grid_db
+
 Q5
 How do you create a new collection in MongoDB via the Mongo shell?
 Explicit creation – You can explicitly create a new collection by using the command db.createCollection(). This enables us to set properties on the collection such as the setting the maximum file size, validation rules etc.
@@ -20158,6 +19976,7 @@ Implicit creation – MongoDB creates a new collection automatically, if you ins
 >db.employees.insert({fname:"John", lname:"Doe", age:"25",
  title:"Manager", dept:"IT"})
 WriteResult({ "nInserted" : 1 })
+
 Q6
 What are capped collections in MongoDB?
 Capped collections are collections that store a fixed number of documents and maintains the insertion order of the documents.
@@ -20490,12 +20309,10 @@ What are the advantages of sharding?
 Following are the key advantages of sharding a MongoDB collection.
 
 1. Faster reads: Queries that include a shard key or a prefix of a compound shard key are faster, because MongoDB can target the search to a specific shard.
-
 2. Horizontal scaling: Both read and write loads can be scaled horizontally by adding more shards to the cluster.
-
 3. Storage capacity: Storage capacity of the cluster can be increased by increasing the number of shards. in the cluster
-
 4. High availability: Sharding increases the availability of requests since the sharded cluster can continue to perform read and write operations even if one of the shards is unavailable
+
 
 Top 10 MongoDB Interview Questions for Freshers
 logo
@@ -20505,10 +20322,8 @@ MongoDB is one of the most favoured NoSQL databases today. It has quickly become
 
 This article will provide a comprehensive overview of the most commonly asked interview questions on MongoDB for freshers. Taking the time to understand these concepts can help freshers become more confident when applying for job positions that demand knowledge of MongoDB.
 
-MongoDB Interview Questions
 
-Top 10 MongoDB Interview Questions and Answers
-Below is a compilation of MongoDB interview questions with answers. 
+MongoDB Interview Questions
 
 What do you understand by MongoDB? 
 Answer: MongoDB is an open-source, cross-platform, document-oriented database program. It is written in C++ and is developed by MongoDB Inc. It is classified as a NoSQL database, meaning it does not use the traditional table-based relational database structure. Instead, it stores data in JSON-like documents with dynamic schemas, making it more flexible and scalable than its relational database counterparts. 
@@ -20556,15 +20371,9 @@ Easy to Use: MongoDB is designed to be easy to use and learn, with a simple quer
 Security: MongoDB provides a range of security features to help ensure the safety of your data.  
 Cloud Support: MongoDB can be deployed on various cloud platforms, making it easier to manage and scale. 
 
-25 Advanced MongoDB Interview Questions for Backend Developers
-June 18, 2025
-·
-14 min read
-Jump to Category
-️ Data Modeling & Schema	Indexing & Query Optimization
-Aggregation Framework	Replication & High Availability
-Sharding & Scalability	Transactions & Internals
-Data Modeling & Schema Design
+
+Advanced MongoDB Interview Questions for Backend Developers
+
 1. When would you choose to embed a document versus creating a reference to it?
 The choice depends on the relationship between the data and the application’s access patterns.
 
@@ -20725,12 +20534,8 @@ The **oplog** (operations log) is a special capped collection (`oplog.rs`) that 
 25. What is the difference between a sparse index and a regular index?
 A **regular index** contains an entry for every single document in a collection, even if the indexed field is null
 
-Top 30 MongoDB Interview Questions 2019
-by Mohammed on Mar 17, 2018 12:02:52 PM
 
-Top 30 MongoDB Interview Questions 2019
-
-Top 30 MongoDB Interview Questions 2019
+Top 30 MongoDB Interview Questions
 
 Q1. What is MongoDB?
 Ans: Mongo-DB is a record database which gives superior, high accessibility and simple adaptability.
@@ -20743,6 +20548,7 @@ High performance
 High availability
 Easy scalability
 Rich-query language
+
 Q3. What is a replica set?
 Ans: A copy set is a group of mongo examples that host similar data index. In replica set, one hub is essential, and another is auxiliary. From essential to the secondary hub all information replicates.
 
@@ -20831,40 +20637,12 @@ In MongoDB, it’s difficult to represent relationships between data so you end 
 Q30. Mention how you can inspect the source code of a function?
 Ans: To inspect a source code of a function, without any parentheses, the function must be invoked.
 
-MongoDB Interview Questions and Answers
-Find 100+ MongoDB interview questions and answers to assess candidates' skills in NoSQL databases, document modeling, indexing, aggregation, and performance optimization.
-By
-WeCP Team
-Table of Content
-MongoDB Interview Questions for Beginners
-MongoDB Interview Questions for Intermediate
-MongoDB Interview Questions for Experienced
-MongoDB Interview Questions and Answers for Beginners
-1. What is MongoDB, and how does it differ from relational databases?
-2. What is a document in MongoDB?
-3. What is a collection in MongoDB?
-4. What is a database in MongoDB?
-Schedule A Demo
-Assess Candidate's Skills
-As businesses increasingly adopt NoSQL databases for scalability and flexibility, recruiters must identify MongoDB experts who can design, manage, and optimize document-based databases efficiently. With expertise in schema design, indexing, replication, and aggregation, MongoDB professionals play a key role in handling large-scale data processing and real-time applications.
-
-This resource, "100+ MongoDB Interview Questions and Answers," is tailored for recruiters to simplify the evaluation process. It covers topics from MongoDB fundamentals to advanced database management, including sharding, performance tuning, security, and cloud integration.
-
-Whether hiring MongoDB developers, database administrators (DBAs), or data engineers, this guide enables you to assess a candidate’s:
 
 Core MongoDB Knowledge: Understanding of collections, documents, CRUD operations, and BSON format.
 Advanced Skills: Indexing, aggregation pipeline, replication, and sharding strategies.
 Real-World Proficiency: Performance optimization, backup strategies, and integrating MongoDB with cloud platforms like AWS, Azure, and GCP.
 For a streamlined assessment process, consider platforms like WeCP, which allow you to:
 
-✅ Create customized MongoDB assessments with hands-on database challenges.
-✅ Include real-world data modeling tasks to test schema design and query performance.
-✅ Conduct remote proctored exams to ensure test integrity.
-✅ Leverage AI-powered evaluation for faster and more accurate hiring decisions.
-
-Save time, improve hiring efficiency, and confidently recruit MongoDB professionals who can manage high-performance, scalable NoSQL databases from day one.
-
-MongoDB Interview Questions for Beginners
 What is MongoDB, and how does it differ from relational databases?
 What is a document in MongoDB?
 What is a collection in MongoDB?
@@ -20987,6 +20765,8 @@ What is the impact of MongoDB’s eventual consistency model on your application
 How do you plan for capacity and resource allocation in a large MongoDB deployment?
 How do you handle managing configuration changes in a MongoDB sharded cluster?
 How would you implement automated failover and disaster recovery in MongoDB?
+
+
 MongoDB Interview Questions and Answers for Beginners
 1. What is MongoDB, and how does it differ from relational databases?
 MongoDB is an open-source, document-oriented NoSQL database designed to store, manage, and retrieve large volumes of unstructured, semi-structured, or structured data. It uses BSON (Binary JSON) format to store data, which allows for flexibility in representing complex data structures, including arrays and embedded documents. Unlike traditional relational databases (RDBMS) such as MySQL, PostgreSQL, or Oracle, which store data in tables with predefined schemas and rows/columns, MongoDB organizes data in collections of documents, and it does not require a fixed schema, allowing documents within a collection to have different fields.
@@ -21067,6 +20847,7 @@ Example of database commands in the MongoDB shell:
 use ecommerce;  // Switch to the 'ecommerce' database
 db.products.insertOne({ name: "Laptop", price: 999.99 }); // Insert a product into the 'products' collection
 ‍
+
 MongoDB Basics
 What is MongoDB? Explain some key features of MongoDB.
 MongoDB is a popular document-oriented NoSQL database that stores data in flexible, JSON-like documents with dynamic schemas. Key features include:
@@ -21593,11 +21374,8 @@ Ability to innovate rapidly across query execution, indexing, performance etc.
 Multi-cloud via Atlas boosting productivity and scale
 As long as data volumes and workload complexity increases, MongoDB’s core strengths will sustain its prominence.
 
-All The Useful MongoDB Interview Questions & Answers
-By Fatskills Exam Guides Team — the exam nerds behind 28,500+ quizzes and 2.1M practice questions across 500+ global exams.
 
-⏱️ ~15 min read
-🖨️ Print / Save this study guide as PDF
+All The Useful MongoDB Interview Questions & Answers
 Q 1. Explain what is MongoDB.
 MongoDB is an open-source NoSQL database management program that supports various forms of data. MongoDB is basically used as a tool that can manage document-oriented information, store or retrieve information.
 
@@ -21837,13 +21615,6 @@ If you call the model creation function with the same key more than once, mongoo
 Q 49. What is the '__v' field in Mongoose?
 When the mongoose is created at the first time the version key is a property set on every document. The value of this key comprises of the internal revision of the document. It is understood that the name of this document is configurable. The default key is __v
  
-Interview Questions MongoDB
-Interview Questions MongoDB
-Posted On
-November 14, 2023
-by
-Codex
-129 Views
 What is MongoDB?
 MongoDB is a cross-platform, document-oriented database program that provides high performance, high availability, and easy scalability. It is a leading NoSQL database, which is designed for ease of development and scaling​​.
 
@@ -21965,9 +21736,8 @@ How does MongoDB ensure data redundancy and high availability?
 MongoDB ensures data redundancy and high availability through the use of replica sets, which are groups of two or more copies of a MongoDB database. The replica set includes a primary node and secondary nodes that replicate the data of the primary node. If the primary fails, an election process designates a new primary from the secondaries to maintain service continuity.
 
 
+
 MongoDB Interview Questions
-Introduction to MongoDB
-When dealing with data, there are two types of data as we know – (i) structured data and (ii) unstructured data. Structured data is usually stored in a tabular form whereas unstructured data is not. To manage huge sets of unstructured data like log or IoT data, a NoSQL database is used.
 
 Now, what is MongoDB?
 
@@ -21976,11 +21746,6 @@ It provides easy scalability and is a cross-platform, document-oriented database
 MongoDB works on the concept of Collection and Document.
 It combines the ability to scale out with features such as secondary indexes, range queries, sorting, aggregations, and geospatial indexes.
 MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL).
-Crack your next tech interview with confidence!
-
-Take a free mock interview, get instant⚡️ feedback and recommendation💡
-
-Take Free Mock Interview
 
 MongoDB Basic Interview Questions
 1. What are some of the advantages of MongoDB?
@@ -21992,6 +21757,7 @@ MongoDB basically uses JavaScript objects in place of procedures
 MongoDB uses a dynamic database schema
 MongoDB is very easy to scale up or down
 MongoDB has inbuilt support for data partitioning (Sharding).
+
 2. What is a Document in MongoDB?
 A Document in MongoDB is an ordered set of keys with associated values. It is represented by a map, hash, or dictionary. In JavaScript, documents are represented as objects:
 {"greeting" : "Hello world!"}
@@ -22040,14 +21806,13 @@ The mongos acts as a query router, providing an interface between client applica
 
 Config servers store metadata and configuration settings for the cluster. MongoDB uses the config servers to manage distributed locks. Each sharded cluster must have its own config servers.
 
-
-
 7. What are some features of MongoDB?
 Indexing: It supports generic secondary indexes and provides unique, compound, geospatial, and full-text indexing capabilities as well.
 Aggregation: It provides an aggregation framework based on the concept of data processing pipelines.
 Special collection and index types: It supports time-to-live (TTL) collections for data that should expire at a certain time
 File storage: It supports an easy-to-use protocol for storing large files and file metadata.
 Sharding: Sharding is the process of splitting data up across machines.
+
 8. How to add data in MongoDB?
 The basic method for adding data to MongoDB is “inserts”. To insert a single document, use the collection’s insertOne method:
 
@@ -22102,6 +21867,7 @@ Binary Data
 Binary data is a string of arbitrary bytes.
 Code
 {"x" : function() { /* ... */ }}
+
 13. When to use MongoDB?
 You should use MongoDB when you are building internet and business applications that need to evolve quickly and scale elegantly. MongoDB is popular with developers of all kinds who are building scalable applications using agile methodologies.
 MongoDB is a great choice if one needs to:
@@ -22112,6 +21878,7 @@ Scale your data repository to a massive size.
 Evolve the type of deployment as the business changes.
 Store, manage and search data with text, geospatial, or time-series dimensions.
 MongoDB Intermediate Interview Questions
+
 14. How is Querying done in MongoDB?
 The find method is used to perform queries in MongoDB. Querying returns a subset of documents in a collection, from no documents at all to the entire collection. Which documents get returned is determined by the first argument to find, which is a document specifying the query criteria.
 
@@ -22152,6 +21919,7 @@ A line is given by an array of points:
        "coordinates" : [[0,1], [0,2], [1,2]]
    }
 }
+
 17. Explain the process of Sharding.
 Sharding is the process of splitting data up across machines. We also use the term “partitioning” sometimes to describe this concept. We can store more data and handle more load without requiring larger or more powerful machines, by putting a subset of data on each machine.
 In the figure below, RS0 and RS1 are shards. MongoDB’s sharding allows you to create a cluster of many machines (shards) and break up a collection across them, putting a subset of data on each shard. This allows your application to grow beyond the resource limits of a standalone server or replica set.
@@ -22183,6 +21951,7 @@ To add a field to this, we use “$set”:
 ObjectId("4b253b067525f35f94b60a31")},
 ... {"$set" : {"favorite book" : "Start with Why"}})
 MongoDB Advanced Interview Questions
+
 19. What do you mean by Transactions?
 A transaction is a logical unit of processing in a database that includes one or more database operations, which can be read or write operations. Transactions provide a useful feature in MongoDB to ensure consistency.
 
@@ -22190,6 +21959,7 @@ MongoDB provides two APIs to use transactions.
 
 Core API: It is a similar syntax to relational databases (e.g., start_transaction and commit_transaction)
 Call-back API: This is the recommended approach to using transactions. It starts a transaction, executes the specified operations, and commits (or aborts on the error). It also automatically incorporates error handling logic for “TransientTransactionError” and”UnknownTransactionCommitResult”.
+
 20. What are MongoDB Charts?
 MongoDB Charts is a new, integrated tool in MongoDB for data visualization.
 
@@ -22200,15 +21970,13 @@ The two different implementations of MongoDB Charts are:
 
 MongoDB Charts PaaS (Platform as a Service)
 MongoDB Charts Server
+
 21. What is the Aggregation Framework in MongoDB?
 The aggregation framework is a set of analytics tools within MongoDB that allow you to do analytics on documents in one or more collections.
 The aggregation framework is based on the concept of a pipeline. With an aggregation pipeline, we take input from a MongoDB collection and pass the documents from that collection through one or more stages, each of which performs a different operation on its inputs (See figure below). Each stage takes as input whatever the stage before it produced as output. The inputs and outputs for all stages are documents—a stream of documents.
 
-
 22. Explain the concept of pipeline in the MongoDB aggregation framework.
 An individual stage of an aggregation pipeline is a data processing unit. It takes in a stream of input documents one at a time, processes each document one at a time, and produces an output stream of documents one at a time (see figure below).
-
-
 
 23. What is a Replica Set in MongoDB?
 To keep identical copies of your data on multiple servers, we use replication. It is recommended for all production deployments. Use replication to keep your application running and your data safe, even if something happens to one or more of your servers.
@@ -22217,8 +21985,6 @@ Such replication can be created by a replica set with MongoDB. A replica set is 
 
 24. Explain the Replication Architecture in MongoDB.
 The following diagram depicts the architecture diagram of a simple replica set cluster with only three server nodes – one primary node and two secondary nodes:
-
-
 
 In the preceding model, the PRIMARY database is the only active replica set member that receives write operations from database clients. The PRIMARY database saves data changes in the Oplog. Changes saved in the Oplog are sequential—that is, saved in the order that they are received and executed.
 The SECONDARY database is querying the PRIMARY database for new changes in the Oplog. If there are any changes, then Oplog entries are copied from PRIMARY to SECONDARY as soon as they are created on the PRIMARY node.
@@ -22231,7 +21997,9 @@ mongoimport
 mongoexport
 mongodump
 mongorestore
+
 Conclusion
+
 26. Conclusion
 MongoDB is a powerful, flexible, and scalable general-purpose database. It combines the ability to scale out with features such as secondary indexes, range queries, sorting, aggregations, and geospatial indexes.
 Thus, in conclusion, MongoDB is:
