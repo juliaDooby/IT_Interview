@@ -1,3 +1,4 @@
+DBMS (Database Management System)
 
 DBMS Interview Questions for Freshers 
 Here are some of the most commonly asked basic DBMS interview questions and answers for freshers that are frequently discussed during the recruitment process: 
