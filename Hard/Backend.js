@@ -1033,3 +1033,391 @@ To assess API design skills during the interview, consider asking a question abo
 What are some key considerations when designing a RESTful API?
 
 Look for answers that discuss versioning, proper use of HTTP methods, clear naming conventions, and security considerations. A strong candidate should be able to explain these concepts clearly.
+
+
+SAS 
+
+Question 1: In SAS, what symbol is used to end each statement?
+Period (.)
+Comma (,)
+Colon (:)
+Semicolon (;)
+
+Q #1) Enlist the functions performed by SAS.
+
+Answer: SAS (Statistical Analysis System) has its importance in every business domain.
+
+Enlisted below are some of the summarized functions that are performed by SAS:
+
+Data Management and Project Management
+Data Warehousing
+Operational Research and Decisional Support
+Information Retrieval and Quality Management
+Business Planning
+Statistical Analysis
+Q #2) What are the 3 components in SAS programming?
+
+Answer: The 3 components in SAS programming are:
+
+Statements
+Variables
+Dataset
+Q #3) Enlist the syntax rules followed in SAS statements.
+
+Answer: SAS program is written in the Editor Window. Here, it contains a series of statements followed by the proper syntax in an order for the SAS program to understand it.
+
+Some of the syntax rules that are followed in the case of the Statement component of SAS are as follows:
+
+The end of any statement is marked by a semicolon (;).
+A semicolon is also used to separate multiple statements that appear on a single line.
+SAS statements are not case sensitive, and extra spacing before statements is automatically removed.
+Comments can be included in the SAS program for statements in two different ways:
+A line starts with an asterisk (*) and ends with a semicolon (;).
+A line beginning with a forward slash and an asterisk (/*) and ending with an asterisk and a forward slash (*/).
+Q #4) What are the data types that SAS contains?
+
+Answer: ‘Numeric’ and ‘Character’ are the two types of data types that the SAS program contains.
+
+Q #5) What are PDV and their functions?
+
+Answer: Program Data Vector (PDV) is a logical concept and is defined as an area of memory where a data set is being built by SAS.
+
+Functions of PDV are:
+
+A database having one observation at a time is created.
+The input buffer for holding the data from an external file is created at the time of compilation.
+PDV contains two automatic variables, namely, _N_ (displays the count of the data step that is being executed) and _ERROR_ (notifies of the error that occurs at the time of execution).
+Q #6) What do you know about the SAS data set?
+
+Answer: A SAS data set is referred to as the data that is available for analysis within a SAS program. A SAS dataset is also referred to as a SAS data table.
+
+SAS data table consists of two parts:
+
+Columns of variables
+Rows of observations
+Useful information about the SAS data set can be summarized as follows:
+
+SAS Dataset can read as well as it has built-in data sources for use, like Excel, Access, etc.
+The dataset, which is used only in the current session run and discarded after the session ends, is known as the Temporary Dataset.
+The Dataset that is stored for use in future sessions is also known as the Permanent Dataset.
+The built-in data set can be accessed using this path: Libraries -> My Libraries->SASHELP.
+Q #7) Explain why double trailing @@ is used in Input Statements?
+
+Answer: During data step iteration, including double trailing @@ in Input statements implies that SAS should hold the current record for execution of the next Input statement rather than switching onto the new record.
+
+Q #8) Explain the difference between the NODUP and NODUPKEY options?
+
+Answer: For removing duplicate values from the table, PROC SORT is categorized into two options:
+
+NODUP
+NODUPKEY
+Below, we can see the difference between these two options.
+
+NODUPKEY
+NODUP
+
+Compares just the BY variable present in the dataset.	Compares all the variables present in the dataset.
+Removes duplicate options for the values of variable listed in BY statement.	Identifies and eliminates duplicate observations.
+Syntax:
+PROC SORT DATA=readin NODUPKEY;
+BY variable name;
+RUN;	Syntax:
+PROC SORT DATA=readin NODUP;
+BY variable name;
+RUN;
+Q #9) Which command is used to perform sorting in the SAS program?
+
+Answer: PROC SORT command is used for performing sorting, be it on a single variable or multiple variables. This command is performed on the dataset where the new data set is created as a result of sorting but the original data set remains unchanged.
+
+Syntax:
+
+1
+2
+PROC SORT DATA=original OUT=Sorted;
+BY variable;
+Where,
+‘Original’ refers to the original dataset
+‘Sorted’ refers to the result as sorted dataset
+‘Variable’ refers to the column on which sorting operation is done.
+
+Sorting can be done in both ascending as well as descending order.
+
+For the dataset to display in descending order, the keyword ‘Descending’ is used in the BY statement with the column name on which sorting is to be performed.
+
+1
+2
+PROC SORT DATA=original OUT=Sorted;
+BY DESCENDING variable
+Q #10) Explain the difference between Informat and Format with an example.
+
+Answer: The difference between Informat and Format can be explained as:
+
+Informat
+Format
+
+Indicate SAS how to read data into SAS variable.	Indicate SAS how to display values in the variable.
+These are used to read the data or take input data from external files.	These are used to write the data.
+Q #11) Differentiate INPUT and INFILE.
+
+Answer: Including an INFILE statement within the SAS programming identifies an external file that consists of the data, whereas including an INPUT statement in SAS programming describes the variables used.
+
+The syntax for INFILE:
+
+1
+INFILE ‘filename’;
+The syntax for INPUT:
+
+1
+INPUT ‘varname1’ ‘varname2’;
+Q #12) Explain the use of PROC print and PROC contents?
+
+Answer: The PROC step of the SAS program is used to invoke built-in procedures for analyzing the data of the dataset.
+
+PROC print: Ensures that the data present in the dataset are read correctly.
+
+PROC contents: Displays the information about the SAS dataset.
+
+Q #13) Explain DATA_NULL_?
+
+Answer: As the name suggests, DATA_NULL_ is a data step that does not create any data set.
+
+It is used for:
+
+Creating macro variables.
+Writing the output without a data set.
+Q #14) How is a character variable converted into a numeric variable and vice versa?
+
+Answer: Under SAS programming, many tasks arise where a character value is to be converted into a numeric value, and in the same way, a numeric value is to be converted into a character value.
+
+PUT() is used to convert a numeric to a character. In this case, the source format and source variable type must always be similar.
+
+Example:
+
+1
+char_var= PUT( num_var, 6.);
+INPUT() converts a character to a numeric value. In this case, the source variable type must always be a character variable.
+
+Example:
+
+1
+Num_var= INPUT(char_var,2.0);
+Q #15) What is the purpose of _CHARACTER_ and _NUMERIC_?
+
+Answer: In the current dataset,
+
+_CHARACTER_ defines all the character variables that are currently defined.
+
+Example: To include all the character variables in PROC MEANS, the following statements are used:
+
+1
+2
+3
+PROC MEANS;
+Var_character_;
+Run;
+_NUMERIC_ defines all the numeric variables that are currently defined.
+
+Example: To include all the numeric variables in PROC MEANS, the following statements are used:
+
+1
+2
+3
+PROC MEANS;
+Var_numeric_;
+Run;
+Advanced SAS Interview Questions
+Q #16) What commands are used in the case of including or excluding any specific variables in the data set?
+
+Answer: DROP, KEEP, and data set options are used for this purpose.
+
+The variable we want to remove from the data step is specified in the DROP statement.
+
+The variable we want to retain from the data step is specified in the KEEP statement.
+
+Q #17) Differentiate between PROC MEANS and PROC SUMMARY.
+
+Answer: The difference between PROC MEANS and PROC SUMMARY can be understood as follows:
+
+PROC MEANS
+PROC SUMMARY
+
+This procedure produces the printed report by default in the OUTPUT window.	This procedure includes the PRINT in the statement to produce the printed report.
+PROC MEANS by default take all the numeric variables in the analysis.	PROC SUMMARY takes the variables into the statistical analysis that are described in VAR statement.
+Q #18) Explain the purpose of SUBSTR functions in SAS programming.
+
+Answer: In SAS programming, whenever there is a requirement of the program to abstract a substring, the SUBSTR function is used with a character variable.
+
+When a start position and length are specified, then this function is used for abstracting character string.
+
+Syntax: SUBSTR(char_var, start,length);
+
+Q #19) Name and describe few SAS character functions that are used for data cleaning in brief.
+
+Answer: Here are a few SAS character functions used for data cleaning.
+
+Compress(char_string) function is used for removing blanks or some specified characters from a given string.
+TRIM(str) function is used for removing trailing blanks from a given string.
+LOWCASE(char_string) function is used for converting all the characters in a given string to lowercase.
+UPCASE(char_string) function is used for converting all the characters in a given string to uppercase.
+COMPBL(str) function is used for converting multiple blanks to a single blank.
+Q #20) Mention a few ways with which a “table lookup’ is done in SAS programming.
+
+Answer: In SAS programming, the table lookup values can be stored in the following ways:
+
+Code
+Array
+Hash object
+Format
+Dataset
+The following techniques are used to perform ‘table lookup’ in SAS respectively:
+
+SELECT/WHEN or IF/THEN statements
+Array Index value
+Hash object key value
+FORMAT statement, PUT function
+Merge, join, KEY= Option
+Let us see an example that shows the ‘Code’ way to perform table lookup by using ‘IF/THEN’ statements:
+
+1
+2
+3
+4
+5
+6
+data location;
+set myinfo;
+if AreaCode='226' then Location='Ontario, Canada';
+else if AreaCode='212' then Location='New York, NY';
+else Location='Unknown';
+run;
+Q #21) Differentiate between CEIL and FlOOR functions.
+
+Answer: CEIL  function is used for truncating numeric values where it displays the output as the smallest integer. By the smallest integer, here means the integer value is greater than/equal to the argument.
+
+Example: CEIL(12.85) will display output as 13.
+
+FLOOR function is used for truncating numeric values where it displays the output as the greatest integer. By the greatest integer, here means that the integer value is less than/equal to the argument.
+
+Example: FLOOR(12.85) will display output as 12.
+
+Q #22) What are the ways in which Macro variables can be created in SAS programming?
+
+Answer: Well a number of different techniques can create macro variables in SAS programming.
+
+Enlisted below are the five most commonly used methods:
+
+%LET statement
+Macro parameters (named as well as positional)
+%DO statement (iterative)
+INTO in PROC SQL
+CALL SYMPUTX routine
+Q #23) Explain the purpose of the RETAIN statement.
+
+Answer: As the meaning of the word ‘RETAIN’ signifies to keep the value once assigned, the purpose of RETAIN statement is the same in SAS programming as it’s meaning implies.
+
+Within a SAS program, when it is required to move from the current iteration to the next of the data step, at that time RETAIN statement tells SAS to retain the values rather than set them to missing.
+
+Example: Let us print a program that will display the output value of ‘z’ starting from 1 by using the RETAIN statement.
+
+1
+2
+3
+4
+5
+data abc;
+set xyz;
+RETAIN z 0;
+z = z + 1;
+run;
+Q #24) Which command is used to save logs in the external file?
+
+Answer: PROC PRINTTO command is used to save logs in the external file.
+
+Example:
+
+1
+2
+PROC PRINTTO log="C:\Users\abc\Downloads\LOG11.txt" new;
+run;
+Q #25) Mention some common errors that are usually committed in SAS programming.
+
+Answer: Enlisted below are some of the common errors which are usually committed especially when you are new to this programming language.
+
+The basic syntax includes a semicolon at the end of each statement and missing a semi-colon is the most common mistake.
+You skip checking the logs after submitting the program.
+Commenting errors like failing to use comments where necessary or using comments in an inappropriate way.
+Not using proper debugging methods.
+Q #26) Mention SAS system options to debug SAS macros.
+
+Answer: To help in tracking the macro code as well as the SAS code generated by the macros, some system options can be used.
+
+They are:
+
+MLOGIC
+MPRINT
+SYMBOLGEN
+The message that will be generated by these system options can be seen in the SAS log.
+
+Q #27) Differentiate between SAS functions and SAS procedures.
+
+Answer: The major differences can be discovered/understood in the case explained for both SAS functions and Procedures.
+
+Case:
+
+For Function, argument value is supplied or say taken for calculation across the observation mentioned in the program statement, whereas, in the case of Procedure, every observation is expected to have only one variable through which calculation is done as mentioned in the below example.
+
+Let us understand it with examples:
+
+1
+2
+3
+4
+data average;
+set temp;
+avgtemp = mean( of T1 – T24 );
+run;
+Here in the above examples, the arguments passed to the mean function are taken for calculation as an observation.
+
+1
+2
+3
+4
+5
+6
+7
+8
+proc sort;
+by month;
+run;
+ 
+proc means;
+by month;
+var avgtemp;
+run;
+Here, in the above example, Proc means function calculates the average temperature for one argument that is passed as an observation i.e. by month.
+
+Q #28) What do you know about SYMPUT and SYMGET?
+
+Answer: The major differences between the two are mentioned below.
+
+SYMPUT is used for storing the value of a data set into the macro variable, whereas SYMGET is used for retrieving the value from the macro variable to the data set.
+
+Q #29) Explain the special input delimiters used in SAS programming.
+
+Answer: The special input delimiters used in SAS programming are:
+
+DLM
+DSD
+They are used in the statement ‘INFILE’, and DSD has the functionality of ignoring the delimiters that appear enclosed in quotation marks.
+
+Q #30) Which function is used to count the number of intervals between two SAS dates?
+
+Answer: Interval function INTCK is used for counting the number of intervals between two given SAS dates.
+
+Syntax:
+
+1
+INTCK(interval,start-of-period,end-of-period)
+Final Thoughts on SAS Programming Interview Questions
+So far, we have seen multiple questions and answers that would have given you a clear understanding of SAS programming concepts and given you an idea about the nature of questions being asked in SAS interviews.
+ 
