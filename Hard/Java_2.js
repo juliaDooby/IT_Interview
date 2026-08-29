@@ -9196,65 +9196,1154 @@ If the data looks correct in DevTools but still not rendering, I’d add a conso
 
 A common issue: the data arrives asynchronously
 
-Build your Java Full Stack Engineer resume
-Teal's Resume Builder tailors your resume to Java Full Stack Engineer job descriptions — highlighting the right skills, keywords, and experience.
 
-Try the Resume Builder — Free
-Find Java Full Stack Engineer Jobs
-Explore the newest Java Full Stack Engineer roles across industries, career levels, salary ranges, and more.
+Core Mockito Interview Questions
+Enlisted below are the most commonly asked questions about Mocking Frameworks.
+Q #1) Why do we need mocking?
+Answer: There are a lot of use cases of mocking that aid in unit testing of the code under isolation and make the test highly repeatable and predictable.
+Mocking is required when:
+a) The component under test has dependencies that are not yet implemented, or the implementation is in progress.
+A good example can be a REST API endpoint, which will be available later at some point in time, but you have consumed it in the code via a dependency.
+Now, as the real implementation is still not available, you really know most of the time what the expected response of that API is. Mocks allow you to test those kinds of integration.
+b) Component updates the state in the system.
+Example: DB calls – you would not want to update your DB with data that is just for testing. This might result in corrupting the data; the availability of the DB is another challenge when the test is executed.
+Thus, to avoid such behavior, DB calls could be mocked in the component under test. Hence, there is no direct coupling of the DB and the component under test.
+Q #2) Difference between doReturn and thenReturn.
+Answer: Mockito provides two different syntaxes for creating stubs, like:
+•	doReturn and thenReturn
+•	doNothing (no thenNothing)
+•	doThrow and thenThrow
+Both these methods set up stubs and can create/setup stubs and could be used interchangeably at times.
+So how do both of these differ?
+a) The thenReturn way of stubbing is a type-safe way of setting up stubs. What this essentially means is that it does a compile-time check against the return types that you want to stub to.
+Let’s understand this with an example:
+Assume a method getItemDetails on mockedItemService which returns an object of type ItemSku. So with thenReturn, you will not be able to return anything other than of type ItemSku, but with doReturn, you can set up the stub to return anything, and the test will fail (or throw an exception) during execution.
+// works
+1	when(mockedItemService.getItemDetails(123)).thenReturn(new ItemSku());
+// throws compile time exception
+1	when(mockedItemService.getItemDetails(123)).thenReturn(expectedPrice);
+// with doReturn,  both the stub setup works as it’s not compile safe.
+// here we are trying to return an object of type double, which still works and does not throw any compile time warning.
+1
+2	doReturn(expectedPrice).when(mockedItemService.getItemDetails(123));
+doReturn(new ItemSku()).when(mockedItemService.getItemDetails(123));
+b) Another important difference between these 2 ways to the stub is for Mocked objects, apart from compile safety, there is not much difference.
+However, for Spied objects, “thenReturn” kind of stub setup will not work, as it will result in calling the real method before the stubbed response is returned as the call and not on a Mock, but on Spy, which is wrapping a real object instance.
+So suppose there is a spy named spiedObject and it has a method testMethod which returns an integer, then to setup a stub on this you will need to use doReturn instead of thenReturn.
+1	doReturn(10).when(spiedObject.testMethod());
+Q #3) When and why should a spy be used?
+Answer: Spy is a type of partial mock supported by Mockito.
+This essentially means is a type of instance where:
+a) When no mock is set up, any interaction on spy results in calling the real methods. But it still allows you to verify the interactions with the spied object – was a method called, how many times the method was called, what were the arguments using which the method was called, etc.
+b) It gives you the flexibility to set up partial mocks.
+For example, if you have an object with 2 methods – method1 and method2, and you want method1 to be called and method2 to be mocked. Spies provide this kind of setup.
+So, the difference between a mock and a stub in simple terms is that a mock is created from a type and not from an instance, whereas a stub wraps an actual instance of the class object.
+Q #4) Why can’t static methods be mocked using Mockito?
+Answer: Static methods are associated with the class itself and not any particular instance of the class. This means that all instances/objects of the class use the same instance of the static method.
+Static methods are more like procedural code and are mostly used in legacy systems in general.
+Mock libraries typically create mocks by dynamical instance creation at runtime, either through interfaces or through inheritance, and as the static method is not associated with any instance, mocking frameworks (like Mockito, EasyMock, etc) can’t mock Static methods.
+Frameworks like PowerMock, which do have support for static methods, perform bytecode manipulation at runtime to mock static methods.
+Q #5) What’s the need to verify that the mock was called?
+Answer: Setting up a stub on a mocked object (or a spied instance) does not guarantee whether the stubbed setup was even invoked.
+“verification” matchers, give a facility to validate whether the stub that was set up was invoked or not, how many times was the call made, what arguments the stubbed method called with, etc.
+In essence, it allows us to verify the test setup and expected outcome more robustly.
+Q #6) What is good testable code?
+Answer:
+A few points about testable code (meaning that could be easily unit-tested) include:
+•	Reduced no of dependencies or tight coupling – Example: Dependencies should be injected rather than instantiated directly.
+•	Code that adheres to SRP (Single Responsibility Principle) – This essentially means that the class should not have multiple reasons to change. Adherence to SRP avoids classes creating dependency on itself and keeps the code cohesive and clean.
+•	Less / Minimal usage of static methods and final classes – These indicate code smells and were mostly associated with the legacy code.
+Scenario-Based Interview Questions on Mockito
+Q #7) What are the limitations of Mockito?
+Answer: Mockito is a framework of choice for most of Java-based projects. It is easy to implement, read, and understand.
+Some of the drawbacks or limitations in terms of functionality are:
+•	Its inability to mock static methods.
+•	Constructors, private methods, and final classes cannot be mocked.
+Q #8) Which frameworks can support mocking Private and Static methods?
+Answer: Frameworks like PowerMockito (extensions of the Mockito framework), JMockit, etc. do provide means to mock private and static methods.
+Q #9) Mocking/Stubbing default methods in an Interface in Java 8.
+Answer: With Java 8’s implementation of default methods in interfaces, Mockito provides out of box support to mock such default methods. (Please note that this support was introduced from Mockito 2 onwards).
+These methods can be mocked/stubbed like any other method of a class or interface.
+Q #10) How can the order of stub invocations be verified in Mockito?
+Answer: When you want to verify the order in which mocks were called, Mockito’s “InOrder” interface can be used.
+During the test, you simply have to set/create an Inorder object, listing down a list of mock objects on which the order of mocks needs to be ascertained (if there are multiple methods on the same mock and there is no other mock that needs to be verified, then it’s sufficient to mention the mocked class only once).
+Consider the test given below, which defines an object of InOrder and mentions 2 occurrences of mockDatabaseImpl
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19	@Test
+public void calculateSumAndStore_withValidInput_verifyMockOrder()
+{
+// Arrange
+studentScores = new StudentScoreUpdates(mockDatabaseImpl);
+int[] scores = {60,70,90};
+  
+Mockito.doNothing().when(mockDatabaseImpl).updateScores(anyString(), anyInt());
+Mockito.doReturn("A").when(mockDatabaseImpl).getGrade(anyInt());
+  
+InOrder inorder = inOrder(mockDatabaseImpl);
+  
+// Act
+studentScores.calculateSumAndStore("Student1", scores);
+  
+// Assert
+inorder.verify(mockDatabaseImpl).updateScores(anyString(),anyInt());
+inorder.verify(mockDatabaseImpl).getGrade(anyInt());
+}
+Also, for reference, listing down the code of the method under test will be helpful to understand the order of test execution:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13	public void calculateSumAndStore(String studentId, int[] scores)
+{
+int total = 0;
+for(int score : scores)
+{
+total = total + score;
+}
+// write total to DB
+databaseImpl.updateScores(studentId, total);
+  
+databaseImpl.getGrade(total);
+  
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13	public void calculateSumAndStore(String studentId, int[] scores)
+{
+int total = 0;
+for(int score : scores)
+{
+total = total + score;
+}
+// write total to DB
+databaseImpl.updateScores(studentId, total);
+  
+databaseImpl.getGrade(total);
+  
+}
+As seen above, databaseImpl first calls updateScores and then calls getGrade.
+So, if you are writing a unit test using Mockito, for this, and you need to ensure the order of the calls on databaseImpl, refer to the test code and ensure that the assertions are made as per the expected order.
+In the above example, if I change the order of asserts, then it will cause the test to fail except “VerificationInOrderFailure”.
+After changing the assert order, the code looks as shown below:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19	@Test
+public void calculateSumAndStore_withValidInput_verifyMockOrder()
+{
+// Arrange
+studentScores = new StudentScoreUpdates(mockDatabaseImpl);
+int[] scores = {60,70,90};
+  
+Mockito.doNothing().when(mockDatabaseImpl).updateScores(anyString(), anyInt());
+Mockito.doReturn("A").when(mockDatabaseImpl).getGrade(anyInt());
+  
+InOrder inorder = inOrder(mockDatabaseImpl);
+  
+// Act
+studentScores.calculateSumAndStore("Student1", scores);
+  
+// Assert
+inorder.verify(mockDatabaseImpl).updateScores(anyString(),anyInt());
+inorder.verify(mockDatabaseImpl).getGrade(anyInt());
+}
+The above test execution throws an exception with type:
+“VerificationInOrderFailure” org.mockito.exceptions.verification.VerificationInOrderFailure:
+Verification in order failure
+Wanted but not invoked:
+mockDatabaseImpl.updateScores(
+   isA(java.lang.String),
+   isA(java.lang.Integer)
+Q #11) Returning multiple values against consecutive method calls
+Answer: To return different values for multiple invocations of the same stubbed method, Mockito provides 3 approaches as given below:
+a) Using comma separated: This works with the return.
+For example, taking the above code sample, let us try to set a consecutive stub for method getGrade, which will return different values depending on the sequence of iterations:
+1	when(mockDatabaseImpl.getGrade(anyInt())).thenReturn("A","B", "C");
+This means that when getGrade methods get called in the method under test, the first invocation will return “A”, the second invocation will return “B”, and so on.
+b) Consecutive thenReturn: This is an approach that is chained with thenReturn statements. Applying chained calls to the same example will look as shown below.
+1	when(mockDatabaseImpl.getGrade(anyInt())).thenReturn("A").thenReturn("B").thenReturn("C");
+c) Consecutive doReturn: The last approach is using doReturn in the chained format as above.
+1	doReturn("A").doReturn("B").doReturn("C").when(mockDatabaseImpl).getGrade(anyInt())
+Q #12) What are the different types of mocking frameworks and how do they work?
+Answer: Types of the Mocking framework and how they work are explained below.
+There are broadly 2 categories of mocking frameworks:
+1.	Proxy-based – Example, Mockito, EasyMock, etc.
+2.	Bytecode based – Example, PowerMock, JMockit, etc.
+Let’s compare both these frameworks on different parameters.
+	Proxy based	Bytecode based
+		
+Simplicitly	More simple and easy to use	Might involve complex mock setup logic
+Mode of creation	A proxy or fake object which does not actually require instance of class / interface is created	It essentially involves creating objects and at runtime manipulates the instances for the mocked/stubbed behavior
+Functionality	Mocking classes and interfaces	In addition to classes and interfaces, allows mocking static methods, final classes etc
+Java dependency	Not very tightly coupled to Java versions	Since these frameworks involve bytecode manipulation they are tightly coupled and might not be backward/forward compatible across java versions.
+Examples	Mockito, EasyMock etc.	PowerMock, JMockit etc.
 
-See Java Full Stack Engineer Jobs
-Start Your Java Full Stack Engineer Career with Teal
+30
+30+ Java String Interview Q&A for Professional Interviews
+ Download as PDF
 
-Join Teal for Free
-Join our community of 4 million+ members and get tailored career guidance and support from us at every step.
+Java is one of the most widely used programming languages today, and strings are a crucial component of any Java program. As a Java developer, you will undoubtedly face several challenges when dealing with string manipulation, and you must be well-versed in the language's nuances to tackle these issues. To assist you in preparing for your next Java interview, we have compiled a list of top Java String Interview Questions.
 
-Get Started for Free
-AI Resume Builder
-Get started for free
-No credit card required, ever.
-Tools
-AI Resume Builder
-Job Application Tracker
-ATS Resume Checker
-Resume Summary Generator
-Resume Job Description Match
-Resume Bullet Point Generator
-Free AI Resume Builder
-Templates & Examples
-Resume Examples
-Best Resume Format
-Resume Templates
-Cover Letter Examples
-Cover Letter Templates
-CV Examples
-Resources
-Resume Hub
-Career Hub
-Resume Synonyms
-Job Search
-Browse Jobs
-Career Paths
-Comparisons
-Teal vs Jobscan
-Teal vs Rezi
-Teal vs Novoresume
-Teal vs Zety
-Teal vs Kickresume
-Teal vs Resumenerd
-Teal vs Resume Genius
-Company
-Sign Up
-Log In
-Teal+ Pricing
-About Us
-Open Positions
-Affiliate Program
-Over 4 Million Users
-Free AI tools and resources to help you land your next job, faster
+This article will cover String Programming Interview Questions in Java, String programming interview questions in java for experienced, String Coding Interview Questions in Java, Java String Interview Questions for 5 Years Experience, String Interview Questions And Answers for Experienced in Java, Interview Questions On String Programs in Java, Java String Interview Questions Programming, String And Array Interview Questions in Java, and String Java Coding Interview Questions. So let's get started and enhance our Java programming skills.
 
-Trustpilot
-© 2026 Teal Labs, Inc
+Join Skill Academy by Testbook’s Full Stack Development Career Program now!
 
-Privacy Policy
-Terms of Service
+ Download as PDF
+
+Share
+Top 30+ Java String Interview Questions and Answers in 2023
+In 2023, Java continues to be one of the most widely used programming languages in the world, and its built-in String class remains a crucial component of any Java developer's toolkit. In this article, we've compiled a list of over 30 interview questions and answers focused specifically on Java String handling. Whether you're a seasoned developer preparing for an upcoming interview or just looking to improve your knowledge of this important topic, this guide is a valuable resource to help you succeed. From basic concepts like immutability and memory allocation to more advanced topics like regular expressions and the StringJoiner class, we'll cover it all. So, without further ado, let's dive into the world of Java String handling!
+
+Q1. What is a string pool in Java? How does it work? Why string is immutable in java?
+Answer 1: String pool is a part of Java memory where all the String literals are stored in a pool. It is a special area of heap memory. When a new string is created, Java checks if it already exists in the string pool, if it does, it returns the reference to that object, otherwise it creates a new object and adds it to the string pool. This helps in saving memory as it avoids creating new objects for every new string.
+
+Q2. What is the difference between String, StringBuilder, and StringBuffer?
+Answer 2: String is immutable, meaning once a string object is created, it cannot be modified. StringBuilder and StringBuffer are mutable, meaning we can modify them after creation. StringBuilder is faster than StringBuffer, but not thread-safe. StringBuffer is thread-safe, but slower than StringBuilder.
+
+Q3. How do you reverse a string in Java?
+Answer 3: We can reverse a string in Java using StringBuilder or by converting the string to a character array and swapping the characters from the start and end until we reach the middle. Here is an example of the second method:
+
+public static String reverseString(String str) {
+
+char[] arr = str.toCharArray();
+
+int start = 0;
+
+int end = arr.length - 1;
+
+char temp;
+
+while (end > start) {
+
+temp = arr[start];
+
+arr[start] = arr[end];
+
+arr[end] = temp;
+
+start++;
+
+end--;
+
+}
+
+return new String(arr);
+
+}
+
+Q4. How do you check if two strings are equal in Java?
+Answer 4: We can check if two strings are equal in Java using the equals() method or the equalsIgnoreCase() method. Here is an example:
+
+String str1 = "hello";
+
+String str2 = "HELLO";
+
+if(str1.equals(str2)) {
+
+System.out.println("Strings are equal.");
+
+} else {
+
+System.out.println("Strings are not equal.");
+
+}
+
+Q5. How do you convert a string to an integer in Java?
+Answer 5: We can convert a string to an integer in Java using the parseInt() method of the Integer class. Here is an example:
+
+String str = "123";
+
+int num = Integer.parseInt(str);
+
+Q6. How do you count the number of occurrences of a character in a string in Java?
+Answer 6: We can count the number of occurrences of a character in a string in Java by iterating over the string and checking each character. Here is an example:
+
+String str = "hello";
+
+char ch = 'l';
+
+int count = 0;
+
+for(int i=0; i<str.length(); i++) {
+
+if(str.charAt(i) == ch) {
+
+count++;
+
+}
+
+}
+
+System.out.println("Number of occurrences of " + ch + " is " + count);
+
+Q7. How do you check if a string is a palindrome in Java?
+Answer 7: We can check if a string is a palindrome in Java by comparing the string with its reverse. Here is an example:
+
+String str = "racecar";
+
+String rev = new StringBuilder(str).reverse().toString();
+
+if(str.equals(rev)) {
+
+System.out.println("String is a palindrome.");
+
+} else {
+
+System.out.println("String is not a palindrome.");
+
+}
+
+Also Read: JavaScript Closure Interview Question
+
+Q8. What is the difference between indexOf and lastIndexOf methods in Java?
+Answer 8: indexOf() method returns the first occurrence of a character or substring in a string, while lastIndexOf() method returns the last occurrence of a character or substring in a string. Here is an example:
+
+String str = "hello world";
+
+int firstIndex = str.indexOf('o');
+
+int lastIndex = str.lastIndexOf('o');
+
+System.out.println("First index of 'o' is " + firstIndex);
+
+System.out.println("Last index of 'o' is " + lastIndex);
+
+Q9. How do you remove all white spaces from a string in Java?
+Answer 9: We can remove all white spaces from a string in Java using the replaceAll() method. Here is an example:
+
+String str = "hello world";
+
+str = str.replaceAll("\\s", "");
+
+System.out.println(str);
+
+Q10. What is the difference between == and equals() method in Java?
+Answer 10: In Java, == is used to compare the references of two objects while the equals() method is used to compare the content of two objects. For example:
+
+String str1 = "hello";
+
+String str2 = "hello";
+
+String str3 = new String("hello");
+
+// Compare references using ==
+
+System.out.println(str1 == str2); // true
+
+System.out.println(str1 == str3); // false
+
+// Compare content using equals()
+
+System.out.println(str1.equals(str2)); // true
+
+System.out.println(str1.equals(str3)); // true
+
+In the above example, str1 and str2 have the same reference, so the comparison using == returns true. However, str1 and str3 have different references, even though their content is the same, so the comparison using == returns false. However, the comparison using the equals() method returns true in both cases because the content of the strings is the same.
+
+Q11. How do you find the length of a string in Java?
+Answer 11: The length of a string in Java can be found using the length() method. For example:
+
+String str = "Hello World";
+
+int length = str.length();
+
+System.out.println("Length of the string is: " + length);
+
+Q12. How do you concatenate two strings in Java?
+Answer 12: Two strings can be concatenated in Java using the "+" operator or the concat() method. For example:
+
+String str1 = "Hello";
+
+String str2 = "World";
+
+String result = str1 + " " + str2;
+
+System.out.println(result);
+
+// using the concat() method
+
+String result2 = str1.concat(" ").concat(str2);
+
+System.out.println(result2);
+
+Q13. How do you convert a string to lowercase in Java?
+Answer 13: A string can be converted to lowercase in Java using the toLowerCase() method. For example:
+
+String str = "Hello World";
+
+String lowercaseStr = str.toLowerCase();
+
+System.out.println(lowercaseStr);
+
+Q14. How do you split a string in Java?
+Answer 14: A string can be split into an array of substrings in Java using the split() method. The split method takes a regular expression as an argument to specify the delimiter. For example:
+
+String str = "apple,banana,orange";
+
+String[] arr = str.split(",");
+
+for (String s : arr) {
+
+System.out.println(s);
+
+}
+
+Also Read: JavaScript oops Interview Questions And Answers
+
+Q15. How do you replace a character in a string in Java?
+Answer 15: A character in a string can be replaced with another character in Java using the replace() method. For example:
+
+String str = "Hello World";
+
+String newStr = str.replace('o', 'x');
+
+System.out.println(newStr);
+
+Q16. How do you check if a string contains a substring in Java?
+Answer 16: A string can be checked if it contains a substring in Java using the contains() method. For example:
+
+String str = "Hello World";
+
+boolean result = str.contains("World");
+
+System.out.println(result);
+
+Q17. What is the difference between String and StringBuilder in terms of memory usage?
+Answer 17: The main difference between String and StringBuilder in terms of memory usage is that String is immutable while StringBuilder is mutable. This means that when a string is modified, a new string object is created in memory while the original string remains unchanged. StringBuilder, on the other hand, allows for in-place modifications to the string. Therefore, when a StringBuilder is modified, the same object is modified without creating a new object in memory.
+
+Q18. How do you convert a string to uppercase in Java?
+Answer 18: A string can be converted to uppercase in Java using the toUpperCase() method. For example:
+
+String str = "Hello World";
+
+String uppercaseStr = str.toUpperCase();
+
+System.out.println(uppercaseStr);
+
+Q19. How do you remove a specific character from a string in Java?
+Answer 19: A specific character can be removed from a string in Java using the replace() method. For example:
+
+String str = "Hello World";
+
+String newStr = str.replace("l", "");
+
+System.out.println(newStr);
+
+Q20. How do you convert a character array to a string in Java?
+Answer 20: A character array can be converted to a string in Java using the String constructor. For example:
+
+char[] arr = {'H', 'e', 'l', 'l', 'o'};
+
+String str = new String(arr);
+
+System.out.println(str);
+
+Q21. What is the difference between String and StringBuffer in Java?
+Answer 21: String and StringBuffer are both classes used to represent strings in Java. The main difference between them is that String objects are immutable, meaning they cannot be changed after they are created, while StringBuffer objects are mutable, meaning they can be changed. This makes StringBuffer more efficient for operations that require a lot of string manipulation, such as concatenation, as it avoids the need to create new objects with every operation.
+
+Also Read: JavaScript Object Interview Questions
+
+Q22. How do you check if a string is empty in Java?
+Answer 22: To check if a string is empty in Java, you can use the isEmpty() method. This method returns a boolean value indicating whether the string is empty or not. Here's an example:
+
+String str = "";
+
+if (str.isEmpty()) {
+
+System.out.println("String is empty");
+
+} else {
+
+System.out.println("String is not empty");
+
+}
+
+Q23. How do you check if a string starts with a specific character in Java?
+Answer 23: To check if a string starts with a specific character in Java, you can use the startsWith() method. This method takes a single argument, which is the character you want to check for, and returns a boolean value indicating whether the string starts with that character or not. Here's an example:
+
+String str = "Hello World";
+
+if (str.startsWith("H")) {
+
+System.out.println("String starts with 'H'");
+
+} else {
+
+System.out.println("String does not start with 'H'");
+
+}
+
+Q24. How do you remove the last character from a string in Java?
+Answer 24: To remove the last character from a string in Java, you can use the substring() method. This method takes two arguments: the starting index and the ending index of the substring you want to extract. To remove the last character, you can pass the length of the string minus one as the ending index. Here's an example:
+
+String str = "Hello World!";
+
+String newStr = str.substring(0, str.length() - 1);
+
+System.out.println(newStr); // Output: Hello World
+
+Q25. How do you check if a string ends with a specific character in Java?
+Answer 25: To check if a string ends with a specific character in Java, you can use the endsWith() method. This method takes a single argument, which is the character you want to check for, and returns a boolean value indicating whether the string ends with that character or not. Here's an example:
+
+String str = "Hello World";
+
+if (str.endsWith("d")) {
+
+System.out.println("String ends with 'd'");
+
+} else {
+
+System.out.println("String does not end with 'd'");
+
+}
+
+Q26. How do you create a substring from a string in Java?
+Answer 26: To create a substring from a string in Java, you can use the substring() method. This method takes two arguments: the starting index and the ending index of the substring you want to extract. Here's an example:
+
+String str = "Hello World";
+
+String newStr = str.substring(0, 5);
+
+System.out.println(newStr); // Output: Hello
+
+Q27. How do you compare two strings in Java without considering their case?
+Answer 27: To compare two strings in Java without considering their case, you can use the equalsIgnoreCase() method. This method returns a boolean value indicating whether the two strings are equal or not, ignoring case. Here's an example:
+
+String str1 = "Hello World";
+
+String str2 = "hello world";
+
+if (str1.equalsIgnoreCase(str2)) {
+
+System.out.println("The two strings are equal");
+
+} else {
+
+System.out.println("The two strings are not equal");
+
+}
+
+Q28. How do you remove the first character from a string in Java?
+Answer 28: To remove the first character from a string in Java, we can use the substring method of the String class. We can call the substring method with the starting index as 1, which will exclude the first character from the string. Here's an example:
+
+String str = "example";
+
+str = str.substring(1);
+
+System.out.println(str); // Output: "xample"
+
+Also Read: Machine Learning Interview Questions
+
+Q29. How do you replace a substring in a string in Java?
+Answer 29: To replace a substring in a string in Java, we can use the replace method of the String class. The replace method takes two parameters - the first parameter is the substring to be replaced, and the second parameter is the replacement string. Here's an example:
+
+String str = "Hello World";
+
+str = str.replace("World", "Java");
+
+System.out.println(str); // Output: "Hello Java"
+
+Q30. How do you check if a string is null or empty in Java?
+Answer 30: To check if a string is null or empty in Java, we can use the isEmpty() method of the String class. This method returns true if the string is empty or null, and false otherwise. Here's an example:
+
+String str1 = "";
+
+String str2 = null;
+
+System.out.println(str1.isEmpty()); // Output: true
+
+System.out.println(str2.isEmpty()); // Throws NullPointerException
+
+if (str1 == null || str1.isEmpty()) {
+
+System.out.println("String is null or empty");
+
+}
+
+if (str2 == null || str2.isEmpty()) {
+
+System.out.println("String is null or empty");
+
+}
+
+Q31. How do you check if a string is numeric in Java?
+Answer 31: To check if a string is numeric in Java, you can use regular expressions to match the string against a pattern. Here's an example code:
+
+public static boolean isNumeric(String str) {
+
+if (str == null || str.length() == 0) {
+
+return false;
+
+}
+
+for (int i = 0; i < str.length(); i++) {
+
+if (!Character.isDigit(str.charAt(i))) {
+
+return false;
+
+}
+
+}
+
+return true;
+
+}
+
+Q32. How do you remove all occurrences of a character from a string in Java?
+Answer 32: To remove all occurrences of a character from a string in Java, you can use the replaceAll() method of the String class. Here's an example code:
+
+String str = "Hello, World!";
+
+char ch = 'l';
+
+str = str.replaceAll(Character.toString(ch), "");
+
+System.out.println(str);
+
+Q33. How do you convert a string to a char array in Java?
+Answer 33: To convert a string to a char array in Java, you can use the toCharArray() method of the String class. Here's an example code:
+
+String str = "Hello, World!";
+
+char[] charArray = str.toCharArray();
+
+System.out.println(Arrays.toString(charArray));
+
+Q34. How do you find the first non-repeated character in a string in Java?
+Answer 34: To find the first non-repeated character in a string in Java, you can use a LinkedHashMap to keep track of the frequency of each character in the string. Here's an example code:
+
+public static char firstNonRepeatedChar(String str) {
+
+LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
+
+for (int i = 0; i < str.length(); i++) {
+
+char ch = str.charAt(i);
+
+map.put(ch, map.getOrDefault(ch, 0) + 1);
+
+}
+
+for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+
+if (entry.getValue() == 1) {
+
+return entry.getKey();
+
+}
+
+}
+
+throw new RuntimeException("No non-repeated characters found");
+
+}
+
+Q35. How do you find the second highest frequency character in a string in Java?
+Answer 35: To find the second highest frequency character in a string in Java, you can use a LinkedHashMap to keep track of the frequency of each character in the string and then sort the entries of the map by their values. Here's an example code:
+
+public static char secondHighestFrequencyChar(String str) {
+
+LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
+
+for (int i = 0; i < str.length(); i++) {
+
+char ch = str.charAt(i);
+
+map.put(ch, map.getOrDefault(ch, 0) + 1);
+
+}
+
+List<Map.Entry<Character, Integer>> entries = new ArrayList<>(map.entrySet());
+
+Collections.sort(entries, (a, b) -> b.getValue().compareTo(a.getValue()));
+
+int highestFreq = entries.get(0).getValue();
+
+for (Map.Entry<Character, Integer> entry : entries) {
+
+if (entry.getValue() < highestFreq) {
+
+return entry.getKey();
+
+}
+
+}
+
+throw new RuntimeException("No second highest frequency character found");
+
+}
+
+Also Read: MongoDB Interview Questions
+
+Q36. Why string is immutable in Java? In which memory is the string stored?
+Strings in Java are immutable, which implies that the string object cannot be changed or modified after creation. However, the reference to the object can be changed. Consider four reference variables, all referring to one object. If one reference variable changes the value of that object, that object will be affected by all the reference variables. This change may be unpredictable and not desirable. That is why string is immutable.
+One of the common Java string interview questions is in which part of memory is the string stored? String Pool in Java is a special storage area in the Java Heap memory where strings are stored. 
+
+Q37. What are the 4 string functions in Java?  What is a string () in Java?  How to define string?
+Four-string functions in Java are: 
+
+Concat (): Adds a string to the end of another string. 
+Equals (): Compares two strings. 
+Replace (): Searches and returns a new string where a specified value is replaced. 
+Contains(): Checks if the string contains a particular sequence of characters.   
+String () in Java offers many useful methods to perform operations on a sequence of char values. E.g., Join() returns a new string made up of elements joined together with the specified delimiter. 
+The definition of a string crops up in Java string interview questions. A string means a sequence of characters. It can contain letters, numbers, symbols, and even spaces. Strings are considered objects in Java.
+
+Q38. How to solve string in Java?  How to compare two strings in Java?
+There are lots of methods to perform operations on strings in the Java strings class. These include compare(), split(), length(), replace(), concat(), etc.
+Two strings can be compared in Java using the string equal method. This compares two strings based on their data or content. If the content of both the strings is the same, the method will return ‘True.’ If any character mismatches, it will return ‘False.”. 
+A common mistake is using the comparison operator ‘=.’ This operator will only check whether the two strings reference the same object or not. 
+
+Q39. How is a string stored in Java?  How is an empty string stored in Java?
+String objects are stored in the heap in Java. The Java Virtual Machine (JVM) holds the characters of a string created in a char array.  The string object keeps a reference in this char array. The JVM allocates memory in the heap for the string object and its char array. 
+How an empty string is stored in Java is one of the important Java String Interview questions.  An empty string in Java is a string that has zero length.  An empty string is a valid string with some value. It is stored in the string pool allocated in the Java heap.
+
+
+Crack UGC NET, SET & JRF with India’s Top Educators
+Get UGC NET/SET SuperCoaching @ just
+
+₹35999
+₹12249
+wallet Your Total Savings ₹23750
+Explore SuperCoaching
+Want to know more about this Super Coaching ?
+ Download Brochure
+People also like
+Goal Card Image
+UGC NET/JRF Dec 2026 (Guaranteed Selection Program)
+₹36999 (60% OFF)
+₹15158 (Valid for 7 months)
+Explore this Supercoaching
+Goal Card Image
+MPSC Combined Group C 2026
+₹4999 (61% OFF)
+₹1999 (Valid for 12 months)
+Explore this Supercoaching
+Goal Card Image
+Nirnay IAS 2027 - Prarambh (प्रारम्भ) Batch - 6 (Hinglish)
+₹110000 (13% OFF)
+₹95999 (Valid for 24 Months)
+Explore this Supercoaching
+ Download as PDF
+
+Share
+How to Prepare for Java String Interview Questions?
+Preparing for Java string interview questions requires both theoretical knowledge and practical skills. Here are some tips to help you prepare:
+
+Understand the basics: Start by understanding the basic concepts of Java strings, including what they are, why they are important, and how they work.
+Know the methods: Familiarize yourself with the different string methods in Java, including substring(), indexOf(), and length(), among others.
+Practice coding: Practice coding string-related problems, such as string concatenation, searching, and manipulation. This will help you develop your problem-solving skills and become more comfortable working with strings.
+Review common interview questions: Review common Java string interview questions and practice answering them. This will help you become more comfortable with the interview process and give you the confidence you need to succeed.
+Stay up-to-date: Keep up-to-date with the latest Java string-related updates, news, and trends. This will help you stay relevant and demonstrate your commitment to the field.
+By following these tips, you'll be well-prepared to answer Java string interview questions and demonstrate your knowledge and skills to potential employers.
+
+Also Read: JavaScript Logical Interview Questions
+
+Java String Interview Questions are an important aspect of any Java interview. String manipulation is a common task in programming, and it is important to have a good understanding of various String methods and operations. By preparing for these interview questions, you can increase your chances of landing your dream job. Remember to practice your coding skills and keep up-to-date with the latest advancements in Java programming.
+
+We hope this article has provided you with valuable insights and helped you prepare for your next interview. Download the Testbook Skill Academy App now and get ready to learn 21st-century skills and make yourself job-ready.
+
+
+Общие вопросы по тестированию:
+Что такое тестирование? Какие его цели?
+Что такое тестирование черного и белого ящика?
+Какие виды тестирования вы знаете?
+Unit-тестирование
+Интеграционное тестирование
+Функциональное тестирование
+Регрессионное тестирование
+Нагрузочное тестирование и т.д.
+Какова роль автотестирования в процессе разработки ПО?
+Что такое тест-кейс, тест-сьют, баг-репорт?
+Что такое тестовая стратегия и тест-план?
+Какие метрики качества ПО вы знаете?
+Что такое тестовое покрытие? Как его измеряют?
+Вопросы по Java:
+Расскажите принципы ООП (инкапсуляция, наследование, полиморфизм, абстракция).
+Что такое интерфейс и абстрактный класс в Java? В чем их различие?
+Что такое исключение в Java? Как его обрабатывать?
+Что такое коллекторы мусора (Garbage Collector)? Как они работают?
+Объясните разницу между == и equals() в Java.
+Что такое hashCode() и equals()? Почему важно их переопределять вместе?
+Что такое final, finally и finalize()?
+Что такое потокобезопасность? Как вы её обеспечиваете в Java?
+Какие вы знаете структуры данных в Java?
+ArrayList, LinkedList
+HashMap, TreeMap
+Set и т.д.
+Объясните, что такое synchronized и volatile. Как они связаны с многопоточностью?
+Вопросы по инструментам и фреймворкам:
+Какие библиотеки или фреймворки для автотестирования на Java вы использовали?JUnit, TestNG (для тестирования)
+Selenium (для тестирования UI)
+RestAssured (для тестирования API)
+Mockito (для мокирования)
+Cucumber (для BDD)
+Как работают аннотации в JUnit/TestNG (@Test, @Before, @After, @BeforeClass, @AfterClass и т.д.)?
+Как организовать структуру автотестов в проекте?
+Как вы проводите тестирование REST API? Расскажите о вашем опыте с RestAssured.
+Что такое Page Object Model (POM)? Как его реализовать?
+Как вы организуете запуск тестов в CI/CD пайплайне? Какие инструменты используете?
+Что такое параллельное выполнение тестов и зачем оно нужно? Как его организовать?
+Как вы работаете с отчетами? Какие инструменты используете для создания отчётов по результатам тестирования?
+Вопросы по паттернам проектирования и лучшим практикам:
+Расскажите о паттерне проектирования Page Object.
+Что такое паттерн Factory и где его можно использовать в автотестировании?
+Как вы структурируете тесты, чтобы они были независимыми?
+Как вы логируете информацию в тестах? Какие библиотеки используете для логирования?
+Вопросы по SQL и базам данных:
+Какие SQL-запросы вы используете для проверки данных в базе?
+Как соединить несколько таблиц в SQL запросе (JOIN)?
+Что такое транзакция в базе данных? Как её правильно использовать?
+Вопросы по системам контроля версий:
+Как вы работаете с Git? Какие команды используете чаще всего?
+Что такое ветвление (branching) и слияние (merging) в Git?
+Как разрешить конфликты при слиянии веток?
+Вопросы по методологиям разработки:
+Что такое Agile/Scrum? Как вы работали в команде по Agile?
+Что такое TDD (Test-Driven Development)? Как его применяют?
+Что такое BDD (Behavior-Driven Development)? Как его применяют?
+Практические задачи:
+Написание простого автотеста на Java с использованием JUnit или TestNG.
+Реализация теста для веб-приложения с использованием Selenium.
+Написание SQL-запроса для выборки данных из базы.
+Написание теста для API с использованием RestAssured.
+
+Это далеко не полный список вопросов, но он охватывает основные области знаний, которые могут быть важны для автотестировщика на Java. Готовьтесь к собеседованию, уделяя внимание как теоретическим аспектам, так и практическим навыкам работы с инструментами и фреймворками.
+
+Подписывайтесь на канал и разбирайте все вопросы вместе с нами!
+
+Не забудь подписаться на канал QA Helper
+
+Пишите в комментариях какой пункт было бы интересно рассмотреть более подробно.
+
+Также будет интересно почитать: Вопросы которые задают на собеседовании тестировщикам
+
+
+С подпиской рекламы не будет
+Подключите Дзен Про за 159 ₽ в месяц
+
+
+Подключить
+
+Рекомендуем почитать
+12 минут
+ИТ рекрутинг. HR-блог про поиск работы | Майя Литвина
+1548 читали · 8 месяцев назад
+
+Тестовые задания при приеме на работу - рабство под соусом «оценки»: когда отказывать, как торговаться и как брать деньги
+Когда-то тестовое задание было простым инструментом — способом убедиться, что человек действительно умеет то, что указано в резюме. Маленькая проверка, короткий пример. Но со временем эта проверка превратилась в индустрию бесплатного труда, завёрнутого в красивую обёртку под названием “оценка навыков”. Сегодня под видом “теста” компании получают готовые решения, концепции, тексты, прототипы и стратегии. Бесплатно. Без обязательств. Без ответственности. Это уже не оценка — это рабство, узаконенное в культуре найма...
+4 минуты
+yagdmitrij
+279 читали · 1 год назад
+
+И снова ob... объектах
+Объекты в java занимают очень важную нишу. Вникнув в работу объектов, изучив все их тонкости – это огромный шаг в изучении языка программирования. В рамках одной статьи полностью охватить данный материал проблематично, поэтому решил посвятить object-ам еще одну статейку. Что у нас будет в статье. 1. Объекты и примитивные типы 2. static для объектов 3. Как ведут себя объекты 4. Объекты и Злостный Мусорщик Еще раз повторюсь, в java все построено на объектах или почти все...Вот к этому «почти» и относятся...
+6 минут
+VasyaZnaet
+4780 читали · 11 месяцев назад
+
+Сколько людей хотят работать программистами, а скольких возьмут: посчитала соотношение количества резюме к открытым вакансиям
+Итак, я взяла 6 самых востребованных на сегодня языков программирования и оценила соотношение предложения и спроса для разработчиков. То есть сколько всего вакансий открыто и сколько желающих работать в данном направлении. Для чего это нужно? Да просто надоело слушать, что айтишников не хватает, что программирование самая перспективная область, что всем юным и не очень людям нужно обязательно учиться только на разработчиков и прочее бла-бла. Вот вам реальная картина на сегодняшний день. Все очень...
+
+Карьера и трудоустройство
+266,5 тыс интересуются
+
+
+Следить за темой
+
+vipavenue.ru
+Реклама
+Скидки до -50% на коллекции весна-лето в VIPAVENUE
+Узнать больше
+favicon
+stolichki.ru
+Перейти
+
+Расскажу кратко
+
+
+
+Java Unit Testing: методики, понятия, практика
+Константин
+1 уровень
+ 27 января 2020
+ 118002 views
+ 14 comments
+Java Unit Testing: методики, понятия, практика
+Статья из группы Random
+Сегодня и не встретишь приложения, не обвешанного тестами, поэтому эта тема будет как никогда актуальна для начинающих разработчиков: без тестов — никуда.
+
+На правах рекламы предложу просмотреть мои прошлые статьи. В некоторых из них затрагиваются тесты (да и так статьи будут весьма полезны):
+Интеграционное тестирование БД с помощью MariaDB для подмены MySql
+Реализация мультиязычности приложения
+Сохранение файлов в приложение и данных о них на БД
+Рассмотрим, какие виды тестирования используют в принципе, а после этого детально изучим все, что нужно знать о юнит-тестировании.
+Виды тестирования
+Что такое тест? Как гласит Вики: «Тест или испытание — способ изучения глубинных процессов деятельности системы посредством помещения системы в разные ситуации и отслеживание доступных наблюдению изменений в ней».
+
+Иными словами, это проверка правильности работы нашей системы в тех или иных ситуациях. Все о Unit testing: методики, понятия, практика - 2Что же, посмотрим, какие вообще есть виды тестирования:
+Модульное тестирование (unit testing) — тесты, задача которых проверить каждый модуль системы по отдельности. Желательно, чтобы это были минимально делимые кусочки системы, например, модули.
+
+Системное тестирование (system testing) — тест высокого уровня для проверки работы большего куска приложения или системы в целом.
+
+Регрессионное тестирование (regression testing) — тестирование, которое используется для проверки того, не влияют ли новые фичи или исправленные баги на существующий функционал приложения и не появляются ли старые баги.
+
+Функциональное тестирование (functional testing) — проверка соответствия части приложения требованиям, заявленным в спецификациях, юзерсторях и т. д.
+
+Виды функционального тестирования:
+
+тест «белого ящика» (white box) на соответствие части приложения требованиям со знанием внутренней реализации системы;
+тест «черного ящика» (black box) на соответствие части приложения требованиям без знания внутренней реализации системы.
+Тестирование производительности (performance testing) — вид тестов, которые пишутся для определения скорости отработки системы или ее части под определённой нагрузкой.
+Нагрузочное тестирование (load testing) — тесты, предназначенные для проверки устойчивости системы при стандартных нагрузках и для нахождения максимально возможного пика, при котором приложение работает корректно.
+Стресс-тестирование (stress testing) — вид тестирования, предназначенный для проверки работоспособности приложения при нестандартных нагрузках и для определения максимально возможного пика, при котором система не упадёт.
+Тестирование безопасности (security testing) — тесты, используемые для проверки безопасности системы (от атак хакеров, вирусов, несанкционированного доступа к конфиденциальным данным и прочих радостей жизни).
+Тестирование локализации (localization testing) — это тесты локализации для приложения.
+Юзабилити тестирование (usability testing) — вид тестирования, направленный на проверку удобства использования, понятности, привлекательности и обучаемости для пользователей.
+Это всё звучит хорошо, но как оно происходит на практике? Все просто: используется пирамида тестирования Майка Кона:Все о Unit testing: методики, понятия, практика - 4Это упрощенный вариант пирамиды: сейчас её делят на более мелкие детали. Но сегодня мы не будем извращаться и рассмотрим самый простой вариант.
+Unit — модульные тесты, применяемые в различных слоях приложения, тестирующие наименьшую делимую логику приложения: например, класс, но чаще всего — метод. Эти тесты обычно стараются по максимуму изолировать от внешней логики, то есть создать иллюзию того, что остальная часть приложения работает в стандартном режиме.
+
+Данных тестов всегда должно быть много (больше, чем остальных видов), так как они тестируют маленькие кусочки и весьма легковесные, не кушающие много ресурсов (под ресурсами я имею виду оперативную память и время).
+
+Integration — интеграционное тестирование. Оно проверяет более крупные кусочки системы, то есть это либо объединение нескольких кусочков логики (несколько методов или классов), либо корректность работы с внешним компонентом. Этих тестов как правило меньше, чем Unit, так как они тяжеловеснее.
+
+Как пример интеграционных тестов можно рассмотреть соединение с базой данных и проверку правильной отработки методов, работающих с ней.
+
+UI — тесты, которые проверяют работу пользовательского интерфейса. Они затрагивают логику на всех уровнях приложения, из-за чего их еще называют сквозными. Их как правило в разы меньше, так они наиболее тяжеловесны и должны проверять самые необходимые (используемые) пути.
+
+На рисунке выше мы видим соотношение площадей разных частей треугольника: примерно такая же пропорция сохраняется в количестве этих тестов в реальной работе.
+
+Сегодня подробно рассмотрим самые используемые тесты — юнит-тесты, так как уметь ими пользоваться на базовом уровне должны все уважающие себя Java-разработчики.
+
+Ключевые понятия юнит-тестирования
+Покрытие тестов (Code Coverage) — одна из главных оценок качества тестирования приложения. Это процент кода, который был покрыт тестами (0-100%). На практике многие гонятся за этим процентом, с чем я не согласен, так как начинается навешивание тестов там, где они не нужны. Например, у нас в сервисе есть стандартные CRUD (create/get/update/delete) операции без дополнительной логики. Эти методы — сугубо посредники, делегирующие работу слою, работающему с репозиторием. В данной ситуации нам нечего тестировать: разве то, что вызывает ли данный метод — метод из дао, но это не серьёзно. Для оценки покрытия тестами обычно используют дополнительные инструменты: JaCoCo, Cobertura, Clover, Emma и т.д. Для более детального изучения данного вопроса держи пару годных статей:
+материал о Code Coverage на JavaRush и на Хабре;
+фундаментальная теория тестирования.
+TDD (Test-driven development) — разработка через тестирование. В рамках этого подхода в первую очередь пишется тест, который будет проверять определенный код. Получается тестирование чёрного ящика: мы знаем, что есть на входе и знаем, что должно получиться на выходе. Это позволяет избежать дублирования кода. Разработка через тестирование начинается с проектирования и разработки тестов для каждой небольшой функциональности приложения. В подходе TDD, во-первых, разрабатывается тест, который определяет и проверяет, что будет делать код. Основная цель TDD — сделать код более понятным, простым и без ошибок.Все о Unit testing: методики, понятия, практика - 6Подход состоит из таких составляющих:
+Пишем наш тест.
+Запускаем тест, прошел он или нет (видим, что всё красное — не психуем: так и должно быть).
+Добавляем код, который должен удовлетворить данный тест (запускаем тест).
+Выполняем рефакторинг кода.
+Исходя из того, что модульные тесты являются наименьшими элементами в пирамиде автоматизации тестирования, TDD основан на них. С помощью модульных тестов мы можем проверить бизнес-логику любого класса. BDD (Behavior-driven development) — разработка через поведение. Это подход основан на TDD. Если говорить точнее, он использует написанные понятным языком примеры (как правило на английском), которые иллюстрируют поведение системы для всех, кто участвует в разработке. Не будем углубляться в данный термин, так как он в основном затрагивает тестировщиков и бизнес-аналитиков. Тестовый сценарий (Test Case) — сценарий, описывающий шаги, конкретные условия и параметры, необходимые для проверки реализации тестируемого кода. Фикстуры (Fixture) — состояние среды тестирования, которое необходимо для успешного выполнения испытуемого метода. Это заранее заданный набор объектов и их поведения в используемых условиях.
+Этапы тестирования
+Тест состоит из трёх этапов:
+Задание тестируемых данных (фикстур).
+Использование тестируемого кода (вызов тестируемого метода).
+Проверка результатов и сверка с ожидаемыми.
+Все о Unit testing: методики, понятия, практика - 7Чтобы обеспечить модульность теста, нужно нужно изолироваться от других слоев приложения. Сделать это можно помощью заглушек, моков и шпионов. Мок (Mock) — объекты, которые настраиваются (например, специфично для каждого теста) и позволяют задать ожидания вызовы методов в виде ответов, которые мы планируем получить. Проверки соответствия ожиданиям проводятся через вызовы к Mock-объектам. Заглушки (Stub) — обеспечивают жестко зашитый ответ на вызовы во время тестирования. Также они могут сохранять в себе информацию о вызове (например, параметры или количество этих вызовов). Такие иногда называют своим термином — шпион (Spy). Иногда эти термины stubs и mock путают: разница в том, что стаб ничего не проверяет, а лишь имитирует заданное состояние. А мок — это объект, у которого есть ожидания. Например, что данный метод класса должен быть вызван определенное число раз. Иными словами, ваш тест никогда не сломается из-за «стаба», а вот из-за мока может.
+Среды тестирования
+Итак, теперь ближе к делу. Для Java доступно несколько сред тестирования (фреймворков). Самые популярные из них — JUnit и TestNG. Для нашего обзора мы используем:Все о Unit testing: методики, понятия, практика - 8JUnit тест представляет собой метод, содержащийся в классе, который используется только для тестирования. Класс, как правило, называется так же, как и класс, который он тестирует с +Test в конце. Например, CarService→ CarServiceTest. Система сборки Maven автоматически включает такие классы в тестовую область. По сути этот класс и называется тестовым. Немного пройдёмся по базовым аннотациям: @Test — определение данного метода в качестве тестируемого (по сути — метод, помеченный данной аннотацией и есть модульный тест). @Before — помечается метод, который будет выполняться перед каждым тестом. Например, заполнение тестовых данных класса, чтение входных данных и т. д. @After — ставится над методом, который будет вызывать после каждого теста (чистка данных, восстановление дефолтных значений). @BeforeClass — ставится над методом — аналог @Before. Но этот метод вызывается лишь однажды перед всеми тестами для данного класса и поэтому должен быть статическим. Он используется для выполнения более тяжелых операций, как например подъем тестовой БД. @AfterClass — противоположность @BeforeClass: исполняется один раз для данного класса, но исполняется после всех тестов. Используется, например, для очистки постоянных ресурсов или отключения от БД. @Ignore — отмечает, что метод ниже отключен и будет игнорироваться при общей прогонке тестов. Используется в разных случаях, например, если изменили базовый метод и не успели переделать под него тест. В таких случаях ещё желательно добавить описание — @Ignore("Some description"). @Test (expected = Exception.class) — используется для отрицательных тестов. Это тесты, которые проверяют, как ведёт себя метод в случае ошибки, то есть тест ожидает, что метод выкинет некоторое исключение. Такой метод обозначается аннотацией @Test, но с указанием ошибки для отлова. @Test(timeout=100) — проверяет, что метод исполняется не более чем 100 миллисекунд. @Mock — используется над полем класс для задания данного объекта моком (это не из Junit библиотеки, а из Mockito), и если нам будет необходимо, мы зададим поведение мока в конкретной ситуации, непосредственно в методе теста. @RunWith(MockitoJUnitRunner.class) — метод ставится над классом. Он и является кнопкой для прогона тестов в нем. Runner-ы могут быть различными: например, есть такие: MockitoJUnitRunner, JUnitPlatform, SpringRunner и т. д.). В JUnit 5 аннотацию @RunWith заменили более мощной аннотацией @ExtendWith. Взглянем на некоторые методы сравнения результатов:
+assertEquals(Object expecteds, Object actuals) — проверяет, равны ли передаваемые обьекты.
+assertTrue(boolean flag) — проверяет, возвращает ли переданное значение — true.
+assertFalse(boolean flag) — проверяет, возвращает ли переданное значение — false.
+assertNull(Object object) – проверяет, является ли объект нулевым (null).
+assertSame(Object firstObject, Object secondObject) — проверяет, ссылаются ли передаваемые значения на один и тот же обьект.
+assertThat(T t, Matcher<T> matcher) — проверяет, удовлетворяет ли t условию, указанному в matcher.
+Ещё есть полезная форма сравнения из assertj — assertThat(firstObject).isEqualTo(secondObject) Здесь я рассказал о базовых методах, так как остальные — это различные вариации приведенных выше.
+Практика тестирования
+А теперь давайте рассмотрим приведенный выше материал на конкретном примере. Будем тестировать метод для сервиса — update. Рассматривать слой дао не будем, так как он у нас дефолтный. Добавим стартер для тестов:
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-test</artifactId>
+   <version>2.2.2.RELEASE</version>
+   <scope>test</scope>
+</dependency>
+Итак, класс сервиса:
+@Service
+@RequiredArgsConstructor
+public class RobotServiceImpl implements RobotService {
+   private final RobotDAO robotDAO;
+
+   @Override
+   public Robot update(Long id, Robot robot) {
+       Robot found = robotDAO.findById(id);
+       return robotDAO.update(Robot.builder()
+               .id(id)
+               .name(robot.getName() != null ? robot.getName() : found.getName())
+               .cpu(robot.getCpu() != null ? robot.getCpu() : found.getCpu())
+               .producer(robot.getProducer() != null ? robot.getProducer() : found.getProducer())
+               .build());
+   }
+}
+8 — вытягиваем обновляемый обьект из БД 9-14 — создаём объект через билдер, если в приходящем объекте есть поле — задаем его, если нет — оставляем то, что есть в БД И смотрим наш тест:
+@RunWith(MockitoJUnitRunner.class)
+public class RobotServiceImplTest {
+   @Mock
+   private RobotDAO robotDAO;
+
+   private RobotServiceImpl robotService;
+
+   private static Robot testRobot;
+
+   @BeforeClass
+   public static void prepareTestData() {
+       testRobot = Robot
+               .builder()
+               .id(123L)
+               .name("testRobotMolly")
+               .cpu("Intel Core i7-9700K")
+               .producer("China")
+               .build();
+   }
+
+   @Before
+   public void init() {
+       robotService = new RobotServiceImpl(robotDAO);
+   }
+1 — наш Runner 4 — изолируем сервис от слоя дао, подставляя мок 11 — задаем для класса тестовую сущность (ту, которую мы будем юзать в качестве испытуемого хомячка) 22 — задаём объект сервиса, который мы и будем тестить
+@Test
+public void updateTest() {
+   when(robotDAO.findById(any(Long.class))).thenReturn(testRobot);
+   when(robotDAO.update(any(Robot.class))).then(returnsFirstArg());
+   Robot robotForUpdate = Robot
+           .builder()
+           .name("Vally")
+           .cpu("AMD Ryzen 7 2700X")
+           .build();
+
+   Robot resultRobot = robotService.update(123L, robotForUpdate);
+
+   assertNotNull(resultRobot);
+   assertSame(resultRobot.getId(),testRobot.getId());
+   assertThat(resultRobot.getName()).isEqualTo(robotForUpdate.getName());
+   assertTrue(resultRobot.getCpu().equals(robotForUpdate.getCpu()));
+   assertEquals(resultRobot.getProducer(),testRobot.getProducer());
+}
+Здесь мы видим четкое разделение теста на три части: 3-9 — задание фикстур 11 — выполнение тестируемой части 13-17 — проверка результатов Подробнее: 3-4 — задаём поведение для мока дао 5 — задаём экземпляр, который мы будем апдейтить поверх нашего стандартного 11 — используем метод и берём результирующий экземпляр 13 — проверяем, что он не ноль 14 — сверяем айди результата и заданные аргументы метода 15 — проверяем, обновилось ли имя 16 — смотрим результат по cpu 17 – так как в экземпляре для обновления мы не задавали это поле, оно должно остаться прежним, проверяем это.Все о Unit testing: методики, понятия, практика - 9Запускаем:Все о Unit testing: методики, понятия, практика - 10Тест зелёный, можно выдыхать)) Итак, подведём итоги: тестирование улучшает качество кода и делает процесс разработки более гибким и надёжный. Представьте себе, как много сил мы потратим при изменении дизайна программного обеспечения с сотнями файлов классов. Когда у нас есть модульные тесты, написанные для всех этих классов, мы можем уверенно провести рефакторинг. И самое главное — это помогает нам легко находить ошибки во время разработки. Гайз, на этом у меня сегодня всё: сыпем лайки, пишем комменты)))Все о Unit testing: методики, понятия, практика - 11
+
+ALL IN ONE
+
+Комментарии (14)
+ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
+ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
+Камушек Уровень 36
+14 декабря 2023
+в "Ключевые понятия юнит-тестирования" опечатка CRUD (Create, Read, Update, Delete) 
+
+Возникли вопросы с тем, что такое ДАО, если правильно поняла, вот немного копипасты: 
+
+Data Access Object (DAO)- структурный шаблон, который позволяет нам изолировать прикладной/бизнес-уровень от постоянного уровня (обычно это реляционная база данных, но это может быть любой другой постоянный механизм) с использованием абстрактного API.
+
+ DAO позволяет запускать JUnit-тесты быстрее, поскольку позволяет создавать макет и избегать подключения к базе данных для запуска тестов. Это улучшает тестирование, потому что легко написать тест с макетными объектами, а не интеграционный тест с базой данных. В случае какой-либо проблемы при запуске модульного тестирования вам нужно проверять только код, а не базу данных. Также защищает от проблем с подключением к базе данных и средой.
+
+Поскольку шаблон DAO основан на интерфейсе, он также продвигает принцип объектно-ориентированного проектирования "программирование для интерфейса, а не для реализации", что приводит к получению гибкого и качественного кода.
+Макс Дудин Уровень 41
+20 июня 2022
+хорошо, но мало...
+Евгений Уровень 1
+16 мая 2022
+них непонятно, но очень интересно
+Batman Уровень 35
+5 июля 2021
+Отличная статья! Спасибо большое автору!!
+
+В "@RunWith(MockitoJUnitRunner.class) — метод ставится над классом." - не метод, а аннотация ставится над классом.
+Mikhail Morozov Уровень 12
+28 февраля 2020
+свалено в кучу и виды и уровни тестирования. И потом я не совсем уверен что тестовый сценарий это именно test case. Если так ответить на собеседовании - пошлют далеко и надолго …
+Andrei Уровень 41
+9 февраля 2020
+@Test(expected = Exception.class) - в JUnit5 добавлен метод assertThrows(), который гораздо эффективней, позволяет проверять не только тип эксепшена, но и дополнительную информацию ошибки, такую как сообщение ошибки и т.п.
+Илья Ненашев Уровень 14
+1 февраля 2020
+интересно
+
+
+Artem Okunkov Уровень 22
+30 января 2020
+в общем выглядит все очень даже. А с какого момента курса можно будет что-нибудь руками попробовать пощупать? Ну чтоб с примерами и обучалкой? Или этого нет в рамках основного курса? 
+Oleksandr Уровень 1
+31 января 2020
+Java Collections 3 lvl
+Artem Okunkov Уровень 22
+3 февраля 2020
+tnx
+Горбачев Александр Уровень 38
+28 января 2020
+Очень неплохо для нулевых знаний начальных. Спасибо!
+Nata_anch Уровень 18
+27 января 2020
+Хорошо структурировано, доступно. Спасибо автору!
+Обучение
+Курсы программирования
+Регистрация
+Курс Java
+Помощь по задачам
+Цены
+Задачи-игры
+Сообщество
+Пользователи
+Статьи
+Форум
+Чат
+Истории успеха
+Активности
+Компания
+О нас
+Контакты
+Отзывы
+FAQ
+Поддержка
+JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
+Подписывайтесь
+Язык интерфейса
+
+Русский
+"Программистами не рождаются" © 2026 JavaRush
+Скачивайте наши приложения
+Google Play
+App Store
+MastercardVisa
+
