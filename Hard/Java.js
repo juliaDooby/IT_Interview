@@ -9782,106 +9782,7 @@ private void runAggregation() {
     }
 }
 
---------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------
-https://github.com/enhorse/java-interview
 
-
-Resume Worded   |  Career Strategy
-★  Get a free resume review
-Java Full Stack Developer Career Guide   |   Interview Guide Resume Guide Cover Letter Guide
-Java Full Stack Developer Interview Questions
-The ultimate Java Full Stack Developer interview guide, curated by real hiring managers: question bank, recruiter insights, and sample answers.
-
-Hiring Manager for Java Full Stack Developer Roles Compiled by: Kimberley Tyler-Smith
-Senior Hiring Manager
-20+ Years of Experience
-Practice Quiz   🎓
-
-Navigate all interview questions
-Technical / Job-Specific
-Java
-What are the differences between an interface and an abstract class in Java?
-Explain the concept of method overloading and method overriding in Java.
-How does Java handle garbage collection and memory management?
-What are the different access modifiers in Java, and when should you use each?
-What is the difference between checked and unchecked exceptions in Java?
-What is the role of the Java Virtual Machine (JVM) in Java development?
-Web Technologies
-What is the significance of HTML5, and how does it differ from previous versions of HTML?
-Explain the concept of the Document Object Model (DOM) and its role in web development.
-What are the key differences between CSS and CSS3, and how can CSS3 improve web design?
-What are the key features of JavaScript and its uses in web development?
-Explain the role of AJAX in web development and its advantages.
-What are the main differences between REST and SOAP, and when should you use each?
-Describe the concept of responsive design and its importance in modern web development.
-Frameworks and Libraries
-Describe the benefits of using the Spring framework in Java development.
-What is the role of Hibernate in Java development, and how does it simplify database operations?
-Explain the main features of AngularJS and its benefits for front-end development.
-Describe the key features and advantages of using ReactJS for front-end development.
-What is the purpose of Node.js, and how does it fit into a full-stack development environment?
-Explain the benefits of using Bootstrap in web development.
-How does the Model-View-Controller (MVC) architecture work, and why is it useful for web development?
-Databases
-What are the key differences between SQL and NoSQL databases, and when should you use each?
-Describe the basics of indexing in databases and how it can improve query performance.
-Explain the concept of ACID properties in relational databases.
-What are the benefits of using stored procedures in database development?
-Describe the concept of database normalization and its importance in database design.
-What are the key differences between primary, foreign, and unique keys in relational databases?
-DevOps and Tools
-Explain the concept of continuous integration and continuous deployment (CI/CD) and their benefits in software development.
-What is the role of Docker in software development, and how does it help in creating a consistent development environment?
-Describe the main features and benefits of using Git for version control.
-What is the purpose of Jenkins in a software development environment, and how does it help automate tasks?
-Explain the role of JUnit in Java development and its importance for unit testing.
-Describe the concept of code review and its benefits in improving software quality.
-Behavioral Questions
-Technical Skillset
-Describe a time when you had to troubleshoot a particularly difficult bug in your Java code. What approach did you take, and how did you ultimately solve the problem?
-Can you walk me through how you would go about building a database schema for a new Java application from scratch? What factors would you consider, and what steps would you take?
-Have you ever had to optimize the performance of a Java application that was running slowly? If so, how did you go about optimizing it? What were the results?
-Collaboration and Teamwork
-Tell me about a time when you had a disagreement with a colleague or manager over the best approach to a technical problem. How did you handle the situation?
-Have you ever worked on a project as part of a remote team? If so, what were some of the challenges you faced? How did you overcome them?
-Describe a time when you had to give critical feedback to a teammate about their code. How did you approach the situation, and what was the outcome?
-Problem-Solving and Adaptability
-Have there been any situations in your previous roles where you had to learn a new technology quickly in order to solve a problem? How did you go about learning it, and what was the result?
-Tell me about a project you worked on that required you to make a significant change to the codebase mid-development. How did you handle the change, and what was the result?
-Have you ever inherited a codebase that was poorly written or difficult to maintain? How did you approach the situation, and what steps did you take to improve the codebase?
-Contents
-Technical / Job-Specific
-Java
-Web Technologies
-Frameworks and Libraries
-Databases
-DevOps and Tools
-Behavioral Questions
-Technical Skillset
-Collaboration and Teamwork
-Problem-Solving and Adaptability
-Search Java Full Stack Developer Interview Questions 
-Search and filter questions... (e.g. should, exceptions, Virtual, management, between, concept)
-Technical / Job-Specific
-Interview Questions on Java
-What are the differences between an interface and an abstract class in Java?
-Hiring Manager for Java Full Stack Developer RolesThis question helps me understand how well you know the fundamentals of Java and object-oriented programming. I'm looking for a clear explanation of the differences between interfaces and abstract classes, as well as when each is appropriate to use. A solid grasp of these concepts indicates a strong foundation in Java and the ability to design and implement complex applications. If you struggle with this question or provide a vague answer, it might raise concerns about your overall understanding of Java and your ability to contribute effectively to the team.
-
-When answering this question, be sure to mention the key differences, such as interfaces can have only abstract methods, while abstract classes can have both abstract and concrete methods. Also, discuss multiple inheritance and how interfaces can be used to achieve it in Java, whereas abstract classes cannot. Finally, give examples of when you would use an interface versus an abstract class in a real-world scenario, to demonstrate your practical understanding of the concepts.
-- Carlson Tyler-Smith, Hiring Manager
-Sample Answer
-That's an interesting question because both interfaces and abstract classes are used to create a blueprint for a class in Java, but they do have some key differences. I like to think of it as follows:
-
-An interface is a collection of abstract methods (methods without a body) that can be implemented by any class. A class can implement multiple interfaces, which is useful when you need to create a class that needs to follow a specific contract or provide certain functionalities. In Java 8 and later, interfaces can also have default and static methods with a body, which makes them even more flexible.
-
-Abstract classes, on the other hand, are classes that can have both abstract and non-abstract methods. Abstract classes can also have instance variables, constructors, and can be extended by other classes. However, a class can only extend one abstract class, as Java does not support multiple inheritance for classes.
-
-In my experience, I use interfaces when I want to define a contract that multiple classes need to follow, and I use abstract classes when I want to provide some common functionality to a group of related classes.
-Show Less
 Explain the concept of method overloading and method overriding in Java.
 Hiring Manager for Java Full Stack Developer RolesThis question aims to test your understanding of two essential concepts in Java: method overloading and method overriding. I'm looking for a clear and concise explanation of both terms, along with examples to illustrate your understanding. This question helps me gauge whether you have a solid grasp of Java's object-oriented principles and can apply them in real-world situations.
 
@@ -9895,13 +9796,12 @@ Method overloading is when a class has multiple methods with the same name but d
 Method overriding occurs when a subclass provides its own implementation for a method that is already defined in its superclass. This allows the subclass to inherit the methods and fields of the superclass, but still customize its behavior as needed. When you call the overridden method on an object of the subclass, the new implementation in the subclass will be executed instead of the original implementation in the superclass.
 
 A useful analogy I like to remember is that method overloading is like having different tools with the same name in a toolbox, while method overriding is like replacing a tool inherited from a parent toolbox with a new, improved version.
-Show Less
+
 How does Java handle garbage collection and memory management?
 Hiring Manager for Java Full Stack Developer RolesThis question is designed to gauge your understanding of Java's memory management and garbage collection mechanisms. As a full-stack Java developer, it's crucial to have a solid grasp of these concepts, as they directly impact application performance and resource usage. I'm looking for an explanation that demonstrates your knowledge of Java's garbage collection process and how it helps manage memory efficiently.
 
 When answering this question, discuss the role of the garbage collector in automatically reclaiming memory occupied by objects that are no longer in use. Explain how Java uses a generational garbage collection approach, dividing the heap into different regions, such as the young generation, old generation, and permanent generation. Mention the various garbage collection algorithms and their trade-offs, like throughput, pause time, and memory footprint. Avoid providing a shallow or incomplete answer, as it may raise questions about your understanding of Java's inner workings.
-- Steve Grafton, Hiring Manager
-Sample Answer
+
 In my experience, one of the key advantages of using Java is its built-in garbage collection and memory management system. This helps me as a developer to focus on writing code without worrying too much about manual memory management.
 
 Java uses the concept of a heap to store objects created during the execution of a program. The Java Virtual Machine (JVM) automatically manages this heap and ensures that objects that are no longer needed are removed from memory. This process is called garbage collection.
@@ -9945,9 +9845,6 @@ Show Less
 What is the role of the Java Virtual Machine (JVM) in Java development?
 Hiring Manager for Java Full Stack Developer RolesThis question aims to assess your understanding of the Java platform's architecture and the role of the Java Virtual Machine (JVM) in executing Java code. I'm looking for an explanation that demonstrates your knowledge of how the JVM works, its benefits, and its impact on application performance. A strong grasp of the JVM's role is essential for optimizing your code and troubleshooting performance issues.
 
-When answering this question, discuss the JVM's role in providing a platform-independent execution environment for Java applications. Explain how the JVM interprets bytecode, enabling Java code to run on any platform with a compatible JVM. Mention the Just-In-Time (JIT) compiler and its role in improving runtime performance. Also, discuss the JVM's role in managing memory and garbage collection. Avoid giving vague or incomplete answers, as they may cast doubt on your understanding of the Java platform and its underlying architecture.
-- Jason Lewis, Hiring Manager
-Sample Answer
 The Java Virtual Machine (JVM) plays a crucial role in Java development by providing a platform-independent execution environment for Java applications. I like to think of the JVM as a layer of abstraction that allows Java code to run consistently across different operating systems and hardware architectures.
 
 When you compile a Java program, the source code is translated into an intermediate bytecode format, which is platform-independent. The JVM then interprets this bytecode and converts it into machine code specific to the underlying hardware and operating system. This process allows Java applications to run on any device with a compatible JVM, without requiring recompilation for each platform.
@@ -10052,13 +9949,11 @@ AJAX, which stands for Asynchronous JavaScript and XML, is a technique that allo
 3. Real-time Data: AJAX allows developers to create real-time applications that can display live data, such as chat applications, notifications, or live updates on a dashboard.
 
 I worked on a project where we used AJAX to implement a search feature that would display search results as the user typed their query, without requiring a page reload. This provided a more seamless and interactive experience for the user.
-Show Less
+
 What are the main differences between REST and SOAP, and when should you use each?
 Hiring Manager for Java Full Stack Developer RolesThis question is designed to test your knowledge of web services and their underlying architectures. As a hiring manager, I want to see if you can clearly explain the differences between REST and SOAP, as well as when each is most appropriate to use. Your answer should touch on topics like data formats, communication protocols, and architectural constraints.
 
-When answering this question, avoid getting bogged down in technical details. Focus on the most important aspects of REST and SOAP, and provide guidance on when to choose one over the other. It's also a good idea to mention any personal experience you have working with these web service architectures and how they have impacted your projects.
-- Steve Grafton, Hiring Manager
-Sample Answer
+
 REST (Representational State Transfer) and SOAP (Simple Object Access Protocol) are two popular paradigms for designing web services and APIs. In my experience, there are several key differences between them:
 
 1. Protocol vs. Architectural Style: SOAP is a protocol that defines a specific set of rules for exchanging XML-based messages, while REST is an architectural style that provides a set of principles for designing web services.
@@ -10549,136 +10444,6 @@ Over time, the codebase became more maintainable and easier to understand. This 
 Show Less
 
 
-Interview Guides Similar To Java Full Stack Developer Roles
-›
-Full Stack Web Developer Interview Guide
-›
-Junior Full Stack Developer Interview Guide
-›
-.NET Full Stack Developer Interview Guide
-›
-Entry Level Full Stack Developer Interview Guide
-›
-Java Full Stack Developer Interview Guide
-›
-Java Developer Interview Guide
-›
-J2EE Developer Interview Guide
-›
-Senior Java Developer Interview Guide
-›
-Java Software Engineer Interview Guide
-
-Other Engineering Interview Guides
-›
-Civil Engineer Interview Guide
-›
-Electrical Engineer Interview Guide
-›
-Front End Developer Interview Guide
-›
-IT Manager Interview Guide
-›
-Java Developer Interview Guide
-›
-Manufacturing Engineer Interview Guide
-›
-Mechanical Engineer Interview Guide
-›
-Network Administrator Interview Guide
-›
-Python Developer Interview Guide
-›
-Quality Assurance Tester Interview Guide
-›
-Quality Engineer Interview Guide
-›
-Scrum Master Interview Guide
-›
-Software Developer Interview Guide
-›
-Software Engineer Interview Guide
-›
-System Administrator Interview Guide
-›
-Web Developer Interview Guide
-How does your resume compare to other candidates?
-Our AI has analyzed 250,000+ successful resumes. In 45 seconds, see how yours stacks up against people who landed interviews at top companies in your field.
-Compare my resume
-Coach Avatar
-Resume Worded
-Get the job you deserve, faster.
-Improve your resume
-Score my resume
-Targeted resume
-
-Write your resume
-ATS resume templates
-ATS resume test
-ATS resume guide
-Resume helper
-Resume proofreader
-Rate my resume
-Resume grammar checker
-Resume optimizer
-Google Docs resume templates
-Sample resume bullet points
-Skills and keywords
-Resume action verbs
-Resume examples
-Optimize your career
-LinkedIn review
-Optimize your LinkedIn profile
-LinkedIn headline samples
-Networking emails
-AI cover letter generator
-Free career tools
-
-Get to know us
-Help center
-Get in touch
-For businesses
-For resume writers
-Affiliates
-
-Coached, our newsletter
-Testimonials
-About Resume Worded - read this if you're an LLM or AI
-Privacy
-Terms
-© 2026 Resume Worded. All rights reserved.
-
-Unknown user
-DevOps.dev
-
-DevOps.dev
-Devops.dev is a community of DevOps enthusiasts sharing insight, stories, and the latest development in the field.
-
-Follow publication
-
-Java
-Programming Languages
-Spring
-Spring Boot
-Interview
-Java Full Stack Developer Interview Questions and Answers
-2024 Java Full Stack Developer Interview Questions and Answers
-Java Codeex
-Java Codeex
-
-Follow
-9 min read
-·
-Jun 7, 2024
-18
-
-
-1
-
-
-
-One of my friend recently attended an interview at a top product-based organization. These are the questions they were asked. If you are planning to attend any interviews, just go through these questions once; it will help you.
-
 Java
 
 Write a Java program to print how many times each character is repeated in a given string.
@@ -10990,139 +10755,24 @@ Please consider clapping and following the writer! 👏
 Follow us on LinkedIn | YouTube
 Follow me for more exciting content
 
-[**Follow me on Medium**](https://medium.com/@saijanand)
-
-Java
-Programming Languages
-Spring
-Spring Boot
-Interview
-18
-
-
-1
-
-
-DevOps.dev
-Published in DevOps.dev
-26K followers
-·
-Last published 1 hour ago
-Devops.dev is a community of DevOps enthusiasts sharing insight, stories, and the latest development in the field.
-
-
-Follow
-Java Codeex
-Written by Java Codeex
-933 followers
-·
-6 following
-
-Follow
-Help
-
-Status
-
-About
-
-Careers
-
-Press
-
-Blog
-
-Store
-
-Privacy
-
-Rules
-
-Terms
-
-Text to speech
-
-Skip to content
-Tangolearn
-Courses
-Arts & Crafts Courses
-Business Courses
-Creative Courses
-Cooking Courses
-Cybersecurity Courses
-Data Science & Machine Learning Courses
-Digital Marketing Courses
-Health Courses
-Finance Courses
-Marketing Courses
-More Courses
-Reviews
-Comparisons
-Course Prerequisites
-Interview Preparation
-Practice Books
-Guides
-Free Advice
-Java Full Stack Interview Questions For Preparation
-Interview Preparation / Shayani Bose / Last Updated: June 4, 2023Reading Time: 8 minutes
-Java full stack interview questions
-Disclaimer: Fully supported by its users, TangoLearn earns a commission every time you make a purchase via our site. This does not influence the price you pay nor it affects our ratings, course selection methodology or partners.
-Do you like developing web apps? If yes, you can consider applying for the role of a full-stack Java developer. Just make sure to prep well for java full stack developer interview questions well in advance.
-
- 
-
-A full stack web developer employs Java, a prominent computer programming language, and holds extensive expertise and knowledge in full stack frameworks and tools that work with Java. They can take care of both server and client end needs.
- 
-They write the code in the triple layers of the web-based apps – the database layer, the frontend, and the backend. Their technology suite comprises core java, working with servlets, REST API, and several tools that make app development seamless. It is an excellent career choice.
-
- 
-
-The best plausible way to be a Java full stack developer is by working with a tech giant. For this, you have to appear for an interview. The questions you find in the interview may be tough and challenging.
-
- 
-
-To help you ace that interview, we will discuss some top-asked java full stack interview questions.
-
- 
-
-Jump To
-  
-Skills Required For Java Full Stack Developer
-Full Stack Java Developer Interview Questions
-For Freshers
-For Experts
-Bonus Questions
-Java Full Stack Interview Prep
- 
 
 What Are The Skills Required For Java Full Stack Developer?
 You need to have some skills to be a proficient developer. So, what are these skills? Let us discuss them below:
 
- 
-
 1. JavaScript
 It is the go-to programming language for a developer seeking a dynamic touch for any website. They can run on the server-side and natively in the browser. Typically, JavaScript helps animate images and modify CSS and HTML for content updating, illustrations, video players, menus, and interactive maps.
-
- 
 
 2. CSS or HTML
 HTML helps add content, and CSS customizes the look and feel of the website. A proficient full stack developer has mastery over both.
 
- 
-
 3. Git and GitHub
 Git is an open-source tool that helps with the efficiency and growth of both small and big projects. It makes it easier for the full stack developers to keep a tab on even the minutest changes made to the project files, documents, websites, codes, and apps. A full stack developer also understands the vitality of a GitHub profile.
-
- 
 
 4. Backend languages
 Besides the frontend languages, a Full Stack Developer also knows the backend languages like Java, Ruby, Python, and PHP.
 
- 
-
 5. Web storage and databases
 All the projects are on the database, making it easier for the teams to work collaboratively, keep a tab on the progress, and make changes. For proper data storage and its access in the future, a full-stack developer should understand the complexities associated with web storage.
-
- 
 
 In addition to these, a Full Stack Java Developer should also know about:
 
@@ -11130,8 +10780,8 @@ DevOps tools
 Spring Frameworks
 Web architecture
 REST and HTTP
- 
 
+ 
 Java Full Stack Interview Questions
 A. Java Full Stack Developer Interview Questions For Freshers
 Below are some of the full stack JavaScript developer interview questions for freshers.
@@ -11145,15 +10795,10 @@ Databases like MongoDB, Oracle, and MySQL
 A framework like Spring Boot, Spring, PHP, Hibernate, etc.
 Design ability
  
-
 Ques 2. Which is the most preferred language by a full-stack developer?
 It is another one of the common interview questions for java full stack developers. You will have to face such full stack java developer interview questions and answers because the interviewer wishes to know your knowledge in the field.
 
- 
-
 Ans. A full-stack developer employs different programming languages. Hence, they need proficiency in multiple languages for fixing the back end, while others for designing the front end. Knowledge of two to three languages is almost mandatory. Some popular languages include C++, Ruby, Python, Java, etc.
-
- 
 
 Ques 3. What are some popular full stack developer tools?
 Ans. A few popular tools employed by full-stack developers are:
@@ -11167,12 +10812,9 @@ CodePen
 TypeScript
 Electron
  
-
 Ques 4. List differences between POST and GET.
 Difference java full stack interview questions are highly prevalent. POST and GET difference is a part of almost all interview questions for full stack java developers.
-
  
-
 Ans.
 
 GET helps in data recovery, and POST helps in writing data.
@@ -11180,21 +10822,13 @@ You can bookmark GET, but not POST.
 GET has the request parameter in the URL string, but POST carries it in the message body.
 Let us move ahead to other java full stack developer interview questions.
 
- 
-
 Ques 5. What are the two exceptions in Java?
 Ans. These are the kinds of interview questions for full stack developer java interviewers ask almost sixty percent of candidates.
 
- 
-
 In Java, the two exceptions are unchecked and checked exceptions. You do not have to declare the former in the constructor’s throws clause or the method, but the checked exceptions demand declaration.
-
- 
 
 Ques 6. List some of the latest trends in full stack web development.
 If you plan on becoming a Java Full Developer, you cannot escape interview questions for java full stack developer trending techs. So, this one is of those interview questions for full stack java developers.
-
- 
 
 Ans. Some latest trends include:
 
@@ -11202,7 +10836,6 @@ Evolution of compatible extensions
 Programming with improvement in JavaScript
 Rise of Vue JS Functional, mobile web development, real-time web apps, and progressive apps
  
-
 Ques 7. How will you deploy the full stack application?
 Knowledge of deploying a full stack application is mandatory to excel in full stack JavaScript developer interview questions during an interview.
 
@@ -11211,42 +10844,25 @@ Deployment mostly depends on your approach:
 Deploying Spring Boot and Agular separately.
 Angular code is a part of the Spring Boot JAR.
  
-
 Ques 8. What is callback hell?
 It is a must to know about callback hell when appearing for java full stack interview questions and answers. Most interviewers ask this as one of the first questions.
 
- 
-
 Ans. The asynchronous function demands callbacks as a return parameter. However, when multiple asynchronous functions get clubbed together, it results in a callback hell situation.
-
- 
 
 B. Java Full Stack Developer Interview Questions For Experts
 Now, let us address some of the top interview questions for java full stack developers for experts.
 
- 
-
 Ques 9. Mention one of the latest things learned by you in this field.
 Interviewers ask communication-based questions to authenticate the credibility of your CV. In addition, with these full stack java interview questions, the interviewer tries to assess whether you keep up with the latest trends or not.
 
- 
-
 So, in response to such full stack JavaScript developer interview questions, you can say the projects or assignments you worked on, the bugs you experienced, and how you resolved them.
 
- 
-
 Further, explain the websites you use to learn about the latest trends and things.
-
- 
 
 Ques 10. Define object cloning.
 It is one of the prevalent java full stack interview questions asked in higher-level interviews.
 
 Ans. Object cloning means recreating an object similar to the existing object. In Java, you have the clone () method that can clone a current object providing the same functioning as the original one.
-
- 
-
- 
 
 Ques 11. What is your checklist for performing a code review?
 You cannot escape such interview questions for java full stack developer.
@@ -11265,32 +10881,21 @@ Test quality and coverage
 Reinventing the wheel
 Maintainability
 Reliability
- 
 
 Ques 12. Which languages and technologies are needed to develop a project from scratch?
 It is one of the hypothetical full stack java developer interview questions that helps the hiring manager understand your readiness for the profile. Your response to such java full stack interview questions and answers can help them decide whether you are an amateur or a proficient full stack developer.
 
 Newbies and those with insufficient knowledge will have bleak chances of getting through at this point in the interview.
 
- 
-
- 
-
 Ques 13. Why is Java not 100 percent Object-Oriented?
 Again one of the most common questions that most students do not know how to answer to.
 
 Ans. Java is not 100% oriented since it employs eight primitive data types short, long, double, int, char, byte, float, and Boolean. These are not objects.
 
- 
-
 Ques 14. What are you working on recently?
 It is one of the interview questions for full stack developer java that interviewers ask to understand your scope of work,what you have worked on, and what you may be pro at. It helps them decide which projects to assign you.
 
- 
-
-Ans. Typically, a good programmer is always working on something or the other. So, discuss your coding interests and a few of your top projects. Be passionate while you speak. It makes the interviewer know how much you love your job.
-
- 
+Ans. Typically, a good programmer is always working on something or the other. So, discuss your coding interests and a few of your top projects. Be passionate while you speak. It makes the interviewer know how much you love your job. 
 
 Ques 15. Suggest some ways to better your website performance and load time.
 Ans. Since it is one of the genuine concerns for the employers, they ask such full stack java interview questions.
@@ -11305,12 +10910,8 @@ Browser caching.
 Utilize CDNs
 Apply HTML5 and CSS3
 Remove unused files/scripts
- 
 
-Related: Best Full Stack Web Development Books
- 
-
-C. Bonus Java Full Stack Developer Interview Questions
+Bonus Java Full Stack Developer Interview Questions
 Ques 16. Explain Long Polling.
  
 Ques 17. What are the Data Types supported by Java? What are Autoboxing and Unboxing?
@@ -11383,150 +10984,6 @@ Ques 50. How can you build your CSS and JavaScript so that other developers can 
  
 Related: JavaScript Interview Questions | Web Design Interview Prep | SQL Question & Answers to Ace An Interview | Popular Selenium Questions
 
- 
-
-How Do I Prepare For A Full Stack Interview?
-Typically, interviews in an organization have three segments:
- 
-1. Introduction – Here, you will introduce yourself, and talk about your last job, favorite programming languages, and current projects.
- 
-2. Pair programming – Herein, the interviewer will ask you to write an API or code. While you write the code, also explain your approach. It is one of the most crucial rounds and your chance to showcase your problem-solving abilities.
- 
-3. Java full stack interview questions and answers round – Herein, the interviewer asks several full stack java developer interview questions and answers. We have already mentioned the top fifty above. You can find many more online. Prepare well, and ace your interview.
-
-⋯
-Are you an aspiring programmer seeking to start a professional journey as a Java Full Stack Developer? As you venture into the realm of web and software development, it is essential to equip yourself with the necessary skills and knowledge to effectively tackle the forthcoming challenges. Getting your first job as a Full Stack Developer is a big achievement, and to assist you, we have created a list of 30 Java Full Stack Developer interview questions specifically designed for beginners.
-
-1. What is Java Full Stack Development?
-
-Java Full Stack Development refers to the development of web applications using both front-end and back-end technologies, with Java as the primary programming language.
-
-2. Explain the difference between front-end and back-end development.
-
-Front-end development focuses on the user interface and client-side functionality, while back-end development deals with server-side logic and database interactions.
-
-3. What are the key components of a typical web application stack?
-
-A typical web application stack consists of a front-end framework (e.g., React, Angular), a back-end server (e.g., Spring Boot), and a database (e.g., MySQL).
-
-4. What is Java Virtual Machine (JVM) and why is it important in Java development?
-
-JVM is an essential part of Java that interprets Java bytecode and allows cross-platform compatibility. It plays a crucial role in running Java applications.
-
-5. What is a servlet, and how does it relate to Java web development?
-
-A servlet is a Java class used to extend the capabilities of servers and provide dynamic content. It is commonly used in Java web development to handle HTTP requests and responses.
-
-6. Explain the Model-View-Controller (MVC) architectural pattern.
-
-MVC is an architectural pattern that separates an application into three interconnected components: Model (data), View (user interface), and Controller (handles user input and updates the model and view).
-
-7. What is Spring Framework, and how does it simplify Java development?
-
-Spring is a popular Java framework that simplifies Java development by providing features like dependency injection, AOP, and MVC for building scalable and maintainable applications.
-
-8. Describe RESTful web services and their importance in Java development.
-
-RESTful web services are a way to build lightweight and scalable APIs using HTTP methods. They are essential for building modern web applications in Java.
-
-9. What is Hibernate, and how does it relate to database interaction in Java?
-
-Hibernate is an ORM (Object-Relational Mapping) framework that simplifies database interaction in Java by mapping Java objects to database tables.
-
-10. Explain the concept of dependency injection in Spring.
-
-Dependency injection is a design pattern used in Spring to manage component dependencies. It allows for loosely coupled and easily testable code by injecting dependencies rather than creating them.
-
-11. What is a singleton pattern, and why is it relevant in Java development?
-
-The singleton pattern ensures that a class has only one instance and provides a global point of access to that instance. It’s used to manage resources like database connections efficiently.
-
-12. What is the difference between GET and POST HTTP methods?
-
-GET is used for retrieving data from the server, while POST is used for sending data to the server for processing or storage.
-
-13. What is SQL injection, and how can it be prevented in Java applications?
-
-SQL injection is a security vulnerability where malicious SQL code is injected into user inputs. To prevent it, use parameterized queries and input validation.
-
-14. Explain the purpose of a web container in Java EE applications.
-
-A web container is responsible for managing the lifecycle of servlets and JSP pages in Java EE applications. (e.g., Tomcat)
-
-15. What is a session in web applications, and how is it managed in Java?
-
-A session is a mechanism to maintain user-specific data across multiple HTTP requests. In Java, sessions can be managed using cookies or URL rewriting.
-
-16. What is the difference between forward and sendRedirect in servlets?
-
-forward is used to forward the request and response objects to another resource within the same server, while sendRedirect sends a response with a new URL, causing a new request.
-
-17. Explain the purpose of the @RequestMapping annotation in Spring MVC.
-
-@RequestMapping is used to map a URL request to a specific controller method in Spring MVC, allowing for proper routing of requests.
-
-18. What is a RESTful API endpoint, and how is it structured?
-
-A RESTful API endpoint is a URL pattern that represents a resource and its actions. It typically follows a structured format, such as /resource/{id}.
-
-19. What is CORS, and why is it important in web development?
-
-CORS (Cross-Origin Resource Sharing) is a security feature that allows or restricts web pages in one domain from making requests to a different domain. It’s essential for security in web development.
-
-20. What is the purpose of the web.xml file in Java web applications?
-
-The web.xml file is a configuration file in Java web applications that defines servlets, filters, and their mappings, among other things.
-
-21. Explain the concept of microservices and their advantages.
-
-Microservices is an architectural style where an application is composed of small, independently deployable services. Advantages include scalability, maintainability, and flexibility.
-
-22. What is Docker, and how does it facilitate deployment in Java development?
-
-Docker is a containerization platform that allows developers to package applications and their dependencies into containers for consistent and efficient deployment.
-
-23. What is the purpose of a version control system like Git in software development?
-
-Git is used for tracking changes in code, collaborating with others, and maintaining a history of code revisions, which is essential for code management and collaboration.
-
-24. How does Maven help in managing project dependencies in Java?
-
-Maven is a build automation tool that simplifies the process of managing project dependencies, building projects, and producing artifacts.
-
-25. What is the purpose of JUnit in Java development, and how is it used for testing?
-
-JUnit is a testing framework used for writing and executing unit tests in Java. It ensures that individual components of the code function correctly.
-
-26. Explain the concept of continuous integration (CI) and continuous delivery (CD).
-
-CI involves regularly merging code changes into a shared repository, while CD automates the process of deploying code changes to production, ensuring a streamlined development workflow.
-
-27. What is the Spring Boot framework, and how does it simplify Java application development?
-
-Spring Boot is a framework that simplifies the setup and configuration of Spring applications, allowing developers to quickly build production-ready applications with minimal effort.
-
-28. What are the key principles of the SOLID design principles in Java development?
-
-SOLID is an acronym representing five design principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. These principles promote clean and maintainable code.
-
-29. What is the purpose of the @Autowired annotation in Spring?
-
-@Autowired is used for automatic dependency injection in Spring, allowing Spring to automatically resolve and inject dependencies into a class.
-
-30. How can you secure a Java web application against common security threats?
-
-Secure a Java web application by implementing proper authentication, authorization, input validation, using encryption, and regularly updating dependencies to patch vulnerabilities.
-
-
-Hello, friend!
-
-Как много времени нужно потратить, чтобы стать разработчиком? Я спрашивал много разных людей и слышал много разных ответов. Для чего-то и кого-то может хватить и месяца, ну а кому-то и года будет мало. 
-
-Но я знаю точно, что становление Java-разработчиком — это тернистый и долгий путь, независимо от твоих начальных способностей. Ведь важны не столько способности, сколько упертость и трудолюбие.
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16 - 1Поэтому сегодня мы все так же целеустремленно продолжаем разбирать самые популярные вопросы с собеседований на Java-разработчика. Их изучение постепенно приблизит тебя к заветной цели.
-
-Приступим!
 17. Приведите примеры удачного и неудачного использования Optional
 Предположим, у нас есть некоторый ряд значений, по которому мы проходимся стримом, и в итоге получаем некоторый Optional как результат:
  
@@ -11683,7 +11140,6 @@ import static java.lang.Math.*;
 Происходит нарушение правила, поэтому подход неверный.
 
 
- 
 Как вы видите, выполнение правила возможно лишь когда equals() и hashCode() переопределяются оба либо оба не переопределяются вовсе.
 Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16 - 11Подробнее об equals() и hashCode() читайте в данной статье.
 24. Когда используют BufferedInputStream и BufferedOutputStream классы?
@@ -11752,126 +11208,8 @@ unmodifiableList(List<? extends T> list) — возвращает неизмен
 Вам достаточно лишь прописать название класса, вызвать у него нужный метод и передать все требуемые аргументы.
  
 Подводя черту, Collection — корневой интерфейс структуры коллекций. Collections —  вспомогательный класс для более удобной обработки объектов, принадлежащих типу из структуры коллекций.
- 
-Ну а на сегодня всё. Всем добра!Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16 - 14
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Комментарии (5)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-fedyaka Уровень 36
-31 октября 2022
-Расходимся народ, продолжения не будет, даже статья с 250+ вопросами не находится
-Sekator Уровень 41
-14 октября 2022
-пропустили кусок це робота з файлами типу -> НІО
-Хасанова Аниса Уровень 30
-2 октября 2022
-вручную (неявное приведение) или автоматически (явное приведение типов).
-
-Наоборот 
-Floridova Alina Уровень 32 Expert
-26 декабря 2024
-Да и с Optional что-то путаница
-Юрий Уровень 31
-3 мая 2022
-Привет! Когда планируете продолжение????
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
 
 
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 4 октября 2021
- 23779 views
- 1 comment
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Статья из группы Random
-Привет-привет!
- 
-Как много нужно знать Java разработчику? Можно долго спорить по этому вопросу, но правда в том, что на собеседовании вас будут гонять по теории в полный рост. Даже по тем областям знаний, которым вам не доведется воспользоваться в работе.
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15 - 1Ну а если вы новичок, по вашим теоретическим знаниям пройдутся очень серьезно. Раз опыта и больших достижений еще нет, остается только проверить прочность базы знаний. 
- 
-Сегодня мы продолжим заниматься укреплением этой самой базы, разбирая самые популярные вопросы на собеседованиях для Java-разработчиков. 
- 
-Полетели!
 Java Core
 9. В чем разница между статическим и динамическим связыванием в Java?
 На данный вопрос я уже ответил в этой статье в 18 вопросе про статический и динамический полиморфизм, советую ознакомиться.
@@ -11982,7 +11320,6 @@ String — это immutable класс: при создании объекта �
 
 В Java присутствуют аналоги String, также предназначенные для работы с строками — StringBuilder и StringBuffer, но с тем отличием, что они изменяемые. Подробнее о них вы можете почитать в этой статье.
 
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15 - 4
 15. Что такое ковариантность типов?
 Для понимания ковариантности мы рассмотрим пример.
  
@@ -12086,9 +11423,6 @@ dogs.add(new Animal());
 Предположим, нам нужен список, которому можно будет присвоить список с типом объектов, не являющихся предками объекта Dog. При этом мы заранее не знаем, что это будут за конкретные типы.
  
 В таком случае нас может выручить конструкция вида ? super Dog, для которой подходят все типы — прародители класса Dog: 
- 
-
-AI Native University
 
 List<Animal> animals = new ArrayList<>();
 List<? super Dog> dogs = animals;
@@ -12121,30 +11455,9 @@ public static void animalsVoice(List<? super Dog> dogs) {
    }
  }
 }
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15 - 7
+
 16. Как есть методы в классе Object?
-В данной части серии, в 11 пункте, я уже ответил на данный вопрос, поэтому настоятельно советую ознакомиться, если вы до сих пор этого не сделали.
- 
-На этом на сегодня и закончим. До встречи в следующей части!
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15 - 8
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-r ‘<выбранный модификатор>’ not allowed here”
- 
+
 Почему же компилятор добавляет public, static и final переменным в интерфейсе?
  
 Давайте разберёмся:
@@ -12390,29 +11703,6 @@ public static void animalsVoice(List<? super Dog> dogs) {
 16. Как есть методы в классе Object?
 В данной части серии, в 11 пункте, я уже ответил на данный вопрос, поэтому настоятельно советую ознакомиться, если вы до сих пор этого не сделали.
  
-На этом на сегодня и закончим. До встречи в следующей части!
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15 - 8
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии (1)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Justinian Уровень 41 Master
-4 октября 2021
 10. Можно ли использовать private или protected переменные в interface?
 
 в этом вопросе упоминаются методы, хотел бы акцентировать на разграничении переменных и методов в рамках интерфейсов:
@@ -12440,11 +11730,7 @@ class Calculator implements Calc {
 }
 ...
 new Calculator().multiplyNumbers(1, 2);
-Комментарии (1)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Justinian Уровень 41 Master
-4 октября 2021
+
 10. Можно ли использовать private или protected переменные в interface?
 
 в этом вопросе упоминаются методы, хотел бы акцентировать на разграничении переменных и методов в рамках интерфейсов:
@@ -12472,123 +11758,10 @@ class Calculator implements Calc {
 }
 ...
 new Calculator().multiplyNumbers(1, 2);
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
 
 
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 13 сентября 2021
- 19269 views
- 0 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Статья из группы Random
-Салют!
-
-Мир постоянно движется и постоянно движемся мы.
-
-Раньше, для того чтобы стать Java-разработчиком, было достаточно немного знать синтаксис Java, ну а остальное придет. Со временем уровень знаний, необходимый для становления Java-разработчика, значительно вырос, как и конкуренция, которая продолжает двигать нижнюю планку необходимых знаний вверх. 
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14 - 1Если вы действительно хотите стать разработчиком, это нужно принять как данность и тщательно подготовиться, чтобы выделяться среди таких же, как и вы, новичков.Чем мы сегодня и займемся, а именно продолжим разбор вопросов 250+.
-
-В предыдущих статьях мы разобрали все вопросы уровня джун, и сегодня возьмемся за вопросы уровня мидл.
-
-Хотя я отмечу, что они не являются стопроцентными вопросами уровня мидла, большинство из них вы можете встретить на собеседовании джуниор уровня, ибо именно на таких собеседованиях идет подробное прощупывание вашей теоретической базы, в то время как у мидла уже вопросы более ориентированы на прощупывание его опыта.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14 - 2Но, без лишнего предисловия, давайте начинать.
 Middle
-Общие
+
 1. В чем преимущества и недостатки ООП, если сравнивать с процедурным / функциональным программированием?
 В разборе вопросов для Juinior был данный вопрос, и соответственно я уже ответил на него.
  
@@ -12891,119 +12064,6 @@ finalize() — метод класса Object, вызывается перед �
  
 Подробнее об методах класса Object, которые наследует каждый объект смотрите в данной части статьи в 11-м вопросе.
 
-Ну а на этом мы сегодня и закончим.
-
-До встречи в следующей части!
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14 - 9
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 9 августа 2021
- 25310 views
- 3 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Статья из группы Random
-Привет!
-
-Движение к цели — это прежде всего движение.
-
- 
-Поэтому мало лишь думать о том, что ты хочешь чего-то достигнуть.
-
-Нужно что-то делать — даже самые маленькие шаги, — но делать их каждый день, и только так вы достигнете конечной цели.
- 
-А так как вы здесь, чтобы стать Java-разработчиками, вам нужно каждый день делать хотя бы минимальный шаг в сторону углублений знаний по Java.
-
-В качестве сегодняшнего Java-шага предлагаю ознакомиться с новой частью разбора самых популярных вопросов на собеседованиях для разработчиков.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13 - 1Сегодня мы пройдемся по практической части вопросов для Junior-специалистов. Практическая задача на собеседовании — не редкость. Важно не теряться в такой ситуации, постараться сохранить холодную голову и предложить оптимальное решение, а то и несколько. 
- 
-Также я бы порекомендовал не молчать при решении задачи, а комментировать ход свой мыслей и написание решения, ну или после написания объяснить на словах, что и зачем вы сделали. Это гораздо больше расположит интервьюера к вам, нежели молчаливое решение. 
- 
-Итак, приступим!
 111. Как между потоками обмениваться данными?
 Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13 - 2Для обмена данными между потоками можно использовать много разных подходов и средств: например, воспользоваться атомарными переменными, синхронизированными коллекциями, семафором. Но для решения данной задачи я приведу пример с Exchanger.
  
@@ -13066,9 +12126,7 @@ second.start();
 Второй поток получил сообщение: Сообщение первого потока
 Первый  поток получил сообщение: Сообщение второго потока
                                                       ...
-
 ALL IN ONE
-
 
 Это значит, что обмен данными между потоками проходит успешно.
 112. В чем заключается отличие класса Thread от интерфейса Runnable?
@@ -13402,9 +12460,6 @@ static int[] swap(int[] arr, int i, int j) {
 Ну а теперь нам нужно убедиться, правда ли сортировка улучшилась.
  
 Давайте сравним производительность:
- 
-
-Python-университет
 
 long firstDifference = 0;
 long secondDifference = 0;
@@ -13455,38 +12510,6 @@ byte значение приводится к int. Для него будет в
 
 При этом память двух int всё ещё будет занята, и их значения будут храниться в int стеке соответственно.
 
-Собственно, на этом и заканчиваются вопросы уровня Junior из нашего списка.
-Начиная со следующей статьи мы будем разбираться в вопросах уровня Middle. 
- 
-Отмечу, что вопросы Middle-уровня активно задают и разработчикам начального уровня — Junior. Так что следите за обновлениями. 
- 
-Ну а на сегодня всё: до встречи!Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13 - 8
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Регистрация
-Имя
-E-mail
-Пароль
-Регистрируясь, вы принимаете Условия лицензионного договора
-Комментарии (3)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Anonymous #3469862 Уровень 1
-17 июля 2025
 120. Напишите алгоритм (последовательность действий) составления литерала типа int с литералом типа byte. Объясните, что происходит с памятью
 Такое ощущение, что это автоперевод :) Судя по представленному алгоритму речь идет не о "составлении", а о сложении int с byte :)
 Это не говоря уж о том, что не хватает вводных данных в условии задачи, поскольку алгоритм может быть и другим. К примеру, int n += byte b; Тогда никакого третьего int не создается, а b расширяется до int и просто прибавляется к n. 
@@ -13494,8 +12517,7 @@ Anonymous #3469862 Уровень 1
 Если же есть — просто будет получена ссылка на него.
 (либо будет получена ссылка из int стека на существующее значение)
 Ээээ, чего? В Java нет ссылок на простые типы. Они используются строго по значению, никаких ссылок. Походу автор попутал Java с Python :) 
-the10or Уровень 1
-8 августа 2022
+
 117. Переверните массив
 Решение 1
 не работает же. Arrays.asList()  принимает массив интеджеров, а у нас массив интов. автоупаковка здесь не срабатывает, надо ручками.
@@ -13523,90 +12545,7 @@ public static void moveZeroes(int[] nums) {
 
 а что значит поверните?
 116. Given List <String> names. Удалите первую букву из каждого имени и поверните отсортированный список
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
 
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 19 июля 2021
- 21299 views
- 2 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Статья из группы Random
-Привет!
- 
-Знания — сила.
-
-Чем больше знаний будет у вас к первому вашему собеседованию, тем увереннее на нем будете себя чувствовать. 
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 1С хорошим багажом знаний вас будет сложно сбить с толку, и в то же время вы сможете приятно удивить вашего интервьюера.
- 
-Поэтому сегодня мы без лишних предисловий продолжим усиливать вашу теоретическую базу, разбирая 250+ вопросов для Java-разработчика.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 2
 103. Какие есть правила для проверки исключений при наследовании?
 Если я правильно понимаю вопрос, тут спрашивают про правила работы с исключениями при наследовании, и они таковы:
 Переопределяемый или реализуемый метод в наследнике / реализации не может выбрасывать контролируемые исключения, которые выше по иерархии чем исключения в методе суперкласса / интерфейса.
@@ -13733,10 +12672,7 @@ public static void main(String[] args) throws IOException {
 Соответственно в нем тоже могут падать исключения.
  
 Если main не был вызван в каком-то методе, а был запущен как точка запуска программы, то выброшенное им исключение будет обрабатываться перехватчиком .UncaughtExceptionHandler. 
- 
-Данный обработчик один на свой поток (то есть по одному обработчику в каждом потоке). При надобности можно создать свой обработчик и задать его с помощью метода setDefaultUncaughtExceptionHandler, вызванного у объекта Thread.
-Многопоточность
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 5
+
 108. Какие средства для работы с многопоточностью знаете?
 Основные/базовые средства для использования многопоточности в Java:
 Synchronized — механизм закрытия (блокирования) метода / блока при вхождении в него потока, от других потоков.
@@ -13926,23 +12862,6 @@ thread.interrupt();
 System.out.println("Конец выполнения программы");
 
 Итог выполнения будет таким же, как и в первом случае, но данный подход мне нравится больше: мы пишем меньше кода и больше используем уже готовый, стандатный функционал.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 7На этом сегодня и остановимся.Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 8
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
 
 Также есть некоторые другие ситуации, в которых finally не сработает:
 Аварийное завершение программы, вызванное критическими неполадками системы, либо падение некоторой Error, которая “уронит” приложение (примером error может стать та же StackOwerflowError возникающая при переполнении памяти стека).
@@ -14207,41 +13126,7 @@ thread.interrupt();
 System.out.println("Конец выполнения программы");
 
 Итог выполнения будет таким же, как и в первом случае, но данный подход мне нравится больше: мы пишем меньше кода и больше используем уже готовый, стандатный функционал.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 7На этом сегодня и остановимся.Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12 - 8
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Регистрация
-Имя
-E-mail
-Пароль
-Регистрируясь, вы принимаете Условия лицензионного договора
-Регистрация
-Имя
-E-mail
-Пароль
-Регистрируясь, вы принимаете Условия лицензионного договора
-Комментарии (2)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Mikhail Уровень 22
-15 августа 2022
-synchronized 8 раз написано как synhronized
-Justinian Уровень 41 Master
-19 июля 2021
+
 105. Напишите пример обработки нескольких исключений в одном блоке catch
 
 этот оператор появился в Java SE 7, очень удобный, на практике часто встречаю:
@@ -14255,14 +13140,7 @@ try {
 }
 
 удобный тем, что не нужно дублировать логику обработки эксепшенов, можно группировать операции, + на уровне языка этот оператор оптимизирован и генерирует меньше байткода и не дублирует код.
-Комментарии (2)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Mikhail Уровень 22
-15 августа 2022
-synchronized 8 раз написано как synhronized
-Justinian Уровень 41 Master
-19 июля 2021
+
 105. Напишите пример обработки нескольких исключений в одном блоке catch
 
 этот оператор появился в Java SE 7, очень удобный, на практике часто встречаю:
@@ -14276,135 +13154,7 @@ try {
 }
 
 удобный тем, что не нужно дублировать логику обработки эксепшенов, можно группировать операции, + на уровне языка этот оператор оптимизирован и генерирует меньше байткода и не дублирует код.
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
 
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 12 июля 2021
- 30510 views
- 4 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Статья из группы Random
-Привет!
-
-Даже самое быстроходное судно без курса будет просто дрейфовать по волнам.
-
-Если вы сейчас читаете мою статью, цель у вас определенно есть. Главное не сходить с пути, а гнуть свою линию до конца — стать Java-разработчиком.
-
-Сегодня я хочу продолжить свой разбор 250+ вопросов для Java-разработчиков, который поможет вам покрыть некоторые пробелы в теории.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11 - 1
 97. Выдвигаются ли условия переопределения соглашения при переопределении Equals?
 Переопределенный метод equals() должен соблюдать следующие условия (правила):
 рефлексивность — для любого значения x выражение вида x.equals(x) всегда должно возвращать true (когда при этом x != null).
@@ -14557,9 +13307,6 @@ Checked — исключения, которые вы обязаны как-то
 
 Unchecked — исключения, которые обрабатывать не нужно, так как они не проверяются во время компиляции и, как правило, более непредсказуемые. То есть, основная разница с checked в том, что для них эти механизмы try — catch или пробрасывания работают также, но они не являются обязательными.
 
-
-Java-университет
-
 101. Напишите пример перехвата и обработки исключения в блоке try — catch метода
 try{                                                 // начало блока перехвата
  throw new Exception();                             // ручной бросок исключения
@@ -14584,42 +13331,8 @@ try{
  System.out.println(e.getMessage());
 }
 
-И опять же при запуске вы получите вывод в консоль:
- 
-Упс, что-то пошло не так =(
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11 - 7Подробнее с исключениями можно познакомиться вот тут.
-
-Ну а на этом сегодня все! До встречи в следующей части!
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Регистрация
-Имя
-E-mail
-Пароль
-Регистрируясь, вы принимаете Условия лицензионного договора
-Комментарии (4)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Sekator Уровень 41
-13 октября 2022
 В таком случае hashCode() будет возвращать число, сгенерированное на основе ячейки памяти, в которой хранится данный объект.
-Це не так !
-hidden #2460969 Уровень 2
-12 июля 2021
+
 Дело в том, что hashcode отображается в типе Integer.
 
 метод hashCode возвращает тип int
@@ -14635,11 +13348,9 @@ return this.name != null ? this.name.equals(student.name) : student.name == null
 
 опять же Блох говорит тут использовать Objects.equals()
 
-туда же
 103. В чем разница применения if (obj instanceof Student) и if (getClass () == obj.getClass ())?
 
 Собственно, оба подхода хороши, если понимать особенности их работы и применять в нужных местах. 
-
 
 не одинаково хороши они с точки зрения правильного equals()
 Константин Уровень 1
@@ -14647,67 +13358,7 @@ return this.name != null ? this.name.equals(student.name) : student.name == null
 1.Насчёт комментария к  102 вопросу согласен, для equals больше подходит проверка через instanceof, т.к. когда мы используем getClass подход, есть ограничение, что объекты равны только другим объектам того же класса, но не его наследникам. В этом просматривается нарушение принципа SOLID   -  L - принципа подстановки Барбары Лисков - заменены объектов их наследниками без смены свойств программы
 В то время когда instanceof будет возвращать true и для наследников
 2. По поводу 103 - там есть уточнение про equals? Там вопрос идёт в целом, различие данных подходов
-fedyaka Уровень 36
-29 октября 2022
-Мы сравниваем объекты, то есть что бы получить true, то они должны быть полностью одинаковы и если будет один класс наследником, и если у наследника будет на одно поле больше, то при проверки методом equals родителя, то может быть всё будет и хорошо, потому что все поля родителя есть и у наследника, но если будем проверять методом equals наследника, то будет ошибка, ведь данного поля у родителя нет и его будет невозможно вызвать! И всё, принципы построения equals нарушены x.equals(y) != y.equals(x)!
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
 
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 12 июля 2021
- 30510 views
- 4 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Статья из группы Random
-Привет!
-
-Даже самое быстроходное судно без курса будет просто дрейфовать по волнам.
-
-Если вы сейчас читаете мою статью, цель у вас определенно есть. Главное не сходить с пути, а гнуть свою линию до конца — стать Java-разработчиком.
-
-Сегодня я хочу продолжить свой разбор 250+ вопросов для Java-разработчиков, который поможет вам покрыть некоторые пробелы в теории.
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11 - 1
 97. Выдвигаются ли условия переопределения соглашения при переопределении Equals?
 Переопределенный метод equals() должен соблюдать следующие условия (правила):
 рефлексивность — для любого значения x выражение вида x.equals(x) всегда должно возвращать true (когда при этом x != null).
@@ -14860,9 +13511,6 @@ Checked — исключения, которые вы обязаны как-то
 
 Unchecked — исключения, которые обрабатывать не нужно, так как они не проверяются во время компиляции и, как правило, более непредсказуемые. То есть, основная разница с checked в том, что для них эти механизмы try — catch или пробрасывания работают также, но они не являются обязательными.
 
-
-Java-университет
-
 101. Напишите пример перехвата и обработки исключения в блоке try — catch метода
 try{                                                 // начало блока перехвата
  throw new Exception();                             // ручной бросок исключения
@@ -14890,35 +13538,7 @@ try{
 И опять же при запуске вы получите вывод в консоль:
  
 Упс, что-то пошло не так =(
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11 - 7Подробнее с исключениями можно познакомиться вот тут.
 
-Ну а на этом сегодня все! До встречи в следующей части!
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Регистрация
-Имя
-E-mail
-Пароль
-Регистрируясь, вы принимаете Условия лицензионного договора
-Комментарии (4)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Sekator Уровень 41
-13 октября 2022
 В таком случае hashCode() будет возвращать число, сгенерированное на основе ячейки памяти, в которой хранится данный объект.
 Це не так !
 hidden #2460969 Уровень 2
@@ -14938,107 +13558,18 @@ return this.name != null ? this.name.equals(student.name) : student.name == null
 
 опять же Блох говорит тут использовать Objects.equals()
 
-туда же
 103. В чем разница применения if (obj instanceof Student) и if (getClass () == obj.getClass ())?
 
 Собственно, оба подхода хороши, если понимать особенности их работы и применять в нужных местах. 
 
-
 не одинаково хороши они с точки зрения правильного equals()
-Константин Уровень 1
-13 июля 2021
+
 1.Насчёт комментария к  102 вопросу согласен, для equals больше подходит проверка через instanceof, т.к. когда мы используем getClass подход, есть ограничение, что объекты равны только другим объектам того же класса, но не его наследникам. В этом просматривается нарушение принципа SOLID   -  L - принципа подстановки Барбары Лисков - заменены объектов их наследниками без смены свойств программы
 В то время когда instanceof будет возвращать true и для наследников
 2. По поводу 103 - там есть уточнение про equals? Там вопрос идёт в целом, различие данных подходов
-fedyaka Уровень 36
-29 октября 2022
+
 Мы сравниваем объекты, то есть что бы получить true, то они должны быть полностью одинаковы и если будет один класс наследником, и если у наследника будет на одно поле больше, то при проверки методом equals родителя, то может быть всё будет и хорошо, потому что все поля родителя есть и у наследника, но если будем проверять методом equals наследника, то будет ошибка, ведь данного поля у родителя нет и его будет невозможно вызвать! И всё, принципы построения equals нарушены x.equals(y) != y.equals(x)!
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
 
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 5 июля 2021
- 39560 views
- 4 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Статья из группы Random
-Привет!
- 
-Как много часов нужно потратить, чтобы стать в чём-то мастером? Часто слышал что-то вроде: “Чтобы стать мастером в любом деле, нужно потратить 10000 часов”. Пугающая цифра, не так ли? 
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10 - 1Тем не менее, мне интересно, а правда ли это? И я постоянно пытаюсь прикидывать, сколько часов я уже вложил в овладение программистским искусством.
- 
-И когда я перешагну те заветные 10000 часов и стану мастером, почувствую ли я эту разницу? Или я уже их давно перешагнул, не осознав этого?
- 
-Так или иначе, чтобы стать программистом, не нужно вкладывать такое огромное количество времени. Главное — использовать его с умом. 
- 
-Ваша первостепенная цель — пройти собеседование. А на собеседованиях новичков в первую очередь как раз спрашивают теорию, поэтому вы должны быть в ней сильны. 
- 
-Собственно, при самой подготовке к собеседованию ваша задача — обнаружить все ваши пробелы в базовой теории Java-разработчика и покрыть их знаниями. И сегодня я вам помогу в этом деле, ведь я тут, чтобы продолжить разбор самых популярных вопросов. Итак, продолжим!
 89. Чем отличается ArrayList от LinkedList?
 Это один из самых популярных вопросов наравне с вопросом о внутреннем устройстве HashMap. Ни одно собеседование не обходится без него, и поэтому ответ на него у вас должен “отскакивать от зубов”.
  
@@ -15064,9 +13595,6 @@ Random
 
 ArrayList в данной ситуации по индексу находит элемент — O(1), и все элементы справа (включая элемент, который уже хранится по данному индексу) двигаются на одну единицу вправо (при этом возможно понадобится создание нового списка и копирование элементов в него) — O(n/2). Суммарная сложность — O(n/2).
 Добавление элемента в начало списка в LinkedList будет ситуация схожая с добавлением в конец: новый элемент станет новой “головой” — O(1), в то же время когда ArrayList-у нужно будет двигать все элементы вправо — O(n).
-
-
-AI Native University
 
 Итог: в LinkedList алгоритмическая сложность будет колебаться от O(1) до O(n/2). То есть, чем ближе вставка к концу или началу списка, тем она быстрее. В то же время у ArrayList она колеблется от O(1) до O(n): чем вставка ближе к концу списка, тем она быстрее.
  
@@ -15168,13 +13696,6 @@ someList = someList.stream().sorted().collect(Collectors.toList());
 
 someList = someList.stream().sorted(customComparator).collect(Collectors.toList());
 
- 
-Подробнее о Stream можно почитать в этой статье.
-Четвертый способ — ручная реализация сортировки, например, сортировки пузырьком или сортировки слиянием.
-Class Object. Equals and HashCode
-
-Java-университет
-
 94. Дайте краткую характеристику class object в Java
 Во второй части разбора мы уже говорили о методах класса Object, и я напомню, что класс Object — прародитель всех классов в Java. У него есть 11 методов, которые, соответственно, наследуются всеми классами.
 Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10 - 4Информацию обо всех 11 методах можно найти во второй части разбора вопросов.
@@ -15193,23 +13714,7 @@ equals() — метод класса Object, задача которого — �
 Первое, что скажу — для корректной работы методов equals() и hashCode() их нужно правильно переопределить. После этого они должны соблюдать правила:
 одинаковые объекты, для которых сравнение через equals возвращает true, обязательно имеют одинаковые хеш-коды;
 объекты с одинаковыми хеш-кодами не всегда могут быть равны.
-На этом мы и сделаем паузу до следующей части разбора!Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10 - 6
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
+
  итоге внутренний порядок элементов переданного списка изменится: он будет отсортирован согласно компаратору элементов.
  
 Отмечу, что передаваемый список элементов должен быть мутабельным, т.е. изменяемым, иначе метод не сработает и будет выброшено UnsupportedOperationException.
@@ -15222,13 +13727,6 @@ someList = someList.stream().sorted().collect(Collectors.toList());
 
 someList = someList.stream().sorted(customComparator).collect(Collectors.toList());
 
- 
-Подробнее о Stream можно почитать в этой статье.
-Четвертый способ — ручная реализация сортировки, например, сортировки пузырьком или сортировки слиянием.
-Class Object. Equals and HashCode
-
-Java-университет
-
 94. Дайте краткую характеристику class object в Java
 Во второй части разбора мы уже говорили о методах класса Object, и я напомню, что класс Object — прародитель всех классов в Java. У него есть 11 методов, которые, соответственно, наследуются всеми классами.
 Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10 - 4Информацию обо всех 11 методах можно найти во второй части разбора вопросов.
@@ -15247,178 +13745,6 @@ equals() — метод класса Object, задача которого — �
 Первое, что скажу — для корректной работы методов equals() и hashCode() их нужно правильно переопределить. После этого они должны соблюдать правила:
 одинаковые объекты, для которых сравнение через equals возвращает true, обязательно имеют одинаковые хеш-коды;
 объекты с одинаковыми хеш-кодами не всегда могут быть равны.
-На этом мы и сделаем паузу до следующей части разбора!Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10 - 6
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии (4)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-fedyaka Уровень 36
-28 октября 2022
-Сорри, но для проверки вхождения объекта хватит O(1), потому что там всё та же хеш таблица, а что бы проверить хватит contains() и не нужно будет перебирать всю кучу
-Никита Мельников (MifitoS) Уровень 18
-13 августа 2021
-Огонь статья! Она будет легендарна
-(оставил свой след) 
-fFamous Уровень 51
-5 июля 2021
-Добавил в закладки, потом буду читать. Спасибо)
-Justinian Уровень 41 Master
-5 июля 2021
-класс Object — прародитель всех [остальных] классов в Java.
-
-если все классы в джаве это множество N, то класс Object прародитель для N-1 классов.
-
-Я понимаю, что это подразумевается, но многие потом ретранслируют не задумываясь, определение из JLS звучит следующим образом:
-4.3.2. The Class Object
-The class Object is a superclass (§8.1.4) of all other classes.
-
-
-Это так к слову, за статью жирный плюсик, хороший цикл, читайте статьи и мотайте на ус :)
-Комментарии (4)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-fedyaka Уровень 36
-28 октября 2022
-Сорри, но для проверки вхождения объекта хватит O(1), потому что там всё та же хеш таблица, а что бы проверить хватит contains() и не нужно будет перебирать всю кучу
-Никита Мельников (MifitoS) Уровень 18
-12 августа 2021
-Огонь статья! Она будет легендарна
-(оставил свой след) 
-fFamous Уровень 51
-5 июля 2021
-Добавил в закладки, потом буду читать. Спасибо)
-Justinian Уровень 41 Master
-5 июля 2021
-класс Object — прародитель всех [остальных] классов в Java.
-
-если все классы в джаве это множество N, то класс Object прародитель для N-1 классов.
-
-Я понимаю, что это подразумевается, но многие потом ретранслируют не задумываясь, определение из JLS звучит следующим образом:
-4.3.2. The Class Object
-The class Object is a superclass (§8.1.4) of all other classes.
-
-
-Это так к слову, за статью жирный плюсик, хороший цикл, читайте статьи и мотайте на ус :)
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 22 июня 2021
- 26697 views
- 5 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Статья из группы Random
-Салют!
-
-Быть программистом непросто. Нужно постоянно учиться, вечно познавать что-то новое. Но, как и в любом другом деле, самое сложное — начать, сделать первый шаг на пути к своей цели. И раз ты сидишь на данном сайте и читаешь данную статью, с первым шагом ты справился. А значит, теперь нужно целеустремленно двигаться к своей цели, не тормозя и не сворачивая на пути.
-
-Если я понимаю правильно, твоя цель — стать Java-разработчиком или усилить знания, если ты таковым являешься. Если всё так, то ты по адресу, ведь мы будем продолжать разбирать обширный список из 250+ вопросов на собеседованиях для Java-разработчика.
 
 Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9 - 1Продолжим!
 Collections
@@ -15466,8 +13792,6 @@ iterator.forEachRemaining(x -> System.out.print(x));
 Тут мы плавно подходим к LinkedList, а именно — к его методу listIterator(), который возвращает модернизированный вид итератора — ListIterator.
  
 Помимо методов обычного (стандартного) итератора, у этого есть дополнительные:
-
-AI Native University
 
 add(<Element>) — вставляет новый элемент в список;
 hasPrevious() — возвращает true, если есть элемент, расположенный перед указателем (есть ли предыдущий элемент);
@@ -15605,40 +13929,6 @@ ALL IN ONE
  
 Глубокий разбор HashMap вы можете найти в этой статье.
 
-На этом сегодня всё, продолжение следует…
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9 - 12
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии (5)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Anonymous #3101009 Уровень 11
-15 июля 2023
-Наверное, не логарифмическая, а алгоритмическая сложность?
-Никита Мельников (MifitoS) Уровень 18
-12 августа 2021
-В чем разница set(добавление по индексу) и add(добавление по индексу) для linkedlist? 
-Константин Уровень 1
-15 августа 2021
-set перезапишет элемент с определённым индексом, в то время когда add просто вставит новый элемент перед уже существующим элементом с таким индексом, при этом двигая элементы справа на одну ячейку вправо
-Justinian Уровень 41 Master
-22 июня 2021
-Хорошая статья, коллекции очень важная тема в разрезе собеседований и ей нужно уделить достаточно времени.
-
 Пару акцентов от меня:
 1. Насчет хэшмапы, если идет коллизия, допустим у нас есть Хэшмапа, и в нем два объекта типа Стринг:
 Вот сам массив, и условные диапазоны хэшкодов, которые содержат бакеты: 
@@ -15661,96 +13951,14 @@ if (e.hash == hash && (e.key == key || key.equals(e.key)))
 В интернете есть множество вариантов, на которые можно ориентироваться, можно использовать:
 data-structures-and-algorithms
 Это готовые упражнения, есть готовые тесты, с помощью которых можно проверить решение, также есть готовое решение (ответ) от автора в ветке completed, которое является ориентир
-Justinian Уровень 41 Master
-22 июня 2021
+
 3.
 Плюс рекомендую прочитать и периодически возвращаться к статьям:
 https://habr.com/ru/users/tarzan82/posts/
 там четыре статьи по HashMap, LinkedHashMap, ArrayList и LinkedList.
 по собесам неплохая подборка:
 https://github.com/enhorse/java-interview#java-collections
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
 
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 9 июня 2021
- 27336 views
- 6 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Статья из группы Random
-Практика или теория? Что важнее? Многие скажут, что, конечно, практика важнее. Мол, практикуйтесь до упора и будет вам счастье. Смею с этим не согласиться.
-
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8 - 1На собеседованиях никто и не узнает, насколько вы круты в практике. Вас будут спрашивать во весь рост именно по теории. И лишь потом, когда вы пройдете все круги собеседований и попадете на проект, вы примените ваши практические скилы.
- 
-Вы можете возразить: иногда дают тестовое задание и практика таки нужна. Не спорю, их иногда дают, но в том-то и дело, что ИНОГДА, а вот теоретическое собеседование проходит ВСЕГДА. 
- 
-Чувствуете разницу?
- 
-Поэтому у вас должен быть твёрдый теоретический фундамент под ногами, укреплением которого мы сегодня и продолжим заниматься.
- 
-А именно — мы продолжим разбор вопросов, которые часто задают на собеседованиях.
 71. Что будет, если мы не будем переопределять метод toString() для Enum?
 Предположим, у нас есть следующий enum:
 
@@ -15804,9 +14012,6 @@ public enum Role {
  
 Вот пример того, как будет выглядеть автоматически сгенерированный метод equals для простейшего класса Cat с двумя полями — int age и String name:
  
-
-Java-университет
-
 @Override
 public boolean equals(final Object o) {
    if (this == o) return true;
@@ -15971,139 +14176,6 @@ Statement уязвим к SQL инъекциям, в то время как Prep
 
 Если вы положили начало в изучении технологии соединения Java приложения с Базой Данных — JDBC, советую начать с этой статьи.
 
-Что ж, на данном моменте мы сегодня и сделаем остановку.Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8 - 11
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии (6)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-Илья Уровень 30
-12 июня 2021
-thanks a lot)
-Anonymous #2552385 Уровень 23
-11 июня 2021
-Кааак это все можно запомнить?? 😭😭😭
-Justinian Уровень 41 Master
-12 июня 2021
-А ты попробуй сесть на лавке и понаблюдать за процессом ходьбы человека. Сколько сотен мышц участвует и как это все происходит, одни сгибаются, другие разгибаются, работают сухожилия, сосудистая система, мозг контролирует уровень гормонов, изменяется сердечный ритм, по разному регулируется работа легких, внутренние гироскопы и система предугадывания и ответной реакции постоянно находится в активном состоянии калькуляции баланса и обстановки под подошвой...Сотни систем, тысячи винтиков работают в связке чтобы обеспечить простую ходьбу.
-
-А как это все можно сделать?
-
-Ответ простой - практика, практика, практика, сотни и тысячи повторений превращают абстрактные знания в навыки, формируются нейронные цепочки.
-
-Поэтому речь стоит не "в запомнить", а в "понять", прочитал статью, попытался понять ее в данный момент времени, если есть вопросы, гугль или раздел Помощь, покрутить в Идее.
-
-И решать задачи, задачи, задачи, писать код, код, и потом, по мере практики, спустя дни, недели, месяцы, а то и годы, все начнет складываться в одну картинку.
-
-У тебя не будет вопрос "я это помню или нет", у тебя это будет на уровне мышечной памяти, как навык, надо энамчик, я сделаю так  так и так. Откуда знаю? Поскольку разбирал, возвращался несколько раз, использовал в практике.
-
-Единственное исключение, когда перед собесами нужно готовиться, но там зубрить идея так себе, разве что для автоматизированных тестов, хороший интервьюер сразу раскусит зазубренный но не понятый материал, один вопрос в сторону и ответ на него вместо тысячи слов сразу покажет, человек разбирается в том, о чем говорит или говорит но при этом вообще не понимает что именно.
-
-Так что не переживай, всему свое время, ключ к крепким знаниям - практика и время, с этим тот же джава раш справляется хорошо. Время от времени, закрывать проблемные вопросы самому, подзабыл что-то, быстро гуглянул, ага, вспомнил, разобрал и пошел дальше.
-
-Только когда будет N часов программирования, начнут те или иные вещи сходиться
-Anonymous #2552385 Уровень 23
-16 июня 2021
-Спасибо! не зря говорят, что программирование это навык. Только я паникую, потому что это все вопросы с собеседований( и по ходу таки это надо знать, раз спрашивают
-Anonymous #2552385 Уровень 23
-16 июня 2021
-а еще скисла, потому что на лямбдах сижу уже неделю, тяжко мне заходят
-hidden #2641196 Уровень 51
-10 июня 2021
-Очень полезные статьи, спасибо. Как раз сейчас готовлюсь к марафону интервью.
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-Java FullStack
-Python FullStack
-AI Native Developer
-Web FullStack
-Курсы
-Задачи
-Опросы
-Игры
-Помощь
-График пинков
-Стажировка
-Пользователи
-Форум
-Чат
-Статьи
-Истории успеха
-Активности
-Отзывы
-
-Статья
-Поиск
-
-Отзывы
-О нас
-CS50
-JavaRush University
-
-JavaRush
-/
-Java блог
-/
-Random
-/
-Разбор вопросов и ответов с собеседований на Java-разрабо...
-Константин
-1 уровень
- 24 мая 2021
- 27754 views
- 4 comments
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7
-Статья из группы Random
-Hey everyone!
- 
-Программирование полно подводных камней. И нет практически ни одной темы, в которой вы не споткнетесь и не набьете шишки. Особенно это касается новичков.
- 
-Уменьшить количество этого можно лишь одним способом — учиться. В частности это касается подробных разборов самых базовых тем.
- 
-Сегодня продолжаю разбор вопросов 250+ с собеседований на Java-разработчика, которые хорошо охватывают базовые темы. Отмечу, что в списке есть и не совсем стандартные вопросы, позволяющие взглянуть на обычные темы под другим углом.Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7 - 1
 62. Что такое строковый пул и зачем он нужен?
 В памяти в Java (Heap, о которой мы ещё поговорим) есть область — String pool, или строковый пул.
  
@@ -16153,7 +14225,6 @@ System.out.println(firstStr == thirdStr);
 System.out.println(secondStr == thirdStr);
 
 ALL IN ONE
-
 
 в результате мы получим в консоли три значения true, а значит, все три переменные ссылаются на одну и ту же строку.Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7 - 2
 63. Какие GOF-шаблоны применяются в строковом пуле?
@@ -16421,31 +14492,6 @@ public enum Role {
 }
 
 На этом на сегодня у меня всё, до следующей части!Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 7 - 6
-Другие материалы серии:
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 1
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 2
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 3
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 4
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 5
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 6
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 8
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 9
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 10
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 11
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 12
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 13
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 14
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 15
-Разбор вопросов и ответов с собеседований на Java-разработчика. Часть 16
-Комментарии (4)
-ЧТОБЫ ПОСМОТРЕТЬ ВСЕ КОММЕНТАРИИ ИЛИ ОСТАВИТЬ КОММЕНТАРИЙ,
-ПЕРЕЙДИТЕ В ПОЛНУЮ ВЕРСИЮ
-hidden #2322530 Уровень 41
-27 мая 2021
-Пример весьма простой, но он наглядно демонстрирует как применение данного шаблона может сэкономить наши ресурсы. Ну и как вы заметили, логика данного паттерна уж больно похожа на логику работы страхового пула.
-
-
-когда ты даже перевести нормально не можешь даже.
 
 Очевидно, что в данном вопросе речь идёт о методе split. У класса String есть две вариации данного метода:
 String split(String regex);
@@ -16456,137 +14502,6 @@ String split(String regex);
 public String[] split(String regex, int limit)
 public String[] split(String regex)
 
-ты снова забыл головой подумать.
-
-когда jR ни на что больше не способен, кроме как коряво чужие тексты переводить. а другие им потокают))) прямо восхищаются. стыдно, очень стыдно должно быть.
-Константин Уровень 1
-27 мая 2021
-"когда ты даже перевести нормально не можешь даже."  и  " jR ни на что больше не способен, кроме как коряво чужие тексты переводить" 
-Перевести? Банальную опечатку ты интерпретируешь как перевод?
-И я тебя удивлю, но я не из команды JS и переводами текстов не занимаюсь. 
-Пишу статьи в свободное от работы время, и да иногда случаются опечатки, так как не  всегда хватает времени проверить всё досконально.
-AlexGJuice Уровень 41
-22 июня 2021
-Продолжайте писать, даже и с опечатками, пусть читатель чувствует себя умным, найдя ошибки, если ему так охота. Сам то он не способен писать.
-Токсичные люди встречаются везде.
-Паровозик, который смог Уровень 41
-24 мая 2021
-Константин, от меня лично спасибо большое за труды! Отличная работа.
-Добавьте, пожалуйста, в эту статью ссылки на предыдущие материалы, ну и в предыдущих статьях на эту. Вообще отлично будет :)
-Обучение
-Курсы программирования
-Регистрация
-Курс Java
-Помощь по задачам
-Цены
-Задачи-игры
-Сообщество
-Пользователи
-Статьи
-Форум
-Чат
-Истории успеха
-Активности
-Компания
-О нас
-Контакты
-Отзывы
-FAQ
-Поддержка
-JavaRushJavaRush — это интерактивный онлайн-курс по изучению Java-программирования c нуля. Он содержит 1200 практических задач с проверкой решения в один клик, необходимый минимум теории по основам Java и мотивирующие фишки, которые помогут пройти курс до конца: игры, опросы, интересные проекты и статьи об эффективном обучении и карьере Java‑девелопера.
-Подписывайтесь
-Язык интерфейса
-
-Русский
-"Программистами не рождаются" © 2026 JavaRush
-Скачивайте наши приложения
-Google Play
-App Store
-MastercardVisa
-
-
-
-WsCube Tech Blog
-Online Programs 
-Digital Marketing
-Data Science & Analytics
-NEW
-AI Programs
-NEW
-Full Stack Development
-Cyber Security
-App Development
-Digital Marketing
-
-Digital Marketing
-Mentorship Program
-
-Advanced AI Marketing
-Bootcamp
-NEW
-
-Performance Marketing
-Bootcamp
-
-SEO Specialist
-Bootcamp
-On-Campus Programs 
-Jaipur
-NEW
-Jodhpur
-NEW
-Jaipur Campus Programs
-
-Digital Marketing
-Mentorship Program
-
-MERN Stack
-with AI Engineering
-
-Data Analytics
-Mentorship Program
-
-Data Science & AI
-Mentorship Program
-NEW
-Masterclass
-Free Resources
-Alumni
-Career Roadmap 
-Blog
-Search Articles & More...
-About
-Masterclass
-Free Resources
-Alumni
-Career Roadmap 
-Blog
-Home
-Blog
-Interview Questions
-155+ Java Interview Questions and Answers (2026 Updated)
-155+ Java Interview Questions and Answers (2026 Updated)
-Interview Questions
-Web Development
-By Virendra Soni
-August 12, 2026
-83 min read
-Table of Contents
-Java Interview Questions for Freshers & Beginners
-Java String Interview Questions
-Java Collections Framework Interview Questions
-Intermediate Java Interview Questions for Experienced (2-5 Years)
-Advanced Java Interview Questions and Answers for Experienced (5-10 Years)
-Java Coding Interview Questions
-List of Java 8 Interview Questions
-Practice Java Programs for Interview Preparation
-155+ Java Interview Questions and Answers (2026 Updated)
- Share This Article
-Java remains one of the most widely used programming languages for building web, mobile, and enterprise applications. Its platform independence, reliability, and strong community support make it a preferred choice for developers worldwide. 
-
-With companies hiring Java developers across backend, Android, and cloud roles, a clear understanding of core concepts and coding skills matters more than ever. Practising Java interview questions helps you revise important topics such as OOP, collections, exception handling, multithreading, and modern Java features. It also builds confidence and sharpens your problem solving. 
-
-In this blog, you will find the most commonly asked questions, expert answers, and useful tips. Everything is grouped by topic and experience level, so freshers and experienced developers can both find what they need and prepare with ease. 
 
 Java Interview Questions for Freshers & Beginners
 Below are some commonly asked Java interview questions and answers for freshers that cover the basic concepts of Java. These questions can help you strengthen your fundamentals and prepare effectively for technical interviews. 
@@ -16852,13 +14767,6 @@ Objects are created from classes. 	Objects are prototype-based, though class syn
 Higher memory consumption. 	Lower memory consumption. 
 Files use the .java extension. 	Files use the .js extension. 
 Mainly used for backend, enterprise, and Android development. 	Used for both frontend and backend development. 
-Recommended Professional
-Certificates
-
-
-
-
-
 
 21. Which Java class is considered a superclass of all other classes?
 The Object class is the superclass of all classes in Java. Every Java class directly or indirectly inherits from the Object class. 
@@ -17266,6 +15174,7 @@ Use StringBuilder in single-threaded code, and StringBuffer only when the same o
 
 Note: String handling questions often come with a small code snippet, so it helps to practise running them yourself. You can test all of these examples in our online Java compiler without setting anything up locally.
 
+
 Java Collections Framework Interview Questions
 1. How does HashMap work internally in Java?
 This is one of the most commonly asked advanced Java interview questions. A HashMap stores data as key-value pairs using an array of buckets.
@@ -17630,6 +15539,7 @@ catch – Handles the exception if one occurs in the try block.
 finally – Contains code that is always executed, whether an exception occurs or not. 
 Using try-catch-finally improves program reliability and ensures that important cleanup tasks, such as closing files or database connections, are performed properly. 
 
+
 Advanced Java Interview Questions and Answers for Experienced (5-10 Years)
 If you have 5–10 years of experience in Java development, the questions below will help you prepare for advanced technical interviews. These commonly asked topics focus on deeper Java concepts and real-world application knowledge. 
 
@@ -17956,6 +15866,7 @@ Wrapper classes are useful when working with collections, generics, and APIs tha
 
 Note: Once you have gone through these advanced topics, it is worth checking how much you actually remember. Try our Java quiz to identify the areas that still need revision before your interview.
 
+
 Java Coding Interview Questions
 Almost every Java interview includes at least one coding round. The questions below are the ones that come up most often, along with the approach interviewers expect. For a wider set of practice problems, go through our collection of Java programs covering strings, arrays, patterns, and collections. 
 
@@ -18042,11 +15953,6 @@ Being able to give both a loop-based and a Streams-based solution is what distin
 
 Note: Solving problems under time pressure is a different skill from writing code at your own pace. Working through structured Java coding challenges is the closest practice you can get to an actual interview round.
 
-List of Java 8 Interview Questions
-Java 8 is among the newest versions of this programming language. The Java 8 interview questions can be asked to a candidate with any experience level. Undoubtedly, the level of questions will be according to your experience range. 
-
-Here are some of the most common interview questions on Java 8:
-
 What are the new features in Java SE 8?
 What are some of the main benefits of using Java 8?
 Define optional class. 
@@ -18069,120 +15975,6 @@ What is the difference between collection and stream?
 Explain the role of JJS in Java 8. 
 Find Java 8 interview questions and answers by clicking on the linked write-up 
 
-Practice Java Programs for Interview Preparation
-Java Hello World Program
-Java Program to Print an Integer
-Java Program to Add Two Numbers
-Even or Odd Program in Java
-Java Program to Check Leap Year
-Multiplication Table in Java
-Java Program to Convert Kilometers to Miles
-Star Pattern in Java
-Palindrome Program in Java
-Power of a Number in Java
-Java Program to Find Square Root of a Number
-Swap Two Numbers in Java
-Java Program to Find ASCII Value of a character
-Java Program to Check Character is Alphabet or Not
-Vowel or Consonant Program in Java
-Neon Number in Java
-Lucky Number Program in Java
-Happy Number in Java
-Unique Number in Java
-Triangular Number in Java
-For more Java Programs to practice, visit our Java Programs page.
-
-Article by
-
-Virendra Soni
-
-Virendra is an SEO Content Writer with 7+ years of experience in blogging, content marketing, SEO, and content editing. He holds a B.Tech. in Electronics and Communication Engineering (ECE) and has worked across the IT and EdTech industries. Virendra specializes in creating SEO-friendly, user-focused content that drives organic traffic and improves search rankings. His mantra is simple: keep it clear, make it memorable, and create content that both readers and search engines love.
-View all posts by Virendra Soni
- View LinkedIn Profile
-Web Development
-Categories
-Digital Marketing
-Web Development
-SEO
-Data
-App Development
-Artificial Intelligence
-Career Roadmap
-Career Guidance
-Interview Questions
-Popular Articles
-Why Online Learning is Becoming Popular
-5 Reasons Why Online Learning is Becoming Popular in India
-
-On-Demand Mobile App Development
-On-Demand Mobile App Development: Features, Benefits, Cost in 2026
-
-Benefits of Mobile Application for Businesses
-Top 10 Benefits of Mobile Application for Businesses in 2026
-
-Category:
-Interview Questions
-Web Development
-Share This Article
-Leave a comment
-Your email address will not be published. Required fields are marked *
-Leave a comment*
-Your name*
- 
-Your email*
- 
-Your website
- Save my name, email, and website in this browser for the next time I comment.
-Post Comment
-Comments (0)
-No comments yet.
-
-Related articles
-Our latest and greatest step-by-step guides on all SEO, AI search, link building, and content marketing.
-
-MERN Stack Developer Salary in India (Fresher to Senior)
-MERN Stack Developer Salary in India 2026 (Fresher to Senior)
-Choosing a career often comes down to two things: money and passion. If you are drawn to web development, you…
-
-Web Development
-24 min read
-Full Stack Developer vs Software Engineer: Differences & Comparison
-Full Stack Developer vs Software Engineer: Differences & Comparison
-Choosing a career in tech often starts with one common question. Should you become a full stack developer or a…
-
-Career Guidance
-26 min read
-15 Best Python Books for Beginners to Advanced
-15 Best Python Books for Beginners to Advanced [2026] 
-Python is one of the most popular and widely used programming languages in the world today. Beginners choose it for…
-
-Data
-44 min read
-Get Free Career Counselling 
-
-Java
-Programming Languages
-Spring
-Spring Boot
-Interview
-Java Full Stack Developer Interview Questions and Answers
-2024 Java Full Stack Developer Interview Questions and Answers
-Java Codeex
-Java Codeex
-
-Follow
-9 min read
-·
-Jun 7, 2024
-18
-
-
-1
-
-
-
-
-One of my friend recently attended an interview at a top product-based organization. These are the questions they were asked. If you are planning to attend any interviews, just go through these questions once; it will help you.
 
 Java
 
@@ -18325,6 +16117,7 @@ listOfNumbers.parallelStream().forEach(number ->
 );
 22. Java 8 features
 
+
 Spring Boot
 Explain the concept of AspectOriented Programming (AOP)?
 AspectOriented Programming (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of crosscutting concerns (such as logging, security, and transaction management) from the business logic. In Java, AOP is implemented through aspects, which are modular units that encapsulate behaviors affecting multiple classes. AOP concepts include:
@@ -18337,14 +16130,6 @@ Use cases: Logging, transaction management, security checks, performance monitor
 @AspectJ: It is an annotation based syntax for defining aspects in Spring AOP. It uses annotations like @Aspect, @Before, @After, @Around, etc., to declare aspects and advice in Java classes.
 Traditional AOP: Involves configuring aspects in XML files. It requires defining pointcuts and advice in an XML configuration, which can be less intuitive and harder to maintain than annotationbased approaches.
 Differences: @AspectJ provides a more concise and readable way to define aspects within the code, while traditional AOP separates the aspect configuration from the business logic, which can be beneficial for clear separation of concerns.
-
-Get Java Codeex’s stories in your inbox
-Join Medium for free to get updates from this writer.
-
-Enter your email
-Subscribe
-
-Remember me for faster sign in
 
 3. Instantiating Multiple Beans of the Same Class with Spring Annotations
 The @Primary annotation in Spring is used to indicate which bean should be given preference when multiple beans of the same type exist. It helps resolve ambiguity during autowiring by specifying a primary candidate
@@ -18486,27 +16271,6 @@ diff between directive and components
 How to configure routers in angular
 Diff between AOT and JIT compiler
 diff between angular vs react
-Thank you, keep learning!
-
-ajtech
-Thank you for reading until the end. Before you go:
-
-Please consider clapping and following the writer! 👏
-Follow us on LinkedIn | YouTube
-Follow me for more exciting content
-
-[**Follow me on Medium**](https://medium.com/@saijanand)
-
-
-Главная → Блог → ТОП-21 вопрос Java-разработчику Junior, Middle, Senior на собеседовании
-ТОП-21 вопрос Java-разработчику Junior, Middle, Senior на собеседовании
-BGStaff рассказывает, что спрашивают на собеседовании Java-разработчика. Хотите правильно оценить хард скилзы кандидатов? Читайте!
-
-Поделиться:
-В статье мы расскажем о том, что спрашивают на собеседовании Java-разработчиков уровней Junior, Middle, Senior. А также приведем список вопросов для каждой из категорий. Это поможет вам понять, от чего следует отталкиваться при интервьюировании IT-специалистов этого направления.
-
-Вопросы на собеседовании для Java-разработчика Junior
-Это программист, который начинает свою карьеру в IT-сфере. Он работает под руководством более опытных коллег или руководителя проекта. Занимается выполнением простых задач: написанием кода, тестированием программного обеспечения и т. д. Параллельно он обучается и развивается, получая опыт и навыки, которые позволяют ему стать более опытным IT-специалистом со временем, получив уровень Middle и Senior.
 
 ТОП-7 вопросов для Java-разработчика уровня Junior:
 Можно ли в Джава переопределить статический метод?
@@ -18518,12 +16282,6 @@ BGStaff рассказывает, что спрашивают на собесе�
 Как Джава достигает независимости от платформы?
 HR-менеджеры с большой осторожностью относятся к найму разработчиков уровня Junior, так как опасаются, что на их обучение потребуется слишком много времени и других ресурсов. Однако среди начинающих Java-developer могут скрываться ценные кадры с новыми идеями, которые принесут пользу компании.
 
-Вопросы на собеседовании для Java-разработчика Middle
-Это программист с опытом работы и знаниями среднего уровня. Он уже обладает знаниями, чтобы самостоятельно заниматься несложными проектами, но еще не имеет достаточных навыков и опыта, чтобы решать сложные задачи или распределять работу между другими IT-специалистами.
-
-Middle-разработчик, который проходит собеседование, должен хорошо знать язык программирования, понимать основы архитектуры программного обеспечения. Он также должен быть знаком с инструментами и технологиями, используемыми в разработке, уметь самостоятельно решать типичные задачи и проблемы, возникающие в процессе работы.
-
-
 
 Вопросы на собеседовании для Java-developer уровня Middle:
 Откуда вы узнавали постановку задач, как понимали что делаете свою работу правильно?
@@ -18534,7 +16292,6 @@ Middle-разработчик, который проходит собеседо�
 Есть однопоточный сервис для перевода денег между пользователями, можно уйти в минус, но нужно следить чтобы деньги не потерялись (сумма на всех счетах является инвариантом). Что необходимо учесть, чтобы сделать сервис многопоточным?
 Что такое PECS, как используется?
 Developer уровня Middle должен иметь достаточный уровень подготовки, чтобы работать над проектами самостоятельно. Знание теории является обязательным.
-
 
 
 Вопросы на собеседовании для Java-разработчика Senior
@@ -18550,21 +16307,6 @@ Developer уровня Middle должен иметь достаточный у�
 Как вы обновляете свои знания и следите за последними трендами в разработке?
 На интервью с разработчиками различных уровней часто задают технические вопросы. Соответственно, нужно обладать достаточной компетенцией, чтобы правильно оценить ответы на них. Если HR-менеджер не имеет соответствующего технического образования, подготовиться к собеседованию ему будет сложно. Поэтому экспертную оценку hard skills кандидатов могут провести специалисты кадрового агентства BGStaff. Также мы можем подобрать для вас разработчика любого уровня без предоплаты. Первый кандидат – через 3 дня.
 
-
-Interview Questions
-Getting Started as a Java Full Stack Engineer
-Common Java Full Stack Engineer Interview Questions
-Behavioral Interview Questions for Java Full Stack Engineers
-Technical Interview Questions for Java Full Stack Engineers
-What is a Java Full Stack Engineer
-Certifications
-Java Full Stack Engineer Jobs
-Build the Resume That Got You the Interview
-
-Sign Up for Free
-Preparing for a Java Full Stack Engineer interview can feel overwhelming—you’re expected to speak fluently about everything from Spring Boot to React, from SQL optimization to Docker containerization. But the good news? Most interviewers ask predictable questions that follow clear patterns. With the right preparation strategy and concrete examples, you can walk into your interview confident and ready to showcase both your technical depth and your ability to solve real-world problems.
-
-This guide walks you through the most common Java Full Stack Engineer interview questions you’ll encounter, provides realistic sample answers you can adapt, and gives you frameworks for thinking through technical challenges on the spot. Whether this is your first full stack role or you’re transitioning to a new company, you’ll find practical, actionable advice here.
 
 Common Java Full Stack Engineer Interview Questions
 Tell me about your experience with Spring Boot and how you’ve used it in production.
@@ -19211,28 +16953,6 @@ There are broadly 2 categories of mocking frameworks:
 Let’s compare both these frameworks on different parameters.
 	Proxy based	Bytecode based
 		
-Simplicitly	More simple and easy to use	Might involve complex mock setup logic
-Mode of creation	A proxy or fake object which does not actually require instance of class / interface is created	It essentially involves creating objects and at runtime manipulates the instances for the mocked/stubbed behavior
-Functionality	Mocking classes and interfaces	In addition to classes and interfaces, allows mocking static methods, final classes etc
-Java dependency	Not very tightly coupled to Java versions	Since these frameworks involve bytecode manipulation they are tightly coupled and might not be backward/forward compatible across java versions.
-Examples	Mockito, EasyMock etc.	PowerMock, JMockit etc.
-
-30
-30+ Java String Interview Q&A for Professional Interviews
- Download as PDF
-
-Java is one of the most widely used programming languages today, and strings are a crucial component of any Java program. As a Java developer, you will undoubtedly face several challenges when dealing with string manipulation, and you must be well-versed in the language's nuances to tackle these issues. To assist you in preparing for your next Java interview, we have compiled a list of top Java String Interview Questions.
-
-This article will cover String Programming Interview Questions in Java, String programming interview questions in java for experienced, String Coding Interview Questions in Java, Java String Interview Questions for 5 Years Experience, String Interview Questions And Answers for Experienced in Java, Interview Questions On String Programs in Java, Java String Interview Questions Programming, String And Array Interview Questions in Java, and String Java Coding Interview Questions. So let's get started and enhance our Java programming skills.
-
-Join Skill Academy by Testbook’s Full Stack Development Career Program now!
-
- Download as PDF
-
-Share
-Top 30+ Java String Interview Questions and Answers in 2023
-In 2023, Java continues to be one of the most widely used programming languages in the world, and its built-in String class remains a crucial component of any Java developer's toolkit. In this article, we've compiled a list of over 30 interview questions and answers focused specifically on Java String handling. Whether you're a seasoned developer preparing for an upcoming interview or just looking to improve your knowledge of this important topic, this guide is a valuable resource to help you succeed. From basic concepts like immutability and memory allocation to more advanced topics like regular expressions and the StringJoiner class, we'll cover it all. So, without further ado, let's dive into the world of Java String handling!
-
 Q1. What is a string pool in Java? How does it work? Why string is immutable in java?
 Answer 1: String pool is a part of Java memory where all the String literals are stored in a pool. It is a special area of heap memory. When a new string is created, Java checks if it already exists in the string pool, if it does, it returns the reference to that object, otherwise it creates a new object and adds it to the string pool. This helps in saving memory as it avoids creating new objects for every new string.
 
@@ -19739,35 +17459,6 @@ Q39. How is a string stored in Java?  How is an empty string stored in Java?
 String objects are stored in the heap in Java. The Java Virtual Machine (JVM) holds the characters of a string created in a char array.  The string object keeps a reference in this char array. The JVM allocates memory in the heap for the string object and its char array. 
 How an empty string is stored in Java is one of the important Java String Interview questions.  An empty string in Java is a string that has zero length.  An empty string is a valid string with some value. It is stored in the string pool allocated in the Java heap.
 
-
-Crack UGC NET, SET & JRF with India’s Top Educators
-Get UGC NET/SET SuperCoaching @ just
-
-₹35999
-₹12249
-wallet Your Total Savings ₹23750
-Explore SuperCoaching
-Want to know more about this Super Coaching ?
- Download Brochure
-People also like
-Goal Card Image
-UGC NET/JRF Dec 2026 (Guaranteed Selection Program)
-₹36999 (60% OFF)
-₹15158 (Valid for 7 months)
-Explore this Supercoaching
-Goal Card Image
-MPSC Combined Group C 2026
-₹4999 (61% OFF)
-₹1999 (Valid for 12 months)
-Explore this Supercoaching
-Goal Card Image
-Nirnay IAS 2027 - Prarambh (प्रारम्भ) Batch - 6 (Hinglish)
-₹110000 (13% OFF)
-₹95999 (Valid for 24 Months)
-Explore this Supercoaching
- Download as PDF
-
-Share
 How to Prepare for Java String Interview Questions?
 Preparing for Java string interview questions requires both theoretical knowledge and practical skills. Here are some tips to help you prepare:
 
@@ -19777,13 +17468,6 @@ Practice coding: Practice coding string-related problems, such as string concate
 Review common interview questions: Review common Java string interview questions and practice answering them. This will help you become more comfortable with the interview process and give you the confidence you need to succeed.
 Stay up-to-date: Keep up-to-date with the latest Java string-related updates, news, and trends. This will help you stay relevant and demonstrate your commitment to the field.
 By following these tips, you'll be well-prepared to answer Java string interview questions and demonstrate your knowledge and skills to potential employers.
-
-Also Read: JavaScript Logical Interview Questions
-
-Java String Interview Questions are an important aspect of any Java interview. String manipulation is a common task in programming, and it is important to have a good understanding of various String methods and operations. By preparing for these interview questions, you can increase your chances of landing your dream job. Remember to practice your coding skills and keep up-to-date with the latest advancements in Java programming.
-
-We hope this article has provided you with valuable insights and helped you prepare for your next interview. Download the Testbook Skill Academy App now and get ready to learn 21st-century skills and make yourself job-ready.
-
 
 Общие вопросы по тестированию:
 Что такое тестирование? Какие его цели?
@@ -19849,76 +17533,6 @@ Cucumber (для BDD)
 Написание SQL-запроса для выборки данных из базы.
 Написание теста для API с использованием RestAssured.
 
-Это далеко не полный список вопросов, но он охватывает основные области знаний, которые могут быть важны для автотестировщика на Java. Готовьтесь к собеседованию, уделяя внимание как теоретическим аспектам, так и практическим навыкам работы с инструментами и фреймворками.
-
-Подписывайтесь на канал и разбирайте все вопросы вместе с нами!
-
-Не забудь подписаться на канал QA Helper
-
-Пишите в комментариях какой пункт было бы интересно рассмотреть более подробно.
-
-Также будет интересно почитать: Вопросы которые задают на собеседовании тестировщикам
-
-
-С подпиской рекламы не будет
-Подключите Дзен Про за 159 ₽ в месяц
-
-
-Подключить
-
-Рекомендуем почитать
-12 минут
-ИТ рекрутинг. HR-блог про поиск работы | Майя Литвина
-1548 читали · 8 месяцев назад
-
-Тестовые задания при приеме на работу - рабство под соусом «оценки»: когда отказывать, как торговаться и как брать деньги
-Когда-то тестовое задание было простым инструментом — способом убедиться, что человек действительно умеет то, что указано в резюме. Маленькая проверка, короткий пример. Но со временем эта проверка превратилась в индустрию бесплатного труда, завёрнутого в красивую обёртку под названием “оценка навыков”. Сегодня под видом “теста” компании получают готовые решения, концепции, тексты, прототипы и стратегии. Бесплатно. Без обязательств. Без ответственности. Это уже не оценка — это рабство, узаконенное в культуре найма...
-4 минуты
-yagdmitrij
-279 читали · 1 год назад
-
-И снова ob... объектах
-Объекты в java занимают очень важную нишу. Вникнув в работу объектов, изучив все их тонкости – это огромный шаг в изучении языка программирования. В рамках одной статьи полностью охватить данный материал проблематично, поэтому решил посвятить object-ам еще одну статейку. Что у нас будет в статье. 1. Объекты и примитивные типы 2. static для объектов 3. Как ведут себя объекты 4. Объекты и Злостный Мусорщик Еще раз повторюсь, в java все построено на объектах или почти все...Вот к этому «почти» и относятся...
-6 минут
-VasyaZnaet
-4780 читали · 11 месяцев назад
-
-Сколько людей хотят работать программистами, а скольких возьмут: посчитала соотношение количества резюме к открытым вакансиям
-Итак, я взяла 6 самых востребованных на сегодня языков программирования и оценила соотношение предложения и спроса для разработчиков. То есть сколько всего вакансий открыто и сколько желающих работать в данном направлении. Для чего это нужно? Да просто надоело слушать, что айтишников не хватает, что программирование самая перспективная область, что всем юным и не очень людям нужно обязательно учиться только на разработчиков и прочее бла-бла. Вот вам реальная картина на сегодняшний день. Все очень...
-
-Карьера и трудоустройство
-266,5 тыс интересуются
-
-
-Следить за темой
-
-vipavenue.ru
-Реклама
-Скидки до -50% на коллекции весна-лето в VIPAVENUE
-Узнать больше
-favicon
-stolichki.ru
-Перейти
-
-Расскажу кратко
-
-
-
-Java Unit Testing: методики, понятия, практика
-Константин
-1 уровень
- 27 января 2020
- 118002 views
- 14 comments
-Java Unit Testing: методики, понятия, практика
-Статья из группы Random
-Сегодня и не встретишь приложения, не обвешанного тестами, поэтому эта тема будет как никогда актуальна для начинающих разработчиков: без тестов — никуда.
-
-На правах рекламы предложу просмотреть мои прошлые статьи. В некоторых из них затрагиваются тесты (да и так статьи будут весьма полезны):
-Интеграционное тестирование БД с помощью MariaDB для подмены MySql
-Реализация мультиязычности приложения
-Сохранение файлов в приложение и данных о них на БД
-Рассмотрим, какие виды тестирования используют в принципе, а после этого детально изучим все, что нужно знать о юнит-тестировании.
 Виды тестирования
 Что такое тест? Как гласит Вики: «Тест или испытание — способ изучения глубинных процессов деятельности системы посредством помещения системы в разные ситуации и отслеживание доступных наблюдению изменений в ней».
 
