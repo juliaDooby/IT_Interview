@@ -1,48 +1,3 @@
-Simplilearn - Online Certification Training Course Provider
-All Courses
-What do you want to learn?
-For Business
-Resources
-More
-Login
-Software Development
-ArticlesEbooksFree Practice TestsOn-demand WebinarsTutorials
-HomeResourcesSoftware DevelopmentKruskal’s Algorithm: Key to Minimum Spanning Tree [MST]
-Table of Contents
-What is Kruskal's Algorithm?
-Importance of Kruskal's Algorithm in Graph Theory
-What is a Spanning Tree?
-What is a Minimum Spanning Tree? 
-How Many Edges Does a Minimum Spanning Tree Have? 
-How Does Kruskal's Algorithm Work?
-Key Components in Kruskal’s Algorithm
-How to Find the Minimum Spanning Tree Using Kruskal’s Algorithm?
-Implementation of Kruskal Algorithm in C
-Implementation of Kruskal Algorithm in C++
-Implementation of Kruskal Algorithm in Python
-Implementation of Kruskal Algorithm in Java
-Kruskal's Algorithm Time Complexity and Efficiency
-Kruskal's Algorithm Applications
-Conclusion
-FAQs
-Kruskal’s Algorithm: Key to Minimum Spanning Tree [MST]
-By Haroon Ahamed Kitthu
-Share This Article:
-Last updated on Jul 14, 2026236456
-Kruskal’s Algorithm: Key to Minimum Spanning Tree [MST]
-Kruskal’s algorithm is the concept that is introduced in the graph theory of discrete mathematics. It is used to discover the shortest path between two points in a connected weighted graph. This algorithm converts a given graph into a forest, considering each node a separate tree. These trees can only link to each other if the edge connecting them has a low value and doesn’t generate a cycle in the MST structure. In this tutorial, you will learn more about the Kruskal's Algorithm.
-
-Become a Job-Ready Full-Stack DeveloperAI-Powered Full Stack Developer ProgramEXPLORE COURSEBecome a Job-Ready Full-Stack Developer
-What is Kruskal's Algorithm?
-Kruskal's Algorithm is a classic algorithm used in graph theory to find the Minimum Spanning Tree (MST) of a connected, undirected graph. The MST is a subset of the edges that connects all the vertices without any cycles and with the minimum possible total edge weight. Kruskal's Algorithm is greedy, meaning it builds the MST by always choosing the next shortest edge that doesn't form a cycle.
-
-Steps of Kruskal's Algorithm
-Sort All Edges
-Initialize Subsets
-Iterate Over Sorted Edges
-Repeat Until MST is Complete
-Boost your career with our AI-Powered Full Stack Developer Course. Gain in-depth expertise in development and testing with the latest technologies. Enroll today and become a skilled Full Stack Developer!
-Importance of Kruskal's Algorithm in Graph Theory
 Kruskal's Algorithm is one of the cornerstone algorithms in graph theory, widely used for finding the Minimum Spanning Tree (MST) of a connected, weighted graph. Here's why it is essential:
 
 1. Efficient MST Construction
@@ -795,6 +750,7 @@ Mastering Kruskal's Algorithm opens doors to understanding fundamental concepts 
 
 Ready to take your skills to the next level? Enroll in Simplilearn’s AI-Powered Full Stack Developer Course. Gain comprehensive knowledge and hands-on experience in full-stack development, equipping you with the expertise to excel in the tech industry. Join now and start your journey to becoming a proficient developer!
 
+
 FAQs
 1. What is the Logic of Kruskal Algorithm?
 Kruskal's Algorithm finds the Minimum Spanning Tree (MST) of a connected, undirected graph by iteratively selecting the shortest edge that does not form a cycle. It starts by sorting all edges by weight and then uses a union-find data structure to efficiently check and merge disjoint sets of vertices, ensuring no cycles are formed. The process continues until the MST contains V−1 edges, where V is the number of vertices.
@@ -824,168 +780,7 @@ No, Kruskal’s Algorithm requires edge weights to identify the minimum spanning
 8. What are the challenges when implementing Kruskal’s Algorithm?
 Challenges include efficiently sorting edges for large graphs, correctly implementing the Union-Find data structure, and ensuring cycle detection and subset management during MST construction.
 
-
-Recommended Reads
-Professional Sentiment Survey by Simplilearn
-
-16 Apr, 2026
-Top Data Structures and Algorithms Every Data Science Professional Should Know
-
-24215
-11 Aug, 2026
-Software Development
-Here’s All You Need to Know About Minimum Spanning Tree in Data Structures
-
-69727
-3 Aug, 2026
-Four Proven Reasons Why Gamification Improves Employee Training
-
-29 May, 2019
-An Extensive Look at RSA Algorithm From Top to Bottom
-
-96289
-27 Apr, 2025
-Software Development
-The Best Guide You'll Ever Need to Understand Spanning Tree in Data Structure
-
-32941
-23 Jul, 2024
-prevNext
-Get Affiliated Certifications
-with Live Class programs
-Microsoft 
-AI-Powered Full Stack Developer Program
-Learn through 100+ hours of core curriculum delivered in live online classes by industry experts
-Enhance your coding skills using AI-driven tools like ChatGPT, CodeWhisperer, Copilot, and Hugging Face
-9 months
-View Program
-Java Certification Training
-Java Certification Training
-24x7 learner assistance and support
-View Program
-Explore Related Categories
-Java
-Web Development
-Programming
-Technical
-Software Engineering
-Development
-Technology
-Web Designing
-Manual Testing
-Database Administration
-Software Architecture
-Application Development
-Software Testing
-Coding
-Automation
-Automation Testing
-R Programming
-Python
-Database
-View All Categories
-Discover Related Roles
-Choose the path that suits you best from among the most in-demand roles in the industry
-
-View All Roles
-Frontend Engineer
-Frontend Engineer
-some random description about Frontend Engineer. some random description about Frontend Engineer. some random description about Frontend Engineer. some random description about Frontend Engineer.
-
-$100,000
-Software Engineer
-Software Engineer
-Software engineers are creative problem solvers. From building apps and platforms to optimizing systems at scale, this career path offers strong demand, diverse roles, and room to grow across industries, technologies, and specializations.
-
-$115,000
-Full Stack Developer
-Full Stack Developer
-Full-stack developers build the entire web experience, from back-end databases and APIs to front-end user interfaces. With global developer job postings up 27%, full-stack skills have become one of the most in-demand combinations in tech hiring.
-
-$127,000
-Front-End Developer
-Front-End Developer
-Front-end developers build everything users see and touch on the web. With global e-commerce sales projected to exceed $8 trillion by 2027 and nearly every business operating in a digital-first mode, demand for skilled front-end developers has never been stronger.
-
-$126,000
-Systems Analyst
-Systems Analyst
-With worldwide digital transformation spending forecast to reach nearly $3.9 trillion by 2027 and global public cloud spending expected to surpass $1 trillion, organizations need systems analysts who can turn complex business needs into scalable system requirements.
-
-$102,240
-Java Developer
-Java Developer
-Java is one of the most widely used languages, powering enterprise systems, cloud platforms, Android apps, and financial engines. A career in Java development offers long-term stability, high compensation, and broad industry relevance.
-
-$117,931
-Software Tester
-Software Tester
-Software testing offers a strong career opportunity for people who want stable growth and product impact. Testers help teams catch issues early, improve software quality, and enable faster releases, with BLS projecting 10% growth in the US job market from 2024 to 2034.
-
-$131,450
-prevNext
-Follow us!
-
-Refer and Earn
-Company
-
-About us
-Careers
-Newsroom
-Alumni speak
-Grievance redressal
-Contact us
-Work with us
-
-Become an instructor
-Blog as guest
-Discover
-
-Simplilearn SkillUp
-SkillUp Sitemap
-Resources
-RSS feed
-SimpliMentor GPT
-For Businesses
-
-Corporate training
-Simplilearn SkillUp+
-Guaranteed-to-run Classes
-Corporate resources
-Partners
-Learn On the Go!
-
-Get the Android App
-Get the iOS App
-Trending Post Graduate Programs
-
-Product Management Certification Course | Product Management Training Course | Cloud Computing and DevOps Course
-Trending Master Programs
-
-PMP Plus Certification Training Course | Data Analyst Course | Data Science Certification | Cloud Architect Certification Training Course | DevOps Engineer Certification Training Course | Cyber Security Expert Course | Business Analyst Course | AI-Powered Automation Testing Course | AWS Cloud Architect Course
-Trending Courses
-
-PMP Certification Training Course | CSM Certification Course | Data Science with Python Course | AWS Certification | CEH Certification | AZ 900 Certification | CompTIA Security+ Certification | AZ 400 Certification | SAFe Certification | CISSP Certification Training | Tableau Certification Course | Lean Six Sigma Green Belt Certification | Lean Six Sigma Black Belt Certification | Power BI Certification Course | Java Certification Course | Python Certification Training Course
-Trending Categories
-
-Project Management Courses | Cloud Computing Courses | Generative AI Courses | Agile Certifications | Online Certifications | Agentic AI Courses | Cyber Security Courses | EC-Council Certifications | PeopleCert Certifications | Scrum Alliance Certifications | Software Development Courses | Web Development Courses | Scaled Agile Certifications | ISC2 Certifications | AXELOS Certifications | ISACA Certifications | PMI Certifications | CompTIA certifications | AWS Courses | Microsoft Certifications | AI Courses | Digital Marketing Courses
-Trending Resources
-
-Python Tutorial | JavaScript Tutorial | Java Tutorial | Angular Tutorial | Node.js Tutorial | Docker Tutorial | Git Tutorial | Kubernetes Tutorial | Power BI Tutorial | CSS Tutorial
-Terms and ConditionsPrivacy PolicyRefund Policy
-© 2009-2026 - Simplilearn Solutions. All Rights Reserved. The certification names are the trademarks of their respective owners.
-Acknowledgement
-PMP, PMI, PMBOK, CAPM, PgMP, PfMP, ACP, PBA, RMP, SP, OPM3 and the PMI ATP seal are the registered marks of the Project Management Institute, Inc.
-*All trademarks are the property of their respective owners and their inclusion does not imply endorsement or affiliation.
-Career Impact Results vary based on experience and numerous factors.
-
-
-
 Задача по олимпиадному программированию
-Вопрос задан 5 лет назад
-Изменён 5 лет назад
-Просмотрен 684 раза
-1
 
 Наткнулся на одну задачу, я ее точно решить не смогу, но если кто-то ее решит, то был бы рад прийти в восторг от решения :)
 
@@ -1166,12 +961,6 @@ function parse(map) {
 
 for (let i = 0; i < data.length; i++)
   console.log(parse(data[i]));
-
-
-Примеры тестовых заданий на собеседовании на тестировщика ПО
-Главная / Блог / Примеры тестовых заданий на собеседовании на тестировщика ПО
-Примеры тестовых заданий на собеседовании на тестировщика ПО
-Тестировщики ПО - важные игроки в команде разработки, проверяющие продукты на ошибки и недостатки до их релиза. Если вы собираетесь пройти собеседование на должность тестировщика, подготовка к встрече с работодателем будет ключевым моментом. В этой статье мы рассмотрим примеры задач, которые могут встретиться вам на собеседовании.
 
 Задачи на знание методологий тестирования
 Одной из первых областей, которую проверяют на собеседовании, является ваше понимание методологий тестирования. Вот несколько примеров вопросов, которые могут быть заданы:
@@ -3116,39 +2905,10 @@ const Profile = ({ username, children }) => {
 
 В конце концов, главное - это структура размышлений. Точно так же, как в системном дизайне мы обсуждаем компромиссы по сложности, памяти, пропускной способности, здесь в React-собеседовании смотрим на подход к работе с данными, пропами, асинхронностью, состоянием и реактивным UI.
 
-Удачи на ваших будущих собеседованиях!
-
 Теги:reactсобеседование
 Хабы:ReactJSJavaScriptTypeScriptВеб-разработка
-+26
 
-164
-
-56
-+56
-
-
-29
-
-Карма
-Andrei Chmelev@andry36
-Senior Full Stack Engineer / Tech Lead
-
-Подписаться
-
-Комментарии 56
-
-
-
-
-Alex_Diamond
-3 фев 2025 в 16:44
 Подскажите, пожалуйста, пару интересных вопросов для сеньоров по этой задаче.
-
-
-+1
-
-
 
 andry36
 4 фев 2025 в 16:31
@@ -3159,11 +2919,6 @@ andry36
 Как решать проблему при работе в среде SSR, где запросы нужно делать ещё до рендера?
 Как совместить подход с Suspense и Error Boundaries для более реактивной UX-модели?
 
-
-+3
-
-
-
 dark_gf
 3 фев 2025 в 18:11
 Вопрос в общем хороший, у меня больше инетресует вот эта часть:
@@ -3172,28 +2927,13 @@ dark_gf
 
 Видя такой код я могу предположить что в проекте вашем может быть такого очень много, что имхо есть намек к не очень хорошему проекту )))
 
-
-+4
-
-
-
 SergeyEgorov
 3 фев 2025 в 19:10
 Тоже хотел спросить- Это весь код компонента App, или что-то не показано с какой-то целью?
 
-
--3
-
-
-
 andry36
 4 фев 2025 в 16:40
 Да, в статье показан только упрощённый фрагмент компонента App. Он служит примером того, как использовать <Profile> на практике - без лишнего кода, не относящегося к сути задачи.
-
-
-0
-
-
 
 andry36
 4 фев 2025 в 16:39
@@ -3201,19 +2941,9 @@ andry36
 Этот пример с функцией в children демонстрирует, что это обычный React-проп, которому можно передавать функцию как значение.
 Сама идея упрощена для собеседования (в статье это указано), чтобы оценить именно понимание жизненного цикла и эффектов - в боевом проекте, конечно, принято грамотно разделять ответственность и не плодить запросы во всех мелких компонентах.
 
-
-0
-
-
-
 Zukomux
 3 фев 2025 в 19:46
 Простите, но запрос данных в эффекте это моветон. Если нужна загрузка данных, то ее надо оформлять хуком и делать функциональную композицию на уровне "умного" компонента(контроллера)
-
-
-+1
-
-
 
 Xao
 3 фев 2025 в 21:45
@@ -3221,30 +2951,15 @@ Xao
 
 Начиная с React 19, этот подход устарел окончательно, лучше сделать запрос, получить промис и передать его дальше потребителям, используя Suspense и новый метод use. А ошибку ловить в ErrorBoundary.
 
-
-+4
-
-
-
 Anaferat
 4 фев 2025 в 05:19
 А почему мы считаем что подход от команды реакт лучше?
-
-
-+4
-
-
 
 js2me
 4 фев 2025 в 09:27
 Больше возникает вопрос - почему хранение бизнес логики приложения в слое предоставления правильное решение и почему команда React тоже так считает?
 
 Почему это считается правильным только во фронтенд веба ?)
-
-
-+4
-
-
 
 Vitaly_js
 4 фев 2025 в 12:27
@@ -3266,91 +2981,41 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 Что имеется в виду в последнем абзаце?
 
-
-0
-
-
-
 andry36
 4 фев 2025 в 16:56
 В последнем абзаце речь идёт о том, что полноценная реализация Suspense для произвольных запросов (без специальных фреймворков, типа Relay или Next.js) всё ещё считается нестабильной API. Другими словами, официальной документации и гарантий для общего случая пока нет, и React-команда может менять поведение или интерфейсы в будущем. Поэтому, если вы хотите «чистый» Suspense без дополнительных библиотек, стоит учесть, что это пока не является полностью поддерживаемым сценарием, и ваши решения могут сломаться в следующих версиях React.
-
-
-0
-
-
 
 Vitaly_js
 4 фев 2025 в 17:06
 О чем-то таком я тоже догадался. Мой вопрос спровоцировало вот это предложение: "Начиная с React 19, этот подход устарел окончательно". На мой взгляд, что бы что-то устарело окончательно должен накопиться опыт, и этот опыт должен перейти в эффективные решения. Данное же предложение из доки подсказывает, что это далеко не так.
 
-
-+1
-
-
-
 Zukomux
 5 фев 2025 в 07:16
 И в итоге получаем компонент-мультитул. Тут и загрузка данных, и обработка ошибок, мапинг входных данных, формирование представления. Это подойдёт разве что для пет проекта, а в контексте статьи для проверки на джуна. Поменяйте роут с данными и придется 80% компонента переписать заново. Про тестирование я уже молчу
-
-
-+1
-
-
 
 andry36
 4 фев 2025 в 16:46
 Хук внутри себя всё равно будет использовать useEffect для запроса данных, так что это вопрос именно композиции и структурирования кода, а не принципиального отличия в подходе. Пример был упрощен оставляя пространство для вопроса "А как бы вы сделали это?" :)
 
-
-0
-
-
-
 Vitaly_js
 4 фев 2025 в 18:03
 Не обязательно же. Можно сделать через useSyncExternalStore. Тогда все эти задачи, которые вы проверяете в данном примере с монтирование/размонтирование, состоянием гонки и т.п. будут решены внутри объекта Profile и реакт тут вообще будет как бы ни при чем. Для использования надо только знать спецификацию useSyncExternalStore.
-
-
-0
-
-
 
 YuriyUl
 4 фев 2025 в 08:46
 а проброс функции в children не противоречит самому смыслу {children}?
 
-
-+4
-
-
-
 bycolour
 4 фев 2025 в 16:56
 Нет, это называется render function
-
-
-+1
-
-
 
 radist2s
 4 фев 2025 в 12:20
 Пожалуй, вы забыли про пару важных моментов: Abort Controller и React Strict Mode.
 
-
-0
-
-
-
 andry36
 4 фев 2025 в 16:58
 В статье я специально упомянул, что у нас якобы нет возможности вызвать abort(), чтобы проверить реакцию кандидата на ситуацию неуправляемого запроса. А Strict Mode помогает увидеть возможные побочные эффекты и дважды вызываемые функции - это тоже важно учитывать для корректной реализации асинхронной логики.
-
-
-+1
-
-
 
 radist2s
 4 фев 2025 в 20:04
@@ -3358,28 +3023,13 @@ radist2s
 
 Меня всегда поражала подобная самоуверенность интервьюеров.
 
-
-0
-
-
-
 bakunovdo
 5 фев 2025 в 06:17
 Strict mode удалить нужно
 
-
-0
-
-
-
 username-ka
 4 фев 2025 в 12:25
 Прикольный вопрос, я бы не принял ни предложенное решение, ни сам факт существования подобного компонента. Весь мир использует tanstack-query в качестве стандарта де-факто, камон.
-
-
--1
-
-
 
 andry36
 4 фев 2025 в 17:01
@@ -3387,39 +3037,19 @@ andry36
 "Весь мир использует..." громкое утверджение, сразу хочется попросить пруфы :)
 Не все компании применяют именно tanstack-query. К тому же в задаче проверяются общие принципы работы с асинхронностью в React: если человек хорошо понимает эту логику, он без труда освоит и любую абстракцию вроде React Query или SWR.
 
-
-+3
-
-
-
 username-ka
 4 фев 2025 в 19:29
 У всех разные стандарты, это нормально. В моей реальности в 2025 году всё-таки стыдно было бы рисовать спиннеры руками "если данные null", тригерить загрузку в useEffect, игнорировать серверные компоненты и существование хуков.
 
 "Не все компании применяют именно tanstack-query" - это действительно так. Но всерьёз кандидатов, который не задаёт первым вопросом "а нам точно надо такой велосипед напилить", я на своих интервью не рассматриваю.
 
-
-0
-
-
-
 onets
 4 фев 2025 в 15:53
 Есть callback hell, а это nano-micro-component hell, когда каждый уважающий себя микро-компонент лезет на сервер за данными. Когда их становится много - начинается подобное веселье.
 
-
-0
-
-
-
 andry36
 4 фев 2025 в 17:02
 Пример из статьи не призывает каждый микро-компонент делать собственный запрос. Это лишь иллюстрация ключевых вопросов, которые помогают оценить понимание React-хуков и потенциальных ловушек асинхронности. Для боевого применения, конечно, нужно распределять логику так, чтобы не превратить приложение в зоопарк из сотен запросов. Но на собеседовании хочется увидеть, как кандидат работает именно с базовой механикой React - тогда уже понятно, сможет ли он грамотно её применить внутри более продуманной архитектуры.
-
-
--1
-
-
 
 Vitaly_js
 4 фев 2025 в 16:50
@@ -3432,10 +3062,6 @@ Vitaly_js
 Вы действительно проверяете знания реакта, но, на мой взгляд, в неестественных условиях, т.е. создаете дополнительно пространство для стресса и для траты времени на муру.
 
 
--2
-
-
-
 andry36
 4 фев 2025 в 17:20
 Спасибо за комментарий!
@@ -3443,10 +3069,6 @@ andry36
 На интервью часто задают подобные микро-задачи, чтобы быстро увидеть, как разработчик работает со стейтом, эффектами и обработкой ошибок на практике - без вдавания в детали полной архитектуры приложения.
 
 Т.е. что это не замена реального проектного кода, а тестовое окружение, где проявляются навыки кандидата.
-
-
-+1
-
 
 
 Vitaly_js
@@ -3460,17 +3082,9 @@ fetchProfile не позволяет отменять запросы. А fetchDa
 И да, это действительно типично для собеседований, поэтому я и говорю, что такое не очень люблю. Вроде как хотят протестировать навыки (точно хотите навыки протестировать?)), вроде как сами же думают, что речь идет о реальных условиях, но тестируются далеко не только навыки и далеко не в реальных условиях.
 
 
-+2
-
-
-
 Ione1991
 4 фев 2025 в 17:58
 Не совсем понятен первый пример с lastUsernameFetched. Разве там условие не будет всегда ложно?
-
-
-0
-
 
 
 aw350me
@@ -3481,21 +3095,11 @@ aw350me
 
 Сильно отталкивает от изучения и даже просто наблюдения за, казалось бы, перспективными и популярными разработками в сфере разработки веб приложений
 
-
-+3
-
-
-
 questpc
 5 фев 2025 в 07:23
 Это просто им движет желание сделать "слишком хорошо" или идеально. По факту же консоль браузера в поисках ошибок обычный пользователь смотреть не будет. И непонятно почему сервер вернет null. Если пользователь отсутствует, то сервер вероятно вернет не 200 код вообще и ошибка будет на уровне запроса.
 
 Частое тыканье в имена пользователей вообще лучше всего решить загрузкой данных для всех отображаемых в данный момент. Ну или Profile создавать не одну инстанцию а на каждый клик отдельно.
-
-
-0
-
-
 
 Kergan88
 5 фев 2025 в 16:37
@@ -3539,11 +3143,6 @@ const ProfileWrapper = ({ username, children }) => (
 const Profile = ({ username, children }) => children(use(fetchProfile(username)));
 с соответствующей оберткой. И, что характерно - все будет работать как надо. Без ненужных изъебов. KISS.
 
-
-+1
-
-
-
 taujavarob
 6 фев 2025 в 21:58
 А теперь правильное идеальное решение:
@@ -3553,11 +3152,6 @@ taujavarob
 Но в реале наверняка надо в key помещать какое-то Id , так как имена в списке могут совпадать.
 
 Да и что будет если кто-то использует Profile без обёртки ProfileWrapper? - но это конечно, наверное, организационный момент, хотя, согласно "правилу Мерфи" - такое рано или поздно произойдет. 
-
-
-0
-
-
 
 Kergan88
 7 фев 2025 в 06:18
@@ -3576,11 +3170,6 @@ https://react.dev/learn/you-might-not-need-an-effect "Resetting all state when a
 
 Смысл то моего подхода именно в том, чтобы не писать когнитивно сложный код, когда можно его не писать. Тогда и места для ошибки не будет. Нельзя ошибиться в кодле, который не написан) а автор вот решил такой код написать - и посадил ошибку.
 
-
-0
-
-
-
 Vitaly_js
 7 фев 2025 в 12:21
 Это же _стандартное_ решение, которое явно рекомендовано вот тут:
@@ -3596,11 +3185,6 @@ Effects are an escape hatch from the React paradigm. They let you “step outsid
 Вы же, вместо того, что бы синхронизировать компонент используя встроенные средства, делаете такую синхронизацию средствами предназначенными для другого.
 
 Команда реакт не советует так делать. Эти оптимизации логичны и работают как оптимизации именно когда нет useEffect
-
-
-0
-
-
 
 Kergan88
 8 фев 2025 в 06:19
@@ -3637,11 +3221,6 @@ useEffect остался там, где был: "useEffect(() => fetchProfile(us
 В React все хороводят вокруг "состояния", а в случае key состояния нет вообще. 
 
 Все верно, состояние и работа с ним - это сложно и чревато ошибками. Если есть возможность написать код так, чтобы избежать работы с состоянием или положить работу с ним на плечи самого фреймворка - так и надо делать. Чтобы не обосраться со сложным кодом - надо просто не писать сложный код.
-
-
-0
-
-
 
 Vitaly_js
 8 фев 2025 в 10:38
@@ -3719,11 +3298,6 @@ function Profile({ userId }) {
 }
 Вы видите тут эффекты?
 
-
-0
-
-
-
 Kergan88
 10 фев 2025 в 08:15
 То получится ровно тоже самое что и у вас.
@@ -3745,11 +3319,6 @@ Kergan88
 Этот раздел иррелевантен эффектам. Там описывается рекомендованный командой реакта универсальный способ полного сброса стейта компонента.
 
 Если вам надо сбрасывать стейт в общем случае (если нет специфичной для вашего кейса причины, по которой так делать нельзя) - вы используете ключи. Либо пишете говнокод с ошибками.
-
-
-0
-
-
 
 Vitaly_js
 10 фев 2025 в 11:27
@@ -3773,11 +3342,6 @@ Vitaly_js
 
 Минуточку, сброс ВСЕХ стейтов компонента - это не ровно сбрасывать стейт в общем случае. Разрабы реакта показали, что они имеют в виду. А для того, что бы минимизировать использование подхода, только подходящими случаями они расположили этот раздел в разделе посвященном компонентам без эффектов.
 
-
-0
-
-
-
 taujavarob
 13 фев 2025 в 02:35
 вы предлагаете решить ее запросами к серверу которые будут просто повисать в воздухе. Тогда у меня встречный вопрос - это зачем? Зачем пропускать запросы, которые не планируется показывать на экране?
@@ -3792,11 +3356,6 @@ taujavarob
 
 Они явно написали, что если вы хотите при каждом изменение пропсов сбрасывать стейт компонента, то используйте key-технику, иначе пишите тонну дополнительного кода в своём компоненте. - выбор что использовать довольно ясен.
 
-
-0
-
-
-
 Vitaly_js
 13 фев 2025 в 16:03
 После вопроса про кэш уже хочется задать вопрос, вы точно понимаете, что делает key? Вы не забыли про вот эту вот особенность: "... React will recreate the DOM ..."? То, что все useMemo и другие мемоизированные элементы скинутся? Речь идет именно о сбрасывании ВСЕХ стейтов компонента и перерисовку на экране.
@@ -3806,11 +3365,6 @@ Vitaly_js
 Мне вот любопытно, вы все это учитываете? И не забываем, что из-за эффектов могут быть переходные состояния и в вашем случае они всегда будут идти из начального состояния в чем далеко не всегда есть смысл. При этом вы сами пишете, что все эффекты все равно нужно полностью сконфигурировать. Просто вместо того, что бы сконфигурировать еще и зависимости, вы должны так спроектировать, что бы всегда все шло из начального состояния.
 
 Если выкинуть эффекты, оно наверное так и будет. Хотя продумать, что мемные компоненты без зависимостей от входа должны быть вынесены куда-то в другое место иначе они все будут так же пересоздаваться впустую.
-
-
-0
-
-
 
 taujavarob
 14 фев 2025 в 04:31
@@ -3827,11 +3381,6 @@ taujavarob
 Хотя продумать, что мемные компоненты без зависимостей от входа должны быть вынесены куда-то в другое место иначе они все будут так же пересоздаваться впустую.
 
 Да, кэш будет в другом месте. Это верно. Так и реализован кэш в TanStack Query.
-
-
-0
-
-
 
 Vitaly_js
 14 фев 2025 в 11:44
@@ -3856,11 +3405,6 @@ Vitaly_js
 Да, кэш будет в другом месте. Это верно. Так и реализован кэш в TanStack Query.
 
 мемные компоненты это memo(ComponentName), а кэш - это данные, которые в них передаются.
-
-
-0
-
-
 
 taujavarob
 15 фев 2025 в 06:41
@@ -3900,11 +3444,6 @@ taujavarob
 
 Я как-то не вижу особого смысла заранее всюду писать memo или useMemo или useCallback (это необходимо при разработке библиотеки компонентов, но не в приложении). - тут наверное нужно применить принцип "не делай предварительной оптимизации если и так всё работает нормально.
 
-
-0
-
-
-
 Vitaly_js
 15 фев 2025 в 11:56
 Случай, когда есть список имён слева и, при клике на имя в списке, справа появляется Профиль с этим именем.- то есть всякий раз приходится сбрасывать состояние компонента Профиль, обращаться к бакенду и выводить присланную.с бакенда информацию. - что тут можно то закешировать то? Разве что то что присылает бакенд, но тот кеш не зависит от реализации нашего компонента Профиль.
@@ -3937,11 +3476,6 @@ Vitaly_js
 
 Я понимаю, если на вас насели и вы просто не спроектировали систему и сделали кое как. Но если вы во всем разобрались. Потратили на это время, зачем делать плохо?
 
-
-0
-
-
-
 taujavarob
 16 фев 2025 в 06:58
 Например, там может быть название города пользователя, с иконкой и краткой информацией. Что может совпадать у тысяч пользователей. Выделяя эту информацию в мемный компонент, получая данные из кэша и вам уже не нужно перерисовывать на экране эту часть пользователя, если города совпадают
@@ -3970,11 +3504,6 @@ P. S. Вспомнил как выпустили iOS v1.0, в которой н�
 
 Спасибо за ответы. Беседа была интересная. Удачи! :-)
 
-
-0
-
-
-
 taujavarob
 9 фев 2025 в 02:06
 И вот в таких случаях, когда надо сбрасывать состояние при изменении пропсов - и надо использовать ключи.
@@ -3984,11 +3513,6 @@ taujavarob
 @Vitaly_js, - @Kergan88 имеет в виду раздел с названием "Resetting all state when a prop changes" в You Might Not Need an Effect.
 
 В этом случае не имеет значение вообще что происходит (используется ли useEffect) в том компоненте, что монтируется в "дерево" с помощью key. - главное просто "сбросить всё состояние" компонента, и неважно как оно было установлено, с помощью useEffect или другим путём. Просто "рубится", создаётся новый "лист" или "сук" с новым состоянием и монтируется в "дерево". И всё. Довольно простое решение. В данном случае.
-
-
-0
-
-
 
 Vitaly_js
 9 фев 2025 в 10:54
@@ -4001,22 +3525,12 @@ Vitaly_js
 Поэтому имеет значение, что и как происходит в эффектах и оптимизации начинать уже с финальным компонентом.
 
 Или вы в принципе начинаете новый компонент зафигачив что-то в key?
-
-
-0
-
-
-
+    
 taujavarob
 10 фев 2025 в 03:36
 Или вы в принципе начинаете новый компонент зафигачив что-то в key?
 
 Это хороший вопрос. Я просто не знал вовсе про key до этого. - Но вот сейчас задумался- а почему бы его не использовать, ведь код становится проще. Гораздо проще.
-
-
-0
-
-
 
 taujavarob
 8 фев 2025 в 01:24
@@ -4028,11 +3542,6 @@ taujavarob
 
 Возможно, наверное, всё приложение создавать в таком стиле "рубки" - но оно будет какое-то странное для React.
 
-
-0
-
-
-
 UnknownHero
 6 фев 2025 в 04:24
 1. Key решает проблему и будет показывать только последнее состояние и не важно что там вызывалось до этого.
@@ -4041,30 +3550,15 @@ UnknownHero
 
 Ох уж эти собесы с задачками.
 
-
-0
-
-
-
 walkwithmeinhell
 6 фев 2025 в 05:44
 Объясните плиз, как работает идеальное решение, если юзер быстро кликает по рандомным юзернеймам. С useref понял как люди предлагали. В идеальном не понимаю как и зачем тот setUser(null) в начале useeffect
-
-
-0
-
-
 
 taujavarob
 5 мар 2025 в 07:36
 и зачем тот setUser(null) в начале useeffect
 
 Если у вас уже есть старый user и при обращении на сервер произошла ошибка, то у вас новый user не заменит старого user. Для этого и нужно "сбросить" значение user на null перед обращением на сервер.
-
-
-0
-
-
 
 archyCuber
 19 фев 2025 в 15:42
