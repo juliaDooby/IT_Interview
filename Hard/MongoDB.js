@@ -1,3 +1,39 @@
+What is MongoDB and Why we use?	What's New in MongoDB 3.2?
+Is MongoDB Support Relationship?	Is MongoDB Support Replication?
+What are journaling in MongoDB?	What kind of database is MongoDB?
+In MongoDB, What is a namespace?	In which language MongoDB is written?
+Do MongoDB databases have tables and schemas?	What types of languages use to work with MongoDB?
+Which are the most powerful features in MongoDB?	What is NoSQL Database and why you use NoSQL Database?
+Is NoSQL Database Types?	Is NoSQL Database will replace to RDBMS?
+Does MongoDB support SQL Server?	Does MongoDB support ACID Transactions?
+What is the difference between MongoDB and CouchDB?	What are different between MongoDB and Sql Server databases?
+How MongoDB is better than other SQL Server databases?	What are difference between SQL Server and NoSQL Database?
+Now days, what makes MongoDB best?	How to create primary/foreign key relationships in MongoDB?
+What are 32-bit nuances?	Can MongoDB used for Cache Management?
+Why does Profiler use in MongoDB?	In MongoDB, What is a covered query?
+In MongoDB, What is Aggregation?	In MongoDB, What is Sharding?
+Why MongoDB data files so large (in size)?	In MongoDB, What is GridFS?
+Is MongoDB support null values?	In MongoDB, How do I do transactions/locking?
+In MongoDB, What is the Master or primary key?	In MongoDB, What is secondary or slave?
+In MongoDB, How does sharding work with replication?	In MongoDB, Can I remove old files in the move Chunk directory?
+How can I see the connections which you used in mongos?	What are the limitations of MongoDB?
+In MongoDB, What is Replication Factor?	In MongoDB, What is dynamic Schema?
+In MongoDB, What is BSON and how can restore this file?	In MongoDB, How can you take database backup?
+In MongoDB, What is Replication?	In MongoDB, What is the role of 8 Analysers?
+In MongoDB, if user removed to object attribute that attribute is deleted from the storage layer? If yes, then how?	In MongoDB, Whether use to safe backup log feature?
+In MongoDB, How to update operations immediately sync to disk?	In MongoDB, How to perform transactions/lock?
+In MongoDB, How sharding and replication work together?	In MongoDB, How do you configure to cache size for MMAPv1?
+Does MongoDB handle application level caching?	Why MongoDB logging so many “Connection Accepted” events?
+Does MongoDB run on Amazon EBS?	In MongoDB, How is Query injection and how to handle it?
+How can you enter multi line operations in the mongo shell?	How can you access different databases temporarily?
+Is mongo shell supported to tab completion?	How can you customize to mongo shell prompt?
+Can you edit long shell operations with an external text editor?	What types of locking use in MongoDB?
+How do you see the locking status in mongo instances?	Can you perform read/write operation for ever yield lock?
+In MongoDB, Which operations lock the database?	In MongoDB, Which commands you use to lock the database?
+In MongoDB, Can you lock more than one database at the same time?	How to create Index after every query insert?
+How to know, what indexes exist in a collection?	How to determine the size of an index?
+What happen when an index does not fit into RAM?
+
 Что такое MongoDB?
 Какие типы данных поддерживаются MongoDB?
 Что такое коллекция в MongoDB?
