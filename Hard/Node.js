@@ -1,3 +1,84 @@
+Q1. Define node.js in a few lines.</h3>
+Node.js is a JavaScript runtime environment that enables programmers to create scalable server-side applications. It is cross-platform and free to use for all. Node.js applications are written in javascript, and it is built on Chrome's V8 engine.</p>
+Example of code written in node.js:</strong></p>
+"preview code_snippet">
+tell me where you can not use Node.js.</h3>
+While Node.js has quite a few applications, there are a few cases where it is not efficient to use it. For example-</p>
+Real-Time Gaming Engine:</strong> We cannot use node.js in real-time gaming engines and other applications that require extremely low latency. These kinds of applications need to acquire fine-grained control over low-level system resources. And this can be difficult to accomplish with Node.js.</p>
+CPU Intensive:</strong> Node.js is a single thread and employs a non-blocking, event-driven I/O architecture. As a result, it is more appropriate for I/O-bound applications rather than for <a href="https://unstop.com/blog/functional-units-of-computer">CPU</a>-bound jobs.</p>
+Q3. Can you tell me the name of some companies that use Node.js?</h3>
+Some companies that use node.js are <a href="https://unstop.com/blog/paypal-recruitment-process">PayPal</a>, LinkedIn, <a href="https://unstop.com/blog/netflix-recruitment-process">Netflix</a>, <a href="https://unstop.com/blog/uber-interview-questions">Uber</a>, <a href="https://unstop.com/blog/walmart-case-study">Walmart</a>, Twitter, Yahoo, eBay, etc.</p>
+Q4. Can you mention some features of Node.js?</h3>
+Some features of Node.js are:</p>
+It is an asynchronous and event-driven architecture.</li>
+The Node.js environment facilitates scalability, that is, it is scalable.</li>
+It has cross-platform compatibility.</li>
+Code execution in Node.js is very fast.</li>
+Node.js is a single-threaded model with event looping.</li>
+Q5. List some of the applications that use Node.js.</h3>
+Some applications that can be built using the Node.js environment are:</p>
+Real-time chat applications</li>
+Social media platforms</li>
+Internet of Things (IoT) applications</li>
+Streaming applications</li>
+Online payment processors</li>
+Remote collaboration tools</li>
+Single-page applications (SPAs)</li>
+Real-time web applications</li>
+Q6. Tell me the difference between Node.js and Ajax.</h3>
+NODE.JS</strong></p>
+AJAX</strong></p>
+Node.js is an open-source framework.</p>
+Ajax is a web development technique.</p>
+It can be written in <a href="https://unstop.com/blog/history-of-c-language">C</a>, <a href="https://unstop.com/blog/what-is-cpp">C++</a>, Javascript, and CoffeeScript.</p>
+It can only be written in Javascript.</p>
+Node.js always works on server-side applications. It is used for real-time applications.</p>
+Ajax works only on the client side.</p>
+It supports dependency injection.</p>
+It does not support dependency injection.</p>
+Q7. Tell me some benefits of using Node.js.</h3>
+The advantages of using Node.js are:</p>
+Scalability:</strong> Node.js is very scalable and can expand along with the company/ entity using it. Also, it is easier to scale in comparison to other backend event mechanism technologies. For example, compared to traditional servers like Apache HTTP Server that have limited threads, the same single thread can handle a far higher volume of requests.</li>
+Fast and light:</strong> For legacy systems, Node.js is lightweight and quick by nature. It is also comparatively faster hence making it a popular choice.</li>
+Long-term support: </strong>Node.js offers long-term support, which is important for enterprises that need various access permissions.</li>
+Q8. Tell me some disadvantages of using Node.js.</h3>
+Some of the most prominent disadvantages of using Node.js are:</p>
+Unstable API</strong>: One of the biggest shortcomings of Node.js is the high frequency of API updates that lead to a lack of stability for anyone using it.</li>
+Lack of library support</strong>: Another disadvantage of using Node.js is that its system for supporting libraries is weak.</li>
+Asynchronous programming model</strong>: For developers who are unfamiliar with it, async function programming can be difficult.</li>
+Q9. Name some of the common utility functions in Node.js.</h3>
+Some common utility functions in Node.js are-</p>
+util.format()</td>
+util.promisify()</td>
+util.debuglog()</td>
+util.callbackify()</td>
+util.inspect()</td>
+These were a few Node.js questions you may get asked during an interview. All freshers, as well as experience holders, must prepare well for basic, intermediate, and advanced-level questions.</p>
+
+Node.js Interview Questions: Intermediate</h2>
+Q10. Describe npm.</h3>
+Npm stands for Node Package Manager, which is the default package manager for the JavaScript runtime environment Node.js. It is a library and registry for JavaScript software packages. Npm is used to manage dependencies in Node.js projects.</p>
+Q11. Describe REPL.</h3>
+REPL in node.js stands for Read-Eval-Print-Loop. It is a programming language environment that accepts a single expression from the user (i.e., reads the user's input) and executes it (i.e., evaluates the input and data structure), before returning the result to the console.</p>
+Q12. Tell me about streams.</h3>
+Stream is one of the most important concepts in Node.js, and anyone prepping for an interview must prepare for such questions.</p>
+Streams are objects that enable continuous data reading from a source which is then written to another destination. There are 4 primary types of streams in Node.js, namely- Readable, Writable, Duplex, and Transform streams. The use of streams makes the process of reading and writing files more efficient and comparatively easier. It also facilitates communicating over networks or exchanging any kind of end-to-end information.</p>
+Q13. Tell me some of the advantages of using Stream.</h3>
+Some advantages of using stream are:</p>
+They allow data to be exchanged in small chunks, thus significantly reducing memory consumption.</li>
+Another advantage is that streams send files in chunks, and each chunk is processed separately, which makes them more time-efficient than other data handling methods.</li>
+Streams also give developers the power of composability in their code. Just like powerful <a href="https://unstop.com/blog/linux-commands">Linux commands</a> that can be composed by piping other smaller Linux commands, the same can be done in Node.js with streams.</li>
+Q14. Can you explain the different types of streams in Node.js?</h3>
+There are four types of streams in Node.js which are-</p>
+Readable stream:</strong></p>
+Readable streams are used for read operations. They are an abstraction for a source from which data can be read, such as a file or a network socket. Examples of readable streams include fs.createReadStream() and process.stdin.</p>
+Writable stream:</strong></p>
+Writable streams are used for write operations. They are an abstraction for a destination to which data can be written, such as a file or a network socket. Examples of writable streams include- fs.createWriteStream() and process.stdout.</p>
+Duplex stream:</strong></p>
+Duplex streams are both readable and writable. They are an abstraction for a source-destination pair, such as a network socket. Examples of duplex streams include net.Socket and process.stdio.</p>
+Transform stream:</strong></p>
+Transform streams are a type of duplex stream that can be used to modify or transform the data while it is being written and read. They are an abstraction for a source-destination pair that modifies the data in some way. Examples of transform streams include zlib.createGzip() and crypto.createCipher().</p>
+***
 
 Node.js Interview Questions: Advanced
 Q28. Explain what is the libuv library. Also, mention some features of Libuv Library.</h3>
