@@ -78,7 +78,53 @@ Duplex stream:</strong></p>
 Duplex streams are both readable and writable. They are an abstraction for a source-destination pair, such as a network socket. Examples of duplex streams include net.Socket and process.stdio.</p>
 Transform stream:</strong></p>
 Transform streams are a type of duplex stream that can be used to modify or transform the data while it is being written and read. They are an abstraction for a source-destination pair that modifies the data in some way. Examples of transform streams include zlib.createGzip() and crypto.createCipher().</p>
-***
+
+Q15. Define the test pyramid.</h3>
+The Test Pyramid is an illustration that instructs us to divide software tests into granularity-based buckets. It does so by providing an estimate of the number of tests we should include in each bucket. The pyramid attempts to visually represent a logical organization of testing standards. It consists of three distinct layers, namely- the unit tests, the integration tests, and the end-to-end tests. The concept of the test pyramid was established by Mike Cohn.</p>
+Q16. Explain promises.</h3>
+An asynchronous operation's value or async code and future completion (or failure) are represented via an object known as a promise. In simple terms, promises are an enhancement of callbacks, which control all asynchronous data actions. An action is represented by a JavaScript promise, which will either be accepted or rejected. The promise is resolved if it is kept; if not, it is rejected.</p>
+Promises are an enhancement to the callback pattern that makes creating asynchronous code simpler. They are employed while running asynchronous programming for control flow and error handling.</p>
+Q17. Tell me the types of API functions that are available in node.js.</h3>
+There are 2 types of <a href="https://unstop.com/blog/api-testing-interview-questions">API</a> functions that are available in node.js, namely, asynchronous/ non-blocking functions and synchronous/ blocking functions.</p>
+Asynchronous/ non-blocking functions:</strong></p>
+The execution of asynchronous functions prevents the Node.js library from being blocked while they wait for data to come in from the API. A Node.js event notification mechanism will be used to inform the server of the previous API call, and it will then call the succeeding API before going on to the next one. These features let the employees keep working on the tasks at hand while the request is being processed.</p>
+Synchronous/ blocking functions:</strong></p>
+The event-based model loop is blocked while synchronous functions are in use until the operation is finished. Blocking functions, or synchronous functions, prevent the program from continuing to run until all processing has been completed.</p>
+Q18. Define a stub.</h3>
+A test double, known as a stub in Node.js, replaces a function with a pre-programmed response. It is a little program routine that takes the place of a lengthier program that might need to be loaded later or is located elsewhere. Stubs are test-only mock objects that carry out a pre-programmed behavior. They can be used to direct the behavior of a method from a test to steer the code in a particular direction. Also, note that when a stub is used to wrap an existing function, the original function is not called. Stubs are particularly helpful when one is testing code that depends on external services that might not be available.</p>
+Q19. What is the purpose of the underscore variable in REPL in Node.js?</h3>
+Firstly, in Node.js, REPL stands for Read Eval (evaluate) Print Loop. The underscore is a special variable that is used to hold the outcome of the last evaluated expression in the Node.js REPL. This indicates that whenever a command is entered in the REPL, the underscore variable may be used to obtain the output of the previous expression.</p>
+Q21. Tell me about the callback method and callback hell term used in Node.js.</h3>
+Callback method :</strong></p>
+A call-back function is a type of node.js function that will receive an argument from another function, and it intends to be called at a later time. These methods are used to manage asynchronous tasks and to prevent blocking of the event mechanism loop.</p>
+Callback hell :</strong></p>
+The circumstance when numerous callbacks are nested inside of one another and make the code challenging to comprehend and maintain is referred to as "callback hell." This occurs when nested callbacks are complex, and each callback accepts an argument that is the outcome of the callbacks before it, resulting in a pyramid-like structure.</p>
+Callback hell example</strong>:</p>
+"preview code_snippet">
+Q22. Define event-driven planning in reference to Node.js.</h3>
+Event-driven programming/ planning is a logical pattern that we can choose to confine our programming within to avoid issues of complexity and collision. When compared to other similar technologies, Node.js is faster because it makes extensive use of events. When a Node.js server is launched, it first initializes the variables and functions before listening for an event to occur.</p>
+An event-based model loop contacts the appropriate event handler when it detects an event trigger. Node.js provide several built-in events, which can be accessed using the 'events' module and the EventEmitter class.</p>
+Q23. Tell me about the components of NPM.</h3>
+The term NPM stands for Node Package Manager. There are three primary components of NPM, namely- the registry, the CLI, and the website.</p>
+The registry is a collection of packages available for NPM installation.</li>
+The tool used to work with the registry and install packages is the CLI, i.e., the command-line interface.</li>
+The website serves as a search and browsing tool for registry packages.</li>
+Also, when a package is installed with the NPM, it is kept in the node_modules subdirectory of the project.</p>
+Q24. What are blocking and non-blocking programs in Node.js?</h3>
+Blocking program in Node.js:</strong></p>
+Blocking refers to the blocking of all further executions until the current operation finishes. That is, the blocking programs in Node.js block the execution until the exiting process completes. In comparison, non-blocking refers to code that doesn't block execution.</p>
+Blocking methods are executed synchronously, meaning that the program is executed line by line, and the program waits until the called function or the operation returns.</p>
+Non-blocking program in Node.js:</strong></p>
+The non-blocking operations execute async functions. Therefore, the program may occasionally not run line by line. Here, instead of waiting for the non-blocking method to return, the program instead calls it and moves on to the next action.</p>
+Q25. Can you describe the buffer concept in Node.js?</h3>
+A Buffer module in Node.js is a temporary memory location where binary data is kept. Buffers are used to carry out actions on unprocessed binary data, for reading from or writing to streams, or for fine-grained data manipulation. In simple terms, the Buffer module class in Node.js is used to perform operations on raw binary data.</p>
+There are several ways to generate buffers, such as using the alloc() function to set their size at creation and the from() method to create a buffer from the text. It is important to note that the buffers cannot be resized.</p>
+Q26. What do you mean by piping the stream?</h3>
+he Node.js piping method allows one stream's output to be used as the input for another stream. In other words, the piping technique is typically used to obtain data from one stream and transfer that stream's output to another.</p>
+Multiple processes can be made simpler by piping streams. The pipe() technique is risky, meaning that piping is a safer method to use. Since stream.pipeline() correctly cleans up once the pipeline has completed passing errors and provides a callback. We may use it in place of pipe(). Also, the number of times the data can be piped from an output stream to an input stream is not limited.</p>
+Q27. Discuss what is meant by chaining the streams.</h3>
+In Node.js, the chaining method refers to the act of connecting one stream's output to another and building a chain of operations for many streams together. The Pipelining method frequently employs chaining. A file can be compressed and decompressed using the chaining technique. The data can also be transformed in a variety of other ways. It can be used to establish a chain of operations for several streams and can assist in reducing the complexity of numerous stages.</p>
+All in all, a chain of operations for several streams can be created by connecting the output of one stream to another stream via chaining, and the data can be continuously read from a source and written to a destination.</p>
 
 Node.js Interview Questions: Advanced
 Q28. Explain what is the libuv library. Also, mention some features of Libuv Library.</h3>
