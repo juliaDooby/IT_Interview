@@ -1,4 +1,115 @@
 
+Node.js Interview Questions: Advanced
+Q28. Explain what is the libuv library. Also, mention some features of Libuv Library.</h3>
+Node.js library utilizes the C library libuv to abstract non-blocking I/O operations to a uniform interface on all systems that are supported. It plays a significant role in the Node.js runtime environment and manages asynchronous, non-blocking operations.</p>
+The features of libuv library are:</strong></p>
+The Libuv library provides various mechanisms to handle services like File Systems, DNS, <a href="https://unstop.com/blog/networking-interview-questions">networks</a>, child thread processes, pipes, signal handling, polling, streaming, and more.</li>
+The library also includes a thread pool which helps distribute the CPU loads for blocking operations that can't be done asynchronously at the OS level.</li>
+Q29. Can you tell me about spawn() and fork() method in node.js?</h3>
+The Spawn() Method:</strong> This method first initiates a command in a new process and creates a child thread process that implements the EventEmitter API. It thus returns an instance of the child process. The handlers for events can then be attached or registered to the child instance created. Note that in spawn(), only one copy of the node module is active.</p>
+The syntax for the spawn() method in Node.js is-</strong></p>
+child_process.spawn(command[, args][, options])</p>
+The Fork() Method: </strong>This method is a special case of the spawn() method. It generates a new V8 heap engine instance and creates a new process through command rather than running on the same node process. The fork() method can make several individual processes (child thread processes) and multiple workers run on a single node module.</p>
+The syntax for the fork() method in Node.js is-</strong></p>
+child_process.fork(modulePath[, args][, options])</p>
+Q30. Tell me about the tool you would use to assure consistent style in Node.js.</h3>
+There are multiple tools in Node.js that can be used to assure a consistent style that helps develop code in teams. Some of them are-</p>
+To make sure that files adhere to the Node.js core style guidelines, we can utilize the Node.js Standard Style tool.</li>
+ESLint is a well-known tool that can be utilized to enforce coding standards and find common errors in JavaScript code.</li>
+This is a code formatting tool that is helpful in making sure that code is formatted consistently as per Node.js guidelines.</li>
+EditorConfig is a tool that can be used to make formatting preferences in an editor mandatory.</li>
+RisingStack's Node.js style guide</strong>: RisingStack's Node.js style guide outlines indentation guidelines, variable naming conventions, best practices, and other details to make sure that code is written consistently.</li>
+Q31. Describe the global and local installation of dependencies.</h3>
+Global Installation:</strong> The global installation of dependencies puts the module into our Node.js path, which is operating system dependent. This makes it accessible from any project without the need to install it separately for each project while doing the setup.</p>
+Global installation of dependencies is used to install packages globally in the system while making Node projects. Global installation of dependencies is best used for packages that one wants to use in the shell or on the command line.</p>
+The command for these dependencies is written as-</p>
+C:Nodejs_WorkSpace&gt;npm install express -g</p>
+Where C:Nodejs_WrokSpace is the directory, and 'npm install express - g' is the command of action.</p>
+Local Installation: The l</strong>ocal installation of dependencies installs the respective package in the current working directory. Local installation of dependencies is used to install packages locally in a project, and it is best used for packages that one wants to use in their program using <strong>require('whatever').</strong></p>
+The command for this is written as-</p>
+C:Nodejs_WorkSpace&gt;npm install express</p>
+Q32. Explain the significance of the package.json in Node.js.</h3>
+Package.json refers to a JSON (JavaScript Object Notation) file found at the root of a Javascript/Node project. It is used to manage the project's dependencies, scripts, version, and a tonne of other things. It stores project-related metadata.</p>
+Some attributes of the package.json are-</p>
+This refers to the version of the module that the package.json is describing.</li>
+A human-readable description of the module.</li>
+An array of keywords that describe the module.</li>
+The name of the author of the module.</li>
+Q33. Tell me the commands used to update or uninstall dependencies through npm.</h3>
+The most ideal way to update dependencies through the npm is to use the command <strong>npm update</strong> command followed by the respective package name.</p>
+For example: If we want to update the loadash package, we can use the command- <strong>npm update lodash.</strong></p>
+In case one wants to uninstall the dependencies, then one must use the <strong>npm uninstall c</strong>ommand, which must be followed by the package name, just like in the case of the update command.</p>
+Q34. Tell me how will you fire an event and also bind the event to the event handler.</h3>
+Events in JavaScript are signals that are fired inside the browser window to alert of changes to the operating system or browser environment. Web pages can react effectively to changes when programmers write event handler code that runs when an event occurs.</p>
+To fire an event programmatically, we can use the EventTarget.dispatchEvent() method.</p>
+Code Snippet Example:</strong></p>
+"preview code_snippet">
+CODE SNIPPET IS HERE</code></pre>
+ZnMucmVhZEZpbGUoJ2ZpbGUxLnR4dCcsIGZ1bmN0aW9uKGVyciwgZGF0YSkgewoKaWYgKGVycikgewoKY29uc29sZS5lcnJvcihlcnIpOwoKfSBlbHNlIHsKCmZzLnJlYWRGaWxlKCdmaWxlMi50eHQnLCBmdW5jdGlvbihlcnIsIGRhdGEpIHsKCmlmIChlcnIpIHsKCmNvbnNvbGUuZXJyb3IoZXJyKTsKCn0gZWxzZSB7Cgpmcy5yZWFkRmlsZSgnZmlsZTMudHh0JywgZnVuY3Rpb24oZXJyLCBkYXRhKSB7CgppZiAoZXJyKSB7Cgpjb25zb2xlLmVycm9yKGVycik7Cgp9IGVsc2UgewoKY29uc29sZS5sb2coZGF0YSk7Cgp9Cgp9KTsKCn0KCn0pOwoKfQoKfSk7</pre></div>
+To bind an event to an event handler, we can assign the event handler function to the appropriate on-event property of the object that fires the event.</p>
+Code Snippet Example:</strong></p>
+preview code_snippet">
+
+Q35. Will the fs module support synchronous and asynchronous forms?</h3>
+Yes, every method in the fs module has both synchronous and asynchronous forms. Asynchronous methods accept a callback function for the error as their first parameter and a callback function for the completion as their last parameter. Also, asynchronous techniques are frequently preferred to synchronous methods. This is because they do not obstruct the operation of the software, in contrast to the synchronous methods.</p>
+Q36. Can you tell me how will you truncate a file in Node.js?</h3>
+We can truncate a file in Node.js by using the fs.truncate() method from the built-in fs module. We can also use the fs. truncate() method to change the file's size by increasing or decreasing the file size. The length of the file at the supplied path is increased by len bytes using this method. If len is less than the file's current length, the file is truncated to that length. Len is padded if it exceeds the file length by adding null bytes (x00).</p>
+Here is an example to showcase the same:</strong></p>
+"preview code_snippet">
+CODE SNIPPET IS HERE</code></pre>
+Q37. Tell me how will you delete a file in Node.js.</h3>
+One way to remove a file in Node.js is by using the fs.unlink() method offered by the integrated fs module. The fs.unlink() method can be used to asynchronously delete a file or symbolic link.</p>
+Code Snippet Example:</strong></p>
+"preview code_snippet">
+CODE SNIPPET IS HERE</code></pre>
+Y29uc3QgZnMgPSByZXF1aXJlKCdmcycpOwoKCgoKLy8gRGVsZXRlIHRoZSBmaWxlCgpmcy51bmxpbmsoJ3BhdGgvdG8vZmlsZScsIChlcnIpID0+IHsKCmlmIChlcnIpIHRocm93IGVycjsKCmNvbnNvbGUubG9nKCdGaWxlIGRlbGV0ZWQnKTsKCn0pOw==</pre></div>
+Q38. Describe the error-first callback.</h3>
+The error-first callback is a Node.js function that receives an error object as its first argument. And the function returns any successful data as its second argument. Node.js uses a technique called the error-first pattern to handle problems in asynchronous methods. The majority of Node.js' asynchronous methods adhere to the error-first approach to make sure that errors are thoroughly checked; that is, they employ the error-first paradigm to ensure errors are thoroughly checked.</p>
+Code Snippet Example:</strong></p>
+"preview code_snippet">
+Q39. What are the ways to resolve callback hell issues in Node.js?</h3>
+Some ways to resolve callback hell issues in Node.js are-</p>
+Using Promises:</strong> In JavaScript, promises provide a mechanism for dealing with asynchronous logic. They let you create synchronous-looking asynchronous code, which makes it simpler to read and comprehend. A promise can be in one of three states- fulfilled, rejected, or pending. Complex code flows can be more easily managed when several asynchronous processes are chained together using promises.</p>
+We can use async/await to write asynchronous code that seems like synchronous code. Note that async/await is a more recent JavaScript capability. On top of Promises, Async/Await offers a more condensed and readable approach to creating asynchronous code.</p>
+Q40. Is it possible to load an HTML code to Node.js?</h3>
+Yes, we can easily load an HTML code to Node.js.To render the HTML file, we can utilize the sendFile() function in Express.js. To read the HTML file and send it as a response to the client, we can also utilize Node.js' built-in fs module.</p>
+Q41. Define event loop.</h3>
+In spite of JavaScript's single-thread nature, Node.js's event loop is a core idea that enables it to carry out non-blocking I/O operations. The event loop is a never-ending cycle that awaits tasks, completes them, and sleeps until it is presented with additional tasks.</p>
+Node.js starts by initializing the event loop and processing any input script that is given (or dropped into the REPL), which may make async API calls and schedule timers, before starting to process the event loop itself.</p>
+Q42. Tell me the importance of module.exports in node.js.</h3>
+A specific object called module.exports is used by every JavaScript file in a Node.js application to define the public API of the module. It is employed to export a module's open API and make it accessible to other modules.</p>
+Example:
+"preview code_snippet"
+Q43. What is the meaning of a module in Node.js?</h3>
+A module in Node.js is a section of a block of code that offers simple or complicated functionality. And it can interact with other apps. It is comparable to JavaScript libraries. Modules may either be arranged in a single file or in a group of related files and folders.</p>
+Q44. Tell me why we use zlib in Node.js.</h3>
+The Zlib module of Node.js is used to offer functionality for compression and decompression (zip and unzip). It is the Zlib module that facilitates the implementation of the gzip and deflate content-encoding techniques specified by HTTP.</p>
+Q45. State the differences between readFile and createReadStream in Node.js.</h3
+readFile
+The readFile approach reads a file into the memory before making it available to the user.</p>
+The createReadStream reads a file according to the need of the user in chunks.</p>
+It is slower than the createReadStream approach.</p>
+The createReadStream is faster in comparison.</p>
+It is comparatively easier to clean the memory in the case of readFile.</p>
+The cleaning of the memory is not as easy in the case of createReadStream.</p>
+Q46. Tell me the name of commands that are used for working in the file system from your database.</h3>
+The commands name that we use for working in the file system are-</p>
+Q47. Define the control flow function.</h3>
+The control flow functions are lightweight, generic pieces of code that run in between several asynchronous function calls. They take care of the necessary code execution orders. They are used to handle the flow of asynchronous code and ensure that the necessary callbacks are executed in the correct order. Control flow functions can be used to implement various control flow patterns such as series, parallel, and waterfall.</p>
+Q48. What are the different patterns in the control function?</h3>
+The different patterns in the control functions in Node.js are-</p>
+It executes async jobs one at a time in a predetermined sequence.</li>
+It runs async tasks concurrently, that is, without waiting for the completion of the previous job.</li>
+Async tasks are executed sequentially using the waterfall technique, which passes the output of one job as a parameter to the next.</li>
+It runs the async tasks for each item in an array or object, in parallel or in series.</li>
+It runs the async tasks in an event queue with a specified concurrency limit.</li>
+Q49. Explain the Event Emitter.</h3>
+The Event Emitter module makes it easier for objects to interact and communicate with one another. The asynchronous event-driven design of Node.js is built around event architecture. Many of Node's built-in modules, including well-known frameworks like Express.js, derive from Event Emitter. Event listeners are used to handle events emitted by an Event Emitter object.</p>
+Q50. What is a crypto module in Node.js?</h3>
+A collection of wrappers for the hash, HMAC, cipher, decipher, sign, and verify methods of OpenSSL are included in the crypto module. It is a built-in module in Node.js that offers cryptographic capabilities. Various encryption, decryption, signature, and hashing processes can be carried out using this crypto module.</p>
+Q51. Describe the URL module.</h3>
+The URL module is a built-in module in Node.js. This module offers a variety of tools for URL resolution and parsing. So, when a URL string is parsed into a URL object with each component of the address as a property, it can be used to break up a web address into readable components. The URL module offers two APIs for working with URLs, an older API that is exclusive to Node.js and a more recent API that implements the WHATWG URL Standard that web browsers use.</p>
+
 What is an error-first callback?
 How can you avoid callback hells?
 What are Promises?
