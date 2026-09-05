@@ -1,58 +1,5 @@
-Contact us
-Log in
-Katalon
-Katalon Studio
-True Platform
-Solutions
-Pricing
-Resources
-Start free trial
-Book a demo
-All
-News
-Products
-Insights
-Community
-Search
+DevOps
 
- 
-search icon
-Search blog
-30+ DevOps Interview Questions (2026) With Answers
-Looking for a new DevOps job? These are the 30 CI/CD and DevOps interview questions for you to ace to get your next dream job.
-
-Start free trial
-Book a demo
-Hero Banner
-logo
-All
-News
-Products
-Insights
-AI
-DevOps and CI/CD
-Community
-View Demo
-Download Studio
-Blog
-/
-Insights
-/
-30+ DevOps Interview Questions (2026) With Answers
-30+ DevOps Interview Questions (2026) With Answers
-Katalon Team
-Katalon Team
-Contributors 16 min read Updated on Feb 9, 2026
-Learn with AI
-
-Top 30+ DevOps interview questions | Katalon
-DevOps – a renowned software development practice that many companies adopt into their workflow – has been drawing a great deal of attention lately. More and more companies have implemented this approach, including large enterprises such as Netflix, Facebook, and Amazon. As a matter of fact, DevOps-related jobs have become one of the most promising career choices for IT professionals today. 
-
-You might be among the developers who are planning to advance your career as a DevOps engineer, analyst, or specialist. Besides the required technical skills, a DevOps job interview can be tough without diligent preparation. 
-
-This blog post presents more than 30 of the most common DevOps interview questions, neatly broken out into themes, so you can ace your next interview and successfully get that dream job.
-
-DevOps terms and definitions
 1. What is DevOps?
 
 In general, DevOps is the gray area between development (Dev) and operations (Ops) teams in a product development process. DevOps is a culture in which communication, integration, and collaboration in the product development cycle are emphasized. Thus, it eliminates the silos between software development and operations teams, allowing them to focus on rapid and continuous product deployment.
@@ -7783,3 +7730,61 @@ Use TLS for Communication: Secure the Docker daemon and client communication wit
 6. Runtime Security
 Resource Limits: Use resource limits to control CPU and memory usage (--memory and --cpus flags) to prevent DoS attacks.
 Logging and Monitoring: Implement logging and monitoring for container activities using tools like Docker logging drivers, ELK stack, or Prometheus.
+
+Настройка CI/CD процессов (непрерывной интеграции и непрерывного развертывания) во фронтенд-разработке — это ключевой аспект, который позволяет автоматизировать сборку, тестирование и развертывание приложений. Вот несколько основных этапов и технологий, которые обычно используются для настройки CI/CD в фронтенд-проектах:
+
+### Основные этапы настройки CI/CD:
+
+1. **Выбор CI/CD инструмента**:
+   - Популярные инструменты для CI/CD включают **Jenkins**, **GitHub Actions**, **GitLab CI**, **CircleCI** и **Travis CI**. Выбор зависит от специфики вашего проекта и предпочтений команды.
+
+2. **Конфигурация сборки**:
+   - Настройка конфигурации для автоматической сборки проекта при каждом коммите или пулл-запросе. Обычно это включает в себя команды для установки зависимостей (например, `npm install`), сборки проекта (например, `npm run build`) и запуска тестов.
+
+3. **Автоматизированное тестирование**:
+   - Важно настроить автоматизированные тесты, чтобы убедиться, что новые изменения не нарушают существующий функционал. Это может быть юнит-тестирование с использованием **Jest** или **Mocha**, а также интеграционное тестирование с **Cypress** или **Selenium**.
+
+4. **Развертывание**:
+   - После успешной сборки и тестирования приложение автоматически развертывается на сервере или облачном сервисе. Это может быть **AWS**, **Vercel**, **Netlify** или любой другой хостинг, поддерживающий автоматическое развертывание.
+
+5. **Мониторинг и уведомления**:
+   - Настройка уведомлений о статусе сборок и развертывания. Это может быть интеграция с **Slack**, **Email** или другими средствами коммуникации, чтобы команда могла быстро реагировать на проблемы.
+
+### Пример настройки CI/CD с GitHub Actions
+
+Вот пример базового конфигурационного файла для GitHub Actions, который выполняет сборку и тестирование фронтенд-приложения на Node.js:
+
+```yaml
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build project
+      run: npm run build
+```
+ 
