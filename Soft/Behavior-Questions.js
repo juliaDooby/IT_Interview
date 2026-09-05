@@ -1,3 +1,17 @@
+Getting Ready for Your React Deep Dive
+But before we get to the actual list of questions, let’s talk about the interview itself and how you can prepare for it.
+
+Deconstruct the Core: You wouldn't build a complex React application without understanding its fundamental React features. Similarly, for your interview, grasp the "whys" and use them. Why unidirectional data flow? What problem did hooks in React solve? Why is component-based architecture so powerful for building user interfaces?
+
+Code It Out: Reading about controlled components or asynchronous data loading is one thing; actually implementing them is another. Fire up your favorite IDE, build small function app examples that demonstrate state and lifecycle methods, how to pass data between parent and children components, or even a basic custom hook.
+
+Debug Your Experience: Every developer has faced bugs. Instead of just listing projects, practice articulating the challenges you encountered, especially those related to React components, complex state management, or optimizing rendering components. How did you identify the issue? What patterns did you use to debug? Showing your problem-solving process is as crucial as knowing the answer.
+
+Interactive Learning: Not everyone realizes this, but interviews go both ways. Prepare thoughtful questions about the team's tech stack (do they lean on Context API or a full-blown state management library?), their approach to testing, or how they handle server-side rendering. It shows you're not just looking for a job, but for the right environment to grow your React skills.
+
+Test yourself with Flashcards
+You can either use these flashcards or jump to the questions list section below to see them in a list format.
+
 Расскажите в двух словах о том, чем вы занимались в последнем проекте? В чем заключается ваша работа?
 Важно понять, как специалист структурирует информацию о своей роли и задачах.
 Расскажите о команде, с которой вы работаете. Как распределяются роли?
