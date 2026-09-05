@@ -1,3 +1,12 @@
+How to Prepare for a System Design Interview Questions?
+Familiarize Yourself with Common System Design Problems: Practice designing systems for common problems, such as a social media platform, a ride-sharing service, or a recommendation system. This will help you become more comfortable and confident in tackling new design problems in the interview.
+Understand Key Design Concepts: Make sure you are familiar with key design concepts, such as scalability, performance, fault tolerance, and security. Understand how these concepts apply to different types of systems and how to incorporate them into your designs.
+Practice Communicating your Designs: Being able to clearly and concisely explain your design is an important part of the system design interview. Practice explaining your designs to others and using examples and analogies to help illustrate your points.
+Review Data Structures and Algorithms: Familiarize yourself with common data structures and algorithms and understand how they can be used to solve design problems.
+Review System Design Principles: Familiarize yourself with principles of good system design, such as modularity, separation of concerns, and encapsulation. Understand how these principles can help you design more efficient and maintainable systems.
+Prepare for Open-ended Questions: Be prepared for open-ended questions that ask you to design a system from scratch. Make sure you have a structured approach to tackling these types of problems, such as breaking the problem down into smaller pieces or identifying the key components of the system.
+Practice with Real or Mock Interviews: Practice your system design skills with real or mock interviews. This will help you get a sense of what to expect in the actual interview and allow you to refine your approach and responses. The Full Stack Web Developer Bootcamp will advance your knowledge on both front and backend, which are essential for System Design.
+
 Red flag and green flag
 
 Think of red and green flags as signposts you can use to orient yourself in the interview. Green flags indicate that things are going well, that you're engaging with the interviewer and making a positive impression. Red flags warn you that you may be going astray and should try to get the interview back on track.
