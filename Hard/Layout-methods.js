@@ -5542,596 +5542,196 @@ Source Code: Login Form
 7. Registration Form
 A Registration Form is a simple webpage where you create a form to collect user details like name, email, password, and other information for account creation. It helps you understand how signup forms work, how to structure multiple input fields clearly, and how user data is collected and organized on websites.
 Features:
-
-
 Name input field
-
-
 Email input field
-
-
 Password and confirm password fields
-
-
 Gender or selection options
-
-
 Submit button
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
-
 Skills You Practice:
-
-
 Creating multi-field forms
-
-
 Using different input types
-
-
 Structuring user data sections
-
-
 Applying basic validation
-
-
-
 Source Code: Registration Form
 
-
-
 8. Survey Form
-
-
 A Survey Form is a simple HTML project where you create a form to collect user feedback, opinions, or responses on different topics. It helps you understand how to design forms with multiple input types and organize questions clearly for better user interaction and data collection.
-
-
-
 Features:
-
-
 Text input fields
-
-
 Radio buttons for single choice
-
-
 Checkboxes for multiple choices
-
-
 Dropdown selection
-
-
 Submit button
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
-
 Skills You Practice:
-
-
 Creating structured forms
-
-
 Using different input types
-
-
 Designing question-based layouts
-
-
 Collecting and organizing user responses
-
-
-
 Source Code: Survey Form
 
-
-
 9. Blog Website
-
-
 A Blog Website is a simple HTML project where you create a webpage to display articles or posts in a structured format. It helps you understand how content is organized on real websites, including headings, paragraphs, images, and sections for better readability and user experience.
-
-
-
 Features:
-
-
 Header with website title
-
-
 Blog post section
-
-
 Images with content
-
-
 Sidebar or categories (optional)
-
-
 Footer section
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
-
 Skills You Practice:
-
-
 Structuring long-form content
-
-
 Using headings and paragraphs effectively
-
-
 Organizing sections clearly
-
-
 Creating readable layouts
-
-
-
 Source Code: Blog Website
 
-
-
 10. Landing Page Design
-
-
 In this landing page project, you create a visually appealing webpage focused on a single product, service, or goal. It helps you understand how to structure sections like headers, banners, and call-to-action areas to attract users and improve engagement, while also learning how to guide visitors toward a specific action like signup or purchase.
-
-
-
 Features:
-
-
 Hero section with headline
-
-
 Call-to-action button
-
-
 Product/service details section
-
-
 Testimonials or reviews (optional)
-
-
 Footer section
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
-
 Skills You Practice:
-
-
 Creating structured layouts
-
-
 Designing user-focused sections
-
-
 Organizing content visually
-
-
 Improving page readability
-
-
-
 Source Code: Landing Page Design
-
-
-
-
 Upcoming Masterclass
 
-
 11. Restaurant Website
-
-
 In this project, you create a simple and attractive webpage to display a restaurant’s menu, services, and contact details. It helps you understand how to organize content, such as food items, images, and sections, into a clean layout for a better user experience and smooth navigation.
-
-
-
 Features:
-
-
 Homepage with restaurant name and banner
-
-
 Menu section with food items
-
-
 About section
-
-
 Contact details
-
-
 Image gallery (optional)
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Structuring multi-section pages
-
-
 Displaying content with images
-
-
 Organizing menus and details
-
-
 Adding basic interactivity with JavaScript
-
-
-
 Source Code: Restaurant Website
 
-
-
 12. Travel Website
-
-
 A Travel Website is a multi-section webpage where you showcase destinations, tour packages, and travel services in an organized layout. It helps you understand how to present location-based content, images, and information clearly, creating an engaging and user-friendly browsing experience.
-
-
-
 Features:
-
-
 Homepage with featured destinations
-
-
 Tour packages section
-
-
 Image gallery of places
-
-
 About or travel guide section
-
-
 Contact details
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Structuring multi-section pages
-
-
 Displaying images and content effectively
-
-
 Creating attractive layouts
-
-
 Adding basic interactivity with JavaScript
-
-
-
 Source Code: Travel Website
 
-
-
 13. Conference Page
-
-
 A Conference Page is an intermedial-level project in which you create a website to display conference details such as the schedule, speakers, and ticket information. In this project, the website includes multiple pages such as a homepage, about page, and tickets page, designed to provide complete event information in an organized way.
-
-
-
 Features:
-
-
 Homepage with conference overview
-
-
 About page with event details
-
-
 Tickets or registration page
-
-
 Speakers or sessions section
-
-
 Responsive design for all devices
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Creating multi-page websites
-
-
 Structuring event-based content
-
-
 Designing responsive layouts
-
-
 Managing navigation between pages
-
-
-
 Source Code: Conference Page
 
-
-
 14. News Website
-
-
 In this project, you create a structured webpage to display news articles, headlines, and categories in an organized layout. It helps you understand how to present large amounts of content clearly, making it easy for users to read, explore different sections, and navigate smoothly across the website.
-
-
-
 Features:
-
-
 Homepage with top headlines
-
-
 News articles section
-
-
 Categories like sports, tech, etc.
-
-
 Sidebar or trending news (optional)
-
-
 Footer with additional links
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Structuring content-heavy pages
-
-
 Organizing sections and categories
-
-
 Creating readable layouts
-
-
 Adding basic interactivity with JavaScript
-
-
-
 Source Code: News Website
 
-
-
 15. Photography Website
-
-
 A Photography Website is a creative webpage where you showcase images in a clean and visually appealing layout. It is a great HTML project for practice that helps you understand how to display photos, organize galleries, and create an engaging experience for visitors, while also improving your design sense and ability to present visual content professionally.
-
-
-
 Features:
-
-
 Image gallery or grid layout
-
-
 Categories or albums section
-
-
 Featured photos section
-
-
 About photographer section
-
-
 Contact details
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Displaying images effectively
-
-
 Creating gallery layouts
-
-
 Organizing visual content
-
-
 Adding basic interactivity with JavaScript
-
-
-
 Source Code: Photography Website
-
-
-
 Web Development Project Ideas for Practice
-
-
-
 Web Development Project Ideas	MERN Stack Project Ideas
 Frontend Development Project Ideas	Backend Project Ideas
 JavaScript Project Ideas	Full Stack Project Ideas
 
-
 16. E-commerce Website
-
-
 An E-commerce Website is a modern HTML project where you build a fully responsive online shopping website with product listings, categories, and interactive features. In this project, the website is designed to work smoothly on all devices and includes a clean layout for better user experience and navigation.
-
-
-
 Features:
-
-
 Responsive homepage with banners and offers
-
-
 Product listing and category sections
-
-
 Product details and pricing display
-
-
 Shopping cart layout (basic)
-
-
 Mobile-friendly design
-
-
-
 Technologies Used:
-
-
 HTML5
-
-
 CSS
-
-
 JavaScript
-
-
-
 Skills You Practice:
-
-
 Building responsive layouts
-
-
 Structuring product-based pages
-
-
 Creating user-friendly navigation
-
-
 Adding interactivity using JavaScript
-
-
-
 Source Code: E-commerce Website 
 
-
-
 17. Fitness Website
-
-
 A Fitness Website is a webpage where you create a layout to showcase workout plans, fitness programs, trainers, and health tips. It helps you understand how to organize content like schedules, images, and sections in a clean layout, while improving your ability to design engaging and informative web pages for users.
-
-
-
 Features:
 
 
