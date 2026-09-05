@@ -1,3 +1,40 @@
+Потренироваться на публичных API (JSONPlaceholder, ReqRes)
+
+Создать 5-10 коллекций с автоматизированными тестами
+
+Понять базовые концепции: HTTP-методы, статус-коды, переменные
+
+Финальные рекомендации:
+
+Для тех, кто только начинает:
+
+Не бойтесь Postman — он простой
+
+Практикуйтесь каждый день (30 минут достаточно)
+
+Используйте публичные API для тренировки
+
+Для тех, кто идет на собеседование:
+
+Повторите 12 вопросов
+
+Откройте Postman и отправьте хотя бы 10 разных запросов
+
+Подготовьте примеры коллекций, которые создавали
+
+Для тех, кто хочет выделиться:
+
+Изучите Newman
+
+Поймите CI/CD интеграцию
+
+Создайте публичную коллекцию на Postman и поделитесь в резюме
+
+API-тестирование — это будущее QA. Postman — это ваш билет в это будущее.
+
+Практикуйтесь. Учитесь. Получайте офферы.
+
+
 Как подготовиться к собеседованию за 1-2 недели
 У вас собеседование через 2 недели. Как подготовиться?
 
@@ -4517,7 +4554,6 @@ yaml name: API Tests on: [push] jobs: test: runs-on: ubuntu-latest steps: - uses
 Вывод: Newman — это Postman в командной строке. Нужен для автоматизации и CI/CD.
 
 
-********************************************************
 Частые ошибки джунов на собеседованиях
 Разберем типичные ошибки, которые делают junior QA.
 
@@ -4801,99 +4837,8 @@ Postman (практические навыки)
 Заключение: знание Postman = оффер
 Вернемся к истории из начала.
 
-Алексей провалил собеседование, потому что не открывал Postman до собеседования.
 
-Что Алексей сделал после?
-
-Установил Postman
-
-Прошел курс на Stepik (10 часов)
-
-Потренировался на JSONPlaceholder (создал 10 коллекций)
-
-Пересдал собеседование в другой компании
-
-Получил оффер
-
-Мораль:
-
-API-тестирование и Postman — это обязательные навыки для junior QA в 2025 году.
-
-Без них вас не возьмут. С ними — у вас есть все шансы.
-
-Хорошая новость:
-
-Postman — это самый простой инструмент для изучения. 1-2 недели практики достаточно, чтобы уверенно пройти собеседование.
-
-Что нужно сделать:
-
-Выучить 12 вопросов из этой статьи
-
-Потренироваться на публичных API (JSONPlaceholder, ReqRes)
-
-Создать 5-10 коллекций с автоматизированными тестами
-
-Понять базовые концепции: HTTP-методы, статус-коды, переменные
-
-Финальные рекомендации:
-
-Для тех, кто только начинает:
-
-Не бойтесь Postman — он простой
-
-Практикуйтесь каждый день (30 минут достаточно)
-
-Используйте публичные API для тренировки
-
-Для тех, кто идет на собеседование:
-
-Повторите 12 вопросов
-
-Откройте Postman и отправьте хотя бы 10 разных запросов
-
-Подготовьте примеры коллекций, которые создавали
-
-Для тех, кто хочет выделиться:
-
-Изучите Newman
-
-Поймите CI/CD интеграцию
-
-Создайте публичную коллекцию на Postman и поделитесь в резюме
-
-API-тестирование — это будущее QA. Postman — это ваш билет в это будущее.
-
-Практикуйтесь. Учитесь. Получайте офферы.
-
-Удачи на собеседованиях!
-
-А лучшие вакансии для тестировщиков ищите на hirehi.ru
-
-Top 10 Most Popular Postman Interview Questions With Answers
-https://www.softwaretestinghelp.com/
-
-By Vijay  Updated January 19, 2026
- 
- Edited by Kamila
-List of the most frequently asked Postman interview questions with answers to help you in preparation:
-
-In this tutorial, we will cover some common interview questions about the Postman tool and various API testing techniques.
-
-Let’s explore!!
-
-=> Watch Out The Simple Postman Training Series Here
-
-Quiz on Postman Interview Questions
-Try this quick challenge on Postman interview questions to impress your recruiters. This comprehensive quiz covers all fundamental API concepts to advanced Postman features along with the various testing methodologies in Postman.
-
-Postman Interview Prep Quiz
-Master API testing skills and excel in your Postman interviews
-Question 1 of 20
-What is Postman primarily used for?
-Database management and administration tasks
-API testing and development
-Email marketing
-Web development with HTML, CSS, JavaScript
+********************************************************************************
 
 Postman Interview Questions
 Common Questions for Postman Interview
