@@ -1,36 +1,103 @@
-Top 25 Computer Architecture Interview Questions And Answers
-By Sruthy  Updated January 21, 2026
- 
- Edited by Kamila
-List of most frequently asked Computer Architecture Interview Questions and Answers to help you prepare for the upcoming interview:
+What are system design interviews?#
+System design interviews generally give you a set of requirements for a relatively complex system and ask you to come up with a design. Often, these requirements start off somewhat vague to test whether you know what types of questions to ask to gain clarity about the system. These interviews are generally aimed at more senior candidates since juniors can't be expected to have performed too much system design work in their careers.
 
-Are you an aspirant preparing for a Computer Architecture interview? Do you aspire to shine in this field and become an expert? Are you planning to master your skills in computer architecture? Worry not, as you are in the right place now!
+These interviews can be some of the best barometers of a senior engineer's knowledge, but I personally find them to be the trickiest due to their open-ended nature.
 
-Computer Architecture has gained tremendous importance in this digital era. The implementation, functionality, and organization of any computer system are explained with many sets of rules and methods.
+Types of system design interviews#
+I have seen two types of system design interviews:
 
-Since the key implementation of Computer Architecture is used, students consider it one of the main subjects they have to grasp in computer engineering.
+Pure design. You just focus entirely on specifying the system and talking through how you would design it. You may draw up some diagrams to help convey architecture to the interviewer.
+Design + coding. The problem is slightly smaller in breadth. You talk through the design of the system and then you write some code to start implementing it.
+System design interviews look a lot different depending on your specialty. I have interviewed for both front-end and full stack web application engineer positions. For front-end positions, system design interviews tend to focus on designing a UI component and then implementing the HTML, CSS, and JavaScript for that component. For full stack positions, I have seen more pure design problems where you talk through various topics like how you'd make the application scale, database schema, and API design.
 
-Table of Contents: [Show]
+How to prep for system design interviews#
+The way I practice system design interviews is to do the following:
 
-Quiz on Computer Architecture Interview Questions
-Try this quick quiz on Computer Architecture Interview Questions to ace your next interview. This comprehensive quiz covers fundamental concepts, design principles, memory management, performance optimization techniques, and much more to sharpen your Computer Architecture skills.
+Create a list of the considerations that applies to the domain for which I'm interviewing. For example, if I'm interviewing for a front-end position then my interview will likely involve topics like accessibility and internationalization.
+Find relevant system design questions online. There are a lot of good examples online. Also, it's not too difficult to come up with your own examples.
+Design the systems. Take 45 minutes to an hour to design one of the systems you've identified. Make sure you draw out/sketch architectural pieces, which will be helpful during the interview. When you're done, review your work and make sure you've addresseed all the topics that came up in the list you made. If there are any deficiencies, do some studying of those areas.
+Creating a list of topics#
+Here are a couple lists of topics for front-end and backend positions. If you have a different specialty, do so googling to find out the relevant topics for your domain.
 
-Computer Architecture Interview Prep Quiz
-Master system design principles and excel in your computer architecture interviews
-Question 1 of 20
-What is the primary function of the ALU (Arithmetic Logic Unit) in a computer system?
-Manage memory allocation and virtual addressing schemes across multiple processes
-Perform arithmetic and logical operations
-Store data permanently for long-term system access and retrieval
-Control the overall execution flow and sequencing of all system operations
+Front-end#
+Accessibility
+Performance
+Security
+Caching
+Device types / responsiveness
+Languages / internationalization
+Componentization
+Component API
+User experience
+Multi-tenancy
+Analytics / telemetry
+Back-end#
+Database design
+Scalability
+Security
+API design
+Caching
+Availability
+Reliability
+Performance
+Authentication / authorization
+Telemetry
+The part you can't practice too well: asking questions#
+One tough aspect of system design interviews is you really don't know which items in the above lists the interviewer will be interested in, which is why you need to ask a lot of questions. For example, a good front-end clarification would be asking whether the system should support multiple languages. If the interviewer says "yes," you should spend some time explaining the achitecture for supporting different langauges. If the interviewer says "no," then you can skip this topic as you design your system.
+
+Use the RADAD framework#
+The Frontend Interview Handbook talks about the RADAD framework, which I found to be a really useful way to spend my time during the interview. The following is a copy/paste from the Frontend Interview Handbook to give you an idea of the framework, but I absolutely recommend you navigate to the handbook itself for more detail:
+
+Requirements clarifications/alignment - Ask about the requirements of the system.
+Architecture - Outline the architecture of the system (could be a UI component or an app, depending on the question). Draw diagrams where relevant.
+Data model - How would the component store any data passed into it? What data structures are used?
+API design - What's the API for using this component? What options will be allowed on the component?
+Deep dive - User Experience (UX), Performance, Accessibility (a11y), Internationalization (i18n), Multi-device support, Security
+This list is very front-end focused, but it applies equally as well to backend or full stack system design interviews.
+
+Find out where to spend most of your time#
+Once you've asked as many clarifying questions up front that you can think of, I recommend asking if there's a particular part of the system the interviewer is interested in. A lot of times the answer is "no," and you get to choose the focus. But in the event that the interviewer is particularly interested in one part of the design, that's a really good piece of information to have. Make sure to take notes as you're asking clarifying questions!
+
+Here are some good clarifying questions, which may or may not be applicable depending on the system you're being asked to design:
+
+If you're being asked to design a messaging service, you may ask:
+
+How real-time the messaging needs to be
+Whether there any special security requirements (e.g., end-to-end encryption)
+Whether we have insight into anticipated usage numbers
+How long messages should be retained
+Whether messaging should support media (e.g., images and video)
+If you're being asked to design an calendar component, you may ask:
+
+Whether it needs to support multiple languages / internationalization
+Whether it needs to support date ranges or just a single date
+What browsers and devices it will be used on
+What type of data should be stored in the calendar
+Relevant system design questions#
+The following is a non-exhaustive list of system design questions I have heard of. Feel free to practice these examples. Also, be sure to google around for other examples to practice.
+
+Back-end#
+Chat / messaging application
+Twitter / micro-blogging platform
+Link shortener (e.g., bit.ly)
+Any create, read, update, delete (CRUD) API
+Public library checkout system API
+Video streaming service
+Pinterest
+Front-end#
+The front-end for anything listed in the back-end section
+Specific components:
+Date-picker
+Image carousel
+Modal
+Accordion
+
 
 Computer Architecture Interview Questions
 The unique definition of every architecture defines the computer’s capabilities and programming models related to it. However, it doesn’t define the implementation.
 
 If you are seeking a Computer Architecture job, then you must be well-versed in the computer architecture interview questions. The interview questions vary with different job profiles. Here are a few questions that will help you prepare for the interview and pass it with flying colors.
 
-Important Questions for Computer Architecture Interview
-Basic Interview Questions
 Q #1) What do you understand by the term Computer Architecture?
 
 Computer architecture
@@ -267,51 +334,7 @@ Q #25) Why should we hire you?
 
 Answer: In the answer to this question, tell them how dedicated you are to your work. Talk about how you have learned new things during your career and how well you have learned from your mistakes. Put forward an example where you performed exceptionally well.
 
-Give them a picture of the kind of employee they are looking for.
-
-
-Skip to content
  
-Software Testing Help
-
-Home
-Resources
-FREE eBooks
-QA Testing
-Automation
-Types Of Testing
-Tutorials
-Data Tools
-More Tutorials
-Top 25 Technical Support Interview Questions With Answers
-By Sruthy  Updated January 21, 2026
- 
- Edited by Kamila
-This informative article will help you prepare for your upcoming technical support interview. You will learn how to answer the most frequently asked interview questions:
-
-A technical support job combines computer knowledge, know-how, and customer service skills. It aims to help customers with computer issues.
-
-Some companies prefer a formal degree like a bachelor’s or equivalent, while others look for a certain level of knowledge in computers, with the capability of learning as the work goes on. If you are interviewing for a technical support job, then you can expect a variety of questions related to troubleshooting.
-
-Table of Contents: [Show]
-
-Expert Quiz on Technical Support Interview Questions
-Try this quiz on Technical Support Interview Questions to master all the important concepts. This quiz is ideal for anyone preparing for a technical support interview.
-
-Technical Support Interview Prep Quiz
-Master technical troubleshooting and excel in your support interviews
-Question 1 of 20
-What is the first step when a user reports their computer is running slowly?
-Immediately reinstall the operating system completely
-Reformat the computer
-Gather information about when the issue started
-Replace the hard drive with a solid state drive
-
-Technical Support Interview Questions
-The interviewers will ask questions about hardware and software. You will be asked how you will reach a diagnosis of an issue and resolve it. The interviewers will look not just for a comprehensive knowledge of computers, but also for strong interpersonal and communication skills.
-
-Here are a few questions that will help you prepare for the IT support interview.
-
 Beginner Level Technical Support Interview Questions
 Q #1) What do you understand about the role of a Technical Support Engineer?
 
@@ -571,449 +594,6 @@ Answer: Everyone makes mistakes in their career, and there is no loss in admitti
 
 You can give an example where you learned from a mistake you made and didn’t make that mistake ever again. This will let them know you are willing to learn, even if it is from your own mistakes, and you will perform better than before.
 
-Final Thoughts on Technical Support Engineer Interview Questions
-A Technical Support Engineer interview is not just about your knowledge, but also about your approach to a problem and how you solve it.
-
-It will also give the interviewer an idea about how willing you are to learn and adapt. Being prepared with a few questions can help you get the confidence that you need to clear the interview with flying colors.
-
-Best wishes for your Technical Support Interview!
-
-For more Technical Support-related guides, you can explore our range of tutorials below:
-
-Best Help Desk Outsourcing Service Companies in 2026
-Top 20 Most Common Help Desk Interview Questions
-Top 38 Desktop Support Engineer Interview Questions and Answers
-Top 18 Most Common Call Center Interview Questions
-10 BEST IT Support Companies in the World (TOP Reliable)
-Was this helpful?
-Recommended Reading
-TOP 45 JavaScript Interview Questions With Detailed Answers
-JS Questions
-Most frequently asked basic and advanced JavaScript interview questions with detailed answers for every JavaScript Developer.  If you are preparing for an interview, here are the most frequently asked JS interview questions and answers for your reference. We have designed the same to get you to the questions you may…
-
-20 Selective QA Interview Questions To Clear Interview In 2026
-Quality Assurance QA Interview Questions
-Most Frequently Asked Quality Assurance QA Interview Questions and Answers to help you prepare for the Interview: Here are some of the questions I would ask if interviewing a Quality Assurance Engineer. The questions will emphasize more on the quality processes and the strategy and these questions will not be…
-
-40+ Popular Test QA Analyst Interview Questions and Answers (2026 LIST)
-Test QA Analyst Interview Questions Test QA Analyst Interview Questions and Answers
-Most Frequently asked Test/Quality Assurance Analyst Interview Questions and Answers: While deciding the career in which you want to be, the deciding factor is not only the one you think can enjoy working on. But being in that category requires a lot of skills, understanding the responsibilities as well as the…
-
-30 Top HTML Interview Questions and Answers (2026 LIST)
-HTML Interview Questions and Answers
-In this tutorial, we have covered HTML interview questions, which include both the basic and advanced portions of HTML, which are helpful for freshers and experienced candidates. HTML is a very basic language with which we begin our work on Web development. You need a very strong knowledge of HTML…
-
-READ MORE FROM THIS SERIES:
-
-Group Discussion Rules and Tips
-Top 90 SQL Interview Questions and Answers for 2026
-SQL Server Interview Questions and Answers (2026)
-Interview Questions and Answers
-30+ Top Scrum Master Interview Questions and Answers
-Top 30 PL/SQL Interview Questions and Answers in 2026
-Top 20 JIRA Interview Questions and Answers
-Top 35 Linux Interview Questions and Answers
-Top 20 Business Analyst Interview Questions and Answers
-Top 45 Web Services Interview Questions and Answers (RESTful, SOAP, Security que…
-Top 24 Data Modeling Interview Questions for Data Engineers
-TOP 70+ UNIX Interview Questions with Answers
-Top 40 C Programming Interview Questions for Developers
-Top 40 Popular J2EE Interview Questions and Answers You Should Read
-Top 60 Networking Interview Questions and Answers
-Top 20 Leadership Interview Questions and Answers
-Top 32 IBM DataStage Interview Questions And Answers
-Top 31 Most Important SAP BO Interview Questions and Answers
-Top 20 RESTful Web Services Interview Questions and Answers
-Top 50+ Database Interview Questions and Answers
-Top 30 SAS Interview Questions and Answers
-Top JMeter Interview Questions and Answers for 2026
-Top 35 Android Interview Questions and Answers
-60 Top Unix Shell Scripting Interview Questions and Answers
-Top 64 Scenario-Based Informatica Interview Questions with Answers
-Top 31 Agile Interview Questions and Answers
-50+ Top Core Java Interview Questions and Answers (2026)
-Top JSON Interview Questions and Answers
-60+ Top VBScript Interview Questions and Answers (2026 LIST)
-Top 30 Eclipse Interview Questions and Answers
-Top Teradata Interview Questions and Answers
-25+ Most Popular ADO.NET Interview Questions and Answers
-Top 50 C# Interview Questions with Answers
-Top 30 DBMS Interview Questions and Answers
-Top Oracle Interview Questions: Oracle Basic, SQL, PL/SQL Questions
-Top Oracle DBA, RAC, and Performance Tuning Interview Questions
-Top 50 Most Popular CCNA Interview Questions and Answers
-Top 20+ .NET Interview Questions and Answers
-Top Oracle Forms and Reports Interview Questions
-Top Oracle Apps Technical and Oracle SOA Interview Questions
-Top 30+ Popular Cucumber Interview Questions and Answers
-Top 30+ JMS (Java Message Service) Interview Questions
-TOP 45 JavaScript Interview Questions With Detailed Answers
-Top 20 Latest DevOps Interview Questions and Answers for 2026
-50+ Bootstrap Interview Questions and Answers
-Top 20 TestNG Interview Questions and Answers
-30+ TOP Servlet Interview Questions and Answers (2026 LIST)
-35+ Top Apache Tomcat Interview Questions and Answers
-48 Top AngularJS Interview Questions and Answers (2026 LIST)
-Top 30+ Popular CSS Interview Questions and Answers
-30 Top HTML Interview Questions and Answers (2026 LIST)
-50 Top PHP Interview Questions and Answers (For ALL)
-Top 20 Java Interview Programs for Coding with Answers
-Top 12 Mockito Interview Questions (Mocking Framework Interview)
-Top 40 MySQL Interview Questions And Answers
-Top 61 Python Interview Questions And Answers
-Top 48 Spring Interview Questions (Crack an Interview in 2026)
-Top 25+ Azure Test Plan or TFS Interview Questions
-TOP 35 HTML5 Interview Questions and Answers
-Top 25 Perl Interview Questions You Should Prepare in 2026
-TOP 70 C++ Interview Questions and Answers [Includes Advanced]
-25+ Top Spring MVC Interview Questions and Answers
-Top 36 Jenkins Interview Questions For 2026
-Top 15 Popular Specflow Interview Questions
-Spock Interview Questions with Answers (Most Popular)
-Top 50 Swift Interview Questions (Swift iOS Interview)
-Top 25 Software Engineering Interview Questions [LATEST 2026]
-Top 38 Desktop Support Engineer Interview Questions and Answers
-Graphic Design Resume Guide: Example And Templates For 2026
-Top 45 XML Interview Questions And Answers for 2026 [LATEST]
-50 Top Salesforce Interview Questions and Answers (Updated 2026)
-Top 49 Salesforce Admin Interview Questions And Answers 2026
-Top 84 Salesforce Developer Interview Questions And Answers 2026
-Top 35 ASP.Net And Web API Interview Questions With Answers
-Top 20 Most Common Help Desk Interview Questions & Answers (2026)
-Top 18 Most Common Call Center Interview Questions & Answers 2026
-Top 10 Most Popular Postman Interview Questions With Answers
-Top 35 Frequently Asked Struts Interview Questions & Answers
-Top 20 HR Interview Questions and Answers
-Top 20+ Employee Exit Interview Questions To Ask
-Top 15+ Important Unix Commands Interview Questions For Beginners
-Top 40 GIT Interview Questions and Answers In 2026
-Top 25 Technical Support Interview Questions With Answers
-Top 25 Computer Architecture Interview Questions And Answers
-50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
-Top 51 ElasticSearch Interview Questions & Answers in 2026
-Top 30 Programming / Coding Interview Questions & Answers
-Top 35 Management Interview Questions With Answers
-Top 29 Data Engineer Interview Questions And Answers
-Top 40 Java 8 Interview Questions & Answers [Most Important]
-31 Most Frequently Asked Maven Interview Questions & Answers
-30+ Top Java Collections Interview Questions With Answers (2026 LIST)
-Top 25 Java Web Services Interview Questions & Answers
-TOP 30 AWS Interview Questions and Answers in 2026
-How To Write A Follow Up Email After Interview?
-Top 40 SAP CRM Interview Questions and Answers
-Top 36 Most Important Chef Interview Questions And Answers
-Top 35 Puppet Interview Questions And Answers
-Top 31 Popular Python Flask Interview Questions With Answers
-JSP Interview Questions And Answers in 2026
-Top 30+ OOPS Interview Questions And Answers With Examples
-How To Write An Email To A Recruiter [Six Email Templates]
-Top 25+ Web Developer Interview Questions and Answers
-40+ PHP Laravel Interview Questions And Answers (2026 LIST)
-Top 25+ JDBC Interview Questions And Answers
-Top 30+ JSF Interview Questions And Answers
-Salesforce Lightning Interview Questions And Answers
-SAP Hybris Interview Questions And Answers
-Top 30 Node.js Interview Questions and Answers
-Top 25 Popular Appium Interview Questions And Answers
-Top 30 Frequently Asked Ajax Interview Questions And Answers
-35 Frequently Asked MongoDB Interview Questions And Answers
-39 Salesforce Solution Architect Interview Questions And Answers
-Top 30 Popular Scrum Master Interview Questions And Answers
-Top 20 Machine Learning Interview Questions And Answers
-Top 30+ Data Structure Interview Questions And Answers
-Top 28 VMware Interview Questions And Answers
-20 Reasons Why You are Not Getting Hired (with Solutions)
-Top 25 Microservices Interview Questions And Answers
-Top 26 Project Management Interview Questions for Managers
-Top 27 Azure Interview Questions And Answers
-42 Most Common TypeScript Interview Questions And Answers
-Top 25 Interview Questions for Managers with Answers
-50 Most Common React Interview Questions And Answers
-A Perfect Thank You Email After an Interview (4 Samples)
-Top 30+ Bulma Interview Questions and Answers With Examples
-Top 40+ Hibernate Interview Questions & Answers in 2026
-Top 30 Java Architect Interview Questions with Answers (2026)
-Top 40 Spring Boot Interview Questions 2026 (MOST ASKED)
-Top 40 Full Stack Developer Interview Questions & Answers
-IBM Careers: A Complete IBM Jobs & Internships Guide 2026
-Top 50 Behavioral Interview Questions and Sample Answers
-
-Get the Premium eBook 
-Download your copy now 👇
-Our Bestselling eBook 'Software Testing Career package' Now Available FREE for Limited Period
-Enter your email..
-
-DOWNLOAD NOW!
-Leave a Comment
-Comment
-
-Name
-Name *
-Email
-Email *
-
-About SoftwareTestingHelp
-Helping our community since 2006! Most popular portal for Software professionals with 400 million+ visits and 500,000+ followers! You will absolutely love our creative content on QA, Dev, Software Tools & Services Reviews!
-
-Learn In This Article:
-Expert Quiz on Technical Support Interview Questions
-Beginner Level Technical Support Interview Questions
-Experienced Level Questions for Technical Support Interview
-Final Thoughts on Technical Support Engineer Interview Questions
-Software Testing Help
-
-Communication Details
-
-Main Office: A708, City Vista, Fountain Road, Kharadi, Pune, MH, 411014.
-
-Email Us: info@softwaretestinghelp.com
-
-Facebook Linkedin X-twitter Youtube
-Software Testing Tools
-
-Test Management Tools
-Web Application Testing Software
-Cross Browser Testing Tools
-Best ETL Testing Tools
-Mobile Testing Tools
-Regression Testing Tools
-Defect Tracking Tools
-GUI Testing Tools
-Requirements Management Tools
-ALL Testing Tools
-Performance Testing Tools
-
-Performance Testing Tools
-Performance Testing Services
-Computer Stress Test Tools
-Cloud- Load Testing Service
-Performance Testing Guide
-Database Performance Tools
-Website Performance Testing Tools
-Application Performance Monitoring
-Automation Testing Tools
-
-Unit Testing Tools
-API Testing Tools
-Best ETL Tools
-Open Source Testing Tools
-Functional Testing Tools
-Selenium Alternatives
-Accessibility Testing Tools
-Mobile Automation Tools
-Automation Testing Software
-Automation Testing Services
-Data Tools
-
-Data Masking Tools
-Data Modeling Tools
-Data Analysis Tools
-Data Migration Software
-Data Integration Tools
-Data Mapping Tools
-Data Loss Prevention
-Test Data Management Tools
-Data Recovery Software
-Data Analytics Companies
-ALL Data Tools
-Coding Software
-
-Best Code Editors
-Code Coverage Tools
-Low-Code Development Tools
-Static Code Analysis Tools
-Source Code Management Tools
-Version Control Software
-Code Review Tools
-Javascript Online Editors
-Code Review Tools
-Code Quality Tools
-Security Testing Tools
-
-Penetration Testing Tools
-App Security Testing Tools
-Web Security Scanners
-Vulnerability Assessment
-Mobile App Security
-Malware Removal Tools
-Anti-Ransomware Tools
-Spyware Removal Tools
-Mobile Pen Testing Tools
-Pen Testing as a Service
-DAST Software
-Testing Service Providers
-
-Managed Testing Services
-Mobile Testing Services
-Software Testing Services
-Performance Testing Services
-Penetration Testing Companies
-Cyber Security Companies
-QA Outsourcing Companies
-USA Testing Companies
-Website Testing Services
-Regression Testing Services
-Software Development
-
-Custom Software Companies
-App Development Tools
-Software Development Tools
-Game Development Companies
-Software Companies USA
-SaaS Development Companies
-Android App Development
-DevOps Tools
-DevOps Service Providers
-App Development Companies
-Healthcare Dev Companies
-Networking Tools
-
-Network Management
-Network Security Tools
-Network Scanning Tools
-Application Scanners
-Network Testing Tools
-Network Monitoring Tools
-Network Security Tools
-Server Monitoring Tools
-Network Mapping Software
-SIEM Tools
-System Monitoring Tools
-Infrastructure Monitoring Tools
-Project Management Tools
-
-Project Management Software
-Project Management Apps
-Agile Project Management Tools
-Workflow Management Software
-Task Management Software
-Team Collaboration Tools
-JIRA Alternatives
-Project Planning Tools
-Team Management Software
-Cloud Tools
-
-Cloud Monitoring Tools
-Crowdsourcing Platforms
-Cloud Management
-Crowdsourced Testing Companies
-Cloud Mobile Testing
-Cloud Computing Companies
-Cloud Managed Services
-Cloud Testing Tools
-Cloud Security Companies
-ALL Categories
-Security Software
-
-Free Antivirus Software
-Cybersecurity Software
-Internet Security Tools
-External Vulnerability Scanner
-Website Malware Scanner
-Web Security Scanners
-Zero Trust Security
-Vulnerability Assessment
-ALL Security Tools
-IT Management Tools
-
-Remote Desktop Software
-Configuration Management
-Incident Management Software
-Change Management Software
-IT Asset Management
-Managed IT Services
-ITSM Tools
-Remote Monitoring Software
-Remote Access Software
-Asset Discovery Tools
-Workload Automation Tools
-IT Automation Tools
-
-About us | Contact us | Advertise
-All articles are copyrighted and cannot be reproduced without permission. SoftwareTestingHelp® is a registered trademark.
-©SoftwareTestingHelp 2025 — Read our Copyright Policy | Privacy Policy | Terms | Cookie Policy | Affiliate Disclaimer
-
-Software Testing Help
-
-
-AI Engine Chatbot
-
-
-
-Автор статьи
-
-Лиана Санамян
-
-Редактор и автор портала Otzyvmarketing.ru.
-
-Все статьи  Бизнес
-Чек-лист вопросов на собеседовании системному аналитику
-Дата обновления: 27.11.2024  Время чтения: 7 мин.
-
-
-Какие вопросы задать системному аналитику на собеседовании, чтобы точно оценить уровень специалиста, его навыки и соответствие вашим требованиям. Мы уже рассказывали о вопросах к собеседованию на тестировщика и Python-программиста. В этой статье поговорим о найме аналитиков.
-
-Своим опытом, а также вопросами и рекомендациями по ответам, поделился руководитель отдела аналитики ГК «Технократия» Алексей Аксянов. Совместно мы собрали 60 вопросов, которые обычно задают системным аналитикам при найме. 
-
-SEO, Директ, VK Ads, Авито и Wildberries — в одном кабинете
-
-PromoPult ведёт рекламу на автопилоте:
-
-один логин вместо пяти;
-без абонентской платы и агентских комиссий — платите только за то, что используете;
-возврат до 19% от расходов бонусами.
-Реклама. ООО "Клик.ру". ИНН 7743771327. erid:2VtzqxFCx5k
-Алексей Аксянов
-Алексей Аксянов
-Материал будет полезен не только рекрутерам, но и соискателям на должность системного аналитика — поможет в подготовке перед ответственным интервью.
-
-Перейдем к вопросам для аналитика на техническом собеседовании.
-
-Первый этап: вводные вопросы
-Для начала мы всегда стараемся выяснить, правильно ли человек понимает, кто такой системный аналитик. Поэтому мы всегда задаем на старте вопрос: «Кто такой системный аналитик (СА) и кто такой бизнес-аналитик (БА)? Чем они занимаются и в чем разница между ними?»
-
-Надо отметить, что в разных компаниях обязанности на этих должностях бывают сильно перемешаны. Где-то есть аналитик, который делает все, где-то только БА или только СА. Поэтому нам важно понимать ожидания специалиста по должности, в первую очередь, как он сам себя позиционирует.
-
-Далее спрашиваем про опыт кандидата: зачастую в резюме он бывает скудно описан, мы же хотим узнать не просто, что он делал на прошлой работе, но и какие результаты это принесло, какие достижения были и чем он гордится.
-
-При этом можно оценить, насколько у человека хорошо развит навык самопрезентации — это как раз один из важных софт-скилов, необходимых аналитику (публичные выступления, самопрезентация).
-
-Также мы спрашиваем про карьерные ожидания и цели: почему решил поменять работу (а может, и вид деятельности), что не устраивало на прошлом месте, чего не хватало. Это нужно, чтобы понять, что он ожидает и сможем ли мы закрыть его потребности развития на этой позиции в нашей компании.
-
-Вопросы по soft skills для системного аналитика
-Открытость мышления, способность выходить за рамки задачи, умение работать с неопределенностью, а также работать в команде — важные софты для любого аналитика.
-
-Аналитик (и системный, и бизнес) переводит неформализованные требования заказчика в структурированный, понятный описанный алгоритм для разработчика.
-
-Чтобы эти требования собрать, нужно общаться как с заказчиками, так и с отделом разработки, потом провести груминг — то есть защитить свой проект перед командой, выслушать их комментарии и согласовать проект. Поэтому коммуникативные навыки крайне важны для аналитиков.
-
-Чтобы выявить у соискателя эти скиллы, можно задать, например, такие вопросы:
-
-Как ты представляешь идеальную команду? Кто в нее входит, какие у каждого роли?
-Этот вопрос дает понять ожидания соискателя — то, в каком формате ему комфортно работать — и соответственно, сразу оценить, совпадает ли это с тем, как выстроена работа у нас.
-
-Готов ли ты работать в небольшом проекте, где возможно придется выполнять смежные обязанности, в том числе бизнес-аналитика, ради выполнения общей задачи проекта?
-Важно, чтобы человек понимал, что разработчики у нас не фулстек, а с разделением на фронт и бэкенд, а также что есть продуктовые команды с небольшим числом людей, в которых может не быть бизнес-аналитика и технического писателя. Кандидату должно быть комфортно работать в такой команде.
-
-Как ты будешь действовать, если проект-менеджер заболел или ушел в отпуск, а проект нужно сдать в срок? Сможешь ли на короткое время взять на себя управление командой?
-Тут мы можем оценить управленческие и лидерские навыки кандидата, сможет ли он аккумулировать в себе экспертизу по проекту и передавать ее коллегам или новым сотрудникам. То есть может ли он в перспективе стать ментором, онбордить новичков и т.д.
-
-Что тебя драйвит и мотивирует в работе?
-Этот вопрос часто позволяет определить будущий трек развития кандидата, например: инициативный лидер, ответственный исполнитель, ментор, «говорящая голова» для конференций.
-
-Чем ты однозначно не хочешь заниматься?
-Этим вопросом мы выясняем стоп-лист по каким-либо проектам или конкретным задачам. Например, кандидат не хочет работать на проекте, где нужно делать задачи по техподдержке или писать документацию по ГОСТу. Лучше это озвучить сразу — так нам будет проще понять, насколько ему будет комфортно с нашими проектами и процессами. По количеству и «категоричности» ответов можно оценить, насколько хорошим командным игроком станет кандидат.
-
-Команда отдела аналитики
-Команда отдела аналитики
-Вопросы по hard skills для системного аналитика
-Есть стандартные области знаний в аналитике, которые должны знать и системные и бизнес-аналитики. Соответственно, спрашиваем об этом и тех, и тех. В частности, это работа с требованиями и про интерфейс (более значимо для БА), раздел про нотации (универсально для обоих), блок про архитектуру и базы данных, а также интеграции систем (более весомо для СА).
-
-Внутри каждого блока есть конкретные хард-скиллы, которые работодатель оценивает. Мы здесь ввели стандартную классификацию: выставляем баллы от 0 до 3. Чтобы понять, насколько человек опытный и соответствует ли своему уровню, мы составили перечень вопросов от простых до самых сложных.
-
-В процессе собеседования мы задаем из этого списка релевантные грейду, на который претендует кандидат. То есть человеку, который идет на middle+ (и мы на первом этапе убедились в его уровне), естественно не задаем вопросы для джуна.
-
-Теперь перейдем к конкретным вопросам на хард скиллы, распределим их по областям знаний.
 
 НОТАЦИИ
 
@@ -1106,114 +686,6 @@ MVP, приоритизация (как составить и приоритиз
 Оценка трудоёмкости (как оценить трудозатраты аналитика)
 Работа с git, CI/CD (опыт работы, чтение кода)
 Работа с мобилкой (понимание особенностей мобилки при проведении аналитики)
-
-
-ЧИТАЙТЕ ТАКЖЕ
-Чек-лист вопросов на собеседовании по SQL
-11.03.2024
-Рекомендации, как подготовиться к собеседованию
-Первая и главная рекомендация, в частности, она касается начинающих специалистов — ни в коем случае не пытаться зубрить теорию. Без осмысления вопроса и понимания, как это возможно применить на практике — зубрежка бесполезна.
-
-Можно даже неидеально знать теорию, но при этом гораздо важнее уметь самостоятельно думать, логически мыслить, не стесняться рассуждать и задавать уточняющие вопросы на собеседовании.
-
-Это критически важно, особенно для аналитика. Суперполезный скилл, который не оценить цифрами, но он дает жирный бонус кандидату при трудоустройстве. Любой работодатель будет обращать внимание в первую очередь на живой ход мыслей соискателя, а не на то, как он красиво рассказывает теорию.
-
-Автор статьи
-
-Лиана Санамян
-
-Редактор и автор портала Otzyvmarketing.ru. Опыт работы в digital-маркетинге более 5 лет, с текстами работаю более 8 лет. Магистр филологии и ...
-
-Опубликовано
-26.04.2024
-
-Обновлено: 27.11.2024
-ЕЩЕ ПО ТЕМЕ
-Чек-лист вопросов на собеседовании 1С-программисту
-
-Чек-лист вопросов на собеседовании бизнес-аналитику
-
-Александр Кириллов, CosmoChanger: «Самой популярной валютой остается Bitcoin»
-
-ТОП-16 конструкторов смет – обзор программ
-
-Подсматриваем стратегию конкурентов в рекламе: рекомендации сервиса getUNIQ
-
-Комментарии
-Добавить комментарий
-Текст комментария
-
-Подпишитесь на нас в соцсетях
-Узнавайте о новостях и событиях там, где вам удобно
-
-
-Вконтакте
-
-Telegram
-
-YouTube
-
-PromoPult (SeoPult)
-Прежде чем выбрать — попробуйте сами
-14 дней SEO в PromoPult бесплатно. Без карты и подписки. Один кабинет для SEO, Директа, VK Ads и Wildberries.
-
-Начать бесплатно
-реклама
-
-
-
-otzyvmarketing
-Авторитетные отзывы от специалистов интернет-рынка
-
-Контакты
-Реклама на сайте
-FAQ для сервисов
-Виджеты для сервисов
- Добавить компанию
-Пользовательское соглашение
-Правила сайта
-Профессии
-Промокоды
-Кабинет представителя
-© 2015-2026 otzyvmarketing.ru
-
-
-
-Шаблоны сайтов для 1С-Битрикс, готовые решения, доработка и поддержка сайтов
-Помогу решить любую проблему с сайтом на 1С-Битрикс. Пишите, обсудим ваш проект.
- +7(775)5333248
-Обо мне
-Услуги  
-Готовые решения  
-Мои работы  
-Контакты
-ipoteka.domclick.ru
-Реклама
-
-Собеседование по System Design: как запроектировать и не потеряться
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-
-entracte.moscow
-Реклама
-•
-18+
-«Данила Козловский. Фрэнк» — 22.08, Зелёный театр ВДНХ
-5 000 ₽
-Личная история, рассказанная и спетая от первого лица. Промокод ФРЭНК20 −20%
-Музыкальный спектакль-шоу
-Купить билет
-
-Узнать больше
-Привет! Меня зовут Дмитрий. Я архитектор решений в крупной российской компании, более 15 лет проектирую, пишу код и руковожу командами. Сотрудничаю с Практикумом как ревьюер курса по Java и как автор курса «Архитектура программного обеспечения».
-
-Предположим, вы решили развлечься дизайном систем (System Design), пусть даже и не добровольно, на собеседовании. Если компания поленилась поделиться рабочим контекстом, то задача может быть в формате «запроектируй Твиттер». Более кандидатоориентированная компания N может попросить «спроектируй поиск на сервисе N».
-
-Хотя статей типа «как запилить Твиттер» довольно много, не все помогут сориентироваться на реальном собеседовании. В этой статье предлагаю покопать вглубь и составить чек-лист, некий алгоритм. Он будет чуть шире, чем принято «для Твиттера», хотя универсальным его сделать не получится. Мне эта схема помогала и помогает и проводить собеседования, и самому их проходить, хотя у каждого свои фишки и предпочтения. 
-
-Сразу скажу, всё, что будет ниже, — не идеальная архитектура, но на интервью она никому особо и не нужна. Обычно важнее понять, как мыслит человек и сможет ли он в будущем за разумное время и с наличием информации создать конфетку из… доступных ресурсов компании.
 
 Начало интервью и вводные данные
 Василий пришёл на собеседование. Скорее всего, у него есть час на всё. На сам дизайн минут 40, а остальное время — на вопросы по нему. Бывает, вопросы идут в процессе, тогда время отъедается и может даже не хватить. В идеале ему бы дойти до законченного варианта с картинкой и ответить на большинство вопросов, которые хотели у него спросить. Итак, отсчёт пошёл.
@@ -1450,50 +922,8 @@ status —1 байт.
 ▢ Продумать ресурсы инфраструктуры.
 
 
-Источник: https://habr.com/ru/companies/yandex_praktikum/articles/834230/
 
-Поделиться ссылкой: 
-Вернуться к списку
-
-Интересные статьи
-Пройти собеседование на аналитика 1С. Миссия выполнима?
-Пройти собеседование на аналитика 1С. Миссия выполнима?
-Консультанты и аналитики 1С — сейчас очень популярная и востребованная позиция. Они нужны многим, их ищут, за ними гоняются компании и рекрутеры. А что же спрашивают у них на собеседовании?Я Лариса Ше...
-PKI на ENS(Ethereum name system) и CA
-PKI на ENS(Ethereum name system) и CA
-Я бы хотел описать ENS в плане возможности доказательства владения публичным ключом при подписи данных и небольшого сравнения с CA(certificate authority).
-System Design. Общие принцип прохождения интервью по проектированию ИТ-систем
-System Design. Общие принцип прохождения интервью по проектированию ИТ-систем
-Привет, Хаброжители! Мы весьма рады, что вы решили изучить особенности интервью по проектированию ИТ-систем вместе с нами. Из всех технических интервью именно на этом задают самые сложные вопросы. Пр...
-Как устроен цифровой профиль в современных HR-системах на примере нашей Human Capital Management System
-Как устроен цифровой профиль в современных HR-системах на примере нашей Human Capital Management System
-Меня зовут Сергей Ахметов, я технический директор компании - разработчика HRTech-решений TalentTech, расскажу про систему автоматизации алгоритмов онбординга, развития, ...
-Глубина кроличьей норы или собеседование по C++ в компании PVS-Studio
-Глубина кроличьей норы или собеседование по C++ в компании PVS-Studio
-Авторы: Андрей Карпов, khandeliants Филипп Хандельянц. Хочется поделиться интересной ситуацией, когда вопрос, используемый нами на собеседовании, оказался сложнее, чем задумывал его автор. С...
-
-© 2026 Все права защищены.
-Быстро с 1С-Битрикс
-Шаблоны сайтов
-Мои работы
-Услуги
-Новости
-Статьи
-Контакты
- BitrixTM
- info@temofeev.ru
-
-
-
-Top 30 System Design Interview Questions and Answers
-Last updated on: 29th November 2023
-|
-By Team foundit
-Views
-12741
-ShareShare
-design a system to handle large amounts of data and users. Concept system-design-interview-questions
-System design interviews aim at allowing potential employees to show their skill set in system design by solving open-ended practical problems. Candidates include software developers, programmers, software designers, and software engineers. 
+Top System Design Interview Questions and Answers
 
 The System design process is a step-by-step process including the following steps:
 
@@ -1831,388 +1261,6 @@ The system design interview is nothing but a brainstorming session. Usually, the
 Try to listen carefully before answering any question. Make sure you have prepared well to face all sorts of questions. Try to cover all aspects in brief instead of going into detail about one aspect. All the best to all the future software engineers, software developers, programmers, and software designers!
 
 
-Top 30 System Design Interview Questions and Answers
-Last updated on: 29th November 2023
-|
-By Team foundit
-Views
-12741
-ShareShare
-design a system to handle large amounts of data and users. Concept system-design-interview-questions
-System design interviews aim at allowing potential employees to show their skill set in system design by solving open-ended practical problems. Candidates include software developers, programmers, software designers, and software engineers. 
-
-The System design process is a step-by-step process including the following steps:
-
-Empathize
-Define the issue
-Ideate
-Prototype
-Test
-system design process
-
-How to prepare for a System Design Interview?
-System design interview questions and answers can be tackled with the ‘practice makes a man perfect’ theory. There is an abundance of resources available online and offline to prepare for a system design interview. The resources include:
-
-Mock Interviews
-Books
-Articles
-Videos
-Courses
-Discord Servers
-The main solution tools for system design interview questions lie in the preparation for system design interviews. Other ways to prepare for a system design interview are to work on a real system and to learn how operating systems and databases work under the hood.
-
-Another thing to remember is that software documentation in system design interview questions is a collection of questions related to the documents and resources covering all aspects of a particular product design. A system design interview is based on the three following aspects:
-
-Clarity of thought
-Flexibility
-Knowledge and awareness
-Types of System Design Interview Questions
-There are various types of system designs such as architectural design, physical design, logical design, etc. Various categories of system design interview questions are also based on these system designs. 
-
-The categories of system design interview questions are as follows:
-
-Low-Level Design System design interview questions
-High-Level Design System design interview questions
-Object-Oriented System design interview questions
-Operating System Interview Questions
-Commonly Asked System Design Interview Questions and Answers :
-1. How would you design a parking lot?
-This question is one of the most common questions in a system design interview. The interviewer would like to hear the following points:
-
-Capacity
-
-Always consider the capacity of the parking lot before designing it. How many levels would it have? Also, what is the plan in case the parking lot becomes full?
-
-Types of vehicles
-
-The allocation of various parking areas for different vehicles is also to be justified.
-
-Flexibility of payment
-
-Different modes of payment such as cash, credit, and other online methods should be accepted. There should be different points where customers can pay.
-
-Pricing 
-
-Pricing should be handled well. Covering this aspect is very necessary. Pricing can be accommodated according to hourly rates.
-
-2. How do you design a mass social media platform?
-The aim of designing a mass social media platform such as Instagram, Facebook, and Twitter is to design a platform that enables its users to view a newsfeed with posts. 
-
-The basic features required by the social media service are stated below:
-
-Users can make public as well as private posts.
-The option of commenting and liking a post is available to the users. 
-It should accommodate multiple users at once.
-There should be a newsfeed and recommendation system.
-Privacy controls are also to be taken care of.
-Trending posts/tweets are supposed to be visible.
-The tools which are useful in the designing of the mass social media platform are as follows:
-
-To maximize the availability, rolling updates and replica nodes can be utilized.
-To recommend posts and news feeds, a trained machine learning algorithm can be used.
-A database schema can be created to store celebrities and some users separately.
-Some habits can be tracked using a social graph.
-3. Design a global chat service.
-We need to design a service that enables users to chat with each other over a global platform. The form of conversations can be either one-to-one or group chats.
-
-Following are the required features of the chat service:
-
-The chat service must allow the transfer of media such as photos, videos, stickers, and GIFs.
-The sent message should be encrypted during transit and should be stored for later viewing.
-The chat service should support one-to-one as well as group chats.
-Following is the list of tools that can be considered while designing a chat service:
-
-The database schema can be split into multiple tables, namely a user table, a chat table, and a message table.
-For bi-directional connections between the device and the server, WebSocket can be used.
-Push Notifications are also a great tool to notify users even if they are offline.
-4. How would you design Netflix?
-To design a video streaming service like Netflix, the main idea to keep in focus is that Netflix should be able to store and transmit video data. 
-
-Basic features that are expected off of Netflix are listed down below:
-
-It should be able to upload videos on the internet.
-Uninterrupted video streaming should be available to the users.
-Other features such as comments and likes are also necessary.
-It should also support high traffic of multiple users.
-Following tools help design Netflix:
-
-Cloud technology can be used for storing and transmitting video data.
-To recommend new video-related content, Machine Learning can be used.
-Components in the designing of Netflix:
-
-OC – Content Delivery Network
-Backend – Database
-Client – Device to assess Netflix
-5. How do you design a Tic-Tac-Toe game?
-Tic-tac-toe is a game that is meant to be played between two players. Here, one player is the computer itself. The rules of the game are simple. A player chooses ‘O’, and the other player chooses ‘X’ to mark their cells. If a player can fill a row, column, or diagonal of cells with their chosen character, the player wins.
-
-tic-tac-toe-game
-
-The implementation of the design can be done by using the rand() function, as the moves taken by the computer are completely random. This program can be updated so as the players play optimally. 
-
-6. Design a URL shortening service.
-A URL shortening service serves the dual purpose of:
-
-Generation of a unique short URL from a long URL
-Return of the shortened URL to its original form
-The required features of the URL shortening service are:
-
-The URL shortening service must return a URL that is shorter than the original URL.
-Redirects should be allowed by the shortened URL.
-The shortened URL must store the original URL.
-The shortened URL should be able to link to the original one.
-Following is a list of tools that can be considered while designing a URL shortening service:
-
-Multiple requests at once can be handled by the use of multithreading.
-To balance high traffic, REST API can be used. It will also help to handle front-end client communication.
-Hashing can be used to link old and new URLs.
-High-Level System Design Interview Questions and Answers
-7. How would you design Uber?
-Ans. The architecture of Uber is monolithic or microservices. 
-
-Following are the aspects to cover:
-
-Uber talks to the backend over the user’s mobile data. 
-Location data drives the dispatch system.
-Maps and routes in Uber are to be considered as well.
-Appropriate storage is required for multiple geographical locations.
-Node.js can be used to build the dispatch.
-The business logic services can be written in python.
-Databases: Redis, Postgres, MySQL
-8. Design an API Rate Limiter.
-Ans. The job of an AP Rate Limiter is to limit the number of API calls a particular service like Firebase can receive over a period to avoid overload.
-
-Following features are necessary to design an API Rate Limiter:
-
-The Limiter should notify the user if their request is denied. 
-Devices are limited to a particular number of requests on an hourly basis.
-Following tools can help design an API Rate Limiter:
-
-Sliding time windows can be used to avoid hourly resets.
-Instead of saving space, a counter integer can be saved.
-9. Design global file storage and sharing service.
-Ans. To design global file storage and sharing service, an asynchronous, cross-platform storage system is required in which users can store files and photos and assess them through multiple devices.
-
-The features necessary for designing the global file storage and sharing service are as follows:
-
-Old versions of the documents can be saved to rollback.
-All the files should be updated across devices in sync.
-Users can save, share, delete, and update files and photos over the internet.
-Tools that may help design the service are as follows:
-
-Chunking can be used to divide files into multiple sections. 
-To handle internal databases, cloud storage can be used.
-Updates are to be kept in check.
-10. How do you design a web crawler?
-Ans. A web crawler service collects information/crawl from the entire internet and fetches millions of web documents. 
-
-Things to keep in mind while designing a web crawler are:
-
-The approach is taken to find new web pages
-The approach to prioritize web pages that can change in a dynamic way
-To ensure that the web crawler service is bounded on the same domain
-11. Design Quora.
-Ans. Quora is a social network and message board service in which users can post links and questions. Users can also comment on the questions. Related questions and topics should also be accessible to the user.
-
-Features to include in the design of Quora are:
-
-Users can make posts with tags.
-The comment section to every post must be included.
-The app should support high traffic of posts and viewers.
-The list of tools that might help in the design of Quora is as follows:
-
-An SQL database can be used to map the relational data.
-Sharding can be used to break up the system.
-Multithreading and load balancer can be used to help support the high traffic.
-Machine learning can be used to find correlations between relations between tags.
-12. Design a traffic control system.
-This question is one of the classic questions asked in a system design interview. The only aspect to cover here is the transition from RED to GREEN, etc.
-
-Object-Oriented System Design Interview Questions and Answers
-13. What is encapsulation?
-Ans. In visual terms, we can say that encapsulation is the technique of inserting all the resources required to fulfil the job inside a capsule, which is further given to the user. All the unnecessary data is hidden to a regular user, and the required data is bound together.
-
-encapsulation
-
-14. Differentiate between compile time polymorphism and runtime polymorphism.
-Compile Time Polymorphism	Runtime Polymorphism
-A. It is also called Static Polymorphism.
-B. This type of polymorphism happens at the compile time.
-C. The compiler gets to decide the shape or value that has to be taken by the entity in the photograph.	A. It is also called Dynamic Polymorphism.
-B. This type of polymorphism happens at the run time.
-C. Here, the shape or value that has to be taken by the entity in the picture is not decided by the compiler.
-15. Name different types of constructors in C++.
-Ans. There are three types of constructors in C++, which are as follows:
-
-Default Constructors: It does not take any argument and has zero parameters.
-Parameterized Constructors: These types of constructors take some argument.
-Copy Constructors: It is a member function, and its basic function is to initialize the object using another object of the same class.
-16. Can a Java application be created without implementing the OOPs concept?
-Ans. A Java application cannot be created without implementing the OOPs concept. Java applications are completely based on the Object-oriented programming concept. 
-
-17. State different types of Inheritance. 
-Ans.  Different types of inheritance are shown in the image below.
-
-types of inheritance
-18. What are the limitations of inheritance?
-Ans. Following are the limitations of inheritance:
-
-It is time-consuming because it needs to navigate through multiple classes for implementation.
-The child class and the base class are tightly packed, which makes it difficult to make changes.
-It is complex when it comes to implementation, which may result in errors if not implemented correctly.
-19. What feature allows one class to derive features from another class?
-Ans. The Inheritance feature allows one class to derive features from another class.
-
-20. Which language was the first language to be developed as a purely object-oriented programming language?
-Ans. Smalltalk was the first programming language to be developed as a purely object-oriented programming language.
-
-21. Which is an OOPs language but does not support all inheritance types?
-Ans. Java is an OOPS programming language, but it does not support all inheritance types.
-
-22. Name different types of Operating Systems. Also, mention one disadvantage of each type.
-Ans. There are five types of Operating Systems, which are as follows:
-
-Real-Time Operating System
-
-This kind of OS is used while dealing with real-time data. As soon as the data arrives, the execution of the process should be done without any delay. Its main disadvantage is the complexity of the algorithms used.
-
-Embedded Operating System
-
-Embedded operating systems are used to perform certain tasks for a specific device (not a computer). For example, the embedded OS is used for the functioning of the lift system. The disadvantage of the embedded operating system is that only one task can be performed. 
-
-Time-Sharing Operating System
-
-It is also called a Multitasking Operating System. Multiple processes are performed at the same time. Its disadvantage is that prioritized tasks are not performed first. All tasks are given equal priority.
-
-Batch Operating System
-
-Similar tasks are grouped into batches, and the batches are executed one by one. The disadvantage of this type of Operating System is the manual intervention required between two batches.
-
-Distributed Operating System
-
-As the name suggests, the distributed operating system has different systems having their individual
-
-CPU, memory, and other resources. Its main disadvantage is that extra effort is required for the security of data due to shared data.
-
-23. Define RAID?
-Ans. RAID stands for a redundant array of independent disks. RAID is the technology that specializes in data storage that combines various physical disk drive components within one or numerous logical units as data redundancy and performance improvement.
-
-24. State the meaning of IPC along with different IPC mechanisms.
-Ans. IPC stands for Inter-Process Communication. It is a mechanism that needs the use of elements that are shared between threads or processes. In simpler terms, IPC is used to share data across various threads. Following are the various IPC mechanisms:
-
-Message queuing
-Shared Memory
-Semaphores
-Sockets
-Signals
-25. List 5 examples of OS.
-Ans. A few examples of Operating Systems are listed below:
-
-Mac Operating System
-MS-Windows 
-Android
-Chrome Operating System
-Free BSD
-26. What is a process, and what are its different states?
-Ans. A process is nothing but a program that is being executed. One of the main functions of an Operating System is to supervise the processes. A process can be divided into the following sections:
-
-Stack
-Heap
-Text
-Data
-A process goes through various stages, which are:
-
-New state: It marks the beginning of the process.
-Running: The instructions of the process are followed by the CPU.
-Waiting: The process is at a momentary pause as it waits for an event to occur.
-Ready: At this stage, a process is waiting to get assigned by a processor even though it has all available resources to run.
-Terminate: The process has ended when it reaches this state.
-27 Differentiate between paging and segmentation.
-Paging
-
-Segmentation
-
-A. Paging is invisible to the programmer.
-
-B. In paging, the operating system needs to maintain free time.
-
-C. The size of the page is fixed and is determined by the available memory.
-
-A. Segmentation is visible to the programmer.
-
-B. A list of holes in the main memory is to be maintained by the operating system in segmentation.
-
-C. The size of the segments is not fixed and is determined by the user.
-
-28. What are the prerequisite requirements to achieve a deadlock?
-Ans. In an OS, a deadlock happens when a process enters a state of pause because a requested system resource is held by another waiting system, which in turn is waiting for another resource held by another waiting process, and so on. 
-
-Following are the necessary conditions to achieve a deadlock:
-
-Mutual Exclusion
-Hold and Wait
-No Preemption
-Circular Wait
-29. Explain fragmentation and state types of fragmentation that take place in the operating system? 
-Ans. The process of fragmentation decreases the capacity and performance because space has been used inefficiently.
-
-In an operating system, two types of fragmentation take place:
-
-Internal fragmentation: This type of fragmentation occurs when those systems which have fixed size allocation units are dealt with. 
-External fragmentation: External fragmentation occurs when we deal with systems that have variable-size allocation units.
-30. What is starvation and aging in the Operating System?
-Ans. When a process has not been able to acquire the resources it requires for progress with its execution for an extended period, this situation is referred to as starvation. 
-
-Aging, on the other hand, is the solution to starvation. The technique of aging increases the priority of certain processes that are waiting for resources for a long period.
-
-Tips for Answering System Design Interview Questions
-Do not go into deep detail prematurely until you’re asked in the system design interview question. 
-Do not have a set rigid architecture in your mind. Develop novel architectures based on the problem presented.
-Keep it simple. Try to avoid focusing on one aspect of architecture as it shows that your viewpoint is narrow. You need a broad point of view.
-Never make points without justification. Always answer the ‘why’ to every statement you make.
-Always be up to date when it comes to technology. Things like these are always noticed in a system design interview.
-Conclusion on System Design Interview Questions
-The system design interview is nothing but a brainstorming session. Usually, these kinds of interviews begin with a high-level design and then dial down to simpler components. Always do a healthy amount of research before actually going in for the interview.
-
-Try to listen carefully before answering any question. Make sure you have prepared well to face all sorts of questions. Try to cover all aspects in brief instead of going into detail about one aspect. All the best to all the future software engineers, software developers, programmers, and software designers!
-
-
-Top 30 System Design Interview Questions in 2026
-56 mins read
-Jun 09, 2026
-editor-page-cover
-Video thumbnail
-System Design interview questions
-Over my 10+ years as a systems engineer and hiring manager at Microsoft and Facebook, I led hundreds of software engineer candidates through System Design interviews (SDI). I became deeply familiar with the kinds of software engineer system design interview questions that consistently distinguish top-tier engineers
-
-Surprisingly, even the best developers often struggle with System Design problems. Why? I think it’s because System Design questions can be open-ended, requiring creativity and problem-solving skills not practiced in other coding interview challenges.
-
-While SDI questions tend to evolve, many have remained popular over time. These questions are well-suited to evaluate candidates on two important levels:
-
-Test the candidate’s understanding of System Design fundamentals.
-
-Evaluate the candidate’s ability to apply those fundamentals in real-world applications.
-
-Today, we’ll break down the top 30 System Design interview questions for 2026. These are essential questions asked at top companies like Google, Amazon, Meta, and more. Mastering these problems and their solutions will give you a huge leg up in your System Design interview prep.
-
-Finally, I will leave you with a few battle-tested strategies that you can use to confidently take on any System Design question you encounter.
-
-Cover
-Grokking Modern System Design Interview
-For a decade, when developers talked about how to prepare for System Design Interviews, the answer was always Grokking System Design. This is that course — updated for the current tech landscape. As AI handles more of the routine work, engineers at every level are expected to operate with the architectural fluency that used to belong to Staff engineers. That's why System Design Interviews still determine starting level and compensation, and the bar keeps rising.
-
-I built this course from my experience building global-scale distributed systems at Microsoft and Meta — and from interviewing hundreds of candidates at both companies. The failure pattern I kept seeing wasn't a lack of technical knowledge. Even strong coders would hit a wall, because System Design Interviews don't test what you can build; they test whether you can reason through an ambiguous problem, communicate ideas clearly, and defend trade-offs in real time (all skills that matter ore than never now in the AI era). RESHADED is the framework I developed to fix that: a repeatable 45-minute roadmap through any open-ended System Design problem.
-
-The course covers the distributed systems fundamentals that appear in every interview – databases, caches, load balancers, CDNs, messaging queues, and more – then applies them across 13+ real-world case studies: YouTube, WhatsApp, Uber, Twitter, Google Maps, and modern systems like ChatGPT and AI/ML infrastructure. Then put your knowledge to the test with AI Mock Interviews designed to simulate the real interview experience.
-
-Hundreds of thousands of candidates have already used this course to land SWE, TPM, and EM roles at top companies. If you're serious about acing your next System Design Interview, this is the best place to start.
-
-26hrs
-Intermediate
-4 Playgrounds
-28 Quizzes
-
-Start Learning
 How to answer any System Design interview question
 System Design interviews can feel intimidating because they're intentionally open-ended. Unlike coding interviews, there is rarely a single "correct" answer. Whether you're asked to design YouTube, Uber, Netflix, WhatsApp, ChatGPT, or a completely unfamiliar system, the interviewer is evaluating how you think through ambiguity, communicate trade-offs, and make engineering decisions.
 
@@ -2639,23 +1687,7 @@ Having spent years researching adaptive AI systems and neural networks, and now 
 You'll learn the SCALED framework, which is a 6-step methodology for breaking down any GenAI System Design problem, then apply it across five real-world systems spanning text, image, speech, and video generation. Each case study walks through training architecture, deployment design, and the specific tradeoffs involved in that modality. Before diving into the case studies, the course covers the foundational concepts you'll need: neural networks, transformers, tokenization, embeddings, parallelism strategies, inference optimization, RAG, and fine-tuning. You'll also learn how to do back-of-the-envelope calculations for LLM training and deployment. 
 A bonus: if you have a GenAI or ML System Design interview coming up, this will give you both the framework and the depth to handle whatever systems are asked to design.
 
-4hrs
-Intermediate
-8 Exercises
-8 Quizzes
-
-Get Started
-Note: For information on how ML can boost your SDI performance, check out my blog How machine learning gives you an edge in System Design
-
-System Design interview cheat sheet
-As an added bonus, I highly encourage you to download this interview cheatsheet and internalize its contents. (Pro tip: You may even want to set it as the background for your desktop!)
-
-
-System Design interview cheat sheet
-
-System Design interview cheat sheet
-Now, let’s examine the specifics of the top System Design interview questions, starting with the easy problems.
-
+ 
 Easy System Design interview questions
 I provide a problem statement, requirements, and workflow for each question with a high-level design.
 
@@ -2686,11 +1718,7 @@ Scalability
 System Design and workflow
 According to the following high-level rate limiter, the client’s requests are passed through an ID builder, which assigns unique IDs to the incoming requests. The ID could be a remote IP address, login ID, or other attributes. The decision maker fetches the throttling rules from the database and decides according to them. It either forwards the requests to application servers via the requests processor or discards them and provides the client an error message (429 Too many requests). If some requests are throttled due to a system overload, the system keeps those requests in a queue to be processed later.
 
-
 A high-level design of a rate limiter
-
-A high-level design of a rate limiter
-Knowledge test!
 
 How does your system measure requests per minute? If a user makes 10 requests at 00:01:20 and then another 10 at 00:02:10, they’ve made 20 in the same one-minute window despite the minute change.
 
@@ -2732,11 +1760,7 @@ Concurrency management for simultaneous reads and writes
 System Design and workflow
 The brokers are responsible for storing the messages sent from the producers and allowing the consumers to read them. Similarly, the cluster manager is to keep an eye on the broker’s health and spin up another broker in case one goes down. The consumer’s details include subscription information, retention period, etc. The consumer manager manages the consumers, who manage consumers’ access to messages in the existing topics.
 
-
 A high-level design of a pub/sub system
-
-A high-level design of a pub/sub system
-Knowledge test!
 
 How can message delivery be ensured and semantics guaranteed at least once or at most once in the pub/sub design?
 
@@ -2777,11 +1801,7 @@ A load balancer is the first intermediary between the clients and the server, en
 
 The server leverages a sequencer to generate a unique numeric ID for the URL requests. This ID is passed to an encoder, which converts it into a more readable alphanumeric string. The original URL and its corresponding shortened version are stored in a database. To enhance performance, recently accessed URLs are kept in a cache, allowing quick retrieval without repeatedly querying the database.
 
-
 A high-level design of a URL-shortening service
-
-A high-level design of a URL-shortening service
-Knowledge test!
 
 What if two users input the same custom URL?
 
@@ -2822,11 +1842,7 @@ When a client requests content, a request routing system kicks in to find the ad
 
 The CDN system ensures that frequently accessed content remains readily available while less popular content is periodically purged. The system also includes monitoring and analytics to track performance, optimize routing, and ensure high availability and reliability.
 
-
 A high-level design of a CDN
-
-A high-level design of a CDN
-Knowledge test!
 
 How would you determine which content to cache on edge servers?
 
@@ -2866,11 +1882,8 @@ Extensibility to network protocols
 System Design and workflow
 A web crawler begins by assigning a worker to a URL. Once the DNS is resolved, the worker sends the URL and IP address to an HTML fetcher to establish the connection. The URL and HTML content are extracted from the page and stored in the cache for processing. The duplicate eliminator service then tests this content to ensure no duplicate content is transferred to blob storage. Once this cycle is complete for a single URL, it moves on to the next address in the queue.
 
-
 A high-level design of a web crawler
 
-A high-level design of a web crawler
-Knowledge test!
 
 What functionalities must be added to extract all formats (images and video)?
 
@@ -2911,11 +1924,7 @@ A distributed caching system begins by partitioning the data across multiple cac
 
 If the data is found in the cache (a cache hit), it is returned to the client immediately, significantly reducing latency. If the data is not found (a cache miss), the system retrieves it from the primary data store, caches it, and then serves it to the client. Cache eviction policies, such as least recently used (LRU) or time-to-live (TTL), manage the removal of stale data to free up space.
 
-
 A high-level design of a distributed cache
-
-A high-level design of a distributed cache
-Knowledge test!
 
 How do you ensure data consistency across multiple cache nodes, especially during updates and deletions?
 
@@ -2961,11 +1970,7 @@ This token acts like a digital badge and is used to identify the user on future 
 
 The authentication system includes important safeguards, such as limiting failed login attempts, detecting suspicious activity, and securely encrypting all stored passwords. It also supports multi-tenancy, meaning user data is kept separate for each business using the platform, so each company only sees its users.
 
-
 A high-level design of an authentication and SSO platform
-
-A high-level design of an authentication and SSO platform
-Knowledge test!
 
 How do we safely store user passwords in the system?
 
@@ -3029,11 +2034,7 @@ When a user uploads a video, it’s routed to the video processing service. Afte
 
 The following high-level design represents a simple workflow of a video-first social platform like TikTok:
 
-
 A high-level design of a video-first social platform
-
-A high-level design of a video-first social platform
-Knowledge test!
 
 How would you handle millions of concurrent users uploading and watching videos?
 
@@ -3122,11 +2123,7 @@ Security
 System Design and workflow
 In a real-time communication system, senders and receivers are connected to chat servers. Chat servers deliver messages from sender to receiver via a messaging queue. Various protocols, such as WebSocket, XMPP, MQTT, and real-time transport protocol, can be utilized for real-time communication. For this purpose, a manager establishes real-time connections between clients and chat servers; for instance, assume the WebSocket manager establishes WebSocket connections between users and different chat servers. Similarly, the messages can be persistently stored in the database.
 
-
 A high-level design of a real-time chat system
-
-A high-level design of a real-time chat system
-Knowledge test!
 
 What happens if a message is sent when the user isn’t connected to the internet? Is it sent when the connection is restored?
 
@@ -3174,11 +2171,7 @@ Based on the above requirements, let’s create a high-level design of a feed-ba
 System Design and workflow
 The high-level design of a feed-based social network includes posts, timeline generation, feed publishing service, and feed ranking and recommendation engine. The post-service handles the clients’ posts, and the post is published on the client’s wall (page). Similarly, the timeline generation service generates feeds for friends and followers by the timeline generation service. The timeline generation service utilizes the feed ranking and recommendation engine, which ranks and recommends the top N posts to followers based on their interests, searches, and watch history. The generated feed is stored in the database, and the feed publishing service is responsible for publishing and showing the generated feeds to followers. As the feed could contain videos, the CDN is responsible for delivering the videos to followers with low latency.
 
-
 A high-level design of a mass social media service
-
-A high-level design of a mass social media service
-Knowledge test!
 
 Influencers or celebrities will have millions of followers; how are they handled vs. standard users?
 
@@ -3258,11 +2251,7 @@ Performance
 System Design and workflow
 When a user starts typing a query, each character is sent to an application server. A suggestion service gathers the top N suggestions from a distributed cache, or Redis, and returns the list to the user. An alternate service, the data collector and aggregator, takes the query, analytically ranks it, and stores it in a NoSQL database. The trie builder is a service that takes the aggregated data from the NoSQL database, builds tries, and stores them in the trie database.
 
-
 A high-level design of Typeahead
-
-A high-level design of Typeahead
-Knowledge test!
 
 How strongly do you weigh spelling mistake corrections?
 
@@ -3352,11 +2341,7 @@ A user’s request is sent to the application server via a load balancer and API
 
 Once the ride is complete, the trip manager ensures payment is securely processed through a payment gateway. We leverage a database that stores user and driver profiles, ride history, and payment information. We also use caching mechanisms to speed up access to frequently requested data, and constant monitoring ensures the service runs smoothly.
 
-
 A high-level design of a ride sharing service
-
-A high-level design of a ride sharing service
-Knowledge test!
 
 How can you keep latency low during busy periods?
 
@@ -3401,11 +2386,7 @@ We use real-time processors to process data and recommend content accordingly. W
 
 Integrating AI to enhance the user experience is crucial to modern applications. Learn how to build generative AI applications in our course: Grokking the Generative AI System Design.
 
-
 A high-level design of a recommendation system
-
-A high-level design of a recommendation system
-Knowledge test!
 
 How will you handle the cold start problem for new users and content?
 
@@ -3443,11 +2424,7 @@ Low latency
 System Design and workflow
 In a high-level design of a file sharing service like Google Drive, the user’s request to upload or download a file passes through a load balancer to the application servers. The application server sends the upload request to a chunk service for splitting large files into smaller, more easily manageable chunks. These files are then sent to a processing queue that sends and receives requests to store metadata and ensure that files are synchronized between users and accounts. Files are stored in a cloud-based block storage platform, like Amazon S3 (or in-premises blob storage). Users who want to upload or download files contact this storage service through a web server.
 
-
 A high-level design of a file sharing service
-
-A high-level design of a file sharing service
-Knowledge test!
 
 Where are the files stored?
 
@@ -3490,11 +2467,7 @@ In Quora’s high-level design, users interact through a web server, which commu
 
 A machine learning engine analyzes user interactions and content to rank answers based on relevance and quality. This engine continuously learns from user feedback to improve its ranking algorithms. For personalized user experiences, a recommendation system utilizes machine learning models to tailor content based on individual interests and behaviors.
 
-
 A high-level design of Quora
-
-A high-level design of Quora
-Knowledge test!
 
 How can you ensure the system’s scalability to handle millions of simultaneous users posting questions and answers?
 
@@ -3560,11 +2533,7 @@ To handle peak traffic smoothly, a queue can be introduced before the inference 
 
 The following illustrations show a high-level design of a ChatGPT-style service:
 
-
 A high-level design of a ChatGPT-style service
-
-A high-level design of a ChatGPT-style service
-Knowledge test!
 
 Why is response streaming important in a conversational AI platform, and how does it affect perceived latency?
 
@@ -3624,11 +2593,7 @@ The architecture supports gradual rollouts, rollback mechanisms, and monitoring 
 
 A high-level design of a code deployment system is depicted in the following illustration:
 
-
 A high-level design of a code-deployment system
-
-A high-level design of a code-deployment system
-Knowledge test!
 
 How would you ensure zero-downtime deployments in this system?
 
@@ -3684,11 +2649,7 @@ Low latency
 System Design and workflow
 In the following high-level design of a newsfeed system, clients post or request their newsfeed through the app, which the load balancer redirects to a web server for authentication and routing. Whenever a post is created via the post service and available from a user’s friends (or followers), the notification service informs the newsfeed generation service, which generates newsfeeds from the posts of the user’s friends (followers) and keeps them in the newsfeed cache. Similarly, the generated feeds are published by the newsfeed publishing service to the user’s timeline from the news feed cache. It also appends multimedia content from the blob storage with a news feed if required.
 
-
 A high-level design of the newsfeed service
-
-A high-level design of the newsfeed service
-Knowledge test!
 
 Creating and storing newsfeeds for each user in the cache requires enormous memory. Is there any way to reduce this memory consumption?
 
@@ -3770,11 +2731,8 @@ System Design and workflow
 In the Google Maps system, clients request location-based services, such as finding a route or searching for nearby points of interest. The load balancer directs requests to various services based on the nature of the query.
 For routing requests, the route finder service calculates optimal paths between two or more points using real-time and historical data. It relies on the graph processing service to perform complex calculations on the road network graph stored in the graph database. The location finder service provides the user’s current location or identifies the location of a specified point of interest. The area search system lets users find nearby places, such as restaurants or gas stations, by querying the graph database and third-party road data sources.
 
-
 A high-level design of the Google Maps system
 
-A high-level design of the Google Maps system
-Knowledge test!
 
 How do you collect the world map data? What third-party source will you use?
 
@@ -3815,11 +2773,7 @@ Scalability
 System Design and workflow
 Initially, a customer selects a product or service via the merchant’s online store and proceeds to the checkout page to provide payment details, including card number, cardholder name, CVV or CVC, and expiration date. Upon clicking the pay button, an event that hits the payment service stores the event, performs initial security checks, and forwards the payment details to the payment service provider for further operations is generated. The payment gateway performs extensive security checks, moves money from the customer’s account to the merchant’s, and provides secondary services like handling refunds and generating invoices. The card network verifies the card information via APIs provided by the card network. Once the payment is processed, the wallet and ledger service updates the merchant’s wallet in the database to track total revenue and processes each order separately in case of multiple sellers. The reconciliation system matches and verifies financial records to ensure accurate transaction accounting, identifying and resolving discrepancies.
 
-
 A high-level design of a payment gateway
-
-A high-level design of a payment gateway
-Knowledge test!
 
 Where are the customer’s payment details encrypted during a purchase?
 
@@ -3881,11 +2835,7 @@ Customers’ requests are routed through the API gateway and directed to differe
 
 Customers and restaurant staff use the user management service to create and manage their profiles. The dispatch service displays the orders ready to be picked. It is also used to view delivery information and facilitate communication between customers and restaurant staff.
 
-
 A high-level design of the DoorDash system
-
-A high-level design of the DoorDash system
-Knowledge test!
 
 How would you handle a sudden surge in orders during peak hours, like on Super Bowl Sunday?
 
@@ -3920,11 +2870,7 @@ High throughput
 System Design and workflow
 The Chubby cell is composed of multiple servers (usually five), all replicas of each other. One of these servers is a leader with whom the clients must communicate. Each server has a namespace that is composed of directories and files that contain data that is relevant to different applications. In addition to this namespace, the server contains an ACL files directory to have access control lists of all the files and directories within the namespace. The Chubby library mediates communication between clients and servers in a Chubby cell. It takes a request from a client who wants to use the Chubby service and then finds the relevant cell, directs the request to that cell via remote procedure calls (RPCs), and then reports any changes made in the namespace, data, or metadata (also known as events) back to the client.
 
-
 A high-level design of the Google Chubby locking system
-
-A high-level design of the Google Chubby locking system
-Knowledge test!
 
 How does Chubby recover from server failures and network partitions while maintaining data consistency?
 
@@ -3963,11 +2909,7 @@ Reliability
 System Design and workflow
 The clients are the applications that use ZooKeeper as a coordination service for their application processes. ZooKeeper client library (API) provides functions such as create(), delete(), exists(), and many more to manage and use the coordination data. Through this API, the client request is forwarded to the ZooKeeper server. The ZooKeeper server represents a process that provides the ZooKeeper coordination service. It stores all the coordination data from different applications and their processes in memory. The namespace for applications/clients and their coordination data are organized in a hierarchy (in the form of a tree). The client application processes store their coordination data on znodes. These processes can perform all the operations provided in the ZooKeeper client API. Each znode can be accessed through its path in the standard UNIX notation (like having / for the root directory). There is a set of ZooKeeper servers called ZooKeeper Ensemble. All are replicas. One is elected as the leader, while others become the followers.
 
-
 A high-level design of the ZooKeeper system
-
-A high-level design of the ZooKeeper system
-Knowledge test!
 
 We have a collection of servers in the ZooKeeper ensemble. What should be the minimum number of servers, and why?
 
@@ -4003,11 +2945,7 @@ High number of read/write operations (throughput)
 System Design and workflow
 The following illustration shows that the Bigtable implementation consists of three main parts: a library linked to each client, one Bigtable manager server, and several tablet servers. A library is a component that all clients share. This library enables clients to communicate with Bigtable. The manager server allocates tablets to table servers, identifies tablet server additions and expiration, regulates tablet-server traffic, and garbage collection of files in GFS (a distributed file system). It also supports schema changes like table and column family formation. All tablet servers are in charge of a certain group of tablets, generally around 10 to 1000 tablets. Each tablet server provides reads and writes of the data to the tablets to which it is allocated. Servers can be added or removed in a Bigtable cluster as needed. New tablets can be made and assigned, old ones can be merged, and they can be reassigned from one server to the other to accommodate changes in demand.
 
-
 A high-level design of the Bigtable system
-
-A high-level design of the Bigtable system
-Knowledge test!
 
 How does Bigtable efficiently support schema changes without impacting performance?
 
@@ -4047,11 +2985,7 @@ In an online multiplayer game system, players connect to the game server, which 
 
 For a better user experience, we can separate real-time operations, such as gameplay, from non-real-time operations, such as invites and in-app purchases.
 
-
 A high-level design of a gaming service
-
-A high-level design of a gaming service
-Knowledge test!
 
 How can you ensure system stability and prevent crashes when millions of users play simultaneously?
 
@@ -4101,11 +3035,7 @@ The media router (SFU) plays a critical role in managing media streams in real-t
 
 The following illustration shows a high-level design of a video conference service:
 
-
 A high-level design of a video conference service
-
-A high-level design of a video conference service
-Knowledge test!
 
 How does end-to-end encryption affect server-side features like recording or transcription?
 
@@ -4116,7 +3046,6 @@ What parts of the system will most likely break if a popular meeting gets thousa
 Note: Explore the Zoom API design to learn more about designing a video conference service and determine the answers to the above questions.
 
 The final step of your interview prep
-Mastering these 30 questions is a fantastic first step toward comprehensive System Design interview preparation.
 
 However, there are plenty more System Design concepts you’ll need to know for a real-world System Design interview. Educative has created an exhaustive course: Grokking Modern System Design Interview, which includes more detailed questions and answers and the opportunity to get hands-on practice.
 
@@ -4125,9 +3054,6 @@ This interactive course covers the building blocks of the modern System Design c
 That’s why if I had to pick just one System Design prep resource to give you, this would be it.
 
 Quick tips to tackle System Design interview questions
-We all dream of passing the System Design interview with flying colors!
-
-So why not make this dream a reality with some quick tips:
 
 Practice structured thinking: Always start with a clear outline of your approach. Break problems down systematically, such as: 
 
@@ -4145,1991 +3071,6 @@ Stay calm under pressure: Keep moving forward even if you get stuck. Composure, 
 
 I wish you the best of luck with your interviews. I am confident that with a little hard work and strategic preparation, you will be successful.
 
-Top 30 System Design Interview Questions in 2026
-56 mins read
-Jun 09, 2026
-editor-page-cover
-Video thumbnail
-System Design interview questions
-Over my 10+ years as a systems engineer and hiring manager at Microsoft and Facebook, I led hundreds of software engineer candidates through System Design interviews (SDI). I became deeply familiar with the kinds of software engineer system design interview questions that consistently distinguish top-tier engineers
-
-Surprisingly, even the best developers often struggle with System Design problems. Why? I think it’s because System Design questions can be open-ended, requiring creativity and problem-solving skills not practiced in other coding interview challenges.
-
-While SDI questions tend to evolve, many have remained popular over time. These questions are well-suited to evaluate candidates on two important levels:
-
-Test the candidate’s understanding of System Design fundamentals.
-
-Evaluate the candidate’s ability to apply those fundamentals in real-world applications.
-
-Today, we’ll break down the top 30 System Design interview questions for 2026. These are essential questions asked at top companies like Google, Amazon, Meta, and more. Mastering these problems and their solutions will give you a huge leg up in your System Design interview prep.
-
-Finally, I will leave you with a few battle-tested strategies that you can use to confidently take on any System Design question you encounter.
-
-Cover
-Grokking Modern System Design Interview
-For a decade, when developers talked about how to prepare for System Design Interviews, the answer was always Grokking System Design. This is that course — updated for the current tech landscape. As AI handles more of the routine work, engineers at every level are expected to operate with the architectural fluency that used to belong to Staff engineers. That's why System Design Interviews still determine starting level and compensation, and the bar keeps rising.
-
-I built this course from my experience building global-scale distributed systems at Microsoft and Meta — and from interviewing hundreds of candidates at both companies. The failure pattern I kept seeing wasn't a lack of technical knowledge. Even strong coders would hit a wall, because System Design Interviews don't test what you can build; they test whether you can reason through an ambiguous problem, communicate ideas clearly, and defend trade-offs in real time (all skills that matter ore than never now in the AI era). RESHADED is the framework I developed to fix that: a repeatable 45-minute roadmap through any open-ended System Design problem.
-
-The course covers the distributed systems fundamentals that appear in every interview – databases, caches, load balancers, CDNs, messaging queues, and more – then applies them across 13+ real-world case studies: YouTube, WhatsApp, Uber, Twitter, Google Maps, and modern systems like ChatGPT and AI/ML infrastructure. Then put your knowledge to the test with AI Mock Interviews designed to simulate the real interview experience.
-
-Hundreds of thousands of candidates have already used this course to land SWE, TPM, and EM roles at top companies. If you're serious about acing your next System Design Interview, this is the best place to start.
-
-26hrs
-Intermediate
-4 Playgrounds
-28 Quizzes
-
-Start Learning
-How to answer any System Design interview question
-System Design interviews can feel intimidating because they're intentionally open-ended. Unlike coding interviews, there is rarely a single "correct" answer. Whether you're asked to design YouTube, Uber, Netflix, WhatsApp, ChatGPT, or a completely unfamiliar system, the interviewer is evaluating how you think through ambiguity, communicate trade-offs, and make engineering decisions.
-
-This is why strong candidates don't memorize architectures. Instead, they follow a repeatable framework that helps them break large problems into smaller pieces and systematically build a solution.
-
-One framework we recommend is RESHADED, a step-by-step approach that helps you structure your thinking and cover the areas interviewers care about most.
-
-The RESHADED framework
-Step
-
-Goal
-
-Requirements
-
-Understand the problem
-
-Estimation
-
-Quantify scale
-
-System interface
-
-Define interactions
-
-High-level design
-
-Build architecture
-
-API and data model
-
-Define data flow
-
-Deep dive
-
-Solve hard problems
-
-Evaluate trade-offs
-
-Show engineering judgment
-
-Discuss improvements
-
-Demonstrate senior thinking
-
-R → Requirements
-Start by clarifying the problem before drawing any architecture diagrams.
-
-Gather both functional and nonfunctional requirements and establish the scope of the system. Strong candidates ask questions early instead of making assumptions.
-
-Useful questions include:
-
-What features are in scope?
-
-How many users should the system support?
-
-What latency requirements exist?
-
-Is availability more important than consistency?
-
-Are we designing for a global audience?
-
-The goal is to leave this phase with a clear list of requirements that will guide the rest of the design.
-
-E → Estimation
-Next, estimate the scale of the system.
-
-Perform quick back-of-the-envelope calculations for:
-
-Total users
-
-Daily active users
-
-Requests per second
-
-Storage requirements
-
-Bandwidth requirements
-
-For example:
-
-100 million registered users
-
-10 million daily active users
-
-1,000 requests per second on average
-
-50 TB of stored data
-
-These estimates help justify architecture decisions later. There's no need for perfect numbers—reasonable assumptions are enough.
-
-S → System interface
-Define how users and external systems interact with your service.
-
-This usually means identifying major APIs and system boundaries.
-
-Examples:
-
-Ace Editor
-At this stage, focus on high-level interactions rather than implementation details.
-
-H → High-level design
-Now design the overall architecture.
-
-Identify major components such as:
-
-Load balancers
-
-Application servers
-
-Databases
-
-Caches
-
-Message queues
-
-CDNs
-
-Object storage
-
-A typical discussion might sound like:
-
-User requests first reach a load balancer, which distributes traffic to application servers. Frequently accessed data is served from Redis, while persistent data is stored in a database. Background tasks are handled through a message queue.
-
-This creates the foundation for deeper discussion later.
-
-A → API and data model
-Once the architecture is established, define the system's core entities and storage model.
-
-Examples:
-
-User
-
-user_id, name, email
-
-Post
-
-post_id, author_id, content
-
-Message
-
-sender_id, receiver_id, timestamp
-
-Video
-
-video_id, owner_id, storage_url
-
-Discuss:
-
-Database schema
-
-SQL vs NoSQL choices
-
-Indexing strategies
-
-Storage requirements
-
-This demonstrates your ability to connect application behavior to data design.
-
-D → Deep dive
-This is the most important part of the interview.
-
-Many candidates spend too much time drawing boxes and not enough time discussing difficult engineering problems.
-
-Possible deep-dive topics include:
-
-Scaling bottlenecks
-
-Replication
-
-Sharding
-
-Caching strategies
-
-Consistency models
-
-Availability requirements
-
-Rate limiting
-
-Fault tolerance
-
-For example, in a messaging system, you might discuss:
-
-How messages are delivered reliably
-
-How offline users receive messages
-
-How conversations are partitioned across servers
-
-This is where strong candidates differentiate themselves.
-
-E → Evaluate trade-offs
-Every architecture decision comes with trade-offs.
-
-Interviewers want to see that you understand them.
-
-Examples include:
-
-SQL vs NoSQL
-
-Consistency vs scalability
-
-Push vs Pull
-
-Real-time updates vs simplicity
-
-Cache-heavy design
-
-Performance vs complexity
-
-Strong consistency
-
-Correctness vs latency
-
-Avoid presenting decisions as universally correct. Instead, explain why a particular choice makes sense for the requirements.
-
-D → Discuss improvements
-Finish by discussing how the system could evolve.
-
-Topics may include:
-
-Global scaling
-
-Multi-region deployment
-
-Observability and monitoring
-
-Security enhancements
-
-Disaster recovery
-
-AI-powered features
-
-Cost optimization
-
-This demonstrates senior-level thinking and shows that you're considering long-term growth rather than only the initial implementation.
-
-Mini example: Design a URL shortener
-Let's apply RESHADED to a simple System Design question.
-
-Requirements
-Functional requirements:
-
-Generate short URLs
-
-Redirect users to original URLs
-
-Nonfunctional requirements:
-
-High availability
-
-Low redirect latency
-
-Estimation
-Assume:
-
-100 million URLs stored
-
-10 million redirects per day
-
-Thousands of requests per second
-
-System interface
-Ace Editor
-High-level design
-Ace Editor
-API and data model
-Ace Editor
-Deep dive
-Focus on:
-
-Short code generation
-
-Database indexing
-
-Cache hit rates
-
-Hot URL handling
-
-Trade-offs
-Random IDs vs sequential IDs
-
-SQL vs NoSQL storage
-
-Cache size vs infrastructure cost
-
-Even in a short interview answer, this structure ensures you cover all critical areas.
-
-Common System Design interview mistakes
-Many candidates struggle not because they lack technical knowledge, but because they skip important steps.
-
-Common mistakes include:
-
-Jumping directly into databases
-
-Not asking clarifying questions
-
-Ignoring scale assumptions
-
-Skipping estimations
-
-Failing to discuss trade-offs
-
-Spending too much time on diagrams
-
-Not thinking out loud
-
-Remember: interviewers evaluate your reasoning process, not just your final architecture.
-
-Time allocation for a 45-minute interview
-A good pacing strategy looks like this:
-
-Requirements
-
-5 minutes
-
-Estimation
-
-5 minutes
-
-High-level design
-
-10 minutes
-
-Deep dive
-
-15 minutes
-
-Trade-offs and improvements
-
-10 minutes
-
-Notice that the largest portion of the interview is spent on the deep dive. This is where most engineering judgment is demonstrated.
-
-The best System Design candidates don't memorize architectures—they follow a repeatable framework for reasoning through unfamiliar problems.
-
-Whether you're designing YouTube, Uber, WhatsApp, Netflix, ChatGPT, or a system you've never seen before, the RESHADED framework helps you structure your thoughts, communicate clearly, and demonstrate the engineering judgment interviewers are looking for.
-
-Top 30 System Design interview questions
-To help meet you at your current preparation level, I have divided these 30 essential System Design problems into three difficulty levels:
-
-Easy System Design interview questions
-Design an API rate limiter for sites like Firebase or GitHub
-
-Design a pub/sub system like Kafka
-
-Design a URL-shortening service like TinyURL or bit.ly
-
-Design a scalable content delivery network (CDN)
-
-Design a web crawler
-
-Design a distributed cache
-
-Design an authentication and SSO platform like Auth0
-
-Medium System Design interview questions
-Design a video-first social platform like TikTok
-
-Design an AI-powered customer support platform
-
-Design a chat service like Facebook Messenger or WhatsApp
-
-Design a mass social media service like Facebook or Instagram
-
-Design a proximity service like Yelp or nearby places/friends
-
-Design a search engine-related service like Typeahead
-
-Design a video streaming service like YouTube or Netflix
-
-Design a ride sharing service like Uber or Lyft
-
-Design a recommendation service
-
-Design a file sharing service like Google Drive
-
-Design a social network and message board like Reddit or Quora
-
-Hard System Design interview questions
-Design a ChatGPT-style service
-
-Design a code deployment system
-
-Design a social media newsfeed service
-
-Design a collaborative editing service like Google Docs
-
-Design Google Maps
-
-Design a payment gateway like Stripe
-
-Design a food delivery service like Uber Eats or DoorDash
-
-Design a distributed locking service like Google Chubby locking
-
-Design a coordination system like ZooKeeper
-
-Design a scalable distributed storage system like Bigtable
-
-Design an online multiplayer game system
-
-Design a Zoom-like video conference service
-
-Before we start breaking down specific questions, I want to give you some high-level System Design tips that will enable you to confidently approach any problem.
-
-Tips for any SDI question
-Start each problem by stating what you know: List all required features of the system, common problems you expect to encounter with this sort of system, and the traffic you expect the system to handle. The listing process lets the interviewer see your planning skills and correct misunderstandings before you begin the solution.
-
-Narrate any trade-offs: Every System Design choice matters. At each decision point, list at least one positive and one negative effect of that choice.
-
-Ask your interviewer to clarify: Most System Design questions are purposefully vague. Ask clarifying questions to show the interviewer how you view the question and your knowledge of the system’s needs. Also, be sure to state your assumptions before diving into the components.
-
-Know your architectures: Most modern services are built upon a flexible microservice architecture. Unlike the past’s monolithic architectures of tech companies, microservices allow smaller, agile teams to build independently from the larger system. Some older companies will have legacy systems, but microservices can function in parallel to legacy code and help refresh the company’s architecture.
-
-Discuss emerging technologies: Conclude each question with an overview of how and where the system could benefit from generative AI (GenAI) and machine learning (ML). This will demonstrate that you’re prepared for not only current solutions but also future solutions.
-
-Grokking the Generative AI System Design
-
-Cover
-Grokking the Generative AI System Design
-GenAI System Design is emerging as its own interview category at top tech companies, distinct from traditional ML System Design. The questions are different, the architectures are different, and the scale considerations (GPU compute, parallelism, inference optimization) require their own mental models. 
-Having spent years researching adaptive AI systems and neural networks, and now leading the creation of learning content at Educative, I designed this course to bridge that gap between understanding generative AI conceptually and being able to architect these gen AI systems end-to-end. 
-You'll learn the SCALED framework, which is a 6-step methodology for breaking down any GenAI System Design problem, then apply it across five real-world systems spanning text, image, speech, and video generation. Each case study walks through training architecture, deployment design, and the specific tradeoffs involved in that modality. Before diving into the case studies, the course covers the foundational concepts you'll need: neural networks, transformers, tokenization, embeddings, parallelism strategies, inference optimization, RAG, and fine-tuning. You'll also learn how to do back-of-the-envelope calculations for LLM training and deployment. 
-A bonus: if you have a GenAI or ML System Design interview coming up, this will give you both the framework and the depth to handle whatever systems are asked to design.
-
-4hrs
-Intermediate
-8 Exercises
-8 Quizzes
-
-Get Started
-Note: For information on how ML can boost your SDI performance, check out my blog How machine learning gives you an edge in System Design
-
-System Design interview cheat sheet
-As an added bonus, I highly encourage you to download this interview cheatsheet and internalize its contents. (Pro tip: You may even want to set it as the background for your desktop!)
-
-
-System Design interview cheat sheet
-
-System Design interview cheat sheet
-Now, let’s examine the specifics of the top System Design interview questions, starting with the easy problems.
-
-Easy System Design interview questions
-I provide a problem statement, requirements, and workflow for each question with a high-level design.
-
-1. Design an API rate limiter for sites like Firebase or GitHub
-Problem statement: Design an API rate limiter that caps the number of API calls the service can receive in a given period to avoid an overload.
-
-Sample clarifying questions!
-
-Which entity is rate-limited: user, IP, token, or API key?
-
-Are the rate-limiting rules configurable at runtime?
-
-What is the expected scale in requests per second?
-
-Requirements
-Follow these requirements for a rate limiter system:
-
-Functional requirements
-
-Limit requests
-Configurable
-Error or notification if the limit is reached
-Nonfunctional requirements
-
-Availability
-Low latency
-Scalability
-System Design and workflow
-According to the following high-level rate limiter, the client’s requests are passed through an ID builder, which assigns unique IDs to the incoming requests. The ID could be a remote IP address, login ID, or other attributes. The decision maker fetches the throttling rules from the database and decides according to them. It either forwards the requests to application servers via the requests processor or discards them and provides the client an error message (429 Too many requests). If some requests are throttled due to a system overload, the system keeps those requests in a queue to be processed later.
-
-
-A high-level design of a rate limiter
-
-A high-level design of a rate limiter
-Knowledge test!
-
-How does your system measure requests per minute? If a user makes 10 requests at 00:01:20 and then another 10 at 00:02:10, they’ve made 20 in the same one-minute window despite the minute change.
-
-In the event of a failure, a rate limiter would be unable to perform the task of throttling. Should the request be accepted or rejected in such a scenario?
-
-What changes would you make to the design while considering the rate limiter design for a distributed system rather than a local one?
-
-Note: Look at the detailed design of the rate limiter to find the answers to the questions above.
-
-2. Design a pub/sub system like Kafka
-Problem statement: Design a scalable and distributed pub/sub system like Kafka that can handle massive message throughput. It should also ensure reliable message delivery and support various messaging semantics (at most once, at least once, exactly once).
-
-Sample clarifying questions!
-
-What message delivery guarantee is required: at-most-once, at-least-once, or exactly-once?
-
-Is message ordering important within topics or partitions?
-
-How long should messages be retained in the system?
-
-Requirements
-Follow these requirements for the pub/sub design:
-
-Functional requirements
-
-Create a topic
-Write messages
-Subscription
-Read messages
-Specify retention time
-Delete messages
-Nonfunctional requirements
-
-Availability
-Scalability
-Durability
-Fault-tolerant
-Concurrency management for simultaneous reads and writes
-System Design and workflow
-The brokers are responsible for storing the messages sent from the producers and allowing the consumers to read them. Similarly, the cluster manager is to keep an eye on the broker’s health and spin up another broker in case one goes down. The consumer’s details include subscription information, retention period, etc. The consumer manager manages the consumers, who manage consumers’ access to messages in the existing topics.
-
-
-A high-level design of a pub/sub system
-
-A high-level design of a pub/sub system
-Knowledge test!
-
-How can message delivery be ensured and semantics guaranteed at least once or at most once in the pub/sub design?
-
-How can you guarantee message orders for specific consumers?
-
-Note: To answer the above technical questions, you can examine the detailed design of pub/sub.
-
-3. Design a URL-shortening service like TinyURL or bit.ly
-Problem statement: Design a scalable and distributed system that shortens long URLs like TinyURL or bit.ly. The system takes a long URL and generates a new, unique short URL. It should also take a shortened URL and return the original full-length URL.
-
-Sample clarifying questions!
-
-Should shortened URLs be globally unique or user-specific?
-
-Are custom aliases supported, and how are collisions handled?
-
-Do URLs expire, or are they stored permanently?
-
-Requirements
-Follow these requirements for the URL-shortening system:
-
-Functional requirements
-
-URL generation
-URL storage
-Redirection to the original URL
-Customization of URLs
-Update and delete URLs
-Nonfunctional requirements
-
-Scalability
-Availability
-Unpredictability in URL generation
-Readability
-Low latency
-System Design and workflow
-A load balancer is the first intermediary between the clients and the server, ensuring even distribution of incoming requests to maintain availability and reliability. When a new URL-shortening request comes in, the load balancer forwards it to a server where the rate limiter checks if the client is within the allowed request rate.
-
-The server leverages a sequencer to generate a unique numeric ID for the URL requests. This ID is passed to an encoder, which converts it into a more readable alphanumeric string. The original URL and its corresponding shortened version are stored in a database. To enhance performance, recently accessed URLs are kept in a cache, allowing quick retrieval without repeatedly querying the database.
-
-
-A high-level design of a URL-shortening service
-
-A high-level design of a URL-shortening service
-Knowledge test!
-
-What if two users input the same custom URL?
-
-What if there are more users than expected?
-
-How does the database regulate storage space?
-
-Note: To explore in depth to get the answer to the above questions, check out the detailed chapters on the TinyURL System Design.
-
-4. Design a scalable content delivery network (CDN)
-Problem statement: Design a scalable content delivery network (CDN) system to efficiently distribute and cache content across globally distributed servers, minimizing latency and ensuring reliable end user content delivery.
-
-Sample clarifying questions!
-
-What types of content will the CDN serve: static, dynamic, or both?
-
-What is the regional traffic distribution and expected scale?
-
-Requirements
-Follow these requirements for a CDN system:
-
-Functional requirements
-
-Retrieve content from the origin server
-Respond to user requests
-Auto content delivery from the origin server
-Search
-Update content from the origin or peer CDNs
-Nonfunctional requirements
-
-Scalability
-Availability
-Reliability
-Security
-Low latency
-System Design and workflow
-When a client requests content, a request routing system kicks in to find the address of the nearest or fastest server, ensuring minimal wait time. A load balancer then routes the request to the optimal server. If the requested content is cached on that server, it is immediately delivered to the client. If not, the server fetches the content from the origin server, caches it locally for more such requests, and then serves it to the user.
-
-The CDN system ensures that frequently accessed content remains readily available while less popular content is periodically purged. The system also includes monitoring and analytics to track performance, optimize routing, and ensure high availability and reliability.
-
-
-A high-level design of a CDN
-
-A high-level design of a CDN
-Knowledge test!
-
-How would you determine which content to cache on edge servers?
-
-How would you distribute traffic evenly across multiple edge servers?
-
-How would you ensure the CDN infrastructure’s scalability, availability, and fault tolerance?
-
-How would you optimize the delivery and reduce the latency while streaming?
-
-Note: Check out the chapter on the design of a content delivery network to help you understand and get answers to the above questions.
-
-5. Design a web crawler
-Problem statement: Design a web crawler that systematically browses the internet to discover and index web pages. The crawler should efficiently navigate websites, retrieve content, and follow links to discover new pages.
-
-Sample clarifying questions!
-
-Should the crawler extract media content like images and videos or only HTML?
-
-Should the crawler obey robots.txt and crawl-delay rules?
-
-What is the depth and frequency of crawl required per domain?
-
-Requirements
-Follow these requirements for the web crawler system:
-
-Functional requirements
-
-Crawling
-Storing crawled content
-Scheduling for periodic crawling
-Nonfunctional requirements
-
-Scalability
-Consistency
-Reliability
-Extensibility to network protocols
-System Design and workflow
-A web crawler begins by assigning a worker to a URL. Once the DNS is resolved, the worker sends the URL and IP address to an HTML fetcher to establish the connection. The URL and HTML content are extracted from the page and stored in the cache for processing. The duplicate eliminator service then tests this content to ensure no duplicate content is transferred to blob storage. Once this cycle is complete for a single URL, it moves on to the next address in the queue.
-
-
-A high-level design of a web crawler
-
-A high-level design of a web crawler
-Knowledge test!
-
-What functionalities must be added to extract all formats (images and video)?
-
-Real web crawlers have multiple workers handling separate URLs simultaneously. How does this change the queuing process?
-
-How can you account for crawler traps?
-
-Note: To get the answers to the above questions, check out the detailed chapters on the web crawler System Design.
-
-6. Design a distributed cache
-Problem statement: Design a distributed caching system that provides fast, scalable, and reliable data retrieval across multiple servers. The system should efficiently manage cache consistency, handle high volumes of read and write requests, ensure data availability, and provide mechanisms for cache eviction and expiration.
-
-Sample clarifying questions!
-
-What should be the typical read-to-write ratio in expected workloads?
-
-Should the cache support write-through or write-back strategies?
-
-Will the cache operate across regions or within a single data center?
-
-Requirements
-Follow these requirements for the distributed cache system:
-
-Functional requirements
-
-Insert or write data
-Retrieve data
-Data partitioning
-Cache eviction
-Nonfunctional requirements
-
-Scalability
-Consistency
-Low latency
-High availability
-System Design and workflow
-A distributed caching system begins by partitioning the data across multiple cache nodes to balance the load and improve access speed. When a client requests data, an application server determines the appropriate cache node based on a consistent hashing algorithm, ensuring an even distribution of requests and quick lookups.
-
-If the data is found in the cache (a cache hit), it is returned to the client immediately, significantly reducing latency. If the data is not found (a cache miss), the system retrieves it from the primary data store, caches it, and then serves it to the client. Cache eviction policies, such as least recently used (LRU) or time-to-live (TTL), manage the removal of stale data to free up space.
-
-
-A high-level design of a distributed cache
-
-A high-level design of a distributed cache
-Knowledge test!
-
-How do you ensure data consistency across multiple cache nodes, especially during updates and deletions?
-
-What strategies can be implemented to handle cache misses efficiently without overloading the primary data store?
-
-What methods can maintain low latency and high throughput under heavy load conditions?
-
-How do you secure the cache data against unauthorized access and ensure privacy?
-
-Note: To answer such conceptual questions, check out the detailed design of the distributed cache.
-
-7. Design an authentication and SSO platform like Auth0
-Problem statement: Design a secure, scalable, multi-tenant authentication platform that provides identity and access management as a service, similar to Auth0. The system must support user registration, multiple authentication methods, and seamless single sign-on (SSO) across various client applications.
-
-Sample clarifying questions!
-
-Is single sign-on required across domains or only within one?
-
-Should the platform support both B2C and B2B (multi-tenant) models?
-
-Requirements
-Follow these requirements for the authentication and SSO platform:
-
-Functional requirements
-
-User sign-up and login
-Third-party provider login
-Token-based authentication
-Single sign-on (SSO)
-Multi-factor authentication (MFA)
-Password reset and recovery
-Nonfunctional requirements
-
-Scalability
-Security
-High availability
-Low latency
-Fault tolerance
-System Design and workflow
-When users want to log in, their request is routed through a load balancer and then sent to an authentication server. The system checks whether the user is signing in with a regular email and password or using a third-party login provider. If it’s a third-party login, the system redirects the user to the external provider for verification. Once the login is successful, the authentication service creates a secure token and returns it to the client.
-
-This token acts like a digital badge and is used to identify the user on future requests. It can also be used across multiple applications owned by the same company, enabling single sign-on (SSO). Each token has a built-in expiration time, ensuring that user sessions do not remain active indefinitely.
-
-The authentication system includes important safeguards, such as limiting failed login attempts, detecting suspicious activity, and securely encrypting all stored passwords. It also supports multi-tenancy, meaning user data is kept separate for each business using the platform, so each company only sees its users.
-
-
-A high-level design of an authentication and SSO platform
-
-A high-level design of an authentication and SSO platform
-Knowledge test!
-
-How do we safely store user passwords in the system?
-
-How does the system recognize users across multiple apps (SSO)?
-
-What happens if a third-party login service like Google is temporarily down?
-
-How do we prevent too many failed login attempts from the same user or IP address?
-
-How would the system handle logout and session expiration?
-
-Note: The lesson on authentication and authorization explores the core concepts behind this system, including tokens, login protocols, and user permissions.
-
-Medium System Design interview questions
-I provide each medium system design question’s problem statement, requirements, workflow, and system architecture.
-
-8. Design a video-first social platform like TikTok
-Problem statement: Design a video-first social platform where users can create, upload, watch, and interact with short-form videos (reels). The system should support millions of users, deliver low-latency content, and personalize each user’s video feed based on engagement history.
-
-Sample clarifying questions!
-
-What is the maximum video size and length supported?
-
-Should the video feed be globally personalized or regionally segmented?
-
-Requirements
-Follow these requirements for a video-first social platform:
-
-Functional requirements
-
-Upload or create short videos
-
-Stream short videos
-
-Like, comment, and share videos
-
-Personalized video feed
-
-Follow and unfollow users
-
-View creator profiles
-
-Search by tags, music, or username
-
-Nonfunctional requirements
-
-High availability
-
-Low latency streaming
-
-Scalability (both storage and delivery)
-
-Video processing and compression
-
-System Design and workflow
-When users open the app, their request is routed to the feed generation service through a load balancer. This service works with a recommendation service to generate a personalized list of videos based on the user’s watch history, likes, and other interactions.
-
-Once the feed is generated, the app streams video content directly from a content delivery network (CDN) to ensure fast loading times, especially for users in different parts of the world. The videos are stored in a media storage system and processed by a video processing service, which handles compression, format conversion, thumbnail generation, and basic moderation.
-
-When a user uploads a video, it’s routed to the video processing service. After processing, the video is saved to media storage, which can become part of the personalized list for users via the recommendation service.
-
-The following high-level design represents a simple workflow of a video-first social platform like TikTok:
-
-
-A high-level design of a video-first social platform
-
-A high-level design of a video-first social platform
-Knowledge test!
-
-How would you handle millions of concurrent users uploading and watching videos?
-
-What strategies would you use to keep the feed relevant and personalized in real time?
-
-How would you moderate inappropriate video content before it reaches viewers?
-
-Note: The chapter on the content delivery network explores how content is delivered quickly and efficiently to users worldwide.
-
-9. Design an AI-powered customer support platform
-Problem statement: Design a scalable customer support platform for a large e-commerce business. The system should use a collection of specialized AI agents to automatically understand, route, and resolve customer queries in real time. If the issue isn’t resolved automatically, the system should escalate it to a human agent with full context preserved.
-
-Sample clarifying questions!
-
-Which channels should be supported (chat, voice, email)?
-
-Should the system support multilingual AI interactions?
-
-Should users be authenticated before submitting a query?
-
-Requirements
-Follow these requirements for the AI-powered customer support platform:
-
-Functional requirements
-
-Query intake
-Automated routing
-AI-based resolution
-Human escalation
-Knowledge base integration
-Nonfunctional requirements
-
-Scalability
-Accuracy
-High availability
-Low latency
-System Design and workflow
-When a customer submits a query, it is first received by a query router. This component classifies the query type, such as billing, FAQ, or technical issue, based on message content and customer context. The query is then forwarded to the appropriate specialized AI agent.
-
-The FAQ agent retrieves standard responses from the knowledge base to answer common customer questions. For issues related to payments or orders, the billing agent securely accesses account details to provide accurate, account-specific resolutions. Meanwhile, the technical agent helps customers troubleshoot app or product-related problems by walking them through guided solutions.
-
-If the assigned AI agent resolves the query, a response is sent back to the user. If not, the human escalation manager transfers the case to a human support agent with the full interaction history attached. Similarly, a monitoring and logging service records all activity to track performance, generate insights, and help improve future responses, as shown in the following illustration:
-
-
-A high-level design of an AI-powered customer support platform
-
-A high-level design of an AI-powered customer support platform
-Knowledge test!
-
-Why might using multiple specialized AI agents be better than one large general-purpose model?
-
-How should the system decide when to escalate a query to a human agent?
-
-How can the query router be made fault-tolerant in case of misclassification?
-
-What steps are needed to add a new agent, and how would you ensure it doesn’t interfere with others?
-
-10. Design a chat service like Facebook Messenger or WhatsApp
-Problem statement: Design a scalable, reliable, and secure real-time chat service like Facebook Messenger or WhatsApp to support instant messaging, group chats, notifications, and multimedia sharing.
-
-Sample clarifying questions!
-
-Should the system support both one-to-one and group chats?
-
-Are messages required to be end-to-end encrypted?
-
-Should messages be stored indefinitely or have a retention policy?
-
-Requirements
-Follow these requirements for the WhatsApp System Design:
-
-Functional requirements
-
-Real-time communication (individual/group)
-Message delivery acknowledgment
-Sharing of media content
-Chat storage
-Notifications
-Nonfunctional requirements
-
-Availability
-Low latency
-Scalability
-Consistency
-Security
-System Design and workflow
-In a real-time communication system, senders and receivers are connected to chat servers. Chat servers deliver messages from sender to receiver via a messaging queue. Various protocols, such as WebSocket, XMPP, MQTT, and real-time transport protocol, can be utilized for real-time communication. For this purpose, a manager establishes real-time connections between clients and chat servers; for instance, assume the WebSocket manager establishes WebSocket connections between users and different chat servers. Similarly, the messages can be persistently stored in the database.
-
-
-A high-level design of a real-time chat system
-
-A high-level design of a real-time chat system
-Knowledge test!
-
-What happens if a message is sent when the user isn’t connected to the internet? Is it sent when the connection is restored?
-
-How will you encrypt and decrypt the message without increasing latency?
-
-How do users receive notifications?
-
-Are messages pulled from the device (the server periodically prompts the devices if they’re waiting to send a message), or are pushed to the server (the device prompts the server that it has a message to send)?
-
-Note: Look at the detailed design of the real-time chat service to get answers to such questions.
-
-11. Design a mass social media service like Facebook or Instagram
-Problem statement: Design a social media service used by several million users like Instagram. Users should be able to view a newsfeed with posts by following users and suggesting new content that the user may like.
-
-Sample clarifying questions!
-
-Should feed generation be on write, on read, or hybrid?
-
-Should the system support images, video, or only text content?
-
-How personalized should the user feed be?
-
-Requirements
-Follow these requirements for the Instagram system:
-
-Functional requirements
-
-Create a post
-Delete a post
-Edit a post
-Share a post
-Follow and unfollow users
-Search for content
-View the system’s generated feed
-Like and dislike posts
-Nonfunctional requirements
-
-Scalability
-Availability
-Low latency
-Reliability
-Security
-Based on the above requirements, let’s create a high-level design of a feed-based social system like Instagram.
-
-System Design and workflow
-The high-level design of a feed-based social network includes posts, timeline generation, feed publishing service, and feed ranking and recommendation engine. The post-service handles the clients’ posts, and the post is published on the client’s wall (page). Similarly, the timeline generation service generates feeds for friends and followers by the timeline generation service. The timeline generation service utilizes the feed ranking and recommendation engine, which ranks and recommends the top N posts to followers based on their interests, searches, and watch history. The generated feed is stored in the database, and the feed publishing service is responsible for publishing and showing the generated feeds to followers. As the feed could contain videos, the CDN is responsible for delivering the videos to followers with low latency.
-
-
-A high-level design of a mass social media service
-
-A high-level design of a mass social media service
-Knowledge test!
-
-Influencers or celebrities will have millions of followers; how are they handled vs. standard users?
-
-How does the system weigh posts by age? Old posts are less likely to be viewed than new posts.
-
-What’s the ratio of read and write focused nodes? Are there likely to be more read requests (users viewing posts) or write requests (users creating posts)?
-
-How can you increase availability? How does the system update? What happens if a node fails?
-
-How do you efficiently store posts and images?
-
-Note: Look at the detailed design of Instagram for a better understanding.
-
-12. Design a proximity service like Yelp or nearby places/friends
-Problem statement: Design a proximity server that stores and reports the distance to places like restaurants. Users can search nearby places by distance or popularity. The database must store data for hundreds of millions of businesses across the globe.
-
-Sample clarifying questions!
-
-How should results be sorted: by distance, rating, or popularity?
-
-Is real-time tracking needed for friends or businesses?
-
-Requirements
-Follow these requirements for a System Design like Yelp:
-
-Functional requirements
-
-User accounts
-Search
-Feedback
-Nonfunctional requirements
-
-Scalability
-High availability
-Consistency
-Performance
-System Design and workflow
-The system handles search requests by using load balancers to distribute read requests to the read service, which then queries the quadtree service to identify relevant places within a specified radius. The quadtree service also refines the result before being sent to the clients. For adding places or feedback, write requests are similarly routed through load balancers to the writing service, which updates a relational database and stores images in blob storage. The system also involves segmenting the world map into smaller parts, storing places in a key-value store, and periodically updating these segments to include new places, although this update happens monthly due to the low probability of new additions.
-
-
-A high-level design of a proximity service like Yelp
-
-A high-level design of a proximity service like Yelp
-Knowledge test!
-
-How do you store lots of data and retrieve search results quickly?
-
-How should the system handle different population densities? Rigid latitude/longitude grids will cause varied responsiveness based on density.
-
-Can we optimize commonly searched locations?
-
-Note:  Look at the detailed design of Yelp to get answers to the above questions.
-
-13. Design a search engine-related service like Typeahead
-Problem statement: Design a typeahead suggestion system that provides real-time, relevant autocomplete and autocorrect suggestions as users type, ensuring low latency and scalability to efficiently handle a large volume of queries.
-
-Sample clarifying questions!
-
-What is the maximum allowed latency for suggestions?
-
-Should the system adapt to user search history and preferences?
-
-How often should the autocomplete dataset be refreshed?
-
-Requirements
-Follow these requirements for the system:
-
-Functional requirements
-
-Autocomplete
-Autocorrect
-Nonfunctional requirements
-
-Scalability
-Fault tolerance
-Performance
-System Design and workflow
-When a user starts typing a query, each character is sent to an application server. A suggestion service gathers the top N suggestions from a distributed cache, or Redis, and returns the list to the user. An alternate service, the data collector and aggregator, takes the query, analytically ranks it, and stores it in a NoSQL database. The trie builder is a service that takes the aggregated data from the NoSQL database, builds tries, and stores them in the trie database.
-
-
-A high-level design of Typeahead
-
-A high-level design of Typeahead
-Knowledge test!
-
-How strongly do you weigh spelling mistake corrections?
-
-How do you update selections without causing latency?
-
-How do you determine the most likely completed query? Does it adapt to the user’s searches?
-
-What happens if the user types very quickly? Do suggestions only appear after they’re done?
-
-Note: Look at the detailed design of the Typeahead system for a better understanding of the system.
-
-14. Design a video streaming service like YouTube or Netflix
-Problem statement: Design a video streaming service like YouTube or Netflix that allows users to upload and stream videos. The service should efficiently store many videos and their metadata and return accurate and quick results for user search queries.
-
-Sample clarifying questions!
-
-What is the expected volume of uploads and concurrent streams?
-
-Are live streaming features needed, or only on-demand?
-
-Requirements
-Follow these requirements for a streaming service System Design:
-
-Functional requirements
-
-Search videos
-Upload videos
-Stream videos
-Rate videos
-Nonfunctional requirements
-
-Availability
-Scalability
-Low latency (to stream a video)
-Support multiple formats
-System Design and workflow
-A load balancer first handles video upload requests by sending them to the application servers. The applications server interacts with the video service, which triggers transcoders to convert the video to different formats. These typically range from 140p to 1440p but can reach 4K resolutions. The formatted video is then saved to the blob store, and its metadata is stored on the metadata database. The video service sends the transformed video to CDNs for quick content delivery to end users. Popular and recent uploads are held in a CDN. A content delivery network, or CDN, reduces latency when delivering video to users. The CDN stores and delivers requested data to users in conjunction with colocation sites.
-
-
-A high-level design of a video streaming system
-
-A high-level design of a video streaming system
-Knowledge test!
-
-How will your service ensure smooth video streaming on various internet qualities?
-
-How are the videos stored?
-
-How will the system provide a personalized experience to each user with recommendations?
-
-How does the system react to a sudden drop in the network, shifting to low-quality, buffering content, etc.?
-
-Note: Check out the detailed chapter on YouTube System Design that answers the above concerns during the design.
-
-15. Design a ride sharing service like Uber or Lyft
-Problem statement: Design a system for a ride sharing service similar to Uber, where users can request rides and drivers can accept these requests. The system should efficiently match drivers to riders based on location and availability, handle real-time updates on ride statuses, manage payments securely, and ensure a smooth user experience from booking to completion of the ride.
-
-Sample clarifying questions!
-
-Should the system support different ride types (economy, premium, carpool)?
-
-How frequently are driver and rider locations updated?
-
-Are wallet systems, promotions, or refunds part of the payment system?
-
-Requirements
-Follow these requirements for the System Design:
-
-Functional requirements
-
-Location tracking
-Request a ride
-Show nearby drivers
-Calculate and notify ETA
-Trip process (confirmation and updates)
-Payment
-Nonfunctional requirements
-
-Scalability
-Availability
-Reliability
-Low latency
-Consistency
-Security
-System Design and workflow
-A user’s request is sent to the application server via a load balancer and API gateway. The system accepts the rider’s request, and the trip service or manager provides an estimated time of arrival (ETA) based on different vehicle types. The drivers and location manager use a matching algorithm to find the nearest available drivers and send the request to those drivers by notifying them via a notification service. When a driver matches with a rider, the application should return the trip and rider information. The driver’s location is regularly recorded and communicated to relevant users through a pub/sub service.
-
-Once the ride is complete, the trip manager ensures payment is securely processed through a payment gateway. We leverage a database that stores user and driver profiles, ride history, and payment information. We also use caching mechanisms to speed up access to frequently requested data, and constant monitoring ensures the service runs smoothly.
-
-
-A high-level design of a ride sharing service
-
-A high-level design of a ride sharing service
-Knowledge test!
-
-How can you keep latency low during busy periods?
-
-How is the driver paired with the user? Iterating over all drivers to find Euclidean distance would be inefficient.
-
-What happens if the driver or user loses connection?
-
-How would you update the ETA during a ride in peak hours?
-
-Note: Check out our guide to designing Uber’s backend for more information on the interview process.
-
-16. Design a recommendation service
-Problem statement: Design a recommendation engine that suggests personalized content or products to users based on their preferences and behavior. The system should efficiently analyze user data, such as past interactions and ratings, to provide accurate and relevant recommendations.
-
-Sample clarifying questions!
-
-What types of content are being recommended (products, videos, etc.)?
-
-Should recommendations be personalized or globally ranked?
-
-Should updates happen in real time or batch processing?
-
-Requirements
-Follow these requirements for a recommendation service:
-
-Functional requirements
-
-Search and browse
-Personalized recommendations
-Real-time update of recommendations
-Offline processing
-Nonfunctional requirements
-
-Scalability
-Low latency
-Privacy
-Security
-System Design and workflow
-The recommendation engine’s System Design comprises data collection, processing, and recommendation. When users interact with the application, the data collector service collects data from application servers, such as search, viewing history, ratings, watch times, etc. This data is logged into Kafka for immediate processing.
-
-We use real-time processors to process data and recommend content accordingly. We also use batch processors for periodic offline processing to perform detailed analyses and improve accuracy. Once the data is processed, the ML/AI engine uses different algorithms, such as collaborative filtering, content-based filtering, hybrid approaches, and advanced techniques to recommend personalized suggestions.
-
-Integrating AI to enhance the user experience is crucial to modern applications. Learn how to build generative AI applications in our course: Grokking the Generative AI System Design.
-
-
-A high-level design of a recommendation system
-
-A high-level design of a recommendation system
-Knowledge test!
-
-How will you handle the cold start problem for new users and content?
-
-How would you update recommendations in real time?
-
-How would you ensure the recommendation system scales to ever-increasing users?
-
-What strategies would you employ to adjust recommendations dynamically based on real-time user behavior or preference changes?
-
-How can you optimize recommendation accuracy without compromising on scalability and performance?
-
-17. Design a file sharing service like Google Drive
-Problem statement: Design a scalable, synchronous, cross-platform storage system like Dropbox. Users can store files and photos and access them from other devices.
-
-Sample clarifying questions!
-
-What is the maximum file size supported for upload/download?
-
-Should real-time collaboration be supported or only file syncing?
-
-Are user storage quotas or expiration policies needed?
-
-Requirements
-Follow these requirements for the system:
-
-Functional requirements
-
-Upload and download files
-Share files
-Synchronize across devices
-Nonfunctional requirements
-
-Scalability and consistency
-Low latency
-System Design and workflow
-In a high-level design of a file sharing service like Google Drive, the user’s request to upload or download a file passes through a load balancer to the application servers. The application server sends the upload request to a chunk service for splitting large files into smaller, more easily manageable chunks. These files are then sent to a processing queue that sends and receives requests to store metadata and ensure that files are synchronized between users and accounts. Files are stored in a cloud-based block storage platform, like Amazon S3 (or in-premises blob storage). Users who want to upload or download files contact this storage service through a web server.
-
-
-A high-level design of a file sharing service
-
-A high-level design of a file sharing service
-Knowledge test!
-
-Where are the files stored?
-
-How do you handle updates? Do you re-upload the entire file again?
-
-Do small updates require a full file update?
-
-How does the system handle two users updating a document simultaneously?
-
-Note: To further your learning, explore the detailed design of distributed file systems of tech giants like Google and Facebook (Meta).
-
-18. Design a social network service like Reddit or Quora
-Problem statement: These social network sites operate on a forum-based system that allows users to post questions and links. For simplicity’s sake, focus more on designing Quora. You’ll unlikely need to walk through the design of something like Reddit’s subreddit or karma system in an interview.
-
-Sample clarifying questions!
-
-What types of content are supported: text, images, videos, links?
-
-Should voting affect visibility globally or per user?
-
-Are real-time notifications required for interactions?
-
-Requirements
-Follow these requirements for a System Design like Quora:
-
-Functional requirements
-
-Post questions and answers
-Vote and comment
-Search
-Answer ranking
-Recommendation system
-Nonfunctional requirements
-
-Scalability and consistency
-Availability
-Performance
-System Design and workflow
-In Quora’s high-level design, users interact through a web server, which communicates with an application server to handle actions such as posting questions, answers, and comments. Content like images and videos is stored in blob storage, and question-and-answer data, along with user profiles and interactions, are stored in a MySQL database.
-
-A machine learning engine analyzes user interactions and content to rank answers based on relevance and quality. This engine continuously learns from user feedback to improve its ranking algorithms. For personalized user experiences, a recommendation system utilizes machine learning models to tailor content based on individual interests and behaviors.
-
-
-A high-level design of Quora
-
-A high-level design of Quora
-Knowledge test!
-
-How can you ensure the system’s scalability to handle millions of simultaneous users posting questions and answers?
-
-What strategies can efficiently store and retrieve large multimedia content in blob storage?
-
-How would you design the database schema to manage the relationships between users, questions, answers, and comments in a scalable way?
-
-What techniques can be used to rank answers effectively, ensuring that high-quality content is prioritized for users?
-
-How can you optimize the performance of the machine learning engine to rank answers quickly and accurately?
-
-Note: Check out the detailed chapter on Quora System Design to help you understand the system.
-
-Hard System Design interview questions
-Hard System Design interview questions refer to complex, open-ended problems that require deep technical knowledge, critical thinking, and the ability to design scalable, efficient systems under constraints. Let’s start with the System Design of a ChatGPT-style service.
-
-19. Design a ChatGPT-style service
-Problem statement: Design a scalable and interactive conversational AI platform, similar to ChatGPT, that allows users to submit prompts and receive real-time, coherent responses from a large language model (LLM). The system should support millions of users, maintain conversation history, and deliver a fast and responsive experience.
-
-Sample clarifying questions!
-
-Should conversation history persist across sessions?
-
-How important is streaming speed vs. final accuracy?
-
-Is personalization (tone, memory) required in responses?
-
-Requirements
-Follow these requirements for the ChatGPT-style service:
-
-Functional requirements
-
-Prompt intake
-
-Context management
-
-LLM querying
-
-Response streaming
-
-Session storage
-
-User authentication
-
-Nonfunctional requirements
-
-Low latency
-
-High availability
-
-Scalability
-
-Security and privacy
-
-Responsible AI usage
-
-System Design and workflow
-When a user submits a prompt, the request is initially routed to the API gateway, which verifies authentication and applies rate limiting. The authorized request is then forwarded to the conversation manager. The conversation manager retrieves recent conversations from the user’s chat history, if available, and combines them with the new prompt to create the full input for the LLM. This input is sent to the LLM inference service, which may use distributed replicas or sharded models to manage high traffic.
-
-The LLM inference service generates a response. To improve the user experience, the response is streamed back to the client as it is being generated. This makes the interaction feel fast and natural, especially for longer responses. Once the full response is ready, it is saved to the session store alongside the user’s prompt. All interactions are logged for monitoring and future improvements.
-
-To handle peak traffic smoothly, a queue can be introduced before the inference step to buffer requests. Optionally, depending on the use case, the system may include user profile data for personalization, such as adapting tone, language, or preferred length of answers.
-
-The following illustrations show a high-level design of a ChatGPT-style service:
-
-
-A high-level design of a ChatGPT-style service
-
-A high-level design of a ChatGPT-style service
-Knowledge test!
-
-Why is response streaming important in a conversational AI platform, and how does it affect perceived latency?
-
-What are the trade-offs between stateless vs. stateful architecture for managing conversation history?
-
-What mechanisms would you implement to ensure the system filters harmful or inappropriate content in real time?
-
-To answer more such interesting and thought-provoking questions, you can check out the following course:
-
-Cover
-Grokking the Generative AI System Design
-GenAI System Design is emerging as its own interview category at top tech companies, distinct from traditional ML System Design. The questions are different, the architectures are different, and the scale considerations (GPU compute, parallelism, inference optimization) require their own mental models. 
-Having spent years researching adaptive AI systems and neural networks, and now leading the creation of learning content at Educative, I designed this course to bridge that gap between understanding generative AI conceptually and being able to architect these gen AI systems end-to-end. 
-You'll learn the SCALED framework, which is a 6-step methodology for breaking down any GenAI System Design problem, then apply it across five real-world systems spanning text, image, speech, and video generation. Each case study walks through training architecture, deployment design, and the specific tradeoffs involved in that modality. Before diving into the case studies, the course covers the foundational concepts you'll need: neural networks, transformers, tokenization, embeddings, parallelism strategies, inference optimization, RAG, and fine-tuning. You'll also learn how to do back-of-the-envelope calculations for LLM training and deployment. 
-A bonus: if you have a GenAI or ML System Design interview coming up, this will give you both the framework and the depth to handle whatever systems are asked to design.
-
-4hrs
-Intermediate
-8 Exercises
-8 Quizzes
-
-Preview
-20. Design a code deployment system
-Problem statement: Design a reliable and scalable code deployment system for a large-scale distributed application. The system should automate building, testing, and rolling out code changes across environments with minimal disruption and the ability to monitor and roll back changes when necessary.
-
-Sample clarifying questions!
-
-What rollback strategy is required: full, partial, or per environment?
-
-Is deployment approval manual, automated, or both?
-
-Requirements
-Follow these requirements for a code deployment system:
-
-Functional requirements
-
-Version control integration
-Automated code building
-Multi-environment deployment
-Environment configuration
-Automated rollbacks
-Deployment monitoring
-Support for deployment strategies
-Nonfunctional requirements
-
-Availability
-Fault tolerance
-Performance
-Scalability
-Security
-System Design and workflow
-The high-level design of the code deployment system includes all the major components needed to meet the outlined requirements. The process begins when developers submit code to a version control system (VCS). Any new code changes trigger a continuous integration (CI) service, which automatically integrates updates, runs preliminary tests, and prepares the code for deployment. Once validated, the code is published to a queue, which decouples build triggers from execution.
-
-A dedicated build service listens to this queue and retrieves jobs to compile the code. It then generates binary artifacts and stores them in a versioned blob storage system. These artifacts represent the system’s deployable output. When it’s time to deploy, the deployment service pulls the necessary artifacts from blob storage and installs them on machines across different regions. This ensures consistent deployments in multiple environments, such as staging and production.
-
-The architecture supports gradual rollouts, rollback mechanisms, and monitoring at each step, helping to reduce risks and improve reliability in production.
-
-A high-level design of a code deployment system is depicted in the following illustration:
-
-
-A high-level design of a code-deployment system
-
-A high-level design of a code-deployment system
-Knowledge test!
-
-How would you ensure zero-downtime deployments in this system?
-
-What are the key considerations when designing for rollback capability?
-
-If deployments fail in only one region, how would you isolate and debug the issue without affecting global deployments?
-
-As your engineering team grows and deploys more frequently, what changes would you make to maintain fast and stable builds?
-
-You can check out the following course for more details on System Design:
-
-Cover
-Grokking Modern System Design Interview
-For a decade, when developers talked about how to prepare for System Design Interviews, the answer was always Grokking System Design. This is that course — updated for the current tech landscape. As AI handles more of the routine work, engineers at every level are expected to operate with the architectural fluency that used to belong to Staff engineers. That's why System Design Interviews still determine starting level and compensation, and the bar keeps rising.
-
-I built this course from my experience building global-scale distributed systems at Microsoft and Meta — and from interviewing hundreds of candidates at both companies. The failure pattern I kept seeing wasn't a lack of technical knowledge. Even strong coders would hit a wall, because System Design Interviews don't test what you can build; they test whether you can reason through an ambiguous problem, communicate ideas clearly, and defend trade-offs in real time (all skills that matter ore than never now in the AI era). RESHADED is the framework I developed to fix that: a repeatable 45-minute roadmap through any open-ended System Design problem.
-
-The course covers the distributed systems fundamentals that appear in every interview – databases, caches, load balancers, CDNs, messaging queues, and more – then applies them across 13+ real-world case studies: YouTube, WhatsApp, Uber, Twitter, Google Maps, and modern systems like ChatGPT and AI/ML infrastructure. Then put your knowledge to the test with AI Mock Interviews designed to simulate the real interview experience.
-
-Hundreds of thousands of candidates have already used this course to land SWE, TPM, and EM roles at top companies. If you're serious about acing your next System Design Interview, this is the best place to start.
-
-26hrs
-Intermediate
-4 Playgrounds
-28 Quizzes
-
-Preview
-21. Design a social media newsfeed service
-Problem statement: Design a scalable and efficient social media newsfeed system that delivers personalized, real-time content updates to users, ensuring low latency, high availability, and scalability.
-
-Sample clarifying questions!
-
-Should the feed be push-based, pull-based, or hybrid?
-
-What level of personalization is required?
-
-Does the feed support multimedia content like images and videos?
-
-Requirements
-Follow these requirements for the design:
-
-Functional requirements
-
-Newsfeed generation
-Newsfeed contents
-Newsfeed display
-Nonfunctional requirements
-
-Scalability
-Fault tolerance
-Availability
-Low latency
-System Design and workflow
-In the following high-level design of a newsfeed system, clients post or request their newsfeed through the app, which the load balancer redirects to a web server for authentication and routing. Whenever a post is created via the post service and available from a user’s friends (or followers), the notification service informs the newsfeed generation service, which generates newsfeeds from the posts of the user’s friends (followers) and keeps them in the newsfeed cache. Similarly, the generated feeds are published by the newsfeed publishing service to the user’s timeline from the news feed cache. It also appends multimedia content from the blob storage with a news feed if required.
-
-
-A high-level design of the newsfeed service
-
-A high-level design of the newsfeed service
-Knowledge test!
-
-Creating and storing newsfeeds for each user in the cache requires enormous memory. Is there any way to reduce this memory consumption?
-
-What mechanisms would you implement to prioritize and filter content in the newsfeed to prevent information overload for users?
-
-How can the system ensure consistency and order of posts in the newsfeed, especially in a distributed environment with multiple data centers?
-
-Note: If you need answers to such questions, look at the detailed design of a newsfeed service.
-
-22. Design a collaborative editing service like Google Docs 
-Problem statement: Design a collaborative editing service that lets users remotely and simultaneously make changes to text documents. The changes should be displayed in real time. Like other cloud-based services, documents should be consistently available to any logged-in user on any machine. Your solution must be scalable to support thousands of concurrent users.
-
-Sample clarifying questions!
-
-What collaboration model is used: character-level or paragraph-level?
-
-Should the system support offline editing and later sync?
-
-How will conflicts between concurrent edits be resolved?
-
-Requirements
-Follow these requirements for the Google Docs system:
-
-Functional requirements
-
-Collaboration
-Edit overlap
-Autocomplete and grammatical suggestions
-History and view count
-Manage documents
-Nonfunctional requirements
-
-Consistency
-Availability
-Low latency
-System Design and workflow
-Clients’ requests are forwarded to the operations queue, where conflicts are resolved between different collaborators, and the data is stored in the time series database and blob storage (responsible for storing media files). Autocomplete suggestions are made via the typeahead service. This service resides on the Redis cache to enable low latency suggestions and enhance the speed of the regular updates process. The application servers perform several important tasks, including importing and exporting documents. Application servers also convert documents from one format to another. For example, a .doc or .docx document can be converted into .pdf or vice versa.
-
-
-A high-level design of the Google Docs service
-
-A high-level design of the Google Docs service
-Knowledge test!
-
-How do you minimize latency when multiple users are distant from the server?
-
-What techniques for conflict resolution are best for ensuring consistency?
-
-Note: If you need answers to such questions, look at the detailed design of Google Docs.
-
-23. Design Google Maps
-Problem statement: Design a service that can map the route between two locations. The system should map several optimal paths to a destination based on the mode of travel. Each route should display the total mileage and an estimated time of arrival.
-
-Sample clarifying questions!
-
-What travel modes should be supported: driving, cycling, walking, public transport?
-
-How frequently should traffic data be updated?
-
-Is offline route planning and navigation required?
-
-Requirements
-Follow these requirements for the Google Maps system:
-
-Functional requirements
-
-Real-time navigation
-Location/Area search
-Route search/finder
-Route planning
-Real-time notification
-Nonfunctional requirements
-
-Scalability
-Reliability
-Low latency
-Accuracy
-System Design and workflow
-In the Google Maps system, clients request location-based services, such as finding a route or searching for nearby points of interest. The load balancer directs requests to various services based on the nature of the query.
-For routing requests, the route finder service calculates optimal paths between two or more points using real-time and historical data. It relies on the graph processing service to perform complex calculations on the road network graph stored in the graph database. The location finder service provides the user’s current location or identifies the location of a specified point of interest. The area search system lets users find nearby places, such as restaurants or gas stations, by querying the graph database and third-party road data sources.
-
-
-A high-level design of the Google Maps system
-
-A high-level design of the Google Maps system
-Knowledge test!
-
-How do you collect the world map data? What third-party source will you use?
-
-How do you segment the map to avoid long loading times?
-
-How do you ensure the accuracy of ETA calculations for high-traffic times of day?
-
-Note: Look at the detailed design of Google Maps to get answers to the questions above.
-
-24. Design a payment gateway like Stripe
-Problem statement: Design a payment gateway like Stripe capable of securely performing online or card transactions and handling millions of users simultaneously.
-
-Sample clarifying questions!
-
-What payment types must be supported: cards, wallets, bank transfers?
-
-Is fraud detection and risk analysis built into the platform?
-
-Should the system support multi-currency international transactions?
-
-Requirements
-Follow these requirements for the system:
-
-Functional requirements
-
-User registration and authentication
-Payment processing
-Transaction history
-Balance management
-Mobile accessibility
-Nonfunctional requirements
-
-Performance
-Availability
-Reliability
-Data integrity and security
-Scalability
-System Design and workflow
-Initially, a customer selects a product or service via the merchant’s online store and proceeds to the checkout page to provide payment details, including card number, cardholder name, CVV or CVC, and expiration date. Upon clicking the pay button, an event that hits the payment service stores the event, performs initial security checks, and forwards the payment details to the payment service provider for further operations is generated. The payment gateway performs extensive security checks, moves money from the customer’s account to the merchant’s, and provides secondary services like handling refunds and generating invoices. The card network verifies the card information via APIs provided by the card network. Once the payment is processed, the wallet and ledger service updates the merchant’s wallet in the database to track total revenue and processes each order separately in case of multiple sellers. The reconciliation system matches and verifies financial records to ensure accurate transaction accounting, identifying and resolving discrepancies.
-
-
-A high-level design of a payment gateway
-
-A high-level design of a payment gateway
-Knowledge test!
-
-Where are the customer’s payment details encrypted during a purchase?
-
-How does the card network authorize a debit/credit card?
-
-You can check out the following course for more details on System Design:
-
-Cover
-Grokking Modern System Design Interview
-For a decade, when developers talked about how to prepare for System Design Interviews, the answer was always Grokking System Design. This is that course — updated for the current tech landscape. As AI handles more of the routine work, engineers at every level are expected to operate with the architectural fluency that used to belong to Staff engineers. That's why System Design Interviews still determine starting level and compensation, and the bar keeps rising.
-
-I built this course from my experience building global-scale distributed systems at Microsoft and Meta — and from interviewing hundreds of candidates at both companies. The failure pattern I kept seeing wasn't a lack of technical knowledge. Even strong coders would hit a wall, because System Design Interviews don't test what you can build; they test whether you can reason through an ambiguous problem, communicate ideas clearly, and defend trade-offs in real time (all skills that matter ore than never now in the AI era). RESHADED is the framework I developed to fix that: a repeatable 45-minute roadmap through any open-ended System Design problem.
-
-The course covers the distributed systems fundamentals that appear in every interview – databases, caches, load balancers, CDNs, messaging queues, and more – then applies them across 13+ real-world case studies: YouTube, WhatsApp, Uber, Twitter, Google Maps, and modern systems like ChatGPT and AI/ML infrastructure. Then put your knowledge to the test with AI Mock Interviews designed to simulate the real interview experience.
-
-Hundreds of thousands of candidates have already used this course to land SWE, TPM, and EM roles at top companies. If you're serious about acing your next System Design Interview, this is the best place to start.
-
-26hrs
-Intermediate
-4 Playgrounds
-28 Quizzes
-
-Preview
-25. Design a food delivery service like Uber Eats or DoorDash
-Problem statement: Design a food delivery service like Uber Eats or DoorDash that efficiently connects hungry customers with diverse restaurants, ensuring timely and accurate order fulfillment while optimizing delivery routes and driver earnings.
-
-Sample clarifying questions!
-
-Should the system prioritize delivery speed, cost, or driver fairness?
-
-Is real-time order tracking with driver location required?
-
-Are ratings and reviews needed for restaurants and delivery agents?
-
-Requirements
-Follow these requirements for the DoorDash system:
-
-Functional requirements
-
-Search menu items, cuisines, or restaurants
-Add items to the cart
-Notifications about the order status
-Track the order
-Cancel the order
-Pay for the order
-Create and update the account
-Restaurant profile creation
-Offboarding option (If the restaurant decides to discontinue service)
-Nonfunctional requirements
-
-Latency
-Consistency
-Availability
-High throughput
-System Design and workflow
-The following is a level design of DoorDash, consisting of several services for different purposes. Let’s describe the workflow and the interaction of the different services involved in the design.
-
-Customers’ requests are routed through the API gateway and directed to different services via the load balancer. The search service searches for menu items, cuisines, restaurants, etc. It is one of the customers’ busiest services when searching the website or application. The ordering service handles menu selection, managing the shopping cart, and placing food orders. Additionally, it facilitates payment processing through an external payment gateway and stores the outcomes in the relevant database. The order fulfillment service is used to manage the orders that the restaurants have accepted. It also keeps track of orders being prepared.
-
-Customers and restaurant staff use the user management service to create and manage their profiles. The dispatch service displays the orders ready to be picked. It is also used to view delivery information and facilitate communication between customers and restaurant staff.
-
-
-A high-level design of the DoorDash system
-
-A high-level design of the DoorDash system
-Knowledge test!
-
-How would you handle a sudden surge in orders during peak hours, like on Super Bowl Sunday?
-
-How would you leverage customer and delivery data to personalize recommendations, improve order accuracy, and optimize pricing?
-
-How would you protect sensitive customer and payment information from breaches?
-
-26. Design a distributed locking service like Google Chubby locking
-Problem statement: Design a highly available, fault-tolerant distributed locking service like Google Chubby to coordinate access to shared resources in a large-scale distributed system.
-
-Sample clarifying questions!
-
-Should the system support both read and write locks?
-
-What happens if a client holding a lock crashes or disconnects?
-
-Is lock expiration or lease renewal required?
-
-Requirements
-Follow these requirements for the Google Chubby locking system:
-
-Functional requirements
-
-Coarse-grained locking service
-Reliable low-volume storage
-Nonfunctional requirements
-
-Availability
-Reliability
-Easy-to-understand semantics
-High throughput
-System Design and workflow
-The Chubby cell is composed of multiple servers (usually five), all replicas of each other. One of these servers is a leader with whom the clients must communicate. Each server has a namespace that is composed of directories and files that contain data that is relevant to different applications. In addition to this namespace, the server contains an ACL files directory to have access control lists of all the files and directories within the namespace. The Chubby library mediates communication between clients and servers in a Chubby cell. It takes a request from a client who wants to use the Chubby service and then finds the relevant cell, directs the request to that cell via remote procedure calls (RPCs), and then reports any changes made in the namespace, data, or metadata (also known as events) back to the client.
-
-
-A high-level design of the Google Chubby locking system
-
-A high-level design of the Google Chubby locking system
-Knowledge test!
-
-How does Chubby recover from server failures and network partitions while maintaining data consistency?
-
-How does Chubby handle client failures and session timeouts?
-
-Note: Look at the detailed design of Google Chubby locking to get answers to the above questions.
-
-27. Design a coordination system like ZooKeeper
-Problem statement: Design a highly available, fault-tolerant, and scalable coordination system like ZooKeeper to manage configuration, naming, synchronization, and group services in a distributed system.
-
-Sample clarifying questions!
-
-What coordination features are needed: leader election, locking, or configuration?
-
-What consistency level is required during network partitions?
-
-Should clients be notified of changes (watch mechanism)?
-
-Requirements
-Follow these requirements for the ZooKeeper system:
-
-Functional requirements
-
-Coordination and synchronization of processes
-Leader election
-Ephemeral node creation and deletion
-Session management
-Efficient reads and writes
-Session management
-Nonfunctional requirements
-
-Good performance
-Simple design
-Availability
-Reliability
-System Design and workflow
-The clients are the applications that use ZooKeeper as a coordination service for their application processes. ZooKeeper client library (API) provides functions such as create(), delete(), exists(), and many more to manage and use the coordination data. Through this API, the client request is forwarded to the ZooKeeper server. The ZooKeeper server represents a process that provides the ZooKeeper coordination service. It stores all the coordination data from different applications and their processes in memory. The namespace for applications/clients and their coordination data are organized in a hierarchy (in the form of a tree). The client application processes store their coordination data on znodes. These processes can perform all the operations provided in the ZooKeeper client API. Each znode can be accessed through its path in the standard UNIX notation (like having / for the root directory). There is a set of ZooKeeper servers called ZooKeeper Ensemble. All are replicas. One is elected as the leader, while others become the followers.
-
-
-A high-level design of the ZooKeeper system
-
-A high-level design of the ZooKeeper system
-Knowledge test!
-
-We have a collection of servers in the ZooKeeper ensemble. What should be the minimum number of servers, and why?
-
-Note: If you need answers to such questions, look at the detailed design of ZooKeeper.
-
-28. Design a scalable distributed storage system like Bigtable
-Problem statement: Design a massively scalable distributed storage system like Bigtable capable of handling petabytes of structured and unstructured data with low latency reads and writes, supporting flexible schema, efficient query patterns, and high availability while ensuring data consistency and durability.
-
-Sample clarifying questions!
-
-What is the expected workload pattern: read-heavy, write-heavy, or balanced?
-
-Should the system offer strong consistency on read-after-write?
-
-Is the schema flexible or strictly enforced?
-
-Requirements
-Follow these requirements for the Bigtable system:
-
-Functional requirements
-
-Wide applicability
-High performance
-User-guided locality
-Continuous updates
-Atomic rows
-Nonfunctional requirements
-
-Durability
-Availability
-Scalability
-High number of read/write operations (throughput)
-System Design and workflow
-The following illustration shows that the Bigtable implementation consists of three main parts: a library linked to each client, one Bigtable manager server, and several tablet servers. A library is a component that all clients share. This library enables clients to communicate with Bigtable. The manager server allocates tablets to table servers, identifies tablet server additions and expiration, regulates tablet-server traffic, and garbage collection of files in GFS (a distributed file system). It also supports schema changes like table and column family formation. All tablet servers are in charge of a certain group of tablets, generally around 10 to 1000 tablets. Each tablet server provides reads and writes of the data to the tablets to which it is allocated. Servers can be added or removed in a Bigtable cluster as needed. New tablets can be made and assigned, old ones can be merged, and they can be reassigned from one server to the other to accommodate changes in demand.
-
-
-A high-level design of the Bigtable system
-
-A high-level design of the Bigtable system
-Knowledge test!
-
-How does Bigtable efficiently support schema changes without impacting performance?
-
-How does Bigtable ensure data distribution and replication across multiple servers?
-
-Note: If you need answers to such questions, look at the detailed design of BigTable.
-
-29. Design an online multiplayer game system
-Problem statement: Design an online multiplayer game system that allows players to connect and play in real time. The system should handle player matchmaking, maintain low latency communication, ensure player synchronization, and consistently manage game state.
-
-Sample clarifying questions!
-
-What game type is being built: real-time, turn-based, or battle royale?
-
-What is the maximum number of concurrent players per session?
-
-Should cross-platform play (mobile, console, desktop) be supported?
-
-Requirements
-Follow these requirements for such a system:
-
-Functional requirements
-
-Gameplay (connect and play)
-Chat service
-Audio communication
-Events notification
-Payment for in-app purchases
-Nonfunctional requirements
-
-Scalability
-Availability
-Security
-Latency
-System Design and workflow
-In an online multiplayer game system, players connect to the game server, which handles matchmaking by pairing players based on skill levels and preferences. Once matched, the server maintains low latency communication between players, ensuring smooth and real-time interactions using a pub/sub service. The game state, including player positions and actions, is synchronized across all players’ devices through a central game state manager. The session service manages sessions and synchronizes the players. The play service will handle all the game-related tasks like updating stats, checking players’ availability, etc. The payment service facilitates in-app purchases of assets.
-
-For a better user experience, we can separate real-time operations, such as gameplay, from non-real-time operations, such as invites and in-app purchases.
-
-
-A high-level design of a gaming service
-
-A high-level design of a gaming service
-Knowledge test!
-
-How can you ensure system stability and prevent crashes when millions of users play simultaneously?
-
-How would you implement lag compression and data buffering to handle network delays and ensure smooth gameplay?
-
-What are the benefits of using a virtual private cloud (VPC)?
-
-How can you maintain low latency for real-time communication, especially during peak usage?
-
-How would you limit the number of requests to the server without compromising the real-time gaming experience?
-
-Note: To learn more about gaming service design details, explore the gaming API design chapter.
-
-30. Design a Zoom-like video conferencing system
-Problem statement: Design a real-time video conferencing system that supports high-quality meetings with hundreds of participants. The platform should offer interactive features like breakout rooms and polls, work reliably across different network conditions, and scale globally with low latency.
-
-Sample clarifying questions!
-
-What is the maximum number of participants per session?
-
-Should video quality adapt based on bandwidth conditions?
-
-Is end-to-end encryption required for audio, video, and chat?
-
-Requirements
-Follow these requirements to design the system:
-
-Functional requirements
-
-Meeting management
-Real-time data streaming
-Advanced participant controls
-Rich interactive features (Screen sharing, Interactive polls)
-Cloud recording and transcription
-Client-side features
-Nonfunctional requirements
-
-Low latency
-High availability
-Reliability
-Scalability
-Security
-System Design and workflow
-This high-level design represents a video conferencing service that incorporates several components to provide a seamless experience for users. The system starts with the client, communicating with the API gateway to initiate requests. The API gateway handles authentication and directs the request to the load balancer, efficiently distributing traffic to the appropriate services, such as the user service, scheduling service, meeting service, and messaging service. These services manage user data, scheduling of meetings, real-time communication during meetings, and messaging functionalities. Additionally, the CDN ensures that video and media content is delivered with low latency to users across different geographical regions.
-
-The media router (SFU) plays a critical role in managing media streams in real-time. It handles video and audio streams from multiple participants and forwards them to other participants without modifying the content, ensuring efficient bandwidth usage. The system also integrates a cloud processing service to handle more complex tasks like video processing or analytics. Data is stored in a blob store and a database to keep records of meetings, messages, and user information.
-
-The following illustration shows a high-level design of a video conference service:
-
-
-A high-level design of a video conference service
-
-A high-level design of a video conference service
-Knowledge test!
-
-How does end-to-end encryption affect server-side features like recording or transcription?
-
-How would you implement adaptive bitrate streaming to ensure smooth performance on weak networks?
-
-What parts of the system will most likely break if a popular meeting gets thousands of participants simultaneously? How can you design to prevent that?
-
-Note: Explore the Zoom API design to learn more about designing a video conference service and determine the answers to the above questions.
-
-The final step of your interview prep
-Mastering these 30 questions is a fantastic first step toward comprehensive System Design interview preparation.
-
-However, there are plenty more System Design concepts you’ll need to know for a real-world System Design interview. Educative has created an exhaustive course: Grokking Modern System Design Interview, which includes more detailed questions and answers and the opportunity to get hands-on practice.
-
-This interactive course covers the building blocks of the modern System Design concept, coupled with more than a dozen real-world questions currently used in the industry. By the end of the course, you will understand what clarifying questions to ask and tradeoffs to make for each question. Ultimately, you will learn exactly what it takes to stand out to interviewers in the current hiring market.
-
-That’s why if I had to pick just one System Design prep resource to give you, this would be it.
-
-Quick tips to tackle System Design interview questions
-We all dream of passing the System Design interview with flying colors!
-
-So why not make this dream a reality with some quick tips:
-
-Practice structured thinking: Always start with a clear outline of your approach. Break problems down systematically, such as: 
-
-Requirements ➔ Components ➔ APIs ➔ Data models ➔ Bottlenecks ➔ Trade-offs
-
-Clarify early, clarify often: Never rush into a design. Spend the first 5-10 minutes asking questions and defining system constraints and assumptions.
-
-Prioritize communication: Think out loud. Walk your interviewer through your decisions, trade-offs, and reasoning, even if unsure.
-
-Use diagrams: Visual aids like high-level architecture diagrams make your solution much easier to understand and show that you think like a true architect.
-
-Review actual systems: Study the architectures of popular platforms like Instagram, Uber, Netflix, and Dropbox to understand real-world trade-offs.
-
-Stay calm under pressure: Keep moving forward even if you get stuck. Composure, problem-solving attitude, and logical thought are often more important than reaching a “complete” design.
-
-I wish you the best of luck with your interviews. I am confident that with a little hard work and strategic preparation, you will be successful.
-
-Introduction to System Design
-You may be reading this guide because you recently failed a system design interview. Or you watched a YouTube video that made system design seem like an overwhelming topic you’ll never fully grasp. Or perhaps you have years of experience working in the field, yet you struggle to demonstrate your technical prowess in the brief span of a system design interview.
-
-Do not panic laptop
-Professional experience with distributed systems isn’t needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer—it is a measure of your ability to do system design interviews. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.
-
-Anecdote
-One of our experts was asked: “As an experienced engineer without any scalable systems experience, how can I go into something like a FAANG system design interview when I have never designed those systems before?” Here’s the expert’s reply:
-
-"I worked at Facebook for five and a half years. I learned more about system design from reading the internal interviewing wiki than I ever got from working at Facebook. They've got all kinds of distributed systems knowledge there, and it’s concentrated in a handful of infrastructure teams who build really great libraries and really great backend systems. That means that the rest of us never have to think about distributed systems. We get to say, 'I'm gonna make a new data type, and if I dump a billion records in it tomorrow, it doesn't matter. The systems folks have my back.' I worked at Facebook for a really long time, but I learned almost nothing about designing systems from experience."
-
-Remember
-You can pass system design interviews even if you’ve never designed distributed systems before. If you have copied files between machines with drag-and-drop, you are halfway there. If you implemented clients or servers or have opened network connections, you’ve got this. This guide will teach you the most important 20% of information that will appear 80% of the time in system design interviews. By the end of this guide you won’t be an expert, but you’ll be well on your way to being a better engineer and a much better interview candidate.
-
-Want to know exactly what a FAANG System Design interviewer looks for? Get detailed feedback on your system design skills from our professional interviewers.
-
-See available times
 
 The difference between engineering problems and design problems
 In this excerpt taken from Designing Your Life, written by two Stanford professors and engineers, you’ll get a better understanding of how different problems require different approaches. We bolded to emphasize the parts that are most important to note.
@@ -6248,187 +3189,8 @@ Suppose, for instance, that the image sharing service you're designing will requ
 
 The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.
 
-Red flag and green flag
-Green Flags, Red Flags, and other signposts
-Think of red and green flags as signposts you can use to orient yourself in the interview. Green flags indicate that things are going well, that you're engaging with the interviewer and making a positive impression. Red flags warn you that you may be going astray and should try to get the interview back on track.
 
-Red Flag #1: You believe that to pass a system design interview, you should just “play the game, keep talking, and make sure nobody explodes.”
-Following this quote’s advice has steered many interviewees in the wrong direction. There is no game, and talking for the sake of talking is one way to hang yourself with the rope the interviewer gives you. Also, if the goal is to not explode, well, you’re wasting your and your interviewer’s time.
-
-Green Flag #1: You communicate honestly about what you know and what you don’t.
-As we mentioned earlier, this guide will teach you the basic information that you’ll be asked about in 80% of system design interviews. Although these are great odds, you still may encounter a scenario that’s beyond your level of understanding. If this happens to you, don’t worry! Just engage in an honest dialogue with your interviewer, explaining when you lack certain knowledge or have gaps in your understanding. When you do have a sense of how to proceed, but you’re uncertain, you should communicate from first principles. Later in this guide, we will explain how to overcome that uncertainty and still score points with your interviewer.
-
-Red Flag #2: You find yourself pushing against interviewer feedback.
-Keep in mind that your interviewers use the same problems over and over again, and they frequently see candidates make the same mistakes. If they try to divert you from a course of action, it's likely because they've seen others flounder when using the same approach. You may be the one candidate in a hundred who finds a unique and better solution—we've had this happen before!—but carefully consider the odds before proceeding with a solution against the interviewer's advice.
-
-With that said, there is an art to pushing back against your interviewer when the situation calls for it, and later in this guide we’ll teach you how and when to employ this strategy .
-
-Green Flag #2: The interview feels like a collaboration between you and the interviewer.
-When the interviewer offers feedback, you integrate it into your design. You ask probing questions and receive useful answers about the system you're designing, its users, and its traffic. Try to establish a tone as if you were working through a problem with a coworker rather than proving yourself to an interviewer. In the real world, when you’re assigned a project, you’ll have to ask a variety of people several questions to ensure that you fully understand the problem before making decisions. That’s what interviewers want to see.
-
-Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns.
-It's OK to not know things—no one will have every answer—but it's better to admit that to your interviewer than to avoid the questions altogether. Your interviewer may be able to offer you a hint or help you reason about alternatives if they know you're struggling, but if you skip right ahead you'll miss the opportunity to provide them with any positive signal from that portion.
-
-Green Flag #3: Your role determines who should drive the focus and pace of the interview.
-If you’re looking for a mid-level position or below, your interviewer should determine the direction and speed of the interview. Given an initial overview of your design, they may ask you for clarification on some aspects of it. They may ask you to produce a more detailed design for one or more components. And they may also change the requirements and ask how you could adapt your solution to accommodate this new view of the world. Wherever they take the interview, follow along and focus on the areas they direct you to.
-
-If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.
-
-Anecdote from a seasoned interviewer
-​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
-
-If your goal is to maximize a mid-level offer, not improve your "average passing rate" (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously "giving control away" to your interviewer.
-
-Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
-
-Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
-
-The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”
-
-Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview.
-If you're struggling to provide an answer, give yourself a little bit of time to come up with something. If you're truly stuck, however, you should ask your interviewer for help. They can't tell that you're at an impasse unless you tell them, and you may waste valuable interview time while they debate whether it's been long enough to interrupt you.
-
-Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board.
-An interview doesn't need to be a continuous stream of consciousness, and it never hurts to sanity check your ideas before verbalizing them.
-
-Tip
-In Part 4 of this guide, we’ll teach you how to get unstuck and exactly what to say when you’re stuck.
-
-Several road signs
-A few more signposts
-A common failure point occurs when candidates don’t make decisions
-Often, candidates will say things like: “we could use this type of DB, or this other, or that other, and these are some pros and cons…” and then they move on to another component. It’s a good practice to talk about benefits and tradeoffs, but then you have to make a decision. In the real world you have to make decisions—the same thing applies to the interview. If the interviewer challenges you with some questions, it’s totally fine to change your mind and alter the component (if you think there are better choices).
-
-Don’t say
-Thumbs down icon
-We could use this type of DB, or this other, or that other, and these are some pros and cons…
-
-Do say
-Thumbs up icon
-"We could use this type of DB, or this other, or that other, and these are some pros and cons… And based on all these tradeoffs, I’ll use THAT type of DB."
-
-Interviewers want to identify “impostors”: people who just learned a few words and try to pass the interview.
-Don’t say things because you think you’re supposed to say them. This often occurs when candidates name specific brands of technologies (e.g., “Kafka” or “Cassandra”). Not being familiar with specific databases or other components is fine. Be smart and don’t say brand names just for the sake of saying them.
-
-Don’t say
-Thumbs down icon
-I’m going to use Cassandra...” unless you are VERY familiar with that, because the next question will be: “Why Cassandra and not some_other_db?
-
-Do say
-Thumbs up icon
-I’m going to use a NoSQL db because of [insert brief rationale].
-
-Don’t say
-Thumbs down icon
-I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of [some other queue]?
-
-Do say
-Thumbs up icon
-I will use a queue because of [insert brief rationale].
-
-Remember
-Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say “a queue.
-
-You finished Part 1! We hope you gained a basic understanding of the system design interview and learned some tips and tricks you can use to excel in it. As you continue reading Parts 2-4, these “glimmers” of understanding will become more and more the default system of your interviewing skills.
-
-In Part 2 we’ll teach you the 15 fundamental system design concepts. You’ll also get to watch our long form video of two system design experts designing the same system. They’re tasked with designing interviewing.io, which in this challenge is actually three systems in one: “Design google docs, a remote compiler, and a recording service… in 30 minutes or less.”
-
-
-System Design Interviews#
-What are system design interviews?#
-System design interviews generally give you a set of requirements for a relatively complex system and ask you to come up with a design. Often, these requirements start off somewhat vague to test whether you know what types of questions to ask to gain clarity about the system. These interviews are generally aimed at more senior candidates since juniors can't be expected to have performed too much system design work in their careers.
-
-These interviews can be some of the best barometers of a senior engineer's knowledge, but I personally find them to be the trickiest due to their open-ended nature.
-
-Types of system design interviews#
-I have seen two types of system design interviews:
-
-Pure design. You just focus entirely on specifying the system and talking through how you would design it. You may draw up some diagrams to help convey architecture to the interviewer.
-Design + coding. The problem is slightly smaller in breadth. You talk through the design of the system and then you write some code to start implementing it.
-System design interviews look a lot different depending on your specialty. I have interviewed for both front-end and full stack web application engineer positions. For front-end positions, system design interviews tend to focus on designing a UI component and then implementing the HTML, CSS, and JavaScript for that component. For full stack positions, I have seen more pure design problems where you talk through various topics like how you'd make the application scale, database schema, and API design.
-
-How to prep for system design interviews#
-The way I practice system design interviews is to do the following:
-
-Create a list of the considerations that applies to the domain for which I'm interviewing. For example, if I'm interviewing for a front-end position then my interview will likely involve topics like accessibility and internationalization.
-Find relevant system design questions online. There are a lot of good examples online. Also, it's not too difficult to come up with your own examples.
-Design the systems. Take 45 minutes to an hour to design one of the systems you've identified. Make sure you draw out/sketch architectural pieces, which will be helpful during the interview. When you're done, review your work and make sure you've addresseed all the topics that came up in the list you made. If there are any deficiencies, do some studying of those areas.
-Creating a list of topics#
-Here are a couple lists of topics for front-end and backend positions. If you have a different specialty, do so googling to find out the relevant topics for your domain.
-
-Front-end#
-Accessibility
-Performance
-Security
-Caching
-Device types / responsiveness
-Languages / internationalization
-Componentization
-Component API
-User experience
-Multi-tenancy
-Analytics / telemetry
-Back-end#
-Database design
-Scalability
-Security
-API design
-Caching
-Availability
-Reliability
-Performance
-Authentication / authorization
-Telemetry
-The part you can't practice too well: asking questions#
-One tough aspect of system design interviews is you really don't know which items in the above lists the interviewer will be interested in, which is why you need to ask a lot of questions. For example, a good front-end clarification would be asking whether the system should support multiple languages. If the interviewer says "yes," you should spend some time explaining the achitecture for supporting different langauges. If the interviewer says "no," then you can skip this topic as you design your system.
-
-Use the RADAD framework#
-The Frontend Interview Handbook talks about the RADAD framework, which I found to be a really useful way to spend my time during the interview. The following is a copy/paste from the Frontend Interview Handbook to give you an idea of the framework, but I absolutely recommend you navigate to the handbook itself for more detail:
-
-Requirements clarifications/alignment - Ask about the requirements of the system.
-Architecture - Outline the architecture of the system (could be a UI component or an app, depending on the question). Draw diagrams where relevant.
-Data model - How would the component store any data passed into it? What data structures are used?
-API design - What's the API for using this component? What options will be allowed on the component?
-Deep dive - User Experience (UX), Performance, Accessibility (a11y), Internationalization (i18n), Multi-device support, Security
-This list is very front-end focused, but it applies equally as well to backend or full stack system design interviews.
-
-Find out where to spend most of your time#
-Once you've asked as many clarifying questions up front that you can think of, I recommend asking if there's a particular part of the system the interviewer is interested in. A lot of times the answer is "no," and you get to choose the focus. But in the event that the interviewer is particularly interested in one part of the design, that's a really good piece of information to have. Make sure to take notes as you're asking clarifying questions!
-
-Here are some good clarifying questions, which may or may not be applicable depending on the system you're being asked to design:
-
-If you're being asked to design a messaging service, you may ask:
-
-How real-time the messaging needs to be
-Whether there any special security requirements (e.g., end-to-end encryption)
-Whether we have insight into anticipated usage numbers
-How long messages should be retained
-Whether messaging should support media (e.g., images and video)
-If you're being asked to design an calendar component, you may ask:
-
-Whether it needs to support multiple languages / internationalization
-Whether it needs to support date ranges or just a single date
-What browsers and devices it will be used on
-What type of data should be stored in the calendar
-Relevant system design questions#
-The following is a non-exhaustive list of system design questions I have heard of. Feel free to practice these examples. Also, be sure to google around for other examples to practice.
-
-Back-end#
-Chat / messaging application
-Twitter / micro-blogging platform
-Link shortener (e.g., bit.ly)
-Any create, read, update, delete (CRUD) API
-Public library checkout system API
-Video streaming service
-Pinterest
-Front-end#
-The front-end for anything listed in the back-end section
-Specific components:
-Date-picker
-Image carousel
-Modal
-Accordion
-Here's an additional resource with system design interview questions and answers:
+**************************************************
 
 31 system design interview questions (and sample answers)
 🎓 Frontend Interview Prep
