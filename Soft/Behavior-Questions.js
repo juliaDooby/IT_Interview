@@ -1,3 +1,46 @@
+Red flag and green flag
+
+Think of red and green flags as signposts you can use to orient yourself in the interview. Green flags indicate that things are going well, that you're engaging with the interviewer and making a positive impression. Red flags warn you that you may be going astray and should try to get the interview back on track.
+
+Red Flag #1: You believe that to pass a system design interview, you should just “play the game, keep talking, and make sure nobody explodes.”
+Following this quote’s advice has steered many interviewees in the wrong direction. There is no game, and talking for the sake of talking is one way to hang yourself with the rope the interviewer gives you. Also, if the goal is to not explode, well, you’re wasting your and your interviewer’s time.
+
+Green Flag #1: You communicate honestly about what you know and what you don’t.
+As we mentioned earlier, this guide will teach you the basic information that you’ll be asked about in 80% of system design interviews. Although these are great odds, you still may encounter a scenario that’s beyond your level of understanding. If this happens to you, don’t worry! Just engage in an honest dialogue with your interviewer, explaining when you lack certain knowledge or have gaps in your understanding. When you do have a sense of how to proceed, but you’re uncertain, you should communicate from first principles. Later in this guide, we will explain how to overcome that uncertainty and still score points with your interviewer.
+
+Red Flag #2: You find yourself pushing against interviewer feedback.
+Keep in mind that your interviewers use the same problems over and over again, and they frequently see candidates make the same mistakes. If they try to divert you from a course of action, it's likely because they've seen others flounder when using the same approach. You may be the one candidate in a hundred who finds a unique and better solution—we've had this happen before!—but carefully consider the odds before proceeding with a solution against the interviewer's advice.
+
+With that said, there is an art to pushing back against your interviewer when the situation calls for it, and later in this guide we’ll teach you how and when to employ this strategy .
+
+Green Flag #2: The interview feels like a collaboration between you and the interviewer.
+When the interviewer offers feedback, you integrate it into your design. You ask probing questions and receive useful answers about the system you're designing, its users, and its traffic. Try to establish a tone as if you were working through a problem with a coworker rather than proving yourself to an interviewer. In the real world, when you’re assigned a project, you’ll have to ask a variety of people several questions to ensure that you fully understand the problem before making decisions. That’s what interviewers want to see.
+
+Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns.
+It's OK to not know things—no one will have every answer—but it's better to admit that to your interviewer than to avoid the questions altogether. Your interviewer may be able to offer you a hint or help you reason about alternatives if they know you're struggling, but if you skip right ahead you'll miss the opportunity to provide them with any positive signal from that portion.
+
+Green Flag #3: Your role determines who should drive the focus and pace of the interview.
+If you’re looking for a mid-level position or below, your interviewer should determine the direction and speed of the interview. Given an initial overview of your design, they may ask you for clarification on some aspects of it. They may ask you to produce a more detailed design for one or more components. And they may also change the requirements and ask how you could adapt your solution to accommodate this new view of the world. Wherever they take the interview, follow along and focus on the areas they direct you to.
+
+If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.
+
+Anecdote from a seasoned interviewer
+​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
+
+If your goal is to maximize a mid-level offer, not improve your "average passing rate" (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously "giving control away" to your interviewer.
+
+Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
+
+Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
+
+The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”
+
+Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview.
+If you're struggling to provide an answer, give yourself a little bit of time to come up with something. If you're truly stuck, however, you should ask your interviewer for help. They can't tell that you're at an impasse unless you tell them, and you may waste valuable interview time while they debate whether it's been long enough to interrupt you.
+
+Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board.
+An interview doesn't need to be a continuous stream of consciousness, and it never hurts to sanity check your ideas before verbalizing them.
+
 Первая и главная рекомендация, в частности, она касается начинающих специалистов — ни в коем случае не пытаться зубрить теорию. Без осмысления вопроса и понимания, как это возможно применить на практике — зубрежка бесполезна.
 
 Можно даже неидеально знать теорию, но при этом гораздо важнее уметь самостоятельно думать, логически мыслить, не стесняться рассуждать и задавать уточняющие вопросы на собеседовании.
