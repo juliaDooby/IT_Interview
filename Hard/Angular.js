@@ -40,25 +40,7 @@ Angular для новичка
 На собеседовании часто спрашивают: "Что такое компонент и как его создать?" Ответом будет примерно следующее:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -91,20 +73,7 @@ ViewChild/ContentChild - для прямого доступа к дочерни�
 Правильный ответ: сервисы обеспечивают разделение ответственности, повторное использование кода и упрощают тестирование. Они инжектируются в компоненты через конструктор:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+
 @Injectable({
   providedIn: 'root'
 })
@@ -146,13 +115,7 @@ Dependency Injection и его практическое применение
 Суть DI в Angular простыми словами: вместо создания зависимостей внутри класса, они передаются извне. Это делает код более тестируемым, гибким и слабосвязанным. Но как это работает на практике? Рассмотрим типичный пример. У нас есть класс компонента, которому нужен сервис для работы с данными:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
+
 export class UserComponent {
   constructor(private userService: UserService) {}
   
@@ -174,12 +137,7 @@ TypeScript интеграция и использование декоратор
 Декораторы в Angular - это функции, которые модифицируют классы, свойства или методы. Они всегда начинаются с символа @. Наиболее часто используемые декораторы:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
+
 @Component({...}) // Определяет класс как компонент
 @Injectable({...}) // Делает сервис инжектируемым
 @Input() // Помечает свойство как входное
@@ -189,27 +147,7 @@ TypeScriptСкопировано
 На собеседованиях часто просят написать собственный декоратор. Например, декоратор для логирования вызовов метода:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
+
 function Log() {
   return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
@@ -245,12 +183,7 @@ Feature модули - функциональные части приложен�
 Routing модуль - настройки маршрутизации.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
+
 @NgModule({
   declarations: [UserListComponent, UserDetailComponent],
   imports: [CommonModule, SharedModule, UserRoutingModule],
@@ -288,24 +221,7 @@ Operators - функции для трансформации, фильтраци
 4. Observable имеет множество операторов для трансформации данных.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
+
 // Пример использования RxJS в сервисе
 @Injectable()
 export class DataService {
@@ -334,16 +250,7 @@ State management и работа с данными
 
 1. Сервисы с BehaviorSubject - простейший подход для небольших приложений:
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 @Injectable()
 export class StoreService {
   private state = new BehaviorSubject<AppState>(initialState);
@@ -373,14 +280,7 @@ Change Detection и стратегии оптимизации
 Angular использует библиотеку Zone.js для "перехвата" асинхронных операций (HTTP-запросы, setTimeout, события DOM). Когда такое событие происходит, Angular запускает цикл проверки изменений сверху вниз по дереву компонентов. Эта стратегия называется Default, и она может быть неэффективной в сложных приложениях. Для оптимизации существует стратегия OnPush:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -404,18 +304,7 @@ export class UserCardComponent {
 На собеседовании часто спрашивают: "Как настроить базовую маршрутизацию в Angular?" Ответ должен включать настройку RouterModule в AppModule и определение массива маршрутов:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductListComponent },
@@ -431,14 +320,7 @@ export class AppRoutingModule { }
 Неожиданно сложный для многих вопрос: "Объясните разницу между RouterLink и programmatic routing". RouterLink - это директива для декларативной навигации в шаблонах, а программная навигация использует Router service в TypeScript коде:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 // В шаблоне
 <a [routerLink]="['/products', product.id]">{{ product.name }}</a>
  
@@ -458,13 +340,7 @@ Lazy Loading и код-сплиттинг модулей
 На продвинутых собеседованиях по Angular часто всплывает тема ленивой загрузки модулей. "Как вы оптимизируете время загрузки крупного Angular-приложения?" - вот типичный вопрос, на который ожидают услышать про Lazy Loading. Суть ленивой загрузки проста - вместо загрузки всего приложения сразу, мы загружаем только необходимый для старта код, а остальные модули подгружаются по мере необходимости. Это значительно ускоряет начальную загрузку. Реализуется Lazy Loading через маршрутизацию:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { 
@@ -491,12 +367,7 @@ TypeScriptСкопировано
 Но что делать, если нужна специфическая трансформация? Тут на сцену выходят кастомные пайпы. Например, часто спрашивают как создать пайп для обрезки текста:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
+
 @Pipe({ name: 'shorten' })
 export class ShortenPipe implements PipeTransform {
   transform(value: string, limit: number): string {
@@ -524,15 +395,7 @@ Angular Universal и Server-Side Rendering
 Для реализации SSR нужно модифицировать приложение, добавив модуль ServerModule:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 // app.server.module.ts
 @NgModule({
   imports: [
@@ -551,26 +414,7 @@ export class AppServerModule {}
 Атрибутивные директивы изменяют поведение существующего элемента (например, ngStyle), а структурные - манипулируют DOM-структурой (ngIf, ngFor). Созданием кастомных директив можно значительно упростить шаблоны. Например, директива для выделения элемента при наведении:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
+
 @Directive({
   selector: '[appHighlight]'
 })
@@ -607,13 +451,7 @@ Module Federation из Webpack 5 - мощный механизм для разд
 Nx Workspace - монорепозиторий с разделением на приложения и библиотеки.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
+
 // Пример использования Angular Elements
 @Component({...})
 class UserProfileComponent { /* ... */ }
@@ -637,29 +475,14 @@ customElements.define('user-profile', userProfileElement);
 
 1. Template-driven формы - простые формы с минимумом кода:
 TypeScriptСкопировано
-1
-2
-3
-4
+
 <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
   <input name="email" ngModel required email>
   <button type="submit" [disabled]="!myForm.valid">Отправить</button>
 </form>
 2. Reactive формы - более мощный и гибкий подход:
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+
 // В компоненте
 this.form = this.fb.group({
   email: ['', [Validators.required, Validators.email]],
@@ -678,16 +501,7 @@ this.form = this.fb.group({
 Еще один частый вопрос: "Как создать собственный валидатор?" Вот пример:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 function passwordMatchValidator(control: AbstractControl) {
   const password = control.get('password');
   const confirmPassword = control.get('confirmPassword');
@@ -706,22 +520,7 @@ HTTP-клиент и асинхронные операции
 Ответ прост: Observable предоставляет больше возможностей, чем Promise: отмену запросов, повторные попытки, трансформацию данных через операторы и кеширование.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
+
 @Injectable()
 export class UserService {
   constructor(private http: HttpClient) {}
@@ -754,23 +553,7 @@ Interceptors и middleware для HTTP-запросов
 Показ/скрытие индикатора загрузки.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
@@ -807,19 +590,7 @@ providers: [
 "Как бы вы реализовали чат на Angular?" - вопрос, который сразу выявляет опыт кандидата. В Angular нет встроенной поддержки WebSocket, поэтому обычно используют библиотеки вроде Socket.io или rxjs-websockets.
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+
 @Injectable()
 export class ChatService {
   private socket$: WebSocketSubject<any>;
@@ -847,26 +618,7 @@ E2E-тесты - проверяют приложение целиком, как 
 Angular поставляется с предустановленным Jasmine и Karma для модульного тестирования. Вот простой пример теста компонента:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
+
 describe('CounterComponent', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
@@ -921,16 +673,7 @@ HTML5Скопировано
 Глобальная обработка ошибок в Angular реализуется через сервис ErrorHandler. Я часто создаю свою реализацию этого сервиса для централизованной обработки исключений:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
   constructor(private notificationService: NotificationService) {}
@@ -967,11 +710,7 @@ XSS (Cross-Site Scripting) - это тип атаки, когда злоумыш
 Angular из коробки предоставляет защиту от XSS через автоматическую санитизацию контента. Все значения, которые связываются через интерполяцию {{value}}, автоматически экранируются. Однако это не относится к некоторым случаям:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
+
 // Опасно! Прямое внедрение HTML
 this.element.nativeElement.innerHTML = userInput;
  
@@ -980,11 +719,7 @@ this.element.nativeElement.innerHTML = userInput;
 Для безопасной обработки HTML используйте DomSanitizer:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
+
 constructor(private sanitizer: DomSanitizer) {}
  
 getSafeHtml(html: string): SafeHtml {
@@ -1000,14 +735,7 @@ getSafeHtml(html: string): SafeHtml {
 Первый - встроенный механизм Angular i18n, который отлично работает при компиляции отдельных версий для каждого языка:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
+
 // В шаблоне
 <h1 i18n="@@welcomeHeader">Добро пожаловать</h1>
  
@@ -1019,11 +747,7 @@ TypeScriptСкопировано
 Второй подход - динамические переводы с ngx-translate или @ngx-i18n, которые позволяют переключать языки без перезагрузки страницы:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
+
 // Сервис перевода
 translateService.use('en');
  
@@ -1046,18 +770,7 @@ translateService.use('en');
 Первая и самая распространенная ошибка - массовая подписка на Observable без отписки. Джуниоры часто забывают, что неосвобожденные подписки приводят к утечкам памяти. Решение банально - использовать takeUntil с Subject, который эмитит значение в ngOnDestroy:
 
 TypeScriptСкопировано
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 private destroy$ = new Subject<void>();
  
 ngOnInit() {
@@ -1078,8 +791,8 @@ ngOnDestroy() {
 
 И последнее - слепое копирование примеров из интернета без понимания. Так рождаются монстры вроде бесконечных подписок внутри подписок. Всегда разбирайтесь, как работает код, прежде чем его использовать.
 
-Антипаттерны в архитектуре Angular приложений
 
+Антипаттерны в архитектуре Angular приложений
 
 В мире Angular я повидал немало архитектурных кошмаров, которые превращали поддержку кода в настоящую пытку. Говорю это не просто так - некоторые антипаттерны стали такими привычными, что многие разработчики даже не осознают их вред.
 
