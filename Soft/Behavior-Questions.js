@@ -1,3 +1,14 @@
+Overcoming Common Interview Prep Pain Points
+Frontend with Angular: Understanding components, services, dependency injection, and RxJS.
+
+Backend with Node.js & Express: Developing RESTful APIs, middleware, and security measures.
+
+Databases & MongoDB: Schema design, querying, and performance optimization.
+
+Full-Stack Integration: Connecting Angular with Node.js and MongoDB effectively.
+
+System Design & Deployment: Building scalable apps and deploying them on cloud platforms.
+
 https://www.frontendinterviewhandbook.com/ru/javascript-questions
 https://github.com/h5bp/Front-end-Developer-Interview-Questions
 
