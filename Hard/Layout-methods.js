@@ -6996,331 +6996,108 @@ Bootstrap метки являются строчными компонентам�
 </div>
 <div style="text-align: justify;">
 <span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Используйте контекстные классы состояния, такие как panel-primary, panel-success, panel-info, panel-warning, panel-danger, чтобы сделать панель более значимой в определенном контексте.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как объединить несколько bootstrap панелей?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Несколько панелей могут быть объединены в одну при помощи класса ".panel-group", который нужно присвоить их родительскому элементу. Использование группировки уменьшает отступы снизу для каждой из панелей.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Можете ли вы поместить таблицу в панель?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Да. Чтобы получить таблицу без границ внутри панели, используйте класс ".table". Предположим, что есть &lt;div&gt;&#8218; содержащий ".panel-body", тогда мы добавляем дополнительную границу в верхней части таблицы для разделения. Если нет &lt;div&gt;&#8218; содержащего ".panel-body", тогда компонент перемещается из заголовка панели в таблицу без помех.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как стилизовать таблицу горизонтальными разделителями?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".table".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как стилизовать таблицу повторяющимся разным фоном строк?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".table-striped".&nbsp;</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как добавить границы к ячейкам таблицы?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".table-bordered".&nbsp;</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как добавить изменение фона строки при наведении курсора?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".table-hover".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как уменьшить отступ ячеек наполовину?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить класс ".table-condensed".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как сделать разноцветным фон строк таблицы?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Применить классы ".success", ".danger", ".warning".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap well?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">well это контейнер в &lt;div&gt;, который добавляет скругленную границу и серый фон контенту. Чтобы создать well просто оберните содержимое в &lt;div&gt; который содержит класс ".well".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое scrollspy плагин?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Scrollspy (авто обновление nav) плагин автоматически обновляет ссылки навигации на основе положения прокрутки, в своей базовой реализации, при прокрутке, вы можете добавить ".active" классы к навигационной панели на основе положения прокрутки.&nbsp;</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое affix плагин?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Плагин affix позволяет &nbsp;прикрепить &lt;div&gt; к определенному месту на странице. Вы также можете включать и выключать прикрепление с помощью этого плагина.</span></div>
-<link href="https://plus.google.com/105527202953364202368" rel="author"></link></div>
-
-
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Twitter Bootstrap?</span></li>
-</ul>
-</h3>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap (также известен как Twitter Bootstrap) - свободный набор инструментов для создания сайтов и веб-приложений. Включает в себя HTML и CSS шаблоны оформления для типографики, веб-форм, кнопок, меток, блоков навигации и прочих компонентов веб-интерфейса, включая JavaScript-расширения.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap использует самые современные наработки в области CSS и HTML, поэтому необходимо быть внимательным при поддержке старых браузеров.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные преимущества Bootstrap?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основные преимущества Bootstrap:&nbsp;</span><br />
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Экономия времени - Bootstrap позволяет сэкономить время и усилия, используя шаблоны дизайна и классы, и сконцентрироваться на других разработках.<a name="more"></a></span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Высокая скорость - динамичные макеты Bootstrap масштабируются на разные устройства и разрешения экрана без каких-либо изменений в разметке.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Гармоничный дизайн - все компоненты платформы Bootstrap используют единый стиль и шаблоны с помощью центральной библиотеки. Дизайн и макеты веб-страниц согласуются друг с другом.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Простота в использовании - платформа проста в использовании, пользователь с базовыми знаниями HTML и CSS может начать разработку с Twitter Bootstrap.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Совместимость с браузерами - Twitter Bootstrap совместим с Mozilla Firefox, Yandex Browser, Google Chrome, Safari, Internet Explorer и Opera.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Открытое программное обеспечение - Twitter Bootstrap это фреймворк с открытым исходным кодом, который предполагает удобство использования, посредством открытости исходных кодов и бесплатной загрузки.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Он также поддерживает кастомизацию на веб-основе.</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что включает в себя пакет Bootstrap?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap включает включает в себя:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Scaffolding - Bootstrap предоставляет базовую структуру с табличной системой Grid System, стилями ссылок, фоном.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">CSS - Bootstrap поставляется с функцией глобальных CSS настроек, основными HTML элементами, имеющими стили и улучшенных с помощью расширяемых классов, и передовой табличной системой.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Components - Bootstrap &nbsp;содержит более десятка компонентов многократного использовании, построенных для обеспечения иконографии, выпадающих элементов, навигации, оповещений, всплывающих панелей popovers, и многое другое.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">JavaScript Plugins - Bootstrap содержит более десятка пользовательских подключаемых модулей jQuery. Вы можете легко подключить их все, или по одному.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Customize - вы можете настроить Bootstrap компоненты, LESS переменные и jQuery плагины, чтобы получить свою собственную версию Bootstrap.</span></li>
-</ul>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные инструменты Bootstrap?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основные инструменты Bootstrap:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Сетки - заранее заданные размеры колонок, которые можно сразу же использовать, например ширина колонки 140px относится к классу ".span2" (".col-md-2" в третьей версии фреймворка), который можно использовать в CSS описании документа.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Шаблоны - фиксированный или резиновый шаблон документа.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Типографика - описания шрифтов, определение некоторых классов для шрифтов, таких как код, цитаты и т. п.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Медиа - представляет некоторое управление изображениями и видео.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Таблицы - средства оформления таблиц, вплоть до добавления функциональности сортировки.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Формы - классы для оформления форм и некоторых событий происходящих с ними.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Навигация - классы оформления для табов, вкладок, страничности, меню и тулбара.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Алерты - оформление диалоговых окон, подсказок и всплывающих окон</span></li>
-</ul>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое отзывчивый или адаптивный дизайн?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Отзывчивый или адаптивный дизайн (responsive, adaptive) позволяет создавать веб-сайты, которые меняют свой внешний вид в зависимости от разрешения экрана, чтобы удобно было просматривать один и тот же сайт на различных устройствах - от телефона до настольного компьютера с большим монитором.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Contextual классы таблицы в Bootstrap?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Contextual классы позволяют изменить цвет фона табличных строк или индивидуальных ячеек:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">.active - применяет цвет при наведении на конкретную строку или ячейку.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">.success - указывает на успешное или положительное действие.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">.warning - указывает предупреждение, что, возможно, потребуется действие.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">.danger - указывает на опасное или потенциально негативное действие.</span></li>
-</ul>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap Grid System?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap включает в себя отзывчивую, гибкую "сетку", которая надлежащим образом масштабируется до 12 столбцов при увеличении размера устройства или окна просмотра. Она включает в себя предопределенные классы для простых вариантов компоновки, а также мощные сложные классы для генерации более семантических макетов.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap media запросы?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Медиа запросы (Media Queries) &nbsp;- &nbsp;позволяют перемещать, показывать и скрывать контент, основываясь на размере экрана.</span></div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие виды контейнеров в Bootstrap вы знаете?</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Контейнер является "фундаментом", с которого начинают создавать сетку веб-страницы сайта. На платформе Twitter Bootstrap контейнеры бывают 2 видов:</span></div>
-<div style="text-align: justify;">
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Фиксированный контейнер (элемент div с классом ".container"). Он имеет строго определённую ширину для определённого типа устройств. Т.е. для одного устройства контейнер имеет одну ширину, для другого устройства - другое значение ширины. Всего в Bootstrap 3 определено 4 типа устройств:</span></li>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">xs (смартфоны - ширина контейнера равна ширине рабочей области окна браузера).</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">sm (планшеты - 750px).</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">md (ноутбуки - 970px).</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">lg (персональные компьютеры - 1170px). Позиционируется фиксированный контейнер в горизонтальном направлении по центру, это достигается за счёт CSS свойства "margin: 0 auto".</span></li>
-</ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Жидкий "текучий" контейнер (элементы div с классом ".fluid-container"). Он имеет ширину, равную ширине рабочей области окна браузера. Т.е. ширина жидкого "текучего" контейнера не является фиксированной, а изменяется при любом изменении ширины рабочей области окна браузера. Сетку сайта, которую проектируют на основе жидкого "текучего" контейнера называют ещё "резиновой".</span></li>
-</ul>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span></div>
-<div style="text-align: justify;">
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Покажите основную табличную структуру в Bootstrap.</span></li>
-</ul>
-</h3>
-</div>
-<div style="text-align: justify;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Ниже пример базовой структуры Bootstrap сетки:</span><br />
-<div class="separator" style="clear: both; text-align: center;">
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif; margin-left: 1em; margin-right: 1em;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7rbuMmX-FG_cbT1zZq0MKEayiK8N8BN7L6uR8aCJ4s0JRYyTFnOzdW7Bv7W7pCd4rzVSREt7EiAA-alvJ1V25Kq7qS3tn4wgPv0hmPhHNGW1WwuLb2H0KFU6YeT_W7sQZe3wtq1nFqFk/s1600/q010_p01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7rbuMmX-FG_cbT1zZq0MKEayiK8N8BN7L6uR8aCJ4s0JRYyTFnOzdW7Bv7W7pCd4rzVSREt7EiAA-alvJ1V25Kq7qS3tn4wgPv0hmPhHNGW1WwuLb2H0KFU6YeT_W7sQZe3wtq1nFqFk/s1600/q010_p01.jpg" /></a></span></div>
-<div class="separator" style="clear: both; text-align: justify;">
-<br /></div>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Offset смещение столбцов?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Смещения расстояние между столбцами это полезная функция для более специализированных шаблонов. Она может быть использована, например, чтобы сместить столбцы на дополнительный интервал. ".соl-xs = *" - классы не поддерживают смещения, но они легко копируются с помощью пустой ячейки.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><b style="font-family: arial, helvetica, sans-serif;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как можно упорядочить столбцы в Bootstrap?</span></b></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Вы можете легко изменить порядок встроенных столбцов с помощью классов-модификаторов ".col-md-push-*" и ".col-md-pull-*" в диапазоне от 1 до 11.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какими двума способами вы можете отобразить код в Bootstrap?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Код в Bootstrap вы можете отобразить двумя способами:</span><br />
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поместить код в строковый тег &lt;code&gt;.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для выделения 2-х и более строк кода используйте тег &lt;pre&gt;. Избегайте использования угловых скобок &lt; и &gt;, для корректного отображения фрагментов кода. Всегда используйте теги &lt;pre&gt; как можно левее в редакторе кода, так как внутри тега &lt;pre&gt; сохраняются все отступы и пробелы.</span></li>
-</ul>
-<span style="font-family: arial, helvetica, sans-serif;"><br /></span><h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как сделать изображения responsive(отзывчивым)?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap 3 позволяет сделать изображения отзывчивыми путем добавления класса ". img-responsive" в &nbsp;тег &lt;img&gt;. Этот класс применяет "max-width: 100%;" и "height: auto;" к изображению, так что изображение красиво масштабируется относительно родительского элемента.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные этапы создания формы в Bootstrap?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основные моменты при создании и оформлении формы представим в виде следующих этапов:</span><br />
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Указать вид формы. В Bootstrap 3 различают следующие виды форм: вертикальная (без добавления класса), горизонтальная (.form-horizontal) и в одну строку (.form-inline).</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Добавить к необходимым текстовым элементам управления &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt; класс ".form-control", чтобы установить им ширину, равную 100% (всю доступную ширину родительского элемента).</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поместить каждую надпись (&lt;label&gt;) и элемент управления в контейнер &lt;div&gt;...&lt;/div&gt; с классом ".form-group". Это необходимо сделать, чтобы задать для элементов в форме оптимальные отступы.</span></li>
-</ul>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В чом разница между вертикальною и горизонтальной формой?</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Вертикальная форма - это макет формы, в которой её элементы располагаются вертикально, т.е. один под другим. Данная форма создаётся без добавления класса к элементу формы (&lt;form&gt;). Метки и элементы управления формы необходимо размещать в блоке с классом ".form-group".</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Горизонтальная форма - это форма, в которой надписи и элементы управления находящиеся в одной группе (&lt;div class="form-group"&gt;...&lt;/div&gt;) располагаются на одной строке.</span><br />
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><br /></span>
-<h3>
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Объясните типографику и ссылки в Bootstrap.</span></li>
-</ul>
-</h3>
-<span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Bootstrap устанавливает основной глобальный фон, типографику и стили ссылок.</span><br />
-<ul>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Основной глобальный фон - устанавливает "background-color: #fff" в элементе &lt;body&gt;.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Шрифты - используют @font-family-base, @font-size-base, и @line-height-base атрибуты.</span></li>
-<li><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Стили ссылок - устанавливают глобальный цвет ссылки через атрибут @link-color и применяют подчеркивание ссылки исключительно для ":hover".</span></li>
-*********************************************************************************************************
-   *********************************************************************************************************
-   *********************************************************************************************************
-   *********************************************************************************************************
-   *********************************************************************************************************
+****************************************************************************************
+   ****************************************************************************************
+   ****************************************************************************************
+   ****************************************************************************************
+   ****************************************************************************************
+   ****************************************************************************************
+Как объединить несколько bootstrap панелей?</span></li>
+Несколько панелей могут быть объединены в одну при помощи класса ".panel-group", который нужно присвоить их родительскому элементу. Использование группировки уменьшает отступы снизу для каждой из панелей.</span><br />
+Можете ли вы поместить таблицу в панель?</span></li>
+Да. Чтобы получить таблицу без границ внутри панели, используйте класс ".table". Предположим, что есть &lt;div&gt;&#8218; содержащий ".panel-body", тогда мы добавляем дополнительную границу в верхней части таблицы для разделения. Если нет &lt;div&gt;&#8218; содержащего ".panel-body", тогда компонент перемещается из заголовка панели в таблицу без помех.</span><br />
+Как стилизовать таблицу горизонтальными разделителями?</span></li>
+Добавить класс ".table".</span><br />
+Как стилизовать таблицу повторяющимся разным фоном строк?</span></li>
+Добавить класс ".table-striped".&nbsp;</span><br />
+Как добавить границы к ячейкам таблицы?</span></li>
+Добавить класс ".table-bordered".&nbsp;</span><br />
+Как добавить изменение фона строки при наведении курсора?</span></li>
+Добавить класс ".table-hover".</span><br />
+Как уменьшить отступ ячеек наполовину?</span></li>
+Добавить класс ".table-condensed".</span><br />
+Как сделать разноцветным фон строк таблицы?</span></li>
+Применить классы ".success", ".danger", ".warning".</span><br />
+Что такое Bootstrap well?</span></li>
+well это контейнер в &lt;div&gt;, который добавляет скругленную границу и серый фон контенту. Чтобы создать well просто оберните содержимое в &lt;div&gt; который содержит класс ".well".</span><br />
+Что такое scrollspy плагин?</span></li>
+Scrollspy (авто обновление nav) плагин автоматически обновляет ссылки навигации на основе положения прокрутки, в своей базовой реализации, при прокрутке, вы можете добавить ".active" классы к навигационной панели на основе положения прокрутки.&nbsp;</span><br />
+Что такое affix плагин?</span></li>
+Плагин affix позволяет &nbsp;прикрепить &lt;div&gt; к определенному месту на странице. Вы также можете включать и выключать прикрепление с помощью этого плагина.</span></div>
+Что такое Twitter Bootstrap?</span></li>
+Bootstrap (также известен как Twitter Bootstrap) - свободный набор инструментов для создания сайтов и веб-приложений. Включает в себя HTML и CSS шаблоны оформления для типографики, веб-форм, кнопок, меток, блоков навигации и прочих компонентов веб-интерфейса, включая JavaScript-расширения.</span></div>
+ootstrap использует самые современные наработки в области CSS и HTML, поэтому необходимо быть внимательным при поддержке старых браузеров.</span><br />
+Какие основные преимущества Bootstrap?</span></li>
+Основные преимущества Bootstrap:&nbsp;</span><br />
+Экономия времени - Bootstrap позволяет сэкономить время и усилия, используя шаблоны дизайна и классы, и сконцентрироваться на других разработках.<a name="more"></a></span></li>
+Высокая скорость - динамичные макеты Bootstrap масштабируются на разные устройства и разрешения экрана без каких-либо изменений в разметке.</span></li>
+Гармоничный дизайн - все компоненты платформы Bootstrap используют единый стиль и шаблоны с помощью центральной библиотеки. Дизайн и макеты веб-страниц согласуются друг с другом.</span></li>
+Простота в использовании - платформа проста в использовании, пользователь с базовыми знаниями HTML и CSS может начать разработку с Twitter Bootstrap.</span></li>
+Совместимость с браузерами - Twitter Bootstrap совместим с Mozilla Firefox, Yandex Browser, Google Chrome, Safari, Internet Explorer и Opera.</span></li>
+Открытое программное обеспечение - Twitter Bootstrap это фреймворк с открытым исходным кодом, который предполагает удобство использования, посредством открытости исходных кодов и бесплатной загрузки.</span></li>
+Он также поддерживает кастомизацию на веб-основе.</span></li>
+Что включает в себя пакет Bootstrap?</span></li>
+Bootstrap включает включает в себя:</span></div>
+Scaffolding - Bootstrap предоставляет базовую структуру с табличной системой Grid System, стилями ссылок, фоном.</span></li>
+CSS - Bootstrap поставляется с функцией глобальных CSS настроек, основными HTML элементами, имеющими стили и улучшенных с помощью расширяемых классов, и передовой табличной системой.</span></li>
+Components - Bootstrap &nbsp;содержит более десятка компонентов многократного использовании, построенных для обеспечения иконографии, выпадающих элементов, навигации, оповещений, всплывающих панелей popovers, и многое другое.</span></li>
+avaScript Plugins - Bootstrap содержит более десятка пользовательских подключаемых модулей jQuery. Вы можете легко подключить их все, или по одному.</span></li>
+Customize - вы можете настроить Bootstrap компоненты, LESS переменные и jQuery плагины, чтобы получить свою собственную версию Bootstrap.</span></li>
+Какие основные инструменты Bootstrap?</span></li>
+Основные инструменты Bootstrap:</span></div>
+Сетки - заранее заданные размеры колонок, которые можно сразу же использовать, например ширина колонки 140px относится к классу ".span2" (".col-md-2" в третьей версии фреймворка), который можно использовать в CSS описании документа.</span></li>
+Шаблоны - фиксированный или резиновый шаблон документа.</span></li>
+Типографика - описания шрифтов, определение некоторых классов для шрифтов, таких как код, цитаты и т. п.</span></li>
+Медиа - представляет некоторое управление изображениями и видео.</span></li>
+Таблицы - средства оформления таблиц, вплоть до добавления функциональности сортировки.</span></li>
+Формы - классы для оформления форм и некоторых событий происходящих с ними.</span></li>
+Навигация - классы оформления для табов, вкладок, страничности, меню и тулбара.</span></li>
+Алерты - оформление диалоговых окон, подсказок и всплывающих окон</span></li>
+Что такое отзывчивый или адаптивный дизайн?</span></li>
+Отзывчивый или адаптивный дизайн (responsive, adaptive) позволяет создавать веб-сайты, которые меняют свой внешний вид в зависимости от разрешения экрана, чтобы удобно было просматривать один и тот же сайт на различных устройствах - от телефона до настольного компьютера с большим монитором.</span><br />
+Что такое Contextual классы таблицы в Bootstrap?</span></li>
+Contextual классы позволяют изменить цвет фона табличных строк или индивидуальных ячеек:</span></div>
+.active - применяет цвет при наведении на конкретную строку или ячейку.</span></li>
+.success - указывает на успешное или положительное действие.</span></li>
+.warning - указывает предупреждение, что, возможно, потребуется действие.</span></li>
+.danger - указывает на опасное или потенциально негативное действие.</span></li>
+Что такое Bootstrap Grid System?</span></li>
+Bootstrap включает в себя отзывчивую, гибкую "сетку", которая надлежащим образом масштабируется до 12 столбцов при увеличении размера устройства или окна просмотра. Она включает в себя предопределенные классы для простых вариантов компоновки, а также мощные сложные классы для генерации более семантических макетов.</span></div>
+Что такое Bootstrap media запросы?</span></li>
+Медиа запросы (Media Queries) &nbsp;- &nbsp;позволяют перемещать, показывать и скрывать контент, основываясь на размере экрана.</span></div>
+Какие виды контейнеров в Bootstrap вы знаете?</span></li>
+Контейнер является "фундаментом", с которого начинают создавать сетку веб-страницы сайта. На платформе Twitter Bootstrap контейнеры бывают 2 видов:</span></div>
+Фиксированный контейнер (элемент div с классом ".container"). Он имеет строго определённую ширину для определённого типа устройств. Т.е. для одного устройства контейнер имеет одну ширину, для другого устройства - другое значение ширины. Всего в Bootstrap 3 определено 4 типа устройств:</span></li>
+xs (смартфоны - ширина контейнера равна ширине рабочей области окна браузера).</span></li>
+sm (планшеты - 750px).</span></li>
+md (ноутбуки - 970px).</span></li>
+lg (персональные компьютеры - 1170px). Позиционируется фиксированный контейнер в горизонтальном направлении по центру, это достигается за счёт CSS свойства "margin: 0 auto".</span></li>
+Жидкий "текучий" контейнер (элементы div с классом ".fluid-container"). Он имеет ширину, равную ширине рабочей области окна браузера. Т.е. ширина жидкого "текучего" контейнера не является фиксированной, а изменяется при любом изменении ширины рабочей области окна браузера. Сетку сайта, которую проектируют на основе жидкого "текучего" контейнера называют ещё "резиновой".</span></li>
+Покажите основную табличную структуру в Bootstrap.</span></li>
+Ниже пример базовой структуры Bootstrap сетки:</span><br />
+Что такое Offset смещение столбцов?</span></li>
+Смещения расстояние между столбцами это полезная функция для более специализированных шаблонов. Она может быть использована, например, чтобы сместить столбцы на дополнительный интервал. ".соl-xs = *" - классы не поддерживают смещения, но они легко копируются с помощью пустой ячейки.</span><br />
+Как можно упорядочить столбцы в Bootstrap?</span></b></li>
+Вы можете легко изменить порядок встроенных столбцов с помощью классов-модификаторов ".col-md-push-*" и ".col-md-pull-*" в диапазоне от 1 до 11.</span><br />
+Какими двума способами вы можете отобразить код в Bootstrap?</span></li>
+Код в Bootstrap вы можете отобразить двумя способами:</span><br />
+Поместить код в строковый тег &lt;code&gt;.</span></li>
+Для выделения 2-х и более строк кода используйте тег &lt;pre&gt;. Избегайте использования угловых скобок &lt; и &gt;, для корректного отображения фрагментов кода. Всегда используйте теги &lt;pre&gt; как можно левее в редакторе кода, так как внутри тега &lt;pre&gt; сохраняются все отступы и пробелы.</span></li>
+Как сделать изображения responsive(отзывчивым)?</span></li>
+Bootstrap 3 позволяет сделать изображения отзывчивыми путем добавления класса ". img-responsive" в &nbsp;тег &lt;img&gt;. Этот класс применяет "max-width: 100%;" и "height: auto;" к изображению, так что изображение красиво масштабируется относительно родительского элемента.</span><br />
+Какие основные этапы создания формы в Bootstrap?</span></li>
+Основные моменты при создании и оформлении формы представим в виде следующих этапов:</span><br />
+Указать вид формы. В Bootstrap 3 различают следующие виды форм: вертикальная (без добавления класса), горизонтальная (.form-horizontal) и в одну строку (.form-inline).</span></li>
+Добавить к необходимым текстовым элементам управления &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt; класс ".form-control", чтобы установить им ширину, равную 100% (всю доступную ширину родительского элемента).</span></li>
+Поместить каждую надпись (&lt;label&gt;) и элемент управления в контейнер &lt;div&gt;...&lt;/div&gt; с классом ".form-group". Это необходимо сделать, чтобы задать для элементов в форме оптимальные отступы.</span></li>
+В чом разница между вертикальною и горизонтальной формой?</span></li>
+Вертикальная форма - это макет формы, в которой её элементы располагаются вертикально, т.е. один под другим. Данная форма создаётся без добавления класса к элементу формы (&lt;form&gt;). Метки и элементы управления формы необходимо размещать в блоке с классом ".form-group".</span><br />
+Горизонтальная форма - это форма, в которой надписи и элементы управления находящиеся в одной группе (&lt;div class="form-group"&gt;...&lt;/div&gt;) располагаются на одной строке.</span><br />
+Объясните типографику и ссылки в Bootstrap.</span></li>
+Bootstrap устанавливает основной глобальный фон, типографику и стили ссылок.</span><br />
+Основной глобальный фон - устанавливает "background-color: #fff" в элементе &lt;body&gt;.</span></li>
+Шрифты - используют @font-family-base, @font-size-base, и @line-height-base атрибуты.</span></li>
+Стили ссылок - устанавливают глобальный цвет ссылки через атрибут @link-color и применяют подчеркивание ссылки исключительно для ":hover".</span></li>
 Что такое Нормализация(Normalize) в Bootstrap?</span></li>
 Bootstrap использует нормализацию чтобы установить кросс согласованность для браузеров.</span><br />
 Normalize.css это современная, HTML5 - готовая альтернатива CSS. Это небольшой файл CSS, который обеспечивает лучшую кросс-браузерную согласованность в стилях по умолчанию для HTML элементов.&nbsp;</span><br />
