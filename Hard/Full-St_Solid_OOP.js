@@ -4548,42 +4548,6 @@ Person.prototype.surname = "Smith";
 Эти принципы являются основой объектно-ориентированного программирования и помогают разработчикам создавать более гибкие, модульные и масштабируемые программы.
 ---------------------------------------------------------------------------------------------
 
-Top 30+ OOPS Interview Questions And Answers With Examples
-By Sruthy  Updated February 2, 2026
- 
- Edited by Kamila
-This tutorial provides a complete set of frequently asked Object-Oriented Programming (OOP) interview questions and answers:
-
-Software development has a history spanning around 70 years, during which various languages, including FORTRAN, Pascal, C, and C++, were invented.
-
-There was a series of statements that acted as commands, given to hardware to perform basic mathematical calculations, thereby creating procedural languages for designing various software applications.
-
-With the invention of the Internet, secured, stable, platform-independent, and robust languages were needed in designing complex applications.
-
-Table of Contents: [Show]
-
-Expert Quiz on OOPS Interview Questions
-Streamline your interview process with these exclusive OOPS interview questions from our comprehensive quiz. This quiz covers all prime concepts in OOPS, along with abstraction, polymorphism, etc., and is ideal for any professional preparing for an OOPs-related interview.
-
-Object-Oriented Programming Mastery
-Master OOPS concepts and excel in your technical interviews
-Question 1 of 20
-A junior developer asks about static vs instance members. How would you explain the difference?
-Static members belong to the class and are shared among all instances
-Static members can only be accessed through inheritance while instance members use composition
-Static members are faster in execution while instance members provide better encapsulation
-Instance members are stored in heap memory while static members use stack allocation
-
-Object Oriented Programming Interview Questions - OOPS
-Object-oriented programming is platform-independent, portable, secure, and equipped with various concepts like encapsulation, abstraction, inheritance, and polymorphism.
-
-The advantages of OOPS are reusability, extensibility, and modularity that improve productivity, are easier to maintain due to modularity, faster and lower cost of development because of code reuse, and produce secure, high-quality applications.
-
-Basic Object-Oriented Programming Concepts
-Object-oriented programming involves intellectual objects, data, and behavior associated with it to bring solutions to business problems. In the Java programming language, to design solutions for business problems, developers apply concepts like abstraction, encapsulation, inheritance, and polymorphism.
-
-Various concepts, such as Abstraction that ignore irrelevant details, Encapsulation focuses on what is required without disclosing any complexities over internal functionalities, Inheritance to inherit properties of the parent class or implement multiple inheritances using an interface, and Polymorphism that extends properties of method overloading (static polymorphism) and method overriding (dynamic polymorphism).
-
 Essential Questions for OOPS Interview
 Q #1) Explain in brief what you mean by Object Oriented Programming in Java.
 
@@ -5033,18 +4997,8 @@ Interface segregation - принцип разделения интерфейса
 
 Dependency Inversion - принцип инверсии зависимостей служит для создания слабосвязанных сущностей, которые легко тестировать, модифицировать и обновлять. Модули верхних уровней не должны зависеть от модулей нижних уровней. Если по простому, то нужно делать код так, что-бы этот код имел как можно меньше зависимостей и не было круговых зависимостей
 
-﻿  
-
+﻿------------------------------------------------------------------------------  
 OOPS Concept in Java
-
-Table of Contents: [Show]
-
-Video Tutorials on OOPS Concepts
-OOPS Concept in Java – Part 1:
-
-
-In-depth look at OOPS Concept in Java – Part 2:
-
 
 Object-oriented programming languages emphasize on data more than the functions. The object-oriented programming (OOP) revolves around objects i.e. a real-time entity.
 
@@ -5085,9 +5039,6 @@ Object & Class - Components
 
 An object represents a real-life entity. In Java, an object is an instance of a class. So a class which is a blueprint may be used to create many objects. These objects often communicate with each other by passing messages to each other through methods.
 
-Video Tutorial: Classes & Objects 
-
-
 An object typically has:
 
  A state: The properties or attributes of an object at a particular time.
@@ -5103,28 +5054,6 @@ Here the identity of the object is a pig.
 
 Given below is a program that demonstrates class and object.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
 //student class
 class Student{  
  int roll_No;  
@@ -5189,24 +5118,6 @@ Note that Java does not support multiple inheritances. Java also does not suppor
 
 Given below is an example program of Single Inheritance in Java.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 //base class
 class Employee{  
  float salary=50000;  
@@ -5242,33 +5153,6 @@ We will discuss polymorphism in detail in our subsequent tutorials.
 
 Given below is an example of compile-time polymorphism in Java wherein we have method add that is overloaded to perform addition with different operand types.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
 class Numbers_Sum { 
     //add method : takes two int parameters
     public int add(int val1, int val2)  { 
@@ -5309,31 +5193,6 @@ Using a data abstraction mechanism, we only identify the necessary details and i
 
 The below example shows an abstract class and its usage.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
 // Abstract class declaration
 abstract class PetAnimal {
   // Abstract method: should be defined in derived class
@@ -5377,54 +5236,6 @@ Proper encapsulation can be achieved by making data members private and having t
 
 The below Java program demonstrates the encapsulation concept.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
 class Customer_Account {  
 //private data of class  
 private long customer_accountNo;  
@@ -5483,6 +5294,7 @@ In this class, we have data members which are all private. Then for each private
 
 They can be accessed only through getters and setters. This demonstrates the encapsulation that we described above.
 
+
 Frequently Asked Questions
 Q #1) What is meant by Object Oriented Programming?
 
@@ -5521,23 +5333,11 @@ The class is a blueprint/prototype of a real-world object and it models the stat
 
 Class Declaration
 
-1
-2
-3
-4
 class <em>MyClass</em> {
 // field, constructor, and
 // method declarations
 }
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 Class room(){
  
 //room should have dimension.
@@ -5555,17 +5355,6 @@ Software objects are like real life objects with state and behavior. The state w
 
 Here room is like general design. Within this room, you should design a living room, cooking room, bedroom.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 Class CookingRoom(){
 Dimension is attribute.
  
@@ -5577,18 +5366,7 @@ but it should   have   some more features to hold cooking items.
  
 cooking();
 }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 Class LivingRoom(){
  
 Dimension is attribute.
@@ -5623,25 +5401,6 @@ With the same concept in object-oriented programming, the child class can inheri
 
 Overloading
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
 public class OverloadDemo {
 public int add( int a,int b) {
 int rs=a+b;
@@ -5665,13 +5424,6 @@ ovrloading
 
 Overriding
 
-1
-2
-3
-4
-5
-6
-7
 public class Bicycle {
 int wheels=2;
 String seat;
@@ -5681,11 +5433,6 @@ System.out.println("bicycle is used for riding");
 }
 overriding1
 
-1
-2
-3
-4
-5
 public class RoadBicycle extends Bicycle{
 public void riding() {
 System.out.println("RoadBicycle is used for road riding");
@@ -5693,14 +5440,6 @@ System.out.println("RoadBicycle is used for road riding");
 }
 overriding2
 
-1
-2
-3
-4
-5
-6
-7
-8
 public class TestBicycle {
  
 public static void main(String[] args) {
@@ -5723,36 +5462,6 @@ This Keyword
 
 This keyword is used to refer to the current class object. Using this keyword, you can access the current class instance variable or current class method. This can be passed as an argument in the method call.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
 public class DemoThisKeyword {
  
 private int accno;
@@ -5789,11 +5498,6 @@ Constructor
 
 Java constructors are like methods which will be called when the object is created for the class. The constructor should have the same name as the class.
 
-1
-2
-3
-4
-5
 Class Myclass{
 Myclass();
 Method1() {
@@ -5805,36 +5509,6 @@ While Creating an object for the class, Myclass myobj =new Myclass ();
 
 The constructor method will be called. The constructor is automatically created by Java compiler for all the classes by default.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
 public class ConstructorExampleProgram {
  
 int employee_age;
@@ -5877,12 +5551,10 @@ In Object-oriented programming, objects are the main part of programming.
 OOP concepts are object, class, inheritance, polymorphism, constructor.
 Super keyword used to refer to the parent class members, and this keyword is used to refer to a current class object.
 Constructors are like methods which will be called when the object is created for the class.
-Conclusion
-This tutorial covered the basics of important object-oriented features supported by Java. This is just an introductory tutorial on OOPS in Java. We will cover all the topics in detail in our subsequent tutorials. Java supports four pillars of OOP i.e. Polymorphism, Inheritance, Abstraction, and Encapsulation.
+
 
 Apart from these features, Java also supports the other features and OOP constructs like containment, aggregation, message passing, etc. which will be discussed in our upcoming tutorials.
 
-Question 1 of 18
 Beginner
 What is the main difference between JDK and JRE?
 
@@ -6230,8 +5902,5 @@ Answer: The following measures should be taken while creating your own exception
 All exceptions should be children of Throwable class.
 You should extend the Exception class, to write a checked exception enforced by the Handle or Declare Rule.
 You should extend the RuntimeException class, to write a runtime exception.
-Conclusion
+
 Java architect develops application design and helps the team in identifying business requirements, troubleshooting design flaws, and suggesting development frameworks and technologies to be applied to obtain the resolution in the form of Java-based software applications across the design, development, test, and release stages.
-
-
-
