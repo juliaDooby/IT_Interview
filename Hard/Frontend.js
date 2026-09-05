@@ -612,35 +612,6 @@ The request is sent, or data is posted to the server asynchronously without subm
 
 Following is the ASPX page:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
 <%@ Page Language="C#" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">    
@@ -704,28 +675,6 @@ Answer: There are many ways to call Ajax in JavaScript for submitting data to th
 XMLHttpRequest object
 Code example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
 <script type="text/javascript">
 function loadXMLDoc() {
      var myxmlhttp = new XMLHttpRequest();
@@ -764,10 +713,6 @@ jQuery – It is a client-side JavaScript library
 
 Code example:
 
-1
-2
-3
-4
 $.ajax({ url: "test.html", context: document.body, success: function(){
 $(this).addClass("done");
 }
@@ -797,12 +742,6 @@ ReadyState property that defines current state of XMLHttpRequest if equal to fou
 
 Code snippet:
 
-1
-2
-3
-4
-5
-6
 xmlhttp.onreadystatechange = function()
 { if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
 { 
@@ -845,7 +784,6 @@ These are:
 
 When data for the given URL requested does not change, the HTTP GET request should be used by Ajax.
 HTTP POST is used for consistent web application architecture and for the updated state on the server.
-
 
 ---------------------------------------------------------------------------------------------
 [Теория с примерами]:
@@ -2114,328 +2052,9 @@ CSS-свойства, которые могут вызывать перерис�
 
 
 
-https://www.frontendinterviewhandbook.com/ru/javascript-questions
-https://github.com/h5bp/Front-end-Developer-Interview-Questions
 
-Что спрашивают
-И вот, наконец, что конкретно спрашивают. Вопросы брались из памяти, по этому, в некоторых пунктах сохранилась формулировка авторов, а в некоторых только суть вопроса.
-
-Вопросы по Теории:
-
-Пирамида тестирования. В том числе как она может меняться, почему, и хорошо это или плохо
-
-Техники тест-дизайна. Часто просят вспомнить какие техники ты используешь на практике, привести примеры. Либо просят на конкретном примере рассказать какие техники применишь для какого кейса (ниже приведу пример)
-
-Признаки (характеристики) качественного продукта
-
-Как измерить качество / метрики качества
-
-Каким критериям должно соответствовать приложение на тесте / условия "тестируемости"
-
-Agile общий
-
-Agile тестирование
-
-Функциональное и не функциональное тестирование какие подвиды в каждом
-
-Penetration тестирование
-
-Автоматизация: какие виды тестов и кто реализует, на каком этапе тестирования используются, как запустить процесс автоматизации, какие сценарии можно не автоматизировать
-
-Кейсы тестирования:
-
-Есть форма с полями. Придумать тест-кейсы с обозначением какую технику тест дизайна используешь в каждом из кейсов. Пример полей:
-
-Имя (с ограничением по количеству символов)
-
-Специальность врача (дропдаун)
-
-Имя врача (дропдаун зависит от специальности)
-
-дата (виджет)
-
-время (виджет)
-
-кнопка отправить
-
-Есть какой-то http запрос рассказать из чего состоит и придумать тест-кейсы
-
-Вы пришли на проект в котором 500+ ручных тесткейсов - что будете делать, какой план
-
-Что делать если нет требований к задаче
-
-Какие нефункциональные тесты можно применить к какому-то веб запросу
-
-Общие технические вопросы:
-
-GIT - чем отличается git pull от git fetch и другие команды гита
-
-tcp / upd чем отличаются протоколы
-
-из чего состоит http запрос
-
-в чем отличие http от https и в каких случаях можно использовать http и почему
-
-что такое двух- и трех- уровневая архитектура, толстый и тонкий клиент.
-
-сохранили какую-то формочку - что происходит с запросом дальше
-
-приходит в девтулзах json как он отрисовывается на фронте
-
-приходит html в запросе с уже сформированной инфой - где он обработался и сформировался
-
-nginx что и для чего
-
-как приложение понимает к какому серверу запрос если там передается красивый хост а не ip сервера
-
-идемпотентность http-методов
-
-Python + Pytest:
-
-декораторы
-
-фикстуры
-
-контекст менеджеры
-
-магические функции (для чего нужен init в классе, enter и exit в менеджерах контекста)
-
-хуки
-
-отличие == от is
-
-что вернет print(True + 4)
-
-итерируемые объекты
-
-a=3 - какой тип данных?
-
-изменяемые и не изменяемые типы данных
-
-написать класс (с какими-то методами), а потом еще один который от него наследуется
-
-есть 2 слова. Написать функцию которая будет принимать эти 2 слова и проверять можно ли составить второе слово из первого
-
-написать проверки валидации пароля
-
-написать функцию для определения счастливого билета
-
-часто дают задачи с уже написанным кодом который содержит ошибку которую вам нужно исправить. Конкретные примеры я привести не могу, но как правило это задачи на знания особенностей разных типов данных, циклов, классов
-
-написать функцию которая принимает на вход слово, длину и высоту и выводит слово всегда в центре, согласно референсу:
-
-    ##############
-    #            #
-    #    test    #
-    #            #
-    ##############
-SQL:
-
-написать простой селект с использованием LIKE
-
-селект с джойном
-
-селект с агрегатной функцией
-
-как сделать селект из 2-х таблиц без джойна
-
-как очистить данные таблицы
-
-как удалить/создать таблицу
-
-как удалить/создать бд
-
-что такое транзакции
-
-что такое первичный ключ
-
-может ли быть составной первичный ключ
-
-что такое внешний ключ
-
-View в БД и их отличия от таблиц
-
-Оператор UNION и ограничения на его использование
-
-Linux терминал:
-
-как найти строку в документе
-
-с помощью какой утилиты можно подключиться к удаленному Linux серверу и как оттуда скопировать файл на локальную машину
-https://www.pvsm.ru/sobesedovanie-voprosy/409923
-
-
-С какими вопросами и задачами столкнулся на собеседованиях
-Что касается самих заданий: тут их огромное множество. Бывает, просто устно опрашивают на понимание базовых принципов:
-
-семантика HTML5;
-что такое DOM;
-как работает ключевое слово this (частый вопрос);
-что такое замыкание (частый вопрос);
-вопросы по Bootstrap 4 (по адаптивной верстке в целом);
-перечислить все известные способы, как можно отцентрировать div на экране (позиционирование);
-всегда спрашивают про какие-либо фреймворки (React Vue Angular);
-вопросы о БЭМ;
-что такое нотация «О большое» (алгоритмическая сложность кода);
-общие вопросы про препроцессоры (Less/Sass).
-По практике: она выполняется либо на листочке, либо предоставляют компьютер, либо дают задание домой. На листочке просят:
-
-сверстать какой-то макет нарисованный;
-в виде теста (выбери правильный ответ);
-разные задачи.Мне попадалась задача «палиндром» – сделал рекурсией благодаря Хекслету, до этого рекурсию не понимал совсем;
-Задачи на компьютере:
-
-парсинг страницы интернет магазина: надо вытащить все артикулы товаров;
-попадались задачи на создание объекта по заданному массиву:
-дают задачи с написанным кодом (написать результат на выходе из функции).
-Домашняя работа (присылают задание на почту): там опять же верстка, или надо написать какие-то функции. Заданий было очень много, задают разные вопросы. Частенько по базам данных, по особенностям запросов на сервер и прочее. Выше писал, что стек технологий, которыми должен владеть frontend-программист, очень сильно отличается от компании к компании.
-
-
-
-Темы, которые нужно знать
-Базовый уровень (школьный этап ВОШ):
-
-Переменные, условия, циклы, функции
-Массивы и строки
-Сортировка (пузырьковая, быстрая, sorted в Python)
-Поиск (бинарный поиск)
-Базовая математика: делимость, простые числа, НОД/НОК
-Продвинутый уровень (региональный/финал ВОШ):
-
-Динамическое программирование
-Графы (BFS, DFS, Дейкстра)
-Жадные алгоритмы
-Стеки, очереди, деревья
-Теория чисел, комбинаторика
-
-
-Где тренироваться
-Codeforces — главная платформа для тренировок. Рейтинговые контесты каждую неделю
-Acmp.ru — архив задач российских олимпиад с объяснениями
-Informatics.msk.ru — платформа для школьников, задачи ВОШ
-LeetCode — задачи уровня собеседований в компании (больше для старших)
-Яндекс.Контест — задачи и контесты от Яндекса
-
-Full Stack Developer (MEAN) Interview Preparation (Step-by-Step Guide with Tips and Examples)
-Rishabh Jain
-Rishabh Jain
-Updated Jun 15, 2026
-5 min read
-Full Stack Developer (MEAN) Interview Preparation (Step-by-Step Guide with Tips and Examples)
-Feeling overwhelmed by the complexities of the MEAN stack? You’re not alone. A clear roadmap focusing on MongoDB, Express.js, Angular, and Node.js will help you confidently navigate your interview prep.
-
-Overcoming Common Interview Prep Pain Points
-Frontend with Angular: Understanding components, services, dependency injection, and RxJS.
-
-Backend with Node.js & Express: Developing RESTful APIs, middleware, and security measures.
-
-Databases & MongoDB: Schema design, querying, and performance optimization.
-
-Full-Stack Integration: Connecting Angular with Node.js and MongoDB effectively.
-
-System Design & Deployment: Building scalable apps and deploying them on cloud platforms.
-
-Your 4-Week Preparation Roadmap
-A structured plan for mastering the MEAN stack in 4 weeks.
-
-Week 1: Strengthen JavaScript & Angular Basics
-Focus: Reinforce JavaScript fundamentals and dive into Angular essentials.
-
-Daily Goals:
-
-Day 1: Review JavaScript fundamentals (ES6+ features, closures, promises, async/await).
-
-Day 2: Learn Angular components, templates, and data binding.
-
-Day 3: Work with Angular directives, pipes, and services.
-
-Day 4: Understand Angular dependency injection and lifecycle hooks.
-
-Day 5: Learn Angular forms (template-driven and reactive).
-
-Day 6: Explore Angular routing and navigation.
-
-Day 7: Practice coding challenges using Angular.
-
-Tip: Be prepared to explain Angular’s architecture and lifecycle in depth.
-
-Week 2: Backend Development with Node.js & Express
-Focus: Learn backend fundamentals and API development with Express.
-
-Daily Goals:
-
-Day 1: Set up a Node.js environment and learn Express basics.
-
-Day 2: Build RESTful APIs with Express and handle routing.
-
-Day 3: Implement JWT authentication and authorization.
-
-Day 4: Work with Express middleware and error handling.
-
-Day 5: Integrate Express with MongoDB using Mongoose.
-
-Day 6: Learn about validation and input sanitization.
-
-Day 7: Develop a small backend application with Express.
-
-Tip: Practice error handling and middleware design in Express to optimize backend performance.
-
-Week 3: Master MongoDB & Full-Stack Integration
-Focus: Work with MongoDB and integrate the full stack (Angular + Node.js).
-
-Daily Goals:
-
-Day 1: Learn MongoDB CRUD operations, schemas, and indexes.
-
-Day 2: Design efficient MongoDB data models and optimize queries.
-
-Day 3: Integrate MongoDB with your Express backend using Mongoose.
-
-Day 4: Connect Angular with Express backend using HTTP requests.
-
-Day 5: Implement state management in Angular using services and RxJS.
-
-Day 6: Deploy a simple MEAN stack application.
-
-Day 7: Practice debugging and optimizing full-stack applications.
-
-Tip: Focus on handling asynchronous requests in both Angular and Node.js effectively.
-
-Week 4: System Design & Mock Interviews
-Focus: Study system design principles and participate in mock interviews.
-
-Daily Goals:
-
-Day 1: Understand basic system design principles (scalability, redundancy, and fault tolerance).
-
-Day 2: Study caching (Redis) and its application in full-stack systems.
-
-Day 3: Learn about microservices architecture and API gateways.
-
-Day 4: Practice designing scalable systems (e.g., e-commerce, social media app).
-
-Day 5: Conduct a mock technical interview focusing on MEAN stack topics.
-
-Day 6: Work on refining behavioral interview answers using the STAR method.
-
-Day 7: Review and finalize your portfolio or personal project for the interview.
-
-Tip: Be ready to discuss how to optimize and scale a MEAN stack app to handle large-scale traffic.
-
-Bringing It All Together
-By following this roadmap, you’ll build a solid foundation in the MEAN stack and be fully prepared for your Full Stack MEAN Developer interview.
-
-Master Angular & TypeScript: Build dynamic, efficient front-end applications.
-
-Develop Secure & Scalable APIs: Implement Express and Node.js with MongoDB integration.
-
-Deploy Full-Stack Applications: Learn about cloud deployment and scaling strategies.
-
-Start your journey today and confidently navigate your MEAN stack interview!
-
-
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как переадресовать страницу в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Сколько параметров можно передать функции?</span></li>
+Как переадресовать страницу в JavaScript?</span></li>
+Сколько параметров можно передать функции?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Нужно алертом вывести какое-то сообщение, спустя 3 секунды после запуска скрипта. Как это сделать?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Чем отличается наследование в JavaScript от наследования в PHP?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Приведи пример наследования в JavaScript.</span></li>
