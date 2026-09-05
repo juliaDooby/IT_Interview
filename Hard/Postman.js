@@ -1,3 +1,10 @@
+Советы по подготовке
+Ознакомьтесь с функциями Postman: убедитесь, что вы понимаете ключевые функции, такие как коллекции, окружения и консоль Postman. Знание того, как эффективно их использовать, может выделить вас.
+Практика написания тестовых скриптов: освойтесь с написанием тестовых скриптов JavaScript в Postman. Сосредоточьтесь на общих задачах, таких как проверка кодов статуса ответа, проверка времени ответа и проверка данных ответа.
+Понимание методов аутентификации: разберитесь в различных методах аутентификации, поддерживаемых Postman, таких как Basic Auth, OAuth и API Key. Научитесь их настраивать во вкладке «Авторизация».
+Научитесь использовать переменные окружения: освойте использование переменных окружения для управления различными средами и передачи данных между запросами.
+Исследуйте автоматизацию с Newman: ознакомьтесь с Newman, инструментом командной строки для запуска коллекций Postman. Узнайте, как интегрировать его с конвейерами CI/CD (CI/CD pipelines) для автоматизированного тестирования.
+
 Потренироваться на публичных API (JSONPlaceholder, ReqRes)
 
 Создать 5-10 коллекций с автоматизированными тестами
@@ -4837,11 +4844,8 @@ Postman (практические навыки)
 Заключение: знание Postman = оффер
 Вернемся к истории из начала.
 
-
-********************************************************************************
-
-Postman Interview Questions
-Common Questions for Postman Interview
+    
+Common Questions for Postman
 Q #1) How can you set headers for all the requests that are in a particular Postman collection?
 
 Answer: Postman collections allow adding pre-request scripts at both the collection and individual request level. To add any script that applies to all the requests that are present in the collection, we will need to add a pre-request script at the collection level.
@@ -5042,8 +5046,6 @@ pm.test("Status code is 200", function () {
 
 Попробуйте изменить код состояния в коде утверждения и запустить его снова, чтобы увидеть, как результаты теста выглядят по-разному, когда они проходят или не проходят.
 
-
-
 Вы можете структурировать свои тестовые утверждения различными способами в соответствии с вашей логикой и предпочтениями с точки зрения того, как вы хотите выводить результаты. Следующий код является альтернативным способом выполнения того же теста, что и приведенный выше, с использованием expectсинтаксиса:
 
 pm.test("Status code is 200", () => {
@@ -5066,7 +5068,6 @@ pm.test("The response has all properties", () => {
 Примечание переводчика: как прервать проверку если условие не выполнено нужно уточнить.
 
  
-
 Анализ данных тела ответа
 Чтобы выполнить утверждения в ваших ответах, вам сначала нужно будет проанализировать данные в объекте JavaScript, который могут использовать ваши утверждения.
 
@@ -5264,7 +5265,6 @@ pm.expect({a: 1, b: 2}).to.be.an('object')
 Целью может быть object, set, arrayили map. Если .keysвыполняется без .allили .any, выражение по умолчанию равно .all. Поскольку .keysповедение зависит от type, рекомендуется проверить typeперед использованием .keysс помощью .a.
 
  
-
 Проверка, что значение находится в наборе
 Вы можете проверить значение ответа по списку допустимых параметров.
 
@@ -5308,7 +5308,6 @@ pm.test("Check the active environment", () => {
 Устранение распространенных ошибок тестирования
 Когда вы сталкиваетесь с ошибками или неожиданным поведением в своих тестовых сценариях, консоль почтальона может помочь вам определить источник. Комбинируя console.logинструкции отладки с утверждениями теста, вы можете изучить содержимое HTTP-запросов и ответов, а также элементы данных почтальона, такие как переменные.
 
- 
 
 Вы можете записать значение переменной или свойства ответа:
 
@@ -5349,7 +5348,6 @@ pm.test("Test 2", () => {
 });
 Убедитесь, что любой код, устанавливающий данные вашего ответа в переменную, доступен для всего тестового кода, например, в этом случае вызовconst jsonData = pm.response.json();перед pm.testсделает его доступным для обеих тестовых функций.
 
- 
 
 Неопределенная ошибка проверки
 Вы можете столкнуться с этой AssertionError: expected undefined to deeply equal..проблемой. Обычно это происходит, когда вы ссылаетесь на свойство, которое не существует или находится вне области действия.
@@ -5358,7 +5356,6 @@ pm.expect(jsonData.name).to.eql("John");
 В приведенном выше примере, если вы видите AssertionError: expected undefined to deeply equal 'John', это указывает на то, что nameсвойство не определено в jsonDataобъекте.
 
  
-
 Тест не провалился
 Могут быть случаи, когда вы ожидаете, что тест провалится, но этого не происходит.
 
@@ -5369,7 +5366,6 @@ pm.test("Not failing", function () {
 Убедитесь, что ваш тестовый код синтаксически корректен, и повторите попытку отправки запроса.
 
  
-
 Проверка структуры ответа
 Вы можете выполнить проверку схемы JSON с помощью tv4
 
@@ -5419,21 +5415,9 @@ pm.sendRequest("https://postman-echo.com/get", function (err, response) {
 });
  
 
-Следующие шаги
-Вы можете автоматизировать свои тестовые запуски с помощью программы сбора данных.
-
-30+ Postman Interview Questions & Answers
-
-By
-Guest Author
-Updated on
-June 11, 2025
-In this post, we see Postman Interview Questions. Before going ahead, don’t miss this general API Testing Interview Questions.
-
-Let’s move with the actual post on Postman Interview Questions And Answers.
 
 Postman Interview Questions
-Postman Interview Questions With Answers
+
 1. What is Postman?
 
 Postman is a collaboration platform for API development. It is a popular API client and it enables you to design, build, share, test, and document APIs.
@@ -6341,23 +6325,6 @@ Answer - 10 : -
 
 In Postman, a collection is used to group similar requests. It systematically arranges the requests into folders.
 
-41+ Postman Interview Questions & Answers (with Notes) | PART 1
-#
-testing
-#
-postman
-#
-beginners
-#
-general
-In this video, we are going to cover the 41+ Postman interview questions and answers.
-
-✅ Download the Mind map - https://sdet.live/notes
-✅ API Testing Postman Playlist - https://sdet.live/4keR
-
-
-
-✅ 41+ Postman Interview Questions & Answers
 ➡️ 1. What is Postman?
 It is not an API Testing Tool
 Postman is collaboration platform for API development
@@ -6460,25 +6427,6 @@ and How to do it with POSTMAN?
 They are the way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.
 https://learning.postman.com/docs/sending-requests/authorization/#oauth-10
 https://learning.postman.com/docs/sending-requests/authorization/#oauth-20
-
-37 вопросов по платформе Postman (с 9 образцами ответов)
-
-practicum.yandex.ru
-Реклама
-•
-16+
-Короткие курсы для смены профессии
-Курсы Практикума, которые идут от 3 до 8 месяцев. Попробуйте бесплатно
-
-Узнать больше
-Опубликовано 2022-04-07 18:50 пользователем Журнал HR-Portal
-
-Инженеры-программисты могут использовать интерфейсы прикладного программирования (API) и инструменты для тестирования работы программных продуктов. Одним из таких инструментов является Postman, платформа для совместной работы, используемая для проектирования, разработки и тестирования API. Менеджеры по подбору персонала могут задавать отраслевые или ролевые вопросы о Postman, чтобы проверить ваши знания инструментов API при приеме на должность тестировщика. Знание общих вопросов, которые они могут задать, поможет вам подготовить прямые и краткие ответы и укрепить уверенность в себе.
-
-В этой статье мы рассмотрим девять распространенных вопросов для собеседования с Postman, а также примеры ответов и советы, которые вы можете использовать во время собеседования.
-
-9 вопросов для собеседования по Postman с примерами ответов
-Изучите эти вопросы для собеседования с Postman и примеры ответов, чтобы подготовить стратегические ответы для собеседования:
 
 1. Что такое API?
 Интервьюер может задать этот вопрос, чтобы проверить ваши общие знания об API и их классе применения. При тестировании приложений вы можете использовать API для выполнения запросов к уникальным функциям программы. Вы можете дать краткий ответ, который отражает основное определение API и его функции.
@@ -6595,16 +6543,6 @@ POST-запросы позволяют клиентскому приложени
 
 Изучите компанию. Посетите веб-сайт компании, чтобы узнать о ней больше, понять ее программное заявление и оценить ее цели. Узнав эту информацию, вы сможете сослаться на нее во время собеседования, чтобы произвести впечатление на менеджеров по найму.
 
-25 вопросов по Postman
-Оставьте комментарий / Postman, Собеседование / От Diliara Gromche
-🔥 Важное для QA-специалистов! 🔥
-В QaRocks ты найдешь туториалы, задачи и полезные книги, которых нет в открытом доступе. Уже более 14.000 подписчиков – будь среди нас! Заходи к нам в телеграм канал QaRocks 
-Подготовка к собеседованию может оказаться непростой задачей, но знание возможных вопросов и ответов на них может сыграть решающую роль. В этой статье мы собрали 25 основных вопросов и ответов по Postman , которые помогут вам уверенно пройти следующее собеседование.
-
-Почему интервьюеры задают вопросы о Postman?
-Основная цель вопросов о Postman – оценить опыт кандидата в использовании платформы Postman API для создания, тестирования и управления API. Интервьюеры хотят убедиться, что кандидат обладает необходимыми техническими навыками и умением решать проблемы для эффективной работы с API в реальной среде. Вопросы часто затрагивают такие темы, как запросы к API, обработка ответов, создание сценариев и автоматизация в среде Postman.
-
-25 вопросов по Postman
 Что такое Postman и как он используется при разработке API?
 Объясните разницу между методами HTTP GET, POST, PUT и DELETE.
 Как создать новый запрос в Postman?
@@ -7041,21 +6979,6 @@ pm.test("Ответ соответствует ожидаемой схеме", f
 
 }); ».
 
-Советы по подготовке
-Ознакомьтесь с функциями Postman: убедитесь, что вы понимаете ключевые функции, такие как коллекции, окружения и консоль Postman. Знание того, как эффективно их использовать, может выделить вас.
-Практика написания тестовых скриптов: освойтесь с написанием тестовых скриптов JavaScript в Postman. Сосредоточьтесь на общих задачах, таких как проверка кодов статуса ответа, проверка времени ответа и проверка данных ответа.
-Понимание методов аутентификации: разберитесь в различных методах аутентификации, поддерживаемых Postman, таких как Basic Auth, OAuth и API Key. Научитесь их настраивать во вкладке «Авторизация».
-Научитесь использовать переменные окружения: освойте использование переменных окружения для управления различными средами и передачи данных между запросами.
-Исследуйте автоматизацию с Newman: ознакомьтесь с Newman, инструментом командной строки для запуска коллекций Postman. Узнайте, как интегрировать его с конвейерами CI/CD (CI/CD pipelines) для автоматизированного тестирования.
-
-Примеры тестовых сценариев Postman
- 08.11.21
-Интеграция - WEB-интеграция
-
- 
-Перевод статьи https://learning.postman.com/docs/writing-scripts/script-references/test-examples/
-От переводчика: перевожу как основу для статьи по полноценному описанию и тестированию API сервиса. До этого были связанные с этой темой статьи по OpenAPI и Использование скриптов . Ссылка на Postman.
-
 ---
 
 Postman предоставляет API-интерфейсы JavaScript, которые вы можете использовать в своих сценариях запросов. Объект pm предоставляет большую часть функциональных возможностей для тестирования данных запроса и ответа, а объект postman обеспечивает некоторый дополнительный контроль рабочего процесса.
@@ -7065,7 +6988,6 @@ Postman предоставляет API-интерфейсы JavaScript, кото
 Postman отображает фрагменты кода справа от области сценария. Вы можете добавить их, чтобы опробовать распространенные сценарии, и настроить их в соответствии с вашими потребностями и деталями запроса / ответа.
 
  
-
 Начало работы с тестами
 Чтобы попробовать написать тестовый сценарий в первый раз, откройте запрос в приложении Postman и откройте вкладку Tests. Введите следующий код JavaScript:
 
@@ -7077,7 +6999,6 @@ pm.test("Status code is 200", function () {
 Этот тест проверяет код ответа, возвращаемый API. Если код ответа есть 200, тест пройдет, в противном случае он завершится неудачей. Нажмите Отправить и проверьте вывод результатов теста в области ответов.
 
 Попробуйте изменить код состояния в коде утверждения и запустить его снова, чтобы увидеть, как результаты теста выглядят по-разному, когда они проходят или не проходят.
-
 
 
 Вы можете структурировать свои тестовые утверждения различными способами в соответствии с вашей логикой и предпочтениями с точки зрения того, как вы хотите выводить результаты. Следующий код является альтернативным способом выполнения того же теста, что и приведенный выше, с использованием expectсинтаксиса:
@@ -7102,7 +7023,6 @@ pm.test("The response has all properties", () => {
 Примечание переводчика: как прервать проверку если условие не выполнено нужно уточнить.
 
  
-
 Анализ данных тела ответа
 Чтобы выполнить утверждения в ваших ответах, вам сначала нужно будет проанализировать данные в объекте JavaScript, который могут использовать ваши утверждения.
 
@@ -7142,13 +7062,11 @@ pm.test("Body is string", function () {
 });
 Примечание переводчика: для формата например "x-form-urlencoded" и подобного думаю возможно найти библиотеки и подключить их в тесты.
 
- 
 
 Создание утверждений в HTTP-ответе
 Ваши тесты могут проверять различные аспекты ответа на запрос, включая текст, коды состояния, заголовки, файлы cookie, время ответа и многое другое.
 
  
-
 Тестирование тела ответа
 Вы можете проверить наличие определенных значений в теле ответа:
 
@@ -7458,576 +7376,252 @@ pm.sendRequest("https://postman-echo.com/get", function (err, response) {
 Следующие шаги
 Вы можете автоматизировать свои тестовые запуски с помощью программы сбора данных.
 
-Postman Interview Questions and Answers
-Изучите лучшие вопросы и ответы по Postman для новичков и опытных кандидатов, чтобы подготовиться к собеседованиям.
-
-Всего вопросов: 30
-Postman Interview Questions and Answers
-Лучшее LIVE пробное интервью, которое стоит посмотреть перед собеседованием
-Изучите лучшие вопросы и ответы по Postman для новичков и опытных кандидатов, чтобы подготовиться к собеседованиям.
-
-
 Инструменты
 Что вы можете делать здесь: готовиться к интервью, практиковаться с тестами, изучать учебные материалы, сравнивать связанные темы и использовать бесплатные онлайн-инструменты для валидации, кодирования, хеширования, работы с сетью, SEO и анализа сайтов.
 
-Postman Interview Questions and Answers
-Найдите вопрос, чтобы посмотреть ответ.
-
-Найдите вопрос, чтобы посмотреть ответ.
-Найти вопрос
-Вопросы и ответы для новичков / начинающего уровня
 Вопрос 1
 What is Postman?
 Postman is a popular collaboration platform for API development. It simplifies the process of developing APIs by providing tools for testing, documenting, and sharing APIs.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 2
 Explain the difference between GET and POST requests.
 GET requests are used to retrieve data from a server, while POST requests are used to submit data to be processed to a specified resource.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 3
 How do you add a header in a Postman request?
 You can add a header in Postman by selecting the 'Headers' tab and then entering the key-value pairs for the headers you want to include.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 4
 What is a Postman collection?
 A Postman collection is a group of saved requests. It allows you to organize your API requests into folders, making it easier to manage and run them in a sequence.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 5
 What are the benefits of using Postman over manual API testing?
 Postman offers automation, repeatability, and collaboration benefits over manual API testing. It allows for efficient testing, documentation, and sharing of API workflows.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 6
 How can you organize and group requests in Postman?
 Requests in Postman can be organized by using folders and subfolders. This helps in keeping related requests together and maintaining a structured workspace.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
-Вопросы и ответы для среднего уровня / опыта от 1 до 5 лет
+
 Вопрос 7
 How do you parameterize requests in Postman?
 You can parameterize requests in Postman by using variables. Variables can be defined in the request, collection, or environment levels.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 8
 Explain the purpose of Pre-request Scripts in Postman.
 Pre-request Scripts in Postman allow you to execute custom JavaScript code before sending a request. It is useful for setting dynamic values or performing actions before the request is sent.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 9
 What is Newman in the context of Postman?
 Newman is the command-line companion for Postman. It allows you to run and automate Postman collections using the command line.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 10
 How do you handle authentication in Postman?
 Authentication in Postman can be handled by including the required credentials in the request headers or by using the built-in authentication methods provided by Postman.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 11
 What is the purpose of Postman environments?
 Postman environments allow you to create sets of variables that can be used across requests. This is useful for managing different configurations, such as development and production.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 12
 How do you handle file uploads in Postman?
 File uploads in Postman can be simulated using the 'form-data' request body type. You can select 'File' as a key and choose the file to upload.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 13
 What is the Postman Console, and how is it useful?
 The Postman Console is a feature that displays logs and messages from requests and scripts. It is useful for debugging and understanding the flow of requests.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 14
 Explain the purpose of the 'pm.environment' object in Postman scripts.
 'pm.environment' is an object in Postman scripts that allows you to access and manipulate variables at the environment level. It is useful for dynamic value assignments.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 15
 How do you handle dynamic variables in Postman?
 Dynamic variables in Postman can be handled using environment variables, global variables, or by extracting data from responses and storing them for later use.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 16
 How can you pass data between requests in Postman?
 Data can be passed between requests in Postman using variables. You can set variables in one request and use them in subsequent requests within the same collection.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 17
 Explain the purpose of the 'postman.setNextRequest' function.
 'postman.setNextRequest' is used to specify the next request to be executed after the current one. It is helpful for creating a sequence of requests.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 18
 Explain the purpose of the 'pm.environment.clear' function.
 'pm.environment.clear' is used to clear all variables in the current environment. It is helpful when you need to reset or clean up variables during script execution.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 19
 Explain the concept of Postman environments.
 Postman environments allow you to create sets of variables that can be used across requests. This is useful for managing different configurations, such as development and production.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
-Вопросы и ответы для опытного / экспертного уровня
+
 Вопрос 20
 Explain how you can share a Postman collection with others.
 Postman collections can be shared by exporting them as a JSON file or by using the Postman API. You can also generate a public link to share the collection with others.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 21
 What is the purpose of the Postman test script?
 The test script in Postman is used to write assertions and validations. It allows you to verify the response data and ensure that the API is behaving as expected.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 22
 How do you extract data from a response in Postman?
 Data can be extracted from a response in Postman using the 'Tests' tab. You can write JavaScript code to extract and store values from the response.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 23
 Explain the difference between 'pm.test' and 'pm.expect' in Postman.
 'pm.test' is used to define test cases in Postman scripts, while 'pm.expect' is used to set expectations for assertions. Both are used in the 'Tests' tab.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 24
 How can you handle time delays in Postman scripts?
 Time delays can be handled in Postman scripts using the 'setTimeout' function. It allows you to introduce delays between requests or script executions.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 25
 Explain the concept of Postman monitors.
 Postman monitors are used for automated and scheduled API testing. They allow you to run collections at predefined intervals and monitor API performance.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 26
 What is the Postman Sandbox?
 The Postman Sandbox is a JavaScript execution environment within Postman. It allows you to write and run scripts for requests, tests, and pre-request scripts.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 27
 How can you handle errors in Postman scripts?
 Errors in Postman scripts can be handled using try-catch blocks. This allows you to catch and manage errors, preventing them from affecting the entire script execution.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 28
 What is the purpose of the 'pm.sendRequest' function in Postman?
 'pm.sendRequest' is used to send an HTTP request from within a Postman script. It allows you to make additional requests based on the results of the current request.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 29
 How do you handle CSRF tokens in Postman?
 CSRF tokens in Postman can be handled by extracting them from responses and including them in subsequent requests using variables.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 30
 How do you handle data-driven testing in Postman?
 Data-driven testing in Postman can be achieved by using data files, such as CSV or JSON, to provide different sets of input data for the same request or collection of requests.
 
-Postman Interview Questions and Answers
-Найдите вопрос, чтобы посмотреть ответ.
-
-Найдите вопрос, чтобы посмотреть ответ.
-Найти вопрос
-Вопросы и ответы для новичков / начинающего уровня
 Вопрос 1
 What is Postman?
 Postman is a popular collaboration platform for API development. It simplifies the process of developing APIs by providing tools for testing, documenting, and sharing APIs.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 2
 Explain the difference between GET and POST requests.
 GET requests are used to retrieve data from a server, while POST requests are used to submit data to be processed to a specified resource.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 3
 How do you add a header in a Postman request?
 You can add a header in Postman by selecting the 'Headers' tab and then entering the key-value pairs for the headers you want to include.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 4
 What is a Postman collection?
 A Postman collection is a group of saved requests. It allows you to organize your API requests into folders, making it easier to manage and run them in a sequence.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 5
 What are the benefits of using Postman over manual API testing?
 Postman offers automation, repeatability, and collaboration benefits over manual API testing. It allows for efficient testing, documentation, and sharing of API workflows.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 6
 How can you organize and group requests in Postman?
 Requests in Postman can be organized by using folders and subfolders. This helps in keeping related requests together and maintaining a structured workspace.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
-Вопросы и ответы для среднего уровня / опыта от 1 до 5 лет
+
 Вопрос 7
 How do you parameterize requests in Postman?
 You can parameterize requests in Postman by using variables. Variables can be defined in the request, collection, or environment levels.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 8
 Explain the purpose of Pre-request Scripts in Postman.
 Pre-request Scripts in Postman allow you to execute custom JavaScript code before sending a request. It is useful for setting dynamic values or performing actions before the request is sent.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 9
 What is Newman in the context of Postman?
 Newman is the command-line companion for Postman. It allows you to run and automate Postman collections using the command line.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 10
 How do you handle authentication in Postman?
 Authentication in Postman can be handled by including the required credentials in the request headers or by using the built-in authentication methods provided by Postman.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 11
 What is the purpose of Postman environments?
 Postman environments allow you to create sets of variables that can be used across requests. This is useful for managing different configurations, such as development and production.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 12
 How do you handle file uploads in Postman?
 File uploads in Postman can be simulated using the 'form-data' request body type. You can select 'File' as a key and choose the file to upload.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 13
 What is the Postman Console, and how is it useful?
 The Postman Console is a feature that displays logs and messages from requests and scripts. It is useful for debugging and understanding the flow of requests.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 14
 Explain the purpose of the 'pm.environment' object in Postman scripts.
 'pm.environment' is an object in Postman scripts that allows you to access and manipulate variables at the environment level. It is useful for dynamic value assignments.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 15
 How do you handle dynamic variables in Postman?
 Dynamic variables in Postman can be handled using environment variables, global variables, or by extracting data from responses and storing them for later use.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 16
 How can you pass data between requests in Postman?
 Data can be passed between requests in Postman using variables. You can set variables in one request and use them in subsequent requests within the same collection.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 17
 Explain the purpose of the 'postman.setNextRequest' function.
 'postman.setNextRequest' is used to specify the next request to be executed after the current one. It is helpful for creating a sequence of requests.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 18
 Explain the purpose of the 'pm.environment.clear' function.
 'pm.environment.clear' is used to clear all variables in the current environment. It is helpful when you need to reset or clean up variables during script execution.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 19
 Explain the concept of Postman environments.
 Postman environments allow you to create sets of variables that can be used across requests. This is useful for managing different configurations, such as development and production.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
-Вопросы и ответы для опытного / экспертного уровня
+
 Вопрос 20
 Explain how you can share a Postman collection with others.
 Postman collections can be shared by exporting them as a JSON file or by using the Postman API. You can also generate a public link to share the collection with others.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 21
 What is the purpose of the Postman test script?
 The test script in Postman is used to write assertions and validations. It allows you to verify the response data and ensure that the API is behaving as expected.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 22
 How do you extract data from a response in Postman?
 Data can be extracted from a response in Postman using the 'Tests' tab. You can write JavaScript code to extract and store values from the response.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 23
 Explain the difference between 'pm.test' and 'pm.expect' in Postman.
 'pm.test' is used to define test cases in Postman scripts, while 'pm.expect' is used to set expectations for assertions. Both are used in the 'Tests' tab.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 24
 How can you handle time delays in Postman scripts?
 Time delays can be handled in Postman scripts using the 'setTimeout' function. It allows you to introduce delays between requests or script executions.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 25
 Explain the concept of Postman monitors.
 Postman monitors are used for automated and scheduled API testing. They allow you to run collections at predefined intervals and monitor API performance.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 26
 What is the Postman Sandbox?
 The Postman Sandbox is a JavaScript execution environment within Postman. It allows you to write and run scripts for requests, tests, and pre-request scripts.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 27
 How can you handle errors in Postman scripts?
 Errors in Postman scripts can be handled using try-catch blocks. This allows you to catch and manage errors, preventing them from affecting the entire script execution.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 28
 What is the purpose of the 'pm.sendRequest' function in Postman?
 'pm.sendRequest' is used to send an HTTP request from within a Postman script. It allows you to make additional requests based on the results of the current request.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 29
 How do you handle CSRF tokens in Postman?
 CSRF tokens in Postman can be handled by extracting them from responses and including them in subsequent requests using variables.
-Сохранить для повторения
-Это полезно?
-Да
-Нет
-Добавить комментарий
-Посмотреть комментарии
+
 Вопрос 30
 How do you handle data-driven testing in Postman?
 Data-driven testing in Postman can be achieved by using data files, such as CSV or JSON, to provide different sets of input data for the same request or collection of requests.
 
-60+ Top Postman Interview Questions & Answers
-By Haroon Ahamed Kitthu
-Share This Article:
-Last updated on Jun 16, 202682408
-60+ Top Postman Interview Questions and Answers
-Postman is a widely used API testing and development tool that simplifies working with APIs. As the demand for robust and efficient APIs grows, proficiency in using Postman has become a valuable skill for software developers, quality assurance engineers, and API enthusiasts.
-
-To help you prepare for an interview focused on Postman, we have compiled a comprehensive list of common Postman interview questions. Whether you are a beginner or have some experience with Postman, these questions will cover various aspects of the tool, from basic concepts to advanced features.
-
-Whether you are a beginner aiming to enter the world of API testing or an experienced professional looking to validate your skills, this collection of Postman interview questions will serve as a valuable resource to help you prepare effectively. 
-
-Want a Top Software Development Job? Start Here!AI-Powered Full Stack Developer ProgramExplore ProgramWant a Top Software Development Job? Start Here!
+    ***************************************************************************
+        ***************************************************************************
+        ***************************************************************************
 Most Asked Postman Interview Questions
 1. Explain the purpose and benefits of using Postman for API testing? 
 Postman is a powerful tool for API testing that offers numerous benefits. Its purpose is to simplify and streamline the process of testing APIs. Some benefits of using Postman for API testing include:
