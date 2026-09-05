@@ -1,9 +1,10 @@
-Skip to content
-Codingdeeply
-Home
-Start here!
-Basics
-Programming Languages
+Вопросы по Python
+Какие модули / библиотеки вы используете? Что вам нравится/ не нравится в них?
+Каковы поддерживаемые типы данных есть в Python?
+В чем разница между кортежем и списком в Python?
+Чтобы разобраться с дополнительными вопросами по Python, стоит ознакомиться с этим полезным ресурсом, созданным Toptal.
+
+	
 Full Stack Python Vs. Full Stack Javascript
 Being a full-stack developer is a highly wanted job; besides that, it is also one of the higher-paying jobs.
 
