@@ -457,13 +457,6 @@ public class MyRestController {
 
 Spring MVC: создание веб-сайтов и RESTful сервисов
 
-*************************************************************************
-	*************************************************************************
-	*************************************************************************
-	*************************************************************************
-	*************************************************************************
-	*************************************************************************
-	*************************************************************************
 1. What is the Spring Framework and why Java Programmers should use it?
 Answer: It’s one of the most common Java Spring Framework interview questions. Spring is one of the most widely used Java EE Framework used by Java Programmers for code development. It provides Dependency Injector, MVC flow, Aspect Oriented Programming, and IOC Container to the Java Programmers. Useful in normal Java applications, it helps to acquire loose coupling in different elements.
 
@@ -699,35 +692,6 @@ Avoid autowiring and try to configure bean dependencies.
 Use only the modules that you need. Do not keep any extra dependencies that are added during the creation of projects via Spring Tool Suite Templates.
 Don’t use dependency injection just for the sake of loose coupling, as it will become difficult for you to maintain. Just use it for actual benefit.
 To understand the purpose easily, use the proper annotations for components.
-Final Words
-So here we’ve covered the top interview questions on Java Spring Framework. Hope, this post on Spring Framework interview questions and answers will help you to ace your upcoming spring interview. If you know some more interview questions on Spring Framework, make sure to add it in a comment. We’d be happy to cover them in this article with the detailed answers. 
-
-Getting a certification also proves as an add-on in your interview preparation. If you are aspired to achieve a better job as a Java developer, you can validate your skills and knowledge with a Java certification. Check out our Oracle Java certifications training that will help you become a certified Java professional.
-
-Have any questions regarding Java Spring Framework? Ask us in the comment below, we’ll be happy to answer you.
-
- About the Author
- More from Author
-
-About Aditi Malhotra
-Aditi Malhotra is the Content Marketing Manager at Whizlabs. Having a Master in Journalism and Mass Communication, she helps businesses stop playing around with Content Marketing and start seeing tangible ROI. A writer by day and a reader by night, she is a fine blend of both reality and fantasy. Apart from her professional commitments, she is also endearing to publish a book authored by her very soon.
-Top 45 Fresher Java Interview Questions - March 9, 2023
-25 Free Practice Questions – GCP Certified Professional Cloud Architect - December 3, 2021
-30 Free Questions – Google Cloud Certified Digital Leader Certification Exam - November 24, 2021
-4 Types of Google Cloud Support Options for You - November 23, 2021
-APACHE STORM (2.2.0) – A Complete Guide - November 22, 2021
-Data Mining Vs Big Data – Find out the Best Differences - November 18, 2021
-Understanding MapReduce in Hadoop – Know how to get started - November 15, 2021
-What is Data Visualization? - October 22, 2021
-← Previous Post
-Next Post →
-Related Posts
-Sun Certified Java Associate (SCJA) CX-310-019 Certification Exam Preparation
-Leave a Comment / Java / By Aditi Malhotra
-Oracle Java Certifications – Change of testing centre to Pearson VUE from Prometric
-Leave a Comment / Java / By Aditi Malhotra
-1 thought on “Top 25 Spring Framework Interview Questions”
-
 
 Q : What is the need for a Component Scan?
 If you understand component scan, you understand Spring.
@@ -1104,44 +1068,7 @@ As far as Java is concerned, more method calls does not mean bad performance.
 Q : What is the difference between put and patch request methods?
 PUT : When you update the entire resource - when you want to update all/most of the fields of a resource.
 PATCH: When you want to update specific details of the resource. All other details remain unchanged.
-Java and Spring Interview Guides
-Image
 
-
- Edited by Kamila
-Here’s a comprehensive guide to frequently asked Spring Boot interview questions, complete with answers for all experience levels.
-
-In the current agile development environment, all stakeholders, from the product manager, design head, developers, testers, and DevOps, teamwork against time, as all have deadlines. The design team and developers are always looking for a framework that can build applications with little configuration and has a built-in server to run the application.
-
-Spring framework, where a lightweight POJO model was used during class creation, free linking testable modules, support of various configuration methods, and middleware-level services were installed at all architectural layers of web application development.
-
-Table of Contents: [Show]
-
-Quiz on Spring Boot Interview Questions
-Spring Boot Interview Questions QUIZ
-Master Your Spring Boot Interview Skills
-Question 1 of 15
-Advanced Questions
-What is the purpose of @ConditionalOnProperty annotation?
-A Create new application properties with detailed configuration options
-B Validate property values with comprehensive business rule checking
-C Encrypt property values using advanced security algorithms
-D Conditionally enable beans based on properties
-Next Question
-
-Spring Boot Interview Questions
-The lengthy preparation involved in configuring the Spring framework contributed to the introduction of the Spring Boot framework.
-
-An extension of the Spring framework, Spring Boot, features pre-configured web starter kits that act as application servers, essential for Spring projects, enabling developers to quickly create ready-to-run services.
-
-This article will prepare you for Spring Boot Interview Questions that are often asked during the interview. The answers to the questions have been well researched and will surely bring success during the interview.
-
-About Spring Boot
-Spring Boot is a Java framework that helps in creating production-grade, stand-alone Spring-based applications used to create Java microservices.
-
-Microservice is a service-oriented architecture where a collection of smaller, low-cost, efficient services is created using any programming language to build a monolithic application. Some of the well-known Java microservice frameworks are Spring Boot, Jersey, Swagger, Dropwizard, RestExpress, and Spark.
-
-The Spring Boot interview questions listed are for beginners, experienced, and advanced candidates appearing for the interview, and may have experience working on Spring Boot. This article aims to offer all possible questions on Spring Boot.
 
 Basic Spring Boot Interview Questions for Beginners
 Q #1) What is a Java microservice?
@@ -1375,13 +1302,7 @@ Q #20) Describe Spring Boot CLI and how to execute the Spring boot project with 
 Answer: Spring Boot CLI is a command-line interface for Spring Boot for quick starting spring and creating quick Spring-based applications. We can execute the Spring Boot application with the Spring Boot command line in the following steps:
 
 Write a groovy source code happy.groovy.
-1
-2
-3
-4
-5
-6
-7
+
 @RestController
 class WriteQuote {
 @RequestMapping("/")
@@ -1435,15 +1356,6 @@ Answer: In-memory database utilizes system memory to store data instead of disk 
 
 Dependencies between the H2 database and spring-boot-starter-data-jpa are configured as below
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -1455,11 +1367,6 @@ Dependencies between the H2 database and spring-boot-starter-data-jpa are config
 </dependency>
 The parameters listed below are added to the application.properties file as a configuration to connect to an in-memory store with a username as sa and an empty password.
 
-1
-2
-3
-4
-5
 spring.datasource.url=jdbc:h2:mem:sampledb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
@@ -1467,8 +1374,6 @@ spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 In addition, Spring Boot has two more properties to manage the h2 console, such as enable/disable database trace logs and remote access to the H2 console by adding the following in application.properties file.
 
-1
-2
 spring.h2.console.settings.trace=false
 spring.h2.console.settings.web-allow-others=false
 Q #24) How can we use profiles to configure environment-specific configuration with a Spring Boot application?
@@ -1619,10 +1524,6 @@ Answer: In order to deploy the Spring Boot web application,
 
 #1) Add the following plugin in pom.xml
 
-1
-2
-3
-4
 <plugin>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -1645,13 +1546,6 @@ Answer: Docker is a service product platform for OS-level virtualization deliver
 
 #1) Create a Spring Boot application, docker-message-server, that reveals one endpoint and returns a static message as below
 
-1
-2
-3
-4
-5
-6
-7
 @RestController
 public class DockerMessageControllerClass {
 @GetMapping(“/messages”)
@@ -1671,10 +1565,6 @@ We can access the working Spring Boot application at localhost:8080/messages.
 
 #4) To Dockerize the application, Dockerfile is created as below
 
-1
-2
-3
-4
 FROM openjdk:8-jdk-alpine
 MAINTAINER baeldung.com
 COPY target/ docker-message-server-1.0.0.jar message-server-1.0.0.jar
@@ -1701,8 +1591,6 @@ Answer: Written in Java, Apache ActiveMQ is an open-source multi-protocol messag
 
 #4) Create SpringBootApplication.java and use JMSTemplate to add new queues as ‘myqueues’
 
-1
-2
 JMSTemplate jms = ctx.getBean(JmsTemplate.class);
 jms.convertAndSend(“myqueues”,”test message”);
 #5) Create application.properties as spring.activemq.broker-url = tcp://localhost:61616, start ActiveMQ, start spring boot application by running SpringBootApplication as Java application.
@@ -1717,15 +1605,7 @@ Spring Initializer uses an interface at http://start.spring.io/, to build the Sp
 The interface is as shown below with details pre-filled in the interface below:
 Interface - Spring Boot Interview Questions
 Use Confluent Cloud fully managed Apache Kafka as a service, publish and read messages from Kafka, and create a simple Java class as below:
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 public class User {
 private String username;
 private int userage;
@@ -1745,15 +1625,7 @@ Q #39) List the steps to implement swagger using Spring Boot
 Answer: Swagger is an open source set of rules, specs, and tools for describing and developing interactive, machine, and human-readable RESTful APIs.
 
 Create an entity with the name AppUser
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 @Entity
 public class AppUser {
 @Id
@@ -1764,17 +1636,12 @@ private String email;
 //getters and setter
 }
 Create UserRepository as below to add CRUD operations to the AppUser entity
-1
-2
-3
+
 @Repository
 public interface UserRepository extends CrudRepository <AppUser, Long> {
 }
 Import SpringDataRestConfig class to SpringFoxConfiguration class
-1
-2
-3
-4
+
 @EnableSwagger2WebMvc
 @Import (SpringDataRestConfig.class) 
 public class SpringFoxConfiguration {
@@ -1795,45 +1662,6 @@ Spring Boot is used to create a standalone application jar without any deploymen
 Spring Boot interview questions are the most often asked questions by industry experts, and we have well-researched their answers for candidates’ success during Spring Boot interviews.
 
 For more Spring Boot-related guides, you can explore our range of tutorials below:
-
-Ngrok In Spring Boot And Nodejs Based Application
-25+ Top Spring MVC Interview Questions and Answers
-Top 48 Spring Interview Questions (Crack an Interview in 2026)
-REST API Testing With Spring RestTemplate And TestNG
-Was this helpful?
-Recommended Reading
-35+ Top Apache Tomcat Interview Questions and Answers
-interview questionsonapache tomcat
-We will learn the complete functionality of Apache Tomcat in this article. You will get to know more about what exactly Apache Tomcat is, what the use of Apache Tomcat is, the default ports of Tomcat, Web container of it, and what the types of batch and script files are…
-
-25+ Top Spring MVC Interview Questions and Answers
-Spring Interview Qusetions
-Most Popular Spring MVC Interview Questions with Answers for Entry Level and Experienced Candidates: Spring is a powerful framework that is used all over the world by Java developers to develop Java Enterprise Web applications. Spring MVC Stands for Model View and Controller. Just like other frameworks, Struts, Spring are…
-
-30+ TOP Servlet Interview Questions and Answers (2026 LIST)
-Servlet Interview Questions and Answers
-Most frequently asked Servlet interview questions and answers to help you in interview preparation: This series of Servlet questions will guide you through any Servlet interview. It includes all about what a servlet is t, why Servlet came into the picture, the life cycle of Servlet and its methods, Load…
-
-35 Frequently Asked MongoDB Interview Questions And Answers
-MongoDB interview questions (1)
-This tutorial provides frequently asked MongoDB interview questions and answers with explanations to help you prepare for the MongoDB interview. The invention of various technologies like Java and ASP.NET enabled the development of web-based applications for e-commerce, healthcare, online purchases, research, and innovations. It was difficult to store unstructured data…
-
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-ru.roborock.com
-Реклама
-Серия Roborock F25 Combo: идеальный выбор 5 в 1 для дома
-Узнать больше
-
-Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
 
 Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
 
@@ -1859,32 +1687,6 @@ ru.roborock.com
 Ответ
 11. Как узнать, какие автоконфигурации Spring Boot применяются при запуске и какие условия оцениваются?
 Ответ
-Заключение
-Очевидно, нет никакой гарантии, что вы ответите на эти вопросы на собственном собеседовании по Spring Boot, хотя знание (и понимание) ответов на них должно стать прочной основой для любого интервью.
-
-Если вы хотите получить более глубокое представление обо всей экосистеме Spring, вы также можете ознакомиться с другими статьями о Spring в блоге автора.
-
-Примечание переводчика. Переводы 2 статей из блога  автора о Spring есть на Хабр:
-
-Что такое Spring Framework? От внедрения зависимостей до Web MVC
-
-Spring MVC: создание веб-сайтов и RESTful сервисов
-
-Из комментариев читателей. Одно замечание по вопросу № 3., я думаю, что рядом с Initializr также Bootify.io - хороший вариант.
-
-
-11 Spring Boot Interview Questions That Make You Think - header image
-11 Spring Boot Interview Questions That Make You Think
-Last updated on December 12, 2020 - 6 comments
-Here are 11 Spring Boot interview questions that don't focus on trivial details, but rather make you think and thus learn a lot along the way.
-
-Most lists of Spring Boot Interview questions make you memorize random details from the Spring Boot documentation. But memorization is a poor substitute for truly understanding and feeling confident about Spring Boot.
-
-So today, we’re going to take a different approach. Rather than listing 50 questions on Spring Boot minutiae, we’re going to focus on 11 that make you think and thus learn a lot along the way.
-
-Here they are, in random order.
-
-(Note: If you, yourself, are giving Spring Boot Interviews, you might want to ask these questions in an open-end format leading to discussions, instead of expecting text-book answers)
 
 1. Is the following statement true or false: "Every Spring Boot application is a web application running within an embedded Apache Tomcat". Give reasons for your answer.
 The statement is false.
@@ -1970,31 +1772,6 @@ Spring Boot Actuator can provide that information, through HTTP or JMX endpoints
 
 Do note, that the information on evaluated conditions is a bit "raw" and not easily digested. For that, read this guide to make sure you understand how Spring Boot’s auto-configurations work.
 
-Fin
-There is obviously no guarantee that you will meet these questions in your own Spring Boot interview, though knowing (and understanding) the answers to them should prove as a solid foundation for any interview.
-
-If you want to get a deeper understanding of the entire Spring ecosystem, you might also want to check out the other Spring articles on my blog and the Confident Spring Developer course.
-
-Do you have any other questions you think might be useful for interviews? Let me know in the comment section.
-
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-idol.ru
-Реклама
-Перейти на сайт
-
-Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
-
-Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
-
 1. Верно или ложно следующее утверждение: «Каждое приложение Spring Boot - это веб-приложение, работающее во встроенном Apache Tomcat». Обоснуйте свой ответ.
 Ответ
 2. В чем разница между Spring Boot и Spring MVC? Или между Spring Boot и Spring Framework? Можете ли вы использовать их вместе в одном проекте?
@@ -2017,93 +1794,10 @@ idol.ru
 Ответ
 11. Как узнать, какие автоконфигурации Spring Boot применяются при запуске и какие условия оцениваются?
 Ответ
-Заключение
-Очевидно, нет никакой гарантии, что вы ответите на эти вопросы на собственном собеседовании по Spring Boot, хотя знание (и понимание) ответов на них должно стать прочной основой для любого интервью.
-
-Если вы хотите получить более глубокое представление обо всей экосистеме Spring, вы также можете ознакомиться с другими статьями о Spring в блоге автора.
-
-Примечание переводчика. Переводы 2 статей из блога  автора о Spring есть на Хабр:
-
-Что такое Spring Framework? От внедрения зависимостей до Web MVC
-
-Spring MVC: создание веб-сайтов и RESTful сервисов
-
-Из комментариев читателей. Одно замечание по вопросу № 3., я думаю, что рядом с Initializr также Bootify.io - хороший вариант.
-
-
-Источник: https://habr.com/ru/post/544472/
-
-Поделиться ссылкой: 
-Вернуться к списку
-
-sbercity.ru
-Реклама
-
-angiopharm.promo.page
-Реклама
-•
-16+
-Дельфинья кожа: как добиться сияния без инъекций
-
-bestmebelshop.ru
-Реклама
-
-Угловой Шкаф-купе Калипсо с полками
-67 390 ₽
-
-hds.ru
-Реклама
-•
-16+
-
-Научись рисовать на графическом планшете
-
-sbercity.ru
-Реклама
-
-HelixExpress
-Реклама
-
-ambicioni.ru
-Реклама
-
-Витрина Cadore
-110 430 ₽
-
-diamonds-are-forever.ru
-Реклама
-
-Бандажное кольцо (на весь палец) с бриллиантами
-1 320 000 ₽
-
-banapal.ru
-Реклама
-
-Декоративная штора VGT «Мокрый шелк» LUX
-2 240 ₽
-
-Интересные статьи
-11 команд PowerShell для Office 365, которые полезно знать
-11 команд PowerShell для Office 365, которые полезно знать
-Использование PowerShell для управления Office 365 может сделать вашу работу быстрее, эффективнее и проще. PowerShell предоставляет доступ к информации о среде Office 365, к которой н...
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-На Хабре есть немало статей о беспроводной зарядке смартфонов, и в комментариях к каждой из них, нет-нет, да и проскользнет наивный вопрос, который местные старожилы мгновенно заминусуют,...
-Обеспечение границ компонент чистой архитектуры с помощью Spring Boot и ArchUnit
-Когда мы создаем программное обеспечение, мы хотим создавать «-способности»: понятность, ремонтопригодность, расширяемость и - в тренде сейчас - декомпозицию (чтобы мы могли разложить мон...
-Почему об этом стоит задуматься всем: ответы на самые актуальные вопросы о коронавирусе Covid-19
-Автор статьи Dave Troy — исследователь онлайн-дезинформации и лжи, а также эксперт в области расчётов, связанных со статистикой болезней. В последнее время он отвечал на многие вопросы о Covid-19...
-Бизнес без технологий. Деньги, которые вас потеряли
-Бизнес без технологий. Деньги, которые вас потеряли
-Может показаться, что довольно опрометчиво писать на Хабр статью о компаниях, которые относятся к технологиям с недоверием, сильно на них экономят или не используют вовсе. На самом деле, такие ре...
-
-
-Search Tutorials
 
 
 Spring Boot Interview Questions(2026)
 
-In this post we will look at Spring Boot Interview questions. Examples are provided with explanation.
 What is Spring Boot?
 What are advantages of Spring Boot?
 Which build tool have you used to develop Spring Boot Application?
@@ -2215,7 +1909,6 @@ The ELK Stack consists of three open-source products - Elasticsearch, Logstash, 
 Spring Boot microservice elk stack example
 Elasticsearch is a NoSQL database that is based on the Lucene search engine.
 
-
 Logstash is a log pipeline tool that accepts inputs from various sources, executes different transformations, and exports the data to various targets. It is a dynamic data collection pipeline with an extensible plugin ecosystem and strong Elasticsearch synergy
 Kibana is a visualization UI layer that works on top of Elasticsearch.
 These three projects are used together for log analysis in various environments. So Logstash collects and parses logs, Elastic search indexes and store this information while Kibana provides a UI layer that provide actionable insights.
@@ -2280,11 +1973,7 @@ Spring Boot Tutorial-Spring Data JPA
 Spring Boot JDBC Example
 
 How to develop a full stack application using Spring Boot and Angular?
-In full stack application we expose the back end point to get the data. This data can then be used by any application or device as per the need. In future even if another front end device is to be used, there will not be much change and the new device will need to consume these end points.
-Full Stack Application Example
-The project architecture we will be developing is as follows-
-Angular 7 and Spring Boot Application
-Angular 7 + Spring Boot Tutorials
+
 How to upload a file using Spring?
 Spring Boot + File Upload Example
 How to implement interceptors with Spring Boot?
@@ -2384,9 +2073,8 @@ Using vault we will be retrieving the credentials from the vault key/value store
 Spring Cloud Tutorial - Secure Secrets using Spring Cloud Config + Vault Example
 
 
-Top Spring Interview Questions for Freshers
 
-Table of Contents
+Top Spring Interview Questions for Freshers
 
 Practice Spring Interview Questions
 1. Dependency injection mechanism
@@ -2439,11 +2127,7 @@ Practice Spring Interview Questions
 48. RestControllerAdvice usage
 49. WebClient configuration
 50. Custom Jackson serializer
-27 February, 2025 (Last Updated)
-Top Spring Interview Questions for Freshers
-Top Spring Interview Questions for Freshers Are you preparing for your first Spring interview and wondering what questions you might face?Understanding the key Spring interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Spring interview questions and answers for freshers and make a strong impression in your interview.fsd student program banner horizontal
-Practice Spring Interview Questions and Answers
-Below are the top 50 Spring interview questions for freshers with answers:
+
 1. How does Spring’s Dependency Injection work, and how would you use it to decouple your application?
 Answer:Dependency Injection (DI) in Spring is a design pattern that removes the need for hard-coded dependencies, allowing objects to be injected at runtime. You can use constructor injection, setter injection, or field injection. For example, to decouple a service from its data access layer, you can inject a repository interface into the service rather than creating an instance of the repository class.
 2. Explain how to create a custom annotation in Spring and its practical use case.
@@ -2838,80 +2522,13 @@ builder.modules(module);
 };
 }
 }
-Final Words
-Getting ready for an interview can feel overwhelming, but going through these Spring fresher interview questions can help you feel more confident.
-With the right preparation, you’ll ace your Spring interview but don’t forget to practice the Spring core concepts, dependency injection, and Spring Boot-related interview questions too.
-Explore More Interview Questions
-Python
-Java
-SQL
-React
-JavaScript
-C Programming
-HTML
-CSS
-Angular
-C++
-Spring Boot
-Node JS
-Excel
-C#
-DBMS
-PHP
-Linux
-Operating System
-MySQL
-FAQs
-The most common interview questions for Spring often cover topics like dependency injection, Spring MVC, Spring Boot, and transaction management.
-add-one add-two
-Author
-Aarthy R
-
-Aarthy is a passionate technical writer with diverse experience in web development, Web 3.0, AI, ML, and technical documentation. She has won over six national-level hackathons and blogathons. Additionally, she mentors students across communities, simplifying complex tech concepts for learners.
-
-instagram-icon
-linkedin-icon
-Subscribe
-Related Posts
-Top Spring Interview Questions for Freshers
-July 3, 2026
-Interview Questions
-Top Prompt Engineering Interview Questions for Freshers
-Prompt engineering is now a practical AI skill for freshers entering software, data, content, product, marketing, and automation roles. Reports show …
-
-Top Spring Interview Questions for Freshers
-July 3, 2026
-Interview Questions
-AI Engineer Interview Questions and Answers
-AI engineering has become one of the most in-demand career paths for freshers and professionals entering software, data, automation, and …
-
-Top Spring Interview Questions for Freshers
-July 3, 2026
-Interview Questions
-Top Jenkins Interview Questions for Freshers
-Jenkins is an important CI/CD tool for freshers preparing for DevOps, software testing, automation, cloud, and backend development roles. It …
-
-
-Placement Preparation Logo
-an HCL GUVI product
-
-Every student has their own story. Find the guidance and resources you need to make learning fun and smart. Let's shape a future that feels right for you
-
 
 Что такое Spring Framework? 
- 
-Spring Framework – это платформа приложений с открытым исходным кодом, написанная на Java. Он предназначен для упрощения проектирования приложений за счет автоматической обработки низкоуровневых функций. Это позволяет разработчикам сосредоточиться на бизнес-логике. Spring также очень легко адаптируется со многими модулями, которые расширяют возможности фреймворка.
- 
-
-Хотя Spring не навязывает конкретную модель программирования, она приобрела широкую популярность в сообществе Java в качестве дополнения к корпоративной модели JavaBeans (EJB). Отчасти это связано с уникальным набором функций Spring, таких как инверсия управления и аспектно-ориентированное программирование (AOП), которые отлично подходят для работы с компонентами.
-
- 
-
+ Spring Framework – это платформа приложений с открытым исходным кодом, написанная на Java. Он предназначен для упрощения проектирования приложений за счет автоматической обработки низкоуровневых функций. Это позволяет разработчикам сосредоточиться на бизнес-логике. Spring также очень легко адаптируется со многими модулями, которые расширяют возможности фреймворка.
+ Хотя Spring не навязывает конкретную модель программирования, она приобрела широкую популярность в сообществе Java в качестве дополнения к корпоративной модели JavaBeans (EJB). Отчасти это связано с уникальным набором функций Spring, таких как инверсия управления и аспектно-ориентированное программирование (AOП), которые отлично подходят для работы с компонентами.
 Платформа особенно подходит для корпоративных и финансовых приложений благодаря своей скорости, безопасности и простоте построения транзакционных систем. Фреймворк Spring обладает многими преимуществами по сравнению с Java EE или другими фреймворками на основе Java, такими как:
 
- 
-
-• Spring позволяет разрабатывать приложения корпоративного уровня с помощью POJOs, поэтому вам не нужен другой продукт-контейнер EJB.
+ • Spring позволяет разрабатывать приложения корпоративного уровня с помощью POJOs, поэтому вам не нужен другой продукт-контейнер EJB.
 
 • Spring предлагает согласованный, масштабируемый интерфейс управления транзакциями как для локальных транзакций, так и для глобальных транзакций.
 
@@ -2923,20 +2540,10 @@ Spring Framework – это платформа приложений с откр�
 
 • Spring предоставляет отличный API, поэтому легко работать с технологическими исключениями.
 
- 
+ Большинство компаний, которым нужна экспертиза Spring Framework, - это финансовые компании, такие как банки и инвестиционные фирмы. Эти компании заинтересованы в использовании Spring для обеспечения безопасности и оптимизации своего бухгалтерского учета и продаж. Поэтому большинство вопросов для интервью будут проверять ваши знания об этих функциях, таких как внедрение зависимостей, аспектно-ориентированное программирование и MVC.
 
-Большинство компаний, которым нужна экспертиза Spring Framework, - это финансовые компании, такие как банки и инвестиционные фирмы. Эти компании заинтересованы в использовании Spring для обеспечения безопасности и оптимизации своего бухгалтерского учета и продаж. Поэтому большинство вопросов для интервью будут проверять ваши знания об этих функциях, таких как внедрение зависимостей, аспектно-ориентированное программирование и MVC.
+ При устройстве на должность разработчика Spring, вам, безусловно, будут заданы всеобъемлющие вопросы о том, почему используется Spring и какие преимущества он предлагает. Чтобы помочь вам подготовиться, мы собрали 33 лучших вопросов для собеседования, чтобы освежить ваши знания по каждой из этих категорий.
 
- 
-
-При устройстве на должность разработчика Spring, вам, безусловно, будут заданы всеобъемлющие вопросы о том, почему используется Spring и какие преимущества он предлагает. Чтобы помочь вам подготовиться, мы собрали 33 лучших вопросов для собеседования, чтобы освежить ваши знания по каждой из этих категорий.
-
- 
-
-Давайте начнем
-
- 
-Топ вопросов для собеседования по Spring Framework:
  
 1. В чем преимущества Spring?
 • Spring является легким в использовании ресурсов, при этом базовая структура Spring весит всего 2 МБ памяти.
@@ -2955,19 +2562,13 @@ Spring Framework – это платформа приложений с откр�
 
 • Аспектно-ориентированный (AOP): Spring поддерживает аспектно-ориентированное программирование, парадигму, которая отделяет бизнес-логику приложений от системных служб.
 
- 
-
-2. Что такое файл конфигурации для Spring?
+ 2. Что такое файл конфигурации для Spring?
 Файл конфигурации для Spring представляет собой XML-файл, содержащий информацию о классе для проекта. Они описывают конфигурацию каждого класса, то, как они представлены другим классам, и зависимости во всей программе.
 
- 
-
-3. Каковы различные модули Spring Framework?
+ 3. Каковы различные модули Spring Framework?
 Всего существует около 20 модулей, которые разделены на уровни Основного контейнера, Доступа к данным/интеграции, интернета, AOP (Аспектно-ориентированное программирование), Инструментария и тестирования.
 
- 
-
-Контейнер для Core: Ядро Spring Framework содержит четыре модуля.
+ Контейнер для Core: Ядро Spring Framework содержит четыре модуля.
 
 • Spring Core
 
@@ -3013,9 +2614,7 @@ Web
 
 • Обмен сообщениями: Добавлена поддержка STOMP, модели программирования аннотаций, и позволяет направлять сообщения STOMP от клиентов WebSocket.
 
- 
-
-4. Каковы различные компоненты приложения Spring?
+ 4. Каковы различные компоненты приложения Spring?
 Приложения Spring содержат пять компонентов:
 
 1. Интерфейс: Определяет функции программы.
@@ -3028,37 +2627,22 @@ Web
 
 5. Пользовательская программа: Вызывает функции по всей программе
 
- 
-
 5. Что такое внедрение зависимостей?
 Внедрение зависимостей (DI) - это концепция, которая определяет, как должно быть связано несколько классов. Это один из примеров Инверсии контроля. Вам не нужно явно подключать службы и компоненты в коде при использовании внедрения зависимостей. Вместо этого вы описываете службы, необходимые каждому компоненту, в файле конфигурации XML и разрешаете контейнеру IOC автоматически подключать их.
 
-
-
-
- 
-
 6. Что такое Spring IoK контейнер?
 Контейнер IoC создает, настраивает и соединяет объекты, одновременно управляя их жизненным циклом. Контейнер получает инструкции по этим областям из метаданных конфигурации, предоставленных пользователем.
-
- 
 
 7. Каковы типы IoK?
 • Контейнер BeanFactory: Этот заводской класс содержит предварительно упакованную коллекцию компонентов, которые создаются при вызове клиентами. Это самый простой контейнер для поддержки DI.
 
 • Контейнер ApplicationContext: Построенный поверх контейнера BeanFactory, этот контейнер обеспечивает дополнительные функциональные возможности, ориентированные на предприятие. Например, контейнеры ApplicationContext предоставляют возможность разрешать текстовые сообщения и публиковать события приложения.
 
- 
-
 8. Что такое Аспектно-ориентированное программирование (AOП)?
 AOП-это метод программирования, который позволяет программистам модулировать поведение, используемое в типичных подразделениях ответственности, используемых в объектно-ориентированном программировании. Основная конструкция аспектов AOП – это поведение, применимое к разным классам. Извлечение этих моделей поведения из отдельных компонентов в аспекты позволяет легко использовать их повторно.
 
- 
-
 9. Что такое Spring Bean?
 Это объекты, созданные из метаданных конфигурации при их передаче в контейнер IOC. Они составляют основу всех Spring. Контейнер IOC создает экземпляры, настраивает, подключает и управляет каждым компонентом.
-
- 
 
 10. Каковы общие реализации ApplicationContext?
 Тремя наиболее популярными контейнерами являются:
@@ -3069,16 +2653,10 @@ AOП-это метод программирования, который позв
 
 3. WebXmlApplicationContext: Загружает все определения компонентов в веб-приложение из XML-файла.
 
- 
-
 11. В чем разница между BeanFactory и ApplicationContext?
 BeanFactory – это базовый, компактный контейнер с ограниченной функциональностью. Его лучше всего использовать для простых задач или при использовании машин с низким ресурсом.
 
- 
-
 ApplicationContext – это расширенный, более интенсивный контейнер с расширенным интерфейсом и дополнительными возможностями, такими как AOP. Этот контейнер лучше всего использовать, когда вам требуется больше функциональности, чем на заводе Bean, и у вас достаточно ресурсов, доступных на машине.
-
- 
 
 12. Как вы добавляете компонент в Spring?
 Мы должны аннотировать метод: @Bean аннотация. Когда JavaConfig встретит этот метод, он выполнит этот метод и зарегистрирует возвращаемое значение в качестве компонента в BeanFactory.
@@ -3104,10 +2682,6 @@ this.address = address;
 } 
 }
 
- 
-
- 
-
 13. Какие области Beans поддерживает Spring?
 Spring поддерживает пять областей bean
 
@@ -3120,8 +2694,6 @@ Spring поддерживает пять областей bean
 4. Сессия: Область определения компонента для сеанса HTTP в контексте приложения.
 
 5. Глобальная сессия: Расширяет определение компонента до глобального HTTP
-
- 
 
 14. Каковы этапы жизненного цикла компонента?
 Жизненный цикл компонента состоит из семи этапов:
@@ -3140,20 +2712,11 @@ Spring поддерживает пять областей bean
 
 7.       Постинициализация: Вызываются все определенные методы postProcessAfterInitialization (). Теперь bean завершен. Компоненты, реализующие DisposableBean, будут удалены с помощью функции destroy() после завершения их работы.
 
-
-
-
-
-
- 15. Объясните внутреннюю часть bean в Spring
+15. Объясните внутреннюю часть bean в Spring
 Внутренний компонент используется как свойство другого компонента. Внутренние компоненты могут быть определены в XML-файле конфигурации либо в элементах <property>, либо <constructor-arg> Все внутренние компоненты всегда имеют область действия как prototype и не имеют идентификаторов.
-
- 
 
 16. Что такое автоматическая проводка bean?
 Это функция Spring, которая позволяет контейнеру Spring автоматически устанавливать отношения зависимостей между сотрудничающими компонентами, просматривая BeanFactory. Автоматическая проводка может быть настроена для определения этих отношений с использованием имен компонентов, типов или даже конструкторов классов.
-
- 
 
 17. Как вы можете внедрить коллекции Java в Spring?
 Коллекции Java могут быть введены четырьмя различными способами:
@@ -3166,17 +2729,11 @@ Spring поддерживает пять областей bean
 
 <props>: Позволяет вводить коллекцию пар ключ-значение как с ключами, так и со значениями типа String.
 
- 
-
 18. Что такое Joinpoint?
 Joinpoint представляют собой любую точку в программе, в которой выполняется действие. Примеры Joinpoint включают в себя обработку исключения или выполнение метода. При использовании AOП только выполнение метода является точками соединения.
 
- 
-
 19. Что такое Advice в Spring?
 Advice – это действие, предпринятое в данной точке соединения. AOП использует Advice в качестве перехватчика до завершения выполнения метода.
-
- 
 
 20. Каковы типы рекомендаций для структуры Spring?
 До: Это советы, которые выполняются до методов joinpoint. Они помечены знаком @before.
@@ -3189,12 +2746,8 @@ Advice – это действие, предпринятое в данной т�
 
 Вокруг: Они выполняются до и после точки соединения и помечаются с помощью метки @Around аннотации.
 
- 
-
 21. Что такое Weaving?
 Weaving Spring – это процесс связывания элементов с другими типами приложений или объектами для создания рекомендуемых объектов.
-
- 
 
 22. Опишите поддержку Spring DAO
 Поддержка объектов доступа к данным (DAO) - это набор инструментов, которые упрощают работу с технологиями доступа к данным, такими как Hibernate и JDO, с улучшенной согласованностью. Он также автоматически улавливает технологические ошибки. Вместе они облегчают работу с DAOS и позволяют без ошибок переключаться между технологиями сохранения.
@@ -3213,15 +2766,8 @@ JDBC означает подключение к базе данных Java. Эт
 
 • SimpleJdbcTemplate
 
- 
-
 24. Что такое платформа Spring Model-View-Controller (MVC)?
 Платформа Spring MVC предоставляет архитектуру контроллера представления модели и готовые компоненты, используемые для разработки слабо связанных веб-приложений. Используя MVC, вы можете разделить различные аспекты программы, такие как бизнес, логика ввода и пользовательский интерфейс, сохраняя при этом слабую связь между ними. Это обеспечивает большую гибкость в ваших веб-приложениях.
-
-
-
-
-
 
 25. Каковы части фреймворка Spring MVC?
 Тремя основными частями MVC являются:
@@ -3233,22 +2779,15 @@ JDBC означает подключение к базе данных Java. Эт
 • Контроллеры: Это компоненты в DispatcherServlet, которые действуют как фильтры между вводом данных пользователем и ответом приложения. Контроллеры принимают ввод пользователя, решают, следует ли преобразовать его в Представление или Модель, и, наконец, возвращают преобразованный ввод в Распознаватель представлений для просмотра.
 
  
-
 26. Каковы различные части DispatcherServlet?
 Сопоставление обработчика: интерфейс, определяющий сопоставление между обработчиком и объектами запроса. Может использоваться для создания пользовательской стратегии сопоставления.
-
- 
 
 Контроллер: Определяет реакцию приложения на ввод данных пользователем путем сортировки запросов на ввод по желаемому результату. Входные данные либо немедленно возвращаются с представлением, либо преобразуются в Модель перед передачей в распознаватель представлений.
 
 Распознаватель представлений: Принимает и отображает модели с контроллера путем сопоставления имен представлений и фактических представлений.
 
- 
-
 27. Как можно включить проводку аннотаций в Spring?
 Чтобы разрешить подключение аннотаций, включите <context:annotation-config/> в свой файл конфигурации XML:
-
- 
 
 <beans 
 //... 
@@ -3262,12 +2801,8 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 //... 
 </beans>
 
- 
-
 28. Что такое Spring Boot?
 Spring Boot – это Java-фреймворк с открытым исходным кодом, используемый для создания микросервисов. Это проект, построенный на основе Spring, чтобы упростить задачу развертывания приложений Java. Его двумя основными компонентами являются Spring Framework и встроенные HTTP-серверы. 
-
- 
 
 Spring Boot используется для:
 
@@ -3280,43 +2815,23 @@ Spring Boot используется для:
 • Обеспечения взвешенного подхода к развитию
 
  
-
 Часто используются для быстрого запуска приложений Spring.
-
-
-
-
+	
 29. Что такое Реактивное программирование?
 Реактивное программирование – это парадигма программирования, которая основывается на запрограммированных действиях, запускаемых в связи с событиями, а не на хронологическом порядке кода. Реактивные программы эффективно используют компьютерные ресурсы и хорошо масштабируются всего несколькими потоками. Его непоследовательная форма позволяет избежать блокировки стека и поддерживать оперативность реагирования.
-
-
-
-
- 
 
 30. Что такое Spring webflux?
 Webflux – это реактивный веб-фреймворк, который служит альтернативой MVC. Webflux обеспечивает лучшую масштабируемость и предотвращает блокировку стека.
 
-
-
-
- 
-
 31. В чем разница между веб-клиентом и клиентом веб-тестирования?
 WebClient – это компонент платформы Web Reactive, который упрощает создание реактивных и неблокирующих веб-приложений.
 
- 
-
 Webtestclient является версией этого клиента со всеми теми же функциями, но отключен от реальных сред. Тестовому клиенту для работы не требуется живая среда HTTP-сервера, что делает его хорошей средой тестирования для новых приложений. Он может подключаться к любому серверу по HTTP-соединению или напрямую синхронизироваться с WebFlux для применения фиктивных HTTP-запросов и создания объектов ответа.
-
- 
 
 32. Может ли Spring Boot разрешить Spring MVC или Spring Web Flux в одном и том же приложении?
 Загрузка позволяет использовать и то, и другое в одном приложении, но может применяться только по одному за раз. Web Flux-это неблокирующая структура, в то время как MVC-это блокирующая структура, что делает их несовместимыми друг с другом.
 
- 
-
-33. Может ли Spring 5 интегрироваться с модульностью Jdk9?
+ 33. Может ли Spring 5 интегрироваться с модульностью Jdk9?
 Да, Spring 5 может интегрироваться с Jdk9. Вот как вы можете это сделать:
 
 Создайте новый класс
@@ -3328,14 +2843,11 @@ return "HelloWorld";
 } 
 }
 
- 
-
 Создайте новый модуль
 
 module com.hello { 
 export com.hello; 
 }
-
  
 
 Создайте новый Java проект
@@ -3344,7 +2856,6 @@ module com.hello.client {
 requires com.hello; 
 }
 
- 
 
 Протестируйте новый модуль
 
@@ -3355,24 +2866,8 @@ log.info(helloWorld.sayHello());
 } 
 }
 
-
-70 вопросов и ответов на собеседовании по Spring Boot (2026)
-Автор:
-Джеймс ХартманДжеймс Хартман
-обновлено
-9 октября 2024
-
-Добавить Guru99 на Google
-вопросы для интервью по весенней загрузке
-
-Когда я готовился к собеседованиям по Spring Boot, я понял, насколько важно иметь под рукой правильный набор вопросов и ответов. Это руководство предлагает именно это. Полный список распространенных вопросов для собеседований по Spring Boot, который поможет вам чувствовать себя уверенно и подготовленным. Независимо от того, новичок вы или опытный разработчик, погружение в эти Вопросы и ответы на интервью Spring Boot повысит вашу готовность и даст вам необходимое преимущество.
-Содержание:
-
-Вопросы для собеседования по Spring Boot для первокурсников
 1) Объясните термин «Spring Boot».
 Это модуль Spring, который предлагает быструю разработку приложений для среды Spring. Модуль Spring используется для создания приложения на основе среды Spring, для которого требуется настроить несколько файлов Spring.
-
-👉 Скачать бесплатно PDF-файл: Вопросы и ответы для интервью Spring Boot >>
 
 2) Упомяните некоторые преимущества Spring Boot.
 Вот некоторые основные преимущества использования Spring-Boot:
@@ -3419,11 +2914,6 @@ java -jar
 $ java -jar myproject-0.0.1-SNAPSHOT.jar
 Чтобы остановить, используйте Ctrl+C
 
-СТАТЬИ ПО ТЕМЕ
-Язык выражений в JSP
-Загрузка и выгрузка файла JSP
-Что такое Maven Java (Archiтекстура)
-20 лучших вопросов и ответов на собеседовании Maven (2026 г.)
 8) Как изменить версию JDK в Spring Boot?
 Чтобы изменить версию JDK в Spring Boot, вы можете перезаписать ее, добавив файл java. Тег свойства версии, как указано:
 
@@ -3530,6 +3020,7 @@ Spring Boot поддерживает три основных встроенны�
 
 31) Каковы свойства Spring Boot?
 Spring Boot предлагает различные свойства, которые можно указать внутри файла application.properties нашего проекта. Это поможет вам установить такие значения, как номер порта сервера, конфигурацию подключения к базе данных и т. д.
+
 
 Вопросы для собеседования по Spring Boot для опытных
 32) В чем основная разница между JPA и Hibernate?
@@ -3692,18 +3183,6 @@ Java Вопросы на собеседовании Spring Boot
 74) Перечислите некоторые стартеры Spring Boot.
 Различные стартеры Spring Boot следующие:
 
-
-Table of Contents
-A.Spring overview
-B.Dependency Injection
-C.Spring Beans
-D.Spring Annotations
-E.Spring Data Access
-F.Spring Aspect Oriented Programming (AOP)
-G.Spring Model View Controller (MVC)
-H.Authentication and authorization
-
-A.Spring overview
 1. What is Spring?
 Spring is an open source development framework for Enterprise Java. The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make Java EE development easier to use and promote good programming practice by enabling a POJO-based programming model.
 
@@ -3878,7 +3357,6 @@ Setter-based dependency injection: Setter-based DI is accomplished by the contai
 28. Which DI would you suggest Constructor-based or setter-based DI?
 You can use both Constructor-based and Setter-based Dependency Injection. The best solution is using constructor arguments for mandatory dependencies and setters for optional dependencies.
 
-
 C.Spring Beans
 29. What are Spring beans?
 The Spring Beans are Java Objects that form the backbone of a Spring application. They are instantiated, assembled, and managed by the Spring IoC container. These beans are created with the configuration metadata that is supplied to the container, for example, in the form of XML <bean/> definitions.
@@ -4028,7 +3506,6 @@ An alternative to XML setups is provided by annotation-based configuration which
 
 56. How do you turn on annotation wiring?
 Annotation wiring is not turned on in the Spring container by default. In order to use annotation based wiring we must enable it in our Spring configuration file by configuring <context:annotation-config/> element.
-
 
 E.Spring Data Access
 57. Which classes are present in spring JDBC API?
@@ -4189,8 +3666,6 @@ Spring Interview Coming Up?
 Subscribe to our newsletter and download the Ultimate Spring interview questions and answers collection right now!
 In order to get you prepared for your next Spring Interview, we have compiled a huge list of relevant Questions and their respective Answers. Besides studying them online you may download the eBook in PDF format!
 
-
- 
 83. What is Weaving? What are the different points where weaving can be applied?
 Weaving is the process of linking aspects with other application types or objects to create an advised object.
 Weaving can be done at compile time, at load time, or at runtime.
@@ -4272,349 +3747,7 @@ When developing a web application, Spring Boot configures an embedded Tomcat ser
 Spring Boot includes many useful non-functional features (such as security and health checks) right out of the box.
 Ok, so now you are ready for your interview! Don’t forget to check our dedicated page full of Spring Tutorials, and our Examples dedicated subsection!
 
-If you enjoyed this, then subscribe to our newsletter to enjoy weekly updates and complimentary whitepapers! Also, check out our courses for more advanced training!
 
-You are welcome to contribute with your comments and we will include them in the article!
-
-Last updated on Nov. 9th, 2020
-
-Do you want to know how to develop your skillset to become a Java Rockstar?
-Subscribe to our newsletter to start Rocking right now!
-To get you started we give you our best selling eBooks for FREE!
-1. JPA Mini Book
-2. JVM Troubleshooting Guide
-3. JUnit Tutorial for Unit Testing
-4. Java Annotations Tutorial
-5. Java Interview Questions
-6. Spring Interview Questions
-7. Android UI Design
-and many more ....
-Enter your e-mail...
-I agree to the Terms and Privacy Policy
-
- TagsInterviewInterview questionsSpringUltimate
-Photo of Theodora Fragkouli
-Theodora Fragkouli
-Theodora has graduated from Computer Engineering and Informatics Department in the University of Patras. She also holds a Master degree in Economics from the National and Technical University of Athens. During her studies she has been involved with a large number of projects ranging from programming and software engineering to telecommunications, hardware design and analysis. She works as a junior Software Engineer in the telecommunications sector where she is mainly involved with projects based on Java and Big Data technologies.
-Website
-Related Articles
-java-interview-questions-answers
-Simple REST client in Java
-September 11th, 2012
-
-How to fix Exception in thread “main” java.lang.NoClassDefFoundError: org/slf4j/LoggerFactory in Java
-February 22nd, 2018
-spring-interview-questions-answers
-Spring Boot Error – Error creating a bean with name ‘dataSource’ defined in class path resource DataSourceAutoConfiguration
-May 1st, 2019
-
-Mockito: Cannot instantiate @InjectMocks field: the type is an interface
-July 7th, 2020
-spring-interview-questions-answers
-Spring Boot Remove Embedded Tomcat Server, Enable Jetty Server
-April 28th, 2020
-spring-interview-questions-answers
-What is SecurityContext and SecurityContextHolder in Spring Security?
-February 21st, 2018
-java-interview-questions-answers
-How to install Apache Web Server on EC2 Instance using User data script
-May 7th, 2020
-
-Mockito when-then vs do-when
-November 26th, 2021
- Subscribe 
-guest
-
-
-{}[+]
-24 Comments
-Oldest 
-Nachiketa sahoo
-Nachiketa sahoo
- 11 years ago
-how to get these two book free
-
-1
- Reply
-Biswaranjan Sahoo
-Biswaranjan Sahoo
- 11 years ago
- Reply to  Nachiketa sahoo
-nothing is free.
-
-0
- Reply
-Biswaranjan Sahoo
-Biswaranjan Sahoo
- 11 years ago
-good follow up. Better You add more question and answer here.
-
-0
- Reply
-Rance Moest
-Rance Moest
- 11 years ago
-If any interviewer starts in with lists like this, I get up and leave. And then send them a bill for wasting my time.
-
-3
- Reply
-Peter K.
-Peter K.
- 11 years ago
-I should send you a bill for reading your email, realizing that it is irrelevant
-
-0
- Reply
-Peter K.
-Peter K.
- 11 years ago
-Great cheat sheet btw …
-
-0
- Reply
-Ram
-Ram
- 11 years ago
-Nice one. Good for preparation.And beginners can understand what it is.
-
-1
- Reply
-ga mai
-ga mai
- 11 years ago
-Please include information about the version of Spring these answers are for: XmlBeanFactory is deprecated since v. 3.1, there is now a third DI method ie. using property, etc.
-
-0
- Reply
-Veer
-Veer
- 11 years ago
-i think question so basic so provide more deply question and answer..
-
-1
- Reply
-quo vadis
-quo vadis
- 11 years ago
-like ga mai said, this article contains lot of deprecated or old-fashioned material.
-
-Overall it is useful no doubt, but please clarify when saying ‘dont use autowiring as it is confusing’ that you meant XML Autowiring, not @Autowiring, and also the different types of autowiring apply again only to XMLbased..confused the heck out of me.
-
-1
- Reply
-cousin
-cousin
- 5 years ago
- Reply to  quo vadis
-Totally agree.
-
-0
- Reply
-Vivan
-Vivan
- 11 years ago
-Good knowledge of beginner………..so post more and more question and answers….!! And improve your knowledge..!!
-
-0
- Reply
-Mudassir
-Mudassir
- 11 years ago
-Amazing article.
-Though I have used and know all of the things mentioned but you have collected them in this article very beautifully.
-Its definitely a must read.
-Would be nice if you can add some architectural diagrams for newbies.
-Thank you
-
-0
- Reply
-Amit
-Amit
- 10 years ago
-Nice article.
-Found some examples on
-http://modernpathshala.com/Article/1024/top-spring-interview-questions-and-answers-part-1
-Please add some more examples.
-
-0
- Reply
-Sandy
-Sandy
- 10 years ago
-Good stuff. These are not basic questions, but the fundamental ones that are very important to know especially for experienced professionals, and not only for beginners. I am sure people find it a hard time when it comes to define something they are already working :).
-
-0
- Reply
-Chandan
-Chandan
- 10 years ago
-If I know all answers means I can get job easily. This questions and answers enough to get a job
-
-0
- Reply
-naresh
-naresh
- 9 years ago
-this is basic level expected advanced and depth answers
-
-0
- Reply
-Bala Challa
-Bala Challa
- 9 years ago
-@Service
-public class SampleClass implements SampleInterface{
-
-@Transactional
-public void methodA(){
-SampleClass bean = ApplicationContext.getBean(SampleClass.class);
-bean.methodB();
-}
-
-@Transactional
-public void methodB(){
-//statements.
-}
-}
-
-is there any problem calling methodB() like that in the same class? I see lot of code like that. I don’t feel it is the right way. But I don’t know what are the consequences. Could anyone please let me know?
-
-0
- Reply
-z
-z
- 9 years ago
-@Service
-public class SampleClass implements SampleInterface{
-
-@Transactional
-public void methodA(){
-SampleClass bean = ApplicationContext.getBean(SampleClass.class);
-bean.methodB();
-}
-
-@Transactional
-public void methodB(){
-//statements.
-}
-}
-
-is there any problem calling methodB() like that in the same class? I see lot of code like that. I don’t feel it is the right way. But I don’t know what are the consequences. Could anyone please let me know?
-
-0
- Reply
-Ritesh Sharma
-Ritesh Sharma
- 8 years ago
-Wonderful Article !! i have been searching for this kind of information because in next week my interview is scheduled so looking for technical interview questions and this article has been provided me a great help so thanks a lot for this informative article.
-
-0
- Reply
-Serhiy Brytskyy
-Serhiy Brytskyy
- 7 years ago
-Sorry, but I don’t understand how can I download pdf.
-
-0
- Reply
-Eleftheria Drosopoulou
-Eleftheria Drosopoulou
- 7 years ago
- Reply to  Serhiy Brytskyy
-Hello Serhiy,
-
-You can find the pdf version of this here: https://www.javacodegeeks.com/minibook/spring-interview-questions but first you have to login. If you don’t have an account you should first create one.
-
-1
- Reply
-Peter
-Peter
- 6 years ago
-Very good questions, but no practical questions? Most technical interviews will require coding to solve practical problems. For example like some of these Spring interview questions: https://www.testdome.com/d/java-spring-interview-questions/263
-
-I recommend adding some programming questions like these as well, as they’re important to practice too.
-
-0
- Reply
-Load More Comments
-Join Us
-Join UsWith 1,240,600 monthly unique visitors and over 500 authors we are placed among the top Java related sites around. Constantly being on the lookout for partners; we encourage you to join us. So If you have a blog with unique and interesting content then you should check out our JCG partners program. You can also be a guest writer for Java Code Geeks and hone your writing skills!
-Newsletter
-
-Insiders are already enjoying weekly updates and complimentary whitepapers!
-Join them now to gain exclusive access to the latest news in the Java world, as well as insights about Android, JVM languages, cloud computing, Web development, DevOps, big data, Web3, blockchain programming and other related technologies.
-Email address:
-Enter your e-mail...
-I agree to the Terms and Privacy Policy
-Knowledge Base
-Courses
-Examples
-Minibooks
-Resources
-Tutorials
-The Code Geeks Network
-.NET Code Geeks
-Java Code Geeks
-System Code Geeks
-Web Code Geeks
-Hall Of Fame
-“Android Full Application Tutorial” series
-11 Online Learning websites that you should check out
-Advantages and Disadvantages of Cloud Computing – Cloud computing pros and cons
-Android Google Maps Tutorial
-Android JSON Parsing with Gson Tutorial
-Android Location Based Services Application – GPS location
-Android Quick Preferences Tutorial
-Difference between Comparator and Comparable in Java
-GWT 2 Spring 3 JPA 2 Hibernate 3.5 Tutorial
-Java Best Practices – Vector vs ArrayList vs HashSet
-About Java Code Geeks
-JCGs (Java Code Geeks) is an independent online community focused on creating the ultimate Java to Java developers resource center; targeted at the technical architect, technical team lead (senior developer), project manager and junior developers alike. JCGs serve the Java, SOA, Agile and Telecom communities with daily news written by domain experts, articles, tutorials, reviews, announcements, code snippets and open source projects.
-Disclaimer
-All trademarks and registered trademarks appearing on Java Code Geeks are the property of their respective owners. Java is a trademark or registered trademark of Oracle Corporation in the United States and other countries. Examples Java Code Geeks is not connected to Oracle Corporation and is not sponsored by Oracle Corporation.
-Java Code Geeks and all content copyright © 2010-2026, Exelixis Media P.C. | Terms of Use | Privacy Policy | Contact | Cookie Settings
-
-	
-Spring
-Spring is a Java-based back-end framework popular for its modular architecture, feature-rich dependency injection, and comprehensive ecosystem with projects like Spring Boot, Spring Security, and Spring Data.
-
-According to the CoderPad 2024 Developer survey, Spring is the 2nd most in-demand back-end framework among technical recruiters and hiring managers.
-
-To evaluate the Spring expertise of developers during coding interviews, below you’ll find hands-on coding challenges and interview questions.
-
-Additionally, we have outlined a set of suggested practices to ensure that your interview questions accurately measure the candidates’ Spring skillset.
-
-Table of Contents
-Spring example question
-Junior Spring interview questions
-Intermediate Spring interview questions
-Senior Spring interview questions
-Interview best practices for Spring roles
-Spring example question
-Create a Spring CRUD API
-The goal of this exercise is to retrieve data from an external source, store it in an appropriate database structure, and create a CRUD RESTful API to interface with the database
-
-Goals
-1. Read the data from this graphql endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index with the following query:
-
-query Query {allPlanets{planets{name population terrains climates}}}
-
-(You can view the shape of the data here.)
-
-2. Store the data from the graphql endpoint into the database and create appropriate models
-
-3. Write RESTful Create, Read, Update, and Delete endpoints to interact with the database
-
-
-Spring skills to assess
-Java fundamentals
-Web development knowledge
-Databases and ORMs
-Jobs using Spring
-Spring engineer
-Java developer
-Full-stack developer
-Back-end engineer
 Junior Spring interview questions
 Question:
 Explain the concept of Inversion of Control (IoC) and Dependency Injection (DI) in the context of the Spring framework.
@@ -5413,33 +4546,6 @@ Make sure your Spring candidates are familiar with using application servers lik
 Verify that the candidate has a minimal knowledge of all the different Spring layers (Core Container, Data Access/Integration, Web, AOP and Instrumentation, …).
 Additionally, adhering to standard interview etiquette when conducting Spring interviews is essential. This includes adjusting the question complexity to the candidate’s level of development skills, providing timely feedback to candidates about their application status, and allowing candidates to ask questions about the assessment or working with you and your team.
 
-
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-
-angiopharm.promo.page
-Реклама
-Набор ANGIOPHARM для сияния кожи — разбираем по составу
-В статье — от причин тусклости до готового протокола
-Причины тусклости кожи
-Компоненты против пигментации
-Антиоксиданты в уходе
-Готовый протокол
-
-Узнать больше
-
-Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
-
-Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
-
 1. Верно или ложно следующее утверждение: «Каждое приложение Spring Boot - это веб-приложение, работающее во встроенном Apache Tomcat». Обоснуйте свой ответ.
 Ответ
 2. В чем разница между Spring Boot и Spring MVC? Или между Spring Boot и Spring Framework? Можете ли вы использовать их вместе в одном проекте?
@@ -5462,85 +4568,9 @@ angiopharm.promo.page
 Ответ
 11. Как узнать, какие автоконфигурации Spring Boot применяются при запуске и какие условия оцениваются?
 Ответ
-Заключение
-Очевидно, нет никакой гарантии, что вы ответите на эти вопросы на собственном собеседовании по Spring Boot, хотя знание (и понимание) ответов на них должно стать прочной основой для любого интервью.
 
-Если вы хотите получить более глубокое представление обо всей экосистеме Spring, вы также можете ознакомиться с другими статьями о Spring в блоге автора.
-
-Примечание переводчика. Переводы 2 статей из блога  автора о Spring есть на Хабр:
-
-Что такое Spring Framework? От внедрения зависимостей до Web MVC
-
-Spring MVC: создание веб-сайтов и RESTful сервисов
-
-Из комментариев читателей. Одно замечание по вопросу № 3., я думаю, что рядом с Initializr также Bootify.io - хороший вариант.
-
-
-Источник: https://habr.com/ru/post/544472/
-
-Поделиться ссылкой: 
-Вернуться к списку
-
-kotofey.ru
-Реклама
-
-angiopharm.promo.page
-Реклама
-•
-16+
-Дельфинья кожа: как добиться сияния без инъекций
-
-art-fresco.ru
-Реклама
-
-Дизайнерские фотообои
-от 2 300 ₽
-
-torg-oboi.ru
-Реклама
-
-Магазин обоев в 5 мин. от м. Семёновская
-от 300 ₽
-
-dollgallery.ru
-Реклама
-Клуб коллекционеров кукол — dollgallery.ru
-
-wolly.ru
-Реклама
-
-Магнитная плёнка (подложка) Wolly® Ferro WLY-F62
-890 ₽
-
-notebook.effectpress.ru
-Реклама
-
-Стильные ежедневники на 2026! Удивите сотрудников!
-
-kuchenland.ru
-Реклама
-
-Интересные статьи
-11 команд PowerShell для Office 365, которые полезно знать
-11 команд PowerShell для Office 365, которые полезно знать
-Использование PowerShell для управления Office 365 может сделать вашу работу быстрее, эффективнее и проще. PowerShell предоставляет доступ к информации о среде Office 365, к которой н...
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-На Хабре есть немало статей о беспроводной зарядке смартфонов, и в комментариях к каждой из них, нет-нет, да и проскользнет наивный вопрос, который местные старожилы мгновенно заминусуют,...
-Обеспечение границ компонент чистой архитектуры с помощью Spring Boot и ArchUnit
-Когда мы создаем программное обеспечение, мы хотим создавать «-способности»: понятность, ремонтопригодность, расширяемость и - в тренде сейчас - декомпозицию (чтобы мы могли разложить мон...
-Почему об этом стоит задуматься всем: ответы на самые актуальные вопросы о коронавирусе Covid-19
-Автор статьи Dave Troy — исследователь онлайн-дезинформации и лжи, а также эксперт в области расчётов, связанных со статистикой болезней. В последнее время он отвечал на многие вопросы о Covid-19...
-Бизнес без технологий. Деньги, которые вас потеряли
-Бизнес без технологий. Деньги, которые вас потеряли
-Может показаться, что довольно опрометчиво писать на Хабр статью о компаниях, которые относятся к технологиям с недоверием, сильно на них экономят или не используют вовсе. На самом деле, такие ре...
-
-
-Spring Interview Questions
-Ever since its release back in October of 2002, Spring Framework has succeeded in becoming a top application framework for Java developers. In fact, it secures a place among the leading backend web development frameworks. Hence, opting for a career in Spring Framework is very lucrative.
 
 Top Spring Interview Questions and Answers
-Spring Framework has a wide array of concepts that one needs to have a working understanding in order to stay ahead in the game. If you’re preparing for a Spring job interview, then here are top Spring interview questions that you must know the answers to:
 
 Question: Please list down the various features of Spring Framework and the advantages of using the same.
 Answer:
@@ -5884,27 +4914,6 @@ public class HelloWorldClient {
         log.info(helloWorld.sayHello());
     }
 }
-Conclusion
-So, that completes the list of the top Spring interview questions. These questions will surely help you buckle up for your Spring interview.
-
-Looking for more Spring interview questions? Here is a great udemy course for the same: Spring Interview Questions Preparation Course.
-
-Here is a great book that helps you to prepare well for any programming interview: Cracking the Coding Interview: 189 Programming Questions and Solutions.
-
-
-The spring boot interview questions are divided into different categories. Let's get started!
-
-Spring boot Interview Questions for Freshers
-Spring Boot Interview Questions for Experienced
-Spring Boot Microservices Interview Questions
-Java Spring boot interview questions
-Spring Boot Interview Questions FAQs
-Yes, you are in the right place. In this article, we have listed all the latest and most frequently asked spring boot interview questions with proper explanations and examples that help you understand the overall concept from the scratch. You can also use the code provided for some of the questions and run it on your machines to get better clarity on the concepts.
-
-This article helps you to go through all the major spring boot interview questions and attend the interview confidently. This article also covers a lot of spring boot interview questions for freshers and experienced.
-
-Spring Boot Interview Questions for Freshers
-With the help of Spring boot interview questions for freshers, candidates can prepare for their interviews and increase their chances of getting hired. This guide covers some of the most commonly asked Spring boot interview questions that freshers are likely to encounter during their interviews.
 
 1.  What is Spring Boot?
 Spring Boot is called a microservice framework that is built on top of the spring framework. This can help developers to focus more on convention rather than configuration.
@@ -6970,8 +5979,8 @@ Also Read: Top 25 Common Interview Questions
 This brings us to the end of the Spring Boot interview questions. We hope these questions help you prepare effectively for your upcoming interview and boost your confidence. To further enhance your understanding and gain more in-depth knowledge, explore free certification courses on Spring Boot and related technologies to give you an extra edge in your interview preparation.
 
 
-Spring Boot Interview Questions FAQs
-This FAQ section on Spring Boot interview questions covers some of the most commonly asked questions about Spring Boot, including questions about its features, working, etc.
+	
+FAQs
 
 1. What is a spring boot? Why should you use it?
 Spring Boot provides a good platform for Java developers to reduce overall development time and increase efficiency by integrating tests. One can choose Spring Boot because it provides powerful batch processing, eases dependency management, and no manual configurations are needed.
@@ -7008,119 +6017,6 @@ Classpath in spring boot is defined as a path where you place resources. During 
 9. How does spring boot application work?
 Springboot can configure your application automatically based on the dependencies of the project by using @EnableAutoConfiguration annotation.
 
-Avatar photo
-Great Learning Editorial Team
-The Great Learning Editorial Staff includes a dynamic team of subject matter experts, instructors, and education professionals who combine their deep industry knowledge with innovative teaching methods. Their mission is to provide learners with the skills and insights needed to excel in their careers, whether through upskilling, reskilling, or transitioning into new fields.
-Recommended for you
-armstrong in python
-Armstrong Number in Python
-C++ IDEs 
-C++ Projects To Work On In 2025
-web scraping projects
-Top 10 Web Scraping Projects
-Javascript Interview Questions
-Top 100+ JavaScript Interview Questions and Answers
-
-Latest Technologies in Computer Science in 2025
-Salesforce interview questions
-Top 100 Salesforce Interview Questions and Answers
-Free Courses
-Free Artificial Intelligence Course With Certificate
-Free Prompt Engineering Course With Certificate
-Python for Machine Learning Free Course
-Data Science Foundations Free Course
-Deep Learning with Python Free Course
-Introduction to Cyber Security Free Course
-Free Digital Marketing Course
-Java Programming Free Course
-View More →
-PG & Professional Certificate Courses
-AI Courses
-Agentic AI Courses
-Generative AI Courses
-Data Science Courses
-MBA Courses
-Master's Degree
-Cybersecurity Courses
-Management Courses
-Software Engineering Courses
-Cloud Computing Courses
-PG Courses
-Professional Courses
-Degree Programs
-SRM Sikkim Online MBA
-SRM Sikkim Online MCA
-SRM Sikkim Online BBA
-SRM Sikkim Online BCA
-SRMIST Online MBA
-SRMIST Online MCA
-SRMIST Online BBA
-SRMIST Online BCA
-SRMIST Online M.Com
-    
-About Us
-Transparency Hub
-Contact Us
-Privacy Policy
-Terms of Use
-Great Learning Careers
-© 2013 - 2026 Great Learning Education Services Private Limited. All rights reserved
-
-Get our android app
-Get our ios app
-Scroll to Top
-
-
-Training in Top Technologies 
-Career Related Programs 
-Webinars
-EbookNEW
-Explore Online Courses
-Home
-Blog
-Programming & Frameworks
-Top 80 Spring Interview Questi...
-Spring Framework (11 Blogs)
-Top 80 Spring Interview Questions You Must Prepare In 2025
-Programming & Frameworks
-Topics Covered
-C Programming and Data Structures (16 Blogs)
-Comprehensive Java Course (5 Blogs)
-Java/J2EE and SOA (341 Blogs)
-Spring Framework (9 Blogs)
-SEE MORE Programming & Frameworks blog posts
-Banner image
-Top 80 Spring Interview Questions You Must Prepare In 2025
-Last updated on Jan 09,2025626.5K Views
-Share
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-
-Swatee ChandSwatee Chand 
-Sr Research Analyst at Edureka. A techno freak who likes to explore different technologies. Likes to follow the technology trends in market and write...
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-1 / 1 Blog from Spring Interview Questions 
-myMock-desk-banner-bg
-Are you thinking of pursuing your career in Spring Framework? Are you searching for an appropriate QnA set to prepare for your interviews? Here is a blog on Spring Interview Questions which discusses on top 80 questions with proper explanation and examples. It will definitely help you to ace the interviews. But before starting with the Spring Interview Questions, let’s take a quick look on Spring Framework’s demand and status in the market.
-
-Since it’s release, the Spring Framework has continued to bloom in the market. Spring community is continuously coming up with new things and have spread into a vast ecosystem. Today, it holds the top position in the framework market. Check out the below graph which shows the frameworks most frequently used in the market as on January 2018.
-
-Want to Upskill yourself to get ahead in Career? Check out the Top Trending Technologies Article.
-spring vs other frameworks - Spring Interview Questions - Edureka!
-
-You might ask why is Spring certification so much in demand? Well, the answer is, because it provides a comprehensive programming and configuration model for modern Java-based enterprise applications. It is not concerned with the deployment platform used. A key element of Spring Framework is infrastructural support at the application level. It’s very much unlikely to go out of the market in the near future with more major releases announced.
-
-Before we move any further let us take a look some of the most frequently asked Spring Interview Questions,
-
 Q1. What are the major features in different versions of Spring Framework?
 Q2. What is a Spring Framework?
 Q3. List the advantages of Spring Framework
@@ -7132,24 +6028,8 @@ Q8. What are the various ways of using Spring Framework?
 Q9. What is Spring IOC Container?
 Q10. What do you mean by Dependency Injection?
 
-So, here are the Top 80 Spring Interview Questions which are most likely to be asked by the interviewer. If you are seeking a future in this field, these questions will surely help you to ace the interview. For your ease of access, I have categorized the questions under a few topics, namely:
-
-General Questions
-Dependency Injection/ IoC
-Spring Beans
-Spring Annotations
-Spring Data Access
-Spring AOP
-Spring MVC
-You may watch the webinar recording of Spring Interview Questions where our instructor has shared his experience and expertise that will help you to crack any Spring Interview.
-
-Spring Interview Questions and Answers for 2025 | Edureka
-
- 
-
-Let’s begin with the first section of Spring interview questions, which is the General Questions.
-
 General Spring Interview Questions
+
 1. What are the major features in different versions of Spring Framework?
 Features of Spring Framework
 Version	Logo	Feature
@@ -7204,7 +6084,6 @@ Messaging – This module provides support for STOMP. It also supports an annota
 Aspects – This module provides support to integration with AspectJ.
 Top 5 Backend Frameworks to Learn in 2025
 
-
 6. What is a Spring configuration file?
 xml file - Spring Interview Questions - Edureka!
 A Spring configuration file is an XML file. This file mainly contains the classes information. It describes how those classes are configured as well as introduced to each other. The XML configuration files, however, are verbose and more clean. If it’s not planned and written correctly, it becomes very difficult to manage in big projects.
@@ -7225,7 +6104,6 @@ As a third-party web framework, using Spring Frameworks middle-tier.
  For remote usage. 
 As Enterprise Java Bean which can wrap existing POJOs (Plain Old Java Objects).
  
-
 Spring Dependency Injection/ IoC Container Interview Questions
 9. What is Spring IOC Container?
 ioc - Spring Interview Questions - Edureka!
@@ -7241,7 +6119,6 @@ Constructor Injection
 Setter Injection
 Interface Injection
 In Spring Framework, only constructor and setter injections are used.
-
 
 12. Differentiate between constructor injection and setter injection.
 Constructor Injection vs Setter Injection
@@ -7285,14 +6162,10 @@ To create a controller without using @Controller or @RestController, you can use
 
 Implement the Controller Logic: Create a regular Java class that contains the logic for handling HTTP requests and generating responses.
 Use Appropriate Annotations: Instead of @Controller or @RestController, you can use other annotations to specify the request mappings and the response type.
-Top 5 Backend Frameworks to Learn in 2025
-
 
 19. What is ContextLoaderListener and what does it do?
 
 The ContextLoaderListener is a Spring Framework component used in Java web applications to load the Spring application context when the web application starts. It initializes the IoC container, manages beans, and allows components to access Spring beans for their processing.
-
- 
 
 20. What are the differences between @RequestParam and @PathVariable annotations?
 
@@ -7316,8 +6189,6 @@ The key role of @ModelAttribute is to facilitate data transfer between the Contr
 
 The web.xml file in Spring MVC is used for configuring the DispatcherServlet, defining context parameters, filters, and listeners, as well as handling error pages. While newer Spring applications rely more on annotation-based configuration, web.xml remains essential for certain settings and legacy support.
 
- 
-
 24. What are the types of Spring MVC Dependency Injection?
 
 The three types of Dependency Injection in Spring MVC are:
@@ -7334,11 +6205,7 @@ The session scope in Spring is an important mechanism for managing beans in web 
 
 The @Required annotation was used in earlier versions of Spring to indicate that a property of a bean must be set (or wired) with a value before the bean can be fully initialized. However, starting from Spring 3.0, the @Required annotation has been deprecated and is no longer recommended for use.
 
- 
-
 27. Differentiate between the @Autowired and the @Inject annotations.
-
- 
 
 @autowired	@inject
 Framework	Part of the Spring Framework	Part of the JSR-330 standard (Java Dependency Injection)
@@ -7356,8 +6223,6 @@ Yes, singleton beans in Spring are thread-safe by default. When you define a bea
 
 singleton beans in Spring are thread-safe as long as they are stateless or properly synchronized when dealing with mutable state. The Spring container manages singleton bean instantiation and synchronization to ensure their thread safety within the context.
 
- 
-
 30. What is the significance of @Repository annotation?
 
 The @Repository annotation in Spring is a specialized stereotype annotation that serves as a marker for classes that fulfill the role of a data repository or DAO (Data Access Object). It is primarily used to indicate that the class is responsible for data access operations, such as reading from and writing to a database or any other external data source
@@ -7370,17 +6235,11 @@ The @Repository annotation in Spring is a specialized stereotype annotation that
 
 The root application context in Spring MVC is loaded automatically during web application startup by the ContextLoaderListener. It handles overall configuration and bean management for the application, while the DispatcherServlet handles web-specific components and request handling.
 
- 
-
 33. How does the Spring MVC flow look like? In other words, How does a DispatcherServlet know what Controller needs to be called when there is an incoming request to the Spring MVC?
-
- 
 
 The Spring MVC flow involves several components working together to handle incoming requests and route them to the appropriate controllers for processing.
 
 The DispatcherServlet plays a central role in the Spring MVC flow. It receives incoming requests, selects the appropriate controller based on the URL mapping, invokes the controller method to handle the request, prepares the model data and view, resolves the view, and finally sends the response back to the client. The flow is orchestrated through a combination of handler mappings, controllers, view resolvers, and views, allowing Spring MVC to handle various types of requests and produce dynamic responses.
-
- 
 
 34. Where does the access to the model from the view come from?
 
@@ -7408,11 +6267,7 @@ In the context of Spring MVC, the term “Model” represents the data layer. It
 
 39. What are the differences between the <context:annotation-config> vs <context:component-scan> tags?
 
- 
-
 <context:annotation-config>: This is used to activate various annotations within Spring-managed beans. For example, if you have beans that are manually defined in your XML file and these beans have annotations like @Autowired, @PostConstruct, @PreDestroy, @Resource, etc., you need <context:annotation-config> to activate these annotations. However, it does not automatically detect and instantiate beans from the classpath.
-
- 
 
 <context:component-scan>: This tag does everything that <context:annotation-config> does, but it goes one step further. It scans the classpath for classes annotated with @Component, @Service, @Repository, @Controller, etc., and automatically registers them as beans in the Spring application context. In other words, it automatically detects and instantiates your beans. So, when you use <context:component-scan>, you don’t need to explicitly define each bean in your XML configuration file, as long as they are annotated correctly and exist within the base-package specified by <context:component-scan>.
 
@@ -7420,23 +6275,15 @@ In the context of Spring MVC, the term “Model” represents the data layer. It
 
 Form data validation in Spring Web MVC Framework is done by:
 
- 
-
 Defining Validation Rules: Use Bean Validation API (JSR-303) annotations like @NotNull, @Size, @Min, @Max, etc., on your model fields to set the validation rules.
  
-
 Activating Validation: In your controller, annotate the model attribute with @Valid when handling the form submission. This triggers the validation process.
  
-
 Handling Validation Errors: Spring MVC validates the form data and any errors are put into a BindingResult object. You can check this object for errors and handle them accordingly, typically by sending the user back to the form with error messages.
  
-
 Displaying Errors: In your view (e.g., Thymeleaf or JSP), display any validation error messages from the BindingResult to the user.
  
-
 41. How to get ServletConfig and ServletContext objects in spring bean?
-
- 
 
 In a Spring application, you can access ServletConfig and ServletContext objects by implementing the ServletContextAware and ServletConfigAware interfaces. These interfaces provide setter methods that Spring will use to inject the necessary objects.
 
@@ -7459,34 +6306,20 @@ ApplicationContext also provides a way to resolve text messages, which is a usef
 
 Internationalization (i18n) and localization (L10n) are important features for applications that need to support multiple languages or locales. In Spring MVC, these are supported using a combination of LocaleResolver, LocaleChangeInterceptor, and message source properties files.
 
- 
-
 44. What do you understand by MultipartResolver?
 
 MultipartResolver is an interface defined in Spring MVC framework that is used for uploading files. When a form in a Spring web application is submitted and it has enctype=”multipart/form-data”, the MultipartResolver implementation handles the file upload part of the request.
 
 The MultipartResolver is part of the Spring DispatcherServlet’s configuration, so you’ll define it in your Spring configuration. 
 
- 
-
 45. How is it possible to use the Tomcat JNDI DataSource in the Spring applications?
-
- 
 
 To use a Tomcat JNDI DataSource in a Spring application:
 
- 
-
 Setup DataSource in Tomcat: Configure the DataSource in Tomcat’s context.xml file with the necessary parameters (username, password, driverClassName, etc).
- 
-
 Configure DataSource in Spring: Use <jee:jndi-lookup> in XML configuration or JndiDataSourceLookup in Java configuration to tell Spring to look up the DataSource from JNDI.
- 
-
 The DataSource can then be injected into your Spring beans where it is needed
- 
 
-Spring Beans Interview Questions
 46. Explain Spring Beans?
 They are the objects that form the backbone of the user’s application.
 Beans are managed by the Spring IoC container.
@@ -7496,17 +6329,12 @@ Beans are created with the configuration metadata that the users supply to the c
 Configuration metadata can be provided to Spring container in following ways:
 
 XML-Based configuration: In Spring Framework, the dependencies and the services needed by beans are specified in configuration files which are in XML format. These configuration files usually contain a lot of bean definitions and application specific configuration options. They generally start with a bean tag. For example:
-1
-2
-3
+
 <bean id="studentbean" class="org.edureka.firstSpring.StudentBean">
  <property name="name" value="Edureka"></property>
 </bean>
 Annotation-Based configuration: Instead of using XML to describe a bean wiring, you can configure the bean into the component class itself by using annotations on the relevant class, method, or field declaration. By default, annotation wiring is not turned on in the Spring container. So, you need to enable it in your Spring configuration file before using it. For example:
-1
-2
-3
-4
+
 <beans>
 <context:annotation-config/>
 <!-- bean definitions go here -->
@@ -7517,13 +6345,7 @@ Java-based configuration: The key features in Spring Framework’s new Java-conf
 2.@Configuration classes allows to define inter-bean dependencies by simply calling other @Bean methods in the same class. 
 
 For example:
-1
-2
-3
-4
-5
-6
-7
+
 @Configuration
 public class StudentConfig 
 { 
@@ -7562,17 +6384,6 @@ Here’s a Student class followed by bean configuration file:
 
 Student.java
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 public class Student
 {
 private Person person;
@@ -7586,15 +6397,6 @@ private String address;
 }
 studentbean.xml
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 <bean id=“StudentBean" class="com.edureka.Student">
 <property name="person">
 <!--This is inner bean -->
@@ -7630,13 +6432,6 @@ Spring Annotations Interview Questions
 54. What do you mean by  Annotation-based container configuration?
 Instead of using XML to describe a bean wiring, the developer moves the configuration into the component class itself by using annotations on the relevant class, method, or field declaration. It acts as an alternative to XML setups. For example:
 
-1
-2
-3
-4
-5
-6
-7
 @Configuration
 public class AnnotationConfig
 {
@@ -7647,10 +6442,6 @@ public MyDemo myDemo()
 55. How annotation wiring can be turned on in Spring?
 By default, Annotation wiring is not turned on in the Spring container. Thus, to use annotation based wiring we must enable it in our Spring configuration file by configuring <context:annotation-config/> element. For example:
 
-1
-2
-3
-4
 <beans xmlns="<a href="http://www.springframework.org/schema/beans">http://www.springframework.org/schema/beans</a>" xmlns:xsi="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xmlns:context="<a href="http://www.springframework.org/schema/context">http://www.springframework.org/schema/context</a>">
 <context:annotation-config/>
 <beans ………… />
@@ -7669,15 +6460,6 @@ By default, Annotation wiring is not turned on in the Spring container. Thus, to
 
 For example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 public class Employee
 {
 private String name;
@@ -7692,15 +6474,6 @@ The @Autowired annotation provides more accurate control over where and how auto
 
 For Example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 public class Employee
 {
 private String name;
@@ -7717,15 +6490,6 @@ For example, here we have two classes, Employee and EmpAccount respectively. In 
 
 Employee.java
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 public class Employee
 {
 private String name;
@@ -7737,16 +6501,6 @@ public string getName()
 }
 EmpAccount.java
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 public class EmpAccount
 {
 private Employee emp;
@@ -7763,8 +6517,6 @@ System.out.println(“Employee name : ”+emp.getName);
 Class level : Maps the URL of the request
 Method level: Maps the URL as well as HTTP request method
  
-
-Spring Data Access Interview Questions
 61. Describe Spring DAO support?
 The Data Access Object (DAO) support in Spring makes it easy to work with data access technologies like JDBC, Hibernate or JDO in a consistent way. This allows one to switch between the persistence technologies easily. It also allows you to code without worrying about catching exceptions that are specific to each of these technology.
 
@@ -7796,8 +6548,6 @@ Different ORM’s supported by Spring are depicted via the below diagram:
 
 orms - Spring Framework Interview Questions - Edureka!
 
-
-Spring AOP Interview Questions
 67. Describe AOP.
 Aspect-oriented programming or AOP is a programming technique which allows programmers to modularize crosscutting concerns or behavior that cuts across the typical divisions of responsibility. Examples of cross-cutting concerns can be logging and transaction management. The core of AOP is an aspect. It encapsulates behaviors that can affect multiple classes into reusable modules.
 
@@ -7867,304 +6617,91 @@ Controllers provide access to the application behavior. These behaviors are gene
 
 controller - Spring Framework Interview Questions - Edureka!
 
-  
-
-I hope this set of Spring Interview Questions and Answers will help you in preparing for your interviews. All the best!
-
-
-If you want to learn Spring and wish to use it while developing Java applications, then check out the Spring Certification Training by Edureka, a trusted online learning company with a network of more than 250,000 satisfied learners spread across the globe.
-
- 
-
-Got a question for us? Please mention it in the comments section and we will get back to you.
-
- 
-
- 
-
-Recommended videos for you
-hibernate-mapping-on-the-fly.jpg
-Hibernate Mapping on the Fly
-implementing-web-services-in-java.jpg
-Implementing Web Services In Java
-node-js-steps-to-create-restful-web-app.jpg
-Node JS : Steps to Create Restful Web App
-a-day-in-the-life-of-a-node-js-developer.jpg
-A Day In The Life Of A Node.js Developer
-microsoft-sharepoint-the-ultimate-enterprise-collaboration-platform.jpg
-Microsoft SharePoint-The Ultimate Enterprise Collaboration Platform
-JAVA-J2EE-WEBINAR-600x3501_-300x175.png
-Introduction to JAVA/J2EE & SOA
-create-restful-web-application-with-node-js-express.jpg
-Create Restful Web Application With Node.js Express
-spring-framework-introduction-to-spring-web-mvc-spring-with-bigdata.jpg
-Spring Framework : Introduction to Spring Web MVC & Spring with BigData
-node-js-express-steps-to-create-restful-web-app.jpg
-Node JS Express: Steps to Create Restful Web App
-mastering-regex-in-perl.jpg
-Mastering Regex in Perl
-building-web-application-using-spring-framework.jpg
-Building Web Application Using Spring Framework
-php-and-mysql-server-side-scripting-for-web-development.jpg
-PHP and MySQL : Server Side Scripting For Web Development
-rapid-development-with-cakephp.jpg
-Rapid Development With CakePHP
-effective-persistence-using-orm-with-hibernate.jpg
-Effective Persistence Using ORM With Hibernate
-building-application-with-ruby-on-rails-framework.jpg
-Building Application With Ruby On Rails Framework
-microsoft-sharepoint-2013-the-ultimate-enterprise-collaboration-platform.jpg
-Microsoft SharePoint 2013 : The Ultimate Enterprise Collaboration Platform
-microsoft-net-framework-an-intellisense-way-of-web-development.jpg
-Microsoft .NET Framework : An IntelliSense Way of Web Development
-introduction-to-javaj2ee-soa.jpg
-Introduction to JAVA/J2EE & SOA
-learn-perl-the-jewel-of-scripting-languages.jpg
-Learn Perl-the Jewel of Scripting Languages
-service-oriented-architecture-with-java.jpg
-Service-Oriented Architecture With Java
-Recommended blogs for you
-Machine-learning-in-Java-300x175.jpg
-What is Machine Learning in Java and how to implement it?
-Storage-Classes-in-C-300x175.jpg
-What is a Storage Class in C++ and its types?
-Node.js-Request-300x175.jpg
-Learn How to Make Node.js Requests – Best 3 Ways to Make HTTP Request
-How-to-decrypt-md5-password-in-PHP-300x175.jpg
-How to Decrypt MD5 Password in PHP?
-Alert-in-JavaScript-300x175.jpg
-How to Create an Alert in JavaScript?
-Front-End-Developer-Skills-300x175.jpg
-Top 10 Front End Developer Skills You Need to Know
-Coupling-in-Java-300x175.jpg
-What is Coupling in Java and its different types?
-Pascal-Triangle-in-Java-300x175.jpg
-Everything you need to know About Pascal Triangle in Java
-Bootstrap-Button-300x175.jpg
-How to Create a Bootstrap Button?
-Bootstrap-Datatable-300x175.jpg
-what are the Bootstrap Datatables and how to create it?
-HTML-interview-question-300x175.png
-Top 80 HTML Interview Questions and Answers in 2025
-no-image-1.png
-Top 10 Full Stack Development Tools in 2026
-Java_bloge-image_011-300x175.png
-Serialization of Java Objects to XML Using XMLEncoder/Decoder
-JavaScript-Data-Types-300x175.jpg
-What are the Different Data Types in JavaScript
-no-image-1.png
-Introduction to Input in Python
-extends-vs-implementation-300x175.png
-What is the Difference Between Extends and Implements in Java?
-Structure-Of-A-Java-Program-1-300x175.jpg
-What is the basic Structure of a Java Program?
-Array-Sort-in-Javascript-300x175.jpg
-Array Sort In JavaScript : Everything About Sorting Arrays In JavaScript
-Encapsulation-in-Java-300x175.jpg
-Encapsulation in Java – How to master OOPs with Encapsulation?
-learn-node-300x175.jpg
-How to Learn Node.js – A Complete Roadmap for Beginners
-Comments
-9 Comments
- CourseDrill says:
-Apr 5, 2021 at 2:29 am GMT
-Thanks for the info. Its really helpful for clearing the interview.
-
-Reply
- Mani Kumari says:
-Sep 6, 2020 at 2:08 am GMT
-i love to read edureka interview questions, covered all the topics of spring
-
-Reply
- Michael Smith says:
-Aug 11, 2020 at 7:31 am GMT
-Thanks for nice article on spring interview questions
-
-Reply
- Kavananaveen says:
-Jul 3, 2020 at 7:35 am GMT
-First ever seen the detailed covered topics. Thanks for supporting.
-
-Reply
- Kavananaveen says:
-Jul 3, 2020 at 7:32 am GMT
-First ever seen such detailed topics covered. Thanks for supporting.
-
-Reply
- Hema Malini says:
-Mar 29, 2019 at 5:40 am GMT
-Great Blog. You shared great topics with excellent content very clearly.
-
-Reply
- Kallol Das says:
-Mar 29, 2019 at 5:38 am GMT
-Good collection of all technical topics at one place !!
-
-Reply
- Aman Abhishek says:
-Nov 5, 2018 at 12:42 pm GMT
-Awesome covered each and every topic
-
-Reply
- EdurekaSupport says:
-Mar 29, 2019 at 5:41 am GMT
-Hey Aman, thanks for the compliment. We are glad you loved the blog. Cheers!
-
-Reply
-Join the discussion
-
-Trending Courses in Programming & Frameworks
-Python Scripting Certification Training
-Python Scripting Certification Training
-15k Enrolled Learners
-Weekend
-Self Paced
-Reviews
- 5 (5900)
-Browse Categories
-Artificial IntelligenceAWSBI and VisualizationBig DataBlockchainBusiness ManagementCloud ComputingCyber SecurityData ScienceData Warehousing and ETLDatabasesDevOpsDigital MarketingEnterpriseFront End Web DevelopmentHuman Resource ManagementInterview QuestionsMobile DevelopmentOperating SystemsOperations ManagementProduct ManagementProject Management and MethodologiesRobotic Process Automationseo interview questionSoftware TestingStrategy and LeadershipSupply Chain ManagementSystems & Architecture
-Subscribe to our Newsletter, and get personalized recommendations.
- Already have an account? Sign in.×
-edureka logo
-TRENDING CERTIFICATION COURSES
-Advanced DevOps Certification Training with GenAI
-Agentic AI Certification Training Course
-LLM Prompt Engineering Certification Course
-Data Science with Python Certification Course
-Power BI Certification Training with Gen AI
-MLOps Certification Course
-Artificial Intelligence Certification Course
-TRENDING MASTERS COURSES
-Generative AI(Gen AI ) Masters Program
-Post Graduate Program in Gen AI and ML
-Doctor of Business Administration by Birchwood
-Integrated MS+PGP Program in Data Science & AI
-MS in Data Science by Birchwood
-European Global Doctorate of Business Administration (DBA)
-European Global MS in Data Science and AI
-EIMT Doctorate in Computer Science (DCS)
-COMPANY
-About us
-News & Media
-Reviews
-Contact us
-Blog
-Community
-Sitemap
-Blog Sitemap
-Community Sitemap
-Webinars
-WORK WITH US
-Careers
-Become an Instructor
-Become an Affiliate
-Become a Partner
-Hire from Edureka
-DOWNLOAD APP
-apple_store google_playstore
-CATEGORIES
-Cloud Computing DevOps Big Data Data Science BI and Visualization Programming & Frameworks Software Testing Project Management and Methodologies Robotic Process Automation Frontend Development Data Warehousing and ETL Artificial Intelligence Blockchain Databases Cyber Security Mobile Development Operating Systems Architecture & Design Patterns Digital Marketing
-TRENDING BLOG ARTICLES
-Selenium tutorial Selenium interview questions Java tutorial What is HTML Java interview questions PHP tutorial JavaScript interview questions Spring tutorial PHP interview questions Inheritance in Java Polymorphism in Java Spring interview questions Pointers in C Linux commands Android tutorial JavaScript tutorial jQuery tutorial SQL interview questions MySQL tutorial Machine learning tutorial Python tutorial What is machine learning Ethical hacking tutorial SQL injection AWS certification career opportunities AWS tutorial What Is cloud computing What is blockchain Hadoop tutorial What is artificial intelligence Node Tutorial Collections in Java Exception handling in java Python Programming Language Python interview questions Multithreading in Java ReactJS Tutorial Data Science vs Big Data vs Data Analytics Software Testing Interview Questions R Tutorial Java Programs JavaScript Reserved Words and Keywords Implement thread.yield() in Java: Examples Implement Optical Character Recognition in Python All you Need to Know About Implements In Java
-Address:
-4th Floor, No. 38/4, Outer Ring Rd, adjacent to Dell EMC2, Doddanekkundi, Mahadevapura, Bengaluru, Karnataka 560048
-© 2026 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved. Terms & Conditions Legal & Privacy
-   
-"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc. MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.
-image not found!
-Top 80 Spring Interview Questions You Must Prepare In 2025
-edureka.co
-
-
-<h2 class="toc_1" style="text-align: justify;">Top Spring Boot Interview Questions and Answers</h2>
-<h3 style="text-align: justify;">Q1. Explain Spring Boot and also tell the features of Spring Boot.</h3>
-<p style="text-align: justify;">Spring Boot is a Java-based open-source rapid application development framework that is used to build microservices and web applications. With the help of the prebuilt code found in its codebase, Spring Boot offers an entirely flexible environment that does not need a manual configuration and provides powerful batch processing.</p>
-<p style="text-align: justify;">Some key features of Sprint Boot are:</p>
-<ul style="text-align: justify;">
-<li>It is a combination of Spring Framework and Embedded Servers</li>
-<li>An important feature of Spring Boot is that there is no requirement for XML configuration.</li>
-<li>It provides an opinionated "starter" dependencies version to simplify build configuration</li>
-<li>It automatically configures Spring and third-party libraries</li>
-<li>Spring Boot Supports microservice architecture and powerful batch processing.</li>
-<li>It offers a versatile approach to setting up XML configurations, database transactions, and Java Beans.</li>
-</ul>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c71ce93247_spring_boot_interview_questions_01.jpg" alt="Spring Boot Features" width="1000" height="530" /></p>
-<p style="text-align: justify;">&nbsp;</p>
-<h3 style="text-align: justify;">Q2. Tell the steps involved in the creation of the spring boot project in Eclipse.</h3>
-<p style="text-align: justify;"><span role="tooltip" aria-label="similar text found on mygreatlearning.com" data-microtip-position="bottom">We can create the Spring Boot project in Eclipse by using the spring Initializer, the steps involved are:</span></p>
-<ul style="text-align: justify;">
-<li>Go to https://start.spring.io</li>
-<li>Choose the project's details, such as group ID, artifact ID, dependencies, and packaging type.</li>
-<li>Click on the 'Generate' button to download the Spring Boot project.</li>
-<li>Import the project into Eclipse using the 'Existing Maven Projects' option in the 'Import' menu.</li>
-</ul>
-<h3 style="text-align: justify;">Q3. If you want to deploy the Spring Boot application in Tomcat, how will you do that?</h3>
-<p style="text-align: justify;">To deploy the Spring Boot application in Tomcat, we can follow these steps:</p>
-<ul style="text-align: justify;">
-<li>Firstly,&nbsp; we will modify the Spring Boot application to create a WAR file instead of a JAVA-Jar file:</li>
-<li>Add the Spring Boot Maven plugin to the pom.xml file.</li>
-<li>We will then set the packaging type to 'war' and exclude the embedded application server Tomcat dependency from the pom.xml file.</li>
-<li>Then we add the Tomcat dependency with the provided scope to the pom.xml file.</li>
-<li>We execute the 'mvn clean package', and the WAR file will be built and copied to the Tomcat web apps resources folder.</li>
-<li>To launch the Tomcat server, we will run the 'startup.bat' or 'startup.sh' script in the bin folder</li>
-<li>Then, at last, we can access the application by going to http://localhost:8080/application-name, where application-name is the name of the WAR file without the ".war" extension.</li>
-</ul>
-<h3 style="text-align: justify;">Q4. Can you distinguish between a spring and a spring boot?</h3>
-<p style="text-align: justify;">Spring and Spring Boot are both Java frameworks that are used in web applications. The points of dissimilarities are:</p>
-<p style="text-align: justify;"><strong>SPRING:</strong></p>
-<ul style="text-align: justify;">
-<li>Spring is a popular Java EE framework used for creating apps, and it consists of boilerplate code.</li>
-<li>Struts, JSP, Hibernate, and other frameworks are supported by Spring.</li>
-<li>Java EE 7 developers may create straightforward, dependable, and scalable enterprise apps using Spring.</li>
-</ul>
-<p style="text-align: justify;"><strong>SPRING BOOT:</strong></p>
-<ul style="text-align: justify;">
-<li>The extension of the Spring framework is called Spring Boot which helps in removing the boilerplate configuration.</li>
-<li>Spring Boot is a microservices-based framework that is primarily used to quickly create production-ready features.</li>
-<li>Everything in Spring Boot is pre-configured, so we only need to utilize the appropriate settings when using a specific functionality, which helps in removing boilerplate code.</li>
-</ul>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c71f8f38d0_spring_boot_interview_questions_02.jpg" alt="Difference between Spring and Spring Boot - Unstop" width="1000" height="338" /></p>
-<h3 style="text-align: justify;">Q5. What is a spring boot actuator?</h3>
-<p style="text-align: justify;">Spring Boot Actuator is a sub-project of the Spring Boot framework that provides additional features for monitoring and managing Spring Boot applications. The Spring Actuator exposes operational information about any running application using HTTP endpoints, allowing developers to easily monitor and manage their applications. It is important to secure the Spring Actuator because it contains a lot of confidential information.</p>
-<p style="text-align: justify;"><strong>Some key features of the Spring Boot Actuator are:</strong></p>
-<ul style="text-align: justify;">
-<li>Spring Boot Actuator enables developers to monitor the health of their application and CPU usage using the /actuator/health endpoint.</li>
-<li>Spring Boot Actuator provides secured endpoints for monitoring and managing Spring Boot applications.</li>
-<li>With the help of the Spring Boot Actuator, developers can audit their applications using the /actuator/audit events endpoint.</li>
-</ul>
-<h3 style="text-align: justify;">Q6. Explain how you can modify a port in a Spring Boot.</h3>
-<p style="text-align: justify;">The steps to change the port number in a Spring Boot application using application.properties file are:</p>
-<ul style="text-align: justify;">
-<li>Open the application.properties file.</li>
-<li>Add the following line to the file: server.port={port-number}.</li>
-<li>Replace {port-number} with the desired port number.</li>
-<li>Save the changes.</li>
-<li>The application will now be running on the new port number.</li>
-</ul>
-<h3 style="text-align: justify;">Q7. What is the process to build a war file in Spring Boot?</h3>
-<p style="text-align: justify;">To create a war file in Spring Boot, we can follow these steps:</p>
-<p style="text-align: justify;"><strong>Updating the pom.xml file:</strong></p>
-<p style="text-align: justify;">Add the spring-boot-starter-tomcat dependency.</p>
-<p style="text-align: justify;">Set the packaging type to "war".</p>
-<p style="text-align: justify;"><strong>Modifying the main class:</strong></p>
-<p style="text-align: justify;">We will extend the main class to SpringBootServletInitializer.</p>
-<p style="text-align: justify;">Override the configure() method.</p>
-<p style="text-align: justify;"><strong>Building the WAR file:</strong></p>
-<p style="text-align: justify;">Run the "mvn clean package" command.</p>
-<p style="text-align: justify;">The WAR file that is created will be in the "target" resources folder.</p>
-<h3 style="text-align: justify;">Q8. Explain JPA in Spring Boot.</h3>
-<p style="text-align: justify;">The specification for managing relational data in Java programming language application code is called JPA (Java Persistence API). Using Object-Relation Mapping (ORM), JPA enables us to access and persist data between Java objects or classes and relational databases. JPA is a collection of interfaces that gives Java applications access to a runtime EntityManager API for managing relational data.</p>
-<h3 style="text-align: justify;">Q9. Is it possible to save images in the database using Spring Boot, how will you do that?</h3>
-<p style="text-align: justify;">Yes, it is possible to save an image in the database using Spring Boot. For that, we can follow these steps:</p>
-<ul style="text-align: justify;">
-<li>Create an entity class to store the image data in the database.</li>
-<li>Define a RestController class with a POST method to upload the image.</li>
-<li>Handle the image upload using MultipartFile[] file as a parameter.</li>
-<li>Compress the image and store it in the database or store the direct image in the database.</li>
-<li>Update the handler method, which is responsible for handling the form submission to store the image in the database.</li>
-<li>Display the uploaded image in the browser.</li>
-</ul>
-<h3 style="text-align: justify;">Q10. Explain the auto-configuration class in Spring Boot?</h3>
+Top Spring Boot Interview Questions and Answers</h2>
+Q1. Explain Spring Boot and also tell the features of Spring Boot.</h3>
+Spring Boot is a Java-based open-source rapid application development framework that is used to build microservices and web applications. With the help of the prebuilt code found in its codebase, Spring Boot offers an entirely flexible environment that does not need a manual configuration and provides powerful batch processing.</p>
+Some key features of Sprint Boot are:</p>
+It is a combination of Spring Framework and Embedded Servers</li>
+An important feature of Spring Boot is that there is no requirement for XML configuration.</li>
+It provides an opinionated "starter" dependencies version to simplify build configuration</li>
+It automatically configures Spring and third-party libraries</li>
+Spring Boot Supports microservice architecture and powerful batch processing.</li>
+It offers a versatile approach to setting up XML configurations, database transactions, and Java Beans.</li>
+Q2. Tell the steps involved in the creation of the spring boot project in Eclipse.</h3>
+We can create the Spring Boot project in Eclipse by using the spring Initializer, the steps involved are:</span></p>
+Go to https://start.spring.io</li>
+>Choose the project's details, such as group ID, artifact ID, dependencies, and packaging type.</li>
+Click on the 'Generate' button to download the Spring Boot project.</li>
+Import the project into Eclipse using the 'Existing Maven Projects' option in the 'Import' menu.</li>
+Q3. If you want to deploy the Spring Boot application in Tomcat, how will you do that?</h3>
+To deploy the Spring Boot application in Tomcat, we can follow these steps:</p>
+we will modify the Spring Boot application to create a WAR file instead of a JAVA-Jar file:</li>
+Add the Spring Boot Maven plugin to the pom.xml file.</li>
+We will then set the packaging type to 'war' and exclude the embedded application server Tomcat dependency from the pom.xml file.</li>
+Then we add the Tomcat dependency with the provided scope to the pom.xml file.</li>
+We execute the 'mvn clean package', and the WAR file will be built and copied to the Tomcat web apps resources folder.</li>
+To launch the Tomcat server, we will run the 'startup.bat' or 'startup.sh' script in the bin folder</li>
+Then, at last, we can access the application by going to http://localhost:8080/application-name, where application-name is the name of the WAR file without the ".war" extension.</li>
+Q4. Can you distinguish between a spring and a spring boot?</h3>
+Spring and Spring Boot are both Java frameworks that are used in web applications. The points of dissimilarities are:</p>
+SPRING:</strong></p>
+Spring is a popular Java EE framework used for creating apps, and it consists of boilerplate code.</li>
+Struts, JSP, Hibernate, and other frameworks are supported by Spring.</li>
+Java EE 7 developers may create straightforward, dependable, and scalable enterprise apps using Spring.</li>
+SPRING BOOT:</strong></p>
+The extension of the Spring framework is called Spring Boot which helps in removing the boilerplate configuration.</li>
+Spring Boot is a microservices-based framework that is primarily used to quickly create production-ready features.</li>
+Everything in Spring Boot is pre-configured, so we only need to utilize the appropriate settings when using a specific functionality, which helps in removing boilerplate code.</li>
+Q5. What is a spring boot actuator?</h3>
+Spring Boot Actuator is a sub-project of the Spring Boot framework that provides additional features for monitoring and managing Spring Boot applications. The Spring Actuator exposes operational information about any running application using HTTP endpoints, allowing developers to easily monitor and manage their applications. It is important to secure the Spring Actuator because it contains a lot of confidential information.</p>
+Some key features of the Spring Boot Actuator are:</strong></p>
+Spring Boot Actuator enables developers to monitor the health of their application and CPU usage using the /actuator/health endpoint.</li>
+Spring Boot Actuator provides secured endpoints for monitoring and managing Spring Boot applications.</li>
+With the help of the Spring Boot Actuator, developers can audit their applications using the /actuator/audit events endpoint.</li>
+Q6. Explain how you can modify a port in a Spring Boot.</h3>
+The steps to change the port number in a Spring Boot application using application.properties file are:</p>
+Open the application.properties file.</li>
+Add the following line to the file: server.port={port-number}.</li>
+Replace {port-number} with the desired port number.</li>
+Save the changes.</li>
+The application will now be running on the new port number.</li>
+Q7. What is the process to build a war file in Spring Boot?</h3>
+To create a war file in Spring Boot, we can follow these steps:</p>
+Updating the pom.xml file:</strong></p>
+Add the spring-boot-starter-tomcat dependency.</p>
+Set the packaging type to "war".</p>
+Modifying the main class:</strong></p>
+We will extend the main class to SpringBootServletInitializer.</p>
+Override the configure() method.</p>
+Building the WAR file:</strong></p>
+Run the "mvn clean package" command.</p>
+The WAR file that is created will be in the "target" resources folder.</p>
+Q8. Explain JPA in Spring Boot.</h3>
+The specification for managing relational data in Java programming language application code is called JPA (Java Persistence API). Using Object-Relation Mapping (ORM), JPA enables us to access and persist data between Java objects or classes and relational databases. JPA is a collection of interfaces that gives Java applications access to a runtime EntityManager API for managing relational data.</p>
+Q9. Is it possible to save images in the database using Spring Boot, how will you do that?</h3>
+Yes, it is possible to save an image in the database using Spring Boot. For that, we can follow these steps:</p>
+Create an entity class to store the image data in the database.</li>
+Define a RestController class with a POST method to upload the image.</li>
+Handle the image upload using MultipartFile[] file as a parameter.</li>
+Compress the image and store it in the database or store the direct image in the database.</li>
+Update the handler method, which is responsible for handling the form submission to store the image in the database.</li>
+Display the uploaded image in the browser.</li>
+****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+Q10. Explain the auto-configuration class in Spring Boot?</h3>
 <p style="text-align: justify;">The Spring Boot Auto-Configuration class feature helps the Spring-based application code to set up automatically, which is based on the Java -jar package phase or Jar dependencies version that has been added to the classpath. Spring Boot Auto-Configuration feature eliminates the need for developers to define certain beans included in the auto-configuration classes. This feature makes development faster and easier by providing fundamental settings required to configure the application with various spring framework.</p>
 <h3 style="text-align: justify;">Q11. I am getting a whitelabel error page in the Spring Boot application code, what should I do?</h3>
 <p style="text-align: justify;">To solve the Whitelabel error page in the Spring Boot application, we can use these methods:</p>
@@ -9870,152 +8407,9 @@ Spring — это не просто “ещё один фреймворк”, а
 
 Spring — это про скорость, надёжность и автоматизацию. Освой его — и ты забудешь, что такое “руками настраивать всё каждый раз заново”. Удачи на собеседованиях и в проде!
 
-В этой статье собрана информация и материалы из различных интернет-источников. Мы признаем и ценим работу всех оригинальных авторов, издателей и веб-сайтов. Несмотря на то, что были приложены все усилия для надлежащего указания исходного материала, любая непреднамеренная оплошность или упущение не являются нарушением авторских прав. Все упомянутые товарные знаки, логотипы и изображения являются собственностью соответствующих владельцев. Если вы считаете, что какой-либо контент, использованный в этой статье, нарушает ваши авторские права, немедленно свяжитесь с нами для рассмотрения и принятия оперативных мер.
-
-Данная статья предназначена исключительно для ознакомительных и образовательных целей и не ущемляет права правообладателей. Если какой-либо материал, защищенный авторским правом, был использован без должного упоминания или с нарушением законов об авторском праве, это непреднамеренно, и мы исправим это незамедлительно после уведомления. Обратите внимание, что переиздание, распространение или воспроизведение части или всего содержимого в любой форме запрещено без письменного разрешения автора и владельца веб-сайта. Для получения разрешений или дополнительных запросов, пожалуйста, свяжитесь с нами.
-
-More stories
-Приватный VPN для России: Связка MangoHost + Amnezia
-admin, 27 апреля, 2026
-Приватный VPN для России: Связка MangoHost + Amnezia
-Debian 13 “Trixie” вышел! Что нового для сисадминов и девопсов?
-💻 операционные системы
-admin, 13 августа, 2025
-Debian 13 “Trixie” вышел! Что нового для си...
-Proxmox VE 9.0: Большое обновление
-📦 контейнеры
-🖥️ виртуализация
-admin, 8 августа, 2025
-Proxmox VE 9.0: Большое обновление
-Leave a reply
-Your email address will not be published. Required fields are marked
-
-Comment*
-Name*
-Email*
-Website
- Сохранить моё имя, email и адрес сайта в этом браузере для последующих моих комментариев.
-
-обсуждают
-Серьга к записи
-top в Linux: мониторинг процессов в реальном времени
-Mikhail к записи
-Nginx против Caddy в 2025: кто быстрее и лучше автоматизирует TLS
-hup к записи
-Запуск скриптов в фоне: nohup, wait, sleep
-себастьян к записи
-VPS как VPN-шлюз для команд: Как быстро и просто объединить офис и удалённых сотрудников
-cyou к записи
-Как быстро поднять свой VPN на VPS и стать анонимнее: Практический гайд для тех, кто не любит ждать
-
-
-☁︎ облако
-⚛ cms
-✉️ почта
-✊ права
-🌐 ДНС
-🏬 e-commerce и маркетинг
-🐳 докер
-👀 тренды
-👤 whois
-👤 пользователи
-👥 работа в офисе
-👨‍💻 devops
-👨‍💻 разработка и DevOps
-💰 трейдинг и крипта
-💻 операционные системы
-💾 бэкапы
-💾 диски
-💾 хранилище
-📂 хранилище и бэкапы
-📊 бенчмарки
-📊 производительность
-📊 производительность
-📋 руководство
-📜 скрипты
-📜 текст
-📤 вывод
-📦 контейнеры
-🔍 seo
-🔍 парсинг
-🔐 анонимность
-🖥️ виртуализация
-🖥️ система
-🖧 сети
-🖧 сеть
-🗂️ файлы
-🚀 дорвеи
-🛠️ администрирование
-🛡️ безопасность
-🤖 ai
-🤷🏽 новичкам
-🧏🏻 поддержка
-🧐 мониторинг
-🧐 проверка
-🧩 процессы
-🧳 миграция
-Мы принимаем
-ВПС Серверы
-ВПС Линукс
-ВПС Виндовс
-ВПС KVM
-ВПС XEN
-ВПС Хранилище
-ВПС Форекс
-ВПС Бинанс
-ВПС Кракен
-ВПС Кукойн
-ВПС Байбит
-ВПС для Zennoposter
-ВПС для Прокси
-Выделенные Cерверы
-Сервер с 32 ГБ РАМ
-Сервер с 64 ГБ РАМ
-Сервер с 128 ГБ РАМ
-Сервер с 256 ГБ РАМ
-Сервер с 512 ГБ РАМ
-Сервер с 1 ТБ РАМ
-Игровой Сервер
-Супермикро Сервер
-Серверы Intel Xeon
-DMCA игнорируемый Сервер
-Серверы в Украине
-Серверы в Молдове
-О компании
-Контакты
-Партнерская программа
-Локации
-Способы оплаты
-ЧЗВО
-Связь
-facebookНаша страничка в ФБ
-twitterПодпишитесь на Твиттере
-telegramПодпишитесь на Телеграм
-emailsupport [@] arenda-server.cloud
-networkLooking Glass
-phone+373 78 232141
-logo
-©2024 arenda-server.cloud
-Условия предоставления услуг
-/
-Политика конфиденциальности
-
-
-
-
-Top Spring Interview Questions Coding N Concepts
-Ashish Lahoti's Technical Blog
-Home
-Certifications ▾
-Java ▾
-JavaScript ▾
-Spring Boot ▾
-Puzzles ▾
-Interview Q&A ▾
-Others ▾
-About ▾
+									
 Top Spring Interview QuestionsTop Spring Interview Questions
- Ashish Lahoti  Last Modified: October 01, 2020  Interview Questions
+
 Q1. What is Spring Framework?
 Q2. What are the Benefits of using Spring Framework?
 Q3. What are the Modules available in Spring Framework?
@@ -10765,36 +9159,16 @@ Integrate very well with Spring’s various data access abstractions
 Q42. What is Spring Boot?
 Spring boot solves all this problems that comes with Spring Framework and help to create stand-alone, production-grade Spring based applications that you can just run.
 
-Follow the post for Top Spring Boot Interview Questions
-
-
-Source
-Spring 5.0.0.RC3 Official Documentation
-Baeldung Spring Interview Questions
-Edureka Spring Interview Questions
-HowToDoInJava Spring Interview Questions
-Interview Q&A
-Spring Q&A
-     
-See Also
-Top Spring Boot Interview Questions
-Core Java Interview Questions
-Top CSS Interview Questions
-Top Javascript Interview Questions
-Hibernate Interview Questions
-Ashish Lahoti avatar
-About Ashish Lahoti
-Ashish Lahoti is a Software Engineer with 12+ years of experience in designing and developing distributed and scalable enterprise applications using modern practices. He is a technology enthusiast and has a passion for coding & blogging.
-« Previous
-Core Java Interview Questions
-
-Next »
-Top Spring Boot Interview Questions
-
-© 2026 CodingNConcepts. Generated with Hugo and Mainroad theme.
-
-
-1. Overview
+****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
 2. Spring Core
 Q1. What Is Spring Framework?
 Q2. What Are the Benefits of Using Spring?
@@ -10815,25 +9189,21 @@ Q16. What Is Spring Boot?
 Q17. Name Some of the Design Patterns Used in the Spring Framework?
 Q18. How Does the Scope Prototype Work?
  
-
 3. Spring Web MVC
 Q19. How to Get ServletContext and ServletConfig Objects in a Spring Bean?
 Q20. What Is a Controller in Spring MVC?
 Q21. How Does the @RequestMapping Annotation Work?
  
-
 4. Spring Data Access
 Q22. What Is Spring Jdbctemplate Class and How to Use It?
 Q23. How to Enable Transactions in Spring and What Are Their Benefits?
 Q24. What Is Spring DAO?
  
-
 5. Spring Aspect-Oriented Programming (AOP)
 Q25. What Is Aspect-Oriented Programming?
 Q26. What Are Aspect, Advice, Pointcut, and JoinPoint in AOP?
 Q27. What Is Weaving?
  
-
 6. Spring 5
 Q28. What Is Reactive Programming?
 Q29. What Is Spring WebFlux?
@@ -10844,21 +9214,6 @@ Q33. Is Spring 5 Compatible With Older Versions of Java?
 Q34. How Ow Spring 5 Integrates With JDK 9 Modularity?
 Q35. Can We Use Both Web MVC and WebFlux in the Same Application?
  
-
-7. Conclusion
-1. Overview
-In this tutorial, we’re going to look at some of the most common Spring-related questions that might pop up during a job interview.
-
-Further reading:
-Java Interview Questions
-Learn the answers to common Java interview questions
-Read more →
-Java 8 Interview Questions(+ Answers)
-A set of popular Java8-related interview questions and of course answers.
-Read more →
-Java Collections Interview Questions
-A set of practical Collections-related Java interview questions
-Read more →
 2. Spring Core
 Q1. What Is Spring Framework?
 Spring is the most broadly used framework for the development of Java Enterprise Edition applications. Further, the core features of Spring can be used in developing any Java application.
@@ -10884,8 +9239,6 @@ MVC framework – a web module implementing the Model View Controller design pat
 AOP module – aspect-oriented programming implementation allowing the definition of clean method-interceptors and pointcuts
 Q4. What Is Dependency Injection?
 Dependency injection, an aspect of Inversion of Control (IoC), is a general concept stating that we do not create our objects manually but instead describe how they should be created. Then an IoC container will instantiate required classes if needed.
-
-For more details, please look here.
 
 Q5. How Can We Inject Beans in Spring?
 A few different options exist in order to inject Spring beans:
@@ -11150,93 +9503,7 @@ As of now, Spring Boot will only allow either Spring MVC or Spring WebFlux, as S
 
 Also, Spring MVC cannot run on Netty. Moreover, MVC is a blocking paradigm and WebFlux is a non-blocking style. So, we shouldn’t be mixing both together because they serve different purposes.
 
-7. Conclusion
-In this extensive article, we’ve explored some of the most important questions for a technical interview all about Spring.
 
-We hope that this article will help in upcoming Spring interviews. Good luck!
-
-« Previous
-Java Annotations Interview Questions (+ Answers)
-announcement - icon
-Get started with Spring Boot and with core Spring, through the Learn Spring course:
-
->> CHECK OUT THE COURSE
-
-The Baeldung logo
-Courses
-All Courses
-Baeldung All Access
-Baeldung All Team Access
-Login Course Platform
-Series
-Java “Back to Basics” Tutorial
-Spring Tutorial
-Spring Framework Introduction
-Learn Spring Boot Series
-Get Started with Java
-All About String in Java
-Java IO Series
-About
-About Baeldung
-The Full Archive
-Editors
-Our Partners
-Partner with Baeldung
-eBooks
-FAQ
-Baeldung Pro
-Terms of Service Privacy Policy Company Info Contact
-Privacy Manager
-
-
-
-https://www.edureka.co/ 
-
-Career Related Programs 
-Webinars
-EbookNEW
-Explore Online Courses
-Home
-Blog
-Programming & Frameworks
-Top 60+ Spring Boot Interview ...
-Spring Framework (11 Blogs)
-Programming & Frameworks
-Topics Covered
-C Programming and Data Structures (16 Blogs)
-Comprehensive Java Course (5 Blogs)
-Java/J2EE and SOA (341 Blogs)
-Spring Framework (9 Blogs)
-SEE MORE Programming & Frameworks blog posts
-Banner image
-Top 60+ Spring Boot Interview Questions That Are A Must in 2025
-Last updated on May 22,2025677.9K Views
-Share
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-
-Sahiti KappagantulaSahiti Kappagantula
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-image not found!
-myMock-desk-banner-bg
-Spring Boot is continuously coming with new ways to make the process of building applications easier. Today, it’s one of the most used technology with Java to create web applications. In this Spring Boot interview questions’ article, I have discussed the top 60 questions with proper explanation and examples. These questions are collected after consulting with experts and will definitely help you to ace the interviews. 
-
-So, let us get started!
-
-Top Spring Boot Interview Questions and Answers
-Spring Boot Interview Questions for Freshers
-Spring Boot Interview Questions for Experienced
- 
-
-Spring Boot Interview Questions and Answers for Freshers
 Q1. Spring vs Spring Boot
 Spring	Spring Boot
 A web application framework based on Java	A module of Spring
@@ -11287,12 +9554,6 @@ Profile-specific properties –  These properties are loaded from the applicatio
 Q7. Can you explain what happens in the background when a Spring Boot Application is “Run as Java Application”?
 When a Spring Boot application is executed as “Run as Java application”, then it automatically launches up the tomcat server as soon as it sees, that you are developing a web application. To learn more about Java, it’s recommended to join Java training course today at Edureka.
 
-Top 5 Backend Frameworks to Learn in 2025
-
-
-
-In this video on Top 5 Backend Frameworks to Learn in 2025 We’ll look at the most popular frameworks shaping web development. We’ll start by giving a brief introduction to backend frameworks and their importance in creating scalable and reliable online applications. We’ll then cover the top choices for 2025, going over their characteristics and applications.
-
 Spring Boot starters are a set of convenient dependency management providers that can be used in the application to enable dependencies. These starters, make development easy and rapid. All the available starters come under the org.springframework.boot group. Few of the popular starters are as follows:
 
 spring-boot-starter: – This is the core starter and includes logging, auto-configuration support, and YAML.
@@ -11325,10 +9586,6 @@ Undertow 2.0 – Servlet Version 4.0
 Q12. Explain what is thymeleaf and how to use thymeleaf?
 Thymeleaf is a server-side Java template engine used for web applications. It aims to bring natural template for your web application and can integrate well with Spring Framework and HTML5 Java web applications. To use Thymeleaf, you need to add the following code in the pom.xml file:
 
-1
-2
-3
-4
 &amp;lt;dependency&amp;gt;    
 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    
 &amp;lt;artifactId&amp;gt;spring-boot-starter-thymeleaf&amp;lt;/artifactId&amp;gt;    
@@ -11339,10 +9596,6 @@ Yes, we can change the port of the embedded tomcat server by using the applicati
 Q14. What is the need for Spring Boot DevTools?
 Spring Boot Dev Tools are an elaborated set of tools and aims to make the process of developing an application easier. If the application runs in the production, then this module is automatically disabled, repackaging of archives are also excluded by default. So, the Spring Boot Developer Tools applies properties to the respective development environments.  To include the DevTools, you just have to add the following dependency into the pom.xml file:
 
-1
-2
-3
-4
 &amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;
@@ -11361,11 +9614,9 @@ Spring Boot starter projects provide the required libraries to connect the appli
 
 Step 1: Create a database in MySQL
 
-1
 CREATE DATABASE example;
 Step 2: Then you have to create a table inside this database.
 
-1
 CREATE TABLE customers(customerid INT PRIMARY KEY NOT NULL AUTO_INCREMENT, customername VARCHAR(255));  
 Step 3: Now, create a Spring Boot project and provide the required details
 
@@ -11373,24 +9624,12 @@ Step 4: Add the JDBC, MySQL and web dependencies.
 
 Step 5: Once the project is created, you have to configure the database into application properties
 
-1
-2
-3
-4
 spring.datasource.url=jdbc:mysql://localhost:3306/example
 spring.datasource.username=root  
 spring.datasource.password=edureka  
 spring.jpa.hibernate.ddl-auto=create-drop  
 Step 6: The main application.java class should have the following code:
 
-1
-2
-3
-4
-5
-6
-7
-8
 9
 package com.edureka;  
 import org.springframework.boot.SpringApplication;  
@@ -11403,21 +9642,6 @@ public class SampleApplication {
 } 
 Step 7: Next, you have to create a controller to handle the HTTP requests, by mentioning the following code:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 package com.edureka;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11450,16 +9674,6 @@ bind.annotation.RestController;
 
 Example: Consider you have a method example() which should map with /example URL.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 package com.edureka; 
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.RestController; 
@@ -11483,7 +9697,6 @@ In this file create a controller as follows:
 }   }
 Then execute the groovy file by mentioning:
 
-1
 ./spring run Sample.groovy;
 Once, the project is executed go to the URL(localhost:8080:/example) and you will see the output as Welcome To Edureka
 
@@ -11503,11 +9716,9 @@ Auto-configuration is used to automatically configure the required configuration
 
 To disable the auto-configuration property, you have to exclude attribute of @EnableAutoConfiguration, in the scenario where you do not want it to be applied.
 
-1
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 If the class is not on the classpath, then to exclude the auto-configuration, you have to mention the following code:
 
-1
 @EnableAutoConfiguration(excludeName={Sample.class})
 Apart from this, Spring Boot also provides the facility to exclude list of auto-configuration classes by using the spring.autoconfigure.exclude property. You can go forward, and add it either in the application.properties or add multiple classes with comma-separated.
 
@@ -11518,10 +9729,6 @@ It is a combination of @Configuration, @ComponentScan and @EnableAutoConfigurati
 Q25. What are the steps to deploy Spring Boot web applications as JAR and WAR files?
 To deploy a Spring Boot web application, you just have to add the following plugin in the pom.xml file:
 
-1
-2
-3
-4
 &amp;lt;plugin&amp;gt;
     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;
@@ -11529,11 +9736,9 @@ To deploy a Spring Boot web application, you just have to add the following plug
 By using the above plugin, you will get a JAR executing the package phase. This JAR will contain all the necessary libraries and dependencies required. It will also contain an embedded server. So, you can basically run the application like an ordinary JAR file.
 Note: The packaging element in the pom.xml file must be set to jar to build a JAR file as below:
 
-1
 &amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
 Similarly, if you want to build a WAR file, then you will mention
 
-1
 &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;
 Q.26 Can you give an example for ReadOnly as true in Transaction management?
 Example for ReadOnly as TRUE in transaction management could be as follows:
@@ -11547,21 +9752,11 @@ Generate a WAR from the project
 Then, deploy the WAR file onto your favorite server
 Note: The steps to deploy the WAR file on the server is dependent on the server you choose.
 
-Want to upskill yourself to get ahead in your career? Check out this video
-Top 10 Technologies To Learn In 2025
-
-
 Q28: What is the best way to expose custom application configuration with Spring Boot?
 One way to expose the custom application configuration in Spring Boot is by using the @Value annotation. But, the only problem with this annotation is that all the configuration values will be distributed throughout the application. Instead, you can use a centralized approach.
 
 By centralized approach, I mean that you can define a configuration component using the @ConfigurationProperties as follows:
 
-1
-2
-3
-4
-5
-6
 @Component
 @ConfigurationProperties("example")
 public class SampleConfiguration {
@@ -11570,9 +9765,6 @@ private boolean value;
 private String message;
 According to the above snippet, the values configured in application.properties will be as follows:
 
-1
-2
-3
 example.number: 100
 example.value: true
 example.message: Dynamic Message
@@ -11598,32 +9790,14 @@ When we use the Spring Boot Auto Configuration, automatically the spring-boot-st
 Q33. What do you understand by Spring Data REST?
 Spring Data REST is used to expose the RESTful resources around Spring Data repositories. Consider the following example:
 
-1
-2
-3
 @RepositoryRestResource(collectionResourceRel = "sample", path = "sample")
 public interface SampleRepository
         extends CustomerRepository&amp;lt;sample, Long&amp;gt; {
 Now, to expose the REST services, you can use the POST method in the following way:
-
-1
-2
-3
 {
 "customername": "Rohit"
 }
 Response Content
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 {
 "customername": "Rohit"
 "_links": {
@@ -11640,15 +9814,13 @@ Q34. What is the difference between RequestMapping and GetMapping?
 The @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET). Both these methods support the consumes. The consume options are :
 
 consumes = “text/plain”
-consumes = {“text/plain”, “application/*”}
+consumes = {“text/plain”, “application/”}
 
 Q35. In which layer, should the boundary of a transaction start?
 The boundary of the transaction should start from the Service Layer since the logic for the business transaction is present in this layer itself.
 
 Q36. How does path=”sample”, collectionResourceRel=”sample” work with Spring Data Rest?
-1
-2
-3
+
 @RepositoryRestResource(collectionResourceRel = "sample", path = "sample")
 public interface SampleRepository extends
 PagingAndSortingRepository&amp;lt;Sample, Long&amp;gt;
@@ -11697,11 +9869,6 @@ Cannot determine embedded database driver class for database type NONE
 To resolve this error, add H2 to the pom.xml file, and restart your server.
 The following code snippet can be added to add the dependency:
 
-1
-2
-3
-4
-5
 &amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;com.h2database&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt;
@@ -11734,19 +9901,7 @@ web starter
 h2
 data JPA starter
 To include the dependencies refer to the following code:
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+
 &amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;
@@ -11779,20 +9934,6 @@ Note: Just incase if you are using H2 in-memory database, then exactly that is t
 Q50. Do you think, you can use jetty instead of tomcat in spring-boot-starter-web?
 Yes, we can use jetty instead of tomcat in spring-boot-starter-web, by removing the existing dependency and including the following:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 &amp;amp;lt;dependency&amp;amp;gt;
     &amp;amp;lt;groupId&amp;amp;gt;org.springframework.boot&amp;amp;lt;/groupId&amp;amp;gt;
     &amp;amp;lt;artifactId&amp;amp;gt;spring-boot-starter-web&amp;amp;lt;/artifactId&amp;amp;gt;
@@ -11972,223 +10113,6 @@ By default, Spring Boot runs on port 8080. Now, you can access your application 
 
 With this, we come to an end to this article on Spring Boot Interview Questions. I hope this set of Spring Boot Interview Questions and Answers will help you in preparing for your interviews. All the best! If you want to learn Spring and wish to use it while developing Java applications, then check out the Spring Certification Training by Edureka, a trusted online learning company with a network of more than 250,000 satisfied learners spread across the globe.
 
- 
-
-FAQS
-What will the Spring Boot Interview Questions be for 5 Years Experience?
-The key topics that you can practice if you have five years or more experience in the same field ;
-
-Spring boot framework
-Microservices architecture with spring boot
-Debugging
-Database optimization
-Asynchronous processing
-Architechture and design
-Testing strategies
-
-What are the most common Spring Boot interview questions?
-Q1. Spring vs. Spring Boot
-Q2. What is Spring Boot, and mention the need for it?
-Q3. Mention the advantages of Spring Boot
-Q4. Mention a few features of Spring Boot.
-Q5. Explain how to create a Spring Boot application using Maven
-Q6. Mention the possible sources of external configuration.
-Q7. Can you explain what happens in the background when a Spring Boot Application is “Run as Java Application”?
-Q8. What are the Spring Boot starters, and what are available the starters
-Q9. Explain the Spring Actuator and its advantages.
-Q10. What is Spring Boot dependency management?
-
-For more questions, you can refer to the blog.
-
-How can I prepare for Spring Boot interview questions?
-To prepare for spring boot interview questions, you first have to start with the basics. After you cover the basics, try to master the intermediate and advanced-level questions. For spring boot interview questions, refer to the blog.
-
-What will the Spring Boot Interview Questions be for 2-3 Years of Experience?
-Q1. Spring vs. Spring Boot
-Q2. What is Spring Boot, and mention the need for it?
-Q3. Mention the advantages of Spring Boot
-Q4. Mention a few features of Spring Boot.
-Q5. Explain how to create a Spring Boot application using Maven
-Q6. Mention the possible sources of external configuration.
-Q7. Can you explain what happens in the background when a Spring Boot Application is “Run as Java Application”?
-Q8. What are the Spring Boot starters, and what are available the starters
-Q9. Explain the Spring Actuator and its advantages.
-Q10. What is Spring Boot dependency management?
-
-For more spring boot interview questions from beginners to advanced, you can refer to the blog.
-
-Got a question for us? Please mention it in the comments section of “Spring Boot Interview Questions” and we will get back to you.
-
-Recommended videos for you
-building-application-with-ruby-on-rails-framework.jpg
-Building Application With Ruby On Rails Framework
-microsoft-sharepoint-2013-the-ultimate-enterprise-collaboration-platform.jpg
-Microsoft Sharepoint 2013 : The Ultimate Enterprise Collaboration Platform
-php-and-mysql-server-side-scripting-for-web-development.jpg
-PHP and MySQL : Server Side Scripting For Web Development
-hibernate-the-ultimate-orm-framework.jpg
-Hibernate-the ultimate ORM framework
-create-restful-web-application-with-node-js-express.jpg
-Create Restful Web Application With Node.js Express
-responsive-web-app-using-cakephp.jpg
-Responsive WEB APP using cakePHP
-node-js-steps-to-create-restful-web-app.jpg
-Node JS : Steps to Create Restful Web App
-a-day-in-the-life-of-a-node-js-developer.jpg
-A Day In The Life Of A Node.js Developer
-rapid-development-with-cakephp.jpg
-Rapid Development With CakePHP
-node-js-express-steps-to-create-restful-web-app.jpg
-Node JS Express: Steps to Create Restful Web App
-service-oriented-architecture-with-java.jpg
-Service-Oriented Architecture With Java
-spring-framework-introduction-to-spring-web-mvc-spring-with-bigdata.jpg
-Spring Framework : Introduction to Spring Web MVC & Spring with BigData
-JAVA-J2EE-WEBINAR-600x3501_-300x175.png
-Introduction to JAVA/J2EE & SOA
-nodejs-communication-and-round-robin-way.jpg
-NodeJS – Communication and Round Robin Way
-ms-net-an-intellisense-way-of-web-development.jpg
-MS .Net – An IntelliSense Way of Web Development
-mastering-regex-in-perl.jpg
-Mastering Regex in Perl
-introduction-to-javaj2ee-soa.jpg
-Introduction to JAVA/J2EE & SOA
-portal-development-and-text-searching-with-hibernate.jpg
-Portal Development and Text Searching with Hibernate
-effective-persistence-using-orm-with-hibernate.jpg
-Effective Persistence Using ORM With Hibernate
-implementing-web-services-in-java.jpg
-Implementing Web Services In Java
-Recommended blogs for you
-array-search-in-PHP-300x175.jpg
-All you need to know about Array Search in PHP
-Synchronization-in-Java_-300x175.jpg
-Synchronization in Java: What, How and Why?
-Bootstarp-Gallery--300x175.png
-All You Need to Know About Bootstrap Gallery
-mqdefault-1-300x169.jpg
-Introduction to Errors in Java
-Full-Stack-Developer-Skills-Edureka-300x152.jpg
-Full Stack Developer Skills, Salary and Jobs
-servlet-interview-question-300x175.png
-Top 55 Servlets Interview Question You Need to Know in 2025
-DependencyInjection_BlogFeature-1-300x175.png
-What Is Dependency Injection? – Know How To Implement Dependency Injection
-Dynamic-Web-Pages-in-Java-300x175.jpg
-Dynamic Web Pages In Java: How To Create Web Pages In Java?
-JavaScript-interview-questions-300x175.jpg
-Top 90+ JavaScript Interview Questions and Answers for 2025
-Bootstrap-Testimonial-Slider-300x175.jpg
-What is Bootstrap Testimonial Slider and how to design it?
-Conditional-Operator-in-Java-300x175.jpg
-What is Conditional Operator in Java and how to write it?
-JavaScript-Tutorial-300x175.jpg
-JavaScript Tutorial for Beginners : A Complete Guide
-Assertions-in-Java--300x175.png
-How To Best Utilize Assertions in Java?
-Java-Math-abs-300x175.jpg
-Everything You Need To Know About Java Math abs()
-Brief-Introduction-to-Java-Thread.yield_-300x175.jpg
-How to Implement thread.yield() in Java: Examples
-split-in-php-300x175.jpg
-Split in PHP: What is str_split() function
-Exit-function-in-Java-300x175.jpg
-How do you exit a function in Java?
-Why-String-is-Immutable-in-Java-300x175.jpg
-Immutable String in Java: All you Need to Know
-file1-300x210.png
-File Operations in C
-Django-Tutorial-300x175.png
-Django Tutorial – Web Development with Python Django Framework
-Comments
-0 Comments
-Join the discussion
-
-Trending Courses in Programming & Frameworks
-Python Scripting Certification Training
-Python Scripting Certification Training
-15k Enrolled Learners
-Weekend
-Self Paced
-Reviews
- 5 (5900)
-Browse Categories
-Artificial IntelligenceAWSBI and VisualizationBig DataBlockchainBusiness ManagementCloud ComputingCyber SecurityData ScienceData Warehousing and ETLDatabasesDevOpsDigital MarketingEnterpriseFront End Web DevelopmentHuman Resource ManagementInterview QuestionsMobile DevelopmentOperating SystemsOperations ManagementProduct ManagementProject Management and MethodologiesRobotic Process Automationseo interview questionSoftware TestingStrategy and LeadershipSupply Chain ManagementSystems & Architecture
-Subscribe to our Newsletter, and get personalized recommendations.
- Already have an account? Sign in.×
-edureka logo
-TRENDING CERTIFICATION COURSES
-Advanced DevOps Certification Training with GenAI
-Agentic AI Certification Training Course
-LLM Prompt Engineering Certification Course
-Data Science with Python Certification Course
-Power BI Certification Training with Gen AI
-MLOps Certification Course
-Artificial Intelligence Certification Course
-TRENDING MASTERS COURSES
-Generative AI(Gen AI ) Masters Program
-Post Graduate Program in Gen AI and ML
-Doctor of Business Administration by Birchwood
-Integrated MS+PGP Program in Data Science & AI
-MS in Data Science by Birchwood
-European Global Doctorate of Business Administration (DBA)
-European Global MS in Data Science and AI
-EIMT Doctorate in Computer Science (DCS)
-COMPANY
-About us
-News & Media
-Reviews
-Contact us
-Blog
-Community
-Sitemap
-Blog Sitemap
-Community Sitemap
-Webinars
-WORK WITH US
-Careers
-Become an Instructor
-Become an Affiliate
-Become a Partner
-Hire from Edureka
-DOWNLOAD APP
-apple_store google_playstore
-CATEGORIES
-Cloud Computing DevOps Big Data Data Science BI and Visualization Programming & Frameworks Software Testing Project Management and Methodologies Robotic Process Automation Frontend Development Data Warehousing and ETL Artificial Intelligence Blockchain Databases Cyber Security Mobile Development Operating Systems Architecture & Design Patterns Digital Marketing
-TRENDING BLOG ARTICLES
-Selenium tutorial Selenium interview questions Java tutorial What is HTML Java interview questions PHP tutorial JavaScript interview questions Spring tutorial PHP interview questions Inheritance in Java Polymorphism in Java Spring interview questions Pointers in C Linux commands Android tutorial JavaScript tutorial jQuery tutorial SQL interview questions MySQL tutorial Machine learning tutorial Python tutorial What is machine learning Ethical hacking tutorial SQL injection AWS certification career opportunities AWS tutorial What Is cloud computing What is blockchain Hadoop tutorial What is artificial intelligence Node Tutorial Collections in Java Exception handling in java Python Programming Language Python interview questions Multithreading in Java ReactJS Tutorial Data Science vs Big Data vs Data Analytics Software Testing Interview Questions R Tutorial Java Programs JavaScript Reserved Words and Keywords Implement thread.yield() in Java: Examples Implement Optical Character Recognition in Python All you Need to Know About Implements In Java
-Address:
-4th Floor, No. 38/4, Outer Ring Rd, adjacent to Dell EMC2, Doddanekkundi, Mahadevapura, Bengaluru, Karnataka 560048
-© 2026 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved. Terms & Conditions Legal & Privacy
-   
-"PMP®","PMI®", "PMI-ACP®" and "PMBOK®" are registered marks of the Project Management Institute, Inc. MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.
-image not found!
-Top 60+ Spring Boot Interview Questions That Are A Must in 2025
-edureka.co
-
-
-image not found!
-Whatsapp
-image not found!
-Linkedin
-image not found!
-Twitter
-image not found!
-Facebook
-image not found!
-Reddit
-
-Copy Link
-image not found!
-
-
-Spring Framework предоставляет многочисленные модули и функциональности, и владение ими является ключевым для успешной работы с этим фреймворком. На собеседовании могут быть заданы вопросы, которые помогут оценить ваше знание основных принципов и возможностей Spring Framework. Проверьте свои навыки и подготовьтесь к собеседованию с помощью этой статьи.
-
-10 вопросов для java-специалиста по Spring Framework на собеседовании: проверьте свои навыки
-Spring Framework является одним из наиболее популярных фреймворков для разработки приложений на языке программирования Java. Он предоставляет мощный инструментарий для создания масштабируемых и гибких приложений, основанных на принципах инверсии управления (IoC) и аспектно-ориентированного программирования (AOP). Если вы являетесь java-специалистом и имеете опыт работы с Spring Framework, то вас могут попросить пройти собеседование, где проверят ваши навыки и знания.
-
-В этой статье мы рассмотрим 10 вопросов, которые могут быть заданы вам на собеседовании и помогут вам проверить свои навыки в работе с Spring Framework.
 
 1. Что такое Spring Framework?
 
@@ -12201,9 +10125,6 @@ Spring Framework предлагает ряд преимуществ, включ�
 - Легкость интеграции с другими фреймворками и технологиями
 
 - Упрощение разработки и тестирования приложений
-
-#
-Читайте также
 
 Разработка анимационных проектов для книг и публикаций
 
@@ -12259,9 +10180,6 @@ Spring Boot - это подпроект Spring Framework, предназначе
 
 - Применение аннотаций для упрощения конфигурации и внедрения зависимостей
 
-А ты уже нашел работу?
-
-Найти работу
 - Избегание использования слишком многословного кода и избыточной конфигурации
 
 - Тестирование кода с использованием инструментов, предоставляемых Spring Framework, таких как Mockito и JUnit
@@ -12270,10 +10188,6 @@ Spring Boot - это подпроект Spring Framework, предназначе
 
 Теперь, когда вы получили обзор некоторых вопросов по Spring Framework, вы можете легко проверить свои знания и навыки на собеседовании. Удачи!
 
-10 вопросов для java-специалиста по spring framework на собеседовании: проверьте свои навыки
-Если вы думаете, что вам все известно о Spring Framework, значит, вы ничего не знаете.
-Род Джонсон
-Вопрос	Ответ
 1. Что такое Spring Framework?	Spring Framework - это платформа, которая предоставляет обширный набор инструментов и функциональности для разработки приложений на языке Java. Он облегчает создание сложных приложений, основанных на Java, путем предоставления готовых компонентов и абстракций, упрощающих работу с различными аспектами приложения.
 2. Что такое Dependency Injection (DI) в Spring Framework?	Dependency Injection (DI) - это паттерн проектирования, который используется в Spring Framework для управления зависимостями между классами. Вместо того, чтобы класс самостоятельно создавать зависимые объекты, DI позволяет передавать объекты-зависимости в класс через конструкторы, сеттеры или поля. Это упрощает тестирование, повторное использование кода и создание слабосвязанных компонентов.
 3. Какие основные модули входят в Spring Framework?	Spring Framework состоит из нескольких модулей, включая Core Container, Data Access/Integration, Web, AOP (Aspect-Oriented Programming), и Test. Core Container предоставляет основные функциональные возможности, включая DI и IoC (Inversion of Control). Data Access/Integration модуль упрощает работу с базами данных и другими источниками данных. Web модуль позволяет разрабатывать веб-приложения. AOP модуль предоставляет поддержку аспектно-ориентированного программирования. Test модуль предоставляет инструменты для тестирования приложений.
@@ -12284,7 +10198,9 @@ Spring Boot - это подпроект Spring Framework, предназначе
 8. Какие подходы к тестированию приложений предоставляет Spring Framework?	Spring Framework предоставляет несколько подходов к тестированию приложений, включая модульное тестирование (unit testing), интеграционное тестирование (integration testing) и тестирование с использованием моков (mock testing). Модульное тестирование позволяет тестировать отдельные классы или методы в изоляции от других зависимостей. Интеграционное тестирование проверяет взаимодействие между различными компонентами приложения. Тестирование с использованием моков позволяет имитировать внешние зависимости и тестирует реакцию приложения на определенные события.
 9. Какие преимущества предоставляет использование Spring Framework?	Использование Spring Framework предоставляет несколько преимуществ, включая повышение производительности и безопасности приложений, улучшенную масштабируемость и удобство в разработке. Spring Framework облегчает создание сложных приложений благодаря своему модульному подходу и готовым компонентам. Он также упрощает тестирование и поддержку приложений. Spring Framework имеет развитую сообщество и обширную документацию, что делает его популярным выбором для разработчиков Java.
 10. Какая роль у Spring Security?	Spring Security - это модуль Spring Framework, который обеспечивает аутентификацию, авторизацию и управление доступом в веб-приложениях. Он предоставляет интегрированные механизмы для защиты приложений от несанкционированного доступа и атак. Spring Security позволяет определять права доступа для различных пользователей и ролей, а также обеспечивает безопасность передачи данных между клиентом и сервером.
-Основные проблемы по теме "10 вопросов для java-специалиста по spring framework на собеседовании: проверьте свои навыки"
+
+Основные проблемы по теме "10 вопросов для java-специалиста по spring framework
+
 1. Вопросы по IoC и DI
 На собеседованиях по Spring Framework часто задают вопросы, связанные с пониманием и применением принципов Inversion of Control (IoC) и Dependency Injection (DI). Кандидату требуется дать объяснение этих концепций, а также продемонстрировать практические навыки использования Spring для решения задач DI.
 
@@ -12312,99 +10228,6 @@ Spring MVC – это модуль Spring Framework, отвечающий за �
 
 При разработке приложения необходимо учесть такие технологические аспекты, как выбор языка программирования, фреймворка или библиотеки, архитектура приложения, взаимодействие с базой данных, оптимизация производительности, безопасность и тестирование. Также стоит учесть масштабируемость и поддержку приложения в долгосрочной перспективе.
 
-Материал подготовлен командой it-vacancies.ru
-
-Подписывайся
-
-Читайте также
-
-#
-Разработка и реализация социальных проектов на заказ
-20 марта 2025
-
-#
-Разработка файтингов
-7 июня 2024
-
-#
-Настоящие правила трудоустройства для студентов
-11 июля 2023
-
-
-info@it-vacancies.ru
-Клиентам
-
-Контакты
-Рейтинг работодателей
-
-Скоро
-Мы в СМИ
-
-Скоро
-Работодателям
-
-Разместить вакансии
-Найти сотрудников
-Резюме по профессиям
-Цены и услуги
-Соискателям
-
-Добавить резюме
-Поиск вакансий
-Каталог компаний
-Вакансии по профессиям
-Работа рядом с метро
-FAQ
-
-Скоро
-Уровень зарплат
-
-Скоро
-Полезное
-
-Работа у нас
-Блог
-Поддержка
-База знаний
-Документы
-
-Скоро
-Исследования
-
-Скоро
-Вакансии по категориям
-
-Менеджер
-Аналитик
-Бухгалтер
-Инженер
-Администратор
-Дизайнер
-Маркетолог
-Программист
-Геймдизайнер
-Консультант
-Копирайтер
-Разработчик игр
-Тестировщик
-Архитектор сети
-Редактор
-Сценарист игр
-Руководитель проектов
-Иллюстратор
-Верстальщик
-Публичная оферта
-Карта сайта
-Политика конфиденциальности
-Это ваш город?
-
-Москва
-
-
-
-Веб-разработчики часто используют микросервисы для создания небольших, независимых и легко обслуживаемых приложений. Ресурсы с открытым исходным кодом, такие как Spring Boot, помогают им оптимизировать внедрение архитектуры микросервисов. Если вы являетесь веб-разработчиком, от вас может потребоваться понимание Spring Boot и некоторых технических основ.
-
-В этой статье мы приводим 55 вопросов для собеседования по Spring Boot и даем несколько примеров ответов, которые помогут вам подготовиться к собеседованию.
 
 Что такое Spring Boot?
 Spring Boot - это ресурс с открытым исходным кодом для создания микросервисов и архитектуры, которая делает бизнес более эффективным. Микросервисы, разработанные в Spring Boot, называются весенними приложениями.
@@ -12497,6 +10320,7 @@ Spring Boot помогает некоторым корпоративным пр�
 
 Какой аспект Spring Boot является вашей самой сильной стороной? Ваши самые слабые зависимости?
 
+
 Расширенные вопросы для собеседования по Spring Boot
 Эти вопросы могут задать менеджеры по найму, чтобы определить ваш уровень знаний о Spring Boot?
 
@@ -12580,86 +10404,6 @@ Spring beans - основа фреймворка Spring. Вы можете об�
 
 Пример: Spring beans - это объекты Java, которые составляют основу приложения. Они инициализируются IoC-контейнером Spring и создаются с помощью предоставленных пользователем метаданных конфигурации.
 
-Рубрика: Карьера и Саморазвитие
-Ключевые слова: Вопросы на собеседовании
-Источник: indeed.com
-Перевод: Дмитрий Л
-Поделиться
-
-Популярное сегодня
-
-Когда pet-friendly офис становится причиной конфликта. Как сохранить комфорт сотрудников с аллергией
-
-Контент для привлечения кандидатов: форматы и идеи
-
-10 слов, которые слишком часто используются и которых следует избегать при составлении резюме
-
-Почему кандидаты не доходят до оффера: 7 шагов, чтобы «дожать» воронку подбора
-
-13 вещей, которые никогда не следует говорить на собеседовании
-Методики и шаблоны в рубрике
-Резюме маркетолога. Образец
-Резюме на английском (функциональное)
-Пример резюме
-Резюме на английском (комбинированное)
-Резюме учителя
-Добавить на сайт
-Возможность добавления публикаций имеют только авторизованные зарегистрированные пользователи.
-
-Зарегистрироваться
-Войти
-Рассылки
-Выберите рассылки, на которые вы хотите или не хотите быть подписанным.
-
- Новости HR-Portal
- Рассылка HR-Portal (Недельный дайджест)
-Электронная почта *
-Читайте также
-Системы оценки работы
-Системы оценки работы
-
-Краткое руководство по нематериальному поощрению сотрудников. Как выразить признательность команде
-
-9 способов мотивировать сотрудников, помимо финансового стимулирования
-
-7 типов сотрудников, которых следует незамедлительно уволить
-
-А сколько времени у Вас уходит на закрытие вакансий?
-Подписка на обновления
-Информация
-О сайте
-Контакты
-Реклама
-Правила
-Публикации
-Новости
-Статьи
-Образцы документов
-Методики
-Файлы
-Словарь терминов
-Идеи	Есть идея, предложение?
-Напишите нам | Все идеи
-© 2004-Н.В. HR-Portal: Сообщество HR-Менеджеров
-
-
-
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Мар 5, 2021
-—
-
-от автора
-
-admin
-
-Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
-
-Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
 
 1. Верно или ложно следующее утверждение: «Каждое приложение Spring Boot — это веб-приложение, работающее во встроенном Apache Tomcat». Обоснуйте свой ответ.
 Ответ
@@ -12683,22 +10427,7 @@ admin
 Ответ
 11. Как узнать, какие автоконфигурации Spring Boot применяются при запуске и какие условия оцениваются?
 Ответ
-Заключение
-Очевидно, нет никакой гарантии, что вы ответите на эти вопросы на собственном собеседовании по Spring Boot, хотя знание (и понимание) ответов на них должно стать прочной основой для любого интервью.
 
-Если вы хотите получить более глубокое представление обо всей экосистеме Spring, вы также можете ознакомиться с другими статьями о Spring в блоге автора.
-
-Примечание переводчика. Переводы 2 статей из блога  автора о Spring есть на Хабр:
-
-Что такое Spring Framework? От внедрения зависимостей до Web MVC
-
-Spring MVC: создание веб-сайтов и RESTful сервисов
-
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
-*****************************************************************************
 What is a Spring configuration file?
 A Spring configuration file defines the relationship between different classes in the Spring application.
 
