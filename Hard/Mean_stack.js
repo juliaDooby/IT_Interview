@@ -1,3 +1,5 @@
+MEAN
+
 What Refers to MEAN Stack?
 The MEAN stack is a popular web development framework that consists of four main technologies: MongoDB (M), Express.js (E), Angular (A), and Node.js (N). MongoDB is a NoSQL database, Express.js is a web application framework for Node.js, Angular is a front-end JavaScript framework, and Node.js is a server-side JavaScript runtime. Together, they form a full-stack solution for building a dynamic web application. In the present scenario, imbibing MEAN stack developer skills will help you stick in the IT field in the long run. It will also help you in executing complex tasks smoothly.
 
