@@ -670,7 +670,6 @@ Feature Branches/Topic Branches: They are used to develop new features for upcom
 Hotfix Branches: They are used for unplanned production releases when there is a need to fix any critical bug immediately in the live prod version. They may branch off from master and must be merged back into develop and master.
 Release Branches: They are used for the preparation of new production releases. The release branch lets you do minor bug fixes and prepare metadata for release. They may branch off from development and must be merged back into master and develop.
 
-
 **UI-Kit** (User Interface Kit) — это набор готовых компонентов пользовательского интерфейса (UI), который используется для создания и стилизации веб-приложений или сайтов. Это коллекция стандартных элементов интерфейса (кнопки, поля ввода, выпадающие меню, карточки, модальные окна и т.д.), которые разработаны с учетом единого стиля и логики использования.
 
 ### Основные элементы UI-Kit:
@@ -2722,100 +2721,86 @@ CSS-свойства, которые могут вызывать перерис�
 - Сохраняется даже после закрытия браузера.
 В общем, cookies используются для хранения небольших данных, которые требуется отправлять на сервер с каждым запросом, session storage - для временного хранения данных в рамках текущего сеанса браузера, а local storage - для долгосрочного хранения данных на стороне клиента.
 ---------------------------------------------------------------------------------------------
-
-
-
-
 Как переадресовать страницу в JavaScript?</span></li>
 Сколько параметров можно передать функции?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Нужно алертом вывести какое-то сообщение, спустя 3 секунды после запуска скрипта. Как это сделать?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Чем отличается наследование в JavaScript от наследования в PHP?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Приведи пример наследования в JavaScript.</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Пара слов об объектах в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что представляет из себя метод объекта в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Зачем в JavaScript перед переменной писать var?<a name="more"></a></span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Есть две функции: function f(a,b) { return a+b } и var f = function(a,b) { return a+b } Есть ли между ними разница? Если есть то какая?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как создать массив в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли в JavaScript использовать функцию в качестве конструктора?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Сколько и какие конструкции для циклов есть в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что cделает код: break me_baby; ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли задать массив таким образом: var a = &#8220;a,b&#8221;.split(&#8216;,&#8217;)?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что выведет alert(typeof null); ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что выведет alert(null instanceof Object); ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">0.1+ 0.2 == 0.3 ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что выведет alert(typeof NaN); ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что выведет alert(NaN === NaN); ?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">В чём различие свойств innerHTML и outerHTML?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между операторами == и ===?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">В чем разница между Object.getOwnPropertyNames() и Object.keys()?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">С помощью какой конструкции языка можно управлять потоком выполнения скрипта и отслеживать ошибки?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Почему вызов a(); происходит успешно, а вызов b(); выдает ошибку?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое глобальные переменные ? Как они создаются ? Какие проблемы связаны с использованием глобальных переменных?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое замыкания (closure) в JavaScript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Напишите функцию принимающую строку с именем файла и возвращающую расширение (фрагмент после последней точки).</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что вернет выражение +new Date()? Чем отличается от Date.now().</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какое значение возвращает данное предложение ~~3.14?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какое значение возвращает данное предложение?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что покажут эти два alert?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Чему равно foo.length?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое prototype в javascript?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какие способы навешивания обработчиков событий вы знаете?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Eсть ли разница между window и document?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Вызываются ли document.onload и window.onload одновременно?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Является ли атрибут (attribute) аналогом свойства (property)?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как остановить дальнейшее распространение события?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Назовите различные пути для получения элемента из DOM дерева?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какой наибыстрейший метод для получения элемента через css селектор?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Могу ли я удалить удалить обработчик события с элемента?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Почему querySelectorAll(&#8216;.my-class&#8217;) медленнее, чем getElementsByClassName(&#8216;my-class&#8217;)?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Почему я не могу использовать forEach или похожий метод массива для NodeList?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Если вам необходимо реализовать getElementByAttribute, как вы будете это делать?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как бы вы добавили класс к элементу через селектор?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как я могу запустить обработчик в фазе захвата, а не в фазе всплытия?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как проверить, что один элемент является дочерним другому?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какой метод больше всего подходит для создания DOM элемента? Что лучше innerHTML или createElement?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Каким образом можно предотвратить множественный вызов обработчика для одного события?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что делает createDocumentFragment и для чего можно его использовать?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое reflow?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как я могу проверить были событие отменено или нет?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какие причины reflow? Как можно уменьшить reflow?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое repaint и когда оно происходит?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Есть ли что-то такое о чём нужно позаботится при использовании node.cloneNode()?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как быть уверенным в том, что DOM подготовлен и можно выполнять JavaScript, как реализовать $(document).ready?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое всплытие?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как можно уничтожить несколько элементов с одним вызовом click?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как предотвратить нажатие по ссылке?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Создайте кнопку, которая удаляется при нажатии на неё, и создаются две новые кнопки в этом же месте.</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как отлавливать все нажатия на странице?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Как получить весь текст на странице?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое defer и async?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif;">Какие существуют типы нод?</span></li>
-</ul>
-<h3>
-<a href="http://jsehelper.blogspot.com/2016/01/javascript.html" style="font-family: arial, helvetica, sans-serif;"><span style="font-family: Arial, Helvetica, sans-serif;">Перейти к ответам &#9658;&#9658;</span></a></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h4 style="text-align: left;">
-<a href="http://jsehelper.blogspot.com/2016/01/angularjs.html" style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">AngularJS.</span></a></h4>
-<div style="text-align: left;">
-</div>
-<ul style="text-align: left;">
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие преимущества использования AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие основные компоненти AngularJS ви знаете?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое AngularJS выражения? Отличие выражений AngularJS от выражений в JS.</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое scope в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое rootScope в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое директива (directive) в AngularJS? Назовите несколько основных директив.</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие есть типы использования директив в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое Сервис (service), в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое &nbsp;модуль (module) &nbsp;в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое &nbsp;фильтр (filter) &nbsp;в Angular?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое контролер (controller) &nbsp;в Angular?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что катое провайдер (provider) в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что катое &nbsp; шаблон в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое &nbsp;ижектор (injector) &nbsp;в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое &nbsp;Внедрение зависимости (Dependency Injection) &nbsp;в AngularJS?</span></li>
+Нужно алертом вывести какое-то сообщение, спустя 3 секунды после запуска скрипта. Как это сделать?</span></li>
+Чем отличается наследование в JavaScript от наследования в PHP?</span></li>
+Приведи пример наследования в JavaScript.</span></li>
+Пара слов об объектах в JavaScript?</span></li>
+Что представляет из себя метод объекта в JavaScript?</span></li>
+Зачем в JavaScript перед переменной писать var?<a name="more"></a></span></li>
+Есть две функции: function f(a,b) { return a+b } и var f = function(a,b) { return a+b } Есть ли между ними разница? Если есть то какая?</span></li>
+Как создать массив в JavaScript?</span></li>
+Можно ли в JavaScript использовать функцию в качестве конструктора?</span></li>
+Сколько и какие конструкции для циклов есть в JavaScript?</span></li>
+Что cделает код: break me_baby; ?</span></li>
+Можно ли задать массив таким образом: var a = &#8220;a,b&#8221;.split(&#8216;,&#8217;)?</span></li>
+Что выведет alert(typeof null); ?</span></li>
+Что выведет alert(null instanceof Object); ?</span></li>
+0.1+ 0.2 == 0.3 ?</span></li>
+Что выведет alert(typeof NaN); ?</span></li>
+Что выведет alert(NaN === NaN); ?</span></li>
+В чём различие свойств innerHTML и outerHTML?</span></li>
+Какая разница между операторами == и ===?</span></li>
+В чем разница между Object.getOwnPropertyNames() и Object.keys()?</span></li>
+С помощью какой конструкции языка можно управлять потоком выполнения скрипта и отслеживать ошибки?</span></li>
+Почему вызов a(); происходит успешно, а вызов b(); выдает ошибку?</span></li>
+Что такое глобальные переменные ? Как они создаются ? Какие проблемы связаны с использованием глобальных переменных?</span></li>
+Что такое замыкания (closure) в JavaScript?</span></li>
+Напишите функцию принимающую строку с именем файла и возвращающую расширение (фрагмент после последней точки).</span></li>
+Что вернет выражение +new Date()? Чем отличается от Date.now().</span></li>
+Какое значение возвращает данное предложение ~~3.14?</span></li>
+Какое значение возвращает данное предложение?</span></li>
+Что покажут эти два alert?</span></li>
+Чему равно foo.length?</span></li>
+Что такое prototype в javascript?</span></li>
+Какие способы навешивания обработчиков событий вы знаете?</span></li>
+Eсть ли разница между window и document?</span></li>
+Вызываются ли document.onload и window.onload одновременно?</span></li>
+Является ли атрибут (attribute) аналогом свойства (property)?</span></li>
+Как остановить дальнейшее распространение события?</span></li>
+Назовите различные пути для получения элемента из DOM дерева?</span></li>
+Какой наибыстрейший метод для получения элемента через css селектор?</span></li>
+Могу ли я удалить удалить обработчик события с элемента?</span></li>
+Почему querySelectorAll(&#8216;.my-class&#8217;) медленнее, чем getElementsByClassName(&#8216;my-class&#8217;)?</span></li>
+Почему я не могу использовать forEach или похожий метод массива для NodeList?</span></li>
+Если вам необходимо реализовать getElementByAttribute, как вы будете это делать?</span></li>
+Как бы вы добавили класс к элементу через селектор?</span></li>
+Как я могу запустить обработчик в фазе захвата, а не в фазе всплытия?</span></li>
+Как проверить, что один элемент является дочерним другому?</span></li>
+Какой метод больше всего подходит для создания DOM элемента? Что лучше innerHTML или createElement?</span></li>
+Каким образом можно предотвратить множественный вызов обработчика для одного события?</span></li>
+Что делает createDocumentFragment и для чего можно его использовать?</span></li>
+Что такое reflow?</span></li>
+Как я могу проверить были событие отменено или нет?</span></li>
+Какие причины reflow? Как можно уменьшить reflow?</span></li>
+Что такое repaint и когда оно происходит?</span></li>
+Есть ли что-то такое о чём нужно позаботится при использовании node.cloneNode()?</span></li>
+Как быть уверенным в том, что DOM подготовлен и можно выполнять JavaScript, как реализовать $(document).ready?</span></li>
+Что такое всплытие?</span></li>
+Как можно уничтожить несколько элементов с одним вызовом click?</span></li>
+Как предотвратить нажатие по ссылке?</span></li>
+Создайте кнопку, которая удаляется при нажатии на неё, и создаются две новые кнопки в этом же месте.</span></li>
+Как отлавливать все нажатия на странице?</span></li>
+Как получить весь текст на странице?</span></li>
+Что такое defer и async?</span></li>
+Какие существуют типы нод?</span></li>
+Что такое AngularJS?</span></li>
+Какие преимущества использования AngularJS?</span></li>
+Какие основные компоненти AngularJS ви знаете?</span></li>
+Что такое AngularJS выражения? Отличие выражений AngularJS от выражений в JS.</span></li>
+Что такое scope в AngularJS?</span></li>
+Что такое rootScope в AngularJS?</span></li>
+Что такое директива (directive) в AngularJS? Назовите несколько основных директив.</span></li>
+Какие есть типы использования директив в AngularJS?</span></li>
+Что такое Сервис (service), в AngularJS?</span></li>
+Что такое &nbsp;модуль (module) &nbsp;в AngularJS?</span></li>
+Что такое &nbsp;фильтр (filter) &nbsp;в Angular?</span></li>
+Что такое контролер (controller) &nbsp;в Angular?</span></li>
+Что катое провайдер (provider) в AngularJS?</span></li>
+Что катое &nbsp; шаблон в AngularJS?</span></li>
+Что такое &nbsp;ижектор (injector) &nbsp;в AngularJS?</span></li>
+Что такое &nbsp;Внедрение зависимости (Dependency Injection) &nbsp;в AngularJS?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Для чего нужен сервис $ location?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие CSS классы предоставляються для оформления форм?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое Компилятор, на какие фазы делятся фазы компиляции angular приложения.</span></li>
@@ -3166,23 +3151,23 @@ CSS-свойства, которые могут вызывать перерис�
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Execution Tasks.</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории File Tasks.</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Miscellaneous Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Property Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие типы данных предусмотренный в Apache Ant?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что представляет собой тип DirSet?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие атрибуты DirSet вы знаете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что представляет собой тип FileSet?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие атрибуты FileSet вы знаете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что представляет собой тип PatternSet?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как я могу использовать ant, чтобы запустить Java приложение?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как установить property-файл в ant скрипт?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как импортировать jar-файлы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как использовать clean в ant скрипте?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как компилировать с помощью ant?</span></li>
-
-
-Junior Front-end Developer Interview Questions
+Краткое описание основных задач категории Property Tasks.</span></li>
+Какие типы данных предусмотренный в Apache Ant?</span></li>
+Что представляет собой тип DirSet?</span></li>
+Какие атрибуты DirSet вы знаете?</span></li>
+Что представляет собой тип FileSet?</span></li>
+Какие атрибуты FileSet вы знаете?</span></li>
+Что представляет собой тип PatternSet?</span></li>
+Как я могу использовать ant, чтобы запустить Java приложение?</span></li>
+Как установить property-файл в ant скрипт?</span></li>
+Как импортировать jar-файлы?</span></li>
+Как использовать clean в ant скрипте?</span></li>
+Как компилировать с помощью ant?</span></li>
+********************************************************************************************************************************
+********************************************************************************************************************************
+	********************************************************************************************************************************
+Junior Front-end Developer
 01
-
 Explain what the "box model" CSS is and the layout components that make it up?
 The CSS box model is a rectangular layout paradigm for HTML elements. It consists of the following elements:
 
@@ -3195,7 +3180,6 @@ Border - border surrounding the padding (if any) and content
 Margin - is the transparent area around the border (the amount of space between the border and any neighboring elements)
 
 02
-
 What are some of the main benefits of REST web services?
 Here are some of the main benefits of REST web services:
 
