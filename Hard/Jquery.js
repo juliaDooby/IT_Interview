@@ -255,32 +255,6 @@ $('#myElement').addClass(function() {
 ```
 Этот код добавит класс `class1` или `class2` в зависимости от выполнения условия.
 ---------------------------------------------------------------------------------------------
-
-50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
-By Sruthy  Updated January 21, 2026
- 
- Edited by Kamila
-This tutorial lists the most frequently asked jQuery interview questions and answers to help you prepare for your upcoming jQuery interview.
-
-If you are preparing for a jQuery interview, then here are the most frequently asked jQuery interview questions with answers and examples for your reference.
-
-We have tried to bring together all the possible questions that you may likely encounter during your technical interview to check your competency in jQuery.
-
-Table of Contents: [Show]
-
-Expert Quiz on jQuery Interview Questions
-A tailored quiz on jQuery interview questions for both freshers and experienced professionals. This quiz covers all questions on essential jQuery concepts, DOM Manipulation & Events, AJAX & Animations, and Advanced Concepts to level up your jQuery skills.
-
-jQuery Interview Prep Quiz
-Master JavaScript library skills and excel in your jQuery interviews
-Question 1 of 20
-What is jQuery and what is its primary purpose?
-A server-side framework for building web applications and APIs
-A database management system for storing web application data
-CSS framework
-A fast, lightweight JavaScript library for DOM manipulation
-
-jquery interview questions and answers
 What is jQuery?
 jQuery is a document object model manipulation JavaScript library that is mainly used in managing and traversing over HTML documents, web element event handling, special effects on the DOM, Ajax communications, and multiple browser JavaScript development.
 
@@ -292,7 +266,9 @@ HTML event methods
 Effects and animations
 AJAX
 Utilities
+
 Basic jQuery Interview Questions
+
 Q #1) Can you explain what jQuery is ?
 
 Answer: jQuery is a fast, lightweight, and feature-rich JavaScript library. It is an easy-to-use, cross-browser compatible API for HTML document traversal & manipulation, event handling, adding animation effects to web pages, and helps in Ajax interactions.
@@ -383,6 +359,7 @@ Q #13) Differentiate between find() and children() methods.
 Answer: .find() and .children() are used to locate the child of the matched DOM elements. .find() travels to any level down, whereas .children() travels a single level down to locate the element.
 
 Let’s consider the following DOM structure in an HTML document.
+
 
 findJQ
 Syntax in jQuery .find() API to locate an element within <li> tag with class “item-ii”.
@@ -526,6 +503,8 @@ Answer: .filter() in jQuery will check for the matched element, and the attribut
 
 For example, for the .filter(), it can be as given below.
 
+
+
 filterjQ
 Line of code in jQuery.filter() API to locate/filter out list elements is as follows.
 
@@ -566,20 +545,6 @@ Answer: jQuery .each() is used to iterate/list the DOM elements present in the j
 
 Example
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 var veg_list = {
 Onion,
 Capsicum,
@@ -631,8 +596,6 @@ Answer: There are two different methods in jQuery to change the width of an elem
 
 Example:
 
-1
-2
 $(selector).css(property,value_change);
 $(selector).property(value_change);
 In .css(property), which in this case is width, we have to add px in the value_change, say 300px.
@@ -666,12 +629,6 @@ Answer: .val() method helps to find the value of an attribute of an HTML element
 
 Example explained with syntax
 
-1
-2
-3
-4
-5
-6
 // form elements such as dropdown with select tag and id mylst, the value of the selected option will have syntax as below
  
 $( "select#mylst option:checked" ).val();
@@ -700,8 +657,6 @@ Answer: jQuery.data() method aids in attaching any type of data to DOM elements,
 
 Code for storing and retrieving data related to an element.
 
-1
-2
 $('#myDiv').data('keyName', { foo : 'bar'});
 $('#myDiv').data('keyName'); // { foo : 'bar'}
 Q #47) Can you explain the various procedures of extracting a query string with regular expressions?
@@ -722,24 +677,6 @@ Q #50) How can you write a browser-specific code using jQuery?
 
 Answer: We can write browser-specific code in jQuery using navigator.userAgent to identify the browser from Internet Explorer, Chrome, Firefox, Safari, and Opera, as the code is written below.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 if (navigator.userAgent.search("MSIE") >= 0) {
 // JQuery Code once navigator.userAgent identifies Microsoft Internet Explorer browser.
 }
