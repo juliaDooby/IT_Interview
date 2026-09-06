@@ -178,33 +178,22 @@ Amazon Advertising API
 Из-за отсутствия графического интерфейса довольно сложно предоставить входные значения
 
 19. С какими типами ошибок мы сталкиваемся при тестировании API?
-
 Проблемы, наблюдаемые при тестировании API:
-
 Стресс, проблемы с производительностью и безопасностью
-
 Дублирование или отсутствие функций
-
 Проблемы с надежностью
-
 Неправильный обмен сообщениями
-
 Несовместимый механизм обработки ошибок
-
 Многопоточные проблемы
-
 Неправильные ошибки
-
 
 20. Чем тестирование пользовательского интерфейса отличается от тестирования API?
 
 Тестирование пользовательского интерфейса (UI) предназначено для тестирования части графического интерфейса приложения. Его основное внимание уделяется тестированию внешнего вида приложения. С другой стороны, тестирование API обеспечивает связь между двумя разными программными системами. Основное внимание уделяется бизнес-уровню приложения.
 
-
 21. Назовите некоторые наиболее часто используемые методы HTTP?
 
 Некоторые из методов HTTP:
-
 
 GET: он позволяет получать данные с сервера
 POST: позволяет добавлять данные в существующий файл или ресурс на сервере
@@ -224,12 +213,12 @@ HEAD: запрашивает ответ, идентичный запросу GET
 
 Методы PUT и POST иногда путают в отношении того, когда каждый из них следует использовать. При использовании POST-запроса наша цель — создать новый объект на сервере, а при PUT-запросе — заменить один объект другим.
 
-
 POST следует использовать, когда клиент отправляет страницу на сервер, а затем сервер сообщает клиенту, куда он ее поместил. PUT следует использовать, когда клиент указывает местоположение страницы
 
 Key Takeaway 1: Mastering API Fundamentals: Understand core API concepts like its definition, differences from web services, limitations, and operational workflow. This forms the basis for more advanced API testing discussions.
 Key Takeaway 2: HTTP Methods and Protocols: Gain proficiency in common protocols (HTTP, REST, SOAP, JMS, UDDI) and HTTP methods (GET, POST, PUT, DELETE, PATCH) and their practical applications in API testing scenarios. This is crucial for analyzing requests and responses.
 Key Takeaway 3: Navigating API Testing Challenges: Familiarize yourself with common API testing challenges like dynamic data handling, error handling, and selecting appropriate tools (e.g., Katalon Studio, Postman). Prepare to articulate how you'd address these challenges in a real-world setting.
+
 
 
 API Fundamentals (Common Web API Testing interview questions)
@@ -268,75 +257,40 @@ Common protocols include HTTP, REST, SOAP, JMS, and UDDI. These define how data 
 
 7. Compare the differences between HTTP, REST, SOAP, JMS, and UDDI
 Protocol
-
 Data Format
-
 Complexity
-
 Communication Style
-
 Transport Protocol
-
 Use Cases
-
 HTTP
-
 Typically plain text or HTML
-
 Simple, lightweight
-
 Synchronous (request-response)
-
 HTTP
-
 Web communication, page requests
-
 REST
-
 JSON (commonly), XML
-
 Flexible, lightweight
-
 Synchronous (request-response)
-
 HTTP
-
 Web/mobile APIs, microservices, simple web-based apps
-
 SOAP
-
 XML
-
 Rigid but reliable, follows strict standards
-
 Synchronous (request-response)
-
 HTTP, SMTP, JMS, others
-
 Enterprise apps needing security, transactions, complex services
-
 JMS
-
 No fixed format (varies by implementation)
-
 Moderate complexity
-
 Asynchronous (message queuing)
-
 Specific to message queues (JMS protocol)
-
 Internal systems, asynchronous communication in enterprise environments
-
 UDDI
-
 XML
-
 Moderate, requires registry setup
-
 Synchronous (service discovery)
-
 HTTP, SOAP
-
 Web service discovery, service registries (primarily for SOAP services)
 
 8. What are the core components of an HTTP request?
@@ -491,22 +445,13 @@ There are a lot of different API testing tools available that enterprises around
 API Testing
 Unit Testing
 Conducted by QA Team
-
 Conducted by the development team
-
 Mostly black-box testing
-
 White box testing
-
 Aimed to assess the full functionality of the system for it will be employed by the end-user (external developers who will use your API)
-
 Used to verify whether each unit in isolation performs as expected or not
-
 Often run after the build is ready and authors do not have access to the source code
-
 Each of the code modules must be ensured to pass the unit test before being built by developers
-
-📚 Read More: What is Unit Testing? A Comprehensive Guide
 
 30. What are the differences between API Testing and UI Testing?
 banner-1.png
@@ -986,8 +931,6 @@ RESTful web services are created by following the REST architecture design patte
 
 Typically, RESTful web services are maintainable, scalable, and allow communication between various other applications, regardless of the base programming language used to make the app.
 
-
-
 Side note, this is another one of those really obvious REST web services interview questions, so make sure you’ve got this one covered!
 
 3. What Is a REST API Resource?
@@ -1023,7 +966,6 @@ Some of the more common HTTP responses are:
 500 (Internal Server Error): request unsuccessful due to an unexpected server error
 502 (Bad Gateway): request unsuccessful due to invalid server response
 503 (Service Unavailable): server undergoing maintenance/unavailable, cannot process request
-
 
 Note, this is one of those REST web service interview questions and answers that you should instantly know the answer to if you plan to work with or design REST APIs. 
 
@@ -1146,7 +1088,6 @@ Correct HTTP method (GET, PUT, DELETE, etc.)
 Don’t use HTTP method names in URIs, i.e., don’t use …/get-resource
 Forward slashing to define resource hierarchy
 
-
 20. What Are Idempotent Methods?
 Idempotent methods return the same outcome for a request no matter how often the request is made. These are particularly useful in preventing duplicated client requests from being handled by a REST API, whether made intentionally or because of an unexpected bug in client-side code.
 
@@ -1176,11 +1117,7 @@ Download our REST API Interview Questions and Answers PDF here.
 
 Want to become a REST API developer but unsure where to start?
 
-We recommend this Udemy course:
 
-REST APIs with Flask and Python
-
-Frequently Asked Questions
 1. What Are REST API Interview Questions?
 REST API interview questions typically focus on topics like HTTP methods, how to troubleshoot REST APIs, the difference between REST and SOAP APIs, the difference between REST and AJAX, best practices for URI naming, how to use caching, and more. Check out the 20 questions and answers above.
 
@@ -1227,6 +1164,7 @@ Full-Stack Developers: The jacks-of-all-trades who need to know both client-side
 API Developers: Those specializing in API development, obviously.
 Data Scientists and Engineers: Professionals who need to pull in data from various services for analytics and data processing.
 Mobile App Developers: Many mobile apps pull from web services, often using REST APIs.
+
 QA Engineers: Those responsible for testing the reliability and scalability of web services, including APIs.
 1. Create a Simple RESTful Service to Manage a To-Do List
 This question serves as a foundational task to assess your grasp of REST API basics, CRUD operations, and endpoint creation.
@@ -1556,18 +1494,6 @@ Explanation:
 
 In this example, the `manage_single_task` function first checks if the task exists. If not, it returns a 404 status code with a custom error message. If the task exists and it’s a `PUT` request but missing the ‘task’ field, it returns a 400 status code with another custom error message.
 
-Resources to Improve REST API Knowledge
-HackerRank REST API Skills Certification
-HackerRank Interview
-Tech Interview Prep: How To Ace Your Interview
-
-REST API Interview Questions & Answers
-By Great Learning Editorial Team
-Published on July 25, 2022  Last Updated on November 18, 2024
-rest api interview questions
-When you’re interviewing for a software development job, expect to be asked questions related to REST API technology. It’s not unusual to face REST API interview questions when you’re interviewing for tech jobs. However, it can be difficult to answer these questions when you don’t have a holistic understanding of the REST APIs. 
-
-If you feel there are gaps in your understanding of REST API technology, now is the time to start learning more about it so that you can ace your next interview. Use this article to prepare yourself with the most important REST API interview questions and answers so that you can nail your interviews and get the job you want.
 
 What do you understand by RESTful Web Services?
 An architectural style, REST is an acronym for REpresentational State Transfer. REST provides a guideline for building a performant and scalable system on the web. Based on REST architecture, the services made in this way are called RESTful web services. They’re lightweight, maintainable, and scalable.  
@@ -1895,9 +1821,8 @@ User Authentication: When the authentication is not managed properly, it creates
 Injection Issues: Attackers can inject malicious code through an existing query. This is one of the major security issues.
 Deprecated API Management: Usually, several endpoints are exposed because of APIs and increase the risk of attack if the deprecated APIs are not managed properly.
 
+
 REST API и очередное тестовое задание.
-Статья из группы Random
-Part I: Beginning
 
 С чего стоит начать? Как ни странно, но с технического задания. Крайне важно убедиться, что прочитав присланное ТЗ ты полностью понимаешь что в нем написано и чего ожидает клиент. Во первых, это важно для дальнейшей реализации, во вторых, если ты реализуешь не то, чего от тебя ждут - это тебе в плюс не сыграет. Что бы не гонять воздух давай набросаем простенькое ТЗ. 
 
@@ -1964,8 +1889,6 @@ REST API или очередное тестовое задание. - 3
 Приступим к внедрению первой части функционала.
 
 Part III: Controller
-
-Java-университет
 
 @RestController
 @RequestMapping("${application.endpoint.root}")
@@ -2066,6 +1989,8 @@ public class EmployeeService {
 Здесь есть уже знакомая нам RequiredArgsConstructor и новая аннотация @Service - такой обычно обозначают слой бизнес логики. При запуске спрингового контекста, классы помеченные такой аннотацией будут созданы в виде Бинов (Bean). Когда в классе EmployeeController мы создали final свойство EmployeeService и навесили RequiredArgsConstructor (или создали конструктор руками) спринг, при инициализации приложения найдет это место и подсунет нам в эту переменную объект класса. По умолчанию здесь используется Singleton - т.е. объект будет один на все такие ссылки, это важно учитывать в проектировании приложения.
 
 Собственно на этом все, приложение можно запускать. Не забудьте ввести необходимые настройки в конфиг. 
+
+	
 REST API или очередное тестовое задание. - 4
 Я не буду описывать как установить базу данных, создать в ней пользователя и собственно базу, но отмечу только что в URL я использую два дополнительных параметра - useUnicore=true и characterEncoding=UTF-8. Сделано это для того что бы текст более менее одинаково отображался на любой системе. 
 
@@ -2179,48 +2104,6 @@ import javax.persistence.Id;
 empty Уровень 21
 15 мая 2023
 В следующей статье я показываю программулинку называемую Postman - рекомендую освоить, пригодится со временем.
-
-у меня есть insomnia если я не ошибаюсь то это тоже самое что и postman,
-я так понял, там вместо адресной строки можно тестить, 
-как отрабатывают различные запросы.
-Денис Уровень 33
-15 мая 2023
-Можно и через неё. Штука с адресной строкой удобна до тех пор пока ты работаешь с GET запросами, для всего остального уже нужны специализированные инструменты.
-В прочем, любая юникс система (для WIndows можно использовать WSL) или уже имеет на борту или легко доустанавливается утилита curl - позволяет слать запросы прямо из терминала, что тоже удобно. Наряду с тем же Bash можно сделать не сложную систему автоматизации. Ну или на джавке той же разобраться с HTTP клиентом и тоже делать запросы через него. Короче способов тьма.  
-ram0973 Уровень 41
-27 августа 2022
-позанудствую, @Data c @Entity не дружат потому что @Data создаёт @EqualsAndHashCode
-Денис Уровень 33
-27 августа 2022
-Ну я бы не сказал что это можно назвать "не дружат". Скорее есть узкие места о которых есть смысл помнить если это важно для имплементации. Например критически необходимо использование и работоспособность хеш коллекций. 
-
-В моей практике с этим пока проблем не встречалось :) Еще я не вполне понял абзац с изменяемым айди у сущности... что-то там херня творится как по мне, если у сущности может меняться PK..
-ram0973 Уровень 41
-28 августа 2022
-а без @NoArgsConstructor тоже норм работает?
-Денис Уровень 33
-28 августа 2022
-Ну ты ж видишь - работает :)
-Денис Уровень 33
-16 августа 2022
-UPD 16.08: добавил пункт про H2 базу данных, для тех кому лень возиться с установкой полноценной БД :)
-Sergey Drogunov Уровень 117 Expert
-27 февраля 2023
-Мне лень вощится с H2)))
-Не могу себя заставить)
-Денис Уровень 33
-27 февраля 2023
-охренеть, это оказывается еще читают :)
-Sergey Drogunov Уровень 117 Expert
-14 марта 2023
-Сам в шоке. 
-Ага, еще и отвечают))
-Денис Уровень 33
-14 марта 2023
-Если любопытно там новая часть вышла недавно. Вышла конечно так себе, но это нужно было сделать :)
-Павел Уровень 1
-12 августа 2022
-Ура, кто то пишет статьи)
 
 Во всех командах в которых работал, прожженные ревьюеры просили явно указывать где происходит инжект
 //так
@@ -2345,7 +2228,6 @@ Statelessness is a hallmark trait of REST APIs, and it has many benefits. REST A
 
 Statelessness has a few drawbacks, as well. Requests to a REST API may have larger payloads, as the client must include all of the necessary information. This may have a negative impact on network performance. Statelessness may also require clients to handle retries in the case of network or server failures, as there is no server-side context to help with these error scenarios.
 
-	
 В индустрии разработки ПО системный аналитик играет ключевую роль в проектировании приложений и построении интеграций. Одним из основных инструментов для этого является REST API. Знание REST API — важный навык для системного аналитика, наряду с диаграммами BPMN и UML Sequence, и умением составлять SQL-запросы. В этой статье мы представим 25 вопросов по REST API, которые помогут вам подготовиться к интервью на вакансию системного аналитика (СА) и прокачать свои навыки. Полезного чтения!
 
 Вначале надо сказать, что сегодняшняя статья с вопросами по теории REST API — это продолжение обзорной статьи «Как пройти техническое интервью на позицию системного аналитика в финтех-проект». Если вы хотите узнать, как в целом проходит такое интервью, то рекомендуем посмотреть эту статью. Сейчас мы подробнее рассмотрим тот этап технического интервью, в котором проверяются знания кандидата по теории REST API.
@@ -3149,157 +3031,7 @@ Most commonly used status codes are:
 404 - NOT FOUND - Resource method is not available.
 500 - INTERNAL SERVER ERROR - server threw some exceptions while running the method.
 502 - BAD GATEWAY - Server was not able to get the response from another upstream server.
-Learn via our Video Courses
-courseRahul Janghu
-Python Course for Beginners With Certification: Mastering the Essentials
-star4.90
-enrollemntsEnrolled: 268411
-rupeeFree
-coursePrateek Narang
-SQL for Beginners: Learn SQL using MySQL and Database Design Course
-star5
-enrollemntsEnrolled: 58935
-rupeeFree
-courseMrinal Bhattacharya
-JavaScript Course With Certification: Unlocking the Power of JavaScript
-star4.8
-enrollemntsEnrolled: 97671
-rupeeFree
-courseSrikanth Varma
-Computer Networking Course: Master Computer Networking
-star5
-enrollemntsEnrolled: 39420
-rupeeFree
-courseSumeet malik
-NSET Course: Mathematics
-star4.7
-enrollemntsEnrolled: 13433
-rupeeFree
-courseSumeet malik
-NSET Course: Logical reasoning
-star4.7
-enrollemntsEnrolled: 12542
-rupeeFree
-courseSrikanth Varma
-Operating System Course: Learn Fundamentals of Operating System
-star5
-enrollemntsEnrolled: 38833
-rupeeFree
-courseSrikanth Varma
-Microsoft Malware Detection using Machine Learning
-star5
-enrollemntsEnrolled: 1551
-rupeeFree
-courseSrikanth Varma
-Netflix Movie Recommendation System using Machine Learning
-star5
-enrollemntsEnrolled: 2918
-rupeeFree
-courseSrikanth Varma
-Amazon Fashion Discovery Engine using Machine Learning
-star5
-enrollemntsEnrolled: 978
-rupeeFree
-courseSrikanth Varma
-Personalized Cancer Diagnosis using Machine Learning
-star5
-enrollemntsEnrolled: 932
-rupeeFree
-courseSrikanth Varma
-Facebook Friend Recommendation using Graph Mining
-star5
-enrollemntsEnrolled: 698
-rupeeFree
-courseSrikanth Varma
-Predicting tags for Stackoverflow using Machine Learning
-star5
-enrollemntsEnrolled: 556
-rupeeFree
-courseSrikanth Varma
-Quora Question Pair Similarity Problem using Machine Learning
-star5
-enrollemntsEnrolled: 625
-rupeeFree
-courseSrikanth Varma
-Taxi demand prediction in New York City using Machine Learning
-star5
-enrollemntsEnrolled: 665
-rupeeFree
-courseYash Raj
-AWS Free Course
-star4.7
-enrollemntsEnrolled: 17060
-rupeeFree
-courseMrinal Bhattacharya
-React JS Free Course
-star4.8
-enrollemntsEnrolled: 28649
-rupeeFree
-courseSubhesh Kumar
-Object Oriented Programming in Java Course Online
-star4.95
-enrollemntsEnrolled: 14488
-rupeeFree
-courseSrikanth Varma
-Deep Learning Course: Deep Dive into Deep Learning
-star5
-enrollemntsEnrolled: 10453
-rupeeFree
-courseSrikanth Varma
-Free Maths for Machine Learning Course
-star5
-enrollemntsEnrolled: 11453
-rupeeFree
-courseSrikanth Varma
-Supervised Machine Learning Course
-star5
-enrollemntsEnrolled: 17167
-rupeeFree
-courseJamshaid Sohail
-PyTorch for Deep Learning Course
-star4.8
-enrollemntsEnrolled: 4249
-rupeeFree
-courseSrikanth Varma
-Unsupervised Machine Learning Course
-star5
-enrollemntsEnrolled: 5156
-rupeeFree
-coursePrateek Narang
-Maths for Programmers
-star5
-enrollemntsEnrolled: 7817
-rupeeFree
-courseArnav Gupta
-Spring Boot Course: Certified Course for Essential Skills
-star5
-enrollemntsEnrolled: 23814
-rupeeFree
-courseGaurav Sisodia
-Keras & TensorFlow for Deep Learning
-star4.8
-enrollemntsEnrolled: 4160
-rupeeFree
-courseYash Sinha
-Data Science Course - Mastering the Fundamentals
-star4.7
-enrollemntsEnrolled: 39607
-rupeeFree
-coursePrateek Narang
-Coding Essentials: Learn Logic Building for Beginners Free Course
-star5
-enrollemntsEnrolled: 18225
-rupeeFree
-courseArnav Gupta
-Machine Coding Tic Tac Toe - LLD Case Study
-star5
-enrollemntsEnrolled: 3242
-rupeeFree
-courseMrinal Bhattacharya
-Node JS Certification Course - Master the Fundamentals
-star4.8
-enrollemntsEnrolled: 26948
-rupeeFree
+
 6. What do you understand by JAX-RS?
 As the name itself stands (JAX-RS= Java API for RESTful Web Services) is a Java-based specification defined by JEE for the implementation of RESTful services. The JAX-RS library makes usage of annotations from Java 5 onwards to simplify the process of web services development. The latest version is 3.0 which was released in June 2020. This specification also provides necessary support to create REST clients.
 
@@ -3660,7 +3392,6 @@ Answer: An application programming interface (API) is a software-to-software int
 A REST API, also called a RESTful API, is an API that follows REST principles. In a REST API, all data is treated as resources, each one represented by a unique uniform resource identifier (URI). For example, the X API makes each tweet an available resource that can be retrieved by clients. Clients can also use X’s API to post tweets and perform other actions on the site.
 
 For a more detailed explanation, check out this video from IBM:
-
 
 3. What’s a real-world example of a REST API?
 Answer: Here are some examples of REST APIs in use:
@@ -4238,6 +3969,7 @@ Pagination
 Cursor or limit/offset pagination
 Returning massive datasets
 
+
 Блок вопросов по терминологии REST API
 Начните подготовку к интервью с этого раздел по терминологии и принципам REST API. Для наглядного объяснения принципов REST API можно также посмотреть вот это видео от IBM (есть русские субтитры).
 
@@ -4418,33 +4150,13 @@ AJAX-клиент может использовать в своих запрос
 
 В принципе, оба подхода, Code First и Contract First, можно сочетать в рамках одного проекта разработки API. В этом случае, Code First используется для быстрого прототипирования, а затем Contract First для формализации контракта.
 
-
 Подготовка к интервью по REST API требует хорошего понимания принципов архитектуры REST, HTTP-методов и статус-кодов, а также навыков работы с запросами и ответами. 
 
 Вам также могут быть заданы вопросы о тестировании, безопасности и лучших практиках REST API, которые мы здесь не рассматривали. Но к этим вопросам также надо быть готовыми. 
 
-Для успешного прохождения важно не только знать ответы на вопросы, но и быть готовыми объяснить свои решения и подходы к разработке RESTful API. Практический опыт и умение применять знания в реальных проектах — ваши козыри перед другими кандидатами.
+Для успешного прохождения важно не только знать ответы на вопросы, но и быть готовыми объяснить свои решения и подходы к разработке RESTful API. 
+Практический опыт и умение применять знания в реальных проектах — ваши козыри перед другими кандидатами.
 
-Статья представлена для ознакомления и удобства пользователей, оригинал опубликован на Хабре, автор: Редактор аккаунта SSP SOFT @SSP_blog
-
-REST APIs are the backbone of modern web applications, making it crucial for developers to have a strong grasp of this technology. As an interviewer, asking the right REST API questions can help you identify candidates who truly understand the concepts and can apply them effectively in real-world scenarios.
-
-This blog post provides a comprehensive list of REST API interview questions, categorized by difficulty level and topic. From basic concepts to advanced implementations, we cover questions suitable for junior, mid-tier, and senior developers, as well as technical definitions and process-related inquiries.
-
-By using these questions, you can effectively assess a candidate's REST API knowledge and problem-solving skills. Consider combining these interview questions with a REST API skills test to get a more complete picture of a candidate's abilities before making your hiring decision.
-
-10 basic REST API interview questions and answers to assess candidates
-20 REST API interview questions to ask junior developers
-10 intermediate REST API interview questions and answers to ask mid-tier developers
-10 advanced REST API interview questions to ask senior developers
-6 REST API interview questions and answers related to technical definitions
-5 REST API interview questions and answers related to processes
-Which REST API skills should you evaluate during the interview phase?
-Hire top talent with REST API skills tests and the right interview questions
-Download REST API interview questions template in multiple formats
-10 basic REST API interview questions and answers to assess candidates
-10 basic REST API interview questions and answers to assess candidates
-To evaluate whether your candidates have a solid grasp of REST API fundamentals, use these essential interview questions. They’ll help you gauge their understanding of core concepts and practical applications, ensuring you find the right fit for your team.
 
 1. What is a REST API and why is it important?
 A REST API (Representational State Transfer Application Programming Interface) is a set of rules and conventions for building and interacting with web services. It relies on stateless, client-server communication and uses HTTP methods such as GET, POST, PUT, and DELETE for operations.
@@ -4657,8 +4369,8 @@ Can you explain how you would implement a search filter in a RESTful service?
 What is the role of API gateways in a microservices architecture, particularly for REST APIs?
 How would you manage database transactions in a RESTful API to ensure data integrity?
 
+
 REST API interview questions and answers related to technical definitions
-When interviewing for REST API developers, it's crucial to assess their understanding of technical definitions. These questions will help you gauge candidates' knowledge of key REST API concepts, allowing you to identify those who can effectively design and implement robust APIs. Use this list to delve into the technical aspects of REST without getting bogged down in code specifics.
 
 1. Can you explain what URI templating is in the context of REST APIs?
 URI templating is a technique used in REST APIs to define variable parts within a URI. It allows for the creation of flexible and dynamic URLs by using placeholders or variables within the URI structure.
@@ -4701,6 +4413,7 @@ Statelessness is a key principle of REST APIs, meaning that each request from a 
 Statefulness, on the other hand, involves the server keeping track of the client's state across multiple requests. This might involve storing session information or remembering the client's previous actions.
 
 Candidates should explain that REST APIs are designed to be stateless for scalability and reliability. They might discuss how statelessness simplifies server-side architecture, enables better load balancing, and improves fault tolerance. Ask them to provide examples of how to handle scenarios that seem to require state (like authentication) in a stateless manner, such as using tokens or client-side storage.
+
 
 
 5 REST API interview questions and answers related to processes
@@ -4791,28 +4504,9 @@ Why is JSON preferred over XML in RESTful APIs?
 
 Expect the candidate to mention JSON's lightweight nature, ease of parsing, and compatibility with JavaScript, demonstrating their familiarity with current practices.
 
-Hire top talent with REST API skills tests and the right interview questions
-When hiring for REST API skills, it's important to ensure candidates possess the necessary expertise. A thorough assessment can help you determine if they truly have the skills required for your team.
-
-The most accurate way to evaluate these skills is by using skill tests. Consider utilizing our REST API Test to effectively gauge candidates' knowledge and capabilities.
-
-After conducting the test, you can shortlist the best applicants based on their performance and invite them for interviews. This process streamlines your hiring efforts and helps identify top candidates.
-
-To get started, visit our test library to explore various assessments and sign up today. This will set you on the right path to hiring the best REST API talent.
-
-
-Top REST API Interview Questions and Answers (2026)
-By Haroon Ahamed Kitthu
-Share This Article:
-Last updated on Jun 10, 2026106428
-Top REST API Interview Questions and Answers for 2026
-TL;DR: REST APIs are a core part of modern software development. Interviewers usually test five areas: HTTP basics, resource design, authentication, scalability, and production troubleshooting. This guide provides concise answers, examples, tables, and scenario-based responses for API interviews.
-REST APIs are the backbone of most modern web and mobile applications. They help frontends communicate with backends, databases, payment systems, identity platforms, and third-party services in a structured way. For developers, REST is not just about knowing endpoints. It is about understanding how data moves, how requests are handled, and how APIs stay reliable at scale.
-
-REST API interview questions usually begin with methods, status codes, CRUD, and statelessness. As the role becomes more advanced, interviewers also test caching, pagination, idempotency, authentication, rate limits, versioning, monitoring, and system design trade-offs. This guide covers the most important REST API interview questions and answers for beginners, mid-level developers, and experienced professionals, with a focus on clear concepts, practical examples, and production-ready thinking.
-
 
 Beginner Questions on REST APIs
+
 1. What is a REST API?
 A REST API follows REST principles. It exposes resources through URLs and uses HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
 
@@ -5116,7 +4810,9 @@ Observability helps teams understand what is happening inside the API. It includ
 Important signals include request count, latency, error rate, saturation, p95 latency, p99 latency, and dependency failures.
 
 
+
 Scenario-Based Questions on REST APIs
+
 1. REST API becomes slow during peak traffic. What will you check?
 Start with metrics. Check latency, error rate, CPU, memory, database queries, cache hit ratio, thread pools, and downstream service latency.
 
@@ -5315,11 +5011,6 @@ Intermediate candidates should explain authentication, pagination, caching, idem
 Advanced candidates should connect API design with gateways, distributed systems, rate limiting, observability, and security.
 These rest interview questions are best answered with short, practical, and example-led responses.
 Do not only define the term. Explain where it is used, what can go wrong, and how you would handle it in production.
-
-Top 50+ Rest Api Interview Questions and Answers | 2023
-Interview Q&A / By Deependra kushwah / May 5, 2023
-HomeInterview Q&ATop 50+ Rest Api Interview Questions and Answers | 2023
-Rest API is widely used architecture style in the IT industry. So if you are preparing for an interview and planning to change the job. Be prepared with this list of 50+ rest api interview questions and answers which we have compiled.
 
 What is REST?
 REST stands for Representational State Transfer. It is an architectural style for creating web services that are scalable, simple, and interoperable with other systems on the web.
@@ -5778,47 +5469,6 @@ Overall, statelessness is a fundamental principle of REST that enables the desig
 
 API расшифровывается как интерфейс прикладного программирования. Он служит шлюзом для доступа приложений к некоторым ресурсам из других приложений. Преимущество использования API заключается в предоставлении доступа сторонним приложениям, чтобы они не могли получить доступ ко всем данным вашего приложения. Они могут получить доступ только к тем данным, которые вы раскрываете через свой API. Приложение или пользователь, который хочет получить доступ к данным, называется клиентом, а приложение, которое обслуживает данные, – сервером. Сегодня API широко используются в любой архитектуре программного обеспечения. Если вы претендуете на должность front-end-, back-end-, full-stack- или сетевого инженера, то вам будут задавать много вопросов, касающихся API. Учитывая это, давайте рассмотрим некоторые из наиболее часто задаваемых на собеседованиях вопросов о REST API.
 
-1 Что такое REST?
-2 Каковы основные характеристики REST?
-3 Что такое ресурсы в архитектуре REST?
-4 Укажите некоторые преимущества и недостатки REST API.
-5 Определите шаблон REST.
-6 Что такое RESTful?
-7 Что такое RESTful Web Services?
-8 Как тестировать RESTful веб-сервисы?
-9 Укажите некоторые особенности RESTful Web Services.
-10 Определите классы корневых ресурсов RESTful.
-11 Что такое URI?
-12 Что такое безграмотность в REST?
-13 Что такое JAX-RS?
-14 Что такое ключевые аннотации в API JAX-RS?
-15 Каковы некоторые ключевые особенности APIJAX-RS?
-16 Как можно настроить приложения JAX-RS?
-17 Что такое JAX-WS и JAX-RS?
-18 Что такое коды состояния HTTP?
-19 Что такое методы HTTP?
-20 Как работает базовая аутентификация HTTP?
-21 Каковы основные компоненты HTTP-запроса?
-22 Каковы основные компоненты HTTP-ответов?
-23 В чем разница между REST и AJAX?
-24 В чем разница между SOAP и REST?
-25 В чем разница между PUT и POST?
-26 Что такое полезная нагрузка?
-27 Какой максимальный размер полезной нагрузки может быть отправлен в почтовых методах?
-28 Какие лучшие практики необходимо соблюдать при создании URI?
-29 Что такое идемпотентные методы?
-30 Что такое Postman?
-31 Что такое заголовки Cache-Control?
-32 Определение обмена сообщениями в RESTful Web Services.
-33 В чем разница между монолитной, SOA и микросервисной архитектурой?
-34 Как работает микросервисная архитектура?
-35 Что такое CRUD?
-36 Что такое кэширование?
-37 В чем польза @RequestMapping?
-38 Что делает @PathVariable?
-39 Определите HttpMessageConverter.
-40 Какие инструменты необходимы для тестирования веб-интерфейса?
-
 Что такое REST?
 Ответ: REST – это архитектурный дизайн, который определяет некоторые ограничения на работу API. API, которые следуют принципам REST, известны как RESTful API. REST расшифровывается как Representational State Transfer. Это не протокол или стандарт, а архитектура, которая может быть использована для реализации API различными способами. Она предоставляет разработчикам высокую гибкость и свободу, поэтому широко используется для разработки API. Вот некоторые принципы архитектуры REST:
 
@@ -6009,7 +5659,9 @@ Katalon
 ReadyAPI
 Apigee
 
+
 Rest API Interview Questions and Answers for Freshers
+
 1. What is meant by REST API?
 REST, or Representational State Transfer, is a web service architecture that uses HTTP requests to send and access data from various sources.In a REST API, all data is treated as resources. A unique uniform resource identifier (URI) is associated with each resource to identify it. RESTful API is an interface that two computer systems use to exchange information securely over the internet.
 
@@ -6215,6 +5867,7 @@ Never use CRUD function names in URIs
 Do not Use Verbs in the URI
 
 
+
 FAQs
 
 Q1. How do I prepare for Rest AP interview?
@@ -6237,7 +5890,6 @@ To answer REST API interview questions effectively, focus on explaining key conc
 
 Что такое ОТДЫХ?
 REST, описывающий передачу репрезентативного состояния, отвечает за разработку приложений для веб-сайтов, установленных по протоколу HTTP. REST определяет несколько правил, которым должна соответствовать полезность веб-сайта, чтобы в это поверить. Предложения обеспечивают стандартизированные методы HTTP между сервером и пользователем для виртуальной передачи материалов.
-
 
 Что такое REST API?
 RESTful API обеспечивает безопасный онлайн-обмен информацией между двумя компьютерными системами. Для выполнения различных действий большинство бизнес-приложений обмениваются данными с другими внутренними и внешними программами. Например, когда ваша внутренняя система счетов передает информацию о сотрудниках внешней банковской системе для создания платежных ведомостей. Это можно сделать с помощью REST API, поскольку эта информация является индивидуальной, а стандарты программного обеспечения REST API безопасны, эффективны и заслуживают доверия.
@@ -6455,6 +6107,7 @@ QueryParam — класс/методы ресурсов могут исполь�
 Возраст, который устанавливает отправную точку для получения ресурса.
 Каковы лучшие ресурсы для изучения REST API?
 Существует множество доступных ресурсов для изучения REST API для разработки веб-сайтов и мобильных приложений .
+
 
 
 PYTHON
@@ -6933,8 +6586,6 @@ payload: dict = Body(..., embed=True)
 user11717481
  20.10.2022 12:42
 
-
-
 Безопасный способ запуска необработанных sql-запросов
 Вопросы
 PYTHON
@@ -6945,11 +6596,6 @@ PYTHON
 
 Спасибо.
 
- 14.12.2022 09:16
-1
-2
-87
-3
 Данный вопрос помечен как решенный
  Ответы 3
  Ответ принят как подходящий
@@ -7240,8 +6886,6 @@ MrNetherlands
 Daniil Fajnberg
  04.02.2023 13:24
 
-
-
 Как получить данные изображения и json в FastAPI?
 Вопросы
 PYTHON
@@ -7272,10 +6916,7 @@ def _file_upload(my_file: UploadFile = File(...), params: str = Form(...)):
 Есть ли что-то, что я делаю неправильно здесь?
 
  22.12.2020 12:43
-2
-0
-8 084
-3
+
 Данный вопрос помечен как решенный
  Ответы 3
 Я думаю, что вы упускаете здесь довольно фундаментальный момент.
@@ -7557,8 +7198,6 @@ if __name__ == "__main__":
     instance = MyClass()
     asyncio.run(instance.serve())
 
-
-
 Как переопределить ответ 200 по умолчанию в документах fastapi
 Вопросы
 PYTHON
@@ -7825,9 +7464,9 @@ Squarish
  04.06.2023 01:11
 
 
-
 Как вернуть json из FastAPI (Backend) с websocket в vue (Frontend)
-Вопросы
+
+
 PYTHON
 Как вернуть json из FastAPI (Backend) с websocket в vue (Frontend)
 У меня есть приложение, в котором Frontend работает через Vue, а Backend — через FastAPI, связь осуществляется через websocket.
@@ -9207,7 +8846,7 @@ def hello_world(request: Request):
 Как управляется пул потоков в приложениях-функциях? Я могу установить переменную среды под названием PYTHON_THREADPOOL_THREAD_COUNT. Определяет ли это, сколько потоков FastAPI ему доступно?
 
 Как изменить pydantic список объектов в список строк?
-Вопросы
+
 PYTHON
 Как изменить pydantic список объектов в список строк?
 Я использую SQLModel для API.
@@ -9855,7 +9494,7 @@ with open("file/path.json") as file:
 
 
 Как отключить приложение/json в автодокументах Swagger UI приложения FastAPI?
-Вопросы
+
 PYTHON
 Как отключить приложение/json в автодокументах Swagger UI приложения FastAPI?
 Мой API может возвращать только файл:
@@ -11729,8 +11368,6 @@ Remember to isolate each test case by mocking external dependencies and resettin
 19 .Could you demonstrate a case where you would prefer to use HTTP protocol directly instead of FastAPI's dependency injection?
 FastAPI’s dependency injection system is highly efficient for managing dependencies and reducing code repetition. However, there are cases where using HTTP protocol directly might be preferred. One such case could be when dealing with low-level network operations or custom protocols.
 
-
-
 For instance, if we need to implement a WebSocket server that communicates via a specific binary protocol, FastAPI’s dependency injection may not provide the necessary control over the raw data stream. In this scenario, it would be more appropriate to use an ASGI server like Uvicorn or Hypercorn directly along with Python’s built-in asyncio library for handling asynchronous I/O operations.
 
 Here’s a simplified example of how you might set up a WebSocket server using Uvicorn:
@@ -12252,6 +11889,7 @@ FastAPI has quickly become a go-to framework for building high-performance, scal
 
 Preparing for an interview that covers FastAPI requires a solid grasp of its features, best practices, and common use cases. This collection of the top 33 FastAPI interview questions and answers is designed to help you articulate your knowledge and experience with the framework. Whether you’re a seasoned developer or new to the world of FastAPI, these insights will help you approach your next interview with confidence.
 
+
 FastAPI Interview Preparation Tips
 Focus Area	Details	Tips
 Understanding FastAPI	FastAPI is a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints.	Make sure you are comfortable with Python, especially with async features and type hints. Study the official FastAPI documentation.
@@ -12574,6 +12212,8 @@ FastAPI has rapidly gained popularity as a modern, fast (high-performance), web 
 
 This article provides a curated selection of interview questions designed to test your knowledge and proficiency with FastAPI. By working through these questions and their detailed answers, you will be better prepared to demonstrate your expertise and problem-solving abilities in a technical interview setting.
 
+
+	
 FastAPI Interview Questions and Answers
 1. Explain the main features of FastAPI and why you would choose it over other web frameworks.
 FastAPI is a web framework known for its high performance, ease of use, and modern features. It leverages Python type hints for automatic validation, serialization, and documentation, and supports asynchronous programming for handling many simultaneous connections. FastAPI’s dependency injection system enhances modularity and testing, while its automatic interactive documentation via Swagger UI and ReDoc aids developers in understanding and testing APIs. These features make FastAPI a compelling choice over frameworks like Flask or Django, especially for high-performance applications.
@@ -12666,23 +12306,11 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-html = """
-
-
-    
-        
-    
-    
+html = """  
         
 WebSocket Example
 
-        Send Message
-        
-
-        
-
-        
-    
+        Send Message     
 
 """
 
@@ -12953,12 +12581,9 @@ async def create_upload_file(file: UploadFile = File(...)):
 @app.get("/")
 async def main():
     content = """
-    
 
     Файл не выбран
     
-    
-
     """
     return HTMLResponse(content=content)
 In this example, the create_upload_file endpoint accepts a file upload using the UploadFile class. The file content is read asynchronously, and the filename and content type are returned in the response.
@@ -15434,9 +15059,7 @@ class OTabelle(OTabelleBase, table=True):
     # rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_o_tabelle_t_id')
     rel_t_tabelle_t_id: Union[TTabelle, None] = Relationship(back_populates='rel_o_tabelle_t_id', sa_relationship_kwargs = {'primaryjoin': 'TTabelle.t_id==OTabelle.t_id'})
 
-
 v_tablele.py
-
 
 
 from sqlmodel import SQLModel, Field, Relationship
@@ -17479,8 +17102,6 @@ async def demo(foo: FooRequest):
 
 Кроме того, добавление модели FooRequest здесь, конечно, избыточно. Вы также можете использовать FooBase в качестве модели запроса. Я написал это таким образом, чтобы продемонстрировать типичный шаблон, потому что иногда модель запроса имеет дополнительные вещи, которые отличают ее от своих братьев и сестер. В вашем примере это перебор.
 
-FastAPI не заменяет символ «+» плюс в запросе GET
-Вопросы
 PYTHON
 FastAPI не заменяет символ «+» плюс в запросе GET
 Я понимаю, что это не проблема FastAPI, но как избежать этого с помощью FastAPI?
@@ -19867,12 +19488,6 @@ async def update_model_endpoint(request: Request):
     return {} # whatever response needed by the endpoint
     
     
-
-
-
-Introduction:
-FastAPI has emerged as one of the most powerful and efficient web frameworks for building APIs with Python. Its intuitive design, exceptional performance, and automatic documentation generation make it a favorite among developers. Whether you're preparing for a FastAPI interview or seeking to enhance your understanding of this framework, this article presents a collection of essential FastAPI interview questions to help you navigate the process with confidence.
-
 Questions and Answer"
 What is FastAPI, and what are its key features?
 
