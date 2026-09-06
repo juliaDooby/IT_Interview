@@ -6812,6 +6812,57 @@ STEP5-Configure the login page in the configure(HttpSecurity http) method.</p>
 STEP6-Create a controller class level that handles the login form submission.</p>
 STEP7-Configure the logout URL and redirect in the configure(HttpSecurity http) method.</p>
 For example:
+Step 1: </strong>Add Spring Security dependency to the pom.xml file</p>
+Step 2: </strong>Create a security configuration class that extends WebSecurityConfigurerAdapter</p>
+Step 3: </strong>Override the configure(HttpSecurity http) method to configure the security settings</p>
+Step 4:</strong> Create a login page with a form that collects the username and password</p>
+Step 5:</strong> Create a controller that handles the login form submission</p>
+Step 6:</strong> Configure the logout URL and redirect in the configure (HttpSecurity http) method</p>
+Q31. What do you understand by the main class in spring boot?</h3>
+A public static void main() method that launches the Spring ApplicationContext , is the main class in Spring Boot and this is the entry point of a Spring Boot application. The main class is typically annotated with @SpringBootApplication, which is a combination of @Configuration, @EnableAutoConfiguration, and @ComponentScan, which needs to be added to the application class.</p>
+Example code for a main application class in Spring Boot:</strong></p>
+Q32. What is the use of the crud repository in spring boot?</h3>
+To use the crud repository in Spring Boot we can follow these steps:</p>
+Create an entity class that represents the data to be stored in the memory database.</li>
+Create a repository interface that extends CrudRepository.</li>
+Inject the repository into the service or controller class file.</li>
+At last, we will use the repository's methods to perform CRUD operations on the entity.</li>
+For Example:</strong></p>
+Step 1:</strong> Create an entity class that represents the data to be stored in the memory database</p>
+Step 2:</strong> Create a repository interface that extends CrudRepository public list.</p>
+Step 3:</strong> Inject the repository into the service or controller class file.</p>
+Q33. Explain Spring Boot CLI(command line interface).</h3>
+A command-line interface or command prompt tool, which is called Spring Boot CLI enables programmers to create Spring applications that are expressed as Groovy files. The CLI also makes it simple to quickly create Spring projects and run Groovy files.</p>
+For developers who wish to quickly design, test, and run their Spring applications from the command line interface or the command prompt, the Spring Boot CLI(command line interface) is a powerful tool.</p>
+Q34. What should be the approach or method to handle the 404 error in spring boot?</h3>
+To handle the 404 error in Spring Boot we can Create a custom error page for the 404 error and Configure Spring Boot to use the custom error page.</p>
+For example:</strong></p>
+Step 1</strong>: Create a custom error page for the 404 error</p>
+server.error.path=/error</p>
+Q35. Tell me the latest version of the Spring Boot.</h3>
+The latest stable version of Spring Boot is 3.0.0.</p>
+Q36. Can you check the environment variable properties in your Spring boot application?</h3>
+Yes, we can check the environment properties in our spring boot application.</p>
+Q37. In what part of the Spring Boot application do we define properties?</h3>
+In a Spring Boot application, properties can be defined in various ways, including command-line properties, properties files, YAML files, and externalized properties.</p>
+Q38. Can you tell me the tasks performed by an IOC container?</h3>
+The tasks that are performed by the IoC container are:</p>
+Instantiating the objects</li>
+Configuring the objects</li>
+Assembling the objects</li>
+Q39. Tell me the basic Annotations that are offered by spring boot?</h3>
+The basic annotations offered by Spring Boot are:</p>
+@SpringBootApplication</li>
+@EnableAutoConfiguration</li>
+@ComponentScan</li>
+@Configuration</li>
+@Bean</li>
+@Controller</li>
+@Service</li>
+@Repository repository</li>
+@Autowired</li>
+Q40. Explain Spring Boot Dependency Management.</h3>
+Spring Boot Dependency Management is a feature that manages dependencies and configurations automatically. A list of dependencies that Spring Boot supports is provided with each release.</p>
 ****************************************************************************
 	****************************************************************************
 	****************************************************************************
@@ -6827,74 +6878,6 @@ For example:
 	****************************************************************************
 	****************************************************************************
 	****************************************************************************	
-<p style="text-align: justify;">// <strong>Step 1: </strong>Add Spring Security dependency to the pom.xml file</p>
-<pre>&lt;dependency&gt;<br /><br />&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;</pre>
-<p style="text-align: justify;">// <strong>Step 2: </strong>Create a security configuration class that extends WebSecurityConfigurerAdapter</p>
-<pre>@Configuration<br /><br />@EnableWebSecurity<br /><br />public class SecurityConfig extends WebSecurityConfigurerAdapter {</pre>
-<p style="text-align: justify;">// <strong>Step 3: </strong>Override the configure(HttpSecurity http) method to configure the security settings</p>
-<pre>@Override<br /><br />protected void configure(HttpSecurity http) throws Exception {<br /><br />http.authorizeRequests()<br /><br />.antMatchers("", "/home").permitAll()<br /><br />.anyRequest().authenticated()<br /><br />.and()<br /><br />.formLogin()<br /><br />.loginPage("/login")<br /><br />.permitAll()<br /><br />.and()<br /><br />.logout()<br /><br />.logoutUrl("/logout")<br /><br />.logoutSuccessUrl("/login?logout")<br /><br />.permitAll();<br /><br />}<br /><br />@Autowired<br /><br />public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {<br /><br />auth.inMemoryAuthentication()<br /><br />.withUser("user").password("{noop}password").roles("USER");<br /><br />}<br /><br />}</pre>
-<p style="text-align: justify;">// <strong>Step 4:</strong> Create a login page with a form that collects the username and password</p>
-<pre>&lt;!DOCTYPE html&gt;<br /><br />&lt;html&gt;<br /><br />&lt;head&gt;<br /><br />&lt;title&gt;Login Page&lt;/title&gt;<br /><br />&lt;/head&gt;<br /><br />&lt;body&gt;<br /><br />&lt;h1&gt;Login Page&lt;/h1&gt;<br /><br />&lt;form action="/login" method="post"&gt;<br /><br />&lt;label for="username"&gt;Username:&lt;/label&gt;<br /><br />&lt;input type="text" name="username" /&gt;&lt;br /&gt;<br /><br />&lt;label for="password"&gt;Password:&lt;/label&gt;<br /><br />&lt;input type="password" name="password" /&gt;&lt;br /&gt;<br /><br />&lt;input type="submit" value="Login" /&gt;<br /><br />&lt;/form&gt;<br /><br />&lt;/body&gt;<br /><br />&lt;/html&gt;</pre>
-<p style="text-align: justify;">// <strong>Step 5:</strong> Create a controller that handles the login form submission</p>
-<pre>@Controller<br /><br />public class LoginController {<br /><br />@GetMapping("/login")<br /><br />public String login() {<br /><br />return "login";<br /><br />}<br /><br />}</pre>
-<p style="text-align: justify;">//<strong> Step 6:</strong> Configure the logout URL and redirect in the configure (HttpSecurity http) method</p>
-<h3 style="text-align: justify;">Q31. What do you understand by the main class in spring boot?</h3>
-<p style="text-align: justify;">A public static void main() method that launches the Spring ApplicationContext , is the main class in Spring Boot and this is the entry point of a Spring Boot application. The main class is typically annotated with @SpringBootApplication, which is a combination of @Configuration, @EnableAutoConfiguration, and @ComponentScan, which needs to be added to the application class.</p>
-<p style="text-align: justify;"><strong>Example code for a main application class in Spring Boot:</strong></p>
-<pre>@SpringBootApplication<br /><br />public class MyApplication {<br /><br />public static void main(String[] args) {<br /><br />SpringApplication.run(MyApplication.class, args);<br /><br />}<br /><br />}</pre>
-<h3 style="text-align: justify;">Q32. What is the use of the crud repository in spring boot?</h3>
-<p style="text-align: justify;">To use the crud repository in Spring Boot we can follow these steps:</p>
-<ul style="text-align: justify;">
-<li>Create an entity class that represents the data to be stored in the memory database.</li>
-<li>Create a repository interface that extends CrudRepository.</li>
-<li>Inject the repository into the service or controller class file.</li>
-<li>At last, we will use the repository's methods to perform CRUD operations on the entity.</li>
-</ul>
-<p style="text-align: justify;"><strong>For Example:</strong></p>
-<p style="text-align: justify;">//<strong> Step 1:</strong> Create an entity class that represents the data to be stored in the memory database</p>
-<pre>@Entity<br /><br />public class Employee {<br /><br />@Id<br /><br />@GeneratedValue(strategy = GenerationType.IDENTITY)<br /><br />private Long id;<br /><br />private String name;<br /><br />private String email;<br /><br />// getters and setters<br /><br />}</pre>
-<p style="text-align: justify;">// <strong>Step 2:</strong> Create a repository interface that extends CrudRepository public list.</p>
-<pre>public interface EmployeeRepository extends CrudRepository&lt;Employee, Long&gt; {<br /><br />}</pre>
-<p style="text-align: justify;">// <strong>Step 3:</strong> Inject the repository into the service or controller class file.</p>
-<pre>@Service<br /><br />public class EmployeeService {<br /><br />@Autowired<br /><br />private EmployeeRepository employeeRepository;<br /><br />// Step 4: Use the repository's methods to perform CRUD operations on the entity<br /><br />public Employee save(Employee employee) {<br /><br />return employeeRepository.save(employee);<br /><br />}<br /><br />public Employee findById(Long id) {<br /><br />return employeeRepository.findById(id).orElse(null);<br /><br />}<br /><br />public List&lt;Employee&gt; findAll() {<br /><br />return (List&lt;Employee&gt;) employeeRepository.findAll();<br /><br />}<br /><br />public void deleteById(Long id) {<br /><br />employeeRepository.deleteById(id);<br /><br />}<br /><br />}</pre>
-<h3 style="text-align: justify;">Q33. Explain Spring Boot CLI(command line interface).</h3>
-<p style="text-align: justify;">A command-line interface or command prompt tool, which is called Spring Boot CLI enables programmers to create Spring applications that are expressed as Groovy files. The CLI also makes it simple to quickly create Spring projects and run Groovy files.</p>
-<p style="text-align: justify;">For developers who wish to quickly design, test, and run their Spring applications from the command line interface or the command prompt, the Spring Boot CLI(command line interface) is a powerful tool.</p>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c73a4e8b3b_spring_boot_interview_questions_05.jpg" alt="Spring Boot CLI - Unstop" width="1000" height="286" /></p>
-<h3 style="text-align: justify;">Q34. What should be the approach or method to handle the 404 error in spring boot?</h3>
-<p style="text-align: justify;">To handle the 404 error in Spring Boot we can Create a custom error page for the 404 error and Configure Spring Boot to use the custom error page.</p>
-<p style="text-align: justify;"><strong>For example:</strong></p>
-<p style="text-align: justify;">// <strong>Step 1</strong>: Create a custom error page for the 404 error</p>
-<p style="text-align: justify;">@ControllerAdvice<br /><br />public class CustomErrorController {<br /><br />@RequestMapping("/error")<br />public String handleError(HttpServletRequest request) {<br />Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);<br /><br /><br />if (status != null) {<br />int statusCode = Integer.parseInt(status.toString());<br /><br /><br />if (statusCode == HttpStatus.NOT_FOUND.value()) {<br />return "error-404";<br />}<br />}<br /><br /><br />return "error";<br />}<br /><br /><br />}<br /><br />// <strong>Step 2: </strong>Configure Spring Boot to use the custom error page</p>
-<p style="text-align: justify;">server.error.path=/error</p>
-<h3 style="text-align: justify;">Q35. Tell me the latest version of the Spring Boot.</h3>
-<p style="text-align: justify;">The latest stable version of Spring Boot is 3.0.0.</p>
-<h3 style="text-align: justify;">Q36. Can you check the environment variable properties in your Spring boot application?</h3>
-<p style="text-align: justify;">Yes, we can check the environment properties in our spring boot application.</p>
-<h3 style="text-align: justify;">Q37. In what part of the Spring Boot application do we define properties?</h3>
-<p style="text-align: justify;">In a Spring Boot application, properties can be defined in various ways, including command-line properties, properties files, YAML files, and externalized properties.</p>
-<h3 style="text-align: justify;">Q38. Can you tell me the tasks performed by an IOC container?</h3>
-<p style="text-align: justify;">The tasks that are performed by the IoC container are:</p>
-<ol style="text-align: justify;">
-<li>Instantiating the objects</li>
-<li>Configuring the objects</li>
-<li>Assembling the objects</li>
-</ol>
-<h3 style="text-align: justify;">Q39. Tell me the basic Annotations that are offered by spring boot?</h3>
-<p style="text-align: justify;">The basic annotations offered by Spring Boot are:</p>
-<ul style="text-align: justify;">
-<li>@SpringBootApplication</li>
-<li>@EnableAutoConfiguration</li>
-<li>@ComponentScan</li>
-<li>@Configuration</li>
-<li>@Bean</li>
-<li>@Controller</li>
-<li>@Service</li>
-<li>@Repository repository</li>
-<li>@Autowired</li>
-</ul>
-<h3 style="text-align: justify;">Q40. Explain Spring Boot Dependency Management.</h3>
-<p style="text-align: justify;">Spring Boot Dependency Management is a feature that manages dependencies and configurations automatically. A list of dependencies that Spring Boot supports is provided with each release.</p>
 <p style="text-align: justify;">The Bills of Materials (spring-boot-dependencies) that can be used with the Maven project contain a list of the dependencies. Therefore, in our configuration, we do not need to provide the version of the dependencies because Spring Boot manages itself, so When we update the Spring Boot version, Spring Boot automatically and consistently upgrades all dependencies.</p>
 <p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c73e92f2c8_spring_boot_interview_questions_06.jpg" alt="Spring Boot Dependency Management" width="1000" height="386" /></p>
 <h3 style="text-align: justify;">Q41. Is it possible for us to create a non-web application in Spring Boot?</h3>
