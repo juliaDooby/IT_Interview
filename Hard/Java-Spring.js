@@ -6916,17 +6916,6 @@ Loggers</li>
 Health</li>
 Flyway</li>
 Caches</li>
-																											  
-****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
 Q50. Explain Spring Initializr.</h3>
 Spring Initializr is a powerful web-based application tool that simplifies the process of setting up Spring Boot projects by generating a project with just what you need to start quickly and offering an extensible API for creating JVM-based projects. It is helpful when we are starting to build a project from scratch. Spring Initializr offers web-based application endpoints for third-party clients.</p>
 Q51. Explain the default package.</h3>
