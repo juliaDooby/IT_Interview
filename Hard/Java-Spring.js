@@ -6686,6 +6686,111 @@ Handle the image upload using MultipartFile[] file as a parameter.</li>
 Compress the image and store it in the database or store the direct image in the database.</li>
 Update the handler method, which is responsible for handling the form submission to store the image in the database.</li>
 Display the uploaded image in the browser.</li>
+Q10. Explain the auto-configuration class in Spring Boot?</h3>
+The Spring Boot Auto-Configuration class feature helps the Spring-based application code to set up automatically, which is based on the Java -jar package phase or Jar dependencies version that has been added to the classpath. Spring Boot Auto-Configuration feature eliminates the need for developers to define certain beans included in the auto-configuration classes. This feature makes development faster and easier by providing fundamental settings required to configure the application with various spring framework.</p>
+Q11. I am getting a whitelabel error page in the Spring Boot application code, what should I do?</h3>
+To solve the Whitelabel error page in the Spring Boot application, we can use these methods:</p>
+1. Customizing the Whitelabel Error Page:</strong></p>
+Developers can create a custom error page to align with the UI of their Spring Boot application. So to customize the error page, developers can create a Custom Error Controller and define the error handling logic in that controller class. This controller will map any errors to the customized error page.</p>
+2. Excluding the ErrorMvcAutoConfiguration Bean:</strong></p>
+Another way to disable the Whitelabel error page is by excluding the ErrorMvcAutoConfiguration bean.</p>
+This may be done by adding:</p>
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration section to the properties file.</strong></p>
+3. Creating a Custom Auto-Configuration:</strong></p>
+In order to manage problems in a Spring Boot application code, developers can also define a custom auto-configuration. If there is a problem, the user will receive more detailed t information due to customized auto-configuration.</p>
+Q12. How will you fetch data from the database in Spring Boot?</h3>
+To fetch data from the database in spring boor, we can follow these steps:</p>
+Define an entity class to map to the table in the database.</li>
+Define a repository interface that extends JpaRepository to perform CRUD operations on the entity.</li>
+Define a service class that uses the repository to fetch data from the database.</li>
+Define a controller class that uses the service to return the fetched data as an HTTP response.</li>
+Q13. Describe the meaning of bootstrapping in Spring Boot?</h3>
+In Spring Boot, the term "bootstrapping" refers to the setup or initialization of a Spring Boot application. The initial project structure, application context, and essential dependencies version must all be configured throughout this procedure.</p>
+Q14. Tell me the steps to create Java -jar file in Spring Boot?</h3>
+The steps to create Java -jar file in Spring Boot are:</p>
+Add the Spring Boot Maven plugin to the pom.xml file.</li>
+After that, we will use the Maven plugin package command to build the project and produce a Java -JAR file.</li>
+Java -JAR file will be created in the target folder of the project.</li>
+Run the Java -JAR file by the command "java -jar jar-file-name.jar".</li>
+Q15. Have you heard about dependency injection in the Spring Boot?</h3>
+Dependency injection is a design approach that removes dependencies from computer code, which makes the code easier to manage and test the application. Dependency Injection is implemented in Spring Boot by using the Inversion of Control (IoC) architectural paradigm.</p>
+There are three kinds of dependency injections, that is - constructor dependency injection, property dependency injection, and method dependency injection.</p>
+Q16. If I want to save images in MongoDB using Spring Boot, what should be done?</h3>
+In order to use Spring Boot to save an image in MongoDB, we must configure the required Spring Boot properties and add the spring-boot-starter-data-mongodb dependency to the pom.xml file. We may also utilise GridFS for bigger files and MongoDB BSON for smaller ones.</p>
+Here is a basic structure code for storing an image in MongoDB using GridFS:</p>
+Q17. Discuss or mention the steps involved to configure hibernate in Spring Boot?</h3>
+To configure Hibernate in Spring Boot, we should add the spring-boot-starter-data-jpa dependency to the pom.xml file. The step to configure Hibernate are:</p>
+STEP1-</strong> We will Add the spring-boot-starter-data-jpa dependency to the pom.xml file.</p>
+STEP2- </strong>Then we will Create JPA entities.</p>
+STEP3-</strong> After creating the entities we will Create a JPA repository.</p>
+STEP4-</strong> We will Configure the database properties in the application.properties file.</p>
+STEP5-</strong> In the last step we need to Configure the Hibernate properties in the application.properties file.</p>
+Here is a basic structure code for configuring Hibernate in the Spring Boot framework:</p>
+Q18. Discuss the benefits of Spring Boot.</h3>
+The benefits of Spring Boot are:</p>
+Spring Boot is quick and have a safe environment property configuration.</li>
+It reduces code length and simplifies the development process.</li>
+With the help of Spring Boot one can avoid writing boilerplate code and XML configuration.</li>
+Spring Boot creates stand-alone programs with a variety of non-functional features that are common to large classes of projects.</li>
+It provides a toolbox that is effective and scalable for creating Spring apps using microservices in spring boot.</li>
+Spring Boot combines well with the various components of the Spring Ecosystem, including Spring JDBC, Spring ORM, Spring Data, and Spring Security.</li>
+Q19. Describe the term thyme leaf.</h3>
+Thymeleaf is an advanced server-side Java EE template engine for both web and standalone contexts that can interpret HTML, XML, JavaScript, CSS, and plain text. It is a powerful engine that is more flexible than JSP and is responsible for dynamic content rendering on UI.</p>
+To use Thymeleaf in a Spring Boot project, we first have to add the spring-boot-starter-thymeleaf dependency to the pom.xml file, configure the ViewResolver, and create templates in HTML format with Thymeleaf syntax. There are many use cases of Thymeleaf in the view layer of the Spring MVC application class.</p>
+Q20. Explain what is the need for Spring-Boot-DevTools Module is.</h3>
+The DevTools module provides several features to improve the development experience, such as caching static content resources, automatic restarts, live reload, global settings, and running remote applications.</p>
+Here are some reasons why we need Spring-Boot-Devtools module:</p>
+It provides additional development-time features that make the application development experience more pleasant.</li>
+It avoids the need to manually set the configuration of the Spring-based application.</li>
+It improves the performance of the application by caching static content/template files to serve them faster to the browser/client.</li>
+To use Spring Boot DevTools, we need to add the spring-boot-devtools dependency to the pom.xml or build.gradle file and DevTools is included in the repackaged archive, and the spring-boot-devtools module automatically applies the sensible development-time configuration.</p>
+Q21. How will you change the port of the embedded Tomcat server in Spring Boot?</h3>
+To change the port of the embedded Tomcat server, we can use any of the following ways:</p>
+By setting the resource file's server.port property.</li>
+By updating the server.port properties.</li>
+By using the EmbeddedServletContainerCustomizer interface to change the default port in Spring Boot 1.x version.</li>
+By using the WebServerFactoryCustomizer interface to change the default port in Spring Boot 2.x version.</li>
+Q22. List the steps which you will need to connect a Spring Boot application to a database using JDBC.</h3>
+The steps to connect a spring boot application to a database using JDBC are:</p>
+Add the Spring Boot Starter JDBC dependency to the build configuration file.</li>
+Configure the database connection properties in the application.properties or application.yml file.</li>
+Create a database bean using XML or Java config. programming language.</li>
+Then Autowire the JdbcTemplate class to access the relational database.</li>
+Utilize JdbcTemplate in a Spring Boot application to access a relational database; the Spring Boot Starter JDBC dependency must be included in the build configuration file.</li>
+The following dependencies can be added by Maven plugin users in the pom.xml file:</strong></p>
+The database connection settings can then be configured in the application.properties or application.yml file.</strong></p>
+For example, the basic structure code is:</p>
+Next, we can create a database bean using XML or Java config. For example the basic structure code is:</strong></p>
+The JdbcTemplate class can now be autowired to access the relational database. For example the basic code snippet is:</strong></p>
+Q23. Explain @RequestMapping and @RestController annotation use in Sprint Boot.</h3>
+We make use of the @RequestMapping annotation to map HTTP requests to handler methods of MVC and REST controller class in Spring Boot. It is one of the most common annotations used in Spring Web applications.</p>
+The @Controller and @ResponseBody annotations are combined into the @RestController annotation for simplicity. As a result, there is no need for the @ResponseBody annotation to be present in each request-handling function of the controller class level. RESTful API web services are developed using the @RestController annotation.</p>
+Q24. How will you disable the auto-configuration in sprint boot?</h3>
+To disable the auto-configuration, we can use any of the following ways:</p>
+By utilizing @EnableAutoConfiguration annotation of the exclude attribute . We can specify the classes that we want to exclude from auto-configuration.</p>
+By utilizing the @EnableAutoConfiguration annotation's of excludeName attribute. The fully qualified names of the classes that we want to keep out of auto-configuration can be specified.</p>
+For example, the basic code snippet is:</strong></p>
+Q25. Give an example of ReadOnly as true in Transaction management?</h3>
+An illustration of a Spring Boot application that uses @Transactional with readOnly=true is:</p>
+If we have a UserService class that gets user data from a database, so we can declare the method @Transactional(readOnly=true) to enhance the performance of database transactions as we are only reading the data.</p>
+Basic structure code example:</strong></p>
+Q26. What are the advantages of the YAML file?</h3>
+The advantages of the YAML file are:</p>
+YAML files have a hierarchical structure that makes them easier to read and write.</li>
+YAML files support maps, lists, and scalar types, which makes them more versatile than properties files.</li>
+YAML files have more clear and human-readable syntax than properties files.</li>
+YAML files provide unique and useful features like anchors, aliases, and references that are not available in properties files.</li>
+Q27. Explain Spring Data REST.</h3>
+A framework called Spring Data REST expands on Spring Data repositories and automatically exports them as REST resources. It makes use of hypermedia to enable clients to swiftly discover functionality made available by the repositories and incorporate these resources into associated hypermedia-based functionality and business logic.</p>
+Some advantages of Spring Data Rest are:</strong></p>
+Spring Data REST is designed to create RESTful API easily and quickly.</li>
+Spring Data REST automatically exposes Spring Data repositories as REST endpoints, which reduces the amount of boilerplate code needed to create RESTful API.</li>
+Spring Data REST leverages hypermedia to make the APIs discoverable, self-documenting, and easy to navigate.</li>
+Q28. What are Spring profiles?</h3>
+An approach to separate the configuration of an application and make them only available in specific situations is through the use of profiles in Spring and the Spring Profiles allow developers to map beans to different environments like dev, test, and prod. It provides a way to activate a bunch of configurations with a single profile parameter.</p>
+Q29. What are the steps needed to insert data in MySQL using Spring Boot?</h3>
+The steps needed to insert data into a MySQL database using Spring Boot are:</p>
+Add MySQL dependency to the pom.xml file.</li>
 ****************************************************************************
 	****************************************************************************
 	****************************************************************************
@@ -6700,138 +6805,7 @@ Display the uploaded image in the browser.</li>
 	****************************************************************************
 	****************************************************************************
 	****************************************************************************
-	****************************************************************************
-Q10. Explain the auto-configuration class in Spring Boot?</h3>
-<p style="text-align: justify;">The Spring Boot Auto-Configuration class feature helps the Spring-based application code to set up automatically, which is based on the Java -jar package phase or Jar dependencies version that has been added to the classpath. Spring Boot Auto-Configuration feature eliminates the need for developers to define certain beans included in the auto-configuration classes. This feature makes development faster and easier by providing fundamental settings required to configure the application with various spring framework.</p>
-<h3 style="text-align: justify;">Q11. I am getting a whitelabel error page in the Spring Boot application code, what should I do?</h3>
-<p style="text-align: justify;">To solve the Whitelabel error page in the Spring Boot application, we can use these methods:</p>
-<p style="text-align: justify;"><strong>1. Customizing the Whitelabel Error Page:</strong></p>
-<p style="text-align: justify;">Developers can create a custom error page to align with the UI of their Spring Boot application. So to customize the error page, developers can create a Custom Error Controller and define the error handling logic in that controller class. This controller will map any errors to the customized error page.</p>
-<p style="text-align: justify;"><strong>2. Excluding the ErrorMvcAutoConfiguration Bean:</strong></p>
-<p style="text-align: justify;">Another way to disable the Whitelabel error page is by excluding the ErrorMvcAutoConfiguration bean.</p>
-<p style="text-align: justify;">This may be done by adding:</p>
-<p style="text-align: justify;"><strong> spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration section to the properties file.</strong></p>
-<p style="text-align: justify;"><strong>3. Creating a Custom Auto-Configuration:</strong></p>
-<p style="text-align: justify;">In order to manage problems in a Spring Boot application code, developers can also define a custom auto-configuration. If there is a problem, the user will receive more detailed t information due to customized auto-configuration.</p>
-<h3 style="text-align: justify;">Q12. How will you fetch data from the database in Spring Boot?</h3>
-<p style="text-align: justify;">To fetch data from the database in spring boor, we can follow these steps:</p>
-<ul style="text-align: justify;">
-<li>Define an entity class to map to the table in the database.</li>
-<li>Define a repository interface that extends JpaRepository to perform CRUD operations on the entity.</li>
-<li>Define a service class that uses the repository to fetch data from the database.</li>
-<li>Define a controller class that uses the service to return the fetched data as an HTTP response.</li>
-</ul>
-<h3 style="text-align: justify;">Q13. Describe the meaning of bootstrapping in Spring Boot?</h3>
-<p style="text-align: justify;">In Spring Boot, the term "bootstrapping" refers to the setup or initialization of a Spring Boot application. The initial project structure, application context, and essential dependencies version must all be configured throughout this procedure.</p>
-<h3 style="text-align: justify;">Q14. Tell me the steps to create Java -jar file in Spring Boot?</h3>
-<p style="text-align: justify;">The steps to create Java -jar file in Spring Boot are:</p>
-<ul style="text-align: justify;">
-<li>Add the Spring Boot Maven plugin to the pom.xml file.</li>
-<li>After that, we will use the Maven plugin package command to build the project and produce a Java -JAR file.</li>
-<li>Java -JAR file will be created in the target folder of the project.</li>
-<li>Run the Java -JAR file by the command "java -jar jar-file-name.jar".</li>
-</ul>
-<h3 style="text-align: justify;">Q15. Have you heard about dependency injection in the Spring Boot?</h3>
-<p style="text-align: justify;">Dependency injection is a design approach that removes dependencies from computer code, which makes the code easier to manage and test the application. Dependency Injection is implemented in Spring Boot by using the Inversion of Control (IoC) architectural paradigm.</p>
-<p style="text-align: justify;">There are three kinds of dependency injections, that is - constructor dependency injection, property dependency injection, and method dependency injection.</p>
-<h3 style="text-align: justify;">Q16. If I want to save images in MongoDB using Spring Boot, what should be done?</h3>
-<p style="text-align: justify;">In order to use Spring Boot to save an image in MongoDB, we must configure the required Spring Boot properties and add the spring-boot-starter-data-mongodb dependency to the pom.xml file. We may also utilise GridFS for bigger files and MongoDB BSON for smaller ones.</p>
-<p style="text-align: justify;">Here is a basic structure code for storing an image in MongoDB using GridFS:</p>
-<pre>@Autowired<br /><br />private GridFsTemplate gridFsTemplate;<br /><br />public String store(MultipartFile file) throws IOException {<br /><br />DBObject metaData = new BasicDBObject();<br /><br />metaData.put("type", file.getContentType());<br /><br />ObjectId objectId = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename(), metaData);<br /><br />return objectId.toString();<br /><br />}</pre>
-<h3 style="text-align: justify;">Q17. Discuss or mention the steps involved to configure hibernate in Spring Boot?</h3>
-<p style="text-align: justify;">To configure Hibernate in Spring Boot, we should add the spring-boot-starter-data-jpa dependency to the pom.xml file. The step to configure Hibernate are:</p>
-<p style="text-align: justify;"><strong>STEP1-</strong> We will Add the spring-boot-starter-data-jpa dependency to the pom.xml file.</p>
-<p style="text-align: justify;"><strong>STEP2- </strong>Then we will Create JPA entities.</p>
-<p style="text-align: justify;"><strong>STEP3-</strong> After creating the entities we will Create a JPA repository.</p>
-<p style="text-align: justify;"><strong>STEP4-</strong> We will Configure the database properties in the application.properties file.</p>
-<p style="text-align: justify;"><strong>STEP5-</strong> In the last step we need to Configure the Hibernate properties in the application.properties file.</p>
-<p style="text-align: justify;">Here is a basic structure code for configuring Hibernate in the Spring Boot framework:</p>
-<pre>&lt;dependency&gt;<br /><br />&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;</pre>
-<h3 style="text-align: justify;">Q18. Discuss the benefits of Spring Boot.</h3>
-<p style="text-align: justify;">The benefits of Spring Boot are:</p>
-<ul style="text-align: justify;">
-<li>Spring Boot is quick and have a safe environment property configuration.</li>
-<li>It reduces code length and simplifies the development process.</li>
-<li>With the help of Spring Boot one can avoid writing boilerplate code and XML configuration.</li>
-<li>Spring Boot creates stand-alone programs with a variety of non-functional features that are common to large classes of projects.</li>
-<li>It provides a toolbox that is effective and scalable for creating Spring apps using microservices in spring boot.</li>
-<li>Spring Boot combines well with the various components of the Spring Ecosystem, including Spring JDBC, Spring ORM, Spring Data, and Spring Security.</li>
-</ul>
-<h3 style="text-align: justify;">Q19. Describe the term thyme leaf.</h3>
-<p style="text-align: justify;">Thymeleaf is an advanced server-side Java EE template engine for both web and standalone contexts that can interpret HTML, XML, JavaScript, CSS, and plain text. It is a powerful engine that is more flexible than JSP and is responsible for dynamic content rendering on UI.</p>
-<p style="text-align: justify;">To use Thymeleaf in a Spring Boot project, we first have to add the spring-boot-starter-thymeleaf dependency to the pom.xml file, configure the ViewResolver, and create templates in HTML format with Thymeleaf syntax. There are many use cases of Thymeleaf in the view layer of the Spring MVC application class.</p>
-<h3 style="text-align: justify;">Q20. Explain what is the need for Spring-Boot-DevTools Module is.</h3>
-<p style="text-align: justify;">The DevTools module provides several features to improve the development experience, such as caching static content resources, automatic restarts, live reload, global settings, and running remote applications.</p>
-<p style="text-align: justify;">Here are some reasons why we need Spring-Boot-Devtools module:</p>
-<ul style="text-align: justify;">
-<li>It provides additional development-time features that make the application development experience more pleasant.</li>
-<li>It avoids the need to manually set the configuration of the Spring-based application.</li>
-<li>It improves the performance of the application by caching static content/template files to serve them faster to the browser/client.</li>
-</ul>
-<p style="text-align: justify;">To use Spring Boot DevTools, we need to add the spring-boot-devtools dependency to the pom.xml or build.gradle file and DevTools is included in the repackaged archive, and the spring-boot-devtools module automatically applies the sensible development-time configuration.</p>
-<h3 style="text-align: justify;">Q21. How will you change the port of the embedded Tomcat server in Spring Boot?</h3>
-<p style="text-align: justify;">To change the port of the embedded Tomcat server, we can use any of the following ways:</p>
-<ul style="text-align: justify;">
-<li>By setting the resource file's server.port property.</li>
-<li>By updating the server.port properties.</li>
-<li>By using the EmbeddedServletContainerCustomizer interface to change the default port in Spring Boot 1.x version.</li>
-<li>By using the WebServerFactoryCustomizer interface to change the default port in Spring Boot 2.x version.</li>
-</ul>
-<h3 style="text-align: justify;">Q22. List the steps which you will need to connect a Spring Boot application to a database using JDBC.</h3>
-<p style="text-align: justify;">The steps to connect a spring boot application to a database using JDBC are:</p>
-<ul style="text-align: justify;">
-<li>Add the Spring Boot Starter JDBC dependency to the build configuration file.</li>
-<li>Configure the database connection properties in the application.properties or application.yml file.</li>
-<li>Create a database bean using XML or Java config. programming language.</li>
-<li>Then Autowire the JdbcTemplate class to access the relational database.</li>
-<li>Utilize JdbcTemplate in a Spring Boot application to access a relational database; the Spring Boot Starter JDBC dependency must be included in the build configuration file.</li>
-</ul>
-<p style="text-align: justify;"><strong>The following dependencies can be added by Maven plugin users in the pom.xml file:</strong></p>
-<pre>&lt;dependency&gt;<br /><br />&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;<br /><br />&lt;dependency&gt;<br /><br />&lt;groupId&gt;mysql&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;</pre>
-<p style="text-align: justify;"><strong>The database connection settings can then be configured in the application.properties or application.yml file.</strong></p>
-<p style="text-align: justify;">For example, the basic structure code is:</p>
-<pre>spring.datasource.driverClassName=com.mysql.jdbc.Driver<br /><br />spring.datasource.url=jdbc:mysql://localhost:3306/mydb<br /><br />spring.datasource.username=root<br /><br />spring.datasource.password=password</pre>
-<p style="text-align: justify;"><strong>Next, we can create a database bean using XML or Java config. For example the basic structure code is:</strong></p>
-<pre>&lt;bean&gt;<br /><br />&lt;property name="driverClassName" value="${spring.datasource.driverClassName}" /&gt;<br /><br />&lt;property name="url" value="${spring.datasource.url}" /&gt;<br /><br />&lt;property name="username" value="${spring.datasource.username}" /&gt;<br /><br />&lt;property name="password" value="${spring.datasource.password}" /&gt;<br /><br />&lt;/bean&gt;</pre>
-<p style="text-align: justify;"><strong>The JdbcTemplate class can now be autowired to access the relational database. For example the basic code snippet is:</strong></p>
-<pre>@Autowired<br /><br />JdbcTemplate jdbcTemplate;<br /><br />public List&lt;Customer&gt; findAll() {<br /><br />return jdbcTemplate.query(<br /><br />"SELECT id, first_name, last_name FROM customers",<br /><br />(rs, rowNum) -&gt; new Customer(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"))<br /><br />);<br /><br />}</pre>
-<h3 style="text-align: justify;">Q23. Explain @RequestMapping and @RestController annotation use in Sprint Boot.</h3>
-<p style="text-align: justify;">We make use of the @RequestMapping annotation to map HTTP requests to handler methods of MVC and REST controller class in Spring Boot. It is one of the most common annotations used in Spring Web applications.</p>
-<p style="text-align: justify;">The @Controller and @ResponseBody annotations are combined into the @RestController annotation for simplicity. As a result, there is no need for the @ResponseBody annotation to be present in each request-handling function of the controller class level. RESTful API web services are developed using the @RestController annotation.</p>
-<h3 style="text-align: justify;">Q24. How will you disable the auto-configuration in sprint boot?</h3>
-<p style="text-align: justify;">To disable the auto-configuration, we can use any of the following ways:</p>
-<p style="text-align: justify;">By utilizing @EnableAutoConfiguration annotation of the exclude attribute . We can specify the classes that we want to exclude from auto-configuration.</p>
-<p style="text-align: justify;">By utilizing the @EnableAutoConfiguration annotation's of excludeName attribute. The fully qualified names of the classes that we want to keep out of auto-configuration can be specified.</p>
-<p style="text-align: justify;"><strong>For example, the basic code snippet is:</strong></p>
-<pre>@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })<br /><br />public class MyApp {<br /><br />public static void main(String[] args) {<br /><br />SpringApplication.run(MyApp.class, args);<br /><br />}<br /><br />}</pre>
-<h3 style="text-align: justify;">Q25. Give an example of ReadOnly as true in Transaction management?</h3>
-<p style="text-align: justify;">An illustration of a Spring Boot application that uses @Transactional with readOnly=true is:</p>
-<p style="text-align: justify;">If we have a UserService class that gets user data from a database, so we can declare the method @Transactional(readOnly=true) to enhance the performance of database transactions as we are only reading the data.</p>
-<p style="text-align: justify;"><strong>Basic structure code example:</strong></p>
-<pre>@Service<br /><br />public class UserService {<br /><br />@Autowired<br /><br />private UserRepository userRepository;<br /><br />@Transactional(readOnly=true)<br /><br />public User getUserById(Long id) {<br /><br />return userRepository.findById(id).orElse(null);<br /><br />}<br /><br />// other methods<br /><br />}</pre>
-<h3 style="text-align: justify;">Q26. What are the advantages of the YAML file?</h3>
-<p style="text-align: justify;">The advantages of the YAML file are:</p>
-<ul style="text-align: justify;">
-<li>YAML files have a hierarchical structure that makes them easier to read and write.</li>
-<li>YAML files support maps, lists, and scalar types, which makes them more versatile than properties files.</li>
-<li>YAML files have more clear and human-readable syntax than properties files.</li>
-<li>YAML files provide unique and useful features like anchors, aliases, and references that are not available in properties files.</li>
-</ul>
-<h3 style="text-align: justify;">Q27. Explain Spring Data REST.</h3>
-<p style="text-align: justify;">A framework called Spring Data REST expands on Spring Data repositories and automatically exports them as REST resources. It makes use of hypermedia to enable clients to swiftly discover functionality made available by the repositories and incorporate these resources into associated hypermedia-based functionality and business logic.</p>
-<p style="text-align: justify;"><strong>Some advantages of Spring Data Rest are:</strong></p>
-<ul style="text-align: justify;">
-<li>Spring Data REST is designed to create RESTful API easily and quickly.</li>
-<li>Spring Data REST automatically exposes Spring Data repositories as REST endpoints, which reduces the amount of boilerplate code needed to create RESTful API.</li>
-<li>Spring Data REST leverages hypermedia to make the APIs discoverable, self-documenting, and easy to navigate.</li>
-</ul>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c727adb8ef_spring_boot_interview_questions_04.jpg" alt="Spring Data Rest - Unstop" width="1000" height="222" /></p>
-<h3 style="text-align: justify;">Q28. What are Spring profiles?</h3>
-<p style="text-align: justify;">An approach to separate the configuration of an application and make them only available in specific situations is through the use of profiles in Spring and the Spring Profiles allow developers to map beans to different environments like dev, test, and prod. It provides a way to activate a bunch of configurations with a single profile parameter.</p>
-<h3 style="text-align: justify;">Q29. What are the steps needed to insert data in MySQL using Spring Boot?</h3>
-<p style="text-align: justify;">The steps needed to insert data into a MySQL database using Spring Boot are:</p>
-<ul style="text-align: justify;">
-<li>Add MySQL dependency to the pom.xml file.</li>
+	****************************************************************************	
 <li>Configure the database connection in the application.properties file.</li>
 <li>Create an entity class level that represents the table in the memory database.</li>
 <li>Create a repository interface that extends the CrudRepository interface.</li>
@@ -7062,33 +7036,30 @@ Q10. Explain the auto-configuration class in Spring Boot?</h3>
 <p style="text-align: justify;">The key HTTP method that can be used in spring boot services are:</p>
 <ul style="text-align: justify;">
 <li><strong>GET:</strong> With this key HTTP method, it reads a resource.</li>
-<li><strong>PUT:</strong> We can update an existing resource with PUT key HTTP method.</li>
-<li><strong>POST:</strong> With this key HTTP method, it helps in the creation of a new resource.</li>
-<li><strong>DELETE:</strong> The DELETE method deletes the resource.</li>
-<li><strong>PATCH:</strong> It updates a part of an existing resource.</li>
-</ul>
-<h3 style="text-align: justify;">Q65. What should be the way to implement command-line applications in Spring Boot?</h3>
-<p style="text-align: justify;">To use Spring Boot for command-line applications, we need to create a new Spring Boot project or use an existing one and then update the pom.xml file of the project and build the Spring Boot app into a single executable Jar dependencies file with Maven, and run the Spring Boot app from the command line application.</p>
-<h3 style="text-align: justify;">Q66. What do you mean by debug logging?</h3>
-<p style="text-align: justify;">Debug logging is a feature that stores thorough details about each stage of a process in a log file which allows for further analysis and problem-solving. Debug logging can be enabled by adjusting an application's logging preferences or by specifying particular environment variables.</p>
-<p style="text-align: justify;">Due to the advent and popularity of cloud computing, the focus is on the core business, where a delegation of logistics is handled by expert service providers. Several service tools enable the developer to save cost and time. Hence, the microservices have been developed in an Agile manner. These microservices need to be lightweight and converging. This is where Spring Boot is useful. It allows applications to focus entirely on the business while Spring Boot handles the rest of the operations. Spring Boot includes default files for every operation and allows you to choose what you want to configure for the application.&nbsp;</p>
-60+ Spring Boot Interview Questions With Answers (2026)
-Table of content: 
-Top Spring Boot Interview Questions and Answers
-60+ Spring Boot Interview Questions With Answers (2026)
-Amp up your technical round interview preparation. This article will help you grasp the fundamentals of Spring Boot with 60+ questions.
-Schedule Icon
-28 mins read
-60+ Spring Boot Interview Questions With Answers (2026)
-Spring Boot helps us in the construction of web apps and microservices by using the Java-based open-source framework. The Spring Boot framework is developed and maintained by Pivotal Team. It provides us with pre-configured libraries and tools that enable developers to create standalone, production-grade Spring-based applications that can be run directly without the need for deploying WAR files and manual configuration.
 
-The framework is opinionated, meaning it provides a specific view of the Spring platform and third-party libraries, so developers can get started with minimum fuss.
+****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+	****************************************************************************
+We can update an existing resource with PUT key HTTP method.</li>
+With this key HTTP method, it helps in the creation of a new resource.</li>
+The DELETE method deletes the resource.</li>
+It updates a part of an existing resource.</li>
+Q65. What should be the way to implement command-line applications in Spring Boot?</h3>
+To use Spring Boot for command-line applications, we need to create a new Spring Boot project or use an existing one and then update the pom.xml file of the project and build the Spring Boot app into a single executable Jar dependencies file with Maven, and run the Spring Boot app from the command line application.</p>
+Q66. What do you mean by debug logging?</h3>
+Debug logging is a feature that stores thorough details about each stage of a process in a log file which allows for further analysis and problem-solving. Debug logging can be enabled by adjusting an application's logging preferences or by specifying particular environment variables.</p>
+Due to the advent and popularity of cloud computing, the focus is on the core business, where a delegation of logistics is handled by expert service providers. Several service tools enable the developer to save cost and time. Hence, the microservices have been developed in an Agile manner. These microservices need to be lightweight and converging. This is where Spring Boot is useful. It allows applications to focus entirely on the business while Spring Boot handles the rest of the operations. Spring Boot includes default files for every operation and allows you to choose what you want to configure for the application.&nbsp;</p>
 
-This blog will take you through important Spring Boot interview questions to excel in your technical interview.
-
-Looking for guidance to boost up your career? Explore Here
 
 Top Spring Boot Interview Questions and Answers
+
 Q1. Explain Spring Boot and also tell the features of Spring Boot.
 Spring Boot is a Java-based open-source rapid application development framework that is used to build microservices and web applications. With the help of the prebuilt code found in its codebase, Spring Boot offers an entirely flexible environment that does not need a manual configuration and provides powerful batch processing.
 
@@ -7100,9 +7071,8 @@ It provides an opinionated "starter" dependencies version to simplify build conf
 It automatically configures Spring and third-party libraries
 Spring Boot Supports microservice architecture and powerful batch processing.
 It offers a versatile approach to setting up XML configurations, database transactions, and Java Beans.
+	
 Spring Boot Features
-
- 
 
 Q2. Tell the steps involved in the creation of the spring boot project in Eclipse.
 We can create the Spring Boot project in Eclipse by using the spring Initializer, the steps involved are:
@@ -7455,21 +7425,15 @@ public class CustomErrorController {
 public String handleError(HttpServletRequest request) {
 Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
-
 if (status != null) {
 int statusCode = Integer.parseInt(status.toString());
-
 
 if (statusCode == HttpStatus.NOT_FOUND.value()) {
 return "error-404";
 }
 }
-
-
 return "error";
 }
-
-
 }
 
 // Step 2: Configure Spring Boot to use the custom error page
@@ -7684,79 +7648,6 @@ Debug logging is a feature that stores thorough details about each stage of a pr
 Due to the advent and popularity of cloud computing, the focus is on the core business, where a delegation of logistics is handled by expert service providers. Several service tools enable the developer to save cost and time. Hence, the microservices have been developed in an Agile manner. These microservices need to be lightweight and converging. This is where Spring Boot is useful. It allows applications to focus entirely on the business while Spring Boot handles the rest of the operations. Spring Boot includes default files for every operation and allows you to choose what you want to configure for the application. 
 
 We hope the above article helped you grasp the essential concepts of Spring Boot. For more interview questions on the same topics or other topics, stay tuned to Unstop.
-
-Suggested Reads:
-
-Trending AWS Interview Questions That You Must Prepare!
-Best Collection Of CSS Interview Questions With Answers (2022)
-50 Software Testing Interview Questions And Answers You Should Know!
-List Of 50 Core Java Interview Questions With Answers (2022)
-Edited by
-Shreeya Thakur
-As a biotechnologist-turned-writer, I love turning complex ideas into meaningful stories that inform and inspire. Outside of writing, I enjoy cooking, reading, and travelling, each giving me fresh perspectives and inspiration for my work.
-
-Tags:
-Interview Preparation
-Interview Questions
-Comments
-Add comment
-Login to continue reading
-And access exclusive content, personalized recommendations, and career-boosting opportunities.
-
-Email Icon
-Login with Email
-Don't have an account? Sign up
-Google news icon
-Never miss an
-UpdateArrows Icon
-Featured Opportunities
-Asian Paints Alchemy 2026
-Asian Paints Alchemy 2026
-Unstop Campus Champions
-Unstop Campus Champions
-Top-Rated Practice by Students
-prep-for-placement
-30-days-dsa
-interview-toolkit
-Weekly Coding Challenge
-Weekly Case Challenge
-back
-back
-Subscribe Icon
-Subscribe
-to our newsletter
-
-email id
-Subscribe
-
-Like
-
-Bookmark Icon
-ShareShare Icon
-twitter icon
-WhatsApp icon
-LinkedIn Icon
-Mail Icon
-Copy url
-Blogs you need to hog!
-This Is My First Hackathon, How Should I Prepare? (Tips & Hackathon Questions Inside)
-This Is My First Hackathon, How Should I Prepare? (Tips & Hackathon Questions Inside)
-D2C Admin
-Arrows right Icon
-10 Best C++ IDEs That Developers Mention The Most!
-10 Best C++ IDEs That Developers Mention The Most!
-D2C Admin
-Arrows right Icon
-Advantages and Disadvantages of Cloud Computing That You Should Know!
-Advantages and Disadvantages of Cloud Computing That You Should Know!
-D2C Admin
-Arrows right Icon
-Is IoT Valuable? Advantages And Disadvantages Of IoT Explained
-Is IoT Valuable? Advantages And Disadvantages Of IoT Explained
-Shivangi Vatsal
-Arrows right Icon
-Powered ByUnstop Logo
-Best Viewed in Chrome, Opera, Mozilla, EDGE & Safari. Copyright © 2026 FLIVE Consulting Pvt Ltd - All rights reserved.
 
 
 1 Для чего нужен Component Scan?
@@ -7982,62 +7873,7 @@ http://localhost:8080/login?name=Ranga&name=Ravi&name=Sathish
 
 public String method(@RequestParam(value="name") String[] names){   
 }
-Хочу поблагодарить пользователя хабра jd2050, за помощь с переводом.
-
-Автор: PqDnИсточник
-Версия для печати Версия для печати
-Поделиться…
- * Ваше имя*
-
- Ваш e-mail (не отображается в списке сообщений)
-
-* - обязательные к заполнению поля
-
-
-Главная   |  Архив новостей  |   Android  |   Google  |   Apple  |   Microsoft  |   Информационная безопасность  |   Веб – разработка
-Публикации RSS  |  Комментарии RSS
-© 2010-2026 PVSM.RU
-Все права на материалы принадлежат их авторам.
-Основными материалами сайта являются архивные копии материалов по ИТ тематике Рунета, взятые из открытых и общедоступных источников.
-https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
-Поделитесь с друзьями
-ВКонтакте
-Одноклассники
-Twitter
-Мой Мир
-LiveJournal
-Google Plus
-Яндекс
-
-Find Java Spring Boot experts easily with TestGorilla
-Try TestGorilla for free
-
-Finding a skilled developer with Java Spring Boot expertise can be hard – and before you hire them, you need to ensure they possess all the other skills required for the role.
-
-A handy method to evaluate your applicants’ Java Spring Boot skills, including soft skills, is to use skills tests – and conduct interviews with the right Java Spring Boot interview questions.
-
-At TestGorilla, we’re aware that coming up with the right interview questions for developers can be difficult, especially if you have no coding skills yourself. 
-
-So, if you need some fresh ideas to put your list together, this article is for you: In it, you’ll find a comprehensive list of 53 Java Spring Boot interview questions – along with sample answers to some of them to help you evaluate candidates’ skills and knowledge.
-
-Let’s get to the list.
-
-Table of contents
-21 Java Spring Boot interview questions to ask junior developers
-5 Java Spring Boot interview questions and answers to assess junior developers
-21 Java Spring Boot interview questions to ask senior developers
-5 Java Spring Boot interview questions and answers to assess senior developers
-11 situational Java Spring Boot interview questions to ask applicants
-5 situational Java Spring Boot interview questions and answers
-For what kind of roles can you use Java Spring Boot interview questions?
-During which stage of the recruitment process should you use these Java Spring Boot interview questions?
-Why use skill testing to assess developers’ skills?
-Hire top developers using skill tests and Java Spring Boot interview questions
-21 Java Spring Boot interview questions to ask junior developers
-Ask junior developers these 21 Java Spring Boot interview questions to determine if their knowledge matches the requirements of your role.
-
-21 Java Spring Boot interview questions to ask junior developers
-Explain what Java Spring Boot is.
+																													
 
 Name five Java Spring Boot features.
 
@@ -8079,9 +7915,6 @@ Explain what DevTools does in Spring Boot.
 
 Explain what spring-boot-starter-parent is.
 
-5 Java Spring Boot interview questions and answers to assess junior developers
-Here are the answers to five of the Java Spring Boot interview questions for junior developers. Use to assess your applicants’ skills. 
-
 1. Which skills do you need to use Java Spring Boot?
 Java, object-oriented programming, and Java Spring Boot skills are essential for using this framework – but are your applicants able to explain why they’re so important? How have they honed these skills? Can they show that their skills are at the required level?
 
@@ -8100,16 +7933,6 @@ Do your applicants know that the Java Spring Boot CLI is a command-line tool? Ar
 
 5. Explain what the @ComponentScan annotation does and how to use it.
 Applicants should know that developers scan all beans and declarations of packages with the @ComponentScan annotation. Your candidates should be aware that to use the @ComponentScan annotation, they must add it to a class file. It will then scan the components. 
-
-The best insights on HR and recruitment, delivered to your inbox.
-Biweekly updates. No spam. Unsubscribe any time.
-
-Email*
-21 Java Spring Boot interview questions to ask senior developers
-Ask senior developers some of these 21 Java Spring Boot interview questions to determine if their knowledge is sufficient for your open role.
-
-21 Java Spring Boot interview questions to ask senior developers
-Explain what @EnableAutoConfiguration does.
 
 Explain what Java Spring Boot dependency management means.
 
@@ -8150,9 +7973,6 @@ Name three advantages of using microservices.
 What is constructor-based dependency injection?
 
 What is setter-based dependency injection?
-
-5 Java Spring Boot interview questions and answers to assess senior developers
-Here are the answers to five of the Java Spring Boot interview questions for senior developers. Use them to assess your applicants’ knowledge.
 
 1. Explain the key differences between RequestMapping and GetMapping.
 Can your interviewees explain that developers can use RequestMapping with particular request methods such as GET, PUT, and POST with a method attribute?
@@ -8253,11 +8073,6 @@ If you’re looking for a reliable, objective method to shortlist your best appl
 
 That’s why we recommend using skills assessments right after sourcing your candidates.
 
-
-Home » Вопросы и ответы для собеседования по Spring
-Вопросы и ответы для собеседования по SpringВопросы и ответы для собеседования по Spring 
-Если ты когда-нибудь сталкивался с собеседованиями по Java и Spring, то знаешь, что вопросы там могут быть как из разряда “а что такое Dependency Injection?”, так и “почему твой биновый синглтон вдруг стал прототипом?”. Эта статья — не очередная подборка банальных вопросов, а твой гайд по тому, как реально разобраться в Spring, чтобы не только пройти собеседование, но и не облажаться на проде. Разберём, как работает Spring под капотом, как быстро и без боли всё развернуть, и какие грабли тебя поджидают. Плюс — реальные кейсы, схемы, команды, лайфхаки и даже немного статистики. В конце — рекомендации, как это всё автоматизировать и зачем оно тебе, если ты не просто кодер, а ещё и серверочиститель, девопс и вообще человек, который любит, чтобы всё было под контролем.
-
 Как это работает? — Spring без магии
 Spring — это не просто “фреймворк для Java”, а целая экосистема, которая позволяет писать масштабируемые, поддерживаемые и (по возможности) не слишком больные приложения. Основная фишка — Inversion of Control (IoC) и Dependency Injection (DI). То есть ты не создаёшь объекты руками, а отдаёшь это на откуп контейнеру Spring. Он сам решает, когда и что инстанцировать, как связывать компоненты, и как их потом убивать.
 
@@ -8275,7 +8090,6 @@ Spring Boot — магия автоконфигурации. Позволяет 
 Собери проект (Maven или Gradle).
 Запусти java -jar myapp.jar — и всё, приложение работает!
 Для тех, кто любит руками:
-
 
 # Maven
 mvn spring-boot:run
@@ -8336,7 +8150,6 @@ log.info("User created");
 Команды и утилиты
 Вот список команд и тулзов, которые реально ускоряют работу:
 
-
 # Генерация проекта
 curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -o demo.zip
 
@@ -8384,13 +8197,11 @@ Spring поддерживает Kubernetes — можно делать rolling u
 Можно писать скрипты для миграций (например, с Flyway или Liquibase), чтобы не держать всё в голове.
 Пример автоматизации деплоя:
 
-
 # Dockerfile для Spring Boot
 FROM openjdk:17-jdk-slim
 VOLUME /tmp
 COPY target/app.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
-
 
 # Пример скрипта деплоя
 scp target/app.jar user@server:/opt/app/
@@ -8410,58 +8221,14 @@ Spring — это про скорость, надёжность и автома�
 									
 Top Spring Interview QuestionsTop Spring Interview Questions
 
-Q1. What is Spring Framework?
-Q2. What are the Benefits of using Spring Framework?
-Q3. What are the Modules available in Spring Framework?
-Q4. Name Some of the Design Patterns used in the Spring Framework?
-Q5. What is Inversion of Control?
-Q6. What is Dependency Injection?
-Q7. What are different ways of Dependency Injection in Spring Framework?
-Q8. Differentiate between Constructor and Setter Based Dependency Injection?
-Q9. How many types of IOC Containers are there in Spring Framework?
-Q10. Differentiate between BeanFactory and ApplicationContext?
-Q11. What is a Spring Bean?
-Q12. Explain the Spring Bean Life Cycle?
-Q13. What are different ways to configure Spring Beans?
-Q14. What is XML-based Spring Configuration?
-Q15. What is Java-based Spring Configuration?
-Q16. What is Annotation-based Spring Configuration?
-Q17. Can We Have Multiple Spring Configuration Files in One Project?
-Q18. How to define Scope of a Spring Bean?
-Q19. What are inner beans in Spring?
-Q20. Are Singleton beans thread safe in Spring Framework?
-Q21. How can you inject a Java Collection in Spring? Give example?
-Q22. How to inject a java.util.Properties into a Spring Bean?
-Q23. Explain Spring Bean Autowiring?
-Q24. Explain different Modes of Spring Bean Autowiring?
-Q25. Explain @Required annotation with example?
-Q26. Explain @Autowired annotation with example?
-Q27. Explain @Qualifier annotation with example?
-Q28. What are Spring stereotype annotations?
-Q29. What are JSR-250 annotations?
-Q30. What happens when you define two beans with same id or same name ?
-Q31. Explain Spring MVC Workflow?
-Q32. Differentiate between @Controller and @RestController?
-Q33. What Is Spring Security?
-Q34. What Is Aspect-Oriented Programming?
-Q35. What Are Aspect, Advice, Pointcut, and Joinpoint in Aop?
-Q36. What are the different types of Advices?
-Q37. What is cross-cutting concerns in Spring AOP?
-Q38. What is Weaving?
-Q39. What is Spring Dao?
-Q40. What is Spring Jdbctemplate Class and How to Use it?
-Q41. How Would You Enable Transactions in Spring and What Are Their Benefits?
-Q42. What is Spring Boot?
 Spring Framework is widely used by Java developers for enterprise application development and most frequent topic to be asked in interviews from Java backend developers in 2026.
 
 I have spent quite some time to prepare a very comprehensive list of questions and answers being asked in spring framework interview. I hope, this will benefit both freshers as well as experienced developers in their interview preparation.
-
 
 Q1. What is Spring Framework?
 The Spring Framework is a Java platform that provides comprehensive infrastructure support for developing Java applications. Spring handles the infrastructure so you can focus on your application.
 
 The Spring Framework is most widely used framework across the globe which provides the best practices to use design patterns such as Singleton, Prototype, Factory, Abstract Factory, Builder, Decorator, Service Locator, and many more out of the box.
-
 
 Q2. What are the Benefits of using Spring Framework?
 Spring framework targets to make Java EE development easier. Here are the advantages of using it:
@@ -8522,7 +8289,6 @@ We can use various patterns such as Factory, Abstract Factory, Builder … to in
 How Spring Framework IoC works?
 The Spring Framework IoC container provides the implementation of Factory, Abstract Factory, Builder, and many more patterns out of the box with best design practices used which you can integrate into your own application(s).
 
-
 Q6. What is Dependency Injection?
 Dependency injection is a technique in which an object receives other objects that it depends on.
 
@@ -8530,7 +8296,6 @@ Dependency Injection, is a form of IoC, is a general concept stating that you do
 
 How Spring Framework DI works?
 The Spring Framework DI provides us the way to describe the object and its dependencies in the the form of XML or Java annotations. Spring IoC container takes care of wire them up together.
-
 
 Q7. What are different ways of Dependency Injection in Spring Framework?
 Spring framework provides three ways for dependency injection:-
@@ -8605,7 +8370,6 @@ It doesn’t supports annotation based dependency	It supports annotation based d
 Q11. What is a Spring Bean?
 The Spring Beans are Java Objects that are instantiated, configured, wired, and managed by the Spring IoC container. Spring Bean definition and metadata is provided by XML configuration or Java annotations, which is used by Spring IoC container.
 
-
 Q12. Explain the Spring Bean Life Cycle?
 Spring Bean Life Cycle
 Spring Bean Life Cycle
@@ -8679,7 +8443,6 @@ public class AppConfig  {
 }
 In the example above, the com.abc package will be scanned and look for @Component or other stereotypes annotated classes, and those classes will be instantiated and managed by as Spring container automatically.
 
-
 Q16. What is Annotation-based Spring Configuration?
 Annotation-based container configuration is an alternative of XML-based configuration and is mostly used by developers. Rather than using XML for describing a bean wiring, the developer moves the configuration to the classes by using annotations on the class, field, or method declaration.
 
@@ -8731,7 +8494,6 @@ global-session: bean scope creates a new instance per Global HTTP-session. It is
 
 The last three are available only if the users use a web-aware ApplicationContext.
 
-
 Q19. What are inner beans in Spring?
 In Spring framework, whenever a bean is used for only one particular property, it is advised to declare it as an inner bean. The inner bean is supported both in setter injection property and constructor injection constructor-arg.
 
@@ -8766,7 +8528,6 @@ Q20. Are Singleton beans thread safe in Spring Framework?
 Spring framework does not do anything under the hood concerning the multi-threaded behavior of a singleton bean. It is the developer’s responsibility to deal with concurrency issue and thread safety of the singleton bean.
 
 While practically, most spring beans have no mutable state (e.g. Service and DAO clases), and as such are trivially thread safe. But if your bean has mutable state (e.g. View Model Objects), so you need to ensure thread safety. The most easy and obvious solution for this problem is to change bean scope of mutable beans from singleton to prototype.
-
 
 Q21. How can you inject a Java Collection in Spring? Give example?
 Spring offers four types of collection configuration elements which are as follows:
@@ -8999,7 +8760,6 @@ The documentation says “the last bean definition with the same name (or id) wi
 
 you can always turn off this default behavior and make cause bean ids/names to be unique across all configurations of the container. Look into the DefaultListableBeanFactory setAllowBeanDefinitionOverriding() method.
 
-
 Q31. Explain Spring MVC Workflow?
 Spring MVC Workflow
 Spring MVC Workflow
@@ -9070,23 +8830,19 @@ InternalResourceViewResolver
 5. View
 Dispatcher Servlet return the view JPS/HTML component to user
 
-
 Q32. Differentiate between @Controller and @RestController?
 @Controller vs @RestController
 Even though both are used to indicate that a Spring bean is a Controller in Spring MVC setup, @RestController is better when you are developing RESTful web services using Spring MVC framework. It’s a combination of @Controller + @ResponseBody annotation which allows the controller to directly write the response and bypassing the view resolution process, which is not required for RESTful web service.
 
 It also instructs DispatcherServlet to use different HttpMessageConverters to represent the response in the format client is expecting e.g. HttpMessageJackson2Convert to represent response in JSON format and JAXB based message converts to generate XML response.
 
-
 Q33. What Is Spring Security?
 Spring Security is a separate module of the Spring framework that focuses on providing authentication and authorization methods in Java applications. It also takes care of most of the common security vulnerabilities such as CSRF attacks.
 
 To use Spring Security in web applications, you can get started with a simple annotation: @EnableWebSecurity.
 
-
 Q34. What Is Aspect-Oriented Programming?
 Aspect-oriented programming or AOP is a programming technique which allows programmers to modularize crosscutting concerns or behavior that cuts across the typical divisions of responsibility. Examples of cross-cutting concerns can be logging and transaction management. The core of AOP is an aspect. It encapsulates behaviors that can affect multiple classes into reusable modules.
-
 
 Q35. What Are Aspect, Advice, Pointcut, and Joinpoint in Aop?
 Aspect: a class that implements cross-cutting concerns, such as transaction management
@@ -9159,16 +8915,6 @@ Integrate very well with Spring’s various data access abstractions
 Q42. What is Spring Boot?
 Spring boot solves all this problems that comes with Spring Framework and help to create stand-alone, production-grade Spring based applications that you can just run.
 
-****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
 2. Spring Core
 Q1. What Is Spring Framework?
 Q2. What Are the Benefits of Using Spring?
