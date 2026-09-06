@@ -1,130 +1,15 @@
-<h1 class="mb-3">NextJs Interview Questions</h1>
+NextJs Interview Questions</h1>
 
-                        <!-- Info -->
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="bi bi-question-square-fill text-success me-2"></i>45 questions &nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <span class="badge bg-success bg-opacity-10 text-success m-1"><i class="fas fa-check me-2 small fw-bold"></i>Junior Level</span>
-                                    <span class="badge bg-warning bg-opacity-10 text-warning m-1"><i class="fas fa-check me-2 small fw-bold"></i>Mid Level</span>
-                                    <span class="badge bg-danger bg-opacity-10 text-danger m-1"><i class="fas fa-check me-2 small fw-bold"></i>Senior Level</span>
-                            </li>
-                        </ul>
-                        <span class="badge bg-info bg-opacity-10 text-info m-2"><i class="fas fa-check me-2 small fw-bold"></i>Extra Practices 😃</span>
-                        <br/><br/>
-                        <b>Share on:</b>
-                        <ul class="list-inline mb-2 mt-1">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.interviewplus.ai/developers-and-programmers/next-js/questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="Linked IN Icon" src="/assets/images/linkedin.png"></a>
-                            <a href="https://x.com/intent/tweet?url=https://www.interviewplus.ai/developers-and-programmers/next-js/questions&text=NextJs Interview Questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="Twitter Icon" src="/assets/images/twitter.png"></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.interviewplus.ai/developers-and-programmers/next-js/questions" target="_blank"><img style="width: 40px;padding:0px; margin-right:5px" alt="FB Icon" src="/assets/images/facebook.png"></a>
-                        </ul>
-                    </div>
-
-                    <!-- Image -->
-                    <div class="col-6 col-md-2 text-center order-3">
-                        <img src="/assets/images/element/cat-2-min.png" alt="NextJs header image right">
-                    </div>
-                    
-                </div> <!-- Row END -->
-            </div>
-        </div> <!-- Row END -->
-    </div>
-</section>
-
-
-<section>
-    <div class="container">
-        <nav aria-label="breadcrumb" class="text-center mb-3">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item"><a href="/developers-and-programmers/topics">Developers &amp; Programmers</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">NextJs</li>
-                            </ol>
-                        </nav>
-
-        <div class="col-md-12 mb-3" style="text-align: right;">
-                        </div>
-        <div class="row g-4 pb-5">
-        <div class="accordion accordion-icon accordion-bg-light" id="questionsPane">
-                                                                <div class="accordion-item" id="3bfb50c5-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
-                        
-                        
-                                                                                <div class="accordion-header" id="heading1" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
-                                                                            <button id="acBtn1" style="padding-bottom: 0px;padding-top: 8px;" class="1-chk accordion-button rounded collapsed " type="button" qid="3bfb50c5-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                        <div class="col-md-10" style="font-size: 17px;">
-                        <div style="position:absolute; height:90%; color:#acacac">1.</div>
-                                                                                <div style="margin-left: 30px;">What is Next.js and what problem does it solve in web development?<br>
-                                                                            
-                        <div style="opacity: 0.7;margin-top: 4px;">
-                            <div style="float: left; font-size:15px" q="3bfb50c5-ebe1-11ed-8543-067999cb6634" chk="1-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
-                            <div style="float: left; font-size:15px; margin-left: 5px;" q="3bfb50c5-ebe1-11ed-8543-067999cb6634" chk="1-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
-                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>1</vtcount> votes | <vcount>911</vcount> views</div>
-                        </div>
-                        </div></div>
-                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
-                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
-                                                                                                                            </div>
-                        </button>
-                        </div>
-                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" style="">
-                            <div class="accordion-body mt-3" id="acBtnBody1" style="font-size: 17px;"></div>
-                        </div>
-                    </div>
-                                                        <div class="accordion-item" id="4c98a5f9-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
-                        
-                        
-                                                                                <div class="accordion-header" id="heading2" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
-                                                                            <button id="acBtn2" style="padding-bottom: 0px;padding-top: 8px;" class="2-chk accordion-button rounded collapsed " type="button" qid="4c98a5f9-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                        <div class="col-md-10" style="font-size: 17px;">
-                        <div style="position:absolute; height:90%; color:#acacac">2.</div>
-                                                                                <div style="margin-left: 30px;">Create a Next.js-based blog application that allows users to create, read, update, and delete blog posts, including features such as comments, categories, and tags.<br>
-                                                                            
-                        <div style="opacity: 0.7;margin-top: 4px;">
-                            <div style="float: left; font-size:15px" q="4c98a5f9-ebe1-11ed-8543-067999cb6634" chk="2-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
-                            <div style="float: left; font-size:15px; margin-left: 5px;" q="4c98a5f9-ebe1-11ed-8543-067999cb6634" chk="2-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
-                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>835</vcount> views</div>
-                        </div>
-                        </div></div>
-                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
-                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
-                                                                                                                            </div>
-                        </button>
-                        </div>
-                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" style="">
-                            <div class="accordion-body mt-3" id="acBtnBody2" style="font-size: 17px;"></div>
-                        </div>
-                    </div>
-                                                        <div class="accordion-item" id="6caa7c1d-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
-                        
-                        
-                                                                                <div class="accordion-header" id="heading3" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
-                                                                            <button id="acBtn3" style="padding-bottom: 0px;padding-top: 8px;" class="3-chk accordion-button rounded collapsed " type="button" qid="6caa7c1d-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                        <div class="col-md-10" style="font-size: 17px;">
-                        <div style="position:absolute; height:90%; color:#acacac">3.</div>
-                                                                                <div style="margin-left: 30px;">How do you create a new Next.js project?<br>
-                                                                            
-                        <div style="opacity: 0.7;margin-top: 4px;">
-                            <div style="float: left; font-size:15px" q="6caa7c1d-ebe1-11ed-8543-067999cb6634" chk="3-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
-                            <div style="float: left; font-size:15px; margin-left: 5px;" q="6caa7c1d-ebe1-11ed-8543-067999cb6634" chk="3-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
-                            <div style="float: left;margin-top: 8px; margin-left: 8px; font-size: 13px; color: #555555;"><vtcount>0</vtcount> votes | <vcount>841</vcount> views</div>
-                        </div>
-                        </div></div>
-                        <div class="col-md-2" style="text-align: right;padding-right: 15px;">
-                                                    <span class="badge bg-success bg-opacity-10 text-success" style="margin-top: -2px;">JL</span>
-                                                                                                                            </div>
-                        </button>
-                        </div>
-                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" style="">
-                            <div class="accordion-body mt-3" id="acBtnBody3" style="font-size: 17px;"></div>
-                        </div>
-                    </div>
-                                                        <div class="accordion-item" id="7996d9c3-ebe1-11ed-8543-067999cb6634" style="margin-bottom: 6px; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
-                        
-                        
-                                                                                <div class="accordion-header" id="heading4" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; font-weight: 500 !important;">
-                                                                            <button id="acBtn4" style="padding-bottom: 0px;padding-top: 8px;" class="4-chk accordion-button rounded collapsed " type="button" qid="7996d9c3-ebe1-11ed-8543-067999cb6634" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                        <div class="col-md-10" style="font-size: 17px;">
-                        <div style="position:absolute; height:90%; color:#acacac">4.</div>
-                                                                                <div style="margin-left: 30px;">What is the purpose of the pages directory in a Next.js project?<br>
-                                                                            
+What is Next.js and what problem does it solve in web development?<br>
+ Neue\', Helvetica, Arial, sans-serif;border-bottom: 1px solid #f5f7f93b;border-radius: var(--bs-accordion-border-radius);">
+Create a Next.js-based blog application that allows users to create, read, update, and delete blog posts, including features such as comments, categories, and tags.<br>
+What is the purpose of the pages directory in a Next.js project?<br>
+                ***************************************************************************    
+	      ***************************************************************************    
+	      ***************************************************************************    
+      ***************************************************************************    
+	      ***************************************************************************    
+	      ***************************************************************************    
                         <div style="opacity: 0.7;margin-top: 4px;">
                             <div style="float: left; font-size:15px" q="7996d9c3-ebe1-11ed-8543-067999cb6634" chk="4-chk" class="btnThumbs up btn badge bg-success bg-opacity-10 text-success"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-up-fill"></span></div>
                             <div style="float: left; font-size:15px; margin-left: 5px;" q="7996d9c3-ebe1-11ed-8543-067999cb6634" chk="4-chk" class="btnThumbs down btn badge bg-danger bg-opacity-10 text-danger"><span style="opacity: 0.6;" class="bi bi-hand-thumbs-down-fill"></span></div>
@@ -1258,7 +1143,15 @@
             Questions such as <b>"Can you explain the difference between getStaticProps and getServerSideProps?"</b>, <b>"What is the purpose of the pages directory in a Next.js project?"</b> and <b>"What is the purpose of the _app.js file in a Next.js project?"</b> are very important as well and it is 
             highly recommended to practice these nextjs interview questions and answers.
              These top core nextjs interview Questions will give you the edge you need to approach the questions properly and respond to them concisely.
-
+***************************************************************************
+***************************************************************************
+				***************************************************************************
+				***************************************************************************
+				***************************************************************************
+				***************************************************************************
+				***************************************************************************
+				***************************************************************************
+				***************************************************************************
 Next.js Interview Questions
 Q.1What is Next.js, and how does it differ from traditional React applications?
 Answer: Next.js is a React framework that allows for server-side rendering and static site generation. Unlike traditional React, it pre-renders pages on the server, resulting in improved performance and SEO.
@@ -1424,8 +1317,6 @@ Answer: The next/link component is used to create client-side navigation links i
 Q.50Can you explain the benefits of using serverless functions with Next.js, and in what scenarios would you choose to implement them in your application?
 Answer: Serverless functions in Next.js allow you to create lightweight, stateless API endpoints. They are particularly useful for handling dynamic data fetching, processing form submissions, and implementing backend logic in a serverless environment. You might choose to implement them in scenarios where you need server-side functionality without managing a traditional server.
 
-
-Best 25 Next.js Interview Questions | A JavaScript Framework
 What is Next.js?
 The Next.js is a lightweight JavaScript framework and it is created by Zeit.
 
@@ -1552,16 +1443,6 @@ At first glance, they both seem very similar.
 4.      Have an awesome developer experience.
 
 
-Top 15 Next.js Interview Coding Challenges with Solutions
-August 20, 2025
-11 min read
-
-Junior Level Challenges
-Mid-Level Challenges
-Senior Level Challenges
-Something went wrong
-Master Next.js development with these comprehensive coding challenges covering SSR, SSG, API routes, middleware, performance optimization, and modern React patterns. From basic routing to advanced production-ready applications.
-
 Junior Level Challenges
 1. Dynamic Routing with getServerSideProps
 Difficulty: Beginner | Topics: Dynamic Routes, SSR, Data Fetching
@@ -1571,15 +1452,10 @@ Challenge: Create a dynamic blog post page that fetches data at request time usi
 // pages/blog/[slug].js
 export default function BlogPost({ post }) {
   return (
-    
-
-      
+  
 {post.title}
 
       {new Date(post.publishedAt).toLocaleDateString()}
-      
-
-    
 
   );
 }
@@ -1605,12 +1481,8 @@ Challenge: Build a products page that pre-renders at build time with cached data
 // pages/products.js
 export default function Products({ products }) {
   return (
-    
-
-      
+     
 Our Products
-
-      
 
         {products.map((product) => (
           
@@ -1618,21 +1490,12 @@ Our Products
             {product.name}
             
 {product.name}
-
-            
+          
 ${product.price}
-
-
-            
+          
 {product.description}
 
-
-          
-
         ))}
-      
-
-    
 
   );
 }
@@ -1723,13 +1586,9 @@ function AppProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
   
   return (
-    
-      
 
         {children}
-      
 
-    
   );
 }
 
@@ -1743,9 +1602,7 @@ export const useAppContext = () => {
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    
-      
-    
+
   );
 }
 5. Image Optimization with Next.js Image
@@ -1762,8 +1619,7 @@ export default function ImageGallery({ images }) {
   
   return (
     <>
-      
-
+ 
         {images.map((image) => (
           
  setSelectedImage(image)}
@@ -1772,19 +1628,12 @@ export default function ImageGallery({ images }) {
           
 
         ))}
-      
-
-      
+  
       {selectedImage && (
         
  setSelectedImage(null)}>
           
 {selectedImage.alt}
-
-            
-          
-
-        
 
       )}
     
@@ -1799,24 +1648,11 @@ Challenge: Implement ISR for a news website that updates content automatically w
 // pages/news/[id].js
 export default function NewsArticle({ article }) {
   return (
-    
-
-      
-
-        
+       
 {article.title}
-
-        
 
           By {article.author}
           {new Date(article.publishedAt).toLocaleDateString()}
-        
-
-      
-
-      
-
-    
 
   );
 }
@@ -1858,21 +1694,9 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      
-        
-          
-          
-          
-          
-          
+ 
           {/* Structured Data */}
 
-
-Mastering Next js Interview Questions and Answers for Developers
-Posted on April 13, 2024 by Shravanthi Surve
-Next js Interview Questions: Next.js has become a popular choice for building modern web applications, thanks to its efficiency, performance, and developer-friendly features. If you’re preparing for a Next.js interview, it’s crucial to familiarize yourself with common questions. In this comprehensive blog post, we’ll delve into the top 30 Next.js interview questions and provide detailed answers to help you ace your next interview confidently.
-
-Table of Contents
 What is Next.js used for
 Next js Interview Questions and Answers for Developers
 What is Next.js used for
@@ -1906,8 +1730,6 @@ What is Next.js used for
 28. What are some common performance optimization techniques for a Next.js application?
 29. How can you implement authentication with third-party providers in a Next.js application?
 30. What are the different deployment options available for a Next.js application?
-Conclusion
-Next.js is a popular React framework that simplifies the process of building modern web applications. It provides features such as server-side rendering (SSR), automatic code splitting, simplified routing, and built-in CSS support. Next.js enhances developer productivity and improves the performance of web applications by optimizing for search engine optimization (SEO) and initial page load times.
 
 What is Next.js used for
 Next.js finds applications in various scenarios where developers seek to build fast, scalable, and SEO-friendly web applications. Its uses include:
@@ -1932,8 +1754,7 @@ Optimized Image Loading: It provides the next/image component for optimizing ima
 
 Deployment Options: Next.js applications can be deployed to various platforms such as Vercel, AWS Amplify, or traditional hosting providers, offering flexibility in deployment options.
 
-Next js Interview Questions and Answers for Developers
-What is Next.js used for
+
 1. What is Next.js?
 Next.js is a React framework that enables server-side rendering, automatic code splitting, and simplified routing, providing a seamless experience for building fast and scalable web applications.
 
@@ -2044,9 +1865,6 @@ Answer: Authentication with third-party providers in a Next.js application can b
 30. What are the different deployment options available for a Next.js application?
 Answer: Next.js applications can be deployed to various platforms such as Vercel, AWS Amplify, Netlify, or traditional hosting providers like Heroku or DigitalOcean. Deployment can be done manually using command-line tools or automated through CI/CD pipelines.
 
-To explore more visit Next.JS Official documentation
-
-Top 10 Next JS Interview Questions and Answers
 
 Can you use Next JS with Redux?
 What do you mean by SSR?
@@ -2058,7 +1876,7 @@ How can a page directory be created inside a project?
 How can CDN be set up in Next JS?
 Mention some features of Next JS.
 What is the process of installing Next JS?
-Next JS Interview Questions and Answers for the Freshers
+
 1. Mostly for which type of websites is Next JS used?
 Several types of websites and applications can be built. But the most popular are-
 
@@ -2231,8 +2049,6 @@ crossOrigin: 'anonymous'
 15. Can Next JS be hosted in a web server such as Nginx?
 Next JS is relatively more complex than static HTML files. Here, an application server is required to run Node JS for deploying and running a Next JS application. Requests have been received that need to be processed on the server.
 
-Related Article: Java Spring vs Node JS
-Frequently Asked Nest JS Interview Questions and Answers:
 1. What are some of the major companies that use Next JS?
 Some of the major companies that use Next JS are given below-
 
@@ -2328,18 +2144,7 @@ Next.js app is initialized by updating the package.json by using run script lang
   “start”: “next start”
   }
 }
-Conclusion
-Next JS allows building a digital product with much more efficacy than others simply due to its diverse features. The products we get are highly efficient in terms of UX, SEO, etc. It provides both a Rich user experience and rapid feature development. And this is exactly what the companies require. But to stand out from the others, practice is required beforehand. That's why going through this compilation of Next JS Interview Questions is highly recommended. 
 
-50 Most Asked Next.js Interview Questions for 2026
-Aditya GuptaNov 24, 2025Next.js Tutorials
-You are already familiar with our in-depth Next.js guides, covering everything from React foundations to advanced concepts. Now, by popular demand from our dedicated community, we are providing the one resource you can’t be without: an interview guide built on real-world questions.
-
-Stop wasting time on generic, randomly generated lists. Our guide features only Next.js interview questions that are actually being asked, giving you a true measure of what to expect.
-
-Plus, we have future-proofed your preparation by including key questions that cover the latest changes in Next.js 16, ensuring your knowledge is current for 2026 and beyond. Let’s start.
-
-Understanding Next.js Fundamentals
 What is Next.js?
 Next.js is a React framework. This means it is a set of tools and rules built on top of the React library. It helps us build powerful, fast, and production-ready web applications much more easily. React gives us the building blocks, but Next.js gives us the full house plans.
 
@@ -2496,20 +2301,6 @@ For debugging, we can use console.log on both the server (which shows in our ter
 What is serverless architecture, and how does it relate to Next.js?
 Serverless architecture means we do not have to manage a traditional, always-on server. When we deploy a Next.js app to a platform like Vercel, our API routes and SSR pages are often deployed as serverless functions. This means they only “wake up” and run when they get a request. It scales automatically and we often only pay for what we use.
 
-Conclusion
-You now have access to the most current and relevant Next.js interview preparation resource available. By focusing on verified, real-world questions and covering the critical features of Next.js 16, you are equipped to handle any question thrown your way. Good luck!
-
-Top 25 Next.js Interview Questions and Answers
-Prepare for your upcoming interview with our comprehensive guide on Next.js. This article provides detailed answers to common interview questions…
-
-
-InterviewPrep IT Career Coach
-Published Apr 29, 2025
-Next.js, a powerful and innovative JavaScript framework built on top of React, is renowned for its server-side rendering capabilities. Its ability to deliver lightning-fast performance and SEO-friendly content has made it an indispensable tool in the modern web development landscape. Next.js brings about a perfect blend of flexibility and simplicity, making it an ideal choice for building scalable, high-performance applications.
-
-One of the key features that sets Next.js apart from other frameworks is its out-of-the-box support for hybrid static and server rendering. This enables developers to build applications that are not only incredibly fast but also highly optimized for search engines. Furthermore, with automatic code splitting, hot reloading, and route pre-fetching, Next.js ensures an efficient and seamless development experience.
-
-In this article, we delve into a comprehensive list of interview questions centered around Next.js. These questions cover a wide array of topics ranging from basic concepts to more advanced functionalities. Whether you’re a budding developer or a seasoned professional, this compilation will provide valuable insights into the world of Next.js, enhancing your understanding and technical prowess in this cutting-edge framework.
 
 1. Can you explain what Next.js is and why would you choose it over other frameworks like Gatsby or Create React App?
 Next.js is a React-based framework for server-rendered or statically-exported JavaScript applications. It simplifies the process of building universal or isomorphic apps, which can run both on client and server side.
@@ -2725,27 +2516,6 @@ Next.js’s API routes feature will be useful for creating custom backend functi
 
 For user authentication, NextAuth.js could be utilized due to its seamless integration with Next.js. Lastly, deploying the application on Vercel, the creators of Next.js, ensures optimal performance and scalability.
 
-Next.js Interview Questions
-Ratings:
-(4.7)
-Views: 2541
-Banner-Img
-Share this blog:
-
-
-
-If you are looking for some best Next.js interview questions, then you are in the right place. We have compiled a list of the best Next.js interview Questions, that will surely help you crack the interview. Read on and All the Best!
-
-Most frequently asked Next.js Interview Questions
-Mention a few features of Next.js
-Why should anyone choose Next.js?
-How can AMP be verified in Next.js?
-What is the suggested approach for Next.js data fetching?
-List a few advantages of Next.js
-Is static CDN supported by Next.js?
-Is JS more difficult than React?
-Is it possible to learn Next.js without React?
-Next.js Interview Questions
 Q1) What exactly is Next.js?
 Ans: An open-source, compact React.js framework called Next.js makes it easier for programmers to create static and server-side rendering web applications. Zeit came up with it. We can quickly create server-rendered React apps thanks to the Next.js framework, which is built on React, Webpack, and Babel. Your next feature-rich web application can be built with just npm run dev start and without any webpack settings.
 
@@ -2836,132 +2606,6 @@ Ans: By going one step further, Next.js eliminates the necessity for a backend f
 Q16) Is it possible to learn Next.js without React?
 Ans: Studying React is a prerequisite for learning Next.js because Next.js is based on React. React is a JavaScript package that enables the creation of reusable components and aids with coding structure.
 
-90+ Next.js Interview Questions You Must Prepare For
-We curated a list of 90+ Next.js interview questions and answers to help you prepare for your next technical round.
-Jay Ma
-Written by
-Jay Ma
-Michael Guan
-Edited by
-Michael Guan
-Ruiying Li
-Reviewed by
-Ruiying Li
-Updated on
-Nov 11, 2025
-Read time
-30 min read
-Next.js is not too difficult to master, but the interview can be daunting. Even if you are a seasoned backend developer or you have learnt everything about it as a fresher, it is always better to prepare for the exact questions that will be asked.
-
-In this article, we compiled the most common Next.js interview questions asked in tech rounds, along with answers to help you better prepare. You will find topics ranging from basics like SSR and SSF to more advanced concepts like routing and API routes.
-
-Understand the exact context from the sample answer we provided, so that you can confidently explain it in your own words.
-
-What to expect in Next.js interview questions?
-Next.js is an open-source React framework developed by Vercel. It makes it easier to build fast, scalable, and SEO-friendly web applications. It extends React’s capabilities by adding features like server-side rendering (SSR), static site generation (SSG), API routes, and automatic code splitting.
-
-Big companies like Netflix, TikTok, and Uber use it to power parts of their web platforms, proving how scalable it is. 
-
-Next.js interview questions typically focus on assessing a candidate's understanding of the framework's core features, such as server-side rendering, static site generation, and API routes. They may also delve into performance optimization techniques, routing mechanisms, and integration with other technologies like React and Node.js.
-
-The main purpose of Next.js interview questions is to evaluate a candidate's proficiency with the framework and their ability to implement its features effectively. Interviewers ask these questions to ensure that the candidate can handle real-world scenarios, optimize performance, and integrate Next.js seamlessly with other technologies.
-
-92 Next.js Interview Questions
-Here are all the Next.js interview questions asked in technical rounds of big tech companies:
-
-What is Next.js, and how does it differ from React?
-Explain the concept of server-side rendering (SSR) in Next.js.
-How do you create a new Next.js application?
-What are the benefits of using static site generation (SSG) in Next.js?
-Describe the file-based routing system in Next.js.
-How can you implement dynamic routing in Next.js?
-Write a simple Next.js page that fetches data from an API and displays it.
-What is the purpose of the getStaticProps function in Next.js?
-How do you handle API routes in Next.js?
-Explain the use of getServerSideProps and when you would use it.
-Write a Next.js component that uses getStaticPaths for dynamic routes.
-How can you implement authentication in a Next.js application?
-What is the role of the next/head component?
-How do you optimize images in a Next.js application?
-Write a custom 404 page in Next.js.
-Explain how to use environment variables in a Next.js project.
-What are the differences between Link and NavLink in Next.js?
-How can you implement internationalization (i18n) in Next.js?
-Write a Next.js API route that returns a JSON response.
-How do you handle CSS in a Next.js application?
-Explain the concept of Incremental Static Regeneration (ISR) in Next.js.
-Write a Next.js component that uses the useEffect hook to fetch data.
-How can you deploy a Next.js application to Vercel?
-What are some common performance optimization techniques in Next.js?
-Write a Next.js page that implements client-side routing using the useRouter hook.
-What is the Next.js App Router, and how does it differ from the Pages Router?
-How do you implement middleware in Next.js?
-What are React Server Components in Next.js, and when would you use them?
-How do you handle error boundaries in Next.js applications?
-What is the difference between client-side and server-side data fetching in Next.js?
-How do you implement custom hooks for data fetching in Next.js?
-What are Next.js API middlewares, and how do you implement them?
-How do you implement caching strategies in Next.js applications?
-What is the purpose of the _app.js and _document.js files in Next.js?
-How do you handle form validation and submission in Next.js?
-What are the different rendering methods available in Next.js?
-How do you implement SEO optimization in Next.js applications?
-What is the Edge Runtime in Next.js, and when would you use it?
-How do you implement real-time features in Next.js applications?
-What are the security best practices for Next.js applications?
-How do you handle database integration in Next.js applications?
-What is the purpose of next.config.js, and what can you configure with it?
-How do you implement testing strategies for Next.js applications?
-What are the different ways to style components in Next.js?
-How do you handle data mutations and state management in Next.js?
-What is the difference between getInitialProps and getServerSideProps?
-How do you implement progressive web app (PWA) features in Next.js?
-What are the benefits and limitations of using Next.js for large-scale applications?
-How do you implement A/B testing in Next.js applications?
-What are the deployment strategies for Next.js applications?
-How do you handle file uploads in Next.js applications?
-What is the purpose of the public directory in Next.js?
-How do you implement content management systems (CMS) integration with Next.js?
-What are the performance monitoring strategies for Next.js applications?
-How do you handle multi-tenancy in Next.js applications?
-What is the role of Babel and SWC in Next.js?
-How do you implement GraphQL integration in Next.js applications?
-What are the different types of pre-rendering in Next.js?
-How do you handle background jobs and scheduled tasks in Next.js?
-What is the significance of the pages/_app.js file in the App Router?
-How do you implement feature flags in Next.js applications?
-What are the best practices for organizing code structure in large Next.js projects?
-How do you handle memory leaks and performance issues in Next.js?
-What is the difference between dynamic imports and regular imports in Next.js?
-How do you implement custom error handling in Next.js API routes?
-What are the considerations for implementing search functionality in Next.js?
-How do you handle timezone and date management in Next.js applications?
-What is the role of React Suspense in Next.js applications?
-How do you implement webhook handling in Next.js applications?
-What are the strategies for handling large datasets in Next.js?
-How do you implement role-based access control (RBAC) in Next.js?
-What is the difference between shallow and deep routing in Next.js?
-How do you handle cross-site request forgery (CSRF) protection in Next.js?
-What are the considerations for implementing real-time collaboration features?
-How do you implement custom analytics and tracking in Next.js?
-What are the best practices for handling secrets and sensitive data in Next.js?
-How do you implement custom build processes and plugins in Next.js?
-What is the role of Web Workers in Next.js applications?
-How do you handle vendor lock-in concerns when using Next.js with Vercel?
-What are the strategies for implementing micro-frontends with Next.js?
-How do you handle legacy browser support in Next.js applications?
-What are the considerations for implementing offline functionality in Next.js?
-How do you implement custom authentication flows in Next.js?
-What are the performance implications of different CSS strategies in Next.js?
-How do you handle content security policy (CSP) in Next.js applications?
-What are the strategies for handling state persistence in Next.js applications?
-How do you implement content delivery optimization in Next.js?
-What are the testing strategies for Next.js API routes?
-How do you handle data privacy and GDPR compliance in Next.js applications?
-What are the strategies for scaling Next.js applications for high traffic?
-How do you implement disaster recovery and backup strategies for Next.js applications?
-What are the considerations for implementing Next.js in enterprise environments?
-Now, let’s tell you how to answer each Next.js question.
 
 1. What is Next.js, and how does it differ from React?
 Why you might get asked this: Interviewers often ask "What is Next.js and how does it differ from React?" to assess your foundational understanding of the framework and its unique features, which is crucial for roles that require building efficient, server-rendered applications.
@@ -3309,7 +2953,6 @@ Why you might get asked this: Error handling is crucial for production applicati
 
 Ace your next interview with real time, on screen answers from Final Round AI.
 
-Try Interview Copilot
 How to answer:
 
 Explain error boundaries as React components that catch JavaScript errors.
@@ -4084,7 +3727,7 @@ Example answer:
 
 "Enterprise Next.js implementation requires security compliance with corporate policies, integration with existing authentication systems, proper governance for code reviews and deployments, monitoring and logging integration, and consideration for legacy system compatibility."
 
-Tips to prepare for Next.js Interview
+Tips to prepare for Next.js Interview * 
 Here are some useful tips that will help you prepare for your NextJS technical interview:
 
 Understand Core Features: Be well-versed in Next.js core features like server-side rendering (SSR), static site generation (SSG), and Incremental Static Regeneration (ISR). These are often the focus of interview questions.
@@ -4095,122 +3738,7 @@ Data Fetching Methods: Be prepared to discuss and implement data fetching method
 API Routes: Gain practical experience with creating and handling API routes in Next.js. Knowing how to set up serverless functions within the pages/api directory can set you apart.
 Know Deployment and Hosting: Familiarize yourself with how to deploy Next.js apps on platforms like Vercel, Netlify, or AWS. Be ready to explain environment variables, build settings, and optimization configurations.
 Keep Up with Next.js Updates: Follow the official Next.js blog or changelog to stay updated with new features and breaking changes. Mentioning recent updates during your interview shows initiative and awareness.
-Ace your interview with Final Round AI
-If you need help with any of your other interviews, consider signing up for Final Round AI. With its comprehensive suite of AI-driven tools, including the Interview Copilot, AI Resume Builder, and AI Mock Interview, Final Round AI offers real-time actionable guidance, industry-specific scenarios, and personalized improvement recommendations. Join the ranks of successful professionals who have landed their dream jobs with the help of Final Round AI. For more information, visit Final Round AI.
 
-Upgrade your resume!
-Create a hireable resume with just one click and stand out to recruiters.
-
-Upload Your Resume Now
-← Back to all articles
-Table of Contents
-What to expect in Next.js interview questions?
-92 Next.js Interview Questions
-Tips to prepare for Next.js Interview
-Ace your interview with Final Round AI
-Ace Your Next Interview with Confidence
-Unlock personalized guidance and perfect your responses with Final Round AI, ensuring you stand out and succeed in every interview.
-
-Get Started Free
-Related articles
-React Interview Questions (With Answers)React Interview Questions (With Answers)
-Technical Topic
-  •  
-Ruiying Li
-React Interview Questions (With Answers)
-Prepare for your next React interview with our guide to the 25 most common questions and answers. Boost your confidence and ace that interview!
-
-Flask Interview Questions (With Answers)Flask Interview Questions (With Answers)
-Technical Topic
-  •  
-Jay Ma
-Flask Interview Questions (With Answers)
-Discover the top 25 Flask interview questions to help you prepare and ace your next web development job interview.
-
-Servlet Interview Questions (With Answers)Servlet Interview Questions (With Answers)
-Technical Topic
-  •  
-Jay Ma
-Servlet Interview Questions (With Answers)
-Discover the top 25 servlet interview questions to ace your next tech interview. Essential for aspiring Java developers!
-
-90+ Python Interview Questions (With Answers)90+ Python Interview Questions (With Answers)
-Technical Topic
-  •  
-Jay Ma
-90+ Python Interview Questions (With Answers)
-Discover the top 90+ Python interview questions to ace your next coding interview. Prepare with confidence and boost your programming career!
-
-SAP MM Interview Questions (With Answers)SAP MM Interview Questions (With Answers)
-Technical Topic
-  •  
-Jay Ma
-SAP MM Interview Questions (With Answers)
-Discover the top 25 SAP MM interview questions to ace your next job interview. Essential insights for aspiring SAP Material Management professionals!
-
-Machine Learning Interview Questions (With Answers)Machine Learning Interview Questions (With Answers)
-Technical Topic
-  •  
-Jaya Muvania
-Machine Learning Interview Questions (With Answers)
-Discover the top 25 machine learning interview questions to help you prepare and succeed in your next data science job interview.
-
-Read All Articles
-logo
-Your trusted platform to ace any job interviews, craft the perfect resumes, and land your dream jobs.
-
-Twitter
-Instagram
-YouTube
-LinkedIn
-TikTok
-Product Hunt Badge
-All services are online
-Products
-Interview Copilot
-AI Mock Interview
-AI Resume Builder
-Hirevue
-Phone Interview
-Speech Analysis
-College Admission
-Auto Apply
-QA Pairs
-Interview Notes
-Coding Copilot
-Resources
-Tutorials
-Blog
-Articles
-Special Discount
-Influencer Program
-Smarter Choice
-Support
-FAQ
-Contact Us
-Company
-How Final Round AI works
-About
-Careers
-News
-PR & Media
-Referral Program
-AI Tools
-AI Career Coach
-Recruiters Hotline
-Cover Letter Generator
-LinkedIn Profile Optimizer
-LinkedIn Resume Builder
-Resume Checker
-© 2025 Final Round AI, 643 Teresita Blvd, San Francisco, CA 94127
-Privacy Policy
-Terms & Conditions
-
-
-List of Next JS Interview Questions
-To help you succeed in your next JS interview, we’ve compiled a list of 16 essential Next JS interview questions and provided detailed answers to each. Let’s get started:
-
-Share this:
 Q1. What is Next.js, and how does it differ from traditional React applications?
 
 Next.js is a flexible React framework that gives you building blocks to create fast web applications.
@@ -4487,7 +4015,6 @@ For example, with NextAuth.js, you can set up authentication by creating an API 
 
 Moreover, to protect specific pages or API routes, you can use middleware to check for an authenticated session and redirect users if they’re not logged in. This approach ensures both client-side and server-side authentication checks are handled efficiently.
 
-Read More Show Less
 Out-loud check
 
 Could you say this out loud, with a follow-up coming?
@@ -4591,17 +4118,11 @@ In Next.js 11, there are several enhancements over version 10. One major upgrade
 
 Next.js 11 also adds built-in support for image optimization, which simplifies handling images across different devices and network conditions. Additionally, the new Script component helps with efficient loading of third-party scripts by controlling their priority and loading strategy. Another notable feature is the Zero Config ESLint, allowing for easier code linting setup.
 
-Read More Show Less
 40. What are some of the built-in optimizations provided by Next.js?
 Next.js offers several built-in optimizations. It automatically handles code splitting, meaning it only loads the JavaScript necessary for the page being viewed, which helps with faster page loads. Additionally, Next.js has built-in image optimization with the next/image component, allowing you to serve images in modern formats like WebP while also handling resizing, quality, and format adjustments on the fly.
 
 Another cool feature is its support for static generation and server-side rendering, so you can choose how you want to fetch and render data depending on your app's performance needs. And there's automatic static optimization, where Next.js figures out which pages can be served as static assets and pre-renders them at build time. That results in super-fast loading times for those pages.
 
-Top Next JS Interview Questions for Freshers
-Top Next JS Interview Questions for Freshers Are you preparing for your first Next.js interview and wondering what questions you might face?Understanding the key Next.js interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Next.js interview questions and answers for freshers and make a strong impression in your interview.
-fsd student program banner horizontal
-Practice Next JS Interview Questions and Answers
-Below are the top 50 Next JS interview questions for freshers with answers:
 1. What is Next.js?
 Answer:Next.js is a React framework that enables server-side rendering, static site generation, and building full-stack applications. It simplifies the process of creating performant and SEO-friendly web applications by offering built-in support for routing, server-side rendering, and API routes.
 2. What are the core features of Next.js?
@@ -4986,8 +4507,6 @@ return (
 </div>
 );
 }
-Final Words
-Getting ready for an interview can feel overwhelming, but going through these Next.js fresher interview questions can help you feel more confident.With the right preparation, you’ll ace your Next.js interview but don’t forget to practice server-side rendering (SSR), static site generation (SSG), API routes, and Next.js routing-related interview questions too.
 
 Most Frequently Asked Next js Interview Questions
 Here in this article, we will be listing frequently asked Next js Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
@@ -5030,14 +4549,9 @@ To disable etag generation in Next JS, we have to use the app.disable('etag') sy
 
 app.use(express.static(path.join(__dirname, 'public'), {
 
-
-
 etag: false
 
-
-
 }));
-
 Q5. How to create pages in next js?
 Answer
 Q6. How to create a custom error page in next js?
@@ -5046,117 +4560,60 @@ To create a custom error page in Next JS, we have to define a “_error.js” in
 We have to import our own “_ error” component instead of “next/error” further to use our custom error page.
 import React from 'react';
 
-
-
 class Error extends React.Component {
-
-
 
      static getInitialProps({ res, err }) {
 
-
-
         const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-
-
 
       return { statusCode };
 
-
-
 }
-
-
 
 render() {
 
-
-
 return (
-
-
 
 <p>
 
-
-
    {this.props.statusCode
-
-
 
    ? `An error ${this.props.statusCode} occurred on server`
 
-
-
    : 'An error occurred on client'}
-
-
 
 </p>
 
-
-
     );
-
-
 
   }
 
-
-
 }
-
-
 
 export default Error;
 
 Q7. How to setup CDN in next js?
 Answer
 Developers have to follow these steps to setup CDN in Next JS.
-
-
-	
 To start, we have to first set up the “assetPrefix” setting and configure our CDN origin to support resolve to the domain that our Next JS is hosted on.
-
-
 
             const isProd = process.env.NODE_ENV === 'production';
 
-
-
             module.exports = {
-
-
 
                // You may only need to add assetPrefix in the production.
 
-
-
          assetPrefix: isProd ? 'https://cdn.mydomain.com' : ''
 
-
-
 };
-
-
-
-
 	
 For a CDN present on a separate domain that you may like assets to be requested with use of CORS aware request, we have to set a configuration option as following.
 
-
-
          // next.config.js
-
-
 
          module.exports = {
 
-
-
            crossOrigin: 'anonymous'
-
-
 
 };
 
@@ -5166,27 +4623,15 @@ To configure a static ID between our builds, we have to provide “generateBuild
 
 // next.config.js
 
-
-
 module.exports = {
-
-
 
    generateBuildId: async () => {
 
-
-
   // For example get the latest git commit hash here
-
-
 
   return 'my-build-id';
 
-
-
   }
-
-
 
 };
 
@@ -5196,15 +4641,9 @@ We have to use the further mentioned syntax configuration to write inline CSS in
 
 function HiThere() {
 
-
-
   return <p style={{ color: 'red' }}>hi there</p>;
 
-
-
   }
-
-
 
 export default HiThere;
 
@@ -5226,63 +4665,29 @@ AMP-First Pages
 Hybrid AMP Pages
            Hybrid AMP pages allow users to have a coexist AMP version of a traditional page so that search engines can easily display the AMP version or the page in different mobile search results. To               implement Hybrid AMP to pages, we have to use the following syntax.
 
-<
 
 AMP-First Pages :-
 
-
-
 // pages/index.js
-
-
 
 import { withAmp } from 'next/amp'
 
-
-
 function HomePage() {
-
-
 
 return <p> Welcome to AMP + Next.js.</p>
 
-
-
 }
-
-
 
 export default withAmp(HomePage)
 
-
-
- 
-
-
-
- 
-
-
-
 Hybrid AMP Pages :-
-
-
 
 // pages/index.js
 
-
-
 function HomePage() {
-
-
-
+	
 return <p> Welcome to AMP + Next.js.</p>
-
-
-
 }
-
-
 
 export default withAmp(HomePage, { hybrid: true })
 
@@ -5314,206 +4719,22 @@ Q15. Does Next JS support static CDN?
 Answer
 Yes, Next JS 5 and above supports static CDN. With the introduction of assetPrefix, Next.JS automatically loads assets from CDN.
 
-NextJS Interview Questions & Answers
-🚀 This repository aimed to contains 500 nextjs interview questions & answers with exmample.
-https://github.com/mrhrifat/nextjs-interview-questions
-Groups
-No	Contents
-1	Common
-2	Pages Router
-3	App Router
-Common Table of Contents
-No	Contents
-1	What is NextJS
-2	How do you create a new Next.js project?
-3	What is the purpose of the pages or app directory in Next.js?
-4	What is file based routing in Next.js?
-5	What are the key features of Next.js?
-6	What are the differences between Next.js and React.js
-7	What is the difference between client-side and server-side rendering in Next.js?
-8	What is the Link component in Next.js?
-9	What is the useRouter hook in Next.js?
-10	What is the difference between push and replace in useRouter?
-11	How do you navigate programmatically in Next.js?
-12	How do you enable TypeScript in a Next.js project?
-13	How do you handle environment variables in Next.js?
-14	What is API Routes in Next.js?
-15	What is the public folder in Next.js?
-16	What is dynamic import in Next.js?
-17	What is the default port for a Next.js app?
-18	How to change default port for a Next.js app?
-19	What is Fast Refresh in Next.js?
-20	What is next.config.js?
-21	How do you add component-level CSS in Next.js?
-22	How do you add global CSS in Next.js?
-23	How do you use Tailwind CSS in Next.js?
-24	What is server side rendering (SSR) in Next.js?
-25	What is static site generation (SSG) in Next.js?
-26	What is the difference between static site generation and server side rendering?
-27	What is pre-rendering in Next.js?
-28	What is incremental static regeneration (ISR) in Next.js?
-29	What is the Image component in Next.js?
-30	How do you deploy a Next.js app to Vercel?
-31	How do you handle redirects in Next.js?
-32	What is the Head component in Next.js?
-33	What is the next/head package used for?
-34	How do you add custom headers in Next.js?
-35	What is the use of next export command?
-36	How do you optimize fonts in Next.js?
-37	How do you enable custom fonts in Next.js?
-38	How do you configure Webpack in Next.js?
-39	How do you configure a custom Babel setup in Next.js?
-40	What is the purpose of next-env.d.ts?
-41	What is the purpose of next-compose-plugins?
-42	How do you add polyfills in Next.js?
-43	What is static optimization in Next.js?
-44	How do you handle internationalization (i18n) in Next.js?
-45	What is React Strict Mode in Next.js?
-46	What is a singleton router in Next.js?
-47	What is next/script used for?
-48	What is middleware?
-49	What is a custom server in Next.js?
-50	How do you perform client-side data fetching in Next.js?
-51	How do you set up GraphQL in Next.js?
-52	How do you create API endpoints in Next.js?
-53	What is the use of next-seo in Next.js?
-54	How do you handle routing in a Next.js app?
-55	How do you configure next-i18next in Next.js?
-56	What is ssr: false in dynamic import?
-57	How do you add Google Analytics to a Next.js project?
-58	How do you add meta tags in Next.js?
-59	How to add sitemap in nextjs app?
-60	How do you handle CORS in Next.js API routes?
-61	How do you manage cookies in Next.js?
-62	What is the purpose of next/dynamic?
-63	How to consider security in nextjs app router?
-64	What is the useTranslation hook in Next.js?
-65	What is AMP in Next.js?
-66	How do you enable AMP in Next.js?
-67	What is the next/image component used for?
-68	What is the next/link component used for?
-69	What is the difference between pages and components directories?
-70	How do you handle static files in Next.js?
-71	List some common performance optimization techniques in Next.js?
-72	Mention some common security practices in Next.js?
-73	Are there any limitations of Next.js?
-74	Is Next.js suitable for large-scale applications?
-75	How nextjs are full stack framework?
-76	Prevent API routes from being accessed by the client?
-77	JWT Token in Next.js?
-Pages Router Table of Contents
-No	Contents
-1	What is the Pages Router in Next.js?
-2	How do you create a route in the Pages Router?
-3	How do you create a dynamic route in Next.js?
-4	What is catch all segment in Next.js?
-5	What is the _app.js file in Next.js?
-6	What is the _document.js file in Next.js?
-7	What is the difference between _app.js and _document.js?
-8	What is the _error.js file in Next.js?
-9	How do you create a 404 page in Next.js?
-10	How do you fetch data in a Next.js page?
-11	What is getStaticProps?
-12	What is getServerSideProps?
-13	What is the difference between getStaticProps and getServerSideProps?
-14	What is getStaticPaths?
-15	What is fallback in getStaticPaths?
-16	How do you handle API routes in Next.js?
-17	How you handle custom error pages in Next.js?
-18	Are there any limitations of the Pages Router
-19	How do you handle authentication in Next.js with the Pages Router?
-20	How do you handle middleware in Next.js with the Pages Router?
-21	How do you handle form submissions in Next.js with the Pages Router?
-22	Are there any performance optimizations available in the Pages Router?
-23	How do you handle internationalization in Next.js with the Pages Router?
-24	How do you handle seo in Next.js with the Pages Router?
-25	How do you handle static assets in Next.js with the Pages Router?
-26	How cache works in Next.js with the Pages Router?
-27	Cache revalidation in Next.js with the Pages Router?
-28	Optimizing images in Next.js with the Pages Router?
-29	When to choose Pages Router over App Router in Next.js?
-30	When to choose App Router over Pages Router in Next.js?
-App Router Table of Contents
-No	Contents
-1	What is the App Router in Next.js?
-2	How do you create a route in the App Router?
-3	How do you create a dynamic route with app router in Next.js?
-4	How do you create custom error pages in Next.js?
-5	How do you handle form submissions in Next.js?
-6	How do you handle middleware in Next.js?
-7	How do you implement authentication in Next.js?
-8	How to add authjs in nextjs app router?
-9	How do you handle authentication tokens in Next.js?
-10	How to add credentials in nextjs app router?
-11	What is use server in Next.js?
-12	Difference between using & not using use server in Next.js?
-13	How do you handle API routes in Next.js?
-14	How do middleware work in Next.js?
-15	What is form action in Next.js?
-16	How do you handle file uploads in Next.js?
-17	Mention some common use cases for the App Router in Next.js?
-18	One of the main differences between the App Router and Pages Router?
-19	What is the use of the use client directive in Next.js?
-20	Is it possible to use both App Router and Pages Router in the same Next.js project?
-21	Are there any limitations of the App Router in Next.js?
-22	Explain the concept of authorization in middleware & routes in Next.js?
-23	The difference between use server and use client in Next.js?
-24	Understand the concept of server actions in Next.js?
-25	Whats are the benifit of using server actions in Next.js?
-26	Whats are the problem of using server actions in Next.js?
-27	Alternative options instead of server actions in Next.js?
-28	Alternative solutions example of not using server actions in Next.js?
-29	JWT Token in Next.js App Router?
-30	Context of JWT Token in Next.js App Router?
-31	Is App Router better than Pages Router in Next.js?
-32	How to handle global state management in Next.js with the App Router?
-33	What is the fetch API in Next.js App Router?
-34	How do you create route groups in the App Router?
-35	What are parallel routes in Next.js App Router?
-36	How do you implement intercepting routes in App Router?
-37	What is the loading.js file in App Router?
-38	How do you handle not-found pages in App Router?
-39	What is the template.js file in App Router?
-40	How do you implement nested layouts in App Router?
-41	What are route handlers vs API routes in App Router?
-42	How do you handle streaming and suspense in App Router?
-43	What is React Server Components (RSC) in App Router?
-44	How do you handle error boundaries in App Router?
-45	How do you differentiate between server and client components in Next.js?
-46	How do you handle internationalization (i18n) in Next.js with the App Router?
-47	What is use server, why and when to use it in Next.js?
-48	What are the best practices of nextjs api routes?
-49	How to validate and sanitize input data in Next.js API routes?
-50	How to use proper HTTP methods in Next.js API routes?
-51	How to handle errors in Next.js API routes?
-52	How to use middleware in Next.js API routes?
-53	How to kee Next.js API routes modular and organized?
-54	RTK Query with Next.js App Router?
-55	Redux Toolkit with Next.js App Router?
+
 Common
-⬆️ Back to Top
 
 What is NextJS?
 Next.js is a React framework for building full-stack web applications.
-
-⬆️ Back to Top
 
 How do you create a new Next.js project?
 Using command
 
 npx create-next-app@latest
 
-⬆️ Back to Top
-
 What is the purpose of the pages or app directory in Next.js?
 It contains React components that are automatically routed based on their file name.
 
-⬆️ Back to Top
-
 What is file based routing in Next.js?
 Routing based on the file structure in the pages or app directory.
-
-⬆️ Back to Top
 
 What are the key features of Next.js?
 Server Side Rendering (SSR): Next.js allows rendering React components on the server before sending them to the client, improving performance and SEO.
@@ -5527,7 +4748,6 @@ Automatic Code Splitting: Next.js splits the code into smaller bundles, which ar
 TypeScript Support: Native support for TypeScript, enabling strict typing and better developer experience.
 Incremental Static Regeneration (ISR): Pages can be statically generated at runtime and updated incrementally.
 Fast Refresh: Provides an instant feedback loop while coding, similar to React's hot reloading.
-⬆️ Back to Top
 
 What are the differences between Next.js and React.js
 Feature	Next.js	React.js
@@ -5541,12 +4761,9 @@ API Routes	Built-in API routes that can handle backend logic within the same pro
 Code Splitting	Automatically splits code into smaller bundles, loading only what's needed for a specific page.	Requires manual code splitting or use of lazy loading to optimize performance.
 Deployment	Optimized for easy deployment on platforms like Vercel (creators of Next.js) and supports serverless functions.	Deployment typically requires additional configuration for optimized hosting and SSR.
 Image Optimization	Has a built-in Image component for automatic image resizing and optimization.	Does not provide image optimization; developers need third-party libraries for that.
-⬆️ Back to Top
 
 What is the difference between client-side and server-side rendering in Next.js?
 Client-side rendering (CSR) means that the browser fetches the JavaScript and renders the page on the client side, while server-side rendering (SSR) means that the server generates the HTML and sends it to the client.
-
-⬆️ Back to Top
 
 What is the Link component in Next.js?
 A component for client side navigation between pages.
@@ -5602,12 +4819,9 @@ export default function Head() {
     </>
   );
 }
-⬆️ Back to Top
 
 What is the useRouter hook in Next.js?
 A hook that allows access to the router object and perform navigation. The useRouter hook allows you to programmatically change routes inside client components.
-
-⬆️ Back to Top
 
 What is the difference between push and replace in useRouter?
 The push method adds a new entry to the browser's history stack, while replace replaces the current entry in the history stack.
@@ -5619,7 +4833,6 @@ router.push("/new-route");
 
 // Replaces the current route
 router.replace("/new-route");
-⬆️ Back to Top
 
 How do you navigate programmatically in Next.js?
 Using useRouter() hook.
@@ -5632,17 +4845,12 @@ function handleClick() {
 
 <button onClick={handleClick}>Go There</button>;
 router.push(href: string, { scroll: boolean })
-⬆️ Back to Top
 
 How do you enable TypeScript in a Next.js project?
 By adding a tsconfig.json file.
 
-⬆️ Back to Top
-
 What is API Routes in Next.js?
 A feature to create API endpoints in the pages/api or app/api directory. It allow you to create custom request handlers for a given route using the Web Request and Response APIs.
-
-⬆️ Back to Top
 
 What is the public folder in Next.js?
 A folder for static assets to be served from the root URL.
@@ -5652,36 +4860,27 @@ public/
 |── robots.txt
 |── images/
 |   └── profile.jpg
-⬆️ Back to Top
 
 What is dynamic import in Next.js?
 A feature to load components or modules dynamically.
 
 const ComponentA = dynamic(() => import("../components/A"));
 const ComponentB = dynamic(() => import("../components/B"));
-⬆️ Back to Top
 
 How do you handle environment variables in Next.js?
 By adding them to .env.local and accessing via process.env.
 
-⬆️ Back to Top
-
 What is the default port for a Next.js app?
 Port 3000.
-
-⬆️ Back to Top
 
 How to change default port for a Next.js app?
 "scripts": {
    "dev": "next dev -p 8080", // for dev
    "start": "next start -p 8080" // for prod
 },
-⬆️ Back to Top
 
 What is Fast Refresh in Next.js?
 A feature for quick feedback when editing React components.
-
-⬆️ Back to Top
 
 What is next.config.js?
 A configuration file to customize Next.js settings.
@@ -5694,7 +4893,6 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-⬆️ Back to Top
 
 How do you add component-level CSS in Next.js?
 Using CSS modules with a .module.css file extension.
@@ -5711,12 +4909,9 @@ import styles from './styles.module.css';
 export default function Component() {
   return <div className={styles.example}>Hello World!</div>;
 }
-⬆️ Back to Top
 
 How do you add global CSS in Next.js?
 By importing CSS files in the _app.js file.
-
-⬆️ Back to Top
 
 How do you use Tailwind CSS in Next.js?
 By installing Tailwind CSS and configuring it in the next.config.js file.
@@ -5738,7 +4933,6 @@ module.exports = {
 And import Tailwind CSS in your _app.js:
 
 import "tailwindcss/tailwind.css";
-⬆️ Back to Top
 
 What is server side rendering (SSR) in Next.js?
 Rendering pages on each request. If a page uses Server-side Rendering, the page HTML is generated on each request.
@@ -5752,7 +4946,6 @@ export async function getServerSideProps() {
 export default function Page({ repo }) {
   return <p>{repo.stargazers_count} Stars</p>;
 }
-⬆️ Back to Top
 
 What is static site generation (SSG) in Next.js?
 Pre-rendering pages at build time. If a page uses Static Generation, the page HTML is generated at build time.
@@ -5766,12 +4959,9 @@ export async function getStaticProps() {
 export default function Page({ repo }) {
   return <p>{repo.stargazers_count} Stars</p>;
 }
-⬆️ Back to Top
 
 What is the difference between static site generation and server side rendering?
 Static site generation (SSG) pre-renders at build time, server side rendering (SSR) pre-renders on each request.
-
-⬆️ Back to Top
 
 What is pre-rendering in Next.js?
 Generating HTML for pages in advance, instead of on each request.
@@ -5785,7 +4975,6 @@ export async function getStaticProps() {
 export default function Page({ repo }) {
   return <p>{repo.stargazers_count} Stars</p>;
 }
-⬆️ Back to Top
 
 What is incremental static regeneration (ISR) in Next.js?
 Incremental Static Regeneration is a technique in Next.js that allows you to update static pages at runtime without rebuilding the entire site. This feature introduces a seamless way to serve both static and dynamic content by revalidating and regenerating pages in the background.
@@ -5795,7 +4984,6 @@ export async function getStaticProps() {
   const repo = await res.json();
   return { props: { repo }, revalidate: 1 };
 }
-⬆️ Back to Top
 
 What is the Image component in Next.js?
 A component that optimizes images for faster loading.
@@ -5812,12 +5000,9 @@ export default function Page() {
     />
   );
 }
-⬆️ Back to Top
 
 How do you deploy a Next.js app to Vercel?
 By connecting the git/github repository to Vercel and deploying it.
-
-⬆️ Back to Top
 
 How do you handle redirects in Next.js?
 There are a few ways you can handle redirects in Next.js. One of them is by configuring redirects in next.config.js.
@@ -5833,7 +5018,6 @@ module.exports = {
     ];
   },
 };
-⬆️ Back to Top
 
 What is the Head component in Next.js?
 A component for modifying the of a page.
@@ -5844,7 +5028,6 @@ import Head from "next/head";
   <title>My page title</title>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 </Head>;
-⬆️ Back to Top
 
 What is the next/head package used for?
 To manage the document head for meta tags, title,description, og etc.
@@ -5862,22 +5045,15 @@ export default function Home() {
     </div>
   );
 }
-⬆️ Back to Top
 
 How do you add custom headers in Next.js?
 By configuring headers in next.config.js.
 
-⬆️ Back to Top
-
 What is the use of next export command?
 To export a static version of the Next.js app.
 
-⬆️ Back to Top
-
 How do you optimize fonts in Next.js?
 By using the built-in font optimization feature.
-
-⬆️ Back to Top
 
 How do you enable custom fonts in Next.js?
 By using the next/font package to optimize and load custom fonts.
@@ -5893,7 +5069,6 @@ export default function Home() {
     </main>
   );
 }
-⬆️ Back to Top
 
 How do you configure Webpack in Next.js?
 By adding a custom webpack configuration in next.config.js.
@@ -5911,32 +5086,21 @@ module.exports = {
     return config;
   },
 };
-⬆️ Back to Top
 
 How do you configure a custom Babel setup in Next.js?
 By adding a babel.config.js file.
 
-⬆️ Back to Top
-
 What is the purpose of next-env.d.ts?
 A TypeScript declaration file for Next.js types.
-
-⬆️ Back to Top
 
 What is the purpose of next-compose-plugins?
 To compose and apply multiple Next.js plugins.
 
-⬆️ Back to Top
-
 How do you add polyfills in Next.js?
 By importing them in the _app.js file or using next-polyfill.
 
-⬆️ Back to Top
-
 What is static optimization in Next.js?
 A feature that automatically determines if a page can be statically generated.
-
-⬆️ Back to Top
 
 How do you handle internationalization (i18n) in Next.js?
 By configuring i18n settings in next.config.js.
@@ -5947,7 +5111,6 @@ module.exports = {
     defaultLocale: "en",
   },
 };
-⬆️ Back to Top
 
 What is React Strict Mode in Next.js?
 A development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
@@ -5957,12 +5120,8 @@ module.exports = {
 };
 Note: Since Next.js 13.5.1, Strict Mode is true by default with app router, so the above configuration is only necessary for pages. You can still disable Strict Mode by setting reactStrictMode: false.
 
-⬆️ Back to Top
-
 What is a singleton router in Next.js?
 A single router instance accessible across the application.
-
-⬆️ Back to Top
 
 What is next/script used for?
 The next/script component is used to load external scripts in a Next.js application. It provides features like loading scripts asynchronously, deferring execution, and controlling script loading behavior.
@@ -5977,7 +5136,6 @@ export default function Page() {
     </>
   );
 }
-⬆️ Back to Top
 
 What is middleware?
 Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers or responding directly.
@@ -5993,7 +5151,6 @@ export function middleware(request) {
 export const config = {
   matcher: "/about/:path*",
 };
-⬆️ Back to Top
 
 What is a custom server in Next.js?
 A way to customize the server-side behavior, e.g., with Express.
@@ -6019,7 +5176,6 @@ app.prepare().then(() => {
     }`
   );
 });
-⬆️ Back to Top
 
 How do you perform client-side data fetching in Next.js?
 Using useEffect and fetch or any other data fetching library like axios,fetch or swr by Next.js team.
@@ -6049,7 +5205,6 @@ function Profile() {
     </div>
   );
 }
-⬆️ Back to Top
 
 How do you set up GraphQL in Next.js?
 By installing Apollo Client or any other GraphQL client and configuring it in the _app.js file.
@@ -6078,12 +5233,9 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-⬆️ Back to Top
 
 How do you create API endpoints in Next.js?
 By adding files to the pages/api or app/api directory.
-
-⬆️ Back to Top
 
 What is the use of next-seo in Next.js?
 next-seo is a plugin for managing SEO metadata in Next.js applications, making it easier to set and manage meta tags, Open Graph tags, and other SEO-related elements.
@@ -6109,12 +5261,9 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-⬆️ Back to Top
 
 How do you handle routing in a Next.js app?
 Using file-based routing in the pages or app directory.
-
-⬆️ Back to Top
 
 How do you configure next-i18next in Next.js?
 By creating a next-i18next.config.js file and initializing it in the app.
@@ -6136,7 +5285,6 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default appWithTranslation(MyApp, nextI18NextConfig);
-⬆️ Back to Top
 
 What is ssr: false in dynamic import?
 It disables server-side rendering for a dynamically imported component, ensuring it only loads on the client side.
@@ -6158,7 +5306,6 @@ function Home() {
 }
 
 export default Home;
-⬆️ Back to Top
 
 How do you add Google Analytics to a Next.js project?
 By using the next/script component to load the Google Analytics script.
@@ -6183,7 +5330,6 @@ export default function MyApp() {
     </>
   );
 }
-⬆️ Back to Top
 
 How do you add meta tags in Next.js?
 Using the Head component from next/head.
@@ -6207,7 +5353,6 @@ function IndexPage() {
 }
 
 export default IndexPage;
-⬆️ Back to Top
 
 How to add sitemap in nextjs app?
 To add a sitemap in Next.js app router, you can use the next-sitemap package. First, install it:
@@ -6235,8 +5380,6 @@ Finally, run the following command to generate the sitemap:
 npx next-sitemap
 This will create a sitemap.xml file in the public directory of your Next.js app.
 
-⬆️ Back to Top
-
 How do you handle CORS in Next.js API routes?
 By setting appropriate headers in the API route response.
 
@@ -6246,7 +5389,6 @@ export default function handler(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.status(200).json({ message: "CORS enabled" });
 }
-⬆️ Back to Top
 
 How do you manage cookies in Next.js?
 By using the cookie package or next-cookies to read and write cookies in API routes or server-side functions.
@@ -6258,7 +5400,6 @@ export default function handler(req, res) {
   cookies.set("token", "value", { httpOnly: true });
   res.status(200).json({ message: "Cookie set" });
 }
-⬆️ Back to Top
 
 What is the purpose of next/dynamic?
 For dynamic importing of components with support for SSR.
@@ -6284,7 +5425,6 @@ function Home() {
 }
 
 export default Home;
-⬆️ Back to Top
 
 How to consider security in nextjs app router?
 To consider security in Next.js app router, you can follow these best practices:
@@ -6296,37 +5436,24 @@ Use environment variables to store sensitive information like API keys.
 Regularly update dependencies to patch known vulnerabilities.
 Implement Content Security Policy (CSP) headers to mitigate XSS attacks.
 Use secure cookies with the HttpOnly and Secure flags.
-⬆️ Back to Top
 
 What is the useTranslation hook in Next.js?
 A hook provided by next-i18next for internationalization.
 
-⬆️ Back to Top
-
 What is AMP in Next.js?
 A framework for creating fast, mobile-friendly pages.
-
-⬆️ Back to Top
 
 How do you enable AMP in Next.js?
 By adding export const config = { amp: true } to a page.
 
-⬆️ Back to Top
-
 What is the next/image component used for?
 For image optimization and responsive images.
-
-⬆️ Back to Top
 
 What is the next/link component used for?
 For client-side navigation between pages.
 
-⬆️ Back to Top
-
 What is the difference between pages and components directories?
 Pages are routes, components are reusable UI elements.
-
-⬆️ Back to Top
 
 How do you handle static files in Next.js?
 By placing them in the public directory, which is served at the root URL.
@@ -6337,8 +5464,6 @@ public/
 └── favicon.ico
 You can access these files using /images/logo.png or /favicon.ico.
 
-⬆️ Back to Top
-
 List some common performance optimization techniques in Next.js.
 Use static generation (SSG) for pages that can be pre-rendered.
 Implement incremental static regeneration (ISR) for dynamic content.
@@ -6347,7 +5472,6 @@ Enable code splitting and tree shaking.
 Use dynamic imports for large components.
 Optimize CSS with CSS modules or styled-components.
 Leverage caching strategies for API routes.
-⬆️ Back to Top
 
 Mention some common security practices in Next.js.
 Use HTTPS for secure communication.
@@ -6357,24 +5481,18 @@ Use environment variables for sensitive data.
 Regularly update dependencies to patch vulnerabilities.
 Implement Content Security Policy (CSP) headers.
 Use secure cookies with HttpOnly and Secure flags.
-⬆️ Back to Top
 
 Are there any limitations of Next.js?
 Limited support for non-React libraries.
 Requires a Node.js server for server-side rendering.
 Some features may not be compatible with static site generation.
 Learning curve for developers new to React or Next.js.
-⬆️ Back to Top
 
 Is Next.js suitable for large-scale applications?
 Yes, Next.js is suitable for large-scale applications due to its features like server-side rendering, static site generation, and API routes. It also supports code splitting, dynamic imports, and incremental static regeneration, which help in managing large codebases efficiently.
 
-⬆️ Back to Top
-
 How nextjs are full stack framework?
 Next.js is considered a full-stack framework because it allows developers to build both the frontend and backend of web applications within a single codebase. It provides features like server-side rendering, static site generation, API routes, and database integration, enabling the development of complete web applications without needing separate frameworks for the frontend and backend.
-
-⬆️ Back to Top
 
 Prevent API routes from being accessed by the client?
 To prevent API routes from being accessed by the client, you can implement authentication and authorization checks in your API route handlers. This ensures that only authenticated users can access the API endpoints.
@@ -6389,7 +5507,6 @@ export default function handler(req, res) {
   // Handle the request
   res.status(200).json({ message: "Success" });
 }
-⬆️ Back to Top
 
 JWT Token in Next.js?
 JSON Web Tokens (JWT) can be used in Next.js for authentication and authorization. You can create a JWT token upon user login and store it in a cookie or local storage. Then, you can verify the token in API routes or server-side functions to authenticate users.
@@ -6408,7 +5525,6 @@ jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
   }
   // Proceed with authenticated user
 });
-⬆️ Back to Top
 
 How do you handle global styles in the App Router?
 By creating a globals.css file in the app directory and importing it in the _app.js file.
@@ -6478,12 +5594,9 @@ export default function handler(req, res) {
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 Pages Router
-⬆️ Back to Top
 
 What is the Pages Router in Next.js?
 The Pages Router is a file-based routing system in Next.js that automatically creates routes based on the file structure inside the pages directory.
-
-⬆️ Back to Top
 
 How do you create a route in the Pages Router?
 In Next.js pages router, you create routes by adding files to the pages directory:
@@ -6492,7 +5605,6 @@ pages/index.js - the homepage (/)
 pages/about.js - the about page (/about)
 pages/blog/index.js - the blog index page (/blog)
 pages/blog/[slug].js - dynamic blog posts (/blog/:slug)
-⬆️ Back to Top
 
 How do you create a dynamic route in Next.js?
 In the pages directory, you can add bracket syntax to create dynamic routes:
@@ -6500,7 +5612,6 @@ In the pages directory, you can add bracket syntax to create dynamic routes:
  pages/posts/[id].js → /posts/1, /posts/2, etc.
  pages/[username]/settings.js → /foo/settings, /bar/settings, etc.
  pages/post/[...all].js → /post/2020/id/title, etc.
-⬆️ Back to Top
 
 What is catch all segment in Next.js?
 A catch-all segment allows you to match multiple segments in a dynamic route. It is defined using [[...param]] syntax.
@@ -6511,32 +5622,21 @@ This allows you to create routes that can match multiple segments, such as /docs
 export default function Docs({ params }) {
   return <div>Docs: {params.slug.join("/")}</div>;
 }
-⬆️ Back to Top
 
 What is the _app.js file in Next.js?
 A special file for initializing pages. It's used for layout, state, or custom error handling.
 
-⬆️ Back to Top
-
 What is the _document.js file in Next.js?
 A custom document for augmenting the application's HTML and body tags.
-
-⬆️ Back to Top
 
 What is the difference between _app.js and _document.js?
 _app.js is for page initialization, _document.js is for custom document structure.
 
-⬆️ Back to Top
-
 What is the _error.js file in Next.js?
 The _error.js file is used to create a custom error page for handling errors such as 404 and 500 in Next.js applications.
 
-⬆️ Back to Top
-
 How do you create a 404 page in Next.js?
 By adding a pages/404.js file.
-
-⬆️ Back to Top
 
 How do you fetch data in a Next.js page?
 Using getStaticProps or getServerSideProps in server side.
@@ -6567,7 +5667,6 @@ export default function Page({ repo }) {
     </main>
   );
 }
-⬆️ Back to Top
 
 What is getStaticProps?
 A function that runs at build time to fetch data for a page.
@@ -6586,7 +5685,6 @@ export async function getStaticProps(context) {
     props: { data }, // will be passed to the page component as props
   };
 }
-⬆️ Back to Top
 
 What is getServerSideProps?
 A function that runs on each request to fetch data for a page.
@@ -6605,12 +5703,9 @@ export async function getServerSideProps(context) {
     props: { data }, // will be passed to the page component as props
   };
 }
-⬆️ Back to Top
 
 What is the difference between getStaticProps and getServerSideProps?
 getStaticProps runs at build time, getServerSideProps runs on each request.
-
-⬆️ Back to Top
 
 What is getStaticPaths?
 A function that specifies dynamic routes to pre-render based on data.
@@ -6628,7 +5723,6 @@ export async function getStaticPaths() {
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 }
-⬆️ Back to Top
 
 What is fallback in getStaticPaths?
 Determines how to handle missing paths, with true, false, or 'blocking'.
@@ -6654,7 +5748,6 @@ export async function getStaticPaths() {
     fallback: "blocking", // this will return a static page for all paths which are not generated at build time
   };
 }
-⬆️ Back to Top
 
 How do you handle API routes in Next.js?
 By creating files in the pages/api directory, which will be treated as API endpoints.
@@ -6664,8 +5757,6 @@ export default function handler(req, res) {
   res.status(200).json({ name: "John Doe" });
 }
 You can access this API route at /api/hello.
-
-⬆️ Back to Top
 
 How do you handle custom error pages in Next.js?
 By creating a _error.js file in the pages directory.
@@ -6680,7 +5771,6 @@ export default function Error({ statusCode }) {
     </p>
   );
 }
-⬆️ Back to Top
 
 Are there any limitations of the Pages Router?
 Yes, the Pages Router has some limitations compared to the App Router, such as:
@@ -6688,7 +5778,6 @@ Yes, the Pages Router has some limitations compared to the App Router, such as:
 Limited support for nested routes and layouts.
 Less flexibility in handling server components.
 No support for React Server Components.
-⬆️ Back to Top
 
 How do you handle authentication in Next.js with the Pages Router?
 By using libraries like next-auth or implementing custom authentication logic in API routes.
@@ -6706,7 +5795,6 @@ export default NextAuth({
   ],
   // Add more configuration options as needed
 });
-⬆️ Back to Top
 
 How do you handle middleware in Next.js with the Pages Router?
 By creating a custom server or using API routes to implement middleware logic.
@@ -6720,7 +5808,6 @@ export default function middleware(req, res, next) {
     res.status(401).json({ error: "Unauthorized" });
   }
 }
-⬆️ Back to Top
 
 How do you handle form submissions in Next.js with the Pages Router?
 By using client-side form handling or API routes for server-side handling.
@@ -6749,7 +5836,6 @@ export default function Contact() {
     </form>
   );
 }
-⬆️ Back to Top
 
 Are there any performance optimizations available in the Pages Router?
 Yes, you can use features like static generation (SSG), server-side rendering (SSR), and incremental static regeneration (ISR) to optimize performance in the Pages Router.
@@ -6757,7 +5843,6 @@ Yes, you can use features like static generation (SSG), server-side rendering (S
 Static Generation (SSG): Pre-render pages at build time.
 Server-Side Rendering (SSR): Render pages on each request.
 Incremental Static Regeneration (ISR): Update static pages after the build.
-⬆️ Back to Top
 
 How do you handle internationalization in Next.js with the Pages Router?
 By using the next-i18next library or the built-in internationalization features in Next.js.
@@ -6777,7 +5862,6 @@ export default function Home() {
   const { t } = useTranslation("common");
   return <h1>{t("welcome")}</h1>;
 }
-⬆️ Back to Top
 
 How do you handle SEO in Next.js with the Pages Router?
 By using the next/head component to manage meta tags and other SEO-related elements.
@@ -6798,7 +5882,6 @@ export default function Home() {
     </>
   );
 }
-⬆️ Back to Top
 
 How do you handle static assets in Next.js with the Pages Router?
 By placing static assets in the public directory, which is served at the root URL.
@@ -6809,8 +5892,6 @@ public/
 └── favicon.ico
 You can access these files using /images/logo.png or /favicon.ico.
 
-⬆️ Back to Top
-
 How cache works in Next.js with the Pages Router?
 Next.js uses a built-in caching mechanism for static assets and API routes. You can also implement custom caching strategies using HTTP headers or libraries like next-cache.
 
@@ -6820,7 +5901,6 @@ export default function handler(req, res) {
   res.setHeader("Cache-Control", "public, max-age=3600, immutable");
   res.status(200).json({ message: "Cached response" });
 }
-⬆️ Back to Top
 
 Cache revalidation in Next.js with the Pages Router?
 Cache revalidation can be handled using the revalidate option in getStaticProps or by setting appropriate HTTP headers in API routes.
@@ -6840,7 +5920,6 @@ export default function handler(req, res) {
   res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
   res.status(200).json({ message: "Revalidated response" });
 }
-⬆️ Back to Top
 
 Optimizing images in Next.js with the Pages Router?
 By using the next/image component, which automatically optimizes images for performance.
@@ -6863,8 +5942,6 @@ export default function Home() {
 }
 The next/image component provides features like lazy loading, responsive images, and automatic format selection.
 
-⬆️ Back to Top
-
 When to choose Pages Router over App Router in Next.js?
 You might choose the Pages Router over the App Router in the following scenarios:
 
@@ -6872,8 +5949,6 @@ When you need a simple file-based routing system without complex nested routes.
 When you prefer the traditional Next.js routing approach.
 When your application does not require advanced features like server components or layouts.
 The Pages Router is suitable for smaller applications or when you want to leverage existing knowledge of Next.js routing.
-
-⬆️ Back to Top
 
 When to choose App Router over Pages Router in Next.js?
 You might choose the App Router over the Pages Router in the following scenarios:
@@ -6883,15 +5958,10 @@ When you want to leverage React Server Components for better performance and fle
 When your application requires more complex data fetching strategies.
 The App Router is suitable for larger applications or when you want to take advantage of the latest features in Next.js 13.
 
-⬆️ Back to Top
-
 App Router
-⬆️ Back to Top
 
 What is the App Router in Next.js?
 The App Router is a new routing system introduced in Next.js 13 that allows for more flexible and powerful routing capabilities, including nested routes, layouts, and server components.
-
-⬆️ Back to Top
 
 How do you create a route in the App Router?
 In the App Router, you create routes by adding files to the app directory. Each file corresponds to a route, and you can create nested routes by creating subdirectories.
@@ -6904,7 +5974,6 @@ app/
     ├── page.js      // Blog index page
     └── [slug]/
         └── page.js  // Dynamic blog post page
-⬆️ Back to Top
 
 How do you create a dynamic route with app router in Next.js?
 In the App Router, you create dynamic routes by using square brackets in the file name. For example, to create a dynamic blog post route, you would create a file named [slug]/page.js inside the blog directory.
@@ -6913,7 +5982,6 @@ app/
 └── blog/
     └── [slug]/
         └── page.js  // Dynamic blog post page
-⬆️ Back to Top
 
 How do you create custom error pages in Next.js?
 By creating error.js files in app directory.
@@ -6922,22 +5990,15 @@ By creating error.js files in app directory.
 export default function ErrorPage() {
   return <h1>Custom Error Page</h1>;
 }
-⬆️ Back to Top
 
 How do you handle form submissions in Next.js?
 Using client-side form handling or API routes for server-side handling.
 
-⬆️ Back to Top
-
 How do you handle middleware in Next.js?
 By creating a middleware.js file in the app directory.
 
-⬆️ Back to Top
-
 How do you implement authentication in Next.js?
 Using next-auth or a custom authentication solution.
-
-⬆️ Back to Top
 
 How to add authjs in nextjs app router?
 To add authjs in nextjs app router, you can use the next-auth package. First, install it:
@@ -6993,7 +6054,6 @@ export default NextAuth({
     newUser: null, // Will disable the new account creation screen
   },
 });
-⬆️ Back to Top
 
 How do you handle authentication tokens in Next.js?
 By using cookies or local storage to store authentication tokens.
@@ -7008,7 +6068,6 @@ function setToken(token) {
 function getToken() {
   return Cookies.get("authToken");
 }
-⬆️ Back to Top
 
 How to add credentials in nextjs app router?
 To add credentials in Next.js app router, you can use the next-auth package with the Credentials provider. First, install it:
@@ -7059,7 +6118,6 @@ export default NextAuth({
     secret: process.env.NEXTAUTH_JWT_SECRET, // Required for JWT encryption
   },
 });
-⬆️ Back to Top
 
 What is use server in Next.js?
 The use server directive is used to indicate that a function should be executed on the server side. It allows you to write server-side logic in a component or function that can be called from the client side.
@@ -7070,7 +6128,6 @@ export async function myServerFunction() {
   // Server-side logic here
   return "Hello from the server!";
 }
-⬆️ Back to Top
 
 Difference between using & not using use server in Next.js?
 Using use server: The function is executed on the server side, allowing access to server-side resources and APIs. It can be used to perform operations that require server-side logic, such as database queries or API calls.
@@ -7107,7 +6164,6 @@ export default function MyComponent() {
   const data = fetchData(); // This will run on the client side
   return <div>{data}</div>;
 }
-⬆️ Back to Top
 
 How do you handle API routes in Next.js?
 By creating files in the app/api directory, where each file corresponds to an API endpoint.
@@ -7116,7 +6172,6 @@ By creating files in the app/api directory, where each file corresponds to an AP
 export async function GET(request) {
   return new Response("Hello, World!");
 }
-⬆️ Back to Top
 
 How do middleware work in Next.js?
 Middleware in Next.js allows you to run code before a request is completed. You can use it to modify the request or response, redirect users, or perform authentication checks.
@@ -7136,7 +6191,6 @@ You can also specify which paths the middleware should apply to:
 export const config = {
   matcher: ["/about/:path*", "/blog/:path*"],
 };
-⬆️ Back to Top
 
 What is form action in Next.js?
 The formAction is a special attribute used in Next.js to define the action URL for a form submission. It allows you to specify a server-side function that will handle the form submission.
@@ -7160,8 +6214,6 @@ export default function FormExample() {
 }
 In this example, when the form is submitted, the handleSubmit function will be called on the server side with the form data.
 
-⬆️ Back to Top
-
 How do you handle file uploads in Next.js?
 By using the formData API in a server action to handle file uploads.
 
@@ -7183,7 +6235,6 @@ export default function UploadPage() {
     </form>
   );
 }
-⬆️ Back to Top
 
 Mention some common use cases for the App Router in Next.js.
 Creating nested routes with layouts.
@@ -7191,12 +6242,9 @@ Implementing server-side rendering for dynamic content.
 Handling API routes for backend functionality.
 Managing authentication and authorization flows.
 Building complex applications with shared layouts and components.
-⬆️ Back to Top
 
 One of the main differences between the App Router and Pages Router in Next.js?
 The App Router allows for nested routes, layouts, and server components, while the Pages Router uses a flat file structure for routing and does not support nested routes or layouts.
-
-⬆️ Back to Top
 
 What is the use of the use client directive in Next.js?
 The use client directive is used to indicate that a component should be rendered on the client side. It allows you to write client-side logic in a component that can be executed in the browser.
@@ -7206,12 +6254,9 @@ The use client directive is used to indicate that a component should be rendered
 export default function ClientComponent() {
   return <div>This component is rendered on the client side.</div>;
 }
-⬆️ Back to Top
 
 Is it possible to use both App Router and Pages Router in the same Next.js project?
 Yes, it is possible to use both App Router and Pages Router in the same Next.js project. You can have the app directory for the App Router and the pages directory for the Pages Router, allowing you to take advantage of both routing systems.
-
-⬆️ Back to Top
 
 Are there any limitations of the App Router in Next.js?
 Yes, some limitations of the App Router include:
@@ -7221,7 +6266,6 @@ It may not support all features available in the Pages Router.
 Some third-party libraries may not be compatible with the App Router.
 Many features from the Pages Router, such as getStaticProps and getServerSideProps, are not available in the App Router.
 The App Router is still evolving, and some features may change or be added in future releases.
-⬆️ Back to Top
 
 Explain the concept of authorization in middleware & routes in Next.js.
 Authorization in middleware and routes in Next.js involves checking if a user has the necessary permissions to access a specific route or perform an action. This can be done by verifying user roles, permissions, or tokens in the middleware function before allowing access to the route.
@@ -7269,8 +6313,6 @@ export async function GET(request) {
 }
 In this example, the API route checks for the authentication token in the request cookies. If the token is not present, it returns a 401 Unauthorized response. If the token is valid, it returns the protected data.
 
-⬆️ Back to Top
-
 The difference between use server and use client in Next.js?
 use server: Indicates that the function should be executed on the server side. It allows you to write server-side logic that can be called from the client side.
 
@@ -7291,7 +6333,6 @@ export async function fetchData() {
 export default function ClientComponent() {
   return <div>This component is rendered on the client side.</div>;
 }
-⬆️ Back to Top
 
 Understand the concept of server actions in Next.js.
 Server actions in Next.js allow you to define functions that can be executed on the server side when a form is submitted or an action is triggered. These functions can handle data processing, database interactions, or any server-side logic.
@@ -7317,28 +6358,24 @@ export default function FormPage() {
     </form>
   );
 }
-⬆️ Back to Top
 
 Whats are the benifit of using server actions in Next.js?
 Performance: Server actions allow you to offload heavy computations or data processing to the server, reducing the load on the client.
 Security: Sensitive operations can be performed on the server, preventing exposure of sensitive data or logic to the client.
 Simplified Data Fetching: You can fetch data directly in server actions without needing to manage client-side state or effects.
 Reduced Client Bundle Size: By moving logic to the server, you can reduce the amount of JavaScript sent to the client, improving load times.
-⬆️ Back to Top
 
 What's are the problem of using server actions in Next.js?
 Latency: Server actions can introduce latency since they require a round trip to the server, which may not be ideal for real-time interactions.
 Complexity: Managing server actions can add complexity to your application, especially if you have many actions or need to handle different states.
 Limited Client-Side Interactivity: Since server actions are executed on the server, they may not provide the same level of interactivity as client-side functions.
 Debugging Challenges: Debugging server actions can be more challenging compared to client-side code, as you may not have access to browser developer tools.
-⬆️ Back to Top
 
 Alternative options instead of server actions in Next.js?
 API Routes: You can create API routes to handle server-side logic and data fetching, which can be called from the client side.
 Client-Side Fetching: Use client-side data fetching methods like useEffect or libraries like SWR or React Query to manage data on the client side.
 Static Site Generation (SSG): Use SSG for pages that can be pre-rendered at build time, reducing the need for server actions.
 Server-Side Rendering (SSR): Use SSR for dynamic pages that require server-side data fetching on each request.
-⬆️ Back to Top
 
 Alternative solutions example of not using server actions in Next.js?
 Instead of using server actions, you can use API routes to handle form submissions or data processing. Here's an example:
@@ -7375,7 +6412,6 @@ export default function FormPage() {
     </form>
   );
 }
-⬆️ Back to Top
 
 JWT Token in Next.js App Router?
 JSON Web Tokens (JWT) can be used in the Next.js App Router for authentication and authorization. You can create a JWT token upon user login and store it in a cookie or local storage. Then, you can verify the token in API routes or server-side functions to authenticate users.
@@ -7431,21 +6467,16 @@ export async function GET(request) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }
 }
-⬆️ Back to Top
 
 Context of JWT Token in Next.js App Router?
 The context of using JWT tokens in the Next.js App Router is primarily for authentication and authorization purposes. JWT tokens allow you to securely transmit user information between the client and server, enabling you to verify user identity and permissions without needing to store session data on the server.
 
 This approach is particularly useful for stateless applications where you want to maintain user sessions without relying on server-side session storage.
 
-⬆️ Back to Top
-
 Is App Router better than Pages Router in Next.js?
 The App Router offers more flexibility and features compared to the Pages Router, such as nested routes, layouts, and server components. It is designed for building complex applications with shared layouts and components.
 
 However, the choice between App Router and Pages Router depends on your specific use case. If you need simple routing without nested routes or layouts, the Pages Router may be sufficient.
-
-⬆️ Back to Top
 
 How to handle global state management in Next.js with the App Router?
 You can handle global state management in Next.js with the App Router using libraries like Redux, Zustand, or React Context API. These libraries allow you to create a global store that can be accessed from any component in your application.
@@ -7500,7 +6531,6 @@ export default function HomePage() {
     </div>
   );
 }
-⬆️ Back to Top
 
 What is the fetch API in Next.js App Router?
 In the Next.js App Router, you can use the fetch API to make HTTP requests to external APIs or your own API routes. The fetch function is available globally in both server and client components.
@@ -7537,7 +6567,6 @@ export default function HomePage() {
     </div>
   );
 }
-⬆️ Back to Top
 
 How do you create route groups in the App Router?
 Route groups allow you to organize routes without affecting the URL structure. You create them by wrapping folder names in parentheses ().
@@ -7555,8 +6584,6 @@ app/
 │       └── page.js     // /cart
 └── layout.js           // Shared layout
 Route groups are useful for organizing code, creating different layouts for different sections, or conditionally including layouts.
-
-⬆️ Back to Top
 
 What are parallel routes in Next.js App Router?
 Parallel routes allow you to render multiple pages simultaneously in the same layout. They are defined using slots with the @ convention.
@@ -7580,8 +6607,6 @@ export default function Layout({ children, analytics, team }) {
 }
 This allows you to render independent pages that can load at different speeds and handle their own loading and error states.
 
-⬆️ Back to Top
-
 How do you implement intercepting routes in App Router?
 Intercepting routes allow you to load a route from another part of your application while keeping the context of the current page, similar to modals.
 
@@ -7601,7 +6626,6 @@ The (..) convention indicates that you want to intercept routes at the same leve
 (..) - match segments one level above
 (..)(..) - match segments two levels above
 (...) - match segments from the root app directory
-⬆️ Back to Top
 
 What is the loading.js file in App Router?
 The loading.js file creates loading UI that shows instantly while route segments are loading. It automatically wraps the page and its children in a React Suspense boundary.
@@ -7623,8 +6647,6 @@ app/
 │       ├── loading.js  // Loading UI for settings
 │       └── page.js
 The loading UI will be shown immediately on navigation and can be nested for granular loading states.
-
-⬆️ Back to Top
 
 How do you handle not-found pages in App Router?
 You can create custom not-found pages using the not-found.js file. This file defines UI to render when the notFound() function is thrown within a route segment.
@@ -7655,7 +6677,6 @@ export default function Page({ params }) {
 
   return <div>{post.title}</div>;
 }
-⬆️ Back to Top
 
 What is the template.js file in App Router?
 The template.js file is similar to layout.js but creates a new instance for each of its children on navigation. This means state is not preserved and effects are re-synchronized.
@@ -7673,7 +6694,6 @@ Templates are useful when you need:
 CSS/JS animations on route changes
 Features that rely on useEffect and useState
 To change the default browser behavior
-⬆️ Back to Top
 
 How do you implement nested layouts in App Router?
 Nested layouts are implemented by creating layout.js files in different route segments. Layouts are nested automatically based on the folder structure.
@@ -7710,8 +6730,6 @@ export default function DashboardLayout({ children }) {
 }
 When visiting /dashboard/settings, all three layouts (root, dashboard, settings) will be rendered in a nested structure.
 
-⬆️ Back to Top
-
 What are route handlers vs API routes in App Router?
 In the App Router, API routes are now called "Route Handlers" and use the route.js file convention instead of the pages-based approach.
 
@@ -7744,8 +6762,6 @@ export async function DELETE(request) {
   return new Response(null, { status: 204 });
 }
 Route handlers support all HTTP methods and provide better TypeScript support and Web APIs compatibility.
-
-⬆️ Back to Top
 
 How do you handle streaming and suspense in App Router?
 The App Router has built-in support for streaming and React Suspense, allowing you to progressively render and stream UI to the client.
@@ -7788,7 +6804,6 @@ Faster initial page load
 Better perceived performance
 Progressive enhancement
 SEO-friendly as search engines can index content as it streams
-⬆️ Back to Top
 
 What is React Server Components (RSC) in App Router?
 React Server Components (RSC) are a new React feature that allows components to be rendered on the server. In the App Router, components are Server Components by default.
@@ -7832,7 +6847,6 @@ When to use Client Components:
 Interactive features (event handlers, state)
 Browser-only APIs (localStorage, geolocation)
 React hooks (useState, useEffect)
-⬆️ Back to Top
 
 How do you handle error boundaries in App Router?
 You can create error boundaries using the error.js file in a route segment. This file defines UI to render when an error is thrown within that segment.
@@ -7858,8 +6872,6 @@ export default function Page() {
   return <div>This will not be rendered.</div>;
 }
 The error boundary will catch the error and display the custom error UI defined in error.js.
-
-⬆️ Back to Top
 
 How do you differentiate between server and client components in Next.js?
 In Next.js, components are Server Components by default. To differentiate and create Client Components, you need to add the "use client" directive at the top of the component file.
@@ -7894,8 +6906,6 @@ export default function ClientComponent() {
 }
 Use Server Components for static content and data fetching, and Client Components for interactivity and state management.
 
-⬆️ Back to Top
-
 How do you handle internationalization (i18n) in Next.js with the App Router?
 Next.js provides built-in support for internationalization (i18n) in the App Router. You can configure i18n settings in the next.config.js file.
 
@@ -7922,8 +6932,6 @@ export default function HomePage() {
   return <div>Welcome to the {locale} version of the site!</div>;
 }
 You can also use libraries like next-translate or react-i18next for more advanced i18n features.
-
-⬆️ Back to Top
 
 What is use server, why and when to use it in Next.js?
 The "use server" directive in Next.js is used to indicate that a function should be executed on the server side. It allows you to write server-side logic that can be called from the client side, such as handling form submissions or processing data.
@@ -7954,8 +6962,6 @@ export default function FormExample() {
 }
 In this example, the handleSubmit function is marked with "use server", indicating that it will run on the server when the form is submitted.
 
-⬆️ Back to Top
-
 What are the best practices of nextjs api routes?
 Use proper HTTP methods (GET, POST, PUT, DELETE) for different operations.
 Validate and sanitize input data to prevent security vulnerabilities.
@@ -7964,7 +6970,6 @@ Use middleware for common tasks like authentication and logging.
 Keep API routes modular and organized in separate files or folders.
 Optimize performance by caching responses when appropriate.
 Document your API endpoints for easier consumption by other developers.
-⬆️ Back to Top
 
 How to use proper HTTP methods in Next.js API routes?
 In Next.js API routes, you can define different functions for each HTTP method (GET, POST, PUT, DELETE) within the same route file. This allows you to handle different types of requests appropriately.
@@ -8004,8 +7009,6 @@ export async function DELETE(request) {
 }
 In this example, each function corresponds to a specific HTTP method, allowing you to handle requests accordingly.
 
-⬆️ Back to Top
-
 How to validate and sanitize input data in Next.js API routes?
 To validate and sanitize input data in Next.js API routes, you can use libraries like Joi, Yup, or validator.js. These libraries help ensure that the data received from clients meets the expected format and is safe to use.
 
@@ -8043,8 +7046,6 @@ export async function POST(request) {
   });
 }
 In this example, the userSchema defines the expected structure of the input data. The POST function validates the incoming data against this schema and returns an error response if validation fails.
-
-⬆️ Back to Top
 
 How to handle errors in Next.js API routes?
 To handle errors in Next.js API routes, you can use try-catch blocks to catch exceptions and return appropriate HTTP status codes and error messages. This ensures that clients receive meaningful feedback when something goes wrong.
@@ -8091,8 +7092,6 @@ export async function POST(request) {
 }
 In this example, both the GET and POST functions include try-catch blocks to handle potential errors. If an error occurs, a 500 Internal Server Error response is returned with a relevant error message.
 
-⬆️ Back to Top
-
 How to use middleware in Next.js API routes?
 In Next.js, you can use middleware to run code before your API route handlers. Middleware can be used for tasks like authentication, logging, or modifying requests and responses.
 
@@ -8129,7 +7128,6 @@ export async function GET(request) {
 }
 In this example, the authMiddleware checks for a valid authorization token before allowing access to the protected API route. If the token is invalid or missing, it returns a 401 Unauthorized response.
 
-⬆️ Back to Top
 
 How to keep Next.js API routes modular and organized?
 To keep Next.js API routes modular and organized, you can structure your API routes in a way that groups related functionality together. Here are some best practices:
@@ -8163,7 +7161,6 @@ Documentation: Document your API routes and their expected inputs/outputs to hel
 
 By following these practices, you can maintain a clean and organized codebase for your Next.js API routes.
 
-⬆️ Back to Top
 
 RTK Query with Next.js App Router?
 RTK Query is a powerful data fetching and caching tool built on top of Redux Toolkit. You can use RTK Query in a Next.js App Router application to manage server state and interact with APIs efficiently.
@@ -8344,17 +7341,9 @@ function add(item) {
 How do you choose between Edge and Node runtimes for route handlers?
 Use the Edge runtime for low-latency global responses and where Node APIs are not needed. Choose Node (default) when you require native Node modules, filesystem access, or heavy CPU tasks. You can set export const runtime = 'edge' or leave it for Node.
 
-Next.js Interview Questions and Answers
-Last Updated : 24 Sep, 2025
-Next.js is a React-based framework for building fast, scalable, and SEO-friendly web applications. It provides modern features for both frontend and backend development, making it suitable for small projects to enterprise-grade applications.
 
-Built on React, enabling component-driven UI development.
-Supports Server-Side Rendering (SSR) and Static Site Generation (SSG) for improved performance and SEO(Search Engine Optimization).
-Offers automatic code splitting, bundling, and asset optimization.
-Provides API routes for backend integration within the same project.
-Supports full-stack development with optimized builds and deployment-ready features.
-Integrates with Webpack and Babel for modern JavaScript features and efficient builds.
 Next.js Basic Interview Questions
+
 1. How Next.js Works?
 Next.js works as a React framework that handles rendering, routing, and optimization automatically, making web apps faster and SEO-friendly.
 
@@ -8959,6 +7948,7 @@ Provides more control over which pages to pre-render and route handling.
 46. How can you implement authentication in Next.js? Compare JWT, NextAuth, and Firebase approaches.
 Next.js does not include built-in authentication, but you can implement it using JWT, NextAuth, or Firebase.
 
+
 JWT (JSON Web Tokens):
 
 Stateless authentication where the server issues a token after login.
@@ -9140,19 +8130,6 @@ Key Points:
 Error Handling: Error boundaries catch both JavaScript errors (e.g., syntax errors, runtime exceptions) and React errors (e.g., errors thrown during rendering).
 Error Propagation: Unhandled errors within the error boundary itself propagate up to the nearest parent error boundary, creating a hierarchy for error handling.
 
-Most Asked Next.js Interview Questions (With Answers) – 2025 Edition
-Next.js is one of the most in-demand frameworks in modern web development. If you're applying for roles at companies like Vercel, Shopify, PayPal, or any top startup, mastering these questions can give you an edge.
-
-This post covers the most common and high-impact interview questions for Next.js, categorized by difficulty level. Plus, we’ve added code snippets, explanations, and real-world interview insights.
-
-🚀 Why is Next.js So Popular in 2025?
-✅ Built on top of React
-✅ Supports Server-side Rendering (SSR)
-✅ Blazing fast Static Site Generation (SSG)
-✅ Powerful App Router with nested layouts and Server Components
-✅ First-class TypeScript support
-✅ SEO-friendly architecture
-✅ Basic Next.js Interview Questions
 1. What is Next.js?
 Answer: Next.js is a full-stack React framework that provides SSR, SSG, and client-side routing. It enhances performance and SEO while simplifying development.
 
@@ -9251,16 +8228,6 @@ Defer scripts
 Split code using dynamic imports
 Use caching headers
 
-
-Your Ultimate Guide to Next.js Interview Success
-Introduction to Next.js
-Next.js, created by Vercel and launched in 2016, is a powerful React framework for building server-side rendered and static web applications. Renowned for its scalability, performance, and simplicity, Next.js integrates server-side rendering and static site generation seamlessly. Its advanced features, such as automatic code splitting, optimized performance, and an intuitive file-based routing system, make it a top choice for developing fast and user-friendly web applications.
-
-Table of Contents
-Junior-Level Next.js Interview Questions
-Mid-Level Next.js Interview Questions
-Expert-Level Next.js Interview Questions
-Proven Strategies and Best Practices for Next.js Interview
 
 Junior-Level Next.js Interview Questions
 Here are some junior-level interview questions for Next.js:
@@ -9497,7 +8464,6 @@ Question 05: Explain the use of the next/link component in Next.js.
 
 Answer: The next/link component in Next.js is used to enable client-side navigation between pages in a Next.js application. It helps in optimizing the user experience by performing navigation without a full page reload. For example:
 
-
 // pages/index.js
 import Link from 'next/link';
 
@@ -9587,7 +8553,6 @@ Question 02: Discuss how Next.js manages state across pages, especially in the c
 
 Answer: Next.js handles state management across pages using various methods, such as React context, global state libraries, or server-side solutions. For user sessions and authentication, you typically use cookies or tokens stored in HTTP headers or local storage, combined with session management libraries or backend authentication services. For example:
 
-
 // _app.js
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -9666,7 +8631,6 @@ Question 07: Describe how you can implement code splitting and dynamic imports i
 
 Answer: In Next.js, code splitting and dynamic imports are achieved using the dynamic function from next/dynamic. This allows you to load components only when they are needed, reducing the initial load time and improving performance. For example:
 
-
 import dynamic from 'next/dynamic';
 
 const DynamicComponent = dynamic(() => import('../components/DynamicComponent'));
@@ -9703,8 +8667,7 @@ Answer: To use Next.js with TypeScript, start by installing TypeScript and the n
 Integrating TypeScript with Next.js enhances your development experience by providing robust type checking and improved IDE support. It helps catch potential issues early and facilitates easier code refactoring. Additionally, configuring ESLint with TypeScript support further improves code quality and consistency, making your development process smoother and more efficient.
 
 
-
-Ace Your Next.js Interview: Proven Strategies and Best Practices
+Ace Your Next.js
 To excel in a Next.js technical interview, it's crucial to have a solid understanding of the framework's fundamental concepts. This includes a thorough grasp of Next.js’s features, server-side rendering, and static site generation. Mastering Next.js’s data fetching methods and routing capabilities will greatly enhance your ability to build robust and efficient web applications.
 
 Core Language Concepts: Understanding Next.js syntax, server-side rendering (SSR), static site generation (SSG), and API routes.
