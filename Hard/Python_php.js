@@ -1,19 +1,9 @@
 Вопросы по Python
+
 Какие модули / библиотеки вы используете? Что вам нравится/ не нравится в них?
 Каковы поддерживаемые типы данных есть в Python?
 В чем разница между кортежем и списком в Python?
 Чтобы разобраться с дополнительными вопросами по Python, стоит ознакомиться с этим полезным ресурсом, созданным Toptal.
-
-	
-Full Stack Python Vs. Full Stack Javascript
-Being a full-stack developer is a highly wanted job; besides that, it is also one of the higher-paying jobs.
-
-It was never more attractive than now to become a full-stack developer, that is for sure!
-
-In this article, find out if it’s better to become a full-stack Java or Python developer; find out about their pros and cons and more!
-
-Table of Contents
-Advertising links are marked with *. We receive a small commission on sales, nothing changes for you.
 
 What Is A Full Stack Developer?
 Full Stack Python Vs. Full Stack Javascript
@@ -73,11 +63,6 @@ A Full Stack Java Developer in the US earns around $117,339 in total compensatio
 
 JavaScript Vs. Python: Pros & Cons 
 Now let’s review the pros and cons of learning both Java and Python. 
-
-Python Pros & Cons 
-Let’s start with the pros!
-
-First of all, there are fewer codes.
 
 What could be better than a programming language that doesn’t require a lot of coding? This is what Python has to offer, after all.
 
