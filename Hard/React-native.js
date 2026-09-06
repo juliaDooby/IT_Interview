@@ -1,4 +1,3 @@
-https://www.google.com/search?q=react+native+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+%D0%BD%D0%B0+%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8&oq=react+native+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRhBMgYIBhBFGEEyBggHEEUYQdIBCjU0Mjc2ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8
 ---------------------------------------------------------------------------------------------
 ⋙ ❍ Как в React Native происходит обмен данными между JavaScript - кодом приложения и нативной частью?
 • В React Native обмен данными между JavaScript-кодом и нативной частью происходит через "мост" (bridge). Мост является связующим звеном между JavaScript-кодом, который выполняется в JavaScript-движке, и нативной частью, которая работает на платформе (например, iOS или Android).
