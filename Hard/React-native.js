@@ -16758,27 +16758,10 @@ const timer = setInterval(() => {
 console.log(‘Interval running’);
 }, 1000); return () => clearInterval(timer); // Cleanup
 }, []);
-Final Words
-Getting ready for an interview can feel overwhelming, but going through these React Native fresher interview questions can help you feel more confident. This guide focuses on the kinds of React Native-related interview questions for fresher roles that you’re likely to face.Don’t forget to practice the React Native basics, component lifecycle, and state management-related interview questions too! With the right preparation, you’ll ace your React Native interview and take that important step in your career.
 
-Top React Native Interview Questions And Answers
-By Samuel
-Posted on April 1, 2021
-Posted in Interview Questions
-No Commentson Top React Native Interview Questions And Answers
-React Native Interview Questions And Answers
-Subscribe to How I Got Job!
-Get updates on the latest posts and more from How I Got Job straight to your inbox.
-
-
-I agree to my personal data being used for interest-based advertising as outlined in the Privacy Notice and the Ad Partner page.
-Website
-Your Email...
-Subscribe
-React Native Interview Questions And Answers 3011: What Do You Mean By Interaction And For What Reason Is It Significant?
-
-Created by Facebook, React Native is a crossover portable structure that makes local style applications for Android and iOS. It works with a typical language, which is JavaScript. At this stage, you would learn such intriguing realities and the best React Native inquiries questions and stretch out beyond the opposition. It is exceptionally utilized in light of its more limited advancement cycles and speedier sending time when contrasted with singular local dialects like Java, Swift, Objective. 
-
+*************************************************************************
+    *************************************************************************
+    *************************************************************************
 React Native Interview Questions
 1. What is React Native? 
 React Native is an open-source system created by Facebook which empowers engineers to assemble cross-stage versatile applications utilizing Javascript. With React Native, one can build up a versatile application by utilizing a similar plan standard to build up a web application with the ReactJs system. It permits the designer to construct portable application UI by definitively creating different parts. Before React local, there were not many alternatives like Cordova, ionic accessible to assemble a half breed application. 
@@ -16800,14 +16783,6 @@ React Native gives the adaptability to utilize Native quick or java modules with
 3. How Is React Native Not Quite The Same As Different Systems For Building Up A Portable Application? 
 Javascript engineers consistently attempted to investigate stages where Javascript can be utilized to construct better client encounters. React local isn’t the main system that empowers web engineers to assemble applications for the portable stage. Ionic, Cordova was not many well-known application systems utilized to build up a portable application utilizing web advancements. One significant inspiration towards this exertion had a consistent encounter on every one of the stages. Versatile application created with React Native is unique about substitute structures in the accompanying manners: React Native application is a genuine portable application, not a web application running inside a versatile application shell. Other electives like Cordova, ionic run a web application in a web see. React Native application is changed over into machine code which runs on the versatility that is the reason it gives preferred execution over different other options. React Native portable applications are all the more near Native application advancement in contrast with other Javascript structures The versatile application that worked with React local has little group size than a more established half and half application improvement system. 
 
-Subscribe to How I Got Job!
-Get updates on the latest posts and more from How I Got Job straight to your inbox.
-
-
-I agree to my personal data being used for interest-based advertising as outlined in the Privacy Notice and the Ad Partner page.
-Website
-Your Email...
-Subscribe
 4) What Are The Disservices Of React Native? 
 A portion of the huge inconveniences of React Native for building versatile applications are given underneath: 
 
@@ -16834,14 +16809,6 @@ ScrollView: It is a looking over holder used to have numerous perspectives. It m
 8. How Virtual DOM Works In React Native? 
 Virtual DOM is a lightweight JavaScript object, which is an in-memory portrayal of a genuine DOM. It is a go-between venture between the render work being called and the showing of components on the screen. It is like a hub tree that records the components, characteristics, and substance of articles and their properties. The render work makes a hub tree of the React segments. Afterward, it refreshes this hub tree in light of the transformations in the information model brought about by different activities done by the client or by the framework. 
 
-Subscribe to How I Got Job!
-Get updates on the latest posts and more from How I Got Job straight to your inbox.
-
-
-I agree to my personal data being used for interest-based advertising as outlined in the Privacy Notice and the Ad Partner page.
-Website
-Your Email...
-Subscribe
 Virtual DOM works in three stages: 
 
 At whatever point any information changes in the React App, the whole UI is re-delivered in Virtual DOM portrayal. 
@@ -16929,16 +16896,7 @@ What is ‘Linking’ in React Native?
 
 These questions cover a broad range of basic concepts and common scenarios in React Native development. An interview may also include questions specific to a job’s requirements, such as experience with certain libraries or tools, or how to handle specific use cases in React Native.
 
-Top 55+ React native interview questions and answers for freshers and experienced-advanced
-Posted by
-fdaytalk
-October 28, 2024
-Posted in
-career
-React Native has transformed mobile app development by allowing developers to create native apps using JavaScript and React. This article gives extensive guide for both freshers and experienced professionals preparing for React Native interview questions and answers. It covers a broad spectrum of topics, from fundamental concepts like state and props to more advanced subjects such as hooks, navigation, and performance optimization.
 
-React Native interview questions and answers for freshers and experienced
-React Native interview questions and answers for freshers and experienced
 React Native interview questions and answers for freshers and experienced
 1. What is React Native?
 2. How is React Native different from React?
@@ -17276,22 +17234,7 @@ Answer:
 
 Permissions are managed through libraries like react-native-permissions, which streamline permission requests. They must be declared in native code (e.g., Info.plist for iOS and AndroidManifest.xml for Android) and can be accessed through APIs in JavaScript.
 
-Top 30 React Native Interview Questions and Answers
- codeflare  March 23, 2023 10 minutes read 
- 0
-top react native interview questions
-This article lists the top 50 React Native interview questions and answers in the software development industy.
 
-React Native is highly relevant in hiring software developers, especially those who specialize in mobile app development. With the increasing demand for mobile apps across industries, many companies are turning to React Native as a cost-effective and efficient way to build mobile apps for both iOS and Android platforms using a single codebase.
-
-Therefore, developers with React Native skills are highly sought after by companies looking to develop or maintain mobile apps. Having experience with React Native can significantly increase a developer’s employability and job opportunities, as well as their earning potential.
-
-Why Interview Questions?
-Interview questions are questions that you will be asked by an interviewer during a job interview to assess a your qualifications, skills, experience, and suitability for a particular role. If you are applying for the role of a React Native developer, be rest assured that you will write a technical interview.
-
-We have put together a list of the top 30 React Native interview questions that you might encounter in your technical interview.
-
-Top 30 React Native Interview Questions
 What is React Native? React Native is a JavaScript framework that allows developers to build mobile applications for iOS and Android platforms using a single codebase.
 What are the advantages of using React Native? React Native provides a number of advantages, including faster development times, cost savings, easier maintenance, and better performance.
 What are the differences between React and React Native? React is a JavaScript library for building web applications, while React Native is a framework for building mobile applications. The two are similar in terms of syntax and concepts, but React Native has additional components and features specific to mobile development.
@@ -17424,20 +17367,7 @@ Compress images and other graphic elements
 Use Proguard to minimize app size and strip parts of our bytecode along with its dependencies
 These are some of the top React Native questions and answers that you can encounter in your technical interview. It is not advisable to cram these questions, but it’s important that you practice and understand them so that you can answer them in any given circumstance.
 
-Top 100 React Native Interview Questions and Answers
-By Baahubali YEPL -2024-12-30
-react-native-interview-questions
-Join Telegram	Join Telegram
-Join Whatsapp Groups	Join Whatsapp
-Top React Native Interview Questions and Answers: React Native Interview Questions and Answers can be a valuable resource for individuals seeking to enhance their knowledge and skills in this popular mobile application framework.
 
-Whether you are a seasoned developer or just starting out, the Top 100 React Native Interview Questions and Answers can provide valuable insights into the latest trends, best practices, and technical details related to React Native. In addition, if you are preparing for a React Native technical interview or seeking opportunities as a fresher, you may find the Latest React Native Interview Questions, and React Native Interview Questions for Freshers particularly helpful.
-
-Table of Contents
-React Native Technical Interview Questions
-To help you in your preparation for your upcoming React Native interview, we have compiled a comprehensive list of The Top 100 React Native Interview Questions and Answers, including the latest React Native interview questions. This resource will help you to be fully equipped to handle any questions that may arise during your interview and increase your chances of success.
-
-Top 100 React Native Interview Questions and Answers
 1. What is React Native, and how does it differ from React?
 
 React Native is a mobile app development framework that allows developers to create mobile apps for iOS and Android using the same codebase. It is based on React, which is a JavaScript library for building user interfaces. The main difference between React and React Native is that React is used for building web applications, while React Native is used for building mobile applications.
@@ -17796,7 +17726,6 @@ Support for updates	Yes, overwrites previous value	Yes, overwrites previous valu
 Persistence	Yes	Yes
 Platform-specific	Yes, compatible with both mobile and web platforms	Yes, compatible with web platforms only
  
-
 64. Can you explain the concept of “render props” in React Native?
 
 Render props are a pattern in React Native that allows you to pass a function as a prop to a component, which the component then calls to render its content. This allows you to reuse component logic across multiple components, while still allowing each component to customize its rendering. The render prop function typically accepts arguments that the component can use to customize the rendering.
@@ -18051,10 +17980,6 @@ State abstraction and manipulation
 Props manipulation
 If you’re looking to evaluate your understanding of React Native or prepare for technical interviews, the Top 100 React Native Interview Questions and Answers on freshersnow.com are an excellent resource. These questions cover a wide range of topics and can help you deepen your knowledge of React Native.
 
-Топ-10 вопросов и ответов на собеседовании для разработчика React Native
-April 30, 2026
-Исследовать другие роли
-Копилот собеседования
 1. Что такое React Native и как он отличается от ReactJS?
 React Native – это фреймворк для создания мобильных приложений с использованием JavaScript и React. Он позволяет разрабатывать кроссплатформенные приложения, которые компилируются в нативный код для iOS и Android, что означает, что пользователи получают полноценный нативный опыт, а не веб-приложение в обертке. Я ценю его за способность переиспользовать большую часть кодовой базы между платформами, что значительно ускоряет разработку и снижает затраты.
 
@@ -18532,14 +18457,6 @@ Employers ask this to gauge your learning mindset and risk management. In your a
 
 Answer Example: "I follow core team updates, changelogs, and reputable blogs, and I run small spikes in a sandbox repo to measure impact. For major changes like Hermes or the New Architecture, I test startup time, memory, and crash rates on target devices. I adopt incrementally behind flags and plan rollbacks, communicating expected benefits and risks."
 
-Top 50 React Native interview questions
- 17 Jan 2025 - Shyam Mohan
-
-Top 50 React Native interview questions
-
-Here’s the complete list of 50 React Native interview questions and answers, from basic to advanced, with hands-on coding examples where needed.
-
-🟢 Basic React Native Questions and Answers
 1. What is React Native?
 React Native is a framework developed by Facebook for building cross-platform mobile applications using JavaScript and React. Unlike traditional hybrid frameworks, React Native renders native UI components, resulting in better performance and user experience.
 
@@ -18552,35 +18469,20 @@ Navigation	Uses react-navigation	Uses react-router
 Rendering	Uses Native UI Components	Uses Virtual DOM
 3. How do you set up a React Native project?
 Using React Native CLI:
-1
-2
-3
-4
-5
+
 npx react-native init MyApp
 cd MyApp
 npx react-native start
 npx react-native run-android  # OR
 npx react-native run-ios
 Using Expo:
-1
-2
-3
+
 npx create-expo-app MyApp
 cd MyApp
 npm start
 4. How does React Native render components?
 React Native renders using native components instead of HTML elements.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 import { View, Text } from 'react-native';
 
 export default function App() {
@@ -18597,20 +18499,7 @@ Image (for displaying images)
 ScrollView (for scrolling views)
 FlatList (for optimized lists)
 6. How do you handle styling in React Native?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
@@ -18626,18 +18515,7 @@ const styles = StyleSheet.create({
   text: { color: 'blue', fontSize: 20 }
 });
 7. How do you handle user input with TextInput?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 import { useState } from 'react';
 import { View, TextInput, Text } from 'react-native';
 
@@ -18653,31 +18531,15 @@ export default function App() {
 8. What is useState and how do you use it in React Native?
 useState is a React Hook that allows functional components to have state.
 
-1
 const [count, setCount] = useState(0);
 9. How do you implement a button in React Native?
-1
-2
-3
+
 import { Button, Alert } from 'react-native';
 
 <Button title="Click Me" onPress={() => Alert.alert('Hello!')} />
 10. What is FlatList and how do you use it?
 FlatList is an optimized component for rendering large lists efficiently.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 import { FlatList, Text } from 'react-native';
 
 const data = [{ id: '1', name: 'Apple' }, { id: '2', name: 'Banana' }];
@@ -18697,30 +18559,12 @@ Here are the answers to the React Native interview questions (11-20):
 Navigation in React Native is typically handled using the react-navigation library.
 
 Installation:
-1
-2
-3
+
 npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-vector-icons
 npm install @react-navigation/stack
 Example using Stack Navigation:
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
@@ -18746,7 +18590,7 @@ Drawer Navigation: @react-navigation/drawer
 Redux is a state management library that helps manage global state in React Native applications.
 
 Installation:
-1
+
 npm install redux react-redux @reduxjs/toolkit
 Steps to use Redux in React Native:
 Create a Redux Store (store.js) ```javascript import { configureStore, createSlice } from ‘@reduxjs/toolkit’;
@@ -18756,20 +18600,6 @@ export const { increment, decrement } = counterSlice.actions;
 
 export const store = configureStore({ reducer: { counter: counterSlice.reducer } });
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 2. **Provide the Store to the App** (`App.js`)
 ```javascript
 import { Provider } from 'react-redux';
@@ -18788,35 +18618,7 @@ export default function CounterScreen() { const count = useSelector(state => sta
 
 return ( Count: {count} <Button title="+" onPress={() => dispatch(increment())} /> <Button title="-" onPress={() => dispatch(decrement())} /> ); }
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
 ---
-
 ## **13. How do you fetch API data in React Native?**  
 React Native uses the `fetch` API or `axios` for network requests.
 
@@ -18842,12 +18644,9 @@ export default function App() {
   );
 }
 Using Axios
-1
+
 npm install axios
-1
-2
-3
-4
+
 import axios from 'axios';
 
 axios.get('https://jsonplaceholder.typicode.com/posts/1')
@@ -18856,21 +18655,11 @@ axios.get('https://jsonplaceholder.typicode.com/posts/1')
 You can use Firebase Cloud Messaging (FCM) with react-native-firebase.
 
 Installation:
-1
-2
+
 npm install @react-native-firebase/app
 npm install @react-native-firebase/messaging
 Request Permissions & Receive Notifications
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 import messaging from '@react-native-firebase/messaging';
 
 async function requestUserPermission() {
@@ -18891,15 +18680,12 @@ Reduced bundle size
 How to Enable Hermes in React Native?
 Open android/app/build.gradle
 Set enableHermes: true
-1
-2
-3
+
 project.ext.react = [
  enableHermes: true
 ]
 Rebuild the app:
-1
-2
+
 cd android && ./gradlew clean && cd ..
 npx react-native run-android
 16. What are Native Modules in React Native?
@@ -18907,23 +18693,6 @@ Native Modules allow integrating native code (Java/Kotlin, Swift/Objective-C) wi
 
 Example: Writing a Native Module for Android
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 package com.example;
 
 import android.widget.Toast;
@@ -18943,8 +18712,6 @@ public class ToastModule extends ReactContextBaseJavaModule {
 }
 Use in React Native:
 
-1
-2
 import { NativeModules } from 'react-native';
 NativeModules.ToastExample.showToast('Hello from Native!');
 17. How do you debug React Native applications?
@@ -18962,15 +18729,7 @@ Use Hermes Engine for better JavaScript execution
 Code splitting helps load components dynamically instead of bundling everything at once.
 
 Using Dynamic Imports
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 
 function App() {
@@ -18985,16 +18744,9 @@ Unit Testing (jest, react-test-renderer)
 Integration Testing (react-native-testing-library)
 End-to-End (E2E) Testing (detox)
 Example: Unit Testing with Jest
-1
+
 npm install --save-dev jest react-test-renderer
-1
-2
-3
-4
-5
-6
-7
-8
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import App from '../App';
@@ -19011,15 +18763,7 @@ Type	Lifecycle method (Class components)	Hook (Functional components)
 When it runs	After the first render	Runs after every render (can be controlled)
 Cleanup	Uses componentWillUnmount	Uses cleanup function in useEffect
 Example: Using componentDidMount in a Class Component
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 class Example extends React.Component {
   componentDidMount() {
     console.log("Component Mounted");
@@ -19030,15 +18774,7 @@ class Example extends React.Component {
   }
 }
 Example: Using useEffect in a Functional Component
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 import { useEffect } from 'react';
 
 const Example = () => {
@@ -19052,28 +18788,10 @@ const Example = () => {
 Deep linking allows users to open specific screens in your app via a URL.
 
 Step 1: Install React Navigation and Linking
-1
+
 npm install @react-navigation/native react-native-screens react-native-gesture-handler react-native-reanimated react-native-safe-area-context react-native-vector-icons
 Step 2: Configure Deep Linking
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+
 import { NavigationContainer } from '@react-navigation/native';
 
 const linking = {
@@ -19097,23 +18815,7 @@ export default function App() {
 Use react-native-appearance or React Native’s useColorScheme() hook.
 
 Example Using useColorScheme
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+
 18
 import { useColorScheme, View, Text, StyleSheet } from 'react-native';
 
@@ -19147,26 +18849,17 @@ JS thread executes JavaScript code
 Native thread runs platform-specific code
 The bridge transfers data between them asynchronously
 Example: Calling Native Module
-1
-2
+
 import { NativeModules } from 'react-native';
 NativeModules.ToastExample.showToast('Hello from Native!');
 26. What is Gesture Handler in React Native, and how do you use it?
 react-native-gesture-handler is an improved gesture system for handling touch events.
 
 Installation
-1
+
 npm install react-native-gesture-handler
 Example: Swipe Gesture
-1
-2
-3
-4
-5
-6
-7
-8
-9
+
 import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 
 const App = () => (
@@ -19183,18 +18876,9 @@ AsyncStorage (For simple key-value storage)
 react-native-mmkv (Faster alternative)
 SQLite (For structured storage)
 Example: Using AsyncStorage
-1
+
 npm install @react-native-async-storage/async-storage
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const storeData = async () => {
@@ -19213,22 +18897,7 @@ Lottie (For complex animations)
 Custom hooks allow you to reuse logic across components.
 
 Example: Custom Hook for Fetching Data
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
+
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
@@ -19246,22 +18915,15 @@ const useFetch = (url) => {
 
 export default useFetch;
 Usage:
-1
+
 const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/posts/1');
 30. How do you handle background tasks in React Native?
 Use react-native-background-fetch or react-native-worker-threads.
 
 Example: Running a Background Task
-1
+
 npm install react-native-background-fetch
-1
-2
-3
-4
-5
-6
-7
-8
+
 import BackgroundFetch from 'react-native-background-fetch';
 
 const MyTask = async () => {
@@ -19281,18 +18943,7 @@ Zustand – Minimalist, fast, easy to use.
 Jotai – Simplified Recoil alternative.
 React Query – Manages async state and caching.
 Example: Using React Context API
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 import React, { createContext, useState, useContext } from 'react';
 
 const MyContext = createContext();
@@ -19312,25 +18963,7 @@ Step 1: Install Firebase
 1
 npm install @react-native-firebase/auth
 Step 2: Initialize Firebase Auth
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+
 import auth from '@react-native-firebase/auth';
 
 // Sign up user
@@ -19354,14 +18987,7 @@ const signIn = async (email, password) => {
 Lazy loading loads components only when needed, reducing initial load time.
 
 Example: Using React.lazy()
-1
-2
-3
-4
-5
-6
-7
-8
+
 import React, { Suspense, lazy } from 'react';
 const LazyComponent = lazy(() => import('./LazyComponent'));
 
@@ -19372,12 +18998,8 @@ const App = () => (
 );
 For images, use react-native-fast-image:
 
-1
 npm install react-native-fast-image
-1
-2
-3
-4
+
 import FastImage from 'react-native-fast-image';
 
 <FastImage source={{ uri: 'https://example.com/image.jpg' }} style={{ width: 100, height: 100 }} />;
@@ -19400,17 +19022,7 @@ Use getItemLayout for faster scrolling.
 Avoid inline functions in renderItem.
 Use PureComponent or React.memo for performance.
 Example: Optimized FlatList
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 import { FlatList, Text } from 'react-native';
 
 const renderItem = ({ item }) => <Text>{item.title}</Text>;
@@ -19427,16 +19039,6 @@ VirtualizedLists only render items on the screen, improving performance.
 
 Example: Using VirtualizedList
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 import { VirtualizedList, Text } from 'react-native';
 
 const getItem = (data, index) => data[index];
@@ -19454,13 +19056,6 @@ Lazy-load images using FastImage
 Optimize network requests using CDN
 Example using react-native-fast-image
 
-1
-2
-3
-4
-5
-6
-7
 import FastImage from 'react-native-fast-image';
 
 <FastImage
@@ -19474,16 +19069,12 @@ Purpose	Memoizes values	Memoizes functions
 Returns	Cached result	Cached function
 Use Case	Expensive calculations	Prevents unnecessary re-renders
 Example: useMemo
-1
-2
-3
+
 import { useMemo } from 'react';
 
 const sum = useMemo(() => expensiveFunction(a, b), [a, b]);
 Example: useCallback
-1
-2
-3
+
 import { useCallback } from 'react';
 
 const handleClick = useCallback(() => console.log("Clicked"), []);
@@ -19494,12 +19085,7 @@ Installation
 1
 npm install react-native-biometrics
 Example:
-1
-2
-3
-4
-5
-6
+
 import ReactNativeBiometrics from 'react-native-biometrics';
 
 const rnBiometrics = new ReactNativeBiometrics();
@@ -19510,21 +19096,7 @@ rnBiometrics.simplePrompt({ promptMessage: 'Confirm fingerprint' })
 Dynamic theming allows users to switch between themes (light/dark).
 
 Step 1: Create Theme Context
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+
 import React, { createContext, useState, useContext } from 'react';
 
 const ThemeContext = createContext();
@@ -19541,17 +19113,7 @@ export const ThemeProvider = ({ children }) => {
 
 export const useTheme = () => useContext(ThemeContext);
 Step 2: Use Theme in Components
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 import { useTheme } from './ThemeContext';
 
 const ThemedComponent = () => {
@@ -19567,31 +19129,16 @@ const ThemedComponent = () => {
 react-native-reanimated provides better performance than the default Animated API.
 
 Installation
-1
+
 npm install react-native-reanimated
 Enable Reanimated in babel.config.js:
 
-1
-2
-3
-4
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: ['react-native-reanimated/plugin'],
 };
 Example: Simple Fade Animation
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+
 import { View } from 'react-native';
 import Animated, { useSharedValue, withTiming, useAnimatedStyle } from 'react-native-reanimated';
 
@@ -19613,27 +19160,7 @@ Zustand – Minimalist and fast.
 Jotai – Simplified Recoil alternative.
 React Query – Async state management, great for APIs.
 Example: Using Redux
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
+
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
 
@@ -19681,24 +19208,6 @@ Bundle assets efficiently using Metro bundler.
 45. How do you implement infinite scrolling in React Native?
 Use FlatList with onEndReached.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 import { FlatList, Text } from 'react-native';
 import { useState } from 'react';
 
@@ -19721,7 +19230,7 @@ const App = () => {
 React Native provides built-in accessibility features:
 
 Accessible Components:
-1
+
 <Text accessibilityLabel="Submit Button">Submit</Text>
 VoiceOver & TalkBack Support
 Keyboard Navigation (accessible prop)
@@ -19729,24 +19238,9 @@ Dynamic Font Scaling (allowFontScaling)
 47. How do you implement real-time chat using WebSockets in React Native?
 Use react-native-websocket.
 
-1
 npm install react-native-websocket
 Example WebSocket Client
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+
 import { useEffect, useState } from 'react';
 import { Text, Button } from 'react-native';
 
@@ -19768,19 +19262,9 @@ const Chat = () => {
 49. How do you implement offline mode in React Native applications?
 Use AsyncStorage or react-native-mmkv for local data storage.
 
-1
 npm install @react-native-async-storage/async-storage
 Example: Storing Data Locally
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const storeData = async (key, value) => {
@@ -19793,15 +19277,10 @@ const getData = async (key) => {
 };
 50. How do you integrate GraphQL with React Native using Apollo?
 Step 1: Install Apollo Client
-1
+
 npm install @apollo/client graphql
 Step 2: Create Apollo Client
-1
-2
-3
-4
-5
-6
+
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 const client = new ApolloClient({
@@ -19809,23 +19288,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 Step 3: Query Data
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+
 import { useQuery } from '@apollo/client';
 import { Text } from 'react-native';
 
@@ -19844,15 +19307,6 @@ const Users = () => {
   return loading ? <Text>Loading...</Text> : <Text>{data.users[0].name}</Text>;
 };
 
-
-25 самых популярных вопросов на собеседовании React Native (с ответами)
-Пройдите следующее собеседование в качестве разработчика React
-
-
-Изображение автора
-React - один из самых популярных фреймворков интерфейса JavaScript на рынке сегодня, и его популярность продолжает расти. По оценкам, эту структуру JavaScript используют более 8000 компаний, в том числе такие известные компании, как Facebook, Instagram, Airbnb и другие. Многие компании ищут талантливых разработчиков React.
-
-Чтобы получить одну из этих ролей, необходимо пройти собеседование по React Native. Чтобы помочь вам подготовиться, мы собрали 25 самых популярных вопросов к собеседованию по React Native. Это руководство включает вопросы и ответы. Давайте начнем!
 
 1. Чем React Native отличается от ReactJS?
 React Native - это фреймворк JavaScript, разработанный Facebook для удовлетворения растущих потребностей разработки мобильных приложений. Он с открытым исходным кодом и основан на JavaScript. Он был разработан для создания собственных мобильных приложений с повторно используемыми компонентами. Он использует множество компонентов ReactJS, но реализует их нативным способом на разных устройствах. Он вызывает собственные API рендеринга в Objective-C (для iOS) и Java (для Android).
@@ -20142,14 +19596,7 @@ AppRegistry.registerComponent("ComponentDemo", ( ) => App);
 
 yarn add react-navigation
 npm install react-navigation
-Поздравляю! Вы добрались до конца. Подготовка к собеседованию на React займет время, так что проявите терпение. Будьте готовы к практике, практике, практике. Еще многое предстоит узнать о React. Лучшие способы продолжить обучение:
 
-Практика на практике
-Улучшение навыков собеседования
-Освоение лучших практик React
-
-
-Top 10 React Native Interview Questions for 2023
 What is the purpose of a Native module in React Native, and how do you create one?
 How does React Native handle layout and styling compared to CSS?
 How do you debug a React Native application?
@@ -20167,8 +19614,6 @@ When did React Native Initial release?	26th March 2015
 What is the latest version of React Native?	React Native 0.70 was released on Sep 5, 2022
 React Native is Created By	Facebook
 What language does React Native use?	It is based on React js, which is written in JavaScript.
-Most Frequently Asked React Native Interview Questions
-Here in this article, we will be listing frequently asked React Native Interview Questions and Answers with the belief that they will be helpful for you to gain higher marks. Also, to let you know that this article has been written under the guidance of industry professionals and covered all the current competencies.
 
 Q1. How Different is React-native from ReactJS?
 Answer
@@ -20317,47 +19762,25 @@ Create a simple "Hello World" app by using modifying App.js file of FirstApp. Sa
 
 import React, {Component} from 'react';  
 
-
-
 import {Platform, StyleSheet, Text, View} from 'react-native';  
-
-
 
 type Props = {};  
 
-
-
 export default class App extends Component<Props> {  
-
-
 
 render() {  
 
-
-
 return (  
-
-
 
       <View>  
 
-
-
         <Text>Hello WorldText>  
-
-
 
      View>  
 
-
-
     );  
 
-
-
   }  
-
-
 
 }  
 
@@ -20722,10 +20145,6 @@ function getData(data){
 
 (nameofYourComponent) and you can use your data as props.
 
-
-
- 
-
 Q52. What does StyleSheet.create do?What are refs in React Native?
 Answer
 The Stylesheet.create function in React Native is used for the following:
@@ -20949,6 +20368,7 @@ Answer
 Hot Reloading	Live Reloading
 It only refreshes the files that were changed without losing the state of the app.	It reloads or refreshes the entire app when a file changes.
 It displays the code changes according to new code changes without restarting the app from start.	It requires the restart of the app in case of any change in the code
+
 Q70. What is fabric in react native?
 Answer
 Fabric is the latest architecture of React Native which has been proposed by the company to develop the close and better user experience of mobile apps than the native apps.
@@ -21115,29 +20535,6 @@ import MyModule from './MyModule';
 MyModule.myMethod('Hello, Native module!');
 
 
-97 React Native interview questions to hire great developers
-
-Siddhartha Gunti
-Siddhartha Gunti
-September 09, 2024
-
-
-Interviewing React Native developers requires a keen understanding of the framework's nuances and its applicability in cross-platform mobile development. A structured interview process, with a good list of questions, ensures that you're evaluating candidates on the skills outlined in the skills required for mobile developer blog post.
-
-This blog post provides a question bank categorized by developer level, ranging from basic to expert React Native concepts. It also includes a set of React Native MCQs to help you assess candidates' depth of knowledge.
-
-By using these questions, you can confidently identify candidates who can build performant and maintainable React Native applications. To streamline your screening process further, consider using a React Native online test to filter candidates before the interview stage.
-
-Table of contents
-Basic React Native interview questions
-Intermediate React Native interview questions
-Advanced React Native interview questions
-Expert React Native interview questions
-React Native MCQ
-Which React Native skills should you evaluate during the interview phase?
-3 Tips for Maximizing Your React Native Interviews
-Hire React Native Developers with Confidence: Skill Assessments and Interviews
-Download React Native interview questions template in multiple formats
 Basic React Native interview questions
 1. What is React Native and why do developers use it?
 React Native is a JavaScript framework for building native mobile applications. It allows developers to use their existing JavaScript knowledge and React concepts to create apps that run on both iOS and Android platforms from a single codebase.
@@ -21366,6 +20763,8 @@ Create translation files: Define JSON files for each language (e.g., locales/en.
 Initialize i18next: Configure i18next with the language files and detection options in i18n.js.
 Wrap the app: Use the I18nextProvider to make the i18n instance available.
 Use translations: Access translations in components using useTranslation hook or the Trans component.
+
+    
 Intermediate React Native interview questions
 1. How do you optimize React Native app performance, especially when dealing with large lists or complex UI?
 To optimize React Native app performance, especially with large lists or complex UIs, several strategies can be employed. For lists, use FlatList or SectionList which efficiently render items on demand, minimizing initial load time. Key optimizations include:
@@ -21711,6 +21110,7 @@ import Config from 'react-native-config';
 
 const apiUrl = Config.API_URL;
 Different build scripts or CI/CD pipelines would be configured to load the appropriate .env file based on the target environment. This ensures that each environment uses the correct settings without modifying the core codebase. Additionally, platform-specific configurations (e.g., iOS schemes/configurations, Android build types) can be used to further customize builds for each environment.
+
 
 Expert React Native interview questions
 1. How would you optimize a React Native app's startup time?
