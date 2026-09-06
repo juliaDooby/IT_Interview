@@ -6791,6 +6791,27 @@ An approach to separate the configuration of an application and make them only a
 Q29. What are the steps needed to insert data in MySQL using Spring Boot?</h3>
 The steps needed to insert data into a MySQL database using Spring Boot are:</p>
 Add MySQL dependency to the pom.xml file.</li>
+Configure the database connection in the application.properties file.</li>
+Create an entity class level that represents the table in the memory database.</li>
+Create a repository interface that extends the CrudRepository interface.</li>
+Inject the repository interface into the service or controller class.</li>
+Use the repository's save() method to insert data into the table.</li>
+For example:</strong></p>
+/ Step 1: Add MySQL dependency to pom.xml file</p>
+/ Step 2: Configure the database connection in the application.properties file</p>
+/ Step 3: Create an entity class level that represents the table in the database</p>
+/ Step 5: Inject the repository into the service or controller class level.</p>
+/ Step 6:Use the repository's save() method to insert data into the table</p>
+Q30. Tell me the steps involved in the creation of a login page in spring boot.</h3>
+The steps needed in the creation of a login page in spring boot are:</p>
+STEP1-Add Spring Security dependency to the pom.xml file.</p>
+STEP2-Create a security configuration class that extends WebSecurityConfigurerAdapter.</p>
+STEP3-Override the configure(HttpSecurity http) method to configure the environment property security settings.</p>
+STEP4-Create a login page with a form that collects the username and password.</p>
+STEP5-Configure the login page in the configure(HttpSecurity http) method.</p>
+STEP6-Create a controller class level that handles the login form submission.</p>
+STEP7-Configure the logout URL and redirect in the configure(HttpSecurity http) method.</p>
+For example:
 ****************************************************************************
 	****************************************************************************
 	****************************************************************************
@@ -6806,33 +6827,6 @@ Add MySQL dependency to the pom.xml file.</li>
 	****************************************************************************
 	****************************************************************************
 	****************************************************************************	
-<li>Configure the database connection in the application.properties file.</li>
-<li>Create an entity class level that represents the table in the memory database.</li>
-<li>Create a repository interface that extends the CrudRepository interface.</li>
-<li>Inject the repository interface into the service or controller class.</li>
-<li>Use the repository's save() method to insert data into the table.</li>
-</ul>
-<p style="text-align: justify;"><strong>For example:</strong></p>
-<p style="text-align: justify;"><strong>// Step 1:</strong> Add MySQL dependency to pom.xml file</p>
-<pre>&lt;dependency&gt;<br /><br />&lt;groupId&gt;mysql&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;</pre>
-<p style="text-align: justify;"><strong>// Step 2:</strong> Configure the database connection in the application.properties file</p>
-<pre>spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase<br /><br />spring.datasource.username=root<br /><br />spring.datasource.password=mypassword</pre>
-<p style="text-align: justify;"><strong>// Step 3: </strong>Create an entity class level that represents the table in the database</p>
-<pre>@Entity<br /><br />@Table(name = "users")<br /><br />public class User {<br /><br />@Id<br /><br />@GeneratedValue(strategy = GenerationType.IDENTITY)<br /><br />private Long id;<br /><br />private String name;<br /><br />private String email;<br /><br />// getters and setters<br /><br />}<br /><br /><strong>// Step 4:</strong> Create a repository interface that extends the CrudRepository public interface<br /><br />public interface UserRepository extends CrudRepository&lt;User, Long&gt; {<br /><br />}</pre>
-<p style="text-align: justify;"><strong>// Step 5:</strong> Inject the repository into the service or controller class level.</p>
-<pre>@Service<br /><br />public class UserService {<br /><br />@Autowired<br /><br />private UserRepository userRepository;</pre>
-<p style="text-align: justify;"><strong>// Step 6:</strong> Use the repository's save() method to insert data into the table</p>
-<pre>public void addUser(User user) {<br /><br />userRepository.save(user);<br /><br />}<br /><br />}</pre>
-<h3 style="text-align: justify;">Q30. Tell me the steps involved in the creation of a login page in spring boot.</h3>
-<p style="text-align: justify;">The steps needed in the creation of a login page in spring boot are:</p>
-<p style="text-align: justify;"><strong>STEP1-</strong> Add Spring Security dependency to the pom.xml file.</p>
-<p style="text-align: justify;"><strong>STEP2-</strong> Create a security configuration class that extends WebSecurityConfigurerAdapter.</p>
-<p style="text-align: justify;"><strong>STEP3-</strong> Override the configure(HttpSecurity http) method to configure the environment property security settings.</p>
-<p style="text-align: justify;"><strong>STEP4-</strong> Create a login page with a form that collects the username and password.</p>
-<p style="text-align: justify;"><strong>STEP5-</strong> Configure the login page in the configure(HttpSecurity http) method.</p>
-<p style="text-align: justify;"><strong>STEP6-</strong> Create a controller class level that handles the login form submission.</p>
-<p style="text-align: justify;"><strong>STEP7-</strong> Configure the logout URL and redirect in the configure(HttpSecurity http) method.</p>
-<p style="text-align: justify;"><strong>For example:</strong></p>
 <p style="text-align: justify;">// <strong>Step 1: </strong>Add Spring Security dependency to the pom.xml file</p>
 <pre>&lt;dependency&gt;<br /><br />&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /><br />&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;<br /><br />&lt;/dependency&gt;</pre>
 <p style="text-align: justify;">// <strong>Step 2: </strong>Create a security configuration class that extends WebSecurityConfigurerAdapter</p>
@@ -6965,78 +6959,7 @@ Add MySQL dependency to the pom.xml file.</li>
 <li>Health</li>
 <li>Flyway</li>
 <li>Caches</li>
-</ul>
-<h3 style="text-align: justify;">Q50. Explain Spring Initializr.</h3>
-<p style="text-align: justify;">Spring Initializr is a powerful web-based application tool that simplifies the process of setting up Spring Boot projects by generating a project with just what you need to start quickly and offering an extensible API for creating JVM-based projects. It is helpful when we are starting to build a project from scratch. Spring Initializr offers web-based application endpoints for third-party clients.</p>
-<h3 style="text-align: justify;">Q51. Explain the default package.</h3>
-<p style="text-align: justify;">In Spring Boot, a class file that does not have any package declaration is considered to be a default package.</p>
-<h3 style="text-align: justify;">Q52. What do you mean by Spring security?</h3>
-<p style="text-align: justify;">Spring Security is a powerful and customizable authentication and access-control framework that provides comprehensive support for both authentication and authorization. Spring Security provides comprehensive protection against attacks, which makes it an ideal choice for securing Spring-based applications.</p>
-<h3 style="text-align: justify;">Q53. Describe an IOC container.</h3>
-<p style="text-align: justify;">The Spring IoC container is a Spring implementation using the IoC pattern paired with DI (Dependency Injection). It is a software container that offers an application environment that may be customised for the creation, initialization, caching, and management of pluggable objects, also known as beans. The application's components are managed by the container using Dependency Injection (DI). There are two types of IoC containers in Spring: <strong>BeanFactory and ApplicationContext.</strong></p>
-<h3 style="text-align: justify;">Q54. Do you know about microservices in Spring Boot?</h3>
-<p style="text-align: justify;">A modern approach to software development is known as "microservices" in spring boot that entails the delivery of application code in manageable chunks, each free of other components with non-functional features. Microservices are made up of a number of tiny, autonomous services that communicate with one another with minimal configuration. A well-liked framework for creating microservices applications is Spring Boot with minimal configuration.</p>
-<h3 style="text-align: justify;">Q55. Give an example for the @PUT rest endpoint and @DELETE rest endpoint.</h3>
-<p style="text-align: justify;"><strong>@PUT rest endpoint</strong></p>
-<pre>@PutMapping("/users/{id}")<br />public ResponseEntity&lt;User&gt; updateUser(@PathVariable(value = "id") Long userId, @Valid @RequestBody User userDetails) throws ResourceNotFoundException {<br />User user = userRepository.findById(userId)<br />.orElseThrow(() -&gt; new ResourceNotFoundException("User not found on :: " + userId));<br />user.setEmail(userDetails.getEmail());<br />user.setLastName(userDetails.getLastName());<br />user.setFirstName(userDetails.getFirstName());<br />final User updatedUser = userRepository.save(user);<br />return ResponseEntity.ok(updatedUser);<br />}</pre>
-<p style="text-align: justify;"><strong>@DELETE rest endpoint</strong></p>
-<pre>@DeleteMapping("/users/{id}")<br />public Map&lt;String, Boolean&gt; deleteUser(@PathVariable(value = "id") Long userId) throws ResourceNotFoundException {<br />User user = userRepository.findById(userId)<br />.orElseThrow(() -&gt; new ResourceNotFoundException("User not found on :: " + userId));<br />userRepository.delete(user);<br />Map&lt;String, Boolean&gt; response = new HashMap&lt;&gt;();<br />response.put("deleted", Boolean.TRUE);<br />return response;<br />}</pre>
-<h3 style="text-align: justify;">Q56. How can logging levels be used with Spring Boot?</h3>
-<p style="text-align: justify;">Some ways to use log level in spring boot are:</p>
-<p style="text-align: justify;"><strong>1. By using Spring Boot Apache Commons Logging for all internal logging:</strong></p>
-<p style="text-align: justify;">Spring Boot's default configurations provide support for the use of the programming language Java Util Logging, Log4j2, and Logback, and using these, we can configure the console logging as well as file logging. We can specify the log file path and name using the logging.path and logging.file properties, respectively.</p>
-<p style="text-align: justify;"><strong>2. By using Spring Boot to define logging groups or log level or internal logging in our Spring Environment:</strong></p>
-<p style="text-align: justify;">For example, adding logging.group.tomcat=org.apache.catalina, org.apache.coyote, org.apache.tomcat in the tomcat group.</p>
-<h3 style="text-align: justify;">Q57. Explain the term Spring Cloud.</h3>
-<p style="text-align: justify;">Spring Cloud framework offers tools and services in order to make it simple for developers to create and deploy distributed systems that implement common patterns. The base of Spring Cloud is Spring Boot, which offers a wide range of functionality to assist you in managing and monitoring your application.</p>
-<h3 style="text-align: justify;">Q58. Explain @componentScan in the class file.</h3>
-<p style="text-align: justify;">We use the @ComponentScan annotation to specify the base packages that Spring should scan for components or beans that are annotated with stereotype annotations. By default, Spring scans the current package and all of its sub-base packages. We can specify the packages to be scanned by using the <strong>@ComponentScan annotation</strong> along with the <strong>@Configuration annotation</strong> and providing the <strong>basePackages</strong> argument. It specifies base packages by using the <strong>basePackages </strong>attributes.</p>
-<h3 style="text-align: justify;">Q59. Name the key components of the spring boot.</h3>
-<p style="text-align: justify;">Spring boot has the following key components:</p>
-<ul style="text-align: justify;">
-<li>Spring Boot Starters</li>
-<li>Spring Boot AutoConfigurator</li>
-<li>Spring Boot CLI</li>
-<li>Spring Boot Actuator</li>
-</ul>
-<p style="text-align: justify;">These key components help to simplify the development of Spring applications by reducing the number of manual configurations required and providing production-grade features to monitor and manage the application.</p>
-<h3 style="text-align: justify;">Q60. Can you explain command-line properties?</h3>
-<p style="text-align: justify;">Command-line properties are a way to pass configuration values to a Spring Boot application when it starts up. Command-line arguments are transformed into properties by Spring Boot and added as environment variables. Command-line properties are given priority over all other sources of property information.</p>
-<h3 style="text-align: justify;">Q61. Will you be able to run a Spring boot project by using spring boot CLI?</h3>
-<p style="text-align: justify;">To execute the Spring Boot project using Spring Boot CLI, we can follow these steps:</p>
-<ol style="text-align: justify;">
-<li>Install the Spring Boot CLI.</li>
-<li>Run the CLI.</li>
-<li>Initialize a new project.</li>
-<li>After initializing the new project, run the Spring Boot application by using any of the following commands:<strong> java -jar command: "java -jar target/myapplication-0.0.1-SNAPSHOT.jar",</strong></li>
-</ol>
-<ul style="text-align: justify;">
-<li><strong>Using Maven command: "mvn spring-boot:run"</strong>.</li>
-<li><strong>Using Gradle command: "gradle bootRun".</strong></li>
-</ul>
-<h3 style="text-align: justify;">Q62. What is the minimum version of JAVA that you will need to run the Spring Boot?</h3>
-<p style="text-align: justify;">The minimum version of JAVA needed to run the Spring Boot is JAVA 8.</p>
-<h3 style="text-align: justify;">Q63. Tell me how JPA and Hibernate vary from one another.</h3>
-<p style="text-align: justify;"><strong>JPA</strong></p>
-<ul style="text-align: justify;">
-<li>JPA stands for Java Persistence API.</li>
-<li>JPA is only a specification, which means that there is no implementation.</li>
-<li>JPA is just an interface that must be followed.</li>
-<li>The query language of JPA is Java Persistence query language.</li>
-</ul>
-<p style="text-align: justify;"><strong>Hibernate</strong></p>
-<ul style="text-align: justify;">
-<li>Hibernate is an ORM tool used for saving the state of the Java object in the database.</li>
-<li>It is an implementation of the JPA specification.</li>
-<li>Hibernate is a framework that supports JPA.</li>
-<li>Hibernate supports a Java Virtual Machine (JVM).</li>
-<li>The query language of Hibernate is Hibernate Query language.</li>
-</ul>
-<h3 style="text-align: justify;"><strong>Q64. Name the key HTTP method that can be used in Spring Boot rest services.</strong></h3>
-<p style="text-align: justify;">The key HTTP method that can be used in spring boot services are:</p>
-<ul style="text-align: justify;">
-<li><strong>GET:</strong> With this key HTTP method, it reads a resource.</li>
-
+																											  
 ****************************************************************************
 	****************************************************************************
 	****************************************************************************
@@ -7047,6 +6970,63 @@ Add MySQL dependency to the pom.xml file.</li>
 	****************************************************************************
 	****************************************************************************
 	****************************************************************************
+Q50. Explain Spring Initializr.</h3>
+Spring Initializr is a powerful web-based application tool that simplifies the process of setting up Spring Boot projects by generating a project with just what you need to start quickly and offering an extensible API for creating JVM-based projects. It is helpful when we are starting to build a project from scratch. Spring Initializr offers web-based application endpoints for third-party clients.</p>
+Q51. Explain the default package.</h3>
+In Spring Boot, a class file that does not have any package declaration is considered to be a default package.</p>
+Q52. What do you mean by Spring security?</h3>
+Spring Security is a powerful and customizable authentication and access-control framework that provides comprehensive support for both authentication and authorization. Spring Security provides comprehensive protection against attacks, which makes it an ideal choice for securing Spring-based applications.</p>
+Q53. Describe an IOC container.</h3>
+The Spring IoC container is a Spring implementation using the IoC pattern paired with DI (Dependency Injection). It is a software container that offers an application environment that may be customised for the creation, initialization, caching, and management of pluggable objects, also known as beans. The application's components are managed by the container using Dependency Injection (DI). There are two types of IoC containers in Spring: <strong>BeanFactory and ApplicationContext.</strong></p>
+Q54. Do you know about microservices in Spring Boot?</h3>
+A modern approach to software development is known as "microservices" in spring boot that entails the delivery of application code in manageable chunks, each free of other components with non-functional features. Microservices are made up of a number of tiny, autonomous services that communicate with one another with minimal configuration. A well-liked framework for creating microservices applications is Spring Boot with minimal configuration.</p>
+Q55. Give an example for the @PUT rest endpoint and @DELETE rest endpoint.</h3>
+@PUT rest endpoint</strong></p>
+@DELETE rest endpoint</strong></p>
+Q56. How can logging levels be used with Spring Boot?</h3>
+Some ways to use log level in spring boot are:</p>
+1. By using Spring Boot Apache Commons Logging for all internal logging:</strong></p>
+Spring Boot's default configurations provide support for the use of the programming language Java Util Logging, Log4j2, and Logback, and using these, we can configure the console logging as well as file logging. We can specify the log file path and name using the logging.path and logging.file properties, respectively.</p>
+2. By using Spring Boot to define logging groups or log level or internal logging in our Spring Environment:</strong></p>
+For example, adding logging.group.tomcat=org.apache.catalina, org.apache.coyote, org.apache.tomcat in the tomcat group.</p>
+Q57. Explain the term Spring Cloud.</h3>
+Spring Cloud framework offers tools and services in order to make it simple for developers to create and deploy distributed systems that implement common patterns. The base of Spring Cloud is Spring Boot, which offers a wide range of functionality to assist you in managing and monitoring your application.</p>
+Q58. Explain @componentScan in the class file.</h3>
+We use the @ComponentScan annotation to specify the base packages that Spring should scan for components or beans that are annotated with stereotype annotations. By default, Spring scans the current package and all of its sub-base packages. We can specify the packages to be scanned by using the <strong>@ComponentScan annotation</strong> along with the <strong>@Configuration annotation</strong> and providing the <strong>basePackages</strong> argument. It specifies base packages by using the <strong>basePackages </strong>attributes.</p>
+Q59. Name the key components of the spring boot.</h3>
+Spring boot has the following key components:</p>
+Spring Boot Starters</li>
+Spring Boot AutoConfigurator</li>
+Spring Boot CLI</li>
+Spring Boot Actuator</li>
+hese key components help to simplify the development of Spring applications by reducing the number of manual configurations required and providing production-grade features to monitor and manage the application.</p>
+Q60. Can you explain command-line properties?</h3>
+Command-line properties are a way to pass configuration values to a Spring Boot application when it starts up. Command-line arguments are transformed into properties by Spring Boot and added as environment variables. Command-line properties are given priority over all other sources of property information.</p>
+Q61. Will you be able to run a Spring boot project by using spring boot CLI?</h3>
+To execute the Spring Boot project using Spring Boot CLI, we can follow these steps:</p>
+Install the Spring Boot CLI.</li>
+Run the CLI.</li>
+Initialize a new project.</li>
+After initializing the new project, run the Spring Boot application by using any of the following commands:<strong> java -jar command: "java -jar target/myapplication-0.0.1-SNAPSHOT.jar",</strong></li>
+Using Maven command: "mvn spring-boot:run"</strong>.</li>
+Using Gradle command: "gradle bootRun".</strong></li>
+Q62. What is the minimum version of JAVA that you will need to run the Spring Boot?</h3>
+The minimum version of JAVA needed to run the Spring Boot is JAVA 8.</p>
+Q63. Tell me how JPA and Hibernate vary from one another.</h3>
+JPA</strong></p>
+JPA stands for Java Persistence API.</li>
+JPA is only a specification, which means that there is no implementation.</li>
+JPA is just an interface that must be followed.</li>
+The query language of JPA is Java Persistence query language.</li>
+Hibernate</strong></p>
+Hibernate is an ORM tool used for saving the state of the Java object in the database.</li>
+It is an implementation of the JPA specification.</li>
+Hibernate is a framework that supports JPA.</li>
+Hibernate supports a Java Virtual Machine (JVM).</li>
+The query language of Hibernate is Hibernate Query language.</li>
+Q64. Name the key HTTP method that can be used in Spring Boot rest services.</strong></h3>
+The key HTTP method that can be used in spring boot services are:</p>
+With this key HTTP method, it reads a resource.</li>
 We can update an existing resource with PUT key HTTP method.</li>
 With this key HTTP method, it helps in the creation of a new resource.</li>
 The DELETE method deletes the resource.</li>
