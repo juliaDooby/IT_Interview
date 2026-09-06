@@ -1,37 +1,7 @@
-
-Java67
-Learn Java and Programming through articles, code examples, and tutorials for developers of all levels.
-
-Homecore javaspringonline coursesthreadjava 8codingsqlbooksoopinterviewcertificationfree resourcesbest
-Top 15 Spring Data JPA Interview Questions with Answers
-Hello guys, If you are preparing for a Spring developer interview and looking for some Spring Data JPA Interview questions then you have come to the right place. Earlier, I have shared frequently asked interview questions on Spring Boot, Spring Cloud, Microservices, and Spring MVC in general, and in this article, I will share frequently asked Spring Data JPA Interview Questions with Answers for Java developers. Spring is one of the most popular and widely used frameworks. Spring Data JPA is an important part of the framework as it makes working with JPA or any JPA implementation like Hibernate easier.  
-
-Spring Data JPA not only reduces your data access code but also provides you with tons of query flexibility. It also boosts and enhances your data models and gives you enterprise-level features. In short, it's essential for the Java stack. 
-
-Questions related to Spring data JPA are always asked in the Spring interview and that's why a Spring developer should always be familiar with Spring Data JPA. One of the common doubts among Java developers is about Spring Data and Hibernate and many of them don't understand the difference between these two essential frameworks. 
-
-While Hibernate is a full-fledged JPA implementation, Spring Data JPA provides an additional layer of abstraction or a better API to work with JPA. It's not a JPA implementation, which means you still need to use a JPA implementation like Hibernate but Spring data features like finder methods, and JPQL makes working with database much easier. 
-
-As mentioned above, the Spring framework is widely used, so there are many job opportunities for Spring developers. 
-
-Along with other important concepts, it is also necessary to know Spring data JPA to clean Java web developer interviews where Spring is used. If you are new to Spring Data or spring framework, I highly recommend you to join a comprehensive course like Spring Framework 6: Beginner to Guru course on Udemy which covers both Spring Data JPA as well as core Spring concepts. 
-
-
-
-
-
-20 Spring Data JPA Interview Questions with Answers
-In this article, we will list the top 15 questions related to Spring JPA and then there are a few more Spring Data questions for you to practice and research on your own. You can use these questions to revise key Spring Data concepts as well as prepare for both telephonic and face-to-face round of Spring developer interviews. 
-
-
 1. What is JPA?
 Answer: JPA stands for Java Persistence API. It is a Java specification used to persist data between the relational database and Java objects. It acts as a bridge between object-oriented domain models and relational databases.  Since interaction with database from Java application is very common, JPA was created to standardize this interaction. 
-
 There are many popular JPA implementations available in the Java world like Hibernate. You can further see these Spring Data JPA using Hibernate course to learn more about how to use Hibernate with Spring Data JPA in Java application. 
-
 Spring Data JPA Interview Questions with answers
-
-
 
 2. What are some advantages of using JPA?
 Answer: Here are some advantages of Java Persistence API or JPA:
@@ -43,21 +13,15 @@ JPA providers help merge applications.
 3. What is the Spring data repository? (answer)
 Answer: Spring data repository is a very important feature of JPA. It helps in reducing a lot of boilerplate code. Moreover, it decreases the chance of errors significantly. This is also the key abstraction that is provided using the Repository interface. It takes the domain class to manage as well as the id type of the domain class as Type Arguments. 
 
-
 4. What is the naming convention for finder methods in the Spring data repository interface?
 Answer:  This is another key feature of Spring Data JPA API which makes writing query method really easy. The finder method should use a special keyword, i.e. "find", followed by the name of the variable. For example, findByLastName().
-
 
 5. Why is an interface not a class?
 Answer: Interface is not a class because it does not contain concrete methods. It can contain only abstract methods.
 
-
 6. Can we perform actual tasks like access, persist, and manage data with JPA?
 Answer: No, we can't because JPA is only a Java specification.
  
-
-
-
 7. How can we create a custom repository in Spring data JPA?
 Answer: To create a custom repository, we have to extend it to any of the following interfaces:
 a) Repository
@@ -66,10 +30,8 @@ c) CrudRepository
 d) JpaRepository
 e) QueryByExampleRepository
 
-
 8. What is PagingAndSortingRepository? (answer)
 Answer: The PagingAndSortingRepository provides methods that are used to retrieve entities using pagination and sorting. It extends the CrudRepository interface.
-
 
 9. What is @Query used for? (example)
 Answer:  Spring Data API provides many ways to define SQL query which can be executed and Query annotations one of them. The @Query is an annotation that is used to execute both JPQL and native SQL queries.
@@ -87,29 +49,20 @@ You can further see Spring Framework: Spring Data JPA course on Pluralsight to l
 
 spring data interview questions for java developers
 
-
-
-
 11. Can you name the different types of entity mapping.
 Answer: one-to-one mapping, one-to-many mapping, many-to-one mapping, and many-to-many mapping.
 
 12. Define entity and name the different properties of an entity.
 Answer: An entity is a group of states bundled (or associated) together in a single unit. It behaves like an object. It also becomes a major constituent of the object-oriented paradigm.
 
-
 13. What is PlatformTransactionMangaer?
 Answer: PlatformTransactionMangaer is an interface that extends TransactionManager. It is the central interface in Spring's transaction infrastructure.
-
 
 14. How can we enable Spring Data JPA features?
 Answer: To enable Spring data JPA features, first we have to define a configuration class and then, we can use @EnableJpaRepositoties annotation with it. This annotation will enable the features.
 
-
-
 15. Differentiate between findById() and getOne().
 Answer: The findById() is available in CrudRepository while getOne() is available in JpaRepository. The findById() returns null if record does not exist while the getOne() will throw an exception called EntityNotFoundException. 
-
-
 And, here are some Spring Data JPA Practice questions for you, I haven't provided the answer to these questions but you can find them by doing some research. You can post the correct answers to these spring Data JPA question in the comments and I will pick the right one to put it here with your name.
 
 16. Are you able to participate in a given transaction in Spring while working with JPA?
@@ -122,709 +75,20 @@ And, here are some Spring Data JPA Practice questions for you, I haven't provide
 
 These practice questions are also good for Spring professional certification, one of the most in-demand certifications for Java developers. 
 
-That's all about the frequently asked Spring Data JPA Interview Questions and Answers. So these were the top 15 questions related to Spring Data JPA. Generally, the Spring data JPA interview questions are more or less related to the above questions listed in this article but it's not guaranteed that you will get these questions in a real interview. Instead of mugging these questions I strongly suggest you use them to learn the essential Spring Data JPA concepts better. 
-
-
- Other Java and Spring articles you may like
-10 Things Java Developer should learn (goals)
-5 courses to learn Spring Boot and Spring Cloud ( courses)
-20 Spring Boot Interview Questions for Java Programmers (questions)
-Top 5 Books and Courses to learn RESTful Web Service (books)
-10 Tips to become a better Java developer (tips)
-5 Spring Boot Annotations for full-stack Java developers (tutorial)
-5 Courses to learn Spring Cloud and Microservices (courses)
-5 Spring Boot Features Every Java Developer Should Know (features)
-5 Course to Master Spring Boot online (courses)
-10 Courses to learn Spring Security with OAuth 2 (courses)
-3 ways to change Tomcat port in Spring Boot (tutorial)
-10 Spring MVC annotations Java developers should learn (annotations)
-10 Tools Java Developers use in their day-to-day life (tools)
-Top 5 Courses to learn Microservices in Java? (courses)
-10 Advanced Spring Boot Courses for Java Programmers (courses)
-3 Best Practices Java Programmers can learn from Spring (best practices)
-
-Thanks for reading this article so far. If you found these Spring Data JPA Interview questions and answers useful then please share them with your colleagues and friends. If you have any questions or feedback then please drop a note. 
-
-P. S. - If you want to learn about Spring Data and JPA then I highly recommend you to join Spring Data JPA using Hibernate course by Bharat Thippireddy on Udemy. It's one of the best courses to learn Spring Data JPA for Java developers. 
-
-Posted by javin paul  
-Email This
-BlogThis!
-Share to X
-Share to Facebook
-Share to Pinterest
-Labels: interview questions, spring data jpa, spring framework
-5 comments:
-
-Jeevan Manik ReddySeptember 21, 2021 at 5:22 AM
- In spring data JPA have two entities
- One is a super set and other two are subset
- E.g.,. a = b + c
- When a is created automatically b and c should be created
- If b is present already should update
- Error while updating saying duplicate entry exception
-
-Reply
-
-AnonymousOctober 30, 2021 at 8:05 AM
-Answer: Spring data repository is a very important feature of JPA
-Seems it's wrong. It's feature of spring data.
-
-Reply
-Replies
-
-javin paulNovember 4, 2021 at 9:58 PM
-Yes, you are correct Spring Data repository is feature of Spring Data JPA not the JPA itself. Thanks for pointing out, I will correct it.
-
-Reply
-
-AnonymousAugust 20, 2022 at 3:07 AM
-How to write jpa repository custom quary
-
-Reply
-
-AnonymousAugust 24, 2022 at 3:40 AM
-Can anyone please answer following spring data JAP interview questions for me
-
 Explain JPA structure.
 Which annotation/ configuration is required to enable the native SQL in JPA?
-
 Explain Entity in JPA and all annotations used to create Entity class. How can we define a composite key in the Entity class?
-
 JPA — Annotation used for a composite attribute?
-
 What arguments can pass in transactional arguments?
-
 JPA — How to handle the Parent and child relationship?
-
 Which annotation is used to handle the joins between multiple tables at the Entity class level?
-
 How do handle unidirectional join and bidirectional join at the Entity level?
-
-Reply
-
-
-Feel free to comment, ask questions if you have any doubt.
-
-Newer PostOlder PostHome
-Subscribe to: Post Comments (Atom)
-Recommended Courses
-best python courses
-best java courses
-system design courses
-best spring courses
-best hibernate courses
-best design pattern courses
-best Linux courses
-best JavaScript courses
-best data structure and algorithms courses
-Best Multithreading Courses
-best MERN stack courses
-Best Git courses
-Best Microservice Courses
-Best DevOps Courses
-best MEAN stack Courses
-free Java courses
-free DSA courses
-free sql courses
-free Linux courses
-Free Docker courses
-free JUnit courses
-Spring Hibernate Tutorials
-Spring - REST books
-Spring - Security Courses
-Spring MVC Courses
-Spring - Certification Mock Exams
-Spring - Certification Books
-Spring - Certification Guides
-Spring - BeanCreationException
-Spring - Caching
-Spring MVC - DispatcherServlet
-Spring Certification - Eligibility
-Spring - Books
-Spring - ContextLoaderListener
-Spring MVC - Interview Questions
-Hibernate - First or Second Level Cache
-Hibernate - Books
-Hibernate - Interview Questions
-Hibernate - Save vs Persist
-Struts 1 vs Struts 2
-Struts - Books
-Struts - Action Class
-Interview Questions List
-interview questions - java basic
-interview questions - java tough
-interview questions - java thread
-interview questions - coding
-interview questions - linux
-interview questions - web service
-interview questions - java advanced
-interview questions - software design
-interview questions - java inheritance
-interview questions - OOP
-interview questions - android
-interview questions - SQL
-interview questions - java tricky
-interview questions - REST
-interview questions - array
-interview questions - servlet jsp
-interview questions - EJB
-interview questions - java collection
-interview questions - design pattern
-interview questions - spring
-interview questions - hibernate
-interview questions - core java
-interview questions - arraylist
-interview questions - java enum
-interview questions - java swing
-interview questions - java common
-interview questions - support
-interview questions - technical
-interview questions - java main
-interview questions - hashmap
-interview questions - java date
-Categories
-.NET
-101 blockchains
-abstract class
-ActiveMQ
-Affiliate marketing
-After Effects
-Agentic AI
-Agile
-AI
-AI Engineering
-AI Tools
-Algomonster
-Amazon Prime Day
-Amazon Web Service
-android
-Angular
-Anonymous class
-Ansible
-apache camel
-Apache kafka
-Apache spark
-app development
-array
-ArrayList
-Artificial Intelligence
-automation
-aws
-aws certification
-Azure Certifications
-backend development
-bash
-basics
-beginners
-best of java67
-best practices
-Big Data
-binary tree
-bit manipulation
-black friday deals
-Blockchain
-BlockingDeque
-books
-Bootstrap
-BugfreeAI
-business analysis
-ByteByteGo
-C programming
-C++
-Caching
-Career
-Certification
-certifications
-ChatGPT
-Chef
-cloud certification
-Cloud Computing
-Code Example
-Code Review
-codecademy
-Codemia
-CodeRabbit
-coding
-coding exercise
-Coding Interview
-Coding Problems
-Comparator
-computer science
-Computer Vision
-concurrency tutorial
-ConcurrentHashMap
-core java
-core java interview question answer
-course review
-Coursera
-courses
-crontab
-CSS
-Cyber Monday
-Cyber Security
-Data Analysis
-data science
-data structure and algorithm
-Data Visualization
-database
-Database Sharding
-datacamp
-date and time
-debugging
-deep learning
-default methods
-design pattern
-Designgurus
-development
-DevOps
-DevSecOps
-Distributed Systems
-Django
-docker
-double
-Drawing
-DSA
-dyanmic programming
-dynamic Programming
-eBooks
-Eclipse
-Educative
-EJB
-enum
-equals
-error and exception
-Ethical hacking
-Excel
-exception
-Exponent
-expressjs
-FAANG
-Figma
-Firebase
-flatmap
-float
-Flutter
-free resources
-freelancing
-Frontend Masters
-fun
-Fundamental
-fundamentals
-Game development
-garbage collection
-general
-Generative AI
-Generics
-gifts
-git and github
-golang
-Google Cloud Certification
-Google Cloud Platform
-Gradle
-grails
-graph
-graphic design
-GraphQL
-grep
-Groovy
-gRPC
-Hadoop
-HashMap
-HashSet
-haskell
-Hibernate
-Hibernate interview Question
-homework
-HTML
-HTTP
-HttpClient
-Hugging Face
-i
-Information Security
-interface
-Internet of Things (IoT)
-interview
-interview questions
-IT Certification
-J2EE
-Jackson
-java
-Java 5 tutorial
-java 7
-Java 8
-java 9
-java basics
-Java Certification
-Java collection tutorial
-java concurrency tutorial
-java design pattern
-Java Enum
-Java file tutorials
-Java Functional Programming
-Java Installation Guide
-Java Interview Question
-Java interview questions
-Java IO interview question
-java io tutorial
-java map tutorials
-java modules
-Java Multithreading Tutorial
-Java networking tutorial
-Java Operator tutorial
-Java programming Tutorial
-Java String tutorial
-Java7
-JavaScript
-JavaScript Interview Question
-JavaScript Tutorial
-JDBC
-JEE Interview Questions
-Jenkins
-JMS
-JPA
-jQuery
-JSON
-JSP
-JSP Interview Question
-JSTL
-JUnit
-JVM
-Keras
-keystore
-Kotlin
-kubernetes
-lambda expression
-LangChain
-Laraval
-learning
-Leetcode
-linked list
-Linux
-LLM
-LLM Engineering
-Log4j
-logging
-Lombok
-LSAT
-Mac OS X
-machine learning
-Mathematics
-Matlab
-Maven
-MERN stack
-Messaging
-Microservices
-Microsoft
-Microsoft Azure Platform
-Microsoft Excel
-Microsoft Power BI
-Mockito
-MongoDB
-MysQL
-MySQL tutorial example
-nested class
-neural network
-Next.js
-NFT
-NLP
-Node.js
-nslookup
-object oriented analysis and design
-object oriented programming
-OCAJP
-OCMJEA
-OCPJP
-offers
-online resources
-Oracle
-Perl
-personal development
-Photoshop
-PHP
-pluralsight
-PostgerSQL
-postman
-Powerpoint
-practice tests
-programmers
-programming
-programming problems
-Project Management
-projects
-Prompt Engineering
-Proxy
-Python
-Pytorch
-Quarkus
-questions
-Queue
-R programming
-RabbitMQ
-RAG
-React
-React Hooks
-react native
-Reading list
-Record
-Recursion
-Redux
-regular expression example
-REST
-REST tutorials
-Review
-RoadMap
-Ruby
-Salesforce
-SAT
-Scala
-Scala Interview Questions
-Scalability
-Scanner
-scripting
-Scrum
-Scrum Master Certification
-Selenium
-SEO
-Serialization
-Servlet
-Servlet Interview Questions
-Set
-shell scripting
-skills
-smart contracts
-Snowflake SnowPro Certification
-soft link
-soft skills
-Software Architect
-software architecture
-Software Design
-software development
-software engineering
-Solaris
-Solidity
-Sorting Algorithm
-Spark
-spring boot
-Spring Certification
-spring cloud
-spring data jpa
-spring framework
-spring interview question
-spring mvc
-spring security
-sql
-SQL interview Question
-SQL Joins
-SQL SERVER
-ssl
-Static
-Statistics
-Stream
-String
-Struts
-Swift
-swing
-switch case
-system design
-System Design Interview
-System Design Interview Questions
-Tableau
-Tailwind
-tech
-TensorFlow
-ternary operator
-testing
-thread
-thread interview questions
-Time series analysis
-Tips
-tomcat
-tools
-tree
-TreeMap
-troubleshooting
-TypeScript
-Udacity
-Udemy
-UI and UX Design
-UML
-unit testing
-Unity 3D
-Unix
-unreal engine
-Video Editing
-Vuejs
-web design
-web development
-web scrapping
-Web Service
-Whizlabs
-Wix
-xml
-YAML
-ZTM Academy
-Best AI and LLM Engineering Resources
-Best AI and LLM Engineering Resources
-AI Nanodegree — Udacity
-Associate AI Engineer for Developers — DataCamp
-Full Stack AI Engineering — Towards AI Academy
-Master LLM Engineering & AI Agents: Build 14 Projects — Udemy
-Generative AI Engineering with LLMs Specialization — Coursera
-Associate AI Engineer for Data Scientists — DataCamp
-Best System Design and Coding Interview Resources
-System Design & Interview Prep
-ByteByteGo Lifetime Plan (50% OFF)
-Codemia Lifetime Plan (60% OFF)
-Exponent Annual Plan (70% OFF)
-Educative Premium Plus (55% OFF)
-DesignGurus All Course Bundle (55% OFF)
-Everything Java Interview Bundle (50% OFF)
-101 Blockchain (50% OFF)
-Vlad Mihalcea's High Performance Bundle (50% OFF)
-Javarevisited Substack Subscription (50% OFF)
-Head First Software Architecture (Book)
-Best Resources to Learn Agentic AI in 2026
-Best Resources to Learn Agentic AI
-AI Engineer Agentic Track: The Complete Agent & MCP Course Udemy
-IBM RAG and Agentic AI Professional Certificate — Coursera
-Build AI Agents with CrewAI — ZTM Academy
-Designing Agentic Systems with LangChain — DataCamp
-Build an AI Agent from Scratch — Frontend Masters
-Agentic AI Nanodegree — Udacity
-Agentic AI Engineering By Paul Iustzin at Towards AI
-Search This Blog
-Best Online Learning Resources and Platforms
-Coursera Plus (40% OFF)
-Datacamp Sale (50% OFF)
-AlgoMonster Lifetime Plan (50% OFF)
-Udemy Sale (80% OFF)
-Baeldung (33% OFF)
-LabEx Sale (50% OFF)
-Codecademy Sale (60% OFF)
-Udacity Sale (50% OFF)
-ZTM Academy Sale (66% OFF)
-Frontend Masters Deal
-Whizlabs Deal (70% OFF)
-Javarevisited
-I Read 20+ Coding Books : Here Are My Top 10 Recommendations - 20.07.2026 - javin paul
-Book Review - Is Head First Java Still The BEST Book to Learn Java in 2026? - 08.07.2026 - javin paul
-I Tried AlgoMonster for Coding Interviews and It's Awesome - 03.07.2026 - javin paul
-I've Read 30+ Python Books: Here Are My Top 8 Recommendations - 02.07.2026 - javin paul
-I Tried 20+ Free Spring Boot Courses - Here Are My Top 10 Recommendations - 02.07.2026 - javin paul
-Spring Interview Prep List
-Spring Boot Interview questions
-Spring Cloud Interview questions
-Spring MVC Interview Questions
-Microservices Interview questions
-10 Spring MVC annotations
-Spring Boot Courses
-Spring Framework Courses
-Subscribe for Discounts and Updates
-Your email address
-Follow
-Interview Questions
-core java interview questions
-SQL interview questions
-data structure interview question
-coding interview questions
-java collection interview questions
-java design pattern interview questions
-thread interview questions
-hibernate interview questions
-j2ee interview questions
-Spring Interview Questions
-object oriented programming questions
-Followers
-
-Blog Archive
-►  2026 (122)
-►  2025 (548)
-►  2024 (187)
-▼  2023 (377)
-►  December (1)
-►  November (2)
-►  October (4)
-►  September (154)
-▼  August (12)
-Top 15 Spring Data JPA Interview Questions with An...
-Top 18 Spring Cloud Interview Questions for Java D...
-Difference between JpaREpository, CrudREpository, ...
-How to convert ByteBuffer to String in Java [Example]
-How to Convert Byte array to String in Java with E...
-2 Ways to Print Custom String Value of Java Enum
-How to compare String Objects in Java [Example Tut...
-How to parse String to Date in Java using JodaTime...
-How to create a Microservice in Java using gRPC? E...
-How to Create a Microservice using Quarkus in Java...
-What is Service Discovery in Microservices? Client...
-How to log messages to File and Console in Java us...
-►  July (23)
-►  May (9)
-►  April (113)
-►  March (15)
-►  February (35)
-►  January (9)
-►  2022 (163)
-►  2021 (104)
-►  2020 (10)
-►  2019 (9)
-►  2018 (9)
-►  2017 (4)
-►  2015 (8)
-►  2012 (1)
-Privacy
-Privacy Policy
-Terms & Conditions
-Popular Posts
-How to Print Pyramid Pattern in Java? Program Example
-Top 10 Frequently asked SQL Query Interview Questions Answers
-How to Find the Largest and Smallest of Three Numbers in Java? [Solved]
-'javac' is not recognized as an internal or external command [Solution]
-OCPJP 11, OCP 17, OCP 21, or OCAJP 8? Which Java Certification should You Take in 2025?
-How to fix "class, interface, or enum expected" error in Java? Example
-How to fix "illegal start of expression" error in Java? Example
-How to Read, Write XLSX File in Java - Apache POI Example
-Top 10 Java Programs, Assignments, and Coding Interview Questions Answers
-Top 10 Tricky Java interview questions and Answers
-Subscribe
-Get new posts by email:
-Enter your email
-Subscribe
-Copyright by Soma Sharma 2021 - 2025. Powered by Blogger.
-
-Все потоки
-Курсы для карьерного ростаКурсы для карьерного роста
-99+
-
-
-
-
-PqDn
-7 мар 2018 в 15:13
-Spring: вопросы к собеседованию
-7 мин
-367K
-Java
-*
-Перевод
-Автор оригинала: Ranga Karanam
-image
-Этот небольшой список вопросов даст вам понимание самых важных концепций Spring, а так же поможет подготовится к собеседованию
-
 
 1 Для чего нужен Component Scan?
 Если вы понимаете как работает Component Scan, то вы понимаете Spring
-
-
 Первый шаг для описания Spring Beans это добавление аннотации — @Component, или @Service, или @Repository.
-
-
 Однако, Spring ничего не знает об этих бинах, если он не знает где искать их. То, что скажет Spring где искать эти бины и называется Component Scan. В @ComponentScan вы указываете пакеты, которые должны сканироваться.
-
-
 Spring будет искать бины не только в пакетах для сканирования, но и в их подпакетах.
-
 
 2 Как вы добавите Component Scan в Spring Boot?
 @SpringBootApplication
@@ -840,25 +104,18 @@ public class Application {
 
 Всё будет в порядке, ваш код целиком находится в указанном пакете или его подпакетах.
 
-
 Однако, если необходимый вам компонент находится в другом пакете, вы должны использовать дополнительно аннотацию @ComponentScan, где перечислите все дополнительные пакеты для сканирования
-
 
 3 В чём отличие между @Component и @ComponentScan?
 @Component и @ComponentScan предназначены для разных целей
-
-
 @Component помечает класс в качестве кандидата для создания Spring бина.
 @ComponentScan указывает где Spring искать классы, помеченные аннотацией @Component или его производной
-
 
 4 Для чего используется аннотация @Bean?
 В классах конфигурации Spring, @Bean используется для определения компонентов с кастомной логикой.
 
-
 5 В чём разница между @Bean и @Component?
 @Bean используется в конфигурационных классах Spring. Он используется для непосредственного создания бина.
-
 
 @Component используется со всеми классами, которыми должен управлять Spring. Когда Spring видит класс с @Component, Spring определяет этот класс как кандидата для создания bean.
 
@@ -866,68 +123,48 @@ public class Application {
 6 В чём разница между @Component, @Service и @Repository аннотациями?
 Все они определяют бины Spring. Однако между ними всё же есть разница.
 
-
 @Component — универсальный компонент
 @Repository — компонент, который предназначен для хранения, извлечения и поиска. Как правило, используется для работы с базами данных.
 @Service — фасад для некоторой бизнес логики
 
-
 Пользовательские аннотации, производные от @Component, могут добавлять специальную логику в бинах.
 
-
 Например, бины, получившиеся при помощи @Repository, дополнительно имеют обработку для JDBC Exception
-
 
 7 Можем ли мы использовать @Component вместо @Service для бизнес логики?
 Да. конечно.
 
-
 Если @Component является универсальным стереотипом для любого Spring компонента, то @Service в настоящее время является его псевдонимом. Однако, в официальной документации Spring рекомендуется использовать именно @Service для бизнес логики. Вполне возможно, что в будущих версиях фреймворка, для данного стереотипа добавится дополнительная семантика, и его бины станут обладать дополнительной логикой.
-
 
 8 В чем различие между web.xml и the Spring Context - servlet.xml?
 web.xml — Метаданные и конфигурация любого веб-приложения, совместимого с Java EE. Java EE стандарт для веб-приложений.
 servlet.xml — файл конфигурации, специфичный для Spring Framework.
 
-
 9 Что предпочитаете использовать для конфигурации Spring - xml или аннотирование?
 Предпочитаю аннотации, если кодовая база хорошо описывается такими элементами, как @Service, @Component, @Autowired
-
-
 Однако когда дело доходит до конфигурации, у меня нет каких-либо предпочтений. Я бы оставил этот вопрос команде.
-
 
 10 Можем ли мы применить @Autowired с не сеттерами и не конструкторами методами?
 Да, конечно.
 
-
 @Autowired может использоваться вместе с конструкторами, сеттерами или любым другими методами. Когда Spring находит @Autowired на методе, Spring автоматически вызовет этот метод, после создания экземпляра бина. В качестве аргументов, будут подобраны подходящие объекты из контекста Spring.
-
 
 11 В чем разница между Сквозной Функциональностью (Cross Cutting Concerns) и АОП (аспектно оринтированное программирование)?
 Сквозная Функциональность — функциональность, которая может потребоваться вам на нескольких различных уровнях — логирование, управление производительностью, безопасность и т.д.
 АОП — один из подходов к реализации данной проблемы
 
-
 12 В чем разница между IOC (Inversion of Control) и Application Context?
 IOC — инверсия управления. Вместо ручного внедрения зависимостей, фреймворк забирает ответственность за это.
 ApplicationContext — реализация IOC спрингом.
-
-
 Bean Factory — это базовая версия IOC контейнера
-
-
 Application Context также включает дополнительные функции, которые обычно нужны для разработки корпоративных приложений
-
 
 13 В чем разница между classPathXmlApplicationContext и annotationConfigApplicationContext?
 classPathXmlApplicationContext — если вы хотите инициализировать контекст Spring при помощи xml
 annotationConfigApplicationContext — если вы хотите инициализировать контекст Spring при помощи конфигурационного класса java
 
-
 14 Почему возвращаемое значение при применении аспекта @Around может потеряться? Назовите причины.
 Метод, помеченный аннотацией @Around, должен возвращать значение, которое он (метод) получил из joinpoint.proceed()
-
 
 @Around("trackTimeAnnotation()")
 public Object around(ProceedingJoinPoint joinPoint) throws Throwable{
@@ -941,28 +178,19 @@ public Object around(ProceedingJoinPoint joinPoint) throws Throwable{
 
 15 Как вы решаете какой бин инжектить, если у вас несколько подходящих бинов. Расскажите о @Primary и @Qualifier?
 Если есть бин, который вы предпочитаете большую часть времени по сравнению с другими, то используйте @Primary, и используйте @Qualifier для нестандартных сценариев.
-
-
 Если все бины имеют одинаковый приоритет, мы всегда будем использовать @Qualifier
-
-
 Если бин надо выбрать во время исполнения программы, то эти аннотации вам не подойдут. Вам надо в конфигурационном классе создать метод, пометить его аннотацией @Bean, и вернуть им требуемый бин.
-
 
 16 Что нового в Spring Framework 5.0?
 На мой взгляд это Functional Web Framework, Kotlin и и поддержка реактивного программирования.
 
-
 17 Сравните Application Context, IOC Container, vs Web Container и EJB Container. Нужен ли Web Container для запуска Spring Boot приложения?
 Web Container и EJB Containers являются частью приложения/веб-сервера, таких как Tomcat, Websphere, Weblogic. Они добавляют свою дополнительную функциональность к ним. Java EE определяет контракт для веб-приложений, эти контейнеры являются реализацией этих контрактов.
 
-
 Spring контейнер может являться частью любого приложения, которое вы делаете на java. Spring может работать внутри веб-контейнера, ejb контейнера или даже без них.
-
 
 18 Как мы можем выбрать подходящий бин при помощи application.properties?
 Рассмотрим пример:
-
 
 interface GreetingService {
     public String sayHello();
@@ -990,9 +218,7 @@ class MockGreetingService implements GreetingService {
 Тогда в application.properties добавим свойство
 application.greeting: real
 
-
 Воспользуемся данным решением:
-
 
 @RestController
 public class WelcomeController {
@@ -1004,17 +230,12 @@ public class WelcomeController {
 19 Какая минимальная версия Java поддерживается в Spring Boot 2 и Spring 5?
 Spring 5.0 и Spring Boot 2.0 поддерживают Java 8 и более поздней версии.
 
-
 20 В чём разница между @Controller и @RestController?
 @RestController = @Controller + @ResponseBody
-
-
 @RestController превращает помеченный класс в Spring-бин. Этот бин для конвертации входящих/исходящих данных использует Jackson message converter. Как правило целевые данные представлены в json или xml.
-
 
 21 Почему иногда мы используем @ResponseBody, а иногда ResponseEntity?
 ResponseEntity необходим, только если мы хотим кастомизировать ответ, добавив к нему статус ответа. Во всех остальных случаях будем использовать @ResponseBody.
-
 
 @GetMapping(value=”/resource”) 
 @ResponseBody 
@@ -1035,116 +256,49 @@ return ResponseEntity.created(resource).build();
 401 — UNAUTHORIZED
 500 — SERVER ERROR
 
-
 Для @ResponseBody единственные состояния статуса это SUCCESS(200), если всё ок и SERVER ERROR(500), если произошла какая-либо ошибка.
-
-
 Допустим мы что-то создали и хотим отправить статус CREATED(201). В этом случае мы используем ResponseEntity.
-
 
 22 В чем разница между Filters, Listeners and Interceptors?
 Концептуально всё просто, фильтры сервлетов могут перехватывать только HTTPServlets. Listeners могут перехватывать специфические события. Как перехватить события которые относятся ни к тем не другим?
-
-
 Фильтры и перехватчики делают по сути одно и тоже: они перехватывают какое-то событие, и делают что-то до или после.
-
-
 Java EE использует термин Filter, Spring называет их Interceptors.
-
-
 Именно здесь AOP используется в полную силу, благодаря чему возможно перехватывание вызовов любых объектов
-
 
 23 В чем разница между ModelMap и ModelAndView?
 Model — интерфейс, ModelMap его реализация..
-
-
 ModelAndView является контейнером для пары, как ModelMap и View.
-
-
 Обычно я люблю использовать ModelAndView. Однако есть так же способ когда мы задаем необходимые атрибуты в ModelMap, и возвращаем название View обычной строкой из метода контроллера.
-
 
 24 В чем разница между model.put() и model.addAttribute()?
 Метод addAttribute отделяет нас от работы с базовой структурой hashmap. По сути addAttribute это обертка над put, где делается дополнительная проверка на null. Метод addAttribute в отличии от put возвращает modelmap.
 model.addAttribute(“attribute1”,”value1”).addAttribute(“attribute2”,”value2”);
 
-
 25 Что можете рассказать про Form Binding?
 Нам это может понадобиться, если мы, например, захотим взять некоторое значение с HTML страницы и сохранить его в БД. Для этого нам надо это значение переместить в контроллер Спринга.
-
-
 Если мы будем использовать Spring MVC form tags, Spring автоматически свяжет переменные на HTML странице с Бином Спринга.
-
-
 Если мне придется с этим работать, я обязательно буду смотреть официальную документацию Spring MVC Form Tags.
-
 
 26 Почему мы используем Hibernate Validator?
 Hibernate Validator никак не связан с БД. Это просто библиотека для валидации.
-
-
 Hibernate Validator версии 5.x является эталонной реализацией Bean Validation 1.1
-
-
 Так же если взглянуть по адресу http://beanvalidation.org/2.0, то Hibernate Validator является единственным, который сертифицирован.
-
 
 27 Где должны располагаться статические (css, js, html) ресурсы в Spring MVC приложении?
 Расположение статических ресурсов можно настроить. В документации Spring Boot рекомендуется использовать /static, или /public, или /resources, или /META-INF/resources
 
-
 28 Почему для конфиденциальных данных рекомендуется использовать POST, а не GET запросы?
 В случае GET запроса передаваемые параметры являются частью url, и все маршрутизаторы, через которые пройдет наш GET запрос, смогут их прочитать.
-
-
 В случае POST запроса передаваемые параметры являются частью тела запроса. При использовании HTTPs, тело запроса шифруется. Следовательно, использование POST запросов является более безопасным
-
 
 29 Можно ли передать в запросе один и тот же параметр несколько раз?
 Пример:
 http://localhost:8080/login?name=Ranga&name=Ravi&name=Sathish
 Да, можно принять все значения, используя массив в методе контроллера
 
-
 public String method(@RequestParam(value="name") String[] names){   
 }
-Объяснить с
 
-Хочу поблагодарить пользователя хабра jd2050, за помощь с переводом.
-
-Хотите ли вы перевод статьи http://www.springboottutorial.com/spring-boot-interview-questions
-88.1%
-да
-111
-11.9%
-нет
-15
-Проголосовали 126 пользователей. Воздержались 15 пользователей.
-Теги:java spring
-Хабы:Java
-+19
-
-558
-
-28
-
-
-20
-
-Карма
-Бабанин Максим@PqDn
-Kotlin/Java Developer
-
-Подписаться
-
-Комментарии 28
-
-
-
-
-DSolodukhin
-7 мар 2018 в 17:12
 28 Почему для конфиденциальных данных рекомендуется использовать POST, а не GET запросы?
 
 Странный ответ, учитывая, что если у нас HTTP, то и GET и POST отправляются открытым текстом, а при HTTPS у нас шифруется соединение полностью, в том числе и url.
@@ -1153,30 +307,11 @@ DSolodukhin
 
 Насколько я помню, можно в качестве аргумента использовать любую подходящую коллекцию: List, Set
 
-+3
-
-
-
-petejones83
-7 мар 2018 в 18:43
 Можно еще как минимум через запятую перечислить значения, и тогда он сам разобьет на отдельные значения и положит в коллекцию.
 
-0
-
-
-
-webkumo
-7 мар 2018 в 20:40
 Странный ответ, учитывая, что если у нас HTTP, то и GET и POST отправляются открытым текстом, а при HTTPS у нас шифруется соединение полностью, в том числе и url.
 Теоретически можно из истории гет-параметры вытащить можно (и при xss есть какие-то шансы), в то время как post-параметры вытащить скриптом не удастся.
 
-
-+2
-
-
-
-venom280
-8 мар 2018 в 01:55
 Дело в том, что в отличии от POST запроса содержимое GET запроса осядет на каждом узле через который этот запрос прошел. Посмотрите что Apache записывает в access.log
 "GET /api/auth/?user=user&password=password&client_id=12345 HTTP/1.1" 200 
 
@@ -1190,71 +325,21 @@ venom280
 
 Видимо автор оригинального поста поленился разобраться и надергал по паре предложений из гугла.
 
-+2
-
-
-
-venom280
-8 мар 2018 в 02:19
 И HTTPS в ответе тоже не отсюда. HTTPS защитит трафик от промежуточных узлов, но конечный сервер расшифрует все содержимое перед обработкой запроса и положит весь GET запрос в свой лог.
 
-+1
-
-
-
-Szer
-8 мар 2018 в 14:10
 Ответ ещё страннее, учитывая что GET запросом можно точно так же body передавать.
 Это считается антипаттерном и некоторые REST-клиенты (постман вроде) не разрешают body в GET, но тем не менее разница между GET и POST вкладывается человеком, а никак не протоколом.
 
-
-0
-
-
-
-1ennier
-7 мар 2018 в 17:51
 В 21 пункте опечатка: SUCCESS(500) (должно быть 200)
 
-0
-
-
-
-PqDn
-7 мар 2018 в 17:54
 Спасибо, поправил
 
-0
-
-
-
-kkorsakoff
-7 мар 2018 в 17:51
 28 неверный ответ, опасный даже. без шифрования промежуточные узлы могут прочитать и тело и адрес. С шифрованием не прочитать ни тело ни адрес запроса. А GET/POST история совсем другая. История браузера, глаза соседа, случайное копирование из адресной строки, кеширование, идемпотентность.
 
-
-0
-
-
-
-PqDn
-7 мар 2018 в 17:53
 Но там же есть и уточнение про https
 
--2
-
-
-
-kkorsakoff
-7 мар 2018 в 18:02
 в том и дело, что нарушена причинно-следственная связь. HTTPS в действительности шифрует весь обмен, включая тело и заголовки и стартовую строку. Отсутствие HTTPS делает уязвимым для перехвата весь обмен, включая тело, заголовки и стартовую строку. То есть разницу между GET и POST объяснить конфиденциальностью (имею ввиду именно перехват, как в контексте статьи) нельзя даже за уши. А существенная разница как раз в другом.
 
-0
-
-
-
-kagary06
-7 мар 2018 в 17:52
 Выскажу, возможно непопулярную мысль, но список этих вопросов (и ответов тех людей, которые их сформировали на ресурсе www.springboottutorial.com) с большей вероятностью создадут больше путаницы и недопонимания между различными группами людей, прочитав данную статью (опытные специалисты, новички, HR, начинающие PM, и др.)
 
 Первое что бросается в глаза — это сам ресурс. Он спроектирован по большей части как рекламная площадка для сайта с курсами с сайта in28minutes[com], где все статьи специально сделаны так, чтобы привлечь внимание.
@@ -1270,40 +355,16 @@ kagary06
 Считаю что данный материал явно не выполняет то, что обещает:
 Этот небольшой список вопросов даст вам понимание самых важных концепций Spring, а так же поможет подготовиться к собеседованию
 
-+2
-
-
-
-PqDn
-7 мар 2018 в 17:56
 Считаю что данный материал явно не выполняет то, что обещает:
 
 Согласен, ответы местами так себе.
 Мне вот нравится список самих вопросов.
 Для разминки на собеседовании самое то
 
-0
-
-
-
-igor_suhorukov
-8 мар 2018 в 16:29
 В том то и недостаток таких списков, что все их заучивают) И не понимают. Гораздо веселее решать практические задачки по Spring вместе с кандидатом на компьютере.
 
-0
-
-
-
-jeka_odessit
-8 мар 2018 в 00:50
 Это хорошо для начала. После этого я бы спросил например о cycle dependency что нибудь. ConditionalOn-Property/Class и т.п. с интересным примером. Как spring-managed bean получить без Autowire/Inject (ну и отличия этой пары, кстати). Потом можно попросить объяснить на примере как бы человек сделал что-то типа @EnableMyCoolFeature, по типу сприг-бут.
 
-+1
-
-
-
-Anton238
-27 сен 2019 в 15:00
 Это на какую позицию?
 
 Как spring-managed bean получить без Autowire/Inject (ну и отличия этой пары, кстати).
@@ -1312,32 +373,8 @@ Anton238
 
 Про последний вопрос — насколько это вообще применимо в контексте обычной разработки?
 
-0
-
-
-
-l4rover
-17 янв 2024 в 10:55
 Это на какую позицию?
 
-Dushnila+
-
-
-0
-
-
-
-Foppa
-15 мар 2024 в 15:59
-????
-
-
-0
-
-
-
-PloadyFree
-8 мар 2018 в 01:15
 19 Какая минимальная версия Java поддерживается в Spring Boot 2 и Spring 5?
 Spring 5.0 и Spring Boot 2.0 поддерживают Java 8 и более поздней версии.
 
@@ -1345,77 +382,25 @@ Spring 5.0 и Spring Boot 2.0 поддерживают Java 8 и более по
 
 Конечно, я не считаю, что есть хоть какой-то смысл создавать новый проект на второй версии Spring Boot и при этом использовать Java 7, но либо вопрос некорректен, либо Вы просто не удосужились найти правдивую информацию.
 
-0
-
-
-
-PqDn
-8 мар 2018 в 01:16
-У них в доках так написано
-
-0
-
-
-
-igor_suhorukov
-8 мар 2018 в 16:32
 Потому что в Spring 5.0 и Spring Boot 2.0 под капотом много где lambda и API из java 8 используются. Попробуйте собрать проект с animal sniffer и указать jdk 7 ;-)
 
-+1
-
-
-
-trix
-8 мар 2018 в 16:38
 и ни слова о главном отличии Component от Service — в случае автопрокси, компоненты не проксятся по умолчанию.
 
 считаю, еще очень важен вопрос «когда не стоит использовать спринг?»
 
-0
-
-
-
-deilux
-10 мар 2018 в 01:42
 Ответы на почти все эти вопросы гуглятся за пару минут. Потому что являются частными случаями или ответами на вопрос "а на какие кнопки нужно нажать, чтобы во фреймворке Х сделать всем известную и понятную вещь У". Подобное действительно ещё спрашивают?
 
-
-0
-
-
-
-PqDn
-11 мар 2018 в 11:05
 Нет смысла спрашивать что-то сложное, не спросив сначала легкое
 
-0
-
-
-
-deilux
-12 мар 2018 в 21:34
 Посыл моего комментария был чуть другой: зачем задавать подобные вопросы? Что они расскажут о кандидате? Вот, допустим, человек не знает отличие @RestController от Controller, почему существуют Service, Component и Repository. И что нового в Spring 5.0. Действительно ли с подобным соискателем не стоит продолжать дальнейший разговор?
 
-+1
-
-
-
-PqDn
-13 мар 2018 в 17:59
 Лично я, чтобы оставить хорошее впечатление о компании продолжил бы, но углубляться в этой тематике не стал…
 Считайте это что-то вроде устной задачи fizz buzz по спрингу.
 Если компания важно знание и в других областях, я бы советовал начинать тоже с простых вопросов.
 Если унижать собеседуемого супер сложными вопросами. То у компании появится плохая репутация
 
-0
-
-
-
-Borz
-4 окт 2019 в 07:00
 не знает отличие @RestController от Controller
 И правда, зачем это знать-то? Код ведь работает
-
 
 @RestController
 public class MyRestController {
@@ -1435,378 +420,7 @@ public class MyRestController {
     }
 }
 
-0
-
-
-
-deilux
-4 окт 2019 в 11:56
-Вы с какой целью отвечаете, похоливарить или таки конструктивно?
-
-0
-
-Вы можете оставлять комментарии только к свежим публикациям
-ЕЖЕДНЕВНЫЙ ХАБР | 16 АВГ 2026
-34K
-
-Приложения Ozon, Ozon Fresh, Ozon Travel, «Ozon Селект», Ozon Job и Ozon Seller удалили из Google Play
-15 августа 2026 года приложения Ozon, Ozon Fresh, Ozon Travel, «Ozon Селект», Ozon Job и Ozon Seller стали недоступны для поиска и скачивания в магазине Google Play.
-
-Приложения Ozon, Ozon Fresh, Ozon Travel, «Ozon Селект», Ozon Job и Ozon Seller удалили из Google Play
-Как я дал старому планшету глаза и получил панель для Home Assistant
-Обход блокировок, приватность и анонимность — это разные задачи
-Спустя 5 лет я снова пишу Всерос — часть 1
-
-2
-Ещё
-Публикации
-Лучшие за сутки
-Похожие
-
-zerglabs
-15 часов назад
-Собираем портативный синий лазер на 70 ватт за вечер
-Простой
-14 мин
-14K
-Туториал
-+82
-
-48
-49
-+49
-
-OlegSivchenko
-21 час назад
-Постоянство Хаббла. Странные признаки изменчивости тёмной энергии
-8 мин
-14K
-+21
-
-16
-5
-+5
-
-bashkirtsevich
-23 часа назад
-Разработка цифрового радиолюбительского протокола на базе OFDM. PHY-уровень
-Средний
-49 мин
-12K
-+20
-
-25
-4
-+4
-
-action52champion
-6 часов назад
-Ты не пройдешь это собеседование. Или почему тебе не нужен фидбэк
-Простой
-5 мин
-5K
-Мнение
-+18
-
-9
-3
-+3
-
-Bright_Translate
-5 часов назад
-Рискованный бизнес Nvidia
-Простой
-16 мин
-5.1K
-Аналитика
-Перевод
-+13
-
-3
-3
-+3
-
-TrexSelectel
-6 часов назад
-Пять одноплатников 2026 года: Intel Wildcat Lake, 32 ГБ памяти и высокая производительность
-6 мин
-5.3K
-+10
-
-7
-0
-
-Agito_Akira
-6 часов назад
-«Они явно что-то знали»: пророческие видеоигры из прошлого
-Простой
-5 мин
-5.2K
-Ретроспектива
-+8
-
-3
-2
-+2
-
-Andrey3343
-20 часов назад
-Как я добавил в Braille eMotion установку APK: доступный диспетчер приложений и автономный EXE
-Средний
-9 мин
-12K
-Кейс
-+7
-
-1
-0
-
-Ungated
-5 часов назад
-Бесплатные API к Claude, GPT, DeepSeek и другим моделям: 6 AI-роутеров с бесплатным доступом
-Простой
-4 мин
-5.8K
-Обзор
-+6
-
-32
-5
-+5
-
-Roman_Parabat
-5 часов назад
-Куда завел бы нас Фрэнк Герберт, если бы джихад против машин случился по-настоящему
-Простой
-12 мин
-4.6K
-+4
-
-6
-4
-+4
-62 статьи о том, как сделать невозможное возможным: подводим итоги сезона DIY
-Турбо
-Показать еще
-Минуточку внимания
-
-Событие
-Учимся, отдыхаем и посещаем события из Календаря
-
-Промо 
-Экскурсия по Хабру для маркетологов
-
-Интересно
-Исследование зарплат айтишников: рост ниже инфляции
-Курсы
-Java-разработчик с нуля
-По мере набора группы
-Java-разработчик расширенный
-По мере набора группы
-Java-разработчик + ИИ
-По мере набора группы
-Профессия: Java-разработчик + ИИ
-В любое время
-Программа: Java-разработчик [ Java + ООП + SQL + Linux + Git ]
-В любое время
-Больше курсов на Хабр Карьере
-Читают сейчас
-Зачем нужен ещё один инструмент обхода блокировок, если уже есть VPN
-25K
-50
-+50
-Telegram MTPROTO Proxy — всё что мы знаем о нём
-663K
-175
-+175
-Бесплатные API к Claude, GPT, DeepSeek и другим моделям: 6 AI-роутеров с бесплатным доступом
-5.8K
-5
-+5
-Представлен дистрибутив Omarchy 4.0 Quattro с идеальным Linux-окружением
-7.7K
-5
-+5
-В США выпустили меморандум, разрешающий американским компаниям взламывать подозрительные иностранные сетевые ресурсы
-6.4K
-12
-+12
-62 статьи о том, как сделать невозможное возможным: подводим итоги сезона DIY
-Турбо
-Истории
-author-logo
-Годнота из блогов компаний
-author-logo
-На них всё держится
-author-logo
-Работа засыпает, просыпается досуг
-author-logo
-От лунного овоща до сверхострого чили
-author-logo
-Работать и учиться с умом
-
-Ближайшие события
-
-17 марта – 21 сентября
-XVII Международная премия в области корпоративных коммуникаций ИнтерКомм 2026
-Москва
-Больше событий в календаре
-Менеджмент
-
-11 июня – 2 сентября
-Робозон: хакатон с призовым фондом 15 млн руб.
-Москва • Онлайн
-Больше событий в календаре
-Разработка
-
-30 июля – 3 сентября
-Культура как инструмент развития команд и лидерства
-Онлайн
-Больше событий в календаре
-Другое
-
-19 августа
-Вебинар «Ивент как драйвер продаж: тренды, кейсы, результаты»
-Онлайн
-Больше событий в календаре
-Маркетинг
-
-29 августа
-Альфа-Будущее Фест
-Челябинск
-Больше событий в календаре
-Менеджмент
-Другое
-
-10 – 11 сентября
-ProductSense’26 — конференция по менеджменту продуктов
-Москва • Онлайн
-Больше событий в календаре
-Менеджмент
-Маркетинг
-Другое
-
-10 сентября
-TEAM LEAD TODAY 2026 | Кейсы и практика для тимлидов
-Москва
-Больше событий в календаре
-Менеджмент
-Другое
-
-16 – 17 сентября
-Ривелти.Конф 2026
-Москва • Онлайн
-Больше событий в календаре
-Менеджмент
-Маркетинг
-Другое
-
-16 сентября
-Russian Employee Experience Awards
-Москва
-Больше событий в календаре
-Менеджмент
-Маркетинг
-Другое
-
-23 – 25 сентября
-Baltic Weekend – Крупнейший в России и Европе форум по коммуникациям
-Санкт-Петербург
-Больше событий в календаре
-Маркетинг
-
-2 – 3 октября
-Конференция для создателей образовательных продуктов Stepicon 2026
-Москва
-Больше событий в календаре
-Менеджмент
-Маркетинг
-Другое
-
-16 октября
-GLOBAL TECH FORUM | Цифровая трансформация и автоматизация бизнеса
-Москва
-Больше событий в календаре
-Менеджмент
-Маркетинг
-
-16 ноября
-ИИ КОНФА | Практическая конференция по искусственному интеллекту
-Москва
-Больше событий в календаре
-Менеджмент
-Маркетинг
-
-19 – 21 ноября
-Медицинская образовательная конференция Дни МедРокет
-Сириус
-Больше событий в календаре
-Менеджмент
-Маркетинг
-Другое
-
-Ваш аккаунт
-
-Профиль
-Трекер
-Диалоги
-Настройки
-ППА
-Разделы
-
-Статьи
-Новости
-Хабы
-Компании
-Авторы
-Песочница
-Информация
-
-Устройство сайта
-Для авторов
-Для компаний
-Документы
-Соглашение
-Конфиденциальность
-Услуги
-
-Корпоративный блог
-Медийная реклама
-Нативные проекты
-Образовательные программы
-Стартапам
-Настройка языка
-Техническая поддержка
-© 2006–2026, Habr
-
-
-
-Шаблоны сайтов для 1С-Битрикс, готовые решения, доработка и поддержка сайтов
-Помогу решить любую проблему с сайтом на 1С-Битрикс. Пишите, обсудим ваш проект.
- +7(775)5333248
-Обо мне
-Услуги  
-Готовые решения  
-Мои работы  
-Контакты
-promo.afisha.yandex.ru
-Реклама
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-consumer.huawei.com
-Реклама
-Смартфон HUAWEI Pura 90s Pro Max - Время вашего момента
-Купить
-
 Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
 
 Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
 
@@ -1843,255 +457,13 @@ consumer.huawei.com
 
 Spring MVC: создание веб-сайтов и RESTful сервисов
 
-Из комментариев читателей. Одно замечание по вопросу № 3., я думаю, что рядом с Initializr также Bootify.io - хороший вариант.
-
-
-Источник: https://habr.com/ru/post/544472/
-
-Поделиться ссылкой: 
-Вернуться к списку
-
-kuchenland.ru
-Реклама
-
-books.yandex.ru
-Реклама
-•
-16+
-
-«Токсичный зоопарк манипуляторов» — читать и слушать...
-
-bestmebelshop.ru
-Реклама
-
-Угловой шкаф-купе Калипсо с полками, ООО «Бэст-Мебель»
-67 390 ₽
-
-pinskdrev.ru
-Реклама
-
-Тахта «Наяда» (08L/08R) Пинскдрев
-73 300 ₽
-
-kuchenland.ru
-Реклама
-
-kuchenland.ru
-Реклама
-
-books.yandex.ru
-Реклама
-•
-16+
-
-«Фундаментальные законы человеческой глупости» —...
-
-sobakarisovaka.ru
-Реклама
-•
-16+
-
-Неделя бесплатных цветочных акварельных уроков
-
-info.shkola-bukeevoi.com
-Реклама
-•
-16+
-
-Фигурная стёжка на обычной швейной машине! Бесплатный МК
-
-Интересные статьи
-11 команд PowerShell для Office 365, которые полезно знать
-11 команд PowerShell для Office 365, которые полезно знать
-Использование PowerShell для управления Office 365 может сделать вашу работу быстрее, эффективнее и проще. PowerShell предоставляет доступ к информации о среде Office 365, к которой н...
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-На Хабре есть немало статей о беспроводной зарядке смартфонов, и в комментариях к каждой из них, нет-нет, да и проскользнет наивный вопрос, который местные старожилы мгновенно заминусуют,...
-Обеспечение границ компонент чистой архитектуры с помощью Spring Boot и ArchUnit
-Когда мы создаем программное обеспечение, мы хотим создавать «-способности»: понятность, ремонтопригодность, расширяемость и - в тренде сейчас - декомпозицию (чтобы мы могли разложить мон...
-Почему об этом стоит задуматься всем: ответы на самые актуальные вопросы о коронавирусе Covid-19
-Автор статьи Dave Troy — исследователь онлайн-дезинформации и лжи, а также эксперт в области расчётов, связанных со статистикой болезней. В последнее время он отвечал на многие вопросы о Covid-19...
-Бизнес без технологий. Деньги, которые вас потеряли
-Бизнес без технологий. Деньги, которые вас потеряли
-Может показаться, что довольно опрометчиво писать на Хабр статью о компаниях, которые относятся к технологиям с недоверием, сильно на них экономят или не используют вовсе. На самом деле, такие ре...
-
-© 2026 Все права защищены.
-Быстро с 1С-Битрикс
-Шаблоны сайтов
-Мои работы
-Услуги
-Новости
-Статьи
-Контакты
- BitrixTM
- info@temofeev.ru
-
-
-talent.mos.ru
-Реклама
-Вакансии в Команде Москвы
-Реализуй себя в проектах, важных для столицы
-Перейти
-
-
-Шаблоны сайтов для 1С-Битрикс, готовые решения, доработка и поддержка сайтов
-Помогу решить любую проблему с сайтом на 1С-Битрикс. Пишите, обсудим ваш проект.
- +7(775)5333248
-Обо мне
-Услуги  
-Готовые решения  
-Мои работы  
-Контакты
-visitabudhabi.ae
-Реклама
-
-11 вопросов на собеседовании по Spring Boot, которые заставляют задуматься
-Новости 1С-Битрикс
-Полезные статьи
-Моя цель - предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания по самым выгодным ценам.
-
-
-torg-oboi.ru
-Реклама
-Магазин обоев в 5 мин. от м. Семёновская
-от 300 ₽
-Более 10000 видов обоев в наличии и на заказ
-
-Узнать больше
-
-Большинство списков вопросов интервью по Boot заставляют вас запоминать случайные детали из документации Spring Boot. Но запоминание — плохая замена истинному пониманию и уверенности в знании Spring Boot.
-
-Поэтому сегодня мы собираемся применить другой подход. Вместо того, чтобы перечислять 50 вопросов по мелочам Spring Boot, мы сосредоточимся на 11, которые заставят вас задуматься и, таким образом, многому научиться на этом пути.
-
-Вот эти вопросы в произвольном порядке.
-
-Примечание: если вы сами проводите интервью по Spring Boot, возможно, вы захотите задать эти вопросы в открытом формате, ведущем к обсуждениям, вместо того, чтобы ожидать ответов из учебников
-
-1. Верно или ложно следующее утверждение: «Каждое приложение Spring Boot - это веб-приложение, работающее во встроенном Apache Tomcat». Обоснуйте свой ответ.
-Ответ
-2. В чем разница между Spring Boot и Spring MVC? Или между Spring Boot и Spring Framework? Можете ли вы использовать их вместе в одном проекте?
-Ответ
-3. Назовите два способа создать новый проект Spring Boot с нуля? Кроме того, как узнать, какие Spring Boot стартеры нужны вашему проекту?
-Ответ
-4. Почему вам не нужно указывать версии зависимостей в файле pom.xml при включении сторонних библиотек? Верно ли это для всех сторонних библиотек или только для некоторых? Как узнать, какие библиотеки поддерживает Spring Boot?
-Ответ
-5. Вы хотите сделать свое приложение настраиваемым, скажем, указать разное соединение с базой данных для среды разработки и рабочей среды. Какие у вас есть варианты?
-Ответ
-6. Верно или неверно следующее утверждение: «Каждый проект Spring Boot должен использовать Thymeleaf в качестве механизма создания шаблонов HTML». Какие у вас есть возможности для рендеринга HTML?
-Ответ
-7. Как можно реализовать доступ к реляционной базе данных с помощью Spring Boot? Какие у вас есть варианты?
-Ответ
-8. Вам необходимо настроить ведение журнала в своем приложении, но вы хотите различать уровни журнала на вашем компьютере и уровни журнала в разных средах (qa, test, prod). Какие у вас есть варианты?
-Ответ
-9. Как проще всего развернуть приложение Spring Boot в рабочей среде? Какие еще есть варианты?
-Ответ
-10. Вам сказали включить «Spring Security» в вашем приложении. Что происходит, когда вы добавляете стартер Spring Security в свое приложение?
-Ответ
-11. Как узнать, какие автоконфигурации Spring Boot применяются при запуске и какие условия оцениваются?
-Ответ
-Заключение
-Очевидно, нет никакой гарантии, что вы ответите на эти вопросы на собственном собеседовании по Spring Boot, хотя знание (и понимание) ответов на них должно стать прочной основой для любого интервью.
-
-Если вы хотите получить более глубокое представление обо всей экосистеме Spring, вы также можете ознакомиться с другими статьями о Spring в блоге автора.
-
-Примечание переводчика. Переводы 2 статей из блога  автора о Spring есть на Хабр:
-
-Что такое Spring Framework? От внедрения зависимостей до Web MVC
-
-Spring MVC: создание веб-сайтов и RESTful сервисов
-
-Из комментариев читателей. Одно замечание по вопросу № 3., я думаю, что рядом с Initializr также Bootify.io - хороший вариант.
-
-
-Источник: https://habr.com/ru/post/544472/
-
-Поделиться ссылкой: 
-Вернуться к списку
-
-growbox.ru
-Реклама
-•
-16+
-Выставка продажа комнатных растений - 22 и 23 августа
-
-meshok.net
-Реклама
-•
-18+
-
-Лот12. Винтажные куклы Дамы Эпохи, Deagostini, 24шт...
-3 853 ₽
-
-books.yandex.ru
-Реклама
-•
-16+
-
-«Токсичный зоопарк манипуляторов» — читать и слушать...
-
-kuchenland.ru
-Реклама
-
-geropharm-trends.ru
-Реклама
-
-20 звезд которые изуродовали себя удалением комков Биша
-ЕСТЬ ПРОТИВОПОКАЗАНИЯ. ПОСОВЕТУЙТЕСЬ С ВРАЧОМ
-
-books.yandex.ru
-Реклама
-•
-16+
-
-«Тело-лекарь. Книга-тренажер для оздоровления без...
-
-ourarussia.ru
-Реклама
-
-Умное кольцо Oura Ring 5
-
-Интересные статьи
-11 команд PowerShell для Office 365, которые полезно знать
-11 команд PowerShell для Office 365, которые полезно знать
-Использование PowerShell для управления Office 365 может сделать вашу работу быстрее, эффективнее и проще. PowerShell предоставляет доступ к информации о среде Office 365, к которой н...
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-5 наивных вопросов о беспроводной зарядке, которые продолжают задавать
-На Хабре есть немало статей о беспроводной зарядке смартфонов, и в комментариях к каждой из них, нет-нет, да и проскользнет наивный вопрос, который местные старожилы мгновенно заминусуют,...
-Обеспечение границ компонент чистой архитектуры с помощью Spring Boot и ArchUnit
-Когда мы создаем программное обеспечение, мы хотим создавать «-способности»: понятность, ремонтопригодность, расширяемость и - в тренде сейчас - декомпозицию (чтобы мы могли разложить мон...
-Почему об этом стоит задуматься всем: ответы на самые актуальные вопросы о коронавирусе Covid-19
-Автор статьи Dave Troy — исследователь онлайн-дезинформации и лжи, а также эксперт в области расчётов, связанных со статистикой болезней. В последнее время он отвечал на многие вопросы о Covid-19...
-Бизнес без технологий. Деньги, которые вас потеряли
-Бизнес без технологий. Деньги, которые вас потеряли
-Может показаться, что довольно опрометчиво писать на Хабр статью о компаниях, которые относятся к технологиям с недоверием, сильно на них экономят или не используют вовсе. На самом деле, такие ре...
-
-© 2026 Все права защищены.
-Быстро с 1С-Битрикс
-Шаблоны сайтов
-Мои работы
-Услуги
-Новости
-Статьи
-Контакты
- BitrixTM
- info@temofeev.ru
-
-
-HomeJavaTop 25 Spring Framework Interview Questions
-Spring Framework Interview Questions
-Top 25 Spring Framework Interview Questions
-Java / By Aditi Malhotra
-Aspired to pursue a career in Spring Framework? Or preparing for a Spring Java interview? This article will help you to prepare yourself with the Spring Framework Interview Questions during your Spring Java interview preparation. 
-
-Spring Framework is the best Java EE Framework for web applications. It is a very lightweight application that offers immense flexibility during runtime. Also, it provides dependency injection and inversion control, which is a useful API for Java programmers. Seeing its rapid growth in popularity and lucrative career prospects, Java programmers need to be more prepared for the Spring interview.
-
-If you are preparing for a Spring interview, we recommend you go through the top Spring interview questions and prepare well. You can also get a Spring certification to increase your chances to be considered for the job. You can clear your doubts and gain more knowledge by reading a few good Spring book. Let’s focus on the interview questions here and move to the most common Spring framework interview questions.
-
-Also Check: Java Interview Questions and Answer
-
-Top 25 Spring Framework Interview Questions
-Here we bring the set of top 25 Spring Framework interview questions that will help you crack the interview. Whether you are a beginner or an experienced Java developer, these Spring interview questions will prove an important resource in your interview preparation. So, let’s get ahead and be ready to ace your Spring Framework interview.
-
+*************************************************************************
+	*************************************************************************
+	*************************************************************************
+	*************************************************************************
+	*************************************************************************
+	*************************************************************************
+	*************************************************************************
 1. What is the Spring Framework and why Java Programmers should use it?
 Answer: It’s one of the most common Java Spring Framework interview questions. Spring is one of the most widely used Java EE Framework used by Java Programmers for code development. It provides Dependency Injector, MVC flow, Aspect Oriented Programming, and IOC Container to the Java Programmers. Useful in normal Java applications, it helps to acquire loose coupling in different elements.
 
