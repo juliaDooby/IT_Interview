@@ -6863,85 +6863,59 @@ The basic annotations offered by Spring Boot are:</p>
 @Autowired</li>
 Q40. Explain Spring Boot Dependency Management.</h3>
 Spring Boot Dependency Management is a feature that manages dependencies and configurations automatically. A list of dependencies that Spring Boot supports is provided with each release.</p>
-****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************
-	****************************************************************************	
-<p style="text-align: justify;">The Bills of Materials (spring-boot-dependencies) that can be used with the Maven project contain a list of the dependencies. Therefore, in our configuration, we do not need to provide the version of the dependencies because Spring Boot manages itself, so When we update the Spring Boot version, Spring Boot automatically and consistently upgrades all dependencies.</p>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c73e92f2c8_spring_boot_interview_questions_06.jpg" alt="Spring Boot Dependency Management" width="1000" height="386" /></p>
-<h3 style="text-align: justify;">Q41. Is it possible for us to create a non-web application in Spring Boot?</h3>
-<p style="text-align: justify;">Yes, It is true that Spring Boot allows us to build non-web applications. Beyond only creating web applications, Spring Boot has many more uses.</p>
-<p style="text-align: justify;">Additionally, it may be used to create console applications, task scheduling programs, serverless apps, batch or stream processing programs, and more.</p>
-<h3 style="text-align: justify;">Q42. Tell me the default port in the spring boot of the Tomcat server.</h3>
-<p style="text-align: justify;">The default port of the Tomcat server in spring boot is port 8080.</p>
-<h3 style="text-align: justify;">Q43. Will you be able to override or replace the embedded Tomcat server in spring boot?</h3>
-<p style="text-align: justify;">Yes, we can override or replace the embedded Tomcat server in Spring Boot. Spring Boot provides flexibility to use different embedded servers like Jetty, Undertow, and Netty. We can also replace the Tomcat server by utilizing starter dependency. We can exclude the default Tomcat dependency and add the desired server dependency in the pom.xml file.</p>
-<h3 style="text-align: justify;">Q44. Is it feasible to disable the spring boot application's default web server?</h3>
-<p style="text-align: justify;">Yes, it is possible to disable the default web server in the spring boot because there are other web servers available.</p>
-<h3 style="text-align: justify;">Q45. Differentiate between Restful web service @RestController and @Controller in Spring Boot?</h3>
-<p style="text-align: justify;"><strong>The @RestController Annotation:</strong></p>
-<ul style="text-align: justify;">
-<li>@RestController is used for creating RESTful API web services.</li>
-<li>When used at the class level, @RestController enables the class file to respond to client requests.</li>
-</ul>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c743d0f8b2_spring_boot_interview_questions_07.jpg" alt="@RestController and @Controller in Spring Boot" width="1000" height="345" /></p>
-<p style="text-align: justify;"><strong>The @Controller Annotation:</strong></p>
-<ul style="text-align: justify;">
-<li>@Controller is used for traditional Spring controllers.</li>
-<li>Also, the @Controller annotation is typically used in combination with a @RequestMapping annotation for request-handling methods</li>
-</ul>
-<h3 style="text-align: justify;">Q46. Can you tell the flow of HTTPS requests through the Spring boot app?</h3>
-<p style="text-align: justify;">The flow of HTTP request through the spring boot are:</p>
-<ul style="text-align: justify;">
-<li>The client will send the server an HTTPS request.</li>
-<li>The embedded web server in the Spring Boot application will take in the request.</li>
-<li>The request is then forwarded to the DispatcherServlet, which is auto-configured by Spring Boot.</li>
-<li>Based on the request URL and HTTP method, the DispatcherServlet transfers the request to the appropriate controller method.</li>
-<li>Once the request has been processed, the controller method will return a response.</li>
-<li>The response will be sent back to the DispatcherServlet.</li>
-<li>The DispatcherServlet will convert the response into an appropriate format based on the request's Accept header.</li>
-<li>At last, The response is sent back to the client over HTTPS.</li>
-</ul>
-<p style="text-align: justify;"> <img lazing="true"src="https://d8it4huxumps7.cloudfront.net/uploads/images/647c747e2b938_spring_boot_interview_questions_08.jpg" alt="Spring Boot Flow Architecture" width="1000" height="450" /></p>
-<h3 style="text-align: justify;">Q47. Do you know about the points of disimilarities between RequestMapping and GetMapping?</h3>
-<p style="text-align: justify;"><strong>1. RequestMapping</strong></p>
-<p style="text-align: justify;">It is used at the class level and method level.</p>
-<p style="text-align: justify;">It Can be used to map any HTTP request method (GET, POST, PUT, DELETE, etc.).</p>
-<p style="text-align: justify;">It supports the consumes attribute to specify the media type of the request body.</p>
-<p style="text-align: justify;"><strong>2. GetMapping</strong></p>
-<p style="text-align: justify;">It is used only at the method level.</p>
-<p style="text-align: justify;">It is used specifically for HTTP GET requests.</p>
-<p style="text-align: justify;">It Does not support the consumes attribute.</p>
-<h3 style="text-align: justify;">Q48. What are the methods available to get the list of all the beans which is in the Spring Boot application?</h3>
-<p style="text-align: justify;">There are several ways to obtain a list of every bean in our spring boot application, some of them are:</p>
-<p style="text-align: justify;"><strong>1. By using the ListableBeanFactory interface</strong>.</p>
-<p style="text-align: justify;">Example:</p>
-<pre>@Autowired<br /><br />private ListableBeanFactory beanFactory;<br /><br />public void displayAllBeans() {<br /><br />String[] allBeanNames = beanFactory.getBeanDefinitionNames();<br /><br />for (String beanName : allBeanNames) {<br /><br />System.out.println(beanName);<br /><br />}<br /><br />}</pre>
-<p style="text-align: justify;"><strong>2. By using a spring actuator</strong></p>
-<p style="text-align: justify;">Example: http://localhost:8080/actuator/beans</p>
-<p style="text-align: justify;"><strong>3. By using appContext.getBeanDefinitionNames()</strong></p>
-<h3 style="text-align: justify;">Q49. Name the spring actuator endpoints in the spring boot.</h3>
-<p style="text-align: justify;">Some of the spring Actuator endpoints in the spring boot are:</p>
-<ul style="text-align: justify;">
-<li>Shutdown</li>
-<li>Sessions</li>
-<li>Threaddump</li>
-<li>Metrics</li>
-<li>Loggers</li>
-<li>Health</li>
-<li>Flyway</li>
-<li>Caches</li>
+The Bills of Materials (spring-boot-dependencies) that can be used with the Maven project contain a list of the dependencies. Therefore, in our configuration, we do not need to provide the version of the dependencies because Spring Boot manages itself, so When we update the Spring Boot version, Spring Boot automatically and consistently upgrades all dependencies.</p>
+Q41. Is it possible for us to create a non-web application in Spring Boot?</h3>
+Yes, It is true that Spring Boot allows us to build non-web applications. Beyond only creating web applications, Spring Boot has many more uses.</p>
+Additionally, it may be used to create console applications, task scheduling programs, serverless apps, batch or stream processing programs, and more.</p>
+Q42. Tell me the default port in the spring boot of the Tomcat server.</h3>
+The default port of the Tomcat server in spring boot is port 8080.</p>
+Q43. Will you be able to override or replace the embedded Tomcat server in spring boot?</h3>
+Yes, we can override or replace the embedded Tomcat server in Spring Boot. Spring Boot provides flexibility to use different embedded servers like Jetty, Undertow, and Netty. We can also replace the Tomcat server by utilizing starter dependency. We can exclude the default Tomcat dependency and add the desired server dependency in the pom.xml file.</p>
+Q44. Is it feasible to disable the spring boot application's default web server?</h3>
+Yes, it is possible to disable the default web server in the spring boot because there are other web servers available.</p>
+Q45. Differentiate between Restful web service @RestController and @Controller in Spring Boot?</h3>
+The @RestController Annotation:</strong></p>
+@RestController is used for creating RESTful API web services.</li>
+When used at the class level, @RestController enables the class file to respond to client requests.</li>
+The @Controller Annotation:</strong></p>
+@Controller is used for traditional Spring controllers.</li>
+Also, the @Controller annotation is typically used in combination with a @RequestMapping annotation for request-handling methods</li>
+Q46. Can you tell the flow of HTTPS requests through the Spring boot app?</h3>
+The flow of HTTP request through the spring boot are:</p>
+The client will send the server an HTTPS request.</li>
+The embedded web server in the Spring Boot application will take in the request.</li>
+The request is then forwarded to the DispatcherServlet, which is auto-configured by Spring Boot.</li>
+Based on the request URL and HTTP method, the DispatcherServlet transfers the request to the appropriate controller method.</li>
+Once the request has been processed, the controller method will return a response.</li>
+The response will be sent back to the DispatcherServlet.</li>
+The DispatcherServlet will convert the response into an appropriate format based on the request's Accept header.</li>
+t last, The response is sent back to the client over HTTPS.</li>
+Q47. Do you know about the points of disimilarities between RequestMapping and GetMapping?</h3>
+1. RequestMapping</strong></p>
+It is used at the class level and method level.</p>
+It Can be used to map any HTTP request method (GET, POST, PUT, DELETE, etc.).</p>
+It supports the consumes attribute to specify the media type of the request body.</p>
+2. GetMapping</strong></p>
+It is used only at the method level.</p>
+It is used specifically for HTTP GET requests.</p>
+It Does not support the consumes attribute.</p>
+Q48. What are the methods available to get the list of all the beans which is in the Spring Boot application?</h3>
+There are several ways to obtain a list of every bean in our spring boot application, some of them are:</p>
+1. By using the ListableBeanFactory interface</strong>.</p>
+Example:</p>
+2. By using a spring actuator</strong></p>
+Example: http://localhost:8080/actuator/beans</p>
+3. By using appContext.getBeanDefinitionNames()</strong></p>
+Q49. Name the spring actuator endpoints in the spring boot.</h3>
+Some of the spring Actuator endpoints in the spring boot are:</p>
+Shutdown</li>
+Sessions</li>
+Threaddump</li>
+Metrics</li>
+Loggers</li>
+Health</li>
+Flyway</li>
+Caches</li>
 																											  
 ****************************************************************************
 	****************************************************************************
