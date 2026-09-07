@@ -5567,21 +5567,6 @@ SSL/TLS, OAuth 2.0, аутентификация через сервисы Googl
 Поддержка 9-ти языков: C, C++, Java, Go, Node.js, Python, Ruby, Objective-C, PHP, C# плюс, конечно, никто не запрещает взять и реализовать свою версию хоть для брейнфака.
 Поддержка gRPC в публичных API от Google. Уже работает для некоторых сервисов. Нет, REST-версии, конечно, тоже останутся. Но посудите сами, если у вас будет выбор — использовать, скажем, из мобильного приложения REST-версию, отдающие данные за 1 сек или с теми же затратами на разработку взять gRPC-версию, работающую 0.5 сек — что вы выберете? А что выберет ваш конкурент?
 
-
-
-
-*********************************************************************************************
-*********************************************************************************************
-	*********************************************************************************************
-	*********************************************************************************************
-	*********************************************************************************************
-	*********************************************************************************************
-Бывает, что компания ищет дата-сайентиста, а на самом деле ей нужен Python-разработчик. Поэтому при подготовке к собеседованию есть смысл освежить в памяти информацию по Python, а не только штудировать алгоритмы.
-
-Перевели статью разработчика, который не раз попадал в такую ситуацию и на основе своего опыта составил список из 53 вопросов и ответов для подготовки к собеседованию. Большинство исследователей данных пишут много кода, поэтому такой список пригодится и дата-сайентистам, и инженерам. Он будет полезен и для соискателей, и для тех, кто проводит собеседования, и для тех, кто просто изучает Python.
-
-Вопросы идут в случайном порядке. Поехали.
-
 1. В чем разница между списком и кортежем?
 Мне задавали этот вопрос буквально на каждом собеседовании по Python/data science. Выучите ответ как свои пять пальцев:
 
@@ -6334,155 +6319,8 @@ finally:
 print(val)
 #=> complete
 #=> 10
-Конечно, невозможно на 100% угадать, какие вопросы зададут на собеседовании. Лучший способ подготовиться — программировать и еще раз программировать, накапливая опыт.
-
-Однако приведенный список точно поможет тем, кто готовится к собеседованию на позицию дата-сайентиста или junior/middle-разработчика Python.
-
-Оригинал статьи на Habr.com.
-
-Теги: Карьера, Программирование, дата-сайентист
-Ссылка скопирована
-Поделиться
-Узнавайте о выходе новых статей в блоге первыми!
-Будем держать в курсе новостей и облачных трендов
-
-section-subscribe_2x.png
-Введите email
-
-Почитать по теме
-_blog_head_140.png
-27 июля
-Надёжность БД: что помогает избежать потери данных
-Читать статью
-
-_blog_head_126.png
-22 июля
-CedrusData Engine: что Rust-ядро даёт бизнесу
-Читать статью
-
-_blog_head_32.png
-22 июля
-ПАК для корпоративного ИИ: железо и мультиагентная платформа в одной поставке
-Читать статью
-
-Logo
-Приветственный бонус
-Чат пользователей
-Продукты
-Cloud Servers
-
-Object Storage
-
-Managed Kubernetes
-
-Cloud Databases
-
-Cloud Big Data
-
-Облако 152-ФЗ
-
-Все сервисы
-
-Платформа
-Технические характеристики
-
-Статус сервисов платформы
-
-Сертификаты
-
-Безопасность
-
-Магазин приложений и IT‑сервисов
-
-Обучение
-
-Решения
-Медиахостинг
-
-Медицина
-
-Логистика
-
-Разработка
-
-E-commerce
-
-Образование
-
-Сайт в облаке
-
-Все решения
-
-Компания
-О компании
-
-Мероприятия
-
-Блог
-
-Истории успеха
-
-Пресс-релизы
-
-Контакты
-
-Юридическая информация
-
-Условия
-Калькулятор цен
-
-Партнерская программа
-
-Оплата
-
-Техподдержка
-document_text_outline_28.svg
-Документация
-
-tech_support.svg
-Клиентский портал
-
-AiRobotIcon.svg
-ИИ-консультант
-
-Endorsment Logo
-telegram_logo.svg
-VK_logo.svg
-VK_video_logo.svg
-dzen_logo.svg
-linkedin_logo.svg
-Max (3).svg
-© VK Cloud, 2026. Все права защищены.
-Политика конфиденциальности
-125167, г. Москва, Ленинградский проспект, д. 39, стр. 79, VK Tech
-
-
-1.
-Это база: легкие вопросы, ответы на которые должен знать каждый
-2.
-Вопросы посложнее
-3.
-Полезные ссылки
-Даниил Шатухин
-Даниил Шатухин
-Редактор в «Хабре», тестировщик и любитель веба
-
-Вы уже прошли несколько курсов, уверенно пишете код на Python, разбираетесь в алгоритмах, разрабатываете собственный пет-проект и ищете работу мечты. В один прекрасный день вам приходит сообщение с приглашением на собеседование, но что там будет? В этой статье собрали самые популярные и интересные вопросы с технических интервью на позицию Python-разработчика.
-
-Это база: легкие вопросы, ответы на которые должен знать каждый
-9 месяцев
-Python-разработчик
-Освойте Python, самый популярный язык программирования
-
-4 030 ₽/мес
-
-6 717 ₽/мес
-Подробнее
-dffsdd (3)
-Python-разработчик
-На техническом интервью не всегда бывают сложные вопросы. Если вы претендуете на позицию джуна, то от вас не будут требовать глубоких знаний Python. Достаточно будет разбираться в стандартной библиотеке языка. К тому же собеседование может начаться с самых простых вопросов и усложняться по мере правильности ваших ответов. Помните, что у собеседующего нет цели завалить вас. Он хочет понять предел ваших знаний и оценить вашу пользу для компании.
-
-Будет очень обидно подготовиться к сложным вопросам и лайвкодингу, но разволноваться на базовых парадигмах Python. Старайтесь периодически освежать знания и повторять даже простые вопросы. Ниже привели самые популярные из них.
+Конечно, невозможно на 100% угадать, какие вопросы зададут на собеседовании. 
+Лучший способ подготовиться — программировать и еще раз программировать, накапливая опыт.
 
 Что такое Python?
 Python — высокоуровневый язык программирования с динамической типизацией. Он интерпретируемый и мультипарадигменный. Python направлен на повышение читаемости кода и производительности разработчика. Язык программирования применяется во многих сферах, включая веб-разработку, машинное обучение, анализ данных, разработку прикладного ПО и игр. Python активно используется в образовании из-за относительно простого синтаксиса.
@@ -6549,13 +6387,6 @@ print(list_a is list_c)
 => True
 => False
 Выходит, что списки равны, потому что в них содержатся одинаковые наборы данных. Но list_a и list_c — разные, ведь это два самостоятельных списка.
-
-Читайте также
-Борис Алексеев: «Я собирался стать химиком, но увлекся языком Python и теперь анализирую данные для научной компании»  
-Вопросы посложнее
-Если вы справитесь с простыми вопросами, то собеседующий будет повышать сложность. Обычно это делают для того, чтобы проверить глубину знаний кандидата. Более сложные вопросы могут включать в себя не только сухую теорию, но и демонстрацию кода.
-
-Здесь мы собрали только общие вопросы о языке программирования Python. Список может расширяться в зависимости от сферы. К примеру, для веб-разработчиков или специалистов по машинному обучения могут добавиться вопросы по конкретным фреймворкам и технологиям.
 
 Как работает функция range?
 В Python функция range() используется для генерации списка целых чисел. Ее можно использовать тремя способами, исходя из задачи:
@@ -6634,7 +6465,6 @@ Python — интерпретируемый язык программирова�
 
 Разработчику не нужно работать с папкой pycache и ее содержимым. Этот процесс автоматизирован. Также важно помнить, что файлы .pyc не взаимозаменяемы между версиями Python.
 
-Читайте также
 Как написать Telegram-бот для распознавания изображений на Python? 
 Где поиск выполняется быстрей: в списках или словарях?
 В списках во время поиска надо пройтись по всем значениям. Это занимает O(n) времени. Поиска в словаре по ключу занимает O(1), потому что в основе используется хэш-таблица.
@@ -6695,19 +6525,6 @@ python -O name.py
 double = lambda x: x * 2
 Полезные ссылки
 Никогда нельзя заранее узнать вопросы, которые будут на собеседовании. Для его успешного прохождения надо четко понимать Python и то, как на нем пишется код. Статьи как наша можно использовать, чтобы освежить материал в памяти или найти слабые места. Если вы прочитали вопрос и не знаете правильного ответа, то стоит обратиться к документации и еще раз повторить тему. 
-
-Документация Python
-Циклы в Python: принципы работы и примеры использования
-Регулярные выражения в Python: инструкция, примеры и практика
-Как создавать и использовать функции в Python
-Бесплатные онлайн ресурсы для изучения Python для новичков: курсы, тренажеры и блоги
-Python-разработчик
-Освойте Python с нуля. Подготовим к трудоустройству: дадим много практики, реальные проекты для портфолио, поможем с резюме. Лучшие студенты пройдут стажировки в проектах компаний-партнеров.
-
- 
-In the ever-growing world of software development, Full Stack Python Developers are in high demand. These versatile professionals possess a unique skillset that spans across front-end and back-end development, using one of the most popular programming languages today – Python. As you prepare to land your dream job as a Full Stack Python Developer, it’s essential to be ready for the interview process to showcase your technical expertise and problem-solving abilities.
-
-To help you put your best foot forward during your upcoming interview, we’ve compiled a list of common Full Stack Python Developer interview questions. These will not only test your knowledge of the language but also evaluate your understanding of full stack development principles and practices. Armed with these insights, you’ll be well-prepared to tackle any question thrown your way and make a lasting impression on your potential employer.
 
 1. What is your experience with Python web frameworks such as Django or Flask?
 Evaluating your familiarity with frameworks like Django or Flask is essential for potential employers because these tools are widely used in the industry for developing web applications. Your experience with these frameworks showcases your ability to create, maintain, and optimize web applications in the Python ecosystem, which can help an employer assess your technical skills and ensure you’re a good fit for the role.
@@ -6949,30 +6766,12 @@ Another important aspect is modularizing your code by breaking it down into smal
 Furthermore, leveraging Python’s built-in features like list comprehensions and context managers can lead to more concise and efficient code. Finally, always prioritize writing unit tests to ensure that your code behaves as expected and to catch potential issues early on. Implementing these practices will result in cleaner, more maintainable Python code that is easier for both you and others to work with.”
 
 
-List of the most frequently asked Python Flask interview questions with answers and programming examples to crack any Flask interview:
-
-Flask framework has quite a large following and has become more relevant, with teams adopting it seamlessly as it can be learned quickly. We have listed some questions that help in interview preparation for this framework.
-
-Try to answer these questions by yourself based on the concepts learned from this tutorial series, and then read the answers for a better learning experience.
-
-=> Check Here To See A-Z Of Flask Training Tutorials
-
-Table of Contents: [Show]
-
-Ultimate Quiz on Python Flask Interview Questions
-Try this expert quiz with a hand-picked list of the top Python Flask interview questions. This quiz covers all basic to advanced Flask concepts to boost your confidence level and attend any Flask interview successfully.
-
-Python Flask Interview Mastery
-Test your Flask knowledge and boost your interview confidence
-Question 1 of 20
 Which method is used to render HTML templates in Flask?
 template.load_and_process_with_context_variables()
 display_template_with_inherited_context_and_variables()
 render_template()
 html.render()
 
-Flask Interview Questions
-Flask Interview Questions With Answers
 Q #1) What is Flask?
 
 Answer: Flask is a web development framework created in the Python language. This framework is based on the robust foundation of Jinja2 template engine and the Werkzeug comprehensive WSGI web application library.
@@ -6987,30 +6786,17 @@ Q #3) How to get the development version of the Flask framework?
 
 Answer: The development version of the Flask framework can be obtained using the following commands.
 
-1
-2
 git clone https://github.com/pallets/flask
 cd flask && python3 setup.py develop
 Q #4) How to add the mailing feature in the Flask Application?
 
 Answer: To send emails, we need to install the Flask-Mail Flask extension using the command.
 
-1
 pip install Flask-Mail
 Once installed, we need to use Flask Config API to configure MAIL-SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, etc. Then we need to import the Message Class, instantiate it, and form a message object before emailing by using mail.send() method.
 
 The following is an example.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 from flask_mail import Mail, Message
 from flask import Flask
  
@@ -7039,7 +6825,6 @@ Answer: On Linux, Flask can be installed using Python’s package manager, pip.
 
 Use the below command to install Flask.
 
-1
 pip install Flask
 Q #9) What is the default host port and port of Flask?
 
@@ -7049,15 +6834,6 @@ Q #10) How to change the default host and port in Flask?
 
 Answer: Flask default host and port can be changed by passing the values to host and port parameters while calling the run method on the app.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 from flask import Flask
 app = Flask(__name__)
   
@@ -7086,19 +6862,6 @@ Answer: We can get the argument’s value using the request object in Flask.
 
 An example is shown below.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 from flask import Flask
 from flask import request
   
@@ -7121,26 +6884,6 @@ Answer: We can use the request object to get the User-Agent in Flask.
 
 Use the below-mentioned code for the same.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
 from flask import Flask
 from flask import request
   
@@ -7173,13 +6916,9 @@ Answer: Flask’s url_for function helps in creating dynamic routes. We can make
 
 For example, pass a function and its arguments, as shown below.
 
-1
 <a href=”{{ url_for(‘get_post_id’, post_id=post.id}}”>{{post.title}}<a>
 View function for handling variables in routes.
 
-1
-2
-3
 @app.route(“/blog/post/<string:post_id>”)
 def get_post_id(post_id):
 return post_id
@@ -7243,21 +6982,6 @@ Q #25) How to use a session in Flask?
 
 Answer: Whenever we want to save some data between requests, we make use of session objects in Flask. We can set and get data from the session object, as shown below.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 fromflask import Flask, session
   
 app = Flask(__name__)
@@ -7311,9 +7035,6 @@ Answer: Flask comes with a development server, and the development server has a 
 
 Given below is an example.
 
-1
-2
-3
 from flask import Flask 
 app = Flask(__name__)
 app.run(host='127.0.0.1', debug=True)
@@ -7327,371 +7048,6 @@ Answer: With Flask, we can create almost all types of web applications. We can c
 
 Flask is so versatile and flexible that it can be integrated with other technologies very quickly to achieve the same. For example, Flask can be combined with the NodeJS serverless, AWS lambda, and similar other third-party services to build new-age systems.
 
-Final Thoughts on Interview Questions for Flask Developers
-In this tutorial, we have covered Flask interview questions that are of immediate relevance when attending an interview. These questions might appear in one or the other form. Readers are suggested to explore more and try to be contributors to the Flask project on GitHub to enhance their developer experience.
-
-Overall, the Flask framework is lightweight and flexible. It is quite effortless to learn development using Flask. Flask follows modern methods of developing web applications. It also has extensive community support for better issue resolution and support towards open-source software.
-
-=> Visit Here For The Exclusive Flask Training Tutorial Series
-
-Was this helpful?
-Recommended Reading
-Python Control Statements (Python Continue, Break and Pass)
-Control Statements In Python
-Python Control Statements with Examples: Python Continue, Break and Pass In this Interesting Python Training Series, we learned about Looping in Python in detail in our previous tutorial. This tutorial will explain about the various types of control statements in Python with a brief description, syntax and simple examples for your…
-
-Top 61 Python Interview Questions And Answers
-Python Interview Questions
-List of most frequently asked Python Interview Questions with answers and examples to help you crack any Python interview easily: In this Informative Python Series of Tutorials, we have discussed many Python concepts in detail. This article provides a list of the most frequently asked interview questions and answers about…
-
-ETL Testing Interview Questions and Answers
-ETL Testing
-List of Most Frequently Asked ETL Testing Tools Interview Questions And Answers to Help You Prepare For The Upcoming Interview: Business information and the data are of key importance to any business and company. Many companies invest a lot of time and money in the process of analyzing and sorting…
-
-31 Most Frequently Asked Maven Interview Questions & Answers
-Maven Interview Questions
-This tutorial covers common Maven interview questions and answers for both beginners and experienced individuals. As with all interviews, the candidates must prepare to answer the most commonly asked interview questions on Maven. This tutorial will help you prepare for your upcoming interview. => Read Through The Easy Maven Training…
-
-READ MORE FROM THIS SERIES:
-
-Group Discussion Rules and Tips
-Top 90 SQL Interview Questions and Answers for 2026
-SQL Server Interview Questions and Answers (2026)
-Interview Questions and Answers
-30+ Top Scrum Master Interview Questions and Answers
-Top 30 PL/SQL Interview Questions and Answers in 2026
-Top 20 JIRA Interview Questions and Answers
-Top 35 Linux Interview Questions and Answers
-Top 20 Business Analyst Interview Questions and Answers
-Top 45 Web Services Interview Questions and Answers (RESTful, SOAP, Security que…
-Top 24 Data Modeling Interview Questions for Data Engineers
-TOP 70+ UNIX Interview Questions with Answers
-Top 40 C Programming Interview Questions for Developers
-Top 40 Popular J2EE Interview Questions and Answers You Should Read
-Top 60 Networking Interview Questions and Answers
-Top 20 Leadership Interview Questions and Answers
-Top 32 IBM DataStage Interview Questions And Answers
-Top 31 Most Important SAP BO Interview Questions and Answers
-Top 20 RESTful Web Services Interview Questions and Answers
-Top 50+ Database Interview Questions and Answers
-Top 30 SAS Interview Questions and Answers
-Top JMeter Interview Questions and Answers for 2026
-Top 35 Android Interview Questions and Answers
-60 Top Unix Shell Scripting Interview Questions and Answers
-Top 64 Scenario-Based Informatica Interview Questions with Answers
-Top 31 Agile Interview Questions and Answers
-50+ Top Core Java Interview Questions and Answers (2026)
-Top JSON Interview Questions and Answers
-60+ Top VBScript Interview Questions and Answers (2026 LIST)
-Top 30 Eclipse Interview Questions and Answers
-Top Teradata Interview Questions and Answers
-25+ Most Popular ADO.NET Interview Questions and Answers
-Top 50 C# Interview Questions with Answers
-Top 30 DBMS Interview Questions and Answers
-Top Oracle Interview Questions: Oracle Basic, SQL, PL/SQL Questions
-Top Oracle DBA, RAC, and Performance Tuning Interview Questions
-Top 50 Most Popular CCNA Interview Questions and Answers
-Top 20+ .NET Interview Questions and Answers
-Top Oracle Forms and Reports Interview Questions
-Top Oracle Apps Technical and Oracle SOA Interview Questions
-Top 30+ Popular Cucumber Interview Questions and Answers
-Top 30+ JMS (Java Message Service) Interview Questions
-TOP 45 JavaScript Interview Questions With Detailed Answers
-Top 20 Latest DevOps Interview Questions and Answers for 2026
-50+ Bootstrap Interview Questions and Answers
-Top 20 TestNG Interview Questions and Answers
-30+ TOP Servlet Interview Questions and Answers (2026 LIST)
-35+ Top Apache Tomcat Interview Questions and Answers
-48 Top AngularJS Interview Questions and Answers (2026 LIST)
-Top 30+ Popular CSS Interview Questions and Answers
-30 Top HTML Interview Questions and Answers (2026 LIST)
-50 Top PHP Interview Questions and Answers (For ALL)
-Top 20 Java Interview Programs for Coding with Answers
-Top 12 Mockito Interview Questions (Mocking Framework Interview)
-Top 40 MySQL Interview Questions And Answers
-Top 61 Python Interview Questions And Answers
-Top 48 Spring Interview Questions (Crack an Interview in 2026)
-Top 25+ Azure Test Plan or TFS Interview Questions
-TOP 35 HTML5 Interview Questions and Answers
-Top 25 Perl Interview Questions You Should Prepare in 2026
-TOP 70 C++ Interview Questions and Answers [Includes Advanced]
-25+ Top Spring MVC Interview Questions and Answers
-Top 36 Jenkins Interview Questions For 2026
-Top 15 Popular Specflow Interview Questions
-Spock Interview Questions with Answers (Most Popular)
-Top 50 Swift Interview Questions (Swift iOS Interview)
-Top 25 Software Engineering Interview Questions [LATEST 2026]
-Top 38 Desktop Support Engineer Interview Questions and Answers
-Graphic Design Resume Guide: Example And Templates For 2026
-Top 45 XML Interview Questions And Answers for 2026 [LATEST]
-50 Top Salesforce Interview Questions and Answers (Updated 2026)
-Top 49 Salesforce Admin Interview Questions And Answers 2026
-Top 84 Salesforce Developer Interview Questions And Answers 2026
-Top 35 ASP.Net And Web API Interview Questions With Answers
-Top 20 Most Common Help Desk Interview Questions & Answers (2026)
-Top 18 Most Common Call Center Interview Questions & Answers 2026
-Top 10 Most Popular Postman Interview Questions With Answers
-Top 35 Frequently Asked Struts Interview Questions & Answers
-Top 20 HR Interview Questions and Answers
-Top 20+ Employee Exit Interview Questions To Ask
-Top 15+ Important Unix Commands Interview Questions For Beginners
-Top 40 GIT Interview Questions and Answers In 2026
-Top 25 Technical Support Interview Questions With Answers
-Top 25 Computer Architecture Interview Questions And Answers
-50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
-Top 51 ElasticSearch Interview Questions & Answers in 2026
-Top 30 Programming / Coding Interview Questions & Answers
-Top 35 Management Interview Questions With Answers
-Top 29 Data Engineer Interview Questions And Answers
-Top 40 Java 8 Interview Questions & Answers [Most Important]
-31 Most Frequently Asked Maven Interview Questions & Answers
-30+ Top Java Collections Interview Questions With Answers (2026 LIST)
-Top 25 Java Web Services Interview Questions & Answers
-TOP 30 AWS Interview Questions and Answers in 2026
-How To Write A Follow Up Email After Interview?
-Top 40 SAP CRM Interview Questions and Answers
-Top 36 Most Important Chef Interview Questions And Answers
-Top 35 Puppet Interview Questions And Answers
-Top 31 Popular Python Flask Interview Questions With Answers
-JSP Interview Questions And Answers in 2026
-Top 30+ OOPS Interview Questions And Answers With Examples
-How To Write An Email To A Recruiter [Six Email Templates]
-Top 25+ Web Developer Interview Questions and Answers
-40+ PHP Laravel Interview Questions And Answers (2026 LIST)
-Top 25+ JDBC Interview Questions And Answers
-Top 30+ JSF Interview Questions And Answers
-Salesforce Lightning Interview Questions And Answers
-SAP Hybris Interview Questions And Answers
-Top 30 Node.js Interview Questions and Answers
-Top 25 Popular Appium Interview Questions And Answers
-Top 30 Frequently Asked Ajax Interview Questions And Answers
-35 Frequently Asked MongoDB Interview Questions And Answers
-39 Salesforce Solution Architect Interview Questions And Answers
-Top 30 Popular Scrum Master Interview Questions And Answers
-Top 20 Machine Learning Interview Questions And Answers
-Top 30+ Data Structure Interview Questions And Answers
-Top 28 VMware Interview Questions And Answers
-20 Reasons Why You are Not Getting Hired (with Solutions)
-Top 25 Microservices Interview Questions And Answers
-Top 26 Project Management Interview Questions for Managers
-Top 27 Azure Interview Questions And Answers
-42 Most Common TypeScript Interview Questions And Answers
-Top 25 Interview Questions for Managers with Answers
-50 Most Common React Interview Questions And Answers
-A Perfect Thank You Email After an Interview (4 Samples)
-Top 30+ Bulma Interview Questions and Answers With Examples
-Top 40+ Hibernate Interview Questions & Answers in 2026
-Top 30 Java Architect Interview Questions with Answers (2026)
-Top 40 Spring Boot Interview Questions 2026 (MOST ASKED)
-Top 40 Full Stack Developer Interview Questions & Answers
-IBM Careers: A Complete IBM Jobs & Internships Guide 2026
-Top 50 Behavioral Interview Questions and Sample Answers
-
-Get the Premium eBook 
-Download your copy now 👇
-Our Bestselling eBook 'Software Testing Career package' Now Available FREE for Limited Period
-Enter your email..
-
-DOWNLOAD NOW!
-Leave a Comment
-Comment
-
-Name
-Name *
-Email
-Email *
-
-About SoftwareTestingHelp
-Helping our community since 2006! Most popular portal for Software professionals with 400 million+ visits and 500,000+ followers! You will absolutely love our creative content on QA, Dev, Software Tools & Services Reviews!
-
-Learn In This Article:
-Ultimate Quiz on Python Flask Interview Questions
-Flask Interview Questions With Answers
-Scenario-Based Questions for Flask Interview
-Flask Interview Questions for Experienced
-Final Thoughts on Interview Questions for Flask Developers
-Software Testing Help
-
-Communication Details
-
-Main Office: A708, City Vista, Fountain Road, Kharadi, Pune, MH, 411014.
-
-Email Us: info@softwaretestinghelp.com
-
-Facebook Linkedin X-twitter Youtube
-Software Testing Tools
-
-Test Management Tools
-Web Application Testing Software
-Cross Browser Testing Tools
-Best ETL Testing Tools
-Mobile Testing Tools
-Regression Testing Tools
-Defect Tracking Tools
-GUI Testing Tools
-Requirements Management Tools
-ALL Testing Tools
-Performance Testing Tools
-
-Performance Testing Tools
-Performance Testing Services
-Computer Stress Test Tools
-Cloud- Load Testing Service
-Performance Testing Guide
-Database Performance Tools
-Website Performance Testing Tools
-Application Performance Monitoring
-Automation Testing Tools
-
-Unit Testing Tools
-API Testing Tools
-Best ETL Tools
-Open Source Testing Tools
-Functional Testing Tools
-Selenium Alternatives
-Accessibility Testing Tools
-Mobile Automation Tools
-Automation Testing Software
-Automation Testing Services
-Data Tools
-
-Data Masking Tools
-Data Modeling Tools
-Data Analysis Tools
-Data Migration Software
-Data Integration Tools
-Data Mapping Tools
-Data Loss Prevention
-Test Data Management Tools
-Data Recovery Software
-Data Analytics Companies
-ALL Data Tools
-Coding Software
-
-Best Code Editors
-Code Coverage Tools
-Low-Code Development Tools
-Static Code Analysis Tools
-Source Code Management Tools
-Version Control Software
-Code Review Tools
-Javascript Online Editors
-Code Review Tools
-Code Quality Tools
-Security Testing Tools
-
-Penetration Testing Tools
-App Security Testing Tools
-Web Security Scanners
-Vulnerability Assessment
-Mobile App Security
-Malware Removal Tools
-Anti-Ransomware Tools
-Spyware Removal Tools
-Mobile Pen Testing Tools
-Pen Testing as a Service
-DAST Software
-Testing Service Providers
-
-Managed Testing Services
-Mobile Testing Services
-Software Testing Services
-Performance Testing Services
-Penetration Testing Companies
-Cyber Security Companies
-QA Outsourcing Companies
-USA Testing Companies
-Website Testing Services
-Regression Testing Services
-Software Development
-
-Custom Software Companies
-App Development Tools
-Software Development Tools
-Game Development Companies
-Software Companies USA
-SaaS Development Companies
-Android App Development
-DevOps Tools
-DevOps Service Providers
-App Development Companies
-Healthcare Dev Companies
-Networking Tools
-
-Network Management
-Network Security Tools
-Network Scanning Tools
-Application Scanners
-Network Testing Tools
-Network Monitoring Tools
-Network Security Tools
-Server Monitoring Tools
-Network Mapping Software
-SIEM Tools
-System Monitoring Tools
-Infrastructure Monitoring Tools
-Project Management Tools
-
-Project Management Software
-Project Management Apps
-Agile Project Management Tools
-Workflow Management Software
-Task Management Software
-Team Collaboration Tools
-JIRA Alternatives
-Project Planning Tools
-Team Management Software
-Cloud Tools
-
-Cloud Monitoring Tools
-Crowdsourcing Platforms
-Cloud Management
-Crowdsourced Testing Companies
-Cloud Mobile Testing
-Cloud Computing Companies
-Cloud Managed Services
-Cloud Testing Tools
-Cloud Security Companies
-ALL Categories
-Security Software
-
-Free Antivirus Software
-Cybersecurity Software
-Internet Security Tools
-External Vulnerability Scanner
-Website Malware Scanner
-Web Security Scanners
-Zero Trust Security
-Vulnerability Assessment
-ALL Security Tools
-IT Management Tools
-
-Remote Desktop Software
-Configuration Management
-Incident Management Software
-Change Management Software
-IT Asset Management
-Managed IT Services
-ITSM Tools
-Remote Monitoring Software
-Remote Access Software
-Asset Discovery Tools
-Workload Automation Tools
-IT Automation Tools
-
-About us | Contact us | Advertise
-All articles are copyrighted and cannot be reproduced without permission. SoftwareTestingHelp® is a registered trademark.
-©SoftwareTestingHelp 2025 — Read our Copyright Policy | Privacy Policy | Terms | Cookie Policy | Affiliate Disclaimer
-
-Software Testing Help
-
-
-AI Engine Chatbot
-
-
-Вопросы для Junior
- 
-От джуниоров требуют знать и уметь применять базовые структуры данных и модули, простейшие запросы к базам данных, знать простейшие команды системы контроля версий и тому подобное.
 
 Общее по Computer Science и Web Development:
 1. Что такое инженерия и процесс разработки в целом?
@@ -7742,7 +7098,6 @@ AI Engine Chatbot
 
 Ответы на некоторые из этих вопросов вы можете найти в видео курсах Python Базовый, Python Углублённый, Основы работы с Git.
 
- 
 
 Python:
 24. Python - интерпретируемый язык или компилируемый?
@@ -7797,10 +7152,6 @@ Python:
 
 49. Как создается объект в Python, для чего __new__, зачем __init__?
 
-Выбери специальность и получи бесплатный доступ к курсам на 3 дня:
-С чего начать?
-Frontend Developer
-Верстальщик сайтов
 50. Что знаете из модуля collections, какими еще built-in модулями пользовались?
 
 51. Что такое шаблонизатор и как в нем выполнять базовые операции (объединять участки шаблона, выводить дату, выводить данные с серверной стороны)?
@@ -7811,7 +7162,6 @@ Frontend Developer
 
 Ответы на некоторые из этих вопросов вы можете найти в видео курсах Python Стартовый (урок 2, урок 4-8), Python Базовый (урок 1, урок 6, урок 7, урок 9), Python Углублённый (урок 1, урок 4).
 
- 
 
 Базы данных:
 54. Какие есть базовые методы работы с SQL- базой данных в Python?
@@ -7827,7 +7177,6 @@ Frontend Developer
 Ответы на некоторые из этих вопросов вы можете найти в видео курсе SQL Базовый.
 
  
-
 Алгоритмы:
 59. Что такое алгоритмы (например, Big-O notation)?
 
@@ -7838,7 +7187,6 @@ Frontend Developer
 62. Что такое линейная сложность сортировки?
 
  
-
 Вопросы для Middle
  
 Если джуниору все надо подсказывать и помогать, то мидл может самостоятельно взять что-то новое и быстро его изучить и понять. У него накоплено достаточно знаний и опыта, чтобы быстро овладевать новым. Он может прийти и обсудить с опытным разработчиком, проконсультироваться, но окончательных решений не принимает.
@@ -7866,7 +7214,6 @@ Frontend Developer
 72. Что такое цикломатическая сложность?
 
  
-
 Python:
 73. Async Python: как работает, зачем, что под капотом?
 
@@ -7893,7 +7240,6 @@ Python:
 Ответы на некоторые из этих вопросов вы можете найти в видео курсе Python Углублённый (урок 3).
 
  
-
 Базы данных:
 84. Разница между SQL и NoSQL?
 
@@ -7935,20 +7281,6 @@ Python:
 
 99. Знания других языков, кроме Python (опыт).
 
-Видео курсы по схожей тематике:
-
-Python Базовый
-Python Базовый
-
-Алексей Орленко
-Python 3.4.0 Стартовый
-Python 3.4.0 Стартовый
-
-Алексей Орленко
-Создание проекта на Python и Flask
-Создание проекта на Python и Flask
-
-Ксения Крементарь
 100. Какие технологические особенности реализации распределенных систем?
 
 101. Какие есть низкоуровневые особенности языков и фреймворков?
@@ -7956,10 +7288,8 @@ Python 3.4.0 Стартовый
 102. Способы и методы управления памятью.
 
  
-
 Бонус. Практические задания
  
-
 1. Спроектировать клон Instagram. Это сервис, который понятен практически любому кандидату, даже если у него нет аккаунта. На высоком уровне он очень прост: картинки, описания, комментарии. Поэтому что-то минимальное сможет описать и джуниор. Если кандидат претендует на высшие позиции, можно бесконечно копать вглубь, касаясь API, тротлинга запросов, защиты от фрода, построения фидов пользователя и тому подобное.
 
 2. Дано рекурсивное определение чисел Фибоначчи, надо написать функцию, которая реализует это определение.
@@ -8011,47 +7341,9 @@ def f3 (lIn):
             return [i for i in l1 if i <(0.5 * 0.5)]
 
 
-Skip to content
- 
-Software Testing Help
-
-Home
-Resources
-FREE eBooks
-QA Testing
-Automation
-Types Of Testing
-Tutorials
-Data Tools
-More Tutorials
-40+ PHP Laravel Interview Questions And Answers (2026 LIST)
-By Sruthy  Updated February 3, 2026
- 
- Edited by Kamila
-Read this tutorial to prepare for your upcoming interview and learn the answers to popular and frequently asked Laravel Interview Questions:
-
-In the Laravel Collection and Laravel Forge tutorial of the Laravel Tutorial series, we learned about the Laravel Collection and its methods with examples, and Laravel Forge with advantages and pricing.
-
-This is the final tutorial in the Laravel series, which provides answers to important questions commonly asked in Laravel interviews.
-
-We hope this tutorial will help you approach your interviews with greater confidence. We have focused on both Laravel 7 and Laravel 8 versions in this tutorial.
-
-Table of Contents: [Show]
-
-Quiz on PHP Laravel Interview Questions
-Try this ultimate quiz on PHP Laravel interview questions to ace your upcoming interview. This quiz covers core PHP Laravel concepts, Advanced Laravel topics, and other important PHP concepts to help you prepare effectively for any PHP Laravel job interview.
-
-PHP Laravel Interview Mastery
-Master Laravel concepts and excel in your PHP development interviews
-Question 1 of 20
-What are Service Providers in Laravel?
-User authentication services
-Central place to configure and bootstrap application services
-File storage services
-Database service classes
 
 Laravel Interview Questions and Answers
-Important Questions for Laravel Interview
+
 Q #1) What is Laravel?
 
 Answer: Laravel is a free and open-source PHP framework that is used to develop complex web applications. It supports the Model-View-Controller (MVC) design pattern.
@@ -8246,12 +7538,6 @@ The following example shows how to create a route by adding the code directly to
 
 Example: Replace the code in routes/web.php file by adding the following code segment.
 
-1
-2
-3
-4
-5
-6
 <?php
 use Illuminate\Support\Facades\Route;
   
@@ -8359,10 +7645,6 @@ CSRF token helps to protect web applications from attacks that force a user to p
 
 The following code segment shows how a CSRF token can be used when creating a form in Laravel.
 
-1
-2
-3
-4
 <form action="/user" method="POST"> 
 @csrf 
 ... 
@@ -8475,9 +7757,6 @@ a) first() – This method returns the first element in the collection.
 
 Example:
 
-1
-2
-3
 collect([1, 2, 3])->first();
   
 // It returns 1 as the output.
@@ -8485,11 +7764,6 @@ b) unique(): This method returns all unique items in the collection.
 
 Example:
 
-1
-2
-3
-4
-5
 $collection = collect([1, 3, 2, 2, 4, 4, 1, 2, 5]);
 $unique = $collection->unique();
 $unique->values()->all(); 
@@ -8499,13 +7773,6 @@ c) contains(): This method checks whether the collection contains a given item.
 
 Example:
 
-1
-2
-3
-4
-5
-6
-7
 $collection = collect(['student' => 'Sachin', 'id' => 320]);
   
 $collection->contains('Sachin');
@@ -8517,10 +7784,6 @@ d) get(): This method returns the item at a given key.
 
 Example:
 
-1
-2
-3
-4
 $collection = collect(['car' => 'BMW', 'colour' => 'black']);
 $value = $collection->get('car');
       
@@ -8529,10 +7792,6 @@ e) toJson(): This method converts the collection into a JSON serialized string.
 
 Example:
 
-1
-2
-3
-4
 $collection = collect(['student' => 'Sachin', 'id' => 320]);
 $collection->toJson();   
   
@@ -8541,10 +7800,6 @@ f) toArray(): This method converts the collection into a plain PHP array.
 
 Example:
 
-1
-2
-3
-4
 $collection = collect(['student' => 'Sachin', 'id' => 320]);
 $collection->toArray();
   
@@ -8553,20 +7808,6 @@ g) join(): This method joins the collection’s values with a string.
 
 Example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 collect(['x', 'y', 'z'])->join(', '); 
 // It returns "x, y, z" as the output.
   
@@ -8585,9 +7826,6 @@ h) isNotEmpty(): This method returns true if the collection is not empty; otherw
 
 Example:
 
-1
-2
-3
 collect([])->isNotEmpty();
   
 // It returns false as the output.
@@ -8595,15 +7833,6 @@ i) Implode(): This method joins the items in a collection.
 
 Example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 $collection = collect([
     ['student_id' => 1, 'name' => 'Bob'],
     ['student_id' => 2, 'name' => 'David'],
@@ -8666,394 +7895,12 @@ Answer: It is a completely serverless deployment platform. It is powered by Amaz
 
 Note: Click here (the official page of Laravel Vapor) to learn more about Laravel Vapor.
 
-Conclusion
-Laravel is one of the most popular web frameworks among web developers. Even though there are a few significant changes from Laravel version 7 to Laravel version 8, most features are still the same.
-
-Laravel helps developers to build creative and reliable web applications efficiently using its features such as routing, controllers, middleware, views, blade templates, eloquent models, migrations, seeding, artisan, tinker, file permissions, sessions, authentication, authorization, collections, and many more.
-
-We have come to the end of this Laravel Tutorial for Beginners series. We believe you have enjoyed learning in this tutorial series and gained excellent knowledge. Hope to see you again in another tutorial series.
-
-We wish you all the best for your upcoming interview!!
-
-<< PREV Tutorial | FIRST Tutorial
-
-Was this helpful?
-Recommended Reading
-PHP Laravel Tutorial for Beginners: What Is Laravel Framework
-Laravel Tutorial for Beginners
-This Laravel tutorial introduces the PHP Laravel Framework, explains what is Laravel, how to install it, MVC architecture, and various components: Laravel Framework is a free and open-source web framework for PHP. It is used to develop complex web applications. It is based on the Model-View-Controller (MVC) architectural design pattern.…
-
-Laravel Forms And Validation Rules With Example
-Laravel Forms Tutorial for Beginners
-This tutorial explains Laravel Forms and Form Validation Rules. Learn about different form elements with examples: In the Laravel Database tutorial of Laravel Tutorial series, we learned about Database handling, Migrations, Seeding, Raw SQL Queries, Eloquent Models, Eloquent Relationships, Artisan and Tinker. Forms are an essential feature when developing a…
-
-Laravel Collection And Laravel Forge Tutorial
-Laravel Collections and Laravel Forge Tutorial for Beginners
-Learn about Laravel Collection and its methods with examples. This tutorial also explains Laravel Forge with advantages and pricing: In the Laravel Session tutorial of the Laravel Tutorial series, we learned about file upload, download, file permission, Laravel authentication & authorization, sending emails, etc. with examples. In this tutorial, we…
-
-50 Top PHP Interview Questions and Answers (For ALL)
-Top PHP Interview Questions
-List of most frequently asked core PHP interview questions with detailed answers and code examples for freshers and experienced candidates:  Do you want to learn or test your PHP skills for an interview? Here in this article, we will discuss some of the most common and frequently asked Core PHP interview…
-
-READ MORE FROM THIS SERIES:
-
-Group Discussion Rules and Tips
-Top 90 SQL Interview Questions and Answers for 2026
-SQL Server Interview Questions and Answers (2026)
-Interview Questions and Answers
-30+ Top Scrum Master Interview Questions and Answers
-Top 30 PL/SQL Interview Questions and Answers in 2026
-Top 20 JIRA Interview Questions and Answers
-Top 35 Linux Interview Questions and Answers
-Top 20 Business Analyst Interview Questions and Answers
-Top 45 Web Services Interview Questions and Answers (RESTful, SOAP, Security que…
-Top 24 Data Modeling Interview Questions for Data Engineers
-TOP 70+ UNIX Interview Questions with Answers
-Top 40 C Programming Interview Questions for Developers
-Top 40 Popular J2EE Interview Questions and Answers You Should Read
-Top 60 Networking Interview Questions and Answers
-Top 20 Leadership Interview Questions and Answers
-Top 32 IBM DataStage Interview Questions And Answers
-Top 31 Most Important SAP BO Interview Questions and Answers
-Top 20 RESTful Web Services Interview Questions and Answers
-Top 50+ Database Interview Questions and Answers
-Top 30 SAS Interview Questions and Answers
-Top JMeter Interview Questions and Answers for 2026
-Top 35 Android Interview Questions and Answers
-60 Top Unix Shell Scripting Interview Questions and Answers
-Top 64 Scenario-Based Informatica Interview Questions with Answers
-Top 31 Agile Interview Questions and Answers
-50+ Top Core Java Interview Questions and Answers (2026)
-Top JSON Interview Questions and Answers
-60+ Top VBScript Interview Questions and Answers (2026 LIST)
-Top 30 Eclipse Interview Questions and Answers
-Top Teradata Interview Questions and Answers
-25+ Most Popular ADO.NET Interview Questions and Answers
-Top 50 C# Interview Questions with Answers
-Top 30 DBMS Interview Questions and Answers
-Top Oracle Interview Questions: Oracle Basic, SQL, PL/SQL Questions
-Top Oracle DBA, RAC, and Performance Tuning Interview Questions
-Top 50 Most Popular CCNA Interview Questions and Answers
-Top 20+ .NET Interview Questions and Answers
-Top Oracle Forms and Reports Interview Questions
-Top Oracle Apps Technical and Oracle SOA Interview Questions
-Top 30+ Popular Cucumber Interview Questions and Answers
-Top 30+ JMS (Java Message Service) Interview Questions
-TOP 45 JavaScript Interview Questions With Detailed Answers
-Top 20 Latest DevOps Interview Questions and Answers for 2026
-50+ Bootstrap Interview Questions and Answers
-Top 20 TestNG Interview Questions and Answers
-30+ TOP Servlet Interview Questions and Answers (2026 LIST)
-35+ Top Apache Tomcat Interview Questions and Answers
-48 Top AngularJS Interview Questions and Answers (2026 LIST)
-Top 30+ Popular CSS Interview Questions and Answers
-30 Top HTML Interview Questions and Answers (2026 LIST)
-50 Top PHP Interview Questions and Answers (For ALL)
-Top 20 Java Interview Programs for Coding with Answers
-Top 12 Mockito Interview Questions (Mocking Framework Interview)
-Top 40 MySQL Interview Questions And Answers
-Top 61 Python Interview Questions And Answers
-Top 48 Spring Interview Questions (Crack an Interview in 2026)
-Top 25+ Azure Test Plan or TFS Interview Questions
-TOP 35 HTML5 Interview Questions and Answers
-Top 25 Perl Interview Questions You Should Prepare in 2026
-TOP 70 C++ Interview Questions and Answers [Includes Advanced]
-25+ Top Spring MVC Interview Questions and Answers
-Top 36 Jenkins Interview Questions For 2026
-Top 15 Popular Specflow Interview Questions
-Spock Interview Questions with Answers (Most Popular)
-Top 50 Swift Interview Questions (Swift iOS Interview)
-Top 25 Software Engineering Interview Questions [LATEST 2026]
-Top 38 Desktop Support Engineer Interview Questions and Answers
-Graphic Design Resume Guide: Example And Templates For 2026
-Top 45 XML Interview Questions And Answers for 2026 [LATEST]
-50 Top Salesforce Interview Questions and Answers (Updated 2026)
-Top 49 Salesforce Admin Interview Questions And Answers 2026
-Top 84 Salesforce Developer Interview Questions And Answers 2026
-Top 35 ASP.Net And Web API Interview Questions With Answers
-Top 20 Most Common Help Desk Interview Questions & Answers (2026)
-Top 18 Most Common Call Center Interview Questions & Answers 2026
-Top 10 Most Popular Postman Interview Questions With Answers
-Top 35 Frequently Asked Struts Interview Questions & Answers
-Top 20 HR Interview Questions and Answers
-Top 20+ Employee Exit Interview Questions To Ask
-Top 15+ Important Unix Commands Interview Questions For Beginners
-Top 40 GIT Interview Questions and Answers In 2026
-Top 25 Technical Support Interview Questions With Answers
-Top 25 Computer Architecture Interview Questions And Answers
-50+ Most Common jQuery Interview Questions And Answers (Updated 2026)
-Top 51 ElasticSearch Interview Questions & Answers in 2026
-Top 30 Programming / Coding Interview Questions & Answers
-Top 35 Management Interview Questions With Answers
-Top 29 Data Engineer Interview Questions And Answers
-Top 40 Java 8 Interview Questions & Answers [Most Important]
-31 Most Frequently Asked Maven Interview Questions & Answers
-30+ Top Java Collections Interview Questions With Answers (2026 LIST)
-Top 25 Java Web Services Interview Questions & Answers
-TOP 30 AWS Interview Questions and Answers in 2026
-How To Write A Follow Up Email After Interview?
-Top 40 SAP CRM Interview Questions and Answers
-Top 36 Most Important Chef Interview Questions And Answers
-Top 35 Puppet Interview Questions And Answers
-Top 31 Popular Python Flask Interview Questions With Answers
-JSP Interview Questions And Answers in 2026
-Top 30+ OOPS Interview Questions And Answers With Examples
-How To Write An Email To A Recruiter [Six Email Templates]
-Top 25+ Web Developer Interview Questions and Answers
-40+ PHP Laravel Interview Questions And Answers (2026 LIST)
-Top 25+ JDBC Interview Questions And Answers
-Top 30+ JSF Interview Questions And Answers
-Salesforce Lightning Interview Questions And Answers
-SAP Hybris Interview Questions And Answers
-Top 30 Node.js Interview Questions and Answers
-Top 25 Popular Appium Interview Questions And Answers
-Top 30 Frequently Asked Ajax Interview Questions And Answers
-35 Frequently Asked MongoDB Interview Questions And Answers
-39 Salesforce Solution Architect Interview Questions And Answers
-Top 30 Popular Scrum Master Interview Questions And Answers
-Top 20 Machine Learning Interview Questions And Answers
-Top 30+ Data Structure Interview Questions And Answers
-Top 28 VMware Interview Questions And Answers
-20 Reasons Why You are Not Getting Hired (with Solutions)
-Top 25 Microservices Interview Questions And Answers
-Top 26 Project Management Interview Questions for Managers
-Top 27 Azure Interview Questions And Answers
-42 Most Common TypeScript Interview Questions And Answers
-Top 25 Interview Questions for Managers with Answers
-50 Most Common React Interview Questions And Answers
-A Perfect Thank You Email After an Interview (4 Samples)
-Top 30+ Bulma Interview Questions and Answers With Examples
-Top 40+ Hibernate Interview Questions & Answers in 2026
-Top 30 Java Architect Interview Questions with Answers (2026)
-Top 40 Spring Boot Interview Questions 2026 (MOST ASKED)
-Top 40 Full Stack Developer Interview Questions & Answers
-IBM Careers: A Complete IBM Jobs & Internships Guide 2026
-Top 50 Behavioral Interview Questions and Sample Answers
-
-Get the Premium eBook 
-Download your copy now 👇
-Our Bestselling eBook 'Software Testing Career package' Now Available FREE for Limited Period
-Enter your email..
-
-DOWNLOAD NOW!
-Leave a Comment
-Comment
-
-Name
-Name *
-Email
-Email *
-
-About SoftwareTestingHelp
-Helping our community since 2006! Most popular portal for Software professionals with 400 million+ visits and 500,000+ followers! You will absolutely love our creative content on QA, Dev, Software Tools & Services Reviews!
-
-Learn In This Article:
-Quiz on PHP Laravel Interview Questions
-Important Questions for Laravel Interview
-Scenario-Based Interview Questions for Laravel Developers
-Laravel Interview Questions for Intermediates
-PHP Laravel Interview Questions for Experienced
-Conclusion
-Software Testing Help
-
-Communication Details
-
-Main Office: A708, City Vista, Fountain Road, Kharadi, Pune, MH, 411014.
-
-Email Us: info@softwaretestinghelp.com
-
-Facebook Linkedin X-twitter Youtube
-Software Testing Tools
-
-Test Management Tools
-Web Application Testing Software
-Cross Browser Testing Tools
-Best ETL Testing Tools
-Mobile Testing Tools
-Regression Testing Tools
-Defect Tracking Tools
-GUI Testing Tools
-Requirements Management Tools
-ALL Testing Tools
-Performance Testing Tools
-
-Performance Testing Tools
-Performance Testing Services
-Computer Stress Test Tools
-Cloud- Load Testing Service
-Performance Testing Guide
-Database Performance Tools
-Website Performance Testing Tools
-Application Performance Monitoring
-Automation Testing Tools
-
-Unit Testing Tools
-API Testing Tools
-Best ETL Tools
-Open Source Testing Tools
-Functional Testing Tools
-Selenium Alternatives
-Accessibility Testing Tools
-Mobile Automation Tools
-Automation Testing Software
-Automation Testing Services
-Data Tools
-
-Data Masking Tools
-Data Modeling Tools
-Data Analysis Tools
-Data Migration Software
-Data Integration Tools
-Data Mapping Tools
-Data Loss Prevention
-Test Data Management Tools
-Data Recovery Software
-Data Analytics Companies
-ALL Data Tools
-Coding Software
-
-Best Code Editors
-Code Coverage Tools
-Low-Code Development Tools
-Static Code Analysis Tools
-Source Code Management Tools
-Version Control Software
-Code Review Tools
-Javascript Online Editors
-Code Review Tools
-Code Quality Tools
-Security Testing Tools
-
-Penetration Testing Tools
-App Security Testing Tools
-Web Security Scanners
-Vulnerability Assessment
-Mobile App Security
-Malware Removal Tools
-Anti-Ransomware Tools
-Spyware Removal Tools
-Mobile Pen Testing Tools
-Pen Testing as a Service
-DAST Software
-Testing Service Providers
-
-Managed Testing Services
-Mobile Testing Services
-Software Testing Services
-Performance Testing Services
-Penetration Testing Companies
-Cyber Security Companies
-QA Outsourcing Companies
-USA Testing Companies
-Website Testing Services
-Regression Testing Services
-Software Development
-
-Custom Software Companies
-App Development Tools
-Software Development Tools
-Game Development Companies
-Software Companies USA
-SaaS Development Companies
-Android App Development
-DevOps Tools
-DevOps Service Providers
-App Development Companies
-Healthcare Dev Companies
-Networking Tools
-
-Network Management
-Network Security Tools
-Network Scanning Tools
-Application Scanners
-Network Testing Tools
-Network Monitoring Tools
-Network Security Tools
-Server Monitoring Tools
-Network Mapping Software
-SIEM Tools
-System Monitoring Tools
-Infrastructure Monitoring Tools
-Project Management Tools
-
-Project Management Software
-Project Management Apps
-Agile Project Management Tools
-Workflow Management Software
-Task Management Software
-Team Collaboration Tools
-JIRA Alternatives
-Project Planning Tools
-Team Management Software
-Cloud Tools
-
-Cloud Monitoring Tools
-Crowdsourcing Platforms
-Cloud Management
-Crowdsourced Testing Companies
-Cloud Mobile Testing
-Cloud Computing Companies
-Cloud Managed Services
-Cloud Testing Tools
-Cloud Security Companies
-ALL Categories
-Security Software
-
-Free Antivirus Software
-Cybersecurity Software
-Internet Security Tools
-External Vulnerability Scanner
-Website Malware Scanner
-Web Security Scanners
-Zero Trust Security
-Vulnerability Assessment
-ALL Security Tools
-IT Management Tools
-
-Remote Desktop Software
-Configuration Management
-Incident Management Software
-Change Management Software
-IT Asset Management
-Managed IT Services
-ITSM Tools
-Remote Monitoring Software
-Remote Access Software
-Asset Discovery Tools
-Workload Automation Tools
-IT Automation Tools
-
-About us | Contact us | Advertise
-All articles are copyrighted and cannot be reproduced without permission. SoftwareTestingHelp® is a registered trademark.
-©SoftwareTestingHelp 2025 — Read our Copyright Policy | Privacy Policy | Terms | Cookie Policy | Affiliate Disclaimer
-
-Software Testing Help
-
 
 AI Engine Chatbot
 Не удается связаться с сервисом reCAPTCHA. Проверьте подключение к Интернету и перезагрузите страницу.
 ГлавнаяСтатьи5 вопросов с собеседования на позицию Junior backend-разработчика на PHP
 5 вопросов с собеседования на позицию Junior backend-разработчика на PHP
 5 вопросов с ответами решениями, которые можно встретить на собеседовании на должность Junior PHP backend разработчика
-
-Варвара Теренник
-17 февр 2021
-Обложка: 5 вопросов с собеседования на позицию Junior backend-разработчика на PHP
-
-
-1
-
-
-Аватарка эксперта Тимофей Житков
-Тимофей Житков
-старший преподаватель в <a href="https://inordic.ru/">Nordic IT School</a> и Senior Full Stack Developer в агентстве недвижимости
-К нам на курс по web-разработке приходят люди с разной подготовкой и абсолютно разного возраста. В связи с тем, что спрос на IT специалистов стремительно растет, очень многие захотели сменить специальность и попробовать себя в этой перспективной отрасли.
-
-Естественно, все студенты задаются вопросом трудоустройства. Мы дорожим каждым учеником и своей репутацией, поэтому всячески содействуем их будущему. В частности, помогаем в составлении резюме и готовим к собеседованиям, а наши преподаватели (ведущие специалисты таких компаний как Сбербанк, Яндекс, Додо Пицца и т.д.) готовы давать рекомендации перспективным студентам.
-
-Мы, в Noric IT School, готовим специалистов, которые уже к середине курса могут решать практические задачки, которые дают в качестве тестовых в различных IT компаниях.
-
-И вот несколько самых популярных заданий, с которыми сталкиваются начинающие backend-разработчики на php, с примерами их решения.
 
 Напишите функцию Фибоначчи
 Числа Фибоначчи – это ряд чисел, в котором каждое следующее число равно сумме двух предыдущих: 1, 1, 2, 3, 5, 8, 13…
@@ -9280,34 +8127,14 @@ file_get_contents('php://input')
 Можно встретить такое, например при создании telegram-бота.
 
 
-Do you want to learn or test your PHP skills for an interview?
-
-Here in this article, we will discuss some of the most common and frequently asked Core PHP interview questions with detailed answers and code samples.
-
-The demand for PHP jobs is increasing day by day. People who are searching or preparing for PHP jobs have to face some common questions in the interview.
-
-Table of Contents: [Show]
-
-Exclusive Quiz on PHP Interview Questions
-Challenge yourself with this intense quiz on PHP interview questions. This quiz covers all core concepts of PHP, including OOP, basic & advanced concepts, and error-handling techniques to master PHP and land your dream job.
-
-🚀 PHP Interview Questions QUIZ
-Master PHP Concepts & Ace Your Next Interview
-Question 1 of 15
-Basic Questions
 🔍 You need to check if a variable is set and not null. Which function should you use?
 empty()
 is_null()
 defined()
 isset()
 
+
 Top PHP Interview Questions
-Core Interview Questions on PHP
-So, if you are a fresher and if you wish to make your career as a PHP developer or even an experienced professional looking to secure a higher position, then you must read this article to increase your chances of getting a PHP job easily and quickly.
-
-Given below is the list of the most popular PHP interview questions that are commonly asked in interviews.
-
-Let’s explore!!
 
 Q #1) What is PHP?
 
@@ -9333,8 +8160,6 @@ This means PHP does not require you to declare data types of variables when you 
 
 Sample code:
 
-1
-2
 $var = "Hello"; //String
 $var = 10; //Integer
 Q #4) What is meant by variable variables in PHP?
@@ -9343,10 +8168,6 @@ Answer: When the value of a variable is used as the name of another variable the
 
 Sample code:
 
-1
-2
-3
-4
 $str = "PHP";
 $$str = " Programming"; //declaring variable variables
 echo "$str ${$str}"; //It will print "PHP programming"
@@ -9359,15 +8180,12 @@ echo does not return any value after printing the output, and it works faster th
 
 Sample code:
 
-1
-2
 echo "PHP Developer";
 $n = print "Java Developer";
 Q #6) How can you execute a PHP script from the command line?
 
 Answer: You have to use the PHP command in the command line to execute a PHP script. If the PHP file name is test.php then the following command is used to run the script from the command line.
 
-1
 php test.php
 Q #7) How can you declare an array in PHP?
 
@@ -9375,12 +8193,6 @@ Answer: You can declare three types of arrays in PHP. They are numeric, associat
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
 //Numeric Array
 $computer = array("Dell", "Lenavo", "HP");
 //Associative Array
@@ -9393,10 +8205,6 @@ Answer: explode() function is used to split a string into an array, and the impl
 
 Sample code:
 
-1
-2
-3
-4
 $text = "I like programming";
 print_r (explode(" ",$text));
 $strarr = array('Pen','Pencil','Eraser');
@@ -9407,14 +8215,10 @@ Answer: You can use the exit() or die() function to exit from the current script
 
 Sample code:
 
-1
-2
 if(!fopen('t.txt','r'))
 exit(" Unable to open the file");
 Sample code:
 
-1
-2
 if(!mysqli_connect('localhost','user','password'))
 die(" Unable to connect with the database");
 Q #10) Which function is used in PHP to check the data type of any variable?
@@ -9423,10 +8227,6 @@ Answer: gettype() function is used to check the data type of any variable.
 
 Sample code:
 
-1
-2
-3
-4
 echo gettype(true).''; //boolean
 echo gettype(10).''; //integer
 echo gettype('Web Programming').''; //string
@@ -9437,7 +8237,6 @@ Answer: You need to change the value of the max_execution_time directive in the 
 
 For example, if you want to set the max execution time for 120 seconds, then set the value as follows:
 
-1
 max_execution_time = 120
 Q #12) What is meant by ‘passing the variable by value and reference’ in PHP?
 
@@ -9447,13 +8246,6 @@ Here, the main variable remains unchanged even when the passed variable changes.
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
-7
 function test($n) {
 $n=$n+10;
 }
@@ -9467,12 +8259,6 @@ So, if one variable changes, then the other will also change.
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
 function test(&$n) {
     $n=$n+10;
 }
@@ -9485,16 +8271,12 @@ Answer: The way by which PHP can assign a particular data type for any variable 
 
 Sample code:
 
-1
-2
 $str = "10"; // $str is now string
 $bool = (boolean) $str; // $bool is now boolean
 PHP does not support datatype for variable declaration. The type of the variable is changed automatically based on the assigned value, and it is called type juggling.
 
 Sample code:
 
-1
-2
 $val = 5; // $val is now number
 $val = "500" //$val is now string
 Q #14) How can you make a connection with MySQL server using PHP?
@@ -9503,8 +8285,6 @@ Answer: You have to provide MySQL hostname, username, and password to make a con
 
 Sample code:
 
-1
-2
 $mysqli = mysqli_connect("localhost","username","password");
 $mysqli = new mysqli("localhost","username","password");
 Q #15) How can you retrieve data from the MySQL database using PHP?
@@ -9517,13 +8297,6 @@ a) mysqli_fetch_array() – It is used to fetch the records as a numeric array o
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
-7
 // Associative or Numeric array
 $result=mysqli_query($DBconnection,$query);
 $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -9535,10 +8308,6 @@ b) mysqli_fetch_row() – It is used to fetch the records in a numeric array.
 
 Sample code:
 
-1
-2
-3
-4
 //Numeric array
 $result=mysqli_query($DBconnection,$query);
 $row=mysqli_fetch_array($result);
@@ -9547,10 +8316,6 @@ c) mysqli_fetch_assoc() – It is used to fetch the records in an associative ar
 
 Sample code:
 
-1
-2
-3
-4
 // Associative array
 $result=mysqli_query($DBconnection,$query);
 $row=mysqli_fetch_array($result);
@@ -9559,10 +8324,6 @@ d) mysqli_fetch_object() – It is used to fetch the records as an object.
 
 Sample code:
 
-1
-2
-3
-4
 // Object
 $result=mysqli_query($DBconnection,$query);
 $row=mysqli_fetch_array($result);
@@ -9578,12 +8339,6 @@ mysqli_connect() function searches for any existing persistence connection first
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
 $DBconnection = mysqli_connect("localhost","username","password","dbname");
 // Check for valid connection
 if (mysqli_connect_errno())
@@ -9600,9 +8355,6 @@ mysqli_num_rows() function is used to count the total number of rows returned by
 
 Sample code:
 
-1
-2
-3
 $mysqli = mysqli_connect("hostname","username","password","DBname");
 $result=mysqli_query($mysqli,"select * from employees");
 $count=mysqli_num_rows($result);
@@ -9614,9 +8366,6 @@ session_start() function is used in PHP to create a session.
 
 Sample code:
 
-1
-2
-3
 session_start(); //Start session
 $_SESSION['USERNAME']='Fahmida'; //Set a session value
 unset($_SESSION['USERNAME']; //delete session value
@@ -9626,10 +8375,6 @@ Answer: image types() function returns the list of supported images of the insta
 
 Sample code:
 
-1
-2
-3
-4
 //Check BMP extension is supported by PHP or not
 if (imagetypes() &IMG_BMP) {
     echo "BMP extension Support is enabled";
@@ -9640,9 +8385,6 @@ Answer: You can use fopen() function to read or write, or to do both in PHP.
 
 Sample code:
 
-1
-2
-3
 $file1 = fopen("myfile1.txt","r"); //Open for reading
 $file2 = fopen("myfile2.txt","w"); //Open for writing
 $file3 = fopen("myfile3.txt","r+"); //Open for reading and writing
@@ -9654,8 +8396,6 @@ If any error occurs at the time of including a file using include() function, th
 
 Sample code:
 
-1
-2
 if (!include(‘test.php’)) echo “Error in file inclusion”;
 if (!require(‘test.php’)) echo “Error in file inclusion”;
 Q #22) Which function is used in PHP to delete a file?
@@ -9666,7 +8406,6 @@ unlink() function is used in PHP to delete any file.
 
 Sample code:
 
-1
 unlink('filename');
 Q #23) What is the use of strip_tags() method?
 
@@ -9674,10 +8413,6 @@ Answer: strip_tags() function is used to retrieve the string from a text by omit
 
 Sample code:
 
-1
-2
-3
-4
 //Remove all tags from the text
 echo strip_tags("<b>PHP</b> is a popular <em>scripting</em> language");
 //Remove all tags excluding <b> tag
@@ -9688,7 +8423,6 @@ Answer: The header() function is used to send a raw HTTP header to a client befo
 
 Sample code:
 
-1
 header('Location: http://www.your_domain/');
 Q #25) Which functions are used to count the total number of array elements in PHP?
 
@@ -9696,10 +8430,6 @@ Answer: count() and sizeof() functions can count the total number of array eleme
 
 Sample code:
 
-1
-2
-3
-4
 $names=array(“Asa”,”Prinka”,”Abhijeet”);
 echo count($names);
 $marks=array(95,70,87);
@@ -9714,14 +8444,10 @@ strstr() function searches for the first occurrence of a string inside another s
 
 Sample code:
 
-1
-2
 echo substr("Computer Programming",9,7); //Returns “Program”
 echo substr("Computer Programming",9); //Returns “Programming”
 Sample code:
 
-1
-2
 echo strstr("Learning Laravel 5!","Laravel"); //Returns Laravel 5!
 echo strstr("Learning Laravel 5!","Laravel",true); //Returns Learning
 Q #27) How can you upload a file using PHP?
@@ -9732,25 +8458,15 @@ Answer: To upload a file by using PHP, you have to do the following tasks.
 
 Open php.ini file and find the file_uploads directive and make it on.
 
-1
 file_uploads = On
 (ii) Create an HTML form using enctype attribute and file element for uploading the file.
 
-1
-2
-3
-4
 <form action="upload.php" method="post" enctype="multipart/form-data">
 <input type="file" name="upd" id="upd">
 <input type="submit" value="Upload" name="upload">
 </form>
 (iii) Write a PHP script to upload the file
 
-1
-2
-3
-4
-5
 if (move_uploaded_file($_FILES["upd"]["tmp_name"], "Uploads/")) {
 echo "The file ". basename( $_FILES["upd"]["name"]). " is uploaded.";
 } else {
@@ -9762,7 +8478,6 @@ Answer: define() function is used to declare a constant variable in PHP. Constan
 
 Sample code:
 
-1
 define("PI",3.14);
 Q #29) Which function is used in PHP to search for a particular value in an array?
 
@@ -9770,13 +8485,6 @@ Answer: in_array() function is used to search for a particular value in an array
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
-7
 $languages = array("C#", "Java", "PHP", "VB.Net");
 if (in_array("PHP", $languages)) {
 echo "PHP is in the list";
@@ -9793,24 +8501,6 @@ Sample code:
 
 Here, the $_REQUEST variable is used to read the submitted form field with the name ‘username’. If the form is submitted without any value, then it will print as “Name is empty”, otherwise it will print the submitted value.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 <?php
 if (isset($_POST['submit'])) {
 // collect value of input field
@@ -9835,20 +8525,12 @@ Answer: For loop is mainly used for iterating a pre-defined number of times, and
 
 Sample code:
 
-1
-2
-3
-4
 //Loop will iterate for 5 times
 for ($n = 0; $n <= 5; $n++) {
 echo "The number is: $n <br>";
 }
 Sample code:
 
-1
-2
-3
-4
 //Loop will iterate based on array elements 
 $parts = array("HDD", "Monitor", "Mouse", "Keyboard"); 
 foreach ($parts as $value) { 
@@ -9866,11 +8548,6 @@ Sample code:
 
 10 and “10” are equal by value but are not equal by data type. One is a string and the other is a number. So, if the condition is false and print “n is not equal to 10”.
 
-1
-2
-3
-4
-5
 $n = 10;
 if ($n === "10")
 echo "n is equal to 10";
@@ -9882,9 +8559,6 @@ Answer: Two or more string values can be combined by using ‘.’ operator.
 
 Sample code:
 
-1
-2
-3
 $val1 = "Software ";
 $val2 = "Testing";
 echo $val1.$val2; // The output is “Software Testing”
@@ -9905,11 +8579,6 @@ Some major error types are mentioned below:
 Fatal Errors– The execution of the script stops when this error occurs.
 Sample code:
 
-1
-2
-3
-4
-5
 function f1() 
 { echo "function 1"; 
 }
@@ -9920,8 +8589,6 @@ In the following script, f1() function is declared, but f2() function is called,
 Parse Errors– This type of error occurs when the coder uses the wrong syntax in the script.
 Sample code:
 
-1
-2
 echo "This is a testing script<br/>"
 echo "error";
 Here, semicolon(;) is missing at the end of the first echo statement.
@@ -9929,8 +8596,6 @@ Here, semicolon(;) is missing at the end of the first echo statement.
 Warning Errors- This type of error does not stop the execution of a script. It continues the script even after displaying the error.
 Sample code:
 
-1
-2
 $handler = fopen("test.txt","r");
 echo "Opening File";
 In the following script, if the test.txt file does not exist in the current location, then a warning message will display to show the error and print “Opening File” text by continuing the execution.
@@ -9940,9 +8605,6 @@ Here, the variable $a is defined but $b is not defined. So, a notice of the unde
 
 Sample code:
 
-1
-2
-3
 $a = 100;
 echo $b;
 echo "Checking notice error";
@@ -9952,24 +8614,6 @@ Answer: PHP does not support multiple inheritance. To implement the features of 
 
 Sample code:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 interface Isbn { 
 public function setISBN($isbn);
 }
@@ -10002,9 +8646,6 @@ Answer: mysqli_real_escape_string() function is used to escape special character
 
 Sample code:
 
-1
-2
-3
 $DBconnection=mysqli_connect("localhost","username","password","dbname");
 $productName = mysqli_real_escape_string($con, $_POST['proname']);
 $ProductType = mysqli_real_escape_string($con, $_POST['protype']);
@@ -10017,10 +8658,6 @@ ltrim() – It removes whitespaces from the left side of the string.
 rtrim() – It removes whitespaces from the right side of the string.
 Sample code:
 
-1
-2
-3
-4
 $str = " Tutorials for your help";
 $val1 = trim($str);
 $val2 = ltrim($str);
@@ -10032,7 +8669,6 @@ Answer: A cookie file that is stored permanently in the browser is called a pers
 
 This type of cookie can be declared as follows,
 
-1
 setccookie ("cookie_name", "cookie_value", strtotime("+2 years");
 Q #42) How can a cross-site scripting attack be prevented by PHP?
 
@@ -10102,24 +8738,6 @@ It is a lightweight PHP extension that uses a consistence interface for accessin
 
 Suggested reading =>> Laravel Interview Questions
 
-
-Качественная подготовка – залог успешного собеседования. Особенно, если дело касается IT-сферы. Здесь лишнее волнение и ненужные ошибки могут стоить хорошего оффера.
-
-Чтобы облегчить вам жизнь, мы подготовили для вас чек-лист с вопросами, которые могут задать на собеседовании PHP-разработчику. Уделим особое внимание теоретическому блоку для Junior и вкратце рассмотрим вопросы для Middle и Senior.
-
-SEO, Директ, VK Ads, Авито и Wildberries — в одном кабинете
-
-PromoPult ведёт рекламу на автопилоте:
-
-один логин вместо пяти;
-без абонентской платы и агентских комиссий — платите только за то, что используете;
-возврат до 19% от расходов бонусами.
-Реклама. ООО "Клик.ру". ИНН 7743771327. erid:2VtzqxFCx5k
-Junior
-Начинающий специалист должен иметь базовые знания PHP (синтаксис, переменные, функции и пр.), понимать основные концепции разработки и уметь работать с Git. Неплохо, если потенциальный джун уже знает о фреймворках (например, Laravel, Symfony) и умеет использовать их для решения различных задач.
-
-Hard Skills
-Основы:
 
 Что такое PHP?
 Это скриптовый язык программирования, с помощью которого можно создавать сайты и веб-приложения. Наследует синтаксис С, Java и Perl.
@@ -10214,99 +8832,5 @@ Hard Skills
 
 Чем отличаются локальная и глобальная переменные?
 Первая доступна в конкретном методе, вторая – во всей программе.
-
-Soft Skills
-Коммуникабельность. Разработчики регулярно общаются в команде, с другими сотрудниками, заказчиками и т.д. Нужно уметь доносить свои мысли, задавать правильные вопросы, давай фидбек.
-Командная работа. Программист – командный игрок. Он должен делиться информацией с коллегами, вовремя просить о помощи (и оказывать ее другим), принимать критику и уметь брать на себя ответственность.
-Адаптивность. Сфера разработки не стоит на месте – регулярно появляются разные изменения. Поэтому важно всегда держать руку на пульсе и уметь адаптироваться.
-Готовность к обучению. Т.к. в IT все постоянно меняется, важно быть готовым к постоянному обучению и самосовершенствованию. Нужно изучать новые технологии и методы и отслеживать все тенденции в разработке.
-Организованность. Нужно уметь планировать свою работу и управлять временем – иначе велик риск перегореть или отстать от более успешных коллег или конкурентов.
-Наконец, не забываем про целеустремленность – плох тот джун, что не хочет стать сеньором.
-
-
-
-ЧИТАЙТЕ ТАКЖЕ
-Чек-лист вопросов на собеседовании Python-разработчику
-21.12.2023
-Middle и Senior
-Middle-разработчик должен не только в совершенстве знать PHP, но и HTML, CSS, JavaScript, действительно применять на практике концепции ООП, разбираться во фронтенде и бэкенде, уметь читать чужой код и т.д.
-
-У Senior-разработчика должен быть не только широкий кругозор (у него наивысший уровень экспертизы в рабочей группе) и огромный опыт в разработке, но и навыки управления командой и проектами. Он должен уметь принимать важные решения и нести за это ответственность.
-
-Что такое spread-оператор?
-Какие типы уязвимостей бывают и как от них защищаться?
-Чем отличаются SOAP и REST?
-Что такое стрелочные и анонимные функции?
-Когда появилась новая версия PHP и в чем ее нововведения? Почему после PHP 5 идет сразу PHP7?
-Какие бывают паттерны проектирования?
-Какие бывают REQUEST-методы?
-Какую команду нужно использовать для удаления коммита в Git?
-Расскажите о CQRS
-Как правильно писать DTO?
-Как проходит реальное собеседование на позицию Senior – в этом видео:
-
-
-
-Видео открывается с иностранным IP
-
-Автор статьи
-
-Лиана Санамян
-
-Редактор и автор портала Otzyvmarketing.ru. Опыт работы в digital-маркетинге более 5 лет, с текстами работаю более 8 лет. Магистр филологии и ...
-
-Опубликовано
-26.02.2024
-
-Обновлено: 19.02.2026
-ЕЩЕ ПО ТЕМЕ
-Как создать логотип с помощью нейросети - инструкция
-
-Статус в WhatsApp: как посмотреть и добавить - быстрый способ
-
-Комментарии
-
-Сергей Покоев
-
-29.04.2024
-
-странный достаточно набор вопросов. Мало того, что охватывает малую часть знаний, так вопросы весьма специфичные, не знание которых не говорит что человек не соответствует уровню. Например, мне, как нанимающему нафига знание, почему не было 6 версии php? Да и с чего бэкэнд разработчик уровня Middle должен в совершенстве знать js и прочее, если он не фулл стек?
-
-Добавить комментарий
-Текст комментария
-
-Подпишитесь на нас в соцсетях
-Узнавайте о новостях и событиях там, где вам удобно
-
-
-Вконтакте
-
-Telegram
-
-YouTube
-
-PromoPult (SeoPult)
-Прежде чем выбрать — попробуйте сами
-14 дней SEO в PromoPult бесплатно. Без карты и подписки. Один кабинет для SEO, Директа, VK Ads и Wildberries.
-
-Начать бесплатно
-реклама
-
-
-
-otzyvmarketing
-Авторитетные отзывы от специалистов интернет-рынка
-
-Контакты
-Реклама на сайте
-FAQ для сервисов
-Виджеты для сервисов
- Добавить компанию
-Пользовательское соглашение
-Правила сайта
-Профессии
-Промокоды
-Кабинет представителя
-© 2015-2026 otzyvmarketing.ru
 
 
