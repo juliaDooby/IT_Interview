@@ -1,102 +1,70 @@
-Linux Interview Questions and Answers
-Dive into a comprehensive collection of Linux interview questions and answers, designed to prepare you for success in IT and sysadmin roles.
-
-
-I am looking to hire
-
-
-I am looking for a job
-
-Linux Interview Questions and Answers delve into essential queries regarding Linux operating systems, aiming to assess candidates' proficiency in Linux administration, troubleshooting, and system management. Linux interview questions and answers explore candidates' understanding of shell scripting, package management, user account administration, and server deployment methodologies, providing insights into their ability to handle real-world scenarios effectively. Linux Interview Questions and Answers play a pivotal role in assessing candidates' suitability for roles requiring Linux expertise, offering a comprehensive evaluation of their technical skills, problem-solving abilities, and familiarity with Linux best practices.
-
 Basic Linux Interview Questions and Answers
-Linux basic interview questions serve as an introductory exploration into an individual's understanding of fundamental concepts and principles within the Linux operating system. Linux basic interview questions aim to assess a candidate's familiarity with core functionalities, commands, and operations crucial for working effectively in a Linux environment. By probing candidates on basic Linux concepts, interviewers can gauge their competence and suitability for roles that require Linux proficiency.
 
 What is Linux, and why is it popular?
-Hide Answer
-
 Linux is a free and open-source operating system based on Unix. It is popular due to its security, stability, and flexibility. Linux operates on a wide range of hardware, from desktops to servers. The open-source nature of Linux allows users to modify and distribute their versions. Linux's popularity stems from its extensive use in server environments, cloud computing, and development.
 
 Can you explain the difference between Linux and UNIX?
-Hide Answer
 
 Linux and UNIX are both operating systems, but Linux is open-source and freely distributable, whereas UNIX is proprietary. Linux is compatible with a wide range of hardware platforms compared to UNIX. The development of Linux is community-driven, while UNIX development is managed by commercial entities. Linux offers greater flexibility in customization than UNIX. These differences highlight Linux's adaptability and broader accessibility.
 
 What is the Linux kernel, and what role does it play?
-Hide Answer
 
 The Linux kernel is the core component of the Linux operating system. It manages the system's resources and allows software to interact with hardware. The kernel handles system calls, process management, device control, and memory management. It acts as a bridge between applications and data processing performed at the hardware level. The Linux kernel's efficiency and modularity are fundamental to Linux's performance and security.
 
 How do you list files and directories in Linux?
-Hide Answer
 
 To list files and directories in Linux, the ls command is used in the terminal. This command displays files and directories in the current working directory. Options like -l for detailed listings, -a to show hidden files, and -h for human-readable formats enhance its functionality. The ls command is essential for navigating the filesystem and managing files effectively in Linux.
 
 Describe how to copy files in Linux.
-Hide Answer
 
 In Linux, the cp command is used to copy files from one location to another. This command requires specifying the source file and the destination path. Options like -r for recursive copy of directories and -i for interactive prompts before overwriting add to its versatility. The cp command is a fundamental tool for file management in Linux, enabling efficient data manipulation and backup.
 
 What is the purpose of the chmod command in Linux?
-Hide Answer
 
 The purpose of the chmod command in Linux is to change the file mode bits of a file system object. The chmod modifies the permissions of files and directories regarding who can read, write, or execute them. Users apply chmod to ensure security and proper access control. This command is crucial for maintaining the integrity and security of the file system.
 
 How do you view the contents of a file in Linux?
-Hide Answer
 
 To view the contents of a file in Linux, commands like cat, less, more, and tail are used. cat displays the entire content of a file, less and more allow for paginated viewing, and the tail shows the last part of a file. These commands are indispensable for file content inspection, aiding in text processing and analysis.
 
 Explain the use of the grep command in Linux.
-Hide Answer
 
 The grep command in Linux is used to search for specific patterns within files. It filters the input given to it based on the pattern specified by the user. The grep supports regular expressions, enhancing its search capabilities. This command is invaluable for text processing, allowing users to find relevant information quickly in files.
 
 How can you redirect output in Linux?
-Hide Answer
 
 In Linux, output redirection is achieved using the > and >> operators. The > operator directs the output of a command to a file, replacing the existing content. The >> operator appends the output to the end of the file. Output redirection is a powerful feature for managing command outputs, facilitating efficient data storage and manipulation.
 
-Your engineers should not be hiring. They should be coding.
-Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
-
-
-Hire dream developers now
 What is the significance of the root user in Linux?
-Hide Answer
 
 The root user in Linux holds unrestricted access to the system. It has the authority to execute any command, including those affecting system security and user management. The root user can modify system settings, manage installed software, and access all files. Due to its extensive privileges, operations as the root user require caution to prevent unintended system changes. The significance of the root user lies in its ability to perform system-wide administrative tasks.
 
+ 
 Linux Commands Interview Questions and Answers
-Linux Commands Interview Questions focus on assessing candidates' knowledge and understanding of various commands and utilities available in the Linux operating system. Linux Commands Interview Questions dive into the practical application of Linux commands, covering a wide range of functionalities such as file manipulation, process management, system administration, networking, and more. Candidates are expected to demonstrate proficiency in using command-line tools to perform tasks efficiently and effectively in a Linux environment.
+
+focus on assessing candidates' knowledge and understanding of various commands and utilities available in the Linux operating system. Linux Commands Interview Questions dive into the practical application of Linux commands, covering a wide range of functionalities such as file manipulation, process management, system administration, networking, and more. Candidates are expected to demonstrate proficiency in using command-line tools to perform tasks efficiently and effectively in a Linux environment.
 
 How do you check the current working directory in Linux?
-Hide Answer
 
 To check the current working directory in Linux, the pwd command is used. This command stands for "print working directory." Upon execution, it displays the full pathname of the current directory. The pwd command is essential for navigating the file system and understanding your location within it. This information is crucial for executing other commands accurately, especially when working with files and directories.
 
 Describe the command to display the contents of a file in Linux.
-Hide Answer
 
 The cat command is used to display the contents of a file in Linux. The cat command, short for concatenate, reads files sequentially, writing them to standard output. The cat command is versatile, allowing for viewing file contents, creating single or multiple files, and concatenating and redirecting output in scripts or command lines. Thecat command is fundamental for managing file content viewing in the Linux operating system.
 
 What is the command to find the usage of disk space by directories in Linux?
-Hide Answer
 
 Thedu command is used to find the usage of disk space by directories in Linux. The du command, short for disk usage, summarizes the amount of disk space used by files and directories. By default, it lists the disk usage of the directories and subdirectories from the current directory. Options can modify its output for easier analysis, such as -h for human-readable formats. The du command is crucial for monitoring and managing disk space usage efficiently.
 
 How can you display the first 10 lines of a file in Linux?
-Hide Answer
 
 The head command is used to display the first 10 lines of a file in Linux. By default, the head command shows the first 10 lines of any given file. Users can specify the number of lines to be displayed using the -n option followed by the desired number of lines. This command is particularly useful for previewing the contents of large files or checking file headers. The head command is a fundamental tool for quick file content inspection.
 
 What command would you use to search for a specific text within files in Linux?
-Hide Answer
 
 To search for a specific text within files in Linux, the grep command is used. The grep command, which stands for Global Regular Expression Print, searches files for lines that match a given pattern and returns the results. It is highly versatile, with options to control the search depth, file type, and case sensitivity. grep is indispensable for filtering and searching through large volumes of text data. The grep command is a cornerstone for text processing and analysis in Linux.
 
 Explain how to list all running processes in Linux.
-Hide Answer
 
 To list all running processes in Linux, the ps aux command is used. This command provides a snapshot of the current processes. The ‘ps’ command shows the process status and lists processes for all users, u displays the user/owner of the process, and x includes processes not attached to a terminal. This comprehensive view is crucial for system monitoring, process management, and troubleshooting. The ability to list all running processes is fundamental for effective system administration.
 
@@ -115,11 +83,6 @@ Hide Answer
 
 The df command in Linux is used to report file system disk space usage. It displays the amount of disk space used and available on all mounted filesystems. The df command supports various options, such as -h for human-readable output, which makes the size more comprehensible. This command is essential for monitoring disk space and managing storage resources effectively. The df command is fundamental for system administrators to ensure adequate disk space.
 
-Your engineers should not be hiring. They should be coding.
-Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
-
-
-Hire dream developers now
 How can you display the current date and time in Linux?
 Hide Answer
 
@@ -231,10 +194,7 @@ Locking a user account in Linux is done with the passwd -l [username] command, w
 Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
-
-Hire dream developers now
 What is the purpose of the /etc/passwd file?
-Hide Answer
 
 The /etc/passwdfile serves as a user account database in Linux. It contains information about each user, including username, UID, GID, home directory, and default shell. This file is accessible for reading by all users, providing essential details for system operations and user management. The /etc/passwd file plays a key role in authentication and authorization processes. It is fundamental to Linux's user management system, facilitating the mapping of UIDs to usernames.
 
@@ -283,18 +243,12 @@ Hide Answer
 
 Finding out the groups a user belongs to in Linux is achieved with the groups [username] command. Another method is the id -nG [username] command, which lists the group names associated with the user. These commands provide insight into a user's access permissions and group affiliations. Understanding a user's group memberships is crucial for managing permissions and ensuring secure access to resources. This information aids in configuring access controls and auditing security settings.
 
-Your engineers should not be hiring. They should be coding.
-Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
-
-
-Hire dream developers now
 Describe the process to modify the GID of a group in Linux.
-Hide Answer
 
 Modifying the GID of a group in Linux involves the groupmod -g [newGID] [groupname] command. This command changes the group's GID to the specified new GID in the /etc/group file. The GID change must be carefully managed to avoid access issues for files and directories owned by the group. Administrators perform this action to maintain a coherent and secure permission structure. Modifying the GID is part of advanced user and group management, ensuring consistency across system resources.
 
 Process Management Interview Questions and Answers
-Process Management Interview Questions in Linux focus on how candidates manage, monitor, and manipulate system processes. Process Management Interview Questions cover the usage of commands and tools that handle process life cycles, from creation to termination. Candidates must demonstrate knowledge in identifying process IDs, altering process priorities, and controlling foreground and background processes.
+focus on how candidates manage, monitor, and manipulate system processes. Process Management Interview Questions cover the usage of commands and tools that handle process life cycles, from creation to termination. Candidates must demonstrate knowledge in identifying process IDs, altering process priorities, and controlling foreground and background processes.
 
 How do you list all currently running processes in Linux?
 Hide Answer
@@ -344,10 +298,7 @@ Nice values in Linux process management determine the priority of a process's ac
 Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
-
-Hire dream developers now
 What is the difference between foreground and background processes in Linux?
-Hide Answer
 
 Foreground processes in Linux directly interact with the user and occupy the terminal session until they are complete. Background processes run independently of the terminal, allowing the user to continue other tasks. Users can switch processes between foreground and background using the bg and fg commands. This distinction is fundamental to task management in Linux.
 
@@ -399,15 +350,13 @@ A cron job in Linux is a scheduled task automated by the cron daemon. Configurat
 Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
-
-Hire dream developers now
 How do you monitor real-time process activity in Linux?
-Hide Answer
 
 Monitoring real-time process activity in Linux is primarily done using the top or htop commands. These tools provide a dynamic view of CPU, memory usage, and process information. Users can sort, kill, and manage processes interactively. Real-time monitoring is crucial for immediate insights into system performance and process management.
 
 Networking Commands Interview Questions and Answers
-Networking Commands Interview Questions focus on examining the candidate's proficiency with Linux commands used for managing and troubleshooting network settings and issues. Networking Commands Interview Questions assess the ability to use terminal-based tools and commands for inspecting network configurations, diagnosing connectivity problems, and securing network communications. Networking Commands Interview Questions are crucial for roles involving system administration, network management, and IT support, as they reflect the candidate's skill in navigating and resolving network-related tasks in Linux environments.
+
+focus on examining the candidate's proficiency with Linux commands used for managing and troubleshooting network settings and issues. Networking Commands Interview Questions assess the ability to use terminal-based tools and commands for inspecting network configurations, diagnosing connectivity problems, and securing network communications. Networking Commands Interview Questions are crucial for roles involving system administration, network management, and IT support, as they reflect the candidate's skill in navigating and resolving network-related tasks in Linux environments.
 
 How do you display all network interfaces on a Linux system?
 Hide Answer
@@ -458,9 +407,7 @@ Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
 
-Hire dream developers now
 Describe the process to add a static route in Linux.
-Hide Answer
 
 To add a static route in Linux, the ip route add [destination_network]/[mask] via [gateway_ip] command is used. This command explicitly defines a route to a network or host, specifying the next hop or gateway. Static routes are essential for directing traffic efficiently, especially in complex network topologies. Managing static routes enables precise control over network traffic flow.
 
@@ -570,10 +517,7 @@ Mounting an NFS share on a Linux system requires the mount command with the NFS 
 Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
-
-Hire dream developers now
 Describe how to use the dd command for disk cloning.
-Hide Answer
 
 Using the dd command for disk cloning involves specifying the input file (if=) as the source disk and the output file (of=) as the destination disk. The command dd if=/dev/sdx of=/dev/sdy bs=4M clones the source disk /dev/sdx to the destination disk /dev/sdy with a block size of 4 MB. dd is a powerful tool that performs bit-by-bit copying, useful for backups and disk upgrades. Care must be taken to specify the correct source and destination to avoid data loss.
 
@@ -625,116 +569,13 @@ Changing the default mount options for an ext4 file system involves editing the 
 Your engineers should not be hiring. They should be coding.
 Help your team focus on what they were hired for. Flexiple will manage your entire hiring process and scale your tech team.
 
-
-Hire dream developers now
 Explain how to set up disk quotas for users on a Linux system.
-Hide Answer
 
 Setting up disk quotas for users on a Linux system requires enabling quotas on the file system,editing the /etc/fstab file to include the usrquota or grpquota options, and remounting the file system. The quotacheck command initializes the quota system, while quotaon activates it. Quotas are set and managed with the edquota command. Disk quotas control disk space and file usage, preventing a single user or group from consuming excessive resources.
 
-How to ace a Linux Interview?
-To ace a Linux interview, candidates must demonstrate deep knowledge and practical experience with Linux systems. Mastery of fundamental commands, understanding of file system hierarchy, and proficiency in user and group management form the foundation. Demonstrating ability to navigate the command line, utilize text editors like Vim or Nano, and manage processes and permissions shows practical skills. Knowledge of shell scripting and automation with bash scripts sets candidates apart. Preparation should include familiarization with common networking commands and security practices within Linux environments. Confidence in troubleshooting and problem-solving abilities, supported by real-world scenarios, proves readiness for challenging Linux roles. Discussing experiences with Linux servers, including deployment and maintenance, highlights versatility and expertise. Staying updated with the latest Linux developments and contributing to open-source projects reflect a genuine passion for Linux.
 
-Ideal structure for a 60‑min interview with a software engineer
-
-
-Download Now
-Build your dream team
-
-1-stop solution to hire developers for full-time or contract roles.
-
-
-Sign up now
-Interview Resources
-Want to upskill further through more interview questions and resources? Check out our collection of resources curated just for you.
-
-
-Hire Talent
-
-Find remote jobs
-Find Your Dream Job
-
-Discover exciting roles at fast growing startups, tailored to your unique profile. Get started with Flexiple now!
-
-Based on Skill
-Based on Role
-Based on Career Trajectory
-.NET
-Algorithms
-Android
-Angular
-ASP.NET
-AWS
-Azure
-Blockchain
-C#
-C++
-CSS
-Django
-Docker
-Elasticsearch
-Flutter
-Go
-Google Cloud
-GraphQL
-Ionic
-iOS
-Java
-JavaScript
-Kotlin
-LAMP
-Laravel
-MongoDB
-NodeJS
-NoSQL
-PHP
-Python
-React Native
-ReactJS
-Ruby
-Ruby on Rails
-Swift
-Vue.js
-Xamarin
-Contact Details
-
-2093, Philadelphia Pike, DE 19703, Claymont
-
-suvansh.bansal@flexiple.com
-Facebook Icon
-Instagram Icon
-Twitter Icon
-LinkedIn Icon
-Media
-Full-time
-Contractor
-Blogs
-About
-FAQ
-Careers
-Flexiple Logo
-Terms of use
-Privacy policy
-Copyright@2026 Flexiple Inc
-
-
-60 лучших вопросов и ответов на интервью по Linux (PDF) в 2026 году
-Автор:
-Эмили КартерЭмили Картер
-обновлено
-6 августа 2026
-
-Добавить Guru99 на Google
-Вот вопросы и ответы на собеседовании по Linux для новичков и опытных кандидатов, желающих получить работу своей мечты.
- 
-
-Содержание:
-
-Вопросы и ответы на собеседовании по Linux для первокурсников
 1) Что такое Linux?
 Linux — это операционная система или ядро, распространяемое по лицензии с открытым исходным кодом. Список его функций очень похож на UNIX. Ядро — это программа, лежащая в основе операционной системы Linux, которая заботится о фундаментальных вещах, таких как взаимодействие оборудования с программным обеспечением.
-
-👉 Бесплатная загрузка PDF-файла: Вопросы и ответы для интервью по Linux
 
 2) В чем разница между UNIX и LINUX?
 Первоначально Unix начиналась как собственная операционная система от Bell Laboratories, которая позже породила различные коммерческие версии. С другой стороны, Linux бесплатен, имеет открытый исходный код и предназначен как непатентованная операционная система для масс.
@@ -774,11 +615,6 @@ LILO — это загрузчик для Linux. Он используется �
 11) В чем важность проекта GNU?
 Это так называемое движение за свободное программное обеспечение дает несколько преимуществ, таких как свобода запускать программы для любых целей и свобода изучать и изменять программы в соответствии с вашими потребностями. Это также позволяет вам распространять копии программного обеспечения среди других людей, а также дает свободу улучшать программное обеспечение и публиковать его для всеобщего сведения.
 
-СТАТЬИ ПО ТЕМЕ
-Linux/Unix SSH, PingКоманды связи FTP и Telnet
-Учебное пособие по Tcl/Tk
-Unix против Linux — в чем разница между ними
-9 лучших БЕСПЛАТНЫХ FTP-клиентов (2026 г.)
 12) Опишите корневую учетную запись.
 Учетная запись root аналогична учетной записи системного администратора и позволяет вам полностью контролировать систему. Здесь вы можете создавать и поддерживать учетные записи пользователей, назначая разные разрешения для каждой учетной записи. Это учетная запись по умолчанию при каждой установке Linux.
 
@@ -974,31 +810,6 @@ free -g для отображения вывода в ГБ
 62) Объясните, как удалить библиотеки в Linux?
 Чтобы удалить библиотеки в Linux, вы можете использовать команду sudo apt-get удалить имя_библиотеки.
 
-
-Эти вопросы для собеседования также помогут вам в устной речи.
-
-Подведем итог этой публикации следующим образом:
-
-ChatGPT
-
-растерянность
-
-Grok
-
-Google AI
-сообщение навигации
-Сообщить об ошибке
-Предыдущая
-Следующая
-Будьте в курсе событий в области искусственного интеллекта
-Получите Еженедельный ИИ Навыки, тенденции, практические советы.
-Подпишитесь на рассылку
-Ваш адрес электронной почты
-Подпишитесь бесплатно
-Информационный бюллетень AI
-Выбрано более чем 350,000+ профессионалы
-
-❞
 1. Что такое линукс?
 Это набор бесплатных и свободно распространяемых UNIX-подобных операционных систем.Ее ядро ​​было впервые выпущено Линусом Бенадиктом Торвальдсом в 1991. Он в основном вдохновлен идеями Minix и Unix.Многопользовательский, многопользовательский многозадачная, многопоточная и многопроцессорная операционная система на основе POSIX и Unix. Он может запускать основные утилиты Unix, приложения и сетевые протоколы. Он поддерживает 32-битное и 64-битное оборудование.
 
@@ -1571,283 +1382,7 @@ Long ago a lion and a bear saw a kid.
 They sprang upon it at the same time.
 The lion said to the bear, “I caught this kid first, and so this is mine.”
 
-
-01. Операционные системы и GNU-Linux
-Практика
-02. Виртуализация
-Практика
-03. Установка AlmaLinux
-Практика
-04. О файловых системах
-Практика
-05. Текстовый интерфейс пользователя
-Практика
-06. Пути и директории
-Практика
-07. Создание и копирование файлов
-Практика
-08. Перемещение, переименование, удаление. Жёсткие и символические ссылки
-Практика
-09. Чтение текстовых файлов
-Практика
-10. Текстовые редакторы nano и vi
-Практика
-11. Стандартные потоки
-Практика
-12. bash №1: bash-completion, alias, type
-Практика
-13. bash №2: переменные
-Практика
-14. Процессы №1: Информация о процессах №1
-Практика
-15. Процессы №2: Информация о процессах №2
-Практика
-16. Процессы №3: Работа с процессами
-Практика
-17. su
-Практика
-18. sudo
-Практика
-19. Пользователи
-Практика
-20. Права на файлы
-Практика
-21. Ядро Linux
-Практика
-22. Работа с дисками
-Практика
-23. Основы файловых систем
-Практика
-24. Работа с файловыми системами
-Практика
-25. Управление логическими томами - LVM
-Практика
-26. Программный RAID - MD
-Практика
-27. bash скрипты №1
-Практика
-28. bash скрипты №2
-Практика
-29. bash скрипты №3
-Практика
-30. bash скрипты №4
-Практика
-31. bash скрипты №5
-32. bash скрипты №6
-33. Загрузчик GRUB
-Практика
-34. Система инициализации - systemd
-Практика
-35. Системный менеджер systemd
-Практика
-36. Логирование
-Практика
-37. Планировщики задач
-Практика
-38. Создание backup скрипта
-Практика
-39. Инкрементальные бэкапы с tar
-40. Дедупликация с VDO
-41. Создание systemd юнитов
-42. Основы сетей
-Практика
-43. Работа с сетью
-Практика
-44. Удалённый доступ - SSH
-Практика
-45. Принудительный контроль доступа - SElinux
-46. Межсетевой экран - firewalld
-47. Пакетный менеджер - dnf
-48. Восстановление доступа
-Практика
-49. Виртуальная память, swap
-50. Планировщик процессов
-51. Оптимизация производительности - tuned
-52. Управление многоуровневым хранилищем - stratis
-53. Установка RHEL
-54. Настройка времени
-55. Работа с IPv6
-56. Передача файлов по сети
-57. Сетевые файловые системы - NFS
-58. Сетевые файловые системы - SMB
-59. Автоматическое монтирование - Autofs
-60. Веб-интерфейс - Cockpit
-61. Глоббинг и регулярные выражения
-Практика
-62. Основы контейнеризации
-Практика
-63. Работа с podman
-Практика
-64. Про сертификацию RHCSA
- Вопросы с собеседованийПросмотреть исходный код страницы
-Вопросы с собеседований
-Linux
-Опишите процесс загрузки ПК
-
-Что такое OOM. Как OOM-killer решает - какие процессы убить?
-
-Что такое inode?
-
-Load Average - что это такое, как высчитывается?
-
-Что такое Linux signal? Для чего используются? Какие сигналы можно перехватить? Отличие SIGKILL от SIGTERM?
-
-Какие бывают состояния у процессов? Что такое зомби процесс? Как возникают зомби процессы?
-
-В чем разница между системными вызывами exec и fork?
-
-При попытке отмонтировать каталог получаем ошибку что каталог занят, как найти PID ?
-
-Опишите сценарий, когда вы можете получить ошибку «filesystem is full», но „df“ показывает наличие свободного места.
-
-Расскажите о плюсах systemd
-
-Что такое LVM?
-
-В чём разница между yum и apt?
-
-У вас ext4, место на диске есть, но записать на него не выходит, в чем проблема?
-
-Как восстановить файл, который сейчас открыт приложением, но который удалили?
-
-Network
-Для чего нужны и используются vlan? Сколько vlan может быть?
-
-Что происходит, когда вы в браузере набираете https://www.google.com?
-
-Что такое TCP keep-alive?
-
-Расскажите о TCP handshake
-
-Расскажите о RR в DNS
-
-Расскажите, чем отличается proxy от nat?
-
-Расскажите, что описывает модель OSI?
-
-DevOps
-DevOps и Agile. Что это такое и в чем разница?
-
-Что такое статическая и динамическая линковка файлов?
-
-В чем разница между виртуализацией и контейнеризацией?
-
-CI/CD - опишите pipeline для приложения x
-
-Расскажите о архитектуре K8s?
-
-Что такое IaC? в чем разница между Chef, Ansible, Terraform?
-
-Какие плюсы и минусы есть у Ansible?
-
-В чем отличие роли от playbook?
-
-Что такое идемпотентность?
-
-Что такое state-full и stateless?
-
-(Дан Dockerfile c кучей слоев) Как бы вы уменьшили размер образа?
-
-Что такое cgroups и namespaces?
-
-Что такое Jobs, runner, stages?
-
-Что такое система контроля версий?
-
-Что такое Terraform provider?
-
-Какие механизмы позволяют изолировать процессы внутри докер контейнера?
-
-Представим задачу, вам нужно прочистить все камины в Бруклине, с чего вы начнёте и сколько возьмёте за работу? (Правильного ответа нет, оценивается сам подход к ответу)
-
-Database
-В чем отличие между SQL и No-SQL базами данных?
-
-Как правильно делать бекапы SQL баз данных?
-
-Как можно ускорить работу Postgres?
-
-Что такое нормализация?
-
-Расскажите что такое primary key и foreign key
-
-© Авторские права 2021, GNU Linux Pro, CC-BY-SA-4.0.
-
-Собрано при помощи Sphinx с использованием темы, предоставленной Read the Docs. Dark theme provided by MrDogeBro.
-
-
-Блог SEDICOMM
-Обучение бесплатно
-Новости
-Установка прав доступа по умолчанию для файлов в Linux
-Установка прав доступа по умолчанию для файлов в Linux
-Путь-eBGP-предпочтительнее-пути-iBGP
-Путь eBGP предпочтительнее пути iBGP
-Как-настроить-атрибут-Locally-Originated-в-BGP
-Как настроить атрибут Locally Originated в BGP
-Установка и настройка Varnish Cache в Ubuntu
-Установка и настройка Varnish Cache в Ubuntu
-Как запустить команду в фоновом режиме в Linux
-Как запустить команду в фоновом режиме в Linux
-Установка и настройка MikroTik для работы с 3G, 4G, LTE USB модемом
-Установка и настройка MikroTik для работы с 3G, 4G, LTE USB модемом
-Linux
-Лучшие дистрибутивы Linux на 2026 год
-Лучшие дистрибутивы Linux на 2026 год
-7-удивительных-Linux-дистрибутивов-для-детей
-7 Linux дистрибутивов для детей
-11 лучших дистрибутивов Linux, основанных на Debian
-11 лучших дистрибутивов Linux, основанных на Debian
-21-Best-Open-Source-Text-Editors-GUI-CLI-in-2020-1
-21 лучший текстовый редактор с открытым исходным кодом (GUI + CLI) в 2021 году
-10 лучших дистрибутивов Linux для разработчиков и программистов
-10 лучших дистрибутивов Linux для разработчиков и программистов
-Best-Linux-Distros-for-2019
-Лучшие дистрибутивы Linux на 2019 год
-DevOps / DevNet
-Как установить Jenkins в Ubuntu Linux
-Как установить Jenkins в Ubuntu Linux
-Как управлять сетевыми устройствами MikroTik с помощью Python и Netmiko
-Как управлять сетевыми устройствами MikroTik с помощью Python и Netmiko
-Что такое venv и virtualenv в Python, и как их использовать
-Что такое venv и virtualenv в Python, и как их использовать
-Как правильно установить Python на Windows: разбор всех пунктов
-Как правильно установить Python на Windows: разбор по пунктам
-Как правильно установить Python на Linux: разбор всех пунктов
-Как правильно установить Python на Linux: разбор всех пунктов
-Как-установить-Python-IDLE-в-Linux
-Как установить Python IDLE в Linux
-Сети
-Как настроить фильтрацию по меткам в MPLS на маршрутизаторах Cisco
-Как настроить фильтрацию по меткам в MPLS на маршрутизаторах Cisco
-Как настроить протокол LDP в MPLS на маршрутизаторах Cisco
-Как настроить протокол LDP в MPLS на маршрутизаторах Cisco
-Введение-в-MPLS
-Введение в MPLS
-Генератор-трафика-Cisco-IOS-IP-SLA
-Генератор трафика Cisco IOS IP SLA
-Сообщения-BGP-при-установлении-соединения
-Сообщения BGP при установлении соединения
-Состояния-соседства-BGP
-Состояния соседства BGP
-О сайте
-
-Linux-Interview-questions
-40+ вопросов для собеседования на тему Linux
-Рубрики:
-
-Linux
-Метки:
-
-chmod, CPU, DNS, Grep, kernel, linux, ls, NFS, samba, ssh, SSL, TCP, telnet, Unix, Windows
-Команды LINUX «от A до Z» — настольная книга с примерами
-40+ вопросов для собеседования на тему Linux. Собеседования для разработчиков часто включают вопросы об основах Linux и других операционных систем на основе Unix. Ответы могут отличаться в зависимости от конкретного человека, но суть у них одна, и очень легко понять разбирается человек в основах Linux или нет.
-
 Linux довольно сильно отличается от Windows, но в некоторых областях она получила широкое распространение. Поскольку это операционная система с открытым исходным кодом, Linux в основном бесплатна и используется в качестве кроссплатформенной операционной системы, которую можно легко установить на ПК, ноутбуки, игровые приставки и многое другое. Тем более существует множество очень важных приложений только для Linux, и, следовательно, огромный спрос на талантливых и знающих профессионалов, разбирающихся в этой области. Вы наверняка знаете много ответов на поставленные вопросы, если вы достаточно времени проработали с Linux.
-
-В этой статье приведены вопросы и ответы о Linux, которые наверняка помогут вам на собеседовании.
-
- 
 
 Основные вопросы о Linux
 Что такое Linux?	Операционная система с открытым исходным кодом.
@@ -1857,21 +1392,6 @@ Linux довольно сильно отличается от Windows, но в �
  Какая лицензия?	 GPLv2
  Когда был первый релиз?	 17 сентября 1991
  
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Курсы Python с нуля до DevOps на практике за 1,5 часа
- 
-
-Техническое вопросы для собеседования о Linux:
 1. Перечислите основные компоненты Linux?
 Существует три основных компонента Linux:
 
@@ -1893,83 +1413,52 @@ Linux Redhat Enterprise, Fedora Linux, Debian Linux, Suse Enterprise Linux, Ubun
 Linux считается наиболее удобной для пользователя.	Apple OS X — это самая популярная операционная система Unix для настольных ПК.
 Это точно пригодится вам на собеседовании о Linux.
 
- 
-
 3. В чем разница между абсолютным и относительным путем к файлу?
 Абсолютный путь — это точное местоположение каталога или файла из любого каталога (предпочтительно корневой каталог). С другой стороны, относительный путь указывает местоположение каталога или файла со ссылкой на текущее местоположение или текущий рабочий каталог (present working directory — pwd).
-
- 
 
 4. Что такое Samba? Как это используется?
 Samba — это программный пакет с открытым исходным кодом. Он работает на ОС Linux и базовых платформах Unix/Linux. Это переопределение Common Internet File System (CIFS) и главного протокола — Server Message Block (SMB). Samba — это стандартный пакет совместимости Windows, который гарантирует, что программное обеспечение может взаимодействовать с программами Linux и клиентами Windows, как с «родными» приложениями.
 
 Курсы Git за час: руководство для начинающих DevOps / DevNet инженеров
  
-
 5. Какая команда может показать вам свободную/использованную память? Существует ли свободная память в Linux?
 Есть много команд, которые отображают свободную или использованную память в Linux. Самый простой способ отслеживать использование памяти в Linux — использовать команду «free». Linux и другие операционные системы на основе Unix обычно показывают меньше свободной памяти, чем может быть доступно. Вот почему Swap (special type of memory) доступен для использования, когда ОЗУ заполнена.
-
- 
 
 6. В чем разница между soft и hard параметрами сборки?
 Параметры сборки NFS в основном определяют, как клиент должен обрабатывать отказ или сбой сервера. В случае soft сборки клиент может сообщить об ошибке, не дожидаясь ответа от сервера NFS. Но это также может привести к повреждению или потере данных. С другой стороны, в случае hard сборки файловая система NFS неоднократно связывается с сервером, пока не получит ответ. Как только запрос достигнет сервера, программа продолжит выполнение с того же места, где она остановилась во время сбоя сервера.
 
- 
-
 7. Что такое SSH? Как подключиться к удаленному серверу через SSH?
 SSH означает Secure Shell и является протоколом для безопасного входа в удаленные системы. Это наиболее распространенный и простой способ доступа к удаленным серверам на базе Linux. Для этого вам необходимо знать имя домена и IP-адрес.
-
- 
 
 8. Что такое виртуальная память?
 Когда физической памяти не хватает, компьютер или, скорее, операционная система использует как аппаратное, так и программное обеспечение. Она передает данные из оперативной памяти на дисковое пространство.
 
- 
-
 9. Что такое линия Шебанга?
 Линия Шебанга (shebang или bang) — это последовательность из двух символов: решётки и восклицательного знака («#!«) в начале файла скрипта. Когда скрипт с шебангом выполняется, загрузчик программ рассматривает остаток строки после шебанга как имя файла программы-интерпретатора. Загрузчик запускает эту программу и передаёт ей в качестве параметра имя файла скрипта с шебангом.
-
- 
 
 10. Что делает команда env?
 Команда env — это shell-команда, которая может использоваться для вывода списка существующих переменных среды или для запуска другой программы в пользовательской среде без изменения текущей.
 
- 
-
 11. Что значит chmod + x FILENAME?
 Команда chmod — это сокращение от Change Mode. Эта команда чрезвычайно полезна для изменения прав доступа к файлам и папкам, расположенным в Linux/Unix. Разрешение на доступ к файлу/каталогу, которое обычно является записью, чтением или выполнением для любого пользователя или группы.
-
- 
 
 12. Что такое CLI в Linux?
 CLI — это сокращение от Command Line Interface, и это «человек-компьютер» интерфейс. Обычно он очень отличается от Graphic User Interface (GUI), который также широко используется. В случае с Linux, GUI используется в качестве внешней оболочки для базового CLI.
 
- 
-
 13. В чем разница между Telnet и SSH?
 SSH — это в сетевой протокол, который используется для удаленного доступа и управления любым устройством. Основное различие между SSH и Telnet состоит в том, что SSH использует шифрование, что означает, что все данные, передаваемые по сети, защищены от отслеживания. Telnet все же не так безопасен. Как и Telnet, пользователь, который хочет получить доступ к удаленному устройству, должен установить SSH-клиент.
-
- 
 
 14. Что делает команда set -o?
 Set — это встроенная в shell команда, которая отображает все shell-переменные, включая переменные среды.
 
- 
-
 15. Расскажите разницу между разделом подкачки и файлом подкачки?
 Операционная система Linux использует зарезервированный блок диска на жестком диске для подкачки. Это называется разделом подкачки, так как никакие другие файлы не могут быть расположены в разделе подкачки. В случае ОС Windows пространство подкачки или раздел называется файлом подкачки.
-
- 
 
 16. Что делает утилита comm и как её использовать?
 Утилита сomm производит вывод в три колонки. В основном это утилита, которая используется для сравнения двух файлов по отдельным и общим строкам.
 
- 
-
 17. Что такое полная форма grep?
 Grep — это сокращение от global regulation expression point. Утилита командной строки, grep, используется для поиска наборов данных в виде текста строк, которые соответствуют регулярному выражению.
-
- 
 
 18. Что означают записи A, NS, PTR, CNAME, MX?
 NS-запись используется для предоставления домену возможности установки имен серверов. Всякий раз, когда пользователь делегирует домен в DNSimple, TLD автоматически размещают NS-записи для этого домена на серверах имен TLD.
@@ -1980,96 +1469,60 @@ CNAME расшифровывается как «Canonical Name», эта зап�
 
 MX — это сокращение от Mail Exchanger, запись MX — это особый тип записи ресурса в DNS (Domain Name System). Она указывает почтовый сервер, который полностью отвечает за прием сообщений по электронной почте от имени домена получателя. Значение предпочтения используется для определения приоритетов доставки почты в случае нескольких серверов.
 
- 
-
 19. Что дает Sar? Где хранятся логи Sar-logs?
 Sar — это сокращение от System Activity Report. Эта команда используется для сбора данных, создания отчётов и сохранения информации об использовании CPU, блока памяти, ввода и вывода в Linux.
-
- 
 
 20. Что такое zombie-процесс?
 Zombie процесс, также известен как «умирающий» процесс. Это процесс в состоянии завершения, который завершил выполнение через системный вызов выхода, но все еще имеет запись в таблице процессов.
 
- 
-
 21. Что такое DNS Split-Horizon?
 Это средство реализации DNS для предоставления пользователю информации домене. Он может обеспечить надежный механизм управления конфиденциальностью и общей безопасностью.
-
- 
 
 22. Чему равен размер раздела подкачки в системе Linux?
 Рекомендуемый размер подкачки составляет 20% RAM для современных систем. Если используется режим гибернации, подкачка должна занимать как минимум столько же места, сколько и RAM.
 
 Это нужно обязательно знать о собеседовании о Linux.
 
- 
-
 23. Что такое inode?
 Inode — это структура данных в файловой системе Linux. Она хранит всю доступную информацию о файле, за исключением имени и фактических данных, хранящихся в файле. Это позволяет системе эффективно использовать данные.
-
- 
 
 24. В чем разница между внешней и локальной переменной?
 Shell-переменные являются локальными для региона, в котором они определены, и доступны только в текущей оболочке. С другой стороны, пользователь определяет внешние переменные в интерактивном режиме или в файле запуска. Локальную переменную можно сделать доступной в качестве внешней с помощью команды «export VARNAME».
 
- 
-
 25. Что такое переадресация SSH-порта?
 Переадресация порта SSH создает безопасное соединение между удаленным компьютером, через который можно ретранслировать сервисы, и локальным компьютером, который выдает команды. Это также называется SSH-туннелированием и используется для передачи информации, которая не требует зашифрованного протокола.
-
- 
 
 26. Что делает immutable бит с файлом?
 Делая файл неизменяемым, связывая с ним атрибут immutable бита, запрещает даже пользователю root удалять его.
 
- 
-
 27. Что делает ps?
 Команда ps или «process status» используется для предоставления информации о статусе текущих процессов в системе. Это включает в себя PID (process identification number), который уникален для каждого процесса или задачи.
-
- 
 
 28. Опишите команду mknod и расскажите когда вы её используете?
 Команда mknod используется для создания файлов устройств, которые могут вести себя странно по сравнению с обычными файлами. Файлы устройств хранятся в каталоге /dev, и в отличие от обычных файлов, эти файлы устройств — те, о которых ядро ​​знает, и которые читает или записывает в них.
 
 Так вы не дискредитируете себя, проходя собеседование о Linux.
 
- 
-
 29. Что такое «hard links»?
 «Hard link» — это дополнительное имя для существующего файла в операционной системе Linux.
-
- 
 
 30. Для чего используется команда «nohup»?
 Команда nohup — это команда POSIX, используемая для игнорирования сигнала HUP. Сигнал HUP — это способ, которым терминал предупреждает зависимые процессы о выходе из системы.
 
- 
-
 31. Что такое swap?
 Swap — это дополнительное пространство, которое используется, когда физическая память (оперативная) заполнена. Неактивные страницы и ненужные данные перемещаются в раздел подкачки, когда в оперативной памяти требуется больше памяти.
-
- 
 
 32. Что такое SSL Handshake?
 SSL Handshake позволяет клиенту и серверу SSL создавать секретные ключи, с которыми они взаимодействуют. SSL или TLS использует общий ключ для симметричного шифрования сообщений, что намного быстрее, чем асимметричное шифрование.
 
- 
-
 33. Что такое TCP-Handshake?
 Это сокращение от «transmission control protocol«, в котором используется метод SYN-SYN-ACK (трех сторонние рукопожатие).
-
- 
 
 34. Что такое загрузочные файлы Linux?
 Загрузочные файлы Linux — это доступные файлы, которые вызываются во время загрузки системы. Использование /boot/directory стандартизировано в иерархии файловой системы, поскольку в нем содержатся все файлы, используемые при загрузке системы, — это первый файл, который вызывается во время загрузки системы. Обычно он содержит файлы ядра Linux или файлы загрузчика.
 
- 
-
 35. Что делает команда grep?
 Поиск шаблона в строке или файле довольно просто выполнить с помощью команды grep. Эта команда выполняется, когда необходимо найти конкретную комбинацию символов. Grep-фильтр ищет один или несколько файлов в соответствии с пользовательской командой для поиска текстовых строк с использованием любого выражения.
-
- 
 
 36. Сравнение операционных систем Linux и Windows.
 Ниже приведены некоторые из различий между Linux и Windows:
@@ -2082,8 +1535,6 @@ Linux — это операционная система с GPL-лицензие
 Онлайн поддержка со стороны сообщества через форумы и онлайн-поиск.
 Это при подготовке к собеседованию о Linux следует запомнить!
 
- 
-
 Windows:
 
 Исходный код для Windows недоступен.
@@ -2091,11 +1542,8 @@ Windows:
 В Windows вы обязаны использовать для каждого ПК только одну лицензию. Если вам нужно установить её на другой компьютер, вам нужна другая лицензия.
 Платная служба поддержки.
  
-
 37. Что такое «kernel»?
 Kernel — это ядро ​​любой операционной системы. Kernel выступает в качестве посредника между компьютерным железом и операционной системой и контролирует все на компьютере. Это первая программа, которая загружается при запуске системы.
-
- 
 
 38. Что делает команда uname?
 Uname — это команда для создания отчётов в Linux, которая используется для получения основной информации об аппаратном и программном обеспечении компьютера.
@@ -2108,48 +1556,22 @@ uname [options]
 39. Что делает команда whoami?
 Команда whoami — это сочетание «Who», «Am» и «I». Эта команда используется как в Linux, так и в Windows для отображения сведений об авторизованном в системе пользователе или владельце текущего сеанса системы.
 
- 
-
 40. Пожалуйста, объясните, что такое LILO?
 LILO расшифровывается как Linux Loader, — это небольшая программа, которая управляет двойной загрузкой (dual boot) и также называется загрузчиком («boot loader«). Это был загрузчик по умолчанию для целого ряда дистрибутивов Linux — предшественники loadlin. Хотя в последнее время GRUB становится все более популярным, LILO и ELILO все еще широко используются.
-
- 
 
 41. Каковы имя и UID пользователя-администратора?
 UID — это уникальное положительное целое число, которое присваивается системой каждому пользователю. Это определение личности пользователя, которое используется системой для идентификации каждого пользователя. С другой стороны, имя пользователя — это интерфейс, позволяющий людям распознать свою учетную запись и войти в систему.
 
- 
-
 42. Что делает команда ls -R?
 Параметр или команда Is-R используются для рекурсивного обозначения списков каталога.
-
- 
 
 43. Что такое LD_LIBRARY_PATH?
 LD_LIBRARY_PATH — это набор переменных, разделенных двоеточиями. Это особенно полезно, когда пользователь использует нестандартную или общую библиотеку для каких-либо специальных целей или когда отлаживается работа новой библиотеки. В частности, для выполнения этой команды может быть использована другая библиотека.
 
- 
-
-Итог:
-Есть еще много вопросов по операционной системе Linux, которые интервьюер может задать или уточнить ответы. Ответы были взяты из нескольких источников, и каждый может прочитать больше в Интернете по каждой теме, если он не знаком с ней. Эти вопросы не являются обязательными, а всего лишь примером того, что может быть на собеседовании. Мы надеемся, что они пригодятся вам для вашего собеседования. Ключ успешного интервью в балансе между углублением в детали и объяснением общей концепции. Хорошая подготовка и разумный подход могут помочь вам пройти это интервью.
-
-
 Linux широко распространен в компьютерных средах, и многие специальности в области информационных технологий требуют базовых знаний Linux. Если вы готовитесь к собеседованию на должность веб-разработчика или разработчика программного обеспечения, системного администратора, сетевого специалиста или другую должность в сфере ИТ, вы должны понимать, что такое Linux. Это связано с тем, что на Linux работают распространенные операционные системы, большая часть Интернета и даже глобальные биржи и суперкомпьютеры.
-
-В этой статье мы рассмотрим 35 вопросов для собеседования по Linux и как на них отвечать, чтобы помочь вам подготовиться к следующему собеседованию в сфере информационных технологий.
 
 Что такое Linux?
 Linux - это семейство UNIX-подобных операционных систем, основанных на ядре Linux. Обычно он упакован в виде дистрибутива, который представляет собой операционную систему, включающую ядро Linux и набор программных инструментов и библиотек, таких как GNU, оконную систему и менеджер, а также среду рабочего стола.
-
-Вопросы Linux, которые можно ожидать на собеседовании
-Вопросы о Linux будут носить технический характер и, скорее всего, будут варьироваться от базовых до специализированных. Должность, на которую вы претендуете, может определить глубину вопросов Linux, которые вы получите, и их количество. Однако вопросы по Linux, как правило, составляют лишь часть ИТ-собеседования.
-
-Вы можете ожидать вопросов по Linux, чтобы проверить ваш уровень комфорта в программировании и основах Linux. Опыт неоценим при ответе на вопросы, направленные на понимание ваших навыков.
-
-Общие вопросы для собеседования в Linux
-Независимо от того, являетесь ли вы специалистом широкого профиля или специалистом в области информационных технологий, вы, скорее всего, столкнетесь с вопросами на собеседовании по Linux. Знания, которые от вас будут ожидать в области Linux, будут варьироваться в зависимости от должности, поэтому важно найти несколько специализированных вопросов по Linux, которые позволят понять, какие навыки требуются. Вам также следует изучить более общие примеры вопросов для собеседования, которые связаны с поведением и мягкими навыками.
-
-??Вот несколько распространенных вопросов, которые может задать интервьюер, касающихся вашего опыта работы в Linux, технических знаний и навыков:
 
 Объясните простыми словами, что такое ядро Linux.
 
@@ -2261,6 +1683,7 @@ LILO позволяет предприятиям загружаться в Linux
 
 Пример: Виртуальный рабочий стол - это важная функция, которая упрощает деловую практику, позволяя пользователям легко переключаться между виртуальными рабочими столами, а не использовать несколько окон для одновременной работы многих приложений . С помощью инструмента переключения рабочего пространства вы можете сопоставить каждый рабочий стол с рабочим пространством и переключаться туда и обратно по мере необходимости. Это помогает пользователям, использующим Linux, работать в многозадачном режиме с меньшими затратами ресурсов и быстрее.
 
+
 Советы по подготовке к собеседованию в Linux
 Чтобы подготовиться к собеседованию в Linux, следуйте этим советам:
 
@@ -2270,78 +1693,6 @@ LILO позволяет предприятиям загружаться в Linux
 
 Используйте метод STAR (Situation, Task, Action, Results). Используя метод STAR для поведенческих вопросов на собеседовании, обычно можно уложиться в три-четыре хорошо продуманных и лаконичных предложения. Подумайте о некоторых сценариях работы в Linux до того, как пойдете на собеседование, и потренируйтесь использовать метод STAR для их описания.
 
-Рубрика: Карьера и Саморазвитие
-Ключевые слова: Вопросы на собеседовании
-Источник: indeed.com
-Перевод: Дмитрий Л
-Поделиться
-
-Популярное сегодня
-
-5 ролей, которые изменят работу HR-отделов в XXI веке
-
-18 неочевидных факторов, которые могут повлиять на решение работодателя
-
-В России формируется новая модель корпоративного здоровья: работодатели делают ставку на здоровые привычки сотрудников
-
-5 способов проявлять лидерские качества, опираясь на эмоциональный интеллект
-
-11 сильных слов, которые помогут вашему резюме выделиться
-Методики и шаблоны в рубрике
-Отчет по HR-аналитике / Дашборд ключевых HR-метрик
-Политика использования HR-данных и этики ИИ в HR
-Добавить на сайт
-Возможность добавления публикаций имеют только авторизованные зарегистрированные пользователи.
-
-Зарегистрироваться
-Войти
-Рассылки
-Выберите рассылки, на которые вы хотите или не хотите быть подписанным.
-
- Новости HR-Portal
- Рассылка HR-Portal (Недельный дайджест)
-Электронная почта *
-Читайте также
-
-7 типов сотрудников, которых следует незамедлительно уволить
-Системы оценки работы
-Системы оценки работы
-
-Модель GROW: метод наставничества
-
-Как потерять лучших сотрудников
-
-16 вопросов для собеседования, призванные обхитрить вас
-Подписка на обновления
-Информация
-О сайте
-Контакты
-Реклама
-Правила
-Публикации
-Новости
-Статьи
-Образцы документов
-Методики
-Файлы
-Словарь терминов
-Идеи	Есть идея, предложение?
-Напишите нам | Все идеи
-© 2004-Н.В. HR-Portal: Сообщество HR-Менеджеров
-
-
-
-Виды тестирования
-Собеседование
-Автоматизация
-Книги
-Основы
-50 вопросов для собеседования по Linux
-50 вопросов на собеседовании по Linux
-1 Комментарий / Собеседование / От TatianaGusachenko
-Подготовьтесь к интервью по Linux с нашим обширным списком из 50 основных вопросов. Эти вопросы специально разработаны для начинающих, которые только начинают знакомство с операционной системой Linux.
-
-Вопросы для собеседования по Linux
 Вопрос 1. Что такое UNIX?
 
 UNIX — это многопользовательская и многозадачная операционная система, разработанная в лабораториях Bell Кеном Томпсоном и Деннисом Ритчи. В отличие от открытых систем, UNIX является проприетарным программным обеспечением, и его исходный код не доступен широкой публике.
@@ -2738,24 +2089,6 @@ cat softF1
 # вывод -> "Нет такого файла или директории"
 На этом мы завершаем нашу статью о популярных вопросах на собеседовании по Linux для начинающих. Надеюсь, эти вопросы помогут вам лучше разобраться с Linux и успешно пройти интервью.
 
-
-Practice Real Company Assessment Patterns • Latest 2025–2026 Mock Tests
-Placement Preparation Logo
-an HCL GUVI product
-Aptitudev
-Programmingv
-Company Specificv
-Resourcesv
-Mock Test
-search-icon
-Search Topics, Formulas etc
-Home
-Blog
-Interview Questions
-Top Linux Interview Questions for Freshers
-
-Table of Contents
-
 Practice Linux Interview Questions
 1. List all files
 2. Directory size command
@@ -2808,10 +2141,7 @@ Practice Linux Interview Questions
 49. Traceroute network issues
 50. Configure port forwarding
 26 December, 2024 (Last Updated)
-Top Linux Interview Questions for Freshers
-Top Linux Interview Questions for Freshers Are you preparing for your first Linux interview and wondering what questions you might face?Understanding the key Linux interview questions for freshers can give you more clarity.With this guide, you’ll be well-prepared to tackle these Linux interview questions and answers for freshers and make a strong impression in your interview.interview preparation course desktop banner horizontal
-Practice Linux Interview Questions and Answers
-Below are the top 50 Linux interview questions for freshers with answers:
+
 1. How do you list all files, including hidden files, in a directory in Linux?
 Answer:Use the ls -a command to list all files in a directory, including hidden files that start with a dot (.).
 ls -a
@@ -2969,11 +2299,6 @@ iptables -t nat -A PREROUTING -p tcp –dport 80 -j DNAT –to-destination 192.1
 Final Words
 Getting ready for an interview can feel overwhelming, but going through these Linux fresher interview questions can help you feel more confident.With the right preparation, you’ll ace your Linux interview but don’t forget to practice the Linux basic commands, shell scripting, and system administration-related interview questions too.
 
-📚 Список полезных ресурсов
-
-Linux вопросы и ответы для подготовки к собеседованию
-19.12.2022linux
-Linux вопросы и ответы для подготовки к собеседованию
 Что такое LA? В каких единицах измеряется?
 ОтветLA (load average) — параметр, определяющий среднюю нагрузку на систему за период времени (1 мин, 5 минут, 15 минут). Изменяется в количестве задач на одно ядро процессора. На нагрузку системы также влияет количество задач ввода-вывода и задержка сети. Также влияние на расчета LA оказывает: 1. Технология Hyper-Threading, которая делит одно физическое ядро на 2 логических, 2. Технология Turbo Bust, которая позволяет разгонять тактовую частоту процессора и работать на частоте выше заявленной, т.е. выше номинальной частоты (время на обработку одной задачи уменьшается).
 
@@ -3310,102 +2635,6 @@ Available – примерное количество оперативной п�
 Запустить init / systemd как PID 1.
 Выполнить сценарии запуска.
 Запустить систему.
-источник
-
-1
- Просмотры: 4 195
-
-+4
-Подпишись на нас в telegram
-Подпишитесь на каналы
-
-Machinelearning
-t.me/ai_machinelearning_big_data
-
-Анализ данных (Data analysis)
-t.me/data_analysis_ml
-
-Golang
-t.me/Golang_google
-
-Java
-t.me/javatg
-
-Python вопросы с собеседований
-t.me/python_job_interview
-Посмотреть весь список
-Рубрики
-C# (36)
-C++ (21)
-chatgpt (57)
-Chatgpt (39)
-Data Analyst (47)
-Data Science (64)
-devops (40)
-Git (25)
-GO (114)
-haskell (1)
-IOS (34)
-Java (102)
-JavaScript (101)
-linux (61)
-php (20)
-php (21)
-programming (36)
-Python (411)
-react (46)
-react (37)
-rust (33)
-sql (79)
-Вакансии (23)
-Искусственный интеллект (158)
-кибербезопасность (3)
-Курсы (30)
-Машинное обучение (720)
-Мероприятия (19)
-Мобильная разработка (27)
-Посты (949)
-Похожие записи
-mknod и магия Linux: как железо становится файлом
-09.05.2026
-
-Kali Linux vs Parrot OS – платформы для пентестинга. Что выбрать профессионалам по кибербезопасности
-02.01.2026
-
-Полное руководство по Bash: от основ к продвинутым темам
-21.11.2025
-Ответить
-Ваш адрес email не будет опубликован. Обязательные поля помечены *
-
-Имя
- *
-
-Email
- *
-
-Сайт
-
-Оставьте свой комментарий
-
-Сохранить моё имя, Email и адрес сайта в этом браузере для последующих комментариев.
-
-
-Все права защищены © 2026 UPROGER | Программирование 
-
-
-50 самых задаваемых вопросов и ответов на интервью по Linux
-
-
-
-karniz-onviz.ru
-Реклама
-Электрокарнизы Onviz. Управление
-голосом и пультом
-Узнать больше
-Очень важно знать, какие вопросы будут заданы на собеседовании по Linux. В большинстве случаев многие термины, терминологии и синтаксис команд задаются на собеседовании или при работе в Linux. Система Linux в значительной степени представляет собой обширную область; таким образом, получение всех знаний по этому вопросу является довольно кропотливым занятием. Тем не менее, об этом стоит узнать подробно, если вы желаете построить карьеру в этой области. Благодаря открытому исходному коду система Linux постоянно обновляется многими разработчиками. Следовательно, профессионалы и энтузиасты должны продолжать обучение с течением времени.
-
-Самые задаваемые вопросы на собеседованиях по Linux
-В этой статье, а именно «Вопросы на собеседовании по Linux», основное внимание уделяется важнейшим вопросам, часто задаваемым на собеседовании по Linux. Это будет полезно кандидатам на Linux, энтузиастам и пользователям-любителям, которые хотят узнать больше о Linux.
 
 Вопрос 1. Что такое Linux?
 Это один из самых распространенных вопросов на собеседованиях по Linux. Linux — это самая известная операционная система с открытым исходным кодом на базе UNIX, представленная в середине 90-х годов. Его используют во многих сферах: от индивидуальных рабочих столов до промышленной сферы. Линус Торвальд разработал его, и основная цель заключалась в том, чтобы воспользоваться возможностью использовать бесплатную операционную систему на веб-платформе.
@@ -3416,8 +2645,6 @@ karniz-onviz.ru
 Кроме того, оболочки и графические интерфейсы представляют собой интерфейс ядра, отвечающий за взаимодействие с пользователями и выполнение функций ядра. Прикладные программы связаны с выполнением конкретных задач, которые выполняет пользователь.
 
 Вопрос 3. Что такое ядро Linux?
-
-
 
 acoolakids.ru
 Реклама
@@ -3433,8 +2660,6 @@ acoolakids.ru
 
 Вопрос 5: Каковы сходства и различия между UNIX и Linux?
 Основное различие между Linux и Unix заключается в том, что это разные операционные системы; тем не менее, есть некоторые общие проблемы.
-
-
 
 Начнем с того, что исходный код Linux находится в свободном доступе и используется для графического пользовательского интерфейса вместе с дополнительным интерфейсом командной строки. Будучи портативным, его можно запускать на разных жестких дисках.
 
@@ -3458,7 +2683,6 @@ acoolakids.ru
 Unix-подобная операционная система — это разработанная сообществом система с открытым исходным кодом, используемая для Linux. Эта операционная система работает на серверах, мейнфреймах, компьютерах, мобильных устройствах и встроенных устройствах. Эта ОС поддерживает большинство основных компьютерных платформ, включая x86, SPARK и ARM; следовательно, она считается одной из самых широко поддерживаемых операционных систем. Как обычный пользователь, вы не должны забывать этот ответ, поскольку он часто встречается на вакансиях по Linux в качестве вопроса на собеседовании по Linux.
 
 Вопрос 9: Что такое зомби-процесс в Linux?
-
 
 Процесс-зомби — это остаточное действие, которое уже произошло. Тем не менее; тем не менее, он существует в памяти и не был удален сразу после выполнения. В этом случае вмешательство родительского процесса должно прочитать статус завершения дочернего процесса. Наконец, когда с системой ожидания покончено, зомби называется устраненным. На следующей диаграмме показан процесс:-
 
@@ -3527,7 +2751,6 @@ sudo service ufw status
 На рынке доступно множество дистрибутивов Linux. Некоторые из них очень популярны среди пользователей и даже могут эффективно служить своим целям. Популярными дистрибутивами Linux являются Ubuntu, Linux Mint Cinnamon, Zorin OS, Elementary OS, Linux Mint Mate и Manjaro Linux. Эти четыре упомянутых дистрибутива чрезвычайно способны выполнять различные специфические функции.
 
 Вопрос 18: Почему Linux лучше Windows?
-
 
 Слишком много важных моментов, по которым пользователь может найти Linux в большинстве случаев лучше, чем Windows. Одна из причин заключается в том, что исходный код открыт, доступен и бесплатен; таким образом, его можно настроить так, как нужно пользователям. Тем не менее, эта функция недоступна для Windows. Операционная система Linux работает быстрее и превосходно совместима с новейшими функциями и средами настольных компьютеров.
 
@@ -3626,7 +2849,6 @@ zsh включает в себя большое количество функц�
 
 Вопрос 44: Что подразумевается под дистрибутивом Linux?
 
-
 Система Linux работает дискретно и не похожа на Windows или Mac. Дистрибутив Linux кратко называется дистрибутивом Linux, а необходимое программное обеспечение разрабатывается в проектах с открытым исходным кодом и различными программистами по всему миру.
 
 Этот дистрибутив включает в себя утилиты оболочки GNU, ядро Linux, X-сервер, систему управления пакетами, среду рабочего стола, программу установки и другие службы. Точнее, можно сказать, что это часто встречается в вопросах на собеседованиях по Linux.
@@ -3644,7 +2866,6 @@ zsh включает в себя большое количество функц�
 
 Вопрос 48: Как получить доступ к разделам в Linux?
 
-
 Числа назначаются в Linux в конце определенного идентификатора диска. Например, если на основных жестких дисках IDE имеется три раздела, в этом случае они будут иметь имена/нумерации: /dev/hda1, /dev/hda2 и </dev/hda3.
 
 Вопрос 49. Что такое «жесткие ссылки» в Linux?
@@ -3654,12 +2875,6 @@ zsh включает в себя большое количество функц�
 
 Вопрос 50. Объясните понятие «виртуальный рабочий стол» в Linux.
 На текущем рабочем столе он предоставляет альтернативные службы для сворачивания и развертывания различных окон. Когда многие программы запускаются на рабочем столе, виртуальный рабочий стол помогает очистить окна вместо сворачивания и развертывания. Таким образом, программы будут восстановлены без каких-либо повреждений.
-
-Заключительные мысли
-Когда дело доходит до собеседований при приеме на работу в Linux, четвёртые вопросы являются одними из наиболее часто задаваемых. Вам потребуется глубокое понимание различных терминов и терминологии в различных ситуациях, а также понимание синтаксиса команд и технических знаний. Чтобы убедиться, что вы готовы к следующему собеседованию, мы предлагаем также изучить другие доступные вопросы для собеседования по Linux!
-
-Если эта статья была для вас полезна - не забудьте выразить свою поддержку, поставив лайк или поделившись ею с другими. Оставлять комментарии также настоятельно рекомендуется, если есть что-то еще, что может помочь другим читателям!
-
 
 Linux is an open-source operating system widely used for servers, cloud computing, cybersecurity, DevOps and embedded systems. It is a fundamental skill for system administrators, developers and security professionals, making it a common topic in technical interviews. It covers:
 
@@ -4024,70 +3239,6 @@ Comment
 https://media.geeksforgeeks.org/auth/avatar.png
 GeeksforGeeks
 
-36
-Explore
-Basics
-File System & Management
-Permissions & Ownership
-Process & Networking
-Services & System Management
-Shell Scripting & Bash Scripting
-Courses
-GeeksforGeeks
-location
-Corporate & Communications Address:
-A-143, 6th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305)
-location
-Registered Address:
-K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305
-GFG App on Play Store
-GFG App on App Store
-Company
-About Us
-Legal
-Privacy Policy
-Contact Us
-Advertise with us
-GFG Corporate Solution
-Campus Training Program
-Explore
-POTD
-Job-A-Thon
-Blogs
-Nation Skill Up
-Tutorials
-Programming Languages
-DSA
-Web Technology
-AI, ML & Data Science
-DevOps
-CS Core Subjects
-Interview Preparation
-Software and Tools
-Courses
-ML and Data Science
-DSA and Placements
-Web Development
-Programming Languages
-DevOps & Cloud
-GATE
-Trending Technologies
-Videos
-DSA
-Python
-Java
-C++
-Web Development
-Data Science
-CS Subjects
-Preparation Corner
-Interview Corner
-Aptitude
-Puzzles
-GfG 160
-System Design
-@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved
-
 1. В чем основное различие между Linux и Unix?
 
 Linux - это операционная система с открытым исходным кодом, а Unix - это проприетарная операционная система. Таким образом, Linux доступен для бесплатной загрузки, но Unix - это платная ОС (большинство версий).
@@ -4296,74 +3447,13 @@ X11
 
 Ядро Linux - это ядро ​​операционной системы Linux.
 
-Прокомментируйте ниже, если вы обнаружили какую-либо информационную миссию или неверные вопросы и ответы на интервью с Linux.
-
-
-Подпишитесь на канал,
-чтобы не пропустить новые публикации
-
-Подписаться
-С подпиской рекламы не будет
-Подключите Дзен Про за 159 ₽ в месяц
-
-
-Подключить
-
-Рекомендуем почитать
-5 минут
-IT Еxtra
-34,9 тыс читали · 4 месяца назад
-
-Месяц без Windows: я удалил «винду» и поставил Astra Linux. Честный дневник боли и восторга
-2026 год. Купить лицензионную Windows в России — тот ещё квест. Обновления прилетают через раз, а на работе всё чаще требуют переходить на «наше». Я решил не ждать милостей от импортозамещения и провёл эксперимент: зачем мне Windows, если есть Astra Linux? Целый месяц я жил в отечественной операционной системе. Не как программист, не как хакер — как обычный пользователь, который хочет смотреть кино, работать в документах и иногда играть. Готовы к честному разбору без прикрас? Контекст 2026 года простой:...
-3 минуты
-Герман Геншин
-8600 читали · 5 месяцев назад
-
-Сенсация! Превратите любой Android в полноценный Linux-компьютер за 15 минут — без root и затрат!
-Всё, что вам потребуется — обычный Android-смартфон, и вы сможете установить любой популярный дистрибутив Linux буквально за пару несложных шагов. Используя специальные скрипты, легко поставить и полноценную графическую среду с привычным рабочим столом и оконным менеджером. Рассказываю по шагам, как всё сделать! Если вам нужен только консольный Linux, то лучшее решение — приложение Termux. Оно открывает массу возможностей: вы сможете установить разные дистрибутивы прямо в терминале. Это что-то вроде...
-7 минут
-ПЛАТФОРМА
-2669 читали · 5 месяцев назад
-
-Перехожу на Linux и не могу выбрать дистрибутив что делать
-Приветствуем всех любителей технологий и тех, кто только собирается сделать решительный шаг в мир Linux! В 2025 году мир программного обеспечения меняется с бешеной скоростью, и на первый взгляд разобраться, какой дистрибутив Linux выбрать, становится настоящим испытанием даже для искушённого пользователя. Сотни вариантов, сотни мнений, а хочется сделать правильный выбор сразу — чтобы и мощно, и удобно, и надёжно, и красиво. И если вы именно в таком поиске — эта статья станет настоящим проводником...
-
-Операционная система Linux
-9688 интересуются
-
-
-Следить за темой
-
-major-auto.ru
-Реклама
-Официальный дилер MAJOR!
-Узнать больше
-
-karniz-onviz.ru
-Реклама
-Электрокарнизы Onviz. Управление голосом и пультом
-Узнать больше
-
-Расскажу кратко
-
-
-
-Prepare for a Linux interview with our comprehensive list of top 50 Linux interview questions. These interview questions are specifically designed for freshers and professionals new to Linux OS.
-
-
-Linux Interview Questions
 Ques.1. What is UNIX?
 Ans. UNIX is a multi-user, multi-tasking computer operating system developed at Bell Laboratories by Ken Thompson and Dennis Ritchie. It is proprietary software with its code not available to the general public.
 The different variants of UNIX are HP Unix, Solaris Unix, IBM AIX and BSD.
 
-
 Ques.2. What is Linux?
 Ans. Linux is an open-source UNIX like operating system developed from scratch by Linus Torvalds. Although Linux is actually a different operating system since it is inspired by UNIX, the commands and syntax of UNIX and Linux programs are mostly similar.
 Some of the Linux distributions are Ubuntu, RedHat, Fedora, etc.
-
-Linux Interview Questions
-Linux Interview Questions
 
 Ques.3. What are some basic features of Linux?
 Ans. Some of the features of Linux are-
@@ -4373,7 +3463,6 @@ Multitasking – Multitasking allows multiple applications or programs to run si
 Security – Linux provides security features by authentication(username-password for users), authorization(by providing read-write-execute permissions to different files), encryption(by encrypting files so that only the rightful owner can see the original content of the files).
 Portable – Linux supports portability with the ability of the OS to get installed on different hardware platforms.
 Open source – It is open-source with its code available to the general public.
-
 
 Ques.4. What is the difference between UNIX and Linux?
 Ans.
@@ -4398,7 +3487,6 @@ Linux Interview Questions
 Ques.7. What is a swap space? What are its advantages?
 Ans. Swap space is a piece of hard disk storage that is used when the system needs more memory but the RAM is full. In such cases, the inactive memory pages are moved to swap space to free RAM.
 
-
 Ques.8. What is a process in Linux?
 Ans. A process is an instance of a program under execution. In Linux, there are two kinds of processes-
 
@@ -4408,13 +3496,11 @@ Background processes – A background process runs on the background and the use
 Ques.9. How can we list all the processes running on a machine?
 Ans. Using Top utility, we can list all the running processes. Running ‘top’, lists important attributes of the process like PID(process id), user/userId, parent process id, virtual memory used, physical memory used, process status, CPU utilization, process start time, command initiating the process, etc.
 
-
 Ques.10. How can we stop or terminate a running process in Linux?
 Ans. Kill command is used to terminate a running process in Linux. There are two variants of killing a process-
 
 Kill PId – This will generate a signal SIGTERM, specifying graceful termination of the process with process id – PId
 Kill -9 PId – This will generate a signal SIGKILL specifying forceful termination of the process with process id – PId
-
 
 Ques.11. What is the use of ‘ps’ command? How is it different from the top command?
 Ans. Ps stands for Process Status. It gives information about the running processes.
@@ -4425,10 +3511,8 @@ ps -p 12
 ps -ef
 It is different from top command in the sense that top displays continuous interactive usage of the processes in real-time. Whereas, ps displays a single snapshot of the processes and is more likely to be used for non-interactive usage in scripts.
 
-
 Ques.12. What is a daemon?
 Ans. Daemons are the processes that run in background either at a predefined time or in the event of a trigger. As a convention, daemon names in Linux end with the letter – ‘d’.
-
 
 Ques.13. What is the use of man command?
 Ans. The man command is used to know the usage of a command, config file or daemon using the man pages or user manual. Usage-
@@ -4436,13 +3520,11 @@ Ans. The man command is used to know the usage of a command, config file or daem
 man ls
 Output – Displays the manual page for ls command.
 
-
 Ques.14. How to print the current working directory in Linux?
 Ans. Pwd command is used to display the current directory (Print Working Directory)-
 
 $ pwd
 /c/Users/Kuldeep
-
 
 Ques.15. How to create a directory in Linux and give full permission to it?
 Ans. Using mkdir, we can create a directory and then with chmod we can give permissions.
@@ -4453,13 +3535,11 @@ Alternatively, we can also use ‘-m’ or mode option of ‘mkdir’ command an
 
 mkdir -m 777 directoryName
 
-
 Ques.16. How to delete a non-empty directory?
 Ans. On trying to delete a non-empty directory with ‘rmdir directoryName’ command, we will get an error – “rmdir: failed to remove ‘newFolder’: Directory not empty”.
 For removing a non-empty directory, we need to use the ‘-r’ option of ‘rm’ command that recursively deletes the directory and its contents.
 
 rm -r directoryName
-
 
 Ques.17. How to change directory in Linux? How to move to the parent directory, home directory, and previous directory?
 Ans. Using cd command, we can change the directory in Linux. Usage-
@@ -4482,11 +3562,9 @@ cd -
 Ques.18. What is a root directory?
 Ans. Linux follows a hierarchical or tree-based file system. The root directory is the parent directory of the hierarchy that includes all the other directories. It is represented by a forward slash ‘/’.
 
-
 Ques.19. What are absolute and relative paths?
 Ans. Absolute path – Absolute path is the path of a file or directory from the root directory i.e. from ‘/’.
 Relative path – Relative path is the path of a file or directory from the present working directory.
-
 
 Ques.20. How to login as a different user in Linux?
 Ans. ‘Su’ command is used to login as a different user in Linux. It stands for substitute user or switches user.
@@ -4498,10 +3576,8 @@ Password:
 su root
 Password:
 
-
 Ques.21. What is the root account?
 Ans. The root account is the account or a user that has access to each file and directory in Linux. The root account is also known as the superuser. A root user can also have access to run any command including adding users, grant or revoke permissions, etc.
-
 
 Ques.22. What are the different file ownerships in Linux?
 Ans. Each file and directory in Linux can have following 3 owners-
@@ -4509,7 +3585,6 @@ Ans. Each file and directory in Linux can have following 3 owners-
 User – The user or owner permission class belongs to the user who created the file.
 Group – The group permission class belongs to the members of the file’s group.
 Other – User or other permission class refers to each user who has access to the file.
-
 
 Ques.23. Explain the usage of ‘ls -ltr’ command?
 Ans. ‘ls’ command is used to list the directory contents. The options ‘-ltr’ stands for-
@@ -4526,10 +3601,8 @@ total 5072
 -rw-r--r-- 1 Kuldeep 197121    8695 Oct 28 14:06 Linux.png
 -rw-r--r-- 1 Kuldeep 197121    6883 Dec 28 19:37 imp.txt
 
-
 Ques.24. What is the significance of file extensions like .txt, .png, etc in Linux?
 Ans. Unlike Windows, file extensions have no significance in Linux. Linux does not rely on the file extensions instead the file type is determined by some content in the file header.
-
 
 Ques.25. Explain the usage of ‘file’ utility.
 Ans. The file utility is used to determine the file type of a file.
@@ -4539,13 +3612,11 @@ imp.txt: ASCII text, with very long lines, with CRLF line terminator
 $ file Linux.png
 Linux.png: PNG image data, 521 x 177, 8-bit colormap, non-interlaced
 
-
 Ques.26. What is the purpose of the ‘touch’ command?
 Ans. Touch command serves two purposes in Linux-
 
 With a new file name, touch is used to create an empty file .touch newFile
 For existing files or directories, touch will change the last access time to the current time.
-
 
 Ques.27. What is the difference between ‘cp’ and ‘mv’ command?
 Ans. The ‘cp’ command is used to copy the content of one file to another. Whereas, ‘mv’ command moves a file from one location to another, deleting the source file. ‘mv’ command is also used for renaming files. Usage-
@@ -4554,7 +3625,6 @@ Ans. The ‘cp’ command is used to copy the content of one file to another. Wh
 cp file1 file2
 #Moves/renames file1 to file2
 mv file1 file2
-
 
 Ques.28. Explain the usage of ‘head’ and ‘tail’ commands.
 Ans. Head command is used to display the first few lines(default 10) of a file. Whereas, the tail is used to display the last few lines(default 10) of a file. Usage-
@@ -4568,13 +3638,11 @@ tail fileA
 #Display last 5 lines of a file
 tail -5 fileA
 
-
 Ques.29. What is ‘sed’ in Linux?
 Ans. Sed stands for Stream Editor. It is used to edit a file or input from a pipeline. Example-
 
 #Prints first 5 lines
 sed -n 1,5p fileA.txt
-
 
 Ques.30. How to print the content of line 5 to 10 from one file to another?
 Ans. Using ‘sed’
@@ -4582,13 +3650,11 @@ Ans. Using ‘sed’
 #'p' to print and '-n' to not print each line
 sed -n 5,10p fileA.txt > fileB.txt
 
-
 Ques.31. What is ‘awk’?
 Ans. AWK named after the initials of its authors “Aho, Weinberger, and Kernighan”, is an interpreted programming language for text processing. Usage-
 
 #To display the content of file using awk
 awk '{print}' fileA.txt
-
 
 Ques.32. How to count the number of words, lines, and characters in a file?
 Ans. Using wc command (word count)-
@@ -4600,13 +3666,11 @@ wc -w fileA.txt
 #Number of lines
 wc -l fileA.txt
 
-
 Ques.33. How to combine the content of multiple files into a single file?
 Ans. Using ‘cat’ and redirection-
 
 #merging content of fileA and fileB into mergedFile
 cat file1 file2 > mergedFile
-
 
 Ques.34. What is the use of ‘tac’ command?
 Ans. Tac command as the name suggests is the reverse of ‘cat’ command. It displays the content of the file in reverse order – line by line, displaying the last line first and moving up till the first line.
@@ -4614,10 +3678,8 @@ Ans. Tac command as the name suggests is the reverse of ‘cat’ command. It di
 #Displays the content of fileA from the bottom line to top line
 tac file!
 
-
 Ques.35. What is the difference between ‘more’ and ‘less’ command?
 Ans. Both more and less commands are used for viewing large files page wise. Unlike any editor like vi, using these commands for opening a file does not load the whole file in memory. One limitation of more command is, we can only scroll down but not up. Whereas, using less command, we can scroll both upwards and downwards in a file.
-
 
 Ques.36. How can we find the top 3 space-consuming files or directories within a directory?
 Ans. Using du(disk usage) command, we can find the disk usage of all directories and sub-directories. Using du with -a option, will list the disk usage of all files as well, along with the directories. The ‘-h’ option displays the size in a human-readable form. Later, we can use this command along with sort and head command, to first sort the files/directories by size and then fetch the required number of files.
@@ -4625,20 +3687,17 @@ Ans. Using du(disk usage) command, we can find the disk usage of all directories
 #Sorts the files and directories within artOfTesting directory by size
 du -h -a artOfTesting/ | sort -n -r | head -n 3
 
-
 Ques.37. How to create aliases in Linux?
 Ans. Aliases are used to create aliases or some abbreviated short-name for a command or a group of commands.
 
 #Alias for some log directory
 alias logs="cd /user/application/logs"
 
-
 Ques.38. What is the use of shred utility? How it is different from the rm command?
 Ans. Shred utility is used for deleting the content of a file in such a way that the content cannot be recovered using some data recovery tools/utilities. Whereas, when we delete a file using the rm command, the space taken by the file is marked available for other files, hence there is a possibility to recover the content of the file. Thus, shred is better for deleting files with sensitive data.
 
 #Overwrites the content of the file to make it impossible to recover
 shred file1
-
 
 Ques.39. What is the difference between find and locate command?
 Ans. Both find and locate commands that are used for searching files on Linux. The ‘find’ command searches file in real-time and thus take a longer time to return the search result in case there are too many files to scan through. Whereas, ‘locate’ command is much faster than find as instead of real-time search it looks up in a database – updatedb. Since the updatedb takes a snapshot of the file system only once a day output of locate is not always accurate or updated.
@@ -4647,7 +3706,6 @@ Ans. Both find and locate commands that are used for searching files on Linux. T
 find / *.txt
 #Find all text files
 locate "*.txt"
-
 
 Ques.40. How can we introduce wait time in scripts?
 Ans. Sleep command can be used to introduce wait time in scripts. We can specify wait in terms of seconds, minutes, hours and days.
@@ -4661,7 +3719,6 @@ sleep 5h
 #Wait for 5 days
 sleep 5d
 
-
 Ques.41. How to compress and decompress files in Linux?
 Ans. Using ‘zip’ and ‘unzip’ commands, we can compress and decompress files in Linux.
 
@@ -4670,14 +3727,12 @@ zip zipFile fileA fileB
 #Unzips zipFile.zip
 unzip zipFile.zip
 
-
 Ques.42. What are the different file permissions or access modes in Linux?
 Ans. Each file and directory in Linux can have following 3 permissions, represented by a three-digit octal number-
 
 Read – Provides the ability to read the content of a file (represented by ‘r’ in first position – “r–“)
 Write – Provides the ability to edit or delete the content of a file (represented by ‘r’ in second position – “-w-“)
 Execute – Provides the ability to execute or run a file (represented by ‘x’ in third position – “–x”)
-
 
 Ques.43. Explain the meaning of the permission mode “drwxr-x–x”.
 Ans. The 10 characters of permission mode provide information about the permission to the user, group, and other users.
@@ -4687,7 +3742,6 @@ Next 3 characters indicate the read-write-execute permission to the user or owne
 Next 3 characters indicate the read-write-execute permission to the group belonging to the file.
 Last 3 characters indicate the read-write-execute permission to all the other users.
 So, the permission mode “drwxr-xr-x”, means a directory for which the user has all the read-write-execute permission, group has read and execute permission and other users can only execute the file.
-
 
 Ques.44. How can we grant or remove access to a file in Linux?
 Ans. The ‘chmod’ command is used to grant permission to a file or directory in Linux. There are two modes to grant or remove permission using chmod-
@@ -4717,7 +3771,6 @@ The ‘chgrp’ command is used to change the group ownership of a file.
 
 chgrp group fileA
 
-
 Ques.47. How to sort the contents of a file?
 Ans. Sort command can be used to sort the elements of a file line-wise.
 
@@ -4730,7 +3783,6 @@ abc
 kuldeep
 zed
 
-
 Ques.48. How can we remove the duplicates in a file?
 Ans. Using ‘uniq’ utility with ‘sort’ command.
 
@@ -4742,7 +3794,6 @@ all
 bat
 cat
 
-
 Ques.49. What are soft links in Linux? What is its advantage over the cp command?
 Ans. Soft links are also known as symbolic links or symlinks. These are used to create symbolic links or pointers to a file. In Linux, soft links are created using the ‘ln’ command with the ‘-s’ option.
 
@@ -4750,7 +3801,6 @@ Ans. Soft links are also known as symbolic links or symlinks. These are used to 
 #'-s' option to create a soft link
 ln -s fileA.txt fileA
 It has got an advantage over the cp command (which creates a new copy of the file) in the sense that in order to change the permission to the files, with links only the permission of the original file need to be changed. Whereas, with the cp command, the permission to all the copies of the file needs to be changed.
-
 
 Ques.50. What are the hard links in Linux? How it is different from a soft link?
 Ans. Hard links are like another name for an existing file. Instead of pointing to a name(like a soft link), hard links point to the content of the file directly(point to inode – a table containing metadata about a file).
@@ -4771,128 +3821,6 @@ cat hardF1
 #Check content of the soft link - softF1
 cat softF1
 #output -> "No such file or directory"
-Also, Check – Top 100 Core Java Interview Questions.
-
-This completes our article on top Linux interview questions for beginners. I hope these questions will help you in your interviews.
-
-Top RDBMS Interview Questions | DBMS Viva Questions
-Katalon Studio Tutorial
-Leave a Comment
-Comment
-
-Name
-Name *
-Email
-Email *
-Website
-Website
-
-Save my name, email, and website in this browser for the next time I comment.
-
-
-Photo of author
-Kuldeep Rana
-Kuldeep is the founder and lead author of ArtOfTesting. He is skilled in test automation, performance testing, big data, and CI-CD. He brings his decade of experience to his current role where he is dedicated to educating the QA professionals.
-  
-Trending Articles
-
-Selenium tutorial
-JMeter tutorial
-Manual testing tutorial
-Java for testers
-SQL for testers
-Test cases asked in Interviews
-Selenium interview questions
-Core java interview questions
-TestNG interview questions
-Manual testing interview questions
-SQL queries asked in interviews
-SQL Joins interview questions
-DBMS interview questions
-JMeter interview questions
-API Testing interview questions
-Agile interview questions
-Linux interview questions
-  
-About Us
-Contact Us
-Disclaimer
-Terms of Service
-Privacy Policy
-© 2024 ArtOfTesting
-   
-
-
-Тарифные планы
-Журнал
-Сервис
-Вход
-Регистрация
-Главная
-Журнал
-Статьи
-Собеседование linux администратор
-Содержание
-
-Введение
-Подбор linux администратора
-Заключение
-Звоните или напишите нам
-Поможем быстро найти сотрудников
-
-8 (800) 707-63-78
-Написать в Whatsapp
-Написать на почту
-Собеседование linux администратор
-10 мин
-4306
-Опубликовано: 24.10.2023
-
-бизнес
-бизнес инновации
-инфраструктура
-Ответственность сотрудников
-подбор
-подбор кадров
-Рабочее место
-управление персоналом
-эффективность
-Введение
-Подготавливаясь к собеседованию, вы можете тренироваться в ответах на вопросы администратора LINUX по мере их задания интервьюером. Заранее подготовленные ответы помогут вам полностью объяснить или описать, как вы справились с задачей в предыдущем опыте работы или как бы вы выполняли ее для компании, в которую вы проходите собеседование. Также использование примеров вопросов и ответов для собеседования на должность администратора LINUX может помочь вам подготовить свои ответы перед интервью. В данной статье представлены распространенные вопросы для собеседования, которые вам могут быть заданы в связи с работой, вашими мягкими навыками и опытом, а также для определения вашей пригодности для этой роли.
-
-
-Хотите полностью бесплатно?
-Разместим вашу вакансию на 15 площадках
-
-Разместить вакансию бесплатно
-только для новых клиентов
-
-Подбор linux администратора
-Общие вопросы для собеседования. Интервьюеры обычно начинают с общих вопросов, чтобы лучше узнать кандидатов на работу. Вам могут задать некоторые из следующих общих вопросов:
-
-Расскажите о себе.
-Как вы узнали о данной вакансии?
-Что вы знаете о нашей компании?
-Какую ценность вы сможете принести нашей компании?
-Как ваши навыки соответствуют требованиям этой должности?
-Расскажите о вашей самой сильной стороне.
-Что для вас является вашей главной слабостью?
-Какие карьерные цели вы преследуете?
-Как ваши ценности соответствуют миссии нашей компании?
-Есть ли вопросы, которые вы хотели бы мне задать?
-Вопросы о биографии и опыте. Вопросы о вашей биографии и опыте могут включать в себя запросы о ваших навыках и образовании, особенно если вы недавно закончили университет. Ваши ответы помогут интервьюеру лучше оценить, насколько ваш опыт и квалификации соответствуют требованиям вакансии. Некоторые из следующих вопросов могут быть похожи на приведенные выше:
-
-Какие у вас есть академические степени?
-Как бы вы оценили свой уровень квалификации в этой области?
-Почему вы решили стать администратором Linux?
-Какие профессиональные достижения у вас есть?
-Как вы помогли своей предыдущей организации достичь своих целей?
-Какие карьерные цели вы преследуете?
-Планируете ли вы продолжать образование в будущем?
-Вы выполняли или участвовали в каких-либо проектах, связанных с отраслью, во время получения образования?
-Какие навыки вы бы хотели развить, если у вас их нет?
-Где вы видите себя через пять лет? Через десять лет?
-Вопросы для глубокого интервью Во время собеседования интервьюер может перейти к более сложным и специфическим для отрасли вопросам, связанным с вашими знаниями и опытом в администрировании Linux. Ваши ответы могут продемонстрировать глубину вашего понимания данной области и то, как вы применяете свои навыки для достижения бизнес-целей. Следующие вопросы помогут вам подготовиться к более специализированным вопросам:
 
 В чем различия между операционными системами Linux и Windows?
 Объясните различия между UNIX и Linux.
@@ -4911,9 +3839,6 @@ Privacy Policy
 Объясните, как создать раздел на неиспользуемом диске.
 Как используется команда umask в системе Linux?
  
-
-Вопросы для собеседования с системным администратором LINUX и примеры ответов На собеседовании с администраторами Linux, вам могут задавать вопросы, связанные с вашими навыками в работе с Linux и вашими знаниями об операционной системе. Эти вопросы могут помочь интервьюеру оценить ваши навыки в решении технических проблем, аналитическую способность и соответствие ваших навыков требованиям должности.
-
 Как назначить пользователю постоянный параметр umask?
 Ответ: Чтобы назначить постоянный параметр umask для пользователя, я бы добавил соответствующую строку в файл профиля пользователя, например, в файл .bashrc. Это можно сделать следующим образом:
 
@@ -5003,168 +3928,6 @@ bashCopy code
 touch filename.txt 
 
 Это создаст пустой файл с именем filename.txt в текущем каталоге.
-
-
-Заключение
-Собеседование на должность системного администратора Linux — это важный этап в процессе подбора квалифицированных специалистов для работы с системами Linux. Вопросы, которые могут быть заданы на собеседовании, охватывают широкий спектр тем, начиная с базовых знаний и навыков работы с Linux, и заканчивая более сложными техническими аспектами.
-
-Подготовка к собеседованию включает в себя глубокое понимание операционной системы Linux, командной строки, файловых систем, а также умение решать проблемы и выполнять административные задачи. Важно иметь готовые примеры из опыта работы, которые подтверждают ваши навыки и способность решать задачи в области администрирования Linux.
-
-Кроме того, для поиска квалифицированных сотрудников на должность системного администратора Linux, вы можете воспользоваться платформой Jobers, где вы найдете it-специалистов с соответствующим опытом и знаниями. Jobers предоставляет удобный способ связи с потенциальными кандидатами и облегчает процесс подбора персонала.
-
-Таким образом, правильная подготовка и использование специализированных ресурсов, таких как Jobers, помогут вам найти лучших сотрудников для вашей компании на должность системного администратора Linux и обеспечить успешное развитие вашей IT-инфраструктуры.
-
-
-ОСТАВИТЬ ЗАЯВКУ
-Смотрите также
-
-5 мин
-3841236
-04.08.2024
-Как определить цель компании
-Правильно определённая цель может стать рулевым колесом, которое направит ваш бизнес к успеху в штормовом море рыночной конкуренции.
-
-Читать статью
-
-5 мин
-3528533
-04.08.2024
-Как создать и зачем нужна корпоративная база знаний
-Этот инструмент превращает информационный хаос в организованную систему, где каждая важная деталь доступна в пару кликов. Это не только экономит время, но и снижает стресс у вашей команды, ведь теперь они точно знают, где и что искать.
-
-Читать статью
-
-5 мин
-3513280
-04.08.2024
-Как разработать оргструктуру компании
-Этот инструмент превращает информационный хаос в организованную систему, где каждая важная деталь доступна в пару кликов. Это не только экономит время, но и снижает стресс у вашей команды, ведь теперь они точно знают, где и что искать.
-
-Читать статью
-
-5 мин
-3902054
-04.08.2024
-Теория ожидания Врума
-Понимание того, что движет вашими сотрудниками, может стать вашим мощным инструментом в управлении командой. Именно здесь на помощь приходит теория ожидания Виктора Врума, один из фундаментальных подходов в психологии мотивации, который помогает расшифровать, как и почему ваша команда работает так, как работает.
-
-Читать статью
-
-4 мин
-3895833
-03.08.2024
-Аудит человеческих ресурсов
-Подумайте об этом как о стратегическом инструменте, который не только выявляет проблемы, но и предлагает конкретные пути их решения. Это возможность переосмыслить процессы, которые кажутся обыденными, но на деле могут таить в себе ключ к более продуктивной рабочей атмосфере.
-
-Читать статью
-
-3 мин
-4613059
-23.07.2024
-Профиль должности маркетолога
-Маркетолог — это много больше, чем просто креативный ум, погружённый в мир рекламы и соцсетей. Это стратег, который каждый день стоит у руля вашего бренда, направляя его через бурные воды рыночной конкуренции.
-
-Читать статью
-
-3 мин
-4598388
-23.07.2024
-Профиль должности бухгалтера
-Задумывались ли вы когда-нибудь, что стоит за спокойствием и уверенностью вашего предприятия в финансовом плане? Правильный ответ — ваш бухгалтер. Это специалист, который не только следит за каждым рублем в бюджете, но и защищает ваш бизнес от финансовых рисков.
-
-Читать статью
-
-3 мин
-4584963
-23.07.2024
-Профиль должности администратора
-Администратор — это многофункциональный организатор и первое лицо компании для ваших клиентов и партнеров. Это человек, который знает всё о том, как устроены ваши процессы, и способен управлять ими одним движением руки.
-
-Читать статью
-
-3 мин
-4571913
-23.07.2024
-Профиль должности hr-менеджера
-Если вы до сих пор не задумывались о значении этой роли, то пришло время взглянуть на профиль должности HR-менеджера под новым углом. От того, насколько грамотно организована работа вашего HR, зависит не только атмосфера в коллективе, но и его способность достигать амбициозных целей. 
-
-Читать статью
-
-3 мин
-4558066
-23.07.2024
-Профиль должности инженера
-Инженеры — это не просто специалисты в своем деле, это строители будущего в буквальном смысле этого слова. Вашему вниманию предлагается статья, которая раскроет вам все тонкости профиля должности инженера.
-
-Читать статью
-начните сейчас
-
-Звоните, поможем быстро найти сотрудников
-
-8 (800) 707-63-78
-Max
-Telegram
-Разместить вакансию. Поиск резюме. Jobers
-Сервис публикации вакансий
-
-Реквизиты
-
-ООО «ЭЙЧАР-СОФТ», ИНН: 7805815915 198035, г. Санкт-Петербург, вн.тер.г. Муниципальный Округ Морские Ворота, ул Двинская, д. 10, к. 2, литера А, помещ. 16-Н 8(800) 707-63-78
-Код вида деятельности: 1.01, 2.01
-Основной ОКВЭД: 62.01
-
-Ваш регион
-
-Россия
-Закрывающие документы:
-
-buh@jobers.ru
-Отдел продаж:
-
-8(800) 707-63-78
-sales@jobers.ru
-В реестре
-российского ПО
-
-  
-© 2016-2026 Jobers.ru
-
-Продукты
-
-Публикация вакансий
-Публикация во Вконтакте
-Публикация в Telegram
-Рерайтинг вакансии
-Сервис
-
-Контакты
-Способы оплаты
-Отзывы
-О компании
-Наши партнеры
-Аккредитация
-Документы
-
-Политика конфиденциальности
-Оферта
-Правила использования сайта
-Правила размещения
-Использование cookies
-Стоимость ПО
-Описание ПО
-Требования к ПО
-Функциональные характеристики
-
-
-
-
-
-25 вопросов задаваемых на собеседовании системным администраторам Linux
-2016-03-24 в 13:21, рубрики: linux, ит-инфраструктура, Настройка Linux, системное администрирование
-Перевод Андрей А. Породько. Оригинал Pradeep Kumar · March 21, 2016 (http://www.linuxtechi.com/25-interview-questions-for-linux-administrator-job/).
-Надеюсь кому-нибудь пригодится. Меня спрашивали про ps, top и overcommitment в kvm ;-)
-Внимание! Много букв и нет картинок.
-От переводчика. Пожалуйста, не пишите в комментариях что что-то можно сделать по-другому — это перевод. Когда вам зададут на интервью в RedHat подобный вопрос, у вас будет возможность проявить себя ;-)
 
 Вопрос:1 Что такое Kdump и для чего предназначен?
 
@@ -5328,31 +4091,7 @@ ROM Size: 16384 kB
 0x7001639028cbf5d8
 0x7001639028cbf6da
 
-Top 35 Linux Interview Questions and Answers
-By Vijay  Updated July 21, 2025
-LINUX is one of the most used operating systems and is best known for its efficiency and fast performance. LINUX was first introduced by Linux Torvalds and is based on the Linux Kernel.
-
-It can run on different hardware platforms manufactured by HP, Intel, IBM, etc.
-
-In this article, we have covered many basic and advanced Linux interview questions and answers that include Linux admin and Linux commands interview questions to prepare for Linux OS interviews. Questions include Linux admin, Linux commands interview questions, etc.
-
 LINUX Interview Question
-Table of Contents: [Show]
-
-Quick Quiz on Linux Interview Questions
-Challenge your Linux knowledge with our comprehensive quiz covering Linux commands, file systems, networking, shell scripting, and system administration. Best for system administrators and Linux professionals preparing for technical interviews.
-
-LINUX Interview Questions QUIZ
-Master Linux concepts and ace your technical interviews
-Question 1 of 10
-Advanced Questions
-What is the purpose of the 'awk' command?
-Archive working files
-Audio/video processing
-Application workflow management
-Text processing and pattern scanning
-Beginner Level LINUX Interview Questions
-Here we go.
 
 Q #1) What do you understand by Linux Kernel? Is it legal to edit it?
 
@@ -5438,8 +4177,6 @@ Fewer compatibility issues.
 Q #10) Differentiate between BASH and DOS?
 
 Answer: The basic differences between BASH and DOS can be understood from the table below.
-
-
 10
 entries per page
 Search:
@@ -5470,6 +4207,7 @@ It requires more resources because of the elements that need to be loaded, such 
 Q #12) Explain the term CLI.
 
 Answer: CLI stands for Command Line Interface. It is a way for humans to interact with computers and is also known as the Command-line user interface. It relies on a textual request and response transaction process where the user types declarative commands to instruct the computer to perform operations.
+
 
 Advantages of CLI
 
@@ -5960,6 +4698,7 @@ In case the user wants to check the size of various files present in their works
 %du -s * – It will recursively check all the directories and sub-directories in the home directory. Based on the size, the user can remove unwanted files, thereby freeing up space.
 
 Ps – If you are not sure of which files to remove and if you are facing a space crunch, in that case, you can zip the files, and it will help for a little while.
+
 
 Quick Tips
 
