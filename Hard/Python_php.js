@@ -54,6 +54,7 @@ There are certain drawbacks to it, though.
 
 For instance, Java codes can be very challenging to comprehend because they are lengthy. On the other hand, Python works well for complicated programs.
 
+
 Full Stack Java Vs. Python: Salary
 In general, full-stack developers make good money.
 
@@ -139,79 +140,6 @@ All in all, you won’t make a mistake with either, so don’t worry; go with yo
 
 Advertising links are marked with *. We receive a small commission on sales, nothing changes for you.
 
-
-Python: How to Write to a File Without Overwriting – Friendly Guide
-
-Mastering the Python Yes/No Loop: A Guide for Beginners
-
-Big O Calculator Python: Easy & Efficient Analysis Tool
-
-Note
-Affiliate links are marked with a *. We receive a commission if a purchase is made.
-
-English
-Deutsch
-Programming Languages
-Python
-
-Legal Information
-Legal Notice
-
-Privacy Policy
-
-Disclaimer
-
-Terms and Conditions
-
-© 2026 codingdeeply.com
-
-MERN Stack
-with AI Engineering
-
-Data Analytics
-Mentorship Program
-
-Data Science & AI
-Mentorship Program
-NEW
-Masterclass
-Free Resources
-Alumni
-Career Roadmap 
-Blog
-Search Articles & More...
-About
-Masterclass
-Free Resources
-Alumni
-Career Roadmap 
-Blog
-Home
-Blog
-Data
-30+ Python Project Ideas: Beginner to Advanced (2026)
-30+ Python Project Ideas: Beginner to Advanced (2026)
-Data
-Web Development
-By Mohit Kumar
-July 13, 2026
-28 min read
-Table of Contents
-Python Project Ideas for Beginners
-Python Project Ideas (Intermediate Level)
-Python Projects Ideas (Advanced Level)
-Tips for Building Python Projects
-FAQs about Python Projects
-30+ Python Project Ideas: Beginner to Advanced (2026)
- Share This Article
-Python is among the most popular programming languages today because it is simple, readable, and powerful. It is widely used in web development, artificial intelligence, data science, automation, and software development. Its clear and easy-to-understand syntax makes it an excellent choice for beginners, while its advanced features also support professionals building large-scale applications.  
-
-When learning Python, practice is just as important as understanding theory. Reading concepts helps you know what Python can do, but applying them through coding shows how it works in real situations. Writing code regularly improves logical thinking, strengthens problem-solving skills, and builds overall programming confidence. 
-
-Exploring different Python project ideas helps you move from basic learning to real-world applications. It encourages creativity, builds practical experience, and shows how complete programs are developed. Step by step, this process helps you grow into a confident and skilled Python developer.  
-
-Python Project Ideas for Beginners
-Once you learn Python programming, it’s essential to work on a Python project for beginners to strengthen your understanding. Simple projects help you practice basic concepts, improve problem-solving skills, and gain confidence while turning theoretical knowledge into real, hands-on coding experience.
 
 Python Project Ideas for Beginners
 1. Number Guessing Game
@@ -302,11 +230,6 @@ Source Code: Password Generator
 
 Recommended Professional
 Certificates
-
-
-
-
-
 
 6. Email Slicer
 The Email Slicer is a Python project that extracts useful information from email addresses. For example, it can separate the username and domain from an email like example@gmail.com. This project helps beginners understand string manipulation and basic Python operations. 
@@ -405,14 +328,6 @@ Source Code: To-Do List (CLI)
 
 Recommended Professional
 Certificates
-
-
-
-
-
-
-Python Project Ideas (Intermediate Level)
-Below are some intermediate Python projects ideas designed to enhance coding skills, improve problem-solving, and strengthen understanding of practical Python concepts.
 
 Python Project Ideas (Intermediate Level)
 1. Library Management System
@@ -625,15 +540,9 @@ Source Code: PDF Merger Tool
 
 Read More Guides Related to Python
 
-Python Developer Roadmap	Python Syllabus
-List and Array Difference in Python	List and Tuple Difference in Python
-How to Print Newline in Python	Iterate Through Dictionary in Python
-Best Python Books	Python Developer Skills
-Python Developer Salary in India	Python Course Duration and Fees
-Python Projects Ideas (Advanced Level)
-Below are the advanced-level Python project ideas that help you design complex applications, use powerful libraries, and strengthen real-world problem-solving and development skills.
 
 Python Projects Ideas (Advanced Level)
+
 1. Face Mask Detection
 The Face Mask Detection project is an advanced Python application that uses computer vision and deep learning to identify whether a person is wearing a face mask. It analyzes images or live video from a webcam, detects human faces, and classifies each face as “Mask” or “No Mask.” This project demonstrates how AI can be applied to real-world safety and monitoring systems. 
 
@@ -772,7 +681,7 @@ Test and Debug Regularly: Test small parts of your program frequently, handle er
 Improve With Feedback: After finishing, review your project, accept feedback, refactor weak areas, add features gradually, and compare with better solutions to continuously improve your skills. 
 A structured Python developer roadmap will help build each project will make you a more confident.
 
-Full Stack Development Course
+
 FAQs about Python Projects
 1. How do I choose good Python project ideas as a beginner?
 You should start with small, practical tasks that match your current skill level. Look for Python project ideas that use basic concepts like loops, conditions, and functions, then slowly move toward projects involving files, APIs, or simple automation.
@@ -801,180 +710,6 @@ You should build several Python coding projects, starting with small ones and gr
 9. Where can I get ideas for Python projects when I feel stuck?
 You can explore GitHub, coding communities, and tutorials for ideas for Python projects. Try to recreate projects in your own way, add extra features, or combine two ideas to create something unique and creative.
 
-Data Analytics Course Banner
-Explore Our Free Tech Tutorials
-
-Python Tutorial	Java Tutorial	JavaScript Tutorial
-C Tutorial	C++ Tutorial	HTML Tutorial
-CSS Tutorial	SQL Tutorial	DSA Tutorial
-Practice Coding With Our Free Compilers
-
-Online Python Compiler	Online HTML Compiler	Online C Compiler
-Online C++ Compiler	Online JS Compiler	Online Java Compiler
-Join Our On-Campus Data Related Courses
-
-Python Course in Jodhpur	Data Analytics Course in Jaipur
-Join Our On-Campus Full Stack Related Courses
-
-MERN Full Stack Course in Jaipur	Full Stack Course in Jodhpur
-Free Courses for You
-
-Free Angular Course	Free Shopify Course	Free Django Course
-Article by
-
-Mohit Kumar
-
-Mohit Kumar is a Technical Content Writer at WsCube Tech with 3+ years of experience creating SEO-focused technical content. A B.Tech graduate in Computer Science Engineering, he specializes in Web Development, Programming, Cyber Security, Software Development, Artificial Intelligence, and emerging technologies. He researches, writes, and updates technical content using industry best practices to ensure every article is accurate, well-structured, and valuable for students, developers, and technology enthusiasts.
-View all posts by Mohit Kumar
- View LinkedIn Profile
-Web Development
-Categories
-Digital Marketing
-Web Development
-SEO
-Data
-App Development
-Artificial Intelligence
-Career Roadmap
-Career Guidance
-Interview Questions
-Popular Articles
-Why Online Learning is Becoming Popular
-5 Reasons Why Online Learning is Becoming Popular in India
-
-On-Demand Mobile App Development
-On-Demand Mobile App Development: Features, Benefits, Cost in 2026
-
-Benefits of Mobile Application for Businesses
-Top 10 Benefits of Mobile Application for Businesses in 2026
-
-Category:
-Data
-Web Development
-Share This Article
-Leave a comment
-Your email address will not be published. Required fields are marked *
-Leave a comment*
-Your name*
- 
-Your email*
- 
-Your website
- Save my name, email, and website in this browser for the next time I comment.
-Post Comment
-Comments (0)
-No comments yet.
-
-Related articles
-Our latest and greatest step-by-step guides on all SEO, AI search, link building, and content marketing.
-
-MERN Stack Developer Salary in India (Fresher to Senior)
-MERN Stack Developer Salary in India 2026 (Fresher to Senior)
-Choosing a career often comes down to two things: money and passion. If you are drawn to web development, you…
-
-Web Development
-24 min read
-Full Stack Developer vs Software Engineer: Differences & Comparison
-Full Stack Developer vs Software Engineer: Differences & Comparison
-Choosing a career in tech often starts with one common question. Should you become a full stack developer or a…
-
-Career Guidance
-26 min read
-What Is Business Analytics? A Beginner’s Guide
-What Is Business Analytics? A Beginner’s Guide (2026)
-Every company creates data daily. Sales numbers, website clicks, support tickets, delivery times. But data sitting in a spreadsheet changes…
-
-Вопросы и ответы для собеседования веб-разработчика на Python
-Sun 08 December 2019 | upd. Sat 18 April 2020 | by Vitaly Samigullin | in Blog | 3586 words | 15 min to read
-tags: python interview ru
-Ниже вы найдете принципы проведения и вопросы для технического собеседования на позицию Python-разработчика. Хотя вопросы довольно универсальны, больше всего они подойдут для области веб-разработки.
-
-Вопросы прошли испытания боем: с их помощью было прособеседовано больше 35 кандидатов. Из них 3 (2 экс-Яндекс) стали частью моей команды в 2018 году, и еще 1 кандидат вышел в параллельную команду.
-
-Вопросы получили положительный отклик коллег: люди используют их в каком-то объеме для собеседований в своих компаниях. Я также использую эти вопросы для консультации людей, которые готовятся к прохождению технического собеседования.
-
-В то же время вопросы едва ли можно считать уникальными. Здесь нет никаких профессиональных тайн. На мой взгляд, основное преимущество вопросов — их система и принципы. На их основе можно составлять свои интересные и полезные вопросы для проведения собеседования, скроенные для ваших нужд. Или готовиться к техническому интервью в качестве кандидата.
-
-Содержание
-
-Введение
-Предпосылки
-Отбор кандидатов
-Гуманитарные вопросы
-Python
-Проверка знаний, как развивается язык
-Основные типы и структуры данных в Python
-Порядок вычисления дефолтных аргументов функций
-Что такое декоратор?
-Декоратор, выводящий в stdout время выполнения функции
-Применение декоратора
-Имя декорированной функции
-Декоратор для генераторов
-Декоратор с аргументами
-Переменные класса
-Слайсы в списках
-Что такое list/dict comprehensions?
-Generator expressions
-Какие полезные функции из модуля functools ты знаешь?
-Asyncio, multithreading, multiprocessing
-Экосистема языка
-Алгоритмы
-Временная сложность
-Проверка сбалансированности скобок в Lisp-программе
-Базы данных
-Зачем нужна RDBMS?
-Запросы в MySQL/PostgreSQL
-Общие представления о NoSQL
-Общие представления о Redis
-Тестирование
-Общие представления о unit-тестировании
-Как протестировать функцию, которая изменяет запись в MySQL?
-DevOps/Администрирование
-Проблема с нечитаемым ответом google.com
-Топ IP адресов из лога NGINX
-Docker
-Архитектура
-Проектирование сервиса копипасты pastebin
-Бизнес-описание
-Ограничения и допущения
-Ответить соискателю, если спросит
-Крупноблочная схема архитектуры
-Write API
-Создание уникального урла
-Запрос к Write API
-Ответ Write API
-Запрос к Read API
-Ответ Read API
-Аналитика
-Полезные ссылки
-Errata
-Введение
-Предпосылки
-Разработка софта больше не искусство, не дело жизни, а обычная, хотя и высококвалифицированная офисная работа. Поэтому особенно ценно в кандидате то, как он работает в команде, как справляется с повседневной работой. Как бы банально и избито это ни звучало. А вот гениальные технические озарения и хитрые алгоритмы, на втором плане. Те, для кого на первом, сами знают, каким должно быть техническое собеседование.
-Алгоритмическое собеседование это аналог IQ-тестов, изобретенных американскими учеными в начале XX века для быстрой категоризации больших масс призывников по родам войск. IQ дает представление об интеллекте человека, но не исключает ошибок. Умение решать алгоритмические задачи тоже дает представление об интеллекте человека, но не лишено недостатков. Алгоритмические собеседования нужны крупным компаниям, которым требуется быстро отобрать нужных людей из огромных масс кандидатов и установить на входе грейд и зарплату. Они могут позволить себе ошибку ненайма, потому что кандидаты конкурируют за позиции в этих компаниях, а не наоборот, как большинстве других случаев. Не стройте из себя Google, если вы им не являетесь.
-Интеллект человека это не бинарное “есть/нет” и не диапазон. Интеллект — это что-то вроде швейцарского армейского ножа-мультитула. В нем может быть острое и практичное лезвие для повседневного использования, не слишком удобный штопор, которым все же можно пользоваться, и бесполезная отвертка, которой не сделаешь ничего. Можно ли дать интегральную оценку такому мультитулу? Наверное, можно. Но непонятно, зачем. Если вы не Google, конечно. Подбирайте нож под свои задачи и исходя из своих возможностей.
-Собеседование нужно, чтобы понять, почему человек ушел (или готов уйти) с текущего места работы, что он ищет на новом месте и что он может предложить команде.
-Ошибка найма обычно компенсируется испытательным сроком. Нужно отнестись к нему серьезно и выдать задание на этот период. Аналогично со стороны сотрудника. И все-таки ошибка найма — это ошибка, которая стоит вам времени и денег. Лучшее ее не совершать. Аналогично для сотрудника. Поэтому врать про проект не стоит. Но уметь его красиво преподнести нисколько не зазорно. Напротив, в условиях конкуренции компаний за кандидатов, это ваша прямая обязанность.
-Не бывает двух одинаковых собеседований даже для кандидатов одного уровня. Техническое собеседование это всегда импровизация, попытка найти границы компетентности и сильные стороны кандидата за короткий промежуток времени.
-Отбор кандидатов
-Не все люди умеют составлять резюме.
-Слишком высокие зарплатные ожидания у интересного кандидата – не повод отказываться от собеседования. Всегда можно позадавать вопросы, которые снизят неоправданные зарплатные ожидания. Или подтвердят, что перед вами гений.
-Интевьюер, несомненно, самый умный и замечательный. Но это не повод забраковывать резюме с грамматическими ошибками (как учат вас горе HRы), смешными формулировками с проявлениями юношеской неопытности и всяким таким прочим. Задавать неоправданно сложные вопросы тоже не стоит. Оставьте высокомерие при себе.
-Не нужно бояться звать на собеседование человека, который раньше работал дизайнером/юристом/прорабом на заводе, но переучился на разработчика. Будем же честны, разрабатывать вашу скучную REST API много ума не надо, а профильное образование нужно далеко не везде.
-У кандидата может не быть 100% попадания в ваш технологический стэк, что не помешает ему в нем очень быстро разобраться. Скорее всего, неразумно отвергать кандидата с опытом работы с Flask 3 года, но без опыта работы с Django, на ваш заурядный Django-проект. Ну правда.
-Единственный способ быстро найти разработчика: провести как можно больше собеседований
-Среднее время, которое затратит интервьюер на 1 собеседование: ~2.5 часа (отсмотр резюме, подготовка к интервью, само интервью, общение с HR и CTO).
-Не стоит делать техническое интервью дольше 2 часов. Идеально 1.5 часа.
-3 собеседования в неделю – это хороший темп. Больше – тяжело (физически для интервьюера, для HR в смыле поиска кандидата и для проекта в смысле отсутствия лида во время собеседований). Меньше – подбор сотрудника затянется.
-Среднее время поиска Python-разработчика зависит от проекта, грейда и того, что может предложить ваша компания. В среднем 3 месяца от размещения заявки в HR до первого дня работы нового сотрудника это нормально.
-Ваш главный союзник в общегуманитарных вопросах собеседования - ваш HR.
-Не все разработчики – это тихие интроверты. Есть достаточное количество людей, которые умеют говорить, продавать себя и выучивать ответы для собеседований, не имея глубоких знаний. Не дайте себя обмануть, обязательно давайте задачки.
-Гуманитарные вопросы
-Что кандидат делал на прошлых местах работы. Какую позицию занимал?
-Какой состав команды был на прошлых проектах (фронт, бэк, QA, админы, менеджеры)?
-Как был организован процесс планирования, постановки задач и ревью? Какие в этом были плюсы и минусы?
-Почему кандидат решил уйти (или уже ушел) с прошлого места работы?
-Что хотелось бы от нового проекта? В смысле задач и процессов?
 Python
 Проверка знаний, как развивается язык
 Расскажи, что появилось в последней версии Python? (Python 3.8 на момент создания статьи)
@@ -1353,7 +1088,7 @@ DevOps/Администрирование
 > GET / HTTP/2
 > Host: www.google.com
 > User-Agent: curl/7.58.0
-> Accept: */*
+> Accept: */
 > Accept-Encoding: gzip, deflate
 
 %�j��~d+.K�W��me`�,x�x�m�G�67��`$#������~{d���]�.'����
@@ -1745,6 +1480,7 @@ dict(zip(keys, vals))
 >>> {'baz': 3, 'foo': 1, 'bar': 2}
 
 Функция zip отдает список пар N-ых элементов. Конструктор dict принимает список пар. Каждую пару он рассматривает как ключ и значение соответственно.
+
 
 Как работает хэш-таблица
 Хэш-таблица это разреженный массив (массив, в котором имеются незаполненные позиции). В стандартных англоязычных учебниках ячейки хэш-таблицы называются "bucket". В хэш-таблице dict каждому элементу соотвествует ячейка, содержащая два поля: ссылку на ключ и ссылку на значение элемента. Поскольку размер всех ячеек одинаков, доступ к отдельной ячейке производится по смещению.
@@ -2497,6 +2233,7 @@ Unit-тесты
 
 Что, если тесты провалены? Провал интеграционных тестов означает, что две (или больше) функции вашего приложения не работают вместе. Это могут быть два написанных вами модуля, которые приходят в противоречие из-за какой-то сложной бизнес-логики. Также провал может случиться из-за того, что изменилась структура ответа стороннего API. Провал тестов может быть предупреждением о плохой обработке ошибок в случае сбоя подключения к базе данных.
 
+
 Функциональное тестирование
 Функциональное тестирование может быть определено как тестирование отдельных функций модулей.
 Это относится к тестированию программного продукта на индивидуальном уровне, чтобы проверить его функциональность.
@@ -3150,6 +2887,7 @@ REST определяет 6 архитектурных ограничений, �
 Код по требованию (необязательное ограничение) Это опциональное ограничение. Большую часть времени вы будете отправлять статические представления ресурсов в форме XML или JSON. Но когда вам нужно, вы можете вернуть исполняемый код для поддержки части вашего приложения, например, клиенты могут вызывать ваш API для получения кода визуализации виджета интерфейса пользователя. Это разрешено
 
 Все вышеперечисленные ограничения помогают вам создать действительно RESTful API, и вы должны следовать им. Тем не менее, иногда вы можете столкнуться с нарушением одного или двух ограничений. Не беспокойтесь, вы все еще создаете API RESTful, но не «труЪ RESTful».
+
 
 Что такое SOAP
 SOAP (от англ. Simple Object Access Protocol - простой протокол доступа к объектам; вплоть до спецификации 1.2) - протокол обмена структурированными сообщениями в распределённой вычислительной среде. Первоначально SOAP предназначался в основном для реализации удалённого вызова процедур (RPC). Сейчас протокол используется для обмена произвольными сообщениями в формате XML, а не только для вызова процедур. Официальная спецификация последней версии 1.2 протокола никак не расшифровывает название SOAP. SOAP является расширением протокола XML-RPC. SOAP может использоваться с любым протоколом прикладного уровня: SMTP, FTP, HTTP, HTTPS и др. Однако его взаимодействие с каждым из этих протоколов имеет свои особенности, которые должны быть определены отдельно. Чаще всего SOAP используется поверх HTTP.
@@ -4694,7 +4432,6 @@ print interp.interpret('MCMLXXXVIII') == 1988  # True
 Итерирование можно поддержать тремя способами: следуя протоколу последовательности, пользуясь вариантом встроенной функции iter() с двумя агрументами или следуя протоколу итератора.
 
 #!/usr/bin/env python3
-# Copyright © 2012-13 Qtrac Ltd. All rights reserved.
 # This program or module is free software: you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as published
 # by the Free Software Foundation, either version 3 of the License, or
@@ -5704,6 +5441,7 @@ if __name__ == "__main__":
 Поведенческие паттерны. Итог
 Для некоторых поведенческих паттернов в Python имеется прямая поддержка; остальные нетрудно реализовать самостоятельно. Паттерны Цепочка ответственности, Посредник и Наблюдатель можно реализовать традиционным способом или с помощью сопрограмм, и все они являются вариациями на тему разрыва связи между взаимодействующими объектами. Паттерн Команда можно использовать для отложенного вычисления и реализации механизма выполнения-отмена. Поскольку Python - интерпретируемый язык (на уровне байт-кода), то паттерн Интерпретатор можно реализовать с помощью самого Python и даже изолировать интерпретируемый код в отдельном процессе. Поддержка паттерна Итератор (и - неявно - паттерна посетитель) встроена в Python. Паттерн Хранитель неплохо поддержан в стандартной библиотеке Python (например, с помощью модулей pickle и json). У паттернов Состояние, Стратегия и Шаблонный метод прямой поддержки нет, но все они легко реализуются.
 
+
 Что такое lru cache
 LRU, метод вытеснения из кэша
 LRU (least recently used) — это алгоритм, при котором вытесняются значения, которые дольше всего не запрашивались. Соответственно, необходимо хранить время последнего запроса к значению. И как только число закэшированных значений превосходит N необходимо вытеснить из кеша значение, которое дольше всего не запрашивалось.
@@ -5757,235 +5495,13 @@ HTTP/2 в качестве транспорта. И это невероятно 
 SSL/TLS, OAuth 2.0, аутентификация через сервисы Google, плюс можно прикрутить свою (например, двухфакторную)
 Поддержка 9-ти языков: C, C++, Java, Go, Node.js, Python, Ruby, Objective-C, PHP, C# плюс, конечно, никто не запрещает взять и реализовать свою версию хоть для брейнфака.
 Поддержка gRPC в публичных API от Google. Уже работает для некоторых сервисов. Нет, REST-версии, конечно, тоже останутся. Но посудите сами, если у вас будет выбор — использовать, скажем, из мобильного приложения REST-версию, отдающие данные за 1 сек или с теми же затратами на разработку взять gRPC-версию, работающую 0.5 сек — что вы выберете? А что выберет ваш конкурент?
-Алгоритмы, структуры
-"Грокаем алгоритмы. Адитья Бхаргава"
 
-Что такое рекурсия. Какие минусы, плюсы
-Рекурсия – когда функция вызывает саму себя. Логика рекурсивной функции как правило состоит из двух ветвей. Длинная ветвь вызывает эту же функцию с другими параметрами, чтобы накопить результат. Короткая ветвь определяет критерий выхода из рекурсии.
-
-Рекурсия, в некоторых случаях, упрощает код и делает его декларативным. Рекурсия поощряет мыслить функционально и избегать побочных эффектов.
-
-Неоптимизированная рекурсия приводит к накладным расходам ресурсов. При большом количестве итераций можно превысить лимит на число рекурсивных вызовов (recursion depth limit reached), но при возникновении такой необходимости скорее всего вы делаете что-то не так и лучше присмотритесь к другим инструментам (стэк, например).
-
-Что такое хвостовая рекурсия
-Это особый вид рекурсии, когда функция заканчивается вызовом самой себя без дополнительных операторов. Когда это условие выполняется, компилятор разворачивает рекурсию в цикл с одним стек-фреймом, просто меняя локальные переменные от итерации к итерации.
-
-Так, классическое определение рекурсивного факториала return N * fact(N - 1) не поддерживает хвостовую рекурсию, потому что для каждого стек-фрейма придется хранить текущее значение N.
-
-Чтобы сделать рекурсии хвостовой, добавляют параметры-аккумуляторы. Благодаря им функция знает о своем текущем состоянии. Пусть параметр acc по умолчанию равен 1. Тогда запись с хвостовой рекурсией будет выглядеть так:
-
-def fact(N, acc=1):
-    if N == 1:
-        return acc
-    else:
-        return fact(N - 1, acc * N)
-
-Как можно оптимизировать хвостовую рекурсию в Python
-Python — оптимизация хвостовой рекурсии
-Устранение Хвостовой рекурсии
-class recursion(object):
-    "Can call other methods inside..."
-    def __init__(self, func):
-        self.func = func
-
-    def __call__(self, *args, **kwargs):
-        result = self.func(*args, **kwargs)
-        while callable(result): result = result()
-        return result
-
-    def call(self, *args, **kwargs):
-        return lambda: self.func(*args, **kwargs)
-
-
-@recursion
-def sum_natural(x, result=0):
-    if x == 0:
-        return result
-    else:
-        return sum_natural.call(x - 1, result + x)
-
-# Даже такой вызов не заканчивается исключением
-# RuntimeError: maximum recursion depth exceeded
-print(sum_natural(1000000))
-
-О-большое при оценке сложности
-О-большое описывает скорость работы алгоритма (не время).
-
-Простой поиск
-О(n).
-
-Бинарный поиск
-O(log n): работает только с отсортированным массивом. Берем средний элемент и проверяем не тот ли это элемент что мы ищем, если нет и он меньше чем тот который мы ищем - отбрасываем половину с меньшими значениями (если больше, то с большими) и повторяем пока не найдем искомый элемент.
-
-def binary_search(list, item):
-  # low and high keep track of which part of the list you'll search in.
-  low = 0
-  high = len(list) - 1
-
-  # While you haven't narrowed it down to one element ...
-  while low <= high:
-    # ... check the middle element
-    mid = (low + high) // 2
-    guess = list[mid]
-    # Found the item.
-    if guess == item:
-      return mid
-    # The guess was too high.
-    if guess > item:
-      high = mid - 1
-    # The guess was too low.
-    else:
-      low = mid + 1
-
-  # Item doesn't exist
-  return None
-
-my_list = [1, 3, 5, 7, 9]
-print(binary_search(my_list, 3)) # => 1
-
-# 'None' means nil in Python. We use to indicate that the item wasn't found.
-print(binary_search(my_list, -1)) # => None
-
-Рекурсивные алгоритмы
-Должны иметь базовый и рекурсивный случай. Если рекурсивный алгоритм не будет иметь базового случая, он будет выполняться вечно, так как не будет условия при котором нужно вернуть управление.
-
-Быстрая сортировка
-На первом этапе выбирают опорный элемент. Чаще всего его берут из середины массива. Затем последовательно сравнивают первый элемент массива с последним, второй с предпоследним и т.д. Если элемент слева от опорного элемента больше правого, они меняются местами. Когда доходят до опорного элемента, итерация считается законченной.
-
-Далее описанный выше алгоритм применяют для двух подмассивов. Первый – от первого элемента до опорного элемента (не включительно), второй – от опорного до последнего.
-
-Рекурсивный спуск продолжается, пока длины подмассивов не станут равны единице.
-
-Сложность быстрой сортировки в среднем случае равна N * log(N).
-
-O(n * log n) (средний и лучший случай), O(n^2) в худшем. Скорость зависит от выбора опорного элемента - в большистве случаев выполняется за среднее время. Базовый случай - в массиве 0 или 1 элемент, тогда он уже отсортирован.
-
-Алгоритм:
-
-Выбрать опорный элемент
-Разделить массив на два подмассива - с элементами меньше и больше опорного
-Рекурсивно применять быструю сортировку к двум подмассивам
-Доказательство по индукции:
-
-def quicksort(array):
-  if len(array) < 2:
-    # base case, arrays with 0 or 1 element are already "sorted"
-    return array
-  else:
-    # recursive case
-    pivot = array[0]
-    # sub-array of all the elements less than the pivot
-    less = [i for i in array[1:] if i <= pivot]
-    # sub-array of all the elements greater than the pivot
-    greater = [i for i in array[1:] if i > pivot]
-    return quicksort(less) + [pivot] + quicksort(greater)
-
-print(quicksort([10, 5, 2, 3]))
-
-Граф
-Моделирует набор связей. Они состоят из узлов и ребер. Узлы напрямую соединенные с другими узлами называются соседями.
-
-Бывают направленные и ненаправленные, взвешенные и невзвешенные.
-
-В направленном графе есть стрелки, а отношения действуют в направлении стрелки (А -> Б, значит Б - сосед А, а А - родитель Б)
-
-В ненаправленном графе стрелок нет, а отношение идет в обе стороны
-
-Очередь и стек
-Очередь FIFO (first in first out), стрек LIFO (last in first out)
-
-Дерево
-Особая разновидность графа, в котором нет ребер, которые указывают в обратном направлении
-
-Поиск в ширину
-O(V + E), где V - количество вершин, E - количество ребер, работает с графами и помогает ответить на вопросы двух типов:
-
-Существует ли путь от узла А к узлу Б?
-Как выглядит кратчайший путь от узла А к узлу Б?
-Алгоритм:
-
-Поместить узел, с которого начинается поиск, в изначально пустую очередь.
-Извлечь из начала очереди узел u и пометить его как развёрнутый.
-Если узел u является целевым узлом, то завершить поиск с результатом «успех».
-В противном случае, в конец очереди добавляются все преемники узла u, которые ещё не развёрнуты и не находятся в очереди.
-Если очередь пуста, то все узлы связного графа были просмотрены, следовательно, целевой узел недостижим из начального; завершить поиск с результатом «неудача».
-Вернуться к п. 2.
-Используется для нахождения кратчайшего пути в невзвешенном графе
-
-Алгоритм Дейкстры
-Используется для нахождения пути с наименьшим весом в взвешенном графе Работает только в направленных ациклических графах (DAG - Directed Acyclic Graph)
-
-Состоит из 4 шагов:
-
-Найти узел с наименьшей стоимостью
-Обновить стоимость соседей этого узла
-Повторять пока это не будет сделано для всех узлов
-Вычислить итоговый путь
-Не работает с отрицательными весами - для графов с отрицательными весами сущестувет специальный алгоритм, называемый алгоритмом Беллмана-Форда
-
-Жадные алгоритмы
-Используются когда вычисление точного решения занимает слишком много времени или когда высокая точность не требуется. Эффективность приближенного алгоритма оценивается по:
-
-быстроте
-близости полученного решения к оптимальному
-Жадные алгоритмы хороши не только тем что они обычно легко формулируются, но и тем что простота обычно оборачивается быстротой выполнения.
-
-Жадные алгоритмы стремятся к локальной оптимизации в расчете на то что в итоге будет достигнут глобальный оптимум
-
-Жадные алгоритмы легко реализуются и быстро выполняются, поэтому из них получаются хорошие приближенные алгоритмы
-
-Как распознать NP-полную задачу
-Не существует простого способа это сделать, но есть ряд признаков:
-
-ваш алгоритм быстро работает при малом количестве элементов, но сильно замедляется при увеличении их числа;
-формулировка ~все комбинации х~ часто указывает на NР-полноту задачи;
-вам приходится вычислять все возможные варианты Х, потому что задачу невозможно разбить на меньшие подзадачи? Такая задача может оказаться NР-полной;
-если в задаче встречается некоторая последовательность (например, последовательность городов, как в задаче о коммивояжере) и задача не имеет простого решения, она может оказаться NР-полной;
-если в задаче встречается некоторое множество (например, множество радиостанций) и задача не имеет простого решения, она может оказаться NР-полной;
-можно ли переформулировать задачу в условиях задачи покрытия множества или задачи о коммивояжере? В таком случае ваша задача определенно является NР-полной.
-У NP-полных задач не бывает известных быстрых решений Если у вас имеется NP-полная задача лучше воспользоваться приближенным алгоритмом
-
-Динамическое программирование
-Применяется для оптимизации некоторой характиристики, например положить в рюкзак вещей на наибольшую сумму, или найти самую длинную подстроку в двух словах и тд.
-
-Работает только в ситуациях когда задача может быть разбита на автономные подзадачи
-
-В каждом решении из области динамического программирования строится таблица (!) Значения ячеек таблицы обычно соответствует оптимизируемой характеристике (цена вещей, их важность, количество повторений букв и тд)
-
-Не существует единой формулы для вычисления решений методом динамического программирования
-
-Алгоритм k ближайших соседей
-Применяется для классификации и регрессии. В нем используется проверка k ближайших соседей
-
-Классификация - распределение по категориям
-
-Регрессия - прогнозирование результата (например, в виде числа) Извлечением признаком называется преобразование элемента (например фрукта или пользователя) в список чисел, которые могут использоваться для сравнения Качественный выбор признаков очень важен Используется в машинном обучении, построении рекомендательных систем, прогнозировании и тд
-
-Для вычисления расстояния до соседа используется формула Пифагора (sqrt((x1 - x2)^2 + (y1 - y2)^2)) или метрика близости косинусов. Метрика близости косинусов не измеряет расстояние между двумя векторами, вместо этого она сравнивает углы двух векторов.
-
-Алгоритм Ричарда Фейнмана
-Записать формулировку задачи
-Хорошенько подумать
-Записать решение
-Frontend
-Что такое куки. Зачем они, как с ними работать и где они сохраняются
-Куки являются информацией, сохраняемой на компьютере веб-сайтом. Куки часто хранят настройки для веб-сайта, например предпочитаемый язык или местоположение. При возвращении на сайт, браузер отправляет обратно куки, которые принадлежат этому сайту. Это позволяет сайту запоминать информацию о предыдущих посещениях.
-
-Django использует куки чтобы хранить идентификатор сессии (или позволяет настроить проект чтобы хранить сессию в куках)
-
-Куки хранятся в браузере.
-
-С ними можно работать как из Django (request.COOKIES, response.st_cookie) так и из JavaScript (document.cookie) (если не установлен флаг HTTPONLY).
-
-Может ли сервер изменить (добавить, удалить) куки
-Да. Значение куки может быть изменено сервером путём отправления новых строк Set-Cookie: name=newvalue. После этого браузер заменяет старое куки с тем же name на новую строку.
-
-Что такое JWT (JSON Web Token)
-JWT простым языком: что такое JSON токены и зачем они нужны
-Веб-токен JSON, или JWT (произносится «jot»), представляет собой стандартизированный, в некоторых случаях подписанный и/или зашифрованный формат упаковки данных, который используется для безопасной передачи информации между двумя сторонами.
-
-JWT определяет особую структуру информации, которая отправляется по сети. Она представлена в двух формах – сериализованной и десериализованной. Первая используется непосредственно для передачи данных с запросами и ответами. С другой стороны, чтобы читать и записывать информацию в токен, нужна его десериализация.
-
+********************************************************************************************
+	********************************************************************************************
+	********************************************************************************************
+	********************************************************************************************
+	********************************************************************************************
+	
 SDLC
 Agile/Scrum
 Agile/Scrum. Все что необходимо знать
