@@ -1,4 +1,3 @@
-	
 Алгоритмы, структуры
 "Грокаем алгоритмы. Адитья Бхаргава"
 
@@ -206,10 +205,7 @@ O(V + E), где V - количество вершин, E - количество
 Для вычисления расстояния до соседа используется формула Пифагора (sqrt((x1 - x2)^2 + (y1 - y2)^2)) или метрика близости косинусов. Метрика близости косинусов не измеряет расстояние между двумя векторами, вместо этого она сравнивает углы двух векторов.
 
 Алгоритм Ричарда Фейнмана
-Записать формулировку задачи
-Хорошенько подумать
-Записать решение
-Frontend
+
 Что такое куки. Зачем они, как с ними работать и где они сохраняются
 Куки являются информацией, сохраняемой на компьютере веб-сайтом. Куки часто хранят настройки для веб-сайта, например предпочитаемый язык или местоположение. При возвращении на сайт, браузер отправляет обратно куки, которые принадлежат этому сайту. Это позволяет сайту запоминать информацию о предыдущих посещениях.
 
@@ -262,7 +258,6 @@ Master Java programming and elevate your career with the Java Certification Cour
 How Many Edges Does a Minimum Spanning Tree Have? 
 A minimum spanning tree (MST) is a subset of the edges of a connected, undirected graph that connects all the vertices with the most negligible possible total weight of the edges. A minimum spanning tree has precisely n-1 edges, where n is the number of vertices in the graph.
 
-Also Read: Prim's Minimum Spanning Tree
 How Does Kruskal's Algorithm Work?
 Kruskal's Algorithm is a greedy algorithm for finding the Minimum Spanning Tree (MST) of a connected, weighted graph. It works by selecting the edges with the smallest weights and adding them to the spanning tree, provided they do not form a cycle.
 
@@ -813,6 +808,7 @@ for edge in mst:
     print(edge)
 Explanation
 Disjoint Set Class: Initialization: Creates a parent pointer and rank for each vertex; Find Operation: Implements path compression to find the root of a set; Union Operation: Uses union by rank to attach smaller depth trees under the root of deeper trees.
+
 Kruskal's Algorithm: Sorting Edges: Sorts the edges based on their weights in ascending order; Initialization of Disjoint Set: Creates disjoint sets for each vertex; Edge Selection: Iterates through the sorted edges and includes an edge in the MST if it doesn’t form a cycle; Returning MST: The MST is returned as a list of edges.
 Example Usage: Defines vertices and edges; Calls the Kruskal function and prints the MST edges.
 Elevate your coding skills with Simplilearn's Python Training! Enroll now to unlock your potential and advance your career.
@@ -2069,6 +2065,7 @@ const App = () => {
 
 export default App;
 
+
 Basic Coding/Programming Interview Questions
 Q #1) How can you reverse a string?
 
@@ -2086,11 +2083,6 @@ Answer: After the string is reversed as discussed in Q #1, we need to put the fo
 
 Code snippet:
 
-1
-2
-3
-4
-5
 if(actualtxt.equals(reversetxt)){
    return “Palindrome”;
 else
@@ -2108,24 +2100,6 @@ If the result is true, the counter for the character in the hash map is increase
 Once the loop ends, the HashMap is traversed and prints the characters with over 1 count.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 HashMap<Character, Integer> mp = new Hasheem<> ();
    for (int j = 0; j<text.length (); j++) {
        char ch = text.charAt(j);
@@ -2154,23 +2128,6 @@ If the result is true, the counter for the character in the hash map is increase
 Once the loop ends, the Hash map is traversed, and the characters with a count equal to 1.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 HashMap<Character, Integer> mp = new Hasheem<> ();
    for (int j = 0; j<text.length (); j++) {
        char ch = text.charAt(j);
@@ -2198,16 +2155,6 @@ Take a single character at a time and verify if it is a part of the group of vow
 If the result is true, increase the count of vowels; otherwise, increment the count of consonants.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 for (int k = 0; k < text.length(); k++) {
     char c = text.charAt(k);
     if (c == 'a' || c == 'e' || c == 'i' || 
@@ -2231,21 +2178,6 @@ Sort the two character arrays, then check if the two sorted arrays are alike.
 If the result is true, the two strings are anagrams; otherwise, not anagrams.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 if (str1.length() != str2.length()) {  
        System.out.println(str1 + " and " +str2 + " not anagrams string");  
 }else{
@@ -2271,13 +2203,6 @@ Compare if a particular character of the string equals the character that is bei
 If the result is true, then increment the value of the counter.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
 for (int l=0; l<strng.length(); l++)
 {
     if ( strng.charAt(l)== searchedcharacter)
@@ -2296,10 +2221,6 @@ Verify if the string that is rotated is present in the joined string.
 If the result is true, the second string is a rotation of the first string.
 Code snippet:
 
-1
-2
-3
-4
 String concat  = org_string + org_string;
  if (concat.indexOf (rotat) !  = -1) {
      return true;
@@ -2313,20 +2234,6 @@ Use the replaceAll function, which replaces all the numerical digits with “”
 Get the length of the string without digits.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 package introduction;
   
 public class GG {
@@ -2351,22 +2258,6 @@ A Set data structure for the repeated characters and a list for the non-repeated
 After segregating the repeated and non-repeated elements, the program prints the first element of the list in the console at the end of the iteration.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 Set<Character> repeated = new HashSet<>();
 List<Character> nonRepeated = new ArrayList<>();
 for (int m = 0; m < wrd.length(); m++) {
@@ -2398,14 +2289,6 @@ Build two loops.
 In the first loop, collect elements one at a time and add up the number of instances of the selected element.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
 for (m = 0; m < size; m++)  
         { 
             for (n = m + 1; n < size; n++)  
@@ -2423,14 +2306,6 @@ Loop through the array and verify if the element already exists in the hash map
 If the result is true, array traversal is continued; otherwise, the element is printed out in the console.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
 HashMap<Integer,Boolean> m =  new HashMap<>();
     for (int j = 0; j < a.length); j++)
          {
@@ -2454,17 +2329,6 @@ If the present element is larger than the following element of the array, then s
 If the present element is lesser than the following element of the array, shift to the next element, and again repeat step 1.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 for(k = 0; k < arry.length; k++)
     {
         for(l = 0; l < arry.length-l-1; l++)
@@ -2483,17 +2347,6 @@ Answer: Implementation of insertion sort.
 
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 for (m = 1; m < arry.length; m++) 
     {
         n = m;
@@ -2518,22 +2371,6 @@ IF the second element is less than arry[i] THEN
 Second element = arry[i]
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 if(arry[0] > arry[1]) {
       l = arry[0];
       s  = arry[1];
@@ -2558,13 +2395,7 @@ Take an array with elements.
 Now, exchange the position of the first element with the final element, and similarly, the second element with the penultimate element.
 This will continue until the entire array is reversed.
 Code snippet:
-
-1
-2
-3
-4
-5
-for (t = 0; t < arr.length / 2; t++) { 
+t = 0; t < arr.length / 2; t++) { 
             tmp = arr[t]; 
             arr[t] = arr[arr.length - t - 1]; 
             arr[arr.length - t- 1] = tmp; 
@@ -2575,8 +2406,6 @@ Answer: Special characters in a string can be removed by using the replaceAll fu
 
 Code snippet:
 
-1
-2
 string str = “Testing@”
 str.replaceAll(“[^a-z0-9]”,””)
 In this solution, a regular expression is utilized.
@@ -2595,11 +2424,6 @@ j = substring(0,i.length()-j.length())
 i= subsrtirng(j.length)
 Code snippet:
 
-1
-2
-3
-4
-5
 string i = “abc”, j =”def”;
     i = i+j;
     j = i. substring(0,i.length()-j.length());
@@ -2614,17 +2438,6 @@ Increment the first linked list by two nodes and the second by one node in each 
 While the first node reaches the end of the list, the second node will point to the middle.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 first = second = head; 
  while(first !=null) { 
     first = first.next; 
@@ -2646,17 +2459,6 @@ Let the present.next be preceding to reverse the list.
 In each loop, present and preceding are incremented by 1.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
 Node preceding=null;
 Node following
 while(present!=null)
@@ -2677,24 +2479,6 @@ For every value in the linked list, verify if it’s already present in the hash
 If the result is true, the element is not added to the hash table.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 HashSet<Integer> h = new HashSet<>(); 
         
         node present = head; 
@@ -2724,16 +2508,6 @@ counter = counter + 1
 Counter value is returned.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 { 
         Node present = head; 
         int c = 0; 
@@ -2755,15 +2529,6 @@ present = present -> next.
 If not found, false is returned.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 Node present = head;  
         while (present != null) 
         { 
@@ -2782,19 +2547,6 @@ If the number is perfectly divisible by k, then the number is non–prime.
 If the number is not perfectly divisible except for 1 and by itself, then the number is prime.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 for(k = 2; k <= number / 2; k++)
   {
       if(number % k == 0)
@@ -2819,15 +2571,6 @@ The counter is increased by 1.
 Modify the present such that it implies the next present.
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 Node present = head; 
         int c = 0; 
         while (c != null) 
@@ -2843,13 +2586,6 @@ Answer: 0 and 1 are the first two Fibonacci numbers, and all the numbers after 0
 
 Code snippet:
 
-1
-2
-3
-4
-5
-6
-7
 int num1=0, num2=1,t;
 for ( int k = 0; k<5,k++)
 {
@@ -2869,43 +2605,13 @@ Q #30) Determine the factors of a number.
 
 Answer: The factors of a number are expressed by the following code snippet:
 
-1
-2
-3
-4
-5
-6
 int no = 75;
   
          for(int j = 1; j <= no; j++) {
             if (no % j == 0) {
                 System.out.print(j);
             }
-Final Thoughts on Interview Questions for Coding Developers
-We are hopeful that we have clarified many of the answers to your queries on the basic coding interview questions.
 
-Most of the coding implementations that we have discussed are in Java; however, even if you are unaware of the language, the steps or the details of the algorithm given here for most of the questions will help you to prepare for an interview.
-
-Work hard on your basics of programming, logic, and data structures, stay calm, and practice these programming interview questions.
-
-Одна React-задача, демонстрирующая ключевые навыки на собеседовании
-Простой
-7 мин
-60K
-ReactJS
-*
-JavaScript
-*
-TypeScript
-*
-Веб-разработка
-*
-Кейс
-Фото из сериала Silicon Valley
-Фото из сериала Silicon Valley
-Ниже - пример того, как я обычно представляю (и детально разбираю) один из моих любимых вопросов по фронтенд-разработке на собеседовании. Он основан на моем опыте интервьюирования в крупных IT-компаниях. Этот вопрос посвящён созданию небольшого React-компонента, который асинхронно получает данные на основе пропса username. Он кажется простым, но на самом деле показывает много нюансов понимания кандидатом хуков React, сайд-эффектов, состояния гонки (race conditions) и компромиссов в дизайне. Приятного чтения!
-
-Как и у любых других вопросов для собеседования, у этого есть недостатки. Собеседование - искусственная ситуация с жёсткими временными ограничениями, и кандидат может нервничать или уставать. Моя цель - не поймать человека на ошибке, а понять, как он рассуждает о реальных проблемах, с которыми может столкнуться в работе.
 
 Суть задачи на интервью
 Перед вами один из возможных примеров использования компоненты <Profile>, который получает проп username и внутри делает запрос на некий API (например, fetchProfile(username)) – это некая абстракция: может быть GitHub, может быть корпоративный сервис, без разницы.
@@ -3105,6 +2811,7 @@ const Profile = ({ username, children }) => {
 
 Примечание: для упрощения здесь не рассматривается сценарий, когда username или children могут оказаться "пустыми" (например, null, undefined или пустая строка), а также ситуация, когда children не является функцией. Однако здорово, если кандидат обратит внимание и на эти нюансы.
 
+
 Почему мне нравится этот вопрос
 Он небольшой по объёму и наглядно показывает ключевые аспекты работы с React: получение данных, состояние загрузки, корректный рендер и работу с пропами.
 
@@ -3135,22 +2842,13 @@ const Profile = ({ username, children }) => {
 
 В конце концов, главное - это структура размышлений. Точно так же, как в системном дизайне мы обсуждаем компромиссы по сложности, памяти, пропускной способности, здесь в React-собеседовании смотрим на подход к работе с данными, пропами, асинхронностью, состоянием и реактивным UI.
 
-Теги:reactсобеседование
-Хабы:ReactJSJavaScriptTypeScriptВеб-разработка
 
-Подскажите, пожалуйста, пару интересных вопросов для сеньоров по этой задаче.
-
-andry36
-4 фев 2025 в 16:31
-Спасибо, что обратили внимание на задачу!
 Я бы задал вопросы, связанные с производительностью и оптимизацией, например:
 Как организовать параллельную загрузку нескольких профилей и синхронизировать их результат в одном компоненте?
 Как выстроить отказоустойчивость при сбоях сети (ретраи, отмена запросов, механизмы кэширования)?
 Как решать проблему при работе в среде SSR, где запросы нужно делать ещё до рендера?
 Как совместить подход с Suspense и Error Boundaries для более реактивной UX-модели?
 
-dark_gf
-3 фев 2025 в 18:11
 Вопрос в общем хороший, у меня больше инетресует вот эта часть:
 
     <Profile username="john_doe">      {(user) => (user === null ? <Loading /> : <Badge info={user} />)}    </Profile>
@@ -3292,17 +2990,12 @@ Vitaly_js
 Вы действительно проверяете знания реакта, но, на мой взгляд, в неестественных условиях, т.е. создаете дополнительно пространство для стресса и для траты времени на муру.
 
 
-andry36
-4 фев 2025 в 17:20
-Спасибо за комментарий!
 Понимаю, что такая постановка задачи может показаться искусственной, но для собеседований она довольно типична: нам нужно в ограниченное время проверить, как кандидат мыслит в контексте React, понимает ли он тонкости хуков и асинхронных запросов.
 На интервью часто задают подобные микро-задачи, чтобы быстро увидеть, как разработчик работает со стейтом, эффектами и обработкой ошибок на практике - без вдавания в детали полной архитектуры приложения.
 
 Т.е. что это не замена реального проектного кода, а тестовое окружение, где проявляются навыки кандидата.
 
 
-Vitaly_js
-4 фев 2025 в 17:46
 Так в этом и проблема. Ваша задача быстро проверить навыки. А задача соискателя не ударить в грязь лицом. Если вы даете липовую задачу, действительно, можно не думая начать решать и вроде как показывать навыки. А можно начать рефлексировать и пытаться выяснить, а что тут проверяют?
 
 Создавая искусственные ограничения вы не "упрощаете" задачу, а наоборот создаете реальные препятствия для ее решения. И как выше заметили можете создавать неверное представление о проекте.
@@ -3312,8 +3005,6 @@ fetchProfile не позволяет отменять запросы. А fetchDa
 И да, это действительно типично для собеседований, поэтому я и говорю, что такое не очень люблю. Вроде как хотят протестировать навыки (точно хотите навыки протестировать?)), вроде как сами же думают, что речь идет о реальных условиях, но тестируются далеко не только навыки и далеко не в реальных условиях.
 
 
-Ione1991
-4 фев 2025 в 17:58
 Не совсем понятен первый пример с lastUsernameFetched. Разве там условие не будет всегда ложно?
 
 
@@ -3828,6 +3519,7 @@ function fetchProfile(username: string) {
   return { promise, reject };
 }
 
+
 Структуры данных
 Question 1
 What is the time complexity of accessing an element by index in an array?
@@ -4231,13 +3923,10 @@ Popped element: 49
 
 Popped element: 25
 
-**************
-
-Conclusion
 The data structure is divided into primitive data, linear data, and non-linear data. It helps to store, manipulate, and organize data to manage it effectively. Various data structure differs from one another in the way data is connected. Data processing utilizes data structures like arrays, stacks, queues, linked lists, trees, graphs, and HashMap.
 
 
- 🧩 Структуры данных
+Структуры данных
 Что такое структуры данных и зачем их нужно знать
 Структуры данных – это специализированные форматы для организации и хранения информации. Они определяют, как расположены и связаны между собой элементы данных, что напрямую влияет на скорость доступа и изменения данных. Структуры данных – фундаментальная часть информатики:
 
@@ -4372,8 +4061,8 @@ my_queue.get()
 При поиске не нужно проверять все элементы, как в массиве.
 Легко добавлять и удалять элементы.
 Сбалансированные BST (например, AVL или Красно-черные деревья) гарантируют выполнение операций за O(log n).
-Статья по теме
-🌳 Деревья и графы: что это такое и почему их обязательно нужно знать каждому программисту
+
+Деревья и графы: что это такое и почему их обязательно нужно знать каждому программисту
 Что такое хеширование и как оно применяется в структурах данных?
 Хеширование – это метод, который берет данные любой длины и преобразует их в фиксированное значение (хеш) с помощью хеш-функции.
 
@@ -4384,8 +4073,7 @@ my_queue.get()
 Хеширование выполняется быстро и эффективно.
 Хеширование используется в ассоциативных массивах (словари в Python, объекты в JavaScript), где ключи преобразуются в индексы массива для быстрого поиска. Это позволяет выполнять операции поиска, вставки и удаления за O(1).
 
-Статья по теме
-🐍 Хэш-карты: незаменимый инструмент для Python-разработчика
+Хэш-карты: незаменимый инструмент для Python-разработчика
 Что такое куча и где она используется?
 Куча – это структура данных, представляющая собой частично упорядоченное дерево, которое подчиняется определенным правилам.
 
@@ -4409,6 +4097,7 @@ Min-куча с узлами {2, 3, 8, 5, 10, 9, 15, 7} будет выгляд�
   7
 
     
+
 Вопросы по структурам данных среднего уровня
 Вопросы среднего уровня проверяют вашу техническую компетентность в реализации и использовании структур данных.
 
@@ -4489,10 +4178,8 @@ class MinHeap:
         self.heap.pop()  # Удаляем последний элемент
         self.__heapify_down(0)  # Восстанавливаем порядок
         return min_val
-
-    
+   
 Пример использования:
-
         
 heap = MinHeap()
 heap.insert(5)
@@ -4627,6 +4314,7 @@ hash1("cat") = 3, hash2("cat") = 7 -> если 3 занята, проверяе�
 
 Недостаток: при частых коллизиях может потребоваться большое количество проб и перерасчетов хешей.
 
+
 Что такое граф и как его можно представить?
 Граф – это структура данных, состоящая из множества вершин (или узлов), соединенных между собой ребрами. Граф используется для отображения различных отношений и связей между объектами. Например, граф может моделировать социальные сети (пользователи как вершины, а их связи — ребра), маршруты в городах, зависимость задач в проекте и т.д.
 
@@ -4744,8 +4432,7 @@ def quick_sort(arr, low, high):
     return arr
 
     
-Статья по теме
-🚄 Сравнение 6 алгоритмов сортировки: пузырьком, выбором, кучей, вставками, слиянием и быстрая
+
 Как выбрать алгоритм для поиска кратчайшего пути в графе?
 Выбор алгоритма зависит от свойств графа:
 
@@ -4782,6 +4469,7 @@ B-дерево – это сбалансированная древовидна�
 Преимущества B-дерева перед бинарным деревом поиска (BST)
 Что такое топологическая сортировка и где она применяется?
 Топологическая сортировка – это способ упорядочивания вершин направленного ациклического графа (DAG) так, чтобы если есть ребро (u → v), вершина u предшествовала вершине v в порядке сортировки. Топологическая сортировка применима только к DAG, так как в графе не должно быть циклов.
+
 
 Алгоритмы топологической сортировки
 1. Метод удаления узлов с нулевой степенью входа (алгоритм Кана, O(V + E)):
@@ -4975,6 +4663,7 @@ class SuffixTree:
 Графовые алгоритмы
 Строковые алгоритмы и криптография
 
+
 Top Data Structure 
 A data structure can be any organization, management, and storage format of data that allows efficient access and modification. It is a collection of data values, relationships amongst them, and the various functions or operations that can be applied to the data.
 
@@ -4982,10 +4671,9 @@ Data structures are a foundational concept of programming which is heavily utili
 
 Here we cover data structure interview questions that you might expect when applying for a position. 
 
+
 Top Data Structure Interview Questions and Answers
 Any programming language interview can have a few or many questions based on data structures. Here are the top data structures and algorithms interview questions with their respective answers.
-
-If you prefer, you may download our Data Structure Interview Questions and Answers PDF. 
 
 1. What is a data structure?
 A data structure is a convenient way to organize and manipulate data. There are many kinds of data structures and each of them has distinct applications.
