@@ -1,3 +1,365 @@
+Что такое https?
+Какие есть методы?
+Какие коды ответов знаете и что они означают?
+HTML
+Что такое DOCTYPE?
+Какие теги и атрибуты используете?
+Как добавить ссылку которая будет открываться в новом окне?
+Что делает тег link и для чего нужен?
+Какие теги используются для создания таблиц?
+Какие теги используются для создания списков?
+Что такое блочные и строчные элементы и в чем их разница?
+Как вставить другой сайт на страницу?
+Что делает noscript тэг?
+Что такое абсолютные и относительные пути?
+Что такое семантика и семантичные элементы и какими пользуетесь?
+Что такое метатеги и зачем нужны?
+Как показывать разные изображения в зависимости от ширины браузера?
+HTML регистрозависимый или регистронезависимый?
+Что будет если написать код в котором не закрыт тег? Например:
+This is a paragraph.
+
+Что такое кодировка и на что она влияет и как ее задать?
+Что такое Drag/Drop и как его реализовать в html?
+Что такое canvas и как его использовали?
+Какие способы оптимизации скорости загрузки страницы вы используете?
+Как работает валидация форм в html?
+Что такое “доступность” и для чего нужна?
+Что такое СЕО оптимизация и как вы ее делаете?
+Браузер
+Какие браузерные api вы использовали?
+Что такое Server Side Rendering?
+Какие есть локальные хранилища данных в браузере?
+Что такое WebWorkers, для чего нужны и как вы их использовали?
+CSS
+Что такое селектор и какие селекторы используете?
+Какие комбинации селекторов знаете?
+Что такое псевдокласс и какие знаете?
+Что такое псевдоэлементы?
+Что такое спрайты и для чего нужны?
+Что такое css счетчики и зачем нужны?
+Чем отличается единица измерения em и rem?
+Чем отличается единица измерения vw и vh?
+Что такое приоретизация стилей и как она работает?
+Какой цвет получит параграф?
+
+<style>
+  #demo {
+    color: blue;
+  }
+  .test {
+    color: green;
+  }
+  p {
+    color: red;
+  }
+</style>
+
+<p id="demo" class="test">Hello World!</p>
+
+Что делает свойство box-sizing?
+Что такое !important?
+Что такое css функции и какие знаете?
+Что такое блочная модель?
+Что такое иконочный шрифт и какие используете?
+Как убрать стандартные точки у списка ul?
+Чем отличается display: none и visibility: hidden?
+Какие виды позиционирования знаете?
+Что такое z-index и как работает и для чего нужен?
+Что будет если задать элементу position: relative и top: 100px?
+Что такое overflow и как работает?
+Какие способы центрирования блока/контента знаете?
+Что делает ключевое слово currentcolor?
+Какие способы анимаций знаете?
+Что делает object-fit?
+Что такое css variables и как ими пользоваться?
+Как адаптировать стили под разные разрешения экрана?
+Что такое flexbox, для чего нужен и как вы его используете?
+Что такое grid, для чего нужен и как вы его используете?
+Как писать кроссбраузерный css?
+Что такое float и для чего нужен?
+JavaScript
+В чем разница между var, const и let?
+Какие типы данных есть в js?
+Что такое ссылочные типы данных?
+И в чем разница ссылочных типов от примитивных?
+В javascript строгая типизация или гибкая?
+Что делает оператор typeof?
+Какие арифметические операторы есть в js? А инкремент и декремент?
+А какие операторы присваивания есть помимо стандартного “=”?
+Какие операторы сравнения знаете?
+В чем разница между == и ===? Что лучше использовать?
+Что получится в результате следующего вычисления "Hello" + 5
+Какие логические операторы знаете?
+Используете ли вы побитовые операторы?
+Что такое контекст и область видимости?
+Что такое this?
+Как вызвать функцию с заданным this?
+Что такое события в javascript и какие события знаете?
+Как обрабатывать события?
+Какие методы строк знаете?
+Что такое шаблонная строка?
+Что такое регулярные выражения?
+Как вы используете регулярные выражения?
+Какие методы массива знаете?
+Как объеденить два массива?
+Как отсортировать массив?
+Какие условные операторы знаете?
+Как прервать выполнение цикла?
+Как пропустить итерацию цикла?
+Что такое преобразование типов?
+Как работает обработка ошибок в javascript?
+Что такое hosting?
+Что такое “strict mode” и что делает?
+Чем стрелочная фукнция отличается от обычной функции объявленой через function?
+Как вы дебажити свой код?
+Что такое асинхронность и как работает в js?
+Что такое Promise и как им пользоваться?
+Какие методы Promise знаете?
+Что такое async/await?
+Что такое DOM?
+Что такое всплытие событий?
+Какие способы взаимодействия с DOM знаете?
+Как можно получить dom элемент?
+Какие способы вставки / удаления dom элементов знаете?
+Что такое ajax?
+Как переадресовать страницу в JavaScript?</span></li>
+Сколько параметров можно передать функции?</span></li>
+Нужно алертом вывести какое-то сообщение, спустя 3 секунды после запуска скрипта. Как это сделать?</span></li>
+Чем отличается наследование в JavaScript от наследования в PHP?</span></li>
+Приведи пример наследования в JavaScript.</span></li>
+Пара слов об объектах в JavaScript?</span></li>
+Что представляет из себя метод объекта в JavaScript?</span></li>
+Зачем в JavaScript перед переменной писать var?<a name="more"></a></span></li>
+Есть две функции: function f(a,b) { return a+b } и var f = function(a,b) { return a+b } Есть ли между ними разница? Если есть то какая?</span></li>
+Как создать массив в JavaScript?</span></li>
+Можно ли в JavaScript использовать функцию в качестве конструктора?</span></li>
+Сколько и какие конструкции для циклов есть в JavaScript?</span></li>
+Что cделает код: break me_baby; ?</span></li>
+Можно ли задать массив таким образом: var a = &#8220;a,b&#8221;.split(&#8216;,&#8217;)?</span></li>
+Что выведет alert(typeof null); ?</span></li>
+Что выведет alert(null instanceof Object); ?</span></li>
+0.1+ 0.2 == 0.3 ?</span></li>
+Что выведет alert(typeof NaN); ?</span></li>
+Что выведет alert(NaN === NaN); ?</span></li>
+В чём различие свойств innerHTML и outerHTML?</span></li>
+Какая разница между операторами == и ===?</span></li>
+В чем разница между Object.getOwnPropertyNames() и Object.keys()?</span></li>
+С помощью какой конструкции языка можно управлять потоком выполнения скрипта и отслеживать ошибки?</span></li>
+Почему вызов a(); происходит успешно, а вызов b(); выдает ошибку?</span></li>
+Что такое глобальные переменные ? Как они создаются ? Какие проблемы связаны с использованием глобальных переменных?</span></li>
+Что такое замыкания (closure) в JavaScript?</span></li>
+Напишите функцию принимающую строку с именем файла и возвращающую расширение (фрагмент после последней точки).</span></li>
+Что вернет выражение +new Date()? Чем отличается от Date.now().</span></li>
+Какое значение возвращает данное предложение ~~3.14?</span></li>
+Какое значение возвращает данное предложение?</span></li>
+Что покажут эти два alert?</span></li>
+Чему равно foo.length?</span></li>
+Что такое prototype в javascript?</span></li>
+Какие способы навешивания обработчиков событий вы знаете?</span></li>
+Eсть ли разница между window и document?</span></li>
+Вызываются ли document.onload и window.onload одновременно?</span></li>
+Является ли атрибут (attribute) аналогом свойства (property)?</span></li>
+Как остановить дальнейшее распространение события?</span></li>
+Назовите различные пути для получения элемента из DOM дерева?</span></li>
+Какой наибыстрейший метод для получения элемента через css селектор?</span></li>
+Могу ли я удалить удалить обработчик события с элемента?</span></li>
+Почему querySelectorAll(&#8216;.my-class&#8217;) медленнее, чем getElementsByClassName(&#8216;my-class&#8217;)?</span></li>
+Почему я не могу использовать forEach или похожий метод массива для NodeList?</span></li>
+Если вам необходимо реализовать getElementByAttribute, как вы будете это делать?</span></li>
+Как бы вы добавили класс к элементу через селектор?</span></li>
+Как я могу запустить обработчик в фазе захвата, а не в фазе всплытия?</span></li>
+Как проверить, что один элемент является дочерним другому?</span></li>
+Какой метод больше всего подходит для создания DOM элемента? Что лучше innerHTML или createElement?</span></li>
+Каким образом можно предотвратить множественный вызов обработчика для одного события?</span></li>
+Что делает createDocumentFragment и для чего можно его использовать?</span></li>
+Что такое reflow?</span></li>
+Как я могу проверить были событие отменено или нет?</span></li>
+Какие причины reflow? Как можно уменьшить reflow?</span></li>
+Что такое repaint и когда оно происходит?</span></li>
+Есть ли что-то такое о чём нужно позаботится при использовании node.cloneNode()?</span></li>
+Как быть уверенным в том, что DOM подготовлен и можно выполнять JavaScript, как реализовать $(document).ready?</span></li>
+Что такое всплытие?</span></li>
+Как можно уничтожить несколько элементов с одним вызовом click?</span></li>
+Как предотвратить нажатие по ссылке?</span></li>
+Создайте кнопку, которая удаляется при нажатии на неё, и создаются две новые кнопки в этом же месте.</span></li>
+Как отлавливать все нажатия на странице?</span></li>
+Как получить весь текст на странице?</span></li>
+Что такое defer и async?</span></li>
+Какие существуют типы нод?</span></li>
+Что такое AngularJS?</span></li>
+Какие преимущества использования AngularJS?</span></li>
+Какие основные компоненти AngularJS ви знаете?</span></li>
+Что такое AngularJS выражения? Отличие выражений AngularJS от выражений в JS.</span></li>
+Что такое scope в AngularJS?</span></li>
+Что такое rootScope в AngularJS?</span></li>
+Что такое директива (directive) в AngularJS? Назовите несколько основных директив.</span></li>
+Какие есть типы использования директив в AngularJS?</span></li>
+Что такое Сервис (service), в AngularJS?</span></li>
+Что такое &nbsp;модуль (module) &nbsp;в AngularJS?</span></li>
+Что такое &nbsp;фильтр (filter) &nbsp;в Angular?</span></li>
+Что такое контролер (controller) &nbsp;в Angular?</span></li>
+Что катое провайдер (provider) в AngularJS?</span></li>
+Что катое &nbsp; шаблон в AngularJS?</span></li>
+Что такое &nbsp;ижектор (injector) &nbsp;в AngularJS?</span></li>
+Что такое &nbsp;Внедрение зависимости (Dependency Injection) &nbsp;в AngularJS?</span></li>
+Для чего нужен сервис $ location?</span></li>	
+Краткое описание основных задач категории Property Tasks.</span></li>
+Какие типы данных предусмотренный в Apache Ant?</span></li>
+Что представляет собой тип DirSet?</span></li>
+Какие атрибуты DirSet вы знаете?</span></li>
+Что представляет собой тип FileSet?</span></li>
+Какие атрибуты FileSet вы знаете?</span></li>
+Что представляет собой тип PatternSet?</span></li>
+Как я могу использовать ant, чтобы запустить Java приложение?</span></li>
+Как установить property-файл в ant скрипт?</span></li>
+Как импортировать jar-файлы?</span></li>
+Как использовать clean в ant скрипте?</span></li>
+Как компилировать с помощью ant?</span></li>
+Какие CSS классы предоставляються для оформления форм?</span></li>
+Что такое Компилятор, на какие фазы делятся фазы компиляции angular приложения.</span></li>
+Опишите MVC компоненты в контексте Angular?</span></li>
+Опишите директиву ng-app?</span></li>
+Опишите директиву ng-model?</span></li>
+Опишите директиву ng-bind?</span></li>
+Опишите директиву ng-controller?</span></li>
+Опишите директиву ng-init?</span></li>
+Опишите директиву &nbsp;ng-repeat?</span></li>
+Что такое jQuery?</span></li>
+Какие преимущества jQuery?</span></li>
+Чем отличаются JavaScript от jQuery?</span></li>
+jQuery это библиотека для написания сценариев на стороне клиента или на стороне сервера?</span></li>
+Является ли jQuery стандартом W3C?</span></li>
+Как начать работать с jQuery?</span></li>
+Что является отправной точкой начала выполнения кода в JQuery?</span></li>
+Что означает знак доллара ($) в JQuery?</span></li>
+Можем ли мы иметь несколько функций document.ready() на одной и той же странице?</span></li>
+Можем ли мы использовать наш собственный символ вместо знака $ в JQuery?</span></li>
+Можно ли на стороне клиента использовать другие библиотеки, такие как MooTools, Prototype вместе с JQuery?</span></li>
+Что такое jQuery.noConflict?</span></li>
+Какая разница между window.onload, document.ready() и $(function(){...});?</span></li>
+Какая разница между jquery.js и jquery.min.js ?</span></li>
+Что такое селектор &nbsp;в JQuery, какие типы селекторов вы знаете?</span></li>
+Какие селекторы в JQuery самые быстрые?</span></li>
+Как выбрать все элементы с id = idname</span></li>
+Как выбрать все элементы div с id = idname</span></li>
+Как выбрать все элементы с class = classname&nbsp;</span></li>
+Как выбрать все элементы div с class = classname&nbsp;</span></li>
+Как выбрать все span элементы в элементах div</span></li>
+Как выбрать все div и span элементы&nbsp;</span></li>
+Как выбрать предыдущий элемент от найденного</span></li>
+Как выбрать следующий элемент от найденного&nbsp;</span></li>
+Как выбрать все span элементы в элементах div, где span является прямым потомком div&#8217;a&nbsp;</span></li>
+Как выбрать все span после первого элемента div?</span></li>
+Как выбрать первый li в ul?</span></li>
+Как выбрать div`ы у которых нет класса cls?</span></li>
+Как выбрать элементы с активной анимацией?</span></li>
+Как выбрать div-ы которые содержат класс firstclass и класс secondclass?</span></li>
+Как выбрать все div-ы с атрибутом title = test?</span></li>
+Как выбрать все отмеченные чекбоксы?</span></li>
+Как выбрать все input с type = radio?</span></li>
+Как выбрать видимый div с именем red, который содержит тег span?</span></li>
+Что выберет этот фільтр $("a[rel~= 'external ']"); ?</span></li>
+Что выберет этот фільтр $("div[name=apple]:visible:has(p)"); ?</span></li>
+Найти все элементы div с классом one, а также все элементы p с классом two, затем добавить им всем класс three и визуально плавно спустить вниз?</span></li>
+Сделать так, чтобы при нажатии на элемент &lt;а&gt; алертом выводилось "Hello world!".&nbsp;</span></li>
+Что быстрее document.getElementByID('txtName') или $('#txtName')?</span></li>
+Какая разница между $(this) и 'this' в jQuery?</span></li>
+Как проверить, что элемент пустой?</span></li>
+Как проверить существует ли элемент в JQuery?</span></li>
+Для чего используется функция jQuery ".each()"?</span></li>
+Что такое скрытый запрос в MongoDB?</span></li>
+Поддерживает ли MongoDB поиск текста?</span></li>
+Какая команда позволяет получить все индексы определенной коллекции?</span></li>
+Что такое Шардинг в MongoDB?</span></li>
+По умолчанию, MongoDB пишет и читает данные из primary и secondary наборов реплик. Правда ето или ложь?</span></li>
+Почему MongoDB не является предпочтительным решением для 32-битных систем?</span></li>
+Какая команда,позволяет проверить, являетесь ли вы на главном сервере или нет?</span></li>
+Что такое GridFS?</span></li>
+Что такое Map/Reduce?</span></li>
+Каков создать/удалить коллекцию в MongoDB?</span></li>
+Какова роль профайлера в MongoDB?</span></li>
+Какая команда позволяет вставить документ?</span></li>
+Приведите пример использования индекса в MongoDB.</span></li>
+Какой метод вернёт список всех документов в колекции?</span></li>
+Что такое селекторы запросов в MongoDB?</span></li>
+Что вы знаете об обновлении/вставке в MongoDB?</span></li>
+Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
+Как удалить документ в MongoDB?</span></li>
+то такое сборка проекта, автоматизация сборки?</span></li>
+Что такое Maven? Как он работает?</span></li>
+Какие преимущества Maven?</span></li>
+Какие недостатки Maven?</span></li>
+Какими аспектами управляет Maven?</span></li>
+Как узнать какую версию Maven вы используете?</span></li>
+Для чего создан Maven?</span></li>
+Какая структура каталогов в Maven?</span></li>
+Где вы хранятся файлы классов при компиляции проекта Maven?</span></li>
+Что такое pom.xml?</span></li>
+Какую информацию содержит pom.xml?</span></li>
+Что такое супер POM?</span></li>
+Какие элементы необходимы для минимального POM?</span></li>
+Что такое зависимости в Maven?</span></li>
+Что такое артефакт в Maven?</span></li>
+Что такое плагин в Maven?</span></li>
+Что такое задача в Maven?</span></li>
+Что такое архетип в Maven?</span></li>
+Что такое репозиторий в Maven?</span></li>
+Какие типы репозитория существуют в Maven?</span></li>
+Какая команда установляет JAR-файл в локальное хранилище?</span></li>
+Какой порядок поиска зависимостей Maven?</span></li>
+Какие два файла настройки есть в Maven, как они называются и где расположены?</span></li>
+Что такое жизненный цикл сборки в Maven?</span></li>
+Назовите основные фазы жизненного цикла сборки Maven?</span></li>
+Что делает команда mvn site?</span></li>
+Что делает команда mvn clean?</span></li>
+Из каких фаз состоит жизненный цикл сборки Clean?</span></li>
+Из каких фаз состоит жизненный цикл сборки Default (Build)?</span></li>
+Из каких фаз состоит жизненный цикл сборки Site?</span></li>
+Что сделает эта команда "mvn clean dependency:copy-dependencies package"?</span></li>
+Что такое профиль сборки (Build Profile)?</span></li>
+Какие типы профилей сборки (Build Profiles) вы знаете?</span></li>
+Как вы можете активировать профили сборки?</span></li>
+Для чего используются Maven плагины?</span></li>
+Какие типы плагинов существуют в Maven?</span></li>
+Когда Maven использует внешние зависимости?</span></li>
+Что нужно определить для внешней зависимости?</span></li>
+Какая команда создает новый проект на основе архетипа?</span></li>
+Что такое SNAPSHOT в Maven?</span></li>
+В чем разница между snapshot и версией?</span></li>
+Что такое транзитивная зависимость в Maven?&nbsp;</span></li>
+Как Maven определяет какую версию зависимостей использовать когда встречается множественный вариант вибора?</span></li>
+Что такое область видимости зависимостей (dependency scope)? Назовите значения dependency scope.</span></li>
+Какой минимальный набор информации нужен для сопоставления ссылки зависимостей на раздел dependencyManagement?</span></li>
+Как сослаться на свойство(property) определенное в файле pom.xml?</span></li>
+Для чего нужен элемент &lt;execution&gt; в POM файле?</span></li>
+Каким образом можно исключить зависимость в Maven?</span></li>
+Что является полным именем артефакта?</span></li>
+Если вы не определяете никакой информации, где же ваш POM унаследует ее?</span></li>
+При сборке проекта Maven постоянно проверяет наличие обновлений в интернете. Можете ли вы собрать проект без интернета?</span></li>
+Если при сборке проекта в тестах произошла ошибка. Как собрать проект без запуска тестов?&nbsp;</span></li>
+Как запустить только один тест?</span></li>
+Как остановить распространение наследования плагинов для дочерних POM?</span></li>
+Какие теги pom.xml визнаете.</span></li>
+Что такое Apache Ant?</span></li>
+Как начать использовать ant?</span></li>
+Для чего нужен build.xml, из чего он состоит?</span></li>
+Напишите команду чтобы запустить процесс сборки, из командной строки.</span></li>
+Что вы знаете о теге Project.</span></li>
+Что вы знаете о теге Target.</span></li>
+В каком порядке выполняются цели объявление в атрибуте depends?</span></li>
+Что вы знаете о теге Property.</span></li>
+Являются ли имена свойств чувствительными к регистру?</span></li>
+Как использовать ant-contrib задачи?</span></li>
+Какие символы разделители используются в path-like структурах в ant?</span></li>
+Как установить classpath в ant скрипт?</span></li>
+Расскажите о задачах в ant.</span></li>
+Краткое описание основных задач категории Archive Tasks.</span></li>
+Краткое описание основных задач категории Compile Tasks.</span></li>
+Краткое описание основных задач категории Execution Tasks.</span></li>
+Краткое описание основных задач категории File Tasks.</span></li>
+Краткое описание основных задач категории Miscellaneous Tasks.</span></li>
+
 ---------------------------------------------------------------------------------------------
 [JQUERY]:
 ---------------------
@@ -255,6 +617,7 @@ $('#myElement').addClass(function() {
 ```
 Этот код добавит класс `class1` или `class2` в зависимости от выполнения условия.
 ---------------------------------------------------------------------------------------------
+
 What is jQuery?
 jQuery is a document object model manipulation JavaScript library that is mainly used in managing and traversing over HTML documents, web element event handling, special effects on the DOM, Ajax communications, and multiple browser JavaScript development.
 
@@ -266,6 +629,7 @@ HTML event methods
 Effects and animations
 AJAX
 Utilities
+
 
 Basic jQuery Interview Questions
 
@@ -419,6 +783,7 @@ Q #16) Explain the advantages of jQuery Ajax methods.
 
 Answer: Ajax can request and receive data from the server without page reloading with the help of DOM and JavaScript.
 
+
 Advantages of using Ajax methods in jQuery are listed below:
 
 It allows us to take out the entire page reload and gives us the flexibility to load only a part of the page.
@@ -533,11 +898,9 @@ Answer: You can download the compressed production version jquery-3.4.1.min.js f
 
 i) We can reference jQuery from the local folder at project/lib/Scripts as below.
 
-1
 <script src="Scripts/jquery-3.4.1.min.js"></script>
 ii) We can reference from content delivery network sites such as Microsoft CDN as below.
 
-1
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
 Q #34) Explain the functionality of .each() method in jQuery.
 
@@ -1151,13 +1514,6 @@ Use git adds. command to add or stage your changes.
 Finally, use the git commit -m “message” command to commit your changes with a comment.
 To resolve the removed file merge conflict, you need to follow the steps below:
 
-Open Git Bash (Git command line).
-Use cd <repository-name> command to go to the local Git repository that has the merge conflict.
-Use the git status command to produce a list of files affected by the merge conflict.
-Open the text editor that you use and traverse to the file that has merge conflicts.
-Choose if you wish to keep the removed file. You can check the latest changes made in the removed file in your text editor.
-Use git add <filename> command to add the removed file back to the repository. Or, use git rm <filename> command to remove the file from your repository.
-Finally, use the git commit -m “message” command to commit your changes with a comment.
 Q #17) How will you fix a Broken Commit?
 
 Answer: To fix a broken commit or to change the last commit, the most convenient method is to use the command ‘git commit -amend’.
@@ -1627,6 +1983,7 @@ socket.addEventListener('error', function (event) {
 ### Заключение:
 WebSocket — это важный инструмент для фронтенд-разработчиков, когда нужно создать приложение с передачей данных в реальном времени. Он используется для создания интерактивных и отзывчивых интерфейсов, таких как чаты, игры, и системы уведомлений. Для фронтенд-разработчиков знание WebSocket или библиотек, таких как **Socket.IO**, — это полезный навык для создания более динамичных и современных приложений.
 
+
 В продуктовых компаниях **middle фронтенд-разработчик** сталкивается с различными архитектурными подходами, которые помогают эффективно организовывать разработку, улучшать масштабируемость и поддерживаемость приложения. Вот несколько ключевых архитектур, которые могут быть применимы в работе на проектах:
 
 ### 1. **Компонентная архитектура**
@@ -1699,11 +2056,10 @@ WebSocket — это важный инструмент для фронтенд-�
    - **Применение**: Подходит для интерактивных приложений с большой клиентской логикой, таких как панели управления, инструменты для аналитики и другие сложные интерфейсы.
 
 ---
-
-### Вывод:
 **Middle фронтенд-разработчику** в продуктовой компании важно понимать и уметь работать с различными архитектурными подходами, такими как **компонентная архитектура**, **SPA**, **PWA**, а также архитектуры управления состоянием вроде **Redux**. В зависимости от размера проекта и команды, фронтендер может столкнуться с такими подходами, как **SSR**, **Micro Frontends**, или **API-First** архитектура. Навыки работы с этими архитектурами позволят middle-разработчику эффективно интегрироваться в проекты и работать с различными частями продукта.
 
 ----------------------------------------------------
+
 Количество разработчиков в веб-студии, работающих над одним проектом, может сильно варьироваться в зависимости от **размера проекта**, его **сложности**, **сроков выполнения**, и **бюджета**. В среднем это может быть от нескольких человек до десятков. Вот как обычно распределяются роли и количество разработчиков по типу проектов:
 
 ### 1. **Маленькие и средние проекты**
@@ -1828,6 +2184,7 @@ function App() {
 }
 ```
 
+
 Introduction to Ajax
 Ajax is a technique to exchange data without page reload, which is a mix of tools like JavaScript, HTML, DHTML, XML, CSS, DOM, and Microsoft object – ActiveX. It uses the XMLHttpRequest object for asynchronous data transfer, reducing bandwidth usage.
 
@@ -1928,6 +2285,7 @@ Q #10) What is XMLHttpRequest?
 Answer: XMLHttpRequest is an API that has methods and properties used by various scripting languages, such as JavaScript and VBScript, for manipulating and transferring XML data using the HTTP protocol connecting client and server.
 
 Various formats supported by XMLHttpRequest for data transfer are XML, JSON, plain text, and even binary content. The XMLHttpRequest object helps update parts of the webpage without reloading the page. It recognizes events that occur during the processing of the request.
+
 
 Ajax Scenario-Based Interview Questions
 Q #11) List various properties of XMLHttpRequest.
@@ -2066,10 +2424,6 @@ width:450px; height:150px;
  </form></body></html>
 Add the following code in the C# page:
 
-1
-2
-3
-4
 protected void Button1_Click(object sender, EventArgs e)
 {
     lbl.Text = "Refreshed at " + DateTime.Now.ToString();
@@ -2082,7 +2436,6 @@ Answer: ScriptManager in ASP.NET is central for Ajax functionality. It manages v
 
 ASP code for Script Manager control:
 
-1
 &lt;asp:ScriptManager ID=”scrm” runat=”server” >&lt;/asp:ScriptManager>
 Advanced-Level Ajax Interview Questions
 Q #21) What is the difference between ScriptManager and ScriptManagerProxy?
@@ -2155,7 +2508,6 @@ Answer: Ajax requests are always issued by default, but browsers may send respon
 
 The code used for all Ajax functions is as below:
 
-1
 $.ajaxSetup({cache:false});
 Q #25) How would you identify the completion of Ajax’s request?
 
@@ -3472,148 +3824,12 @@ CSS-свойства, которые могут вызывать перерис�
 - Сохраняется даже после закрытия браузера.
 В общем, cookies используются для хранения небольших данных, которые требуется отправлять на сервер с каждым запросом, session storage - для временного хранения данных в рамках текущего сеанса браузера, а local storage - для долгосрочного хранения данных на стороне клиента.
 ---------------------------------------------------------------------------------------------
-Как переадресовать страницу в JavaScript?</span></li>
-Сколько параметров можно передать функции?</span></li>
-Нужно алертом вывести какое-то сообщение, спустя 3 секунды после запуска скрипта. Как это сделать?</span></li>
-Чем отличается наследование в JavaScript от наследования в PHP?</span></li>
-Приведи пример наследования в JavaScript.</span></li>
-Пара слов об объектах в JavaScript?</span></li>
-Что представляет из себя метод объекта в JavaScript?</span></li>
-Зачем в JavaScript перед переменной писать var?<a name="more"></a></span></li>
-Есть две функции: function f(a,b) { return a+b } и var f = function(a,b) { return a+b } Есть ли между ними разница? Если есть то какая?</span></li>
-Как создать массив в JavaScript?</span></li>
-Можно ли в JavaScript использовать функцию в качестве конструктора?</span></li>
-Сколько и какие конструкции для циклов есть в JavaScript?</span></li>
-Что cделает код: break me_baby; ?</span></li>
-Можно ли задать массив таким образом: var a = &#8220;a,b&#8221;.split(&#8216;,&#8217;)?</span></li>
-Что выведет alert(typeof null); ?</span></li>
-Что выведет alert(null instanceof Object); ?</span></li>
-0.1+ 0.2 == 0.3 ?</span></li>
-Что выведет alert(typeof NaN); ?</span></li>
-Что выведет alert(NaN === NaN); ?</span></li>
-В чём различие свойств innerHTML и outerHTML?</span></li>
-Какая разница между операторами == и ===?</span></li>
-В чем разница между Object.getOwnPropertyNames() и Object.keys()?</span></li>
-С помощью какой конструкции языка можно управлять потоком выполнения скрипта и отслеживать ошибки?</span></li>
-Почему вызов a(); происходит успешно, а вызов b(); выдает ошибку?</span></li>
-Что такое глобальные переменные ? Как они создаются ? Какие проблемы связаны с использованием глобальных переменных?</span></li>
-Что такое замыкания (closure) в JavaScript?</span></li>
-Напишите функцию принимающую строку с именем файла и возвращающую расширение (фрагмент после последней точки).</span></li>
-Что вернет выражение +new Date()? Чем отличается от Date.now().</span></li>
-Какое значение возвращает данное предложение ~~3.14?</span></li>
-Какое значение возвращает данное предложение?</span></li>
-Что покажут эти два alert?</span></li>
-Чему равно foo.length?</span></li>
-Что такое prototype в javascript?</span></li>
-Какие способы навешивания обработчиков событий вы знаете?</span></li>
-Eсть ли разница между window и document?</span></li>
-Вызываются ли document.onload и window.onload одновременно?</span></li>
-Является ли атрибут (attribute) аналогом свойства (property)?</span></li>
-Как остановить дальнейшее распространение события?</span></li>
-Назовите различные пути для получения элемента из DOM дерева?</span></li>
-Какой наибыстрейший метод для получения элемента через css селектор?</span></li>
-Могу ли я удалить удалить обработчик события с элемента?</span></li>
-Почему querySelectorAll(&#8216;.my-class&#8217;) медленнее, чем getElementsByClassName(&#8216;my-class&#8217;)?</span></li>
-Почему я не могу использовать forEach или похожий метод массива для NodeList?</span></li>
-Если вам необходимо реализовать getElementByAttribute, как вы будете это делать?</span></li>
-Как бы вы добавили класс к элементу через селектор?</span></li>
-Как я могу запустить обработчик в фазе захвата, а не в фазе всплытия?</span></li>
-Как проверить, что один элемент является дочерним другому?</span></li>
-Какой метод больше всего подходит для создания DOM элемента? Что лучше innerHTML или createElement?</span></li>
-Каким образом можно предотвратить множественный вызов обработчика для одного события?</span></li>
-Что делает createDocumentFragment и для чего можно его использовать?</span></li>
-Что такое reflow?</span></li>
-Как я могу проверить были событие отменено или нет?</span></li>
-Какие причины reflow? Как можно уменьшить reflow?</span></li>
-Что такое repaint и когда оно происходит?</span></li>
-Есть ли что-то такое о чём нужно позаботится при использовании node.cloneNode()?</span></li>
-Как быть уверенным в том, что DOM подготовлен и можно выполнять JavaScript, как реализовать $(document).ready?</span></li>
-Что такое всплытие?</span></li>
-Как можно уничтожить несколько элементов с одним вызовом click?</span></li>
-Как предотвратить нажатие по ссылке?</span></li>
-Создайте кнопку, которая удаляется при нажатии на неё, и создаются две новые кнопки в этом же месте.</span></li>
-Как отлавливать все нажатия на странице?</span></li>
-Как получить весь текст на странице?</span></li>
-Что такое defer и async?</span></li>
-Какие существуют типы нод?</span></li>
-Что такое AngularJS?</span></li>
-Какие преимущества использования AngularJS?</span></li>
-Какие основные компоненти AngularJS ви знаете?</span></li>
-Что такое AngularJS выражения? Отличие выражений AngularJS от выражений в JS.</span></li>
-Что такое scope в AngularJS?</span></li>
-Что такое rootScope в AngularJS?</span></li>
-Что такое директива (directive) в AngularJS? Назовите несколько основных директив.</span></li>
-Какие есть типы использования директив в AngularJS?</span></li>
-Что такое Сервис (service), в AngularJS?</span></li>
-Что такое &nbsp;модуль (module) &nbsp;в AngularJS?</span></li>
-Что такое &nbsp;фильтр (filter) &nbsp;в Angular?</span></li>
-Что такое контролер (controller) &nbsp;в Angular?</span></li>
-Что катое провайдер (provider) в AngularJS?</span></li>
-Что катое &nbsp; шаблон в AngularJS?</span></li>
-Что такое &nbsp;ижектор (injector) &nbsp;в AngularJS?</span></li>
-Что такое &nbsp;Внедрение зависимости (Dependency Injection) &nbsp;в AngularJS?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Для чего нужен сервис $ location?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие CSS классы предоставляються для оформления форм?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое Компилятор, на какие фазы делятся фазы компиляции angular приложения.</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите MVC компоненты в контексте Angular?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-app?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-model?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-bind?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-controller?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-init?</span></li>
-<li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву &nbsp;ng-repeat?</span></li>
-</ul>
-<h3 style="text-align: left;">
-<a href="http://jsehelper.blogspot.com/2016/01/angularjs.html" style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Перейти к ответам &#9658;&#9658;</span></a></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/jquery-1.html">JQuery.</a></span></h3>
-<div>
-<ul style="text-align: justify;">
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие преимущества jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Чем отличаются JavaScript от jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">jQuery это библиотека для написания сценариев на стороне клиента или на стороне сервера?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Является ли jQuery стандартом W3C?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как начать работать с jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что является отправной точкой начала выполнения кода в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что означает знак доллара ($) в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можем ли мы иметь несколько функций document.ready() на одной и той же странице?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можем ли мы использовать наш собственный символ вместо знака $ в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли на стороне клиента использовать другие библиотеки, такие как MooTools, Prototype вместе с JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery.noConflict?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между window.onload, document.ready() и $(function(){...});?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между jquery.js и jquery.min.js ?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое селектор &nbsp;в JQuery, какие типы селекторов вы знаете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие селекторы в JQuery самые быстрые?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все элементы с id = idname</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все элементы div с id = idname</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все элементы с class = classname&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все элементы div с class = classname&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все span элементы в элементах div</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все div и span элементы&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать предыдущий элемент от найденного</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать следующий элемент от найденного&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все span элементы в элементах div, где span является прямым потомком div&#8217;a&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все span после первого элемента div?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать первый li в ul?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать div`ы у которых нет класса cls?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать элементы с активной анимацией?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать div-ы которые содержат класс firstclass и класс secondclass?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все div-ы с атрибутом title = test?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все отмеченные чекбоксы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать все input с type = radio?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как выбрать видимый div с именем red, который содержит тег span?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что выберет этот фільтр $("a[rel~= 'external ']"); ?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что выберет этот фільтр $("div[name=apple]:visible:has(p)"); ?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Найти все элементы div с классом one, а также все элементы p с классом two, затем добавить им всем класс three и визуально плавно спустить вниз?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Сделать так, чтобы при нажатии на элемент &lt;а&gt; алертом выводилось "Hello world!".&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что быстрее document.getElementByID('txtName') или $('#txtName')?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между $(this) и 'this' в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как проверить, что элемент пустой?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как проверить существует ли элемент в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего используется функция jQuery ".each()"?</span></li>
+********************************************************
+		********************************************************
+		********************************************************
+		********************************************************
+		********************************************************
+	
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между $('div') и $('&lt;div/&gt;') в jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между parent(), parents(), closest() в jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между get() и eq() методами в jQuery?</span></li>
@@ -3638,17 +3854,6 @@ Eсть ли разница между window и document?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли не указывать протокол в URL когда jQuery ссылается на CDNs?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery плагины и какие преимущества их использования?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery UI?</span></li>
-</ul>
-<h3 style="text-align: left;">
-</h3>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/jquery-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/json.html">JSON.</a></span></h3>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON Schema?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON объект?</span></li>
@@ -3676,20 +3881,6 @@ Eсть ли разница между window и document?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в javascript?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как получить JSON ответ в Ajax?</span></li>
-</span></ul>
-<div>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/json.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;">
-<a href="http://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-1.html">Bootstrap.</a></span></h3>
-</div>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Twitter Bootstrap?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные преимущества Bootstrap?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что включает в себя пакет Bootstrap?</span></li>
@@ -3762,16 +3953,6 @@ Eсть ли разница между window и document?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap well?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое scrollspy плагин?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое affix плагин?</span></li>
-</span></ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;">
-<a href="http://jsehelper.blogspot.com/2016/05/mongodb.html">MongoDB.</a></span></h3>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое NoSQL?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть типы хранилищ данных в NoSQL?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое MongoDB?</span></li>
@@ -3788,135 +3969,11 @@ Eсть ли разница между window и document?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если удалить документ из базыданных, удалится ли он с диска?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое индексы в MongoDB?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое скрытый запрос в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB поиск текста?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет получить все индексы определенной коллекции?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Шардинг в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">По умолчанию, MongoDB пишет и читает данные из primary и secondary наборов реплик. Правда ето или ложь?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Почему MongoDB не является предпочтительным решением для 32-битных систем?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда,позволяет проверить, являетесь ли вы на главном сервере или нет?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое GridFS?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Map/Reduce?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Каков создать/удалить коллекцию в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какова роль профайлера в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая команда позволяет вставить документ?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Приведите пример использования индекса в MongoDB.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой метод вернёт список всех документов в колекции?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое селекторы запросов в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об обновлении/вставке в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как удалить документ в MongoDB?</span></li>
-</span></ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/mongodb.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/maven-1.html">Maven.</a></span></h3>
-<ul style="text-align: justify;">
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое сборка проекта, автоматизация сборки?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое Maven? Как он работает?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие преимущества Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие недостатки Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какими аспектами управляет Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как узнать какую версию Maven вы используете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего создан Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая структура каталогов в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Где вы хранятся файлы классов при компиляции проекта Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое pom.xml?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какую информацию содержит pom.xml?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое супер POM?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие элементы необходимы для минимального POM?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое зависимости в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое артефакт в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое плагин в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое задача в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое архетип в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое репозиторий в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие типы репозитория существуют в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая команда установляет JAR-файл в локальное хранилище?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какой порядок поиска зависимостей Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие два файла настройки есть в Maven, как они называются и где расположены?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое жизненный цикл сборки в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Назовите основные фазы жизненного цикла сборки Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что делает команда mvn site?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что делает команда mvn clean?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Из каких фаз состоит жизненный цикл сборки Clean?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Из каких фаз состоит жизненный цикл сборки Default (Build)?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Из каких фаз состоит жизненный цикл сборки Site?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что сделает эта команда "mvn clean dependency:copy-dependencies package"?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое профиль сборки (Build Profile)?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие типы профилей сборки (Build Profiles) вы знаете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как вы можете активировать профили сборки?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего используются Maven плагины?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие типы плагинов существуют в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Когда Maven использует внешние зависимости?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что нужно определить для внешней зависимости?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая команда создает новый проект на основе архетипа?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое SNAPSHOT в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">В чем разница между snapshot и версией?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое транзитивная зависимость в Maven?&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как Maven определяет какую версию зависимостей использовать когда встречается множественный вариант вибора?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое область видимости зависимостей (dependency scope)? Назовите значения dependency scope.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какой минимальный набор информации нужен для сопоставления ссылки зависимостей на раздел dependencyManagement?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как сослаться на свойство(property) определенное в файле pom.xml?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего нужен элемент &lt;execution&gt; в POM файле?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Каким образом можно исключить зависимость в Maven?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что является полным именем артефакта?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Если вы не определяете никакой информации, где же ваш POM унаследует ее?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">При сборке проекта Maven постоянно проверяет наличие обновлений в интернете. Можете ли вы собрать проект без интернета?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Если при сборке проекта в тестах произошла ошибка. Как собрать проект без запуска тестов?&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как запустить только один тест?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как остановить распространение наследования плагинов для дочерних POM?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие теги pom.xml визнаете.</span></li>
-</ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/maven-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-</div>
-</div>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="https://jsehelper.blogspot.nl/2016/08/apache-ant-1.html">Ant.</a></span></h3>
-<ul style="text-align: justify;">
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое Apache Ant?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как начать использовать ant?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего нужен build.xml, из чего он состоит?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Напишите команду чтобы запустить процесс сборки, из командной строки.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что вы знаете о теге Project.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что вы знаете о теге Target.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">В каком порядке выполняются цели объявление в атрибуте depends?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что вы знаете о теге Property.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Являются ли имена свойств чувствительными к регистру?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как использовать ant-contrib задачи?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие символы разделители используются в path-like структурах в ant?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как установить classpath в ant скрипт?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Расскажите о задачах в ant.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Archive Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Compile Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Execution Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории File Tasks.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Краткое описание основных задач категории Miscellaneous Tasks.</span></li>
-Краткое описание основных задач категории Property Tasks.</span></li>
-Какие типы данных предусмотренный в Apache Ant?</span></li>
-Что представляет собой тип DirSet?</span></li>
-Какие атрибуты DirSet вы знаете?</span></li>
-Что представляет собой тип FileSet?</span></li>
-Какие атрибуты FileSet вы знаете?</span></li>
-Что представляет собой тип PatternSet?</span></li>
-Как я могу использовать ant, чтобы запустить Java приложение?</span></li>
-Как установить property-файл в ant скрипт?</span></li>
-Как импортировать jar-файлы?</span></li>
-Как использовать clean в ant скрипте?</span></li>
-Как компилировать с помощью ant?</span></li>
 ********************************************************************************************************************************
 ********************************************************************************************************************************
 	********************************************************************************************************************************
+
+
 Junior Front-end Developer
 01
 Explain what the "box model" CSS is and the layout components that make it up?
@@ -4313,7 +4370,12 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 
 1 === "1" // false, because they are of a different type
 
-
+*************************************************
+*************************************************
+	*************************************************
+	*************************************************
+*************************************************
+	*************************************************
 
 
 Как переадресовать страницу в JavaScript?</span></li>
@@ -4380,16 +4442,7 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Как получить весь текст на странице?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Что такое defer и async?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif;">Какие существуют типы нод?</span></li>
-</ul>
-<h3>
-<a href="http://jsehelper.blogspot.com/2016/01/javascript.html" style="font-family: arial, helvetica, sans-serif;"><span style="font-family: Arial, Helvetica, sans-serif;">Перейти к ответам &#9658;&#9658;</span></a></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h4 style="text-align: left;">
-<a href="http://jsehelper.blogspot.com/2016/01/angularjs.html" style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">AngularJS.</span></a></h4>
-<div style="text-align: left;">
-</div>
-<ul style="text-align: left;">
+
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Что такое AngularJS?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие преимущества использования AngularJS?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Какие основные компоненти AngularJS ви знаете?</span></li>
@@ -4416,15 +4469,7 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-controller?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву ng-init?</span></li>
 <li><span style="font-family: Arial, Helvetica, sans-serif; text-align: justify;">Опишите директиву &nbsp;ng-repeat?</span></li>
-</ul>
-<h3 style="text-align: left;">
-<a href="http://jsehelper.blogspot.com/2016/01/angularjs.html" style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Перейти к ответам &#9658;&#9658;</span></a></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/jquery-1.html">JQuery.</a></span></h3>
-<div>
-<ul style="text-align: justify;">
+
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие преимущества jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Чем отличаются JavaScript от jQuery?</span></li>
@@ -4492,17 +4537,7 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли не указывать протокол в URL когда jQuery ссылается на CDNs?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery плагины и какие преимущества их использования?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery UI?</span></li>
-</ul>
-<h3 style="text-align: left;">
-</h3>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/jquery-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/json.html">JSON.</a></span></h3>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
+
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON Schema?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON объект?</span></li>
@@ -4530,20 +4565,7 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в javascript?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в jQuery?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как получить JSON ответ в Ajax?</span></li>
-</span></ul>
-<div>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/json.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;">
-<a href="http://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-1.html">Bootstrap.</a></span></h3>
-</div>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
+
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Twitter Bootstrap?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные преимущества Bootstrap?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что включает в себя пакет Bootstrap?</span></li>
@@ -4616,16 +4638,6 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap well?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое scrollspy плагин?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое affix плагин?</span></li>
-</span></ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/04/bootstrap-twitter-bootstrap-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;">
-<a href="http://jsehelper.blogspot.com/2016/05/mongodb.html">MongoDB.</a></span></h3>
-<div>
-<ul style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое NoSQL?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть типы хранилищ данных в NoSQL?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое MongoDB?</span></li>
@@ -4660,16 +4672,6 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об обновлении/вставке в MongoDB?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что вы знаете об &nbsp;условных оператораторах в MongoDB?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как удалить документ в MongoDB?</span></li>
-</span></ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/mongodb.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/maven-1.html">Maven.</a></span></h3>
-<ul style="text-align: justify;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое сборка проекта, автоматизация сборки?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое Maven? Как он работает?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие преимущества Maven?</span></li>
@@ -4725,19 +4727,6 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как запустить только один тест?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как остановить распространение наследования плагинов для дочерних POM?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какие теги pom.xml визнаете.</span></li>
-</ul>
-<h3 style="text-align: justify;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="http://jsehelper.blogspot.com/2016/05/maven-1.html">Перейти к ответам &#9658;&#9658;</a></span></h3>
-</div>
-</div>
-</div>
-</div>
-<div>
-<span style="font-family: Arial, Helvetica, sans-serif;"><br /></span></div>
-<div>
-<h3 style="text-align: left;">
-<span style="font-family: Arial, Helvetica, sans-serif;"><a href="https://jsehelper.blogspot.nl/2016/08/apache-ant-1.html">Ant.</a></span></h3>
-<ul style="text-align: justify;">
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое Apache Ant?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как начать использовать ant?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Для чего нужен build.xml, из чего он состоит?</span></li>
@@ -4768,7 +4757,16 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как импортировать jar-файлы?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как использовать clean в ant скрипте?</span></li>
 <li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как компилировать с помощью ant?</span></li>
-
+*************************************************
+*************************************************
+	*************************************************
+	*************************************************
+*************************************************
+	*************************************************
+	*************************************************
+*************************************************
+	*************************************************
+	
 Вопросы по CSS
 Расскажите о блочной модели CSS
 
@@ -15548,130 +15546,5 @@ Our team connects personally to the idea of getting outside, escaping routine, a
 When we’re not outside — preferably toasting with craft beers on our office’s rooftop courtyard —we’re dreaming about it. When we’re not on the road, we’re talking about it. When we’re not on a
 trip, we’re planning for the next one. Preferably from the Outdoorsy embrace of Rainier, Arches, or Yellowstone — just a few of the names we’ve given our conference rooms.
 
-100+ Вопросов Для Подготовки К Собеседованию На Frontend Разработчика
- 7/6/2023
- 4-minute read
-HTTP
-Что такое https?
-Какие есть методы?
-Какие коды ответов знаете и что они означают?
-HTML
-Что такое DOCTYPE?
-Какие теги и атрибуты используете?
-Как добавить ссылку которая будет открываться в новом окне?
-Что делает тег link и для чего нужен?
-Какие теги используются для создания таблиц?
-Какие теги используются для создания списков?
-Что такое блочные и строчные элементы и в чем их разница?
-Как вставить другой сайт на страницу?
-Что делает noscript тэг?
-Что такое абсолютные и относительные пути?
-Что такое семантика и семантичные элементы и какими пользуетесь?
-Что такое метатеги и зачем нужны?
-Как показывать разные изображения в зависимости от ширины браузера?
-HTML регистрозависимый или регистронезависимый?
-Что будет если написать код в котором не закрыт тег? Например:
-This is a paragraph.
 
-Что такое кодировка и на что она влияет и как ее задать?
-Что такое Drag/Drop и как его реализовать в html?
-Что такое canvas и как его использовали?
-Какие способы оптимизации скорости загрузки страницы вы используете?
-Как работает валидация форм в html?
-Что такое “доступность” и для чего нужна?
-Что такое СЕО оптимизация и как вы ее делаете?
-Браузер
-Какие браузерные api вы использовали?
-Что такое Server Side Rendering?
-Какие есть локальные хранилища данных в браузере?
-Что такое WebWorkers, для чего нужны и как вы их использовали?
-CSS
-Что такое селектор и какие селекторы используете?
-Какие комбинации селекторов знаете?
-Что такое псевдокласс и какие знаете?
-Что такое псевдоэлементы?
-Что такое спрайты и для чего нужны?
-Что такое css счетчики и зачем нужны?
-Чем отличается единица измерения em и rem?
-Чем отличается единица измерения vw и vh?
-Что такое приоретизация стилей и как она работает?
-Какой цвет получит параграф?
-<style>
-  #demo {
-    color: blue;
-  }
-  .test {
-    color: green;
-  }
-  p {
-    color: red;
-  }
-</style>
 
-<p id="demo" class="test">Hello World!</p>
-Что делает свойство box-sizing?
-Что такое !important?
-Что такое css функции и какие знаете?
-Что такое блочная модель?
-Что такое иконочный шрифт и какие используете?
-Как убрать стандартные точки у списка ul?
-Чем отличается display: none и visibility: hidden?
-Какие виды позиционирования знаете?
-Что такое z-index и как работает и для чего нужен?
-Что будет если задать элементу position: relative и top: 100px?
-Что такое overflow и как работает?
-Какие способы центрирования блока/контента знаете?
-Что делает ключевое слово currentcolor?
-Какие способы анимаций знаете?
-Что делает object-fit?
-Что такое css variables и как ими пользоваться?
-Как адаптировать стили под разные разрешения экрана?
-Что такое flexbox, для чего нужен и как вы его используете?
-Что такое grid, для чего нужен и как вы его используете?
-Как писать кроссбраузерный css?
-Что такое float и для чего нужен?
-JavaScript
-В чем разница между var, const и let?
-Какие типы данных есть в js?
-Что такое ссылочные типы данных?
-И в чем разница ссылочных типов от примитивных?
-В javascript строгая типизация или гибкая?
-Что делает оператор typeof?
-Какие арифметические операторы есть в js? А инкремент и декремент?
-А какие операторы присваивания есть помимо стандартного “=”?
-Какие операторы сравнения знаете?
-В чем разница между == и ===? Что лучше использовать?
-Что получится в результате следующего вычисления "Hello" + 5
-Какие логические операторы знаете?
-Используете ли вы побитовые операторы?
-Что такое контекст и область видимости?
-Что такое this?
-Как вызвать функцию с заданным this?
-Что такое события в javascript и какие события знаете?
-Как обрабатывать события?
-Какие методы строк знаете?
-Что такое шаблонная строка?
-Что такое регулярные выражения?
-Как вы используете регулярные выражения?
-Какие методы массива знаете?
-Как объеденить два массива?
-Как отсортировать массив?
-Какие условные операторы знаете?
-Как прервать выполнение цикла?
-Как пропустить итерацию цикла?
-Что такое преобразование типов?
-Как работает обработка ошибок в javascript?
-Что такое hosting?
-Что такое “strict mode” и что делает?
-Чем стрелочная фукнция отличается от обычной функции объявленой через function?
-Как вы дебажити свой код?
-Что такое асинхронность и как работает в js?
-Что такое Promise и как им пользоваться?
-Какие методы Promise знаете?
-Что такое async/await?
-Что такое DOM?
-Что такое всплытие событий?
-Какие способы взаимодействия с DOM знаете?
-Как можно получить dom элемент?
-Какие способы вставки / удаления dom элементов знаете?
-Что такое ajax?
