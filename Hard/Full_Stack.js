@@ -5104,63 +5104,8 @@ Work on your soft skills equally.
 Q5) Can a fresher be a full-stack developer?
 Ans: Yes, a fresher can become a full-stack developer with the proper education, training, and dedication.
 
- 
 
 
-******************************88
-     ***************************88
-     ******************************
- 
-******************************88
-     ***************************88
-     ******************************
- 
-******************************88
-     ***************************88
-     ******************************
-Навигация
-Что такое линк?
-Перечислите 7 уровней модели OSI.
-Что такое IP - адрес?
-Что такое LAN?
-Расскажите нам про DHCP
-А про DNS?
-Что такое WAN?
-Что означает термин "нода"? Что такое "хост"?
-Какая максимальная длина кабеля UTP?
-Что такое маршрутизатор?
-Что такое коммутатор?
-В чем разница между роутером, свичем и хабом?
-3 уровня иерархии сетей от Cisco?
-Что такое VLAN и зачем они нужны?
-Что такое PING?
-Какие режимы передачи данных бывают?
-Что такое Ethernet?
-Что такое VPN?
-Что такое MAC - адрес?
-Что такое TCP и UDP? В чем разница между ними?
-Что такое NIC?
-Зачем нужен прокси сервер?
-Какие типы сетевых атак вы знаете?
-Что такое NAT?
-Объявление
-А знаете ли вы про MST (Multiple Spanning Tree)?
-А про RSTP (Rapid Spanning Tree) что скажете?
-А про протокол RIP что скажете?
-Расскажите нам про EIGRP, а мы послушаем
-Ого, кажется у вас неплохой опыт. А что скажете про BGP?
-Так, продолжайте про OSPF?
-Что такое VTP?
-Что думаете про модный SD WAN?
-Пару слов про MPLS?
-И пару слов про шифрование трафика. Какие алгоритмы вам знакомы?
-В сетях вы разбираетесь. Поговорим про телефонию. Какие кодеки вам знакомы?
-А разницу между FXS и FXO портом знаете?
-А что по вашему лучше - SIP или PRI?
-Зачем нужен протокол RTP?
-А термин SBC вам знаком?
-И последний вопрос. Про SDP знаете?
-Итоги
 Что такое линк?
 Линк это соединение между двумя сетевыми устройствами. По смыслу, термин включает в себя как тип соединительной линии (кабеля), так и протоколы, которые работают на этому линке.
 
@@ -5360,23 +5305,7 @@ MPLS (Multiprotocol label switching) является протоколом дл�
 И последний вопрос. Про SDP знаете?
 Да. Протокол SDP используется для установления соединения и согласования параметров передачи и приема аудио или видео потоков между оконечными устройствами. Наиболее важными параметрами обмена являются IP - адреса, номера портов и кодеки.
 
-Детально про SDP можно почитать тут.
 
-Итоги
-Мы рассмотрели топ 40 вопрос, которые могут быть заданы на собеседовании, связанном с IT специальностью. Под каждым вопросом мы дали короткий ответ на такой вопрос - но лучше всего детально изучать вопрос. Поэтому, под большинством материалов вам будет доступна ссылка на подробный материал, который раскрывает суть каждого вопроса, чтобы точно быть уверенном в успехе собеседования.
-
-И еще: почитайте статью, где мы собрали большинство IT терминов - определенно будет полезно.
-
-Удачи на собеседовании :)
-
-Top 20 Full Stack Developer Interview Questions
-Top 20 Full Stack Developer Interview Questions
- 6 min read
-
-datavalley Ai 
-20 October 2023
- 0  ·  137 ·  0 · 
-Preparing for a Full Stack Developer interview can be tough but worthwhile. To help you excel and stand out during your interview, we have gathered the top 20 Full Stack Developer interview questions that cover the necessary skills and concepts. Whether you want to secure your dream job or take your Full Stack Developer career to new heights, these questions will be your ultimate resource. Let’s dive in and get you ready for success in your Full Stack Developer interview.
 
 1. What is a full-stack developer?
 
@@ -5454,7 +5383,7 @@ PWAs are web applications that resemble the experience of native apps in web bro
 
 API gateways act as intermediaries for client apps and microservices or backend APIs. They simplify the management of APIs in distributed systems by providing features such as request routing, authentication, rate limitation, caching, and load balancing.
 
-Interview Questions for Full Stack Developers:
+
 1. What is the most essential programming language for your job?
 Candidates should list a variety of languages they find important to the job, not just one. Look for candidates who list the benefits and limitations of each language as it applies to their work.
 
@@ -5470,7 +5399,6 @@ Candidates should list learning and practicing new languages, reading programmin
 5. Describe a time when you made a mistake in your duties. How did you rectify it?
 Candidates should acknowledge the significance of diligence and how programming oversight can derail an entire company's business operations. Look for stories where candidates erred, rectified their error, and learned a valuable lesson from it.
 
-Table of Contents
 
 1) Full Stack Developer Interview Questions on Front-end Development
 
@@ -5480,12 +5408,8 @@ Table of Contents
 
 4) Full Stack Developer Interview Questions on Version Control and Collaboration
 
-5) Conclusion
-
-
 
 Full Stack Developer Interview Questions on front-end development
-The following are some Full Stack Developer job interview questions on Front-end Development, as well as their answers:
 
 1) What is the purpose of HTML5's data-* attributes?
 Answer: The data-* attributes introduced in HTML5 offer a valuable mechanism for incorporating custom data within HTML elements. These attributes are meant to provide a way to attach data specific to the application's needs without altering the inherent meaning of the HTML element. This custom data can be harnessed for various purposes, such as enhancing JavaScript interactions or applying distinct styling based on specific data values.
@@ -5672,9 +5596,7 @@ Answer: Conflicts occur when code changes clash. To resolve them, communicate wi
 40) What are code review tools, and how do they facilitate collaborative development?
 Answer: Code review tools are platforms for submitting, reviewing, and discussing code changes. They streamline collaboration by providing a structured environment for peer reviews, feedback exchange, and maintaining a record of discussions. These tools enhance code quality and knowledge sharing among developers.
 
-Crack Your Full Stack Developer Interview: Top 20 Questions and Answers
 Q1: What is the difference between REST and GraphQL?
-
 
 REST (Representational State Transfer) and GraphQL are both API design architectures, but they differ in several key ways:
 
@@ -5692,7 +5614,6 @@ REST: Often requires versioning of APIs (e.g., /api/v1/users).
 GraphQL: Typically doesn't require versioning, as clients can request different data from the same endpoint.
 Q2: Explain the concept of MVC architecture.
 
-
 MVC (Model-View-Controller) is a design pattern used in software engineering to separate an application into three main components:
 
 Model:
@@ -5709,7 +5630,6 @@ Processes user input from the View, updates the Model accordingly, and returns t
 This separation allows for modular development, making it easier to manage and scale the application.
 
 Q3: What is a closure in JavaScript, and how is it used?
-
 
 A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables. This includes:
 
@@ -5735,7 +5655,6 @@ newFunction('inside');
 // Inner Variable: inside
 
 Q4: What is a promise in JavaScript, and how does it work?
-
 
 A promise is an object in JavaScript that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
@@ -5788,11 +5707,7 @@ TypeScript code compiles to plain JavaScript, which can run on any JavaScript en
 Advanced Features:
 Features like interfaces, generics, and enums that are not available in plain JavaScript.
 
-🔍⚙️ Full Stack Development with Workik - Enhance Skills in React, Node.js, MongoDB & More | Build, Test, and Deploy with Confidence!
-
-Try for Free
 Q6: What are WebSockets, and how do they differ from HTTP?
-
 
 WebSockets are a communication protocol that provides full-duplex communication channels over a single TCP connection. They are used for real-time applications that require low latency, such as chat applications, live sports updates, and online gaming.
 
@@ -5808,7 +5723,6 @@ Overhead:
 HTTP: Higher overhead due to repeated opening and closing of connections and the inclusion of HTTP headers.
 WebSockets: Lower overhead as the connection remains open and headers are sent only during the initial handshake.
 Q7: Explain the concept of middleware in Express.js.
-
 
 Middleware in Express.js is a function that executes during the lifecycle of an HTTP request to the server. Each middleware function can:
 
@@ -5847,7 +5761,6 @@ Third-Party Middleware:
 Provided by third parties, such as body-parser , morgan , etc.
 
 Q8: What is the purpose of Redux in React applications?
-
 
 Redux is a state management library for JavaScript applications, commonly used with React for managing the application state in a predictable way.
 
@@ -5893,7 +5806,6 @@ store.subscribe(() => console.log(store.getState()));
 store.dispatch(increment()); // Output: 1
 
 Q9: Explain the difference between synchronous and asynchronous programming in JavaScript.
-
 
 Synchronous Programming:
 Operations are performed sequentially, one after the other.
@@ -5965,11 +5877,7 @@ Deploying and testing microservices requires a robust infrastructure and automat
 5. Inter-Service Communication:
 Reliable communication between services is crucial, often necessitating the use of message brokers or API gateways.
 
-🚀 Your Workflow: Use Context-aware AI for Code Generation, Debugging, Unit Testing, & more.
-
-Sign Up to Try
 Q11: What is a Single Page Application (SPA), and how does it differ from a Multi-Page Application (MPA)?
-
 
 A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates content as the user interacts with the app, without requiring a full page reload.
 
@@ -5994,7 +5902,6 @@ SPA: Initial load time can be longer as the entire application is loaded upfront
 MPA: Generally faster initial load time for individual pages, but overall performance can be slower due to full page reloads on navigation.
 
 Q12: What are the main differences between SQL and NoSQL databases?
-
 
 SQL (Structured Query Language) and NoSQL (Not Only SQL) databases differ primarily in their data models, schema design, and scalability approaches.
 
@@ -6142,7 +6049,6 @@ By using CSS preprocessors, developers can write more organized, efficient, and 
 
 Q15: What is the Document Object Model (DOM), and how does it relate to web development?
 
-
 The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content dynamically.
 
 Key Concepts:
@@ -6179,11 +6085,7 @@ The DOM is essential for creating dynamic web applications. It allows developers
 Through DOM manipulation, developers can update the user interface, handle user inputs, and create interactive experiences.
 Understanding the DOM is fundamental for working with JavaScript, as it provides the means to access and modify the document structure.
 
-🔝Top AI Available in one place: GPT, Claude, Gemini, Llama, Mistral, & more
-
-Claim 200k Free AI Tokens
 Q16: Explain the concept of "state" and "props" in React.
-
 
 In React, state and props are essential concepts used to manage and pass data in components.
 
@@ -6235,9 +6137,6 @@ Hello, {props.name}!
 function App() {
 return (
 
-
-
-
 );
 }
 Characteristics:
@@ -6284,7 +6183,6 @@ Improved User Experience:
 By minimizing re-renders and optimizing updates, the VDOM helps provide a more responsive and fluid user experience.
 
 Q18: What are Web Workers, and how do they help in improving web application performance?
-
 
 Web Workers are a feature of HTML5 that allow for running JavaScript in background threads, separate from the main execution thread of a web application. This helps in improving performance by offloading intensive tasks.
 
@@ -6379,7 +6277,6 @@ Travis CI: A CI service used to build and test projects hosted on GitHub.
 
 Q20: Explain the concept of "lazy loading" and its benefits in web applications.
 
-
 Lazy loading is a design pattern used in web development to defer the loading of non-critical resources (e.g., images, scripts) until they are actually needed. This can significantly improve the initial load time and performance of web applications.
 
 How It Works:
@@ -6391,15 +6288,12 @@ Lazy loaded image
 Scripts:
 Non-essential scripts are loaded after the main content has been rendered or on-demand.
 
-
 Components:
 In single-page applications, components can be loaded only when they are needed (e.g., when a user navigates to a specific route).
 
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 function App() {
 return (
-
-
 
 );
 }
@@ -6421,10 +6315,7 @@ Implementation Techniques:
 Intersection Observer API: A modern JavaScript API to detect when elements enter the viewport and trigger lazy loading.
 Libraries and Frameworks: Tools like react-lazyload , lozad.js , and others provide easy-to-use solutions for implementing lazy loading in web applications.
 
-🔓Unlock Personalized AI Assistance by Adding Code Repos, API Schemas, DB Schemas, & more
 
-Sign Up
-Challenge Yourself: Top 10 Practical Full Stack Developer Interview Q&A
 Q1: Identify and fix the error in the following code snippet.
 (Basic)
 function fetchData(url) {
@@ -6538,20 +6429,6 @@ obj.bar();
 const newBar = obj.bar;
 newBar();
 
-Full Stack Developer Interview Questions and Answers
-Last updated on 24th Oct 2020, Blog, Interview Question, Website Development
-
-
-About author
-Sridharan (Sr Project Manager )
-He is a Proficient Technical Expert for Respective Industry Domain & Serving 10+ Years. Also, Dedicated to Imparts the Informative Knowledge's to Freshers. He Share's this Blogs for us.
-
- E-mail this post
-
-(5.0) | 16325 Ratings
- 3686
-Share:
-Full stack development is one of the hardest to fit in technical jobs worldwide. Also, full stack developers are in great demand in leading companies. It has a great future and they get numerous opportunities. Their salary too is phenomenally high. This means an individual can be hired only after undergoing a good quality check. Companies will be very concerned about hiring somebody for this job in particular.
 
 1.What programming languages are you comfortable working with?
 Ans:
@@ -6652,7 +6529,7 @@ Answer this according to your skills and the tools that you have previously used
 20.How do you keep yourself updated about the new trends in the industry?
 Ans:
 
-    This is a typical question to understand your involvement in technology. A good way to demonstrate your involvement in continuous learning would be by speaking about the community meetups you visit. You can also talk about the webinars and the forums you regularly attend. If you have personal projects on which you apply your skills, this is a good time to showcase that as well.
+This is a typical question to understand your involvement in technology. A good way to demonstrate your involvement in continuous learning would be by speaking about the community meetups you visit. You can also talk about the webinars and the forums you regularly attend. If you have personal projects on which you apply your skills, this is a good time to showcase that as well.
 
 21.What’s the most recent thing that you have learned?
 Ans:
@@ -6891,63 +6768,9 @@ Ans:
 
 Some of the latest trends a full stack developer should know are about the recent introduction of more compatible extensions and about the improvements made in JavaScript programming. Today, there are several mobile applications, games and real-time applications being developed due to the Vue JavaScript Functional. Digital trends keep changing every day and for a full stack developer it is essential to be aware of most of them.
 
-Cracking a Full Stack Developer Interview in 5 Steps
-Developer resources
-
--
-Sameer SM
-
-Full Stack Developer Interview Questions And Answers
-Full Stack Developer Interview Questions And Answers
 Who is a full stack developer?
 A full stack developer is a software engineering professional who is responsible for working on both frontend and backend development systems. These developers design, develop, and maintain fully functioning platforms including databases and servers.
 
-A Full Stack developer should be knowledgeable in:
-
-Basic languages — HTML, CSS, and SQL.
-Front-end frameworks — Bootstrap, AngularJS, VueJS, ReactJS, JavaScript, TypeScript, Python, Ruby, PHP.
-Back-end frameworks — Express, Django, NodeJS, Ruby on Rails.
-Databases — MySQL, SQLite, Postgres, MongoDB, Cassandra, Apache storm, Sphinx.
-Additional skills — Git, Machine Learning, SSH, Linux Command, Data Structures, Character encoding.
-Some well-known tools and platforms used by full stack developers to make development more accessible and efficient are:
-
-GitHub
-Visual Studio Code
-WebStorm
-Slack
-CodePen
-Intellij/Eclipse
-PyCharm
-Five ‘simple & doable’ steps that will help you crack a full stack developer interview
-Step 1: Master the Basics
-
-Before diving into advanced topics, ensure you have a strong grasp of the basics. Full stack development often involves using a variety of technologies, and understanding the fundamentals is crucial.
-
-You might be asked questions about basic concepts in programming, data structures, algorithms, and web development, so review these thoroughly.
-
-Step 2: Problem-Solving Practice
-
-Full stack developers are problem solvers at heart. They don't just write code; they find creative and efficient solutions to real-world challenges.
-
-Dedicate time to practice solving problems, preferably a variety of them with different levels of complexity. Use online coding platforms or take on side projects to sharpen your problem-solving skills.
-
-Step 3: Build Micro-Projects
-
-Building small projects can be incredibly beneficial. They allow you to apply what you've learned, gain practical experience, and showcase your skills.
-
-Consider creating web applications that incorporate both frontend and backend development. Working on these mini-projects will reinforce your understanding of how various technologies interact.
-
-Step 4: Mock Interviews
-
-Practice makes perfect. Engage in mock interviews to simulate the real interview experience. Many tech communities and online platforms offer mock interview sessions.
-
-This helps you become more comfortable with answering questions under pressure, receive constructive feedback, and identify areas for improvement.
-
-Step 5: Think Like a Leader
-
-Full stack developers often oversee entire projects or features. Start thinking like a leader during your coding practice. Consider the bigger picture, understand how your code fits into the overall architecture, and take ownership of your work. This mindset is valuable in interviews and will serve you well in your career.
-
-Common Full Stack Developer Interview Questions and Answers
 What is CORS?
 
 Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers. It allows or restricts web applications running at one origin (domain) to make requests for resources from a different origin.
@@ -6960,7 +6783,6 @@ What does the Observer Pattern Mean?
 
 The Observer Pattern is a behavioral design pattern. It defines a one-to-many relationship between objects. When one object (the subject) changes its state, all its dependents (observers) are notified and updated automatically.
 
-Top 10 Full Stack Developer Interview Questions And Answers
 1. How would you find a memory leak?
 
 Detecting memory leaks involves using memory profiling tools to analyze memory usage over time, identifying objects that are not properly released, and fixing the code responsible for the leak.
@@ -7001,138 +6823,33 @@ ES6 introduced the class syntax for creating constructors, making object-oriente
 
 Current trends include serverless architecture, microservices, progressive web apps (PWAs), and the adoption of modern frontend libraries and frameworks like React, Angular, or Vue.js.
 
-Practice full stack development on Codejudge
-
-Micro-projects for full stack developers on Codejudge practice section.
-Practice on Codejudge which offers free micro-projects and coding challenges related to full stack development. These real-world scenarios allow you to apply your knowledge, practice coding, and build a strong portfolio to impress potential employers.
-
-10 общих вопросов
-Вот общие вопросы, с которыми вы можете столкнуться на собеседовании с back-end разработчиком. Цель этих вопросов - помочь потенциальному работодателю лучше узнать вас:
-
-Почему вы заинтересованы в этой должности?
-
-Как вы узнали о нашей компании?
-
-Что вы можете рассказать нам о себе?
-
-Как бы вы описали свой стиль работы или управления?
-
-Предпочитаете ли вы работать индивидуально или как член команды?
-
-Как вы следите за тенденциями развития back-end разработки??
-
-На вашей последней должности, каковы были ваши основные должностные обязанности?
-
-Где вы видите себя в профессиональном плане через пять лет??
-
-Какими словами ваши коллеги могли бы описать вас?
-
-Что вас больше всего радует в этой работе??
-
-
-
-
-11 вопросов об опыте и биографии
-Помимо общих вопросов, потенциальный работодатель, ищущий разработчика программного обеспечения, скорее всего, захочет узнать больше о вашем опыте и технической подготовке. Эти вопросы оценивают ваши стили работы и предпочтения, чтобы оценить ваш предыдущий опыт:
-
-Как вы начали заниматься кодированием?
-
-В чем ваша самая сильная сторона как кодера?
-
-Если бы вы возглавили технологическую компанию, как бы вы управляли ее разработчиками??
-
-Расскажите о случае, когда кто-то критиковал вашу работу, и объясните, как вы на это отреагировали.
-
-Как вы доносите негативную обратную связь до членов вашей команды разработчиков?
-
-Приходилось ли вам работать над командным проектом, в котором вы чувствовали, что выполняете большую часть работы?? Как вам это удалось?
-
-Расскажите о достижении в области кодирования, которым вы больше всего гордитесь?
-
-С каким самым сложным решением вы столкнулись в своей карьере??
-
-Каков ваш опыт работы с объектно-ориентированным программированием (ООП)?
-
-Какой ваш любимый язык программирования и почему?
-
-Каков ваш опыт работы с GoTo, и предпочитаете ли вы структурированное программирование?
-
-
-
-
-10 углубленных вопросов
-Интервьюеры также могут захотеть получить представление о ваших особых способностях. Подготовка к углубленным вопросам может позволить вам сообщить о своих знаниях и рассказать о своих непростых навыках. Вот некоторые углубленные вопросы, которые может задать ваш интервьюер:
-
-Как бы вы объяснили разницу между дизайном и архитектурой?
-
-Дайте определение терминам стек и куча. Что такое переполнение стека?
-
-В чем разница между связностью и сцеплением?
-
-Когда полезен рефакторинг?
-
-Что означают термины высокая связность и свободная связность ?
-
-Каковы плюсы и минусы хранения доменной логики в хранимых процедурах?
-
-Как вы думаете, почему объектно-ориентированное проектирование является предпочтительным подходом??
-
-Чего вам не хватает в вашем любимом языке разработки? Как вы справляетесь с этими пробелами?
-
-Что общего между классами и закрытиями?
-
-Когда полезны анонимные функции?
-
-
-
-
-6 вопросов для собеседования с back-end разработчиком с примерами ответов
-Скорее всего, вы столкнетесь с вопросами на собеседовании, которые могут подчеркнуть широту ваших знаний. Успех вашего собеседования с back-end разработчиком может зависеть от того, насколько хорошо вы представите себя и свой опыт. Работодатели ценят честность и часто хотят видеть, как вы справляетесь с ситуациями, требующими исследования и сбора информации.
 
 Перед собеседованием обязательно изучите основы разработки back-end. Полезно также потренироваться отвечать на вопросы собеседования и узнать о передовом опыте проведения интервью. Вот несколько примеров вопросов для собеседования на должность back-end разработчика с образцами ответов:
-
-
-
 
 1. Каковы семь уровней в системной модели OSI?
 Такие специфические для сети вопросы, как этот, требуют прямых фактических ответов. Интервьюеры используют их для оценки ваших базовых знаний сетевых терминов и процессов. В своем ответе постарайтесь продемонстрировать как теоретические, так и практические знания.
 
 Пример: В модели Open Systems Interconnection отслеживание того, как информация перемещается от одного приложения через физическое устройство к программному обеспечению в другом компьютере, требует перемещения через семь абстрактных уровней с определенными функциями. Эти уровни - физический, канал передачи данных, сетевой, транспортный, сеансовый, презентационный и прикладной.
 
-
-
-
 2. Что такое обратный прокси?
 Интервьюеры могут задавать подобные вопросы, чтобы лучше понять ваши знания. Этот вопрос может позволить вам расширить и смежные темы. Например, после объяснения обратного прокси вы также можете обсудить его противоположность - прямой прокси.
 
 Пример: Обратный прокси действует как посредник, получая ресурсы с сервера и возвращая их клиенту, так что кажется, что информация исходит от самого прокси-сервера. Прямой прокси-сервер, также являющийся посредником, - это то, что клиент ставит между собой и другим сервером.
-
-
-
 
 3. В чем разница между потоками и процессами?
 Интервьюеры задают такие вопросы об основополагающих знаниях, как этот, чтобы проверить вашу конкретную компетентность. Вы можете использовать подобные вопросы как возможность показать, что у вас есть практическое понимание ключевых терминов бэкенда.
 
 Пример: Процесс - это активная выполняемая программа, в то время как поток - это легкий процесс, которым планировщик может управлять самостоятельно. Нити также составляют процессы. Поскольку потоки быстрее переключаются между контекстами, ОС может остановить один поток и запустить другой гораздо быстрее, чем останавливать и запускать процесс.
 
-
-
-
 4. Какие шаги вы предпримите, чтобы использовать mysqldump для восстановления MySQL?
 Ожидайте, что интервьюеры включат в интервью несколько вопросов по языкам, чтобы проверить ваши навыки кодирования. Ответьте простыми словами, изложив свой подход к вопросу программирования. Если интервьюеру нужны технические подробности, он обычно спрашивает о них.
 
 Пример: Во-первых, я бы создал новую базу данных с помощью MySQL и дал ей то же имя, что и утерянной базе данных. Я бы проверил, находится ли имя базы данных в корневом каталоге, а затем определил, нужно ли указывать имя сервера.
 
-
-
-
 5. Если у вас ограниченный объем памяти, как вы будете обрабатывать большой объем данных??
 Открытые вопросы, подобные этому, обычно имеют несколько правильных ответов, и интервьюер хочет увидеть ваш уникальный подход. Подумайте, как бы вы решили этот вопрос в реальных условиях, поделитесь своим мнением и объясните, почему вы выбрали именно такой ответ.
 
 Пример: Я бы разбил большой объем данных на небольшие фрагменты. Я бы сделал это с помощью внешней сортировки или сортировки слиянием. Я думаю, это был бы самый быстрый и простой вариант.
-
-
-
 
 6. Определите и объясните эти девять кодов ошибок ответа сервера: 200, 201, 204, 301, 400, 401, 404, 409 и 500.
 Ваш интервьюер обычно спрашивает об этом, когда хочет узнать глубину ваших знаний об ошибках. Обращайтесь к каждой части по порядку, объясняя, что означает код и что вызвало ошибку.
