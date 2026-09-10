@@ -1,3 +1,21 @@
+Tips and Tricks for Front End Developer Interview Questions
+A front-end developer interview can be stress-free, to a certain extent. The career is growing by leaps and bounds; don't try to prove yourself too much. Walk in with a clean portfolio and prepare with test questions and answers.
+
+Do your research. Before the interview, make sure to do your research on the company and the position you are applying for. This will help you prepare for questions and show the interviewer that you’re motivated and have a genuine interest in the role.
+Practice, practice, practice. Whether it’s doing a mock interview with a friend or family member, or just going over common questions in your head, practicing beforehand will help you feel more confident and less nervous during the actual interview.
+Build your portfolio. If you're fairly new to the industry or making a switch, build a portfolio with the top sites that you've worked on.
+Know where you are in the pipeline. Initial interviews are just "touch-base" interviews. You should slowly get to know your interview team and the position, and then dig more into your technical skills.
+Be personable. At the end of the day, the interviewer wants to get to know you as a person. The best way to be genuine is to briefly talk about your interests and hobbies outside of work, as well as any personal projects you may be working on.
+Ask questions. Asking questions shows you’re engaged in the conversation and gives you an opportunity to learn more about the company and the role.
+Don't be afraid to say you don't know. If you don't know something, explain how you would find out.
+After the interview, send a thank-you note to the interviewer. Today, it can be as simple as shooting a message on Slack.
+
+How to Practice for Code Interviews
+There are generally three types of questions in coding interviews: algorithm, data structure, and system design. Familiarize yourself with each type and practice solving them. 
+
+Even experienced engineers struggle with coding interviews. You can practice for loops and sorting all you want, but when it comes down to it, you're being asked to solve a puzzle on command. All you can do is practice the fundamentals.
+
+
 🎯 Категория: "Базовый уровень" (aka "это должны знать все, но половина не знает")
 1. Что такое фронтенд разработка вообще?
 Зачем спрашивают: Проверяют, понимаете ли вы масштаб своей профессии или думаете, что это просто "делать кнопочки красивыми".
