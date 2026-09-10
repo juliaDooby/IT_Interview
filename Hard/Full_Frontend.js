@@ -10685,38 +10685,9 @@ export default Calendar;
 
 «Человек должен сразу понять, куда он идет. И я говорю не только о позиции или стеке. Frontend-разработчик должен выяснить себе целые компании и примерно представлять процессы внутри. Для меня мотивированный кандидат – специалист, желающий разобраться в продукте. Он смотрит презентации и видео, а после спрашивает, что именно его интересует. Он желает выяснить, как работает», – говорит технический рекрутер в HURMA.
 
-20 вопросов для оценки soft skills у frontend разработчика
-Как вы взаимодействуете с членами команды при разработке проекта?
-Как вы разрешаете конфликты или разногласия относительно технических решений в команде?
-Как вы управляете своим временем и приоритетами в процессе разработки?
-Как вы общаетесь с нетехническими членами команды или клиентами?
-Как вы реагируете на конструктивную критику вашей работы?
-Как вы реагируете на стрессовые ситуации или трудности при разработке?
-Как вы ведете себя во время собеседования или дискуссии с другими членами команды?
-Как вы понимаете и внедряете принципы взаимопомощи и коллаборации в команде?
-Как вы решаете технические проблемы, с которыми сталкиваетесь при разработке?
-Как вы оцениваете свои возможности и определяете объем работы для себя и для других в команде?
-Как вы стимулируете и поддерживаете творческий подход к решению проблем в команде?
-Как вы сотрудничаете с другими разработчиками, чтобы обеспечить надлежащую интеграцию фронтенда с бэкендом?
-Как вы оцениваете потребности пользователей и внедряете их фидбек в процессе разработки?
-Как вы стимулируете инновации и вводите новые идеи в вашей команде?
-Как вы работаете с большим объемом информации или данных в вашем проекте?
-Как вы общаетесь и сотрудничаете с другими отделами, такими как дизайн или маркетинг?
-Как вы решаете сложные задачи, требующие долгосрочного планирования и стратегического мышления?
-Как вы стимулируете развитие ваших навыков и ответственности в работе?
-Как вы выявляете и решаете проблемы с производительностью в вашей команде?
-Как вы относитесь к открытости, открытому обмену мнениями и открытым дискуссиям в вашей команде?
-Вопросы на этом этапе могут быть совершенно другими. Здесь все зависит от позиции, опыта самого кандидата, его поведения, актуальных фреймворков, технологий. Универсальный шаблон не существует. Просто запомните, что для каждой технической позиции будет свой набор требований.
-
-Технический взгляд
-На следующем этапе (в случае с продуктовой компанией HURMA) технический рекрутер отправляет информацию о претенденте непосредственно Head of Engineering. Он получает скоркард с первыми отметками (4 или 5, если встреча прошла успешно).
-
-Обратная связь от технического специалиста с большим опытом позволяет «свежим» взглядом еще раз посмотреть на кандидата и найти неочевидные проблемы, блокируя моменты.
-
-Если с мотивацией, soft skills и общим опытом нет никаких проблем, кандидат двигается дальше по воронке на этап технического интервью.
-
-Как провести техническое интервью: вопросы для собеседования frontend разработчика?
-«Оптимально, чтобы техническое интервью проводил наемный менеджер. Если это невозможно, то важно присутствовать, чтобы составить свое мнение относительно кандидата. Если загрузка не позволяет менеджеру присутствовать на интервью, важно доверять интервьюерам, которых он просит оценить кандидата. Для нового интервьюера важна обратная связь от менеджера после первых собеседований, он помогает прийти к общим ценностям», – говорит Head of Engineering в HURMA.
+*************************************
+	*************************************
+	*************************************
 
 Базовые вопросы по HTML и CSS:
 
@@ -10778,31 +10749,10 @@ CBI: интервью по компетенциям для техническо�
 
 В то же время, они не всегда готовы делиться своими знаниями или они не делали этого раньше. Для нас отсутствие желания делиться опытом является признаком профессиональной незрелости», – делится опытом Head of Engineering в HURMA
 
-Вопросы для CBI интервью
-В каких компаниях тебе хотелось бы поработать и почему? Что привлекает в продукте и аутсорсе?
-Если в течение нескольких лет ты будешь занимать одну должность – это ок для тебя?
-Рассматриваешь ли ты для себя в будущем переход с одной технологии на другую?
-Опиши свою работу на прошлом проекте и расскажи, как сильно выросли твои компетенции за это время.
-Назови свой основной skill, позволяющий тебе эффективно развиваться.
-Легко найти один язык с человеком, если добавить в интервью открытые вопросы или общаться на разные темы. Правильный small-talk способствует расслабленному разговору, впоследствии кандидат отвечает на все более открыто. Такие эмоциональные качели – один из способов получить нужную нам информацию.
-
-Совершенно другой подход состоит в том, чтобы «раскачать» человека согласно его триггерам или болевым моментам. К примеру, спросить его относительно того, почему он не желает работать с определенной технологией или фреймворком.
-
-Комитет: комплексно рассматриваем frontend разработчика
-Финальный этап найма технического специалиста – еще один коллегиальный скрин кандидата. На комитете оцениваются плюсы и минусы претендента, а также проходят дебаты по спорным моментам.
-
-На этом этапе обязательно подключаются CEO и HRD, которые оценивают риски со своей стороны. Возможно, технические специалисты пропустили что-нибудь важное, что влияет на бренд работодателя. К примеру, это может быть образование, пробелы в профессиональной деятельности, работа в силовых структурах и т.д. На комитете решается, нужно ли дополнительно пригласить фидбек и рекомендации по предыдущим местам работы.
-
-Оцениваются все факты и определяется финальный рейтинг в оффере. Также рассматривается вариант контроффера, если кандидат получил несколько предложений от других компаний или предоффера, когда необходимо согласовать сумму.
-
-Главная особенность рекрутинга
-С наймом frontend разработчиков всегда не просто: они понимают свою ценность на рынке, могут часто менять компании, остаются нелояльными к маленьким командам. Помните, что воронка должна включать максимальное число релевантных кандидатов, чтобы в ней появился нужный вам претендент. В среднем по индустрии, количество лиц, дошедших до этапа прескрина, составляет не более 10%, а оффер получают не более 1–2%.
-
-Поэтому важно на всех этапах воронки работать очень тщательно и индивидуально подходить к каждому кандидату. Это касается задания вопросов для технического интервью и CBI, а также проверки soft skills. Используя качественную систему ATS, вы сможете легко корректировать каждый этап рекрутинга, а также быстро анализировать кандидатов и искать подход к каждому из них.
 
 
-Top 100 Frontend Developer Interview Questions and Answers
 Basic Level Interview Questions and Answers
+
 Q1. What are meta tags in HTML?
 Meta Tags go inside the head section of an HTML Page. They are not for the interface but are very important for the browser and SEO purposes. Meta tags consists of many fields like meta-titles, meta-description, and even character encoding.
 
@@ -11379,23 +11329,10 @@ The [(ngModel)] directive is used for two-way data binding. It combines the prop
 Q100. How can you use Advanced Animation Techniques in your Frontend Applications?
 Animation libraries like as GSAP (GreenSock Animation Platform), Anime.js, and Framer Motion provide advanced animation capabilities, timeline control, and additional easing functions. These animation libraries offer a more fine-grained control over animations, including options for sequencing, delays, callbacks, and advanced effects.
 
-Technical and Language Questions
-Developer Tools and Technologies
-Problem Solving Exercises
-Conducting Your Interview
-Hiring developers?
-Save time and avoid mis-hires with our technical assessment tests
-FIND OUT MORE
-21 Junior Front-End Developer Interview Questions
-Eric Philips
-June 23, 2022
-
-Front-end developers are one of the top 10 In-Demand IT Jobs in 2022 but identifying the best candidates can be a challenge when it comes to finding the right mix of hard and soft skills, not to mention individuals that will fit into your company’s culture.
-
-Your interview needs to cover a particular set of technologies that are core to doing front development. It’s also important to move from the realm of the theoretical to the practical — solving problems and asking questions that pertain to particular instances of code is much more useful for gauging the depth of an interviewee’s knowledge.
 
 Technical and Language Questions
 There are a number of technologies that are essential to a front-end developer. In general, asking very specific questions is not as useful as using open-ended questions as a jumping off point to discuss issues in more detail. 
+
 
 Questions about Web protocols (HTTP and HTTPs, TCP/IP)
 Why it’s important
@@ -11413,6 +11350,7 @@ The semantic distinction between Put and POST is somewhat nuanced, but if a cand
 3. How does HTTP relate to the TCP/IP stack?
 
 Although not necessarily essential, candidates may be familiar with the notion that there are different layers to communication protocols used to connect computer systems and that HTTP is an Application layer used by web clients and web servers built on top of the Transport/Transmission layer (TCP) and the Network/Path control layer (IP). See this discussion of the TCP/IP protocols for more information.
+
 
 Questions About HTML
 Why it’s important
@@ -11498,6 +11436,7 @@ var employeeInstance2 = new Employee(“Jane”);
 console.log(employeeInstance1.name); // prints “John” to the console
 
 console.log(employeeInstance2.name); // prints “Jane” to the console
+
 
 Questions about front-end Frameworks: React, Angular, Vue, jQuery
 Why it’s important
@@ -11617,6 +11556,7 @@ In this case, because we are comparing objects and not primitives, the quality o
 
 As an exercise, have them put this code into a web page and open it in a browser. Have them modify the code so it will be invoked when the page loads. Then ask them to open up the developer console and set a breakpoint so they can step through the code.
 
+
 Questions About Data Structures
 Why it’s important
 You want to get a sense of the candidate’s familiarity with high level programming concepts that will impact code performance. Developers with a more traditional academic background should be able to handle these questions better than self-taught programmers, so you should manage your expectations accordingly.
@@ -11645,43 +11585,7 @@ XSS is a type of “attack”, in which malicious code is injected into otherwis
 
 The end user’s browser, unaware of any trickery, will execute the script. The malicious script will gain access to cookies, session tokens, or any other sensitive information retained by the browser. There are various types of attack, including reflected, stored, and DOM-based XSS. Attacks can be prevented by sanitizing input, encoding output and using appropriate response headers.
 
-Problem Solving Exercises
-You will also need to engage your potential hire with problem solving exercises.
 
-This is potentially the most illuminating portion of the interview, as it will allow you to gauge not only how a candidate thinks, but how they interact with you.
-
-While some up front technical questions about particular technologies that are relatively straight forward can be a good start to getting a sense of a candidate’s knowledge base, problem solving exercises can actually get into implementation.
-
-We suggest choosing a problem that is actually fairly straightforward to solve without any hidden tricks or gotchas — they simply require the ability to understand the parameters and walk through the solution, even if it means some brute force is necessary and perhaps some friendly prodding. You can also see how well they communicate their thought process as they attempt to come to a solution. River crossing problems are useful in this way, such as the classic wolf, goat, and cabbage problem.  
-
-? ? ?‍♂️ ?
-
-The good thing about such a problem is it allows you to then approach how you might model the problem in code and even build a web application around it using HTML, CSS, and JavaScript. This allows the candidate to show some creativity in their approach.  
-
-It also allows you to talk about user experience and how to create user friendly interfaces. How would you explain to end users the different options they have? How would you provide feedback to end users? Can they create a design that will be flexible enough to accommodate changes to the requirements, such as another element to take across the river.
-
-Conducting Your Interview
-CodinGame has a screening tool that allows you to conduct an initial screening focused on essential technical questions. CodinGame technical tests will ensure candidates match your skills requirements. You can even compare how candidates fared against each other before moving to the next step in your interview process.
-
-According to our 2022 tech hiring survey, candidates and recruiters agree that live coding interviews are the best option for interviews. 78% of developers and 79% of recruiters say that a live coding interview is their preferred interview format and 74% of developers think live coding interviews are the best way to showcase their skills.  
-
-Another advantage of live coding interviews is they allow for an interactive experience with candidates. This is helpful when candidates aren’t an exact match for the skillset you’re looking for.. By working together on a piece of code, youcan better sense whether or not a candidate could potentially grow into the role. CoderPad is an ideal tool for this purpose as it allows you to ask the more complex follow-up questions with coding exercises.
-
-Top Front-End Developer Interview Questions
-/ Web Development / By Pathways2Advancement.org
-If you’re reading this then you’re likely preparing for an upcoming front-end developer interview or you’re anticipating one in the near future.  First, we’re going to briefly discuss the technical skills you’ll need to help you stand out during your job-hunting process.  Then, we’ll dive right into some of the top front-end developer interview questions and sample answers to help you prepare for this important step in your career as a front-end developer.
-
-What Skills Do You Need to Succeed as a Front-End Developer Applicant?
-A front-end developer is a web developer who specializes in the design and programming of a website’s front end, or what the user sees.  So naturally you’ll need a wide array of website design skills to complete any given design and development job.  HTML and CSS knowledge is usually a required skill, as well as a high level of efficiency is a must.  Experience with different programs is needed to complete a website build on any given project from start to completion. Some tools that come in handy for front-end web designers include WordPress (or other CMS platforms), PHP, Drupal, C+, and other programming languages are just some examples of these common tools.
-
-Soft skills such as communication is an essential in order to grasp the complete scope of a website project. Therefore, the ability to communicate clearly with other team members and departments including web developers, marketing team members, graphic designers, and even sales staff is important. Content writing, SEO knowledge, Photoshop skills, and experience with implementing SEO tactics are needed skills for any front-end website designer in today’s world.
-
-Preparing for an Interview as a Front-End Developer
-The most important thing you can do to prepare for this interview is to research the company where you are applying. You’ll need to review and completely understand the requirements and recommended skills listed in the front-end developer job description. You should also think about what their culture is like and how that might be different from your previous companies you’ve either applied to or worked.
-
-It’s important to have an idea of some questions you might be asked in order to prepare for a front-end developer interview. Preparation can be challenging since there are no recommended questions or frameworks provided by employers.
-
-Top 5 Front End Developer Key Questions
 
 1. What is a responsive web page design?
 Responsive design allows one single version of a website to work on any size screen or device. Regardless of the size of the screen being viewed or the type of device responsive design can be implemented. With the use of HTML and CSS, the website components will move around the page to be viewed appropriately on a desktop, iPad or tablet, and even mobile phones. Sometimes components of a website are removed or even added, depending on which device is being viewed. The main coding languages used in responsive design are HTML and CSS.
@@ -11886,16 +11790,6 @@ TCP — тяжеловесный, устанавливает соединени�
 
 А какие бы вы задали вопросы по телефону и какой ожидали бы слышать ответ?
 
-Топ 9 вопросов на интервью Middle FrontEnd девелоперу (React) в 2022 году
-16.08.2022 asnpostinterview, React
-Перевод статьи Top 9 interview questions for a Middle FE (React) developer in 2022
-
-
-В одной из моих предыдущих статей я предоставил список вопросов для собеседования с разработчиком Junior FE (React) в 2022 году. Теперь я предлагаю вам ответить на эти 9 вопросов и посмотреть, являетесь ли вы разработчиком Middle FE (React).
-
-Желаем удачи и приступим!
-
-
 1. Что такое REST API?
 
 Ответ:
@@ -11979,26 +11873,7 @@ prop drilling — это передача данных через несколь
 
 Согласно официальному документу React: «error boundaries — это компоненты React, которые перехватывают ошибки JavaScript в любом месте своего дочернего дерева компонентов, регистрируют эти ошибки и отображают резервный пользовательский интерфейс вместо дерева компонентов, которое потерпело крах. Error boundaries улавливают ошибки во время рендеринга, в методах жизненного цикла и конструкторах всего дерева под ними».
 
-Вопросы и задачи на техническом собеседовании JS в 2025 году
-HR
-07 апреля 2025
-Блог
-Поделиться:
-СОДЕРЖАНИЕ
 
-Вопросы и ответы для Junior JavaScript-разработчиков
-
-Вопросы и ответы для Middle JavaScript-разработчиков
-
-Практические задачи для Junior JavaScript-разработчиков
-
-Практические задачи для Middle JavaScript-разработчиков
-
-Как повысить шансы на успех
-
-В 2025 году рынок IT продолжает активно развиваться, и требования к кандидатам становятся все более строгими. Чтобы успешно пройти собеседование на должность JS-разработчика, важно не только хорошо знать JavaScript, но и понимать его ключевые особенности.
-
-Рассмотрим основные аспекты JS-разработки, типичные вопросы и задачи, которые помогут подготовиться и произвести впечатление на собеседовании.
 
 Вопросы и ответы для Junior JavaScript-разработчиков
 1. Ключевые особенности JavaScript?
@@ -12075,6 +11950,8 @@ const parsedObj = JSON.parse(jsonString); // { name: 'Alice' }
 
 В простоте создания интерактивных интерфейсов.
 
+
+
 Вопросы и ответы для Middle JavaScript-разработчиков
 1. Как работает прототипное наследование в JS?
 
@@ -12146,6 +12023,7 @@ button.addEventListener('click', () => {
 10. Что такое WebAssembly и как его использовать с JavaScript?
 
 WebAssembly (Wasm) — это бинарный формат, позволяющий выполнять код на других языках (например, C++) в браузере. Он используется для тяжелых вычислений, которые JS не может эффективно обработать.
+
 
 Практические задачи для Junior JavaScript-разработчиков
 1. Напишите функцию, которая вычисляет факториал числа. Факториал числа n определяется как произведение всех положительных целых чисел от 1 до n (n!).
@@ -12254,9 +12132,6 @@ emitter.emit('login', 'Alice'); // Ничего не выведет, так ка
 Не бойтесь задавать уточняющие вопросы, если что-то непонятно.
 Главное — будьте уверены в своих силах, но не переоценивайте их. Честность и готовность учиться часто ценятся выше, чем идеальные ответы.
 
-******************************************************
-	******************************************************
-	******************************************************
 
 Практические задачи для frontend middle
 Собеседования для программистов зачастую проходят в несколько этапов и довольно сложны. В случае поиска работы на должность фронтенд-разработчика дополнительные затруднения вызывает проверка не только технических навыков, но и уровня креативного мышления. 
