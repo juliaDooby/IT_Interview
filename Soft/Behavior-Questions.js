@@ -1,3 +1,20 @@
+A Full Stack developer should be knowledgeable in:
+
+Basic languages — HTML, CSS, and SQL.
+Front-end frameworks — Bootstrap, AngularJS, VueJS, ReactJS, JavaScript, TypeScript, Python, Ruby, PHP.
+Back-end frameworks — Express, Django, NodeJS, Ruby on Rails.
+Databases — MySQL, SQLite, Postgres, MongoDB, Cassandra, Apache storm, Sphinx.
+Additional skills — Git, Machine Learning, SSH, Linux Command, Data Structures, Character encoding.
+Some well-known tools and platforms used by full stack developers to make development more accessible and efficient are:
+
+GitHub
+Visual Studio Code
+WebStorm
+Slack
+CodePen
+Intellij/Eclipse
+PyCharm
+
 Five ‘simple & doable’ steps that will help you crack a full stack developer interview
 Step 1: Master the Basics
 
