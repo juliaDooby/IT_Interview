@@ -1,4 +1,8 @@
- Behavioral Interview Questions for NET Full Stack Developers
+Избегать:
+Избегайте давать расплывчатые или чрезмерно технические ответы, которые интервьюер может не понять.
+Пример ответа: адаптируйте этот ответ под себя
+
+Behavioral Interview Questions for NET Full Stack Developers
 
 Tell me about a time you had to debug a critical production issue. How did you approach it?
 Why they ask this: They want to see your problem-solving process under pressure and whether you can stay calm and methodical.
