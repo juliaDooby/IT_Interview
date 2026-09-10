@@ -1,3 +1,32 @@
+Backend Developer Skills
+When looking to hire a backend developer, you should understand the skills essential to the role. While many skills are involved in backend development, including technical, behavioral, and soft skills, a few are more critical than others.  
+
+Proficiency in backend programming languages: Proficiency in programming languages is a must for backend developers. Programming languages will help your backend developers build and connect web services and applications and ensure their functionality. For backend development, Java, Python, and PHP are some of the go-to languages.
+Knowledge in frontend programming technology: While backend developers aren’t usually required to be masters in frontend technology, it’s crucial that they at least have the basic skills and knowledge, especially of JavaScript, which is fundamental in frontend programming technology.
+Experience in backend frameworks: Backend frameworks are equally as important as the programming language your backend developer will be working with. Some popular choices for backend frameworks include NodeJS, ExpressJS, and Django.
+Understanding databases and APIs: Backend developers handle and manage databases, including creating relational mapping for data retrieval. That is, backend developers should have a good grasp of databases, such as MySQL, MongoDB, and others. Additionally, they are also required to have a good understanding of application programming interfaces (APIs) and restful APIs which allow them to establish connections between various applications. Common APIs include JSON, GSON, SOAP, etc.
+Ability to solve problems: Backend development can be tricky, even for the most experienced developers. Therefore, your backend developers must have excellent problem-solving skills to work effectively.  
+Other skills needed will depend on your company’s requirements and needs but may include leadership, communication, and knowledge of different programming languages and structures. Overall, a backend developer must be proficient in technology, microservices architecture, various operating systems, structured programming, and the internet.
+
+In addition to these skills, and depending on your company’s needs and job description, a backend developer will generally be expected to complete the following responsibilities:
+
+Participate in the entire application lifecycle, including writing, testing, and debugging code
+Develop usable web applications by writing clean, concise code  
+Create and manage prototypes
+Observe, analyze, troubleshoot and resolve issues and bottlenecks
+Create strong APIs
+Optimize web applications for scalability and performance
+Collaborate with frontend developers and other technical professionals
+Technical Backend Interview Questions Examples
+Technical skills are a must-have for backend developers. Within these skills, a backend developer should have proficiency in various programming languages, frameworks, databases, and other technical structures. To ensure that you’re hiring a knowledgeable and experienced backend developer, you should interview them on the following areas:
+
+Backend programming languages: You’ll want to assess your potential developer’s knowledge of backend programming languages. They should understand the differences between object-oriented programming and functional programming languages and have experience in both types.
+APIs: APIs are an essential asset in a backend developer’s arsenal. Ensure that your potential developer understands how APIs work and their purpose.
+Data structures: Developers rely on data structures to access, organize, and modify data. Since backend developers will be working with data, they must understand how data structures work, including those relating to array operations, list functions, and tree and related operations.
+Servers: Servers are a fundamental part of backend development and help developers deliver and receive important information, services, and requests. As such, backend developers should understand how to deploy and host servers and be familiar with standard servers such as Apache and Microsoft IIS.
+Algorithms: Backend developers must be able to solve and troubleshoot problems they encounter. So, it’s essential to test their algorithmic skills. Test them on depth-first search, breadth-first search, and sorting algorithms.
+Queries: Inexperienced and experienced developers must understand queries and how they are used. This includes queries in an application and expensive queries. Queries are essential to the development process and can supply developers with answers to questions; perform calculations; combine data from various tables; and add, change, or delete data from a database.
+
 https://www.youtube.com/watch?v=lq4eefCCuVo 20.41
 
 // backend for middle base developer
