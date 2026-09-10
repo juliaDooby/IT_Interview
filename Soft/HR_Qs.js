@@ -207,16 +207,16 @@ Q #18) Tell us about something that bothers you.
 
 Answer: Through this question, the interviewer is trying to know what bothers you related to the people you work with or the job. If other people or their ideas bother you, don’t say that in your answer. Tell them something like when people don’t deliver their promise or meet their deadline, it bothers you.
 
-Q #19) Are you willing to relocate?
+// Q #19) Are you willing to relocate?
 
-Relocate
-[via Axios]
+// Relocate
+// [via Axios]
 
-Answer: This is a straightforward question and needs a straightforward answer. Companies often look for candidates who can easily accept transfers and are comfortable moving around. If you are okay with that, your chances of being selected are high. But be honest. If you are not comfortable with the idea of relocation, say no.
+// Answer: This is a straightforward question and needs a straightforward answer. Companies often look for candidates who can easily accept transfers and are comfortable moving around. If you are okay with that, your chances of being selected are high. But be honest. If you are not comfortable with the idea of relocation, say no.
 
-It might become a reason for conflict later if you say yes now and deny it later. It might even tarnish your reputation somewhat. So, if you can’t relocate, just say no. If you are a promising candidate, they will not let you go for such a trivial matter, unless relocating is a major part of the job profile.
+// It might become a reason for conflict later if you say yes now and deny it later. It might even tarnish your reputation somewhat. So, if you can’t relocate, just say no. If you are a promising candidate, they will not let you go for such a trivial matter, unless relocating is a major part of the job profile.
 
-So, frankly, put your answers in front of HR and hope for the best.
+// So, frankly, put your answers in front of HR and hope for the best.
 
 Q #20) Do you have any questions for us?
 
