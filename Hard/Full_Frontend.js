@@ -1,3 +1,40 @@
+Frontend Full-Stack Interview Questions
+
+What is the difference between HTML and HTML5?
+Explain the box model in CSS.
+What are JavaScript closures?
+What is the Virtual DOM?
+How do you optimize performance in a React app?
+Backend Full-Stack Interview Questions
+
+What is REST architecture?
+Explain the difference between PUT and PATCH.
+What is middleware in Express.js?
+What are the differences between SQL and NoSQL databases?
+How do you handle exceptions in backend systems?
+Full-Stack Interview Questions for Freshers
+
+What is a full-stack developer?
+Explain the lifecycle of a web request.
+How does a web browser render a page?
+What tools have you used for version control?
+Explain localStorage and sessionStorage.
+Full-Stack Interview Questions for Intermediate Level
+
+How do you structure a REST API?
+What is the difference between GraphQL and REST?
+How does React Context API work?
+What is a state management library and why is it needed?
+How do you implement form validation?
+Full-Stack Interview Questions for Experienced Developers (3–10 Years)
+
+How would you design a scalable e-commerce backend?
+Explain microservices with an example.
+How do you handle caching and performance at scale?
+What is Circuit Breaker pattern and when to use it?
+How do you manage secrets in production?
+
+
 Базовые вопросы по HTML и CSS:
 
 На что нужно обратить внимание при разработке мультиязычных сайтов?
