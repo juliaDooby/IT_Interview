@@ -1,3 +1,20 @@
+Tips to prepare for Full Stack Developer Interview
+Do your homework without fail - research the company.
+Recheck the job description and your resume to remember what you have applied for.
+Brush up on your technical skills, including programming languages, databases, and web development frameworks.
+Practice coding exercises and solving technical problems
+Do hands-on practice of your skills to complete the Interview.
+Study common Full Stack Developer interview questions and learn the answers.
+Formally prepare your queries to have good communication with the Interview. 
+Showcase your ability to work collaboratively with other team members, including designers, project managers, and developers.
+Show enthusiasm and passion for your work and the field of web development.
+Be yourself and answer straight, dress professionally, and arrive on time for your Interview.
+Brush up your soft skills as well.
+
+Conclusion:
+Since the demand for Full Stack Developers is increasing extensively, the need and opportunity for Full Stack Developers with continue to grow. To get a job with 6 fig salary, it is crucial to crack an interview with some fortune organization. These 50 full-stack interview questions list will help you prepare for the same. Getting well-versed with the terms and market aspects of full-stack development is necessary to place yourself as a successful full-stack developer. The above mention tips come along to assist in setting up your mind and give you support to perform better.
+
+
 Frontend Full-Stack Interview Questions
 
 HTML, CSS, and JS Fundamentals:
