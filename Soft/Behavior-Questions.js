@@ -1,3 +1,188 @@
+ Behavioral Interview Questions for NET Full Stack Developers
+
+Tell me about a time you had to debug a critical production issue. How did you approach it?
+Why they ask this: They want to see your problem-solving process under pressure and whether you can stay calm and methodical.
+
+STAR framework:
+
+Situation: Describe what broke, the impact (how many users were affected, what was failing), and the timeline pressure.
+Task: What was your responsibility in fixing it?
+Action: Walk through your debugging process. What tools did you use? How did you narrow down the cause? Did you collaborate with teammates?
+Result: How long did it take to fix? What was the resolution? Did you implement safeguards to prevent it happening again?
+Sample answer:
+
+“We had a production outage where orders weren’t completing. It was a Saturday, our busiest day. I was on-call. Customers couldn’t check out, so it was urgent. I checked the application logs in Application Insights and saw database timeout errors. I connected to production SQL Server and found that one query was blocking others due to a missing index. I added the index immediately, and orders started processing again within two minutes. Then I dug deeper: the query was a complex join that could have been optimized. I worked with the team Monday morning to rewrite it properly. We also added query monitoring to our Application Insights setup so we’d catch slow queries automatically. The fix took two minutes, but understanding why and preventing it next time took a few hours.”
+
+Describe a situation where you disagreed with a teammate on a technical approach. How did you handle it?
+Why they ask this: Collaboration and communication matter as much as code. They want to see you’re not stubborn but can discuss tradeoffs professionally.
+
+STAR framework:
+
+Situation: What was the disagreement about? Why did each approach seem reasonable?
+Task: Your role in working toward a resolution.
+Action: How did you approach the conversation? Did you listen to their perspective? How did you present your view?
+Result: Did you reach consensus? What did you learn? What was the outcome of the technical decision?
+Sample answer:
+
+“My colleague wanted to use a stored procedure for a complex reporting query. I preferred doing it in C# with Entity Framework because it’s version-controlled and testable. We had different priorities: they valued database performance, I valued code maintainability. Instead of digging in, I asked why they preferred stored procedures and actually ran performance tests on both approaches. Turns out, the stored procedure was significantly faster for that specific report. We went with the stored procedure, but I made sure it was well-documented and we added integration tests that called it. I learned that performance at scale sometimes requires compromise, and that asking questions before debating is more productive. We’ve used that hybrid approach on other projects since.”
+
+Tell me about a project where you delivered something under a tight deadline. How did you manage?
+Why they ask this: Startups and enterprises both have deadlines. They want to see you prioritize intelligently, not panic.
+
+STAR framework:
+
+Situation: What was the deadline? Why was it tight? What were you building?
+Task: What was your specific responsibility?
+Action: How did you plan? What did you cut or optimize? How did you stay organized? Did you communicate status?
+Result: Did you hit the deadline? What was the quality? Any technical debt you addressed later?
+Sample answer:
+
+“We had three weeks to build a reporting dashboard before an investor meeting. Normally that’s not enough time. I worked with the product manager to ruthlessly prioritize: we focused on three core reports that investors cared about and cut three others. I reused a base dashboard component so we didn’t build from scratch. I worked in parallel with the front-end developer—as soon as I finished API endpoints, they started building UI. We did daily stand-ups to stay in sync. I also chose pragmatic shortcuts: we used MemoryCache for demo data instead of building complex caching logic, knowing we’d improve it post-launch. We delivered on time, the investor loved it, and we addressed technical debt in the following sprint. The key was being transparent about tradeoffs—‘we can have this by Friday if we don’t do X’—and the team bought in because they understood the priority.”
+
+Tell me about a time you had to learn a new technology quickly to solve a problem.
+Why they ask this: Tech changes constantly. They want to see you’re adaptable and resourceful.
+
+STAR framework:
+
+Situation: What technology did you need to learn? Why? How much time did you have?
+Task: What did you need to accomplish?
+Action: How did you approach learning? What resources did you use? How quickly did you ramp up?
+Result: Did you successfully solve the problem? How long did it take? What was the outcome?
+Sample answer:
+
+“We inherited a project that used Dapper for data access—I’d never used it. The previous developer left, and I was the sole back-end person. I had two days before the feature freeze. I watched a couple of YouTube tutorials and read the Dapper documentation. The syntax is simpler than Entity Framework, and I realized it was close enough to SQL that I could learn as I went. I paired with the QA person on complex queries, asked questions, and within a day, I was productive. By day two, I’d fixed bugs and added features. I’d probably use Entity Framework by default now, but Dapper has a place for high-performance scenarios, and I’m comfortable with it. The experience reinforced that the fundamentals of database querying transfer across tools—the unfamiliar syntax is just detail.”
+
+Describe a time you improved a process or codebase that wasn’t working well.
+Why they ask this: This shows initiative and ownership. Are you just coding, or improving how the team works?
+
+STAR framework:
+
+Situation: What wasn’t working? How did it affect the team? Why did it matter enough to fix?
+Task: What was your role in improving it?
+Action: What specific improvements did you make? Did you involve the team?
+Result: What measurable improvements happened? How did the team respond?
+Sample answer:
+
+“Our codebase had no automated tests, and every deployment was nerve-wracking because we’d break something unintentionally. I proposed adding unit tests and a CI pipeline. The team was skeptical—‘It’ll slow us down.’ I started small: I wrote tests for critical business logic modules and set up a basic GitHub Actions workflow. It took a week. Within two weeks, it caught a regression in another developer’s code before it merged. The team saw the value and invested more. Six months later, we had 70% test coverage and deployed daily without fear. The initial skepticism turned into ‘how did we live without this?’ The key was proving value quickly with a small scope rather than pushing for a perfect solution upfront.”
+
+Tell me about a time you received critical feedback. How did you respond?
+Why they ask this: Defensive people don’t grow. They want to see you take feedback professionally and improve.
+
+STAR framework:
+
+Situation: What feedback did you receive? From whom? How did it feel in the moment?
+Task: What did you do with it?
+Action: How did you process it? Did you ask clarifying questions? How did you implement the feedback?
+Result: Did you improve? How did that change your work or perspective?
+Sample answer:
+
+“A senior developer reviewed my code and said it was overly complex—I had nested loops and convoluted logic that could be simplified. My first reaction was defensive: I thought it was efficient. But I read their comments carefully, and they were right. I asked them to explain their simpler approach, and I learned about LINQ methods I wasn’t using effectively. I refactored the code, and it was half the lines and easier to read. I thanked them and started paying more attention to readability and simplicity. That feedback changed how I approach coding. Now when my code gets reviewed, I look for complexity I can eliminate. I also try to give that kind of constructive feedback to others.”
+
+Technical Interview Questions for NET Full Stack Developers
+Technical questions dig into your practical knowledge. Rather than memorizing answers, understand the framework for thinking through them.
+
+How would you design an API for a multi-tenant SaaS application?
+Why they ask: Multi-tenancy is complex. Your answer shows architectural thinking and awareness of isolation, security, and performance.
+
+Framework for your answer:
+
+Data isolation: How do you prevent one tenant’s data from leaking to another? (Separate databases? Shared database with tenant ID filtering? Row-level security?)
+Authentication and authorization: How do users log in? How do you know which tenant they belong to?
+Resource sharing: What resources can be shared across tenants? (Code, infrastructure, configuration?)
+Scaling: If one tenant grows, how does that affect others?
+Sample answer:
+
+“I’d start with data isolation. For small-to-medium deployment, I’d use a shared database but add a TenantId to every table. At the database layer, I’d implement a query filter that automatically adds WHERE TenantId = @CurrentTenantId to every query, so developers can’t accidentally leak data. For larger deployments or enterprise clients that demand isolation, I’d provision separate databases. For authentication, I’d use Azure AD B2C or similar, and the JWT token would include the tenant ID. Every API request passes the token, and middleware validates that the user belongs to that tenant. For shared resources, I’d have a master database for configuration and billing, separate from tenant data. Infrastructure would be shared—Kubernetes cluster, Azure resources—but logically isolated. I’d implement API throttling per tenant so one tenant can’t DoS others by making too many requests. Monitoring would be tenant-aware too, so I can see performance per tenant.”
+
+Personalization tip: Discuss whether your experience is theoretical or from a real project. If this is new, discuss what unknowns you’d research.
+
+How do you handle caching in a distributed system?
+Why they ask: Caching at scale is subtle. They want to see you understand cache invalidation, consistency, and tradeoffs.
+
+Framework for your answer:
+
+What to cache: User sessions? Database queries? API responses?
+Where: In-memory (fast but doesn’t scale)? Redis (shared across servers)? CDN (for static content)?
+Invalidation: When does cached data expire or get cleared?
+Consistency: Is stale data acceptable?
+Sample answer:
+
+“Caching depends on the data and consistency requirements. For user sessions in a load-balanced environment, I’d use Redis so any server can handle the request. For database query results, I’d use MemoryCache if it’s single-server, Redis if distributed. For read-heavy queries that don’t need real-time accuracy, I’d cache with a TTL—say, five minutes—so we hit the database less often. For writes, I’d invalidate the cache immediately so users see current data. Static assets—JavaScript, CSS, images—get cached at the CDN level with long expiration times. The tricky part is cache invalidation. I’ve seen issues where stale data caused bugs because we forgot to invalidate when related data changed. I now have a pattern: when I write to the database, I also invalidate related caches. Redis has nice options like key expiration and pub/sub for cache invalidation across servers.”
+
+Personalization tip: Describe a caching strategy you’ve implemented or a cache bug you’ve debugged.
+
+Design a database schema for an e-commerce application.
+Why they ask: Database design shows whether you understand normalization, relationships, and query patterns.
+
+Framework for your answer:
+
+Core entities: What tables do you need? (Customers, Products, Orders, OrderItems, etc.)
+Relationships: One-to-many? Many-to-many?
+Constraints: Primary keys? Foreign keys? Unique constraints?
+Denormalization: When would you violate normalization for performance?
+Queries: What queries do you need to support?
+Sample answer:
+
+“I’d have Customers, Products, Orders, OrderItems, Payments, and ShippingAddresses tables. Each OrderItem is a many-to-many relationship between Orders and Products, storing quantity and price (I store price because product prices change, but order history should be immutable). Foreign key constraints maintain referential integrity. For performance, I might denormalize—storing TotalAmount on Orders instead of calculating from OrderItems every time. I’d add indexes on frequently searched columns: CustomerId on Orders, ProductId on OrderItems, OrderStatus. For queries, I’d support finding all orders for a customer, products in a category, and recent orders with status. I’d be thoughtful about transactions: when an order is placed, I need to update inventory, create an order record, and record payment atomically. This ensures consistency. One thing I’ve learned: don’t over-normalize. If I have a Payments table, do I need to join it with Orders every time? Maybe I also store PaymentStatus on Orders for faster queries without joins. It’s a tradeoff between storage and query performance.”
+
+Personalization tip: Sketch out key tables and relationships relevant to a domain you know well.
+
+Explain how you’d implement authentication and authorization in a web application.
+Why they ask: Security is critical and misunderstood. They want to see you think through this carefully.
+
+Framework for your answer:
+
+Authentication: How do you verify who the user is? (Username/password? OAuth? Tokens?)
+Password security: How do you store passwords securely? (Never plain text; use hashing and salt)
+Authorization: How do you check what they can do? (Role-based? Permission-based?)
+Token management: If using tokens, how do you handle expiration and refresh?
+Sample answer:
+
+“For a web application, I’d use ASP.NET Core Identity for user management. Users log in with a username and password. The password is hashed with a salt using bcrypt (Identity does this automatically) and stored. I never store plain text passwords. Upon successful login, I issue a JWT token with an expiration time—say, 15 minutes—and a refresh token that lasts longer. The client sends the JWT with each request; middleware validates it. If the JWT expires, the client uses the refresh token to get a new JWT without re-entering credentials. For authorization, I define roles—Admin, User, Manager—and assign them to users. On sensitive endpoints, I check role membership: [Authorize(Roles = "Admin")]. For fine-grained permissions—‘can this user edit this post?’—I write custom authorization handlers. I also use HTTPS only, set secure cookies, and implement CORS properly to prevent unauthorized requests from other domains. I log authentication events for security auditing.”
+
+Personalization tip: Discuss OAuth/OpenID if you’ve integrated with external providers like Google or Azure AD.
+
+How would you structure a large .NET solution with multiple projects?
+Why they ask: Large projects need organization. They want to see you think about separation of concerns and scalability.
+
+Framework for your answer:
+
+Project layers: Presentation (API/UI), Business Logic, Data Access, Infrastructure?
+Separation: What belongs in each layer? Why?
+Dependencies: How do layers communicate? (Dependency injection? Interfaces?)
+Shared code: Where does common code live?
+Sample answer:
+
+“I’d structure it in layers. The API project contains controllers and configuration. The Application project contains business logic—services, DTOs, validation rules. The Domain project has entities and interfaces defining the core contracts. The Infrastructure project implements interfaces for database access using Entity Framework, external service calls, and logging. Each layer depends inward: API depends on Application, Application depends on Domain and Infrastructure. Infrastructure depends on Domain. This way, if I want to swap how data is persisted, I only change Infrastructure; the rest remains unchanged. I’d also have a Tests project with unit tests and integration tests. If the solution is large, I might have multiple Infrastructure implementations for different data sources. For shared code—utilities, constants, common exceptions—I’d have a Common project. I’d be careful not to create too many projects though; it’s easy to over-engineer. I aim for 5-8 projects: enough structure without complexity.”
+
+Personalization tip: Describe the structure of a project you worked on and why you organized it that way.
+
+Tell me about a complex feature you built and how you approached it.
+Why they ask: They want to see your thought process on a real problem, not a theoretical one.
+
+Framework for your answer:
+
+Requirements: What did you need to build?
+Breakdown: How did you break it into smaller pieces?
+Technical decisions: What architecture or design patterns did you use?
+Challenges: What went wrong or was harder than expected?
+Solution: How did you solve it? What did you learn?
+Sample answer:
+
+“I built an invoice generation and delivery system. Invoices are created when orders ship, then emailed to customers and archived. Sounds simple, but there were complexities: invoices needed to be generated asynchronously because they’re computationally heavy, emailing could fail and needed retries, and we had to comply with data retention policies. I broke it into services: InvoiceGenerator handled calculations, InvoiceEmailer handled delivery, and InvoiceRepository handled storage. I used a background job service with Hangfire to run InvoiceGenerator on a schedule. If generation failed, Hangfire would retry. For emailing, I sent emails asynchronously too with exponential backoff retries—if the email service is down, we don’t want to retry immediately and overwhelm it. For archival, I implemented a job that moved old invoices to cold storage after a year. The tricky part was testing—I couldn’t easily test the retry logic. I mocked the email service to simulate failures and verified the retry behavior. I also added detailed logging so we could track what happened with each invoice. It took two weeks to get all the edge cases right, but now the system is robust.”
+
+Personalization tip: Pick a feature that was genuinely complex and discuss what made it so and how you solved it
+
+Знание основ платформы 1С — вам нужно понимать, что такое конфигурация, какие типы объектов существуют, как работают регистры.
+Простые практические задачи — могут попросить написать запрос, создать обработку для справочника или настроить печатную форму документа.
+Язык программирования 1С — важно знать синтаксис языка, а также основы процедурного и объектно-ориентированного подходов.
+Общие вопросы по базам данных — будьте готовы ответить, что такое реляционная база данных и как работают транзакции в 1С.
+Логика, решение задач — продемонстрируйте способность логически решать задачи, проектировать системы.
+Мотивация, развитие — важно объяснить, почему хотите работать 1С-разработчиком, какие области вас интересуют, как вы учились.
+Работа в команде — покажите умение взаимодействовать с коллегами и решать рабочие конфликты.
+Ситуационные вопросы — стажера могут спросить, как бы вы решили ошибку в чужом коде или приступили бы к незнакомой задаче.
+
+
 Question 1: Can you describe a time when you faced a challenging problem as a backend developer and how you resolved it?
 Answer:
 
