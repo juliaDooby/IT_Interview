@@ -1,3 +1,43 @@
+Question 1: Can you describe a time when you faced a challenging problem as a backend developer and how you resolved it?
+Answer:
+
+Situation: Explain the challenge (e.g., a system outage or performance degradation).
+Task: What was your responsibility?
+Action: Detail the steps you took (e.g., diagnostics, collaboration with team members, deployment of fixes).
+Result: Highlight the positive outcome (e.g., restored service, improved performance).
+Question 2: How do you prioritize tasks when managing multiple projects simultaneously?
+Answer:
+
+Use project management tools like JIRA to track tasks.
+Break down tasks into priority levels (e.g., critical vs. non-critical).
+Communicate with stakeholders to align priorities.
+Focus on tasks that have the highest impact on the project or team.
+Question 3: How do you handle working under pressure or tight deadlines?
+Answer:
+
+Stay organized: Break tasks into smaller, manageable pieces.
+Communicate proactively with the team to manage expectations.
+Use time management techniques like the Pomodoro technique to stay focused.
+If needed, ask for support from the team to meet deadlines.
+Question 4: Have you ever worked in a team where there was conflict? How did you handle it?
+Answer:
+
+Listen to both sides of the argument.
+Facilitate a calm discussion to understand the root of the conflict.
+Focus on finding a solution that aligns with the team’s goals.
+Ensure that after resolving the conflict, there is no lingering tension.
+Question 5: Why do you want to work as a backend developer at this company?
+Answer:
+
+Research the company’s mission and projects to tailor your answer.
+Mention any technologies they use that you are excited to work with.
+Highlight how your skills and experience align with the role’s requirements.
+Express interest in growth opportunities and contributing to impactful projects.
+💡 Did You Know?
+Backend interviews often test your ability to build and manage server-side systems efficiently.
+Candidates are commonly evaluated on APIs, databases, authentication, caching, and scalability.
+Understanding REST, SQL/NoSQL, concurrency, and system design helps you explain solutions clearly in interviews.
+
 A backend developer’s daily responsibilities typically include:
 
 Database Management: Handling CRUD operations (Create, Read, Update, Delete) and ensuring efficient database architecture.
