@@ -1,3 +1,402 @@
+[⬆] Общие вопросы:
+Что вы изучили вчера/на этой неделе?
+Что вас привлекает в программировании?
+С какой технической сложностью вы недавно столкнулись и как с ней справились?
+Какие методы для повышения производительности вы использовали при создании или обслуживании сайта?
+Можете ли вы описать некоторые методы SEO, которые вы использовали в последнее время?
+Можете ли вы объяснить общие принципы относительно фронтенд-безопасности или недавние проблемы, которые вы решили?
+Какие действия вы лично предприняли в недавних проектах для повышения удобства использования вашего кода?
+Расскажите о предпочитаемой среде разработки.
+С какими системами контроля версий вы знакомы?
+Можете ли вы описать порядок действий при создании новой веб-страницы?
+Если у вас есть 5 разных файлов со стилями, какой лучший способ интегрировать их в сайт?
+Можете ли вы описать разницу между прогрессивным улучшением и изящной деградацией?
+Как можно оптимизировать загрузку внешних ресурсов на странице?
+Сколько ресурсов браузер может одновременно загружать с одного домена?
+Какие есть исключения?
+Назовите три способа уменьшения времени загрузки страницы (воспринимаемого или реального).
+Если вы присоединились к проекту, где для форматирования используются табы, а вы привыкли использовать пробелы, как вы поступите?
+Опишите, как бы вы реализовали примитивное слайд-шоу.
+Если бы у вас была возможность освоить новую технологию в этом году, что бы это было?
+Объясните важность стандартов и комитетов по стандартам.
+Что такое FOUC (Flash Of Unstyled Content)? Как его избежать?
+Объясните, что такое ARIA и скринридеры, а также как сделать сайт доступным.
+Какие преимущества и недостатки у CSS и JavaScript анимаций?
+Что означает CORS и какую проблему решает?
+[⬆] Вопросы по HTML:
+Для чего нужен doctype?
+Как следует оформлять страницу, содержимое которой может быть на разных языках?
+На что необходимо обратить внимание при разработке мультиязычных сайтов?
+Для чего нужны атрибуты, начинающиеся с data-?
+Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
+Объясните разницу между cookie, sessionStorage и localStorage.
+Объясните разницу между <script>, <script async> и <script defer>.
+Почему хорошей практикой считается располагать <link> для подключения CSS между <head></head>, а <script> для подключения JS ставить перед </body>? Знаете ли вы исключения?
+Что такое прогрессивная отрисовка?
+Для чего используется атрибут srcset в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.
+Приходилось ли вам работать с языками HTML-шаблонизации?
+Объясните разницу в поведении между тегами <button> и <input type="button"> внутри формы?
+Объясните разницу между тегами <strong> и <b>?
+Приведи примеры использования тега <label>?
+Чем тег <a> отличается от тега <button> с точки зрения функциональности и использования?
+Ключевые выводы:
+• Собеседование фронтенд-разработчика охватывает JavaScript, CSS, HTML, сетевые протоколы и архитектурные паттерны
+• Интервьюеры часто просят сравнить технологии (let vs const, cookie vs localStorage, сброс vs нормализация CSS)
+• Помимо теории, важно уметь писать код: проверка типов, работа с DOM, асинхронность
+• Знание REST API, Event loop и методов оптимизации загрузки страницы критически важно для junior-позиции
+Но складывается впечатление, что работодатели с каждым годом придумывают больше заковыристых вопросов, чтобы поставить кандидата в тупик. Такие мы рассмотрим в том числе.
+[⬆] Вопросы по CSS:
+Что такое специфичность CSS-селекторов и как она работает?
+
+В чем разница между «сбросом» и «нормализацией» CSS? Что бы вы выбрали и почему?
+
+Объясните, что такое плавающие элементы (floats) и как они работают.
+
+Объясните, что такое z-index и как формируется контекст наложения.
+
+Объясните, что такое блочный контекст форматирования и как он работает.
+
+Какие вы знаете методы запрета обтекания (clearing) и в каких случаях они применяются?
+
+Как вы решаете стилевые проблемы, связанные с особенностями браузеров?
+
+Как вы обеспечиваете отображение страниц в браузерах с ограниченными возможностями?
+
+Какие приёмы/процессы вы при этом используете?
+Какими способами можно визуально скрыть элемент (оставив его доступным только для скринридера)?
+
+Использовали ли вы систему сеток, и если да, то какую вы предпочитаете?
+
+Приходилось ли вам использовать или реализовывать медиазапросы или вёрстку под мобильные устройства?
+
+Вы знакомы со стилизацией SVG?
+
+Можете ли вы привести пример свойства @media, отличного от screen?
+
+На что нужно обратить внимание при написании эффективного CSS?
+
+Какие преимущества/недостатки в использовании CSS препроцессоров?
+
+Опишите, что вам нравится и не нравится в CSS препроцессорах, которыми вы пользовались.
+Как вы реализуете макет, который использует нестандартные шрифты?
+
+Объясните, как браузер определяет, на какие элементы накладывать CSS стили?
+
+Объясните, что такое псевдоэлементы и для чего они нужны.
+
+Объясните своими словами, что такое блочная модель.
+
+Что делает * { box-sizing: border-box; }? В чем его преимущества?
+
+Что означает свойство display и можете ли вы привести несколько примеров его использования?
+
+В чем разница между строчным и блочно-строчным элементом?
+
+В чем разница между относительным, фиксированным, абсолютным и статически позиционированным элементом?
+
+Какими CSS-фреймворками вы пользовались? Что бы вы хотели в них изменить/улучшить?
+
+Пользовались ли вы Flexbox или Grid?
+
+Можете ли вы объяснить разницу между отзывчивым (responsive) сайтом и сайтом, сделанным по принципу mobile-first?
+
+Вы имеете опыт работы с ретиновой графикой? Если да, то какие методы вы использовали?
+
+В каком случае вы предпочтёте использовать translate() вместо абсолютного позиционирования и наоборот? И почему?
+
+Можете ли вы привести пример псевдокласса?
+
+Какие новые псевдоклассы появились за последние год-два?
+В чем отличие между em и rem? Как они рассчитываются?
+
+Какие проблемы появляются при попытке переопределить стили компонента их UI-библиотеки? Какие способы решения существуют?
+
+Что такое @layer и как это могло бы помочь решить проблему переопределения стилей?
+Объясните, что такое vh и vw?
+
+Какие проблемы возникают на мобильных устройствах при использовании vh? Как их можно решить?
+Что такое пользовательские css свойства?
+
+Как ограничить их область видимости?
+Какой цвет применится и почему?
+
+.red {
+  color: red;
+}
+.blue {
+  color: blue
+}
+<div class="blue red">Hello world</div>
+Как можно оптимизировать данный код? (Возможно несколько решений)
+main h1 {
+  color: red;
+}
+main p {
+  color: red;
+}
+main a {
+  color: red;
+}
+[⬆] Вопросы по JavaScript:
+Объясните делегирование событий.
+Объясните, как this работает в JavaScript.
+Расскажите, как работает прототипное наследование.
+Что вы думаете о AMD против CommonJS?
+Объясните, почему это не является IIFE: function foo(){ }();.
+Что необходимо изменить, чтобы это стало IIFE?
+В чём различие между переменными, значение которых: null, undefined и не объявлено?
+Как бы вы проверили их на каждое из этих значений?
+Что такое замыкание и как/для чего его используют?
+Можете ли вы описать основное различие между циклом forEach и циклом .map()? И в каких случаях каждый из них используется?
+Расскажите про другие популярные методы итерации массивов.
+В каких случаях обычно используются анонимные функции?
+Как вы организуете свой код? (module pattern, classical inheritance)
+В чем разница между host-объектами и нативными объектами?
+В чем разница между: function Person(){}, var person = Person(), и var person = new Person()?
+В чем разница между .call и .apply?
+Что делает и для чего нужна функция Function.prototype.bind?
+В чем разница между feature detection (определение возможностей браузера), feature inference (предположение возможностей) и анализом строки user-agent?
+Расскажите об Ajax как можно более подробно.
+Какие преимущества и недостатки в использовании Ajax?
+Объясните, как работает JSONP (и почему это не совсем AJAX).
+Вы когда-нибудь использовали шаблонизацию на JavaScript?
+Если да, то какие библиотеки вы использовали?
+Расскажите, что такое поднятие (hoisting).
+Объясните, что такое всплытие событий (event bubbling).
+В чём разница между «атрибутом» (attribute) и «свойством« (property)?
+Почему не следует расширять нативные JavaScript-объекты?
+В чём разница между событием document load и событием document DOMContentLoaded?
+В чём разница между == и ===?
+Объясните same-origin policy в контексте JavaScript.
+Сделайте так, чтобы этот код работал:
+duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+Почему тернарный оператор так называется?
+Что делает строчка "use strict";? Какие достоинства и недостатки от ее использования?
+Напишите цикл, который перебирает числа до 100, возвращая “fizz” на числа кратные 3, “buzz” на числа кратные 5 и “fizzbuzz” на числа кратные 3 и 5
+Почему считается хорошим тоном оставить глобальную область видимости (global scope) в нетронутом состоянии?
+Для чего используют событие load? Есть ли у этого события недостатки? Знаете ли вы какие-либо альтернативы, и в каких случаях бы стали их использовать?
+Расскажите, что такое одностраничное приложение, и как сделать его SEO-оптимизированным.
+Насколько вы опытны в работе с промисами (promises) и/или их полифилами?
+Какие преимущества и недостатки при использовании промисов вместо колбэков (callbacks)?
+Каковы преимущества и недостатки написания JavaScript-кода на языке, который компилируется в JavaScript?
+Какие инструменты и методы вы используете при отладке кода?
+Какие языковые конструкции вы используете для итерации по свойствам объекта и элементам массива?
+Объясните разницу между изменяемыми (mutable) и неизменяемыми (immutable) объектами.
+Приведите пример неизменяемого объекта в JavaScript.
+Какие преимущества и недостатки у неизменяемости?
+Как вы можете достигнуть неизменяемости в вашем коде?
+Объясните разницу между синхронными и асинхронными функциями.
+Что такое цикл событий (event loop)?
+В чём разница между стеком вызовов (call stack) и очередью событий (task queue)?
+Объясните разницу при использовании foo в function foo() {} и var foo = function() {}
+В чём различие между переменными, созданными при помощи let, var и const?
+Можем ли мы менять свойства объекта объявленного через const? Как мы можем изменить это поведение?
+В чём разница между классом в ES6 и функцией-конструктором в ES5?
+Можете ли вы привести пример использования стрелочных функции =>? Чем они отличаются от других функций?
+Дайте определение функции высшего порядка.
+Можете ли вы привести пример деструктуризации объекта или массива?
+Шаблонные строки в ES6 намного упрощают создание строк, можете ли вы привести пример их использования?
+Можете ли вы привести пример каррированной функции (curry function) и в чём их преимущество?
+В чём преимущества использования spread оператора и чем он отличается от rest оператора?
+Каким образом можно обмениваться кодом между файлами?
+Для чего используются статические члены класса?
+Объясните разницу между event.target и event.currentTarget?
+Объясните разницу между event.preventDefault() и event.stopPropagation()?
+[⬆] Вопросы по тестированию:
+Какие преимущества/недостатки в тестировании собственного кода?
+Какие инструменты вы будете использовать для тестирования работоспособности своего кода?
+В чём различие между юнит-тестами и функциональными/интеграционными тестами?
+Для чего предназначены линтеры (code style linting tool)?
+[⬆] Вопросы по производительности:
+Какие инструменты вы используете, чтобы найти недостатки в производительности вашего кода?
+Какие вы знаете способы улучшения производительности при скроллинге на вебсайте?
+Объясните разницу между раскладкой (layout), painting и композитингом (compositing).
+[⬆] Вопросы по сетям:
+Почему лучше загружать ресурсы для сайта с нескольких доменов?
+Опишите весь процесс, начиная с ввода адреса сайта в адресную строку до окончания его загрузки на экране.
+В чём различия между Long-Polling, Websockets и Server-Sent Events?
+Опишите следующие заголовки HTTP-запросов и ответов:
+Разницу между Expires, Date, Age и If-Modified-…
+Do Not Track
+Cache-Control
+Transfer-Encoding
+ETag
+X-Frame-Options
+Что такое HTTP-методы? Перечислите все HTTP-методы, которые вы знаете, и объясните их.
+[⬆] Примеры кода на JavaScript
+Вопрос: Чему равно foo?
+
+var foo = 10 + '20';
+Вопрос: Что выводит код ниже?
+
+console.log(0.1 + 0.2 == 0.3);
+Вопрос: Как сделать, чтобы это выражение работало?
+
+add(2, 5); // 7
+add(2)(5); // 7
+Вопрос: Какое значение возвращает данное выражение?
+
+"i'm a lasagna hog".split("").reverse().join("");
+Вопрос: Чему равно window.foo?
+
+( window.foo || ( window.foo = "bar" ) );
+Вопрос: Что покажут эти два alert?
+
+var foo = "Hello";
+(function() {
+  var bar = " World";
+  alert(foo + bar);
+})();
+alert(foo + bar);
+Вопрос: Чему равно foo.length?
+
+var foo = [];
+foo.push(1);
+foo.push(2);
+Вопрос: Чему равно foo.x?
+
+var foo = {n: 1};
+var bar = foo;
+foo.x = foo = {n: 2};
+Вопрос: Что выводит код ниже?
+
+console.log('one');
+setTimeout(function() {
+  console.log('two');
+}, 0);
+console.log('three');
+Вопрос: В чем разница между этими четырьмя промисами (promises)?
+
+doSomething().then(function () {
+  return doSomethingElse();
+});
+
+doSomething().then(function () {
+  doSomethingElse();
+});
+
+doSomething().then(doSomethingElse());
+
+doSomething().then(doSomethingElse);
+[⬆] «Светская беседа»:
+Самое крутое, что вы когда-либо делали и чем гордитесь?
+Что вы больше всего любите в ваших инструментах разработки?
+Кто из фронтенд-сообщества вас вдохновляет?
+У вас есть какие-нибудь личные проекты? Какого рода?
+Какая ваша любимая “фишка” Internet Explorer?
+Какой кофе вы предпочитаете?
+
+1) Какова роль веб-разработчика? Какие наиболее важные аспекты работы и почему? Роль веб-разработчика будет варьироваться в зависимости от конкретного описания должности. Чаще всего обязанности следующие:
+
+– Проектирование, разработка, программирование, тестирование, обновление и отладка веб-приложений и сайтов.
+– Сотрудничество с дизайнерами, другими разработчиками, UX-специалистами, командами продаж и маркетинга.
+– Поддержка обслуживания сайтов, приложений и других веб-продуктов.
+
+Это самые общие задачи веб-разработки. Как мы уже писали выше, перед собеседованием изучи вакансию, чтобы понимать, какие обязанности требует конкретный работодатель.
+
+2) С какими языками программирования вы знакомы? Здесь HR хочет убедиться, что у тебя есть опыт работы с широким спектром различных языков программирования. Это про насмотренность и знания о разработке приложений и сайтов, которые имеются в твоём портфолио.
+
+3) Какой ваш любимый сайт? Почему? Подготовь ответы заранее. Чем подробнее представишь анализ сайта, тем лучше. Вопрос показывает осведомлённость о трендах веб-разработки.
+
+4) Как вы следите за изменениями в отрасли? Здесь нужно ссылаться на чтение блогов о веб-разработке, можно рассказать о вебинарах, семинарах и прочих образовательных проектах, которые получилось посетить.
+
+FAQ
+Общие вопросы для интервью по веб-разработке:
+– Определите метатеги HTML.
+– Какая разница между div и span?
+– Что такое ClickJacking?
+– В чём разница между HTML и XHTML?
+– В чём разница между ES5 и ES6?
+– Что такое React JS?
+– Что такое stringify?
+– Укажите все элементы модели CSS Box.
+– В чём разница между MySQL и MongoDB?
+– Укажите разницу между == и ===?
+– Для чего используется npm?
+– Что такое webpack?
+– Чем отличаются JavaScript и jQuery?
+– Что такое strict mode?
+– В чём разница между PUT и POST?
+
+Лучше всего самостоятельно подготовить ответы на эти вопросы. Так, пока ищешь ответы, дополнительно изучаешь необходимую информацию. 
+Важно не просто заучить ответы на вопросы, а понять их и уметь объяснить то или иное умозаключение.
+
+На собеседовании могут спросить про основы HTML, CSS, JavaScript, адаптивность, асинхронность, работу с API, основы React или Vue, а также про Git, архитектуру и взаимодействие с backend.
+
+Какие вопросы по JavaScript нужно обязательно знать frontend‑разработчику на собеседовании?
+
+Обязательно повтори: типы данных, замыкания, hoisting, this, async/await, промисы, работа с DOM, обработка событий и методы массивов (map, filter, reduce).
+
+Какие темы по HTML и CSS спрашивают на собеседовании frontend‑разработчика?
+
+Часто задают вопросы про семантику HTML, отличие id и class, блочную модель, flex, grid, адаптивность, медиа-запросы, позиционирование элементов и специфику каскада.
+
+Какие вопросы задают по React на собеседовании начинающему frontend‑разработчику?
+
+Спрашивают про компоненты, пропсы, состояние (useState, useEffect), жизненный цикл, ключи в списках, роутинг и базовые паттерны. Также важно понимать разницу между классовыми и функциональными компонентами.
+
+Как подготовиться к собеседованию frontend‑разработчику без большого опыта?
+
+Повтори теорию, решай задачи на Codewars, сделай несколько pet-проектов, подготовь краткое самопрезентационное вступление и изучи типовые вопросы по HTML, CSS, JS, Git и React. Желательно — всё это показать в GitHub-портфолио.
+
+Как изменить цвет в svg файле? Назовите хотя бы один способ.
+Как можно протестировать API-сервис?
+Какие проблемы могут возникнуть при использовании атрибута «defer» для подключения скриптов?
+Как можно реализовать адаптивное изображение, чтобы снизить нагрузку на сервер и ускорить загрузку страницы?
+В каких случаях используются анонимные функции?
+Что такое специфичность CSS-селекторов и как она работает?
+Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
+В чём различия между Long-Polling, Websockets и Server-Sent Events?
+Какие преимущества/недостатки в использовании CSS препроцессоров?
+Напишите цикл, который перебирает числа до 100, возвращая «Типичный» на числа кратные 3, «программист» на числа кратные 5 и «Типичный программист» на числа кратные 3 и 5.
+В чём разница между == и ===?
+Использовали ли вы систему сеток, и если да, то какую вы предпочитаете?
+Для чего нужен doctype?
+Опишите, как бы вы реализовали самый обычный слайдер.
+Какие преимущества и недостатки у CSS и JavaScript анимаций?
+What is HTML, and how is it used in front-end development?
+Can you explain what CSS is and why it's important in web design?
+What is JavaScript, and why is it used in web development?
+What is the difference between inline, internal, and external CSS?
+How would you explain the difference between margin and padding in CSS?
+How would you define responsive web design, and why is it important?
+What are some well-known frontend frameworks or libraries, and how do they compare in use cases?
+Can you explain the CSS box model and its components, and how it affects layout and design?
+What strategies do you use for optimizing website performance, and what tools do you use for performance evaluation?
+What is your approach to debugging code, and what tools or techniques do you use?
+Frontend Developer Interview Questions & Answers: Intermediate Level
+What is the difference between null and undefined in JavaScript?
+Explain event delegation in JavaScript.
+What are arrow functions, and how are they different from traditional functions?
+What is the difference between var, let, and const in JavaScript?
+What is the DOM and how do you manipulate it using JavaScript?
+Explain the concept of Promises in JavaScript.
+How does React differ from Vanilla JS?
+What is the Virtual DOM?
+How do you center a div both vertically and horizontally using CSS?
+How do you pass data between components in React?
+Frontend Developer Interview Questions & Answers: Advanced Level
+What are closures in JavaScript?
+What are debouncing and throttling in JavaScript?
+How do you optimize the performance of a React app?
+What is tree shaking in modern JavaScript?
+What is the difference between server-side rendering (SSR) and client-side rendering (CSR)?
+What is a Service Worker?
+How does code splitting work in Webpack?
+Write a function to check if a string is a palindrome.
+What are hooks in React? Name a few and explain.
+What is hydration in React?
+Frontend Developer Interview Questions & Answers - Scenario Based
+Your webpage takes 6–8 seconds to load on mobile devices. How would you investigate and fix the issue?
+A user reports that the UI looks broken only on older browsers. How would you approach this issue?
+Your React application freezes temporarily when navigating between pages. What steps would you take to diagnose the performance issue?
+You’re asked to design a form with 20+ fields, validations, and conditional visibility. How do you organize and manage it efficiently?
+A button works fine locally but doesn’t work on the production build. What debugging steps do you take?
+You must implement dark mode and allow it to switch instantly without reloading the page. How would you structure it?
+You see layout shifting as images load on the page. How do you prevent cumulative layout shift (CLS)?
+Your app needs to support offline mode. How do you make it work smoothly?
+You need to secure an API call in a frontend-only application. What would you do, knowing frontend code can’t hide secrets?
+A feature works on low-speed 3G but fails on high-speed broadband. What could cause this paradox?
 С какими системами контроля версий вы знакомы
 Какими способами можно визуально скрыть элемент?
 Сколько ресурсов браузер может одновременно загружать с одного домена?
@@ -7434,55 +7833,6 @@ The 3 equal signs mean "equality without type coercion". Using the triple equals
 1 === "1" // false, because they are of a different type
 
 
-
-********************************************
-	********************************************
-	********************************************
-Frontend Developer Interview Questions & Answers: Fresher Level
-What is HTML, and how is it used in front-end development?
-Can you explain what CSS is and why it's important in web design?
-What is JavaScript, and why is it used in web development?
-What is the difference between inline, internal, and external CSS?
-How would you explain the difference between margin and padding in CSS?
-How would you define responsive web design, and why is it important?
-What are some well-known frontend frameworks or libraries, and how do they compare in use cases?
-Can you explain the CSS box model and its components, and how it affects layout and design?
-What strategies do you use for optimizing website performance, and what tools do you use for performance evaluation?
-What is your approach to debugging code, and what tools or techniques do you use?
-Frontend Developer Interview Questions & Answers: Intermediate Level
-What is the difference between null and undefined in JavaScript?
-Explain event delegation in JavaScript.
-What are arrow functions, and how are they different from traditional functions?
-What is the difference between var, let, and const in JavaScript?
-What is the DOM and how do you manipulate it using JavaScript?
-Explain the concept of Promises in JavaScript.
-How does React differ from Vanilla JS?
-What is the Virtual DOM?
-How do you center a div both vertically and horizontally using CSS?
-How do you pass data between components in React?
-Frontend Developer Interview Questions & Answers: Advanced Level
-What are closures in JavaScript?
-What are debouncing and throttling in JavaScript?
-How do you optimize the performance of a React app?
-What is tree shaking in modern JavaScript?
-What is the difference between server-side rendering (SSR) and client-side rendering (CSR)?
-What is a Service Worker?
-How does code splitting work in Webpack?
-Write a function to check if a string is a palindrome.
-What are hooks in React? Name a few and explain.
-What is hydration in React?
-Frontend Developer Interview Questions & Answers - Scenario Based
-Your webpage takes 6–8 seconds to load on mobile devices. How would you investigate and fix the issue?
-A user reports that the UI looks broken only on older browsers. How would you approach this issue?
-Your React application freezes temporarily when navigating between pages. What steps would you take to diagnose the performance issue?
-You’re asked to design a form with 20+ fields, validations, and conditional visibility. How do you organize and manage it efficiently?
-A button works fine locally but doesn’t work on the production build. What debugging steps do you take?
-You must implement dark mode and allow it to switch instantly without reloading the page. How would you structure it?
-You see layout shifting as images load on the page. How do you prevent cumulative layout shift (CLS)?
-Your app needs to support offline mode. How do you make it work smoothly?
-You need to secure an API call in a frontend-only application. What would you do, knowing frontend code can’t hide secrets?
-A feature works on low-speed 3G but fails on high-speed broadband. What could cause this paradox?
-Conclusion
 FAQs
 How should I prepare for a frontend developer interview?
 What are some common challenges faced during frontend interviews, and how can I overcome them?
@@ -7531,6 +7881,7 @@ External CSS: Linked through a .css file. Best for maintainability, reuse, and l
 
 html
 <link rel="stylesheet" href="styles.css">
+
 MDN
 5. How would you explain the difference between margin and padding in CSS?
 Margin is the space outside the border of an element, while padding is the space between an element’s border and its content. Visually, the margin creates space around elements, and padding increases the inner space of an element without affecting its size.
@@ -7549,14 +7900,8 @@ These components determine the space taken up by an element on a page and how it
 9. What strategies do you use for optimizing website performance, and what tools do you use for performance evaluation?
 Optimizing website performance can involve minifying CSS and JavaScript files, optimizing images, implementing lazy loading, etc. Tools like Google PageSpeed Insights, Lighthouse, and WebPageTest.org are commonly used to evaluate and provide insights into a website’s performance, offering actionable recommendations for improvement.
 
-Read About Optimizing Website Performance: 9 Strategies for Faster Loading User Interfaces
-
 10. What is your approach to debugging code, and what tools or techniques do you use?
 Debugging involves systematically diagnosing and fixing coding errors. Common techniques include using console.log in JavaScript to output values to the console, employing breakpoints in developer tools to pause execution and inspect variables, and using linting tools to identify syntax errors and potential bugs.
-
-Frontend Developer Interview Questions & Answers: Intermediate Level
-Frontend Developer Interview Questions & Answers: Intermediate Level
-As you move beyond the basics, interviews begin to test your hands-on experience, your understanding of browser behavior, and how well you apply JavaScript, React, and CSS concepts in real-world scenarios. 
 
 This section covers questions that gauge your ability to write efficient code, manage UI state, debug problems, and work with asynchronous logic—all essential skills for mid-level developers.
 
@@ -7760,12 +8105,6 @@ State Management Tools (Redux, Zustand, Jotai):  For larger apps with complex da
 
 These intermediate questions help bridge the gap between beginner-level concepts and the more advanced architectural and performance optimization topics.
 
-Frontend Developer Interview Questions & Answers: Advanced Level
-Frontend Developer Interview Questions & Answers: Advanced Level
-At the advanced level, you’re expected to demonstrate deep technical insight, architectural thinking, and the ability to optimize and scale applications. 
-
-This section includes questions on performance tuning, design patterns, build tools, and advanced JavaScript concepts like closures, service workers, and React internals. 
-
 21. What are closures in JavaScript?
 A closure is created when a function remembers the variables from its outer scope, even after the outer function has finished executing.
 
@@ -7950,8 +8289,8 @@ At the advanced level, it’s not just about solving problems; it’s about buil
 
 If you want to learn everything related to full-stack development, consider enrolling in HCL GUVI’s IIT-M Pravartak certified Full Stack Development Course that helps you learn it from scratch with mentor support and provides you with hands-on experience by giving unlimited access to Programming Practice Platforms with 1500+ Problem Statements
 
-Frontend Developer Interview Questions & Answers – Scenario Based
-In modern frontend interviews, scenario-driven questions have become far more valuable than traditional theoretical ones. They reveal how a developer thinks, how they solve real-world problems, and how they approach performance, accessibility, debugging, and user experience challenges. Instead of memorizing definitions, candidates must demonstrate practical decision-making which is the exact skill set needed to build, maintain, and scale today’s complex web applications. The following scenario-based questions help assess not just knowledge, but problem-solving, architecture awareness, and the ability to handle unpredictable situations that arise in real frontend projects.
+
+Frontend Developer Based
 
 1. Your webpage takes 6–8 seconds to load on mobile devices. How would you investigate and fix the issue?
 Start by using Lighthouse or Chrome DevTools to identify bottlenecks such as heavy images, render-blocking scripts, or large bundle sizes. Lazy-load non-critical assets and compress images. Split JavaScript bundles and defer scripts that aren’t needed on initial load. Optimize fonts and reduce unnecessary network requests.
@@ -7984,140 +8323,6 @@ Never store secrets on the frontend. Move sensitive operations to a backend or s
 Race conditions: fast networks may cause multiple rapid requests, breaking assumptions in the logic. Missing debounce/throttle on inputs, or relying on response order, could cause unpredictable behavior. Inspect asynchronous flows and enforce correct ordering.
 
 
-Ответы на вопросы с собеседования на Senior Frontend Developer
-https://t.me/devjoraFebruary 21, 2025
-Важно! Как работать с материалом
-
-Для тех, кто смотрит видео - материалы идут последовательно задаваемым вопросам.
-
-Чтобы извлечь максимальную пользу, рекомендую разбираться в следующем порядке:
-
-Прослушать вопрос
-Попытаться ответить самостоятельно
-Заглянуть в материалы и изучить тему
-Снова прослушать вопрос и ответить на него
-Также подписывайтесь на https://t.me/devjora - там много важной информации для построения карьеры frontend-разработчика.
-
-HTML и CSS
-Семантика
-
-Отличный гайд от Доки
-Доклад Артёма Арутюняна. Чтобы понимать семантику в широком смысле, не про HTML и CSS. Контент сложный, но годный
-Доступность
-
-Теория на Доке
-Практические советы от Дмитрия Батогова
-Инкапсуляция стилей
-
-Здесь почитать о проблеме
-Видео от Евгения Паромова о решениях
-Не забыть про shadow DOM
-Сеть и интернет
-Пользователь вводит URL и нажимает кнопку
-
-Про DNS и общую схему глобально
-Здесь можно посмотреть про handshake
-Очень мощный доклад про рендренинг страницы в браузере от Сергея UfoCoder’а
-HTTP
-
-Хороший справочник по видам HTTP запросов
-Парадигмы программирования
-Общая информация
-
-Статья про парадигмы программирования. Советую прочитать пример в конце статьи от Саши Беспоясова. Чуть оффтопа, порекомендую также сам блог Саши и его Solid . Крайне крутой автор, советую.
-ООП
-
-Книга «Погружение в паттерны проектирования» от Refactoring Guru. Очень мощный материал, для начала прочитать Введение в ООП и Принципы проектирования, короче то что до самих паттернов. Если прочитать эти две главы осознанно и постараться применить — даст нереальный буст к скилам.
-Функционально программирование
-
-Общие понятия из функционального программирования 
-Сильная книга про ФП в JS
-Реактивное программирование
-
-Общее знакомство с РП
-Простое объяснение от Айти Синяка, то что с redux saga можно скипнуть
-Жемчужина - статья Артема Арутюняна о РП. Полезно следить за докладами Артема, он часто говорит о реактивности и ее паттернах, его блог(реально не реклама): @artalog
-Front-End Reactive Architectures by Luca Mezzalira (Apress, 2018). Книгу сложно найти, но можно купить.
-JavaScript
-Типы
-
-Статья про обертки для примитивных типов
-Структуры данных
-
-Общее про Map и Set
-Общее про WeakMap и WeakSet
-Про сборщик мусора 
-Про O-нотацию лучше всего в «Грокаем алгоритмы». Советую прочитать всю первую главу, но можно перейти сразу к 29 странице. Также из этой книги прочитать главу два, обратить внимание как в памяти хранится массив и связанный список Рекомендую выполнять упражнения из обоих глав. 
-Про O-нотацию для встроенных сущностей js
-Упражнения из книги «Выразительный JavaScript». Задача «Список»
-Асинхронность
-
-Очень большая тема, начать можно с понимания слова «асинхронность» - не знаю что подойдет лучше, стоит просто нагуглить это понятие.
-
-Если уже знакомы промисы, Event Loop и т.п., то просто сюда. На данный момент это лучший материал по соотношению время/польза.
-
-Если тема новая, стоит изучить:
-
-Легендарный видос про Event Loop, обязателен для всех frontend разрабов
- Хорошее видео от Ulbi. Закрепит базу 
-Лекция про node.js, смотреть первые 10 мин про nginx, дальше опцианально(но если интересен node, то это лучшая лекция). Доклад даст понимание, что Event Loop это скорее паттерн, а не выдумка браузера и тем более JS. На этом этапе уже стоит понимать, что JS вообще не знает про цикл событий. 
-Практика асинхронности: Promise, async/await
-Лекция от Григория Бизюкина. Короткая лекция о всех аспектах асинхронности в JS. Очень полезно перед собеседованиями
-Курс от Тимура Шемсединова про асинхронность. Глубокий и сложный материал, хотя бы немного стоит ознакомиться
-Библиотеки и фреймворки
-Глобально про компонентный подход
-Про преимущества использования фреймворков и библиотек в видео от Евгения Паромова о главном достоинстве React
-О подходе «данные вниз, события наверх» из документации lit.js(но можно использовать с любой либой/фреймворком)
-Фреймворк и библиотека: супер простое объяснение во втором абзаце. Неплохой видос от АйтиБороды(да, когда-то он делал годный контент) 
-Про реактивность React из статьи Артура Арутюняна
-SPA, SSR, SSG
-Статья про SSR от Дена Абрамова
-Видео от Айти Синяка
-Сравнение CSR, SSR и SSG 
-Islands Architecture
-Islands Architecture от Astro
-TypeScript
-Общее про типизацию (статическая/динамическая, строгая/не строгая и т.п.)
-Про TS в разрезе тестирования и безопасности кода
-Оригинальная статья от Kent C. Dodds’a
-Про перегрузку функций лучше всего в документации TS
-Про полиморфизм и LSP лучше всего прочитать в этой книжке(там очень понятно)
-Про компиляцию enum
-Про параметрический полиморфизм и сравнение с ad-hoc на примере Java
-По TS в целом еще хочется порекомендовать: 
-
-Школа по TypeScript от Ильи Климова. Можно нагуглить материалы, или сходить к нему на поток(я пойду, когда откроется) 
-Также супер ресурс для практики
-Список задач для тренировки
-Сборка
-Про source map
-System Design
-Про физические носители информации. Для хардкорных, я когда-то изучал память по этим материалам
-Общий видос про архитектуру web приложений
-Что такое S3
-О брокерах сообщений
-Простыми словами про балансировщик нагрузки
-Простое объяснение Docker
-Простое объяснение Kubernetes
-Базовые знания про Redis
-Про краулеры на примере реализации
-Для хардкорных книги + практика по книгам
-
-Проходим собеседование на разработчика: 20 вопросов, которые вам могут задать на интервью
-Хотите успешно пройти собеседование на должность веб-разработчика или только готовитесь к интервью? Мы знаем, как вам помочь! Ловите нашу подборку из 20 вопросов для собеседования с разработчиком. Мы специально собрали их для проверки ваших знаний и опыта в разнообразных аспектах веб-разработки. Эти вопросы, от базовых до продвинутых, помогут вам подготовиться к сложным ситуациям собеседования при приеме на работу. 
-
-icon strelkaicons
-узнай больше на курсе
-DevOps-инженер с нуля
-Стань DevOps-инженером с нуля и научись использовать инструменты и методы DevOps
-Подробнее о курсе
-Полный курс по сетевым технологиям
-Полный курс по сетевым технологиям от Мерион Нетворкс - учим с нуля сетевых инженеров и DevOPS специалистов
-Подробнее о курсе
-Python программист с нуля
-Стань разработчиком на одном из самых популярных языков программирования - Python
-Подробнее о курсе
-Предлагаем начать с основ, которые часто встречаются на интервью. Независимо от того, являетесь ли вы сениором или джуном, эти вопросы могут быть полезными для проверки вашего понимания фундаментальных принципов веб-разработки. В статье мы будем указывать как английские термины, так и их аналоги на русском.  
 
 1. В чем разница между клиентским (client-side) и серверным (server-side) программированием?
 Основное отличие заключается в месте исполнения. Клиентская разработка предполагает написание кода, который запускается в браузере пользователя и отвечает за взаимодействие с пользовательским интерфейсом. 
@@ -8235,7 +8440,8 @@ Server push — это функция в HTTP/2, которая позволяе
 • Знание REST API, Event loop и методов оптимизации загрузки страницы критически важно для junior-позиции
 Но складывается впечатление, что работодатели с каждым годом придумывают больше заковыристых вопросов, чтобы поставить кандидата в тупик. Такие мы рассмотрим в том числе.
 
-Держите популярные вопросы с frontend интервью.
+
+Популярные вопросы с frontend интервью.
 
 1. Разница между let, var и const
 let, var и const — это ключевые слова, используемые в JavaScript для объявления переменных.
@@ -8351,7 +8557,6 @@ SEO-оптимизация для каждого языка. Для каждой
 
     https://tproger.ru
     
-    
 
 Подробнее о мультиязычной настройке Sitemap можно почитать в документации Google.
 
@@ -8441,7 +8646,6 @@ body {
 Клиент отправляет серверу сообщение ACK с номером подтверждения, который равен начальному номеру сервера +1.
 Проблема Triple Handshake возникает, когда злоумышленник нарушает правильный порядок шагов рукопожатия, вставляя свой сервер между клиентом и настоящим сервером. В этом случае злоумышленник может получить доступ к конфиденциальной информации, передаваемой между клиентом и сервером.
 
-
 Чтобы избежать проблемы Triple Handshake, необходимо использовать проверенные и безопасные протоколы SSL/TLS и устанавливать соединение только с доверенными серверами.
 
 12. Что такое NaN?
@@ -8516,34 +8720,7 @@ greet.apply(null, ['Jane', 25]);
 
 В обоих случаях мы вызываем функцию greet() с this равным null. В первом случае мы передаем два аргумента в функцию через запятую, а во втором случае мы передаем массив из двух аргументов в функцию.
 
-Понравился такой формат? Держите ещё 15 интересных вопросов к собеседованию фронтенд. Проверьте себя: пишите свои ответы в комментариях.
 
-Как изменить цвет в svg файле? Назовите хотя бы один способ.
-Как можно протестировать API-сервис?
-Какие проблемы могут возникнуть при использовании атрибута «defer» для подключения скриптов?
-Как можно реализовать адаптивное изображение, чтобы снизить нагрузку на сервер и ускорить загрузку страницы?
-В каких случаях используются анонимные функции?
-Что такое специфичность CSS-селекторов и как она работает?
-Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
-В чём различия между Long-Polling, Websockets и Server-Sent Events?
-Какие преимущества/недостатки в использовании CSS препроцессоров?
-Напишите цикл, который перебирает числа до 100, возвращая «Типичный» на числа кратные 3, «программист» на числа кратные 5 и «Типичный программист» на числа кратные 3 и 5.
-В чём разница между == и ===?
-Использовали ли вы систему сеток, и если да, то какую вы предпочитаете?
-Для чего нужен doctype?
-Опишите, как бы вы реализовали самый обычный слайдер.
-Какие преимущества и недостатки у CSS и JavaScript анимаций?
-
-Вопросы на собеседовании Frontend-разработчику
-Frontend-разработка считается одной из самых популярных областей для новичков в программировании. И на собеседовании спрашивают самые разные вопросы, порой — по самым неожиданным темам. К чему готовиться? Рассказали в статье
-
-Время чтения: 3 минуты
-
-Редакция Kata Academy
-
-Редакция Kata Academy
-
-Редакция Kata Academy
 Frontend-программисты используют различные технологии для работы. Важно знать, за что отвечает каждая из них:
 
 – HTML отображает содержимое страницы: кнопки, ссылки, заголовки, абзацы и списки. Это строительный блок сайтов, он используется для маркировки контента.
@@ -8557,390 +8734,13 @@ Frontend-программисты используют различные тех
 – Навыки тестирования и отладки. В любом коде могут быть ошибки, которые нажо исправить. Отладка простыми словами — найти эти баги и мочь их исправить.
 
 – Контроль версий. Способ отслеживания и модификации кода проекта — это контроль версий. Git считается наиболее популярным программным обеспечением, которое используется для этих целей. Ты можешь использовать Git, чтобы вернуться к более ранней версии кода и не переписывать всё вручную.
-Как устроиться на работу Frontend-разработчиком?Читайте также
-Вопросы интервью для Junior Frontend developer
-Чтобы проверить твои знания, работодатели могут задавать вопросы о HTML, CSS, JavaScript, SQL, jQuery и других инструментах. Могут спросить о прошлом месте работы, мягких навыках, рабочих процессах и т.д. Разберём, как лучше ответить на подобные вопросы.
 
-1) Какова роль веб-разработчика? Какие наиболее важные аспекты работы и почему? Роль веб-разработчика будет варьироваться в зависимости от конкретного описания должности. Чаще всего обязанности следующие:
 
-– Проектирование, разработка, программирование, тестирование, обновление и отладка веб-приложений и сайтов.
-– Сотрудничество с дизайнерами, другими разработчиками, UX-специалистами, командами продаж и маркетинга.
-– Поддержка обслуживания сайтов, приложений и других веб-продуктов.
-
-Это самые общие задачи веб-разработки. Как мы уже писали выше, перед собеседованием изучи вакансию, чтобы понимать, какие обязанности требует конкретный работодатель.
-
-2) С какими языками программирования вы знакомы? Здесь HR хочет убедиться, что у тебя есть опыт работы с широким спектром различных языков программирования. Это про насмотренность и знания о разработке приложений и сайтов, которые имеются в твоём портфолио.
-
-3) Какой ваш любимый сайт? Почему? Подготовь ответы заранее. Чем подробнее представишь анализ сайта, тем лучше. Вопрос показывает осведомлённость о трендах веб-разработки.
-
-4) Как вы следите за изменениями в отрасли? Здесь нужно ссылаться на чтение блогов о веб-разработке, можно рассказать о вебинарах, семинарах и прочих образовательных проектах, которые получилось посетить.
-Скачивай чек-лист «Как выйти на доход 150к» с подробным планом и сделай свой первый шаг к доходу мечты.
-Скачать! 
-Общие вопросы для интервью по веб-разработке:
-– Определите метатеги HTML.
-– Какая разница между div и span?
-– Что такое ClickJacking?
-– В чём разница между HTML и XHTML?
-– В чём разница между ES5 и ES6?
-– Что такое React JS?
-– Что такое stringify?
-– Укажите все элементы модели CSS Box.
-– В чём разница между MySQL и MongoDB?
-– Укажите разницу между == и ===?
-– Для чего используется npm?
-– Что такое webpack?
-– Чем отличаются JavaScript и jQuery?
-– Что такое strict mode?
-– В чём разница между PUT и POST?
-
-Лучше всего самостоятельно подготовить ответы на эти вопросы. Так, пока ищешь ответы, дополнительно изучаешь необходимую информацию. Важно не просто заучить ответы на вопросы, а понять их и уметь объяснить то или иное умозаключение.
-
-Кстати, начать свой путь в IT ты можешь прямо сейчас в Kata. Понятные материалы и поддержка опытных менторов. Переходи по ссылке, чтобы узнать подробнее!
-Обучение с личным ментором, поддержкой
-при поиске работы и оплатой на выбор: сразу или после трудоустройства
-Узнать, как устроено обучение и трудоустройство
-Frontend — понятный вход
-в IT с поддержкой до оффера
-FAQ
-Какие вопросы чаще всего задают frontend‑разработчику на собеседовании в 2025 году?
-
-На собеседовании могут спросить про основы HTML, CSS, JavaScript, адаптивность, асинхронность, работу с API, основы React или Vue, а также про Git, архитектуру и взаимодействие с backend.
-
-Какие вопросы по JavaScript нужно обязательно знать frontend‑разработчику на собеседовании?
-
-Обязательно повтори: типы данных, замыкания, hoisting, this, async/await, промисы, работа с DOM, обработка событий и методы массивов (map, filter, reduce).
-
-Какие темы по HTML и CSS спрашивают на собеседовании frontend‑разработчика?
-
-Часто задают вопросы про семантику HTML, отличие id и class, блочную модель, flex, grid, адаптивность, медиа-запросы, позиционирование элементов и специфику каскада.
-
-Какие вопросы задают по React на собеседовании начинающему frontend‑разработчику?
-
-Спрашивают про компоненты, пропсы, состояние (useState, useEffect), жизненный цикл, ключи в списках, роутинг и базовые паттерны. Также важно понимать разницу между классовыми и функциональными компонентами.
-
-Как подготовиться к собеседованию frontend‑разработчику без большого опыта?
-
-Повтори теорию, решай задачи на Codewars, сделай несколько pet-проектов, подготовь краткое самопрезентационное вступление и изучи типовые вопросы по HTML, CSS, JS, Git и React. Желательно — всё это показать в GitHub-портфолио.
-
-Вопросы кандидату на должность front-end разработчика
-
-Замечание: Этот репозиторий содержит подборку вопросов, которые могут быть использованы на собеседованиях на должность фронтенд-разработчика. Здесь предлагаются лишь идеи, не нужно задавать все вопросы сразу (иначе в один час точно не уложитесь).
-
-Также имейте в виду, что многие вопросы не требуют однозначного короткого ответа, а лишь помогают завести беседу на ту или иную тему (предоставляя кандидату возможность показать себя во всей красе).
-
-Содержание
-Авторы
-Общие вопросы
-Вопросы по HTML
-Вопросы по CSS
-Вопросы по JavaScript
-Вопросы по тестированию
-Вопросы по производительности
-Вопросы по сетям
-Примеры кода на JavaScript
-“Светская беседа”
-[⬆] Авторы
-Этот проект был запущен в 2009 году в сотрудничестве с @paul_irish @bentruyman @cowboy @ajpiano @SlexAxton @boazsender @miketaylr @vladikoff @gf3 @jon_neal @sambreed и @iansym.
-
-В настоящее время этот проект поддерживают:
-
-roblarsen
-vvscode
-С тех пор он был активным благодаря этим замечательным людям.
-
-[⬆] Общие вопросы:
-Что вы изучили вчера/на этой неделе?
-Что вас привлекает в программировании?
-С какой технической сложностью вы недавно столкнулись и как с ней справились?
-Какие методы для повышения производительности вы использовали при создании или обслуживании сайта?
-Можете ли вы описать некоторые методы SEO, которые вы использовали в последнее время?
-Можете ли вы объяснить общие принципы относительно фронтенд-безопасности или недавние проблемы, которые вы решили?
-Какие действия вы лично предприняли в недавних проектах для повышения удобства использования вашего кода?
-Расскажите о предпочитаемой среде разработки.
-С какими системами контроля версий вы знакомы?
-Можете ли вы описать порядок действий при создании новой веб-страницы?
-Если у вас есть 5 разных файлов со стилями, какой лучший способ интегрировать их в сайт?
-Можете ли вы описать разницу между прогрессивным улучшением и изящной деградацией?
-Как можно оптимизировать загрузку внешних ресурсов на странице?
-Сколько ресурсов браузер может одновременно загружать с одного домена?
-Какие есть исключения?
-Назовите три способа уменьшения времени загрузки страницы (воспринимаемого или реального).
-Если вы присоединились к проекту, где для форматирования используются табы, а вы привыкли использовать пробелы, как вы поступите?
-Опишите, как бы вы реализовали примитивное слайд-шоу.
-Если бы у вас была возможность освоить новую технологию в этом году, что бы это было?
-Объясните важность стандартов и комитетов по стандартам.
-Что такое FOUC (Flash Of Unstyled Content)? Как его избежать?
-Объясните, что такое ARIA и скринридеры, а также как сделать сайт доступным.
-Какие преимущества и недостатки у CSS и JavaScript анимаций?
-Что означает CORS и какую проблему решает?
-[⬆] Вопросы по HTML:
-Для чего нужен doctype?
-Как следует оформлять страницу, содержимое которой может быть на разных языках?
-На что необходимо обратить внимание при разработке мультиязычных сайтов?
-Для чего нужны атрибуты, начинающиеся с data-?
-Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
-Объясните разницу между cookie, sessionStorage и localStorage.
-Объясните разницу между <script>, <script async> и <script defer>.
-Почему хорошей практикой считается располагать <link> для подключения CSS между <head></head>, а <script> для подключения JS ставить перед </body>? Знаете ли вы исключения?
-Что такое прогрессивная отрисовка?
-Для чего используется атрибут srcset в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.
-Приходилось ли вам работать с языками HTML-шаблонизации?
-Объясните разницу в поведении между тегами <button> и <input type="button"> внутри формы?
-Объясните разницу между тегами <strong> и <b>?
-Приведи примеры использования тега <label>?
-Чем тег <a> отличается от тега <button> с точки зрения функциональности и использования?
-[⬆] Вопросы по CSS:
-Что такое специфичность CSS-селекторов и как она работает?
-
-В чем разница между «сбросом» и «нормализацией» CSS? Что бы вы выбрали и почему?
-
-Объясните, что такое плавающие элементы (floats) и как они работают.
-
-Объясните, что такое z-index и как формируется контекст наложения.
-
-Объясните, что такое блочный контекст форматирования и как он работает.
-
-Какие вы знаете методы запрета обтекания (clearing) и в каких случаях они применяются?
-
-Как вы решаете стилевые проблемы, связанные с особенностями браузеров?
-
-Как вы обеспечиваете отображение страниц в браузерах с ограниченными возможностями?
-
-Какие приёмы/процессы вы при этом используете?
-Какими способами можно визуально скрыть элемент (оставив его доступным только для скринридера)?
-
-Использовали ли вы систему сеток, и если да, то какую вы предпочитаете?
-
-Приходилось ли вам использовать или реализовывать медиазапросы или вёрстку под мобильные устройства?
-
-Вы знакомы со стилизацией SVG?
-
-Можете ли вы привести пример свойства @media, отличного от screen?
-
-На что нужно обратить внимание при написании эффективного CSS?
-
-Какие преимущества/недостатки в использовании CSS препроцессоров?
-
-Опишите, что вам нравится и не нравится в CSS препроцессорах, которыми вы пользовались.
-Как вы реализуете макет, который использует нестандартные шрифты?
-
-Объясните, как браузер определяет, на какие элементы накладывать CSS стили?
-
-Объясните, что такое псевдоэлементы и для чего они нужны.
-
-Объясните своими словами, что такое блочная модель.
-
-Что делает * { box-sizing: border-box; }? В чем его преимущества?
-
-Что означает свойство display и можете ли вы привести несколько примеров его использования?
-
-В чем разница между строчным и блочно-строчным элементом?
-
-В чем разница между относительным, фиксированным, абсолютным и статически позиционированным элементом?
-
-Какими CSS-фреймворками вы пользовались? Что бы вы хотели в них изменить/улучшить?
-
-Пользовались ли вы Flexbox или Grid?
-
-Можете ли вы объяснить разницу между отзывчивым (responsive) сайтом и сайтом, сделанным по принципу mobile-first?
-
-Вы имеете опыт работы с ретиновой графикой? Если да, то какие методы вы использовали?
-
-В каком случае вы предпочтёте использовать translate() вместо абсолютного позиционирования и наоборот? И почему?
-
-Можете ли вы привести пример псевдокласса?
-
-Какие новые псевдоклассы появились за последние год-два?
-В чем отличие между em и rem? Как они рассчитываются?
-
-Какие проблемы появляются при попытке переопределить стили компонента их UI-библиотеки? Какие способы решения существуют?
-
-Что такое @layer и как это могло бы помочь решить проблему переопределения стилей?
-Объясните, что такое vh и vw?
-
-Какие проблемы возникают на мобильных устройствах при использовании vh? Как их можно решить?
-Что такое пользовательские css свойства?
-
-Как ограничить их область видимости?
-Какой цвет применится и почему?
-
-.red {
-  color: red;
-}
-.blue {
-  color: blue
-}
-<div class="blue red">Hello world</div>
-Как можно оптимизировать данный код? (Возможно несколько решений)
-main h1 {
-  color: red;
-}
-main p {
-  color: red;
-}
-main a {
-  color: red;
-}
-[⬆] Вопросы по JavaScript:
-Объясните делегирование событий.
-Объясните, как this работает в JavaScript.
-Расскажите, как работает прототипное наследование.
-Что вы думаете о AMD против CommonJS?
-Объясните, почему это не является IIFE: function foo(){ }();.
-Что необходимо изменить, чтобы это стало IIFE?
-В чём различие между переменными, значение которых: null, undefined и не объявлено?
-Как бы вы проверили их на каждое из этих значений?
-Что такое замыкание и как/для чего его используют?
-Можете ли вы описать основное различие между циклом forEach и циклом .map()? И в каких случаях каждый из них используется?
-Расскажите про другие популярные методы итерации массивов.
-В каких случаях обычно используются анонимные функции?
-Как вы организуете свой код? (module pattern, classical inheritance)
-В чем разница между host-объектами и нативными объектами?
-В чем разница между: function Person(){}, var person = Person(), и var person = new Person()?
-В чем разница между .call и .apply?
-Что делает и для чего нужна функция Function.prototype.bind?
-В чем разница между feature detection (определение возможностей браузера), feature inference (предположение возможностей) и анализом строки user-agent?
-Расскажите об Ajax как можно более подробно.
-Какие преимущества и недостатки в использовании Ajax?
-Объясните, как работает JSONP (и почему это не совсем AJAX).
-Вы когда-нибудь использовали шаблонизацию на JavaScript?
-Если да, то какие библиотеки вы использовали?
-Расскажите, что такое поднятие (hoisting).
-Объясните, что такое всплытие событий (event bubbling).
-В чём разница между «атрибутом» (attribute) и «свойством« (property)?
-Почему не следует расширять нативные JavaScript-объекты?
-В чём разница между событием document load и событием document DOMContentLoaded?
-В чём разница между == и ===?
-Объясните same-origin policy в контексте JavaScript.
-Сделайте так, чтобы этот код работал:
-duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
-Почему тернарный оператор так называется?
-Что делает строчка "use strict";? Какие достоинства и недостатки от ее использования?
-Напишите цикл, который перебирает числа до 100, возвращая “fizz” на числа кратные 3, “buzz” на числа кратные 5 и “fizzbuzz” на числа кратные 3 и 5
-Почему считается хорошим тоном оставить глобальную область видимости (global scope) в нетронутом состоянии?
-Для чего используют событие load? Есть ли у этого события недостатки? Знаете ли вы какие-либо альтернативы, и в каких случаях бы стали их использовать?
-Расскажите, что такое одностраничное приложение, и как сделать его SEO-оптимизированным.
-Насколько вы опытны в работе с промисами (promises) и/или их полифилами?
-Какие преимущества и недостатки при использовании промисов вместо колбэков (callbacks)?
-Каковы преимущества и недостатки написания JavaScript-кода на языке, который компилируется в JavaScript?
-Какие инструменты и методы вы используете при отладке кода?
-Какие языковые конструкции вы используете для итерации по свойствам объекта и элементам массива?
-Объясните разницу между изменяемыми (mutable) и неизменяемыми (immutable) объектами.
-Приведите пример неизменяемого объекта в JavaScript.
-Какие преимущества и недостатки у неизменяемости?
-Как вы можете достигнуть неизменяемости в вашем коде?
-Объясните разницу между синхронными и асинхронными функциями.
-Что такое цикл событий (event loop)?
-В чём разница между стеком вызовов (call stack) и очередью событий (task queue)?
-Объясните разницу при использовании foo в function foo() {} и var foo = function() {}
-В чём различие между переменными, созданными при помощи let, var и const?
-Можем ли мы менять свойства объекта объявленного через const? Как мы можем изменить это поведение?
-В чём разница между классом в ES6 и функцией-конструктором в ES5?
-Можете ли вы привести пример использования стрелочных функции =>? Чем они отличаются от других функций?
-Дайте определение функции высшего порядка.
-Можете ли вы привести пример деструктуризации объекта или массива?
-Шаблонные строки в ES6 намного упрощают создание строк, можете ли вы привести пример их использования?
-Можете ли вы привести пример каррированной функции (curry function) и в чём их преимущество?
-В чём преимущества использования spread оператора и чем он отличается от rest оператора?
-Каким образом можно обмениваться кодом между файлами?
-Для чего используются статические члены класса?
-Объясните разницу между event.target и event.currentTarget?
-Объясните разницу между event.preventDefault() и event.stopPropagation()?
-[⬆] Вопросы по тестированию:
-Какие преимущества/недостатки в тестировании собственного кода?
-Какие инструменты вы будете использовать для тестирования работоспособности своего кода?
-В чём различие между юнит-тестами и функциональными/интеграционными тестами?
-Для чего предназначены линтеры (code style linting tool)?
-[⬆] Вопросы по производительности:
-Какие инструменты вы используете, чтобы найти недостатки в производительности вашего кода?
-Какие вы знаете способы улучшения производительности при скроллинге на вебсайте?
-Объясните разницу между раскладкой (layout), painting и композитингом (compositing).
-[⬆] Вопросы по сетям:
-Почему лучше загружать ресурсы для сайта с нескольких доменов?
-Опишите весь процесс, начиная с ввода адреса сайта в адресную строку до окончания его загрузки на экране.
-В чём различия между Long-Polling, Websockets и Server-Sent Events?
-Опишите следующие заголовки HTTP-запросов и ответов:
-Разницу между Expires, Date, Age и If-Modified-…
-Do Not Track
-Cache-Control
-Transfer-Encoding
-ETag
-X-Frame-Options
-Что такое HTTP-методы? Перечислите все HTTP-методы, которые вы знаете, и объясните их.
-[⬆] Примеры кода на JavaScript
-Вопрос: Чему равно foo?
-
-var foo = 10 + '20';
-Вопрос: Что выводит код ниже?
-
-console.log(0.1 + 0.2 == 0.3);
-Вопрос: Как сделать, чтобы это выражение работало?
-
-add(2, 5); // 7
-add(2)(5); // 7
-Вопрос: Какое значение возвращает данное выражение?
-
-"i'm a lasagna hog".split("").reverse().join("");
-Вопрос: Чему равно window.foo?
-
-( window.foo || ( window.foo = "bar" ) );
-Вопрос: Что покажут эти два alert?
-
-var foo = "Hello";
-(function() {
-  var bar = " World";
-  alert(foo + bar);
-})();
-alert(foo + bar);
-Вопрос: Чему равно foo.length?
-
-var foo = [];
-foo.push(1);
-foo.push(2);
-Вопрос: Чему равно foo.x?
-
-var foo = {n: 1};
-var bar = foo;
-foo.x = foo = {n: 2};
-Вопрос: Что выводит код ниже?
-
-console.log('one');
-setTimeout(function() {
-  console.log('two');
-}, 0);
-console.log('three');
-Вопрос: В чем разница между этими четырьмя промисами (promises)?
-
-doSomething().then(function () {
-  return doSomethingElse();
-});
-
-doSomething().then(function () {
-  doSomethingElse();
-});
-
-doSomething().then(doSomethingElse());
-
-doSomething().then(doSomethingElse);
-[⬆] «Светская беседа»:
-Самое крутое, что вы когда-либо делали и чем гордитесь?
-Что вы больше всего любите в ваших инструментах разработки?
-Кто из фронтенд-сообщества вас вдохновляет?
-У вас есть какие-нибудь личные проекты? Какого рода?
-Какая ваша любимая “фишка” Internet Explorer?
-Какой кофе вы предпочитаете?
-
-30 вопросов на собеседовании фронтенд разработчика
-
-Казалось бы, вопросы на собеседовании frontend разработчика Junior не должны отличаться от стандартных задачек с IT-сайтов. Даже мы приводили 5 простых тестовых заданий для младшего фронтенд-программиста.
-
-Ключевые выводы:
-• Собеседование фронтенд-разработчика охватывает JavaScript, CSS, HTML, сетевые протоколы и архитектурные паттерны
-• Интервьюеры часто просят сравнить технологии (let vs const, cookie vs localStorage, сброс vs нормализация CSS)
-• Помимо теории, важно уметь писать код: проверка типов, работа с DOM, асинхронность
-• Знание REST API, Event loop и методов оптимизации загрузки страницы критически важно для junior-позиции
-Но складывается впечатление, что работодатели с каждым годом придумывают больше заковыристых вопросов, чтобы поставить кандидата в тупик. Такие мы рассмотрим в том числе.
-
+***************************
+	****************************
+	**********************************
+************************
+	**********************************
 Держите популярные вопросы с frontend интервью.
 
 1. Разница между let, var и const
