@@ -1,3 +1,20 @@
+A backend developer’s daily responsibilities typically include:
+
+Database Management: Handling CRUD operations (Create, Read, Update, Delete) and ensuring efficient database architecture.
+API Development: Designing, developing, and maintaining RESTful APIs that connect frontend interfaces with the database.
+Server Maintenance: Monitoring server performance, scaling server resources, and ensuring uptime during high traffic.
+Security Measures: Protecting applications from SQL injection, Cross-Site Scripting (XSS), and other vulnerabilities.
+A solid backend developer must be proficient in the following key areas:
+
+Skill	Description
+Programming Languages	Mastery of languages like Python, Java, Ruby, or Node.js is essential. Backend frameworks like Django, Spring, or Express.js are also critical.
+Database Knowledge	Familiarity with relational (e.g., MySQL, PostgreSQL) and NoSQL databases (e.g., MongoDB, Cassandra).
+API & HTTP Protocols	Understanding how to design and consume REST APIs, manage HTTP methods, and ensure stateless interactions.
+Version Control	Working knowledge of Git for versioning code and collaborating with teams.
+Security Best Practices	Understanding of database security and authentication methods (OAuth, JWT), encryption (HTTPS), and mitigation strategies against attacks like SQL injection.
+A typical day for a backend developer involves working with servers, optimizing databases, securing APIs, handling server-side logic, and communicating with front-end components to ensure seamless functionality.
+
+
 Backend Developer Interview Questions
 
 What programming languages have you used in the past? Which do you prefer?
