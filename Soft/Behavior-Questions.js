@@ -1,4 +1,20 @@
 
+A screening call with HR.
+One or two technical interviews focusing on programming skills, problem-solving, and technical knowledge in both front-end and back-end technologies.
+A coding challenge or a take-home assignment.
+A system design interview, where you may be asked to design a complete application or a feature.
+A behavioral interview to assess cultural fit, soft skills, and experience.
+In some cases, there may also be a final interview with higher management or a team lead.
+4. What questions will I be asked in a Full Stack developer interview?
+In a Full Stack Developer interview, you can expect questions like:
+
+Front-end: Questions on HTML, CSS, JavaScript, and frameworks like React or Angular. Example: “How do you manage state in React?”
+Back-end: Questions on server-side languages (e.g., Java, Node.js), databases, and API development. Example: “Explain RESTful services.”
+Full Stack: Questions that involve both front-end and back-end, like how to connect a database to a user interface.
+Coding problems involving data structures and algorithms.
+System design questions, such as designing a scalable web application.
+Behavioral questions to understand your work style, problem-solving approach, and collaboration skills.
+
 Tips For Preparing For Full Stack Interview
 Master the Fundamentals: Prioritize foundational knowledge in HTML, CSS, JavaScript, and a server-side language like Python, Java, or Node.js. Brush up on data structures, algorithms, and object-oriented programming concepts.
 Practice Live Coding: Sharpen your problem-solving skills and coding fluency by tackling interview-style coding challenges on platforms like LeetCode or HackerRank. Don’t just focus on solutions, explain your thought process and approaches clearly.
