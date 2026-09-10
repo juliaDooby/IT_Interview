@@ -1,4 +1,44 @@
 
+
+II) Behavioral Questions:
+1. Tell me about yourself.
+
+You can’t escape this question in any of the job interviews. Introducing yourself to the interview panel is generally the first thing you do in an interview. But the intention of the question is not just to know your name or educational qualification but to assess your confidence level too. In fact, this question sets the tone for the rest of the interview. Hence, this question must be very well prepared. But it must not seem rehearsed too.
+2. What are your greatest strengths?
+
+Always remember that your strengths should align with the job profile you are applying for. It can be your problem-solving skills, ability to work hard, technical expertise, leadership skills, positive attitude, etc.
+3. Where do you see yourself in five years?
+
+The tip to answering this question is to not be too specific in your reply. For example, don’t say something like you see yourself as the manager of XYZ team in the next 5 years. The intention of this question is to see if you want to get into a long-term commitment with the company.
+ 
+
+4. Describe your working style?
+
+In this question,  the interviewer wants to know your professional approach or the level of commitment to your work. They also want to see if your working style aligns with the company’s work culture. Hence, you must frame your answer accordingly. Here is an example:
+I can adapt to any workplace. While working alone, I chalk down my priorities and try to complete the tasks on schedule. But I also enjoy working in a team.
+5. Are you a team player?
+The company expects you to be a team player. So, always say this and keep some examples ready to support your answer.
+
+6. How would you be an asset to our organization?
+
+In this answer. let the company know about your strengths and how you can use the same to contribute towards the growth of the organization at large. Don’t forget! This question needs to be answered with immense confidence and conviction.
+ 
+
+7. What are your weaknesses?
+
+Refrain from saying anything that may make you seem like an unfit candidate for the job.  Some weaknesses that you can state are self-criticism, a workaholic attitude, shying away from asking for help, etc.  An example can be:
+I often tend to direct my attention towards self-improvement more than celebrating my biggest achievements in life. I know this can be helpful too, but I often fail to acknowledge myself or be satisfied with myself due to this habit. However, I am currently working on this weakness, and I am confident I will tone it down soon.
+ 
+
+8. Why do you want to work at TCS?
+
+TCS has a high rating on almost all employer rating platforms. The company is considered an employee-friendly organization and offers entry-level employees a healthy work environment and immense growth opportunities, training, and exposure in the IT industry. As a fresher or even as an experienced professional, you may state these reasons for joining TCS.
+ 
+
+9. Can you work under pressure?
+
+The ability to work under pressure is considered to be valuable quality for any professional. Hence, you must have a strong response ready to show that you are likely to perform well even under challenging circumstances.
+ 
 [⬆] Общие вопросы:
 Что вы изучили вчера/на этой неделе?
 Что вас привлекает в программировании?
