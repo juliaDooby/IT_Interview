@@ -1,62 +1,142 @@
-Что такое https?
-Какие есть методы?
-Какие коды ответов знаете и что они означают?
-HTML
-Что такое DOCTYPE?
-Какие теги и атрибуты используете?
-Как добавить ссылку которая будет открываться в новом окне?
-Что делает тег link и для чего нужен?
-Какие теги используются для создания таблиц?
-Какие теги используются для создания списков?
-Что такое блочные и строчные элементы и в чем их разница?
-Как вставить другой сайт на страницу?
-Что делает noscript тэг?
-Что такое абсолютные и относительные пути?
-Что такое семантика и семантичные элементы и какими пользуетесь?
-Что такое метатеги и зачем нужны?
-Как показывать разные изображения в зависимости от ширины браузера?
-HTML регистрозависимый или регистронезависимый?
-Что будет если написать код в котором не закрыт тег? Например:
-This is a paragraph.
-
-Что такое кодировка и на что она влияет и как ее задать?
-Что такое Drag/Drop и как его реализовать в html?
-Что такое canvas и как его использовали?
-Какие способы оптимизации скорости загрузки страницы вы используете?
-Как работает валидация форм в html?
-Что такое “доступность” и для чего нужна?
-Что такое СЕО оптимизация и как вы ее делаете?
-Браузер
-Какие браузерные api вы использовали?
-Что такое Server Side Rendering?
-Какие есть локальные хранилища данных в браузере?
-Что такое WebWorkers, для чего нужны и как вы их использовали?
-CSS
-Что такое селектор и какие селекторы используете?
-Какие комбинации селекторов знаете?
-Что такое псевдокласс и какие знаете?
-Что такое псевдоэлементы?
-Что такое спрайты и для чего нужны?
-Что такое css счетчики и зачем нужны?
-Чем отличается единица измерения em и rem?
-Чем отличается единица измерения vw и vh?
-Что такое приоретизация стилей и как она работает?
-Какой цвет получит параграф?
-
-<style>
-  #demo {
-    color: blue;
-  }
-  .test {
-    color: green;
-  }
-  p {
-    color: red;
-  }
-</style>
-
-<p id="demo" class="test">Hello World!</p>
-
+Какая разница между $('div') и $('&lt;div/&gt;') в jQuery?</span></li>
+Какая разница между parent(), parents(), closest() в jQuery?</span></li>
+Какая разница между get() и eq() методами в jQuery?</span></li>
+Как добавить анимацию в jQuery?</span></li>
+Как отключить JQuery анимацию?</span></li>
+Как остановить текущую запущенную анимацию в JQuery?&nbsp;</span></li>
+В чем разница между методами .empty () .remove () и .detach () в JQuery?</span></li>
+Какая разница между .bind() .live() .delegate() и .on()?</span></li>
+Как создать клон объекта в JQuery?</span></li>
+В чем разница между prop и attr?</span></li>
+Что такое event.preventDefault?</span></li>
+В чем разница между event.PreventDefault и event.stopPropagation?</span></li>
+Как проверить есть переменная числом, используя JQuery 1.7+?</span></li>
+Как проверить тип данных переменной в JQuery?</span></li>
+Как привязать обработчик события к выбранному элементу, которое должно быть выполнено только один раз?</span></li>
+Можно ли удерживать или задержать выполнение document.ready на некоторое время?</span></li>
+Что такое цепочка методов в jQuery?</span></li>
+Можем ли мы использовать JQuery, чтобы сделать AJAX запрос?</span></li>
+Какими методами можно сделать AJAX запрос в JQuery?</span></li>
+Что такое отсроченные(Deferred) объекты в jQuery?</span></li>
+Что делает метод finish()?</span></li>
+Можно ли не указывать протокол в URL когда jQuery ссылается на CDNs?</span></li>
+Что такое jQuery плагины и какие преимущества их использования?</span></li>
+Что такое jQuery UI?</span></li>
+Что такое JSON?</span></li>
+Что такое JSON Schema?</span></li>
+Что такое JSON объект?</span></li>
+Какие есть правила синтаксиса JSON объекта (массива)? Приведите пример объекта JSON?</span></li>
+Какие типы данных, поддерживаются в JSON?</span></li>
+Каковы недостатки JSON?</span></li>
+Что такое JSONP?</span></li>
+Какое расширение JSON-файла?</span></li>
+Какой MIME-тип в JSON?</span></li>
+Для чего используется JSON?</span></li>
+Какие преимущества использования JSON?</span></li>
+Какие браузеры поддерживают JSON?</span></li>
+Какая функция используется для преобразования текста JSON в объект?</span></li>
+Что такое JSON Parser?</span></li>
+Что такое JSON-RPC?</span></li>
+Что такое JSON-RPC-Java?</span></li>
+Какова роль JSON.stringify?</span></li>
+Как создать JSON из массива PHP?</span></li>
+Как получить PHP массив из JSON объекта?</span></li>
+Как парсить JSON в JQuery?</span></li>
+Какая функция используется для кодирования JSON в PHP?</span></li>
+Как парсить JSON в JavaScript?</span></li>
+Как создать JSON объект из JavaScript?</span></li>
+Валидациия JSON в PHP?</span></li>
+Валидациия JSON в javascript?</span></li>
+Валидациия JSON в jQuery?</span></li>
+Как получить JSON ответ в Ajax?</span></li>
+Что такое Twitter Bootstrap?</span></li>
+Какие основные преимущества Bootstrap?</span></li>
+Что включает в себя пакет Bootstrap?</span></li>
+Какие основные инструменты Bootstrap?</span></li>
+Что такое отзывчивый или адаптивный дизайн?</span></li>
+Что такое Contextual классы таблицы в Bootstrap?</span></li>
+Что такое Bootstrap Grid System?</span></li>
+Что такое Bootstrap media запросы?</span></li>
+Какие виды контейнеров в Bootstrap вы знаете?</span></li>
+Покажите основную табличную структуру в Bootstrap.</span></li>
+Что такое Offset смещение столбцов?</span></li>
+Как можно упорядочить столбцы в Bootstrap?</span></li>
+Какими двума способами вы можете отобразить код в Bootstrap?</span></li>
+Как сделать изображения responsive(отзывчивым)?</span></li>
+Какие основные этапы создания формы в Bootstrap?</span></li>
+В чом разница между вертикальною и горизонтальной формой?</span></li>
+Объясните типографику и ссылки в Bootstrap.</span></li>
+Что такое Нормализация(Normalize) в Bootstrap?</span></li>
+Что такое Lead Body Copy?</span></li>
+Какие типы списков поддерживаются в Bootstrap?</span></li>
+Что такое Glyphicons?</span></li>
+Как использовать Glyphicons?</span></li>
+Что такое плагин Transition?</span></li>
+Что такое Modal плагин?</span></li>
+Как использовать плагин Dropdown?</span></li>
+Что такое Bootstrap карусель?</span></li>
+Что такое группа кнопок?</span></li>
+Какой класс используется для основной группы кнопок?</span></li>
+Какой класс используется, чтобы нарисовать панель кнопок?</span></li>
+Какие классы могут быть применены к группе кнопок вместо изменения размера каждой кнопки?</span></li>
+Какой класс отображает набор кнопок вертикально, а не горизонтально?</span></li>
+Что такое input группы?</span></li>
+Как создать меню навигации с вкладками?</span></li>
+Как создать меню навигации с кнопками?</span></li>
+Как создать вертикальное меню навигации с кнопками?</span></li>
+Что такое bootstrap navbar?</span></li>
+Как создать navbar в bootstrap?</span></li>
+Что такое bootstrap breadcrumb?</span></li>
+Какой класс используется для базовой нумерации страниц(pagination)?</span></li>
+Как настраивать ссылки нумерации страниц?</span></li>
+Что такое bootstrap метки?</span></li>
+Что такое bootstrap бейджики?</span></li>
+Что такое Bootstrap Jumbotron?</span></li>
+Что такое Bootstrap page header?</span></li>
+Как создать миниатюры thumbnails, используя Bootstrap?</span></li>
+Как настроить миниатюры, используя Bootstrap?</span></li>
+Что такое bootstrap alerts?</span></li>
+Как создать bootstrap alert?</span></li>
+Как создать Bootstrap Dismissal Alert?</span></li>
+Как создать прогресс-бар, используя Bootstrap?</span></li>
+Как создать альтернативный прогресс-бар, используя bootstrap?</span></li>
+Как создать прогресс-бар в полоску, используя bootstrap?</span></li>
+Как создать анимированный прогресс-бар, используя bootstrap?</span></li>
+Как создать набор прогресс-баров, используя bootstrap?</span></li>
+Что такое bootstrap медиа-объекты?</span></li>
+Для чего нужен класс ".media" в bootstrap?</span></li>
+Для чего нужен класс ".media-list" &nbsp;класса в bootstrap?</span></li>
+Что такое bootstrap panels?</span></li>
+Как создать bootstrap панель с заголовком?</span></li>
+Как создать bootstrap панель с footer?</span></li>
+Какие контекстные классы доступны для оформления панелей?</span></li>
+Как объединить несколько bootstrap панелей?</span></li>
+Можете ли вы поместить таблицу в панель?</span></li>
+Как стилизовать таблицу горизонтальными разделителями?</span></li>
+Как стилизовать таблицу повторяющимся разным фоном строк?</span></li>
+Как добавить границы к ячейкам таблицы?</span></li>
+Как добавить изменение фона строки при наведении курсора?</span></li>
+Как уменьшить отступ ячеек наполовину?</span></li>
+Как сделать разноцветным фон строк таблицы?</span></li>
+Что такое bootstrap well?</span></li>
+Что такое scrollspy плагин?</span></li>
+Что такое affix плагин?</span></li>
+Что такое NoSQL?</span></li>
+Какие есть типы хранилищ данных в NoSQL?</span></li>
+Что такое MongoDB?</span></li>
+На каком языке написана MongoDB?</span></li>
+Какие языки программирования можно использовать с MongoDB?</span></li>
+Использует ли таблицы для хранения данных, база данных MongoDB?</span></li>
+Какие преимущества MongoDB?</span></li>
+Какие недостатки MongoDB?</span></li>
+Что такое пространство имен в MongoDB?</span></li>
+Что такое репликация?</span></li>
+Поддерживает ли MongoDB ограничения внешнего ключа(foreign key)?</span></li>
+Как мы можем достичь primary key - foreign key отношения в MongoDB?</span></li>
+Объясните структуру ObjectID в MongoDB.</span></li>
+Если удалить документ из базыданных, удалится ли он с диска?</span></li>
+Что такое индексы в MongoDB?</span></li>
+Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
 Что делает свойство box-sizing?
 Что такое !important?
 Что такое css функции и какие знаете?
@@ -359,7 +439,63 @@ jQuery это библиотека для написания сценариев 
 Краткое описание основных задач категории Execution Tasks.</span></li>
 Краткое описание основных задач категории File Tasks.</span></li>
 Краткое описание основных задач категории Miscellaneous Tasks.</span></li>
+Что такое https?
+Какие есть методы?
+Какие коды ответов знаете и что они означают?
+HTML
+Что такое DOCTYPE?
+Какие теги и атрибуты используете?
+Как добавить ссылку которая будет открываться в новом окне?
+Что делает тег link и для чего нужен?
+Какие теги используются для создания таблиц?
+Какие теги используются для создания списков?
+Что такое блочные и строчные элементы и в чем их разница?
+Как вставить другой сайт на страницу?
+Что делает noscript тэг?
+Что такое абсолютные и относительные пути?
+Что такое семантика и семантичные элементы и какими пользуетесь?
+Что такое метатеги и зачем нужны?
+Как показывать разные изображения в зависимости от ширины браузера?
+HTML регистрозависимый или регистронезависимый?
+Что будет если написать код в котором не закрыт тег? Например:
+This is a paragraph.
+Что такое кодировка и на что она влияет и как ее задать?
+Что такое Drag/Drop и как его реализовать в html?
+Что такое canvas и как его использовали?
+Какие способы оптимизации скорости загрузки страницы вы используете?
+Как работает валидация форм в html?
+Что такое “доступность” и для чего нужна?
+Что такое СЕО оптимизация и как вы ее делаете?
+Браузер
+Какие браузерные api вы использовали?
+Что такое Server Side Rendering?
+Какие есть локальные хранилища данных в браузере?
+Что такое WebWorkers, для чего нужны и как вы их использовали?
+CSS
+Что такое селектор и какие селекторы используете?
+Какие комбинации селекторов знаете?
+Что такое псевдокласс и какие знаете?
+Что такое псевдоэлементы?
+Что такое спрайты и для чего нужны?
+Что такое css счетчики и зачем нужны?
+Чем отличается единица измерения em и rem?
+Чем отличается единица измерения vw и vh?
+Что такое приоретизация стилей и как она работает?
+Какой цвет получит параграф?
 
+<style>
+  #demo {
+    color: blue;
+  }
+  .test {
+    color: green;
+  }
+  p {
+    color: red;
+  }
+</style>
+
+<p id="demo" class="test">Hello World!</p>
 ---------------------------------------------------------------------------------------------
 [JQUERY]:
 ---------------------
@@ -3824,155 +3960,6 @@ CSS-свойства, которые могут вызывать перерис�
 - Сохраняется даже после закрытия браузера.
 В общем, cookies используются для хранения небольших данных, которые требуется отправлять на сервер с каждым запросом, session storage - для временного хранения данных в рамках текущего сеанса браузера, а local storage - для долгосрочного хранения данных на стороне клиента.
 ---------------------------------------------------------------------------------------------
-********************************************************
-		********************************************************
-		********************************************************
-		********************************************************
-		********************************************************
-	
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между $('div') и $('&lt;div/&gt;') в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между parent(), parents(), closest() в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между get() и eq() методами в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как добавить анимацию в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как отключить JQuery анимацию?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как остановить текущую запущенную анимацию в JQuery?&nbsp;</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">В чем разница между методами .empty () .remove () и .detach () в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какая разница между .bind() .live() .delegate() и .on()?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как создать клон объекта в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">В чем разница между prop и attr?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое event.preventDefault?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">В чем разница между event.PreventDefault и event.stopPropagation?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как проверить есть переменная числом, используя JQuery 1.7+?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как проверить тип данных переменной в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Как привязать обработчик события к выбранному элементу, которое должно быть выполнено только один раз?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли удерживать или задержать выполнение document.ready на некоторое время?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое цепочка методов в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можем ли мы использовать JQuery, чтобы сделать AJAX запрос?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Какими методами можно сделать AJAX запрос в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое отсроченные(Deferred) объекты в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что делает метод finish()?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Можно ли не указывать протокол в URL когда jQuery ссылается на CDNs?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery плагины и какие преимущества их использования?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: Arial, Helvetica, sans-serif;">Что такое jQuery UI?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON Schema?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON объект?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть правила синтаксиса JSON объекта (массива)? Приведите пример объекта JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие типы данных, поддерживаются в JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Каковы недостатки JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSONP?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какое расширение JSON-файла?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой MIME-тип в JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для чего используется JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие преимущества использования JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие браузеры поддерживают JSON?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая функция используется для преобразования текста JSON в объект?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON Parser?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON-RPC?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое JSON-RPC-Java?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какова роль JSON.stringify?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать JSON из массива PHP?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как получить PHP массив из JSON объекта?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как парсить JSON в JQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какая функция используется для кодирования JSON в PHP?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как парсить JSON в JavaScript?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать JSON объект из JavaScript?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в PHP?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в javascript?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Валидациия JSON в jQuery?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как получить JSON ответ в Ajax?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Twitter Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные преимущества Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что включает в себя пакет Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные инструменты Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое отзывчивый или адаптивный дизайн?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Contextual классы таблицы в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap Grid System?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap media запросы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие виды контейнеров в Bootstrap вы знаете?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Покажите основную табличную структуру в Bootstrap.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Offset смещение столбцов?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как можно упорядочить столбцы в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какими двума способами вы можете отобразить код в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как сделать изображения responsive(отзывчивым)?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие основные этапы создания формы в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">В чом разница между вертикальною и горизонтальной формой?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Объясните типографику и ссылки в Bootstrap.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Нормализация(Normalize) в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Lead Body Copy?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие типы списков поддерживаются в Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Glyphicons?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как использовать Glyphicons?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое плагин Transition?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Modal плагин?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как использовать плагин Dropdown?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap карусель?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое группа кнопок?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется для основной группы кнопок?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется, чтобы нарисовать панель кнопок?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие классы могут быть применены к группе кнопок вместо изменения размера каждой кнопки?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс отображает набор кнопок вертикально, а не горизонтально?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое input группы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать меню навигации с вкладками?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать меню навигации с кнопками?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать вертикальное меню навигации с кнопками?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap navbar?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать navbar в bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap breadcrumb?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какой класс используется для базовой нумерации страниц(pagination)?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как настраивать ссылки нумерации страниц?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap метки?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap бейджики?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap Jumbotron?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое Bootstrap page header?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать миниатюры thumbnails, используя Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как настроить миниатюры, используя Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap alerts?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать bootstrap alert?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать Bootstrap Dismissal Alert?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать прогресс-бар, используя Bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать альтернативный прогресс-бар, используя bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать прогресс-бар в полоску, используя bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать анимированный прогресс-бар, используя bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать набор прогресс-баров, используя bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap медиа-объекты?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для чего нужен класс ".media" в bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Для чего нужен класс ".media-list" &nbsp;класса в bootstrap?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap panels?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать bootstrap панель с заголовком?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как создать bootstrap панель с footer?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие контекстные классы доступны для оформления панелей?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как объединить несколько bootstrap панелей?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Можете ли вы поместить таблицу в панель?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как стилизовать таблицу горизонтальными разделителями?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как стилизовать таблицу повторяющимся разным фоном строк?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как добавить границы к ячейкам таблицы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как добавить изменение фона строки при наведении курсора?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как уменьшить отступ ячеек наполовину?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как сделать разноцветным фон строк таблицы?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое bootstrap well?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое scrollspy плагин?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое affix плагин?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое NoSQL?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие есть типы хранилищ данных в NoSQL?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">На каком языке написана MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие языки программирования можно использовать с MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Использует ли таблицы для хранения данных, база данных MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие преимущества MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Какие недостатки MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое пространство имен в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое репликация?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Поддерживает ли MongoDB ограничения внешнего ключа(foreign key)?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Как мы можем достичь primary key - foreign key отношения в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Объясните структуру ObjectID в MongoDB.</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Если удалить документ из базыданных, удалится ли он с диска?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Что такое индексы в MongoDB?</span></li>
-<li style="font-size: medium; font-weight: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;">Сколько индексов создается по умолчанию в MongoDB для новой коллекции?</span></li>
-********************************************************************************************************************************
-********************************************************************************************************************************
-	********************************************************************************************************************************
-
 
 Junior Front-end Developer
 01
