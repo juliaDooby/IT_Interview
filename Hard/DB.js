@@ -228,8 +228,6 @@ Inheritance: in PostgreSQL, a table can be set to inherit its characteristics fr
 User-defined functions: it supports the creation of almost all new objects inside the database like Casts, conversions, dataTypes, domains, functions including aggregate functions, and indexes including custom indexes for custom types operator.
 Now, if you are looking for a job related to PostgreSQL, you must prepare for the 2023 PostgreSQL Interview Questions. Every interview differs from the job profiles, but you must have a good and precise knowledge of PostgreSQL processes to clear the interview. Here, we have prepared the vital PostgreSQL Interview Questions and answers to help you succeed in your interview.
 
-Below are the 12 crucial PostgreSQL Interview Questions and answers frequently asked in an interview. These questions are divided into two parts as follows:
-
 Part 1 – PostgreSQL Interview Questions (Basic)
 This first part covers basic PostgreSQL Interview Questions and Answers.
 
@@ -592,25 +590,6 @@ An inverted file in PostgreSQL is a data structure used to efficiently search an
 
 
 PostgreSQL
-Popular for its ability to handle complex queries and its rich set of features, PostgreSQL is an open-source database management system also known for its strong concurrency control and support for advanced data types.
-
-According to the DB-Engines Ranking, PostgreSQL is the fourth most popular database management system currently in use.
-
-To evaluate the PostgreSQL skills of developers during coding interviews, we’ve provided realistic coding exercises and interview questions below.
-
-Additionally, we’ve outlined a set of best practices to ensure that your interview questions accurately assess the candidates’ PostgreSQL skills.
-
-This pad comes with a database attached to it that you can write queries against! We have placed the schema in the database tab in the right-hand pane, while also providing a diagram within the starter code to show the relationships.
-
-Questions:
-1 – Sort the current employees at the company by who has the highest salary
-
-2 – Show all of the employees that worked on the project “Build a cool site”
-
-3 – For the project “Build a cool site”, if an employee was paid on the 1st and the 15th of every month, show how much each employee made for the duration of the project.
-
-4 – No Code Required! Talk us through how you’d break down the data to figure out who was the most valuable employee to the company
-
 
 Junior PostgreSQL interview questions
 Question: Write a SQL query to retrieve the first name, last name, and salary of all employees in the ‘Sales’ department.
@@ -1756,29 +1735,12 @@ Can you describe scenarios where denormalization might improve query performance
 What are the considerations for optimizing queries involving text search in PostgreSQL?
 How would you optimize a query that involves complex date/time calculations?
 Can you explain the concept of query hints in PostgreSQL and when you might use them?
-10 situational PostgreSQL interview questions for hiring top developers
-10 situational PostgreSQL interview questions for hiring top developers
-To evaluate whether your candidates have the ability to handle real-world challenges in PostgreSQL, consider using these situational interview questions. They are designed to bring out practical skills and problem-solving capabilities, making it easier to identify top talent in your team for positions like database developer.
-
-How would you handle a situation where a critical query is consistently timing out? What steps would you take to diagnose and resolve the issue?
-Imagine you are tasked with migrating a large PostgreSQL database to a new server with minimal downtime. How would you approach this task?
-If a user reports that they cannot access a database they should have permissions for, how would you troubleshoot and resolve the issue?
-Suppose you discover that a recently added index is not improving query performance as expected. What actions would you take to investigate?
-You need to implement a new feature that requires changes to multiple database tables. How would you manage these changes while ensuring data integrity?
-A senior developer asks for a specific database configuration to optimize performance. How would you evaluate and implement their request?
-Imagine that you identified a significant increase in disk space usage after a batch job. What steps would you take to investigate and mitigate the issue?
-If you had to design a solution for archiving old data in PostgreSQL, what factors would you consider, and how would you implement it?
-How would you approach a scenario where you need to troubleshoot slow performance in a PostgreSQL application that was previously working fine?
-If you were asked to create a reporting structure that requires data from multiple sources, how would you design the database schema to accommodate this?
 Which PostgreSQL skills should you evaluate during the interview phase?
 While a single interview may not unveil every aspect of a candidate's capabilities, focusing on key PostgreSQL skills can significantly streamline the assessment process. Highlighting these skills ensures you target what's most relevant for roles involving this robust database management system.
-
-
 Which PostgreSQL skills should you evaluate during the interview phase?
-
 What is the difference between INNER JOIN and OUTER JOIN in SQL?
-
 Look for a clear understanding of how different joins affect query results and performance. A proficient candidate will not only define each but also provide scenarios where one might be preferred over the other.
+
 
 Database Design
 Database design is critical as it impacts the scalability and performance of applications. A well-designed database ensures data integrity and optimization, which are crucial for any PostgreSQL-based system.
@@ -1817,8 +1779,6 @@ Don't forget to assess soft skills such as problem-solving and communication. Th
 Prepared questions are a good start, but follow-up questions can reveal a candidate's true depth of knowledge. They help you distinguish between memorized answers and genuine understanding.
 
 For example, if you ask about indexing in PostgreSQL, a follow-up might be, "Can you describe a situation where adding an index might not improve query performance?" This probes the candidate's practical experience and problem-solving skills.
-
-
 
 Вопрос 1:
 
@@ -2515,14 +2475,6 @@ DevOps: Объясните концепцию восстановления на 
 Ответ:
 
 PITR позволяет восстановить базу данных PostgreSQL до любого конкретного момента времени, даже до границы транзакции. Это требует полной базовой резервной копии (например, из pg_basebackup) и непрерывного архива файлов журнала упреждающей записи (WAL). Во время восстановления восстанавливается базовая резервная копия, а затем файлы WAL воспроизводятся до целевого момента восстановления.
-
-Резюме
-Овладение PostgreSQL для собеседований — это путь, который начинается с усердной подготовки. 
-Тщательно просмотрев распространенные вопросы и поняв основные концепции, вы вооружились знаниями и уверенностью, 
-чтобы эффективно излагать свой опыт. 
-Эта подготовка не только поможет вам успешно пройти собеседования, но и укрепит ваше фундаментальное понимание этой мощной системы баз данных.
-Помните, мир PostgreSQL постоянно развивается. 
-Продолжайте изучать новые функции, лучшие практики и продвинутые темы. Примите непрерывное обучение как основной принцип вашего профессионального развития. Ваша преданность делу поддержания актуальности знаний, несомненно, приведет к большему успеху и более глубокому пониманию в вашей карьере.
 ---------------------------------------------------------------------------------------------
 [БД/БАЗЫ ДАННЫХ]:
 ---------------------
@@ -3276,32 +3228,6 @@ SELECT IF($3.INTERSECT.size() > 0, 'Already exists', $4)
 
 Также важно отметить (мне пришлось немало разочароваться, чтобы понять это), что операторы LET не будут работать в интерфейсе командной строки или на вкладке «Обзор» в веб-интерфейсе, но отлично работают как сценарий POST.
 
- 19.04.2018 20:44
-Другие вопросы по теме
-Предоставляет ли OrientDB HTTP API функцию удаления базы данных?
-Пакетные команды OrientDB для уникальных ребер и вершин
-Orient Db AssertionError OCachePointer.incrementReadersReferrer
-Запрос Orientdb для получения всех вершин, соединенных ребром определенного типа
-Ошибка OrientDB Console.bat с недопустимым паролем имени пользователя для команды удаления базы данных
-Использовать временный идентификатор записи во время транзакции
-Oriendb Select @ rid из таблицы возвращает -2: 0
-Как улучшить этот запрос OrientDB для максимальной производительности?
-Orientdb создает java.lang.String не может быть приведен в базу данных проверки и базы данных восстановления
-OrientDB: выберите край, где out = (выберите ??) не работает
-Похожие вопросы
-Невозможно восстановить определенные таблицы на определенных узлах в Cassandra
-Spring Data API для запросов без использования ORM
-Есть ли в Кассандре шаблон для этой задачи?
-Ключи нескольких диапазонов для таблицы DynamoDB
-Проблема с производительностью с CouchDB Mango Index
-MUMPS для миграции базы данных Cache
-Гибридные приложения: какая стратегия БД «PouchDB + CouchDB» или Couchbase Mobile?
-Поиск записей по значению или условному значению в Nosql со 100 миллионами записей
-Префикс RavenDB ID и REST API
-Вес поискового запроса MongoDB
-
-Datediff в CosmosDb
-
 AZURE
 Datediff в CosmosDb
 Привет. Есть ли способ добиться датировки в cosmosdb?
@@ -3329,31 +3255,6 @@ Select Datediff(day,c.datea, c.dateb) from c
  17.06.2018 21:00
 DateTimeDiff добавлен в базу данных cosmos. Пожалуйста, обратитесь к этому: https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-datetimediff
 
- 10.09.2020 14:03
-
-Как сохранить нулевые значения в конце сортировки в Mongoose?
-Не удалось найти пакет libsystemd-dev во время установки ScyllaDB в ubuntu 14
-Хранение сложных данных в качестве ключа в базе данных NoSQL?
-Несколько потоков пытаются одновременно писать в одном хранилище данных без Sql
-Aerospike ACID - Как узнать окончательный результат транзакции по таймаутам?
-MongoDB - полезен ли индекс для коллекции, в которой будет только запрос findOne?
-Тестирование БД
-Стратегия архивирования данных MongoDB
-Отношения "многие ко многим" RavenDb: структура и индекс документа
-Правильный дизайн в базе данных документов Cloud Firestore
-Похожие вопросы
-Ошибка с WSGI при развертывании приложения Flask в Azure
-Определение сборки для приложения Django в VSTS
-Многофакторная аутентификация при входе в Windows 10 с учетной записью Azure AD
-C# Application Insights - несколько экземпляров TelemetryClient
-Как правильно назначить узлы менеджера роя?
-Хранилище Azure: фильтр запросов к таблицам работает в эмуляторе, но не в Azure
-Как вернуть файл в настраиваемом соединителе Azure Logic Apps
-DistributedExchangeOperation <ShuffleMoveOperation>
-Есть ли способ в Sql Server найти, какие столбцы в представлении не индексируются
-Глубокая ссылка на текстовый файл в Azure Data Lake Store
-
-DynamoDB — как «сломать» иерархию без использования отношений?
 
 AMAZON WEB SERVICES
 DynamoDB — как «сломать» иерархию без использования отношений?
@@ -3400,31 +3301,6 @@ DynamoDB теперь поддерживает транзакции, поэто�
 
 Если вы обнаружите, что у вас много таких отношений, вам следует вместо этого использовать реляционную или графовую базу данных.
 
- 11.04.2019 09:20
-Другие вопросы по теме
-Сделайте groupby, а затем присоединитесь к Bigquery
-Сложное моделирование БД в firestore
-Проблема MongoDB в запросе, возвращающем значение от пользователя
-Приложение для знакомств. Какая структура базы данных мне нужна в Firebase Firestore, чтобы запрашивать всех пользователей, кроме тех, кому я не нравлюсь?
-Как сделать поворот на MongoDB?
-Как моделировать данные в Cassandra, чтобы избежать бесполезного дублирования
-Как установить несколько экземпляров CouchBase на один Linux-сервер?
-Как запросить связь серий действий, инициированных пользователями, из SQL или NoSQL?
-Моделирование нескольких отношений «многие ко многим» в Dynamodb
-Хранение больших объемов запрашиваемых JSON
-Похожие вопросы
-Возникла проблема с генерацией ответа на запрос слота
-Расположение лямбда-функции AWS приводит к InvalidToken-Error
-RDS не поддерживает создание экземпляра БД со следующей комбинацией
-AWS CloudFormation: «Параметр [subnetIds] недействителен»
-Как исправить ошибку подписки на тему SNS с помощью node js и конечной точки http
-NodeJs не может перезвонить ответ AWS Secrets Manager
-DynamoDB Client.Scan() не возвращает параметр LastEvaluatedKey
-Как преобразовать в json после получения из AWS DynamoDB getItem() в среде python3.7?
-Как сделать API AWS AppSync GraphQL общедоступным при использовании Amazon Cognito для аутентификации?
-Как загрузить в AWS S3 с помощью тегов объектов
-
-Должен ли я действительно использовать одну таблицу DynamoDB для всех данных?
 
 AMAZON WEB SERVICES
 Должен ли я действительно использовать одну таблицу DynamoDB для всех данных?
@@ -3462,33 +3338,6 @@ You should maintain as few tables as possible in a DynamoDB application. Most we
 Если вы ищете учетную запись по своему идентификационному номеру, вы должны запросить префикс учетной записи, а если вы ищете фотографию, вы должны добавить префикс «фото». это очень простой пример - ваш дизайн может отличаться.
 
 Видео, рекомендованное в первом комментарии к вашему вопросу, отличное - посмотрите его на скорости 0,75 или медленнее, и просмотрите несколько раз.
-
-27.06.2019 20:12
-Другие вопросы по теме
-Что лучше по производительности при запросе данных 50 ГБ? Это MYSQL SELECT с условием или Dynamodb SCAN с выражениями FiLTER?
-Количество запросов друида для нескольких столбцов
-Как мне структурировать базу данных firestore во флаттере, чтобы легко получить доступ к другим коллекциям, связанным с пользователем?
-Как экспортировать все коллекции в базу данных с URI?
-Значение атрибута обновления Dynamodb среди связанных элементов
-Включить узел Entry в обход AQL Graph
-Как обновить объект в монго через PHP
-Ручная сортировка в базе данных NoSQL
-Моделирование «многие ко многим» в Cassandra или другой базе данных nosql
-SEMBAST - Как удалить определенный массив из моей БД?
-Похожие вопросы
-Как убедиться, что все основные узлы EMR всегда содержат файл хранилища ключей?
-Взимает ли AWS плату за время запуска инстанса RDS?
-Отсутствуют записи CloudFront для функций Lambda в Route 53
-Как назначить роль экземпляру EC2, запущенному в рамках автоматического масштабирования
-Экспорт существующих сигналов тревоги AWS CloudWatch в шаблон CloudFormation
-Рекомендации по развертыванию развертывания kubernetes в разных средах и обработке номеров сборок в конфигурации
-Как продлить срок действия токена доступа или идентификатора на 10 лет, как написано в документации?
-Не удается получить доступ к переменной среды в функции Lambda
-Что лучше по производительности при запросе данных 50 ГБ? Это MYSQL SELECT с условием или Dynamodb SCAN с выражениями FiLTER?
-Ошибка Cors с AWS Lambda и .Net Core WebAPI
-
-Получить общий идентификатор нескольких коллекций в MongoDB?
-
 
 
 MONGODB
@@ -3567,29 +3416,6 @@ userCollection1.aggregate([{
 
 db.getCollection('user1').aggregate({ "$facet": { "presentInAllCollections": [{ "$lookup": { "from": "user2", "localField": "name", "foreignField": "name", "as": "User2" } }, { "$lookup": { "from": "user3", "localField": "name", "foreignField": "name", "as": "User3" } }, { "$lookup": { "from": "user4", "localField": "name", "foreignField": "name", "as": "User4" } }, { "$lookup": { "from": "user5", "localField": "name", "foreignField": "name", "as": "User5" } }] } }, { $project: { "foundUser": { $filter: { input: '$presentInAllCollections', as: 'arrayElement', cond: { "$and": [{ $ne: ['$$arrayElement.User2', []] }, { $ne: ['$$arrayElement.User3', []] }, { $ne: ['$$arrayElement.User4', []] }, { $ne: ['$$arrayElement.User5', []] } ] } } } } })
  
-06.07.2019 11:20
-Другие вопросы по теме
-Удаление всех документов в коллекции путем сравнения индекса даты с текущей датой
-Как подсчитать количество дубликатов для каждой страны с помощью мангуста?
-Concat с последующим сохранением в Mongoose ничего не делает
-Используйте $match для полей из двух отдельных коллекций в агрегированном запросе mongodb
-Условие соответствия документа запроса mongodb во всех элементах массива?
-Express - JWT Cookie не сохраняется в браузере
-Как я могу сделать модель комментария с помощью мангуста?
-Значения Push/Pull для вложенного массива мангуста
-Mongoose предотвращает дублирование идентификационных номеров на основе document.count()
-Хуки не работают на updateOne при использовании Typegoose только для сохранения вызываются операции
-Похожие вопросы
-Удаление всех документов в коллекции путем сравнения индекса даты с текущей датой
-Как мне запустить проект Angular nodejs и MongoDB, загруженный с Github, в моем браузере?
-Как подсчитать количество дубликатов для каждой страны с помощью мангуста?
-Получить документы с соответствующими значениями в заданном поле в mongodb
-Используйте $match для полей из двух отдельных коллекций в агрегированном запросе mongodb
-Правильный способ использования MongoDB node.js `insertMany`, чтобы он не блокировался
-Пул соединений в MongoDB с джонго
-Условие соответствия документа запроса mongodb во всех элементах массива?
-Непрерывно запускать конвейер агрегации MongoDB
-Node mongo подсчитывает элементы запроса
 
 NODE.JS
 Что не так с моими отношениями с мангустами?
@@ -3737,35 +3563,6 @@ const result = await new frameworkModel(...Framework);
 
 This is what I was trying to achieve
 
-Всем спасибо.
-
- 16.07.2019 03:31
-Другие вопросы по теме
-Фильтр MongoDB Compass (запрос)
-Как получить данные из адреса состояния/проверить из пилы
-Как применить $setunion для этой агрегации?
-Spring mongo - сумма полей из массива и проверка больше, чем
-Запрос на исключение пустых значений, но я получаю их
-Повторное использование соединения в пуле соединений с базой данных
-Как я могу использовать оператор $out после $inwind в MongoDB
-Создание универсального делегата с использованием отражения
-Nodejs: должен ли запрос поиска для выбора n последних записей выполняться асинхронно
-Проблемы при создании приложения mangodb с Spring Boot
-
-Похожие вопросы
-
-Пакетный скрипт для переименования файлов «.txt», используя «дату», найденную в файле
-Как правильно разделить server.js?
-Как мне предотвратить событие, пока код не будет выполнен через импорт/экспорт?
-Как сохранить только часть двойной кавычки в строке в Javascript?
-Очистка результата html-страницы.. не в правильном порядке
-IpcMain: event.reply не является функцией
-При импорте почты sendgrid она не работает
-Функция отлова ошибок по параметрам, которую мы передаем в качестве аргумента
-Discord.js Бот, который говорит что-то на канале, который выбирает пользователь
-Как прервать вставку коллекции метеоров в хук перед?
-
-Как моделировать данные в базах данных noSql
 
 MONGODB
 Как моделировать данные в базах данных noSql
@@ -3851,31 +3648,6 @@ Mongodb - это простейшая форма базы данных NoSQL, к
 
 Чтобы узнать больше о том, как работать с mongodb, посмотрите это: https://docs.mongodb.com/
 
- 23.04.2018 18:20
-Другие вопросы по теме
-Кассандра: удалить последнюю запись со статическим столбцом
-Запрос DynamoDB возвращает нулевые результаты
-MongoDB - сбой подключения к графическому интерфейсу после обновления с бесплатной версии до M10?
-Сортировать результаты get ()
-Как сохранить текстовый файл NoSQL DB? Какой NOSQL мне следует использовать? Как интегрировать его с колбой в Python?
-Как подключить приложение весенней загрузки с использованием hibernate и mongodb
-Couchbase n1ql простое внутреннее соединение с использованием неключевых элементов
-Restdb.io запрашивает родительский дочерний массив, получает все, где адрес электронной почты клиента jos@gmail.com
-Как присоединиться к запросам (а не коллекциям) в MongoDB?
-Appengine ndb динамический выбор
-Похожие вопросы
-Отправка во вложенный массив в Mongo с Laravel
-Как использовать mongodb и mysql вместе в веб-проекте SpringMVC
-Mongo Connector не синхронизируется должным образом
-Набор Mongo DB не работает
-Вызов вложенных разделов в Mongo DB
-Связь между коллекцией mongo DB (заполнение)
-Как разобрать документ на Json - драйвер Mongo scala
-Ember получает данные из MongoDB с помощью NodeJS
-Как отсортировать числовое поле по номеру в MongoDB?
-Как получить данные из одного поля схемы в другое новое поле схемы
-
-
 
 C#
 Как создать графы Гремлина из кода C# .Net?
@@ -3936,31 +3708,6 @@ foreach (var vertex in response)
  24.07.2018 18:55
 Другой вариант, который выглядит активным и поддерживает несколько баз данных графов, - Экзамен.
 
- 17.04.2020 07:12
-Другие вопросы по теме
-CosmosDb: канал закрыт
-Оптимизировать MySQL для запросов с регулярными выражениями или лучшую DMBS для более быстрых запросов с регулярными выражениями?
-Анализ временных рядов с помощью искры
-Как использовать Mongodb mapReduce для выбора?
-NodeJS: обработка транзакций с базами данных NoSQL?
-Ubuntu - Установка ScyllaDB - Отсутствует дополнительный пакет libsystemd (или libsystemd-daemon) - Неверная версия GCC. Scylla требуется GCC> = 7.3 для компиляции
-Найти документ по частичному строковому значению внутри элемента массива в MongoDB из Azure
-OOAD и Кассандра. Как?
-Обновить предыдущие записи в Mongo (лучшая практика)
-Firestore запрашивает много документов
-Похожие вопросы
-Добавьте текст с 1-й строкой, который записывается во внешний файл
-DocuSign C# REST API Прикрепление документов с подписывающими сторонами к существующему конверту
-Игра WPF C# Hangman: заполните недостающие буквы
-Как поделиться списком объектов, не давая возможности изменять их состояние?
-Реализация абстрактного свойства Enum в дочернем классе
-Проблема с IOC в .NET.Core 2.0 для неизвестного конструктора
-Как WPF решает те же проблемы с ElementName?
-Как получить весь текст заголовка из datagrid в wpf C# с помощью кода позади
-Доступ к QueryString, значениям параметров маршрута в .net core webapi
-Log4net не регистрируется после выпуска как приложение Winforms ClickOnce
-
-CastError: преобразование в строку не удалось для значения
 
 NODE.JS
 CastError: преобразование в строку не удалось для значения
@@ -4048,31 +3795,6 @@ CastError: Cast to String failed for value "[ 'whateverValue_1', 'whateverValue_
 
 такие слова, как type, model, никогда не должны быть в схеме модели в качестве основных ключевых слов!
 
- 19.01.2020 13:52
-Другие вопросы по теме
-UnhandledPromiseRejectionWarning: ValidationError
-Юнит-тест node.js мангуст мокко чай синон
-Не может установить значение «подтверждено» в значение «истина» при подтверждении электронной почты с помощью jwt и mongoose
-Ошибки мангуста при заполнении
-Запретить изменение поля с помощью схемы Mongoose
-Mongoose, findByIdAndUpdate, Обновить все, кроме одного?
-Удаление поддокумента mongodb в определенную дату
-Как обновить строку и отключить какое-то поле
-Mongoose Извлекает объекты по значениям их свойств из массива (возможно, пустого)
-Слияние массивов из нескольких документов MongoDB
-Похожие вопросы
-Ошибка: не удается найти модуль ieee754 - при выполнении команды lb в Loopback js
-Ошибка при использовании vue create my-project: неожиданный конец ввода JSON во время синтаксического анализа
-Как изменить html файл на основе параметров запроса
-Mac OS X, Node устанавливается Nvm, но не может использовать модуль, установленный глобально
-UnhandledPromiseRejectionWarning: ValidationError
-Подколлекции firestore добавляют nodejs, которые не работают
-Как отладить зависший экспресс-сервер?
-Как извлечь текст с помощью Cheerio
-Цикл пропуска записи в базе данных Mongo
-Node.js: Juggling Async (Learnyounode). Рекурсия в функциях обратного вызова не работает должным образом
-
-Nosql / mongoose - дизайн
 
 NODE.JS
 Nosql / mongoose - дизайн
@@ -4199,35 +3921,6 @@ Article { name: string, content: string, category: Category { name: ... } }
 }
 Надеюсь, это то, что вы ищете.
 
- 01.06.2018 16:03
-Другие вопросы по теме
-Клонирование коллекции mongodb из Rails Mongoid
-Совокупный счетчик условий сопоставления элементов массива
-Сопоставление массива координат в запросе MongoDB
-$ concat с полями поиска?
-Получить только вложенный объект из MongoDB с помощью Spring Data mongoDb или шаблон mongo
-Условное определение того, работает ли сервер Node внутри контейнера Docker
-Запрос не учитывает диапазон дат, переданный в параметрах
-Сравнение значения из переменной со значениями из данного столбца, чтобы проверить, существует ли значение в MongoDB
-Объединить поля массива в одно поле массива mongo
-Отображать субмассив документа в MongoDB в виде таблицы в php
-
-Похожие вопросы
-
-Как работать с node.js и Dialogflow
-Node js динамически требует выдачи страниц
-Как проверить, аутентифицирован ли пользователь в Firebase и Express / Node.js?
-Couchbase: ошибка: невозможно выполнять операции с ведром выключения
-Рабочий процесс разработки Reaction NodeJS
-Как преобразовать строку или данные в QR-код в Node Js
-Использование импорта es6 вместо require в node.js
-Обещание внутри для каждого
-Невозможно установить узел с помощью nvm в Windows
-Используйте node js за корпоративным прокси
-
-Использование базы данных для приложения Node.js, которое запускается в терминале
-
-
 
 JAVASCRIPT
 Использование базы данных для приложения Node.js, которое запускается в терминале
@@ -4266,33 +3959,6 @@ AngularJs, ExpressJs, приложение MongoDB
 В Nodejs есть клиентские библиотеки для взаимодействия с базой данных Бывший. Для базы данных SQL: postgresql: https://github.com/brianc/node-postgres Для NoSQL db: mongodb: https://github.com/Automattic/mongoose
 
 Вы также можете создать пул подключений к базе данных
-
-18.06.2018 07:55
-Другие вопросы по теме
-Как создать ребра сразу после вставки вершины в одном SQL-запросе в OrientDB?
-MySQL - выберите из 2 таблиц, где пара столбцов в результате должна быть основана на условном выражении
-Выбрать данные из JSON
-Подсчет экземпляров и отображение в новом столбце с SQL
-Стандартный SQL Google BigQuery - предложение IN работает в BigQuery, но не в командной строке
-Как использовать "ORDER BY FIELD" для сортировки результата SQL
-SQL INNER JOIN несколько таблиц и столбцов
-Операторы SQL JOIN с GROUP BY
-Вставленное значение оставалось равным 0
-Как предоставить Select для ВСЕХ таблиц во ВСЕХ базах данных на сервере?
-Похожие вопросы
-Python3 opencv не сохраняет читаемое видео
-Как пропустить или игнорировать строки над заголовком?
-Как получить clientx при обновлении аудио
-Angular 2 использовать пакет javascript в машинописном тексте
-Почему я получаю сообщение 406, не принимаемое сервером в статусе на стороне клиента, и даже мой контроллер Spring не вызывает?
-Любопытство по поводу синтаксиса реакции (?) Или javascript
-Javascript Android Chrome прослушивает, чтобы выбрать событие изменения
-Расширяемый div laravel 5 jquery
-Мангуст не присоединяется к двум коллекциям
-Разница в поведении стрелочных функций и функций в Javascript
-
-Дизайн таблицы Cassandra для пользовательского чата
-
 
 
 DATABASE
@@ -4376,31 +4042,6 @@ SELECT * FROM sample.user_messages WHERE user_id = 1 AND second_user_id = 2
 SELECT * FROM sample.user_messages WHERE user_id = 1 AND second_user_id = 2
 Оба запроса дадут одинаковый результат.
 
- 27.07.2018 17:26
-Другие вопросы по теме
-Избегайте наличия более 1500 столбцов в таблице Postgres
-Как эффективно хранить общую статистику посещений для истории пользователей?
-Как сохранить синхронизацию таблиц в другой базе данных?
-Включите таблицу обзоров в схему базы данных
-Как хранить ответы API произвольной структуры в DynamoDB
-Дизайн базы данных: перечислить все комбинации или использовать матрицу
-Нормализация с помощью столбца имеет избыточность и полностью зависит от первичного ключа
-Ограничить данные одной таблицей в базе данных быстрее или менее интенсивно?
-Как создать базу данных для службы чата, которая хранит историю
-Предложение / обратная связь по дизайну базы данных для отслеживания рабочего задания на нескольких станциях
-Похожие вопросы
-Сколько типов плоских файлов мы можем использовать в SQL-Loader в Oracle?
-Что произойдет в модели RPC, если результат не будет распакован на клиентской заглушке?
-Laravel получение данных из базы данных занимает слишком много времени
-DateTime не вставляется в базу данных с помощью jsp
-Какова стратегия непрерывного резервного копирования БД
-Веб-сайт вылетает в одной сети, но работает везде
-Избегайте наличия более 1500 столбцов в таблице Postgres
-Неопределенная ошибка Laravel при получении данных из базы данных
-Соединение ODBC с MS Access в Ruby (.accdb)
-Отдельные пути чтения / записи базы данных в Dropwizard / JDBI
-
-Сохранение лайков в нереляционной базе данных
 
 DATABASE
 Сохранение лайков в нереляционной базе данных
@@ -4488,32 +4129,6 @@ userId3 - productId2
 
 Кроме того, вы можете сохранить в другом столбце дополнительную информацию, такую ​​как отметка времени, когда пользователю понравился продукт и т. д.
 
- 13.08.2018 07:41
-Вам также может потребоваться учитывать размер документа, сохранение идентификатора пользователя для каждого продукта или строкового идентификатора продукта для каждого пользователя может привести к отключению памяти и не очень хорошо масштабируется. Rdbms будет лучшим решением этой проблемы.
-
-Nodejs, mongodb найдите с помощью forEach и обновите
-Spring Boot с доступом к MongoDB - обновление нескольких записей / документов из конечной точки rest api
-Mongo DB - поиск и подсчет занимают больше времени для выполнения
-Последователи / Структура подписок в MongoDB
-Loop Childens Custom Mongodb
-Как получить id нового предмета ngrx
-Импортировать вложенный MongoDB в Pandas
-Как подключить Docker-контейнер к mongodb
-Обновить массив с несколькими условиями в mongodb
-Приложение Node / Express зависает при взаимодействии с MongoDB, ошибок нет
-Похожие вопросы
-Значение Long в JPARepository?
-Perl не может подключиться к базе данных
-Оставить проект базы данных приложения
-База данных INNER JOIN
-Как подключить RocksDB с помощью java
-Mongo DB - поиск и подсчет занимают больше времени для выполнения
-Последователи / Структура подписок в MongoDB
-Как я могу разрешить другим компьютерам доступ к базе данных моей программы?
-Хранить данные в таблице базы данных или массиве
-Обеспечение стандартов безопасности для базы данных доступа ms
-
-Фабрика данных V2 Запрашивает хранилище таблиц Azure, но использует значение поиска
 
 AZURE
 Фабрика данных V2 Запрашивает хранилище таблиц Azure, но использует значение поиска
@@ -4592,31 +4207,6 @@ https://i.stack.imgur.com/opFWS.png
 
 убедитесь, что вы заключаете запрос в " ", чтобы установить его как строку, а параметр в запросе должен быть заключен в {}
 
- 21.07.2021 10:37
-Другие вопросы по теме
-Эффективный разбор объекта хранилища данных в Python
-Какие улучшения я могу внести в базу данных посещаемости студентов NoSQL?
-Ограничение размера документа Couchbase, предпочтительно хранить общие данные
-Есть возможность хранить данные в HDFS с ключом-значением?
-Сертификаты Scylla для администраторов/архитекторов/разработчиков
-Couchbase spring data jpa для создания составного первичного ключа
-Как получить метаданные снимка Firestore?
-Структура списка контактов пользователя
-Одновременное использование @Document и @Entity
-Дизайн базы данных — вопрос о моделировании ERD для Graph в AWS
-Похожие вопросы
-Azure: назначение ролей с помощью шаблона ARM контейнеру хранилища
-В визуальной студии, как вы можете увидеть планировщик при загрузке шаблона руки в визуальную студию
-Вызов workItemTrackingHttpClient.CreateWorkItemAsync() вызывает различные исключения при развертывании в облаке
-Azure SSIS IR — работа с файлами во временной папке IR-узла
-Как использовать хранимую процедуру с серверной службой Azure Mobile .Net?
-Как использовать Azure Notification Hub без обновления приложения IOS
-Как реализовать аутентификацию формы с помощью MVC 5 и автоматического масштабирования Azure
-AzureMapsCodeSamples не может работать на локальном диске
-Выходная привязка функции Azure Cosmos DB — настраиваемые параметры JsonSerializerSettings
-Ошибка устойчивой функции Azure «Функции активности в настоящее время не зарегистрированы!»
-
-Использование S3 в качестве базы данных по сравнению с базой данных (например, MongoDB)
 
 MONGODB
 Использование S3 в качестве базы данных по сравнению с базой данных (например, MongoDB)
@@ -4665,31 +4255,6 @@ API без запросов (SQL или NoSQL)
 
 Несмотря на то, что Amazon S3 медленнее DynamoDB, он, безусловно, требует гораздо меньше ресурсов для хранения!
 
- 13.05.2019 10:52
-Другие вопросы по теме
-Операция BatchWriteItem: предоставленный ключевой элемент не соответствует схеме
-Cloudformation: параметризовать имя параметра?
-Kubernetes CoreDNS периодически разрешает имена
-Terraform — загружать файл на S3 при каждой подаче заявки
-Наличие нескольких файлов main.go для развертывания приложения на основе AWS Lambda
-Вызов функции Lambda из приложения React, сгенерированного Amplify, без использования шлюза API
-Инициировать сигнал тревоги AWS, когда вызов шлюза API достигает 29-секундного тайм-аута и возвращает ошибку 504
-Рекомендации по проектированию перед развертыванием в AWS?
-Объекты S3 без производительности префикса
-Как сделать команду aws доступной для sh при использовании модуля оболочки ansible?
-
-MongoDB: отличные значения от объектов в подмассиве
-Проверить дубликаты определенного поля для массива документов с внутренним массивом
-Усовершенствования агрегатных функций для включения нескольких полей без поля _id
-Insert_many не работает при добавлении еще одного случая
-Как правильно сделать seed mongoDB в NestJS, используя mongoose и воспользовавшись моими уже определенными схемами
-Вложенный массив Mongo Aggregate, поиск
-Коллекция не показывает свои значения с помощью .find()
-Как вставить значение из базы данных в тег "а" в атрибут href
-Очень большое количество подключений к MongoDB
-Как найти длину массива mongodb
-
-Получение CoreMongooseArray вместо обычного массива
 
 NODE.JS
 Получение CoreMongooseArray вместо обычного массива
@@ -4775,32 +4340,6 @@ const history = Array.from(...result.history).map(v => v.toJSON())
  22.05.2019 15:30
 Это сработало для меня!
 
-const history = Array.from([...result.history])
- 02.02.2021 19:57
-Другие вопросы по теме
-Хранимая процедура для удаления строки, где это условие истинно:
-Какова может быть цель первичных ключей для всех таблиц, полученных из одной таблицы?
-Данные больше не сохраняются в таблицу в моей базе данных SQLite
-MongoDB (JS), выполняйте операции запроса для одного свойства документа, если оно доступно, иначе используйте другое свойство
-Как найти товар с максимальным количеством заказа в каждом регионе?
-SQL Server тройное отношение многие ко многим
-Как очистить кеш после обновления базы?
-Внешний ключ ссылается на первичный ключ в весенней загрузке
-Вставить пустой массив int в таблицу куста
-Почему это partialFilterExpression выдает ошибку?
-Похожие вопросы
-Отправляйте большие вложения (> 5 МБ) с помощью клиента Gmail API Node.js
-Получить ошибку, метод не разрешен
-Указывает ли использование ЦП, полученное из node.js os.cpus() в экземпляре контейнера докеров, ЦП хоста или ЦП контейнера?
-Потоковая передача данных в дополнение Node.js C++ с помощью N-API
-Можно ли найти по ключу в сиквеле PostgreSQL?
-Отправка Ajax-запроса данных формы на узел/экспресс
-Как «обратный формат»
-Mongo объединяет результаты поиска на основе уникального свойства подколлекции с количеством?
-Вью | Проблемы с vue-moment.js
-Лучший способ сопоставить глубокий объект с новым объектом
-
-Проблема MongoDB в запросе, возвращающем значение от пользователя
 
 JAVASCRIPT
 Проблема MongoDB в запросе, возвращающем значение от пользователя
@@ -4835,31 +4374,6 @@ dbo.collection("usercollection").find(myQuery, {  projection: { usertype: 1}  })
   });
 В вашем случае приведенный выше код будет работать нормально.
 
- 04.04.2019 16:35
-Другие вопросы по теме
-Как удалить повторяющиеся вложенные объекты, сравнивая их значения
-Потоковая передача файла через SFTP-соединение с клиентом
-Проблемы с шифрованием Nodejs с модулем npm «crypto»
-Почему многоуровневые асинхронные функции не перехватывают ошибку, возникающую на самом низком уровне в узле?
-NodeJS fs – не удается прочитать внешний файл json
-Как я могу поймать ЛЮБУЮ ошибку из formidable.js в узле?
-MongoDB: динамические счетчики
-Ошибки при использовании функции Lambda для удаления записи из DynamoDB, но запись по-прежнему удаляется
-Как обрабатывать строку запроса Node Js AWS Lambda
-Файл конфигурации .npmrc не читает переменную среды для загрузки модуля частного узла
-Похожие вопросы
-Как преобразовать SVG-путь
-Как я могу взять строки текстового поля и поместить их в набор элементов с выравниванием по левому и правому краю, разделенных на «:» для каждой строки?
-Методы Vue JS не срабатывают
-Как я могу изменить этот вывод функции qr перед возвратом
-Массив строк, добавляющих запятые при вставке в HTML
-Плавная прокрутка в тени DOM
-Как удалить повторяющиеся вложенные объекты, сравнивая их значения
-Как добавить несколько объектов Json в один массив из цикла
-Для доступа к объекту требуется setTimeout?
-Является ли каждая функция в JS замыканием?
-
-Хранение больших объемов запрашиваемых JSON
 
 JSON
 Хранение больших объемов запрашиваемых JSON
@@ -4899,32 +4413,6 @@ FROM UNNEST([
   ]) AS json_text
 WHERE CAST(JSON_EXTRACT_SCALAR(json_text, '$.age') AS INT64) > 5;
 
-
-31.03.2019 23:10
-Другие вопросы по теме
-Запрос возвращает только 1 строку данных в моей таблице PHP
-Как отобразить проект, членов группы и их босса рядом в MySQL
-Использование Docker и PostgreSQL: как установить пароль администратора в официальном образе postgresql? (Но надежно, а не переменная среды обитания)
-Как дать доступ клиенту для просмотра данных из локальной базы данных
-Как выбрать все строки, имеющие одинаковое и последнее значение в определенном столбце из базы данных mysql
-Выберите строку из таблицы t1, где учащиеся остаются вместе, в соответствии с датой, временем и столбцом продолжительности
-Изображение не отображается в datagridview
-Поле автоинкремента после максимального числа, хранящегося в БД через talend
-Распределенные транзакции + сильная согласованность: выполнимость?
-Как получить полевое время из базы данных
-Похожие вопросы
-Как прочитать безымянный объект из BindingContext
-Как я могу отображать данные из массива, вложенного в объект, из API в React?
-Сопоставление JSON с MongoDB с помощью Nodejs
-Поток результатов JSON Curl в параметр данных Curl
-Json неправильно десериализуется
-Как перебрать JSON в JSON для современного С++
-Почему скрипт ведет себя по-разному при использовании разных веб-хостингов?
-Как я могу нажать один элемент в существующем массиве JSON?
-VUE.JS Получить файл json из URL-адреса через axios в webpack-simple
-Схема JSON, сложный сценарий условия if-else
-
-SEMBAST - Как удалить определенный массив из моей БД?
 
 FLUTTER
 SEMBAST - Как удалить определенный массив из моей БД?
@@ -5142,30 +4630,6 @@ await _chatTable.delete(await _db, finder: finder);
 //delete using key
 await _ chatTable.record(userId).delete(await _db);
 
-Как получить цвет пикселя изображения, на который я нажал?
-Как я могу удалить элемент из списка и экрана, когда используется onTap?
-Как показать разные средства выбора даты на iOS и Android (нативные) во Flutter?
-Я не могу получить изображение в флаттере
-Как получить значение sharedPreference?
-Как мы можем создать свой собственный dropdownButton во флаттере?
-Значение TextFormField равно null
-Преобразование асимметричного шифрования Java RSA в Flutter Dart
-Значение TextFormField исчезает и как получить значение textFormField?
-DynamoDB + Флаттер
-Похожие вопросы
-Как получить цвет пикселя изображения, на который я нажал?
-Флаттер неправильное положение текста в текстовом поле после изменения высоты
-ListView карт без полей по-прежнему показывает фон между картами
-Как я могу удалить элемент из списка и экрана, когда используется onTap?
-Как показать разные средства выбора даты на iOS и Android (нативные) во Flutter?
-Я не могу получить изображение в флаттере
-Flutter другое выравнивание в столбце
-Как получить значение sharedPreference?
-Как мы можем создать свой собственный dropdownButton во флаттере?
-Значение TextFormField равно null
-
-Извлекайте огромные данные из MySQL
-
 
 
 PHP
@@ -5227,31 +4691,7 @@ function getRecords()
 foreach ($this->getRecords() as $record) {
   //process records here
 }
- 28.05.2019 15:21
-Другие вопросы по теме
-Как сохранить несколько ckeditor в php?
-Отношение запроса и группировка в построителе запросов
-Выберите строку на основе другой строки с таким же идентификатором в той же таблице в MySQL
-Docker, Springboot и Mysql: com.mysql.cj.exceptions.CJCommunicationsException: сбой канала связи
-Отображать данные в нужной форме, используя php
-Как получить сиквелизированные записи js на сегодня
-Добавление процента к числу в SQL
-Вставьте специальные символы с помощью libmysql
-SQL+Выборка строк с последней датой+Регистр, когда row_number()+Дублирует
-Борьба с коррелированными подзапросами в SQL
-Похожие вопросы
-Сеансы Laravel не сохраняются с несколькими доменами
-Перемещение массива через ajax из PHP в JS с допустимым форматом JSON
-Как сохранить несколько ckeditor в php?
-Массив запросов с использованием whereHas
-Отношение запроса и группировка в построителе запросов
-Один и тот же вид Laravel с разными параметрами в зависимости от того, как туда добраться
-Попытка использовать пробелы в массиве поисковых переменных, но не получение ожидаемого вывода/результатов
-HTTP-запрос Python с данными json не получает ответ php с данными json
-Класс не найден автозагрузка psr-4
-Tablesorter не очищает пробелы при фильтрации, синтаксическая ошибка PHP?
 
-Как запросить AWS DynamoDB, используя несколько индексов?
 
 AMAZON WEB SERVICES
 Как запросить AWS DynamoDB, используя несколько индексов?
@@ -5392,31 +4832,7 @@ Does it mean that while putting a new item in the table, I will need to maintain
     ":type": "SPECIAL"
   }
 }
- 18.02.2022 23:21
-Другие вопросы по теме
-Как POST, PATCH и DELETE элементы из массива вложенных документов с помощью REST
-Проект схемы MongoDB для отношения «многие ко многим»
-Как сгруппировать записи на основе элементов массива с помощью MongoDB
-Как распечатать количество элементов массива вместе с другой переменной в MongoDB
-Запрос для получения значений для определенного ключа в MongoDB
-Смена пароля администратора Couchbase по умолчанию
-Переименовать ключ документа Arango DB
-DynamoDB — что происходит, когда я удаляю объект в GSI? Это «Каскад» к основному столу?
-Запрос подмножества данных Firebase (NoSQL)
-Как хранить локации в ArangoDB?
-Похожие вопросы
-Как изменить настройки Django для статических файлов AWS, чтобы они соответствовали django summernote
-Список subnet_id Terraform AWS обрабатывается как строка с одним значением для экземпляра ec2
-DynamoDB запрещает доступ всем, кроме администраторов и функций Lambda
-Политика перекрестной учетной записи s3 — действие не распространяется ни на одну ошибку ресурса
-Как динамически изменить «fromEmailAddress» потока забытого пароля cognito?
-Событие S3 не запускается/не отображается в пользовательском интерфейсе Lambda; построен с помощью Serverless CLI/serverless-plugin-existing-s3
-Токен доступа и хранилище идентификационных токенов для бессерверного приложения
-Как выполнить задание Glue ETL (преобразование в паркет из необработанной зоны в обработанную) для всех таблиц в необработанной зоне?
-Cloudformation: ошибка: член должен иметь длину меньше или равную 20
-Символ новой строки AWS Firehose
 
-Как ускорить совокупный запрос Cosmos DB?
 
 AZURE
 Как ускорить совокупный запрос Cosmos DB?
@@ -5499,34 +4915,7 @@ SELECT COUNT(1) FROM c WHERE country_code = "FR"
 
 Команде Cosmos DB еще предстоит проделать дополнительную работу, чтобы обеспечить агрегирование нескольких столбцов между разделами, но улучшения, которые мы имеем сейчас, весьма многообещающи.
 
-12.05.2019 17:01
-Другие вопросы по теме
-Запрос диапазона дат Firebase для получения документов, у которых есть starDate и endDate
-Как спроектировать базу данных NoSQL для выбора порядка данных по отметке времени
-Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
-Должен ли я проверять отношения в DynamoDB?
-Создание нового свойства из имени родительского свойства через SQL в документе типа noSQL
-Невозможно создать объекты в оболочке hbase
-Запрос отдельных значений из NoSQL (в частности, Cosmos DB) не может быть преобразован в тип модели
-Как убедиться, что я удалил/обновил свою собственную запись в DynamoDB без USER ID в этой таблице
-Большой двоичный объект моделирования данных Cassandra
-Получение CoreMongooseArray вместо обычного массива
-Похожие вопросы
-Подключение к очереди хранилища Azure за прокси-сервером
-Фабрика данных Azure версии 2. Нельзя сочетать имена файлов с подстановочными знаками с путем к файлу динамического содержимого. Есть ли решение для блоков данных (ADB) или другое решение для ADF?
-Приложения логики: как получить ответ display_value от Http API cal
-Ограничение одним экземпляром службы во всех узлах фабрики служб
-Ограничьте ресурсы узла, предоставляемые пакетному заданию или задаче Azure
-Как зарегистрировать сюжет в azureml?
-Как запустить jsreports.net в основном приложении aspnet в веб-приложении Azure
-PIN-код Bluetooth не отображается после регистрации устройства в Microsoft Intune/Android Enterprise
-API-соединение — имя пользователя и пароль в шаблоне ARM
-Шаблон Azure ARM, как получить правильный синтаксис от функции utcnow до времени запуска runbook
-
-Как сопоставить таблицы с n столбцами с базой данных?
 -------------------------------------------------------------------------------------
- 
-
 
 POSTGRESQL
 Как сопоставить таблицы с n столбцами с базой данных?
@@ -5591,31 +4980,6 @@ insert into test values (2, 'book2', '{"rank": 10, "name": "test", "price": 12}'
 Каково максимальное количество столбцов в запросе на выборку PostgreSQL?
 (Но позже вы прокомментировали максимум 12, что вообще не проблема.)
 
- 07.03.2019 02:16
-Другие вопросы по теме
-Создание настроек конфиденциальности для пользователей
-Влияет ли добавление внешнего ключа в таблицу на время его вставки?
-Слабая сущность с двумя разными владельцами
-Как спроектировать базу данных mysql для приложения для управления большими файлами?
-Вопрос: Какова наилучшая структура БД при добавлении функции Follow/Followers?
-Не удается вставить значение int в десятичный столбец SQL
-Удорожает ли создание индекса для текстового столбца поиск?
-Как выполнить расширенную фильтрацию объекта базы данных по их атрибуту «тег»
-Является ли хорошей практикой хранение специальных символов в базе данных в виде эквивалентного символа html escape, например. и как &amp;
-Уникальный индекс и стандартный индекс выполняются отдельно?
-Похожие вопросы
-В Postgresql, как выбрать первые n процентов строк по столбцу?
-Проблемы с встраиванием оператора select
-Получить список пользователей, которые участвуют в разговоре
-PostgreSQL - преобразование строки с кавычками в другую строку с использованием регистра?
-Как аутентифицировать пользователя AWS на определенном хосте в частном облаке
-Проблемы с планированием... Использование tasksheduleR для запуска R-скрипта с помощью rtweet и экспорта в таблицу postgreSQL
-SQLAlchemy @hybrid_method и @distance.expression TypeError: аргумент float() должен быть строкой или числом, а не «InstrumentedAttribute»
-Как объединить две таблицы с возможными значениями NULL в индексе UNIQUE?
-SQL: получить значения из столбца в зависимости от логических выражений в столбце
-Как получить все данные дочерней таблицы, если они имеют тот же идентификатор, что и родительская таблица
-
-Как одновременно и эффективно записывать данные в NoSQL и RDBMS
 
 MONGODB
 Как одновременно и эффективно записывать данные в NoSQL и RDBMS
@@ -5655,29 +5019,7 @@ MONGODB
 
 Чтобы ответить на ваш второй вопрос, да, когда вы начинаете зависеть от схемы, она должна быть стабильной. Его не обязательно синхронизировать с вашей целевой схемой, но ваш процесс ETL должен знать об обоих, и его нужно будет модифицировать каждый раз, когда какая-либо из них существенно изменится. Быть «без схемы» не означает, что схемы нет, это просто означает, что схема не применяется программным обеспечением, вместо этого она применяется зависимостями в системе.
 
-Разработка социальной сети на node.js и mongoDB
-Архитектура аутентификации/авторизации микросервиса
-Принципы DDD и репозитории с Dapper
-Какой тип UML лучше всего подходит для представления моей архитектуры проекта для бизнес-пользователей
-Самый простой способ определить, является ли текущая сборка 32/64-битной в коде
-Архитектура конструктора сайтов
-Является ли плохой практикой то, что папка моего проекта также является приложением в Django?
-Мультитенантность с аутентификацией Azure AD и API веб-приложений
-Является ли английский язык стандартом для описания веб-сервиса (отдых, SOAP и т. д.)?
-Решение для гибридной архитектуры (MSsql и .NET)
-Похожие вопросы
-Лучший способ управлять разрешениями пользователей в REST API с помощью JWT (Node.js + mongoose)
-Как получить доступ к глубоко вложенному массиву с помощью MongoDB (ASP.NET Core 2.2)
-Как работает mongoose.connect(connectionSring)?
-Сколько данных может храниться в одном экземпляре mongodb
-Совокупность мангустов, поиск предков продукта при совпадении продукта
-NodeJS с Mongoose — прагматично добавить URL к изображению, полученному с помощью find()
-Объяснение того, почему дублируется запись в upsert
-MongoDB Найти | Исключение - не поддерживается
-Лучший способ проиндексировать большой файл
-Разница между событиями открытия/подключения и закрытия/отключения мангуста
-        
-Flutter: получить снимок документа
+
 
 Flutter: получить снимок документа
 Я создал конструктор Listview, передавая buildChatList в качестве моего средства сборки, но я заметил, что ничего не возвращается из buildChatList, когда я ГОРЯЧИЙ ПЕРЕЗАПУСК или перестраиваю приложение, НО фактически возвращал ожидаемые данные при ГОРЯЧЕЙ ПЕРЕЗАГРУЗКЕ. Я не понимаю, почему это происходит. Мне нужна помощь.
@@ -5951,31 +5293,6 @@ StreamBuilder(
                )
 Я использую представление списка для своей коллекции Firestore.
 
- 10.01.2019 03:04
-Другие вопросы по теме
-Полный поиск Rethinkdb по содержит текст
-Документы слияния MongoDB
-Правильная структура базы данных Firebase для нескольких индексов
-Эффективный способ хранения большого словаря Python в базе данных
-Как найти k ближайший элемент в базе данных?
-Кассандра вывод из эксплуатации потеря данных
-Предложение структуры схемы для NodeJS и MongoDB
-Включить результат XQuery через include в MarkLogic
-Сканировать строки HTable на предмет значения столбца между двумя отметками времени
-Как увеличить поле в массиве объектов после его нахождения (с помощью findOne ()) и до его сохранения?
-Похожие вопросы
-Дротик - добавление повторяющегося символа к целому числу
-Как изменить цвет панели приложения при свертывании приложения
-Точечная запись для методов
-Какое семейство шрифтов по умолчанию используется в приложении Flutter?
-Как сделать колонку прокручиваемой во Flutter?
-Именованный параметр home не определен Flutter
-Как решить, должны ли мои переменные находиться внутри класса, расширяющего StatefulWidget ИЛИ Starte <>?
-Блок Flutter для навигации
-Приложение flutter аварийно завершает работу, когда Интернет отключается во время выполнения транзакций
-Angular Dart Routing вызывает пустой экран без ошибок
-
-Как создать следующую структуру данных в среде NoSQL
 
 DATABASE
 Как создать следующую структуру данных в среде NoSQL
@@ -6115,31 +5432,6 @@ For me it looks like firebase is not suited for my project and i'm thinking of r
 
 Я так не думаю. Есть много приложений, которые имеют тот же механизм, что и ваш, и работают очень хорошо.
 
- 05.12.2018 10:07
-Другие вопросы по теме
-SLA аутентификации Firebase
-Создание заголовка сообщения для уведомления firebase
-Получение информации о пользователе из запроса к облачной функции в Firebase
-Студии Android не отображаются обновленные токены в logcat
-Проблема с кодом аутентификации Firebase (Swift, iOS)
-Проблема с ecommerce_purchase для Android Release + Firebase + Google Tag Manager + Google Analytics
-Как добавить ссылки во все данные моего списка?
-Отказано в разрешении на чтение и запись базы данных firebase
-Как установить databaseAuthVariableOverride в firebase REST
-AppInvite - получите адрес электронной почты или номер мобильного телефона, на который было отправлено приглашение
-Похожие вопросы
-Объединение запросов where и whereIn в один запрос
-Суммирование SQL из разных таблиц
-Neo4j применяет отношения несколько раз в запросе соответствия
-Ошибка: не удается найти метод символа execAction (String)
-Схема данных для хранения разнородных данных в файлах паркета внутри HDFS
-Ошибка чтения Oracle ODBC с левым соединением
-Синхронизация с SQLite в C#
-MySQL Query для возврата списка связанных дубликатов
-Ошибка функции LISTAGG в DB2 LUW 9.7 FP5
-Подключение компаса MongoDB к MongoDB, запущенному на другом компьютере
-
-Заполнение мангуста не заполняет массив
 
 JAVASCRIPT
 Заполнение мангуста не заполняет массив
@@ -6367,31 +5659,6 @@ User.find({ ... }).populate({
 });
 Я не знаю, почему это имеет значение, если имя модели, на которую указывает ссылка, уже указано в схеме.
 
- 12.06.2019 17:29
-Другие вопросы по теме
-Проверьте, находятся ли данные между двумя числами или нет в запросе mongodb
-Предотвращение множественных подключений MongoDB в NodeJS
-Mongo: получить последний купленный в магазине товар для нескольких пользователей одним запросом
-Mongodb Сопоставляет элементы в массиве
-Запрос на получение данных, сгруппированных по некоторому полю в mongodb
-Возвращает конкретное поле значения массива в совокупности
-Mongodb неизвестный аргумент $ lookup: foreignKey
-Набор реплик с использованием MongoDB в контейнере Docker при подключении к приложению Node.js
-Чанки MongoDB Shard уже имеют идентичный
-Структура документа pymongo insert_one потеряна
-Похожие вопросы
-Динамическая галерея изображений jquery не работает на ReactJS
-Асинхронный метод, не ожидающий функции - VUE
-JavaScript заставляет вас дважды щелкнуть, чтобы раскрывающееся меню открылось или закрылось
-Скопируйте в буфер обмена JavaScript в aspx веб-формы с множеством пустых пространств
-AngularJS: как проверить выбор URL-адреса внутри state.go в зависимости от условия?
-Разница между mouseDown и mousePress javascript
-React-Leaflet создать кастомные компоненты
-Nodejs показывает одну запись вместо трех записей в базе данных
-Тег ссылки по центру по горизонтали, а окна iframe отображаются под
-Как анализировать параметры и значения POST внутри JQuery POST извне
-
-Сертификаты Scylla для администраторов/архитекторов/разработчиков
 
 NOSQL
 Сертификаты Scylla для администраторов/архитекторов/разработчиков
@@ -6416,31 +5683,6 @@ NOSQL
 
 По состоянию на октябрь 2019 года Университет Сцилла предлагает сертификаты. Недавно была добавлена ​​поддержка катакода.
 
- 22.08.2021 23:23
-Другие вопросы по теме
-Как я могу исправить эту ошибку с помощью ScyllaDB?
-Основное уплотнение на ScyllaDB
-Ограничить том Kubernetes одним модулем
-Проблема обновления Scylla с 2.1.x до 2.2.x
-Пользователь может просматривать конкретное пространство ключей, а не другие, если у него нет прав администратора?
-Проблема установки Scylla на RHEL и CentOS
-Можно ли настроить Opscenter с помощью Scylla?
-Версия ScyllaDB такая же после обновления
-Требуется стабильное обновление после обновления версии Scylla?
-Не удалось найти архив ScyllaDb и ссылку для скачивания rpm
-Похожие вопросы
-Couchbase spring data jpa для создания составного первичного ключа
-Как получить метаданные снимка Firestore?
-Структура списка контактов пользователя
-Одновременное использование @Document и @Entity
-Дизайн базы данных — вопрос о моделировании ERD для Graph в AWS
-Попытка синхронизировать правила безопасности Firestore и запросы друг с другом для HashMap
-Что такое бинарник в бинарном json (BSON)?
-Когда я обрабатываю свои данные на своем локальном хост-сервере, они считываются очень быстро, но когда я подключаю свою базу данных к mongolab, данные считываются очень медленно
-Как сопоставить таблицы с n столбцами с базой данных?
-Как сделать облачный запрос для поиска документов, два поля которых равны
-
-Правила проверки Mongo db приводят к сбою моего оператора вставки
 
 MONGODB
 Правила проверки Mongo db приводят к сбою моего оператора вставки
@@ -6524,31 +5766,6 @@ The mongo shell treats all numbers as floating-point values by default.
 The mongo shell provides the NumberInt() constructor to explicitly specify 32-bit integers.
 Источник: https://docs.mongodb.com/manual/core/shell-types/#numberint
 
- 11.03.2019 11:53
-Другие вопросы по теме
-Ionic 4 + angular 7 Реактивная форма с валидаторами Проблема рендеринга HTML
-Проверка Laravel всегда возвращает false при попытке добавить входной запрос из запроса класса
-Сравните два числовых поля в списке SharePoint 2013 и отобразите сообщение
-После реализации проверок в С# у меня возникают проблемы с обновлением записей
-Visual Basic 6.0: Как проверить, начинается ли содержимое текстового поля с определенного символа или нет?
-Загрузка файла Django с проверкой не работает
-Проблемы с проверками в C#
-Использование функций вместо методов в SomethingRequest для проверки
-Валидации с помощью SQLAlchemy версии Python Eve
-Сравнение двух целых чисел, чтобы проверить, больше ли второе целое число
-Похожие вопросы
-Как я могу контролировать ошибки, мангуст
-MongoDB 3.6. Как изменить этот агрегированный запрос с помощью $lookup, чтобы его можно было запускать для нескольких документов?
-Получить запрос на Heroku возвращает страницу по умолчанию create-реагировать-приложение?
-Запросить массив вложенных документов в Mongodb
-Подключиться к удаленной MongoDB из Serverless/Lambda
-Axios дублирует почтовые запросы
-Доступ к дочернему объекту для вызова поиска в базе данных
-Проблема с Mongoose: вложенный запрос возвращает пустой массив
-Сопоставление массива объектов, содержащих объект, с использованием структуры агрегации
-Сбой теста Spring Data Mongo Embedded с «Неопознанным именем стадии конвейера:« $graphLookup »»
-
-Как получить данные из дочернего узла в firebase в iOS
 
 IOS
 Как получить данные из дочернего узла в firebase в iOS
@@ -6622,31 +5839,7 @@ if let value = dss.value  as? [[String: Any]]{
         print(name)
         print(age)
     }
- 20.03.2019 09:39
-Другие вопросы по теме
-Получайте уведомления, когда разрешение на определение местоположения было изменено в собственных настройках iOS
-CoreMotion не работает в Swift Playgrounds
-Использование местоположения Swift BLE GPS для декодирования местоположения_и_скорости
-Как загрузить одно и то же представление несколько раз в контроллер представления
-Как преобразовать Double в Int?
-AVSpeechSynthesizer не работает при добавлении новых строк для произнесения [xcode - swift 4]
-Повторяющаяся анимация с функцией выполнения и обновлением пользовательского интерфейса
-Уведомления OneSignal VOIP
-Получить размер файла изображения из свойства UIImage в Swift для проверки размера изображения
-Обновление данных в Firebase удаляет старый дочерний элемент и заменяет его ИСПОЛЬЗОВАНИЕМ SWIFT
-Похожие вопросы
-Почему UITableViewCell перекрывают друг друга?
-Получайте уведомления, когда разрешение на определение местоположения было изменено в собственных настройках iOS
-Приложение ios для корпоративного распространения - не удается подключиться к серверу
-Запись замедленного видео в iOS с использованием объектива C
-CoreMotion не работает в Swift Playgrounds
-Использование местоположения Swift BLE GPS для декодирования местоположения_и_скорости
-Как загрузить одно и то же представление несколько раз в контроллер представления
-Получить ограничивающую рамку выбранной карты ЗДЕСЬ Карты
-Почему предварительный просмотр приложений имеет низкое качество после загрузки в магазин приложений?
-Ошибка сборки React Native ios «Файл React/RCTBridgeModule.h» не найден
 
-Правила проверки Mongo db приводят к сбою моего оператора вставки
 
 MONGODB
 Правила проверки Mongo db приводят к сбою моего оператора вставки
@@ -6730,28 +5923,6 @@ The mongo shell treats all numbers as floating-point values by default.
 The mongo shell provides the NumberInt() constructor to explicitly specify 32-bit integers.
 Источник: https://docs.mongodb.com/manual/core/shell-types/#numberint
 
-Ionic 4 + angular 7 Реактивная форма с валидаторами Проблема рендеринга HTML
-Проверка Laravel всегда возвращает false при попытке добавить входной запрос из запроса класса
-Сравните два числовых поля в списке SharePoint 2013 и отобразите сообщение
-После реализации проверок в С# у меня возникают проблемы с обновлением записей
-Visual Basic 6.0: Как проверить, начинается ли содержимое текстового поля с определенного символа или нет?
-Загрузка файла Django с проверкой не работает
-Проблемы с проверками в C#
-Использование функций вместо методов в SomethingRequest для проверки
-Валидации с помощью SQLAlchemy версии Python Eve
-Сравнение двух целых чисел, чтобы проверить, больше ли второе целое число
-Похожие вопросы
-Как я могу контролировать ошибки, мангуст
-MongoDB 3.6. Как изменить этот агрегированный запрос с помощью $lookup, чтобы его можно было запускать для нескольких документов?
-Получить запрос на Heroku возвращает страницу по умолчанию create-реагировать-приложение?
-Запросить массив вложенных документов в Mongodb
-Подключиться к удаленной MongoDB из Serverless/Lambda
-Axios дублирует почтовые запросы
-Доступ к дочернему объекту для вызова поиска в базе данных
-Проблема с Mongoose: вложенный запрос возвращает пустой массив
-Сопоставление массива объектов, содержащих объект, с использованием структуры агрегации
-Сбой теста Spring Data Mongo Embedded с «Неопознанным именем стадии конвейера:« $graphLookup »»
-
 
 IOS
 Как получить данные из дочернего узла в firebase в iOS
@@ -6825,31 +5996,7 @@ if let value = dss.value  as? [[String: Any]]{
         print(name)
         print(age)
     }
- 20.03.2019 09:39
-Другие вопросы по теме
-Получайте уведомления, когда разрешение на определение местоположения было изменено в собственных настройках iOS
-CoreMotion не работает в Swift Playgrounds
-Использование местоположения Swift BLE GPS для декодирования местоположения_и_скорости
-Как загрузить одно и то же представление несколько раз в контроллер представления
-Как преобразовать Double в Int?
-AVSpeechSynthesizer не работает при добавлении новых строк для произнесения [xcode - swift 4]
-Повторяющаяся анимация с функцией выполнения и обновлением пользовательского интерфейса
-Уведомления OneSignal VOIP
-Получить размер файла изображения из свойства UIImage в Swift для проверки размера изображения
-Обновление данных в Firebase удаляет старый дочерний элемент и заменяет его ИСПОЛЬЗОВАНИЕМ SWIFT
-Похожие вопросы
-Почему UITableViewCell перекрывают друг друга?
-Получайте уведомления, когда разрешение на определение местоположения было изменено в собственных настройках iOS
-Приложение ios для корпоративного распространения - не удается подключиться к серверу
-Запись замедленного видео в iOS с использованием объектива C
-CoreMotion не работает в Swift Playgrounds
-Использование местоположения Swift BLE GPS для декодирования местоположения_и_скорости
-Как загрузить одно и то же представление несколько раз в контроллер представления
-Получить ограничивающую рамку выбранной карты ЗДЕСЬ Карты
-Почему предварительный просмотр приложений имеет низкое качество после загрузки в магазин приложений?
-Ошибка сборки React Native ios «Файл React/RCTBridgeModule.h» не найден
 
-Сортировка записей, а затем использование updateMany в MongoDB с ограничением
 
 JAVASCRIPT
 Сортировка записей, а затем использование updateMany в MongoDB с ограничением
@@ -6906,31 +6053,7 @@ try {
 } catch (e) {
   logger.error(e);
 }
- 22.03.2019 16:42
-Другие вопросы по теме
-Изменение значения параметра MongoDB Onclick
-Сервис для отправки SMS-уведомлений или Push-уведомлений
-Результат запроса к переменной (узел красный)
-Как получить стек диалогов на узле v4 SDK BOT
-Протестируйте вызов, сделанный внутри API узла, с помощью Jest
-Как исправить проблему с утверждением в Nodejs при тестировании кода javascript?
-Странные символы в строковом буфере в javascript
-Реализовать интерполяцию отшельника - многопользовательская игра
-Экспорт/импорт функций Nightmare.js
-Возникли проблемы с приложением node.js на героку
-Похожие вопросы
-Плагин пользовательских событий Highcharts не срабатывает при щелчке правой кнопкой мыши
-Поиск в таблице HTML получает содержимое поля последней строки после того, как поле поиска не имеет значения
-Невозможно установить состояние для выбранной даты из DatePicker
-Содержимое модального окна отображается в главном окне
-Как кодировать только содержимое внутри тегов html в Javascript
-Поддерживает ли iOS событие «beforeinstallpromp»?
-Parse.com соответствует всем указателям на массив в данном столбце отношения
-Результат запроса к переменной (узел красный)
-Вытягивание геометрии в three.js
-Событие, вызванное любой модификацией моей формы
 
-Как мне запросить поле из Mongo, где значение на самом деле является числом, но хранится в виде строки?
 
 REGEX
 Как мне запросить поле из Mongo, где значение на самом деле является числом, но хранится в виде строки?
@@ -6983,31 +6106,6 @@ https://regex101.com/r/sF0YfH/3
 
 Сообщите мне, если это сработает. Если нет, дайте четкое представление о том, чего вы хотите.
 
- 16.01.2019 20:35
-Другие вопросы по теме
-Мангуст findOne dosen` ничего не вернуть
-Запросы агрегирования и MongoRepository
-Данные mongo db не возвращаются в функции резолвера для graphql, но работают в маршрутах моего сервера nodejs
-Можете ли вы использовать имя таблицы mongodb в переменной в контроллере nodejs?
-Я хочу, чтобы мой бот Dialogflow произнес сообщение, которое включает результат запроса MongoDB
-Как сделать нативный запрос mongoDB в Morphia?
-Bean с именем 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' исключение: QueryDSL MongoDb
-Как полностью закрыть соединение MongoDB + сокет в node-mongodb-native 3.1?
-Как обновить схему без одного объекта в мангусте
-Поиск агрегата Mongoose - как фильтровать по определенному идентификатору
-Похожие вопросы
-JavaScript - получить только часть строки после определенного выражения
-Путаница, связанная с регулярным выражением
-Регулярное выражение максимально возможно до следующего совпадения
-Переименовать файлы в дереве, расширение которых включено в базовое имя
-Почему мое регулярное выражение создает внутреннюю ошибку сервера с "++", но не с любой другой комбинацией специальных символов?
-Регулярное выражение, как получить один или несколько "(. *) #" без их группировки?
-Regex работает в инструменте Regexr, но не в PHP
-Как улучшить это регулярное выражение, чтобы оно работало в других ситуациях?
-Регулярное выражение не дает ожидаемого результата
-Как применить условие длины к существующему регулярному выражению
-
-Как запросить связь серий действий, инициированных пользователями, из SQL или NoSQL?
 
 SQL
 Как запросить связь серий действий, инициированных пользователями, из SQL или NoSQL?
@@ -7052,31 +6150,7 @@ SELECT [user],
             FOR XML PATH('')), 1, 1, ''   
         )
 FROM @tblName A GROUP by [user]
- 02.04.2019 06:00
-Другие вопросы по теме
-Выберите исключение поля для определенного значения в запросе mysql в том же столбце
-Создание очереди FIFO
-Лучше ли использовать varchar для одной подкатегории с несколькими значениями?
-Возникла проблема при запуске образца jbmp в eclipse
-SQL Server — выберите запрос — внутреннее соединение — сообщение об ошибке: не удается разрешить конфликт сортировки
-Как хранить значения базы данных в словаре на С#
-Как проверить, была ли сессия открыта вручную или нет?
-Как я могу подключиться к базе данных с помощью FXRuby
-В модели ProductSell есть тип столбца даты varchar и формат d/m/Y, как я могу получить данные, используя между ними?
-Передача значений БД в модальные с помощью jquery
-Похожие вопросы
-SQL Server DataReader.GetField вернул значение null вместо географических данных
-Как установить значение ячейки Excel в качестве критерия для запроса доступа?
-Как выполнить синтаксис IF EXISTS UPDATE ELSE INSERT в SSMS 2008
-Выберите исключение поля для определенного значения в запросе mysql в том же столбце
-Создание очереди FIFO
-Wordpress не распознает базу данных SQL
-Как классифицировать или сгруппировать значения на основе значений предыдущего дня?
-Я пытаюсь настроить таблицу в mysql, но постоянно получаю сообщение об ошибке и не могу найти правильный способ ее исправить
-ROW_NUMBER(), PARTITION_BY, TOP 2 MAX, если MAX 1-я и последняя позиция
-SQL Server — выберите запрос — внутреннее соединение — сообщение об ошибке: не удается разрешить конфликт сортировки
 
-DynamoDB — как «сломать» иерархию без использования отношений?
 
 AMAZON WEB SERVICES
 DynamoDB — как «сломать» иерархию без использования отношений?
@@ -7123,33 +6197,6 @@ DynamoDB теперь поддерживает транзакции, поэто�
 
 Если вы обнаружите, что у вас много таких отношений, вам следует вместо этого использовать реляционную или графовую базу данных.
 
- 11.04.2019 09:20
-Другие вопросы по теме
-Сделайте groupby, а затем присоединитесь к Bigquery
-Сложное моделирование БД в firestore
-Проблема MongoDB в запросе, возвращающем значение от пользователя
-Приложение для знакомств. Какая структура базы данных мне нужна в Firebase Firestore, чтобы запрашивать всех пользователей, кроме тех, кому я не нравлюсь?
-Как сделать поворот на MongoDB?
-Как моделировать данные в Cassandra, чтобы избежать бесполезного дублирования
-Как установить несколько экземпляров CouchBase на один Linux-сервер?
-Как запросить связь серий действий, инициированных пользователями, из SQL или NoSQL?
-Моделирование нескольких отношений «многие ко многим» в Dynamodb
-Хранение больших объемов запрашиваемых JSON
-
-Похожие вопросы
-
-Возникла проблема с генерацией ответа на запрос слота
-Расположение лямбда-функции AWS приводит к InvalidToken-Error
-RDS не поддерживает создание экземпляра БД со следующей комбинацией
-AWS CloudFormation: «Параметр [subnetIds] недействителен»
-Как исправить ошибку подписки на тему SNS с помощью node js и конечной точки http
-NodeJs не может перезвонить ответ AWS Secrets Manager
-DynamoDB Client.Scan() не возвращает параметр LastEvaluatedKey
-Как преобразовать в json после получения из AWS DynamoDB getItem() в среде python3.7?
-Как сделать API AWS AppSync GraphQL общедоступным при использовании Amazon Cognito для аутентификации?
-Как загрузить в AWS S3 с помощью тегов объектов
-
-Веские причины НЕ использовать реляционную базу данных?
 
 SQL
 Веские причины НЕ использовать реляционную базу данных?
@@ -7345,31 +6392,7 @@ CAP теорема лаконично объясняет. SQL в основно�
 
 Просто наслаждайтесь приятным стандартным интерфейсом для ваших данных :)
 
- 22.03.2011 00:51
-Другие вопросы по теме
-Создание БД в SQL Server на основе модели данных Visio
-Обмен значениями столбцов в MySQL
-Находить повторяющиеся адреса в базе данных, не позволять пользователям вводить их раньше времени?
-Как мне избежать блокировок чтения в моей базе данных?
-Инструмент мониторинга производительности PostgreSQL
-Автоматическое обновление столбца даты и времени в SQL Server 2005 - LastUpdated
-Изменение таблиц базы данных в Django
-Встраивать изображения в электронные письма, созданные с помощью SQL Server Database Mail
-Минималистичное администрирование базы данных
-Эффективно управлять несколькими идентичными базами данных?
-Похожие вопросы
-Как вы управляете SQL-запросами
-SQL-запрос для получения первых "n" оценок из списка
-Объедините несколько полей в одно с помощью SQL
-Использование веб-сервисов из Oracle PL / SQL
-Причины различий в SQL
-Как вы реализуете кеширование в Linq to SQL?
-Каков синтаксис внутреннего соединения в LINQ to SQL?
-SQL-запрос для входа в систему
-Как мне избежать блокировок чтения в моей базе данных?
-Инструмент мониторинга производительности PostgreSQL
 
-Предупреждение об устаревании MongoDB mongoose
 
 JAVASCRIPT
 Предупреждение об устаревании MongoDB mongoose
@@ -7499,33 +6522,7 @@ useNewUrlParser: true,
 useUnifiedTopology: true,                 // other deprecation warnings            
 });
 mongoose.set("useCreateIndex", true);     // to handle collection.ensureIndex is deprecated
- 24.02.2021 15:52
-Другие вопросы по теме
-Node.js - package.json не существует в каталоге пользователя
-Уинстон - отметка времени не добавлена
-Проект Neutrinojs / vue: импорт файлов / шаблонов vue из корневой папки
-Удалить элемент из вложенного массива mongodb
-Инициировать параметр для класса, который расширяется от родительского через - node.js - модули awilix
-NodeJS: поиск определенной строки с помощью fs.readFile () в нескольких файлах
-Использование sinon fakeTimer с супертестом приводит к ошибке
-Как зарегистрировать Unhandled TimeoutError в регистраторе Winstonjs?
-Как инициализировать состояния массива с неизвестной длиной в reactJS?
-Как установить рабочий каталог по умолчанию для командной строки node.js в Windows?
 
-Похожие вопросы
-
-Доступ к значениям массива в объекте
-Невозможно изменить изображение при нажатии кнопки с помощью CSS
-Функция обратного вызова $ .getJSON не определена
-Формы регистрации для отправки в разные места
-Выполняемые фрагменты кода в почте Microsoft Outlook?
-Инициировать параметр для класса, который расширяется от родительского через - node.js - модули awilix
-Hapi v17 - схема Joi для файловых ответов
-NodeJS: поиск определенной строки с помощью fs.readFile () в нескольких файлах
-Артиллерия - тестирование API несколько раз
-Как заменить сразу несколько экземпляров строки?
-
-Базы данных нового поколения
 
 SQL
 Базы данных нового поколения
@@ -7574,98 +6571,7 @@ Graphdb за движком рекомендаций Directed Edge
 
 http://en.wikipedia.org/wiki/Relational_model (упоминается в разделе «SQL и реляционная модель» 28 марта 2010 г.
 
- 28.03.2010 15:15
-Возможно, это не лучшее место для ответа на этот вопрос, но я хотел бы поделиться этой таксономией мира noSQL, созданной Стивом Йеном (вы можете найти ее на http://de.slideshare.net/northscale/nosqloakland-200911021)
 
-ключ-значение-кеш
-
-memcached
-перекэшированный
-согласованность
-in nispan
-экстремальный масштаб
-jbosscache
-скорость
-терракока
-ключ-значение-хранилище
-
-пространство клавиш
-ﬂ являются
-без схемы
-RAMCloud
-в конечном итоге согласованное хранилище ключей
-
-динамо
-Волдеморт
-Диномит
-Подзапись
-MongoDb
-Dovetaildb
-заказанный-ключ-значение-магазин
-
-токиотиран
-светлое облако
-NMDB
-Люксио
-memcachedb
-актер
-сервер структур данных
-
-Redis
-кортеж
-
-гигапространства
-согласовывать
-Apacheriver
-база данных объектов
-
-ZopeDB
-db4o
-Мелководье
-хранилище документов
-
-CouchDB
-Монго
-Зайчик
-XML-базы данных
-ThruDB
-CloudKit
-Perservere
-РиакБашо
-Скаларис
-широкий столбчатый магазин
-
-Большой стол
-Hbase
-Кассандра
-Гипертаблица
-КАЙ
-OpenNep
- 19.03.2011 13:26
-Другие вопросы по теме
-Что такое алгоритм Hi / Lo?
-Шифрование базы данных
-Отправка оповещений по электронной почте в SQL Server 2000
-Есть ли формат обмена для ERD?
-Лучший способ импорта (слияния) -экспорта базы данных java db
-Означает ли игнорирование персистентности в структуре сущностей ADO.NET то, что я думаю?
-Атомарные операции в Django?
-Создать триггер таблицы истории DB2
-Как создавать динамические и безопасные запросы
-Как сделать так, чтобы значение переменной в хранимой процедуре MySQL не изменялось при обновлении записей?
-Похожие вопросы
-Идентификатор SQL (autonumber) увеличивается даже при откате транзакции
-Может ли LINQ to SQL запрашивать XML-поле на стороне сервера базы данных?
-SQL: нумерация строк, возвращаемых оператором SELECT
-Запрос: подсчитайте несколько агрегатов для каждого элемента
-SELECT INTO с дополнительным столбцом
-Можно ли использовать / получить доступ к скалярным функциям с LINQ to SQL?
-Медленный код SQL на локальном сервере в MS Access
-Регулярное выражение для поиска всех имен таблиц в запросе
-Оператор SQL из двух таблиц
-Получить записи из одной таблицы, если они не существуют в другой таблице T-SQL
-
-Могу ли я выполнять транзакции и блокировки в CouchDB?
 
 DATABASE
 Могу ли я выполнять транзакции и блокировки в CouchDB?
@@ -7822,33 +6728,6 @@ txn_id    , txn_attribute1, txn_attribute2,......,txn_status
 dhwdhwu$sg1   x                    y               added/replicated
 Вы также можете удалить транзакции, которые успешно реплицируются.
 
- 21.06.2017 07:10
-Другие вопросы по теме
-Можете ли вы использовать couchDB для веб-приложений, таких как ebay?
-Ruby On Rails / Merb как интерфейс для приложения с миллиардами записей
-Rails и CouchDB - архитектурные проблемы
-Как создать поддержку «Tagging» с помощью CouchDB?
-В чем разница между CouchDB и Lotus Notes?
-CouchDB моделирование для многопользовательской
-Изменения модели документа CouchDB?
-Как вы планируете обновления индекса в CouchDB
-Резервное копирование CouchDB и клонирование базы данных
-Кто-нибудь использует CouchDB?
-
-Похожие вопросы
-
-Что такое «патч-доступ» к базе данных / СУБД?
-Как мне временно хранить строки в хранимой процедуре?
-Сравнение: полнотекстовый поиск по БД с поисковой системой (Lucene)
-Допустимо ли перекрестное использование баз данных?
-Реализация NHibernate IInterceptor (добавить свойства в таблицу БД, которых нет в исходном доменном классе)
-В чем разница между схемой и таблицей и базой данных?
-Получение XML-схемы из базы данных MS SQL
-Как связать одну таблицу с множеством разных таблиц?
-Изменение базы данных во время выполнения в приложении Grails
-Как мне синхронизировать результаты веб-службы с БД?
-
-Плюсы / минусы документарных баз данных по сравнению с реляционными базами данных
 
 DATABASE
 Плюсы / минусы документарных баз данных по сравнению с реляционными базами данных
@@ -7916,33 +6795,7 @@ CRUD сущностей с некоторыми полями с уникальн
 
 Re CRUD: вся парадигма REST отображается непосредственно на CRUD (или наоборот). Итак, если вы знаете, что можете моделировать свои требования с помощью ресурсов (идентифицируемых с помощью URI) и базового набора операций (а именно CRUD), вы можете быть очень близки к системе на основе REST, которую предоставляют довольно много документно-ориентированных систем. коробки.
 
- 06.12.2011 19:35
-Другие вопросы по теме
-Могу ли я выполнять транзакции и блокировки в CouchDB?
-Базы данных нового поколения
-Веские причины НЕ использовать реляционную базу данных?
-Какой тип данных наиболее подходит для столбца таблицы?
-Использование Redis со сложными запросами
-Как определить количество разделов при настройке временного кластера?
-CosmosDB не разрешает бессерверные возможности NoSQL, он говорит, что я должен использовать PerformanceMode
-Mongo DB Bson и Java: добавление и возврат поля в дочерних документах, которое присутствует только в родительском?
-Удаление заблокированных пользователей из конвейера с помощью поиска в mongodb
-Как написать SQL-запрос в Azure Cosmos DB, чтобы найти шаблон поиска любого пользователя
 
-Похожие вопросы
-
-Как я могу реализовать операции SQL INTERSECT и MINUS в MS Access
-Какие системы баз данных поддерживают тип данных ENUM, а какие нет?
-Насколько плохо хранить имена классов и сборок в базе данных?
-Создание настраиваемого драйвера ODBC
-Какой лучший способ защитить строку подключения к базе данных?
-Каков наиболее эффективный способ хранения тегов в базе данных?
-Рефакторинг объекта Hibernate на подклассы
-Как следует проводить модульное тестирование методов обновления таблиц базы данных?
-Лучшая практика для разработки ролей пользователей и системы разрешений?
-Переход с Oracle CTL на MySQL
-
-Amazon DynamoDB - присоединяется
 
 NOSQL
 Amazon DynamoDB - присоединяется
@@ -8038,31 +6891,6 @@ public class MainActivity extends AppCompatActivity {
 
 Хотя вы не можете выполнять JOINS непосредственно в DyanmoDB, вы можете косвенно использовать Rockset, если вы создаете приложения, управляемые данными.
 
- 05.08.2020 05:20
-Другие вопросы по теме
-Получить последние / максимальные значения для каждого ключа раздела
-DynamoDB не может получить элемент по ключу диапазона?
-Использование API-интерфейса порофиля клиента Alexa skill вместе с Dynamodb inorder для сохранения адреса электронной почты пользователя
-Запросы в DynamoDb без выражения ключевого условия
-Фильтр запросов DynamoDB по количеству списков
-Утилизация ЦП Dynamodb
-Запрос на удаление пакетной записи Dynamodb не работает с ключом раздела и сортировки
-Как обновить ngrx / store из бэкэнда и базы данных Dynamodb?
-Как отсортировать строки DynamoDB по атрибуту
-В DynamoDB можно ли UpdateItem игнорировать неопределенные значения?
-Похожие вопросы
-JSON создать, вставить и выбрать запрос
-MongoDB Делаем мою структуру схемы менее реляционной
-MongoDB: получить все $ совпадающие элементы по отдельности из массива
-Запрос на удаление пакетной записи Dynamodb не работает с ключом раздела и сортировки
-Запрос Firebase на основе атрибута существует (ключ)
-Структура базы данных NoSQL
-Mongodb обновить один объект в массиве
-Как узнать, сколько документов создается за час в коллекции Firestore?
-Модель данных пользователя в DynamoDB
-Встречаются два слова с конкретными инициалами MongoDB
-
-Запрос вложенных атрибутов в Dynamodb
 
 AMAZON WEB SERVICES
 Запрос вложенных атрибутов в Dynamodb
@@ -8218,33 +7046,6 @@ In a DynamoDB table, each key value must be unique. However, the key values in a
  26.03.2020 14:10
 Вы можете использовать пути к документам для фильтрации значений. Используйте семинары .location в качестве пути к документу.
 
- 06.04.2020 10:54
-Другие вопросы по теме
-Получите смежные индексы из линейной индексации в Matlab
-Возврат значений в новые столбцы в pandas df
-Проблема с нестандартным коэффициентом, массив нулевого размера
-Pandas новый столбец из значений в других
-Почему мой метод линейного поиска не возвращает порядковый номер среднего значения
-Быстрый способ извлечения ROI в массиве 3D numpy
-Как Solr индексирует документы?
-Индексирование векторов на языке r
-Доступ к многомерному массиву с использованием одномерного индекса в R
-Слияние по индексу строки и метке столбца
-
-Похожие вопросы
-
-Проблема с запущенным json-сервером на сервере AWS (возврат 404)
-Можно ли использовать линейного ученика sagemaker для мультиклассовой классификации?
-Вызов API REST AWS TranslateText с добавлением подписи v4
-AWS перенаправляет .net, .co.uk и .org на .com
-На каком сервере наименьшего размера можно развернуть простейшее приложение rails?
-Доступ к API базы данных напрямую с помощью клиентского JS
-Изменения, необходимые для создания AMI из тома EBS диска ОС вручную
-Отказано в доступе на aws s3 put объект для политики шифрования
-Проблема с AWS API Gateway для метода HTTP
-Ферма устройств AWS не может найти .xctest в ipa
-
-Firestore, реплицирующий соединение SQL для noSQL и Flutter
 
 FIREBASE
 Firestore, реплицирующий соединение SQL для noSQL и Flutter
@@ -8451,33 +7252,7 @@ Future<Story> _getStory(String storyDocID) async {
   final story = Story.from(document);
   return story;
 }
- 16.06.2020 12:42
-Другие вопросы по теме
-Flutter Google Chart Gauge - поместите метку в центр
-Устранение ошибки типа «Ошибка типа: невозможно прочитать данные свойства неопределенного значения» в облачных функциях
-Flutter Firestore, как проверить, существует клиент или нет по номеру мобильного телефона
-Текстовая форма с прикрепленным/префиксным раскрывающимся списком
-Flutter: вызвать смену экрана в сообщении веб-сокета
-Dart: BroadcastStream сохраняет последнее состояние?
-Получение типа ошибки «_InternalLinkedHashMap<String, dynamic>» не является подтипом типа «Iterable<dynamic>» при извлечении данных из API в флаттере
-Как сделать асинхронный вызов из dart функции, написанной на C/C++?
-Flutter: уведомление переднего плана не работает в обмене сообщениями Firebase
-Flutter: как рассчитать значение из текстовых полей в listview.builder
 
-Похожие вопросы
-
-Firebase: повторная аутентификация с номером телефона
-Не могу записать в базу данных firebase
-Могу ли я отправить значение с запросом к правилам Firestore
-Как получить дочерний элемент только первого идентификатора в таблице пользователей
-«InstanceID» не содержит определения для «SetApnsToken» после обновления пакетов Firebase
-Тестирование приложения реакции с кипарисом и огненным магазином показывает, что повторная попытка истекла по тайм-ауту: cy.wait()
-Как я могу остановить обещания после получения x результатов в Firestore
-Получить массив объектов из Firestore
-Работник службы Angular Firebase развертывается в папке
-Приложение Firebase с именем «[DEFAULT]» уже существует (приложение/повторяющееся приложение) ошибка
-
-Есть ли постоянное хранилище данных NoSQL для Flutter?
 
 DATABASE
 Есть ли постоянное хранилище данных NoSQL для Flutter?
@@ -8504,33 +7279,6 @@ DATABASE
  11.07.2020 21:52
 Я использую Улей. Он быстрый, простой в использовании и имеет средства генерации кода, которые отлично работают с json_serializable и замороженный.
 
- 22.11.2021 18:46
-Другие вопросы по теме
-Поиск префикса в определенном столбце в hbase не работает в java
-Сравнение производительности при использовании Hibernate + EhCache, EhCache или NoSql
-Как разрабатывать коллекции документов не как SQL, учитывая ограничение в 2 МБ?
-Хранение данных временных рядов: СУБД против NoSQL
-Отдельные запросы вместо нескольких предложений Where в Firestore
-Динамическое обновление массива в поддокументе с помощью Mongoose
-Простой поиск по запросу - OrientDB
-Дизайн магазина nosql shema
-Как использовать GraphQL для корпоративных приложений
-"Выбрать откуда" переводится как мангуст
-
-Похожие вопросы
-
-Как искать, введите значение edittext из базы данных
-Попытка открыть //usr/local/lib/x86_64-linux-gnu/libngsmshd12.so не удалась
-Ошибка android.database.sqlite.SQLiteException: нет такого столбца: при обновлении базы данных SQLite
-Индекс Sphinx RT и поиск в json по значению
-Mysqli_fetch_all не работает при вызове данных в другой файл
-Загрузка резервной копии базы данных в формате sql в laravel 5 без использования пакетов
-Как использовать всплывающую подсказку диаграммы Google и json для извлечения метаданных
-Что означают эти столбцы на диаграмме производительности БД?
-Как вставить в базу данных динамически созданные одноименные текстовые поля?
-Лучший способ PHP для чистых URL-адресов для моей цели
-
-$ filter вложенный уровень с операторами $ or, $ gte, $ lte
 
 MONGODB
 $ filter вложенный уровень с операторами $ or, $ gte, $ lte
@@ -8827,33 +7575,7 @@ db.lo.aggregate([
     }
   }
 }}
- 30.07.2018 13:49
-Другие вопросы по теме
-База данных: репозитории с NoSQL / База данных документов (DDD)
-Запрос вложенных полей без массивов
-Не могу инициализировать MongoDB
-Более эффективное агрегирование, чем агрегирование терминов?
-Невозможно установить соединение, все хосты пытались выполнить запрос
-Недоступные узлы в согласованном хешировании
-Дизайн базы данных NoSQL с использованием одной таблицы
-RavenDB: PatchRequest для обновления / слияния свойства, которое может не существовать в документе
-Как получить подсчет имущества в натуральном выражении?
-Как удалить все базы данных в MongoDB?
 
-Похожие вопросы
-
-Можем ли мы найти в реальном времени кратчайшее расстояние между двумя позициями, которое хранится в базе данных
-Поддержка транзакций mongodb 4.0 для node.js
-MongoDB хранит за день до фактической даты
-Стек MEAN не может обновить запись MongoDB с помощью метода PUT
-Как преобразовать эту команду агрегации mongodb в Java-код
-FindOne не достигает значения, которое я знаю, есть
-Mongoose не сохраняет документы в моей базе данных локально
-Spring Boot + Mongo DB + Конфигурация Shiro
-Заполнить документ другими полями
-Мне нужно знать, как добавить нумерацию страниц с помощью vue.js?
-
-Невозможно установить соединение, все хосты пытались выполнить запрос
 
 CASSANDRA
 Невозможно установить соединение, все хосты пытались выполнить запрос
@@ -8910,33 +7632,7 @@ rpc_address: 192.x.x.x
 broadcast_rpc_address: 192.168.2.22(ip address of system on which Cassandra is installed
 
 rpc_address: 0.0.0.0
- 30.07.2018 08:49
-Другие вопросы по теме
-Недоступные узлы в согласованном хешировании
-Дизайн базы данных NoSQL с использованием одной таблицы
-RavenDB: PatchRequest для обновления / слияния свойства, которое может не существовать в документе
-Как получить подсчет имущества в натуральном выражении?
-Как удалить все базы данных в MongoDB?
-Мокинг Cosmos DB для функций Azure
-Как получить доступ к базе данных MongoDB через имя «mongodb: //127.0.0.1/testDatabase»
-Ограничение поля Elasticsearch
-Дизайн таблицы Cassandra для пользовательского чата
-Как обновить вложенные документы в Spring-boot mongodb?
 
-Похожие вопросы
-
-Разделы набора данных Spark с помощью кассандры, создающие один большой кусок паркетного файла вместе с множеством мелких
-Поддержка коллекции карт Cassandra в бережливости
-Кодек Spring Data Cassandra не найден для запрошенного набора операций <varchar> <-> java.util.Set
-Параметры пула Spark
-Кассандра переносит значение из текста в список текста
-Присоединяется ли запуск scrub к таблице к SSTables?
-Загрузка нескольких ядер в Banana, созданных в Datastax Solr
-Кассандра - это просто механизм хранения?
-Несколько контейнеров докеров, работающих на одном компьютере с Windows
-Как интегрировать метрики dropwizard для мониторинга базы данных cassandra
-
-ScyllaDB 2.1 - Несоответствие материализованному представлению
 
 CASSANDRA
 ScyllaDB 2.1 - Несоответствие материализованному представлению
@@ -8991,31 +7687,6 @@ tldr; Я бы посоветовал вам либо придерживатьс�
  30.06.2018 13:55
 В 2.1 Scylla отсутствовало построение представлений (то есть использование существующих данных для заполнения представления при создании), но это решено в 2.2.
 
- 02.07.2018 00:54
-Другие вопросы по теме
-Проверка сохраненной записи MongoDB
-Обновить массив с новым ObjectID и $ currentDate
-Как сохранить массив объектов в DynamoDB
-Модель данных в NoSQL
-FoundationDB аутентификация
-Соглашение об именах RESTful API
-Динамически запрашивать mongodb с помощью golang
-Elasticsearch Поиск по нескольким индексам
-Где виды (уменьшение карты) влияют на ограничения CloudAnt NoSQL?
-Neo4j - Найдите узлы, которые никогда не были связаны с другим узлом
-Похожие вопросы
-Счетчик хранения в коллекции кассандры
-Сколько времени потребуется, чтобы удалить строку?
-Как запустить Кассандру на сервере индивидуально для каждого пользователя
-Как убедиться, что данные копируются в Cassandra n раз
-Будет ли Кассандра возвращать строки надгробий как действительные?
-Как выполнять команды ccm cqlsh, такие как INSERT, CREATE и SEELCT внутри сценария оболочки?
-Несоответствие ввода Cassandra
-Порядок кассандры по математическому выражению
-Импорт данных из файла в кластер Cassandra с 5 узлами вызывает исключение BusyConnectionException
-2 Узловой кластер не реплицирует данные
-
-Сложность определения общего количества записей с ключом раздела в таблице nosql dynamodb?
 
 AMAZON WEB SERVICES
 Сложность определения общего количества записей с ключом раздела в таблице nosql dynamodb?
@@ -9061,35 +7732,7 @@ DynamoDB — это база данных NoSQL, предназначенная 
 
 Если вы хотите выполнять аналитику данных, которые у вас есть в DynamoDB, вам необходимо реплицировать данные на S3 и выполнять аналитику этих данных с помощью Amazon Athena. Вы можете реплицировать эти данные либо с помощью DynamoDB Streams -> Lambda/Kinesis Firehose -> S3, либо с помощью задания AWS Glue (см. пример: https://aws.amazon.com/blogs/big-data/how-to-export-an-amazon-dynamodb-table-to-amazon-s3-using-aws-step-functions-and-aws-клей/)
 
- 27.07.2019 18:17
-Другие вопросы по теме
-Как вернуть только те документы, которые содержат указанное поле в запросе
-Получить результат пары ключевых значений действий в Mongodb
-Почему объект временной метки Firebase возвращает значение undefined?
-Как проверить, имеет ли файл базы данных LiteDB пароль или нет в С#?
-Можно ли исключить несколько конкретных документов из запроса облачного хранилища?
-Проблема с обновлением только некоторых полей сущностей в Google Cloud Datastore
-Может ли свойство объекта быть другим объектом в Google Cloud Datastore?
-Возможные коллизии записей из-за размера/определения поля TIMESTAMP в контейнерах типа TIME SERIES GridDB
-MongoDB находит строку, содержащую скобки
-Что не так с моими отношениями с мангустами?
 
-Похожие вопросы
-
-Получение ссылок m3u8 для тестирования потоковой передачи/субтитров AWS
-Подключитесь к экземпляру RDS SQL Server с веб-сайта, развернутого на экземпляре AWS EC2 «Elasticbeanstalk»
-Невозможно использовать учетные данные STS, сгенерированные Lambda, для подключения к конечной точке IoT
-Внутренний шрифт gd () недоступен, используйте только 1-5
-На aws-rds на aws-cdk, где находится настройка, позволяющая сделать базу данных общедоступной?
-Ведро AWS S3 как диск Windows
-Определить лимит сеансов AWS RDS Postgres
-Как включить ведение журнала на уровне объектов для корзины S3 с помощью boto3
-Создайте хит на Amazon Mechnical Turk, используя ExternalQuestion с boto3
-Нездоровый статус EC2 в целевых группах
-
-MongoDB: как разработать схему на основе шаблонов доступа к приложениям?
-
-MONGODB
 MongoDB: как разработать схему на основе шаблонов доступа к приложениям?
 Как человек, пришедший из DynamoDB, моделирование схемы MongoDB, которая действительно глубоко вписывается в мое приложение, немного сбивает с толку, особенно потому, что в ней есть концепция ссылок, и из того, что я прочитал, не рекомендуется хранить дублированные данные для размещения ваших запросов.
 
@@ -9508,33 +8151,6 @@ function hasPermission(user, project, permission) {
   }
 результат Yay. (Обратите внимание, что вам нужно расширить функцию, чтобы она соответствовала разрешениям с подстановочными знаками comment:* и *:*.)
 
- 17.07.2019 22:40
-Другие вопросы по теме
-Как соединить таблицы, которые зависят друг от друга
-Какую структуру таблицы выбрать, если есть два объекта одного типа, но разной природы?
-Как смоделировать матричную таблицу в Django
-Хранить неопределенные данные в таблице Cassandra
-MongoDB и Spring Data. Является ли полиморфизм хорошей идеей?
-Дизайн базы данных для регистрации и ценообразования на курсы
-Имеет ли смысл в этом случае использование одной таблицы вместо нескольких?
-Создайте таблицу со столбцом массива ms sql
-Правильны ли отношения в этой ER-диграмме?
-Дизайн базы данных для временных рядов
-
-Похожие вопросы
-
-Mongo db Порядок записи
-Пропустить элемент с нулевым значением в коллекции во время обновления
-Как фильтровать после успешного сохранения базы данных mongodb
-Как я могу включать и выключать индекс TTL с помощью мангуста?
-JEST: Expect() только уникальные элементы в массиве
-Как удалить элемент из массива, включенного в объект
-Правильная структура для MongoDB
-Проблема с сохранением информации в mongodb
-Расхождения при форматировании данных с использованием геттера в схеме мангуста
-ServerTimeoutError с MongoDB Atlas с использованием PyMongo (запуск кода установки)
-
-Документы запроса обратной петли на основе количества связанных моделей
 
 NODE.JS
 Документы запроса обратной петли на основе количества связанных моделей
@@ -9572,33 +8188,6 @@ Category.find({where : {isPublished : true}, order: 'something DESC'},function(e
 
 Второй метод - это добавить поле articlesCount в вашу модель Category, а затем обновлять это значение каждый раз, когда article добавляется или удаляется в удаленной ловушке. Затем вы можете фильтровать и сортировать экземпляры Category прямо по этому свойству.
 
- 04.01.2019 07:44
-Другие вопросы по теме
-Докер приложения Nodejs не может подключиться к контейнеру докера mongodb
-Используйте Aggregate с $ group в mongodb
-Как я могу подсчитать количество просмотров каждый раз, когда мы делаем запрос к определенному идентификатору в БД?
-Как сравнить даты из mongodb в nodeJS
-Совокупная группа mongo и найдите ее
-Импорт файлов размером более 16 МБ в MongoDB
-Как проверить производительность агрегации MongoDB?
-Есть ли в nodejs какая-либо функция для генерации оператора на основе месяца, дня, года или между выбранными датами в формате .xls?
-Объедините документы Mongo после нескольких поисков в одну агрегацию
-Поддокумент запроса Mongodb $ gt
-
-Похожие вопросы
-
-Установка npm функций Firebase всегда зависает
-Получение FormData как Null при передаче файла изображения в Node JS API от IONIC
-Возврат строки искомого текста из файла с помощью node.js
-Как выполнить запрос Mongoose для каждого результата для агрегирования данных?
-Предотвращение дублирования записей с помощью Mongoose и Node.Js
-Получение ошибки при чтении файла sql с использованием sequelize.js
-Google PeopleApi - недопустимый аргумент метода CreateContact
-Есть ли способ запросить таблицу с предложением where в связанной таблице, но все же получить весь связанный контент в исходной таблице с помощью Sequelize?
-Не удается найти модуль mini-css-extract-plugin в vue.js
-Команда loopback «lb4» не работает после успешной установки интерфейса командной строки loopback с использованием «npm i -g @ loopback / cli»
-
-Вставьте двойные кавычки внутри полезной нагрузки с помощью InfluxDB и потокового процессора WSO2 через HTTP
 
 NOSQL
 Вставьте двойные кавычки внутри полезной нагрузки с помощью InfluxDB и потокового процессора WSO2 через HTTP
@@ -9633,33 +8222,7 @@ weather,location=us-midwest temperature = "too\"hot\"" 1465839830100400200
 Вы можете использовать следующий способ добавить двойные кавычки к вашим результатам
 
 @payload(""" "SEQTIME value" = "{{id}}","x_date_create" = "{{x_date_create}}" """)))
- 02.01.2019 05:57
-Другие вопросы по теме
-Как сделать дополнительный http-вызов внутри api и обработать ответ?
-Невозможно запустить балерину как шлюз
-Конфигурация WSO2 EI JSONBuilder
-Ошибка после запроса на установку приложения на устройство из магазина
-Узор сиддих запускается только один раз
-WSO2 ESB - класс обратного вызова пароля Rampart - WSPasswordCallback не может быть приведен
-Как изменить пароль h2 db?
-В потоковом процессоре wso2 как динамически изменять запрос
-Вход в систему WSO2 Identity Server возвращает 403
-Аутентификация WSO2SP с WSO2AM-KM
 
-Похожие вопросы
-
-Вставлять идентичные записи в несколько таблиц с разными первичными ключами
-Невозможно ПОСТАВИТЬ контейнеры GridDB с помощью go_client
-Понимание изоляции в Cassandra Db
-Как сделать такую ​​агрегацию в Mongo?
-Документы запроса обратной петли на основе количества связанных моделей
-Обновление документа с высокой степенью вложенности в Couchbase
-Как разработать микросервисы в следующем сценарии: -
-Запрос вложенных документов в Couchbase
-Моделирование данных Firestore для меньшего количества запросов
-Как использовать $ text поиск внутри $ lookup pipeline
-
-Можно ли выбрать X записей из каждого ключа кластеризации Y в разделе?
 
 CASSANDRA
 Можно ли выбрать X записей из каждого ключа кластеризации Y в разделе?
@@ -9678,33 +8241,6 @@ Cassandra поддерживает ограничение количества �
  Ответ принят как подходящий
 Вы можете сделать SELECT * FROM table GROUP BY pkey, ckey_a, ckey_b, чтобы получить уникальные и ckey_c и тому подобное из ckey_b. Вы можете ограничить по разделам (см. Ответ Алексея), но в настоящее время вы не можете ограничивать по группе. Если ваш запрос не вызывается часто (это дорого), вы можете создать UDA, который объединяется с GROUP BY, чтобы ограничить число по группе, а все остальное выбросить. Это очень дорого, поскольку координатор по-прежнему получает все значения, просто отфильтровывает их перед отправкой обратно клиенту.
 
- 30.12.2018 17:26
-Другие вопросы по теме
-Сколько пользователей может обрабатывать MongooseIM на сервере PostgreSQL?
-Вставьте двойные кавычки внутри полезной нагрузки с помощью InfluxDB и потокового процессора WSO2 через HTTP
-Вставлять идентичные записи в несколько таблиц с разными первичными ключами
-Невозможно ПОСТАВИТЬ контейнеры GridDB с помощью go_client
-Понимание изоляции в Cassandra Db
-Как сделать такую ​​агрегацию в Mongo?
-Документы запроса обратной петли на основе количества связанных моделей
-Обновление документа с высокой степенью вложенности в Couchbase
-Как разработать микросервисы в следующем сценарии: -
-Запрос вложенных документов в Couchbase
-
-Похожие вопросы
-
-Проблема с настройкой многоузлового кластера Cassandra (например, 3 узла)
-Производительность запросов без первичного ключа в полностью реплицированном кластере Cassandra
-Индексирование записи огромной таблицы в облаке apache solr
-Как найти в кассандре большой раздел, кроме system.log?
-Кассандра точность с плавающей запятой
-Могут ли надгробия в массиве кассандры?
-Как избежать надгробий кассандры при вставке значений NULL
-Использование запроса к базе данных cassandra в качестве источника для программы Flink
-Ошибка внедрения конструктора com.datastax.driver.core.exceptions.NoHostAvailableException
-Cassandra DB - Нет активных узлов?
-
-Поддерживает ли couchbase analytics все команды N1QL?
 
 NOSQL
 Поддерживает ли couchbase analytics все команды N1QL?
@@ -9734,33 +8270,7 @@ NOSQL
 Синтаксис нарезки массива в настоящее время не поддерживается в Couchbase Analytics. Чтобы получить тот же результат сегодня, вы можете вместо этого использовать подзапрос
 
 SELECT (SELECT VALUE v FROM [1, 2, 3, 4, 5] v LIMIT 2 OFFSET 1) as res
- 05.01.2019 01:11
-Другие вопросы по теме
-Почему этот составной вторичный индекс couchbase соответствует только первому полю в запросе на создание
-Выход из определенного url-адреса route53
-Как использовать вызов http для выполнения запроса GET в nifi?
-Подзапрос для получения количества
-Cbtransfer не работает: нет подкаталогов корзины по адресу: {path}
-Запрос Accidenlty удалил все записи в couchbase, как это восстановить
-База данных Spring, не удалось удалить документ по идентификатору с помощью реактивного программирования
-Couchbase: как скопировать данные из ведра в другое?
-Можно ли использовать couchbase в качестве основного JobRepository для spring -batch?
-Couchbase не возвращает некоторые документы при использовании определенного индекса
 
-Похожие вопросы
-
-Переход с Access на DynamoDB
-Удаленные данные в кассандре возвращаются, как призрак
-Создание системы листинга ожидания и повторный рейтинг пользователей
-Можно ли выбрать X записей из каждого ключа кластеризации Y в разделе?
-Сколько пользователей может обрабатывать MongooseIM на сервере PostgreSQL?
-Вставьте двойные кавычки внутри полезной нагрузки с помощью InfluxDB и потокового процессора WSO2 через HTTP
-Вставлять идентичные записи в несколько таблиц с разными первичными ключами
-Невозможно ПОСТАВИТЬ контейнеры GridDB с помощью go_client
-Понимание изоляции в Cassandra Db
-Как сделать такую ​​агрегацию в Mongo?
-
-Группировать данные и извлекать среднее значение в Cassandra cqlsh
 
 CASSANDRA
 Группировать данные и извлекать среднее значение в Cassandra cqlsh
@@ -9827,33 +8337,6 @@ sensor_id | ts | value
 
 Надеюсь, я дал вам идею.
 
- 05.01.2019 18:59
-Другие вопросы по теме
-Настроить структуру данных Cloud Firestore / NoSQL
-Смещение результатов дочерних узлов из запроса N1QL Analytics
-Поддерживает ли couchbase analytics все команды N1QL?
-Переход с Access на DynamoDB
-Удаленные данные в кассандре возвращаются, как призрак
-Создание системы листинга ожидания и повторный рейтинг пользователей
-Можно ли выбрать X записей из каждого ключа кластеризации Y в разделе?
-Сколько пользователей может обрабатывать MongooseIM на сервере PostgreSQL?
-Вставьте двойные кавычки внутри полезной нагрузки с помощью InfluxDB и потокового процессора WSO2 через HTTP
-Вставлять идентичные записи в несколько таблиц с разными первичными ключами
-
-Похожие вопросы
-
-Ошибка nodetool, проверьте логи сервера - ошибка во время ремонта
-Условие ЕСЛИ, основанное на подсчете в кассанде
-Может ли кэш строк Cassandra кешировать только определенные столбцы?
-Как использовать cassandra с postgres, используя данные Spring-Boot-Starter
-Требовать дубликаты первичных ключей в Кассандре
-Кассандра в основном невосприимчива к проблеме сжатого OOPS?
-Как получить значения токенов при использовании данных искровой нагрузки из кассандры?
-Сохранить обновление составного первичного ключа cassandra
-Проблема запроса Sparklyr с предложением Cassandra "in"
-Частое сжатие OpsCenter.rollup_state на всех узлах, потребляющих циклы ЦП
-
-Как исправить маршрут PUT, который обновляет идентификатор, отличный от отправленного в nodeJS
 
 NODE.JS
 Как исправить маршрут PUT, который обновляет идентификатор, отличный от отправленного в nodeJS
@@ -9946,33 +8429,7 @@ app.put('/:id', jsonParser, (req, res) => {
         .catch(err => res.status(500).json({ message: 'Something went wrong' 
          }));
         res.status(204).end();
-09.01.2019 09:53
-Другие вопросы по теме
-Где я могу получить поддельный JSON магазина, чтобы я мог попрактиковаться в получении данных?
-Как десериализовать только часть json-документа?
-Десериализация плоского json C#
-Как сериализовать / десериализовать объект LogEvent с помощью ObjectMapper?
-ПО промежуточного слоя nestjs получает тело запроса / ответа
-JSON, содержащий объект массива - результаты вызова ajax пусты
-Как выполнить итерацию массива JSON и отобразить элементы в PHP?
-Есть ли лучший способ получить доступ к глубоко вложенным объектам типа JSON в Python?
-Создайте модель шлюза API для возврата HTML с помощью схемы JSON
-Как отображать данные Json в столбцах начальной загрузки
 
-Похожие вопросы
-
-Как отправить пользователя на страницу с сервера NodeJS?
-Получите количество запросов в экспрессе
-Синтаксический анализ времени "1 час 30 минут 4 секунды" как время вперед в JavaScript
-Я пытаюсь установить nginx в Ubuntu 16.04, но получаю сообщение об ошибке в настройках локали
-Синхронизация убивает не дочерний процесс в узле
-Я не могу получить данные из базы данных MySQL в файле бота Nodejs
-Не удалось установить appium с помощью node.js
-Соединение Angular Universal и Express JS отклонено с ответом на отказ Http для неизвестной ошибки URL-адреса в консоли
-Как вызвать внешние веб-службы из моего приложения NODEJS GAE
-Как расшифровать в nodejs, который зашифрован с использованием JAVA
-
-Синхронизация с несколькими мастерами с MongoDB
 
 MONGODB
 Синхронизация с несколькими мастерами с MongoDB
@@ -10013,33 +8470,7 @@ Amazon DocumentDB использует общее хранилище, котор
 
 Couchbase начался как форк CouchDB очень давно, и большая часть кода была переписана, но некоторые основные концепции все еще присутствуют в Couchbase. Наконец, большим плюсом перехода на Couchbase является то, что это распределенная и хорошо масштабируемая база данных (от 1 до> 100 узлов в одном кластере), и вы сможете запрашивать свои данные, используя N1QL https://query-tutorial.couchbase.com/tutorial/#1.
 
- 01.02.2020 13:19
-Другие вопросы по теме
-Заполните базу данных MongoDB вложенными словарями с помощью Python
-Модуль функций MarLogic dls uri
-Как создать лучшую схему firestore для моего случая?
-Результаты mongodb с массивом на карту отдельных результатов
-CouchDB лучшая методика для обновлений связанных документов
-Является ли поддержка JSON в SQL Server заменой решений NoSql, таких как MongoDB?
-Клиент GridDB Node.js не будет собирать
-Как перебрать курсор mongo в обратном порядке в Python?
-MongoDB получает последние версии из указанной версии
-Как исправить маршрут PUT, который обновляет идентификатор, отличный от отправленного в nodeJS
 
-Похожие вопросы
-
-Есть ли ограничение на размер $ или массива в мангусте?
-Заполните базу данных MongoDB вложенными словарями с помощью Python
-Как удалить параметр ограничения из URL-адреса в экспресс-странице?
-@Transient на spring-data-mongodb с Kotlin приводит к исключению во время чтения
-Пользовательский идентификатор LoopBack4 MongoDB Auto Increment
-MongoDB: удалить JSON из массива в документе
-Альтернативное выражение, которое всегда будет возвращать истину
-Когда закрывать MongoClient в многопоточной программе
-Группа MongoDB по идентификатору, а затем по дате
-Изображения, загруженные в S3 с помощью MongoDB Stitch, не открываются
-
-$ и запрос в mongodb не возвращает результаты
 
 PYTHON
 $ и запрос в mongodb не возвращает результаты
@@ -10099,36 +8530,7 @@ db.emissions.find( "state":"NY", "energy source": "coal")
 Пожалуйста, попробуй
 
 db.emissions.find({ $and:[{"State":"NY"}, {"Energy Source": "coal"}]})
-или просто
 
-db.emissions.find({ "State":"NY", "Energy Source": "coal"})
- 12.01.2019 16:48
-Другие вопросы по теме
-Сохранение и получение связанных данных в мангусте
-Игнорирование запроса field mongodb
-Запрос Mongoose в поддокументе возвращает массив другого поддокумента с использованием проекции
-Как получить доступ к другим элементам класса из ReferenceField в Mongoengine
-Mongodb только некоторые коллекции возвращают данные, а некоторые нет, хотя они находятся в одной БД с использованием nodeJS
-Как сохранить фрейм данных в mongodb с помощью pyspark?
-Как узнать ID документа на стороне клиента
-Могу ли я увеличить размер кеша MongoDB WiredTiger cacheSizeGB?
-Я не могу связать файл css с html при рендеринге с инертным
-Как лучше всего моделировать в соответствии с моделью Mongodb
-
-Похожие вопросы
-
-Добавление дополнительных значений к ключу в словаре без перезаписи существующего значения
-Есть ли словарь для ярлыков в keras.reuters.datasets?
-Создайте логический фрейм данных на основе разницы между двумя датами
-Встреча двух кроликов
-Каков максимальный и минимальный интервалы функции numpy.random.normal ()?
-Получение точной позиции синтаксической ошибки в коде Python
-Как исправить ошибку «__path__ attribute not found» для пакетов, установленных установщиком pip?
-Как умножить четырехмерный массив Python numpy на вектор, индексированный по второму измерению
-Слишком много значений для распаковки ошибки для значений подсчета цикла в списке
-Я не получаю полиномиальную регрессию в sklearn плавно
-
-Обновление ElasticSearch 1.7 (Spring Data ElasticSearch) по запросу требует много времени для обновления документов
 
 SPRING BOOT
 Обновление ElasticSearch 1.7 (Spring Data ElasticSearch) по запросу требует много времени для обновления документов
@@ -10180,33 +8582,7 @@ bulkRequestBuilder.get();
 
 bulkRequestBuilder.setReplicationType(ReplicationType.SYNC).setRefresh(true).get();
 
-15.01.2019 09:15
-Другие вопросы по теме
-Как получить общее количество документов, присутствующих в индексе, с помощью JAVA High Level Rest Client
-Сбор журналов tomcat из контейнера докеров Tomcat в контейнер докеров Filebeat
-Как создать структуру реляционной базы данных для Elasticsearch с помощью вложенных
-Фильтрация журналов на основе содержимого поля сообщения
-Нераспознанная опция "сопоставления" в "fos_elastica.indexes.app.types.user"
-Использование поля ускорения в Elasticsearch
-Как получить каждый объект Elasticsearch SearchRequestBuilder из объекта MultiSearchRequestBuilder?
-Эластичный поиск Laravel не дает совпадений с содержанием или похожим содержанием
-Проблема во вложенном запросе для сортировки в агрегации
-Ошибка mapper_parsing_exception для массива JSON при добавлении в ES
 
-Похожие вопросы
-
-Как получить общее количество документов, присутствующих в индексе, с помощью JAVA High Level Rest Client
-Camel Rest DSL получает составной файл HTTP POST
-Как использовать Spring Data JPA для поиска неуникального индекса?
-Иерархия таблиц Spring boot jpa
-Как не учитывать @NotBlank в некоторых методах
-Как удалить зависимость от весенней загрузки с помощью dependencyManagement?
-Невозможно получить доступ к свойству application.properties из класса
-Открытие множества соединений с mongodb за короткое время вызывает исключение UncategorizedMongoDbException
-Spring Boot инициализирует новый экземпляр для привязки вложенной конфигурации, когда в application.properties нет соответствующих вложенных пар ключ / значение
-SpringBoot - многомодульный проект и источники данных - Невозможно сканировать @ Entity.class
-
-Предпочтение структуры базы данных
 
 MONGODB
 Предпочтение структуры базы данных
@@ -10326,33 +8702,6 @@ FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
 Query query = productsRef.whereEqualTo("uid", uid);
 Этот запрос также можно написать на других языках программирования.
 
- 16.01.2019 11:05
-Другие вопросы по теме
-Scala MongoDB, кодек переопределения для записи / чтения массива [байт]
-Как хранить записи по возрастанию по метке времени?
-Обновление ElasticSearch 1.7 (Spring Data ElasticSearch) по запросу требует много времени для обновления документов
-Хорошая практика - использовать операции как метод в схеме мангуста
-Как добиться репликации частичных данных для следующего варианта использования
-Как смоделировать базу данных Firebase в диаграммах UML?
-Найти похожие документы / записи в базе данных
-$ и запрос в mongodb не возвращает результаты
-Сохранение и получение связанных данных в мангусте
-Как я могу максимально быстро вставить данные из CSV-файла в OpenTSDB?
-
-Похожие вопросы
-
-Объект для идентификатора группы в конвейерах MongoDB
-Как настроить mongodb для удаления старых файлов журналов?
-Node js извлекает последнюю вставку записи по метке времени
-Зацикливание на заказе. Поиск, сбор и отправка большего количества данных на передний план. Плохой подход?
-Опубликовать в схеме мангуста с массивом объектов
-Создание постоянных документов Mongoose / MongoDB
-Как сгруппировать по полю массива?
-Scala MongoDB, кодек переопределения для записи / чтения массива [байт]
-Передача данных MongoDB
-Потеря данных базы данных после завершения работы из `run-rs`
-
-На Cassandra как включить аутентификацию LDAP
 
 CASSANDRA
 На Cassandra как включить аутентификацию LDAP
@@ -10383,33 +8732,6 @@ https://docs.datastax.com/en/cassandra/3.0/cassandra/configuration/secureConfigN
  16.01.2019 18:17
 Просто замените PasswordAuthenticator с AllowAllAuthenticator и CassandraAuthorizer с AllowAllAuthorizer на cassandra.yaml. Перезапустите службы Cassandra. это позволит без пароля.
 
- 16.01.2019 18:23
-Другие вопросы по теме
-В aws ec2 mongodb не запускается
-Laravel + MongoDB: невозможно аутентифицировать
-Что означает «Сохранение кэша ключей system.KeyCache» в Opscenter?
-Нестабильная скорость вставки в MongoDB
-Автоматическое масштабирование в Mongo с помощью Spring Boot
-Вход в Facebook против обычного входа в систему, проблема со схемой монго
-Предпочтение структуры базы данных
-Scala MongoDB, кодек переопределения для записи / чтения массива [байт]
-Как хранить записи по возрастанию по метке времени?
-Обновление ElasticSearch 1.7 (Spring Data ElasticSearch) по запросу требует много времени для обновления документов
-
-Похожие вопросы
-
-Сколько свободного места на диске нужно для уплотнения?
-Полностью ли протестирована Cassandra на OpenJDK или на любую бесплатную JRE, не относящуюся к Oracle?
-Ошибка тайм-аута подключения в Cassandra даже после указания достаточно большого диапазона тайм-аута (50 с)
-Как узнать собственных клиентов, подключенных к Cassandra
-Что означает «Сохранение кэша ключей system.KeyCache» в Opscenter?
-Сбой облегченных транзакций Cassandra
-Запросы Cassandra Range по значениям карты с использованием метки времени
-Дисбаланс ЦП Cassandra в Azure
-Кассандра | Как сравнить текущий набор данных с предыдущим?
-Кассандра выбрасывает исключение WriteTimeout без Thread.sleep
-
-Лучшая стратегия для запроса элементов из Dynamodb
 
 NOSQL
 Лучшая стратегия для запроса элементов из Dynamodb
@@ -10442,33 +8764,6 @@ NOSQL
 
 Примерно через 1–2 часа вы узнаете много нового об использовании DynamoDB, в том числе о том, как моделировать на ней шаблоны реляционного доступа. Примерно через 50 минут вы сможете увидеть большую примерную таблицу, из которой вы сможете почерпнуть проектные решения для достижения определенного набора шаблонов доступа.
 
- 22.01.2019 02:46
-Другие вопросы по теме
-Преобразователь запросов AppSync: нужны ли выражения expressionNames и expressionValues?
-Загрузите данные из S3 для сортировки и анализа временной шкалы
-Как манипулировать AWS AppSync и GraphQL, чтобы соответствовать рекомендациям DynamoDB?
-Сохранение типа данных List<Map<Enum,Object>> как JSON в DynamoDb
-Как использовать пагинацию в DynamoDB
-Есть ли способ создать записи в таблице DynamoDb с разным ttl для каждой сохраненной записи?
-Почему мой шаблон CloudFormation не удается собрать для простой DynamoDB с одним ключом раздела?
-Удаление в DynamoDB через С# AWS SDK
-Как выразить числовой тип в ExpressionAttributeValues ​​с помощью AWS.DynamoDB.DocumentClient
-Загадочный конфликт транзакций в TransactionCanceledException
-
-Похожие вопросы
-
-Как сделать поиск с массивом в mongoDB
-Это состояние гонки?
-JSONParseException при использовании даты в аннотации весеннего запроса загрузки
-Дублированные элементы в документах с использованием наследования классов
-Моделирование измененного количества смен в день в FirebaseDB
-Получение ошибки: «Невозможно смешивать последовательный ремонт и добавочный ремонт» при попытке выполнить добавочный ремонт
-Как бы вы искали базу данных, полную сообщений, и возвращали бы только те, которые соответствуют?
-Запрос элементов со значениями внутри массива
-Производительность моделирования данных MongoDB
-MongoDB - дизайн схемы отношений многие-ко-многим / немногие-к-немногим, без проблем с производительностью поиска
-
-Как добавить новые поля во все документы в Firestore?
 
 FIREBASE
 Как добавить новые поля во все документы в Firestore?
@@ -10543,33 +8838,6 @@ db.collection("users").get().addOnCompleteListener(new OnCompleteListener<QueryS
 
 Если вы не используете класс модели, см. мой ответ из этого Почта.
 
- 22.01.2019 08:56
-Другие вопросы по теме
-Удалить-вставить в MongoDB
-Запрос документа из массива внутри коллекции mongoDB
-Эффективно моделируете схему канала в Google Cloud Datastore?
-Как я могу запросить несколько полей в данных одной карты в Firestore?
-Neo4j/Cypher — пагинация с несколькими запросами
-Как найти документы, поле которых является подстрокой определенной строки?
-Лучшая стратегия для запроса элементов из Dynamodb
-Как сделать поиск с массивом в mongoDB
-Это состояние гонки?
-JSONParseException при использовании даты в аннотации весеннего запроса загрузки
-
-Похожие вопросы
-
-Получить данные из базы данных Firebase в реальном времени и автоматически заполнить текстовое поле
-Добавить идентификатор документа документа в его собственный документ Firestore - Swift 4
-Итерация по базе данных Firebase
-Почему реквизиты не определены, даже когда я условно визуализирую компонент?
-Отправить электронное письмо с подтверждением, используя Firebase в Swift
-Как реализовать аутентификацию Firebase в Android
-Swift — ожидание завершения асинхронного цикла for-in перед вызовом обработчика завершения swift
-Использование новых данных об обновлениях в правилах безопасности Firebase
-Какие существуют типы совпадений в правилах безопасности хранилища Firebase?
-Правила безопасности firebase - общедоступные и аутентифицированные
-
-Стратегия ключа раздела Dynamodb — несколько владельцев
 
 DATABASE DESIGN
 Стратегия ключа раздела Dynamodb — несколько владельцев
@@ -10634,33 +8902,6 @@ Id is sortkey for GSI1
 Получите все встречи, происходящие сегодня.
 В NoSql схема должна определяться вариантами использования.
 
- 29.01.2019 05:51
-Другие вопросы по теме
-Репликация с фильтром CouchDB — может ли он использовать индекс при репликации?
-MongoDB — найти документы, в которых несколько свойств соответствуют условию в одном элементе массива
-Агрегация MongoDB с $addFileds и условием
-Укажите несколько условий соединения с $lookup в mongodb
-Я пытаюсь получить данные из поля MongoDB в свой код Java
-Impala sql транспонирует несколько столбцов в строки
-Firestore: получение документов, отсортированных по числовому полю, содержащемуся в документах двух подуровней
-Таблица AWS DynamoDB для поиска видео/фотоконтента в порядке дат
-Несколько предложений в базе данных nosql, например firebase
-Как безопасно структурировать мои пользовательские данные в firebase
-
-Похожие вопросы
-
-Повышение производительности для запроса, включающего множество условий с помощью оператора «или»
-Дизайн — альтернатива хранению исполняемого кода в SQL
-Наличие нескольких пользовательских таблиц в микросервисной архитектуре
-Отношения базы данных между собой (пользователи и группы)
-Как я могу улучшить отношения в моей базе данных?
-Дизайн базы данных MySQL для службы такси, нужен совет
-Используется ли pgmodeler только для PostgreSQL?
-Дизайн базы данных: вложенные таблицы
-Обновление объекта, который используется внутри другого объекта
-Схема базы данных изображений
-
-Облачное шифрование данных
 
 DATABASE
 Облачное шифрование данных
@@ -10681,33 +8922,6 @@ DATABASE
 
 https://blog.cloudant.com/2018/10/10/Client-Side-Transformation.html
 
- 12.02.2019 14:41
-Другие вопросы по теме
-FromXmlString в CSharp и javascript
-Получение ошибок ссылки при использовании библиотеки crypto++ в моем приложении MFC
-Почему мои данные, расшифрованные с помощью AES, имеют в конце мусорные байты?
-Сгенерируйте симметричный ключ на iOS с помощью Security.framework
-Шестнадцатеричный, сгруппированный по байтам, закодированный HMAC SHA-1, в шестнадцатеричный, сгруппированный по 2 байта
-Ошибка столбца AlwaysEncrypted при попытке вставки в таблицу
-«EVP_DecryptFinal_ex: неправильная длина конечного блока» в криптопакете nodejs
-Шифрование RSACryptoServiceProvider с использованием Javascript
-Как расшифровать запросы Firebase к app-measurement.com
-Шифрование TripleDES отлично работает в Java, но не в С#
-
-Похожие вопросы
-
-Ошибка: querySrv ENODATA _mongodb._tcp.blog-cluster-0hb5z.mongodb.net в QueryReqWrap.onresolve [как oncomplete]
-Инициализация строк БД в Rails?
-Как объединить несколько коллекций с Firebase?
-Проблемы с отношениями между таблицами доступа MS
-Mysql UNION ALL создает двойные записи
-Можно комбинировать дату и время и сохранять в формате даты и времени
-Подчиненная форма для возврата всех записей, содержащих строку в основной форме
-Angular 6: создать свою собственную базу данных, используя базу данных из общедоступного API?
-Можно ли мигрировать миграции без заказа? (Если нет, то как я могу это исправить)
-MySql Как вернуть все элементы, содержащие все выбранные функции
-
-Как обновить данные firebase, поскольку они возвращают новое неопределенное значение в конце дерева
 
 JAVASCRIPT
 Как обновить данные firebase, поскольку они возвращают новое неопределенное значение в конце дерева
@@ -10757,36 +8971,10 @@ Gets the user data for the user corresponding to a given uid.
 
 admin.auth().getUserByPhoneNumber(phone)
   ...
- 04.02.2019 16:07
-Другие вопросы по теме
-Если setState нельзя использовать, чем то, что делает
-Проверка токенов ID с помощью Firebase Authentication
-Получить информацию о пользователе из документа из запроса firestore?
-Проверьте наличие определенного значения во всех узлах, присутствующих в базе данных Firebase
-Не удалось разрешить Firestore Android Studio
-Запрос Firestore по датам и времени отдельно
-FirebaseRecyclerAdapter аварийно завершает работу при каждом запуске приложения
-Push-уведомление Firebase не работает Получить номер токена, но все еще не работает
-AddValueEventListener не работает с фильтром или отдельно
-Запрос облачной функции Firebase не работает
 
-Похожие вопросы
-
-Условные выражения в неустановленном (React)
-Как исправить проблему с пользовательским диапазоном дат в daterangepicker?
-Преобразование ответа JSON, подходящего для Google Maps Api
-Как использовать путь jsconfig с WebStorm?
-Как отслеживать изменения $watch с флажка ng-repeat
-Как проверить, есть ли конкретная ошибка в консоли?
-Как установить заголовок вкладки при открытии новой вкладки?
-Почему использование document.write не отображает текст в браузере
-Изменение значения следующего элемента в массиве
-Не удается отобразить карту Bing из параметров местоположения и добавить канцелярскую кнопку в указанном месте
-
-Как получить данные firestore через ссылочное значение в ключе
 
 FIREBASE
-Как получить данные firestore через ссылочное значение в ключе
+
 Как получить данные firestore через ссылочное значение в ключе
 
 вот несколько документов для предложения, и каждое предложение может содержать bidderId, который ссылается на коллекцию пользователей и идентификатор пользователя.
@@ -10908,37 +9096,10 @@ egpo
 TJTHMkxOx1C
 { name: 'Homeware' }
 
- 08.01.2020 20:33
-Другие вопросы по теме
-Является ли Solr лучше обычной СУБД в случае поиска обычных запросов, то есть не полнотекстового поиска?
-Исключение: кросс-секционный запрос нельзя напрямую обслуживать в запросе Azure Cosmos DB
-Как выполнить несколько запросов orderByChild в базе данных Firebase
-Проблема моделирования данных Cassandra
-Как обновить данные firebase, поскольку они возвращают новое неопределенное значение в конце дерева
-MongoDB показывает слишком много открытых соединений
-Как одновременно и эффективно записывать данные в NoSQL и RDBMS
-Как спроектировать эту базу данных NoSQL
-Многоколоночный индекс Postgresql для BETWEEN и ORDER BY
-Облачное шифрование данных
-
-Похожие вопросы
-
-Сообщение Firebase Data не обрабатывается FirebaseMessagingService, когда приложение находится в режиме ожидания
-Firebase Cloud Messaging: анализ данных из сообщения, даже если приложение закрыто
-У меня проблема с метаданными пользователя Firebase Auth-UI
-Навигация не работает в родном приложении реакции
-Kivy — пытаетесь интегрировать firebase с моим приложением kivy? Json-ошибка
-Плагин Flutter и google_sign_in: PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10: , null)
-Полностью выполнить функцию конструктора перед выполнением функции перехватчика
-Ошибка при выполнении узла (о firebase), но приложение работает нормально, даже используя firebase (angular-universal)
-Маршрутизация с аутентификацией firebase и угловым маршрутизатором
-Тип программы уже присутствует: com.google.android.gms.internal.measurement.zzu при добавлении библиотеки firebase-perf
-
-Couchbase: как удалить элемент из списка на основе дочернего значения?
 
 NOSQL
 Couchbase: как удалить элемент из списка на основе дочернего значения?
-Диван 2.5+
+
 
 Новичок в кушетке здесь. Я хочу удалить элемент из списка, в котором один из его дочерних элементов основан на значении дочерних элементов. Например если я хочу удалить все записи в списке scores где ребенок score < 0.2
 
@@ -11000,33 +9161,6 @@ UPDATE Q1036628 AS d USE KEYS "dim::100020891::2020-10-04"
 SET d.scores = ARRAY s FOR s IN d.scores WHEN s.score >= 0.2 END
 WHERE ANY s IN d.scores SATISFIES s.score < 0.2 END;
  
-14.02.2019 07:13
-Другие вопросы по теме
-Как запросить массив json с глубоким вложением из кушетки?
-Создайте или обновите полнотекстовый поиск в Couchbase с помощью Java-клиента
-Как заблокировать документы при использовании дивана при использовании весеннего планировщика
-Не удалось выполнить загрузку с помощью CCCP: исключение ведра Couchbase memcached
-Couchbase не может получить доступ к представлениям при добавлении новых документов
-Как узнать, обновил ли Couchbase или вставил запись с помощью UPSERT
-Внутренности дивана
-Couchbase извлекает реляционные документы в nodeJS
-Как разместить запрос n1ql с переменными в аннотации Spring @Query?
-Клиент Couchbase выдает TimeoutException после добавления узла в кластер Couchbase
-
-Похожие вопросы
-
-Firestore, реплицирующий соединение SQL для noSQL и Flutter
-Настройка Nutch для записи в Apache Kudu
-Как я могу упорядочить результаты по вторичному индексу или столбцу в Cassandra?
-Как я могу найти таблицу по метке времени x часов в Cassandra?
-Структура базы данных Firestore для социальной сети с несколькими отношениями
-Поиск MongoDB, когда внешнее поле представляет собой массив объектов
-Как я могу запросить mongodb для сравнения массивов объектов?
-При обновлении Azure CosmosDB возникает ошибка «Запрос Distict требует соответствия порядка, чтобы вернуть маркер продолжения»
-Проблема с запросом MongoDB в формате JSON не дает результатов
-Дизайн схемы Dynamodb (сопоставление реляционных данных с nosql)
-
-Мангуст, как найти все данные из объекта?
 
 DATABASE
 Мангуст, как найти все данные из объекта?
@@ -11114,33 +9248,7 @@ app.get("/admin/phase/:level", function (req, res) {
     })
 });
  
-13.02.2019 10:35
-Другие вопросы по теме
-Шаблон Spring Boot jdbc и mongoDB
-Запрос mongodb для разделенного строкой столбца целого числа, состоящего из данных, объединенных с другой коллекцией, соответствующей определенному значению целого числа
-Можно ли создать подкласс коллекции в моторе?
-Как добавить массив в список
-Получение текущей даты в mongodb через JAVA
-Я не могу открыть файл в новом окне, когда использую window.open()
-Запрос объекта в массиве вложенных документов
-Сортировка запросов mongoDB по значению массива и использование разбивки на страницы в Springdata MongoDB
-Не знаете, как запросить вложенный документ, который был определен с другой схемой
-Параметры обещания UpdateOne драйвера узла MongoDB
 
-Похожие вопросы
-
-Получить общее количество из текущего запроса статуса MySQL
-Есть ли способ подсчитать и зациклить с помощью простого SQL?
-Как сделать админку django для готовой базы данных?
-Gumtree как система электронной почты
-Одиночный запрос из нескольких таблиц MySql
-Как я могу экспортировать выходные данные временных рядов в таблицу в моей БД в R. (R Studio)
-Проблема с грязным чтением - обновление в базе данных после транзакции, выполняющей грязное чтение
-Как преобразовать дату из базы данных в ZonedDateTime?
-Как избежать жестко запрограммированных учетных данных базы данных в коде
-Как я должен собирать данные из БД, используя 2 потока?
-
-Разница между Google Cloud Firestore и Google Cloud Spanner?
 
 GOOGLE CLOUD PLATFORM
 Разница между Google Cloud Firestore и Google Cloud Spanner?
@@ -11175,33 +9283,6 @@ Cloud Firestore — это быстрый, полностью управляем
 
 Cloud Spanner — это сервис, созданный специально для облака, чтобы объединить преимущества структура реляционной базы данных с нереляционным горизонтальным масштабом. Эта услуга может предоставить петабайты емкости и обеспечивает согласованность транзакций на глобальный масштаб, схемы, SQL и автоматическая синхронная репликация для высоких доступность. Сценарии использования включают финансовые приложения и приложения для инвентаризации. традиционно обслуживается технологией реляционных баз данных.
 
- 01.04.2020 10:07
-Другие вопросы по теме
-Мангуст, как найти все данные из объекта?
-Альтернатива RavenDB для сокращения бюджета
-Как манипулировать данными в запросе MongoDB С#?
-Couchbase: как удалить элемент из списка на основе дочернего значения?
-Firestore, реплицирующий соединение SQL для noSQL и Flutter
-Настройка Nutch для записи в Apache Kudu
-Как я могу упорядочить результаты по вторичному индексу или столбцу в Cassandra?
-Как я могу найти таблицу по метке времени x часов в Cassandra?
-Структура базы данных Firestore для социальной сети с несколькими отношениями
-Поиск MongoDB, когда внешнее поле представляет собой массив объектов
-
-Похожие вопросы
-
-408 kubernetes облачный клиент google
-Установите переменную среды GOOGLE_APPLICATION_CREDENTIALS в Android Studio
-Dask - Kubernetes - Учебный пример
-API облачной транслитерации Google
-Эмулятор хранилища данных GCP не будет установлен на OpenJDK 10
-Как я могу подтвердить лимит пользователей моего облака Google/API?
-Woocommerce Rest API, размещенный на Google Cloud Server
-AppEngine StdEnv с Python3: как получать входящую электронную почту
-Google Cloud: нет записей DNS
-Google Cloud: не удается получить доступ к странице регистрации моего DjangoApp
-
-Удалить родительский ключ из файла json с помощью php
 
 PHP
 Удалить родительский ключ из файла json с помощью php
@@ -11347,33 +9428,6 @@ $cities = array_column(json_decode($json, true), 'city');
 print_r($cities);
 https://3v4l.org/nkaZF
 
- 17.02.2019 11:32
-Другие вопросы по теме
-Как анализировать значения JSON внутри вложенного массива с помощью JavaScript
-Rails: вставка данных JSON в бестабличную модель PORO
-Преобразование строки в целое число внутри массива Angular
-TypeError: требуется байтовый объект, а не 'int' python3
-Дамп JSON без escape-последовательности
-Как вернуть несколько строк из вложенного объекта JSON, хранящегося в таблице
-Отображение вложенного json с изображениями в таблице с использованием ванильного javascript
-Ошибка синтаксического анализа GSON при синтаксическом анализе строки в хэш-карту
-Как перебирать и распаковывать файлы «.gz» в python?
-Jolt: Как извлечь повторяющийся элемент из списка объектов и добавить один раз на корневой уровень
-
-Похожие вопросы
-
-Во время цикла он печатает мне только 1 значение, и оно последнее
-Вызов неопределенного метода Poll::updatePoll()
-Массив PHP в электронную таблицу объектов
-Как скрыть содержимое div и показывать только при нажатии кнопки?
-Контроллер Laravel 5.4 не показывает страницу
-Как исправить чтение от до до даты и времени mysql?
-Преобразование кодовых точек Unicode в строку во всем файле
-Почему не устанавливается соединение с публичным IP ec2
-Распечатать диапазон лет в php
-Выбор цифр в определенном разделе внутри строки
-
-Как получить определенные строки в Hbase?
 
 HADOOP
 Как получить определенные строки в Hbase?
@@ -11430,33 +9484,6 @@ import org.apache.hadoop.hbase.filter.RegexStringComparator
 
 scan 't1', {STARTROW => 'a1s1', ENDROW => 'a4s1', FILTER => org.apache.hadoop.hbase.filter.RowFilter.new(CompareFilter::CompareOp.valueOf('EQUAL'),RegexStringComparator.new("s1$"))}
 
-14.03.2019 09:10
-Другие вопросы по теме
-Фильтровать значение даты и времени в коллекции JSON коллекции внутри CosmoDB с использованием SQL
-Как моделировать базы данных NoSQL (Firestore)? Обзор моего первого подхода
-Какой самый практичный способ структурировать базу данных noSQL?
-Какова наиболее эффективная модель пожарного хранилища для этого варианта использования?
-Как искать в документах Marklogic?
-Как запросить Firebase-DB для данных, таких как предложение «ГДЕ»?
-Создание объекта MediaPlayer из Firebase происходит очень медленно
-Совокупный подсчет MongoDB с фасетом слишком медленный
-Подструктуры против плоской структуры данных в MongoDB — NoSQL
-Удалить родительский ключ из файла json с помощью php
-
-Похожие вопросы
-
-Как установить динамический базовый путь для функции BucketingSink Flink?
-Недопустимый псевдоним таблицы или ссылка на столбец "SYNTHJOIN_xxxxx"
-Spark-Shell: org.apache.spark.SparkException: задача не сериализуема
-У меня возникли проблемы с объединением двух заданий mapreduce
-В чем причина ошибки: не удалось найти или загрузить основной класс при запуске spark-shell
-Где находится каталог bin в каталоге проекта Hadoop?
-Когда я запускаю образец spring-hadoop в github и обнаруживаю, что мое приложение пряжи запускается со статусом сбоя
-Как вставить китайские иероглифы в таблицу кустов?
-Программа Map Reduce создает пустой каталог при выполнении
-Kafka-Connect HDFS — Protobuf для паркета
-
-Можно ли определить диапазон целочисленных значений в числовом поле в MongoDB?
 
 DATABASE
 Можно ли определить диапазон целочисленных значений в числовом поле в MongoDB?
@@ -11499,33 +9526,7 @@ slider_value: {
     message   : '{VALUE} is not an integer value'
   }
 },
- 27.03.2022 21:24
-Другие вопросы по теме
-MongoDB/Mongoose — FindOneById с условиями. Совпадение со значением массива внутри объекта, находящегося внутри массива
-Javascript MongoDB `"$ function"` не возвращает ожидаемое значение в mongoplayground.net
-Агрегация MongoDB создала дату для отметки времени и впоследствии сопоставляется с полем отметки времени
-Получите общее количество представлений и количество представлений с «AC», используя оператор $lookup
-Множественная операция агрегации MongoDB
-MongoDB не сохраняет путь к базе данных, который я ему назначаю. Как я могу сохранить dbpath?
-Как сохранить DateTime в MongoDB с неповрежденным часовым поясом?
-Преобразовать uuid mongodb bindata в уникальный идентификатор сервера sql
-Mongodb соединение db не определено с мангустом
-Почему в моем браузере возникает ошибка политики CORS? Политика CORS: в запрошенном ресурсе отсутствует заголовок «Access-Control-Allow-Origin»
 
-Похожие вопросы
-
-Как я могу сделать пагинацию?
-Как вернуть определенный столбец из результатов базы данных?
-SQLITE: горизонтальное объединение больших таблиц sql на основе общей записи
-Могу ли я создать кроссплатформенное приложение с помощью Xamarin, используя базу данных MySQL?
-Создание словаря в словаре для разделения данных по одинаковым значениям в одном столбце, а затем во втором столбце
-Как написать запрос mysql, где мне нужно расположить порядок перед группировкой
-Отношение «многие ко многим» в PostgreSQL с некоторыми ограничениями
-Сравнить описание того же имени в mysql
-Избыточное отношение пользователя Django в связанных моделях для целей разрешения
-Json_remove удаляет неправильное значение из массива при втором запуске
-
-Что делать, если в некоторых документах нет поля, которое является частью индекса?
 
 NODE.JS
 Что делать, если в некоторых документах нет поля, которое является частью индекса?
@@ -11588,33 +9589,6 @@ db.collection.find({ field_A: null, field_B: 1 }).explain().queryPlanner.winning
     }
 }
 
-28.03.2022 17:50
-Другие вопросы по теме
-Как указать, что хотя бы одно поле обязательно из трех?
-Как получить доступ к функции Passport «Готово» из остального кода при аутентификации с использованием паспорта.js?
-Сопоставьте поля из 2 разных коллекций и отобразите результат на основе соответствия mongodb nodejs
-Загрузка одного файла mongoDb
-Как обновить мой вложенный массив другого вложенного массива в объект в mongodb
-Хранить изображение в MongoDB с помощью Gridfs или BSON
-Объедините два элемента с помощью $lookup в одной коллекции с помощью Pymongo
-Поле MongoDB принимает только 3 специальных значения
-Можно ли определить диапазон целочисленных значений в числовом поле в MongoDB?
-MongoDB/Mongoose — FindOneById с условиями. Совпадение со значением массива внутри объекта, находящегося внутри массива
-
-Похожие вопросы
-
-FormData() отправляет значение поля ввода, но не отправляет файл из React на экспресс-сервер?
-Найти информацию о пользователе по идентификатору во вложенном объекте nodejs | JavaScript
-Как использовать API календаря Google для JavaScript с установкой npm ?? Или можно ли использовать API календаря Google для nodejs в браузере в Nextjs?
-Как удалить объект из файла JSON?
-Как получить доступ к функции Passport «Готово» из остального кода при аутентификации с использованием паспорта.js?
-Discord JS v13 Получение var из объекта и размещение их во встраивании
-Включение изображения в тело запроса в виде двоичных данных
-Мопс - не может пройти шаг 1 стандартного шаблона
-Сопоставьте поля из 2 разных коллекций и отобразите результат на основе соответствия mongodb nodejs
-Добавить новый элемент в файл JSON в TypeScript/NodeJS?
-
-MongoDB находит строку, содержащую скобки
 
 JAVASCRIPT
 MongoDB находит строку, содержащую скобки
@@ -11648,33 +9622,6 @@ db.getCollection("content").find(
 
 db.content.find({ 'currentBox.profile.description': { $regex: '\\(The' } });
 
-17.07.2019 00:00
-Другие вопросы по теме
-Как назвать бессерверную лямбду aws, чтобы не включать сценическое имя?
-Экспресс-командная строка среды
-Stripe API Ошибка ответа на необработанный отказ
-Как я могу получить двоичный файл из изображения с помощью узла ftp?
-Использовать AsyncIterator в Typescript — обязательные параметры
-Как связать приложение для реагирования, которое я создаю с помощью веб-пакета, с внешней базой данных phpmyadmin и запрашивать ее, не показывая пароль моей базы данных в коде?
-Как открыть постоянный SSH-клиент, чтобы создать веб-файловый менеджер?
-Тонкий эквивалент реквизита React.children?
-Удалить поля из документа firestore с помощью nodejs
-Как указать только тесты с определенным метатегом
-
-Похожие вопросы
-
-Невозможно отфильтровать значения из массива с помощью .find()
-Эквивалент предложения LINQ WHERE в javascript
-Как мы выполняем назначение свойств объекта на основе условия при создании объекта js?
-Разрушение и переименование имущества
-Как работать со связанной базой данных из переданных данных через Axios в Vuejs
-Созданная мной функция переключения не работает при добавлении новых элементов списка
-Ответ об ошибке 500 на CORS preflight OPTIONS при вызове облачной функции. Как я могу вызвать облачную функцию из своего веб-приложения и обеспечить совместимость с CORS?
-Установка пряжи не работает, получая "Другие менеджеры не допускаются"
-Управление WASD от первого лица
-Как извлечь из объекта на основе значения свойства
-
-Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
 
 DATABASE
 Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
@@ -11769,33 +9716,7 @@ DATABASE
 
 В Dynamodb существует ограничение на размер элемента 400 КБ, поэтому ваш массив тестов имеет ограниченное количество строк, которые можно добавить.
 
- 02.05.2019 22:25
-Другие вопросы по теме
-Получить абсолютный путь ключа из вложенного словаря в Python
-Список или словарь объектов внутри класса
-Java объявляет объект класса из строки этого класса?
-Как можно перенести данные из нескольких файлов excel/csv в словарь на С#
-Удалить пару ключ-значение на основе группировки из словарей в python
-LOOP в двух словарях, чтобы создать новый словарь в python
-Как объединить 2 переменные, чтобы заголовок отображался при использовании Pandas
-Как извлечь значение из вложенного словаря во вложенном списке в python
-Разделение между диктами
-Могу ли я сделать значение возраста вычисляемым на основе года рождения в словаре?
 
-Похожие вопросы
-
-Исключение операционной ошибки sqlite3
-Datatable: изменение цвета строки на основе данных
-Как лучше всего использовать Android ORM Room?
-Выбрать людей, которые регистрируются на тот же курс, но никого не знают
-T-SQL проходит через даты
-Лучший способ соединения данных с более низкими запросами к базе данных [общий, не зависящий от языка]
-Могу ли я установить max_value в форме продаж amount_sold как свойствоcoins_remaining из представления транзакции?
-Как сделать ограничение CHECK, которое позволяет пользователю вводить DateTime только с сегодняшнего дня и далее?
-Как обновить и увеличить базу данных?
-Что я могу сделать со своим кодом C#, чтобы применить это к моему пользовательскому интерфейсу в Unity?
-
-Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
 
 DATABASE
 Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
@@ -11892,33 +9813,6 @@ DATABASE
 
 В Dynamodb существует ограничение на размер элемента 400 КБ, поэтому ваш массив тестов имеет ограниченное количество строк, которые можно добавить.
 
- 02.05.2019 22:25
-Другие вопросы по теме
-Получить абсолютный путь ключа из вложенного словаря в Python
-Список или словарь объектов внутри класса
-Java объявляет объект класса из строки этого класса?
-Как можно перенести данные из нескольких файлов excel/csv в словарь на С#
-Удалить пару ключ-значение на основе группировки из словарей в python
-LOOP в двух словарях, чтобы создать новый словарь в python
-Как объединить 2 переменные, чтобы заголовок отображался при использовании Pandas
-Как извлечь значение из вложенного словаря во вложенном списке в python
-Разделение между диктами
-Могу ли я сделать значение возраста вычисляемым на основе года рождения в словаре?
-
-Похожие вопросы
-
-Исключение операционной ошибки sqlite3
-Datatable: изменение цвета строки на основе данных
-Как лучше всего использовать Android ORM Room?
-Выбрать людей, которые регистрируются на тот же курс, но никого не знают
-T-SQL проходит через даты
-Лучший способ соединения данных с более низкими запросами к базе данных [общий, не зависящий от языка]
-Могу ли я установить max_value в форме продаж amount_sold как свойствоcoins_remaining из представления транзакции?
-Как сделать ограничение CHECK, которое позволяет пользователю вводить DateTime только с сегодняшнего дня и далее?
-Как обновить и увеличить базу данных?
-Что я могу сделать со своим кодом C#, чтобы применить это к моему пользовательскому интерфейсу в Unity?
-
-Переименовать ключ документа Arango DB
 
 NOSQL
 Переименовать ключ документа Arango DB
@@ -11955,33 +9849,6 @@ OPTIONS { keepNull: false }
 
 Обратите внимание, что приведенный выше AQL удалит только те значения NULL, которые являются результатом оператора. Таким образом, если в вашей таблице есть атрибут «рис», который уже имеет значение null, система не удалит его, поскольку «рис» не является частью оператора обновления.
 
- 05.05.2019 03:00
-Другие вопросы по теме
-Как хранить локации в ArangoDB?
-Визуальная поддержка запросов для ArangoDB
-Получить все документы из коллекции ArangoDB со смещением
-AQL-запрос «многие ко многим»
-PyArango — создать ребро с указанным _key
-Как работать с историческими данными [ArangoDB]
-Медленное преобразование AQL и типов данных. Как повысить производительность AQL?
-Обновление AQL завершается успешно в цикле сбора данных, но выдает ошибку «не найдено» при обходе графа
-После установки Debian (3.3.22) файл /etc/init.d/arangod не найден
-Могу ли я импортировать CSV-файл в коллекцию и сразу связать его с другой коллекцией в ArangoDB?
-
-Похожие вопросы
-
-DynamoDB — что происходит, когда я удаляю объект в GSI? Это «Каскад» к основному столу?
-Запрос подмножества данных Firebase (NoSQL)
-Как хранить локации в ArangoDB?
-Как ускорить совокупный запрос Cosmos DB?
-Запрос диапазона дат Firebase для получения документов, у которых есть starDate и endDate
-Как спроектировать базу данных NoSQL для выбора порядка данных по отметке времени
-Как структурировать данные в DynamoDB, вложенных словарях или нескольких элементах?
-Должен ли я проверять отношения в DynamoDB?
-Создание нового свойства из имени родительского свойства через SQL в документе типа noSQL
-Невозможно создать объекты в оболочке hbase
-
-Моделирование данных для обратимого удаления в Firestore
 
 FIREBASE
 Моделирование данных для обратимого удаления в Firestore
@@ -12019,33 +9886,6 @@ db.collection('сообщения').where('статус', '==', 'выброше�
 
 Хотя с точки зрения ценообразования вам, вероятно, было бы лучше просто сохранить данные, чтобы не нести дополнительных затрат на чтение/запись, поскольку хранилище довольно дешевое (0,18 долл. США/ГиБ), не влияет на производительность, а операции чтения/записи относительно дороги.
 
- 15.07.2020 19:31
-
-Как раскрутить массив внутри объекта в MongoDB?
-Как запросить AWS DynamoDB, используя несколько индексов?
-Как POST, PATCH и DELETE элементы из массива вложенных документов с помощью REST
-Проект схемы MongoDB для отношения «многие ко многим»
-Как сгруппировать записи на основе элементов массива с помощью MongoDB
-Как распечатать количество элементов массива вместе с другой переменной в MongoDB
-Запрос для получения значений для определенного ключа в MongoDB
-Смена пароля администратора Couchbase по умолчанию
-Переименовать ключ документа Arango DB
-DynamoDB — что происходит, когда я удаляю объект в GSI? Это «Каскад» к основному столу?
-
-Похожие вопросы
-
-Получу ли я пользу от использования Cloud run вместо Cloud Functions? Где это вписывается в GCP?
-Получить детей в JSON DataSnapshot
-Добавление Firestore в мой проект приводит к ошибке в моих запросах к базе данных в реальном времени
-Как подготовить контент еще до того, как он будет просмотрен?
-Firebase Analytics Отключить отслеживание страны аудитории
-Firebase — эффективность чтения и выборки данных
-Необходим ли {path=**} для запросов группы сбора?
-Ключ моментального снимка данных появляется, когда данные значения становятся нулевыми
-Как использовать aria2c в облаке?
-Как изменить параметры удаленной конфигурации Firebase из приложения для Android
-
-Проблема с поиском массива ObjectId в агрегатной функции
 
 DATABASE
 Проблема с поиском массива ObjectId в агрегатной функции
@@ -12097,32 +9937,6 @@ db.my_fields.aggregate(
 )
  18.05.2019 13:02
 
-Другие вопросы по теме
-Я пытаюсь вернуть полный список вложенных документов после $unwind
-Доступ к данным из mongoDB на странице EJS
-MongoDB, как найти документы с неопределенными $lookups (агрегация)
-Как указать значения по умолчанию для Vue & Express & Mongo / типа даты mongoose
-Могу ли я принудительно обновить сеанс со стороны сервера?
-Оператор $and не возвращает никакого результата в mongodb?
-Как изменить состояние vue при нажатии кнопки проверки
-Невозможно правильно использовать $push и $each в запросе pymongo
-Перебор всех документов в коллекции и массива в каждом документе для сопоставления значения массива с проектом
-MongoDB – Должен ли я разделить коллекцию сообщений более чем на 1?
-
-Похожие вопросы
-
-Как заставить пользователя вводить текст в поле, отправлять текст в базу данных, а затем отображать на странице?
-Realm и Swift - параметры, которые необходимо передать для обновления модели
-Не удается перенести таблицу в Room из-за ошибки, связанной со способом сохранения логических значений в Sqlite
-Добавление нового атрибута в базу данных sqlite
-Запрос MS Access без дубликатов
-Попытка реализовать функцию «Мне нравится» и функцию «Список желаний». 1 промежуточная таблица для обоих?
-Получите связанные продукты, которые имеют максимальное количество тегов
-Объединение операторов select с датами
-Нужна ли мне база данных для react-redux, чтобы хранить пользователей?
-Получить количество в столбце
-
-Как экспортировать все коллекции в базу данных с URI?
 
 MONGODB
 Как экспортировать все коллекции в базу данных с URI?
@@ -12159,34 +9973,6 @@ They do not reliably preserve all rich BSON data types, because JSON can only re
 Use mongodump and mongorestore as described in MongoDB Backup Methods for this kind of functionality.
 Как уже было предложено, вместо этого вы можете разработать сценарий, который будет выполнять все шаги по порядку и даст вам желаемые результаты.
 
-
- 22.06.2019 06:08
-Другие вопросы по теме
-Значение атрибута обновления Dynamodb среди связанных элементов
-Включить узел Entry в обход AQL Graph
-Как обновить объект в монго через PHP
-Ручная сортировка в базе данных NoSQL
-Моделирование «многие ко многим» в Cassandra или другой базе данных nosql
-SEMBAST - Как удалить определенный массив из моей БД?
-Как создать мой класс для сохранения документа в MongoDB с использованием Java
-Можно ли использовать LIKE в команде NoSQL для непервичного ключа?
-Автономное сжатие/объединение нескольких SSTables в один
-Какой из них будет эффективным дизайном для базы данных firebase?
-
-Похожие вопросы
-
-Сортировка строк без учета регистра страниц Mongoose
-Как отсортировать элемент в массиве массивов в MongoDB?
-Найти документы, в которых все объекты в массиве имеют определенное значение
-Как найти документы мангуста на основе совпадения строк в массиве подстрок
-Агрегация Spring Mongo возвращает пустой список
-Обновите коллекцию MongoDB, где поле не существует
-Как обрабатывать дополнительные загрузки файлов multer с точки зрения NodeJS API?
-Обновить документ монго в целом или определенные поля
-Как я могу найти разницу между двумя полями времени и добавить результат в тот же документ внутри коллекции в MongoDB?
-Как объединить два результата коллекции и другую коллекцию с помощью mongodb
-
-Запрос структуры данных Firebase
 
 SWIFT
 Запрос структуры данных Firebase
@@ -12378,32 +10164,6 @@ trip_map
 
 hotelCollection.whereField("trip_map.trip_0", isEqualTo: true).getDocuments { querySnapshot, error in
 
- 03.04.2022 17:05
-Запишите полученные данные в переменную из базы данных Firebase в реальном времени
-Как я могу получить доступ к дочернему элементу уникального ключа в Firebase?
-Как я могу разрешить Cloud Build для развертывания на Firebase Hosting в другом проекте?
-Получение «документ не является функцией» при записи в Firestore после создания пользователя
-Как убедиться, что только одна учетная запись может войти в приложение флаттера с одного телефона
-Неперехваченные промисы при использовании UpdateProfile в реакции firebase
-Про запись данных более 500 в firebase с флаттером
-Как получить ключ и значение сопоставленного объекта Firestore
-Найти все поля соответствия условиям в Firebase Firestore с помощью Flutter
-Есть ли способ, где я мог бы запросить эту карту, где я буду получать данные только о тех, кого меньше 5?
-
-Похожие вопросы
-
-Почему MockingBird не может найти мою заглушку с аргументом типа?
-Угол для удвоения или CGFloat или строки — SwiftUI
-Почему я получаю это предупреждение, когда добавляю цель в свой UIButton в моем контроллере? (предупреждение и код указаны ниже)
-Случай Swift Enum не является членом типа
-Есть ли способ установить buttonType пользовательского класса кнопок в Swift (например, установить тип кнопки на .system)?
-Swift Date Formatter устанавливает странный день (86)
-Модель данных Swift Share обменивается данными между страницами. как это устроено
-Откройте строку, не являющуюся URL-адресом, в Safari (например, поиск)
-Swift — возвращаемый тип параметров структуры без значений по умолчанию
-Как прервать звук устройства, чтобы воспроизвести звук, а затем продолжить воспроизведение звука устройства на iOS
-
-Как получить доступ к встроенному полю из другой коллекции после операции цикла?
 
 DATABASE
 Как получить доступ к встроенному полю из другой коллекции после операции цикла?
@@ -12596,33 +10356,7 @@ goal_cotribution_2018: {
       }
    }
 }
- 31.03.2022 13:05
-Другие вопросы по теме
-Паспорт: req.isAuthenticated() не является функцией, и req.user не устанавливается по паспорту
-Мангуст .skip() на основе значения параметра
-Условное отображение Jinja 2
-Как отобразить две таблицы на одном пути с помощью EJS и Mongoose
-Как я могу обновить значение массива в mongodb?
-Нераспознанное выражение ‘$regex’
-Как найти разницу дат на основе значения поля в MongoDB?
-Совокупные результаты на основе разных полей в MongoDB
-Каков тип данных _id в MongoDb?
-Обновить значение внутри массива объектов внутри документа в MongoDB
 
-Похожие вопросы
-
-Обработка обновления базы данных комнат путем повторного создания из актива, за исключением нескольких столбцов, которые мне нужно сохранить - Android Development
-Neo4j подписываться на изменения БД в Python
-Как мне включить FLOAT в мой запрос при вычислении среднего значения набора значений, когда мой результат может быть FLOAT, а не INTEGER, чтобы избежать ошибки
-Как найти разницу дат на основе значения поля в MongoDB?
-Почему я не могу выбрать все записи в одной таблице, которых нет в другой таблице?
-Извлечь значения из списка на python
-DB2 — Как заполнить пробелы в внутридневных биржевых данных
-SQLITE: сохранить все несопоставленные строки во время соединения
-TypeError at /save() отсутствует 1 обязательный позиционный аргумент: 'self'
-Каковы запросы MySQL для следующих задач? Верны ли мои решения и ход мыслей на данный момент? Большое тебе спасибо
-
-Как получить доступ к методу флаттера в производном классе из родительского класса?
 
 FIREBASE
 Как получить доступ к методу флаттера в производном классе из родительского класса?
@@ -12894,33 +10628,6 @@ fit: BoxFit.cover,
  Ответ принят как подходящий
  Вот решение, просто поместите родительский класс в переменную и из этой переменной вызовите метод
 
- 06.04.2022 08:40
-Другие вопросы по теме
-Дубликат класса com.google.android.exoplayer2.ui.DownloadNotificationHelper
-«Должен быть ровно один элемент со значением [DropdownButton]: ошибка Item1» при использовании выпадающей кнопки во флаттере
-Список становится пустым, когда элемент управления достигает встроенного Flutter?
-Я не могу передавать сообщения из firebase во флаттер
-Flutter GETX — в чем разница между variable.value = newValue и variable (newValue)?
-Как сделать виджет без '?' и «обязательно»
-Пользовательская сортировка списка строк во флаттере
-Как преобразовать ошибки разрешений в события «null» в потоке firebase?
-Flutter: как добавить запись на карту, если она не содержит ключа с другой карты
-Flutter: персонализированная панель приложений с flexibleSpace с закругленными краями не работает должным образом
-
-Похожие вопросы
-
-Счетчик приращения Firebase Cloud Function в Firestore на CreateUser
-Запрос "где" в Firestore - количество заряженных чтений
-Распространение приложений Firebase (плагин fastlane): не удалось сгенерировать учетные данные из токена обновления
-Как определить правила безопасности, при которых только вошедший в систему пользователь может читать и записывать все коллекции и подколлекции?
-Как настроить соединение Firestore с помощью FireSharp в приложении WinForm
-Firebase хранит один документ общего назначения
-Элементы были добавлены в список, но использование его вне метода возвращает пустой список "Flutter"
-UpdateDoc: Uncaught FirebaseError: недопустимая ссылка на документ
-Как считать в коллекции с несколькими документами, которые имеют одинаковое значение в своих атрибутах Flutter/Firebase
-Как присвоить элементу коллекции базы данных firebase уникальный идентификатор
-
-Друг в социальной сети Firestore запрашивает модель данных
 
 FIREBASE
 Друг в социальной сети Firestore запрашивает модель данных
@@ -13053,33 +10760,6 @@ Firestore-root
 Что такое денормализация в Firebase Cloud Firestore?
 Где вы также сможете увидеть другие решения для структурирования такой базы данных.
 
- 14.09.2022 09:47
-Другие вопросы по теме
-AlloyDB: удалить базу данных
-Создайте новый шаблон экземпляра из существующего шаблона глобального экземпляра с помощью cli (gcp)
-Список проектов GCP с API Golang
-Как получить развернутую модель из `ListEndpointsRequest`?
-JOIN по последней строке в подзапросе в BigQuery
-Как запустить виртуальную машину в gcp в фоновом режиме?
-Ищем логику итерации для создания подсети GCP с использованием Terraform
-Отфильтровать обязательное поле раздела n unnest массив даты
-Заполнение RecyclerView всеми дочерними элементами базы данных реального времени с определенным значением
-Как получить список всех вычислительных дисков GCP для всех регионов с помощью java sdk
-
-Похожие вопросы
-
-Чтение некоторых данных (не всех) из узла базы данных Firebase
-Заменить модуль Firestore «doc» на «document»?
-Можно ли импортировать данные аутентификации в эмуляторы Firebase?
-FCM, Как заставить всех пользователей в группе подписаться на тему
-Как сослаться на ссылку VueUse useFirestore в другом useFirestore?
-Как развернуть облачные функции, игнорируя существующие функции?
-ReferenceError: окно не определено, аналитика Firebase
-Как бы я показывал свои посты из моего firestore?
-React-native firestore: запрос с помощью where() и orderBy() с использованием разных полей
-Можно ли указать типы ввода и возврата для функций httpsCallable?
-
-Как удалить двойные кавычки внутри двойных кавычек в строковом поле?
 
 MONGODB
 Как удалить двойные кавычки внутри двойных кавычек в строковом поле?
@@ -13193,33 +10873,6 @@ db.collection.update({
 ])
 Попробуйте на mongoplayground.net.
 
- 05.10.2022 08:24
-Другие вопросы по теме
-MongoDB — добавить новую информацию в документ внутри массива, внутри документа, внутри другого массива
-Присоединить коллекцию с полем объекта массива к другой коллекции в MongoDB
-Количество Mongo для каждого документа
-Получить разницу между двумя датами в годах в mongo db
-Условная случайная сортировка mongodb
-Как я могу сравнить и отфильтровать два поля в одном документе в MongoDB?
-MongoDB - Как объединить findOne (в массиве) с агрегатом
-Самый эффективный способ использования массива объектов для запроса большего количества объектов — MongoDb?
-Mongodb — Как сортировать по расстоянию с помощью geoNear в дополнение к поиску другой коллекции
-Как установить значение поля, если оно не существует в документе в mongodb, и сохранить его как есть, если оно уже присутствует?
-
-Похожие вопросы
-
-Получить студентов для заданного списка классов в mongodb
-Есть ли способ найти один документ и клонировать его с изменением идентификатора/значения в mongodb с помощью Go
-«MongoError: пул опустошается, новые операции запрещены» при попытке переключения баз данных
-Как я могу вставить doc!{...} в типизированную коллекцию MongoDB?
-MongoDB — добавить новую информацию в документ внутри массива, внутри документа, внутри другого массива
-Как отправить ответ в koa.js с узлом
-Время теста Jest истекло, ручной тест работает нормально
-Агрегация MongoDB: удаление вложенных свойств в соответствии со списком путей в другом свойстве
-MongoDb C# Произошла ошибка при десериализации свойства класса
-Агрегат MongoDB для Dashboard
-
-MongoDB: как перетасовать массив и сохранить этот новый порядок навсегда?
 
 ARRAYS
 MongoDB: как перетасовать массив и сохранить этот новый порядок навсегда?
@@ -13430,33 +11083,6 @@ db.collection.update({},
 ])
 Детская площадка Монго
 
- 19.10.2022 08:01
-Другие вопросы по теме
-FASTAPI SQLAlchemy Создание таблицы во время выполнения на основе пользовательского ввода
-Объединение нескольких строк с разными значениями столбцов в одну
-Уникальная снежинка split_to_table
-Post Object с вложенным объектом List в Spring-boot и Thymeleaf
-Получить данные API в Node JS и сохранить в базе данных MongoDB
-Как установить связь между полями импортированных файлов CSV в базе данных mongodb
-Библиотека баз данных python не может fetch_all из базы данных mysql
-В чем разница между созданием базы данных и созданием схемы в SQL Server?
-NODEJS Включить переменную из POST
-Почему я получаю сообщение об ошибке тайм-аута при экспорте пула соединений mariadb в Node.js?
-
-Похожие вопросы
-
-Явное преобразование S[] в ILIst<T> в C#
-Как на самом деле работает доступ к смещению массива
-Найдите наименьшее число в массиве, которого нет в другом массиве
-Как создать новый 2D-массив из каждой глубины из заданного вложенного массива?
-Как установить mid в бинарном поиске?
-Вставить данные в объект в массив php
-Сравните два массива целых чисел и верните массив со всеми совпадениями
-Как добавить только необходимое количество входов в массив в Котлине?
-Перебор объекта JSON с массивом из MS Graph API
-Найти минимальное, максимальное и среднее случайное число в java
-
-Как правильно построить таблицу лидеров для 10-50 тысяч записей в noSQL?
 
 FLUTTER
 Как правильно построить таблицу лидеров для 10-50 тысяч записей в noSQL?
@@ -13497,34 +11123,6 @@ db.collection("users").where("score", isGreaterThanOrEqualTo: userScore).count()
 
 Пользователь Dharmaraj отметил, что при использовании .limit(100) Firestore взимает плату не за всю коллекцию, а только за количество ограниченных результатов. Это было неизвестно для меня, и теперь мне представлено отличное решение, которое не испортит вашу структуру данных.
 
-
- 25.10.2022 21:53
-Другие вопросы по теме
-Хранилище Firebase использует getDownloadURL вместо ссылки для скачивания в магазине
-Локализация Flutter с помощью Firebase Remote Config
-Crashlytics не отображается в Firebase
-Не удалось загрузить модуль providerinstaller: не найден подходящий модуль. Локальная версия 0 и удаленная версия 0 || Флаттер || Firebase
-Как использовать startAt и endAt в firebase 9?
-База данных Flutter Firestore упорядочивает наиболее понравившиеся документы за последние 24 часа
-Как получить отзыв от базы данных Firebase Realtime о написании операции в Android
-Проблема аутентификации мобильного otp firebase после развертывания?
-Как выполнить запрос внутреннего соединения в Firestore NextJS
-Как использовать «импорт» для модулей npm в Firebase Cloud Functions?
-
- Похожие вопросы
-
-Возникла проблема при оценке проекта ':app' . Нет подписи метода
-Почему пакет флаттера share_plus выдает это исключение IllegalArgumentException?
-Как разрезать линию под углом во флаттере?
-Flutter, как использовать метод where в динамическом массиве
-Локализация Flutter с помощью Firebase Remote Config
-Не удалось обновить список с установленным состоянием в текстовом поле по измененному методу
-Flutter — «Ожидалось значение типа «Виджет?», но получено значение типа «Строка»»
-Размер приложения Flutter большой из-за google_ml_kit, он почти превысил 150 МБ
-Я использую pdf lib для создания pdf, и я хочу добавить простой текст в pdf, поступающий из API, текст может быть очень длинным, например, 3,4 страницы или более
-Во Flutter, как сделать макет строки с текстовым полем и квадратным изображением
-
-Спроектировать поле на основе условия MongoDB
 
 PYTHON
 Спроектировать поле на основе условия MongoDB
@@ -13673,33 +11271,7 @@ aggregate(
    {"user.phone": 
      {"$cond": 
        [{"$eq": ["$user.highPrivacy", true]}, "$$REMOVE", "$user.phone"]}}}])
- 11.11.2022 16:40
-Другие вопросы по теме
-MongoDB – Как извлечь счетчик из переменной и использовать его в моем запросе для mongodb
-Как сгруппировать данные по периоду времени?
-Мангуст не будет заполняться внутри массива
-Что такое блокировка FeatureCompatibilityVersion в Mongo?
-Какая польза от аннотации @PersistenceCreator
-Могу ли я проверить с помощью oauth2, есть ли у пользователя подтвержденный адрес электронной почты в учетной записи Discord?
-MongooseServerSelectionError: подключить ECONNREFUSED 0.0.0.0:27017
-Как найти оптимальный размер пула соединений для одного драйвера mongo nodejs
-Оптимистичная мутация КСВ
-Ошибка подключения к контейнеру mongodb версии 6.0.2 | amd64/монго
 
-Похожие вопросы
-
-Поиск наиболее часто встречающейся буквы в каждой позиции строки в списке строк
-Косвенная параметризация с помощью нескольких декораторов параметризации в pytest
-Как отобразить категориальный фрейм данных в парном графике
-Autopep8/Flake8/isort: как сортировать с помощью автоматического форматирования абсолютного импорта для пользовательских модулей в VS Code?
-Open AI davinci не производит никакого вывода (текст или аудио)
-Что мешает моему профилю Chrome работать с Selenium в Python?
-Как добавить юзербота в группу по ссылке? API телеграммы Python
-Действия Github для облачных функций Google «Ограничения ограничений/gcp.resourceLocations нарушены для проектов/GOOGLE_PROJECT_ID при попытке GenerateU
-Python: как выполнить только один вызов асинхронной функции, когда функция вызывается несколько раз за короткий промежуток времени?
-Как построить график нескольких линий с помощью sns.scatterplot
-
-Можно ли дублировать идентификаторы документов в разных коллекциях Firestore?
 
 FIREBASE
 Можно ли дублировать идентификаторы документов в разных коллекциях Firestore?
@@ -13742,33 +11314,6 @@ FIREBASE
 
 Нисколько. Это вполне нормально.
 
- 20.12.2022 09:13
-Другие вопросы по теме
-Функция GCP Https – настройки Ingress
-Как создать проект центральной аутентификации в GCP/Firebase?
-Как я могу создать собственные показатели в Cloud Monitoring, используя существующие записи журналов?
-Как запустить код scala/python при изменении значения в таблице BQ
-Удалены ли gcp завершенные журналы vm?
-Невозможно импортировать имя «WKBWriter» из «shapely.geos» при импорте платформы Google Cloud AI
-Как отключить управляемый Google выпускной?
-Поддерживает ли API узла Google вызовы функций диспетчера развертывания?
-Экспорт ключей учетных записей службы GCP terraform
-Google Cloud Platform: секрет как переменная окружения сборки
-
-Похожие вопросы
-
-Хостинг Google Firebase не предоставляет SSL для личного домена
-Как создать проект центральной аутентификации в GCP/Firebase?
-Как получить список URL-адресов изображений из хранилища Firebase и загрузить его в облачное хранилище?
-Мне нужно создать слайдер карусели, используя выборку данных из firebase. я пробовал много методов, но не работает
-Как мы можем искать слово в поле документа firebase
-Есть ли разница между двумя кодами .info/connected?
-`setDoc` пишет в Firestore из функций TypeScript, искажает структуру каталогов при `npm run build`
-CollectionView не перезагружается после получения данных из Firestore
-Сбой Firebase экспортирует данные в большой запрос
-Flutter _JsonQuerySnapshot' не имеет метода экземпляра '[]'
-
-Firebase: храните данные оптимизированным способом, чтобы уменьшить количество операций записи и чтения
 
 FLUTTER
 Firebase: храните данные оптимизированным способом, чтобы уменьшить количество операций записи и чтения
@@ -13803,32 +11348,6 @@ Cloud Firestore допускает только одно предложение 
 
 Для GeoQueries см. Как запустить гео-запрос «поблизости» с помощью firestore?
 
- 16.01.2023 05:37
-Ошибка развертывания функции Firebase
-Как поставить функции в очередь в firebase
-Как разрешить вход по имени пользователя/паролю и электронной почте/паролю?
-Правильная файловая структура для веб-приложения, использующего firebase
-Firebase превращает массивы в объекты с ключом в качестве индекса и значением в качестве элемента массива
-База данных Firebase Realtime «Firebase: необходимо предоставить параметры, если они не развернуты на хостинге через источник»
-Как вызвать ближайшую к пользователю облачную функцию
-Как я могу отправлять и получать два типа данных из одного поля в firestore для флаттера?
-URL-адрес, размещенный в Fiebase, не работает после его повторного развертывания
-Как проверить, существует ли пользователь в коллекции Firestore после входа с помощью Firebase Auth в SwiftUI
-
-Похожие вопросы
-
-Как использовать условие if else в одной кнопке с флаттером
-Dyld [16458]: библиотека не загружена: @rpath/libavcodec.framework/libavcodec при запуске моего приложения флаттера на iOS
-Как я могу решить эту проблему с неработающим аудиоплеером во Flutter
-Счетчик приращения для определенного элемента списка во Flutter
-Как я могу добавить символы иностранного языка в #TextField во Flutter?
-Что на самом деле означает код ошибки CBATT для недостаточно ресурсов?
-Все клавиши не реагируют при использовании HardwareKeyboard во Flutter
-Почему помещение поставщиков блоков в отдельный файл/класс вызывает ошибку?
-Flutter: предоставленный javaHome кажется недействительным. Я не могу найти исполняемый файл Java
-Цвет панели состояния Flutter зависит от текущей темы
-
-Mongodb Совокупный запрос для суммирования всех значений на основе полей внутри объектов в массиве
 
 MONGODB
 Mongodb Совокупный запрос для суммирования всех значений на основе полей внутри объектов в массиве
@@ -13974,31 +11493,6 @@ db.collection.aggregate([
 
  11.12.2020 06:51
 
-Простой $lookup «левое соединение» ObjectId двух коллекций не работает в Mongo DB
-Mongo удаляет документ, если все элементы в массиве соответствуют условию
-Массив дочерних объектов Mongo Unwind для корня в виде простого массива
-Странное поведение агрегации MongoDB с $or и $text
-Получение узла ошибки BSONTypeError: переданный аргумент должен быть строкой из 12 байтов или строкой из 24 шестнадцатеричных символов или целым числом: массив
-MongoDB объединяет две сложные коллекции
-Как сделать фильтрацию delete_many по двум условиям?
-Запрос MongoDB $graphLookup для получения степеней разделения
-Агрегационный запрос с Spring Data mongoDb с использованием групповой операции с вложенным полем
-Как обновить только одно совпадение фильтра массива в mongodb
-
-Похожие вопросы
-
-Как вы связываете теги с сообщениями и пользователями в приложении для обмена сообщениями?
-Простой $lookup «левое соединение» ObjectId двух коллекций не работает в Mongo DB
-Как выполнить POST с массивом внутри схемы Array Mongoose
-Ссылка на имя загрузки файла S3 в новом объекте mongoDB
-Итерация по массиву в попытке… поймать… наконец приводит к «MongoError: невозможно использовать сеанс, который закончился»
-Как решить проблему версии TLS с кластером MongoDB в веб-проекте java Spring Boot?
-Схема мангуста не определена
-Mongo удаляет документ, если все элементы в массиве соответствуют условию
-Как я могу изменить поле в документе MongoDB через определенное время?
-Изменить или создать в зависимости от логического значения
-
-MongoDB $match в совокупном поиске не работает должным образом
 
 DATABASE
 MongoDB $match в совокупном поиске не работает должным образом
@@ -14081,31 +11575,6 @@ $match: {
 }
 
      
-Как удалить документы из двух коллекций в mongodb
-Как получить две коллекции в одном документе в MongoDb в С#?
-MongoDB возвращает неправильные строки с $sort, $skip и $limit
-Совместим ли amazon documentdb с 4.0.28
-MongoDB найти с условным вторым параметром проекта
-Как удалить поле из всех документов в коллекции с помощью Mongoose?
-MongoDB/Mongoose — поиск $ с конвейером: код ошибки 9, но нет сообщения об ошибке
-Как объявить первичный ключ в mongodb? создать индекс, не зная его значения
-Как вернуть агрегированный запрос в распознаватель Apollo (Meteor/Apollo/Graphql)?
-Показать результаты
-
-Похожие вопросы
-
-Как лучше оформить таблицу транзакций?
-Сравнение 2 списков и печать различий
-Столбец Hibernate JPA Repeated в сопоставлении для ошибки объекта для двунаправленного сопоставления
-Не удается получить данные от v-for, и данные пусты
-Объединить до 3 таблиц в MySQL
-Как предотвратить удаление узла с помощью правил базы данных Firebase?
-Я хочу вставить таблицы с переменной длиной в базу данных sqlite, но получаю сообщение об ошибке: Неверное количество предоставленных привязок
-Получена ошибка: «Преобразование не удалось при преобразовании значения varchar»
-Раскрывающийся список класса контекста данных ASP.NET MVC4 в проекте mvc
-Как вставить значение флажка в БД в Laravel?
-
-CosmosDB не разрешает бессерверные возможности NoSQL, он говорит, что я должен использовать PerformanceMode
 
 WINDOWS
 CosmosDB не разрешает бессерверные возможности NoSQL, он говорит, что я должен использовать PerformanceMode
@@ -14151,32 +11620,6 @@ az cosmosdb create --name $account --resource-group $resourceGroup --capabilitie
 После повторения шагов, вызвавших первоначальный сбой через несколько дней после публикации, кажется, что проблема решена на стороне Microsoft. Развертывание учетной записи CosmosDB заняло намного больше времени, чем обычно, и портал, по-видимому, имеет немного другой макет, так что это могла быть просто ошибка с их стороны, когда они развертывали это обновление.
 
 
-Невозможно создать базу данных CosmosDB через go sdk
-Могу ли я получить местоположение из командной строки az Deployment в сценарии бицепса?
-Получить группу отработки отказа AzureSQL по имени
-Оповещение об обновлении метрики Azure CLI с настраиваемыми свойствами
-Перезапись URL-адресов для политик Azure APIM
-Ошибка отправки AzureStaticWebApp из артефактов. Не удалось найти файл по умолчанию
-Развертывание приложения Python в веб-приложении Azure из конвейера, не включая пакеты требований
-Управление доступом и разрешениями Azure DevOps с помощью Entra ID
-Как показать состояние всех ACA в среде Azure ACA
-Azure Devops: можно ли при создании PR иметь поле, которое должно содержать идентификатор рабочего элемента функции?
-
- Похожие вопросы
-
-ANSI в терминале (Windows 10)
-Медленная производительность std::fstream
-Всякий раз, когда я пытаюсь загрузить код в свою идею Smowcode; он продолжает постоянно загружаться, и уведомление об угрозе Bearfoos всегда появляется
-Как сопоставить CapsLock с Esc и Ctrl в Autohotkey?
-Служба COMplus в контейнере Windows
-Pyenv — переключение между версиями Python и PySpark без жесткого кодирования путей к переменным среды для Python
-Необходимо установить Microsoft Visual C++ 2015-2022 через Powershell
-Может получить доступ к переменной среды в терминале, но не из скрипта
-Запись CR LF в текстовом режиме с помощью MSVC
-
-
-Как определить количество разделов при настройке временного кластера?
-
 CASSANDRA
 Как определить количество разделов при настройке временного кластера?
 В не-СУБД, где увеличение количества разделов может ускорить запись и чтение за счет параллелизма, в чем обратная сторона наличия слишком большого количества разделов?
@@ -14220,31 +11663,6 @@ Temporal может иметь любое количество сегменто�
 
 Кроме того, количество разделов Cassandra в кластере не имеет никакого отношения к сбросу memtables на диск. Объем очистки памяти прямо пропорционален объему операций записи в базу данных. Если ваш кластер постоянно записывает много данных, таблица памяти будет регулярно заполняться, вызывая сбросы, но если записи не происходит, то и сбросов не будет. Ваше здоровье!
 
-CosmosDB не разрешает бессерверные возможности NoSQL, он говорит, что я должен использовать PerformanceMode
-Mongo DB Bson и Java: добавление и возврат поля в дочерних документах, которое присутствует только в родительском?
-Удаление заблокированных пользователей из конвейера с помощью поиска в mongodb
-Как написать SQL-запрос в Azure Cosmos DB, чтобы найти шаблон поиска любого пользователя
-Контейнер Redis долго останавливается
-Не удается найти «DynamoDB» в поставщике услуг при импорте службы внешнего хранилища данных, пока я пытаюсь использовать DynamoDB в GeneXus?
-Запрос пересечения списков в firebase и flutter
-MongoDB $match в совокупном поиске не работает должным образом
-Какая модель базы данных более эффективна
-Как вывести объект массива в корень документа в MongoDB с помощью агрегации?
-
-Похожие вопросы
-
-Amazon Keyspaces — чтение данных с высокой скоростью и получение PerConnectionRequestRateExceeded
-Как надежно реализовать шаблон записи в виде разветвления?
-Как Dynatrace отслеживает метрики базы данных Cassandra?
-Какой смысл писать с согласованностью КВОРУМ, если согласованность не достигается?
-Почему я получаю ConnectionRefusedError при запуске команды при попытке запустить образ Cassandra Docker?
-Поддерживает ли Кассандра 4.1.4 Java17? Или только Кассандра 5.x
-Java-драйвер Cassandra Совместимость с Java 17
-Невозможно обновить UDT с помощью gocqlx
-Докер составляет «условие: service_completed_successful», вызывая выход контейнера cassandra со статусом 2
-Декартово произведение Кассандры/Сциллы в простом запросе WHERE IN?
-
-Какой тип данных наиболее подходит для столбца таблицы?
 
 Какой тип данных наиболее подходит для столбца таблицы?
 В настоящее время я пытаюсь разработать схему базы данных PostgreSQL, в ней всего 2 таблицы, одна из которых содержит имена пользователей. Сложность в том, что по определенным причинам я не могу хранить имя пользователя напрямую, поэтому мне приходится хранить хэш (SHA256).
@@ -14291,33 +11709,6 @@ hash_value text COLLATE "C"
 
 Вы не можете использовать using hash для уникальных индексов, поэтому вам нужно будет поддерживать и его, и отдельный уникальный индекс, который создается для обработки ограничения UNIQUE в вашем username столбце. Я бы просто придерживался уникального значения по умолчанию, которое у вас уже есть.
 
-
-Другие вопросы по теме
-Сохранение файла python + json
-Объединение строк в Power BI/Power Query
-Postgres – Как анализировать элементы массива JSON?
-Невозможно создать DbContext типа NULL. Исключение «Ссылка на объект не установлена ​​на экземпляр объекта»
-PostgreSQL пытается подключиться к неправильной базе данных
-Проверьте наличие существующих данных перед записью в базу данных
-Как найти наибольшее количество последовательных нулей в столбце MySQL?
-AWS DynamoDB идемпотентен при условной записи
-Как снова запустить синхронизацию WooCommerce HPOS для ранее синхронизированных заказов?
-Первый подход к базе данных без использования файла EDMX
-
-Похожие вопросы
-
-Как получить общие табличные выражения (CTE) в виде списка R?
-Строковая интерполяция внутри форматируемой строки в C#
-Вычисление количества (*) уникальных вхождений в новый столбец без группировки в одном запросе выбора
-Вызов хранимой процедуры со всеми комбинациями значений, хранящимися в нескольких таблицах с одним столбцом
-Извлечь эпоху из столбца временных меток в Postgres
-Столбцы в строки за одно сканирование и один запрос
-Сумма Случай, когда оператор использует условие 1 минус условие 2
-Получить строки в результате ненулевого запроса и в то же время подсчитать количество строк по столбцам, которые не попали, но они также не равны нулю
-Вставьте ведущие пробелы, затем значение в столбец varchar(10)
-Запрос Oracle SQL с использованием regexp_substr для получения строки между двумя строками
-
-Запрос Cassandra с несколькими ДОПОЛНИТЕЛЬНЫМИ условиями
 
 CASSANDRA
 Запрос Cassandra с несколькими ДОПОЛНИТЕЛЬНЫМИ условиями
@@ -14402,31 +11793,7 @@ SELECT a FROM somethingIndex where a_index = ?; // (a+b+e) or (a+c+d) or (a+b+d)
 
 SELECT * FROM something where a = ?;
 
-Проблема согласованности данных cassandra
-Как перемещаться по связанным записям в orientdb с помощью планов выборки?
-Позиционные операторы Mongodb $ или $ [] не работают для элементов массива
-Есть ли у нас уровень доступа к базе данных, чтобы легко переключаться на другие базы данных в Scala?
-Можно ли запрашивать атрибуты из объектов в списках DynamoDB?
-Первичный ключ Cassandra позволяет дублировать
-Вызов выборок в шарды Tarantool
-Управление документами, доступными в иерархической структуре папок в AWS DynamoDB
-Запрос данных игрока в GameSparks возвращает 0 результатов
-Разработка высокоэффективной системы бронирования гостиничных номеров
 
-Похожие вопросы
-
-Проблема согласованности данных cassandra
-Многоузловой кластер cassandra: OperationTimedOut ('errors = Превышено время ожидания для создания соединения (5 секунд)
-Replication_factor - это вариант для SimpleStrategy, а не для NetworkTopologyStrategy
-Как подтвердить успешность восстановления
-Задержка семейства столбцов Cassandra
-Узлы Кассандры не равны
-Отсутствующий файл guava.jar
-Удалить конечные нули типа данных времени в CQL
-Первичный ключ Cassandra позволяет дублировать
-Кассандрово-стресс-тест: неверный параметр
-
-Запрос MongoDB для получения списка документов с количеством внешних связанных документов
 
 MONGODB
 Запрос MongoDB для получения списка документов с количеством внешних связанных документов
@@ -14724,31 +12091,7 @@ db.pages.aggregate([
 
 Это не вопрос, но его следует выполнять на уровне приложения. Это занимает несколько миллисекунд в javascript mongoshell, что делает общее время получения всех данных менее 2 секунд.
 
-Совет в Datadesign для nosql (firebase)
-MongoDB OR с Regex, не использующим составной индекс
-Получить статус задачи Elasticsearch для длительного запроса на обновление
-Можно ли использовать Cassandra для создания таблиц на лету? Если да, сколько в среднем это займет времени?
-Запрос Cassandra с несколькими ДОПОЛНИТЕЛЬНЫМИ условиями
-Проблема согласованности данных cassandra
-Как перемещаться по связанным записям в orientdb с помощью планов выборки?
-Позиционные операторы Mongodb $ или $ [] не работают для элементов массива
-Есть ли у нас уровень доступа к базе данных, чтобы легко переключаться на другие базы данных в Scala?
-Можно ли запрашивать атрибуты из объектов в списках DynamoDB?
 
-Похожие вопросы
-
-Коллекция «общий размер документа» больше, чем «размер хранилища» базы данных
-Какой самый эффективный способ записи большого количества данных в DynamoDB
-Как развернуть приложение MERN stack на heroku
-Исключение подключения mongoDB при весенней загрузке
-Учетные данные mongodb во время развертывания openshift через github
-MongoDB должен ли я помещать пользователей в базу данных администратора или локальную базу данных
-Агрегировать из одного массива документов в другой
-MongoError: не удалось подключиться для обслуживания при первом подключении в атласе mongoDB
-MONGOOSE - отображать только конкретное значение, которое я ввел внутри объекта
-Как mongo db replicaset работает в Azure
-
-Вторичные индексы для гибкости Dynamodb
 AMAZON WEB SERVICES
 Вторичные индексы для гибкости Dynamodb
 Исходя из фона SQL, пытаюсь понять NoSQL, особенно параметры DynamoDB. Учитывая эту схему:
@@ -14810,29 +12153,7 @@ How can I get a list of all Authors for a publisher without a total table scan
 
 В отличие от SQL, где можно создавать некластеризованные индексы для произвольных столбцов на основе шаблонов поиска, в DynamoDB, поскольку количество локальных вторичных индексов и глобальных вторичных индексов ограничено для каждой таблицы, важно перечислить варианты использования. извлечения данных перед определением хеш-первичного ключа и первичного ключа диапазона для таблицы и максимально возможного использования локальных вторичных индексов, поскольку они используют возможности чтения и записи таблицы и являются строго согласованными (вы также можете запускать согласованные в конечном итоге запросы на БИС для экономии емкости). GSI нуждаются в собственной емкости для чтения и записи и в конечном итоге являются согласованными.
 
-Как в Node.JS разобрать объект JSON на класс модели?
-Дизайн базы данных для Властелина колец
-MongoDB Java | Обновить запись с нуля до строки
-HBase создать регион
-Как обновить определенное поле во всех сообщениях, сделанных определенным пользователем в базе данных Firebase Real-time
-Какова цель имени узла при создании узла в neo4j, если мы не можем их видеть и использовать?
-Есть ли способы обнаружить изменения в LiteDb?
-Mongodb версии 2.4.9, не удается запустить службу mongodb
-Дизайн базы данных для абстрактной сущности
-Google Cloud DataStore: получите сразу всех дочерних элементов элементов по типу
 
-Похожие вопросы
-
-Как поделиться папками из контейнера в другой контейнер с помощью --link
-Установите пакет rJava на экземпляр AWS EC2
-Несколько жизненных циклов s3cmd
-Подключение python к ошибке выброса БД
-Wc -l для всех файлов в корзине S3
-Сделать перенаправление nginx на случайный порт
-Доступ к RTSP-серверу, размещенному на AWS, через Интернет
-Как я могу использовать git / AWS CLI для управления кодом AWS Lambda?
-Использование github.com для передачи данных на серверы в частной подсети в aws VPC
-Elasticache в другом VPC, и лямбда должна получить к нему доступ
 
 Префикс RavenDB ID и REST API
 В настоящее время я борюсь с чем-то, что должно быть тривиальным, и, возможно, это так, но я не могу найти достойного решения.
@@ -14893,31 +12214,6 @@ await _session.StoreAsync(branch, cancellationToken);
 await _session.SaveChangesAsync(cancellationToken);
 В RavenDB есть четыре опции, поддерживаемые сервером для хранения документа и присвоения ему идентификатора https://ravendb.net/docs/article-page/4.1/csharp/server/kb/document-identifier-generation
 
-Вес поискового запроса MongoDB
-Как вы сбалансируете хранилище nosql и кеширование в бессерверных архитектурах?
-Как выполнить двухэтапную фиксацию в строго типизированном драйвере C# Mongodb
-В чем преимущество использования MongoDB Atlas?
-Установите уровень согласованности на Cassandra на ideal_consistency_level
-Язык реализации Couchbase
-Как объединить два поля в n1ql?
-Преобразование запроса Mysql в эластичный поисковый запрос
-Недостаточно данных в Cloudwatch для Dynamodb
-Как эффективно реализовать счетчик просмотров страниц в DynamoDB?
-
-Похожие вопросы
-
-IServiceCollection Добавить аутентификацию против добавления удостоверения
-Динамически изменять размер столбцов таблицы данных при свертывании строк
-Получение точной позиции потока после записи
-SocketException (0x274c) при доступе к службе с помощью HttpClient
-Сущность Получить последние результаты на основе даты
-Строка Json в объект C# - массив в JsonString
-Episerver - тип страницы становится недоступным для редактирования при перехвате события PublishedContent
-Сравнение элементов универсального списка
-Как написать текст запроса sql для предложения IN в с #
-Сделать установочный файл C# с сетевым sql db или локальным sql db, который выбирает установщик
-
-Как проверить, имеет ли файл базы данных LiteDB пароль или нет в С#?
 
 Как проверить, имеет ли файл базы данных LiteDB пароль или нет в С#?
 У меня есть несколько файлов базы данных LiteDB. Некоторые из них имеют пароль. когда я открываю эти файлы в приложении, для тех, у которых есть пароль, я получаю исключение «Неверный пароль базы данных».
@@ -17837,8 +15133,6 @@ user2315860
 
 
 
-Я получаю синтаксическую ошибку в переменной hstore при вставке
-Вопросы
 POSTGRESQL
 Я получаю синтаксическую ошибку в переменной hstore при вставке
 CREATE EXTENSION hstore;
@@ -18029,8 +15323,6 @@ Gary
 
 
 
-Правильная техника соединения столов?
-Вопросы
 SQL
 Правильная техника соединения столов?
 Я пытаюсь получить значение NUMSESSION из таблицы members_benefit. Моя функция имеет идентификатор преимущества и идентификатор членства в качестве параметров, а members_benefit нужны оба этих значения, иначе она вернет несколько строк.
@@ -18099,8 +15391,7 @@ Andrew
 @Эндрю . . . Хороший улов. Я действительно хотел внутреннее соединение.
 
 
-Можно ли выполнить IF-условие в функции PL / pgSQL в PostgreSQL 9.4?
-Вопросы
+
 POSTGRESQL
 Можно ли выполнить IF-условие в функции PL / pgSQL в PostgreSQL 9.4?
 У меня есть такая рабочая функция:
@@ -18242,8 +15533,7 @@ $BODY$
   COST 100;
 
 
-Ссылка на столбец "id" неоднозначна - она ​​может относиться либо к переменной PL / pgSQL, либо к столбцу таблицы
-Вопросы
+
 POSTGRESQL
 Ссылка на столбец "id" неоднозначна - она ​​может относиться либо к переменной PL / pgSQL, либо к столбцу таблицы
 У меня есть эта простая тестовая функция в Postgres (в моей схеме test).
@@ -18340,8 +15630,7 @@ $$ LANGUAGE plpgsql;
 There is another way to declare a function as returning a set, which is to use the syntax RETURNS TABLE(columns). This is equivalent to using one or more OUT parameters plus marking the function as returning SETOF record (or SETOF a single output parameter's type, as appropriate). This notation is specified in recent versions of the SQL standard, and thus may be more portable than using SETOF.
 
 
-«ОШИБКА: недопустимое завершение транзакции» при попытке выполнить процедуру с вложенным контролем транзакции
-Вопросы
+
 POSTGRESQL
 «ОШИБКА: недопустимое завершение транзакции» при попытке выполнить процедуру с вложенным контролем транзакции
 Согласно документации (https://www.postgresql.org/docs/current/app-psql.html), даже если AUTOCOMMIT выключен, PSQL выдает неявный BEGIN непосредственно перед любой командой, которая еще не находится в блоке транзакции и сама не является BEGIN или другой командой управления транзакцией, или командой, которая не может выполняться внутри блока транзакции, такого как VACUUM. (К сожалению, CALL не обрабатывается так же, как VACCUM). И, согласно Шону Томасу (https://blog.2ndquadrant.com/pg-phriday-stored-procedures-postgres-11/), ошибка завершения недопустимой транзакции возникает из-за невозможности закрыть текущую транзакцию (в данном случае инициированную PSQL) изнутри процедуры. Я пробовал использовать все настройки PSQL, связанные с управлением транзакциями, но ошибка завершения недопустимой транзакции возникает со всеми из них; даже если файл команд, обрабатываемый PSQL, содержит только оператор CALL.
@@ -18390,8 +15679,6 @@ W1M0R
 
 
 
-Plpgsql возвращает составной тип с несколькими строками. Использование оператора select в качестве параметра IN для функции
-Вопросы
 ORACLE
 Plpgsql возвращает составной тип с несколькими строками. Использование оператора select в качестве параметра IN для функции
 Это вопрос из двух частей. В настоящее время я работаю над преобразованием некоторых функций Oracle в Postgres.
@@ -18881,8 +16168,7 @@ PostgreSQL сортирует по дате и времени asc, сначал�
 Как search_path влияет на разрешение идентификатора и "текущую схему"
 
 
-EXTRACT INTO с несколькими строками (PostgreSQL)
-Вопросы
+
 POSTGRESQL
 EXTRACT INTO с несколькими строками (PostgreSQL)
 это моя функция:
@@ -19052,8 +16338,6 @@ Erwin Brandstetter
 
 
 
-Как запустить функцию postgresql (при запуске отображается ошибка)
-Вопросы
 POSTGRESQL
 Как запустить функцию postgresql (при запуске отображается ошибка)
 Я создал такую ​​функцию Postgresql. И пробовал разные способы запустить его, как указано в этом вопросе. Ни одной работы.
@@ -19381,8 +16665,6 @@ EvgenyKolyakov
 
 
 
-Nestjs/GraphQL — Playground возвращает нулевую ошибку для запроса. Мои резольверы?
-Вопросы
 GRAPHQL
 Nestjs/GraphQL — Playground возвращает нулевую ошибку для запроса. Мои резольверы?
 Playground в моем браузере хорошо показывает созданную Nestjs схему, но запросы возвращаются null. Что-то не так с моим кодом?
@@ -19594,8 +16876,6 @@ Preston
  10.03.2019 02:39
 
 
-Установка значения для результата подзапроса в функции в postgresql
-Вопросы
 SQL
 Установка значения для результата подзапроса в функции в postgresql
 Я пытаюсь написать функцию для триггера, которая проверяет, больше ли дата в новой записи отношения, чем запись в другом отношении. Если это так, я хочу обновить значение даты в моем новом отношении к значению даты в другом моем отношении:
@@ -19828,8 +17108,7 @@ select fn_create_tab(ARRAY['huiwen','penglai'],'sum_2018_xia_weijian');
 Ты спас мне день, @KaushikNayak. Я проверил функцию, она работает нормально! Но мне нужно время, чтобы полностью понять это ...
 
 
-Как выбрать несколько переменных внутри функции триггера?
-Вопросы
+
 POSTGRESQL
 Как выбрать несколько переменных внутри функции триггера?
 Вот чего я хотел бы добиться:
@@ -19889,8 +17168,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-Postgresql Выбрать из диапазона дат между массивом дат
-Вопросы
+
+
 SQL
 Postgresql Выбрать из диапазона дат между массивом дат
 Если этот запрос возвращает даты, существующие в запрошенном диапазоне.
@@ -19981,8 +17260,6 @@ Luis Cardoza Bird
 
 
 
-Как исправить отсутствие записи в предложении FROM для таблицы?
-Вопросы
 SQL
 Как исправить отсутствие записи в предложении FROM для таблицы?
 У меня есть функция с запросом. Если условие истинно, я обновляю строку новыми значениями.
@@ -20440,8 +17717,7 @@ EXCEPTION
 END; $$;
 
 
-Как получить доступ к переменным внешней области видимости из функции в PostgreSQL?
-Вопросы
+
 POSTGRESQL
 Как получить доступ к переменным внешней области видимости из функции в PostgreSQL?
 У меня есть этот код:
@@ -20560,8 +17836,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-Запрос plpgsql - как я могу совместить, если, то с обновлением?
-Вопросы
+
 POSTGRESQL
 Запрос plpgsql - как я могу совместить, если, то с обновлением?
 У меня есть следующий запрос:
@@ -20643,8 +17918,7 @@ NEW.name := 'test';
 будь осторожен, когда вы используете обновление (TG_OP = 'UPDATE'), у вас есть старое и новое значение, во время вставки у вас есть только новое значение
 
 
-Postgres — создание триггерных функций с аргументами
-Вопросы
+
 POSTGRESQL
 Postgres — создание триггерных функций с аргументами
 Мне было интересно, можно ли создать триггерную функцию с аргументами, поскольку логика функции такая же, но может просто вставляться в разные таблицы и имена столбцов.
@@ -20728,8 +18002,6 @@ CREATE TRIGGER trig_item_insertion
 
 
 
-Как использовать параметр функции в курсоре, который включен в динамический SQL в функциях Postgres?
-Вопросы
 POSTGRESQL
 Как использовать параметр функции в курсоре, который включен в динамический SQL в функциях Postgres?
 Создал эту функцию Postgres, которая работает нормально, но фактическое требование состоит в том, чтобы передать входной параметр в функцию курсору, который использует динамический SQL следующим образом:
@@ -20844,8 +18116,7 @@ NOTICE:  value datname: test_resources2
 Total query runtime: 63 msec
 1 row retrieved.
 
-Запросы с данными, передаваемыми через JSONB
-Вопросы
+
 JSON
 Запросы с данными, передаваемыми через JSONB
 Итак, у меня есть функция, которая принимает тип JSONB и выполняет SELECT и INSERT на основе различных ключей из этого блока данных. PostgreSQL выдает ошибки относительно PERFORM и INSERT. Как правильно использовать данные json в запросах SQL?
@@ -20913,8 +18184,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-Используйте боковое соединение, чтобы перебрать все таблицы из схемы
-Вопросы
+
 SQL
 Используйте боковое соединение, чтобы перебрать все таблицы из схемы
 Я хочу подсчитать определенные значения во всех таблицах схемы, содержащих столбец, который может содержать эти значения.
@@ -21075,8 +18345,6 @@ call raise_notice('note');
 select raise_notice('note');
 
 
-Как вернуть данные в функцию входа в PL/pgSQL? Я хочу вернуть таблицу, в которой совпадают адрес электронной почты и пароль. Электронная почта уникальна
-Вопросы
 SQL
 Как вернуть данные в функцию входа в PL/pgSQL? Я хочу вернуть таблицу, в которой совпадают адрес электронной почты и пароль. Электронная почта уникальна
 Функция не выдает никаких ошибок и не показывает никакого возвращаемого значения.
@@ -21149,8 +18417,6 @@ Jay Sardar
 
 
 
-Перебор таблиц для получения максимальных дат из созданного столбца дат в Postgres
-Вопросы
 POSTGRESQL
 Перебор таблиц для получения максимальных дат из созданного столбца дат в Postgres
 Мне нужно отслеживать текущий поток данных, используя последнюю дату создания для набора таблиц. В принципе, мне нужно запустить пакет
@@ -21277,8 +18543,7 @@ BEGIN
 END $$;
 
 
-Оператор выбора PL/pgSQL внутри триггера возвращает null, используя где NEW
-Вопросы
+
 SQL
 Оператор выбора PL/pgSQL внутри триггера возвращает null, используя где NEW
 я создаю триггер, который срабатывает при INSERT в таблице, и я хочу регистрировать структуру вставленных таблиц, поэтому я написал эту функцию
@@ -21622,8 +18887,6 @@ kfinity
 
 
 
-Как параметризовать параметрический тип столбца в PostgreSQL `execute format()`?
-Вопросы
 POSTGRESQL
 Как параметризовать параметрический тип столбца в PostgreSQL `execute format()`?
 У меня есть такой код PL/pgSQL:
@@ -21712,8 +18975,6 @@ l0b0
 
 
 
-Как составить список таблиц конкретной базы данных и отсортировать их по размеру с помощью PostgreSQL?
-Вопросы
 DATABASE
 Как составить список таблиц конкретной базы данных и отсортировать их по размеру с помощью PostgreSQL?
 Я попытался выбрать список баз данных и выбрать все таблицы из каждой базы данных, упорядочив первые десять таблиц по их размеру, включая их индексы, через PL/pgSQL, но у меня возникла проблема с объединением запроса к базе данных с помощью запрос таблиц и их размеров, входящих в конкретную базу данных.
@@ -21906,8 +19167,6 @@ Zegarek
 
 
 
-Хранимая процедура PostgreSQL для получения сотрудника по входному идентификатору из объединенной таблицы
-Вопросы
 SQL
 Хранимая процедура PostgreSQL для получения сотрудника по входному идентификатору из объединенной таблицы
 Я пытаюсь написать хранимую процедуру, чтобы получить сотрудника по входному идентификатору. В SQL Server это выглядит так:
@@ -22166,8 +19425,6 @@ Pavel Stehule
 
 
 
-Проверить массив имен таблиц
-Вопросы
 SQL
 Проверить массив имен таблиц
 У меня есть требование, чтобы сценарий bash передавал строку, содержащую имена таблиц, в анонимный блок PL/pgSQL, который будет обрабатывать таблицы, если они существуют в базе данных Postgres.
@@ -22276,8 +19533,6 @@ Frank Heikens
 
 
 
-Как создать массив заданного размера с заполненным одним полем?
-Вопросы
 ARRAYS
 Как создать массив заданного размера с заполненным одним полем?
 Я хотел бы создать функцию, которая, учитывая значение любого типа, размерность одномерного массива и устанавливаемый столбец, будет возвращать одномерный массив, заполненный нулевыми значениями, за исключением одного заданного значения в заданной позиции.
@@ -22647,8 +19902,7 @@ plpgsql очень хорошо интегрирован с SQL - исходны
 Насколько я знаю, люди обычно используют комбинацию языков PL - (SQL, plpgsql, plperl) или (SQL, plpgsql, plpython).
 
 
-Вернуть несколько столбцов и строк из функции PostgreSQL вместо записи
-Вопросы
+
 SQL
 Вернуть несколько столбцов и строк из функции PostgreSQL вместо записи
 Я читал в Интернете о функциях PostgreSQL и возвращает результаты В этой ссылке:
@@ -22703,8 +19957,7 @@ from brand_hierarchy(1234)
 Я нашел эту функцию crosstab Думаю, это то, что вы ищете https://www.postgresql.org/docs/9.3/tablefunc.html
 
 
-Как мне создать функцию в postgres, которая обновляет поле серией 'REGEXP_REPLACE's
-Вопросы
+
 POSTGRESQL
 Как мне создать функцию в postgres, которая обновляет поле серией 'REGEXP_REPLACE's
 Я пытаюсь создать функцию, которая гомогенизирует текстовые столбцы. Это серия regex_replaces в случае, когда function.
@@ -22869,8 +20122,6 @@ Sentinel
 
 
 
-PostgreSQL - закрыть файл .sql, если условие истинно, не запускать строки под (при обработке с помощью bash)
-Вопросы
 SQL
 PostgreSQL - закрыть файл .sql, если условие истинно, не запускать строки под (при обработке с помощью bash)
 Я обрабатываю файлы .sql с помощью bash автоматически в своем решении CI в цикле for, чтобы выявить ошибочные миграции перед развертыванием.
@@ -22984,8 +20235,7 @@ if [ $? -ne 0 ]; then
 fi
 
 
-Чтобы отсортировать буквы в строке по алфавиту в PostgreSQL
-Вопросы
+
 SQL
 Чтобы отсортировать буквы в строке по алфавиту в PostgreSQL
 В настоящее время я использую этот метод для сортировки букв в строке по алфавиту в PostgreSQL. Есть ли другие действенные методы?
@@ -23228,8 +20478,6 @@ Kaushik Nayak
 
 
 
-Как мне вернуть конструктор строки из функции PL / pgSQL?
-Вопросы
 SQL
 Как мне вернуть конструктор строки из функции PL / pgSQL?
 Я пытаюсь вернуть конструктор строки из функции PL / pgSQL, но он не работает со следующей ошибкой: запись возвращаемого типа не соответствует целому числу ожидаемого типа в столбце 1
@@ -23316,6 +20564,7 @@ postgres=# SELECT * FROM test_plpgsql();
 │ 1 │ 1 │
 └───┴───┘
 (1 row)
+
 
 
 POSTGRESQL
@@ -23497,10 +20746,6 @@ A block containing an EXCEPTION clause is significantly more expensive to enter 
 
 Самый быстрый способ получить OID текущего пользователя в Postgres?
 Ваш ответ был наиболее полным, хотя я предложил вариант ответа @garysieling. Но вы затронули большинство важных вопросов; вначале myvars.user_id имеет значение NULL, после использования SET LOCAL он сбрасывается до '' в конце транзакции, и я должен учитывать все случаи.
-
-— 
-ChuckE
- 28.08.2018 13:58
 
 
 POSTGRESQL
@@ -23713,9 +20958,7 @@ CREATE or replace FUNCTION p15d()
  01.03.2019 10:09
 Причина вашего сообщения об ошибке заключается в том, что выполняемый вами запрос (сегодня):
 
-select 2019-03-02
-Добавить поле в функцию RETURNS TABLE pgplsql
-Вопросы
+
 POSTGRESQL
 Добавить поле в функцию RETURNS TABLE pgplsql
 Как добавить поле в ТАБЛИЦУ ВОЗВРАТА функции plpgpsql, значение, которое я хочу добавить, отсутствует в SELECT, выполняемом внутри функции:
@@ -23851,6 +21094,7 @@ Tony Morris
  01.03.2019 11:34
 
 Теперь 2019 минус 3 минус 2 равно 2014, то есть целому числу.
+
 
 
 POSTGRESQL
@@ -24135,8 +21379,6 @@ $func$ LANGUAGE plpgsql;
 По сути, второе условие почти противоречит цели иметь одну функцию, я мог бы в этот момент также разделить ее на две функции. Потому что цель состоит в том, чтобы определить несколько (2) триггеров с помощью этой функции (предоставив ей аргументы).
 
 
-Область имен столбцов, псевдонимы и параметры OUT в функции PL/pgSQL
-Вопросы
 SQL
 Область имен столбцов, псевдонимы и параметры OUT в функции PL/pgSQL
 Мне трудно понять, почему я могу ссылаться на выходные столбцы в returns table(col type).
@@ -24390,6 +21632,7 @@ Gordon Linoff
  27.03.2019 02:03
 
 
+
 POSTGRESQL
 Может ли фиксация Postgres существовать в процедуре с блоком исключения?
 Мне трудно понять транзакции в Postgres. У меня есть процедура, которая может столкнуться с исключением. Есть части процедуры, в которых я, возможно, захочу зафиксировать свою работу до сих пор, чтобы ее нельзя было откатить, если возникнут исключения.
@@ -24541,8 +21784,6 @@ $$;
 К сожалению, это приводит к большому количеству дублирования в обработчиках ошибок, но я не могу придумать хороший способ избежать этого.
 
 
-Можно ли читать/записывать/удалять файлы ОС с помощью plpgsql?
-Вопросы
 POSTGRESQL
 Можно ли читать/записывать/удалять файлы ОС с помощью plpgsql?
 Можно ли читать, писать, удалять файлы ОС с помощью PL/pgSQL?
@@ -24845,8 +22086,7 @@ $func$  LANGUAGE sql;
 Разница между языком sql и языком plpgsql в функциях PostgreSQL
 
 
-Как преобразовать рекурсию в функцию в plpgsql?
-Вопросы
+
 POSTGRESQL
 Как преобразовать рекурсию в функцию в plpgsql?
 у меня есть этот рабочий код, но мне нужно преобразовать его в функцию с динамическим атрибутом tid=1645, где число 1645 всегда будет меняться.
@@ -24954,8 +22194,6 @@ $func$  LANGUAGE sql;
 Разница между языком sql и языком plpgsql в функциях PostgreSQL
 
 
-Триггер | как удалить строку вместо обновления на основе значения ячейки
-Вопросы
 POSTGRESQL
 Триггер | как удалить строку вместо обновления на основе значения ячейки
 Постгрескл 10/11.
@@ -25101,9 +22339,6 @@ Jeremy
  13.07.2019 13:03
 
 
-
-Рекурсивный вызов TreeRelation в хранимой процедуре вызывает ошибку курсора «уже используется»
-Вопросы
 SQL
 Рекурсивный вызов TreeRelation в хранимой процедуре вызывает ошибку курсора «уже используется»
 Я создал простое отношение дерева в postgres. Отцовский узел может иметь n узлов. Чтобы получить все дочерние элементы от родительского узла, я хочу написать хранимую процедуру, которая рекурсивно вызывает себя. Это тот момент, когда я застрял.
@@ -25157,8 +22392,7 @@ WITH RECURSIVE test(s) AS (
         ) select * from test;
 Чему я научился? WITH RECURSIVE всегда есть 1 non-recursive select и 1 recursive select. Рекурсивный выбор может получить доступ к данным из нашей временной таблицы test, которая заполняется нашим нерекурсивным выбором. Рекурсивная функция (2-й выбор) вызывается для каждой записи test, полученной из нерекурсивного выбора (1-го).
 
-Как правильно разделить два массива
-Вопросы
+
 POSTGRESQL
 Как правильно разделить два массива
 У меня есть два массива: foo_array text[], bar_array text[] внутри функции. Каждый из них содержит строки, которые будут разбиты на элементы массива с помощью функции 'string_to_array' и приведены к типу bigint.
@@ -26491,8 +23725,6 @@ $$;
 Если вам нужно больше, то вы должны использовать другой язык, чем PLpgSQL - особый вариант - это язык C, где доступна вся информация.
 
 
-Невозможно подготовить оператор Postgres в Java (java.sql.PreparedStatement)
-Вопросы
 JAVA
 Невозможно подготовить оператор Postgres в Java (java.sql.PreparedStatement)
 Рассмотрим два оператора, которые я могу отправить на свой сервер из Java.
@@ -27192,9 +24424,6 @@ Rayyan Khan
 
 
 PostgreSQL: получение нескольких значений из типа записи
-Вопросы
-SQL
-PostgreSQL: получение нескольких значений из типа записи
 Я пишу программу sql, которая создает таблицу со столбцами, вычисляемыми в функции. Функция возвращает тип записи. Вот как выглядит заголовок:
 
 create or replace function get_items(col1 int, col2 int) returns record
@@ -27355,8 +24584,6 @@ Marina
 
 
 
-Postgres: как вообще сделать столбец неизменным?
-Вопросы
 POSTGRESQL
 Postgres: как вообще сделать столбец неизменным?
 Вот в чем проблема.
@@ -27963,6 +25190,7 @@ SQL-инъекция в функции Postgres и подготовленные 
 Имя таблицы как параметр функции PostgreSQL
 Я передаю значения как значения в EXECUTE с предложением USING. Делает невозможным SQL-инъекцию, а также позволяет избежать затрат и потенциальных ошибок при преобразовании входных данных в текст, объединении и обратном преобразовании в запросе.
 
+
 Обычный SQL
 Напоминаем: простой SQL все равно будет немного быстрее. Более многословно, но менее подвержено ошибкам.
 Эквивалент приведенного выше запроса:
@@ -28200,8 +25428,6 @@ DO
 Обычно все возможные конфликтные локальные переменные имеют префикс - общий префикс - _.
 
 
-Как перенести конвейерную функцию Oracle в PostgreSQL
-Вопросы
 POSTGRESQL
 Как перенести конвейерную функцию Oracle в PostgreSQL
 Поскольку я новичок в plpgSQL,
@@ -29660,8 +26886,6 @@ WHERE a.id = b.a_id AND a.ok;
 Метод 4 - это то, что вам нужно. Мало того, что все выполняется в одном запросе, PostgreSQL также может использовать более эффективную стратегию соединения, если это лучше.
 
 
-PostgreSQL - как определить, активна ли транзакция?
-Вопросы
 POSTGRESQL
 PostgreSQL - как определить, активна ли транзакция?
 Позвольте мне начать, сказав: да, я знаю о Определить, активна ли транзакция (Postgres)
@@ -29793,8 +27017,6 @@ INNER JOIN
 
 
 PostgreSQL Interview Questions and Answers
-
-PostgreSQL basic interview questions cover fundamental concepts required to understand and work with PostgreSQL databases effectively.
 
 Focus on core PostgreSQL concepts and features.
 Help build a strong foundation in database management.
@@ -30004,6 +27226,7 @@ CREATE TABLE employees (
 CREATE TABLE managers (
     department VARCHAR(100)
 ) INHERITS (employees);
+
 30. How to Perform Full-Text Search in PostgreSQL?
 Full-text search allows you to search for text within a large corpus of documents. PostgreSQL supports full-text search using tsvector and tsquery types. Example:
 
@@ -30017,6 +27240,8 @@ UPDATE documents SET tsvector_content = to_tsvector(content);
 
 SELECT * FROM documents
 WHERE tsvector_content @@ to_tsquery('search_term');
+
+
 PostgreSQL Advanced Interview Questions
 This section covers in-depth PostgreSQL topics like index optimization, replication, partitioning and advanced data handling techniques. Tackling these questions will enhance expertise, making us well-prepared for senior roles and technical interviews.
 
@@ -30305,8 +27530,7 @@ Output
 Screenshot-2026-05-06-143143
 Explanation: This query retrieves the details of employees who have been hired in the last two years by comparing their hire date with the current date minus two years.
 
-Гайд по PostgreSQL для продвинутых разработчиков
-10.10.2025sql
+
 Гайд по PostgreSQL для продвинутых разработчиков
 PostgreSQL – одна из самых мощных СУБД с открытым исходным кодом. Этот гайд подробно охватывает ключевые аспекты PostgreSQL: от внутренней архитектуры до приёмов оптимизации. Мы рассмотрим администрирование, производительность, расширения, инструменты, а также сравним популярные ORM для Python и Go. В конце приведён список продвинутых вопросов, часто встречающихся на собеседованиях.
 
