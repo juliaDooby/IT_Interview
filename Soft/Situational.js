@@ -1,0 +1,4364 @@
+Избегать:
+Избегайте давать расплывчатые или чрезмерно технические ответы, которые интервьюер может не понять.
+Пример ответа: адаптируйте этот ответ под себя
+
+Behavioral Interview Questions for NET Full Stack Developers
+
+Tell me about a time you had to debug a critical production issue. How did you approach it?
+Why they ask this: They want to see your problem-solving process under pressure and whether you can stay calm and methodical.
+
+STAR framework:
+
+Situation: Describe what broke, the impact (how many users were affected, what was failing), and the timeline pressure.
+Task: What was your responsibility in fixing it?
+Action: Walk through your debugging process. What tools did you use? How did you narrow down the cause? Did you collaborate with teammates?
+Result: How long did it take to fix? What was the resolution? Did you implement safeguards to prevent it happening again?
+Sample answer:
+
+“We had a production outage where orders weren’t completing. It was a Saturday, our busiest day. I was on-call. Customers couldn’t check out, so it was urgent. I checked the application logs in Application Insights and saw database timeout errors. I connected to production SQL Server and found that one query was blocking others due to a missing index. I added the index immediately, and orders started processing again within two minutes. Then I dug deeper: the query was a complex join that could have been optimized. I worked with the team Monday morning to rewrite it properly. We also added query monitoring to our Application Insights setup so we’d catch slow queries automatically. The fix took two minutes, but understanding why and preventing it next time took a few hours.”
+
+Describe a situation where you disagreed with a teammate on a technical approach. How did you handle it?
+Why they ask this: Collaboration and communication matter as much as code. They want to see you’re not stubborn but can discuss tradeoffs professionally.
+
+STAR framework:
+
+Situation: What was the disagreement about? Why did each approach seem reasonable?
+Task: Your role in working toward a resolution.
+Action: How did you approach the conversation? Did you listen to their perspective? How did you present your view?
+Result: Did you reach consensus? What did you learn? What was the outcome of the technical decision?
+Sample answer:
+
+“My colleague wanted to use a stored procedure for a complex reporting query. I preferred doing it in C# with Entity Framework because it’s version-controlled and testable. We had different priorities: they valued database performance, I valued code maintainability. Instead of digging in, I asked why they preferred stored procedures and actually ran performance tests on both approaches. Turns out, the stored procedure was significantly faster for that specific report. We went with the stored procedure, but I made sure it was well-documented and we added integration tests that called it. I learned that performance at scale sometimes requires compromise, and that asking questions before debating is more productive. We’ve used that hybrid approach on other projects since.”
+
+Tell me about a project where you delivered something under a tight deadline. How did you manage?
+Why they ask this: Startups and enterprises both have deadlines. They want to see you prioritize intelligently, not panic.
+
+STAR framework:
+
+Situation: What was the deadline? Why was it tight? What were you building?
+Task: What was your specific responsibility?
+Action: How did you plan? What did you cut or optimize? How did you stay organized? Did you communicate status?
+Result: Did you hit the deadline? What was the quality? Any technical debt you addressed later?
+Sample answer:
+
+“We had three weeks to build a reporting dashboard before an investor meeting. Normally that’s not enough time. I worked with the product manager to ruthlessly prioritize: we focused on three core reports that investors cared about and cut three others. I reused a base dashboard component so we didn’t build from scratch. I worked in parallel with the front-end developer—as soon as I finished API endpoints, they started building UI. We did daily stand-ups to stay in sync. I also chose pragmatic shortcuts: we used MemoryCache for demo data instead of building complex caching logic, knowing we’d improve it post-launch. We delivered on time, the investor loved it, and we addressed technical debt in the following sprint. The key was being transparent about tradeoffs—‘we can have this by Friday if we don’t do X’—and the team bought in because they understood the priority.”
+
+Tell me about a time you had to learn a new technology quickly to solve a problem.
+Why they ask this: Tech changes constantly. They want to see you’re adaptable and resourceful.
+
+STAR framework:
+
+Situation: What technology did you need to learn? Why? How much time did you have?
+Task: What did you need to accomplish?
+Action: How did you approach learning? What resources did you use? How quickly did you ramp up?
+Result: Did you successfully solve the problem? How long did it take? What was the outcome?
+Sample answer:
+
+“We inherited a project that used Dapper for data access—I’d never used it. The previous developer left, and I was the sole back-end person. I had two days before the feature freeze. I watched a couple of YouTube tutorials and read the Dapper documentation. The syntax is simpler than Entity Framework, and I realized it was close enough to SQL that I could learn as I went. I paired with the QA person on complex queries, asked questions, and within a day, I was productive. By day two, I’d fixed bugs and added features. I’d probably use Entity Framework by default now, but Dapper has a place for high-performance scenarios, and I’m comfortable with it. The experience reinforced that the fundamentals of database querying transfer across tools—the unfamiliar syntax is just detail.”
+
+Describe a time you improved a process or codebase that wasn’t working well.
+Why they ask this: This shows initiative and ownership. Are you just coding, or improving how the team works?
+
+STAR framework:
+
+Situation: What wasn’t working? How did it affect the team? Why did it matter enough to fix?
+Task: What was your role in improving it?
+Action: What specific improvements did you make? Did you involve the team?
+Result: What measurable improvements happened? How did the team respond?
+Sample answer:
+
+“Our codebase had no automated tests, and every deployment was nerve-wracking because we’d break something unintentionally. I proposed adding unit tests and a CI pipeline. The team was skeptical—‘It’ll slow us down.’ I started small: I wrote tests for critical business logic modules and set up a basic GitHub Actions workflow. It took a week. Within two weeks, it caught a regression in another developer’s code before it merged. The team saw the value and invested more. Six months later, we had 70% test coverage and deployed daily without fear. The initial skepticism turned into ‘how did we live without this?’ The key was proving value quickly with a small scope rather than pushing for a perfect solution upfront.”
+
+Tell me about a time you received critical feedback. How did you respond?
+Why they ask this: Defensive people don’t grow. They want to see you take feedback professionally and improve.
+
+STAR framework:
+
+Situation: What feedback did you receive? From whom? How did it feel in the moment?
+Task: What did you do with it?
+Action: How did you process it? Did you ask clarifying questions? How did you implement the feedback?
+Result: Did you improve? How did that change your work or perspective?
+Sample answer:
+
+“A senior developer reviewed my code and said it was overly complex—I had nested loops and convoluted logic that could be simplified. My first reaction was defensive: I thought it was efficient. But I read their comments carefully, and they were right. I asked them to explain their simpler approach, and I learned about LINQ methods I wasn’t using effectively. I refactored the code, and it was half the lines and easier to read. I thanked them and started paying more attention to readability and simplicity. That feedback changed how I approach coding. Now when my code gets reviewed, I look for complexity I can eliminate. I also try to give that kind of constructive feedback to others.”
+
+Technical Interview Questions for NET Full Stack Developers
+Technical questions dig into your practical knowledge. Rather than memorizing answers, understand the framework for thinking through them.
+
+How would you design an API for a multi-tenant SaaS application?
+Why they ask: Multi-tenancy is complex. Your answer shows architectural thinking and awareness of isolation, security, and performance.
+
+Framework for your answer:
+
+Data isolation: How do you prevent one tenant’s data from leaking to another? (Separate databases? Shared database with tenant ID filtering? Row-level security?)
+Authentication and authorization: How do users log in? How do you know which tenant they belong to?
+Resource sharing: What resources can be shared across tenants? (Code, infrastructure, configuration?)
+Scaling: If one tenant grows, how does that affect others?
+Sample answer:
+
+“I’d start with data isolation. For small-to-medium deployment, I’d use a shared database but add a TenantId to every table. At the database layer, I’d implement a query filter that automatically adds WHERE TenantId = @CurrentTenantId to every query, so developers can’t accidentally leak data. For larger deployments or enterprise clients that demand isolation, I’d provision separate databases. For authentication, I’d use Azure AD B2C or similar, and the JWT token would include the tenant ID. Every API request passes the token, and middleware validates that the user belongs to that tenant. For shared resources, I’d have a master database for configuration and billing, separate from tenant data. Infrastructure would be shared—Kubernetes cluster, Azure resources—but logically isolated. I’d implement API throttling per tenant so one tenant can’t DoS others by making too many requests. Monitoring would be tenant-aware too, so I can see performance per tenant.”
+
+Personalization tip: Discuss whether your experience is theoretical or from a real project. If this is new, discuss what unknowns you’d research.
+
+How do you handle caching in a distributed system?
+Why they ask: Caching at scale is subtle. They want to see you understand cache invalidation, consistency, and tradeoffs.
+
+Framework for your answer:
+
+What to cache: User sessions? Database queries? API responses?
+Where: In-memory (fast but doesn’t scale)? Redis (shared across servers)? CDN (for static content)?
+Invalidation: When does cached data expire or get cleared?
+Consistency: Is stale data acceptable?
+Sample answer:
+
+“Caching depends on the data and consistency requirements. For user sessions in a load-balanced environment, I’d use Redis so any server can handle the request. For database query results, I’d use MemoryCache if it’s single-server, Redis if distributed. For read-heavy queries that don’t need real-time accuracy, I’d cache with a TTL—say, five minutes—so we hit the database less often. For writes, I’d invalidate the cache immediately so users see current data. Static assets—JavaScript, CSS, images—get cached at the CDN level with long expiration times. The tricky part is cache invalidation. I’ve seen issues where stale data caused bugs because we forgot to invalidate when related data changed. I now have a pattern: when I write to the database, I also invalidate related caches. Redis has nice options like key expiration and pub/sub for cache invalidation across servers.”
+
+Personalization tip: Describe a caching strategy you’ve implemented or a cache bug you’ve debugged.
+
+Design a database schema for an e-commerce application.
+Why they ask: Database design shows whether you understand normalization, relationships, and query patterns.
+
+Framework for your answer:
+
+Core entities: What tables do you need? (Customers, Products, Orders, OrderItems, etc.)
+Relationships: One-to-many? Many-to-many?
+Constraints: Primary keys? Foreign keys? Unique constraints?
+Denormalization: When would you violate normalization for performance?
+Queries: What queries do you need to support?
+Sample answer:
+
+“I’d have Customers, Products, Orders, OrderItems, Payments, and ShippingAddresses tables. Each OrderItem is a many-to-many relationship between Orders and Products, storing quantity and price (I store price because product prices change, but order history should be immutable). Foreign key constraints maintain referential integrity. For performance, I might denormalize—storing TotalAmount on Orders instead of calculating from OrderItems every time. I’d add indexes on frequently searched columns: CustomerId on Orders, ProductId on OrderItems, OrderStatus. For queries, I’d support finding all orders for a customer, products in a category, and recent orders with status. I’d be thoughtful about transactions: when an order is placed, I need to update inventory, create an order record, and record payment atomically. This ensures consistency. One thing I’ve learned: don’t over-normalize. If I have a Payments table, do I need to join it with Orders every time? Maybe I also store PaymentStatus on Orders for faster queries without joins. It’s a tradeoff between storage and query performance.”
+
+Personalization tip: Sketch out key tables and relationships relevant to a domain you know well.
+
+Explain how you’d implement authentication and authorization in a web application.
+Why they ask: Security is critical and misunderstood. They want to see you think through this carefully.
+
+Framework for your answer:
+
+Authentication: How do you verify who the user is? (Username/password? OAuth? Tokens?)
+Password security: How do you store passwords securely? (Never plain text; use hashing and salt)
+Authorization: How do you check what they can do? (Role-based? Permission-based?)
+Token management: If using tokens, how do you handle expiration and refresh?
+Sample answer:
+
+“For a web application, I’d use ASP.NET Core Identity for user management. Users log in with a username and password. The password is hashed with a salt using bcrypt (Identity does this automatically) and stored. I never store plain text passwords. Upon successful login, I issue a JWT token with an expiration time—say, 15 minutes—and a refresh token that lasts longer. The client sends the JWT with each request; middleware validates it. If the JWT expires, the client uses the refresh token to get a new JWT without re-entering credentials. For authorization, I define roles—Admin, User, Manager—and assign them to users. On sensitive endpoints, I check role membership: [Authorize(Roles = "Admin")]. For fine-grained permissions—‘can this user edit this post?’—I write custom authorization handlers. I also use HTTPS only, set secure cookies, and implement CORS properly to prevent unauthorized requests from other domains. I log authentication events for security auditing.”
+
+Personalization tip: Discuss OAuth/OpenID if you’ve integrated with external providers like Google or Azure AD.
+
+How would you structure a large .NET solution with multiple projects?
+Why they ask: Large projects need organization. They want to see you think about separation of concerns and scalability.
+
+Framework for your answer:
+
+Project layers: Presentation (API/UI), Business Logic, Data Access, Infrastructure?
+Separation: What belongs in each layer? Why?
+Dependencies: How do layers communicate? (Dependency injection? Interfaces?)
+Shared code: Where does common code live?
+Sample answer:
+
+“I’d structure it in layers. The API project contains controllers and configuration. The Application project contains business logic—services, DTOs, validation rules. The Domain project has entities and interfaces defining the core contracts. The Infrastructure project implements interfaces for database access using Entity Framework, external service calls, and logging. Each layer depends inward: API depends on Application, Application depends on Domain and Infrastructure. Infrastructure depends on Domain. This way, if I want to swap how data is persisted, I only change Infrastructure; the rest remains unchanged. I’d also have a Tests project with unit tests and integration tests. If the solution is large, I might have multiple Infrastructure implementations for different data sources. For shared code—utilities, constants, common exceptions—I’d have a Common project. I’d be careful not to create too many projects though; it’s easy to over-engineer. I aim for 5-8 projects: enough structure without complexity.”
+
+Personalization tip: Describe the structure of a project you worked on and why you organized it that way.
+
+Tell me about a complex feature you built and how you approached it.
+Why they ask: They want to see your thought process on a real problem, not a theoretical one.
+
+Framework for your answer:
+
+Requirements: What did you need to build?
+Breakdown: How did you break it into smaller pieces?
+Technical decisions: What architecture or design patterns did you use?
+Challenges: What went wrong or was harder than expected?
+Solution: How did you solve it? What did you learn?
+Sample answer:
+
+“I built an invoice generation and delivery system. Invoices are created when orders ship, then emailed to customers and archived. Sounds simple, but there were complexities: invoices needed to be generated asynchronously because they’re computationally heavy, emailing could fail and needed retries, and we had to comply with data retention policies. I broke it into services: InvoiceGenerator handled calculations, InvoiceEmailer handled delivery, and InvoiceRepository handled storage. I used a background job service with Hangfire to run InvoiceGenerator on a schedule. If generation failed, Hangfire would retry. For emailing, I sent emails asynchronously too with exponential backoff retries—if the email service is down, we don’t want to retry immediately and overwhelm it. For archival, I implemented a job that moved old invoices to cold storage after a year. The tricky part was testing—I couldn’t easily test the retry logic. I mocked the email service to simulate failures and verified the retry behavior. I also added detailed logging so we could track what happened with each invoice. It took two weeks to get all the edge cases right, but now the system is robust.”
+
+Personalization tip: Pick a feature that was genuinely complex and discuss what made it so and how you solved it
+
+Знание основ платформы 1С — вам нужно понимать, что такое конфигурация, какие типы объектов существуют, как работают регистры.
+Простые практические задачи — могут попросить написать запрос, создать обработку для справочника или настроить печатную форму документа.
+Язык программирования 1С — важно знать синтаксис языка, а также основы процедурного и объектно-ориентированного подходов.
+Общие вопросы по базам данных — будьте готовы ответить, что такое реляционная база данных и как работают транзакции в 1С.
+Логика, решение задач — продемонстрируйте способность логически решать задачи, проектировать системы.
+Мотивация, развитие — важно объяснить, почему хотите работать 1С-разработчиком, какие области вас интересуют, как вы учились.
+Работа в команде — покажите умение взаимодействовать с коллегами и решать рабочие конфликты.
+Ситуационные вопросы — стажера могут спросить, как бы вы решили ошибку в чужом коде или приступили бы к незнакомой задаче.
+
+
+Question 1: Can you describe a time when you faced a challenging problem as a backend developer and how you resolved it?
+Answer:
+
+Situation: Explain the challenge (e.g., a system outage or performance degradation).
+Task: What was your responsibility?
+Action: Detail the steps you took (e.g., diagnostics, collaboration with team members, deployment of fixes).
+Result: Highlight the positive outcome (e.g., restored service, improved performance).
+Question 2: How do you prioritize tasks when managing multiple projects simultaneously?
+Answer:
+
+Use project management tools like JIRA to track tasks.
+Break down tasks into priority levels (e.g., critical vs. non-critical).
+Communicate with stakeholders to align priorities.
+Focus on tasks that have the highest impact on the project or team.
+Question 3: How do you handle working under pressure or tight deadlines?
+Answer:
+
+Stay organized: Break tasks into smaller, manageable pieces.
+Communicate proactively with the team to manage expectations.
+Use time management techniques like the Pomodoro technique to stay focused.
+If needed, ask for support from the team to meet deadlines.
+Question 4: Have you ever worked in a team where there was conflict? How did you handle it?
+Answer:
+
+Listen to both sides of the argument.
+Facilitate a calm discussion to understand the root of the conflict.
+Focus on finding a solution that aligns with the team’s goals.
+Ensure that after resolving the conflict, there is no lingering tension.
+Question 5: Why do you want to work as a backend developer at this company?
+Answer:
+
+Research the company’s mission and projects to tailor your answer.
+Mention any technologies they use that you are excited to work with.
+Highlight how your skills and experience align with the role’s requirements.
+Express interest in growth opportunities and contributing to impactful projects.
+💡 Did You Know?
+Backend interviews often test your ability to build and manage server-side systems efficiently.
+Candidates are commonly evaluated on APIs, databases, authentication, caching, and scalability.
+Understanding REST, SQL/NoSQL, concurrency, and system design helps you explain solutions clearly in interviews.
+
+A backend developer’s daily responsibilities typically include:
+
+Database Management: Handling CRUD operations (Create, Read, Update, Delete) and ensuring efficient database architecture.
+API Development: Designing, developing, and maintaining RESTful APIs that connect frontend interfaces with the database.
+Server Maintenance: Monitoring server performance, scaling server resources, and ensuring uptime during high traffic.
+Security Measures: Protecting applications from SQL injection, Cross-Site Scripting (XSS), and other vulnerabilities.
+A solid backend developer must be proficient in the following key areas:
+
+Skill	Description
+Programming Languages	Mastery of languages like Python, Java, Ruby, or Node.js is essential. Backend frameworks like Django, Spring, or Express.js are also critical.
+Database Knowledge	Familiarity with relational (e.g., MySQL, PostgreSQL) and NoSQL databases (e.g., MongoDB, Cassandra).
+API & HTTP Protocols	Understanding how to design and consume REST APIs, manage HTTP methods, and ensure stateless interactions.
+Version Control	Working knowledge of Git for versioning code and collaborating with teams.
+Security Best Practices	Understanding of database security and authentication methods (OAuth, JWT), encryption (HTTPS), and mitigation strategies against attacks like SQL injection.
+A typical day for a backend developer involves working with servers, optimizing databases, securing APIs, handling server-side logic, and communicating with front-end components to ensure seamless functionality.
+
+
+Backend Developer Interview Questions
+
+What programming languages have you used in the past? Which do you prefer?
+This question will assess a potential employee on their familiarity with certain programming languages and will help you determine whether their knowledge fits your company's requirements. It will also tell you about a potential employee’s experience and programming background.
+
+A good candidate will list a few different languages. They should explain their experience with languages such as C, C++, Java, JavaScript, PHP, Ruby on Rails, or another language of their choice. They should also explain which language they prefer working with and why.
+
+Their answers can help you determine if they have experience working with the languages your company uses.
+
+Explain a time you’ve worked with your team to develop new features and ensure functionality.
+Backend developers must work with their team members and other professionals to develop effective websites and applications. To be successful, a backend developer should have strong collaboration skills. This question will allow you to assess how effective a potential employee was at working with team members in the past to ensure new features appropriately functioned.
+
+A good candidate will explain the projects they’ve contributed to in the past, their contributions, how they worked with their team members, and the methods they used to communicate and share progress updates and reports between coworkers.
+
+What is your process for finding and debugging errors on live websites or applications?
+Debugging is an essential skill for a backend developer, regardless of experience. You need to ensure that your potential backend developer can find and troubleshoot code errors, especially those that might hinder the functionality of live websites and applications.
+
+A good candidate will be able to walk you through the entire process of finding and debugging errors, both on unpublished and published websites and applications. They can explain how they might find the cause of the error through the stack trace of the error message, how they would look for any syntax errors, and how they would use breakpoints to inspect values, variables, and expressions.
+
+How would you handle being assigned a task that you’re unfamiliar with?
+Junior backend developers should aim to grow in their field. For that, they may need to take on unfamiliar tasks and projects to learn new skills and hone their current ones. This question will help you determine how keen a potential employee is to grow in their field and how they would approach, research, and learn new ideas and skills.
+
+A good candidate will be able to walk you through step-by-step how they would approach a new project. They would explain their research phase, their focus on the goals and requirements of the new project, and how they would tackle learning the skills needed to complete the task effectively.
+
+Intermediate Backend Developer Interview Questions
+Intermediate backend developers are a step up from junior-level backend developers. While they aren’t as experienced as seniors, they should still have a more powerful skillset than juniors. To test their knowledge, consider the following questions:
+
+Explain your process of managing web services API versioning.
+API structures are essential in backend development, and intermediate backend developers should have plenty of experience with API. Intermediate developers should also have knowledge and experience in API versioning.
+
+A good candidate should explain the three API versioning types: URL versioning, custom header versioning, and query string parameter versioning. They should also explain their experience using each type of versioning and when each should be used.
+
+What are sorting algorithms, and when should you use them?
+Another essential skill to have as an intermediate backend developer is the ability to work with algorithms. Intermediate developers should have experience in working with various sorting algorithms.
+
+A good candidate should explain what sorting algorithms are, the different types of sorting algorithms, and when to use each specific sorting algorithm. For example, quick sort is preferred for data that can fit into memory. Otherwise, it’s viable to use merge sort.
+
+What are the most challenging factors when coding?
+Intermediate developers have more experience than their junior counterparts. So, they should have a firm grasp of coding challenges. As such, they should explain what they find more difficult when coding. This question will allow you to assess a potential employee’s technical weaknesses.
+
+A good candidate will be honest about their shortcomings and be able to explain where and why they struggle with specific codes. Perhaps they struggle with a certain language or framework or lack specific soft skills. Either way, this question will not only allow you to determine a potential employee’s weaknesses but also provide the employee with resources and help should you hire them.  
+
+ 
+Senior Backend Developer Interview Questions
+Finally, a senior backend developer will be at the top of their game. They should have extensive knowledge of backend development and have amassed several skills. They should also have a strong portfolio of previous work to showcase and demonstrate their abilities.
+
+Still, it’s essential to interview a senior backend developer before hiring them. Consider the following questions:
+
+What are NoSQL databases?
+NoSQL databases are a tool to store and retrieve data, and senior backend developers should have experience using these databases. This question will allow you to assess their knowledge of the different types of NoSQL databases and how and when to use them.
+
+A good candidate can explain the various types of databases, including document-oriented, key-value, graph, and column-oriented. They’ll be able to explain how and when to use each one.
+
+What are the best practices when it comes to performance testing?
+Performance testing allows developers to analyze response times and other factors and search for possible errors in code. Senior backend developers should have experience in performing performance tests and understand the best practices for conducting one.
+
+A good candidate should explain the best practices, including:
+
+Test as soon as possible in the development process
+Run several performance tests throughout the development project
+Test software units individually and together
+Use baseline measures to start, which can determine success and failure
+Conduct performance tests in environments close to the production system
+Isolate the performance test environment from other environments
+Keep the test environment as consistent as possible
+They should also demonstrate how a performance test is performed.
+
+What are common security risks when building a web application, and how should you handle them?
+Security is a significant factor when building a web application or service, and any senior backend developer should be well-versed in security risks and how to handle them. Security should be a top priority for any business. So, it’s crucial to ensure that your potential candidate has experience dealing with common security risks.
+
+A good candidate should be able to list the most common security risks and how they have handled security threats in the past. For example, they should understand an SQL injection and how to counter it or what cross-site scripting is.
+
+
+Backend Developer Skills
+When looking to hire a backend developer, you should understand the skills essential to the role. While many skills are involved in backend development, including technical, behavioral, and soft skills, a few are more critical than others.  
+
+Proficiency in backend programming languages: Proficiency in programming languages is a must for backend developers. Programming languages will help your backend developers build and connect web services and applications and ensure their functionality. For backend development, Java, Python, and PHP are some of the go-to languages.
+Knowledge in frontend programming technology: While backend developers aren’t usually required to be masters in frontend technology, it’s crucial that they at least have the basic skills and knowledge, especially of JavaScript, which is fundamental in frontend programming technology.
+Experience in backend frameworks: Backend frameworks are equally as important as the programming language your backend developer will be working with. Some popular choices for backend frameworks include NodeJS, ExpressJS, and Django.
+Understanding databases and APIs: Backend developers handle and manage databases, including creating relational mapping for data retrieval. That is, backend developers should have a good grasp of databases, such as MySQL, MongoDB, and others. Additionally, they are also required to have a good understanding of application programming interfaces (APIs) and restful APIs which allow them to establish connections between various applications. Common APIs include JSON, GSON, SOAP, etc.
+Ability to solve problems: Backend development can be tricky, even for the most experienced developers. Therefore, your backend developers must have excellent problem-solving skills to work effectively.  
+Other skills needed will depend on your company’s requirements and needs but may include leadership, communication, and knowledge of different programming languages and structures. Overall, a backend developer must be proficient in technology, microservices architecture, various operating systems, structured programming, and the internet.
+
+In addition to these skills, and depending on your company’s needs and job description, a backend developer will generally be expected to complete the following responsibilities:
+
+Participate in the entire application lifecycle, including writing, testing, and debugging code
+Develop usable web applications by writing clean, concise code  
+Create and manage prototypes
+Observe, analyze, troubleshoot and resolve issues and bottlenecks
+Create strong APIs
+Optimize web applications for scalability and performance
+Collaborate with frontend developers and other technical professionals
+Technical Backend Interview Questions Examples
+Technical skills are a must-have for backend developers. Within these skills, a backend developer should have proficiency in various programming languages, frameworks, databases, and other technical structures. To ensure that you’re hiring a knowledgeable and experienced backend developer, you should interview them on the following areas:
+
+Backend programming languages: You’ll want to assess your potential developer’s knowledge of backend programming languages. They should understand the differences between object-oriented programming and functional programming languages and have experience in both types.
+APIs: APIs are an essential asset in a backend developer’s arsenal. Ensure that your potential developer understands how APIs work and their purpose.
+Data structures: Developers rely on data structures to access, organize, and modify data. Since backend developers will be working with data, they must understand how data structures work, including those relating to array operations, list functions, and tree and related operations.
+Servers: Servers are a fundamental part of backend development and help developers deliver and receive important information, services, and requests. As such, backend developers should understand how to deploy and host servers and be familiar with standard servers such as Apache and Microsoft IIS.
+Algorithms: Backend developers must be able to solve and troubleshoot problems they encounter. So, it’s essential to test their algorithmic skills. Test them on depth-first search, breadth-first search, and sorting algorithms.
+Queries: Inexperienced and experienced developers must understand queries and how they are used. This includes queries in an application and expensive queries. Queries are essential to the development process and can supply developers with answers to questions; perform calculations; combine data from various tables; and add, change, or delete data from a database.
+
+https://www.youtube.com/watch?v=lq4eefCCuVo 20.41
+
+// backend for middle base developer
+Для **middle фронтенд-разработчика**, который хочет разобраться с бэкендом на базовом уровне, минимальный стек технологий должен обеспечивать понимание ключевых аспектов работы серверной части и взаимодействия с клиентом. Цель — иметь возможность самостоятельно разрабатывать и поддерживать простые серверные приложения, интегрировать API и понимать основные концепции бэкенда. Вот минимальный стек:
+
+### 1. **Язык программирования**
+   - **Node.js**: Это JavaScript-окружение на сервере. Для фронтендера, уже знакомого с JavaScript, Node.js будет логичным выбором, так как позволяет использовать один язык как на клиенте, так и на сервере.
+   - Альтернатива: **Python** (с Flask или Django) — простой и широко используемый язык для серверной разработки, который можно быстро освоить.
+
+### 2. **Фреймворк**
+   - **Express.js** (для Node.js): Легковесный и популярный фреймворк для создания серверов и REST API. Позволяет быстро создавать простые серверные приложения с минимальной настройкой.
+   - Альтернатива для Python: **Flask** — легковесный фреймворк для простых приложений или **Django** для более сложных проектов.
+
+### 3. **Базы данных**
+   - **MongoDB** (NoSQL): Отличный выбор для хранения данных в формате JSON, что естественно сочетается с JavaScript на Node.js. Простая для освоения и достаточно мощная для многих задач.
+   - **PostgreSQL** (SQL): Реляционная база данных, которая позволяет работать с таблицами и сложными запросами. PostgreSQL хорошо подходит для структурированных данных и более сложных приложений.
+
+### 4. **API**
+   - **REST API**: Понимание, как создавать и потреблять RESTful API. Это основа для обмена данными между клиентом и сервером.
+   - **GraphQL**: Альтернатива REST, которая позволяет клиенту запрашивать только нужные данные. Понимание основных принципов GraphQL будет полезным в современных проектах.
+
+### 5. **Аутентификация и авторизация**
+   - **JWT (JSON Web Tokens)**: Простой способ реализации авторизации и аутентификации через API. Хорошо сочетается с REST.
+   - **OAuth**: Стандарт для авторизации, если нужно интегрироваться с внешними сервисами, например, через Google или GitHub.
+
+### 6. **Основы работы с сервером и деплоем**
+   - **Docker**: Понимание, как контейнеризировать свои приложения, чтобы они могли быть легко развернуты и запущены в любой среде.
+   - **Basic Linux commands**: Знание основных команд для работы с сервером, управления файлами, процессами и настройками сети.
+
+### 7. **CI/CD**
+   - **GitHub Actions** или **GitLab CI**: Для автоматизации процесса тестирования и деплоя приложений.
+   - Основы понимания CI/CD необходимы для того, чтобы фронтенд-разработчик мог настроить автоматическое тестирование и развертывание своих приложений.
+
+### 8. **WebSockets (при необходимости)**
+   Если проект требует взаимодействия в реальном времени (чаты, уведомления), нужно понимать, как работают WebSockets.
+   - **Socket.IO**: Для реализации WebSockets в Node.js.
+
+### 9. **Тестирование**
+   - **Jest** или **Mocha** для тестирования серверной логики.
+   - **Postman** или **Insomnia** для ручного тестирования API-запросов.
+
+### Минимальный стек может выглядеть так:
+- **Node.js** (язык и платформа)
+- **Express.js** (фреймворк)
+- **MongoDB** (NoSQL база данных) или **PostgreSQL** (SQL база данных)
+- **JWT** (аутентификация)
+- **Docker** (для контейнеризации)
+- **GitHub Actions** (для CI/CD)
+- **Postman** (для тестирования API)
+
+### Зачем фронтендеру такой стек?
+
+- **Умение разрабатывать полнофункциональные приложения**: Middle фронтенд-разработчик с базовыми знаниями бэкенда может самостоятельно создавать простые серверные приложения, настраивать API для своих фронтенд-приложений и управлять данными.
+- **Улучшение понимания архитектуры**: Знание бэкенда помогает лучше понимать архитектурные решения, такие как взаимодействие клиент-сервер, работа с данными, безопасность, и как это влияет на фронтенд.
+- **Работа в кросс-функциональных командах**: В продуктовых компаниях часто требуется взаимодействие с бэкенд-командами, и знание основ серверной разработки помогает эффективнее работать и предлагать решения.
+
+### Резюме:
+Для фронтенд-разработчика минимальный стек в бэкенде включает знания об **Express.js**, работе с базами данных (**MongoDB или PostgreSQL**), аутентификации с помощью **JWT**, а также базовое понимание **Docker** и CI/CD инструментов. Такой стек позволит разрабатывать и поддерживать простые серверные приложения и лучше понимать взаимодействие между фронтендом и бэкендом.
+
+
+A Full Stack developer should be knowledgeable in:
+
+Basic languages — HTML, CSS, and SQL.
+Front-end frameworks — Bootstrap, AngularJS, VueJS, ReactJS, JavaScript, TypeScript, Python, Ruby, PHP.
+Back-end frameworks — Express, Django, NodeJS, Ruby on Rails.
+Databases — MySQL, SQLite, Postgres, MongoDB, Cassandra, Apache storm, Sphinx.
+Additional skills — Git, Machine Learning, SSH, Linux Command, Data Structures, Character encoding.
+Some well-known tools and platforms used by full stack developers to make development more accessible and efficient are:
+
+GitHub
+Visual Studio Code
+WebStorm
+Slack
+CodePen
+Intellij/Eclipse
+PyCharm
+
+Five ‘simple & doable’ steps that will help you crack a full stack developer interview
+Step 1: Master the Basics
+
+Before diving into advanced topics, ensure you have a strong grasp of the basics. Full stack development often involves using a variety of technologies, and understanding the fundamentals is crucial.
+
+You might be asked questions about basic concepts in programming, data structures, algorithms, and web development, so review these thoroughly.
+
+Step 2: Problem-Solving Practice
+
+Full stack developers are problem solvers at heart. They don't just write code; they find creative and efficient solutions to real-world challenges.
+
+Dedicate time to practice solving problems, preferably a variety of them with different levels of complexity. Use online coding platforms or take on side projects to sharpen your problem-solving skills.
+
+Step 3: Build Micro-Projects
+
+Building small projects can be incredibly beneficial. They allow you to apply what you've learned, gain practical experience, and showcase your skills.
+
+Consider creating web applications that incorporate both frontend and backend development. Working on these mini-projects will reinforce your understanding of how various technologies interact.
+
+Step 4: Mock Interviews
+
+Practice makes perfect. Engage in mock interviews to simulate the real interview experience. Many tech communities and online platforms offer mock interview sessions.
+
+This helps you become more comfortable with answering questions under pressure, receive constructive feedback, and identify areas for improvement.
+
+Step 5: Think Like a Leader
+
+Full stack developers often oversee entire projects or features. Start thinking like a leader during your coding practice. Consider the bigger picture, understand how your code fits into the overall architecture, and take ownership of your work. This mindset is valuable in interviews and will serve you well in your career.
+
+
+Почему вы заинтересованы в этой должности?
+
+Как вы узнали о нашей компании?
+
+Что вы можете рассказать нам о себе?
+
+Как бы вы описали свой стиль работы или управления?
+
+Предпочитаете ли вы работать индивидуально или как член команды?
+
+Как вы следите за тенденциями развития back-end разработки??
+
+На вашей последней должности, каковы были ваши основные должностные обязанности?
+
+Где вы видите себя в профессиональном плане через пять лет??
+
+Какими словами ваши коллеги могли бы описать вас?
+
+Что вас больше всего радует в этой работе??
+
+Помимо общих вопросов, потенциальный работодатель, ищущий разработчика программного обеспечения, скорее всего, захочет узнать больше о вашем опыте и технической подготовке. Эти вопросы оценивают ваши стили работы и предпочтения, чтобы оценить ваш предыдущий опыт:
+
+Как вы начали заниматься кодированием?
+
+В чем ваша самая сильная сторона как кодера?
+
+Если бы вы возглавили технологическую компанию, как бы вы управляли ее разработчиками??
+
+Расскажите о случае, когда кто-то критиковал вашу работу, и объясните, как вы на это отреагировали.
+
+Как вы доносите негативную обратную связь до членов вашей команды разработчиков?
+
+Приходилось ли вам работать над командным проектом, в котором вы чувствовали, что выполняете большую часть работы?? Как вам это удалось?
+
+Расскажите о достижении в области кодирования, которым вы больше всего гордитесь?
+
+С каким самым сложным решением вы столкнулись в своей карьере??
+
+Каков ваш опыт работы с объектно-ориентированным программированием (ООП)?
+
+Какой ваш любимый язык программирования и почему?
+
+Каков ваш опыт работы с GoTo, и предпочитаете ли вы структурированное программирование?
+
+Как бы вы объяснили разницу между дизайном и архитектурой?
+
+Дайте определение терминам стек и куча. Что такое переполнение стека?
+
+В чем разница между связностью и сцеплением?
+
+Когда полезен рефакторинг?
+
+Что означают термины высокая связность и свободная связность ?
+
+Каковы плюсы и минусы хранения доменной логики в хранимых процедурах?
+
+Как вы думаете, почему объектно-ориентированное проектирование является предпочтительным подходом??
+
+Чего вам не хватает в вашем любимом языке разработки? Как вы справляетесь с этими пробелами?
+
+Что общего между классами и закрытиями?
+
+Когда полезны анонимные функции?
+
+Situational interview questions
+Imagine that you are working on a web application and the users are reporting slow page load times, what steps would you take to diagnose and resolve the issue?
+You have been tasked with revamping the authentication system of a legacy application. How would you approach this task and what challenges do you anticipate?
+You’re working on a project with tight deadlines and a new requirement comes in late in development. How would you prioritize this new requirement and integrate it into the project without jeopardizing the timeline?
+A feature that had been signed off and development completed has been found to be non-functional during the testing phase. How would you go about debugging the issue?
+You’ve been assigned the task of building a new feature that requires integration with a third-party application. How would you approach this and what factors would you need to take into consideration?
+Soft skills interview questions
+How do you communicate complex technical concepts to non-technical stakeholders?
+Can you give an example of a time when you had to work collaboratively on a project? How did you approach it?
+How do you handle conflicts and differences of opinions with team members?
+Can you describe a time when you had to adapt to changes in project requirements or timelines? How did you adjust your approach?
+How do you prioritize competing tasks and manage your time effectively to meet deadlines?
+Role-specific interview questions
+What are some major differences between front-end and back-end web development, and how do you approach each in your work as a Full Stack Developer?
+Could you walk us through how you would optimize a web page’s load speed, both from a front-end and back-end perspective?
+Have you worked with any particular databases or technologies for backend data management? What are your thoughts on their strengths and weaknesses in real-world scenarios?
+What web development frameworks or libraries are you particularly proficient in, and what unique advantages do they offer compared to other options?
+Have you built any particularly complex or interesting web applications in your career as a Full Stack Developer? Could you tell us about the most challenging technical aspects of those projects?
+
+STAR interview questions
+1. Can you please provide an example of a complex project you have worked on as a Full Stack Developer?
+
+Situation: A complex project.
+
+Task: Your responsibilities or assignments in that specific project.
+
+Action: The steps you took or the procedure you used for the project.
+
+Result: The results of your actions.
+
+2. Have you ever faced a bug that took you longer to solve than expected?
+
+Situation: A bug that was hard to solve.
+
+Task: Your responsibilities or assignments while trying to solve the bug.
+
+Action: The steps you took or the procedure you used to solve the bug.
+
+Result: Whether you were able to solve the bug, how long it took you, and what you learned from the experience.
+
+3. Can you talk about a time when you had to utilize a new tool or technology?
+
+Situation: A new tool or technology.
+
+Task: Your responsibilities or assignments involving the new tool or technology.
+
+Action: The steps you took or the procedure you used to learn and utilize the new tool or technology.
+
+Result: The results of utilizing the new tool or technology.
+
+4. How did you manage to deliver a project under intense pressure and within a tight deadline?
+
+Situation: A project with intense pressure and tight deadline.
+
+Task: Your responsibilities or assignments during the project.
+
+Action: The steps you took or the procedure you used to manage intense pressure and deliver the project on time.
+
+Result: The results of delivering the project under intense pressure and within a tight deadline.
+
+5. Can you share an example of how you collaborated with your colleagues to solve a challenging problem when working on a project?
+
+Situation: A challenging problem during a project.
+
+Task: Your responsibilities or assignments involving the challenging problem.
+
+Action: The steps you took or the procedure you used to collaborate with colleagues and solve the problem.
+
+Result: The results of working collaboratively to solve the challenging problem.
+
+
+A screening call with HR.
+One or two technical interviews focusing on programming skills, problem-solving, and technical knowledge in both front-end and back-end technologies.
+A coding challenge or a take-home assignment.
+A system design interview, where you may be asked to design a complete application or a feature.
+A behavioral interview to assess cultural fit, soft skills, and experience.
+In some cases, there may also be a final interview with higher management or a team lead.
+4. What questions will I be asked in a Full Stack developer interview?
+In a Full Stack Developer interview, you can expect questions like:
+
+Front-end: Questions on HTML, CSS, JavaScript, and frameworks like React or Angular. Example: “How do you manage state in React?”
+Back-end: Questions on server-side languages (e.g., Java, Node.js), databases, and API development. Example: “Explain RESTful services.”
+Full Stack: Questions that involve both front-end and back-end, like how to connect a database to a user interface.
+Coding problems involving data structures and algorithms.
+System design questions, such as designing a scalable web application.
+Behavioral questions to understand your work style, problem-solving approach, and collaboration skills.
+
+Tips For Preparing For Full Stack Interview
+Master the Fundamentals: Prioritize foundational knowledge in HTML, CSS, JavaScript, and a server-side language like Python, Java, or Node.js. Brush up on data structures, algorithms, and object-oriented programming concepts.
+Practice Live Coding: Sharpen your problem-solving skills and coding fluency by tackling interview-style coding challenges on platforms like LeetCode or HackerRank. Don’t just focus on solutions, explain your thought process and approaches clearly.
+Build a Showcase Portfolio: Highlight your practical skills and creative spirit by showcasing personal projects. Choose diverse projects that demonstrate your front-end, back-end, and problem-solving abilities. Aim for clean code, user-friendly interfaces, and well-documented projects.
+Deep Dive into Relevant Technologies: Research the specific technologies and frameworks used by companies you’re interested in. Familiarity with their specific tools and functionalities will set you apart during interviews.
+Behavioral Interview Prep: Don’t underestimate the importance of soft skills. Prepare for behavioral questions by practicing storytelling techniques and articulating past experiences to showcase teamwork, problem-solving, and communication skills.
+Practice, Practice, Practice: Creating mock interviews with friends, colleagues, or online platforms can refine your presentation skills, build confidence, and help you anticipate common Full Stack developer interview questions and scenarios.
+Bonus Tip: Stay updated on the latest trends and technologies in the full-stack world. Participating in online communities, attending workshops, and reading industry publications can demonstrate your passion and dedication to continuous learning. 
+
+1. Can you describe your experience with front-end and back-end technologies? Which ones are you most proficient in?
+As a Senior Full Stack Developer, you are expected to be proficient in both front-end and back-end technologies to create seamless, fully functioning applications. By asking this question, interviewers are looking to gauge your expertise and experience with various programming languages, frameworks, and tools. They want to know if you have the necessary skills to handle the full spectrum of development tasks, and if your proficiencies match the company’s specific tech stack and project requirements.
+
+Example: “Throughout my career as a full stack developer, I have gained extensive experience working with both front-end and back-end technologies. On the front-end side, I am proficient in HTML5, CSS3, and JavaScript, along with popular frameworks like React and Angular. These tools have allowed me to create responsive and user-friendly interfaces that enhance user experiences.
+
+As for back-end development, I have worked extensively with Node.js, Python, and Ruby on Rails, which has enabled me to build robust and scalable server-side applications. My expertise also includes database management using SQL and NoSQL solutions such as MySQL, PostgreSQL, and MongoDB. Among these technologies, I consider myself most proficient in JavaScript-based stacks, particularly the MERN (MongoDB, Express, React, and Node.js) stack, due to its versatility and efficiency in building end-to-end web applications.”
+
+2. What is the role of a Senior Full Stack Developer in a development team, and how do you contribute to the success of the team?
+A Senior Full Stack Developer not only possesses expertise in both front-end and back-end development, but also brings leadership, mentorship, and guidance to the development team. Interviewers ask this question to gauge your understanding of the expectations and responsibilities that come with the senior role. They want to know how you will contribute to the team’s success through effective collaboration, sharing knowledge, and helping other team members grow professionally. Additionally, they’re looking for insights into how you approach problem-solving, project management, and ensuring the overall quality of the team’s output.
+
+Example: “As a Senior Full Stack Developer, my role within the development team is to provide technical leadership and expertise across all aspects of software development, from front-end user interfaces to back-end server-side components. This involves designing, implementing, and maintaining high-quality code that meets both functional and non-functional requirements while adhering to best practices.
+
+One way I contribute to the success of the team is by mentoring junior developers, sharing my knowledge and experience to help them grow professionally. I also collaborate closely with other team members, such as product managers, designers, and QA engineers, to ensure we deliver cohesive solutions that meet our users’ needs. Additionally, I actively participate in code reviews and architectural discussions, providing constructive feedback and suggestions for improvement. This collaborative approach not only helps maintain a high standard of code quality but also fosters a positive team culture where everyone feels valued and supported.”
+
+3. How do you ensure that your code is maintainable and scalable for future updates or changes?
+In the fast-paced world of software development, code must be adaptable to accommodate the ever-evolving landscape of technology. As a senior full stack developer, you’ll be responsible for creating a solid foundation for your company’s applications, which means your code must be both maintainable and scalable. Interviewers ask this question to gauge your understanding of best practices in structuring code, your ability to foresee potential challenges, and your commitment to writing clean, efficient, and well-documented code that can be easily updated or modified by other team members.
+
+Example: “To ensure that my code is maintainable and scalable, I adhere to best practices and established coding standards. First, I focus on writing clean, modular code by breaking down complex tasks into smaller, reusable functions or components. This approach not only makes the code easier to understand but also simplifies future updates.
+
+Another key aspect is proper documentation and commenting within the code. I make sure to provide clear explanations of each function’s purpose, input parameters, and expected output. This helps other developers quickly grasp the logic behind the code and facilitates efficient collaboration.
+
+Moreover, I prioritize using version control systems like Git for tracking changes and managing different branches of the project. This allows me and the team to work simultaneously on various features without conflicts while maintaining a history of all modifications made to the codebase. In summary, by following these principles, I strive to create code that is both maintainable and scalable, ensuring smooth adaptation to future requirements and growth.”
+
+4. Describe your experience working with version control systems like Git.
+Version control systems are essential tools in software development, as they help manage and track changes to codebases, streamline collaboration, and prevent conflicts. Interviewers want to ensure that you have the necessary experience and understanding of version control systems, particularly popular ones like Git, to effectively contribute to the team and maintain code integrity throughout the development process.
+
+Example: “Throughout my career as a full stack developer, I have extensively used Git for version control. It has been an essential tool in managing codebases and collaborating with other developers on various projects. My experience includes creating and managing repositories, branching and merging strategies, resolving conflicts, and using pull requests to review and integrate changes.
+
+I am well-versed in best practices such as committing small, logical units of work, writing clear commit messages, and regularly syncing local branches with the remote repository. This approach ensures that my team can easily understand the history of the project and minimizes potential issues when integrating code from multiple contributors. Additionally, I’ve found that adhering to these practices significantly improves collaboration and overall efficiency within development teams.”
+
+5. What is your approach to testing and quality assurance for both front-end and back-end components?
+A developer’s approach to testing and quality assurance speaks volumes about their commitment to creating reliable, efficient, and user-friendly applications. By asking this question, interviewers want to gauge your understanding of the importance of thorough testing, how you handle potential bugs and issues, and the strategies you employ to ensure a seamless experience for end-users across both front-end and back-end components. This insight helps them determine if you’re the right fit for their development team and overall project goals.
+
+Example: “My approach to testing and quality assurance involves implementing a combination of manual and automated testing strategies for both front-end and back-end components. For the front-end, I prioritize usability and responsiveness by conducting cross-browser compatibility tests, ensuring that the user interface works seamlessly across different devices and screen sizes. Additionally, I use tools like Jest or Mocha for unit testing individual components and their interactions.
+
+For the back-end, I focus on functionality, performance, and security. I employ test-driven development (TDD) practices, writing test cases before developing features to ensure they meet requirements. This helps me catch potential issues early in the development process. I also utilize integration testing to verify that all components work together as expected, and stress testing to evaluate system performance under heavy loads.
+
+Throughout the entire development process, I maintain open communication with my team members, sharing progress updates and seeking feedback to continuously improve code quality. This collaborative approach ensures that we deliver reliable, high-quality software that meets overall business goals.”
+
+6. Can you explain the concept of RESTful APIs and their importance in web development?
+Diving into the world of web development, RESTful APIs play a pivotal role in connecting the front-end and back-end of applications. By asking this question, interviewers want to gauge your understanding of how RESTful APIs work, and how they facilitate seamless communication between client and server. This demonstrates that you’re familiar with modern web development practices and can design and implement APIs that efficiently integrate with various components of a web application.
+
+Example: “RESTful APIs, or Representational State Transfer APIs, are a set of architectural principles that define how web services should be designed to facilitate communication between client and server. They use standard HTTP methods like GET, POST, PUT, and DELETE for data manipulation and follow a stateless approach, meaning each request from the client contains all the information needed by the server to process it.
+
+The importance of RESTful APIs in web development lies in their simplicity, scalability, and ease of integration. Their standardized design allows developers to build applications with better interoperability across different platforms and languages. Additionally, since they’re stateless, RESTful APIs can handle multiple requests efficiently, improving performance and reducing server load. This makes them an ideal choice for modern web applications that require seamless interaction between various components and systems while maintaining high levels of performance and reliability.”
+
+7. How do you handle cross-browser compatibility issues when developing a web application?
+Cross-browser compatibility is essential to ensure that your web application provides a consistent and smooth user experience across various browsers, devices, and platforms. Addressing this question demonstrates your awareness of the challenges that come with developing web applications and your ability to implement best practices and solutions to create a seamless experience for all users, regardless of their preferred browser.
+
+Example: “Cross-browser compatibility is essential for ensuring a consistent user experience across different browsers and devices. To handle these issues, I start by following best practices in web development, such as using semantic HTML markup, CSS resets, and feature detection with tools like Modernizr. This helps create a solid foundation that minimizes potential discrepancies between browsers.
+
+During the development process, I use browser developer tools to test and debug my code on multiple browsers, including Chrome, Firefox, Safari, and Edge. Additionally, I leverage online testing platforms like BrowserStack or LambdaTest to simulate various devices and browser versions, which allows me to identify and fix any compatibility issues early on.
+
+When necessary, I employ progressive enhancement techniques and graceful degradation strategies to ensure that core functionality remains accessible even if certain features are not supported by older browsers. This approach ensures that all users can access the web application’s primary content and functions while still providing an enhanced experience for those using modern browsers.”
+
+8. What is your experience with responsive design and mobile-first development?
+As the digital landscape continues to evolve, it’s critical to create web applications and websites that cater to various devices and screen sizes. Responsive design and mobile-first development have become essential elements in modern web development. By inquiring about your experience, interviewers seek to understand your ability to create user-friendly and accessible solutions that cater to the wide range of devices used by today’s consumers. Additionally, it demonstrates your adaptability to emerging trends in the field.
+
+Example: “As a Senior Full Stack Developer, I have extensive experience with responsive design and mobile-first development. Over the past five years, I’ve worked on numerous projects that required creating seamless user experiences across various devices and screen sizes.
+
+My approach to responsive design involves using CSS media queries, fluid grids, and flexible images to ensure that layouts adapt smoothly to different resolutions. Additionally, I prioritize performance optimization by implementing techniques such as lazy loading, minification, and caching to enhance load times for mobile users.
+
+For mobile-first development, I start by designing and building the application’s core functionality for smaller screens, ensuring optimal usability on smartphones and tablets. This allows me to focus on essential features and progressively enhance the application for larger screens and more advanced devices. My familiarity with popular front-end frameworks like Bootstrap and Foundation has also been instrumental in streamlining my workflow and delivering consistent results in both responsive design and mobile-first development.”
+
+9. Describe a challenging project you’ve worked on as a full stack developer and how you overcame those challenges.
+Delving into a challenging project experience allows interviewers to gauge your problem-solving abilities, technical expertise, and adaptability. They want to understand how you handle complex tasks, collaborate with team members, and identify innovative solutions. Additionally, it offers insight into your learning experiences and how you apply those lessons to future projects. This question helps interviewers assess whether you can successfully tackle their company’s development challenges and contribute to the team’s success.
+
+Example: “One of the most challenging projects I’ve worked on was developing a real-time collaboration platform for a large organization. The main challenge was ensuring seamless communication between front-end and back-end components while maintaining high performance and scalability.
+
+To overcome this challenge, I first conducted thorough research to identify the best technologies and frameworks suitable for the project requirements. I chose React for the front-end due to its efficient rendering capabilities and Node.js with Express for the back-end because of its non-blocking architecture, which is ideal for handling multiple concurrent connections.
+
+The next step involved designing an efficient data flow using WebSockets to enable real-time updates without overloading the server. To ensure smooth integration between front-end and back-end components, I implemented a well-structured API that facilitated clear communication between both ends.
+
+Throughout the development process, I collaborated closely with my team members, sharing knowledge and addressing any issues that arose. We also employed agile methodologies, allowing us to iterate quickly and adapt to changing requirements. Ultimately, we successfully delivered a robust and scalable real-time collaboration platform that met the client’s expectations and contributed to their overall business goals.”
+
+10. Explain the differences between SQL and NoSQL databases. In which situations would you choose one over the other?
+The interviewer wants to gauge your understanding of database systems and your ability to make informed decisions based on the needs of a project. By explaining the differences between SQL and NoSQL databases, and providing examples of when to use each, you demonstrate your technical knowledge and your capacity to choose the most suitable option for a given scenario, ensuring efficient and effective solutions.
+
+Example: “SQL databases are relational databases that use Structured Query Language (SQL) for defining and manipulating data. They follow a schema-based structure, which means the data is organized into tables with predefined columns and relationships between them. SQL databases excel in situations where complex queries and transactions are required, such as financial applications or systems that need to maintain data integrity.
+
+On the other hand, NoSQL databases are non-relational and do not rely on a fixed schema. They store data in various formats like key-value pairs, documents, graphs, or column families. NoSQL databases are highly scalable and offer better performance when dealing with large volumes of unstructured or semi-structured data. They are well-suited for applications that require flexibility, rapid development, or real-time processing, such as content management systems, big data analytics, or IoT applications.
+
+When choosing between SQL and NoSQL databases, it’s essential to consider factors like the nature of the data, query complexity, scalability requirements, and consistency needs. For instance, if an application requires strict ACID compliance and involves complex transactions, an SQL database would be more appropriate. Conversely, if the focus is on handling massive amounts of flexible data with high write loads, a NoSQL database might be the better choice.”
+
+11. What security measures do you take into consideration when developing a web application?
+Security is a top priority in web development, as vulnerabilities can lead to data breaches, loss of customer trust, and significant financial losses. Interviewers ask this question to gauge your understanding of various security measures and ensure that you can incorporate them into the development process to create secure, reliable web applications that protect sensitive data and maintain a positive user experience.
+
+Example: “As a Senior Full Stack Developer, I prioritize security throughout the entire development process to protect both user data and the application itself. One of the first measures I take is implementing secure authentication protocols such as OAuth2 or JWT for user authentication and authorization. This ensures that only authorized users can access specific resources within the application.
+
+Another critical aspect is input validation and sanitization to prevent attacks like SQL injection and cross-site scripting (XSS). I make sure to validate all user inputs on both client-side and server-side, using libraries like OWASP’s ESAPI when necessary. Additionally, I employ Content Security Policy (CSP) headers to mitigate XSS risks further.
+
+On the server side, I ensure proper encryption of sensitive data, especially during transmission, by enforcing HTTPS with strong SSL/TLS configurations. I also follow the principle of least privilege, granting minimal permissions required for each component to function correctly. Regularly updating dependencies and conducting thorough code reviews are other practices I adhere to in order to maintain a secure web application.”
+
+12. Have you ever had to refactor legacy code? If so, what was your approach?
+Refactoring legacy code is a common challenge faced by developers in fast-evolving industries. Your approach to this task speaks volumes about your technical skills, problem-solving abilities, and adaptability. Interviewers want to understand your thought process and strategy when dealing with outdated or inefficient code, and how you balance the need for improvement with maintaining functionality and meeting deadlines.
+
+Example: “Yes, I have had to refactor legacy code in a previous project where we were migrating from an older framework to a more modern one. My approach involved several steps to ensure a smooth transition without disrupting the existing functionality.
+
+Initially, I analyzed the legacy code thoroughly to understand its structure and dependencies. This allowed me to identify areas that required refactoring and those that could be reused with minimal changes. Next, I prioritized the refactoring tasks based on their impact on the overall system and potential benefits, such as improved performance or maintainability.
+
+During the refactoring process, I focused on modularizing the code by breaking it down into smaller, reusable components. This made it easier to test individual parts of the application and facilitated future updates. Additionally, I implemented best practices for coding standards and design patterns to improve the quality and readability of the code.
+
+Throughout the entire process, I maintained close communication with my team members and other stakeholders to keep them informed about the progress and any potential challenges. This collaborative approach ensured that everyone was aligned with the goals and expectations of the refactoring effort, ultimately leading to a successful migration and improved system performance.”
+
+13. What is your experience with cloud platforms such as AWS, Azure, or Google Cloud Platform?
+As a Senior Full Stack Developer, you’re expected to have a comprehensive understanding of the technology stack used in your projects. Cloud platforms, such as AWS, Azure, and Google Cloud Platform, have become increasingly essential in modern software development. Employers want to know your experience with these platforms, as it showcases your ability to leverage cloud services effectively and efficiently, which in turn impacts the scalability, security, and performance of the projects you will work on.
+
+Example: “Throughout my career as a full stack developer, I have had the opportunity to work with all three major cloud platforms: AWS, Azure, and Google Cloud Platform. My most extensive experience is with AWS, where I’ve utilized services such as EC2 for virtual servers, S3 for storage, RDS for managed databases, and Lambda for serverless computing. I’ve also implemented CI/CD pipelines using AWS CodePipeline and CodeDeploy.
+
+With Azure, I’ve worked on projects that involved deploying web applications using App Services, managing databases with Azure SQL Database, and implementing Azure Functions for serverless architecture. Additionally, I have some experience with Azure DevOps for project management and continuous integration.
+
+As for Google Cloud Platform, my exposure has been more limited but still valuable. I’ve used Google Compute Engine for virtual machines, Cloud Storage for object storage, and Firebase for real-time database solutions. In each case, I’ve focused on leveraging these platforms’ capabilities to optimize performance, scalability, and cost-efficiency in alignment with project requirements.”
+
+14. Describe a situation where you had to troubleshoot and resolve a performance issue in a web application.
+When asking this question, interviewers are looking for insight into your ability to identify, analyze, and resolve performance-related issues in web applications. This showcases your technical expertise, problem-solving skills, and adaptability to handle complex situations. Additionally, it demonstrates your commitment to delivering high-quality, efficient products to users and the impact it has on the overall user experience.
+
+Example: “I once worked on a web application that experienced significant performance issues, particularly during peak usage times. Users reported slow page load times and occasional timeouts, which negatively impacted their experience with the application. To address this issue, I first analyzed server logs and used monitoring tools to identify bottlenecks in the system.
+
+Upon investigation, I discovered that the primary cause of the performance issue was inefficient database queries, leading to high CPU usage on the database server. To resolve this, I optimized the problematic queries by adding appropriate indexes and restructuring them for better performance. Additionally, I implemented caching mechanisms to store frequently accessed data, reducing the load on the database server.
+
+After deploying these changes, we observed a substantial improvement in the application’s performance, even during peak hours. The users’ experience improved significantly, and the number of complaints regarding slow page loads and timeouts decreased dramatically. This experience reinforced the importance of continuously monitoring and optimizing web applications to ensure optimal performance and user satisfaction.”
+
+15. What is your preferred JavaScript framework (e.g., React, Angular, Vue) and why?
+The interviewer is looking for insight into your technical expertise, decision-making process, and how well you stay updated on industry trends. Your preferred JavaScript framework can reveal your approach to solving problems, your familiarity with different tools, and your adaptability to new technologies. Demonstrating a strong preference and understanding of a particular framework can indicate your proficiency and dedication to keeping up with the fast-paced world of web development.
+
+Example: “My preferred JavaScript framework is React, primarily due to its flexibility and performance. React’s component-based architecture allows for better code organization and reusability, which streamlines the development process and makes it easier to maintain large-scale applications.
+
+Another advantage of React is its virtual DOM implementation, which optimizes rendering by only updating components that have changed. This results in improved performance and a smoother user experience. Additionally, React has strong community support and extensive libraries, making it an ideal choice for developing modern web applications.”
+
+16. Can you discuss your experience with server-side languages like Node.js, Python, Ruby, or PHP?
+As a Senior Full Stack Developer, you’ll be responsible for overseeing the entire development process, from designing and coding to testing and implementation. Your ability to work with server-side languages is essential for building robust and efficient back-end systems that power web applications. Interviewers ask this question to gauge your expertise and ensure you have the necessary programming skills to excel in your role and contribute to the team’s success.
+
+Example: “Certainly, I have extensive experience working with server-side languages throughout my career as a full stack developer. My primary expertise lies in Node.js and Python, which I’ve used to develop various web applications and APIs.
+
+With Node.js, I’ve built scalable and high-performance backends using Express.js framework, taking advantage of its asynchronous nature for handling multiple requests efficiently. I’ve also implemented real-time communication features using Socket.IO and integrated databases like MongoDB and PostgreSQL.
+
+As for Python, I’ve utilized Django and Flask frameworks to create robust web applications, focusing on clean code and maintainability. I’ve worked with ORM tools such as SQLAlchemy and Django’s built-in ORM to interact with relational databases effectively. Additionally, I’ve employed Celery for task queue management and background processing tasks.
+
+While my experience with Ruby and PHP is not as extensive, I have developed smaller projects using Ruby on Rails and Laravel frameworks, respectively. This exposure has given me an understanding of their syntax, conventions, and best practices, allowing me to adapt quickly when needed.”
+
+17. How do you stay up-to-date with the latest trends and best practices in full-stack development?
+In the ever-evolving world of technology, it’s essential for developers to stay current with industry trends and advancements. By asking this question, interviewers want to gauge your ongoing commitment to professional growth and your ability to adapt to new technologies, tools, and methodologies. Staying updated not only demonstrates a passion for your field but also ensures that you can contribute innovative ideas and solutions that keep the company competitive in the market.
+
+Example: “To stay up-to-date with the latest trends and best practices in full-stack development, I actively engage in continuous learning through various channels. One of my go-to resources is online tech blogs and forums like Hacker News, Stack Overflow, and Medium, where I can read about new technologies, frameworks, and libraries being used by other developers.
+
+I also participate in local developer meetups and conferences to network with fellow professionals and learn from their experiences. These events often feature talks on emerging trends and provide hands-on workshops that help me gain practical knowledge.
+
+Another essential aspect of staying current is experimenting with new tools and techniques in personal projects or side gigs. This hands-on approach allows me to evaluate the benefits and drawbacks of new technologies before considering them for implementation in a professional setting. Ultimately, this combination of research, networking, and experimentation ensures that I remain well-informed and adaptable as a senior full-stack developer.”
+
+18. What is your experience with containerization tools like Docker or Kubernetes?
+As a Senior Full Stack Developer, your interviewer wants to gauge your familiarity with containerization tools and how they streamline the development process. These tools are essential for ensuring efficient deployment, scaling, and management of applications in a cloud environment. Demonstrating your experience with Docker or Kubernetes will indicate that you have the technical know-how to effectively implement and manage these tools, which can have a significant impact on the company’s overall development strategy.
+
+Example: “Throughout my career as a full stack developer, I have extensively used containerization tools like Docker and Kubernetes to streamline the development process and improve deployment efficiency. My experience with Docker includes creating custom images for applications, managing containers, and setting up private registries. This has allowed me to create isolated environments for each application component, ensuring consistency across different stages of development and reducing potential conflicts.
+
+As for Kubernetes, I have been responsible for deploying and managing containerized applications at scale in production environments. My work involved configuring Kubernetes clusters, setting up load balancing, monitoring system performance, and implementing auto-scaling policies. This hands-on experience with both Docker and Kubernetes has enabled me to optimize resource utilization, enhance application reliability, and significantly reduce deployment times, ultimately contributing to the overall success of the projects I’ve worked on.”
+
+19. Describe a time when you had to collaborate with non-technical stakeholders on a project. How did you communicate complex technical concepts to them?
+Collaboration and communication are essential qualities for a senior full stack developer, as you’ll often work with team members who may not share your technical expertise. Interviewers want to see that you can effectively explain complicated technical ideas to non-technical stakeholders, ensuring that everyone is on the same page and can contribute meaningfully to the project. Your ability to bridge the gap between technical and non-technical team members can greatly impact the success of a project.
+
+Example: “I recall working on a project where we were developing an e-commerce platform for a client. The stakeholders included the marketing team, sales department, and upper management, most of whom had limited technical knowledge. It was essential to ensure that they understood the technical aspects of the project so that their expectations were aligned with what our development team could deliver.
+
+To communicate complex technical concepts effectively, I focused on using simple language and analogies that related to their everyday experiences. For instance, when explaining database structures, I compared them to filing cabinets with organized folders. Additionally, I prepared visual aids like flowcharts and diagrams to help illustrate how different components of the system interacted with each other. This approach made it easier for non-technical stakeholders to grasp the underlying technology and its implications on the project’s success. As a result, we were able to collaborate more efficiently, address concerns promptly, and ultimately deliver a product that met everyone’s expectations.”
+
+20. What is your approach to handling and prioritizing multiple projects or tasks simultaneously?
+In the fast-paced world of software development, it’s common for senior developers to juggle multiple projects or tasks. Interviewers want to know how you manage your time, prioritize tasks, and maintain focus to ensure that deadlines are met and the work is of high quality. Your approach to handling multiple responsibilities can show your potential employer how you’ll perform under pressure and contribute to the team’s overall success.
+
+Example: “As a Senior Full Stack Developer, I understand the importance of effectively managing multiple projects or tasks to ensure timely delivery and maintain high-quality work. My approach involves breaking down each project into smaller, manageable tasks and setting clear priorities based on deadlines, dependencies, and overall business impact.
+
+I use tools like Jira or Trello to create a visual representation of my workload, which helps me stay organized and track progress. This also allows for better communication with team members and stakeholders regarding task status and potential roadblocks. Additionally, I allocate time for regular code reviews and testing to ensure that quality is maintained throughout the development process.
+
+When faced with competing priorities, I communicate openly with my team and project managers to discuss resource allocation and possible adjustments to timelines. This collaborative approach ensures that everyone is aware of any changes in priorities and can adapt accordingly, ultimately contributing to the successful completion of all projects.”
+
+21. Have you ever had to mentor junior developers? If so, how did you help them grow in their roles?
+Mentoring is a crucial aspect of being a senior full stack developer. Interviewers want to know if you have experience in nurturing the skills and career growth of junior team members. Your ability to share knowledge, provide guidance, and support the development of others not only showcases your leadership skills, but also contributes to the overall success and growth of the team and company.
+
+Example: “Yes, I have had the opportunity to mentor junior developers in my previous role. My approach focused on fostering a supportive learning environment and providing them with practical guidance. Initially, I would assess their current skill set and identify areas where they needed improvement or further development. This allowed me to tailor my mentoring strategy to address their specific needs.
+
+One of the key methods I employed was involving them in real-world projects under my supervision. This hands-on experience enabled them to apply their theoretical knowledge while gaining exposure to various aspects of software development. Additionally, I conducted regular code reviews and provided constructive feedback, which helped them refine their coding practices and learn industry best practices.
+
+To encourage continuous growth, I also shared relevant resources such as articles, online courses, and workshops that could help expand their knowledge base. Furthermore, I made myself available for any questions or concerns they might have, ensuring open communication and promoting a culture of collaboration and mutual learning within the team. Through this comprehensive approach, I witnessed significant progress in their skills and confidence over time, ultimately contributing to the overall success of our projects.”
+
+22. Can you explain the concept of Continuous Integration/Continuous Deployment (CI/CD) and its benefits?
+An understanding of CI/CD is essential for modern software development. This question lets interviewers assess your familiarity with Continuous Integration and Continuous Deployment, which are key practices for ensuring code quality, efficient collaboration, and faster delivery of software updates. Your ability to explain CI/CD and its benefits demonstrates your knowledge of agile methodologies and your experience in working within a team that prioritizes efficient development processes.
+
+Example: “Continuous Integration/Continuous Deployment (CI/CD) is a software development practice that emphasizes the frequent integration of code changes into a shared repository and automates the process of building, testing, and deploying applications. The primary goal of CI/CD is to minimize the time between writing code and getting it live in production while maintaining high quality.
+
+The benefits of CI/CD include faster feedback loops, improved collaboration among team members, and reduced risk associated with deployments. With CI, developers can identify and fix issues early in the development cycle, leading to more stable releases. CD ensures that new features and bug fixes are delivered to end-users quickly and efficiently. This streamlined approach reduces manual intervention, human error, and downtime during deployment, ultimately resulting in increased productivity, customer satisfaction, and business agility.”
+
+23. Describe a situation where you had to make a trade-off between performance and maintainability in your code.
+This question seeks to uncover your ability to balance competing priorities in software development. As a Senior Full Stack Developer, you are expected to have the experience and knowledge to make informed decisions in situations where perfect solutions are not always possible. Your response will demonstrate your ability to evaluate trade-offs and make strategic choices that benefit the project in the long term while maintaining a focus on immediate performance needs.
+
+Example: “During a previous project, I was tasked with optimizing the performance of an e-commerce website that had been experiencing slow page load times. After analyzing the codebase, I identified several inefficient database queries and complex calculations being performed on the server-side, which were causing bottlenecks.
+
+To improve performance, I decided to offload some of these calculations to the client-side using JavaScript. This approach significantly reduced the server’s workload and improved page load times. However, this trade-off meant that the maintainability of the code became more challenging since logic was now distributed between the server and client sides.
+
+To mitigate the impact on maintainability, I made sure to thoroughly document the changes and implemented unit tests for both the server-side and client-side components. Additionally, I ensured that the code followed best practices and adhered to our team’s coding standards. This way, future developers working on the project would have a clear understanding of the system architecture and could easily update or modify the code as needed.”
+
+24. How do you ensure that your web applications are accessible to users with disabilities?
+Accessibility is an essential aspect of web development, as it allows all users, including those with disabilities, to access and interact with your web applications. By asking this question, interviewers want to gauge your understanding of accessibility concerns, your ability to implement inclusive design practices, and your commitment to providing equal access to online resources for all users. This demonstrates your awareness of industry standards and your ability to create user-friendly applications that cater to a diverse audience.
+
+Example: “As a Senior Full Stack Developer, I prioritize accessibility by adhering to the Web Content Accessibility Guidelines (WCAG) and incorporating best practices throughout the development process. This involves designing and implementing user interfaces that are easily navigable for users with disabilities, such as those who rely on screen readers or keyboard navigation.
+
+To achieve this, I use semantic HTML tags to provide meaningful structure and context to the content, ensuring proper heading hierarchy and using ARIA attributes when necessary. Additionally, I pay close attention to color contrast ratios, font sizes, and responsive design to accommodate various devices and assistive technologies. Furthermore, I regularly test my applications with accessibility tools like Lighthouse and axe-core to identify and address any potential issues before they reach production.
+
+Collaborating closely with designers and other developers, we work together to create an inclusive experience for all users, ultimately supporting the company’s commitment to diversity and inclusion while also expanding our audience reach.”
+
+25. What is your experience with microservices architecture, and when would you recommend using it?
+When it comes to developing robust and scalable applications, understanding various architectural approaches is essential. Interviewers want to ensure that you, as a Senior Full Stack Developer, have experience with microservices architecture and are capable of analyzing its suitability for a particular project. This reveals your ability to make informed decisions, adapt to different technologies, and work on projects that demand a high level of expertise and strategic thinking.
+
+Example: “I have extensive experience working with microservices architecture in several projects, ranging from e-commerce platforms to enterprise-level applications. My involvement has included designing, developing, and deploying individual services, as well as integrating them into a cohesive system using APIs and message brokers.
+
+Microservices architecture is particularly beneficial when scalability, flexibility, and maintainability are critical factors for the project’s success. I would recommend using it in situations where different components of an application need to evolve independently or require distinct technology stacks. Additionally, microservices can help distribute development tasks across multiple teams, enabling parallel work and faster delivery.
+
+However, it’s essential to consider the trade-offs, such as increased complexity in managing inter-service communication and potential latency issues. Therefore, before opting for microservices, it’s vital to assess whether the benefits outweigh these challenges based on the specific requirements and constraints of the project.”
+
+26. Explain the importance of clean code and coding standards in a development team.
+Clean code and coding standards are essential for any development team to ensure efficiency, maintainability, and collaboration. By asking this question, interviewers aim to assess your understanding of these concepts and your ability to work well within a team, as well as your commitment to producing high-quality software that stands the test of time. They want to ensure you recognize the value of writing clear, organized, and easily understandable code that can be modified and updated by others.
+
+Example: “Clean code and coding standards are essential in a development team for several reasons. Firstly, they promote readability and maintainability of the codebase. When all developers adhere to consistent naming conventions, indentation, and commenting practices, it becomes easier for any team member to understand and work on different parts of the project. This is particularly important when new members join the team or when someone needs to review or modify existing code.
+
+Secondly, clean code and coding standards contribute to better collaboration among team members. Consistent coding practices reduce the likelihood of conflicts during version control merges and make it simpler to identify and fix bugs. Moreover, following established guidelines ensures that the entire team is on the same page, which streamlines communication and fosters a more efficient development process. Ultimately, adhering to clean code principles and coding standards leads to higher-quality software and a more productive development environment.”
+
+27. What strategies do you use for optimizing front-end performance in a web application?
+Optimizing front-end performance is essential for providing a smooth and enjoyable user experience. By asking this question, interviewers are looking to gauge your knowledge of best practices, your ability to identify bottlenecks, and your skills in implementing solutions to improve the overall performance of a web application. Showcasing your expertise in this area demonstrates your commitment to delivering high-quality and efficient software.
+
+Example: “Optimizing front-end performance is essential for providing a smooth user experience. One strategy I employ is minimizing the number of HTTP requests by combining CSS and JavaScript files, using image sprites, and leveraging browser caching. This reduces the amount of data that needs to be transferred between the server and client, resulting in faster page load times.
+
+Another approach involves optimizing images and other media assets. I ensure images are appropriately sized and compressed without sacrificing quality, and use modern formats like WebP when possible. Additionally, I implement lazy loading techniques so that only visible content is loaded initially, with the rest being fetched as needed.
+
+For code optimization, I focus on writing clean, modular, and efficient code. This includes removing unused or redundant code, minifying CSS and JavaScript files, and utilizing asynchronous loading where appropriate. Furthermore, I prioritize critical rendering paths to render above-the-fold content quickly and defer non-critical resources. These strategies help improve overall front-end performance and contribute to a better user experience.”
+
+28. Describe your experience working with third-party APIs and integrating them into your projects.
+Hiring managers ask this question because they want to gauge your ability to work with external resources and understand how well you can integrate them into your projects. Third-party APIs are a common element in modern software development, and your ability to work with them demonstrates your adaptability, problem-solving skills, and ability to collaborate with external parties to achieve project goals.
+
+Example: “Throughout my career as a full stack developer, I have had the opportunity to work with various third-party APIs to enhance the functionality and user experience of the applications I’ve developed. One notable project involved integrating payment processing using Stripe API for an e-commerce platform. This required me to understand the API documentation thoroughly, implement secure authentication methods, and handle error responses effectively.
+
+Another example is when I integrated Google Maps API into a location-based service application. This allowed users to search for nearby points of interest and receive real-time directions. In this case, I focused on optimizing performance by minimizing API calls and caching data whenever possible. These experiences have taught me the importance of understanding the nuances of each API, adhering to best practices, and ensuring seamless integration within the existing codebase to support overall project goals.”
+
+29. What is your preferred method for handling user authentication and authorization in a web application?
+As a Senior Full Stack Developer, your in-depth expertise in the field is expected to encompass user authentication and authorization. The question is designed to gauge your grasp of secure and efficient methods for handling user access to a web application. Your response will provide insight into your technical knowledge, practical experience, and ability to make informed choices in selecting the most appropriate solutions for different scenarios.
+
+Example: “My preferred method for handling user authentication and authorization in a web application is by implementing JSON Web Tokens (JWT) along with OAuth 2.0. JWT provides a secure, stateless way to authenticate users, while OAuth 2.0 allows for delegated access control.
+
+When a user logs in, the server validates their credentials and generates a signed JWT containing the user’s information and permissions. This token is then sent back to the client, which stores it securely, typically in an HttpOnly cookie or local storage. For subsequent requests, the client includes the JWT in the request header, allowing the server to verify the user’s identity and permissions without needing to query the database each time.
+
+This approach offers several advantages, such as improved performance due to reduced database queries, better scalability since tokens can be easily distributed across multiple servers, and enhanced security through the use of short-lived tokens that minimize the risk of unauthorized access. Additionally, integrating OAuth 2.0 enables seamless integration with third-party services, providing users with a more convenient login experience.”
+
+30. Can you provide an example of a time when you had to learn a new technology quickly to meet project requirements?
+In the fast-paced world of technology, being adaptable and a quick learner is essential. Interviewers want to see that you can step out of your comfort zone and embrace new technologies, frameworks, or programming languages to meet the needs of a project. As a senior developer, you’ll be expected to lead by example and help your team members grow and adapt to industry changes. This question is meant to showcase your ability to do just that.
+
+Example: “Certainly, there was a project where our team was tasked with developing a web application for a client who specifically requested the use of React.js for the front-end. At that time, I had limited experience with React but was proficient in Angular. To meet the project requirements and timeline, I needed to quickly learn and adapt to this new technology.
+
+I started by dedicating my evenings and weekends to studying React through online tutorials, documentation, and sample projects. Within two weeks, I gained enough understanding to start contributing effectively to the project. As we progressed, I continued refining my skills by seeking advice from colleagues experienced in React and participating in relevant forums and communities.
+
+My ability to learn React quickly not only allowed me to contribute significantly to the project’s success but also expanded my skill set as a full stack developer. The project was completed on time, met all client requirements, and received positive feedback from both the client and end-users.”
+
+
+
+II) Behavioral Questions:
+1. Tell me about yourself.
+
+You can’t escape this question in any of the job interviews. Introducing yourself to the interview panel is generally the first thing you do in an interview. But the intention of the question is not just to know your name or educational qualification but to assess your confidence level too. In fact, this question sets the tone for the rest of the interview. Hence, this question must be very well prepared. But it must not seem rehearsed too.
+2. What are your greatest strengths?
+
+Always remember that your strengths should align with the job profile you are applying for. It can be your problem-solving skills, ability to work hard, technical expertise, leadership skills, positive attitude, etc.
+3. Where do you see yourself in five years?
+
+The tip to answering this question is to not be too specific in your reply. For example, don’t say something like you see yourself as the manager of XYZ team in the next 5 years. The intention of this question is to see if you want to get into a long-term commitment with the company.
+ 
+
+4. Describe your working style?
+
+In this question,  the interviewer wants to know your professional approach or the level of commitment to your work. They also want to see if your working style aligns with the company’s work culture. Hence, you must frame your answer accordingly. Here is an example:
+I can adapt to any workplace. While working alone, I chalk down my priorities and try to complete the tasks on schedule. But I also enjoy working in a team.
+5. Are you a team player?
+The company expects you to be a team player. So, always say this and keep some examples ready to support your answer.
+
+6. How would you be an asset to our organization?
+
+In this answer. let the company know about your strengths and how you can use the same to contribute towards the growth of the organization at large. Don’t forget! This question needs to be answered with immense confidence and conviction.
+ 
+
+7. What are your weaknesses?
+
+Refrain from saying anything that may make you seem like an unfit candidate for the job.  Some weaknesses that you can state are self-criticism, a workaholic attitude, shying away from asking for help, etc.  An example can be:
+I often tend to direct my attention towards self-improvement more than celebrating my biggest achievements in life. I know this can be helpful too, but I often fail to acknowledge myself or be satisfied with myself due to this habit. However, I am currently working on this weakness, and I am confident I will tone it down soon.
+ 
+
+8. Why do you want to work at TCS?
+
+TCS has a high rating on almost all employer rating platforms. The company is considered an employee-friendly organization and offers entry-level employees a healthy work environment and immense growth opportunities, training, and exposure in the IT industry. As a fresher or even as an experienced professional, you may state these reasons for joining TCS.
+ 
+
+9. Can you work under pressure?
+
+The ability to work under pressure is considered to be valuable quality for any professional. Hence, you must have a strong response ready to show that you are likely to perform well even under challenging circumstances.
+ 
+[⬆] Общие вопросы:
+Что вы изучили вчера/на этой неделе?
+Что вас привлекает в программировании?
+С какой технической сложностью вы недавно столкнулись и как с ней справились?
+Какие методы для повышения производительности вы использовали при создании или обслуживании сайта?
+Можете ли вы описать некоторые методы SEO, которые вы использовали в последнее время?
+Можете ли вы объяснить общие принципы относительно фронтенд-безопасности или недавние проблемы, которые вы решили?
+Какие действия вы лично предприняли в недавних проектах для повышения удобства использования вашего кода?
+Расскажите о предпочитаемой среде разработки.
+С какими системами контроля версий вы знакомы?
+Можете ли вы описать порядок действий при создании новой веб-страницы?
+Если у вас есть 5 разных файлов со стилями, какой лучший способ интегрировать их в сайт?
+Можете ли вы описать разницу между прогрессивным улучшением и изящной деградацией?
+Как можно оптимизировать загрузку внешних ресурсов на странице?
+Сколько ресурсов браузер может одновременно загружать с одного домена?
+Какие есть исключения?
+Назовите три способа уменьшения времени загрузки страницы (воспринимаемого или реального).
+Если вы присоединились к проекту, где для форматирования используются табы, а вы привыкли использовать пробелы, как вы поступите?
+Опишите, как бы вы реализовали примитивное слайд-шоу.
+Если бы у вас была возможность освоить новую технологию в этом году, что бы это было?
+Объясните важность стандартов и комитетов по стандартам.
+Что такое FOUC (Flash Of Unstyled Content)? Как его избежать?
+Объясните, что такое ARIA и скринридеры, а также как сделать сайт доступным.
+Какие преимущества и недостатки у CSS и JavaScript анимаций?
+Что означает CORS и какую проблему решает?
+
+CBI: интервью по компетенциям для технического специалиста
+Если кандидат на техническом интервью показал себя хорошо, он попадает на CBI. На этом этапе его компетенции рассматриваются более подробно. Для этого используется стандартная техника STAR, где подробнее анализируется опыт и позиции.
+
+Очень часто кандидат не проходит дальше из-за отсутствия необходимых soft skills. Тимлид оценивает не только его способности, но и общий fit: подойдет ли новый член команде, хорошо ли он впишется в коллектив, насколько он конфликтен, амбициозен, эмпатичен.
+
+Рассмотрим примеры:
+
+Кандидат хорошо показал себя на техническом интервью и отвечает позиции Middle+, но тяжело вступает в коммуникацию, не показывает нужных разговорных навыков, остается закрытым и не идет на контакт. На CBI можно узнать истинные причины такого поведения человека.
+Кандидат не четко указывает причину увольнения с прежней должности, дает отдаленные комментарии по этому поводу. Тогда команда определяет настоящие мотивы увольнения, смотрит на его поведение в конфликтной ситуации, думает о проблемах, которые могут возникнуть именно с этим разработчиком через 6–8 месяцев. Достаточно ли у него мотивации для самостоятельного обучения? Он ищет помощи со стороны или может справиться с трудом самостоятельно?
+«Частый запрос от кандидатов – это менторство и обучение внутри компании. 
+
+Претенденты стремятся, чтобы их буквально тыкали носом в заблуждение. Запрос направлен не на код ревю, а на получение более глубоких знаний. Даже на позиции Middle и Senior приходят кандидаты для которых один из основных мотиваторов – это менторство или обучение чему-то новому.
+
+В то же время, они не всегда готовы делиться своими знаниями или они не делали этого раньше. Для нас отсутствие желания делиться опытом является признаком профессиональной незрелости», – делится опытом Head of Engineering в HURMA
+
+Расскажите в двух словах о том, чем вы занимались в последнем проекте? В чем заключается ваша работа?
+Важно понять, как специалист структурирует информацию о своей роли и задачах.
+Расскажите о команде, с которой вы работаете. Как распределяются роли?
+Умение работать в команде и понимание её динамики — важный аспект, особенно при удаленной работе.
+В каких еще проектах вы принимали участие? Какова была ваша роль в этих проектах?
+Этот вопрос помогает раскрыть глубину и разнообразие опыта.
+Какая самая сложная задача, с которой вы сталкивались, и как вы её решили?
+Способность справляться с вызовами показывает уровень самостоятельности и креативности.
+Какие виды автоматизации сборки вы использовали? Чем обоснована необходимость использования GULP или Webpack?
+Знание инструментов сборки, таких как Webpack, показывает техническую осведомленность кандидата.
+Есть ли у вас опыт с Server-Side Rendering (SSR)?
+Мы выясняли, есть ли у кандидата навыки работы с SSR для оптимизации производительности приложения.
+Можете привести примеры из вашей практики, как вы использовали API?
+Практические примеры работы с API говорят о глубине опыта во взаимодействии с внешними сервисами.
+Какие утилиты вы используете для автоматической проверки «чистоты» кода?
+Здесь проверяется знание ESlint, Stylelint и Sonar — ключевых инструментов для поддержания качества кода.
+Приходилось ли вам оптимизировать работу приложения? Как вы это делали? Насколько удалось оптимизировать?
+Вопрос об оптимизации показывает, насколько кандидат ориентирован на производительность и качество продукта.
+Как вы оцениваете свою работу над проектами с точки зрения эффективности?
+Самооценка и критическое мышление важны для долгосрочной работы в проекте.
+Как вы взаимодействуете с членами команды при разработке проекта?
+Как вы разрешаете конфликты или разногласия относительно технических решений в команде?
+Как вы управляете своим временем и приоритетами в процессе разработки?
+Как вы общаетесь с нетехническими членами команды или клиентами?
+Как вы реагируете на конструктивную критику вашей работы?
+Как вы реагируете на стрессовые ситуации или трудности при разработке?
+Как вы ведете себя во время собеседования или дискуссии с другими членами команды?
+Как вы понимаете и внедряете принципы взаимопомощи и коллаборации в команде?
+Как вы решаете технические проблемы, с которыми сталкиваетесь при разработке?
+Как вы оцениваете свои возможности и определяете объем работы для себя и для других в команде?
+Как вы стимулируете и поддерживаете творческий подход к решению проблем в команде?
+Как вы сотрудничаете с другими разработчиками, чтобы обеспечить надлежащую интеграцию фронтенда с бэкендом?
+Как вы оцениваете потребности пользователей и внедряете их фидбек в процессе разработки?
+Как вы стимулируете инновации и вводите новые идеи в вашей команде?
+Как вы работаете с большим объемом информации или данных в вашем проекте?
+Как вы общаетесь и сотрудничаете с другими отделами, такими как дизайн или маркетинг?
+Как вы решаете сложные задачи, требующие долгосрочного планирования и стратегического мышления?
+Как вы стимулируете развитие ваших навыков и ответственности в работе?
+Как вы выявляете и решаете проблемы с производительностью в вашей команде?
+Как вы относитесь к открытости, открытому обмену мнениями и открытым дискуссиям в вашей команде?
+Вопросы на этом этапе могут быть совершенно другими. Здесь все зависит от позиции, опыта самого кандидата, его поведения, актуальных фреймворков, технологий. Универсальный шаблон не существует. Просто запомните, что для каждой технической позиции будет свой набор требований.
+
+Технический взгляд
+На следующем этапе (в случае с продуктовой компанией HURMA) технический рекрутер отправляет информацию о претенденте непосредственно Head of Engineering. Он получает скоркард с первыми отметками (4 или 5, если встреча прошла успешно).
+
+Обратная связь от технического специалиста с большим опытом позволяет «свежим» взглядом еще раз посмотреть на кандидата и найти неочевидные проблемы, блокируя моменты.
+
+Если с мотивацией, soft skills и общим опытом нет никаких проблем, кандидат двигается дальше по воронке на этап технического интервью.
+
+Как провести техническое интервью: вопросы для собеседования frontend разработчика?
+«Оптимально, чтобы техническое интервью проводил наемный менеджер. Если это невозможно, то важно присутствовать, чтобы составить свое мнение относительно кандидата. Если загрузка не позволяет менеджеру присутствовать на интервью, важно доверять интервьюерам, которых он просит оценить кандидата. Для нового интервьюера важна обратная связь от менеджера после первых собеседований, он помогает прийти к общим ценностям», – говорит Head of Engineering в HURMA.
+
+ Вопросы для CBI интервью
+В каких компаниях тебе хотелось бы поработать и почему? Что привлекает в продукте и аутсорсе?
+Если в течение нескольких лет ты будешь занимать одну должность – это ок для тебя?
+Рассматриваешь ли ты для себя в будущем переход с одной технологии на другую?
+Опиши свою работу на прошлом проекте и расскажи, как сильно выросли твои компетенции за это время.
+Назови свой основной skill, позволяющий тебе эффективно развиваться.
+Легко найти один язык с человеком, если добавить в интервью открытые вопросы или общаться на разные темы. Правильный small-talk способствует расслабленному разговору, впоследствии кандидат отвечает на все более открыто. Такие эмоциональные качели – один из способов получить нужную нам информацию.
+
+Совершенно другой подход состоит в том, чтобы «раскачать» человека согласно его триггерам или болевым моментам. К примеру, спросить его относительно того, почему он не желает работать с определенной технологией или фреймворком.
+
+Комитет: комплексно рассматриваем frontend разработчика
+Финальный этап найма технического специалиста – еще один коллегиальный скрин кандидата. На комитете оцениваются плюсы и минусы претендента, а также проходят дебаты по спорным моментам.
+
+На этом этапе обязательно подключаются CEO и HRD, которые оценивают риски со своей стороны. Возможно, технические специалисты пропустили что-нибудь важное, что влияет на бренд работодателя. К примеру, это может быть образование, пробелы в профессиональной деятельности, работа в силовых структурах и т.д. На комитете решается, нужно ли дополнительно пригласить фидбек и рекомендации по предыдущим местам работы.
+
+Оцениваются все факты и определяется финальный рейтинг в оффере. Также рассматривается вариант контроффера, если кандидат получил несколько предложений от других компаний или предоффера, когда необходимо согласовать сумму.
+
+Главная особенность рекрутинга
+С наймом frontend разработчиков всегда не просто: они понимают свою ценность на рынке, могут часто менять компании, остаются нелояльными к маленьким командам. Помните, что воронка должна включать максимальное число релевантных кандидатов, чтобы в ней появился нужный вам претендент. В среднем по индустрии, количество лиц, дошедших до этапа прескрина, составляет не более 10%, а оффер получают не более 1–2%.
+
+Поэтому важно на всех этапах воронки работать очень тщательно и индивидуально подходить к каждому кандидату. Это касается задания вопросов для технического интервью и CBI, а также проверки soft skills. Используя качественную систему ATS, вы сможете легко корректировать каждый этап рекрутинга, а также быстро анализировать кандидатов и искать подход к каждому из них.
+ 
+
+Full stack веб-разработчик обычно делает это:
+
+создает API, использующее какой-то интерфейс (часто возвращая JSON);
+занимается написанием бизнес-логики и валидации;
+интегрирует сторонние API;
+реализует сохранение и чтение данных из БД.
+
+
+Языки программирования
+Основные языки программирования:
+
+Java
+C#
+Python
+js
+Go
+PHP
+Какой бы язык вы ни выбрали, убедитесь, что вы знаете следующее:
+
+процесс создания API
+основы языка
+как подключиться к БД
+как сделать запрос
+управление пакетами
+написание тестов
+REST API и JSON
+Создание хорошего REST API является одной из основных задач бекенд-разработчика. Вам придется знать:
+
+как создать хороший ответ;
+как обрабатывать запросы;
+запрос аутентификации;
+документирование API.
+REST API – мост между бекендом и фронтендом, поэтому убедитесь, что вы понимаете, как это работает.
+
+JSON нужен для передачи данных через REST API. Данные в нем представлены в виде объектов и массивов.
+
+БД, DevOps и full stack веб-разработчик
+Junior full stack веб-разработчик: полный план развития
+
+Это сложная отрасль, необходимая, если вы захотите углубиться в DevOps. Будет большим плюсом знать:
+
+управление БД;
+платформы для хостинга (AWS, Azure, Google и т. д);
+CI / CD (Jenkins, GitLab и т. д.);
+журналирование и мониторинг.
+Продвинутые темы
+Ниже приведены дополнительные темы, рекомендуемые к рассмотрению только после того, как осилите все базовые.
+
+Аутентификация на JWT / OAuth
+Это основной метод проверки подлинности, разрешающий пользователям войти в систему.
+
+Шаблоны проектирования
+Изучение шаблонов проектирования облегчит решение распространенных проблем и поможет стать лучшим разработчиком.
+
+Прогрессивные веб-приложения и мобильная разработка
+Прогрессивные веб-приложения – это приложения, работающие как нативные на телефоне пользователя. Изучите этот вопрос, если появится дополнительное время.
+
+React Native – позволяет писать код на React, компилируемый в Android / IOS.
+
+Flutter – инструмент похож на React Native, только использует Dart.
+
+Командная строка
+Вам нужно знать:
+
+как подключиться к серверу по SSH;
+как перемещаться по файловой системе (cd, ls и т. д.);
+редактирование файлов с помощью Vim или аналогичного.
+
+Какие hard skills должны быть у фронтенд-разработчика
+Чтобы попасть куда-то хотя бы на испытательный срок или стажировку с дальнейшим трудоустройством, джуниор/стажер обязан знать:
+
+GIT
+HTML и CSS
+JS
+TypeScript
+Figma
+DevTools (инструменты браузера)
+ООП, функциональное программирование, архитектура, рефакторинг, оптимизация
+А вообще, для работы понадобятся:
+
+Какой-нибудь фреймворк, на котором работает работодатель (React, Vue, Angular, Nuxt, Node)
+JSON
+API
+Мы проверяем, насколько соискатель хорошо знаком с этими инструментами, потому что от этого напрямую зависит скорость работы, а значит и ценность каждого часа специалиста для компании. Ведь даже с теоретической базой или «умением гуглить» один специалист может верстать проект в 2-3-4 раза медленнее опытного, а самое важное в нашей работе – это сроки.
+
+
+Софт скиллы frontend-разработчика
+Несмотря на устоявшееся мнение, что для программистов soft skills не особо важны, пожалуй, стоит уточнить: какие именно это софт скиллы и что «не особо важны» не значит, что их не должно быть вовсе.
+
+Без мягких некоторых навыков успешно работать в коллективе не получится даже специалистам технических профессий.
+
+Для нас важно, чтобы соискатель на должность фронтенда был способен:
+
+Самостоятельно ставить себе задачи на протяжении длительного времени, занимаясь только согласованием видения с архитекторами.
+Принимать решения, на первый взгляд противоречащие общепринятым подходам, но позволяющие эффективно решить поставленную задачу в рамках текущих ограничений.
+Читать техническую документацию.
+Отвечать за свои ошибки, он не ищет виноватых, а ищет способы решения возникающих проблем. Охотно берет новые обязанности в соответствии с менторингом или тимлидингом.
+Инициировать коммуникации по мере возникновения проблем в текущих задачах. Способен оппонировать другим разработчикам, в том числе и вышестоящим, если уверен в своих аргументах. Отслеживает результаты коммуникаций в контексте конкретных действий. Интересуется бизнес-спецификой проектов и направлениями их развития.
+На основании личного опыта предугадывать задачи, запросы команды и потребности.
+Оценивать чужой код сугубо с точки зрения критериев, важных для проекта в текущем контексте. Не пытаться всем навязывать свои подходы.
+Умеет гуглить и изобретать.
+
+Tips and Tricks for Front End Developer Interview Questions
+A front-end developer interview can be stress-free, to a certain extent. The career is growing by leaps and bounds; don't try to prove yourself too much. Walk in with a clean portfolio and prepare with test questions and answers.
+
+Do your research. Before the interview, make sure to do your research on the company and the position you are applying for. This will help you prepare for questions and show the interviewer that you’re motivated and have a genuine interest in the role.
+Practice, practice, practice. Whether it’s doing a mock interview with a friend or family member, or just going over common questions in your head, practicing beforehand will help you feel more confident and less nervous during the actual interview.
+Build your portfolio. If you're fairly new to the industry or making a switch, build a portfolio with the top sites that you've worked on.
+Know where you are in the pipeline. Initial interviews are just "touch-base" interviews. You should slowly get to know your interview team and the position, and then dig more into your technical skills.
+Be personable. At the end of the day, the interviewer wants to get to know you as a person. The best way to be genuine is to briefly talk about your interests and hobbies outside of work, as well as any personal projects you may be working on.
+Ask questions. Asking questions shows you’re engaged in the conversation and gives you an opportunity to learn more about the company and the role.
+Don't be afraid to say you don't know. If you don't know something, explain how you would find out.
+After the interview, send a thank-you note to the interviewer. Today, it can be as simple as shooting a message on Slack.
+
+How to Practice for Code Interviews
+There are generally three types of questions in coding interviews: algorithm, data structure, and system design. Familiarize yourself with each type and practice solving them. 
+
+Even experienced engineers struggle with coding interviews. You can practice for loops and sorting all you want, but when it comes down to it, you're being asked to solve a puzzle on command. All you can do is practice the fundamentals.
+
+
+🎯 Категория: "Базовый уровень" (aka "это должны знать все, но половина не знает")
+1. Что такое фронтенд разработка вообще?
+Зачем спрашивают: Проверяют, понимаете ли вы масштаб своей профессии или думаете, что это просто "делать кнопочки красивыми".
+
+Нормальный ответ: Фронтенд — это всё, что видит и с чем взаимодействует пользователь. HTML, CSS, JavaScript, фреймворки, производительность, доступность, адаптивность... и да, иногда даже "кнопочки красивые".
+
+Реальность 2026: Фронтенд давно перестал быть просто версткой. Теперь это целая архитектура с SSR, edge computing, AI-интеграциями и микрофронтендами. В общем, "просто кнопочки" — это было в 2015.
+
+2. В чем разница между == и ===?
+Зачем спрашивают: Классика жанра. Если не знаешь — иди учить основы.
+
+Короткий ответ:
+
+== сравнивает значения с приведением типов (может привести "5" к 5)
+
+=== строгое сравнение (типы должны совпадать)
+
+Мем-комментарий: Использование == в 2026 — это как носить крокосы на собеседование. Технически можно, но зачем?
+
+3. Что такое DOM?
+Зачем спрашивают: Без этого знания во фронтенде делать нечего.
+
+Ответ: Document Object Model — древовидная структура представления HTML-документа. JavaScript манипулирует DOM, чтобы изменять страницу динамически.
+
+Актуально в 2026: Теперь еще спрашивают про Virtual DOM (React), Signals (Solid/Angular), и как это всё оптимизирует рендеринг. Потому что просто DOM — это слишком просто.
+
+4. Объясните позиционирование в CSS: relative, absolute, fixed, sticky
+Зачем спрашивают: Проверяют, понимаете ли вы, как элементы ведут себя на странице.
+
+Быстрая шпаргалка:
+
+relative — сдвигается от своей обычной позиции, но место резервируется
+
+absolute — выдергивается из потока, позиционируется относительно ближайшего positioned родителя
+
+fixed — прилипает к окну браузера, не скроллится
+
+sticky — гибрид: ведёт себя как relative, пока не достигнет точки прилипания, тогда становится fixed
+
+Фишка 2026: В эпоху CSS Container Queries и CSS Grid, position: absolute используется всё реже. Но его всё равно спрашивают 🤷‍♂️
+
+5. Что такое замыкание (closure)?
+Зачем спрашивают: Потому что это фундаментальная концепция JS, и без неё никуда.
+
+Объяснение для людей: Функция "запоминает" переменные из внешней области видимости, даже когда эта область уже завершилась.
+
+function createCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+Где используется в реале: Приватные переменные, обработчики событий, хуки React... везде.
+
+6. В чем разница между null и undefined?
+Быстро:
+
+undefined — переменная объявлена, но значение не присвоено
+
+null — программист явно указал "здесь ничего нет"
+
+Философский вопрос 2026: Почему typeof null === 'object'? Ответ: баг в JavaScript, который теперь исторический и его уже не исправить 😅
+
+7. Что такое Event Loop?
+Зачем спрашивают: Проверяют понимание асинхронности в JavaScript.
+
+Объяснение без боли:
+
+JavaScript однопоточный. Event Loop — это механизм, который позволяет выполнять асинхронный код:
+
+Call Stack выполняет синхронный код
+
+Асинхронные операции (setTimeout, fetch) отправляются в Web APIs
+
+Когда готовы — попадают в очередь (Task Queue)
+
+Event Loop проверяет: Call Stack пустой? → Берёт из очереди и выполняет
+
+Тренд 2026: Теперь еще нужно знать про microtasks (Promises) vs macrotasks (setTimeout). Потому что одного event loop уже мало 🙃
+
+8. var, let, const — в чём разница?
+Коротко и ясно:
+
+var — старая школа, function scope, hoisting, проблемы
+
+let — block scope, можно переприсвоить
+
+const — block scope, нельзя переприсвоить (но объект можно мутировать!)
+
+Правило 2026: Используй const по умолчанию, let когда нужно, var не используй вообще.
+
+⚛️ Категория: "React — потому что без него никуда в 2026"
+9. Что такое React Hooks и зачем они нужны?
+Контекст: До хуков были классовые компоненты. Они работали, но код был многословным.
+
+Хуки в 2026: Стандарт индустрии. Основные:
+
+useState — локальное состояние
+
+useEffect — побочные эффекты (API, подписки, DOM)
+
+useContext — доступ к контексту
+
+useRef — ссылки на DOM или сохранение значений
+
+useMemo / useCallback — оптимизация
+
+useReducer — сложная логика состояния
+
+Новинка 2026: React Compiler (React Forget) автоматически оптимизирует код, так что ручная мемоизация нужна реже. Но на собесах про неё всё равно спрашивают!
+
+10. Правила использования хуков
+Два железных правила:
+
+Вызывай хуки только на верхнем уровне (не в циклах, условиях, вложенных функциях)
+
+Вызывай хуки только в React-компонентах или кастомных хуках
+
+Почему: React отслеживает порядок вызова хуков. Если он меняется — всё ломается.
+
+11. useEffect vs useLayoutEffect — в чем разница?
+Вопрос-ловушка 2026:
+
+useEffect выполняется после рендера (асинхронно)
+
+useLayoutEffect выполняется до отрисовки в браузере (синхронно)
+
+Когда использовать useLayoutEffect: Когда нужно измерить DOM или сделать изменения до того, как пользователь что-то увидит (чтобы не было "мерцания").
+
+В 99% случаев: Нужен обычный useEffect.
+
+12. Что такое Virtual DOM?
+Простыми словами: Легковесная копия реального DOM в памяти. React сравнивает (diff) старый Virtual DOM с новым, вычисляет минимальные изменения и обновляет только их в реальном DOM.
+
+Почему это важно: Прямая работа с DOM медленная. Virtual DOM ускоряет процесс.
+
+Альтернативы в 2026: Svelte компилирует всё в vanilla JS без Virtual DOM, Solid.js использует fine-grained reactivity (Signals). Но React пока доминирует в России.
+
+13. Как работает useState?
+Базово:
+
+const [count, setCount] = useState(0);
+Что происходит:
+
+useState(0) инициализирует состояние
+
+Возвращает массив: [текущее значение, функция обновления]
+
+При вызове setCount компонент перерендеривается
+
+Нюанс: Обновление состояния асинхронно! setCount(count + 1) не сразу меняет count.
+
+Functional update (важно!):
+
+setCount(prev => prev + 1); // Надёжнее
+14. Что такое Context API?
+Проблема: Пробрасывать props через 10 уровней компонентов — боль.
+
+Решение: Context API позволяет "телепортировать" данные напрямую потребителям.
+
+Когда использовать: Темы, авторизация, язык интерфейса.
+
+Когда НЕ использовать: Для всего состояния приложения. Для сложной логики лучше Redux Toolkit, Zustand или Jotai.
+
+15. Объясните lifecycle компонента
+В классовых компонентах: componentDidMount, componentDidUpdate, componentWillUnmount
+
+В функциональных компонентах с хуками:
+
+useEffect(() => {
+  // componentDidMount + componentDidUpdate
+  
+  return () => {
+    // componentWillUnmount (cleanup)
+  };
+}, [deps]); // Зависимости определяют, когда запускать
+Пустой массив зависимостей []: Сработает только при монтировании (аналог componentDidMount).
+
+🎨 Категория: "CSS — потому что центрировать div всё еще сложно"
+16. Flexbox vs Grid — когда что использовать?
+Flexbox: Одномерные лейауты (строки или столбцы)
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+Grid: Двумерные лейауты (строки И столбцы одновременно)
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+Правило 2026: Используй Grid для структуры страницы, Flexbox для компонентов внутри.
+
+17. Что такое CSS Variables (Custom Properties)?
+Суть: Переменные в CSS, которые можно переиспользовать.
+
+:root {
+  --primary-color: #3498db;
+  --spacing: 16px;
+}
+
+.button {
+  background: var(--primary-color);
+  padding: var(--spacing);
+}
+Преимущества в 2026:
+
+Легко менять темы (dark mode)
+
+Можно манипулировать через JavaScript
+
+Нативная поддержка браузеров
+
+18. Как оптимизировать производительность CSS?
+Актуальные советы 2026:
+
+Critical CSS: Инлайнить критичный CSS в <head>, остальное грузить асинхронно
+
+Минификация и сжатие
+
+Avoid CSS in JS в runtime: Используй решения с compile-time (StyleX от Meta, Tailwind)
+
+Container Queries: Вместо медиазапросов для адаптива компонентов
+
+
+⚡ Категория: "Производительность — или как не сделать сайт тормозом"
+19. Что такое Core Web Vitals?
+Google в 2026 еще строже к производительности:
+
+LCP (Largest Contentful Paint): Время загрузки основного контента (цель: < 2.5с)
+
+INP (Interaction to Next Paint): Заменил FID, измеряет отзывчивость (цель: < 200ms)
+
+CLS (Cumulative Layout Shift): Стабильность визуальной части (цель: < 0.1)
+
+Почему важно: Влияет на SEO и конверсию.
+
+20. Lazy Loading — что и как?
+Изображения:
+
+<img src="image.jpg" loading="lazy" alt="описание">
+Компоненты React:
+
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+<Suspense fallback={<div>Загрузка...</div>}>
+  <HeavyComponent />
+</Suspense>
+Тренд 2026: Next.js делает это автоматически для страниц и компонентов.
+
+21. Code Splitting — как и зачем?
+Проблема: Один огромный bundle грузится долго.
+
+Решение: Разбить код на чанки, грузить по требованию.
+
+Webpack/Vite делают это автоматически:
+
+import('./module').then(module => {
+  // используем модуль
+});
+React + Next.js 2026: Всё из коробки с app router и server components.
+
+22. Мемоизация в React: useMemo, useCallback, React.memo
+Когда использовать:
+
+React.memo: Оборачивает компонент, предотвращает ререндер если props не изменились
+
+const ExpensiveComponent = React.memo(function Component({ data }) {
+  // ...
+});
+useMemo: Кэширует результат вычислений
+
+const expensiveValue = useMemo(() => {
+  return computeExpensiveValue(a, b);
+}, [a, b]);
+useCallback: Кэширует функцию
+
+const handleClick = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+Важно в 2026: Не оптимизируй преждевременно! React Compiler скоро всё это сделает автоматически.
+
+🌐 Категория: "Современный стек — AI, TypeScript и серверные штуки"
+23. TypeScript — зачем он нужен?
+Короткий ответ: Статическая типизация для JavaScript. Меньше багов, лучше автодополнение, легче рефакторить.
+
+Статистика 2026: TypeScript стал стандартом в российских IT-компаниях. 80%+ новых проектов используют TS.
+
+На собесе могут спросить:
+
+Что такое interface vs type
+
+Как работают Generics
+
+Что такое Union Types и Type Guards
+
+24. Server Components в React — что это?
+Новинка React 18+, популярность взлетела в 2026:
+
+Компоненты рендерятся на сервере
+
+Меньше JavaScript отправляется клиенту
+
+Доступ к базе данных напрямую из компонента
+
+Пример (Next.js App Router):
+
+async function ProductPage({ id }) {
+  const product = await db.products.findById(id); // прямо в компоненте!
+  return <div>{product.name}</div>
+}
+Преимущества: Быстрее загрузка, меньше бандл, лучше SEO.
+
+25. Edge Computing — что и зачем?
+Идея: Выполнять код на edge-серверах (ближе к пользователю), а не на одном центральном сервере.
+
+Преимущества:
+
+Меньше latency (задержка)
+
+Лучше для пользователей из разных регионов России
+
+Экономия ресурсов
+
+Примеры: Cloudflare Workers, Vercel Edge Functions, Yandex Cloud Functions.
+
+На собесе 2026: Спрашивают о понимании архитектуры и когда это нужно.
+
+26. AI в разработке — как используете?
+Реальность 2026: AI-инструменты стали частью workflow в российских компаниях.
+
+Популярные инструменты:
+
+GitHub Copilot — автодополнение кода
+
+Cursor / Windsurf — AI IDE
+
+ChatGPT / Claude / Яндекс GPT — объяснение кода, отладка, генерация
+
+Различные российские AI-ассистенты
+
+Что могут спросить:
+
+Как AI помогает в работе?
+
+Какие ограничения AI-кода видите?
+
+Как проверяете качество AI-генерированного кода?
+
+Важно: AI — это инструмент, не замена понимания основ.
+
+🔧 Категория: "Инструменты и экосистема"
+27. npm vs yarn vs pnpm — разница?
+Все — пакетные менеджеры:
+
+npm: Стандарт, идёт с Node.js
+
+yarn: Быстрее, лучше кэширование (Yarn 2+ ещё быстрее, но спорно)
+
+pnpm: Самый экономный по дискам (использует symlinks), супербыстрый
+
+Тренд 2026: pnpm набирает популярность в монорепозиториях российских компаний.
+
+28. Webpack vs Vite vs Turbopack — что выбрать?
+Webpack: Старый добрый, гибкий, но медленный на больших проектах.
+
+Vite: Использует ES modules для dev-режима → мгновенный запуск. esbuild для продакшена.
+
+Turbopack: Новый сборщик от Vercel (Next.js), написан на Rust, ещё быстрее Vite.
+
+Вывод 2026: Vite — стандарт для новых проектов. Turbopack набирает обороты.
+
+29. Что такое monorepo и зачем он нужен?
+Monorepo: Один репозиторий для нескольких пакетов/приложений.
+
+Инструменты: Turborepo, Nx, Lerna.
+
+Преимущества:
+
+Общий код между проектами
+
+Единая версионность
+
+Легче делать кросс-проектные изменения
+
+Когда использовать: Большие команды (как в Яндексе, VK), микрофронтенды, дизайн-системы.
+
+🧪 Категория: "Тестирование — потому что 'works on my machine' не работает"
+30. Виды тестирования во фронтенде
+Unit тесты: Тестируют отдельные функции/компоненты (Jest, Vitest)
+
+Integration тесты: Тестируют взаимодействие между частями (React Testing Library)
+
+E2E тесты: Тестируют весь флоу пользователя (Playwright, Cypress)
+
+Тренд 2026: Playwright вытесняет Cypress. Vitest заменяет Jest в Vite-проектах.
+
+31. React Testing Library — основные принципы
+Философия: Тестируй так, как пользователь взаимодействует с приложением.
+
+Плохо:
+
+wrapper.find('.button').simulate('click'); // тестирование деталей реализации
+Хорошо:
+
+const button = screen.getByRole('button', { name: /submit/i });
+fireEvent.click(button);
+На собесе спросят: Как тестируешь хуки, асинхронный код, mocking API.
+
+
+🎭 Категория: "Поведенческие вопросы и soft skills"
+32. Расскажите о проекте, которым гордитесь
+Что хотят услышать:
+
+Проблема, которую решали
+
+Технологии и подход
+
+Ваша роль
+
+Результат (метрики!)
+
+Структура STAR: Situation → Task → Action → Result
+
+Пример:
+
+"Дашборд в CRM загружался 5 секунд. Я профилировал через Chrome DevTools, нашёл тяжёлые зависимости, сделал code splitting и lazy loading. Время загрузки упало до 2 секунд, engagement вырос на 18%."
+
+33. Как вы остаетесь в курсе трендов?
+Хорошие ответы 2026:
+
+Читаю обновления фреймворков (React blog, Next.js changelog)
+
+Смотрю доклады с конференций (HolyJS, FrontendConf, React Summit)
+
+Участвую в open-source
+
+Пробую новые технологии в pet-проектах
+
+Подписан на девблоги и рассылки
+
+Состою в Telegram-сообществах разработчиков
+
+34. Опишите сложную техническую проблему, которую решали
+Что проверяют: Навыки решения проблем и техническую глубину.
+
+Схема ответа:
+
+Проблема: Что сломалось, симптомы
+
+Диагностика: Как искали причину (инструменты, гипотезы)
+
+Решение: Что сделали
+
+Итог: Результат и что узнали
+
+Бонус: Упомяните, что документировали решение для команды.
+
+
+🚀 Категория: "Продвинутый уровень — вопросы для мидлов и сеньоров"
+35. Микрофронтенды — что это и когда использовать?
+Идея: Разбить фронтенд на независимые части, которые разрабатываются отдельными командами.
+
+Подходы:
+
+Module Federation (Webpack 5)
+
+Iframe (старая школа, но работает)
+
+Web Components
+
+Когда НЕ использовать: Маленькие команды, простые приложения.
+
+Когда использовать: Большие команды (Яндекс, VK, Сбер), легаси-системы, нужна независимость деплоя.
+
+Тренд 2026: Паттерн зреет в российских компаниях, но не для всех. Осторожно с хайпом!
+
+36. Доступность (a11y) — что важно знать?
+Основы:
+
+Семантичный HTML (используй правильные теги)
+
+ARIA-атрибуты когда нужно
+
+Клавиатурная навигация (всё должно работать без мыши)
+
+Контраст цветов (WCAG AA/AAA стандарты)
+
+Альт-тексты для изображений
+
+Инструменты: Lighthouse, axe DevTools, WAVE.
+
+Важно в России 2026: Для госпроектов и крупных компаний accessibility становится обязательным требованием.
+
+37. Как бы вы спроектировали систему аутентификации?
+Проверка: Архитектурное мышление.
+
+Ключевые аспекты:
+
+JWT vs Session-based auth
+
+Refresh tokens
+
+Хранение токенов (httpOnly cookies vs localStorage)
+
+CSRF защита
+
+OAuth / Social login (ВКонтакте, Яндекс ID, Telegram)
+
+Модный ответ 2026: NextAuth.js, Clerk, Supabase Auth — готовые решения вместо написания с нуля.
+
+38. State management в 2026 — что использовать?
+Варианты:
+
+Redux Toolkit — всё еще мощный для сложных приложений
+
+Zustand — легковесный, простой API
+
+Jotai / Recoil — atomic state
+
+TanStack Query (React Query) — для серверного состояния
+
+Context API — для простых случаев
+
+Тренд: Разделяйте client state (UI) и server state (данные с API). Для второго используйте TanStack Query.
+
+39. Что такое hydration в SSR/SSG?
+SSR (Server-Side Rendering): Сервер отдаёт готовый HTML.
+
+Hydration: React "оживляет" этот HTML на клиенте, прикрепляя обработчики событий.
+
+Проблема: Если клиентский код не совпадает с серверным — hydration error.
+
+Новинка 2026: Partial Hydration и Islands Architecture (Astro) — гидратация только интерактивных частей.
+
+40. Performance Optimization — чек-лист
+Checklist для собеседования:
+
+✅ Lazy loading (изображения, компоненты, routes)
+
+✅ Code splitting (динамические импорты)
+
+✅ Tree shaking (удаление неиспользуемого кода)
+
+✅ Мемоизация (React.memo, useMemo, useCallback)
+
+✅ Debounce / Throttle (поиск, скролл)
+
+✅ Виртуализация длинных списков (react-window, TanStack Virtual)
+
+✅ Оптимизация изображений (WebP, AVIF, responsive images)
+
+✅ CDN для статики
+
+✅ HTTP/2, HTTP/3
+
+✅ Prefetch / Preload критичных ресурсов
+
+🎯 Категория: "Хитрые вопросы — ловушки и задачки"
+41. Что выведет этот код?
+console.log(1);
+setTimeout(() => console.log(2), 0);
+Promise.resolve().then(() => console.log(3));
+console.log(4);
+Ответ: 1, 4, 3, 2
+
+Почему:
+
+Синхронный код выполняется первым: 1, 4
+
+Microtasks (Promises) выполняются до macrotasks (setTimeout)
+
+Поэтому: Promise (3), потом setTimeout (2)
+
+Это классика для проверки понимания Event Loop.
+
+42. В чем разница между map() и forEach()?
+forEach: Просто итерирует, ничего не возвращает.
+
+map: Создаёт новый массив на основе преобразования.
+
+const numbers = [1, 2, 3];
+
+numbers.forEach(n => console.log(n * 2)); // выводит, но не сохраняет
+
+const doubled = numbers.map(n => n * 2); // [2, 4, 6]
+Правило: Нужен новый массив → map. Просто сделать что-то с каждым элементом → forEach.
+
+🎓 Подведём итоги
+Фронтенд собеседования в российских IT-компаниях в 2026 — это микс:
+
+Базовых знаний (HTML, CSS, JavaScript)
+
+Фреймворков (React доминирует, но знание альтернатив — плюс)
+
+Производительности и оптимизации
+
+Современных инструментов (TypeScript, Vite, AI-ассистенты)
+
+Архитектурного мышления (когда что использовать и почему)
+
+Soft skills (коммуникация, решение проблем, работа в команде)
+
+📚 Как готовиться эффективно?
+Понимай основы глубоко — без них никуда
+
+Практикуй код — не просто читай, пиши
+
+Делай pet-проекты — применяй знания на практике
+
+Изучай реальные кодбейзы — читай код популярных библиотек
+
+Mock interviews — тренируй формат собеседования
+
+
+Количество разработчиков в веб-студии, работающих над одним проектом, может сильно варьироваться в зависимости от **размера проекта**, его **сложности**, **сроков выполнения**, и **бюджета**. В среднем это может быть от нескольких человек до десятков. Вот как обычно распределяются роли и количество разработчиков по типу проектов:
+
+### 1. **Маленькие и средние проекты**
+   - **Пример**: Простой лендинг, корпоративный сайт, блог или небольшое веб-приложение.
+   - **Команда**: 1-5 человек.
+   - **Роли**:
+     - 1-2 фронтенд-разработчика (работают с интерфейсом и пользовательскими взаимодействиями).
+     - 1 бэкенд-разработчик (если требуется серверная часть).
+     - 1 дизайнер (отдельно или в роли универсального специалиста).
+     - 1 менеджер проекта (иногда эту роль совмещает один из разработчиков).
+
+### 2. **Средние и большие проекты**
+   - **Пример**: Интернет-магазины, CRM-системы, SaaS-платформы, крупные корпоративные порталы.
+   - **Команда**: 5-10 человек.
+   - **Роли**:
+     - 2-4 фронтенд-разработчика (разрабатывают пользовательский интерфейс, делят работу по модулям или страницам).
+     - 2-3 бэкенд-разработчика (разрабатывают серверную логику, базы данных и API).
+     - 1-2 дизайнера (UX/UI-дизайн и, возможно, дизайнер анимации).
+     - 1 DevOps-инженер (для настройки CI/CD, серверов и инфраструктуры).
+     - 1-2 тестировщика (QA).
+     - 1-2 менеджера проекта (следят за сроками, задачами, коммуникациями с клиентом).
+
+### 3. **Большие и сложные проекты**
+   - **Пример**: Маркетплейсы, крупные SaaS-приложения, социальные сети, приложения с микросервисной архитектурой.
+   - **Команда**: 10+ человек.
+   - **Роли**:
+     - 3-5 фронтенд-разработчиков (разделение работы по функциональным модулям или частям приложения, например, поиск, профиль, корзина).
+     - 3-5 бэкенд-разработчиков (возможно микросервисная архитектура, разделение на API, базы данных, сервисы).
+     - 1-2 DevOps-инженера (инфраструктура, масштабирование, развертывание).
+     - 2-3 тестировщика (автоматизация тестирования, ручное тестирование).
+     - 1-2 UX/UI-дизайнера.
+     - 1-2 менеджера проекта или product-owner.
+
+### Факторы, влияющие на количество разработчиков:
+- **Размер и сложность проекта**: Чем больше функционала и бизнес-логики в проекте, тем больше людей может быть задействовано.
+- **Требования по срокам**: Чем быстрее нужно запустить проект, тем больше разработчиков может потребоваться для выполнения задач параллельно.
+- **Технологии**: Если проект требует различных технологий (например, мобильные версии, фронтенд и бэкенд на разных стэках), могут понадобиться специалисты с разными навыками.
+- **Этап разработки**: На начальных этапах может быть больше разработчиков для создания основной архитектуры. На поддержке и доработках команда может уменьшиться.
+
+### Типичные сценарии:
+- В **маленьких студиях** над проектом часто работает **1-3 разработчика**, совмещая несколько ролей.
+- В **крупных студиях** могут одновременно работать **5-10 специалистов** на одном проекте, каждый со своей специализацией. 
+
+Таким образом, для одного проекта в веб-студии обычно задействуют от **2 до 10+ разработчиков**, в зависимости от требований и сложности.
+
+Код ревью и рефакторинг — это разные, хотя и взаимосвязанные процессы в разработке программного обеспечения.
+
+### Код Ревью
+Код ревью (code review) — это процесс, в котором другие разработчики проверяют код, написанный одним из членов команды, с целью выявления ошибок, улучшения качества кода и соблюдения стандартов. Основные цели код ревью включают:
+
+- Обнаружение ошибок и недочетов до слияния кода в основную ветку.
+- Обмен знаниями и лучшими практиками среди членов команды.
+- Поддержание единообразия и стандартов кода.
+
+### Рефакторинг
+Рефакторинг (refactoring) — это процесс изменения структуры существующего кода без изменения его внешнего поведения. Он направлен на улучшение читаемости, уменьшение сложности и упрощение поддержки кода. Основные цели рефакторинга включают:
+
+- Устранение дублирования кода.
+- Улучшение производительности.
+- Повышение удобства тестирования и расширяемости.
+
+### Связь между код ревью и рефакторингом
+Хотя код ревью и рефакторинг имеют разные цели, они могут пересекаться. Во время код ревью могут быть выявлены участки кода, которые требуют рефакторинга для улучшения их структуры и читаемости. Таким образом, код ревью может способствовать выявлению необходимости в рефакторинге.
+
+Для более глубокого понимания различий и связей между этими процессами можно ознакомиться с ресурсами, такими как [Atlassian](https://www.atlassian.com/continuous-delivery/code-reviews) и [Martin Fowler](https://martinfowler.com/articles/refactoring.html).
+
+
+Введение
+1. Алгоритмы и Структуры Данных
+1.1. Базовые структуры
+1.2. Массив
+1.3. Хэш-Таблица
+1.4. Дерево
+1.5. Граф
+1.6. Вероятностные
+1.7. Криптография
+1.8. Разное
+2. Базы Данных
+2.1. Теория Баз Данных
+2.1.1. Нормальные формы
+2.1.2. Транзакции
+2.1.3. Распределенные БД
+2.1.3.1. Репликация
+2.1.3.2. Шардинг
+2.1.3.3. Разное
+2.2. Реляционные БД
+2.2.1. MySql
+2.2.1.1. Архитектура MySql
+2.2.1.2. Конкурентный доступ
+2.2.1.3. Индексы
+2.2.1.4. Основы SQL
+2.2.1.5. Explain
+2.2.1.6. Разное
+2.2.2. PostgreSql
+2.3. Колоночные
+2.3.1. ClickHouse
+2.3.2. Vertica
+2.4. NoSql
+2.4.1. Memcached
+2.4.2. Redis
+2.4.3. Tarantool
+2.4.4. Mongo
+2.5. Message brokers
+2.5.1. Rabbit
+2.5.2. Kafka
+2.5.3. Nats
+3. Архитектура
+3.1. Основы ООП
+3.2. Паттерны GoF(Банда 4)
+3.3. Принципы хорошей архитектуры
+3.4. Архитектурные паттерны
+3.5. DDD
+3.6. Микросервисы
+3.6.1. Паттерны и протоколы интеграции
+3.6.2. Способы распиливания монолита
+3.7. Разное
+4. Аутентификация
+4.1. Этапы входа в систему
+4.1.1. Идентификация
+4.1.2. Аутентификация
+4.1.3. Авторизация
+4.2. Методы аутентификации
+4.2.1. HTTP Basic
+4.2.2. HTTP Digest
+4.2.3. На основе Cookie и сессий
+4.2.4. На основе токенов
+4.2.5. С помощью одноразовых паролей (One-Time Passwords, OTP)
+4.2.6. OAuth
+5. GoLang
+5.1. Типы данных
+5.1.1. Скалярные
+5.1.2. Массив и слайс
+5.1.3. Map
+5.1.4. Структура
+5.1.5. Интерфейс
+5.2. Concurrency
+5.2.1. Каналы
+5.2.2. Планировщик
+5.2.3. Goroutines
+5.2.4. Context
+5.2.5. Sync
+5.2.6. Паттерны
+5.3. Управление памятью
+5.4. Экосистема
+6. PHP
+6.1. Фичи новых версий
+6.2. PHP Internals
+6.3. realTime взаимодействие с сервером
+6.4. Фреймворки
+6.4.1. Laravel
+6.4.2. Symfony
+6.5. Разное
+7. JavaScript
+8. Информационная безопасность
+9. Git
+10. Основы сетей
+10.1. OSI
+10.2. TCP/IP
+10.3. HTTP
+10.4. TLS
+10.5. DNS
+10.6. Что происходит при нажатии на g
+10.7. Real time с веб-сервером
+11. Операционные системы и устройство ПК
+12. Системное администрирование
+12.1. Linux
+12.2. Основы виртуализации
+12.2.1. Docker
+12.2.2. Kubernetes
+12.3. Deployment
+12.4. Observability
+12.5. Load Balancing
+13. Тестирование
+14. Разное
+14.1. Побитовые операции
+14.2. Типизация
+14.3. Юникод
+15. Методологии разработки
+16. ЧекЛист
+
+11 общих вопросов для собеседования
+Интервьюеры могут начать встречу с вами с общих вопросов. Вот некоторые из них, которые вы можете ожидать:
+
+Расскажите нам о себе.
+
+Что вы знаете о нашей компании?
+
+Почему вы заинтересованы в этой должности?
+
+Почему вы хотите уйти с нынешней работы?
+
+Как вы узнали об этой должности?
+
+Какова ваша идеальная рабочая среда?
+
+Что вы делали в последнее время, чтобы узнать о последних достижениях в этой области?
+
+Как вам удается сохранять организованность при работе над несколькими проектами??
+
+В чем ваши сильные стороны?
+
+Каковы ваши слабые стороны?
+
+Как бы вас описали ваши сослуживцы?
+
+10 вопросов об опыте работы
+Менеджеры по подбору персонала могут также задать вам более подробные вопросы о вашем опыте программирования и о том, как вы работаете с другими людьми, например:
+
+Какие языки программирования вы изучали и использовали?
+
+Как вы научились программировать?
+
+Какой язык вы предпочитаете и почему?
+
+Расскажите нам о своем мнении о сильных и слабых сторонах этого языка.
+
+Поделитесь своим мнением о сильных и слабых сторонах Go.
+
+Представьте, что у вас возникла проблема в проекте, а ваш руководитель хочет, чтобы вы запрограммировали решение таким образом, который противоречит вашему подходу. Как бы вы разрешили это разногласие?
+
+Расскажите нам о проекте по программированию, который вы курировали и который прошел хорошо.
+
+Расскажите нам о проекте, который не прошел успешно.
+
+Какая ваша любимая программа и почему? Чему вы научились в ходе его реализации?
+
+Каков ваш подход к отладке программы??
+
+10 углубленных вопросов по языку Golang
+Интервьюеры могут задавать подробные вопросы, чтобы оценить ваши знания о Golang. Вот примеры вопросов для углубленного интервью:
+
+Что такое Golang?
+
+В чем вы видите его сильные и слабые стороны?
+
+Что вам нравится в синтаксисе языка Golang?
+
+Что такое пакеты в Golang, и как вы их используете?
+
+Какие встроенные функции поддержки в Golang вы уже использовали?
+
+Объясните, чем массивы в Golang отличаются от языка программирования C.
+
+Что такое goroutine в Golang, и как вы успешно его использовали?
+
+Что такое каналы Golang, и как они используются?
+
+Пожалуйста, объясните, как бы вы написали программу на языке Golang для замены переменных в наборе.
+
+Как бы вы создали базовую структуру программы на языке Golang, начав с нуля??
+
+Советы по прохождению собеседования по компьютерному программированию
+Вы можете использовать эти советы, чтобы помочь себе на следующем собеседовании по программированию:
+
+Проведите свое исследование. Интервьюеры, как правило, ищут подготовленных кандидатов. Перед собеседованием целесообразно узнать все, что можно, о компании.
+
+Оцените опыт интервьюера. Ваши интервьюеры могут иметь разный уровень технических знаний. Внимательно слушая собеседника, вы можете оценить, насколько конкретными должны быть ваши ответы.
+
+Подготовьтесь к тесту. Многие компании дают программистам тест на кодирование во время собеседования. Их цель может заключаться в том, чтобы понять, насколько хорошо вы умеете работать под давлением.
+
+
+System Design
+
+Софт-скиллы — что говорить, как себя вести, как проходить финалы. Размазано по всему курсу, чтобы лучше усваивалось.
+Виртуальная память и Linux — страницы памяти, kernel space, TLB, huge pages, swap. В будущем будет добавлен блок про контейнеризацию и виртуализацию.
+Формат — устный экзамен. Я отвечаю на вопросы и решаю задачи так, как это нужно делать на реальном собесе. Вы учитесь на моём примере. Теорию можно посмотреть за пару вечеров — смотрится как сериал.
+
+Курс постоянно дополняется. Скоро — разбор сложных составных задач (новый вид издевательств от работодателей, когда смешивают алгосы, конкурентность и сисдиз в одну задачу).
+
+2. Гайд по резюме + персональная проверка (бесконечные итерации)
+Самое исчерпывающее видео о том, как написать резюме Go-разработчика, которое работает.
+
+Другие авторы врываются на рынок на неделю, предпринимают кучу бесполезных движений и делают неправильные выводы. Их послушать, так у нас в стране наступил киберпанк и у каждого эйчара в мозгу нейрочип и автоматизированный учет всех участников рынка.
+
+На деле всё сильно не так, а нейрослоп в найме — это временное явление, которое только мешает всем. Моя методика проверена временем и десятками студентов. Она прекрасно работала до нейронайма, во время нейронайма, и будет работать после того, как все перебесятся в бездарном использовании AI в HR.
+
+Но даже самая чудесная методика может быть неправильно интерпретирована, поэтому резюме можно прислать на проверку в чат поддержки или ЛС. Это индивидуальная работа с вашим конкретным опытом. У многих студентов после переработки резюме количество входящих откликов выросло кратно.
+
+На рынке подобная услуга стоит 5 000 – 15 000 ₽ за одну итерацию. Здесь — без ограничений, включено в курс. Также в чате уже есть достаточное количество разборов резюме, можно посмотреть и поучиться на чужих примерах.
+
+3. Менторство, сообщество, разбор ваших конкретных ситуаций
+Закрытый чат студентов, где ребята делятся свежим опытом собесов, скидывают новые задачи от работодателей, разбирают сложные кейсы, поддерживают друг друга.
+
+Я — один из самых активных участников. Отвечаю на вопросы, разбираю сложные случаи, помогаю разобраться в темах, которые не до конца понятны. Другие опытные студенты тоже подключаются. Часто разбираем вопросы, выходящие за рамки подготовки к собесам.
+
+Это не просто «чатик». Это среда, в которой люди вокруг вас проходят собесы, получают офферы и делятся тем, как это сделали. Мотивация, которую невозможно получить, готовясь в одиночку.
+
+Обычно менторство стоит от 100к + процент от первых зарплат. При этом ментор за эти деньги выдает «как бы бесплатные» материалы сомнительного качества и позволяет задавать себе вопросы. Большинство людей при этом не проходят материалы и сливаются, и получается, что деньги были уплачены за страничку в Notion со списком ссылок.
+
+В этом курсе всё наоборот — вы платите за лучшие материалы на рынке, которые остаются с вами навсегда. После их прохождения можно так же задавать вопросы, как ментору, но уже бесплатно. Мне кажется, такой подход гораздо честнее, дешевле, и качественнее. Некоторые студенты воспринимают курс не столько как способ подготовиться к собесам, сколько как способ прокачаться в языке и позадавать вопросы.
+
+Ну а про качество материалов наиболее красноречиво говорит тот факт, что студенты часто ищут «такой же курс, но по <другая технология>».
+
+4. Разбор записей ваших собеседований
+Сходили на собес — записали — принесли в чат. Я разбираю запись: подсвечиваю моменты, за которые могли снизить оценку, показываю, где можно было ответить сильнее, объясняю, за что был снижен грейд. Разборы остаются в чате, доступны для всех студентов.
+
+Такого сервиса не существует на рынке в принципе — не говоря уже о том, чтобы он был включён в стоимость курса.
+
+Как показывает практика, даже одного просмотра такого разбора хватает, чтобы получить правильное представление о том, как нужно проходить собес.
+
+5. Пожизненный доступ + все будущие обновления
+Купили один раз — курс ваш навсегда. Через год или два понадобится освежить знания — заходите, пересматривайте. Курс к тому времени будет обновлён, и все новые материалы вы получите бесплатно.
+ 
+
+Soft Skills
+Коммуникабельность. Разработчики регулярно общаются в команде, с другими сотрудниками, заказчиками и т.д. Нужно уметь доносить свои мысли, задавать правильные вопросы, давай фидбек.
+Командная работа. Программист – командный игрок. Он должен делиться информацией с коллегами, вовремя просить о помощи (и оказывать ее другим), принимать критику и уметь брать на себя ответственность.
+Адаптивность. Сфера разработки не стоит на месте – регулярно появляются разные изменения. Поэтому важно всегда держать руку на пульсе и уметь адаптироваться.
+Готовность к обучению. Т.к. в IT все постоянно меняется, важно быть готовым к постоянному обучению и самосовершенствованию. Нужно изучать новые технологии и методы и отслеживать все тенденции в разработке.
+Организованность. Нужно уметь планировать свою работу и управлять временем – иначе велик риск перегореть или отстать от более успешных коллег или конкурентов.
+Наконец, не забываем про целеустремленность – плох тот джун, что не хочет стать сеньором.
+
+Вопросы работодателю
+22 вопроса работодателю на собеседовании на позицию «Middle Python-разработчик»
+Вопросы HR'у
+Что с отпуском и больничными?
+Переносится ли отпуск на следующий год?
+Какое отношение к официальным государственным выходным?
+Есть ли мед-страховка?
+Какие ограничения есть на период испытательного срока
+Свободный график? Нужно находиться в офисе n часов?
+Как в компании относятся к удалённой работе?
+Можно ли получить оборудование для удалённой работы (мониторы, etc.) или может есть компенсация на оборудование рабочего места
+Существует ли в компании полугодовая/годовая оценка сотрудников и как она происходит?
+Какой минимальный срок для первого пересмотра ЗП начиная с первого рабочего дня?
+Есть ли у в компании переработки? Если есть, то компенсируются ли они и как часто они происходят?
+Насколько в компании сильна бюрократия?
+Является ли компания участником каких-либо IT-конференций и есть ли у компании публикации на IT-темы?
+Есть ли митапы внутри компании?
+Есть ли в компании стажёры и развита ли система наставничества?
+Зарплата в какой валюте и привязана ли к курсу, если не в у.е?
+Вопросы для технического собеседования
+Как дела с тестированием? Какие тесты вы пишете? Какие библиотеки для тестирования вы используете? (фабрики, моки и т.д.)
+Есть ли Code Review? Как оно проходит?
+Есть ли в проектах CI/CD? Есть ли DevOps-инженер?
+Используете ли вы git-flow или какую-либо определенную методологию при работе с git?
+Используете ли Вы методологию разработки (scrum, kanban и т.д.)?
+Используются ли системы мониторинга в проектах(Sentry, NewRelic и т.д.)?
+Используется ли в проекте система для хранения логов и работы с ними(ELK-технология и прочее)?
+Какие БД используются в проекте? Почему именно такие?
+Какая версия языка Python используется в проектах?
+Компания ищет fullstack-разработчика или backend-разработчика?
+Используется ли технология контейнеризации в проектах?
+Немного поспрашивать собеседующего о том, чем он занимался до этого проекта и давно ли он в проекте.
+Есть ли синьеры в команде или просто очень опытные разрабы?
+Оцениваниются ли задачи по времени или стори-поинтам?
+Как легко втащить в проект новую технологию? Как выбирается стек для нового проекта?
+Как в команде принимаются решения? Есть ли человек за которым последнее слово?
+Попросить описать несколько типичных задач или несколько последних
+Какие версии Python и фреймворков используются?
+Насколько часто приходится работать с legacy?
+Если приходится работать с legacy то какой подход: вносим минимальные правки или пытаемся привести legacy в нормальный вид?
+
+
+Компании справляются с техдолгом по-разному. Основных стратегий три.
+
+Переписывают все с нуля. Это ультимативный способ поддерживать систему в состоянии, когда она постоянно готова к изменениям, если все зашло слишком далеко и уже нет прежней гибкости.
+Делают постепенный рефакторинг. Задачи по техдолгу отправляются в бэклог наравне с продуктовыми задачами. Это замедляет работу по выкатке новых фич, но бизнес обычно идет на компромиссы.
+Смиряются с техдолгом. Если у вас не стартап, а обновления нужны раз в полгода, то можно просто смириться с тем, что код неоптимален, и действовать по принципу «работает — не трогай». Как только поймете, что ошиблись, вы так или иначе переместитесь к пункту 1.
+
+Люди и взаимодействие важнее процессов и инструментов.
+Работающий продукт важнее исчерпывающей документации.
+Сотрудничество с заказчиком важнее согласования условий контракта.
+Готовность к изменениям важнее следования первоначальному плану.
+Основу Scrum составляют короткие итерации или спринты, как правило, 2-3-х недельные. Перед началом спринта команда сама формирует список фич на итерацию, далее запускается спринт.
+
+После окончания спринта выполненные фичи заливаются на продакшн, а невыполненные — переносятся в другой спринт. Как правило, фичи, которые делаются во время спринта, не меняются: что было на старте спринта — должно быть сделано любой ценой к окончанию спринта.
+
+Kanban дает больше гибкости, если под гибкостью понимать частоту смены приоритетов. Вчера вы залили на прод новую фичу, а сегодня получили данные с передовой и узнали, что вот эта штука не работает так, как было задумано — люди не нажимают кнопку «купить». Вы «даете по шапке» UX, он дает вам новые требования. Вы поднимаете наверх очереди эту задачу, программист берет эту задачу «сверху», выполняет ее и, к вечеру fix уже на проде, конверсия в платежи выросли на 12%. Это победа.
+
+Основная разница между Scrum и Канбан — в длине итераций. В Scrum итерации — 2 недели, в Kanban задачи программисту можно «подсовывать» хоть каждый день.
+
+В Scrum задачи принято оценивать в Story points или в часах. Без оценки не получится сформировать спринт: ведь нам нужно знать, успеем ли мы сделать задачи за 2 недели. Через 2 недели мы получаем ценную статистику — сколько часов или Story points команда смогла сделать за спринт. Velocity — это производительность команды за один спринт. Этот параметр позволяет Scrum менеджеру предсказать, где команда будет через 2 недели.
+
+В Kanban не принято делать оценку. Это опционально, команда решает сама. Здесь нет понятия «скорость работы команды», считается только среднее время на задачу. Время это считается с помощью специального отчета — Cycle Time.
+
+Итак, в Scrum наша цель — закончить спринт, в Kanban — задачу.
+
+Scrum — это автобус, который останавливается лишь на определенных остановках, где люди выходят группами. А Kanban — это маршрутка: захотел пассажир выйти, попросил водителя и вышел там, где ему нужно.
+
+Вопрос для тим-лидов: что Вы будете делать, если на проекте нет тестов и заказчик не хочет тратить на их разработку время и деньги
+Апелировать к прибыльности для бизнеса заказчика.
+
+Что такое Code Debt и как с ним быть
+В классическом понимании, т.е. в том виде, в котором эта метафора была описана Вардом Каннингемом, под техническим долгом понимается осознанное компромиссное решение, когда заказчик и ключевые разработчики четко понимают все преимущества от быстрого, пусть и не идеального технического решения, за которое придется расплатиться позднее. И хотя с точки зрения многих разработчиков ситуация, когда плохое решение может быть хорошим, может показаться безумной, на самом деле, это вполне возможно: если краткосрочное решение позволит компании получить видимые преимущества, выпустить продукт раньше конкурентов, удовлетворить ключевого заказчика или каким-то другим образом получить преимущества перед конкурентами, тогда такое решение совершенно оправданно. Иногда это может быть единственным способом, чтобы долгосрочная перспектива вообще существовала.
+
+Технический долг в классическом понимании является преднамеренным и в основном касается стратегических решений, поэтому и ответственность за него лежит на заказчиках, матерых лидах, архитекторах и даже ПМ-ах, но вот все, что связано с грязным кодом касается по большей части простых разработчиков. На самом деле, разница между грязным кодом и неоптимальным стратегическим решением, по сути, не такая уж и большая: при добавлении новой возможности в систему вам приходится расплачиваться за недальновидность в прошлом.
+
+Выплачивать проценты по техдолгу легче, если начать задумываться об этом на этапе создания продукта.
+
+
+Разработка софта больше не искусство, не дело жизни, а обычная, хотя и высококвалифицированная офисная работа. Поэтому особенно ценно в кандидате то, как он работает в команде, как справляется с повседневной работой. Как бы банально и избито это ни звучало. А вот гениальные технические озарения и хитрые алгоритмы, на втором плане. Те, для кого на первом, сами знают, каким должно быть техническое собеседование.
+Алгоритмическое собеседование это аналог IQ-тестов, изобретенных американскими учеными в начале XX века для быстрой категоризации больших масс призывников по родам войск. IQ дает представление об интеллекте человека, но не исключает ошибок. Умение решать алгоритмические задачи тоже дает представление об интеллекте человека, но не лишено недостатков. Алгоритмические собеседования нужны крупным компаниям, которым требуется быстро отобрать нужных людей из огромных масс кандидатов и установить на входе грейд и зарплату. Они могут позволить себе ошибку ненайма, потому что кандидаты конкурируют за позиции в этих компаниях, а не наоборот, как большинстве других случаев. Не стройте из себя Google, если вы им не являетесь.
+Интеллект человека это не бинарное “есть/нет” и не диапазон. Интеллект — это что-то вроде швейцарского армейского ножа-мультитула. В нем может быть острое и практичное лезвие для повседневного использования, не слишком удобный штопор, которым все же можно пользоваться, и бесполезная отвертка, которой не сделаешь ничего. Можно ли дать интегральную оценку такому мультитулу? Наверное, можно. Но непонятно, зачем. Если вы не Google, конечно. Подбирайте нож под свои задачи и исходя из своих возможностей.
+Собеседование нужно, чтобы понять, почему человек ушел (или готов уйти) с текущего места работы, что он ищет на новом месте и что он может предложить команде.
+Ошибка найма обычно компенсируется испытательным сроком. Нужно отнестись к нему серьезно и выдать задание на этот период. Аналогично со стороны сотрудника. И все-таки ошибка найма — это ошибка, которая стоит вам времени и денег. Лучшее ее не совершать. Аналогично для сотрудника. Поэтому врать про проект не стоит. Но уметь его красиво преподнести нисколько не зазорно. Напротив, в условиях конкуренции компаний за кандидатов, это ваша прямая обязанность.
+Не бывает двух одинаковых собеседований даже для кандидатов одного уровня. Техническое собеседование это всегда импровизация, попытка найти границы компетентности и сильные стороны кандидата за короткий промежуток времени.
+Отбор кандидатов
+Не все люди умеют составлять резюме.
+Слишком высокие зарплатные ожидания у интересного кандидата – не повод отказываться от собеседования. Всегда можно позадавать вопросы, которые снизят неоправданные зарплатные ожидания. Или подтвердят, что перед вами гений.
+Интевьюер, несомненно, самый умный и замечательный. Но это не повод забраковывать резюме с грамматическими ошибками (как учат вас горе HRы), смешными формулировками с проявлениями юношеской неопытности и всяким таким прочим. Задавать неоправданно сложные вопросы тоже не стоит. Оставьте высокомерие при себе.
+Не нужно бояться звать на собеседование человека, который раньше работал дизайнером/юристом/прорабом на заводе, но переучился на разработчика. Будем же честны, разрабатывать вашу скучную REST API много ума не надо, а профильное образование нужно далеко не везде.
+У кандидата может не быть 100% попадания в ваш технологический стэк, что не помешает ему в нем очень быстро разобраться. Скорее всего, неразумно отвергать кандидата с опытом работы с Flask 3 года, но без опыта работы с Django, на ваш заурядный Django-проект. Ну правда.
+Единственный способ быстро найти разработчика: провести как можно больше собеседований
+Среднее время, которое затратит интервьюер на 1 собеседование: ~2.5 часа (отсмотр резюме, подготовка к интервью, само интервью, общение с HR и CTO).
+Не стоит делать техническое интервью дольше 2 часов. Идеально 1.5 часа.
+3 собеседования в неделю – это хороший темп. Больше – тяжело (физически для интервьюера, для HR в смыле поиска кандидата и для проекта в смысле отсутствия лида во время собеседований). Меньше – подбор сотрудника затянется.
+Среднее время поиска Python-разработчика зависит от проекта, грейда и того, что может предложить ваша компания. В среднем 3 месяца от размещения заявки в HR до первого дня работы нового сотрудника это нормально.
+Ваш главный союзник в общегуманитарных вопросах собеседования - ваш HR.
+Не все разработчики – это тихие интроверты. Есть достаточное количество людей, которые умеют говорить, продавать себя и выучивать ответы для собеседований, не имея глубоких знаний. Не дайте себя обмануть, обязательно давайте задачки.
+
+Гуманитарные вопросы
+Что кандидат делал на прошлых местах работы. Какую позицию занимал?
+Какой состав команды был на прошлых проектах (фронт, бэк, QA, админы, менеджеры)?
+Как был организован процесс планирования, постановки задач и ревью? Какие в этом были плюсы и минусы?
+Почему кандидат решил уйти (или уже ушел) с прошлого места работы?
+Что хотелось бы от нового проекта? В смысле задач и процессов?
+ 
+Архитектура, паттерны
+Какие паттерны знаете?
+Считаете ли вы Singleton антипаттерном?
+Опишите принципы MVP. Какие еще есть похожие MV*, в чем разница между ними?
+Объясните принцип DI
+Объясните принципы SOLID
+Объясните принципы Clean Architecture
+ 
+Android
+Как можно выявить проблемы в скорости UI и устранить их?
+Какие проблемы были с использованием Dagger?
+Приходилось ли использовать Guard?
+Что такое multidex?
+Приходилось ли сталкиваться с миграцией с Dalvik на новую технологию ART?
+Начиная с какой версии пишете под Android? Какие были сложности с разницей версий?
+Асинхронные механизмы загрузки в Android
+В чем отличие AsyncTask от Thread?
+Минусы AsyncTask
+Опишите, что такое Activity
+Чем Fagment отличается от Activity?
+Разница между Service и IntentService. Пример использования Service.
+Зачем нужен Headless fragment (без View и с setReatinInstance = true)? Приходилось ли использовать?
+Какие новшества были в последней версии Android?
+Как определяете, какой layout надо использовать для смартфона, а какой для планшета? 
+Как в коде определите: планшет это или смартфон?
+Пример использования BroadcastReceiver
+Опишите LifeCycle Activity
+Отличия Serializable и Parcelable
+ Java
+Контракт hashcode и equals
+Виды коллекций в Java: List, Set, Queue, Stack
+Разница между ArrayList и LinkedList. В каком случае что лучше использовать?
+Принцип работы HashMap и HashSet
+Что такое Generic?
+Когда используем bounded type: "T extends Class" и "T super Class"? Каковы их ограничения.
+Отличия Abstract от Interface, когда какой лучше использовать?
+ 
+Git
+Разница между pull и fetch
+Разница между merge and rebase
+ 
+Прочее
+Минусы использования сторонних библиотек
+Что вы будете делать, если ваше решение не совпадает с решением коллег или лида?
+Какие свои качества работы в команде вы можете описать?
+Если бы вы могли вернуться на 3-4 года назад, что бы вы изучали?
+У вас есть команда, какие правила вы установите, чтобы писать тесты?
+Какую книгу вы можете посоветовать? Необязательно про программирование.
+Ваша жена не против релокации?
+
+Расскажите о себе.
+Как вы узнали о данной вакансии?
+Что вы знаете о нашей компании?
+Какую ценность вы сможете принести нашей компании?
+Как ваши навыки соответствуют требованиям этой должности?
+Расскажите о вашей самой сильной стороне.
+Что для вас является вашей главной слабостью?
+Какие карьерные цели вы преследуете?
+Как ваши ценности соответствуют миссии нашей компании?
+Есть ли вопросы, которые вы хотели бы мне задать?
+Вопросы о биографии и опыте. Вопросы о вашей биографии и опыте могут включать в себя запросы о ваших навыках и образовании, особенно если вы недавно закончили университет. Ваши ответы помогут интервьюеру лучше оценить, насколько ваш опыт и квалификации соответствуют требованиям вакансии. Некоторые из следующих вопросов могут быть похожи на приведенные выше:
+
+Какие у вас есть академические степени?
+Как бы вы оценили свой уровень квалификации в этой области?
+Почему вы решили стать администратором Linux?
+Какие профессиональные достижения у вас есть?
+Как вы помогли своей предыдущей организации достичь своих целей?
+Какие карьерные цели вы преследуете?
+Планируете ли вы продолжать образование в будущем?
+Вы выполняли или участвовали в каких-либо проектах, связанных с отраслью, во время получения образования?
+Какие навыки вы бы хотели развить, если у вас их нет?
+Где вы видите себя через пять лет? Через десять лет?
+Вопросы для глубокого интервью Во время собеседования интервьюер может перейти к более сложным и специфическим для отрасли вопросам, связанным с вашими знаниями и опытом в администрировании Linux. Ваши ответы могут продемонстрировать глубину вашего понимания данной области и то, как вы применяете свои навыки для достижения бизнес-целей. Следующие вопросы помогут вам подготовиться к более специализированным вопросам:
+
+Как подготовиться к техническому собеседованию
+1. Изучите требования вакансии
+Перед собеседованием внимательно изучите описание вакансии, чтобы понять, какие навыки наиболее важны.
+
+Оцените ключевые технологии и инструменты, указанные в вакансии.
+Выделите свои сильные стороны, подумайте, как их подчеркнуть.
+Определите, в каких областях вам нужно больше знаний или практики.
+Проанализируйте, какие задачи могут быть поставлены перед вами.
+Ознакомьтесь с конкретными конфигурациями, которые требуются в вакансии.
+2. Освежите знания о платформе 1С
+Необходимо обновить основные знания о платформе, которые часто проверяют на собеседованиях.
+
+Разберите принцип работы конфигурации.
+Пройдитесь по основным объектам платформы, например, справочникам, документам, регистраторам.
+Повторите работу с запросами, их оптимизацию.
+Обратите внимание на взаимодействие 1С с внешними компонентами.
+Ознакомьтесь с настройкой печатных форм.
+3. Подготовьтесь к практическим заданиям
+Практические задания на собеседовании могут потребовать решения реальных задач.
+
+Протренируйтесь писать запросы с различными условиями и фильтрами.
+Порешайте задачи по созданию обработок, отчетов, форм.
+Проектируйте простые системы учета данных.
+Отработайте практику интеграции с внешними системами.
+Научитесь работать с типами печатных форм, их настройкой.
+4. Подготовьте ответы на стандартные вопросы
+На собеседованиях часто задаются стандартные вопросы по платформе, вашему опыту.
+
+Подготовьте ответы на вопросы о вашем опыте работы с различными конфигурациями.
+Ожидайте вопросы о принципах работы с регистрами данных и транзакциями.
+Будьте готовы объяснить сложные задачи, которые вы решали.
+Подготовьте примеры оптимизации запросов.
+Подумайте, как ответить на вопросы о вашей роли в предыдущих проектах.
+5. Развивайте навыки командной работы
+Кроме технических знаний важно уметь работать в команде и взаимодействовать с коллегами.
+
+Подготовьтесь рассказать, как вы взаимодействовали с другими разработчиками, заказчиками.
+Разберитесь в процессах разработки, проектирования системы.
+Будьте готовы обсудить архитектуру решения.
+Потренируйтесь объяснять сложные технические моменты доступным языком.
+Подготовьтесь рассказать о вашем опыте работы в коллективе.
+6. Изучите принципы тестирования и отладки
+Умение отлаживать и тестировать код также может быть важным на собеседовании.
+
+Ознакомьтесь с инструментами для отладки в 1С.
+Разберитесь в методах тестирования объектов.
+Изучите методы автоматического тестирования в 1С.
+Повторите, как тестировать интеграции с внешними системами.
+Попрактикуйтесь в поиске и исправлении ошибок в коде.
+7. Подготовьтесь к вопросам о производительности
+Продуктивность и оптимизация — важные темы для собеседования.
+
+Изучите методы оптимизации запросов.
+Разберитесь в масштабировании 1С и принципах работы с большими данными.
+Ознакомьтесь с метками, инструментами для анализа производительности.
+Подготовьтесь объяснить, как минимизировать нагрузку на сервер.
+Подготовьте примеры оптимизации ваших предыдущих проектов.
+8. Отработайте поведение на собеседовании
+Уверенность и спокойствие на собеседовании также играют немалую роль.
+
+Практикуйтесь в четком изложении своих мыслей.
+Подготовьтесь кратко и ясно объяснять свои решения.
+Научитесь сохранять спокойствие в стрессовых ситуациях.
+Прорепетируйте ответы на типичные вопросы.
+Подготовьтесь продемонстрировать свою заинтересованность и желание развиваться.
+
+Preparing for a React interview requires a structured approach that combines conceptual learning with hands-on coding practice. Candidates who follow a clear preparation plan consistently outperform those who study randomly.
+
+Master Core React Concepts First
+Strong fundamentals form the foundation of interview success. Candidates should thoroughly understand components, props, state, hooks, and the Virtual DOM before moving on to advanced topics. Interviewers quickly identify candidates who memorize answers rather than genuinely understand them.
+
+Practice Coding Challenges Regularly
+React interviews often include live coding sessions where candidates build components or solve problems in real time. Platforms like CodeSandbox, LeetCode, and HackerRank offer React-specific challenges that simulate real interview conditions. Daily practice builds speed and confidence.
+
+Build Portfolio Projects
+Interviewers value candidates who demonstrate practical experience through personal projects. A well-built to-do app, weather dashboard, or e-commerce interface shows employers that candidates can apply React concepts to real-world problems.
+
+Understand Company-Specific Expectations
+Different companies emphasize different aspects of React knowledge. Startups may focus on speed and versatility, while enterprise companies often prioritize scalability and testing practices. Researching company tech stacks helps candidates tailor their preparation.
+
+
+Getting Ready for Your React Deep Dive
+But before we get to the actual list of questions, let’s talk about the interview itself and how you can prepare for it.
+
+Deconstruct the Core: You wouldn't build a complex React application without understanding its fundamental React features. Similarly, for your interview, grasp the "whys" and use them. Why unidirectional data flow? What problem did hooks in React solve? Why is component-based architecture so powerful for building user interfaces?
+
+Code It Out: Reading about controlled components or asynchronous data loading is one thing; actually implementing them is another. Fire up your favorite IDE, build small function app examples that demonstrate state and lifecycle methods, how to pass data between parent and children components, or even a basic custom hook.
+
+Debug Your Experience: Every developer has faced bugs. Instead of just listing projects, practice articulating the challenges you encountered, especially those related to React components, complex state management, or optimizing rendering components. How did you identify the issue? What patterns did you use to debug? Showing your problem-solving process is as crucial as knowing the answer.
+
+Interactive Learning: Not everyone realizes this, but interviews go both ways. Prepare thoughtful questions about the team's tech stack (do they lean on Context API or a full-blown state management library?), their approach to testing, or how they handle server-side rendering. It shows you're not just looking for a job, but for the right environment to grow your React skills.
+
+Test yourself with Flashcards
+You can either use these flashcards or jump to the questions list section below to see them in a list format.
+
+Расскажите в двух словах о том, чем вы занимались в последнем проекте? В чем заключается ваша работа?
+Важно понять, как специалист структурирует информацию о своей роли и задачах.
+Расскажите о команде, с которой вы работаете. Как распределяются роли?
+Умение работать в команде и понимание её динамики — важный аспект, особенно при удаленной работе.
+В каких еще проектах вы принимали участие? Какова была ваша роль в этих проектах?
+Этот вопрос помогает раскрыть глубину и разнообразие опыта.
+Какая самая сложная задача, с которой вы сталкивались, и как вы её решили?
+Способность справляться с вызовами показывает уровень самостоятельности и креативности.
+Какие виды автоматизации сборки вы использовали? Чем обоснована необходимость использования GULP или Webpack?
+Знание инструментов сборки, таких как Webpack, показывает техническую осведомленность кандидата.
+Есть ли у вас опыт с Server-Side Rendering (SSR)?
+Мы выясняли, есть ли у кандидата навыки работы с SSR для оптимизации производительности приложения.
+Можете привести примеры из вашей практики, как вы использовали API?
+Практические примеры работы с API говорят о глубине опыта во взаимодействии с внешними сервисами.
+Какие утилиты вы используете для автоматической проверки «чистоты» кода?
+Здесь проверяется знание ESlint, Stylelint и Sonar — ключевых инструментов для поддержания качества кода.
+Приходилось ли вам оптимизировать работу приложения? Как вы это делали? Насколько удалось оптимизировать?
+Вопрос об оптимизации показывает, насколько кандидат ориентирован на производительность и качество продукта.
+Как вы оцениваете свою работу над проектами с точки зрения эффективности?
+Самооценка и критическое мышление важны для долгосрочной работы в проекте.
+Результат
+
+Скилы Frontend-разработчика
+Минимальный набор hard-скилов и технологий, с которыми должен быть знаком специалист ( набор может меняться от вакансии к вакансии )
+
+Javascript
+Typescript
+React / Angular / Vue ( или любой другой frontend фреймворк | библиотека )
+Styled-component, css-inline, Sass
+Redux / Redux-toolkit / Redux-Saga
+RTK Query
+Git ( или опыт с любым другим удаленным репозиторием )
+Архитектура ( Знание основных. Опыт выбора и внедрения под проект )
+Yarn / Npm
+Next.js | Vite.js
+Webpack / Rollup / Vite
+Css + Html ( верстка, семантика, адаптация, базовая оптимизация )
+Scss, Less ( и любые другие препроцессоры )
+CI/CD
+Scum / Agile
+Node.js
+Figma ( или любой другой сервис для работы с дизайном / wireframe )
+Общие вопросы
+Event loop - Что это, как работает, частью какого механизма является, сколько очередей и т.д. ( важно понимать весь процесс )
+Dom и Виртуальный DOM - Что такое Dom, как формируется и в чем отличие от Виртуального Dom ( Виртуальный DOM является частью фреймворков )
+Как работает браузер
+Что происходит при вводе запроса в поисковую строку
+В чем разница между " == " и " === "?
+Паттерны программирования
+Архитектурные решения - Какие знаете, в чем отличия, как выбирать правильный для проекта
+Принципы Solid - Что такое принципы разработки Solid
+Принцип kiss, dry
+API, Rest API - Что это, в чем разница
+CI / CD - Что это и как работает
+
+Общие вопросы программирова__н__ия
+С какими языками программирования вам удобнее всего работать?
+Какие плюсы и минусы есть у вашего любимого статистического программного обеспечения?
+Расскажите об алгоритме, который вы создали.
+Опишите Data science проект, над которым вы работали продолжительное время. Что вы узнали из этого опыта?
+Работаете ли вы над проектами с открытым исходным кодом?
+Как бы вы очистили dataset в (язык программирования)?
+Расскажите о коде, который вы использовали во время своего последнего проекта?
+
+Соискатель может услышать вопросы, касающиеся следующих тем:
+
+Работа в команде
+Руководство
+Управление конфликтами
+Решение проблем
+Неудачи
+Перед интервью стоит записать примеры, связанные с этими темами. Когда кандидата спрашивают о предыдущем опыте, лучше обязательно рассказать историю и в то же время быть кратким и логичным.
+
+Примеры таких вопросов:
+
+Расскажите о том рабочем периоде, когда вы взяли инициативу в свои руки.
+Расскажите об опыте, в рамках которого вы столкнулись с серьезной дилеммой.
+Расскажите о том, когда вы разрешили конфликт.
+Расскажите о своем провале и о выводах, сделанных впоследствии.
+Расскажите о вашем прошлом опыте работы. Почему вы решили заниматься именно этим?
+Расскажи о трудностях, которые вы преодолели, будучи задействованным в групповом проекте.
+Сталкиваясь с утомительной, скучной задачей, как вы справляетесь с ней и мотивируете себя на ее завершение?
+Что вы делали в прошлом, чтобы ваш клиент был удовлетворен результатами работы?
+Какими своими достижениями на своей предыдущей работе вы гордитесь?
+Каким образом вам удается поддерживать баланс между работой и личной жизнью?
+Над каким проектом вы бы хотели поработать в нашей компании?
+Какие уникальные навыки вы бы принесли команде?
+Какой областью данных вы бы хотели заниматься при отсутствии ограничений?
+Вы когда-нибудь задумывались о создании стартапа? Какая концепция/идея вас интересует?
+О каких ваших хобби нет ни слова в резюме?
+Каковы ваши прогнозы на следующие 20 лет?
+Что вы делали сегодня/на этой неделе/на прошлой неделе?
+Как бы вы поступили, если бы выиграли миллион долларов в лотерее?
+Во что верите вы, в отличие от большинства людей?
+Какие “пробивные” черты характера у вас есть?
+Чем вы увлекаетесь?
+Навыки решения проблем
+В какой-то момент работодатель захочет протестировать способности кандидата в решении нестандартных задач. Например, соискателя в Yelp могут спросить, как о будет создать систему, обнаруживающую поддельные отчеты Yelp. Главное - не бояться задавать вопросы.
+
+Соответствие корпоративное культуре
+В ходе интервью работодатель также хочет понять, насколько кандидат «соответствует» духу компании, почему он заинтересовался data science в целом, и предложенной вакансией - в частности. Следующие вопросы помогут кандидату не оказаться застигнутым врасплох, но самое главное при ответе на них - это честность. Правильного ответа не существует, однако лучший ответ - это тот, который сказан с уверенностью и улыбкой.
+
+
+Week 1: Strengthen JavaScript & Angular Basics
+Focus: Reinforce JavaScript fundamentals and dive into Angular essentials.
+
+Daily Goals:
+
+Day 1: Review JavaScript fundamentals (ES6+ features, closures, promises, async/await).
+
+Day 2: Learn Angular components, templates, and data binding.
+
+Day 3: Work with Angular directives, pipes, and services.
+
+Day 4: Understand Angular dependency injection and lifecycle hooks.
+
+Day 5: Learn Angular forms (template-driven and reactive).
+
+Day 6: Explore Angular routing and navigation.
+
+Day 7: Practice coding challenges using Angular.
+
+Tip: Be prepared to explain Angular’s architecture and lifecycle in depth.
+
+Week 2: Backend Development with Node.js & Express
+Focus: Learn backend fundamentals and API development with Express.
+
+Daily Goals:
+
+Day 1: Set up a Node.js environment and learn Express basics.
+
+Day 2: Build RESTful APIs with Express and handle routing.
+
+Day 3: Implement JWT authentication and authorization.
+
+Day 4: Work with Express middleware and error handling.
+
+Day 5: Integrate Express with MongoDB using Mongoose.
+
+Day 6: Learn about validation and input sanitization.
+
+Day 7: Develop a small backend application with Express.
+
+Tip: Practice error handling and middleware design in Express to optimize backend performance.
+
+Week 3: Master MongoDB & Full-Stack Integration
+Focus: Work with MongoDB and integrate the full stack (Angular + Node.js).
+
+Daily Goals:
+
+Day 1: Learn MongoDB CRUD operations, schemas, and indexes.
+
+Day 2: Design efficient MongoDB data models and optimize queries.
+
+Day 3: Integrate MongoDB with your Express backend using Mongoose.
+
+Day 4: Connect Angular with Express backend using HTTP requests.
+
+Day 5: Implement state management in Angular using services and RxJS.
+
+Day 6: Deploy a simple MEAN stack application.
+
+Day 7: Practice debugging and optimizing full-stack applications.
+
+Tip: Focus on handling asynchronous requests in both Angular and Node.js effectively.
+
+Week 4: System Design & Mock Interviews
+Focus: Study system design principles and participate in mock interviews.
+
+Daily Goals:
+
+Day 1: Understand basic system design principles (scalability, redundancy, and fault tolerance).
+
+Day 2: Study caching (Redis) and its application in full-stack systems.
+
+Day 3: Learn about microservices architecture and API gateways.
+
+Day 4: Practice designing scalable systems (e.g., e-commerce, social media app).
+
+Day 5: Conduct a mock technical interview focusing on MEAN stack topics.
+
+Day 6: Work on refining behavioral interview answers using the STAR method.
+
+Day 7: Review and finalize your portfolio or personal project for the interview.
+
+Tip: Be ready to discuss how to optimize and scale a MEAN stack app to handle large-scale traffic.
+
+Bringing It All Together
+By following this roadmap, you’ll build a solid foundation in the MEAN stack and be fully prepared for your Full Stack MEAN Developer interview.
+
+Master Angular & TypeScript: Build dynamic, efficient front-end applications.
+
+Develop Secure & Scalable APIs: Implement Express and Node.js with MongoDB integration.
+
+Deploy Full-Stack Applications: Learn about cloud deployment and scaling strategies.
+
+Overcoming Common Interview Prep Pain Points
+Frontend with Angular: Understanding components, services, dependency injection, and RxJS.
+
+Backend with Node.js & Express: Developing RESTful APIs, middleware, and security measures.
+
+Databases & MongoDB: Schema design, querying, and performance optimization.
+
+Full-Stack Integration: Connecting Angular with Node.js and MongoDB effectively.
+
+System Design & Deployment: Building scalable apps and deploying them on cloud platforms.
+
+https://www.frontendinterviewhandbook.com/ru/javascript-questions
+https://github.com/h5bp/Front-end-Developer-Interview-Questions
+
+Вопросы по Теории:
+
+Пирамида тестирования. В том числе как она может меняться, почему, и хорошо это или плохо
+
+Техники тест-дизайна. Часто просят вспомнить какие техники ты используешь на практике, привести примеры. Либо просят на конкретном примере рассказать какие техники применишь для какого кейса (ниже приведу пример)
+
+Признаки (характеристики) качественного продукта
+
+Как измерить качество / метрики качества
+
+Каким критериям должно соответствовать приложение на тесте / условия "тестируемости"
+
+Agile общий
+
+Agile тестирование
+
+Функциональное и не функциональное тестирование какие подвиды в каждом
+
+Penetration тестирование
+
+Автоматизация: какие виды тестов и кто реализует, на каком этапе тестирования используются, как запустить процесс автоматизации, какие сценарии можно не автоматизировать
+
+Кейсы тестирования:
+
+Есть форма с полями. Придумать тест-кейсы с обозначением какую технику тест дизайна используешь в каждом из кейсов. Пример полей:
+
+Имя (с ограничением по количеству символов)
+
+Специальность врача (дропдаун)
+
+Имя врача (дропдаун зависит от специальности)
+
+дата (виджет)
+
+время (виджет)
+
+кнопка отправить
+
+Есть какой-то http запрос рассказать из чего состоит и придумать тест-кейсы
+
+Вы пришли на проект в котором 500+ ручных тесткейсов - что будете делать, какой план
+
+Что делать если нет требований к задаче
+
+Какие нефункциональные тесты можно применить к какому-то веб запросу
+
+Общие технические вопросы:
+
+GIT - чем отличается git pull от git fetch и другие команды гита
+
+tcp / upd чем отличаются протоколы
+
+из чего состоит http запрос
+
+в чем отличие http от https и в каких случаях можно использовать http и почему
+
+что такое двух- и трех- уровневая архитектура, толстый и тонкий клиент.
+
+сохранили какую-то формочку - что происходит с запросом дальше
+
+приходит в девтулзах json как он отрисовывается на фронте
+
+приходит html в запросе с уже сформированной инфой - где он обработался и сформировался
+
+nginx что и для чего
+
+как приложение понимает к какому серверу запрос если там передается красивый хост а не ip сервера
+
+идемпотентность http-методов
+
+Python + Pytest:
+
+декораторы
+
+фикстуры
+
+контекст менеджеры
+
+магические функции (для чего нужен init в классе, enter и exit в менеджерах контекста)
+
+хуки
+
+отличие == от is
+
+что вернет print(True + 4)
+
+итерируемые объекты
+
+a=3 - какой тип данных?
+
+изменяемые и не изменяемые типы данных
+
+написать класс (с какими-то методами), а потом еще один который от него наследуется
+
+есть 2 слова. Написать функцию которая будет принимать эти 2 слова и проверять можно ли составить второе слово из первого
+
+написать проверки валидации пароля
+
+написать функцию для определения счастливого билета
+
+часто дают задачи с уже написанным кодом который содержит ошибку которую вам нужно исправить. Конкретные примеры я привести не могу, но как правило это задачи на знания особенностей разных типов данных, циклов, классов
+
+написать функцию которая принимает на вход слово, длину и высоту и выводит слово всегда в центре, согласно референсу:
+
+    ##############
+    #            #
+    #    test    #
+    #            #
+    ##############
+SQL:
+
+написать простой селект с использованием LIKE
+
+селект с джойном
+
+селект с агрегатной функцией
+
+как сделать селект из 2-х таблиц без джойна
+
+как очистить данные таблицы
+
+как удалить/создать таблицу
+
+как удалить/создать бд
+
+что такое транзакции
+
+что такое первичный ключ
+
+может ли быть составной первичный ключ
+
+что такое внешний ключ
+
+View в БД и их отличия от таблиц
+
+Оператор UNION и ограничения на его использование
+
+Linux терминал:
+
+как найти строку в документе
+
+с помощью какой утилиты можно подключиться к удаленному Linux серверу и как оттуда скопировать файл на локальную машину
+https://www.pvsm.ru/sobesedovanie-voprosy/409923
+
+
+С какими вопросами и задачами столкнулся на собеседованиях
+Что касается самих заданий: тут их огромное множество. Бывает, просто устно опрашивают на понимание базовых принципов:
+
+семантика HTML5;
+что такое DOM;
+как работает ключевое слово this (частый вопрос);
+что такое замыкание (частый вопрос);
+вопросы по Bootstrap 4 (по адаптивной верстке в целом);
+перечислить все известные способы, как можно отцентрировать div на экране (позиционирование);
+всегда спрашивают про какие-либо фреймворки (React Vue Angular);
+вопросы о БЭМ;
+что такое нотация «О большое» (алгоритмическая сложность кода);
+общие вопросы про препроцессоры (Less/Sass).
+По практике: она выполняется либо на листочке, либо предоставляют компьютер, либо дают задание домой. На листочке просят:
+
+сверстать какой-то макет нарисованный;
+в виде теста (выбери правильный ответ);
+разные задачи.Мне попадалась задача «палиндром» – сделал рекурсией благодаря Хекслету, до этого рекурсию не понимал совсем;
+Задачи на компьютере:
+
+парсинг страницы интернет магазина: надо вытащить все артикулы товаров;
+попадались задачи на создание объекта по заданному массиву:
+дают задачи с написанным кодом (написать результат на выходе из функции).
+Домашняя работа (присылают задание на почту): там опять же верстка, или надо написать какие-то функции. Заданий было очень много, задают разные вопросы. Частенько по базам данных, по особенностям запросов на сервер и прочее. Выше писал, что стек технологий, которыми должен владеть frontend-программист, очень сильно отличается от компании к компании.
+
+
+
+Темы, которые нужно знать
+Базовый уровень (школьный этап ВОШ):
+
+Переменные, условия, циклы, функции
+Массивы и строки
+Сортировка (пузырьковая, быстрая, sorted в Python)
+Поиск (бинарный поиск)
+Базовая математика: делимость, простые числа, НОД/НОК
+Продвинутый уровень (региональный/финал ВОШ):
+
+Динамическое программирование
+Графы (BFS, DFS, Дейкстра)
+Жадные алгоритмы
+Стеки, очереди, деревья
+Теория чисел, комбинаторика
+
+
+Design an Events Website
+Q. Imagine you are a founder of a website that wants to sell tickets for events online. Discuss a plan for releasing a minimum viable product (MVP) website for this startup and define an architecture to support the requirements.
+The following is a representation of a real-life Full Stack System Design interview setting involving a technical architect/staff engineer. We’ve listed examples of follow-up questions to the question listed above and ideal answers for each.
+
+This interview is purely fictitious, and any resemblance to a real-life setting is coincidental.
+
+Interviewer:
+Identify the high-level functionality of this system that you think is crucial in the MVP, given you have funding for the next 6 months of the project.
+
+Candidate:
+The application seems to be a consumer app that has two types of users:
+
+The publishers who own and publish the events on the website
+The customers who would like to purchase tickets to those events
+The MVP scope can therefore include the following use cases for these users:
+
+Publishers:
+
+Authentication
+Define an event (and modify existing ones)
+Define tickets and pricing (or modify existing ones)
+Map of venue
+Date(s)/time(s)/other constraints (# of tickets)
+Customers:
+
+Authentication
+Search for events
+Event details
+Ticket prices
+Map of venue/ticket placement
+Checkout flow
+View purchased tickets
+Interviewer:
+Define the characteristics of the system; high-level system architecture.
+
+Candidate:
+Type of system:
+
+Consumer-centric application.
+The app is read-heavy as most operations are around searching and browsing events.
+In some cases, we may have spikes in transactions/writes when there are high-velocity selloffs for popular events.
+The checkout flow is similar to other reservation systems, e.g., airlines, but perhaps with less convergence. There are similar challenges of securing seats during reservation.
+Clarifying question by the Candidate:
+
+What are the scaling parameters, like the number of concurrent users, total users, and expected number of checkouts at any given time?
+
+Interviewer:
+
+Assume and estimate as the product is new and designed for horizontal scaling.
+
+Candidate:
+Start with N tier high-level architecture:
+
+Web app (consumer): Consumer focus and hence the emphasis on user experience is a must.
+Web app (publisher): Enterprise focus and prioritizes functional features over user experience.
+Frontend API layer: Defines REST interface for frontend – backend communication.
+Business application layer (cloud functions): Defines the business logic, workflows, and transactions.
+Database: For storing all events, maps, transactions, and payments.
+Architectural diagram:
+
+
+Interviewer:
+What kind of database should we use for this purpose?
+
+Candidate:
+We can consider two kinds of databases:
+
+NoSQL: Works best for representing dynamic/nested schema for events and seating, etc.
+SQL: Works best for transactions and payments.
+Since we have both kinds of use cases, we shall employ both servers.
+
+Interviewer:
+How do we scale the database?
+
+Candidate:
+We can introduce a cache of events with reasonable TTL that is based on the LRU scheme and shard it geographically. Something like memcached or redis cache should work just fine.
+
+
+Interviewer:
+How do you implement the business application layer?
+
+Candidate:
+We can use step functions to represent workflows. They involve less integration code, have built-in fault tolerance and stateful workflows, and can scale reliability in the cloud.
+
+
+Interviewer:
+How would you implement the frontend API layer?
+
+Candidate:
+We can use lambdas with API gateway for a simple REST or GraphQL interface. GraphQL is great as it provides query, search, and aggregation capabilities out of the box and can optimize queries by reducing the number of requests/responses for entities.
+
+
+Interviewer:
+Can you provide some breakdown of APIs?
+
+Candidate:
+Let’s work backward and drive the API design based on UI requirements.
+
+Interviewer:
+Sure, let’s talk about the publisher website first?
+
+Candidate:
+Actually, because we are under time constraints and do not have many development resources, we can pick a metro as a startup MVP supported city, remove the requirement of a publisher website altogether, and use some back-office software (like Google Sheets, AppSheet) to ingest events, venue, date times, maps and ticket prices.
+
+(These are examples of prudent and practical tradeoffs that Architects often make keeping business goals in mind!)
+
+
+Interviewer:
+Interesting, how do you ingest venue maps and associate them with ticket prices and quantity?
+
+Candidate:
+We can be creative. Squarish/Rectangular areas are easier to construct, even in spreadsheets. We can use them for MVP, and if this is too limiting, we can simply create pictures and use image maps in HTML to associate them with seating and pricing.
+
+Even better, we can annotate them using tools and then provide seating numbers and decouple pricing by joining several pieces of metadata (venue, date, time, location) with the price.
+
+Interviewer:
+Ok. Let’s assume we have the data ingested. Define the pages for the customer website frontend.
+
+Candidate:
+A possible sitemap will include:
+
+Homepage (location-aware using HTML5 APIs) with search option
+Search for events (location, date, time, type of event)
+Event detail page (links to purchase tickets)
+Shopping cart page (displays in-basket tickets with checkout options)
+Authentication (social authentication) (optional if purchasing as a guest)
+Profile (name, age, location, etc.)
+Checkout page (# of tickets, date, time, location, seating quantity, and placement)
+Confirmation page/transaction summary/email purchased tickets (with QR codes)
+Interviewer:
+One issue you may face, particularly for popular events, is multiple customers attempting to purchase tickets for the conflicting seating range. How do you ensure seat selection does not involve conflicts when a customer is selecting or proceeding with a transaction?
+
+Candidate:
+We can try and minimize conflicts by:
+
+Providing a limited-time hold on tickets in a cart and aborting the hold in case a transaction does not complete within the hold period.
+Provide default selection for free seats at the time of request hoping customers will pick the default selection.
+Sectioning the space beforehand for 2, 3, 4, 5, or more seats and only display specific sections based on quantity.
+Continually update seats via real-time communication (WebSockets).
+Chunk space into segments and provide a section of space to the user to reduce conflicts.
+Some conflicts can still occur amidst parallel transactions, so we can reject requests.
+Interviewer:
+It’s hard to do unbounded transitions in parallel in a way that prevents conflicts from arising; what else can you do to minimize conflicts?
+
+Candidate:
+Database conflicts can degrade performance, owing to an increase in database locks and aborted transactions. We can follow the above ideas (or use WebSockets for near-real-time seating access) and have a queuing mechanism where each request can be worked upon by lambda triggers.
+
+UI can use polling to query the status of the reservation. This also works under choppy network conditions. We can send an email when a reservation is confirmed or denied. Even better, in late conflict situations, we can select alternate seats for the customer and have an option to cancel (possibly?).
+
+Interviewer:
+Let’s now define entities and relationships.
+
+Candidate:
+The main entities in this app are:
+
+Customer: Browse events, purchase tickets
+Publisher: Publish events, tickets, venue, and prices for tickets
+Event: Represent an event that has a venue, event instances at a geographical location
+Event Instance: An instance of an event at a particular venue at a particular day/time
+Tickets: A definition of a ticket at a location within a venue
+Ticket Instance: An instance of ticket bound to a particular event instance and price
+Venue Map: Map for an event instance defining several ticket locations
+Geographic Location: Location for an event
+Payment Instruments: Represents credit cards and other means of payment
+Transaction: Represents a ticket purchase by a customer sold by a publisher
+ER diagram:
+
+Interviewer:
+How would you handle payments in your system?
+
+Candidate:
+Payments require a domain specialization, and secure storage of payment information is a P0 requirement for any e-commerce application. For this reason, we shall rely on a credible payments provider, like Stripe, such that we can focus on the core business proposition and leave payment management to experts.
+
+Stripe provides excellent APIs to handle interactive and passive payment options for both one-time and recurrent payments.
+
+Interviewer:
+How would you handle large parties (more than 10, let’s say)?
+
+Candidate:
+Since this is a special arrangement, we would allow customer service to book tickets for large parties, at least in the MVP.
+
+Key Takeaways
+The interaction above is the perfect example of a structured interview strategy. The candidate sends a great signal to the interviewer about their relative seniority.
+
+Let’s break down the key components of the approach taken by the candidate:
+
+1. Scope Fencing
+The candidate begins by negotiating and clarifying requirements and correctly classifying the application to be a consumer application and then identifies use cases for the application to define the MVP scope.
+
+This scope fencing is important before sketching any architecture for the system, as we are focussed on a specified set of requirements.
+
+2. Start and Enhance
+After that, the candidate proposes an architecture for the initial MVP requirements and progressively enhances the architecture according to evolving clarifications, ensuring simplicity and preventing over-engineering.
+
+3. Trade-offs
+The candidate also made appropriate tradeoffs to release the MVP product by using existing back-office tools (Excel) and focusing on the consumer website rather than building a publishing website.
+
+The choice of one metro city further scopes down the MVP target to an achievable one. At senior levels making and proposing such tradeoffs is a typical thing for software developers.
+
+Similarly, the candidate also assessed the conflicts in transactions owing to high-traffic selloffs and proposed several options to mitigate and lessen the possibility of such conflicts and suggested creative ways to achieve this objective.
+
+Again, another example of tradeoffs and options expected from senior engineers. As we observed, this had an impact on the architecture, and the candidate also proposed the use of queues and lambdas to process transactions.
+
+4. Demonstrate Relevant Skills
+Finally, the candidate also demonstrated data modeling skills by identifying entities and relationships for the product along with the cardinality of the relationships.
+
+The candidate also identified security aspects of payments and suggested the use of well-proven payment providers (Stripe) and not use contrived, homegrown payment systems that could lack security. This helps focus the team on MVP business objectives.
+
+
+Top System Design Interview Questions Tips and Tricks
+Understand the Problem: Make sure you fully understand the problem you are trying to solve and the constraints and requirements of the system you are designing.
+Break Down the Problem: Divide the problem into smaller, more manageable pieces. This will make it easier to understand and design the system.
+Identify the Key Components: Identify the key components of the system and how they will interact with each other.
+Consider Scalability: Think about how the system will scale as the number of users or the amount of data increases.
+Use Appropriate Abstractions: Use abstractions (such as diagrams or models) to represent the system and its components, but be mindful of the level of detail and complexity.
+Communicate Clearly: Clearly and concisely explain your design to the interviewer. Use examples and analogies to help illustrate your points.
+Be Prepared to Iterate: Expect to go back and forth with the interviewer to refine and improve your design.
+Practice, Practice, Practice: Familiarize yourself with common system design problems and practice designing systems to become more comfortable and confident in the interview.
+Ask Questions: Don't be afraid to ask the interviewer questions to clarify the problem or to get more information about the requirements of the system.
+Stay Calm and Focused: Stay calm and focused during the interview and try not to get flustered if you encounter a particularly challenging problem.
+
+
+What are system design interviews?#
+System design interviews generally give you a set of requirements for a relatively complex system and ask you to come up with a design. Often, these requirements start off somewhat vague to test whether you know what types of questions to ask to gain clarity about the system. These interviews are generally aimed at more senior candidates since juniors can't be expected to have performed too much system design work in their careers.
+
+These interviews can be some of the best barometers of a senior engineer's knowledge, but I personally find them to be the trickiest due to their open-ended nature.
+
+Types of system design interviews#
+I have seen two types of system design interviews:
+
+Pure design. You just focus entirely on specifying the system and talking through how you would design it. You may draw up some diagrams to help convey architecture to the interviewer.
+Design + coding. The problem is slightly smaller in breadth. You talk through the design of the system and then you write some code to start implementing it.
+System design interviews look a lot different depending on your specialty. I have interviewed for both front-end and full stack web application engineer positions. For front-end positions, system design interviews tend to focus on designing a UI component and then implementing the HTML, CSS, and JavaScript for that component. For full stack positions, I have seen more pure design problems where you talk through various topics like how you'd make the application scale, database schema, and API design.
+
+How to prep for system design interviews#
+The way I practice system design interviews is to do the following:
+
+Create a list of the considerations that applies to the domain for which I'm interviewing. For example, if I'm interviewing for a front-end position then my interview will likely involve topics like accessibility and internationalization.
+Find relevant system design questions online. There are a lot of good examples online. Also, it's not too difficult to come up with your own examples.
+Design the systems. Take 45 minutes to an hour to design one of the systems you've identified. Make sure you draw out/sketch architectural pieces, which will be helpful during the interview. When you're done, review your work and make sure you've addresseed all the topics that came up in the list you made. If there are any deficiencies, do some studying of those areas.
+Creating a list of topics#
+Here are a couple lists of topics for front-end and backend positions. If you have a different specialty, do so googling to find out the relevant topics for your domain.
+
+Front-end#
+Accessibility
+Performance
+Security
+Caching
+Device types / responsiveness
+Languages / internationalization
+Componentization
+Component API
+User experience
+Multi-tenancy
+Analytics / telemetry
+Back-end#
+Database design
+Scalability
+Security
+API design
+Caching
+Availability
+Reliability
+Performance
+Authentication / authorization
+Telemetry
+The part you can't practice too well: asking questions#
+One tough aspect of system design interviews is you really don't know which items in the above lists the interviewer will be interested in, which is why you need to ask a lot of questions. For example, a good front-end clarification would be asking whether the system should support multiple languages. If the interviewer says "yes," you should spend some time explaining the achitecture for supporting different langauges. If the interviewer says "no," then you can skip this topic as you design your system.
+
+Use the RADAD framework#
+The Frontend Interview Handbook talks about the RADAD framework, which I found to be a really useful way to spend my time during the interview. The following is a copy/paste from the Frontend Interview Handbook to give you an idea of the framework, but I absolutely recommend you navigate to the handbook itself for more detail:
+
+Requirements clarifications/alignment - Ask about the requirements of the system.
+Architecture - Outline the architecture of the system (could be a UI component or an app, depending on the question). Draw diagrams where relevant.
+Data model - How would the component store any data passed into it? What data structures are used?
+API design - What's the API for using this component? What options will be allowed on the component?
+Deep dive - User Experience (UX), Performance, Accessibility (a11y), Internationalization (i18n), Multi-device support, Security
+This list is very front-end focused, but it applies equally as well to backend or full stack system design interviews.
+
+Find out where to spend most of your time#
+Once you've asked as many clarifying questions up front that you can think of, I recommend asking if there's a particular part of the system the interviewer is interested in. A lot of times the answer is "no," and you get to choose the focus. But in the event that the interviewer is particularly interested in one part of the design, that's a really good piece of information to have. Make sure to take notes as you're asking clarifying questions!
+
+Here are some good clarifying questions, which may or may not be applicable depending on the system you're being asked to design:
+
+If you're being asked to design a messaging service, you may ask:
+
+How real-time the messaging needs to be
+Whether there any special security requirements (e.g., end-to-end encryption)
+Whether we have insight into anticipated usage numbers
+How long messages should be retained
+Whether messaging should support media (e.g., images and video)
+If you're being asked to design an calendar component, you may ask:
+
+Whether it needs to support multiple languages / internationalization
+Whether it needs to support date ranges or just a single date
+What browsers and devices it will be used on
+What type of data should be stored in the calendar
+Relevant system design questions#
+The following is a non-exhaustive list of system design questions I have heard of. Feel free to practice these examples. Also, be sure to google around for other examples to practice.
+
+Back-end#
+Chat / messaging application
+Twitter / micro-blogging platform
+Link shortener (e.g., bit.ly)
+Any create, read, update, delete (CRUD) API
+Public library checkout system API
+Video streaming service
+Pinterest
+Front-end#
+The front-end for anything listed in the back-end section
+Specific components:
+Date-picker
+Image carousel
+Modal
+Accordion
+
+How to Prepare for a System Design Interview Questions?
+Familiarize Yourself with Common System Design Problems: Practice designing systems for common problems, such as a social media platform, a ride-sharing service, or a recommendation system. This will help you become more comfortable and confident in tackling new design problems in the interview.
+Understand Key Design Concepts: Make sure you are familiar with key design concepts, such as scalability, performance, fault tolerance, and security. Understand how these concepts apply to different types of systems and how to incorporate them into your designs.
+Practice Communicating your Designs: Being able to clearly and concisely explain your design is an important part of the system design interview. Practice explaining your designs to others and using examples and analogies to help illustrate your points.
+Review Data Structures and Algorithms: Familiarize yourself with common data structures and algorithms and understand how they can be used to solve design problems.
+Review System Design Principles: Familiarize yourself with principles of good system design, such as modularity, separation of concerns, and encapsulation. Understand how these principles can help you design more efficient and maintainable systems.
+Prepare for Open-ended Questions: Be prepared for open-ended questions that ask you to design a system from scratch. Make sure you have a structured approach to tackling these types of problems, such as breaking the problem down into smaller pieces or identifying the key components of the system.
+Practice with Real or Mock Interviews: Practice your system design skills with real or mock interviews. This will help you get a sense of what to expect in the actual interview and allow you to refine your approach and responses. The Full Stack Web Developer Bootcamp will advance your knowledge on both front and backend, which are essential for System Design.
+
+Red flag and green flag
+
+Think of red and green flags as signposts you can use to orient yourself in the interview. Green flags indicate that things are going well, that you're engaging with the interviewer and making a positive impression. Red flags warn you that you may be going astray and should try to get the interview back on track.
+
+Red Flag #1: You believe that to pass a system design interview, you should just “play the game, keep talking, and make sure nobody explodes.”
+Following this quote’s advice has steered many interviewees in the wrong direction. There is no game, and talking for the sake of talking is one way to hang yourself with the rope the interviewer gives you. Also, if the goal is to not explode, well, you’re wasting your and your interviewer’s time.
+
+Green Flag #1: You communicate honestly about what you know and what you don’t.
+As we mentioned earlier, this guide will teach you the basic information that you’ll be asked about in 80% of system design interviews. Although these are great odds, you still may encounter a scenario that’s beyond your level of understanding. If this happens to you, don’t worry! Just engage in an honest dialogue with your interviewer, explaining when you lack certain knowledge or have gaps in your understanding. When you do have a sense of how to proceed, but you’re uncertain, you should communicate from first principles. Later in this guide, we will explain how to overcome that uncertainty and still score points with your interviewer.
+
+Red Flag #2: You find yourself pushing against interviewer feedback.
+Keep in mind that your interviewers use the same problems over and over again, and they frequently see candidates make the same mistakes. If they try to divert you from a course of action, it's likely because they've seen others flounder when using the same approach. You may be the one candidate in a hundred who finds a unique and better solution—we've had this happen before!—but carefully consider the odds before proceeding with a solution against the interviewer's advice.
+
+With that said, there is an art to pushing back against your interviewer when the situation calls for it, and later in this guide we’ll teach you how and when to employ this strategy .
+
+Green Flag #2: The interview feels like a collaboration between you and the interviewer.
+When the interviewer offers feedback, you integrate it into your design. You ask probing questions and receive useful answers about the system you're designing, its users, and its traffic. Try to establish a tone as if you were working through a problem with a coworker rather than proving yourself to an interviewer. In the real world, when you’re assigned a project, you’ll have to ask a variety of people several questions to ensure that you fully understand the problem before making decisions. That’s what interviewers want to see.
+
+Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns.
+It's OK to not know things—no one will have every answer—but it's better to admit that to your interviewer than to avoid the questions altogether. Your interviewer may be able to offer you a hint or help you reason about alternatives if they know you're struggling, but if you skip right ahead you'll miss the opportunity to provide them with any positive signal from that portion.
+
+Green Flag #3: Your role determines who should drive the focus and pace of the interview.
+If you’re looking for a mid-level position or below, your interviewer should determine the direction and speed of the interview. Given an initial overview of your design, they may ask you for clarification on some aspects of it. They may ask you to produce a more detailed design for one or more components. And they may also change the requirements and ask how you could adapt your solution to accommodate this new view of the world. Wherever they take the interview, follow along and focus on the areas they direct you to.
+
+If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.
+
+Anecdote from a seasoned interviewer
+​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
+
+If your goal is to maximize a mid-level offer, not improve your "average passing rate" (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously "giving control away" to your interviewer.
+
+Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
+
+Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
+
+The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”
+
+Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview.
+If you're struggling to provide an answer, give yourself a little bit of time to come up with something. If you're truly stuck, however, you should ask your interviewer for help. They can't tell that you're at an impasse unless you tell them, and you may waste valuable interview time while they debate whether it's been long enough to interrupt you.
+
+Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board.
+An interview doesn't need to be a continuous stream of consciousness, and it never hurts to sanity check your ideas before verbalizing them.
+
+Первая и главная рекомендация, в частности, она касается начинающих специалистов — ни в коем случае не пытаться зубрить теорию. Без осмысления вопроса и понимания, как это возможно применить на практике — зубрежка бесполезна.
+
+Можно даже неидеально знать теорию, но при этом гораздо важнее уметь самостоятельно думать, логически мыслить, не стесняться рассуждать и задавать уточняющие вопросы на собеседовании.
+
+Это критически важно, особенно для аналитика. Суперполезный скилл, который не оценить цифрами, но он дает жирный бонус кандидату при трудоустройстве. Любой работодатель будет обращать внимание в первую очередь на живой ход мыслей соискателя, а не на то, как он красиво рассказывает теорию.
+
+
+Вопросы по soft skills для системного аналитика
+Открытость мышления, способность выходить за рамки задачи, умение работать с неопределенностью, а также работать в команде — важные софты для любого аналитика.
+
+Аналитик (и системный, и бизнес) переводит неформализованные требования заказчика в структурированный, понятный описанный алгоритм для разработчика.
+
+Чтобы эти требования собрать, нужно общаться как с заказчиками, так и с отделом разработки, потом провести груминг — то есть защитить свой проект перед командой, выслушать их комментарии и согласовать проект. Поэтому коммуникативные навыки крайне важны для аналитиков.
+
+Чтобы выявить у соискателя эти скиллы, можно задать, например, такие вопросы:
+
+Как ты представляешь идеальную команду? Кто в нее входит, какие у каждого роли?
+Этот вопрос дает понять ожидания соискателя — то, в каком формате ему комфортно работать — и соответственно, сразу оценить, совпадает ли это с тем, как выстроена работа у нас.
+
+Готов ли ты работать в небольшом проекте, где возможно придется выполнять смежные обязанности, в том числе бизнес-аналитика, ради выполнения общей задачи проекта?
+Важно, чтобы человек понимал, что разработчики у нас не фулстек, а с разделением на фронт и бэкенд, а также что есть продуктовые команды с небольшим числом людей, в которых может не быть бизнес-аналитика и технического писателя. Кандидату должно быть комфортно работать в такой команде.
+
+Как ты будешь действовать, если проект-менеджер заболел или ушел в отпуск, а проект нужно сдать в срок? Сможешь ли на короткое время взять на себя управление командой?
+Тут мы можем оценить управленческие и лидерские навыки кандидата, сможет ли он аккумулировать в себе экспертизу по проекту и передавать ее коллегам или новым сотрудникам. То есть может ли он в перспективе стать ментором, онбордить новичков и т.д.
+
+Что тебя драйвит и мотивирует в работе?
+Этот вопрос часто позволяет определить будущий трек развития кандидата, например: инициативный лидер, ответственный исполнитель, ментор, «говорящая голова» для конференций.
+
+Чем ты однозначно не хочешь заниматься?
+Этим вопросом мы выясняем стоп-лист по каким-либо проектам или конкретным задачам. Например, кандидат не хочет работать на проекте, где нужно делать задачи по техподдержке или писать документацию по ГОСТу. Лучше это озвучить сразу — так нам будет проще понять, насколько ему будет комфортно с нашими проектами и процессами. По количеству и «категоричности» ответов можно оценить, насколько хорошим командным игроком станет кандидат.
+
+Команда отдела аналитики
+Команда отдела аналитики
+Вопросы по hard skills для системного аналитика
+Есть стандартные области знаний в аналитике, которые должны знать и системные и бизнес-аналитики. Соответственно, спрашиваем об этом и тех, и тех. В частности, это работа с требованиями и про интерфейс (более значимо для БА), раздел про нотации (универсально для обоих), блок про архитектуру и базы данных, а также интеграции систем (более весомо для СА).
+
+Внутри каждого блока есть конкретные хард-скиллы, которые работодатель оценивает. Мы здесь ввели стандартную классификацию: выставляем баллы от 0 до 3. Чтобы понять, насколько человек опытный и соответствует ли своему уровню, мы составили перечень вопросов от простых до самых сложных.
+
+В процессе собеседования мы задаем из этого списка релевантные грейду, на который претендует кандидат. То есть человеку, который идет на middle+ (и мы на первом этапе убедились в его уровне), естественно не задаем вопросы для джуна.
+
+Теперь перейдем к конкретным вопросам на хард скиллы, распределим их по областям знаний.
+
+
+Движение к цели — это прежде всего движение.
+
+Поэтому мало лишь думать о том, что ты хочешь чего-то достигнуть.
+
+Нужно что-то делать — даже самые маленькие шаги, — но делать их каждый день, и только так вы достигнете конечной цели.
+ 
+
+А ты попробуй сесть на лавке и понаблюдать за процессом ходьбы человека. Сколько сотен мышц участвует и как это все происходит, одни сгибаются, другие разгибаются, работают сухожилия, сосудистая система, мозг контролирует уровень гормонов, изменяется сердечный ритм, по разному регулируется работа легких, внутренние гироскопы и система предугадывания и ответной реакции постоянно находится в активном состоянии калькуляции баланса и обстановки под подошвой...Сотни систем, тысячи винтиков работают в связке чтобы обеспечить простую ходьбу.
+
+Ответ простой - практика, практика, практика, сотни и тысячи повторений превращают абстрактные знания в навыки, формируются нейронные цепочки.
+
+Поэтому речь стоит не "в запомнить", а в "понять", прочитал статью, попытался понять ее в данный момент времени, если есть вопросы, гугль или раздел Помощь, покрутить в Идее.
+
+И решать задачи, задачи, задачи, писать код, код, и потом, по мере практики, спустя дни, недели, месяцы, а то и годы, все начнет складываться в одну картинку.
+
+У тебя не будет вопрос "я это помню или нет", у тебя это будет на уровне мышечной памяти, как навык, надо энамчик, я сделаю так  так и так. Откуда знаю? Поскольку разбирал, возвращался несколько раз, использовал в практике.
+
+Единственное исключение, когда перед собесами нужно готовиться, но там зубрить идея так себе, разве что для автоматизированных тестов, хороший интервьюер сразу раскусит зазубренный но не понятый материал, один вопрос в сторону и ответ на него вместо тысячи слов сразу покажет, человек разбирается в том, о чем говорит или говорит но при этом вообще не понимает что именно.
+
+Так что не переживай, всему свое время, ключ к крепким знаниям - практика и время, с этим тот же джава раш справляется хорошо. Время от времени, закрывать проблемные вопросы самому, подзабыл что-то, быстро гуглянул, ага, вспомнил, разобрал и пошел дальше.
+
+Программирование полно подводных камней. И нет практически ни одной темы, в которой вы не споткнетесь и не набьете шишки. Особенно это касается новичков.
+ 
+Уменьшить количество этого можно лишь одним способом — учиться. В частности это касается подробных разборов самых базовых тем.
+
+
+
+
+
+Junior
+1.1 Базовые вопросы
+
+1.2 Алгоритмы, структуры данных, хранение данных
+
+1.3 Работа с сетью
+
+1.4 Многопоточность, Java Core, RxJava
+
+1.5 Android SDK, Kotlin
+
+1.6 Другое
+
+1.7 Практические задачи
+
+ 
+
+Middle
+2.1 Базовые вопросы
+
+2.2 Алгоритмы, структуры данных, хранение данных
+
+2.3 Работа с сетью
+
+2.4 Многопоточность, Java Core
+
+2.5 Android SDK
+
+2.6 Kotlin
+
+2.7 RxJava
+
+2.8 Тестирование
+
+2.9 Другое
+
+ 
+
+Senior
+3.1 Базовые вопросы, архитектура
+
+3.2 Многопоточность
+
+3.3. Java Core, Android SDK, Kotlin
+
+Дорогие друзья! Предлагаем вашему вниманию перевод статьи, опубликованной на DOU.ua 3 ноября 2021 года. Оригинальная версия на украинском языке доступна по ссылке.
+
+Если вы готовитесь к собеседованию по Android — или проходить, или проводить — возможно, этот перечень вопросов пригодится вам. Редакция DOU поинтересовалась у разработчиков, проводящих технические интервью в компании в Украине, о чем они спрашивают кандидатов.
+
+Это уже десятая статья из рубрики «100+ технических вопросов»; ознакомиться с вопросами для других языков программирования на DOU.ua на украинском языке вы сможете, перейдя по ссылке.
+
+ 
+
+Junior
+ 
+
+Базовые вопросы
+
+1. Назовите основные принципы ООП.
+
+2. Что такое класс? Что такое интерфейс? Какая между ними разница?
+
+3. Назовите базовые типы данных.
+
+4. В чем отличие примитивных типов от объектов?
+
+5. Какая разница между абстрактным классом и интерфейсом?
+
+6. Что такое паттерны проектирования? Какие паттерны вы знаете?
+
+7. Чем отличается Java от Kotlin?
+
+ 
+
+Ответы на некоторые из этих вопросов вы можете найти в видео курсе Kotlin, а также статье Kotlin vs Java: что лучше для Android-разработки? и вебинаре Структуры данных в Java и Kotlin.
+
+ 
+
+Алгоритмы
+
+8. Что такое алгоритм и как выбрать правильный?
+
+9. Что такое сложность алгоритма? Как и с помощью чего её можно вычислить?
+
+10. Что такое нотация big-O?
+
+11. Что такое рекурсия?
+
+12. Какие алгоритмы сортировки вы знаете?
+
+ 
+
+Структуры данных
+
+13. Расскажите о таких структурах данных, как List, Set, Map?
+
+14. Какая разница между ArrayList и LinkedList?
+
+ 
+
+Ответы на эти вопросы вы найдёте в вебинаре Структуры данных в Java и Kotlin.
+
+ 
+
+Хранение данных
+
+15. Как можно хранить данные в Android?
+
+16. Когда следует использовать SharedPreferences?
+
+17. Из каких компонентов состоит библиотека Room?
+
+18. Что такое @PrimaryKey, @Ignore, @Embedded, @TypeConverters в Room?
+
+19. Для чего нужна миграция в базах данных?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе SQLite. Базы данных в Android приложениях (урок 2, урок 3).
+
+ 
+
+Работа с сетью
+
+20. Что такое JSON, XML?
+
+21. Какие варианты реализации работы с сервером?
+
+22. Что такое REST?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсах Разработка приложений под Android. Базовый курс (урок 2), Android Углубленный (урок 9).
+
+ 
+
+Многопоточность
+
+23. Что такое процесс?
+
+24. Что такое поток?
+
+25. Для чего используют ключевое слово synchronized?
+
+26. Зачем синхронизировать потоки?
+
+27. Какая разница между синхронным и асинхронным исполнением?
+
+28. Как мы можем создать поток в Java?
+
+29. Что такое deadlock?
+
+30. Какие варианты реализации многопоточности есть в Android?
+
+31. Что такое main thread? Какие операции нужно выполнять на main thread, а какие нельзя делать?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Android Углубленный (урок 5).
+
+ 
+
+Java Core
+
+32. Что такое Exceptions? Зачем они нужны?
+
+33. Зачем используют ключевые слова final, finally и finalize?
+
+34. Что такое абстрактный класс? Что такое интерфейс?
+
+35. Что такое анонимный класс? Использовали ли на практике? Для чего?
+
+36. Что такое статический класс (static class)?
+
+37. Что такое enum? Зачем его используют?
+
+38. Можем ли мы сделать конструктор приватным?
+
+39. Какая разница между ключевыми словами throw и throws?
+
+40. Какая разница между Error и Exception?
+
+41. Какая разница между checked и unchecked exception?
+
+42. Что такое Object class и какие методы он имеет?
+
+43. Какие существуют модификаторы доступа для классов? Какая разница между ними?
+
+44. Что такое итератор?
+
+45. Как безопасно удалить элемент из коллекции?
+
+46. Зачем нам переопределять equals() и когда не нужно это делать?
+
+47. Какой должен выполняться контракт при переопределении equals()?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в вебинаре Что такое Java EE и Java Core и видео курсе Java Базовый (урок 2, урок 4, урок 6, урок 7, урок 8, урок 9).
+
+ 
+
+RxJava
+
+48. В чем разница между map() и flatMap() в RxJava?
+
+49. Когда используете observeOn(), а когда subscribeOn()?
+
+50. Как можно обработать ошибки в RxJava?
+
+51. Какие schedulers знаете в RxJava? Назовите их отличия.
+
+52. Что такое Disposable? Зачем его используют?
+
+53. В чем разница между Hot и Cold Observables? Назовите примеры в RxJava.
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Создание пользовательских элементов управления в Android (урок 1).
+
+ 
+
+Android SDK
+
+54. Какие базовые Android-компоненты можете назвать?
+
+55. Что такое ContentProvider?
+
+56. Какие типы Service знаете?
+
+57. Что такое BroadcastReceiver и какие типы существуют?
+
+58. Для чего используют механизм фрагментов?
+
+59. Опишите жизненный цикл Activity.
+
+60. Опишите жизненный цикл Fragment.
+
+61. Есть ли у Fragment контекст? Если да, то как его получить?
+
+62. Чем отличается Fragment от Activity? Зачем выдумали Fragment?
+
+63. Что такое изменение конфигурации? Что происходит с приложением на Android при этом?
+
+64. Что такое Intent? Что такое explicit/implicit Intent?
+
+Выбери специальность и получи бесплатный доступ к курсам на 3 дня:
+Java Developer
+Android Developer
+С чего начать?
+65. Что такое SharedPreferences?
+
+66. Что такое ANR? Как избегать таких ситуаций?
+
+67. Что такое DataBinding?
+
+68. Что такое LiveData? Какие виды знаете?
+
+69. Как создать ViewModel? Почему создавать ViewModel нужно именно так?
+
+70. Что такое Context и зачем он?
+
+71. Что такое AndroidManifest.xml? Зачем его используют? Что мы можем там декларировать?
+
+72. Перечислите layout, с которыми работали? Когда и какой нужно использовать?
+
+73. Расскажите, что нужно реализовать, чтобы отобразить список строк в RecyclerView.
+
+74. Объясните паттерн ViewHolder. Для чего он применяется?
+
+75. Что такое DiffUtil?
+
+76. Расскажите о ConstraintLayout.
+
+77. Для чего используют Group, Guideline, Barriers, Chains в ConstraintLayout?
+
+78. У вас есть Activity с двумя Fragment'ами, у одного есть кнопка, у другого TextView. При нажатии кнопки изменяется TextView. Как вы реализуете это?
+
+79. Что такое WorkManager? Когда используем?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсах Разработка приложений под Android. Базовый курс (урок 2, урок 4, урок 5, урок 7), Android Углубленный (урок 3, урок 6, урок 9), Android User Interface (урок 3), Создание пользовательских элементов управления в Android (урок 9).
+
+ 
+
+Kotlin
+
+80. Как вы понимаете термин Null safety?
+
+81. Что такое nullable и non-nullable типы? Какая разница между val и var?
+
+82. Как задекларировать getter/setter для property?
+
+83. Почему классы Kotlin по умолчанию final?
+
+84. Что такое sealed class?
+
+85. Что такое data classes?
+
+86. Какая разница между sealed class и enum?
+
+87. Почему у Kotlin нет checked exceptions?
+
+88. Что такое Extensions? Использовали ли вы их на практике?
+
+89. Что такое перегрузка операторов (operator overloading)? Зачем нужен этот механизм?
+
+90. Как работают примитивы в Kotlin?
+
+91. Расскажите об объекте Unit в Kotlin.
+
+92. Расскажите об объекте Any в Kotlin.
+
+93. Как создать Singleton объект в Kotlin?
+
+94. Что такое companion object?
+
+95. Чем отличается const val от val?
+
+96. Какие знаете модификаторы доступа?
+
+97. Что означает модификатор lateinit?
+
+98. Coroutines – что это за механизм? Использовали ли его на практике?
+
+99. Зачем нужны Coroutines? Чем они лучше обычных тредов?
+
+100. Что такое suspend-функция?
+
+101. Что такое Job?
+
+102. Что такое Dispatcher? Какие есть виды?
+
+102. Что такое Scope?
+
+103. Как писать Java compatible API в Kotlin?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Kotlin.
+
+Другое
+
+104. Расскажите, что такое memory leak. Как избежать?
+
+105. Как бы вы искали memory leak?
+
+106. Расскажите о Dependency injection. Какие варианты реализации в Android?
+
+107. Для чего нужна система контроля версий?
+
+108. Что такое Git?
+
+109. Для чего используем .gitignore-файл?
+
+110. Расскажите о командах push, pull, fetch в Git?
+
+111. Что такое merge и rebase? Какая разница?
+
+112. Что такое CI? Зачем используем?
+
+ Middle
+ 
+Базовые вопросы
+
+1. Нужно ли придерживаться SOLID-принципов? Почему да/нет?
+
+2. Какие паттерны использовали на практике? Приведите примеры.
+
+3. Опишите паттерны MVP и MVVM. Какие из них использовали? Какой предпочитаете? Знаете ли/использовали другие паттерны?
+
+4. Почему слой Model должен быть отделен от View или Presenter?
+
+5. Что такое инверсия зависимости (dependency inversion)?
+
+6. Объясните пример паттерна Singleton. Где его использовать в Android?
+
+7. Объясните пример паттерна Observer. Где его использовать в Android?
+
+8. Объясните пример паттерна Builder. Где его использовать в Android?
+
+9. Как вы понимаете термин «архитектура приложения»? Зачем это вообще нужно? Почему инженеры пытаются усложнить процесс разработки и тратят время на проектирование архитектуры? Может, лучше сэкономить ресурсы и пойти по простому пути — держать весь код в одном файле?
+
+10. Что такое иммутабельный объект? Для чего его используют? Как сделать иммутабельный объект в Java?
+
+11. MVP vs MVVM – в чем основное отличие?
+
+Алгоритмы
+
+12. Есть много алгоритмов сортировки. Возможно ли выбрать один самый быстрый и использовать его повсюду? Почему да/нет?
+
+13. В чем сложность поиска произвольного элемента в ArrayList? В LinkedList?
+
+14. Какие алгоритмы используют в Android/Java коллекциях под капотом?
+
+ 
+
+Структуры данных
+
+15. HashMap. Используете ли вы на практике? Если да, то зачем? Как она работает изнутри?
+
+16. Какая разница между HashMap и LinkedHashMap?
+
+17. Что такое бинарное дерево?
+
+ 
+
+Сохранение данных
+
+18. Как бы вы реализовали сохранение зашифрованных данных в SharedPreferences? Базу данных?
+
+19. Как реализовать миграцию таблицы, где нужно из non-nullable поля сделать nullable поле?
+
+ 
+
+Работа с сетью
+
+20. Расскажите, какие методы можно применить в REST API? Зачем какой нужен?
+
+21. Что можно использовать, кроме REST API, для работы с сервером?
+
+ 
+
+Многопоточность
+
+22. Что такое Thread Pool? Каковы его особенности?
+
+23. Что такое Executor/ExecutorService? Какую задачу выполняют и как использовать?
+
+24. Какие есть виды Executor?
+
+25. Какая разница между методами start() и run() в классе Thread?
+
+26. На что указывает ключевое слово synchronized? Какова его основная функция?
+
+27. Модификатор volatile. Приходилось ли использовать? Зачем нужен?
+
+28. Знаете ли вы о таком понятии, как «эффект гонки» (race condition)? Как это предотвратить? Какие механизмы в Java для предотвращения этого?
+
+Видео курсы по схожей тематике:
+
+Создание пользовательских элементов управления в Android
+Создание пользовательских элементов управления в Android
+
+Денис Калашник
+Android User Interface
+Android User Interface
+
+Евгений Мыца
+Android Базовый
+Android Базовый
+
+Журавлев Артем
+29. Что такое атомарная операция?
+
+30. Как остановить поток в Java? Можно ли продолжить выполнение потока после его остановки?
+
+31. Знаете ли вы о потокобезопасных коллекциях в Java/Android? Приходилось ли их использовать?
+
+32. Какие стратегии можно применить, чтобы добиться потокобезопасности?
+
+33. Какие варианты реализации потокобезопасности кода есть у Kotlin?
+
+34. Как сделать переменную потокобезопасной?
+
+35. Что такое Mutex и Monitor? Кто может выступать в роли монитора?
+
+36. Что такое атомарные операции?
+
+37. Почему инкрементация и операции с long не являются атомарными?
+
+38. Какие классы атомарных переменных?
+
+39. Что такое устаревшие данные (stale data)? Как избежать этого эффекта?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Android Углубленный (урок 5).
+
+ 
+
+Java Core
+
+40. Механизм Generics. Какую проблему решает?
+
+41. Что такое soft reference, weak reference?
+
+42. Что такое сериализация объекта? Какую проблему она решает? Какие стандартные механизмы у Java?
+
+43. Какой контракт существует между equals() и hashCode()?
+
+44. По вашему мнению, почему строки в Java сделаны иммутабельными?
+
+45. Можем ли мы задекларировать пустой интерфейс? Если да, то зачем?
+
+46. ​​Что такое String pool? Зачем он нужен?
+
+47. Что такое StringBuilder, какую проблему он решает?
+
+48. Что такое Stack в JVM и какие данные там хранятся?
+
+49. Что такое Heap в JVM и какие данные там хранятся?
+
+50. Что такое garbage collector, как он вообще работает? Каковы реализации GC?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в вебинаре Что такое Java EE и Java Core и видео курсе Java Углубленный (урок 5).
+
+ 
+
+Android SDK
+
+51. Назовите основные изменения в версиях Android.
+
+52. Как реализовать IPC в системе Android?
+
+53. Как реализовать отложенную задачу?
+
+54. Что такое Doze Mode?
+
+55. Что такое App Standby mode?
+
+56. Что такое AIDL и зачем он нужен? Какие типы данных поддерживаются?
+
+57. Что такое Multidex?
+
+58. Что такое KeyStore API?
+
+59. Что такое PendingIntent?
+
+60. Как безопасно хранить user-sensitive данные?
+
+61. Какие методы защиты приложения?
+
+62. Что такое SSL/TLS Pinning? Как его реализовать в Android?
+
+63. Что такое ViewBinding?
+
+64. Для чего нужны методы onSaveInstanceState/onRestoreInstanceState? Что такое permissions? Как запросить permissions?
+
+65. Что такое Intent? Что такое Explicit/Implicit Intent? Что такое Sticky Intent, Pending Intent?
+
+66. Какие типы данных мы можем положить в Bundle?
+
+67. В чем разница между Serializable и Parcelable?
+
+68. Если фрагмент для работы нуждается во входных данных, каким образом будет правильно передать их фрагменту?
+
+69. Что такое ViewModel? Какие ее свойства?
+
+70. Объясните работу ViewModel с Jetpack. Что такое ViewModelProviders, ViewModelProvider.Factory?
+
+71. Что такое LiveData? Зачем её используете?
+
+72. Какая связь между LiveData и LifecycleOwner?
+
+73. Приведите пример LifecycleOwner?
+
+74. Что такое Looper?
+
+75. Использовали ли HaMeR фреймворк (Handler/Message/Runnable)? Для чего он?
+
+76. Какую информацию содержит контекст? Какие типы контекста знаете?
+
+77. Для чего используют Content Provider?
+
+78. Что такое Data Binding? Что такое View?
+
+79. Преимущества Fragments против View?
+
+80. Как работает Content Provider?
+
+81. Какая разница между Single Activity и Multiple Activity?
+
+82. Какие виды Context знаете? Где какой использовать?
+
+83. Объясните работу BroadcastReciever и его реализацию.
+
+84. Зачем LocalBroadcastManager?
+
+85. Для чего нужен MotionLayout?
+
+86. Опишите, как реализовать анимацию в MotionLayout.
+
+87. Как можно обнаружить проблемы в скорости UI и устранить их?
+
+88. Расскажите о вариантах реализации custom view.
+
+89. Что делают методы onMeasure, onLayout, onDraw во View?
+
+90. Как воплотить анимацию при переходе между Activity-фрагментами?
+
+91. Когда необходимо использовать foreground service вместо service?
+
+92. Когда использовать workmanager, а когда service?
+
+93. Есть ли у workmanager лимиты для выполнения работы?
+
+94. Расскажите о Jetpack Compose. Зачем придумали основной принцип работы, как устроено?
+
+95. Что такое WakeLock?
+
+96. Что такое AlarmManager? Какие особенности работы?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсах Разработка приложений под Android. Базовый курс (урок 4, урок 7), Android Углубленный (урок 6, урок 8), Создание пользовательских элементов управления в Android (урок 9).
+
+ 
+
+Kotlin
+
+97. Чем отличается работа с Exceptions в Kotlin и Java?
+
+98. Что такое платформенные типы?
+
+99. Что такое нелокальный return?
+
+100. Для чего нужны reified generics?
+
+101. Какая разница между Unit, Any, Nothing?
+
+102. Расскажите о функциях высшего порядка, лямбда, функциях, которые могут использоваться в качестве аргумента.
+
+103. Что такое inline-модификатор? Noinline?
+
+104. Какая разница между crossinline и noinline?
+
+105. Какие типы конструкторов вы знаете?
+
+106. Что такое Flow? Что такое SharedFlow?
+
+107. В чем разница методов run, let, apply, also, with, use?
+
+108. Что произойдет, если в классе переопределить метод hashCode следующим образом: override fun hashCode(): Int = Random.nextInt()? А если так: override fun hashCode(): Int = 1?
+
+109. Расскажите о Flow. В чем разница между Hot и Cold Flow?
+
+110. Что такое деструктурирующее объявление? Что нужно сделать, чтобы иметь возможность использовать его для своего класса? Какие проблемы могут возникнуть с таким объявлением?
+
+111. Для чего использовать data class? Почему нельзя работать с обычным классом?
+
+112. Приведите пример делегатов в Kotlin?
+
+113. Как реализовать кастомный делегат?
+
+114. Объясните, как работает suspen-функция? Что такое continuation?
+
+115. Как обрабатывать ошибки в Coroutines?
+
+116. Что такое SupervisorJob и когда применяется?
+
+117. Как остановить/отменить Coroutines?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Kotlin.
+
+ 
+
+RxJava
+
+118. В чем разница между flatMap(), concatMap(), switchMap()?
+
+119. Какие Subjects вы знаете в RxJava, чем отличаются от Observable?
+
+120. Чем отличается Observable от Flowable?
+
+121. Что такое backpreassure? Какие стратегии есть для решения?
+
+122. Что такое Single, Maybe, Completable?
+
+123. Какие варианты обработки ошибок есть, кроме onError?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Создание пользовательских элементов управления в Android (урок 1).
+
+ 
+
+Тестирование
+
+124. На какие группы можно поделить тесты (Unit (JUnit) и Instrumental или UI Tests (espresso))?
+
+125. Чем отличаются Unit и UI тесты (контекст)?
+
+126. Расскажите, какие библиотеки использовали для mock?
+
+127. Как тестировать DB?
+
+128. Как “замокать” network layer в инструментальных тестах?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Unit тестирование для Android разработчиков.
+
+ 
+
+Другое
+
+129. Расскажите, с какими DI-фреймворками работали.
+
+130. Расскажите о Dagger Hilt.
+
+ 
+
+Senior
+ 
+
+Базовые вопросы
+
+1. Расскажите о функциях высшего порядка. Когда они нужны?
+
+2. Опишите, как происходит процесс деплоя Android-приложения.
+
+3. Расскажите о многомодульной архитектуре. Зачем используют и когда ее нет смысла использовать?
+
+4. Вам нужно написать простое приложение для работы с рецептами (несложное, имеет экран списка, поиска и детали). Оно должно работать с определенным API для получения/модификации вашего списка рецептов и хранить его локально в БД для отображения, если интернета нет. Опишите, как бы вы создавали приложение такого типа? Из каких уровней оно бы состояло, каково предназначение каждого уровня? Представьте, что в этом приложении необходимо добавить возможность изменять основную картинку рецепта (т. е. получать новые данные из галереи/камеры и загружать их на сервер через API) и это реализовано на экране с подробным описанием рецепта. Вам пришел запрос сделать такой же функционал и на экране список рецептов. Как вы это сделаете?
+
+Бесплатные вебинары по схожей тематике:
+
+Как стать Full-Stack разработчиком
+Как стать Full-Stack разработчиком
+
+Виталий Емец
+Custom Views в Android. Обзор функционала. Создаем CustomToolbar
+Custom Views в Android. Обзор функционала. Создаем CustomToolbar
+
+Андрей Бондаренко
+React Native лучшие практики.
+React Native лучшие практики.
+
+Бабич Александр
+ 
+
+Архитектура
+
+5. Как организовать CI/CD для Android-проектов?
+
+6. Различия архитектурных подходов в Android. Какие и когда лучше использовать?
+
+7. Как вы понимаете Clean Architecture?
+
+8. Опишите основные отличия между MVC/MVP и MVVM. Как MVVM стал одним из рекомендованных паттернов?
+
+ 
+
+Ответы на некоторые из этих вопросов вы найдете в видео курсе Архитектура Android приложений.
+
+ 
+
+Многопоточность
+
+9. Какие еще знаете механизмы синхронизации данных, кроме synchronized?
+
+10. Что такое переключение контекста (context-switching), когда речь идет о многопоточности?
+
+11. Что мы понимаем, когда говорим о «честной» блокировке (fair lock)?
+
+ 
+
+Java Core
+
+12. Если бы пришлось имплементировать иммутабельный класс на Java, как бы вы это сделали?
+
+13. Что такое Java Memory Model?
+
+14. Сравните принципы композиции и наследования (Composition vs Inheritance).
+
+ 
+
+Android SDK
+
+15. ViewModel сохраняет свое состояние при повороте экрана? Как это возможно? Можете ли предложить, как сделать такой механизм?
+
+16. Android Architecture Components. Что из этого приходилось применять на практике? Какие задачи решали?
+
+17. Приходилось ли исследовать «утечки» памяти? Какие инструменты использовали для этого?
+
+18. Представьте, что у вас есть экран со списком товаров. Во время скроллинга вы замечаете, что рендеринг не плавный, в логах много фреймов скипается и вообще-то экран тормозит. Что будете делать, чтобы улучшить ситуацию?
+
+19. Если бы была задача написать приложение для интернет-магазина с нуля, какие технологии/подходы выбрали бы?
+
+20. Приведите пример применения GoF-паттернов в Android SDK.
+
+ 
+
+Kotlin
+
+21. Опишите взаимодействие кода Kotlin и Java.
+
+22. Что изменилось в обработке ошибок в Kotlin, если сравнить с Java?
+
+23. Что такое делегированные характеристики (Delegated properties)?
+
+
+Расскажите о себе.
+Почему вы ушли с предыдущего места работы?
+Почему вы решили стать тестировщиком?
+Что вас больше всего увлекает в этой профессии?
+Проходили ли вы курсы по тестированию?
+Есть ли у вас опыт работы с инструментами, которые используются на этой позиции?
+Какие у вас зарплатные ожидания?
+Когда вы готовы приступить к работе?
+Как отвечать. Лаконично и по делу. Не стоит подробно пересказывать свою биографию — вместо этого постарайтесь сосредоточиться на фактах, которые напрямую относятся к профессии. Чтобы не волноваться, можно заготовить ответы заранее.
+
+Soft skills: что важно для тестировщика в 2025 году
+Работодатели обращают внимание на личные качества кандидата, ведь именно они помогают эффективно работать в команде и справляться с вызовами. Вопросы помогают понять, как человек взаимодействует с командой, решает конфликты и подходит к выполнению задания.
+
+На этапе интервью с рекрутером кандидат обычно рассказывает о своем опыте и навыках. Примеры таких вопросов:
+
+Что делать, если нет спецификации или она составлена непонятно?
+
+В случае отсутствия или неясности спецификации, связаться с тем, кто хорошо знает проект (разработчиком, проджект-менеджером или руководителем команды) и уточнить все детали.
+
+Что делать, если разработчик не согласен с результатами тестирования?
+
+Начать с обращения к документации. Если там четко указано, как должна работать функция, объяснить это программисту. Если документация не содержит нужных указаний, задокументировать инцидент и сообщить тимлиду или менеджеру.
+
+Как справляетесь с конфликтами в команде?
+
+Опишите ситуацию, когда вам удалось успешно разрешить конфликт, и подчеркните важность коммуникации и компромиссов.
+
+Какую самую большую ошибку вы допустили на работе и как вы с ней справились?
+
+Расскажите о ситуации, уроках, которые вы извлекли, и о том, как предотвратили повторение ошибки в будущем.
+
+Почему вы подходите на эту должность лучше других кандидатов?
+
+Подчеркните свои уникальные навыки и опыт, которые делают вас идеальным кандидатом для компании.
+
+Как справляетесь с дедлайнами и давлением?
+
+Опишите свои методы самоорганизации и управления временем, планирования задач и сохранения спокойствия в стрессовых ситуациях.
+ 
+Top 50 Behavioral Interview Questions and Sample Answers
+By Sruthy  Updated February 26, 2026
+List of Top Behavioral Interview Questions with Answers. This list will help you answer any behavioral interview questions in a much more professional way with simple examples:
+
+The right person for the right job does not just mean a technical fit. Technical skills are super important in being able to accomplish the tasks that the job needs, but the right attitude and a growth mindset can go a long way in making a role successful.
+
+As the seniority and management needs of a role increase, the more important these non-technical skills become. That is why most interviewing processes emphasize the soft skills and behavioral aspects just as much as they do technical skills.
+
+Table of Contents: [Show]
+
+Behavioral Interview Questions QUIZ
+Behavioral Interview Questions QUIZ
+Question 1 of 15
+Teamwork Questions
+Tell me about a time when you had to work closely with someone whose personality was very different from yours.
+Describe the personality clash in detail and how difficult it was
+Focus on specific strategies used to bridge differences and achieve collaboration
+Mention you get along with everyone and haven't experienced this
+Provide comprehensive analysis of personality types and theoretical frameworks
+
+Today’s article is all about what kind of behavioral interview questions interviewees can expect and some example answers. If you are the interviewer, this can also help set the context for some areas you would like to question your potential candidates on.
+
+As with any interview Q & A, please note that the list of questions is not exhaustive and the answers are not exact. You are going to have to tailor your answers to suit your needs and avoid repeating them verbatim.
+
+Top Behavioral Interview Questions
+What is the Intent of Behavioral Interview Questions?
+The short answer is to gauge the candidate’s mindset to better understand:
+
+Achievements: Everyone is proud of something they have done personally and professionally. Oftentimes, knowing what that is helps understand what an individual values as true accomplishments.
+Aspirations: What do they see themselves growing into? Let’s say a candidate aspires to be a Manager and your organization has a flat structure. The role will not satisfy the title-based goals the candidate has, and that might mean the candidate might look for other roles pretty soon. You can now assess whether this is a risk or not and make a better decision accordingly.
+Vulnerabilities/Weaknesses: We are all human, and there are always some skills that need honing, some that need learning. If your role needs someone who is a multitasker and the candidate is someone who would like to be a focused worker, that’s a mismatch. Therefore, assessing the candidate’s weaker areas and getting a better understanding of whether they are overcomeable is another important area.
+Working Style: Just like there are many types of jobs, there are many types of people doing them. Some like meticulous planning, and some plan as they go. Some like structures to be concrete, and some function better with ones that have more wiggle room. Behavioral interview questions help to get a better sense of what your work persona is.
+Leadership Style: We have all heard many times that people don’t leave their jobs, they leave their managers. There is truth to that because no work can be so hard that it’s unlearnable, but not being able to get along with your manager and get them on the same page as you is an insurmountable obstacle. Therefore, when hiring a manager, it is very important to get a better sense of how this person might lead and mentor their team.
+Culture Fit: If you are a start-up, you would want to hire someone who can wear more than one hat because you might be a developer, tester, and DevOps engineer all in one. If you are a community outreach firm, you want to hire someone who shares the same value system as yours. Understanding whether the core personality and value system are in alignment is also an important goal for behavioral interview questions.
+Common Behavioral Questions in Different Categories
+Now that we know the purpose these behavioral interview questions serve, let’s look at a few questions in each category and some sample answers.
+
+Before we do that, please note that a lot of questions are answered in the first person to make it a more personal experience, but these answers are from my point of view. Some questions have example answers, while others have some thoughts on how to answer them.
+
+Achievements
+Q #1) What are some personal and professional accomplishments that you are proud of?
+
+Answer: At work, I use Python after 10 years of working on C#. To gain expertise fast, I attempted the Advent of Code (https://adventofcode.com/) challenge this holiday/Christmas season, and that helped me immensely in gaining fluency quickly. This made me proud and built my confidence.
+
+The answer to this question can also involve professional achievement, such as successful project delivery, process optimization that helped save budget or reduce resource consumption, professional certifications, etc. Provide specific instances and metrics if possible. Avoid overly bragging.
+
+Q #2) If there is a personal or professional goal for yourself soon, what is it?
+
+Answer: The responses can be:
+
+I would love to move into a management role, and to help me in that direction, I aspire to become PMP certified in the next 6 months.
+I want to strengthen my DevOps skills and understand the platform aspect of our system better.
+I want to become a part of my child’s school’s PTO and advocate for better emotional support for middle schoolers.
+I want to volunteer at the local food bank more often.
+The only way to answer this question is – honestly and without goals that are too personal or vain.
+
+Q #3) What was the hardest part of achieving a goal, and how did you overcome it?
+
+Answer: I was working with a new architecture and new technology, so it was a steep learning curve in a short amount of time. The fact that we had so many unknowns was the hardest part of this goal.
+
+If you think the above answer is generic. Well, it is. Since questions like these are hard to answer specifically without having to go through the exact situations, the answer here can help set a mindset on how to approach this question.
+
+Q #4) What was your biggest contribution to your current/last role?
+
+Answer: I came up with a short POC to showcase how the proposed solution to automate API+UI automation in the same code base, and that set the tone for the rest of the test automation effort. I also trained the team who were going to be our implementation partners in this effort. That is something that I think worked well.
+
+Keep this answer specific and keep it humble.
+
+Aspirations
+Q #5) Where do you see yourself in the next 5 years?
+
+Answer: This is probably a cliché question, but also a good one. Take the time to introspect before answering this question. Always put into perspective how this current role is going to help you in your career trajectory. Cite specific skills and areas of knowledge you would like to acquire and learn.
+
+Q #6) If anything were possible, how would you design your career?
+
+Answer: This is a personal question. You can choose to be eclectic and say I would anciently loom fabrics or that I would invent a time machine.
+
+This question intends to see where your true interests are without bounds.
+
+Since questions like these do not have a right or wrong answer, you can let your authentic self show as long as your true aspirations are not illegal or unethical.
+
+Q #7) What is the most important expectation of yours that you hope this role will meet?
+
+Answer: I have always wanted to work in <technology> <tool> or <developmental process> <domain>, and I would love an opportunity to delve deeper into it through this role.
+
+The best way to approach this question is to prepare ahead. Know what got you to apply for this position and formulate an answer that articulates your interest.
+
+Q #8) What are your must-haves in your next role?
+
+Answer: I would like to work with a dynamic team that puts collaboration and innovation at the forefront. Besides that, I would like flexibility in work hours since I need to be available to my children now that they are moving into higher grades and need more parental guidance.
+
+Q #9) What was the best piece of career advice you were given?
+
+Answer: The best career advice I got was, “No matter how you feel, get up, dress up, and show up”. I follow this even today, and I often find that once I show up, I end up feeling motivated, and my can-do attitude returns.
+
+For you, it might be something else. We all have mantras that keep us sane and push us toward success.
+
+Q #10) What was the worst piece of career advice you were given?
+
+Answer: There is a lot of advice from well-meaning people out there, but it is really up to you to identify what works for you. I have heard some crazy theories about inflating experience and skills on resumes, negotiating salary hikes using other job offers as threats, etc. I have always been a straight shooter, and I become uncomfortable when facts are distorted.
+
+Weaknesses
+Q #11) Tell us about a time you overcame a challenge. Provide specific examples.
+
+Answer: It is very similar to the answer to Q #1.
+
+Q #12) What would you do differently if you were to approach the challenge again?
+
+Answer: I believe we are better people as we learn and grow. If I were to approach the same challenge today, I would tell myself to trust in my experience and skills. Sometimes, that self-assurance is the key difference between stressing out and succeeding vs. succeeding steadily.
+
+Q #13) Tell us about a time when you had to learn a new skill. Provide specific examples.
+
+Answer: Think of a time when you got a certification, tried a new framework, or aced a new coding language, and draw from those experiences when answering this question.
+
+Q #14) What is your approach when you are learning a new skill?
+
+Answer: I learn best with a hands-on and immersive approach to learning. The last skill I learned was <xyz> at my <xyz job>, and I took to it straightaway, trying small exercises while reading materials and learning from video tutorials.
+
+Q #15) What do you think are your strengths and weaknesses?
+
+Answer: My strengths are that I am a team player, an excellent communicator, and a competent coder. (Try to find at least 3 aspects of your work persona that you like.) I am sure there is so much for me to learn, but I have never worked on ETL (or other technical areas), and I think that is an area I need to strengthen.
+
+(Do not overemphasize personal limitations for this question. And avoid clichés such as I am a workaholic, etc.)
+
+Q #16) Were there any instances when you felt that you could have done better?
+
+Answer: Early in my career, I spent almost 6 months looking for a job. There were many screening calls, but nothing materialized into interviews. After some much-needed introspection, I realized I was not marketing myself into a specific role.
+
+I had agile scrum master certifications with AWS practitioners; it was hard for recruiters to place me into a technical or a coordination role. Once I started highlighting my technical experience, things started falling into place.
+
+Other experiences for this answer can be a time when you picked a job that was not a fit for you because it was fully remote or was in person, a technology you did not enjoy working in, a start-up that had a toxic work culture, etc. However, keep the negative aspects of the experience to a minimum and highlight the key takeaways for you.
+
+Q #17) Were you ever put on a performance improvement plan? If yes, explain your experience.
+
+Answer: No future employer wants to hire someone who admits to having fallen short of fulfilling their duties at a previous job. However, if you were ever on a performance improvement plan that you think has helped you emerge as a better professional at the end of it, do share that experience with your interviewer.
+
+Working Style
+Communication, Problem-Solving, Teamwork, Personal Stress, and Adaptability
+
+Q #18) Tell us about a time you did not get along with a coworker and how you dealt with it. Provide specific examples.
+
+Answer: I am usually an easygoing person. I have not gotten into serious disagreements with anyone at work. However, sometimes working with people from different parts of the world, speaking different languages, and communicating via text or email can lead to miscommunication and misinterpretation.
+
+In cases like that, I assume good intent and give the other person the benefit of the doubt.
+
+An example situation was when we were the testing team, and there was another vendor team that took care of development. They spoke little English, and when the tests failed for any reason, they wrote, “Your tests are failing”, which did come across as accusatory.
+
+However, I focused on the part that the tests were failing and needed fixing. We were all working towards a common goal.
+
+Q #19) How do you keep your morale high when working with repetitive tasks or tasks that don’t rank high on keeping your attention and interest?
+
+Answer: It happens sometimes that there are documentation or technical debt-related activities that I find to be monotonous or tedious. However, I focus on the value they bring and the ultimate positive outcome of doing those activities.
+
+Q #20) How often would you like feedback on your work, and what, according to you, is the best way to receive it?
+
+Answer: I am confident in the quality of my work. However, sometimes organization or department goals could shift, requiring me to regroup and re-prioritize work. Therefore, I would like to meet with the immediate manager at least bi-weekly (if not more) to make sure my efforts are aligned with my goals.
+
+Q #21) You have received some negative feedback. What steps would you take in response to that?
+
+Answer: I would focus on facts and data. I will try to understand the indicators that ascertain the feedback that I just received. If the facts substantiate the feedback, then I will come up with an actionable plan to improve as soon as I can. If not, I would share the same and try to clear the misinformation.
+
+Q #22) How do you ensure that the quality of your work is high?
+
+Answer: I believe that quality is matching expectations vs. reality. Therefore, I start by understanding what the expectations are and use them as inputs to determine my work outcomes.
+
+Q #23) What are high-quality work outcomes?
+
+Answer: High-quality work outcomes/results meet or exceed expectations.
+
+Q #24) Are you more comfortable being an individual contributor or managing work/projects/teams?
+
+Answer: Employers are looking for self-starters who can work with a team but also work solo. Therefore, being flexible and saying so is the right approach to answering this question.
+
+Q #25) What does a successful workday look like to you?
+
+Answer: A day when I can accomplish everything I set out to do and when I am helpful to my colleagues is what I would consider a good day at work.
+
+Q #26) How do you handle setbacks at work? Do you have any examples?
+
+Answer: If I run into any blockers or problems, I communicate that right away and try to seek help. For instance, if it’s an access issue, I would create the necessary requests and follow up with the respective teams. If need be, I would ask my manager to help connect with the teams that can help me and escalate the seriousness of the problem.
+
+Q #27) What is your preferred mode of communication? Do you prefer short texts/IMs vs. emails vs. phone conversations vs. in-person meetings vs. online/remote meetings?
+
+Answer: I am comfortable communicating in any of these mediums. I would like to meet face-to-face whenever possible. For short messages that need to reach multiple team members, I prefer email. If the message is a little bit longer, a meeting might be better.
+
+Q #28) (More recently relevant question) Would you prefer in-person working roles or remote roles?
+
+Answer: Some roles might need you to come into the office. If you work with hardware devices or if you need access to a lab, then you may need to come into the office.
+
+Some businesses these days are fully remote, too.
+
+Know the role you applied for and answer this question accordingly. And if you are someone who truly hates commuting, do not apply for an in-person job. The reverse is true too.
+
+Q #29) What, according to you, is a good management style that makes you thrive?
+
+Answer: I thrive when my manager encourages me to try new ideas and communicates clearly what the expectations are. It also helps me when I can connect to how my work impacts the big picture.
+
+Q #30) How do you handle work pressure?
+
+Answer: We are all bound to feel pressure at work at some point or another, but focus on the positive and talk about how you overcame it for the betterment.
+
+Leadership Style
+Leadership roles are more behavior and management-style-centric than they are about technical know-how. A leader/manager’s main job is to build a team and align them towards a common goal, which is not an easy task given the varied experiences and opinions that the individuals on the team have.
+
+If you are for a manager or leadership role, the answers below are succinct. To further your learning, check out some books listed here.
+
+Q #31) What is your leadership style?
+
+Answer: I believe in leading by example. I like to be very much a part of the team and be able to shoulder their responsibilities right alongside them. I also believe in empowering my team to be leaders in their own right.
+
+I also actively work towards not shielding them from any information that might pertain to them and impact their day-to-day operations.
+
+Q #32) What is your favorite way to interact with your team?
+
+Answer: I dislike having separate team meetings to find out common updates within the team. I join all the stand-ups, so the team does not have to repeat any details. I also have weekly 1-on-1s with each of my team members so I can answer questions or concerns they might have personally. I believe in being approachable and available.
+
+Q #33) What are your considerations when hiring someone for a role?
+
+Answer: Being fit for the role, technically and personality-wise, is important. Also, positions are rarely static. The roles evolve, and I am always looking for candidates who might grow and evolve right alongside.
+
+Q #34) Have you ever hired someone you regretted hiring, and how did you deal with it?
+
+Answer: We once hired a very technical candidate to be a manual tester. While he was keen to take the job because of the bad market, it was apparent that he was unhappy with the work since it did not require a skill that worked so hard to attain.
+
+After a carefully designed performance management plan, we were able to transition him into a developer role, and that made everyone happy.
+
+Q #35) How do you deliver negative feedback?
+
+Answer: I understand that my team members are just like anyone else. While they excel at many things, there are times when they need a bit of direction and course correction.
+
+My style of delivering feedback is one-on-one, straightforward, aimed at the work outcomes, and never personal, and it is often provided with some actionable steps that can be taken to improve the situation. I am also quite generous in positive feedback, so I acknowledge all the good work my team puts in.
+
+Q #36) What, according to you, are the most important qualities a leader or manager should have?
+
+Answer: Good managers are personable, honest, earnest, and truly care for their teams. When I was dealing with a personal crisis, my manager told me that health and family are the most important things for anyone, and helped me navigate work challenges effectively. I aspire to be a manager like that someday.
+
+Tailor this answer to what you think are the most important characteristics for you.
+
+Q #37) How do you deal with a situation when your opinion about how something should be done differs from someone else’s on your team?
+
+Answer: All the decisions I make are data or results-oriented. If there is opposition from the team, I would like to consider their reasons and understand how they impact the outcomes. If I am wrong, I would be happy to correct the course.
+
+But if I know that my decision is right, I would present a detailed analysis of why and how the choices I am making will drive the outcomes we are seeking and ask them to try my method for a reasonable duration of time before we can revisit the strategy.
+
+Q #38) What is your training and mentoring style?
+
+Answer: I set clear goals and realistic timelines when allowing my team members to learn a new skill. I also facilitate them with peer training and online training platform licenses so they have all the tools in their arsenal to be successful. I also encourage my team to take time to create job aids and tutorials, so we have a knowledge base for newcomers.
+
+Q #39) What do you value most in your team members?
+
+Answer: People are at the front and center of all teams. I value team members who are candid and have a can-do attitude. If the team lead or manager treats them with respect and keeps their morale high by valuing their work, most team members thrive.
+
+Q #40) How do you handle changing priorities and schedules?
+
+Answer: Sure, there are always a lot of moving parts. What drives my decision-making is assessing risk and urgency. If an item is high risk and needs immediate attention, that gets prioritized over the others. So it’s a dynamic dance of evaluating risk and urgency.
+
+Q #41) Was there ever a time when you did everything you could but still did not achieve the desired outcome?
+
+There may be situations when you were not happy with the outcome of a project, but try to frame this answer as a lesson learned and not a doomsday story.
+
+Answer: We tried a new tool that promised no-code test automation for a high licensing fee. However, after our initial POC, it did not deliver. That was quite disappointing, but we were able to reach that conclusion relatively early, and even though we did not take that route, we gained a deeper understanding of the process.
+
+Q #42) How do you resolve conflicts between team members on your team?
+
+Answer: I tried to hear each of the team members’ perspectives and tried to understand if there was a miscommunication or misinterpretation of the situation. Once I understood their point of view, I was able to clarify things, and things went better.
+
+Q #43) How do you deal with an employee who is unhappy with their performance review?
+
+Answer: I acknowledge that this is a sensitive aspect. However, I believe that if the employee and manager meet often and discuss how work has been coming along, the performance rating should not come as a shock.
+
+Since ratings are often linked with promotions and salary hikes, I would set the work expectations from the get-go. If, after all this, there is discontentment, I would empathize with the employee but work on an actionable plan to improve the situation for the next performance appraisal.
+
+Q #44) Do you have a role model leader?
+
+Answer: I have been lucky that all my managers throughout my career have been great role models. While I do not look up to one person in particular, what I learned from them is to be hard-working, earnest, and knowledgeable.
+
+Alternatively, if you find inspiration in Elon Musk, Steve Jobs, Narayan Murthy, or Warren Buffett, convey that to them.
+
+Culture Fit: Time Management and Problem Solving
+Q #45) What do you enjoy doing when you are not working?
+
+Answer: These are light and easy conversations to get a sense of who you are after 5 p.m. I am sure there are some very delightful hobbies you might have. Share them with your interviewer. You might even find a fellow fantasy football fan.
+
+Q #46) What are the most important ways you hope this job will impact your life?
+
+Answer: This role is a perfect fit to exercise my current skills and grow into a more advanced <Technology> <domain>, etc. I would be very excited if I got this job.
+
+Q #47) What are your thoughts on shifting roles/responsibilities?
+
+Answer: I completely understand this situation. My company had a recent reorg, and instead of being in a horizontal department, I am now part of an 8-member scrum team. Working in agile and understanding the new process has been a learning curve, but overall, it helped me learn a lot of things fast.
+
+Q #48) What are the red flags that would make you not consider a role with this company?
+
+Answer: I would not join a company that does not share its vision transparently and keeps its employees in the dark. Know what your hard limits are and be sure to express them simply but surely.
+
+Q #49) What is your experience working with geographically distributed and culturally diverse team members?
+
+Answer: I love to work with people from different parts of the globe. As long as we respect the time zone boundaries and communicate respectfully, I think the collaboration can be extremely positive.
+
+Q #50) There could be a few late nights in this job. How do you feel about that, and would you be available?
+
+Answer: Thank you for letting me know that work could go into late evenings sometimes. If I know ahead of time about the upcoming evening work, I can make plans. How often are these evening tasks? How will my time be compensated? (It is always better to ask these questions upfront so you can make an informed decision about this job).
+
+The above is a lot of examples and sample answers, but here is a formula that can help you answer anything that we may not have covered in the above list. This approach to answering behavioral questions is called STAR. As you might have guessed, this is an acronym.
+
+We’ll explain as we expand it.
+
+What is the STAR Method of Behavioral Interviewing
+Effective Story Telling
+[Via Right Attitudes]
+
+STAR Approach to Behavioral Interviewing
+
+Situation: Start by describing a situation where you were challenged behaviorally and needed to employ your non-technical skills. This can be a personal or professional situation. It can be at work, a place you volunteer, or even in college.
+Task: What was the goal? What was the problem you were trying to solve?
+Action: What steps did you take to solve the problem or improve the situation? Describe them systematically and try to tie them into how the steps help solve the situation and reach your goal.
+Result: Explain the outcome of your actions. Don’t be too humble about your accomplishments, and if there were lessons learned along the way, describe them too.
+STAR behavioral interview example:
+
+Describe a time when you set a goal for yourself and achieved it.
+
+S: I wanted to make a transition from an individual contributor to a manager.
+
+T: The task was to make a mark as a first-time manager without prior management experience.
+
+A: I set up a meeting with my current manager and my mentor to help understand if a role transition was possible within my current department and what it would take to make that transition. I took 6 months to prepare for the role. I got my PMP certification and shadowed a manager for 3 months while working in my current role.
+
+R: At the end of the 6 months, I was promoted to be the manager of the department that I currently lead. It has been a very rewarding experience, although it was a steep learning curve.
+
+The same tips that we outlined above in the dos and don’ts apply to STAR-based answers too.
