@@ -33995,34 +33995,6 @@ Returns the this if no Explicit return statement is used.
 In the above image, it will first create an empty object {} then
 it will the this value to that empty object this = {} and add properties to that this object. Because we don't have a explicit return statement it automatically returns the this for us.
 
-Top 150+ JavaScript Interview Questions and Answers for full-stack Web Developer
-by Pulak Pramanik 0 comments 996 views
-Table of Contents
-
-JavaScript interview Questions and Answer for full-stack Web Developer
-Core JavaScript Concepts interview Questions:
-interview Questions for JavaScript ES6+ Features:
-interview Questions for JavaScript DOM Manipulation:
-interview Questions for Asynchronous JavaScript:
-interview Questions for JavaScript Modules:
-interview Questions for Object-Oriented Programming (OOP) in JavaScript:
-interview Questions for Functional Programming in JavaScript:
-interview Questions for JavaScript Error Handling and Debugging:
-interview Questions for JavaScript Array Manipulation:
-interview Questions for JavaScript String Manipulation:
-interview Questions for JavaScript Regular Expressions (RegEx):
-interview Questions for JavaScript Browser APIs and DOM Manipulation:
-interview Questions for Miscellaneous in JavaScript:
-interview Questions for JavaScript AJAX and Fetch API:
-interview Questions for JavaScript Local Storage and Cookies:
-interview Questions for JavaScript Testing:
-interview Questions for JavaScript Debugging:
-interview Questions for JavaScript Performance Optimization:
-interview Questions for JavaScript Security:
-interview Questions for JavaScript Frameworks and Libraries:
-JavaScript Interview Tips:
-Conclusions
-Prepare for your full-stack web developer JavaScript interview Questions and Answer From basic concepts to advanced topics, with our comprehensive JavaScript Interview Questions and Answers guide. Master essential concepts and ace your next technical interview.
 
 JavaScript interview Questions and Answer for full-stack Web Developer
 Dive into our friendly JavaScript Interview Questions and Answers guide in Full-Stack Web Development, chapter by chapter, designed for full-stack web developers like you! which is base on ECMA Script-262. Whether you’re brushing up on basics or exploring advanced topics, we’ve got you covered with simple explanations and helpful insights to ace your next interview with confidence. Another only Core JavaScript interviews questions & Answers you can prepare it.
@@ -34467,22 +34439,6 @@ Code maintainability is easy.
 The performance is better.
 Q #3) In the following code snippet, can you please predict the output or If you get an error, please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 <!DOCTYPE html>
 <html>
 <body>
@@ -34503,20 +34459,6 @@ Answer: This code will not produce any errors. Redeclaration of the variables is
 
 Q #4) In the following code snippet, can you please predict the output or if you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 <!DOCTYPE html>
 <html>
 <body>
@@ -34557,19 +34499,6 @@ First-class functions: In JavaScript, a function can be used as a value.
 Scripting Language: It’s a language in which instructions are written for a run-time environment.
 Q #7) In the following code snippet, can you please predict the output or If you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 <!DOCTYPE html>
 <html>
 <body>
@@ -34655,19 +34584,6 @@ Here, the last ‘()’ parenthesis in the syntax states that it is a function e
 
 Example of Self-Invoked Functions:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 14
 <!DOCTYPE html>
 <html>
@@ -34696,23 +34612,6 @@ Q #16) In the following code snippet, can you please predict the output or If yo
 
 Answer: 
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 <!DOCTYPE html>
 <html>
 <body>
@@ -34747,18 +34646,6 @@ This will not allow the browser to execute the JavaScript code if it were an old
 
 This method will help in solving compatibility issues and UI issues to an extent.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
 <!DOCTYPE html>
 <html>
 <body>
@@ -34780,22 +34667,6 @@ Output of the code snippet:
 
 Q #18) In the following code snippet, can you please predict the output, or if you get an error, please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 <!DOCTYPE html>
 <html>
 <body>
@@ -34827,29 +34698,11 @@ Answer: The differences are:
 Var
 let
 
-
 ’var’ keyword was introduced in JavaScript code from the beginning Stage itself.	‘let’ keyword is introduced in 2015 only.
 ’Var’ keyword has function scope. The variable defined with var is available anywhere within the function	A variable declared with ‘let’ keyword has a scope only with in that block. So, let has a Block Scope.
 The variable declared with ‘var’ be hoisted	The variable declared with ‘let’ be hoisted
 Q #20) In the following code snippet, can you please predict the output, or if you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 <!DOCTYPE html>
 <html>
 <body>
@@ -34913,23 +34766,6 @@ document. write (second_num);
 Here the code will produce an error, since the ‘second_num’ is assigned with a second value.
 Q #23) In the following code snippet, can you please predict the output or If you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 <!DOCTYPE html>
 <html>
 <body>
@@ -34969,27 +34805,6 @@ Q #25) What is the difference between ‘function declaration’ and ‘function
 
 Answer: It can be explained with an example:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
 <!DOCTYPE html>
 <html>
 <body>
@@ -35021,9 +34836,6 @@ Answer: It will be better explained with an example.
 
 Consider the code snippet
 
-1
-2
-3
 Console.log (‘First Line’);
 Console.log (‘Second Line’);
 Console.log (‘Third Line’);
@@ -35035,11 +34847,6 @@ Third Line
 
 Now you introduce the settimeout() method and wrap the same set of code in it.
 
-1
-2
-3
-4
-5
 Settimeout(function() {
 Console.log (‘First Line’);
 },0);
@@ -35062,19 +34869,6 @@ Answer: A closure is an inner function. It can access the outer variables of a f
 
 Here, sum() is the outer function, and add () is an inner function, it can access all the variables including ‘first_num’ ‘second_num’, and ‘third_num’. The outer function is called the inner function add().
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 <script>
 // To find the sum of two numbers using closure method
 function sum( first_num, second_num )
@@ -35094,23 +34888,6 @@ The result is: 500
 
 Q #28) In the following code snippet, can you please predict the output or If you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
 <!DOCTYPE html>
 <html>
 <body>
@@ -35140,25 +34917,6 @@ q:200
 
 Q #29) Can you give an example where the code snippet shows the difference between test () and exec () methods?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
 <!DOCTYPE html>
 <html>
 <body>
@@ -35189,20 +34947,6 @@ Q #30) Can you give an example showing JavaScript Hoisting?
 
 Answer:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 <!DOCTYPE html>
 <html>
 <body>
@@ -35230,28 +34974,6 @@ Q #31) Can you give an example showing the use of the ‘debugger’ keyword in 
 
 Answer:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
 <!DOCTYPE html>
 <html>
 <head>
@@ -35291,21 +35013,6 @@ Some of the numbers: 1500
 
 Q #32) In the following code snippet can you please predict the output or If you get an error; please explain the error?
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 <!DOCTYPE html>
 <html>
 <body>
@@ -35323,13 +35030,6 @@ document.getElementById("display").innerHTML = "Comparison will return 'true' by
 </html>
 Answer: Consider the code
 
-1
-2
-3
-4
-5
-6
-7
 If (‘100’==100) {
 document. write (“It’s a Type Converting Operator”);
 }
@@ -35367,9 +35067,6 @@ Boolean values can be used for comparing two variables.
 
 For Example, 
 
-1
-2
-3
 var x = 2;
 var y = 3;
 x==y //returns false
@@ -35377,11 +35074,6 @@ The boolean value can also be used to check a condition
 
 For Example, 
 
-1
-2
-3
-4
-5
 var x = 2;
 var y = 3;
 If(x<y){
@@ -35391,8 +35083,6 @@ If the above condition ‘x<y’ is true, the alert gets pop up.
 
 A boolean variable can be created using the Boolean() function.
 
-1
-2
 var myvar = ‘Hi';
 Boolean(myvar); // This returns true because the 'myvar' value exists
 Also, the Boolean object can be created using the new operator as follows:
@@ -35403,8 +35093,6 @@ var myobj = new Boolean(true);
 
 For Example, 
 
-1
-2
 var x = null;
 console.log(x);// This returns null
 If we check the data type of a using the typeof operator, we get:
@@ -35415,10 +35103,6 @@ typeof(x); // This returns object. type of a null value is an object, not null.
 
 For Example, 
 
-1
-2
-3
-4
 var x;
 console.log(x); // This returns undefined
 x=10;//Assign value to x
@@ -35430,11 +35114,6 @@ We can assign a value to a:
 
 For Example, 
 
-1
-2
-3
-4
-5
 var x=10; // This is an integer value
 var y=10.5; // decimal value
 var c = 10e5 // an exponential value
@@ -35442,14 +35121,10 @@ var c = 10e5 // an exponential value
 10/0; // This returns infinity
 Number literal can be created by using the Number() function:
 
-1
-2
 var x = Number(10);
 console.log(x);// This returns 10
 Also, the number object can be created using the ‘new’ operator as follows:
 
-1
-2
 var x= new Number(10);
 console.log(x); // This returns 10
 (v) BigInt: This is a numeric primitive that can represent integers with arbitrary precision. BigInt is created by appending n to the end of an integer
@@ -35460,9 +35135,6 @@ For Example,
 const x = 15n;
 The number can be converted to a BigInt with the BigInt(number) function.
 
-1
-2
-3
 const x = 251;
 const y = BigInt(x);
 y === 251n // returns true
@@ -35470,13 +35142,10 @@ y === 251n // returns true
 
 For Example, 
 
-1
-2
 var strVar1 = “Hi,how are you?”;
 var strVar2 = ‘Hi,how are you?’;
 New string can also be created using String() function as follows:
 
-1
 var strVar3 = String(‘Hi,how are you?’); // This creates a string literal with value ‘Hi,how are you?’
 The String() function is also used to convert a non-string value to a string.
 
@@ -35500,9 +35169,6 @@ A Symbol value represents a unique identifier.
 
 For Example, 
 
-1
-2
-3
 var symVar1 = Symbol("Symbol1");
 let symVar2 = Symbol("Symbol1"); 
 console.log(symVar1 === symVar2); // This returns "false".
@@ -35512,8 +35178,6 @@ Symbols can’t be auto-converted.
 
 For Example, 
 
-1
-2
 var symVar1 = Symbol("Symbol1");
 alert(symVar1); // This gives TypeError: Cannot convert a Symbol value to a string
 This can be worked using toString() as follows:
@@ -35530,13 +35194,6 @@ For Example,
 
 In JavaScript objects, values are written as name:value pairs as below:
 
-1
-2
-3
-4
-5
-6
-7
 var car1 = {type:"BMW", model:” The BMW X5“, color:"white"};
 An object definition can span multiple lines as follows:
 var car1 = {
@@ -35580,9 +35237,6 @@ The operand can be any variable, object or function.
 
 For Example, 
 
-1
-2
-3
 console.log (typeof 10);// expected output: "number"
 console.log (typeof 'hello');// expected output: "string"
 console.log (typeof<declared But UndefinedVariable>);//expected output: //"undefined";
@@ -35592,9 +35246,6 @@ Answer:  JavaScript is called a loosely typed or a dynamic language because Java
 
 For Example, 
 
-1
-2
-3
 var myvar = ‘abc’; // myvar is string
 myvar =true; // myvar is now a boolean
 myvar = 10; // myvar is now a number
@@ -35607,8 +35258,6 @@ This is one of JavaScript’s primitive values.
 
 For Example, 
 
-1
-2
 Var myvar = null;
 console.log(myvar); //This will print null
 Q #39) What is NaN?
@@ -35617,15 +35266,6 @@ Answer: NaN is a property of a global object representing Not-A-Number.
 
 For Example, 
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
 function checkValue(x) {
 if (isNaN(x)) {
 return NaN;
@@ -35641,11 +35281,6 @@ Answer: A string can be split into an array using the JavaScript split() method.
 
 For Example, 
 
-1
-2
-3
-4
-5
 myDaysString = ''Sunday,Monday,Tuesday,Wednesday”;
 String can be split at comma as below:
 myDaysArray= myDaysString.split(',');
@@ -35657,12 +35292,9 @@ Answer: Array items can be joined using the join() method.
 
 For Example, 
 
-1
 var myDaysArray= ["Sunday","Monday","Tuesday",”Wednesday”];
 Array items are joined into a string as follows:
 
-1
-2
 myDaysString= myDaysArray.join(',');
 console.log(myDaysString);//output is joined string i.e.//Sunday,Monday,Tuesday,Wednesday
 Q #42) What type of errors does JavaScript have?
@@ -35677,21 +35309,6 @@ Answer: This is done using switch statements:
 
 For Example, 
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 switch (expression) {
 case choice1:
 code to be run
@@ -35715,10 +35332,6 @@ This can be used as a substitute forif…else block when having two choices that
 
 For Example, 
 
-1
-2
-3
-4
 if (some condition)
 result = ‘result 1’;
 else
@@ -35755,12 +35368,6 @@ This is to ensure that the correct values are used when a member’s context cha
 
 For Example, there are two different instances of a person having different names and it is required to print their own name in the alert as follows:
 
-1
-2
-3
-4
-5
-6
 const person1 = {
 name: 'Tom',
 greeting: function() {
@@ -35769,12 +35376,6 @@ alert('Good Morning! I am ' + this.name + '.');
 }
 Here, output is Good Morning! I am ‘Tom’
 
-1
-2
-3
-4
-5
-6
 const person2 = {
 name: 'Jerry',
 greeting: function() {
@@ -35789,11 +35390,6 @@ Answer: Anonymous functions are functions without having any name and won’t do
 
 For Example, in the following code, anonymous function code i.e. alert(‘Hi’); would run on click of the associated button:
 
-1
-2
-3
-4
-5
 var myButton = document.querySelector('button');
   
 myButton.onclick = function() {
@@ -35803,15 +35399,11 @@ An anonymous function can also be assigned to the value of a variable.
 
 For Example, 
 
-1
-2
-3
 var myVar = function() {
     alert('Hi');
 }
 This function can be invoked using:
 
-1
 myVar();
 
 Top 30 JavaScript Design Patterns Interview Questions
@@ -35872,9 +35464,6 @@ The module pattern is used in JavaScript to provide a structure for organizing c
 
 Let's understand by the help of example:
 
-
-
-
 // Module definition
 var MyModule = (function() {
   // Private variables and functions
@@ -35910,9 +35499,6 @@ This is a private function
 The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
 Example:
-
-
-
 
 // Subject
 class Subject {
@@ -35969,9 +35555,6 @@ In this example, Subject maintains a list of observers, and when its state chang
 6. Explain the Singleton design pattern in JavaScript
 The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance. It is often used for logging, driver objects, caching, thread pools, or database connections.
 
-
-
-
 var Singleton = (function () {
   var instance;
 ​
@@ -36017,9 +35600,6 @@ The Context is the class that contains the object whose behavior needs to be cha
 The Strategy is the interface or abstract class that defines the common methods for all the algorithms that can be used by the Context object.
 The Concrete Strategy is the class that implements the Strategy interface and provides the actual implementation of the algorithm.
 Here's a simple example to illustrate how it works:
-
-
-
 
 // Define a set of strategies
 ​
@@ -36068,9 +35648,6 @@ In this example, we have two strategies (strategyA and strategyB) that encapsula
 
 8. Explain the Factory Design Pattern.
 The factory method is a creational design pattern, i.e., related to object creation. The Factory Method pattern is used to create objects without specifying the exact class of object that will be created. This pattern is useful when you need to decouple the creation of an object from its implementation.
-
-
-
 
 // Product constructor
 function Car(model, year) {
@@ -36127,9 +35704,6 @@ Stopping the car!
 10. What is the Decorator pattern in JavaScript?
 The Decorator pattern allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
 
-
-
-
 function Coffee() {
   this.cost = function () {
     return 5;
@@ -36170,9 +35744,6 @@ The Dependency Injection pattern involves supplying an external dependency to a 
 
 15. Explain the Publish-Subscribe pattern and provide an example in JavaScript.
 The Publish-Subscribe pattern, also known as the Observer pattern, allows multiple objects to listen and respond to events. This pattern is used to establish communication between objects without them being directly coupled.
-
-
-
 
 // Publisher (Subject)
 class NewsAgency {
@@ -36238,9 +35809,6 @@ The Proxy pattern provides a surrogate or placeholder for another object to cont
 
 Let's see a simple example of using the Proxy pattern to create a basic logging proxy:
 
-
-
-
 // Original object
 const realSubject = {
   request: function() {
@@ -36270,9 +35838,6 @@ In this example, the proxy object intercepts the request operation and logs a me
 The Template Method pattern defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
 
 Example:
-
-
-
 
 // Abstract class with the template method
 function AbstractClass() {}
@@ -36316,9 +35881,6 @@ ConcreteClass: Step 2 overridden
 AbstractClass: Step 3
 19. Explain the Chain of Responsibility pattern and provide an example in JavaScript.
 The Chain of Responsibility pattern passes a request along a chain of handlers. In JavaScript, this is often used in event handling where multiple objects can handle an event, and the event is passed through a chain of handlers until one handles it.
-
-
-
 
 // Step 1: Request
 class ExpenseRequest {
@@ -36381,9 +35943,6 @@ The Factory pattern involves creating objects through a common interface, while 
 21. Describe the Proxy pattern and provide a real-world example in JavaScript.
 The Proxy pattern provides a surrogate or placeholder for another object to control access to it. In JavaScript, a common example is the Proxy API, which allows you to create a proxy for another object with custom behavior.
 
-
-
-
 // Real subject
 class RealSubject {
   request() {
@@ -36427,9 +35986,6 @@ The Command pattern involves encapsulating a request as an object, allowing for 
 The Memento pattern captures and externalizes an object's internal state so that the object can be restored to this state later.
 
 Let's see the example:
-
-
-
 
 // Originator: Object whose state needs to be saved
 class Originator {
@@ -36511,9 +36067,6 @@ The Revealing Module pattern is defined as an extension of the Module pattern, w
 25. How does the State Pattern work, and when it is used in JavaScript?
 The State Pattern basically allows an object to alter its behavior when its internal state changes. The pattern represents states as separate classes and delegates the state-specific behavior to these classes. This can make the object's behavior more modular and easier to extend.
 
-
-
-
 // State interface
 class State {
   handleState() {}
@@ -36572,8 +36125,6 @@ Abstract Factory Pattern: Provides an interface for creating families of related
 The Flux Pattern is an architecture for managing state in a JavaScript application. It is commonly associated with React.js. The key components are the dispatcher, stores, and views. Actions trigger updates in the stores, which then notify the views to re-render. This unidirectional flow helps in managing complex state in large applications.
 
 30. Example of Revealing Module pattern in JavaScript
-
-
 
 const RevealingModule = (function () {
     let privateVar = 10;
